@@ -96,7 +96,10 @@ def is_forward(sq: Square, target: Square, player: Player) -> bool:
 
 
 def is_forward_relative(offset: Offset, player: Player) -> bool:
-    """True when a relative offset advances for ``player``."""
-    if player == 0:
-        return offset[1] > 0
-    return offset[1] < 0
+    """True when a *owner-relative* offset advances for ``player``.
+
+    Movement atoms are expressed in the owner's frame, so ``dr > 0`` is
+    forward for both players (player 1's forward is absolute ``-rank`` after
+    the 180-degree rotation applied by :func:`relative_to_absolute`).
+    """
+    return offset[1] > 0

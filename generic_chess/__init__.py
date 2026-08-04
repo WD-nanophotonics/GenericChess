@@ -17,8 +17,9 @@ from .core.attacks import (
     pseudo_attacks,
 )
 from .core.coordinates import Square
+from .core.errors import IllegalActionError, RuleSetMismatchError
 from .core.keys import position_key
-from .core.movegen import apply_action_to_position, legal_actions
+from .core.movegen import legal_actions
 from .core.pieces import Piece, PieceType
 from .core.position import GameState, Hands, Position
 from .core.terminal import TerminalResult, TerminalStatus
@@ -35,7 +36,6 @@ __all__ = [
     "initial_state",
     "legal_actions",
     "apply_action",
-    "apply_action_to_position",
     "pseudo_attacks",
     "is_square_attacked",
     "is_in_check",
@@ -57,6 +57,8 @@ __all__ = [
     "TerminalStatus",
     "RuleSet",
     "GeneratorConfig",
+    "IllegalActionError",
+    "RuleSetMismatchError",
     "action_to_dict",
     "action_from_dict",
 ]

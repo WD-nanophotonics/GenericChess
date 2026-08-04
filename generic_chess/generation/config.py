@@ -35,8 +35,8 @@ class GeneratorConfig:
     max_generation_attempts: int = 1000
 
     def __post_init__(self) -> None:
-        if self.board_size < 3:
-            raise GenerationError("board_size must be >= 3")
+        if self.board_size < 4:
+            raise GenerationError("generator board_size must be >= 4 (2n pieces per side need 4*n squares)")
         if self.setup_preset not in ("classic_like", "bilateral_random", "free_random"):
             raise GenerationError(f"unknown setup_preset {self.setup_preset!r}")
         if self.movement_symmetry not in ("bilateral", "none"):

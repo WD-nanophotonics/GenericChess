@@ -51,7 +51,7 @@ class Hands:
     def items(self) -> tuple[tuple[str, int], ...]:
         return self.counts
 
-def __iter__(self):
+    def __iter__(self):
         return iter(self.counts)
 
 

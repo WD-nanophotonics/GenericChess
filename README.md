@@ -60,7 +60,6 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 | `initial_state(compiled)` | 初始 `GameState` |
 | `legal_actions(state, compiled)` | 当前行动方全部合法动作（终局返回空列表） |
 | `apply_action(state, action, compiled)` | 纯函数，返回新的 `GameState` |
-| `apply_action_to_position(position, action, compiled)` | 棋盘/持驹层状态转移 |
 | `pseudo_attacks(position, player, compiled)` | 伪攻击集合（frozenset[Square]） |
 | `is_square_attacked(position, square, by_player, compiled)` | 单格攻击查询 |
 | `is_in_check(position, player, compiled)` | check 判断 |
@@ -69,7 +68,18 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 | `generate_game(config)` | 生成 `GeneratedGame(ruleset, compiled_ruleset, generation_report)` |
 | `serialize_ruleset(ruleset)` / `deserialize_ruleset(data)` | 规范 JSON 序列化往返 |
 
+**严格合法性（v0 correctness hardening）**：`apply_action` 是唯一的公共落子入口，会先校验
+`state` 与 `compiled` 的 fingerprint 一致，再校验动作确实存在于当前合法动作集合；任何伪造
+动作（几何非法、越界、打入/升变不满足规则、自将）都会抛 `IllegalActionError`，状态/规则不
+匹配抛 `RuleSetMismatchError`。机械执行函数是私有的 `_apply_action_unchecked`，不再从顶层
+导出。所有公共查询入口（`legal_actions`、`pseudo_attacks`、`is_square_attacked`、
+`is_in_check`、`terminal_result`、`position_key`）同样先做 fingerprint 匹配检查。
+
 ## RuleSet JSON 示例
+
+完整、可直接编译的示例见 [`examples/minimal_ruleset.json`](examples/minimal_ruleset.json)
+（4×4：anchor king + 可升变 pawn + 普通 gold，含全量 initial_position 与逐格 mask）。
+下面仅展示结构片段：
 
 ```json
 {
@@ -97,10 +107,10 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
     }
   ],
   "initial_position": [
-    [null, null, null, null, null, null, null, null],
-    [{"owner": 0, "base_type_id": "P", "current_type_id": "P", "promoted": false}, null, null, null, null, null, null, null]
+    [{"owner": 0, "base_type_id": "P", "current_type_id": "P", "promoted": false}, null, null, null],
+    [null, null, null, null]
   ],
-  "drop_allowed": {"P": [[true, true, true, true, true, true, true, true], [true, true, true, true, true, true, true, true]]},
+  "drop_allowed": {"P": [[true, true, true, true], [true, true, true, true]]},
   "promotion_allowed": {"P": [[[0, 6, 0, 7]], [[0, 1, 0, 0]]]},
   "promotion_forced": {"P": [[[0, 7]], [[0, 0]]]},
   "repetition_limit": 4,
@@ -115,10 +125,13 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 * `drop_allowed` / `promotion_allowed` / `promotion_forced` 是逐格 mask（每个玩家一份），由 Generator 自动推导或手工指定；Compiler 不现场猜测。
 * `metadata` 不参与 fingerprint，不会影响对局结果。
 * fingerprint = SHA-256(规范 JSON：key 排序、排除 metadata、紧凑分隔符)，序列化往返后保持不变。
+* 输入严格校验：`schema_version` 必须为 1；owner 必须是 0/1；布尔字段必须是真正的 JSON
+  boolean（字符串 `"false"` 不会被当作 `True`）；所有畸形输入都会变成带 code/path 的
+  `RuleValidationError`，绝不会静默纠正或抛裸 `KeyError`。
 
 ## 已实现规则（v0）
 
-* 一般 n×n 棋盘（n ≥ 3），二人、完全信息、确定性、零和、交替行动、每回合一个动作。
+* 一般 n×n 棋盘（Core n ≥ 3；Generator 最小 4×4，因为每方默认 2n 枚初始棋子需要 4n 个空格），二人、完全信息、确定性、零和、交替行动、每回合一个动作。
 * `LeapAtom`（跳，忽略中间格）与 `RayAtom`（滑行，按序到第一个占据格为止，`max_steps` 可选，方向要求 primitive vector）。
 * 每方恰好一个 anchor（king 走法），anchor 不可捕获、不可打入、不可升变，不可进入被攻击格，两 anchor 不相邻。
 * 捕获进持驹（恢复 base type，升变降格）、任意普通类型可打入、打入须空格且不导致自将、可打入将军/将死。

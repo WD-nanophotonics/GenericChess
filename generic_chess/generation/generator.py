@@ -72,6 +72,11 @@ def _try_generate(rng: random.Random, cfg: GeneratorConfig) -> GeneratedGame:
     )
 
     compiled = compile_ruleset(ruleset)
+    if compiled.initial_entity_count != 4 * n:
+        raise GenerationError(
+            f"generated initial position has {compiled.initial_entity_count} entities, "
+            f"expected 4*{n} = {4 * n}"
+        )
     filter_results = run_soft_filters(cfg, compiled, types_by_id)
     if not all(f.passed for f in filter_results):
         failed = ", ".join(f.name for f in filter_results if not f.passed)

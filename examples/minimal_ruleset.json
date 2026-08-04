@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "board_size": 4,
+  "piece_types": [
+    {
+      "type_id": "K",
+      "name": "King",
+      "movement_atoms": [
+        {"kind": "leap", "offset": [-1, -1]},
+        {"kind": "leap", "offset": [-1, 0]},
+        {"kind": "leap", "offset": [-1, 1]},
+        {"kind": "leap", "offset": [0, -1]},
+        {"kind": "leap", "offset": [0, 1]},
+        {"kind": "leap", "offset": [1, -1]},
+        {"kind": "leap", "offset": [1, 0]},
+        {"kind": "leap", "offset": [1, 1]}
+      ],
+      "is_anchor": true,
+      "is_promotable": false,
+      "promotion_target_ids": []
+    },
+    {
+      "type_id": "P",
+      "name": "Pawn",
+      "movement_atoms": [{"kind": "leap", "offset": [0, 1]}],
+      "is_anchor": false,
+      "is_promotable": true,
+      "promotion_target_ids": ["G"]
+    },
+    {
+      "type_id": "G",
+      "name": "Gold",
+      "movement_atoms": [
+        {"kind": "leap", "offset": [1, 0]},
+        {"kind": "leap", "offset": [-1, 0]},
+        {"kind": "leap", "offset": [0, -1]}
+      ],
+      "is_anchor": false,
+      "is_promotable": false,
+      "promotion_target_ids": []
+    }
+  ],
+  "initial_position": [
+    [{"owner": 0, "base_type_id": "K", "current_type_id": "K", "promoted": false}, null, null, null],
+    [{"owner": 0, "base_type_id": "P", "current_type_id": "P", "promoted": false}, null, null, null],
+    [null, null, null, null],
+    [null, null, null, {"owner": 1, "base_type_id": "K", "current_type_id": "K", "promoted": false}]
+  ],
+  "drop_allowed": {
+    "P": [
+      [true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false],
+      [false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true]
+    ],
+    "G": [
+      [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+      [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+    ]
+  },
+  "promotion_allowed": {
+    "P": [
+      [[0, 2, 0, 3], [1, 2, 1, 3], [2, 2, 2, 3], [3, 2, 3, 3]],
+      [[0, 1, 0, 0], [1, 1, 1, 0], [2, 1, 2, 0], [3, 1, 3, 0]]
+    ]
+  },
+  "promotion_forced": {
+    "P": [
+      [[0, 3], [1, 3], [2, 3], [3, 3]],
+      [[0, 0], [1, 0], [2, 0], [3, 0]]
+    ]
+  },
+  "repetition_limit": 4,
+  "max_ply": 512,
+  "stalemate_result": "draw",
+  "metadata": {
+    "display_name": "Minimal 4x4 example",
+    "description": "Complete, compilable example: anchor king, promotable pawn, gold target."
+  }
+}

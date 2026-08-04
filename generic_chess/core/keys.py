@@ -6,6 +6,7 @@ import hashlib
 import json
 from typing import TYPE_CHECKING
 
+from .errors import ensure_ruleset_match
 from .position import Position
 
 if TYPE_CHECKING:
@@ -20,6 +21,7 @@ def position_key(position: Position, compiled: "CompiledRuleSet") -> str:
     * every square's owner, base type, current type and promoted flag
     * both hands (base type and quantity)
     """
+    ensure_ruleset_match(position, compiled)
     board: list[list | None] = []
     for piece in position.board:
         if piece is None:

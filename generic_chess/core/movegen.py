@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING
 from .actions import Action, BoardMove, DropMove
 from .attacks import anchor_square, is_square_attacked
 from .coordinates import Square, index_to_square, square_to_index
+from .errors import IllegalActionError, ensure_ruleset_match
 from .movement import LeapAtom
 from .pieces import Piece
 from .position import Position
@@ -92,32 +93,49 @@ def _drop_actions(position: Position, compiled: "CompiledRuleSet") -> list[Actio
     return actions
 
 
-def apply_action_to_position(
+def _apply_action_unchecked(
     position: Position, action: Action, compiled: "CompiledRuleSet"
 ) -> Position:
-    """Apply ``action`` to the board/hands and switch the side to move.
+    """Mechanical board/hand update without full legal-action validation.
 
-    The caller is responsible for passing a legal action; this function only
-    performs the mechanical update (including capture -> hand, and promotion).
+    This is the private executor behind the public, legality-checking
+    :func:`apply_action`.  It still guards the basic invariants (bounds, own
+    piece, anchor capture, occupied drop squares, hand counts, promotion
+    target membership) so that even an internal misuse cannot corrupt a state.
     """
+    ensure_ruleset_match(position, compiled)
     n = compiled.board_size
     side = position.side_to_move
     board = list(position.board)
     hands = position.hands
 
     if isinstance(action, BoardMove):
+        if not (0 <= action.from_square.file < n and 0 <= action.from_square.rank < n):
+            raise IllegalActionError(f"from square out of bounds: {action}")
+        if not (0 <= action.to_square.file < n and 0 <= action.to_square.rank < n):
+            raise IllegalActionError(f"to square out of bounds: {action}")
         from_idx = square_to_index(action.from_square, n)
         to_idx = square_to_index(action.to_square, n)
         piece = board[from_idx]
         if piece is None or piece.owner != side:
-            raise ValueError(f"illegal board move from square without own piece: {action}")
+            raise IllegalActionError(f"illegal board move from square without own piece: {action}")
         captured = board[to_idx]
         if captured is not None and captured.owner == side:
-            raise ValueError(f"cannot capture own piece: {action}")
+            raise IllegalActionError(f"cannot capture own piece: {action}")
         if captured is not None and _is_anchor(captured, compiled):
-            raise ValueError(f"anchors cannot be captured: {action}")
+            raise IllegalActionError(f"anchors cannot be captured: {action}")
 
         if action.promotion_target_id is not None:
+            base = compiled.types_by_id[piece.base_type_id]
+            if piece.promoted:
+                raise IllegalActionError(f"already-promoted piece cannot promote again: {action}")
+            if not base.is_promotable:
+                raise IllegalActionError(f"non-promotable piece cannot promote: {action}")
+            if action.promotion_target_id not in base.promotion_target_ids:
+                raise IllegalActionError(
+                    f"{action.promotion_target_id!r} is not a promotion target of "
+                    f"{piece.base_type_id!r}: {action}"
+                )
             new_piece = Piece(
                 owner=side,
                 base_type_id=piece.base_type_id,
@@ -134,11 +152,13 @@ def apply_action_to_position(
         board[from_idx] = None
         board[to_idx] = new_piece
     else:  # DropMove
+        if not (0 <= action.to_square.file < n and 0 <= action.to_square.rank < n):
+            raise IllegalActionError(f"drop square out of bounds: {action}")
         to_idx = square_to_index(action.to_square, n)
         if board[to_idx] is not None:
-            raise ValueError(f"cannot drop onto an occupied square: {action}")
+            raise IllegalActionError(f"cannot drop onto an occupied square: {action}")
         if hands[side].count(action.base_type_id) <= 0:
-            raise ValueError(f"no {action.base_type_id} in hand: {action}")
+            raise IllegalActionError(f"no {action.base_type_id} in hand: {action}")
         board[to_idx] = Piece(
             owner=side,
             base_type_id=action.base_type_id,
@@ -157,7 +177,7 @@ def apply_action_to_position(
 
 
 def _is_legal(position: Position, action: Action, compiled: "CompiledRuleSet") -> bool:
-    after = apply_action_to_position(position, action, compiled)
+    after = _apply_action_unchecked(position, action, compiled)
     side = position.side_to_move
     own_anchor = anchor_square(after, side, compiled)
     if own_anchor is None:
@@ -169,6 +189,7 @@ def legal_actions_from_position(
     position: Position, compiled: "CompiledRuleSet"
 ) -> list[Action]:
     """All legal actions for the side to move in ``position``."""
+    ensure_ruleset_match(position, compiled)
     pseudo = _piece_actions(position, compiled)
     expanded: list[Action] = []
     for action in pseudo:
@@ -178,13 +199,22 @@ def legal_actions_from_position(
         else:
             expanded.append(action)
     expanded.extend(_drop_actions(position, compiled))
-    return [a for a in expanded if _is_legal(position, a, compiled)]
+    legal = [a for a in expanded if _is_legal(position, a, compiled)]
+    # Deduplicate while preserving the first-seen order.
+    seen: set[Action] = set()
+    unique: list[Action] = []
+    for action in legal:
+        if action not in seen:
+            seen.add(action)
+            unique.append(action)
+    return unique
 
 
 def legal_actions(state: "GameState", compiled: "CompiledRuleSet") -> list[Action]:
     """Public API: legal actions of a game state (empty when terminal)."""
     from .terminal import TerminalStatus
 
+    ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:
         return []
     return legal_actions_from_position(state.position, compiled)

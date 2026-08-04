@@ -7,6 +7,7 @@ from enum import Enum
 from typing import TYPE_CHECKING
 
 from .attacks import is_in_check
+from .errors import ensure_ruleset_match
 from .movegen import legal_actions_from_position
 from .position import Position
 from .repetition import is_repetition_draw
@@ -62,6 +63,7 @@ def _terminal_from_parts(
 
 def terminal_result(state: "GameState", compiled: "CompiledRuleSet") -> TerminalResult:
     """Public API: terminal status of a game state (freshly recomputed)."""
+    ensure_ruleset_match(state.position, compiled)
     return _terminal_from_parts(
         state.position, state.ply_count, state.repetition_counts, compiled
     )

@@ -128,6 +128,15 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
             ValidationIssue("BOARD_SIZE_TOO_SMALL", "board_size", "board_size must be an integer >= 3")
         )
 
+    if ruleset.schema_version != 1:
+        issues.append(
+            ValidationIssue(
+                "SCHEMA_VERSION_UNSUPPORTED",
+                "schema_version",
+                f"schema_version must be 1, got {ruleset.schema_version!r}",
+            )
+        )
+
     if not ruleset.piece_types:
         issues.append(ValidationIssue("NO_PIECE_TYPES", "piece_types", "at least one piece type is required"))
 
@@ -194,14 +203,16 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
                 continue
             entity_count += 1
             path = f"initial_position[{r}][{f}]"
-            if cell.owner not in (0, 1):
+            owner_ok = cell.owner in (0, 1)
+            if not owner_ok:
                 issues.append(ValidationIssue("ILLEGAL_OWNER", f"{path}.owner", f"owner must be 0 or 1, got {cell.owner!r}"))
             if cell.base_type_id not in type_ids:
                 issues.append(ValidationIssue("CELL_TYPE_NOT_FOUND", f"{path}.base_type_id", f"base type {cell.base_type_id!r} is not a defined type"))
                 continue
             base = types_by_id[cell.base_type_id]
             if base.is_anchor:
-                anchor_count[cell.owner] += 1
+                if owner_ok:
+                    anchor_count[cell.owner] += 1
                 if cell.promoted or cell.current_type_id != cell.base_type_id:
                     issues.append(ValidationIssue("ANCHOR_STATE_INVALID", path, "anchors must be unpromoted with current_type_id == base_type_id"))
             if cell.promoted:

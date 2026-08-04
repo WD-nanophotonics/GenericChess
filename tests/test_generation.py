@@ -56,9 +56,15 @@ def test_all_presets_generate_valid_games():
         assert game.compiled_ruleset.initial_entity_count == 4 * 8
 
 
-def test_board_size_3_works():
-    game = generate_game(GeneratorConfig(seed=5, board_size=3))
-    assert game.compiled_ruleset.board_size == 3
+def test_board_size_3_rejected_for_generator():
+    with pytest.raises(GenerationError):
+        generate_game(GeneratorConfig(seed=5, board_size=3))
+
+
+def test_board_size_4_works():
+    game = generate_game(GeneratorConfig(seed=5, board_size=4))
+    assert game.compiled_ruleset.board_size == 4
+    assert game.compiled_ruleset.initial_entity_count == 16  # 2n per side
 
 
 def test_generation_report_contents():

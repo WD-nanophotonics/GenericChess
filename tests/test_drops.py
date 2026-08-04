@@ -3,8 +3,9 @@
 import pytest
 
 from generic_chess.core.actions import DropMove
+from generic_chess.core.errors import IllegalActionError
 from generic_chess.core.movement import LeapAtom, RayAtom
-from generic_chess.core.movegen import apply_action_to_position, legal_actions_from_position
+from generic_chess.core.movegen import legal_actions_from_position
 from generic_chess.core.terminal import TerminalStatus
 from generic_chess.core.transition import apply_action
 
@@ -26,7 +27,7 @@ def _pawn_knight_compiled():
 
 def test_drop_only_on_empty_square():
     compiled = _pawn_knight_compiled()
-    pos2 = make_position(
+    state = make_state(
         compiled,
         [
             ".......k",
@@ -40,13 +41,13 @@ def test_drop_only_on_empty_square():
         ],
         hands=([("P", 1)], []),
     )
-    with pytest.raises(ValueError):
-        apply_action_to_position(pos2, DropMove("P", sq(1, 0)), compiled)
+    with pytest.raises(IllegalActionError):
+        apply_action(state, DropMove("P", sq(1, 0)), compiled)
 
 
 def test_drop_requires_piece_in_hand():
     compiled = _pawn_knight_compiled()
-    pos = make_position(
+    state = make_state(
         compiled,
         [
             ".......k",
@@ -59,8 +60,8 @@ def test_drop_requires_piece_in_hand():
             "K.......",
         ],
     )
-    with pytest.raises(ValueError):
-        apply_action_to_position(pos, DropMove("P", sq(3, 3)), compiled)
+    with pytest.raises(IllegalActionError):
+        apply_action(state, DropMove("P", sq(3, 3)), compiled)
 
 
 def test_pawn_like_drop_forbidden_on_last_rank():
@@ -110,7 +111,7 @@ def test_drop_does_not_promote_immediately():
     pawn = T("P", LeapAtom((0, 1)), is_promotable=True, targets=("G",))
     gold = T("G", LeapAtom((1, 0)))
     compiled = make_compiled(8, [king_type(), pawn, gold])
-    pos = make_position(
+    state = make_state(
         compiled,
         [
             ".......k",
@@ -124,8 +125,8 @@ def test_drop_does_not_promote_immediately():
         ],
         hands=([("P", 1)], []),
     )
-    after = apply_action_to_position(pos, DropMove("P", sq(4, 6)), compiled)
-    piece = after.board[6 * 8 + 4]
+    after = apply_action(state, DropMove("P", sq(4, 6)), compiled)
+    piece = after.position.board[6 * 8 + 4]
     assert piece.base_type_id == "P"
     assert piece.current_type_id == "P"
     assert not piece.promoted
@@ -158,8 +159,7 @@ def test_drop_can_escape_check():
 def test_drop_gives_check():
     down_ray = T("R", RayAtom((0, -1)))
     compiled = make_compiled(8, [king_type(), down_ray])
-    # P1 king at (0,0); drop a downward ray at (0,3) -> checks file 0.
-    pos = make_position(
+    state = make_state(
         compiled,
         [
             ".......K",  # rank 7: P0 anchor
@@ -174,20 +174,18 @@ def test_drop_gives_check():
         side_to_move=0,
         hands=([("R", 1)], []),
     )
-    actions = legal_actions_from_position(pos, compiled)
+    actions = legal_actions_from_position(state.position, compiled)
     assert DropMove("R", sq(0, 3)) in actions
-    after = apply_action_to_position(pos, DropMove("R", sq(0, 3)), compiled)
+    after = apply_action(state, DropMove("R", sq(0, 3)), compiled)
     from generic_chess.core.attacks import is_in_check
 
-    assert is_in_check(after, 1, compiled)
+    assert is_in_check(after.position, 1, compiled)
 
 
 def test_drop_mate():
     down_ray = T("R", RayAtom((0, -1)))
     compiled = make_compiled(8, [king_type(), down_ray])
-    # P1 king cornered at (0,0): drop R at (0,3) checks file 0; P0 king at
-    # (2,1) covers (1,0) and (1,1).
-    pos = make_position(
+    state = make_state(
         compiled,
         [
             "........",  # rank 7
@@ -202,23 +200,8 @@ def test_drop_mate():
         side_to_move=0,
         hands=([("R", 1)], []),
     )
-    actions = legal_actions_from_position(pos, compiled)
+    actions = legal_actions_from_position(state.position, compiled)
     assert DropMove("R", sq(0, 3)) in actions
-    state = make_state(
-        compiled,
-        [
-            "........",
-            "........",
-            "........",
-            "........",
-            "........",
-            "........",
-            "..K.....",
-            "k.......",
-        ],
-        side_to_move=0,
-        hands=([("R", 1)], []),
-    )
     after = apply_action(state, DropMove("R", sq(0, 3)), compiled)
     assert after.terminal_status.status is TerminalStatus.CHECKMATE
     assert after.terminal_status.winner == 0

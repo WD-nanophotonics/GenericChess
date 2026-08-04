@@ -92,6 +92,11 @@ def _random_atom(rng: random.Random, is_ray: bool, cfg) -> MovementAtom:
     return _random_leap(rng, cfg.max_leap_delta)
 
 
+def _pick_kind(rng: random.Random, leap_weight: float, ray_weight: float) -> bool:
+    """True when the next atom should be a ray (weighted random)."""
+    return rng.random() * (leap_weight + ray_weight) >= leap_weight
+
+
 def _mirror_atoms(
     atoms: tuple[MovementAtom, ...], symmetry: str
 ) -> tuple[MovementAtom, ...]:
@@ -127,14 +132,22 @@ def generate_ordinary_types(
         atoms: tuple[MovementAtom, ...] = ()
         for _ in range(200):  # bounded retries for the forward/forced constraints
             count = rng.randint(cfg.min_atoms_before_mirroring, cfg.max_atoms_before_mirroring)
-            is_ray = rng.random() * (leap_weight + ray_weight) >= leap_weight
             raw: list[MovementAtom] = []
-            for _ in range(count):
-                raw.append(_random_atom(rng, is_ray, cfg))
+            if cfg.allow_hybrid:
+                for _ in range(count):
+                    raw.append(_random_atom(rng, _pick_kind(rng, leap_weight, ray_weight), cfg))
+            else:
+                is_ray = _pick_kind(rng, leap_weight, ray_weight)
+                for _ in range(count):
+                    raw.append(_random_atom(rng, is_ray, cfg))
             if not any(_has_forward(a) for a in raw):
+                if cfg.allow_hybrid:
+                    forward_kind = _pick_kind(rng, leap_weight, ray_weight)
+                else:
+                    forward_kind = is_ray
                 forward = (
                     _random_forward_ray(rng, cfg.max_ray_component)
-                    if is_ray
+                    if forward_kind
                     else _random_forward_leap(rng, cfg.max_leap_delta)
                 )
                 raw.append(forward)

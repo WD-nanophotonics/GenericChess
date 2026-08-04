@@ -5,8 +5,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from .actions import Action
+from .errors import IllegalActionError, ensure_ruleset_match
 from .keys import position_key
-from .movegen import apply_action_to_position  # noqa: F401 (re-exported)
+from .movegen import _apply_action_unchecked, legal_actions_from_position
 from .position import GameState
 from .repetition import update_repetition_counts
 from .terminal import _terminal_from_parts, TerminalStatus
@@ -25,10 +26,21 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
 
 
 def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") -> GameState:
-    """Apply one legal action, returning a brand-new immutable GameState."""
+    """Apply one action, returning a brand-new immutable GameState.
+
+    The action is validated against the ruleset (fingerprint match) and the
+    full legal-action set before any state is changed.  Uncallable actions
+    raise :class:`IllegalActionError`; a state/ruleset mismatch raises
+    :class:`RuleSetMismatchError`.
+    """
+    ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:
-        raise ValueError(f"cannot apply an action to a terminal state ({state.terminal_status})")
-    new_pos = apply_action_to_position(state.position, action, compiled)
+        raise IllegalActionError(
+            f"cannot apply an action to a terminal state ({state.terminal_status})"
+        )
+    if action not in legal_actions_from_position(state.position, compiled):
+        raise IllegalActionError(f"action is not legal in the current state: {action}")
+    new_pos = _apply_action_unchecked(state.position, action, compiled)
     ply = state.ply_count + 1
     key = position_key(new_pos, compiled)
     counts = update_repetition_counts(state.repetition_counts, key)

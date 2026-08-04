@@ -11,6 +11,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from .coordinates import Square, index_to_square, square_to_index
+from .errors import ensure_ruleset_match
 from .movement import LeapAtom
 from .position import Position
 
@@ -32,6 +33,7 @@ def anchor_square(position: Position, player: int, compiled: "CompiledRuleSet") 
 
 def pseudo_attacks(position: Position, player: int, compiled: "CompiledRuleSet") -> AttackMap:
     """All squares geometrically attacked by ``player``'s pieces."""
+    ensure_ruleset_match(position, compiled)
     n = compiled.board_size
     attacked: set[Square] = set()
     for idx, piece in enumerate(position.board):
@@ -56,10 +58,12 @@ def pseudo_attacks(position: Position, player: int, compiled: "CompiledRuleSet")
 def is_square_attacked(
     position: Position, square: Square, by_player: int, compiled: "CompiledRuleSet"
 ) -> bool:
+    ensure_ruleset_match(position, compiled)
     return square in pseudo_attacks(position, by_player, compiled)
 
 
 def is_in_check(position: Position, player: int, compiled: "CompiledRuleSet") -> bool:
+    ensure_ruleset_match(position, compiled)
     sq = anchor_square(position, player, compiled)
     if sq is None:
         return False
