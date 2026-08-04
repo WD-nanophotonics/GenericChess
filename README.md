@@ -12,6 +12,51 @@
 2. **RuleSet 与 Compiler**（`generic_chess/rules/`）——声明一套具体规则、严格验证、编译相对方向 / ray path / leap target / 升变区 / 打入 mask 为确定查询表，生成稳定的 SHA-256 fingerprint，并提供 JSON 序列化与反序列化。Compiler 只检查规则是否完备、自洽、可执行，不因“好不好玩”拒绝规则。
 3. **Generator**（`generic_chess/generation/`）——软性偏好：棋盘大小、左右对称程度、ray/leap 比例、随机棋子走法、初始阵型、升变/打入规则推导、可玩性过滤、seed 复现。所有随机数只出现在 Generator，且使用局部 `random.Random(seed)`，不依赖模块级全局随机状态。
 
+依赖方向：Core/Rules/Generation → **Session**（`generic_chess/session/`）→ **CLI**（`generic_chess/cli/`）。
+
+## GameSession（对局会话层）
+
+`GameSession` 是面向 UI、真人玩家和未来 AI player 的有状态会话层：它把 Core 的不可变 `GameState`/`Action` 包装成可交互、可记录、可认输、可重放的对局对象，并且只通过 Core 公共语义工作（`legal_actions` / `apply_action` / `terminal_result` / `position_key`），绝不触碰私有执行器。Session API 只从 `generic_chess.session` 导入，不进入 `generic_chess` 顶层。
+
+```python
+from generic_chess.session import GameSession
+from generic_chess.session.serialization import serialize_game_record, deserialize_game_record
+
+game = generate_game(GeneratorConfig(seed=42))
+session = GameSession(game.compiled_ruleset)
+
+session.submit(session.legal_actions()[0])   # 走一步
+print(session.history[0].action, session.history[0].player)
+session.resign()                             # 当前行动方认输
+print(session.result)                        # resignation, player 0 wins (...)
+
+record = session.to_record()
+text = serialize_game_record(record)
+rebuilt = GameSession.replay(game.compiled_ruleset, deserialize_game_record(text))
+```
+
+要点：
+* `submit(action)` 校验动作合法性（非法动作抛 Core 的 `IllegalActionError`），失败不会留下任何部分更新；会话已结束时提交抛 `SessionFinishedError`。
+* `resign()` 只能由当前行动方调用；认输属于 Session 层，Core 的 `TerminalStatus` 不会被写入 resignation。
+* `history` 是只读的 `tuple[ActionRecord, ...]`；每条记录包含 ply（从 1 起）、player、action、执行前后的稳定 position key。
+* `GameRecord` 只保存重放所需最小信息（fingerprint + 动作序列 + 可选认输方），winner/终局结果一律通过重放重新推导。
+
+### GameRecord JSON 格式
+
+```json
+{
+  "schema_version": 1,
+  "ruleset_fingerprint": "d8acd4028054f76bc294779cc04ea72d6f2ca98c97db4d608cb8423dd363f9d2",
+  "actions": [
+    {"kind": "board", "from": [1, 0], "to": [0, 3], "promotion_target_id": null},
+    {"kind": "drop", "base_type_id": "P", "to": [3, 3]}
+  ],
+  "resigned_by": 1
+}
+```
+
+序列化是规范 JSON（key 排序、紧凑分隔符、稳定输出）；反序列化严格校验字段类型（坐标为真整数，bool 不算；`schema_version` 只接受 1；`resigned_by` 只接受 0/1/null；未知字段一律拒绝），畸形输入统一抛 `SessionRecordError`，不会泄漏裸解析异常。
+
 ## 安装与测试
 
 ```powershell
@@ -25,6 +70,25 @@ python -m venv .venv
 # 运行 headless demo（固定 seed，最多 50 ply，逐步校验系统不变量）
 .venv\Scripts\python.exe -m generic_chess.demo.headless_demo
 ```
+
+## 命令行双人对局与回放
+
+```powershell
+# 双人对局（默认 seed 42，8×8 classic_like）
+.venv\Scripts\python.exe -m generic_chess.cli.play --seed 42
+
+# 使用自定义 JSON RuleSet
+.venv\Scripts\python.exe -m generic_chess.cli.play --ruleset examples/minimal_ruleset.json
+
+# 保存对局记录（终局/认输/quit 时写入）
+.venv\Scripts\python.exe -m generic_chess.cli.play --seed 42 --record-out game.json
+
+# 回放记录（必须显式提供 RuleSet 文件）
+.venv\Scripts\python.exe -m generic_chess.cli.replay --ruleset rules.json --record game.json
+.venv\Scripts\python.exe -m generic_chess.cli.replay --ruleset rules.json --record game.json --final-only
+```
+
+对局中可输入：合法动作编号（`1`）、与 `str(action)` 完全一致的动作串（如 `e2-e4`、`P@e4`）、`moves`、`board`、`history`、`help`、`resign`、`quit`。`--ruleset` 与 `--seed`/`--board-size`/`--preset`/`--hybrid` 同时给出时会明确报错（exit 2），不会静默忽略。棋盘/持驹/行动方/check/ply/fingerprint 短前缀均为纯文本显示，不依赖颜色终端。
 
 ## 快速上手
 
@@ -146,10 +210,11 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 * 开局库、复杂性能优化（make/unmake 等）
 * 二步（nifu）、打步诘（uchifuzume）、捕获式打入、anchor 打入
 * 子力不足判和、50 回合规则、连续将军特殊规则（v0 一律按普通重复和棋）
-* `resign`（建议以后放在 GameSession 层）
+
+第二阶段明确不做：heuristic evaluator、alpha-beta、MCTS、神经网络、Zobrist key、transposition table、move cache、make/unmake、图形/网页 UI、网络对战、计时器、悔棋、开局库、新棋规。Core v0 的规则语义保持不变。
 
 ## 测试
 
-`tests/` 下 14 个测试文件覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致）。
+`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试。
 
 测试不使用 Hypothesis，全部使用固定 seed 的确定性断言。
