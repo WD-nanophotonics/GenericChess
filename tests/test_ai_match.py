@@ -13,6 +13,8 @@ from generic_chess.ui.controller import UIController
 from generic_chess.ui.match import MatchConfig, ParticipantKind
 from generic_chess.ui.stores import DictSettingsStore
 
+from conftest import T, king_type, make_ruleset
+
 
 def _match_config(human_owner: int, mode=TimeControlMode.NONE):
     participants = [ParticipantKind.AI, ParticipantKind.AI]
@@ -191,3 +193,101 @@ def test_progress_callback_reports_iterations():
         progress_callback=lambda d, n, q: reports.append((d, n)),
     )
     assert reports and reports[-1][0] == 2
+
+
+def _mate_ruleset():
+    from generic_chess.core.movement import RayAtom
+    from generic_chess.core.pieces import Piece
+
+    n = 8
+    rook = T("R", RayAtom((0, 1)), RayAtom((0, -1)), RayAtom((1, 0)), RayAtom((-1, 0)))
+    rows = [[None] * n for _ in range(n)]
+    rows[0][0] = Piece(1, "K", "K", False)
+    rows[0][2] = Piece(0, "K", "K", False)
+    rows[4][1] = Piece(0, "R", "R", False)
+    rows[1][5] = Piece(0, "R", "R", False)
+    lines = [
+        "".join("." if cell is None else ("k" if cell.owner == 1 else cell.base_type_id) for cell in row)
+        for row in reversed(rows)
+    ]
+    return make_ruleset(8, [king_type(), rook], lines=lines)
+
+
+def test_terminal_pauses_clock():
+    from generic_chess.core.actions import BoardMove
+
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    ctrl = _controller(clock_now=FakeNow())
+    ctrl.new_game_from_ruleset(_mate_ruleset())
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.FISCHER),
+            ThinkingConfig(),
+        )
+    )
+    ctrl.submit_action(BoardMove(Square(1, 4), Square(0, 4)))  # mate in one
+    assert ctrl.session.result.status.value == "checkmate"
+    assert not ctrl.clock_state().running  # clock stops at game over
+
+
+def test_ai_never_forfeits_on_time():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game_from_ruleset(_mate_ruleset())
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy="fixed_nodes", preset="quick", max_nodes=500),
+        )
+    )
+    ctrl.square_clicked(Square(2, 0))  # mate-ruleset P0 king
+    ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
+    # AI turn: even if the clock somehow runs, the AI side is never forfeited.
+    now.t += 60.0
+    ctrl.clock_tick()
+    assert ctrl.session.result.status.value == "ongoing"
+    assert ctrl.timeout_owner is None
+    assert ctrl.ai_move_needed()
+    # begin_ai_move pauses the clock so AI thinking consumes no time.
+    assert ctrl.begin_ai_move()
+    assert not ctrl.clock_state().running
+
+
+def test_resign_pauses_clock():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    ctrl = _controller(clock_now=FakeNow())
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.FISCHER),
+            ThinkingConfig(),
+        )
+    )
+    ctrl.resign()
+    assert not ctrl.clock_state().running

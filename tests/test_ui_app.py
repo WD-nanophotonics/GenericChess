@@ -375,7 +375,6 @@ def test_main_window_ai_match_smoke(qapp):
     ctrl.square_clicked(Square(1, 0))
     ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
     win._refresh()
-    win._maybe_start_ai()
     deadline = _time.monotonic() + 30
     while _time.monotonic() < deadline:
         qapp.processEvents()

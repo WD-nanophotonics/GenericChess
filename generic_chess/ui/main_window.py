@@ -326,6 +326,7 @@ class MainWindow(QMainWindow):
         self._rules_panel.refresh()
         self._update_action_enabled()
         self._open_promotion_if_pending()
+        self._maybe_start_ai()
 
     def _status_text(self) -> str:
         info = self._controller.game_info()

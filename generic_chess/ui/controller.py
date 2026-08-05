@@ -138,6 +138,12 @@ class UIController:
         expired = state.expired_owner
         if (
             expired is not None
+            and self._match is not None
+            and self._match.participants[expired] is ParticipantKind.AI
+        ):
+            return  # AI never forfeits on time
+        if (
+            expired is not None
             and self._session.result.status.value == "ongoing"
             and expired == self._session.state.position.side_to_move
         ):
@@ -185,6 +191,8 @@ class UIController:
         """Start an AI turn on the calling thread (View calls this on the GUI thread)."""
         if not self.ai_move_needed():
             return False
+        if self._match is not None and self._clock is not None:
+            self._clock.pause()  # AI thinking time is not charged against the clock
         self._ai_stop_requested = False
         self._ai_thinking = True
         self._ai_cancel = cancel_token
@@ -431,6 +439,8 @@ class UIController:
         if self._match is not None and self._clock is not None:
             self._clock.complete_turn(mover)
             self._clock_snapshots.append(self._clock.state())
+            if self._session.result.status is not SessionStatus.ONGOING:
+                self._clock.pause()
         self._interaction.clear_selection()
         self._last_error = None
         self._notify()
@@ -445,6 +455,8 @@ class UIController:
             self._last_error = str(exc)
             return False
         self._resigned_by = self._session.to_record().resigned_by
+        if self._match is not None and self._clock is not None:
+            self._clock.pause()
         self._interaction.clear_selection()
         self._last_error = None
         self._notify()
