@@ -5,7 +5,7 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
-from PySide6.QtCore import Qt, QTimer
+from PySide6.QtCore import QThread, Qt, QTimer, Signal
 from PySide6.QtGui import QAction, QPixmap
 from PySide6.QtWidgets import (
     QDialog,
@@ -22,6 +22,8 @@ from PySide6.QtWidgets import (
 )
 
 from ..core.actions import Action, BoardMove
+from ..ai.alphabeta.player import AlphaBetaPlayer
+from ..ai.cancellation import CancellationToken
 from ..rules.compiler import compile_ruleset
 from .adapters import owner_label
 from .board.scene import BoardRenderConfig, BoardScene
@@ -29,6 +31,7 @@ from .board.texture_cache import TextureCache
 from .board.view import BoardView
 from .controller import UIController
 from .dialogs.error_dialog import show_error, show_info
+from .dialogs.match_setup_dialog import MatchSetupDialog
 from .dialogs.new_game_dialog import NewGameDialog
 from .dialogs.preferences_dialog import PreferencesDialog
 from .dialogs.promotion_dialog import PromotionDialog
@@ -52,6 +55,32 @@ from .settings import (
 )
 from .shortcuts import SHORTCUTS
 from .theme import default_theme
+
+
+class _AiThread(QThread):
+    finished_signal = Signal(object)
+    progress_signal = Signal(int, int, int)
+
+    def __init__(self, controller, player, token) -> None:
+        super().__init__()
+        self._controller = controller
+        self._player = player
+        self._token = token
+
+    def run(self) -> None:
+        token = CancellationToken()
+
+        def progress(depth: int, nodes: int, qnodes: int) -> None:
+            self.progress_signal.emit(depth, nodes, qnodes)
+
+        limits = self._controller.ai_limits()
+        decision = self._player.choose_action(
+            self._controller.session,
+            limits,
+            cancel_token=self._token,
+            progress_callback=progress,
+        )
+        self.finished_signal.emit(decision)
 
 
 class MainWindow(QMainWindow):
@@ -110,6 +139,14 @@ class MainWindow(QMainWindow):
         self._build_menus()
         self._build_toolbar()
         self._build_statusbar()
+        self._clock_label = QLabel("")
+        self.statusBar().addPermanentWidget(self._clock_label)
+        self._ai_thread: _AiThread | None = None
+        self._ai_player: AlphaBetaPlayer | None = None
+        self._clock_timer = QTimer(self)
+        self._clock_timer.setInterval(100)
+        self._clock_timer.timeout.connect(self._clock_tick)
+        self._clock_timer.start()
         controller.subscribe(self._refresh)
         self._restore_window_state()
         self._refresh()
@@ -119,6 +156,9 @@ class MainWindow(QMainWindow):
 
     def _build_actions(self) -> None:
         self._act_new = self._action("New Game", "Ctrl+N", self._new_game)
+        self._act_ai_match = self._action("New AI Match…", "Ctrl+Shift+N", self._new_ai_match)
+        self._act_stop_ai = self._action("Stop AI", None, self._stop_ai)
+        self._act_stop_ai.setEnabled(False)
         self._act_open_ruleset = self._action("Open RuleSet…", None, self._open_ruleset)
         self._act_open_record = self._action("Open Record…", "Ctrl+O", self._open_record)
         self._act_save_record = self._action("Save Record", "Ctrl+S", self._save_record)
@@ -190,12 +230,14 @@ class MainWindow(QMainWindow):
 
         game_menu = self.menuBar().addMenu("&Game")
         for action in (
+            self._act_ai_match,
             self._act_undo,
             self._act_redo,
             self._act_restart,
             self._act_resign,
             self._act_flip,
             self._act_return,
+            self._act_stop_ai,
         ):
             game_menu.addAction(action)
 
@@ -228,6 +270,7 @@ class MainWindow(QMainWindow):
         bar.setObjectName("main_toolbar")
         for action in (
             self._act_new,
+            self._act_ai_match,
             self._act_open_ruleset,
             self._act_open_record,
             self._act_save_record,
@@ -301,6 +344,8 @@ class MainWindow(QMainWindow):
             base += f" | {len(interaction.legal_actions)} legal actions"
         if interaction.selected_hand_piece_type_id is not None:
             base += f" | drop {interaction.selected_hand_piece_type_id}: {len(interaction.legal_actions)} targets"
+        if self._controller.ai_thinking:
+            base += " | AI is thinking…"
         base += " | " + ("Saved" if info.record_path else "Ready")
         if info.result.status.value != "ongoing":
             base += f" | {info.result}"
@@ -311,9 +356,88 @@ class MainWindow(QMainWindow):
         self._act_undo.setEnabled(has_game and self._controller.can_undo)
         self._act_redo.setEnabled(has_game and self._controller.can_redo)
         self._act_resign.setEnabled(has_game)
+        self._act_stop_ai.setEnabled(self._controller.ai_thinking)
         self._act_return.setEnabled(
             self._controller.interaction.displayed_ply is not None
         )
+
+    def _clock_tick(self) -> None:
+        self._controller.clock_tick()
+        state = self._controller.clock_state()
+        if state is None:
+            self._clock_label.setText("")
+            return
+
+        def fmt(owner: int) -> str:
+            total = state.remaining_for(owner) / 1000.0
+            if state.running and state.active_owner == owner:
+                total += state.overtime_for(owner) / 1000.0
+            minutes, seconds = divmod(int(total), 60)
+            return f"{minutes:02d}:{seconds:02d}"
+
+        marker = "▶" if state.running else "❚❚"
+        text = f"White {fmt(0)} | Black {fmt(1)} {marker}"
+        if self._controller.timeout_owner is not None:
+            text += " | timeout"
+        self._clock_label.setText(text)
+
+    def _new_ai_match(self) -> None:
+        dialog = MatchSetupDialog(self._settings, self)
+        if dialog.exec() != QDialog.Accepted:
+            return
+        dialog.persist_defaults()
+        if self._controller.compiled is None:
+            show_info(self, "New AI Match", "Load a RuleSet first (File > Open RuleSet).")
+            return
+        self._controller.start_match(dialog.match_config())
+        self._ai_player = AlphaBetaPlayer(self._controller.compiled, use_disk_cache=True)
+        self._refresh()
+        self._maybe_start_ai()
+
+    def _stop_ai(self) -> None:
+        if self._controller.ai_thinking:
+            self._controller.cancel_ai()
+        else:
+            self._controller.clear_stop_request()
+            self._maybe_start_ai()
+
+    def _cancel_ai_state(self) -> None:
+        self._controller.cancel_ai()
+        self._controller.clear_stop_request()
+        if self._ai_thread is not None and self._ai_thread.isRunning():
+            self._ai_thread.wait(2000)
+        self._ai_thread = None
+        self._ai_player = None
+
+    def _maybe_start_ai(self) -> None:
+        if self._ai_thread is not None and self._ai_thread.isRunning():
+            return
+        if not self._controller.ai_move_needed() or self._ai_player is None:
+            return
+        token = CancellationToken()
+        if not self._controller.begin_ai_move(token):
+            return
+        thread = _AiThread(self._controller, self._ai_player, token)
+        thread.progress_signal.connect(self._on_ai_progress)
+        thread.finished_signal.connect(self._on_ai_finished)
+        self._ai_thread = thread
+        thread.start()
+        self._update_action_enabled()
+
+    def _on_ai_progress(self, depth: int, nodes: int, qnodes: int) -> None:
+        self._status_main.setText(
+            f"AI is thinking · depth {depth} · {nodes:,} nodes · {qnodes:,} qnodes"
+        )
+
+    def _on_ai_finished(self, _decision) -> None:
+        thread = self._ai_thread
+        self._ai_thread = None
+        if thread is not None:
+            thread.deleteLater()
+        self._controller.finish_ai_move(_decision)
+        self._refresh()
+        if not self._controller.ai_stop_requested:
+            self._maybe_start_ai()
 
     def _open_promotion_if_pending(self) -> None:
         pending = self._controller.interaction.pending_promotion_actions
@@ -344,6 +468,7 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------ slots
 
     def _new_game(self) -> None:
+        self._cancel_ai_state()
         dialog = NewGameDialog(self)
         if dialog.exec() != QDialog.Accepted:
             return
@@ -369,6 +494,7 @@ class MainWindow(QMainWindow):
         self._board_view.fit_board()
 
     def _open_ruleset(self) -> None:
+        self._cancel_ai_state()
         path, _ = QFileDialog.getOpenFileName(self, "Open RuleSet", "", "JSON files (*.json)")
         if not path:
             return
@@ -378,6 +504,7 @@ class MainWindow(QMainWindow):
         self._board_view.fit_board()
 
     def _open_record(self) -> None:
+        self._cancel_ai_state()
         if self._controller.compiled is None:
             show_info(self, "Open Record", "Load a RuleSet first (File > Open RuleSet).")
             return
@@ -508,7 +635,7 @@ class MainWindow(QMainWindow):
         show_info(
             self,
             "About GenericChess",
-            "GenericChess 0.4.0\nDeterministic generic chess/shogi-like engine "
+            "GenericChess 0.5.0\nDeterministic generic chess/shogi-like engine "
             "with a PySide6 desktop UI.",
         )
 
@@ -534,8 +661,10 @@ class MainWindow(QMainWindow):
             self._settings.set(key, checked)
 
     def _restart(self) -> None:
+        self._cancel_ai_state()
         self._controller.restart()
         self._board_view.fit_board()
+        self._maybe_start_ai()
 
     # ------------------------------------------------------------------ persistence
 

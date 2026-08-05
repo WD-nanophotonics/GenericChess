@@ -325,3 +325,84 @@ def test_texture_cache_style_dimension(qapp):
     pm_b = cache.pixmap(compiled, "P", 0, 64, style=style_b)
     assert pm_a.toImage() != pm_b.toImage()  # different styles never collide
     assert cache.pixmap(compiled, "P", 0, 64, style=style_a).toImage() == pm_a.toImage()
+
+
+def test_match_setup_dialog_values_and_persistence(qapp):
+    from generic_chess.ai.budget import ThinkingStrategy
+    from generic_chess.ui.dialogs.match_setup_dialog import MatchSetupDialog
+
+    settings = DictSettingsStore()
+    dialog = MatchSetupDialog(settings)
+    dialog._side.setCurrentIndex(1)  # play black
+    dialog._mode.setCurrentIndex(1)  # byoyomi
+    dialog._main_seconds.setValue(120)
+    dialog._overtime_seconds.setValue(15)
+    dialog._strategy.setCurrentIndex(0)  # preset
+    dialog._preset.setCurrentIndex(2)  # deep
+    dialog._accept()
+    match = dialog.match_config()
+    assert match.participants[0].value == "ai"
+    assert match.participants[1].value == "human"
+    assert match.time_control.mode.value == "byoyomi"
+    assert match.time_control.owner0.main_seconds == 120
+    assert match.ai_config.strategy is ThinkingStrategy.FIXED_NODES
+    dialog.persist_defaults()
+    assert settings.get("match/human_owner") == 1
+    assert settings.get("match/main_seconds") == 120
+
+
+def test_main_window_ai_match_smoke(qapp):
+    import time as _time
+
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.budget import ThinkingConfig
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    win.show()
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(mode=TimeControlMode.FISCHER),
+            ThinkingConfig(strategy="fixed_nodes", preset="quick", max_nodes=500),
+        )
+    )
+    win._ai_player = AlphaBetaPlayer(ctrl.compiled, use_disk_cache=False)
+    ctrl.square_clicked(Square(1, 0))
+    ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
+    win._refresh()
+    win._maybe_start_ai()
+    deadline = _time.monotonic() + 30
+    while _time.monotonic() < deadline:
+        qapp.processEvents()
+        if ctrl.session.state.ply_count == 2 and not ctrl.ai_thinking:
+            break
+        _time.sleep(0.02)
+    assert ctrl.session.state.ply_count == 2
+    assert "White" in win._clock_label.text()
+    assert not win._act_stop_ai.isEnabled()
+
+
+def test_clock_label_updates_on_tick(qapp):
+    from generic_chess.ai.budget import ThinkingConfig
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(mode=TimeControlMode.BYOYOMI),
+            ThinkingConfig(strategy="fixed_nodes", preset="quick"),
+        )
+    )
+    win._clock_tick()
+    assert "White" in win._clock_label.text()
+    assert "Black" in win._clock_label.text()

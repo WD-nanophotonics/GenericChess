@@ -72,6 +72,7 @@ class AlphaBetaPlayer:
         limits: SearchLimits,
         *,
         cancel_token: CancellationToken | None = None,
+        progress_callback=None,
     ) -> PlayerDecision:
         state = session.state
         started = time.monotonic()
@@ -86,6 +87,7 @@ class AlphaBetaPlayer:
             stats,
             use_tt=self._use_tt,
             use_ordering=self._use_ordering,
+            progress_callback=progress_callback,
         )
         elapsed = time.monotonic() - started
         return PlayerDecision(

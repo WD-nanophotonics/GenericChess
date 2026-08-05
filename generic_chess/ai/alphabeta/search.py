@@ -286,6 +286,7 @@ def run_root_search(
     *,
     use_tt: bool,
     use_ordering: bool,
+    progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
     terminal = state.terminal_status
@@ -331,6 +332,8 @@ def run_root_search(
             break
         stats.completed_depth = depth
         stats.selective_depth = depth
+        if progress_callback is not None:
+            progress_callback(depth, stats.nodes, stats.qnodes)
 
     if best is not None:
         stats.termination_reason = "completed_depth" if abort_reason is None else abort_reason

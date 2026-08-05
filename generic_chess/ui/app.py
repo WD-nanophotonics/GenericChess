@@ -18,7 +18,7 @@ def create_application(argv: list[str] | None = None) -> QApplication:
     QCoreApplication.setOrganizationName("GenericChess")
     QCoreApplication.setApplicationName("GenericChess")
     app = QApplication.instance() or QApplication(argv or sys.argv)
-    app.setApplicationVersion("0.4.0")
+    app.setApplicationVersion("0.5.0")
     return app
 
 

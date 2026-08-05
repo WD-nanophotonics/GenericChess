@@ -3,12 +3,18 @@
 from __future__ import annotations
 
 from typing import Callable
+import time
 
 from ..core.actions import Action, BoardMove, DropMove
 from ..core.attacks import is_in_check
 from ..core.coordinates import Square, square_to_index
 from ..core.pieces import Piece, PieceType
 from ..core.position import Position
+from ..ai.budget import ThinkingConfig, allocate_search_limits
+from ..ai.cancellation import CancellationToken
+from ..ai.decision import PlayerDecision
+from ..ai.limits import SearchLimits
+from ..clock import ClockState, MatchClock, TimeControl, TimeControlMode
 from ..generation.config import GenerationError, GeneratorConfig
 from ..generation.generator import generate_game
 from ..rules.compiler import compile_ruleset
@@ -21,6 +27,7 @@ from ..session.session import GameSession, SessionFinishedError, SessionRecordEr
 from . import view_models as vm
 from .adapters import movement_summary, reachable_squares
 from .interaction_state import BoardInteractionState
+from .match import MatchConfig, ParticipantKind
 from .settings import (
     KEY_AUTO_PROMOTE_UNIQUE,
     KEY_BOARD_ORIENTATION,
@@ -41,8 +48,14 @@ class UIController:
     Every game mutation goes through GameSession public semantics.
     """
 
-    def __init__(self, settings: SettingsStore | None = None) -> None:
+    def __init__(
+        self,
+        settings: SettingsStore | None = None,
+        *,
+        clock_now: Callable[[], float] | None = None,
+    ) -> None:
         self._settings = settings
+        self._clock_now = clock_now or time.monotonic
         self._compiled = None
         self._ruleset: RuleSet | None = None
         self._session: GameSession | None = None
@@ -57,6 +70,160 @@ class UIController:
         self._type_browse_id: str | None = None
         self._listeners: list[Listener] = []
         self._last_error: str | None = None
+        self._match: MatchConfig | None = None
+        self._clock: MatchClock | None = None
+        self._clock_snapshots: list[ClockState] = []
+        self._ai_thinking = False
+        self._ai_cancel: CancellationToken | None = None
+        self._ai_stop_requested = False
+        self._timeout_owner: int | None = None
+
+    # ------------------------------------------------------------------ match
+
+    def start_match(self, config: MatchConfig) -> None:
+        """Begin a Human vs AI (or any participant) match with a match clock."""
+        if self._session is None:
+            self._last_error = "load a ruleset before starting a match"
+            return
+        self._match = config
+        self._timeout_owner = None
+        self._ai_thinking = False
+        self._ai_cancel = None
+        self._clock = MatchClock(
+            config.time_control,
+            active_owner=self._session.state.position.side_to_move,
+            now=self._clock_now,
+        )
+        self._clock_snapshots = [self._clock.state()]
+        self._interaction.clear_selection()
+        self._type_browse_id = None
+        self._last_error = None
+        self._notify()
+
+    def _clear_match(self) -> None:
+        self._match = None
+        self._clock = None
+        self._clock_snapshots = []
+        self._ai_thinking = False
+        self._ai_cancel = None
+        self._ai_stop_requested = False
+        self._timeout_owner = None
+
+    @property
+    def match_active(self) -> bool:
+        return self._match is not None
+
+    @property
+    def timeout_owner(self) -> int | None:
+        return self._timeout_owner
+
+    @property
+    def ai_thinking(self) -> bool:
+        return self._ai_thinking
+
+    @property
+    def ai_stop_requested(self) -> bool:
+        return self._ai_stop_requested
+
+    def clock_state(self) -> ClockState | None:
+        if self._clock is None:
+            return None
+        return self._clock.state()
+
+    def clock_tick(self) -> None:
+        """Called by the UI timer; detects timeouts without rebuilding everything."""
+        if self._clock is None or self._match is None or self._session is None:
+            return
+        state = self._clock.state()
+        expired = state.expired_owner
+        if (
+            expired is not None
+            and self._session.result.status.value == "ongoing"
+            and expired == self._session.state.position.side_to_move
+        ):
+            try:
+                self._session.resign()
+            except ValueError:
+                return
+            self._resigned_by = self._session.to_record().resigned_by
+            self._timeout_owner = expired
+            self._ai_thinking = False
+            self._clock.pause()
+            self._interaction.clear_selection()
+            self._notify()
+
+    def ai_move_needed(self) -> bool:
+        if self._match is None or self._session is None or self._ai_thinking:
+            return False
+        if self._display_session is not None:
+            return False
+        if self._session.result.status.value != "ongoing":
+            return False
+        side = self._session.state.position.side_to_move
+        return self._match.participants[side] is ParticipantKind.AI
+
+    def make_ai_move(self, runner, cancel_token: CancellationToken | None = None) -> PlayerDecision | None:
+        """Run one AI move via the injected runner (View calls this in a worker)."""
+        if not self.begin_ai_move(cancel_token):
+            return None
+        decision = runner(self._session, self.ai_limits(), self._ai_cancel)
+        self.finish_ai_move(decision)
+        return decision
+
+    def cancel_ai(self) -> None:
+        self._ai_stop_requested = True
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
+        self._ai_thinking = False
+        self._notify()
+
+    def clear_stop_request(self) -> None:
+        self._ai_stop_requested = False
+        self._notify()
+
+    def begin_ai_move(self, cancel_token: CancellationToken | None = None) -> bool:
+        """Start an AI turn on the calling thread (View calls this on the GUI thread)."""
+        if not self.ai_move_needed():
+            return False
+        self._ai_stop_requested = False
+        self._ai_thinking = True
+        self._ai_cancel = cancel_token
+        self._notify()
+        return True
+
+    def ai_limits(self) -> SearchLimits:
+        """Build the per-move search limits for the current AI turn (pure)."""
+        side = self._session.state.position.side_to_move
+        move_number = self._session.state.ply_count + 1
+        clock_state = self._clock.state() if self._clock is not None else None
+        time_control = (
+            self._match.time_control
+            if self._clock is not None
+            else TimeControl(mode=TimeControlMode.NONE)
+        )
+        return allocate_search_limits(
+            clock_state, time_control, side, move_number, self._match.ai_config
+        )
+
+    def finish_ai_move(self, decision: PlayerDecision | None) -> bool:
+        """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
+        cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
+        session_at_start = self._session
+        committed = False
+        if (
+            not cancelled
+            and session_at_start is not None
+            and self._session is session_at_start
+            and decision is not None
+            and decision.action is not None
+        ):
+            committed = self.submit_action(decision.action)
+            if committed:
+                self._ai_stop_requested = False
+        self._ai_thinking = False
+        self._ai_cancel = None
+        self._notify()
+        return committed
 
     # ------------------------------------------------------------------ setup
 
@@ -163,6 +330,7 @@ class UIController:
         self._redo = []
         self._resigned_by = record.resigned_by
         self._record_path = path
+        self._clear_match()
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
@@ -185,6 +353,7 @@ class UIController:
         self._actions = []
         self._redo = []
         self._resigned_by = None
+        self._clear_match()
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
@@ -251,6 +420,7 @@ class UIController:
         if self._session is None or self._display_session is not None:
             self._last_error = "cannot move while viewing history preview"
             return False
+        mover = self._session.state.position.side_to_move
         try:
             self._session.submit(action)
         except (ValueError, SessionFinishedError) as exc:
@@ -258,6 +428,9 @@ class UIController:
             return False
         self._actions.append(action)
         self._redo = []
+        if self._match is not None and self._clock is not None:
+            self._clock.complete_turn(mover)
+            self._clock_snapshots.append(self._clock.state())
         self._interaction.clear_selection()
         self._last_error = None
         self._notify()
@@ -281,6 +454,16 @@ class UIController:
         self._actions = []
         self._redo = []
         self._resigned_by = None
+        self._timeout_owner = None
+        self._ai_thinking = False
+        self._ai_cancel = None
+        if self._match is not None and self._session is not None:
+            self._clock = MatchClock(
+                self._match.time_control,
+                active_owner=self._session.state.position.side_to_move,
+                now=self._clock_now,
+            )
+            self._clock_snapshots = [self._clock.state()]
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
@@ -292,6 +475,12 @@ class UIController:
         if not self._actions or self._resigned_by is not None:
             return False
         self._redo.append(self._actions.pop())
+        if self._match is not None and self._clock is not None and self._clock_snapshots:
+            self._clock_snapshots.pop()
+            if self._clock_snapshots:
+                self._clock.restore(self._clock_snapshots[-1])
+        self._ai_thinking = False
+        self._ai_cancel = None
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
@@ -304,6 +493,10 @@ class UIController:
         if not self._redo or self._resigned_by is not None:
             return False
         self._actions.append(self._redo.pop())
+        if self._match is not None and self._clock is not None:
+            mover = (len(self._actions) - 1) % 2
+            self._clock.complete_turn(mover)
+            self._clock_snapshots.append(self._clock.state())
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
@@ -314,9 +507,14 @@ class UIController:
     # ------------------------------------------------------------------ interaction
 
     def square_clicked(self, square: Square) -> None:
+        if self._ai_thinking:
+            return
         self._type_browse_id = None
         pos = self.displayed_position()
         if pos is None:
+            return
+        if self._match is not None and self._match.participants[pos.side_to_move] is ParticipantKind.AI:
+            self._last_error = "AI is to move"
             return
         if self._interaction.pending_promotion_actions:
             return  # a promotion dialog is already open
@@ -401,12 +599,16 @@ class UIController:
         self._notify()
 
     def hand_piece_clicked(self, type_id: str) -> None:
+        if self._ai_thinking:
+            return
         self._type_browse_id = None
         if self._session is None or self._display_session is not None:
             return
         if self._session.result.status is not SessionStatus.ONGOING:
             return
         side = self._session.state.position.side_to_move
+        if self._match is not None and self._match.participants[side] is ParticipantKind.AI:
+            return
         if self._session.state.position.hands[side].count(type_id) <= 0:
             return
         self._interaction.clear_selection()

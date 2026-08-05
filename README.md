@@ -236,6 +236,27 @@ print(decision.action, decision.score, decision.principal_variation,
 RuleSet 自动以 fingerprint 隔离；预算支持 depth/nodes/time/cancellation；已加入 TT 与
 保守 quiescence（捕获+升变），未加入 null-move/LMR 等高级剪枝。
 
+## Human vs AlphaBeta 对弈（0.5.0）
+
+桌面 UI 支持与通用 AlphaBeta 玩家对弈并带读秒：
+
+```powershell
+# 启动 UI，Game 菜单 > New AI Match…
+.venv\Scripts\python.exe -m generic_chess.ui --seed 42
+```
+
+`New AI Match…` 对话框可设置：
+
+* **执白/执黑**（owner 0 = 白/先手，owner 1 = 黑/後手）；
+* **时间控制**：无计时 / Byoyomi（读秒）/ Fischer（每手加秒），每方主时 + 加时/加秒，可关闭超时判负；
+* **AI 强度**：Quick/Balanced/Deep 节点预算，或固定每手秒数，可选最大深度。
+
+对局时：AI 思考在后台线程执行（不阻塞界面），状态栏实时显示双方时钟与搜索进度
+（`AI is thinking · depth 3 · 12,345 nodes`）；`Stop AI` 取消当前思考（再点一次恢复）；
+超时方按 resign 结束并在状态栏标注 `timeout`（GameRecord 兼容，`resigned_by=超时方`）；
+Undo/Restart 与时钟联动（Undo 恢复上一时刻时钟快照）。时钟是 Qt-free 的独立模块
+（`generic_chess/clock.py`），AI 预算分配见 `generic_chess/ai/budget.py`。
+
 ## 快速上手
 
 ```python
@@ -365,6 +386,8 @@ undo/redo、RuleSet/Record 文件、Preferences 与状态持久化。仍不做�
 第五阶段（0.4.0）提供通用 AlphaBeta heuristic player（规则派生棋子价值、mobility-density
 曲线、两级静态缓存、TT、move ordering、保守 quiescence、benchmark/自对局 CLI）；仍不做：
 null-move/LMR 等高级剪枝、MCTS/神经网络、Human vs AI 完整 UI 接入。
+第六阶段（0.5.0）提供 Human vs AlphaBeta 桌面对弈：执白/执黑、Byoyomi/Fischer/无计时读秒、
+AI 强度预设或每手秒数、后台搜索线程 + 实时进度 + Stop AI、超时按 resign 记录。
 
 ## 测试
 

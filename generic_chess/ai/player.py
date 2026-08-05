@@ -20,5 +20,6 @@ class Player(Protocol):
         limits: SearchLimits,
         *,
         cancel_token: CancellationToken | None = None,
+        progress_callback=None,
     ) -> PlayerDecision:
         ...
