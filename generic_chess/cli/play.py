@@ -11,7 +11,7 @@ from ..generation.config import GeneratorConfig
 from ..generation.config import GenerationError
 from ..generation.generator import generate_game
 from ..rules.compiler import compile_ruleset
-from ..rules.serialization import deserialize_ruleset
+from ..rules.serialization import deserialize_ruleset, serialize_ruleset
 from ..session.serialization import serialize_game_record
 from ..session.session import GameSession, SessionFinishedError
 from .render import format_actions, render_history, render_session, render_status
@@ -37,11 +37,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--hybrid", action="store_true", help="allow hybrid leap/ray pieces")
     parser.add_argument("--ruleset", type=str, default=None, help="path to a JSON RuleSet file")
     parser.add_argument("--record-out", type=str, default=None, help="save the GameRecord to PATH")
+    parser.add_argument("--ruleset-out", type=str, default=None, help="save the actual RuleSet to PATH")
     return parser
 
 
 def _load_ruleset(args) -> tuple:
-    """Return the compiled ruleset; raise _CliError on user-facing errors."""
+    """Return ``(compiled, ruleset)``; raise _CliError on user-facing errors."""
     if args.ruleset is not None:
         explicit = [name for name in ("seed", "board_size", "preset") if getattr(args, name) is not None]
         if args.hybrid:
@@ -60,7 +61,7 @@ def _load_ruleset(args) -> tuple:
             compiled = compile_ruleset(ruleset)
         except ValueError as exc:
             raise _CliError(f"invalid ruleset file: {exc}") from exc
-        return compiled
+        return compiled, ruleset
     seed = args.seed if args.seed is not None else 42
     board_size = args.board_size if args.board_size is not None else 8
     preset = args.preset if args.preset is not None else "classic_like"
@@ -75,13 +76,23 @@ def _load_ruleset(args) -> tuple:
         )
     except (ValueError, GenerationError) as exc:
         raise _CliError(f"cannot generate game: {exc}") from exc
-    return game.compiled_ruleset
+    return game.compiled_ruleset, game.ruleset
 
 
 def _save_record(session: GameSession, path: str) -> None:
     text = serialize_game_record(session.to_record())
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(text + "\n")
+
+
+def _same_path(a: str, b: str) -> bool:
+    """True when two paths refer to the same file (existing or not)."""
+    try:
+        if os.path.exists(a) and os.path.exists(b):
+            return os.path.samefile(a, b)
+    except OSError:
+        pass
+    return os.path.normcase(os.path.abspath(a)) == os.path.normcase(os.path.abspath(b))
 
 
 HELP_TEXT = """commands:
@@ -102,20 +113,34 @@ def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: Tex
     stdin = stdin if stdin is not None else sys.stdin
     stdout = stdout if stdout is not None else sys.stdout
 
-    if args.record_out is not None and args.ruleset is not None:
-        try:
-            if os.path.exists(args.record_out) and os.path.exists(args.ruleset):
-                if os.path.samefile(args.record_out, args.ruleset):
-                    print("error: --record-out must not overwrite the ruleset file", file=sys.stderr)
-                    return 2
-        except OSError:
-            pass
+    if (
+        args.record_out is not None
+        and args.ruleset is not None
+        and _same_path(args.record_out, args.ruleset)
+    ):
+        print("error: --record-out must not overwrite the ruleset file", file=sys.stderr)
+        return 2
 
     try:
-        compiled = _load_ruleset(args)
+        compiled, ruleset = _load_ruleset(args)
     except _CliError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
+
+    if args.ruleset_out is not None:
+        targets = [path for path in (args.record_out, args.ruleset) if path is not None]
+        for other in targets:
+            if _same_path(args.ruleset_out, other):
+                print(
+                    f"error: --ruleset-out must not point at the same file as {other}",
+                    file=sys.stderr,
+                )
+                return 2
+        try:
+            _save_text(serialize_ruleset(ruleset), args.ruleset_out)
+        except OSError as exc:
+            print(f"error: cannot write ruleset file: {exc}", file=sys.stderr)
+            return 1
 
     session = GameSession(compiled)
     record_path = args.record_out
@@ -195,6 +220,11 @@ def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: Tex
             return 1
         print_out(f"record saved to {record_path}")
     return 0
+
+
+def _save_text(text: str, path: str) -> None:
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(text + "\n")
 
 
 def input_line(stdin: TextIO) -> str:

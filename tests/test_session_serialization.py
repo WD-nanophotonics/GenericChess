@@ -65,6 +65,38 @@ def test_unknown_action_field_rejected():
         deserialize_game_record(json.dumps(data))
 
 
+def test_board_action_rejects_drop_field():
+    data = {
+        "schema_version": 1,
+        "ruleset_fingerprint": "fp",
+        "actions": [
+            {"kind": "board", "from": [0, 0], "to": [1, 1], "base_type_id": "P"}
+        ],
+        "resigned_by": None,
+    }
+    with pytest.raises(SessionRecordError):
+        deserialize_game_record(json.dumps(data))
+
+
+def test_drop_action_rejects_board_fields():
+    data = {
+        "schema_version": 1,
+        "ruleset_fingerprint": "fp",
+        "actions": [
+            {
+                "kind": "drop",
+                "base_type_id": "P",
+                "to": [2, 2],
+                "from": [7, 7],
+                "promotion_target_id": "G",
+            }
+        ],
+        "resigned_by": None,
+    }
+    with pytest.raises(SessionRecordError):
+        deserialize_game_record(json.dumps(data))
+
+
 def test_unsupported_schema_rejected():
     data = json.loads(serialize_game_record(_record()))
     data["schema_version"] = 2

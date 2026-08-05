@@ -56,6 +56,7 @@ rebuilt = GameSession.replay(game.compiled_ruleset, deserialize_game_record(text
 ```
 
 序列化是规范 JSON（key 排序、紧凑分隔符、稳定输出）；反序列化严格校验字段类型（坐标为真整数，bool 不算；`schema_version` 只接受 1；`resigned_by` 只接受 0/1/null；未知字段一律拒绝），畸形输入统一抛 `SessionRecordError`，不会泄漏裸解析异常。
+动作字段按 kind 严格区分：`board` 只接受 `kind/from/to/promotion_target_id`，`drop` 只接受 `kind/base_type_id/to`；混入另一类型字段（如 board 带 `base_type_id`）一律按未知字段拒绝。
 
 ## 安装与测试
 
@@ -83,12 +84,15 @@ python -m venv .venv
 # 保存对局记录（终局/认输/quit 时写入）
 .venv\Scripts\python.exe -m generic_chess.cli.play --seed 42 --record-out game.json
 
+# 同时保存本局实际 RuleSet 与对局记录，形成可独立回放的闭环
+.venv\Scripts\python.exe -m generic_chess.cli.play --seed 42 --ruleset-out rules.json --record-out game.json
+
 # 回放记录（必须显式提供 RuleSet 文件）
 .venv\Scripts\python.exe -m generic_chess.cli.replay --ruleset rules.json --record game.json
 .venv\Scripts\python.exe -m generic_chess.cli.replay --ruleset rules.json --record game.json --final-only
 ```
 
-对局中可输入：合法动作编号（`1`）、与 `str(action)` 完全一致的动作串（如 `e2-e4`、`P@e4`）、`moves`、`board`、`history`、`help`、`resign`、`quit`。`--ruleset` 与 `--seed`/`--board-size`/`--preset`/`--hybrid` 同时给出时会明确报错（exit 2），不会静默忽略。棋盘/持驹/行动方/check/ply/fingerprint 短前缀均为纯文本显示，不依赖颜色终端。
+对局中可输入：合法动作编号（`1`）、与 `str(action)` 完全一致的动作串（如 `e2-e4`、`P@e4`）、`moves`、`board`、`history`、`help`、`resign`、`quit`。`--ruleset` 与 `--seed`/`--board-size`/`--preset`/`--hybrid` 同时给出时会明确报错（exit 2），不会静默忽略。`--ruleset-out` 在启动时写出本局实际 RuleSet（确定性、独立于对局进度），且不能与 `--record-out` 或 `--ruleset` 指向同一文件。棋盘以 `0:P` / `1:P` / `0:+G` 明确标识棋子阵营与升变状态（纯文本，不依赖颜色终端）。
 
 ## 快速上手
 

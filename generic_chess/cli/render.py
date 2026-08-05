@@ -16,7 +16,8 @@ if TYPE_CHECKING:
 def _cell_text(piece) -> str:
     if piece is None:
         return "."
-    return ("+" if piece.promoted else "") + piece.current_type_id
+    promoted = "+" if piece.promoted else ""
+    return f"{piece.owner}:{promoted}{piece.current_type_id}"
 
 
 def render_board(position: Position, n: int) -> str:

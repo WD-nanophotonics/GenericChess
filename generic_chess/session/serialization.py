@@ -66,12 +66,12 @@ def _action_to_dict(action: Action) -> dict[str, Any]:
 
 def _action_from_dict(data: dict, path: str) -> Action:
     """Strict action parser (does not trust :func:`action_from_dict`)."""
-    allowed = {"kind", "from", "to", "promotion_target_id", "base_type_id"}
-    unknown = set(data) - allowed
-    if unknown:
-        raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
     kind = _require_str(_require_field(data, "kind", path), f"{path}.kind")
     if kind == "board":
+        allowed = {"kind", "from", "to", "promotion_target_id"}
+        unknown = set(data) - allowed
+        if unknown:
+            raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
         from_pair = _require_int_pair(_require_field(data, "from", path), f"{path}.from")
         to_pair = _require_int_pair(_require_field(data, "to", path), f"{path}.to")
         promotion = data.get("promotion_target_id")
@@ -83,6 +83,10 @@ def _action_from_dict(data: dict, path: str) -> Action:
             promotion,
         )
     if kind == "drop":
+        allowed = {"kind", "base_type_id", "to"}
+        unknown = set(data) - allowed
+        if unknown:
+            raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
         base = _require_str(_require_field(data, "base_type_id", path), f"{path}.base_type_id")
         to_pair = _require_int_pair(_require_field(data, "to", path), f"{path}.to")
         return DropMove(base, Square(to_pair[0], to_pair[1]))

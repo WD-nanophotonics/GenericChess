@@ -177,3 +177,82 @@ def test_replay_main_injectable_streams(cli_tmp_dir: Path):
     )
     assert code == 0
     assert "final result" in out.getvalue()
+
+
+def test_play_generate_save_ruleset_and_record_then_replay(cli_tmp_dir: Path):
+    ruleset = cli_tmp_dir / "rules.json"
+    record = cli_tmp_dir / "game.json"
+    proc = _run(
+        [
+            "generic_chess.cli.play",
+            "--seed",
+            "42",
+            "--ruleset-out",
+            str(ruleset),
+            "--record-out",
+            str(record),
+        ],
+        "1\nresign\n",
+    )
+    assert proc.returncode == 0, proc.stderr
+    assert ruleset.exists()
+    assert record.exists()
+
+    from generic_chess.rules.compiler import compile_ruleset
+    from generic_chess.rules.serialization import deserialize_ruleset
+
+    compiled = compile_ruleset(deserialize_ruleset(ruleset.read_text(encoding="utf-8")))
+    rec_data = json.loads(record.read_text(encoding="utf-8"))
+    assert compiled.ruleset_fingerprint == rec_data["ruleset_fingerprint"]
+
+    replay = _run(
+        ["generic_chess.cli.replay", "--ruleset", str(ruleset), "--record", str(record)],
+        "",
+    )
+    assert replay.returncode == 0, replay.stderr
+    assert "final result: resignation" in replay.stdout
+
+
+def test_ruleset_out_conflict_with_record_out(cli_tmp_dir: Path):
+    same = cli_tmp_dir / "out.json"
+    proc = _run(
+        [
+            "generic_chess.cli.play",
+            "--seed",
+            "42",
+            "--ruleset-out",
+            str(same),
+            "--record-out",
+            str(same),
+        ],
+        "",
+    )
+    assert proc.returncode == 2
+    assert "same file" in proc.stderr
+
+
+def test_ruleset_out_conflict_with_input_ruleset(cli_tmp_dir: Path):
+    ruleset = cli_tmp_dir / "rules.json"
+    ruleset.write_text(
+        serialize_ruleset(generate_game(GeneratorConfig(seed=42)).ruleset), encoding="utf-8"
+    )
+    proc = _run(
+        ["generic_chess.cli.play", "--ruleset", str(ruleset), "--ruleset-out", str(ruleset)],
+        "",
+    )
+    assert proc.returncode == 2
+    assert "same file" in proc.stderr
+
+
+def test_play_main_ruleset_out_injectable(cli_tmp_dir: Path):
+    ruleset = cli_tmp_dir / "rules.json"
+    code = play_mod.main(
+        ["--seed", "42", "--ruleset-out", str(ruleset)],
+        stdin=StringIO("quit\n"),
+        stdout=StringIO(),
+    )
+    assert code == 0
+    assert ruleset.exists()
+    data = json.loads(ruleset.read_text(encoding="utf-8"))
+    assert data["schema_version"] == 1
+    assert data["board_size"] == 8
