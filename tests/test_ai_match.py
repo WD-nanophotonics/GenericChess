@@ -133,7 +133,7 @@ def test_restart_resets_clock():
     assert state.active_owner == 0
 
 
-def test_timeout_ends_match_as_resignation():
+def test_human_timeout_does_not_end_match():
     class FakeNow:
         def __init__(self):
             self.t = 0.0
@@ -145,11 +145,11 @@ def test_timeout_ends_match_as_resignation():
     ctrl = _controller(clock_now=now)
     ctrl.new_game(seed=42)
     ctrl.start_match(_match_config(0, mode=TimeControlMode.FISCHER))
-    now.t += 61.0  # human's 60s main + 1s: fischer -> expired
+    now.t += 61.0  # human's 60s main + 1s: fischer clock would be expired
     ctrl.clock_tick()
-    assert ctrl.timeout_owner == 0
-    assert ctrl.session.result.status.value == "resignation"
-    assert ctrl.session.to_record().resigned_by == 0
+    # Time controls are display/budget only: the game keeps going.
+    assert ctrl.session.result.status.value == "ongoing"
+    assert ctrl.session.to_record().resigned_by is None
 
 
 def test_cancelled_ai_does_not_submit():
@@ -265,7 +265,6 @@ def test_ai_never_forfeits_on_time():
     now.t += 60.0
     ctrl.clock_tick()
     assert ctrl.session.result.status.value == "ongoing"
-    assert ctrl.timeout_owner is None
     assert ctrl.ai_move_needed()
     # begin_ai_move pauses the clock so AI thinking consumes no time.
     assert ctrl.begin_ai_move()
@@ -293,7 +292,7 @@ def test_resign_pauses_clock():
     assert not ctrl.clock_state().running
 
 
-def test_expired_human_cannot_continue_playing():
+def test_expired_human_can_continue_playing():
     class FakeNow:
         def __init__(self):
             self.t = 0.0
@@ -316,11 +315,9 @@ def test_expired_human_cannot_continue_playing():
         )
     )
     now.t += 3.0
-    # A click (instead of the UI timer) must still adjudicate the timeout.
+    # Expired clock must not stop the human from playing.
     ctrl.square_clicked(Square(1, 0))
-    assert ctrl.timeout_owner == 0
-    assert ctrl.session.result.status.value == "resignation"
-    assert ctrl.session.to_record().resigned_by == 0
-    # Any further attempt is a no-op: the game cannot continue.
-    ctrl.square_clicked(Square(2, 0))
-    assert ctrl.session.state.ply_count == 0
+    assert ctrl.interaction.selected_square == Square(1, 0)
+    assert ctrl.session.result.status.value == "ongoing"
+    ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
+    assert ctrl.session.state.ply_count == 1

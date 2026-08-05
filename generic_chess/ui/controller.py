@@ -76,7 +76,6 @@ class UIController:
         self._ai_thinking = False
         self._ai_cancel: CancellationToken | None = None
         self._ai_stop_requested = False
-        self._timeout_owner: int | None = None
 
     # ------------------------------------------------------------------ match
 
@@ -86,7 +85,6 @@ class UIController:
             self._last_error = "load a ruleset before starting a match"
             return
         self._match = config
-        self._timeout_owner = None
         self._ai_thinking = False
         self._ai_cancel = None
         self._clock = MatchClock(
@@ -107,15 +105,10 @@ class UIController:
         self._ai_thinking = False
         self._ai_cancel = None
         self._ai_stop_requested = False
-        self._timeout_owner = None
 
     @property
     def match_active(self) -> bool:
         return self._match is not None
-
-    @property
-    def timeout_owner(self) -> int | None:
-        return self._timeout_owner
 
     @property
     def ai_thinking(self) -> bool:
@@ -135,32 +128,7 @@ class UIController:
         self._check_timeout()
 
     def _check_timeout(self) -> bool:
-        """Adjudicate a timeout now; returns True when the game just ended."""
-        if self._clock is None or self._match is None or self._session is None:
-            return False
-        state = self._clock.state()
-        expired = state.expired_owner
-        if (
-            expired is not None
-            and self._match.participants[expired] is ParticipantKind.AI
-        ):
-            return False  # AI never forfeits on time
-        if (
-            expired is not None
-            and self._session.result.status.value == "ongoing"
-            and expired == self._session.state.position.side_to_move
-        ):
-            try:
-                self._session.resign()
-            except ValueError:
-                return False
-            self._resigned_by = self._session.to_record().resigned_by
-            self._timeout_owner = expired
-            self._ai_thinking = False
-            self._clock.pause()
-            self._interaction.clear_selection()
-            self._notify()
-            return True
+        """Time controls are display/budget only: nobody forfeits on time."""
         return False
 
     def ai_move_needed(self) -> bool:
@@ -473,7 +441,6 @@ class UIController:
         self._actions = []
         self._redo = []
         self._resigned_by = None
-        self._timeout_owner = None
         self._ai_thinking = False
         self._ai_cancel = None
         if self._match is not None and self._session is not None:

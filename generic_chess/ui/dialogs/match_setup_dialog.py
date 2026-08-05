@@ -58,9 +58,6 @@ class MatchSetupDialog(QDialog):
         self._overtime_seconds.setRange(0, 600)
         self._overtime_seconds.setValue(int(settings.get("match/overtime_seconds", 30)))
         clock_form.addRow("Byoyomi / increment (seconds)", self._overtime_seconds)
-        self._forfeit = QCheckBox("Time forfeit ends the game")
-        self._forfeit.setChecked(bool(settings.get("match/forfeit", True)))
-        clock_form.addRow("", self._forfeit)
         layout.addWidget(clock_box)
 
         ai_box = QGroupBox("AI strength")
@@ -98,7 +95,7 @@ class MatchSetupDialog(QDialog):
             mode=mode,
             owner0=side,
             owner1=side,
-            time_forfeit=self._forfeit.isChecked(),
+            time_forfeit=False,  # v0.5: clocks are display/budget only, never adjudicated
         )
         if self._strategy.currentIndex() == 0:
             config = ThinkingConfig(
@@ -142,7 +139,6 @@ class MatchSetupDialog(QDialog):
         self._settings.set("match/mode", self._mode.currentIndex())
         self._settings.set("match/main_seconds", self._main_seconds.value())
         self._settings.set("match/overtime_seconds", self._overtime_seconds.value())
-        self._settings.set("match/forfeit", self._forfeit.isChecked())
         self._settings.set("match/strategy", self._strategy.currentIndex())
         self._settings.set("match/preset", self._preset.currentIndex())
         self._settings.set("match/move_time", self._move_time.value())

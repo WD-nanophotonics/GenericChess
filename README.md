@@ -253,8 +253,9 @@ RuleSet 自动以 fingerprint 隔离；预算支持 depth/nodes/time/cancellatio
 
 对局时：AI 思考在后台线程执行（不阻塞界面），状态栏实时显示双方时钟与搜索进度
 （`AI is thinking · depth 3 · 12,345 nodes`）；`Stop AI` 取消当前思考（再点一次恢复）；
-超时方按 resign 结束并在状态栏标注 `timeout`（GameRecord 兼容，`resigned_by=超时方`）；
-Undo/Restart 与时钟联动（Undo 恢复上一时刻时钟快照）。时钟是 Qt-free 的独立模块
+时间控制只用于显示与 AI 每手预算（AI 思考期间时钟暂停），**任何一方（包括人类）都不会因
+超时判负**，时间耗尽后对局照常继续；Undo/Restart 与时钟联动（Undo 恢复上一时刻时钟快照）。
+时钟是 Qt-free 的独立模块
 （`generic_chess/clock.py`），AI 预算分配见 `generic_chess/ai/budget.py`。
 
 ## 快速上手
