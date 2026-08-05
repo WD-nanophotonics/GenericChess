@@ -20,10 +20,10 @@ class PieceTextureStyle:
     center_marker_ratio: float = 0.20
     white_fill: str = "#f5f5f5"
     white_stroke: str = "#1f1f1f"
-    white_center_fill: str = "#1f1f1f"
+    white_center_fill: str = "#f5f5f5"
     black_fill: str = "#1f1f1f"
     black_stroke: str = "#f0f0f0"
-    black_center_fill: str = "#f0f0f0"
+    black_center_fill: str = "#1f1f1f"
     neutral_fill: str = "#9a9a9a"
     neutral_stroke: str = "#1c1c1c"
     neutral_center_fill: str = "#1c1c1c"

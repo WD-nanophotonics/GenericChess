@@ -7,6 +7,7 @@ import pytest
 from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.core.pieces import PieceType
 from generic_chess.visual import PieceTextureStyle, generate_piece_texture
+from generic_chess.visual.texture_style import palette_for
 
 
 def pt(tid: str, *atoms, **kw) -> PieceType:
@@ -36,6 +37,39 @@ def test_owner_palette_differs():
     assert w.fingerprint != b.fingerprint
     assert "#f5f5f5" in w.svg  # white fill
     assert "#1f1f1f" in b.svg  # black fill
+
+
+def _luminance(hex_color: str) -> float:
+    h = hex_color.lstrip("#")
+    r, g, b = (int(h[i : i + 2], 16) for i in (0, 2, 4))
+    return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255.0
+
+
+def test_palette_center_marker_matches_side():
+    style = PieceTextureStyle()
+    assert palette_for(style, 0)[2] == style.white_center_fill
+    assert palette_for(style, 1)[2] == style.black_center_fill
+
+
+def test_center_marker_light_for_white_dark_for_black():
+    style = PieceTextureStyle()
+    assert _luminance(style.white_center_fill) > 0.5  # owner 0: light center origin
+    assert _luminance(style.black_center_fill) < 0.5  # owner 1: dark center origin
+
+
+def test_svg_center_circle_side_colors():
+    style = PieceTextureStyle()
+    w = generate_piece_texture(ROOK_RAY, owner=0, size=96, style=style).svg
+    b = generate_piece_texture(ROOK_RAY, owner=1, size=96, style=style).svg
+
+    def center_circle_fill(svg: str) -> str:
+        circles = re.findall(r"<circle[^>]*fill=\"([^\"]+)\"", svg)
+        assert len(circles) == 1  # exactly one center marker circle
+        return circles[0]
+
+    assert center_circle_fill(w) == style.white_center_fill
+    assert center_circle_fill(b) == style.black_center_fill
+    assert center_circle_fill(w) != center_circle_fill(b)
 
 
 def test_pawn_orientation_mirrors_for_owner1():

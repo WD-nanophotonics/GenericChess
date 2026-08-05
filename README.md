@@ -156,8 +156,9 @@ PySide6 View；视图不直接调用 `apply_action`，全部走子通过 Control
 公共语义执行，绝不触碰 `_apply_action_unchecked`。Controller 是无 Qt 依赖的纯 Python
 （设置存储抽象在 `ui/stores.py`，`QtSettingsStore` 作为 Qt 适配器在 View 层）。
 
-视觉约定：**owner 0 = 先手 = 白方**（浅色主体 + 深色描边/中心点），**owner 1 = 后手 = 黑方**
-（深色主体 + 浅色描边/中心点）；棋盘默认 owner 0 在下方，Flip 只改变棋盘朝向，不改变
+视觉约定：**阵营色由 texture 的中心原点（center marker）颜色定义**——**owner 0 = 先手 =
+白方**：白色中心原点 + 深色反差描边（外围主体为浅色）；**owner 1 = 后手 = 黑方**：黑色中心
+原点 + 浅色反差描边（外围主体为深色）。棋盘默认 owner 0 在下方，Flip 只改变棋盘朝向，不改变
 owner↔颜色映射。所有文案统一为 `White / Player 0 (先手)` / `Black / Player 1 (後手)`。
 
 **持ち駒台（hand stand）**：棋盘上方固定显示后手台、下方固定显示先手台（随棋盘翻转跟随，
