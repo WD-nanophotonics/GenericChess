@@ -377,7 +377,10 @@ class MainWindow(QMainWindow):
             return f"{minutes:02d}:{seconds:02d}"
 
         marker = "▶" if state.running else "❚❚"
-        self._clock_label.setText(f"White {fmt(0)} | Black {fmt(1)} {marker}")
+        text = f"White {fmt(0)} | Black {fmt(1)} {marker}"
+        if self._controller.timeout_owner is not None:
+            text += " | AI timeout"
+        self._clock_label.setText(text)
 
     def _new_ai_match(self) -> None:
         dialog = MatchSetupDialog(self._settings, self)

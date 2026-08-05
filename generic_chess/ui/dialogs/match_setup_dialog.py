@@ -95,7 +95,7 @@ class MatchSetupDialog(QDialog):
             mode=mode,
             owner0=side,
             owner1=side,
-            time_forfeit=False,  # v0.5: clocks are display/budget only, never adjudicated
+            time_forfeit=True,  # AI forfeits on time; humans are exempt
         )
         if self._strategy.currentIndex() == 0:
             config = ThinkingConfig(

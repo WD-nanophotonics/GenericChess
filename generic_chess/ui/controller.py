@@ -76,6 +76,7 @@ class UIController:
         self._ai_thinking = False
         self._ai_cancel: CancellationToken | None = None
         self._ai_stop_requested = False
+        self._timeout_owner: int | None = None
 
     # ------------------------------------------------------------------ match
 
@@ -87,6 +88,7 @@ class UIController:
         self._match = config
         self._ai_thinking = False
         self._ai_cancel = None
+        self._timeout_owner = None
         self._clock = MatchClock(
             config.time_control,
             active_owner=self._session.state.position.side_to_move,
@@ -105,6 +107,7 @@ class UIController:
         self._ai_thinking = False
         self._ai_cancel = None
         self._ai_stop_requested = False
+        self._timeout_owner = None
 
     @property
     def match_active(self) -> bool:
@@ -128,8 +131,36 @@ class UIController:
         self._check_timeout()
 
     def _check_timeout(self) -> bool:
-        """Time controls are display/budget only: nobody forfeits on time."""
-        return False
+        """AI forfeits on time; humans are never adjudicated on time."""
+        if self._clock is None or self._match is None or self._session is None:
+            return False
+        state = self._clock.state()
+        expired = state.expired_owner
+        if expired is None:
+            return False
+        if self._match.participants[expired] is not ParticipantKind.AI:
+            return False  # humans never forfeit on time
+        if self._session.result.status.value != "ongoing":
+            return False
+        if expired != self._session.state.position.side_to_move:
+            return False
+        try:
+            self._session.resign()
+        except ValueError:
+            return False
+        self._resigned_by = self._session.to_record().resigned_by
+        self._timeout_owner = expired
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
+        self._ai_thinking = False
+        self._clock.pause()
+        self._interaction.clear_selection()
+        self._notify()
+        return True
+
+    @property
+    def timeout_owner(self) -> int | None:
+        return self._timeout_owner
 
     def ai_move_needed(self) -> bool:
         if self._match is None or self._session is None or self._ai_thinking:
@@ -164,8 +195,6 @@ class UIController:
         """Start an AI turn on the calling thread (View calls this on the GUI thread)."""
         if not self.ai_move_needed():
             return False
-        if self._match is not None and self._clock is not None:
-            self._clock.pause()  # AI thinking time is not charged against the clock
         self._ai_stop_requested = False
         self._ai_thinking = True
         self._ai_cancel = cancel_token
@@ -443,6 +472,7 @@ class UIController:
         self._resigned_by = None
         self._ai_thinking = False
         self._ai_cancel = None
+        self._timeout_owner = None
         if self._match is not None and self._session is not None:
             self._clock = MatchClock(
                 self._match.time_control,

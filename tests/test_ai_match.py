@@ -237,7 +237,7 @@ def test_terminal_pauses_clock():
     assert not ctrl.clock_state().running  # clock stops at game over
 
 
-def test_ai_never_forfeits_on_time():
+def test_ai_timeout_adjudicates_loss():
     class FakeNow:
         def __init__(self):
             self.t = 0.0
@@ -261,14 +261,44 @@ def test_ai_never_forfeits_on_time():
     )
     ctrl.square_clicked(Square(2, 0))  # mate-ruleset P0 king
     ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
-    # AI turn: even if the clock somehow runs, the AI side is never forfeited.
-    now.t += 60.0
+    assert ctrl.clock_state().active_owner == 1  # AI turn, clock running
+    now.t += 3.0  # AI's 2s main time exceeded
     ctrl.clock_tick()
-    assert ctrl.session.result.status.value == "ongoing"
-    assert ctrl.ai_move_needed()
-    # begin_ai_move pauses the clock so AI thinking consumes no time.
+    assert ctrl.session.result.status.value == "resignation"
+    assert ctrl.session.to_record().resigned_by == 1
+    assert ctrl.timeout_owner == 1
+    assert not ctrl.ai_move_needed()
+
+
+def test_ai_thinking_clock_ticks():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(60, 10),
+                owner1=SideTimeConfig(60, 10),
+            ),
+            ThinkingConfig(strategy="fixed_nodes", preset="quick", max_nodes=500),
+        )
+    )
+    _human_move(ctrl)
     assert ctrl.begin_ai_move()
-    assert not ctrl.clock_state().running
+    assert ctrl.clock_state().running  # clock visibly ticks during AI thinking
+    assert ctrl.clock_state().active_owner == 1
+    before = ctrl.clock_state().remaining_for(1)
+    now.t += 1.0
+    assert ctrl.clock_state().remaining_for(1) < before
 
 
 def test_resign_pauses_clock():
