@@ -291,3 +291,36 @@ def test_resign_pauses_clock():
     )
     ctrl.resign()
     assert not ctrl.clock_state().running
+
+
+def test_expired_human_cannot_continue_playing():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.HUMAN),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(),
+        )
+    )
+    now.t += 3.0
+    # A click (instead of the UI timer) must still adjudicate the timeout.
+    ctrl.square_clicked(Square(1, 0))
+    assert ctrl.timeout_owner == 0
+    assert ctrl.session.result.status.value == "resignation"
+    assert ctrl.session.to_record().resigned_by == 0
+    # Any further attempt is a no-op: the game cannot continue.
+    ctrl.square_clicked(Square(2, 0))
+    assert ctrl.session.state.ply_count == 0

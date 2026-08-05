@@ -132,16 +132,19 @@ class UIController:
 
     def clock_tick(self) -> None:
         """Called by the UI timer; detects timeouts without rebuilding everything."""
+        self._check_timeout()
+
+    def _check_timeout(self) -> bool:
+        """Adjudicate a timeout now; returns True when the game just ended."""
         if self._clock is None or self._match is None or self._session is None:
-            return
+            return False
         state = self._clock.state()
         expired = state.expired_owner
         if (
             expired is not None
-            and self._match is not None
             and self._match.participants[expired] is ParticipantKind.AI
         ):
-            return  # AI never forfeits on time
+            return False  # AI never forfeits on time
         if (
             expired is not None
             and self._session.result.status.value == "ongoing"
@@ -150,13 +153,15 @@ class UIController:
             try:
                 self._session.resign()
             except ValueError:
-                return
+                return False
             self._resigned_by = self._session.to_record().resigned_by
             self._timeout_owner = expired
             self._ai_thinking = False
             self._clock.pause()
             self._interaction.clear_selection()
             self._notify()
+            return True
+        return False
 
     def ai_move_needed(self) -> bool:
         if self._match is None or self._session is None or self._ai_thinking:
@@ -425,6 +430,8 @@ class UIController:
     # ------------------------------------------------------------------ actions
 
     def submit_action(self, action: Action) -> bool:
+        if self._check_timeout():
+            return False
         if self._session is None or self._display_session is not None:
             self._last_error = "cannot move while viewing history preview"
             return False
@@ -519,6 +526,8 @@ class UIController:
     # ------------------------------------------------------------------ interaction
 
     def square_clicked(self, square: Square) -> None:
+        if self._check_timeout():
+            return
         if self._ai_thinking:
             return
         self._type_browse_id = None
@@ -611,6 +620,8 @@ class UIController:
         self._notify()
 
     def hand_piece_clicked(self, type_id: str) -> None:
+        if self._check_timeout():
+            return
         if self._ai_thinking:
             return
         self._type_browse_id = None
