@@ -150,3 +150,23 @@ def test_ui_module_entry_smoke():
     )
     assert proc.returncode == 0, proc.stderr
     assert "Traceback" not in proc.stderr
+
+
+def test_run_ui_launcher_smoke():
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    env = dict(os.environ)
+    env["QT_QPA_PLATFORM"] = "offscreen"
+    root = Path(__file__).resolve().parent.parent
+    proc = subprocess.run(
+        [sys.executable, str(root / "run_ui.py"), "--smoke"],
+        capture_output=True,
+        text=True,
+        env=env,
+        encoding="utf-8",
+        timeout=120,
+    )
+    assert proc.returncode == 0, proc.stderr
+    assert "Traceback" not in proc.stderr
