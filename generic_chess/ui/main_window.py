@@ -508,7 +508,7 @@ class MainWindow(QMainWindow):
         show_info(
             self,
             "About GenericChess",
-            "GenericChess 0.3.0\nDeterministic generic chess/shogi-like engine "
+            "GenericChess 0.4.0\nDeterministic generic chess/shogi-like engine "
             "with a PySide6 desktop UI.",
         )
 

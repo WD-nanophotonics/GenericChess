@@ -1,0 +1,106 @@
+"""AlphaBetaPlayer: the public AI player interface."""
+
+from __future__ import annotations
+
+import time
+
+from ...rules.compiled import CompiledRuleSet
+from ...session.session import GameSession
+from ..cancellation import CancellationToken
+from ..decision import PlayerDecision
+from ..evaluation.cache import EvaluationProfileCache
+from ..evaluation.config import EvaluationConfig
+from ..evaluation.evaluator import Evaluator
+from ..limits import SearchLimits
+from .search import run_root_search
+from .statistics import SearchStatistics
+from .transposition import TranspositionTable
+
+
+class AlphaBetaPlayer:
+    """Deterministic, rule-derived alpha-beta player for any GenericChess RuleSet.
+
+    The evaluation profile is built once per RuleSet (cached); the
+    transposition table is kept across moves for the same RuleSet and cleared
+    when a different RuleSet is loaded.
+    """
+
+    def __init__(
+        self,
+        compiled: CompiledRuleSet,
+        *,
+        evaluation_config: EvaluationConfig | None = None,
+        tt_max_entries: int = 250_000,
+        profile_cache: EvaluationProfileCache | None = None,
+        use_disk_cache: bool = True,
+        disk_cache_dir: str | None = None,
+        use_tt: bool = True,
+        use_ordering: bool = True,
+    ) -> None:
+        self._compiled = compiled
+        self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
+        self._profile_cache = profile_cache or EvaluationProfileCache(
+            use_disk=use_disk_cache, disk_dir=disk_cache_dir
+        )
+        self._profile, self._profile_cache_hit = self._profile_cache.get_or_build(
+            compiled, self._config
+        )
+        self._evaluator = Evaluator(compiled, self._profile, self._config)
+        self._tt = TranspositionTable(max_entries=tt_max_entries)
+        self._use_tt = use_tt
+        self._use_ordering = use_ordering
+
+    @property
+    def compiled(self) -> CompiledRuleSet:
+        return self._compiled
+
+    @property
+    def evaluation_profile(self):
+        return self._profile
+
+    @property
+    def evaluation_profile_cache_hit(self) -> bool:
+        return self._profile_cache_hit
+
+    def reset(self) -> None:
+        """Clear search state (e.g., after loading a different RuleSet)."""
+        self._tt.clear()
+
+    def choose_action(
+        self,
+        session: GameSession,
+        limits: SearchLimits,
+        *,
+        cancel_token: CancellationToken | None = None,
+    ) -> PlayerDecision:
+        state = session.state
+        started = time.monotonic()
+        stats = SearchStatistics()
+        action, score, pv, reason = run_root_search(
+            state,
+            self._compiled,
+            self._evaluator,
+            self._tt,
+            limits,
+            cancel_token,
+            stats,
+            use_tt=self._use_tt,
+            use_ordering=self._use_ordering,
+        )
+        elapsed = time.monotonic() - started
+        return PlayerDecision(
+            action=action,
+            score=score,
+            principal_variation=pv,
+            completed_depth=stats.completed_depth,
+            selective_depth=stats.selective_depth,
+            nodes=stats.nodes,
+            qnodes=stats.qnodes,
+            elapsed_seconds=elapsed,
+            tt_probes=stats.tt_probes,
+            tt_hits=stats.tt_hits,
+            tt_cutoffs=stats.tt_cutoffs,
+            beta_cutoffs=stats.beta_cutoffs,
+            evaluation_profile_cache_hit=self._profile_cache_hit,
+            termination_reason=reason,
+        )

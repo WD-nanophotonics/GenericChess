@@ -198,6 +198,44 @@ $env:QT_QPA_PLATFORM='offscreen'
 .venv\Scripts\python.exe -m generic_chess.ui --seed 42 --smoke
 ```
 
+## 通用 AlphaBeta Player（0.4.0）
+
+`generic_chess.ai` 是适用于任意 GenericChess RuleSet 的通用 AlphaBeta 启发式玩家。它不依赖
+传统棋种名称或固定子力表：棋子价值完全由 movement geometry、升变、drop、anchor/终局语义
+自动推导，同一几何换任何 `type_id` 估值不变。设计细节见
+[`docs/alphabeta_design.md`](docs/alphabeta_design.md)。
+
+```python
+from generic_chess.ai import AlphaBetaPlayer
+from generic_chess.ai.limits import SearchLimits
+from generic_chess.session.session import GameSession
+
+session = GameSession(compiled)                 # 任意 RuleSet
+player = AlphaBetaPlayer(compiled)              # 首次加载时构建并缓存评价 profile
+decision = player.choose_action(
+    session, SearchLimits(max_nodes=100_000, max_time_seconds=1.0)
+)
+print(decision.action, decision.score, decision.principal_variation,
+      decision.nodes, decision.completed_depth, decision.termination_reason)
+```
+
+命令行分析 / benchmark / 自对局：
+
+```powershell
+# 输出某 RuleSet 的棋子价值 profile
+.venv\Scripts\python.exe -m generic_chess.ai.cli.analyze_ruleset --seed 42
+.venv\Scripts\python.exe -m generic_chess.ai.cli.analyze_ruleset --ruleset rules.json --json-out profile.json
+
+# AlphaBeta 搜索 benchmark（node budget，可 --vs-random N 做与随机玩家的 smoke 对局）
+.venv\Scripts\python.exe -m generic_chess.ai.cli.benchmark_alphabeta --seed 42 --nodes 100000 --repeat 5
+.venv\Scripts\python.exe -m generic_chess.ai.cli.benchmark_alphabeta --seed 42 --nodes 20000 --vs-random 6
+```
+
+要点：静态 profile（mobility-density 曲线、movement graph、drop/promotion 分析）只构建一次并
+进入版本化内存/磁盘缓存，搜索热路径只查表；TT 复用在同一 RuleSet 的连续着法之间，更换
+RuleSet 自动以 fingerprint 隔离；预算支持 depth/nodes/time/cancellation；已加入 TT 与
+保守 quiescence（捕获+升变），未加入 null-move/LMR 等高级剪枝。
+
 ## 快速上手
 
 ```python
@@ -324,9 +362,12 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 第四阶段（0.3.0）提供 PySide6 桌面 UI：可玩棋盘、选择/合法着法/敌方 preview、drop、promotion、
 undo/redo、RuleSet/Record 文件、Preferences 与状态持久化。仍不做：AI 搜索、MCTS 可视化、
 联机对战、账号系统、完整 RuleSet 图形编辑器、Web 服务、大规模动画与音效。
+第五阶段（0.4.0）提供通用 AlphaBeta heuristic player（规则派生棋子价值、mobility-density
+曲线、两级静态缓存、TT、move ordering、保守 quiescence、benchmark/自对局 CLI）；仍不做：
+null-move/LMR 等高级剪枝、MCTS/神经网络、Human vs AI 完整 UI 接入。
 
 ## 测试
 
-`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试、纹理稳定性/阵营/类别区分/缩放/预览 smoke、桌面 UI Controller 逻辑与 offscreen Qt 冒烟测试（启动、棋盘尺寸与翻转映射、texture 缓存、选择/走子/升变/undo-redo、文件与 Preferences）。
+`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试、纹理稳定性/阵营/类别区分/缩放/预览 smoke、桌面 UI Controller 逻辑与 offscreen Qt 冒烟测试（启动、棋盘尺寸与翻转映射、texture 缓存、选择/走子/升变/undo-redo、文件与 Preferences），以及 AI 静态分析/价值/缓存/搜索正确性（minimax 等价、mate distance、预算/取消、TT 边界、repetition 隔离）。
 
 测试不使用 Hypothesis，全部使用固定 seed 的确定性断言。
