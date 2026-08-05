@@ -1,0 +1,1 @@
+"""QGraphicsView-based board rendering."""

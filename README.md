@@ -72,6 +72,18 @@ python -m venv .venv
 .venv\Scripts\python.exe -m generic_chess.demo.headless_demo
 ```
 
+桌面 UI（0.3.0，PySide6）：
+
+```powershell
+# 安装 UI 依赖（可选 extra：PySide6>=6.6,<7）
+.venv\Scripts\python.exe -m pip install -e ".[gui]"
+
+# 启动（默认 seed 42、8×8 classic_like；--smoke 用于无头自检）
+.venv\Scripts\python.exe -m generic_chess.ui --seed 42
+```
+
+也可以安装 console script 后直接运行 `generic-chess-ui`。
+
 ## 命令行双人对局与回放
 
 ```powershell
@@ -134,6 +146,43 @@ texture = generate_piece_texture(compiled.types_by_id["P"], owner=1, style=custo
 设计说明：走法几何而非名称驱动，保证随机规则也能得到稳定、可读、可区分的纹理；选择 SVG
 是因为纯标准库即可生成、矢量缩放无损、可直接嵌入 Web；ray 与 leap 用箭头/圆头区分，避免
 只靠长度；中心点标记棋子的原点与方向参考。
+
+## 桌面 UI（0.3.0，PySide6）
+
+`generic_chess.ui` 是基于 PySide6 的可操作桌面棋类程序：`QMainWindow` + `QGraphicsView/Scene`
+棋盘渲染、`QSplitter` 侧边栏（Piece / Game / History / Rules 四个标签页）、菜单/工具栏/状态栏、
+`QSettings` 持久化。架构严格分层：Core/Rules/Generation → Session → **UI Controller** →
+PySide6 View；视图不直接调用 `apply_action`，全部走子通过 Controller 的 `GameSession`
+公共语义执行，绝不触碰 `_apply_action_unchecked`。
+
+交互：
+
+* **左键**：点击己方棋子选择并高亮真实合法着法；点击合法目标格走子；同一目标格存在多个
+  promotion 动作时弹出升变对话框（每个选项显示升变后 texture 与 type_id，必要时含
+  "No promotion"）。点击敌方棋子进入 **Movement preview**（蓝灰色、明确标注“不是合法着法”），
+  preview 由只读 reachability adapter 基于 compiled movement 计算，不做合法性与自将判断。
+* **右键 / Esc**：取消选择、drop 状态与所有 overlay，不改变对局。
+* **Drop**：Game 面板点击当前行动方 hand 中的棋子进入 drop-selection，棋盘显示合法落点。
+* **高亮**：selected（青蓝边框）、legal move（绿点）、legal capture（橙色圆环）、preview
+  （蓝灰半透明）、last move（起点浅黄/终点橙黄）、check/threat（红边框）、hover（可关闭）。
+* **Undo/Redo**：通过保留动作序列并 `GameSession.replay` 重建实现，只使用公开 API；
+  历史列表双击进入只读历史局面，`Return to Current Position` 恢复。
+
+文件操作：File 菜单支持 New Game（预设/seed 生成或加载 RuleSet 文件）、Open RuleSet（严格
+反序列化）、Open Record（必须已有配套 RuleSet，fingerprint 校验）、Save Record / Save As、
+Export RuleSet、Export Texture Gallery（复用 visual 模块）。错误通过人类可读对话框展示，
+保留错误码，普通无效点击静默或仅提示状态栏；加载失败不会破坏当前对局。
+
+Preferences（Ctrl+,）持久化窗口几何、splitter 位置、工具栏/侧边栏、棋盘方向、texture 占格
+比例、坐标/legal/last move/hover 开关、敌方 preview 与唯一 promotion 自动选择等。
+
+无头测试与自检：
+
+```powershell
+$env:QT_QPA_PLATFORM='offscreen'
+.venv\Scripts\python.exe -m pytest tests/test_ui_controller.py tests/test_ui_app.py -q
+.venv\Scripts\python.exe -m generic_chess.ui --seed 42 --smoke
+```
 
 ## 快速上手
 
@@ -258,9 +307,12 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 
 第二阶段明确不做：heuristic evaluator、alpha-beta、MCTS、神经网络、Zobrist key、transposition table、move cache、make/unmake、图形/网页 UI、网络对战、计时器、悔棋、开局库、新棋规。Core v0 的规则语义保持不变。
 第三阶段（visual）只提供纹理生成基础设施与预览工具，不做完整 Web UI，也不做 AI 搜索可视化。
+第四阶段（0.3.0）提供 PySide6 桌面 UI：可玩棋盘、选择/合法着法/敌方 preview、drop、promotion、
+undo/redo、RuleSet/Record 文件、Preferences 与状态持久化。仍不做：AI 搜索、MCTS 可视化、
+联机对战、账号系统、完整 RuleSet 图形编辑器、Web 服务、大规模动画与音效。
 
 ## 测试
 
-`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试、纹理稳定性/阵营/类别区分/缩放/预览 smoke。
+`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试、纹理稳定性/阵营/类别区分/缩放/预览 smoke、桌面 UI Controller 逻辑与 offscreen Qt 冒烟测试（启动、棋盘尺寸与翻转映射、texture 缓存、选择/走子/升变/undo-redo、文件与 Preferences）。
 
 测试不使用 Hypothesis，全部使用固定 seed 的确定性断言。

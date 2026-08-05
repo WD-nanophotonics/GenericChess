@@ -1,0 +1,696 @@
+"""UI Controller: the only boundary between the UI and GameSession/Core."""
+
+from __future__ import annotations
+
+from typing import Callable
+
+from ..core.actions import Action, BoardMove, DropMove
+from ..core.attacks import is_in_check
+from ..core.coordinates import Square, square_to_index
+from ..core.pieces import Piece, PieceType
+from ..core.position import Position
+from ..generation.config import GenerationError, GeneratorConfig
+from ..generation.generator import generate_game
+from ..rules.compiler import compile_ruleset
+from ..rules.schema import RuleSet
+from ..rules.serialization import deserialize_ruleset, serialize_ruleset
+from ..session.record import GameRecord
+from ..session.result import SessionResult, SessionStatus
+from ..session.serialization import deserialize_game_record, serialize_game_record
+from ..session.session import GameSession, SessionFinishedError, SessionRecordError
+from . import view_models as vm
+from .adapters import movement_summary, reachable_squares
+from .interaction_state import BoardInteractionState
+from .settings import (
+    KEY_AUTO_PROMOTE_UNIQUE,
+    KEY_ENABLE_PREVIEW,
+    SettingsStore,
+)
+
+
+Listener = Callable[[], None]
+
+
+class UIController:
+    """Owns the live GameSession and all transient interaction state.
+
+    The controller is deliberately Qt-free so its logic is testable headless.
+    Every game mutation goes through GameSession public semantics.
+    """
+
+    def __init__(self, settings: SettingsStore | None = None) -> None:
+        self._settings = settings
+        self._compiled = None
+        self._ruleset: RuleSet | None = None
+        self._session: GameSession | None = None
+        self._display_session: GameSession | None = None
+        self._actions: list[Action] = []
+        self._redo: list[Action] = []
+        self._resigned_by: int | None = None
+        self._seed: int | None = None
+        self._ruleset_path: str | None = None
+        self._record_path: str | None = None
+        self._interaction = BoardInteractionState()
+        self._listeners: list[Listener] = []
+        self._last_error: str | None = None
+
+    # ------------------------------------------------------------------ setup
+
+    def subscribe(self, listener: Listener) -> None:
+        self._listeners.append(listener)
+
+    def _notify(self) -> None:
+        for listener in self._listeners:
+            listener()
+
+    def new_game(
+        self,
+        *,
+        seed: int = 42,
+        board_size: int = 8,
+        preset: str = "classic_like",
+        hybrid: bool = False,
+    ) -> bool:
+        try:
+            game = generate_game(
+                GeneratorConfig(
+                    seed=seed,
+                    board_size=board_size,
+                    setup_preset=preset,
+                    allow_hybrid=hybrid,
+                )
+            )
+        except (GenerationError, ValueError) as exc:
+            self._last_error = f"cannot generate game: {exc}"
+            return False
+        self._set_ruleset(game.ruleset, compiled=game.compiled_ruleset, seed=seed, path=None)
+        return True
+
+    def new_game_from_ruleset(self, ruleset: RuleSet, path: str | None = None) -> bool:
+        try:
+            compiled = compile_ruleset(ruleset)
+        except ValueError as exc:
+            self._last_error = f"invalid ruleset: {exc}"
+            return False
+        self._set_ruleset(ruleset, compiled=compiled, seed=None, path=path)
+        return True
+
+    def open_ruleset(self, path: str) -> bool:
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                text = fh.read()
+        except OSError as exc:
+            self._last_error = f"cannot read ruleset file: {exc}"
+            return False
+        try:
+            ruleset = deserialize_ruleset(text)
+        except ValueError as exc:
+            self._last_error = f"invalid ruleset ({path}): {exc}"
+            return False
+        if not self.new_game_from_ruleset(ruleset, path=path):
+            return False
+        self._ruleset_path = path
+        self._last_error = None
+        return True
+
+    def export_ruleset(self, path: str) -> bool:
+        if self._ruleset is None:
+            self._last_error = "no ruleset loaded"
+            return False
+        try:
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(serialize_ruleset(self._ruleset) + "\n")
+        except OSError as exc:
+            self._last_error = f"cannot write ruleset file: {exc}"
+            return False
+        return True
+
+    def save_record(self, path: str) -> bool:
+        if self._session is None:
+            self._last_error = "no game in progress"
+            return False
+        try:
+            text = serialize_game_record(self._session.to_record())
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(text + "\n")
+        except OSError as exc:
+            self._last_error = f"cannot write record file: {exc}"
+            return False
+        self._record_path = path
+        self._last_error = None
+        self._notify()
+        return True
+
+    def open_record(self, path: str) -> bool:
+        if self._compiled is None:
+            self._last_error = "load a RuleSet before opening a record"
+            return False
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                text = fh.read()
+            record = deserialize_game_record(text)
+            session = GameSession.replay(self._compiled, record)
+        except (OSError, SessionRecordError, ValueError) as exc:
+            self._last_error = f"cannot open record ({path}): {exc}"
+            return False
+        self._session = session
+        self._display_session = None
+        self._actions = list(record.actions)
+        self._redo = []
+        self._resigned_by = record.resigned_by
+        self._record_path = path
+        self._interaction = BoardInteractionState(
+            orientation_owner=self._interaction.orientation_owner
+        )
+        self._last_error = None
+        self._notify()
+        return True
+
+    def _set_ruleset(
+        self,
+        ruleset: RuleSet,
+        compiled,
+        seed: int | None,
+        path: str | None,
+    ) -> None:
+        self._ruleset = ruleset
+        self._compiled = compiled
+        self._seed = seed
+        self._ruleset_path = path
+        self._record_path = None
+        self._actions = []
+        self._redo = []
+        self._resigned_by = None
+        self._interaction = BoardInteractionState(
+            orientation_owner=self._interaction.orientation_owner
+        )
+        self._display_session = None
+        self._rebuild()
+        self._last_error = None
+        self._notify()
+
+    def _rebuild(self) -> None:
+        if self._compiled is None:
+            self._session = None
+            return
+        record = GameRecord(
+            schema_version=1,
+            ruleset_fingerprint=self._compiled.ruleset_fingerprint,
+            actions=tuple(self._actions),
+            resigned_by=self._resigned_by,
+        )
+        self._session = GameSession.replay(self._compiled, record)
+        self._display_session = None
+
+    # ------------------------------------------------------------------ queries
+
+    @property
+    def session(self) -> GameSession | None:
+        return self._session
+
+    @property
+    def compiled(self):
+        return self._compiled
+
+    @property
+    def ruleset(self) -> RuleSet | None:
+        return self._ruleset
+
+    @property
+    def interaction(self) -> BoardInteractionState:
+        return self._interaction
+
+    @property
+    def can_undo(self) -> bool:
+        return bool(self._actions) and self._resigned_by is None
+
+    @property
+    def can_redo(self) -> bool:
+        return bool(self._redo) and self._resigned_by is None
+
+    @property
+    def last_error(self) -> str | None:
+        return self._last_error
+
+    def displayed_position(self) -> Position | None:
+        source = self._display_session if self._display_session is not None else self._session
+        return source.state.position if source is not None else None
+
+    def displayed_history(self) -> tuple:
+        source = self._display_session if self._display_session is not None else self._session
+        return source.history if source is not None else ()
+
+    # ------------------------------------------------------------------ actions
+
+    def submit_action(self, action: Action) -> bool:
+        if self._session is None or self._display_session is not None:
+            self._last_error = "cannot move while viewing history preview"
+            return False
+        try:
+            self._session.submit(action)
+        except (ValueError, SessionFinishedError) as exc:
+            self._last_error = f"cannot submit action: {exc}"
+            return False
+        self._actions.append(action)
+        self._redo = []
+        self._interaction.clear_selection()
+        self._last_error = None
+        self._notify()
+        return True
+
+    def resign(self) -> bool:
+        if self._session is None or self._display_session is not None:
+            return False
+        try:
+            self._session.resign()
+        except SessionFinishedError as exc:
+            self._last_error = str(exc)
+            return False
+        self._resigned_by = self._session.to_record().resigned_by
+        self._interaction.clear_selection()
+        self._last_error = None
+        self._notify()
+        return True
+
+    def restart(self) -> None:
+        self._actions = []
+        self._redo = []
+        self._resigned_by = None
+        self._interaction = BoardInteractionState(
+            orientation_owner=self._interaction.orientation_owner
+        )
+        self._rebuild()
+        self._notify()
+
+    def undo(self) -> bool:
+        if not self._actions or self._resigned_by is not None:
+            return False
+        self._redo.append(self._actions.pop())
+        self._interaction = BoardInteractionState(
+            orientation_owner=self._interaction.orientation_owner
+        )
+        self._rebuild()
+        self._notify()
+        return True
+
+    def redo(self) -> bool:
+        if not self._redo or self._resigned_by is not None:
+            return False
+        self._actions.append(self._redo.pop())
+        self._interaction = BoardInteractionState(
+            orientation_owner=self._interaction.orientation_owner
+        )
+        self._rebuild()
+        self._notify()
+        return True
+
+    # ------------------------------------------------------------------ interaction
+
+    def square_clicked(self, square: Square) -> None:
+        pos = self.displayed_position()
+        if pos is None:
+            return
+        if self._interaction.pending_promotion_actions:
+            return  # a promotion dialog is already open
+        if self._display_session is not None:
+            self._last_error = "viewing history preview: press Return to Current Position"
+            self._notify()
+            return
+        if self._session.result.status is not SessionStatus.ONGOING:
+            return
+
+        piece = pos.board[square_to_index(square, pos.board_size())]
+        side = pos.side_to_move
+
+        if self._interaction.selected_hand_piece_type_id is not None:
+            drop = next(
+                (a for a in self._interaction.legal_actions if _is_drop_to(a, square)), None
+            )
+            if drop is not None:
+                self.submit_action(drop)
+            elif piece is not None and piece.owner == side:
+                self._select_square(square)
+            return
+
+        if self._interaction.selected_square is not None:
+            targets = [
+                a
+                for a in self._interaction.legal_actions
+                if _action_to(a) == square
+            ]
+            if targets:
+                self._resolve_target_actions(targets)
+                return
+
+        if piece is not None and piece.owner == side:
+            self._select_square(square)
+        elif piece is not None:
+            self._preview_piece(square)
+
+    def _select_square(self, square: Square) -> None:
+        self._interaction.clear_selection()
+        self._interaction.selected_square = square
+        self._interaction.legal_actions = tuple(
+            a
+            for a in self._session.legal_actions()
+            if isinstance(a, BoardMove) and a.from_square == square
+        )
+        self._notify()
+
+    def _preview_piece(self, square: Square) -> None:
+        enabled = bool(self._settings and self._settings.get(KEY_ENABLE_PREVIEW, True))
+        if not enabled:
+            return
+        pos = self.displayed_position()
+        self._interaction.clear_selection()
+        self._interaction.preview_piece_square = square
+        self._interaction.preview_squares = reachable_squares(pos, square, self._compiled)
+        self._notify()
+
+    def _resolve_target_actions(self, targets: list[Action]) -> None:
+        if len(targets) == 1:
+            self.submit_action(targets[0])
+            return
+        promotions = [a for a in targets if isinstance(a, BoardMove) and a.promotion_target_id]
+        plain = [a for a in targets if isinstance(a, BoardMove) and not a.promotion_target_id]
+        if (
+            self._settings
+            and self._settings.get(KEY_AUTO_PROMOTE_UNIQUE, True)
+            and not plain
+            and len({a.promotion_target_id for a in promotions}) == 1
+        ):
+            self.submit_action(promotions[0])
+            return
+        self._interaction.pending_promotion_actions = tuple(targets)
+        self._notify()
+
+    def choose_promotion(self, action: Action) -> None:
+        self._interaction.pending_promotion_actions = ()
+        self.submit_action(action)
+
+    def cancel_promotion(self) -> None:
+        self._interaction.pending_promotion_actions = ()
+        self._notify()
+
+    def hand_piece_clicked(self, type_id: str) -> None:
+        if self._session is None or self._display_session is not None:
+            return
+        if self._session.result.status is not SessionStatus.ONGOING:
+            return
+        side = self._session.state.position.side_to_move
+        if self._session.state.position.hands[side].count(type_id) <= 0:
+            return
+        self._interaction.clear_selection()
+        self._interaction.selected_hand_piece_type_id = type_id
+        self._interaction.legal_actions = tuple(
+            a
+            for a in self._session.legal_actions()
+            if isinstance(a, DropMove) and a.base_type_id == type_id
+        )
+        self._notify()
+
+    def cancel(self) -> None:
+        self._interaction.clear_selection()
+        self._interaction.hovered_square = None
+        self._notify()
+
+    def flip_board(self) -> None:
+        self._interaction.orientation_owner = 1 - self._interaction.orientation_owner
+        self._notify()
+
+    def set_hover(self, square: Square | None) -> None:
+        self._interaction.hovered_square = square
+
+    def display_ply(self, ply: int) -> bool:
+        if self._session is None or not (0 <= ply <= len(self._actions)):
+            return False
+        record = GameRecord(
+            schema_version=1,
+            ruleset_fingerprint=self._compiled.ruleset_fingerprint,
+            actions=tuple(self._actions[:ply]),
+            resigned_by=None,
+        )
+        try:
+            self._display_session = GameSession.replay(self._compiled, record)
+        except SessionRecordError as exc:
+            self._last_error = f"cannot rebuild history position: {exc}"
+            return False
+        self._interaction.displayed_ply = ply
+        self._interaction.clear_selection()
+        self._notify()
+        return True
+
+    def return_to_current(self) -> None:
+        self._display_session = None
+        self._interaction.displayed_ply = None
+        self._interaction.clear_selection()
+        self._notify()
+
+    # ------------------------------------------------------------------ view models
+
+    def board_view_model(self) -> vm.BoardViewModel | None:
+        pos = self.displayed_position()
+        if pos is None or self._compiled is None:
+            return None
+        n = pos.board_size()
+        side = pos.side_to_move
+        check_side = side if is_in_check(pos, side, self._compiled) else None
+        interaction = self._interaction
+
+        move_targets: set[Square] = set()
+        capture_targets: set[Square] = set()
+        for a in interaction.legal_actions:
+            target = _action_to(a)
+            if target is None:
+                continue
+            occupant = pos.board[square_to_index(target, n)]
+            if isinstance(a, BoardMove) and occupant is not None and occupant.owner != side:
+                capture_targets.add(target)
+            else:
+                move_targets.add(target)
+
+        preview_set = set(interaction.preview_squares)
+        history = self.displayed_history()
+        last_from: Square | None = None
+        last_to: Square | None = None
+        if history:
+            last = history[-1].action
+            if isinstance(last, BoardMove):
+                last_from, last_to = last.from_square, last.to_square
+            elif isinstance(last, DropMove):
+                last_to = last.to_square
+
+        squares = []
+        for idx in range(n * n):
+            square = Square(idx % n, idx // n)
+            piece = pos.board[idx]
+            squares.append(
+                vm.SquareViewModel(
+                    square=square,
+                    piece=piece,
+                    is_last_move_from=last_from == square,
+                    is_last_move_to=last_to == square,
+                    is_selected=interaction.selected_square == square,
+                    is_legal_move=square in move_targets,
+                    is_legal_capture=square in capture_targets,
+                    is_preview=square in preview_set,
+                    is_hovered=interaction.hovered_square == square,
+                    is_check_anchor=check_side is not None
+                    and piece is not None
+                    and piece.owner == check_side
+                    and self._compiled.types_by_id[piece.current_type_id].is_anchor,
+                )
+            )
+        return vm.BoardViewModel(
+            board_size=n,
+            squares=tuple(squares),
+            side_to_move=side,
+            check_side=check_side,
+        )
+
+    def game_info(self) -> vm.GameViewModel | None:
+        if self._session is None or self._compiled is None:
+            return None
+        state = self._session.state
+        hands = tuple(
+            tuple(vm.HandEntry(tid, count) for tid, count in state.position.hands[p].counts)
+            for p in (0, 1)
+        )
+        fp = self._compiled.ruleset_fingerprint
+        return vm.GameViewModel(
+            side_to_move=state.position.side_to_move,
+            ply_count=state.ply_count,
+            result=self._session.result,
+            hands=hands,
+            fingerprint=fp,
+            fingerprint_short=fp[:8],
+            seed=self._seed,
+            ruleset_path=self._ruleset_path,
+            record_path=self._record_path,
+            board_size=self._compiled.board_size,
+            piece_type_count=len(self._compiled.piece_types),
+        )
+
+    def history_entries(self) -> tuple[vm.HistoryEntry, ...]:
+        return tuple(
+            vm.HistoryEntry(
+                ply=i + 1,
+                player=i % 2,
+                action=action,
+                label=_action_label(action),
+            )
+            for i, action in enumerate(self._actions)
+        )
+
+    def piece_info(self) -> vm.PieceInfo | None:
+        if self._compiled is None:
+            return None
+        pos = self.displayed_position()
+        interaction = self._interaction
+        square = interaction.selected_square
+        piece: Piece | None = None
+        owner: int | None = None
+        base = None
+        promoted = False
+        preview = False
+        type_id = None
+        if square is not None and pos is not None:
+            piece = pos.board[square_to_index(square, pos.board_size())]
+        elif interaction.preview_piece_square is not None and pos is not None:
+            square = interaction.preview_piece_square
+            piece = pos.board[square_to_index(square, pos.board_size())]
+            preview = True
+        elif interaction.selected_hand_piece_type_id is not None:
+            type_id = interaction.selected_hand_piece_type_id
+
+        if piece is not None:
+            owner = piece.owner
+            base = piece.base_type_id
+            promoted = piece.promoted
+            type_id = piece.current_type_id
+
+        if type_id is None:
+            return None
+        pt: PieceType = self._compiled.types_by_id[type_id]
+
+        legal_count = capture_count = promotion_count = None
+        if (
+            not preview
+            and self._session is not None
+            and interaction.selected_square == square
+            and piece is not None
+            and piece.owner == self._session.state.position.side_to_move
+        ):
+            legal_count = len(interaction.legal_actions)
+            capture_count = sum(
+                1
+                for a in interaction.legal_actions
+                if isinstance(a, BoardMove)
+                and pos.board[square_to_index(a.to_square, pos.board_size())] is not None
+            )
+            promotion_count = sum(
+                1
+                for a in interaction.legal_actions
+                if isinstance(a, BoardMove) and a.promotion_target_id is not None
+            )
+        preview_count = len(interaction.preview_squares) if preview else None
+        is_actionable = (
+            piece is not None
+            and self._session is not None
+            and self._display_session is None
+            and self._session.result.status is SessionStatus.ONGOING
+            and piece.owner == self._session.state.position.side_to_move
+        )
+
+        return vm.PieceInfo(
+            type_id=type_id,
+            name=pt.name,
+            owner=owner,
+            square=square,
+            base_type_id=base,
+            promoted=promoted,
+            movement_lines=movement_summary(pt),
+            legal_action_count=legal_count,
+            capture_count=capture_count,
+            promotion_count=promotion_count,
+            preview_count=preview_count,
+            is_actionable=is_actionable,
+            is_preview=preview,
+        )
+
+    def piece_type_info(self, type_id: str) -> vm.PieceInfo | None:
+        """Rule-only info for a piece type (used by the Rules panel)."""
+        if self._compiled is None or type_id not in self._compiled.types_by_id:
+            return None
+        pt = self._compiled.types_by_id[type_id]
+        return vm.PieceInfo(
+            type_id=type_id,
+            name=pt.name,
+            owner=None,
+            square=None,
+            base_type_id=None,
+            promoted=False,
+            movement_lines=movement_summary(pt),
+            legal_action_count=None,
+            capture_count=None,
+            promotion_count=None,
+            preview_count=None,
+            is_actionable=False,
+            is_preview=False,
+        )
+
+    def rules_info(self) -> vm.RulesInfo | None:
+        if self._ruleset is None or self._compiled is None:
+            return None
+        relations = []
+        for pt in self._compiled.piece_types:
+            if pt.is_promotable:
+                relations.append(f"{pt.type_id} -> {', '.join(pt.promotion_target_ids)}")
+        n = self._compiled.board_size
+        drop_parts = []
+        for pt in self._compiled.piece_types:
+            if pt.is_anchor:
+                continue
+            allowed = sum(1 for b in self._compiled.drop_allowed[pt.type_id][0] if b)
+            drop_parts.append(f"{pt.type_id}: {allowed}/{n * n}")
+        terminal = (
+            f"stalemate={self._compiled.stalemate_result}, "
+            f"repetition_limit={self._compiled.repetition_limit}, "
+            f"max_ply={self._compiled.max_ply}"
+        )
+        types = tuple(
+            (pt.type_id, pt.name, movement_summary(pt))
+            for pt in self._compiled.piece_types
+        )
+        return vm.RulesInfo(
+            board_size=n,
+            seed=self._seed,
+            fingerprint=self._compiled.ruleset_fingerprint,
+            piece_type_count=len(self._compiled.piece_types),
+            promotion_relations=tuple(relations),
+            drop_summary="; ".join(drop_parts),
+            terminal_summary=terminal,
+            initial_entity_count=self._compiled.initial_entity_count,
+            piece_types=types,
+        )
+
+
+def _action_to(action: Action) -> Square | None:
+    if isinstance(action, BoardMove):
+        return action.to_square
+    if isinstance(action, DropMove):
+        return action.to_square
+    return None
+
+
+def _is_drop_to(action: Action, square: Square) -> bool:
+    return isinstance(action, DropMove) and action.to_square == square
+
+
+def _action_label(action: Action) -> str:
+    if isinstance(action, DropMove):
+        return f"drop {action.base_type_id}@{action.to_square}"
+    base = f"{action.from_square}-{action.to_square}"
+    if action.promotion_target_id is not None:
+        return f"{base}={action.promotion_target_id}"
+    return base

@@ -12,6 +12,10 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+gui = ["PySide6>=6.6,<7"]
+
+[project.scripts]
+generic-chess-ui = "generic_chess.ui.app:main"
 
 [tool.setuptools.packages.find]
 include = ["generic_chess*"]
