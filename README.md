@@ -180,10 +180,10 @@ owner↔颜色映射。所有文案统一为 `White / Player 0 (先手)` / `Blac
 * **Undo/Redo**：通过保留动作序列并 `GameSession.replay` 重建实现，只使用公开 API；
   历史列表双击进入只读历史局面，`Return to Current Position` 恢复。
 
-文件操作：File 菜单支持 New Game（预设/seed 生成或加载 RuleSet 文件）、Open RuleSet（严格
-反序列化）、Open Record（必须已有配套 RuleSet，fingerprint 校验）、Save Record / Save As、
-Export RuleSet、Export Texture Gallery（复用 visual 模块）。错误通过人类可读对话框展示，
-保留错误码，普通无效点击静默或仅提示状态栏；加载失败不会破坏当前对局。
+文件操作：File 菜单支持 New Match…（统一开局：保留当前 / 生成 / 加载 RuleSet）、Open
+RuleSet（严格反序列化）、Open Record（必须已有配套 RuleSet，fingerprint 校验）、
+Save Record / Save As、Export RuleSet、Export Texture Gallery（复用 visual 模块）。错误通过
+人类可读对话框展示，保留错误码，普通无效点击静默或仅提示状态栏；加载失败不会破坏当前对局。
 
 Preferences（Ctrl+,）与 View 菜单共享同一状态源：View 菜单的勾选即真相，Preferences
 修改会同步到菜单与 `QSettings`，重启后一致恢复；方向修改立即生效并持久化。持久化窗口几何、
@@ -238,26 +238,34 @@ RuleSet 自动以 fingerprint 隔离；预算支持 depth/nodes/time/cancellatio
 
 ## Human vs AlphaBeta 对弈（0.5.0）
 
-桌面 UI 支持与通用 AlphaBeta 玩家对弈并带读秒：
+桌面 UI 通过统一的 **New Match…**（Game 菜单 / 工具栏 / 侧边栏 “New” 均为同一入口）开始对局：
 
 ```powershell
-# 启动 UI，Game 菜单 > New AI Match…
+# 启动 UI，Game 菜单 > New Match…
 .venv\Scripts\python.exe -m generic_chess.ui --seed 42
 ```
 
-`New AI Match…` 对话框可设置：
+`New Match…` 对话框可设置：
 
-* **执白/执黑**（owner 0 = 白/先手，owner 1 = 黑/後手）；
-* **时间控制**：无计时 / Byoyomi（读秒）/ Fischer（每手加秒），每方主时 + 加时/加秒，可关闭超时判负；
-* **AI 强度**：Quick/Balanced/Deep 节点预算，或固定每手秒数，可选最大深度。
+* **规则来源**：保留当前 RuleSet / 重新生成（preset + seed + 棋盘大小）/ 加载 RuleSet 文件；
+* **双方玩家**：先手（White/Player 0）与后手（Black/Player 1）各自可选 **Human 或 AI**（可 AI vs AI 观战）；
+* **时间控制**：无计时 / Byoyomi（读秒）/ Fischer（每手加秒），每方主时 + 加时/加秒；
+* **AI 强度**：Auto（按剩余时钟时间分配，默认）/ Quick/Balanced/Deep 节点预算 / 固定每手秒数，可选最大深度。
 
-对局时：AI 思考在后台线程执行（不阻塞界面），状态栏实时显示双方时钟与搜索进度
+**开新局永远从所选规则的初始局面开始**（不再从当前中途局面继续）。对局时：AI 思考在后台
+线程执行（不阻塞界面），状态栏实时显示双方时钟与搜索进度
 （`AI is thinking · depth 3 · 12,345 nodes`）；`Stop AI` 取消当前思考（再点一次恢复）；
 **AI 思考期间时钟真实走动**，双方剩余时间清晰可见；**AI 超时判负**（状态栏标注
 `AI timeout`，按 resignation 记录），**人类永不因超时判负**（时钟耗尽仅显示 00:00，对局
-照常继续）；Undo/Restart 与时钟联动（Undo 恢复上一时刻时钟快照）。
+照常继续）；AI 会按剩余时间自动分配搜索预算（每 128 节点检查一次时间、预算带安全余量与
+时间化节点上限），实际对局中不会因“想太久”而超时判负；Undo/Restart 与时钟联动（Undo 恢复
+上一时刻时钟快照）。
 时钟是 Qt-free 的独立模块
 （`generic_chess/clock.py`），AI 预算分配见 `generic_chess/ai/budget.py`。
+
+终局说明：将死/和棋由 Core 的正式终局判定给出（将死时当前方合法动作数为 0），界面以
+`Game over — <result>` 横幅与状态栏结果明确显示；在支持打入的规则里，“王无路可走但手牌
+可以打援（例如打子挡将）”按规则**不是**将死，对局会继续——这是规则语义而非 bug。
 
 ## 快速上手
 

@@ -27,6 +27,11 @@ class GamePanel(QWidget):
         super().__init__(parent)
         self._controller = controller
         layout = QVBoxLayout(self)
+        self._game_over = QLabel("")
+        self._game_over.setStyleSheet("font-weight: bold; font-size: 16px; color: #c0392b;")
+        self._game_over.setWordWrap(True)
+        self._game_over.hide()
+        layout.addWidget(self._game_over)
         self._status = QLabel()
         self._status.setTextFormat(Qt.RichText)
         self._status.setWordWrap(True)
@@ -50,6 +55,7 @@ class GamePanel(QWidget):
         compiled = self._controller.compiled
         if info is None or compiled is None:
             self._status.setText("<i>No game loaded.</i>")
+            self._game_over.hide()
             return
         side = owner_label(info.side_to_move)
         state = (
@@ -62,3 +68,8 @@ class GamePanel(QWidget):
             f"<b>Record file:</b> {info.record_path or '—'}"
         )
         self._status.setText(state)
+        if info.result.status.value != "ongoing":
+            self._game_over.setText(f"Game over — {info.result}")
+            self._game_over.show()
+        else:
+            self._game_over.hide()

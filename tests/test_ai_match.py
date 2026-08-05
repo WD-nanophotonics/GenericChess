@@ -301,6 +301,31 @@ def test_ai_thinking_clock_ticks():
     assert ctrl.clock_state().remaining_for(1) < before
 
 
+def test_drop_can_save_trapped_king_so_not_terminal():
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.terminal import terminal_result
+    from generic_chess.rules.compiler import compile_ruleset
+
+    compiled = compile_ruleset(_mate_ruleset())
+    lines = [
+        "........",
+        "........",
+        "........",
+        "R.......",  # rank 4: checking rook at (0,4)
+        "........",
+        "........",
+        ".....R..",  # rank 1
+        "k.K.....",  # rank 0: trapped black king at (0,0)
+    ]
+    from conftest import make_state
+
+    state = make_state(compiled, lines, side_to_move=1, hands=([], [("R", 1)]))
+    # Even though the king has no square, the hand drop can block the check,
+    # so the position is correctly NOT terminal.
+    assert legal_actions(state, compiled)
+    assert not terminal_result(state, compiled).is_terminal
+
+
 def test_resign_pauses_clock():
     class FakeNow:
         def __init__(self):

@@ -49,7 +49,7 @@ class _Budget:
             if limits.max_time_seconds is not None
             else None
         )
-        self._check_interval = 1024
+        self._check_interval = 128
 
     def check(self, stats: SearchStatistics) -> None:
         if self._max_nodes is not None and stats.nodes >= self._max_nodes:

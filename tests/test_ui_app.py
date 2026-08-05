@@ -327,28 +327,91 @@ def test_texture_cache_style_dimension(qapp):
     assert cache.pixmap(compiled, "P", 0, 64, style=style_a).toImage() == pm_a.toImage()
 
 
-def test_match_setup_dialog_values_and_persistence(qapp):
+def test_new_match_dialog_values_and_persistence(qapp):
     from generic_chess.ai.budget import ThinkingStrategy
-    from generic_chess.ui.dialogs.match_setup_dialog import MatchSetupDialog
+    from generic_chess.ui.dialogs.new_match_dialog import NewMatchDialog
 
     settings = DictSettingsStore()
-    dialog = MatchSetupDialog(settings)
-    dialog._side.setCurrentIndex(1)  # play black
+    dialog = NewMatchDialog(settings)
+    dialog._source.setCurrentIndex(1)  # generate
+    dialog._side0.setCurrentIndex(0)  # side0 human
+    dialog._side1.setCurrentIndex(1)  # side1 AI
     dialog._mode.setCurrentIndex(1)  # byoyomi
     dialog._main_seconds.setValue(120)
     dialog._overtime_seconds.setValue(15)
-    dialog._strategy.setCurrentIndex(0)  # preset
-    dialog._preset.setCurrentIndex(2)  # deep
+    dialog._strategy.setCurrentIndex(1)  # preset node budget
+    dialog._preset_ai.setCurrentIndex(2)  # deep
     dialog._accept()
-    match = dialog.match_config()
-    assert match.participants[0].value == "ai"
-    assert match.participants[1].value == "human"
-    assert match.time_control.mode.value == "byoyomi"
-    assert match.time_control.owner0.main_seconds == 120
-    assert match.ai_config.strategy is ThinkingStrategy.FIXED_NODES
+    request = dialog.request()
+    assert request.ruleset_mode == "generate"
+    assert request.participants[0].value == "human"
+    assert request.participants[1].value == "ai"
+    assert request.time_control.mode.value == "byoyomi"
+    assert request.time_control.owner0.main_seconds == 120
+    assert request.ai_config.strategy is ThinkingStrategy.FIXED_NODES
     dialog.persist_defaults()
-    assert settings.get("match/human_owner") == 1
+    assert settings.get("match/side1") == 1
     assert settings.get("match/main_seconds") == 120
+
+
+def test_new_match_dialog_auto_strategy_default(qapp):
+    from generic_chess.ai.budget import ThinkingStrategy
+    from generic_chess.ui.dialogs.new_match_dialog import NewMatchDialog
+    from generic_chess.ui.match import ParticipantKind
+
+    dialog = NewMatchDialog(DictSettingsStore())
+    dialog._accept()
+    request = dialog.request()
+    assert request.ruleset_mode == "current"
+    assert request.participants == (ParticipantKind.HUMAN, ParticipantKind.AI)
+    assert request.ai_config.strategy is ThinkingStrategy.AUTO_TIME
+
+
+def test_apply_new_match_starts_fresh(qapp):
+    from generic_chess.ui.dialogs.new_match_dialog import NewMatchRequest
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    win.show()
+    # Play a couple of moves so the position is not the initial one.
+    ctrl.square_clicked(Square(1, 0))
+    ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
+    assert ctrl.session.state.ply_count == 1
+    request = NewMatchRequest(
+        ruleset_mode="current",
+        participants=(ParticipantKind.HUMAN, ParticipantKind.AI),
+    )
+    win._apply_new_match(request)
+    assert ctrl.session.state.ply_count == 0  # fresh from the initial position
+    assert ctrl.history_entries() == ()
+    assert ctrl.match_active
+
+
+def test_game_over_banner_shown(qapp):
+    from generic_chess.ai.budget import ThinkingConfig
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+    from test_ai_match import _mate_ruleset
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game_from_ruleset(_mate_ruleset())
+    win = MainWindow(ctrl, settings)
+    win.show()
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(),
+        )
+    )
+    ctrl.submit_action(BoardMove(Square(1, 4), Square(0, 4)))  # mate in one
+    win._refresh()
+    assert not win._game_panel._game_over.isHidden()
+    assert "Game over" in win._game_panel._game_over.text()
 
 
 def test_main_window_ai_match_smoke(qapp):

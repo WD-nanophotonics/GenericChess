@@ -35,7 +35,7 @@ class ThinkingConfig:
     move_time_seconds: float = 1.0
     max_nodes: int | None = None
     max_depth: int | None = None
-    safety_margin_seconds: float = 0.1
+    safety_margin_seconds: float = 0.3
     quiescence_max_depth: int = 4
 
 
@@ -71,6 +71,11 @@ def allocate_search_limits(
     ):
         remaining = _clock_available_seconds(time_control, clock_state, owner)
         seconds = min(seconds, max(0.01, remaining - config.safety_margin_seconds))
+
+    # Time-aware node cap: never attempt a node budget the clock cannot afford.
+    if seconds is not None:
+        time_cap = max(64, int(seconds * 250))
+        nodes = min(nodes, time_cap) if nodes is not None else time_cap
 
     return SearchLimits(
         max_depth=config.max_depth,

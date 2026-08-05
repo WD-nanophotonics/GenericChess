@@ -185,3 +185,20 @@ def test_promotion_ruleset_searches():
         GameSession(compiled), SearchLimits(max_depth=2, quiescence_max_depth=0)
     )
     assert decision.action in legal_actions(GameSession(compiled).state, compiled)
+
+
+def test_tiny_time_budget_aborts_before_clock_expiry():
+    compiled = build_4x4_rooks()
+    player = _player(compiled)
+    decision = player.choose_action(
+        GameSession(compiled),
+        SearchLimits(
+            max_depth=10,
+            max_time_seconds=0.0001,
+            max_nodes=None,
+            quiescence_max_depth=0,
+        ),
+    )
+    assert decision.termination_reason == "time_limit"
+    assert decision.nodes < 128  # time checked at every 128 nodes
+    assert decision.completed_depth == 1

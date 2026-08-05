@@ -31,10 +31,10 @@ from .board.texture_cache import TextureCache
 from .board.view import BoardView
 from .controller import UIController
 from .dialogs.error_dialog import show_error, show_info
-from .dialogs.match_setup_dialog import MatchSetupDialog
-from .dialogs.new_game_dialog import NewGameDialog
+from .dialogs.new_match_dialog import NewMatchDialog
 from .dialogs.preferences_dialog import PreferencesDialog
 from .dialogs.promotion_dialog import PromotionDialog
+from .match import MatchConfig
 from .panels.game_panel import GamePanel
 from .panels.hand_stand import HandStandWidget
 from .panels.history_panel import HistoryPanel
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
         self._board_view = BoardView(controller, self._scene)
 
         self._piece_panel = PiecePanel(controller, self._cache)
-        self._game_panel = GamePanel(controller, new_game_cb=self._new_game)
+        self._game_panel = GamePanel(controller, new_game_cb=self._new_match)
         self._history_panel = HistoryPanel(controller)
         self._rules_panel = RulesPanel(
             controller, self._cache, inspect_type_cb=self._piece_panel.show_type
@@ -155,8 +155,7 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------ actions
 
     def _build_actions(self) -> None:
-        self._act_new = self._action("New Game", "Ctrl+N", self._new_game)
-        self._act_ai_match = self._action("New AI Match…", "Ctrl+Shift+N", self._new_ai_match)
+        self._act_new_match = self._action("New Match…", "Ctrl+N", self._new_match)
         self._act_stop_ai = self._action("Stop AI", None, self._stop_ai)
         self._act_stop_ai.setEnabled(False)
         self._act_open_ruleset = self._action("Open RuleSet…", None, self._open_ruleset)
@@ -216,7 +215,7 @@ class MainWindow(QMainWindow):
     def _build_menus(self) -> None:
         file_menu = self.menuBar().addMenu("&File")
         for action in (
-            self._act_new,
+            self._act_new_match,
             self._act_open_ruleset,
             self._act_open_record,
             self._act_save_record,
@@ -230,7 +229,7 @@ class MainWindow(QMainWindow):
 
         game_menu = self.menuBar().addMenu("&Game")
         for action in (
-            self._act_ai_match,
+            self._act_new_match,
             self._act_undo,
             self._act_redo,
             self._act_restart,
@@ -269,8 +268,7 @@ class MainWindow(QMainWindow):
         bar = self.addToolBar("Main")
         bar.setObjectName("main_toolbar")
         for action in (
-            self._act_new,
-            self._act_ai_match,
+            self._act_new_match,
             self._act_open_ruleset,
             self._act_open_record,
             self._act_save_record,
@@ -382,16 +380,50 @@ class MainWindow(QMainWindow):
             text += " | AI timeout"
         self._clock_label.setText(text)
 
-    def _new_ai_match(self) -> None:
-        dialog = MatchSetupDialog(self._settings, self)
+    def _new_match(self) -> None:
+        dialog = NewMatchDialog(self._settings, self)
         if dialog.exec() != QDialog.Accepted:
             return
         dialog.persist_defaults()
-        if self._controller.compiled is None:
-            show_info(self, "New AI Match", "Load a RuleSet first (File > Open RuleSet).")
+        request = dialog.request()
+        if request is None:
             return
-        self._controller.start_match(dialog.match_config())
+        if request.ruleset_mode == "current" and self._controller.compiled is None:
+            show_info(self, "New Match", "Load a RuleSet first (File > Open RuleSet).")
+            return
+        self._apply_new_match(request)
+
+    def _apply_new_match(self, request) -> None:
+        """Start a fresh match from the initial position of the chosen ruleset."""
+        self._cancel_ai_state()
+        if request.ruleset_mode == "generate":
+            ok = self._controller.new_game(
+                seed=request.seed,
+                board_size=request.board_size,
+                preset=request.preset,
+                hybrid=request.hybrid,
+            )
+        elif request.ruleset_mode == "file":
+            ok = self._controller.open_ruleset(request.ruleset_path)
+        else:
+            self._controller.restart()
+            ok = self._controller.session is not None
+        if not ok:
+            show_error(
+                self,
+                "New Match",
+                f"Could not start the requested game:\n{self._controller.last_error}",
+            )
+            return
+        self._controller.start_match(
+            MatchConfig(
+                participants=request.participants,
+                time_control=request.time_control,
+                ai_config=request.ai_config,
+            )
+        )
         self._ai_player = AlphaBetaPlayer(self._controller.compiled, use_disk_cache=True)
+        self._board_view.fit_board()
         self._refresh()
         self._maybe_start_ai()
 
@@ -467,32 +499,6 @@ class MainWindow(QMainWindow):
             self._promotion_open = False
 
     # ------------------------------------------------------------------ slots
-
-    def _new_game(self) -> None:
-        self._cancel_ai_state()
-        dialog = NewGameDialog(self)
-        if dialog.exec() != QDialog.Accepted:
-            return
-        request = dialog.request()
-        if request is None:
-            return
-        if request.mode == "generate":
-            ok = self._controller.new_game(
-                seed=request.seed,
-                board_size=request.board_size,
-                preset=request.preset,
-                hybrid=request.hybrid,
-            )
-        else:
-            ok = self._controller.open_ruleset(request.ruleset_path)
-        if not ok:
-            show_error(
-                self,
-                "New Game",
-                f"Could not start the requested game:\n{self._controller.last_error}",
-            )
-            return
-        self._board_view.fit_board()
 
     def _open_ruleset(self) -> None:
         self._cancel_ai_state()
