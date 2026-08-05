@@ -1,4 +1,8 @@
-"""Persistent UI settings (QSettings-backed, with a storable interface)."""
+"""Persistent UI settings keys and the Qt-backed store.
+
+The pure Python settings interface lives in :mod:`generic_chess.ui.stores`
+so the Controller stays Qt-free; this module only adds the QSettings adapter.
+"""
 
 from __future__ import annotations
 
@@ -6,18 +10,7 @@ from typing import Any
 
 from PySide6.QtCore import QSettings
 
-
-class SettingsStore:
-    """Duck-typed settings interface so the controller stays Qt-free."""
-
-    def get(self, key: str, default: Any = None) -> Any:
-        raise NotImplementedError
-
-    def set(self, key: str, value: Any) -> None:
-        raise NotImplementedError
-
-    def contains(self, key: str) -> bool:
-        raise NotImplementedError
+from .stores import SettingsStore
 
 
 class QtSettingsStore(SettingsStore):
@@ -32,24 +25,6 @@ class QtSettingsStore(SettingsStore):
 
     def contains(self, key: str) -> bool:
         return self._q.contains(key)
-
-
-class DictSettingsStore(SettingsStore):
-    """In-memory store for tests and headless runs."""
-
-    def __init__(self) -> None:
-        self._data: dict[str, Any] = {}
-
-    def get(self, key: str, default: Any = None) -> Any:
-        return self._data.get(key, default)
-
-    def set(self, key: str, value: Any) -> None:
-        self._data[key] = value
-
-    def contains(self, key: str) -> bool:
-        return key in self._data
-
-
 KEY_WINDOW_GEOMETRY = "window/geometry"
 KEY_SPLITTER_STATE = "window/splitter"
 KEY_SHOW_TOOLBAR = "window/toolbar"

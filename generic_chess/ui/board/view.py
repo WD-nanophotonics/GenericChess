@@ -19,6 +19,15 @@ class BoardView(QGraphicsView):
         self.setRenderHints(QPainter.Antialiasing | QPainter.SmoothPixmapTransform)
         self.setDragMode(QGraphicsView.NoDrag)
         self.setFocusPolicy(Qt.StrongFocus)
+        self.setMouseTracking(True)
+        self.viewport().setMouseTracking(True)
+        self._hover_enabled = True
+
+    def set_hover_enabled(self, enabled: bool) -> None:
+        self._hover_enabled = enabled
+        if not enabled:
+            self._controller.set_hover(None)
+            self._scene.set_hover(None)
 
     def _logical_square(self, event) -> Square | None:
         pos = self.mapToScene(event.position().toPoint())
@@ -36,9 +45,10 @@ class BoardView(QGraphicsView):
         event.accept()
 
     def mouseMoveEvent(self, event) -> None:
-        square = self._logical_square(event)
-        self._controller.set_hover(square)
-        self._scene.set_hover(square)
+        if self._hover_enabled:
+            square = self._logical_square(event)
+            self._controller.set_hover(square)
+            self._scene.set_hover(square)
         super().mouseMoveEvent(event)
 
     def leaveEvent(self, event) -> None:

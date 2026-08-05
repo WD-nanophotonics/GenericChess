@@ -5,15 +5,19 @@ import os
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 import pytest
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication
 
 from generic_chess.core.actions import BoardMove
 from generic_chess.core.coordinates import Square
+from generic_chess.core.movement import LeapAtom, RayAtom
+from generic_chess.ui import adapters
 from generic_chess.ui.board.texture_cache import TextureCache
 from generic_chess.ui.controller import UIController
 from generic_chess.ui.dialogs.preferences_dialog import PreferencesDialog
 from generic_chess.ui.main_window import MainWindow
-from generic_chess.ui.settings import DictSettingsStore, KEY_TEXTURE_RATIO
+from generic_chess.ui.settings import KEY_ENABLE_PREVIEW, KEY_SHOW_HOVER, KEY_TEXTURE_RATIO
+from generic_chess.ui.stores import DictSettingsStore
 
 
 @pytest.fixture(scope="session")
@@ -116,9 +120,30 @@ def test_promotion_dialog_instantiates(qapp):
 
 def test_preferences_dialog_persists(qapp):
     settings = DictSettingsStore()
-    dialog = PreferencesDialog(settings)
-    dialog._save()
-    assert settings.contains(KEY_TEXTURE_RATIO)
+    dialog = PreferencesDialog({})
+    values = dialog.values()
+    assert KEY_TEXTURE_RATIO in values
+    assert values[KEY_TEXTURE_RATIO] == 0.8  # default from empty initial
+
+
+def test_view_menu_toggle_syncs_to_settings(qapp):
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    win._act_coords.setChecked(False)  # View menu toggle
+    assert settings.get("board/coordinates", True) is False
+
+
+def test_settings_restore_view_state_on_startup(qapp):
+    settings = DictSettingsStore()
+    settings.set("board/coordinates", False)
+    settings.set("board/legal_moves", False)
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    assert win._act_coords.isChecked() is False
+    assert win._act_legal.isChecked() is False
 
 
 def test_piece_panel_shows_selected_piece(qapp):
@@ -170,3 +195,133 @@ def test_run_ui_launcher_smoke():
     )
     assert proc.returncode == 0, proc.stderr
     assert "Traceback" not in proc.stderr
+
+
+def test_hand_stand_shows_empty_state(qapp):
+    ctrl, win = _window(qapp)
+    assert win._hand_bottom.is_empty_shown()
+    assert win._hand_bottom.piece_buttons() == ()
+
+
+def test_hand_stand_drop_flow(qapp):
+    from conftest import king_type, make_ruleset, T
+
+    rook = T("R", RayAtom((0, 1)), RayAtom((0, -1)), RayAtom((1, 0)), RayAtom((-1, 0)))
+    filler = T("F", LeapAtom((1, 0)))
+    ruleset = make_ruleset(
+        8,
+        [king_type(), rook, filler],
+        lines=[
+            ".......k",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "KRf.....",
+        ],
+    )
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    assert ctrl.new_game_from_ruleset(ruleset)
+    win = MainWindow(ctrl, settings)
+    win.show()
+    assert win._hand_bottom.is_empty_shown()
+
+    ctrl.square_clicked(Square(1, 0))
+    ctrl.square_clicked(Square(2, 0))  # capture -> hand
+    win._refresh()
+    buttons = win._hand_bottom.piece_buttons()
+    assert not win._hand_bottom.is_empty_shown()
+    assert buttons and "F" in buttons[0].text()
+
+    # Player 1 moves so player 0 can drop.
+    ctrl.square_clicked(Square(7, 7))
+    ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
+    win._refresh()
+    buttons = win._hand_bottom.piece_buttons()
+    assert buttons and buttons[0].isEnabled()  # side to move can drop
+    buttons[0].click()
+    assert ctrl.interaction.selected_hand_piece_type_id == "F"
+    assert ctrl.interaction.legal_actions
+    target = ctrl.interaction.legal_actions[0].to_square
+    ctrl.square_clicked(target)
+    win._refresh()
+    assert ctrl.session.state.position.hands[0].count("F") == 0
+    assert win._hand_bottom.is_empty_shown()
+
+
+def test_board_view_mouse_tracking_enabled(qapp):
+    _, win = _window(qapp)
+    assert win._board_view.hasMouseTracking()
+    assert win._board_view.viewport().hasMouseTracking()
+
+
+def test_hover_preference_gates_scene_hover(qapp):
+    ctrl, win = _window(qapp)
+    win._scene.set_hover(Square(0, 0))
+    assert win._scene._hover_item is not None
+    win._settings.set(KEY_SHOW_HOVER, False)
+    win._refresh()
+    win._scene.set_hover(Square(0, 0))
+    assert win._scene._hover_item is None
+
+
+def test_manual_zoom_survives_refresh(qapp):
+    _, win = _window(qapp)
+    win._board_view.scale(1.5, 1.5)
+    before = win._board_view.transform()
+    win._refresh()
+    assert win._board_view.transform() == before  # refresh does not reset zoom
+    win._board_view.reset_zoom()
+    assert win._board_view.transform() != before
+
+
+def test_history_preview_selects_same_ply(qapp):
+    ctrl, win = _window(qapp)
+    model = ctrl.board_view_model()
+    pawn = next(
+        sv.square
+        for sv in model.squares
+        if sv.piece is not None and sv.piece.owner == 0 and sv.piece.base_type_id == "P"
+    )
+    ctrl.square_clicked(pawn)
+    ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
+    win._refresh()
+    assert ctrl.display_ply(1)
+    win._refresh()
+    selected = win._history_panel._list.selectedItems()
+    assert selected and selected[0].data(Qt.UserRole) == 1
+    ctrl.return_to_current()
+    win._refresh()
+    selected = win._history_panel._list.selectedItems()
+    assert selected and selected[0].data(Qt.UserRole) == 1  # back to live (last move)
+
+
+def test_owner_mapping_ui_text(qapp):
+    ctrl, win = _window(qapp)
+    assert "White" in win._game_panel._status.text()
+    model = ctrl.board_view_model()
+    pawn = next(
+        sv.square
+        for sv in model.squares
+        if sv.piece is not None and sv.piece.owner == 0 and sv.piece.base_type_id == "P"
+    )
+    ctrl.square_clicked(pawn)
+    win._refresh()
+    assert "White / Player 0 (先手)" in win._piece_panel._info.text()
+
+
+def test_texture_cache_style_dimension(qapp):
+    from generic_chess.visual.texture_style import PieceTextureStyle
+
+    ctrl = _window(qapp)[0]
+    compiled = ctrl.compiled
+    cache = TextureCache()
+    style_a = PieceTextureStyle(white_fill="#ff0000")
+    style_b = PieceTextureStyle(white_fill="#0000ff")
+    pm_a = cache.pixmap(compiled, "P", 0, 64, style=style_a)
+    pm_b = cache.pixmap(compiled, "P", 0, 64, style=style_b)
+    assert pm_a.toImage() != pm_b.toImage()  # different styles never collide
+    assert cache.pixmap(compiled, "P", 0, 64, style=style_a).toImage() == pm_a.toImage()

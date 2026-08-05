@@ -23,7 +23,10 @@ from .adapters import movement_summary, reachable_squares
 from .interaction_state import BoardInteractionState
 from .settings import (
     KEY_AUTO_PROMOTE_UNIQUE,
+    KEY_BOARD_ORIENTATION,
     KEY_ENABLE_PREVIEW,
+)
+from .stores import (
     SettingsStore,
 )
 
@@ -51,6 +54,7 @@ class UIController:
         self._ruleset_path: str | None = None
         self._record_path: str | None = None
         self._interaction = BoardInteractionState()
+        self._type_browse_id: str | None = None
         self._listeners: list[Listener] = []
         self._last_error: str | None = None
 
@@ -184,6 +188,7 @@ class UIController:
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
+        self._type_browse_id = None
         self._display_session = None
         self._rebuild()
         self._last_error = None
@@ -279,6 +284,7 @@ class UIController:
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
+        self._type_browse_id = None
         self._rebuild()
         self._notify()
 
@@ -289,6 +295,7 @@ class UIController:
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )
+        self._type_browse_id = None
         self._rebuild()
         self._notify()
         return True
@@ -307,6 +314,7 @@ class UIController:
     # ------------------------------------------------------------------ interaction
 
     def square_clicked(self, square: Square) -> None:
+        self._type_browse_id = None
         pos = self.displayed_position()
         if pos is None:
             return
@@ -393,6 +401,7 @@ class UIController:
         self._notify()
 
     def hand_piece_clicked(self, type_id: str) -> None:
+        self._type_browse_id = None
         if self._session is None or self._display_session is not None:
             return
         if self._session.result.status is not SessionStatus.ONGOING:
@@ -410,18 +419,30 @@ class UIController:
         self._notify()
 
     def cancel(self) -> None:
+        self._type_browse_id = None
         self._interaction.clear_selection()
         self._interaction.hovered_square = None
         self._notify()
 
     def flip_board(self) -> None:
         self._interaction.orientation_owner = 1 - self._interaction.orientation_owner
+        if self._settings is not None:
+            self._settings.set(KEY_BOARD_ORIENTATION, self._interaction.orientation_owner)
+        self._notify()
+
+    def set_orientation(self, owner: int) -> None:
+        if owner not in (0, 1):
+            raise ValueError(f"orientation owner must be 0 or 1, got {owner!r}")
+        self._interaction.orientation_owner = owner
+        if self._settings is not None:
+            self._settings.set(KEY_BOARD_ORIENTATION, owner)
         self._notify()
 
     def set_hover(self, square: Square | None) -> None:
         self._interaction.hovered_square = square
 
     def display_ply(self, ply: int) -> bool:
+        self._type_browse_id = None
         if self._session is None or not (0 <= ply <= len(self._actions)):
             return False
         record = GameRecord(
@@ -441,6 +462,7 @@ class UIController:
         return True
 
     def return_to_current(self) -> None:
+        self._type_browse_id = None
         self._display_session = None
         self._interaction.displayed_ply = None
         self._interaction.clear_selection()
@@ -570,6 +592,8 @@ class UIController:
             type_id = piece.current_type_id
 
         if type_id is None:
+            if self._type_browse_id is not None:
+                return self.piece_type_info(self._type_browse_id)
             return None
         pt: PieceType = self._compiled.types_by_id[type_id]
 
@@ -617,6 +641,19 @@ class UIController:
             is_actionable=is_actionable,
             is_preview=preview,
         )
+
+    def browse_type(self, type_id: str) -> bool:
+        """Enter type-only browsing mode (used by the Rules panel)."""
+        if self._compiled is None or type_id not in self._compiled.types_by_id:
+            return False
+        self._type_browse_id = type_id
+        self._notify()
+        return True
+
+    def clear_browse(self) -> None:
+        if self._type_browse_id is not None:
+            self._type_browse_id = None
+            self._notify()
 
     def piece_type_info(self, type_id: str) -> vm.PieceInfo | None:
         """Rule-only info for a piece type (used by the Rules panel)."""

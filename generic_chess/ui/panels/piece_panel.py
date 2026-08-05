@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
 )
 
 from ..board.texture_cache import TextureCache
+from ..adapters import owner_label
 from ..controller import UIController
 
 
@@ -21,7 +22,6 @@ class PiecePanel(QWidget):
         super().__init__(parent)
         self._controller = controller
         self._cache = cache
-        self._type_id: str | None = None
 
         layout = QVBoxLayout(self)
         self._image = QLabel()
@@ -48,15 +48,11 @@ class PiecePanel(QWidget):
         layout.addStretch(1)
 
     def show_type(self, type_id: str) -> None:
-        self._type_id = type_id
+        self._controller.browse_type(type_id)
         self.refresh()
 
     def refresh(self) -> None:
-        info = None
-        if self._type_id is not None:
-            info = self._controller.piece_type_info(self._type_id)
-        else:
-            info = self._controller.piece_info()
+        info = self._controller.piece_info()
         if info is None:
             self._image.clear()
             self._info.setText("<i>Select a piece to inspect.</i>")
@@ -71,11 +67,7 @@ class PiecePanel(QWidget):
         else:
             self._image.clear()
 
-        owner_text = {
-            0: "White / Player 0",
-            1: "Black / Player 1",
-            None: "—",
-        }[info.owner]
+        owner_text = owner_label(info.owner)
         pos_text = str(info.square) if info.square is not None else "—"
         lines = [
             f"<b>Type:</b> {info.type_id} ({info.name})",

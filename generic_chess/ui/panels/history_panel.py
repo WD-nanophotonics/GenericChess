@@ -34,13 +34,18 @@ class HistoryPanel(QWidget):
     def refresh(self) -> None:
         self._list.clear()
         entries = self._controller.history_entries()
+        displayed = self._controller.interaction.displayed_ply
         for entry in entries:
             item = QListWidgetItem(f"{entry.ply:>3}. P{entry.player}: {entry.label}")
             item.setData(Qt.UserRole, entry.ply)
             self._list.addItem(item)
         if self._list.count():
-            last_item = self._list.item(self._list.count() - 1)
-            last_item.setSelected(True)
-            self._list.scrollToBottom()
-        displayed = self._controller.interaction.displayed_ply
+            if displayed is not None and 1 <= displayed <= self._list.count():
+                item = self._list.item(displayed - 1)
+                item.setSelected(True)
+                self._list.scrollToItem(item)
+            else:
+                last_item = self._list.item(self._list.count() - 1)
+                last_item.setSelected(True)
+                self._list.scrollToBottom()
         self._return_btn.setEnabled(displayed is not None)

@@ -13,6 +13,15 @@ if TYPE_CHECKING:
     from ..rules.compiled import CompiledRuleSet
 
 
+def owner_label(owner: int | None) -> str:
+    """Human-facing owner label (visual convention: 0 = White/先手, 1 = Black/后手)."""
+    if owner == 0:
+        return "White / Player 0 (先手)"
+    if owner == 1:
+        return "Black / Player 1 (後手)"
+    return "—"
+
+
 def _direction_word(df: int, dr: int) -> str:
     parts = []
     if dr > 0:
@@ -60,15 +69,27 @@ def reachable_squares(position: Position, square: Square, compiled: "CompiledRul
     leap_row = compiled.leap_targets[tid][owner][idx]
     ray_row = compiled.ray_paths[tid][owner][idx]
     candidates: list[Square] = []
+    seen: set[Square] = set()
+
+    def add(target: Square) -> None:
+        if target not in seen:
+            seen.add(target)
+            candidates.append(target)
+
     for a_idx, atom in enumerate(atoms):
         if isinstance(atom, LeapAtom):
             for target in leap_row[a_idx]:
                 occupant = position.board[square_to_index(target, n)]
                 if occupant is None or occupant.owner != owner:
-                    candidates.append(target)
+                    add(target)
         else:
             for target in ray_row[a_idx]:
-                candidates.append(target)
-                if position.board[square_to_index(target, n)] is not None:
+                occupant = position.board[square_to_index(target, n)]
+                if occupant is None:
+                    add(target)
+                    continue
+                if occupant.owner != owner:
+                    add(target)
                     break
+                break  # friendly blocker: not reachable, stop
     return tuple(candidates)

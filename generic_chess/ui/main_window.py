@@ -23,6 +23,7 @@ from PySide6.QtWidgets import (
 
 from ..core.actions import Action, BoardMove
 from ..rules.compiler import compile_ruleset
+from .adapters import owner_label
 from .board.scene import BoardRenderConfig, BoardScene
 from .board.texture_cache import TextureCache
 from .board.view import BoardView
@@ -32,6 +33,7 @@ from .dialogs.new_game_dialog import NewGameDialog
 from .dialogs.preferences_dialog import PreferencesDialog
 from .dialogs.promotion_dialog import PromotionDialog
 from .panels.game_panel import GamePanel
+from .panels.hand_stand import HandStandWidget
 from .panels.history_panel import HistoryPanel
 from .panels.piece_panel import PiecePanel
 from .panels.rules_panel import RulesPanel
@@ -41,8 +43,8 @@ from .settings import (
     KEY_SHOW_HOVER,
     KEY_SHOW_LAST_MOVE,
     KEY_SHOW_LEGAL_MOVES,
-    KEY_SHOW_SIDEBAR,
     KEY_SHOW_TOOLBAR,
+    KEY_SHOW_SIDEBAR,
     KEY_SPLITTER_STATE,
     KEY_TEXTURE_RATIO,
     KEY_WINDOW_GEOMETRY,
@@ -76,7 +78,7 @@ class MainWindow(QMainWindow):
         self._board_view = BoardView(controller, self._scene)
 
         self._piece_panel = PiecePanel(controller, self._cache)
-        self._game_panel = GamePanel(controller, self._cache, new_game_cb=self._new_game)
+        self._game_panel = GamePanel(controller, new_game_cb=self._new_game)
         self._history_panel = HistoryPanel(controller)
         self._rules_panel = RulesPanel(
             controller, self._cache, inspect_type_cb=self._piece_panel.show_type
@@ -87,8 +89,17 @@ class MainWindow(QMainWindow):
         self._tabs.addTab(self._history_panel, "History")
         self._tabs.addTab(self._rules_panel, "Rules")
 
+        self._hand_top = HandStandWidget(controller, self._cache, owner=1)
+        self._hand_bottom = HandStandWidget(controller, self._cache, owner=0)
+        central = QWidget()
+        central_layout = QVBoxLayout(central)
+        central_layout.setContentsMargins(0, 0, 0, 0)
+        central_layout.addWidget(self._hand_top)
+        central_layout.addWidget(self._board_view, 1)
+        central_layout.addWidget(self._hand_bottom)
+
         splitter = QSplitter(Qt.Horizontal)
-        splitter.addWidget(self._board_view)
+        splitter.addWidget(central)
         splitter.addWidget(self._tabs)
         splitter.setStretchFactor(0, 3)
         splitter.setStretchFactor(1, 1)
@@ -102,6 +113,7 @@ class MainWindow(QMainWindow):
         controller.subscribe(self._refresh)
         self._restore_window_state()
         self._refresh()
+        QTimer.singleShot(0, self._board_view.fit_board)
 
     # ------------------------------------------------------------------ actions
 
@@ -114,12 +126,12 @@ class MainWindow(QMainWindow):
             "Save Record As…", "Ctrl+Shift+S", self._save_record_as
         )
         self._act_export_ruleset = self._action("Export RuleSet…", None, self._export_ruleset)
-        self._act_gallery = self._action("Export Texture Gallery…", None, self._texture_gallery)
+        self._act_gallery = self._action("Texture Gallery…", None, self._texture_gallery)
         self._act_exit = self._action("Exit", "Ctrl+Q", self.close)
 
         self._act_undo = self._action("Undo", "Ctrl+Z", self._controller.undo)
         self._act_redo = self._action("Redo", "Ctrl+Y", self._controller.redo)
-        self._act_restart = self._action("Restart", None, self._controller.restart)
+        self._act_restart = self._action("Restart", None, self._restart)
         self._act_resign = self._action("Resign", None, self._resign)
         self._act_flip = self._action("Flip Board", "F", self._controller.flip_board)
         self._act_return = self._action(
@@ -129,6 +141,11 @@ class MainWindow(QMainWindow):
         self._act_coords = self._check_action("Show Coordinates", True, self._refresh)
         self._act_legal = self._check_action("Show Legal Moves", True, self._refresh)
         self._act_lastmove = self._check_action("Show Last Move", True, self._refresh)
+        self._act_coords.setObjectName("coords")
+        self._act_legal.setObjectName("legal")
+        self._act_lastmove.setObjectName("lastmove")
+        for action in (self._act_coords, self._act_legal, self._act_lastmove):
+            action.toggled.connect(self._on_view_toggle)
         self._act_sidebar = self._check_action("Show Side Panel", True, self._toggle_sidebar)
         self._act_toolbar = self._check_action("Show Toolbar", True, self._toggle_toolbar)
         self._act_zoom_in = self._action("Zoom In", "Ctrl+=", lambda: self._board_view.scale(1.2, 1.2))
@@ -232,6 +249,13 @@ class MainWindow(QMainWindow):
     def _refresh(self) -> None:
         compiled = self._controller.compiled
         model = self._controller.board_view_model()
+        hover_enabled = bool(self._settings.get(KEY_SHOW_HOVER, True))
+        self._board_view.set_hover_enabled(hover_enabled)
+        orientation = self._controller.interaction.orientation_owner
+        self._hand_top.set_owner(1 - orientation)
+        self._hand_bottom.set_owner(orientation)
+        self._hand_top.refresh()
+        self._hand_bottom.refresh()
         if model is None or compiled is None:
             self._scene.clear()
             self._status_main.setText("No game loaded | Ready")
@@ -239,12 +263,11 @@ class MainWindow(QMainWindow):
             config = BoardRenderConfig(
                 theme=self._theme,
                 texture_ratio=float(self._settings.get(KEY_TEXTURE_RATIO, 0.8)),
-                show_coordinates=bool(self._settings.get(KEY_SHOW_COORDINATES, True))
-                and self._act_coords.isChecked(),
-                show_legal_moves=bool(self._settings.get(KEY_SHOW_LEGAL_MOVES, True))
-                and self._act_legal.isChecked(),
-                show_last_move=bool(self._settings.get(KEY_SHOW_LAST_MOVE, True))
-                and self._act_lastmove.isChecked(),
+                texture_style=self._theme.texture_style,
+                show_coordinates=self._act_coords.isChecked(),
+                show_legal_moves=self._act_legal.isChecked(),
+                show_last_move=self._act_lastmove.isChecked(),
+                show_hover=hover_enabled,
             )
             self._scene.build(
                 model,
@@ -260,18 +283,18 @@ class MainWindow(QMainWindow):
         self._rules_panel.refresh()
         self._update_action_enabled()
         self._open_promotion_if_pending()
-        QTimer.singleShot(0, self._board_view.fit_board)
 
     def _status_text(self) -> str:
         info = self._controller.game_info()
         interaction = self._controller.interaction
         if info is None:
             return "Ready"
-        side = "White" if info.side_to_move == 0 else "Black"
-        base = f"{side} to move | Ply {info.ply_count} | RuleSet {info.fingerprint_short}"
+        base = f"{owner_label(info.side_to_move)} to move | Ply {info.ply_count} | RuleSet {info.fingerprint_short}"
+        if self._controller.interaction.displayed_ply is not None:
+            base += f" | viewing history Ply {self._controller.interaction.displayed_ply}"
         if interaction.preview_piece_square is not None:
             base += (
-                f" | Movement preview ({len(interaction.preview_squares)} squares) "
+                f" | Movement preview: {len(interaction.preview_squares)} squares "
                 f"| Not currently actionable"
             )
         elif interaction.selected_square is not None:
@@ -342,6 +365,8 @@ class MainWindow(QMainWindow):
                 "New Game",
                 f"Could not start the requested game:\n{self._controller.last_error}",
             )
+            return
+        self._board_view.fit_board()
 
     def _open_ruleset(self) -> None:
         path, _ = QFileDialog.getOpenFileName(self, "Open RuleSet", "", "JSON files (*.json)")
@@ -349,6 +374,8 @@ class MainWindow(QMainWindow):
             return
         if not self._controller.open_ruleset(path):
             show_error(self, "Open RuleSet", self._controller.last_error)
+            return
+        self._board_view.fit_board()
 
     def _open_record(self) -> None:
         if self._controller.compiled is None:
@@ -359,6 +386,8 @@ class MainWindow(QMainWindow):
             return
         if not self._controller.open_record(path):
             show_error(self, "Open Record", self._controller.last_error)
+            return
+        self._board_view.fit_board()
 
     def _save_record(self) -> None:
         if self._controller.session is None:
@@ -393,9 +422,37 @@ class MainWindow(QMainWindow):
             self._controller.resign()
 
     def _preferences(self) -> None:
-        dialog = PreferencesDialog(self._settings, self)
-        if dialog.exec() == QDialog.Accepted:
-            self._refresh()
+        initial = {
+            KEY_TEXTURE_RATIO: float(self._settings.get(KEY_TEXTURE_RATIO, 0.8)),
+            KEY_BOARD_ORIENTATION: self._controller.interaction.orientation_owner,
+            KEY_SHOW_COORDINATES: self._act_coords.isChecked(),
+            KEY_SHOW_LEGAL_MOVES: self._act_legal.isChecked(),
+            KEY_SHOW_LAST_MOVE: self._act_lastmove.isChecked(),
+            KEY_SHOW_HOVER: bool(self._settings.get(KEY_SHOW_HOVER, True)),
+            KEY_ENABLE_PREVIEW: bool(self._settings.get(KEY_ENABLE_PREVIEW, True)),
+            KEY_AUTO_PROMOTE_UNIQUE: bool(
+                self._settings.get(KEY_AUTO_PROMOTE_UNIQUE, True)
+            ),
+        }
+        dialog = PreferencesDialog(initial, self)
+        if dialog.exec() != QDialog.Accepted:
+            return
+        values = dialog.values()
+        self._settings.set(KEY_TEXTURE_RATIO, values[KEY_TEXTURE_RATIO])
+        self._settings.set(KEY_SHOW_COORDINATES, values[KEY_SHOW_COORDINATES])
+        self._settings.set(KEY_SHOW_LEGAL_MOVES, values[KEY_SHOW_LEGAL_MOVES])
+        self._settings.set(KEY_SHOW_LAST_MOVE, values[KEY_SHOW_LAST_MOVE])
+        self._settings.set(KEY_SHOW_HOVER, values[KEY_SHOW_HOVER])
+        self._settings.set(KEY_ENABLE_PREVIEW, values[KEY_ENABLE_PREVIEW])
+        self._settings.set(KEY_AUTO_PROMOTE_UNIQUE, values[KEY_AUTO_PROMOTE_UNIQUE])
+        self._act_coords.setChecked(values[KEY_SHOW_COORDINATES])
+        self._act_legal.setChecked(values[KEY_SHOW_LEGAL_MOVES])
+        self._act_lastmove.setChecked(values[KEY_SHOW_LAST_MOVE])
+        orientation = values[KEY_BOARD_ORIENTATION]
+        self._settings.set(KEY_BOARD_ORIENTATION, orientation)
+        if orientation != self._controller.interaction.orientation_owner:
+            self._controller.set_orientation(orientation)
+        self._refresh()
 
     def _validate_ruleset(self) -> None:
         ruleset = self._controller.ruleset
@@ -464,6 +521,22 @@ class MainWindow(QMainWindow):
     def _toggle_fullscreen(self) -> None:
         self.showFullScreen() if not self.isFullScreen() else self.showNormal()
 
+    def _on_view_toggle(self, checked: bool) -> None:
+        """Persist a View-menu toggle so it survives restarts."""
+        action = self.sender()
+        name = action.objectName() if action is not None else ""
+        key = {
+            "coords": KEY_SHOW_COORDINATES,
+            "legal": KEY_SHOW_LEGAL_MOVES,
+            "lastmove": KEY_SHOW_LAST_MOVE,
+        }.get(name)
+        if key is not None:
+            self._settings.set(key, checked)
+
+    def _restart(self) -> None:
+        self._controller.restart()
+        self._board_view.fit_board()
+
     # ------------------------------------------------------------------ persistence
 
     def _restore_window_state(self) -> None:
@@ -477,6 +550,9 @@ class MainWindow(QMainWindow):
         self._act_sidebar.setChecked(bool(self._settings.get(KEY_SHOW_SIDEBAR, True)))
         self._toolbar.setVisible(bool(self._settings.get(KEY_SHOW_TOOLBAR, True)))
         self._act_toolbar.setChecked(bool(self._settings.get(KEY_SHOW_TOOLBAR, True)))
+        self._act_coords.setChecked(bool(self._settings.get(KEY_SHOW_COORDINATES, True)))
+        self._act_legal.setChecked(bool(self._settings.get(KEY_SHOW_LEGAL_MOVES, True)))
+        self._act_lastmove.setChecked(bool(self._settings.get(KEY_SHOW_LAST_MOVE, True)))
 
     def closeEvent(self, event) -> None:
         self._settings.set(KEY_WINDOW_GEOMETRY, self.saveGeometry())

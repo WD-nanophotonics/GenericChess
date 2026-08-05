@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
 from ...core.coordinates import Square
 from ...ui.view_models import BoardViewModel
 from ...ui.theme import Theme
+from ...visual.texture_style import PieceTextureStyle
 from .texture_cache import TextureCache
 
 
@@ -28,9 +29,11 @@ CELL = 100.0
 class BoardRenderConfig:
     theme: Theme
     texture_ratio: float = 0.8
+    texture_style: PieceTextureStyle = PieceTextureStyle()
     show_coordinates: bool = True
     show_legal_moves: bool = True
     show_last_move: bool = True
+    show_hover: bool = True
 
 
 class BoardScene(QGraphicsScene):
@@ -99,8 +102,6 @@ class BoardScene(QGraphicsScene):
                 self._add_rect(rect, theme.last_move_from, 150, 1)
             if config.show_last_move and sv.square in last_to:
                 self._add_rect(rect, theme.last_move_to, 170, 1)
-            if sv.is_hovered:
-                self._add_rect(rect, theme.hover_fill, int(255 * theme.hover_opacity), 2)
             if sv.is_preview:
                 self._add_rect(rect, theme.preview_fill, int(255 * theme.preview_opacity), 3)
             if sv.is_legal_move and config.show_legal_moves:
@@ -168,7 +169,11 @@ class BoardScene(QGraphicsScene):
             return
         size = int(CELL * config.texture_ratio)
         renderer = self._cache.renderer(
-            self._compiled, sv.piece.current_type_id, sv.piece.owner, size
+            self._compiled,
+            sv.piece.current_type_id,
+            sv.piece.owner,
+            size,
+            style=config.texture_style,
         )
         item = QGraphicsSvgItem()
         item.setSharedRenderer(renderer)
@@ -205,7 +210,7 @@ class BoardScene(QGraphicsScene):
         if self._hover_item is not None:
             self.removeItem(self._hover_item)
             self._hover_item = None
-        if square is None or self._config is None:
+        if square is None or self._config is None or not self._config.show_hover:
             return
         x, y = self.logical_to_scene(square)
         c = QColor(self._config.theme.hover_fill)

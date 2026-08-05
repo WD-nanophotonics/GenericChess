@@ -4,6 +4,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+import hashlib
+from dataclasses import asdict
+
+from ..rules.schema import canonical_json
 from ..visual.texture_style import PieceTextureStyle
 
 
@@ -27,3 +31,9 @@ class Theme:
 
 def default_theme() -> Theme:
     return Theme()
+
+
+def style_fingerprint(style: PieceTextureStyle) -> str:
+    """Stable fingerprint of a texture style (used in the texture cache key)."""
+    raw = canonical_json(asdict(style))
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()

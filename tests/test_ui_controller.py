@@ -10,8 +10,10 @@ import pytest
 from generic_chess.core.actions import BoardMove, DropMove
 from generic_chess.core.coordinates import Square
 from generic_chess.core.movement import LeapAtom, RayAtom
+from generic_chess.ui.adapters import owner_label, reachable_squares
 from generic_chess.ui.controller import UIController
-from generic_chess.ui.settings import DictSettingsStore, KEY_ENABLE_PREVIEW
+from generic_chess.ui.settings import KEY_ENABLE_PREVIEW
+from generic_chess.ui.stores import DictSettingsStore
 
 from conftest import king_type, make_ruleset, T
 
@@ -368,3 +370,121 @@ def test_open_ruleset_error_keeps_game(ui_tmp_dir):
     assert not ctrl.open_ruleset(str(ui_tmp_dir / "missing.json"))
     assert ctrl.last_error
     assert ctrl.session.state.ply_count == ply_before
+
+
+def test_owner_label_white_black_mapping():
+    assert "White" in owner_label(0)
+    assert "Black" in owner_label(1)
+    assert "先手" in owner_label(0)
+    assert "後手" in owner_label(1)
+    assert owner_label(None) == "—"
+
+
+def _preview_ruleset():
+    rook = T("R", RayAtom((0, 1)), RayAtom((0, -1)), RayAtom((1, 0)), RayAtom((-1, 0)))
+    filler = T("F", LeapAtom((1, 0)))
+    return make_ruleset(8, [king_type(), rook, filler])
+
+
+def test_preview_ray_friendly_block_excluded():
+    from generic_chess.rules.compiler import compile_ruleset
+    from conftest import make_position
+
+    compiled = compile_ruleset(_preview_ruleset())
+    # R at (3,0) owner 0; friendly F at (3,2); enemy f at (3,4).
+    pos = make_position(
+        compiled,
+          [
+              "K......k",
+              "........",
+              "........",
+              "...f....",
+              "........",
+              "...F....",
+              "........",
+              "...R....",
+          ],
+    )
+    targets = reachable_squares(pos, Square(3, 0), compiled)
+    assert Square(3, 1) in targets
+    assert Square(3, 2) not in targets  # friendly blocker is not reachable
+    assert Square(3, 4) not in targets
+
+
+def test_preview_ray_enemy_included_then_stops():
+    from generic_chess.rules.compiler import compile_ruleset
+    from conftest import make_position
+
+    compiled = compile_ruleset(_preview_ruleset())
+    pos = make_position(
+        compiled,
+        [
+            "K......k",
+            "........",
+              "........",
+              "........",
+              "........",
+              "...f....",
+              "........",
+              "...R....",
+          ],
+    )
+    targets = reachable_squares(pos, Square(3, 0), compiled)
+    assert Square(3, 1) in targets
+    assert Square(3, 2) in targets  # enemy captured/attacked square is included
+    assert Square(3, 3) not in targets  # stops after the enemy
+
+
+def test_preview_deduplicates_overlapping_atoms():
+    from generic_chess.rules.compiler import compile_ruleset
+    from conftest import make_position
+
+    overlap = T("O", LeapAtom((0, 1)), RayAtom((0, 1), max_steps=1))
+    compiled = compile_ruleset(make_ruleset(8, [king_type(), overlap]))
+    pos = make_position(
+        compiled,
+        [
+            "K......k",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "O.......",
+        ],
+    )
+    targets = reachable_squares(pos, Square(0, 0), compiled)
+    assert targets.count(Square(0, 1)) == 1
+    assert len(targets) == len(set(targets))
+
+
+def test_preview_count_matches_highlighted_squares():
+    ctrl = _controller()
+    model = ctrl.board_view_model()
+    enemy = next(
+        sv.square
+        for sv in model.squares
+        if sv.piece is not None and sv.piece.owner == 1
+    )
+    ctrl.square_clicked(enemy)
+    assert ctrl.piece_info().preview_count == len(ctrl.interaction.preview_squares)
+
+
+def test_browse_type_then_board_interaction_returns_to_piece():
+    ctrl = _controller()
+    assert ctrl.browse_type("P")
+    info = ctrl.piece_info()
+    assert info.type_id == "P"
+    assert info.square is None  # static type info
+    # Back to the board: selecting a piece exits type-browse mode.
+    ctrl.square_clicked(_own_pawn_square(ctrl))
+    info = ctrl.piece_info()
+    assert info.square is not None
+    assert info.type_id == "P"
+    assert ctrl.piece_info().is_actionable
+
+
+def test_browse_type_invalid_rejected():
+    ctrl = _controller()
+    assert not ctrl.browse_type("DOES_NOT_EXIST")

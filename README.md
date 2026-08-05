@@ -153,16 +153,27 @@ texture = generate_piece_texture(compiled.types_by_id["P"], owner=1, style=custo
 棋盘渲染、`QSplitter` 侧边栏（Piece / Game / History / Rules 四个标签页）、菜单/工具栏/状态栏、
 `QSettings` 持久化。架构严格分层：Core/Rules/Generation → Session → **UI Controller** →
 PySide6 View；视图不直接调用 `apply_action`，全部走子通过 Controller 的 `GameSession`
-公共语义执行，绝不触碰 `_apply_action_unchecked`。
+公共语义执行，绝不触碰 `_apply_action_unchecked`。Controller 是无 Qt 依赖的纯 Python
+（设置存储抽象在 `ui/stores.py`，`QtSettingsStore` 作为 Qt 适配器在 View 层）。
+
+视觉约定：**owner 0 = 先手 = 白方**（浅色主体 + 深色描边/中心点），**owner 1 = 后手 = 黑方**
+（深色主体 + 浅色描边/中心点）；棋盘默认 owner 0 在下方，Flip 只改变棋盘朝向，不改变
+owner↔颜色映射。所有文案统一为 `White / Player 0 (先手)` / `Black / Player 1 (後手)`。
+
+**持ち駒台（hand stand）**：棋盘上方固定显示后手台、下方固定显示先手台（随棋盘翻转跟随，
+始终在“己方在下方”的一侧）。每个台子带边框，显示 texture + `type_id` + 数量；空手有明确
+空状态。点击当前行动方的台子棋子进入 drop 模式（棋盘高亮合法落点），非行动方可看不可点；
+右键/Esc 取消。
 
 交互：
 
 * **左键**：点击己方棋子选择并高亮真实合法着法；点击合法目标格走子；同一目标格存在多个
   promotion 动作时弹出升变对话框（每个选项显示升变后 texture 与 type_id，必要时含
   "No promotion"）。点击敌方棋子进入 **Movement preview**（蓝灰色、明确标注“不是合法着法”），
-  preview 由只读 reachability adapter 基于 compiled movement 计算，不做合法性与自将判断。
+  preview 由只读 reachability adapter 基于 compiled movement 计算（ray 空格继续、敌方阻挡
+  计入后停止、己方阻挡不计入并停止、结果去重），不做合法性与自将判断。
 * **右键 / Esc**：取消选择、drop 状态与所有 overlay，不改变对局。
-* **Drop**：Game 面板点击当前行动方 hand 中的棋子进入 drop-selection，棋盘显示合法落点。
+* **Drop**：点击持ち駒台中的当前行动方棋子进入 drop-selection，棋盘显示合法落点。
 * **高亮**：selected（青蓝边框）、legal move（绿点）、legal capture（橙色圆环）、preview
   （蓝灰半透明）、last move（起点浅黄/终点橙黄）、check/threat（红边框）、hover（可关闭）。
 * **Undo/Redo**：通过保留动作序列并 `GameSession.replay` 重建实现，只使用公开 API；
@@ -173,8 +184,10 @@ PySide6 View；视图不直接调用 `apply_action`，全部走子通过 Control
 Export RuleSet、Export Texture Gallery（复用 visual 模块）。错误通过人类可读对话框展示，
 保留错误码，普通无效点击静默或仅提示状态栏；加载失败不会破坏当前对局。
 
-Preferences（Ctrl+,）持久化窗口几何、splitter 位置、工具栏/侧边栏、棋盘方向、texture 占格
-比例、坐标/legal/last move/hover 开关、敌方 preview 与唯一 promotion 自动选择等。
+Preferences（Ctrl+,）与 View 菜单共享同一状态源：View 菜单的勾选即真相，Preferences
+修改会同步到菜单与 `QSettings`，重启后一致恢复；方向修改立即生效并持久化。持久化窗口几何、
+splitter 位置、工具栏/侧边栏、棋盘方向、texture 占格比例、坐标/legal/last move/hover 开关、
+敌方 preview 与唯一 promotion 自动选择等。
 
 无头测试与自检：
 
