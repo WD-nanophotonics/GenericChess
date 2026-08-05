@@ -69,16 +69,13 @@ class MovementCapabilityCache:
         n: int,
         atoms,
         config: EvaluationConfig,
-        fingerprint: str,
     ) -> tuple[MovementCapabilityProfile, bool]:
         signature = movement_signature(atoms)
         key = self.key(n, signature, config)
         cached = self._memory.get(key)
         if cached is not None:
             return cached, True
-        profile = build_movement_capability(
-            n, atoms, config, fingerprint=fingerprint
-        )
+        profile = build_movement_capability(n, atoms, config)
         self._memory.put(key, profile)
         return profile, False
 
@@ -95,11 +92,13 @@ class EvaluationProfileCache:
         memory_max_entries: int = 64,
         disk_dir: str | Path | None = None,
         use_disk: bool = True,
+        capability_cache: MovementCapabilityCache | None = None,
     ) -> None:
         self._memory = _MemoryCache(memory_max_entries)
         self._disk_dir = Path(disk_dir) if disk_dir is not None else None
         self._use_disk = use_disk
         self._lock = threading.Lock()
+        self._capability_cache = capability_cache or MovementCapabilityCache()
 
     def _memory_key(self, compiled: CompiledRuleSet, config: EvaluationConfig) -> tuple:
         return (compiled.ruleset_fingerprint, config.evaluator_version, config_hash(config))
@@ -123,7 +122,9 @@ class EvaluationProfileCache:
             if disk_profile is not None:
                 self._memory.put(key, disk_profile)
                 return disk_profile, True
-            profile = build_ruleset_profile(compiled, config)
+            profile = build_ruleset_profile(
+                compiled, config, capability_cache=self._capability_cache
+            )
             self._memory.put(key, profile)
             self._store_disk(profile)
             return profile, False

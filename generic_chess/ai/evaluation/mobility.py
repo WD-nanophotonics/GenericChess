@@ -92,8 +92,8 @@ def analytic_mobility_at_density(
     return total / (n * n)
 
 
-def _seed_for(fingerprint: str, signature: str, density: float, version: str) -> int:
-    raw = f"{fingerprint}|{signature}|{density:.6f}|{version}".encode("utf-8")
+def _seed_for(signature: str, density: float, version: str) -> int:
+    raw = f"{signature}|{density:.6f}|{version}".encode("utf-8")
     return int.from_bytes(hashlib.sha256(raw).digest()[:8], "little")
 
 
@@ -101,13 +101,16 @@ def monte_carlo_mobility_at_density(
     n: int,
     atoms: tuple[MovementAtom, ...],
     density: float,
-    fingerprint: str,
     signature: str,
     version: str,
     samples: int,
 ) -> float:
-    """Deterministic occupancy-sampling fallback for overlapping/hybrid atoms."""
-    rng = random.Random(_seed_for(fingerprint, signature, density, version))
+    """Deterministic occupancy-sampling fallback for overlapping/hybrid atoms.
+
+    Targets are de-duplicated per starting square so overlapping atoms never
+    double count the same destination.
+    """
+    rng = random.Random(_seed_for(signature, density, version))
     total = 0.0
     for _ in range(samples):
         occupied: list[int] = []
@@ -119,13 +122,14 @@ def monte_carlo_mobility_at_density(
         occ_set = set(occupied)
         for idx in range(n * n):
             square = index_to_square(idx, n)
+            targets: set[int] = set()
             for atom in atoms:
                 if isinstance(atom, LeapAtom):
                     nf, nr = square.file + atom.offset[0], square.rank + atom.offset[1]
                     if 0 <= nf < n and 0 <= nr < n:
                         tidx = nr * n + nf
                         if tidx not in occ_set or owner[tidx] == 1:
-                            total += 1.0
+                            targets.add(tidx)
                 else:
                     df, dr = atom.direction
                     cur = square
@@ -137,13 +141,14 @@ def monte_carlo_mobility_at_density(
                         steps += 1
                         tidx = nr * n + nf
                         if tidx not in occ_set:
-                            total += 1.0
+                            targets.add(tidx)
                             cur = Square(nf, nr)
                         elif owner[tidx] == 1:
-                            total += 1.0
+                            targets.add(tidx)
                             break
                         else:
                             break
+            total += len(targets)
     return total / (samples * n * n)
 
 
@@ -152,7 +157,6 @@ def mobility_density_curve(
     atoms: tuple[MovementAtom, ...],
     density_points: tuple[float, ...],
     *,
-    fingerprint: str,
     signature: str,
     version: str,
     mc_samples: int,
@@ -163,7 +167,7 @@ def mobility_density_curve(
         if use_mc:
             curve.append(
                 monte_carlo_mobility_at_density(
-                    n, atoms, density, fingerprint, signature, version, mc_samples
+                    n, atoms, density, signature, version, mc_samples
                 )
             )
         else:

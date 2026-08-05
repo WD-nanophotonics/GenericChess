@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 from .attacks import is_in_check
 from .errors import ensure_ruleset_match
-from .movegen import legal_actions_from_position
+from .movegen import has_legal_action
 from .position import Position
 from .repetition import is_repetition_draw
 
@@ -49,8 +49,7 @@ def _terminal_from_parts(
     compiled: "CompiledRuleSet",
 ) -> TerminalResult:
     side = position.side_to_move
-    moves = legal_actions_from_position(position, compiled)
-    if not moves:
+    if not has_legal_action(position, compiled):
         if is_in_check(position, side, compiled):
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
         return TerminalResult(TerminalStatus.STALEMATE)

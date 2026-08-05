@@ -8,6 +8,7 @@ import time
 from ..core.actions import Action, BoardMove, DropMove
 from ..core.attacks import is_in_check
 from ..core.coordinates import Square, square_to_index
+from ..core.keys import position_key
 from ..core.pieces import Piece, PieceType
 from ..core.position import Position
 from ..ai.budget import ThinkingConfig, allocate_search_limits
@@ -77,6 +78,11 @@ class UIController:
         self._ai_cancel: CancellationToken | None = None
         self._ai_stop_requested = False
         self._timeout_owner: int | None = None
+        self._ai_generation = 0
+        self._ai_search_generation = 0
+        self._ai_session: GameSession | None = None
+        self._ai_root_key: str | None = None
+        self._ai_fingerprint: str | None = None
 
     # ------------------------------------------------------------------ match
 
@@ -114,6 +120,10 @@ class UIController:
         return self._match is not None
 
     @property
+    def match_config(self) -> MatchConfig | None:
+        return self._match
+
+    @property
     def ai_thinking(self) -> bool:
         return self._ai_thinking
 
@@ -148,6 +158,7 @@ class UIController:
             self._session.resign()
         except ValueError:
             return False
+        self._bump_ai_generation()
         self._resigned_by = self._session.to_record().resigned_by
         self._timeout_owner = expired
         if self._ai_cancel is not None:
@@ -163,7 +174,12 @@ class UIController:
         return self._timeout_owner
 
     def ai_move_needed(self) -> bool:
-        if self._match is None or self._session is None or self._ai_thinking:
+        if (
+            self._match is None
+            or self._session is None
+            or self._ai_thinking
+            or self._ai_stop_requested
+        ):
             return False
         if self._display_session is not None:
             return False
@@ -198,6 +214,13 @@ class UIController:
         self._ai_stop_requested = False
         self._ai_thinking = True
         self._ai_cancel = cancel_token
+        self._ai_generation += 1
+        self._ai_search_generation = self._ai_generation
+        self._ai_session = self._session
+        self._ai_fingerprint = self._compiled.ruleset_fingerprint
+        self._ai_root_key = position_key(
+            self._session.state.position, self._compiled
+        )
         self._notify()
         return True
 
@@ -218,12 +241,27 @@ class UIController:
     def finish_ai_move(self, decision: PlayerDecision | None) -> bool:
         """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
         cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
-        session_at_start = self._session
+        session_same = (
+            self._session is not None and self._ai_session is self._session
+        )
+        fingerprint_same = (
+            self._compiled is not None
+            and self._ai_fingerprint == self._compiled.ruleset_fingerprint
+        )
+        root_same = (
+            session_same
+            and fingerprint_same
+            and self._ai_root_key
+            == position_key(self._session.state.position, self._compiled)
+        )
+        stale = (
+            self._ai_search_generation != self._ai_generation
+            or not root_same
+        )
         committed = False
         if (
             not cancelled
-            and session_at_start is not None
-            and self._session is session_at_start
+            and not stale
             and decision is not None
             and decision.action is not None
         ):
@@ -234,6 +272,9 @@ class UIController:
         self._ai_cancel = None
         self._notify()
         return committed
+
+    def _bump_ai_generation(self) -> None:
+        self._ai_generation += 1
 
     # ------------------------------------------------------------------ setup
 
@@ -334,6 +375,7 @@ class UIController:
         except (OSError, SessionRecordError, ValueError) as exc:
             self._last_error = f"cannot open record ({path}): {exc}"
             return False
+        self._bump_ai_generation()
         self._session = session
         self._display_session = None
         self._actions = list(record.actions)
@@ -355,6 +397,7 @@ class UIController:
         seed: int | None,
         path: str | None,
     ) -> None:
+        self._bump_ai_generation()
         self._ruleset = ruleset
         self._compiled = compiled
         self._seed = seed
@@ -438,6 +481,7 @@ class UIController:
         except (ValueError, SessionFinishedError) as exc:
             self._last_error = f"cannot submit action: {exc}"
             return False
+        self._bump_ai_generation()
         self._actions.append(action)
         self._redo = []
         if self._match is not None and self._clock is not None:
@@ -458,6 +502,7 @@ class UIController:
         except SessionFinishedError as exc:
             self._last_error = str(exc)
             return False
+        self._bump_ai_generation()
         self._resigned_by = self._session.to_record().resigned_by
         if self._match is not None and self._clock is not None:
             self._clock.pause()
@@ -473,6 +518,13 @@ class UIController:
         self._ai_thinking = False
         self._ai_cancel = None
         self._timeout_owner = None
+        self._bump_ai_generation()
+        self._interaction = BoardInteractionState(
+            orientation_owner=self._interaction.orientation_owner
+        )
+        self._type_browse_id = None
+        self._rebuild()
+        # Rebuild first so the clock starts on the initial position's side.
         if self._match is not None and self._session is not None:
             self._clock = MatchClock(
                 self._match.time_control,
@@ -480,17 +532,13 @@ class UIController:
                 now=self._clock_now,
             )
             self._clock_snapshots = [self._clock.state()]
-        self._interaction = BoardInteractionState(
-            orientation_owner=self._interaction.orientation_owner
-        )
-        self._type_browse_id = None
-        self._rebuild()
         self._notify()
 
     def undo(self) -> bool:
         if not self._actions or self._resigned_by is not None:
             return False
         self._redo.append(self._actions.pop())
+        self._bump_ai_generation()
         if self._match is not None and self._clock is not None and self._clock_snapshots:
             self._clock_snapshots.pop()
             if self._clock_snapshots:
@@ -509,6 +557,7 @@ class UIController:
         if not self._redo or self._resigned_by is not None:
             return False
         self._actions.append(self._redo.pop())
+        self._bump_ai_generation()
         if self._match is not None and self._clock is not None:
             mover = (len(self._actions) - 1) % 2
             self._clock.complete_turn(mover)

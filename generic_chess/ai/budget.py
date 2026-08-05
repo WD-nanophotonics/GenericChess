@@ -72,11 +72,6 @@ def allocate_search_limits(
         remaining = _clock_available_seconds(time_control, clock_state, owner)
         seconds = min(seconds, max(0.01, remaining - config.safety_margin_seconds))
 
-    # Time-aware node cap: never attempt a node budget the clock cannot afford.
-    if seconds is not None:
-        time_cap = max(64, int(seconds * 250))
-        nodes = min(nodes, time_cap) if nodes is not None else time_cap
-
     return SearchLimits(
         max_depth=config.max_depth,
         max_nodes=nodes,

@@ -65,15 +65,12 @@ def build_movement_capability(
     n: int,
     atoms: tuple[MovementAtom, ...],
     config: EvaluationConfig,
-    *,
-    fingerprint: str,
 ) -> MovementCapabilityProfile:
     signature = movement_signature(atoms)
     curve = mobility_density_curve(
         n,
         atoms,
         config.density_points,
-        fingerprint=fingerprint,
         signature=signature,
         version=config.evaluator_version,
         mc_samples=config.mc_samples,

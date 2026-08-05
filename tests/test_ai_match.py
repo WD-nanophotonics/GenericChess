@@ -376,3 +376,53 @@ def test_expired_human_can_continue_playing():
     assert ctrl.session.result.status.value == "ongoing"
     ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
     assert ctrl.session.state.ply_count == 1
+
+
+def test_stale_ai_decision_discarded_after_restart():
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    token = CancellationToken()
+    assert ctrl.begin_ai_move(token)
+    ctrl.restart()  # session replaced while the AI is "thinking"
+    decision = _stub_runner()(ctrl.session, ctrl.ai_limits(), token)
+    committed = ctrl.finish_ai_move(decision)
+    assert not committed
+    assert ctrl.session.state.ply_count == 0
+    assert not ctrl.ai_thinking
+
+
+def test_restart_clock_active_owner_matches_initial_side():
+    class FakeNow:
+        def __init__(self) -> None:
+            self.t = 0.0
+
+        def __call__(self) -> float:
+            return self.t
+
+    ctrl = _controller(clock_now=FakeNow())
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.HUMAN),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(60, 10),
+                owner1=SideTimeConfig(60, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    _human_move(ctrl)
+    assert ctrl.session.state.position.side_to_move == 1
+    ctrl.restart()
+    state = ctrl.clock_state()
+    assert state.active_owner == 0  # initial side, not the stale side-to-move
+    assert ctrl.session.state.position.side_to_move == 0
+    assert len(ctrl._clock_snapshots) == 1

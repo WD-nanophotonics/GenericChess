@@ -77,11 +77,13 @@ class TranspositionTable:
     def clear(self) -> None:
         self._data.clear()
 
-    def probe(self, key: Hashable, depth: int) -> TTEntry | None:
-        entry = self._data.get(key)
-        if entry is not None and entry.depth >= depth:
-            return entry
-        return None
+    def probe(self, key: Hashable) -> TTEntry | None:
+        """Return any stored entry for ``key`` regardless of depth.
+
+        The caller decides whether the stored depth is sufficient for bound
+        use; a shallow entry is still valuable for move ordering.
+        """
+        return self._data.get(key)
 
     def store(
         self,

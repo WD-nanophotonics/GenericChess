@@ -101,7 +101,7 @@ def test_max_depth_passthrough():
     assert limits.max_depth == 6
 
 
-def test_time_aware_node_cap():
+def test_fixed_nodes_keeps_preset_with_clock():
     state = _clock_state(TimeControlMode.FISCHER, remaining=10_000)
     limits = allocate_search_limits(
         state,
@@ -111,4 +111,4 @@ def test_time_aware_node_cap():
         ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset=ThinkingPreset.DEEP),
     )
     assert limits.max_time_seconds == pytest.approx(9.7)  # 10.0 - 0.3 safety
-    assert limits.max_nodes == int(9.7 * 250)  # time-aware node cap
+    assert limits.max_nodes == PRESET_NODES[ThinkingPreset.DEEP]  # no time nps cap

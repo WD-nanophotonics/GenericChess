@@ -468,3 +468,162 @@ def test_clock_label_updates_on_tick(qapp):
     win._clock_tick()
     assert "White" in win._clock_label.text()
     assert "Black" in win._clock_label.text()
+
+
+def test_preferences_no_nameerror(qapp, monkeypatch):
+    from PySide6.QtWidgets import QDialog
+
+    from generic_chess.ui.settings import (
+        KEY_AUTO_PROMOTE_UNIQUE,
+        KEY_BOARD_ORIENTATION,
+        KEY_ENABLE_PREVIEW,
+        KEY_SHOW_COORDINATES,
+        KEY_SHOW_HOVER,
+        KEY_SHOW_LAST_MOVE,
+        KEY_SHOW_LEGAL_MOVES,
+        KEY_TEXTURE_RATIO,
+    )
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    values = {
+        KEY_TEXTURE_RATIO: 0.8,
+        KEY_BOARD_ORIENTATION: 0,
+        KEY_SHOW_COORDINATES: True,
+        KEY_SHOW_LEGAL_MOVES: True,
+        KEY_SHOW_LAST_MOVE: True,
+        KEY_SHOW_HOVER: True,
+        KEY_ENABLE_PREVIEW: True,
+        KEY_AUTO_PROMOTE_UNIQUE: True,
+    }
+    monkeypatch.setattr(PreferencesDialog, "exec", lambda self: QDialog.Accepted)
+    monkeypatch.setattr(PreferencesDialog, "values", lambda self: values)
+    win._preferences()  # must not raise NameError
+    assert settings.get(KEY_ENABLE_PREVIEW, True) is True
+    assert settings.get(KEY_AUTO_PROMOTE_UNIQUE, True) is True
+
+
+def test_ai_worker_error_clears_thinking_and_stops_restart(qapp):
+    import time as _time
+
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    win.show()
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+
+    class BoomPlayer:
+        def choose_action(self, *args, **kwargs):
+            raise RuntimeError("boom")
+
+    win._ai_player = BoomPlayer()
+    win._maybe_start_ai()
+    assert ctrl.ai_thinking
+    deadline = _time.monotonic() + 10
+    while _time.monotonic() < deadline:
+        qapp.processEvents()
+        if not ctrl.ai_thinking and win._ai_thread is None:
+            break
+        _time.sleep(0.02)
+    assert not ctrl.ai_thinking
+    assert win._ai_thread is None
+    assert "AI error" in win._status_main.text()
+    assert ctrl.ai_stop_requested  # AI must not silently restart after an error
+
+
+def test_new_match_dialog_requires_file_path(qapp, monkeypatch):
+    from PySide6.QtWidgets import QMessageBox
+
+    from generic_chess.ui.dialogs.new_match_dialog import NewMatchDialog
+
+    monkeypatch.setattr(QMessageBox, "warning", staticmethod(lambda *a, **k: None))
+    dialog = NewMatchDialog(DictSettingsStore())
+    dialog._source.setCurrentIndex(2)  # file mode without a chosen path
+    dialog._accept()
+    assert dialog.request() is None
+    assert dialog.result() != 1  # not accepted
+
+
+def test_apply_new_match_file_mode_requires_path(qapp, monkeypatch):
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.dialogs.new_match_dialog import NewMatchRequest
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    messages = []
+    monkeypatch.setattr(
+        "generic_chess.ui.main_window.show_error",
+        lambda parent, title, text: messages.append(text),
+    )
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    request = NewMatchRequest(
+        ruleset_mode="file",
+        ruleset_path=None,
+        participants=(ParticipantKind.HUMAN, ParticipantKind.HUMAN),
+        time_control=TimeControl(mode=TimeControlMode.NONE),
+        ai_config=ThinkingConfig(strategy=ThinkingStrategy.AUTO_TIME),
+    )
+    win._apply_new_match(request)
+    assert messages
+    assert ctrl.session is not None
+    assert ctrl.session.state.ply_count == 0
+
+
+def test_restart_recreates_ai_player(qapp):
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    win._ai_player = None
+    win._restart()
+    assert win._ai_player is not None
+    assert ctrl.session.state.ply_count == 0
+
+
+def test_cancel_ai_state_keeps_running_thread_reference(qapp):
+    import time as _time
+
+    from PySide6.QtCore import QThread
+
+    class SlowThread(QThread):
+        def run(self) -> None:
+            while not self.isInterruptionRequested():
+                _time.sleep(0.05)
+
+    ctrl, win = _window(qapp)
+    thread = SlowThread()
+    thread.start()
+    win._ai_thread = thread
+    win._cancel_ai_state()
+    assert win._ai_thread is thread  # still running -> reference kept
+    assert thread.isRunning()
+    thread.requestInterruption()
+    thread.wait(5000)
+    win._ai_thread = None

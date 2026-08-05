@@ -34,14 +34,16 @@ from .dialogs.error_dialog import show_error, show_info
 from .dialogs.new_match_dialog import NewMatchDialog
 from .dialogs.preferences_dialog import PreferencesDialog
 from .dialogs.promotion_dialog import PromotionDialog
-from .match import MatchConfig
+from .match import MatchConfig, ParticipantKind
 from .panels.game_panel import GamePanel
 from .panels.hand_stand import HandStandWidget
 from .panels.history_panel import HistoryPanel
 from .panels.piece_panel import PiecePanel
 from .panels.rules_panel import RulesPanel
 from .settings import (
+    KEY_AUTO_PROMOTE_UNIQUE,
     KEY_BOARD_ORIENTATION,
+    KEY_ENABLE_PREVIEW,
     KEY_SHOW_COORDINATES,
     KEY_SHOW_HOVER,
     KEY_SHOW_LAST_MOVE,
@@ -60,6 +62,7 @@ from .theme import default_theme
 class _AiThread(QThread):
     finished_signal = Signal(object)
     progress_signal = Signal(int, int, int)
+    error_signal = Signal(str)
 
     def __init__(self, controller, player, token) -> None:
         super().__init__()
@@ -68,18 +71,21 @@ class _AiThread(QThread):
         self._token = token
 
     def run(self) -> None:
-        token = CancellationToken()
+        try:
+            def progress(depth: int, nodes: int, qnodes: int) -> None:
+                self.progress_signal.emit(depth, nodes, qnodes)
 
-        def progress(depth: int, nodes: int, qnodes: int) -> None:
-            self.progress_signal.emit(depth, nodes, qnodes)
-
-        limits = self._controller.ai_limits()
-        decision = self._player.choose_action(
-            self._controller.session,
-            limits,
-            cancel_token=self._token,
-            progress_callback=progress,
-        )
+            limits = self._controller.ai_limits()
+            decision = self._player.choose_action(
+                self._controller.session,
+                limits,
+                cancel_token=self._token,
+                progress_callback=progress,
+            )
+        except Exception as exc:  # worker boundary: never crash the GUI thread
+            self.error_signal.emit(f"{type(exc).__name__}: {exc}")
+            self.finished_signal.emit(None)
+            return
         self.finished_signal.emit(decision)
 
 
@@ -97,6 +103,7 @@ class MainWindow(QMainWindow):
         self._cache = cache or TextureCache()
         self._theme = default_theme()
         self._promotion_open = False
+        self._ai_error: str | None = None
         self.setWindowTitle("GenericChess")
 
         controller.interaction.orientation_owner = int(
@@ -345,6 +352,8 @@ class MainWindow(QMainWindow):
             base += f" | drop {interaction.selected_hand_piece_type_id}: {len(interaction.legal_actions)} targets"
         if self._controller.ai_thinking:
             base += " | AI is thinking…"
+        if self._ai_error is not None:
+            base += f" | AI error: {self._ai_error}"
         base += " | " + ("Saved" if info.record_path else "Ready")
         if info.result.status.value != "ongoing":
             base += f" | {info.result}"
@@ -396,6 +405,7 @@ class MainWindow(QMainWindow):
     def _apply_new_match(self, request) -> None:
         """Start a fresh match from the initial position of the chosen ruleset."""
         self._cancel_ai_state()
+        self._ai_error = None
         if request.ruleset_mode == "generate":
             ok = self._controller.new_game(
                 seed=request.seed,
@@ -404,6 +414,9 @@ class MainWindow(QMainWindow):
                 hybrid=request.hybrid,
             )
         elif request.ruleset_mode == "file":
+            if not request.ruleset_path:
+                show_error(self, "New Match", "Choose a RuleSet file first.")
+                return
             ok = self._controller.open_ruleset(request.ruleset_path)
         else:
             self._controller.restart()
@@ -437,8 +450,14 @@ class MainWindow(QMainWindow):
     def _cancel_ai_state(self) -> None:
         self._controller.cancel_ai()
         self._controller.clear_stop_request()
-        if self._ai_thread is not None and self._ai_thread.isRunning():
-            self._ai_thread.wait(2000)
+        thread = self._ai_thread
+        if thread is not None and thread.isRunning():
+            thread.wait(2000)
+            if thread.isRunning():
+                # Never abandon a live QThread: keep the reference so its
+                # finished handler can clean up and resume a newer AI turn.
+                self._ai_player = None
+                return
         self._ai_thread = None
         self._ai_player = None
 
@@ -447,12 +466,14 @@ class MainWindow(QMainWindow):
             return
         if not self._controller.ai_move_needed() or self._ai_player is None:
             return
+        self._ai_error = None
         token = CancellationToken()
         if not self._controller.begin_ai_move(token):
             return
         thread = _AiThread(self._controller, self._ai_player, token)
         thread.progress_signal.connect(self._on_ai_progress)
         thread.finished_signal.connect(self._on_ai_finished)
+        thread.error_signal.connect(self._on_ai_error)
         self._ai_thread = thread
         thread.start()
         self._update_action_enabled()
@@ -463,7 +484,13 @@ class MainWindow(QMainWindow):
         )
 
     def _on_ai_finished(self, _decision) -> None:
-        thread = self._ai_thread
+        thread = self.sender()
+        if thread is not self._ai_thread:
+            # A stale worker finished after the reference was replaced; only
+            # dispose of it without touching the current game state.
+            if thread is not None:
+                thread.deleteLater()
+            return
         self._ai_thread = None
         if thread is not None:
             thread.deleteLater()
@@ -471,6 +498,11 @@ class MainWindow(QMainWindow):
         self._refresh()
         if not self._controller.ai_stop_requested:
             self._maybe_start_ai()
+
+    def _on_ai_error(self, message: str) -> None:
+        self._controller.cancel_ai()  # mark stop-requested so AI does not restart
+        self._ai_error = message
+        self._refresh()
 
     def _open_promotion_if_pending(self) -> None:
         pending = self._controller.interaction.pending_promotion_actions
@@ -670,6 +702,14 @@ class MainWindow(QMainWindow):
     def _restart(self) -> None:
         self._cancel_ai_state()
         self._controller.restart()
+        match = self._controller.match_config
+        if (
+            match is not None
+            and any(p is ParticipantKind.AI for p in match.participants)
+        ):
+            self._ai_player = AlphaBetaPlayer(
+                self._controller.compiled, use_disk_cache=True
+            )
         self._board_view.fit_board()
         self._maybe_start_ai()
 

@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping
+from typing import TYPE_CHECKING, Mapping
 
 from ...core.pieces import PieceType
 from ...rules.compiled import CompiledRuleSet
 from .analyzer import MovementCapabilityProfile, build_movement_capability
 from .config import EvaluationConfig, MAX_STATIC_EVAL, config_hash
+
+if TYPE_CHECKING:
+    from .cache import MovementCapabilityCache
 
 
 @dataclass(frozen=True, slots=True)
@@ -74,6 +77,7 @@ def _drop_profile(
 def build_ruleset_profile(
     compiled: CompiledRuleSet,
     config: EvaluationConfig,
+    capability_cache: "MovementCapabilityCache | None" = None,
 ) -> RuleSetEvaluationProfile:
     n = compiled.board_size
     raw: dict[str, float] = {}
@@ -82,9 +86,10 @@ def build_ruleset_profile(
     ordinary: list[PieceType] = []
 
     for pt in compiled.piece_types:
-        capability = build_movement_capability(
-            n, pt.movement_atoms, config, fingerprint=compiled.ruleset_fingerprint
-        )
+        if capability_cache is not None:
+            capability, _ = capability_cache.get_or_build(n, pt.movement_atoms, config)
+        else:
+            capability = build_movement_capability(n, pt.movement_atoms, config)
         capabilities[pt.type_id] = capability
         raw[pt.type_id] = _raw_capability_score(capability, config)
         drop[pt.type_id] = _drop_profile(compiled, pt.type_id, n)
@@ -105,16 +110,24 @@ def build_ruleset_profile(
     board_value: dict[str, int] = {}
     hand_value: dict[str, int] = {}
     promotion_gain: dict[str, int] = {}
-    profiles: dict[str, PieceValueProfile] = {}
 
+    # Pass 1: every board/hand value must be complete before promotion gains
+    # are computed so results never depend on piece_types declaration order.
     for pt in compiled.piece_types:
         bv = normalized_board(pt.type_id, pt.is_anchor)
         board_value[pt.type_id] = bv
         hv = int(round(bv * config.hand_weight)) if not pt.is_anchor else 0
         hand_value[pt.type_id] = min(hv, MAX_STATIC_EVAL)
+
+    # Pass 2: promotion gains (from the complete table) and profiles.
+    profiles: dict[str, PieceValueProfile] = {}
+    for pt in compiled.piece_types:
+        bv = board_value[pt.type_id]
         if pt.is_promotable:
             targets = [board_value[t] for t in pt.promotion_target_ids if t in board_value]
-            promotion_gain[pt.type_id] = max(0, (max(targets) if targets else 0) - bv)
+            promotion_gain[pt.type_id] = max(
+                0, (max(targets) if targets else 0) - bv
+            )
         else:
             promotion_gain[pt.type_id] = 0
         freedom, drop_mob = drop[pt.type_id]

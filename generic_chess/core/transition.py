@@ -25,6 +25,21 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
     return GameState(position=pos, ply_count=0, repetition_counts=counts, terminal_status=status)
 
 
+def _transition(state: GameState, action: Action, compiled: "CompiledRuleSet") -> GameState:
+    """Mechanically apply an already-validated action and build the child state.
+
+    Shared by :func:`apply_action` and :func:`legal_successors` so the child
+    state construction (ply, repetition counts, terminal status) has a single
+    source of truth. Callers must ensure the action is legal.
+    """
+    new_pos = _apply_action_unchecked(state.position, action, compiled)
+    ply = state.ply_count + 1
+    key = position_key(new_pos, compiled)
+    counts = update_repetition_counts(state.repetition_counts, key)
+    status = _terminal_from_parts(new_pos, ply, counts, compiled)
+    return GameState(position=new_pos, ply_count=ply, repetition_counts=counts, terminal_status=status)
+
+
 def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") -> GameState:
     """Apply one action, returning a brand-new immutable GameState.
 
@@ -40,9 +55,24 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
         )
     if action not in legal_actions_from_position(state.position, compiled):
         raise IllegalActionError(f"action is not legal in the current state: {action}")
-    new_pos = _apply_action_unchecked(state.position, action, compiled)
-    ply = state.ply_count + 1
-    key = position_key(new_pos, compiled)
-    counts = update_repetition_counts(state.repetition_counts, key)
-    status = _terminal_from_parts(new_pos, ply, counts, compiled)
-    return GameState(position=new_pos, ply_count=ply, repetition_counts=counts, terminal_status=status)
+    return _transition(state, action, compiled)
+
+
+def legal_successors(
+    state: GameState,
+    compiled: "CompiledRuleSet",
+) -> tuple[tuple[Action, GameState], ...]:
+    """All legal ``(action, child_state)`` pairs for the side to move.
+
+    The actions are exactly the set returned by :func:`legal_actions`; each
+    child is the fully validated successor state (fingerprint checked,
+    mechanically applied, repetition/terminal updated). Terminal states yield
+    an empty tuple. This is the single-source transition path for search
+    loops that need both the move and the resulting state without re-running
+    move generation for every child.
+    """
+    ensure_ruleset_match(state.position, compiled)
+    if state.terminal_status.status is not TerminalStatus.ONGOING:
+        return ()
+    actions = legal_actions_from_position(state.position, compiled)
+    return tuple((action, _transition(state, action, compiled)) for action in actions)

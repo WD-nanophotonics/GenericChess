@@ -28,13 +28,14 @@ from .generation.config import GeneratorConfig
 from .rules.compiler import compile_ruleset
 from .rules.schema import RuleSet
 from .rules.serialization import deserialize_ruleset, serialize_ruleset
-from .core.transition import apply_action, initial_state
+from .core.transition import apply_action, initial_state, legal_successors
 from .core.terminal import terminal_result
 
 __all__ = [
     "compile_ruleset",
     "initial_state",
     "legal_actions",
+    "legal_successors",
     "apply_action",
     "pseudo_attacks",
     "is_square_attacked",

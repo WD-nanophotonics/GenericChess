@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Iterator
 
 from .actions import Action, BoardMove, DropMove
 from .attacks import anchor_square, is_square_attacked
@@ -91,6 +91,20 @@ def _drop_actions(position: Position, compiled: "CompiledRuleSet") -> list[Actio
             if allowed and position.board[idx] is None:
                 actions.append(DropMove(tid, index_to_square(idx, n)))
     return actions
+
+
+def _expanded_pseudo_actions(
+    position: Position, compiled: "CompiledRuleSet"
+) -> Iterator[Action]:
+    """Pseudo-legal moves with promotion variants and drops (no safety filter)."""
+    n = compiled.board_size
+    for action in _piece_actions(position, compiled):
+        if isinstance(action, BoardMove):
+            piece = position.board[square_to_index(action.from_square, n)]
+            yield from _promotion_variants(action, piece, position, compiled)
+        else:
+            yield action
+    yield from _drop_actions(position, compiled)
 
 
 def _apply_action_unchecked(
@@ -190,16 +204,10 @@ def legal_actions_from_position(
 ) -> list[Action]:
     """All legal actions for the side to move in ``position``."""
     ensure_ruleset_match(position, compiled)
-    pseudo = _piece_actions(position, compiled)
-    expanded: list[Action] = []
-    for action in pseudo:
-        if isinstance(action, BoardMove):
-            piece = position.board[square_to_index(action.from_square, compiled.board_size)]
-            expanded.extend(_promotion_variants(action, piece, position, compiled))
-        else:
-            expanded.append(action)
-    expanded.extend(_drop_actions(position, compiled))
-    legal = [a for a in expanded if _is_legal(position, a, compiled)]
+    legal = [
+        a for a in _expanded_pseudo_actions(position, compiled)
+        if _is_legal(position, a, compiled)
+    ]
     # Deduplicate while preserving the first-seen order.
     seen: set[Action] = set()
     unique: list[Action] = []
@@ -208,6 +216,20 @@ def legal_actions_from_position(
             seen.add(action)
             unique.append(action)
     return unique
+
+
+def has_legal_action(position: Position, compiled: "CompiledRuleSet") -> bool:
+    """True when the side to move has at least one legal action.
+
+    Semantics are identical to ``bool(legal_actions_from_position(...))`` but
+    it returns at the first legal candidate, which makes terminal detection on
+    non-terminal positions much cheaper (used by the search hot path).
+    """
+    ensure_ruleset_match(position, compiled)
+    for action in _expanded_pseudo_actions(position, compiled):
+        if _is_legal(position, action, compiled):
+            return True
+    return False
 
 
 def legal_actions(state: "GameState", compiled: "CompiledRuleSet") -> list[Action]:

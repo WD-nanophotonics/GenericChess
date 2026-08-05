@@ -5,14 +5,17 @@ import pytest
 from generic_chess.ai.evaluation.analyzer import movement_signature
 from generic_chess.ai.evaluation.config import EvaluationConfig, MATE_SCORE, MATE_THRESHOLD
 from generic_chess.ai.evaluation.evaluator import Evaluator
-from generic_chess.ai.evaluation.mobility import mobility_density_curve
+from generic_chess.ai.evaluation.mobility import (
+    analytic_mobility_at_density,
+    mobility_density_curve,
+)
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.ai.alphabeta.search import terminal_score
 from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.core.terminal import TerminalResult, TerminalStatus
 
 from ai_fixtures import build_4x4_rooks, build_promotion, king, rook
-from conftest import make_position, make_state
+from conftest import T, king_type, make_position, make_ruleset, make_state
 
 
 def _config():
@@ -67,15 +70,73 @@ def test_ray_leap_dominance():
     config = _config()
     ray_curve = mobility_density_curve(
         n, ray_atoms, (0.0, 0.5),
-        fingerprint="fp", signature="s", version=config.evaluator_version, mc_samples=config.mc_samples,
+        signature="s", version=config.evaluator_version, mc_samples=config.mc_samples,
     )
     leap_curve = mobility_density_curve(
         n, leap_atoms, (0.0, 0.5),
-        fingerprint="fp", signature="s", version=config.evaluator_version, mc_samples=config.mc_samples,
+        signature="s", version=config.evaluator_version, mc_samples=config.mc_samples,
     )
     assert ray_curve[0] == pytest.approx(leap_curve[0], abs=1e-3)  # empty board equal
     assert leap_curve[1] >= ray_curve[1]
     assert leap_curve[1] > ray_curve[1]  # strictly better under occupancy
+
+
+def test_monte_carlo_dedup_overlapping_atoms():
+    config = _config()
+    leap = LeapAtom((0, 1))
+    dup_atoms = (leap, LeapAtom((0, 1)))
+    curve = mobility_density_curve(
+        8,
+        dup_atoms,
+        (0.0, 0.5),
+        signature="dup",
+        version=config.evaluator_version,
+        mc_samples=256,
+    )
+    single = analytic_mobility_at_density(8, (leap,), 0.5)
+    assert curve[0] == pytest.approx(56 / 64, abs=1e-9)  # empty board: 56/64
+    assert curve[1] == pytest.approx(single, abs=0.02)
+    again = mobility_density_curve(
+        8,
+        dup_atoms,
+        (0.0, 0.5),
+        signature="dup",
+        version=config.evaluator_version,
+        mc_samples=256,
+    )
+    assert curve == again  # deterministic
+
+
+def test_promotion_gain_order_invariant():
+    from generic_chess.rules.compiler import compile_ruleset
+
+    config = _config()
+    pawn = T("P", LeapAtom((0, 1)), is_promotable=True, targets=("G",))
+    gold = T("G", RayAtom((1, 0)))
+    lines = [
+        ".......k",
+        "....P...",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "K.......",
+    ]
+    a = compile_ruleset(
+        make_ruleset(8, [king_type(), pawn, gold], lines, auto_promotion=True)
+    )
+    b = compile_ruleset(
+        make_ruleset(8, [gold, pawn, king_type()], lines, auto_promotion=True)
+    )
+    pa = build_ruleset_profile(a, config)
+    pb = build_ruleset_profile(b, config)
+    assert pa.board_value_by_type == pb.board_value_by_type
+    assert pa.hand_value_by_base_type == pb.hand_value_by_base_type
+    assert pa.promotion_gain_by_type == pb.promotion_gain_by_type
+    assert pa.piece_profiles["P"] == pb.piece_profiles["P"]
+    assert pa.piece_profiles["G"] == pb.piece_profiles["G"]
+    assert pa.promotion_gain_by_type["P"] > 0  # gain is not dropped when G is later
 
 
 def test_mirrored_position_evaluation_negates():

@@ -25,7 +25,9 @@ geometry（LEAP/RAY、遮挡、边界）、升变关系、drop mask、anchor/roy
 
 因此空棋盘时 ray 与 leap 可以相同，密度升高后 ray 衰减更快，leap 对中间阻挡不敏感。
 混合/重叠 atom 的类型（可能重复计数）走确定性 Monte Carlo fallback：seed 由
-fingerprint + signature + density + analyzer version 派生，结果可复现，只在静态分析期运行。
+signature + density + analyzer version 派生（不含 ruleset fingerprint，保证同几何跨
+RuleSet 可复用缓存）；每个起点先用 `set` 对目标格去重再累加，重叠 atom 不会重复计数；
+结果可复现，只在静态分析期运行。
 
 ### movement graph
 
@@ -72,20 +74,27 @@ schema/version/config/fingerprint 不匹配自动失效并重算；默认用户�
 ## AlphaBeta 搜索
 
 * negamax + 迭代加深（全窗口，第一版不用 aspiration window）；
-* 预算：depth / nodes / time / cancellation；节点计数在节点入口检查，时间/取消每 1024 节点
-  与每轮迭代边界检查；预算中止用内部 `SearchAborted` 异常快速展开，只用于中止；
+* 预算：depth / nodes / time / cancellation；节点计数在节点入口检查，时间/取消每 128 个
+  普通节点 + qnode 检查一次（qnode 也计入 node limit）并在每轮迭代边界检查；时间模式只设
+  `max_time_seconds` 死线（无固定 nodes/s 上限），固定 nodes 预算仅在无时钟/显式配置时使用；
+  预算中止用内部 `SearchAborted` 异常快速展开，只用于中止；
 * 终局经 Core 正式 `terminal_result`（GameState.terminal_status），mate score 带 ply 距离
   （更快赢优先、更晚输优先），stalemate/repetition/max_ply 为 0；
 * TT：EXACT/LOWER/UPPER、mate score 存/取归一化、generation + depth-preferred 替换、容量
-  有界；TT key 包含 ruleset fingerprint + position key + repetition counts（避免重复历史混用）；
+  有界；`probe` 无条件返回任意深度 entry，浅层 entry 的 best move 仍用于 move ordering，
+  仅当 entry 深度足够时才应用 bound/cutoff；TT key 包含 ruleset fingerprint + position key
+  + repetition counts（避免重复历史混用）；
 * move ordering：TT 最优着法、MVV-LVA 捕获（用 profile 值）、promotion、killer、history、
   canonical string 决胜（确定性）；
-* quiescence：保守版只扩展捕获 + 升变（checking drop 第一版当 quiet，文档记录）。
+* quiescence：非将军节点保守版只扩展捕获 + 升变（checking drop 第一版当 quiet，文档记录）；
+  被将军节点禁止 stand-pat，改为扩展全部合法解将招；
+* 走子生成：搜索热路径使用 Core 公共 `legal_successors(state, compiled)`（一次生成全部合法
+  `(action, child_state)`，避免对每个 child 重复 movegen），动作集合与 `legal_actions` 完全一致。
 
 ## 搜索位置与历史语义
 
-搜索直接使用 Core 的不可变 `GameState` + `apply_action` 返回的新 state（不重放整盘历史）；
-repetition_counts 由 Core 携带，TT key 与终局判定都保留 repetition/history 语义。
+搜索直接使用 Core 的不可变 `GameState` + `legal_successors` 返回的 child state（不重放整盘
+历史）；repetition_counts 由 Core 携带，TT key 与终局判定都保留 repetition/history 语义。
 
 ## 与 UI 的边界
 
@@ -97,3 +106,20 @@ AI 包完全不依赖 PySide6。未来 UI 可创建 `AlphaBetaPlayer`，传入�
 
 null-move、LMR、futility、razoring、singular extension、多线程、选择性剪枝；quiescence 的
 checking-drop 扩展；Monte Carlo fallback 仅覆盖重叠/混合 atom 类型；动态 mobility 模式较简。
+
+## 当前实现 vs 设计规格的差距（v0.5 如实记录）
+
+以下指标当前实现比冻结时的启发式设计规格更简，属于文档化的“当前实现”，不代表已完整进入
+最终评价：
+
+* **promotion zone**：`Evaluator` 从“空棋盘无前向移动”推导升变区，而不是直接使用编译后的
+  `promotion_allowed` mask；自定义 promotion 规则下可能不准确。
+* **hand value**：`drop_freedom_ratio` / `drop_mobility` 已计算并存入 profile，但 hand value
+  目前仍主要是 `board_value × hand_weight`，drop 指标尚未参与估值。
+* **dynamic mobility**：实际使用的是双方 `pseudo_attacks` 去重格数之差，更接近 attack
+  coverage，不是每个棋子的 mobility 总和。
+* **anchor escape**：只统计空目标格，忽略安全捕获；且在原局面直接检查攻击，未考虑 anchor
+  移走后 ray 攻击线变化。
+
+另：时钟语义是非对称的（AI 超时判负、人类永不判负），这是产品决策而非实现缺陷；UI 已明确
+标注“AI 超时判负；人类时钟仅供参考，永不判负”。

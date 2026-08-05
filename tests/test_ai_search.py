@@ -3,7 +3,16 @@
 import pytest
 
 from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
-from generic_chess.ai.alphabeta.search import _tt_key, reference_minimax
+from generic_chess.ai.alphabeta.search import (
+    INF,
+    SearchAborted,
+    _Budget,
+    _Context,
+    _tt_key,
+    quiescence,
+    reference_minimax,
+)
+from generic_chess.ai.alphabeta.statistics import SearchStatistics
 from generic_chess.ai.alphabeta.transposition import (
     BoundType,
     TranspositionTable,
@@ -20,6 +29,7 @@ from generic_chess.core.movegen import legal_actions
 from generic_chess.session.session import GameSession
 
 from ai_fixtures import build_4x4_rooks, build_mate, build_promotion
+from conftest import make_state
 
 
 def _player(compiled, **kw):
@@ -164,9 +174,9 @@ def test_transposition_table_bounds_and_capacity():
     tt.new_generation()
     key = ("a", 1, ())
     tt.store(key, depth=2, score=5, bound=BoundType.EXACT, best_action=None)
-    entry = tt.probe(key, depth=2)
+    entry = tt.probe(key)
     assert entry is not None and entry.score == 5
-    assert tt.probe(key, depth=3) is None  # shallow entry not reused for deeper requests
+    assert entry.depth == 2  # shallow entries stay available for ordering
     for i in range(10):
         tt.store(("k", i, ()), depth=1, score=i, bound=BoundType.EXACT, best_action=None)
     assert len(tt) <= 5
@@ -202,3 +212,78 @@ def test_tiny_time_budget_aborts_before_clock_expiry():
     assert decision.termination_reason == "time_limit"
     assert decision.nodes < 128  # time checked at every 128 nodes
     assert decision.completed_depth == 1
+
+
+def test_budget_counts_qnodes_toward_node_limit():
+    budget = _Budget(SearchLimits(max_nodes=10), None)
+    stats = SearchStatistics(nodes=0, qnodes=10)
+    with pytest.raises(SearchAborted) as exc:
+        budget.check(stats)
+    assert "node_limit" in str(exc.value)
+
+
+def test_budget_deadline_and_cancel_checked_during_qsearch():
+    budget = _Budget(SearchLimits(max_time_seconds=0.0), None)
+    stats = SearchStatistics(nodes=0, qnodes=128)
+    with pytest.raises(SearchAborted) as exc:
+        budget.check(stats)
+    assert "time_limit" in str(exc.value)
+
+    token = CancellationToken()
+    token.cancel()
+    budget = _Budget(SearchLimits(), token)
+    stats = SearchStatistics(nodes=0, qnodes=128)
+    with pytest.raises(SearchAborted) as exc:
+        budget.check(stats)
+    assert "cancelled" in str(exc.value)
+
+
+def test_quiescence_searches_evasions_when_in_check():
+    from generic_chess.ai.alphabeta.transposition import TranspositionTable
+    from generic_chess.core.attacks import is_in_check
+    from generic_chess.core.transition import legal_successors
+
+    compiled = build_4x4_rooks()
+    config = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+
+    lines = [
+        "R..K",  # rank 3: white rook on the king's file, white king far away
+        "....",
+        ".r..",  # black rook can block at (0,1)
+        "k...",  # black king at (0,0) in check
+    ]
+    state = make_state(compiled, lines, side_to_move=1)
+    assert is_in_check(state.position, 1, compiled)
+    successors = legal_successors(state, compiled)
+    assert successors  # quiet evasions exist
+
+    ctx = _Context(
+        compiled,
+        evaluator,
+        TranspositionTable(),
+        SearchStatistics(),
+        _Budget(SearchLimits(max_depth=2, quiescence_max_depth=4), None),
+        True,
+        True,
+        4,
+        None,
+    )
+    q = quiescence(state, -INF, INF, 0, 0, ctx)
+    stand_pat = evaluator.evaluate(state)
+    child_scores = []
+    for _action, child in successors:
+        child_ctx = _Context(
+            compiled,
+            evaluator,
+            TranspositionTable(),
+            SearchStatistics(),
+            _Budget(SearchLimits(max_depth=2, quiescence_max_depth=4), None),
+            True,
+            True,
+            4,
+            None,
+        )
+        child_scores.append(-quiescence(child, -INF, INF, 1, 1, child_ctx))
+    assert q == max(child_scores)  # evasions are searched, no stand pat
+    assert q != stand_pat

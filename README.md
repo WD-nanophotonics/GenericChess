@@ -257,9 +257,10 @@ RuleSet 自动以 fingerprint 隔离；预算支持 depth/nodes/time/cancellatio
 （`AI is thinking · depth 3 · 12,345 nodes`）；`Stop AI` 取消当前思考（再点一次恢复）；
 **AI 思考期间时钟真实走动**，双方剩余时间清晰可见；**AI 超时判负**（状态栏标注
 `AI timeout`，按 resignation 记录），**人类永不因超时判负**（时钟耗尽仅显示 00:00，对局
-照常继续）；AI 会按剩余时间自动分配搜索预算（每 128 节点检查一次时间、预算带安全余量与
-时间化节点上限），实际对局中不会因“想太久”而超时判负；Undo/Restart 与时钟联动（Undo 恢复
-上一时刻时钟快照）。
+照常继续）；AI 会按剩余时间自动分配搜索预算（时间模式只设置 `max_time_seconds` 死线，无
+固定 nodes/s 上限；每 128 个普通节点 + qnode 检查一次时间/取消，预算带安全余量），实际对局
+中不会因“想太久”而超时判负，AI 超时判负仅作为极端情况兜底；Undo/Restart 与时钟联动
+（Undo 恢复上一时刻时钟快照，Restart 后时钟从初始局面行动方重新计时）。
 时钟是 Qt-free 的独立模块
 （`generic_chess/clock.py`），AI 预算分配见 `generic_chess/ai/budget.py`。
 
@@ -300,6 +301,7 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 | `compile_ruleset(rule_definition)` | 验证并编译 RuleSet（接受 RuleSet 或 JSON dict），返回 `CompiledRuleSet` |
 | `initial_state(compiled)` | 初始 `GameState` |
 | `legal_actions(state, compiled)` | 当前行动方全部合法动作（终局返回空列表） |
+| `legal_successors(state, compiled)` | 一次性返回全部 `(action, child_state)` 合法后继（搜索热路径用，避免逐子重复 movegen） |
 | `apply_action(state, action, compiled)` | 纯函数，返回新的 `GameState` |
 | `pseudo_attacks(position, player, compiled)` | 伪攻击集合（frozenset[Square]） |
 | `is_square_attacked(position, square, by_player, compiled)` | 单格攻击查询 |

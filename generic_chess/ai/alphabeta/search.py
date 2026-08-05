@@ -6,11 +6,12 @@ import time
 from dataclasses import dataclass
 
 from ...core.actions import Action
+from ...core.attacks import is_in_check
 from ...core.keys import position_key
 from ...core.movegen import legal_actions
 from ...core.position import GameState
 from ...core.terminal import TerminalStatus
-from ...core.transition import apply_action
+from ...core.transition import legal_successors
 from ..cancellation import CancellationToken
 from ..evaluation.config import MATE_SCORE
 from ..evaluation.evaluator import Evaluator
@@ -52,11 +53,12 @@ class _Budget:
         self._check_interval = 128
 
     def check(self, stats: SearchStatistics) -> None:
-        if self._max_nodes is not None and stats.nodes >= self._max_nodes:
+        total = stats.nodes + stats.qnodes
+        if self._max_nodes is not None and total >= self._max_nodes:
             raise SearchAborted("node_limit")
         if self._cancel is None and self._deadline is None:
             return
-        if stats.nodes % self._check_interval != 0:
+        if total % self._check_interval != 0:
             return
         if self._cancel is not None and self._cancel.is_cancelled():
             raise SearchAborted("cancelled")
@@ -66,7 +68,8 @@ class _Budget:
     def check_iteration(self, stats: SearchStatistics) -> None:
         if self._cancel is not None and self._cancel.is_cancelled():
             raise SearchAborted("cancelled")
-        if self._max_nodes is not None and stats.nodes >= self._max_nodes:
+        total = stats.nodes + stats.qnodes
+        if self._max_nodes is not None and total >= self._max_nodes:
             raise SearchAborted("node_limit")
         if self._deadline is not None and time.monotonic() >= self._deadline:
             raise SearchAborted("time_limit")
@@ -153,39 +156,42 @@ def negamax(
     entry = None
     if ctx.use_tt:
         ctx.stats.tt_probes += 1
-        entry = ctx.tt.probe(key, depth)
+        entry = ctx.tt.probe(key)
         if entry is not None:
             ctx.stats.tt_hits += 1
-            score = score_from_tt(entry.score, ply)
-            if entry.bound is BoundType.EXACT:
-                return SearchResult(score, entry.best_action, ())
-            if entry.bound is BoundType.LOWER:
-                alpha = max(alpha, score)
-            else:
-                beta = min(beta, score)
-            if alpha >= beta:
-                ctx.stats.tt_cutoffs += 1
-                return SearchResult(score, entry.best_action, ())
+            if entry.depth >= depth:
+                score = score_from_tt(entry.score, ply)
+                if entry.bound is BoundType.EXACT:
+                    return SearchResult(score, entry.best_action, ())
+                if entry.bound is BoundType.LOWER:
+                    alpha = max(alpha, score)
+                else:
+                    beta = min(beta, score)
+                if alpha >= beta:
+                    ctx.stats.tt_cutoffs += 1
+                    return SearchResult(score, entry.best_action, ())
 
-    actions = legal_actions(state, ctx.compiled)
-    if not actions:
+    successors = legal_successors(state, ctx.compiled)
+    if not successors:
         # Core should have flagged the position terminal; fall back to eval.
         return SearchResult(ctx.evaluator.evaluate(state), None, ())
+    actions = [action for action, _ in successors]
 
+    child_by_action = dict(successors)
     if ctx.use_ordering:
-        ordered = ctx.orderer.order(
+        ordered_actions = ctx.orderer.order(
             state, actions, ctx.evaluator, depth, entry.best_action if entry else None
         )
     else:
-        ordered = sorted(actions, key=str)
+        ordered_actions = sorted(actions, key=str)
 
     original_alpha = alpha
     best = -INF
     best_action: Action | None = None
     best_pv: tuple[Action, ...] = ()
 
-    for action in ordered:
-        child = apply_action(state, action, ctx.compiled)
+    for action in ordered_actions:
+        child = child_by_action[action]
         child_result = negamax(child, depth - 1, -beta, -alpha, ply + 1, ctx)
         score = -child_result.score
         if score > best:
@@ -226,6 +232,24 @@ def quiescence(
     terminal = state.terminal_status
     if terminal.is_terminal:
         return terminal_score(terminal, state.position.side_to_move, ply)
+
+    side = state.position.side_to_move
+    if is_in_check(state.position, side, ctx.compiled):
+        # In-check nodes cannot stand pat: extend over every legal evasion.
+        if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
+            return ctx.evaluator.evaluate(state)
+        successors = legal_successors(state, ctx.compiled)
+        if not successors:
+            return ctx.evaluator.evaluate(state)
+        ordered = sorted(successors, key=lambda pair: str(pair[0]))
+        for action, child in ordered:
+            score = -quiescence(child, -beta, -alpha, ply + 1, qdepth + 1, ctx)
+            if score >= beta:
+                return score
+            if score > alpha:
+                alpha = score
+        return alpha
+
     stand_pat = ctx.evaluator.evaluate(state)
     if stand_pat >= beta:
         return stand_pat
@@ -236,11 +260,13 @@ def quiescence(
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
         return alpha
 
-    actions = legal_actions(state, ctx.compiled)
-    noisy = classify_noisy(state, actions)
-    ordered = sorted(noisy, key=str)
-    for action in ordered:
-        child = apply_action(state, action, ctx.compiled)
+    successors = legal_successors(state, ctx.compiled)
+    noisy = classify_noisy(state, [action for action, _ in successors])
+    ordered = sorted(
+        (pair for pair in successors if pair[0] in noisy),
+        key=lambda pair: str(pair[0]),
+    )
+    for action, child in ordered:
         score = -quiescence(child, -beta, -alpha, ply + 1, qdepth + 1, ctx)
         if score >= beta:
             return score
@@ -262,11 +288,10 @@ def reference_minimax(
         return terminal_score(terminal, state.position.side_to_move, ply), None
     if depth <= 0:
         return evaluator.evaluate(state), None
-    actions = sorted(legal_actions(state, compiled), key=str)
+    successors = sorted(legal_successors(state, compiled), key=lambda pair: str(pair[0]))
     best = -INF
     best_action: Action | None = None
-    for action in actions:
-        child = apply_action(state, action, compiled)
+    for action, child in successors:
         score, _ = reference_minimax(child, depth - 1, evaluator, compiled, ply + 1)
         score = -score
         if score > best:

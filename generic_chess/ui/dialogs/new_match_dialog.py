@@ -15,6 +15,7 @@ from PySide6.QtWidgets import (
     QGroupBox,
     QHBoxLayout,
     QLabel,
+    QMessageBox,
     QPushButton,
     QSpinBox,
     QVBoxLayout,
@@ -102,6 +103,10 @@ class NewMatchDialog(QDialog):
         self._overtime_seconds.setRange(0, 600)
         self._overtime_seconds.setValue(int(settings.get("match/overtime_seconds", 30)))
         clock_form.addRow("Byoyomi / increment (seconds)", self._overtime_seconds)
+        clock_form.addRow(
+            "",
+            QLabel("AI 超时判负；人类时钟仅供参考，永不判负。"),
+        )
         layout.addWidget(clock_box)
 
         ai_box = QGroupBox("AI strength")
@@ -147,6 +152,11 @@ class NewMatchDialog(QDialog):
             self._path_label.setText(path)
 
     def _accept(self) -> None:
+        if self._source.currentIndex() == 2:
+            path = self._path_label.text()
+            if not path or path == "—":
+                QMessageBox.warning(self, "New Match", "Choose a RuleSet file first.")
+                return
         mode = [TimeControlMode.NONE, TimeControlMode.BYOYOMI, TimeControlMode.FISCHER][
             self._mode.currentIndex()
         ]
@@ -190,9 +200,11 @@ class NewMatchDialog(QDialog):
             board_size=self._board_size.value(),
             preset=self._preset.currentText(),
             hybrid=self._hybrid.isChecked(),
-            ruleset_path=self._path_label.text()
-            if self._source.currentIndex() == 2 and self._path_label.text() != "—"
-            else None,
+            ruleset_path=(
+                self._path_label.text()
+                if self._source.currentIndex() == 2
+                else None
+            ),
             participants=(
                 ParticipantKind.HUMAN if self._side0.currentIndex() == 0 else ParticipantKind.AI,
                 ParticipantKind.HUMAN if self._side1.currentIndex() == 0 else ParticipantKind.AI,
