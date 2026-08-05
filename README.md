@@ -94,6 +94,47 @@ python -m venv .venv
 
 对局中可输入：合法动作编号（`1`）、与 `str(action)` 完全一致的动作串（如 `e2-e4`、`P@e4`）、`moves`、`board`、`history`、`help`、`resign`、`quit`。`--ruleset` 与 `--seed`/`--board-size`/`--preset`/`--hybrid` 同时给出时会明确报错（exit 2），不会静默忽略。`--ruleset-out` 在启动时写出本局实际 RuleSet（确定性、独立于对局进度），且不能与 `--record-out` 或 `--ruleset` 指向同一文件。棋盘以 `0:P` / `1:P` / `0:+G` 明确标识棋子阵营与升变状态（纯文本，不依赖颜色终端）。
 
+## 棋子纹理生成（visual）
+
+`generic_chess/visual` 是后续 UI 的底层基础设施：由棋子的真实 movement 结构程序化生成
+确定性 SVG 纹理（而不是按 `type_id` 手工配图）。纹理反映走法几何——ray 走法带箭头、leap
+走法圆头封端、中心格永远有显式标记；几何、配色、SVG 输出分层解耦，后续 Web UI / 预览 /
+调试工具可以直接复用。
+
+```python
+from generic_chess.generation.config import GeneratorConfig
+from generic_chess.generation.generator import generate_game
+from generic_chess.visual import generate_piece_texture, PieceTextureStyle
+
+compiled = generate_game(GeneratorConfig(seed=42)).compiled_ruleset
+texture = generate_piece_texture(
+    compiled.types_by_id["R"],  # 任意 PieceType
+    owner=0,                    # 0=白方配色，1=黑方（几何旋转 180°），None=中性灰
+    size=128,
+)
+print(texture.svg, texture.fingerprint)  # 同一输入输出完全稳定
+
+custom = PieceTextureStyle(white_fill="#ffd700", center_marker_ratio=0.15)
+texture = generate_piece_texture(compiled.types_by_id["P"], owner=1, style=custom)
+```
+
+生成示例/预览：
+
+```powershell
+# 经典类别（king/rook-ray/false-rook/bishop-ray/false-bishop/queen/pawn，双方配色）
+# + 一个随机 RuleSet 的全部棋子类型；输出 SVG 与 index.html 预览页
+.venv\Scripts\python.exe -m generic_chess.visual.preview --out visual_preview --seed 42
+```
+
+当前支持的视觉语义：正交/对角/斜向分支、ray 箭头、leap 圆头、八邻域 king（圆角方环 +
+中心点）、单向 pawn（方向楔形）、正交+对角组合（queen 型）与随机复合棋子；中心格标记、
+黑白/中性三套默认配色、描边、按 occupancy 归一化缩放。当前不做（架构上可扩展）：复杂阻挡
+语义的细粒度视觉编码、move/capture 双图案全覆盖、promotion/drop 徽标、多层状态图标。
+
+设计说明：走法几何而非名称驱动，保证随机规则也能得到稳定、可读、可区分的纹理；选择 SVG
+是因为纯标准库即可生成、矢量缩放无损、可直接嵌入 Web；ray 与 leap 用箭头/圆头区分，避免
+只靠长度；中心点标记棋子的原点与方向参考。
+
 ## 快速上手
 
 ```python
@@ -216,9 +257,10 @@ assert compiled2.ruleset_fingerprint == compiled.ruleset_fingerprint
 * 子力不足判和、50 回合规则、连续将军特殊规则（v0 一律按普通重复和棋）
 
 第二阶段明确不做：heuristic evaluator、alpha-beta、MCTS、神经网络、Zobrist key、transposition table、move cache、make/unmake、图形/网页 UI、网络对战、计时器、悔棋、开局库、新棋规。Core v0 的规则语义保持不变。
+第三阶段（visual）只提供纹理生成基础设施与预览工具，不做完整 Web UI，也不做 AI 搜索可视化。
 
 ## 测试
 
-`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试。
+`tests/` 覆盖：坐标与 180° 旋转、leap/ray 语义、anchor 安全与自将、捕获与持驹、打入、升变、mate/stalemate、重复局面与 ply 上限、Generator 复现与过滤器、序列化与 fingerprint、旋转对称性、随机对局系统不变量（实体守恒、每方恰一 anchor 且在盘、无 anchor 捕获、同 seed 完全一致），以及 GameSession 行为、GameRecord 重放/严格校验、CLI 双人对局与回放 smoke 测试、纹理稳定性/阵营/类别区分/缩放/预览 smoke。
 
 测试不使用 Hypothesis，全部使用固定 seed 的确定性断言。
