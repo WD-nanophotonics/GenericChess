@@ -16,7 +16,20 @@ from generic_chess.ui.board.texture_cache import TextureCache
 from generic_chess.ui.controller import UIController
 from generic_chess.ui.dialogs.preferences_dialog import PreferencesDialog
 from generic_chess.ui.main_window import MainWindow
-from generic_chess.ui.settings import KEY_ENABLE_PREVIEW, KEY_SHOW_HOVER, KEY_TEXTURE_RATIO
+from generic_chess.ui.i18n.manager import LocalizationManager
+from generic_chess.ui.settings import (
+    KEY_AUTO_PROMOTE_UNIQUE,
+    KEY_BOARD_ORIENTATION,
+    KEY_ENABLE_PREVIEW,
+    KEY_LANGUAGE,
+    KEY_SHOW_COORDINATES,
+    KEY_SHOW_DEV_STATUS,
+    KEY_SHOW_HOVER,
+    KEY_SHOW_LAST_MOVE,
+    KEY_SHOW_LEGAL_MOVES,
+    KEY_TEXTURE_RATIO,
+    KEY_ZOOM_MODE,
+)
 from generic_chess.ui.stores import DictSettingsStore
 
 
@@ -26,9 +39,11 @@ def qapp():
 
 
 def _window(qapp, seed=42, board_size=8):
-    ctrl = UIController(settings=DictSettingsStore())
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    ctrl = UIController(settings=settings)
     assert ctrl.new_game(seed=seed, board_size=board_size)
-    win = MainWindow(ctrl, DictSettingsStore())
+    win = MainWindow(ctrl, settings)
     win.show()
     return ctrl, win
 
@@ -78,7 +93,6 @@ def test_click_flow_updates_scene_and_status(qapp):
     ctrl.square_clicked(pawn)
     assert ctrl.interaction.selected_square == pawn
     win._refresh()
-    assert "legal actions" in win._status_main.text()
     target = ctrl.interaction.legal_actions[0].to_square
     ctrl.square_clicked(target)
     win._refresh()
@@ -120,7 +134,7 @@ def test_promotion_dialog_instantiates(qapp):
 
 def test_preferences_dialog_persists(qapp):
     settings = DictSettingsStore()
-    dialog = PreferencesDialog({})
+    dialog = PreferencesDialog({}, LocalizationManager("en"))
     values = dialog.values()
     assert KEY_TEXTURE_RATIO in values
     assert values[KEY_TEXTURE_RATIO] == 0.8  # default from empty initial
@@ -156,7 +170,8 @@ def test_piece_panel_shows_selected_piece(qapp):
     )
     ctrl.square_clicked(pawn)
     win._refresh()
-    assert "Type:" in win._piece_panel._info.text()
+    type_id = ctrl.piece_info().type_id
+    assert type_id in win._rules_panel._detail.text()
 
 
 def test_ui_module_entry_smoke():
@@ -197,13 +212,13 @@ def test_run_ui_launcher_smoke():
     assert "Traceback" not in proc.stderr
 
 
-def test_hand_stand_shows_empty_state(qapp):
+def test_player_bar_shows_empty_hand(qapp):
     ctrl, win = _window(qapp)
-    assert win._hand_bottom.is_empty_shown()
-    assert win._hand_bottom.piece_buttons() == ()
+    assert win._player_bars[0].is_hand_empty()
+    assert win._player_bars[0].hand_buttons() == []
 
 
-def test_hand_stand_drop_flow(qapp):
+def test_player_bar_drop_flow(qapp):
     from conftest import king_type, make_ruleset, T
 
     rook = T("R", RayAtom((0, 1)), RayAtom((0, -1)), RayAtom((1, 0)), RayAtom((-1, 0)))
@@ -223,24 +238,25 @@ def test_hand_stand_drop_flow(qapp):
         ],
     )
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     assert ctrl.new_game_from_ruleset(ruleset)
     win = MainWindow(ctrl, settings)
     win.show()
-    assert win._hand_bottom.is_empty_shown()
+    assert win._player_bars[0].is_hand_empty()
 
     ctrl.square_clicked(Square(1, 0))
     ctrl.square_clicked(Square(2, 0))  # capture -> hand
     win._refresh()
-    buttons = win._hand_bottom.piece_buttons()
-    assert not win._hand_bottom.is_empty_shown()
+    buttons = win._player_bars[0].hand_buttons()
+    assert not win._player_bars[0].is_hand_empty()
     assert buttons and "F" in buttons[0].text()
 
     # Player 1 moves so player 0 can drop.
     ctrl.square_clicked(Square(7, 7))
     ctrl.square_clicked(ctrl.interaction.legal_actions[0].to_square)
     win._refresh()
-    buttons = win._hand_bottom.piece_buttons()
+    buttons = win._player_bars[0].hand_buttons()
     assert buttons and buttons[0].isEnabled()  # side to move can drop
     buttons[0].click()
     assert ctrl.interaction.selected_hand_piece_type_id == "F"
@@ -249,7 +265,7 @@ def test_hand_stand_drop_flow(qapp):
     ctrl.square_clicked(target)
     win._refresh()
     assert ctrl.session.state.position.hands[0].count("F") == 0
-    assert win._hand_bottom.is_empty_shown()
+    assert win._player_bars[0].is_hand_empty()
 
 
 def test_board_view_mouse_tracking_enabled(qapp):
@@ -270,7 +286,8 @@ def test_hover_preference_gates_scene_hover(qapp):
 
 def test_manual_zoom_survives_refresh(qapp):
     _, win = _window(qapp)
-    win._board_view.scale(1.5, 1.5)
+    win._board_view.set_zoom_mode(True)
+    win._board_view.zoom_in()
     before = win._board_view.transform()
     win._refresh()
     assert win._board_view.transform() == before  # refresh does not reset zoom
@@ -291,17 +308,17 @@ def test_history_preview_selects_same_ply(qapp):
     win._refresh()
     assert ctrl.display_ply(1)
     win._refresh()
-    selected = win._history_panel._list.selectedItems()
+    selected = win._moves_panel._list.selectedItems()
     assert selected and selected[0].data(Qt.UserRole) == 1
     ctrl.return_to_current()
     win._refresh()
-    selected = win._history_panel._list.selectedItems()
+    selected = win._moves_panel._list.selectedItems()
     assert selected and selected[0].data(Qt.UserRole) == 1  # back to live (last move)
 
 
 def test_owner_mapping_ui_text(qapp):
     ctrl, win = _window(qapp)
-    assert "White" in win._game_panel._status.text()
+    assert "White" in win._moves_panel._primary.text()
     model = ctrl.board_view_model()
     pawn = next(
         sv.square
@@ -310,7 +327,9 @@ def test_owner_mapping_ui_text(qapp):
     )
     ctrl.square_clicked(pawn)
     win._refresh()
-    assert "White / Player 0 (先手)" in win._piece_panel._info.text()
+    assert "Player 0" not in win._rules_panel._detail.text()
+    type_id = ctrl.piece_info().type_id
+    assert type_id in win._rules_panel._detail.text()
 
 
 def test_texture_cache_style_dimension(qapp):
@@ -372,6 +391,7 @@ def test_apply_new_match_starts_fresh(qapp):
     from generic_chess.ui.match import MatchConfig, ParticipantKind
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
@@ -397,9 +417,10 @@ def test_game_over_banner_shown(qapp):
     from test_ai_match import _mate_ruleset
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game_from_ruleset(_mate_ruleset())
-    win = MainWindow(ctrl, settings)
+    win = MainWindow(ctrl, DictSettingsStore())
     win.show()
     ctrl.start_match(
         MatchConfig(
@@ -410,8 +431,9 @@ def test_game_over_banner_shown(qapp):
     )
     ctrl.submit_action(BoardMove(Square(1, 4), Square(0, 4)))  # mate in one
     win._refresh()
-    assert not win._game_panel._game_over.isHidden()
-    assert "Game over" in win._game_panel._game_over.text()
+    assert "Game over" in win._moves_panel._primary.text()
+    assert "to move" not in win._status_main.text()
+    assert "White" not in win._moves_panel._primary.text()
 
 
 def test_main_window_ai_match_smoke(qapp):
@@ -423,6 +445,7 @@ def test_main_window_ai_match_smoke(qapp):
     from generic_chess.ui.match import MatchConfig, ParticipantKind
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
@@ -455,6 +478,7 @@ def test_clock_label_updates_on_tick(qapp):
     from generic_chess.ui.match import MatchConfig, ParticipantKind
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
@@ -473,18 +497,8 @@ def test_clock_label_updates_on_tick(qapp):
 def test_preferences_no_nameerror(qapp, monkeypatch):
     from PySide6.QtWidgets import QDialog
 
-    from generic_chess.ui.settings import (
-        KEY_AUTO_PROMOTE_UNIQUE,
-        KEY_BOARD_ORIENTATION,
-        KEY_ENABLE_PREVIEW,
-        KEY_SHOW_COORDINATES,
-        KEY_SHOW_HOVER,
-        KEY_SHOW_LAST_MOVE,
-        KEY_SHOW_LEGAL_MOVES,
-        KEY_TEXTURE_RATIO,
-    )
-
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
@@ -497,6 +511,9 @@ def test_preferences_no_nameerror(qapp, monkeypatch):
         KEY_SHOW_HOVER: True,
         KEY_ENABLE_PREVIEW: True,
         KEY_AUTO_PROMOTE_UNIQUE: True,
+        KEY_LANGUAGE: "en",
+        KEY_ZOOM_MODE: False,
+        KEY_SHOW_DEV_STATUS: False,
     }
     monkeypatch.setattr(PreferencesDialog, "exec", lambda self: QDialog.Accepted)
     monkeypatch.setattr(PreferencesDialog, "values", lambda self: values)
@@ -513,6 +530,7 @@ def test_ai_worker_error_clears_thinking_and_stops_restart(qapp):
     from generic_chess.ui.match import MatchConfig, ParticipantKind
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
@@ -591,6 +609,7 @@ def test_restart_recreates_ai_player(qapp):
     from generic_chess.ui.match import MatchConfig, ParticipantKind
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
@@ -697,6 +716,7 @@ def test_close_waits_for_ai_thread_then_closes(qapp):
             )
 
     settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
     ctrl = UIController(settings=settings)
     ctrl.new_game(seed=42)
     win = MainWindow(ctrl, settings)
