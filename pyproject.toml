@@ -31,6 +31,7 @@ include = ["generic_chess*"]
   "generic_chess/_native/native_perft.c",
   "generic_chess/_native/native_eval.c",
   "generic_chess/_native/native_search.c",
+  "generic_chess/_native/native_tt.c",
 ], optional = true }
 
 [tool.pytest.ini_options]

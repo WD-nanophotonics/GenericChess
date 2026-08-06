@@ -96,6 +96,12 @@ typedef struct {
     uint64_t history_hi[GC_MAX_PLY + 1];
     uint16_t history_len;
     uint16_t root_hash_count; /* repetition count of the root hash from Python */
+    /* Deterministic fingerprint of the {position_hash -> occurrence_count}
+     * mapping over the full history; 1 means the history was replayed from
+     * the initial state (production iterative search requires this). */
+    uint64_t repetition_context_lo;
+    uint64_t repetition_context_hi;
+    uint8_t history_complete;
 } GCPosition;
 
 /* Growable packed-action list (replaces fixed 4096 buffers). */
@@ -173,6 +179,8 @@ typedef struct {
     uint16_t old_history_len;
     uint64_t old_hash_lo;
     uint64_t old_hash_hi;
+    uint64_t old_repetition_context_lo;
+    uint64_t old_repetition_context_hi;
 } GCUndo;
 
 typedef struct {

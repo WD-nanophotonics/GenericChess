@@ -18,12 +18,21 @@
 #include "native_rules.h"
 #include "native_search.h"
 #include "native_state.h"
+#include "native_tt.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
 #define GC_EVAL_CAPSULE "generic_chess._native_core.gc_eval"
+#define GC_ENGINE_CAPSULE "generic_chess._native_core.gc_engine"
 
 static PyObject *gc_native_error = NULL;
+
+typedef struct {
+    GCRules *rules;
+    GCEvaluationTables *eval;
+    GCTable *tt;
+    int busy;
+} GCSearchEngine;
 
 static void gc_rules_capsule_free(PyObject *capsule) {
     GCRules *rules = (GCRules *)PyCapsule_GetPointer(capsule, GC_RULES_CAPSULE);
@@ -45,6 +54,15 @@ static void gc_eval_capsule_free(PyObject *capsule) {
         capsule, GC_EVAL_CAPSULE);
     if (eval != NULL) {
         gc_eval_free(eval);
+    }
+}
+
+static void gc_engine_capsule_free(PyObject *capsule) {
+    GCSearchEngine *engine = (GCSearchEngine *)PyCapsule_GetPointer(
+        capsule, GC_ENGINE_CAPSULE);
+    if (engine != NULL) {
+        gc_tt_free(engine->tt);
+        free(engine);
     }
 }
 
@@ -825,6 +843,15 @@ static PyObject *gc_build_snapshot(const GCRules *rules, const GCPosition *pos,
     value = PyLong_FromLong(gc_repetition_count(rules, pos));
     PyDict_SetItemString(dict, "repetition_count", value);
     Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(pos->repetition_context_lo);
+    PyDict_SetItemString(dict, "repetition_context_lo", value);
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(pos->repetition_context_hi);
+    PyDict_SetItemString(dict, "repetition_context_hi", value);
+    Py_DECREF(value);
+    value = PyLong_FromLong(pos->history_complete);
+    PyDict_SetItemString(dict, "history_complete", value);
+    Py_DECREF(value);
     const char *terminal_name = "ongoing";
     switch (term) {
         case GC_TERM_CHECKMATE: terminal_name = "checkmate"; break;
@@ -960,6 +987,8 @@ static PyObject *gc_native_make_unmake_roundtrip(PyObject *self,
                copy.ply == pos->ply &&
                copy.hash_lo == pos->hash_lo &&
                copy.hash_hi == pos->hash_hi &&
+               copy.repetition_context_lo == pos->repetition_context_lo &&
+               copy.repetition_context_hi == pos->repetition_context_hi &&
                copy.history_len == pos->history_len &&
                memcmp(copy.board, pos->board,
                       sizeof(GCPiece) * rules->squares) == 0 &&
@@ -1032,6 +1061,18 @@ static PyObject *gc_native_long_make_unmake_roundtrip(PyObject *self,
             hash_verified = 0;
             break;
         }
+        {
+            uint64_t ctx_lo = pos.repetition_context_lo;
+            uint64_t ctx_hi = pos.repetition_context_hi;
+            gc_repetition_context_rebuild(&pos);
+            if (pos.repetition_context_lo != ctx_lo ||
+                pos.repetition_context_hi != ctx_hi) {
+                hash_verified = 0;
+                break;
+            }
+            pos.repetition_context_lo = ctx_lo;
+            pos.repetition_context_hi = ctx_hi;
+        }
     }
     int ok_all = 1;
     if (hash_verified) {
@@ -1042,6 +1083,8 @@ static PyObject *gc_native_long_make_unmake_roundtrip(PyObject *self,
                  pos.ply == initial.ply &&
                  pos.hash_lo == initial.hash_lo &&
                  pos.hash_hi == initial.hash_hi &&
+                 pos.repetition_context_lo == initial.repetition_context_lo &&
+                 pos.repetition_context_hi == initial.repetition_context_hi &&
                  pos.history_len == initial.history_len &&
                  memcmp(pos.board, initial.board,
                         sizeof(GCPiece) * rules->squares) == 0 &&
@@ -1154,6 +1197,21 @@ static PyObject *gc_native_replay_position(PyObject *self, PyObject *args) {
                             GC_STATUS_ACTION_NOT_LEGAL, (int)i);
             free(pos);
             return NULL;
+        }
+        {
+            uint64_t ctx_lo = pos->repetition_context_lo;
+            uint64_t ctx_hi = pos->repetition_context_hi;
+            gc_repetition_context_rebuild(pos);
+            if (pos->repetition_context_lo != ctx_lo ||
+                pos->repetition_context_hi != ctx_hi) {
+                PyErr_SetString(
+                    PyExc_RuntimeError,
+                    "repetition context mismatch during history replay");
+                free(pos);
+                return NULL;
+            }
+            pos->repetition_context_lo = ctx_lo;
+            pos->repetition_context_hi = ctx_hi;
         }
     }
     return PyCapsule_New(pos, GC_POSITION_CAPSULE, gc_position_capsule_free);
@@ -1387,22 +1445,10 @@ static PyObject *gc_compile_evaluation(PyObject *self, PyObject *args) {
 
 /* --------------------------------------------------- fixed-depth search */
 
-static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
-    (void)self;
-    PyObject *rules_capsule;
-    PyObject *eval_capsule;
-    PyObject *pos_capsule;
-    int depth;
-    if (!PyArg_ParseTuple(args, "OOOi", &rules_capsule, &eval_capsule,
-                          &pos_capsule, &depth)) {
-        return NULL;
-    }
-    GCRules *rules = gc_get_rules(rules_capsule);
-    GCEvaluationTables *eval = gc_get_eval(eval_capsule);
-    GCPosition *pos = gc_get_position(pos_capsule);
-    if (rules == NULL || eval == NULL || pos == NULL) {
-        return NULL;
-    }
+static PyObject *gc_run_fixed_depth_search(GCRules *rules,
+                                           GCEvaluationTables *eval,
+                                           GCPosition *pos, int depth,
+                                           GCTable *tt) {
     if (depth < 0 || depth > GC_MAX_PLY) {
         PyErr_SetString(PyExc_ValueError,
                         "search depth must be in [0, GC_MAX_PLY]");
@@ -1411,7 +1457,7 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
     GCPosition copy;
     memcpy(&copy, pos, sizeof(GCPosition));
     GCSearchContext ctx;
-    if (!gc_search_context_alloc(&ctx, rules, eval, (uint32_t)depth)) {
+    if (!gc_search_context_alloc(&ctx, rules, eval, tt, (uint32_t)depth)) {
         PyErr_SetString(PyExc_ValueError,
                         "search context allocation failed (depth or memory)");
         return NULL;
@@ -1483,6 +1529,48 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
         goto cleanup;
     }
     Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_probes);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "tt_probes", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_hits);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "tt_hits", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_cutoffs);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "tt_cutoffs", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_stores);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "tt_stores", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_replacements);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "tt_replacements", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.beta_cutoffs);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "beta_cutoffs", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    value = PyLong_FromUnsignedLongLong(ctx.selective_depth);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "selective_depth", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
     pv = PyTuple_New((Py_ssize_t)ctx.pv_length[0]);
     if (pv == NULL) {
         goto cleanup;
@@ -1509,6 +1597,177 @@ cleanup:
     }
     gc_search_context_free(&ctx);
     return result_dict;
+}
+
+static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *eval_capsule;
+    PyObject *pos_capsule;
+    int depth;
+    if (!PyArg_ParseTuple(args, "OOOi", &rules_capsule, &eval_capsule,
+                          &pos_capsule, &depth)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    GCEvaluationTables *eval = gc_get_eval(eval_capsule);
+    GCPosition *pos = gc_get_position(pos_capsule);
+    if (rules == NULL || eval == NULL || pos == NULL) {
+        return NULL;
+    }
+    return gc_run_fixed_depth_search(rules, eval, pos, depth, NULL);
+}
+
+/* ---------------------------------------------------- search engine */
+
+static GCSearchEngine *gc_get_engine(PyObject *capsule) {
+    if (!PyCapsule_CheckExact(capsule)) {
+        PyErr_SetString(PyExc_TypeError, "expected a native engine capsule");
+        return NULL;
+    }
+    return (GCSearchEngine *)PyCapsule_GetPointer(capsule, GC_ENGINE_CAPSULE);
+}
+
+static PyObject *gc_create_search_engine(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *eval_capsule;
+    long tt_megabytes;
+    if (!PyArg_ParseTuple(args, "OOl", &rules_capsule, &eval_capsule,
+                          &tt_megabytes)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    GCEvaluationTables *eval = gc_get_eval(eval_capsule);
+    if (rules == NULL || eval == NULL) {
+        return NULL;
+    }
+    if (tt_megabytes < 0 || tt_megabytes > 1024) {
+        PyErr_SetString(PyExc_ValueError,
+                        "tt_megabytes must be in [0, 1024]");
+        return NULL;
+    }
+    GCSearchEngine *engine = (GCSearchEngine *)calloc(1, sizeof(GCSearchEngine));
+    if (engine == NULL) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    engine->rules = rules;
+    engine->eval = eval;
+    if (tt_megabytes > 0) {
+        size_t requested = (size_t)tt_megabytes * 1024 * 1024;
+        size_t allocated = 0;
+        engine->tt = gc_tt_create(requested, &allocated);
+        if (engine->tt == NULL) {
+            free(engine);
+            PyErr_NoMemory();
+            return NULL;
+        }
+    }
+    return PyCapsule_New(engine, GC_ENGINE_CAPSULE, gc_engine_capsule_free);
+}
+
+static PyObject *gc_search_engine_clear_tt(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule;
+    if (!PyArg_ParseTuple(args, "O", &engine_capsule)) {
+        return NULL;
+    }
+    GCSearchEngine *engine = gc_get_engine(engine_capsule);
+    if (engine == NULL) {
+        return NULL;
+    }
+    gc_tt_clear(engine->tt);
+    Py_RETURN_NONE;
+}
+
+static PyObject *gc_search_engine_tt_info(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule;
+    if (!PyArg_ParseTuple(args, "O", &engine_capsule)) {
+        return NULL;
+    }
+    GCSearchEngine *engine = gc_get_engine(engine_capsule);
+    if (engine == NULL) {
+        return NULL;
+    }
+    PyObject *dict = PyDict_New();
+    if (dict == NULL) {
+        return NULL;
+    }
+    PyObject *value;
+    if (engine->tt == NULL) {
+        value = PyLong_FromLong(0);
+        PyDict_SetItemString(dict, "requested_bytes", value);
+        Py_DECREF(value);
+        value = PyLong_FromLong(0);
+        PyDict_SetItemString(dict, "allocated_bytes", value);
+        Py_DECREF(value);
+        value = PyLong_FromLong(0);
+        PyDict_SetItemString(dict, "bucket_count", value);
+        Py_DECREF(value);
+        value = PyLong_FromLong(0);
+        PyDict_SetItemString(dict, "entry_capacity", value);
+        Py_DECREF(value);
+        value = PyLong_FromLong((long)sizeof(GCTTEntry));
+        PyDict_SetItemString(dict, "entry_size", value);
+        Py_DECREF(value);
+        value = PyLong_FromLong(0);
+        PyDict_SetItemString(dict, "generation", value);
+        Py_DECREF(value);
+        value = PyLong_FromLong(0);
+        PyDict_SetItemString(dict, "occupied_entries", value);
+        Py_DECREF(value);
+        return dict;
+    }
+    value = PyLong_FromUnsignedLongLong(engine->tt->requested_bytes);
+    PyDict_SetItemString(dict, "requested_bytes", value);
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(engine->tt->allocated_bytes);
+    PyDict_SetItemString(dict, "allocated_bytes", value);
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(engine->tt->bucket_count);
+    PyDict_SetItemString(dict, "bucket_count", value);
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(
+        engine->tt->bucket_count * GC_TT_WAYS);
+    PyDict_SetItemString(dict, "entry_capacity", value);
+    Py_DECREF(value);
+    value = PyLong_FromLong((long)sizeof(GCTTEntry));
+    PyDict_SetItemString(dict, "entry_size", value);
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(engine->tt->generation);
+    PyDict_SetItemString(dict, "generation", value);
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(engine->tt->occupied_entries);
+    PyDict_SetItemString(dict, "occupied_entries", value);
+    Py_DECREF(value);
+    return dict;
+}
+
+static PyObject *gc_engine_fixed_depth_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule;
+    PyObject *pos_capsule;
+    int depth;
+    if (!PyArg_ParseTuple(args, "OOi", &engine_capsule, &pos_capsule,
+                          &depth)) {
+        return NULL;
+    }
+    GCSearchEngine *engine = gc_get_engine(engine_capsule);
+    GCPosition *pos = gc_get_position(pos_capsule);
+    if (engine == NULL || pos == NULL) {
+        return NULL;
+    }
+    if (engine->busy) {
+        PyErr_SetString(PyExc_RuntimeError, "search engine is busy");
+        return NULL;
+    }
+    engine->busy = 1;
+    PyObject *result = gc_run_fixed_depth_search(
+        engine->rules, engine->eval, pos, depth, engine->tt);
+    engine->busy = 0;
+    return result;
 }
 
 static PyMethodDef gc_methods[] = {
@@ -1552,6 +1811,14 @@ static PyMethodDef gc_methods[] = {
      "compile_evaluation(rules, payload) -> evaluation tables capsule"},
     {"native_fixed_depth_search", gc_native_fixed_depth_search, METH_VARARGS,
      "native_fixed_depth_search(rules, eval, position, depth) -> result dict"},
+    {"create_search_engine", gc_create_search_engine, METH_VARARGS,
+     "create_search_engine(rules, eval, tt_megabytes) -> engine capsule"},
+    {"search_engine_clear_tt", gc_search_engine_clear_tt, METH_VARARGS,
+     "search_engine_clear_tt(engine) -> None"},
+    {"search_engine_tt_info", gc_search_engine_tt_info, METH_VARARGS,
+     "search_engine_tt_info(engine) -> dict"},
+    {"engine_fixed_depth_search", gc_engine_fixed_depth_search, METH_VARARGS,
+     "engine_fixed_depth_search(engine, position, depth) -> result dict (TT on)"},
     {NULL, NULL, 0, NULL}
 };
 

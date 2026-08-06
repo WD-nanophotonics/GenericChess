@@ -13,6 +13,19 @@ int gc_hash_verify(const GCRules *rules, const GCPosition *pos);
  * (including the root base count supplied by Python). */
 uint16_t gc_repetition_count(const GCRules *rules, const GCPosition *pos);
 
+/* Number of occurrences of a hash in the position history, using the same
+ * weighting as gc_repetition_count (index 0 weighted by root_hash_count). */
+uint16_t gc_hash_occurrences(const GCRules *rules, const GCPosition *pos,
+                             uint64_t hash_lo, uint64_t hash_hi);
+
+/* Deterministic token for one (position hash, occurrence count) pair. */
+void gc_repetition_count_token(uint64_t position_lo, uint64_t position_hi,
+                               uint16_t count, uint64_t *out_lo,
+                               uint64_t *out_hi);
+
+/* Recompute the repetition-context fingerprint from the full history. */
+int gc_repetition_context_rebuild(GCPosition *pos);
+
 /* Incremental hash helpers used by make/unmake. */
 /* Return 1 on success, 0 when the hand count is out of the supported range
  * (must be treated as an error by make/unmake, never silently ignored). */

@@ -17,6 +17,8 @@ int gc_position_pack(GCPosition *pos, const GCRules *rules,
     pos->history_lo[0] = pos->hash_lo;
     pos->history_hi[0] = pos->hash_hi;
     pos->history_len = 1;
+    pos->history_complete = (payload->root_hash_count == 0);
+    gc_repetition_context_rebuild(pos);
     return 1;
 }
 
@@ -39,6 +41,8 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
     undo->old_history_len = pos->history_len;
     undo->old_hash_lo = pos->hash_lo;
     undo->old_hash_hi = pos->hash_hi;
+    undo->old_repetition_context_lo = pos->repetition_context_lo;
+    undo->old_repetition_context_hi = pos->repetition_context_hi;
 
     if (kind == GC_ACTION_KIND_DROP) {
         if (to >= rules->squares || pos->board[to].occupied) {
@@ -113,6 +117,24 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
     pos->side_to_move = 1 - side;
     gc_hash_xor_side((GCRules *)rules, pos, 1 - side); /* add new side */
     pos->ply++;
+    /* Incrementally update the repetition-context fingerprint for the child
+     * position before appending it to the history stack. */
+    {
+        uint16_t old_count = gc_hash_occurrences(rules, pos, pos->hash_lo,
+                                                 pos->hash_hi);
+        uint64_t token_lo, token_hi;
+        if (old_count > 0) {
+            gc_repetition_count_token(pos->hash_lo, pos->hash_hi, old_count,
+                                      &token_lo, &token_hi);
+            pos->repetition_context_lo ^= token_lo;
+            pos->repetition_context_hi ^= token_hi;
+        }
+        gc_repetition_count_token(pos->hash_lo, pos->hash_hi,
+                                  (uint16_t)(old_count + 1),
+                                  &token_lo, &token_hi);
+        pos->repetition_context_lo ^= token_lo;
+        pos->repetition_context_hi ^= token_hi;
+    }
     pos->history_lo[pos->history_len] = pos->hash_lo;
     pos->history_hi[pos->history_len] = pos->hash_hi;
     pos->history_len++;
@@ -213,6 +235,8 @@ void gc_unmake_move(GCPosition *pos, const GCRules *rules, const GCUndo *undo) {
     pos->history_len = undo->old_history_len;
     pos->hash_lo = undo->old_hash_lo;
     pos->hash_hi = undo->old_hash_hi;
+    pos->repetition_context_lo = undo->old_repetition_context_lo;
+    pos->repetition_context_hi = undo->old_repetition_context_hi;
 }
 
 int gc_make_move_verify(GCPosition *pos, const GCRules *rules,

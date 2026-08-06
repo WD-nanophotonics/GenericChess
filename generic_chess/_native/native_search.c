@@ -28,10 +28,12 @@ static int32_t gc_node_terminal_score(const GCEvaluationTables *eval,
 }
 
 int gc_search_context_alloc(GCSearchContext *ctx, const GCRules *rules,
-                            GCEvaluationTables *eval, uint32_t max_depth) {
+                            GCEvaluationTables *eval, GCTable *tt,
+                            uint32_t max_depth) {
     memset(ctx, 0, sizeof(*ctx));
     ctx->rules = rules;
     ctx->eval = eval;
+    ctx->tt = tt;
     ctx->max_depth = max_depth;
     if (max_depth > GC_MAX_PLY) {
         return 0;
@@ -83,6 +85,9 @@ void gc_search_context_free(GCSearchContext *ctx) {
 static int32_t gc_negamax(GCSearchContext *ctx, GCPosition *pos, int depth,
                           int32_t alpha, int32_t beta, int ply) {
     ctx->nodes++;
+    if ((uint32_t)ply > ctx->selective_depth) {
+        ctx->selective_depth = (uint32_t)ply;
+    }
     /* Reset this node's PV row so a terminal node (or a node whose best line
      * ends here) never inherits stale tail moves from a sibling search. */
     ctx->pv_length[ply] = 0;
@@ -97,10 +102,63 @@ static int32_t gc_negamax(GCSearchContext *ctx, GCPosition *pos, int depth,
         return gc_node_terminal_score(ctx->eval, term, ply);
     }
     if (depth <= 0) {
-        return gc_evaluate_material(ctx->rules, ctx->eval, pos);
+        int32_t v = gc_evaluate_material(ctx->rules, ctx->eval, pos);
+        if (ctx->tt != NULL) {
+            ctx->tt_stores++;
+            uint64_t replaced = 0;
+            gc_tt_store(ctx->tt, pos, 0, ctx->eval, ply, v,
+                        GC_TT_BOUND_EXACT, 0, 0, &replaced);
+            ctx->tt_replacements += replaced;
+        }
+        return v;
+    }
+
+    int32_t original_alpha = alpha;
+    int32_t original_beta = beta;
+    GCPackedAction tt_action = 0;
+    int has_tt_action = 0;
+    if (ctx->tt != NULL) {
+        ctx->tt_probes++;
+        int32_t tt_score = 0;
+        int has_action = 0;
+        uint64_t coll = 0;
+        int hit = gc_tt_probe(ctx->tt, pos, depth, ctx->eval, ply, &tt_score,
+                              &tt_action, &has_action, &coll);
+        ctx->tt_collisions += coll;
+        if (hit) {
+            ctx->tt_hits++;
+            has_tt_action = has_action;
+            if (tt_score > alpha) {
+                alpha = tt_score;
+            }
+            if (tt_score < beta) {
+                beta = tt_score;
+            }
+            if (alpha >= beta) {
+                ctx->tt_cutoffs++;
+                return tt_score;
+            }
+        }
     }
 
     qsort(legal->data, legal->count, sizeof(GCPackedAction), gc_action_cmp);
+    if (has_tt_action && legal->count > 1) {
+        size_t found = legal->count;
+        size_t si;
+        for (si = 0; si < legal->count; si++) {
+            if (legal->data[si] == tt_action) {
+                found = si;
+                break;
+            }
+        }
+        if (found < legal->count) {
+            GCPackedAction tmp = legal->data[0];
+            legal->data[0] = legal->data[found];
+            legal->data[found] = tmp;
+        } else {
+            ctx->tt_legal_move_misses++;
+        }
+    }
     int32_t best = -GC_INF32;
     GCPackedAction best_action = 0;
     int has_best = 0;
@@ -137,8 +195,22 @@ static int32_t gc_negamax(GCSearchContext *ctx, GCPosition *pos, int depth,
             alpha = best;
         }
         if (alpha >= beta) {
+            ctx->beta_cutoffs++;
             break;
         }
+    }
+    if (ctx->tt != NULL) {
+        ctx->tt_stores++;
+        GCTTBound bound = GC_TT_BOUND_EXACT;
+        if (best <= original_alpha) {
+            bound = GC_TT_BOUND_UPPER;
+        } else if (best >= original_beta) {
+            bound = GC_TT_BOUND_LOWER;
+        }
+        uint64_t replaced = 0;
+        gc_tt_store(ctx->tt, pos, depth, ctx->eval, ply, best, bound,
+                    best_action, has_best, &replaced);
+        ctx->tt_replacements += replaced;
     }
     return best;
 }
@@ -184,6 +256,37 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
     }
 
     qsort(legal->data, legal->count, sizeof(GCPackedAction), gc_action_cmp);
+    GCPackedAction tt_action = 0;
+    int has_tt_action = 0;
+    if (ctx->tt != NULL && legal->count > 1) {
+        ctx->tt_probes++;
+        int32_t tt_score = 0;
+        int has_action = 0;
+        uint64_t coll = 0;
+        if (gc_tt_probe(ctx->tt, pos, depth, ctx->eval, 0, &tt_score,
+                        &tt_action, &has_action, &coll)) {
+            ctx->tt_hits++;
+            has_tt_action = has_action;
+        }
+        ctx->tt_collisions += coll;
+        if (has_tt_action) {
+            size_t found = legal->count;
+            size_t si;
+            for (si = 0; si < legal->count; si++) {
+                if (legal->data[si] == tt_action) {
+                    found = si;
+                    break;
+                }
+            }
+            if (found < legal->count) {
+                GCPackedAction tmp = legal->data[0];
+                legal->data[0] = legal->data[found];
+                legal->data[found] = tmp;
+            } else {
+                ctx->tt_legal_move_misses++;
+            }
+        }
+    }
     int32_t best = -GC_INF32;
     GCPackedAction best_action = 0;
     int32_t alpha = -GC_INF32;
@@ -224,6 +327,14 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
     result->has_action = legal->count > 0;
     result->nodes = ctx->nodes;
     result->completed_depth = (uint16_t)depth;
+    if (ctx->tt != NULL) {
+        ctx->tt_stores++;
+        uint64_t replaced = 0;
+        gc_tt_store(ctx->tt, pos, depth, ctx->eval, 0, best,
+                    GC_TT_BOUND_EXACT, best_action, legal->count > 0,
+                    &replaced);
+        ctx->tt_replacements += replaced;
+    }
     result->status = GC_FIXED_SEARCH_OK;
     return 1;
 }
