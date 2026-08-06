@@ -17,7 +17,7 @@
 #define GC_MAX_PROMO_TARGETS 8
 #define GC_MAX_ACTIONS 4096
 #define GC_MAX_PLY 512
-#define GC_MAX_HAND 64
+#define GC_MAX_HAND 256
 #define GC_NO_SQUARE 0xFFFFu
 #define GC_NO_TYPE 0xFFFFu
 
@@ -98,6 +98,49 @@ typedef struct {
     uint16_t root_hash_count; /* repetition count of the root hash from Python */
 } GCPosition;
 
+/* Growable packed-action list (replaces fixed 4096 buffers). */
+typedef struct {
+    GCPackedAction *data;
+    size_t count;
+    size_t capacity;
+    int error; /* GC_MOVE_ERROR_* code, 0 when clean */
+} GCMoveList;
+
+/* Checked-make status codes (also used for the public Python API). */
+enum {
+    GC_STATUS_OK = 0,
+    GC_STATUS_HISTORY_FULL = 1,
+    GC_STATUS_HAND_OVERFLOW = 2,
+    GC_STATUS_ACTION_INVALID_KIND = 10,
+    GC_STATUS_ACTION_RESERVED_BITS = 11,
+    GC_STATUS_ACTION_TO_OUT_OF_RANGE = 12,
+    GC_STATUS_ACTION_FROM_OUT_OF_RANGE = 13,
+    GC_STATUS_ACTION_FROM_NOT_SENTINEL = 14,
+    GC_STATUS_ACTION_BASE_OUT_OF_RANGE = 15,
+    GC_STATUS_ACTION_PROMO_OUT_OF_RANGE = 16,
+    GC_STATUS_ACTION_PROMO_SENTINEL_INVALID = 17,
+    GC_STATUS_ACTION_NOT_LEGAL = 20,
+    GC_STATUS_ACTION_NO_MOVER = 21,
+    GC_STATUS_ACTION_WRONG_OWNER = 22,
+    GC_STATUS_ACTION_BASE_MISMATCH = 23,
+    GC_STATUS_ACTION_TARGET_FRIENDLY = 24,
+    GC_STATUS_ACTION_CAPTURE_ANCHOR = 25,
+    GC_STATUS_ACTION_DROP_NO_HAND = 26,
+    GC_STATUS_ACTION_DROP_OCCUPIED = 27,
+    GC_STATUS_ACTION_DROP_MASK = 28,
+    GC_STATUS_ACTION_PROMO_NOT_CANDIDATE = 29,
+    GC_STATUS_ACTION_PROMO_PAIR_INVALID = 30,
+    GC_STATUS_ACTION_PROMO_FORCED_OMITTED = 31,
+    GC_STATUS_ACTION_ALREADY_PROMOTED = 32,
+    GC_STATUS_ACTION_SELF_CHECK = 33,
+    GC_STATUS_MEMORY = 100
+};
+
+/* Move-list allocation error codes. */
+#define GC_MOVE_ERROR_NONE 0
+#define GC_MOVE_ERROR_ALLOC 1
+#define GC_MOVE_ERROR_OVERFLOW 2
+
 typedef struct {
     GCSquare from;
     GCSquare to;
@@ -143,9 +186,16 @@ typedef struct {
 
     /* Deterministic Zobrist tables (derived from the fingerprint).
      * stream 0 = low 64-bit half, stream 1 = high half.
-     * hand entries are per (owner,type,slot) so quantities are distinguished
+     * A piece contributes the XOR of independent owner/square, square/base,
+     * square/current and square/promoted components, so full and incremental
+     * hashing share one complete identity (owner, square, base_type,
+     * current_type, promoted) without a huge combined table.
+     * Hand entries are per (owner,type,slot) so quantities are distinguished
      * and incremental add/remove toggles exactly one slot. */
-    uint64_t piece_hash[2][2][GC_MAX_SQUARES][GC_MAX_TYPES][2];
+    uint64_t piece_owner_square_hash[2][2][GC_MAX_SQUARES];
+    uint64_t piece_base_hash[2][GC_MAX_SQUARES][GC_MAX_TYPES];
+    uint64_t piece_current_hash[2][GC_MAX_SQUARES][GC_MAX_TYPES];
+    uint64_t piece_promoted_hash[2][GC_MAX_SQUARES];
     uint64_t hand_piece_hash[2][2][GC_MAX_TYPES][GC_MAX_HAND];
     uint64_t side_hash[2][2];
 } GCRules;

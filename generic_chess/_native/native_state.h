@@ -16,10 +16,21 @@ typedef struct {
 int gc_position_pack(GCPosition *pos, const GCRules *rules,
                      const GCBoardPayload *payload);
 
-/* Make one packed action; fills undo. Returns 0 on internal error
- * (e.g. no piece at from, drop on occupied square). */
+/* Trusted make: the action is assumed to come from the native legal move
+ * generator.  Only cheap memory-safety guards (bounds, hand range, history
+ * capacity) run here; returns a GC_STATUS_* code (0 == OK). */
 int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
                  GCUndo *undo);
+
+/* Checked make: validates the packed action (fields + exact membership in the
+ * native legal move list) before applying it.  Returns a GC_STATUS_* code. */
+int gc_make_move_checked(GCPosition *pos, const GCRules *rules,
+                         GCPackedAction action, GCUndo *undo);
+
+/* Field-level validation only (no move application).  Returns GC_STATUS_OK
+ * when the action passes cheap structural checks. */
+int gc_validate_action(const GCRules *rules, const GCPosition *pos,
+                       GCPackedAction action);
 
 void gc_unmake_move(GCPosition *pos, const GCRules *rules, const GCUndo *undo);
 

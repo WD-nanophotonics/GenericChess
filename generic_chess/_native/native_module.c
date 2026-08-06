@@ -11,14 +11,19 @@
 
 #include "native_types.h"
 #include "native_attack.h"
+#include "native_eval.h"
 #include "native_hash.h"
 #include "native_movegen.h"
 #include "native_perft.h"
 #include "native_rules.h"
+#include "native_search.h"
 #include "native_state.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
+#define GC_EVAL_CAPSULE "generic_chess._native_core.gc_eval"
+
+static PyObject *gc_native_error = NULL;
 
 static void gc_rules_capsule_free(PyObject *capsule) {
     GCRules *rules = (GCRules *)PyCapsule_GetPointer(capsule, GC_RULES_CAPSULE);
@@ -32,6 +37,14 @@ static void gc_position_capsule_free(PyObject *capsule) {
                                                          GC_POSITION_CAPSULE);
     if (pos != NULL) {
         free(pos);
+    }
+}
+
+static void gc_eval_capsule_free(PyObject *capsule) {
+    GCEvaluationTables *eval = (GCEvaluationTables *)PyCapsule_GetPointer(
+        capsule, GC_EVAL_CAPSULE);
+    if (eval != NULL) {
+        gc_eval_free(eval);
     }
 }
 
@@ -62,7 +75,80 @@ static PyObject *gc_native_available(PyObject *self, PyObject *args) {
 static PyObject *gc_native_version(PyObject *self, PyObject *args) {
     (void)self;
     (void)args;
-    return PyUnicode_FromString("0.1.0");
+    return PyUnicode_FromString("0.2.0");
+}
+
+static const char *gc_status_name(int status) {
+    switch (status) {
+        case GC_STATUS_HISTORY_FULL: return "history_full";
+        case GC_STATUS_HAND_OVERFLOW: return "hand_overflow";
+        case GC_STATUS_ACTION_INVALID_KIND: return "invalid_kind";
+        case GC_STATUS_ACTION_RESERVED_BITS: return "reserved_bits";
+        case GC_STATUS_ACTION_TO_OUT_OF_RANGE: return "to_out_of_range";
+        case GC_STATUS_ACTION_FROM_OUT_OF_RANGE: return "from_out_of_range";
+        case GC_STATUS_ACTION_FROM_NOT_SENTINEL: return "from_not_sentinel";
+        case GC_STATUS_ACTION_BASE_OUT_OF_RANGE: return "base_out_of_range";
+        case GC_STATUS_ACTION_PROMO_OUT_OF_RANGE: return "promo_out_of_range";
+        case GC_STATUS_ACTION_PROMO_SENTINEL_INVALID: return "promo_sentinel_invalid";
+        case GC_STATUS_ACTION_NOT_LEGAL: return "not_legal";
+        case GC_STATUS_ACTION_NO_MOVER: return "no_mover";
+        case GC_STATUS_ACTION_WRONG_OWNER: return "wrong_owner";
+        case GC_STATUS_ACTION_BASE_MISMATCH: return "base_mismatch";
+        case GC_STATUS_ACTION_TARGET_FRIENDLY: return "target_friendly";
+        case GC_STATUS_ACTION_CAPTURE_ANCHOR: return "capture_anchor";
+        case GC_STATUS_ACTION_DROP_NO_HAND: return "drop_no_hand";
+        case GC_STATUS_ACTION_DROP_OCCUPIED: return "drop_occupied";
+        case GC_STATUS_ACTION_DROP_MASK: return "drop_mask";
+        case GC_STATUS_ACTION_PROMO_NOT_CANDIDATE: return "promo_not_candidate";
+        case GC_STATUS_ACTION_PROMO_PAIR_INVALID: return "promo_pair_invalid";
+        case GC_STATUS_ACTION_PROMO_FORCED_OMITTED: return "promo_forced_omitted";
+        case GC_STATUS_ACTION_ALREADY_PROMOTED: return "already_promoted";
+        case GC_STATUS_ACTION_SELF_CHECK: return "self_check";
+        case GC_STATUS_MEMORY: return "memory";
+        default: return "ok";
+    }
+}
+
+static PyObject *gc_action_error(GCPackedAction action, const GCRules *rules,
+                                 int status, int ply) {
+    PyObject *dict = PyDict_New();
+    if (dict == NULL) {
+        return NULL;
+    }
+    PyObject *value;
+#define GC_SET_ERR_ITEM(name, obj) \
+    do { \
+        if ((obj) == NULL || PyDict_SetItemString(dict, (name), (obj)) != 0) { \
+            Py_XDECREF(obj); \
+            Py_DECREF(dict); \
+            return NULL; \
+        } \
+        Py_DECREF(obj); \
+    } while (0)
+    value = PyLong_FromLong(status);
+    GC_SET_ERR_ITEM("status", value);
+    value = PyLong_FromUnsignedLongLong(action);
+    GC_SET_ERR_ITEM("packed", value);
+    value = PyLong_FromLong((long)GC_ACTION_KIND(action));
+    GC_SET_ERR_ITEM("kind", value);
+    value = PyLong_FromLong((long)GC_ACTION_FROM(action));
+    GC_SET_ERR_ITEM("from", value);
+    value = PyLong_FromLong((long)GC_ACTION_TO(action));
+    GC_SET_ERR_ITEM("to", value);
+    value = PyLong_FromLong((long)GC_ACTION_BASE(action));
+    GC_SET_ERR_ITEM("base", value);
+    value = PyLong_FromLong((long)GC_ACTION_PROMO(action));
+    GC_SET_ERR_ITEM("promo", value);
+    value = PyUnicode_FromString(rules->fingerprint);
+    GC_SET_ERR_ITEM("fingerprint", value);
+    value = PyUnicode_FromString(gc_status_name(status));
+    GC_SET_ERR_ITEM("reason", value);
+    value = PyLong_FromLong(ply);
+    GC_SET_ERR_ITEM("ply", value);
+#undef GC_SET_ERR_ITEM
+    PyErr_SetObject(gc_native_error, dict);
+    Py_DECREF(dict);
+    return NULL;
 }
 
 static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
@@ -83,7 +169,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "max_types", value);
     Py_DECREF(value);
     value = PyLong_FromLong(GC_MAX_ACTIONS);
-    PyDict_SetItemString(dict, "max_actions", value);
+    PyDict_SetItemString(dict, "legacy_max_actions", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "make_unmake", value);
@@ -91,8 +177,28 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "native_perft", value);
     Py_DECREF(value);
+    value = PyUnicode_FromString("native-0.2.0");
+    PyDict_SetItemString(dict, "native_schema", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "hash_includes_base_type", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "complete_history_replay", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "checked_public_actions", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "dynamic_move_lists", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "fixed_depth_alphabeta", value);
+    Py_DECREF(value);
     return dict;
 }
+
+/* ------------------------------------------------------------ rules compile */
 
 static PyObject *gc_compile_rules(PyObject *self, PyObject *args) {
     (void)self;
@@ -140,6 +246,10 @@ static PyObject *gc_compile_rules(PyObject *self, PyObject *args) {
     if (cp.width <= 0 || cp.height <= 0 ||
         cp.width * cp.height > GC_MAX_SQUARES) {
         PyErr_SetString(PyExc_ValueError, "board dimensions out of range");
+        return NULL;
+    }
+    if (cp.max_ply <= 0 || cp.max_ply > GC_MAX_PLY) {
+        PyErr_SetString(PyExc_ValueError, "max_ply out of native range");
         return NULL;
     }
 
@@ -301,6 +411,114 @@ static GCPosition *gc_get_position(PyObject *capsule) {
     return (GCPosition *)PyCapsule_GetPointer(capsule, GC_POSITION_CAPSULE);
 }
 
+static GCEvaluationTables *gc_get_eval(PyObject *capsule) {
+    if (!PyCapsule_CheckExact(capsule)) {
+        PyErr_SetString(PyExc_TypeError, "expected a native evaluation capsule");
+        return NULL;
+    }
+    return (GCEvaluationTables *)PyCapsule_GetPointer(capsule, GC_EVAL_CAPSULE);
+}
+
+/* ----------------------------------------------------------- board payload */
+
+static int gc_parse_board_payload(GCRules *rules, PyObject *payload,
+                                  GCBoardPayload *bp, int *ply_out) {
+    int ok = 1;
+    PyObject *side_obj = PyDict_GetItemString(payload, "side");
+    PyObject *ply_obj = PyDict_GetItemString(payload, "ply");
+    PyObject *board = PyDict_GetItemString(payload, "board");
+    PyObject *hands = PyDict_GetItemString(payload, "hands");
+    if (!side_obj || !ply_obj || !board || !hands ||
+        !PyList_Check(board) || !PyList_Check(hands)) {
+        PyErr_SetString(PyExc_ValueError, "pack payload missing fields");
+        return 0;
+    }
+    memset(bp, 0, sizeof(*bp));
+    bp->side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
+    bp->ply = (uint16_t)gc_py_long_as_long(ply_obj, &ok);
+    *ply_out = (int)bp->ply;
+    if (!ok) {
+        return 0;
+    }
+    if (bp->side_to_move > 1) {
+        PyErr_SetString(PyExc_ValueError, "side_to_move must be 0 or 1");
+        return 0;
+    }
+    if (bp->ply > GC_MAX_PLY) {
+        PyErr_SetString(PyExc_ValueError, "ply exceeds native max_ply");
+        return 0;
+    }
+    Py_ssize_t board_len = PyList_Size(board);
+    if (board_len != (Py_ssize_t)rules->squares) {
+        PyErr_SetString(PyExc_ValueError, "board payload length mismatch");
+        return 0;
+    }
+    Py_ssize_t sq;
+    for (sq = 0; sq < board_len; sq++) {
+        PyObject *cell = PyList_GetItem(board, sq);
+        if (cell == Py_None) {
+            continue;
+        }
+        if (!PyList_Check(cell) || PyList_Size(cell) != 4) {
+            PyErr_SetString(PyExc_ValueError,
+                            "board cell must be None or [base,current,owner,promoted]");
+            return 0;
+        }
+        GCPiece *piece = &bp->board[sq];
+        piece->base_type = (GCTypeIndex)gc_py_long_as_long(
+            PyList_GetItem(cell, 0), &ok);
+        piece->current_type = (GCTypeIndex)gc_py_long_as_long(
+            PyList_GetItem(cell, 1), &ok);
+        piece->owner = (uint8_t)gc_py_long_as_long(
+            PyList_GetItem(cell, 2), &ok);
+        piece->promoted = (uint8_t)gc_py_long_as_long(
+            PyList_GetItem(cell, 3), &ok);
+        if (!ok) {
+            return 0;
+        }
+        if (piece->base_type >= rules->type_count ||
+            piece->current_type >= rules->type_count) {
+            PyErr_SetString(PyExc_ValueError,
+                            "piece type index out of range in board payload");
+            return 0;
+        }
+        if (piece->owner > 1 || piece->promoted > 1) {
+            PyErr_SetString(PyExc_ValueError,
+                            "piece owner/promoted must be 0 or 1");
+            return 0;
+        }
+        piece->occupied = 1;
+    }
+    if (PyList_Size(hands) != 2) {
+        PyErr_SetString(PyExc_ValueError, "hands payload must have two owners");
+        return 0;
+    }
+    int owner;
+    for (owner = 0; owner < 2; owner++) {
+        PyObject *counts = PyList_GetItem(hands, owner);
+        Py_ssize_t len = PyList_Size(counts);
+        if (len != (Py_ssize_t)rules->type_count) {
+            PyErr_SetString(PyExc_ValueError,
+                            "hands payload length must equal type_count");
+            return 0;
+        }
+        Py_ssize_t t;
+        for (t = 0; t < len; t++) {
+            long count = gc_py_long_as_long(PyList_GetItem(counts, t), &ok);
+            if (!ok) {
+                return 0;
+            }
+            if (count < 0 || count > GC_MAX_HAND) {
+                PyErr_SetString(PyExc_ValueError,
+                                "hand count exceeds native GC_MAX_HAND");
+                return 0;
+            }
+            bp->hand_counts[owner][t] = (uint16_t)count;
+        }
+    }
+    return 1;
+}
+
 static PyObject *gc_native_rules_info(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule;
@@ -321,6 +539,9 @@ static PyObject *gc_native_rules_info(PyObject *self, PyObject *args) {
     Py_DECREF(value);
     value = PyLong_FromLong(rules->squares);
     PyDict_SetItemString(dict, "squares", value);
+    Py_DECREF(value);
+    value = PyLong_FromLong(rules->max_ply);
+    PyDict_SetItemString(dict, "max_ply", value);
     Py_DECREF(value);
     PyObject *types = PyList_New(rules->type_count);
     int t;
@@ -361,62 +582,18 @@ static PyObject *gc_pack_position(PyObject *self, PyObject *args) {
         PyErr_SetString(PyExc_TypeError, "pack_position expects a dict payload");
         return NULL;
     }
-    int ok = 1;
-    PyObject *side_obj = PyDict_GetItemString(payload, "side");
-    PyObject *ply_obj = PyDict_GetItemString(payload, "ply");
-    PyObject *root_count_obj = PyDict_GetItemString(payload, "root_hash_count");
-    PyObject *board = PyDict_GetItemString(payload, "board");
-    PyObject *hands = PyDict_GetItemString(payload, "hands");
-    if (!side_obj || !ply_obj || !root_count_obj || !board || !hands ||
-        !PyList_Check(board) || !PyList_Check(hands)) {
-        PyErr_SetString(PyExc_ValueError, "pack_position payload missing fields");
-        return NULL;
-    }
     GCBoardPayload bp;
-    memset(&bp, 0, sizeof(bp));
-    bp.side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
-    bp.ply = (uint16_t)gc_py_long_as_long(ply_obj, &ok);
+    int ply = 0;
+    if (!gc_parse_board_payload(rules, payload, &bp, &ply)) {
+        return NULL;
+    }
+    PyObject *root_count_obj = PyDict_GetItemString(payload, "root_hash_count");
+    if (root_count_obj == NULL) {
+        PyErr_SetString(PyExc_ValueError, "pack_position missing root_hash_count");
+        return NULL;
+    }
+    int ok = 1;
     bp.root_hash_count = (uint16_t)gc_py_long_as_long(root_count_obj, &ok);
-    Py_ssize_t board_len = PyList_Size(board);
-    if (board_len != (Py_ssize_t)rules->squares) {
-        PyErr_SetString(PyExc_ValueError, "board payload length mismatch");
-        return NULL;
-    }
-    Py_ssize_t sq;
-    for (sq = 0; sq < board_len; sq++) {
-        PyObject *cell = PyList_GetItem(board, sq);
-        if (cell == Py_None) {
-            continue;
-        }
-        if (!PyList_Check(cell) || PyList_Size(cell) != 4) {
-            PyErr_SetString(PyExc_ValueError, "board cell must be None or [base,current,owner,promoted]");
-            return NULL;
-        }
-        GCPiece *piece = &bp.board[sq];
-        piece->base_type = (GCTypeIndex)gc_py_long_as_long(
-            PyList_GetItem(cell, 0), &ok);
-        piece->current_type = (GCTypeIndex)gc_py_long_as_long(
-            PyList_GetItem(cell, 1), &ok);
-        piece->owner = (uint8_t)gc_py_long_as_long(
-            PyList_GetItem(cell, 2), &ok);
-        piece->promoted = (uint8_t)gc_py_long_as_long(
-            PyList_GetItem(cell, 3), &ok);
-        piece->occupied = 1;
-    }
-    if (PyList_Size(hands) != 2) {
-        PyErr_SetString(PyExc_ValueError, "hands payload must have two owners");
-        return NULL;
-    }
-    int owner;
-    for (owner = 0; owner < 2; owner++) {
-        PyObject *counts = PyList_GetItem(hands, owner);
-        Py_ssize_t len = PyList_Size(counts);
-        Py_ssize_t t;
-        for (t = 0; t < len && t < GC_MAX_TYPES; t++) {
-            bp.hand_counts[owner][t] =
-                (uint16_t)gc_py_long_as_long(PyList_GetItem(counts, t), &ok);
-        }
-    }
     if (!ok) {
         return NULL;
     }
@@ -433,6 +610,25 @@ static PyObject *gc_pack_position(PyObject *self, PyObject *args) {
     return PyCapsule_New(pos, GC_POSITION_CAPSULE, gc_position_capsule_free);
 }
 
+/* ------------------------------------------------------ move list results */
+
+static PyObject *gc_list_to_tuple(GCMoveList *list) {
+    PyObject *result = PyTuple_New((Py_ssize_t)list->count);
+    if (result == NULL) {
+        return NULL;
+    }
+    size_t i;
+    for (i = 0; i < list->count; i++) {
+        PyObject *value = PyLong_FromUnsignedLongLong(list->data[i]);
+        if (value == NULL) {
+            Py_DECREF(result);
+            return NULL;
+        }
+        PyTuple_SET_ITEM(result, (Py_ssize_t)i, value);
+    }
+    return result;
+}
+
 static PyObject *gc_native_legal_actions(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule;
@@ -445,21 +641,18 @@ static PyObject *gc_native_legal_actions(PyObject *self, PyObject *args) {
     if (rules == NULL || pos == NULL) {
         return NULL;
     }
-    GCPackedAction actions[GC_MAX_ACTIONS];
-    int n = gc_legal_actions(rules, pos, actions, GC_MAX_ACTIONS);
-    PyObject *result = PyTuple_New(n);
-    if (result == NULL) {
+    GCMoveList list;
+    gc_move_list_init(&list);
+    if (!gc_legal_actions(rules, pos, &list)) {
+        gc_move_list_destroy(&list);
+        PyErr_SetString(PyExc_MemoryError,
+                        list.error == GC_MOVE_ERROR_OVERFLOW
+                            ? "native move list overflow"
+                            : "native move list allocation failed");
         return NULL;
     }
-    int i;
-    for (i = 0; i < n; i++) {
-        PyObject *value = PyLong_FromUnsignedLongLong(actions[i]);
-        if (value == NULL) {
-            Py_DECREF(result);
-            return NULL;
-        }
-        PyTuple_SET_ITEM(result, i, value);
-    }
+    PyObject *result = gc_list_to_tuple(&list);
+    gc_move_list_destroy(&list);
     return result;
 }
 
@@ -475,21 +668,18 @@ static PyObject *gc_native_pseudo_actions(PyObject *self, PyObject *args) {
     if (rules == NULL || pos == NULL) {
         return NULL;
     }
-    GCPackedAction actions[GC_MAX_ACTIONS];
-    int n = gc_pseudo_actions(rules, pos, actions, GC_MAX_ACTIONS);
-    PyObject *result = PyTuple_New(n);
-    if (result == NULL) {
+    GCMoveList list;
+    gc_move_list_init(&list);
+    if (!gc_pseudo_actions(rules, pos, &list)) {
+        gc_move_list_destroy(&list);
+        PyErr_SetString(PyExc_MemoryError,
+                        list.error == GC_MOVE_ERROR_OVERFLOW
+                            ? "native move list overflow"
+                            : "native move list allocation failed");
         return NULL;
     }
-    int i;
-    for (i = 0; i < n; i++) {
-        PyObject *value = PyLong_FromUnsignedLongLong(actions[i]);
-        if (value == NULL) {
-            Py_DECREF(result);
-            return NULL;
-        }
-        PyTuple_SET_ITEM(result, i, value);
-    }
+    PyObject *result = gc_list_to_tuple(&list);
+    gc_move_list_destroy(&list);
     return result;
 }
 
@@ -538,7 +728,14 @@ static PyObject *gc_native_terminal(PyObject *self, PyObject *args) {
     if (rules == NULL || pos == NULL) {
         return NULL;
     }
-    GCTerminal term = gc_terminal(rules, pos);
+    GCMoveList legal;
+    gc_move_list_init(&legal);
+    GCTerminal term = gc_terminal(rules, pos, &legal);
+    gc_move_list_destroy(&legal);
+    if (term == (GCTerminal)-1) {
+        PyErr_SetString(PyExc_MemoryError, "native move list allocation failed");
+        return NULL;
+    }
     switch (term) {
         case GC_TERM_CHECKMATE:
             return PyUnicode_FromString("checkmate");
@@ -641,11 +838,18 @@ static PyObject *gc_native_child_snapshot(PyObject *self, PyObject *args) {
     GCPosition copy;
     memcpy(&copy, pos, sizeof(GCPosition));
     GCUndo undo;
-    if (!gc_make_move_verify(&copy, rules, (GCPackedAction)action, &undo)) {
+    if (gc_make_move_verify(&copy, rules, (GCPackedAction)action, &undo) != 1) {
         PyErr_SetString(PyExc_ValueError, "native make failed for action");
         return NULL;
     }
-    GCTerminal term = gc_terminal(rules, &copy);
+    GCMoveList legal;
+    gc_move_list_init(&legal);
+    GCTerminal term = gc_terminal(rules, &copy, &legal);
+    gc_move_list_destroy(&legal);
+    if (term == (GCTerminal)-1) {
+        PyErr_SetString(PyExc_MemoryError, "native move list allocation failed");
+        return NULL;
+    }
     PyObject *snapshot = gc_build_snapshot(rules, &copy, term);
     gc_unmake_move(&copy, rules, &undo);
     return snapshot;
@@ -663,7 +867,14 @@ static PyObject *gc_native_snapshot(PyObject *self, PyObject *args) {
     if (rules == NULL || pos == NULL) {
         return NULL;
     }
-    GCTerminal term = gc_terminal(rules, pos);
+    GCMoveList legal;
+    gc_move_list_init(&legal);
+    GCTerminal term = gc_terminal(rules, pos, &legal);
+    gc_move_list_destroy(&legal);
+    if (term == (GCTerminal)-1) {
+        PyErr_SetString(PyExc_MemoryError, "native move list allocation failed");
+        return NULL;
+    }
     return gc_build_snapshot(rules, pos, term);
 }
 
@@ -711,6 +922,192 @@ static PyObject *gc_native_make_unmake_roundtrip(PyObject *self,
                          "state_restored", same);
 }
 
+static PyObject *gc_native_long_make_unmake_roundtrip(PyObject *self,
+                                                      PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *payload;
+    PyObject *actions;
+    if (!PyArg_ParseTuple(args, "OOO", &rules_capsule, &payload, &actions)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    if (rules == NULL) {
+        return NULL;
+    }
+    if (!PyDict_Check(payload) || !PyTuple_Check(actions)) {
+        PyErr_SetString(PyExc_TypeError,
+                        "long_make_unmake expects (payload, actions tuple)");
+        return NULL;
+    }
+    GCBoardPayload bp;
+    int ply = 0;
+    if (!gc_parse_board_payload(rules, payload, &bp, &ply)) {
+        return NULL;
+    }
+    bp.root_hash_count = 0;
+    GCPosition pos;
+    if (!gc_position_pack(&pos, rules, &bp)) {
+        PyErr_SetString(PyExc_RuntimeError, "gc_position_pack failed");
+        return NULL;
+    }
+    GCPosition initial = pos;
+    Py_ssize_t n = PyTuple_Size(actions);
+    GCUndo *undo_stack = (GCUndo *)PyMem_Malloc(
+        n > 0 ? (size_t)n * sizeof(GCUndo) : 1);
+    if (undo_stack == NULL) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    int hash_verified = 1;
+    Py_ssize_t i;
+    for (i = 0; i < n; i++) {
+        int ok = 1;
+        uint64_t action = gc_py_long_as_u64(PyTuple_GetItem(actions, i), &ok);
+        if (!ok) {
+            PyMem_Free(undo_stack);
+            return NULL;
+        }
+        int status = gc_make_move_checked(&pos, rules, (GCPackedAction)action,
+                                          &undo_stack[i]);
+        if (status != GC_STATUS_OK) {
+            gc_action_error((GCPackedAction)action, rules, status, (int)i);
+            PyMem_Free(undo_stack);
+            return NULL;
+        }
+        if (!gc_hash_verify(rules, &pos)) {
+            hash_verified = 0;
+            break;
+        }
+    }
+    int ok_all = 1;
+    if (hash_verified) {
+        for (i = n - 1; i >= 0; i--) {
+            gc_unmake_move(&pos, rules, &undo_stack[i]);
+        }
+        ok_all = pos.side_to_move == initial.side_to_move &&
+                 pos.ply == initial.ply &&
+                 pos.hash_lo == initial.hash_lo &&
+                 pos.hash_hi == initial.hash_hi &&
+                 pos.history_len == initial.history_len &&
+                 memcmp(pos.board, initial.board,
+                        sizeof(GCPiece) * rules->squares) == 0 &&
+                 memcmp(pos.hand_counts, initial.hand_counts,
+                        sizeof(pos.hand_counts)) == 0 &&
+                 memcmp(pos.history_lo, initial.history_lo,
+                        sizeof(uint64_t) * pos.history_len) == 0 &&
+                 memcmp(pos.history_hi, initial.history_hi,
+                        sizeof(uint64_t) * pos.history_len) == 0;
+    }
+    PyMem_Free(undo_stack);
+    return Py_BuildValue("{s:i,s:i,s:i,s:i}", "steps", (int)n,
+                         "hash_verified", hash_verified,
+                         "state_restored", ok_all,
+                         "ok", hash_verified && ok_all);
+}
+
+/* -------------------------------------------------- checked public actions */
+
+static PyObject *gc_native_make_checked(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *pos_capsule;
+    unsigned long long action;
+    if (!PyArg_ParseTuple(args, "OOK", &rules_capsule, &pos_capsule,
+                          &action)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    GCPosition *pos = gc_get_position(pos_capsule);
+    if (rules == NULL || pos == NULL) {
+        return NULL;
+    }
+    GCPosition copy;
+    memcpy(&copy, pos, sizeof(GCPosition));
+    GCUndo undo;
+    int status = gc_make_move_checked(&copy, rules, (GCPackedAction)action,
+                                      &undo);
+    if (status != GC_STATUS_OK) {
+        return gc_action_error((GCPackedAction)action, rules, status,
+                               pos->ply);
+    }
+    GCMoveList legal;
+    gc_move_list_init(&legal);
+    GCTerminal term = gc_terminal(rules, &copy, &legal);
+    gc_move_list_destroy(&legal);
+    if (term == (GCTerminal)-1) {
+        PyErr_SetString(PyExc_MemoryError, "native move list allocation failed");
+        return NULL;
+    }
+    PyObject *snapshot = gc_build_snapshot(rules, &copy, term);
+    gc_unmake_move(&copy, rules, &undo);
+    return snapshot;
+}
+
+/* -------------------------------------------------------- history replay */
+
+static PyObject *gc_native_replay_position(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *payload;
+    PyObject *actions;
+    if (!PyArg_ParseTuple(args, "OOO", &rules_capsule, &payload, &actions)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    if (rules == NULL) {
+        return NULL;
+    }
+    if (!PyDict_Check(payload) || !PyTuple_Check(actions)) {
+        PyErr_SetString(PyExc_TypeError,
+                        "replay_position expects (payload dict, actions tuple)");
+        return NULL;
+    }
+    GCBoardPayload bp;
+    int ply = 0;
+    if (!gc_parse_board_payload(rules, payload, &bp, &ply)) {
+        return NULL;
+    }
+    bp.root_hash_count = 0; /* full replay owns the whole history */
+    GCPosition *pos = (GCPosition *)malloc(sizeof(GCPosition));
+    if (pos == NULL) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    if (!gc_position_pack(pos, rules, &bp)) {
+        free(pos);
+        PyErr_SetString(PyExc_RuntimeError, "gc_position_pack failed");
+        return NULL;
+    }
+    Py_ssize_t n = PyTuple_Size(actions);
+    Py_ssize_t i;
+    for (i = 0; i < n; i++) {
+        int ok = 1;
+        uint64_t action = gc_py_long_as_u64(PyTuple_GetItem(actions, i), &ok);
+        if (!ok) {
+            free(pos);
+            return NULL;
+        }
+        GCUndo undo;
+        int status = gc_make_move_checked(pos, rules, (GCPackedAction)action,
+                                          &undo);
+        if (status != GC_STATUS_OK) {
+            gc_action_error((GCPackedAction)action, rules, status, (int)i);
+            free(pos);
+            return NULL;
+        }
+        if (!gc_hash_verify(rules, pos)) {
+            gc_action_error((GCPackedAction)action, rules,
+                            GC_STATUS_ACTION_NOT_LEGAL, (int)i);
+            free(pos);
+            return NULL;
+        }
+    }
+    return PyCapsule_New(pos, GC_POSITION_CAPSULE, gc_position_capsule_free);
+}
+
+/* -------------------------------------------------------------- perft */
+
 static PyObject *gc_native_perft(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule;
@@ -739,27 +1136,58 @@ static PyObject *gc_native_perft(PyObject *self, PyObject *args) {
     clock_gettime(CLOCK_MONOTONIC, &t0);
 #endif
 
+    GCPerftScratch scratch;
+    gc_perft_scratch_init(&scratch);
     uint64_t total = 0;
     PyObject *divide_dict = NULL;
+    int failed = 0;
     if (divide) {
-        GCPackedAction actions[GC_MAX_ACTIONS];
-        uint64_t counts[GC_MAX_ACTIONS];
-        int n = 0;
-        gc_perft_divide(rules, pos, depth, actions, counts, &n, &total);
-        divide_dict = PyDict_New();
-        if (divide_dict == NULL) {
-            return NULL;
+        GCMoveList probe;
+        gc_move_list_init(&probe);
+        if (!gc_legal_actions(rules, pos, &probe)) {
+            failed = 1;
         }
-        int i;
-        for (i = 0; i < n; i++) {
-            PyObject *key = PyLong_FromUnsignedLongLong(actions[i]);
-            PyObject *value = PyLong_FromUnsignedLongLong(counts[i]);
-            PyDict_SetItem(divide_dict, key, value);
-            Py_DECREF(key);
-            Py_DECREF(value);
+        size_t n = probe.count;
+        gc_move_list_destroy(&probe);
+        if (!failed) {
+            uint64_t *counts = (uint64_t *)PyMem_Malloc(
+                n > 0 ? n * sizeof(uint64_t) : 1);
+            GCMoveList root_moves;
+            gc_move_list_init(&root_moves);
+            if (counts == NULL ||
+                !gc_perft_divide(rules, pos, depth, &scratch, &root_moves,
+                                 counts, &total)) {
+                failed = 1;
+            } else {
+                divide_dict = PyDict_New();
+                if (divide_dict == NULL) {
+                    failed = 1;
+                } else {
+                    size_t k;
+                    for (k = 0; k < root_moves.count; k++) {
+                        PyObject *key = PyLong_FromUnsignedLongLong(
+                            root_moves.data[k]);
+                        PyObject *value = PyLong_FromUnsignedLongLong(
+                            counts[k]);
+                        PyDict_SetItem(divide_dict, key, value);
+                        Py_DECREF(key);
+                        Py_DECREF(value);
+                    }
+                }
+            }
+            gc_move_list_destroy(&root_moves);
+            PyMem_Free(counts);
         }
     } else {
-        total = gc_perft(rules, pos, depth);
+        if (!gc_perft(rules, pos, depth, &scratch, &total)) {
+            failed = 1;
+        }
+    }
+    gc_perft_scratch_destroy(&scratch);
+    if (failed) {
+        Py_XDECREF(divide_dict);
+        PyErr_SetString(PyExc_MemoryError, "native perft move list failure");
+        return NULL;
     }
 
 #ifdef _WIN32
@@ -797,6 +1225,192 @@ static PyObject *gc_native_perft(PyObject *self, PyObject *args) {
     return result;
 }
 
+/* -------------------------------------------------- evaluation tables */
+
+static PyObject *gc_compile_evaluation(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *payload;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &payload)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    if (rules == NULL) {
+        return NULL;
+    }
+    if (!PyDict_Check(payload)) {
+        PyErr_SetString(PyExc_TypeError,
+                        "compile_evaluation expects a dict payload");
+        return NULL;
+    }
+    int ok = 1;
+    PyObject *type_count_obj = PyDict_GetItemString(payload, "type_count");
+    PyObject *mate_obj = PyDict_GetItemString(payload, "mate_score");
+    PyObject *threshold_obj = PyDict_GetItemString(payload, "mate_threshold");
+    PyObject *max_eval_obj = PyDict_GetItemString(payload, "max_static_eval");
+    PyObject *config_hash_obj = PyDict_GetItemString(payload, "config_hash");
+    PyObject *version_obj = PyDict_GetItemString(payload, "evaluator_version");
+    PyObject *board_values = PyDict_GetItemString(payload, "board_value");
+    PyObject *hand_values = PyDict_GetItemString(payload, "hand_value");
+    PyObject *promo_gains = PyDict_GetItemString(payload, "promotion_gain");
+    if (!type_count_obj || !mate_obj || !threshold_obj || !max_eval_obj ||
+        !config_hash_obj || !version_obj || !board_values || !hand_values ||
+        !promo_gains || !PyList_Check(board_values) ||
+        !PyList_Check(hand_values) || !PyList_Check(promo_gains)) {
+        PyErr_SetString(PyExc_ValueError, "evaluation payload missing fields");
+        return NULL;
+    }
+    long type_count = gc_py_long_as_long(type_count_obj, &ok);
+    if (!ok) {
+        return NULL;
+    }
+    if (type_count != (long)rules->type_count ||
+        PyList_Size(board_values) != type_count ||
+        PyList_Size(hand_values) != type_count ||
+        PyList_Size(promo_gains) != type_count) {
+        PyErr_SetString(PyExc_ValueError,
+                        "evaluation table length does not match rules type_count");
+        return NULL;
+    }
+    const char *config_hash = PyUnicode_AsUTF8(config_hash_obj);
+    const char *version = PyUnicode_AsUTF8(version_obj);
+    if (config_hash == NULL || version == NULL) {
+        return NULL;
+    }
+    GCEvalPayload ep;
+    memset(&ep, 0, sizeof(ep));
+    ep.type_count = (int)type_count;
+    ep.mate_score = (int32_t)gc_py_long_as_long(mate_obj, &ok);
+    ep.mate_threshold = (int32_t)gc_py_long_as_long(threshold_obj, &ok);
+    ep.max_static_eval = (int32_t)gc_py_long_as_long(max_eval_obj, &ok);
+    if (!ok) {
+        return NULL;
+    }
+    strncpy(ep.config_hash, config_hash, 64);
+    ep.config_hash[64] = '\0';
+    strncpy(ep.evaluator_version, version, 64);
+    ep.evaluator_version[64] = '\0';
+    Py_ssize_t t;
+    for (t = 0; t < type_count; t++) {
+        ep.board_value[t] = (int32_t)gc_py_long_as_long(
+            PyList_GetItem(board_values, t), &ok);
+        ep.hand_value[t] = (int32_t)gc_py_long_as_long(
+            PyList_GetItem(hand_values, t), &ok);
+        ep.promotion_gain[t] = (int32_t)gc_py_long_as_long(
+            PyList_GetItem(promo_gains, t), &ok);
+        if (!ok) {
+            return NULL;
+        }
+    }
+    GCEvaluationTables *eval = gc_eval_compile(&ep);
+    if (eval == NULL) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    return PyCapsule_New(eval, GC_EVAL_CAPSULE, gc_eval_capsule_free);
+}
+
+/* --------------------------------------------------- fixed-depth search */
+
+static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule;
+    PyObject *eval_capsule;
+    PyObject *pos_capsule;
+    int depth;
+    if (!PyArg_ParseTuple(args, "OOOi", &rules_capsule, &eval_capsule,
+                          &pos_capsule, &depth)) {
+        return NULL;
+    }
+    GCRules *rules = gc_get_rules(rules_capsule);
+    GCEvaluationTables *eval = gc_get_eval(eval_capsule);
+    GCPosition *pos = gc_get_position(pos_capsule);
+    if (rules == NULL || eval == NULL || pos == NULL) {
+        return NULL;
+    }
+    if (depth < 0) {
+        PyErr_SetString(PyExc_ValueError, "search depth must be >= 0");
+        return NULL;
+    }
+    GCPosition copy;
+    memcpy(&copy, pos, sizeof(GCPosition));
+    GCSearchContext ctx;
+    if (!gc_search_context_alloc(&ctx, rules, eval, (uint32_t)depth)) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    GCFixedSearchResult result;
+    int search_ok = 1;
+    Py_BEGIN_ALLOW_THREADS
+    search_ok = gc_fixed_depth_search(&ctx, &copy, (uint32_t)depth, &result);
+    Py_END_ALLOW_THREADS
+    if (!search_ok) {
+        gc_search_context_free(&ctx);
+        PyErr_SetString(PyExc_RuntimeError, "native fixed-depth search failed");
+        return NULL;
+    }
+    int restored = gc_hash_verify(rules, &copy) &&
+                   memcmp(copy.board, pos->board,
+                          sizeof(GCPiece) * rules->squares) == 0 &&
+                   copy.side_to_move == pos->side_to_move &&
+                   copy.ply == pos->ply &&
+                   copy.history_len == pos->history_len &&
+                   memcmp(copy.hand_counts, pos->hand_counts,
+                          sizeof(pos->hand_counts)) == 0;
+    gc_search_context_free(&ctx);
+    if (!restored) {
+        PyErr_SetString(PyExc_RuntimeError,
+                        "native search did not restore the root position");
+        return NULL;
+    }
+
+    PyObject *result_dict = PyDict_New();
+    if (result_dict == NULL) {
+        return NULL;
+    }
+    PyObject *value;
+    value = PyLong_FromLong(result.score);
+    PyDict_SetItemString(result_dict, "score", value);
+    Py_DECREF(value);
+    if (result.has_action) {
+        value = PyLong_FromUnsignedLongLong(result.best_action);
+        PyDict_SetItemString(result_dict, "best_action", value);
+    } else {
+        value = Py_None;
+        Py_INCREF(value);
+        PyDict_SetItemString(result_dict, "best_action", value);
+    }
+    Py_DECREF(value);
+    value = PyLong_FromUnsignedLongLong(result.nodes);
+    PyDict_SetItemString(result_dict, "nodes", value);
+    Py_DECREF(value);
+    value = PyLong_FromLong(result.completed_depth);
+    PyDict_SetItemString(result_dict, "completed_depth", value);
+    Py_DECREF(value);
+    value = PyUnicode_FromString(result.terminated ? "terminal"
+                                                   : "completed_depth");
+    PyDict_SetItemString(result_dict, "termination_reason", value);
+    Py_DECREF(value);
+    PyObject *pv = PyTuple_New((Py_ssize_t)ctx.pv_length[0]);
+    if (pv == NULL) {
+        Py_DECREF(result_dict);
+        return NULL;
+    }
+    size_t k;
+    for (k = 0; k < ctx.pv_length[0]; k++) {
+        PyObject *item = PyLong_FromUnsignedLongLong(ctx.pv_table[k]);
+        if (item == NULL) {
+            Py_DECREF(pv);
+            Py_DECREF(result_dict);
+            return NULL;
+        }
+        PyTuple_SET_ITEM(pv, (Py_ssize_t)k, item);
+    }
+    PyDict_SetItemString(result_dict, "principal_variation", pv);
+    Py_DECREF(pv);
+    return result_dict;
+}
+
 static PyMethodDef gc_methods[] = {
     {"native_available", gc_native_available, METH_NOARGS,
      "Return True (the native kernel is built)."},
@@ -810,6 +1424,8 @@ static PyMethodDef gc_methods[] = {
      "compile_rules(payload) -> rules capsule"},
     {"pack_position", gc_pack_position, METH_VARARGS,
      "pack_position(rules, payload) -> position capsule"},
+    {"replay_position", gc_native_replay_position, METH_VARARGS,
+     "replay_position(rules, payload, actions) -> position capsule with full history"},
     {"native_legal_actions", gc_native_legal_actions, METH_VARARGS,
      "native_legal_actions(rules, position) -> tuple of packed actions"},
     {"native_pseudo_actions", gc_native_pseudo_actions, METH_VARARGS,
@@ -825,19 +1441,39 @@ static PyMethodDef gc_methods[] = {
     {"native_make_unmake_roundtrip", gc_native_make_unmake_roundtrip,
      METH_VARARGS,
      "native_make_unmake_roundtrip(rules, position, action) -> make/unmake check dict"},
+    {"native_long_make_unmake_roundtrip", gc_native_long_make_unmake_roundtrip,
+     METH_VARARGS,
+     "native_long_make_unmake_roundtrip(rules, payload, actions) -> full replay/unmake check dict"},
+    {"native_make_checked", gc_native_make_checked, METH_VARARGS,
+     "native_make_checked(rules, position, action) -> child snapshot or NativeActionError"},
     {"native_perft", gc_native_perft, METH_VARARGS,
      "native_perft(rules, position, depth, divide=False) -> result dict"},
+    {"compile_evaluation", gc_compile_evaluation, METH_VARARGS,
+     "compile_evaluation(rules, payload) -> evaluation tables capsule"},
+    {"native_fixed_depth_search", gc_native_fixed_depth_search, METH_VARARGS,
+     "native_fixed_depth_search(rules, eval, position, depth) -> result dict"},
     {NULL, NULL, 0, NULL}
 };
 
 static struct PyModuleDef gc_module = {
     PyModuleDef_HEAD_INIT,
     "_native_core",
-    "GenericChess Native Phase 1 rule kernel.",
+    "GenericChess native rule kernel (hardening + fixed-depth search).",
     -1,
     gc_methods
 };
 
 PyMODINIT_FUNC PyInit__native_core(void) {
-    return PyModule_Create(&gc_module);
+    gc_native_error = PyErr_NewException("_native_core.NativeActionError",
+                                         PyExc_ValueError, NULL);
+    if (gc_native_error == NULL) {
+        return NULL;
+    }
+    PyObject *module = PyModule_Create(&gc_module);
+    if (module == NULL) {
+        return NULL;
+    }
+    Py_INCREF(gc_native_error);
+    PyModule_AddObject(module, "NativeActionError", gc_native_error);
+    return module;
 }

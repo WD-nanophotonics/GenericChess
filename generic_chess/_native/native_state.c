@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "native_hash.h"
+#include "native_movegen.h"
 
 int gc_position_pack(GCPosition *pos, const GCRules *rules,
                      const GCBoardPayload *payload) {
@@ -28,6 +29,9 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
     uint8_t kind = (uint8_t)GC_ACTION_KIND(action);
     uint8_t side = pos->side_to_move;
 
+    if (pos->history_len >= (uint16_t)(GC_MAX_PLY + 1)) {
+        return GC_STATUS_HISTORY_FULL;
+    }
     memset(undo, 0, sizeof(GCUndo));
     undo->to = to;
     undo->old_side = side;
@@ -38,10 +42,14 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
 
     if (kind == GC_ACTION_KIND_DROP) {
         if (to >= rules->squares || pos->board[to].occupied) {
-            return 0;
+            return to >= rules->squares ? GC_STATUS_ACTION_TO_OUT_OF_RANGE
+                                        : GC_STATUS_ACTION_DROP_OCCUPIED;
         }
         if (pos->hand_counts[side][base] == 0) {
-            return 0;
+            return GC_STATUS_ACTION_DROP_NO_HAND;
+        }
+        if (pos->hand_counts[side][base] >= GC_MAX_HAND) {
+            return GC_STATUS_HAND_OVERFLOW;
         }
         undo->from = GC_NO_SQUARE;
         undo->was_drop = 1;
@@ -51,21 +59,26 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
         piece.owner = side;
         piece.promoted = 0;
         piece.occupied = 1;
-        gc_hash_remove_hand((GCRules *)rules, pos, side, base);
+        if (!gc_hash_remove_hand((GCRules *)rules, pos, side, base)) {
+            return GC_STATUS_HAND_OVERFLOW;
+        }
         pos->hand_counts[side][base]--;
         pos->board[to] = piece;
         gc_hash_xor_piece((GCRules *)rules, pos, &piece, to);
     } else {
         if (from >= rules->squares || to >= rules->squares) {
-            return 0;
+            return GC_STATUS_ACTION_FROM_OUT_OF_RANGE;
         }
         GCPiece moved = pos->board[from];
         GCPiece captured = pos->board[to];
-        if (!moved.occupied || moved.owner != side) {
-            return 0;
+        if (!moved.occupied) {
+            return GC_STATUS_ACTION_NO_MOVER;
+        }
+        if (moved.owner != side) {
+            return GC_STATUS_ACTION_WRONG_OWNER;
         }
         if (captured.occupied && captured.owner == side) {
-            return 0;
+            return GC_STATUS_ACTION_TARGET_FRIENDLY;
         }
         undo->from = from;
         undo->moved = moved;
@@ -82,8 +95,16 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
 
         gc_hash_xor_piece((GCRules *)rules, pos, &moved, from);
         if (captured.occupied) {
+            if (pos->hand_counts[side][captured.base_type] >= GC_MAX_HAND) {
+                gc_hash_xor_piece((GCRules *)rules, pos, &moved, from);
+                return GC_STATUS_HAND_OVERFLOW;
+            }
             gc_hash_xor_piece((GCRules *)rules, pos, &captured, to);
-            gc_hash_add_hand((GCRules *)rules, pos, side, captured.base_type);
+            if (!gc_hash_add_hand((GCRules *)rules, pos, side,
+                                  captured.base_type)) {
+                gc_hash_xor_piece((GCRules *)rules, pos, &moved, from);
+                return GC_STATUS_HAND_OVERFLOW;
+            }
             pos->hand_counts[side][captured.base_type]++;
         }
         memset(&pos->board[from], 0, sizeof(GCPiece));
@@ -98,7 +119,73 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
     pos->history_lo[pos->history_len] = pos->hash_lo;
     pos->history_hi[pos->history_len] = pos->hash_hi;
     pos->history_len++;
-    return 1;
+    return GC_STATUS_OK;
+}
+
+int gc_validate_action(const GCRules *rules, const GCPosition *pos,
+                       GCPackedAction action) {
+    GCSquare to = (GCSquare)GC_ACTION_TO(action);
+    GCSquare from = (GCSquare)GC_ACTION_FROM(action);
+    GCTypeIndex promo = (GCTypeIndex)GC_ACTION_PROMO(action);
+    GCTypeIndex base = (GCTypeIndex)GC_ACTION_BASE(action);
+    uint8_t kind = (uint8_t)GC_ACTION_KIND(action);
+
+    if ((action & ~(uint64_t)0xFFFFFFFFFull) != 0) {
+        return GC_STATUS_ACTION_RESERVED_BITS;
+    }
+    if (kind != GC_ACTION_KIND_BOARD && kind != GC_ACTION_KIND_DROP) {
+        return GC_STATUS_ACTION_INVALID_KIND;
+    }
+    if (to >= rules->squares) {
+        return GC_STATUS_ACTION_TO_OUT_OF_RANGE;
+    }
+    if (base >= rules->type_count) {
+        return GC_STATUS_ACTION_BASE_OUT_OF_RANGE;
+    }
+    if (promo != 0xFF) {
+        if (promo >= rules->type_count) {
+            return GC_STATUS_ACTION_PROMO_OUT_OF_RANGE;
+        }
+    }
+    if (kind == GC_ACTION_KIND_BOARD) {
+        if (from >= rules->squares) {
+            return GC_STATUS_ACTION_FROM_OUT_OF_RANGE;
+        }
+    } else {
+        if (from != 0xFF) {
+            return GC_STATUS_ACTION_FROM_NOT_SENTINEL;
+        }
+    }
+    return GC_STATUS_OK;
+}
+
+int gc_make_move_checked(GCPosition *pos, const GCRules *rules,
+                         GCPackedAction action, GCUndo *undo) {
+    int status = gc_validate_action(rules, pos, action);
+    if (status != GC_STATUS_OK) {
+        return status;
+    }
+    /* Exact membership in the native legal move list: the same truth source
+     * the search uses, so a forged packed action cannot bypass legality. */
+    GCMoveList legal;
+    gc_move_list_init(&legal);
+    if (!gc_legal_actions(rules, pos, &legal)) {
+        gc_move_list_destroy(&legal);
+        return GC_STATUS_MEMORY;
+    }
+    int found = 0;
+    size_t i;
+    for (i = 0; i < legal.count; i++) {
+        if (legal.data[i] == action) {
+            found = 1;
+            break;
+        }
+    }
+    gc_move_list_destroy(&legal);
+    if (!found) {
+        return GC_STATUS_ACTION_NOT_LEGAL;
+    }
+    return gc_make_move(pos, rules, action, undo);
 }
 
 void gc_unmake_move(GCPosition *pos, const GCRules *rules, const GCUndo *undo) {
@@ -133,9 +220,8 @@ void gc_unmake_move(GCPosition *pos, const GCRules *rules, const GCUndo *undo) {
 
 int gc_make_move_verify(GCPosition *pos, const GCRules *rules,
                         GCPackedAction action, GCUndo *undo) {
-    int ok = gc_make_move(pos, rules, action, undo);
-    if (ok) {
-        ok = gc_hash_verify(rules, pos);
+    if (gc_make_move(pos, rules, action, undo) != GC_STATUS_OK) {
+        return 0;
     }
-    return ok;
+    return gc_hash_verify(rules, pos);
 }

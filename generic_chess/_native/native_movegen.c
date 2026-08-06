@@ -1,9 +1,70 @@
 #include "native_movegen.h"
 
 #include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "native_attack.h"
 #include "native_state.h"
+
+/* ------------------------------------------------------------- move lists */
+
+void gc_move_list_init(GCMoveList *list) {
+    list->data = NULL;
+    list->count = 0;
+    list->capacity = 0;
+    list->error = GC_MOVE_ERROR_NONE;
+}
+
+void gc_move_list_clear(GCMoveList *list) {
+    list->count = 0;
+    list->error = GC_MOVE_ERROR_NONE;
+}
+
+void gc_move_list_destroy(GCMoveList *list) {
+    free(list->data);
+    list->data = NULL;
+    list->count = 0;
+    list->capacity = 0;
+    list->error = GC_MOVE_ERROR_NONE;
+}
+
+int gc_move_list_reserve(GCMoveList *list, size_t required) {
+    if (required <= list->capacity) {
+        return 1;
+    }
+    size_t new_cap = list->capacity ? list->capacity : 64;
+    while (new_cap < required) {
+        if (new_cap > (size_t)-1 / 2) {
+            list->error = GC_MOVE_ERROR_OVERFLOW;
+            return 0;
+        }
+        new_cap *= 2;
+    }
+    if (new_cap > (size_t)-1 / sizeof(GCPackedAction)) {
+        list->error = GC_MOVE_ERROR_OVERFLOW;
+        return 0;
+    }
+    GCPackedAction *grown =
+        (GCPackedAction *)realloc(list->data, new_cap * sizeof(GCPackedAction));
+    if (grown == NULL) {
+        list->error = GC_MOVE_ERROR_ALLOC;
+        return 0;
+    }
+    list->data = grown;
+    list->capacity = new_cap;
+    return 1;
+}
+
+int gc_move_list_append(GCMoveList *list, GCPackedAction action) {
+    if (!gc_move_list_reserve(list, list->count + 1)) {
+        return 0;
+    }
+    list->data[list->count++] = action;
+    return 1;
+}
+
+/* ---------------------------------------------------------- move generation */
 
 static int16_t gc_abs_df(const GCAtom *atom, uint8_t owner) {
     return owner == 0 ? atom->vec.df : (int16_t)(-atom->vec.df);
@@ -36,48 +97,43 @@ static int gc_drop_allowed(const GCRules *rules, GCTypeIndex type,
     return (rules->drop_mask[type][owner][sq / 64] >> (sq % 64)) & 1u;
 }
 
-static void gc_append_board_move(GCPackedAction *out, int *count, int cap,
-                                 GCSquare to, GCSquare from,
-                                 GCTypeIndex base) {
-    if (*count < cap) {
-        out[(*count)++] = GC_ACTION_BOARD(to, from, base);
-    }
+static int gc_append_board_move(GCMoveList *out, GCSquare to, GCSquare from,
+                                GCTypeIndex base) {
+    return gc_move_list_append(out, GC_ACTION_BOARD(to, from, base));
 }
 
-static void gc_expand_promotion(GCRules *rules, GCPosition *pos,
-                                GCPackedAction *out, int *count, int cap,
-                                GCSquare to, GCSquare from) {
+static int gc_expand_promotion(const GCRules *rules, GCPosition *pos,
+                               GCMoveList *out, GCSquare to, GCSquare from) {
     uint8_t side = pos->side_to_move;
     const GCPiece *moved = &pos->board[from];
     GCTypeIndex base = moved->base_type;
     if (!rules->is_promotable[base] || moved->promoted) {
-        gc_append_board_move(out, count, cap, to, from, base);
-        return;
+        return gc_append_board_move(out, to, from, base);
     }
     if (!gc_promo_pair_exists(rules, base, side, from, to)) {
-        gc_append_board_move(out, count, cap, to, from, base);
-        return;
+        return gc_append_board_move(out, to, from, base);
     }
     uint64_t alive = rules->alive_promo[base][side][to];
     int forced = gc_promo_forced(rules, base, side, to);
-    if (!forced) {
-        gc_append_board_move(out, count, cap, to, from, base);
+    if (!forced && !gc_append_board_move(out, to, from, base)) {
+        return 0;
     }
     uint8_t t;
     for (t = 0; t < rules->promo_target_count[base]; t++) {
         GCTypeIndex target = rules->promo_targets[base][t];
         if ((alive >> target) & 1u) {
-            if (*count < cap) {
-                out[(*count)++] = GC_ACTION_PROMOTED(to, from, target, base);
+            if (!gc_move_list_append(
+                    out, GC_ACTION_PROMOTED(to, from, target, base))) {
+                return 0;
             }
         }
     }
+    return 1;
 }
 
-int gc_pseudo_actions(GCRules *rules, GCPosition *pos, GCPackedAction *out,
-                      int cap) {
+int gc_pseudo_actions(const GCRules *rules, GCPosition *pos, GCMoveList *out) {
+    gc_move_list_clear(out);
     uint8_t side = pos->side_to_move;
-    int count = 0;
     GCSquare sq;
     for (sq = 0; sq < rules->squares; sq++) {
         const GCPiece *piece = &pos->board[sq];
@@ -106,7 +162,9 @@ int gc_pseudo_actions(GCRules *rules, GCPosition *pos, GCPackedAction *out,
                         continue;
                     }
                 }
-                gc_expand_promotion(rules, pos, out, &count, cap, to, sq);
+                if (!gc_expand_promotion(rules, pos, out, to, sq)) {
+                    return 0;
+                }
             } else { /* ray */
                 GCSquare cur = sq;
                 uint8_t steps = 0;
@@ -122,12 +180,15 @@ int gc_pseudo_actions(GCRules *rules, GCPosition *pos, GCPackedAction *out,
                     if (occupant->occupied) {
                         if (occupant->owner != side &&
                             !rules->is_anchor[occupant->current_type]) {
-                            gc_expand_promotion(rules, pos, out, &count, cap,
-                                                to, sq);
+                            if (!gc_expand_promotion(rules, pos, out, to, sq)) {
+                                return 0;
+                            }
                         }
                         break;
                     }
-                    gc_expand_promotion(rules, pos, out, &count, cap, to, sq);
+                    if (!gc_expand_promotion(rules, pos, out, to, sq)) {
+                        return 0;
+                    }
                     cur = to;
                     steps++;
                 }
@@ -148,34 +209,48 @@ int gc_pseudo_actions(GCRules *rules, GCPosition *pos, GCPackedAction *out,
         for (to = 0; to < rules->squares; to++) {
             if (!pos->board[to].occupied &&
                 gc_drop_allowed(rules, type, side, to)) {
-                if (count < cap) {
-                    out[count++] = GC_ACTION_DROP(to, type);
+                if (!gc_move_list_append(out, GC_ACTION_DROP(to, type))) {
+                    return 0;
                 }
             }
         }
     }
-    return count;
+    return 1;
 }
 
-int gc_legal_actions(GCRules *rules, GCPosition *pos, GCPackedAction *out,
-                     int cap) {
-    GCPackedAction pseudo[GC_MAX_ACTIONS];
-    int n = gc_pseudo_actions(rules, pos, pseudo, GC_MAX_ACTIONS);
+int gc_legal_filter(const GCRules *rules, GCPosition *pos,
+                    const GCMoveList *pseudo, GCMoveList *legal) {
+    gc_move_list_clear(legal);
     uint8_t side = pos->side_to_move;
-    int count = 0;
-    int i;
-    for (i = 0; i < n; i++) {
+    size_t i;
+    for (i = 0; i < pseudo->count; i++) {
+        GCPackedAction action = pseudo->data[i];
         GCUndo undo;
-        if (!gc_make_move(pos, rules, pseudo[i], &undo)) {
-            continue;
+        if (gc_make_move(pos, rules, action, &undo) != GC_STATUS_OK) {
+            continue; /* generated pseudo moves should not fail, but never
+                         crash on a defensive path */
         }
         GCSquare anchor = gc_find_anchor(rules, pos, side);
-        int legal = anchor != GC_NO_SQUARE &&
-                    !gc_is_square_attacked(rules, pos, anchor, 1 - side);
+        int legal_move = anchor != GC_NO_SQUARE &&
+                         !gc_is_square_attacked(rules, pos, anchor,
+                                                1 - side);
         gc_unmake_move(pos, rules, &undo);
-        if (legal && count < cap) {
-            out[count++] = pseudo[i];
+        if (legal_move && !gc_move_list_append(legal, action)) {
+            return 0;
         }
     }
-    return count;
+    return 1;
+}
+
+int gc_legal_actions(const GCRules *rules, GCPosition *pos, GCMoveList *out) {
+    GCMoveList pseudo;
+    gc_move_list_init(&pseudo);
+    int ok = gc_pseudo_actions(rules, pos, &pseudo);
+    if (ok) {
+        ok = gc_legal_filter(rules, pos, &pseudo, out);
+    } else {
+        out->error = pseudo.error;
+    }
+    gc_move_list_destroy(&pseudo);
+    return ok;
 }

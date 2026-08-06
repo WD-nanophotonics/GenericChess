@@ -3,17 +3,42 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from types import MappingProxyType
 from typing import Any
 
 from ..core.movement import LeapAtom, RayAtom
 from ..rules.compiled import CompiledRuleSet
 from . import _module, native_available
 
-NATIVE_SCHEMA_VERSION = "native-0.1.0"
+NATIVE_SCHEMA_VERSION = "native-0.2.0"
+
+GC_MAX_PLY = 512
+GC_MAX_HAND = 256
 
 
 class NativeUnsupportedRuleError(ValueError):
     """Raised when a RuleSet cannot be expressed by the native kernel."""
+
+
+class NativeActionError(ValueError):
+    """Raised by the public checked action API.
+
+    ``fields`` carries the structured failure context: ``status`` (int code),
+    ``reason`` (stable name), ``packed`` (hex), ``kind/from/to/base/promo``,
+    ``fingerprint`` and ``ply``.
+    """
+
+    def __init__(self, message: str, fields: dict[str, Any]) -> None:
+        super().__init__(message)
+        self.fields = dict(fields)
+
+    @property
+    def status(self) -> int:
+        return int(self.fields.get("status", -1))
+
+    @property
+    def reason(self) -> str:
+        return str(self.fields.get("reason", "unknown"))
 
 
 @dataclass(frozen=True)
@@ -39,8 +64,8 @@ class NativeCompiledRules:
     ) -> None:
         self._capsule = capsule
         self._report = report
-        self._type_map = type_map
-        self._type_ids = type_ids
+        self._type_map = MappingProxyType(dict(type_map))
+        self._type_ids = tuple(type_ids)
 
     @property
     def capsule(self):
@@ -80,6 +105,11 @@ def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
     n = compiled.board_size
     fingerprint = compiled.ruleset_fingerprint
     _validate(1 <= n <= 16 and n * n <= 256, "board size out of native range", fingerprint)
+    _validate(
+        compiled.max_ply <= GC_MAX_PLY,
+        f"max_ply {compiled.max_ply} exceeds native limit {GC_MAX_PLY}",
+        fingerprint,
+    )
     types = tuple(compiled.piece_types)
     _validate(len(types) <= 64, "too many piece types for native kernel", fingerprint)
     type_ids = sorted(t.type_id for t in types)
@@ -178,7 +208,9 @@ def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
         "types": payload_types,
     }
     estimated = (
-        2 * 2 * 256 * 64 * 2 * 8  # piece hash
+        2 * 2 * 256 * 8  # owner+square hash
+        + 2 * 256 * 64 * 8 * 2  # base + current hash
+        + 2 * 256 * 8  # promoted hash
         + 2 * 2 * 64 * 64 * 8  # hand hash
         + 2 * 2 * 8  # side hash
         + 64 * 2 * 256 * 8  # alive promo

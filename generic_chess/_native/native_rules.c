@@ -18,16 +18,15 @@ static void gc_hash_init(GCRules *rules) {
         state ^= state >> 33;
         state *= 0xFF51AFD7ED558CCDull;
     }
-    int stream, owner, sq, type, prom, slot;
+    int stream, owner, sq, type, slot;
     for (stream = 0; stream < 2; stream++) {
         for (owner = 0; owner < 2; owner++) {
             for (sq = 0; sq < GC_MAX_SQUARES; sq++) {
-                for (type = 0; type < GC_MAX_TYPES; type++) {
-                    for (prom = 0; prom < 2; prom++) {
-                        rules->piece_hash[stream][owner][sq][type][prom] =
-                            gc_splitmix64(&state);
-                    }
-                }
+                rules->piece_owner_square_hash[stream][owner][sq] =
+                    gc_splitmix64(&state);
+            }
+            for (sq = 0; sq < GC_MAX_SQUARES; sq++) {
+                rules->piece_promoted_hash[stream][sq] = gc_splitmix64(&state);
             }
             for (type = 0; type < GC_MAX_TYPES; type++) {
                 for (slot = 0; slot < GC_MAX_HAND; slot++) {
@@ -36,6 +35,14 @@ static void gc_hash_init(GCRules *rules) {
                 }
             }
             rules->side_hash[stream][owner] = gc_splitmix64(&state);
+        }
+        for (sq = 0; sq < GC_MAX_SQUARES; sq++) {
+            for (type = 0; type < GC_MAX_TYPES; type++) {
+                rules->piece_base_hash[stream][sq][type] =
+                    gc_splitmix64(&state);
+                rules->piece_current_hash[stream][sq][type] =
+                    gc_splitmix64(&state);
+            }
         }
     }
 }

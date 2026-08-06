@@ -14,10 +14,12 @@ int gc_hash_verify(const GCRules *rules, const GCPosition *pos);
 uint16_t gc_repetition_count(const GCRules *rules, const GCPosition *pos);
 
 /* Incremental hash helpers used by make/unmake. */
-void gc_hash_add_hand(GCRules *rules, GCPosition *pos, uint8_t owner,
-                      GCTypeIndex type);
-void gc_hash_remove_hand(GCRules *rules, GCPosition *pos, uint8_t owner,
-                         GCTypeIndex type);
+/* Return 1 on success, 0 when the hand count is out of the supported range
+ * (must be treated as an error by make/unmake, never silently ignored). */
+int gc_hash_add_hand(GCRules *rules, GCPosition *pos, uint8_t owner,
+                     GCTypeIndex type);
+int gc_hash_remove_hand(GCRules *rules, GCPosition *pos, uint8_t owner,
+                        GCTypeIndex type);
 void gc_hash_xor_piece(GCRules *rules, GCPosition *pos, const GCPiece *piece,
                        GCSquare square);
 void gc_hash_xor_side(GCRules *rules, GCPosition *pos, uint8_t owner);
