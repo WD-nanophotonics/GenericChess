@@ -76,6 +76,7 @@ class AlphaBetaPlayer:
         *,
         cancel_token: CancellationToken | None = None,
         progress_callback=None,
+        recorder=None,
     ) -> PlayerDecision:
         state = session.state
         started = time.monotonic()
@@ -91,6 +92,7 @@ class AlphaBetaPlayer:
             use_tt=self._use_tt,
             use_ordering=self._use_ordering,
             tuning=self._tuning,
+            recorder=recorder,
             progress_callback=progress_callback,
         )
         elapsed = time.monotonic() - started

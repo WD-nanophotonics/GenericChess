@@ -16,6 +16,7 @@ from ..cancellation import CancellationToken
 from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
 from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
+from ..audit_instrumentation import AuditMetric, AuditRecorder, NullAuditRecorder
 from .ordering import MoveOrderer, StagedMovePicker
 from .quiescence import classify_noisy
 from .statistics import SearchStatistics
@@ -85,6 +86,7 @@ class _Context:
         "budget",
         "orderer",
         "tuning",
+        "recorder",
         "use_tt",
         "use_ordering",
         "qdepth_limit",
@@ -103,6 +105,7 @@ class _Context:
         use_ordering: bool,
         qdepth_limit: int,
         qnode_limit: int | None,
+        recorder: AuditRecorder | None = None,
     ) -> None:
         self.compiled = compiled
         self.evaluator = evaluator
@@ -111,6 +114,7 @@ class _Context:
         self.budget = budget
         self.orderer = MoveOrderer()
         self.tuning = tuning
+        self.recorder = recorder or NullAuditRecorder()
         self.use_tt = use_tt
         self.use_ordering = use_ordering
         self.qdepth_limit = qdepth_limit
@@ -152,9 +156,11 @@ def negamax(
         )
     if depth <= 0:
         if ctx.qdepth_limit > 0:
-            score = quiescence(state, alpha, beta, ply, 0, ctx)
+            with ctx.recorder.time_block(AuditMetric.QUIESCENCE):
+                score = quiescence(state, alpha, beta, ply, 0, ctx)
         else:
-            score = ctx.evaluator.evaluate(state)
+            with ctx.recorder.time_block(AuditMetric.EVALUATION):
+                score = ctx.evaluator.evaluate(state)
         return SearchResult(score, None, ())
 
     if ctx.tuning.use_mate_distance_pruning:
@@ -164,59 +170,65 @@ def negamax(
             ctx.stats.mate_pruning_cutoffs += 1
             return SearchResult(alpha, None, ())
 
-    key = _tt_key(state, ctx.compiled)
+    with ctx.recorder.time_block(AuditMetric.TT_KEY):
+        key = _tt_key(state, ctx.compiled)
     entry = None
     if ctx.use_tt:
         ctx.stats.tt_probes += 1
-        entry = ctx.tt.probe(key)
+        with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
+            entry = ctx.tt.probe(key)
         if entry is not None:
             ctx.stats.tt_hits += 1
             if entry.depth >= depth:
-                score = score_from_tt(entry.score, ply)
-                if entry.bound is BoundType.EXACT:
-                    return SearchResult(score, entry.best_action, ())
-                if entry.bound is BoundType.LOWER:
-                    alpha = max(alpha, score)
-                else:
-                    beta = min(beta, score)
-                if alpha >= beta:
-                    ctx.stats.tt_cutoffs += 1
-                    return SearchResult(score, entry.best_action, ())
+                with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
+                    score = score_from_tt(entry.score, ply)
+                    if entry.bound is BoundType.EXACT:
+                        return SearchResult(score, entry.best_action, ())
+                    if entry.bound is BoundType.LOWER:
+                        alpha = max(alpha, score)
+                    else:
+                        beta = min(beta, score)
+                    if alpha >= beta:
+                        ctx.stats.tt_cutoffs += 1
+                        return SearchResult(score, entry.best_action, ())
 
     started = time.monotonic()
-    successors = legal_successors(state, ctx.compiled)
+    with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
+        successors = legal_successors(state, ctx.compiled)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
     if not successors:
         # Core should have flagged the position terminal; fall back to eval.
-        return SearchResult(ctx.evaluator.evaluate(state), None, ())
+        with ctx.recorder.time_block(AuditMetric.EVALUATION):
+            return SearchResult(ctx.evaluator.evaluate(state), None, ())
     actions = [action for action, _ in successors]
 
     child_by_action = dict(successors)
     if ctx.use_ordering:
         started = time.monotonic()
-        if ctx.tuning.use_staged_move_picker:
-            ordered_actions = StagedMovePicker(
-                state,
-                actions,
-                ctx.evaluator,
-                depth,
-                entry.best_action if entry else None,
-                prev_action,
-                ctx.orderer,
-                ctx.tuning,
-                ctx.stats,
-            )
-        else:
-            ordered_actions = ctx.orderer.order(
-                state,
-                actions,
-                ctx.evaluator,
-                depth,
-                entry.best_action if entry else None,
-                prev_action,
-                ctx.tuning,
-            )
+        with ctx.recorder.time_block(AuditMetric.ORDERING):
+            if ctx.tuning.use_staged_move_picker:
+                ordered_actions = StagedMovePicker(
+                    state,
+                    actions,
+                    ctx.evaluator,
+                    depth,
+                    entry.best_action if entry else None,
+                    prev_action,
+                    ctx.orderer,
+                    ctx.tuning,
+                    ctx.stats,
+                )
+            else:
+                ordered_actions = ctx.orderer.order(
+                    state,
+                    actions,
+                    ctx.evaluator,
+                    depth,
+                    entry.best_action if entry else None,
+                    prev_action,
+                    ctx.tuning,
+                )
         ctx.stats.ordering_calls += 1
         ctx.stats.ordered_moves += len(actions)
         ctx.stats.ordering_seconds += time.monotonic() - started
@@ -267,13 +279,14 @@ def negamax(
             break
 
     if ctx.use_tt:
-        if best <= original_alpha:
-            bound = BoundType.UPPER
-        elif best >= beta:
-            bound = BoundType.LOWER
-        else:
-            bound = BoundType.EXACT
-        ctx.tt.store(key, depth, score_to_tt(best, ply), bound, best_action)
+        with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
+            if best <= original_alpha:
+                bound = BoundType.UPPER
+            elif best >= beta:
+                bound = BoundType.LOWER
+            else:
+                bound = BoundType.EXACT
+            ctx.tt.store(key, depth, score_to_tt(best, ply), bound, best_action)
     return SearchResult(best, best_action, best_pv)
 
 
@@ -389,7 +402,9 @@ def root_tactical_scan(
     best_action: Action | None = None
     best_score = -INF
     started = time.monotonic()
-    for action, child in legal_successors(state, compiled):
+    with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
+        successors = legal_successors(state, compiled)
+    for action, child in successors:
         ctx.stats.nodes += 1
         ctx.stats.root_scan_nodes += 1
         if (
@@ -399,7 +414,8 @@ def root_tactical_scan(
             ctx.stats.root_scan_seconds += time.monotonic() - started
             return action, best_action
         ctx.stats.evaluation_calls += 1
-        score = -evaluator.evaluate(child)
+        with ctx.recorder.time_block(AuditMetric.EVALUATION):
+            score = -evaluator.evaluate(child)
         if score > best_score:
             best_score = score
             best_action = action
@@ -457,6 +473,7 @@ def run_root_search(
     use_tt: bool,
     use_ordering: bool,
     tuning: SearchTuning = SearchTuning(),
+    recorder: AuditRecorder | None = None,
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
@@ -487,6 +504,7 @@ def run_root_search(
         use_ordering,
         limits.quiescence_max_depth,
         limits.quiescence_max_nodes,
+        recorder,
     )
 
     immediate_win: Action | None = None
