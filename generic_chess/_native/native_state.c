@@ -48,9 +48,6 @@ int gc_make_move(GCPosition *pos, const GCRules *rules, GCPackedAction action,
         if (pos->hand_counts[side][base] == 0) {
             return GC_STATUS_ACTION_DROP_NO_HAND;
         }
-        if (pos->hand_counts[side][base] >= GC_MAX_HAND) {
-            return GC_STATUS_HAND_OVERFLOW;
-        }
         undo->from = GC_NO_SQUARE;
         undo->was_drop = 1;
         GCPiece piece;

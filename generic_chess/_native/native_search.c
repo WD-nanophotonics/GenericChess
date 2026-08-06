@@ -33,9 +33,22 @@ int gc_search_context_alloc(GCSearchContext *ctx, const GCRules *rules,
     ctx->rules = rules;
     ctx->eval = eval;
     ctx->max_depth = max_depth;
-    size_t depth = (size_t)max_depth + 1;
+    if (max_depth > GC_MAX_PLY) {
+        return 0;
+    }
+    size_t depth = 0, bytes = 0;
+    if (!gc_checked_size_add((size_t)max_depth, 1, &depth)) {
+        return 0;
+    }
+    if (!gc_checked_size_mul(depth, sizeof(GCMoveList), &bytes)) {
+        return 0;
+    }
     ctx->pseudo_by_ply = (GCMoveList *)calloc(depth, sizeof(GCMoveList));
     ctx->legal_by_ply = (GCMoveList *)calloc(depth, sizeof(GCMoveList));
+    if (!gc_checked_size_mul(depth, depth, &bytes)) {
+        gc_search_context_free(ctx);
+        return 0;
+    }
     ctx->pv_table = (GCPackedAction *)calloc(depth * depth, sizeof(GCPackedAction));
     ctx->pv_length = (uint16_t *)calloc(depth, sizeof(uint16_t));
     if (ctx->pseudo_by_ply == NULL || ctx->legal_by_ply == NULL ||
@@ -89,6 +102,8 @@ static int32_t gc_negamax(GCSearchContext *ctx, GCPosition *pos, int depth,
 
     qsort(legal->data, legal->count, sizeof(GCPackedAction), gc_action_cmp);
     int32_t best = -GC_INF32;
+    GCPackedAction best_action = 0;
+    int has_best = 0;
     size_t stride = (size_t)ctx->max_depth + 1;
     size_t i;
     for (i = 0; i < legal->count; i++) {
@@ -104,8 +119,11 @@ static int32_t gc_negamax(GCSearchContext *ctx, GCPosition *pos, int depth,
         if (ctx->error) {
             return 0;
         }
-        if (score > best) {
+        if (score > best ||
+            (score == best && (!has_best || action < best_action))) {
             best = score;
+            best_action = action;
+            has_best = 1;
             ctx->pv_table[(size_t)ply * stride] = action;
             uint16_t child_len = ctx->pv_length[ply + 1];
             ctx->pv_length[ply] = (uint16_t)(1 + child_len);
@@ -151,6 +169,7 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
         result->score = gc_node_terminal_score(ctx->eval, term, 0);
         result->has_action = 0;
         result->completed_depth = 0;
+        result->nodes = ctx->nodes;
         result->terminated = 1;
         result->status = GC_FIXED_SEARCH_OK;
         return 1;
@@ -167,6 +186,7 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
     qsort(legal->data, legal->count, sizeof(GCPackedAction), gc_action_cmp);
     int32_t best = -GC_INF32;
     GCPackedAction best_action = 0;
+    int32_t alpha = -GC_INF32;
     size_t stride = (size_t)ctx->max_depth + 1;
     size_t k;
     for (k = 0; k < legal->count; k++) {
@@ -177,13 +197,13 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
             return 0;
         }
         int32_t score = -gc_negamax(ctx, pos, depth - 1, -GC_INF32,
-                                    GC_INF32, 1);
+                                    -alpha, 1);
         gc_unmake_move(pos, ctx->rules, &undo);
         if (ctx->error) {
             result->status = GC_FIXED_SEARCH_ERROR;
             return 0;
         }
-        if (score > best) {
+        if (score > best || (score == best && action < best_action)) {
             best = score;
             best_action = action;
             ctx->pv_table[0] = action;
@@ -194,6 +214,9 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
                        &ctx->pv_table[stride],
                        sizeof(GCPackedAction) * child_len);
             }
+        }
+        if (best > alpha) {
+            alpha = best;
         }
     }
     result->score = best;

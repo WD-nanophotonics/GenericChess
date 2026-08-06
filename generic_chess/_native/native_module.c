@@ -151,6 +151,65 @@ static PyObject *gc_action_error(GCPackedAction action, const GCRules *rules,
     return NULL;
 }
 
+static void gc_move_list_error(const GCRules *rules, const GCPosition *pos,
+                               const GCMoveList *list) {
+    if (list->error == GC_MOVE_ERROR_TRUSTED_MAKE) {
+        PyObject *dict = PyDict_New();
+        if (dict == NULL) {
+            return;
+        }
+        PyObject *value;
+#define GC_SET_ERR2(name, obj) \
+    do { \
+        if ((obj) == NULL || PyDict_SetItemString(dict, (name), (obj)) != 0) { \
+            Py_XDECREF(obj); \
+            Py_DECREF(dict); \
+            PyErr_SetString(PyExc_RuntimeError, \
+                            "trusted make failed during legal move generation"); \
+            return; \
+        } \
+        Py_DECREF(obj); \
+    } while (0)
+        value = PyLong_FromUnsignedLongLong(list->failed_action);
+        GC_SET_ERR2("packed", value);
+        value = PyLong_FromLong(list->trusted_status);
+        GC_SET_ERR2("status", value);
+        value = PyUnicode_FromString(gc_status_name(list->trusted_status));
+        GC_SET_ERR2("reason", value);
+        value = PyLong_FromLong(pos->ply);
+        GC_SET_ERR2("ply", value);
+        value = PyLong_FromLong(pos->side_to_move);
+        GC_SET_ERR2("side", value);
+        value = PyUnicode_FromString(rules->fingerprint);
+        GC_SET_ERR2("fingerprint", value);
+        PyObject *hands = PyList_New(2);
+        if (hands == NULL) {
+            Py_DECREF(dict);
+            return;
+        }
+        int owner;
+        for (owner = 0; owner < 2; owner++) {
+            PyObject *counts = PyList_New(rules->type_count);
+            int t;
+            for (t = 0; t < rules->type_count; t++) {
+                PyList_SET_ITEM(counts, t,
+                                PyLong_FromLong(pos->hand_counts[owner][t]));
+            }
+            PyList_SET_ITEM(hands, owner, counts);
+        }
+        PyDict_SetItemString(dict, "hand_counts", hands);
+        Py_DECREF(hands);
+#undef GC_SET_ERR2
+        PyErr_SetObject(PyExc_RuntimeError, dict);
+        Py_DECREF(dict);
+        return;
+    }
+    PyErr_SetString(PyExc_MemoryError,
+                    list->error == GC_MOVE_ERROR_OVERFLOW
+                        ? "native move list overflow"
+                        : "native move list allocation failed");
+}
+
 static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     (void)self;
     (void)args;
@@ -644,11 +703,8 @@ static PyObject *gc_native_legal_actions(PyObject *self, PyObject *args) {
     GCMoveList list;
     gc_move_list_init(&list);
     if (!gc_legal_actions(rules, pos, &list)) {
+        gc_move_list_error(rules, pos, &list);
         gc_move_list_destroy(&list);
-        PyErr_SetString(PyExc_MemoryError,
-                        list.error == GC_MOVE_ERROR_OVERFLOW
-                            ? "native move list overflow"
-                            : "native move list allocation failed");
         return NULL;
     }
     PyObject *result = gc_list_to_tuple(&list);
@@ -671,11 +727,8 @@ static PyObject *gc_native_pseudo_actions(PyObject *self, PyObject *args) {
     GCMoveList list;
     gc_move_list_init(&list);
     if (!gc_pseudo_actions(rules, pos, &list)) {
+        gc_move_list_error(rules, pos, &list);
         gc_move_list_destroy(&list);
-        PyErr_SetString(PyExc_MemoryError,
-                        list.error == GC_MOVE_ERROR_OVERFLOW
-                            ? "native move list overflow"
-                            : "native move list allocation failed");
         return NULL;
     }
     PyObject *result = gc_list_to_tuple(&list);
@@ -1183,12 +1236,34 @@ static PyObject *gc_native_perft(PyObject *self, PyObject *args) {
             failed = 1;
         }
     }
-    gc_perft_scratch_destroy(&scratch);
     if (failed) {
         Py_XDECREF(divide_dict);
-        PyErr_SetString(PyExc_MemoryError, "native perft move list failure");
+        const GCMoveList *err_list = NULL;
+        int li;
+        for (li = 0; li < 2; li++) {
+            if (scratch.legal[li].error != GC_MOVE_ERROR_NONE) {
+                err_list = &scratch.legal[li];
+                break;
+            }
+        }
+        if (err_list == NULL) {
+            for (li = 0; li < 2; li++) {
+                if (scratch.pseudo[li].error != GC_MOVE_ERROR_NONE) {
+                    err_list = &scratch.pseudo[li];
+                    break;
+                }
+            }
+        }
+        gc_perft_scratch_destroy(&scratch);
+        if (err_list != NULL) {
+            gc_move_list_error(rules, pos, err_list);
+        } else {
+            PyErr_SetString(PyExc_MemoryError,
+                            "native perft move list failure");
+        }
         return NULL;
     }
+    gc_perft_scratch_destroy(&scratch);
 
 #ifdef _WIN32
     LARGE_INTEGER t1;
@@ -1328,15 +1403,17 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
     if (rules == NULL || eval == NULL || pos == NULL) {
         return NULL;
     }
-    if (depth < 0) {
-        PyErr_SetString(PyExc_ValueError, "search depth must be >= 0");
+    if (depth < 0 || depth > GC_MAX_PLY) {
+        PyErr_SetString(PyExc_ValueError,
+                        "search depth must be in [0, GC_MAX_PLY]");
         return NULL;
     }
     GCPosition copy;
     memcpy(&copy, pos, sizeof(GCPosition));
     GCSearchContext ctx;
     if (!gc_search_context_alloc(&ctx, rules, eval, (uint32_t)depth)) {
-        PyErr_NoMemory();
+        PyErr_SetString(PyExc_ValueError,
+                        "search context allocation failed (depth or memory)");
         return NULL;
     }
     GCFixedSearchResult result;
@@ -1344,10 +1421,13 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
     Py_BEGIN_ALLOW_THREADS
     search_ok = gc_fixed_depth_search(&ctx, &copy, (uint32_t)depth, &result);
     Py_END_ALLOW_THREADS
+    PyObject *result_dict = NULL;
+    PyObject *pv = NULL;
+    PyObject *value = NULL;
+    int success = 0;
     if (!search_ok) {
-        gc_search_context_free(&ctx);
         PyErr_SetString(PyExc_RuntimeError, "native fixed-depth search failed");
-        return NULL;
+        goto cleanup;
     }
     int restored = gc_hash_verify(rules, &copy) &&
                    memcmp(copy.board, pos->board,
@@ -1358,56 +1438,75 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
                    memcmp(copy.hand_counts, pos->hand_counts,
                           sizeof(pos->hand_counts)) == 0;
     if (!restored) {
-        gc_search_context_free(&ctx);
         PyErr_SetString(PyExc_RuntimeError,
                         "native search did not restore the root position");
-        return NULL;
+        goto cleanup;
     }
 
-    PyObject *result_dict = PyDict_New();
+    result_dict = PyDict_New();
     if (result_dict == NULL) {
-        return NULL;
+        goto cleanup;
     }
-    PyObject *value;
     value = PyLong_FromLong(result.score);
-    PyDict_SetItemString(result_dict, "score", value);
-    Py_DECREF(value);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "score", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
     if (result.has_action) {
         value = PyLong_FromUnsignedLongLong(result.best_action);
-        PyDict_SetItemString(result_dict, "best_action", value);
     } else {
         value = Py_None;
         Py_INCREF(value);
-        PyDict_SetItemString(result_dict, "best_action", value);
     }
-    Py_DECREF(value);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "best_action", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
     value = PyLong_FromUnsignedLongLong(result.nodes);
-    PyDict_SetItemString(result_dict, "nodes", value);
-    Py_DECREF(value);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "nodes", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
     value = PyLong_FromLong(result.completed_depth);
-    PyDict_SetItemString(result_dict, "completed_depth", value);
-    Py_DECREF(value);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "completed_depth", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
     value = PyUnicode_FromString(result.terminated ? "terminal"
                                                    : "completed_depth");
-    PyDict_SetItemString(result_dict, "termination_reason", value);
-    Py_DECREF(value);
-    PyObject *pv = PyTuple_New((Py_ssize_t)ctx.pv_length[0]);
+    if (value == NULL ||
+        PyDict_SetItemString(result_dict, "termination_reason", value) != 0) {
+        goto cleanup;
+    }
+    Py_CLEAR(value);
+    pv = PyTuple_New((Py_ssize_t)ctx.pv_length[0]);
     if (pv == NULL) {
-        Py_DECREF(result_dict);
-        return NULL;
+        goto cleanup;
     }
     size_t k;
     for (k = 0; k < ctx.pv_length[0]; k++) {
         PyObject *item = PyLong_FromUnsignedLongLong(ctx.pv_table[k]);
         if (item == NULL) {
-            Py_DECREF(pv);
-            Py_DECREF(result_dict);
-            return NULL;
+            goto cleanup;
         }
         PyTuple_SET_ITEM(pv, (Py_ssize_t)k, item);
     }
-    PyDict_SetItemString(result_dict, "principal_variation", pv);
-    Py_DECREF(pv);
+    if (PyDict_SetItemString(result_dict, "principal_variation", pv) != 0) {
+        goto cleanup;
+    }
+    success = 1;
+
+cleanup:
+    Py_XDECREF(value);
+    Py_XDECREF(pv);
+    if (!success) {
+        Py_XDECREF(result_dict);
+        result_dict = NULL;
+    }
     gc_search_context_free(&ctx);
     return result_dict;
 }

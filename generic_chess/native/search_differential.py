@@ -39,14 +39,14 @@ def _compare(compiled, session, depth, label) -> list[str]:
     problems = []
     if native.score != ref[0]:
         problems.append(
-            f"score: python={ref[0]} native={native.score}"
+            f"score mismatch: python={ref[0]} native={native.score}"
         )
     if native.action != ref[2]:
         problems.append(
-            f"best action: python={ref[2]} native={native.action}"
+            f"canonical-best mismatch: python={ref[2]} native={native.action}"
         )
     if native.action is not None and native.action not in ref[1]:
-        problems.append("best action not in the python tied-best set")
+        problems.append("returned-action-outside-reference-best-set")
     if problems:
         return [
             f"fixture={label} fingerprint={compiled.ruleset_fingerprint} "

@@ -18,7 +18,7 @@ from .adapter import (
     pack_native_search_position,
     to_python_action,
 )
-from .compiler import NativeActionError
+from .compiler import GC_MAX_PLY, NativeActionError
 from .reference import python_legal_actions
 
 
@@ -46,8 +46,8 @@ def native_fixed_depth_search(
     best action belongs to the Python root legal set and that the PV replays
     through Python Core legality.
     """
-    if depth < 0:
-        raise ValueError("search depth must be >= 0")
+    if depth < 0 or depth > GC_MAX_PLY:
+        raise ValueError(f"search depth must be in [0, {GC_MAX_PLY}]")
     if session.result.status.value == "resignation":
         # Resignation is a session-level end, never a native board terminal.
         return NativeFixedDepthResult(
@@ -102,8 +102,8 @@ def native_fixed_depth_search_state(
     """Fixed-depth search over an arbitrary packed GameState (no history
     replay).  Test/debug entry for crafted positions; the replay-based
     :func:`native_fixed_depth_search` remains the search-root entry point."""
-    if depth < 0:
-        raise ValueError("search depth must be >= 0")
+    if depth < 0 or depth > GC_MAX_PLY:
+        raise ValueError(f"search depth must be in [0, {GC_MAX_PLY}]")
     pos = pack_native_position(compiled, native_rules, state)
     raw = _c_search(native_rules, native_evaluation.capsule, pos, depth)
 

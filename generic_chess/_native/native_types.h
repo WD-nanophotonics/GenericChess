@@ -104,6 +104,8 @@ typedef struct {
     size_t count;
     size_t capacity;
     int error; /* GC_MOVE_ERROR_* code, 0 when clean */
+    int trusted_status;      /* GC_STATUS_* when error == GC_MOVE_ERROR_TRUSTED_MAKE */
+    GCPackedAction failed_action; /* the action that failed a trusted make */
 } GCMoveList;
 
 /* Checked-make status codes (also used for the public Python API). */
@@ -140,6 +142,24 @@ enum {
 #define GC_MOVE_ERROR_NONE 0
 #define GC_MOVE_ERROR_ALLOC 1
 #define GC_MOVE_ERROR_OVERFLOW 2
+#define GC_MOVE_ERROR_TRUSTED_MAKE 3
+
+/* Overflow-safe size arithmetic helpers (never rely on small constants). */
+static inline int gc_checked_size_add(size_t a, size_t b, size_t *out) {
+    if (a > (size_t)-1 - b) {
+        return 0;
+    }
+    *out = a + b;
+    return 1;
+}
+
+static inline int gc_checked_size_mul(size_t a, size_t b, size_t *out) {
+    if (a != 0 && b > (size_t)-1 / a) {
+        return 0;
+    }
+    *out = a * b;
+    return 1;
+}
 
 typedef struct {
     GCSquare from;

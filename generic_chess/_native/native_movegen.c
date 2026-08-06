@@ -226,9 +226,15 @@ int gc_legal_filter(const GCRules *rules, GCPosition *pos,
     for (i = 0; i < pseudo->count; i++) {
         GCPackedAction action = pseudo->data[i];
         GCUndo undo;
-        if (gc_make_move(pos, rules, action, &undo) != GC_STATUS_OK) {
-            continue; /* generated pseudo moves should not fail, but never
-                         crash on a defensive path */
+        int status = gc_make_move(pos, rules, action, &undo);
+        if (status != GC_STATUS_OK) {
+            /* A trusted make failure for a move produced by the native pseudo
+             * generator is a kernel/invariant/capacity error, not an ordinary
+             * illegal move: propagate it instead of silently skipping. */
+            legal->error = GC_MOVE_ERROR_TRUSTED_MAKE;
+            legal->trusted_status = status;
+            legal->failed_action = action;
+            return 0;
         }
         GCSquare anchor = gc_find_anchor(rules, pos, side);
         int legal_move = anchor != GC_NO_SQUARE &&
