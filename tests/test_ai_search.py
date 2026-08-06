@@ -19,6 +19,7 @@ from generic_chess.ai.alphabeta.transposition import (
     score_from_tt,
     score_to_tt,
 )
+from generic_chess.ai.alphabeta.tuning import SearchTuning
 from generic_chess.ai.cancellation import CancellationToken
 from generic_chess.ai.evaluation.config import EvaluationConfig, MATE_SCORE
 from generic_chess.ai.evaluation.evaluator import Evaluator
@@ -153,7 +154,8 @@ def test_node_budget_reproducible():
 
 def test_time_limit_and_cancellation():
     compiled = build_4x4_rooks()
-    decision = _player(compiled).choose_action(
+    # Root scan disabled so the budget/cancellation semantics are isolated.
+    decision = _player(compiled, tuning=SearchTuning(use_root_tactical=False)).choose_action(
         GameSession(compiled),
         SearchLimits(max_depth=64, max_time_seconds=0.001, quiescence_max_depth=0),
     )
@@ -162,7 +164,7 @@ def test_time_limit_and_cancellation():
 
     token = CancellationToken()
     token.cancel()
-    cancelled = _player(compiled).choose_action(
+    cancelled = _player(compiled, tuning=SearchTuning(use_root_tactical=False)).choose_action(
         GameSession(compiled), SearchLimits(max_depth=4, quiescence_max_depth=0), cancel_token=token
     )
     assert cancelled.action in legal_actions(GameSession(compiled).state, compiled)
@@ -199,7 +201,8 @@ def test_promotion_ruleset_searches():
 
 def test_tiny_time_budget_aborts_before_clock_expiry():
     compiled = build_4x4_rooks()
-    player = _player(compiled)
+    # Root scan disabled so the time-limit budget semantics are isolated.
+    player = _player(compiled, tuning=SearchTuning(use_root_tactical=False))
     decision = player.choose_action(
         GameSession(compiled),
         SearchLimits(
@@ -264,6 +267,7 @@ def test_quiescence_searches_evasions_when_in_check():
         TranspositionTable(),
         SearchStatistics(),
         _Budget(SearchLimits(max_depth=2, quiescence_max_depth=4), None),
+        SearchTuning(),
         True,
         True,
         4,
@@ -279,6 +283,7 @@ def test_quiescence_searches_evasions_when_in_check():
             TranspositionTable(),
             SearchStatistics(),
             _Budget(SearchLimits(max_depth=2, quiescence_max_depth=4), None),
+            SearchTuning(),
             True,
             True,
             4,

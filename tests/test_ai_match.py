@@ -426,3 +426,55 @@ def test_restart_clock_active_owner_matches_initial_side():
     assert state.active_owner == 0  # initial side, not the stale side-to-move
     assert ctrl.session.state.position.side_to_move == 0
     assert len(ctrl._clock_snapshots) == 1
+
+
+def test_worker_snapshot_freezes_limits_and_commits():
+    class FakeNow:
+        def __init__(self) -> None:
+            self.t = 0.0
+
+        def __call__(self) -> float:
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(60, 10),
+                owner1=SideTimeConfig(60, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    frozen = snapshot.limits
+    now.t += 30.0  # remaining clock time drops
+    assert ctrl.ai_limits() != frozen  # live limits moved...
+    assert snapshot.limits == frozen  # ...but the snapshot is frozen
+    ctrl.finish_ai_move(None, snapshot)  # cleanup
+    assert not ctrl.ai_thinking
+
+
+def test_finish_ai_move_rejects_stale_snapshot():
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    ctrl.restart()  # generation/session change invalidates the snapshot
+    decision = _stub_runner()(ctrl.session, ctrl.ai_limits(), token)
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.state.ply_count == 0

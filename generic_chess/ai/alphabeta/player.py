@@ -15,6 +15,7 @@ from ..limits import SearchLimits
 from .search import run_root_search
 from .statistics import SearchStatistics
 from .transposition import TranspositionTable
+from .tuning import SearchTuning
 
 
 class AlphaBetaPlayer:
@@ -36,6 +37,7 @@ class AlphaBetaPlayer:
         disk_cache_dir: str | None = None,
         use_tt: bool = True,
         use_ordering: bool = True,
+        tuning: SearchTuning = SearchTuning(),
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
@@ -49,6 +51,7 @@ class AlphaBetaPlayer:
         self._tt = TranspositionTable(max_entries=tt_max_entries)
         self._use_tt = use_tt
         self._use_ordering = use_ordering
+        self._tuning = tuning
 
     @property
     def compiled(self) -> CompiledRuleSet:
@@ -87,6 +90,7 @@ class AlphaBetaPlayer:
             stats,
             use_tt=self._use_tt,
             use_ordering=self._use_ordering,
+            tuning=self._tuning,
             progress_callback=progress_callback,
         )
         elapsed = time.monotonic() - started
@@ -105,4 +109,26 @@ class AlphaBetaPlayer:
             beta_cutoffs=stats.beta_cutoffs,
             evaluation_profile_cache_hit=self._profile_cache_hit,
             termination_reason=reason,
+            q_depth_truncations=stats.q_depth_truncations,
+            q_budget_truncations=stats.q_budget_truncations,
+            q_evasion_truncations=stats.q_evasion_truncations,
+            pvs_null_window_searches=stats.pvs_null_window_searches,
+            pvs_researches=stats.pvs_researches,
+            aspiration_fail_low=stats.aspiration_fail_low,
+            aspiration_fail_high=stats.aspiration_fail_high,
+            aspiration_researches=stats.aspiration_researches,
+            root_scan_nodes=stats.root_scan_nodes,
+            root_scan_used_fallback=stats.root_scan_used_fallback,
+            move_picker_generated=stats.move_picker_generated,
+            move_picker_yielded=stats.move_picker_yielded,
+            move_picker_yielded_by_stage=dict(stats.move_picker_yielded_by_stage),
+            ordering_calls=stats.ordering_calls,
+            ordered_moves=stats.ordered_moves,
+            ordering_seconds=stats.ordering_seconds,
+            legal_generation_calls=stats.legal_generation_calls,
+            legal_generation_seconds=stats.legal_generation_seconds,
+            evaluation_calls=stats.evaluation_calls,
+            evaluation_seconds=stats.evaluation_seconds,
+            countermove_hits=stats.countermove_hits,
+            mate_pruning_cutoffs=stats.mate_pruning_cutoffs,
         )

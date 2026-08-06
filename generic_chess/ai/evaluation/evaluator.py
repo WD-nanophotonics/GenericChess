@@ -130,3 +130,7 @@ class Evaluator:
         moving = self._profile.board_value_by_type[moving_piece.current_type_id]
         captured = self._profile.board_value_by_type[captured_piece.current_type_id]
         return captured * 10 - moving // 10
+
+    def type_value(self, type_id: str) -> int:
+        """Board value of a piece type (from the rule-derived profile)."""
+        return self._profile.board_value_by_type[type_id]

@@ -268,6 +268,34 @@ RuleSet 自动以 fingerprint 隔离；预算支持 depth/nodes/time/cancellatio
 `Game over — <result>` 横幅与状态栏结果明确显示；在支持打入的规则里，“王无路可走但手牌
 可以打援（例如打子挡将）”按规则**不是**将死，对局会继续——这是规则语义而非 bug。
 
+## 搜索实验框架（0.6.0，AlphaSho 式消融）
+
+GenericChess 的棋子和规则是随机生成的，因此**不搬运** AlphaSho 的将棋知识（固定子力表、
+PST、王盾等），只借鉴其**可消融的搜索结构、工程化观测和严格实验方法**。
+
+* **`SearchTuning`**（`generic_chess.ai.alphabeta.tuning`）：PVS / aspiration / staged move
+  picker / countermove / mate-distance pruning 全部默认关闭，仅由 benchmark profile 注入，
+  不进入 UI 默认；`use_root_tactical` 默认开启（只改善 fallback，不改完整搜索语义）。
+* **细粒度统计**：q 截断原因、PVS/aspiration 计数、root scan 节点与耗时、move picker 分
+  阶段计数、ordering/movegen/evaluation 各自的调用数与耗时桶，随 `PlayerDecision` 返回。
+* **Benchmark**：`python -m generic_chess.ai.benchmark --profile pvs --seconds 1
+  --max-plies 120 --out-dir artifacts/bench`。固定 seed RuleSet 套件 × 固定开局（确定性
+  重放）× 双方换先；按 Core 终局判胜负，手数上限记 `unresolved`，fallback/超时局不计分；
+  输出 `games.jsonl` / `events.jsonl` / `summary.json` / `manifest.json`，支持 `--resume`
+  跳过已完成对局。profile：`baseline`、`pvs`、`pvs_aspiration`、`staged_picker`、
+  `countermove`、`mate_distance`、`full_candidate`（`--all-profiles` 逐个消融）。
+* **`SearchBackend` 协议**：UI 与 benchmark 面向协议，未来可换原生后端而不改调用方。
+
+本轮同时封口四个正确性问题：check-evasion qsearch 有硬上限（到上限中止当前迭代、返回上一
+完整深度，不再把“必须走一步”的局面当静态叶节点）；打开/回放文件对话框取消时不再清空 AI
+player；关闭窗口时安全取消并等待搜索线程结束后再关闭（不用 `terminate`）；AI worker 只读
+GUI 线程冻结的 `SearchSnapshot`（limits/root key/fingerprint/generation），不再触碰可变
+Controller。
+
+**留待后续（Phase 3-5）**：增量 evaluator 与 fast/exact 评价边界、generic SEE（仅排序）、
+lazy full evaluation（需先证明动态项上界）、bounded mate prover、LMR、null move、
+razoring/futility。这些一律先做 benchmark 消融、默认关闭，逐项验证后再考虑进入 UI。
+
 ## 快速上手
 
 ```python

@@ -13,13 +13,14 @@ from ...core.position import GameState
 from ...core.terminal import TerminalStatus
 from ...core.transition import legal_successors
 from ..cancellation import CancellationToken
-from ..evaluation.config import MATE_SCORE
+from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
 from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
-from .ordering import MoveOrderer
+from .ordering import MoveOrderer, StagedMovePicker
 from .quiescence import classify_noisy
 from .statistics import SearchStatistics
 from .transposition import BoundType, TranspositionTable, score_from_tt, score_to_tt
+from .tuning import SearchTuning
 
 
 INF = 10**12
@@ -83,6 +84,7 @@ class _Context:
         "stats",
         "budget",
         "orderer",
+        "tuning",
         "use_tt",
         "use_ordering",
         "qdepth_limit",
@@ -96,6 +98,7 @@ class _Context:
         tt: TranspositionTable,
         stats: SearchStatistics,
         budget: _Budget,
+        tuning: SearchTuning,
         use_tt: bool,
         use_ordering: bool,
         qdepth_limit: int,
@@ -107,6 +110,7 @@ class _Context:
         self.stats = stats
         self.budget = budget
         self.orderer = MoveOrderer()
+        self.tuning = tuning
         self.use_tt = use_tt
         self.use_ordering = use_ordering
         self.qdepth_limit = qdepth_limit
@@ -136,6 +140,7 @@ def negamax(
     beta: int,
     ply: int,
     ctx: _Context,
+    prev_action: Action | None = None,
 ) -> SearchResult:
     ctx.stats.nodes += 1
     ctx.budget.check(ctx.stats)
@@ -151,6 +156,13 @@ def negamax(
         else:
             score = ctx.evaluator.evaluate(state)
         return SearchResult(score, None, ())
+
+    if ctx.tuning.use_mate_distance_pruning:
+        alpha = max(alpha, -MATE_SCORE + ply)
+        beta = min(beta, MATE_SCORE - ply - 1)
+        if alpha >= beta:
+            ctx.stats.mate_pruning_cutoffs += 1
+            return SearchResult(alpha, None, ())
 
     key = _tt_key(state, ctx.compiled)
     entry = None
@@ -171,7 +183,10 @@ def negamax(
                     ctx.stats.tt_cutoffs += 1
                     return SearchResult(score, entry.best_action, ())
 
+    started = time.monotonic()
     successors = legal_successors(state, ctx.compiled)
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_generation_seconds += time.monotonic() - started
     if not successors:
         # Core should have flagged the position terminal; fall back to eval.
         return SearchResult(ctx.evaluator.evaluate(state), None, ())
@@ -179,9 +194,32 @@ def negamax(
 
     child_by_action = dict(successors)
     if ctx.use_ordering:
-        ordered_actions = ctx.orderer.order(
-            state, actions, ctx.evaluator, depth, entry.best_action if entry else None
-        )
+        started = time.monotonic()
+        if ctx.tuning.use_staged_move_picker:
+            ordered_actions = StagedMovePicker(
+                state,
+                actions,
+                ctx.evaluator,
+                depth,
+                entry.best_action if entry else None,
+                prev_action,
+                ctx.orderer,
+                ctx.tuning,
+                ctx.stats,
+            )
+        else:
+            ordered_actions = ctx.orderer.order(
+                state,
+                actions,
+                ctx.evaluator,
+                depth,
+                entry.best_action if entry else None,
+                prev_action,
+                ctx.tuning,
+            )
+        ctx.stats.ordering_calls += 1
+        ctx.stats.ordered_moves += len(actions)
+        ctx.stats.ordering_seconds += time.monotonic() - started
     else:
         ordered_actions = sorted(actions, key=str)
 
@@ -190,10 +228,27 @@ def negamax(
     best_action: Action | None = None
     best_pv: tuple[Action, ...] = ()
 
-    for action in ordered_actions:
+    for move_index, action in enumerate(ordered_actions):
         child = child_by_action[action]
-        child_result = negamax(child, depth - 1, -beta, -alpha, ply + 1, ctx)
-        score = -child_result.score
+        if ctx.tuning.use_pvs and move_index > 0:
+            ctx.stats.pvs_null_window_searches += 1
+            null_score = -negamax(
+                child, depth - 1, -alpha - 1, -alpha, ply + 1, ctx, prev_action=action
+            ).score
+            if alpha < null_score < beta:
+                ctx.stats.pvs_researches += 1
+                child_result = negamax(
+                    child, depth - 1, -beta, -alpha, ply + 1, ctx, prev_action=action
+                )
+                score = -child_result.score
+            else:
+                score = null_score
+                child_result = SearchResult(null_score, None, ())
+        else:
+            child_result = negamax(
+                child, depth - 1, -beta, -alpha, ply + 1, ctx, prev_action=action
+            )
+            score = -child_result.score
         if score > best:
             best = score
             best_action = action
@@ -204,7 +259,11 @@ def negamax(
             ctx.stats.beta_cutoffs += 1
             if ctx.use_ordering:
                 ctx.orderer.record_killer(depth, action)
-                ctx.orderer.record_history(state.position.side_to_move, action)
+                ctx.orderer.record_history(
+                    state.position.side_to_move, action, ctx.tuning
+                )
+                if prev_action is not None and ctx.tuning.use_countermove:
+                    ctx.orderer.record_countermove(prev_action, action)
             break
 
     if ctx.use_tt:
@@ -236,9 +295,16 @@ def quiescence(
     side = state.position.side_to_move
     if is_in_check(state.position, side, ctx.compiled):
         # In-check nodes cannot stand pat: extend over every legal evasion.
+        if qdepth >= ctx.tuning.check_evasion_max_depth:
+            ctx.stats.q_evasion_truncations += 1
+            raise SearchAborted("q_evasion_depth")
         if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
-            return ctx.evaluator.evaluate(state)
+            ctx.stats.q_budget_truncations += 1
+            raise SearchAborted("q_budget")
+        started = time.monotonic()
         successors = legal_successors(state, ctx.compiled)
+        ctx.stats.legal_generation_calls += 1
+        ctx.stats.legal_generation_seconds += time.monotonic() - started
         if not successors:
             return ctx.evaluator.evaluate(state)
         ordered = sorted(successors, key=lambda pair: str(pair[0]))
@@ -250,17 +316,25 @@ def quiescence(
                 alpha = score
         return alpha
 
+    started = time.monotonic()
     stand_pat = ctx.evaluator.evaluate(state)
+    ctx.stats.evaluation_calls += 1
+    ctx.stats.evaluation_seconds += time.monotonic() - started
     if stand_pat >= beta:
         return stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= ctx.qdepth_limit:
+        ctx.stats.q_depth_truncations += 1
         return alpha
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
+        ctx.stats.q_budget_truncations += 1
         return alpha
 
+    started = time.monotonic()
     successors = legal_successors(state, ctx.compiled)
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_generation_seconds += time.monotonic() - started
     noisy = classify_noisy(state, [action for action, _ in successors])
     ordered = sorted(
         (pair for pair in successors if pair[0] in noisy),
@@ -300,6 +374,77 @@ def reference_minimax(
     return best, best_action
 
 
+def root_tactical_scan(
+    state: GameState,
+    compiled,
+    evaluator: Evaluator,
+    ctx: _Context,
+) -> tuple[Action | None, Action | None]:
+    """Cheap root scan: immediate mate first, else best fast-eval root action.
+
+    Returns ``(immediate_win_action, best_action_by_eval)``.  Every root
+    successor is examined at least once so a very short budget still produces
+    a sensible fallback instead of the first canonical action.
+    """
+    best_action: Action | None = None
+    best_score = -INF
+    started = time.monotonic()
+    for action, child in legal_successors(state, compiled):
+        ctx.stats.nodes += 1
+        ctx.stats.root_scan_nodes += 1
+        if (
+            child.terminal_status.status is TerminalStatus.CHECKMATE
+            and child.terminal_status.winner == state.position.side_to_move
+        ):
+            ctx.stats.root_scan_seconds += time.monotonic() - started
+            return action, best_action
+        ctx.stats.evaluation_calls += 1
+        score = -evaluator.evaluate(child)
+        if score > best_score:
+            best_score = score
+            best_action = action
+        ctx.budget.check(ctx.stats)
+    ctx.stats.root_scan_seconds += time.monotonic() - started
+    return None, best_action
+
+
+def _aspiration_iteration(
+    state: GameState,
+    depth: int,
+    prev_score: int,
+    ctx: _Context,
+) -> SearchResult:
+    """One depth with an aspiration window around the previous iteration score."""
+    delta = ctx.tuning.aspiration_delta
+    alpha = max(-INF, prev_score - delta)
+    beta = min(INF, prev_score + delta)
+    failures = 0
+    while True:
+        result = negamax(state, depth, alpha, beta, 0, ctx)
+        if result.score <= alpha:
+            ctx.stats.aspiration_fail_low += 1
+            ctx.stats.aspiration_researches += 1
+            failures += 1
+            if failures >= 2:
+                alpha, beta = -INF, INF
+            else:
+                delta *= 2
+                alpha = max(-INF, result.score - delta)
+                beta = min(INF, beta)
+        elif result.score >= beta:
+            ctx.stats.aspiration_fail_high += 1
+            ctx.stats.aspiration_researches += 1
+            failures += 1
+            if failures >= 2:
+                alpha, beta = -INF, INF
+            else:
+                delta *= 2
+                alpha = max(-INF, alpha)
+                beta = min(INF, result.score + delta)
+        else:
+            return result
+
+
 def run_root_search(
     state: GameState,
     compiled,
@@ -311,6 +456,7 @@ def run_root_search(
     *,
     use_tt: bool,
     use_ordering: bool,
+    tuning: SearchTuning = SearchTuning(),
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
@@ -336,11 +482,26 @@ def run_root_search(
         tt,
         stats,
         budget,
+        tuning,
         use_tt,
         use_ordering,
         limits.quiescence_max_depth,
         limits.quiescence_max_nodes,
     )
+
+    immediate_win: Action | None = None
+    scan_best: Action | None = None
+    if tuning.use_root_tactical:
+        try:
+            immediate_win, scan_best = root_tactical_scan(state, compiled, evaluator, ctx)
+        except SearchAborted as exc:
+            stats.termination_reason = str(exc)
+            fallback = sorted(actions, key=str)[0]
+            return fallback, 0, (), stats.termination_reason
+    if immediate_win is not None:
+        stats.termination_reason = "root_immediate_win"
+        return immediate_win, MATE_SCORE - 1, (immediate_win,), stats.termination_reason
+
     max_depth = limits.max_depth if limits.max_depth is not None else 64
     best: SearchResult | None = None
     abort_reason: str | None = None
@@ -350,8 +511,17 @@ def run_root_search(
         except SearchAborted as exc:
             abort_reason = str(exc)
             break
+        prev_score = best.score if best is not None else None
         try:
-            best = negamax(state, depth, -INF, INF, 0, ctx)
+            if (
+                tuning.use_aspiration
+                and depth >= tuning.aspiration_start_depth
+                and prev_score is not None
+                and abs(prev_score) < MATE_THRESHOLD
+            ):
+                best = _aspiration_iteration(state, depth, prev_score, ctx)
+            else:
+                best = negamax(state, depth, -INF, INF, 0, ctx)
         except SearchAborted as exc:
             abort_reason = str(exc)
             break
@@ -364,7 +534,11 @@ def run_root_search(
         stats.termination_reason = "completed_depth" if abort_reason is None else abort_reason
         return best.best_action, best.score, best.pv, stats.termination_reason
 
-    # No full iteration completed: deterministic safe fallback.
+    # No full iteration completed: prefer the root scan's best action.
+    if tuning.use_root_tactical and scan_best is not None:
+        stats.root_scan_used_fallback = True
+        stats.termination_reason = "fallback"
+        return scan_best, 0, (), stats.termination_reason
     fallback = sorted(actions, key=str)[0]
     stats.termination_reason = "fallback"
     return fallback, 0, (), stats.termination_reason

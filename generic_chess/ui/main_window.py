@@ -64,10 +64,10 @@ class _AiThread(QThread):
     progress_signal = Signal(int, int, int)
     error_signal = Signal(str)
 
-    def __init__(self, controller, player, token) -> None:
+    def __init__(self, player, snapshot, token) -> None:
         super().__init__()
-        self._controller = controller
         self._player = player
+        self._snapshot = snapshot
         self._token = token
 
     def run(self) -> None:
@@ -75,10 +75,9 @@ class _AiThread(QThread):
             def progress(depth: int, nodes: int, qnodes: int) -> None:
                 self.progress_signal.emit(depth, nodes, qnodes)
 
-            limits = self._controller.ai_limits()
             decision = self._player.choose_action(
-                self._controller.session,
-                limits,
+                self._snapshot.session,
+                self._snapshot.limits,
                 cancel_token=self._token,
                 progress_callback=progress,
             )
@@ -104,6 +103,7 @@ class MainWindow(QMainWindow):
         self._theme = default_theme()
         self._promotion_open = False
         self._ai_error: str | None = None
+        self._closing_after_ai = False
         self.setWindowTitle("GenericChess")
 
         controller.interaction.orientation_owner = int(
@@ -468,9 +468,10 @@ class MainWindow(QMainWindow):
             return
         self._ai_error = None
         token = CancellationToken()
-        if not self._controller.begin_ai_move(token):
+        snapshot = self._controller.capture_ai_search(token)
+        if snapshot is None:
             return
-        thread = _AiThread(self._controller, self._ai_player, token)
+        thread = _AiThread(self._ai_player, snapshot, token)
         thread.progress_signal.connect(self._on_ai_progress)
         thread.finished_signal.connect(self._on_ai_finished)
         thread.error_signal.connect(self._on_ai_error)
@@ -494,7 +495,11 @@ class MainWindow(QMainWindow):
         self._ai_thread = None
         if thread is not None:
             thread.deleteLater()
-        self._controller.finish_ai_move(_decision)
+        snapshot = getattr(thread, "_snapshot", None)
+        self._controller.finish_ai_move(_decision, snapshot)
+        if self._closing_after_ai:
+            self.close()
+            return
         self._refresh()
         if not self._controller.ai_stop_requested:
             self._maybe_start_ai()
@@ -533,23 +538,23 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------ slots
 
     def _open_ruleset(self) -> None:
-        self._cancel_ai_state()
         path, _ = QFileDialog.getOpenFileName(self, "Open RuleSet", "", "JSON files (*.json)")
         if not path:
             return
+        self._cancel_ai_state()
         if not self._controller.open_ruleset(path):
             show_error(self, "Open RuleSet", self._controller.last_error)
             return
         self._board_view.fit_board()
 
     def _open_record(self) -> None:
-        self._cancel_ai_state()
         if self._controller.compiled is None:
             show_info(self, "Open Record", "Load a RuleSet first (File > Open RuleSet).")
             return
         path, _ = QFileDialog.getOpenFileName(self, "Open Record", "", "JSON files (*.json)")
         if not path:
             return
+        self._cancel_ai_state()
         if not self._controller.open_record(path):
             show_error(self, "Open Record", self._controller.last_error)
             return
@@ -730,9 +735,18 @@ class MainWindow(QMainWindow):
         self._act_legal.setChecked(bool(self._settings.get(KEY_SHOW_LEGAL_MOVES, True)))
         self._act_lastmove.setChecked(bool(self._settings.get(KEY_SHOW_LAST_MOVE, True)))
 
-    def closeEvent(self, event) -> None:
+    def _save_window_state(self) -> None:
         self._settings.set(KEY_WINDOW_GEOMETRY, self.saveGeometry())
         self._settings.set(KEY_SPLITTER_STATE, self._splitter.saveState())
         self._settings.set(KEY_SHOW_SIDEBAR, self._act_sidebar.isChecked())
         self._settings.set(KEY_SHOW_TOOLBAR, self._act_toolbar.isChecked())
+
+    def closeEvent(self, event) -> None:
+        if self._ai_thread is not None and self._ai_thread.isRunning():
+            self._controller.cancel_ai()
+            self._closing_after_ai = True
+            self._status_main.setText("Stopping AI…")
+            event.ignore()
+            return
+        self._save_window_state()
         super().closeEvent(event)

@@ -627,3 +627,99 @@ def test_cancel_ai_state_keeps_running_thread_reference(qapp):
     thread.requestInterruption()
     thread.wait(5000)
     win._ai_thread = None
+
+
+def test_open_ruleset_cancel_preserves_ai_player(qapp, monkeypatch):
+    from PySide6.QtWidgets import QFileDialog
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    sentinel = object()
+    win._ai_player = sentinel
+    monkeypatch.setattr(
+        QFileDialog,
+        "getOpenFileName",
+        staticmethod(lambda *a, **k: ("", "")),
+    )
+    win._open_ruleset()
+    assert win._ai_player is sentinel  # cancel must not destroy the AI player
+
+
+def test_open_record_cancel_preserves_ai_player(qapp, monkeypatch):
+    from PySide6.QtWidgets import QFileDialog
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    sentinel = object()
+    win._ai_player = sentinel
+    monkeypatch.setattr(
+        QFileDialog,
+        "getOpenFileName",
+        staticmethod(lambda *a, **k: ("", "")),
+    )
+    win._open_record()
+    assert win._ai_player is sentinel
+
+
+def test_close_waits_for_ai_thread_then_closes(qapp):
+    import time as _time
+    from types import SimpleNamespace
+
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    class SlowPlayer:
+        def choose_action(
+            self, session, limits, cancel_token=None, progress_callback=None
+        ):
+            while cancel_token is None or not cancel_token.is_cancelled():
+                _time.sleep(0.02)
+            return SimpleNamespace(
+                action=None,
+                score=0,
+                principal_variation=(),
+                completed_depth=0,
+                selective_depth=0,
+                nodes=0,
+                qnodes=0,
+                elapsed_seconds=0.0,
+                tt_probes=0,
+                tt_hits=0,
+                tt_cutoffs=0,
+                beta_cutoffs=0,
+                evaluation_profile_cache_hit=False,
+                termination_reason="cancelled",
+            )
+
+    settings = DictSettingsStore()
+    ctrl = UIController(settings=settings)
+    ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    win.show()
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    win._ai_player = SlowPlayer()
+    win._maybe_start_ai()
+    assert ctrl.ai_thinking
+
+    win.close()
+    assert win.isVisible()  # closeEvent ignored while the AI thread runs
+    assert win._closing_after_ai
+    assert "Stopping AI" in win._status_main.text()
+
+    deadline = _time.monotonic() + 10
+    while _time.monotonic() < deadline and win.isVisible():
+        qapp.processEvents()
+        _time.sleep(0.02)
+    assert not win.isVisible()  # closed after the worker finished
+    assert not ctrl.ai_thinking

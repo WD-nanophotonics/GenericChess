@@ -123,3 +123,52 @@ checking-drop 扩展；Monte Carlo fallback 仅覆盖重叠/混合 atom 类型�
 
 另：时钟语义是非对称的（AI 超时判负、人类永不判负），这是产品决策而非实现缺陷；UI 已明确
 标注“AI 超时判负；人类时钟仅供参考，永不判负”。
+
+## 搜索实验框架（0.6.0）
+
+### SearchTuning 与消融
+
+`SearchTuning`（frozen dataclass）把高级搜索技术做成独立开关：`use_pvs`、
+`use_aspiration`、`use_staged_move_picker`、`use_countermove`、
+`use_mate_distance_pruning` 默认 False，`use_root_tactical` 默认 True（只影响 fallback）；
+另有 `check_evasion_max_depth`、aspiration 参数、history 上限与 quiet 分桶数。桌面 UI 使用
+默认值；benchmark profile 逐个开启并测量，功能不会因“理论上更高级”而自动进入 UI。
+
+### 搜索热路径
+
+* PVS：首候选全窗口，后续候选 null-window，落在 `(alpha, beta)` 内才重搜；
+* aspiration：深度 ≥ `aspiration_start_depth` 且分数远离 mate 时用窄窗，fail-low/high
+  加倍扩窗、连续两次失败回退全窗（同深度循环，窗口成功才推进深度）；
+* root tactical scan：ID 前扫描全部根后继（先找将死立即返回，否则按快评取最优），无完整
+  迭代时 fallback 用扫描最优而非字典序首动作；扫描计入节点预算；
+* staged move picker：TT → 有利捕获（rule-derived MVV-LVA）→ 高收益升变 → killer/
+  countermove → history 分桶 quiet → 普通 quiet → 亏损捕获；单次分类、按阶段惰性产出。
+  checking 动作阶段因需逐动作将军探测（一次 movegen）暂缓，文档记录；
+* countermove：`prev_action → response` 表（Action 对象作 key），beta cutoff 时记录；
+  history 用 `(side, Action)` 键并封顶 `history_max`；
+* mate-distance pruning：`negamax` 入口把窗口钳到 `[-MATE+ply, MATE-ply-1]`，精确不改变
+  结果；
+* check-evasion qsearch：到达 `check_evasion_max_depth` 或 qnode 上限时抛 `SearchAborted`
+  中止当前迭代（不返回静态评价），`run_root_search` 返回上一个完整深度或 fallback。
+
+### Benchmark 设计
+
+固定 seed RuleSet 套件（`generic_chess.ai.benchmark.suite` 的 `DEFAULT_SUITE`）× 每个
+RuleSet 的固定开局（用 `random.Random(f"{seed}:{plies}")` 确定性重放）× 双方换先 × 预算档位。
+`run_benchmark` 通过 `GameSession` 公共语义落子，按 Core 终局判胜负；手数上限记
+`unresolved`；fallback 或超时（`max(50ms, 5%)`）的局不计入棋力得分；`events.jsonl` 记录每手
+诊断，`summary.json` 汇总 eligible/unresolved/fallback/换先配对，`--resume` 跳过已完成对局。
+
+### 与 UI 的边界
+
+AI worker 只读 GUI 线程冻结的 `SearchSnapshot`（session/limits/fingerprint/root
+key/generation），结束后按 snapshot 与当前 generation/root key/fingerprint 比对丢弃陈旧结果；
+`SearchBackend` 协议隔离搜索实现，UI/benchmark 不依赖具体后端。
+
+### 后续阶段（Phase 3-5，本设计不含实现）
+
+Phase 3 热路径：增量 material/hand/promotion evaluator、fast/exact 评价边界、可复用攻击
+scratch、compact action key（避免热路径 `str(action)`）、增量 position hash。Phase 4 保守战术
+组件：generic SEE（先只排序）、有严格上界后的 lazy full evaluation、bounded mate prover、
+checking-action 分类。Phase 5 高风险选择性搜索：LMR、reverse futility、razoring、null move；
+每项默认关闭、单独 profile、多 RuleSet 类别测试、与未剪枝搜索小深度一致性检查。

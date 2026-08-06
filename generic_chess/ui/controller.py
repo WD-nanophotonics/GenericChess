@@ -14,6 +14,7 @@ from ..core.position import Position
 from ..ai.budget import ThinkingConfig, allocate_search_limits
 from ..ai.cancellation import CancellationToken
 from ..ai.decision import PlayerDecision
+from ..ai.alphabeta.snapshot import SearchSnapshot
 from ..ai.limits import SearchLimits
 from ..clock import ClockState, MatchClock, TimeControl, TimeControlMode
 from ..generation.config import GenerationError, GeneratorConfig
@@ -224,6 +225,20 @@ class UIController:
         self._notify()
         return True
 
+    def capture_ai_search(
+        self, cancel_token: CancellationToken | None = None
+    ) -> SearchSnapshot | None:
+        """Freeze the search input on the GUI thread before spawning a worker."""
+        if not self.begin_ai_move(cancel_token):
+            return None
+        return SearchSnapshot(
+            session=self._session,
+            limits=self.ai_limits(),
+            ruleset_fingerprint=self._ai_fingerprint,
+            root_key=self._ai_root_key,
+            generation=self._ai_search_generation,
+        )
+
     def ai_limits(self) -> SearchLimits:
         """Build the per-move search limits for the current AI turn (pure)."""
         side = self._session.state.position.side_to_move
@@ -238,9 +253,18 @@ class UIController:
             clock_state, time_control, side, move_number, self._match.ai_config
         )
 
-    def finish_ai_move(self, decision: PlayerDecision | None) -> bool:
+    def finish_ai_move(
+        self,
+        decision: PlayerDecision | None,
+        snapshot: SearchSnapshot | None = None,
+    ) -> bool:
         """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
         cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
+        snapshot_stale = snapshot is not None and (
+            snapshot.generation != self._ai_generation
+            or snapshot.root_key != self._ai_root_key
+            or snapshot.ruleset_fingerprint != self._ai_fingerprint
+        )
         session_same = (
             self._session is not None and self._ai_session is self._session
         )
@@ -257,6 +281,7 @@ class UIController:
         stale = (
             self._ai_search_generation != self._ai_generation
             or not root_same
+            or snapshot_stale
         )
         committed = False
         if (
