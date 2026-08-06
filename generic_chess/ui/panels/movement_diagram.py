@@ -24,6 +24,19 @@ RAY_VIEW_RADIUS = 3  # unlimited rays get at least a 7x7 view
 MAX_VIEW_RADIUS = 5  # at most an 11x11 full-size view; farther gets edge markers
 
 
+def diagram_cell(center: tuple[int, int], offset: tuple[int, int]) -> tuple[int, int]:
+    """Map a rule-space offset to a screen cell (Y flipped: forward = up)."""
+    cx, cy = center
+    df, dr = offset
+    return cx + df, cy - dr
+
+
+def diagram_screen_direction(direction: tuple[int, int]) -> tuple[int, int]:
+    """Map a rule-space direction to a screen-space direction (Y flipped)."""
+    df, dr = direction
+    return df, -dr
+
+
 @dataclass(frozen=True)
 class RayInfo:
     """One ray atom rendered inside the view.
@@ -242,11 +255,10 @@ class MovementDiagram(QWidget):
         painter.end()
 
     def _center_point(self, layout, origin_x, board_y, offset):
-        cx, cy = layout.center
-        df, dr = offset
+        col, row = diagram_cell(layout.center, offset)
         return QPointF(
-            origin_x + (cx + df + 0.5) * self._cell,
-            board_y + (cy + dr + 0.5) * self._cell,
+            origin_x + (col + 0.5) * self._cell,
+            board_y + (row + 0.5) * self._cell,
         )
 
     def _paint_forward_label(self, painter, layout, origin_x, board_y) -> None:
@@ -299,18 +311,20 @@ class MovementDiagram(QWidget):
             for a, b in zip(points, points[1:]):
                 painter.drawLine(a, b)
             end = points[-1]
-            df, dr = ray.direction
             if ray.clipped or ray.unlimited:
-                self._draw_arrow(painter, end, (df, dr), QColor(theme.diagram_arrow))
+                sdf, sdr = diagram_screen_direction(ray.direction)
+                self._draw_arrow(
+                    painter, end, (sdf, sdr), QColor(theme.diagram_arrow)
+                )
                 if ray.unlimited:
                     painter.setPen(QColor(theme.diagram_arrow))
                     font = QFont(self.font())
                     font.setPointSize(max(8, self.font().pointSize() - 1))
                     painter.setFont(font)
                     label_rect = QRectF(end.x(), end.y(), 18, 14)
-                    if df < 0:
+                    if sdf < 0:
                         label_rect.moveLeft(end.x() - 18)
-                    if dr < 0:
+                    if sdr < 0:
                         label_rect.moveTop(end.y() - 14)
                     painter.drawText(label_rect, Qt.AlignCenter, "∞")
             else:
@@ -351,12 +365,17 @@ class MovementDiagram(QWidget):
         painter.setFont(font)
         painter.setPen(QColor(theme.diagram_leap))
         for direction, offset in layout.clipped_leaps:
-            edge = (
-                layout.center[0] + direction[0] * layout.center[0],
-                layout.center[1] + direction[1] * layout.center[1],
+            edge_offset = (
+                direction[0] * layout.center[0],
+                direction[1] * layout.center[1],
             )
-            point = self._center_point(layout, origin_x, board_y, edge)
-            self._draw_arrow(painter, point, direction, QColor(theme.diagram_leap))
+            point = self._center_point(layout, origin_x, board_y, edge_offset)
+            self._draw_arrow(
+                painter,
+                point,
+                diagram_screen_direction(direction),
+                QColor(theme.diagram_leap),
+            )
             df, dr = offset
             label = f"+{abs(df)},{abs(dr)}"
             rect = QRectF(point.x() - 20, point.y() - 16, 40, 14)

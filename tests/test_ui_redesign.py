@@ -18,7 +18,11 @@ from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.rules.schema import RuleSet
 from generic_chess.ui.controller import UIController
 from generic_chess.ui.main_window import MainWindow
-from generic_chess.ui.panels.movement_diagram import compute_diagram_layout
+from generic_chess.ui.panels.movement_diagram import (
+    compute_diagram_layout,
+    diagram_cell,
+    diagram_screen_direction,
+)
 from generic_chess.ui.settings import (
     KEY_LANGUAGE,
     KEY_SHOW_DEV_STATUS,
@@ -581,6 +585,56 @@ def test_diagram_large_leap_uses_edge_marker_not_silent_drop():
     direction, offset = layout.clipped_leaps[0]
     assert offset == (8, 4)
     assert direction == (1, 1)
+
+
+def test_diagram_cell_forward_maps_above_center():
+    assert diagram_cell((2, 2), (0, 1)) == (2, 1)
+
+
+def test_diagram_cell_backward_maps_below_center():
+    assert diagram_cell((2, 2), (0, -1)) == (2, 3)
+
+
+def test_diagram_cell_forward_diagonal_preserves_left_right():
+    assert diagram_cell((4, 4), (-1, 3)) == (3, 1)
+    assert diagram_cell((4, 4), (1, 3)) == (5, 1)
+
+
+def test_diagram_screen_direction_flips_only_y():
+    assert diagram_screen_direction((2, 1)) == (2, -1)
+    assert diagram_screen_direction((-2, -1)) == (-2, 1)
+
+
+def test_center_point_maps_forward_above_center(qapp):
+    from generic_chess.ui.board.texture_cache import TextureCache
+    from generic_chess.ui.i18n.manager import LocalizationManager
+    from generic_chess.ui.panels.movement_diagram import MovementDiagram
+    from generic_chess.ui.theme import default_theme
+
+    widget = MovementDiagram(
+        TextureCache(), default_theme(), LocalizationManager("en")
+    )
+    layout = compute_diagram_layout((LeapAtom((0, 1)), LeapAtom((0, -1))))
+    widget._layout = layout
+    widget._cell = 10
+    forward = widget._center_point(layout, 0, 0, (0, 1))
+    backward = widget._center_point(layout, 0, 0, (0, -1))
+    center = widget._center_point(layout, 0, 0, (0, 0))
+    assert forward.y() < center.y() < backward.y()
+    assert forward.x() == center.x() == backward.x()
+
+
+def test_diagram_clipped_markers_inside_view():
+    layout = compute_diagram_layout((LeapAtom((8, 4)),))
+    assert layout.clipped_leaps
+    for direction, _offset in layout.clipped_leaps:
+        edge_offset = (
+            direction[0] * layout.center[0],
+            direction[1] * layout.center[1],
+        )
+        col, row = diagram_cell(layout.center, edge_offset)
+        assert 0 <= col < layout.cols
+        assert 0 <= row < layout.rows
 
 
 def test_rules_panel_diagram_populated_and_localized(qapp):
