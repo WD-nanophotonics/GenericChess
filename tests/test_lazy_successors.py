@@ -92,6 +92,27 @@ def test_handle_rejected_on_wrong_state():
         materialize_legal_successor(state_b, handle, compiled)
 
 
+def test_handle_cannot_be_forged():
+    from generic_chess.core.lazy_transitions import LegalSuccessorHandle
+
+    compiled = build_4x4_rooks()
+    state = GameSession(compiled).state
+    with pytest.raises(TypeError):
+        LegalSuccessorHandle(
+            legal_successor_handles(state, compiled)[0].action,
+            state,
+        )
+    # Even bypassing __init__ via object.__new__, materialization must refuse.
+    forged = object.__new__(LegalSuccessorHandle)
+    forged.action = legal_successor_handles(state, compiled)[0].action
+    forged._parent = state
+    forged._issuer = object()
+    forged._child = None
+    forged._child_key = None
+    with pytest.raises(IllegalActionError):
+        materialize_legal_successor(state, forged, compiled)
+
+
 def _perft(compiled, state, depth):
     if depth <= 0:
         return 1

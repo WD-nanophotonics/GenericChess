@@ -25,6 +25,9 @@ if TYPE_CHECKING:
     from ..rules.compiled import CompiledRuleSet
 
 
+_ISSUER = object()
+
+
 class LegalSuccessorHandle:
     """A Core-issued, already-verified legal action with lazy child state.
 
@@ -32,11 +35,23 @@ class LegalSuccessorHandle:
     :func:`legal_successor_handles` for the state they belong to.
     """
 
-    __slots__ = ("action", "_parent", "_child", "_child_key")
+    __slots__ = ("action", "_parent", "_issuer", "_child", "_child_key")
 
-    def __init__(self, action: Action, parent: GameState) -> None:
+    def __init__(
+        self,
+        action: Action,
+        parent: GameState,
+        *,
+        _issuer=None,
+    ) -> None:
+        if _issuer is not _ISSUER:
+            raise TypeError(
+                "LegalSuccessorHandle must be issued by Core; "
+                "construct it only via legal_successor_handles()"
+            )
         self.action = action
         self._parent = parent
+        self._issuer = _issuer
         self._child: GameState | None = None
         self._child_key: str | None = None
 
@@ -54,7 +69,9 @@ def legal_successor_handles(
     if state.terminal_status.status is not TerminalStatus.ONGOING:
         return ()
     actions = legal_actions_from_position(state.position, compiled)
-    return tuple(LegalSuccessorHandle(action, state) for action in actions)
+    return tuple(
+        LegalSuccessorHandle(action, state, _issuer=_ISSUER) for action in actions
+    )
 
 
 def materialize_legal_successor(
@@ -64,6 +81,10 @@ def materialize_legal_successor(
 ) -> tuple[GameState, str]:
     """Materialize (once) the verified child state and its position key."""
     ensure_ruleset_match(state.position, compiled)
+    if handle._issuer is not _ISSUER:
+        raise IllegalActionError(
+            "legal successor handle was not issued by Core"
+        )
     if handle._parent is not state:
         raise IllegalActionError(
             "legal successor handle does not belong to the given state"

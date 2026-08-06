@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "generic-chess"
-version = "0.6.0"
+version = "0.7.0a1"
 description = "Deterministic generic chess/shogi-like game engine: core kernel, RuleSet compiler, and generator."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -19,6 +19,17 @@ generic-chess-ui = "generic_chess.ui.app:main"
 
 [tool.setuptools.packages.find]
 include = ["generic_chess*"]
+
+[tool.setuptools.ext-modules]
+"generic_chess._native_core" = { sources = [
+  "generic_chess/_native/native_module.c",
+  "generic_chess/_native/native_rules.c",
+  "generic_chess/_native/native_state.c",
+  "generic_chess/_native/native_hash.c",
+  "generic_chess/_native/native_attack.c",
+  "generic_chess/_native/native_movegen.c",
+  "generic_chess/_native/native_perft.c",
+], optional = true }
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
