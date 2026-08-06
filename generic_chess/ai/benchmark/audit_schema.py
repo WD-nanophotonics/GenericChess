@@ -122,3 +122,33 @@ def medians_min_max(values: list[float]) -> dict[str, float]:
         "max": ordered[-1],
         "count": n,
     }
+
+
+LATEST_SUMMARY_SCHEMA_VERSION = 2
+
+
+def validate_latest_summary(raw: Mapping[str, Any]) -> None:
+    """Validate the machine-readable audit summary (schema v2)."""
+    version = raw.get("schema_version")
+    if version != LATEST_SUMMARY_SCHEMA_VERSION:
+        raise ValueError(
+            f"audit summary schema_version must be {LATEST_SUMMARY_SCHEMA_VERSION}, "
+            f"got {version!r}; regenerate with the current tooling (v1 summaries "
+            "are not silently readable)"
+        )
+    for key in ("environment", "suite", "node_budget"):
+        if key not in raw:
+            raise ValueError(f"audit summary missing required field {key!r}")
+    suite = raw["suite"]
+    for key in ("executed_ruleset_count", "executed_position_count"):
+        if key not in suite:
+            raise ValueError(f"audit summary suite missing {key!r}")
+    for key in ("requested_budget_tiers", "completed_budget_tiers"):
+        if key not in raw:
+            raise ValueError(f"audit summary missing {key!r}")
+    for budget, block in raw["node_budget"].items():
+        results = block.get("results", [])
+        for row in results:
+            for key in ("main_nodes", "qnodes", "total_nodes", "main_nps", "q_nps", "total_nps"):
+                if key not in row:
+                    raise ValueError(f"node_budget row missing {key!r}")

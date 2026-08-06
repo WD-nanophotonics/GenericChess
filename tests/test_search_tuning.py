@@ -22,7 +22,6 @@ def test_tuning_defaults():
     assert t.use_countermove is False
     assert t.use_mate_distance_pruning is False
     assert t.use_root_tactical is True  # user-confirmed default
-    assert t.check_evasion_max_depth == 8
     assert t.aspiration_start_depth == 4
     assert t.history_max == 2**16
 
@@ -91,8 +90,10 @@ def test_python_search_backend_returns_decision():
 
 def test_statistics_has_lab_fields():
     s = SearchStatistics()
-    assert s.q_evasion_truncations == 0
-    assert s.q_budget_truncations == 0
+    assert s.qsearch_check_hard_limit_aborts == 0
+    assert s.qsearch_budget_aborts == 0
+    assert s.in_check_qnodes == 0
+    assert s.checking_drop_qactions == 0
     assert s.pvs_null_window_searches == 0
     assert s.aspiration_fail_low == 0
     assert s.root_scan_nodes == 0

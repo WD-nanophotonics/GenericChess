@@ -11,12 +11,14 @@ Examples::
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import shutil
 import sys
 from pathlib import Path
 
 import json
 
+from ..alphabeta.tuning import SearchTuning
 from ..benchmark.audit_report import merge_summaries, write_csv_detail, write_reports
 from ..benchmark.correctness_corpus import write_corpus
 from ..benchmark.native_readiness import (
@@ -47,6 +49,11 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--repeats", type=int, default=3, help="measured repeats after warm-up")
     parser.add_argument("--instrument", action="store_true", help="run instrumented audit subset")
+    parser.add_argument(
+        "--lazy-successors",
+        action="store_true",
+        help="experimental: use lazy successor handles (A/B via SearchTuning)",
+    )
     parser.add_argument("--out", default="artifacts/native_readiness/latest")
     parser.add_argument("--positions-limit", type=int, default=None)
     parser.add_argument(
@@ -132,6 +139,11 @@ def main(argv: list[str] | None = None) -> int:
             run_profiler=args.profiler,
             profile_fixture_count=args.profile_fixtures,
         )
+        if args.lazy_successors:
+            config = dataclasses.replace(
+                config,
+                tuning=SearchTuning(use_lazy_successors=True),
+            )
         summary = run_audit(config)
         if args.merge:
             with open(args.merge, encoding="utf-8") as fh:

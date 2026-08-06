@@ -30,8 +30,13 @@ def render_markdown(summary: dict) -> str:
     lines.append("## 2. Suite")
     lines.append("")
     lines.append(f"* suite version: {suite.get('name', 'n/a')}")
-    lines.append(f"* RuleSet 数: {suite.get('ruleset_count', 0)}")
-    lines.append(f"* position 数: {suite.get('position_count', 0)}")
+    lines.append(f"* manifest RuleSet 数: {suite.get('full_suite', {}).get('ruleset_count', suite.get('ruleset_count', 0))}")
+    lines.append(f"* manifest position 数: {suite.get('full_suite', {}).get('position_count', suite.get('position_count', 0))}")
+    lines.append(f"* executed RuleSet 数: {suite.get('executed_ruleset_count', suite.get('ruleset_count', 0))}")
+    lines.append(f"* executed position 数: {suite.get('executed_position_count', suite.get('position_count', 0))}")
+    lines.append(f"* requested budget tiers: {summary.get('requested_budget_tiers', [])}")
+    lines.append(f"* completed budget tiers: {summary.get('completed_budget_tiers', [])}")
+    lines.append(f"* skipped/timeout/failed runs: {summary.get('skipped_runs', 0)}/{summary.get('timeout_runs', 0)}/{summary.get('failed_runs', 0)}")
     lines.append(f"* 棋盘尺寸: {suite.get('board_sizes', [])}")
     lines.append(f"* movement 分桶: {suite.get('movement_buckets', [])}")
     lines.append(f"* promotion 分桶: {suite.get('promotion_buckets', [])}")
@@ -46,27 +51,38 @@ def render_markdown(summary: dict) -> str:
         agg = block.get("summary", {})
         lines.append(f"### {budget} nodes（fixtures: {block.get('fixtures', 0)}，runs: {agg.get('runs', 0)}）")
         lines.append("")
-        lines.append(f"* NPS median/min/max: {agg.get('nodes_per_second', {})}")
+        lines.append(f"* total_nps median/min/max: {agg.get('total_nps', {})}")
+        lines.append(f"* main_nps median: {agg.get('main_nps', {}).get('median')}")
+        lines.append(f"* q_nps median: {agg.get('q_nps', {}).get('median')}")
         lines.append(f"* completed depth median: {agg.get('completed_depth', {}).get('median')}")
         lines.append(f"* qnode ratio median: {agg.get('qnode_ratio', {}).get('median')}")
+        lines.append(f"* qnode share median: {agg.get('qnode_share', {}).get('median')}")
         lines.append(f"* TT hit rate median: {agg.get('tt_hit_rate', {}).get('median')}")
         lines.append(f"* fallback runs: {agg.get('fallback_runs', 0)}")
         lines.append(f"* by board size: {agg.get('by_board_size', {})}")
+        lines.append(f"* by board size (total_nps): {agg.get('by_board_size_total_nps', {})}")
         lines.append(f"* by movement bucket: {agg.get('by_movement_bucket', {})}")
+        lines.append(f"* by movement bucket (total_nps): {agg.get('by_movement_bucket_total_nps', {})}")
         lines.append("")
 
     lines.append("## 4. 子系统占比（instrumented）")
     lines.append("")
     instrumented = summary.get("instrumented", [])
     if instrumented:
+        phase = summary.get("conclusions", {}).get("phase_inclusive_shares", {})
+        lines.append("Phase inclusive shares（quiescence 为整棵 qsearch 调用树）:")
+        for name, share in sorted(phase.items()):
+            lines.append(f"* {name}: {share:.2%}")
         shares = summary.get("conclusions", {}).get("instrumented_subsystem_shares", {})
+        lines.append("Direct-measured subsystem shares（仅 main search 中被包裹的函数调用）:")
         for name, share in sorted(shares.items()):
             lines.append(f"* {name}: {share:.2%}")
         lines.append("")
         for item in instrumented:
             lines.append(
                 f"* {item['fixture_id']}: wall={item['wall_seconds']:.3f}s "
-                f"nodes={item['nodes']} qnodes={item['qnodes']}"
+                f"nodes={item['nodes']} qnodes={item['qnodes']} "
+                f"phase={item['phase_inclusive_seconds']}"
             )
     else:
         lines.append("未启用 instrumentation（--instrument）。")
@@ -118,6 +134,42 @@ def render_markdown(summary: dict) -> str:
     for key, value in conclusions.items():
         lines.append(f"* {key}: {value}")
     lines.append("")
+    lines.append("## 9. 定向 fixture 覆盖")
+    lines.append("")
+    targeted = summary.get("targeted_fixtures", [])
+    for item in targeted:
+        lines.append(f"* {item['fixture_id']}: {item['categories']}")
+    uncovered = summary.get("targeted_categories_uncovered", [])
+    lines.append(f"* 仍缺失类别: {uncovered}")
+    lines.append("")
+
+    before_after = summary.get("before_after", {})
+    if before_after.get("fixtures"):
+        lines.append("## 10. qsearch 修改前后（同一命令，10k nodes, 1 warm-up + 3 repeats）")
+        lines.append("")
+        lines.append("| fixture | baseline wall (s) | after wall (s) | wall ratio | baseline nodes | after nodes |")
+        lines.append("| --- | ---: | ---: | ---: | ---: | ---: |")
+        for row in before_after["fixtures"]:
+            lines.append(
+                f"| {row['fixture_id']} | {row['baseline_wall_seconds']} | "
+                f"{row['after_wall_seconds']} | {row['wall_ratio']} | "
+                f"{row['baseline_total_nodes']} | {row['after_total_nodes']} |"
+            )
+        lines.append("")
+
+    lazy_ab = summary.get("lazy_successor_experiment", {})
+    if lazy_ab.get("rows"):
+        lines.append("## 11. Lazy successor 实验（eager vs lazy, 10k nodes）")
+        lines.append("")
+        lines.append("| fixture | action/depth equal | eager total_nps | lazy total_nps | lazy materialized |")
+        lines.append("| --- | --- | ---: | ---: | ---: |")
+        for row in lazy_ab["rows"]:
+            lines.append(
+                f"| {row['fixture_id']} | {row['best_action_equal'] and row['depth_equal']} | "
+                f"{row['eager']['total_nps']} | {row['lazy']['total_nps']} | "
+                f"{row['lazy_materialized']} |"
+            )
+        lines.append("")
     lines.append("* 说明：node-budget 结果受单机环境影响；子系统占比用于定位瓶颈，不代表正常运行的绝对 NPS。")
     return "\n".join(lines)
 
@@ -152,6 +204,16 @@ def merge_summaries(base: dict, extra: dict) -> dict:
         # only fills in missing budget tiers.
         node_budget.setdefault(budget, block)
     merged["node_budget"] = node_budget
+    requested = list(base.get("requested_budget_tiers") or [])
+    for tier in extra.get("requested_budget_tiers") or []:
+        if tier not in requested:
+            requested.append(tier)
+    merged["requested_budget_tiers"] = requested
+    completed = list(base.get("completed_budget_tiers") or [])
+    for tier in extra.get("completed_budget_tiers") or []:
+        if tier not in completed:
+            completed.append(tier)
+    merged["completed_budget_tiers"] = completed
     for key in (
         "instrumented",
         "instrumentation_overhead",

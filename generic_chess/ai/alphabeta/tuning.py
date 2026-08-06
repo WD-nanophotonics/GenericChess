@@ -24,8 +24,10 @@ class SearchTuning:
     use_countermove: bool = False
     use_mate_distance_pruning: bool = False
     use_root_tactical: bool = True
+    # Experimental: lazily materialize child states only when searched.
+    # Default OFF; baseline path remains the default.
+    use_lazy_successors: bool = False
 
-    check_evasion_max_depth: int = 8
     aspiration_delta: int = 50
     aspiration_start_depth: int = 4
     history_max: int = 2**16

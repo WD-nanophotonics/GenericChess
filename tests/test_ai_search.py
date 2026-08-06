@@ -225,6 +225,20 @@ def test_budget_counts_qnodes_toward_node_limit():
     assert "node_limit" in str(exc.value)
 
 
+def test_max_nodes_is_total_node_budget():
+    compiled = build_4x4_rooks()
+    player = _player(compiled, tuning=SearchTuning(use_root_tactical=False))
+    decision = player.choose_action(
+        GameSession(compiled),
+        SearchLimits(max_depth=64, max_nodes=300, quiescence_max_depth=4),
+    )
+    total = decision.nodes + decision.qnodes
+    assert total > 0
+    # Budget check runs every 128 total nodes; allow one interval overshoot.
+    assert total <= 300 + 128
+    assert decision.termination_reason == "node_limit"
+
+
 def test_budget_deadline_and_cancel_checked_during_qsearch():
     budget = _Budget(SearchLimits(max_time_seconds=0.0), None)
     stats = SearchStatistics(nodes=0, qnodes=128)
@@ -271,6 +285,7 @@ def test_quiescence_searches_evasions_when_in_check():
         True,
         True,
         4,
+        8,
         None,
     )
     q = quiescence(state, -INF, INF, 0, 0, ctx)
@@ -287,6 +302,7 @@ def test_quiescence_searches_evasions_when_in_check():
             True,
             True,
             4,
+            8,
             None,
         )
         child_scores.append(-quiescence(child, -INF, INF, 1, 1, child_ctx))

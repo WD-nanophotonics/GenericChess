@@ -6,6 +6,8 @@ import shutil
 import uuid
 from pathlib import Path
 
+import pytest
+
 from generic_chess.ai.benchmark.audit_report import (
     merge_summaries,
     render_markdown,
@@ -13,6 +15,8 @@ from generic_chess.ai.benchmark.audit_report import (
     write_csv_detail,
 )
 from generic_chess.ai.benchmark.audit_schema import medians_min_max
+from generic_chess.ai.benchmark.audit_schema import validate_latest_summary
+from generic_chess.ai.benchmark.native_readiness import _aggregate_budget
 
 
 def test_medians_min_max():
@@ -137,3 +141,63 @@ def test_merge_keeps_base_budget_when_present():
     merged = merge_summaries(base, extra)
     assert merged["node_budget"]["10000"]["fixtures"] == 15  # base wins
     assert merged["instrumented"][0]["fixture_id"] == "x"
+
+
+def test_latest_summary_schema_v2_required():
+    v1 = {"schema_version": 1, "environment": {}, "suite": {}, "node_budget": {}}
+    with pytest.raises(ValueError, match="schema_version"):
+        validate_latest_summary(v1)
+    v2 = {
+        "schema_version": 2,
+        "environment": {},
+        "suite": {
+            "executed_ruleset_count": 2,
+            "executed_position_count": 5,
+        },
+        "requested_budget_tiers": [1000],
+        "completed_budget_tiers": [1000],
+        "node_budget": {
+            "1000": {
+                "results": [
+                    {
+                        "main_nodes": 100,
+                        "qnodes": 50,
+                        "total_nodes": 150,
+                        "main_nps": 10.0,
+                        "q_nps": 5.0,
+                        "total_nps": 15.0,
+                    }
+                ]
+            }
+        },
+    }
+    validate_latest_summary(v2)
+
+
+def test_aggregate_budget_reports_all_nps_metrics():
+    rows = [
+        {
+            "fixture_id": "f",
+            "main_nodes": 100,
+            "qnodes": 900,
+            "total_nodes": 1000,
+            "main_nps": 10.0,
+            "q_nps": 90.0,
+            "total_nps": 100.0,
+            "nodes_per_second": 100.0,
+            "qnode_ratio": 9.0,
+            "qnode_share": 0.9,
+            "completed_depth": 3,
+            "tt_probes": 100,
+            "tt_hits": 10,
+            "fallback": False,
+            "board_size": 4,
+            "movement_buckets": ["ray_heavy"],
+        }
+    ]
+    agg = _aggregate_budget(rows)
+    assert agg["total_nps"]["median"] == 100.0
+    assert agg["main_nps"]["median"] == 10.0
+    assert agg["q_nps"]["median"] == 90.0
+    assert agg["qnode_share"]["median"] == 0.9
+    assert agg["qnode_ratio"]["median"] == 9.0

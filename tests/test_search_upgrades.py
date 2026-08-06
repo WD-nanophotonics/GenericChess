@@ -40,17 +40,19 @@ def _evaluator(compiled):
 
 
 def _ctx(compiled, evaluator, tuning=None, limits=None):
+    limits = limits or SearchLimits(max_depth=4, quiescence_max_depth=0)
     return _Context(
         compiled,
         evaluator,
         TranspositionTable(),
         SearchStatistics(),
-        _Budget(limits or SearchLimits(max_depth=4, quiescence_max_depth=0), None),
+        _Budget(limits, None),
         tuning or SearchTuning(),
         True,
         True,
-        0,
-        None,
+        limits.quiescence_max_depth,
+        limits.quiescence_hard_max_depth,
+        limits.quiescence_max_nodes,
     )
 
 
@@ -260,13 +262,18 @@ def test_check_evasion_hard_cap_aborts_iteration():
     ctx = _ctx(
         compiled,
         evaluator,
-        SearchTuning(check_evasion_max_depth=0),
-        SearchLimits(max_depth=2, quiescence_max_depth=4),
+        SearchTuning(),
+        SearchLimits(
+            max_depth=2,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
     )
     with pytest.raises(SearchAborted) as exc:
         quiescence(state, -INF, INF, 0, 0, ctx)
-    assert "q_evasion_depth" in str(exc.value)
-    assert ctx.stats.q_evasion_truncations >= 1
+    assert "qsearch_check_hard_limit" in str(exc.value)
+    assert ctx.stats.qsearch_check_hard_limit_aborts >= 1
+    assert ctx.stats.in_check_qnodes >= 1
 
 
 def test_check_evasion_qnode_budget_aborts_iteration():
@@ -283,12 +290,13 @@ def test_check_evasion_qnode_budget_aborts_iteration():
         True,
         True,
         4,
+        8,
         qnode_limit=1,
     )
     with pytest.raises(SearchAborted) as exc:
         quiescence(state, -INF, INF, 0, 0, ctx)
-    assert "q_budget" in str(exc.value)
-    assert ctx.stats.q_budget_truncations >= 1
+    assert "qsearch_budget" in str(exc.value)
+    assert ctx.stats.qsearch_budget_aborts >= 1
 
 
 def test_full_candidate_keeps_mate_ruleset_optimal():

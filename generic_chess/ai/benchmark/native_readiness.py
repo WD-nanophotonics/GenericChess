@@ -50,6 +50,7 @@ from .audit_suite import (
     standard_ruleset_specs,
 )
 from .position_mining import mine_suite
+from .targeted_fixtures import build_targeted_fixtures, uncovered_targeted_categories
 
 
 @dataclass(frozen=True, slots=True)
@@ -197,9 +198,36 @@ def _run_budget_fixture(
                 "repeat": repeat,
                 "nodes": decision.nodes,
                 "qnodes": decision.qnodes,
+                "main_nodes": decision.nodes,
+                "total_nodes": decision.nodes + decision.qnodes,
                 "elapsed_seconds": elapsed,
-                "nodes_per_second": round(decision.nodes / elapsed, 1) if elapsed else 0.0,
-                "qnode_ratio": round(decision.qnodes / max(1, decision.nodes), 3),
+                "main_nps": round(decision.nodes / elapsed, 1) if elapsed else 0.0,
+                "q_nps": round(decision.qnodes / elapsed, 1) if elapsed else 0.0,
+                "total_nps": (
+                    round((decision.nodes + decision.qnodes) / elapsed, 1)
+                    if elapsed
+                    else 0.0
+                ),
+                # Deprecated alias kept for old consumers; it equals total_nps.
+                "nodes_per_second": (
+                    round((decision.nodes + decision.qnodes) / elapsed, 1)
+                    if elapsed
+                    else 0.0
+                ),
+                "qnode_ratio": (
+                    round(decision.qnodes / decision.nodes, 3)
+                    if decision.nodes > 0
+                    else None
+                ),
+                "qnode_share": (
+                    round(
+                        decision.qnodes
+                        / (decision.nodes + decision.qnodes),
+                        3,
+                    )
+                    if (decision.nodes + decision.qnodes) > 0
+                    else 0.0
+                ),
                 "completed_depth": decision.completed_depth,
                 "selective_depth": decision.selective_depth,
                 "termination_reason": decision.termination_reason,
@@ -219,17 +247,24 @@ def _run_budget_fixture(
 
 
 def _aggregate_budget(rows: list[dict]) -> dict:
-    nps = [r["nodes_per_second"] for r in rows]
+    total_nps = [r["total_nps"] for r in rows]
+    main_nps = [r["main_nps"] for r in rows]
+    q_nps = [r["q_nps"] for r in rows]
     depths = [r["completed_depth"] for r in rows]
     qratio = [r["qnode_ratio"] for r in rows]
+    qshare = [r["qnode_share"] for r in rows]
     tt_rate = [
         r["tt_hits"] / r["tt_probes"] if r["tt_probes"] else 0.0 for r in rows
     ]
     return {
         "runs": len(rows),
-        "nodes_per_second": medians_min_max(nps),
+        "main_nps": medians_min_max(main_nps),
+        "q_nps": medians_min_max(q_nps),
+        "total_nps": medians_min_max(total_nps),
+        "deprecated_nodes_per_second": medians_min_max(total_nps),
         "completed_depth": medians_min_max([float(d) for d in depths]),
         "qnode_ratio": medians_min_max(qratio),
+        "qnode_share": medians_min_max(qshare),
         "tt_hit_rate": medians_min_max(tt_rate),
         "fallback_runs": sum(1 for r in rows if r["fallback"]),
         "by_board_size": {
@@ -245,6 +280,18 @@ def _aggregate_budget(rows: list[dict]) -> dict:
                     for r in rows
                     if bucket in r["movement_buckets"]
                 ]
+            )
+            for bucket in sorted({b for r in rows for b in r["movement_buckets"]})
+        },
+        "by_board_size_total_nps": {
+            str(size): medians_min_max(
+                [r["total_nps"] for r in rows if r["board_size"] == size]
+            )
+            for size in sorted({r["board_size"] for r in rows})
+        },
+        "by_movement_bucket_total_nps": {
+            bucket: medians_min_max(
+                [r["total_nps"] for r in rows if bucket in r["movement_buckets"]]
             )
             for bucket in sorted({b for r in rows for b in r["movement_buckets"]})
         },
@@ -271,19 +318,24 @@ def _run_instrumented(
     decision = player.choose_action(session, limits, recorder=recorder)
     wall = time.perf_counter() - started
     snap = recorder.snapshot()
-    times = {str(k): v for k, v in snap["times"].items()}
-    accounted = sum(times.values())
-    other = max(0.0, wall - accounted)
-    subsystems = {}
-    for name in ("MOVE_GEN", "TT_KEY", "TT_PROBE_STORE", "ORDERING", "EVALUATION", "QUIESCENCE"):
-        value = times.get(name, 0.0)
-        subsystems[name.lower()] = {
-            "seconds": value,
-            "share": round(value / wall, 4) if wall else 0.0,
-        }
-    subsystems["other"] = {
-        "seconds": other,
-        "share": round(other / wall, 4) if wall else 0.0,
+    times = dict(snap["times"])
+    # Phase timing is inclusive: quiescence is measured around the whole
+    # qsearch call tree; main_search is the remaining wall time.
+    quiescence_inclusive = times.get("QUIESCENCE", 0.0)
+    main_inclusive = max(0.0, wall - quiescence_inclusive)
+    # Subsystem timing is direct-measured: only the specific wrapped function
+    # calls (these occur in main search; qsearch-internal calls are inside the
+    # quiescence phase and are not split further in this version).
+    subsystem = {
+        "move_generation": times.get("MOVE_GEN", 0.0),
+        "position_key": times.get("TT_KEY", 0.0),
+        "tt": times.get("TT_PROBE_STORE", 0.0),
+        "ordering": times.get("ORDERING", 0.0),
+        "evaluation": times.get("EVALUATION", 0.0),
+    }
+    subsystem_shares = {
+        name: round(seconds / wall, 4) if wall else 0.0
+        for name, seconds in subsystem.items()
     }
     return {
         "fixture_id": pos.fixture_id,
@@ -292,7 +344,15 @@ def _run_instrumented(
         "nodes": decision.nodes,
         "qnodes": decision.qnodes,
         "wall_seconds": wall,
-        "subsystems": subsystems,
+        "phase_inclusive_seconds": {
+            "main_search": round(main_inclusive, 6),
+            "quiescence": round(quiescence_inclusive, 6),
+        },
+        "subsystem_seconds": {
+            name: round(seconds, 6) for name, seconds in subsystem.items()
+        },
+        "subsystem_shares": subsystem_shares,
+        "subsystem_timing_mode": "direct_measured",
         "counts": snap["counts"],
     }
 
@@ -471,10 +531,24 @@ def run_audit(config: AuditConfig) -> dict:
     if config.run_profiler:
         profiler = _run_profiler_subset(classified, compiled_map, positions, config, out)
 
+    targeted = [
+        {
+            "fixture_id": fixture.fixture_id,
+            "categories": list(fixture.expected_categories),
+        }
+        for fixture in build_targeted_fixtures()
+    ]
     summary = {
-        "schema_version": 1,
+        "schema_version": 2,
         "environment": env,
         "suite": suite_stats,
+        "requested_budget_tiers": list(config.node_budgets),
+        "completed_budget_tiers": [int(b) for b in node_budget],
+        "skipped_runs": 0,
+        "timeout_runs": 0,
+        "failed_runs": 0,
+        "targeted_fixtures": targeted,
+        "targeted_categories_uncovered": list(uncovered_targeted_categories()),
         "node_budget": node_budget,
         "instrumented": instrumented,
         "instrumentation_overhead": overhead,
@@ -553,6 +627,8 @@ def _suite_statistics(manifest, positions) -> dict:
         "name": manifest.suite_version,
         "ruleset_count": len(manifest.rulesets),
         "position_count": len(positions),
+        "executed_ruleset_count": len({p.ruleset_fixture_id for p in positions}),
+        "executed_position_count": len(positions),
         "board_sizes": board_sizes,
         "movement_buckets": movement,
         "promotion_buckets": promotion,
@@ -594,16 +670,22 @@ def _full_suite_stats() -> dict | None:
 
 def _conclusions(node_budget, instrumented, core_profiles) -> dict:
     shares: dict[str, float] = {}
+    phase: dict[str, float] = {}
     if instrumented:
         wall = sum(i["wall_seconds"] for i in instrumented)
         acc: dict[str, float] = {}
         for item in instrumented:
-            for name, value in item["subsystems"].items():
-                acc[name] = acc.get(name, 0.0) + value["seconds"]
+            for name, seconds in item["subsystem_seconds"].items():
+                acc[name] = acc.get(name, 0.0) + seconds
         shares = {
             name: round(seconds / wall, 4) if wall else 0.0
             for name, seconds in acc.items()
         }
+        quiescence_total = sum(
+            i["phase_inclusive_seconds"]["quiescence"] for i in instrumented
+        )
+        phase["quiescence"] = round(quiescence_total / wall, 4) if wall else 0.0
+        phase["main_search"] = round(1.0 - phase["quiescence"], 4)
     key_relative = None
     successors_to_movegen = None
     if core_profiles:
@@ -621,7 +703,7 @@ def _conclusions(node_budget, instrumented, core_profiles) -> dict:
             key_relative = round(sum(ratios) / len(ratios), 4)
         if movegen_ratios:
             successors_to_movegen = round(sum(movegen_ratios) / len(movegen_ratios), 2)
-    qsearch_share = shares.get("quiescence", 0.0)
+    qsearch_share = phase.get("quiescence", 0.0)
     if qsearch_share >= 0.5:
         recommendation = (
             "qsearch 占 instrumented 时间主导（>50%）：先处理 qsearch 节点爆炸与 "
@@ -635,6 +717,7 @@ def _conclusions(node_budget, instrumented, core_profiles) -> dict:
             "native 边界建议保持 SearchBackend 协议不变。"
         )
     return {
+        "phase_inclusive_shares": phase,
         "instrumented_subsystem_shares": shares,
         "position_key_to_successors_ratio": key_relative,
         "legal_successors_to_movegen_ratio": successors_to_movegen,

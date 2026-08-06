@@ -16,10 +16,17 @@ class SearchStatistics:
     completed_depth: int = 0
     selective_depth: int = 0
     termination_reason: str = ""
-    # Quiescence truncation reasons.
-    q_depth_truncations: int = 0
-    q_budget_truncations: int = 0
-    q_evasion_truncations: int = 0
+    # Quiescence truncation reasons and qsearch classification counts.
+    qdepth_cutoffs: int = 0
+    qsearch_budget_aborts: int = 0
+    qsearch_check_hard_limit_aborts: int = 0
+    in_check_qnodes: int = 0
+    stand_pat_cutoffs: int = 0
+    capture_qactions: int = 0
+    promotion_qactions: int = 0
+    checking_move_qactions: int = 0
+    checking_drop_qactions: int = 0
+    nonchecking_drop_excluded: int = 0
     # PVS.
     pvs_null_window_searches: int = 0
     pvs_researches: int = 0
@@ -47,3 +54,12 @@ class SearchStatistics:
     countermove_hits: int = 0
     # Mate-distance pruning.
     mate_pruning_cutoffs: int = 0
+    # Lazy successor experiment.
+    legal_actions_generated: int = 0
+    successor_handles_created: int = 0
+    successors_materialized: int = 0
+    successors_searched: int = 0
+    terminal_results_computed: int = 0
+    terminal_cache_hits: int = 0
+    position_keys_computed: int = 0
+    position_key_cache_hits: int = 0

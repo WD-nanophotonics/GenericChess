@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from ...core.actions import Action
 from ...core.attacks import is_in_check
 from ...core.keys import position_key
+from ...core.lazy_transitions import legal_successor_handles, materialize_legal_successor
 from ...core.movegen import legal_actions
 from ...core.position import GameState
 from ...core.terminal import TerminalStatus
@@ -90,6 +91,7 @@ class _Context:
         "use_tt",
         "use_ordering",
         "qdepth_limit",
+        "qhard_depth_limit",
         "qnode_limit",
     )
 
@@ -104,6 +106,7 @@ class _Context:
         use_tt: bool,
         use_ordering: bool,
         qdepth_limit: int,
+        qhard_depth_limit: int,
         qnode_limit: int | None,
         recorder: AuditRecorder | None = None,
     ) -> None:
@@ -118,6 +121,7 @@ class _Context:
         self.use_tt = use_tt
         self.use_ordering = use_ordering
         self.qdepth_limit = qdepth_limit
+        self.qhard_depth_limit = qhard_depth_limit
         self.qnode_limit = qnode_limit
 
 
@@ -145,6 +149,7 @@ def negamax(
     ply: int,
     ctx: _Context,
     prev_action: Action | None = None,
+    node_key: str | None = None,
 ) -> SearchResult:
     ctx.stats.nodes += 1
     ctx.budget.check(ctx.stats)
@@ -170,8 +175,17 @@ def negamax(
             ctx.stats.mate_pruning_cutoffs += 1
             return SearchResult(alpha, None, ())
 
-    with ctx.recorder.time_block(AuditMetric.TT_KEY):
-        key = _tt_key(state, ctx.compiled)
+    if node_key is not None:
+        ctx.stats.position_key_cache_hits += 1
+        key = (
+            ctx.compiled.ruleset_fingerprint,
+            node_key,
+            state.repetition_counts,
+        )
+    else:
+        ctx.stats.position_keys_computed += 1
+        with ctx.recorder.time_block(AuditMetric.TT_KEY):
+            key = _tt_key(state, ctx.compiled)
     entry = None
     if ctx.use_tt:
         ctx.stats.tt_probes += 1
@@ -192,18 +206,28 @@ def negamax(
                         ctx.stats.tt_cutoffs += 1
                         return SearchResult(score, entry.best_action, ())
 
+    lazy = False
+    child_by_action = {}
+    handle_by_action = {}
     started = time.monotonic()
     with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
-        successors = legal_successors(state, ctx.compiled)
+        if ctx.tuning.use_lazy_successors:
+            handles = legal_successor_handles(state, ctx.compiled)
+            ctx.stats.legal_actions_generated += len(handles)
+            ctx.stats.successor_handles_created += len(handles)
+            actions = [handle.action for handle in handles]
+            handle_by_action = {handle.action: handle for handle in handles}
+            lazy = True
+        else:
+            successors = legal_successors(state, ctx.compiled)
+            actions = [action for action, _ in successors]
+            child_by_action = dict(successors)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
-    if not successors:
+    if not actions:
         # Core should have flagged the position terminal; fall back to eval.
         with ctx.recorder.time_block(AuditMetric.EVALUATION):
             return SearchResult(ctx.evaluator.evaluate(state), None, ())
-    actions = [action for action, _ in successors]
-
-    child_by_action = dict(successors)
     if ctx.use_ordering:
         started = time.monotonic()
         with ctx.recorder.time_block(AuditMetric.ORDERING):
@@ -241,16 +265,41 @@ def negamax(
     best_pv: tuple[Action, ...] = ()
 
     for move_index, action in enumerate(ordered_actions):
-        child = child_by_action[action]
+        if lazy:
+            handle = handle_by_action[action]
+            child, child_key = materialize_legal_successor(
+                state, handle, ctx.compiled
+            )
+            ctx.stats.successors_materialized += 1
+            ctx.stats.successors_searched += 1
+            ctx.stats.terminal_results_computed += 1
+            ctx.stats.position_keys_computed += 1
+        else:
+            child = child_by_action[action]
+            child_key = None
         if ctx.tuning.use_pvs and move_index > 0:
             ctx.stats.pvs_null_window_searches += 1
             null_score = -negamax(
-                child, depth - 1, -alpha - 1, -alpha, ply + 1, ctx, prev_action=action
+                child,
+                depth - 1,
+                -alpha - 1,
+                -alpha,
+                ply + 1,
+                ctx,
+                prev_action=action,
+                node_key=child_key,
             ).score
             if alpha < null_score < beta:
                 ctx.stats.pvs_researches += 1
                 child_result = negamax(
-                    child, depth - 1, -beta, -alpha, ply + 1, ctx, prev_action=action
+                    child,
+                    depth - 1,
+                    -beta,
+                    -alpha,
+                    ply + 1,
+                    ctx,
+                    prev_action=action,
+                    node_key=child_key,
                 )
                 score = -child_result.score
             else:
@@ -258,7 +307,14 @@ def negamax(
                 child_result = SearchResult(null_score, None, ())
         else:
             child_result = negamax(
-                child, depth - 1, -beta, -alpha, ply + 1, ctx, prev_action=action
+                child,
+                depth - 1,
+                -beta,
+                -alpha,
+                ply + 1,
+                ctx,
+                prev_action=action,
+                node_key=child_key,
             )
             score = -child_result.score
         if score > best:
@@ -308,18 +364,21 @@ def quiescence(
     side = state.position.side_to_move
     if is_in_check(state.position, side, ctx.compiled):
         # In-check nodes cannot stand pat: extend over every legal evasion.
-        if qdepth >= ctx.tuning.check_evasion_max_depth:
-            ctx.stats.q_evasion_truncations += 1
-            raise SearchAborted("q_evasion_depth")
+        ctx.stats.in_check_qnodes += 1
+        if qdepth >= ctx.qhard_depth_limit:
+            ctx.stats.qsearch_check_hard_limit_aborts += 1
+            raise SearchAborted("qsearch_check_hard_limit")
         if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
-            ctx.stats.q_budget_truncations += 1
-            raise SearchAborted("q_budget")
+            ctx.stats.qsearch_budget_aborts += 1
+            raise SearchAborted("qsearch_budget")
         started = time.monotonic()
         successors = legal_successors(state, ctx.compiled)
         ctx.stats.legal_generation_calls += 1
         ctx.stats.legal_generation_seconds += time.monotonic() - started
         if not successors:
-            return ctx.evaluator.evaluate(state)
+            # A non-terminal, in-check state with no evasions is a Core
+            # invariant violation; never fall back to static evaluation.
+            raise SearchAborted("qsearch_check_no_evasions")
         ordered = sorted(successors, key=lambda pair: str(pair[0]))
         for action, child in ordered:
             score = -quiescence(child, -beta, -alpha, ply + 1, qdepth + 1, ctx)
@@ -334,21 +393,22 @@ def quiescence(
     ctx.stats.evaluation_calls += 1
     ctx.stats.evaluation_seconds += time.monotonic() - started
     if stand_pat >= beta:
+        ctx.stats.stand_pat_cutoffs += 1
         return stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= ctx.qdepth_limit:
-        ctx.stats.q_depth_truncations += 1
+        ctx.stats.qdepth_cutoffs += 1
         return alpha
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
-        ctx.stats.q_budget_truncations += 1
-        return alpha
+        ctx.stats.qsearch_budget_aborts += 1
+        raise SearchAborted("qsearch_budget")
 
     started = time.monotonic()
     successors = legal_successors(state, ctx.compiled)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
-    noisy = classify_noisy(state, [action for action, _ in successors])
+    noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats)
     ordered = sorted(
         (pair for pair in successors if pair[0] in noisy),
         key=lambda pair: str(pair[0]),
@@ -503,6 +563,7 @@ def run_root_search(
         use_tt,
         use_ordering,
         limits.quiescence_max_depth,
+        limits.quiescence_hard_max_depth,
         limits.quiescence_max_nodes,
         recorder,
     )

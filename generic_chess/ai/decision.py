@@ -30,9 +30,16 @@ class PlayerDecision:
     evaluation_profile_cache_hit: bool
     termination_reason: str
     # Fine-grained diagnostics (0.6.0 search lab).
-    q_depth_truncations: int = 0
-    q_budget_truncations: int = 0
-    q_evasion_truncations: int = 0
+    qdepth_cutoffs: int = 0
+    qsearch_budget_aborts: int = 0
+    qsearch_check_hard_limit_aborts: int = 0
+    in_check_qnodes: int = 0
+    stand_pat_cutoffs: int = 0
+    capture_qactions: int = 0
+    promotion_qactions: int = 0
+    checking_move_qactions: int = 0
+    checking_drop_qactions: int = 0
+    nonchecking_drop_excluded: int = 0
     pvs_null_window_searches: int = 0
     pvs_researches: int = 0
     aspiration_fail_low: int = 0
@@ -52,3 +59,11 @@ class PlayerDecision:
     evaluation_seconds: float = 0.0
     countermove_hits: int = 0
     mate_pruning_cutoffs: int = 0
+    legal_actions_generated: int = 0
+    successor_handles_created: int = 0
+    successors_materialized: int = 0
+    successors_searched: int = 0
+    terminal_results_computed: int = 0
+    terminal_cache_hits: int = 0
+    position_keys_computed: int = 0
+    position_key_cache_hits: int = 0

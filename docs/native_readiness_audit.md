@@ -40,9 +40,45 @@ native backend，**不重写 Core**，**不改变正式规则语义**，也不�
 
 ## 3. 指标
 
-每 fixture × 预算记录：nodes / qnodes / elapsed / NPS / depth / TT probes/hits/cutoffs /
-beta cutoffs / fallback / termination reason / PV 长度 / root legal actions / 平均分支因子。
+每 fixture × 预算记录（schema v2）：main_nodes / qnodes / total_nodes / main_nps / q_nps /
+total_nps / qnode_ratio / qnode_share / elapsed / depth / TT / fallback / termination reason。
 聚合报告 median/min/max，并按 board size 与 movement bucket 分桶。
+
+### Measurement semantics（v2）
+
+* `main_nps = main_nodes / elapsed`；`q_nps = qnodes / elapsed`；
+  `total_nps = (main_nodes + qnodes) / elapsed`（用于比较后端总节点速度）；
+* `qnode_ratio = qnodes / main_nodes`（可 >1）；`qnode_share = qnodes / total_nodes`（0–1）；
+* `SearchLimits.max_nodes` 是 **total-node budget**（`nodes + qnodes`），每 128 个 total
+  node 检查一次时间/取消，允许一个检查间隔的越界；
+* 旧字段 `nodes_per_second` 保留为 deprecated 别名，等于 `total_nps`；
+* timer 口径：`phase_inclusive_seconds`（quiescence = 整棵 qsearch 调用树，main_search =
+  wall − quiescence）与 `subsystem_seconds`（direct measured：只统计被包裹的具体函数调用，
+  发生在 main search；qsearch 内部不进一步拆分，`subsystem_timing_mode = "direct_measured"`）。
+
+### Qsearch semantics
+
+* 普通非 check 软上限 `quiescence_max_depth`：到上限允许 stand pat / static evaluation；
+* 绝对硬上限 `quiescence_hard_max_depth >= quiescence_max_depth`（配置不满足立即报错）：
+  check-evasion 也受其约束，到达后 `SearchAborted("qsearch_check_hard_limit")`；
+* 被将节点禁止 stand pat、禁止只搜 capture、禁止按 top-K 截断，必须搜索全部解将手；
+* 预算耗尽（total/qnode/time/cancel/in-check hard depth）统一通过 `SearchAborted` 中止当前
+  iteration，ID 返回上一个完整 depth；depth 1 未完成则走 root scan / 确定性 fallback 并报告
+  `completed_depth=0`；
+* noisy actions：captures、promotions、immediate terminal actions、checking moves、
+  checking drops；普通 non-checking quiet drop 排除并计数。
+
+### Successor experiment（lazy）
+
+* baseline eager path：`legal_successors` 一次生成全部 child（transition + terminal + key）；
+* experimental lazy path（`SearchTuning.use_lazy_successors`，默认关闭）：Core 发行
+  `LegalSuccessorHandle`（一次合法 movegen，identity-bound 到生成 state），child 仅在真正被
+  搜索时 `materialize_legal_successor` 构造；terminal 随 materialize 计算；child position key
+  缓存并用于 TT key（`position_key_cache_hits`）；
+* legality 仍完全在 Core：handle 只来自官方 legal-action set，AI 不接触 unchecked transition；
+* 统计：legal_actions_generated / successor_handles_created / successors_materialized /
+  successors_searched / terminal_results_computed / terminal_cache_hits /
+  position_keys_computed / position_key_cache_hits。
 
 ## 4. 使用
 
@@ -93,10 +129,31 @@ beta cutoffs / fallback / termination reason / PV 长度 / root legal actions / 
 
 推荐结论以最新报告为准；本仓库不会仅凭“Python 慢”就决定写 C。
 
+### 本轮结论（2026-08-06 机器实测，见 docs/performance/native_readiness_latest.md）
+
+* 10k tier：total_nps 中位 ~302，qnode_share 中位 ~0.95 —— qsearch 节点占绝对主导；
+* instrumented：quiescence phase 占 ~97%，movegen/ordering/TT/position_key 均 <3%；
+* 8×8 上 `legal_successors`（含 child 构造）约为裸 movegen 的 4–7 倍 —— per-child
+  transition/terminal/key 是主要单节点成本；
+* qsearch 修改前后（同一命令）：pathological q-evasion fixture（hybrid）wall 从 ~183s 降到
+  ~8s（硬上限/预算语义），但部分 fixture 因不再提前 abort 反而慢 12–35% —— 混合结果，如实记录；
+* lazy successor：4 个代表 fixture 上 best action/depth 全部一致，promo/endgame 类 +17–23%，
+  其余 ~2% 回退，中位增益 <15% → **保持 experimental、默认关闭**。
+
+### 下一阶段（Native Phase 1）入口
+
+Native Phase 1 应实现：packed state + packed action + compiled movement tables + legal move
+generation + make/unmake + attack/check + repetition/hash + perft，并使用现有 correctness
+corpus（`tests/fixtures/native_correctness_corpus_v1.json`）做 Python/native differential
+testing。本仓库未开始任何 native 实现。
+
 ## 6. 已知限制
 
 * 单机单次运行；绝对 NPS 不代表跨机器标准。
-* 完整 standard 10k 在全部 ~110 个 position 上运行过久，正式运行采用分层子集（10k 全量
-  受限子集 + 100k 代表子集 + 1M 视耗时决定），实际范围以报告为准。
-* instrumented 子系统占比含 qsearch 内部成本；份额用于定位，不代表绝对 NPS。
-* 未覆盖类别会在报告中明确列出；不伪造缺失状态。
+* 正式运行采用分层子集（10k 跨尺寸 15 个 position + 100k 代表 4 个 + instrumented/profiler
+  4 个）；`requested_budget_tiers` / `completed_budget_tiers` / `executed_*` 明确记录范围。
+* instrumented 的 subsystem 为 direct measured（main search 内）；qsearch phase 为 inclusive，
+  两者不可直接相加。
+* 定向 fixture 已覆盖全部 6 个此前缺失类别（multi_evasion / near_repetition /
+  checking_drop / nonchecking_drop / low_anchor_escape / low_branching），predicate 均实测验证。
+* lazy successor 为 experimental，未默认启用；启用门槛（中位 ≥15% 且无 >10% 稳定回退）未达到。
