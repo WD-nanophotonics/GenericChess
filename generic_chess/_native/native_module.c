@@ -1357,8 +1357,8 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
                    copy.history_len == pos->history_len &&
                    memcmp(copy.hand_counts, pos->hand_counts,
                           sizeof(pos->hand_counts)) == 0;
-    gc_search_context_free(&ctx);
     if (!restored) {
+        gc_search_context_free(&ctx);
         PyErr_SetString(PyExc_RuntimeError,
                         "native search did not restore the root position");
         return NULL;
@@ -1408,6 +1408,7 @@ static PyObject *gc_native_fixed_depth_search(PyObject *self, PyObject *args) {
     }
     PyDict_SetItemString(result_dict, "principal_variation", pv);
     Py_DECREF(pv);
+    gc_search_context_free(&ctx);
     return result_dict;
 }
 

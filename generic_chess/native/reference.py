@@ -5,7 +5,11 @@ from __future__ import annotations
 import json
 
 from ..core.actions import action_to_dict
+from ..core.actions import BoardMove, DropMove
+from ..core.coordinates import square_to_index
+from ..core.terminal import TerminalStatus
 from ..core.transition import apply_action, legal_successors
+from ..ai.evaluation.config import MATE_SCORE
 
 
 def python_legal_actions(state, compiled) -> list:
@@ -62,3 +66,101 @@ def python_child_snapshot(state, action, compiled) -> dict:
 
 def python_terminal(state) -> str:
     return state.terminal_status.status.value
+
+
+def reference_terminal_score(terminal, side_to_move: int, ply: int) -> int:
+    """Score of a terminal node from ``side_to_move``'s perspective."""
+    if terminal.status in (
+        TerminalStatus.STALEMATE,
+        TerminalStatus.REPETITION,
+        TerminalStatus.MAX_PLY,
+    ):
+        return 0
+    if terminal.winner == side_to_move:
+        return MATE_SCORE - ply
+    return -MATE_SCORE + ply
+
+
+def canonical_pack(compiled, state, action) -> int:
+    """Pack a Core Action into the native layout using the same sorted type
+    mapping the native compiler uses (numeric-ascending tie-break)."""
+    n = compiled.board_size
+    type_ids = sorted(compiled.types_by_id)
+    type_map = {tid: i for i, tid in enumerate(type_ids)}
+    if isinstance(action, DropMove):
+        to = action.to_square.rank * n + action.to_square.file
+        return (
+            (to & 0xFF)
+            | (0xFF << 8)
+            | (0xFF << 16)
+            | ((type_map[action.base_type_id] & 0xFF) << 24)
+            | (1 << 32)
+        )
+    from_i = action.from_square.rank * n + action.from_square.file
+    to_i = action.to_square.rank * n + action.to_square.file
+    promo = (
+        type_map[action.promotion_target_id]
+        if action.promotion_target_id is not None
+        else 0xFF
+    )
+    piece = state.position.board[square_to_index(action.from_square, n)]
+    base = type_map[piece.base_type_id] if piece is not None else 0
+    return (
+        (to_i & 0xFF)
+        | ((from_i & 0xFF) << 8)
+        | ((promo & 0xFF) << 16)
+        | ((base & 0xFF) << 24)
+    )
+
+
+def reference_fixed_depth_minimax(state, compiled, evaluator, depth: int, ply: int = 0):
+    """Pure fixed-depth minimax oracle used only for differential testing.
+
+    Returns ``(score, best_actions, canonical_best_action, pv, nodes)``:
+    * ``score`` is in the root side-to-move perspective;
+    * ``best_actions`` is the set of all actions achieving the best score;
+    * ``canonical_best_action`` is the best action with the smallest packed
+      native value (numeric ascending);
+    * ``pv`` is the principal variation starting from the canonical action;
+    * ``nodes`` counts every visited node (root, interior and leaves).
+    No TT, no qsearch, no ordering heuristics, deterministic tie-break.
+    """
+    terminal = state.terminal_status
+    if terminal.is_terminal:
+        return (
+            reference_terminal_score(terminal, state.position.side_to_move, ply),
+            (),
+            None,
+            (),
+            1,
+        )
+    if depth <= 0:
+        return evaluator.evaluate(state), (), None, (), 1
+
+    best = -10**12
+    best_lines: list[tuple[int, object, tuple]] = []
+    nodes = 1
+    successors = sorted(
+        legal_successors(state, compiled), key=lambda pair: str(pair[0])
+    )
+    for action, child in successors:
+        child_score, _ba, _cb, child_pv, child_nodes = (
+            reference_fixed_depth_minimax(
+                child, compiled, evaluator, depth - 1, ply + 1
+            )
+        )
+        nodes += child_nodes
+        score = -child_score
+        if score > best:
+            best = score
+            best_lines = [(canonical_pack(compiled, state, action), action, child_pv)]
+        elif score == best:
+            best_lines.append((canonical_pack(compiled, state, action), action, child_pv))
+
+    best_actions = tuple(line[1] for line in best_lines)
+    canonical = None
+    pv: tuple = ()
+    if best_lines:
+        _packed, canonical, child_pv = min(best_lines, key=lambda line: line[0])
+        pv = (canonical,) + child_pv
+    return best, best_actions, canonical, pv, nodes

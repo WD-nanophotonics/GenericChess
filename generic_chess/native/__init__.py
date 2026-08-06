@@ -53,3 +53,43 @@ __all__ = [
     "native_version",
     "native_capabilities",
 ]
+
+
+def __getattr__(name: str):
+    """Lazy re-exports so the optional extension is only touched on use."""
+    if name in (
+        "compile_native_rules",
+        "NativeCompiledRules",
+        "NativeCompilationReport",
+        "NativeActionError",
+        "compile_native_evaluation",
+        "NativeEvaluationTables",
+        "NATIVE_SCHEMA_VERSION",
+    ):
+        from .compiler import (
+            NATIVE_SCHEMA_VERSION,
+            NativeActionError,
+            NativeCompilationReport,
+            NativeCompiledRules,
+            NativeEvaluationTables,
+            compile_native_evaluation,
+            compile_native_rules,
+        )
+
+        return {
+            "compile_native_rules": compile_native_rules,
+            "NativeCompiledRules": NativeCompiledRules,
+            "NativeCompilationReport": NativeCompilationReport,
+            "NativeActionError": NativeActionError,
+            "compile_native_evaluation": compile_native_evaluation,
+            "NativeEvaluationTables": NativeEvaluationTables,
+            "NATIVE_SCHEMA_VERSION": NATIVE_SCHEMA_VERSION,
+        }[name]
+    if name in ("native_fixed_depth_search", "NativeFixedDepthResult"):
+        from .search import NativeFixedDepthResult, native_fixed_depth_search
+
+        return {
+            "native_fixed_depth_search": native_fixed_depth_search,
+            "NativeFixedDepthResult": NativeFixedDepthResult,
+        }[name]
+    raise AttributeError(name)

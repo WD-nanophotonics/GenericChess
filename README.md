@@ -296,14 +296,16 @@ Controller。
 lazy full evaluation（需先证明动态项上界）、bounded mate prover、LMR、null move、
 razoring/futility。这些一律先做 benchmark 消融、默认关闭，逐项验证后再考虑进入 UI。
 
-## Native 规则内核（0.7.0a1，experimental）
+## Native 规则内核与固定深度搜索（0.7.0a2，experimental）
 
 `generic_chess/native/` 提供可选的 CPython C extension 规则内核（legal movegen、
-attack/check、make/unmake、128-bit 搜索 hash、native perft）。构建：
+attack/check、make/unmake、128-bit 搜索 hash、native perft、fixed-depth
+Negamax/AlphaBeta）。构建：
 `python scripts/build_native_zig.py`（本机无 MSVC，使用 Zig clang；MSVC 环境可用
 `pip install -e .` 的可选 ext-module）。未构建时 `native_available()` 返回 False，原生测试
 自动 skip。Python Core 始终是规范与 correctness oracle；differential 证据与性能见
-`docs/native_phase1.md`。Native AlphaBeta 属于下一阶段。
+`docs/native_phase1.md` 与 `docs/native_phase2_fixed_search.md`。Native 搜索目前是
+experimental 固定深度入口（`generic_chess.native.search`），尚未接入 UI/生产 SearchBackend。
 
 ## 快速上手
 

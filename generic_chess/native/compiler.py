@@ -7,6 +7,12 @@ from types import MappingProxyType
 from typing import Any
 
 from ..core.movement import LeapAtom, RayAtom
+from ..ai.evaluation.config import (
+    MATE_SCORE,
+    MATE_THRESHOLD,
+    MAX_STATIC_EVAL,
+    config_hash,
+)
 from ..rules.compiled import CompiledRuleSet
 from . import _module, native_available
 
@@ -39,6 +45,21 @@ class NativeActionError(ValueError):
     @property
     def reason(self) -> str:
         return str(self.fields.get("reason", "unknown"))
+
+
+@dataclass(frozen=True)
+class NativeEvaluationTables:
+    """Owns the native evaluation capsule plus identity metadata."""
+
+    capsule: object
+    fingerprint: str
+    config_hash: str
+    evaluator_version: str
+    type_count: int
+
+    @property
+    def native_schema_version(self) -> str:
+        return NATIVE_SCHEMA_VERSION
 
 
 @dataclass(frozen=True)
@@ -239,3 +260,72 @@ def compile_native_rules(compiled: CompiledRuleSet) -> NativeCompiledRules:
     type_ids = sorted(t.type_id for t in compiled.piece_types)
     type_map = {tid: i for i, tid in enumerate(type_ids)}
     return NativeCompiledRules(capsule, report, type_map, type_ids)
+
+
+def compile_native_evaluation(
+    native_rules: NativeCompiledRules,
+    evaluation_profile,
+    evaluation_config,
+) -> NativeEvaluationTables:
+    """Compile the rule-derived evaluation profile into native tables.
+
+    The same RuleSet may be paired with different ``EvaluationConfig`` objects,
+    so the tables are a separate object keyed by ``config_hash``; they are
+    never folded into :class:`NativeCompiledRules`.
+    """
+    if not native_available():
+        raise NativeUnsupportedRuleError(
+            "native extension is not built; run scripts/build_native_zig.py"
+        )
+    if evaluation_profile.ruleset_fingerprint != native_rules.fingerprint:
+        raise ValueError(
+            "evaluation profile fingerprint does not match native rules "
+            f"({evaluation_profile.ruleset_fingerprint} vs "
+            f"{native_rules.fingerprint})"
+        )
+    if evaluation_profile.config_hash != config_hash(evaluation_config):
+        raise ValueError(
+            "evaluation profile config_hash does not match the evaluation config"
+        )
+    type_ids = native_rules.type_ids
+    missing = (
+        set(type_ids)
+        - set(evaluation_profile.board_value_by_type)
+        - set(evaluation_profile.hand_value_by_base_type)
+        - set(evaluation_profile.promotion_gain_by_type)
+    )
+    if missing:
+        raise ValueError(
+            f"evaluation profile missing native types: {sorted(missing)}"
+        )
+    for pt in native_rules.type_ids:
+        _validate(
+            evaluation_profile.board_value_by_type[pt] <= MAX_STATIC_EVAL,
+            f"board value for {pt!r} exceeds MAX_STATIC_EVAL",
+            native_rules.fingerprint,
+        )
+    payload = {
+        "type_count": native_rules.type_count,
+        "mate_score": MATE_SCORE,
+        "mate_threshold": MATE_THRESHOLD,
+        "max_static_eval": MAX_STATIC_EVAL,
+        "config_hash": evaluation_profile.config_hash,
+        "evaluator_version": evaluation_profile.evaluator_version,
+        "board_value": [
+            evaluation_profile.board_value_by_type[tid] for tid in type_ids
+        ],
+        "hand_value": [
+            evaluation_profile.hand_value_by_base_type[tid] for tid in type_ids
+        ],
+        "promotion_gain": [
+            evaluation_profile.promotion_gain_by_type[tid] for tid in type_ids
+        ],
+    }
+    capsule = _module().compile_evaluation(native_rules.capsule, payload)
+    return NativeEvaluationTables(
+        capsule=capsule,
+        fingerprint=native_rules.fingerprint,
+        config_hash=evaluation_profile.config_hash,
+        evaluator_version=evaluation_profile.evaluator_version,
+        type_count=native_rules.type_count,
+    )

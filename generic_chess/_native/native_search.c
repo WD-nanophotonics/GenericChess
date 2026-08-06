@@ -70,6 +70,9 @@ void gc_search_context_free(GCSearchContext *ctx) {
 static int32_t gc_negamax(GCSearchContext *ctx, GCPosition *pos, int depth,
                           int32_t alpha, int32_t beta, int ply) {
     ctx->nodes++;
+    /* Reset this node's PV row so a terminal node (or a node whose best line
+     * ends here) never inherits stale tail moves from a sibling search. */
+    ctx->pv_length[ply] = 0;
     GCMoveList *pseudo = &ctx->pseudo_by_ply[ply];
     GCMoveList *legal = &ctx->legal_by_ply[ply];
     GCTerminal term = gc_terminal_with_pseudo(ctx->rules, pos, pseudo, legal);
@@ -156,6 +159,7 @@ int gc_fixed_depth_search(GCSearchContext *ctx, GCPosition *pos,
         result->score = gc_evaluate_material(ctx->rules, ctx->eval, pos);
         result->has_action = 0;
         result->completed_depth = 0;
+        result->nodes = ctx->nodes;
         result->status = GC_FIXED_SEARCH_OK;
         return 1;
     }
