@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
-    QHBoxLayout,
+    QGridLayout,
     QLabel,
     QListWidget,
     QListWidgetItem,
@@ -50,20 +50,25 @@ class MovesPanel(QWidget):
         self._list.itemClicked.connect(self._on_item_clicked)
         layout.addWidget(self._list, 1)
 
-        controls = QHBoxLayout()
-        for key, slot in (
-            ("moves.first", self._go_first),
-            ("moves.prev", self._go_prev),
-            ("moves.next", self._go_next),
-            ("moves.last", self._go_last),
+        controls = QGridLayout()
+        controls.setHorizontalSpacing(4)
+        controls.setVerticalSpacing(4)
+        for col, (key, slot) in enumerate(
+            (
+                ("moves.first", self._go_first),
+                ("moves.prev", self._go_prev),
+                ("moves.next", self._go_next),
+                ("moves.last", self._go_last),
+            )
         ):
             button = QPushButton(tr.text(key))
             button.clicked.connect(slot)
-            controls.addWidget(button)
+            controls.addWidget(button, 0, col)
             setattr(self, f"_btn_{key.split('.')[1]}", button)
         self._return_btn = QPushButton(tr.text("moves.return_live"))
         self._return_btn.clicked.connect(controller.return_to_current)
-        controls.addWidget(self._return_btn)
+        controls.addWidget(self._return_btn, 1, 0, 1, 4)
+        controls.setColumnStretch(3, 1)
         layout.addLayout(controls)
 
     # ------------------------------------------------------------------ state

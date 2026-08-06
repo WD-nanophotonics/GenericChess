@@ -8,7 +8,7 @@ transform, so moves/selections/clock updates cannot resize the board.
 
 from __future__ import annotations
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QSize, Qt
 from PySide6.QtGui import QPainter, QTransform
 from PySide6.QtWidgets import QGraphicsView
 
@@ -41,6 +41,14 @@ class BoardView(QGraphicsView):
         self.setResizeAnchor(QGraphicsView.AnchorViewCenter)
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+
+    # The scene rect is 800x800 but the viewport must be shrinkable; otherwise
+    # the window cannot go below the scene size on small screens.
+    def sizeHint(self) -> QSize:
+        return QSize(320, 320)
+
+    def minimumSizeHint(self) -> QSize:
+        return QSize(240, 240)
 
     # ------------------------------------------------------------------ sizing
 

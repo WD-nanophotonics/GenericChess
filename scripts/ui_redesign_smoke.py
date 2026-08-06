@@ -108,12 +108,50 @@ def main() -> int:
     win._show_rules_tab()
     check("select piece + Rules tab", win._sidebar.currentWidget() is win._rules_panel)
     check("rules detail filled", bool(win._rules_panel._detail.text()))
+    banner = win._rules_panel._entity
+    check(
+        "selection banner visible",
+        banner.isVisible(),
+        banner._body.text() if banner.isVisible() else "banner hidden",
+    )
+    check(
+        "selection banner localized",
+        "White" in banner._body.text() or "白" in banner._body.text(),
+    )
+    ctrl.cancel()
+    win._refresh()
+    check("selection banner hides on cancel", not banner.isVisible())
 
     # Browse several piece types.
     ids = [pt.type_id for pt in ctrl.compiled.piece_types]
     for tid in ids:
         win._inspect_type(tid)
     check("browse all piece types", win._rules_panel._types.count() == len(ids))
+    check(
+        "movement diagram populated",
+        win._rules_panel._diagram.layout_data() is not None,
+        str(win._rules_panel._diagram.layout_data()),
+    )
+    scroll = win._rules_panel._scroll
+    check(
+        "rules detail scrollable",
+        scroll.widgetResizable()
+        and not scroll.horizontalScrollBar().isVisible(),
+    )
+    check(
+        "detail content aligned top",
+        bool(
+            win._rules_panel._detail_layout.alignment()
+            & Qt.AlignmentFlag.AlignTop
+        ),
+    )
+    check("toolbar tooltips localized", bool(win._toolbar_actions()["undo"].toolTip()))
+    icons = [
+        win._toolbar_actions()[name].icon().pixmap(24, 24).toImage()
+        for name in ("new", "open", "save", "undo", "redo", "flip")
+    ]
+    distinct = sum(1 for i in range(len(icons)) for j in range(i + 1, len(icons)) if icons[i] != icons[j])
+    check("toolbar icons distinct", distinct == 15, f"{distinct}/15 distinct pairs")
 
     # Capture -> hand -> drop (bounded deterministic walk until a capture).
     hand_owner = None
@@ -205,6 +243,31 @@ def main() -> int:
     ctrl.resign()
     win._refresh()
     check("resign ends", ctrl.session.result.status.value != "ongoing")
+    check("overlay shows on terminal", win._overlay.isVisible())
+    check(
+        "overlay winner/reason localized",
+        bool(win._overlay._winner.text()) and bool(win._overlay._reason.text()),
+        f"{win._overlay._winner.text()} / {win._overlay._reason.text()}",
+    )
+    ctrl.display_ply(0)
+    win._refresh()
+    check("overlay hidden during history preview", not win._overlay.isVisible())
+    ctrl.return_to_current()
+    win._refresh()
+    check("overlay restored on return to live", win._overlay.isVisible())
+    win.resize(1000, 700)
+    app.processEvents()
+    check(
+        "overlay centered after resize",
+        win._overlay.geometry() == win._board_container.rect(),
+    )
+    win._overlay._btn_dismiss.click()
+    check(
+        "overlay dismiss keeps game terminal",
+        not win._overlay.isVisible() and ctrl.session.result.status.value != "ongoing",
+    )
+    win._restart()
+    check("overlay hidden after restart", not win._overlay.isVisible())
 
     # File dialog cancel preserves state.
     ctrl2 = UIController(settings=settings)

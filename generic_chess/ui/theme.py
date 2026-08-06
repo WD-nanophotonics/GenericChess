@@ -13,6 +13,7 @@ from ..visual.texture_style import PieceTextureStyle
 
 @dataclass(frozen=True)
 class Theme:
+    dark_mode: bool = True
     light_square: str = "#f0d9b5"
     dark_square: str = "#b58863"
     selected_border: str = "#2a9df4"
@@ -26,6 +27,27 @@ class Theme:
     coordinate_text: str = "#6b5b4f"
     hover_opacity: float = 0.35
     preview_opacity: float = 0.45
+    # Selection banner (rules explorer).
+    selection_bg: str = "#245A82"
+    selection_fg: str = "#FFFFFF"
+    selection_secondary: str = "#DCEEFF"
+    selection_accent: str = "#6EC1FF"
+    # Movement diagram.
+    diagram_grid: str = "#6b5b4f"
+    diagram_ray: str = "#1a6fd1"
+    diagram_leap: str = "#1e8a3c"
+    diagram_arrow: str = "#1a6fd1"
+    diagram_forward: str = "#3d5a6d"
+    diagram_ray_alpha: float = 0.55
+    # Game-over overlay.
+    overlay_scrim_alpha: float = 0.35
+    overlay_card_bg: str = "#1e293b"
+    overlay_title: str = "#FFFFFF"
+    overlay_text: str = "#cbd5e1"
+    overlay_button_bg: str = "#245A82"
+    overlay_button_fg: str = "#FFFFFF"
+    # Toolbar glyphs.
+    toolbar_icon: str = "#d8e3ee"
     texture_style: PieceTextureStyle = field(default_factory=PieceTextureStyle)
 
 

@@ -13,7 +13,6 @@ from PySide6.QtWidgets import (
     QMainWindow,
     QMessageBox,
     QSplitter,
-    QStyle,
     QTabWidget,
     QToolBar,
     QVBoxLayout,
@@ -31,8 +30,10 @@ from .dialogs.error_dialog import show_error, show_info
 from .dialogs.new_match_dialog import NewMatchDialog
 from .dialogs.preferences_dialog import PreferencesDialog
 from .dialogs.promotion_dialog import PromotionDialog
+from .icons import toolbar_icon
 from .i18n.manager import LocalizationManager, SUPPORTED_LANGUAGES
 from .match import MatchConfig, ParticipantKind
+from .panels.game_over_overlay import BoardWithOverlay, GameOverOverlay
 from .panels.moves_panel import MovesPanel
 from .panels.player_bar import PlayerBar
 from .panels.rule_explorer import RuleExplorerPanel
@@ -122,7 +123,9 @@ class MainWindow(QMainWindow):
             ),
         }
         self._moves_panel = MovesPanel(controller, self._tr)
-        self._rules_panel = RuleExplorerPanel(controller, self._cache, self._tr)
+        self._rules_panel = RuleExplorerPanel(
+            controller, self._cache, self._tr, theme=self._theme
+        )
 
         self._sidebar = QTabWidget()
         self._sidebar.setDocumentMode(True)
@@ -135,8 +138,13 @@ class MainWindow(QMainWindow):
         board_layout.setSpacing(2)
         self._bar_top = None
         self._bar_bottom = None
+        self._overlay = GameOverOverlay(self._tr, self._theme)
+        self._overlay.view_moves_requested.connect(self._overlay_view_moves)
+        self._overlay.play_again_requested.connect(self._restart)
+        self._overlay.dismiss_requested.connect(self._overlay.hide)
+        self._board_container = BoardWithOverlay(self._board_view, self._overlay)
         board_layout.addWidget(self._player_bars[0])
-        board_layout.addWidget(self._board_view, 1)
+        board_layout.addWidget(self._board_container, 1)
         board_layout.addWidget(self._player_bars[1])
         self._board_layout = board_layout
         self._place_player_bars(controller.interaction.orientation_owner)
@@ -313,25 +321,24 @@ class MainWindow(QMainWindow):
         bar = QToolBar("Main", self)
         bar.setObjectName("main_toolbar")
         bar.setMovable(False)
-        style = self.style()
-        icons = {
-            "menu.new_match": QStyle.SP_FileIcon,
-            "menu.open_record": QStyle.SP_DialogOpenButton,
-            "menu.save_record": QStyle.SP_DialogSaveButton,
-            "menu.undo": QStyle.SP_ArrowBack,
-            "menu.redo": QStyle.SP_ArrowForward,
-            "menu.flip": QStyle.SP_BrowserReload,
+        kinds = {
+            "menu.new_match": "new",
+            "menu.open_record": "open",
+            "menu.save_record": "save",
+            "menu.undo": "undo",
+            "menu.redo": "redo",
+            "menu.flip": "flip",
         }
-        for action in (
-            self._act_new_match,
-            self._act_open_record,
-            self._act_save_record,
-            self._act_undo,
-            self._act_redo,
-            self._act_flip,
+        for key, action in (
+            ("menu.new_match", self._act_new_match),
+            ("menu.open_record", self._act_open_record),
+            ("menu.save_record", self._act_save_record),
+            ("menu.undo", self._act_undo),
+            ("menu.redo", self._act_redo),
+            ("menu.flip", self._act_flip),
         ):
-            pixmap = style.standardIcon(icons[action.text()] if action.text() in icons else QStyle.SP_FileIcon)
-            action.setIcon(pixmap)
+            action.setIcon(toolbar_icon(kinds[key], self._theme))
+            action.setToolTip(self._tr.text(f"toolbar.{key.split('.')[1]}"))
             bar.addAction(action)
         self._toolbar = bar
         self.addToolBar(bar)
@@ -375,9 +382,53 @@ class MainWindow(QMainWindow):
             bar.refresh()
         self._moves_panel.refresh()
         self._rules_panel.refresh()
+        self._update_overlay()
         self._update_action_enabled()
         self._open_promotion_if_pending()
         self._maybe_start_ai()
+
+    def _overlay_view_moves(self) -> None:
+        self._sidebar.setCurrentWidget(self._moves_panel)
+
+    def _overlay_lines(self, info):
+        tr = self._tr
+        result = info.result
+        status = result.status.value
+        if status == "checkmate":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.wins", player=winner), tr.text("result.checkmate")
+        if status == "stalemate":
+            return tr.text("result.draw"), tr.text("result.stalemate")
+        if status == "repetition":
+            return tr.text("result.draw"), tr.text("result.repetition")
+        if status == "max_ply":
+            return tr.text("result.draw"), tr.text("result.max_ply")
+        if status == "resignation":
+            loser = result.resigned_by
+            winner = 1 - loser
+            winner_name = tr.text("player.white" if winner == 0 else "player.black")
+            loser_name = tr.text("player.white" if loser == 0 else "player.black")
+            return (
+                tr.text("result.wins", player=winner_name),
+                tr.text("result.resigned", player=loser_name),
+            )
+        return "", ""
+
+    def _update_overlay(self) -> None:
+        info = self._controller.game_info()
+        displayed = self._controller.interaction.displayed_ply
+        if (
+            info is None
+            or displayed is not None
+            or info.result.status.value == "ongoing"
+        ):
+            self._overlay.hide()
+            return
+        winner_line, reason_line = self._overlay_lines(info)
+        if winner_line:
+            self._overlay.show_game_over(winner_line, reason_line)
+        else:
+            self._overlay.hide()
 
     def _status_text(self) -> str:
         tr = self._tr
@@ -438,7 +489,7 @@ class MainWindow(QMainWindow):
         black = self._tr.text("player.black")
         text = f"{white} {fmt(0)} | {black} {fmt(1)} {marker}"
         if self._controller.timeout_owner is not None:
-            text += " | AI timeout"
+            text += f" | {self._tr.text('status.ai_timeout')}"
         self._clock_label.setText(text)
 
     # ------------------------------------------------------------------ language
@@ -454,9 +505,22 @@ class MainWindow(QMainWindow):
         self._sidebar.setTabText(1, tr.text("tab.rules"))
         for key, action in self._actions_by_key().items():
             action.setText(tr.text(key))
+        for name, action in self._toolbar_actions().items():
+            action.setToolTip(tr.text(f"toolbar.{name}"))
         self._toolbar.setWindowTitle("Main")
+        self._overlay.retranslate()
         for bar in self._player_bars.values():
             bar.refresh()
+
+    def _toolbar_actions(self) -> dict[str, QAction]:
+        return {
+            "new": self._act_new_match,
+            "open": self._act_open_record,
+            "save": self._act_save_record,
+            "undo": self._act_undo,
+            "redo": self._act_redo,
+            "flip": self._act_flip,
+        }
 
     def _actions_by_key(self) -> dict[str, QAction]:
         return {
