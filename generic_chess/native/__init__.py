@@ -92,4 +92,14 @@ def __getattr__(name: str):
             "native_fixed_depth_search": native_fixed_depth_search,
             "NativeFixedDepthResult": NativeFixedDepthResult,
         }[name]
+    if name in ("NativeSearchEngine", "NativeIterativeSearchResult"):
+        from .engine import (
+            NativeIterativeSearchResult,
+            NativeSearchEngine,
+        )
+
+        return {
+            "NativeSearchEngine": NativeSearchEngine,
+            "NativeIterativeSearchResult": NativeIterativeSearchResult,
+        }[name]
     raise AttributeError(name)

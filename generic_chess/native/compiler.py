@@ -16,7 +16,7 @@ from ..ai.evaluation.config import (
 from ..rules.compiled import CompiledRuleSet
 from . import _module, native_available
 
-NATIVE_SCHEMA_VERSION = "native-0.2.0"
+NATIVE_SCHEMA_VERSION = "native-0.3.0"
 
 GC_MAX_PLY = 512
 GC_MAX_HAND = 256

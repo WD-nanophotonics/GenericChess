@@ -11,6 +11,8 @@
 
 #include "native_types.h"
 #include "native_attack.h"
+#include "native_cancel.h"
+#include "native_clock.h"
 #include "native_eval.h"
 #include "native_hash.h"
 #include "native_movegen.h"
@@ -24,6 +26,7 @@
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
 #define GC_EVAL_CAPSULE "generic_chess._native_core.gc_eval"
 #define GC_ENGINE_CAPSULE "generic_chess._native_core.gc_engine"
+#define GC_CANCEL_CAPSULE "generic_chess._native_core.gc_cancel"
 
 static PyObject *gc_native_error = NULL;
 
@@ -66,6 +69,14 @@ static void gc_engine_capsule_free(PyObject *capsule) {
     }
 }
 
+static void gc_cancel_capsule_free(PyObject *capsule) {
+    GCCancelFlag *flag = (GCCancelFlag *)PyCapsule_GetPointer(
+        capsule, GC_CANCEL_CAPSULE);
+    if (flag != NULL) {
+        gc_cancel_flag_destroy(flag);
+    }
+}
+
 static uint64_t gc_py_long_as_u64(PyObject *obj, int *ok) {
     unsigned long long value = PyLong_AsUnsignedLongLong(obj);
     if (value == (unsigned long long)-1 && PyErr_Occurred()) {
@@ -93,7 +104,7 @@ static PyObject *gc_native_available(PyObject *self, PyObject *args) {
 static PyObject *gc_native_version(PyObject *self, PyObject *args) {
     (void)self;
     (void)args;
-    return PyUnicode_FromString("0.2.0");
+    return PyUnicode_FromString("0.3.0");
 }
 
 static const char *gc_status_name(int status) {
@@ -254,7 +265,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "native_perft", value);
     Py_DECREF(value);
-    value = PyUnicode_FromString("native-0.2.0");
+    value = PyUnicode_FromString("native-0.3.0");
     PyDict_SetItemString(dict, "native_schema", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
@@ -271,6 +282,33 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "fixed_depth_alphabeta", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "repetition_context_hash", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "transposition_table", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "iterative_deepening", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "node_budget", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "monotonic_time_budget", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "native_cancellation", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(0);
+    PyDict_SetItemString(dict, "native_qsearch", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(0);
+    PyDict_SetItemString(dict, "production_dynamic_evaluator", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(0);
+    PyDict_SetItemString(dict, "production_search_backend", value);
     Py_DECREF(value);
     return dict;
 }
@@ -1770,6 +1808,252 @@ static PyObject *gc_engine_fixed_depth_search(PyObject *self, PyObject *args) {
     return result;
 }
 
+static GCCancelFlag *gc_get_cancel(PyObject *capsule) {
+    if (!PyCapsule_CheckExact(capsule)) {
+        PyErr_SetString(PyExc_TypeError, "expected a native cancel capsule");
+        return NULL;
+    }
+    return (GCCancelFlag *)PyCapsule_GetPointer(capsule, GC_CANCEL_CAPSULE);
+}
+
+static PyObject *gc_create_cancel_flag(PyObject *self, PyObject *args) {
+    (void)self;
+    (void)args;
+    GCCancelFlag *flag = gc_cancel_flag_create();
+    if (flag == NULL) {
+        PyErr_NoMemory();
+        return NULL;
+    }
+    return PyCapsule_New(flag, GC_CANCEL_CAPSULE, gc_cancel_capsule_free);
+}
+
+static PyObject *gc_request_cancel(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *cancel_capsule;
+    if (!PyArg_ParseTuple(args, "O", &cancel_capsule)) {
+        return NULL;
+    }
+    GCCancelFlag *flag = gc_get_cancel(cancel_capsule);
+    if (flag == NULL) {
+        return NULL;
+    }
+    gc_cancel_flag_request(flag);
+    Py_RETURN_NONE;
+}
+
+static PyObject *gc_native_iterative_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule;
+    PyObject *pos_capsule;
+    PyObject *cancel_capsule;
+    int max_depth;
+    PyObject *max_nodes_obj;
+    PyObject *max_time_obj;
+    if (!PyArg_ParseTuple(args, "OOiOOO", &engine_capsule, &pos_capsule,
+                          &max_depth, &max_nodes_obj, &max_time_obj,
+                          &cancel_capsule)) {
+        return NULL;
+    }
+    GCSearchEngine *engine = gc_get_engine(engine_capsule);
+    GCPosition *pos = gc_get_position(pos_capsule);
+    if (engine == NULL || pos == NULL) {
+        return NULL;
+    }
+    GCCancelFlag *cancel = NULL;
+    if (cancel_capsule != Py_None) {
+        cancel = gc_get_cancel(cancel_capsule);
+        if (cancel == NULL) {
+            return NULL;
+        }
+    }
+    if (engine->busy) {
+        PyErr_SetString(PyExc_RuntimeError, "search engine is busy");
+        return NULL;
+    }
+    if (max_depth < 0 || max_depth > GC_MAX_PLY) {
+        PyErr_SetString(PyExc_ValueError,
+                        "max_depth must be in [0, GC_MAX_PLY]");
+        return NULL;
+    }
+    int ok = 1;
+    uint64_t max_nodes = GC_NODES_UNLIMITED;
+    uint64_t max_time_ns = GC_TIME_UNLIMITED;
+    if (max_nodes_obj != Py_None) {
+        long long v = PyLong_AsLongLong(max_nodes_obj);
+        if (v == -1 && PyErr_Occurred()) {
+            return NULL;
+        }
+        if (v < 0) {
+            PyErr_SetString(PyExc_ValueError, "max_nodes must be >= 0");
+            return NULL;
+        }
+        max_nodes = (uint64_t)v;
+    }
+    if (max_time_obj != Py_None) {
+        double seconds = PyFloat_AsDouble(max_time_obj);
+        if (PyErr_Occurred()) {
+            return NULL;
+        }
+        if (seconds < 0 || seconds != seconds || seconds > 1e12) {
+            PyErr_SetString(PyExc_ValueError,
+                            "max_time_seconds must be a finite "
+                            "non-negative number");
+            return NULL;
+        }
+        max_time_ns = (uint64_t)(seconds * 1e9);
+    }
+    if (pos->history_complete != 1) {
+        PyErr_SetString(
+            PyExc_ValueError,
+            "iterative native search requires full GameSession history replay");
+        return NULL;
+    }
+    if (!gc_hash_verify(engine->rules, pos)) {
+        PyErr_SetString(PyExc_RuntimeError, "root hash verification failed");
+        return NULL;
+    }
+
+    engine->busy = 1;
+    GCPosition copy;
+    memcpy(&copy, pos, sizeof(GCPosition));
+    GCSearchContext ctx;
+    PyObject *result_dict = NULL;
+    PyObject *pv = NULL;
+    PyObject *value = NULL;
+    int success = 0;
+    if (!gc_search_context_alloc(&ctx, engine->rules, engine->eval,
+                                 engine->tt, (uint32_t)max_depth)) {
+        engine->busy = 0;
+        PyErr_SetString(PyExc_ValueError,
+                        "search context allocation failed (depth or memory)");
+        return NULL;
+    }
+    uint64_t start_ns = gc_monotonic_ns();
+    GCFixedSearchResult result;
+    int search_ok = 1;
+    Py_BEGIN_ALLOW_THREADS
+    search_ok = gc_iterative_search(&ctx, &copy, (uint32_t)max_depth,
+                                    max_nodes, max_time_ns, cancel, &result);
+    Py_END_ALLOW_THREADS
+    uint64_t elapsed_ns = gc_monotonic_ns() - start_ns;
+    engine->busy = 0;
+    if (!search_ok) {
+        PyErr_SetString(PyExc_RuntimeError, "native iterative search failed");
+        goto cleanup;
+    }
+    {
+        int restored = gc_hash_verify(engine->rules, &copy) &&
+                       copy.side_to_move == pos->side_to_move &&
+                       copy.ply == pos->ply &&
+                       copy.history_len == pos->history_len &&
+                       memcmp(copy.board, pos->board,
+                              sizeof(GCPiece) * engine->rules->squares) == 0 &&
+                       memcmp(copy.hand_counts, pos->hand_counts,
+                              sizeof(pos->hand_counts)) == 0;
+        if (!restored) {
+            PyErr_SetString(PyExc_RuntimeError,
+                            "native search did not restore the root position");
+            goto cleanup;
+        }
+    }
+
+    result_dict = PyDict_New();
+    if (result_dict == NULL) {
+        goto cleanup;
+    }
+#define GC_SET_RESULT(name, obj) \
+    do { \
+        if ((obj) == NULL || PyDict_SetItemString(result_dict, (name), (obj)) != 0) { \
+            goto cleanup; \
+        } \
+        Py_CLEAR(value); \
+    } while (0)
+    value = PyLong_FromLong(result.score);
+    GC_SET_RESULT("score", value);
+    if (result.has_action) {
+        value = PyLong_FromUnsignedLongLong(result.best_action);
+    } else {
+        value = Py_None;
+        Py_INCREF(value);
+    }
+    GC_SET_RESULT("best_action", value);
+    value = PyLong_FromUnsignedLongLong(result.nodes);
+    GC_SET_RESULT("nodes", value);
+    value = PyLong_FromLong(result.completed_depth);
+    GC_SET_RESULT("completed_depth", value);
+    value = PyLong_FromUnsignedLongLong(ctx.selective_depth);
+    GC_SET_RESULT("selective_depth", value);
+    value = PyLong_FromLong(0);
+    GC_SET_RESULT("qnodes", value);
+    value = PyFloat_FromDouble((double)elapsed_ns / 1e9);
+    GC_SET_RESULT("elapsed_seconds", value);
+    value = PyBool_FromLong(result.used_fallback);
+    GC_SET_RESULT("used_fallback", value);
+    {
+        const char *reason = "internal_error";
+        if (result.terminated) {
+            reason = "terminal_position";
+        } else if (result.used_fallback) {
+            switch (ctx.control) {
+                case GC_SEARCH_ABORT_NODE_LIMIT: reason = "node_limit"; break;
+                case GC_SEARCH_ABORT_TIME_LIMIT: reason = "time_limit"; break;
+                case GC_SEARCH_ABORT_CANCELLED: reason = "cancelled"; break;
+                default: reason = "internal_error"; break;
+            }
+        } else if (ctx.final_control != GC_SEARCH_CONTINUE) {
+            switch (ctx.final_control) {
+                case GC_SEARCH_ABORT_NODE_LIMIT: reason = "node_limit"; break;
+                case GC_SEARCH_ABORT_TIME_LIMIT: reason = "time_limit"; break;
+                case GC_SEARCH_ABORT_CANCELLED: reason = "cancelled"; break;
+                default: reason = "internal_error"; break;
+            }
+        } else {
+            reason = "completed_depth";
+        }
+        value = PyUnicode_FromString(reason);
+        GC_SET_RESULT("termination_reason", value);
+    }
+    value = PyLong_FromUnsignedLongLong(ctx.tt_probes);
+    GC_SET_RESULT("tt_probes", value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_hits);
+    GC_SET_RESULT("tt_hits", value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_cutoffs);
+    GC_SET_RESULT("tt_cutoffs", value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_stores);
+    GC_SET_RESULT("tt_stores", value);
+    value = PyLong_FromUnsignedLongLong(ctx.tt_replacements);
+    GC_SET_RESULT("tt_replacements", value);
+    value = PyLong_FromUnsignedLongLong(ctx.beta_cutoffs);
+    GC_SET_RESULT("beta_cutoffs", value);
+#undef GC_SET_RESULT
+    pv = PyTuple_New((Py_ssize_t)result.pv_length);
+    if (pv == NULL) {
+        goto cleanup;
+    }
+    size_t k;
+    for (k = 0; k < result.pv_length; k++) {
+        PyObject *item = PyLong_FromUnsignedLongLong(result.pv[k]);
+        if (item == NULL) {
+            goto cleanup;
+        }
+        PyTuple_SET_ITEM(pv, (Py_ssize_t)k, item);
+    }
+    if (PyDict_SetItemString(result_dict, "principal_variation", pv) != 0) {
+        goto cleanup;
+    }
+    success = 1;
+
+cleanup:
+    Py_XDECREF(value);
+    Py_XDECREF(pv);
+    if (!success) {
+        Py_XDECREF(result_dict);
+        result_dict = NULL;
+    }
+    gc_search_context_free(&ctx);
+    return result_dict;
+}
+
 static PyMethodDef gc_methods[] = {
     {"native_available", gc_native_available, METH_NOARGS,
      "Return True (the native kernel is built)."},
@@ -1819,6 +2103,13 @@ static PyMethodDef gc_methods[] = {
      "search_engine_tt_info(engine) -> dict"},
     {"engine_fixed_depth_search", gc_engine_fixed_depth_search, METH_VARARGS,
      "engine_fixed_depth_search(engine, position, depth) -> result dict (TT on)"},
+    {"create_cancel_flag", gc_create_cancel_flag, METH_NOARGS,
+     "create_cancel_flag() -> cancel capsule"},
+    {"request_cancel", gc_request_cancel, METH_VARARGS,
+     "request_cancel(cancel) -> None"},
+    {"native_iterative_search", gc_native_iterative_search, METH_VARARGS,
+     "native_iterative_search(engine, position, max_depth, max_nodes, "
+     "max_time_seconds, cancel) -> result dict"},
     {NULL, NULL, 0, NULL}
 };
 

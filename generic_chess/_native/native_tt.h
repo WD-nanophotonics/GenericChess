@@ -58,7 +58,7 @@ int32_t gc_score_from_tt(const GCEvaluationTables *eval, int32_t score, int ply)
 int gc_tt_probe(const GCTable *tt, const GCPosition *pos, int depth,
                 const GCEvaluationTables *eval, int ply, int32_t *score_out,
                 GCPackedAction *action_out, int *has_action_out,
-                uint64_t *collision_out);
+                int *entry_depth_out, uint64_t *collision_out);
 
 /* Store one node result.  ``*replaced_out`` receives 1 when an entry was
  * replaced (or a new one written). */

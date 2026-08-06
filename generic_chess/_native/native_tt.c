@@ -102,7 +102,7 @@ void gc_tt_clear(GCTable *tt) {
 int gc_tt_probe(const GCTable *tt, const GCPosition *pos, int depth,
                 const GCEvaluationTables *eval, int ply, int32_t *score_out,
                 GCPackedAction *action_out, int *has_action_out,
-                uint64_t *collision_out) {
+                int *entry_depth_out, uint64_t *collision_out) {
     if (tt == NULL) {
         return 0;
     }
@@ -122,6 +122,9 @@ int gc_tt_probe(const GCTable *tt, const GCPosition *pos, int depth,
             }
             if (has_action_out != NULL) {
                 *has_action_out = e->has_action;
+            }
+            if (entry_depth_out != NULL) {
+                *entry_depth_out = e->depth;
             }
             return 1;
         }
