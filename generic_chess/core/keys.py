@@ -57,10 +57,10 @@ def semantic_position_key(
             )
     hands = [[list(h.counts) for h in position.hands]]
     aux = {
-        str(slot_id): (
+        str(key): (
             list(value) if isinstance(value, tuple) else value
         )
-        for slot_id, value in position.aux_state
+        for key, value in position.aux_state
     }
     payload = {
         "ruleset": support.ruleset_fingerprint,

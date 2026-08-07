@@ -162,7 +162,7 @@ def test_castling_compound_move_and_right_lifecycle():
     assert child.board[_idx(support, 4, 0)] is None
     assert child.board[_idx(support, 7, 0)] is None
     # Right for side 0 is consumed.
-    assert dict(child.aux_state).get(0, 1) == 0
+    assert dict(child.aux_state).get((0, 0), 1) == 0
     # Replacement rook at h1 cannot restore the right.
     later = _with_pieces(support, [
         (_idx(support, 6, 0), Piece(0, "K", "K")),
@@ -175,7 +175,7 @@ def test_castling_compound_move_and_right_lifecycle():
         hands=later.hands,
         side_to_move=0,
         ruleset_fingerprint=later.ruleset_fingerprint,
-        aux_state=((0, 0),),
+        aux_state=(((0, 0), 0),),
     )
     assert not [a for a in engine.legal_actions(later) if a.pattern_id == "sem_00_king_side_shift"]
 
@@ -339,31 +339,31 @@ def test_nifu_drop_guard_semantics():
 # ---------------------------------------------------------------- legacy differential
 
 
-def _legacy_actions_set(compiled, position):
+def _legacy_actions_list(compiled, position):
     from generic_chess.core.actions import BoardMove, DropMove
 
-    out = set()
+    out = []
     for action in legal_actions_from_position(position, compiled):
         if isinstance(action, BoardMove):
-            out.add(
+            out.append(
                 (
                     "board",
                     action.from_square.file,
                     action.from_square.rank,
                     action.to_square.file,
                     action.to_square.rank,
-                    action.promotion_target_id,
+                    action.promotion_target_id or "",
                 )
             )
         else:
-            out.add(("drop", action.base_type_id, action.to_square.file, action.to_square.rank))
-    return out
+            out.append(("drop", action.base_type_id, action.to_square.file, action.to_square.rank))
+    return sorted(out)
 
 
-def _semantic_actions_set(engine, position):
+def _semantic_actions_list(engine, position):
     from generic_chess.core.coordinates import index_to_square
 
-    out = set()
+    out = []
     for action in engine.legal_actions(position):
         if action.source is None:
             pattern = next(
@@ -371,24 +371,26 @@ def _semantic_actions_set(engine, position):
             )
             base = pattern.effects[0].piece_type_ref.type_id
             sq = index_to_square(action.target, engine.support.board_size)
-            out.add(("drop", base, sq.file, sq.rank))
+            out.append(("drop", base, sq.file, sq.rank))
         else:
             from_sq = index_to_square(action.source, engine.support.board_size)
             to_sq = index_to_square(action.target, engine.support.board_size)
-            out.add(
+            out.append(
                 (
                     "board",
                     from_sq.file,
                     from_sq.rank,
                     to_sq.file,
                     to_sq.rank,
-                    action.promotion_target_id,
+                    action.promotion_target_id or "",
                 )
             )
-    return out
+    return sorted(out)
 
 
 def test_legacy_differential_legal_actions():
+    from dataclasses import replace
+
     from generic_chess.ai.benchmark.audit_suite import (
         build_compiled,
         standard_ruleset_specs,
@@ -403,28 +405,124 @@ def test_legacy_differential_legal_actions():
     for compiled in corpus:
         ir = lower_legacy_to_ir(compiled)
         support = _build_semantic_support(compiled)
-        semantic = CompiledSemanticRuleset(ir=ir, _legacy_compiled=compiled, support=support)
+        # Test-only: the legacy-lowered IR is S0-S3 capable (no S4); enable
+        # the reference-executor capability to run the differential.
+        semantic = CompiledSemanticRuleset(
+            ir=replace(
+                ir,
+                capabilities=replace(
+                    ir.capabilities, new_ir_core_executable=True
+                ),
+            ),
+            _legacy_compiled=compiled,
+            support=support,
+        )
         engine = SemanticEngine(semantic)
         state = initial_state(compiled)
         # Initial + a few deterministic random plies.
         import random
 
         rng = random.Random(1234)
-        positions = [state.position]
+        positions = [state]
         for _ in range(6):
             legal = legal_actions_from_position(state.position, compiled)
             if not legal:
                 break
             action = sorted(legal, key=str)[rng.randrange(len(legal))]
             state = _transition(state, action, compiled)
-            positions.append(state.position)
-        for position in positions:
-            legacy = _legacy_actions_set(compiled, position)
-            semantic_set = _semantic_actions_set(engine, position)
-            assert legacy == semantic_set, (
+            positions.append(state)
+        for state in positions:
+            position = state.position
+            legacy = _legacy_actions_list(compiled, position)
+            semantic = _semantic_actions_list(engine, position)
+            # Canonical lists: equality includes multiplicity, so duplicate
+            # semantic generation cannot be hidden by set conversion.
+            assert legacy == semantic, (
                 compiled.ruleset_fingerprint,
                 position_key(position, compiled),
             )
+
+
+def test_legacy_differential_transitions_and_terminal():
+    from dataclasses import replace
+
+    from generic_chess.ai.benchmark.audit_suite import (
+        build_compiled,
+        standard_ruleset_specs,
+    )
+    from generic_chess.core.actions import BoardMove, DropMove
+    from generic_chess.core.terminal import _terminal_from_parts
+    from generic_chess.core.transition import _transition, initial_state
+
+    specs = {s.fixture_id: s for s in standard_ruleset_specs()}
+    compiled = build_compiled(specs["gen_classic_like_4_101"])
+    ir = lower_legacy_to_ir(compiled)
+    support = _build_semantic_support(compiled)
+    semantic = CompiledSemanticRuleset(
+        ir=replace(
+            ir,
+            capabilities=replace(ir.capabilities, new_ir_core_executable=True),
+        ),
+        _legacy_compiled=compiled,
+        support=support,
+    )
+    engine = SemanticEngine(semantic)
+    state = initial_state(compiled)
+    import random
+
+    rng = random.Random(99)
+    for ply in range(8):
+        legacy_actions = legal_actions_from_position(state.position, compiled)
+        semantic_bindings = {
+            a for a in engine.legal_actions(state.position)
+        }
+        # Terminal parity at this node.
+        legacy_terminal = _terminal_from_parts(
+            state.position, state.ply_count, state.repetition_counts, compiled
+        )
+        semantic_terminal = engine.terminal_result(
+            state.position, state.ply_count, state.repetition_counts
+        )
+        assert legacy_terminal == semantic_terminal, (ply, state.position)
+        if not legacy_actions:
+            break
+        action = sorted(legacy_actions, key=str)[rng.randrange(len(legacy_actions))]
+        binding = None
+        for candidate in semantic_bindings:
+            from generic_chess.core.coordinates import index_to_square
+
+            if isinstance(action, BoardMove):
+                from_sq = (
+                    index_to_square(candidate.source, engine.support.board_size)
+                    if candidate.source is not None
+                    else None
+                )
+                to_sq = index_to_square(candidate.target, engine.support.board_size)
+                if (
+                    candidate.source is not None
+                    and from_sq == action.from_square
+                    and to_sq == action.to_square
+                    and candidate.promotion_target_id == action.promotion_target_id
+                ):
+                    binding = candidate
+                    break
+            elif isinstance(action, DropMove):
+                to_sq = index_to_square(candidate.target, engine.support.board_size)
+                if (
+                    candidate.source is None
+                    and candidate.actor_type == action.base_type_id
+                    and to_sq == action.to_square
+                ):
+                    binding = candidate
+                    break
+        assert binding is not None, action
+        legacy_child = _transition(state, action, compiled)
+        semantic_child = engine.apply(state.position, binding)
+        # Child transition parity: board, hands and side must match exactly.
+        assert semantic_child.board == legacy_child.position.board, (ply, action)
+        assert semantic_child.hands == legacy_child.position.hands, (ply, action)
+        assert semantic_child.side_to_move == legacy_child.position.side_to_move, (ply, action)
+        state = legacy_child
 
 
 def test_aux_state_participates_in_semantic_identity_not_legacy_key():

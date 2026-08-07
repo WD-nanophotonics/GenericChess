@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 from .actions import Action
 from .errors import IllegalActionError, ensure_ruleset_match
-from .keys import position_key
+from .keys import position_key, semantic_position_key
 from .movegen import _apply_action_unchecked, legal_actions_from_position
 from .position import GameState
 from .repetition import update_repetition_counts
@@ -18,6 +18,19 @@ if TYPE_CHECKING:
 
 def initial_state(compiled: "CompiledRuleSet") -> GameState:
     """The initial game state of a compiled ruleset."""
+    from .semantic_executor import semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        from .keys import semantic_position_key
+
+        pos = engine._initial_position()
+        key = semantic_position_key(pos, compiled.support)
+        counts = ((key, 1),)
+        status = engine.terminal_result(pos, 0, counts)
+        return GameState(
+            position=pos, ply_count=0, repetition_counts=counts, terminal_status=status
+        )
     pos = compiled.initial_position
     key = position_key(pos, compiled)
     counts = ((key, 1),)
@@ -48,6 +61,26 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
     raise :class:`IllegalActionError`; a state/ruleset mismatch raises
     :class:`RuleSetMismatchError`.
     """
+    from .semantic_executor import semantic_action_for, semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        if state.terminal_status.status is not TerminalStatus.ONGOING:
+            raise IllegalActionError(
+                f"cannot apply an action to a terminal state ({state.terminal_status})"
+            )
+        binding = semantic_action_for(engine, state.position, action)
+        new_pos = engine.apply(state.position, binding)
+        ply = state.ply_count + 1
+        key = semantic_position_key(new_pos, compiled.support)
+        counts = update_repetition_counts(state.repetition_counts, key)
+        status = engine.terminal_result(new_pos, ply, counts)
+        return GameState(
+            position=new_pos,
+            ply_count=ply,
+            repetition_counts=counts,
+            terminal_status=status,
+        )
     ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:
         raise IllegalActionError(

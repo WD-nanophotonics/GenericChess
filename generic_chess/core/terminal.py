@@ -62,6 +62,13 @@ def _terminal_from_parts(
 
 def terminal_result(state: "GameState", compiled: "CompiledRuleSet") -> TerminalResult:
     """Public API: terminal status of a game state (freshly recomputed)."""
+    from .semantic_executor import semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        return engine.terminal_result(
+            state.position, state.ply_count, state.repetition_counts
+        )
     ensure_ruleset_match(state.position, compiled)
     return _terminal_from_parts(
         state.position, state.ply_count, state.repetition_counts, compiled

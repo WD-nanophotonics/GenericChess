@@ -15,6 +15,7 @@ fail-closed (never generated).  Native/Search/Learner are untouched.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import gcd
 
 from ..rules.ir import (
     CompiledSemanticRuleset,
@@ -37,6 +38,7 @@ class SemanticAction:
     source: int | None  # None for drops
     target: int
     promotion_target_id: str | None = None
+    actor_type: str | None = None  # exact actor/drop type (never type_ids[0])
 
 
 def _own_anchor(position: Position, support, side: int) -> int | None:
@@ -47,6 +49,82 @@ def _own_anchor(position: Position, support, side: int) -> int | None:
             if meta is not None and meta.is_anchor:
                 return idx
     return None
+
+
+def is_semantic_compiled(compiled) -> bool:
+    from ..rules.ir import CompiledSemanticRuleset
+
+    return isinstance(compiled, CompiledSemanticRuleset)
+
+
+def semantic_engine_for(compiled):
+    if not is_semantic_compiled(compiled):
+        return None
+    return SemanticEngine(compiled)
+
+
+def semantic_public_actions(engine, position: Position) -> tuple:
+    """Map semantic bindings to public Core Action objects (R1-07 public
+    legal-action query)."""
+    from .actions import BoardMove, DropMove
+    from .coordinates import index_to_square
+
+    out = []
+    for action in engine.legal_actions(position):
+        if action.source is None:
+            out.append(
+                DropMove(
+                    action.actor_type,
+                    index_to_square(action.target, engine.support.board_size),
+                )
+            )
+        else:
+            out.append(
+                BoardMove(
+                    index_to_square(action.source, engine.support.board_size),
+                    index_to_square(action.target, engine.support.board_size),
+                    action.promotion_target_id,
+                )
+            )
+    return tuple(out)
+
+
+def semantic_action_for(engine, position: Position, action):
+    """Resolve the unique semantic binding for a public Action (membership
+    validated by the caller against the legal set)."""
+    from .actions import BoardMove, DropMove
+    from .coordinates import index_to_square
+    from .errors import IllegalActionError
+
+    candidates = []
+    for candidate in engine.legal_actions(position):
+        if isinstance(action, BoardMove):
+            from_sq = (
+                index_to_square(candidate.source, engine.support.board_size)
+                if candidate.source is not None
+                else None
+            )
+            to_sq = index_to_square(candidate.target, engine.support.board_size)
+            if (
+                candidate.source is not None
+                and from_sq == action.from_square
+                and to_sq == action.to_square
+                and candidate.promotion_target_id == action.promotion_target_id
+            ):
+                candidates.append(candidate)
+        elif isinstance(action, DropMove):
+            to_sq = index_to_square(candidate.target, engine.support.board_size)
+            if (
+                candidate.source is None
+                and candidate.actor_type == action.base_type_id
+                and to_sq == action.to_square
+            ):
+                candidates.append(candidate)
+    if not candidates:
+        raise IllegalActionError(
+            f"action is not a legal semantic action in the current state: {action}"
+        )
+    return candidates[0]
 
 
 def _resolve_square_ref(ref, support, position, side, source, target, path):
@@ -107,6 +185,7 @@ class _WorkingPosition:
             dict(position.hands[1].counts),
         ]
         self.side = position.side_to_move
+        self.events: list[tuple[str, object, int]] = []  # (event, piece, square)
 
     def piece_at(self, idx: int) -> Piece | None:
         return self.board[idx]
@@ -148,16 +227,23 @@ def _apply_effect(effect, work: _WorkingPosition, support, side, source, target,
             raise RuntimeError(f"{kind} piece owner mismatch for {action.pattern_id}")
         work.set_piece(from_idx, None)
         work.set_piece(to_idx, piece)
+        work.events.append(("piece_leaves_square", piece, from_idx))
         return
     if kind == "remove":
         idx = _resolve_square_ref(effect.square_ref, support, None, side, source, target, path)
         if idx is None:
             raise RuntimeError(f"remove ref unresolved for {action.pattern_id}")
         captured = work.piece_at(idx)
+        if captured is not None:
+            meta = support.type_metadata.get(captured.current_type_id)
+            if meta is not None and meta.is_anchor:
+                raise RuntimeError(f"anchor capture rejected for {action.pattern_id}")
         if captured is not None and effect.disposition == "capture_to_hand":
             hand = work.hands[side]
             hand[captured.base_type_id] = hand.get(captured.base_type_id, 0) + 1
         work.set_piece(idx, None)
+        if captured is not None:
+            work.events.append(("piece_removed_from_square", captured, idx))
         return
     if kind == "remove_from_hand":
         type_id = _resolve_type_id(effect.piece_type_ref, None, default_type)
@@ -252,12 +338,39 @@ class SemanticEngine:
     def __init__(self, semantic: CompiledSemanticRuleset) -> None:
         if semantic.support is None:
             raise RuntimeError("semantic ruleset missing support payload")
+        if not semantic.ir.capabilities.new_ir_core_executable:
+            raise RuntimeError(
+                "semantic ruleset is not executable by the B-2 reference "
+                "executor: S4/postcondition or unsupported primitive "
+                "combination (fail-closed)"
+            )
         self.semantic = semantic
         self.ir = semantic.ir
         self.support = semantic.support
         self._s0s3_patterns = tuple(
             p for p in self.ir.patterns if not p.postconditions
         )
+
+    # ------------------------------------------------------- aux scope
+
+    def _slot_scope(self, slot_id: int) -> str:
+        for slot in self.ir.aux_slots:
+            if slot.slot_id == slot_id:
+                return slot.scope
+        return "global"
+
+    def _aux_key(self, slot_id: int, owner: int):
+        return slot_id if self._slot_scope(slot_id) == "global" else (slot_id, owner)
+
+    def _slot_value(self, position: Position, slot_id: int, owner: int):
+        key = self._aux_key(slot_id, owner)
+        for k, v in position.aux_state:
+            if k == key:
+                return v
+        for slot in self.ir.aux_slots:
+            if slot.slot_id == slot_id:
+                return slot.initial
+        return None
 
     # ------------------------------------------------------- resolution
 
@@ -368,8 +481,16 @@ class SemanticEngine:
             return piece is not None and piece.owner == side
         return True  # target_any
 
-    def _guard_holds(self, guard, position: Position, source, target, path) -> bool:
+    def _guard_holds(self, guard, position: Position, source, target, path, actor_type=None) -> bool:
         sel = guard.spatial
+        bound_base = bound_current = None
+        if source is not None:
+            actor = position.board[source]
+            if actor is not None:
+                bound_base = actor.base_type_id
+                bound_current = actor.current_type_id
+        elif actor_type is not None:
+            bound_base = bound_current = actor_type
         count = 0
         for idx, piece in enumerate(position.board):
             if piece is None:
@@ -383,7 +504,7 @@ class SemanticEngine:
                 continue
             if guard.location == "hand":
                 continue  # hand selector not needed by v2 fixtures; board only
-            type_ok = self._type_selector_ok(guard, piece, source, target)
+            type_ok = self._type_selector_ok(guard, piece, bound_base, bound_current)
             if not type_ok:
                 continue
             promoted_ok = (
@@ -400,11 +521,19 @@ class SemanticEngine:
             value = count
         return self._compare(guard.comparison, value, guard.value)
 
-    def _type_selector_ok(self, guard, piece, source, target) -> bool:
+    def _type_selector_ok(self, guard, piece, bound_base, bound_current) -> bool:
         ref = guard.type_ref
-        want = _resolve_type_id(ref, piece)
         if ref.kind == "any":
             return True
+        want = (
+            bound_current
+            if ref.kind == "action_current"
+            else bound_base
+            if ref.kind == "action_base"
+            else ref.type_id
+        )
+        if want is None:
+            return False
         field = piece.current_type_id if guard.compare_field == "current" else piece.base_type_id
         return field == want
 
@@ -431,9 +560,16 @@ class SemanticEngine:
             b = self._ref_square(sel.refs[1], source, target, path, position.side_to_move)
             if a is None or b is None:
                 return False
-            lo_f, hi_f = sorted((a.file, b.file))
-            lo_r, hi_r = sorted((a.rank, b.rank))
-            return lo_f <= sq.file <= hi_f and lo_r <= sq.rank <= hi_r
+            df = b.file - a.file
+            dr = b.rank - a.rank
+            g = gcd(abs(df), abs(dr))
+            if g <= 1:
+                return False
+            step_f, step_r = df // g, dr // g
+            for k in range(1, g):
+                if sq.file == a.file + k * step_f and sq.rank == a.rank + k * step_r:
+                    return True
+            return False
         if sel.kind == "zone":
             zone = self.ir.zones.get(sel.zone_id)
             return zone is not None and idx in zone.squares
@@ -461,18 +597,7 @@ class SemanticEngine:
         return False
 
     def _slot_guard_holds(self, guard, position: Position, source, target, path) -> bool:
-        value = None
-        found = False
-        for slot_id, slot_value in position.aux_state:
-            if slot_id == guard.slot_id:
-                value = slot_value
-                found = True
-                break
-        if not found:
-            for slot in self.ir.aux_slots:
-                if slot.slot_id == guard.slot_id:
-                    value = slot.initial
-                    break
+        value = self._slot_value(position, guard.slot_id, position.side_to_move)
         if guard.square_ref is not None:
             idx = _resolve_square_ref(
                 guard.square_ref, self.support, position, position.side_to_move,
@@ -516,6 +641,8 @@ class SemanticEngine:
                     geometry = self.ir.geometry.get(gid)
                     if geometry is None or geometry.kind == "drop":
                         continue
+                    if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                        continue
                     for target, path in geometry_candidates(geometry, str(side), source):
                         if not self._target_holds(pattern.target.kind, position, target):
                             continue
@@ -530,6 +657,7 @@ class SemanticEngine:
                                 source=source,
                                 target=target,
                                 promotion_target_id=promotion_target,
+                                actor_type=tid,
                             )
                             if self._trial_legal(pattern, position, action, target, path):
                                 out.append(action)
@@ -558,7 +686,7 @@ class SemanticEngine:
             if self.support.empty_mobility.get(t, ((), ()))[side][target]
         ]
         if to_sq in forced[side]:
-            return tuple(alive) if alive else (None,)
+            return tuple(alive)
         return (None,) + tuple(alive)
 
     def _drop_actions(self, pattern, position: Position, out: list[SemanticAction]) -> None:
@@ -571,19 +699,20 @@ class SemanticEngine:
             for target in range(self.support.board_size * self.support.board_size):
                 if not mask[target] or position.board[target] is not None:
                     continue
-                if not self._guards_hold(pattern, position, None, target, ()):
+                if not self._guards_hold(pattern, position, None, target, (), actor_type=tid):
                     continue
                 action = SemanticAction(
                     pattern_id=pattern.pattern_id,
                     source=None,
                     target=target,
+                    actor_type=tid,
                 )
                 if self._trial_legal(pattern, position, action, target, ()):
                     out.append(action)
 
-    def _guards_hold(self, pattern, position, source, target, path) -> bool:
+    def _guards_hold(self, pattern, position, source, target, path, actor_type=None) -> bool:
         for guard in pattern.guards:
-            if not self._guard_holds(guard, position, source, target, path):
+            if not self._guard_holds(guard, position, source, target, path, actor_type):
                 return False
         for slot_guard in pattern.slot_guards:
             if not self._slot_guard_holds(slot_guard, position, source, target, path):
@@ -633,11 +762,14 @@ class SemanticEngine:
         # 3) expire expire_next_turn values.
         for slot in self.ir.aux_slots:
             if slot.lifetime == "expire_next_turn":
-                aux[slot.slot_id] = slot.initial
+                if slot.scope == "per_owner":
+                    aux[self._aux_key(slot.slot_id, side)] = slot.initial
+                else:
+                    aux[slot.slot_id] = slot.initial
         # 4) board/hand/type effects in declared order; aux effects deferred
         #    to step 6 per the compiled effect sequence.
         aux_effects: list = []
-        default_type = pattern.type_ids[0] if action.source is None else None
+        default_type = action.actor_type if action.source is None else None
         for effect in pattern.effects:
             if effect.kind in ("set_bool", "clear_right", "set_token", "clear_token"):
                 aux_effects.append(effect)
@@ -658,25 +790,66 @@ class SemanticEngine:
                         promoted=True,
                     ),
                 )
-        # 5) transition triggers against the board delta.
+        # 5) transition triggers against the pre-bound event trace.
         for trigger in self.ir.triggers:
-            if _trigger_hits(
-                trigger, self.support, position, work.board,
-                side, action.source, action.target, path,
-            ):
-                aux[trigger.slot_id] = 0
+            if self._slot_scope(trigger.slot_id) == "per_owner":
+                for owner in (0, 1):
+                    if self._trigger_fires(
+                        trigger, owner, position, work, side,
+                        action.source, action.target, path,
+                    ):
+                        aux[self._aux_key(trigger.slot_id, owner)] = 0
+            else:
+                if self._trigger_fires(
+                    trigger, side, position, work, side,
+                    action.source, action.target, path,
+                ):
+                    aux[trigger.slot_id] = 0
         # 6) explicit aux effects in declared order.
         for effect in aux_effects:
-            _apply_aux_effect(
-                effect, aux, self.ir.aux_slots, self.support,
-                side, action.source, action.target, path,
-            )
+            self._apply_aux_effect(effect, aux, side, action.source, action.target, path)
         # 7) switch side.
         work.side = 1 - side
         return work.to_position(
             tuple(sorted(aux.items())),
             self.support.ruleset_fingerprint,
         )
+
+    def _trigger_fires(
+        self, trigger, owner, position, work, side, source, target, path
+    ) -> bool:
+        idx = _resolve_square_ref(
+            trigger.square_ref, self.support, position, owner, source, target, path
+        )
+        if idx is None:
+            return False
+        for event, piece, square in work.events:
+            if event != trigger.event or square != idx or piece is None:
+                continue
+            if trigger.owner == "self" and piece.owner != owner:
+                continue
+            if trigger.owner == "opponent" and piece.owner == owner:
+                continue
+            return True
+        return False
+
+    def _apply_aux_effect(self, effect, aux, side, source, target, path) -> None:
+        key = self._aux_key(effect.slot_id, side)
+        kind = effect.kind
+        if kind == "set_bool":
+            aux[key] = effect.value
+        elif kind == "clear_right":
+            aux[key] = 0
+        elif kind == "set_token":
+            idx = _resolve_square_ref(
+                effect.square_ref, self.support, None, side, source, target, path
+            )
+            if idx is None:
+                raise RuntimeError("set_token ref unresolved")
+            square = index_to_square(idx, self.support.board_size)
+            aux[key] = (square.file, square.rank)
+        elif kind == "clear_token":
+            aux[key] = None
 
     def _path_for(self, pattern, source, target, side) -> tuple[int, ...]:
         for gid in pattern.geometry_ids:
@@ -691,6 +864,12 @@ class SemanticEngine:
         return ()
 
     def apply(self, position: Position, action: SemanticAction) -> Position:
+        from .errors import IllegalActionError
+
+        if action not in self.legal_actions(position):
+            raise IllegalActionError(
+                f"action is not legal in the current state: {action}"
+            )
         target = action.target
         path = ()
         return self._transition(position, action, target, path)

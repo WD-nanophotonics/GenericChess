@@ -225,6 +225,11 @@ def has_legal_action(position: Position, compiled: "CompiledRuleSet") -> bool:
     it returns at the first legal candidate, which makes terminal detection on
     non-terminal positions much cheaper (used by the search hot path).
     """
+    from .semantic_executor import semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        return engine.has_legal_action(position)
     ensure_ruleset_match(position, compiled)
     for action in _expanded_pseudo_actions(position, compiled):
         if _is_legal(position, action, compiled):
@@ -235,6 +240,16 @@ def has_legal_action(position: Position, compiled: "CompiledRuleSet") -> bool:
 def legal_actions(state: "GameState", compiled: "CompiledRuleSet") -> list[Action]:
     """Public API: legal actions of a game state (empty when terminal)."""
     from .terminal import TerminalStatus
+    from .semantic_executor import (
+        semantic_engine_for,
+        semantic_public_actions,
+    )
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        if state.terminal_status.status is not TerminalStatus.ONGOING:
+            return []
+        return list(semantic_public_actions(engine, state.position))
 
     ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:

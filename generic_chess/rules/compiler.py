@@ -758,6 +758,20 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         raise RuleValidationError(
             [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
         )
+    for action in ruleset.semantic_actions:
+        for guard in action.state_guards:
+            if guard.location == "hand":
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "HAND_PREDICATE_UNSUPPORTED",
+                            f"ruleset.semantic_actions {action.name} state_guards",
+                            "location=hand state predicates are fail-closed "
+                            "in the B-2 reference executor (no hand-query "
+                            "contract yet)",
+                        )
+                    ]
+                )
     legacy = compile_ruleset(ruleset, allow_semantic_actions=True)
     type_ids = tuple(sorted(legacy.types_by_id))
 
