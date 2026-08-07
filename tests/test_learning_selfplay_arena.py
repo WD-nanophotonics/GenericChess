@@ -68,10 +68,11 @@ def test_arena_identical_checkpoints_no_systematic_bias():
     compiled, rules, checkpoint = _setup(size=4)
     config = ArenaConfig(pairs=4, nodes_per_move=200, max_depth=4)
     summary = run_arena(compiled, rules, checkpoint, checkpoint, config)
-    assert summary.wins + summary.draws + summary.losses == 8
-    # Paired symmetry: identical checkpoints give each pair exactly one point
-    # to the child (color-swapped mirror games), so score_rate == 0.5.
-    assert summary.score_rate == 0.5
+    assert summary.pair_count == 4
+    assert summary.game_wins + summary.game_draws + summary.game_losses == 8
+    # Paired symmetry: identical checkpoints give each pair exactly 0.5.
+    assert summary.mean_pair_score == 0.5
+    assert all(s == 0.5 for s in summary.pair_scores)
 
 
 @requires_native
@@ -88,5 +89,5 @@ def test_arena_parent_vs_perturbed_child():
     )
     config = ArenaConfig(pairs=2, nodes_per_move=300, max_depth=5)
     summary = run_arena(compiled, rules, checkpoint, child, config)
-    assert 0.0 <= summary.score_rate <= 1.0
-    assert summary.wilson_low <= summary.score_rate <= summary.wilson_high
+    assert 0.0 <= summary.mean_pair_score <= 1.0
+    assert summary.bootstrap_low <= summary.mean_pair_score <= summary.bootstrap_high
