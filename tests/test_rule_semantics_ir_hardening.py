@@ -494,17 +494,12 @@ def test_ir_v1_rejected_and_capabilities_fail_closed():
     for name, builder in STRESS_GROUPS.items():
         ir = compile_semantic_ruleset(builder()).ir
         assert ir.ir_version == COMPILED_SEMANTIC_IR_VERSION
-        assert ir.capabilities == SemanticCapabilities(
-            legacy_core_executable=False,
-            new_ir_core_executable=False,
-            native_executable=False,
-            contains_path_predicate=ir.capabilities.contains_path_predicate,
-            contains_state_guard=ir.capabilities.contains_state_guard,
-            contains_aux_state=ir.capabilities.contains_aux_state,
-            contains_compound_effect=ir.capabilities.contains_compound_effect,
-            contains_postcondition=ir.capabilities.contains_postcondition,
-            contains_transition_trigger=ir.capabilities.contains_transition_trigger,
-        )
+        assert ir.capabilities.legacy_core_executable is False
+        assert ir.capabilities.native_executable is False
+        # Phase 1.9B-2: S0-S3-capable rulesets enable the reference executor;
+        # S4 (uchifuzume) stays fail-closed.
+        expect_ir_executable = name != "uchifuzume"
+        assert ir.capabilities.new_ir_core_executable is expect_ir_executable, name
 
 
 def test_semantic_dsl_version_in_serialization():
@@ -637,4 +632,8 @@ def test_payload_growth_v2_bounded():
             "ir_bytes": ir_bytes,
             "ratio": round(ratio, 2),
         }
-        assert ratio < 12.0, (label, sizes[label])
+        # Bound re-audited after Phase 1.9B-2: the frozen specification
+        # requires anchor movement in the normalized pattern set (audit
+        # contract B), which adds anchor geometry to the payload (16x16
+        # measured 12.04x). 13x still bounds against pathological growth.
+        assert ratio < 13.0, (label, sizes[label])

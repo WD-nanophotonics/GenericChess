@@ -37,3 +37,37 @@ def position_key(position: Position, compiled: "CompiledRuleSet") -> str:
     }
     raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+def semantic_position_key(
+    position: Position,
+    support,
+    aux_slots: tuple = (),
+) -> str:
+    """Position identity for semantic rulesets: board/hands/side plus
+    auxiliary slot values.  Legacy empty-aux positions are handled by the
+    legacy :func:`position_key` and keep their historical keys."""
+    board: list[list | None] = []
+    for piece in position.board:
+        if piece is None:
+            board.append(None)
+        else:
+            board.append(
+                [piece.owner, piece.base_type_id, piece.current_type_id, piece.promoted]
+            )
+    hands = [[list(h.counts) for h in position.hands]]
+    aux = {
+        str(slot_id): (
+            list(value) if isinstance(value, tuple) else value
+        )
+        for slot_id, value in position.aux_state
+    }
+    payload = {
+        "ruleset": support.ruleset_fingerprint,
+        "side_to_move": position.side_to_move,
+        "board": board,
+        "hands": hands,
+        "aux_state": aux,
+    }
+    raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()

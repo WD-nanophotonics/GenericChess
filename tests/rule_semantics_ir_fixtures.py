@@ -43,7 +43,7 @@ def _own_anchor():
     return (RuleInvariant("own_anchor_safe"),)
 
 
-def _semantic_ruleset(piece_types, actions, n=8, rows=None):
+def _semantic_ruleset(piece_types, actions, n=8, rows=None, drop_all_true=()):
     if rows is None:
         rows = []
         for rank in range(n):
@@ -59,7 +59,10 @@ def _semantic_ruleset(piece_types, actions, n=8, rows=None):
     drop_allowed = {}
     for pt in piece_types:
         if not pt.is_anchor:
-            drop_allowed[pt.type_id] = ((False,) * (n * n), (False,) * (n * n))
+            if pt.type_id in drop_all_true:
+                drop_allowed[pt.type_id] = ((True,) * (n * n), (True,) * (n * n))
+            else:
+                drop_allowed[pt.type_id] = ((False,) * (n * n), (False,) * (n * n))
     return RuleSet(
         board_size=n,
         piece_types=piece_types,
@@ -252,7 +255,29 @@ def en_passant_ruleset():
         ),
         invariants=_own_anchor(),
     )
-    return _semantic_ruleset((_king_type(), pawn), (creation, capture))
+    capture_left = RuleSemanticAction(
+        name="token_adjacent_capture_left",
+        type_ids=("P",),
+        geometry=RuleGeometrySpec(
+            kind="leap", offset=(-1, 1), owner_relative=True
+        ),
+        target_relation="empty",
+        composition="augment",
+        slot_guards=(
+            RuleSlotGuard(slot_name="ep_token", comparison="eq", square_ref=_ref("target")),
+        ),
+        effects=(
+            RuleActionEffect(
+                "remove",
+                square_ref=_ref("offset_from_target", offset=(0, -1), owner_relative=True),
+                disposition="capture_to_hand",
+            ),
+            RuleActionEffect("move", from_ref=_ref("source"), to_ref=_ref("target")),
+            RuleActionEffect("clear_token", slot_name="ep_token"),
+        ),
+        invariants=_own_anchor(),
+    )
+    return _semantic_ruleset((_king_type(), pawn), (creation, capture, capture_left))
 
 
 def nifu_ruleset():
@@ -291,7 +316,7 @@ def nifu_ruleset():
         ),
         invariants=_own_anchor(),
     )
-    return _semantic_ruleset((_king_type(), pawn), (action,))
+    return _semantic_ruleset((_king_type(), pawn), (action,), drop_all_true=("P",))
 
 
 def uchifuzume_ruleset():
@@ -322,7 +347,7 @@ def uchifuzume_ruleset():
             RulePostcondition("no_legal_reply", max_stratum="S3"),
         ),
     )
-    return _semantic_ruleset((_king_type(), pawn), (action,))
+    return _semantic_ruleset((_king_type(), pawn), (action,), drop_all_true=("P",))
 
 
 def weird_rulesets():

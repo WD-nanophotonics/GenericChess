@@ -445,8 +445,6 @@ def build_legacy_geometry_catalog(
     counter = 0
     for tid in sorted(compiled.types_by_id):
         pt = compiled.types_by_id[tid]
-        if pt.is_anchor:
-            continue
         for atom_index, atom in enumerate(pt.movement_atoms):
             gid = f"g{counter}"
             counter += 1
@@ -475,7 +473,7 @@ def _explicit_geometry_path(
     src = index_to_square(source, n)
     if spec.kind == "leap":
         df, dr = spec.offset
-        if owner == 1:
+        if owner == 1 and spec.owner_relative:
             df, dr = -df, -dr
         target = Square(src.file + df, src.rank + dr)
         if not (0 <= target.file < n and 0 <= target.rank < n):
@@ -483,7 +481,7 @@ def _explicit_geometry_path(
         return (square_to_index(target, n),)
     # ray
     df, dr = spec.direction
-    if owner == 1:
+    if owner == 1 and spec.owner_relative:
         df, dr = -df, -dr
     cur = src
     path: list[int] = []
@@ -632,6 +630,36 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
 def compile_semantic_ir(compiled: CompiledRuleSet):
     """Public alias: lower a legacy compiled ruleset to the v2 production IR."""
     return lower_legacy_to_ir(compiled)
+
+
+def _build_semantic_support(compiled: CompiledRuleSet):
+    from .ir import CompiledSemanticSupport, SemanticTypeMetadata
+
+    n = compiled.board_size
+    board = compiled.initial_position.board
+    rows = tuple(tuple(board[r * n : (r + 1) * n]) for r in range(n))
+    type_metadata = {
+        tid: SemanticTypeMetadata(
+            type_id=tid,
+            is_anchor=pt.is_anchor,
+            is_promotable=pt.is_promotable,
+            promotion_target_ids=tuple(pt.promotion_target_ids),
+        )
+        for tid, pt in compiled.types_by_id.items()
+    }
+    return CompiledSemanticSupport(
+        board_size=n,
+        ruleset_fingerprint=compiled.ruleset_fingerprint,
+        initial_position=rows,
+        type_metadata=type_metadata,
+        drop_allowed=compiled.drop_allowed,
+        promotion_allowed=compiled.promotion_allowed,
+        promotion_forced=compiled.promotion_forced,
+        empty_mobility=compiled.empty_mobility,
+        repetition_limit=compiled.repetition_limit,
+        max_ply=compiled.max_ply,
+        stalemate_result=compiled.stalemate_result,
+    )
 
 
 def _resolve_square_ref(ref, slot_ids_by_name):
@@ -1064,7 +1092,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     ] + semantic_patterns
     capabilities = SemanticCapabilities(
         legacy_core_executable=False,
-        new_ir_core_executable=False,
+        new_ir_core_executable=not contains_post,
         native_executable=False,
         contains_path_predicate=contains_path,
         contains_state_guard=contains_guard,
@@ -1089,4 +1117,5 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         raise RuleValidationError(
             [ValidationIssue("IR_INVALID", "ir", "; ".join(errors))]
         )
-    return CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy)
+    support = _build_semantic_support(legacy)
+    return CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)
