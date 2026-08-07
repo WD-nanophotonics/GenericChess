@@ -309,7 +309,7 @@ cancellation）。构建：
 `docs/native_phase2_iterative_search.md`。Native 引擎目前是 experimental
 （`generic_chess.native.engine.NativeSearchEngine`），尚未接入 UI/生产 SearchBackend。
 
-## 可学习评价与 TDLeaf（0.8.0a1，experimental）
+## 可学习评价与 TDLeaf（0.8.0a2，experimental）
 
 `generic_chess/learning/` 提供 learnable material + TDLeaf(λ) 训练管线：
 frozen-checkpoint self-play、可重放轨迹、确定性 checkpoint（SHA-256 id）、
@@ -318,6 +318,11 @@ frozen-checkpoint self-play、可重放轨迹、确定性 checkpoint（SHA-256 i
 `--proof`（预注册短实验）。设计与证据见
 `docs/learning_phase1_tdleaf_material.md`。当前为 material-only 表示，尚未加入
 PST/n-tuple/NNUE，也未接入 UI。
+
+Arena 测量已审计（Phase 1.5）：每局 fresh engine / fresh TT、evaluator-neutral
+paired opening corpus、pair-level bootstrap CI、三阶段 provenance；审计结论为
+Measurement VALID、Learning signal NO_POSITIVE_SIGNAL（详见
+`docs/learning_phase1_5_arena_audit.md`）。
 
 ## 快速上手
 

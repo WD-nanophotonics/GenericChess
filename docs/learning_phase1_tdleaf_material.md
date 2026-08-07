@@ -82,6 +82,12 @@ FAIL; negative results are allowed and reported honestly.
 
 ## Experiment results
 
+> **Pre-audit (exploratory).** The numbers below come from the Phase 1
+> arena, which reused engines across games, repeated a single opening, and
+> used game-level Wilson statistics. They are **not** treated as audited
+> evidence. The corrected, fresh-engine paired-opening proof is reported in
+> `docs/learning_phase1_5_arena_audit.md` and the accompanying final report.
+
 Pre-registered proof experiment (seed 7; `alpha_target_l2_fraction = 0.10`,
 gradient-calibrated rate; 5 generations; 8 self-play games/generation at 2000
 nodes/move; 10 arena pairs (20 games) per generation at 4000 nodes/move).
