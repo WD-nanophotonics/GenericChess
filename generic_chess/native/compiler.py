@@ -266,12 +266,23 @@ def compile_native_evaluation(
     native_rules: NativeCompiledRules,
     evaluation_profile,
     evaluation_config,
+    *,
+    material_override=None,
 ) -> NativeEvaluationTables:
     """Compile the rule-derived evaluation profile into native tables.
 
     The same RuleSet may be paired with different ``EvaluationConfig`` objects,
     so the tables are a separate object keyed by ``config_hash``; they are
     never folded into :class:`NativeCompiledRules`.
+
+    ``material_override`` (optional) supplies per-type board/hand material
+    weights (e.g. a learnable checkpoint).  It must expose:
+    ``quantized_board(type_ids) -> list[int]``,
+    ``quantized_hand(type_ids) -> list[int]`` and ``config_hash``.  Anchor
+    entries are forced to 0 and are never overridden.  The resulting
+    ``config_hash`` differs per checkpoint, so TT entries are never shared
+    across evaluators (and callers should create a fresh engine per
+    checkpoint).
     """
     if not native_available():
         raise NativeUnsupportedRuleError(
@@ -283,40 +294,56 @@ def compile_native_evaluation(
             f"({evaluation_profile.ruleset_fingerprint} vs "
             f"{native_rules.fingerprint})"
         )
-    if evaluation_profile.config_hash != config_hash(evaluation_config):
-        raise ValueError(
-            "evaluation profile config_hash does not match the evaluation config"
-        )
     type_ids = native_rules.type_ids
-    missing = (
-        set(type_ids)
-        - set(evaluation_profile.board_value_by_type)
-        - set(evaluation_profile.hand_value_by_base_type)
-        - set(evaluation_profile.promotion_gain_by_type)
-    )
-    if missing:
-        raise ValueError(
-            f"evaluation profile missing native types: {sorted(missing)}"
+    if material_override is not None:
+        board_values = list(material_override.quantized_board(type_ids))
+        hand_values = list(material_override.quantized_hand(type_ids))
+        if len(board_values) != len(type_ids) or len(hand_values) != len(type_ids):
+            raise ValueError(
+                "material override quantized tables must cover all native types"
+            )
+        config_hash_used = str(material_override.config_hash)
+        version_used = str(
+            getattr(material_override, "evaluator_version", "learnable-material-v1")
         )
-    for pt in native_rules.type_ids:
-        _validate(
-            evaluation_profile.board_value_by_type[pt] <= MAX_STATIC_EVAL,
-            f"board value for {pt!r} exceeds MAX_STATIC_EVAL",
-            native_rules.fingerprint,
+    else:
+        if evaluation_profile.config_hash != config_hash(evaluation_config):
+            raise ValueError(
+                "evaluation profile config_hash does not match the evaluation config"
+            )
+        missing = (
+            set(type_ids)
+            - set(evaluation_profile.board_value_by_type)
+            - set(evaluation_profile.hand_value_by_base_type)
+            - set(evaluation_profile.promotion_gain_by_type)
         )
+        if missing:
+            raise ValueError(
+                f"evaluation profile missing native types: {sorted(missing)}"
+            )
+        for pt in native_rules.type_ids:
+            _validate(
+                evaluation_profile.board_value_by_type[pt] <= MAX_STATIC_EVAL,
+                f"board value for {pt!r} exceeds MAX_STATIC_EVAL",
+                native_rules.fingerprint,
+            )
+        board_values = [
+            evaluation_profile.board_value_by_type[tid] for tid in type_ids
+        ]
+        hand_values = [
+            evaluation_profile.hand_value_by_base_type[tid] for tid in type_ids
+        ]
+        config_hash_used = evaluation_profile.config_hash
+        version_used = evaluation_profile.evaluator_version
     payload = {
         "type_count": native_rules.type_count,
         "mate_score": MATE_SCORE,
         "mate_threshold": MATE_THRESHOLD,
         "max_static_eval": MAX_STATIC_EVAL,
-        "config_hash": evaluation_profile.config_hash,
-        "evaluator_version": evaluation_profile.evaluator_version,
-        "board_value": [
-            evaluation_profile.board_value_by_type[tid] for tid in type_ids
-        ],
-        "hand_value": [
-            evaluation_profile.hand_value_by_base_type[tid] for tid in type_ids
-        ],
+        "config_hash": config_hash_used,
+        "evaluator_version": version_used,
+        "board_value": board_values,
+        "hand_value": hand_values,
         "promotion_gain": [
             evaluation_profile.promotion_gain_by_type[tid] for tid in type_ids
         ],
@@ -325,7 +352,7 @@ def compile_native_evaluation(
     return NativeEvaluationTables(
         capsule=capsule,
         fingerprint=native_rules.fingerprint,
-        config_hash=evaluation_profile.config_hash,
-        evaluator_version=evaluation_profile.evaluator_version,
+        config_hash=config_hash_used,
+        evaluator_version=version_used,
         type_count=native_rules.type_count,
     )
