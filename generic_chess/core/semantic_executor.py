@@ -622,41 +622,101 @@ class SemanticEngine:
     def _make_binding_from_action(
         self, position: Position, action: SemanticAction, pattern
     ) -> _ActionBinding:
+        """Rebuild the exact pre-action binding from a runtime action.
+
+        The runtime action is the sole source of geometry identity: no
+        geometry re-inference or first-match fallback is allowed (R3-02).
+        Every contract violation fails closed with ``IllegalActionError``.
+        """
+        from .errors import IllegalActionError
+
         side = position.side_to_move
         if action.source is not None:
+            if action.geometry_id is None:
+                raise IllegalActionError(
+                    f"semantic board binding missing geometry_id for "
+                    f"{action.pattern_id}"
+                )
+            if action.actor_type is None:
+                raise IllegalActionError(
+                    f"semantic board binding missing actor_type for "
+                    f"{action.pattern_id}"
+                )
+            geometry = self.ir.geometry.get(action.geometry_id)
+            if geometry is None:
+                raise IllegalActionError(
+                    f"semantic board binding references unknown geometry "
+                    f"{action.geometry_id!r} for {action.pattern_id}"
+                )
+            if action.geometry_id not in pattern.geometry_ids:
+                raise IllegalActionError(
+                    f"geometry {action.geometry_id!r} does not belong to "
+                    f"pattern {action.pattern_id}"
+                )
+            if geometry.kind == "drop":
+                raise IllegalActionError(
+                    f"drop geometry {action.geometry_id!r} used for a board "
+                    f"binding ({action.pattern_id})"
+                )
+            if (
+                geometry.atom_source is not None
+                and geometry.atom_source[0] != action.actor_type
+            ):
+                raise IllegalActionError(
+                    f"geometry {action.geometry_id!r} is incompatible with "
+                    f"actor type {action.actor_type!r} ({action.pattern_id})"
+                )
             piece = position.board[action.source]
             if piece is None:
-                raise RuntimeError(
+                raise IllegalActionError(
                     f"binding source has no piece for {action.pattern_id}"
                 )
-            if action.geometry_id is not None:
-                exact = self._path_for_geometry(
-                    action.geometry_id, action.source, action.target, side
+            if piece.current_type_id != action.actor_type:
+                raise IllegalActionError(
+                    f"actor type {action.actor_type!r} does not match piece "
+                    f"current type {piece.current_type_id!r} at source "
+                    f"{action.source} ({action.pattern_id})"
                 )
-                if exact is None:
-                    raise RuntimeError(
-                        f"binding geometry {action.geometry_id} does not reach "
-                        f"target for {action.pattern_id}"
-                    )
-                path = exact
-            else:
-                path = self._path_for(pattern, action.source, action.target, side)
+            exact = self._path_for_geometry(
+                action.geometry_id, action.source, action.target, side
+            )
+            if exact is None:
+                raise IllegalActionError(
+                    f"geometry {action.geometry_id!r} does not reach target "
+                    f"{action.target} from source {action.source} "
+                    f"({action.pattern_id})"
+                )
+            path = exact
             return self._make_binding(
-                pattern, action.geometry_id or "", piece.current_type_id, piece,
+                pattern, action.geometry_id, piece.current_type_id, piece,
                 action.source, action.target, action.promotion_target_id, path, position,
             )
         if action.actor_type is None:
-            raise RuntimeError(f"drop binding without actor type for {action.pattern_id}")
-        drop_gid = next(
-            (
-                g
-                for g in pattern.geometry_ids
-                if self.ir.geometry[g].kind == "drop"
-            ),
-            action.geometry_id or "",
-        )
+            raise IllegalActionError(
+                f"drop binding without actor type for {action.pattern_id}"
+            )
+        if action.geometry_id is None:
+            raise IllegalActionError(
+                f"semantic drop binding missing geometry_id for {action.pattern_id}"
+            )
+        geometry = self.ir.geometry.get(action.geometry_id)
+        if geometry is None:
+            raise IllegalActionError(
+                f"semantic drop binding references unknown geometry "
+                f"{action.geometry_id!r} for {action.pattern_id}"
+            )
+        if action.geometry_id not in pattern.geometry_ids:
+            raise IllegalActionError(
+                f"geometry {action.geometry_id!r} does not belong to pattern "
+                f"{action.pattern_id}"
+            )
+        if geometry.kind != "drop":
+            raise IllegalActionError(
+                f"board geometry {action.geometry_id!r} used for a drop "
+                f"binding ({action.pattern_id})"
+            )
         return self._make_binding(
-            pattern, drop_gid, action.actor_type, None, None,
+            pattern, action.geometry_id, action.actor_type, None, None,
             action.target, None, (), position,
         )
 
@@ -1068,18 +1128,6 @@ class SemanticEngine:
                 continue
             return True
         return False
-
-    def _path_for(self, pattern, source, target, side) -> tuple[int, ...]:
-        for gid in pattern.geometry_ids:
-            geometry = self.ir.geometry.get(gid)
-            if geometry is None or geometry.kind == "drop":
-                continue
-            for candidate_target, candidate_path in geometry_candidates(
-                geometry, str(side), source
-            ):
-                if candidate_target == target:
-                    return candidate_path
-        return ()
 
     def apply(self, position: Position, action: SemanticAction) -> Position:
         from .errors import IllegalActionError

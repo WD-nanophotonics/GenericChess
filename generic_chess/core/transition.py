@@ -65,6 +65,7 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
+        ensure_ruleset_match(state.position, compiled)
         if state.terminal_status.status is not TerminalStatus.ONGOING:
             raise IllegalActionError(
                 f"cannot apply an action to a terminal state ({state.terminal_status})"
@@ -111,6 +112,7 @@ def legal_successors(
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
+        ensure_ruleset_match(state.position, compiled)
         if state.terminal_status.status is not TerminalStatus.ONGOING:
             return ()
         actions = engine.legal_actions(state.position)
