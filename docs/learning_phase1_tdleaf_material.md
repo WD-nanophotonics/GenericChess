@@ -82,10 +82,26 @@ FAIL; negative results are allowed and reported honestly.
 
 ## Experiment results
 
-Filled in by `scripts`/the proof run; artifacts live under
-`artifacts/learning_phase1/` (gitignored) with `config.json`,
-`generation_*.json`, `training.csv`, `arena.csv`, `summary.json` and
-`learning_curve.csv`.
+Pre-registered proof experiment (seed 7; `alpha_target_l2_fraction = 0.10`,
+gradient-calibrated rate; 5 generations; 8 self-play games/generation at 2000
+nodes/move; 10 arena pairs (20 games) per generation at 4000 nodes/move).
+Artifacts: `artifacts/learning_phase1/` (gitignored).
+
+| RuleSet | fingerprint | child score (best gen) | notes |
+|---|---|---|---|
+| R1 classic-like 4×4 | `9b1e5e1b…` | 0.45 | outcomes color-dominated; no improvement |
+| R2 weird generic 4×4 | `2c56e08b…` | 0.55 / 0.60 / 0.70 (seeds 7/8/9) | first trained generation improves; later generations oscillate |
+| R3 promo/drop hybrid 6×6 | (see summary.json) | 0.50 | deterministic play always draws; zero TD signal |
+
+R2 seed repetition: seed 7 best 0.55, seed 8 best 0.60, seed 9 best 0.70 —
+the direction is consistent across three training seeds for the first trained
+generation, but continued training is unstable (seed 8 gen 3 collapses to
+0.00), so the signal is small and sample-limited.
+
+Verdict: **PROMISING** — the training pipeline is correct, parameters change
+meaningfully from real TD errors, and R2 shows a reproducible positive
+direction, but arena samples are small and continued-generation stability is
+not yet established.
 
 ## Limitations
 

@@ -53,7 +53,11 @@ def tdleaf_update(
     value_scale = config.value_scale or checkpoint.value_scale
     alpha = config.alpha
     if alpha is None:
-        median = checkpoint.value_scale / 4.0
+        median = (
+            checkpoint.reference_median
+            if checkpoint.reference_median > 0
+            else checkpoint.value_scale / 4.0
+        )
         alpha = 0.01 * max(median, 1.0)
     if not (0.0 < alpha < 1e6):
         raise ValueError(f"unreasonable learning rate {alpha}")
@@ -120,6 +124,7 @@ def tdleaf_update(
         hand_weights=hand,
         material_scale=checkpoint.material_scale,
         value_scale=value_scale,
+        reference_median=checkpoint.reference_median,
         w_max=checkpoint.w_max,
         training_seed=checkpoint.training_seed,
     )

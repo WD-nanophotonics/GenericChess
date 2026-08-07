@@ -26,6 +26,7 @@ def _checkpoint(value_scale=None):
         board_weights={"P": 100.0, "Q": 300.0},
         hand_weights={"P": 90.0, "Q": 270.0},
         value_scale=value_scale,
+        reference_median=median,
         w_max=10000.0,
     )
 
@@ -106,7 +107,11 @@ def _median_of(weights):
 def _normalize_pair(board_w, hand_w, checkpoint):
     """Mirror the pipeline's single-factor normalization."""
     median = _median_of(board_w)
-    target = checkpoint.value_scale / 4.0
+    target = (
+        checkpoint.reference_median
+        if checkpoint.reference_median > 0
+        else checkpoint.value_scale / 4.0
+    )
     if median <= 0:
         raise ValueError("median collapsed")
     factor = target / median
@@ -165,7 +170,7 @@ def test_no_nan_and_normalization():
     values = list(result.board_weights.values())
     ordered = sorted(abs(v) for v in values)
     med = (ordered[0] + ordered[1]) / 2.0
-    assert abs(med - checkpoint.value_scale / 4.0) < 1e-6
+    assert abs(med - checkpoint.reference_median) < 1e-6
 
 
 def test_owner_zero_perspective_terminal_sign():

@@ -77,12 +77,13 @@ def test_normalization_keeps_median():
         board_weights={k: v * 2.0 for k, v in checkpoint.board_weights.items()},
         hand_weights={k: v * 2.0 for k, v in checkpoint.hand_weights.items()},
         value_scale=checkpoint.value_scale,
+        reference_median=checkpoint.reference_median,
         w_max=checkpoint.w_max,
     )
     checkpoint2.normalize_and_clip()
     values = list(checkpoint2.board_weights.values())
     med = sorted(abs(v) for v in values)[len(values) // 2]
-    assert abs(med - checkpoint.value_scale / 4.0) < 1e-6
+    assert abs(med - checkpoint.reference_median) < 1e-6
 
 
 def test_normalization_rejects_collapse():

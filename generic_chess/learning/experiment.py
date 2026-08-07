@@ -143,12 +143,41 @@ def _run_experiment(
     training_rows: list[dict] = []
     arena_rows: list[dict] = []
     parent = gen0
+
+    # One-time alpha calibration from the actual gradient magnitude: the
+    # nominal 0.01 x median rate produces sub-integer weight deltas that
+    # vanish in native quantization.  Target: weight_l2_delta ~
+    # alpha_target_l2_fraction x reference_median per generation.  This is a
+    # documented gradient calibration, not arena tuning.
+    target_fraction = config.get("alpha_target_l2_fraction", 0.10)
+    calibration_trajectories = collect_self_play(
+        compiled, native_rules, parent, selfplay_cfg
+    )
+    nominal = tdleaf_update(calibration_trajectories, parent, td_cfg)
+    median = parent.reference_median
+    nominal_alpha = td_cfg.alpha or 0.01 * max(median, 1.0)
+    target_l2 = target_fraction * median
+    measured_l2 = max(nominal.weight_l2_delta, 1e-9)
+    calibrated_alpha = min(
+        nominal_alpha * (target_l2 / measured_l2), nominal_alpha * 200.0
+    )
+    calibrated_alpha = max(calibrated_alpha, nominal_alpha)
+    calibrated_cfg = TDLeafConfig(
+        gamma=config["gamma"],
+        lambd=config["lambda"],
+        alpha=calibrated_alpha,
+    )
+    config["calibrated_alpha"] = calibrated_alpha
+    config["alpha_nominal"] = nominal_alpha
+    (out_dir / "config.json").write_text(
+        canonical_json(config) + "\n", encoding="utf-8"
+    )
+
+    used_trajectories = calibration_trajectories
     for generation in range(1, config["generations"] + 1):
         t0 = time.perf_counter()
-        trajectories = collect_self_play(
-            compiled, native_rules, parent, selfplay_cfg
-        )
-        update = tdleaf_update(trajectories, parent, td_cfg)
+        trajectories = used_trajectories
+        update = tdleaf_update(trajectories, parent, calibrated_cfg)
         child = parent.child_checkpoint(
             board_weights=update.board_weights,
             hand_weights=update.hand_weights,
@@ -174,6 +203,7 @@ def _run_experiment(
                 "weight_max_delta": update.weight_max_delta,
                 "normalization_factor": update.normalization_factor,
                 "training_wall_seconds": wall,
+                "calibrated_alpha": calibrated_alpha,
                 "arena_wins": arena.wins,
                 "arena_draws": arena.draws,
                 "arena_losses": arena.losses,
@@ -209,6 +239,11 @@ def _run_experiment(
             encoding="utf-8",
         )
         parent = child
+        used_trajectories = None
+        if generation < config["generations"]:
+            used_trajectories = collect_self_play(
+                compiled, native_rules, parent, selfplay_cfg
+            )
 
     (out_dir / "training.csv").write_text(
         _csv(training_rows), encoding="utf-8"
@@ -266,6 +301,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--arena-pairs", type=int, default=6)
     parser.add_argument("--arena-nodes", type=int, default=4000)
     parser.add_argument("--alpha", type=float, default=None)
+    parser.add_argument("--alpha-target-fraction", type=float, default=0.10)
     parser.add_argument("--lambda", dest="lambd", type=float, default=0.7)
     parser.add_argument("--max-depth", type=int, default=12)
     parser.add_argument("--epsilon", type=float, default=0.10)
@@ -283,6 +319,7 @@ def main(argv: list[str] | None = None) -> int:
         "arena_pairs": args.arena_pairs,
         "arena_nodes": args.arena_nodes,
         "alpha": args.alpha,
+        "alpha_target_l2_fraction": args.alpha_target_fraction,
         "lambda": args.lambd,
         "gamma": 1.0,
         "max_depth": args.max_depth,

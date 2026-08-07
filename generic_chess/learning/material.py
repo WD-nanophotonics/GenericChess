@@ -43,6 +43,7 @@ class LearnableMaterialCheckpoint:
     hand_weights: dict[str, float] = field(default_factory=dict)
     material_scale: float = MATERIAL_SCALE
     value_scale: float = 1.0
+    reference_median: float = 0.0
     w_max: float = 100_000.0
     games_seen: int = 0
     positions_seen: int = 0
@@ -68,6 +69,7 @@ class LearnableMaterialCheckpoint:
             "hand_weights": self.hand_weights,
             "material_scale": self.material_scale,
             "value_scale": self.value_scale,
+            "reference_median": self.reference_median,
             "w_max": self.w_max,
             "games_seen": self.games_seen,
             "positions_seen": self.positions_seen,
@@ -111,7 +113,8 @@ class LearnableMaterialCheckpoint:
         board = {t: float(profile.board_value_by_type[t]) for t in type_ids}
         hand = {t: float(profile.hand_value_by_base_type[t]) for t in type_ids}
         median = _median_abs(list(board.values()))
-        value_scale = median * value_scale_factor if median > 0 else 1.0
+        max_abs = max((abs(v) for v in board.values()), default=0.0)
+        value_scale = max(median * value_scale_factor, max_abs)
         w_max = max(median * w_max_factor, 1.0)
         return cls(
             ruleset_fingerprint=compiled.ruleset_fingerprint,
@@ -122,6 +125,7 @@ class LearnableMaterialCheckpoint:
             board_weights=board,
             hand_weights=hand,
             value_scale=value_scale,
+            reference_median=median,
             w_max=w_max,
             training_seed=training_seed,
         )
@@ -156,8 +160,12 @@ class LearnableMaterialCheckpoint:
                 "non-anchor board weight median collapsed to ~0; "
                 "refusing to normalize"
             )
-        # The frozen reference median is value_scale / 4 (from from_profile).
-        target = self.value_scale / 4.0 if self.value_scale > 0 else 1.0
+        # The frozen reference median (initial non-anchor board median).
+        target = (
+            self.reference_median
+            if self.reference_median > 0
+            else self.value_scale / 4.0
+        )
         factor = target / current_median
         for tid in list(self.board_weights):
             self.board_weights[tid] = max(
@@ -193,6 +201,7 @@ class LearnableMaterialCheckpoint:
             hand_weights=dict(hand_weights),
             material_scale=self.material_scale,
             value_scale=value_scale if value_scale is not None else self.value_scale,
+            reference_median=self.reference_median,
             w_max=self.w_max,
             games_seen=self.games_seen + games_seen_delta,
             positions_seen=self.positions_seen + positions_seen_delta,
@@ -219,6 +228,7 @@ class LearnableMaterialCheckpoint:
             "hand_weights",
             "material_scale",
             "value_scale",
+            "reference_median",
             "w_max",
             "games_seen",
             "positions_seen",
