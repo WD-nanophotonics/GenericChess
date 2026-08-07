@@ -115,6 +115,7 @@ def test_rule_schema_field_set_is_frozen():
         "repetition_limit",
         "max_ply",
         "stalemate_result",
+        "semantic_actions",  # additive Phase 1.9B-1 high-level DSL (legacy empty)
         "metadata",
     }
 

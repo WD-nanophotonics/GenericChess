@@ -152,7 +152,459 @@ class RuleSet:
     repetition_limit: int = 4
     max_ply: int = 512
     stalemate_result: str = "draw"
+    # Additive high-level semantic actions (Phase 1.9B-1).  Omitted/empty
+    # keeps legacy semantics; the legacy compiler refuses non-empty values
+    # (fail-closed) and ``compile_semantic_ruleset`` is the IR entry point.
+    semantic_actions: tuple["RuleSemanticAction", ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
+
+
+# ---------------------------------------------------------------- semantic DSL
+
+PATH_CONSTRAINT_KINDS = (
+    "path_clear",
+    "path_count_eq",
+    "path_count_range",
+    "path_first_blocker_owner",
+    "path_last_blocker_owner",
+)
+SEMANTIC_GEOMETRY_KINDS = ("leap", "ray", "drop")
+TARGET_RELATIONS = ("empty", "enemy", "friendly", "any")
+SELECTOR_OWNERS = ("self", "opponent", "any")
+SELECTOR_TYPE_MODES = ("base", "current", "any")
+SELECTOR_PROMOTED = ("yes", "no", "any")
+SELECTOR_LOCATIONS = ("board", "hand")
+SELECTOR_SPATIAL = (
+    "same_file",
+    "same_rank",
+    "zone",
+    "exact",
+    "adjacent",
+    "path_between",
+)
+SELECTOR_SPATIAL_REFS = ("SOURCE", "TARGET", "FIXED_SQUARE", "AUX_SLOT")
+AGGREGATIONS = ("exists", "count")
+COMPARISON_OPS = ("eq", "ne", "lt", "le", "gt", "ge")
+SEMANTIC_EFFECT_KINDS = (
+    "move",
+    "remove",
+    "remove_from_hand",
+    "place",
+    "set_current_type",
+    "clear_right",
+    "set_token",
+    "clear_token",
+    "shift",
+)
+EFFECT_SQUARE_REFS = ("target", "source", "token", "partner_square")
+AUX_STATE_KINDS = ("right", "token_square")
+AUX_LIFETIMES = ("persistent", "expire_next_turn")
+INVARIANT_KINDS = ("own_anchor_safe", "squares_not_attacked")
+POSTCONDITION_KINDS = ("opponent_checked", "no_legal_reply")
+SEMANTIC_STRATA = ("S0", "S1", "S2", "S3", "S4", "S5")
+
+MAX_SEMANTIC_EFFECTS = 4
+MAX_SEMANTIC_AUX_SLOTS = 8
+MAX_SQUARES_NOT_ATTACKED = 4
+
+
+@dataclass(frozen=True, slots=True)
+class RulePathConstraint:
+    kind: str
+    count: int | None = None
+    lo: int | None = None
+    hi: int | None = None
+    owner_filter: str = "any"
+
+
+@dataclass(frozen=True, slots=True)
+class RuleSlotGuard:
+    """Pre-action guard reading a named auxiliary slot."""
+
+    slot_name: str
+    comparison: str = "eq"
+    value: int = 0
+
+
+@dataclass(frozen=True, slots=True)
+class RuleStateGuard:
+    aggregation: str
+    owner: str
+    type_mode: str
+    promoted: str
+    location: str
+    spatial: str
+    spatial_ref: str = "TARGET"
+    comparison: str = "eq"
+    value: int = 0
+
+
+@dataclass(frozen=True, slots=True)
+class RuleAuxState:
+    name: str
+    kind: str
+    lifetime: str
+
+
+@dataclass(frozen=True, slots=True)
+class RuleActionEffect:
+    kind: str
+    square_ref: str = "target"
+    slot_name: str | None = None
+    type_id: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class RuleInvariant:
+    kind: str
+    square_refs: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
+class RulePostcondition:
+    kind: str
+    max_stratum: str = "S3"
+
+
+@dataclass(frozen=True, slots=True)
+class RuleSemanticAction:
+    """High-level (definition-layer) semantic action template."""
+
+    name: str
+    type_ids: tuple[str, ...]
+    geometry: tuple[str, ...]
+    target_relation: str
+    path_constraints: tuple[RulePathConstraint, ...] = ()
+    state_guards: tuple[RuleStateGuard, ...] = ()
+    slot_guards: tuple[RuleSlotGuard, ...] = ()
+    aux_state: tuple[RuleAuxState, ...] = ()
+    effects: tuple[RuleActionEffect, ...] = ()
+    invariants: tuple[RuleInvariant, ...] = ()
+    postconditions: tuple[RulePostcondition, ...] = ()
+
+
+def _require_member(value: str, allowed: tuple[str, ...], path: str, code: str) -> str:
+    if value not in allowed:
+        raise _err(code, path, f"expected one of {allowed}, got {value!r}")
+    return value
+
+
+def path_constraint_to_dict(value: RulePathConstraint) -> dict:
+    return {
+        "kind": value.kind,
+        "count": value.count,
+        "lo": value.lo,
+        "hi": value.hi,
+        "owner_filter": value.owner_filter,
+    }
+
+
+def path_constraint_from_dict(data: Mapping[str, Any], path: str) -> RulePathConstraint:
+    data = _require_mapping(data, path)
+    kind = _require_member(
+        _require_str(_require_field(data, "kind", path), f"{path}.kind"),
+        PATH_CONSTRAINT_KINDS,
+        f"{path}.kind",
+        "PATH_CONSTRAINT_KIND_INVALID",
+    )
+    count = data.get("count")
+    if count is not None:
+        count = _require_int(count, f"{path}.count")
+        if count < 0:
+            raise _err("PATH_COUNT_NEGATIVE", f"{path}.count", "count must be >= 0")
+    lo = data.get("lo")
+    if lo is not None:
+        lo = _require_int(lo, f"{path}.lo")
+    hi = data.get("hi")
+    if hi is not None:
+        hi = _require_int(hi, f"{path}.hi")
+    if lo is not None and hi is not None and lo > hi:
+        raise _err("PATH_RANGE_INVALID", f"{path}", "lo must be <= hi")
+    owner_filter = _require_member(
+        _require_str(data.get("owner_filter", "any"), f"{path}.owner_filter"),
+        SELECTOR_OWNERS,
+        f"{path}.owner_filter",
+        "OWNER_FILTER_INVALID",
+    )
+    return RulePathConstraint(kind=kind, count=count, lo=lo, hi=hi, owner_filter=owner_filter)
+
+
+def slot_guard_to_dict(value: RuleSlotGuard) -> dict:
+    return {"slot_name": value.slot_name, "comparison": value.comparison, "value": value.value}
+
+
+def slot_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleSlotGuard:
+    data = _require_mapping(data, path)
+    slot_name = _require_str(_require_field(data, "slot_name", path), f"{path}.slot_name")
+    comparison = _require_member(
+        _require_str(data.get("comparison", "eq"), f"{path}.comparison"),
+        COMPARISON_OPS,
+        f"{path}.comparison",
+        "COMPARISON_INVALID",
+    )
+    value = _require_int(data.get("value", 0), f"{path}.value")
+    return RuleSlotGuard(slot_name=slot_name, comparison=comparison, value=value)
+
+
+def state_guard_to_dict(value: RuleStateGuard) -> dict:
+    return {
+        "aggregation": value.aggregation,
+        "owner": value.owner,
+        "type_mode": value.type_mode,
+        "promoted": value.promoted,
+        "location": value.location,
+        "spatial": value.spatial,
+        "spatial_ref": value.spatial_ref,
+        "comparison": value.comparison,
+        "value": value.value,
+    }
+
+
+def state_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleStateGuard:
+    data = _require_mapping(data, path)
+    aggregation = _require_member(
+        _require_str(_require_field(data, "aggregation", path), f"{path}.aggregation"),
+        AGGREGATIONS,
+        f"{path}.aggregation",
+        "AGGREGATION_INVALID",
+    )
+    owner = _require_member(
+        _require_str(_require_field(data, "owner", path), f"{path}.owner"),
+        SELECTOR_OWNERS,
+        f"{path}.owner",
+        "OWNER_INVALID",
+    )
+    type_mode = _require_member(
+        _require_str(_require_field(data, "type_mode", path), f"{path}.type_mode"),
+        SELECTOR_TYPE_MODES,
+        f"{path}.type_mode",
+        "TYPE_MODE_INVALID",
+    )
+    promoted = _require_member(
+        _require_str(_require_field(data, "promoted", path), f"{path}.promoted"),
+        SELECTOR_PROMOTED,
+        f"{path}.promoted",
+        "PROMOTED_INVALID",
+    )
+    location = _require_member(
+        _require_str(_require_field(data, "location", path), f"{path}.location"),
+        SELECTOR_LOCATIONS,
+        f"{path}.location",
+        "LOCATION_INVALID",
+    )
+    spatial = _require_member(
+        _require_str(_require_field(data, "spatial", path), f"{path}.spatial"),
+        SELECTOR_SPATIAL,
+        f"{path}.spatial",
+        "SPATIAL_INVALID",
+    )
+    spatial_ref = _require_member(
+        _require_str(data.get("spatial_ref", "TARGET"), f"{path}.spatial_ref"),
+        SELECTOR_SPATIAL_REFS,
+        f"{path}.spatial_ref",
+        "SPATIAL_REF_INVALID",
+    )
+    comparison = _require_member(
+        _require_str(data.get("comparison", "eq"), f"{path}.comparison"),
+        COMPARISON_OPS,
+        f"{path}.comparison",
+        "COMPARISON_INVALID",
+    )
+    value = _require_int(data.get("value", 0), f"{path}.value")
+    return RuleStateGuard(
+        aggregation=aggregation,
+        owner=owner,
+        type_mode=type_mode,
+        promoted=promoted,
+        location=location,
+        spatial=spatial,
+        spatial_ref=spatial_ref,
+        comparison=comparison,
+        value=value,
+    )
+
+
+def aux_state_to_dict(value: RuleAuxState) -> dict:
+    return {"name": value.name, "kind": value.kind, "lifetime": value.lifetime}
+
+
+def aux_state_from_dict(data: Mapping[str, Any], path: str) -> RuleAuxState:
+    data = _require_mapping(data, path)
+    name = _require_str(_require_field(data, "name", path), f"{path}.name")
+    kind = _require_member(
+        _require_str(_require_field(data, "kind", path), f"{path}.kind"),
+        AUX_STATE_KINDS,
+        f"{path}.kind",
+        "AUX_KIND_INVALID",
+    )
+    lifetime = _require_member(
+        _require_str(_require_field(data, "lifetime", path), f"{path}.lifetime"),
+        AUX_LIFETIMES,
+        f"{path}.lifetime",
+        "AUX_LIFETIME_INVALID",
+    )
+    return RuleAuxState(name=name, kind=kind, lifetime=lifetime)
+
+
+def effect_to_dict(value: RuleActionEffect) -> dict:
+    return {
+        "kind": value.kind,
+        "square_ref": value.square_ref,
+        "slot_name": value.slot_name,
+        "type_id": value.type_id,
+    }
+
+
+def effect_from_dict(data: Mapping[str, Any], path: str) -> RuleActionEffect:
+    data = _require_mapping(data, path)
+    kind = _require_member(
+        _require_str(_require_field(data, "kind", path), f"{path}.kind"),
+        SEMANTIC_EFFECT_KINDS,
+        f"{path}.kind",
+        "EFFECT_KIND_INVALID",
+    )
+    square_ref = _require_member(
+        _require_str(data.get("square_ref", "target"), f"{path}.square_ref"),
+        EFFECT_SQUARE_REFS,
+        f"{path}.square_ref",
+        "EFFECT_SQUARE_REF_INVALID",
+    )
+    slot_name = data.get("slot_name")
+    if slot_name is not None:
+        slot_name = _require_str(slot_name, f"{path}.slot_name")
+    type_id = data.get("type_id")
+    if type_id is not None:
+        type_id = _require_str(type_id, f"{path}.type_id")
+    return RuleActionEffect(
+        kind=kind, square_ref=square_ref, slot_name=slot_name, type_id=type_id
+    )
+
+
+def invariant_to_dict(value: RuleInvariant) -> dict:
+    return {"kind": value.kind, "square_refs": list(value.square_refs)}
+
+
+def invariant_from_dict(data: Mapping[str, Any], path: str) -> RuleInvariant:
+    data = _require_mapping(data, path)
+    kind = _require_member(
+        _require_str(_require_field(data, "kind", path), f"{path}.kind"),
+        INVARIANT_KINDS,
+        f"{path}.kind",
+        "INVARIANT_KIND_INVALID",
+    )
+    square_refs_raw = data.get("square_refs", [])
+    if not isinstance(square_refs_raw, list):
+        raise _err("FIELD_NOT_LIST", f"{path}.square_refs", "square_refs must be a list")
+    square_refs = tuple(
+        _require_member(
+            _require_str(ref, f"{path}.square_refs[{i}]"),
+            ("SOURCE", "TARGET", "FIXED_SQUARE", "AUX_SLOT"),
+            f"{path}.square_refs[{i}]",
+            "SQUARE_REF_INVALID",
+        )
+        for i, ref in enumerate(square_refs_raw)
+    )
+    if len(square_refs) > MAX_SQUARES_NOT_ATTACKED:
+        raise _err(
+            "INVARIANT_SQUARES_TOO_MANY",
+            f"{path}.square_refs",
+            f"squares_not_attacked supports at most {MAX_SQUARES_NOT_ATTACKED} refs",
+        )
+    return RuleInvariant(kind=kind, square_refs=square_refs)
+
+
+def postcondition_to_dict(value: RulePostcondition) -> dict:
+    return {"kind": value.kind, "max_stratum": value.max_stratum}
+
+
+def postcondition_from_dict(data: Mapping[str, Any], path: str) -> RulePostcondition:
+    data = _require_mapping(data, path)
+    kind = _require_member(
+        _require_str(_require_field(data, "kind", path), f"{path}.kind"),
+        POSTCONDITION_KINDS,
+        f"{path}.kind",
+        "POSTCONDITION_KIND_INVALID",
+    )
+    max_stratum = _require_member(
+        _require_str(data.get("max_stratum", "S3"), f"{path}.max_stratum"),
+        SEMANTIC_STRATA,
+        f"{path}.max_stratum",
+        "MAX_STRATUM_INVALID",
+    )
+    return RulePostcondition(kind=kind, max_stratum=max_stratum)
+
+
+def semantic_action_to_dict(value: RuleSemanticAction) -> dict:
+    return {
+        "name": value.name,
+        "type_ids": list(value.type_ids),
+        "geometry": list(value.geometry),
+        "target_relation": value.target_relation,
+        "path_constraints": [path_constraint_to_dict(c) for c in value.path_constraints],
+        "state_guards": [state_guard_to_dict(g) for g in value.state_guards],
+        "slot_guards": [slot_guard_to_dict(g) for g in value.slot_guards],
+        "aux_state": [aux_state_to_dict(a) for a in value.aux_state],
+        "effects": [effect_to_dict(e) for e in value.effects],
+        "invariants": [invariant_to_dict(i) for i in value.invariants],
+        "postconditions": [postcondition_to_dict(p) for p in value.postconditions],
+    }
+
+
+def semantic_action_from_dict(data: Mapping[str, Any], path: str) -> RuleSemanticAction:
+    data = _require_mapping(data, path)
+    name = _require_str(_require_field(data, "name", path), f"{path}.name")
+    type_ids = _require_str_list(
+        _require_field(data, "type_ids", path), f"{path}.type_ids"
+    )
+    geometry_raw = _require_str_list(_require_field(data, "geometry", path), f"{path}.geometry")
+    geometry = tuple(
+        _require_member(g, SEMANTIC_GEOMETRY_KINDS, f"{path}.geometry", "GEOMETRY_KIND_INVALID")
+        for g in geometry_raw
+    )
+    if not geometry:
+        raise _err("GEOMETRY_EMPTY", f"{path}.geometry", "geometry must be non-empty")
+    target_relation = _require_member(
+        _require_str(
+            _require_field(data, "target_relation", path), f"{path}.target_relation"
+        ),
+        TARGET_RELATIONS,
+        f"{path}.target_relation",
+        "TARGET_RELATION_INVALID",
+    )
+    return RuleSemanticAction(
+        name=name,
+        type_ids=type_ids,
+        geometry=geometry,
+        target_relation=target_relation,
+        path_constraints=tuple(
+            path_constraint_from_dict(item, f"{path}.path_constraints[{i}]")
+            for i, item in enumerate(data.get("path_constraints", ()))
+        ),
+        state_guards=tuple(
+            state_guard_from_dict(item, f"{path}.state_guards[{i}]")
+            for i, item in enumerate(data.get("state_guards", ()))
+        ),
+        slot_guards=tuple(
+            slot_guard_from_dict(item, f"{path}.slot_guards[{i}]")
+            for i, item in enumerate(data.get("slot_guards", ()))
+        ),
+        aux_state=tuple(
+            aux_state_from_dict(item, f"{path}.aux_state[{i}]")
+            for i, item in enumerate(data.get("aux_state", ()))
+        ),
+        effects=tuple(
+            effect_from_dict(item, f"{path}.effects[{i}]")
+            for i, item in enumerate(data.get("effects", ()))
+        ),
+        invariants=tuple(
+            invariant_from_dict(item, f"{path}.invariants[{i}]")
+            for i, item in enumerate(data.get("invariants", ()))
+        ),
+        postconditions=tuple(
+            postcondition_from_dict(item, f"{path}.postconditions[{i}]")
+            for i, item in enumerate(data.get("postconditions", ()))
+        ),
+    )
 
 
 def ruleset_to_dict(ruleset: RuleSet, include_metadata: bool = True) -> dict[str, Any]:
@@ -199,6 +651,12 @@ def ruleset_to_dict(ruleset: RuleSet, include_metadata: bool = True) -> dict[str
         "max_ply": ruleset.max_ply,
         "stalemate_result": ruleset.stalemate_result,
     }
+    # Additive semantic actions: emitted only when non-empty so legacy
+    # serialization (and therefore fingerprints) stays byte-identical.
+    if ruleset.semantic_actions:
+        data["semantic_actions"] = [
+            semantic_action_to_dict(a) for a in ruleset.semantic_actions
+        ]
     if include_metadata:
         data["metadata"] = dict(ruleset.metadata)
     return data
@@ -325,6 +783,15 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
     stalemate_result = _require_str(
         data.get("stalemate_result", "draw"), f"{path}.stalemate_result"
     )
+    semantic_actions_raw = data.get("semantic_actions", ())
+    if not isinstance(semantic_actions_raw, (list, tuple)):
+        raise _err(
+            "FIELD_NOT_LIST", f"{path}.semantic_actions", "semantic_actions must be a list"
+        )
+    semantic_actions = tuple(
+        semantic_action_from_dict(item, f"{path}.semantic_actions[{i}]")
+        for i, item in enumerate(semantic_actions_raw)
+    )
     metadata = _require_mapping(data.get("metadata", {}), f"{path}.metadata")
 
     return RuleSet(
@@ -338,6 +805,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         repetition_limit=repetition_limit,
         max_ply=max_ply,
         stalemate_result=stalemate_result,
+        semantic_actions=semantic_actions,
         metadata=dict(metadata),
     )
 
