@@ -406,116 +406,320 @@ def build_geometry_metadata(compiled: CompiledRuleSet) -> dict:
     return out
 
 
-def lower_legacy_to_ir(compiled: CompiledRuleSet):
-    """Lower an existing legacy compiled ruleset into the production IR.
+def _geometry_paths_from_atom(
+    compiled: CompiledRuleSet, tid: str, atom_index: int
+) -> dict[str, dict[int, tuple[int, ...]]]:
+    """Canonical per-(owner, source) ordered paths for a legacy atom,
+    projected from the single compiler lowering (the same tables the legacy
+    Core uses)."""
+    n = compiled.board_size
+    out: dict[str, dict[int, tuple[int, ...]]] = {}
+    for owner in (0, 1):
+        per_source: dict[int, tuple[int, ...]] = {}
+        for idx in range(n * n):
+            leap = compiled.leap_targets[tid][owner][idx][atom_index]
+            ray = compiled.ray_paths[tid][owner][idx][atom_index]
+            if leap:
+                per_source[idx] = (leap[0].rank * n + leap[0].file,)
+            elif ray:
+                per_source[idx] = tuple(s.rank * n + s.file for s in ray)
+            else:
+                per_source[idx] = ()
+        out[str(owner)] = per_source
+    return out
 
-    Legacy semantics are *described* (quiet/capture patterns with
-    ``path_clear``, drop templates, ``own_anchor_safe`` invariant) while the
-    legacy tables remain the runtime authority; promotion stays under the
-    compiled masks (``promotion_variants=compiled_masks``).
+
+def build_legacy_geometry_catalog(
+    compiled: CompiledRuleSet,
+) -> tuple[dict[str, Any], dict[tuple[str, int], str]]:
+    """Deterministic geometry catalog for legacy movement atoms.
+
+    geometry ids are allocated in (sorted type_id, atom_index) order; each
+    geometry keeps its atom identity (``atom_source``) so no executor ever
+    needs to re-read movement atoms.
     """
+    from .ir import CompiledGeometry
+
+    catalog: dict[str, CompiledGeometry] = {}
+    legacy_ids: dict[tuple[str, int], str] = {}
+    counter = 0
+    for tid in sorted(compiled.types_by_id):
+        pt = compiled.types_by_id[tid]
+        if pt.is_anchor:
+            continue
+        for atom_index, atom in enumerate(pt.movement_atoms):
+            gid = f"g{counter}"
+            counter += 1
+            is_ray = isinstance(atom, RayAtom)
+            catalog[gid] = CompiledGeometry(
+                geometry_id=gid,
+                kind="ray" if is_ray else "leap",
+                owner_relative=True,
+                offset=None if is_ray else atom.offset,
+                direction=atom.direction if is_ray else None,
+                min_steps=1 if is_ray else None,
+                max_steps=atom.max_steps if is_ray else None,
+                atom_source=(tid, atom_index),
+                paths=_geometry_paths_from_atom(compiled, tid, atom_index),
+            )
+            legacy_ids[(tid, atom_index)] = gid
+    return catalog, legacy_ids
+
+
+def _explicit_geometry_path(
+    n: int, spec, owner: int, source: int
+) -> tuple[int, ...]:
+    """Ordered path for an explicit leap/ray spec (owner-relative canonical)."""
+    from ..core.coordinates import Square, index_to_square, square_to_index
+
+    src = index_to_square(source, n)
+    if spec.kind == "leap":
+        df, dr = spec.offset
+        if owner == 1:
+            df, dr = -df, -dr
+        target = Square(src.file + df, src.rank + dr)
+        if not (0 <= target.file < n and 0 <= target.rank < n):
+            return ()
+        return (square_to_index(target, n),)
+    # ray
+    df, dr = spec.direction
+    if owner == 1:
+        df, dr = -df, -dr
+    cur = src
+    path: list[int] = []
+    max_steps = spec.max_steps if spec.max_steps is not None else n * n
+    for step in range(1, max_steps + 1):
+        nxt = Square(cur.file + df, cur.rank + dr)
+        if not (0 <= nxt.file < n and 0 <= nxt.rank < n):
+            break
+        path.append(square_to_index(nxt, n))
+        cur = nxt
+    return tuple(path)
+
+
+def _build_explicit_geometry(
+    compiled: CompiledRuleSet, spec, gid: str
+):
+    from .ir import CompiledGeometry
+
+    if spec.kind == "drop":
+        return CompiledGeometry(geometry_id=gid, kind="drop")
+    n = compiled.board_size
+    paths: dict[str, dict[int, tuple[int, ...]]] = {}
+    for owner in (0, 1):
+        per_source = {idx: _explicit_geometry_path(n, spec, owner, idx) for idx in range(n * n)}
+        paths[str(owner)] = per_source
+    return CompiledGeometry(
+        geometry_id=gid,
+        kind=spec.kind,
+        owner_relative=spec.owner_relative,
+        offset=spec.offset,
+        direction=spec.direction,
+        min_steps=spec.min_steps,
+        max_steps=spec.max_steps,
+        paths=paths,
+    )
+
+
+def lower_legacy_to_ir(compiled: CompiledRuleSet):
+    """Lower an existing legacy compiled ruleset into the v2 production IR."""
     from .ir import (
         CompiledEffect,
+        CompiledGeometry,
         CompiledInvariant,
         CompiledMovePattern,
         CompiledPathPredicate,
         CompiledSemanticIR,
+        CompiledSquareRef,
         CompiledTargetPredicate,
+        CompiledTypeRef,
         SemanticCapabilities,
     )
 
+    geometry, legacy_ids = build_legacy_geometry_catalog(compiled)
     patterns: list[CompiledMovePattern] = []
-    for tid, pt in compiled.types_by_id.items():
-        if pt.is_anchor:
-            continue
-        for atom in pt.movement_atoms:
-            is_ray = isinstance(atom, RayAtom)
-            path = (CompiledPathPredicate("path_clear"),) if is_ray else ()
-            geometry = ("ray",) if is_ray else ("leap",)
-            patterns.append(
-                CompiledMovePattern(
-                    name=f"legacy_{tid}_quiet",
-                    type_ids=(tid,),
-                    geometry=geometry,
-                    target=CompiledTargetPredicate("target_empty"),
-                    path=path,
-                    effects=(CompiledEffect("move"),),
-                    invariants=(CompiledInvariant("own_anchor_safe"),),
-                    cost_class="C1",
-                    stratum="S3",
-                    promotion_variants="compiled_masks",
-                )
+    pattern_counter = 0
+    for (tid, atom_index), gid in sorted(legacy_ids.items(), key=lambda kv: kv[1]):
+        is_ray = geometry[gid].kind == "ray"
+        path = (CompiledPathPredicate("path_clear"),) if is_ray else ()
+        for family in ("quiet", "capture"):
+            target = (
+                CompiledTargetPredicate("target_empty")
+                if family == "quiet"
+                else CompiledTargetPredicate("target_enemy")
             )
-            patterns.append(
-                CompiledMovePattern(
-                    name=f"legacy_{tid}_capture",
-                    type_ids=(tid,),
-                    geometry=geometry,
-                    target=CompiledTargetPredicate("target_enemy"),
-                    path=path,
-                    effects=(CompiledEffect("remove", "target"), CompiledEffect("move")),
-                    invariants=(CompiledInvariant("own_anchor_safe"),),
-                    cost_class="C1",
-                    stratum="S3",
-                    promotion_variants="compiled_masks",
-                )
-            )
-        if tid in compiled.drop_allowed:
-            patterns.append(
-                CompiledMovePattern(
-                    name=f"legacy_{tid}_drop",
-                    type_ids=(tid,),
-                    geometry=("drop",),
-                    target=CompiledTargetPredicate("target_empty"),
-                    effects=(
-                        CompiledEffect("remove_from_hand"),
-                        CompiledEffect("place"),
+            effects = (
+                (
+                    CompiledEffect(
+                        "remove",
+                        square_ref=CompiledSquareRef("target"),
+                        disposition="capture_to_hand",
                     ),
+                    CompiledEffect(
+                        "move",
+                        from_ref=CompiledSquareRef("source"),
+                        to_ref=CompiledSquareRef("target"),
+                    ),
+                )
+                if family == "capture"
+                else (
+                    CompiledEffect(
+                        "move",
+                        from_ref=CompiledSquareRef("source"),
+                        to_ref=CompiledSquareRef("target"),
+                    ),
+                )
+            )
+            patterns.append(
+                CompiledMovePattern(
+                    pattern_id=f"legacy_{pattern_counter:03d}",
+                    name=f"legacy_{tid}_{family}_{atom_index}",
+                    type_ids=(tid,),
+                    geometry_ids=(gid,),
+                    target=target,
+                    path=path,
+                    effects=effects,
                     invariants=(CompiledInvariant("own_anchor_safe"),),
+                    promotion_mode="inherit_compiled_masks",
+                    composition="augment",
                     cost_class="C1",
                     stratum="S3",
                 )
             )
-    capabilities = SemanticCapabilities(
-        legacy_core_executable=True,
-        new_ir_core_executable=False,
-        native_executable=True,
-    )
+            pattern_counter += 1
+
+    drop_gid = f"g{len(geometry)}"
+    geometry[drop_gid] = CompiledGeometry(geometry_id=drop_gid, kind="drop")
+    for tid in sorted(compiled.drop_allowed):
+        patterns.append(
+            CompiledMovePattern(
+                pattern_id=f"legacy_{pattern_counter:03d}",
+                name=f"legacy_{tid}_drop",
+                type_ids=(tid,),
+                geometry_ids=(drop_gid,),
+                target=CompiledTargetPredicate("target_empty"),
+                effects=(
+                    CompiledEffect(
+                        "remove_from_hand",
+                        piece_type_ref=CompiledTypeRef("explicit", tid),
+                    ),
+                    CompiledEffect(
+                        "place",
+                        to_ref=CompiledSquareRef("target"),
+                        piece_type_ref=CompiledTypeRef("explicit", tid),
+                    ),
+                ),
+                invariants=(CompiledInvariant("own_anchor_safe"),),
+                composition="augment",
+                cost_class="C1",
+                stratum="S3",
+            )
+        )
+        pattern_counter += 1
     return CompiledSemanticIR(
+        ir_version=2,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
-        geometry_metadata=build_geometry_metadata(compiled),
+        geometry=geometry,
         patterns=tuple(patterns),
-        capabilities=capabilities,
+        capabilities=SemanticCapabilities(
+            legacy_core_executable=True,
+            new_ir_core_executable=False,
+            native_executable=True,
+        ),
     )
 
 
 def compile_semantic_ir(compiled: CompiledRuleSet):
-    """Public alias: lower a legacy compiled ruleset to the production IR."""
+    """Public alias: lower a legacy compiled ruleset to the v2 production IR."""
     return lower_legacy_to_ir(compiled)
 
 
-def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
-    """Compile a RuleSet that uses the semantic DSL into the production IR.
+def _resolve_square_ref(ref, slot_ids_by_name):
+    from .ir import CompiledSquareRef
 
-    The resulting :class:`CompiledSemanticRuleset` is NOT executable by the
-    legacy Core or native 0.3.0 (capabilities are false); it exists for
-    IR inspection and as the Phase 1.9B-2 reference-executor input.
+    return CompiledSquareRef(
+        kind=ref.kind,
+        square=ref.square,
+        offset=ref.offset,
+        owner_relative=ref.owner_relative,
+        step=ref.step,
+        slot_id=slot_ids_by_name.get(ref.slot_name) if ref.slot_name else None,
+    )
+
+
+def _resolve_type_ref(ref, type_ids):
+    from .ir import CompiledTypeRef
+
+    if ref.kind == "explicit" and ref.type_id not in type_ids:
+        raise RuleValidationError(
+            [ValidationIssue("SEMANTIC_TYPE_UNKNOWN", "type_ref", ref.type_id)]
+        )
+    return CompiledTypeRef(kind=ref.kind, type_id=ref.type_id)
+
+
+def _resolve_spatial(sel, slot_ids_by_name, zone_ids_by_set):
+    from .ir import CompiledSpatialSelector
+
+    zone_id = zone_ids_by_set.get(tuple(sorted(sel.zone_squares))) if sel.kind == "zone" else None
+    return CompiledSpatialSelector(
+        kind=sel.kind,
+        refs=tuple(_resolve_square_ref(r, slot_ids_by_name) for r in sel.refs),
+        zone_id=zone_id,
+    )
+
+
+def _pattern_components(pattern) -> list[str]:
+    components = (
+        ["geometry"] * len(pattern.geometry_ids)
+        + [pattern.target.kind]
+        + [pp.kind for pp in pattern.path]
+        + ["state_guard"] * len(pattern.guards)
+        + ["slot_guard"] * len(pattern.slot_guards)
+        + [i.kind for i in pattern.invariants]
+        + [pc.kind for pc in pattern.postconditions]
+        + [e.kind for e in pattern.effects]
+    )
+    return components
+
+
+def _assign_stratum_cost(pattern):
+    from . import ir as ir_module
+    from .schema import SEMANTIC_STRATA
+
+    components = _pattern_components(pattern)
+    stratum = max(SEMANTIC_STRATA.index(ir_module._component_stratum(c)) for c in components)
+    cost = max(ir_module.COST_CLASSES.index(ir_module.cost_class_of(c)) for c in components)
+    return SEMANTIC_STRATA[stratum], ir_module.COST_CLASSES[cost]
+
+
+def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
+    """Compile a semantic-DSL RuleSet into the v2 production IR.
+
+    The normalized pattern set is the final action template set
+    (legacy - replaced + augment + replacements); an executor consumes only
+    this IR and never the high-level RuleSet.  Capabilities remain
+    fail-closed (nothing executes yet).
     """
     from . import ir as ir_module
     from .ir import (
         CompiledAuxSlot,
         CompiledEffect,
+        CompiledGeometry,
         CompiledInvariant,
         CompiledMovePattern,
         CompiledPathPredicate,
-        CompiledPieceSelector,
         CompiledPostcondition,
         CompiledSemanticIR,
         CompiledSemanticRuleset,
         CompiledSlotGuard,
+        CompiledSquareRef,
         CompiledStatePredicate,
         CompiledTargetPredicate,
+        CompiledTransitionTrigger,
+        CompiledTypeRef,
+        CompiledZone,
         SemanticCapabilities,
+        validate_executable_completeness,
         validate_ir,
     )
     from .schema import MAX_SEMANTIC_AUX_SLOTS, SEMANTIC_STRATA
@@ -524,60 +728,110 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         ruleset = ruleset_from_dict(ruleset)
     if not ruleset.semantic_actions:
         raise RuleValidationError(
-            [
-                ValidationIssue(
-                    "NO_SEMANTIC_ACTIONS",
-                    "ruleset.semantic_actions",
-                    "compile_semantic_ruleset requires at least one semantic action",
-                )
-            ]
+            [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
         )
     legacy = compile_ruleset(ruleset, allow_semantic_actions=True)
+    type_ids = tuple(sorted(legacy.types_by_id))
 
-    # Deterministic aux-slot allocation: sorted by slot name.
+    # --- geometry catalog: legacy atoms first, then explicit shapes.
+    geometry, legacy_ids = build_legacy_geometry_catalog(legacy)
+    drop_gid = f"g{len(geometry)}"
+    geometry[drop_gid] = CompiledGeometry(geometry_id=drop_gid, kind="drop")
+    next_gid = len(geometry)
+    action_geometry_ids: dict[int, tuple[str, ...]] = {}
+    for action_index, action in enumerate(ruleset.semantic_actions):
+        spec = action.geometry
+        if spec.kind == "legacy_atoms":
+            gids = []
+            for tid in action.type_ids:
+                if tid not in legacy.types_by_id:
+                    raise RuleValidationError(
+                        [ValidationIssue("SEMANTIC_TYPE_UNKNOWN", "type_ids", tid)]
+                    )
+                pt = legacy.types_by_id[tid]
+                for atom_index, atom in enumerate(pt.movement_atoms):
+                    is_ray = isinstance(atom, RayAtom)
+                    if spec.atom_kind is None or (
+                        (spec.atom_kind == "ray") == is_ray
+                    ):
+                        gids.append(legacy_ids[(tid, atom_index)])
+            if not gids:
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "SEMANTIC_GEOMETRY_NO_ATOMS",
+                            f"semantic_actions[{action_index}].geometry",
+                            "legacy_atoms matched no atoms",
+                        )
+                    ]
+                )
+            action_geometry_ids[action_index] = tuple(sorted(gids))
+        else:
+            gid = f"g{next_gid}"
+            next_gid += 1
+            geometry[gid] = _build_explicit_geometry(legacy, spec, gid)
+            action_geometry_ids[action_index] = (gid,)
+
+    # --- zones (deterministic: sorted square sets).
+    zone_sets: list[tuple[tuple[int, int], ...]] = []
+    zone_ids_by_set: dict[tuple[tuple[int, int], ...], str] = {}
+    for action in ruleset.semantic_actions:
+        for guard in action.state_guards:
+            if guard.spatial.kind != "zone":
+                continue
+            key = tuple(sorted(guard.spatial.zone_squares))
+            if key not in zone_ids_by_set:
+                zone_ids_by_set[key] = f"z{len(zone_sets)}"
+                zone_sets.append(key)
+    zones = {
+        zid: CompiledZone(zid, tuple(sq[1] * legacy.board_size + sq[0] for sq in squares))
+        for squares, zid in sorted(zone_ids_by_set.items(), key=lambda kv: kv[1])
+    }
+
+    # --- aux slots (deterministic: sorted by name).
     aux_by_name: dict[str, Any] = {}
     for action in ruleset.semantic_actions:
         for aux in action.aux_state:
             if aux.name in aux_by_name and aux_by_name[aux.name] != aux:
                 raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "AUX_SLOT_CONFLICT",
-                            f"ruleset.semantic_actions aux_state {aux.name}",
-                            "duplicate aux state name with different definition",
-                        )
-                    ]
+                    [ValidationIssue("AUX_SLOT_CONFLICT", "aux_state", aux.name)]
                 )
             aux_by_name.setdefault(aux.name, aux)
     if len(aux_by_name) > MAX_SEMANTIC_AUX_SLOTS:
         raise RuleValidationError(
-            [
-                ValidationIssue(
-                    "AUX_SLOTS_TOO_MANY",
-                    "ruleset.semantic_actions",
-                    f"at most {MAX_SEMANTIC_AUX_SLOTS} aux slots per ruleset",
-                )
-            ]
+            [ValidationIssue("AUX_SLOTS_TOO_MANY", "aux_state", str(len(aux_by_name)))]
         )
-    slot_ids = {name: i for i, name in enumerate(sorted(aux_by_name))}
-    compiled_slots = tuple(
-        CompiledAuxSlot(slot_ids[name], aux_by_name[name].kind, aux_by_name[name].lifetime)
-        for name in sorted(aux_by_name)
-    )
+    slot_ids_by_name = {name: i for i, name in enumerate(sorted(aux_by_name))}
+    compiled_slots = []
+    for name in sorted(aux_by_name):
+        aux = aux_by_name[name]
+        if aux.value_kind == "bool":
+            initial = 1 if aux.initial == 1 else 0
+        else:
+            initial = aux.initial  # square tuple or None
+        compiled_slots.append(
+            CompiledAuxSlot(
+                slot_id=slot_ids_by_name[name],
+                value_kind=aux.value_kind,
+                scope=aux.scope,
+                lifetime=aux.lifetime,
+                initial=initial,
+            )
+        )
+    compiled_slots = tuple(compiled_slots)
 
-    patterns: list[CompiledMovePattern] = []
-    contains_path = contains_guard = contains_compound = contains_post = False
-    for action in ruleset.semantic_actions:
+    # --- legacy baseline patterns (for composition).
+    legacy_ir = lower_legacy_to_ir(legacy)
+    legacy_patterns = list(legacy_ir.patterns)
+    replaced: set[str] = set()
+    semantic_patterns: list[CompiledMovePattern] = []
+    contains_path = contains_guard = contains_compound = contains_post = contains_trigger = False
+
+    for action_index, action in enumerate(ruleset.semantic_actions):
         for tid in action.type_ids:
             if tid not in legacy.types_by_id:
                 raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "SEMANTIC_TYPE_UNKNOWN",
-                            f"ruleset.semantic_actions {action.name} type_ids",
-                            f"unknown type id {tid!r}",
-                        )
-                    ]
+                    [ValidationIssue("SEMANTIC_TYPE_UNKNOWN", "type_ids", tid)]
                 )
         if action.path_constraints:
             contains_path = True
@@ -587,54 +841,146 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
             contains_compound = True
         if action.postconditions:
             contains_post = True
+        if action.triggers:
+            contains_trigger = True
 
+        gids = action_geometry_ids[action_index]
+        # --- composition resolution.
+        composition = action.composition
+        replaced_ids: tuple[str, ...] = ()
+        if composition == "replace_legacy":
+            selector = action.replace_selector
+            if selector is None:
+                raise RuleValidationError(
+                    [ValidationIssue("REPLACE_NO_SELECTOR", "replace_selector", action.name)]
+                )
+            def _family_ok(gid: str) -> bool:
+                kind = geometry[gid].kind
+                if selector.action_family == "drop":
+                    return kind == "drop"
+                return kind in ("leap", "ray")
+
+            matched = [
+                p.pattern_id
+                for p in legacy_patterns
+                if set(p.type_ids) & set(selector.type_ids)
+                and any(_family_ok(g) for g in p.geometry_ids)
+                and p.target.kind == f"target_{selector.target_relation}"
+                and (
+                    selector.geometry_kind is None
+                    or any(geometry[g].kind == selector.geometry_kind for g in p.geometry_ids)
+                )
+            ]
+            matched = list(dict.fromkeys(matched))
+            if not matched and not selector.replace_all_matching:
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "REPLACE_ZERO_MATCH",
+                            f"semantic_actions[{action_index}]",
+                            "replace selector matched no legacy pattern",
+                        )
+                    ]
+                )
+            if len(matched) > 1 and not selector.replace_all_matching:
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "REPLACE_AMBIGUOUS",
+                            f"semantic_actions[{action_index}]",
+                            f"replace selector matched {len(matched)} patterns; "
+                            "set replace_all_matching=True",
+                        )
+                    ]
+                )
+            replaced.update(matched)
+            replaced_ids = tuple(matched)
+
+        # --- effects.
         effects = []
         for effect in action.effects:
-            slot_id = slot_ids.get(effect.slot_name) if effect.slot_name else None
+            slot_id = slot_ids_by_name.get(effect.slot_name) if effect.slot_name else None
             if effect.slot_name and slot_id is None:
                 raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "EFFECT_SLOT_UNKNOWN",
-                            f"ruleset.semantic_actions {action.name} effects",
-                            f"unknown slot name {effect.slot_name!r}",
-                        )
-                    ]
+                    [ValidationIssue("EFFECT_SLOT_UNKNOWN", "effects", effect.slot_name)]
                 )
+            from_ref = (
+                _resolve_square_ref(effect.from_ref, slot_ids_by_name)
+                if effect.from_ref
+                else None
+            )
+            to_ref = (
+                _resolve_square_ref(effect.to_ref, slot_ids_by_name)
+                if effect.to_ref
+                else None
+            )
+            square_ref = (
+                _resolve_square_ref(effect.square_ref, slot_ids_by_name)
+                if effect.square_ref
+                else None
+            )
+            piece_type_ref = (
+                _resolve_type_ref(effect.piece_type_ref, type_ids)
+                if effect.piece_type_ref
+                else None
+            )
+            type_ref = (
+                _resolve_type_ref(effect.type_ref, type_ids)
+                if effect.type_ref
+                else None
+            )
+            disposition = effect.disposition
+            if effect.kind == "remove" and disposition is None:
+                disposition = "capture_to_hand"
             effects.append(
-                CompiledEffect(effect.kind, effect.square_ref, slot_id, effect.type_id)
-            )
-        slot_guards = []
-        for guard in action.slot_guards:
-            if guard.slot_name not in slot_ids:
-                raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "SLOT_GUARD_UNKNOWN",
-                            f"ruleset.semantic_actions {action.name} slot_guards",
-                            f"unknown slot name {guard.slot_name!r}",
-                        )
-                    ]
+                CompiledEffect(
+                    kind=effect.kind,
+                    from_ref=from_ref,
+                    to_ref=to_ref,
+                    square_ref=square_ref,
+                    piece_owner=effect.piece_owner,
+                    piece_type_ref=piece_type_ref,
+                    disposition=disposition,
+                    slot_id=slot_id,
+                    type_ref=type_ref,
+                    count=effect.count,
+                    value=effect.value,
                 )
-            slot_guards.append(
-                CompiledSlotGuard(slot_ids[guard.slot_name], guard.comparison, guard.value)
             )
+
+        # --- guards / slot guards / path / invariants / postconditions.
         guards = tuple(
             CompiledStatePredicate(
                 aggregation=g.aggregation,
-                selector=CompiledPieceSelector(
-                    owner=g.owner,
-                    type_mode=g.type_mode,
-                    promoted=g.promoted,
-                    location=g.location,
-                    spatial=g.spatial,
-                    spatial_ref=g.spatial_ref,
-                ),
+                owner=g.owner,
+                type_ref=_resolve_type_ref(g.type_ref, type_ids),
+                compare_field=g.compare_field,
+                promoted=g.promoted,
+                location=g.location,
+                spatial=_resolve_spatial(g.spatial, slot_ids_by_name, zone_ids_by_set),
                 comparison=g.comparison,
                 value=g.value,
             )
             for g in action.state_guards
         )
+        slot_guards = []
+        for sg in action.slot_guards:
+            if sg.slot_name not in slot_ids_by_name:
+                raise RuleValidationError(
+                    [ValidationIssue("SLOT_GUARD_UNKNOWN", "slot_guards", sg.slot_name)]
+                )
+            slot_guards.append(
+                CompiledSlotGuard(
+                    slot_id=slot_ids_by_name[sg.slot_name],
+                    comparison=sg.comparison,
+                    value=sg.value,
+                    square_ref=(
+                        _resolve_square_ref(sg.square_ref, slot_ids_by_name)
+                        if sg.square_ref
+                        else None
+                    ),
+                )
+            )
         path = tuple(
             CompiledPathPredicate(
                 kind=c.kind,
@@ -646,41 +992,76 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
             for c in action.path_constraints
         )
         invariants = tuple(
-            CompiledInvariant(i.kind, i.square_refs) for i in action.invariants
+            CompiledInvariant(
+                i.kind,
+                tuple(_resolve_square_ref(r, slot_ids_by_name) for r in i.square_refs),
+            )
+            for i in action.invariants
         )
         postconditions = tuple(
             CompiledPostcondition(p.kind, p.max_stratum) for p in action.postconditions
         )
 
-        components = (
-            list(action.geometry)
-            + [action.target_relation]
-            + [c.kind for c in action.path_constraints]
-            + ["state_guard"] * len(action.state_guards)
-            + ["slot_guard"] * len(action.slot_guards)
-            + [i.kind for i in action.invariants]
-            + [p.kind for p in action.postconditions]
-            + [e.kind for e in action.effects]
+        pattern = CompiledMovePattern(
+            pattern_id=f"sem_{action_index:02d}_{action.name}",
+            name=action.name,
+            type_ids=action.type_ids,
+            geometry_ids=gids,
+            target=CompiledTargetPredicate(f"target_{action.target_relation}"),
+            path=path,
+            guards=guards,
+            slot_guards=tuple(slot_guards),
+            effects=tuple(effects),
+            invariants=invariants,
+            postconditions=postconditions,
+            promotion_mode=action.promotion_mode,
+            explicit_promotion_type=action.explicit_promotion_type,
+            composition=composition,
+            replaced_pattern_ids=replaced_ids,
+            cost_class="C1",
+            stratum="S0",
         )
-        stratum = max(SEMANTIC_STRATA.index(ir_module._component_stratum(c)) for c in components)
-        cost = max(ir_module.COST_CLASSES.index(ir_module.cost_class_of(c)) for c in components)
-        patterns.append(
-            CompiledMovePattern(
-                name=action.name,
-                type_ids=action.type_ids,
-                geometry=action.geometry,
-                target=CompiledTargetPredicate(f"target_{action.target_relation}"),
-                path=path,
-                guards=guards,
-                slot_guards=tuple(slot_guards),
-                effects=tuple(effects),
-                invariants=invariants,
-                postconditions=postconditions,
-                cost_class=ir_module.COST_CLASSES[cost],
-                stratum=SEMANTIC_STRATA[stratum],
-            )
+        stratum, cost = _assign_stratum_cost(pattern)
+        pattern = CompiledMovePattern(
+            pattern_id=pattern.pattern_id,
+            name=pattern.name,
+            type_ids=pattern.type_ids,
+            geometry_ids=pattern.geometry_ids,
+            target=pattern.target,
+            path=pattern.path,
+            guards=pattern.guards,
+            slot_guards=pattern.slot_guards,
+            effects=pattern.effects,
+            invariants=pattern.invariants,
+            postconditions=pattern.postconditions,
+            promotion_mode=pattern.promotion_mode,
+            explicit_promotion_type=pattern.explicit_promotion_type,
+            composition=pattern.composition,
+            replaced_pattern_ids=pattern.replaced_pattern_ids,
+            cost_class=cost,
+            stratum=stratum,
         )
+        semantic_patterns.append(pattern)
 
+    triggers = tuple(
+        CompiledTransitionTrigger(
+            slot_id=slot_ids_by_name[t.slot_name],
+            event=t.event,
+            square_ref=_resolve_square_ref(t.square_ref, slot_ids_by_name),
+            owner=t.owner,
+        )
+        for action in ruleset.semantic_actions
+        for t in action.triggers
+    )
+    for trigger in triggers:
+        if trigger.slot_id not in slot_ids_by_name.values():
+            raise RuleValidationError(
+                [ValidationIssue("TRIGGER_SLOT_UNKNOWN", "triggers", str(trigger.slot_id))]
+            )
+
+    normalized = [
+        p for p in legacy_patterns if p.pattern_id not in replaced
+    ] + semantic_patterns
     capabilities = SemanticCapabilities(
         legacy_core_executable=False,
         new_ir_core_executable=False,
@@ -690,15 +1071,20 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         contains_aux_state=bool(aux_by_name),
         contains_compound_effect=contains_compound,
         contains_postcondition=contains_post,
+        contains_transition_trigger=contains_trigger,
     )
     ir = CompiledSemanticIR(
+        ir_version=2,
         ruleset_fingerprint=legacy.ruleset_fingerprint,
-        geometry_metadata=build_geometry_metadata(legacy),
-        patterns=tuple(patterns),
+        geometry=geometry,
+        zones=zones,
+        patterns=tuple(normalized),
         aux_slots=compiled_slots,
+        triggers=triggers,
         capabilities=capabilities,
     )
     errors = validate_ir(ir)
+    errors.extend(validate_executable_completeness(ir, type_ids))
     if errors:
         raise RuleValidationError(
             [ValidationIssue("IR_INVALID", "ir", "; ".join(errors))]

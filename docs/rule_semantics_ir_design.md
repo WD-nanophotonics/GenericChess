@@ -490,3 +490,62 @@ contracts are complete; dependency strata are acyclic; the uchifuzume probe
 has a bounded termination model; geometry single-lowering is decided;
 native cost is bounded; backward compatibility and migration routes are
 defined.  Phase 1.9B may start the Python reference implementation.
+
+## 41. ADR amendments (Phase 1.9B-1.5)
+
+Phase 1.9B-1.5 source re-audit found several A-2 assumptions that the B-1
+implementation did not close.  The B-1.5 hardening corrected them in the
+production IR (v2); the amendments below record each A-2 assumption, the
+observed gap, and the corrected decision.  Historical text is not rewritten.
+
+### ADR-6a — geometry identity
+
+* A-2 assumption: `geometry` categories (leap/ray/drop) were sufficient.
+* Observed gap: `CompiledMovePattern.geometry` carried only kinds, so an
+  executor could not tell which ray/leap or the exact shape (Gap A/B).
+* Corrected: typed `RuleGeometrySpec`/`CompiledGeometry` with stable
+  `geometry_ids`, per-source ordered paths, atom identity
+  (`atom_source`), and exact offset/direction/min/max steps.
+
+### ADR-8a — pattern composition
+
+* A-2 assumption: semantic actions simply added patterns.
+* Observed gap: no defined legacy+semantic composition (Gap C), so cannon/
+  nifu/EP could not remove the wrong legacy actions.
+* Corrected: `AUGMENT | REPLACE_LEGACY` with structural replace selectors,
+  fail-closed on zero/ambiguous matches, and a normalized final pattern set.
+
+### ADR-7a — aux scope and initial values
+
+* A-2 assumption: `right`/`token_square` with fixed lifetime pairing.
+* Observed gap: no scope (per-owner castling rights impossible) and no
+  initial value (Gap L/M/N).
+* Corrected: `CompiledAuxSlot{value_kind, scope(global|per_owner), lifetime,
+  initial}`; value kind and lifetime are orthogonal.
+
+### ADR-9a — transition triggers
+
+* A-2 assumption: effects alone handled right invalidation.
+* Observed gap: castling rights require watching squares across arbitrary
+  transitions (Gap I).
+* Corrected: generic `CompiledTransitionTrigger` (clear-slot on
+  piece-leaves/removed-from a watched square), no game names.
+
+### ADR-6b — effect operand model
+
+* A-2 assumption: one generic effect record was enough.
+* Observed gap: `move(partner_square)` could not name partner source/
+  destination/type; `set_current_type` could lack a type; capture
+  disposition was implicit (Gap G/O/P/Q).
+* Corrected: typed per-effect operands (from/to/square refs, piece binding,
+  disposition `capture_to_hand|remove_from_game`, type refs, slot ids) with
+  per-kind well-formedness validation; EP victim via `OFFSET_FROM_TARGET`.
+
+### ADR-10a — candidate encoding
+
+* A-2 assumption: per-source ordered path segments.
+* Observed gap: B-1 emitted full per-(owner,source) candidate lists
+  (O(n³) JSON, 16×16 ≈ 9.2× → v2 full lists ≈ 32×).
+* Corrected: store ordered paths only; `geometry_candidates` slices
+  mechanically.  v2 payload: 8×8 9.3×, 9×9 7.3×, 16×16 10.5× (within the
+  pre-registered 12× bound).

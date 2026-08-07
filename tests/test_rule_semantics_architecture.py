@@ -116,6 +116,7 @@ def test_rule_schema_field_set_is_frozen():
         "max_ply",
         "stalemate_result",
         "semantic_actions",  # additive Phase 1.9B-1 high-level DSL (legacy empty)
+        "semantic_dsl_version",  # Phase 1.9B-1.5 explicit DSL version axis
         "metadata",
     }
 
