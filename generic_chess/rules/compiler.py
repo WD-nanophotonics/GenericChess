@@ -552,6 +552,7 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
                         "remove",
                         square_ref=CompiledSquareRef("target"),
                         disposition="capture_to_hand",
+                        piece_owner="opponent",
                     ),
                     CompiledEffect(
                         "move",

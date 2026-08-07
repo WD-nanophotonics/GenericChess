@@ -419,6 +419,17 @@ class CompiledSemanticRuleset:
     _legacy_compiled: Any = None
     support: "CompiledSemanticSupport | None" = None
 
+    @property
+    def ruleset_fingerprint(self) -> str:
+        """Public ruleset identity used by :func:`ensure_ruleset_match`."""
+        return self.ir.ruleset_fingerprint
+
+    @property
+    def board_size(self) -> int:
+        if self.support is not None:
+            return self.support.board_size
+        raise RuntimeError("semantic ruleset has no support payload; board_size unavailable")
+
 
 @dataclass(frozen=True, slots=True)
 class SemanticTypeMetadata:

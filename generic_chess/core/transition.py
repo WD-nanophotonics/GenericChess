@@ -25,7 +25,7 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
         from .keys import semantic_position_key
 
         pos = engine._initial_position()
-        key = semantic_position_key(pos, compiled.support)
+        key = semantic_position_key(pos, compiled.support, compiled.ir.aux_slots)
         counts = ((key, 1),)
         status = engine.terminal_result(pos, 0, counts)
         return GameState(
@@ -72,7 +72,7 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
         binding = semantic_action_for(engine, state.position, action)
         new_pos = engine.apply(state.position, binding)
         ply = state.ply_count + 1
-        key = semantic_position_key(new_pos, compiled.support)
+        key = semantic_position_key(new_pos, compiled.support, compiled.ir.aux_slots)
         counts = update_repetition_counts(state.repetition_counts, key)
         status = engine.terminal_result(new_pos, ply, counts)
         return GameState(
@@ -104,6 +104,37 @@ def legal_successors(
     loops that need both the move and the resulting state without re-running
     move generation for every child.
     """
+    from .semantic_executor import (
+        _semantic_public_action,
+        semantic_engine_for,
+    )
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        if state.terminal_status.status is not TerminalStatus.ONGOING:
+            return ()
+        actions = engine.legal_actions(state.position)
+        out = []
+        for binding in actions:
+            new_pos = engine.apply(state.position, binding)
+            ply = state.ply_count + 1
+            key = semantic_position_key(
+                new_pos, compiled.support, compiled.ir.aux_slots
+            )
+            counts = update_repetition_counts(state.repetition_counts, key)
+            status = engine.terminal_result(new_pos, ply, counts)
+            out.append(
+                (
+                    _semantic_public_action(engine, binding),
+                    GameState(
+                        position=new_pos,
+                        ply_count=ply,
+                        repetition_counts=counts,
+                        terminal_status=status,
+                    ),
+                )
+            )
+        return tuple(out)
     ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:
         return ()

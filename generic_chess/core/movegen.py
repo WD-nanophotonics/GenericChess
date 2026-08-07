@@ -247,6 +247,7 @@ def legal_actions(state: "GameState", compiled: "CompiledRuleSet") -> list[Actio
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
+        ensure_ruleset_match(state.position, compiled)
         if state.terminal_status.status is not TerminalStatus.ONGOING:
             return []
         return list(semantic_public_actions(engine, state.position))

@@ -222,7 +222,7 @@ def test_en_passant_token_and_off_target_capture():
     assert double[0].target == _idx(support, 4, 3)  # e4
     child = engine.apply(pos, double[0])
     # Token == landing square e3 = (4, 2).
-    assert dict(child.aux_state).get(token_slot) == (4, 2)
+    assert dict(child.aux_state).get((token_slot, -1)) == (4, 2)
     assert child.side_to_move == 1
     # Black EP capture: landing e3 empty, victim e4 removed off-target.
     ep = [
@@ -234,7 +234,7 @@ def test_en_passant_token_and_off_target_capture():
     grandchild = engine.apply(child, ep[0])
     assert grandchild.board[_idx(support, 4, 3)] is None  # victim e4 removed
     assert grandchild.board[_idx(support, 4, 2)] is not None  # black pawn on e3
-    assert dict(grandchild.aux_state).get(token_slot) is None  # token cleared
+    assert dict(grandchild.aux_state).get((token_slot, -1)) is None  # token cleared
 
 
 def test_en_passant_token_expires_after_one_turn():
@@ -254,11 +254,11 @@ def test_en_passant_token_expires_after_one_turn():
         if a.pattern_id == "sem_00_double_step_creates_token"
     )
     child = engine.apply(pos, double)
-    assert dict(child.aux_state).get(token_slot) == (4, 2)
+    assert dict(child.aux_state).get((token_slot, -1)) == (4, 2)
     # Black makes any move: token expires next turn.
     black_move = engine.legal_actions(child)[0]
     grandchild = engine.apply(child, black_move)
-    assert dict(grandchild.aux_state).get(token_slot) is None
+    assert dict(grandchild.aux_state).get((token_slot, -1)) is None
 
 
 def test_en_passant_both_owners():
