@@ -11,7 +11,7 @@ from .features import non_anchor_type_ids
 from .serialization import stable_sha256
 
 MATERIAL_SCALE = 1.0  # fixed, versioned; native = round(float * MATERIAL_SCALE)
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 class LearningNumericalError(ValueError):
@@ -239,6 +239,12 @@ class LearnableMaterialCheckpoint:
         extra = set(data) - allowed
         if extra:
             raise ValueError(f"unknown checkpoint fields: {sorted(extra)}")
+        if data.get("schema_version") == 1:
+            raise ValueError(
+                "checkpoint schema v1 is not supported for training: its "
+                "training_config_hash used a stale pre-calibration payload "
+                "and cannot be audited; regenerate from a v2 parent"
+            )
         if data.get("schema_version") != SCHEMA_VERSION:
             raise ValueError(
                 f"unsupported checkpoint schema {data.get('schema_version')}"

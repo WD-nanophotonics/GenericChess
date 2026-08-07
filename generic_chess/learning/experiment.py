@@ -22,9 +22,10 @@ from ..ai.evaluation.profile import build_ruleset_profile
 from ..native.compiler import compile_native_rules
 from .arena import ArenaConfig, ArenaSummary, run_arena
 from .material import LearnableMaterialCheckpoint
+from .openings import ArenaOpeningCorpus, generate_arena_openings
 from .selfplay import SelfPlayConfig, collect_self_play
 from .tdleaf import TDLeafConfig, tdleaf_update
-from .serialization import canonical_json
+from .serialization import canonical_json, stable_sha256
 
 
 def _commit_hash() -> str:
@@ -94,6 +95,7 @@ def _run_experiment(
     compiled,
     params: dict,
     out_dir: Path,
+    openings=None,
 ) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     config = dict(params)
@@ -104,7 +106,7 @@ def _run_experiment(
             "ruleset_fingerprint": compiled.ruleset_fingerprint,
         }
     )
-    (out_dir / "config.json").write_text(
+    (out_dir / "pre_calibration_config.json").write_text(
         canonical_json(config) + "\n", encoding="utf-8"
     )
 
@@ -131,25 +133,35 @@ def _run_experiment(
         nodes_per_move=config["arena_nodes"],
         max_depth=config["max_depth"],
         tt_megabytes=config["tt_mb"],
-        seed=config["training_seed"],
+        opening_seed=config["arena_opening_seed"],
+        opening_count=config["arena_opening_count"],
+        min_plies=config["arena_min_plies"],
+        max_plies=config["arena_max_plies"],
     )
     td_cfg = TDLeafConfig(
         gamma=config["gamma"],
         lambd=config["lambda"],
         alpha=config.get("alpha"),
     )
-    training_config_hash = canonical_json(config)
+    if openings is None:
+        openings = generate_arena_openings(
+            compiled,
+            count=config["arena_opening_count"] or config["arena_pairs"],
+            seed=config["arena_opening_seed"],
+            min_plies=config["arena_min_plies"],
+            max_plies=config["arena_max_plies"],
+        )
+    openings.validate(compiled)
 
     training_rows: list[dict] = []
-    arena_rows: list[dict] = []
+    arena_game_rows: list[dict] = []
+    arena_pair_rows: list[dict] = []
     parent = gen0
 
-    # One-time alpha calibration from the actual gradient magnitude: the
-    # nominal 0.01 x median rate produces sub-integer weight deltas that
-    # vanish in native quantization.  Target: weight_l2_delta ~
-    # alpha_target_l2_fraction x reference_median per generation.  This is a
-    # documented gradient calibration, not arena tuning.
+    # ---- calibration phase (rule pre-registered; alpha derived) ----
     target_fraction = config.get("alpha_target_l2_fraction", 0.10)
+    max_multiplier = config.get("alpha_max_multiplier", 200.0)
+    cal_t0 = time.perf_counter()
     calibration_trajectories = collect_self_play(
         compiled, native_rules, parent, selfplay_cfg
     )
@@ -159,18 +171,53 @@ def _run_experiment(
     target_l2 = target_fraction * median
     measured_l2 = max(nominal.weight_l2_delta, 1e-9)
     calibrated_alpha = min(
-        nominal_alpha * (target_l2 / measured_l2), nominal_alpha * 200.0
+        nominal_alpha * (target_l2 / measured_l2),
+        nominal_alpha * max_multiplier,
     )
     calibrated_alpha = max(calibrated_alpha, nominal_alpha)
+    calibration_wall = time.perf_counter() - cal_t0
+    clamped = calibrated_alpha >= nominal_alpha * max_multiplier - 1e-9
+    calibration_artifact = {
+        "trajectory_ids": [t.trajectory_id for t in calibration_trajectories],
+        "number_of_trajectories": len(calibration_trajectories),
+        "positions": nominal.positions_seen,
+        "reference_median": median,
+        "nominal_alpha": nominal_alpha,
+        "measured_nominal_l2": measured_l2,
+        "target_l2": target_l2,
+        "target_fraction": target_fraction,
+        "max_multiplier": max_multiplier,
+        "calibrated_alpha": calibrated_alpha,
+        "multiplier_clamped": clamped,
+        "calibration_wall_seconds": calibration_wall,
+    }
+    calibration_hash = stable_sha256(calibration_artifact)
+    calibration_artifact["calibration_artifact_hash"] = calibration_hash
+    (out_dir / "calibration.json").write_text(
+        canonical_json(calibration_artifact) + "\n", encoding="utf-8"
+    )
+
+    final_config = dict(config)
+    final_config.update(
+        {
+            "calibrated_alpha": calibrated_alpha,
+            "alpha_nominal": nominal_alpha,
+            "calibration_artifact_hash": calibration_hash,
+            "opening_corpus_id": openings.corpus_id,
+        }
+    )
+    training_config_hash = stable_sha256(final_config)
+    final_config["training_config_hash"] = training_config_hash
+    (out_dir / "final_config.json").write_text(
+        canonical_json(final_config) + "\n", encoding="utf-8"
+    )
+    (out_dir / "config.json").write_text(
+        canonical_json(final_config) + "\n", encoding="utf-8"
+    )
     calibrated_cfg = TDLeafConfig(
         gamma=config["gamma"],
         lambd=config["lambda"],
         alpha=calibrated_alpha,
-    )
-    config["calibrated_alpha"] = calibrated_alpha
-    config["alpha_nominal"] = nominal_alpha
-    (out_dir / "config.json").write_text(
-        canonical_json(config) + "\n", encoding="utf-8"
     )
 
     used_trajectories = calibration_trajectories
@@ -188,7 +235,9 @@ def _run_experiment(
             training_seed=config["training_seed"],
         )
         wall = time.perf_counter() - t0
-        arena = run_arena(compiled, native_rules, parent, child, arena_cfg)
+        arena = run_arena(
+            compiled, native_rules, parent, child, arena_cfg, openings=openings
+        )
         training_rows.append(
             {
                 "generation": generation,
@@ -204,24 +253,43 @@ def _run_experiment(
                 "normalization_factor": update.normalization_factor,
                 "training_wall_seconds": wall,
                 "calibrated_alpha": calibrated_alpha,
-                "arena_wins": arena.wins,
-                "arena_draws": arena.draws,
-                "arena_losses": arena.losses,
-                "arena_score_rate": arena.score_rate,
-                "arena_wilson_low": arena.wilson_low,
-                "arena_wilson_high": arena.wilson_high,
+                "pair_mean": arena.mean_pair_score,
+                "bootstrap_low": arena.bootstrap_low,
+                "bootstrap_high": arena.bootstrap_high,
+                "better_pairs": arena.child_better_pairs,
+                "tied_pairs": arena.tied_pairs,
+                "worse_pairs": arena.child_worse_pairs,
+                "game_wins": arena.game_wins,
+                "game_draws": arena.game_draws,
+                "game_losses": arena.game_losses,
+                "game_score_rate": arena.game_score_rate,
             }
         )
-        for game in arena.games:
-            arena_rows.append(
+        for pair in arena.pairs:
+            for game in (pair.game_child_owner0, pair.game_child_owner1):
+                arena_game_rows.append(
+                    {
+                        "generation": generation,
+                        "training_seed": config["training_seed"],
+                        "pair": pair.pair_index,
+                        "opening_id": pair.opening_id,
+                        "child_owner": game.child_owner,
+                        "winner": game.winner,
+                        "result": game.result,
+                        "child_points": game.child_points,
+                        "plies": game.plies,
+                        "final_position_key": game.final_position_key,
+                    }
+                )
+            arena_pair_rows.append(
                 {
                     "generation": generation,
-                    "pair": game.pair,
-                    "child_owner": game.child_owner,
-                    "winner": game.winner,
-                    "result": game.result,
-                    "child_points": game.child_points,
-                    "plies": game.plies,
+                    "training_seed": config["training_seed"],
+                    "pair": pair.pair_index,
+                    "opening_id": pair.opening_id,
+                    "game_a_points": pair.game_child_owner0.child_points,
+                    "game_b_points": pair.game_child_owner1.child_points,
+                    "pair_score": pair.child_pair_score,
                 }
             )
         gen_file = out_dir / f"generation_{generation:03d}.json"
@@ -231,7 +299,7 @@ def _run_experiment(
                     "parent": parent.to_dict(),
                     "child": child.to_dict(),
                     "training": training_rows[-1],
-                    "arena": arena_rows[-len(arena.games):],
+                    "arena_pairs": arena_pair_rows[-len(arena.pairs):],
                 },
                 sort_keys=True,
             )
@@ -248,28 +316,36 @@ def _run_experiment(
     (out_dir / "training.csv").write_text(
         _csv(training_rows), encoding="utf-8"
     )
-    (out_dir / "arena.csv").write_text(_csv(arena_rows), encoding="utf-8")
+    (out_dir / "arena_games.csv").write_text(
+        _csv(arena_game_rows), encoding="utf-8"
+    )
+    (out_dir / "arena_pairs.csv").write_text(
+        _csv(arena_pair_rows), encoding="utf-8"
+    )
     curve = [
         {
             "generation": r["generation"],
             "training_games_seen": r["games"],
             "training_wall_seconds": r["training_wall_seconds"],
-            "parent_score": 1.0 - r["arena_score_rate"],
-            "child_score": r["arena_score_rate"],
+            "parent_score": 1.0 - r["pair_mean"],
+            "child_score": r["pair_mean"],
             "weight_l2_delta": r["weight_l2_delta"],
         }
         for r in training_rows
     ]
     (out_dir / "learning_curve.csv").write_text(_csv(curve), encoding="utf-8")
-    best = max(training_rows, key=lambda r: r["arena_score_rate"])
     summary = {
         "ruleset_label": label,
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
         "generations": len(training_rows),
-        "best_generation": best["generation"],
-        "best_child_score": best["arena_score_rate"],
-        "final_child_score": training_rows[-1]["arena_score_rate"],
-        "config": config,
+        "opening_corpus_id": openings.corpus_id,
+        "gen1_pair_mean": (
+            training_rows[0]["pair_mean"] if training_rows else None
+        ),
+        "final_pair_mean": (
+            training_rows[-1]["pair_mean"] if training_rows else None
+        ),
+        "final_config_hash": training_config_hash,
     }
     (out_dir / "summary.json").write_text(
         json.dumps(summary, sort_keys=True) + "\n", encoding="utf-8"
@@ -300,8 +376,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--selfplay-nodes", type=int, default=2000)
     parser.add_argument("--arena-pairs", type=int, default=6)
     parser.add_argument("--arena-nodes", type=int, default=4000)
+    parser.add_argument("--arena-opening-seed", type=int, default=314159)
+    parser.add_argument("--arena-opening-count", type=int, default=0)
+    parser.add_argument("--arena-min-plies", type=int, default=2)
+    parser.add_argument("--arena-max-plies", type=int, default=6)
+    parser.add_argument("--openings-path", default=None)
     parser.add_argument("--alpha", type=float, default=None)
     parser.add_argument("--alpha-target-fraction", type=float, default=0.10)
+    parser.add_argument("--alpha-max-multiplier", type=float, default=200.0)
     parser.add_argument("--lambda", dest="lambd", type=float, default=0.7)
     parser.add_argument("--max-depth", type=int, default=12)
     parser.add_argument("--epsilon", type=float, default=0.10)
@@ -309,6 +391,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output", default=None)
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--proof", action="store_true")
+    parser.add_argument("--gen0-gate", action="store_true")
     args = parser.parse_args(argv)
 
     params = {
@@ -318,8 +401,13 @@ def main(argv: list[str] | None = None) -> int:
         "selfplay_nodes": args.selfplay_nodes,
         "arena_pairs": args.arena_pairs,
         "arena_nodes": args.arena_nodes,
+        "arena_opening_seed": args.arena_opening_seed,
+        "arena_opening_count": args.arena_opening_count,
+        "arena_min_plies": args.arena_min_plies,
+        "arena_max_plies": args.arena_max_plies,
         "alpha": args.alpha,
         "alpha_target_l2_fraction": args.alpha_target_fraction,
+        "alpha_max_multiplier": args.alpha_max_multiplier,
         "lambda": args.lambd,
         "gamma": 1.0,
         "max_depth": args.max_depth,
@@ -349,18 +437,80 @@ def main(argv: list[str] | None = None) -> int:
             return 2
     summaries = []
     for label, spec, compiled in selected:
+        if args.gen0_gate:
+            from ..ai.evaluation.config import EvaluationConfig as _EC
+            from ..ai.evaluation.profile import build_ruleset_profile as _BRP
+
+            profile = _BRP(compiled, _EC())
+            gen0 = LearnableMaterialCheckpoint.from_profile(
+                compiled, profile, training_seed=args.seed
+            )
+            native_rules = compile_native_rules(compiled)
+            openings = generate_arena_openings(
+                compiled,
+                count=params["arena_opening_count"] or params["arena_pairs"],
+                seed=params["arena_opening_seed"],
+                min_plies=params["arena_min_plies"],
+                max_plies=params["arena_max_plies"],
+            )
+            if args.openings_path:
+                path = Path(args.openings_path) / f"{label}_openings.json"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(
+                    canonical_json(openings.to_dict()) + "\n", encoding="utf-8"
+                )
+            gate_cfg = ArenaConfig(
+                pairs=params["arena_pairs"],
+                nodes_per_move=params["arena_nodes"],
+                max_depth=params["max_depth"],
+                tt_megabytes=params["tt_mb"],
+            )
+            summary = run_arena(
+                compiled, native_rules, gen0, gen0, gate_cfg, openings=openings
+            )
+            bad = [s for s in summary.pair_scores if s != 0.5]
+            print(
+                f"{label} Gen0-vs-Gen0: pairs={summary.pair_count} "
+                f"mean={summary.mean_pair_score:.3f} non_half={len(bad)}"
+            )
+            if bad:
+                print("MEASUREMENT_INVALID: not all pair scores are 0.5")
+                return 1
+            print("Gen0-vs-Gen0 gate PASSED")
+            continue
+        openings = None
+        if args.openings_path:
+            path = Path(args.openings_path) / f"{label}_openings.json"
+            if path.exists():
+                openings = ArenaOpeningCorpus.from_dict(
+                    json.loads(path.read_text(encoding="utf-8"))
+                )
+                openings.validate(compiled)
+            else:
+                openings = generate_arena_openings(
+                    compiled,
+                    count=params["arena_opening_count"] or params["arena_pairs"],
+                    seed=params["arena_opening_seed"],
+                    min_plies=params["arena_min_plies"],
+                    max_plies=params["arena_max_plies"],
+                )
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(
+                    canonical_json(openings.to_dict()) + "\n", encoding="utf-8"
+                )
         experiment_id = f"{label}_seed{args.seed}"
         out_dir = root / experiment_id
         if not args.smoke and not args.proof and out_dir.exists():
             out_dir = root / f"{experiment_id}_{int(time.time())}"
         print(f"running {label} -> {out_dir}")
         summaries.append(
-            _run_experiment(label, spec, compiled, params, out_dir)
+            _run_experiment(label, spec, compiled, params, out_dir, openings)
         )
     for s in summaries:
         print(
-            f"{s['ruleset_label']}: best child score "
-            f"{s['best_child_score']:.3f} at gen {s['best_generation']}"
+            f"{s['ruleset_label']}: gen1 pair mean "
+            f"{s['gen1_pair_mean']:.3f} | final pair mean "
+            f"{s['final_pair_mean']:.3f}"
         )
     return 0
 
