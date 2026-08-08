@@ -14,38 +14,6 @@
 
 /* ------------------------------------------------------------------ helpers */
 
-static int sem_read_long(PyObject *obj, long *out) {
-    if (obj == NULL) {
-        PyErr_SetString(PyExc_ValueError, "missing integer field");
-        return 0;
-    }
-    long v = PyLong_AsLong(obj);
-    if (v == -1 && PyErr_Occurred()) {
-        return 0;
-    }
-    *out = v;
-    return 1;
-}
-
-static int sem_optional_long(PyObject *dict, const char *key,
-                             uint8_t *has, long *out) {
-    PyObject *v = PyDict_GetItemString(dict, key);
-    if (v == NULL) {
-        PyErr_SetString(PyExc_ValueError, "missing optional field");
-        return 0;
-    }
-    if (v == Py_None) {
-        *has = 0;
-        *out = 0;
-        return 1;
-    }
-    if (!sem_read_long(v, out)) {
-        return 0;
-    }
-    *has = 1;
-    return 1;
-}
-
 static int sem_get_list(PyObject *dict, const char *key, PyObject **out) {
     *out = PyDict_GetItemString(dict, key);
     if (*out == NULL || !PyList_Check(*out)) {
@@ -335,6 +303,55 @@ static int sem_parse_square_ref(PyObject *d, GCSemSquareRef *out,
         }
         out->slot_id = slot;
     }
+    /* structural operand consistency per square_ref kind (R2) */
+    switch (out->kind) {
+        case 0:  /* source */
+        case 1:  /* target */
+            if (out->has_square || out->has_offset || out->has_step ||
+                out->has_slot) {
+                PyErr_SetString(PyExc_ValueError,
+                                "source/target square_ref must not carry operands");
+                return 0;
+            }
+            break;
+        case 2:  /* fixed */
+            if (!out->has_square || out->has_offset || out->has_step ||
+                out->has_slot) {
+                PyErr_SetString(PyExc_ValueError,
+                                "fixed square_ref requires only a square");
+                return 0;
+            }
+            break;
+        case 3:  /* offset_from_source */
+        case 4:  /* offset_from_target */
+            if (out->has_square || !out->has_offset || out->has_step ||
+                out->has_slot) {
+                PyErr_SetString(PyExc_ValueError,
+                                "offset square_ref requires only an offset");
+                return 0;
+            }
+            break;
+        case 5:  /* path_step */
+            if (out->has_square || out->has_offset || !out->has_step ||
+                out->has_slot) {
+                PyErr_SetString(PyExc_ValueError,
+                                "path_step square_ref requires only a step");
+                return 0;
+            }
+            break;
+        case 6:  /* aux_slot_square */
+            if (out->has_square || out->has_offset || out->has_step ||
+                !out->has_slot) {
+                PyErr_SetString(PyExc_ValueError,
+                                "aux_slot_square square_ref requires only a slot_id");
+                return 0;
+            }
+            break;
+        default:
+            PyErr_SetString(PyExc_ValueError,
+                            "invalid square_ref kind");
+            return 0;
+    }
     return 1;
 }
 
@@ -424,6 +441,35 @@ static int sem_parse_spatial(PyObject *d, GCSemSpatial *out,
     if (!sem_parse_square_refs(refs, &out->refs, &out->refs_count, 2, rules)) {
         return 0;
     }
+    switch (out->kind) {
+        case 0:  /* same_file */
+        case 1:  /* same_rank */
+        case 2:  /* exact */
+        case 3:  /* adjacent */
+            if (out->refs_count != 1) {
+                PyErr_SetString(PyExc_ValueError,
+                                "spatial selector requires exactly 1 ref");
+                return 0;
+            }
+            break;
+        case 4:  /* path_between */
+            if (out->refs_count != 2) {
+                PyErr_SetString(PyExc_ValueError,
+                                "path_between requires exactly 2 refs");
+                return 0;
+            }
+            break;
+        case 5:  /* zone */
+            if (out->refs_count != 0) {
+                PyErr_SetString(PyExc_ValueError,
+                                "zone spatial selector must not carry refs");
+                return 0;
+            }
+            break;
+        default:
+            PyErr_SetString(PyExc_ValueError, "invalid spatial kind");
+            return 0;
+    }
     uint16_t zid;
     if (!sem_opt_u16(d, "zone_index", &out->has_zone, &zid)) {
         return 0;
@@ -493,9 +539,11 @@ static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out,
         return 0;
     }
     uint8_t found = 0;
+    uint8_t slot_value_kind = 0xFF;
     for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
         if (rules->aux_slots[a].slot_id == sid) {
             found = 1;
+            slot_value_kind = rules->aux_slots[a].value_kind;
             break;
         }
     }
@@ -527,6 +575,25 @@ static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out,
             return 0;
         }
         out->has_square_ref = 1;
+    }
+    if (slot_value_kind == 0) {  /* bool slot */
+        if (!out->has_value || (out->value != 0 && out->value != 1)) {
+            PyErr_SetString(PyExc_ValueError,
+                            "bool slot guard requires value 0/1");
+            return 0;
+        }
+        if (out->has_square_ref) {
+            PyErr_SetString(PyExc_ValueError,
+                            "bool slot guard must not carry square_ref");
+            return 0;
+        }
+    } else {  /* square_or_none slot */
+        if (!out->has_square_ref &&
+            out->comparison != 0 && out->comparison != 1) {
+            PyErr_SetString(PyExc_ValueError,
+                            "square slot guard with None requires eq/ne");
+            return 0;
+        }
     }
     return 1;
 }
@@ -624,6 +691,103 @@ static int sem_parse_effect(PyObject *d, GCSemEffect *out,
     SEM_OPT_TREF("piece_type_ref", has_piece_type_ref, piece_type_ref);
     SEM_OPT_TREF("type_ref", has_type_ref, type_ref);
 #undef SEM_OPT_TREF
+
+    /* structural well-formedness mirroring the frozen IR effect contract */
+    if (out->count != 1) {
+        PyErr_SetString(PyExc_ValueError,
+                        "effect count must be 1");
+        return 0;
+    }
+    uint8_t slot_kind = 0xFF;
+    if (out->has_slot) {
+        for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
+            if (rules->aux_slots[a].slot_id == out->slot_id) {
+                slot_kind = rules->aux_slots[a].value_kind;
+                break;
+            }
+        }
+    }
+    switch (out->kind) {
+        case 0:  /* move */
+        case 9:  /* shift */
+            if (!out->has_from || !out->has_to ||
+                out->has_disposition || out->has_type_ref) {
+                PyErr_SetString(PyExc_ValueError,
+                                "move/shift requires from+to and no "
+                                "disposition/type_ref");
+                return 0;
+            }
+            break;
+        case 1:  /* remove */
+            if (!out->has_square || !out->has_disposition ||
+                out->has_from || out->has_to) {
+                PyErr_SetString(PyExc_ValueError,
+                                "remove requires square_ref+disposition");
+                return 0;
+            }
+            break;
+        case 2:  /* remove_from_hand */
+            if (!out->has_piece_type_ref || out->has_from || out->has_to ||
+                out->has_square || out->has_disposition) {
+                PyErr_SetString(PyExc_ValueError,
+                                "remove_from_hand requires piece_type_ref only");
+                return 0;
+            }
+            break;
+        case 3:  /* place */
+            if (!out->has_to || !out->has_piece_type_ref ||
+                out->has_from || out->has_square || out->has_disposition) {
+                PyErr_SetString(PyExc_ValueError,
+                                "place requires to_ref+piece_type_ref");
+                return 0;
+            }
+            break;
+        case 4:  /* set_current_type */
+            if (!out->has_square || !out->has_type_ref ||
+                out->has_from || out->has_to || out->has_disposition) {
+                PyErr_SetString(PyExc_ValueError,
+                                "set_current_type requires square_ref+type_ref");
+                return 0;
+            }
+            break;
+        case 5:  /* set_bool */
+            if (!out->has_slot || !out->has_value || slot_kind != 0 ||
+                (out->value != 0 && out->value != 1) ||
+                out->has_square || out->has_type_ref ||
+                out->has_disposition || out->has_from || out->has_to) {
+                PyErr_SetString(PyExc_ValueError,
+                                "set_bool requires a bool slot and value 0/1");
+                return 0;
+            }
+            break;
+        case 6:  /* clear_right */
+            if (!out->has_slot || slot_kind != 0 ||
+                out->has_square || out->has_type_ref || out->has_disposition) {
+                PyErr_SetString(PyExc_ValueError,
+                                "clear_right requires a bool slot");
+                return 0;
+            }
+            break;
+        case 7:  /* set_token */
+            if (!out->has_slot || !out->has_square || slot_kind != 1 ||
+                out->has_type_ref || out->has_disposition) {
+                PyErr_SetString(PyExc_ValueError,
+                                "set_token requires a square_or_none slot");
+                return 0;
+            }
+            break;
+        case 8:  /* clear_token */
+            if (!out->has_slot || slot_kind != 1 ||
+                out->has_square || out->has_type_ref || out->has_disposition) {
+                PyErr_SetString(PyExc_ValueError,
+                                "clear_token requires a square_or_none slot");
+                return 0;
+            }
+            break;
+        default:
+            PyErr_SetString(PyExc_ValueError, "invalid effect kind");
+            return 0;
+    }
     return 1;
 }
 
@@ -641,6 +805,17 @@ static int sem_parse_invariant(PyObject *d, GCSemInvariant *out,
     }
     if (!sem_parse_square_refs(refs, &out->refs, &out->refs_count,
                                GC_SEM_MAX_INVARIANT_REFS, rules)) {
+        return 0;
+    }
+    if (out->kind == 1) {  /* squares_not_attacked */
+        if (out->refs_count < 1) {
+            PyErr_SetString(PyExc_ValueError,
+                            "squares_not_attacked requires at least 1 ref");
+            return 0;
+        }
+    } else if (out->refs_count != 0) {
+        PyErr_SetString(PyExc_ValueError,
+                        "own_anchor_safe must not carry square refs");
         return 0;
     }
     return 1;
@@ -788,6 +963,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
+    rules->semantic_payload_version = payload_version;
 
     uint16_t board_size;
     if (!sem_u16(PyDict_GetItemString(payload, "board_size"), &board_size)) {
@@ -1028,6 +1204,22 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
                 rules->alive_promo[t][o][sq] = mask;
+            }
+        }
+    }
+    /* alive_promo bits must lie within the type's promotion-target domain */
+    for (uint16_t t = 0; t < rules->type_count; t++) {
+        uint8_t k = rules->types[t].promo_target_count;
+        uint64_t allowed = (k == 0) ? 0 : ((1ULL << k) - 1ULL);
+        for (int o = 0; o < 2; o++) {
+            for (uint16_t sq = 0; sq < squares; sq++) {
+                if (rules->alive_promo[t][o][sq] & ~allowed) {
+                    PyErr_SetString(PyExc_ValueError,
+                                    "alive_promo mask has bits outside the "
+                                    "promotion-target domain");
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
             }
         }
     }
@@ -1305,6 +1497,17 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
     }
+    /* aux slot ids are canonical compiled identities: unique required */
+    for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
+        for (uint8_t b = (uint8_t)(a + 1); b < rules->aux_slot_count; b++) {
+            if (rules->aux_slots[a].slot_id == rules->aux_slots[b].slot_id) {
+                PyErr_SetString(PyExc_ValueError,
+                                "duplicate aux slot_id");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+        }
+    }
 
     /* triggers */
     if (!sem_get_list(payload, "triggers", &list_obj)) {
@@ -1398,6 +1601,12 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         pat->type_count = (uint8_t)type_count16;
+        if (pat->type_count < 1) {
+            PyErr_SetString(PyExc_ValueError,
+                            "pattern type_indices must be non-empty");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
         for (uint8_t i = 0; i < pat->type_count; i++) {
             if (pat->type_indices[i] >= rules->type_count) {
                 PyErr_SetString(PyExc_ValueError,
@@ -1413,6 +1622,12 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         pat->geometry_count = (uint8_t)geometry_count16;
+        if (pat->geometry_count < 1) {
+            PyErr_SetString(PyExc_ValueError,
+                            "pattern geometry_indices must be non-empty");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
         for (uint8_t i = 0; i < pat->geometry_count; i++) {
             if (pat->geometry_indices[i] >= rules->geometry_count) {
                 PyErr_SetString(PyExc_ValueError,
@@ -1445,6 +1660,21 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 return NULL;
             }
             pat->explicit_promotion_type = ept;
+        }
+        if (pat->promotion_mode == 2) {  /* explicit */
+            if (!pat->has_explicit_promotion) {
+                PyErr_SetString(PyExc_ValueError,
+                                "explicit promotion mode requires "
+                                "explicit_promotion_type");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+        } else if (pat->has_explicit_promotion) {
+            PyErr_SetString(PyExc_ValueError,
+                            "non-explicit promotion mode must not carry "
+                            "explicit_promotion_type");
+            gc_semantic_rules_free(rules);
+            return NULL;
         }
 
         /* path / guards / slot_guards / effects / invariants / postconditions */
@@ -1598,7 +1828,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         }
         {
             uint64_t n64;
-            if (!sem_list_len(sub, 0xFF, &n64)) {
+            if (!sem_list_len(sub, 2, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern postconditions too large");
                 gc_semantic_rules_free(rules);
                 return NULL;
@@ -2266,7 +2496,8 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
         Py_DECREF(obj); \
     } while (0)
 
-    SEM_INFO_SET("semantic_payload_version", PyLong_FromLong(1));
+    SEM_INFO_SET("semantic_payload_version",
+                 PyLong_FromUnsignedLong(rules->semantic_payload_version));
     SEM_INFO_SET("fingerprint", PyUnicode_FromString(rules->fingerprint));
     SEM_INFO_SET("board_size", PyLong_FromUnsignedLong(rules->board_size));
     SEM_INFO_SET("repetition_limit", PyLong_FromUnsignedLong(rules->repetition_limit));

@@ -198,6 +198,7 @@ typedef struct {
 
 typedef struct {
     char fingerprint[65];
+    uint8_t semantic_payload_version;
     uint8_t board_size;
     uint16_t repetition_limit;
     uint16_t max_ply;

@@ -176,19 +176,245 @@ def test_c1_single_field_mutations_fail_closed(module):
 def test_c1_alive_promo_parsed_as_u64(module):
     semantic = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
     payload, _ = native_compiler.build_semantic_compile_payload(semantic)
-    # cannon has no promotion targets; a high-bit mask (> INT32_MAX) must be
-    # preserved exactly through the u64 path, not rejected by a 32-bit long.
-    high = 1 << 40
-    mutated = copy.deepcopy(payload)
-    mutated["alive_promo"][0][0][0] = high
+    # Valid payload still round-trips exactly.
     compiled = native_compiler.compile_native_semantic_rules(semantic)
     observed = dict(module.semantic_rules_info(compiled.capsule))
-    assert observed == payload  # valid payload unaffected
-    # direct C compile of the mutated payload round-trips the high mask
-    from generic_chess.native import _module as _raw_module
+    assert observed == payload
+    # cannon types have zero promotion targets: any set bit is outside the
+    # semantic mask domain.  The value 1<<40 must first be parsed through the
+    # strict uint64 reader and then rejected by the domain check; a 32-bit
+    # signed-long parse would instead raise OverflowError here.
+    mutated = copy.deepcopy(payload)
+    mutated["alive_promo"][0][0][0] = 1 << 40
+    with pytest.raises(ValueError, match="promotion-target domain"):
+        module.compile_semantic_rules(mutated)
 
-    capsule = _raw_module().compile_semantic_rules(mutated)
-    assert dict(_raw_module().semantic_rules_info(capsule)) == mutated
+
+def _find_effect(payload, kind):
+    for pat in payload["patterns"]:
+        for eff in pat["effects"]:
+            if eff["kind"] == kind:
+                return pat, eff
+    raise AssertionError(f"no effect kind {kind} in payload")
+
+
+def _find_ref(payload, kind):
+    for pat in payload["patterns"]:
+        for eff in pat["effects"]:
+            for key in ("from_ref", "to_ref", "square_ref"):
+                r = eff.get(key)
+                if isinstance(r, dict) and r["kind"] == kind:
+                    return eff, r
+        for g in pat["guards"]:
+            for r in g["spatial"]["refs"]:
+                if r["kind"] == kind:
+                    return g, r
+        for sg in pat["slot_guards"]:
+            r = sg.get("square_ref")
+            if isinstance(r, dict) and r["kind"] == kind:
+                return sg, r
+        for inv in pat["invariants"]:
+            for r in inv["square_refs"]:
+                if r["kind"] == kind:
+                    return inv, r
+    for t in payload["triggers"]:
+        if t["square_ref"]["kind"] == kind:
+            return t, t["square_ref"]
+    raise AssertionError(f"no square_ref kind {kind} in payload")
+
+
+def test_c1_square_ref_structural_shapes(module):
+    from rule_semantics_ir_fixtures import castling_ruleset, en_passant_ruleset
+
+    castling = compile_semantic_ruleset(castling_ruleset())
+    en_passant = compile_semantic_ruleset(en_passant_ruleset())
+    p_castling, _ = native_compiler.build_semantic_compile_payload(castling)
+    p_ep, _ = native_compiler.build_semantic_compile_payload(en_passant)
+
+    # fixed + square=None
+    _mutate_rejected(module, p_castling,
+                     lambda p: _find_ref(p, 2)[1].__setitem__("square", None),
+                     "fixed square None")
+    # source + unrelated square
+    _mutate_rejected(module, p_castling,
+                     lambda p: _find_ref(p, 0)[1].__setitem__("square", 4),
+                     "source with square")
+    # offset_from_source + offset=None
+    _mutate_rejected(module, p_castling,
+                     lambda p: _find_ref(p, 3)[1].__setitem__("offset", None),
+                     "offset ref None")
+    # path_step + step=None
+    _mutate_rejected(module, p_castling,
+                     lambda p: _find_ref(p, 5)[1].__setitem__("step", None),
+                     "path_step None")
+    # aux_slot_square + slot_id=None
+    def _aux_slot_none(q):
+        _owner, ref = _find_ref(q, 1)
+        ref["kind"] = 6
+        ref["slot_id"] = None
+    _mutate_rejected(module, p_ep, _aux_slot_none, "aux_slot_square None")
+
+
+def test_c1_spatial_cardinality(module):
+    from rule_semantics_ir_fixtures import nifu_ruleset
+    from rule_semantics_ir_fixtures import weird_rulesets
+
+    nifu = compile_semantic_ruleset(nifu_ruleset())
+    zone = compile_semantic_ruleset(weird_rulesets()[1])
+    p_nifu, _ = native_compiler.build_semantic_compile_payload(nifu)
+    p_zone, _ = native_compiler.build_semantic_compile_payload(zone)
+
+    def _find_spatial(payload, kind):
+        return next(
+            g["spatial"]
+            for pat in payload["patterns"]
+            for g in pat["guards"]
+            if g["spatial"]["kind"] == kind
+        )
+
+    def _same_file_0_refs(q):
+        _find_spatial(q, 0)["refs"] = []
+    _mutate_rejected(module, p_nifu, _same_file_0_refs, "same_file 0 refs")
+
+    def _same_file_2_refs(q):
+        ref = dict(_find_spatial(q, 0)["refs"][0])
+        _find_spatial(q, 0)["refs"] = [ref, dict(ref)]
+    _mutate_rejected(module, p_nifu, _same_file_2_refs, "same_file 2 refs")
+
+    def _path_between_1_ref(q):
+        _find_spatial(q, 0)["kind"] = 4
+    _mutate_rejected(module, p_nifu, _path_between_1_ref, "path_between 1 ref")
+
+    def _non_zone_with_zone(q):
+        _find_spatial(q, 0)["zone_index"] = 0
+    _mutate_rejected(module, p_nifu, _non_zone_with_zone, "non-zone with zone_index")
+
+    def _zone_without_zone(q):
+        _find_spatial(q, 5)["zone_index"] = None
+    _mutate_rejected(module, p_zone, _zone_without_zone, "zone without zone_index")
+
+
+def test_c1_promotion_mode_shape(module):
+    from rule_semantics_ir_fixtures import cannon_ruleset
+
+    cannon = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
+    p, _ = native_compiler.build_semantic_compile_payload(cannon)
+    pat = p["patterns"][0]
+    _mutate_rejected(module, p,
+                     lambda q: q["patterns"][0].__setitem__("promotion_mode", 2),
+                     "explicit mode without type")
+    _mutate_rejected(module, p,
+                     lambda q: q["patterns"][0].__setitem__(
+                         "explicit_promotion_type", 0),
+                     "non-explicit with type")
+
+
+def test_c1_aux_duplicate_slot_id(module):
+    from rule_semantics_ir_fixtures import castling_ruleset
+
+    castling = compile_semantic_ruleset(castling_ruleset())
+    p, _ = native_compiler.build_semantic_compile_payload(castling)
+    _mutate_rejected(
+        module, p,
+        lambda q: q["aux_slots"].append(dict(q["aux_slots"][0])),
+        "duplicate aux slot_id",
+    )
+
+
+def test_c1_slot_guard_kind_consistency(module):
+    from rule_semantics_ir_fixtures import castling_ruleset, en_passant_ruleset
+
+    castling = compile_semantic_ruleset(castling_ruleset())
+    en_passant = compile_semantic_ruleset(en_passant_ruleset())
+    p_castling, _ = native_compiler.build_semantic_compile_payload(castling)
+    p_ep, _ = native_compiler.build_semantic_compile_payload(en_passant)
+
+    def _first_slot_guard(payload):
+        return next(
+            sg
+            for pat in payload["patterns"]
+            for sg in pat["slot_guards"]
+        )
+
+    def _bool_value_2(q):
+        _first_slot_guard(q)["value"] = 2
+    _mutate_rejected(module, p_castling, _bool_value_2, "bool slot guard value 2")
+
+    def _bool_with_square(q):
+        _first_slot_guard(q)["square_ref"] = {
+            "kind": 1, "square": None, "offset": None,
+            "owner_relative": 1, "step": None, "slot_id": None,
+        }
+    _mutate_rejected(module, p_castling, _bool_with_square,
+                     "bool slot guard with square_ref")
+
+    def _square_none_lt(q):
+        guard = _first_slot_guard(q)
+        guard["square_ref"] = None
+        guard["comparison"] = 2
+    _mutate_rejected(module, p_ep, _square_none_lt, "square slot None + lt")
+
+
+def test_c1_effect_structural_requirements(module):
+    from rule_semantics_ir_fixtures import (
+        castling_ruleset,
+        en_passant_ruleset,
+        nifu_ruleset,
+        weird_rulesets,
+    )
+
+    castling = compile_semantic_ruleset(castling_ruleset())
+    en_passant = compile_semantic_ruleset(en_passant_ruleset())
+    nifu = compile_semantic_ruleset(nifu_ruleset())
+    weird2 = compile_semantic_ruleset(weird_rulesets()[2])
+    weird3 = compile_semantic_ruleset(weird_rulesets()[3])
+    p_castling, _ = native_compiler.build_semantic_compile_payload(castling)
+    p_ep, _ = native_compiler.build_semantic_compile_payload(en_passant)
+    p_nifu, _ = native_compiler.build_semantic_compile_payload(nifu)
+    p_w2, _ = native_compiler.build_semantic_compile_payload(weird2)
+    p_w3, _ = native_compiler.build_semantic_compile_payload(weird3)
+
+    cases = [
+        (p_w3, 9, lambda e: e.__setitem__("to_ref", None)),        # shift
+        (p_nifu, 2, lambda e: e.__setitem__("piece_type_ref", None)),  # remove_from_hand
+        (p_nifu, 3, lambda e: e.__setitem__("to_ref", None)),      # place
+        (p_w2, 4, lambda e: e.__setitem__("type_ref", None)),      # set_current_type
+        (p_w2, 5, lambda e: e.__setitem__("value", None)),         # set_bool
+        (p_castling, 6, lambda e: e.__setitem__("slot_id", None)),  # clear_right
+        (p_ep, 7, lambda e: e.__setitem__("square_ref", None)),    # set_token
+        (p_ep, 8, lambda e: e.__setitem__("slot_id", None)),       # clear_token
+        (p_castling, 0, lambda e: e.__setitem__("from_ref", None)),  # move
+        (p_castling, 0, lambda e: e.__setitem__("disposition", 0)),  # move + forbidden
+    ]
+    for payload, kind, mutator in cases:
+        _mutate_rejected(module, payload,
+                         lambda q, k=kind, m=mutator: m(_find_effect(q, k)[1]),
+                         f"effect kind {kind}")
+
+
+def test_c1_invariant_and_postcondition_cardinality(module):
+    from rule_semantics_ir_fixtures import castling_ruleset, uchifuzume_ruleset
+
+    castling = compile_semantic_ruleset(castling_ruleset())
+    uchifuzume = compile_semantic_ruleset(uchifuzume_ruleset())
+    p_castling, _ = native_compiler.build_semantic_compile_payload(castling)
+    p_uchi, _ = native_compiler.build_semantic_compile_payload(uchifuzume)
+
+    def _empty_invariant(q):
+        next(
+            inv
+            for pat in q["patterns"]
+            for inv in pat["invariants"]
+            if inv["kind"] == 1
+        )["square_refs"] = []
+    _mutate_rejected(module, p_castling, _empty_invariant,
+                     "squares_not_attacked empty")
+
+    def _three_postconditions(q):
+        pc_pat = next(pat for pat in q["patterns"] if pat["postconditions"])
+        pc_pat["postconditions"].append(dict(pc_pat["postconditions"][0]))
+    _mutate_rejected(module, p_uchi, _three_postconditions,
+                     "three postconditions")
 
 
 def test_c1_legacy_checked_make_rejects_semantic_kinds(module):
