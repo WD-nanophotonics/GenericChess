@@ -95,10 +95,15 @@ def test_spec01_no_reply_checking_action_rejected():
     engine = SemanticEngine(compiled)
     pos = forbidden_no_reply_drop_position(engine.support, cage=True)
     actions = engine.legal_actions(pos)
+    pattern_id = "sem_00_drop_no_legal_reply_forbidden"
+    forbidden_target = _idx(engine.support, 7, 5)
+    allowed_control_target = _idx(engine.support, 0, 1)
+    pattern_actions = [a for a in actions if a.pattern_id == pattern_id]
     assert not [
-        a
-        for a in actions
-        if a.pattern_id == "sem_00_drop_no_legal_reply_forbidden"
+        a for a in pattern_actions if a.target == forbidden_target
+    ]
+    assert [
+        a for a in pattern_actions if a.target == allowed_control_target
     ]
 
 
@@ -116,10 +121,12 @@ def test_spec02_checking_action_with_reply_remains_legal():
     engine = SemanticEngine(compiled)
     pos = forbidden_no_reply_drop_position(engine.support, cage=False)
     actions = engine.legal_actions(pos)
+    checking_target = _idx(engine.support, 7, 5)
     assert [
         a
         for a in actions
         if a.pattern_id == "sem_00_drop_no_legal_reply_forbidden"
+        and a.target == checking_target
     ]
 
 
@@ -132,16 +139,23 @@ def test_spec03_opponent_checked_binds_to_reply_side():
     # EXPECTED_RED until B-3.
     engine = SemanticEngine(compiled)
     reply_checked = opponent_checked_reply_checked_position(engine.support)
-    assert not [
+    checking_target = _idx(engine.support, 2, 1)
+    reply_checked_actions = [
         a
         for a in engine.legal_actions(reply_checked)
         if a.pattern_id == "sem_00_checking_restriction"
     ]
+    assert not [
+        a for a in reply_checked_actions if a.target == checking_target
+    ]
     mover_checked = opponent_checked_mover_checked_position(engine.support)
-    assert [
+    mover_checked_actions = [
         a
         for a in engine.legal_actions(mover_checked)
         if a.pattern_id == "sem_00_checking_restriction"
+    ]
+    assert [
+        a for a in mover_checked_actions if a.target == checking_target
     ]
 
 
@@ -233,12 +247,32 @@ def test_spec07_s4_action_excluded_from_public_membership():
         terminal_status=TerminalResult(TerminalStatus.ONGOING),
     )
     actions = legal_actions(state, compiled)
+    forbidden_square = Square(7, 5)
+    allowed_control_square = Square(0, 1)
     assert not [
-        a for a in actions if getattr(a, "pattern_id", "") == pattern.pattern_id
+        a
+        for a in actions
+        if getattr(a, "pattern_id", "") == pattern.pattern_id
+        and getattr(a, "to_square", None) == forbidden_square
+    ]
+    assert [
+        a
+        for a in actions
+        if getattr(a, "pattern_id", "") == pattern.pattern_id
+        and getattr(a, "to_square", None) == allowed_control_square
     ]
     successors = legal_successors(state, compiled)
     assert not [
-        a for a, _ in successors if getattr(a, "pattern_id", "") == pattern.pattern_id
+        a
+        for a, _ in successors
+        if getattr(a, "pattern_id", "") == pattern.pattern_id
+        and getattr(a, "to_square", None) == forbidden_square
+    ]
+    assert [
+        a
+        for a, _ in successors
+        if getattr(a, "pattern_id", "") == pattern.pattern_id
+        and getattr(a, "to_square", None) == allowed_control_square
     ]
     with pytest.raises(IllegalActionError):
         apply_action(
