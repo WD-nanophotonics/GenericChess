@@ -1448,6 +1448,12 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         if (init == Py_None) {
+            if (rules->aux_slots[a].value_kind != 1) {
+                PyErr_SetString(PyExc_ValueError,
+                                "bool aux slot must not have None initial");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
             rules->aux_slots[a].initial_kind = 0;
         } else if (PyLong_Check(init)) {
             int32_t iv;

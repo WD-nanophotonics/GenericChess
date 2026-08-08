@@ -190,6 +190,27 @@ def test_c1_alive_promo_parsed_as_u64(module):
         module.compile_semantic_rules(mutated)
 
 
+def test_c1_bool_aux_initial_must_not_be_none(module):
+    semantic = compile_semantic_ruleset(STRESS_GROUPS["castling"]())
+    payload, _ = native_compiler.build_semantic_compile_payload(semantic)
+    bool_idx = next(
+        i for i, s in enumerate(payload["aux_slots"]) if s["value_kind"] == 0
+    )
+    # Valid bool initial 1 compiles and round-trips exactly.
+    compiled = native_compiler.compile_native_semantic_rules(semantic)
+    assert dict(module.semantic_rules_info(compiled.capsule)) == payload
+    # Valid bool initial 0 compiles and round-trips exactly.
+    zero = copy.deepcopy(payload)
+    zero["aux_slots"][bool_idx]["initial"] = 0
+    compiled_zero = module.compile_semantic_rules(zero)
+    assert dict(module.semantic_rules_info(compiled_zero)) == zero
+    # bool + None must fail closed before becoming a trusted rules object.
+    mutated = copy.deepcopy(payload)
+    mutated["aux_slots"][bool_idx]["initial"] = None
+    with pytest.raises(ValueError, match="None initial"):
+        module.compile_semantic_rules(mutated)
+
+
 def _find_effect(payload, kind):
     for pat in payload["patterns"]:
         for eff in pat["effects"]:
