@@ -21,7 +21,11 @@ uchifuzume-shaped drop restrictions both use the same primitive.
   (Option B); probe never enters S5; probe consumes the full child;
 - early exit is a MUST; `opponent_checked` precedes the reply probe;
 - no production game-name branching; no IR/schema bump;
-- public Core lifecycle and R0-R3 contracts unchanged.
+- public Core lifecycle and substantive R0-R3 correctness contracts remain
+  unchanged (fingerprint/action identity/exact binding/canonical aux/etc.);
+  the two phase-local B-2 S4 fail-closed capability assertions explicitly
+  superseded by the B-3 transition are retired per
+  `docs/audits/2026-08-phase-1.9b3-spec-r2-retire-b2-s4-gate.md`.
 
 ## Implementation order (frozen)
 
@@ -63,7 +67,10 @@ postcondition kind.
 
 ## Test gates
 
-- Gate A: R0/R1/R2/R3 frozen specification unchanged and green.
+- Gate A: R0/R1/R2/R3 substantive correctness specification green after
+  the explicit R2 supersession of the two temporary B-2 S4 capability gates;
+  those two continuity tests now assert the B-3 supported capability
+  transition rather than preserve the historical `False` gate.
 - Gate B: `tests/specification/test_phase19b3_s4_bounded_probe.py` green
   (SPEC-01..SPEC-11).
 - Gate C: semantic executor focused suite + legacy differential green.

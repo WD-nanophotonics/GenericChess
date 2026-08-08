@@ -124,9 +124,9 @@ def test_semantic_position_key_api_accepts_semantic_compiled_ruleset():
     )
 
 
-def test_s4_semantic_rules_remain_fail_closed_in_b2():
+def test_b3_supersedes_b2_s4_fail_closed_capability_gate():
     from rule_semantics_ir_fixtures import uchifuzume_ruleset
 
     compiled = compile_semantic_ruleset(uchifuzume_ruleset())
     assert compiled.ir.capabilities.contains_postcondition is True
-    assert compiled.ir.capabilities.new_ir_core_executable is False
+    assert compiled.ir.capabilities.new_ir_core_executable is True

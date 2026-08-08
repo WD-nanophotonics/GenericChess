@@ -183,15 +183,16 @@ def test_anchor_is_attackable_but_not_legally_capturable():
     ], "enemy anchor appeared as a legal capture"
 
 
-def test_s4_ruleset_is_rejected_as_a_whole_not_partially_executed():
+def test_b3_supported_s4_ruleset_is_executable_as_a_whole():
     from generic_chess.core.semantic_executor import SemanticEngine
     from generic_chess.rules.compiler import compile_semantic_ruleset
     from rule_semantics_ir_fixtures import uchifuzume_ruleset
 
     compiled = compile_semantic_ruleset(uchifuzume_ruleset())
-    assert compiled.ir.capabilities.new_ir_core_executable is False
-    with pytest.raises(RuntimeError, match=r"(?i)(S4|postcondition|not executable|unsupported)"):
-        SemanticEngine(compiled)
+    assert compiled.ir.capabilities.contains_postcondition is True
+    assert compiled.ir.capabilities.new_ir_core_executable is True
+    engine = SemanticEngine(compiled)
+    assert engine.ir.capabilities.new_ir_core_executable is True
 
 
 def test_public_semantic_apply_rejects_forged_geometry_binding():
