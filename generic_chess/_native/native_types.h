@@ -65,6 +65,20 @@ typedef struct {
 #define GC_ACTION_KIND_BOARD 0u
 #define GC_ACTION_KIND_DROP 1u
 
+/* Phase 1.9C-1 additive semantic action identity (ADR-017 section 12).
+ * The legacy 36-bit lower layout is unchanged; semantic kinds use the
+ * previously reserved bits 36-63.  Legacy checked-make rejects kinds 2/3. */
+#define GC_ACTION_KIND_SEMANTIC_BOARD 2u
+#define GC_ACTION_KIND_SEMANTIC_DROP 3u
+#define GC_ACTION_PATTERN_SHIFT 36u
+#define GC_ACTION_PATTERN_MASK 0xFFull
+#define GC_ACTION_GEOMETRY_SHIFT 44u
+#define GC_ACTION_GEOMETRY_MASK 0xFFFull
+#define GC_ACTION_ACTOR_CURRENT_SHIFT 56u
+#define GC_ACTION_ACTOR_CURRENT_MASK 0xFFull
+#define GC_ACTION_MAX_PATTERNS 256u
+#define GC_ACTION_MAX_GEOMETRIES 4096u
+
 #define GC_ACTION_TO(a) (((a) >> GC_ACTION_TO_SHIFT) & GC_ACTION_TO_MASK)
 #define GC_ACTION_FROM(a) (((a) >> GC_ACTION_FROM_SHIFT) & GC_ACTION_FROM_MASK)
 #define GC_ACTION_PROMO(a) (((a) >> GC_ACTION_PROMO_SHIFT) & GC_ACTION_PROMO_MASK)

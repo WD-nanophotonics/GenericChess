@@ -102,4 +102,26 @@ def __getattr__(name: str):
             "NativeSearchEngine": NativeSearchEngine,
             "NativeIterativeSearchResult": NativeIterativeSearchResult,
         }[name]
+    if name in (
+        "NativeSemanticCompilationReport",
+        "NativeSemanticCompiledRules",
+        "build_semantic_compile_payload",
+        "compile_native_semantic_rules",
+        "SEMANTIC_PAYLOAD_VERSION",
+    ):
+        from .compiler import (
+            SEMANTIC_PAYLOAD_VERSION,
+            NativeSemanticCompilationReport,
+            NativeSemanticCompiledRules,
+            build_semantic_compile_payload,
+            compile_native_semantic_rules,
+        )
+
+        return {
+            "NativeSemanticCompilationReport": NativeSemanticCompilationReport,
+            "NativeSemanticCompiledRules": NativeSemanticCompiledRules,
+            "build_semantic_compile_payload": build_semantic_compile_payload,
+            "compile_native_semantic_rules": compile_native_semantic_rules,
+            "SEMANTIC_PAYLOAD_VERSION": SEMANTIC_PAYLOAD_VERSION,
+        }[name]
     raise AttributeError(name)

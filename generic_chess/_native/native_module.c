@@ -21,12 +21,14 @@
 #include "native_search.h"
 #include "native_state.h"
 #include "native_tt.h"
+#include "native_semantic_rules.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
 #define GC_EVAL_CAPSULE "generic_chess._native_core.gc_eval"
 #define GC_ENGINE_CAPSULE "generic_chess._native_core.gc_engine"
 #define GC_CANCEL_CAPSULE "generic_chess._native_core.gc_cancel"
+#define GC_SEM_RULES_CAPSULE "generic_chess._native_core.gc_semantic_rules"
 
 static PyObject *gc_native_error = NULL;
 
@@ -77,6 +79,14 @@ static void gc_cancel_capsule_free(PyObject *capsule) {
     }
 }
 
+static void gc_semantic_rules_capsule_free(PyObject *capsule) {
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        capsule, GC_SEM_RULES_CAPSULE);
+    if (rules != NULL) {
+        gc_semantic_rules_free(rules);
+    }
+}
+
 static uint64_t gc_py_long_as_u64(PyObject *obj, int *ok) {
     unsigned long long value = PyLong_AsUnsignedLongLong(obj);
     if (value == (unsigned long long)-1 && PyErr_Occurred()) {
@@ -104,7 +114,7 @@ static PyObject *gc_native_available(PyObject *self, PyObject *args) {
 static PyObject *gc_native_version(PyObject *self, PyObject *args) {
     (void)self;
     (void)args;
-    return PyUnicode_FromString("0.3.0");
+    return PyUnicode_FromString("0.4.0");
 }
 
 static const char *gc_status_name(int status) {
@@ -265,8 +275,23 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "native_perft", value);
     Py_DECREF(value);
-    value = PyUnicode_FromString("native-0.3.0");
+    value = PyUnicode_FromString("native-0.4.0");
     PyDict_SetItemString(dict, "native_schema", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_ir_v2_compile", value);
+    Py_DECREF(value);
+    value = PyLong_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_payload_version", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_exact_action_identity", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(0);
+    PyDict_SetItemString(dict, "semantic_position_state", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(0);
+    PyDict_SetItemString(dict, "semantic_s0_s4_executor", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "hash_includes_base_type", value);
@@ -2054,6 +2079,69 @@ cleanup:
     return result_dict;
 }
 
+/* ------------------------------------------------------- semantic payload */
+
+static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *payload;
+    if (!PyArg_ParseTuple(args, "O", &payload)) {
+        return NULL;
+    }
+    if (!PyDict_Check(payload)) {
+        PyErr_SetString(PyExc_TypeError,
+                        "compile_semantic_rules expects a dict payload");
+        return NULL;
+    }
+    GCSemanticRules *rules = gc_semantic_rules_compile(payload);
+    if (rules == NULL) {
+        return NULL;
+    }
+    return PyCapsule_New(rules, GC_SEM_RULES_CAPSULE,
+                         gc_semantic_rules_capsule_free);
+}
+
+static PyObject *gc_semantic_rules_info(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *capsule;
+    if (!PyArg_ParseTuple(args, "O", &capsule)) {
+        return NULL;
+    }
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        capsule, GC_SEM_RULES_CAPSULE);
+    if (rules == NULL) {
+        return NULL;
+    }
+    return gc_semantic_rules_build_info(rules);
+}
+
+static PyObject *gc_semantic_action_layout(PyObject *self, PyObject *args) {
+    (void)self;
+    (void)args;
+    return Py_BuildValue(
+        "{s:i,s:i,s:i,s:i,"
+         "s:i,s:i,s:i,s:i,s:i,"
+         "s:i,s:i,s:i,"
+         "s:i,s:i,s:i,"
+         "s:i,s:i}",
+        "legacy_board_kind", (int)GC_ACTION_KIND_BOARD,
+        "legacy_drop_kind", (int)GC_ACTION_KIND_DROP,
+        "semantic_board_kind", (int)GC_ACTION_KIND_SEMANTIC_BOARD,
+        "semantic_drop_kind", (int)GC_ACTION_KIND_SEMANTIC_DROP,
+        "to_shift", (int)GC_ACTION_TO_SHIFT,
+        "from_shift", (int)GC_ACTION_FROM_SHIFT,
+        "promo_shift", (int)GC_ACTION_PROMO_SHIFT,
+        "base_shift", (int)GC_ACTION_BASE_SHIFT,
+        "kind_shift", (int)GC_ACTION_KIND_SHIFT,
+        "pattern_shift", (int)GC_ACTION_PATTERN_SHIFT,
+        "geometry_shift", (int)GC_ACTION_GEOMETRY_SHIFT,
+        "actor_current_shift", (int)GC_ACTION_ACTOR_CURRENT_SHIFT,
+        "pattern_bits", 8,
+        "geometry_bits", 12,
+        "actor_current_bits", 8,
+        "max_patterns", (int)GC_ACTION_MAX_PATTERNS,
+        "max_geometries", (int)GC_ACTION_MAX_GEOMETRIES);
+}
+
 static PyMethodDef gc_methods[] = {
     {"native_available", gc_native_available, METH_NOARGS,
      "Return True (the native kernel is built)."},
@@ -2110,6 +2198,12 @@ static PyMethodDef gc_methods[] = {
     {"native_iterative_search", gc_native_iterative_search, METH_VARARGS,
      "native_iterative_search(engine, position, max_depth, max_nodes, "
      "max_time_seconds, cancel) -> result dict"},
+    {"compile_semantic_rules", gc_compile_semantic_rules, METH_VARARGS,
+     "compile_semantic_rules(payload) -> semantic rules capsule (compile only)"},
+    {"semantic_rules_info", gc_semantic_rules_info, METH_VARARGS,
+     "semantic_rules_info(capsule) -> reconstructed normalized payload dict"},
+    {"semantic_action_layout", gc_semantic_action_layout, METH_NOARGS,
+     "semantic_action_layout() -> exact 64-bit semantic action identity layout"},
     {NULL, NULL, 0, NULL}
 };
 
