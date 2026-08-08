@@ -681,6 +681,11 @@ def build_semantic_compile_payload(semantic):
         f"max_ply {support.max_ply} exceeds native limit {GC_MAX_PLY}",
         fingerprint,
     )
+    _validate(
+        1 <= support.repetition_limit <= 0xFFFF,
+        f"repetition_limit {support.repetition_limit} outside native u16 range",
+        fingerprint,
+    )
 
     type_ids = tuple(sorted(support.type_metadata))
     pattern_ids = tuple(p.pattern_id for p in ir.patterns)

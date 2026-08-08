@@ -55,24 +55,238 @@ static int sem_get_list(PyObject *dict, const char *key, PyObject **out) {
     return 1;
 }
 
-static int sem_parse_square_ref(PyObject *d, GCSemSquareRef *out) {
-    memset(out, 0, sizeof(*out));
-    long kind, own;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &kind)) {
-        return 0;
-    }
-    if (!sem_read_long(PyDict_GetItemString(d, "owner_relative"), &own)) {
-        return 0;
-    }
-    out->kind = (uint8_t)kind;
-    out->owner_relative = (uint8_t)own;
+/* ------------------------------------------------------------------ strict
+ * Phase 1.9C-1 Review R1: validation-before-cast numeric readers.
+ * Range/domain checks happen in a wide representation first; the narrowing
+ * cast happens only after the value is proven representable.  Unknown enum
+ * codes, out-of-range identities and oversized list counts fail closed. */
 
-    long square;
-    if (!sem_optional_long(d, "square", &out->has_square, &square)) {
+static int sem_int_read(PyObject *obj, int64_t *out) {
+    if (obj == NULL || obj == Py_None || !PyLong_Check(obj)) {
+        PyErr_SetString(PyExc_ValueError, "expected an integer");
+        return 0;
+    }
+    int overflow = 0;
+    long long v = PyLong_AsLongLongAndOverflow(obj, &overflow);
+    if (overflow) {
+        PyErr_SetString(PyExc_ValueError, "integer out of range");
+        return 0;
+    }
+    *out = (int64_t)v;
+    return 1;
+}
+
+static int sem_u8(PyObject *obj, uint8_t *out) {
+    int64_t v;
+    if (!sem_int_read(obj, &v)) {
+        return 0;
+    }
+    if (v < 0 || v > 0xFF) {
+        PyErr_SetString(PyExc_ValueError, "u8 value out of range");
+        return 0;
+    }
+    *out = (uint8_t)v;
+    return 1;
+}
+
+static int sem_u16(PyObject *obj, uint16_t *out) {
+    int64_t v;
+    if (!sem_int_read(obj, &v)) {
+        return 0;
+    }
+    if (v < 0 || v > 0xFFFF) {
+        PyErr_SetString(PyExc_ValueError, "u16 value out of range");
+        return 0;
+    }
+    *out = (uint16_t)v;
+    return 1;
+}
+
+static int sem_i16(PyObject *obj, int16_t *out) {
+    int64_t v;
+    if (!sem_int_read(obj, &v)) {
+        return 0;
+    }
+    if (v < INT16_MIN || v > INT16_MAX) {
+        PyErr_SetString(PyExc_ValueError, "i16 value out of range");
+        return 0;
+    }
+    *out = (int16_t)v;
+    return 1;
+}
+
+static int sem_i32(PyObject *obj, int32_t *out) {
+    int64_t v;
+    if (!sem_int_read(obj, &v)) {
+        return 0;
+    }
+    if (v < INT32_MIN || v > INT32_MAX) {
+        PyErr_SetString(PyExc_ValueError, "i32 value out of range");
+        return 0;
+    }
+    *out = (int32_t)v;
+    return 1;
+}
+
+static int sem_u64(PyObject *obj, uint64_t *out) {
+    if (obj == NULL || !PyLong_Check(obj)) {
+        PyErr_SetString(PyExc_ValueError, "expected an integer");
+        return 0;
+    }
+    PyObject *zero = PyLong_FromLong(0);
+    if (zero == NULL) {
+        return 0;
+    }
+    int negative = PyObject_RichCompareBool(obj, zero, Py_LT);
+    Py_DECREF(zero);
+    if (negative < 0) {
+        return 0;
+    }
+    if (negative) {
+        PyErr_SetString(PyExc_ValueError, "u64 value out of range (negative)");
+        return 0;
+    }
+    unsigned long long v = PyLong_AsUnsignedLongLong(obj);
+    if (v == (unsigned long long)-1 && PyErr_Occurred()) {
+        PyErr_Clear();
+        PyErr_SetString(PyExc_ValueError, "u64 value out of range");
+        return 0;
+    }
+    *out = (uint64_t)v;
+    return 1;
+}
+
+static int sem_enum(PyObject *obj, int lo, int hi, uint8_t *out) {
+    int64_t v;
+    if (!sem_int_read(obj, &v)) {
+        return 0;
+    }
+    if (v < lo || v > hi) {
+        PyErr_SetString(PyExc_ValueError, "enum code out of allowed domain");
+        return 0;
+    }
+    *out = (uint8_t)v;
+    return 1;
+}
+
+static int sem_opt_u16(PyObject *dict, const char *key, uint8_t *has,
+                       uint16_t *out) {
+    PyObject *v = PyDict_GetItemString(dict, key);
+    if (v == NULL) {
+        PyErr_SetString(PyExc_ValueError, "missing optional field");
+        return 0;
+    }
+    if (v == Py_None) {
+        *has = 0;
+        *out = 0;
+        return 1;
+    }
+    if (!sem_u16(v, out)) {
+        return 0;
+    }
+    *has = 1;
+    return 1;
+}
+
+static int sem_opt_i16(PyObject *dict, const char *key, uint8_t *has,
+                       int16_t *out) {
+    PyObject *v = PyDict_GetItemString(dict, key);
+    if (v == NULL) {
+        PyErr_SetString(PyExc_ValueError, "missing optional field");
+        return 0;
+    }
+    if (v == Py_None) {
+        *has = 0;
+        *out = 0;
+        return 1;
+    }
+    if (!sem_i16(v, out)) {
+        return 0;
+    }
+    *has = 1;
+    return 1;
+}
+
+static int sem_opt_i32(PyObject *dict, const char *key, uint8_t *has,
+                       int32_t *out) {
+    PyObject *v = PyDict_GetItemString(dict, key);
+    if (v == NULL) {
+        PyErr_SetString(PyExc_ValueError, "missing optional field");
+        return 0;
+    }
+    if (v == Py_None) {
+        *has = 0;
+        *out = 0;
+        return 1;
+    }
+    if (!sem_i32(v, out)) {
+        return 0;
+    }
+    *has = 1;
+    return 1;
+}
+
+static int sem_opt_enum(PyObject *dict, const char *key, int lo, int hi,
+                        uint8_t *has, uint8_t *out) {
+    PyObject *v = PyDict_GetItemString(dict, key);
+    if (v == NULL) {
+        PyErr_SetString(PyExc_ValueError, "missing optional field");
+        return 0;
+    }
+    if (v == Py_None) {
+        *has = 0;
+        *out = 0;
+        return 1;
+    }
+    if (!sem_enum(v, lo, hi, out)) {
+        return 0;
+    }
+    *has = 1;
+    return 1;
+}
+
+static int sem_list_len(PyObject *list, int64_t max, uint64_t *out) {
+    Py_ssize_t n = PyList_Size(list);
+    if (n < 0) {
+        return 0;
+    }
+    if ((uint64_t)n > (uint64_t)max) {
+        PyErr_SetString(PyExc_ValueError, "list count exceeds capacity");
+        return 0;
+    }
+    *out = (uint64_t)n;
+    return 1;
+}
+
+static int sem_parse_square_ref(PyObject *d, GCSemSquareRef *out,
+                                const GCSemanticRules *rules) {
+    memset(out, 0, sizeof(*out));
+    uint8_t kind, own;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 6, &kind)) {
+        return 0;
+    }
+    if (!sem_u8(PyDict_GetItemString(d, "owner_relative"), &own)) {
+        return 0;
+    }
+    if (own > 1) {
+        PyErr_SetString(PyExc_ValueError, "owner_relative must be 0/1");
+        return 0;
+    }
+    out->kind = kind;
+    out->owner_relative = own;
+
+    uint16_t square;
+    if (!sem_opt_u16(d, "square", &out->has_square, &square)) {
         return 0;
     }
     if (out->has_square) {
-        out->square = (uint16_t)square;
+        uint32_t board_squares = (uint32_t)rules->board_size * rules->board_size;
+        if (square >= board_squares) {
+            PyErr_SetString(PyExc_ValueError,
+                            "fixed square index out of board range");
+            return 0;
+        }
+        out->square = square;
     }
 
     PyObject *off = PyDict_GetItemString(d, "offset");
@@ -85,50 +299,88 @@ static int sem_parse_square_ref(PyObject *d, GCSemSquareRef *out) {
             PyErr_SetString(PyExc_ValueError, "offset must be a pair");
             return 0;
         }
-        long df, dr;
-        if (!sem_read_long(PyList_GetItem(off, 0), &df) ||
-            !sem_read_long(PyList_GetItem(off, 1), &dr)) {
+        int16_t df, dr;
+        if (!sem_i16(PyList_GetItem(off, 0), &df) ||
+            !sem_i16(PyList_GetItem(off, 1), &dr)) {
             return 0;
         }
         out->has_offset = 1;
-        out->offset_df = (int16_t)df;
-        out->offset_dr = (int16_t)dr;
+        out->offset_df = df;
+        out->offset_dr = dr;
     }
 
-    long step, slot;
-    if (!sem_optional_long(d, "step", &out->has_step, &step)) {
+    uint16_t step, slot;
+    if (!sem_opt_u16(d, "step", &out->has_step, &step)) {
         return 0;
     }
     if (out->has_step) {
-        out->step = (uint16_t)step;
+        out->step = step;
     }
-    if (!sem_optional_long(d, "slot_id", &out->has_slot, &slot)) {
+    if (!sem_opt_u16(d, "slot_id", &out->has_slot, &slot)) {
         return 0;
     }
     if (out->has_slot) {
-        out->slot_id = (uint16_t)slot;
+        /* slot_id must reference an existing canonical aux slot */
+        uint8_t found = 0;
+        for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
+            if (rules->aux_slots[a].slot_id == slot) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            PyErr_SetString(PyExc_ValueError,
+                            "square_ref slot_id references unknown aux slot");
+            return 0;
+        }
+        out->slot_id = slot;
     }
     return 1;
 }
 
-static int sem_parse_type_ref(PyObject *d, GCSemTypeRef *out) {
+static int sem_parse_type_ref(PyObject *d, GCSemTypeRef *out,
+                              const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
-    long kind, ti;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &kind)) {
+    uint8_t kind;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 3, &kind)) {
         return 0;
     }
-    out->kind = (uint8_t)kind;
-    if (!sem_optional_long(d, "type_index", &out->has_type, &ti)) {
+    out->kind = kind;
+    PyObject *ti_obj = PyDict_GetItemString(d, "type_index");
+    if (ti_obj == NULL) {
+        PyErr_SetString(PyExc_ValueError, "missing type_index");
         return 0;
     }
-    if (out->has_type) {
-        out->type_index = (uint16_t)ti;
+    if (ti_obj == Py_None) {
+        if (kind == 2) {  /* explicit requires an index */
+            PyErr_SetString(PyExc_ValueError,
+                            "explicit type_ref requires type_index");
+            return 0;
+        }
+        out->has_type = 0;
+        return 1;
     }
+    uint16_t ti;
+    if (!sem_u16(ti_obj, &ti)) {
+        return 0;
+    }
+    if (kind != 2) {  /* non-explicit must not carry an index */
+        PyErr_SetString(PyExc_ValueError,
+                        "non-explicit type_ref must not carry type_index");
+        return 0;
+    }
+    if (ti >= rules->type_count) {
+        PyErr_SetString(PyExc_ValueError, "type_ref index out of range");
+        return 0;
+    }
+    out->has_type = 1;
+    out->type_index = ti;
     return 1;
 }
 
 static int sem_parse_square_refs(PyObject *list, GCSemSquareRef **out,
-                                 uint16_t *count, int max) {
+                                 uint16_t *count, int max,
+                                 const GCSemanticRules *rules) {
     Py_ssize_t n = PyList_Size(list);
     if (n > max) {
         PyErr_SetString(PyExc_ValueError, "too many square refs");
@@ -147,7 +399,7 @@ static int sem_parse_square_refs(PyObject *list, GCSemSquareRef **out,
     for (Py_ssize_t i = 0; i < n; i++) {
         PyObject *item = PyList_GetItem(list, i);
         if (!PyDict_Check(item) ||
-            !sem_parse_square_ref(item, &refs[i])) {
+            !sem_parse_square_ref(item, &refs[i], rules)) {
             free(refs);
             return 0;
         }
@@ -157,76 +409,112 @@ static int sem_parse_square_refs(PyObject *list, GCSemSquareRef **out,
     return 1;
 }
 
-static int sem_parse_spatial(PyObject *d, GCSemSpatial *out) {
+static int sem_parse_spatial(PyObject *d, GCSemSpatial *out,
+                             const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
-    long kind;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &kind)) {
+    uint8_t kind;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 5, &kind)) {
         return 0;
     }
-    out->kind = (uint8_t)kind;
+    out->kind = kind;
     PyObject *refs = NULL;
     if (!sem_get_list(d, "refs", &refs)) {
         return 0;
     }
-    if (!sem_parse_square_refs(refs, &out->refs, &out->refs_count, 2)) {
+    if (!sem_parse_square_refs(refs, &out->refs, &out->refs_count, 2, rules)) {
         return 0;
     }
-    long zid;
-    if (!sem_optional_long(d, "zone_index", &out->has_zone, &zid)) {
+    uint16_t zid;
+    if (!sem_opt_u16(d, "zone_index", &out->has_zone, &zid)) {
         return 0;
     }
     if (out->has_zone) {
-        out->zone_index = (uint16_t)zid;
+        if (kind != 5) {  /* zone spatial requires kind=zone */
+            PyErr_SetString(PyExc_ValueError,
+                            "zone_index present on non-zone spatial");
+            return 0;
+        }
+        if (zid >= rules->zone_count) {
+            PyErr_SetString(PyExc_ValueError, "zone index out of range");
+            return 0;
+        }
+        out->zone_index = zid;
+    } else if (kind == 5) {
+        PyErr_SetString(PyExc_ValueError,
+                        "zone spatial requires zone_index");
+        return 0;
     }
     return 1;
 }
 
-static int sem_parse_state_guard(PyObject *d, GCSemStateGuard *out) {
+static int sem_parse_state_guard(PyObject *d, GCSemStateGuard *out,
+                                 const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
-    long v;
-#define SEM_GUARD_LONG(key, field) \
-    if (!sem_read_long(PyDict_GetItemString(d, key), &v)) { return 0; } \
-    out->field = (uint8_t)v;
-    SEM_GUARD_LONG("aggregation", aggregation);
-    SEM_GUARD_LONG("owner", owner);
-    SEM_GUARD_LONG("compare_field", compare_field);
-    SEM_GUARD_LONG("promoted", promoted);
-    SEM_GUARD_LONG("location", location);
-    SEM_GUARD_LONG("comparison", comparison);
-#undef SEM_GUARD_LONG
+    if (!sem_enum(PyDict_GetItemString(d, "aggregation"), 0, 1,
+                  &out->aggregation) ||
+        !sem_enum(PyDict_GetItemString(d, "owner"), 0, 2, &out->owner) ||
+        !sem_enum(PyDict_GetItemString(d, "compare_field"), 0, 1,
+                  &out->compare_field) ||
+        !sem_enum(PyDict_GetItemString(d, "promoted"), 0, 2, &out->promoted) ||
+        !sem_enum(PyDict_GetItemString(d, "location"), 0, 1, &out->location) ||
+        !sem_enum(PyDict_GetItemString(d, "comparison"), 0, 5,
+                  &out->comparison)) {
+        return 0;
+    }
+    if (out->location != 0) {
+        /* hand predicates are compile-time fail-closed; board=0 only */
+        PyErr_SetString(PyExc_ValueError,
+                        "state guard location must be board(0)");
+        return 0;
+    }
     PyObject *tr = PyDict_GetItemString(d, "type_ref");
     if (tr == NULL || !PyDict_Check(tr) ||
-        !sem_parse_type_ref(tr, &out->type_ref)) {
+        !sem_parse_type_ref(tr, &out->type_ref, rules)) {
         return 0;
     }
     PyObject *sp = PyDict_GetItemString(d, "spatial");
     if (sp == NULL || !PyDict_Check(sp) ||
-        !sem_parse_spatial(sp, &out->spatial)) {
+        !sem_parse_spatial(sp, &out->spatial, rules)) {
         return 0;
     }
-    if (!sem_read_long(PyDict_GetItemString(d, "value"), &v)) {
+    int32_t value;
+    if (!sem_i32(PyDict_GetItemString(d, "value"), &value)) {
         return 0;
     }
-    out->value = (int32_t)v;
+    out->value = value;
     return 1;
 }
 
-static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out) {
+static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out,
+                                const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
-    long v;
-    if (!sem_read_long(PyDict_GetItemString(d, "slot_id"), &v)) {
+    uint16_t sid;
+    if (!sem_u16(PyDict_GetItemString(d, "slot_id"), &sid)) {
         return 0;
     }
-    out->slot_id = (uint16_t)v;
-    if (!sem_read_long(PyDict_GetItemString(d, "comparison"), &v)) {
+    uint8_t found = 0;
+    for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
+        if (rules->aux_slots[a].slot_id == sid) {
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        PyErr_SetString(PyExc_ValueError,
+                        "slot guard references unknown aux slot");
         return 0;
     }
-    out->comparison = (uint8_t)v;
-    if (!sem_optional_long(d, "value", &out->has_value, &v)) {
+    out->slot_id = sid;
+    if (!sem_enum(PyDict_GetItemString(d, "comparison"), 0, 5,
+                  &out->comparison)) {
+        return 0;
+    }
+    int32_t value;
+    if (!sem_opt_i32(d, "value", &out->has_value, &value)) {
         return 0;
     }
     if (out->has_value) {
-        out->value = (int32_t)v;
+        out->value = value;
     }
     PyObject *sr = PyDict_GetItemString(d, "square_ref");
     if (sr == NULL) {
@@ -234,7 +522,8 @@ static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out) {
         return 0;
     }
     if (sr != Py_None) {
-        if (!PyDict_Check(sr) || !sem_parse_square_ref(sr, &out->square_ref)) {
+        if (!PyDict_Check(sr) ||
+            !sem_parse_square_ref(sr, &out->square_ref, rules)) {
             return 0;
         }
         out->has_square_ref = 1;
@@ -242,38 +531,59 @@ static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out) {
     return 1;
 }
 
-static int sem_parse_effect(PyObject *d, GCSemEffect *out) {
+static int sem_parse_effect(PyObject *d, GCSemEffect *out,
+                            const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
-    long v;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &v)) {
+    uint8_t kind;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 9, &kind)) {
         return 0;
     }
-    out->kind = (uint8_t)v;
-    if (!sem_read_long(PyDict_GetItemString(d, "piece_owner"), &v)) {
+    out->kind = kind;
+    if (!sem_enum(PyDict_GetItemString(d, "piece_owner"), 0, 2,
+                  &out->piece_owner)) {
         return 0;
     }
-    out->piece_owner = (uint8_t)v;
-    if (!sem_read_long(PyDict_GetItemString(d, "count"), &v)) {
+    uint16_t count;
+    if (!sem_u16(PyDict_GetItemString(d, "count"), &count)) {
         return 0;
     }
-    out->count = (uint8_t)v;
-    if (!sem_optional_long(d, "slot_id", &out->has_slot, &v)) {
+    if (count > 0xFF) {
+        PyErr_SetString(PyExc_ValueError, "effect count exceeds u8");
+        return 0;
+    }
+    out->count = (uint8_t)count;
+    uint16_t slot;
+    if (!sem_opt_u16(d, "slot_id", &out->has_slot, &slot)) {
         return 0;
     }
     if (out->has_slot) {
-        out->slot_id = (uint16_t)v;
+        uint8_t found = 0;
+        for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
+            if (rules->aux_slots[a].slot_id == slot) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            PyErr_SetString(PyExc_ValueError,
+                            "effect slot_id references unknown aux slot");
+            return 0;
+        }
+        out->slot_id = slot;
     }
-    if (!sem_optional_long(d, "disposition", &out->has_disposition, &v)) {
+    uint8_t disp;
+    if (!sem_opt_enum(d, "disposition", 0, 1, &out->has_disposition, &disp)) {
         return 0;
     }
     if (out->has_disposition) {
-        out->disposition = (uint8_t)v;
+        out->disposition = disp;
     }
-    if (!sem_optional_long(d, "value", &out->has_value, &v)) {
+    int32_t value;
+    if (!sem_opt_i32(d, "value", &out->has_value, &value)) {
         return 0;
     }
     if (out->has_value) {
-        out->value = (int32_t)v;
+        out->value = value;
     }
 
 #define SEM_OPT_REF(key, has_field, ref_field) \
@@ -284,7 +594,8 @@ static int sem_parse_effect(PyObject *d, GCSemEffect *out) {
             return 0; \
         } \
         if (o != Py_None) { \
-            if (!PyDict_Check(o) || !sem_parse_square_ref(o, &out->ref_field)) { \
+            if (!PyDict_Check(o) || \
+                !sem_parse_square_ref(o, &out->ref_field, rules)) { \
                 return 0; \
             } \
             out->has_field = 1; \
@@ -303,7 +614,8 @@ static int sem_parse_effect(PyObject *d, GCSemEffect *out) {
             return 0; \
         } \
         if (o != Py_None) { \
-            if (!PyDict_Check(o) || !sem_parse_type_ref(o, &out->ref_field)) { \
+            if (!PyDict_Check(o) || \
+                !sem_parse_type_ref(o, &out->ref_field, rules)) { \
                 return 0; \
             } \
             out->has_field = 1; \
@@ -315,19 +627,20 @@ static int sem_parse_effect(PyObject *d, GCSemEffect *out) {
     return 1;
 }
 
-static int sem_parse_invariant(PyObject *d, GCSemInvariant *out) {
+static int sem_parse_invariant(PyObject *d, GCSemInvariant *out,
+                               const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
-    long kind;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &kind)) {
+    uint8_t kind;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 1, &kind)) {
         return 0;
     }
-    out->kind = (uint8_t)kind;
+    out->kind = kind;
     PyObject *refs = NULL;
     if (!sem_get_list(d, "square_refs", &refs)) {
         return 0;
     }
     if (!sem_parse_square_refs(refs, &out->refs, &out->refs_count,
-                               GC_SEM_MAX_INVARIANT_REFS)) {
+                               GC_SEM_MAX_INVARIANT_REFS, rules)) {
         return 0;
     }
     return 1;
@@ -335,51 +648,53 @@ static int sem_parse_invariant(PyObject *d, GCSemInvariant *out) {
 
 static int sem_parse_postcondition(PyObject *d, GCSemPostcondition *out) {
     memset(out, 0, sizeof(*out));
-    long kind, stratum;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &kind)) {
+    uint8_t kind;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 1, &kind)) {
         return 0;
     }
-    if (!sem_read_long(PyDict_GetItemString(d, "max_stratum"), &stratum)) {
+    uint8_t stratum;
+    if (!sem_enum(PyDict_GetItemString(d, "max_stratum"), 0, 5, &stratum)) {
         return 0;
     }
-    out->kind = (uint8_t)kind;
-    if (stratum > 3) {  /* probe must be <= S3 (ADR-017 section 13) */
+    if (stratum > 3) {  /* no_legal_reply probe must be <= S3 */
         PyErr_SetString(PyExc_ValueError,
                         "postcondition probe stratum exceeds S3");
         return 0;
     }
-    out->max_stratum = (uint8_t)stratum;
+    out->kind = kind;
+    out->max_stratum = stratum;
     return 1;
 }
 
 static int sem_parse_path_predicate(PyObject *d, GCSemPathPredicate *out) {
     memset(out, 0, sizeof(*out));
-    long v;
-    if (!sem_read_long(PyDict_GetItemString(d, "kind"), &v)) {
+    uint8_t kind;
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 4, &kind)) {
         return 0;
     }
-    out->kind = (uint8_t)v;
-    if (!sem_read_long(PyDict_GetItemString(d, "owner_filter"), &v)) {
+    if (!sem_enum(PyDict_GetItemString(d, "owner_filter"), 0, 2,
+                  &out->owner_filter)) {
         return 0;
     }
-    out->owner_filter = (uint8_t)v;
-    if (!sem_optional_long(d, "count", &out->has_count, &v)) {
+    out->kind = kind;
+    int32_t v32;
+    if (!sem_opt_i32(d, "count", &out->has_count, &v32)) {
         return 0;
     }
     if (out->has_count) {
-        out->count = (int32_t)v;
+        out->count = v32;
     }
-    if (!sem_optional_long(d, "lo", &out->has_lo, &v)) {
+    if (!sem_opt_i32(d, "lo", &out->has_lo, &v32)) {
         return 0;
     }
     if (out->has_lo) {
-        out->lo = (int32_t)v;
+        out->lo = v32;
     }
-    if (!sem_optional_long(d, "hi", &out->has_hi, &v)) {
+    if (!sem_opt_i32(d, "hi", &out->has_hi, &v32)) {
         return 0;
     }
     if (out->has_hi) {
-        out->hi = (int32_t)v;
+        out->hi = v32;
     }
     return 1;
 }
@@ -388,11 +703,12 @@ static int sem_parse_path_predicate(PyObject *d, GCSemPathPredicate *out) {
 
 static int sem_alloc_uint16_list(PyObject *list, uint16_t **out,
                                  uint16_t *count, int max) {
-    Py_ssize_t n = PyList_Size(list);
-    if (n > max) {
+    uint64_t n64;
+    if (!sem_list_len(list, max, &n64)) {
         PyErr_SetString(PyExc_ValueError, "list exceeds capacity");
         return 0;
     }
+    uint16_t n = (uint16_t)n64;
     if (n == 0) {
         *out = NULL;
         *count = 0;
@@ -404,12 +720,12 @@ static int sem_alloc_uint16_list(PyObject *list, uint16_t **out,
         return 0;
     }
     for (Py_ssize_t i = 0; i < n; i++) {
-        long v;
-        if (!sem_read_long(PyList_GetItem(list, i), &v) || v < 0 || v > 0xFFFF) {
+        uint16_t v;
+        if (!sem_u16(PyList_GetItem(list, i), &v)) {
             free(arr);
             return 0;
         }
-        arr[i] = (uint16_t)v;
+        arr[i] = v;
     }
     *out = arr;
     *count = (uint16_t)n;
@@ -418,11 +734,12 @@ static int sem_alloc_uint16_list(PyObject *list, uint16_t **out,
 
 static int sem_alloc_uint32_list(PyObject *list, uint32_t **out,
                                  uint16_t *count) {
-    Py_ssize_t n = PyList_Size(list);
-    if (n > 0xFFFF) {
+    uint64_t n64;
+    if (!sem_list_len(list, 0xFFFF, &n64)) {
         PyErr_SetString(PyExc_ValueError, "list exceeds capacity");
         return 0;
     }
+    uint16_t n = (uint16_t)n64;
     if (n == 0) {
         *out = NULL;
         *count = 0;
@@ -434,9 +751,8 @@ static int sem_alloc_uint32_list(PyObject *list, uint32_t **out,
         return 0;
     }
     for (Py_ssize_t i = 0; i < n; i++) {
-        long v;
-        if (!sem_read_long(PyList_GetItem(list, i), &v) || v < 0 ||
-            (unsigned long)v > 0xFFFFFFFFUL) {
+        uint64_t v;
+        if (!sem_u64(PyList_GetItem(list, i), &v) || v > 0xFFFFFFFFULL) {
             free(arr);
             return 0;
         }
@@ -459,32 +775,58 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         return NULL;
     }
 
-    long v;
-#define SEM_TOP_LONG(key, field) \
-    if (!sem_read_long(PyDict_GetItemString(payload, key), &v)) { \
-        gc_semantic_rules_free(rules); \
-        return NULL; \
-    } \
-    rules->field = (uint16_t)v;
-    if (!sem_read_long(PyDict_GetItemString(payload, "board_size"), &v)) {
+    /* semantic_payload_version must be present and exactly 1 */
+    uint8_t payload_version;
+    if (!sem_u8(PyDict_GetItemString(payload, "semantic_payload_version"),
+                &payload_version)) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->board_size = (uint8_t)v;
-    SEM_TOP_LONG("repetition_limit", repetition_limit);
-    SEM_TOP_LONG("max_ply", max_ply);
-#undef SEM_TOP_LONG
-    if (rules->board_size < 1 ||
-        (uint32_t)rules->board_size * rules->board_size > GC_MAX_SQUARES) {
+    if (payload_version != 1) {
+        PyErr_SetString(PyExc_ValueError,
+                        "unsupported semantic_payload_version");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+
+    uint16_t board_size;
+    if (!sem_u16(PyDict_GetItemString(payload, "board_size"), &board_size)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (board_size < 1 || board_size > 16 ||
+        (uint32_t)board_size * board_size > GC_MAX_SQUARES) {
         PyErr_SetString(PyExc_ValueError, "semantic board size out of range");
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (rules->max_ply > GC_MAX_PLY) {
+    rules->board_size = (uint8_t)board_size;
+
+    uint16_t repetition_limit;
+    if (!sem_u16(PyDict_GetItemString(payload, "repetition_limit"),
+                 &repetition_limit)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (repetition_limit < 1) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic repetition_limit must be positive");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->repetition_limit = repetition_limit;
+
+    uint16_t max_ply;
+    if (!sem_u16(PyDict_GetItemString(payload, "max_ply"), &max_ply)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (max_ply < 1 || max_ply > GC_MAX_PLY) {
         PyErr_SetString(PyExc_ValueError, "semantic max_ply out of range");
         gc_semantic_rules_free(rules);
         return NULL;
     }
+    rules->max_ply = max_ply;
 
     PyObject *fp = PyDict_GetItemString(payload, "fingerprint");
     if (fp == NULL || !PyUnicode_Check(fp)) {
@@ -505,9 +847,15 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->type_count = (uint16_t)PyList_Size(list_obj);
-    if (rules->type_count > GC_MAX_TYPES) {
+    uint64_t type_count64;
+    if (!sem_list_len(list_obj, GC_MAX_TYPES, &type_count64)) {
         PyErr_SetString(PyExc_ValueError, "too many semantic types");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->type_count = (uint16_t)type_count64;
+    if (rules->type_count < 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic type list is empty");
         gc_semantic_rules_free(rules);
         return NULL;
     }
@@ -518,29 +866,42 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        long anchor, promotable;
-        if (!sem_read_long(PyDict_GetItemString(td, "is_anchor"), &anchor) ||
-            !sem_read_long(PyDict_GetItemString(td, "is_promotable"), &promotable)) {
+        uint8_t anchor, promotable;
+        if (!sem_u8(PyDict_GetItemString(td, "is_anchor"), &anchor) ||
+            !sem_u8(PyDict_GetItemString(td, "is_promotable"), &promotable)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        rules->types[t].is_anchor = (uint8_t)anchor;
-        rules->types[t].is_promotable = (uint8_t)promotable;
+        if (anchor > 1 || promotable > 1) {
+            PyErr_SetString(PyExc_ValueError,
+                            "type is_anchor/is_promotable must be 0/1");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        rules->types[t].is_anchor = anchor;
+        rules->types[t].is_promotable = promotable;
         PyObject *targets = NULL;
         if (!sem_get_list(td, "promo_targets", &targets)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        Py_ssize_t tc = PyList_Size(targets);
-        if (tc > GC_MAX_PROMO_TARGETS) {
+        uint64_t tc64;
+        if (!sem_list_len(targets, GC_MAX_PROMO_TARGETS, &tc64)) {
             PyErr_SetString(PyExc_ValueError, "too many promotion targets");
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        rules->types[t].promo_target_count = (uint8_t)tc;
-        for (Py_ssize_t i = 0; i < tc; i++) {
-            long ti;
-            if (!sem_read_long(PyList_GetItem(targets, i), &ti)) {
+        uint8_t tc = (uint8_t)tc64;
+        rules->types[t].promo_target_count = tc;
+        for (uint8_t i = 0; i < tc; i++) {
+            uint16_t ti;
+            if (!sem_u16(PyList_GetItem(targets, i), &ti)) {
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            if (ti >= rules->type_count) {
+                PyErr_SetString(PyExc_ValueError,
+                                "promotion target type index out of range");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
@@ -602,6 +963,41 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
 #undef SEM_OWNER_LISTS_START
 #undef SEM_OWNER_LISTS_END
 
+    /* cross-reference validation for promotion/drop data */
+    uint16_t squares =
+        (uint16_t)(rules->board_size * rules->board_size);
+    for (uint16_t t = 0; t < rules->type_count; t++) {
+        for (int o = 0; o < 2; o++) {
+            for (uint16_t i = 0; i < rules->promo_forced[t][o].count; i++) {
+                if (rules->promo_forced[t][o].squares[i] >= squares) {
+                    PyErr_SetString(PyExc_ValueError,
+                                    "promo_forced square out of board range");
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
+            }
+            for (uint16_t i = 0; i < rules->drop_mask[t][o].count; i++) {
+                if (rules->drop_mask[t][o].squares[i] >= squares) {
+                    PyErr_SetString(PyExc_ValueError,
+                                    "drop_mask square out of board range");
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
+            }
+            for (uint16_t i = 0; i < rules->promo_allowed[t][o].count; i++) {
+                uint32_t pair = rules->promo_allowed[t][o].pairs[i];
+                uint16_t from_sq = (uint16_t)(pair >> 16);
+                uint16_t to_sq = (uint16_t)(pair & 0xFFFF);
+                if (from_sq >= squares || to_sq >= squares) {
+                    PyErr_SetString(PyExc_ValueError,
+                                    "promo_allowed pair square out of board range");
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
+            }
+        }
+    }
+
     if (!sem_get_list(payload, "alive_promo", &list_obj)) {
         gc_semantic_rules_free(rules);
         return NULL;
@@ -611,7 +1007,6 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    uint16_t squares = (uint16_t)(rules->board_size * rules->board_size);
     for (uint16_t t = 0; t < rules->type_count; t++) {
         PyObject *owners = PyList_GetItem(list_obj, t);
         if (!PyList_Check(owners) || PyList_Size(owners) != 2) {
@@ -627,12 +1022,12 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 return NULL;
             }
             for (uint16_t sq = 0; sq < squares; sq++) {
-                long mask;
-                if (!sem_read_long(PyList_GetItem(masks, sq), &mask)) {
+                uint64_t mask;
+                if (!sem_u64(PyList_GetItem(masks, sq), &mask)) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
-                rules->alive_promo[t][o][sq] = (uint64_t)mask;
+                rules->alive_promo[t][o][sq] = mask;
             }
         }
     }
@@ -642,12 +1037,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->geometry_count = (uint16_t)PyList_Size(list_obj);
-    if (rules->geometry_count > GC_SEM_MAX_GEOMETRIES) {
+    uint64_t geometry_count64;
+    if (!sem_list_len(list_obj, GC_SEM_MAX_GEOMETRIES, &geometry_count64)) {
         PyErr_SetString(PyExc_ValueError, "too many semantic geometries");
         gc_semantic_rules_free(rules);
         return NULL;
     }
+    rules->geometry_count = (uint16_t)geometry_count64;
     if (rules->geometry_count > 0) {
         rules->geometries = (GCSemGeometry *)calloc(
             rules->geometry_count, sizeof(GCSemGeometry));
@@ -664,19 +1060,20 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        long kind, min_steps;
-        if (!sem_read_long(PyDict_GetItemString(gd, "kind"), &kind)) {
+        uint8_t kind;
+        if (!sem_enum(PyDict_GetItemString(gd, "kind"), 0, 2, &kind)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        rules->geometries[g].kind = (uint8_t)kind;
-        if (!sem_optional_long(gd, "min_steps", &rules->geometries[g].has_min_steps,
-                               &min_steps)) {
+        rules->geometries[g].kind = kind;
+        int16_t min_steps;
+        if (!sem_opt_i16(gd, "min_steps",
+                         &rules->geometries[g].has_min_steps, &min_steps)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
         if (rules->geometries[g].has_min_steps) {
-            rules->geometries[g].min_steps = (int16_t)min_steps;
+            rules->geometries[g].min_steps = min_steps;
         }
         PyObject *asrc = PyDict_GetItemString(gd, "atom_source");
         if (asrc == NULL) {
@@ -690,15 +1087,21 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            long ti, ai;
-            if (!sem_read_long(PyList_GetItem(asrc, 0), &ti) ||
-                !sem_read_long(PyList_GetItem(asrc, 1), &ai)) {
+            uint16_t ti, ai;
+            if (!sem_u16(PyList_GetItem(asrc, 0), &ti) ||
+                !sem_u16(PyList_GetItem(asrc, 1), &ai)) {
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            if (ti >= rules->type_count) {
+                PyErr_SetString(PyExc_ValueError,
+                                "geometry atom_source type index out of range");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
             rules->geometries[g].has_atom_source = 1;
-            rules->geometries[g].atom_source_type = (uint16_t)ti;
-            rules->geometries[g].atom_source_index = (uint16_t)ai;
+            rules->geometries[g].atom_source_type = ti;
+            rules->geometries[g].atom_source_index = ai;
         }
         PyObject *paths = PyDict_GetItemString(gd, "paths");
         if (paths == NULL || !PyList_Check(paths) || PyList_Size(paths) != 2) {
@@ -713,7 +1116,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            Py_ssize_t n = PyList_Size(owner_entries);
+            uint64_t n64;
+            if (!sem_list_len(owner_entries, 0xFFFF, &n64)) {
+                PyErr_SetString(PyExc_ValueError, "owner path list too large");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            uint16_t n = (uint16_t)n64;
             if (n > 0) {
                 rules->geometries[g].paths[o].entries =
                     (GCSemPathEntry *)calloc((size_t)n, sizeof(GCSemPathEntry));
@@ -722,9 +1131,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
-                rules->geometries[g].paths[o].count = (uint16_t)n;
+                rules->geometries[g].paths[o].count = n;
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
+            for (uint16_t i = 0; i < n; i++) {
                 PyObject *entry = PyList_GetItem(owner_entries, i);
                 if (!PyList_Check(entry) || PyList_Size(entry) != 2) {
                     PyErr_SetString(PyExc_ValueError,
@@ -732,17 +1141,31 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
-                long source;
-                if (!sem_read_long(PyList_GetItem(entry, 0), &source)) {
+                uint16_t source;
+                if (!sem_u16(PyList_GetItem(entry, 0), &source)) {
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
+                if (source >= squares) {
+                    PyErr_SetString(PyExc_ValueError,
+                                    "geometry path source out of board range");
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
                 GCSemPathEntry *pe = &rules->geometries[g].paths[o].entries[i];
-                pe->source = (uint16_t)source;
+                pe->source = source;
                 PyObject *sqs = PyList_GetItem(entry, 1);
                 if (!sem_alloc_uint16_list(sqs, &pe->squares, &pe->count, 0xFFFF)) {
                     gc_semantic_rules_free(rules);
                     return NULL;
+                }
+                for (uint16_t q = 0; q < pe->count; q++) {
+                    if (pe->squares[q] >= squares) {
+                        PyErr_SetString(PyExc_ValueError,
+                                        "geometry path square out of board range");
+                        gc_semantic_rules_free(rules);
+                        return NULL;
+                    }
                 }
             }
         }
@@ -753,7 +1176,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->zone_count = (uint16_t)PyList_Size(list_obj);
+    uint64_t zone_count64;
+    if (!sem_list_len(list_obj, 0xFFFF, &zone_count64)) {
+        PyErr_SetString(PyExc_ValueError, "too many semantic zones");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->zone_count = (uint16_t)zone_count64;
     if (rules->zone_count > 0) {
         rules->zones = (GCSemZone *)calloc(rules->zone_count, sizeof(GCSemZone));
         if (rules->zones == NULL) {
@@ -774,6 +1203,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
+        for (uint16_t q = 0; q < rules->zones[z].count; q++) {
+            if (rules->zones[z].squares[q] >= squares) {
+                PyErr_SetString(PyExc_ValueError,
+                                "zone square out of board range");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+        }
     }
 
     /* aux slots */
@@ -781,12 +1218,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->aux_slot_count = (uint8_t)PyList_Size(list_obj);
-    if (rules->aux_slot_count > GC_SEM_MAX_AUX_SLOTS) {
+    uint64_t aux_count64;
+    if (!sem_list_len(list_obj, GC_SEM_MAX_AUX_SLOTS, &aux_count64)) {
         PyErr_SetString(PyExc_ValueError, "too many semantic aux slots");
         gc_semantic_rules_free(rules);
         return NULL;
     }
+    rules->aux_slot_count = (uint8_t)aux_count64;
     if (rules->aux_slot_count > 0) {
         rules->aux_slots = (GCSemAuxSlot *)calloc(
             rules->aux_slot_count, sizeof(GCSemAuxSlot));
@@ -798,19 +1236,19 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     }
     for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
         PyObject *ad = PyList_GetItem(list_obj, a);
-        long sid, vk, sc, lt;
+        uint16_t sid;
         if (!PyDict_Check(ad) ||
-            !sem_read_long(PyDict_GetItemString(ad, "slot_id"), &sid) ||
-            !sem_read_long(PyDict_GetItemString(ad, "value_kind"), &vk) ||
-            !sem_read_long(PyDict_GetItemString(ad, "scope"), &sc) ||
-            !sem_read_long(PyDict_GetItemString(ad, "lifetime"), &lt)) {
+            !sem_u16(PyDict_GetItemString(ad, "slot_id"), &sid) ||
+            !sem_enum(PyDict_GetItemString(ad, "value_kind"), 0, 1,
+                      &rules->aux_slots[a].value_kind) ||
+            !sem_enum(PyDict_GetItemString(ad, "scope"), 0, 1,
+                      &rules->aux_slots[a].scope) ||
+            !sem_enum(PyDict_GetItemString(ad, "lifetime"), 0, 1,
+                      &rules->aux_slots[a].lifetime)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        rules->aux_slots[a].slot_id = (uint16_t)sid;
-        rules->aux_slots[a].value_kind = (uint8_t)vk;
-        rules->aux_slots[a].scope = (uint8_t)sc;
-        rules->aux_slots[a].lifetime = (uint8_t)lt;
+        rules->aux_slots[a].slot_id = sid;
         PyObject *init = PyDict_GetItemString(ad, "initial");
         if (init == NULL) {
             PyErr_SetString(PyExc_ValueError, "missing aux initial");
@@ -820,23 +1258,47 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         if (init == Py_None) {
             rules->aux_slots[a].initial_kind = 0;
         } else if (PyLong_Check(init)) {
-            long iv;
-            if (!sem_read_long(init, &iv)) {
+            int32_t iv;
+            if (!sem_i32(init, &iv)) {
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            if (rules->aux_slots[a].value_kind != 0) {
+                PyErr_SetString(PyExc_ValueError,
+                                "non-bool aux slot must not have int initial");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            if (iv != 0 && iv != 1) {
+                PyErr_SetString(PyExc_ValueError,
+                                "bool aux initial must be 0/1");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
             rules->aux_slots[a].initial_kind = 1;
-            rules->aux_slots[a].initial_int = (int32_t)iv;
+            rules->aux_slots[a].initial_int = iv;
         } else if (PyList_Check(init) && PyList_Size(init) == 2) {
-            long f, r;
-            if (!sem_read_long(PyList_GetItem(init, 0), &f) ||
-                !sem_read_long(PyList_GetItem(init, 1), &r)) {
+            uint16_t f, r;
+            if (!sem_u16(PyList_GetItem(init, 0), &f) ||
+                !sem_u16(PyList_GetItem(init, 1), &r)) {
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            if (rules->aux_slots[a].value_kind != 1) {
+                PyErr_SetString(PyExc_ValueError,
+                                "bool aux slot must not have square initial");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            if (f >= rules->board_size || r >= rules->board_size) {
+                PyErr_SetString(PyExc_ValueError,
+                                "aux square initial out of board range");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
             rules->aux_slots[a].initial_kind = 2;
-            rules->aux_slots[a].initial_file = (uint16_t)f;
-            rules->aux_slots[a].initial_rank = (uint16_t)r;
+            rules->aux_slots[a].initial_file = f;
+            rules->aux_slots[a].initial_rank = r;
         } else {
             PyErr_SetString(PyExc_ValueError, "invalid aux initial");
             gc_semantic_rules_free(rules);
@@ -849,7 +1311,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->trigger_count = (uint16_t)PyList_Size(list_obj);
+    uint64_t trigger_count64;
+    if (!sem_list_len(list_obj, 0xFFFF, &trigger_count64)) {
+        PyErr_SetString(PyExc_ValueError, "too many semantic triggers");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->trigger_count = (uint16_t)trigger_count64;
     if (rules->trigger_count > 0) {
         rules->triggers = (GCSemTrigger *)calloc(
             rules->trigger_count, sizeof(GCSemTrigger));
@@ -861,20 +1329,33 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     }
     for (uint16_t t = 0; t < rules->trigger_count; t++) {
         PyObject *td = PyList_GetItem(list_obj, t);
-        long sid, ev, own;
+        uint16_t sid;
         if (!PyDict_Check(td) ||
-            !sem_read_long(PyDict_GetItemString(td, "slot_id"), &sid) ||
-            !sem_read_long(PyDict_GetItemString(td, "event"), &ev) ||
-            !sem_read_long(PyDict_GetItemString(td, "owner"), &own)) {
+            !sem_u16(PyDict_GetItemString(td, "slot_id"), &sid) ||
+            !sem_enum(PyDict_GetItemString(td, "event"), 0, 1,
+                      &rules->triggers[t].event) ||
+            !sem_enum(PyDict_GetItemString(td, "owner"), 0, 2,
+                      &rules->triggers[t].owner)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        rules->triggers[t].slot_id = (uint16_t)sid;
-        rules->triggers[t].event = (uint8_t)ev;
-        rules->triggers[t].owner = (uint8_t)own;
+        uint8_t found = 0;
+        for (uint8_t a = 0; a < rules->aux_slot_count; a++) {
+            if (rules->aux_slots[a].slot_id == sid) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            PyErr_SetString(PyExc_ValueError,
+                            "trigger slot_id references unknown aux slot");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        rules->triggers[t].slot_id = sid;
         PyObject *sr = PyDict_GetItemString(td, "square_ref");
         if (!PyDict_Check(sr) ||
-            !sem_parse_square_ref(sr, &rules->triggers[t].square_ref)) {
+            !sem_parse_square_ref(sr, &rules->triggers[t].square_ref, rules)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
@@ -885,12 +1366,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    rules->pattern_count = (uint16_t)PyList_Size(list_obj);
-    if (rules->pattern_count > GC_SEM_MAX_PATTERNS) {
+    uint64_t pattern_count64;
+    if (!sem_list_len(list_obj, GC_SEM_MAX_PATTERNS, &pattern_count64)) {
         PyErr_SetString(PyExc_ValueError, "too many semantic patterns");
         gc_semantic_rules_free(rules);
         return NULL;
     }
+    rules->pattern_count = (uint16_t)pattern_count64;
     if (rules->pattern_count > 0) {
         rules->patterns = (GCSemPattern *)calloc(
             rules->pattern_count, sizeof(GCSemPattern));
@@ -909,36 +1391,60 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         }
         GCSemPattern *pat = &rules->patterns[p];
         PyObject *sub = NULL;
+        uint16_t type_count16, geometry_count16;
         if (!sem_get_list(pd, "type_indices", &sub) ||
-            !sem_alloc_uint16_list(sub, &pat->type_indices, &pat->type_count, 0xFF)) {
+            !sem_alloc_uint16_list(sub, &pat->type_indices, &type_count16, 0xFF)) {
             gc_semantic_rules_free(rules);
             return NULL;
+        }
+        pat->type_count = (uint8_t)type_count16;
+        for (uint8_t i = 0; i < pat->type_count; i++) {
+            if (pat->type_indices[i] >= rules->type_count) {
+                PyErr_SetString(PyExc_ValueError,
+                                "pattern type index out of range");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
         }
         if (!sem_get_list(pd, "geometry_indices", &sub) ||
             !sem_alloc_uint16_list(sub, &pat->geometry_indices,
-                                   &pat->geometry_count, 0xFF)) {
+                                   &geometry_count16, 0xFF)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        long target, pmode, cost, stratum;
-        if (!sem_read_long(PyDict_GetItemString(pd, "target"), &target) ||
-            !sem_read_long(PyDict_GetItemString(pd, "promotion_mode"), &pmode) ||
-            !sem_read_long(PyDict_GetItemString(pd, "cost"), &cost) ||
-            !sem_read_long(PyDict_GetItemString(pd, "stratum"), &stratum)) {
+        pat->geometry_count = (uint8_t)geometry_count16;
+        for (uint8_t i = 0; i < pat->geometry_count; i++) {
+            if (pat->geometry_indices[i] >= rules->geometry_count) {
+                PyErr_SetString(PyExc_ValueError,
+                                "pattern geometry index out of range");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+        }
+        if (!sem_enum(PyDict_GetItemString(pd, "target"), 0, 3,
+                      &pat->target) ||
+            !sem_enum(PyDict_GetItemString(pd, "promotion_mode"), 0, 2,
+                      &pat->promotion_mode) ||
+            !sem_enum(PyDict_GetItemString(pd, "cost"), 0, 4, &pat->cost) ||
+            !sem_enum(PyDict_GetItemString(pd, "stratum"), 0, 5,
+                      &pat->stratum)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
-        pat->target = (uint8_t)target;
-        pat->promotion_mode = (uint8_t)pmode;
-        pat->cost = (uint8_t)cost;
-        pat->stratum = (uint8_t)stratum;
-        if (!sem_optional_long(pd, "explicit_promotion_type",
-                               &pat->has_explicit_promotion, &v)) {
+        uint16_t ept;
+        if (!sem_opt_u16(pd, "explicit_promotion_type",
+                         &pat->has_explicit_promotion, &ept)) {
             gc_semantic_rules_free(rules);
             return NULL;
         }
         if (pat->has_explicit_promotion) {
-            pat->explicit_promotion_type = (uint16_t)v;
+            if (ept >= rules->type_count) {
+                PyErr_SetString(PyExc_ValueError,
+                                "explicit promotion type index out of range");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            pat->explicit_promotion_type = ept;
         }
 
         /* path / guards / slot_guards / effects / invariants / postconditions */
@@ -947,13 +1453,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         {
-            Py_ssize_t n = PyList_Size(sub);
-            if (n > 0xFF) {
+            uint64_t n64;
+            if (!sem_list_len(sub, 0xFF, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern path too large");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            pat->path_count = (uint8_t)n;
+            uint8_t n = (uint8_t)n64;
+            pat->path_count = n;
             if (n > 0) {
                 pat->path = (GCSemPathPredicate *)calloc((size_t)n, sizeof(GCSemPathPredicate));
                 if (pat->path == NULL) {
@@ -962,7 +1469,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
+            for (uint8_t i = 0; i < n; i++) {
                 if (!sem_parse_path_predicate(PyList_GetItem(sub, i), &pat->path[i])) {
                     gc_semantic_rules_free(rules);
                     return NULL;
@@ -974,13 +1481,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         {
-            Py_ssize_t n = PyList_Size(sub);
-            if (n > 0xFF) {
+            uint64_t n64;
+            if (!sem_list_len(sub, 0xFF, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern guards too large");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            pat->guard_count = (uint8_t)n;
+            uint8_t n = (uint8_t)n64;
+            pat->guard_count = n;
             if (n > 0) {
                 pat->guards = (GCSemStateGuard *)calloc((size_t)n, sizeof(GCSemStateGuard));
                 if (pat->guards == NULL) {
@@ -989,8 +1497,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
-                if (!sem_parse_state_guard(PyList_GetItem(sub, i), &pat->guards[i])) {
+            for (uint8_t i = 0; i < n; i++) {
+                if (!sem_parse_state_guard(PyList_GetItem(sub, i),
+                                           &pat->guards[i], rules)) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
@@ -1001,13 +1510,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         {
-            Py_ssize_t n = PyList_Size(sub);
-            if (n > 0xFF) {
+            uint64_t n64;
+            if (!sem_list_len(sub, 0xFF, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern slot_guards too large");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            pat->slot_guard_count = (uint8_t)n;
+            uint8_t n = (uint8_t)n64;
+            pat->slot_guard_count = n;
             if (n > 0) {
                 pat->slot_guards = (GCSemSlotGuard *)calloc((size_t)n, sizeof(GCSemSlotGuard));
                 if (pat->slot_guards == NULL) {
@@ -1016,8 +1526,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
-                if (!sem_parse_slot_guard(PyList_GetItem(sub, i), &pat->slot_guards[i])) {
+            for (uint8_t i = 0; i < n; i++) {
+                if (!sem_parse_slot_guard(PyList_GetItem(sub, i),
+                                          &pat->slot_guards[i], rules)) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
@@ -1028,13 +1539,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         {
-            Py_ssize_t n = PyList_Size(sub);
-            if (n > GC_SEM_MAX_EFFECTS) {
+            uint64_t n64;
+            if (!sem_list_len(sub, GC_SEM_MAX_EFFECTS, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern effects exceed 4");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            pat->effect_count = (uint8_t)n;
+            uint8_t n = (uint8_t)n64;
+            pat->effect_count = n;
             if (n > 0) {
                 pat->effects = (GCSemEffect *)calloc((size_t)n, sizeof(GCSemEffect));
                 if (pat->effects == NULL) {
@@ -1043,8 +1555,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
-                if (!sem_parse_effect(PyList_GetItem(sub, i), &pat->effects[i])) {
+            for (uint8_t i = 0; i < n; i++) {
+                if (!sem_parse_effect(PyList_GetItem(sub, i),
+                                      &pat->effects[i], rules)) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
@@ -1055,13 +1568,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         {
-            Py_ssize_t n = PyList_Size(sub);
-            if (n > 0xFF) {
+            uint64_t n64;
+            if (!sem_list_len(sub, 0xFF, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern invariants too large");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            pat->invariant_count = (uint8_t)n;
+            uint8_t n = (uint8_t)n64;
+            pat->invariant_count = n;
             if (n > 0) {
                 pat->invariants = (GCSemInvariant *)calloc((size_t)n, sizeof(GCSemInvariant));
                 if (pat->invariants == NULL) {
@@ -1070,8 +1584,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
-                if (!sem_parse_invariant(PyList_GetItem(sub, i), &pat->invariants[i])) {
+            for (uint8_t i = 0; i < n; i++) {
+                if (!sem_parse_invariant(PyList_GetItem(sub, i),
+                                         &pat->invariants[i], rules)) {
                     gc_semantic_rules_free(rules);
                     return NULL;
                 }
@@ -1082,13 +1597,14 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         {
-            Py_ssize_t n = PyList_Size(sub);
-            if (n > 0xFF) {
+            uint64_t n64;
+            if (!sem_list_len(sub, 0xFF, &n64)) {
                 PyErr_SetString(PyExc_ValueError, "pattern postconditions too large");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            pat->postcondition_count = (uint8_t)n;
+            uint8_t n = (uint8_t)n64;
+            pat->postcondition_count = n;
             if (n > 0) {
                 pat->postconditions = (GCSemPostcondition *)calloc(
                     (size_t)n, sizeof(GCSemPostcondition));
@@ -1098,7 +1614,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                     return NULL;
                 }
             }
-            for (Py_ssize_t i = 0; i < n; i++) {
+            for (uint8_t i = 0; i < n; i++) {
                 if (!sem_parse_postcondition(PyList_GetItem(sub, i),
                                              &pat->postconditions[i])) {
                     gc_semantic_rules_free(rules);

@@ -8,6 +8,7 @@ legacy checked-make semantic-kind rejection boundary.
 
 from __future__ import annotations
 
+import copy
 import gc
 import sys
 from pathlib import Path
@@ -61,22 +62,133 @@ def test_c1_repeated_compile_does_not_alias_c_state(module):
 def test_c1_malformed_payload_fails_closed(module):
     semantic = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
     payload, _ = native_compiler.build_semantic_compile_payload(semantic)
-    bad_types = dict(payload)
+    bad_types = copy.deepcopy(payload)
     bad_types["types"] = [{"is_anchor": 0}]
     with pytest.raises(Exception):
         module.compile_semantic_rules(bad_types)
-    bad_pattern = dict(payload)
+    bad_pattern = copy.deepcopy(payload)
     bad_pattern["patterns"] = [{}]
     with pytest.raises(Exception):
         module.compile_semantic_rules(bad_pattern)
-    bad_geometry = dict(payload)
-    bad_geometry["geometries"] = [{"kind": 99}]
-    with pytest.raises(Exception):
-        module.compile_semantic_rules(bad_geometry)
-    bad_count = dict(payload)
+    bad_count = copy.deepcopy(payload)
     bad_count["patterns"] = bad_count["patterns"] * 300  # exceeds 256
     with pytest.raises(Exception):
         module.compile_semantic_rules(bad_count)
+
+
+def _mutate_rejected(module, payload, mutator, note):
+    mutated = copy.deepcopy(payload)
+    mutator(mutated)
+    with pytest.raises(Exception):
+        module.compile_semantic_rules(mutated)
+
+
+def test_c1_single_field_mutations_fail_closed(module):
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+    from rule_semantics_ir_fixtures import (
+        castling_ruleset,
+        en_passant_ruleset,
+        uchifuzume_ruleset,
+    )
+
+    cannon = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
+    castling = compile_semantic_ruleset(castling_ruleset())
+    en_passant = compile_semantic_ruleset(en_passant_ruleset())
+    uchifuzume = compile_semantic_ruleset(uchifuzume_ruleset())
+    p_cannon, _ = native_compiler.build_semantic_compile_payload(cannon)
+    p_castling, _ = native_compiler.build_semantic_compile_payload(castling)
+    p_ep, _ = native_compiler.build_semantic_compile_payload(en_passant)
+    p_uchi, _ = native_compiler.build_semantic_compile_payload(uchifuzume)
+
+    n = p_cannon["board_size"]
+    n2 = n * n
+
+    # top-level version / scalars
+    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("semantic_payload_version", 2), "version 2")
+    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("board_size", 257), "board_size 257")
+    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("board_size", -1), "board_size -1")
+    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("repetition_limit", 65537), "repetition_limit 65537")
+
+    # enum domains
+    _mutate_rejected(module, p_cannon, lambda p: p["geometries"][0].__setitem__("kind", 99), "geometry kind 99")
+    _mutate_rejected(module, p_cannon, lambda p: p["geometries"][0].__setitem__("kind", 257), "geometry kind 257")
+    _mutate_rejected(module, p_cannon, lambda p: p["patterns"][0].__setitem__("target", 99), "target 99")
+    _mutate_rejected(module, p_cannon, lambda p: p["patterns"][0].__setitem__("target", 259), "target 259")
+    _mutate_rejected(module, p_cannon, lambda p: p["patterns"][0].__setitem__("promotion_mode", 99), "promotion_mode 99")
+    _mutate_rejected(module, p_cannon, lambda p: p["patterns"][0].__setitem__("cost", 99), "cost 99")
+    _mutate_rejected(module, p_cannon, lambda p: p["patterns"][0].__setitem__("stratum", 99), "stratum 99")
+
+    # postconditions
+    pc_idx = next(
+        i
+        for i, pat in enumerate(p_uchi["patterns"])
+        if pat["postconditions"]
+    )
+    _mutate_rejected(
+        module, p_uchi,
+        lambda p: p["patterns"][pc_idx]["postconditions"][0].__setitem__("kind", 99),
+        "postcondition kind 99",
+    )
+    _mutate_rejected(
+        module, p_uchi,
+        lambda p: p["patterns"][pc_idx]["postconditions"][0].__setitem__("max_stratum", 4),
+        "postcondition max_stratum S4",
+    )
+
+    # aux slots
+    _mutate_rejected(module, p_castling, lambda p: p["aux_slots"][0].__setitem__("value_kind", 99), "aux value_kind 99")
+    _mutate_rejected(module, p_castling, lambda p: p["aux_slots"][0].__setitem__("scope", 99), "aux scope 99")
+    _mutate_rejected(module, p_castling, lambda p: p["aux_slots"][0].__setitem__("lifetime", 99), "aux lifetime 99")
+
+    # triggers
+    _mutate_rejected(module, p_castling, lambda p: p["triggers"][0].__setitem__("event", 99), "trigger event 99")
+    # fixed square in castling trigger -> out of board range
+    _mutate_rejected(
+        module, p_castling,
+        lambda p: p["triggers"][0]["square_ref"].__setitem__("square", n2),
+        "trigger fixed square out of board",
+    )
+
+    # cross-reference indices
+    _mutate_rejected(
+        module, p_cannon,
+        lambda p: p["patterns"][0]["type_indices"].__setitem__(0, len(p["types"])),
+        "pattern type index == type_count",
+    )
+    _mutate_rejected(
+        module, p_cannon,
+        lambda p: p["patterns"][0]["geometry_indices"].__setitem__(0, len(p["geometries"])),
+        "pattern geometry index == geometry_count",
+    )
+    # invalid slot_id in a pattern slot guard (castling king_right)
+    sg_idx = next(
+        i
+        for i, pat in enumerate(p_castling["patterns"])
+        if pat["slot_guards"]
+    )
+    _mutate_rejected(
+        module, p_castling,
+        lambda p: p["patterns"][sg_idx]["slot_guards"][0].__setitem__("slot_id", 999),
+        "slot guard slot_id unknown",
+    )
+
+
+def test_c1_alive_promo_parsed_as_u64(module):
+    semantic = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
+    payload, _ = native_compiler.build_semantic_compile_payload(semantic)
+    # cannon has no promotion targets; a high-bit mask (> INT32_MAX) must be
+    # preserved exactly through the u64 path, not rejected by a 32-bit long.
+    high = 1 << 40
+    mutated = copy.deepcopy(payload)
+    mutated["alive_promo"][0][0][0] = high
+    compiled = native_compiler.compile_native_semantic_rules(semantic)
+    observed = dict(module.semantic_rules_info(compiled.capsule))
+    assert observed == payload  # valid payload unaffected
+    # direct C compile of the mutated payload round-trips the high mask
+    from generic_chess.native import _module as _raw_module
+
+    capsule = _raw_module().compile_semantic_rules(mutated)
+    assert dict(_raw_module().semantic_rules_info(capsule)) == mutated
 
 
 def test_c1_legacy_checked_make_rejects_semantic_kinds(module):
