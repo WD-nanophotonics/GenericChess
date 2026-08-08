@@ -76,6 +76,12 @@ class Position:
     hands: tuple[Hands, Hands] = (Hands.empty(), Hands.empty())
     side_to_move: int = 0
     ruleset_fingerprint: str = ""
+    # Legality-affecting auxiliary semantic state (Phase 1.9B-2): sorted
+    # canonical physical keys ``(slot_id, owner_tag)`` with GLOBAL owner tag
+    # -1 and PER_OWNER tags 0/1 (ADR-015 section 4).  Value is bool-ish (0/1)
+    # for right slots or a square (file, rank) / None for square_or_none
+    # slots.  Legacy positions keep the canonical empty value.
+    aux_state: tuple[tuple[tuple[int, int], "int | tuple[int, int] | None"], ...] = ()
 
     def board_size(self) -> int:
         return int(len(self.board) ** 0.5)

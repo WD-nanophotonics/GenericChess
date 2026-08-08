@@ -34,7 +34,46 @@ class DropMove:
         return f"{self.base_type_id}@{square_str(self.to_square)}"
 
 
-Action = BoardMove | DropMove
+@dataclass(frozen=True, slots=True)
+class SemanticBoardMove:
+    """Lossless public semantic board action (Phase 1.9B-2 R2).
+
+    Carries the exact compiled ``pattern_id`` and ``geometry_id`` so two
+    semantically different bindings with identical visible coordinates stay
+    distinct public actions (ADR-015).
+    """
+
+    pattern_id: str
+    geometry_id: str
+    actor_type_id: str
+    from_square: Square
+    to_square: Square
+    promotion_target_id: str | None = None
+
+    def __str__(self) -> str:
+        base = f"{square_str(self.from_square)}-{square_str(self.to_square)}"
+        if self.promotion_target_id is not None:
+            base = f"{base}={self.promotion_target_id}"
+        return f"{self.pattern_id}:{self.geometry_id}:{base}"
+
+
+@dataclass(frozen=True, slots=True)
+class SemanticDropMove:
+    """Lossless public semantic drop action (Phase 1.9B-2 R2)."""
+
+    pattern_id: str
+    geometry_id: str
+    base_type_id: str
+    to_square: Square
+
+    def __str__(self) -> str:
+        return (
+            f"{self.pattern_id}:{self.geometry_id}:"
+            f"{self.base_type_id}@{square_str(self.to_square)}"
+        )
+
+
+Action = BoardMove | DropMove | SemanticBoardMove | SemanticDropMove
 
 
 def action_to_dict(action: Action) -> dict[str, Any]:
@@ -46,8 +85,26 @@ def action_to_dict(action: Action) -> dict[str, Any]:
             "to": [action.to_square.file, action.to_square.rank],
             "promotion_target_id": action.promotion_target_id,
         }
+    if isinstance(action, DropMove):
+        return {
+            "kind": "drop",
+            "base_type_id": action.base_type_id,
+            "to": [action.to_square.file, action.to_square.rank],
+        }
+    if isinstance(action, SemanticBoardMove):
+        return {
+            "kind": "semantic_board",
+            "pattern_id": action.pattern_id,
+            "geometry_id": action.geometry_id,
+            "actor_type_id": action.actor_type_id,
+            "from": [action.from_square.file, action.from_square.rank],
+            "to": [action.to_square.file, action.to_square.rank],
+            "promotion_target_id": action.promotion_target_id,
+        }
     return {
-        "kind": "drop",
+        "kind": "semantic_drop",
+        "pattern_id": action.pattern_id,
+        "geometry_id": action.geometry_id,
         "base_type_id": action.base_type_id,
         "to": [action.to_square.file, action.to_square.rank],
     }
@@ -62,5 +119,24 @@ def action_from_dict(data: dict[str, Any]) -> Action:
             Square(to_file, to_rank),
             data.get("promotion_target_id"),
         )
+    if data["kind"] == "drop":
+        to_file, to_rank = data["to"]
+        return DropMove(data["base_type_id"], Square(to_file, to_rank))
+    if data["kind"] == "semantic_board":
+        from_file, from_rank = data["from"]
+        to_file, to_rank = data["to"]
+        return SemanticBoardMove(
+            pattern_id=data["pattern_id"],
+            geometry_id=data["geometry_id"],
+            actor_type_id=data["actor_type_id"],
+            from_square=Square(from_file, from_rank),
+            to_square=Square(to_file, to_rank),
+            promotion_target_id=data.get("promotion_target_id"),
+        )
     to_file, to_rank = data["to"]
-    return DropMove(data["base_type_id"], Square(to_file, to_rank))
+    return SemanticDropMove(
+        pattern_id=data["pattern_id"],
+        geometry_id=data["geometry_id"],
+        base_type_id=data["base_type_id"],
+        to_square=Square(to_file, to_rank),
+    )

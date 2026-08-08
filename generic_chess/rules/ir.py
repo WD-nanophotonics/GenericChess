@@ -411,11 +411,59 @@ class CompiledSemanticRuleset:
     """Compiled product for semantic-DSL rulesets.
 
     ``_legacy_compiled`` is an inspection-only handle; executable
-    completeness never depends on it.
+    completeness never depends on it.  ``support`` is the explicit typed
+    generic Core support payload (ADR-013).
     """
 
     ir: CompiledSemanticIR
     _legacy_compiled: Any = None
+    support: "CompiledSemanticSupport | None" = None
+
+    @property
+    def ruleset_fingerprint(self) -> str:
+        """Public ruleset identity used by :func:`ensure_ruleset_match`."""
+        return self.ir.ruleset_fingerprint
+
+    @property
+    def board_size(self) -> int:
+        if self.support is not None:
+            return self.support.board_size
+        raise RuntimeError("semantic ruleset has no support payload; board_size unavailable")
+
+
+@dataclass(frozen=True, slots=True)
+class SemanticTypeMetadata:
+    """Stripped type metadata for execution (no movement atoms)."""
+
+    type_id: str
+    is_anchor: bool
+    is_promotable: bool
+    promotion_target_ids: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
+class CompiledSemanticSupport:
+    """Typed generic Core support payload owned by the semantic ruleset
+    (ADR-013).  Compiler-produced and immutable; never reinterprets
+    movement atoms; ``_legacy_compiled`` is not part of execution."""
+
+    board_size: int
+    ruleset_fingerprint: str = ""
+    initial_position: tuple[tuple[Any, ...], ...] = ()
+    type_metadata: Mapping[str, SemanticTypeMetadata] = field(default_factory=dict)
+    drop_allowed: Mapping[str, tuple[tuple[bool, ...], ...]] = field(default_factory=dict)
+    promotion_allowed: Mapping[str, tuple[frozenset[tuple[Any, Any]], ...]] = field(
+        default_factory=dict
+    )
+    promotion_forced: Mapping[str, tuple[frozenset[Any], ...]] = field(
+        default_factory=dict
+    )
+    empty_mobility: Mapping[str, tuple[tuple[tuple[Any, ...], ...], ...]] = field(
+        default_factory=dict
+    )
+    repetition_limit: int = 4
+    max_ply: int = 512
+    stalemate_result: str = "draw"
 
 
 # ================================================================ validation

@@ -5,7 +5,13 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from ..core.actions import Action, BoardMove, DropMove
+from ..core.actions import (
+    Action,
+    BoardMove,
+    DropMove,
+    SemanticBoardMove,
+    SemanticDropMove,
+)
 from ..core.coordinates import Square
 from .record import GameRecord
 from .session import SessionRecordError
@@ -50,6 +56,13 @@ def _require_int_pair(value: Any, path: str) -> tuple[int, int]:
 
 
 def _action_to_dict(action: Action) -> dict[str, Any]:
+    if isinstance(action, (SemanticBoardMove, SemanticDropMove)):
+        raise _err(
+            "SEMANTIC_ACTION_UNSUPPORTED",
+            "actions",
+            "GameRecord schema v1 cannot store semantic public actions; "
+            f"refusing to reinterpret {action!r}",
+        )
     if isinstance(action, BoardMove):
         return {
             "kind": "board",
