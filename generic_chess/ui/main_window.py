@@ -103,6 +103,7 @@ class MainWindow(QMainWindow):
         self._promotion_open = False
         self._ai_error: str | None = None
         self._closing_after_ai = False
+        self._shutting_down = False
         self._app_version = "0.7.0a1"
         self.setWindowTitle(self._tr.text("app.title"))
 
@@ -169,12 +170,15 @@ class MainWindow(QMainWindow):
         self._clock_timer.setInterval(100)
         self._clock_timer.timeout.connect(self._clock_tick)
         self._clock_timer.start()
+        self._fit_timer = QTimer(self)
+        self._fit_timer.setSingleShot(True)
+        self._fit_timer.timeout.connect(self._board_view.fit_board)
+        self._fit_timer.start(0)
         controller.subscribe(self._refresh)
         self._tr.subscribe(self._on_language_changed)
         self._restore_window_state()
         self._retranslate()
         self._refresh()
-        QTimer.singleShot(0, self._board_view.fit_board)
 
     # ------------------------------------------------------------------ layout
 
@@ -556,6 +560,8 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------ AI
 
     def _maybe_start_ai(self) -> None:
+        if self._shutting_down or self._closing_after_ai:
+            return
         if self._ai_thread is not None and self._ai_thread.isRunning():
             return
         if not self._controller.ai_move_needed() or self._ai_player is None:
@@ -617,6 +623,26 @@ class MainWindow(QMainWindow):
             if thread.isRunning():
                 self._ai_player = None
                 return
+        self._ai_thread = None
+        self._ai_player = None
+
+    def _shutdown(self) -> None:
+        """Deterministic, idempotent shutdown of window-owned lifecycle.
+
+        Stops timers, blocks new AI work, cancels/waits for the owned AI
+        thread and removes controller/localization subscriptions so the
+        Python object graph is collectable without racing Qt destruction.
+        """
+        if self._shutting_down:
+            return
+        self._shutting_down = True
+        if self._clock_timer.isActive():
+            self._clock_timer.stop()
+        if self._fit_timer.isActive():
+            self._fit_timer.stop()
+        self._controller.unsubscribe(self._refresh)
+        self._tr.unsubscribe(self._on_language_changed)
+        self._cancel_ai_state()
         self._ai_thread = None
         self._ai_player = None
 
@@ -868,5 +894,6 @@ class MainWindow(QMainWindow):
             self._status_main.setText(self._tr.text("dialog.stop_ai"))
             event.ignore()
             return
+        self._shutdown()
         self._save_window_state()
         super().closeEvent(event)

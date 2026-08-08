@@ -58,6 +58,13 @@ class LocalizationManager:
     def subscribe(self, callback: Callable[[str], None]) -> None:
         self._listeners.append(callback)
 
+    def unsubscribe(self, callback: Callable[[str], None]) -> None:
+        """Idempotently remove a listener; absent callbacks are ignored."""
+        try:
+            self._listeners.remove(callback)
+        except ValueError:
+            pass
+
     def set_language(self, language: str) -> None:
         language = self._resolve(language)
         if language == self._language:

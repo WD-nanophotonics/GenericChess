@@ -306,6 +306,13 @@ class UIController:
     def subscribe(self, listener: Listener) -> None:
         self._listeners.append(listener)
 
+    def unsubscribe(self, listener: Listener) -> None:
+        """Idempotently remove a listener; absent callbacks are ignored."""
+        try:
+            self._listeners.remove(listener)
+        except ValueError:
+            pass
+
     def _notify(self) -> None:
         for listener in self._listeners:
             listener()

@@ -38,6 +38,56 @@ def qapp():
     return QApplication.instance() or QApplication([])
 
 
+@pytest.fixture(autouse=True)
+def _qt_cleanup(qapp):
+    """Deterministic per-test Qt teardown.
+
+    Every widget created by the test is deterministically closed, shut down
+    (MainWindow lifecycle: timer stop, subscriptions removed, AI thread
+    cancelled/waited) and scheduled for deletion, then deferred deletes are
+    flushed.  Without this, accumulated window object graphs are only freed
+    by a later cyclic-GC batch, which can destroy Qt C++ objects while the
+    event loop / AI thread is active (Windows access violation).
+    """
+    import time as _time
+    import gc
+
+    from PySide6.QtCore import QCoreApplication, QEvent
+
+    baseline = set(qapp.topLevelWidgets())
+    yield
+    for widget in list(qapp.topLevelWidgets()):
+        if widget in baseline:
+            continue
+        if isinstance(widget, MainWindow):
+            widget._shutdown()
+            thread = widget._ai_thread
+            deadline = _time.monotonic() + 5.0
+            while (
+                thread is not None
+                and thread.isRunning()
+                and _time.monotonic() < deadline
+            ):
+                qapp.processEvents()
+                _time.sleep(0.02)
+            if thread is not None and thread.isRunning():
+                thread.requestInterruption()
+                thread.wait(3000)
+        try:
+            widget.close()
+        except RuntimeError:
+            pass
+        try:
+            widget.deleteLater()
+        except RuntimeError:
+            pass
+    QCoreApplication.sendPostedEvents(None, QEvent.DeferredDelete)
+    qapp.processEvents()
+    # Collect wrapper cycles at an idle Qt point so a later batch cyclic-GC
+    # cannot destroy Qt C++ objects while the event loop or AI thread runs.
+    gc.collect()
+
+
 def _window(qapp, seed=42, board_size=8):
     settings = DictSettingsStore()
     settings.set(KEY_LANGUAGE, "en")
