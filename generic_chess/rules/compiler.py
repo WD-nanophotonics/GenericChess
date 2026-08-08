@@ -1107,7 +1107,13 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     ] + semantic_patterns
     capabilities = SemanticCapabilities(
         legacy_core_executable=False,
-        new_ir_core_executable=not contains_post,
+        # Phase 1.9B-3: the Python reference executor implements the bounded
+        # S4 post-action probe, and IR/schema validation already rejects any
+        # unsupported postcondition kind or probe stratum > S3 at compile
+        # time.  A successful compile therefore implies every emitted
+        # postcondition is B-3 supported, so the S4 fail-closed gate is
+        # retired (ADR-016 section 13; spec R2 supersession).
+        new_ir_core_executable=True,
         native_executable=False,
         contains_path_predicate=contains_path,
         contains_state_guard=contains_guard,

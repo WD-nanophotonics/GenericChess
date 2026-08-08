@@ -496,10 +496,11 @@ def test_ir_v1_rejected_and_capabilities_fail_closed():
         assert ir.ir_version == COMPILED_SEMANTIC_IR_VERSION
         assert ir.capabilities.legacy_core_executable is False
         assert ir.capabilities.native_executable is False
-        # Phase 1.9B-2: S0-S3-capable rulesets enable the reference executor;
-        # S4 (uchifuzume) stays fail-closed.
-        expect_ir_executable = name != "uchifuzume"
-        assert ir.capabilities.new_ir_core_executable is expect_ir_executable, name
+        # Phase 1.9B-3: the bounded S4 probe is implemented; compile-time
+        # validation rejects unsupported postconditions/probe strata, so
+        # every stress ruleset (including uchifuzume-shaped S4) is
+        # executable (ADR-016 section 13; spec R2 supersession).
+        assert ir.capabilities.new_ir_core_executable is True, name
 
 
 def test_semantic_dsl_version_in_serialization():

@@ -166,7 +166,10 @@ def test_stress_rules_compile_and_fail_closed():
         assert sem.ir.patterns, name
         assert sem.ir.capabilities.legacy_core_executable is False
         assert sem.ir.capabilities.native_executable is False
-        assert sem.ir.capabilities.new_ir_core_executable is (name != "uchifuzume")
+        # Phase 1.9B-3: compile-time validation guarantees only supported
+        # postconditions are emitted, so every stress ruleset (including the
+        # uchifuzume-shaped S4 fixture) is executable (ADR-016 section 13).
+        assert sem.ir.capabilities.new_ir_core_executable is True
         with pytest.raises(Exception) as exc:
             compile_ruleset(builder())
         assert "SEMANTIC_ACTIONS_NOT_LEGACY_EXECUTABLE" in str(exc.value)

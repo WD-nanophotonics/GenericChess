@@ -480,7 +480,14 @@ def _apply_aux_effect(effect, aux, support, aux_slots, pre_position, binding) ->
 
 
 class SemanticEngine:
-    """S0-S3 executor for one compiled semantic ruleset."""
+    """S0-S4 executor for one compiled semantic ruleset.
+
+    Phase 1.9B-3 adds the bounded post-action probe (ADR-016): a candidate
+    passes through the single S0-S3 trial machinery and, in normal legality,
+    is then filtered by its S4 postconditions (one forbidden conjunction,
+    cheap-first).  The reply probe reuses the exact same S0-S3 machinery
+    with S4 disabled, early-exits on the first valid reply, and never enters
+    S5."""
 
     def __init__(self, semantic: CompiledSemanticRuleset) -> None:
         if semantic.support is None:
@@ -494,9 +501,10 @@ class SemanticEngine:
         self.semantic = semantic
         self.ir = semantic.ir
         self.support = semantic.support
-        self._s0s3_patterns = tuple(
-            p for p in self.ir.patterns if not p.postconditions
-        )
+        # All patterns participate in S0-S3 legality and pseudo-attack; S4
+        # postconditions are a per-candidate filter, never a reason to omit
+        # a pattern's S0-S3 projection (B-3 audit requirement).
+        self._patterns = self.ir.patterns
 
     # ------------------------------------------------------- identity
 
@@ -541,9 +549,13 @@ class SemanticEngine:
         """Semantic pseudo-attack (R2-09/R2-10): exact type/geometry
         compatibility, path predicates, state guards and slot guards with
         attacker-relative SELF/OPPONENT.  No full legal recursion and no S3
-        own-anchor safety, matching the legacy attacked-square distinction."""
+        own-anchor safety, matching the legacy attacked-square distinction.
+
+        B-3: S4-bearing capture patterns still contribute their S0/S1
+        capture eligibility to pseudo-attack; S4 postconditions are never
+        consulted here."""
         self._ensure_match(position)
-        for pattern in self._s0s3_patterns:
+        for pattern in self._patterns:
             if pattern.target.kind != "target_enemy":
                 continue  # attack eligibility = capture eligibility
             for tid in pattern.type_ids:
@@ -909,23 +921,24 @@ class SemanticEngine:
 
     # ------------------------------------------------------- legality
 
-    def legal_actions(self, position: Position) -> tuple[SemanticAction, ...]:
-        self._ensure_match(position)
-        actions: list[SemanticAction] = []
+    def _iter_candidates(self, pattern, position: Position):
+        """Yield ``(SemanticAction, _ActionBinding)`` for every S0-S1
+        eligible candidate of one pattern (geometry, target, path, guards,
+        promotion variants).  S3 trial and S4 postconditions are applied by
+        callers, so this is the single candidate oracle shared by normal
+        legality and the reply probe (B-3: one S0-S3 machinery)."""
         side = position.side_to_move
-        for pattern in self._s0s3_patterns:
-            is_drop = any(
-                self.ir.geometry[g].kind == "drop"
-                for g in pattern.geometry_ids
-                if g in self.ir.geometry
-            )
-            if is_drop:
-                self._drop_actions(pattern, position, actions)
-            else:
-                self._board_actions(pattern, position, actions)
-        return tuple(actions)
+        is_drop = any(
+            self.ir.geometry[g].kind == "drop"
+            for g in pattern.geometry_ids
+            if g in self.ir.geometry
+        )
+        if is_drop:
+            yield from self._iter_drop_candidates(pattern, position, side)
+        else:
+            yield from self._iter_board_candidates(pattern, position)
 
-    def _board_actions(self, pattern, position: Position, out: list[SemanticAction]) -> None:
+    def _iter_board_candidates(self, pattern, position: Position):
         side = position.side_to_move
         for tid in pattern.type_ids:
             for source, piece in enumerate(position.board):
@@ -963,8 +976,7 @@ class SemanticEngine:
                                 actor_type=tid,
                                 geometry_id=gid,
                             )
-                            if self._trial_legal(pattern, position, action, binding):
-                                out.append(action)
+                            yield action, binding
 
     def _promotion_choices(self, pattern, piece, source, target) -> tuple[str | None, ...]:
         if pattern.promotion_mode == "none":
@@ -993,8 +1005,7 @@ class SemanticEngine:
             return tuple(alive)
         return (None,) + tuple(alive)
 
-    def _drop_actions(self, pattern, position: Position, out: list[SemanticAction]) -> None:
-        side = position.side_to_move
+    def _iter_drop_candidates(self, pattern, position: Position, side):
         drop_gid = next(
             (
                 g
@@ -1023,8 +1034,7 @@ class SemanticEngine:
                     actor_type=tid,
                     geometry_id=drop_gid,
                 )
-                if self._trial_legal(pattern, position, action, binding):
-                    out.append(action)
+                yield action, binding
 
     def _guards_hold(self, pattern, position, binding, perspective) -> bool:
         for guard in pattern.guards:
@@ -1035,16 +1045,21 @@ class SemanticEngine:
                 return False
         return True
 
-    def _trial_legal(self, pattern, position: Position, action, binding) -> bool:
-        """Trial transition + S3 invariants (own-anchor safety)."""
+    def _trial_child_if_s3_legal(
+        self, pattern, position: Position, action, binding
+    ) -> Position | None:
+        """One S3 trial transition per candidate; returns the exact child
+        Position or ``None`` when S3-illegal.  The same child is handed to
+        the S4 postconditions in normal mode, so a candidate never gets a
+        second, theoretically-equivalent transition (ADR-016 section 9)."""
         try:
             child = self._transition(position, action, binding)
         except RuntimeError:
-            return False
+            return None
         for invariant in pattern.invariants:
             if invariant.kind == "own_anchor_safe":
                 if self.in_check(child, position.side_to_move):
-                    return False
+                    return None
             elif invariant.kind == "squares_not_attacked":
                 for ref in invariant.square_refs:
                     idx = _resolve_square_ref(
@@ -1054,8 +1069,59 @@ class SemanticEngine:
                     if idx is not None and self.is_square_attacked(
                         child, idx, 1 - position.side_to_move
                     ):
-                        return False
+                        return None
+        return child
+
+    def _violates_postconditions(self, pattern, child) -> bool:
+        """S4 forbidden-condition conjunction (ADR-016 truth table).
+
+        Postconditions are prohibitions: the candidate is rejected only when
+        every present forbidden condition holds.  ``opponent_checked`` is
+        evaluated first and short-circuits the conjunction so the C4 reply
+        probe does not run when it is false.  Source field order never
+        decides semantics or cost."""
+        kinds = {pc.kind for pc in pattern.postconditions}
+        if not kinds:
+            return False
+        if "opponent_checked" in kinds and not self.in_check(
+            child, child.side_to_move
+        ):
+            return False
+        if "no_legal_reply" in kinds and self._exists_s3_reply(child):
+            return False
         return True
+
+    def _exists_s3_reply(self, position: Position) -> bool:
+        """``EXISTS_LEGAL_REPLY(stratum <= S3)``: early-exit existence scan
+        over ALL patterns with S4 postconditions disabled (Option B).  It
+        never consults terminal/repetition/max-ply/history (ADR-016 section
+        8)."""
+        for pattern in self._patterns:
+            for action, binding in self._iter_candidates(pattern, position):
+                if (
+                    self._trial_child_if_s3_legal(
+                        pattern, position, action, binding
+                    )
+                    is not None
+                ):
+                    return True
+        return False
+
+    def legal_actions(self, position: Position) -> tuple[SemanticAction, ...]:
+        """All S0-S4 legal actions (public membership authority)."""
+        self._ensure_match(position)
+        actions: list[SemanticAction] = []
+        for pattern in self._patterns:
+            for action, binding in self._iter_candidates(pattern, position):
+                child = self._trial_child_if_s3_legal(
+                    pattern, position, action, binding
+                )
+                if child is None:
+                    continue
+                if self._violates_postconditions(pattern, child):
+                    continue
+                actions.append(action)
+        return tuple(actions)
 
     def _transition(self, position: Position, action: SemanticAction, binding) -> Position:
         """Apply one semantic action with the full aux lifecycle and
