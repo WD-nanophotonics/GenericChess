@@ -60,19 +60,31 @@ def _qt_cleanup(qapp):
         if widget in baseline:
             continue
         if isinstance(widget, MainWindow):
-            widget._shutdown()
-            thread = widget._ai_thread
-            deadline = _time.monotonic() + 5.0
-            while (
-                thread is not None
-                and thread.isRunning()
-                and _time.monotonic() < deadline
-            ):
-                qapp.processEvents()
-                _time.sleep(0.02)
-            if thread is not None and thread.isRunning():
-                thread.requestInterruption()
-                thread.wait(3000)
+            if not widget._shutdown():
+                # Worker still running after the bounded wait: wait
+                # cooperatively, then require a completed shutdown before the
+                # owning widget may be deleted.
+                thread = widget._ai_thread
+                deadline = _time.monotonic() + 5.0
+                while (
+                    thread is not None
+                    and thread.isRunning()
+                    and _time.monotonic() < deadline
+                ):
+                    qapp.processEvents()
+                    _time.sleep(0.02)
+                if thread is not None and thread.isRunning():
+                    thread.requestInterruption()
+                    thread.wait(3000)
+                if thread is not None and thread.isRunning():
+                    raise AssertionError(
+                        "refusing to delete MainWindow while it still owns a "
+                        f"running QThread after bounded shutdown wait: {widget!r}"
+                    )
+                if not widget._shutdown():
+                    raise AssertionError(
+                        f"MainWindow shutdown did not complete: {widget!r}"
+                    )
         try:
             widget.close()
         except RuntimeError:

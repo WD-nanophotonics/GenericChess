@@ -614,7 +614,16 @@ class MainWindow(QMainWindow):
             self._controller.clear_stop_request()
             self._maybe_start_ai()
 
-    def _cancel_ai_state(self) -> None:
+    def _cancel_ai_state(self) -> bool:
+        """Request AI cancellation, wait briefly, and clear owned references
+        only when the owned AI thread has actually finished.
+
+        Returns ``True`` when no running owned AI thread remains (references
+        are cleared).  Returns ``False`` when the thread is still running
+        after the bounded wait: the ``_ai_thread`` reference is then
+        retained, the thread is never ``deleteLater``-ed, and the owning
+        window must not be deleted until the worker exits.
+        """
         self._controller.cancel_ai()
         self._controller.clear_stop_request()
         thread = self._ai_thread
@@ -622,19 +631,25 @@ class MainWindow(QMainWindow):
             thread.wait(2000)
             if thread.isRunning():
                 self._ai_player = None
-                return
+                return False
         self._ai_thread = None
         self._ai_player = None
+        return True
 
-    def _shutdown(self) -> None:
+    def _shutdown(self) -> bool:
         """Deterministic, idempotent shutdown of window-owned lifecycle.
 
         Stops timers, blocks new AI work, cancels/waits for the owned AI
         thread and removes controller/localization subscriptions so the
         Python object graph is collectable without racing Qt destruction.
+
+        Returns ``True`` when shutdown completed (no owned running AI
+        thread; ``_ai_thread`` is cleared).  Returns ``False`` when the AI
+        worker is still running after the bounded wait: its reference stays
+        owned and the window must not be deleted.
         """
         if self._shutting_down:
-            return
+            return self._cancel_ai_state()
         self._shutting_down = True
         if self._clock_timer.isActive():
             self._clock_timer.stop()
@@ -642,9 +657,7 @@ class MainWindow(QMainWindow):
             self._fit_timer.stop()
         self._controller.unsubscribe(self._refresh)
         self._tr.unsubscribe(self._on_language_changed)
-        self._cancel_ai_state()
-        self._ai_thread = None
-        self._ai_player = None
+        return self._cancel_ai_state()
 
     # ------------------------------------------------------------------ dialogs
 
@@ -894,6 +907,12 @@ class MainWindow(QMainWindow):
             self._status_main.setText(self._tr.text("dialog.stop_ai"))
             event.ignore()
             return
-        self._shutdown()
+        if not self._shutdown():
+            # A worker is still running after the bounded wait: keep the
+            # window alive and owned; close again once it finishes.
+            self._closing_after_ai = True
+            self._status_main.setText(self._tr.text("dialog.stop_ai"))
+            event.ignore()
+            return
         self._save_window_state()
         super().closeEvent(event)

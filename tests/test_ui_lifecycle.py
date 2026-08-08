@@ -38,7 +38,20 @@ def _qt_cleanup(qapp):
         if widget in baseline:
             continue
         if isinstance(widget, MainWindow):
-            widget._shutdown()
+            if not widget._shutdown():
+                thread = widget._ai_thread
+                if thread is not None and thread.isRunning():
+                    thread.requestInterruption()
+                    thread.wait(3000)
+                if thread is not None and thread.isRunning():
+                    raise AssertionError(
+                        "refusing to delete MainWindow while it still owns a "
+                        f"running QThread after bounded shutdown wait: {widget!r}"
+                    )
+                if not widget._shutdown():
+                    raise AssertionError(
+                        f"MainWindow shutdown did not complete: {widget!r}"
+                    )
         try:
             widget.close()
         except RuntimeError:
@@ -198,8 +211,48 @@ def test_shutdown_cancels_and_waits_owned_ai_thread(qapp):
     win._ai_player = SlowPlayer()
     win._maybe_start_ai()
     assert ctrl.ai_thinking
-    win._shutdown()
     thread = win._ai_thread
-    if thread is not None:
-        assert not thread.isRunning()
+    assert thread is not None
+    win._shutdown()
+    assert not thread.isRunning()
+    assert win._ai_thread is None
     assert not ctrl.ai_thinking
+
+
+def test_shutdown_retains_running_thread_reference_after_timeout(qapp):
+    """A non-cooperative worker that outlives the bounded wait must keep its
+    owned reference; the window must not lose the running QThread."""
+    import time as _time
+
+    from PySide6.QtCore import QThread
+
+    class StubbornThread(QThread):
+        """Stays alive until the test releases it (ignores interruption)."""
+
+        def __init__(self):
+            super().__init__()
+            self._release = False
+
+        def run(self):
+            while not self._release:
+                _time.sleep(0.02)
+
+        def release(self):
+            self._release = True
+
+    ctrl, win = _make_window()
+    thread = StubbornThread()
+    thread.start()
+    win._ai_thread = thread
+    try:
+        assert win._shutdown() is False
+        # timeout path: the running thread reference must be retained
+        assert win._ai_thread is thread
+        assert thread.isRunning()
+    finally:
+        thread.release()
+        thread.wait(5000)
+        assert not thread.isRunning()
+        win._ai_thread = None
+        assert win._shutdown() is True
+        assert not ctrl.ai_thinking
