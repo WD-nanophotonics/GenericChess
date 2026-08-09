@@ -59,7 +59,12 @@ def ensure(args) -> int:
         while time.monotonic() < deadline and pid_alive(pid): time.sleep(0.1)
         if pid_alive(pid):
             raise RuntimeError("stale daemon did not stop safely")
-    kwargs = {"creationflags": getattr(subprocess, "CREATE_NO_WINDOW", 0), "close_fds": True}
+    # Detach from the interactive command's process/job so ensure survives when
+    # the invoking terminal exits (the normal Windows Agent workflow).
+    flags = (getattr(subprocess, "CREATE_NO_WINDOW", 0) |
+             getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0) |
+             getattr(subprocess, "DETACHED_PROCESS", 0))
+    kwargs = {"creationflags": flags, "close_fds": True}
     subprocess.Popen([sys.executable, "-m", "generic_chess.bridge.cli", "run", "--interval", str(args.interval)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **kwargs)
     print("STARTED"); return 0
 
