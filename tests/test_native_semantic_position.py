@@ -387,3 +387,26 @@ def test_native_castling_path_step_invariants_preserve_python_root_count():
         },
     )
     assert candidate_perft(native_rules, parent, 1) == 15
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_bounded_s4_uchifuzume_root_count_matches_python():
+    from rule_semantics_ir_fixtures import uchifuzume_ruleset
+
+    semantic = compile_semantic_ruleset(uchifuzume_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = [None] * 64
+    board[63] = [ids["K"], ids["K"], 0, 0]
+    board[56] = [ids["K"], ids["K"], 1, 0]
+    parent = pack_position(
+        native_rules,
+        {
+            "side": 0,
+            "ply": 0,
+            "board": board,
+            "hands": [[0, 1], [0, 0]],
+            "aux_state": (),
+        },
+    )
+    assert candidate_perft(native_rules, parent, 1) == 65
