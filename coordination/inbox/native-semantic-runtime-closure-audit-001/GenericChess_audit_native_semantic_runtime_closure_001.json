@@ -1,0 +1,21 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "audit",
+  "audit_id": "native-semantic-runtime-closure-audit-001",
+  "candidate_sha": "20b57e770a643a9cd44d2d7a0c6a3d7cc6adb158",
+  "base_sha": "d2faa66289d4e4290d9d7170f533b985d1b57825",
+  "verdict": "FAIL",
+  "active_task": "native-semantic-runtime-search-002",
+  "continue_without_return": true,
+  "findings": [
+    "Bind GCSemanticPosition to exact ruleset identity and reject rules/position capsule mismatch in every public API.",
+    "Make Native canonical JSON key generation parity-safe for valid Unicode type IDs.",
+    "Implement exact semantic terminal/repetition/max-ply authority; do not rely on an unexplained 128-bit truncation of SHA-256 identity.",
+    "Expand differential closure to multi-seed/multi-corpus full-state/key/attack/terminal/perft comparisons.",
+    "Keep current AlphaBeta as probe; final search must use terminal semantics, proper generic board+hand evaluation, internal C action lists, and trusted make/unmake."
+  ],
+  "capability_gate": {
+    "semantic_position_state": false,
+    "semantic_s0_s4_executor": false
+  }
+}
