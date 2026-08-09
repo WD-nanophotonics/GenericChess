@@ -105,6 +105,24 @@ static int promotion_action_ok(const GCSemanticRules *r, const GCSemPattern *pat
     if (promo == 255) return !forced;
     return target_allowed;
 }
+static uint8_t promotion_choices(const GCSemanticRules *r, const GCSemPattern *pattern, uint8_t side, uint16_t base, uint16_t source, uint16_t target, uint16_t *out) {
+    if (!out) return 0;
+    if (pattern->promotion_mode == 0) { out[0] = 255; return 1; }
+    if (pattern->promotion_mode == 2) { if (!pattern->has_explicit_promotion) return 0; out[0] = pattern->explicit_promotion_type; return 1; }
+    if (pattern->promotion_mode != 1 || base >= r->type_count) return 0;
+    if (!r->types[base].is_promotable) { out[0] = 255; return 1; }
+    uint32_t pair = ((uint32_t)source << 16) | target; int allowed = 0;
+    const GCSemPairList *pairs = &r->promo_allowed[base][side];
+    for (uint16_t i = 0; i < pairs->count; i++) if (pairs->pairs[i] == pair) { allowed = 1; break; }
+    if (!allowed) { out[0] = 255; return 1; }
+    int forced = 0; const GCSemSquareList *forced_squares = &r->promo_forced[base][side];
+    for (uint16_t i = 0; i < forced_squares->count; i++) if (forced_squares->squares[i] == target) { forced = 1; break; }
+    uint64_t alive = r->alive_promo[base][side][target]; uint8_t count = 0;
+    if (!forced) out[count++] = 255;
+    for (uint8_t i = 0; i < r->types[base].promo_target_count && count < GC_MAX_PROMO_TARGETS + 1; i++)
+        if ((alive & (1ull << i)) != 0) out[count++] = r->types[base].promo_targets[i];
+    return count;
+}
 static int owner_ok(uint8_t owner_code, uint8_t piece_owner, uint8_t side) { return owner_code == 2 || (owner_code == 0 ? piece_owner == side : piece_owner != side); }
 static int resolve_square(const GCSemSquareRef *ref, const GCSemanticRules *r, const GCSemanticPosition *unused, const GCSemanticPosition *pos, uint8_t side, uint16_t source, uint16_t target, uint16_t *out);
 static int compare_value(uint8_t comparison, int value, int expected) {
@@ -220,8 +238,8 @@ static int apply_effect(const GCSemanticRules *r, GCSemanticPosition *work, cons
     return effect->kind>=5 && effect->kind<=8;
 }
 
-static uint64_t pack_semantic_action(uint16_t to, uint16_t from, uint16_t base, uint16_t current, uint8_t kind, uint16_t pattern, uint16_t geometry) {
-    return ((uint64_t)to) | ((uint64_t)from << 8) | (255ull << 16) |
+static uint64_t pack_semantic_action(uint16_t to, uint16_t from, uint16_t promo, uint16_t base, uint16_t current, uint8_t kind, uint16_t pattern, uint16_t geometry) {
+    return ((uint64_t)to) | ((uint64_t)from << 8) | ((uint64_t)promo << 16) |
         ((uint64_t)base << 24) | ((uint64_t)kind << 32) |
         ((uint64_t)pattern << 36) | ((uint64_t)geometry << 44) |
         ((uint64_t)current << 56);
@@ -235,10 +253,10 @@ static int semantic_has_s3_reply(const GCSemanticRules *r, const GCSemanticPosit
             uint16_t gid=pattern->geometry_indices[gi]; if(gid>=r->geometry_count)continue;
             const GCSemGeometry *geo=&r->geometries[gid];
             if (geo->kind == 2) {
-                for (uint8_t ti=0; ti<pattern->type_count; ti++) { uint16_t base=pattern->type_indices[ti]; if(base>=r->type_count||position->hand_counts[side][base]==0)continue; const GCSemSquareList *mask=&r->drop_mask[base][side]; for(uint16_t mi=0;mi<mask->count;mi++){uint16_t to=mask->squares[mi];if(position->board[to].occupied)continue;uint64_t action=pack_semantic_action(to,255,base,base,GC_ACTION_KIND_SEMANTIC_DROP,pi,gid);GCSemanticPosition child;if(gc_semantic_runtime_make_mode(&child,r,position,action,0))return 1;} }
+                for (uint8_t ti=0; ti<pattern->type_count; ti++) { uint16_t base=pattern->type_indices[ti]; if(base>=r->type_count||position->hand_counts[side][base]==0)continue; const GCSemSquareList *mask=&r->drop_mask[base][side]; for(uint16_t mi=0;mi<mask->count;mi++){uint16_t to=mask->squares[mi];if(position->board[to].occupied)continue;uint64_t action=pack_semantic_action(to,255,255,base,base,GC_ACTION_KIND_SEMANTIC_DROP,pi,gid);GCSemanticPosition child;if(gc_semantic_runtime_make_mode(&child,r,position,action,0))return 1;} }
             } else {
                 const GCSemPathOwner *paths=&geo->paths[side];
-                for(uint16_t source=0;source<r->board_size*r->board_size;source++){const GCPiece *piece=&position->board[source];if(!piece->occupied||piece->owner!=side||!pattern_has_type(pattern,piece->current_type))continue;if(geo->has_atom_source&&geo->atom_source_type!=piece->current_type)continue;const GCSemPathEntry *entry=NULL;if(!path_entry(geo,side,source,&entry))continue;uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;for(uint16_t ti=start;ti<entry->count;ti++){uint16_t to=entry->squares[ti];if(!target_ok(pattern->target,&position->board[to],side)||!path_ok(pattern,entry,ti,position,side))continue;if(!state_guards_hold(r,position,pattern,side,source,to,piece->base_type,piece->current_type)||!slot_guards_hold(r,position,pattern,side,source,to))continue;uint64_t action=pack_semantic_action(to,source,piece->base_type,piece->current_type,GC_ACTION_KIND_SEMANTIC_BOARD,pi,gid);GCSemanticPosition child;if(gc_semantic_runtime_make_mode(&child,r,position,action,0))return 1;}}
+                for(uint16_t source=0;source<r->board_size*r->board_size;source++){const GCPiece *piece=&position->board[source];if(!piece->occupied||piece->owner!=side||!pattern_has_type(pattern,piece->current_type))continue;if(geo->has_atom_source&&geo->atom_source_type!=piece->current_type)continue;const GCSemPathEntry *entry=NULL;if(!path_entry(geo,side,source,&entry))continue;uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;for(uint16_t ti=start;ti<entry->count;ti++){uint16_t to=entry->squares[ti];if(!target_ok(pattern->target,&position->board[to],side)||!path_ok(pattern,entry,ti,position,side))continue;if(!state_guards_hold(r,position,pattern,side,source,to,piece->base_type,piece->current_type)||!slot_guards_hold(r,position,pattern,side,source,to))continue;uint16_t promos[GC_MAX_PROMO_TARGETS+1];uint8_t promo_count=promotion_choices(r,pattern,side,piece->base_type,source,to,promos);for(uint8_t promo_i=0;promo_i<promo_count;promo_i++){uint64_t action=pack_semantic_action(to,source,promos[promo_i],piece->base_type,piece->current_type,GC_ACTION_KIND_SEMANTIC_BOARD,pi,gid);GCSemanticPosition child;if(gc_semantic_runtime_make_mode(&child,r,position,action,0))return 1;}}}
             }
         }
     }
