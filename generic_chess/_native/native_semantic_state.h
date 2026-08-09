@@ -13,6 +13,7 @@ typedef struct {
 } GCSemAuxValue;
 
 typedef struct {
+    char rules_fingerprint[65];
     GCPiece board[GC_MAX_SQUARES];
     uint16_t hand_counts[2][GC_MAX_TYPES];
     uint8_t side_to_move;
@@ -21,7 +22,9 @@ typedef struct {
     GCSemAuxValue aux[GC_SEM_MAX_AUX_SLOTS][3];
     uint64_t history_lo[GC_MAX_PLY + 1];
     uint64_t history_hi[GC_MAX_PLY + 1];
+    uint64_t history_digest[GC_MAX_PLY + 1][4];
     uint16_t history_len;
+    uint8_t history_exact;
 } GCSemanticPosition;
 
 typedef struct {
@@ -32,11 +35,16 @@ typedef struct {
     GCSemAuxValue aux[GC_SEM_MAX_AUX_SLOTS][3];
     uint64_t history_lo[GC_MAX_PLY + 1];
     uint64_t history_hi[GC_MAX_PLY + 1];
+    uint64_t history_digest[GC_MAX_PLY + 1][4];
     uint16_t history_len;
+    uint8_t history_exact;
 } GCSemanticBoardPayload;
 
 int gc_semantic_position_pack(GCSemanticPosition *pos,
                               const GCSemanticRules *rules,
                               const GCSemanticBoardPayload *payload);
+
+int gc_semantic_position_matches_rules(const GCSemanticPosition *pos,
+                                       const GCSemanticRules *rules);
 
 #endif

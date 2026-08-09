@@ -14,6 +14,7 @@ from generic_chess.native.semantic import (
     pack_action,
     pack_position,
     position_key,
+    probe_search,
     snapshot,
     unpack_action,
 )
@@ -97,6 +98,86 @@ def test_native_semantic_position_key_matches_python_contract():
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+@pytest.mark.parametrize("unicode_ids", [("兵", "王"), ("é", "😀")])
+def test_native_semantic_position_key_matches_python_for_unicode_type_ids(unicode_ids):
+    actor_id, king_id = unicode_ids
+    n = 3
+    king = PieceType(
+        king_id,
+        king_id,
+        tuple(LeapAtom((df, dr)) for df in (-1, 0, 1) for dr in (-1, 0, 1) if (df, dr) != (0, 0)),
+        is_anchor=True,
+    )
+    actor = PieceType(actor_id, actor_id, (LeapAtom((1, 0)),))
+    action = RuleSemanticAction(
+        name="unicode_move",
+        type_ids=(actor_id,),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    rows = [[None] * n for _ in range(n)]
+    rows[0][0] = Piece(0, king_id, king_id)
+    rows[2][2] = Piece(1, king_id, king_id)
+    ruleset = RuleSet(
+        board_size=n,
+        piece_types=(king, actor),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={actor_id: ((False,) * (n * n), (False,) * (n * n))},
+        semantic_actions=(action,),
+    )
+    semantic = compile_semantic_ruleset(ruleset)
+    board = list(rows[0] + rows[1] + rows[2])
+    board[1] = Piece(0, actor_id, actor_id)
+    python_position = Position(tuple(board), (Hands.empty(), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, 0] for piece in board],
+        "hands": [[0] * len(ids), [0] * len(ids)],
+        "aux_state": (),
+    })
+    assert position_key(native_rules, native_position) == semantic_position_key(
+        python_position, semantic.support, semantic.ir.aux_slots
+    )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_position_rejects_ruleset_mismatch_at_every_rules_bound_api():
+    from rule_semantics_ir_fixtures import cannon_ruleset
+
+    semantic_a = compile_semantic_ruleset(castling_ruleset())
+    semantic_b = compile_semantic_ruleset(cannon_ruleset())
+    rules_a = compile_native_semantic_rules(semantic_a)
+    rules_b = compile_native_semantic_rules(semantic_b)
+    ids = {type_id: index for index, type_id in enumerate(rules_a.type_ids)}
+    board = [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, int(piece.promoted)] for row in semantic_a.support.initial_position for piece in row]
+    position = pack_position(rules_a, {
+        "side": 0,
+        "ply": 0,
+        "board": board,
+        "hands": [[0] * len(ids), [0] * len(ids)],
+        "aux_state": (),
+    })
+    calls = (
+        lambda: snapshot(rules_b, position),
+        lambda: position_key(rules_b, position),
+        lambda: candidate_actions(rules_b, position),
+        lambda: guarded_actions(rules_b, position),
+        lambda: make_checked(rules_b, position, 0),
+        lambda: make_unmake_roundtrip(rules_b, position, 0),
+        lambda: candidate_perft(rules_b, position, 1),
+        lambda: probe_search(rules_b, position, 1),
+    )
+    for call in calls:
+        with pytest.raises(ValueError, match="fingerprint"):
+            call()
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
 def test_native_semantic_history_roundtrip_and_repetition_count():
     semantic = compile_semantic_ruleset(castling_ruleset())
     native_rules = compile_native_semantic_rules(semantic)
@@ -115,6 +196,34 @@ def test_native_semantic_history_roundtrip_and_repetition_count():
     position = pack_position(native_rules, payload)
     assert history_occurrences(position, 1, 2) == 2
     assert history_occurrences(position, 9, 9) == 0
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_full_history_words_are_preserved_for_runtime_children():
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = [None] * 64
+    board[0] = [ids["K"], ids["K"], 0, 0]
+    board[63] = [ids["K"], ids["K"], 1, 0]
+    position = pack_position(native_rules, {"side": 0, "ply": 0, "board": board, "hands": [[0] * len(ids), [0] * len(ids)], "history": [], "aux_state": ()})
+    action = min(guarded_actions(native_rules, position))
+    child = snapshot(native_rules, make_checked(native_rules, position, action))
+    assert child["history"]
+    assert len(child["history"][0]) == 4
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_perft_stops_at_max_ply_terminal_state():
+    from dataclasses import replace
+
+    ruleset = replace(castling_ruleset(), max_ply=1)
+    semantic = compile_semantic_ruleset(ruleset)
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, 0] for row in semantic.support.initial_position for piece in row]
+    position = pack_position(native_rules, {"side": 0, "ply": 1, "board": board, "hands": [[0] * len(ids), [0] * len(ids)], "aux_state": ()})
+    assert candidate_perft(native_rules, position, 2) == 1
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")

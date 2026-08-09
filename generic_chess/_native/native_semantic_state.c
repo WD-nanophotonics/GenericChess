@@ -26,6 +26,7 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
     GCSemAuxValue provided[GC_SEM_MAX_AUX_SLOTS][3];
     memcpy(provided, payload->aux, sizeof(provided));
     memset(pos, 0, sizeof(*pos));
+    memcpy(pos->rules_fingerprint, rules->fingerprint, sizeof(pos->rules_fingerprint));
     pos->side_to_move = payload->side_to_move;
     pos->ply = payload->ply;
     memcpy(pos->board, payload->board, sizeof(GCPiece) *
@@ -35,6 +36,8 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
     pos->history_len = payload->history_len;
     memcpy(pos->history_lo, payload->history_lo, sizeof(pos->history_lo));
     memcpy(pos->history_hi, payload->history_hi, sizeof(pos->history_hi));
+    memcpy(pos->history_digest, payload->history_digest, sizeof(pos->history_digest));
+    pos->history_exact = payload->history_exact;
     for (uint16_t sq = 0; sq < (uint16_t)(rules->board_size * rules->board_size); sq++) {
         const GCPiece *piece = &pos->board[sq];
         if (!piece->occupied) continue;
@@ -65,4 +68,11 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
                 pos->aux[slot_i][owner] = provided[slot_i][owner];
     }
     return 1;
+}
+
+int gc_semantic_position_matches_rules(const GCSemanticPosition *pos,
+                                       const GCSemanticRules *rules) {
+    return pos != NULL && rules != NULL &&
+           memcmp(pos->rules_fingerprint, rules->fingerprint,
+                  sizeof(pos->rules_fingerprint)) == 0;
 }

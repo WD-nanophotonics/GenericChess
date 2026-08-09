@@ -41,6 +41,10 @@ def _python_probe(semantic, position, native_rules, depth):
             (type_ids[piece.base_type_id] + 1) * (1 if piece.owner == state.side_to_move else -1)
             for piece in state.board
             if piece is not None
+        ) + sum(
+            count * (type_ids[type_id] + 1) * (1 if owner == state.side_to_move else -1)
+            for owner, hand in enumerate(state.hands)
+            for type_id, count in hand.counts
         )
 
     def search(state, remaining, alpha=-1_000_000_000, beta=1_000_000_000):

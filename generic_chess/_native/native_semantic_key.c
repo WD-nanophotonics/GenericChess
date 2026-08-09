@@ -17,10 +17,16 @@ static void sb_raw(GCSemBuf *b, const char *s, size_t n) { sb_reserve(b,n); if (
 static void sb_lit(GCSemBuf *b, const char *s) { sb_raw(b,s,strlen(s)); }
 static void sb_u64(GCSemBuf *b, uint64_t v) { char x[32]; int n=snprintf(x,sizeof(x),"%llu",(unsigned long long)v); if(n<0){b->ok=0;return;} sb_raw(b,x,(size_t)n); }
 static void sb_i64(GCSemBuf *b, int64_t v) { char x[32]; int n=snprintf(x,sizeof(x),"%lld",(long long)v); if(n<0){b->ok=0;return;} sb_raw(b,x,(size_t)n); }
+static void sb_json_u16_escape(GCSemBuf *b, uint32_t value) {
+    char x[7];
+    snprintf(x, sizeof(x), "\\u%04x", (unsigned)(value & 0xffffu));
+    sb_lit(b, x);
+}
 static void sb_json_string(GCSemBuf *b, const char *s) {
     sb_lit(b,"\"");
-    for (const unsigned char *p=(const unsigned char*)s; *p && b->ok; p++) {
-        unsigned char c=*p;
+    const unsigned char *p=(const unsigned char*)s;
+    while (*p && b->ok) {
+        unsigned char c=*p++;
         if (c=='\"') sb_lit(b,"\\\"");
         else if (c=='\\') sb_lit(b,"\\\\");
         else if (c=='\b') sb_lit(b,"\\b");
@@ -28,9 +34,31 @@ static void sb_json_string(GCSemBuf *b, const char *s) {
         else if (c=='\n') sb_lit(b,"\\n");
         else if (c=='\r') sb_lit(b,"\\r");
         else if (c=='\t') sb_lit(b,"\\t");
-        else if (c<0x20) { char x[7]; snprintf(x,sizeof(x),"\\u%04x",c); sb_lit(b,x); }
-        else if (c>=0x80) { b->ok=0; }
-        else sb_raw(b,(const char*)p,1);
+        else if (c<0x20) sb_json_u16_escape(b,c);
+        else if (c<0x80) sb_raw(b,(const char*)&c,1);
+        else {
+            uint32_t cp = 0; int needed = 0;
+            if ((c & 0xe0u) == 0xc0u) { cp = c & 0x1fu; needed = 1; }
+            else if ((c & 0xf0u) == 0xe0u) { cp = c & 0x0fu; needed = 2; }
+            else if ((c & 0xf8u) == 0xf0u) { cp = c & 0x07u; needed = 3; }
+            else { b->ok=0; continue; }
+            for (int i=0; i<needed; i++) {
+                unsigned char tail = *p++;
+                if ((tail & 0xc0u) != 0x80u) { b->ok=0; break; }
+                cp = (cp << 6) | (tail & 0x3fu);
+            }
+            if (!b->ok) continue;
+            if ((needed == 1 && cp < 0x80u) ||
+                (needed == 2 && cp < 0x800u) ||
+                (needed == 3 && cp < 0x10000u) || cp > 0x10ffffu ||
+                (cp >= 0xd800u && cp <= 0xdfffu)) { b->ok=0; continue; }
+            if (cp <= 0xffffu) sb_json_u16_escape(b, cp);
+            else {
+                cp -= 0x10000u;
+                sb_json_u16_escape(b, 0xd800u | (cp >> 10));
+                sb_json_u16_escape(b, 0xdc00u | (cp & 0x3ffu));
+            }
+        }
     }
     sb_lit(b,"\"");
 }

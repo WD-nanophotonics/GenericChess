@@ -38,6 +38,14 @@
 
 static PyObject *gc_native_error = NULL;
 
+static int gc_semantic_require_matching_rules(const GCSemanticRules *rules,
+                                              const GCSemanticPosition *position) {
+    if (gc_semantic_position_matches_rules(position, rules)) return 1;
+    PyErr_SetString(PyExc_ValueError,
+                    "semantic position ruleset fingerprint does not match rules capsule");
+    return 0;
+}
+
 typedef struct {
     GCRules *rules;
     GCEvaluationTables *eval;
@@ -2114,6 +2122,7 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
     }
     GCSemanticBoardPayload bp;
     memset(&bp, 0, sizeof(bp));
+    bp.history_exact = 1;
     int ok = 1;
     bp.side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
     bp.ply = (uint16_t)gc_py_long_as_long(ply_obj, &ok);
@@ -2194,22 +2203,26 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                 PyErr_SetString(PyExc_ValueError, "semantic history entry must be [lo, hi]");
                 return NULL;
             }
-            if (PySequence_Size(entry) != 2) {
-                PyErr_SetString(PyExc_ValueError, "semantic history entry must have two words");
+            Py_ssize_t word_count = PySequence_Size(entry);
+            if (word_count != 2 && word_count != 4) {
+                PyErr_SetString(PyExc_ValueError, "semantic history entry must have two or four words");
                 return NULL;
             }
-            PyObject *lo_obj = PySequence_GetItem(entry, 0);
-            PyObject *hi_obj = PySequence_GetItem(entry, 1);
-            unsigned long long lo = PyLong_AsUnsignedLongLong(lo_obj);
-            unsigned long long hi = PyLong_AsUnsignedLongLong(hi_obj);
-            Py_XDECREF(lo_obj);
-            Py_XDECREF(hi_obj);
-            if (PyErr_Occurred()) {
-                PyErr_SetString(PyExc_ValueError, "semantic history words must be unsigned 64-bit values");
-                return NULL;
+            if (word_count == 2) bp.history_exact = 0;
+            for (Py_ssize_t word = 0; word < word_count; word++) {
+                PyObject *value = PySequence_GetItem(entry, word);
+                unsigned long long raw = PyLong_AsUnsignedLongLong(value);
+                Py_DECREF(value);
+                if (PyErr_Occurred()) {
+                    PyErr_SetString(PyExc_ValueError, "semantic history words must be unsigned 64-bit values");
+                    return NULL;
+                }
+                if (word < 2) {
+                    if (word == 0) bp.history_lo[i] = (uint64_t)raw;
+                    else bp.history_hi[i] = (uint64_t)raw;
+                }
+                bp.history_digest[i][word] = (uint64_t)raw;
             }
-            bp.history_lo[i] = (uint64_t)lo;
-            bp.history_hi[i] = (uint64_t)hi;
         }
     }
     GCSemanticPosition *pos = (GCSemanticPosition *)malloc(sizeof(*pos));
@@ -2227,6 +2240,7 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (rules == NULL || pos == NULL) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
     PyObject *out = Py_BuildValue("{s:i,s:i}", "side", pos->side_to_move, "ply", pos->ply);
     PyObject *board = PyList_New(rules->board_size * rules->board_size);
     for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
@@ -2268,21 +2282,26 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
     PyObject *history = PyList_New(pos->history_len);
     if (history == NULL) { Py_DECREF(out); return NULL; }
     for (uint16_t i = 0; i < pos->history_len; i++) {
-        PyObject *entry = Py_BuildValue("(KK)",
-                                        (unsigned long long)pos->history_lo[i],
-                                        (unsigned long long)pos->history_hi[i]);
+        PyObject *entry = pos->history_exact
+            ? Py_BuildValue("(KKKK)",
+                            (unsigned long long)pos->history_digest[i][0],
+                            (unsigned long long)pos->history_digest[i][1],
+                            (unsigned long long)pos->history_digest[i][2],
+                            (unsigned long long)pos->history_digest[i][3])
+            : Py_BuildValue("(KK)",
+                            (unsigned long long)pos->history_lo[i],
+                            (unsigned long long)pos->history_hi[i]);
         if (entry == NULL) { Py_DECREF(history); Py_DECREF(out); return NULL; }
         PyList_SET_ITEM(history, i, entry);
     }
     PyDict_SetItemString(out, "history", history); Py_DECREF(history);
-    unsigned long long current_lo = 0, current_hi = 0;
-    if (pos->history_len > 0) {
-        current_lo = (unsigned long long)pos->history_lo[pos->history_len - 1];
-        current_hi = (unsigned long long)pos->history_hi[pos->history_len - 1];
-    }
+    uint64_t current_digest[4] = {0, 0, 0, 0};
+    if (pos->history_len > 0) memcpy(current_digest, pos->history_digest[pos->history_len - 1], sizeof(current_digest));
     unsigned long occurrences = 0;
     for (uint16_t i = 0; i < pos->history_len; i++) {
-        if (pos->history_lo[i] == current_lo && pos->history_hi[i] == current_hi) occurrences++;
+        if (pos->history_exact) {
+            if (memcmp(pos->history_digest[i], current_digest, sizeof(current_digest)) == 0) occurrences++;
+        } else if (pos->history_lo[i] == current_digest[0] && pos->history_hi[i] == current_digest[1]) occurrences++;
     }
     PyObject *occ = PyLong_FromUnsignedLong(occurrences);
     if (occ == NULL) { Py_DECREF(out); return NULL; }
@@ -2297,6 +2316,7 @@ static PyObject *gc_semantic_position_key(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (rules == NULL || pos == NULL) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
     char digest[65];
     if (!gc_semantic_position_key_digest(rules, pos, digest)) {
         PyErr_SetString(PyExc_ValueError, "semantic position cannot be canonically keyed");
@@ -2455,6 +2475,7 @@ static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !pos) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
     PyObject *out = PyList_New(0);
     if (!out) return NULL;
     uint8_t side = pos->side_to_move;
@@ -2529,6 +2550,7 @@ static PyObject *gc_semantic_make_checked(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *parent = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !parent) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, parent)) return NULL;
     GCSemanticPosition *child = (GCSemanticPosition *)malloc(sizeof(*child));
     if (!child) { PyErr_NoMemory(); return NULL; }
     if (!gc_semantic_runtime_make_checked(child, rules, parent, (uint64_t)action)) {
@@ -2547,6 +2569,7 @@ static PyObject *gc_semantic_make_unmake_roundtrip(PyObject *self, PyObject *arg
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !pos) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
     GCSemanticPosition work = *pos, before = *pos;
     GCSemanticUndo undo;
     int make_ok = gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)action, &undo);
@@ -2577,6 +2600,7 @@ static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     PyObject *candidates = gc_semantic_candidate_tuple_native(rules, position);
     if (!candidates) return NULL;
     PyObject *guarded = PyList_New(0);
@@ -2597,9 +2621,96 @@ static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
     return result;
 }
 
+static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
+                                          const GCSemanticPosition *position,
+                                          int *ok) {
+    PyObject *candidates = gc_semantic_candidate_tuple_native(rules, position);
+    if (!candidates) { *ok = 0; return 0; }
+    Py_ssize_t count = PyTuple_Size(candidates);
+    for (Py_ssize_t i = 0; i < count; i++) {
+        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(candidates, i));
+        if (PyErr_Occurred()) { PyErr_Clear(); continue; }
+        GCSemanticPosition child;
+        if (gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) {
+            Py_DECREF(candidates);
+            return 1;
+        }
+    }
+    Py_DECREF(candidates);
+    return 0;
+}
+
+static int gc_semantic_repetition_count(const GCSemanticRules *rules,
+                                        const GCSemanticPosition *position,
+                                        unsigned long *count_out) {
+    if (position->history_len > 0 && !position->history_exact) return -1;
+    char digest[65];
+    if (!gc_semantic_position_key_digest(rules, position, digest)) return -1;
+    uint64_t words[4] = {0, 0, 0, 0};
+    for (int w = 0; w < 4; w++) for (int i = 0; i < 16; i++) {
+        char c = digest[w * 16 + i];
+        uint8_t n = (uint8_t)(c >= '0' && c <= '9' ? c - '0' : c - 'a' + 10);
+        words[w] = (words[w] << 4) | n;
+    }
+    unsigned long count = 0;
+    for (uint16_t i = 0; i < position->history_len; i++)
+        if (memcmp(position->history_digest[i], words, sizeof(words)) == 0) count++;
+    *count_out = count;
+    return 1;
+}
+
+static int gc_semantic_terminal_status(const GCSemanticRules *rules,
+                                       const GCSemanticPosition *position,
+                                       int *winner_out) {
+    int ok = 1;
+    if (gc_semantic_has_guarded_action(rules, position, &ok)) return 0; /* ongoing */
+    if (!ok) return -1;
+    if (gc_semantic_runtime_in_check(rules, position, position->side_to_move)) {
+        if (winner_out) *winner_out = 1 - position->side_to_move;
+        return 1; /* checkmate */
+    }
+    unsigned long repetitions = 0;
+    if (gc_semantic_repetition_count(rules, position, &repetitions) < 0) return -1;
+    if (repetitions >= rules->repetition_limit) return 3; /* repetition */
+    if (position->ply >= rules->max_ply) return 4; /* max ply */
+    return 2; /* stalemate */
+}
+
+static PyObject *gc_semantic_terminal(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    int winner = -1;
+    int status = gc_semantic_terminal_status(rules, position, &winner);
+    if (status < 0) {
+        if (!PyErr_Occurred()) PyErr_SetString(PyExc_ValueError, "semantic terminal requires exact full history");
+        return NULL;
+    }
+    const char *names[] = {"ongoing", "checkmate", "stalemate", "repetition", "max_ply"};
+    PyObject *out = Py_BuildValue("{s:s}", "status", names[status]);
+    if (!out) return NULL;
+    if (winner >= 0) {
+        PyObject *value = PyLong_FromLong(winner);
+        if (!value || PyDict_SetItemString(out, "winner", value) != 0) { Py_XDECREF(value); Py_DECREF(out); return NULL; }
+        Py_DECREF(value);
+    } else if (PyDict_SetItemString(out, "winner", Py_None) != 0) {
+        Py_DECREF(out); return NULL;
+    }
+    return out;
+}
+
 static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, const GCSemanticPosition *position, unsigned int depth, int *ok) {
     if (!*ok) return 0;
     if (depth == 0) return 1;
+    int winner = -1;
+    int terminal = gc_semantic_terminal_status(rules, position, &winner);
+    if (terminal < 0) { *ok = 0; return 0; }
+    if (terminal == 3 || terminal == 4) return 1;
+    if (terminal == 1 || terminal == 2) return 0;
     PyObject *actions = gc_semantic_candidate_tuple_native(rules, position);
     if (!actions) { *ok = 0; return 0; }
     unsigned long long total = 0;
@@ -2636,6 +2747,13 @@ static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSema
         int value = (int)piece->base_type + 1;
         score += piece->owner == position->side_to_move ? value : -value;
     }
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        for (uint16_t type = 0; type < rules->type_count; type++) {
+            int value = (int)type + 1;
+            int hand_score = (int)position->hand_counts[owner][type] * value;
+            score += owner == position->side_to_move ? hand_score : -hand_score;
+        }
+    }
     return score;
 }
 
@@ -2648,6 +2766,11 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
     memset(&result, 0, sizeof(result));
     result.score = gc_semantic_probe_material(rules, position);
     result.nodes = 1;
+    int winner = -1;
+    int terminal = gc_semantic_terminal_status(rules, position, &winner);
+    if (terminal < 0) return result;
+    if (terminal == 1) { result.score = -1000000; return result; }
+    if (terminal != 0) { result.score = 0; return result; }
     if (depth == 0) return result;
     PyObject *actions = gc_semantic_candidate_tuple_native(rules, position);
     if (!actions) return result;
@@ -2687,6 +2810,7 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position || depth > GC_MAX_PLY) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     GCSemanticProbeSearch result = gc_semantic_probe_negamax(rules, position, depth, -GC_SEMANTIC_PROBE_INF, GC_SEMANTIC_PROBE_INF);
     if (PyErr_Occurred()) return NULL;
     PyObject *pv = PyTuple_New((Py_ssize_t)result.pv_len);
@@ -2719,6 +2843,7 @@ static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     int ok = 1;
     unsigned long long nodes = gc_semantic_perft_rec(rules, position, depth, &ok);
     if (!ok) { if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic perft failed"); return NULL; }

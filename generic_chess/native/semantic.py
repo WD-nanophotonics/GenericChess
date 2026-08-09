@@ -16,7 +16,7 @@ def pack_position(native_rules, payload):
     ]
     if "history" in payload:
         normalized["history"] = [
-            [int(words[0]), int(words[1])] for words in payload["history"]
+            [int(word) for word in words] for words in payload["history"]
         ]
     return _module().semantic_pack_position(native_rules.capsule, normalized)
 
@@ -30,9 +30,7 @@ def snapshot(native_rules, position):
          tuple(entry[2]) if isinstance(entry[2], (list, tuple)) else entry[2])
         for entry in out.get("aux_state", ())
     )
-    out["history"] = tuple(
-        (int(entry[0]), int(entry[1])) for entry in out.get("history", ())
-    )
+    out["history"] = tuple(tuple(int(word) for word in entry) for entry in out.get("history", ()))
     out["history_occurrences"] = int(out.get("history_occurrences", 0))
     return out
 

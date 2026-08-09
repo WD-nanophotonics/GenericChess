@@ -54,7 +54,11 @@ static int resolve_square(const GCSemSquareRef *ref, const GCSemanticRules *r, c
     int base = -1;
     if (ref->kind == 0) base = source;
     else if (ref->kind == 1) base = target;
-    else if (ref->kind == 2 && ref->has_square) base = ref->square;
+    else if (ref->kind == 2 && ref->has_square) {
+        int file = ref->square % r->board_size, rank = ref->square / r->board_size;
+        if (ref->owner_relative && side == 1) { file = r->board_size - 1 - file; rank = r->board_size - 1 - rank; }
+        base = rank * r->board_size + file;
+    }
     else if ((ref->kind == 3 || ref->kind == 4) && ref->has_offset) {
         base = ref->kind == 3 ? source : target;
         int file = base % r->board_size, rank = base / r->board_size;
@@ -313,11 +317,21 @@ static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSema
         }
     }
     for(uint8_t i=0;i<pattern->effect_count;i++){const GCSemEffect *e=&pattern->effects[i];if(e->kind<5||e->kind>8)continue;uint8_t slot_index=0;const GCSemAuxSlot *slot=slot_meta(r,e->slot_id,&slot_index);if(!slot)return 0;uint8_t owner_index=slot->scope==1?(uint8_t)(side+1):0;GCSemAuxValue *v=&work.aux[slot_index][owner_index];v->kind=slot->value_kind;v->has_value=1;if(e->kind==5)v->bool_value=e->has_value?e->value:0;else if(e->kind==6)v->bool_value=0;else if(e->kind==7){uint16_t sq;if(!resolve_square(&e->square_ref,r,NULL,parent,side,source,target,&sq))return 0;v->square=sq;}else v->has_value=0;}
-    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side))return 0;if(work.history_len>=GC_MAX_PLY+1)return 0;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t lo=0,hi=0;for(int i=0;i<16;i++){char c=digest[i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);lo=(lo<<4)|n;}for(int i=16;i<32;i++){char c=digest[i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);hi=(hi<<4)|n;}work.history_lo[work.history_len]=lo;work.history_hi[work.history_len]=hi;work.history_len++;*child=work;return 1;
+    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side))return 0;if(work.history_len>=GC_MAX_PLY+1)return 0;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_exact=parent->history_exact;work.history_len++;*child=work;return 1;
 }
 
 int gc_semantic_runtime_make_checked(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {
     return gc_semantic_runtime_make_mode(child, r, parent, action, 1);
+}
+
+int gc_semantic_runtime_in_check(const GCSemanticRules *r, const GCSemanticPosition *position, uint8_t side) {
+    if (!r || !position || side > 1) return 0;
+    for (uint16_t sq = 0; sq < r->board_size * r->board_size; sq++) {
+        const GCPiece *piece = &position->board[sq];
+        if (piece->occupied && piece->owner == side && piece->current_type < r->type_count && r->types[piece->current_type].is_anchor)
+            return semantic_attacked_by(r, position, sq, (uint8_t)(1 - side));
+    }
+    return 0;
 }
 
 int gc_semantic_runtime_make_trusted(GCSemanticPosition *position, const GCSemanticRules *rules, uint64_t action, GCSemanticUndo *undo) {
