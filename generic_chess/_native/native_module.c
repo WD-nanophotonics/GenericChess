@@ -2208,6 +2208,28 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
         PyList_SET_ITEM(hands, owner, counts);
     }
     PyDict_SetItemString(out, "hands", hands); Py_DECREF(hands);
+    PyObject *aux = PyList_New(0);
+    for (uint8_t slot = 0; slot < rules->aux_slot_count; slot++) {
+        const GCSemAuxSlot *meta = &rules->aux_slots[slot];
+        uint8_t first = meta->scope == 1 ? 1 : 0;
+        uint8_t last = meta->scope == 1 ? 2 : 0;
+        for (uint8_t idx = first; idx <= last; idx++) {
+            const GCSemAuxValue *value = &pos->aux[slot][idx];
+            long owner = meta->scope == 1 ? (long)idx - 1 : -1;
+            PyObject *raw = Py_None; Py_INCREF(Py_None);
+            if (value->has_value) {
+                Py_DECREF(raw);
+                if (value->kind == 0) raw = PyLong_FromLong(value->bool_value);
+                else raw = Py_BuildValue("(ii)", value->square % rules->board_size,
+                                         value->square / rules->board_size);
+            }
+            PyObject *entry = Py_BuildValue("(iiO)", meta->slot_id, owner, raw);
+            Py_DECREF(raw);
+            if (entry == NULL || PyList_Append(aux, entry) != 0) { Py_XDECREF(entry); Py_DECREF(aux); Py_DECREF(out); return NULL; }
+            Py_DECREF(entry);
+        }
+    }
+    PyDict_SetItemString(out, "aux_state", aux); Py_DECREF(aux);
     return out;
 }
 

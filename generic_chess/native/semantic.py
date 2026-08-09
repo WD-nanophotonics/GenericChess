@@ -23,7 +23,13 @@ def pack_position(native_rules, payload):
 def snapshot(native_rules, position):
     if not native_available():
         raise RuntimeError("native extension is not built")
-    return dict(_module().semantic_position_snapshot(native_rules.capsule, position))
+    out = dict(_module().semantic_position_snapshot(native_rules.capsule, position))
+    out["aux_state"] = tuple(
+        ((int(entry[0]), int(entry[1])),
+         tuple(entry[2]) if isinstance(entry[2], (list, tuple)) else entry[2])
+        for entry in out.get("aux_state", ())
+    )
+    return out
 
 
 def position_key(native_rules, position) -> str:
@@ -49,7 +55,10 @@ def position_key(native_rules, position) -> str:
         "side_to_move": snap["side"],
         "board": board,
         "hands": hands,
-        "aux_state": {},
+        "aux_state": {
+            f"{slot}:{owner}": list(value) if isinstance(value, tuple) else value
+            for (slot, owner), value in sorted(snap.get("aux_state", ()))
+        },
     }
     raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()

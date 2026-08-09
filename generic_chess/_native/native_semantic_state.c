@@ -3,7 +3,8 @@
 #include <string.h>
 
 static void gc_semantic_aux_default(GCSemAuxValue *out,
-                                    const GCSemAuxSlot *slot) {
+                                    const GCSemAuxSlot *slot,
+                                    uint8_t board_size) {
     memset(out, 0, sizeof(*out));
     out->kind = slot->value_kind;
     if (slot->initial_kind == 1) {
@@ -11,7 +12,7 @@ static void gc_semantic_aux_default(GCSemAuxValue *out,
         out->bool_value = slot->initial_int;
     } else if (slot->initial_kind == 2) {
         out->has_value = 1;
-        out->square = (uint16_t)(slot->initial_rank * 16u + slot->initial_file);
+        out->square = (uint16_t)(slot->initial_rank * board_size + slot->initial_file);
     }
 }
 
@@ -40,10 +41,10 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
     }
     for (uint8_t slot_i = 0; slot_i < rules->aux_slot_count; slot_i++) {
         const GCSemAuxSlot *slot = &rules->aux_slots[slot_i];
-        gc_semantic_aux_default(&pos->aux[slot_i][0], slot);
+        gc_semantic_aux_default(&pos->aux[slot_i][0], slot, rules->board_size);
         if (slot->scope == 1) {
-            gc_semantic_aux_default(&pos->aux[slot_i][1], slot);
-            gc_semantic_aux_default(&pos->aux[slot_i][2], slot);
+            gc_semantic_aux_default(&pos->aux[slot_i][1], slot, rules->board_size);
+            gc_semantic_aux_default(&pos->aux[slot_i][2], slot, rules->board_size);
         }
         for (uint8_t owner = 0; owner < 3; owner++)
             if (provided[slot_i][owner].has_value)
