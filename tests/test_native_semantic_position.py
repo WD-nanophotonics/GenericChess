@@ -4,7 +4,7 @@ import pytest
 
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
-from generic_chess.native.semantic import pack_position, position_key, snapshot
+from generic_chess.native.semantic import candidate_actions, pack_position, position_key, snapshot, unpack_action
 from generic_chess import _native_core
 from generic_chess.core.keys import semantic_position_key
 from generic_chess.core.pieces import Piece
@@ -134,3 +134,23 @@ def test_native_semantic_position_rejects_forged_base_current_identity():
     }
     with pytest.raises(ValueError):
         pack_position(native_rules, forged)
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_candidate_actions_preserve_exact_identity_fields():
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    king = native_rules.type_ids.index("K")
+    payload = {
+        "side": 0,
+        "ply": 0,
+        "board": [[king, king, 0, 0]] + [None] * (semantic.support.board_size ** 2 - 1),
+        "hands": [[0] * len(native_rules.type_ids), [0] * len(native_rules.type_ids)],
+        "aux_state": (),
+    }
+    actions = candidate_actions(native_rules, pack_position(native_rules, payload))
+    assert actions
+    decoded = [unpack_action(action) for action in actions]
+    assert all(item["kind"] == 2 for item in decoded)
+    assert all(item["from"] == 0 and item["base"] == king for item in decoded)
+    assert len({(item["pattern"], item["geometry"]) for item in decoded}) >= 1

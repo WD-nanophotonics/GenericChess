@@ -56,3 +56,10 @@ def unpack_action(action: int) -> dict:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return {key: int(value) for key, value in _module().semantic_action_unpack(int(action)).items()}
+
+
+def candidate_actions(native_rules, position) -> tuple[int, ...]:
+    """Enumerate deterministic S0 geometry candidates (not yet S1-S4 legal)."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return tuple(int(action) for action in _module().semantic_candidate_actions(native_rules.capsule, position))

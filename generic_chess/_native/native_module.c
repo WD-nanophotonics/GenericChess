@@ -2370,6 +2370,78 @@ static PyObject *gc_semantic_action_unpack(PyObject *self, PyObject *args) {
         "geometry", (action >> 44) & 0xFFFull, "actor_current", (action >> 56) & 0xFFull);
 }
 
+static int gc_semantic_target_holds(uint8_t target_kind, const GCPiece *cell, uint8_t side) {
+    if (target_kind == 0) return !cell->occupied;
+    if (target_kind == 1) return cell->occupied && cell->owner != side;
+    if (target_kind == 2) return cell->occupied && cell->owner == side;
+    return target_kind == 3;
+}
+
+static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !pos) return NULL;
+    PyObject *out = PyList_New(0);
+    if (!out) return NULL;
+    uint8_t side = pos->side_to_move;
+    for (uint16_t pi = 0; pi < rules->pattern_count; pi++) {
+        const GCSemPattern *pattern = &rules->patterns[pi];
+        for (uint8_t gi = 0; gi < pattern->geometry_count; gi++) {
+            uint16_t gid = pattern->geometry_indices[gi];
+            if (gid >= rules->geometry_count) { Py_DECREF(out); PyErr_SetString(PyExc_ValueError, "semantic pattern geometry out of range"); return NULL; }
+            const GCSemGeometry *geo = &rules->geometries[gid];
+            if (geo->kind == 2) {
+                for (uint8_t ti = 0; ti < pattern->type_count; ti++) {
+                    uint16_t tid = pattern->type_indices[ti];
+                    if (tid >= rules->type_count || pos->hand_counts[side][tid] == 0) continue;
+                    const GCSemSquareList *mask = &rules->drop_mask[tid][side];
+                    for (uint16_t mi = 0; mi < mask->count; mi++) {
+                        uint16_t target = mask->squares[mi];
+                        if (target >= rules->board_size * rules->board_size || pos->board[target].occupied) continue;
+                        uint64_t action = ((uint64_t)target) | (255ull << 8) |
+                            (255ull << 16) | ((uint64_t)tid << 24) |
+                            ((uint64_t)GC_ACTION_KIND_SEMANTIC_DROP << 32) |
+                            ((uint64_t)pi << 36) | ((uint64_t)gid << 44) |
+                            ((uint64_t)tid << 56);
+                        PyObject *value = PyLong_FromUnsignedLongLong(action);
+                        if (!value || PyList_Append(out, value) != 0) { Py_XDECREF(value); Py_DECREF(out); return NULL; }
+                        Py_DECREF(value);
+                    }
+                }
+                continue;
+            }
+            const GCSemPathOwner *paths = &geo->paths[side];
+            for (uint16_t source = 0; source < rules->board_size * rules->board_size; source++) {
+                const GCPiece *piece = &pos->board[source];
+                if (!piece->occupied || piece->owner != side) continue;
+                int actor_match = 0;
+                for (uint8_t ti = 0; ti < pattern->type_count; ti++) if (pattern->type_indices[ti] == piece->current_type) { actor_match = 1; break; }
+                if (!actor_match || (geo->has_atom_source && geo->atom_source_type != piece->current_type)) continue;
+                for (uint16_t ei = 0; ei < paths->count; ei++) {
+                    if (paths->entries[ei].source != source) continue;
+                    const GCSemPathEntry *entry = &paths->entries[ei];
+                    for (uint16_t si = 0; si < entry->count; si++) {
+                        uint16_t target = entry->squares[si];
+                        if (target >= rules->board_size * rules->board_size || !gc_semantic_target_holds(pattern->target, &pos->board[target], side)) continue;
+                        uint64_t action = ((uint64_t)target) | ((uint64_t)source << 8) |
+                            (255ull << 16) | ((uint64_t)piece->base_type << 24) |
+                            ((uint64_t)GC_ACTION_KIND_SEMANTIC_BOARD << 32) |
+                            ((uint64_t)pi << 36) | ((uint64_t)gid << 44) |
+                            ((uint64_t)piece->current_type << 56);
+                        PyObject *value = PyLong_FromUnsignedLongLong(action);
+                        if (!value || PyList_Append(out, value) != 0) { Py_XDECREF(value); Py_DECREF(out); return NULL; }
+                        Py_DECREF(value);
+                    }
+                }
+            }
+        }
+    }
+    return PySequence_Tuple(out);
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2505,6 +2577,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_action_pack(fields) -> exact 64-bit semantic action"},
     {"semantic_action_unpack", gc_semantic_action_unpack, METH_VARARGS,
      "semantic_action_unpack(action) -> exact semantic action fields"},
+    {"semantic_candidate_actions", gc_semantic_candidate_actions, METH_VARARGS,
+     "semantic_candidate_actions(rules, position) -> exact candidate actions"},
     {NULL, NULL, 0, NULL}
 };
 
