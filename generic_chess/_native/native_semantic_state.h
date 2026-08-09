@@ -20,6 +20,8 @@ typedef struct {
     uint16_t ply;
     /* slot index, then global(-1 => 0) / owner0 / owner1. */
     GCSemAuxValue aux[GC_SEM_MAX_AUX_SLOTS][3];
+    /* Full SHA-256 history is authoritative; lo/hi remain an explicit
+     * compatibility projection for the older occurrence helper. */
     uint64_t history_lo[GC_MAX_PLY + 1];
     uint64_t history_hi[GC_MAX_PLY + 1];
     uint64_t history_digest[GC_MAX_PLY + 1][4];

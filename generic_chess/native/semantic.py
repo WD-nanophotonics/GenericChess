@@ -6,6 +6,12 @@ from . import _module, native_available
 
 
 def pack_position(native_rules, payload):
+    """Pack an independent semantic position.
+
+    ``history`` entries with four 64-bit words are the exact SHA-256
+    repetition authority. Two-word entries remain accepted only as an
+    explicit legacy transport projection and are not terminal-eligible.
+    """
     if not native_available():
         raise RuntimeError("native extension is not built")
     normalized = dict(payload)
