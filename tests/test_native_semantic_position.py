@@ -96,3 +96,24 @@ def test_native_sha256_known_answers():
     assert _native_core.sha256_hex(b"abc") == (
         "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
     )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_action_identity_roundtrip_and_reserved_bits():
+    fields = {
+        "to": 7,
+        "from": 2,
+        "promotion": 255,
+        "base": 3,
+        "kind": 2,
+        "pattern": 12,
+        "geometry": 1023,
+        "actor_current": 5,
+    }
+    packed = _native_core.semantic_action_pack(fields)
+    assert _native_core.semantic_action_unpack(packed) == fields
+    assert _native_core.semantic_action_pack({**fields, "pattern": 13}) != packed
+    with pytest.raises(ValueError):
+        _native_core.semantic_action_unpack((packed & ~(0xF << 32)) | (1 << 32))
+    with pytest.raises(ValueError):
+        _native_core.semantic_action_pack({**fields, "kind": 0})

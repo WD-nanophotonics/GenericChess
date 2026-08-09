@@ -2316,6 +2316,57 @@ static PyObject *gc_sha256_hex_api(PyObject *self, PyObject *args) {
     return PyUnicode_FromString(hex);
 }
 
+static PyObject *gc_semantic_action_pack(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *fields;
+    if (!PyArg_ParseTuple(args, "O", &fields) || !PyDict_Check(fields)) {
+        PyErr_SetString(PyExc_TypeError, "semantic_action_pack expects a dict");
+        return NULL;
+    }
+    const char *names[] = {"to", "from", "promotion", "base", "kind", "pattern", "geometry", "actor_current"};
+    long v[8]; int ok = 1;
+    for (int i = 0; i < 8; i++) {
+        PyObject *obj = PyDict_GetItemString(fields, names[i]);
+        if (!obj) { PyErr_Format(PyExc_ValueError, "semantic action missing %s", names[i]); return NULL; }
+        v[i] = gc_py_long_as_long(obj, &ok);
+        if (!ok) { PyErr_Format(PyExc_ValueError, "semantic action field %s is not an integer", names[i]); return NULL; }
+    }
+    if (v[0] < 0 || v[0] > 255 || v[1] < 0 || v[1] > 255 ||
+        v[2] < 0 || v[2] > 255 || v[3] < 0 || v[3] > 255 ||
+        (v[4] != GC_ACTION_KIND_SEMANTIC_BOARD && v[4] != GC_ACTION_KIND_SEMANTIC_DROP) ||
+        v[5] < 0 || v[5] >= GC_ACTION_MAX_PATTERNS ||
+        v[6] < 0 || v[6] >= GC_ACTION_MAX_GEOMETRIES || v[7] < 0 || v[7] > 255 ||
+        (v[4] == GC_ACTION_KIND_SEMANTIC_DROP && v[1] != 255)) {
+        PyErr_SetString(PyExc_ValueError, "semantic action field outside frozen layout domain");
+        return NULL;
+    }
+    uint64_t action = ((uint64_t)v[0]) | ((uint64_t)v[1] << 8) |
+        ((uint64_t)v[2] << 16) | ((uint64_t)v[3] << 24) |
+        ((uint64_t)v[4] << 32) | ((uint64_t)v[5] << 36) |
+        ((uint64_t)v[6] << 44) | ((uint64_t)v[7] << 56);
+    return PyLong_FromUnsignedLongLong(action);
+}
+
+static PyObject *gc_semantic_action_unpack(PyObject *self, PyObject *args) {
+    (void)self;
+    unsigned long long raw;
+    if (!PyArg_ParseTuple(args, "K", &raw)) return NULL;
+    uint64_t action = (uint64_t)raw;
+    uint64_t known = 0xFFFFFFFFFull | (GC_ACTION_PATTERN_MASK << GC_ACTION_PATTERN_SHIFT) |
+        (GC_ACTION_GEOMETRY_MASK << GC_ACTION_GEOMETRY_SHIFT) |
+        (GC_ACTION_ACTOR_CURRENT_MASK << GC_ACTION_ACTOR_CURRENT_SHIFT);
+    if (action & ~known) { PyErr_SetString(PyExc_ValueError, "semantic action has reserved bits set"); return NULL; }
+    uint64_t kind = (action >> GC_ACTION_KIND_SHIFT) & GC_ACTION_KIND_MASK;
+    if (kind != GC_ACTION_KIND_SEMANTIC_BOARD && kind != GC_ACTION_KIND_SEMANTIC_DROP) {
+        PyErr_SetString(PyExc_ValueError, "semantic action kind is not semantic"); return NULL;
+    }
+    return Py_BuildValue("{s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+        "to", action & 0xFFull, "from", (action >> 8) & 0xFFull,
+        "promotion", (action >> 16) & 0xFFull, "base", (action >> 24) & 0xFFull,
+        "kind", kind, "pattern", (action >> 36) & 0xFFull,
+        "geometry", (action >> 44) & 0xFFFull, "actor_current", (action >> 56) & 0xFFull);
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2447,6 +2498,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_position_key(rules, position) -> SHA-256 hex digest"},
     {"sha256_hex", gc_sha256_hex_api, METH_VARARGS,
      "sha256_hex(bytes) -> lowercase SHA-256 digest"},
+    {"semantic_action_pack", gc_semantic_action_pack, METH_VARARGS,
+     "semantic_action_pack(fields) -> exact 64-bit semantic action"},
+    {"semantic_action_unpack", gc_semantic_action_unpack, METH_VARARGS,
+     "semantic_action_unpack(action) -> exact semantic action fields"},
     {NULL, NULL, 0, NULL}
 };
 
