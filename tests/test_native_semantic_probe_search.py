@@ -168,6 +168,9 @@ def test_native_probe_search_accepts_stable_board_and_hand_profile():
     expected = _python_probe(semantic, python_position, native_rules, 2, board_values, hand_values)
     observed = probe_search(native_rules, native_position, 2, board_values=board_values, hand_values=hand_values)
     assert observed == expected
+    board_profile = {type_id: value for type_id, value in zip(native_rules.type_ids, board_values)}
+    hand_profile = {type_id: value for type_id, value in zip(native_rules.type_ids, hand_values)}
+    assert probe_search(native_rules, native_position, 2, board_values=board_profile, hand_values=hand_profile) == expected
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
@@ -191,6 +194,8 @@ def test_native_probe_search_rejects_partial_or_malformed_profile():
         probe_search(native_rules, native_position, 1, board_values=[1], hand_values=[1])
     with pytest.raises(ValueError, match="bounded"):
         probe_search(native_rules, native_position, 1, board_values=[1] * len(type_ids), hand_values=[1_000_001] * len(type_ids))
+    with pytest.raises(ValueError, match="cover exactly"):
+        probe_search(native_rules, native_position, 1, board_values={"P": 1}, hand_values={"P": 1})
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")

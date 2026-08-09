@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
+
 from . import _module, native_available
 
 
@@ -107,16 +109,25 @@ def probe_search(native_rules, position, depth: int, *, board_values=None, hand_
     This deliberately remains a probe API: it exercises Native checked
     transitions and deterministic PV selection without claiming the final
     semantic search capability gate.  ``board_values`` and ``hand_values``
-    are optional stable type-indexed evaluator profiles; when supplied they
-    must be paired and contain one bounded integer per compiled type.  Board
-    values are applied to each piece's base type and hand values to held base
-    types, with the side-to-move perspective determining the sign.  Omitting
-    both profiles retains the deterministic ``type_index + 1`` fallback.
+    are optional evaluator profiles; when supplied they must be paired.  A
+    sequence is interpreted in ``native_rules.type_ids`` order, while a
+    mapping must cover those stable type IDs exactly.  Board values are
+    applied to each piece's base type and hand values to held base types,
+    with the side-to-move perspective determining the sign.  Omitting both
+    profiles retains the deterministic ``type_index + 1`` fallback.
     """
     if not native_available():
         raise RuntimeError("native extension is not built")
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
+    if isinstance(board_values, Mapping) or isinstance(hand_values, Mapping):
+        if not isinstance(board_values, Mapping) or not isinstance(hand_values, Mapping):
+            raise ValueError("board_values and hand_values must use the same profile form")
+        expected = tuple(native_rules.type_ids)
+        if set(board_values) != set(expected) or set(hand_values) != set(expected):
+            raise ValueError("semantic profile mappings must cover exactly native type IDs")
+        board_values = tuple(int(board_values[type_id]) for type_id in expected)
+        hand_values = tuple(int(hand_values[type_id]) for type_id in expected)
     args = (native_rules.capsule, position, int(depth))
     if board_values is not None:
         args += (tuple(int(value) for value in board_values), tuple(int(value) for value in hand_values))
