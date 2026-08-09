@@ -101,7 +101,7 @@ def candidate_perft(native_rules, position, depth: int) -> int:
     return int(_module().semantic_candidate_perft(native_rules.capsule, position, int(depth)))
 
 
-def probe_search(native_rules, position, depth: int) -> dict:
+def probe_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
     """Run the bounded generic AlphaBeta probe over guarded semantic actions.
 
     This deliberately remains a probe API: it exercises Native checked
@@ -110,7 +110,12 @@ def probe_search(native_rules, position, depth: int) -> dict:
     """
     if not native_available():
         raise RuntimeError("native extension is not built")
-    raw = dict(_module().semantic_probe_search(native_rules.capsule, position, int(depth)))
+    if (board_values is None) != (hand_values is None):
+        raise ValueError("board_values and hand_values must be supplied together")
+    args = (native_rules.capsule, position, int(depth))
+    if board_values is not None:
+        args += (tuple(int(value) for value in board_values), tuple(int(value) for value in hand_values))
+    raw = dict(_module().semantic_probe_search(*args))
     raw["best_action"] = None if raw.get("best_action") is None else int(raw["best_action"])
     raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
     raw["score"] = int(raw["score"])

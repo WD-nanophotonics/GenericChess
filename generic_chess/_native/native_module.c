@@ -2749,19 +2749,25 @@ typedef struct {
     unsigned long long nodes;
 } GCSemanticProbeSearch;
 
+typedef struct {
+    int board[GC_MAX_TYPES];
+    int hand[GC_MAX_TYPES];
+    int supplied;
+} GCSemanticProbeProfile;
+
 #define GC_SEMANTIC_PROBE_INF 1000000000
 
-static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSemanticPosition *position) {
+static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSemanticPosition *position, const GCSemanticProbeProfile *profile) {
     int score = 0;
     for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
         const GCPiece *piece = &position->board[sq];
         if (!piece->occupied) continue;
-        int value = (int)piece->base_type + 1;
+        int value = profile && profile->supplied ? profile->board[piece->base_type] : (int)piece->base_type + 1;
         score += piece->owner == position->side_to_move ? value : -value;
     }
     for (uint8_t owner = 0; owner < 2; owner++) {
         for (uint16_t type = 0; type < rules->type_count; type++) {
-            int value = (int)type + 1;
+            int value = profile && profile->supplied ? profile->hand[type] : (int)type + 1;
             int hand_score = (int)position->hand_counts[owner][type] * value;
             score += owner == position->side_to_move ? hand_score : -hand_score;
         }
@@ -2773,10 +2779,11 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
                                                         const GCSemanticPosition *position,
                                                         unsigned int depth,
                                                         int alpha,
-                                                        int beta) {
+                                                        int beta,
+                                                        const GCSemanticProbeProfile *profile) {
     GCSemanticProbeSearch result;
     memset(&result, 0, sizeof(result));
-    result.score = gc_semantic_probe_material(rules, position);
+    result.score = gc_semantic_probe_material(rules, position, profile);
     result.nodes = 1;
     int winner = -1;
     int terminal = gc_semantic_terminal_status(rules, position, &winner);
@@ -2802,7 +2809,7 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         GCSemanticPosition work = *position;
         GCSemanticUndo undo;
         if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
-        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha);
+        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha, profile);
         gc_semantic_runtime_unmake(&work, &undo);
         result.nodes += branch.nodes;
         int score = -branch.score;
@@ -2825,14 +2832,42 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
 
 static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     (void)self;
-    PyObject *rules_capsule, *position_capsule;
+    PyObject *rules_capsule, *position_capsule, *board_values = NULL, *hand_values = NULL;
     unsigned int depth;
-    if (!PyArg_ParseTuple(args, "OOI", &rules_capsule, &position_capsule, &depth)) return NULL;
+    if (!PyArg_ParseTuple(args, "OOI|OO", &rules_capsule, &position_capsule, &depth, &board_values, &hand_values)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position || depth > GC_MAX_PLY) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
-    GCSemanticProbeSearch result = gc_semantic_probe_negamax(rules, position, depth, -GC_SEMANTIC_PROBE_INF, GC_SEMANTIC_PROBE_INF);
+    GCSemanticProbeProfile profile;
+    memset(&profile, 0, sizeof(profile));
+    if ((board_values == NULL) != (hand_values == NULL)) {
+        PyErr_SetString(PyExc_ValueError, "semantic probe board/hand profile must be supplied together");
+        return NULL;
+    }
+    if (board_values != NULL) {
+        if ((!PyList_Check(board_values) && !PyTuple_Check(board_values)) ||
+            (!PyList_Check(hand_values) && !PyTuple_Check(hand_values)) ||
+            PySequence_Size(board_values) != rules->type_count ||
+            PySequence_Size(hand_values) != rules->type_count) {
+            PyErr_SetString(PyExc_ValueError, "semantic probe profile length must match type_count");
+            return NULL;
+        }
+        for (uint16_t type = 0; type < rules->type_count; type++) {
+            PyObject *bv = PySequence_GetItem(board_values, type);
+            PyObject *hv = PySequence_GetItem(hand_values, type);
+            long b = PyLong_AsLong(bv), h = PyLong_AsLong(hv);
+            Py_DECREF(bv); Py_DECREF(hv);
+            if (PyErr_Occurred() || b < -1000000 || b > 1000000 || h < -1000000 || h > 1000000) {
+                PyErr_SetString(PyExc_ValueError, "semantic probe profile values must be bounded integers");
+                return NULL;
+            }
+            profile.board[type] = (int)b;
+            profile.hand[type] = (int)h;
+        }
+        profile.supplied = 1;
+    }
+    GCSemanticProbeSearch result = gc_semantic_probe_negamax(rules, position, depth, -GC_SEMANTIC_PROBE_INF, GC_SEMANTIC_PROBE_INF, &profile);
     if (PyErr_Occurred()) return NULL;
     PyObject *pv = PyTuple_New((Py_ssize_t)result.pv_len);
     if (!pv) return NULL;
