@@ -11,6 +11,7 @@ from generic_chess.native.semantic import (
     make_checked,
     make_unmake_roundtrip,
     candidate_perft,
+    pack_action,
     pack_position,
     position_key,
     snapshot,
@@ -20,6 +21,7 @@ from generic_chess import _native_core
 from generic_chess.core.keys import semantic_position_key
 from generic_chess.core.pieces import Piece
 from generic_chess.core.position import Hands, Position
+from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from rule_semantics_ir_fixtures import castling_ruleset
 
@@ -412,3 +414,99 @@ def test_native_bounded_s4_uchifuzume_root_count_matches_python():
     )
     assert candidate_perft(native_rules, parent, 1) == 65
     assert len(guarded_actions(native_rules, parent)) == 65
+
+
+def _assert_exact_guarded_action_set(semantic, python_position):
+    native_rules = compile_native_semantic_rules(semantic)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    geometry_ids = {geometry_id: index for index, geometry_id in enumerate(sorted(semantic.ir.geometry))}
+    pattern_ids = {pattern.pattern_id: index for index, pattern in enumerate(semantic.ir.patterns)}
+    native_board = [
+        None
+        if piece is None
+        else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, int(piece.promoted)]
+        for piece in python_position.board
+    ]
+    native_hands = [[0] * len(type_ids), [0] * len(type_ids)]
+    for owner, hand in enumerate(python_position.hands):
+        for type_id, count in hand.counts:
+            native_hands[owner][type_ids[type_id]] = count
+    native_position = pack_position(
+        native_rules,
+        {
+            "side": python_position.side_to_move,
+            "ply": 0,
+            "board": native_board,
+            "hands": native_hands,
+            "aux_state": python_position.aux_state,
+        },
+    )
+    python_actions = set()
+    for action in SemanticEngine(semantic).legal_actions(python_position):
+        piece = python_position.board[action.source] if action.source is not None else None
+        base_type = type_ids[piece.base_type_id] if piece is not None else type_ids[action.actor_type]
+        python_actions.add(
+            pack_action(
+                {
+                    "to": action.target,
+                    "from": action.source if action.source is not None else 255,
+                    "promotion": type_ids[action.promotion_target_id] if action.promotion_target_id else 255,
+                    "base": base_type,
+                    "kind": 2 if action.source is not None else 3,
+                    "pattern": pattern_ids[action.pattern_id],
+                    "geometry": geometry_ids[action.geometry_id],
+                    "actor_current": type_ids[action.actor_type],
+                }
+            )
+        )
+    assert set(guarded_actions(native_rules, native_position)) == python_actions
+
+
+def test_native_guarded_action_set_matches_python_across_core_fixtures():
+    from rule_semantics_ir_fixtures import cannon_ruleset, nifu_ruleset
+
+    castling = castling_ruleset()
+    castling_semantic = compile_semantic_ruleset(castling)
+    castling_board = tuple(piece for row in castling.initial_position for piece in row)
+    _assert_exact_guarded_action_set(
+        castling_semantic,
+        Position(
+            castling_board,
+            (Hands.empty(), Hands.empty()),
+            0,
+            castling_semantic.support.ruleset_fingerprint,
+        ),
+    )
+
+    cannon = cannon_ruleset()
+    cannon_semantic = compile_semantic_ruleset(cannon)
+    cannon_board = [None] * 64
+    cannon_board[63] = Piece(0, "K", "K")
+    cannon_board[0] = Piece(0, "C", "C")
+    cannon_board[1] = Piece(1, "C", "C")
+    cannon_board[2] = Piece(1, "C", "C")
+    cannon_board[56] = Piece(1, "K", "K")
+    _assert_exact_guarded_action_set(
+        cannon_semantic,
+        Position(
+            tuple(cannon_board),
+            (Hands.empty(), Hands.empty()),
+            0,
+            cannon_semantic.support.ruleset_fingerprint,
+        ),
+    )
+
+    nifu = nifu_ruleset()
+    nifu_semantic = compile_semantic_ruleset(nifu)
+    nifu_board = [None] * 64
+    nifu_board[63] = Piece(0, "K", "K")
+    nifu_board[56] = Piece(1, "K", "K")
+    _assert_exact_guarded_action_set(
+        nifu_semantic,
+        Position(
+            tuple(nifu_board),
+            (Hands((("P", 1),)), Hands.empty()),
+            0,
+            nifu_semantic.support.ruleset_fingerprint,
+        ),
+    )
