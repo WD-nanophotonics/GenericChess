@@ -10,9 +10,10 @@ import sys
 import time
 from pathlib import Path
 
-from .core import SCOPES, Paths, configure_logging, daemon_lock, now, pid_alive, status, sync, write_status
+from .core import SCOPES, Paths, configure_logging, daemon_lock, now, pid_alive, status, sync, write_autostart, write_status
 
 TASK_NAME = "GenericChess Gmail Bridge"
+RUN_KEY = r"Software\Microsoft\Windows\CurrentVersion\Run"
 
 def root() -> Path: return Path(__file__).resolve().parents[2]
 def config_dir() -> Path: return Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local")) / "GenericChessBridge"
@@ -75,14 +76,31 @@ def stop(args) -> int:
     except OSError: print("STOPPED")
     return 0
 
+def registry_autostart(command: str, uninstall: bool = False) -> None:
+    import winreg
+    with winreg.OpenKey(winreg.HKEY_CURRENT_USER, RUN_KEY, 0, winreg.KEY_SET_VALUE) as key:
+        if uninstall:
+            try: winreg.DeleteValue(key, TASK_NAME)
+            except FileNotFoundError: pass
+        else:
+            winreg.SetValueEx(key, TASK_NAME, 0, winreg.REG_SZ, command)
+
+
 def scheduler(args, uninstall=False) -> int:
     command = f'"{sys.executable}" -m generic_chess.bridge.cli run --interval {args.interval}'
     if uninstall:
         result = subprocess.run(["schtasks", "/Delete", "/TN", TASK_NAME, "/F"], capture_output=True, text=True)
+        registry_autostart(command, uninstall=True)
+        write_autostart(Paths(root()), method=None, updated_at=now())
+        print("UNINSTALLED"); return 0
     else:
         result = subprocess.run(["schtasks", "/Create", "/TN", TASK_NAME, "/SC", "ONLOGON", "/TR", command, "/RL", "LIMITED", "/F"], capture_output=True, text=True)
-    if result.returncode: raise RuntimeError(result.stderr or result.stdout)
-    print("UNINSTALLED" if uninstall else "INSTALLED"); return 0
+    if result.returncode:
+        registry_autostart(command)
+        write_autostart(Paths(root()), method="registry-run-key", scheduler_error=(result.stderr or result.stdout).strip(), updated_at=now())
+        print("INSTALLED registry-run-key"); return 0
+    write_autostart(Paths(root()), method="task-scheduler", updated_at=now())
+    print("INSTALLED task-scheduler"); return 0
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="gc-bridge"); parser.add_argument("--stale-seconds", type=int, default=90); parser.add_argument("--interval", type=int, default=20)

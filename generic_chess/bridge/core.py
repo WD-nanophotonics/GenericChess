@@ -76,6 +76,8 @@ class Paths:
     def daemon_lock(self) -> Path: return self.runtime / "daemon.lock"
     @property
     def log(self) -> Path: return self.runtime / "logs" / "courier.log"
+    @property
+    def autostart(self) -> Path: return self.runtime / "autostart.json"
 
 
 class State:
@@ -157,6 +159,13 @@ def write_status(paths: Paths, **values: Any) -> None:
     prior.update(values); atomic_json(paths.status, prior)
 
 
+def write_autostart(paths: Paths, **values: Any) -> None:
+    prior = {}
+    try: prior = json.loads(paths.autostart.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError): pass
+    prior.update(values); atomic_json(paths.autostart, prior)
+
+
 def pid_alive(pid: int) -> bool:
     try: os.kill(pid, 0)
     except OSError: return False
@@ -174,8 +183,16 @@ def status(paths: Paths, stale_seconds: int = 90) -> dict[str, Any]:
     return data
 
 
+def git_environment() -> dict[str, str]:
+    """Do not inherit a dead localhost proxy into durable courier retries."""
+    env = os.environ.copy()
+    for key in ("GIT_HTTP_PROXY", "GIT_HTTPS_PROXY", "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"):
+        env.pop(key, None)
+    return env
+
+
 def git(paths: Paths, *args: str) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(["git", "-C", str(paths.root), *args], text=True, capture_output=True, check=False)
+    return subprocess.run(["git", "-c", "http.proxy=", "-c", "https.proxy=", "-C", str(paths.root), *args], text=True, capture_output=True, check=False, env=git_environment())
 
 
 def assert_chat_repo(paths: Paths) -> None:

@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from generic_chess.bridge.core import Paths, State, assert_chat_repo, atomic_json, existing_unit, is_protocol_message, receive_message, safe_name, status, task_slug
+from generic_chess.bridge.core import Paths, State, assert_chat_repo, atomic_json, existing_unit, git_environment, is_protocol_message, receive_message, safe_name, status, task_slug
 
 
 def message(subject="[GC-BRIDGE][TASK] example"):
@@ -103,3 +103,9 @@ class BridgeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             with self.assertRaisesRegex(RuntimeError, "refusing Git operation"):
                 assert_chat_repo(Paths(Path(tmp)))
+
+    def test_git_environment_drops_broken_proxy_variables(self):
+        with patch.dict("os.environ", {"HTTP_PROXY": "http://127.0.0.1:9", "GIT_HTTPS_PROXY": "http://127.0.0.1:9"}, clear=False):
+            environment = git_environment()
+        self.assertNotIn("HTTP_PROXY", environment)
+        self.assertNotIn("GIT_HTTPS_PROXY", environment)
