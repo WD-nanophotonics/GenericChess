@@ -25,7 +25,17 @@ from generic_chess.core.movement import LeapAtom
 from generic_chess.core.position import Hands, Position
 from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.rules.compiler import compile_semantic_ruleset
-from generic_chess.rules.schema import RuleActionEffect, RuleGeometrySpec, RuleSemanticAction, RuleSet, RuleSquareRef
+from generic_chess.rules.schema import (
+    RuleActionEffect,
+    RuleGeometrySpec,
+    RuleInvariant,
+    RuleSemanticAction,
+    RuleSet,
+    RuleSpatialSelector,
+    RuleSquareRef,
+    RuleStateGuard,
+    RuleTypeRef,
+)
 from rule_semantics_ir_fixtures import castling_ruleset
 
 
@@ -562,6 +572,60 @@ def test_native_guarded_action_set_matches_python_for_inherited_promotion_varian
     native_board = [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, 0] for piece in board]
     native_position = pack_position(native_rules, {"side": 0, "ply": 0, "board": native_board, "hands": [[0] * len(type_ids), [0] * len(type_ids)], "aux_state": ()})
     assert any(unpack_action(value)["promotion"] == type_ids["G"] for value in guarded_actions(native_rules, native_position))
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_guarded_action_set_matches_python_for_path_between_state_guard():
+    from rule_semantics_ir_fixtures import _king_type
+
+    n = 5
+    actor = PieceType("A", "A", (LeapAtom((1, 0)),))
+    marker = PieceType("B", "B", (LeapAtom((1, 0)),))
+    rows = []
+    for rank in range(n):
+        row = []
+        for file in range(n):
+            row.append(
+                Piece(0, "K", "K") if (file, rank) == (0, 0)
+                else Piece(1, "K", "K") if (file, rank) == (n - 1, n - 1)
+                else None
+            )
+        rows.append(tuple(row))
+    action = RuleSemanticAction(
+        name="path_guarded_move",
+        type_ids=("A",),
+        geometry=RuleGeometrySpec(kind="leap", offset=(1, 0)),
+        target_relation="empty",
+        state_guards=(RuleStateGuard(
+            aggregation="count",
+            owner="any",
+            type_ref=RuleTypeRef("explicit", "B"),
+            compare_field="base",
+            promoted="any",
+            location="board",
+            spatial=RuleSpatialSelector(
+                kind="path_between",
+                refs=(RuleSquareRef("fixed", square=(0, 0)), RuleSquareRef("fixed", square=(4, 4))),
+            ),
+            comparison="eq",
+            value=1,
+        ),),
+        effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    ruleset = RuleSet(
+        board_size=n,
+        piece_types=(_king_type(), actor, marker),
+        initial_position=tuple(rows),
+        drop_allowed={"A": ((False,) * 25, (False,) * 25), "B": ((False,) * 25, (False,) * 25)},
+        semantic_actions=(action,),
+    )
+    semantic = compile_semantic_ruleset(ruleset)
+    board = list(rows[0] + rows[1] + rows[2] + rows[3] + rows[4])
+    board[1] = Piece(0, "A", "A")
+    board[12] = Piece(1, "B", "B")
+    python_position = Position(tuple(board), (Hands.empty(), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    _assert_exact_guarded_action_set(semantic, python_position)
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")

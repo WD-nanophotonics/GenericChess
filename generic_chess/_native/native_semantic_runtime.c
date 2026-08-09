@@ -144,6 +144,18 @@ static int spatial_holds(const GCSemSpatial *spatial, const GCSemanticRules *r, 
     if (spatial->kind == 1) return sr == rr;
     if (spatial->kind == 2) return square == ref_square;
     if (spatial->kind == 3) return (sf-rf >= -1 && sf-rf <= 1 && sr-rr >= -1 && sr-rr <= 1);
+    if (spatial->kind == 4 && spatial->refs_count == 2) {
+        uint16_t other_square = 0;
+        if (!resolve_square(&spatial->refs[1], r, NULL, pos, side, source, target, &other_square)) return 0;
+        int of = other_square % r->board_size, orank = other_square / r->board_size;
+        int df = of - rf, dr = orank - rr, af = df < 0 ? -df : df, ar = dr < 0 ? -dr : dr;
+        int g = af, h = ar;
+        while (h != 0) { int t = g % h; g = h; h = t; }
+        if (g <= 1) return 0;
+        int step_f = df / g, step_r = dr / g;
+        for (int k = 1; k < g; k++) if (sf == rf + k * step_f && sr == rr + k * step_r) return 1;
+        return 0;
+    }
     if (spatial->kind == 5 && spatial->has_zone && spatial->zone_index < r->zone_count) { const GCSemZone *zone=&r->zones[spatial->zone_index]; for(uint16_t i=0;i<zone->count;i++)if(zone->squares[i]==square)return 1; return 0; }
     return 0;
 }
