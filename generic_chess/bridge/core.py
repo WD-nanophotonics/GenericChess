@@ -175,11 +175,19 @@ def pid_alive(pid: int) -> bool:
 def status(paths: Paths, stale_seconds: int = 90) -> dict[str, Any]:
     try: data = json.loads(paths.status.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError): return {"state": "STOPPED"}
+    try: autostart = json.loads(paths.autostart.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError): autostart = None
+    # Versions before the Run-key fallback reported a Scheduler ACL failure as
+    # a daemon error. Treat that precise legacy record as stopped, not unhealthy.
+    if (data.get("state") == "error" and data.get("last_error", "").strip() == "ERROR: Access is denied."
+            and autostart and autostart.get("method") == "registry-run-key"):
+        data["state"] = "stopped"; data["last_error"] = None
     pid = data.get("pid")
     try: age = time.time() - datetime.fromisoformat(data["last_poll_at"]).timestamp()
     except (KeyError, ValueError): age = float("inf")
     data["state"] = "HEALTHY" if data.get("state") == "running" and isinstance(pid, int) and pid_alive(pid) and age <= stale_seconds else ("ERROR" if data.get("last_error") else "STALE")
     data["heartbeat_age_seconds"] = round(age, 1) if age != float("inf") else None
+    data["autostart"] = autostart
     return data
 
 

@@ -59,6 +59,16 @@ class BridgeTests(unittest.TestCase):
             atomic_json(paths.status, {"state": "running", "pid": 99999999, "last_poll_at": "2020-01-01T00:00:00+00:00"})
             self.assertEqual(status(paths)["state"], "STALE")
 
+    def test_scheduler_acl_error_is_not_a_daemon_error_after_run_fallback(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = Paths(Path(tmp))
+            atomic_json(paths.status, {"state": "error", "last_error": "ERROR: Access is denied.\n", "last_poll_at": "2020-01-01T00:00:00+00:00"})
+            atomic_json(paths.autostart, {"method": "registry-run-key", "scheduler_error": "ERROR: Access is denied."})
+            report = status(paths)
+            self.assertEqual(report["state"], "STOPPED")
+            self.assertEqual(report["autostart"]["method"], "registry-run-key")
+
 
     def test_atomic_json_replaces_complete_document(self):
         import tempfile
