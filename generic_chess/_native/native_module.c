@@ -2152,6 +2152,31 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
             bp.hand_counts[owner][t] = (uint16_t)count;
         }
     }
+    PyObject *aux = PyDict_GetItemString(payload, "aux");
+    if (aux != NULL) {
+        if (!PyList_Check(aux)) { PyErr_SetString(PyExc_ValueError, "semantic aux must be a list"); return NULL; }
+        for (Py_ssize_t i = 0; i < PyList_Size(aux); i++) {
+            PyObject *entry = PyList_GetItem(aux, i);
+            if (!PyList_Check(entry) || PyList_Size(entry) != 3) { PyErr_SetString(PyExc_ValueError, "semantic aux entry shape invalid"); return NULL; }
+            long slot = gc_py_long_as_long(PyList_GetItem(entry, 0), &ok);
+            long owner = gc_py_long_as_long(PyList_GetItem(entry, 1), &ok);
+            if (!ok || slot < 0 || slot >= rules->aux_slot_count || owner < -1 || owner > 1) { PyErr_SetString(PyExc_ValueError, "semantic aux slot/owner invalid"); return NULL; }
+            GCSemAuxValue *value = &bp.aux[slot][owner < 0 ? 0 : owner + 1];
+            PyObject *raw = PyList_GetItem(entry, 2);
+            value->kind = rules->aux_slots[slot].value_kind;
+            if (raw == Py_None) { value->has_value = 0; continue; }
+            if (value->kind == 0) {
+                long flag = gc_py_long_as_long(raw, &ok);
+                if (!ok || (flag != 0 && flag != 1)) { PyErr_SetString(PyExc_ValueError, "semantic bool aux invalid"); return NULL; }
+                value->has_value = 1; value->bool_value = (int32_t)flag;
+            } else {
+                if (!PyList_Check(raw) || PyList_Size(raw) != 2) { PyErr_SetString(PyExc_ValueError, "semantic square aux invalid"); return NULL; }
+                long file = gc_py_long_as_long(PyList_GetItem(raw, 0), &ok); long rank = gc_py_long_as_long(PyList_GetItem(raw, 1), &ok);
+                if (!ok || file < 0 || rank < 0 || file >= rules->board_size || rank >= rules->board_size) { PyErr_SetString(PyExc_ValueError, "semantic aux square out of range"); return NULL; }
+                value->has_value = 1; value->square = (uint16_t)(rank * rules->board_size + file);
+            }
+        }
+    }
     GCSemanticPosition *pos = (GCSemanticPosition *)malloc(sizeof(*pos));
     if (pos == NULL) { PyErr_NoMemory(); return NULL; }
     if (!gc_semantic_position_pack(pos, rules, &bp)) {

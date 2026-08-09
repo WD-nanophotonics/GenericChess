@@ -22,6 +22,8 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
         payload->side_to_move > 1 || payload->ply > rules->max_ply) {
         return 0;
     }
+    GCSemAuxValue provided[GC_SEM_MAX_AUX_SLOTS][3];
+    memcpy(provided, payload->aux, sizeof(provided));
     memset(pos, 0, sizeof(*pos));
     pos->side_to_move = payload->side_to_move;
     pos->ply = payload->ply;
@@ -43,6 +45,9 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
             gc_semantic_aux_default(&pos->aux[slot_i][1], slot);
             gc_semantic_aux_default(&pos->aux[slot_i][2], slot);
         }
+        for (uint8_t owner = 0; owner < 3; owner++)
+            if (provided[slot_i][owner].has_value)
+                pos->aux[slot_i][owner] = provided[slot_i][owner];
     }
     return 1;
 }
