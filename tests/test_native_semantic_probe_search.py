@@ -7,6 +7,7 @@ from generic_chess.core.coordinates import Square
 from generic_chess.core.movement import LeapAtom
 from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.core.semantic_executor import SemanticEngine
+from generic_chess.core.terminal import TerminalStatus
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import pack_action, pack_position, probe_search
@@ -52,8 +53,13 @@ def _python_probe(semantic, position, native_rules, depth, board_values=None, ha
             for type_id, count in hand.counts
         )
 
-    def search(state, remaining, alpha=-1_000_000_000, beta=1_000_000_000):
+    def search(state, remaining, ply=0, alpha=-1_000_000_000, beta=1_000_000_000):
         nonlocal nodes
+        terminal = engine.terminal_result(state, ply, ())
+        if terminal.status is TerminalStatus.CHECKMATE:
+            return -1_000_000, ()
+        if terminal.status is not TerminalStatus.ONGOING:
+            return 0, ()
         if remaining == 0:
             return evaluate(state), ()
         actions = _packed_actions(semantic, state, native_rules)
@@ -62,7 +68,7 @@ def _python_probe(semantic, position, native_rules, depth, board_values=None, ha
         best_pv = ()
         for packed in sorted(actions):
             nodes += 1
-            score, child_pv = search(engine.apply(state, actions[packed]), remaining - 1, -beta, -alpha)
+            score, child_pv = search(engine.apply(state, actions[packed]), remaining - 1, ply + 1, -beta, -alpha)
             score = -score
             if best_action is None or score > best_score or (score == best_score and packed < best_action):
                 best_score, best_action = score, packed
