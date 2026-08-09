@@ -115,3 +115,20 @@ def test_native_semantic_perft_matches_python_on_full_corpus_depth_three():
             "aux_state": (),
         })
         assert candidate_perft(native_rules, native_position, 3) == _python_perft(semantic, python_position, 3), name
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_perft_depth_four_on_small_fixture():
+    name, semantic = next((item for item in semantic_corpus() if item[0] == "weird_0"))
+    native_rules = compile_native_semantic_rules(semantic)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = tuple(piece for row in semantic.support.initial_position for piece in row)
+    python_position = Position(board, (Hands.empty(), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, int(piece.promoted)] for piece in board],
+        "hands": [[0] * len(type_ids), [0] * len(type_ids)],
+        "aux_state": (),
+    })
+    assert candidate_perft(native_rules, native_position, 4) == _python_perft(semantic, python_position, 4), name
