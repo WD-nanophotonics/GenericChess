@@ -281,7 +281,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_ir_v2_compile", value);
     Py_DECREF(value);
-    value = PyLong_FromLong(1);
+    value = PyLong_FromLong(2);
     PyDict_SetItemString(dict, "semantic_payload_version", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);

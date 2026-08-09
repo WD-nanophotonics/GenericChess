@@ -43,7 +43,8 @@ def test_c1_capsule_survives_python_payload_deletion(module):
     gc.collect()
     observed = dict(module.semantic_rules_info(compiled.capsule))
     assert observed["fingerprint"] == compiled.fingerprint
-    assert observed["semantic_payload_version"] == 1
+    assert observed["semantic_payload_version"] == 2
+    assert observed["type_ids"] == list(compiled.type_ids)
     assert observed["board_size"] >= 4
 
 
@@ -104,7 +105,8 @@ def test_c1_single_field_mutations_fail_closed(module):
     n2 = n * n
 
     # top-level version / scalars
-    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("semantic_payload_version", 2), "version 2")
+    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("semantic_payload_version", 3), "version 3")
+    _mutate_rejected(module, p_cannon, lambda p: p.pop("type_ids"), "missing v2 type_ids")
     _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("board_size", 257), "board_size 257")
     _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("board_size", -1), "board_size -1")
     _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("repetition_limit", 65537), "repetition_limit 65537")

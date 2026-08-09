@@ -950,14 +950,15 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         return NULL;
     }
 
-    /* semantic_payload_version must be present and exactly 1 */
+    /* v1 remains compile-only compatible; v2 adds the type IDs required by
+     * the independent semantic position-key runtime. */
     uint8_t payload_version;
     if (!sem_u8(PyDict_GetItemString(payload, "semantic_payload_version"),
                 &payload_version)) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (payload_version != 1) {
+    if (payload_version != 1 && payload_version != 2) {
         PyErr_SetString(PyExc_ValueError,
                         "unsupported semantic_payload_version");
         gc_semantic_rules_free(rules);
@@ -1034,6 +1035,46 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         PyErr_SetString(PyExc_ValueError, "semantic type list is empty");
         gc_semantic_rules_free(rules);
         return NULL;
+    }
+    if (payload_version == 2) {
+        PyObject *type_ids = NULL;
+        if (!sem_get_list(payload, "type_ids", &type_ids) ||
+            PyList_Size(type_ids) != rules->type_count) {
+            PyErr_SetString(PyExc_ValueError,
+                            "semantic v2 type_ids must match types");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        rules->type_ids = (char **)calloc(rules->type_count, sizeof(char *));
+        if (rules->type_ids == NULL) {
+            PyErr_NoMemory();
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        for (uint16_t t = 0; t < rules->type_count; t++) {
+            PyObject *item = PyList_GetItem(type_ids, t);
+            if (!PyUnicode_Check(item)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "semantic v2 type_id must be a string");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            const char *text = PyUnicode_AsUTF8(item);
+            if (text == NULL || !*text) {
+                PyErr_SetString(PyExc_ValueError,
+                                "semantic v2 type_id must be non-empty UTF-8");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            size_t size = strlen(text) + 1;
+            rules->type_ids[t] = (char *)malloc(size);
+            if (rules->type_ids[t] == NULL) {
+                PyErr_NoMemory();
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            memcpy(rules->type_ids[t], text, size);
+        }
     }
     for (uint16_t t = 0; t < rules->type_count; t++) {
         PyObject *td = PyList_GetItem(list_obj, t);
@@ -1910,6 +1951,12 @@ void gc_semantic_rules_free(GCSemanticRules *rules) {
         }
         free(rules->zones);
     }
+    if (rules->type_ids != NULL) {
+        for (uint16_t t = 0; t < rules->type_count; t++) {
+            free(rules->type_ids[t]);
+        }
+        free(rules->type_ids);
+    }
     free(rules->aux_slots);
     free(rules->triggers);
     for (uint16_t t = 0; t < rules->type_count; t++) {
@@ -2508,6 +2555,23 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
     SEM_INFO_SET("board_size", PyLong_FromUnsignedLong(rules->board_size));
     SEM_INFO_SET("repetition_limit", PyLong_FromUnsignedLong(rules->repetition_limit));
     SEM_INFO_SET("max_ply", PyLong_FromUnsignedLong(rules->max_ply));
+    if (rules->semantic_payload_version >= 2) {
+        PyObject *type_ids = PyList_New(rules->type_count);
+        if (type_ids == NULL) {
+            Py_DECREF(payload);
+            return NULL;
+        }
+        for (uint16_t t = 0; t < rules->type_count; t++) {
+            PyObject *item = PyUnicode_FromString(rules->type_ids[t]);
+            if (item == NULL) {
+                Py_DECREF(type_ids);
+                Py_DECREF(payload);
+                return NULL;
+            }
+            PyList_SET_ITEM(type_ids, t, item);
+        }
+        SEM_INFO_SET("type_ids", type_ids);
+    }
 
     PyObject *types = PyList_New(rules->type_count);
     if (types == NULL) {

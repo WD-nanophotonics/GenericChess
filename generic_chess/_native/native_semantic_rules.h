@@ -203,6 +203,9 @@ typedef struct {
     uint16_t repetition_limit;
     uint16_t max_ply;
     uint16_t type_count;
+    /* Payload v2 owns stable public type IDs for semantic position identity.
+     * v1 compile-only capsules leave this NULL. */
+    char **type_ids;
     GCSemType types[GC_MAX_TYPES];
     GCSemPairList promo_allowed[GC_MAX_TYPES][2];
     GCSemSquareList promo_forced[GC_MAX_TYPES][2];

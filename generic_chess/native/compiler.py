@@ -21,7 +21,7 @@ NATIVE_SCHEMA_VERSION = "native-0.4.0"
 GC_MAX_PLY = 512
 GC_MAX_HAND = 256
 
-SEMANTIC_PAYLOAD_VERSION = 1
+SEMANTIC_PAYLOAD_VERSION = 2
 GC_SEM_MAX_TYPES = 64
 GC_SEM_MAX_PATTERNS = 256
 GC_SEM_MAX_GEOMETRIES = 4096
@@ -880,6 +880,10 @@ def build_semantic_compile_payload(semantic):
         "board_size": n,
         "repetition_limit": support.repetition_limit,
         "max_ply": support.max_ply,
+        # Runtime identity is the Python semantic_position_key JSON.  It
+        # contains public type IDs, so the Native executor must own this
+        # stable mapping instead of relying on a Python wrapper at runtime.
+        "type_ids": list(type_ids),
         "types": types,
         "promo_allowed": promo_allowed,
         "promo_forced": promo_forced,

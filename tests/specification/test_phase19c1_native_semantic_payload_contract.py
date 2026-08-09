@@ -46,7 +46,7 @@ def test_c1_spec02_native_version_schema_and_capabilities_are_additive():
     caps = native.native_capabilities()
     assert caps["native_schema"] == "native-0.4.0"
     assert caps["semantic_ir_v2_compile"] is True
-    assert caps["semantic_payload_version"] == 1
+    assert caps["semantic_payload_version"] == 2
     assert caps["semantic_exact_action_identity"] is True
     assert caps["semantic_position_state"] is False
     assert caps["semantic_s0_s4_executor"] is False
@@ -69,7 +69,7 @@ def test_c1_spec04_all_frozen_semantic_corpus_compiles_to_separate_capsules():
         assert compiled.capsule is not None, name
         assert compiled.fingerprint == semantic.ruleset_fingerprint, name
         assert compiled.report.ir_version == 2, name
-        assert compiled.report.semantic_payload_version == 1, name
+        assert compiled.report.semantic_payload_version == 2, name
         assert compiled.report.native_schema_version == "native-0.4.0", name
 
 
