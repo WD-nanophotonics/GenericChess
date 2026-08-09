@@ -2630,8 +2630,12 @@ static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
     for (Py_ssize_t i = 0; i < count; i++) {
         unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(candidates, i));
         if (PyErr_Occurred()) { PyErr_Clear(); continue; }
+        GCSemanticPosition probe = *position;
+        /* Terminal authority checks legal-action availability independently of
+         * the max-ply cutoff, matching SemanticEngine. */
+        probe.ply = 0;
         GCSemanticPosition child;
-        if (gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) {
+        if (gc_semantic_runtime_make_checked(&child, rules, &probe, (uint64_t)raw)) {
             Py_DECREF(candidates);
             return 1;
         }
@@ -2663,17 +2667,21 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
                                        const GCSemanticPosition *position,
                                        int *winner_out) {
     int ok = 1;
-    if (gc_semantic_has_guarded_action(rules, position, &ok)) return 0; /* ongoing */
+    int has_action = gc_semantic_has_guarded_action(rules, position, &ok);
     if (!ok) return -1;
-    if (gc_semantic_runtime_in_check(rules, position, position->side_to_move)) {
-        if (winner_out) *winner_out = 1 - position->side_to_move;
-        return 1; /* checkmate */
+    if (!has_action) {
+        if (gc_semantic_runtime_in_check(rules, position, position->side_to_move)) {
+            if (winner_out) *winner_out = 1 - position->side_to_move;
+            return 1; /* checkmate */
+        }
+        /* No-legal-action states have checkmate/stalemate precedence. */
+        return 2; /* stalemate */
     }
     unsigned long repetitions = 0;
     if (gc_semantic_repetition_count(rules, position, &repetitions) < 0) return -1;
     if (repetitions >= rules->repetition_limit) return 3; /* repetition */
     if (position->ply >= rules->max_ply) return 4; /* max ply */
-    return 2; /* stalemate */
+    return 0; /* ongoing */
 }
 
 static PyObject *gc_semantic_terminal(PyObject *self, PyObject *args) {
@@ -2718,9 +2726,11 @@ static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, co
     for (Py_ssize_t i = 0; i < count; i++) {
         unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
         if (PyErr_Occurred()) { *ok = 0; break; }
-        GCSemanticPosition child;
-        if (!gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) continue;
-        unsigned long long branch = gc_semantic_perft_rec(rules, &child, depth - 1, ok);
+        GCSemanticPosition work = *position;
+        GCSemanticUndo undo;
+        if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
+        unsigned long long branch = gc_semantic_perft_rec(rules, &work, depth - 1, ok);
+        gc_semantic_runtime_unmake(&work, &undo);
         if (ULLONG_MAX - total < branch) { *ok = 0; break; }
         total += branch;
     }
@@ -2777,12 +2787,21 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
     int found = 0;
     int best_score = -GC_SEMANTIC_PROBE_INF;
     Py_ssize_t count = PyTuple_Size(actions);
+    uint64_t *action_buffer = count > 0 ? (uint64_t *)malloc((size_t)count * sizeof(*action_buffer)) : NULL;
+    if (count > 0 && !action_buffer) { Py_DECREF(actions); return result; }
     for (Py_ssize_t i = 0; i < count; i++) {
-        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
-        if (PyErr_Occurred()) { PyErr_Clear(); continue; }
-        GCSemanticPosition child;
-        if (!gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) continue;
-        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &child, depth - 1, -beta, -alpha);
+        action_buffer[i] = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
+        if (PyErr_Occurred()) { PyErr_Clear(); action_buffer[i] = 0; }
+    }
+    Py_DECREF(actions);
+    for (Py_ssize_t i = 0; i < count; i++) {
+        unsigned long long raw = action_buffer[i];
+        if (raw == 0 && action_buffer[i] == 0) continue;
+        GCSemanticPosition work = *position;
+        GCSemanticUndo undo;
+        if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
+        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha);
+        gc_semantic_runtime_unmake(&work, &undo);
         result.nodes += branch.nodes;
         int score = -branch.score;
         if (!found || score > best_score || (score == best_score && raw < result.best_action)) {
@@ -2798,7 +2817,7 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         if (score > alpha) alpha = score;
         if (alpha >= beta) break;
     }
-    Py_DECREF(actions);
+    free(action_buffer);
     return result;
 }
 

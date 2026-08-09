@@ -227,6 +227,72 @@ def test_native_semantic_perft_stops_at_max_ply_terminal_state():
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_probe_stops_on_exact_full_digest_repetition():
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, 0] for row in semantic.support.initial_position for piece in row]
+    base = pack_position(native_rules, {"side": 0, "ply": 0, "board": board, "hands": [[0] * len(ids), [0] * len(ids)], "aux_state": ()})
+    digest = position_key(native_rules, base)
+    words = tuple(int(digest[i:i + 16], 16) for i in range(0, 64, 16))
+    repeated = pack_position(native_rules, {"side": 0, "ply": 0, "board": board, "hands": [[0] * len(ids), [0] * len(ids)], "history": (words,) * 4, "aux_state": ()})
+    result = probe_search(native_rules, repeated, 2)
+    assert result["has_best"] == 0
+    assert result["score"] == 0
+    assert result["nodes"] == 1
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_probe_detects_checkmate_terminal_state():
+    king = PieceType(
+        "K",
+        "K",
+        tuple(LeapAtom((df, dr)) for df in (-1, 0, 1) for dr in (-1, 0, 1) if (df, dr) != (0, 0)),
+        is_anchor=True,
+    )
+    actor = PieceType("X", "X", (LeapAtom((1, 0)),))
+    action = RuleSemanticAction(
+        name="x_move",
+        type_ids=("X",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    initial = ((Piece(0, "K", "K"), None, None), (None, None, None), (None, None, Piece(1, "K", "K")))
+    ruleset = RuleSet(
+        board_size=3,
+        piece_types=(king, actor),
+        initial_position=initial,
+        drop_allowed={"X": ((False,) * 9, (False,) * 9)},
+        semantic_actions=(action,),
+    )
+    semantic = compile_semantic_ruleset(ruleset)
+    python_position = Position(
+        (Piece(0, "K", "K"), None, None, None, Piece(1, "K", "K"), None, None, None, None),
+        (Hands.empty(), Hands.empty()),
+        0,
+        semantic.support.ruleset_fingerprint,
+    )
+    engine = SemanticEngine(semantic)
+    assert not engine.legal_actions(python_position)
+    assert engine.in_check(python_position, 0)
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, 0] for piece in python_position.board],
+        "hands": [[0] * len(ids), [0] * len(ids)],
+        "aux_state": (),
+    })
+    result = probe_search(native_rules, native_position, 2)
+    assert result["has_best"] == 0
+    assert result["score"] == -1000000
+    assert result["nodes"] == 1
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
 def test_native_sha256_known_answers():
     assert _native_core.sha256_hex(b"") == (
         "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
