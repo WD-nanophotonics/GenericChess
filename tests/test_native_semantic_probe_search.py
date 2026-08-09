@@ -3,10 +3,15 @@ from __future__ import annotations
 import pytest
 
 from generic_chess.core.position import Hands, Position
+from generic_chess.core.coordinates import Square
+from generic_chess.core.movement import LeapAtom
+from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import pack_action, pack_position, probe_search
+from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.schema import RuleActionEffect, RuleGeometrySpec, RuleSemanticAction, RuleSet, RuleSquareRef
 
 from phase19c1_native_semantic_fixtures import semantic_corpus
 
@@ -113,3 +118,72 @@ def test_native_probe_search_depth_zero_is_deterministic_leaf():
     assert observed["has_best"] == 0
     assert observed["best_action"] is None
     assert observed["principal_variation"] == ()
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+@pytest.mark.parametrize("fixture_name", ["nifu", "uchifuzume"])
+def test_native_probe_search_matches_python_on_drop_and_s4_positions(fixture_name):
+    from rule_semantics_ir_fixtures import nifu_ruleset, uchifuzume_ruleset
+
+    ruleset = nifu_ruleset() if fixture_name == "nifu" else uchifuzume_ruleset()
+    semantic = compile_semantic_ruleset(ruleset)
+    native_rules = compile_native_semantic_rules(semantic)
+    board = tuple(piece for row in semantic.support.initial_position for piece in row)
+    python_position = Position(board, (Hands((("P", 1),)), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_hands = [[0] * len(type_ids), [0] * len(type_ids)]
+    native_hands[0][type_ids["P"]] = 1
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, 0] for piece in board],
+        "hands": native_hands,
+        "aux_state": (),
+    })
+    expected = _python_probe(semantic, python_position, native_rules, 2)
+    observed = probe_search(native_rules, native_position, 2)
+    assert observed == expected, fixture_name
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_probe_search_matches_python_on_promotion_position():
+    from rule_semantics_ir_fixtures import _king_type
+
+    n = 5
+    pawn = PieceType("P", "P", (LeapAtom((0, 1)),), is_promotable=True, promotion_target_ids=("G",))
+    gold = PieceType("G", "G", (LeapAtom((1, 0)),))
+    action = RuleSemanticAction(
+        name="promotion_move",
+        type_ids=("P",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
+        promotion_mode="inherit_compiled_masks",
+    )
+    rows = [[None] * n for _ in range(n)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[4][4] = Piece(1, "K", "K")
+    source, target = Square(1, 1), Square(1, 2)
+    ruleset = RuleSet(
+        board_size=n,
+        piece_types=(_king_type(), pawn, gold),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"P": ((False,) * 25, (False,) * 25), "G": ((False,) * 25, (False,) * 25)},
+        promotion_allowed={"P": (frozenset({(source, target)}), frozenset({(source, target)}))},
+        promotion_forced={"P": (frozenset(), frozenset())},
+        semantic_actions=(action,),
+    )
+    semantic = compile_semantic_ruleset(ruleset)
+    board = list(rows[0] + rows[1] + rows[2] + rows[3] + rows[4])
+    board[source.rank * n + source.file] = Piece(0, "P", "P")
+    python_position = Position(tuple(board), (Hands.empty(), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    native_rules = compile_native_semantic_rules(semantic)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, 0] for piece in board],
+        "hands": [[0] * len(type_ids), [0] * len(type_ids)],
+        "aux_state": (),
+    })
+    assert probe_search(native_rules, native_position, 2) == _python_probe(semantic, python_position, native_rules, 2)
