@@ -165,6 +165,29 @@ def test_native_probe_search_accepts_stable_board_and_hand_profile():
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_probe_search_rejects_partial_or_malformed_profile():
+    from rule_semantics_ir_fixtures import nifu_ruleset
+
+    semantic = compile_semantic_ruleset(nifu_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    board = tuple(piece for row in semantic.support.initial_position for piece in row)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, 0] for piece in board],
+        "hands": [[0] * len(type_ids), [0] * len(type_ids)],
+        "aux_state": (),
+    })
+    with pytest.raises(ValueError, match="supplied together"):
+        probe_search(native_rules, native_position, 1, board_values=[1] * len(type_ids))
+    with pytest.raises(ValueError, match="length"):
+        probe_search(native_rules, native_position, 1, board_values=[1], hand_values=[1])
+    with pytest.raises(ValueError, match="bounded"):
+        probe_search(native_rules, native_position, 1, board_values=[1] * len(type_ids), hand_values=[1_000_001] * len(type_ids))
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
 def test_native_probe_search_matches_python_on_promotion_position():
     from rule_semantics_ir_fixtures import _king_type
 
