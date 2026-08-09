@@ -2377,6 +2377,29 @@ static int gc_semantic_target_holds(uint8_t target_kind, const GCPiece *cell, ui
     return target_kind == 3;
 }
 
+static int gc_semantic_path_holds(const GCSemPattern *pattern,
+                                  const GCSemPathEntry *entry, uint16_t target_index,
+                                  const GCSemanticPosition *pos, uint8_t side) {
+    uint16_t occupied = 0;
+    int first_owner = -1, last_owner = -1;
+    for (uint16_t i = 0; i < target_index; i++) {
+        const GCPiece *piece = &pos->board[entry->squares[i]];
+        if (!piece->occupied) continue;
+        occupied++;
+        if (first_owner < 0) first_owner = piece->owner == side ? 0 : 1;
+        last_owner = piece->owner == side ? 0 : 1;
+    }
+    for (uint8_t i = 0; i < pattern->path_count; i++) {
+        const GCSemPathPredicate *predicate = &pattern->path[i];
+        if (predicate->kind == 0 && occupied != 0) return 0;
+        if (predicate->kind == 1 && (!predicate->has_count || occupied != predicate->count)) return 0;
+        if (predicate->kind == 2 && ((!predicate->has_lo || occupied < predicate->lo) || (!predicate->has_hi || occupied > predicate->hi))) return 0;
+        if (predicate->kind == 3 && predicate->owner_filter != 2 && first_owner != (int)predicate->owner_filter) return 0;
+        if (predicate->kind == 4 && predicate->owner_filter != 2 && last_owner != (int)predicate->owner_filter) return 0;
+    }
+    return 1;
+}
+
 static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -2423,9 +2446,11 @@ static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
                 for (uint16_t ei = 0; ei < paths->count; ei++) {
                     if (paths->entries[ei].source != source) continue;
                     const GCSemPathEntry *entry = &paths->entries[ei];
-                    for (uint16_t si = 0; si < entry->count; si++) {
+                    uint16_t start = geo->min_steps > 0 ? (uint16_t)(geo->min_steps - 1) : 0;
+                    for (uint16_t si = start; si < entry->count; si++) {
                         uint16_t target = entry->squares[si];
                         if (target >= rules->board_size * rules->board_size || !gc_semantic_target_holds(pattern->target, &pos->board[target], side)) continue;
+                        if (!gc_semantic_path_holds(pattern, entry, si, pos, side)) continue;
                         uint64_t action = ((uint64_t)target) | ((uint64_t)source << 8) |
                             (255ull << 16) | ((uint64_t)piece->base_type << 24) |
                             ((uint64_t)GC_ACTION_KIND_SEMANTIC_BOARD << 32) |
