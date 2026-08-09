@@ -1,0 +1,15 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "audit",
+  "audit_id": "semantic-payload-v2-prereq-audit-002",
+  "candidate_sha": "38c554afb074aed391b23e356f36dc52e3d8a920",
+  "base_sha": "750c10a718cc045b8abdd0b992455131579be8d8",
+  "verdict": "PASS",
+  "findings": [],
+  "notes": [
+    "Payload v2 duplicate type IDs fail closed.",
+    "Embedded NUL cannot silently truncate identity.",
+    "v1 exact round-trip compatibility is explicitly regression-tested.",
+    "Executor capability remains separate and requires future audit."
+  ]
+}
