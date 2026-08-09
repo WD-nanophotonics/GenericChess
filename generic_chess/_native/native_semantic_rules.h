@@ -1,12 +1,12 @@
 #ifndef GENERIC_CHESS_NATIVE_SEMANTIC_RULES_H
 #define GENERIC_CHESS_NATIVE_SEMANTIC_RULES_H
 
-/* Phase 1.9C-1: C-owned static semantic rules capsule (ADR-017).
+/* Phase 1.9C-1: C-owned semantic rules capsule (ADR-017).
  *
- * This is a compile-only contract: it owns the deterministic numeric
- * payload of CompiledSemanticIR v2 + support and can reconstruct it
- * exactly.  It is deliberately separate from legacy GCRules and performs no
- * semantic execution. */
+ * The capsule owns the deterministic numeric payload of CompiledSemanticIR
+ * v2 + support and can reconstruct it exactly. It remains deliberately
+ * separate from legacy GCRules; runtime execution lives in the independent
+ * native_semantic_runtime module and is still capability-gated. */
 
 #include "native_types.h"
 #include <Python.h>
