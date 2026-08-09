@@ -1,0 +1,25 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "policy",
+  "policy_id": "continuous-execution-v1",
+  "scope": "all current and future GenericChess inbox tasks unless explicitly overridden",
+  "priority": "hard",
+  "rule": "After consuming an inbox TASK, continue execution until full completion or a genuine hard blocker. Checkpoints, pushes, passing tests, phase boundaries, and pending Chat audits are not stop conditions.",
+  "active_task": "native-semantic-runtime-search-002",
+  "required_persistence": [
+    "track coordination/AGENT_EXECUTION_POLICY.md",
+    "reference it from coordination/AGENT_BOOTSTRAP.md"
+  ],
+  "valid_stop_states": [
+    "COMPLETE",
+    "HARD_BLOCKED"
+  ],
+  "invalid_stop_reasons": [
+    "checkpoint pushed",
+    "phase completed",
+    "tests passed",
+    "waiting for Chat audit",
+    "next phase is large",
+    "progress report available"
+  ]
+}
