@@ -1059,21 +1059,32 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            const char *text = PyUnicode_AsUTF8(item);
-            if (text == NULL || !*text) {
+            Py_ssize_t text_len = 0;
+            const char *text = PyUnicode_AsUTF8AndSize(item, &text_len);
+            if (text == NULL || text_len <= 0 ||
+                memchr(text, '\0', (size_t)text_len) != NULL) {
                 PyErr_SetString(PyExc_ValueError,
-                                "semantic v2 type_id must be non-empty UTF-8");
+                                "semantic v2 type_id must be non-empty UTF-8 without NUL");
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            size_t size = strlen(text) + 1;
+            for (uint16_t prior = 0; prior < t; prior++) {
+                if (strcmp(rules->type_ids[prior], text) == 0) {
+                    PyErr_SetString(PyExc_ValueError,
+                                    "semantic v2 type_ids must be unique");
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
+            }
+            size_t size = (size_t)text_len + 1;
             rules->type_ids[t] = (char *)malloc(size);
             if (rules->type_ids[t] == NULL) {
                 PyErr_NoMemory();
                 gc_semantic_rules_free(rules);
                 return NULL;
             }
-            memcpy(rules->type_ids[t], text, size);
+            memcpy(rules->type_ids[t], text, (size_t)text_len);
+            rules->type_ids[t][text_len] = '\0';
         }
     }
     for (uint16_t t = 0; t < rules->type_count; t++) {

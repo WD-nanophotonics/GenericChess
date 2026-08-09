@@ -77,6 +77,31 @@ def test_c1_malformed_payload_fails_closed(module):
         module.compile_semantic_rules(bad_count)
 
 
+def test_c1_v2_type_ids_are_unique_and_nul_free(module):
+    semantic = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
+    payload, _ = native_compiler.build_semantic_compile_payload(semantic)
+    duplicate = copy.deepcopy(payload)
+    duplicate["type_ids"][1] = duplicate["type_ids"][0]
+    with pytest.raises(ValueError, match="unique"):
+        module.compile_semantic_rules(duplicate)
+    embedded_nul = copy.deepcopy(payload)
+    embedded_nul["type_ids"][0] = "A\x00B"
+    with pytest.raises(ValueError, match="without NUL"):
+        module.compile_semantic_rules(embedded_nul)
+
+
+def test_c1_v1_payload_roundtrips_without_v2_type_ids(module):
+    semantic = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
+    payload, _ = native_compiler.build_semantic_compile_payload(semantic)
+    v1 = copy.deepcopy(payload)
+    v1["semantic_payload_version"] = 1
+    v1.pop("type_ids")
+    capsule = module.compile_semantic_rules(v1)
+    observed = dict(module.semantic_rules_info(capsule))
+    assert observed == v1
+    assert "type_ids" not in observed
+
+
 def _mutate_rejected(module, payload, mutator, note):
     mutated = copy.deepcopy(payload)
     mutator(mutated)
