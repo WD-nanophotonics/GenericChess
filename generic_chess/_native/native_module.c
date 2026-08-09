@@ -2467,6 +2467,19 @@ static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
     return PySequence_Tuple(out);
 }
 
+static PyObject *gc_semantic_history_occurrences(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *pos_capsule;
+    unsigned long long lo, hi;
+    if (!PyArg_ParseTuple(args, "OKK", &pos_capsule, &lo, &hi)) return NULL;
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!pos) return NULL;
+    unsigned long count = 0;
+    for (uint16_t i = 0; i < pos->history_len; i++)
+        if (pos->history_lo[i] == (uint64_t)lo && pos->history_hi[i] == (uint64_t)hi) count++;
+    return PyLong_FromUnsignedLong(count);
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2604,6 +2617,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_action_unpack(action) -> exact semantic action fields"},
     {"semantic_candidate_actions", gc_semantic_candidate_actions, METH_VARARGS,
      "semantic_candidate_actions(rules, position) -> exact candidate actions"},
+    {"semantic_history_occurrences", gc_semantic_history_occurrences, METH_VARARGS,
+     "semantic_history_occurrences(position, lo, hi) -> occurrence count"},
     {NULL, NULL, 0, NULL}
 };
 

@@ -4,7 +4,14 @@ import pytest
 
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
-from generic_chess.native.semantic import candidate_actions, pack_position, position_key, snapshot, unpack_action
+from generic_chess.native.semantic import (
+    candidate_actions,
+    history_occurrences,
+    pack_position,
+    position_key,
+    snapshot,
+    unpack_action,
+)
 from generic_chess import _native_core
 from generic_chess.core.keys import semantic_position_key
 from generic_chess.core.pieces import Piece
@@ -86,6 +93,9 @@ def test_native_semantic_history_roundtrip_and_repetition_count():
     observed = snapshot(native_rules, pack_position(native_rules, payload))
     assert observed["history"] == ((1, 2), (3, 4), (1, 2))
     assert observed["history_occurrences"] == 2
+    position = pack_position(native_rules, payload)
+    assert history_occurrences(position, 1, 2) == 2
+    assert history_occurrences(position, 9, 9) == 0
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")

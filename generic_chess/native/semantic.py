@@ -63,3 +63,9 @@ def candidate_actions(native_rules, position) -> tuple[int, ...]:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return tuple(int(action) for action in _module().semantic_candidate_actions(native_rules.capsule, position))
+
+
+def history_occurrences(position, lo: int, hi: int) -> int:
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return int(_module().semantic_history_occurrences(position, int(lo), int(hi)))
