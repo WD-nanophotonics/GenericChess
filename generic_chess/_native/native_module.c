@@ -2708,8 +2708,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_make_checked(rules, position, action) -> child position capsule"},
     {"semantic_make_unmake_roundtrip", gc_semantic_make_unmake_roundtrip, METH_VARARGS,
      "semantic_make_unmake_roundtrip(rules, position, action) -> roundtrip result"},
-    {"semantic_perft", gc_semantic_perft, METH_VARARGS,
-     "semantic_perft(rules, position, depth) -> recursive candidate node count"},
+    {"semantic_candidate_perft", gc_semantic_perft, METH_VARARGS,
+     "semantic_candidate_perft(rules, position, depth) -> recursive guarded candidate node count"},
     {NULL, NULL, 0, NULL}
 };
 

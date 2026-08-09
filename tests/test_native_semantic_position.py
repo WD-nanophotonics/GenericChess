@@ -9,7 +9,7 @@ from generic_chess.native.semantic import (
     history_occurrences,
     make_checked,
     make_unmake_roundtrip,
-    perft,
+    candidate_perft,
     pack_position,
     position_key,
     snapshot,
@@ -341,9 +341,9 @@ def test_native_semantic_perft_recurses_over_checked_children():
             "aux_state": (),
         },
     )
-    assert perft(native_rules, parent, 0) == 1
-    assert perft(native_rules, parent, 1) == 3
-    assert perft(native_rules, parent, 2) == 0
+    assert candidate_perft(native_rules, parent, 0) == 1
+    assert candidate_perft(native_rules, parent, 1) == 3
+    assert candidate_perft(native_rules, parent, 2) == 0
 
     two_kings = [None] * (semantic.support.board_size ** 2)
     two_kings[0] = [king, king, 0, 0]
@@ -358,4 +358,32 @@ def test_native_semantic_perft_recurses_over_checked_children():
             "aux_state": (),
         },
     )
-    assert [perft(native_rules, two_king_parent, depth) for depth in range(4)] == [1, 3, 9, 54]
+    assert [candidate_perft(native_rules, two_king_parent, depth) for depth in range(4)] == [1, 3, 9, 54]
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_castling_path_step_invariants_preserve_python_root_count():
+    from rule_semantics_ir_fixtures import castling_ruleset
+
+    ruleset = castling_ruleset()
+    semantic = compile_semantic_ruleset(ruleset)
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = tuple(piece for row in ruleset.initial_position for piece in row)
+    native_board = [
+        None
+        if piece is None
+        else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, int(piece.promoted)]
+        for piece in board
+    ]
+    parent = pack_position(
+        native_rules,
+        {
+            "side": 0,
+            "ply": 0,
+            "board": native_board,
+            "hands": [[0] * len(ids), [0] * len(ids)],
+            "aux_state": (),
+        },
+    )
+    assert candidate_perft(native_rules, parent, 1) == 15
