@@ -259,7 +259,7 @@ def test_native_semantic_probe_detects_checkmate_terminal_state():
         effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
         invariants=(RuleInvariant("own_anchor_safe"),),
     )
-    initial = ((Piece(0, "K", "K"), None, None), (None, None, None), (None, None, Piece(1, "K", "K")))
+    initial = ((Piece(0, "K", "K"), None, None), (None, Piece(0, "X", "X"), None), (None, None, Piece(1, "K", "K")))
     ruleset = RuleSet(
         board_size=3,
         piece_types=(king, actor),
@@ -289,6 +289,51 @@ def test_native_semantic_probe_detects_checkmate_terminal_state():
     result = probe_search(native_rules, native_position, 2)
     assert result["has_best"] == 0
     assert result["score"] == -1000000
+    assert result["nodes"] == 1
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_probe_detects_stalemate_terminal_state():
+    king = PieceType("K", "K", (), is_anchor=True)
+    actor = PieceType("X", "X", (LeapAtom((1, 0)),))
+    initial = ((Piece(0, "K", "K"), None, None), (None, Piece(0, "X", "X"), None), (None, None, Piece(1, "K", "K")))
+    action = RuleSemanticAction(
+        name="x_move",
+        type_ids=("X",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
+    )
+    ruleset = RuleSet(
+        board_size=3,
+        piece_types=(king, actor),
+        initial_position=initial,
+        drop_allowed={"X": ((False,) * 9, (False,) * 9)},
+        semantic_actions=(action,),
+    )
+    semantic = compile_semantic_ruleset(ruleset)
+    stalemate_board = ((Piece(0, "K", "K"), None, None), (None, None, None), (None, None, Piece(1, "K", "K")))
+    python_position = Position(
+        tuple(piece for row in stalemate_board for piece in row),
+        (Hands.empty(), Hands.empty()),
+        0,
+        semantic.support.ruleset_fingerprint,
+    )
+    engine = SemanticEngine(semantic)
+    assert not engine.legal_actions(python_position)
+    assert not engine.in_check(python_position, 0)
+    native_rules = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, 0] for piece in python_position.board],
+        "hands": [[0] * len(ids), [0] * len(ids)],
+        "aux_state": (),
+    })
+    result = probe_search(native_rules, native_position, 2)
+    assert result["has_best"] == 0
+    assert result["score"] == 0
     assert result["nodes"] == 1
 
 

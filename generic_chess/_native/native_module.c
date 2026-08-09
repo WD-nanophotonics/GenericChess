@@ -2422,7 +2422,39 @@ static int gc_semantic_path_holds(const GCSemPattern *pattern,
     return 1;
 }
 
-static int gc_semantic_append_board_actions(PyObject *out,
+typedef struct {
+    uint64_t *data;
+    size_t count;
+    size_t capacity;
+} GCSemanticActionBuffer;
+
+static void gc_semantic_action_buffer_init(GCSemanticActionBuffer *buffer) {
+    buffer->data = NULL;
+    buffer->count = 0;
+    buffer->capacity = 0;
+}
+
+static void gc_semantic_action_buffer_free(GCSemanticActionBuffer *buffer) {
+    free(buffer->data);
+    buffer->data = NULL;
+    buffer->count = 0;
+    buffer->capacity = 0;
+}
+
+static int gc_semantic_action_buffer_append(GCSemanticActionBuffer *buffer, uint64_t action) {
+    if (buffer->count == buffer->capacity) {
+        size_t next = buffer->capacity ? buffer->capacity * 2 : 64;
+        if (next < buffer->capacity || next > (size_t)-1 / sizeof(*buffer->data)) return 0;
+        uint64_t *data = (uint64_t *)realloc(buffer->data, next * sizeof(*buffer->data));
+        if (!data) return 0;
+        buffer->data = data;
+        buffer->capacity = next;
+    }
+    buffer->data[buffer->count++] = action;
+    return 1;
+}
+
+static int gc_semantic_append_board_actions(GCSemanticActionBuffer *out,
                                             const GCSemanticRules *rules,
                                             const GCSemPattern *pattern,
                                             uint8_t side,
@@ -2461,29 +2493,23 @@ static int gc_semantic_append_board_actions(PyObject *out,
             ((uint64_t)GC_ACTION_KIND_SEMANTIC_BOARD << 32) |
             ((uint64_t)pattern_index << 36) | ((uint64_t)geometry_index << 44) |
             ((uint64_t)piece->current_type << 56);
-        PyObject *value = PyLong_FromUnsignedLongLong(action);
-        if (!value || PyList_Append(out, value) != 0) { Py_XDECREF(value); return 0; }
-        Py_DECREF(value);
+        if (!gc_semantic_action_buffer_append(out, action)) return 0;
     }
     return 1;
 }
 
-static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
-    (void)self;
-    PyObject *rules_capsule, *pos_capsule;
-    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
-    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
-    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
-    if (!rules || !pos) return NULL;
-    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
-    PyObject *out = PyList_New(0);
-    if (!out) return NULL;
+static int gc_semantic_generate_candidate_buffer(const GCSemanticRules *rules,
+                                                 const GCSemanticPosition *pos,
+                                                 GCSemanticActionBuffer *buffer) {
     uint8_t side = pos->side_to_move;
     for (uint16_t pi = 0; pi < rules->pattern_count; pi++) {
         const GCSemPattern *pattern = &rules->patterns[pi];
         for (uint8_t gi = 0; gi < pattern->geometry_count; gi++) {
             uint16_t gid = pattern->geometry_indices[gi];
-            if (gid >= rules->geometry_count) { Py_DECREF(out); PyErr_SetString(PyExc_ValueError, "semantic pattern geometry out of range"); return NULL; }
+            if (gid >= rules->geometry_count) {
+                PyErr_SetString(PyExc_ValueError, "semantic pattern geometry out of range");
+                return 0;
+            }
             const GCSemGeometry *geo = &rules->geometries[gid];
             if (geo->kind == 2) {
                 for (uint8_t ti = 0; ti < pattern->type_count; ti++) {
@@ -2498,9 +2524,10 @@ static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
                             ((uint64_t)GC_ACTION_KIND_SEMANTIC_DROP << 32) |
                             ((uint64_t)pi << 36) | ((uint64_t)gid << 44) |
                             ((uint64_t)tid << 56);
-                        PyObject *value = PyLong_FromUnsignedLongLong(action);
-                        if (!value || PyList_Append(out, value) != 0) { Py_XDECREF(value); Py_DECREF(out); return NULL; }
-                        Py_DECREF(value);
+                        if (!gc_semantic_action_buffer_append(buffer, action)) {
+                            PyErr_NoMemory();
+                            return 0;
+                        }
                     }
                 }
                 continue;
@@ -2520,13 +2547,53 @@ static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
                         uint16_t target = entry->squares[si];
                         if (target >= rules->board_size * rules->board_size || !gc_semantic_target_holds(pattern->target, &pos->board[target], side)) continue;
                         if (!gc_semantic_path_holds(pattern, entry, si, pos, side)) continue;
-                        if (!gc_semantic_append_board_actions(out, rules, pattern, side, piece, source, target, pi, gid)) { Py_DECREF(out); PyErr_SetString(PyExc_ValueError, "semantic promotion action construction failed"); return NULL; }
+                        if (!gc_semantic_append_board_actions(buffer, rules, pattern, side, piece, source, target, pi, gid)) {
+                            PyErr_SetString(PyExc_ValueError, "semantic promotion action construction failed");
+                            return 0;
+                        }
                     }
                 }
             }
         }
     }
-    return PySequence_Tuple(out);
+    return 1;
+}
+
+static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !pos) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
+    GCSemanticActionBuffer buffer;
+    gc_semantic_action_buffer_init(&buffer);
+    if (!gc_semantic_generate_candidate_buffer(rules, pos, &buffer)) {
+        gc_semantic_action_buffer_free(&buffer);
+        return NULL;
+    }
+    if (buffer.count > (size_t)PY_SSIZE_T_MAX) {
+        gc_semantic_action_buffer_free(&buffer);
+        PyErr_SetString(PyExc_OverflowError, "semantic action list is too large");
+        return NULL;
+    }
+    PyObject *out = PyTuple_New((Py_ssize_t)buffer.count);
+    if (!out) {
+        gc_semantic_action_buffer_free(&buffer);
+        return NULL;
+    }
+    for (size_t i = 0; i < buffer.count; i++) {
+        PyObject *value = PyLong_FromUnsignedLongLong(buffer.data[i]);
+        if (!value) {
+            Py_DECREF(out);
+            gc_semantic_action_buffer_free(&buffer);
+            return NULL;
+        }
+        PyTuple_SET_ITEM(out, (Py_ssize_t)i, value);
+    }
+    gc_semantic_action_buffer_free(&buffer);
+    return out;
 }
 
 static PyObject *gc_semantic_history_occurrences(PyObject *self, PyObject *args) {
@@ -2624,12 +2691,15 @@ static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
 static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
                                           const GCSemanticPosition *position,
                                           int *ok) {
-    PyObject *candidates = gc_semantic_candidate_tuple_native(rules, position);
-    if (!candidates) { *ok = 0; return 0; }
-    Py_ssize_t count = PyTuple_Size(candidates);
-    for (Py_ssize_t i = 0; i < count; i++) {
-        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(candidates, i));
-        if (PyErr_Occurred()) { PyErr_Clear(); continue; }
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    if (!gc_semantic_generate_candidate_buffer(rules, position, &candidates)) {
+        gc_semantic_action_buffer_free(&candidates);
+        *ok = 0;
+        return 0;
+    }
+    for (size_t i = 0; i < candidates.count; i++) {
+        uint64_t raw = candidates.data[i];
         GCSemanticPosition probe = *position;
         /* Terminal authority checks legal-action availability independently of
          * the max-ply/repetition-history cutoff, matching SemanticEngine. */
@@ -2638,11 +2708,11 @@ static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
         probe.history_exact = 1;
         GCSemanticPosition child;
         if (gc_semantic_runtime_make_checked(&child, rules, &probe, (uint64_t)raw)) {
-            Py_DECREF(candidates);
+            gc_semantic_action_buffer_free(&candidates);
             return 1;
         }
     }
-    Py_DECREF(candidates);
+    gc_semantic_action_buffer_free(&candidates);
     return 0;
 }
 
@@ -2721,13 +2791,16 @@ static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, co
     if (terminal < 0) { *ok = 0; return 0; }
     if (terminal == 3 || terminal == 4) return 1;
     if (terminal == 1 || terminal == 2) return 0;
-    PyObject *actions = gc_semantic_candidate_tuple_native(rules, position);
-    if (!actions) { *ok = 0; return 0; }
+    GCSemanticActionBuffer actions;
+    gc_semantic_action_buffer_init(&actions);
+    if (!gc_semantic_generate_candidate_buffer(rules, position, &actions)) {
+        gc_semantic_action_buffer_free(&actions);
+        *ok = 0;
+        return 0;
+    }
     unsigned long long total = 0;
-    Py_ssize_t count = PyTuple_Size(actions);
-    for (Py_ssize_t i = 0; i < count; i++) {
-        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
-        if (PyErr_Occurred()) { *ok = 0; break; }
+    for (size_t i = 0; i < actions.count; i++) {
+        uint64_t raw = actions.data[i];
         GCSemanticPosition work = *position;
         GCSemanticUndo undo;
         if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
@@ -2736,7 +2809,7 @@ static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, co
         if (ULLONG_MAX - total < branch) { *ok = 0; break; }
         total += branch;
     }
-    Py_DECREF(actions);
+    gc_semantic_action_buffer_free(&actions);
     return total;
 }
 
@@ -2791,21 +2864,17 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
     if (terminal == 1) { result.score = -1000000; return result; }
     if (terminal != 0) { result.score = 0; return result; }
     if (depth == 0) return result;
-    PyObject *actions = gc_semantic_candidate_tuple_native(rules, position);
-    if (!actions) return result;
+    GCSemanticActionBuffer actions;
+    gc_semantic_action_buffer_init(&actions);
+    if (!gc_semantic_generate_candidate_buffer(rules, position, &actions)) {
+        gc_semantic_action_buffer_free(&actions);
+        return result;
+    }
     int found = 0;
     int best_score = -GC_SEMANTIC_PROBE_INF;
-    Py_ssize_t count = PyTuple_Size(actions);
-    uint64_t *action_buffer = count > 0 ? (uint64_t *)malloc((size_t)count * sizeof(*action_buffer)) : NULL;
-    if (count > 0 && !action_buffer) { Py_DECREF(actions); return result; }
-    for (Py_ssize_t i = 0; i < count; i++) {
-        action_buffer[i] = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
-        if (PyErr_Occurred()) { PyErr_Clear(); action_buffer[i] = 0; }
-    }
-    Py_DECREF(actions);
-    for (Py_ssize_t i = 0; i < count; i++) {
-        unsigned long long raw = action_buffer[i];
-        if (raw == 0 && action_buffer[i] == 0) continue;
+    for (size_t i = 0; i < actions.count; i++) {
+        uint64_t raw = actions.data[i];
+        if (raw == 0) continue;
         GCSemanticPosition work = *position;
         GCSemanticUndo undo;
         if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
@@ -2826,7 +2895,7 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         if (score > alpha) alpha = score;
         if (alpha >= beta) break;
     }
-    free(action_buffer);
+    gc_semantic_action_buffer_free(&actions);
     return result;
 }
 
