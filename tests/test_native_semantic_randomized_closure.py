@@ -7,9 +7,10 @@ import pytest
 from generic_chess.core.keys import semantic_position_key
 from generic_chess.core.position import Hands, Position
 from generic_chess.core.semantic_executor import SemanticEngine
+from generic_chess.core.terminal import TerminalStatus
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
-from generic_chess.native.semantic import candidate_perft, guarded_actions, make_checked, pack_action, pack_position, position_key, snapshot
+from generic_chess.native.semantic import candidate_perft, guarded_actions, make_checked, pack_action, pack_position, position_key, probe_search, snapshot
 
 from phase19c1_native_semantic_fixtures import semantic_corpus
 
@@ -65,7 +66,16 @@ def test_native_semantic_randomized_multi_fixture_closure():
                 python_actions = _packed_actions(semantic, python_position, native_rules)
                 native_actions = set(guarded_actions(native_rules, native_position))
                 assert set(python_actions) == native_actions, f"{name} seed={seed} ply={ply} action-set"
-                assert position_key(native_rules, native_position) == semantic_position_key(python_position, semantic.support, semantic.ir.aux_slots), f"{name} seed={seed} ply={ply} key"
+                python_key = semantic_position_key(python_position, semantic.support, semantic.ir.aux_slots)
+                assert position_key(native_rules, native_position) == python_key, f"{name} seed={seed} ply={ply} key"
+                terminal = engine.terminal_result(python_position, ply, ())
+                native_probe = probe_search(native_rules, native_position, 1)
+                if terminal.status is TerminalStatus.ONGOING:
+                    assert native_probe["has_best"] == int(bool(native_actions)), f"{name} seed={seed} ply={ply} terminal"
+                elif terminal.status is TerminalStatus.CHECKMATE:
+                    assert native_probe["has_best"] == 0 and native_probe["score"] == -1_000_000, f"{name} seed={seed} ply={ply} checkmate"
+                else:
+                    assert native_probe["has_best"] == 0 and native_probe["score"] == 0, f"{name} seed={seed} ply={ply} terminal={terminal.status}"
                 if not python_actions:
                     break
                 chosen = rng.choice(sorted(python_actions))
@@ -84,6 +94,10 @@ def test_native_semantic_randomized_multi_fixture_closure():
                 assert observed["hands"] == expected_hands, f"{name} seed={seed} ply={ply} hands action={chosen}"
                 assert observed["side"] == python_position.side_to_move
                 assert observed["ply"] == ply + 1
+                child_key = semantic_position_key(python_position, semantic.support, semantic.ir.aux_slots)
+                assert position_key(native_rules, native_position) == child_key, f"{name} seed={seed} ply={ply} child-key action={chosen}"
+                words = tuple(int(child_key[i:i + 16], 16) for i in range(0, 64, 16))
+                assert observed["history"][-1] == words, f"{name} seed={seed} ply={ply} history action={chosen}"
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
