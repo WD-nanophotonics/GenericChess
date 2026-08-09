@@ -9,6 +9,7 @@
  * semantic execution. */
 
 #include "native_types.h"
+#include <Python.h>
 #include <stdint.h>
 
 #define GC_SEM_MAX_GEOMETRIES 4096

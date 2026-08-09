@@ -22,6 +22,7 @@
 #include "native_state.h"
 #include "native_tt.h"
 #include "native_semantic_rules.h"
+#include "native_semantic_state.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
@@ -29,6 +30,7 @@
 #define GC_ENGINE_CAPSULE "generic_chess._native_core.gc_engine"
 #define GC_CANCEL_CAPSULE "generic_chess._native_core.gc_cancel"
 #define GC_SEM_RULES_CAPSULE "generic_chess._native_core.gc_semantic_rules"
+#define GC_SEM_POSITION_CAPSULE "generic_chess._native_core.gc_semantic_position"
 
 static PyObject *gc_native_error = NULL;
 
@@ -85,6 +87,12 @@ static void gc_semantic_rules_capsule_free(PyObject *capsule) {
     if (rules != NULL) {
         gc_semantic_rules_free(rules);
     }
+}
+
+static void gc_semantic_position_capsule_free(PyObject *capsule) {
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(
+        capsule, GC_SEM_POSITION_CAPSULE);
+    if (pos != NULL) free(pos);
 }
 
 static uint64_t gc_py_long_as_u64(PyObject *obj, int *ok) {
@@ -2081,6 +2089,103 @@ cleanup:
 
 /* ------------------------------------------------------- semantic payload */
 
+static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *payload;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &payload)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    if (rules == NULL || !PyDict_Check(payload)) {
+        if (rules == NULL) return NULL;
+        PyErr_SetString(PyExc_TypeError, "semantic_pack_position expects dict payload");
+        return NULL;
+    }
+    PyObject *board = PyDict_GetItemString(payload, "board");
+    PyObject *hands = PyDict_GetItemString(payload, "hands");
+    PyObject *side_obj = PyDict_GetItemString(payload, "side");
+    PyObject *ply_obj = PyDict_GetItemString(payload, "ply");
+    if (!PyList_Check(board) || !PyList_Check(hands) || !side_obj || !ply_obj) {
+        PyErr_SetString(PyExc_ValueError, "semantic position payload missing fields");
+        return NULL;
+    }
+    GCSemanticBoardPayload bp;
+    memset(&bp, 0, sizeof(bp));
+    int ok = 1;
+    bp.side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
+    bp.ply = (uint16_t)gc_py_long_as_long(ply_obj, &ok);
+    const uint16_t squares = (uint16_t)(rules->board_size * rules->board_size);
+    if (!ok || bp.side_to_move > 1 || bp.ply > rules->max_ply ||
+        PyList_Size(board) != squares || PyList_Size(hands) != 2) {
+        PyErr_SetString(PyExc_ValueError, "invalid semantic position scalar or board shape");
+        return NULL;
+    }
+    for (uint16_t sq = 0; sq < squares; sq++) {
+        PyObject *cell = PyList_GetItem(board, sq);
+        if (cell == Py_None) continue;
+        if (!PyList_Check(cell) || PyList_Size(cell) != 4) {
+            PyErr_SetString(PyExc_ValueError, "semantic board cell must be None or [base,current,owner,promoted]");
+            return NULL;
+        }
+        GCPiece *piece = &bp.board[sq];
+        piece->base_type = (uint16_t)gc_py_long_as_long(PyList_GetItem(cell, 0), &ok);
+        piece->current_type = (uint16_t)gc_py_long_as_long(PyList_GetItem(cell, 1), &ok);
+        piece->owner = (uint8_t)gc_py_long_as_long(PyList_GetItem(cell, 2), &ok);
+        piece->promoted = (uint8_t)gc_py_long_as_long(PyList_GetItem(cell, 3), &ok);
+        piece->occupied = 1;
+        if (!ok || piece->base_type >= rules->type_count || piece->current_type >= rules->type_count || piece->owner > 1 || piece->promoted > 1) {
+            PyErr_SetString(PyExc_ValueError, "invalid semantic board piece");
+            return NULL;
+        }
+    }
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        PyObject *counts = PyList_GetItem(hands, owner);
+        if (!PyList_Check(counts) || PyList_Size(counts) != rules->type_count) {
+            PyErr_SetString(PyExc_ValueError, "semantic hand shape mismatch");
+            return NULL;
+        }
+        for (uint16_t t = 0; t < rules->type_count; t++) {
+            long count = gc_py_long_as_long(PyList_GetItem(counts, t), &ok);
+            if (!ok || count < 0 || count > GC_MAX_HAND) {
+                PyErr_SetString(PyExc_ValueError, "invalid semantic hand count");
+                return NULL;
+            }
+            bp.hand_counts[owner][t] = (uint16_t)count;
+        }
+    }
+    GCSemanticPosition *pos = (GCSemanticPosition *)malloc(sizeof(*pos));
+    if (pos == NULL) { PyErr_NoMemory(); return NULL; }
+    if (!gc_semantic_position_pack(pos, rules, &bp)) {
+        free(pos); PyErr_SetString(PyExc_ValueError, "semantic position pack rejected payload"); return NULL;
+    }
+    return PyCapsule_New(pos, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
+}
+
+static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (rules == NULL || pos == NULL) return NULL;
+    PyObject *out = Py_BuildValue("{s:i,s:i}", "side", pos->side_to_move, "ply", pos->ply);
+    PyObject *board = PyList_New(rules->board_size * rules->board_size);
+    for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
+        GCPiece *p = &pos->board[sq];
+        PyObject *cell = p->occupied ? Py_BuildValue("(iiii)", p->base_type, p->current_type, p->owner, p->promoted) : Py_None;
+        if (!p->occupied) Py_INCREF(Py_None);
+        PyList_SET_ITEM(board, sq, cell);
+    }
+    PyDict_SetItemString(out, "board", board); Py_DECREF(board);
+    PyObject *hands = PyList_New(2);
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        PyObject *counts = PyList_New(rules->type_count);
+        for (uint16_t t = 0; t < rules->type_count; t++) PyList_SET_ITEM(counts, t, PyLong_FromUnsignedLong(pos->hand_counts[owner][t]));
+        PyList_SET_ITEM(hands, owner, counts);
+    }
+    PyDict_SetItemString(out, "hands", hands); Py_DECREF(hands);
+    return out;
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2204,6 +2309,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_rules_info(capsule) -> reconstructed normalized payload dict"},
     {"semantic_action_layout", gc_semantic_action_layout, METH_NOARGS,
      "semantic_action_layout() -> exact 64-bit semantic action identity layout"},
+    {"semantic_pack_position", gc_semantic_pack_position, METH_VARARGS,
+     "semantic_pack_position(rules, payload) -> semantic position capsule"},
+    {"semantic_position_snapshot", gc_semantic_position_snapshot, METH_VARARGS,
+     "semantic_position_snapshot(rules, position) -> canonical board snapshot"},
     {NULL, NULL, 0, NULL}
 };
 
