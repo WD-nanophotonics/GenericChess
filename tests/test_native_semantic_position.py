@@ -6,6 +6,7 @@ from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import (
     candidate_actions,
+    guarded_actions,
     history_occurrences,
     make_checked,
     make_unmake_roundtrip,
@@ -410,3 +411,4 @@ def test_native_bounded_s4_uchifuzume_root_count_matches_python():
         },
     )
     assert candidate_perft(native_rules, parent, 1) == 65
+    assert len(guarded_actions(native_rules, parent)) == 65

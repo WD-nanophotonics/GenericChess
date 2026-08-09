@@ -65,6 +65,13 @@ def candidate_actions(native_rules, position) -> tuple[int, ...]:
     return tuple(int(action) for action in _module().semantic_candidate_actions(native_rules.capsule, position))
 
 
+def guarded_actions(native_rules, position) -> tuple[int, ...]:
+    """Return exact actions surviving Native S0-S4 checks currently implemented."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return tuple(int(action) for action in _module().semantic_guarded_actions(native_rules.capsule, position))
+
+
 def history_occurrences(position, lo: int, hi: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")
@@ -84,7 +91,7 @@ def make_unmake_roundtrip(native_rules, position, action: int) -> dict:
     return dict(_module().semantic_make_unmake_roundtrip(native_rules.capsule, position, int(action)))
 
 
-def perft(native_rules, position, depth: int) -> int:
+def candidate_perft(native_rules, position, depth: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")
-    return int(_module().semantic_perft(native_rules.capsule, position, int(depth)))
+    return int(_module().semantic_candidate_perft(native_rules.capsule, position, int(depth)))

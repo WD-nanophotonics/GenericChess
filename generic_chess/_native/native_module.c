@@ -2531,6 +2531,33 @@ static PyObject *gc_semantic_candidate_tuple_native(const GCSemanticRules *rules
     return actions;
 }
 
+static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    PyObject *candidates = gc_semantic_candidate_tuple_native(rules, position);
+    if (!candidates) return NULL;
+    PyObject *guarded = PyList_New(0);
+    if (!guarded) { Py_DECREF(candidates); return NULL; }
+    Py_ssize_t count = PyTuple_Size(candidates);
+    for (Py_ssize_t i=0; i<count; i++) {
+        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(candidates, i));
+        if (PyErr_Occurred()) { Py_DECREF(candidates); Py_DECREF(guarded); return NULL; }
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) continue;
+        PyObject *value = PyLong_FromUnsignedLongLong(raw);
+        if (!value || PyList_Append(guarded, value) != 0) { Py_XDECREF(value); Py_DECREF(candidates); Py_DECREF(guarded); return NULL; }
+        Py_DECREF(value);
+    }
+    Py_DECREF(candidates);
+    PyObject *result = PySequence_Tuple(guarded);
+    Py_DECREF(guarded);
+    return result;
+}
+
 static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, const GCSemanticPosition *position, unsigned int depth, int *ok) {
     if (!*ok) return 0;
     if (depth == 0) return 1;
@@ -2710,6 +2737,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_make_unmake_roundtrip(rules, position, action) -> roundtrip result"},
     {"semantic_candidate_perft", gc_semantic_perft, METH_VARARGS,
      "semantic_candidate_perft(rules, position, depth) -> recursive guarded candidate node count"},
+    {"semantic_guarded_actions", gc_semantic_guarded_actions, METH_VARARGS,
+     "semantic_guarded_actions(rules, position) -> exact guarded action set"},
     {NULL, NULL, 0, NULL}
 };
 
