@@ -30,6 +30,9 @@ typedef struct {
     GCPiece board[GC_MAX_SQUARES];
     uint16_t hand_counts[2][GC_MAX_TYPES];
     GCSemAuxValue aux[GC_SEM_MAX_AUX_SLOTS][3];
+    uint64_t history_lo[GC_MAX_PLY + 1];
+    uint64_t history_hi[GC_MAX_PLY + 1];
+    uint16_t history_len;
 } GCSemanticBoardPayload;
 
 int gc_semantic_position_pack(GCSemanticPosition *pos,

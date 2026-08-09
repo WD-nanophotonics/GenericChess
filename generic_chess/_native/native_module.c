@@ -2177,6 +2177,37 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
             }
         }
     }
+    PyObject *history = PyDict_GetItemString(payload, "history");
+    if (history != NULL) {
+        if (!PyList_Check(history) || PyList_Size(history) > GC_MAX_PLY + 1) {
+            PyErr_SetString(PyExc_ValueError, "semantic history must be a bounded list");
+            return NULL;
+        }
+        bp.history_len = (uint16_t)PyList_Size(history);
+        for (Py_ssize_t i = 0; i < PyList_Size(history); i++) {
+            PyObject *entry = PyList_GetItem(history, i);
+            if (!PyList_Check(entry) && !PyTuple_Check(entry)) {
+                PyErr_SetString(PyExc_ValueError, "semantic history entry must be [lo, hi]");
+                return NULL;
+            }
+            if (PySequence_Size(entry) != 2) {
+                PyErr_SetString(PyExc_ValueError, "semantic history entry must have two words");
+                return NULL;
+            }
+            PyObject *lo_obj = PySequence_GetItem(entry, 0);
+            PyObject *hi_obj = PySequence_GetItem(entry, 1);
+            unsigned long long lo = PyLong_AsUnsignedLongLong(lo_obj);
+            unsigned long long hi = PyLong_AsUnsignedLongLong(hi_obj);
+            Py_XDECREF(lo_obj);
+            Py_XDECREF(hi_obj);
+            if (PyErr_Occurred()) {
+                PyErr_SetString(PyExc_ValueError, "semantic history words must be unsigned 64-bit values");
+                return NULL;
+            }
+            bp.history_lo[i] = (uint64_t)lo;
+            bp.history_hi[i] = (uint64_t)hi;
+        }
+    }
     GCSemanticPosition *pos = (GCSemanticPosition *)malloc(sizeof(*pos));
     if (pos == NULL) { PyErr_NoMemory(); return NULL; }
     if (!gc_semantic_position_pack(pos, rules, &bp)) {
@@ -2230,6 +2261,28 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
         }
     }
     PyDict_SetItemString(out, "aux_state", aux); Py_DECREF(aux);
+    PyObject *history = PyList_New(pos->history_len);
+    if (history == NULL) { Py_DECREF(out); return NULL; }
+    for (uint16_t i = 0; i < pos->history_len; i++) {
+        PyObject *entry = Py_BuildValue("(KK)",
+                                        (unsigned long long)pos->history_lo[i],
+                                        (unsigned long long)pos->history_hi[i]);
+        if (entry == NULL) { Py_DECREF(history); Py_DECREF(out); return NULL; }
+        PyList_SET_ITEM(history, i, entry);
+    }
+    PyDict_SetItemString(out, "history", history); Py_DECREF(history);
+    unsigned long long current_lo = 0, current_hi = 0;
+    if (pos->history_len > 0) {
+        current_lo = (unsigned long long)pos->history_lo[pos->history_len - 1];
+        current_hi = (unsigned long long)pos->history_hi[pos->history_len - 1];
+    }
+    unsigned long occurrences = 0;
+    for (uint16_t i = 0; i < pos->history_len; i++) {
+        if (pos->history_lo[i] == current_lo && pos->history_hi[i] == current_hi) occurrences++;
+    }
+    PyObject *occ = PyLong_FromUnsignedLong(occurrences);
+    if (occ == NULL) { Py_DECREF(out); return NULL; }
+    PyDict_SetItemString(out, "history_occurrences", occ); Py_DECREF(occ);
     return out;
 }
 

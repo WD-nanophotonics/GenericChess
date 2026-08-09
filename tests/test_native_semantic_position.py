@@ -67,3 +67,21 @@ def test_native_semantic_position_key_matches_python_contract():
     assert position_key(native_rules, native_position) == semantic_position_key(
         python_position, semantic.support, semantic.ir.aux_slots
     )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_history_roundtrip_and_repetition_count():
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    squares = semantic.support.board_size ** 2
+    payload = {
+        "side": 0,
+        "ply": 2,
+        "board": [None] * squares,
+        "hands": [[0] * len(native_rules.type_ids), [0] * len(native_rules.type_ids)],
+        "history": ((1, 2), (3, 4), (1, 2)),
+        "aux_state": (),
+    }
+    observed = snapshot(native_rules, pack_position(native_rules, payload))
+    assert observed["history"] == ((1, 2), (3, 4), (1, 2))
+    assert observed["history_occurrences"] == 2
