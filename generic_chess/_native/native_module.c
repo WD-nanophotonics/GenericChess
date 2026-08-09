@@ -2402,6 +2402,52 @@ static int gc_semantic_path_holds(const GCSemPattern *pattern,
     return 1;
 }
 
+static int gc_semantic_append_board_actions(PyObject *out,
+                                            const GCSemanticRules *rules,
+                                            const GCSemPattern *pattern,
+                                            uint8_t side,
+                                            const GCPiece *piece,
+                                            uint16_t source,
+                                            uint16_t target,
+                                            uint16_t pattern_index,
+                                            uint16_t geometry_index) {
+    uint16_t promotions[GC_MAX_PROMO_TARGETS + 1];
+    uint8_t promotion_count = 0;
+    if (pattern->promotion_mode == 0) {
+        promotions[promotion_count++] = 255;
+    } else if (pattern->promotion_mode == 2) {
+        if (!pattern->has_explicit_promotion) return 0;
+        promotions[promotion_count++] = pattern->explicit_promotion_type;
+    } else if (pattern->promotion_mode == 1) {
+        int allowed = 0;
+        uint32_t pair = ((uint32_t)source << 16) | target;
+        const GCSemPairList *pairs = &rules->promo_allowed[piece->base_type][side];
+        for (uint16_t i = 0; i < pairs->count; i++) if (pairs->pairs[i] == pair) { allowed = 1; break; }
+        if (!allowed || !rules->types[piece->base_type].is_promotable) {
+            promotions[promotion_count++] = 255;
+        } else {
+            int forced = 0;
+            const GCSemSquareList *forced_squares = &rules->promo_forced[piece->base_type][side];
+            for (uint16_t i = 0; i < forced_squares->count; i++) if (forced_squares->squares[i] == target) { forced = 1; break; }
+            if (!forced) promotions[promotion_count++] = 255;
+            uint64_t alive = rules->alive_promo[piece->base_type][side][target];
+            for (uint8_t i = 0; i < rules->types[piece->base_type].promo_target_count; i++)
+                if (alive & (1ull << i)) promotions[promotion_count++] = rules->types[piece->base_type].promo_targets[i];
+        }
+    } else return 0;
+    for (uint8_t i = 0; i < promotion_count; i++) {
+        uint64_t action = ((uint64_t)target) | ((uint64_t)source << 8) |
+            ((uint64_t)promotions[i] << 16) | ((uint64_t)piece->base_type << 24) |
+            ((uint64_t)GC_ACTION_KIND_SEMANTIC_BOARD << 32) |
+            ((uint64_t)pattern_index << 36) | ((uint64_t)geometry_index << 44) |
+            ((uint64_t)piece->current_type << 56);
+        PyObject *value = PyLong_FromUnsignedLongLong(action);
+        if (!value || PyList_Append(out, value) != 0) { Py_XDECREF(value); return 0; }
+        Py_DECREF(value);
+    }
+    return 1;
+}
+
 static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -2453,14 +2499,7 @@ static PyObject *gc_semantic_candidate_actions(PyObject *self, PyObject *args) {
                         uint16_t target = entry->squares[si];
                         if (target >= rules->board_size * rules->board_size || !gc_semantic_target_holds(pattern->target, &pos->board[target], side)) continue;
                         if (!gc_semantic_path_holds(pattern, entry, si, pos, side)) continue;
-                        uint64_t action = ((uint64_t)target) | ((uint64_t)source << 8) |
-                            (255ull << 16) | ((uint64_t)piece->base_type << 24) |
-                            ((uint64_t)GC_ACTION_KIND_SEMANTIC_BOARD << 32) |
-                            ((uint64_t)pi << 36) | ((uint64_t)gid << 44) |
-                            ((uint64_t)piece->current_type << 56);
-                        PyObject *value = PyLong_FromUnsignedLongLong(action);
-                        if (!value || PyList_Append(out, value) != 0) { Py_XDECREF(value); Py_DECREF(out); return NULL; }
-                        Py_DECREF(value);
+                        if (!gc_semantic_append_board_actions(out, rules, pattern, side, piece, source, target, pi, gid)) { Py_DECREF(out); PyErr_SetString(PyExc_ValueError, "semantic promotion action construction failed"); return NULL; }
                     }
                 }
             }

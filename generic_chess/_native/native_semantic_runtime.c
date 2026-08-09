@@ -89,6 +89,22 @@ static int resolve_type(const GCSemTypeRef *ref, uint16_t base, uint16_t current
     else return 0;
     return 1;
 }
+static int promotion_action_ok(const GCSemanticRules *r, const GCSemPattern *pattern, uint8_t side, uint16_t base, uint16_t source, uint16_t target, uint16_t promo) {
+    if (pattern->promotion_mode == 0) return promo == 255;
+    if (pattern->promotion_mode == 2) return pattern->has_explicit_promotion && promo == pattern->explicit_promotion_type;
+    if (pattern->promotion_mode != 1 || base >= r->type_count) return 0;
+    if (!r->types[base].is_promotable) return promo == 255;
+    uint32_t pair = ((uint32_t)source << 16) | target; int allowed = 0;
+    const GCSemPairList *pairs = &r->promo_allowed[base][side];
+    for (uint16_t i=0;i<pairs->count;i++) if (pairs->pairs[i] == pair) { allowed=1; break; }
+    if (!allowed) return promo == 255;
+    int forced = 0; const GCSemSquareList *forced_squares=&r->promo_forced[base][side];
+    for (uint16_t i=0;i<forced_squares->count;i++) if (forced_squares->squares[i] == target) { forced=1; break; }
+    uint64_t alive = r->alive_promo[base][side][target]; int target_allowed = 0;
+    for (uint8_t i=0;i<r->types[base].promo_target_count;i++) if ((alive & (1ull<<i)) && r->types[base].promo_targets[i] == promo) { target_allowed=1; break; }
+    if (promo == 255) return !forced;
+    return target_allowed;
+}
 static int owner_ok(uint8_t owner_code, uint8_t piece_owner, uint8_t side) { return owner_code == 2 || (owner_code == 0 ? piece_owner == side : piece_owner != side); }
 static int resolve_square(const GCSemSquareRef *ref, const GCSemanticRules *r, const GCSemanticPosition *unused, const GCSemanticPosition *pos, uint8_t side, uint16_t source, uint16_t target, uint16_t *out);
 static int compare_value(uint8_t comparison, int value, int expected) {
@@ -189,7 +205,7 @@ static int validate_action(const GCSemanticRules *r, const GCSemanticPosition *p
         const GCSemPathEntry *entry=NULL; if(!path_entry(geo,side,source,&entry))return 0; int found=-1; for(uint16_t i=0;i<entry->count;i++)if(entry->squares[i]==target){found=i;break;} if(found<0)return 0;
         uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0; if((uint16_t)found<start || !target_ok(pattern->target,&p->board[target],side) || !path_ok(pattern,entry,(uint16_t)found,p,side))return 0;
     }
-    if (promo != 255) { if(promo>=r->type_count || kind==GC_ACTION_KIND_SEMANTIC_DROP || !r->types[base].is_promotable)return 0; int allowed=0; for(uint8_t i=0;i<r->types[base].promo_target_count;i++)if(r->types[base].promo_targets[i]==promo)allowed=1; if(!allowed)return 0; }
+    if (!promotion_action_ok(r, pattern, side, base, source, target, promo)) return 0;
     if (!state_guards_hold(r, p, pattern, side, source, target, base, current) || !slot_guards_hold(r, p, pattern, side, source, target)) return 0;
     if(pattern_out)*pattern_out=pattern; if(geo_out)*geo_out=geo; if(source_out)*source_out=source; if(target_out)*target_out=target; return 1;
 }
