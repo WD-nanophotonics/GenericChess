@@ -117,3 +117,20 @@ def test_native_semantic_action_identity_roundtrip_and_reserved_bits():
         _native_core.semantic_action_unpack((packed & ~(0xF << 32)) | (1 << 32))
     with pytest.raises(ValueError):
         _native_core.semantic_action_pack({**fields, "kind": 0})
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_position_rejects_forged_base_current_identity():
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    king = native_rules.type_ids.index("K")
+    forged = {
+        "side": 0,
+        "ply": 0,
+        "board": [[king, (king + 1) % len(native_rules.type_ids), 0, 0]]
+        + [None] * (semantic.support.board_size ** 2 - 1),
+        "hands": [[0] * len(native_rules.type_ids), [0] * len(native_rules.type_ids)],
+        "aux_state": (),
+    }
+    with pytest.raises(ValueError):
+        pack_position(native_rules, forged)
