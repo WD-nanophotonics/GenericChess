@@ -19,10 +19,13 @@ from generic_chess.native.semantic import (
 )
 from generic_chess import _native_core
 from generic_chess.core.keys import semantic_position_key
-from generic_chess.core.pieces import Piece
+from generic_chess.core.pieces import Piece, PieceType
+from generic_chess.core.coordinates import Square
+from generic_chess.core.movement import LeapAtom
 from generic_chess.core.position import Hands, Position
 from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.schema import RuleActionEffect, RuleGeometrySpec, RuleSemanticAction, RuleSet, RuleSquareRef
 from rule_semantics_ir_fixtures import castling_ruleset
 
 
@@ -510,6 +513,55 @@ def test_native_guarded_action_set_matches_python_across_core_fixtures():
             nifu_semantic.support.ruleset_fingerprint,
         ),
     )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_guarded_action_set_matches_python_for_inherited_promotion_variants():
+    from rule_semantics_ir_fixtures import _king_type
+
+    n = 5
+    pawn = PieceType("P", "P", (LeapAtom((0, 1)),), is_promotable=True, promotion_target_ids=("G",))
+    gold = PieceType("G", "G", (LeapAtom((1, 0)),))
+    rows = []
+    for rank in range(n):
+        row = []
+        for file in range(n):
+            row.append(
+                Piece(0, "K", "K") if (file, rank) == (0, 0)
+                else Piece(1, "K", "K") if (file, rank) == (n - 1, n - 1)
+                else None
+            )
+        rows.append(tuple(row))
+    action = RuleSemanticAction(
+        name="promotion_move",
+        type_ids=("P",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
+        promotion_mode="inherit_compiled_masks",
+    )
+    all_empty = (False,) * (n * n)
+    source, target = Square(1, 1), Square(1, 2)
+    source_index, target_index = source.rank * n + source.file, target.rank * n + target.file
+    ruleset = RuleSet(
+        board_size=n,
+        piece_types=(_king_type(), pawn, gold),
+        initial_position=tuple(rows),
+        drop_allowed={"P": (all_empty, all_empty), "G": (all_empty, all_empty)},
+        promotion_allowed={"P": (frozenset({(source, target)}), frozenset({(source, target)}))},
+        promotion_forced={"P": (frozenset(), frozenset())},
+        semantic_actions=(action,),
+    )
+    semantic = compile_semantic_ruleset(ruleset)
+    board = list(rows[0] + rows[1] + rows[2] + rows[3] + rows[4])
+    board[source_index] = Piece(0, "P", "P")
+    python_position = Position(tuple(board), (Hands.empty(), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    _assert_exact_guarded_action_set(semantic, python_position)
+    native_rules = compile_native_semantic_rules(semantic)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_board = [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, 0] for piece in board]
+    native_position = pack_position(native_rules, {"side": 0, "ply": 0, "board": native_board, "hands": [[0] * len(type_ids), [0] * len(type_ids)], "aux_state": ()})
+    assert any(unpack_action(value)["promotion"] == type_ids["G"] for value in guarded_actions(native_rules, native_position))
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
