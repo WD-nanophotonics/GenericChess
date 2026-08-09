@@ -42,3 +42,17 @@ def position_key(native_rules, position) -> str:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return str(_module().semantic_position_key(native_rules.capsule, position))
+
+
+def pack_action(fields: dict) -> int:
+    """Pack an exact semantic action using the frozen Native bit layout."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return int(_module().semantic_action_pack(dict(fields)))
+
+
+def unpack_action(action: int) -> dict:
+    """Unpack and validate an exact semantic action."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return {key: int(value) for key, value in _module().semantic_action_unpack(int(action)).items()}

@@ -2360,6 +2360,9 @@ static PyObject *gc_semantic_action_unpack(PyObject *self, PyObject *args) {
     if (kind != GC_ACTION_KIND_SEMANTIC_BOARD && kind != GC_ACTION_KIND_SEMANTIC_DROP) {
         PyErr_SetString(PyExc_ValueError, "semantic action kind is not semantic"); return NULL;
     }
+    if (kind == GC_ACTION_KIND_SEMANTIC_DROP && ((action >> 8) & 0xFFull) != 255ull) {
+        PyErr_SetString(PyExc_ValueError, "semantic drop action requires the from-square sentinel"); return NULL;
+    }
     return Py_BuildValue("{s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
         "to", action & 0xFFull, "from", (action >> 8) & 0xFFull,
         "promotion", (action >> 16) & 0xFFull, "base", (action >> 24) & 0xFFull,
