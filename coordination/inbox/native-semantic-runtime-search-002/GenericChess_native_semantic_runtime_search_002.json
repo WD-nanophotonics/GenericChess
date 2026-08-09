@@ -1,0 +1,19 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "engineering_task",
+  "task_id": "native-semantic-runtime-search-002",
+  "title": "Native Semantic Runtime Closure + Fixed-Depth Search",
+  "accepted_prerequisite_sha": "38c554afb074aed391b23e356f36dc52e3d8a920",
+  "base_master_sha": "3629c52b8c0bb4e92bd55851f2fc970d0407dadc",
+  "execution_branch": "sandbox",
+  "required_major_checkpoints": [
+    "runtime_closure",
+    "semantic_fixed_depth_search"
+  ],
+  "hard_gate": "Do not begin semantic search until runtime closure differential parity is green.",
+  "do_not_merge_master": true,
+  "requested_output": {
+    "report": "report.md",
+    "candidate": "candidate.json"
+  }
+}
