@@ -91,7 +91,7 @@ typedef struct {
 typedef struct {
     uint8_t kind;            /* invariant enum code */
     GCSemSquareRef *refs;
-    uint8_t refs_count;
+    uint16_t refs_count;
 } GCSemInvariant;
 
 typedef struct {
