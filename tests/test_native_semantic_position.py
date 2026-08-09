@@ -9,6 +9,7 @@ from generic_chess.native.semantic import (
     history_occurrences,
     make_checked,
     make_unmake_roundtrip,
+    perft,
     pack_position,
     position_key,
     snapshot,
@@ -323,3 +324,38 @@ def test_native_checked_make_drop_matches_python():
     assert position_key(native_rules, native_child_capsule) == semantic_position_key(
         python_child, semantic.support, semantic.ir.aux_slots
     )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_semantic_perft_recurses_over_checked_children():
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    native_rules = compile_native_semantic_rules(semantic)
+    king = native_rules.type_ids.index("K")
+    parent = pack_position(
+        native_rules,
+        {
+            "side": 0,
+            "ply": 0,
+            "board": [[king, king, 0, 0]] + [None] * (semantic.support.board_size ** 2 - 1),
+            "hands": [[0] * len(native_rules.type_ids), [0] * len(native_rules.type_ids)],
+            "aux_state": (),
+        },
+    )
+    assert perft(native_rules, parent, 0) == 1
+    assert perft(native_rules, parent, 1) == 3
+    assert perft(native_rules, parent, 2) == 0
+
+    two_kings = [None] * (semantic.support.board_size ** 2)
+    two_kings[0] = [king, king, 0, 0]
+    two_kings[-1] = [king, king, 1, 0]
+    two_king_parent = pack_position(
+        native_rules,
+        {
+            "side": 0,
+            "ply": 0,
+            "board": two_kings,
+            "hands": [[0] * len(native_rules.type_ids), [0] * len(native_rules.type_ids)],
+            "aux_state": (),
+        },
+    )
+    assert [perft(native_rules, two_king_parent, depth) for depth in range(4)] == [1, 3, 9, 54]

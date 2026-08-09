@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 #ifdef _WIN32
 #include <windows.h>
 #else
@@ -2518,6 +2519,52 @@ static PyObject *gc_semantic_make_unmake_roundtrip(PyObject *self, PyObject *arg
     return Py_BuildValue("{s:i,s:i,s:i}", "make_ok", make_ok, "unmake_ok", make_ok && restored, "restored", restored);
 }
 
+static PyObject *gc_semantic_candidate_tuple_native(const GCSemanticRules *rules, const GCSemanticPosition *position) {
+    PyObject *rules_capsule = PyCapsule_New((void *)rules, GC_SEM_RULES_CAPSULE, NULL);
+    PyObject *position_capsule = PyCapsule_New((void *)position, GC_SEM_POSITION_CAPSULE, NULL);
+    if (!rules_capsule || !position_capsule) { Py_XDECREF(rules_capsule); Py_XDECREF(position_capsule); return NULL; }
+    PyObject *call_args = PyTuple_Pack(2, rules_capsule, position_capsule);
+    Py_DECREF(rules_capsule); Py_DECREF(position_capsule);
+    if (!call_args) return NULL;
+    PyObject *actions = gc_semantic_candidate_actions(NULL, call_args);
+    Py_DECREF(call_args);
+    return actions;
+}
+
+static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, const GCSemanticPosition *position, unsigned int depth, int *ok) {
+    if (!*ok) return 0;
+    if (depth == 0) return 1;
+    PyObject *actions = gc_semantic_candidate_tuple_native(rules, position);
+    if (!actions) { *ok = 0; return 0; }
+    unsigned long long total = 0;
+    Py_ssize_t count = PyTuple_Size(actions);
+    for (Py_ssize_t i = 0; i < count; i++) {
+        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
+        if (PyErr_Occurred()) { *ok = 0; break; }
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) continue;
+        unsigned long long branch = gc_semantic_perft_rec(rules, &child, depth - 1, ok);
+        if (ULLONG_MAX - total < branch) { *ok = 0; break; }
+        total += branch;
+    }
+    Py_DECREF(actions);
+    return total;
+}
+
+static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    unsigned int depth;
+    if (!PyArg_ParseTuple(args, "OOI", &rules_capsule, &position_capsule, &depth)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    int ok = 1;
+    unsigned long long nodes = gc_semantic_perft_rec(rules, position, depth, &ok);
+    if (!ok) { if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic perft failed"); return NULL; }
+    return PyLong_FromUnsignedLongLong(nodes);
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2661,6 +2708,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_make_checked(rules, position, action) -> child position capsule"},
     {"semantic_make_unmake_roundtrip", gc_semantic_make_unmake_roundtrip, METH_VARARGS,
      "semantic_make_unmake_roundtrip(rules, position, action) -> roundtrip result"},
+    {"semantic_perft", gc_semantic_perft, METH_VARARGS,
+     "semantic_perft(rules, position, depth) -> recursive candidate node count"},
     {NULL, NULL, 0, NULL}
 };
 

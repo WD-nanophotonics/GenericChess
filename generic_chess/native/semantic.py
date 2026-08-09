@@ -82,3 +82,9 @@ def make_unmake_roundtrip(native_rules, position, action: int) -> dict:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return dict(_module().semantic_make_unmake_roundtrip(native_rules.capsule, position, int(action)))
+
+
+def perft(native_rules, position, depth: int) -> int:
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return int(_module().semantic_perft(native_rules.capsule, position, int(depth)))

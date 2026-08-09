@@ -76,6 +76,42 @@ static int resolve_type(const GCSemTypeRef *ref, uint16_t base, uint16_t current
     return 1;
 }
 static int owner_ok(uint8_t owner_code, uint8_t piece_owner, uint8_t side) { return owner_code == 2 || (owner_code == 0 ? piece_owner == side : piece_owner != side); }
+static int resolve_square(const GCSemSquareRef *ref, const GCSemanticRules *r, const GCSemanticPosition *unused, const GCSemanticPosition *pos, uint8_t side, uint16_t source, uint16_t target, uint16_t *out);
+static int compare_value(uint8_t comparison, int value, int expected) {
+    if (comparison == 0) return value == expected;
+    if (comparison == 1) return value != expected;
+    if (comparison == 2) return value < expected;
+    if (comparison == 3) return value <= expected;
+    if (comparison == 4) return value > expected;
+    if (comparison == 5) return value >= expected;
+    return 0;
+}
+static int spatial_holds(const GCSemSpatial *spatial, const GCSemanticRules *r, const GCSemanticPosition *pos, uint8_t side, uint16_t source, uint16_t target, uint16_t square) {
+    if (!spatial || spatial->refs_count == 0) return 1;
+    uint16_t ref_square = 0;
+    if (!resolve_square(&spatial->refs[0], r, NULL, pos, side, source, target, &ref_square)) return 0;
+    int sf = square % r->board_size, sr = square / r->board_size;
+    int rf = ref_square % r->board_size, rr = ref_square / r->board_size;
+    if (spatial->kind == 0) return sf == rf;
+    if (spatial->kind == 1) return sr == rr;
+    if (spatial->kind == 2) return square == ref_square;
+    if (spatial->kind == 3) return (sf-rf >= -1 && sf-rf <= 1 && sr-rr >= -1 && sr-rr <= 1);
+    if (spatial->kind == 5 && spatial->has_zone && spatial->zone_index < r->zone_count) { const GCSemZone *zone=&r->zones[spatial->zone_index]; for(uint16_t i=0;i<zone->count;i++)if(zone->squares[i]==square)return 1; return 0; }
+    return 0;
+}
+static int state_guards_hold(const GCSemanticRules *r, const GCSemanticPosition *pos, const GCSemPattern *pattern, uint8_t side, uint16_t source, uint16_t target, uint16_t action_base_type, uint16_t action_current_type) {
+    for (uint8_t gi = 0; gi < pattern->guard_count; gi++) {
+        const GCSemStateGuard *g=&pattern->guards[gi]; if (g->location != 0) return 0;
+        int count=0;
+        for (uint16_t sq=0;sq<r->board_size*r->board_size;sq++) { const GCPiece *piece=&pos->board[sq]; if(!piece->occupied || !owner_ok(g->owner,piece->owner,side))continue; uint16_t want=0; if(g->type_ref.kind==0)want=action_base_type; else if(g->type_ref.kind==1)want=action_current_type; else if(g->type_ref.kind==2&&g->type_ref.has_type)want=g->type_ref.type_index; else if(g->type_ref.kind==3)want=piece->current_type; else return 0; uint16_t actual=g->compare_field==0?piece->base_type:piece->current_type; if(g->type_ref.kind!=3 && actual!=want)continue; if(g->promoted==0 && !piece->promoted)continue; if(g->promoted==1 && piece->promoted)continue; if(g->promoted>2)return 0; if(!spatial_holds(&g->spatial,r,pos,side,source,target,sq))continue; count++; }
+        int predicate = g->aggregation == 0 ? count > 0 : compare_value(g->comparison,count,g->value); if (!predicate) return 0;
+    }
+    return 1;
+}
+static int slot_guards_hold(const GCSemanticRules *r, const GCSemanticPosition *pos, const GCSemPattern *pattern, uint8_t side, uint16_t source, uint16_t target) {
+    for (uint8_t i=0;i<pattern->slot_guard_count;i++) { const GCSemSlotGuard *g=&pattern->slot_guards[i]; uint8_t index=0; const GCSemAuxSlot *slot=slot_meta(r,g->slot_id,&index); if(!slot)return 0; uint8_t owner_index=slot->scope==1?(uint8_t)(side+1):0; const GCSemAuxValue *value=&pos->aux[index][owner_index]; if(g->has_square_ref){uint16_t expected=0;if(!resolve_square(&g->square_ref,r,NULL,pos,side,source,target,&expected))return 0;int equal=value->has_value&&value->kind==1&&value->square==expected;if(g->comparison==0&&!equal)return 0;if(g->comparison==1&&equal)return 0;}else{int actual=value->has_value?value->bool_value:0;if(!value->has_value&&g->has_value&&g->value!=0&&g->comparison==0)return 0;if(g->has_value&&!compare_value(g->comparison,actual,g->value))return 0;} }
+    return 1;
+}
 static int trigger_event_fires(const GCSemanticRules *r, const GCSemanticPosition *pre, const GCSemPattern *pattern, const GCSemTrigger *trigger, uint8_t side, uint8_t perspective, uint16_t source, uint16_t target) {
     uint16_t trigger_square = 0;
     if (!resolve_square(&trigger->square_ref, r, NULL, pre, perspective, source, target, &trigger_square)) return 0;
@@ -111,6 +147,7 @@ static int validate_action(const GCSemanticRules *r, const GCSemanticPosition *p
         uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0; if((uint16_t)found<start || !target_ok(pattern->target,&p->board[target],side) || !path_ok(pattern,entry,(uint16_t)found,p,side))return 0;
     }
     if (promo != 255) { if(promo>=r->type_count || kind==GC_ACTION_KIND_SEMANTIC_DROP || !r->types[base].is_promotable)return 0; int allowed=0; for(uint8_t i=0;i<r->types[base].promo_target_count;i++)if(r->types[base].promo_targets[i]==promo)allowed=1; if(!allowed)return 0; }
+    if (!state_guards_hold(r, p, pattern, side, source, target, base, current) || !slot_guards_hold(r, p, pattern, side, source, target)) return 0;
     if(pattern_out)*pattern_out=pattern; if(geo_out)*geo_out=geo; if(source_out)*source_out=source; if(target_out)*target_out=target; return 1;
 }
 
