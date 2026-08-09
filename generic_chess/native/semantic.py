@@ -69,3 +69,16 @@ def history_occurrences(position, lo: int, hi: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return int(_module().semantic_history_occurrences(position, int(lo), int(hi)))
+
+
+def make_checked(native_rules, position, action: int):
+    """Apply an exact semantic candidate in Native and return its child capsule."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return _module().semantic_make_checked(native_rules.capsule, position, int(action))
+
+
+def make_unmake_roundtrip(native_rules, position, action: int) -> dict:
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return dict(_module().semantic_make_unmake_roundtrip(native_rules.capsule, position, int(action)))

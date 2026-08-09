@@ -24,6 +24,7 @@
 #include "native_semantic_rules.h"
 #include "native_semantic_state.h"
 #include "native_semantic_key.h"
+#include "native_semantic_runtime.h"
 #include "native_sha256.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
@@ -2480,6 +2481,43 @@ static PyObject *gc_semantic_history_occurrences(PyObject *self, PyObject *args)
     return PyLong_FromUnsignedLong(count);
 }
 
+static PyObject *gc_semantic_make_checked(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    unsigned long long action;
+    if (!PyArg_ParseTuple(args, "OOK", &rules_capsule, &pos_capsule, &action)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *parent = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !parent) return NULL;
+    GCSemanticPosition *child = (GCSemanticPosition *)malloc(sizeof(*child));
+    if (!child) { PyErr_NoMemory(); return NULL; }
+    if (!gc_semantic_runtime_make_checked(child, rules, parent, (uint64_t)action)) {
+        free(child);
+        PyErr_SetString(PyExc_ValueError, "semantic action is not valid for the current position");
+        return NULL;
+    }
+    return PyCapsule_New(child, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
+}
+
+static PyObject *gc_semantic_make_unmake_roundtrip(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    unsigned long long action;
+    if (!PyArg_ParseTuple(args, "OOK", &rules_capsule, &pos_capsule, &action)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !pos) return NULL;
+    GCSemanticPosition work = *pos, before = *pos;
+    GCSemanticUndo undo;
+    int make_ok = gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)action, &undo);
+    int restored = 0;
+    if (make_ok) {
+        gc_semantic_runtime_unmake(&work, &undo);
+        restored = memcmp(&work, &before, sizeof(work)) == 0;
+    }
+    return Py_BuildValue("{s:i,s:i,s:i}", "make_ok", make_ok, "unmake_ok", make_ok && restored, "restored", restored);
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2619,6 +2657,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_candidate_actions(rules, position) -> exact candidate actions"},
     {"semantic_history_occurrences", gc_semantic_history_occurrences, METH_VARARGS,
      "semantic_history_occurrences(position, lo, hi) -> occurrence count"},
+    {"semantic_make_checked", gc_semantic_make_checked, METH_VARARGS,
+     "semantic_make_checked(rules, position, action) -> child position capsule"},
+    {"semantic_make_unmake_roundtrip", gc_semantic_make_unmake_roundtrip, METH_VARARGS,
+     "semantic_make_unmake_roundtrip(rules, position, action) -> roundtrip result"},
     {NULL, NULL, 0, NULL}
 };
 
