@@ -2632,8 +2632,10 @@ static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
         if (PyErr_Occurred()) { PyErr_Clear(); continue; }
         GCSemanticPosition probe = *position;
         /* Terminal authority checks legal-action availability independently of
-         * the max-ply cutoff, matching SemanticEngine. */
+         * the max-ply/repetition-history cutoff, matching SemanticEngine. */
         probe.ply = 0;
+        probe.history_len = 0;
+        probe.history_exact = 1;
         GCSemanticPosition child;
         if (gc_semantic_runtime_make_checked(&child, rules, &probe, (uint64_t)raw)) {
             Py_DECREF(candidates);
