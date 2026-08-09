@@ -43,21 +43,24 @@ def _python_probe(semantic, position, native_rules, depth):
             if piece is not None
         )
 
-    def search(state, remaining):
+    def search(state, remaining, alpha=-1_000_000_000, beta=1_000_000_000):
         nonlocal nodes
         if remaining == 0:
             return evaluate(state), ()
         actions = _packed_actions(semantic, state, native_rules)
-        best_score = evaluate(state)
+        best_score = -1_000_000_000
         best_action = None
         best_pv = ()
         for packed in sorted(actions):
             nodes += 1
-            score, child_pv = search(engine.apply(state, actions[packed]), remaining - 1)
+            score, child_pv = search(engine.apply(state, actions[packed]), remaining - 1, -beta, -alpha)
             score = -score
             if best_action is None or score > best_score or (score == best_score and packed < best_action):
                 best_score, best_action = score, packed
                 best_pv = (packed,) + child_pv
+            alpha = max(alpha, score)
+            if alpha >= beta:
+                break
         return best_score, best_pv
 
     score, pv = search(position, depth)
