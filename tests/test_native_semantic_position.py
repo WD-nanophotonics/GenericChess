@@ -510,3 +510,86 @@ def test_native_guarded_action_set_matches_python_across_core_fixtures():
             nifu_semantic.support.ruleset_fingerprint,
         ),
     )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_python_deterministic_multiplay_action_and_child_differential():
+    import random
+    from rule_semantics_ir_fixtures import castling_ruleset
+
+    semantic = compile_semantic_ruleset(castling_ruleset())
+    engine = SemanticEngine(semantic)
+    native_rules = compile_native_semantic_rules(semantic)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    geometry_ids = {geometry_id: index for index, geometry_id in enumerate(sorted(semantic.ir.geometry))}
+    pattern_ids = {pattern.pattern_id: index for index, pattern in enumerate(semantic.ir.patterns)}
+
+    python_board = [None] * 64
+    python_board[0] = Piece(0, "K", "K")
+    python_board[63] = Piece(1, "K", "K")
+    python_position = Position(
+        tuple(python_board),
+        (Hands.empty(), Hands.empty()),
+        0,
+        semantic.support.ruleset_fingerprint,
+    )
+    native_board = [None] * 64
+    native_board[0] = [type_ids["K"], type_ids["K"], 0, 0]
+    native_board[63] = [type_ids["K"], type_ids["K"], 1, 0]
+    native_position = pack_position(
+        native_rules,
+        {
+            "side": 0,
+            "ply": 0,
+            "board": native_board,
+            "hands": [[0] * len(type_ids), [0] * len(type_ids)],
+            "aux_state": (),
+        },
+    )
+
+    rng = random.Random(7)
+    for _ in range(8):
+        python_actions = engine.legal_actions(python_position)
+        native_actions = guarded_actions(native_rules, native_position)
+        packed_python = set()
+        for action in python_actions:
+            piece = python_position.board[action.source] if action.source is not None else None
+            packed_python.add(
+                pack_action(
+                    {
+                        "to": action.target,
+                        "from": action.source if action.source is not None else 255,
+                        "promotion": type_ids[action.promotion_target_id] if action.promotion_target_id else 255,
+                        "base": type_ids[piece.base_type_id] if piece is not None else type_ids[action.actor_type],
+                        "kind": 2 if action.source is not None else 3,
+                        "pattern": pattern_ids[action.pattern_id],
+                        "geometry": geometry_ids[action.geometry_id],
+                        "actor_current": type_ids[action.actor_type],
+                    }
+                )
+            )
+        assert set(native_actions) == packed_python
+        chosen_python = python_actions[rng.randrange(len(python_actions))]
+        chosen_raw = next(
+            raw
+            for raw in native_actions
+            if unpack_action(raw)["to"] == chosen_python.target
+            and unpack_action(raw)["from"] == (chosen_python.source if chosen_python.source is not None else 255)
+            and unpack_action(raw)["pattern"] == pattern_ids[chosen_python.pattern_id]
+            and unpack_action(raw)["geometry"] == geometry_ids[chosen_python.geometry_id]
+        )
+        native_position = make_checked(native_rules, native_position, chosen_raw)
+        python_position = engine.apply(python_position, chosen_python)
+        native_snapshot = snapshot(native_rules, native_position)
+        assert native_snapshot["side"] == python_position.side_to_move
+        assert position_key(native_rules, native_position) == semantic_position_key(
+            python_position, semantic.support, semantic.ir.aux_slots
+        )
+        for square, piece in enumerate(python_position.board):
+            expected = None if piece is None else (
+                type_ids[piece.base_type_id],
+                type_ids[piece.current_type_id],
+                piece.owner,
+                int(piece.promoted),
+            )
+            assert native_snapshot["board"][square] == expected
