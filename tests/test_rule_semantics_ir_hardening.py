@@ -495,7 +495,7 @@ def test_ir_v1_rejected_and_capabilities_fail_closed():
         ir = compile_semantic_ruleset(builder()).ir
         assert ir.ir_version == COMPILED_SEMANTIC_IR_VERSION
         assert ir.capabilities.legacy_core_executable is False
-        assert ir.capabilities.native_executable is False
+        assert ir.capabilities.native_executable is True
         # Phase 1.9B-3: the bounded S4 probe is implemented; compile-time
         # validation rejects unsupported postconditions/probe strata, so
         # every stress ruleset (including uchifuzume-shaped S4) is

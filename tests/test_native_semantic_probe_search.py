@@ -10,7 +10,7 @@ from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.core.terminal import TerminalStatus
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
-from generic_chess.native.semantic import pack_action, pack_position, probe_search
+from generic_chess.native.semantic import fixed_depth_search, guarded_actions, make_checked, pack_action, pack_position, probe_search, terminal_status
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import RuleActionEffect, RuleGeometrySpec, RuleSemanticAction, RuleSet, RuleSquareRef
 
@@ -44,7 +44,7 @@ def _python_probe(semantic, position, native_rules, depth, board_values=None, ha
 
     def evaluate(state):
         return sum(
-            (board_values[type_ids[piece.base_type_id]] if board_values is not None else type_ids[piece.base_type_id] + 1) * (1 if piece.owner == state.side_to_move else -1)
+            (board_values[type_ids[piece.current_type_id]] if board_values is not None else type_ids[piece.current_type_id] + 1) * (1 if piece.owner == state.side_to_move else -1)
             for piece in state.board
             if piece is not None
         ) + sum(
@@ -102,8 +102,12 @@ def test_native_probe_search_matches_python_minimax_on_semantic_corpus():
             "aux_state": (),
         })
         expected = _python_probe(semantic, python_position, native_rules, 3)
-        observed = probe_search(native_rules, native_position, 3)
+        observed = fixed_depth_search(native_rules, native_position, 3)
         assert observed == expected, name
+        cursor = native_position
+        for action in observed["principal_variation"]:
+            assert action in set(guarded_actions(native_rules, cursor)), name
+            cursor = make_checked(native_rules, cursor, action)
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
@@ -148,6 +152,8 @@ def test_native_probe_search_matches_python_on_drop_and_s4_positions(fixture_nam
     })
     expected = _python_probe(semantic, python_position, native_rules, 2)
     observed = probe_search(native_rules, native_position, 2)
+    assert terminal_status(native_rules, native_position)["status"] == "ongoing"
+    assert fixed_depth_search(native_rules, native_position, 2) == expected
     assert observed == expected, fixture_name
 
 
@@ -207,7 +213,7 @@ def test_native_probe_search_matches_python_on_promotion_position():
     gold = PieceType("G", "G", (LeapAtom((1, 0)),))
     action = RuleSemanticAction(
         name="promotion_move",
-        type_ids=("P",),
+        type_ids=("P", "G"),
         geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
         target_relation="empty",
         effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),),
@@ -240,3 +246,22 @@ def test_native_probe_search_matches_python_on_promotion_position():
         "aux_state": (),
     })
     assert probe_search(native_rules, native_position, 2) == _python_probe(semantic, python_position, native_rules, 2)
+
+    transformed_board = list(board)
+    transformed_board[source.rank * n + source.file] = Piece(0, "P", "G", promoted=True)
+    transformed_python = Position(tuple(transformed_board), (Hands.empty(), Hands.empty()), 0, semantic.support.ruleset_fingerprint)
+    transformed_native = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, int(piece.promoted)] for piece in transformed_board],
+        "hands": [[0] * len(type_ids), [0] * len(type_ids)],
+        "aux_state": (),
+    })
+    board_values = [1] * len(type_ids)
+    board_values[type_ids["P"]] = 2
+    board_values[type_ids["G"]] = 97
+    hand_values = [3] * len(type_ids)
+    expected_profile = _python_probe(semantic, transformed_python, native_rules, 0, board_values, hand_values)
+    observed_profile = probe_search(native_rules, transformed_native, 0, board_values=board_values, hand_values=hand_values)
+    assert observed_profile == expected_profile
+    assert observed_profile["score"] == 97

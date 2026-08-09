@@ -491,17 +491,17 @@ def test_c1_legacy_checked_make_rejects_semantic_kinds(module):
         assert exc.value.status == 10  # GC_STATUS_ACTION_INVALID_KIND
 
 
-def test_c1_no_semantic_execution_entry_points(module):
+def test_c1_successor_runtime_public_entry_points(module):
     for name in (
         "semantic_legal_actions",
         "semantic_make",
         "semantic_child_snapshot",
-        "semantic_terminal",
         "semantic_perft",
-        "semantic_fixed_depth_search",
         "semantic_search",
     ):
         assert not hasattr(module, name), name
+    assert hasattr(module, "semantic_terminal")
+    assert hasattr(module, "semantic_fixed_depth_search")
 
 
 def test_c1_id_maps_deterministic_over_repeated_compile():

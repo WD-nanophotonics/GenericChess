@@ -14,6 +14,8 @@ from generic_chess.native.semantic import (
     pack_action,
     pack_position,
     position_key,
+    terminal_status,
+    fixed_depth_search,
     probe_search,
     snapshot,
     unpack_action,
@@ -170,7 +172,9 @@ def test_native_semantic_position_rejects_ruleset_mismatch_at_every_rules_bound_
         lambda: make_checked(rules_b, position, 0),
         lambda: make_unmake_roundtrip(rules_b, position, 0),
         lambda: candidate_perft(rules_b, position, 1),
+        lambda: terminal_status(rules_b, position),
         lambda: probe_search(rules_b, position, 1),
+        lambda: fixed_depth_search(rules_b, position, 1),
     )
     for call in calls:
         with pytest.raises(ValueError, match="fingerprint"):
@@ -196,6 +200,8 @@ def test_native_semantic_history_roundtrip_and_repetition_count():
     position = pack_position(native_rules, payload)
     assert history_occurrences(position, 1, 2) == 2
     assert history_occurrences(position, 9, 9) == 0
+    with pytest.raises(ValueError, match="exact full history"):
+        terminal_status(native_rules, position)
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
@@ -223,6 +229,7 @@ def test_native_semantic_perft_stops_at_max_ply_terminal_state():
     ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
     board = [None if piece is None else [ids[piece.base_type_id], ids[piece.current_type_id], piece.owner, 0] for row in semantic.support.initial_position for piece in row]
     position = pack_position(native_rules, {"side": 0, "ply": 1, "board": board, "hands": [[0] * len(ids), [0] * len(ids)], "aux_state": ()})
+    assert terminal_status(native_rules, position) == {"status": "max_ply", "winner": None}
     assert candidate_perft(native_rules, position, 2) == 1
 
 
@@ -236,6 +243,7 @@ def test_native_semantic_probe_stops_on_exact_full_digest_repetition():
     digest = position_key(native_rules, base)
     words = tuple(int(digest[i:i + 16], 16) for i in range(0, 64, 16))
     repeated = pack_position(native_rules, {"side": 0, "ply": 0, "board": board, "hands": [[0] * len(ids), [0] * len(ids)], "history": (words,) * 4, "aux_state": ()})
+    assert terminal_status(native_rules, repeated) == {"status": "repetition", "winner": None}
     result = probe_search(native_rules, repeated, 2)
     assert result["has_best"] == 0
     assert result["score"] == 0
@@ -287,6 +295,7 @@ def test_native_semantic_probe_detects_checkmate_terminal_state():
         "aux_state": (),
     })
     result = probe_search(native_rules, native_position, 2)
+    assert terminal_status(native_rules, native_position) == {"status": "checkmate", "winner": 1}
     assert result["has_best"] == 0
     assert result["score"] == -1000000
     assert result["nodes"] == 1
@@ -332,6 +341,7 @@ def test_native_semantic_probe_detects_stalemate_terminal_state():
         "aux_state": (),
     })
     result = probe_search(native_rules, native_position, 2)
+    assert terminal_status(native_rules, native_position) == {"status": "stalemate", "winner": None}
     assert result["has_best"] == 0
     assert result["score"] == 0
     assert result["nodes"] == 1

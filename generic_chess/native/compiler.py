@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from types import MappingProxyType
 from typing import Any
 
@@ -606,6 +606,7 @@ class NativeSemanticCompilationReport:
     aux_slot_count: int
     trigger_count: int
     estimated_bytes: int
+    native_executable: bool = False
 
 
 class NativeSemanticCompiledRules:
@@ -640,6 +641,11 @@ class NativeSemanticCompiledRules:
         return self._report
 
     @property
+    def native_executable(self) -> bool:
+        """Fail-closed per-ruleset Native payload support result."""
+        return bool(self._report.native_executable)
+
+    @property
     def type_ids(self):
         return self._type_ids
 
@@ -654,6 +660,63 @@ class NativeSemanticCompiledRules:
     @property
     def zone_ids(self):
         return self._zone_ids
+
+
+def _native_payload_is_executable(payload, report: NativeSemanticCompilationReport) -> bool:
+    """Validate the complete lowered payload shape for the runtime gate.
+
+    The lowering function has already rejected unknown enums and unsupported
+    operands.  This second, structural check keeps the per-ruleset capability
+    fail-closed if the payload/report contract changes independently.
+    """
+    required = {
+        "semantic_payload_version", "fingerprint", "board_size",
+        "repetition_limit", "max_ply", "type_ids", "types",
+        "promo_allowed", "promo_forced", "alive_promo", "drop_mask",
+        "geometries", "zones", "aux_slots", "triggers", "patterns",
+    }
+    if not isinstance(payload, dict) or not required.issubset(payload):
+        return False
+    patterns = payload["patterns"]
+    if not isinstance(patterns, list) or len(patterns) != report.pattern_count:
+        return False
+    pattern_required = {
+        "type_indices", "geometry_indices", "target", "path", "guards",
+        "slot_guards", "effects", "invariants", "postconditions",
+        "promotion_mode", "explicit_promotion_type", "cost", "stratum",
+    }
+    if any(
+        not isinstance(pattern, dict)
+        or not pattern_required.issubset(pattern)
+        or len(pattern.get("effects", ())) > GC_SEM_MAX_EFFECTS
+        or any(
+            not isinstance(inv, dict)
+            or len(inv.get("square_refs", ())) > GC_SEM_MAX_INVARIANT_REFS
+            for inv in pattern.get("invariants", ())
+        )
+        or any(
+            not isinstance(post, dict)
+            or post.get("max_stratum", 99) > _SEM_STRATUM_CODES["S3"]
+            for post in pattern.get("postconditions", ())
+        )
+        for pattern in patterns
+    ):
+        return False
+    return (
+        payload["semantic_payload_version"] == SEMANTIC_PAYLOAD_VERSION
+        and report.ir_version == 2
+        and report.native_schema_version == NATIVE_SCHEMA_VERSION
+        and report.type_count <= GC_SEM_MAX_TYPES
+        and report.pattern_count <= GC_SEM_MAX_PATTERNS
+        and report.geometry_count <= GC_SEM_MAX_GEOMETRIES
+        and len(payload["types"]) == report.type_count
+        and len(payload["geometries"]) == report.geometry_count
+        and len(payload["zones"]) == report.zone_count
+        and report.aux_slot_count <= GC_SEM_MAX_AUX_SLOTS
+        and len(payload["aux_slots"]) == report.aux_slot_count
+        and len(payload["triggers"]) == report.trigger_count
+        and report.board_squares <= 256
+    )
 
 
 def build_semantic_compile_payload(semantic):
@@ -930,7 +993,9 @@ def build_semantic_compile_payload(semantic):
         aux_slot_count=len(aux_slots),
         trigger_count=len(triggers),
         estimated_bytes=estimated,
+        native_executable=False,
     )
+    report = replace(report, native_executable=_native_payload_is_executable(payload, report))
     return payload, report
 
 

@@ -48,8 +48,10 @@ def test_c1_spec02_native_version_schema_and_capabilities_are_additive():
     assert caps["semantic_ir_v2_compile"] is True
     assert caps["semantic_payload_version"] == 2
     assert caps["semantic_exact_action_identity"] is True
-    assert caps["semantic_position_state"] is False
-    assert caps["semantic_s0_s4_executor"] is False
+    assert caps["semantic_position_state"] is True
+    assert caps["semantic_s0_s4_executor"] is True
+    assert caps["production_dynamic_evaluator"] is True
+    assert caps["production_search_backend"] is True
 
 
 def test_c1_spec03_c_extension_static_semantic_entry_points_exist():
@@ -71,6 +73,8 @@ def test_c1_spec04_all_frozen_semantic_corpus_compiles_to_separate_capsules():
         assert compiled.report.ir_version == 2, name
         assert compiled.report.semantic_payload_version == 2, name
         assert compiled.report.native_schema_version == "native-0.4.0", name
+        assert compiled.report.native_executable is True, name
+        assert compiled.native_executable is True, name
 
 
 def test_c1_spec05_deterministic_reversible_numeric_id_maps():
@@ -133,12 +137,20 @@ def test_c1_spec09_native_geometry_capacity_fails_closed():
         )
 
 
-def test_c1_spec10_compile_only_boundary_is_explicit():
+def test_successor_native_report_gate_is_structurally_fail_closed():
+    semantic = compile_semantic_ruleset(STRESS_GROUPS["cannon"]())
+    payload, report = native_compiler.build_semantic_compile_payload(semantic)
+    malformed = dict(payload)
+    malformed.pop("patterns")
+    assert native_compiler._native_payload_is_executable(malformed, report) is False
+
+
+def test_successor_runtime_boundary_is_explicit():
     caps = native.native_capabilities()
     assert "semantic_position_state" in caps
     assert "semantic_s0_s4_executor" in caps
-    assert caps["semantic_position_state"] is False
-    assert caps["semantic_s0_s4_executor"] is False
+    assert caps["semantic_position_state"] is True
+    assert caps["semantic_s0_s4_executor"] is True
     mod = _module()
     assert not hasattr(mod, "semantic_legal_actions")
     assert not hasattr(mod, "semantic_make")
@@ -146,10 +158,11 @@ def test_c1_spec10_compile_only_boundary_is_explicit():
     assert not hasattr(mod, "semantic_search")
 
 
-def test_c1_spec11_python_ir_native_executable_remains_false_until_executor():
-    # EXPECTED_GREEN before and after C-1.
+def test_successor_ir_native_executable_is_per_ruleset_lowering_gate():
+    # The successor runtime publishes this only when exact native lowering
+    # succeeds for the compiled ruleset.
     for name, semantic in semantic_corpus():
-        assert semantic.ir.capabilities.native_executable is False, name
+        assert semantic.ir.capabilities.native_executable is True, name
 
 
 def test_c1_spec12_legacy_native_surface_remains_present():

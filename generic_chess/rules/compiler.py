@@ -7,6 +7,7 @@ inventory balance and aesthetics are Generator concerns.
 
 from __future__ import annotations
 
+from dataclasses import replace
 from math import gcd
 from typing import Any, Mapping
 
@@ -1139,4 +1140,20 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
             [ValidationIssue("IR_INVALID", "ir", "; ".join(errors))]
         )
     support = _build_semantic_support(legacy)
+    # Native execution is a per-ruleset capability, derived from the exact
+    # lowered payload rather than a global promise.  Any lowering/shape
+    # failure remains fail-closed while Python IR compilation stays usable.
+    try:
+        from ..native.compiler import build_semantic_compile_payload
+
+        _, native_report = build_semantic_compile_payload(
+            CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)
+        )
+        if native_report.native_executable:
+            ir = replace(
+                ir,
+                capabilities=replace(ir.capabilities, native_executable=True),
+            )
+    except Exception:
+        pass
     return CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)

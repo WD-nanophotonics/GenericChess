@@ -103,21 +103,18 @@ def candidate_perft(native_rules, position, depth: int) -> int:
     return int(_module().semantic_candidate_perft(native_rules.capsule, position, int(depth)))
 
 
-def probe_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
-    """Run the bounded generic AlphaBeta probe over guarded semantic actions.
-
-    This deliberately remains a probe API: it exercises Native checked
-    transitions and deterministic PV selection without claiming the final
-    semantic search capability gate.  ``board_values`` and ``hand_values``
-    are optional evaluator profiles; when supplied they must be paired.  A
-    sequence is interpreted in ``native_rules.type_ids`` order, while a
-    mapping must cover those stable type IDs exactly.  Board values are
-    applied to each piece's base type and hand values to held base types,
-    with the side-to-move perspective determining the sign.  Omitting both
-    profiles retains the deterministic ``type_index + 1`` fallback.
-    """
+def terminal_status(native_rules, position) -> dict:
+    """Return the exact Native semantic terminal status and winner."""
     if not native_available():
         raise RuntimeError("native extension is not built")
+    raw = dict(_module().semantic_terminal(native_rules.capsule, position))
+    raw["status"] = str(raw["status"])
+    raw["winner"] = None if raw.get("winner") is None else int(raw["winner"])
+    return raw
+
+
+def _run_search(native_rules, position, depth: int, *, board_values=None, hand_values=None, entrypoint: str) -> dict:
+    args = (native_rules.capsule, position, int(depth))
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     if isinstance(board_values, Mapping) or isinstance(hand_values, Mapping):
@@ -128,12 +125,34 @@ def probe_search(native_rules, position, depth: int, *, board_values=None, hand_
             raise ValueError("semantic profile mappings must cover exactly native type IDs")
         board_values = tuple(int(board_values[type_id]) for type_id in expected)
         hand_values = tuple(int(hand_values[type_id]) for type_id in expected)
-    args = (native_rules.capsule, position, int(depth))
     if board_values is not None:
         args += (tuple(int(value) for value in board_values), tuple(int(value) for value in hand_values))
-    raw = dict(_module().semantic_probe_search(*args))
+    raw = dict(getattr(_module(), entrypoint)(*args))
     raw["best_action"] = None if raw.get("best_action") is None else int(raw["best_action"])
     raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
     raw["score"] = int(raw["score"])
     raw["nodes"] = int(raw["nodes"])
     return raw
+
+
+def fixed_depth_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
+    """Run production fixed-depth semantic AlphaBeta over guarded actions.
+
+    ``board_values`` and ``hand_values`` are optional evaluator profiles; when
+    supplied they must be paired.  A
+    sequence is interpreted in ``native_rules.type_ids`` order, while a
+    mapping must cover those stable type IDs exactly.  Board values are
+    applied to each piece's current type and hand values to held base types,
+    with the side-to-move perspective determining the sign.  Omitting both
+    profiles retains the deterministic ``type_index + 1`` fallback.
+    """
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_fixed_depth_search")
+
+
+def probe_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
+    """Run the lower-level compatibility AlphaBeta probe."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_probe_search")

@@ -307,10 +307,10 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_exact_action_identity", value);
     Py_DECREF(value);
-    value = PyBool_FromLong(0);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_position_state", value);
     Py_DECREF(value);
-    value = PyBool_FromLong(0);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_s0_s4_executor", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
@@ -349,10 +349,10 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(0);
     PyDict_SetItemString(dict, "native_qsearch", value);
     Py_DECREF(value);
-    value = PyBool_FromLong(0);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "production_dynamic_evaluator", value);
     Py_DECREF(value);
-    value = PyBool_FromLong(0);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "production_search_backend", value);
     Py_DECREF(value);
     return dict;
@@ -2764,6 +2764,10 @@ static PyObject *gc_semantic_terminal(PyObject *self, PyObject *args) {
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (position->history_len > 0 && !position->history_exact) {
+        PyErr_SetString(PyExc_ValueError, "semantic terminal requires exact full history");
+        return NULL;
+    }
     int winner = -1;
     int status = gc_semantic_terminal_status(rules, position, &winner);
     if (status < 0) {
@@ -2835,7 +2839,7 @@ static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSema
     for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
         const GCPiece *piece = &position->board[sq];
         if (!piece->occupied) continue;
-        int value = profile && profile->supplied ? profile->board[piece->base_type] : (int)piece->base_type + 1;
+        int value = profile && profile->supplied ? profile->board[piece->current_type] : (int)piece->current_type + 1;
         score += piece->owner == position->side_to_move ? value : -value;
     }
     for (uint8_t owner = 0; owner < 2; owner++) {
@@ -3122,8 +3126,12 @@ static PyMethodDef gc_methods[] = {
      "semantic_candidate_perft(rules, position, depth) -> recursive guarded candidate node count"},
     {"semantic_guarded_actions", gc_semantic_guarded_actions, METH_VARARGS,
      "semantic_guarded_actions(rules, position) -> exact guarded action set"},
+    {"semantic_terminal", gc_semantic_terminal, METH_VARARGS,
+     "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,
      "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
+    {"semantic_fixed_depth_search", gc_semantic_probe_search, METH_VARARGS,
+     "semantic_fixed_depth_search(rules, position, depth[, board_values, hand_values]) -> fixed-depth semantic AlphaBeta"},
     {NULL, NULL, 0, NULL}
 };
 

@@ -165,7 +165,7 @@ def test_stress_rules_compile_and_fail_closed():
         sem = compile_semantic_ruleset(builder())
         assert sem.ir.patterns, name
         assert sem.ir.capabilities.legacy_core_executable is False
-        assert sem.ir.capabilities.native_executable is False
+        assert sem.ir.capabilities.native_executable is True
         # Phase 1.9B-3: compile-time validation guarantees only supported
         # postconditions are emitted, so every stress ruleset (including the
         # uchifuzume-shaped S4 fixture) is executable (ADR-016 section 13).
