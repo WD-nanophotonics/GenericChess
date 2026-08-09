@@ -8,7 +8,11 @@ version = "0.8.0a9"
 description = "Deterministic generic chess/shogi-like game engine: core kernel, RuleSet compiler, and generator."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+  "google-api-python-client>=2.0,<3",
+  "google-auth-httplib2>=0.2,<1",
+  "google-auth-oauthlib>=1.2,<2",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
@@ -16,12 +20,14 @@ gui = ["PySide6>=6.6,<7"]
 
 [project.scripts]
 generic-chess-ui = "generic_chess.ui.app:main"
+gc-bridge = "generic_chess.bridge.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["generic_chess*"]
 
-[tool.setuptools.ext-modules]
-"generic_chess._native_core" = { sources = [
+[[tool.setuptools.ext-modules]]
+name = "generic_chess._native_core"
+sources = [
   "generic_chess/_native/native_module.c",
   "generic_chess/_native/native_rules.c",
   "generic_chess/_native/native_state.c",
@@ -34,7 +40,8 @@ include = ["generic_chess*"]
   "generic_chess/_native/native_tt.c",
   "generic_chess/_native/native_clock.c",
   "generic_chess/_native/native_cancel.c",
-], optional = true }
+]
+optional = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
