@@ -23,6 +23,8 @@
 #include "native_tt.h"
 #include "native_semantic_rules.h"
 #include "native_semantic_state.h"
+#include "native_semantic_key.h"
+#include "native_sha256.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
@@ -2286,6 +2288,34 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
     return out;
 }
 
+static PyObject *gc_semantic_position_key(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (rules == NULL || pos == NULL) return NULL;
+    char digest[65];
+    if (!gc_semantic_position_key_digest(rules, pos, digest)) {
+        PyErr_SetString(PyExc_ValueError, "semantic position cannot be canonically keyed");
+        return NULL;
+    }
+    return PyUnicode_FromString(digest);
+}
+
+static PyObject *gc_sha256_hex_api(PyObject *self, PyObject *args) {
+    (void)self;
+    const char *data = NULL;
+    Py_ssize_t length = 0;
+    if (!PyArg_ParseTuple(args, "y#", &data, &length)) return NULL;
+    GCSha256 ctx; uint8_t digest[32]; char hex[65];
+    gc_sha256_init(&ctx);
+    gc_sha256_update(&ctx, (const uint8_t *)data, (size_t)length);
+    gc_sha256_final(&ctx, digest);
+    gc_sha256_hex(digest, hex);
+    return PyUnicode_FromString(hex);
+}
+
 static PyObject *gc_compile_semantic_rules(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *payload;
@@ -2413,6 +2443,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_pack_position(rules, payload) -> semantic position capsule"},
     {"semantic_position_snapshot", gc_semantic_position_snapshot, METH_VARARGS,
      "semantic_position_snapshot(rules, position) -> canonical board snapshot"},
+    {"semantic_position_key", gc_semantic_position_key, METH_VARARGS,
+     "semantic_position_key(rules, position) -> SHA-256 hex digest"},
+    {"sha256_hex", gc_sha256_hex_api, METH_VARARGS,
+     "sha256_hex(bytes) -> lowercase SHA-256 digest"},
     {NULL, NULL, 0, NULL}
 };
 

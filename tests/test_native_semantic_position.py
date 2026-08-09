@@ -5,6 +5,7 @@ import pytest
 from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import pack_position, position_key, snapshot
+from generic_chess import _native_core
 from generic_chess.core.keys import semantic_position_key
 from generic_chess.core.pieces import Piece
 from generic_chess.core.position import Hands, Position
@@ -85,3 +86,13 @@ def test_native_semantic_history_roundtrip_and_repetition_count():
     observed = snapshot(native_rules, pack_position(native_rules, payload))
     assert observed["history"] == ((1, 2), (3, 4), (1, 2))
     assert observed["history_occurrences"] == 2
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_sha256_known_answers():
+    assert _native_core.sha256_hex(b"") == (
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    )
+    assert _native_core.sha256_hex(b"abc") == (
+        "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+    )
