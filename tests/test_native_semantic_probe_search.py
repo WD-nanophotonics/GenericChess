@@ -89,3 +89,23 @@ def test_native_probe_search_matches_python_minimax_on_semantic_corpus():
         expected = _python_probe(semantic, python_position, native_rules, 3)
         observed = probe_search(native_rules, native_position, 3)
         assert observed == expected, name
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_native_probe_search_depth_zero_is_deterministic_leaf():
+    semantic = next(semantic for name, semantic in semantic_corpus() if name == "castling")
+    native_rules = compile_native_semantic_rules(semantic)
+    board = tuple(piece for row in semantic.support.initial_position for piece in row)
+    type_ids = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    native_position = pack_position(native_rules, {
+        "side": 0,
+        "ply": 0,
+        "board": [None if piece is None else [type_ids[piece.base_type_id], type_ids[piece.current_type_id], piece.owner, 0] for piece in board],
+        "hands": [[0] * len(type_ids), [0] * len(type_ids)],
+        "aux_state": (),
+    })
+    observed = probe_search(native_rules, native_position, 0)
+    assert observed["nodes"] == 1
+    assert observed["has_best"] == 0
+    assert observed["best_action"] is None
+    assert observed["principal_variation"] == ()
