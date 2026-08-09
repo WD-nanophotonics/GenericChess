@@ -95,3 +95,20 @@ def candidate_perft(native_rules, position, depth: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return int(_module().semantic_candidate_perft(native_rules.capsule, position, int(depth)))
+
+
+def probe_search(native_rules, position, depth: int) -> dict:
+    """Run the bounded generic AlphaBeta probe over guarded semantic actions.
+
+    This deliberately remains a probe API: it exercises Native checked
+    transitions and deterministic PV selection without claiming the final
+    semantic search capability gate.
+    """
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    raw = dict(_module().semantic_probe_search(native_rules.capsule, position, int(depth)))
+    raw["best_action"] = None if raw.get("best_action") is None else int(raw["best_action"])
+    raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
+    raw["score"] = int(raw["score"])
+    raw["nodes"] = int(raw["nodes"])
+    return raw

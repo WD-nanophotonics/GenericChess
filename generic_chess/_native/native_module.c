@@ -2617,6 +2617,92 @@ static unsigned long long gc_semantic_perft_rec(const GCSemanticRules *rules, co
     return total;
 }
 
+typedef struct {
+    int score;
+    uint64_t best_action;
+    int has_best;
+    unsigned int pv_len;
+    uint64_t pv[GC_MAX_PLY + 1];
+    unsigned long long nodes;
+} GCSemanticProbeSearch;
+
+static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSemanticPosition *position) {
+    int score = 0;
+    for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
+        const GCPiece *piece = &position->board[sq];
+        if (!piece->occupied) continue;
+        int value = (int)piece->base_type + 1;
+        score += piece->owner == position->side_to_move ? value : -value;
+    }
+    return score;
+}
+
+static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *rules,
+                                                        const GCSemanticPosition *position,
+                                                        unsigned int depth) {
+    GCSemanticProbeSearch result;
+    memset(&result, 0, sizeof(result));
+    result.score = gc_semantic_probe_material(rules, position);
+    result.nodes = 1;
+    if (depth == 0) return result;
+    PyObject *actions = gc_semantic_candidate_tuple_native(rules, position);
+    if (!actions) return result;
+    int found = 0;
+    Py_ssize_t count = PyTuple_Size(actions);
+    for (Py_ssize_t i = 0; i < count; i++) {
+        unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(actions, i));
+        if (PyErr_Occurred()) { PyErr_Clear(); continue; }
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) continue;
+        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &child, depth - 1);
+        result.nodes += branch.nodes;
+        int score = -branch.score;
+        if (!found || score > result.score || (score == result.score && raw < result.best_action)) {
+            found = 1;
+            result.score = score;
+            result.best_action = (uint64_t)raw;
+            result.has_best = 1;
+            result.pv_len = branch.pv_len + 1;
+            result.pv[0] = (uint64_t)raw;
+            for (unsigned int j = 0; j < branch.pv_len && j + 1 < GC_MAX_PLY + 1; j++) result.pv[j + 1] = branch.pv[j];
+        }
+    }
+    Py_DECREF(actions);
+    return result;
+}
+
+static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    unsigned int depth;
+    if (!PyArg_ParseTuple(args, "OOI", &rules_capsule, &position_capsule, &depth)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position || depth > GC_MAX_PLY) return NULL;
+    GCSemanticProbeSearch result = gc_semantic_probe_negamax(rules, position, depth);
+    if (PyErr_Occurred()) return NULL;
+    PyObject *pv = PyTuple_New((Py_ssize_t)result.pv_len);
+    if (!pv) return NULL;
+    for (unsigned int i = 0; i < result.pv_len; i++) {
+        PyObject *value = PyLong_FromUnsignedLongLong(result.pv[i]);
+        if (!value) { Py_DECREF(pv); return NULL; }
+        PyTuple_SET_ITEM(pv, (Py_ssize_t)i, value);
+    }
+    PyObject *out = Py_BuildValue("{s:i,s:K,s:i,s:O}",
+                                  "score", result.score,
+                                  "nodes", result.nodes,
+                                  "has_best", result.has_best,
+                                  "principal_variation", pv);
+    Py_DECREF(pv);
+    if (!out) return NULL;
+    if (result.has_best) {
+        PyObject *best = PyLong_FromUnsignedLongLong(result.best_action);
+        if (!best || PyDict_SetItemString(out, "best_action", best) != 0) { Py_XDECREF(best); Py_DECREF(out); return NULL; }
+        Py_DECREF(best);
+    } else if (PyDict_SetItemString(out, "best_action", Py_None) != 0) { Py_DECREF(out); return NULL; }
+    return out;
+}
+
 static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *position_capsule;
@@ -2778,6 +2864,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_candidate_perft(rules, position, depth) -> recursive guarded candidate node count"},
     {"semantic_guarded_actions", gc_semantic_guarded_actions, METH_VARARGS,
      "semantic_guarded_actions(rules, position) -> exact guarded action set"},
+    {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,
+     "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
     {NULL, NULL, 0, NULL}
 };
 
