@@ -86,6 +86,6 @@ def test_native_probe_search_matches_python_minimax_on_semantic_corpus():
             "hands": [[0] * len(type_ids), [0] * len(type_ids)],
             "aux_state": (),
         })
-        expected = _python_probe(semantic, python_position, native_rules, 2)
-        observed = probe_search(native_rules, native_position, 2)
+        expected = _python_probe(semantic, python_position, native_rules, 3)
+        observed = probe_search(native_rules, native_position, 3)
         assert observed == expected, name
