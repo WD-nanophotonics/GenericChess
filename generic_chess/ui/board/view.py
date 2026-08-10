@@ -35,6 +35,7 @@ class BoardView(QGraphicsView):
         self.setMouseTracking(True)
         self.viewport().setMouseTracking(True)
         self._hover_enabled = True
+        self._input_enabled = True
         self._board_size: int | None = None
         self._base_scale = 1.0
         self._user_zoom = 1.0
@@ -136,11 +137,25 @@ class BoardView(QGraphicsView):
             self._controller.set_hover(None)
             self._scene.set_hover(None)
 
+    def set_input_enabled(self, enabled: bool) -> None:
+        """Gate board actions while a presentation transition is active.
+
+        The rest of the window remains interactive: close, resize, status,
+        and AI controls are deliberately outside this gate.
+        """
+        self._input_enabled = bool(enabled)
+
+    def input_enabled(self) -> bool:
+        return self._input_enabled
+
     def _logical_square(self, event) -> Square | None:
         pos = self.mapToScene(event.position().toPoint())
         return self._scene.scene_to_logical(pos.x(), pos.y())
 
     def mousePressEvent(self, event) -> None:
+        if not self._input_enabled:
+            event.ignore()
+            return
         square = self._logical_square(event)
         if square is None:
             super().mousePressEvent(event)

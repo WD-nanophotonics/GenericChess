@@ -43,6 +43,7 @@ KEY_ZOOM_MODE = "board/zoom_mode"
 # Descriptive alias retained for callers that want to express the product
 # meaning.  KEY_ZOOM_MODE remains the persisted compatibility key.
 KEY_ENABLE_WHEEL_ZOOM = KEY_ZOOM_MODE
+KEY_ENABLE_ANIMATIONS = "board/animations"
 KEY_SHOW_DEV_STATUS = "ui/dev_status"
 KEY_RECENT_RULESET_DIR = "files/recent_ruleset_dir"
 KEY_RECENT_RECORD_DIR = "files/recent_record_dir"

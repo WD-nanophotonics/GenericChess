@@ -41,6 +41,7 @@ from .settings import (
     KEY_AUTO_PROMOTE_UNIQUE,
     KEY_BOARD_ORIENTATION,
     KEY_ENABLE_PREVIEW,
+    KEY_ENABLE_ANIMATIONS,
     KEY_LANGUAGE,
     KEY_SHOW_COORDINATES,
     KEY_SHOW_DEV_STATUS,
@@ -115,6 +116,7 @@ class MainWindow(QMainWindow):
         )
 
         self._scene = BoardScene(self._cache)
+        self._scene.presentation_busy_changed.connect(self._on_scene_busy)
         self._board_view = BoardView(controller, self._scene)
         self._board_view.set_zoom_mode(bool(settings.get(KEY_ZOOM_MODE, False)))
 
@@ -381,15 +383,19 @@ class MainWindow(QMainWindow):
                 show_last_move=self._act_lastmove.isChecked(),
                 show_hover=hover_enabled,
             )
-            self._scene.build(
+            self._scene.present(
                 model,
                 compiled,
                 config,
                 self._controller.interaction.orientation_owner,
+                animation_enabled=bool(
+                    self._settings.get(KEY_ENABLE_ANIMATIONS, True)
+                ),
             )
             self._board_view.set_board_size(compiled.board_size)
             self._board_view.refresh_position()
             self._status_main.setText(self._status_text())
+        self._board_view.set_input_enabled(not self._scene.motion_active())
         for bar in self._player_bars.values():
             bar.refresh()
         self._moves_panel.refresh()
@@ -401,6 +407,9 @@ class MainWindow(QMainWindow):
 
     def _overlay_view_moves(self) -> None:
         self._sidebar.setCurrentWidget(self._moves_panel)
+
+    def _on_scene_busy(self, busy: bool) -> None:
+        self._board_view.set_input_enabled(not busy)
 
     def _overlay_lines(self, info):
         tr = self._tr
@@ -665,6 +674,7 @@ class MainWindow(QMainWindow):
             self._fit_timer.stop()
         self._controller.unsubscribe(self._refresh)
         self._tr.unsubscribe(self._on_language_changed)
+        self._scene.cancel_motion()
         return self._cancel_ai_state()
 
     # ------------------------------------------------------------------ dialogs
@@ -684,6 +694,7 @@ class MainWindow(QMainWindow):
 
     def _apply_new_match(self, request) -> None:
         self._cancel_ai_state()
+        self._scene.cancel_motion()
         self._ai_error = None
         if request.ruleset_mode == "generate":
             ok = self._controller.new_game(
@@ -724,6 +735,7 @@ class MainWindow(QMainWindow):
         if not path:
             return
         self._cancel_ai_state()
+        self._scene.cancel_motion()
         if not self._controller.open_ruleset(path):
             show_error(self, "", self._controller.last_error)
             return
@@ -737,6 +749,7 @@ class MainWindow(QMainWindow):
         if not path:
             return
         self._cancel_ai_state()
+        self._scene.cancel_motion()
         if not self._controller.open_record(path):
             show_error(self, "", self._controller.last_error)
             return
@@ -774,6 +787,7 @@ class MainWindow(QMainWindow):
 
     def _restart(self) -> None:
         self._cancel_ai_state()
+        self._scene.cancel_motion()
         self._controller.restart()
         match = self._controller.match_config
         if match is not None and any(
