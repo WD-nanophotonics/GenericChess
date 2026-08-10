@@ -70,7 +70,11 @@ class NewMatchDialog(QDialog):
         self._source.currentIndexChanged.connect(self._sync_source)
         ruleset_form.addRow(tr.text("new_match.source"), self._source)
         self._preset = QComboBox()
-        self._preset.addItems(["classic_like", "bilateral_random", "free_random"])
+        for preset_id in ("classic_like", "bilateral_random", "free_random"):
+            self._preset.addItem(
+                tr.text(f"new_match.preset_{preset_id}"),
+                userData=preset_id,
+            )
         ruleset_form.addRow(tr.text("new_match.preset"), self._preset)
         self._seed = QSpinBox()
         self._seed.setRange(0, 2**31 - 1)
@@ -237,7 +241,7 @@ class NewMatchDialog(QDialog):
             ruleset_mode=["current", "generate", "file"][self._source.currentIndex()],
             seed=self._seed.value(),
             board_size=self._board_size.value(),
-            preset=self._preset.currentText(),
+            preset=self._preset.currentData(),
             hybrid=self._hybrid.isChecked(),
             ruleset_path=(
                 self._path_label.text()

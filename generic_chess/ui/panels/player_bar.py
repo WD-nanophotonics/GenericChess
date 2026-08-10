@@ -83,6 +83,18 @@ class PlayerBar(QWidget):
     def is_hand_empty(self) -> bool:
         return not self.hand_buttons()
 
+    def refresh_clock(self) -> None:
+        """Refresh only this bar's clock label during the UI timer tick."""
+        state = self._controller.clock_state()
+        if state is None:
+            self._clock.clear()
+            return
+        total = state.remaining_for(self._owner) / 1000.0
+        if state.running and state.active_owner == self._owner:
+            total += state.overtime_for(self._owner) / 1000.0
+        minutes, seconds = divmod(int(total), 60)
+        self._clock.setText(f"{minutes:02d}:{seconds:02d}")
+
     def refresh(self) -> None:
         tr = self._tr
         name_key = "player.white" if self._owner == 0 else "player.black"
@@ -92,7 +104,6 @@ class PlayerBar(QWidget):
         info = self._controller.game_info()
         marker = ""
         marker_state = ""
-        clock_text = ""
         if info is not None:
             side = info.side_to_move
             displayed = self._controller.interaction.displayed_ply
@@ -104,18 +115,11 @@ class PlayerBar(QWidget):
                 else:
                     marker = tr.text("player.to_move")
                     marker_state = "active"
-            clock_state = self._controller.clock_state()
-            if clock_state is not None:
-                total = clock_state.remaining_for(self._owner) / 1000.0
-                if clock_state.running and clock_state.active_owner == self._owner:
-                    total += clock_state.overtime_for(self._owner) / 1000.0
-                minutes, seconds = divmod(int(total), 60)
-                clock_text = f"{minutes:02d}:{seconds:02d}"
         self._marker.setText(marker)
         self._marker.setProperty("state", marker_state)
         self._marker.style().unpolish(self._marker)
         self._marker.style().polish(self._marker)
-        self._clock.setText(clock_text)
+        self.refresh_clock()
 
         self._hand_label.setText(tr.text("player.hand") + "：")
         while self._hand_layout.count():

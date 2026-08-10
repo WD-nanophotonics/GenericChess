@@ -197,14 +197,33 @@ class MovesPanel(QWidget):
         return labels
 
     def _update_controls(self, displayed, live: int) -> None:
-        viewing = displayed is not None
-        self._return_btn.setEnabled(viewing)
-        first = displayed is None or displayed <= 1
-        last = displayed is None or live == 0 or displayed >= live
-        self._btn_first.setEnabled(not first)
-        self._btn_prev.setEnabled(not first)
-        self._btn_next.setEnabled(not last and live > 0)
-        self._btn_last.setEnabled(not last and live > 0)
+        if live <= 0:
+            self._return_btn.setEnabled(False)
+            for button in (
+                self._btn_first,
+                self._btn_prev,
+                self._btn_next,
+                self._btn_last,
+            ):
+                button.setEnabled(False)
+            return
+
+        if displayed is None:
+            # Live is an endpoint for the forward direction, but Previous and
+            # First still navigate into the existing history.
+            self._return_btn.setEnabled(False)
+            self._btn_first.setEnabled(True)
+            self._btn_prev.setEnabled(True)
+            self._btn_next.setEnabled(False)
+            self._btn_last.setEnabled(False)
+            return
+
+        displayed = max(0, min(live, int(displayed)))
+        self._return_btn.setEnabled(True)
+        self._btn_first.setEnabled(displayed > 0)
+        self._btn_prev.setEnabled(displayed > 0)
+        self._btn_next.setEnabled(displayed < live)
+        self._btn_last.setEnabled(displayed < live)
 
     # ------------------------------------------------------------------ replay
 
@@ -231,4 +250,6 @@ class MovesPanel(QWidget):
         self._controller.display_ply(min(live, displayed + 1))
 
     def _go_last(self) -> None:
-        self._controller.return_to_current()
+        displayed = self._controller.interaction.displayed_ply
+        if displayed is not None:
+            self._controller.display_ply(self._controller.game_info().ply_count)

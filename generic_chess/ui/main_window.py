@@ -499,6 +499,8 @@ class MainWindow(QMainWindow):
 
     def _clock_tick(self) -> None:
         self._controller.clock_tick()
+        for bar in self._player_bars.values():
+            bar.refresh_clock()
         state = self._controller.clock_state()
         if state is None:
             self._clock_label.setText("")
@@ -737,7 +739,9 @@ class MainWindow(QMainWindow):
         self._maybe_start_ai()
 
     def _open_ruleset(self) -> None:
-        path, _ = QFileDialog.getOpenFileName(self, "", "", "JSON files (*.json)")
+        path, _ = QFileDialog.getOpenFileName(
+            self, "", "", self._tr.text("new_match.json_files")
+        )
         if not path:
             return
         self._cancel_ai_state()
@@ -751,7 +755,9 @@ class MainWindow(QMainWindow):
         if self._controller.compiled is None:
             show_info(self, "", self._tr.text("dialog.load_ruleset_first"))
             return
-        path, _ = QFileDialog.getOpenFileName(self, "", "", "JSON files (*.json)")
+        path, _ = QFileDialog.getOpenFileName(
+            self, "", "", self._tr.text("new_match.json_files")
+        )
         if not path:
             return
         self._cancel_ai_state()
@@ -773,7 +779,9 @@ class MainWindow(QMainWindow):
     def _save_record_as(self) -> None:
         if self._controller.session is None:
             return
-        path, _ = QFileDialog.getSaveFileName(self, "", "", "JSON files (*.json)")
+        path, _ = QFileDialog.getSaveFileName(
+            self, "", "", self._tr.text("new_match.json_files")
+        )
         if path:
             self._save_to(path)
 

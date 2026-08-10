@@ -112,6 +112,7 @@ class BoardScene(QGraphicsScene):
         self._coordinate_items: dict[tuple[str, int], QGraphicsSimpleTextItem] = {}
         self._piece_items: dict[Square, PersistentPieceItem] = {}
         self._interaction_items: list[QGraphicsItem] = []
+        self._interaction_model: BoardViewModel | None = None
         self._effect_items: set[QGraphicsItem] = set()
         self._visual_model: BoardViewModel | None = None
         self._authoritative_model: BoardViewModel | None = None
@@ -188,6 +189,7 @@ class BoardScene(QGraphicsScene):
         self._coordinate_items.clear()
         self._piece_items.clear()
         self._interaction_items.clear()
+        self._interaction_model = None
         self._effect_items.clear()
         self._hover_item = None
         self._visual_model = None
@@ -440,8 +442,36 @@ class BoardScene(QGraphicsScene):
         self._interaction_items.clear()
         self._hover_item = None
 
+    def interaction_snapshot(self) -> dict[Square, tuple[bool, bool, bool, bool, bool, bool, bool]]:
+        """Expose the rendered interaction flags for focused renderer tests."""
+        model = self._interaction_model
+        if model is None:
+            return {}
+        return {
+            sv.square: (
+                sv.is_last_move_from,
+                sv.is_last_move_to,
+                sv.is_selected,
+                sv.is_legal_move,
+                sv.is_legal_capture,
+                sv.is_preview,
+                sv.is_check_anchor,
+            )
+            for sv in model.squares
+            if (
+                sv.is_last_move_from
+                or sv.is_last_move_to
+                or sv.is_selected
+                or sv.is_legal_move
+                or sv.is_legal_capture
+                or sv.is_preview
+                or sv.is_check_anchor
+            )
+        }
+
     def _refresh_interaction(self, model: BoardViewModel) -> None:
         self._remove_interaction()
+        self._interaction_model = model
         if self._config is None:
             return
         theme = self._config.theme
@@ -690,6 +720,7 @@ class BoardScene(QGraphicsScene):
             self._active_transition = None
             self._visual_model = target
             self._transition_target_model = None
+            self._refresh_interaction(target)
             self._emit_busy(False)
             pending = self._pending_model
             self._pending_model = None
