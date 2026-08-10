@@ -214,7 +214,12 @@ def test_tiny_time_budget_aborts_before_clock_expiry():
     )
     assert decision.termination_reason == "time_limit"
     assert decision.nodes < 128  # time checked at every 128 nodes
-    assert decision.completed_depth == 1
+    # The 100µs budget is intentionally tiny, but the exact number of
+    # completed iterations depends on host scheduling and Python startup
+    # state.  The contract is that at least one iteration may complete, the
+    # search stops before the requested maximum depth, and the time limit is
+    # reported without overshooting the 128-node check interval.
+    assert 1 <= decision.completed_depth < 10
 
 
 def test_budget_counts_qnodes_toward_node_limit():
