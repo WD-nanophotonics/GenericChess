@@ -1,0 +1,24 @@
+{
+  "authority": "cshogi",
+  "board_constructor": "cshogi.Board(sfen)",
+  "board_probe": "lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1",
+  "check": "Board.is_check() for side to move after transition",
+  "child_state": "Board.push_usi(usi); Board.sfen()",
+  "cshogi_distribution": "1.0.4",
+  "history": "cshogi Board history is oracle-owned; GC records canonical child keys and check witness",
+  "legal_actions": "Board.legal_moves -> move_to_usi; king captures excluded",
+  "module": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Lib\\site-packages\\cshogi\\__init__.py",
+  "normalization": "canonical four SFEN fields; USI strings sorted before comparison",
+  "nyugyoku": "Board.is_nyugyoku(); declaration policy outside this certification unlock",
+  "python": "3.13.2",
+  "repetition": {
+    "constants": {
+      "REPETITION_DRAW": 1,
+      "REPETITION_LOSE": 3,
+      "REPETITION_WIN": 2
+    },
+    "is_draw": "Board.is_draw()",
+    "move_is_draw": "Board.move_is_draw(move)"
+  },
+  "terminal": "Board.is_game_over(); no declaration side effect in legal-set gate"
+}

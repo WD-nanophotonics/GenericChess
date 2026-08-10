@@ -130,6 +130,7 @@ def piece_from_dict(data: Mapping[str, Any], path: str = "initial_position[]") -
 
 
 SEMANTIC_DSL_VERSION = 2
+REPETITION_POLICIES = ("draw", "continuous_check_loss")
 
 
 @dataclass(frozen=True, slots=True)
@@ -153,6 +154,9 @@ class RuleSet:
     )
     promotion_forced: Mapping[str, tuple[frozenset[Square], ...]] = field(default_factory=dict)
     repetition_limit: int = 4
+    # Generic policy for a repeated position.  ``draw`` is the historical
+    # default; continuous-check adjudication is opt-in per ruleset.
+    repetition_policy: str = "draw"
     max_ply: int = 512
     stalemate_result: str = "draw"
     # Additive high-level semantic actions (Phase 1.9B-1).  Omitted/empty
@@ -1124,6 +1128,8 @@ def ruleset_to_dict(ruleset: RuleSet, include_metadata: bool = True) -> dict[str
         "max_ply": ruleset.max_ply,
         "stalemate_result": ruleset.stalemate_result,
     }
+    if ruleset.repetition_policy != "draw":
+        data["repetition_policy"] = ruleset.repetition_policy
     # Additive semantic actions: emitted only when non-empty so legacy
     # serialization (and therefore fingerprints) stays byte-identical.
     if ruleset.semantic_actions:
@@ -1253,6 +1259,15 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
     repetition_limit = _require_int(
         data.get("repetition_limit", 4), f"{path}.repetition_limit", "REPETITION_LIMIT_INVALID"
     )
+    repetition_policy = _require_str(
+        data.get("repetition_policy", "draw"), f"{path}.repetition_policy"
+    )
+    if repetition_policy not in REPETITION_POLICIES:
+        raise _err(
+            "REPETITION_POLICY_UNSUPPORTED",
+            f"{path}.repetition_policy",
+            f"unsupported repetition policy {repetition_policy!r}",
+        )
     max_ply = _require_int(data.get("max_ply", 512), f"{path}.max_ply", "MAX_PLY_INVALID")
     stalemate_result = _require_str(
         data.get("stalemate_result", "draw"), f"{path}.stalemate_result"
@@ -1289,6 +1304,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         promotion_allowed=promotion_allowed,
         promotion_forced=promotion_forced,
         repetition_limit=repetition_limit,
+        repetition_policy=repetition_policy,
         max_ply=max_ply,
         stalemate_result=stalemate_result,
         semantic_actions=semantic_actions,

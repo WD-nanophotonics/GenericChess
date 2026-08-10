@@ -360,6 +360,11 @@ def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
         f"max_ply {compiled.max_ply} exceeds native limit {GC_MAX_PLY}",
         fingerprint,
     )
+    _validate(
+        getattr(compiled, "repetition_policy", "draw") == "draw",
+        "history-dependent repetition policy is unsupported by native schema",
+        fingerprint,
+    )
     types = tuple(compiled.piece_types)
     _validate(len(types) <= 64, "too many piece types for native kernel", fingerprint)
     type_ids = sorted(t.type_id for t in types)

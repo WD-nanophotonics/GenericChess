@@ -79,11 +79,12 @@ def _pawn_drop_pattern() -> RuleSemanticAction:
 
 def build_semantic_shogi_ruleset() -> RuleSet:
     """Return Standard Shogi with its benchmark-blocking rules lowered generically."""
-    base = build_shogi_ruleset(corrected_promotion=True)
+    base = build_shogi_ruleset(corrected_promotion=True, cshogi_orientation=True)
     return replace(
         base,
         semantic_actions=(_pawn_drop_pattern(),),
         semantic_dsl_version=2,
+        repetition_policy="continuous_check_loss",
         metadata={
             "preset": "standard_shogi_semantic",
             "source": "round4_semantic_certification",

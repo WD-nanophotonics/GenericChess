@@ -262,6 +262,8 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
 
     if not isinstance(ruleset.repetition_limit, int) or ruleset.repetition_limit < 1:
         issues.append(ValidationIssue("REPETITION_LIMIT_INVALID", "repetition_limit", "repetition_limit must be a positive integer"))
+    if ruleset.repetition_policy not in ("draw", "continuous_check_loss"):
+        issues.append(ValidationIssue("REPETITION_POLICY_UNSUPPORTED", "repetition_policy", "unsupported repetition policy"))
     if not isinstance(ruleset.max_ply, int) or ruleset.max_ply < 1:
         issues.append(ValidationIssue("MAX_PLY_INVALID", "max_ply", "max_ply must be a positive integer"))
     if ruleset.stalemate_result != "draw":
@@ -353,6 +355,7 @@ def compile_ruleset(
         promotion_allowed=ruleset.promotion_allowed,
         promotion_forced=ruleset.promotion_forced,
         repetition_limit=ruleset.repetition_limit,
+        repetition_policy=ruleset.repetition_policy,
         max_ply=ruleset.max_ply,
         stalemate_result=ruleset.stalemate_result,
     )
@@ -659,6 +662,7 @@ def _build_semantic_support(compiled: CompiledRuleSet):
         promotion_forced=compiled.promotion_forced,
         empty_mobility=compiled.empty_mobility,
         repetition_limit=compiled.repetition_limit,
+        repetition_policy=compiled.repetition_policy,
         max_ply=compiled.max_ply,
         stalemate_result=compiled.stalemate_result,
     )

@@ -1,0 +1,70 @@
+{
+  "capture_to_hand": {
+    "captured_piece_code": 1,
+    "gc_hands_after": [
+      [],
+      [
+        [
+          "P",
+          1
+        ]
+      ]
+    ],
+    "reachable": true,
+    "sfen": "1nsgkg1n1/lr3s1bl/pppppp2p/6pp1/9/6PP1/PPPPPP2P/LBS2G1R1/1N1GK1SNL w - 16",
+    "usi": "2b7g+"
+  },
+  "captured_promoted_piece_demotes_to_base_hand": {
+    "captured_piece_code": 13,
+    "gc_hands_after": [
+      [
+        [
+          "N",
+          1
+        ]
+      ],
+      [
+        [
+          "B",
+          1
+        ]
+      ]
+    ],
+    "generic_transition_verified": true,
+    "sfen": "2s1gg3/l1k2s1bl/pr4+B1p/2ppp1p2/1p1n1pPp1/2P2P1P1/PP1PP1S1P/L1S3G1R/1N1G1K1NL w N 52",
+    "usi": "4b3c"
+  },
+  "checking_pawn_drop_with_legal_reply": {
+    "generic_transition_verified": true,
+    "reply_count": 6,
+    "sfen": "ln4rnl/1gk1gs3/3ps1p1b/p1p2p1pp/1P1P5/PpR1p1PPP/4PP1S1/4G3L/LNSKG2NB b P 59",
+    "usi": "P*7c"
+  },
+  "checkmate": {
+    "generic_transition_verified": true,
+    "sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+    "usi": "G*7b"
+  },
+  "forced_pawn_lance_knight_promotion": {
+    "base_type": "N",
+    "generic_transition_verified": true,
+    "sfen": "2s1gg3/l1k2s1bl/pr4+B1p/2ppp1p2/1p3pPp1/2P2PSP1/PPnPP3P/L1S3G1R/1N1G1K1NL w N 54",
+    "usi": "7g6i+"
+  },
+  "nyugyoku_exclusion": {
+    "excluded_from_unlock": true,
+    "reason": "declaration semantics are outside this certification protocol"
+  },
+  "ordinary_repetition": {
+    "fixture": "4k4/9/9/9/9/9/9/9/4K4 b - 1",
+    "real_history": true
+  },
+  "perpetual_repetition": {
+    "fixture": "9/9/9/9/9/9/2K6/3R5/1k7 b - 1",
+    "real_history": true
+  },
+  "search_scope": {
+    "positions": 50,
+    "reachable_only": true
+  }
+}

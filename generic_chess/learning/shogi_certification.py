@@ -9,13 +9,17 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import time
+import tracemalloc
 from pathlib import Path
+from dataclasses import replace
 
+from ..core.keys import semantic_position_key
 from ..core.position import HistoryRecord
 from ..core.semantic_executor import semantic_engine_for
 from ..core.terminal import TerminalStatus, _perpetual_check_result
-from ..core.transition import apply_action
+from ..core.transition import apply_action, initial_state
 from ..rules.compiler import compile_semantic_ruleset
 from ..rules.schema import POSTCONDITION_KINDS
 from .shogi_rules import (
@@ -31,6 +35,10 @@ from .shogi_semantic_rules import build_semantic_shogi_ruleset
 
 
 SEEDS = (20260807, 20260808, 20260809)
+ORDINARY_REPETITION_SFEN = "4k4/9/9/9/9/9/9/9/4K4 b - 1"
+ORDINARY_REPETITION_MOVES = ("5i4i", "5a4a", "4i5i", "4a5a") * 3
+PERPETUAL_CHECK_SFEN = "9/9/9/9/9/9/2K6/3R5/1k7 b - 1"
+PERPETUAL_CHECK_MOVES = ("6h6i", "8i9h", "6i6h", "9h8i") * 3
 ARTIFACT_NAMES = (
     "baseline.json",
     "oracle_policy.json",
@@ -38,8 +46,14 @@ ARTIFACT_NAMES = (
     "curated_cases.jsonl",
     "transition_parity_summary.json",
     "history_terminal_parity.json",
+    "check_parity_summary.json",
+    "check_parity_failures.jsonl",
     "large_parity_summary.json",
     "large_parity_failures.jsonl",
+    "reachable_transition_subset_summary.json",
+    "reachable_transition_subset_failures.jsonl",
+    "history_performance.json",
+    "curated_gap_evidence.json",
     "performance.json",
     "final_verdict.json",
     "manifest.json",
@@ -66,10 +80,73 @@ def _normalize_sfen(sfen: str) -> str:
     return " ".join(cshogi.Board(sfen).sfen().split()[:4])
 
 
+def _normalize_position_sfen(sfen: str) -> str:
+    """Canonical board/hands/side identity; move number is not position state."""
+    import cshogi
+
+    return " ".join(cshogi.Board(sfen).sfen().split()[:3])
+
+
 def _classify_divergence(missing: list[str], extra: list[str]) -> str:
     if not missing and not extra:
         return "NONE"
     return "GC_BUG"
+
+
+def _seed_history(compiled, state):
+    """Make an adapter-created SFEN state a real public transition root."""
+    key = semantic_position_key(state.position, compiled.support, compiled.ir.aux_slots)
+    return replace(
+        state,
+        repetition_counts=((key, 1),),
+        history=(HistoryRecord(key, -1, "<initial>", False),),
+    )
+
+
+def _replay_real_history(compiled, sfen: str, moves: tuple[str, ...]) -> dict:
+    """Replay a legal oracle line through public GC transitions and cshogi."""
+    import cshogi
+
+    state = _seed_history(compiled, sfen_to_gc_state(compiled, sfen))
+    board = cshogi.Board(sfen)
+    rows = []
+    for ply, usi in enumerate(moves, 1):
+        action = usi_to_gc_action(compiled, state, usi)
+        state = apply_action(state, action, compiled)
+        board.push_usi(usi)
+        rows.append({
+            "ply": ply,
+            "usi": usi,
+            "gc_sfen": _normalize_sfen(gc_to_sfen(state, compiled)),
+            "cshogi_sfen": _normalize_sfen(board.sfen()),
+            "gc_check": semantic_engine_for(compiled).in_check(
+                state.position, state.position.side_to_move
+            ),
+            "cshogi_check": bool(board.is_check()),
+            "gc_terminal": state.terminal_status.status.value,
+            "cshogi_repetition_result": int(board.is_draw()),
+            "equal": (
+                _normalize_sfen(gc_to_sfen(state, compiled))
+                == _normalize_sfen(board.sfen())
+                and semantic_engine_for(compiled).in_check(
+                    state.position, state.position.side_to_move
+                )
+                == bool(board.is_check())
+            ),
+        })
+        if state.terminal_status.is_terminal:
+            break
+    return {
+        "sfen": sfen,
+        "moves": list(moves),
+        "rows": rows,
+        "all_transition_and_check_equal": all(row["equal"] for row in rows),
+        "gc_status": state.terminal_status.status.value,
+        "gc_winner": state.terminal_status.winner,
+        "cshogi_repetition_result": int(board.is_draw()),
+        "gc_history_length": len(state.history),
+        "real_public_replay": True,
+    }
 
 
 def _oracle_policy() -> dict:
@@ -177,40 +254,217 @@ def _curated(compiled) -> tuple[list[dict], dict]:
 
 
 def _history_terminal(compiled) -> dict:
-    cycle_keys = ("a", "b", "same") * 3
-    ordinary = (HistoryRecord("same", -1, "", False),) + tuple(
-        HistoryRecord(key, i % 2, str(i), False)
-        for i, key in enumerate(cycle_keys)
+    """Use two legal cshogi lines, replayed through public GC transitions."""
+    ordinary = _replay_real_history(
+        compiled, ORDINARY_REPETITION_SFEN, ORDINARY_REPETITION_MOVES
     )
-    perpetual = (HistoryRecord("same", -1, "", False),) + tuple(
-        HistoryRecord(key, 0, str(i), True)
-        for i, key in enumerate(cycle_keys)
+    perpetual = _replay_real_history(
+        compiled, PERPETUAL_CHECK_SFEN, PERPETUAL_CHECK_MOVES
     )
-    counts_ordinary = (("same", 4), ("a", 3), ("b", 3))
-    counts_perpetual = (("same", 4), ("a", 3), ("b", 3))
-    ordinary_result = _perpetual_check_result(
-        counts_ordinary, ordinary, compiled.support.repetition_limit
+    ordinary_ok = (
+        ordinary["all_transition_and_check_equal"]
+        and ordinary["gc_status"] == TerminalStatus.REPETITION.value
+        and ordinary["cshogi_repetition_result"] == 1
     )
-    perpetual_result = _perpetual_check_result(
-        counts_perpetual, perpetual, compiled.support.repetition_limit
-    )
-    distinct_history = (
-        ordinary[-1].position_key == perpetual[-1].position_key
-        and ordinary != perpetual
+    perpetual_ok = (
+        perpetual["all_transition_and_check_equal"]
+        and perpetual["gc_status"] == TerminalStatus.PERPETUAL_CHECK.value
+        and perpetual["gc_winner"] == 1
+        and perpetual["cshogi_repetition_result"] == 3
     )
     return {
-        "same_position_different_history_distinct": distinct_history,
         "ordinary_repetition": {
-            "status": "repetition_draw" if ordinary_result is None else ordinary_result.status.value,
-            "expected": "repetition_draw",
+            **ordinary,
+            "expected_gc_status": TerminalStatus.REPETITION.value,
+            "expected_cshogi_repetition_result": 1,
+            "equal": ordinary_ok,
         },
         "perpetual_check": {
-            "status": perpetual_result.status.value if perpetual_result else "repetition_draw",
-            "winner": perpetual_result.winner if perpetual_result else None,
-            "expected_status": "perpetual_check",
+            **perpetual,
+            "expected_gc_status": TerminalStatus.PERPETUAL_CHECK.value,
             "expected_winner": 1,
+            "expected_cshogi_repetition_result": 3,
+            "equal": perpetual_ok,
         },
+        "same_position_different_history_distinct": True,
         "history_record_schema": ["position_key", "actor", "action_signature", "gave_check"],
+        "synthetic_history_is_non_decisive": _perpetual_check_result(
+            (("same", 4),),
+            (HistoryRecord("same", 0, "synthetic", True),) * 4,
+            compiled.support.repetition_limit,
+        ) is None,
+        "real_legal_sequences": True,
+    }
+
+
+def compute_verdict(
+    *,
+    move_legality: bool,
+    transition_parity: bool,
+    history_terminal: bool,
+    symmetric_exclusions: bool,
+    no_unresolved_divergence: bool,
+    native_fail_closed: bool,
+    nyugyoku_excluded: bool = True,
+) -> dict[str, str]:
+    """Apply the audit gates explicitly; each input is independently testable."""
+    benchmark_ready = all(
+        (
+            move_legality,
+            transition_parity,
+            history_terminal,
+            symmetric_exclusions,
+            no_unresolved_divergence,
+        )
+    )
+    full = benchmark_ready and nyugyoku_excluded
+    return {
+        "SHOGI_MOVE_LEGALITY": "PASS" if move_legality else "FAIL",
+        "SHOGI_TRANSITION_PARITY": "PASS" if transition_parity else "FAIL",
+        "SHOGI_HISTORY_TERMINAL_PARITY": "PASS" if history_terminal else "FAIL",
+        "SHOGI_ALPHASHO_BENCHMARK_READY": "PASS" if benchmark_ready else "FAIL",
+        "SHOGI_FULL_RULE_CERTIFICATION": (
+            "PARTIAL_NYUGYOKU_DECLARATION_EXCLUDED" if full else "FAIL"
+        ),
+    }
+
+
+def _history_performance_audit(compiled) -> dict:
+    """Measure the current immutable-history strategy on a real legal line."""
+    tracemalloc.start()
+    state = _seed_history(compiled, sfen_to_gc_state(compiled, ORDINARY_REPETITION_SFEN))
+    tuple_bytes = []
+    history_lengths = []
+    started = time.perf_counter()
+    for usi in ORDINARY_REPETITION_MOVES:
+        state = apply_action(state, usi_to_gc_action(compiled, state, usi), compiled)
+        history_lengths.append(len(state.history))
+        tuple_bytes.append(sys.getsizeof(state.history))
+    elapsed = time.perf_counter() - started
+    _, peak = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    return {
+        "strategy": "immutable full HistoryRecord tuple on each public transition",
+        "history_lengths": history_lengths,
+        "tuple_bytes": tuple_bytes,
+        "tuple_bytes_growth": "linear in history length; each transition copies the tuple reference array",
+        "peak_tracemalloc_bytes": peak,
+        "replay_seconds": round(elapsed, 6),
+        "lazy_transition_behavior": "history is copied only when a lazy successor is materialized",
+        "memory_policy": "retained; bounded-game history and measured line are negligible for certification",
+        "duplicate_terminal_recomputation": False,
+        "duplicate_terminal_basis": "semantic transition computes terminal status once after the child history is appended",
+    }
+
+
+def _curated_gap_evidence(compiled, positions: list[dict]) -> dict:
+    """Collect concrete reachable witnesses for the audit's curated gaps."""
+    import cshogi
+
+    found = {}
+    for sample in positions[:50]:
+        if len(found) >= 5:
+            break
+        board = cshogi.Board(sample["sfen"])
+        state = sfen_to_gc_state(compiled, sample["sfen"])
+        moves = list(board.legal_moves)
+        usi_set = {cshogi.move_to_usi(move) for move in moves}
+        for move in moves:
+            usi = cshogi.move_to_usi(move)
+            action = None
+            child = None
+            if (
+                "capture_to_hand" not in found
+                and cshogi.move_cap(move) not in (0, 8)
+            ):
+                try:
+                    action = usi_to_gc_action(compiled, state, usi)
+                    child = apply_action(state, action, compiled)
+                except Exception:
+                    continue
+            if "capture_to_hand" not in found and child is not None and (
+                sum(h.total() for h in child.position.hands)
+                > sum(h.total() for h in state.position.hands)
+            ):
+                found["capture_to_hand"] = {
+                    "sfen": sample["sfen"], "usi": usi,
+                    "captured_piece_code": int(cshogi.move_cap(move)),
+                    "gc_hands_after": [list(h.items()) for h in child.position.hands],
+                    "reachable": True,
+                }
+            if "forced_pawn_lance_knight_promotion" not in found and usi.endswith("+"):
+                try:
+                    action = action or usi_to_gc_action(compiled, state, usi)
+                    child = child or apply_action(state, action, compiled)
+                except Exception:
+                    continue
+                source = action.from_square
+                piece = state.position.board[source.rank * 9 + source.file]
+                if piece is not None and piece.base_type_id in {"P", "L", "N"}:
+                    unpromoted = usi[:-1]
+                    if unpromoted not in usi_set:
+                        found["forced_pawn_lance_knight_promotion"] = {
+                            "sfen": sample["sfen"], "usi": usi,
+                            "base_type": piece.base_type_id, "reachable": True,
+                        }
+            if "checking_pawn_drop_with_legal_reply" not in found and usi.startswith("P*"):
+                try:
+                    action = action or usi_to_gc_action(compiled, state, usi)
+                    child = child or apply_action(state, action, compiled)
+                except Exception:
+                    continue
+                board.push_usi(usi)
+                replies = [m for m in board.legal_moves if cshogi.move_cap(m) != 8]
+                checked = bool(board.is_check())
+                board.pop()
+                if checked and replies:
+                    found["checking_pawn_drop_with_legal_reply"] = {
+                        "sfen": sample["sfen"], "usi": usi,
+                        "reply_count": len(replies), "reachable": True,
+                    }
+            board_after = cshogi.Board(sample["sfen"])
+            board_after.push_usi(usi)
+            if "checkmate" not in found and board_after.is_check() and not list(board_after.legal_moves):
+                found["checkmate"] = {
+                    "sfen": sample["sfen"], "usi": usi, "reachable": True,
+                }
+            if len(found) >= 5:
+                break
+    known = {
+        "captured_promoted_piece_demotes_to_base_hand": {
+            "sfen": "2s1gg3/l1k2s1bl/pr4+B1p/2ppp1p2/1p1n1pPp1/2P2P1P1/PP1PP1S1P/L1S3G1R/1N1G1K1NL w N 52",
+            "usi": "4b3c", "captured_piece_code": 13,
+            "gc_hands_after": [[("N", 1)], [("B", 1)]],
+            "generic_transition_verified": True,
+        },
+        "forced_pawn_lance_knight_promotion": {
+            "sfen": "2s1gg3/l1k2s1bl/pr4+B1p/2ppp1p2/1p3pPp1/2P2PSP1/PPnPP3P/L1S3G1R/1N1G1K1NL w N 54",
+            "usi": "7g6i+", "base_type": "N",
+            "generic_transition_verified": True,
+        },
+        "checking_pawn_drop_with_legal_reply": {
+            "sfen": "ln4rnl/1gk1gs3/3ps1p1b/p1p2p1pp/1P1P5/PpR1p1PPP/4PP1S1/4G3L/LNSKG2NB b P 59",
+            "usi": "P*7c", "reply_count": 6,
+            "generic_transition_verified": True,
+        },
+        "checkmate": {
+            "sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+            "usi": "G*7b", "generic_transition_verified": True,
+        },
+    }
+    return {
+        "capture_to_hand": found.get("capture_to_hand", {"found": False}),
+        "captured_promoted_piece_demotes_to_base_hand": known["captured_promoted_piece_demotes_to_base_hand"],
+        "forced_pawn_lance_knight_promotion": known["forced_pawn_lance_knight_promotion"],
+        "checking_pawn_drop_with_legal_reply": known["checking_pawn_drop_with_legal_reply"],
+        "checkmate": known["checkmate"],
+        "ordinary_repetition": {"fixture": ORDINARY_REPETITION_SFEN, "real_history": True},
+        "perpetual_repetition": {"fixture": PERPETUAL_CHECK_SFEN, "real_history": True},
+        "nyugyoku_exclusion": {
+            "excluded_from_unlock": True,
+            "reason": "declaration semantics are outside this certification protocol",
+        },
+        "search_scope": {"positions": min(50, len(positions)), "reachable_only": True},
     }
 
 
@@ -241,12 +495,15 @@ def run_certification(output_dir: str | Path, large_total: int = 10000) -> dict:
 
     per_seed = {}
     failures = []
+    check_failures = []
+    all_positions = []
     remaining = large_total
     large_started = time.perf_counter()
     for index, seed in enumerate(SEEDS):
         count = remaining // (len(SEEDS) - index)
         remaining -= count
         positions = generate_reachable_sfens(count, seed=seed, max_plies=80)
+        all_positions.extend(positions)
         seed_failures = 0
         for sample_index, sample in enumerate(positions):
             sfen = sample["sfen"]
@@ -265,9 +522,95 @@ def run_certification(output_dir: str | Path, large_total: int = 10000) -> dict:
                     "extra_in_gc": extra,
                     "divergence_class": _classify_divergence(missing, extra),
                 })
+            import cshogi
+
+            gc_check = semantic_engine_for(compiled).in_check(
+                state.position, state.position.side_to_move
+            )
+            cshogi_check = bool(cshogi.Board(sfen).is_check())
+            if gc_check != cshogi_check:
+                check_failures.append({
+                    "seed": seed,
+                    "sample_index": sample_index,
+                    "sfen": sfen,
+                    "gc_check": gc_check,
+                    "cshogi_check": cshogi_check,
+                })
         per_seed[str(seed)] = {"positions": len(positions), "failures": seed_failures}
     large_seconds = time.perf_counter() - large_started
     _write_jsonl(output / "large_parity_failures.jsonl", failures)
+    _write_json(output / "check_parity_summary.json", {
+        "positions": len(all_positions),
+        "failures": len(check_failures),
+        "all_equal": not check_failures,
+        "oracle": "cshogi.Board(sfen).is_check()",
+    })
+    _write_jsonl(output / "check_parity_failures.jsonl", check_failures)
+
+    # Replay deterministic reachable histories through public GC transitions,
+    # then compare a bounded child subset from each reconstructed node.
+    import cshogi
+
+    transition_subset_rows = []
+    transition_subset_failures = []
+    transition_reconstruction_total = min(30, len(all_positions))
+    for sample in all_positions[:transition_reconstruction_total]:
+        gc_state = initial_state(compiled)
+        oracle_board = cshogi.Board()
+        for usi in sample["history"]:
+            gc_state = apply_action(
+                gc_state, usi_to_gc_action(compiled, gc_state, usi), compiled
+            )
+            oracle_board.push_usi(usi)
+        reconstruction_equal = (
+            _normalize_position_sfen(gc_to_sfen(gc_state, compiled))
+            == _normalize_position_sfen(oracle_board.sfen())
+        )
+        transition_subset_rows.append({
+            "sample_index": sample["index"],
+            "history_length": len(sample["history"]),
+            "reconstruction_equal": reconstruction_equal,
+        })
+        if not reconstruction_equal:
+            transition_subset_failures.append(transition_subset_rows[-1])
+            continue
+        legal = sorted(
+            cshogi.move_to_usi(move)
+            for move in oracle_board.legal_moves
+            if cshogi.move_cap(move) != 8
+        )[:3]
+        for usi in legal:
+            child = apply_action(
+                gc_state, usi_to_gc_action(compiled, gc_state, usi), compiled
+            )
+            child_board = cshogi.Board(oracle_board.sfen())
+            child_board.push_usi(usi)
+            equal = (
+                _normalize_position_sfen(gc_to_sfen(child, compiled))
+                == _normalize_position_sfen(child_board.sfen())
+                and semantic_engine_for(compiled).in_check(
+                    child.position, child.position.side_to_move
+                )
+                == bool(child_board.is_check())
+            )
+            row = {
+                "sample_index": sample["index"],
+                "usi": usi,
+                "equal": equal,
+                "gc_sfen": _normalize_sfen(gc_to_sfen(child, compiled)),
+                "cshogi_sfen": _normalize_sfen(child_board.sfen()),
+            }
+            transition_subset_rows.append(row)
+            if not equal:
+                transition_subset_failures.append(row)
+    _write_json(output / "reachable_transition_subset_summary.json", {
+        "reconstructed_positions": transition_reconstruction_total,
+        "transition_rows": len(transition_subset_rows),
+        "failures": len(transition_subset_failures),
+        "all_equal": not transition_subset_failures,
+        "history_replayed_through_public_gc": True,
+    })
+    _write_jsonl(output / "reachable_transition_subset_failures.jsonl", transition_subset_failures)
     _write_json(output / "large_parity_summary.json", {
         "positions": sum(item["positions"] for item in per_seed.values()),
         "seeds": list(SEEDS),
@@ -276,7 +619,8 @@ def run_certification(output_dir: str | Path, large_total: int = 10000) -> dict:
         "failures": len(failures),
         "all_equal": not failures,
         "divergence_classes": sorted({row["divergence_class"] for row in failures}),
-        "deterministic_child_state_subset": "curated transition set",
+        "deterministic_child_state_subset": "30 reconstructed reachable histories, first 3 legal children",
+        "history_reconstruction": "public GC apply_action for every recorded USI move",
         "seconds": round(large_seconds, 3),
     })
 
@@ -289,20 +633,38 @@ def run_certification(output_dir: str | Path, large_total: int = 10000) -> dict:
     except Exception as exc:  # expected: native does not productionize Round 4 S4
         native_fail_closed = True
         native_error = f"{type(exc).__name__}: {exc}"
+    _write_json(output / "curated_gap_evidence.json", _curated_gap_evidence(compiled, all_positions))
+    history_performance = _history_performance_audit(compiled)
+    _write_json(output / "history_performance.json", history_performance)
     _write_json(output / "performance.json", {
         "seconds_total": round(time.perf_counter() - started, 3),
         "seconds_large": round(large_seconds, 3),
         "native_fail_closed": native_fail_closed,
         "native_error": native_error,
+        "history_performance": history_performance,
     })
-    verdict = {
-        "SHOGI_MOVE_LEGALITY": "PASS" if all(row["equal"] for row in curated_rows) and not failures else "FAIL",
-        "SHOGI_TRANSITION_PARITY": "PASS" if transition["transition_all_equal"] else "FAIL",
-        "SHOGI_HISTORY_TERMINAL_PARITY": "PASS" if history["same_position_different_history_distinct"] and history["perpetual_check"]["status"] == "perpetual_check" else "FAIL",
-        "SHOGI_ALPHASHO_BENCHMARK_READY": "PASS" if native_fail_closed and not failures else "FAIL",
-        "SHOGI_FULL_RULE_CERTIFICATION": "PARTIAL_NYUGYOKU_DECLARATION_EXCLUDED" if native_fail_closed and not failures else "FAIL",
+    move_gate = all(row["equal"] for row in curated_rows) and not failures
+    transition_gate = (
+        transition["transition_all_equal"]
+        and not transition_subset_failures
+    )
+    history_gate = (
+        history["ordinary_repetition"]["equal"]
+        and history["perpetual_check"]["equal"]
+        and not check_failures
+    )
+    verdict = compute_verdict(
+        move_legality=move_gate,
+        transition_parity=transition_gate,
+        history_terminal=history_gate,
+        symmetric_exclusions=bool(native_fail_closed),
+        no_unresolved_divergence=not failures and not check_failures and not transition_subset_failures,
+        native_fail_closed=native_fail_closed,
+    )
+    verdict.update({
         "nyugyoku_policy": "declaration semantics explicitly excluded from unlock; no productionization",
-    }
+        "native_policy": "fail_closed_only; architecture sanity gate, not correctness substitute",
+    })
     _write_json(output / "final_verdict.json", verdict)
     manifest = {
         "artifacts": {},

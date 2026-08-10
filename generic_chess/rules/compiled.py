@@ -46,3 +46,4 @@ class CompiledRuleSet:
     repetition_limit: int
     max_ply: int
     stalemate_result: str
+    repetition_policy: str = "draw"

@@ -93,8 +93,9 @@ def test_compiled_ruleset_is_frozen_derived_no_runtime_state():
         "drop_allowed",
         "promotion_allowed",
         "promotion_forced",
-        "repetition_limit",
-        "max_ply",
+            "repetition_limit",
+            "repetition_policy",
+            "max_ply",
         "stalemate_result",
     }
     assert fields == expected
@@ -112,8 +113,9 @@ def test_rule_schema_field_set_is_frozen():
         "drop_allowed",
         "promotion_allowed",
         "promotion_forced",
-        "repetition_limit",
-        "max_ply",
+            "repetition_limit",
+            "repetition_policy",
+            "max_ply",
         "stalemate_result",
         "semantic_actions",  # additive Phase 1.9B-1 high-level DSL (legacy empty)
         "semantic_dsl_version",  # Phase 1.9B-1.5 explicit DSL version axis

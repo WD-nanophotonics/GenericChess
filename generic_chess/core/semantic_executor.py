@@ -1299,11 +1299,12 @@ class SemanticEngine:
             if self.in_check(position, position.side_to_move):
                 return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
             return TerminalResult(TerminalStatus.STALEMATE)
-        perpetual = _perpetual_check_result(
-            repetition_counts, history, self.support.repetition_limit
-        )
-        if perpetual is not None:
-            return perpetual
+        if self.support.repetition_policy == "continuous_check_loss":
+            perpetual = _perpetual_check_result(
+                repetition_counts, history, self.support.repetition_limit
+            )
+            if perpetual is not None:
+                return perpetual
         if any(count >= self.support.repetition_limit for _, count in repetition_counts):
             return TerminalResult(TerminalStatus.REPETITION)
         if ply_count >= self.support.max_ply:

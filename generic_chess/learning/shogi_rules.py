@@ -4,9 +4,9 @@ SFEN / USI adapter used for cshogi rule-parity auditing.
 
 Known generic-schema limitations are listed in :data:`SHOGI_MODEL_GAPS`
 and surfaced by :func:`shogi_ruleset_meta`: dynamic drop restrictions
-(nifu / uchifuzume), perpetual-check adjudication and nyugyoku are *not*
-expressible with the current declarative schema.  This module never
-modifies Core/Rules to add them.
+(nifu / uchifuzume) and nyugyoku remain outside this certification protocol.
+Continuous check is declared by the generic repetition policy of the
+semantic ruleset; this module never adds Shogi-specific Core branches.
 """
 
 from __future__ import annotations
@@ -185,11 +185,10 @@ SHOGI_MODEL_GAPS = [
     },
     {
         "rule": "perpetual check (continuous-check repetition)",
-        "expressible": False,
+        "expressible": True,
         "description": (
-            "GenericChess repetition is a 4-fold draw for both sides; shogi "
-            "adjudicates repetition with perpetual check as a loss for the "
-            "checking side"
+            "the generic repetition policy records checking witnesses and "
+            "adjudicates continuous check as a loss for the checking side"
         ),
     },
     {
@@ -245,17 +244,19 @@ def build_shogi_piece_types() -> tuple[PieceType, ...]:
     return tuple(types)
 
 
-def _shogi_initial_rows() -> tuple[tuple[Piece | None, ...], ...]:
+def _shogi_initial_rows(*, cshogi_orientation: bool = False) -> tuple[tuple[Piece | None, ...], ...]:
     def piece(tid: str, owner: int) -> Piece:
         return Piece(owner=owner, base_type_id=tid, current_type_id=tid)
 
     rows: list[tuple[Piece | None, ...]] = []
     # GC row 0 (shogi rank 1): black back rank.
     rows.append(tuple(piece(t, 0) for t in ("L", "N", "S", "G", "K", "G", "S", "N", "L")))
-    # GC row 1 (shogi rank 2): black bishop/rook.
+    # The historical legacy preset keeps its original orientation for
+    # fingerprint compatibility.  The semantic/cshogi adapter opts into the
+    # oracle orientation explicitly.
     row1 = [None] * N
-    row1[1] = piece("B", 0)
-    row1[7] = piece("R", 0)
+    row1[1] = piece("R" if cshogi_orientation else "B", 0)
+    row1[7] = piece("B" if cshogi_orientation else "R", 0)
     rows.append(tuple(row1))
     # GC row 2 (shogi rank 3): black pawns.
     rows.append(tuple(piece("P", 0) for _ in range(N)))
@@ -265,8 +266,8 @@ def _shogi_initial_rows() -> tuple[tuple[Piece | None, ...], ...]:
     rows.append(tuple(piece("P", 1) for _ in range(N)))
     # GC row 7 (shogi rank 8): white rook/bishop.
     row7 = [None] * N
-    row7[1] = piece("R", 1)
-    row7[7] = piece("B", 1)
+    row7[1] = piece("B" if cshogi_orientation else "R", 1)
+    row7[7] = piece("R" if cshogi_orientation else "B", 1)
     rows.append(tuple(row7))
     # GC row 8 (shogi rank 9): white back rank.
     rows.append(tuple(piece(t, 1) for t in ("L", "N", "S", "G", "K", "G", "S", "N", "L")))
@@ -302,7 +303,9 @@ def _promotion_data(n: int, player: int, include_origin_zone: bool = False):
     return allowed, forced
 
 
-def build_shogi_ruleset(*, corrected_promotion: bool = False) -> RuleSet:
+def build_shogi_ruleset(
+    *, corrected_promotion: bool = False, cshogi_orientation: bool = False
+) -> RuleSet:
     """Build the standard shogi RuleSet (schema-version 1, no extensions)."""
     promotion_allowed: dict = {}
     promotion_forced: dict = {}
@@ -330,7 +333,7 @@ def build_shogi_ruleset(*, corrected_promotion: bool = False) -> RuleSet:
         schema_version=1,
         board_size=N,
         piece_types=build_shogi_piece_types(),
-        initial_position=_shogi_initial_rows(),
+        initial_position=_shogi_initial_rows(cshogi_orientation=cshogi_orientation),
         drop_allowed=drop_allowed,
         promotion_allowed=promotion_allowed,
         promotion_forced=promotion_forced,

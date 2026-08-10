@@ -1,0 +1,38 @@
+{
+  "duplicate_terminal_basis": "semantic transition computes terminal status once after the child history is appended",
+  "duplicate_terminal_recomputation": false,
+  "history_lengths": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "lazy_transition_behavior": "history is copied only when a lazy successor is materialized",
+  "memory_policy": "retained; bounded-game history and measured line are negligible for certification",
+  "peak_tracemalloc_bytes": 11597,
+  "replay_seconds": 0.57271,
+  "strategy": "immutable full HistoryRecord tuple on each public transition",
+  "tuple_bytes": [
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120,
+    128,
+    136,
+    144
+  ],
+  "tuple_bytes_growth": "linear in history length; each transition copies the tuple reference array"
+}

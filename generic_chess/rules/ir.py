@@ -430,6 +430,12 @@ class CompiledSemanticRuleset:
             return self.support.board_size
         raise RuntimeError("semantic ruleset has no support payload; board_size unavailable")
 
+    @property
+    def repetition_policy(self) -> str:
+        if self.support is not None:
+            return self.support.repetition_policy
+        return "draw"
+
 
 @dataclass(frozen=True, slots=True)
 class SemanticTypeMetadata:
@@ -462,6 +468,7 @@ class CompiledSemanticSupport:
         default_factory=dict
     )
     repetition_limit: int = 4
+    repetition_policy: str = "draw"
     max_ply: int = 512
     stalemate_result: str = "draw"
 

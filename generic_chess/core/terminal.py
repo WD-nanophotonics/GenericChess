@@ -59,12 +59,24 @@ def _perpetual_check_result(repetition_counts, history, limit):
         return None
     start, end = occurrences[-limit], occurrences[-1]
     cycle = history[start + 1 : end + 1]
-    if not cycle or not all(record.gave_check for record in cycle):
+    if not cycle:
         return None
-    actors = {record.actor for record in cycle}
-    if len(actors) != 1:
+    checks_by_actor = {0: [], 1: []}
+    for record in cycle:
+        if record.actor in checks_by_actor:
+            checks_by_actor[record.actor].append(bool(record.gave_check))
+    checking_sides = [
+        actor
+        for actor, checks in checks_by_actor.items()
+        if checks and all(checks)
+    ]
+    # A legal repeated cycle alternates the checking side with replies.  The
+    # checking side loses only when exactly one side gave check on every move
+    # it made; requiring both sides to have participated avoids classifying a
+    # malformed/synthetic one-sided history as perpetual check.
+    if len(checking_sides) != 1 or any(not checks for checks in checks_by_actor.values()):
         return None
-    checker = next(iter(actors))
+    checker = checking_sides[0]
     return TerminalResult(TerminalStatus.PERPETUAL_CHECK, 1 - checker)
 
 
@@ -80,11 +92,12 @@ def _terminal_from_parts(
         if is_in_check(position, side, compiled):
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
         return TerminalResult(TerminalStatus.STALEMATE)
-    perpetual = _perpetual_check_result(
-        repetition_counts, history, compiled.repetition_limit
-    )
-    if perpetual is not None:
-        return perpetual
+    if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
+        perpetual = _perpetual_check_result(
+            repetition_counts, history, compiled.repetition_limit
+        )
+        if perpetual is not None:
+            return perpetual
     if is_repetition_draw(repetition_counts, compiled.repetition_limit):
         return TerminalResult(TerminalStatus.REPETITION)
     if ply_count >= compiled.max_ply:
