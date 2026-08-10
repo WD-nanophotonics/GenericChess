@@ -357,6 +357,57 @@ def _history_performance_audit(compiled) -> dict:
     }
 
 
+def _alphabeta_history_performance_audit() -> dict:
+    """Run a bounded representative Python AlphaBeta lazy/eager comparison."""
+    from ..ai.alphabeta.player import AlphaBetaPlayer
+    from ..ai.alphabeta.tuning import SearchTuning
+    from ..ai.limits import SearchLimits
+    from ..rules.compiler import compile_ruleset
+    from ..session.session import GameSession
+    from .shogi_rules import build_shogi_ruleset
+
+    compiled = compile_ruleset(build_shogi_ruleset())
+    rows = []
+    for lazy in (False, True):
+        tracemalloc.start()
+        started = time.perf_counter()
+        player = AlphaBetaPlayer(
+            compiled,
+            use_disk_cache=False,
+            use_tt=False,
+            use_ordering=False,
+            tuning=SearchTuning(
+                use_root_tactical=False,
+                use_lazy_successors=lazy,
+            ),
+        )
+        decision = player.choose_action(
+            GameSession(compiled),
+            SearchLimits(max_depth=2, max_nodes=300, quiescence_max_depth=0),
+        )
+        _, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        rows.append({
+            "lazy": lazy,
+            "elapsed_seconds": round(time.perf_counter() - started, 6),
+            "peak_tracemalloc_bytes": peak,
+            "nodes": decision.nodes,
+            "legal_actions_generated": decision.legal_actions_generated,
+            "successor_handles_created": decision.successor_handles_created,
+            "successors_materialized": decision.successors_materialized,
+            "successors_searched": decision.successors_searched,
+            "terminal_results_computed": decision.terminal_results_computed,
+            "same_search_depth": decision.completed_depth,
+        })
+    return {
+        "ruleset": "generic legacy Shogi-shaped fixture; no AlphaSho or strength search",
+        "search_limits": {"max_depth": 2, "max_nodes": 300, "quiescence_max_depth": 0},
+        "runs": rows,
+        "history_copy_strategy": "full immutable tuple per materialized child",
+        "lazy_non_lazy_audited": True,
+    }
+
+
 def _curated_gap_evidence(compiled, positions: list[dict]) -> dict:
     """Collect concrete reachable witnesses for the audit's curated gaps."""
     import cshogi
@@ -452,8 +503,23 @@ def _curated_gap_evidence(compiled, positions: list[dict]) -> dict:
             "usi": "G*7b", "generic_transition_verified": True,
         },
     }
+    by_position = {
+        " ".join(sample["sfen"].split()[:3]): sample["history"]
+        for sample in positions
+    }
+    for witness in known.values():
+        history = by_position.get(" ".join(witness["sfen"].split()[:3]))
+        witness["reachable_from_generated_history"] = history is not None
+        if history is not None:
+            witness["oracle_history"] = history
+    capture = found.get("capture_to_hand", {"found": False})
+    if capture.get("sfen"):
+        history = by_position.get(" ".join(capture["sfen"].split()[:3]))
+        capture["reachable_from_generated_history"] = history is not None
+        if history is not None:
+            capture["oracle_history"] = history
     return {
-        "capture_to_hand": found.get("capture_to_hand", {"found": False}),
+        "capture_to_hand": capture,
         "captured_promoted_piece_demotes_to_base_hand": known["captured_promoted_piece_demotes_to_base_hand"],
         "forced_pawn_lance_knight_promotion": known["forced_pawn_lance_knight_promotion"],
         "checking_pawn_drop_with_legal_reply": known["checking_pawn_drop_with_legal_reply"],
@@ -635,6 +701,7 @@ def run_certification(output_dir: str | Path, large_total: int = 10000) -> dict:
         native_error = f"{type(exc).__name__}: {exc}"
     _write_json(output / "curated_gap_evidence.json", _curated_gap_evidence(compiled, all_positions))
     history_performance = _history_performance_audit(compiled)
+    alphabeta_history_performance = _alphabeta_history_performance_audit()
     _write_json(output / "history_performance.json", history_performance)
     _write_json(output / "performance.json", {
         "seconds_total": round(time.perf_counter() - started, 3),
@@ -642,6 +709,7 @@ def run_certification(output_dir: str | Path, large_total: int = 10000) -> dict:
         "native_fail_closed": native_fail_closed,
         "native_error": native_error,
         "history_performance": history_performance,
+        "alphabeta_history_performance": alphabeta_history_performance,
     })
     move_gate = all(row["equal"] for row in curated_rows) and not failures
     transition_gate = (

@@ -15,6 +15,7 @@ from generic_chess.rules.schema import (
     ruleset_from_dict,
     ruleset_to_dict,
 )
+from conftest import king_type, make_ruleset
 
 
 def test_perpetual_check_accepts_alternating_legal_actor_history():
@@ -44,6 +45,21 @@ def test_ruleset_repetition_policy_is_explicit_and_default_is_legacy_draw():
     assert compute_fingerprint(semantic) == compute_fingerprint(
         ruleset_from_dict(ruleset_to_dict(semantic))
     )
+
+
+def test_generic_non_shogi_fixture_can_opt_into_history_policy():
+    ruleset = make_ruleset(
+        4,
+        [king_type()],
+        lines=["...k", "....", "....", "K..."],
+    )
+    ruleset = replace(ruleset, repetition_policy="continuous_check_loss")
+    from generic_chess.rules.compiler import compile_ruleset
+
+    compiled = compile_ruleset(ruleset)
+    assert compiled.repetition_policy == "continuous_check_loss"
+    assert "repetition_policy" in ruleset_to_dict(ruleset)
+    assert compiled.ruleset_fingerprint == compute_fingerprint(ruleset)
 
 
 def test_history_context_changes_tt_identity_for_same_position_and_counts():
