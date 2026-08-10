@@ -202,6 +202,10 @@ def test_native_semantic_history_roundtrip_and_repetition_count():
     assert history_occurrences(position, 9, 9) == 0
     with pytest.raises(ValueError, match="exact full history"):
         terminal_status(native_rules, position)
+    with pytest.raises(ValueError, match="exact full history"):
+        fixed_depth_search(native_rules, position, 1)
+    with pytest.raises(ValueError, match="exact full history"):
+        probe_search(native_rules, position, 1)
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")

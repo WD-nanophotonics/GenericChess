@@ -134,7 +134,7 @@ static PyObject *gc_native_available(PyObject *self, PyObject *args) {
 static PyObject *gc_native_version(PyObject *self, PyObject *args) {
     (void)self;
     (void)args;
-    return PyUnicode_FromString("0.4.0");
+    return PyUnicode_FromString("0.5.0");
 }
 
 static const char *gc_status_name(int status) {
@@ -295,7 +295,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "native_perft", value);
     Py_DECREF(value);
-    value = PyUnicode_FromString("native-0.4.0");
+    value = PyUnicode_FromString("native-0.5.0");
     PyDict_SetItemString(dict, "native_schema", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
@@ -349,11 +349,20 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(0);
     PyDict_SetItemString(dict, "native_qsearch", value);
     Py_DECREF(value);
-    value = PyBool_FromLong(1);
+    value = PyBool_FromLong(0);
     PyDict_SetItemString(dict, "production_dynamic_evaluator", value);
     Py_DECREF(value);
-    value = PyBool_FromLong(1);
+    value = PyBool_FromLong(0);
     PyDict_SetItemString(dict, "production_search_backend", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_terminal", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_fixed_depth_search", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_material_evaluator", value);
     Py_DECREF(value);
     return dict;
 }
@@ -2735,6 +2744,15 @@ static int gc_semantic_repetition_count(const GCSemanticRules *rules,
     return 1;
 }
 
+static int gc_semantic_require_exact_history(const GCSemanticPosition *position) {
+    if (position->history_len > 0 && !position->history_exact) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic runtime requires exact full history");
+        return 0;
+    }
+    return 1;
+}
+
 static int gc_semantic_terminal_status(const GCSemanticRules *rules,
                                        const GCSemanticPosition *position,
                                        int *winner_out) {
@@ -2764,10 +2782,7 @@ static PyObject *gc_semantic_terminal(PyObject *self, PyObject *args) {
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
-    if (position->history_len > 0 && !position->history_exact) {
-        PyErr_SetString(PyExc_ValueError, "semantic terminal requires exact full history");
-        return NULL;
-    }
+    if (!gc_semantic_require_exact_history(position)) return NULL;
     int winner = -1;
     int status = gc_semantic_terminal_status(rules, position, &winner);
     if (status < 0) {
@@ -2857,14 +2872,19 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
                                                         unsigned int depth,
                                                         int alpha,
                                                         int beta,
-                                                        const GCSemanticProbeProfile *profile) {
+                                                        const GCSemanticProbeProfile *profile,
+                                                        int *ok) {
     GCSemanticProbeSearch result;
     memset(&result, 0, sizeof(result));
+    if (!*ok) return result;
     result.score = gc_semantic_probe_material(rules, position, profile);
     result.nodes = 1;
     int winner = -1;
     int terminal = gc_semantic_terminal_status(rules, position, &winner);
-    if (terminal < 0) return result;
+    if (terminal < 0) {
+        *ok = 0;
+        return result;
+    }
     if (terminal == 1) { result.score = -1000000; return result; }
     if (terminal != 0) { result.score = 0; return result; }
     if (depth == 0) return result;
@@ -2882,7 +2902,12 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         GCSemanticPosition work = *position;
         GCSemanticUndo undo;
         if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
-        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha, profile);
+        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha, profile, ok);
+        if (!*ok) {
+            gc_semantic_runtime_unmake(&work, &undo);
+            gc_semantic_action_buffer_free(&actions);
+            return result;
+        }
         gc_semantic_runtime_unmake(&work, &undo);
         result.nodes += branch.nodes;
         int score = -branch.score;
@@ -2912,6 +2937,7 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position || depth > GC_MAX_PLY) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (!gc_semantic_require_exact_history(position)) return NULL;
     GCSemanticProbeProfile profile;
     memset(&profile, 0, sizeof(profile));
     if ((board_values == NULL) != (hand_values == NULL)) {
@@ -2940,7 +2966,15 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
         }
         profile.supplied = 1;
     }
-    GCSemanticProbeSearch result = gc_semantic_probe_negamax(rules, position, depth, -GC_SEMANTIC_PROBE_INF, GC_SEMANTIC_PROBE_INF, &profile);
+    int ok = 1;
+    GCSemanticProbeSearch result = gc_semantic_probe_negamax(rules, position, depth, -GC_SEMANTIC_PROBE_INF, GC_SEMANTIC_PROBE_INF, &profile, &ok);
+    if (!ok) {
+        if (!PyErr_Occurred()) {
+            PyErr_SetString(PyExc_RuntimeError,
+                            "semantic fixed-depth search failed during terminal evaluation");
+        }
+        return NULL;
+    }
     if (PyErr_Occurred()) return NULL;
     PyObject *pv = PyTuple_New((Py_ssize_t)result.pv_len);
     if (!pv) return NULL;

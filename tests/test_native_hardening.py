@@ -29,10 +29,10 @@ from native_test_helpers import (
 
 
 @requires_native
-def test_native_version_is_040():
-    assert native_version() == "0.4.0"
+def test_native_version_is_050():
+    assert native_version() == "0.5.0"
     caps = _module().native_capabilities()
-    assert caps["native_schema"] == "native-0.4.0"
+    assert caps["native_schema"] == "native-0.5.0"
     assert caps["hash_includes_base_type"] is True
     assert caps["repetition_context_hash"] is True
     assert caps["transposition_table"] is True

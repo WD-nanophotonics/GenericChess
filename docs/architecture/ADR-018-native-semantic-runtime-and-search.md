@@ -28,6 +28,11 @@ validated before every `(rules, position)` operation. Exact four-word
 SHA-256 history is authoritative for repetition; two-word history remains a
 legacy transport projection and is not terminal-eligible.
 
+This successor runtime publishes Native ABI/runtime version `0.5.0` with
+schema `native-0.5.0`. The semantic payload version remains `2` because its
+numeric payload layout is unchanged; the public runtime surface and capability
+contract are not the frozen C-1 `0.4.0` contract.
+
 The public semantic runtime exposes terminal status and a fixed-depth
 AlphaBeta search. Search uses Native S0-S4 action generation, C action
 buffers, trusted make/unmake, exact terminal precedence, deterministic
@@ -40,6 +45,12 @@ type.
 The first two become true only after their focused runtime suites pass. The
 last is computed per ruleset from the supported lowered primitives; unsupported
 or malformed/future primitives remain false or fail closed.
+
+The semantic-specific capability keys are `semantic_terminal`,
+`semantic_fixed_depth_search`, and `semantic_material_evaluator`. Broader
+`production_dynamic_evaluator` and `production_search_backend` flags remain
+false because this contract does not claim integration with the product-wide
+evaluator or SearchBackend.
 
 ## Consequences
 
