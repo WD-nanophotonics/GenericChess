@@ -1,0 +1,26 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "audit",
+  "audit_id": "native-semantic-final-publication-audit-001",
+  "candidate_sha": "6ab4979ad7fc00a1afaa9aea42f508151b138d00",
+  "base_sha": "9779d5d5dfbbadb38879f75ea396f60c7f78c784",
+  "verdict": "FAIL",
+  "active_task": "native-semantic-runtime-search-002",
+  "continue_without_return": true,
+  "findings": [
+    "Public fixed-depth semantic search must reject non-exact non-empty history and propagate terminal/runtime failure.",
+    "production_dynamic_evaluator and production_search_backend are overclaimed; keep them false unless separately justified and use semantic-specific capability keys.",
+    "ADR-018 runtime/search publication should have an explicit successor Native ABI/runtime version instead of reusing frozen C1 native-0.4.0 unchanged.",
+    "Move successor capability expectations out of the frozen C1-named specification test into ADR-018/C2 successor tests."
+  ],
+  "accepted": [
+    "current-type board / base-type hand evaluator",
+    "ADR-018 supersede structure",
+    "ruleset-position binding",
+    "Unicode key parity",
+    "full SHA-256 history",
+    "terminal-aware C recursion",
+    "C action buffer and trusted make/unmake",
+    "randomized/perft/search/PV differential direction"
+  ]
+}
