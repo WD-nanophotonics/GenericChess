@@ -170,6 +170,25 @@ def test_mover_and_unrelated_piece_identity_are_preserved(qapp):
     _assert_exact(win, ctrl)
 
 
+def test_undo_redo_history_return_live_and_restart_snap_exactly(qapp):
+    ctrl, win = _window(qapp)
+    assert ctrl.submit_action(_first_legal_move(ctrl))
+    assert ctrl.undo()
+    _assert_exact(win, ctrl)
+    assert ctrl.redo()
+    _assert_exact(win, ctrl)
+    assert ctrl.display_ply(0)
+    _assert_exact(win, ctrl)
+    ctrl.return_to_current()
+    _assert_exact(win, ctrl)
+    ctrl.flip_board()
+    _assert_exact(win, ctrl)
+    win._restart()
+    _assert_exact(win, ctrl)
+    assert ctrl.new_game(seed=43)
+    _assert_exact(win, ctrl)
+
+
 def test_capture_drop_and_promotion_have_exact_final_occupancy(qapp):
     ctrl, win = _window(qapp, ruleset=_capture_ruleset())
     rook = win._scene.piece_item_at(Square(1, 0))
@@ -187,6 +206,24 @@ def test_capture_drop_and_promotion_have_exact_final_occupancy(qapp):
     assert ctrl2.submit_action(BoardMove(Square(4, 6), Square(4, 7), "G"))
     assert win2._scene.piece_item_at(Square(4, 7)) is pawn
     assert pawn.piece.promoted is True
+    _assert_exact(win2, ctrl2)
+
+
+def test_animated_capture_drop_and_promotion_converge(qapp):
+    ctrl, win = _window(qapp, animations=True, ruleset=_capture_ruleset())
+    assert ctrl.submit_action(BoardMove(Square(1, 0), Square(2, 0)))
+    _wait_until_idle(qapp, win)
+    _assert_exact(win, ctrl)
+    assert ctrl.submit_action(ctrl.session.legal_actions()[0])
+    _wait_until_idle(qapp, win)
+    drop = next(a for a in ctrl.session.legal_actions() if isinstance(a, DropMove))
+    assert ctrl.submit_action(drop)
+    _wait_until_idle(qapp, win)
+    _assert_exact(win, ctrl)
+
+    ctrl2, win2 = _window(qapp, animations=True, ruleset=_promotion_ruleset())
+    assert ctrl2.submit_action(BoardMove(Square(4, 6), Square(4, 7), "G"))
+    _wait_until_idle(qapp, win2)
     _assert_exact(win2, ctrl2)
 
 
