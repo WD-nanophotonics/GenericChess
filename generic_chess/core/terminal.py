@@ -22,6 +22,7 @@ class TerminalStatus(Enum):
     CHECKMATE = "checkmate"
     STALEMATE = "stalemate"
     REPETITION = "repetition"
+    PERPETUAL_CHECK = "perpetual_check"
     MAX_PLY = "max_ply"
 
 
@@ -39,7 +40,32 @@ class TerminalResult:
             return f"checkmate, player {self.winner} wins"
         if self.status is TerminalStatus.ONGOING:
             return "ongoing"
+        if self.status is TerminalStatus.PERPETUAL_CHECK:
+            return f"perpetual check, player {1 - self.winner} loses"
         return f"{self.status.value}, draw"
+
+
+def _perpetual_check_result(repetition_counts, history, limit):
+    """Classify a repeated position using generic action-history evidence."""
+    if not history:
+        return None
+    current_key = history[-1].position_key
+    if dict(repetition_counts).get(current_key, 0) < limit:
+        return None
+    occurrences = [
+        i for i, record in enumerate(history) if record.position_key == current_key
+    ]
+    if len(occurrences) < limit:
+        return None
+    start, end = occurrences[-limit], occurrences[-1]
+    cycle = history[start + 1 : end + 1]
+    if not cycle or not all(record.gave_check for record in cycle):
+        return None
+    actors = {record.actor for record in cycle}
+    if len(actors) != 1:
+        return None
+    checker = next(iter(actors))
+    return TerminalResult(TerminalStatus.PERPETUAL_CHECK, 1 - checker)
 
 
 def _terminal_from_parts(
@@ -47,12 +73,18 @@ def _terminal_from_parts(
     ply_count: int,
     repetition_counts: tuple[tuple[str, int], ...],
     compiled: "CompiledRuleSet",
+    history=(),
 ) -> TerminalResult:
     side = position.side_to_move
     if not has_legal_action(position, compiled):
         if is_in_check(position, side, compiled):
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
         return TerminalResult(TerminalStatus.STALEMATE)
+    perpetual = _perpetual_check_result(
+        repetition_counts, history, compiled.repetition_limit
+    )
+    if perpetual is not None:
+        return perpetual
     if is_repetition_draw(repetition_counts, compiled.repetition_limit):
         return TerminalResult(TerminalStatus.REPETITION)
     if ply_count >= compiled.max_ply:
@@ -67,9 +99,13 @@ def terminal_result(state: "GameState", compiled: "CompiledRuleSet") -> Terminal
     engine = semantic_engine_for(compiled)
     if engine is not None:
         return engine.terminal_result(
-            state.position, state.ply_count, state.repetition_counts
+            state.position, state.ply_count, state.repetition_counts, state.history
         )
     ensure_ruleset_match(state.position, compiled)
     return _terminal_from_parts(
-        state.position, state.ply_count, state.repetition_counts, compiled
+        state.position,
+        state.ply_count,
+        state.repetition_counts,
+        compiled,
+        state.history,
     )

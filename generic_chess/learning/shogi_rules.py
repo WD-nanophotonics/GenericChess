@@ -273,12 +273,14 @@ def _shogi_initial_rows() -> tuple[tuple[Piece | None, ...], ...]:
     return tuple(rows)
 
 
-def _promotion_data(n: int, player: int):
+def _promotion_data(n: int, player: int, include_origin_zone: bool = False):
     """Standard shogi promotion: zone = last three ranks; forced when the
     unpromoted base type would have no mobility at the destination."""
     from ..core.movement import empty_mobility
     from ..core.coordinates import index_to_square
 
+    # GC rank 0 is the SFEN bottom row (USI rank ``i``).  Black/owner 0
+    # advances toward rank 8; white/owner 1 advances toward rank 0.
     zone_ranks = (6, 7, 8) if player == 0 else (0, 1, 2)
     allowed: dict[str, frozenset] = {}
     forced: dict[str, frozenset] = {}
@@ -289,7 +291,9 @@ def _promotion_data(n: int, player: int):
         for idx in range(n * n):
             from_sq = index_to_square(idx, n)
             for to_sq in empty_mobility(n, player, from_sq, atoms):
-                if to_sq.rank in zone_ranks:
+                if to_sq.rank in zone_ranks or (
+                    include_origin_zone and from_sq.rank in zone_ranks
+                ):
                     pairs.add((from_sq, to_sq))
                     if not empty_mobility(n, player, to_sq, atoms):
                         forced_squares.add(to_sq)
@@ -298,13 +302,15 @@ def _promotion_data(n: int, player: int):
     return allowed, forced
 
 
-def build_shogi_ruleset() -> RuleSet:
+def build_shogi_ruleset(*, corrected_promotion: bool = False) -> RuleSet:
     """Build the standard shogi RuleSet (schema-version 1, no extensions)."""
     promotion_allowed: dict = {}
     promotion_forced: dict = {}
     drop_allowed: dict = {}
     for player in (0, 1):
-        pa, pf = _promotion_data(N, player)
+        pa, pf = _promotion_data(
+            N, player, include_origin_zone=corrected_promotion
+        )
         for base in PROMOTABLE:
             promotion_allowed.setdefault(base, [None, None])[player] = pa[base]
             promotion_forced.setdefault(base, [None, None])[player] = pf[base]
@@ -471,9 +477,21 @@ def sfen_to_gc_state(compiled, sfen: str) -> GameState:
         side_to_move=0 if side == "b" else 1,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
     )
-    key = position_key(position, compiled)
-    counts = ((key, 1),)
-    status = _terminal_from_parts(position, ply, counts, compiled)
+    from ..core.semantic_executor import semantic_engine_for
+
+    semantic_engine = semantic_engine_for(compiled)
+    if semantic_engine is not None:
+        from ..core.keys import semantic_position_key
+
+        key = semantic_position_key(
+            position, compiled.support, compiled.ir.aux_slots
+        )
+        counts = ((key, 1),)
+        status = semantic_engine.terminal_result(position, ply, counts)
+    else:
+        key = position_key(position, compiled)
+        counts = ((key, 1),)
+        status = _terminal_from_parts(position, ply, counts, compiled)
     return GameState(
         position=position,
         ply_count=ply,
@@ -494,7 +512,7 @@ def _usi_to_gc_square(file_num: int, rank_letter: str) -> Square:
 
 
 def gc_action_to_usi(action: Action) -> str:
-    if isinstance(action, BoardMove):
+    if isinstance(action, (BoardMove,)) or hasattr(action, "from_square"):
         out = (
             _gc_to_usi_square(action.from_square)
             + _gc_to_usi_square(action.to_square)
@@ -520,11 +538,12 @@ def usi_to_gc_action(compiled, state: GameState, usi: str) -> Action:
         piece = state.position.board[from_sq.rank * N + from_sq.file]
         if piece is None:
             raise ValueError(f"USI move {usi!r}: no piece at source")
-        base = next(
-            pt
-            for pt in compiled.piece_types
-            if pt.type_id == piece.base_type_id
+        type_metadata = (
+            compiled.types_by_id
+            if hasattr(compiled, "types_by_id")
+            else compiled.support.type_metadata
         )
+        base = type_metadata[piece.base_type_id]
         if not base.promotion_target_ids:
             raise ValueError(f"USI move {usi!r}: base type has no promotion")
         promo_target = base.promotion_target_ids[0]
@@ -532,9 +551,9 @@ def usi_to_gc_action(compiled, state: GameState, usi: str) -> Action:
 
 
 def gc_legal_usi_set(compiled, state: GameState) -> set[str]:
-    from ..core.movegen import legal_actions_from_position
+    from ..core.movegen import legal_actions
 
-    actions = legal_actions_from_position(state.position, compiled)
+    actions = legal_actions(state, compiled)
     return {gc_action_to_usi(a) for a in actions}
 
 

@@ -88,6 +88,16 @@ class Position:
 
 
 @dataclass(frozen=True, slots=True)
+class HistoryRecord:
+    """Canonical, generic event in the legality-relevant game history."""
+
+    position_key: str
+    actor: int
+    action_signature: str
+    gave_check: bool = False
+
+
+@dataclass(frozen=True, slots=True)
 class GameState:
     """A position plus history-dependent information.
 
@@ -99,3 +109,4 @@ class GameState:
     ply_count: int
     repetition_counts: tuple[tuple[str, int], ...]
     terminal_status: "TerminalResult"
+    history: tuple[HistoryRecord, ...] = ()

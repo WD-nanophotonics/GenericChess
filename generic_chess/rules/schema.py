@@ -195,7 +195,11 @@ AUX_VALUE_KINDS = ("bool", "square_or_none")
 AUX_SCOPES = ("global", "per_owner")
 AUX_LIFETIMES = ("persistent", "expire_next_turn")
 INVARIANT_KINDS = ("own_anchor_safe", "squares_not_attacked")
-POSTCONDITION_KINDS = ("opponent_checked", "no_legal_reply")
+POSTCONDITION_KINDS = (
+    "opponent_checked",
+    "action_delivers_check",
+    "no_legal_reply",
+)
 SEMANTIC_STRATA = ("S0", "S1", "S2", "S3", "S4", "S5")
 TYPE_REF_KINDS = ("action_base", "action_current", "explicit", "any")
 SQUARE_REF_KINDS = (

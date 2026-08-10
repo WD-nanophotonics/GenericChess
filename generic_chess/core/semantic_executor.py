@@ -983,6 +983,12 @@ class SemanticEngine:
             return (None,)
         if pattern.promotion_mode == "explicit":
             return (pattern.explicit_promotion_type,)
+        # Promotion is a one-way transition from an unpromoted base piece.
+        # A promoted piece may use the same movement geometry, but it must
+        # never receive another promotion variant merely because its base
+        # type has compiled promotion masks.
+        if piece.promoted:
+            return (None,)
         # inherit_compiled_masks
         base = piece.base_type_id
         allowed = self.support.promotion_allowed.get(base, ((), ()))
@@ -1072,6 +1078,52 @@ class SemanticEngine:
                         return None
         return child
 
+    def _action_delivers_check(self, position: Position, child: Position, action) -> bool:
+        """Return whether this action's actor itself checks the reply side.
+
+        This is distinct from the resulting position being checked: a
+        position may already contain a check from an earlier history state.
+        The distinction is a generic action-witness primitive and is needed
+        by bounded postconditions such as a checking drop restriction.
+        """
+        anchor = _own_anchor(child, self.support, child.side_to_move)
+        if anchor is None:
+            return False
+        source = action.target
+        piece = child.board[source]
+        if piece is None or piece.owner != position.side_to_move:
+            return False
+        for pattern in self._patterns:
+            if pattern.target.kind != "target_enemy" or piece.current_type_id not in pattern.type_ids:
+                continue
+            for gid in pattern.geometry_ids:
+                geometry = self.ir.geometry.get(gid)
+                if geometry is None or geometry.kind == "drop":
+                    continue
+                if geometry.atom_source is not None and geometry.atom_source[0] != piece.current_type_id:
+                    continue
+                for target, path in geometry_candidates(
+                    geometry, str(piece.owner), source
+                ):
+                    if target != anchor:
+                        continue
+                    binding = self._make_binding(
+                        pattern,
+                        gid,
+                        piece.current_type_id,
+                        piece,
+                        source,
+                        target,
+                        None,
+                        path,
+                        child,
+                    )
+                    if self._path_holds(pattern.path, child, binding, piece.owner) and self._guards_hold(
+                        pattern, child, binding, piece.owner
+                    ):
+                        return True
+        return False
+
     def _violates_postconditions(self, pattern, child) -> bool:
         """S4 forbidden-condition conjunction (ADR-016 truth table).
 
@@ -1083,9 +1135,17 @@ class SemanticEngine:
         kinds = {pc.kind for pc in pattern.postconditions}
         if not kinds:
             return False
-        if "opponent_checked" in kinds and not self.in_check(
+        parent = getattr(self, "_postcondition_parent", None)
+        action = getattr(self, "_postcondition_action", None)
+        action_checked = "action_delivers_check" in kinds and action is not None and self._action_delivers_check(
+            parent, child, action
+        )
+        if "action_delivers_check" in kinds and not action_checked:
+            return False
+        child_checked = "opponent_checked" in kinds and self.in_check(
             child, child.side_to_move
-        ):
+        )
+        if "opponent_checked" in kinds and not child_checked:
             return False
         if "no_legal_reply" in kinds and self._exists_s3_reply(child):
             return False
@@ -1118,7 +1178,14 @@ class SemanticEngine:
                 )
                 if child is None:
                     continue
-                if self._violates_postconditions(pattern, child):
+                self._postcondition_parent = position
+                self._postcondition_action = action
+                try:
+                    violates = self._violates_postconditions(pattern, child)
+                finally:
+                    self._postcondition_parent = None
+                    self._postcondition_action = None
+                if violates:
                     continue
                 actions.append(action)
         return tuple(actions)
@@ -1219,14 +1286,24 @@ class SemanticEngine:
         position: Position,
         ply_count: int,
         repetition_counts,
+        history=(),
     ):
-        from .terminal import TerminalResult, TerminalStatus
+        from .terminal import (
+            TerminalResult,
+            TerminalStatus,
+            _perpetual_check_result,
+        )
 
         self._ensure_match(position)
         if not self.has_legal_action(position):
             if self.in_check(position, position.side_to_move):
                 return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
             return TerminalResult(TerminalStatus.STALEMATE)
+        perpetual = _perpetual_check_result(
+            repetition_counts, history, self.support.repetition_limit
+        )
+        if perpetual is not None:
+            return perpetual
         if any(count >= self.support.repetition_limit for _, count in repetition_counts):
             return TerminalResult(TerminalStatus.REPETITION)
         if ply_count >= self.support.max_ply:

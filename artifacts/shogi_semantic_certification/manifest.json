@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "baseline.json": "e221ddf77ab8db816dbfd11249ba210f816c1793d2a9c78c6c6600b2ed238a49",
+    "curated_cases.jsonl": "3b4aef160e1c47647970b9bb362f9150123a06e744dc168890a4d4bfa41f3d47",
+    "expressivity_audit.json": "cbeab9440f761b0dd4dd2ca4e393f97cd594f51c5cd0d2370c0dab418185d604",
+    "final_verdict.json": "ac4288e41a447352fc2f7fd2d0fd23a156473161a427cb3e600a97dd6a5e00af",
+    "history_terminal_parity.json": "f7d2e5c67049f6ef3924da7a936cf7aaa2672780cc670a7cfa5359f56103e0b2",
+    "large_parity_failures.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "large_parity_summary.json": "3c1b2b494cb1218118230a2a5b1945ea162236647b960b8a9c2f756505f5c1c9",
+    "oracle_policy.json": "a79159a113cb9f0c48bbde8eaf04b97751acc6bfc046de6ca827342ff91b80a5",
+    "performance.json": "7bbc89ae80d1e83718f9f1cd80124ff72e90e954811217d10e9e6fb92efd1893",
+    "transition_parity_summary.json": "155666939a0eb4943a867442dbb75ca6ed88ccf10dd826496a04e352d07f61e9"
+  },
+  "ruleset_fingerprint": "32b6d7162603e706ca4011095139038c3b9b6278ac40e1988eaf6c1a4dd42f93",
+  "verdict": {
+    "SHOGI_ALPHASHO_BENCHMARK_READY": "PASS",
+    "SHOGI_FULL_RULE_CERTIFICATION": "PARTIAL_NYUGYOKU_DECLARATION_EXCLUDED",
+    "SHOGI_HISTORY_TERMINAL_PARITY": "PASS",
+    "SHOGI_MOVE_LEGALITY": "PASS",
+    "SHOGI_TRANSITION_PARITY": "PASS",
+    "nyugyoku_policy": "declaration semantics explicitly excluded from unlock; no productionization"
+  }
+}

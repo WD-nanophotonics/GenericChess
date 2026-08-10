@@ -1,0 +1,19 @@
+{
+  "history_record_schema": [
+    "position_key",
+    "actor",
+    "action_signature",
+    "gave_check"
+  ],
+  "ordinary_repetition": {
+    "expected": "repetition_draw",
+    "status": "repetition_draw"
+  },
+  "perpetual_check": {
+    "expected_status": "perpetual_check",
+    "expected_winner": 1,
+    "status": "perpetual_check",
+    "winner": 1
+  },
+  "same_position_different_history_distinct": true
+}
