@@ -5,7 +5,7 @@
     "ruleset": "generic legacy Shogi-shaped fixture; no AlphaSho or strength search",
     "runs": [
       {
-        "elapsed_seconds": 6.68796,
+        "elapsed_seconds": 4.67714,
         "lazy": false,
         "legal_actions_generated": 0,
         "nodes": 300,
@@ -17,7 +17,7 @@
         "terminal_results_computed": 0
       },
       {
-        "elapsed_seconds": 6.789256,
+        "elapsed_seconds": 5.083178,
         "lazy": true,
         "legal_actions_generated": 720,
         "nodes": 300,
@@ -55,7 +55,7 @@
     "lazy_transition_behavior": "history is copied only when a lazy successor is materialized",
     "memory_policy": "retained; bounded-game history and measured line are negligible for certification",
     "peak_tracemalloc_bytes": 11597,
-    "replay_seconds": 0.443835,
+    "replay_seconds": 0.23787,
     "strategy": "immutable full HistoryRecord tuple on each public transition",
     "tuple_bytes": [
       56,
@@ -75,6 +75,6 @@
   },
   "native_error": "NativeUnsupportedRuleError: unsupported semantic postcondition kind 'action_delivers_check' (ruleset fingerprint 5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345, native schema native-0.5.0)",
   "native_fail_closed": true,
-  "seconds_large": 17.524,
-  "seconds_total": 120.016
+  "seconds_large": 362.837,
+  "seconds_total": 417.816
 }
