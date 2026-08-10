@@ -40,6 +40,9 @@ KEY_ENABLE_PREVIEW = "interaction/preview"
 KEY_AUTO_PROMOTE_UNIQUE = "interaction/auto_promote_unique"
 KEY_LANGUAGE = "ui/language"
 KEY_ZOOM_MODE = "board/zoom_mode"
+# Descriptive alias retained for callers that want to express the product
+# meaning.  KEY_ZOOM_MODE remains the persisted compatibility key.
+KEY_ENABLE_WHEEL_ZOOM = KEY_ZOOM_MODE
 KEY_SHOW_DEV_STATUS = "ui/dev_status"
 KEY_RECENT_RULESET_DIR = "files/recent_ruleset_dir"
 KEY_RECENT_RECORD_DIR = "files/recent_record_dir"

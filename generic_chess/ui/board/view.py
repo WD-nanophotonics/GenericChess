@@ -17,7 +17,9 @@ from ..controller import UIController
 from .scene import CELL, BoardScene
 
 
-MIN_ZOOM = 0.5
+# 1.0 is the fit-to-available-area multiplier.  Zoom-out may return to fit,
+# but must never create a smaller-than-fit board.
+MIN_ZOOM = 1.0
 MAX_ZOOM = 8.0
 ZOOM_STEP = 1.15
 
@@ -37,6 +39,8 @@ class BoardView(QGraphicsView):
         self._base_scale = 1.0
         self._user_zoom = 1.0
         self._zoom_mode = False
+        self._last_fit_viewport: QSize | None = None
+        self._last_fit_board_size: int | None = None
         self.setTransformationAnchor(QGraphicsView.AnchorViewCenter)
         self.setResizeAnchor(QGraphicsView.AnchorViewCenter)
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -56,7 +60,7 @@ class BoardView(QGraphicsView):
         """Recompute the fit transform only when the board size changes."""
         if size != self._board_size:
             self._board_size = size
-            self._recompute_fit_transform()
+            self._recompute_fit_transform(force=True)
 
     def refresh_position(self) -> None:
         """Hook called after a scene rebuild; intentionally does not touch the
@@ -65,7 +69,7 @@ class BoardView(QGraphicsView):
     def fit_board(self) -> None:
         """Reset user zoom and fit the board to the current viewport."""
         self._user_zoom = 1.0
-        self._recompute_fit_transform()
+        self._recompute_fit_transform(force=True)
 
     def reset_zoom(self) -> None:
         self.fit_board()
@@ -74,7 +78,7 @@ class BoardView(QGraphicsView):
         self._zoom_mode = bool(enabled)
         if not self._zoom_mode:
             self._user_zoom = 1.0
-        self._recompute_fit_transform()
+        self._recompute_fit_transform(force=True)
 
     def zoom_mode_enabled(self) -> bool:
         return self._zoom_mode
@@ -94,16 +98,24 @@ class BoardView(QGraphicsView):
     def user_zoom(self) -> float:
         return self._user_zoom
 
-    def _recompute_fit_transform(self) -> None:
+    def _recompute_fit_transform(self, *, force: bool = False) -> None:
         if self._board_size is None:
             return
         viewport = self.viewport().size()
         scene_width = self._board_size * CELL
         if viewport.width() <= 0 or viewport.height() <= 0 or scene_width <= 0:
             return
+        if (
+            not force
+            and self._last_fit_viewport == viewport
+            and self._last_fit_board_size == self._board_size
+        ):
+            return
         self._base_scale = min(
             viewport.width() / scene_width, viewport.height() / scene_width
         )
+        self._last_fit_viewport = QSize(viewport)
+        self._last_fit_board_size = self._board_size
         self._apply_transform()
 
     def _apply_transform(self) -> None:

@@ -54,7 +54,7 @@ from .settings import (
     KEY_ZOOM_MODE,
     SettingsStore,
 )
-from .theme import default_theme
+from .theme import application_stylesheet, default_theme
 
 
 class _AiThread(QThread):
@@ -99,6 +99,7 @@ class MainWindow(QMainWindow):
         self._settings = settings
         self._cache = cache or TextureCache()
         self._theme = default_theme()
+        self.setStyleSheet(application_stylesheet(self._theme))
         self._tr = LocalizationManager(settings.get(KEY_LANGUAGE))
         self._promotion_open = False
         self._ai_error: str | None = None
@@ -106,6 +107,8 @@ class MainWindow(QMainWindow):
         self._shutting_down = False
         self._app_version = "0.7.0a1"
         self.setWindowTitle(self._tr.text("app.title"))
+        self.setMinimumSize(760, 540)
+        self.resize(1180, 760)
 
         controller.interaction.orientation_owner = int(
             settings.get(KEY_BOARD_ORIENTATION, 0)
@@ -129,6 +132,7 @@ class MainWindow(QMainWindow):
         )
 
         self._sidebar = QTabWidget()
+        self._sidebar.setMinimumWidth(300)
         self._sidebar.setDocumentMode(True)
         self._sidebar.addTab(self._moves_panel, self._tr.text("tab.moves"))
         self._sidebar.addTab(self._rules_panel, self._tr.text("tab.rules"))
@@ -139,6 +143,7 @@ class MainWindow(QMainWindow):
         board_layout.setSpacing(2)
         self._bar_top = None
         self._bar_bottom = None
+        self._placed_orientation: int | None = None
         self._overlay = GameOverOverlay(self._tr, self._theme)
         self._overlay.view_moves_requested.connect(self._overlay_view_moves)
         self._overlay.play_again_requested.connect(self._restart)
@@ -184,6 +189,8 @@ class MainWindow(QMainWindow):
 
     def _place_player_bars(self, orientation: int) -> None:
         """Owner semantics never change; only the visual order follows orientation."""
+        if self._placed_orientation == orientation:
+            return
         top_owner = 1 - orientation
         bottom_owner = orientation
         if self._bar_top is not None:
@@ -193,6 +200,7 @@ class MainWindow(QMainWindow):
         self._bar_bottom = self._player_bars[bottom_owner]
         self._board_layout.insertWidget(0, self._bar_top)
         self._board_layout.addWidget(self._bar_bottom)
+        self._placed_orientation = orientation
 
     # ------------------------------------------------------------------ actions
 

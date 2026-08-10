@@ -36,25 +36,30 @@ class PlayerBar(QWidget):
         self._owner = owner
         self._inspect_type = inspect_type_cb
         self.setObjectName(f"player_bar_{owner}")
+        # The board column owns a fixed-height information rail.  Hand
+        # contents and thinking text may change, but they must not steal a few
+        # pixels from the board and trigger a new fit transform.
+        self.setFixedHeight(46)
 
         outer = QHBoxLayout(self)
         outer.setContentsMargins(8, 2, 8, 2)
         outer.setSpacing(8)
 
         self._name = QLabel()
-        self._name.setStyleSheet("font-weight: bold; font-size: 13px;")
+        self._name.setObjectName("player_name")
         outer.addWidget(self._name)
 
         self._marker = QLabel()
+        self._marker.setObjectName("player_marker")
         outer.addWidget(self._marker)
 
         self._clock = QLabel()
-        self._clock.setStyleSheet("font-variant: tabular-nums;")
+        self._clock.setObjectName("player_clock")
         outer.addWidget(self._clock)
 
         outer.addSpacing(4)
         hand_label = QLabel()
-        hand_label.setStyleSheet("color: #888; font-size: 11px;")
+        hand_label.setObjectName("player_hand_label")
         outer.addWidget(hand_label)
 
         self._hand = QWidget()
@@ -86,7 +91,7 @@ class PlayerBar(QWidget):
 
         info = self._controller.game_info()
         marker = ""
-        marker_style = ""
+        marker_state = ""
         clock_text = ""
         if info is not None:
             side = info.side_to_move
@@ -95,10 +100,10 @@ class PlayerBar(QWidget):
             if self._owner == side and is_live and info.result.status.value == "ongoing":
                 if self._controller.ai_thinking:
                     marker = tr.text("player.thinking")
-                    marker_style = "color: #2980b9; font-style: italic;"
+                    marker_state = "thinking"
                 else:
                     marker = tr.text("player.to_move")
-                    marker_style = "color: #c0392b; font-weight: bold;"
+                    marker_state = "active"
             clock_state = self._controller.clock_state()
             if clock_state is not None:
                 total = clock_state.remaining_for(self._owner) / 1000.0
@@ -107,7 +112,9 @@ class PlayerBar(QWidget):
                 minutes, seconds = divmod(int(total), 60)
                 clock_text = f"{minutes:02d}:{seconds:02d}"
         self._marker.setText(marker)
-        self._marker.setStyleSheet(marker_style)
+        self._marker.setProperty("state", marker_state)
+        self._marker.style().unpolish(self._marker)
+        self._marker.style().polish(self._marker)
         self._clock.setText(clock_text)
 
         self._hand_label.setText(tr.text("player.hand") + "：")
@@ -133,10 +140,6 @@ class PlayerBar(QWidget):
             button.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
             button.setAutoRaise(True)
             button.setProperty("selected", entry.type_id == selected)
-            button.setStyleSheet(
-                "QToolButton[selected=\"true\"] { border: 2px solid #2980b9; "
-                "border-radius: 4px; }"
-            )
             button.clicked.connect(
                 lambda _=False, tid=entry.type_id: self._on_hand_clicked(tid)
             )
@@ -150,7 +153,7 @@ class PlayerBar(QWidget):
 
     def _add_hand_text(self, text: str) -> None:
         label = QLabel(text)
-        label.setStyleSheet("color: #888; font-style: italic;")
+        label.setObjectName("player_hand_empty")
         self._hand_layout.addWidget(label)
         self._hand_layout.addStretch(1)
 

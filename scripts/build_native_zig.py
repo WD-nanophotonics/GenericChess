@@ -29,7 +29,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCES = sorted((ROOT / "generic_chess" / "_native").glob("*.c"))
 INCLUDE = pathlib.Path(sysconfig.get_paths()["include"])
 BASE = pathlib.Path(sys.base_prefix)
-OUT = ROOT / "generic_chess" / f"_native_core{sysconfig.get_config_var('EXT_SUFFIX')}"
+OUT = pathlib.Path(
+    os.environ.get(
+        "NATIVE_BUILD_OUT",
+        ROOT / "generic_chess" / f"_native_core{sysconfig.get_config_var('EXT_SUFFIX')}",
+    )
+)
 
 
 def find_zig() -> str:
@@ -66,7 +71,9 @@ def main(argv: list[str] | None = None) -> int:
         f"-l{python_lib}",
     ] + [str(s) for s in SOURCES] + ["-o", str(OUT)]
     env = dict(os.environ)
-    cache = ROOT / ".gc_zig_cache"
+    # Allow CI/managed workspaces to place Zig's mutable cache outside the
+    # checkout.  The repository-local default remains unchanged.
+    cache = pathlib.Path(os.environ.get("ZIG_GLOBAL_CACHE_DIR", ROOT / ".gc_zig_cache"))
     cache.mkdir(exist_ok=True)
     env["ZIG_GLOBAL_CACHE_DIR"] = str(cache)
     print("zig:", zig)

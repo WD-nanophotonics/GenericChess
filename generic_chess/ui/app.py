@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from pathlib import Path
 
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtCore import QTimer
@@ -12,6 +13,17 @@ from PySide6.QtWidgets import QApplication
 from .controller import UIController
 from .main_window import MainWindow
 from .settings import QtSettingsStore
+
+
+def _window_size(value: str) -> tuple[int, int]:
+    try:
+        width_text, height_text = value.lower().split("x", 1)
+        width, height = int(width_text), int(height_text)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("window size must be WIDTHxHEIGHT") from exc
+    if width < 320 or height < 240:
+        raise argparse.ArgumentTypeError("window size is too small")
+    return width, height
 
 
 def create_application(argv: list[str] | None = None) -> QApplication:
@@ -32,6 +44,27 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--smoke", action="store_true", help="quit immediately after the window shows (headless check)"
     )
+    parser.add_argument(
+        "--smoke-ms",
+        type=int,
+        default=None,
+        metavar="N",
+        help="show the window, let Qt settle for N milliseconds, then exit",
+    )
+    parser.add_argument(
+        "--snapshot",
+        type=Path,
+        default=None,
+        metavar="PATH",
+        help="save a settled main-window screenshot to PATH and exit",
+    )
+    parser.add_argument(
+        "--window-size",
+        type=_window_size,
+        default=None,
+        metavar="WIDTHxHEIGHT",
+        help="resize the window before a smoke/snapshot run",
+    )
     args, _ = parser.parse_known_args(argv)
 
     app = create_application(argv)
@@ -47,9 +80,28 @@ def main(argv: list[str] | None = None) -> int:
             hybrid=args.hybrid,
         )
     window = MainWindow(controller, settings)
+    if args.window_size is not None:
+        window.resize(*args.window_size)
     window.show()
-    if args.smoke:
-        QTimer.singleShot(0, app.quit)
+
+    def finish_unattended() -> None:
+        if args.snapshot is not None:
+            if not window.grab().save(str(args.snapshot)):
+                print(f"Could not save GUI snapshot: {args.snapshot}", file=sys.stderr)
+                app.exit(2)
+                return
+        app.quit()
+
+    if args.smoke_ms is not None:
+        if args.smoke_ms < 0:
+            parser.error("--smoke-ms must be non-negative")
+        QTimer.singleShot(args.smoke_ms, finish_unattended)
+    elif args.snapshot is not None:
+        # A short event-loop settle makes layout, fonts, and the first board
+        # fit deterministic in both desktop and offscreen Qt platforms.
+        QTimer.singleShot(250, finish_unattended)
+    elif args.smoke:
+        QTimer.singleShot(0, finish_unattended)
     return app.exec()
 
 

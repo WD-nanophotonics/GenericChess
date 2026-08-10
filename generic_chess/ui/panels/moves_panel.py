@@ -37,11 +37,11 @@ class MovesPanel(QWidget):
         layout.setContentsMargins(8, 8, 8, 8)
 
         self._primary = QLabel()
-        self._primary.setStyleSheet("font-weight: bold; font-size: 15px;")
+        self._primary.setObjectName("moves_primary")
         self._primary.setWordWrap(True)
         layout.addWidget(self._primary)
         self._secondary = QLabel()
-        self._secondary.setStyleSheet("color: #666; font-size: 12px;")
+        self._secondary.setObjectName("moves_secondary")
         self._secondary.setWordWrap(True)
         layout.addWidget(self._secondary)
 

@@ -8,7 +8,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 import json
 
 import pytest
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QCoreApplication, QEvent, Qt
 from PySide6.QtWidgets import QApplication, QScrollArea
 
 from generic_chess.core.actions import BoardMove
@@ -35,6 +35,33 @@ from generic_chess.ui.theme import Theme
 @pytest.fixture(scope="session")
 def qapp():
     return QApplication.instance() or QApplication([])
+
+
+@pytest.fixture(autouse=True)
+def _qt_cleanup(qapp):
+    """Keep GUI object graphs isolated between redesign tests.
+
+    The lifecycle suite intentionally asserts that no windows survive a test.
+    Without the same bounded shutdown contract here, this module leaves its
+    top-level windows alive until the next module happens to collect them.
+    """
+    import gc
+
+    baseline = set(qapp.topLevelWidgets())
+    yield
+    for widget in list(qapp.topLevelWidgets()):
+        if widget in baseline:
+            continue
+        if isinstance(widget, MainWindow):
+            widget._shutdown()
+        try:
+            widget.close()
+            widget.deleteLater()
+        except RuntimeError:
+            pass
+    QCoreApplication.sendPostedEvents(None, QEvent.DeferredDelete)
+    qapp.processEvents()
+    gc.collect()
 
 
 def _window(qapp, seed=42, board_size=8, language="en"):

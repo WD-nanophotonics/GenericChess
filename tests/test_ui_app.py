@@ -254,6 +254,36 @@ def test_ui_module_entry_smoke():
     assert "Traceback" not in proc.stderr
 
 
+def test_ui_settle_snapshot_auto_exits_and_writes_image(tmp_path):
+    import subprocess
+    import sys
+
+    env = dict(os.environ)
+    env["QT_QPA_PLATFORM"] = "offscreen"
+    snapshot = tmp_path / "settled-main-window.png"
+    proc = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "generic_chess.ui",
+            "--smoke-ms",
+            "120",
+            "--snapshot",
+            str(snapshot),
+            "--window-size",
+            "900x620",
+        ],
+        capture_output=True,
+        text=True,
+        env=env,
+        encoding="utf-8",
+        timeout=120,
+    )
+    assert proc.returncode == 0, proc.stderr
+    assert snapshot.exists()
+    assert snapshot.stat().st_size > 0
+
+
 def test_run_ui_launcher_smoke():
     import subprocess
     import sys
@@ -355,6 +385,16 @@ def test_manual_zoom_survives_refresh(qapp):
     assert win._board_view.transform() == before  # refresh does not reset zoom
     win._board_view.reset_zoom()
     assert win._board_view.transform() != before
+
+
+def test_zoom_out_returns_to_fit_and_never_below_fit(qapp):
+    _, win = _window(qapp)
+    win._board_view.set_zoom_mode(True)
+    fit = win._board_view.transform().m11()
+    for _ in range(20):
+        win._board_view.zoom_out()
+    assert win._board_view.user_zoom() == pytest.approx(1.0)
+    assert win._board_view.transform().m11() == pytest.approx(fit)
 
 
 def test_history_preview_selects_same_ply(qapp):
