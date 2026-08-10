@@ -848,6 +848,14 @@ def test_i18n_critical_key_parity_across_languages():
         "overlay.play_again",
         "overlay.view_board",
         "status.ai_timeout",
+        "prefs.animations",
+        "promotion.title",
+        "promotion.choose",
+        "promotion.promote_to",
+        "promotion.none",
+        "new_match.title",
+        "new_match.choose_ruleset",
+        "new_match.ai_timeout_note",
     ]
     for key in critical:
         for lang, table in tables.items():

@@ -27,6 +27,20 @@ CELL = 100.0
 
 
 @dataclass(frozen=True)
+class MotionConfig:
+    """Shared timing and easing policy for every board transition."""
+
+    move_ms: int = 145
+    capture_ms: int = 110
+    drop_ms: int = 125
+    promotion_ms: int = 125
+    easing: QEasingCurve.Type = QEasingCurve.Type.InOutCubic
+
+
+DEFAULT_MOTION = MotionConfig()
+
+
+@dataclass(frozen=True)
 class BoardRenderConfig:
     theme: Theme
     texture_ratio: float = 0.8
@@ -102,6 +116,7 @@ class BoardScene(QGraphicsScene):
         self._visual_model: BoardViewModel | None = None
         self._authoritative_model: BoardViewModel | None = None
         self._pending_model: BoardViewModel | None = None
+        self._transition_target_model: BoardViewModel | None = None
         self._active_transition: _Transition | None = None
         self._animation: QVariantAnimation | None = None
         self._generation = 0
@@ -149,6 +164,9 @@ class BoardScene(QGraphicsScene):
     def motion_active(self) -> bool:
         return self._active_transition is not None
 
+    def animation_child_count(self) -> int:
+        return len(self.findChildren(QVariantAnimation))
+
     def rendered_occupancy(self) -> dict[Square, tuple[int, str, str, bool]]:
         return {
             square: (
@@ -175,6 +193,7 @@ class BoardScene(QGraphicsScene):
         self._visual_model = None
         self._authoritative_model = None
         self._pending_model = None
+        self._transition_target_model = None
         self._config = None
         self._compiled = None
 
@@ -219,18 +238,23 @@ class BoardScene(QGraphicsScene):
             self._reposition_existing()
 
         old_config = self._config
+        coordinates_changed = old_config is not None and (
+            old_config.show_coordinates != config.show_coordinates
+        )
         texture_changed = old_config is not None and (
             old_config.texture_ratio != config.texture_ratio
             or old_config.texture_style != config.texture_style
         )
         self._config = config
+        if coordinates_changed:
+            self._set_coordinates_enabled(config.show_coordinates)
         if texture_changed and self._active_transition is None:
             for square, item in self._piece_items.items():
                 if item.piece is not None:
                     item.apply_piece(self, item.piece, square)
         previous = self._authoritative_model or self._visual_model
         if previous is not None and (
-            self._is_preview(previous) or self._is_preview(model)
+            previous.is_history_preview or model.is_history_preview
         ):
             self.cancel_motion()
             self._authoritative_model = model
@@ -238,8 +262,19 @@ class BoardScene(QGraphicsScene):
             self._visual_model = model
             self._refresh_interaction(model)
             return
-        self._refresh_interaction(model)
+        if previous is not None and (
+            self._is_movement_preview(previous) or self._is_movement_preview(model)
+        ):
+            self.cancel_motion()
+            self._authoritative_model = model
+            self._sync_pieces(model)
+            self._visual_model = model
+            self._refresh_interaction(model)
+            return
         if self._active_transition is not None:
+            self._refresh_interaction(
+                self._transition_target_model or self._visual_model or model
+            )
             if not self._animation_enabled:
                 self._cancel_and_snap(model)
                 return
@@ -259,13 +294,18 @@ class BoardScene(QGraphicsScene):
         self._authoritative_model = model
         if self._same_occupancy(model, self._visual_model):
             self._visual_model = model
+            self._refresh_interaction(model)
             return
         transition = self._infer_transition(previous, model)
         if transition is not None and self._animation_enabled:
+            # Keep overlays on the currently presented frame while the piece
+            # travels; authoritative state may already contain another move.
+            self._refresh_interaction(self._visual_model or previous or model)
             self._start_transition(transition, model)
         else:
             self._sync_pieces(model)
             self._visual_model = model
+            self._refresh_interaction(model)
 
     def cancel_motion(self) -> None:
         self._generation += 1
@@ -281,6 +321,7 @@ class BoardScene(QGraphicsScene):
         self._effect_items.clear()
         self._active_transition = None
         self._pending_model = None
+        self._transition_target_model = None
         self._emit_busy(False)
 
     # ------------------------------------------------------------------ structure and layers
@@ -484,6 +525,15 @@ class BoardScene(QGraphicsScene):
             self.addItem(text)
             self._coordinate_items[("rank", rank)] = text
 
+    def _set_coordinates_enabled(self, enabled: bool) -> None:
+        if enabled:
+            if not self._coordinate_items:
+                self._add_coordinates(self._n)
+            return
+        for item in tuple(self._coordinate_items.values()):
+            self.removeItem(item)
+        self._coordinate_items.clear()
+
     def set_hover(self, square: Square | None) -> None:
         if self._hover_item is not None:
             self.removeItem(self._hover_item)
@@ -515,7 +565,7 @@ class BoardScene(QGraphicsScene):
         return cls._occupancy(left) == cls._occupancy(right)
 
     @staticmethod
-    def _is_preview(model: BoardViewModel | None) -> bool:
+    def _is_movement_preview(model: BoardViewModel | None) -> bool:
         return bool(model and any(square.is_preview for square in model.squares))
 
     @classmethod
@@ -591,14 +641,20 @@ class BoardScene(QGraphicsScene):
         self._generation += 1
         generation = self._generation
         self._active_transition = transition
+        self._transition_target_model = target
         self._emit_busy(True)
         animation = QVariantAnimation(self)
         self._animation = animation
-        duration = 110 if transition.kind in ("capture", "promotion") else 145
+        duration = {
+            "move": DEFAULT_MOTION.move_ms,
+            "capture": DEFAULT_MOTION.capture_ms,
+            "drop": DEFAULT_MOTION.drop_ms,
+            "promotion": DEFAULT_MOTION.promotion_ms,
+        }[transition.kind]
         animation.setDuration(duration)
         animation.setStartValue(0.0)
         animation.setEndValue(1.0)
-        animation.setEasingCurve(QEasingCurve.Type.InOutCubic)
+        animation.setEasingCurve(DEFAULT_MOTION.easing)
 
         def update(value) -> None:
             if generation != self._generation or self._active_transition is not transition:
@@ -633,17 +689,20 @@ class BoardScene(QGraphicsScene):
             self._animation = None
             self._active_transition = None
             self._visual_model = target
+            self._transition_target_model = None
             self._emit_busy(False)
             pending = self._pending_model
             self._pending_model = None
             if pending is not None:
                 transition_next = self._infer_transition(target, pending)
                 if transition_next is not None and self._animation_enabled:
+                    self._refresh_interaction(target)
                     self._start_transition(transition_next, pending)
                 else:
                     self._sync_pieces(pending)
                     self._visual_model = pending
                     self._refresh_interaction(pending)
+            animation.deleteLater()
 
         animation.valueChanged.connect(update)
         animation.finished.connect(finished)

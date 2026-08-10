@@ -6,7 +6,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 import pytest
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QLabel, QPushButton
 
 from generic_chess.core.actions import BoardMove
 from generic_chess.core.coordinates import Square
@@ -21,6 +21,7 @@ from generic_chess.ui.settings import (
     KEY_AUTO_PROMOTE_UNIQUE,
     KEY_BOARD_ORIENTATION,
     KEY_ENABLE_PREVIEW,
+    KEY_ENABLE_ANIMATIONS,
     KEY_LANGUAGE,
     KEY_SHOW_COORDINATES,
     KEY_SHOW_DEV_STATUS,
@@ -194,12 +195,86 @@ def test_promotion_dialog_instantiates(qapp):
     assert dialog.chosen() is None
 
 
+@pytest.mark.parametrize(
+    ("language", "title", "instruction", "promote", "none"),
+    (
+        ("en", "Promotion", "Choose a promotion:", "Promote to G", "No promotion"),
+        ("zh_CN", "升变", "选择升变：", "升变为 G", "不升变"),
+        ("ja_JP", "昇格", "昇格先を選択：", "G に昇格", "昇格しない"),
+    ),
+)
+def test_promotion_dialog_is_localized(qapp, language, title, instruction, promote, none):
+    from generic_chess.core.actions import BoardMove
+    from generic_chess.core.movement import LeapAtom
+    from generic_chess.ui.dialogs.promotion_dialog import PromotionDialog
+    from conftest import king_type, make_compiled, T
+
+    pawn = T("P", LeapAtom((0, 1)), is_promotable=True, targets=("G",))
+    gold = T("G", LeapAtom((1, 0)))
+    compiled = make_compiled(
+        8,
+        [king_type(), pawn, gold],
+        auto_promotion=True,
+        lines=[
+            ".......k",
+            "....P...",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "K.......",
+        ],
+    )
+    actions = (
+        BoardMove(Square(4, 6), Square(4, 7), "G"),
+        BoardMove(Square(4, 6), Square(4, 7)),
+    )
+    dialog = PromotionDialog(
+        compiled,
+        TextureCache(),
+        actions,
+        "P",
+        0,
+        tr=LocalizationManager(language),
+    )
+    assert dialog.windowTitle() == title
+    assert instruction in [label.text() for label in dialog.findChildren(QLabel)]
+    assert {button.text() for button in dialog.findChildren(QPushButton)} == {promote, none}
+    dialog.show()
+    qapp.processEvents()
+    assert dialog.focusWidget() in dialog.findChildren(QPushButton)
+    dialog.close()
+
+
 def test_preferences_dialog_persists(qapp):
     settings = DictSettingsStore()
     dialog = PreferencesDialog({}, LocalizationManager("en"))
     values = dialog.values()
     assert KEY_TEXTURE_RATIO in values
     assert values[KEY_TEXTURE_RATIO] == 0.8  # default from empty initial
+    assert values[KEY_ENABLE_ANIMATIONS] is True
+
+
+@pytest.mark.parametrize(
+    ("language", "title", "current", "choose"),
+    (
+        ("en", "New Match", "Current ruleset", "Choose RuleSet…"),
+        ("zh_CN", "新建对局", "当前规则集", "选择规则集…"),
+        ("ja_JP", "新規対局", "現在のルールセット", "ルールセットを選択…"),
+    ),
+)
+def test_new_match_dialog_is_localized(qapp, language, title, current, choose):
+    from generic_chess.ui.dialogs.new_match_dialog import NewMatchDialog
+
+    dialog = NewMatchDialog(
+        DictSettingsStore(),
+        tr=LocalizationManager(language),
+    )
+    assert dialog.windowTitle() == title
+    assert dialog._source.itemText(0) == current
+    assert dialog._browse.text() == choose
+    dialog.close()
 
 
 def test_view_menu_toggle_syncs_to_settings(qapp):

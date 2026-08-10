@@ -132,6 +132,11 @@ class PlayerBar(QWidget):
             self._add_hand_text(tr.text("player.hand_empty"))
             return
         selected = self._controller.interaction.selected_hand_piece_type_id
+        actionable = (
+            self._controller.interaction.displayed_ply is None
+            and info.result.status.value == "ongoing"
+            and info.side_to_move == self._owner
+        )
         for entry in entries:
             button = QToolButton()
             pixmap = self._cache.pixmap(compiled, entry.type_id, self._owner, 24)
@@ -139,7 +144,8 @@ class PlayerBar(QWidget):
             button.setText(f"{entry.type_id} ×{entry.count}")
             button.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
             button.setAutoRaise(True)
-            button.setProperty("selected", entry.type_id == selected)
+            button.setProperty("selected", actionable and entry.type_id == selected)
+            button.setEnabled(actionable)
             button.clicked.connect(
                 lambda _=False, tid=entry.type_id: self._on_hand_clicked(tid)
             )

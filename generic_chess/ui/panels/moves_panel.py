@@ -146,11 +146,13 @@ class MovesPanel(QWidget):
             item.setData(Qt.UserRole, entry.ply)
             self._list.addItem(item)
         if self._list.count():
-            target = displayed if displayed is not None else len(entries)
-            index = max(0, min(target - 1, self._list.count() - 1))
-            item = self._list.item(index)
-            item.setSelected(True)
-            self._list.scrollToItem(item)
+            self._list.clearSelection()
+            if displayed != 0:
+                target = displayed if displayed is not None else len(entries)
+                index = max(0, min(target - 1, self._list.count() - 1))
+                item = self._list.item(index)
+                item.setSelected(True)
+                self._list.scrollToItem(item)
 
     def _build_move_labels(self, entries, compiled):
         """Replay once from the initial state to label each ply."""

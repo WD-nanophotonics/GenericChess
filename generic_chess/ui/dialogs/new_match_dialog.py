@@ -24,7 +24,8 @@ from PySide6.QtWidgets import (
 from ...ai.budget import ThinkingConfig, ThinkingPreset, ThinkingStrategy
 from ...clock import SideTimeConfig, TimeControl, TimeControlMode
 from ..match import MatchConfig, ParticipantKind
-from ..settings import SettingsStore
+from ..i18n.manager import LocalizationManager
+from ..settings import KEY_LANGUAGE, SettingsStore
 
 
 @dataclass(frozen=True, slots=True)
@@ -41,95 +42,124 @@ class NewMatchRequest:
 
 
 class NewMatchDialog(QDialog):
-    def __init__(self, settings: SettingsStore, parent=None) -> None:
+    def __init__(
+        self,
+        settings: SettingsStore,
+        parent=None,
+        tr: LocalizationManager | None = None,
+    ) -> None:
         super().__init__(parent)
-        self.setWindowTitle("New Match")
         self._settings = settings
+        self._tr = tr or LocalizationManager(settings.get(KEY_LANGUAGE))
+        self.setWindowTitle(self._tr.text("new_match.title"))
         self._request: NewMatchRequest | None = None
         layout = QVBoxLayout(self)
 
-        ruleset_box = QGroupBox("Ruleset")
+        tr = self._tr
+        ruleset_box = QGroupBox(tr.text("new_match.ruleset"))
         ruleset_form = QFormLayout(ruleset_box)
         self._source = QComboBox()
-        self._source.addItems(["Current ruleset", "Generate new ruleset", "Load ruleset file"])
+        self._source.addItems(
+            [
+                tr.text("new_match.current_ruleset"),
+                tr.text("new_match.generate_ruleset"),
+                tr.text("new_match.load_ruleset_file"),
+            ]
+        )
         self._source.setCurrentIndex(int(settings.get("match/ruleset_source", 0)))
         self._source.currentIndexChanged.connect(self._sync_source)
-        ruleset_form.addRow("Source", self._source)
+        ruleset_form.addRow(tr.text("new_match.source"), self._source)
         self._preset = QComboBox()
         self._preset.addItems(["classic_like", "bilateral_random", "free_random"])
-        ruleset_form.addRow("Preset", self._preset)
+        ruleset_form.addRow(tr.text("new_match.preset"), self._preset)
         self._seed = QSpinBox()
         self._seed.setRange(0, 2**31 - 1)
         self._seed.setValue(int(settings.get("match/seed", 42)))
-        ruleset_form.addRow("Seed", self._seed)
+        ruleset_form.addRow(tr.text("new_match.seed"), self._seed)
         self._board_size = QSpinBox()
         self._board_size.setRange(4, 32)
         self._board_size.setValue(int(settings.get("match/board_size", 8)))
-        ruleset_form.addRow("Board size", self._board_size)
-        self._hybrid = QCheckBox("Allow hybrid leap/ray pieces")
+        ruleset_form.addRow(tr.text("new_match.board_size"), self._board_size)
+        self._hybrid = QCheckBox(tr.text("new_match.hybrid"))
         ruleset_form.addRow("", self._hybrid)
         path_row = QHBoxLayout()
         self._path_label = QLabel("—")
-        self._browse = QPushButton("Choose RuleSet…")
+        self._browse = QPushButton(tr.text("new_match.choose_ruleset"))
         self._browse.clicked.connect(self._choose_ruleset)
         path_row.addWidget(self._path_label, 1)
         path_row.addWidget(self._browse)
-        ruleset_form.addRow("File", path_row)
+        ruleset_form.addRow(tr.text("new_match.file"), path_row)
         layout.addWidget(ruleset_box)
 
-        players_box = QGroupBox("Players")
+        players_box = QGroupBox(tr.text("new_match.players"))
         players_form = QFormLayout(players_box)
         self._side0 = QComboBox()
-        self._side0.addItems(["Human", "AI"])
+        self._side0.addItems([tr.text("new_match.human"), tr.text("new_match.ai")])
         self._side0.setCurrentIndex(int(settings.get("match/side0", 0)))
-        players_form.addRow("先手 / White (Player 0)", self._side0)
+        players_form.addRow(tr.text("new_match.first_player"), self._side0)
         self._side1 = QComboBox()
-        self._side1.addItems(["Human", "AI"])
+        self._side1.addItems([tr.text("new_match.human"), tr.text("new_match.ai")])
         self._side1.setCurrentIndex(int(settings.get("match/side1", 1)))
-        players_form.addRow("後手 / Black (Player 1)", self._side1)
+        players_form.addRow(tr.text("new_match.second_player"), self._side1)
         layout.addWidget(players_box)
 
-        clock_box = QGroupBox("Time control")
+        clock_box = QGroupBox(tr.text("new_match.time_control"))
         clock_form = QFormLayout(clock_box)
         self._mode = QComboBox()
-        self._mode.addItems(["No clock", "Byoyomi (読秒)", "Fischer (increment)"])
+        self._mode.addItems(
+            [
+                tr.text("new_match.no_clock"),
+                tr.text("new_match.byoyomi"),
+                tr.text("new_match.fischer"),
+            ]
+        )
         self._mode.setCurrentIndex(int(settings.get("match/mode", 0)))
-        clock_form.addRow("Mode", self._mode)
+        clock_form.addRow(tr.text("new_match.mode"), self._mode)
         self._main_seconds = QSpinBox()
         self._main_seconds.setRange(0, 3600)
         self._main_seconds.setValue(int(settings.get("match/main_seconds", 600)))
-        clock_form.addRow("Main time (seconds)", self._main_seconds)
+        clock_form.addRow(tr.text("new_match.main_time"), self._main_seconds)
         self._overtime_seconds = QSpinBox()
         self._overtime_seconds.setRange(0, 600)
         self._overtime_seconds.setValue(int(settings.get("match/overtime_seconds", 30)))
-        clock_form.addRow("Byoyomi / increment (seconds)", self._overtime_seconds)
+        clock_form.addRow(tr.text("new_match.overtime"), self._overtime_seconds)
         clock_form.addRow(
             "",
-            QLabel("AI 超时判负；人类时钟仅供参考，永不判负。"),
+            QLabel(tr.text("new_match.ai_timeout_note")),
         )
         layout.addWidget(clock_box)
 
-        ai_box = QGroupBox("AI strength")
+        ai_box = QGroupBox(tr.text("new_match.ai_strength"))
         ai_form = QFormLayout(ai_box)
         self._strategy = QComboBox()
         self._strategy.addItems(
-            ["Auto (use remaining clock time)", "Preset node budget", "Fixed seconds per move"]
+            [
+                tr.text("new_match.auto_time"),
+                tr.text("new_match.node_budget"),
+                tr.text("new_match.fixed_seconds"),
+            ]
         )
         self._strategy.setCurrentIndex(int(settings.get("match/strategy", 0)))
-        ai_form.addRow("Budget", self._strategy)
+        ai_form.addRow(tr.text("new_match.budget"), self._strategy)
         self._preset_ai = QComboBox()
-        self._preset_ai.addItems(["Quick", "Balanced", "Deep"])
+        self._preset_ai.addItems(
+            [
+                tr.text("new_match.quick"),
+                tr.text("new_match.balanced"),
+                tr.text("new_match.deep"),
+            ]
+        )
         self._preset_ai.setCurrentIndex(int(settings.get("match/preset", 1)))
-        ai_form.addRow("Preset", self._preset_ai)
+        ai_form.addRow(tr.text("new_match.preset"), self._preset_ai)
         self._move_time = QDoubleSpinBox()
         self._move_time.setRange(0.1, 300.0)
         self._move_time.setSingleStep(0.1)
         self._move_time.setValue(float(settings.get("match/move_time", 1.5)))
-        ai_form.addRow("Seconds per move", self._move_time)
+        ai_form.addRow(tr.text("new_match.seconds_per_move"), self._move_time)
         self._max_depth = QSpinBox()
         self._max_depth.setRange(0, 64)
         self._max_depth.setValue(int(settings.get("match/max_depth", 0)))
-        ai_form.addRow("Max depth (0 = unlimited)", self._max_depth)
+        ai_form.addRow(tr.text("new_match.max_depth"), self._max_depth)
         layout.addWidget(ai_box)
 
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
@@ -147,7 +177,12 @@ class NewMatchDialog(QDialog):
         self._browse.setEnabled(file_mode)
 
     def _choose_ruleset(self) -> None:
-        path, _ = QFileDialog.getOpenFileName(self, "Open RuleSet", "", "JSON files (*.json)")
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            self._tr.text("new_match.open_ruleset"),
+            "",
+            self._tr.text("new_match.json_files"),
+        )
         if path:
             self._path_label.setText(path)
 
@@ -155,7 +190,11 @@ class NewMatchDialog(QDialog):
         if self._source.currentIndex() == 2:
             path = self._path_label.text()
             if not path or path == "—":
-                QMessageBox.warning(self, "New Match", "Choose a RuleSet file first.")
+                QMessageBox.warning(
+                    self,
+                    self._tr.text("new_match.title"),
+                    self._tr.text("new_match.choose_file_first"),
+                )
                 return
         mode = [TimeControlMode.NONE, TimeControlMode.BYOYOMI, TimeControlMode.FISCHER][
             self._mode.currentIndex()

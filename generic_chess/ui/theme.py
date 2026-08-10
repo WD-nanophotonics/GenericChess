@@ -96,6 +96,7 @@ def application_stylesheet(theme: Theme) -> str:
         border-radius: {t.radius}px;
     }}
     QToolButton:hover {{ background: {t.panel_alt_bg}; }}
+    QToolButton:disabled {{ color: {t.text_muted}; background: transparent; }}
     QStatusBar {{
         background: {t.toolbar_bg};
         color: {t.text_secondary};

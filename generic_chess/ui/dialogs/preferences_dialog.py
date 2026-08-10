@@ -20,6 +20,7 @@ from ..i18n.manager import LocalizationManager, SUPPORTED_LANGUAGES
 from ..settings import (
     KEY_AUTO_PROMOTE_UNIQUE,
     KEY_BOARD_ORIENTATION,
+    KEY_ENABLE_ANIMATIONS,
     KEY_ENABLE_PREVIEW,
     KEY_LANGUAGE,
     KEY_SHOW_COORDINATES,
@@ -103,12 +104,16 @@ class PreferencesDialog(QDialog):
         self._auto_promo = QCheckBox()
         self._auto_promo.setChecked(bool(initial.get(KEY_AUTO_PROMOTE_UNIQUE, True)))
         form.addRow("", self._auto_promo)
+        self._animations = QCheckBox()
+        self._animations.setChecked(bool(initial.get(KEY_ENABLE_ANIMATIONS, True)))
+        form.addRow("", self._animations)
         self._coords.setText(self._tr.text("prefs.coordinates"))
         self._legal.setText(self._tr.text("prefs.legal_moves"))
         self._lastmove.setText(self._tr.text("prefs.last_move"))
         self._hover.setText(self._tr.text("prefs.hover"))
         self._preview.setText(self._tr.text("prefs.preview"))
         self._auto_promo.setText(self._tr.text("prefs.auto_promote"))
+        self._animations.setText(self._tr.text("prefs.animations"))
         return page
 
     def _advanced_tab(self, initial: dict) -> QWidget:
@@ -135,6 +140,7 @@ class PreferencesDialog(QDialog):
             KEY_SHOW_HOVER: self._hover.isChecked(),
             KEY_ENABLE_PREVIEW: self._preview.isChecked(),
             KEY_AUTO_PROMOTE_UNIQUE: self._auto_promo.isChecked(),
+            KEY_ENABLE_ANIMATIONS: self._animations.isChecked(),
             KEY_ZOOM_MODE: self._zoom_mode.isChecked(),
             KEY_SHOW_DEV_STATUS: self._dev_status.isChecked(),
         }

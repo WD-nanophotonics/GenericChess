@@ -15,7 +15,12 @@ from generic_chess.core.coordinates import Square
 from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.ui.controller import UIController
 from generic_chess.ui.main_window import MainWindow
-from generic_chess.ui.settings import KEY_ENABLE_ANIMATIONS, KEY_LANGUAGE
+from generic_chess.ui.dialogs.preferences_dialog import PreferencesDialog
+from generic_chess.ui.settings import (
+    KEY_ENABLE_ANIMATIONS,
+    KEY_LANGUAGE,
+)
+from generic_chess.ui.i18n.manager import LocalizationManager
 from generic_chess.ui.stores import DictSettingsStore
 
 from conftest import T, king_type, make_ruleset
@@ -148,6 +153,69 @@ def test_static_and_piece_identity_survive_refreshes(qapp):
     _assert_exact(win, ctrl)
 
 
+def test_coordinate_toggle_is_incremental_and_preserves_identity(qapp):
+    ctrl, win = _window(qapp)
+    scene = win._scene
+    transform = win._board_view.transform()
+    squares = {square: id(item) for square, item in scene._square_items.items()}
+    pieces = {square: id(item) for square, item in scene.piece_items().items()}
+    assert scene._coordinate_items
+
+    win._act_coords.setChecked(False)
+    win._refresh()
+    assert not scene._coordinate_items
+    assert squares == {square: id(item) for square, item in scene._square_items.items()}
+    assert pieces == {square: id(item) for square, item in scene.piece_items().items()}
+    assert win._board_view.transform() == transform
+
+    win._act_coords.setChecked(True)
+    win._refresh()
+    assert len(scene._coordinate_items) == ctrl.board_view_model().board_size * 2
+    assert squares == {square: id(item) for square, item in scene._square_items.items()}
+    assert pieces == {square: id(item) for square, item in scene.piece_items().items()}
+    assert win._board_view.transform() == transform
+
+
+def test_animation_preference_is_localized_and_persistent(qapp):
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "zh_CN")
+    settings.set(KEY_ENABLE_ANIMATIONS, False)
+    dialog = PreferencesDialog(
+        {KEY_LANGUAGE: "zh_CN", KEY_ENABLE_ANIMATIONS: False},
+        LocalizationManager("zh_CN"),
+    )
+    assert dialog._animations.text() == "移动动画"
+    assert dialog._animations.isChecked() is False
+    values = dialog.values()
+    assert values[KEY_ENABLE_ANIMATIONS] is False
+    settings.set(KEY_ENABLE_ANIMATIONS, values[KEY_ENABLE_ANIMATIONS])
+    assert settings.get(KEY_ENABLE_ANIMATIONS) is False
+    dialog.close()
+
+
+def test_finished_animations_are_deleted_after_repeated_moves(qapp):
+    ctrl, win = _window(qapp, animations=True)
+    for _ in range(3):
+        assert ctrl.submit_action(_first_legal_move(ctrl))
+        _wait_until_idle(qapp, win)
+        QCoreApplication.sendPostedEvents(None, QEvent.DeferredDelete)
+        qapp.processEvents()
+        assert win._scene.animation_child_count() == 0
+    win._shutdown()
+    QCoreApplication.sendPostedEvents(None, QEvent.DeferredDelete)
+    assert win._scene.animation_child_count() == 0
+
+
+def test_opponent_hand_entries_are_visible_but_not_actionable(qapp):
+    ctrl, win = _window(qapp, ruleset=_capture_ruleset())
+    assert ctrl.submit_action(BoardMove(Square(1, 0), Square(2, 0)))
+    owner_bar = win._player_bars[0]
+    assert owner_bar.hand_buttons()
+    assert all(not button.isEnabled() for button in owner_bar.hand_buttons())
+    assert ctrl.display_ply(0)
+    assert all(not button.isEnabled() for button in owner_bar.hand_buttons())
+
+
 def test_mover_and_unrelated_piece_identity_are_preserved(qapp):
     ctrl, win = _window(qapp)
     source = next(
@@ -241,6 +309,24 @@ def test_animation_is_bounded_and_cancel_safe(qapp):
     assert win._scene.motion_active()
     assert win._scene._pending_model is not None
     _wait_until_idle(qapp, win)
+    _assert_exact(win, ctrl)
+
+
+def test_every_history_navigation_is_an_atomic_snap(qapp):
+    ctrl, win = _window(qapp, animations=True)
+    assert ctrl.submit_action(_first_legal_move(ctrl))
+    _wait_until_idle(qapp, win)
+    assert ctrl.submit_action(_first_legal_move(ctrl))
+    _wait_until_idle(qapp, win)
+
+    assert ctrl.display_ply(1)
+    assert ctrl.board_view_model().is_history_preview
+    assert not win._scene.motion_active()
+    assert ctrl.display_ply(0)
+    assert not win._scene.motion_active()
+    assert ctrl.return_to_current() is None
+    assert not win._scene.motion_active()
+    assert not ctrl.board_view_model().is_history_preview
     _assert_exact(win, ctrl)
 
     # A history preview is an atomic snap and invalidates the old callback.

@@ -192,6 +192,8 @@ class RuleExplorerPanel(QWidget):
 
         self._types = QListWidget()
         self._types.setSizeAdjustPolicy(QListWidget.AdjustToContents)
+        self._types.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self._types.setWordWrap(True)
         self._types.itemClicked.connect(self._on_type_clicked)
         layout.addWidget(self._types)
 

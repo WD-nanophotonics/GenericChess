@@ -251,9 +251,15 @@ class MainWindow(QMainWindow):
         self._act_prefs = self._action("menu.preferences", "Ctrl+,", self._preferences)
         self._act_about = self._action("menu.about", None, self._show_about)
 
-        self._act_coords = self._check_action("prefs.coordinates", True, self._refresh)
-        self._act_legal = self._check_action("prefs.legal_moves", True, self._refresh)
-        self._act_lastmove = self._check_action("prefs.last_move", True, self._refresh)
+        self._act_coords = self._check_action(
+            "prefs.coordinates", bool(self._settings.get(KEY_SHOW_COORDINATES, True)), self._refresh
+        )
+        self._act_legal = self._check_action(
+            "prefs.legal_moves", bool(self._settings.get(KEY_SHOW_LEGAL_MOVES, True)), self._refresh
+        )
+        self._act_lastmove = self._check_action(
+            "prefs.last_move", bool(self._settings.get(KEY_SHOW_LAST_MOVE, True)), self._refresh
+        )
         self._act_coords.setObjectName("coords")
         self._act_legal.setObjectName("legal")
         self._act_lastmove.setObjectName("lastmove")
@@ -680,7 +686,7 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------ dialogs
 
     def _new_match(self) -> None:
-        dialog = NewMatchDialog(self._settings, self)
+        dialog = NewMatchDialog(self._settings, self, tr=self._tr)
         if dialog.exec() != QDialog.Accepted:
             return
         dialog.persist_defaults()
@@ -813,6 +819,7 @@ class MainWindow(QMainWindow):
             KEY_SHOW_LAST_MOVE: self._act_lastmove.isChecked(),
             KEY_SHOW_HOVER: bool(self._settings.get(KEY_SHOW_HOVER, True)),
             KEY_ENABLE_PREVIEW: bool(self._settings.get(KEY_ENABLE_PREVIEW, True)),
+            KEY_ENABLE_ANIMATIONS: bool(self._settings.get(KEY_ENABLE_ANIMATIONS, True)),
             KEY_AUTO_PROMOTE_UNIQUE: bool(
                 self._settings.get(KEY_AUTO_PROMOTE_UNIQUE, True)
             ),
@@ -894,6 +901,7 @@ class MainWindow(QMainWindow):
                 type_id,
                 owner,
                 self,
+                tr=self._tr,
             )
             if dialog.exec() == QDialog.Accepted and dialog.chosen() is not None:
                 self._controller.choose_promotion(dialog.chosen())

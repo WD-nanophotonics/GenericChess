@@ -831,6 +831,7 @@ class UIController:
             squares=tuple(squares),
             side_to_move=side,
             check_side=check_side,
+            is_history_preview=interaction.displayed_ply is not None,
         )
 
     def game_info(self) -> vm.GameViewModel | None:

@@ -30,6 +30,7 @@ class BoardViewModel:
     squares: tuple[SquareViewModel, ...]  # flat, logical rank*n+file order
     side_to_move: int
     check_side: int | None
+    is_history_preview: bool = False
 
 
 @dataclass(frozen=True)

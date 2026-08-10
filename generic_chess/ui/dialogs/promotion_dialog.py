@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
 
 from ...core.actions import Action, BoardMove
 from ..board.texture_cache import TextureCache
+from ..i18n.manager import LocalizationManager
 
 
 class PromotionDialog(QDialog):
@@ -24,15 +25,17 @@ class PromotionDialog(QDialog):
         piece_type_id: str,
         owner: int,
         parent=None,
+        tr: LocalizationManager | None = None,
     ) -> None:
         super().__init__(parent)
-        self.setWindowTitle("Promotion")
+        tr = tr or LocalizationManager("en")
+        self.setWindowTitle(tr.text("promotion.title"))
         self._chosen: Action | None = None
         layout = QVBoxLayout(self)
-        layout.addWidget(QLabel("Choose a promotion:"))
+        layout.addWidget(QLabel(tr.text("promotion.choose")))
         row = QHBoxLayout()
         for action in actions:
-            label, pixmap = _option(compiled, cache, action, piece_type_id, owner)
+            label, pixmap = _option(compiled, cache, action, piece_type_id, owner, tr)
             btn = QPushButton()
             btn.setIcon(QIcon(pixmap))
             btn.setIconSize(pixmap.size())
@@ -40,6 +43,8 @@ class PromotionDialog(QDialog):
             btn.clicked.connect(lambda _=False, a=action: self._pick(a))
             row.addWidget(btn)
         layout.addLayout(row)
+        if row.count():
+            row.itemAt(0).widget().setFocus()
 
     def _pick(self, action: Action) -> None:
         self._chosen = action
@@ -49,12 +54,20 @@ class PromotionDialog(QDialog):
         return self._chosen
 
 
-def _option(compiled, cache: TextureCache, action: Action, piece_type_id: str, owner: int):
+def _option(
+    compiled,
+    cache: TextureCache,
+    action: Action,
+    piece_type_id: str,
+    owner: int,
+    tr: LocalizationManager | None = None,
+):
+    tr = tr or LocalizationManager("en")
     if isinstance(action, BoardMove) and action.promotion_target_id is not None:
         tid = action.promotion_target_id
-        label = f"Promote to {tid}"
+        label = tr.text("promotion.promote_to", target=tid)
     else:
         tid = piece_type_id
-        label = "No promotion"
+        label = tr.text("promotion.none")
     pixmap = cache.pixmap(compiled, tid, owner, 64)
     return label, pixmap
