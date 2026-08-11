@@ -29,6 +29,8 @@ class PlayerDecision:
     beta_cutoffs: int
     evaluation_profile_cache_hit: bool
     termination_reason: str
+    time_to_first_legal_action: float | None = None
+    time_to_first_completed_iteration: float | None = None
     # Fine-grained diagnostics (0.6.0 search lab).
     qdepth_cutoffs: int = 0
     qsearch_budget_aborts: int = 0

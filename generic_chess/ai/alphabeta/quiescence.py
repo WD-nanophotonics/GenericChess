@@ -23,6 +23,9 @@ def classify_noisy(
     """
     n = state.position.board_size()
     side = state.position.side_to_move
+    from ...core.semantic_executor import semantic_engine_for
+
+    semantic_engine = semantic_engine_for(compiled)
     noisy: list[Action] = []
     for action, child in successors:
         if isinstance(action, BoardMove):
@@ -40,7 +43,12 @@ def classify_noisy(
         if child.terminal_status.is_terminal:
             noisy.append(action)
             continue
-        if is_in_check(child.position, 1 - side, compiled):
+        child_in_check = (
+            semantic_engine.in_check(child.position, 1 - side)
+            if semantic_engine is not None
+            else is_in_check(child.position, 1 - side, compiled)
+        )
+        if child_in_check:
             noisy.append(action)
             if stats is not None:
                 if isinstance(action, DropMove):

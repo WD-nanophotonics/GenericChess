@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Iterator
+from collections.abc import Callable, Iterator
+from typing import TYPE_CHECKING
 
 from .actions import Action, BoardMove, DropMove
 from .attacks import anchor_square, is_square_attacked
@@ -199,60 +200,83 @@ def _is_legal(position: Position, action: Action, compiled: "CompiledRuleSet") -
     return not is_square_attacked(after, own_anchor, 1 - side, compiled)
 
 
+Checkpoint = Callable[[], None]
+
+
+def iter_legal_actions_from_position(
+    position: Position,
+    compiled: "CompiledRuleSet",
+    checkpoint: Checkpoint | None = None,
+) -> Iterator[Action]:
+    """Stream legacy legal actions in the canonical first-seen order."""
+    ensure_ruleset_match(position, compiled)
+    seen: set[Action] = set()
+    for action in _expanded_pseudo_actions(position, compiled):
+        if checkpoint is not None:
+            checkpoint()
+        if action in seen:
+            continue
+        if not _is_legal(position, action, compiled):
+            continue
+        seen.add(action)
+        yield action
+
+
 def legal_actions_from_position(
     position: Position, compiled: "CompiledRuleSet"
 ) -> list[Action]:
     """All legal actions for the side to move in ``position``."""
-    ensure_ruleset_match(position, compiled)
-    legal = [
-        a for a in _expanded_pseudo_actions(position, compiled)
-        if _is_legal(position, a, compiled)
-    ]
-    # Deduplicate while preserving the first-seen order.
-    seen: set[Action] = set()
-    unique: list[Action] = []
-    for action in legal:
-        if action not in seen:
-            seen.add(action)
-            unique.append(action)
-    return unique
+    return list(iter_legal_actions_from_position(position, compiled))
 
 
-def has_legal_action(position: Position, compiled: "CompiledRuleSet") -> bool:
-    """True when the side to move has at least one legal action.
-
-    Semantics are identical to ``bool(legal_actions_from_position(...))`` but
-    it returns at the first legal candidate, which makes terminal detection on
-    non-terminal positions much cheaper (used by the search hot path).
-    """
+def has_legal_action(
+    position: Position,
+    compiled: "CompiledRuleSet",
+    checkpoint: Checkpoint | None = None,
+) -> bool:
+    """Return at the first legal action for both legacy and semantic paths."""
     from .semantic_executor import semantic_engine_for
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
-        return engine.has_legal_action(position)
-    ensure_ruleset_match(position, compiled)
-    for action in _expanded_pseudo_actions(position, compiled):
-        if _is_legal(position, action, compiled):
-            return True
+        return engine.has_legal_action(position, checkpoint=checkpoint)
+    for _action in iter_legal_actions_from_position(
+        position, compiled, checkpoint=checkpoint
+    ):
+        return True
     return False
 
 
-def legal_actions(state: "GameState", compiled: "CompiledRuleSet") -> list[Action]:
-    """Public API: legal actions of a game state (empty when terminal)."""
+def iter_legal_actions(
+    state: "GameState",
+    compiled: "CompiledRuleSet",
+    checkpoint: Checkpoint | None = None,
+) -> Iterator[Action]:
+    """Stream public legal actions without duplicating semantic machinery."""
     from .terminal import TerminalStatus
     from .semantic_executor import (
+        iter_semantic_public_actions,
         semantic_engine_for,
-        semantic_public_actions,
     )
-
-    engine = semantic_engine_for(compiled)
-    if engine is not None:
-        ensure_ruleset_match(state.position, compiled)
-        if state.terminal_status.status is not TerminalStatus.ONGOING:
-            return []
-        return list(semantic_public_actions(engine, state.position))
 
     ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:
-        return []
-    return legal_actions_from_position(state.position, compiled)
+        return
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        yield from iter_semantic_public_actions(
+            engine, state.position, checkpoint=checkpoint
+        )
+        return
+    yield from iter_legal_actions_from_position(
+        state.position, compiled, checkpoint=checkpoint
+    )
+
+
+def legal_actions(
+    state: "GameState",
+    compiled: "CompiledRuleSet",
+    checkpoint: Checkpoint | None = None,
+) -> list[Action]:
+    """Public API: legal actions of a game state (empty when terminal)."""
+    return list(iter_legal_actions(state, compiled, checkpoint=checkpoint))

@@ -48,7 +48,7 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
     )
 
 
-def _history_record(state, new_pos, action, compiled, key):
+def _history_record(state, new_pos, action, compiled, key, checkpoint=None):
     from .actions import action_to_dict
     from .attacks import is_in_check
     import json
@@ -57,7 +57,7 @@ def _history_record(state, new_pos, action, compiled, key):
 
     engine = semantic_engine_for(compiled)
     gave_check = (
-        engine.in_check(new_pos, new_pos.side_to_move)
+        engine.in_check(new_pos, new_pos.side_to_move, checkpoint=checkpoint)
         if engine is not None
         else is_in_check(new_pos, new_pos.side_to_move, compiled)
     )
@@ -69,6 +69,50 @@ def _history_record(state, new_pos, action, compiled, key):
     )
     return parent_history + (
         HistoryRecord(key, state.position.side_to_move, signature, gave_check),
+    )
+
+
+def _semantic_transition(
+    state: GameState,
+    semantic_action,
+    binding,
+    public_action: Action,
+    compiled: "CompiledRuleSet",
+    checkpoint=None,
+) -> GameState:
+    """Materialize one already-verified semantic binding into a GameState.
+
+    Semantic legality and the runtime binding are supplied by the streaming
+    executor; this path does not re-enumerate the complete legal set.
+    """
+    from .semantic_executor import semantic_engine_for
+
+    ensure_ruleset_match(state.position, compiled)
+    engine = semantic_engine_for(compiled)
+    if engine is None:
+        raise TypeError("semantic transition requires a compiled semantic ruleset")
+    new_pos = engine._transition(
+        state.position, semantic_action, binding, checkpoint=checkpoint
+    )
+    if checkpoint is not None:
+        checkpoint()
+    ply = state.ply_count + 1
+    key = semantic_position_key(new_pos, compiled.support, compiled.ir.aux_slots)
+    counts = update_repetition_counts(state.repetition_counts, key)
+    history = _history_record(
+        state, new_pos, public_action, compiled, key, checkpoint=checkpoint
+    )
+    if checkpoint is not None:
+        checkpoint()
+    status = engine.terminal_result(
+        new_pos, ply, counts, history, checkpoint=checkpoint
+    )
+    return GameState(
+        position=new_pos,
+        ply_count=ply,
+        repetition_counts=counts,
+        terminal_status=status,
+        history=history,
     )
 
 
@@ -116,7 +160,6 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
         ply = state.ply_count + 1
         key = semantic_position_key(new_pos, compiled.support, compiled.ir.aux_slots)
         counts = update_repetition_counts(state.repetition_counts, key)
-        status = engine.terminal_result(new_pos, ply, counts)
         history = _history_record(state, new_pos, action, compiled, key)
         status = engine.terminal_result(new_pos, ply, counts, history)
         return GameState(

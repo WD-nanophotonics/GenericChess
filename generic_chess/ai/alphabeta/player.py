@@ -111,6 +111,8 @@ class AlphaBetaPlayer:
             beta_cutoffs=stats.beta_cutoffs,
             evaluation_profile_cache_hit=self._profile_cache_hit,
             termination_reason=reason,
+            time_to_first_legal_action=stats.time_to_first_legal_action,
+            time_to_first_completed_iteration=stats.time_to_first_completed_iteration,
             qdepth_cutoffs=stats.qdepth_cutoffs,
             qsearch_budget_aborts=stats.qsearch_budget_aborts,
             qsearch_check_hard_limit_aborts=stats.qsearch_check_hard_limit_aborts,

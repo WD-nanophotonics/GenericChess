@@ -16,6 +16,8 @@ class SearchStatistics:
     completed_depth: int = 0
     selective_depth: int = 0
     termination_reason: str = ""
+    time_to_first_legal_action: float | None = None
+    time_to_first_completed_iteration: float | None = None
     # Quiescence truncation reasons and qsearch classification counts.
     qdepth_cutoffs: int = 0
     qsearch_budget_aborts: int = 0

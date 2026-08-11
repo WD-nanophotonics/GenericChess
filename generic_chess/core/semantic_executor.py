@@ -21,6 +21,7 @@ fail-closed (never generated).  Native/Search/Learner are untouched.
 
 from __future__ import annotations
 
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from math import gcd
 
@@ -35,6 +36,13 @@ from .position import Hands, Position
 
 
 GLOBAL_OWNER_TAG = -1
+Checkpoint = Callable[[], None]
+
+
+def _checkpoint(checkpoint: Checkpoint | None) -> None:
+    """Run a caller-owned cooperative checkpoint without knowing its policy."""
+    if checkpoint is not None:
+        checkpoint()
 
 
 @dataclass(frozen=True, slots=True)
@@ -126,13 +134,20 @@ def _semantic_public_action(engine, action: SemanticAction):
     )
 
 
-def semantic_public_actions(engine, position: Position) -> tuple:
+def iter_semantic_public_actions(
+    engine, position: Position, checkpoint: Checkpoint | None = None
+) -> Iterator:
     """Map semantic bindings to lossless public Core Action objects
     (R2-01: pattern/geometry identity survives projection)."""
-    return tuple(
-        _semantic_public_action(engine, action)
-        for action in engine.legal_actions(position)
-    )
+    for action in engine.iter_legal_actions(position, checkpoint=checkpoint):
+        _checkpoint(checkpoint)
+        yield _semantic_public_action(engine, action)
+
+
+def semantic_public_actions(
+    engine, position: Position, checkpoint: Checkpoint | None = None
+) -> tuple:
+    return tuple(iter_semantic_public_actions(engine, position, checkpoint))
 
 
 def semantic_action_for(engine, position: Position, action):
@@ -154,7 +169,7 @@ def semantic_action_for(engine, position: Position, action):
     from .errors import IllegalActionError
 
     candidates = []
-    for candidate in engine.legal_actions(position):
+    for candidate in engine.iter_legal_actions(position):
         if isinstance(action, SemanticBoardMove):
             from_sq = (
                 index_to_square(candidate.source, engine.support.board_size)
@@ -545,7 +560,13 @@ class SemanticEngine:
 
     # ------------------------------------------------------- pseudo attack
 
-    def is_square_attacked(self, position: Position, square: int, by_owner: int) -> bool:
+    def is_square_attacked(
+        self,
+        position: Position,
+        square: int,
+        by_owner: int,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         """Semantic pseudo-attack (R2-09/R2-10): exact type/geometry
         compatibility, path predicates, state guards and slot guards with
         attacker-relative SELF/OPPONENT.  No full legal recursion and no S3
@@ -556,15 +577,19 @@ class SemanticEngine:
         consulted here."""
         self._ensure_match(position)
         for pattern in self._patterns:
+            _checkpoint(checkpoint)
             if pattern.target.kind != "target_enemy":
                 continue  # attack eligibility = capture eligibility
             for tid in pattern.type_ids:
+                _checkpoint(checkpoint)
                 for source, piece in enumerate(position.board):
+                    _checkpoint(checkpoint)
                     if piece is None or piece.owner != by_owner:
                         continue
                     if piece.current_type_id != tid:
                         continue
                     for gid in pattern.geometry_ids:
+                        _checkpoint(checkpoint)
                         geometry = self.ir.geometry.get(gid)
                         if geometry is None or geometry.kind == "drop":
                             continue
@@ -576,6 +601,7 @@ class SemanticEngine:
                         for target, path in geometry_candidates(
                             geometry, str(by_owner), source
                         ):
+                            _checkpoint(checkpoint)
                             if target != square:
                                 continue
                             binding = self._make_binding(
@@ -583,18 +609,24 @@ class SemanticEngine:
                                 source, square, None, path, position,
                             )
                             if self._path_holds(
-                                pattern.path, position, binding, by_owner
+                                pattern.path, position, binding, by_owner,
+                                checkpoint=checkpoint,
                             ) and self._guards_hold(
-                                pattern, position, binding, by_owner
+                                pattern, position, binding, by_owner,
+                                checkpoint=checkpoint,
                             ):
                                 return True
         return False
 
-    def in_check(self, position: Position, side: int) -> bool:
+    def in_check(
+        self, position: Position, side: int, checkpoint: Checkpoint | None = None
+    ) -> bool:
         anchor = _own_anchor(position, self.support, side)
         if anchor is None:
             return False
-        return self.is_square_attacked(position, anchor, 1 - side)
+        return self.is_square_attacked(
+            position, anchor, 1 - side, checkpoint=checkpoint
+        )
 
     # ------------------------------------------------------- binding
 
@@ -752,9 +784,13 @@ class SemanticEngine:
             return owner == perspective
         return owner != perspective
 
-    def _path_holds(self, predicates, position, binding, perspective) -> bool:
+    def _path_holds(
+        self, predicates, position, binding, perspective,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         path = binding.path
         for predicate in predicates:
+            _checkpoint(checkpoint)
             kind = predicate.kind
             if kind == "path_clear":
                 if any(position.board[i] is not None for i in path):
@@ -797,12 +833,16 @@ class SemanticEngine:
             return piece is not None and piece.owner == perspective
         return True  # target_any
 
-    def _guard_holds(self, guard, position: Position, binding, perspective) -> bool:
+    def _guard_holds(
+        self, guard, position: Position, binding, perspective,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         sel = guard.spatial
         bound_base = binding.actor_base
         bound_current = binding.actor_current
         count = 0
         for idx, piece in enumerate(position.board):
+            _checkpoint(checkpoint)
             if piece is None:
                 continue
             if not self._owner_filter_ok(guard.owner, piece.owner, perspective):
@@ -817,7 +857,9 @@ class SemanticEngine:
             )
             if not promoted_ok:
                 continue
-            if self._spatial_ok(sel, idx, position, binding, perspective):
+            if self._spatial_ok(
+                sel, idx, position, binding, perspective, checkpoint=checkpoint
+            ):
                 count += 1
         if guard.aggregation == "exists":
             value = 1 if count > 0 else 0
@@ -841,7 +883,10 @@ class SemanticEngine:
         field = piece.current_type_id if guard.compare_field == "current" else piece.base_type_id
         return field == want
 
-    def _spatial_ok(self, sel, idx, position, binding, perspective) -> bool:
+    def _spatial_ok(
+        self, sel, idx, position, binding, perspective,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         n = self.support.board_size
         sq = index_to_square(idx, n)
         if sel.kind == "same_file":
@@ -871,6 +916,7 @@ class SemanticEngine:
                 return False
             step_f, step_r = df // g, dr // g
             for k in range(1, g):
+                _checkpoint(checkpoint)
                 if sq.file == a.file + k * step_f and sq.rank == a.rank + k * step_r:
                     return True
             return False
@@ -921,32 +967,44 @@ class SemanticEngine:
 
     # ------------------------------------------------------- legality
 
-    def _iter_candidates(self, pattern, position: Position):
+    def _iter_candidates(
+        self, pattern, position: Position, checkpoint: Checkpoint | None = None
+    ):
         """Yield ``(SemanticAction, _ActionBinding)`` for every S0-S1
         eligible candidate of one pattern (geometry, target, path, guards,
         promotion variants).  S3 trial and S4 postconditions are applied by
         callers, so this is the single candidate oracle shared by normal
         legality and the reply probe (B-3: one S0-S3 machinery)."""
         side = position.side_to_move
+        _checkpoint(checkpoint)
         is_drop = any(
             self.ir.geometry[g].kind == "drop"
             for g in pattern.geometry_ids
             if g in self.ir.geometry
         )
         if is_drop:
-            yield from self._iter_drop_candidates(pattern, position, side)
+            yield from self._iter_drop_candidates(
+                pattern, position, side, checkpoint=checkpoint
+            )
         else:
-            yield from self._iter_board_candidates(pattern, position)
+            yield from self._iter_board_candidates(
+                pattern, position, checkpoint=checkpoint
+            )
 
-    def _iter_board_candidates(self, pattern, position: Position):
+    def _iter_board_candidates(
+        self, pattern, position: Position, checkpoint: Checkpoint | None = None
+    ):
         side = position.side_to_move
         for tid in pattern.type_ids:
+            _checkpoint(checkpoint)
             for source, piece in enumerate(position.board):
+                _checkpoint(checkpoint)
                 if piece is None or piece.owner != side:
                     continue
                 if piece.current_type_id != tid:
                     continue
                 for gid in pattern.geometry_ids:
+                    _checkpoint(checkpoint)
                     geometry = self.ir.geometry.get(gid)
                     if geometry is None or geometry.kind == "drop":
                         continue
@@ -956,17 +1014,25 @@ class SemanticEngine:
                     ):
                         continue
                     for target, path in geometry_candidates(geometry, str(side), source):
+                        _checkpoint(checkpoint)
                         if not self._target_holds(pattern.target.kind, position, target, side):
                             continue
                         promotions = self._promotion_choices(pattern, piece, source, target)
                         for promotion_target in promotions:
+                            _checkpoint(checkpoint)
                             binding = self._make_binding(
                                 pattern, gid, tid, piece, source, target,
                                 promotion_target, path, position,
                             )
-                            if not self._path_holds(pattern.path, position, binding, side):
+                            if not self._path_holds(
+                                pattern.path, position, binding, side,
+                                checkpoint=checkpoint,
+                            ):
                                 continue
-                            if not self._guards_hold(pattern, position, binding, side):
+                            if not self._guards_hold(
+                                pattern, position, binding, side,
+                                checkpoint=checkpoint,
+                            ):
                                 continue
                             action = SemanticAction(
                                 pattern_id=pattern.pattern_id,
@@ -1011,7 +1077,10 @@ class SemanticEngine:
             return tuple(alive)
         return (None,) + tuple(alive)
 
-    def _iter_drop_candidates(self, pattern, position: Position, side):
+    def _iter_drop_candidates(
+        self, pattern, position: Position, side,
+        checkpoint: Checkpoint | None = None,
+    ):
         drop_gid = next(
             (
                 g
@@ -1021,17 +1090,21 @@ class SemanticEngine:
             "",
         )
         for tid in pattern.type_ids:
+            _checkpoint(checkpoint)
             mask = self.support.drop_allowed.get(tid, ((), ()))[side]
             hand = dict(position.hands[side].counts)
             if hand.get(tid, 0) <= 0:
                 continue
             for target in range(self.support.board_size * self.support.board_size):
+                _checkpoint(checkpoint)
                 if not mask[target] or position.board[target] is not None:
                     continue
                 binding = self._make_binding(
                     pattern, drop_gid, tid, None, None, target, None, (), position
                 )
-                if not self._guards_hold(pattern, position, binding, side):
+                if not self._guards_hold(
+                    pattern, position, binding, side, checkpoint=checkpoint
+                ):
                     continue
                 action = SemanticAction(
                     pattern_id=pattern.pattern_id,
@@ -1042,43 +1115,64 @@ class SemanticEngine:
                 )
                 yield action, binding
 
-    def _guards_hold(self, pattern, position, binding, perspective) -> bool:
+    def _guards_hold(
+        self, pattern, position, binding, perspective,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         for guard in pattern.guards:
-            if not self._guard_holds(guard, position, binding, perspective):
+            _checkpoint(checkpoint)
+            if not self._guard_holds(
+                guard, position, binding, perspective, checkpoint=checkpoint
+            ):
                 return False
         for slot_guard in pattern.slot_guards:
+            _checkpoint(checkpoint)
             if not self._slot_guard_holds(slot_guard, position, binding, perspective):
                 return False
         return True
 
     def _trial_child_if_s3_legal(
-        self, pattern, position: Position, action, binding
+        self, pattern, position: Position, action, binding,
+        checkpoint: Checkpoint | None = None,
     ) -> Position | None:
         """One S3 trial transition per candidate; returns the exact child
         Position or ``None`` when S3-illegal.  The same child is handed to
         the S4 postconditions in normal mode, so a candidate never gets a
         second, theoretically-equivalent transition (ADR-016 section 9)."""
         try:
-            child = self._transition(position, action, binding)
+            if checkpoint is None:
+                child = self._transition(position, action, binding)
+            else:
+                child = self._transition(
+                    position, action, binding, checkpoint=checkpoint
+                )
         except RuntimeError:
             return None
         for invariant in pattern.invariants:
+            _checkpoint(checkpoint)
             if invariant.kind == "own_anchor_safe":
-                if self.in_check(child, position.side_to_move):
+                if self.in_check(
+                    child, position.side_to_move, checkpoint=checkpoint
+                ):
                     return None
             elif invariant.kind == "squares_not_attacked":
                 for ref in invariant.square_refs:
+                    _checkpoint(checkpoint)
                     idx = _resolve_square_ref(
                         ref, self.support, self.ir.aux_slots, position,
                         position.side_to_move, binding,
                     )
                     if idx is not None and self.is_square_attacked(
-                        child, idx, 1 - position.side_to_move
+                        child, idx, 1 - position.side_to_move,
+                        checkpoint=checkpoint,
                     ):
                         return None
         return child
 
-    def _action_delivers_check(self, position: Position, child: Position, action) -> bool:
+    def _action_delivers_check(
+        self, position: Position, child: Position, action,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         """Return whether this action's actor itself checks the reply side.
 
         This is distinct from the resulting position being checked: a
@@ -1094,9 +1188,11 @@ class SemanticEngine:
         if piece is None or piece.owner != position.side_to_move:
             return False
         for pattern in self._patterns:
+            _checkpoint(checkpoint)
             if pattern.target.kind != "target_enemy" or piece.current_type_id not in pattern.type_ids:
                 continue
             for gid in pattern.geometry_ids:
+                _checkpoint(checkpoint)
                 geometry = self.ir.geometry.get(gid)
                 if geometry is None or geometry.kind == "drop":
                     continue
@@ -1105,6 +1201,7 @@ class SemanticEngine:
                 for target, path in geometry_candidates(
                     geometry, str(piece.owner), source
                 ):
+                    _checkpoint(checkpoint)
                     if target != anchor:
                         continue
                     binding = self._make_binding(
@@ -1118,13 +1215,19 @@ class SemanticEngine:
                         path,
                         child,
                     )
-                    if self._path_holds(pattern.path, child, binding, piece.owner) and self._guards_hold(
-                        pattern, child, binding, piece.owner
+                    if self._path_holds(
+                        pattern.path, child, binding, piece.owner,
+                        checkpoint=checkpoint,
+                    ) and self._guards_hold(
+                        pattern, child, binding, piece.owner,
+                        checkpoint=checkpoint,
                     ):
                         return True
         return False
 
-    def _violates_postconditions(self, pattern, child) -> bool:
+    def _violates_postconditions(
+        self, pattern, child, checkpoint: Checkpoint | None = None
+    ) -> bool:
         """S4 forbidden-condition conjunction (ADR-016 truth table).
 
         Postconditions are prohibitions: the candidate is rejected only when
@@ -1137,60 +1240,110 @@ class SemanticEngine:
             return False
         parent = getattr(self, "_postcondition_parent", None)
         action = getattr(self, "_postcondition_action", None)
-        action_checked = "action_delivers_check" in kinds and action is not None and self._action_delivers_check(
-            parent, child, action
+        action_checked = (
+            "action_delivers_check" in kinds
+            and action is not None
+            and self._action_delivers_check(
+                parent, child, action, checkpoint=checkpoint
+            )
         )
         if "action_delivers_check" in kinds and not action_checked:
             return False
         child_checked = "opponent_checked" in kinds and self.in_check(
-            child, child.side_to_move
+            child, child.side_to_move, checkpoint=checkpoint
         )
         if "opponent_checked" in kinds and not child_checked:
             return False
-        if "no_legal_reply" in kinds and self._exists_s3_reply(child):
+        if "no_legal_reply" in kinds and self._exists_s3_reply(
+            child, checkpoint=checkpoint
+        ):
             return False
         return True
 
-    def _exists_s3_reply(self, position: Position) -> bool:
+    def _exists_s3_reply(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> bool:
         """``EXISTS_LEGAL_REPLY(stratum <= S3)``: early-exit existence scan
         over ALL patterns with S4 postconditions disabled (Option B).  It
         never consults terminal/repetition/max-ply/history (ADR-016 section
         8)."""
         for pattern in self._patterns:
-            for action, binding in self._iter_candidates(pattern, position):
-                if (
-                    self._trial_child_if_s3_legal(
+            _checkpoint(checkpoint)
+            for action, binding in self._iter_candidates(
+                pattern, position, checkpoint=checkpoint
+            ):
+                _checkpoint(checkpoint)
+                if checkpoint is None:
+                    reply_child = self._trial_child_if_s3_legal(
                         pattern, position, action, binding
                     )
-                    is not None
-                ):
+                else:
+                    reply_child = self._trial_child_if_s3_legal(
+                        pattern, position, action, binding,
+                        checkpoint=checkpoint,
+                    )
+                if reply_child is not None:
                     return True
         return False
 
-    def legal_actions(self, position: Position) -> tuple[SemanticAction, ...]:
-        """All S0-S4 legal actions (public membership authority)."""
+    def iter_legal_action_bindings(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> Iterator[tuple[SemanticAction, _ActionBinding]]:
+        """Stream legal runtime actions with their verified S3 binding."""
         self._ensure_match(position)
-        actions: list[SemanticAction] = []
         for pattern in self._patterns:
-            for action, binding in self._iter_candidates(pattern, position):
-                child = self._trial_child_if_s3_legal(
-                    pattern, position, action, binding
-                )
+            _checkpoint(checkpoint)
+            for action, binding in self._iter_candidates(
+                pattern, position, checkpoint=checkpoint
+            ):
+                _checkpoint(checkpoint)
+                if checkpoint is None:
+                    child = self._trial_child_if_s3_legal(
+                        pattern, position, action, binding
+                    )
+                else:
+                    child = self._trial_child_if_s3_legal(
+                        pattern, position, action, binding,
+                        checkpoint=checkpoint,
+                    )
                 if child is None:
                     continue
                 self._postcondition_parent = position
                 self._postcondition_action = action
                 try:
-                    violates = self._violates_postconditions(pattern, child)
+                    if checkpoint is None:
+                        violates = self._violates_postconditions(pattern, child)
+                    else:
+                        violates = self._violates_postconditions(
+                            pattern, child, checkpoint=checkpoint
+                        )
                 finally:
                     self._postcondition_parent = None
                     self._postcondition_action = None
                 if violates:
                     continue
-                actions.append(action)
-        return tuple(actions)
+                _checkpoint(checkpoint)
+                yield action, binding
 
-    def _transition(self, position: Position, action: SemanticAction, binding) -> Position:
+    def iter_legal_actions(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> Iterator[SemanticAction]:
+        """Stream S0-S4 legal actions from the canonical semantic machinery."""
+        for action, _binding in self.iter_legal_action_bindings(
+            position, checkpoint=checkpoint
+        ):
+            yield action
+
+    def legal_actions(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> tuple[SemanticAction, ...]:
+        """All S0-S4 legal actions (public membership authority)."""
+        return tuple(self.iter_legal_actions(position, checkpoint=checkpoint))
+
+    def _transition(
+        self, position: Position, action: SemanticAction, binding,
+        checkpoint: Checkpoint | None = None,
+    ) -> Position:
         """Apply one semantic action with the full aux lifecycle and
         transition-trigger semantics (pre-audit contract E / ADR-015 §6)."""
         pattern = binding.pattern
@@ -1200,13 +1353,16 @@ class SemanticEngine:
         aux = dict(position.aux_state)
         # 3) expire every logical instance of every expire_next_turn slot.
         for slot in self.ir.aux_slots:
+            _checkpoint(checkpoint)
             if slot.lifetime == "expire_next_turn":
                 for owner in _logical_owners(slot):
+                    _checkpoint(checkpoint)
                     aux[(slot.slot_id, owner)] = slot.initial
         # 4) board/hand/type effects in declared order; aux effects deferred
         #    to step 6 per the compiled effect sequence.
         aux_effects: list = []
         for effect in pattern.effects:
+            _checkpoint(checkpoint)
             if effect.kind in ("set_bool", "clear_right", "set_token", "clear_token"):
                 aux_effects.append(effect)
                 continue
@@ -1225,18 +1381,27 @@ class SemanticEngine:
                 )
         # 5) transition triggers against the pre-bound event trace.
         for trigger in self.ir.triggers:
+            _checkpoint(checkpoint)
             slot = _aux_slot_by_id(self.ir.aux_slots, trigger.slot_id)
             if slot is None:
                 continue
             if slot.scope == "per_owner":
                 for owner in (0, 1):
-                    if self._trigger_fires(trigger, owner, position, work, binding):
+                    _checkpoint(checkpoint)
+                    if self._trigger_fires(
+                        trigger, owner, position, work, binding,
+                        checkpoint=checkpoint,
+                    ):
                         aux[(trigger.slot_id, owner)] = 0
             else:
-                if self._trigger_fires(trigger, side, position, work, binding):
+                if self._trigger_fires(
+                    trigger, side, position, work, binding,
+                    checkpoint=checkpoint,
+                ):
                     aux[(trigger.slot_id, GLOBAL_OWNER_TAG)] = 0
         # 6) explicit aux effects in declared order.
         for effect in aux_effects:
+            _checkpoint(checkpoint)
             _apply_aux_effect(effect, aux, self.support, self.ir.aux_slots, position, binding)
         # 7) switch side.
         work.side = 1 - side
@@ -1245,7 +1410,10 @@ class SemanticEngine:
             self.support.ruleset_fingerprint,
         )
 
-    def _trigger_fires(self, trigger, owner, position, work, binding) -> bool:
+    def _trigger_fires(
+        self, trigger, owner, position, work, binding,
+        checkpoint: Checkpoint | None = None,
+    ) -> bool:
         idx = _resolve_square_ref(
             trigger.square_ref, self.support, self.ir.aux_slots,
             position, owner, binding,
@@ -1253,6 +1421,7 @@ class SemanticEngine:
         if idx is None:
             return False
         for event, piece, square in work.events:
+            _checkpoint(checkpoint)
             if event != trigger.event or square != idx or piece is None:
                 continue
             if trigger.owner == "self" and piece.owner != owner:
@@ -1278,8 +1447,12 @@ class SemanticEngine:
 
     # ------------------------------------------------------- terminal
 
-    def has_legal_action(self, position: Position) -> bool:
-        return bool(self.legal_actions(position))
+    def has_legal_action(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> bool:
+        for _action in self.iter_legal_actions(position, checkpoint=checkpoint):
+            return True
+        return False
 
     def terminal_result(
         self,
@@ -1287,6 +1460,7 @@ class SemanticEngine:
         ply_count: int,
         repetition_counts,
         history=(),
+        checkpoint: Checkpoint | None = None,
     ):
         from .terminal import (
             TerminalResult,
@@ -1295,8 +1469,10 @@ class SemanticEngine:
         )
 
         self._ensure_match(position)
-        if not self.has_legal_action(position):
-            if self.in_check(position, position.side_to_move):
+        if not self.has_legal_action(position, checkpoint=checkpoint):
+            if self.in_check(
+                position, position.side_to_move, checkpoint=checkpoint
+            ):
                 return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
             return TerminalResult(TerminalStatus.STALEMATE)
         if self.support.repetition_policy == "continuous_check_loss":

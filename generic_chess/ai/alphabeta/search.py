@@ -4,15 +4,21 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass
+from itertools import chain
 
 from ...core.actions import Action
 from ...core.attacks import is_in_check
 from ...core.keys import position_key, semantic_position_key
-from ...core.lazy_transitions import legal_successor_handles, materialize_legal_successor
+from ...core.lazy_transitions import (
+    iter_legal_successor_handles,
+    legal_successor_handles,
+    materialize_legal_successor,
+)
 from ...core.movegen import legal_actions
 from ...core.position import GameState
 from ...core.terminal import TerminalStatus
 from ...core.transition import legal_successors
+from ...core.semantic_executor import semantic_engine_for
 from ..cancellation import CancellationToken
 from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
 from ..evaluation.evaluator import Evaluator
@@ -129,6 +135,10 @@ class _Context:
         self.qdepth_limit = qdepth_limit
         self.qhard_depth_limit = qhard_depth_limit
         self.qnode_limit = qnode_limit
+
+    def checkpoint(self) -> None:
+        """Cooperative callback passed into Core semantic work units."""
+        self.budget.check(self.stats, force=True)
 
 
 def terminal_score(result, side_to_move: int, ply: int) -> int:
@@ -265,10 +275,20 @@ def negamax(
     handle_by_action = {}
     started = time.monotonic()
     with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
-        if ctx.tuning.use_lazy_successors:
-            handles = legal_successor_handles(state, ctx.compiled)
-            ctx.stats.legal_actions_generated += len(handles)
-            ctx.stats.successor_handles_created += len(handles)
+        streaming_handles = (
+            ctx.tuning.use_lazy_successors
+            or semantic_engine_for(ctx.compiled) is not None
+        )
+        if streaming_handles:
+            handle_iter = iter_legal_successor_handles(
+                state, ctx.compiled, checkpoint=ctx.checkpoint
+            )
+            handles = []
+            for handle in handle_iter:
+                handles.append(handle)
+                ctx.stats.legal_actions_generated += 1
+                ctx.stats.successor_handles_created += 1
+                ctx.checkpoint()
             actions = [handle.action for handle in handles]
             handle_by_action = {handle.action: handle for handle in handles}
             lazy = True
@@ -324,7 +344,7 @@ def negamax(
         if lazy:
             handle = handle_by_action[action]
             child, child_key = materialize_legal_successor(
-                state, handle, ctx.compiled
+                state, handle, ctx.compiled, checkpoint=ctx.checkpoint
             )
             ctx.budget.check(ctx.stats, force=True)
             ctx.stats.successors_materialized += 1
@@ -420,7 +440,15 @@ def quiescence(
         return terminal_score(terminal, state.position.side_to_move, ply)
 
     side = state.position.side_to_move
-    if is_in_check(state.position, side, ctx.compiled):
+    semantic_engine = semantic_engine_for(ctx.compiled)
+    in_check = (
+        semantic_engine.in_check(
+            state.position, side, checkpoint=ctx.checkpoint
+        )
+        if semantic_engine is not None
+        else is_in_check(state.position, side, ctx.compiled)
+    )
+    if in_check:
         # In-check nodes cannot stand pat: extend over every legal evasion.
         ctx.stats.in_check_qnodes += 1
         if qdepth >= ctx.qhard_depth_limit:
@@ -430,16 +458,43 @@ def quiescence(
             ctx.stats.qsearch_budget_aborts += 1
             raise SearchAborted("qsearch_budget")
         started = time.monotonic()
-        successors = legal_successors(state, ctx.compiled)
+        if semantic_engine is not None:
+            handle_by_action = {}
+            for handle in iter_legal_successor_handles(
+                state, ctx.compiled, checkpoint=ctx.checkpoint
+            ):
+                handle_by_action[handle.action] = handle
+                ctx.checkpoint()
+            ordered_actions = sorted(handle_by_action, key=str)
+            successors = None
+        else:
+            successors = legal_successors(state, ctx.compiled)
+            ordered_actions = None
         ctx.stats.legal_generation_calls += 1
         ctx.stats.legal_generation_seconds += time.monotonic() - started
         ctx.budget.check(ctx.stats, force=True)
-        if not successors:
+        if semantic_engine is not None and not handle_by_action:
             # A non-terminal, in-check state with no evasions is a Core
             # invariant violation; never fall back to static evaluation.
             raise SearchAborted("qsearch_check_no_evasions")
-        ordered = sorted(successors, key=lambda pair: str(pair[0]))
-        for action, child in ordered:
+        if semantic_engine is None and not successors:
+            # A non-terminal, in-check state with no evasions is a Core
+            # invariant violation; never fall back to static evaluation.
+            raise SearchAborted("qsearch_check_no_evasions")
+        ordered = (
+            ((action, handle_by_action[action]) for action in ordered_actions)
+            if semantic_engine is not None
+            else ((action, child) for action, child in sorted(successors, key=lambda pair: str(pair[0])))
+        )
+        for action, child_or_handle in ordered:
+            child = (
+                materialize_legal_successor(
+                    state, child_or_handle, ctx.compiled,
+                    checkpoint=ctx.checkpoint,
+                )[0]
+                if semantic_engine is not None
+                else child_or_handle
+            )
             score = -quiescence(child, -beta, -alpha, ply + 1, qdepth + 1, ctx)
             if score >= beta:
                 return score
@@ -465,17 +520,47 @@ def quiescence(
         raise SearchAborted("qsearch_budget")
 
     started = time.monotonic()
-    successors = legal_successors(state, ctx.compiled)
+    if semantic_engine is not None:
+        handle_by_action = {}
+        for handle in iter_legal_successor_handles(
+            state, ctx.compiled, checkpoint=ctx.checkpoint
+        ):
+            handle_by_action[handle.action] = handle
+            ctx.checkpoint()
+        successors = None
+    else:
+        successors = legal_successors(state, ctx.compiled)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
     ctx.budget.check(ctx.stats, force=True)
-    noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats)
-    ctx.budget.check(ctx.stats, force=True)
-    ordered = sorted(
-        (pair for pair in successors if pair[0] in noisy),
-        key=lambda pair: str(pair[0]),
-    )
-    for action, child in ordered:
+    if semantic_engine is not None:
+        ordered = (
+            (action, handle_by_action[action])
+            for action in sorted(handle_by_action, key=str)
+        )
+    else:
+        noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats)
+        ctx.budget.check(ctx.stats, force=True)
+        ordered = sorted(
+            (pair for pair in successors if pair[0] in noisy),
+            key=lambda pair: str(pair[0]),
+        )
+    for action, child_or_handle in ordered:
+        child = (
+            materialize_legal_successor(
+                state, child_or_handle, ctx.compiled,
+                checkpoint=ctx.checkpoint,
+            )[0]
+            if semantic_engine is not None
+            else child_or_handle
+        )
+        if semantic_engine is not None:
+            noisy_one = classify_noisy(
+                state, ((action, child),), ctx.compiled, ctx.stats
+            )
+            ctx.budget.check(ctx.stats, force=True)
+            if not noisy_one:
+                continue
         score = -quiescence(child, -beta, -alpha, ply + 1, qdepth + 1, ctx)
         if score >= beta:
             return score
@@ -514,6 +599,7 @@ def root_tactical_scan(
     compiled,
     evaluator: Evaluator,
     ctx: _Context,
+    handles=None,
 ) -> tuple[Action | None, Action | None]:
     """Cheap root scan: immediate mate first, else best fast-eval root action.
 
@@ -524,11 +610,22 @@ def root_tactical_scan(
     best_action: Action | None = None
     best_score = -INF
     started = time.monotonic()
-    with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
-        successors = legal_successors(state, compiled)
-    ctx.budget.check(ctx.stats, force=True)
-    for action, child in successors:
+    if handles is None:
+        with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
+            successors = legal_successors(state, compiled)
         ctx.budget.check(ctx.stats, force=True)
+        stream = iter(successors)
+    else:
+        stream = handles
+    for item in stream:
+        ctx.budget.check(ctx.stats, force=True)
+        if handles is None:
+            action, child = item
+        else:
+            action = item.action
+            child, _child_key = materialize_legal_successor(
+                state, item, compiled, checkpoint=ctx.checkpoint
+            )
         ctx.stats.nodes += 1
         ctx.stats.root_scan_nodes += 1
         if (
@@ -602,6 +699,7 @@ def run_root_search(
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
+    started = time.monotonic()
     terminal = state.terminal_status
     if terminal.is_terminal:
         stats.termination_reason = "terminal_position"
@@ -612,16 +710,6 @@ def run_root_search(
             stats.termination_reason,
         )
     budget = _Budget(limits, cancel_token)
-    actions = legal_actions(state, compiled)
-    if not actions:
-        stats.termination_reason = "terminal_position"
-        return None, 0, (), stats.termination_reason
-    try:
-        budget.check(stats, force=True)
-    except SearchAborted as exc:
-        stats.termination_reason = str(exc)
-        return sorted(actions, key=str)[0], 0, (), stats.termination_reason
-
     tt.new_generation()
     ctx = _Context(
         compiled,
@@ -638,14 +726,55 @@ def run_root_search(
         recorder,
     )
 
+    root_first_action: Action | None = None
+    root_handles = None
+    actions: list[Action] | None = None
+    if semantic_engine_for(compiled) is not None:
+        root_stream = iter_legal_successor_handles(
+            state, compiled, checkpoint=ctx.checkpoint
+        )
+        try:
+            first_handle = next(root_stream)
+        except StopIteration:
+            stats.termination_reason = "terminal_position"
+            return None, 0, (), stats.termination_reason
+        except SearchAborted:
+            stats.termination_reason = "NO_LEGAL_FALLBACK_BEFORE_DEADLINE"
+            return None, 0, (), stats.termination_reason
+        root_first_action = first_handle.action
+        stats.time_to_first_legal_action = time.monotonic() - started
+        root_handles = chain((first_handle,), root_stream)
+        try:
+            budget.check(stats, force=True)
+        except SearchAborted as exc:
+            stats.root_scan_used_fallback = True
+            stats.termination_reason = str(exc)
+            return root_first_action, 0, (), stats.termination_reason
+    else:
+        actions = legal_actions(state, compiled)
+        if not actions:
+            stats.termination_reason = "terminal_position"
+            return None, 0, (), stats.termination_reason
+        try:
+            budget.check(stats, force=True)
+        except SearchAborted as exc:
+            stats.root_scan_used_fallback = True
+            stats.termination_reason = str(exc)
+            return sorted(actions, key=str)[0], 0, (), stats.termination_reason
+
     immediate_win: Action | None = None
     scan_best: Action | None = None
     if tuning.use_root_tactical:
         try:
-            immediate_win, scan_best = root_tactical_scan(state, compiled, evaluator, ctx)
+            immediate_win, scan_best = root_tactical_scan(
+                state, compiled, evaluator, ctx, handles=root_handles
+            )
         except SearchAborted as exc:
+            stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            fallback = sorted(actions, key=str)[0]
+            fallback = root_first_action
+            if fallback is None:
+                fallback = sorted(actions, key=str)[0]
             return fallback, 0, (), stats.termination_reason
     if immediate_win is not None:
         stats.termination_reason = "root_immediate_win"
@@ -676,6 +805,7 @@ def run_root_search(
             break
         stats.completed_depth = depth
         stats.selective_depth = depth
+        stats.time_to_first_completed_iteration = time.monotonic() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
 
@@ -688,6 +818,9 @@ def run_root_search(
         stats.root_scan_used_fallback = True
         stats.termination_reason = "fallback"
         return scan_best, 0, (), stats.termination_reason
-    fallback = sorted(actions, key=str)[0]
+    fallback = root_first_action
+    if fallback is None:
+        fallback = sorted(actions, key=str)[0]
+    stats.root_scan_used_fallback = True
     stats.termination_reason = "fallback"
     return fallback, 0, (), stats.termination_reason
