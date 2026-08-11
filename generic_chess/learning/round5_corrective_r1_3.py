@@ -251,6 +251,13 @@ def _run_rollout_arm(compiled, suite: list[dict[str, str]], arm_dir: Path,
             legal_action_failures = 0
             budget_failures = 0
             captures = promotions = checks = 0
+            # Keep the same per-game player lifecycle as the formal harness:
+            # the searcher owns its TT across plies, while evaluator identity
+            # still follows the side under test.  Reconstructing a 250k-entry
+            # player on every ply made the bounded rollout effectively
+            # unbounded without changing the protocol being measured.
+            generic_player = R1GCPlayer(compiled, generic)
+            legacy_player = R1GCPlayer(compiled, legacy)
             for ply in range(ROLL_OUT_HORIZON):
                 semantic_legal = _semantic_legal_usis(compiled, session.state)
                 oracle = cshogi_legal_usi_set(board.sfen())
@@ -262,7 +269,7 @@ def _run_rollout_arm(compiled, suite: list[dict[str, str]], arm_dir: Path,
                     break
                 color = "black" if board.turn == cshogi.BLACK else "white"
                 evaluator_name = "generic" if color == generic_color else "legacy_exact_alphasho"
-                player = R1GCPlayer(compiled, generic if evaluator_name == "generic" else legacy)
+                player = generic_player if evaluator_name == "generic" else legacy_player
                 decision = player.choose(session, "nodes", budget)
                 usi = decision.get("usi")
                 total_nodes = int(decision.get("nodes", 0)) + int(decision.get("qnodes", 0))
