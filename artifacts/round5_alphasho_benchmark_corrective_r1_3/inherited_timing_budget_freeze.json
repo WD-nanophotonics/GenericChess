@@ -1,0 +1,28 @@
+{
+  "HIGH_SECONDS": 1.0,
+  "LOW_SECONDS": 0.5,
+  "calibration_trials": 400,
+  "candidate_budgets_seconds": [
+    0.5,
+    1.0,
+    2.0,
+    3.0,
+    5.0
+  ],
+  "profiles": [
+    "gc_legacy",
+    "alphasho_legacy",
+    "gc_generic",
+    "alphasho_current"
+  ],
+  "qualified_budgets_seconds": [
+    0.5,
+    1.0,
+    2.0,
+    3.0,
+    5.0
+  ],
+  "schema_version": 2,
+  "selection_inputs_runtime_only": true,
+  "timing_tolerance": "max(0.050s, 5% of budget)"
+}

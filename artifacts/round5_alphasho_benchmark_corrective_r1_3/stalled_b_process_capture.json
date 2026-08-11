@@ -1,0 +1,103 @@
+{
+  "capture_type": "pre_termination_external_state",
+  "captured_at": "2026-08-11T23:51:54.9970653+09:00",
+  "termination_check_at": "2026-08-11T23:53:14.5434278+09:00",
+  "git": {
+    "repo": "C:\\Users\\icywo\\PycharmProjects\\GenericChess-sandbox",
+    "head": "faf4a10ae1cc36e786c0927aaa3543c551570c4c",
+    "branch": "sandbox",
+    "worktree_status": "clean",
+    "last_commit": "faf4a10ae1cc36e786c0927aaa3543c551570c4c fix: make semantic search cooperatively interruptible"
+  },
+  "processes": [
+    {
+      "pid": 11892,
+      "parent_pid": 18508,
+      "name": "python.exe",
+      "creation_date": "2026-08-11T21:11:26.220+09:00",
+      "responding": true,
+      "cpu_seconds_at_capture": 0.0625,
+      "path": "C:\\Users\\icywo\\PycharmProjects\\GenericChess-sandbox\\.venv\\Scripts\\python.exe",
+      "command_line": "C:\\Users\\icywo\\PycharmProjects\\GenericChess-sandbox\\.venv\\Scripts\\python.exe -m generic_chess.learning.round5_corrective_r1_2 --output artifacts\\round5_alphasho_benchmark_corrective_r1_2"
+    },
+    {
+      "pid": 22160,
+      "parent_pid": 11892,
+      "name": "python.exe",
+      "creation_date": "2026-08-11T21:11:26.268+09:00",
+      "responding": true,
+      "cpu_seconds_at_capture": 7904.671875,
+      "cpu_seconds_at_first_capture": 7879.859375,
+      "path": "C:\\Users\\icywo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "command_line": "C:\\Users\\icywo\\PycharmProjects\\GenericChess-sandbox\\.venv\\Scripts\\python.exe -m generic_chess.learning.round5_corrective_r1_2 --output artifacts\\round5_alphasho_benchmark_corrective_r1_2"
+    },
+    {
+      "pid": 21068,
+      "parent_pid": 22160,
+      "name": "python.exe",
+      "creation_date": "2026-08-11T21:11:28.638+09:00",
+      "responding": true,
+      "cpu_seconds_at_capture": 0.015625,
+      "path": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Scripts\\python.exe",
+      "command_line": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Scripts\\python.exe C:\\Users\\icywo\\PycharmProjects\\GenericChess-sandbox\\benchmarks\\round5_alphasho_worker.py"
+    },
+    {
+      "pid": 28304,
+      "parent_pid": 21068,
+      "name": "python.exe",
+      "creation_date": "2026-08-11T21:11:28.673+09:00",
+      "responding": true,
+      "cpu_seconds_at_capture": 994.578125,
+      "path": "C:\\Users\\icywo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "command_line": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Scripts\\python.exe C:\\Users\\icywo\\PycharmProjects\\GenericChess-sandbox\\benchmarks\\round5_alphasho_worker.py"
+    }
+  ],
+  "process_tree_scope": "Only the four listed processes were terminated, leaf-to-root, after exact command-line validation. Parent PID 18508 was not terminated.",
+  "termination": {
+    "authorized_by": "GenericChess — Round 5 Corrective R1.3",
+    "method": "Stop-Process -Force, ids 28304, 21068, 22160, 11892",
+    "post_termination_check": "all four PIDs absent at 2026-08-11T23:53:14.5434278+09:00",
+    "FORMAL_B_LEGACY_PROTOCOL": "ABORTED_FOR_RUNTIME",
+    "FORMAL_B_LEGACY_RESULTS_VALID_FOR_CLOSURE": false
+  },
+  "partial_artifacts": {
+    "B_artifacts_present_before_termination": false,
+    "C_artifacts_present_before_termination": false,
+    "closure_artifacts_present_before_termination": false,
+    "logs": [
+      {
+        "path": "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\alphasho_worker.stderr.log",
+        "length": 0,
+        "sha256_after_termination": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+      }
+    ],
+    "note": "R1.2 produced runtime calibration and Search Control A evidence; those files remain in the old subtree and are historical/supporting evidence only. No incomplete B result is used for closure."
+  },
+  "old_r1_2_artifact_tree_sha256": {
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\alphasho_repo_before.json": "5CBE27540071822D8F17C36E9DD97A805709B572E3FD722744DD301526B1A7B5",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\alphasho_worker.stderr.log": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\baseline.json": "A96BB995E005DB149FFA53ED0E322439DFB544447757187AF63BCA2667F35F39",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\bridge_protocol.json": "4793E08564F5FBEF2D45EBF711D0CBD9BAC2DB5F1D89B84DBBBECF8CDD46E358",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\harness_provenance.json": "3821B66D1B13C1942CD73C22EA00E7CF331FC48389E52CBF383C73721F26F0F2",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\legacy_evaluator_parity_sanity.json": "679BF2B4A8E20387DBC43DE485696C30601F7C4440C3F378BB23438B815E4C04",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\legacy_evaluator_parity_sanity.jsonl": "7EF4EADD10CA3A69262E60C93793A03400DBCFB632721132DBF20C8209115933",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\legacy_round5_artifact_tree_before.json": "D69815186E155E4A263626B8CECBCCF765BBE7DED6D00CCA9BFEF8FE70C7B1E6",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\legacy_round5_corrective_r1_tree_before.json": "730A5A75F8BABE7F1F832B02F9A00B76B242070A4B123E62E16B026951CEC8A2",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\public_surface_audit.json": "37D728475155DEA9558A2AB1BE1BE3338777015B7EE5CFBD7DC05BD2A41C3586",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\ruleset_authority.json": "4FE2F158A77EF7571AA11E8F0B4C54B684B15A91AE71F91B3ACDD37CD82BD9D5",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\runtime_calibration.jsonl": "3FA8FDBB7AD660D474CC0547F8210B7F5EF98CB120039355A4F947CD1DD59DC1",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\runtime_calibration_profile_summary.json": "1FBF3ECCC6802DA80EBA6D4731EAA1E59B2AA3F7FB259E670AD4B4F746C26ECF",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\runtime_calibration_summary.json": "2A3E9AD3CB3998B6CEEAEFEA14D775B1E0D3DE9E621B71198098263987C139C0",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\high\\events.jsonl": "24CAE8B8F06D4986C208BAC74E6E10CC8ABCF7B1152AE5BE04A2DEA7B1F981AD",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\high\\games.jsonl": "E6A368D572E47B8D91A2B0210649B95E2A4226ECA62C9A207D47816D18C2AD45",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\high\\paired_results.json": "CCEFC9306346A09DD946F5CE2CD99571093A0BE0E40BC1D0E0A81263CE289208",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\high\\summary.json": "71A32B085A0B5DD28CD5DF5FCF678B23A9FCAD8A20E58B9250E1565F401CB49B",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\low\\events.jsonl": "92794C3F700D5C648AEB2D52656A71E5BF5D60BAD08347E2D63436DF45DC9E48",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\low\\games.jsonl": "BBD9C932D62FA53FED36458C4B8FB0DF94E7A62AB9D022B6F589BCC93BAEE2E6",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\low\\paired_results.json": "28B972B68FEFAFE8350DDEFDD64AEBEBDD7F3F469754C241CF2F17EE79E71CD8",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\search_control\\low\\summary.json": "EB02DEC53BB5E5BE75F314DD4E3004ABBC0AFFB08578E695A4F04C5486E90CD5",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\semantic_lockstep_preflight.json": "505C05031F6B74276541F77AB022465CE4DECAB61F7CF1B58CC7220D41342A22",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\suite.json": "C075D3D3F324D6D43813609B5BD04CE83BBD343F2E2E78A7DEFDBF22378E87D7",
+    "artifacts\\round5_alphasho_benchmark_corrective_r1_2\\timing_budget_freeze.json": "5C767439CC1217993EA6A0A23C1AF5F1385771B7BCB9BA2D0A14EA6FB700C5D4"
+  }
+}

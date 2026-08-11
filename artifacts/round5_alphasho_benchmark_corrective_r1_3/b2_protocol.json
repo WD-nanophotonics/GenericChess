@@ -1,0 +1,35 @@
+{
+  "budgets": {
+    "HIGH": 512,
+    "LOW": 256
+  },
+  "certified_ruleset_fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+  "lockstep": [
+    "legal_set",
+    "move_conversion",
+    "submit",
+    "normalized_sfen",
+    "side",
+    "check"
+  ],
+  "name": "Formal B2 — Bounded Evaluator Control",
+  "node_budget_contract": "total nodes + qnodes <= max_nodes + 128 check-interval allowance",
+  "nyugyoku": "protocol exclusion",
+  "outcome_driven_protocol_change": false,
+  "position_isolation": {
+    "available_frozen_positions": 10,
+    "fallback": "use all available frozen positions if fewer",
+    "requested_HIGH": 12,
+    "requested_LOW": 16
+  },
+  "replacement_for": "Formal B legacy full-game protocol, aborted for runtime",
+  "ruleset_authority": "compile_semantic_ruleset(build_semantic_shogi_ruleset())",
+  "short_horizon_rollout": {
+    "HIGH_openings": 4,
+    "LOW_openings": 6,
+    "horizon_plies": 64,
+    "no_heuristic_adjudication": true,
+    "paired_colors": true
+  },
+  "source_corpus": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\configs\\training\\evaluation_positions.jsonl"
+}

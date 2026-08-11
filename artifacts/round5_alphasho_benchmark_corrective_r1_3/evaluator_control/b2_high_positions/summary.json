@@ -1,0 +1,100 @@
+{
+  "available_frozen_positions": 10,
+  "budget": 512,
+  "chosen_move_agreement_count": 2,
+  "chosen_move_disagreement_count": 8,
+  "comparisons": [
+    {
+      "chosen_move_agreement": true,
+      "chosen_move_generic": "3g4e",
+      "chosen_move_legacy": "3g4e",
+      "position_id": "iteration-000086-game-000001-ply12",
+      "pv_first_move_agreement": true,
+      "score_delta_generic_minus_legacy": 169
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "7g7f",
+      "chosen_move_legacy": "5i4h",
+      "position_id": "iteration-000086-game-000002-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": -2
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "4i3h",
+      "chosen_move_legacy": "5i4h",
+      "position_id": "iteration-000086-game-000003-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": -10
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "5i5h",
+      "chosen_move_legacy": "5i4i",
+      "position_id": "iteration-000086-game-000004-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": 4
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "5i5h",
+      "chosen_move_legacy": "6h5h",
+      "position_id": "iteration-000086-game-000005-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": -1
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "7g7f",
+      "chosen_move_legacy": "7h6h",
+      "position_id": "iteration-000086-game-000006-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": -5
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "7g7f",
+      "chosen_move_legacy": "5i4h",
+      "position_id": "iteration-000086-game-000007-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": -18
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "6i7i",
+      "chosen_move_legacy": "8h7i",
+      "position_id": "iteration-000086-game-000008-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": -7
+    },
+    {
+      "chosen_move_agreement": true,
+      "chosen_move_generic": "8h4d",
+      "chosen_move_legacy": "8h4d",
+      "position_id": "iteration-000086-game-000009-ply12",
+      "pv_first_move_agreement": true,
+      "score_delta_generic_minus_legacy": 159
+    },
+    {
+      "chosen_move_agreement": false,
+      "chosen_move_generic": "6i7h",
+      "chosen_move_legacy": "5i4i",
+      "position_id": "iteration-000086-game-000010-ply12",
+      "pv_first_move_agreement": false,
+      "score_delta_generic_minus_legacy": 9
+    }
+  ],
+  "evaluator_records": 20,
+  "legal_result_failures": 0,
+  "node_budget_failures": 0,
+  "positions_used": 10,
+  "protocol": "Formal B2-A fixed-position evaluator isolation",
+  "pv_first_move_agreement_count": 2,
+  "requested_positions": 12,
+  "results_file": "results.jsonl",
+  "sample_complete": true,
+  "schema_version": 1,
+  "score_deltas_comparable": 10,
+  "used_all_available_when_short": true
+}
