@@ -1,0 +1,17 @@
+{
+  "correctness_failure": "ENGINE_OR_ADAPTER_CORRECTNESS_FAILURE",
+  "cshogi_king_capture_filtered": true,
+  "dual_state_lockstep": [
+    "legal_set",
+    "action_conversion",
+    "session.submit",
+    "normalized_sfen",
+    "side",
+    "check"
+  ],
+  "jsonl": true,
+  "nyugyoku": "protocol_excluded_nyugyoku",
+  "persistent_worker": true,
+  "semantic_divergence": "MATCH_SEMANTIC_DIVERGENCE",
+  "worker_startup_excluded_from_move_timing": true
+}

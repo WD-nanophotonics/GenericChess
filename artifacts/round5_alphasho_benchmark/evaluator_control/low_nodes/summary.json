@@ -1,0 +1,33 @@
+{
+  "budget": 256,
+  "budget_kind": "nodes",
+  "by_color": {
+    "black": {
+      "eligible": 2,
+      "games": 6,
+      "losses": 0,
+      "wins": 2
+    },
+    "white": {
+      "eligible": 1,
+      "games": 6,
+      "losses": 0,
+      "wins": 1
+    }
+  },
+  "candidate_score": 1.0,
+  "candidate_wins": 3,
+  "correctness_failures": 0,
+  "eligible_games": 3,
+  "experiment": "B",
+  "games": 12,
+  "node_control_is_same_gc_only": true,
+  "opponent_wins": 0,
+  "protocol_excluded_nyugyoku": 0,
+  "rule_draws": 0,
+  "schema_version": 1,
+  "timing_control": "wall_clock_per_move",
+  "timing_invalid_games": 0,
+  "timing_tolerance": "max(0.050s, 5% of budget)",
+  "unresolved": 9
+}

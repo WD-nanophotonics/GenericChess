@@ -1,0 +1,233 @@
+{
+  "control": "GC generic evaluator vs GC AlphaSho-legacy evaluator control",
+  "experiment": "B",
+  "five_k_status": "CALIBRATION_INCOMPLETE",
+  "freeze_artifact": "evaluator_control_budget_freeze.json",
+  "high": {
+    "aggregate": {
+      "completed_depths": [
+        0,
+        1,
+        2
+      ],
+      "correctness_failures": 0,
+      "elapsed_seconds": 3232.296410699928,
+      "eligible_games": 3,
+      "nodes": {
+        "max": 436,
+        "sum": 86164
+      },
+      "qnodes": {
+        "max": 509,
+        "sum": 268954
+      },
+      "unresolved_games": 5,
+      "wall_seconds": 3232.3253930002247
+    },
+    "budget": 512,
+    "games": 8,
+    "paired_results": [
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000001-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": 1.0,
+          "eligible_for_strength": true,
+          "outcome_kind": "decisive",
+          "winner": "white"
+        }
+      },
+      {
+        "black": {
+          "candidate_score": 1.0,
+          "eligible_for_strength": true,
+          "outcome_kind": "decisive",
+          "winner": "black"
+        },
+        "opening": "iteration-000086-game-000002-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      },
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000003-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": 1.0,
+          "eligible_for_strength": true,
+          "outcome_kind": "decisive",
+          "winner": "white"
+        }
+      },
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000004-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      }
+    ]
+  },
+  "low": {
+    "aggregate": {
+      "completed_depths": [
+        0,
+        1,
+        2
+      ],
+      "correctness_failures": 0,
+      "elapsed_seconds": 2266.331560999897,
+      "eligible_games": 3,
+      "nodes": {
+        "max": 256,
+        "sum": 108330
+      },
+      "qnodes": {
+        "max": 253,
+        "sum": 171839
+      },
+      "unresolved_games": 9,
+      "wall_seconds": 2266.3690165000153
+    },
+    "budget": 256,
+    "games": 12,
+    "paired_results": [
+      {
+        "black": {
+          "candidate_score": 1.0,
+          "eligible_for_strength": true,
+          "outcome_kind": "decisive",
+          "winner": "black"
+        },
+        "opening": "iteration-000086-game-000001-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      },
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000002-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": 1.0,
+          "eligible_for_strength": true,
+          "outcome_kind": "decisive",
+          "winner": "white"
+        }
+      },
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000003-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      },
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000004-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      },
+      {
+        "black": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        },
+        "opening": "iteration-000086-game-000005-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      },
+      {
+        "black": {
+          "candidate_score": 1.0,
+          "eligible_for_strength": true,
+          "outcome_kind": "decisive",
+          "winner": "black"
+        },
+        "opening": "iteration-000086-game-000006-ply12",
+        "paired_eligible": false,
+        "paired_score": null,
+        "white": {
+          "candidate_score": null,
+          "eligible_for_strength": false,
+          "outcome_kind": "unresolved",
+          "winner": null
+        }
+      }
+    ]
+  },
+  "max_plies": 96,
+  "paired_colors": true,
+  "precise_elo_claim": false,
+  "same_search_rules_tuning_tt_history_order_qsearch": true,
+  "twenty_k_status": "NOT_RUN_RUNTIME_INFEASIBLE"
+}

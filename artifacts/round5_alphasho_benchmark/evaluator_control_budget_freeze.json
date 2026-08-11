@@ -1,0 +1,64 @@
+{
+  "HIGH_INITIAL_MEDIAN_SECONDS": 4.457,
+  "HIGH_NODE_BUDGET": 512,
+  "HIGH_SELECTION": "STRICT_IN_RANGE",
+  "HIGH_TARGET_RANGE_SECONDS": [
+    2.0,
+    5.0
+  ],
+  "LOW_INITIAL_MEDIAN_SECONDS": 1.605,
+  "LOW_NODE_BUDGET": 256,
+  "LOW_SELECTION": "FALLBACK_NEAREST_BOUNDARY",
+  "LOW_TARGET_RANGE_SECONDS": [
+    0.5,
+    1.5
+  ],
+  "calibration_positions": [
+    {
+      "index": 0,
+      "name": "iteration-000086-game-000001-ply12",
+      "sfen": "lnsgkgsnl/2r4b1/pp1pp1ppp/2p6/5p3/5PP2/PPPPP1NPP/1B2G3R/LNS1KGS1L b - 13"
+    },
+    {
+      "index": 1,
+      "name": "iteration-000086-game-000002-ply12",
+      "sfen": "lns4nl/1r1gksgb1/pp1p1pppp/2p1p4/9/1P4P2/P1PPPPNPP/1B2G1SR1/LNS1KG2L b - 13"
+    },
+    {
+      "index": 2,
+      "name": "iteration-000086-game-000003-ply12",
+      "sfen": "ln1gkgsnl/1s4rb1/1p1pppp1p/p1p4p1/9/P2P1P3/1PP1P1PPP/LB2R4/1NSGKGSNL b - 13"
+    },
+    {
+      "index": 3,
+      "name": "iteration-000086-game-000004-ply12",
+      "sfen": "1nsgkg1n1/l4srb1/ppp1ppppl/3p4p/9/3P5/PPP1PPPPP/1B3G2R/LNSGK1SNL b - 13"
+    },
+    {
+      "index": 4,
+      "name": "iteration-000086-game-000005-ply12",
+      "sfen": "1nsg2gnl/l2rk1sb1/pppppp1pp/6p2/9/P4P2P/1PPPP1PP1/1B1G1GSR1/LNS1K2NL b - 13"
+    },
+    {
+      "index": 5,
+      "name": "iteration-000086-game-000006-ply12",
+      "sfen": "ln1gkgsn1/1s3r1bl/ppp1ppp1p/3p3p1/9/P4P3/1PPPP1PPP/1BK4R1/LNSG1GSNL b - 13"
+    }
+  ],
+  "candidate_budgets": [
+    128,
+    256,
+    512,
+    1024
+  ],
+  "confirmatory_calibration_does_not_participate_in_budget_selection": true,
+  "confirmatory_calibration_file": "evaluator_control_confirmatory_calibration.json",
+  "created_before_formal_evaluator_control": true,
+  "formal_evaluator_control_outcomes_inspected_before_freeze": false,
+  "partial_5k_outcomes_ignored": true,
+  "schema_version": 2,
+  "selected_high_nodes": 512,
+  "selected_low_nodes": 256,
+  "selection_inputs_runtime_only": true,
+  "selection_rule": "Initial calibration is the sole selection event. LOW=256 was uniquely selected by FALLBACK_NEAREST_BOUNDARY; HIGH=512 was uniquely selected by STRICT_IN_RANGE."
+}

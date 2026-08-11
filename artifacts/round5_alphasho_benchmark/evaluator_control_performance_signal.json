@@ -1,0 +1,16 @@
+{
+  "initial_medians_seconds": {
+    "256": 1.605,
+    "512": 4.457
+  },
+  "median_wall_time_ratio_512_over_256": 2.776947040498442,
+  "node_budget_ratio_512_over_256": 2.0,
+  "observation": "Initial calibration scaled nonlinearly from 256 to 512 nodes.",
+  "possible_contributors_not_tested_in_round5": [
+    "search-tree shape",
+    "qsearch",
+    "semantic successor/materialization",
+    "history-dependent TT policy"
+  ],
+  "status": "recorded_for_later_search_runtime_maturation; no Round-5 optimization performed"
+}
