@@ -53,15 +53,21 @@ class _Budget:
             if limits.max_time_seconds is not None
             else None
         )
-        self._check_interval = 128
+        # Interactive controls must be observed promptly.  Node-only searches
+        # retain the historical coarse interval so deterministic node-budget
+        # behavior does not pay the wall-clock polling cost.
+        self._interactive = cancel_token is not None or self._deadline is not None
+        self._check_interval = 1 if self._interactive else 128
 
-    def check(self, stats: SearchStatistics) -> None:
+    def check(self, stats: SearchStatistics, *, force: bool = False) -> None:
         total = stats.nodes + stats.qnodes
         if self._max_nodes is not None and total >= self._max_nodes:
             raise SearchAborted("node_limit")
-        if self._cancel is None and self._deadline is None:
+        if not self._interactive:
+            if total % self._check_interval != 0:
+                return
             return
-        if total % self._check_interval != 0:
+        if not force and total % self._check_interval != 0:
             return
         if self._cancel is not None and self._cancel.is_cancelled():
             raise SearchAborted("cancelled")
@@ -206,6 +212,7 @@ def negamax(
         else:
             with ctx.recorder.time_block(AuditMetric.EVALUATION):
                 score = ctx.evaluator.evaluate(state)
+        ctx.budget.check(ctx.stats, force=True)
         return SearchResult(score, None, ())
 
     if ctx.tuning.use_mate_distance_pruning:
@@ -271,6 +278,7 @@ def negamax(
             child_by_action = dict(successors)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
+    ctx.budget.check(ctx.stats, force=True)
     if not actions:
         # Core should have flagged the position terminal; fall back to eval.
         with ctx.recorder.time_block(AuditMetric.EVALUATION):
@@ -300,6 +308,7 @@ def negamax(
                     prev_action,
                     ctx.tuning,
                 )
+        ctx.budget.check(ctx.stats, force=True)
         ctx.stats.ordering_calls += 1
         ctx.stats.ordered_moves += len(actions)
         ctx.stats.ordering_seconds += time.monotonic() - started
@@ -317,6 +326,7 @@ def negamax(
             child, child_key = materialize_legal_successor(
                 state, handle, ctx.compiled
             )
+            ctx.budget.check(ctx.stats, force=True)
             ctx.stats.successors_materialized += 1
             ctx.stats.successors_searched += 1
             ctx.stats.terminal_results_computed += 1
@@ -324,6 +334,7 @@ def negamax(
         else:
             child = child_by_action[action]
             child_key = None
+            ctx.budget.check(ctx.stats, force=True)
         if ctx.tuning.use_pvs and move_index > 0:
             ctx.stats.pvs_null_window_searches += 1
             null_score = -negamax(
@@ -422,6 +433,7 @@ def quiescence(
         successors = legal_successors(state, ctx.compiled)
         ctx.stats.legal_generation_calls += 1
         ctx.stats.legal_generation_seconds += time.monotonic() - started
+        ctx.budget.check(ctx.stats, force=True)
         if not successors:
             # A non-terminal, in-check state with no evasions is a Core
             # invariant violation; never fall back to static evaluation.
@@ -439,6 +451,7 @@ def quiescence(
     stand_pat = ctx.evaluator.evaluate(state)
     ctx.stats.evaluation_calls += 1
     ctx.stats.evaluation_seconds += time.monotonic() - started
+    ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
         return stand_pat
@@ -455,7 +468,9 @@ def quiescence(
     successors = legal_successors(state, ctx.compiled)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
+    ctx.budget.check(ctx.stats, force=True)
     noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats)
+    ctx.budget.check(ctx.stats, force=True)
     ordered = sorted(
         (pair for pair in successors if pair[0] in noisy),
         key=lambda pair: str(pair[0]),
@@ -511,7 +526,9 @@ def root_tactical_scan(
     started = time.monotonic()
     with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
         successors = legal_successors(state, compiled)
+    ctx.budget.check(ctx.stats, force=True)
     for action, child in successors:
+        ctx.budget.check(ctx.stats, force=True)
         ctx.stats.nodes += 1
         ctx.stats.root_scan_nodes += 1
         if (
@@ -523,6 +540,7 @@ def root_tactical_scan(
         ctx.stats.evaluation_calls += 1
         with ctx.recorder.time_block(AuditMetric.EVALUATION):
             score = -evaluator.evaluate(child)
+        ctx.budget.check(ctx.stats, force=True)
         if score > best_score:
             best_score = score
             best_action = action
@@ -593,13 +611,18 @@ def run_root_search(
             (),
             stats.termination_reason,
         )
+    budget = _Budget(limits, cancel_token)
     actions = legal_actions(state, compiled)
     if not actions:
         stats.termination_reason = "terminal_position"
         return None, 0, (), stats.termination_reason
+    try:
+        budget.check(stats, force=True)
+    except SearchAborted as exc:
+        stats.termination_reason = str(exc)
+        return sorted(actions, key=str)[0], 0, (), stats.termination_reason
 
     tt.new_generation()
-    budget = _Budget(limits, cancel_token)
     ctx = _Context(
         compiled,
         evaluator,
