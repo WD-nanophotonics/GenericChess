@@ -1,0 +1,40 @@
+{
+  "authorized": true,
+  "candidate": "fixed-node checkpoint dispatch fast path",
+  "gates": {
+    "DOMINANT": {
+      "evidence": "same root cause in all 4 semantic cases; candidate probe improves all 4",
+      "pass": true
+    },
+    "EXPLAINED": {
+      "evidence": "redundant Budget.check dispatch in non-interactive fixed-node checkpoint",
+      "pass": true
+    },
+    "LIKELY_USEFUL": {
+      "evidence": "candidate probe target improvement >=20% in all semantic cases",
+      "pass": true
+    },
+    "LOCAL": {
+      "evidence": "one _Context.checkpoint branch; no Core/TT/rules changes",
+      "pass": true
+    },
+    "MATERIAL": {
+      "evidence": "Profile A semantic improvement 22.6-36.7%; Profile B 32.8-35.1%",
+      "pass": true
+    },
+    "SEMANTICS_PRESERVING": {
+      "evidence": "exact before/after corpus parity and interactive branch unchanged",
+      "pass": true
+    },
+    "TESTABLE": {
+      "evidence": "fixed deterministic corpus with 5 repetitions",
+      "pass": true
+    }
+  },
+  "rejected_alternatives": [
+    "semantic attack-map cache",
+    "global semantic cache",
+    "TT redesign",
+    "Native migration"
+  ]
+}
