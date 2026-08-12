@@ -956,5 +956,9 @@ def run_root_search(
     # Preserve an abort observed before the first complete iteration.  The
     # legal fallback remains the same, but callers must be able to distinguish
     # a time/node/cancellation stop from a search that naturally had no result.
-    stats.termination_reason = abort_reason or "fallback"
+    stats.termination_reason = (
+        abort_reason
+        if abort_reason in ("time_limit", "cancelled")
+        else "fallback"
+    )
     return fallback, 0, (), stats.termination_reason
