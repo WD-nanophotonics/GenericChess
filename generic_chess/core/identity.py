@@ -34,8 +34,16 @@ if TYPE_CHECKING:
 ExternalStableKey = NewType("ExternalStableKey", str)
 """Deterministic SHA-256 key safe for records and cross-process artifacts."""
 
-RuntimeHash = NewType("RuntimeHash", int)
-"""Reserved process-local hash type; construction belongs to F2."""
+@dataclass(frozen=True, slots=True)
+class RuntimeHash:
+    """Process-local 128-bit hash used only by the F2 search runtime.
+
+    This is deliberately not the external SHA-256 position key.  Runtime
+    code keeps the exact key as a collision guard and for all public records.
+    """
+
+    lo: int
+    hi: int
 
 
 @dataclass(frozen=True, slots=True)

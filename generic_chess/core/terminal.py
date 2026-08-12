@@ -122,3 +122,74 @@ def terminal_result(state: "GameState", compiled: "CompiledRuleSet") -> Terminal
         compiled,
         state.history,
     )
+
+
+def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
+    """Compute terminal status from a Core-owned mutable search path.
+
+    The runtime supplies mutable occurrence counts and history evidence so
+    child pushes do not materialize a public ``GameState`` or copy the full
+    repetition tuple.  Rule precedence intentionally mirrors
+    :func:`_terminal_from_parts` and the semantic executor.
+    """
+    from .semantic_executor import semantic_engine_for
+
+    position = runtime.position
+    compiled = runtime.compiled
+    engine = semantic_engine_for(compiled)
+    # Terminal probing only needs one legal action.  Full legal-set
+    # materialization is intentionally deferred to the next search node;
+    # root tactical scans may inspect many children without recursing into
+    # them, and must not pay for every complete child action set.
+    if engine is not None:
+        has_legal = engine.has_legal_action(position, checkpoint=checkpoint)
+    else:
+        has_legal = has_legal_action(position, compiled)
+    if engine is not None:
+        checked = engine.in_check(position, position.side_to_move, checkpoint=checkpoint)
+    else:
+        checked = is_in_check(position, position.side_to_move, compiled)
+    if not has_legal:
+        if checked:
+            return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
+        return TerminalResult(TerminalStatus.STALEMATE)
+    if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
+        perpetual = _runtime_perpetual_check_result(runtime)
+        if perpetual is not None:
+            return perpetual
+    if any(count >= compiled.repetition_limit for count in runtime.repetition_counts.values()):
+        return TerminalResult(TerminalStatus.REPETITION)
+    if runtime.ply_count >= compiled.max_ply:
+        return TerminalResult(TerminalStatus.MAX_PLY)
+    return TerminalResult(TerminalStatus.ONGOING)
+
+
+def _runtime_perpetual_check_result(runtime):
+    """The continuous-check rule over mutable runtime history evidence."""
+    if not runtime.history or not getattr(runtime, "_history_complete", True):
+        return None
+    current_key = runtime.history[-1].position_key
+    limit = max(1, int(runtime.compiled.repetition_limit))
+    if runtime.repetition_counts.get(current_key, 0) < limit:
+        return None
+    occurrences = [
+        index for index, record in enumerate(runtime.history)
+        if record.position_key == current_key
+    ]
+    if len(occurrences) < limit:
+        return None
+    cycle = runtime.history[occurrences[-limit] + 1 : occurrences[-1] + 1]
+    if not cycle:
+        return None
+    checks_by_actor = {0: [], 1: []}
+    for record in cycle:
+        if record.actor in checks_by_actor:
+            checks_by_actor[record.actor].append(bool(record.gave_check))
+    checking_sides = [
+        actor for actor, checks in checks_by_actor.items()
+        if checks and all(checks)
+    ]
+    if len(checking_sides) != 1 or any(not checks for checks in checks_by_actor.values()):
+        return None
+    checker = checking_sides[0]
+    return TerminalResult(TerminalStatus.PERPETUAL_CHECK, 1 - checker)

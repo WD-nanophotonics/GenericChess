@@ -11,7 +11,6 @@ from ...core.attacks import is_in_check
 from ...core.identity import (
     ExternalStableKey,
     SearchStateIdentity,
-    history_adjudication_context,
     search_state_identity,
 )
 from ...core.lazy_transitions import (
@@ -21,6 +20,7 @@ from ...core.lazy_transitions import (
 )
 from ...core.movegen import legal_actions
 from ...core.position import GameState
+from ...core.search_runtime import SearchPathRuntime
 from ...core.terminal import TerminalStatus
 from ...core.transition import legal_successors
 from ...core.semantic_executor import semantic_engine_for
@@ -110,6 +110,7 @@ class _Context:
         "qdepth_limit",
         "qhard_depth_limit",
         "qnode_limit",
+        "runtime",
     )
 
     def __init__(
@@ -126,6 +127,7 @@ class _Context:
         qhard_depth_limit: int,
         qnode_limit: int | None,
         recorder: AuditRecorder | None = None,
+        runtime: SearchPathRuntime | None = None,
     ) -> None:
         self.compiled = compiled
         self.evaluator = evaluator
@@ -140,6 +142,7 @@ class _Context:
         self.qdepth_limit = qdepth_limit
         self.qhard_depth_limit = qhard_depth_limit
         self.qnode_limit = qnode_limit
+        self.runtime = runtime
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
@@ -169,6 +172,8 @@ def negamax(
     prev_action: Action | None = None,
     node_key: str | None = None,
 ) -> SearchResult:
+    if ctx.runtime is not None:
+        state = ctx.runtime.state
     ctx.stats.nodes += 1
     ctx.budget.check(ctx.stats)
 
@@ -198,7 +203,10 @@ def negamax(
         ctx.use_tt
         and getattr(ctx.compiled, "repetition_policy", "draw") != "continuous_check_loss"
     )
-    if node_key is not None:
+    if ctx.runtime is not None:
+        ctx.stats.position_keys_computed += 1
+        key = ctx.runtime.search_key()
+    elif node_key is not None:
         ctx.stats.position_key_cache_hits += 1
         key = search_state_identity(
             state,
@@ -234,27 +242,33 @@ def negamax(
     handle_by_action = {}
     started = time.monotonic()
     with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
-        streaming_handles = (
-            ctx.tuning.use_lazy_successors
-            or semantic_engine_for(ctx.compiled) is not None
-        )
-        if streaming_handles:
-            handle_iter = iter_legal_successor_handles(
-                state, ctx.compiled, checkpoint=ctx.checkpoint
-            )
-            handles = []
-            for handle in handle_iter:
-                handles.append(handle)
-                ctx.stats.legal_actions_generated += 1
-                ctx.stats.successor_handles_created += 1
-                ctx.checkpoint()
-            actions = [handle.action for handle in handles]
-            handle_by_action = {handle.action: handle for handle in handles}
-            lazy = True
+        if ctx.runtime is not None:
+            actions = list(ctx.runtime.legal_actions(ctx.checkpoint))
+            ctx.stats.legal_actions_generated += len(actions)
+            if ctx.tuning.use_lazy_successors or semantic_engine_for(ctx.compiled) is not None:
+                ctx.stats.successor_handles_created += len(actions)
         else:
-            successors = legal_successors(state, ctx.compiled)
-            actions = [action for action, _ in successors]
-            child_by_action = dict(successors)
+            streaming_handles = (
+                ctx.tuning.use_lazy_successors
+                or semantic_engine_for(ctx.compiled) is not None
+            )
+            if streaming_handles:
+                handle_iter = iter_legal_successor_handles(
+                    state, ctx.compiled, checkpoint=ctx.checkpoint
+                )
+                handles = []
+                for handle in handle_iter:
+                    handles.append(handle)
+                    ctx.stats.legal_actions_generated += 1
+                    ctx.stats.successor_handles_created += 1
+                    ctx.checkpoint()
+                actions = [handle.action for handle in handles]
+                handle_by_action = {handle.action: handle for handle in handles}
+                lazy = True
+            else:
+                successors = legal_successors(state, ctx.compiled)
+                actions = [action for action, _ in successors]
+                child_by_action = dict(successors)
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_generation_seconds += time.monotonic() - started
     ctx.budget.check(ctx.stats, force=True)
@@ -300,7 +314,15 @@ def negamax(
     best_pv: tuple[Action, ...] = ()
 
     for move_index, action in enumerate(ordered_actions):
-        if lazy:
+        if ctx.runtime is not None:
+            child = ctx.runtime.state
+            child_key = None
+            ctx.stats.successors_materialized += 1
+            ctx.stats.successors_searched += 1
+            ctx.stats.terminal_results_computed += 1
+            ctx.stats.position_keys_computed += 1
+            ctx.stats.position_key_cache_hits += 1
+        elif lazy:
             handle = handle_by_action[action]
             child, child_key = materialize_legal_successor(
                 state, handle, ctx.compiled, checkpoint=ctx.checkpoint
@@ -314,45 +336,30 @@ def negamax(
             child = child_by_action[action]
             child_key = None
             ctx.budget.check(ctx.stats, force=True)
+        def child_search(window_alpha, window_beta):
+            if ctx.runtime is not None:
+                with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
+                    return negamax(
+                        ctx.runtime.state, depth - 1, window_alpha, window_beta,
+                        ply + 1, ctx, prev_action=action,
+                    )
+            return negamax(
+                child, depth - 1, window_alpha, window_beta, ply + 1, ctx,
+                prev_action=action, node_key=child_key,
+            )
+
         if ctx.tuning.use_pvs and move_index > 0:
             ctx.stats.pvs_null_window_searches += 1
-            null_score = -negamax(
-                child,
-                depth - 1,
-                -alpha - 1,
-                -alpha,
-                ply + 1,
-                ctx,
-                prev_action=action,
-                node_key=child_key,
-            ).score
+            null_score = -child_search(-alpha - 1, -alpha).score
             if alpha < null_score < beta:
                 ctx.stats.pvs_researches += 1
-                child_result = negamax(
-                    child,
-                    depth - 1,
-                    -beta,
-                    -alpha,
-                    ply + 1,
-                    ctx,
-                    prev_action=action,
-                    node_key=child_key,
-                )
+                child_result = child_search(-beta, -alpha)
                 score = -child_result.score
             else:
                 score = null_score
                 child_result = SearchResult(null_score, None, ())
         else:
-            child_result = negamax(
-                child,
-                depth - 1,
-                -beta,
-                -alpha,
-                ply + 1,
-                ctx,
-                prev_action=action,
-                node_key=child_key,
-            )
+            child_result = child_search(-beta, -alpha)
             score = -child_result.score
         if score > best:
             best = score
@@ -383,6 +390,112 @@ def negamax(
     return SearchResult(best, best_action, best_pv)
 
 
+def _runtime_noisy_actions(ctx: _Context, actions):
+    """Classify qsearch actions without materializing immutable child states."""
+    runtime = ctx.runtime
+    state = runtime.state
+    side = state.position.side_to_move
+    noisy = []
+    for action in actions:
+        from ...core.actions import BoardMove, DropMove
+        from ...core.coordinates import square_to_index
+
+        if isinstance(action, BoardMove):
+            index = square_to_index(action.to_square, state.position.board_size())
+            occupant = state.position.board[index]
+            if action.promotion_target_id is not None:
+                noisy.append(action)
+                ctx.stats.promotion_qactions += 1
+                continue
+            if occupant is not None and occupant.owner != side:
+                noisy.append(action)
+                ctx.stats.capture_qactions += 1
+                continue
+        with runtime.pushed(action, checkpoint=ctx.checkpoint):
+            child = runtime.state
+            if child.terminal_status.is_terminal:
+                noisy.append(action)
+                continue
+            engine = semantic_engine_for(ctx.compiled)
+            child_in_check = (
+                engine.in_check(child.position, 1 - side, checkpoint=ctx.checkpoint)
+                if engine is not None else is_in_check(child.position, 1 - side, ctx.compiled)
+            )
+            if child_in_check:
+                noisy.append(action)
+                from ...core.actions import DropMove
+                if isinstance(action, DropMove):
+                    ctx.stats.checking_drop_qactions += 1
+                else:
+                    ctx.stats.checking_move_qactions += 1
+            elif isinstance(action, DropMove):
+                ctx.stats.nonchecking_drop_excluded += 1
+    return noisy
+
+
+def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
+    runtime = ctx.runtime
+    ctx.stats.qnodes += 1
+    ctx.budget.check(ctx.stats)
+    state = runtime.state
+    terminal = runtime.terminal_status
+    if terminal.is_terminal:
+        return terminal_score(terminal, state.position.side_to_move, ply)
+    side = state.position.side_to_move
+    engine = semantic_engine_for(ctx.compiled)
+    in_check = (
+        engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
+        if engine is not None else is_in_check(state.position, side, ctx.compiled)
+    )
+    actions = list(runtime.legal_actions(ctx.checkpoint))
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_actions_generated += len(actions)
+    ctx.budget.check(ctx.stats, force=True)
+    if in_check:
+        ctx.stats.in_check_qnodes += 1
+        if qdepth >= ctx.qhard_depth_limit:
+            ctx.stats.qsearch_check_hard_limit_aborts += 1
+            raise SearchAborted("qsearch_check_hard_limit")
+        if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
+            ctx.stats.qsearch_budget_aborts += 1
+            raise SearchAborted("qsearch_budget")
+        if not actions:
+            raise SearchAborted("qsearch_check_no_evasions")
+        for action in sorted(actions, key=str):
+            with runtime.pushed(action, checkpoint=ctx.checkpoint):
+                score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
+            if score >= beta:
+                return score
+            if score > alpha:
+                alpha = score
+        return alpha
+
+    started = time.monotonic()
+    stand_pat = ctx.evaluator.evaluate(state)
+    ctx.stats.evaluation_calls += 1
+    ctx.stats.evaluation_seconds += time.monotonic() - started
+    ctx.budget.check(ctx.stats, force=True)
+    if stand_pat >= beta:
+        ctx.stats.stand_pat_cutoffs += 1
+        return stand_pat
+    if stand_pat > alpha:
+        alpha = stand_pat
+    if qdepth >= ctx.qdepth_limit:
+        ctx.stats.qdepth_cutoffs += 1
+        return alpha
+    if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
+        ctx.stats.qsearch_budget_aborts += 1
+        raise SearchAborted("qsearch_budget")
+    for action in sorted(_runtime_noisy_actions(ctx, actions), key=str):
+        with runtime.pushed(action, checkpoint=ctx.checkpoint):
+            score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
+        if score >= beta:
+            return score
+        if score > alpha:
+            alpha = score
+    return alpha
+
+
 def quiescence(
     state: GameState,
     alpha: int,
@@ -391,6 +504,8 @@ def quiescence(
     qdepth: int,
     ctx: _Context,
 ) -> int:
+    if ctx.runtime is not None:
+        return _quiescence_runtime(alpha, beta, ply, qdepth, ctx)
     ctx.stats.qnodes += 1
     ctx.budget.check(ctx.stats)
 
@@ -569,6 +684,29 @@ def root_tactical_scan(
     best_action: Action | None = None
     best_score = -INF
     started = time.monotonic()
+    if ctx.runtime is not None:
+        stream = ctx.runtime.legal_actions(ctx.checkpoint)
+        for action in stream:
+            ctx.budget.check(ctx.stats, force=True)
+            with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
+                child = ctx.runtime.state
+                ctx.stats.nodes += 1
+                ctx.stats.root_scan_nodes += 1
+                if (
+                    child.terminal_status.status is TerminalStatus.CHECKMATE
+                    and child.terminal_status.winner == state.position.side_to_move
+                ):
+                    ctx.stats.root_scan_seconds += time.monotonic() - started
+                    return action, best_action
+                ctx.stats.evaluation_calls += 1
+                with ctx.recorder.time_block(AuditMetric.EVALUATION):
+                    score = -evaluator.evaluate(child)
+                ctx.budget.check(ctx.stats, force=True)
+            if score > best_score:
+                best_score = score
+                best_action = action
+        ctx.stats.root_scan_seconds += time.monotonic() - started
+        return None, best_action
     if handles is None:
         with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
             successors = legal_successors(state, compiled)
@@ -659,7 +797,8 @@ def run_root_search(
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
     started = time.monotonic()
-    terminal = state.terminal_status
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    terminal = runtime.terminal_status
     if terminal.is_terminal:
         stats.termination_reason = "terminal_position"
         return (
@@ -683,12 +822,40 @@ def run_root_search(
         limits.quiescence_hard_max_depth,
         limits.quiescence_max_nodes,
         recorder,
+        runtime,
     )
+    runtime.attach_stats(stats)
 
     root_first_action: Action | None = None
     root_handles = None
     actions: list[Action] | None = None
-    if semantic_engine_for(compiled) is not None:
+    if runtime is not None:
+        try:
+            actions = list(runtime.legal_actions(ctx.checkpoint))
+        except SearchAborted as exc:
+            # A cancelled search still owes the caller one legal fallback,
+            # matching the historical root contract.  The fallback generation
+            # is outside search and does not recurse or mutate the runtime.
+            actions = list(runtime.legal_actions(None))
+            if not actions:
+                stats.termination_reason = str(exc)
+                return None, 0, (), stats.termination_reason
+            stats.time_to_first_legal_action = time.monotonic() - started
+            stats.root_scan_used_fallback = True
+            stats.termination_reason = str(exc)
+            return sorted(actions, key=str)[0], 0, (), stats.termination_reason
+        if not actions:
+            stats.termination_reason = "terminal_position"
+            return None, 0, (), stats.termination_reason
+        root_first_action = sorted(actions, key=str)[0]
+        stats.time_to_first_legal_action = time.monotonic() - started
+        try:
+            budget.check(stats, force=True)
+        except SearchAborted as exc:
+            stats.root_scan_used_fallback = True
+            stats.termination_reason = str(exc)
+            return root_first_action, 0, (), stats.termination_reason
+    elif semantic_engine_for(compiled) is not None:
         root_stream = iter_legal_successor_handles(
             state, compiled, checkpoint=ctx.checkpoint
         )

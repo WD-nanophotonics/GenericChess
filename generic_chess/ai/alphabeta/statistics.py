@@ -65,3 +65,15 @@ class SearchStatistics:
     terminal_cache_hits: int = 0
     position_keys_computed: int = 0
     position_key_cache_hits: int = 0
+    # F2 Core-owned search-path runtime instrumentation.
+    runtime_pushes: int = 0
+    runtime_pops: int = 0
+    runtime_hash_updates: int = 0
+    runtime_exact_key_computations: int = 0
+    runtime_collision_checks: int = 0
+    runtime_collision_fallbacks: int = 0
+    runtime_history_tuple_copies: int = 0
+    runtime_repetition_tuple_copies: int = 0
+    runtime_root_imports: int = 0
+    runtime_peak_depth: int = 0
+    runtime_depth_balanced: bool = True
