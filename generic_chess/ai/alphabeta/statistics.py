@@ -93,6 +93,9 @@ class SearchStatistics:
     runtime_history_context_updates: int = 0
     runtime_history_context_exact_comparisons: int = 0
     runtime_tt_eligible: int = 0
+    runtime_snapshot_updates: int = 0
+    runtime_snapshot_entry_digest_calls: int = 0
+    runtime_search_key_calls: int = 0
     runtime_history_tuple_copies: int = 0
     runtime_repetition_tuple_copies: int = 0
     runtime_root_imports: int = 0

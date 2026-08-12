@@ -113,18 +113,48 @@ class RuntimeCountsSnapshot:
     root_items: tuple[tuple[object, int], ...] = ()
 
     @staticmethod
-    def _entry_digest(key: object, count: int) -> bytes:
+    def _entry_digest(
+        key: object,
+        count: int,
+        fast_hash: RuntimeHash | None = None,
+    ) -> bytes:
+        """Return a fast entry discriminator without weakening exact equality.
+
+        Child runtime updates already have the canonical process-local
+        ``RuntimeHash``.  Use it here instead of formatting the full Position
+        representation.  ``key`` remains the exact identity stored in the
+        persistent snapshot, and ``items()`` remains the collision guard.
+        Imported/test identities without a runtime hash retain the old
+        deterministic fallback.
+        """
+        if fast_hash is not None:
+            token = (
+                fast_hash.lo.to_bytes(8, "little", signed=False)
+                + fast_hash.hi.to_bytes(8, "little", signed=False)
+            )
+        else:
+            token = _identity_token(key)
         return hashlib.blake2b(
-            b"generic-chess-runtime-count\0" + _identity_token(key) + str(count).encode("ascii"),
+            b"generic-chess-runtime-count\0" + token + str(count).encode("ascii"),
             digest_size=16,
         ).digest()
 
     @classmethod
-    def from_counts(cls, counts: Mapping[object, int]):
+    def from_counts(
+        cls,
+        counts: Mapping[object, int],
+        fast_hashes: Mapping[object, RuntimeHash] | None = None,
+    ):
         raw = tuple(sorted(((key, int(count)) for key, count in counts.items() if int(count)), key=lambda item: _identity_sort_key(item[0])))
         digest = bytes(16)
         for key, count in raw:
-            digest = _xor_bytes(digest, cls._entry_digest(key, count))
+            fast_hash = fast_hashes.get(key) if fast_hashes is not None else None
+            entry_digest = (
+                cls._entry_digest(key, count, fast_hash)
+                if fast_hash is not None
+                else cls._entry_digest(key, count)
+            )
+            digest = _xor_bytes(digest, entry_digest)
         return cls(None, None, 0, 0, digest, raw)
 
     def items(self) -> tuple[tuple[object, int], ...]:
@@ -157,14 +187,30 @@ class RuntimeCountsSnapshot:
             return False
         return self.items() == other.items()
 
-    def updated(self, key: object, count: int, previous_count: int | None = None):
+    def updated(
+        self,
+        key: object,
+        count: int,
+        previous_count: int | None = None,
+        fast_hash: RuntimeHash | None = None,
+    ):
         if previous_count is None:
             previous_count = self.count_for(key)
         digest = self.digest
         if previous_count:
-            digest = _xor_bytes(digest, self._entry_digest(key, previous_count))
+            entry_digest = (
+                self._entry_digest(key, previous_count, fast_hash)
+                if fast_hash is not None
+                else self._entry_digest(key, previous_count)
+            )
+            digest = _xor_bytes(digest, entry_digest)
         if count:
-            digest = _xor_bytes(digest, self._entry_digest(key, count))
+            entry_digest = (
+                self._entry_digest(key, count, fast_hash)
+                if fast_hash is not None
+                else self._entry_digest(key, count)
+            )
+            digest = _xor_bytes(digest, entry_digest)
         return RuntimeCountsSnapshot(self, key, int(count), int(previous_count), digest)
 
 
@@ -525,6 +571,9 @@ class SearchPathRuntime:
         self.snapshot_exact_comparisons = 0
         self.collision_checks = 0
         self.collision_fallbacks = 0
+        self.snapshot_updates = 0
+        self.snapshot_entry_digest_calls = 0
+        self.search_key_calls = 0
         self.peak_depth = 0
 
     @staticmethod
@@ -632,10 +681,12 @@ class SearchPathRuntime:
 
     def _snapshot_from_occurrences(self):
         values = {}
-        for bucket in self._occurrences.values():
+        fast_hashes = {}
+        for runtime_hash, bucket in self._occurrences.items():
             for entry in bucket:
                 values[entry.identity] = entry.count
-        return RuntimeCountsSnapshot.from_counts(values)
+                fast_hashes[entry.identity] = runtime_hash
+        return RuntimeCountsSnapshot.from_counts(values, fast_hashes=fast_hashes)
 
     @classmethod
     def from_state(cls, state: GameState, compiled, *, hash_override=None, history_witnesses=None):
@@ -675,6 +726,7 @@ class SearchPathRuntime:
         return len(self._frames)
 
     def search_key(self):
+        self.search_key_calls += 1
         return RuntimeSearchKey(
             self.compiled.ruleset_fingerprint,
             self.runtime_hash,
@@ -712,6 +764,10 @@ class SearchPathRuntime:
         self.stats.runtime_snapshot_exact_comparisons = self.snapshot_exact_comparisons
         self.stats.runtime_collision_checks = self.collision_checks
         self.stats.runtime_collision_fallbacks = self.collision_fallbacks
+        if hasattr(self.stats, "runtime_snapshot_updates"):
+            self.stats.runtime_snapshot_updates = self.snapshot_updates
+            self.stats.runtime_snapshot_entry_digest_calls = self.snapshot_entry_digest_calls
+            self.stats.runtime_search_key_calls = self.search_key_calls
         self.stats.runtime_history_reconstruction_attempts = self.history_reconstruction_attempts
         self.stats.runtime_history_reconstruction_key_computations = self.history_reconstruction_key_computations
         self.stats.runtime_history_witness_hits = self.history_witness_hits
@@ -973,7 +1029,14 @@ class SearchPathRuntime:
             self._resolve_opaque_history_key(child_external_key, child_identity, child_hash)
         previous_count = self._occurrence_add(child_identity, child_hash)
         frame.child_occurrence_added = True
-        self._snapshot = self._snapshot.updated(child_identity, previous_count + 1, previous_count)
+        self.snapshot_updates += 1
+        self.snapshot_entry_digest_calls += int(bool(previous_count)) + 1
+        self._snapshot = self._snapshot.updated(
+            child_identity,
+            previous_count + 1,
+            previous_count,
+            child_hash,
+        )
         signature = json.dumps(action_to_dict(action), sort_keys=True, separators=(",", ":"))
         self._history.append(
             RuntimeHistoryRecord(
