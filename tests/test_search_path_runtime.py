@@ -187,6 +187,53 @@ def test_unreplayable_custom_history_falls_back_only_when_child_can_match():
     runtime.assert_balanced()
 
 
+def test_complete_history_continuous_check_pre_root_parity():
+    from generic_chess.core.transition import apply_action
+    from generic_chess.learning.shogi_certification import (
+        PERPETUAL_CHECK_MOVES,
+        PERPETUAL_CHECK_SFEN,
+        _seed_history,
+    )
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state, usi_to_gc_action
+    from generic_chess.learning.shogi_semantic_rules import build_semantic_shogi_ruleset
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+
+    compiled = compile_semantic_ruleset(build_semantic_shogi_ruleset())
+    state = _seed_history(
+        compiled,
+        sfen_to_gc_state(compiled, PERPETUAL_CHECK_SFEN),
+    )
+    for usi in PERPETUAL_CHECK_MOVES[:4]:
+        state = apply_action(state, usi_to_gc_action(compiled, state, usi), compiled)
+
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    pushed = 0
+    for usi in PERPETUAL_CHECK_MOVES[4:]:
+        legacy_action = usi_to_gc_action(compiled, state, usi)
+        action = next(
+            candidate
+            for candidate in runtime.legal_actions()
+            if getattr(candidate, "from_square", None) == legacy_action.from_square
+            and getattr(candidate, "to_square", None) == legacy_action.to_square
+            and getattr(candidate, "promotion_target_id", None)
+            == getattr(legacy_action, "promotion_target_id", None)
+        )
+        runtime.push(action)
+        pushed += 1
+        state = apply_action(state, legacy_action, compiled)
+        assert runtime.position == state.position
+        assert runtime.terminal_status == state.terminal_status
+        if state.terminal_status.is_terminal:
+            break
+
+    assert state.terminal_status.status.name == "PERPETUAL_CHECK"
+    assert runtime.terminal_status == state.terminal_status
+    assert runtime.opaque_history_child_external_key_computations == 3
+    for _ in range(pushed):
+        runtime.pop()
+    runtime.assert_balanced()
+
+
 def test_runtime_forced_hash_collision_uses_exact_guard():
     compiled = build_4x4_rooks()
     root = GameSession(compiled).state

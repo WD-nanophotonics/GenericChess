@@ -54,7 +54,7 @@ after they have been rerun from this baseline.
 python -m pytest -q -p no:cacheprovider tests/test_search_path_runtime.py tests/test_identity_contract.py tests/test_repetition.py tests/test_lazy_successors.py tests/test_native_history.py tests/test_session.py
 ```
 
-Result: PASS, 63 tests.
+Result: PASS, 64 tests.
 
 The full project command also passed under the test-required sandbox write
 permission:
@@ -82,6 +82,12 @@ corrected_runtime_count=2
 The corrected focused regression is
 `test_pre_root_non_root_repetition_merges_with_runtime_identity`; it also
 covers forced runtime-hash collision and push/pop restoration.
+
+The bounded Standard-Shogi `continuous_check_loss` fixture also passes through
+the runtime bridge: immutable and runtime paths both reach
+`perpetual_check` on the same move after the relevant occurrences began before
+the search root.  This is covered by
+`test_complete_history_continuous_check_pre_root_parity`.
 
 ## Performance harness
 
