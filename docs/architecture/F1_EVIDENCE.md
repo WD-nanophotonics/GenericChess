@@ -1,6 +1,7 @@
 # GenericChess Runtime Foundation F1 evidence
 
-Status: implementation complete pending final remote/worktree verification.
+Status: COMPLETE — implementation, validation, push, and remote/worktree audit
+verified on 2026-08-12.
 
 ## Baseline and promotion
 
@@ -21,6 +22,11 @@ Status: implementation complete pending final remote/worktree verification.
   differential consumer migration.
 - Final documentation/evidence commit: the tip verified by the final
   `git rev-parse HEAD` and remote SHA audit.
+- Final sandbox SHA: `fa2c29afea2b40c4671894250a11c3837a076490`.
+- Final `origin/master`: `0b6196bdee02e4925823d3f2078008b9a6dbc93c`.
+- Final `origin/sandbox`: `fa2c29afea2b40c4671894250a11c3837a076490`.
+- `origin/chat` remained `d6b0d5720efe23019a7a2b4cce72e05beee2e6c4` and was
+  not used as a product source.
 
 ## Authority contract
 
