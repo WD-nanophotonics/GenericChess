@@ -128,7 +128,7 @@ or chat file was changed.
 ## Final receipt
 
 ```text
-HEAD / origin/sandbox: b99fbbee609f734008dfc20cda3a38b1c6a31561
+HEAD / origin/sandbox: verified equal by the final `git rev-parse` receipt
 origin/master: 4f1d03a308f5fd04a01bbd980c7411888ea1ed9d
 origin/chat: d6b0d5720efe23019a7a2b4cce72e05beee2e6c4
 worktree: clean
