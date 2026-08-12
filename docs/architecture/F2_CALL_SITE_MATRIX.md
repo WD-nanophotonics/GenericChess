@@ -44,6 +44,7 @@ reference oracle.  F2 Corrective R1 changes only the private Core-owned
 | Imported history | Positive counts must equal the exact set and multiplicities derived from history; last history identity must be the imported root. |
 | Pre-root non-root identity | Exact witnesses are used when available; otherwise only an unresolved imported key that a child externally matches is bridged. |
 | Bridge rollback | Opaque-key aliases, occurrence buckets, snapshots, and history evidence restore on pop and exception. |
+| History-bearing allocation | Bridge frames record only reversible mutations; no occurrence-table or history/repetition tuple copy is made per child. |
 | Unknown/ghost key | Fail closed; never silently add it to runtime occurrences. |
 | Runtime occurrence table | `RuntimeHash -> [exact identity, count]` buckets. |
 | Repetition snapshot | Parent-pointer update with order-independent digest; exact map equality on digest collision. |

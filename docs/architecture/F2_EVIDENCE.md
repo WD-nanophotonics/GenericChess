@@ -54,7 +54,7 @@ after they have been rerun from this baseline.
 python -m pytest -q -p no:cacheprovider tests/test_search_path_runtime.py tests/test_identity_contract.py tests/test_repetition.py tests/test_lazy_successors.py tests/test_native_history.py tests/test_session.py
 ```
 
-Result: PASS, 64 tests.
+Result: PASS, 65 tests.
 
 The full project command also passed under the test-required sandbox write
 permission:
@@ -88,6 +88,11 @@ the runtime bridge: immutable and runtime paths both reach
 `perpetual_check` on the same move after the relevant occurrences began before
 the search root.  This is covered by
 `test_complete_history_continuous_check_pre_root_parity`.
+
+`test_opaque_bridge_exception_rollback_restores_incremental_state` verifies
+that an exception after bridge resolution restores the parent without an
+occurrence-table snapshot.  The implementation uses only one reversible
+bridge mutation per frame; history/repetition tuple-copy counters remain zero.
 
 ## Performance harness
 

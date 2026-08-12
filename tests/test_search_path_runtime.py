@@ -234,6 +234,43 @@ def test_complete_history_continuous_check_pre_root_parity():
     runtime.assert_balanced()
 
 
+def test_opaque_bridge_exception_rollback_restores_incremental_state(monkeypatch):
+    from dataclasses import replace
+    from test_native_history import _cycle_ruleset, _session_at_ply
+
+    compiled = _cycle_ruleset()
+    root = _session_at_ply(compiled, 3).state
+    runtime = SearchPathRuntime.from_state(replace(root, history=()), compiled)
+    runtime.push(runtime.legal_actions()[0])
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.runtime_hash,
+        runtime.repetition_counts,
+        frozenset(runtime._opaque_imported_keys),
+        dict(runtime._history_aliases),
+        runtime._snapshot,
+    )
+    monkeypatch.setattr(
+        "generic_chess.core.search_runtime.terminal_from_search_runtime",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(RuntimeError("injected bridge terminal")),
+    )
+    with pytest.raises(RuntimeError, match="injected bridge terminal"):
+        runtime.push(runtime.legal_actions()[0])
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.runtime_hash,
+        runtime.repetition_counts,
+        frozenset(runtime._opaque_imported_keys),
+        dict(runtime._history_aliases),
+        runtime._snapshot,
+    )
+    assert after == before
+    runtime.pop()
+    runtime.assert_balanced()
+
+
 def test_runtime_forced_hash_collision_uses_exact_guard():
     compiled = build_4x4_rooks()
     root = GameSession(compiled).state

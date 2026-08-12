@@ -189,9 +189,14 @@ class _Frame:
     snapshot: RuntimeCountsSnapshot
     cache: tuple[Action, ...] | None
     bindings: dict[Action, object]
-    opaque_imported_keys: frozenset[str]
-    history_aliases: tuple[tuple[str, RuntimePositionIdentity], ...]
-    occurrence_backup: tuple[tuple[RuntimeHash, tuple[tuple[object, int], ...]], ...] | None = None
+    bridge_key: str | None = None
+    bridge_identity: RuntimePositionIdentity | None = None
+    bridge_runtime_hash: RuntimeHash | None = None
+    bridge_old_hash: RuntimeHash | None = None
+    bridge_old_count: int = 0
+    child_identity: RuntimePositionIdentity | None = None
+    child_runtime_hash: RuntimeHash | None = None
+    child_occurrence_added: bool = False
 
 
 @dataclass(slots=True)
@@ -671,6 +676,12 @@ class SearchPathRuntime:
         old_bucket, old_entry = self._find_occurrence(old_identity, old_hash, instrument=False)
         if old_entry is None:
             raise AssertionError("opaque imported occurrence is missing")
+        frame = self._frames[-1]
+        frame.bridge_key = key
+        frame.bridge_identity = identity
+        frame.bridge_runtime_hash = runtime_hash
+        frame.bridge_old_hash = old_hash
+        frame.bridge_old_count = old_entry.count
         old_bucket.remove(old_entry)
         if not old_bucket:
             self._occurrences.pop(old_hash, None)
@@ -683,6 +694,49 @@ class SearchPathRuntime:
         self._opaque_imported_keys.remove(key)
         self._history_aliases[key] = identity
         self._snapshot = self._snapshot_from_occurrences()
+
+    def _restore_bridge(self, frame: _Frame) -> None:
+        """Undo one imported-key bridge without copying the occurrence table."""
+        key = frame.bridge_key
+        if key is None:
+            return
+        identity = frame.bridge_identity
+        runtime_hash = frame.bridge_runtime_hash
+        if identity is None or runtime_hash is None or frame.bridge_old_hash is None:
+            raise AssertionError("incomplete runtime history bridge frame")
+
+        bucket = self._occurrences.get(runtime_hash)
+        if bucket is None:
+            raise AssertionError("runtime bridge target bucket is missing")
+        entry = next(
+            (candidate for candidate in bucket if _identity_equal(candidate.identity, identity)),
+            None,
+        )
+        if entry is None:
+            raise AssertionError("runtime bridge target occurrence is missing")
+        entry.count -= frame.bridge_old_count
+        if entry.count < 0:
+            raise AssertionError("runtime bridge target occurrence underflow")
+        if entry.count == 0:
+            bucket.remove(entry)
+        if not bucket:
+            self._occurrences.pop(runtime_hash, None)
+
+        self._opaque_imported_keys.add(key)
+        self._history_aliases.pop(key, None)
+        old_bucket = self._occurrences.setdefault(frame.bridge_old_hash, [])
+        old_entry = next(
+            (
+                candidate
+                for candidate in old_bucket
+                if _identity_equal(candidate.identity, _ImportedIdentity(key))
+            ),
+            None,
+        )
+        if old_entry is None:
+            old_bucket.append(_Occurrence(_ImportedIdentity(key), frame.bridge_old_count))
+        else:
+            old_entry.count += frame.bridge_old_count
 
     def _opaque_history_key_for_child(self, child: Position) -> str | None:
         if not self._opaque_imported_keys:
@@ -724,9 +778,21 @@ class SearchPathRuntime:
         except BaseException:
             if len(self._frames) > before_depth:
                 rollback_frame = self._frames[before_depth]
+            removed_history = 0
             while len(self._history) > before_history_len:
                 record = self._history.pop()
                 self._occurrence_remove(record.identity, record.runtime_hash or self.runtime_hash)
+                removed_history += 1
+            if (
+                rollback_frame is not None
+                and rollback_frame.bridge_key is not None
+                and rollback_frame.child_occurrence_added
+                and removed_history == 0
+            ):
+                self._occurrence_remove(
+                    rollback_frame.child_identity,
+                    rollback_frame.child_runtime_hash,
+                )
             del self._frames[before_depth:]
             self.position = before_position
             self.ply_count = before_ply
@@ -737,30 +803,13 @@ class SearchPathRuntime:
             self._legal_cache = before_cache
             self._bindings = before_bindings
             if rollback_frame is not None:
-                self._opaque_imported_keys = set(rollback_frame.opaque_imported_keys)
-                self._history_aliases = dict(rollback_frame.history_aliases)
-                if rollback_frame.occurrence_backup is not None:
-                    self._occurrences = {
-                        runtime_hash: [
-                            _Occurrence(identity, count) for identity, count in entries
-                        ]
-                        for runtime_hash, entries in rollback_frame.occurrence_backup
-                    }
+                self._restore_bridge(rollback_frame)
             self._sync_stats()
             raise
 
     def _push_impl(self, action: Action, checkpoint=None) -> RuntimeSearchState:
         if action not in self.legal_actions(checkpoint):
             raise IllegalActionError(f"action is not legal in the current state: {action}")
-        occurrence_backup = None
-        if self._opaque_imported_keys:
-            occurrence_backup = tuple(
-                (
-                    runtime_hash,
-                    tuple((entry.identity, entry.count) for entry in bucket),
-                )
-                for runtime_hash, bucket in self._occurrences.items()
-            )
         self._frames.append(
             _Frame(
                 self.position,
@@ -771,9 +820,6 @@ class SearchPathRuntime:
                 self._snapshot,
                 self._legal_cache,
                 self._bindings,
-                frozenset(self._opaque_imported_keys),
-                tuple(self._history_aliases.items()),
-                occurrence_backup,
             )
         )
         parent = self.position
@@ -797,9 +843,13 @@ class SearchPathRuntime:
         self.position = child
         self.ply_count += 1
         self._identity = child_identity
+        frame = self._frames[-1]
+        frame.child_identity = child_identity
+        frame.child_runtime_hash = child_hash
         if child_external_key is not None:
             self._resolve_opaque_history_key(child_external_key, child_identity, child_hash)
         previous_count = self._occurrence_add(child_identity, child_hash)
+        frame.child_occurrence_added = True
         self._snapshot = self._snapshot.updated(child_identity, previous_count + 1, previous_count)
         signature = json.dumps(action_to_dict(action), sort_keys=True, separators=(",", ":"))
         self._history.append(
@@ -836,15 +886,7 @@ class SearchPathRuntime:
         self._snapshot = frame.snapshot
         self._legal_cache = frame.cache
         self._bindings = frame.bindings
-        self._opaque_imported_keys = set(frame.opaque_imported_keys)
-        self._history_aliases = dict(frame.history_aliases)
-        if frame.occurrence_backup is not None:
-            self._occurrences = {
-                runtime_hash: [
-                    _Occurrence(identity, count) for identity, count in entries
-                ]
-                for runtime_hash, entries in frame.occurrence_backup
-            }
+        self._restore_bridge(frame)
         self.pops += 1
         self._sync_stats()
         return self._view

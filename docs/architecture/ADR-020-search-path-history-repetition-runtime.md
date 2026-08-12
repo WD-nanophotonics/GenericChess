@@ -61,9 +61,11 @@ when a child must resolve one of those specific keys.
 
 The conditional fallback is correctness-first: a matching child key merges the
 opaque occurrence into the exact runtime identity and aliases the corresponding
-history records for continuous-check adjudication.  The alias set, opaque-key
-set, occurrence table, and snapshot are saved in the search frame and restored
-on both `pop` and exception rollback.  Distinct runtime positions continue to
+history records for continuous-check adjudication.  Each frame records only
+the one reversible bridge mutation when a key is resolved; it does not copy the
+occurrence table or history/repetition tuples per child.  The opaque-key set,
+aliases, occurrence table, and snapshot are restored by incremental undo on
+both `pop` and exception rollback.  Distinct runtime positions continue to
 use exact position equality inside their runtime-hash bucket, including under
 forced runtime-hash collisions.
 
