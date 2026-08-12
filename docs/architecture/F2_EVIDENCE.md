@@ -1,7 +1,7 @@
 # GenericChess Runtime Foundation F2 Corrective R1 evidence
 
-Status: IN PROGRESS until the final full-test, fresh-build, and sandbox-push
-gates are recorded below.
+Status: COMPLETE — implementation, validation, fresh native build, and
+sandbox push verified on 2026-08-12.
 
 ## Scope and baseline
 
@@ -57,7 +57,17 @@ semantic row uses a harness-only terminal metadata compatibility shim because
 the required baseline's `CompiledSemanticRuleset` exposes limits under
 `support`; the shim does not alter transition, identity, or search-path code.
 
-## Pending final receipt fields
+## Final receipt
 
-The final commit SHA, push result, fresh Zig build artifact, full pytest count,
-and final clean-worktree check are appended when those gates complete.
+* Full pytest: PASS, 862 collected and executed with
+  `python -m pytest -q -p no:cacheprovider`.
+* Fresh Zig build: PASS, `generic_chess/_native_core.cp312-win_amd64.pyd`,
+  333312 bytes.  The repository-local Zig candidate was absent, so the
+  already-installed Zig 0.16 executable from the sibling development
+  environment was used; all output was written to this sandbox worktree.
+* Commit and push: `50e4ba629c70a8f8063294e34e42916b26f67525` pushed to
+  `origin/sandbox`.
+* Final worktree: clean.
+* Protected refs after push: `origin/master` remains
+  `4f1d03a308f5fd04a01bbd980c7411888ea1ed9d`; `origin/chat` remains
+  `d6b0d5720efe23019a7a2b4cce72e05beee2e6c4`.
