@@ -35,8 +35,11 @@ sources = [
   "generic_chess/_native/native_tt.c",
   "generic_chess/_native/native_clock.c",
   "generic_chess/_native/native_cancel.c",
+  "generic_chess/_native/native_semantic_key.c",
   "generic_chess/_native/native_semantic_rules.c",
   "generic_chess/_native/native_semantic_state.c",
+  "generic_chess/_native/native_semantic_runtime.c",
+  "generic_chess/_native/native_sha256.c",
 ]
 optional = true
 
