@@ -1,7 +1,7 @@
 # GenericChess Runtime Foundation F2 Corrective R2 evidence
 
-Status: IN PROGRESS — Corrective R2 implementation and focused validation are
-being completed on 2026-08-12.
+Status: COMPLETE — Corrective R2 implementation, validation, fresh Native
+build, and sandbox push verified on 2026-08-13.
 
 ## Scope and baseline
 
@@ -25,11 +25,11 @@ resolved key is aliased into runtime history so ordinary repetition and
 continuous-check evidence include the pre-root occurrence.  The bridge state
 is restored on sibling pop and exception rollback.
 
-Focused regression coverage now includes a real legal pre-root cycle, forced
+Focused regression coverage includes a real legal pre-root cycle, forced
 runtime-hash collision, incomplete-history fallback, Session witness import,
-unreplayable custom history fallback, and sibling restoration.  Full R2
-performance, differential, and native-build receipts are recorded below only
-after they have been rerun from this baseline.
+unreplayable custom history fallback, continuous-check parity, incremental
+bridge exception rollback, and sibling restoration.  Full R2 performance,
+differential, and native-build receipts are recorded below.
 
 ## Corrective R1 contracts retained
 
@@ -117,9 +117,20 @@ root child work.
 ```text
 Zig 0.16 via the sibling GenericChess .venv
 python scripts/build_native_zig.py
-PASS; _native_core_r2.cp312-win_amd64.pyd; 333312 bytes
+PASS; current-source temporary _native_core_r2_final2.cp312-win_amd64.pyd;
+333312 bytes
 ```
 
 The cache and temporary output were placed outside the sandbox worktree
 because its pre-existing cache directory is access-denied; no tracked master
 or chat file was changed.
+
+## Final receipt
+
+```text
+HEAD / origin/sandbox: a324dc5bc4b4595e46f87e7d5a88a3b8ebd4b260
+origin/master: 4f1d03a308f5fd04a01bbd980c7411888ea1ed9d
+origin/chat: d6b0d5720efe23019a7a2b4cce72e05beee2e6c4
+worktree: clean
+F3: not started
+```
