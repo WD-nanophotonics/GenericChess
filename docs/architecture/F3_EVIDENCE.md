@@ -37,7 +37,7 @@ python -m pytest -q -p no:cacheprovider tests/test_search_path_runtime.py
 26 passed
 
 python -m pytest -q -p no:cacheprovider tests/test_f3_corrective_r1.py
-12 passed
+13 passed
 ```
 
 The focused suite proves forced context digest collision safety, opaque-history
@@ -94,10 +94,10 @@ Post-optimization child-only results over six pushes:
 ```text
 legacy-4x4-rooks: snapshot_entry_digest_calls=7,
   exact_position_token_calls=0, exact_position_sort_calls=0,
-  history_context_digest_updates=6, search_key_calls=6, search_key_us=25.1
+  history_context_digest_updates=6, search_key_calls=6, search_key_us=19.3
 legacy-8x8-mate: snapshot_entry_digest_calls=6,
   exact_position_token_calls=0, exact_position_sort_calls=0,
-  history_context_digest_updates=6, search_key_calls=6, search_key_us=19.9
+  history_context_digest_updates=6, search_key_calls=6, search_key_us=22.3
 ```
 
 The pre-change audit observed 8/7 snapshot entry calls and 8/7 exact-position
@@ -141,6 +141,21 @@ The generic continuous-check fixture records nonzero reuse at depth 3
 Shogi path records `eligible=32`, `probes=32`, `hits=1`, and `stores=32`.
 These are correctness/usefulness witnesses, not performance claims.
 
+The reproducible usefulness audit is:
+
+```text
+python scripts/audit_f3_search_usefulness.py
+legacy-draw-root:          10.081 ms, nodes=33, qnodes=0, depth=2,
+  eligible=0, skipped=0, probes=9, hits=1, cutoffs=0, stores=9
+continuous-check-prefix:  40.542 ms, nodes=137, qnodes=0, depth=3,
+  eligible=36, skipped=0, probes=36, hits=9, cutoffs=0, stores=36
+semantic-shogi-prefix:    6384.853 ms, nodes=344, qnodes=0, depth=2,
+  eligible=32, skipped=0, probes=32, hits=1, cutoffs=0, stores=32
+```
+
+Elapsed values are machine-local observations; correctness comparisons remain
+the fixed-depth corpus results, not timing comparisons.
+
 Each child appends one persistent `RuntimeHistoryContext` node and restores
 the parent pointer on pop.  Key construction does not copy the public history
 tuple, repetition map, or serialize a full history per child; the
@@ -151,7 +166,7 @@ is reserved for equal discriminator candidates.
 
 ```text
 python -m pytest -q -p no:cacheprovider
-888 tests collected; all passed
+889 tests collected; all passed
 
 python scripts/build_native_zig.py
 fresh Zig build passed from current F3 source

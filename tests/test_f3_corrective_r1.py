@@ -92,10 +92,16 @@ def _assert_pv_legal(session, compiled, pv):
 
 
 def _assert_search_parity(session, compiled, depth: int):
+    terminal_before = session.state.terminal_status
+    off_root_actions = tuple(sorted(str(action) for action in legal_actions(session.state, compiled)))
     off, off_stats = _run(session, compiled, False, depth)
+    assert session.state.terminal_status == terminal_before
+    on_root_actions = tuple(sorted(str(action) for action in legal_actions(session.state, compiled)))
     on, on_stats = _run(session, compiled, True, depth)
+    assert session.state.terminal_status == terminal_before
     assert off == on
-    root_actions = {str(action) for action in legal_actions(session.state, compiled)}
+    assert off_root_actions == on_root_actions
+    root_actions = set(off_root_actions)
     assert off[0] is None or str(off[0]) in root_actions
     assert on[0] is None or str(on[0]) in root_actions
     assert off_stats.completed_depth == on_stats.completed_depth
@@ -278,6 +284,27 @@ def test_f3_runtime_hash_collision_keeps_snapshot_exact_guard():
     )
     assert left.digest == right.digest
     assert left != right
+
+
+def test_f3_fast_snapshot_equal_maps_are_path_order_independent():
+    compiled = build_4x4_rooks()
+    runtime = SearchPathRuntime.from_state(GameSession(compiled).state, compiled)
+    root_identity = RuntimePositionIdentity(runtime.position)
+    action = sorted(runtime.legal_actions(), key=str)[0]
+    with runtime.pushed(action):
+        child_identity = RuntimePositionIdentity(runtime.position)
+        child_hash = runtime.runtime_hash
+    root_hash = runtime.runtime_hash
+    left = RuntimeCountsSnapshot.from_counts(
+        {root_identity: 1, child_identity: 2},
+        fast_hashes={root_identity: root_hash, child_identity: child_hash},
+    )
+    right = RuntimeCountsSnapshot.from_counts(
+        {child_identity: 2, root_identity: 1},
+        fast_hashes={child_identity: child_hash, root_identity: root_hash},
+    )
+    assert left == right
+    assert hash(left) == hash(right)
 
 
 def test_f3_pvs_aspiration_research_restores_parent_history_context(monkeypatch):
