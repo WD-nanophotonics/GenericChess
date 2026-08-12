@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from ...core.actions import action_to_dict
-from ...core.keys import position_key
+from ...core.identity import position_identity_key
 from ...core.transition import legal_successors
 from .audit_schema import write_json
 from .audit_suite import (
@@ -67,7 +67,7 @@ def build_corpus(
         state = session.state
         actions = session.legal_actions()
         children = legal_successors(state, compiled)
-        child_keys = [position_key(c.position, compiled) for _a, c in children]
+        child_keys = [position_identity_key(c.position, compiled) for _a, c in children]
         depths = {}
         for d in range(1, perft_depth + 1):
             depths[str(d)] = perft(compiled, state, d)
@@ -78,7 +78,7 @@ def build_corpus(
                 "board_size": compiled.board_size,
                 "ruleset_fingerprint": compiled.ruleset_fingerprint,
                 "action_prefix": [dict(a) for a in pos.action_prefix],
-                "position_key": position_key(state.position, compiled),
+                "position_key": position_identity_key(state.position, compiled),
                 "terminal": {
                     "status": state.terminal_status.status.value,
                     "winner": state.terminal_status.winner,

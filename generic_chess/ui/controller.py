@@ -8,7 +8,7 @@ import time
 from ..core.actions import Action, BoardMove, DropMove
 from ..core.attacks import is_in_check
 from ..core.coordinates import Square, square_to_index
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..core.pieces import Piece, PieceType
 from ..core.position import Position
 from ..ai.budget import ThinkingConfig, allocate_search_limits
@@ -219,7 +219,7 @@ class UIController:
         self._ai_search_generation = self._ai_generation
         self._ai_session = self._session
         self._ai_fingerprint = self._compiled.ruleset_fingerprint
-        self._ai_root_key = position_key(
+        self._ai_root_key = position_identity_key(
             self._session.state.position, self._compiled
         )
         self._notify()
@@ -276,7 +276,7 @@ class UIController:
             session_same
             and fingerprint_same
             and self._ai_root_key
-            == position_key(self._session.state.position, self._compiled)
+            == position_identity_key(self._session.state.position, self._compiled)
         )
         stale = (
             self._ai_search_generation != self._ai_generation

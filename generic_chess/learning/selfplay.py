@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 from ..ai.limits import SearchLimits
 from ..ai.evaluation.config import EvaluationConfig
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..core.transition import apply_action
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
@@ -74,7 +74,7 @@ def collect_self_play(
                 leaf_state = session.state
                 for action in pv:
                     leaf_state = apply_action(leaf_state, action, compiled)
-                leaf_key = position_key(leaf_state.position, compiled)
+                leaf_key = position_identity_key(leaf_state.position, compiled)
                 features = material_features(
                     leaf_state.position, type_ids, perspective=0
                 )
@@ -87,7 +87,7 @@ def collect_self_play(
                 points.append(
                     TrainingPoint(
                         ply=ply,
-                        root_position_key=position_key(
+                        root_position_key=position_identity_key(
                             session.state.position, compiled
                         ),
                         action=None,  # filled below
@@ -125,7 +125,7 @@ def collect_self_play(
             session.submit(action)
             ply += 1
         result = session.result
-        initial_key = position_key(compiled.initial_position, compiled)
+        initial_key = position_identity_key(compiled.initial_position, compiled)
         trajectories.append(
             TrainingTrajectory(
                 ruleset_fingerprint=compiled.ruleset_fingerprint,

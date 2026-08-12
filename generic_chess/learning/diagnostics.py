@@ -23,7 +23,7 @@ from ..ai.evaluation.config import EvaluationConfig
 from ..ai.evaluation.profile import build_ruleset_profile
 from ..ai.limits import SearchLimits
 from ..core.actions import Action, action_from_dict, action_to_dict
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..native.compiler import compile_native_evaluation
 from ..native.compiler import compile_native_rules
 from ..native.engine import NativeSearchEngine
@@ -121,7 +121,7 @@ class LearningDiagnosticCorpus:
             session = GameSession(compiled)
             for action in pos.action_history:
                 session.submit(action)
-            key = position_key(session.state.position, compiled)
+            key = position_identity_key(session.state.position, compiled)
             if key != pos.position_key:
                 raise ValueError(
                     f"position {pos.index}: replay key mismatch"
@@ -191,7 +191,7 @@ def generate_diagnostic_corpus(
                 generated = DiagnosticPosition(
                     index=index,
                     action_history=tuple(history),
-                    position_key=position_key(session.state.position, compiled),
+                    position_key=position_identity_key(session.state.position, compiled),
                     side_to_move=session.state.position.side_to_move,
                     ply=session.state.ply_count,
                 )

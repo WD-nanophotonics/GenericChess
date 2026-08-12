@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 from ..core.actions import Action
 from ..core.errors import IllegalActionError
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..core.movegen import legal_actions
 from ..core.position import GameState
 from ..core.transition import apply_action, initial_state
@@ -69,10 +69,10 @@ class GameSession:
     def submit(self, action: Action) -> GameState:
         if self.result.status is not SessionStatus.ONGOING:
             raise SessionFinishedError(f"cannot submit an action to a finished session ({self.result})")
-        before_key = position_key(self._state.position, self._compiled)
+        before_key = position_identity_key(self._state.position, self._compiled)
         player = self._state.position.side_to_move
         new_state = apply_action(self._state, action, self._compiled)
-        after_key = position_key(new_state.position, self._compiled)
+        after_key = position_identity_key(new_state.position, self._compiled)
         record = ActionRecord(
             ply=len(self._history) + 1,
             player=player,

@@ -13,7 +13,7 @@ from typing import Callable
 from ...core.actions import Action, DropMove, action_to_dict
 from ...core.attacks import is_in_check
 from ...core.movegen import legal_actions
-from ...core.keys import position_key
+from ...core.identity import position_identity_key
 from ...core.movement import LeapAtom, RayAtom
 from ...core.pieces import Piece, PieceType
 from ...core.position import GameState, Hands, Position
@@ -109,7 +109,7 @@ def _state(
         side_to_move=side_to_move,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
     )
-    key = position_key(position, compiled)
+    key = position_identity_key(position, compiled)
     return GameState(
         position=position,
         ply_count=0,

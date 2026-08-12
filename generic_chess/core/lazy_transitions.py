@@ -16,13 +16,12 @@ from typing import TYPE_CHECKING
 
 from .actions import Action
 from .errors import IllegalActionError, ensure_ruleset_match
-from .keys import position_key
+from .identity import repetition_identity_key
 from .movegen import iter_legal_actions_from_position
 from .position import GameState
 from .semantic_executor import semantic_engine_for, _semantic_public_action
 from .terminal import TerminalStatus
 from .transition import _semantic_transition, _transition
-from .keys import semantic_position_key
 
 if TYPE_CHECKING:
     from ..rules.compiled import CompiledRuleSet
@@ -136,12 +135,8 @@ def materialize_legal_successor(
                 compiled,
                 checkpoint=checkpoint,
             )
-            handle._child_key = semantic_position_key(
-                handle._child.position,
-                compiled.support,
-                compiled.ir.aux_slots,
-            )
+            handle._child_key = repetition_identity_key(handle._child.position, compiled)
         else:
             handle._child = _transition(state, handle.action, compiled)
-            handle._child_key = position_key(handle._child.position, compiled)
+            handle._child_key = repetition_identity_key(handle._child.position, compiled)
     return handle._child, handle._child_key

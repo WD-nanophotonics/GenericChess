@@ -11,7 +11,7 @@ import time
 from typing import Callable
 
 from ...core.attacks import is_in_check, pseudo_attacks
-from ...core.keys import position_key
+from ...core.identity import position_identity_key
 from ...core.movegen import (
     _apply_action_unchecked,
     _drop_actions,
@@ -49,7 +49,7 @@ def core_function_timings(
     side = position.side_to_move
     actions = legal_actions_from_position(position, compiled)
     first = actions[0] if actions else None
-    key = position_key(position, compiled)
+    key = position_identity_key(position, compiled)
     n = compiled.board_size
 
     def pseudo_moves():
@@ -87,7 +87,7 @@ def core_function_timings(
         return pseudo_attacks(position, 1, compiled)
 
     def pkey():
-        return position_key(position, compiled)
+        return position_identity_key(position, compiled)
 
     def repeat_update():
         return update_repetition_counts(state.repetition_counts, key)

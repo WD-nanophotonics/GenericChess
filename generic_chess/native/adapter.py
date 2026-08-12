@@ -6,7 +6,7 @@ from typing import Any
 
 from ..core.actions import BoardMove, DropMove, action_from_dict, action_to_dict
 from ..core.coordinates import Square, square_to_index
-from ..core.keys import position_key
+from ..core.identity import repetition_identity_key
 from ..core.transition import apply_action, initial_state
 from ..rules.compiled import CompiledRuleSet
 from .compiler import (
@@ -75,7 +75,7 @@ def pack_native_position(
     The legacy perft-oriented entry: history starts at the packed root and the
     Python root repetition count is folded in via ``root_hash_count``.
     """
-    current_key = position_key(state.position, compiled)
+    current_key = repetition_identity_key(state.position, compiled)
     root_count = dict(state.repetition_counts).get(current_key, 1)
     payload = _build_payload(
         compiled, native_rules, state, root_hash_count=root_count

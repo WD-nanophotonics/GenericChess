@@ -8,7 +8,12 @@ from itertools import chain
 
 from ...core.actions import Action
 from ...core.attacks import is_in_check
-from ...core.keys import position_key, semantic_position_key
+from ...core.identity import (
+    ExternalStableKey,
+    SearchStateIdentity,
+    history_adjudication_context,
+    search_state_identity,
+)
 from ...core.lazy_transitions import (
     iter_legal_successor_handles,
     legal_successor_handles,
@@ -149,52 +154,9 @@ def terminal_score(result, side_to_move: int, ply: int) -> int:
     return -MATE_SCORE + ply
 
 
-def _position_identity_key(state: GameState, compiled) -> str:
-    support = getattr(compiled, "support", None)
-    if support is not None:
-        return semantic_position_key(
-            state.position, support, compiled.ir.aux_slots
-        )
-    return position_key(state.position, compiled)
-
-
-def history_adjudication_context(state: GameState, compiled) -> tuple:
-    """Return a bounded identity for history-dependent terminal semantics.
-
-    The continuous-check policy is currently conservatively excluded from TT
-    reuse in ``negamax``.  Keeping this canonical, bounded context in the key
-    makes the identity explicit for callers and prevents a future cache user
-    from silently treating equal positions/counts as equivalent histories.
-    """
-    if getattr(compiled, "repetition_policy", "draw") != "continuous_check_loss":
-        return ()
-    history = state.history
-    if not history:
-        return (None, 0, ())
-    current_key = history[-1].position_key
-    occurrences = [
-        index for index, record in enumerate(history)
-        if record.position_key == current_key
-    ]
-    limit = max(1, int(getattr(compiled, "repetition_limit", 4)))
-    start = occurrences[-min(limit, len(occurrences))] if occurrences else max(0, len(history) - 1)
-    cycle = history[start + 1 :]
-    actor_summary = tuple(
-        (actor, sum(record.actor == actor for record in cycle),
-         sum(record.actor == actor and record.gave_check for record in cycle))
-        for actor in (0, 1)
-    )
-    return (current_key, len(occurrences), actor_summary)
-
-
-def _tt_key(state: GameState, compiled) -> tuple:
-    base = (
-        compiled.ruleset_fingerprint,
-        _position_identity_key(state, compiled),
-        state.repetition_counts,
-    )
-    context = history_adjudication_context(state, compiled)
-    return base if not context else base + (context,)
+def _tt_key(state: GameState, compiled) -> SearchStateIdentity:
+    """Build the authoritative, path-aware search/transposition identity."""
+    return search_state_identity(state, compiled)
 
 
 def negamax(
@@ -238,14 +200,11 @@ def negamax(
     )
     if node_key is not None:
         ctx.stats.position_key_cache_hits += 1
-        key = (
-            ctx.compiled.ruleset_fingerprint,
-            node_key,
-            state.repetition_counts,
+        key = search_state_identity(
+            state,
+            ctx.compiled,
+            position_key_override=ExternalStableKey(node_key),
         )
-        context = history_adjudication_context(state, ctx.compiled)
-        if context:
-            key = key + (context,)
     else:
         ctx.stats.position_keys_computed += 1
         with ctx.recorder.time_block(AuditMetric.TT_KEY):

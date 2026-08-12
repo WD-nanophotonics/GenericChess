@@ -14,7 +14,7 @@ import sys
 from ..ai.evaluation.config import EvaluationConfig
 from ..ai.evaluation.native_compat import NativeCompatibleEvaluator
 from ..ai.evaluation.profile import build_ruleset_profile
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..ai.limits import SearchLimits
 from . import _module, native_available
 from .compiler import compile_native_evaluation, compile_native_rules
@@ -47,13 +47,13 @@ def _compare_fixture(compiled, session, label, extended: bool, problems: list):
         checked += 2
         if off["score"] != ref[0]:
             problems.append(
-                f"score mismatch fixture={label} key={position_key(session.state.position, compiled)} "
+                f"score mismatch fixture={label} key={position_identity_key(session.state.position, compiled)} "
                 f"history={len(session.history)} depth={depth} tt=off "
                 f"python={ref[0]} native={off['score']}"
             )
         if on["score"] != ref[0]:
             problems.append(
-                f"score mismatch fixture={label} key={position_key(session.state.position, compiled)} "
+                f"score mismatch fixture={label} key={position_identity_key(session.state.position, compiled)} "
                 f"history={len(session.history)} depth={depth} tt=on "
                 f"python={ref[0]} native={on['score']}"
             )

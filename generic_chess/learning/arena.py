@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from ..ai.evaluation.config import EvaluationConfig
 from ..ai.limits import SearchLimits
 from ..core.actions import Action, action_to_dict
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
 from ..session.session import GameSession
@@ -130,7 +130,7 @@ def _play_one_game(
     session = GameSession(compiled)
     for action in opening.actions:
         session.submit(action)
-    opening_key = position_key(session.state.position, compiled)
+    opening_key = position_identity_key(session.state.position, compiled)
     parent_engine = _engine_for(
         compiled, native_rules, parent, config.tt_megabytes
     )
@@ -172,7 +172,7 @@ def _play_one_game(
         result=session.result.status.value,
         plies=plies,
         actions=tuple(actions),
-        final_position_key=position_key(session.state.position, compiled),
+        final_position_key=position_identity_key(session.state.position, compiled),
     )
 
 

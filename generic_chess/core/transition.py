@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 from .actions import Action
 from .errors import IllegalActionError, ensure_ruleset_match
-from .keys import position_key, semantic_position_key
+from .identity import repetition_identity_key
 from .movegen import _apply_action_unchecked, legal_actions_from_position
 from .position import GameState, HistoryRecord
 from .repetition import update_repetition_counts
@@ -22,10 +22,8 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
-        from .keys import semantic_position_key
-
         pos = engine._initial_position()
-        key = semantic_position_key(pos, compiled.support, compiled.ir.aux_slots)
+        key = repetition_identity_key(pos, compiled)
         counts = ((key, 1),)
         status = engine.terminal_result(pos, 0, counts)
         return GameState(
@@ -36,7 +34,7 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
             history=(HistoryRecord(key, -1, "", False),),
         )
     pos = compiled.initial_position
-    key = position_key(pos, compiled)
+    key = repetition_identity_key(pos, compiled)
     counts = ((key, 1),)
     status = _terminal_from_parts(pos, 0, counts, compiled)
     return GameState(
@@ -97,7 +95,7 @@ def _semantic_transition(
     if checkpoint is not None:
         checkpoint()
     ply = state.ply_count + 1
-    key = semantic_position_key(new_pos, compiled.support, compiled.ir.aux_slots)
+    key = repetition_identity_key(new_pos, compiled)
     counts = update_repetition_counts(state.repetition_counts, key)
     history = _history_record(
         state, new_pos, public_action, compiled, key, checkpoint=checkpoint
@@ -125,7 +123,7 @@ def _transition(state: GameState, action: Action, compiled: "CompiledRuleSet") -
     """
     new_pos = _apply_action_unchecked(state.position, action, compiled)
     ply = state.ply_count + 1
-    key = position_key(new_pos, compiled)
+    key = repetition_identity_key(new_pos, compiled)
     counts = update_repetition_counts(state.repetition_counts, key)
     history = _history_record(state, new_pos, action, compiled, key)
     status = _terminal_from_parts(new_pos, ply, counts, compiled, history)
@@ -158,7 +156,7 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
         binding = semantic_action_for(engine, state.position, action)
         new_pos = engine.apply(state.position, binding)
         ply = state.ply_count + 1
-        key = semantic_position_key(new_pos, compiled.support, compiled.ir.aux_slots)
+        key = repetition_identity_key(new_pos, compiled)
         counts = update_repetition_counts(state.repetition_counts, key)
         history = _history_record(state, new_pos, action, compiled, key)
         status = engine.terminal_result(new_pos, ply, counts, history)
@@ -207,9 +205,7 @@ def legal_successors(
         for binding in actions:
             new_pos = engine.apply(state.position, binding)
             ply = state.ply_count + 1
-            key = semantic_position_key(
-                new_pos, compiled.support, compiled.ir.aux_slots
-            )
+            key = repetition_identity_key(new_pos, compiled)
             counts = update_repetition_counts(state.repetition_counts, key)
             public_action = _semantic_public_action(engine, binding)
             history = _history_record(state, new_pos, public_action, compiled, key)

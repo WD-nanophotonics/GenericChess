@@ -101,8 +101,9 @@ class HistoryRecord:
 class GameState:
     """A position plus history-dependent information.
 
-    Kept distinct from :class:`Position` so future transposition tables can
-    key on the position while history-dependent repetition data lives here.
+    Kept distinct from :class:`Position` because search reuse must retain the
+    repetition/path context held here; position identity alone is not a safe
+    transposition key for every ruleset.
     """
 
     position: Position

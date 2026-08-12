@@ -15,7 +15,7 @@ import tracemalloc
 from pathlib import Path
 from dataclasses import replace
 
-from ..core.keys import semantic_position_key
+from ..core.identity import repetition_identity_key
 from ..core.position import HistoryRecord
 from ..core.semantic_executor import semantic_engine_for
 from ..core.terminal import TerminalStatus, _perpetual_check_result
@@ -95,7 +95,7 @@ def _classify_divergence(missing: list[str], extra: list[str]) -> str:
 
 def _seed_history(compiled, state):
     """Make an adapter-created SFEN state a real public transition root."""
-    key = semantic_position_key(state.position, compiled.support, compiled.ir.aux_slots)
+    key = repetition_identity_key(state.position, compiled)
     return replace(
         state,
         repetition_counts=((key, 1),),

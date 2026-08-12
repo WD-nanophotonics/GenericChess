@@ -50,9 +50,9 @@ def python_child_snapshot(state, action, compiled) -> dict:
     hands = [
         dict(child.position.hands[owner].counts) for owner in (0, 1)
     ]
-    from ..core.keys import position_key
+    from ..core.identity import repetition_identity_key
 
-    key = position_key(child.position, compiled)
+    key = repetition_identity_key(child.position, compiled)
     repetition_count = dict(child.repetition_counts).get(key, 0)
     return {
         "side_to_move": child.position.side_to_move,

@@ -16,7 +16,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
 )
 
-from ...core.keys import position_key
+from ...core.identity import position_identity_key
 from ..controller import UIController
 from ..i18n.manager import LocalizationManager
 
@@ -96,7 +96,7 @@ class DiagnosticsDialog(QDialog):
                 info.record_path if info is not None and info.record_path else "—"
             ),
             "diagnostics.position_key": (
-                position_key(session.state.position, compiled)
+                position_identity_key(session.state.position, compiled)
                 if session is not None and compiled is not None
                 else "—"
             ),

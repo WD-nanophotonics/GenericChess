@@ -21,7 +21,7 @@ from pathlib import Path
 from ..ai.evaluation.config import EvaluationConfig
 from ..ai.evaluation.native_compat import NativeCompatibleEvaluator
 from ..ai.evaluation.profile import build_ruleset_profile
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from . import native_available
 from .compiler import compile_native_evaluation, compile_native_rules
 from .reference import canonical_pack, reference_fixed_depth_minimax
@@ -50,7 +50,7 @@ def _compare(compiled, session, depth, label) -> list[str]:
     if problems:
         return [
             f"fixture={label} fingerprint={compiled.ruleset_fingerprint} "
-            f"key={position_key(session.state.position, compiled)} "
+            f"key={position_identity_key(session.state.position, compiled)} "
             f"history={len(session.history)} depth={depth}",
             *[f"  {p}" for p in problems],
             f"  python pv={[str(a) for a in ref[3]]} "

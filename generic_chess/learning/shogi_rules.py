@@ -16,7 +16,7 @@ from dataclasses import replace
 
 from ..core.actions import Action, BoardMove, DropMove
 from ..core.coordinates import Square
-from ..core.keys import position_key
+from ..core.identity import repetition_identity_key
 from ..core.movement import LeapAtom, RayAtom
 from ..core.pieces import Piece, PieceType
 from ..core.position import GameState, Hands, Position
@@ -484,15 +484,11 @@ def sfen_to_gc_state(compiled, sfen: str) -> GameState:
 
     semantic_engine = semantic_engine_for(compiled)
     if semantic_engine is not None:
-        from ..core.keys import semantic_position_key
-
-        key = semantic_position_key(
-            position, compiled.support, compiled.ir.aux_slots
-        )
+        key = repetition_identity_key(position, compiled)
         counts = ((key, 1),)
         status = semantic_engine.terminal_result(position, ply, counts)
     else:
-        key = position_key(position, compiled)
+        key = repetition_identity_key(position, compiled)
         counts = ((key, 1),)
         status = _terminal_from_parts(position, ply, counts, compiled)
     return GameState(

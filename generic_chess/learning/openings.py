@@ -11,7 +11,7 @@ import random
 from dataclasses import dataclass
 
 from ..core.actions import Action, action_from_dict, action_to_dict
-from ..core.keys import position_key
+from ..core.identity import position_identity_key
 from ..session.session import GameSession
 from .serialization import stable_sha256
 
@@ -104,7 +104,7 @@ class ArenaOpeningCorpus:
                     f"opening {opening.index} ended before the target ply "
                     f"({session.result.status.value})"
                 )
-            key = position_key(session.state.position, compiled)
+            key = position_identity_key(session.state.position, compiled)
             if key != opening.final_position_key:
                 raise ValueError(
                     f"opening {opening.index} replay key mismatch: "
@@ -162,7 +162,7 @@ def generate_arena_openings(
                     opening_seed=opening_seed,
                     target_plies=target_plies,
                     actions=tuple(actions),
-                    final_position_key=position_key(
+                    final_position_key=position_identity_key(
                         session.state.position, compiled
                     ),
                 )
