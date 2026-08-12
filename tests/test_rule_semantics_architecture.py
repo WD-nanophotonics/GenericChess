@@ -33,7 +33,12 @@ def test_session_imports_only_core_public_semantics():
     source = _read("session/session.py")
     for forbidden in ("native", "ai.", "learning", "rules.compiler", "rules.schema"):
         assert forbidden not in source, f"session imports forbidden layer: {forbidden}"
-    for required in ("legal_actions", "apply_action", "initial_state", "position_key"):
+    for required in (
+        "legal_actions",
+        "apply_action",
+        "initial_state",
+        "position_identity_key",
+    ):
         assert required in source
 
 
