@@ -15,7 +15,12 @@ from generic_chess.ai.alphabeta.statistics import SearchStatistics
 from generic_chess.ai.alphabeta.transposition import TranspositionTable
 from generic_chess.ai.alphabeta.tuning import SearchTuning
 from generic_chess.core.identity import RuntimeHash
-from generic_chess.core.search_runtime import RuntimeCountsSnapshot, SearchPathRuntime, _full_runtime_hash
+from generic_chess.core.search_runtime import (
+    RuntimeCountsSnapshot,
+    RuntimeHistoryContext,
+    SearchPathRuntime,
+    _full_runtime_hash,
+)
 from generic_chess.core.identity import position_identity_key
 from generic_chess.core.position import HistoryRecord
 from generic_chess.core.transition import legal_successors
@@ -25,6 +30,40 @@ from generic_chess.core.movement import LeapAtom, RayAtom
 
 from ai_fixtures import build_4x4_rooks
 from conftest import king_type, make_compiled, make_state, sq, T
+
+
+def _continuous_history_pair():
+    """Two legal routes with equal position/count state and different check evidence."""
+    from dataclasses import replace
+
+    from ai_fixtures import build_4x4_rooks
+
+    compiled = replace(build_4x4_rooks(), repetition_policy="continuous_check_loss")
+    paths = (
+        (
+            "a1-a2", "b3-b2", "a2-a1", "b2-b3",
+            "c2-c3", "b3-b2", "c3-c2",
+        ),
+        (
+            "c2-c3", "b3-b2", "c3-c2", "b2-b3",
+            "a1-a2", "b3-b2", "a2-a1",
+        ),
+    )
+    states = []
+    state = __import__("generic_chess.core.transition", fromlist=["initial_state"]).initial_state(compiled)
+    from generic_chess.core.transition import apply_action, legal_successors
+
+    for path in paths:
+        current = state
+        for text in path:
+            action = next(
+                action
+                for action, _child in legal_successors(current, compiled)
+                if str(action) == text
+            )
+            current = apply_action(current, action, compiled)
+        states.append(current)
+    return compiled, tuple(states), paths
 
 
 def test_legacy_child_pushes_use_zero_external_keys_and_incremental_oracle():
@@ -75,6 +114,225 @@ def test_runtime_push_pop_matches_immutable_successors():
     runtime.assert_balanced()
     assert runtime.position == root.position
     assert runtime.repetition_counts == dict(root.repetition_counts)
+
+
+def test_f2_runtime_key_insufficiency_is_reproduced_by_legal_histories():
+    from generic_chess.core.identity import history_adjudication_context
+
+    compiled, (left, right), _paths = _continuous_history_pair()
+    left_runtime = SearchPathRuntime.from_state(left, compiled)
+    right_runtime = SearchPathRuntime.from_state(right, compiled)
+
+    assert left.position == right.position
+    assert left.ply_count == right.ply_count
+    assert left.repetition_counts == right.repetition_counts
+    assert history_adjudication_context(left, compiled) != history_adjudication_context(right, compiled)
+
+    # This is the accepted F2 key projection: it has no history context.
+    left_f2 = (
+        compiled.ruleset_fingerprint,
+        left_runtime.runtime_hash,
+        left_runtime.current_identity,
+        left_runtime._snapshot,
+        left_runtime.ply_count,
+    )
+    right_f2 = (
+        compiled.ruleset_fingerprint,
+        right_runtime.runtime_hash,
+        right_runtime.current_identity,
+        right_runtime._snapshot,
+        right_runtime.ply_count,
+    )
+    assert left_f2 == right_f2
+    assert left_runtime.search_key() != right_runtime.search_key()
+
+
+def test_history_context_exact_guard_survives_forced_digest_collision(monkeypatch):
+    compiled, (left, right), _paths = _continuous_history_pair()
+    left_runtime = SearchPathRuntime.from_state(left, compiled)
+    right_runtime = SearchPathRuntime.from_state(right, compiled)
+    original = RuntimeHistoryContext._record_digest
+    monkeypatch.setattr(
+        RuntimeHistoryContext,
+        "_record_digest",
+        staticmethod(lambda *_args: bytes(16)),
+    )
+    left_context = RuntimeHistoryContext.from_records(left_runtime.history)
+    right_context = RuntimeHistoryContext.from_records(right_runtime.history)
+    assert left_context.digest == right_context.digest
+    assert left_context != right_context
+    monkeypatch.setattr(RuntimeHistoryContext, "_record_digest", original)
+
+
+def test_continuous_check_tt_is_eligible_only_for_exact_history():
+    from dataclasses import replace
+
+    from generic_chess.ai.alphabeta.search import run_root_search
+    from generic_chess.core.transition import initial_state
+
+    compiled, (complete, _other), _paths = _continuous_history_pair()
+    incomplete = replace(complete, history=())
+    config = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+
+    exact_stats = SearchStatistics()
+    run_root_search(
+        complete,
+        compiled,
+        evaluator,
+        TranspositionTable(),
+        SearchLimits(max_depth=3, quiescence_max_depth=0),
+        None,
+        exact_stats,
+        use_tt=True,
+        use_ordering=False,
+        tuning=SearchTuning(use_root_tactical=False),
+    )
+    opaque_stats = SearchStatistics()
+    run_root_search(
+        incomplete,
+        compiled,
+        evaluator,
+        TranspositionTable(),
+        SearchLimits(max_depth=2, quiescence_max_depth=0),
+        None,
+        opaque_stats,
+        use_tt=True,
+        use_ordering=False,
+        tuning=SearchTuning(use_root_tactical=False),
+    )
+    assert exact_stats.tt_eligible_nodes > 0
+    assert exact_stats.tt_hits > 0
+    assert opaque_stats.tt_skipped_ineligible_nodes > 0
+    assert opaque_stats.tt_probes == 0
+
+
+def test_continuous_check_tt_matches_no_tt_on_legal_history_pair():
+    compiled, (left, right), _paths = _continuous_history_pair()
+    config = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+    for state in (left, right):
+        results = []
+        for use_tt in (False, True):
+            stats = SearchStatistics()
+            result = run_root_search(
+                state,
+                compiled,
+                evaluator,
+                TranspositionTable(),
+                SearchLimits(max_depth=3, quiescence_max_depth=0),
+                None,
+                stats,
+                use_tt=use_tt,
+                use_ordering=False,
+                tuning=SearchTuning(use_root_tactical=False),
+            )
+            results.append((result, stats))
+        (no_tt, _no_stats), (with_tt, tt_stats) = results
+        assert with_tt[0] == no_tt[0]
+        assert with_tt[1] == no_tt[1]
+        assert tt_stats.tt_hits > 0
+
+
+def test_certified_semantic_shogi_history_aware_tt_reuses_safely():
+    from generic_chess.learning.round5_corrective_r1 import SearchSemanticCompiled
+    from generic_chess.learning.shogi_semantic_rules import build_semantic_shogi_ruleset
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+
+    semantic = compile_semantic_ruleset(build_semantic_shogi_ruleset())
+    compiled = SearchSemanticCompiled(
+        ir=semantic.ir,
+        _legacy_compiled=semantic._legacy_compiled,
+        support=semantic.support,
+    )
+    session = GameSession(compiled)
+    config = EvaluationConfig()
+    evaluator = Evaluator(
+        compiled._legacy_compiled,
+        build_ruleset_profile(compiled._legacy_compiled, config),
+        config,
+    )
+    results = []
+    stats_list = []
+    for use_tt in (False, True):
+        stats = SearchStatistics()
+        result = run_root_search(
+            session.state,
+            compiled,
+            evaluator,
+            TranspositionTable(),
+            SearchLimits(max_depth=2, quiescence_max_depth=0),
+            None,
+            stats,
+            use_tt=use_tt,
+            use_ordering=False,
+            tuning=SearchTuning(use_root_tactical=False),
+            _history_witnesses=session._search_witnesses,
+        )
+        results.append(result)
+        stats_list.append(stats)
+    assert results[1] == results[0]
+    assert stats_list[1].tt_eligible_nodes > 0
+    assert stats_list[1].tt_hits > 0
+    assert stats_list[1].tt_stores > 0
+
+
+def test_history_aware_tt_does_not_cross_reuse_distinct_legal_histories():
+    compiled, (left, right), _paths = _continuous_history_pair()
+    left_runtime = SearchPathRuntime.from_state(left, compiled)
+    right_runtime = SearchPathRuntime.from_state(right, compiled)
+    table = TranspositionTable()
+    left_key = left_runtime.search_key()
+    right_key = right_runtime.search_key()
+    assert left_key != right_key
+
+    config = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+    for state in (left, right):
+        run_root_search(
+            state,
+            compiled,
+            evaluator,
+            table,
+            SearchLimits(max_depth=2, quiescence_max_depth=0),
+            None,
+            SearchStatistics(),
+            use_tt=True,
+            use_ordering=False,
+            tuning=SearchTuning(use_root_tactical=False),
+        )
+    assert table.probe(left_key) is not None
+    assert table.probe(right_key) is not None
+
+
+def test_history_aware_tt_pvs_aspiration_parity():
+    compiled, (state, _other), _paths = _continuous_history_pair()
+    config = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+    tuning = SearchTuning(
+        use_pvs=True,
+        use_aspiration=True,
+        aspiration_start_depth=2,
+        use_root_tactical=False,
+    )
+    results = []
+    for use_tt in (False, True):
+        stats = SearchStatistics()
+        results.append(
+            run_root_search(
+                state,
+                compiled,
+                evaluator,
+                TranspositionTable(),
+                SearchLimits(max_depth=4, quiescence_max_depth=0),
+                None,
+                stats,
+                use_tt=use_tt,
+                use_ordering=False,
+                tuning=tuning,
+            )
+        )
+    assert results[1] == results[0]
 
 
 def test_pre_root_non_root_repetition_merges_with_runtime_identity():

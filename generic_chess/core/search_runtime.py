@@ -177,6 +177,102 @@ class RuntimeSearchKey:
     position_key: RuntimePositionIdentity
     repetition: RuntimeCountsSnapshot
     ply_count: int
+    history_context: "RuntimeHistoryContext | None" = None
+
+
+@dataclass(frozen=True, slots=True)
+class RuntimeHistoryContext:
+    """Persistent exact history evidence for continuous-check TT reuse.
+
+    The digest is only a fast discriminator.  Equality walks the persistent
+    parent chain and compares exact identities plus actor/check evidence, so
+    forced digest collisions cannot make two histories equivalent.
+    """
+
+    parent: "RuntimeHistoryContext | None"
+    identity: object
+    runtime_hash: RuntimeHash
+    actor: int
+    gave_check: bool
+    length: int
+    digest: bytes
+
+    @staticmethod
+    def _record_digest(
+        parent_digest: bytes,
+        runtime_hash: RuntimeHash,
+        actor: int,
+        gave_check: bool,
+    ) -> bytes:
+        return hashlib.blake2b(
+            b"generic-chess-runtime-history-context\0"
+            + parent_digest
+            + runtime_hash.lo.to_bytes(8, "little")
+            + runtime_hash.hi.to_bytes(8, "little")
+            + int(actor).to_bytes(4, "little", signed=True)
+            + bytes((int(bool(gave_check)),)),
+            digest_size=16,
+        ).digest()
+
+    @classmethod
+    def from_records(cls, records: Iterable[RuntimeHistoryRecord]):
+        context = None
+        for record in records:
+            context = cls.append(
+                context,
+                record.identity,
+                record.runtime_hash or RuntimeHash(0, 0),
+                record.actor,
+                record.gave_check,
+            )
+        return context
+
+    @classmethod
+    def append(
+        cls,
+        parent: "RuntimeHistoryContext | None",
+        identity: object,
+        runtime_hash: RuntimeHash,
+        actor: int,
+        gave_check: bool,
+    ) -> "RuntimeHistoryContext":
+        parent_digest = parent.digest if parent is not None else bytes(16)
+        return cls(
+            parent,
+            identity,
+            runtime_hash,
+            int(actor),
+            bool(gave_check),
+            (parent.length if parent is not None else 0) + 1,
+            cls._record_digest(parent_digest, runtime_hash, actor, gave_check),
+        )
+
+    def _records_reversed(self):
+        current = self
+        while current is not None:
+            yield current
+            current = current.parent
+
+    def __hash__(self):
+        return int.from_bytes(self.digest[:8], "big")
+
+    def __eq__(self, other):
+        if not isinstance(other, RuntimeHistoryContext):
+            return NotImplemented
+        if self.length != other.length or self.digest != other.digest:
+            return False
+        left = self
+        right = other
+        while left is not None and right is not None:
+            if (
+                left.actor != right.actor
+                or left.gave_check != right.gave_check
+                or not _identity_equal(left.identity, right.identity)
+            ):
+                return False
+            left = left.parent
+            right = right.parent
+        return left is None and right is None
 
 
 @dataclass(slots=True)
@@ -197,6 +293,7 @@ class _Frame:
     child_identity: RuntimePositionIdentity | None = None
     child_runtime_hash: RuntimeHash | None = None
     child_occurrence_added: bool = False
+    history_context: RuntimeHistoryContext | None = None
 
 
 @dataclass(slots=True)
@@ -406,6 +503,9 @@ class SearchPathRuntime:
         if state.history and not self._history_witness_by_key:
             self.history_witness_misses = len(self._opaque_imported_keys)
         self._history_aliases: dict[str, RuntimePositionIdentity] = {}
+        self._history_context = RuntimeHistoryContext.from_records(self._history)
+        self._history_context_updates = 0
+        self._history_context_exact_comparisons = 0
         self._occurrences: dict[RuntimeHash, list[_Occurrence]] = {}
         self._seed_occurrences()
         self._snapshot = self._snapshot_from_occurrences()
@@ -575,7 +675,24 @@ class SearchPathRuntime:
         return len(self._frames)
 
     def search_key(self):
-        return RuntimeSearchKey(self.compiled.ruleset_fingerprint, self.runtime_hash, self._identity, self._snapshot, self.ply_count)
+        return RuntimeSearchKey(
+            self.compiled.ruleset_fingerprint,
+            self.runtime_hash,
+            self._identity,
+            self._snapshot,
+            self.ply_count,
+            self._history_context if self.tt_eligible else None,
+        )
+
+    @property
+    def tt_eligible(self) -> bool:
+        """Whether exact history evidence permits continuous-check TT use."""
+        return bool(
+            self._history_complete
+            and self.history_witness_misses == 0
+            and not self._opaque_imported_keys
+            and self._history_context is not None
+        )
 
     def attach_stats(self, stats):
         self.stats = stats
@@ -600,6 +717,10 @@ class SearchPathRuntime:
         self.stats.runtime_history_witness_hits = self.history_witness_hits
         self.stats.runtime_history_witness_misses = self.history_witness_misses
         self.stats.runtime_opaque_history_child_external_key_computations = self.opaque_history_child_external_key_computations
+        if hasattr(self.stats, "runtime_history_context_updates"):
+            self.stats.runtime_history_context_updates = self._history_context_updates
+            self.stats.runtime_history_context_exact_comparisons = self._history_context_exact_comparisons
+            self.stats.runtime_tt_eligible = int(self.tt_eligible)
         self.stats.runtime_root_imports = 1
         self.stats.runtime_peak_depth = self.peak_depth
         self.stats.runtime_depth_balanced = not self._frames and self.pushes == self.pops
@@ -803,6 +924,7 @@ class SearchPathRuntime:
             self._legal_cache = before_cache
             self._bindings = before_bindings
             if rollback_frame is not None:
+                self._history_context = rollback_frame.history_context
                 self._restore_bridge(rollback_frame)
             self._sync_stats()
             raise
@@ -820,6 +942,7 @@ class SearchPathRuntime:
                 self._snapshot,
                 self._legal_cache,
                 self._bindings,
+                history_context=self._history_context,
             )
         )
         parent = self.position
@@ -862,6 +985,14 @@ class SearchPathRuntime:
                 child_external_key,
             )
         )
+        self._history_context = RuntimeHistoryContext.append(
+            self._history_context,
+            child_identity,
+            child_hash,
+            parent.side_to_move,
+            gave_check,
+        )
+        self._history_context_updates += 1
         self.runtime_hash = child_hash
         self._legal_cache = None
         self._bindings = {}
@@ -886,6 +1017,7 @@ class SearchPathRuntime:
         self._snapshot = frame.snapshot
         self._legal_cache = frame.cache
         self._bindings = frame.bindings
+        self._history_context = frame.history_context
         self._restore_bridge(frame)
         self.pops += 1
         self._sync_stats()
@@ -907,6 +1039,7 @@ class SearchPathRuntime:
 __all__ = [
     "RuntimeHistoryRecord",
     "RuntimePositionIdentity",
+    "RuntimeHistoryContext",
     "RuntimeSearchState",
     "RuntimeCountsSnapshot",
     "RuntimeSearchKey",

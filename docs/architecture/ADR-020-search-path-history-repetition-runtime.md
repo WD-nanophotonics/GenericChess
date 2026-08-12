@@ -94,3 +94,8 @@ behavior.
   defeat the O(changed-components) requirement.
 * Making `GameState` mutable would violate Session/replay/UI ownership.
 * Enabling Standard-Shogi TT or changing TT semantics is deferred to F3.
+
+F3 extends this runtime contract through the private exact
+`RuntimeHistoryContext` documented in ADR-021.  Only complete exact history is
+eligible for the new continuous-check TT path; opaque/incomplete history
+continues to skip TT conservatively.

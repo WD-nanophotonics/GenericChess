@@ -12,6 +12,9 @@ class SearchStatistics:
     tt_probes: int = 0
     tt_hits: int = 0
     tt_cutoffs: int = 0
+    tt_stores: int = 0
+    tt_eligible_nodes: int = 0
+    tt_skipped_ineligible_nodes: int = 0
     beta_cutoffs: int = 0
     completed_depth: int = 0
     selective_depth: int = 0
@@ -87,6 +90,9 @@ class SearchStatistics:
     runtime_history_witness_hits: int = 0
     runtime_history_witness_misses: int = 0
     runtime_opaque_history_child_external_key_computations: int = 0
+    runtime_history_context_updates: int = 0
+    runtime_history_context_exact_comparisons: int = 0
+    runtime_tt_eligible: int = 0
     runtime_history_tuple_copies: int = 0
     runtime_repetition_tuple_copies: int = 0
     runtime_root_imports: int = 0

@@ -199,24 +199,34 @@ def negamax(
             ctx.stats.mate_pruning_cutoffs += 1
             return SearchResult(alpha, None, ())
 
-    tt_compatible = (
-        ctx.use_tt
-        and getattr(ctx.compiled, "repetition_policy", "draw") != "continuous_check_loss"
+    continuous_check_policy = (
+        getattr(ctx.compiled, "repetition_policy", "draw")
+        == "continuous_check_loss"
     )
-    if ctx.runtime is not None:
-        ctx.stats.position_keys_computed += 1
-        key = ctx.runtime.search_key()
-    elif node_key is not None:
-        ctx.stats.position_key_cache_hits += 1
-        key = search_state_identity(
-            state,
-            ctx.compiled,
-            position_key_override=ExternalStableKey(node_key),
-        )
-    else:
-        ctx.stats.position_keys_computed += 1
-        with ctx.recorder.time_block(AuditMetric.TT_KEY):
-            key = _tt_key(state, ctx.compiled)
+    tt_compatible = bool(ctx.use_tt)
+    if continuous_check_policy:
+        tt_compatible = bool(ctx.use_tt and ctx.runtime is not None and ctx.runtime.tt_eligible)
+        if ctx.use_tt:
+            if tt_compatible:
+                ctx.stats.tt_eligible_nodes += 1
+            else:
+                ctx.stats.tt_skipped_ineligible_nodes += 1
+    key = None
+    if tt_compatible:
+        if ctx.runtime is not None:
+            ctx.stats.position_keys_computed += 1
+            key = ctx.runtime.search_key()
+        elif node_key is not None:
+            ctx.stats.position_key_cache_hits += 1
+            key = search_state_identity(
+                state,
+                ctx.compiled,
+                position_key_override=ExternalStableKey(node_key),
+            )
+        else:
+            ctx.stats.position_keys_computed += 1
+            with ctx.recorder.time_block(AuditMetric.TT_KEY):
+                key = _tt_key(state, ctx.compiled)
     entry = None
     if tt_compatible:
         ctx.stats.tt_probes += 1
@@ -387,6 +397,7 @@ def negamax(
             else:
                 bound = BoundType.EXACT
             ctx.tt.store(key, depth, score_to_tt(best, ply), bound, best_action)
+            ctx.stats.tt_stores += 1
     return SearchResult(best, best_action, best_pv)
 
 
