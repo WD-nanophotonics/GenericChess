@@ -146,7 +146,20 @@ class _Context:
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
-        self.budget.check(self.stats, force=True)
+        # Fixed-node searches are the non-interactive audit/product path.  In
+        # that mode Budget.check() would repeat the same max-node comparison
+        # and then return through its coarse polling branch on every semantic
+        # callback.  Keep interactive cancellation/deadline semantics on the
+        # original path; only elide that proven-redundant dispatch for the
+        # fixed-node case.
+        if self.budget._interactive:
+            self.budget.check(self.stats, force=True)
+            return
+        if (
+            self.budget._max_nodes is not None
+            and self.stats.nodes + self.stats.qnodes >= self.budget._max_nodes
+        ):
+            raise SearchAborted("node_limit")
 
 
 def terminal_score(result, side_to_move: int, ply: int) -> int:
