@@ -1,0 +1,528 @@
+{
+  "ALPHASHO_READ_ONLY": "PASS",
+  "B": {
+    "FORMAL_B_EVALUATOR_CONTROL": "PASS",
+    "FORMAL_B_PROTOCOL_VALID": "PASS",
+    "budgets": {
+      "HIGH": {
+        "budget": 512,
+        "chosen_move_agreement_count": 2,
+        "chosen_move_disagreement_count": 8,
+        "evaluator_pairing_complete": true,
+        "evaluator_records": 20,
+        "gates": {
+          "legal_failures_zero": true,
+          "node_budget_failures_zero": true,
+          "protocol_variable_isolation": true,
+          "sample_complete": true,
+          "semantic_divergence_zero": true
+        },
+        "legal_failures": 0,
+        "node_budget_failures": 0,
+        "positions": 10,
+        "protocol_same_search_and_budget": true,
+        "pv_first_move_agreement_count": 2,
+        "requested_positions": 12,
+        "row_checks": [
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000001-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000001-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000002-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000002-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000003-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000003-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000004-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000004-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000005-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000005-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000006-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000006-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000007-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000007-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000008-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000008-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000009-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000009-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000010-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000010-ply12",
+            "semantic_divergence": false
+          }
+        ],
+        "sample_complete": true,
+        "source_files": {
+          "results": "585abb4f83f2989d9f256ceb87736ab7343de0615083607aacbb5c50278df49f",
+          "summary": "1d04d900d187db9d5ad7551b650d8cab445769c1d3f37086df5a3889cc8c39d9"
+        },
+        "source_sha": "4d77249293f8b952589b0d9fe2d5c938b5b1e9a2"
+      },
+      "LOW": {
+        "budget": 256,
+        "chosen_move_agreement_count": 2,
+        "chosen_move_disagreement_count": 8,
+        "evaluator_pairing_complete": true,
+        "evaluator_records": 20,
+        "gates": {
+          "legal_failures_zero": true,
+          "node_budget_failures_zero": true,
+          "protocol_variable_isolation": true,
+          "sample_complete": true,
+          "semantic_divergence_zero": true
+        },
+        "legal_failures": 0,
+        "node_budget_failures": 0,
+        "positions": 10,
+        "protocol_same_search_and_budget": true,
+        "pv_first_move_agreement_count": 2,
+        "requested_positions": 16,
+        "row_checks": [
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000001-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000001-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000002-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000002-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000003-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000003-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000004-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000004-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000005-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000005-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000006-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000006-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000007-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000007-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000008-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000008-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000009-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000009-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000010-ply12",
+            "semantic_divergence": false
+          },
+          {
+            "action_resolves_uniquely": true,
+            "chosen_move_legal": true,
+            "legal_set_equal": true,
+            "node_budget_compliant": true,
+            "position_id": "iteration-000086-game-000010-ply12",
+            "semantic_divergence": false
+          }
+        ],
+        "sample_complete": true,
+        "source_files": {
+          "results": "5428dffe2de7a4f48417a39ea1e7561012c819fefe74d78d495eafffb78cac09",
+          "summary": "58e0edbedeb62ad29c6861a751e46fc0709dbf98b9e8b2bbfaac72cf8b4ed0a8"
+        },
+        "source_sha": "4d77249293f8b952589b0d9fe2d5c938b5b1e9a2"
+      }
+    },
+    "certified_ruleset_fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+    "expected_ruleset_fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+    "gates": {
+      "HIGH_fixed_position_sample_complete": true,
+      "HIGH_legal_failures": true,
+      "HIGH_node_budget_failures": true,
+      "LOW_fixed_position_sample_complete": true,
+      "LOW_legal_failures": true,
+      "LOW_node_budget_failures": true,
+      "certified_ruleset_fingerprint": true,
+      "legacy_check_penalty_frozen": true,
+      "protocol_variable_isolation": true,
+      "rollout_not_required": true,
+      "rollout_supplementary_aborted": true,
+      "ruleset_authority_recorded": true,
+      "semantic_divergence": true
+    },
+    "legacy_rollout": {
+      "preserved_byte_for_byte": true,
+      "required_for_formal_b": false,
+      "status": "ABORTED_FOR_RUNTIME",
+      "supplementary": true
+    },
+    "protocol": "Formal B fixed-position evaluator control only",
+    "protocol_isolation": {
+      "legacy_evaluator_check_penalty": 35,
+      "only_evaluator_differs": true,
+      "same_frozen_positions": true,
+      "same_ruleset": true,
+      "same_search": true,
+      "semantic_divergence": 0
+    },
+    "schema_version": 1,
+    "source_artifacts": {
+      "r1_3_abort": "5bbc0faa1df2675f8a2457c8d6205144b417388dcdc6b756623331f3711ab3b0",
+      "r1_3_protocol": "368e514a3e9bb9451aef5cfe9702c6682a63d199d0a1b979f5074bddbfbf7ed4"
+    },
+    "source_sha": "4d77249293f8b952589b0d9fe2d5c938b5b1e9a2"
+  },
+  "C_paired": {
+    "full_baseline/0p50s/paired_results.json": {
+      "games": 20,
+      "paired_eligible": 10,
+      "paired_openings": 10,
+      "paired_score": 0.0
+    },
+    "full_baseline/1p00s/paired_results.json": {
+      "games": 12,
+      "paired_eligible": 6,
+      "paired_openings": 6,
+      "paired_score": 0.0
+    }
+  },
+  "C_summaries": {
+    "full_baseline/0p50s/summary.json": {
+      "average_plies": 40.5,
+      "budget": 0.5,
+      "budget_kind": "seconds",
+      "by_color": {
+        "black": {
+          "eligible": 10,
+          "games": 10,
+          "losses": 10,
+          "wins": 0
+        },
+        "white": {
+          "eligible": 10,
+          "games": 10,
+          "losses": 10,
+          "wins": 0
+        }
+      },
+      "candidate_score": 0.0,
+      "candidate_wins": 0,
+      "correctness_failures": 0,
+      "eligible_games": 20,
+      "experiment": "C",
+      "games": 20,
+      "median_plies": 40.5,
+      "opponent_wins": 20,
+      "protocol_excluded_nyugyoku": 0,
+      "rule_draws": 0,
+      "schema_version": 2,
+      "semantic_usi_ambiguity": 0,
+      "timing_control": "wall_clock_per_move",
+      "timing_invalid_games": 0,
+      "timing_tolerance": "max(0.050s, 5% of budget)",
+      "unresolved": 0
+    },
+    "full_baseline/1p00s/summary.json": {
+      "average_plies": 47.5,
+      "budget": 1.0,
+      "budget_kind": "seconds",
+      "by_color": {
+        "black": {
+          "eligible": 6,
+          "games": 6,
+          "losses": 6,
+          "wins": 0
+        },
+        "white": {
+          "eligible": 6,
+          "games": 6,
+          "losses": 6,
+          "wins": 0
+        }
+      },
+      "candidate_score": 0.0,
+      "candidate_wins": 0,
+      "correctness_failures": 0,
+      "eligible_games": 12,
+      "experiment": "C",
+      "games": 12,
+      "median_plies": 44.5,
+      "opponent_wins": 12,
+      "protocol_excluded_nyugyoku": 0,
+      "rule_draws": 0,
+      "schema_version": 2,
+      "semantic_usi_ambiguity": 0,
+      "timing_control": "wall_clock_per_move",
+      "timing_invalid_games": 0,
+      "timing_tolerance": "max(0.050s, 5% of budget)",
+      "unresolved": 0
+    }
+  },
+  "FORMAL_B_EVALUATOR_CONTROL": "PASS",
+  "FORMAL_B_PROTOCOL_VALID": "PASS",
+  "OLD_EVIDENCE_IMMUTABLE": "PASS",
+  "ROUND5_CORRECTIVE_R1_4": "PASS",
+  "ROUND5_FORMAL_CLOSURE": "PASS",
+  "gates": {
+    "ALPHASHO_READ_ONLY": true,
+    "FORMAL_B_PROTOCOL_VALID": true,
+    "OLD_EVIDENCE_IMMUTABLE": true,
+    "full_baseline/0p50s/paired_results.json:paired": true,
+    "full_baseline/0p50s/summary.json:correctness": true,
+    "full_baseline/0p50s/summary.json:timing": true,
+    "full_baseline/1p00s/paired_results.json:paired": true,
+    "full_baseline/1p00s/summary.json:correctness": true,
+    "full_baseline/1p00s/summary.json:timing": true
+  },
+  "master_sha": "64265362edfc8139b79cdbd060b6a9fc9316bc51",
+  "round6_started": false,
+  "source_sha": "4d77249293f8b952589b0d9fe2d5c938b5b1e9a2"
+}

@@ -1,0 +1,10 @@
+{
+  "alphasho": "current mature heuristic evaluator + current mature heuristic ABP",
+  "controller": "GenericChess current production Python AlphaBeta",
+  "max_plies": 128,
+  "timing_budgets": {
+    "HIGH": 1.0,
+    "LOW": 0.5
+  },
+  "worker_startup_excluded": true
+}
