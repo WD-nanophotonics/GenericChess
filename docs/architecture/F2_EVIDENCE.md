@@ -1,21 +1,37 @@
-# GenericChess Runtime Foundation F2 Corrective R1 evidence
+# GenericChess Runtime Foundation F2 Corrective R2 evidence
 
-Status: COMPLETE — implementation, validation, fresh native build, and
-sandbox push verified on 2026-08-12.
+Status: IN PROGRESS — Corrective R2 implementation and focused validation are
+being completed on 2026-08-12.
 
 ## Scope and baseline
 
 The candidate is based on the required sandbox starting point:
 
 ```text
-origin/sandbox baseline: 90f7c9ad8e2c19af5750b989d4932b8d0f0d93a3
+origin/sandbox baseline: fbe72a37eebd2b1c159377015adb176e04089deb
 origin/master (preserved): 4f1d03a308f5fd04a01bbd980c7411888ea1ed9d
 origin/chat (preserved): d6b0d5720efe23019a7a2b4cce72e05beee2e6c4
 ```
 
 Only the sandbox worktree is in scope.  AlphaSho was not accessed.
 
-## Corrective contracts demonstrated
+## Corrective R2 contracts
+
+The R2 blocker is the inability of a SHA-only imported non-root history
+record to compare equal to a future exact runtime position.  The bridge uses
+private Session/replay witnesses when available and a conditional,
+instrumented external-key fallback for opaque custom-root histories.  A
+resolved key is aliased into runtime history so ordinary repetition and
+continuous-check evidence include the pre-root occurrence.  The bridge state
+is restored on sibling pop and exception rollback.
+
+Focused regression coverage now includes a real legal pre-root cycle, forced
+runtime-hash collision, incomplete-history fallback, Session witness import,
+unreplayable custom history fallback, and sibling restoration.  Full R2
+performance, differential, and native-build receipts are recorded below only
+after they have been rerun from this baseline.
+
+## Corrective R1 contracts retained
 
 * Legacy children use a 128-bit runtime hash updated from only changed
   components; child external-key computations are zero.
@@ -35,39 +51,64 @@ Only the sandbox worktree is in scope.  AlphaSho was not accessed.
 ## Focused validation
 
 ```text
-python -m pytest tests/test_search_path_runtime.py tests/test_repetition.py tests/test_ai_search.py -q
+python -m pytest -q -p no:cacheprovider tests/test_search_path_runtime.py tests/test_identity_contract.py tests/test_repetition.py tests/test_lazy_successors.py tests/test_native_history.py tests/test_session.py
 ```
 
-Result during implementation: PASS, 38 tests.
+Result: PASS, 63 tests.
+
+The full project command also passed under the test-required sandbox write
+permission:
+
+```text
+python -m pytest -q -p no:cacheprovider
+862 passed
+```
+
+## Blocking finding E reproduction
+
+The reproduction uses the legal deterministic cycle from
+`tests/test_native_history.py`, with a root at ply 3 and a non-root historical
+position already present in `repetition_counts`.  Loading the exact
+`fbe72a37` implementation in memory, without changing the worktree, produced:
+
+```text
+pre_root_key_in_counts=True
+same_position_reached=True
+baseline_runtime_count=1
+immutable_oracle_count=2
+corrected_runtime_count=2
+```
+
+The corrected focused regression is
+`test_pre_root_non_root_repetition_merges_with_runtime_identity`; it also
+covers forced runtime-hash collision and push/pop restoration.
 
 ## Performance harness
 
 Five warmed repetitions were run with fixed depth, `use_tt=False`,
 `use_ordering=False`, and `use_root_tactical=False`.
 
-| Case | Required baseline median | Corrective R1 median | Nodes | Child external keys |
+| Case | Warmed median | Nodes | Child external keys | Root/import bridge |
 |---|---:|---:|---:|---:|
-| Legacy 4x4 rooks, depth 3 | 37.690 ms | 39.163 ms | 137 / 137 | 134 / 0 |
-| Semantic nifu fixture, depth 2 | 21.264 ms* | 19.571 ms | 17 / 17 | 15 / 0 |
+| Legacy 4x4 rooks, depth 3 | 44.91 ms | 137 | 0 | 1 reconstruction key |
+| Semantic nifu fixture, depth 2 | 22.61 ms | 17 | 0 | 1 reconstruction key |
+| Cycle session with exact witnesses, depth 1 | 1.18 ms | 2 | 0 | 4 witness hits |
+| Cycle custom opaque history, depth 1 | 1.48 ms | 2 | conditional; 2 on two pushes | witness miss + key fallback |
 
-Both candidate cases reported zero history/repetition tuple copies and
-balanced push/pop.  Candidate legacy reported 134 incremental updates; the
-semantic case reported 15 full component-diff fallbacks.  The baseline
-semantic row uses a harness-only terminal metadata compatibility shim because
-the required baseline's `CompiledSemanticRuleset` exposes limits under
-`support`; the shim does not alter transition, identity, or search-path code.
+All fresh-root cases reported zero ordinary child external-key work, zero
+history/repetition tuple copies, and balanced push/pop.  Legacy reported 134
+incremental updates; semantic reported 15 component-diff fallbacks.  The
+history-bearing rows report bridge work honestly and do not count it as fresh
+root child work.
 
-## Final receipt
+## Native validation
 
-* Full pytest: PASS, 862 collected and executed with
-  `python -m pytest -q -p no:cacheprovider`.
-* Fresh Zig build: PASS, `generic_chess/_native_core.cp312-win_amd64.pyd`,
-  333312 bytes.  The repository-local Zig candidate was absent, so the
-  already-installed Zig 0.16 executable from the sibling development
-  environment was used; all output was written to this sandbox worktree.
-* Commit and push: `50e4ba629c70a8f8063294e34e42916b26f67525` pushed to
-  `origin/sandbox`.
-* Final worktree: clean.
-* Protected refs after push: `origin/master` remains
-  `4f1d03a308f5fd04a01bbd980c7411888ea1ed9d`; `origin/chat` remains
-  `d6b0d5720efe23019a7a2b4cce72e05beee2e6c4`.
+```text
+Zig 0.16 via the sibling GenericChess .venv
+python scripts/build_native_zig.py
+PASS; _native_core_r2.cp312-win_amd64.pyd; 333312 bytes
+```
+
+The cache and temporary output were placed outside the sandbox worktree
+because its pre-existing cache directory is access-denied; no tracked master
+or chat file was changed.

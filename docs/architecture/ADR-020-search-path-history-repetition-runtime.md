@@ -1,6 +1,6 @@
 # ADR-020: Core-owned search-path history and repetition runtime
 
-Status: ACCEPTED for F2 Corrective R1
+Status: ACCEPTED for F2 Corrective R2
 
 ## Context
 
@@ -41,6 +41,37 @@ Negamax, PVS re-search, aspiration, ordinary and in-check qsearch, root
 tactical scans, lazy/eager paths, and cancellation use that same boundary.
 Continuous-check adjudication reads runtime history evidence and remains
 disabled when a legacy root has no complete imported history.
+
+## F2 Corrective R2: pre-root/non-root identity bridge
+
+`HistoryRecord.position_key` is intentionally SHA-only.  A SHA key for an
+imported pre-root position cannot, by itself, prove equality with a future
+`RuntimePositionIdentity`, whose exact `Position` includes the ruleset
+fingerprint, side, board, hands, and semantic auxiliary state.
+
+The live `GameSession`/replay path therefore keeps a private, nonserialized
+tuple of the exact positions already produced by Core transitions.  The
+AlphaBeta call boundary passes that tuple to `SearchPathRuntime`; it does not
+change `GameState`, `HistoryRecord`, or any persisted record.  Direct runtime
+construction first attempts authoritative replay from the compiled initial
+state, which covers complete ordinary histories.  For a valid custom-root or
+otherwise opaque history where no exact witness is available, the runtime
+keeps the imported identity opaque and computes the external stable key only
+when a child must resolve one of those specific keys.
+
+The conditional fallback is correctness-first: a matching child key merges the
+opaque occurrence into the exact runtime identity and aliases the corresponding
+history records for continuous-check adjudication.  The alias set, opaque-key
+set, occurrence table, and snapshot are saved in the search frame and restored
+on both `pop` and exception rollback.  Distinct runtime positions continue to
+use exact position equality inside their runtime-hash bucket, including under
+forced runtime-hash collisions.
+
+Instrumentation distinguishes one-time reconstruction work, exact witness
+hits/misses, and opaque-history child external-key computations.  Fresh roots
+with no unresolved imported keys retain zero ordinary child external-key
+computations; the conditional fallback is active only on history-bearing
+roots that lack exact witnesses.
 
 ## Consequences
 

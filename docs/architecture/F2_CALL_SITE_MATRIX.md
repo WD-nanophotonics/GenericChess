@@ -1,4 +1,4 @@
-# F2 Corrective R1 search-path call-site matrix
+# F2 Corrective R2 search-path call-site matrix
 
 The immutable `GameState`/`legal_successors` path remains the public and
 reference oracle.  F2 Corrective R1 changes only the private Core-owned
@@ -9,6 +9,7 @@ reference oracle.  F2 Corrective R1 changes only the private Core-owned
 | Boundary | Contract |
 |---|---|
 | Session, replay, serialization, UI, diagnostics | Immutable `GameState`, public SHA-256 position identity, and full public history remain unchanged. |
+| Live Session/replay to AlphaBeta | A private exact position-witness tuple crosses the call boundary; it is not serialized or added to public state. |
 | `reference_minimax` | Continues to use immutable transitions; it is not routed through the mutable runtime. |
 | AlphaBeta candidate search | Imports one runtime at the root and uses `runtime.pushed(action)` for every child. |
 | Runtime identity | Current exact in-memory `Position` plus process-local 128-bit `RuntimeHash`; no child external SHA. |
@@ -41,11 +42,14 @@ reference oracle.  F2 Corrective R1 changes only the private Core-owned
 | Concern | Corrective R1 rule |
 |---|---|
 | Imported history | Positive counts must equal the exact set and multiplicities derived from history; last history identity must be the imported root. |
+| Pre-root non-root identity | Exact witnesses are used when available; otherwise only an unresolved imported key that a child externally matches is bridged. |
+| Bridge rollback | Opaque-key aliases, occurrence buckets, snapshots, and history evidence restore on pop and exception. |
 | Unknown/ghost key | Fail closed; never silently add it to runtime occurrences. |
 | Runtime occurrence table | `RuntimeHash -> [exact identity, count]` buckets. |
 | Repetition snapshot | Parent-pointer update with order-independent digest; exact map equality on digest collision. |
 | Continuous check | Uses runtime actor/gave-check history evidence and exact identity occurrences; incomplete legacy history is not adjudicated as perpetual check. |
 | Public SHA boundary | Still used for public state, imported records, and immutable APIs; never replaced by runtime hash. |
+| Conditional fallback counters | Reconstruction, witness hit/miss, and opaque-history child-key work are reported separately from fresh-root child work. |
 
 ## Explicit exclusions
 
