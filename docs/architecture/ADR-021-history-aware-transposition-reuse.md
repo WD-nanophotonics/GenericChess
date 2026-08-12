@@ -62,3 +62,19 @@ TT-on/off parity, and continuous-check parity.  The certified semantic Shogi
 initial Session path produces nonzero safe TT hits at fixed depth.  Opaque
 custom-root paths remain intentionally non-TT-eligible until exact evidence is
 available.
+
+## Corrective R1 Closure
+
+The closure corpus exercises the actual persistent `AlphaBetaPlayer` /
+`GameSession` path across two successive moves, bounded generic draw and
+`continuous_check_loss` prefixes, reachable nonempty Semantic Standard Shogi
+prefixes, ordinary repetition, and an opaque custom root. TT-on/off results
+are compared at fixed depths with legal PV and runtime-balance checks.
+
+The runtime-cost audit distinguishes four layers: history-context append is
+one parent-pointer/digest update per child; snapshot fast-discriminator update
+uses the existing `RuntimeHash` plus count; effective `RuntimeSearchKey`
+construction is measured separately; TT probe/store timing remains a search
+table concern. The snapshot keeps exact identity/count entries for equality,
+so the RuntimeHash discriminator is not authoritative and forced collisions
+remain safe. The public SHA/fingerprint boundary is unchanged.

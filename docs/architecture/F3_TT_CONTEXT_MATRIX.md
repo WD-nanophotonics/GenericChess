@@ -23,3 +23,14 @@
 TT probes and stores are performed only at the `negamax` boundary.  Qsearch is
 not newly TT-enabled.  Generation, replacement, bound, and mate normalization
 are unchanged.
+
+## Corrective R1 Closure
+
+`RuntimeHistoryContext.append()` remains persistent parent-pointer work. The
+repetition snapshot discriminator now consumes the already-maintained
+`RuntimeHash` and occurrence count on child updates, avoiding full
+`repr(Position)` formatting on that hot path. Exact identity/count map
+materialization and equality remain the collision guard. Effective
+`runtime.search_key()` construction and TT probe/store work are measured and
+reported independently; no blanket O(1) claim is made for the complete search
+path.
