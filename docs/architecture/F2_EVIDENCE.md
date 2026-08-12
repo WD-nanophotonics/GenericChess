@@ -1,51 +1,63 @@
-# GenericChess Runtime Foundation F2 evidence
+# GenericChess Runtime Foundation F2 Corrective R1 evidence
 
-Status: COMPLETE — implementation, validation, and sandbox push verified on 2026-08-12.
+Status: IN PROGRESS until the final full-test, fresh-build, and sandbox-push
+gates are recorded below.
 
-## Scope
+## Scope and baseline
 
-F2 adds only the Core-owned search-path runtime and AlphaBeta integration on
-the exact promoted F1 baseline `4f1d03a308f5fd04a01bbd980c7411888ea1ed9d`.
-It does not modify AlphaSho, the chat worktree, Standard-Shogi TT policy, or
-F3 work.
+The candidate is based on the required sandbox starting point:
 
-## Contracts demonstrated
+```text
+origin/sandbox baseline: 90f7c9ad8e2c19af5750b989d4932b8d0f0d93a3
+origin/master (preserved): 4f1d03a308f5fd04a01bbd980c7411888ea1ed9d
+origin/chat (preserved): d6b0d5720efe23019a7a2b4cce72e05beee2e6c4
+```
 
-- Public immutable `GameState` and `reference_minimax` remain unchanged.
-- Root import validates the compiled ruleset fingerprint and complete
-  imported history; continuous-check paths without history fail closed.
-- Runtime `push`/`pop` is exception-safe and balanced under normal search and
-  cancellation.
-- Occurrence counts and linked repetition snapshots update without copying a
-  full public repetition tuple per child.
-- Runtime hash is 128-bit, incrementally updated from identity-component
-  deltas, and guarded by exact external SHA keys.  The forced-collision test
-  exercises the fallback counter.
-- Negamax, PVS re-search, aspiration, qsearch (ordinary and in-check), root
-  tactical scan, lazy/eager controls, and cancellation use the runtime.
-- Standard-Shogi TT remains disabled for continuous-check paths.
+Only the sandbox worktree is in scope.  AlphaSho was not accessed.
+
+## Corrective contracts demonstrated
+
+* Legacy children use a 128-bit runtime hash updated from only changed
+  components; child external-key computations are zero.
+* Semantic children use stable-address component-map delta fallback, including
+  auxiliary add/remove coverage; child external-key computations are zero.
+* RuntimeHash buckets retain exact in-memory positions, so forced collisions
+  cannot merge distinct occurrences.
+* Imported history rejects nonpositive counts, ghost keys, mismatched
+  multiplicities, and a history whose final key is not the imported root.
+* Repetition snapshots are order independent and verify exact maps after a
+  digest collision.
+* Capture, promotion, and drop transitions match the full hash oracle.
+* A terminal/transition exception restores the complete parent runtime.
+* Public immutable state, reference transitions, public SHA identity, and TT
+  policy boundaries are unchanged.
 
 ## Focused validation
 
 ```text
-.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider tests\test_search_path_runtime.py tests\test_lazy_successors.py tests\test_search_upgrades.py tests\test_qsearch_correctness.py
+python -m pytest tests/test_search_path_runtime.py tests/test_repetition.py tests/test_ai_search.py -q
 ```
 
-Focused result: PASS (44 tests).
+Result during implementation: PASS, 38 tests.
 
-Full validation:
+## Performance harness
 
-- True full pytest: PASS, 850 tests.
-- Fresh Zig native build: PASS, all 17 configured C sources, 333312-byte
-  `generic_chess/_native_core.cp313-win_amd64.pyd`.
-- Runtime/native/identity/history focused subset: PASS, 32 tests.
-- Temporary build cache was removed; logs and process output are not formal
-  evidence artifacts.
+Five warmed repetitions were run with fixed depth, `use_tt=False`,
+`use_ordering=False`, and `use_root_tactical=False`.
 
-## Remote closure
+| Case | Required baseline median | Corrective R1 median | Nodes | Child external keys |
+|---|---:|---:|---:|---:|
+| Legacy 4x4 rooks, depth 3 | 37.690 ms | 39.163 ms | 137 / 137 | 134 / 0 |
+| Semantic nifu fixture, depth 2 | 21.264 ms* | 19.571 ms | 17 / 17 | 15 / 0 |
 
-- F1 exact baseline promoted to `origin/master`: `4f1d03a308f5fd04a01bbd980c7411888ea1ed9d`.
-- F2 implementation is pushed only to `origin/sandbox` at commit
-  `e69bbf56c7002270ea8dba1b74cea1c1f45bae28`.
-- `origin/chat` remains `d6b0d5720efe23019a7a2b4cce72e05beee2e6c4` and AlphaSho
-  was not accessed or modified.
+Both candidate cases reported zero history/repetition tuple copies and
+balanced push/pop.  Candidate legacy reported 134 incremental updates; the
+semantic case reported 15 full component-diff fallbacks.  The baseline
+semantic row uses a harness-only terminal metadata compatibility shim because
+the required baseline's `CompiledSemanticRuleset` exposes limits under
+`support`; the shim does not alter transition, identity, or search-path code.
+
+## Pending final receipt fields
+
+The final commit SHA, push result, fresh Zig build artifact, full pytest count,
+and final clean-worktree check are appended when those gates complete.

@@ -157,9 +157,11 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
         perpetual = _runtime_perpetual_check_result(runtime)
         if perpetual is not None:
             return perpetual
-    if any(count >= compiled.repetition_limit for count in runtime.repetition_counts.values()):
+    limit = getattr(compiled, "repetition_limit", compiled.support.repetition_limit if hasattr(compiled, "support") else 4)
+    if runtime.occurrence_count() >= limit:
         return TerminalResult(TerminalStatus.REPETITION)
-    if runtime.ply_count >= compiled.max_ply:
+    max_ply = getattr(compiled, "max_ply", compiled.support.max_ply if hasattr(compiled, "support") else 512)
+    if runtime.ply_count >= max_ply:
         return TerminalResult(TerminalStatus.MAX_PLY)
     return TerminalResult(TerminalStatus.ONGOING)
 
@@ -168,14 +170,12 @@ def _runtime_perpetual_check_result(runtime):
     """The continuous-check rule over mutable runtime history evidence."""
     if not runtime.history or not getattr(runtime, "_history_complete", True):
         return None
-    current_key = runtime.history[-1].position_key
-    limit = max(1, int(runtime.compiled.repetition_limit))
-    if runtime.repetition_counts.get(current_key, 0) < limit:
+    current_identity = runtime.current_identity
+    configured_limit = getattr(runtime.compiled, "repetition_limit", runtime.compiled.support.repetition_limit if hasattr(runtime.compiled, "support") else 4)
+    limit = max(1, int(configured_limit))
+    if runtime.occurrence_count(current_identity, runtime.runtime_hash) < limit:
         return None
-    occurrences = [
-        index for index, record in enumerate(runtime.history)
-        if record.position_key == current_key
-    ]
+    occurrences = runtime.history_occurrences(current_identity)
     if len(occurrences) < limit:
         return None
     cycle = runtime.history[occurrences[-limit] + 1 : occurrences[-1] + 1]

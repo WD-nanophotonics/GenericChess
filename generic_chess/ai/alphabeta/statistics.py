@@ -69,7 +69,15 @@ class SearchStatistics:
     runtime_pushes: int = 0
     runtime_pops: int = 0
     runtime_hash_updates: int = 0
+    # ``runtime_exact_key_computations`` counts root/import boundary SHA work;
+    # child external-key work is tracked separately and must remain zero in
+    # normal runtime searches.
     runtime_exact_key_computations: int = 0
+    runtime_child_external_key_computations: int = 0
+    runtime_exact_position_comparisons: int = 0
+    runtime_legacy_incremental_updates: int = 0
+    runtime_semantic_full_diff_fallbacks: int = 0
+    runtime_snapshot_exact_comparisons: int = 0
     runtime_collision_checks: int = 0
     runtime_collision_fallbacks: int = 0
     runtime_history_tuple_copies: int = 0
