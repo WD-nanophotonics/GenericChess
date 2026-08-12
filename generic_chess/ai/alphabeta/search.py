@@ -953,5 +953,8 @@ def run_root_search(
     if fallback is None:
         fallback = sorted(actions, key=str)[0]
     stats.root_scan_used_fallback = True
-    stats.termination_reason = "fallback"
+    # Preserve an abort observed before the first complete iteration.  The
+    # legal fallback remains the same, but callers must be able to distinguish
+    # a time/node/cancellation stop from a search that naturally had no result.
+    stats.termination_reason = abort_reason or "fallback"
     return fallback, 0, (), stats.termination_reason
