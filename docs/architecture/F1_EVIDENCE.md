@@ -20,11 +20,9 @@ verified on 2026-08-12.
 - `6277ddc` — canonical identity authority and focused contract tests.
 - `2d66fa1` — Core, Session, UI, AI, diagnostics, learning, and Native
   differential consumer migration.
-- Final documentation/evidence commits: `fa2c29a` and final metadata commit
-  `4fadbe1`.
-- Final sandbox SHA: `4fadbe12c3ea3f338617ae77479a709f9520c6bb`.
 - Final `origin/master`: `0b6196bdee02e4925823d3f2078008b9a6dbc93c`.
-- Final `origin/sandbox`: `4fadbe12c3ea3f338617ae77479a709f9520c6bb`.
+- Final sandbox SHA is intentionally verified from the closing remote ref
+  rather than duplicated self-referentially in this file.
 - `origin/chat` remained `d6b0d5720efe23019a7a2b4cce72e05beee2e6c4` and was
   not used as a product source.
 
