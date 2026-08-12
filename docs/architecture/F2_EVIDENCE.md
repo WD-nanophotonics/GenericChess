@@ -45,6 +45,7 @@ Full validation:
 ## Remote closure
 
 - F1 exact baseline promoted to `origin/master`: `4f1d03a308f5fd04a01bbd980c7411888ea1ed9d`.
-- F2 implementation is pushed only to `origin/sandbox` after commit.
+- F2 implementation is pushed only to `origin/sandbox` at commit
+  `e69bbf56c7002270ea8dba1b74cea1c1f45bae28`.
 - `origin/chat` remains `d6b0d5720efe23019a7a2b4cce72e05beee2e6c4` and AlphaSho
   was not accessed or modified.
