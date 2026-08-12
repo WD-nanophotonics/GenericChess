@@ -33,11 +33,18 @@ class GameSession:
     values remain immutable.
     """
 
-    __slots__ = ("_compiled", "_state", "_history", "_resigned_by")
+    __slots__ = (
+        "_compiled",
+        "_state",
+        "_history",
+        "_resigned_by",
+        "_search_history_witnesses",
+    )
 
     def __init__(self, compiled: "CompiledRuleSet") -> None:
         self._compiled = compiled
         self._state: GameState = initial_state(compiled)
+        self._search_history_witnesses = (self._state.position,)
         self._history: tuple[ActionRecord, ...] = ()
         self._resigned_by: int | None = None
 
@@ -83,7 +90,15 @@ class GameSession:
         # Commit only after every Core call succeeded.
         self._state = new_state
         self._history = self._history + (record,)
+        self._search_history_witnesses = self._search_history_witnesses + (
+            new_state.position,
+        )
         return new_state
+
+    @property
+    def _search_witnesses(self):
+        """Private exact positions for the Core-owned search runtime."""
+        return self._search_history_witnesses
 
     def resign(self) -> SessionResult:
         if self._resigned_by is not None:

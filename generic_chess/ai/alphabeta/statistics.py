@@ -80,6 +80,13 @@ class SearchStatistics:
     runtime_snapshot_exact_comparisons: int = 0
     runtime_collision_checks: int = 0
     runtime_collision_fallbacks: int = 0
+    # History identity bridge instrumentation. Reconstruction is one-time
+    # root/import work; opaque-history child keys are conditional fallback work.
+    runtime_history_reconstruction_attempts: int = 0
+    runtime_history_reconstruction_key_computations: int = 0
+    runtime_history_witness_hits: int = 0
+    runtime_history_witness_misses: int = 0
+    runtime_opaque_history_child_external_key_computations: int = 0
     runtime_history_tuple_copies: int = 0
     runtime_repetition_tuple_copies: int = 0
     runtime_root_imports: int = 0

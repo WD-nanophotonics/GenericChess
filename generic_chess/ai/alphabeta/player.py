@@ -92,6 +92,7 @@ class AlphaBetaPlayer:
             use_tt=self._use_tt,
             use_ordering=self._use_ordering,
             tuning=self._tuning,
+            _history_witnesses=session._search_witnesses,
             recorder=recorder,
             progress_callback=progress_callback,
         )

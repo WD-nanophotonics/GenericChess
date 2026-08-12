@@ -792,12 +792,17 @@ def run_root_search(
     use_tt: bool,
     use_ordering: bool,
     tuning: SearchTuning = SearchTuning(),
+    _history_witnesses=None,
     recorder: AuditRecorder | None = None,
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
     started = time.monotonic()
-    runtime = SearchPathRuntime.from_state(state, compiled)
+    runtime = SearchPathRuntime.from_state(
+        state,
+        compiled,
+        history_witnesses=_history_witnesses,
+    )
     terminal = runtime.terminal_status
     if terminal.is_terminal:
         stats.termination_reason = "terminal_position"

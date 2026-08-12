@@ -77,6 +77,116 @@ def test_runtime_push_pop_matches_immutable_successors():
     assert runtime.repetition_counts == dict(root.repetition_counts)
 
 
+def test_pre_root_non_root_repetition_merges_with_runtime_identity():
+    """A legal pre-root occurrence must count when the runtime reaches it."""
+    from test_native_history import _cycle_ruleset, _session_at_ply
+
+    compiled = _cycle_ruleset()
+    session = _session_at_ply(compiled, 3)
+    root = session.state
+    target_key = root.history[1].position_key
+    assert target_key in dict(root.repetition_counts)
+
+    runtime = SearchPathRuntime.from_state(root, compiled)
+    first = session.legal_actions()[0]
+    expected_first = legal_successors(root, compiled)[0][1]
+    runtime.push(first)
+    second = runtime.legal_actions()[0]
+    expected_second = legal_successors(expected_first, compiled)[0][1]
+    runtime.push(second)
+
+    assert position_identity_key(expected_second.position, compiled) == target_key
+    assert dict(expected_second.repetition_counts)[target_key] == 2
+    assert runtime.occurrence_count() == 2
+    assert len(runtime.history_occurrences(runtime.current_identity)) == 2
+
+    runtime.pop()
+    runtime.pop()
+    assert runtime.occurrence_count() == 1
+    assert runtime.history_occurrences(runtime.current_identity) == [3]
+    runtime.assert_balanced()
+
+
+def test_pre_root_bridge_preserves_exactness_under_forced_runtime_hash_collision():
+    from test_native_history import _cycle_ruleset, _session_at_ply
+
+    compiled = _cycle_ruleset()
+    root = _session_at_ply(compiled, 3).state
+    forced = RuntimeHash(0, 0)
+    runtime = SearchPathRuntime.from_state(root, compiled, hash_override=forced)
+
+    runtime.push(runtime.legal_actions()[0])
+    runtime.push(runtime.legal_actions()[0])
+
+    assert runtime.occurrence_count() == 2
+    assert len(runtime.history_occurrences(runtime.current_identity)) == 2
+    assert len(runtime.repetition_counts) == 4
+    runtime.pop()
+    runtime.pop()
+    runtime.assert_balanced()
+
+
+def test_incomplete_imported_history_uses_conditional_external_key_fallback():
+    from dataclasses import replace
+    from test_native_history import _cycle_ruleset, _session_at_ply
+
+    compiled = _cycle_ruleset()
+    root = _session_at_ply(compiled, 3).state
+    incomplete = replace(root, history=())
+    runtime = SearchPathRuntime.from_state(incomplete, compiled)
+
+    runtime.push(runtime.legal_actions()[0])
+    runtime.push(runtime.legal_actions()[0])
+
+    assert runtime.occurrence_count() == 2
+    assert runtime.opaque_history_child_external_key_computations == 2
+    assert not runtime._history_complete
+    runtime.pop()
+    runtime.pop()
+    assert runtime.occurrence_count() == 1
+    assert len(runtime._opaque_imported_keys) == 3
+    runtime.assert_balanced()
+
+
+def test_session_supplies_exact_private_history_witnesses():
+    from test_native_history import _cycle_ruleset, _session_at_ply
+
+    compiled = _cycle_ruleset()
+    session = _session_at_ply(compiled, 3)
+    runtime = SearchPathRuntime.from_state(
+        session.state,
+        compiled,
+        history_witnesses=session._search_witnesses,
+    )
+
+    assert runtime.history_witness_hits == len(session.state.history)
+    assert runtime.history_witness_misses == 0
+    assert not runtime._opaque_imported_keys
+    runtime.assert_balanced()
+
+
+def test_unreplayable_custom_history_falls_back_only_when_child_can_match():
+    from dataclasses import replace
+    from test_native_history import _cycle_ruleset, _session_at_ply
+
+    compiled = _cycle_ruleset()
+    root = _session_at_ply(compiled, 3).state
+    records = list(root.history)
+    records[1] = replace(records[1], action_signature="{not-replayable}")
+    opaque = replace(root, history=tuple(records))
+    runtime = SearchPathRuntime.from_state(opaque, compiled)
+    assert runtime.history_witness_misses > 0
+    assert runtime._history_complete
+
+    runtime.push(runtime.legal_actions()[0])
+    runtime.push(runtime.legal_actions()[0])
+    assert runtime.occurrence_count() == 2
+    runtime.pop()
+    runtime.pop()
+    assert runtime.occurrence_count() == 1
+    runtime.assert_balanced()
+
+
 def test_runtime_forced_hash_collision_uses_exact_guard():
     compiled = build_4x4_rooks()
     root = GameSession(compiled).state
