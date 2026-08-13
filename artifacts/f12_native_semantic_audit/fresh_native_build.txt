@@ -1,0 +1,5 @@
+COMMAND: .venv\Scripts\python.exe scripts/build_native_zig.py
+ZIG: .venv\Lib\site-packages\ziglang\zig.exe
+TARGET: x86_64-windows-gnu
+OUTPUT: artifacts/f12_native_semantic_audit/native_f12_core.pyd
+RESULT: PASS

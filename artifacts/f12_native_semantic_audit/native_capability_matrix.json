@@ -1,0 +1,13 @@
+{
+  "rows": [
+    ["semantic payload / C-owned rules capsule", "SUPPORTED_AND_DIFFERENTIAL_TESTED"],
+    ["semantic position identity, exact history and action packing", "SUPPORTED_AND_DIFFERENTIAL_TESTED"],
+    ["semantic candidate / guarded action runtime", "SUPPORTED_AND_DIFFERENTIAL_TESTED"],
+    ["semantic make_checked / terminal / probe / fixed-depth", "SUPPORTED_AND_DIFFERENTIAL_TESTED"],
+    ["internal semantic attacked_by / in_check", "IMPLEMENTED_BUT_NOT_CERTIFIED"],
+    ["public semantic attack/check entry point", "NOT_APPLICABLE"],
+    ["Standard Shogi executable payload", "FAIL_CLOSED_UNSUPPORTED"],
+    ["production semantic native search backend", "NOT_APPLICABLE"]
+  ],
+  "allowed_classifications": ["SUPPORTED_AND_DIFFERENTIAL_TESTED", "IMPLEMENTED_BUT_NOT_CERTIFIED", "LOWERED_BUT_NOT_EXECUTED", "FAIL_CLOSED_UNSUPPORTED", "NOT_APPLICABLE"]
+}

@@ -1,0 +1,5 @@
+{
+  "fixture": "castling semantic fixture; 64 squares; 15 candidates; 15 guarded actions",
+  "method": "perf_counter_ns; warmup 30; seven samples; median microseconds; audit-only",
+  "median_us": {"python_semantic_attack_query": 10.4743, "native_pack_position": 1091.45, "native_snapshot": 3.899, "native_position_key": 4.984, "native_action_pack": 0.8727, "native_candidate_actions": 6.041, "native_guarded_actions": 142.367, "native_make_checked": 9.188, "native_terminal": 19.226, "native_fixed_depth_1": 528.315}
+}

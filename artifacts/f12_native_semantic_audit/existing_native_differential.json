@@ -1,0 +1,8 @@
+{
+  "corpus_count": 10,
+  "corpus": ["cannon", "castling", "en_passant", "nifu", "uchifuzume", "weird_0", "weird_1", "weird_2", "weird_3", "weird_4"],
+  "all_native_executable": true,
+  "all_position_runtime_checks": "PASS",
+  "all_candidate_guarded_terminal_fixed_depth_smoke": "PASS",
+  "test_sources": ["tests/test_native_semantic_position.py", "tests/test_native_semantic_stress_differential.py", "tests/test_native_semantic_randomized_closure.py", "tests/test_native_semantic_probe_search.py"]
+}

@@ -1,0 +1,7 @@
+{
+  "A": {"owner": "Python Position", "crossing": "pack/copy per native operation", "history": "Python unless copied", "risk": "low", "ceiling": "low"},
+  "B": {"owner": "Python root + mirrored Native frame", "crossing": "one root pack then native children", "history": "native after exact replay", "risk": "medium", "ceiling": "medium"},
+  "C": {"owner": "Native search path + Python shadow", "crossing": "one root pack plus shadow/checkpoints", "history": "native exact history", "risk": "high", "ceiling": "high"},
+  "D": {"owner": "Native semantic production backend", "crossing": "production backend boundary", "history": "native complete authority", "risk": "very high; unavailable for Standard Shogi", "ceiling": "highest"},
+  "current_authority": "Python semantic Position and SemanticEngine"
+}

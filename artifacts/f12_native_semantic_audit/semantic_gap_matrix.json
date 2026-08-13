@@ -1,0 +1,9 @@
+{
+  "ruleset_fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+  "gaps": [
+    ["action_delivers_check postcondition lowering", "FAIL_CLOSED_UNSUPPORTED", "blocks Standard Shogi native executable capsule"],
+    ["public semantic is_square_attacked / in_check API", "IMPLEMENTED_BUT_NOT_CERTIFIED", "internal check logic only reachable through terminal/make paths"],
+    ["dynamic Standard Shogi evaluator and production search integration", "NOT_APPLICABLE", "fixed-depth semantic probe cannot be promoted"],
+    ["legacy native attack equivalence for Standard Shogi", "FAIL_CLOSED_UNSUPPORTED", "legacy compiler rejects before comparison"]
+  ]
+}
