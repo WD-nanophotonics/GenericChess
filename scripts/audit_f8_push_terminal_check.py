@@ -9,6 +9,7 @@ already-computed boolean from the same exact child Position.
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
 import multiprocessing as mp
 import queue as queue_mod
@@ -184,7 +185,13 @@ def _install(trace, candidate):
         started = time.perf_counter()
         result = original_engine_in_check(engine, position, side, checkpoint=checkpoint)
         elapsed = time.perf_counter() - started
-        if runtime is not None and current_phase in ("gave", "terminal"):
+        caller = inspect.currentframe().f_back.f_code.co_name
+        direct_gave = current_phase == "gave" and caller == "_gave_check"
+        direct_terminal = (
+            current_phase == "terminal"
+            and caller == "terminal_from_search_runtime"
+        )
+        if runtime is not None and (direct_gave or direct_terminal):
             _record_check(trace, runtime, position, result, elapsed, current_phase)
         return result
 
