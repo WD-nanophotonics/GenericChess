@@ -1,0 +1,70 @@
+﻿Thu Aug 13 23:05:54 2026    artifacts/f6_target_directed_semantic/cprofile_candidate/semantic_prefix_2.prof
+
+         4514772 function calls (4506292 primitive calls) in 3.758 seconds
+
+   Ordered by: cumulative time
+   List reduced from 188 to 60 due to restriction <60>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    3.960    3.960 search.py:807(run_root_search)
+    304/2    0.005    0.000    3.915    1.958 search.py:178(negamax)
+   302/56    0.002    0.000    3.914    0.070 search.py:362(child_search)
+     1585    0.017    0.000    2.393    0.002 semantic_executor.py:1300(iter_legal_action_bindings)
+     1858    0.006    0.000    2.291    0.001 semantic_executor.py:635(in_check)
+     1858    0.852    0.000    2.259    0.001 audit_f6_target_directed.py:195(attack)
+      333    0.004    0.000    1.880    0.006 search_runtime.py:784(legal_actions)
+     1254    0.005    0.000    1.697    0.001 semantic_executor.py:1145(_trial_child_if_s3_legal)
+     1709    0.002    0.000    1.363    0.001 {built-in method builtins.next}
+      604    0.001    0.000    1.356    0.002 search_runtime.py:1089(pushed)
+      666    0.001    0.000    1.351    0.002 contextlib.py:132(__enter__)
+      302    0.001    0.000    1.347    0.004 audit_f4_runtime_cost.py:161(push)
+      302    0.001    0.000    1.345    0.004 search_runtime.py:941(push)
+      302    0.010    0.000    1.344    0.004 search_runtime.py:988(_push_impl)
+      302    0.003    0.000    0.880    0.003 terminal.py:127(terminal_from_search_runtime)
+      274    0.010    0.000    0.682    0.002 evaluator.py:39(evaluate)
+     7617    0.024    0.000    0.667    0.000 semantic_executor.py:984(_iter_candidates)
+   668267    0.378    0.000    0.635    0.000 semantic_executor.py:42(_checkpoint)
+     7240    0.055    0.000    0.621    0.000 semantic_executor.py:1008(_iter_board_candidates)
+     2801    0.203    0.000    0.568    0.000 attacks.py:34(pseudo_attacks)
+      302    0.001    0.000    0.542    0.002 semantic_executor.py:1461(has_legal_action)
+      604    0.001    0.000    0.541    0.001 semantic_executor.py:1339(iter_legal_actions)
+     7844    0.324    0.000    0.530    0.000 semantic_executor.py:96(_sources_by_owner_type)
+     2253    0.005    0.000    0.463    0.000 attacks.py:58(is_square_attacked)
+      548    0.015    0.000    0.380    0.001 evaluator.py:90(_anchor_escape)
+      302    0.000    0.000    0.323    0.001 search_runtime.py:805(_gave_check)
+    98372    0.178    0.000    0.264    0.000 audit_f6_target_directed.py:51(target_directed_matches)
+   741200    0.257    0.000    0.261    0.000 {method 'get' of 'dict' objects}
+   668267    0.256    0.000    0.256    0.000 search.py:147(checkpoint)
+   395278    0.188    0.000    0.188    0.000 audit_f6_target_directed.py:171(add)
+   120443    0.086    0.000    0.167    0.000 {method 'update' of 'set' objects}
+   314971    0.113    0.000    0.114    0.000 {method 'setdefault' of 'dict' objects}
+      548    0.001    0.000    0.112    0.000 attacks.py:65(is_in_check)
+    65526    0.053    0.000    0.104    0.000 coordinates.py:60(index_to_square)
+   317625    0.094    0.000    0.094    0.000 {method 'append' of 'list' objects}
+      302    0.021    0.000    0.089    0.000 search_runtime.py:441(_semantic_component_diff_hash)
+    45845    0.033    0.000    0.071    0.000 {method 'add' of 'set' objects}
+    10960    0.018    0.000    0.067    0.000 evaluator.py:67(_promotion_bonus)
+    19436    0.021    0.000    0.061    0.000 {built-in method builtins.any}
+   218538    0.060    0.000    0.060    0.000 {built-in method builtins.len}
+192243/185343    0.049    0.000    0.054    0.000 {built-in method builtins.hash}
+   132925    0.051    0.000    0.051    0.000 {built-in method builtins.max}
+     1556    0.010    0.000    0.051    0.000 semantic_executor.py:1354(_transition)
+     3527    0.020    0.000    0.045    0.000 semantic_executor.py:1058(_promotion_choices)
+     2237    0.002    0.000    0.040    0.000 search_runtime.py:393(_component_token)
+     2237    0.010    0.000    0.038    0.000 search_runtime.py:355(_token)
+   162219    0.037    0.000    0.037    0.000 {built-in method builtins.isinstance}
+    36661    0.015    0.000    0.033    0.000 evaluator.py:84(<genexpr>)
+     4689    0.011    0.000    0.027    0.000 semantic_executor.py:647(_make_binding)
+     1858    0.019    0.000    0.026    0.000 semantic_executor.py:86(_own_anchor)
+     2540    0.006    0.000    0.026    0.000 __init__.py:183(dumps)
+     4942    0.014    0.000    0.025    0.000 ir.py:84(geometry_candidates)
+     4689    0.010    0.000    0.020    0.000 semantic_executor.py:801(_path_holds)
+     2540    0.005    0.000    0.019    0.000 encoder.py:183(encode)
+      952    0.008    0.000    0.018    0.000 semantic_executor.py:125(_semantic_public_action)
+     1556    0.010    0.000    0.018    0.000 semantic_executor.py:353(to_position)
+      609    0.012    0.000    0.016    0.000 search_runtime.py:365(_component_map)
+     1574    0.002    0.000    0.014    0.000 semantic_executor.py:119(semantic_engine_for)
+      666    0.001    0.000    0.013    0.000 contextlib.py:141(__exit__)
+     1556    0.008    0.000    0.013    0.000 semantic_executor.py:366(_apply_effect)
+
+

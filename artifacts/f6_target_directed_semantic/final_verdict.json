@@ -1,0 +1,13 @@
+{
+  "F6_RESULT": "AUDIT_ONLY_PASS",
+  "FULL_PYTEST": "PASS",
+  "NATIVE_BUILD": "PASS",
+  "PERFORMANCE_GATE": "FAIL_CANDIDATE_NOT_AUTHORIZED",
+  "S3_LEGALITY_PARITY": "PASS",
+  "S4_PARITY": "PASS",
+  "SEARCH_PARITY": "PASS",
+  "SEMANTIC_ATTACK_PARITY": "PASS",
+  "TARGET_DIRECTED_GEOMETRY_EQUIVALENCE": "PASS",
+  "production_files_changed": [],
+  "production_reason": "The candidate is audit-only; it avoids tuple materialization but scans the same path and does not meet the fixed usefulness gate."
+}

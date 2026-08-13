@@ -1,0 +1,101 @@
+{
+  "attack_microbenchmark": [
+    {
+      "baseline_median_ms": 22.369899998011533,
+      "candidate_median_ms": 20.392400001583155,
+      "case_id": "semantic_prefix_0",
+      "speedup": 1.0969724013002322
+    },
+    {
+      "baseline_median_ms": 20.87500000197906,
+      "candidate_median_ms": 20.17659999546595,
+      "case_id": "semantic_prefix_1",
+      "speedup": 1.0346143555737861
+    },
+    {
+      "baseline_median_ms": 19.964300001447555,
+      "candidate_median_ms": 19.974799994088244,
+      "case_id": "semantic_prefix_2",
+      "speedup": 0.9994743380337326
+    },
+    {
+      "baseline_median_ms": 19.795699998212513,
+      "candidate_median_ms": 20.425099995918572,
+      "case_id": "semantic_prefix_3",
+      "speedup": 0.9691849734967355
+    }
+  ],
+  "production_authorized": false,
+  "profiles": {
+    "A": {
+      "cases": [
+        {
+          "before_median_ms": 877.4306999985129,
+          "candidate_probe_median_ms": 806.0570999950869,
+          "case_id": "semantic_prefix_0",
+          "improvement_percent": 8.13438599806765,
+          "search_parity": true
+        },
+        {
+          "before_median_ms": 913.4358000010252,
+          "candidate_probe_median_ms": 796.5186000001268,
+          "case_id": "semantic_prefix_1",
+          "improvement_percent": 12.799717287275936,
+          "search_parity": true
+        },
+        {
+          "before_median_ms": 783.4554000000935,
+          "candidate_probe_median_ms": 851.4886000048136,
+          "case_id": "semantic_prefix_2",
+          "improvement_percent": -8.683736177542723,
+          "search_parity": true
+        },
+        {
+          "before_median_ms": 620.0145999973756,
+          "candidate_probe_median_ms": 649.401200003922,
+          "case_id": "semantic_prefix_3",
+          "improvement_percent": -4.7396625832150985,
+          "search_parity": true
+        }
+      ],
+      "semantic_aggregate_before_median_ms": 809.1961499994795,
+      "semantic_aggregate_candidate_probe_median_ms": 794.0445499989437,
+      "semantic_aggregate_improvement_percent": 1.8724261108441498
+    },
+    "B": {
+      "cases": [
+        {
+          "before_median_ms": 3333.662099998037,
+          "candidate_probe_median_ms": 3885.7337000008556,
+          "case_id": "semantic_prefix_0",
+          "improvement_percent": -16.560514636535718,
+          "search_parity": true
+        },
+        {
+          "before_median_ms": 3926.864699998987,
+          "candidate_probe_median_ms": 3866.9488999948953,
+          "case_id": "semantic_prefix_1",
+          "improvement_percent": 1.5257923198654377,
+          "search_parity": true
+        },
+        {
+          "before_median_ms": 4159.601899998961,
+          "candidate_probe_median_ms": 4520.10380000138,
+          "case_id": "semantic_prefix_2",
+          "improvement_percent": -8.666740439812482,
+          "search_parity": true
+        },
+        {
+          "before_median_ms": 3159.62440000294,
+          "candidate_probe_median_ms": 3059.456399998453,
+          "case_id": "semantic_prefix_3",
+          "improvement_percent": 3.170250236211425,
+          "search_parity": true
+        }
+      ],
+      "semantic_aggregate_before_median_ms": 3782.480250003573,
+      "semantic_aggregate_candidate_probe_median_ms": 3876.3412999978755,
+      "semantic_aggregate_improvement_percent": -2.481468343270632
+    }
+  }
+}

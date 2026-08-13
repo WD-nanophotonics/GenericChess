@@ -80,7 +80,21 @@ def compiled_geometry_cases():
 
     def add(label, compiled):
         for geometry_id, geometry in compiled.ir.geometry.items():
-            key = (label, geometry_id)
+            # Prefixes intentionally reuse the same immutable compiled
+            # geometry.  The matrix must cover each relevant shape, but
+            # repeating identical path tables four times only inflates the
+            # evidence and obscures coverage.
+            key = (
+                geometry_id,
+                geometry.kind,
+                geometry.owner_relative,
+                geometry.offset,
+                geometry.direction,
+                geometry.min_steps,
+                geometry.max_steps,
+                geometry.atom_source,
+                repr(geometry.paths),
+            )
             if key in seen:
                 continue
             seen.add(key)
@@ -114,28 +128,39 @@ def geometry_equivalence_rows():
         square_count = board_size * board_size
         for owner in (0, 1):
             for source in range(square_count):
-                for target in range(square_count):
-                    baseline = _oracle_matches(geometry, owner, source, target)
-                    candidate = target_directed_matches(geometry, owner, source, target)
-                    exact = baseline == candidate
-                    mismatches += not exact
-                    rows.append(
-                        {
-                            "fixture": label,
-                            "geometry_id": geometry_id,
-                            "kind": geometry.kind,
-                            "owner": owner,
-                            "source": source,
-                            "target": target,
-                            "baseline_matches": [
-                                [target_id, list(path)] for target_id, path in baseline
-                            ],
-                            "candidate_matches": [
-                                [target_id, list(path)] for target_id, path in candidate
-                            ],
-                            "exact_match": exact,
-                        }
-                    )
+                targets = list(range(square_count))
+                baselines = [
+                    _oracle_matches(geometry, owner, source, target)
+                    for target in targets
+                ]
+                candidates = [
+                    target_directed_matches(geometry, owner, source, target)
+                    for target in targets
+                ]
+                exact = [baseline == candidate for baseline, candidate in zip(baselines, candidates)]
+                mismatches += sum(not item for item in exact)
+                rows.append(
+                    {
+                        "fixture": label,
+                        "geometry_id": geometry_id,
+                        "kind": geometry.kind,
+                        "owner": owner,
+                        "source": source,
+                        # The arrays are positionally aligned by target. This
+                        # preserves every exhaustive target query without
+                        # creating a 200+ MB one-row-per-target artifact.
+                        "target": targets,
+                        "baseline_matches": [
+                            [[target_id, list(path)] for target_id, path in baseline]
+                            for baseline in baselines
+                        ],
+                        "candidate_matches": [
+                            [[target_id, list(path)] for target_id, path in candidate]
+                            for candidate in candidates
+                        ],
+                        "exact_match": exact,
+                    }
+                )
     return rows, mismatches
 
 
@@ -220,11 +245,39 @@ def _run_attack_queries(spec, candidate):
     position = session.state.position
     counters = Counters()
     original_attack = SemanticEngine.is_square_attacked
+    original_in_check = SemanticEngine.in_check
+    original_trial = SemanticEngine._trial_child_if_s3_legal
+    original_exists = SemanticEngine._exists_s3_reply
     original_geometry = se.geometry_candidates
+
+    def counted_in_check(self, position, side, checkpoint=None):
+        counters.add("in_check_calls")
+        return original_in_check(self, position, side, checkpoint=checkpoint)
+
+    def counted_trial(self, pattern, position, action, binding, checkpoint=None):
+        counters.add("s3_trial_transitions")
+        result = original_trial(
+            self, pattern, position, action, binding, checkpoint=checkpoint
+        )
+        counters.add("s3_accepted" if result is not None else "s3_rejected")
+        return result
+
+    def counted_exists(self, position, checkpoint=None):
+        counters.add("s4_reply_probes")
+        return original_exists(self, position, checkpoint=checkpoint)
+
+    def counted_baseline_attack(self, position, square, by_owner, checkpoint=None):
+        counters.add("attack_queries")
+        return original_attack(self, position, square, by_owner, checkpoint=checkpoint)
+
     if candidate:
         SemanticEngine.is_square_attacked = _candidate_attack(counters, original_geometry)
     else:
+        SemanticEngine.is_square_attacked = counted_baseline_attack
         se.geometry_candidates = _counting_geometry(counters, original_geometry)
+    SemanticEngine.in_check = counted_in_check
+    SemanticEngine._trial_child_if_s3_legal = counted_trial
+    SemanticEngine._exists_s3_reply = counted_exists
     started = time.perf_counter()
     try:
         attacks = [
@@ -235,6 +288,9 @@ def _run_attack_queries(spec, candidate):
         checks = [engine.in_check(position, side) for side in (0, 1)]
     finally:
         SemanticEngine.is_square_attacked = original_attack
+        SemanticEngine.in_check = original_in_check
+        SemanticEngine._trial_child_if_s3_legal = original_trial
+        SemanticEngine._exists_s3_reply = original_exists
         se.geometry_candidates = original_geometry
     return {
         "case_id": spec["id"],
@@ -250,19 +306,112 @@ def _run_attack_queries(spec, candidate):
 def _run_search(spec, profile, candidate, profile_path=None):
     counters = Counters()
     original_attack = SemanticEngine.is_square_attacked
+    original_in_check = SemanticEngine.in_check
+    original_trial = SemanticEngine._trial_child_if_s3_legal
+    original_exists = SemanticEngine._exists_s3_reply
     original_geometry = se.geometry_candidates
+
+    def counted_in_check(self, position, side, checkpoint=None):
+        counters.add("in_check_calls")
+        return original_in_check(self, position, side, checkpoint=checkpoint)
+
+    def counted_trial(self, pattern, position, action, binding, checkpoint=None):
+        counters.add("s3_trial_transitions")
+        result = original_trial(
+            self, pattern, position, action, binding, checkpoint=checkpoint
+        )
+        counters.add("s3_accepted" if result is not None else "s3_rejected")
+        return result
+
+    def counted_exists(self, position, checkpoint=None):
+        counters.add("s4_reply_probes")
+        return original_exists(self, position, checkpoint=checkpoint)
+
+    def counted_baseline_attack(self, position, square, by_owner, checkpoint=None):
+        counters.add("attack_queries")
+        return original_attack(self, position, square, by_owner, checkpoint=checkpoint)
+
     if candidate:
         SemanticEngine.is_square_attacked = _candidate_attack(counters, original_geometry)
     else:
+        SemanticEngine.is_square_attacked = counted_baseline_attack
         se.geometry_candidates = _counting_geometry(counters, original_geometry)
+    SemanticEngine.in_check = counted_in_check
+    SemanticEngine._trial_child_if_s3_legal = counted_trial
+    SemanticEngine._exists_s3_reply = counted_exists
     try:
         result = run_once(spec, profile, "timing", profile_path=profile_path)
     finally:
         SemanticEngine.is_square_attacked = original_attack
+        SemanticEngine.in_check = original_in_check
+        SemanticEngine._trial_child_if_s3_legal = original_trial
+        SemanticEngine._exists_s3_reply = original_exists
         se.geometry_candidates = original_geometry
     result["f6_counters"] = counters.snapshot()
     result["candidate"] = candidate
     return result
+
+
+def _parity_case(case):
+    """Compare attack/check, legal order, and S3 reply existence in one worker."""
+    if case.startswith("semantic_prefix_"):
+        spec = next(spec for spec in semantic_specs() if spec["id"] == case)
+        session = make_session(spec)
+        labels = ()
+    else:
+        from scripts.probe_f5_source_index import curated_specs
+
+        curated = curated_specs()
+        index = next(index for index, item in enumerate(curated) if item[0] == case)
+        _name, compiled, position, labels = curated[index]
+        session = None
+    if session is not None:
+        compiled = session.compiled
+        position = session.state.position
+    engine = se.semantic_engine_for(compiled)
+    square_count = engine.support.board_size ** 2
+    original_attack = SemanticEngine.is_square_attacked
+    baseline_attack = [
+        engine.is_square_attacked(position, square, owner)
+        for square in range(square_count)
+        for owner in (0, 1)
+    ]
+    baseline_checks = tuple(engine.in_check(position, side) for side in (0, 1))
+    baseline_actions = tuple(str(action) for action in engine.iter_legal_actions(position))
+    baseline_reply = engine._exists_s3_reply(position)
+    counters = Counters()
+    SemanticEngine.is_square_attacked = _candidate_attack(counters, se.geometry_candidates)
+    try:
+        candidate_attack = [
+            engine.is_square_attacked(position, square, owner)
+            for square in range(square_count)
+            for owner in (0, 1)
+        ]
+        candidate_checks = tuple(engine.in_check(position, side) for side in (0, 1))
+        candidate_actions = tuple(str(action) for action in engine.iter_legal_actions(position))
+        candidate_reply = engine._exists_s3_reply(position)
+    finally:
+        SemanticEngine.is_square_attacked = original_attack
+    return {
+        "case_id": case,
+        "labels": list(labels),
+        "fingerprint": compiled.ruleset_fingerprint,
+        "attack_query_count": len(baseline_attack),
+        "attack_mismatches": sum(a != b for a, b in zip(baseline_attack, candidate_attack)),
+        "check_mismatches": sum(a != b for a, b in zip(baseline_checks, candidate_checks)),
+        "legal_action_count": len(baseline_actions),
+        "legal_order_parity": baseline_actions == candidate_actions,
+        "s3_reply_probe_parity": baseline_reply == candidate_reply,
+        "baseline_s3_reply": baseline_reply,
+        "candidate_s3_reply": candidate_reply,
+        "candidate_counters": counters.snapshot(),
+    }
+
+
+def parity_cases():
+    return [spec["id"] for spec in semantic_specs()] + [
+        "s4_nested", "s4_capture", "s4_drop",
+    ]
 
 
 def _worker(payload, queue):
@@ -275,6 +424,8 @@ def _worker(payload, queue):
                 payload["spec"], payload["profile"], payload["candidate"],
                 payload.get("profile_path"),
             )
+        elif mode == "parity":
+            result = _parity_case(payload["case"])
         else:
             raise ValueError(mode)
         queue.put({"ok": True, "result": result})
@@ -306,16 +457,18 @@ def semantic_specs():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=("geometry", "attack", "search"), required=True)
+    parser.add_argument("--mode", choices=("geometry", "attack", "search", "parity"), required=True)
     parser.add_argument("--profile", choices=("A", "B"), default="A")
     parser.add_argument("--candidate", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--profile-dir", type=Path)
+    parser.add_argument("--reps", type=int, default=1)
+    parser.add_argument("--case")
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     if args.mode == "geometry":
         rows, mismatches = geometry_equivalence_rows()
-        jsonl = args.output.with_suffix(".jsonl")
+        jsonl = args.output.parent / "geometry_equivalence.jsonl"
         jsonl.write_text("\n".join(json.dumps(row, sort_keys=True) for row in rows) + "\n", encoding="utf-8")
         payload = {
             "fingerprint": FINGERPRINT,
@@ -325,24 +478,39 @@ def main():
             "jsonl": str(jsonl),
         }
     elif args.mode == "attack":
-        payload = [
+        payload = []
+        for spec in semantic_specs():
             safe_run({"mode": "attack", "spec": spec, "candidate": args.candidate})
-            for spec in semantic_specs()
-        ]
-    else:
+            for repetition in range(args.reps):
+                row = safe_run({"mode": "attack", "spec": spec, "candidate": args.candidate})
+                row["repetition"] = repetition + 1
+                payload.append(row)
+    elif args.mode == "search":
         rows = []
-        for spec in corpus_specs():
+        specs = corpus_specs()
+        if args.case:
+            specs = [spec for spec in specs if spec["id"] == args.case]
+        for spec in specs:
+            if not args.profile_dir:
+                safe_run({
+                    "mode": "search", "spec": spec, "profile": args.profile,
+                    "candidate": args.candidate,
+                })
             profile_path = None
             if args.profile_dir:
                 args.profile_dir.mkdir(parents=True, exist_ok=True)
                 profile_path = str(args.profile_dir / f"{spec['id']}.prof")
-            rows.append(
-                safe_run({
+            for repetition in range(args.reps):
+                row = safe_run({
                     "mode": "search", "spec": spec, "profile": args.profile,
                     "candidate": args.candidate, "profile_path": profile_path,
                 })
-            )
+                row["repetition"] = repetition + 1
+                rows.append(row)
         payload = rows
+    else:
+        cases = [args.case] if args.case else parity_cases()
+        payload = [safe_run({"mode": "parity", "case": case}) for case in cases]
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return 0
 
