@@ -94,6 +94,7 @@ class Trace:
             "terminal_probe_calls": 0,
             "terminal_probe_has_legal": None,
             "terminal_probe_first_action": None,
+            "terminal_generated_action_keys": [],
             "terminal_patterns_visited": [],
             "terminal_type_ids_visited": [],
             "terminal_sources_visited": [],
@@ -118,6 +119,7 @@ class Trace:
             "full_candidate_keys": [],
             "full_trial_keys": [],
             "full_legal_actions": [],
+            "full_generated_action_keys": [],
             "popped": False,
             "exception": None,
         }
@@ -278,7 +280,7 @@ def _install(trace):
                 row["full_legal_actions"] = [_action_key(a) for a in result]
                 if row["terminal_probe_first_action"] is not None:
                     try:
-                        row["full_first_action_rank"] = row["full_legal_actions"].index(row["terminal_probe_first_action"]) + 1
+                        row["full_first_action_rank"] = row["full_generated_action_keys"].index(row["terminal_probe_first_action"]) + 1
                     except ValueError:
                         row["full_first_action_rank"] = None
             return result
@@ -321,6 +323,7 @@ def _install(trace):
         for action, binding in iterator:
             if row is not None and phase in ("terminal", "full"):
                 key = _action_key(action)
+                row[f"{phase}_generated_action_keys"].append(key)
                 if phase == "terminal" and row["terminal_probe_first_action"] is None:
                     row["terminal_probe_first_action"] = key
                 row[f"{phase}_first_action_seen"] = True
