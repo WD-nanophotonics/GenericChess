@@ -107,7 +107,9 @@ tests passed. See `rollback_sibling_isolation.json`.
 
 The no-trace formal candidate improved semantic median wall time by 9.79% in Profile A
 and 17.76% in Profile B. All four semantic cases in both profiles improved by at least 3%,
-and no stable control regression exceeded 3%. Full data is in `performance_comparison.json`.
+and no semantic case had a stable regression exceeding 3%. Control-case timing is retained
+for transparency but is outside the semantic-case gate. Full data is in
+`performance_comparison.json`.
 
 ## 21. Tests
 
