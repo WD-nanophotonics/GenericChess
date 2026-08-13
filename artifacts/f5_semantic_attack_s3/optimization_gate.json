@@ -1,0 +1,20 @@
+{
+  "authorized": true,
+  "candidate": "position-local owner/current-type source dispatch reuse",
+  "family": "Semantic candidate / attack dispatch reuse",
+  "gates": {
+    "DOMINANT": true,
+    "EXPLAINED": true,
+    "LIKELY_USEFUL": true,
+    "LOCAL": true,
+    "MATERIAL": true,
+    "SEMANTICS_PRESERVING": true,
+    "TESTABLE": true
+  },
+  "rejected_options": [
+    "immutable global semantic cache",
+    "fixed-target attack pruning",
+    "Native migration",
+    "bitboard/incremental attack map"
+  ]
+}

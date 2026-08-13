@@ -7,6 +7,7 @@
 - Attachment: `GenericChess_F5_Semantic_Attack_S3_Optimization.md` (`18913` bytes)
 - Status: `ACTIVE — authoritative task captured before execution`
 - Local source: this file contains the complete attachment text; do not overwrite it with a later summary.
+- Processing note: F5 implementation and validation completed in sandbox; closure evidence is under `artifacts/f5_semantic_attack_s3/` and `docs/architecture/F5_EVIDENCE.md`.
 
 # GenericChess — F5: Semantic Attack / S3 Legality Runtime Optimization
 

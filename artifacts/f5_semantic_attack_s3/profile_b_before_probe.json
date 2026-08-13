@@ -1,0 +1,468 @@
+[
+  {
+    "action": "a1-a2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.000640500002191402,
+        "inclusive_s": 0.000640500002191402
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.0004856000086874701,
+        "inclusive_s": 0.0004856000086874701
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.0001652000064495951,
+        "inclusive_s": 0.0001652000064495951
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 0.13535789998422842,
+        "inclusive_s": 0.13535789998422842
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0002055999866570346,
+        "inclusive_s": 0.0002055999866570346
+      }
+    },
+    "case_id": "legacy_draw_root",
+    "completed_depth": 1,
+    "f5_counters": {},
+    "nodes": 37,
+    "profile": "B",
+    "pv": [
+      "a1-a2"
+    ],
+    "qnodes": 219,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 495,
+      "pop_calls": 495,
+      "pop_s": 0.003310099993541371,
+      "push_calls": 495,
+      "push_s": 0.07978839989664266,
+      "runtime_pops": 495,
+      "runtime_pushes": 495,
+      "search_key_calls": 6,
+      "snapshot_updates": 495
+    },
+    "score": 6,
+    "search": {
+      "legal_actions_generated": 1320,
+      "position_key_cache_hits": 28,
+      "position_keys_computed": 34,
+      "successors_materialized": 28,
+      "successors_searched": 28,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 28,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 6,
+      "tt_stores": 5
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 0.14369160000205738
+  },
+  {
+    "action": "a1-a2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.0006369000038830563,
+        "inclusive_s": 0.0006369000038830563
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.0006436999901779927,
+        "inclusive_s": 0.0006436999901779927
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.00015969999367371202,
+        "inclusive_s": 0.00015969999367371202
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 0.12981570002739318,
+        "inclusive_s": 0.12981570002739318
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.00016369999502785504,
+        "inclusive_s": 0.00016369999502785504
+      }
+    },
+    "case_id": "continuous_check_prefix",
+    "completed_depth": 1,
+    "f5_counters": {},
+    "nodes": 37,
+    "profile": "B",
+    "pv": [
+      "a1-a2"
+    ],
+    "qnodes": 219,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 495,
+      "pop_calls": 495,
+      "pop_s": 0.002958299985039048,
+      "push_calls": 495,
+      "push_s": 0.07540979996701935,
+      "runtime_pops": 495,
+      "runtime_pushes": 495,
+      "search_key_calls": 6,
+      "snapshot_updates": 495
+    },
+    "score": 6,
+    "search": {
+      "legal_actions_generated": 1320,
+      "position_key_cache_hits": 28,
+      "position_keys_computed": 34,
+      "successors_materialized": 28,
+      "successors_searched": 28,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 28,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 6,
+      "tt_stores": 5
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 0.1393792000017129
+  },
+  {
+    "action": "legacy_112:g6:f1-g2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.018425499984005,
+        "inclusive_s": 0.018425499984005
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 4.205902799985779,
+        "inclusive_s": 4.205902799985779
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.010522300020966213,
+        "inclusive_s": 0.010522300020966213
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 34.47680039997067,
+        "inclusive_s": 34.47680039997067
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0035323999691172503,
+        "inclusive_s": 0.0035323999691172503
+      }
+    },
+    "case_id": "semantic_prefix_0",
+    "completed_depth": 1,
+    "f5_counters": {
+      "attack_queries": 8743,
+      "failed_full_scans": 8743,
+      "geometry_candidate_calls": 486192,
+      "geometry_candidates_generated": 719209,
+      "guard_checks": 4908,
+      "in_check_calls": 8743,
+      "own_anchor_lookup_calls": 8743,
+      "path_checks": 21292,
+      "s0_s1_candidates": 4908,
+      "s3_accepted": 4908,
+      "s3_trial_transitions": 4908
+    },
+    "nodes": 158,
+    "profile": "B",
+    "pv": [
+      "legacy_112:g6:f1-g2"
+    ],
+    "qnodes": 98,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1298,
+      "pop_calls": 1298,
+      "pop_s": 0.0579042001045309,
+      "push_calls": 1298,
+      "push_s": 18.63592089998565,
+      "runtime_pops": 1298,
+      "runtime_pushes": 1298,
+      "search_key_calls": 30,
+      "snapshot_updates": 1298
+    },
+    "score": 9,
+    "search": {
+      "legal_actions_generated": 3639,
+      "position_key_cache_hits": 126,
+      "position_keys_computed": 156,
+      "successors_materialized": 126,
+      "successors_searched": 126,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 126,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 28
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 40.71955639999942
+  },
+  {
+    "action": "legacy_112:g6:d9-c8",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.01741859998583095,
+        "inclusive_s": 0.01741859998583095
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 3.708420999995724,
+        "inclusive_s": 3.708420999995724
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.009988699996029027,
+        "inclusive_s": 0.009988699996029027
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 34.05372250005894,
+        "inclusive_s": 34.05372250005894
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.00496619995101355,
+        "inclusive_s": 0.00496619995101355
+      }
+    },
+    "case_id": "semantic_prefix_1",
+    "completed_depth": 1,
+    "f5_counters": {
+      "attack_queries": 8882,
+      "failed_full_scans": 8882,
+      "geometry_candidate_calls": 493882,
+      "geometry_candidates_generated": 734728,
+      "guard_checks": 4899,
+      "in_check_calls": 8882,
+      "own_anchor_lookup_calls": 8882,
+      "path_checks": 21670,
+      "s0_s1_candidates": 4899,
+      "s3_accepted": 4899,
+      "s3_trial_transitions": 4899
+    },
+    "nodes": 158,
+    "profile": "B",
+    "pv": [
+      "legacy_112:g6:d9-c8"
+    ],
+    "qnodes": 98,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1347,
+      "pop_calls": 1347,
+      "pop_s": 0.06490009999834001,
+      "push_calls": 1347,
+      "push_s": 18.737061699823244,
+      "runtime_pops": 1347,
+      "runtime_pushes": 1347,
+      "search_key_calls": 30,
+      "snapshot_updates": 1347
+    },
+    "score": 3,
+    "search": {
+      "legal_actions_generated": 3490,
+      "position_key_cache_hits": 126,
+      "position_keys_computed": 156,
+      "successors_materialized": 126,
+      "successors_searched": 126,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 126,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 28
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 39.77364110000053
+  },
+  {
+    "action": "legacy_028:g21:g3-g4",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.016723099986847956,
+        "inclusive_s": 0.016723099986847956
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 4.250834499995108,
+        "inclusive_s": 4.250834499995108
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.011120299976028036,
+        "inclusive_s": 0.011120299976028036
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 37.28062399997725,
+        "inclusive_s": 37.28062399997725
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0034401999801048078,
+        "inclusive_s": 0.0034401999801048078
+      }
+    },
+    "case_id": "semantic_prefix_2",
+    "completed_depth": 2,
+    "f5_counters": {
+      "attack_queries": 9871,
+      "failed_full_scans": 9737,
+      "geometry_candidate_calls": 540942,
+      "geometry_candidates_generated": 811236,
+      "guard_checks": 6157,
+      "in_check_calls": 9871,
+      "own_anchor_lookup_calls": 9871,
+      "path_checks": 21533,
+      "s0_s1_candidates": 5899,
+      "s3_accepted": 5789,
+      "s3_rejected": 110,
+      "s3_trial_transitions": 5899,
+      "successful_attack_early_exits": 134
+    },
+    "nodes": 149,
+    "profile": "B",
+    "pv": [
+      "legacy_028:g21:g3-g4",
+      "legacy_028:g21:c7-c6"
+    ],
+    "qnodes": 104,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1342,
+      "pop_calls": 1342,
+      "pop_s": 0.0721374999920954,
+      "push_calls": 1342,
+      "push_s": 18.150061399981496,
+      "runtime_pops": 1342,
+      "runtime_pushes": 1342,
+      "search_key_calls": 30,
+      "snapshot_updates": 1342
+    },
+    "score": 0,
+    "search": {
+      "legal_actions_generated": 4292,
+      "position_key_cache_hits": 119,
+      "position_keys_computed": 149,
+      "successors_materialized": 119,
+      "successors_searched": 119,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 119,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 30
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 43.41829300000245
+  },
+  {
+    "action": "legacy_112:g6:d9-c8",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.017875099962111562,
+        "inclusive_s": 0.017875099962111562
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 3.9025793000037083,
+        "inclusive_s": 3.9025793000037083
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.007987600001797546,
+        "inclusive_s": 0.007987600001797546
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 27.68244179996691,
+        "inclusive_s": 27.68244179996691
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.003667899996798951,
+        "inclusive_s": 0.003667899996798951
+      }
+    },
+    "case_id": "semantic_prefix_3",
+    "completed_depth": 2,
+    "f5_counters": {
+      "attack_queries": 8204,
+      "failed_full_scans": 8204,
+      "geometry_candidate_calls": 456881,
+      "geometry_candidates_generated": 672627,
+      "guard_checks": 4772,
+      "in_check_calls": 8204,
+      "own_anchor_lookup_calls": 8204,
+      "path_checks": 18983,
+      "s0_s1_candidates": 4772,
+      "s3_accepted": 4772,
+      "s3_trial_transitions": 4772
+    },
+    "nodes": 150,
+    "profile": "B",
+    "pv": [
+      "legacy_112:g6:d9-c8",
+      "legacy_012:g14:e1-e2"
+    ],
+    "qnodes": 88,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1163,
+      "pop_calls": 1163,
+      "pop_s": 0.043157000065548345,
+      "push_calls": 1163,
+      "push_s": 14.839987999934237,
+      "runtime_pops": 1163,
+      "runtime_pushes": 1163,
+      "search_key_calls": 32,
+      "snapshot_updates": 1163
+    },
+    "score": -2,
+    "search": {
+      "legal_actions_generated": 3371,
+      "position_key_cache_hits": 118,
+      "position_keys_computed": 150,
+      "successors_materialized": 118,
+      "successors_searched": 118,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 118,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 32,
+      "tt_stores": 32
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 33.417977700002666
+  }
+]

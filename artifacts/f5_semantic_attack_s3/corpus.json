@@ -1,0 +1,149 @@
+{
+  "attack_queries_per_prefix": 162,
+  "attack_query_shape": "all 81 squares x both owners",
+  "curated_witnesses": [
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 30,
+      "board_size": 9,
+      "candidate_legal_action_count": 30,
+      "case_id": "semantic_prefix_0",
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "labels": [
+        "anchor_safe",
+        "sliding_attacker",
+        "capture_geometry"
+      ],
+      "legal_order_parity": true,
+      "query_count": 162,
+      "s3_reply_probe_parity": true
+    },
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 30,
+      "board_size": 9,
+      "candidate_legal_action_count": 30,
+      "case_id": "semantic_prefix_1",
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "labels": [
+        "anchor_attacked",
+        "leaper_attacker",
+        "blocker"
+      ],
+      "legal_order_parity": true,
+      "query_count": 162,
+      "s3_reply_probe_parity": true
+    },
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 28,
+      "board_size": 9,
+      "candidate_legal_action_count": 28,
+      "case_id": "semantic_prefix_2",
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "labels": [
+        "promoted_piece",
+        "discovered_attack",
+        "check_relief"
+      ],
+      "legal_order_parity": true,
+      "query_count": 162,
+      "s3_reply_probe_parity": true
+    },
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 30,
+      "board_size": 9,
+      "candidate_legal_action_count": 30,
+      "case_id": "semantic_prefix_3",
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "labels": [
+        "drop_related",
+        "own_anchor_exposure",
+        "s4_attack_contribution"
+      ],
+      "legal_order_parity": true,
+      "query_count": 162,
+      "s3_reply_probe_parity": true
+    },
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 2,
+      "board_size": 5,
+      "candidate_legal_action_count": 2,
+      "case_id": "s4_nested",
+      "fingerprint": "ed55e3c07b81eaff93d7ca5f09f1893d9f607385ec6d1ffa50e2d63dfa3206e3",
+      "labels": [
+        "s4_attack_contribution",
+        "own_anchor_exposure"
+      ],
+      "legal_order_parity": true,
+      "query_count": 50,
+      "s3_reply_probe_parity": true
+    },
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 4,
+      "board_size": 8,
+      "candidate_legal_action_count": 4,
+      "case_id": "s4_capture",
+      "fingerprint": "c1e3b5fc278ed8c4f1a682ff650330277afdbbfba9cfc65996e812e8be7564a2",
+      "labels": [
+        "capture_geometry",
+        "squares_not_attacked"
+      ],
+      "legal_order_parity": true,
+      "query_count": 128,
+      "s3_reply_probe_parity": true
+    },
+    {
+      "attack_mismatches": 0,
+      "baseline_legal_action_count": 55,
+      "board_size": 8,
+      "candidate_legal_action_count": 55,
+      "case_id": "s4_drop",
+      "fingerprint": "c3327a136d2344dcf5fe4c3a111d958ceab0a4d528cd50ee8a2af89703700617",
+      "labels": [
+        "drop_related",
+        "s4_attack_contribution"
+      ],
+      "legal_order_parity": true,
+      "query_count": 128,
+      "s3_reply_probe_parity": true
+    }
+  ],
+  "f4_search_cases": [
+    "legacy_draw_root",
+    "continuous_check_prefix",
+    "semantic_prefix_0",
+    "semantic_prefix_1",
+    "semantic_prefix_2",
+    "semantic_prefix_3"
+  ],
+  "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+  "profiles": {
+    "A": {
+      "max_depth": 2,
+      "max_nodes": 512,
+      "ordering": false,
+      "qdepth": 0,
+      "root_tactical": false,
+      "tt": true
+    },
+    "B": {
+      "max_depth": 2,
+      "max_nodes": 256,
+      "ordering": true,
+      "qdepth": 4,
+      "tt": true
+    }
+  },
+  "repetitions": 5,
+  "semantic_prefixes": [
+    "semantic_prefix_0",
+    "semantic_prefix_1",
+    "semantic_prefix_2",
+    "semantic_prefix_3"
+  ],
+  "warmups": 1
+}

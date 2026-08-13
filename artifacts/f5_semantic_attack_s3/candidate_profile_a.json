@@ -1,0 +1,368 @@
+[
+  {
+    "action": "c2-d2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.0026522000116528943,
+        "inclusive_s": 0.0026522000116528943
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.0011286999870208092,
+        "inclusive_s": 0.0011286999870208092
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.00017430001025786623,
+        "inclusive_s": 0.00017430001025786623
+      }
+    },
+    "case_id": "legacy_draw_root",
+    "completed_depth": 2,
+    "legal_order_parity": true,
+    "nodes": 33,
+    "probe_wall_s": 0.01510200000484474,
+    "profile": "A",
+    "pv": [
+      "c2-d2",
+      "d4-c3"
+    ],
+    "qnodes": 0,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 31,
+      "pop_calls": 31,
+      "pop_s": 0.0002443999910610728,
+      "push_calls": 31,
+      "push_s": 0.005537600052775815,
+      "runtime_pops": 31,
+      "runtime_pushes": 31,
+      "search_key_calls": 9,
+      "snapshot_updates": 31
+    },
+    "score": -13,
+    "search": {
+      "legal_actions_generated": 56,
+      "position_key_cache_hits": 31,
+      "position_keys_computed": 40,
+      "successors_materialized": 31,
+      "successors_searched": 31,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 31,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 9,
+      "tt_stores": 9
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 0.011358099996868987
+  },
+  {
+    "action": "c2-d2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.002789099991787225,
+        "inclusive_s": 0.002789099991787225
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.001127800001995638,
+        "inclusive_s": 0.001127800001995638
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.00020989999757148325,
+        "inclusive_s": 0.00020989999757148325
+      }
+    },
+    "case_id": "continuous_check_prefix",
+    "completed_depth": 2,
+    "legal_order_parity": true,
+    "nodes": 33,
+    "probe_wall_s": 0.015882699997746386,
+    "profile": "A",
+    "pv": [
+      "c2-d2",
+      "d4-c3"
+    ],
+    "qnodes": 0,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 31,
+      "pop_calls": 31,
+      "pop_s": 0.00026640000578481704,
+      "push_calls": 31,
+      "push_s": 0.005009200031054206,
+      "runtime_pops": 31,
+      "runtime_pushes": 31,
+      "search_key_calls": 9,
+      "snapshot_updates": 31
+    },
+    "score": -13,
+    "search": {
+      "legal_actions_generated": 56,
+      "position_key_cache_hits": 31,
+      "position_keys_computed": 40,
+      "successors_materialized": 31,
+      "successors_searched": 31,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 31,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 9,
+      "tt_stores": 9
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 0.011320800003886689
+  },
+  {
+    "action": "legacy_112:g6:f1-g2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.15511739998328267,
+        "inclusive_s": 0.15511739998328267
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.2374544000122114,
+        "inclusive_s": 0.2374544000122114
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0010934999882010743,
+        "inclusive_s": 0.0010934999882010743
+      }
+    },
+    "case_id": "semantic_prefix_0",
+    "completed_depth": 2,
+    "legal_order_parity": true,
+    "nodes": 331,
+    "probe_wall_s": 1.4137109000002965,
+    "profile": "A",
+    "pv": [
+      "legacy_112:g6:f1-g2",
+      "legacy_112:g6:d9-c8"
+    ],
+    "qnodes": 0,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 329,
+      "pop_calls": 329,
+      "pop_s": 0.0029113999335095286,
+      "push_calls": 329,
+      "push_s": 0.2892678999778582,
+      "runtime_pops": 329,
+      "runtime_pushes": 329,
+      "search_key_calls": 32,
+      "snapshot_updates": 329
+    },
+    "score": 0,
+    "search": {
+      "legal_actions_generated": 960,
+      "position_key_cache_hits": 329,
+      "position_keys_computed": 361,
+      "successors_materialized": 329,
+      "successors_searched": 329,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 329,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 32,
+      "tt_stores": 32
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 0.7016689999945811
+  },
+  {
+    "action": "legacy_112:g6:d9-c8",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.16602600004262058,
+        "inclusive_s": 0.16602600004262058
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.2588937000182341,
+        "inclusive_s": 0.2588937000182341
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.001617000023543369,
+        "inclusive_s": 0.001617000023543369
+      }
+    },
+    "case_id": "semantic_prefix_1",
+    "completed_depth": 2,
+    "legal_order_parity": true,
+    "nodes": 344,
+    "probe_wall_s": 1.4616195000053267,
+    "profile": "A",
+    "pv": [
+      "legacy_112:g6:d9-c8",
+      "legacy_112:g6:f1-g2"
+    ],
+    "qnodes": 0,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 342,
+      "pop_calls": 342,
+      "pop_s": 0.003009900014149025,
+      "push_calls": 342,
+      "push_s": 0.3155852001000312,
+      "runtime_pops": 342,
+      "runtime_pushes": 342,
+      "search_key_calls": 32,
+      "snapshot_updates": 342
+    },
+    "score": -4,
+    "search": {
+      "legal_actions_generated": 870,
+      "position_key_cache_hits": 342,
+      "position_keys_computed": 374,
+      "successors_materialized": 342,
+      "successors_searched": 342,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 342,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 32,
+      "tt_stores": 32
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 0.76258780000353
+  },
+  {
+    "action": "legacy_028:g21:g3-g4",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.14651500005857088,
+        "inclusive_s": 0.14651500005857088
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.2421515999812982,
+        "inclusive_s": 0.2421515999812982
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0010482000070624053,
+        "inclusive_s": 0.0010482000070624053
+      }
+    },
+    "case_id": "semantic_prefix_2",
+    "completed_depth": 2,
+    "legal_order_parity": true,
+    "nodes": 304,
+    "probe_wall_s": 1.3793596999967122,
+    "profile": "A",
+    "pv": [
+      "legacy_028:g21:g3-g4",
+      "legacy_028:g21:c7-c6"
+    ],
+    "qnodes": 0,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 302,
+      "pop_calls": 302,
+      "pop_s": 0.0024182999914046377,
+      "push_calls": 302,
+      "push_s": 0.2504178000308457,
+      "runtime_pops": 302,
+      "runtime_pushes": 302,
+      "search_key_calls": 30,
+      "snapshot_updates": 302
+    },
+    "score": 0,
+    "search": {
+      "legal_actions_generated": 980,
+      "position_key_cache_hits": 302,
+      "position_keys_computed": 332,
+      "successors_materialized": 302,
+      "successors_searched": 302,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 302,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 30
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 0.6591361000027973
+  },
+  {
+    "action": "legacy_112:g6:d9-c8",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.102177099979599,
+        "inclusive_s": 0.102177099979599
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.25034250000317115,
+        "inclusive_s": 0.25034250000317115
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0012269999788259156,
+        "inclusive_s": 0.0012269999788259156
+      }
+    },
+    "case_id": "semantic_prefix_3",
+    "completed_depth": 2,
+    "legal_order_parity": true,
+    "nodes": 219,
+    "probe_wall_s": 1.347744499995315,
+    "profile": "A",
+    "pv": [
+      "legacy_112:g6:d9-c8",
+      "legacy_012:g14:e1-e2"
+    ],
+    "qnodes": 0,
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 217,
+      "pop_calls": 217,
+      "pop_s": 0.0019229000536142848,
+      "push_calls": 217,
+      "push_s": 0.2330178000338492,
+      "runtime_pops": 217,
+      "runtime_pushes": 217,
+      "search_key_calls": 32,
+      "snapshot_updates": 217
+    },
+    "score": -2,
+    "search": {
+      "legal_actions_generated": 900,
+      "position_key_cache_hits": 217,
+      "position_keys_computed": 249,
+      "successors_materialized": 217,
+      "successors_searched": 217,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 217,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 32,
+      "tt_stores": 32
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 0.6063527000005706
+  }
+]
