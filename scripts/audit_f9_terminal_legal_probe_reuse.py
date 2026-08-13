@@ -344,14 +344,20 @@ def _install(trace):
                 row[f"{phase}_first_action_seen"] = True
             yield action, binding
 
-    def iter_candidates(engine, pattern, position, checkpoint=None):
+    def iter_candidates(engine, pattern, position, checkpoint=None, sources_by_owner_type=None):
         row = trace.current(state["runtime"]) if state["runtime"] is not None else None
         phase = state["phase"]
         if row is not None and phase in ("terminal", "full"):
             row[f"{phase}_patterns_visited"].append(pattern.pattern_id)
             row[f"{phase}_type_ids_visited"].extend(pattern.type_ids)
             row[f"{phase}_geometry_ids_visited"].extend(pattern.geometry_ids)
-        for action, binding in originals["iter_candidates"](engine, pattern, position, checkpoint=checkpoint):
+        for action, binding in originals["iter_candidates"](
+            engine,
+            pattern,
+            position,
+            checkpoint=checkpoint,
+            sources_by_owner_type=sources_by_owner_type,
+        ):
             if row is not None and phase in ("terminal", "full"):
                 key = _binding_key(binding)
                 row[f"{phase}_candidate_keys"].append(key)

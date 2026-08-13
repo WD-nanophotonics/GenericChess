@@ -982,7 +982,8 @@ class SemanticEngine:
     # ------------------------------------------------------- legality
 
     def _iter_candidates(
-        self, pattern, position: Position, checkpoint: Checkpoint | None = None
+        self, pattern, position: Position, checkpoint: Checkpoint | None = None,
+        sources_by_owner_type=None,
     ):
         """Yield ``(SemanticAction, _ActionBinding)`` for every S0-S1
         eligible candidate of one pattern (geometry, target, path, guards,
@@ -1002,14 +1003,19 @@ class SemanticEngine:
             )
         else:
             yield from self._iter_board_candidates(
-                pattern, position, checkpoint=checkpoint
+                pattern,
+                position,
+                checkpoint=checkpoint,
+                sources_by_owner_type=sources_by_owner_type,
             )
 
     def _iter_board_candidates(
-        self, pattern, position: Position, checkpoint: Checkpoint | None = None
+        self, pattern, position: Position, checkpoint: Checkpoint | None = None,
+        sources_by_owner_type=None,
     ):
         side = position.side_to_move
-        sources_by_owner_type = _sources_by_owner_type(position)
+        if sources_by_owner_type is None:
+            sources_by_owner_type = _sources_by_owner_type(position)
         for tid in pattern.type_ids:
             _checkpoint(checkpoint)
             for source, piece in sources_by_owner_type.get((side, tid), ()):
@@ -1278,10 +1284,21 @@ class SemanticEngine:
         over ALL patterns with S4 postconditions disabled (Option B).  It
         never consults terminal/repetition/max-ply/history (ADR-016 section
         8)."""
+        sources_by_owner_type = None
         for pattern in self._patterns:
             _checkpoint(checkpoint)
+            is_drop = any(
+                self.ir.geometry[g].kind == "drop"
+                for g in pattern.geometry_ids
+                if g in self.ir.geometry
+            )
+            if not is_drop and sources_by_owner_type is None:
+                sources_by_owner_type = _sources_by_owner_type(position)
             for action, binding in self._iter_candidates(
-                pattern, position, checkpoint=checkpoint
+                pattern,
+                position,
+                checkpoint=checkpoint,
+                sources_by_owner_type=sources_by_owner_type if not is_drop else None,
             ):
                 _checkpoint(checkpoint)
                 if checkpoint is None:
@@ -1302,10 +1319,21 @@ class SemanticEngine:
     ) -> Iterator[tuple[SemanticAction, _ActionBinding]]:
         """Stream legal runtime actions with their verified S3 binding."""
         self._ensure_match(position)
+        sources_by_owner_type = None
         for pattern in self._patterns:
             _checkpoint(checkpoint)
+            is_drop = any(
+                self.ir.geometry[g].kind == "drop"
+                for g in pattern.geometry_ids
+                if g in self.ir.geometry
+            )
+            if not is_drop and sources_by_owner_type is None:
+                sources_by_owner_type = _sources_by_owner_type(position)
             for action, binding in self._iter_candidates(
-                pattern, position, checkpoint=checkpoint
+                pattern,
+                position,
+                checkpoint=checkpoint,
+                sources_by_owner_type=sources_by_owner_type if not is_drop else None,
             ):
                 _checkpoint(checkpoint)
                 if checkpoint is None:
