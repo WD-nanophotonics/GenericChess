@@ -93,6 +93,7 @@ class Trace:
             "terminal_probe_started": False,
             "terminal_probe_calls": 0,
             "terminal_probe_has_legal": None,
+            "terminal_probe_s": 0.0,
             "terminal_probe_first_action": None,
             "terminal_generated_action_keys": [],
             "terminal_patterns_visited": [],
@@ -105,6 +106,7 @@ class Trace:
             "terminal_s3_accepted": 0,
             "terminal_candidate_keys": [],
             "terminal_trial_keys": [],
+            "terminal_trial_times_s": [],
             "full_legal_requested_before_pop": False,
             "full_legal_action_count": None,
             "full_first_action_rank": None,
@@ -118,8 +120,10 @@ class Trace:
             "full_s3_accepted": 0,
             "full_candidate_keys": [],
             "full_trial_keys": [],
+            "full_trial_times_s": [],
             "full_legal_actions": [],
             "full_generated_action_keys": [],
+            "full_legal_s": 0.0,
             "popped": False,
             "exception": None,
         }
@@ -181,6 +185,8 @@ class Trace:
             trial_lcp += 1
         row["repeated_prefix_candidate_count"] = lcp
         row["repeated_prefix_s3_trial_count"] = trial_lcp
+        row["repeated_prefix_terminal_s"] = sum(row["terminal_trial_times_s"][:trial_lcp])
+        row["repeated_prefix_full_s"] = sum(row["full_trial_times_s"][:trial_lcp])
         row["repeated_candidate_bindings"] = lcp
         row["reuse_eligible"] = bool(
             row["terminal_status"] == _status(TerminalStatus.ONGOING)
@@ -215,6 +221,10 @@ class Trace:
             "full_geometry_candidates": sum(r["full_geometry_candidates"] for r in semantic),
             "repeated_prefix_candidate_count": sum(r["repeated_prefix_candidate_count"] for r in eligible),
             "repeated_prefix_s3_trial_count": sum(r["repeated_prefix_s3_trial_count"] for r in eligible),
+            "repeated_prefix_terminal_s": sum(r["repeated_prefix_terminal_s"] for r in eligible),
+            "repeated_prefix_full_s": sum(r["repeated_prefix_full_s"] for r in eligible),
+            "terminal_probe_s": sum(r["terminal_probe_s"] for r in semantic),
+            "full_legal_s": sum(r["full_legal_s"] for r in eligible),
             "terminal_s3_trials": sum(r["terminal_s3_trials"] for r in semantic),
             "full_s3_trials": sum(r["full_s3_trials"] for r in eligible),
             "full_legal_actions": sum(r["full_legal_action_count"] or 0 for r in semantic),
@@ -269,13 +279,16 @@ def _install(trace):
         row = trace.current(runtime)
         active = row is not None and runtime._legal_cache is None and _status(runtime.terminal_status.status) == _status(TerminalStatus.ONGOING)
         previous = state["phase"]
+        started = None
         if active:
             row["full_legal_requested_before_pop"] = True
             state["runtime"] = runtime
             state["phase"] = "full"
+            started = time.perf_counter()
         try:
             result = originals["legal_actions"](runtime, checkpoint)
             if active:
+                row["full_legal_s"] += time.perf_counter() - started
                 row["full_legal_action_count"] = len(result)
                 row["full_legal_actions"] = [_action_key(a) for a in result]
                 if row["terminal_probe_first_action"] is not None:
@@ -311,9 +324,11 @@ def _install(trace):
         is_terminal = state["phase"] == "terminal" and row is not None
         if is_terminal:
             row["terminal_probe_calls"] += 1
+        started = time.perf_counter()
         result = originals["has_legal"](engine, position, checkpoint=checkpoint)
         if is_terminal:
             row["terminal_probe_has_legal"] = bool(result)
+            row["terminal_probe_s"] += time.perf_counter() - started
         return result
 
     def iter_bindings(engine, position, checkpoint=None):
@@ -352,9 +367,12 @@ def _install(trace):
         if row is not None and phase in ("terminal", "full"):
             row[f"{phase}_s3_trials"] += 1
             row[f"{phase}_trial_keys"].append(_binding_key(binding))
+        started = time.perf_counter()
         result = originals["trial"](engine, pattern, position, action, binding, checkpoint=checkpoint)
         if row is not None and phase in ("terminal", "full") and result is not None:
             row[f"{phase}_s3_accepted"] += 1
+        if row is not None and phase in ("terminal", "full"):
+            row[f"{phase}_trial_times_s"].append(time.perf_counter() - started)
         return result
 
     sr.SearchPathRuntime._push_impl = push_impl
