@@ -124,7 +124,9 @@ def terminal_result(state: "GameState", compiled: "CompiledRuleSet") -> Terminal
     )
 
 
-def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
+def terminal_from_search_runtime(
+    runtime, checkpoint=None, *, known_checked: bool | None = None
+) -> TerminalResult:
     """Compute terminal status from a Core-owned mutable search path.
 
     The runtime supplies mutable occurrence counts and history evidence so
@@ -145,10 +147,13 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
         has_legal = engine.has_legal_action(position, checkpoint=checkpoint)
     else:
         has_legal = has_legal_action(position, compiled)
-    if engine is not None:
-        checked = engine.in_check(position, position.side_to_move, checkpoint=checkpoint)
+    if known_checked is None:
+        if engine is not None:
+            checked = engine.in_check(position, position.side_to_move, checkpoint=checkpoint)
+        else:
+            checked = is_in_check(position, position.side_to_move, compiled)
     else:
-        checked = is_in_check(position, position.side_to_move, compiled)
+        checked = bool(known_checked)
     if not has_legal:
         if checked:
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
