@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import multiprocessing as mp
+import queue as queue_mod
 import sys
 import time
 from collections import Counter
@@ -154,24 +155,23 @@ def _install(trace, candidate):
     original_gave_check = sr.SearchPathRuntime._gave_check
     original_terminal = sr.terminal_from_search_runtime
     original_engine_in_check = SemanticEngine.in_check
-    phase = {}
+    current = {"runtime": None, "phase": None}
 
     def push_impl(runtime, action, checkpoint=None):
         record = trace.begin(runtime)
-        phase[id(runtime)] = "none"
         try:
             return original_push_impl(runtime, action, checkpoint)
         finally:
-            phase.pop(id(runtime), None)
             trace.finish(runtime)
 
     def gave_check(runtime, position, checkpoint=None):
-        phase[id(runtime)] = "gave"
+        current["runtime"] = runtime
+        current["phase"] = "gave"
         started = time.perf_counter()
         try:
             return original_gave_check(runtime, position, checkpoint)
         finally:
-            phase[id(runtime)] = "none"
+            current["phase"] = None
             # The engine wrapper records the exact result; elapsed is filled
             # from the outer call below when the result is available.
             record = trace.active.get(id(runtime))
@@ -179,40 +179,40 @@ def _install(trace, candidate):
                 record["gave_check_s"] = max(record["gave_check_s"], time.perf_counter() - started)
 
     def engine_in_check(engine, position, side, checkpoint=None):
-        runtime = next((obj for obj_id, obj in runtime_objects.items() if obj_id in phase), None)
-        runtime_id = id(runtime) if runtime is not None else None
-        current_phase = phase.get(runtime_id)
+        runtime = current["runtime"]
+        current_phase = current["phase"]
         started = time.perf_counter()
         result = original_engine_in_check(engine, position, side, checkpoint=checkpoint)
         elapsed = time.perf_counter() - started
-        if runtime_id is not None and current_phase in ("gave", "terminal"):
+        if runtime is not None and current_phase in ("gave", "terminal"):
             _record_check(trace, runtime, position, result, elapsed, current_phase)
         return result
 
     def terminal_known(runtime, checkpoint=None):
         record = trace.active.get(id(runtime))
         if not candidate or record is None or not record["gave_check_called"]:
-            phase[id(runtime)] = "terminal"
+            current["runtime"] = runtime
+            current["phase"] = "terminal"
             try:
                 return original_terminal(runtime, checkpoint)
             finally:
-                phase[id(runtime)] = "none"
+                current["phase"] = None
         # This is the narrow candidate: terminal logic is unchanged except
         # the exact boolean already computed for this exact child is supplied.
-        phase[id(runtime)] = "known_terminal"
+        current["runtime"] = runtime
+        current["phase"] = "known_terminal"
         try:
             return terminal_from_runtime_known(runtime, checkpoint, bool(record["gave_check_result"]))
         finally:
-            phase[id(runtime)] = "none"
+            current["phase"] = None
 
-    runtime_objects = {}
     # The wrapper uses this registry only for the duration of one worker.
     def registered_push(runtime, action, checkpoint=None):
-        runtime_objects[id(runtime)] = runtime
+        current["runtime"] = runtime
         try:
             return push_impl(runtime, action, checkpoint)
         finally:
-            runtime_objects.pop(id(runtime), None)
+            current["runtime"] = None
 
     def terminal_from_runtime_known(runtime, checkpoint, known_checked):
         position = runtime.position
@@ -268,6 +268,9 @@ def run_search(spec, profile, candidate=False):
 def _worker(payload, queue):
     try:
         result, rows = run_search(payload["spec"], payload["profile"], payload.get("candidate", False))
+        for row in rows:
+            row["child_position"] = PushTrace._position_summary(row["child_position"])
+            row["terminal_position"] = PushTrace._position_summary(row["terminal_position"])
         queue.put({"ok": True, "result": result, "rows": rows})
     except BaseException as exc:  # pragma: no cover - bounded evidence worker
         queue.put({"ok": False, "error": repr(exc)})
@@ -278,14 +281,21 @@ def safe_run(payload, timeout=DEFAULT_TIMEOUT):
     queue = context.Queue()
     process = context.Process(target=_worker, args=(payload, queue))
     process.start()
-    process.join(timeout)
-    if process.is_alive():
-        process.terminate()
-        process.join(5)
-        raise RuntimeError(f"RUNTIME_SAFETY_ABORT: {payload['spec']['id']}")
-    if queue.empty():
+    deadline = time.monotonic() + timeout
+    message = None
+    while message is None and time.monotonic() < deadline:
+        try:
+            message = queue.get(timeout=min(0.5, max(0.01, deadline - time.monotonic())))
+        except queue_mod.Empty:
+            if not process.is_alive():
+                break
+    if message is None:
+        if process.is_alive():
+            process.terminate()
+            process.join(5)
+            raise RuntimeError(f"RUNTIME_SAFETY_ABORT: {payload['spec']['id']}")
         raise RuntimeError(f"worker failed without result: {payload['spec']['id']}")
-    message = queue.get()
+    process.join(5)
     if not message["ok"]:
         raise RuntimeError(message["error"])
     return message
@@ -306,9 +316,6 @@ def run_profile(profile, candidate=False, reps=5):
                 trace_row["profile"] = profile
                 trace_row["candidate"] = candidate
                 trace_row["repetition"] = repetition + 1
-                # Serialize exact Position summaries, not hash-only IDs.
-                trace_row["child_position"] = PushTrace._position_summary(trace_row["child_position"])
-                trace_row["terminal_position"] = PushTrace._position_summary(trace_row["terminal_position"])
                 trace_rows.append(trace_row)
     return results, trace_rows
 
