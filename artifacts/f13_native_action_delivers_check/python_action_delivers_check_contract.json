@@ -1,0 +1,15 @@
+{
+  "authority": "SemanticEngine._action_delivers_check",
+  "meaning": "the action actor itself attacks the reply side anchor after the action",
+  "steps": [
+    "resolve reply-side anchor in child",
+    "source is action.target",
+    "require child source piece exists and belongs to parent side",
+    "iterate canonical semantic patterns and only target_enemy patterns",
+    "require actor current type and exact geometry compatibility",
+    "enumerate from the actor's child square to the exact anchor",
+    "evaluate child path predicates, state guards, and slot guards",
+    "do not recurse into S3 own-anchor safety or S4 postconditions"
+  ],
+  "evidence": ["generic_chess/core/semantic_executor.py:1189-1238", "generic_chess/core/semantic_executor.py:1245-1278"]
+}
