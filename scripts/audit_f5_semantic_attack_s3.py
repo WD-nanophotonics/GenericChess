@@ -120,11 +120,13 @@ def instrument_semantic_executor(counters: F5Counters):
 
     def geometry(*args, **kwargs):
         generated = 0
-        for item in original_geometry(*args, **kwargs):
-            generated += 1
-            yield item
-        counters.count("geometry_candidates_generated", generated)
-        counters.count("geometry_candidate_calls")
+        try:
+            for item in original_geometry(*args, **kwargs):
+                generated += 1
+                yield item
+        finally:
+            counters.count("geometry_candidates_generated", generated)
+            counters.count("geometry_candidate_calls")
 
     def trace(frame, event, arg):
         if frame.f_code is original_attack.__code__ and event == "line":
