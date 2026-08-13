@@ -199,7 +199,7 @@ def _install(audit):
         finally:
             audit.leave(row)
 
-    def iter_candidates(engine, pattern, position, checkpoint=None):
+    def iter_candidates(engine, pattern, position, checkpoint=None, sources_by_owner_type=None):
         row = audit.current()
         if row is not None:
             row["patterns_visited"].append(pattern.pattern_id)
@@ -212,7 +212,13 @@ def _install(audit):
                 row["drop_patterns_visited"] += 1
             else:
                 row["board_patterns_visited"] += 1
-        for action, binding in originals["iter_candidates"](engine, pattern, position, checkpoint=checkpoint):
+        for action, binding in originals["iter_candidates"](
+            engine,
+            pattern,
+            position,
+            checkpoint=checkpoint,
+            sources_by_owner_type=sources_by_owner_type,
+        ):
             if row is not None:
                 row["s0_s1_candidates"] += 1
             yield action, binding
