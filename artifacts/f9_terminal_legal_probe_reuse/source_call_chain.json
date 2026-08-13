@@ -1,0 +1,7 @@
+{
+  "exact_position_boundary": "same runtime.position child Position; trace records exact board, hands, side, aux_state, and ruleset fingerprint",
+  "later_search": "SearchPathRuntime.legal_actions -> iter_legal_action_bindings -> complete canonical legal set -> _legal_cache/_bindings",
+  "production_change": "none",
+  "push": "SearchPathRuntime._push_impl -> terminal_from_search_runtime(runtime, checkpoint)",
+  "terminal": "SemanticEngine.has_legal_action -> iter_legal_actions -> iter_legal_action_bindings -> _iter_candidates -> _trial_child_if_s3_legal; stops on first yielded legal action"
+}
