@@ -49,10 +49,25 @@ def _roles_for_attack_trace():
     }
     for role, needle in needles.items():
         matches = [start + i for i, line in enumerate(source) if needle in line]
+        if role == "board_slots_inspected" and not matches:
+            continue
         if len(matches) != 1:
             raise AssertionError(f"cannot resolve trace line for {role}: {matches}")
         roles[role] = matches[0]
-    return roles
+    codes = {SemanticEngine.is_square_attacked.__code__: roles}
+    if "board_slots_inspected" not in roles:
+        helper_source, helper_start = inspect.getsourcelines(se._sources_by_owner_type)
+        helper_matches = [
+            helper_start + i
+            for i, line in enumerate(helper_source)
+            if "for source, piece in enumerate(position.board):" in line
+        ]
+        if len(helper_matches) != 1:
+            raise AssertionError(f"cannot resolve source-index trace line: {helper_matches}")
+        codes[se._sources_by_owner_type.__code__] = {
+            "board_slots_inspected": helper_matches[0]
+        }
+    return codes
 
 
 class F5Counters:
@@ -78,7 +93,7 @@ def instrument_semantic_executor(counters: F5Counters, *, detailed_trace: bool =
     original_guards = SemanticEngine._guards_hold
     original_anchor = se._own_anchor
     original_geometry = se.geometry_candidates
-    roles = _roles_for_attack_trace()
+    roles_by_code = _roles_for_attack_trace()
 
     def attack(self, position, square, by_owner, checkpoint=None):
         counters.count("attack_queries")
@@ -129,8 +144,8 @@ def instrument_semantic_executor(counters: F5Counters, *, detailed_trace: bool =
             counters.count("geometry_candidate_calls")
 
     def trace(frame, event, arg):
-        if frame.f_code is original_attack.__code__ and event == "line":
-            for role, line in roles.items():
+        if frame.f_code in roles_by_code and event == "line":
+            for role, line in roles_by_code[frame.f_code].items():
                 if frame.f_lineno == line:
                     counters.count(role)
         return trace
