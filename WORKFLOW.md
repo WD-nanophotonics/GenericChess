@@ -5,3 +5,7 @@
 Chat 的计划和审计以 `chat` 分支中 `coordination/` 的已提交完整 SHA 交付。完成的产品候选只有在 Chat 审计绑定候选 SHA、约定测试通过且工作树干净时，才可由 Agent 晋级到 `master`。
 
 `master` 只接收正式产品内容；协作材料不进入 `master`。
+
+## Gmail 任务入口（固定约定）
+
+用户直接发送 GenericChess 的任务标题时，默认先按 Gmail 主题指针处理。完整规则、模糊检索和 inbox 落盘要求见 [`inbox/README.md`](inbox/README.md)。
