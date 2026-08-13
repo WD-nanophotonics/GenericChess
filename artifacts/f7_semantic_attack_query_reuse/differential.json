@@ -1,0 +1,172 @@
+[
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 162,
+    "baseline_legal_action_count": 30,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 30,
+    "candidate_s3_reply": true,
+    "case_id": "semantic_prefix_0",
+    "check_mismatches": 0,
+    "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+    "labels": [],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 192,
+      "cache_entries_peak": 192,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.015384615384615385,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 192
+    },
+    "s3_reply_probe_parity": true
+  },
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 162,
+    "baseline_legal_action_count": 30,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 30,
+    "candidate_s3_reply": true,
+    "case_id": "semantic_prefix_1",
+    "check_mismatches": 0,
+    "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+    "labels": [],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 192,
+      "cache_entries_peak": 192,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.015384615384615385,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 192
+    },
+    "s3_reply_probe_parity": true
+  },
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 162,
+    "baseline_legal_action_count": 28,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 28,
+    "candidate_s3_reply": true,
+    "case_id": "semantic_prefix_2",
+    "check_mismatches": 0,
+    "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+    "labels": [],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 190,
+      "cache_entries_peak": 190,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.015544041450777202,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 190
+    },
+    "s3_reply_probe_parity": true
+  },
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 162,
+    "baseline_legal_action_count": 30,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 30,
+    "candidate_s3_reply": true,
+    "case_id": "semantic_prefix_3",
+    "check_mismatches": 0,
+    "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+    "labels": [],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 192,
+      "cache_entries_peak": 192,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.015384615384615385,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 192
+    },
+    "s3_reply_probe_parity": true
+  },
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 50,
+    "baseline_legal_action_count": 2,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 2,
+    "candidate_s3_reply": true,
+    "case_id": "s4_nested",
+    "check_mismatches": 0,
+    "fingerprint": "ed55e3c07b81eaff93d7ca5f09f1893d9f607385ec6d1ffa50e2d63dfa3206e3",
+    "labels": [
+      "s4_attack_contribution",
+      "own_anchor_exposure"
+    ],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 56,
+      "cache_entries_peak": 56,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.05084745762711865,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 56
+    },
+    "s3_reply_probe_parity": true
+  },
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 128,
+    "baseline_legal_action_count": 4,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 4,
+    "candidate_s3_reply": true,
+    "case_id": "s4_capture",
+    "check_mismatches": 0,
+    "fingerprint": "c1e3b5fc278ed8c4f1a682ff650330277afdbbfba9cfc65996e812e8be7564a2",
+    "labels": [
+      "capture_geometry",
+      "squares_not_attacked"
+    ],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 137,
+      "cache_entries_peak": 137,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.02142857142857143,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 137
+    },
+    "s3_reply_probe_parity": true
+  },
+  {
+    "attack_mismatches": 0,
+    "attack_query_count": 128,
+    "baseline_legal_action_count": 55,
+    "baseline_s3_reply": true,
+    "candidate_legal_action_count": 55,
+    "candidate_s3_reply": true,
+    "case_id": "s4_drop",
+    "check_mismatches": 0,
+    "fingerprint": "c3327a136d2344dcf5fe4c3a111d958ceab0a4d528cd50ee8a2af89703700617",
+    "labels": [
+      "drop_related",
+      "s4_attack_contribution"
+    ],
+    "legal_order_parity": true,
+    "memoization": {
+      "cache_entries_final": 267,
+      "cache_entries_peak": 267,
+      "cache_evictions": 0,
+      "cache_hit_rate": 0.011111111111111112,
+      "cache_hits": 3,
+      "cache_max_entries": 4096,
+      "cache_misses": 267
+    },
+    "s3_reply_probe_parity": true
+  }
+]

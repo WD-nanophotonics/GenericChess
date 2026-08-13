@@ -1,0 +1,15 @@
+{
+  "ATTACK_QUERY_REUSE": "PASS",
+  "F7_RESULT": "AUDIT_ONLY_PASS",
+  "FULL_PYTEST": "PASS",
+  "H7B_CREATED": false,
+  "INTERRUPTIBILITY": "PASS",
+  "NATIVE_BUILD": "PASS",
+  "PERFORMANCE_GATE": "FAIL_H7B_NOT_AUTHORIZED",
+  "ROLLBACK_ISOLATION": "PASS_FOR_AUDIT_PROBE",
+  "S3_LEGALITY_PARITY": "PASS",
+  "S4_PARITY": "PASS",
+  "SEARCH_PARITY": "PASS",
+  "SEMANTIC_ATTACK_PARITY": "PASS",
+  "reason": "Profile A candidate aggregate is below the fixed -2% Route B floor; no production memoization is retained."
+}

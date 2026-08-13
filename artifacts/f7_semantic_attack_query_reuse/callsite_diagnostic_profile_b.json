@@ -1,0 +1,689 @@
+[
+  {
+    "action": "a1-a2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.0006395999880624004,
+        "inclusive_s": 0.0006395999880624004
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.0004912000149488449,
+        "inclusive_s": 0.0004912000149488449
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.00017179999849759042,
+        "inclusive_s": 0.00017179999849759042
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 0.12780999999085907,
+        "inclusive_s": 0.12780999999085907
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.00011229999654460698,
+        "inclusive_s": 0.00011229999654460698
+      }
+    },
+    "candidate": false,
+    "case_id": "legacy_draw_root",
+    "completed_depth": 1,
+    "diagnostic_classification": true,
+    "nodes": 37,
+    "profile": "B",
+    "pv": [
+      "a1-a2"
+    ],
+    "qnodes": 219,
+    "query_reuse": {
+      "callsite_counts": {},
+      "callsite_first_vs_repeat": {},
+      "duplicate_exact_attack_queries": 0,
+      "duplicate_rate": 0.0,
+      "first_query_cost_mean_s": 0.0,
+      "first_query_cost_s": 0.0,
+      "in_check_calls": 0,
+      "is_square_attacked_calls": 0,
+      "negative_queries": 0,
+      "positive_queries": 0,
+      "queries_per_position_max": 0,
+      "queries_per_position_median": 0,
+      "queries_per_position_p90": 0,
+      "repeat_query_cost_mean_s": 0.0,
+      "repeat_query_cost_s": 0.0,
+      "same_position_duplicate_count": 0,
+      "same_square_owner_duplicate_count": 0,
+      "top_repeated_exact_query_multiplicities": [],
+      "total_attack_queries": 0,
+      "unique_exact_attack_queries": 0,
+      "unique_positions_queried": 0
+    },
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 495,
+      "pop_calls": 495,
+      "pop_s": 0.0031377000486827455,
+      "push_calls": 495,
+      "push_s": 0.07181660006608581,
+      "runtime_pops": 495,
+      "runtime_pushes": 495,
+      "search_key_calls": 6,
+      "snapshot_updates": 495
+    },
+    "score": 6,
+    "search": {
+      "legal_actions_generated": 1320,
+      "position_key_cache_hits": 28,
+      "position_keys_computed": 34,
+      "successors_materialized": 28,
+      "successors_searched": 28,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 28,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 6,
+      "tt_stores": 5
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 0.13914669999940088
+  },
+  {
+    "action": "a1-a2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.000993200002994854,
+        "inclusive_s": 0.000993200002994854
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 0.0011287000015727244,
+        "inclusive_s": 0.0011287000015727244
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.0001728000061120838,
+        "inclusive_s": 0.0001728000061120838
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 0.12293239998689387,
+        "inclusive_s": 0.12293239998689387
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.00023039998632157221,
+        "inclusive_s": 0.00023039998632157221
+      }
+    },
+    "candidate": false,
+    "case_id": "continuous_check_prefix",
+    "completed_depth": 1,
+    "diagnostic_classification": true,
+    "nodes": 37,
+    "profile": "B",
+    "pv": [
+      "a1-a2"
+    ],
+    "qnodes": 219,
+    "query_reuse": {
+      "callsite_counts": {},
+      "callsite_first_vs_repeat": {},
+      "duplicate_exact_attack_queries": 0,
+      "duplicate_rate": 0.0,
+      "first_query_cost_mean_s": 0.0,
+      "first_query_cost_s": 0.0,
+      "in_check_calls": 0,
+      "is_square_attacked_calls": 0,
+      "negative_queries": 0,
+      "positive_queries": 0,
+      "queries_per_position_max": 0,
+      "queries_per_position_median": 0,
+      "queries_per_position_p90": 0,
+      "repeat_query_cost_mean_s": 0.0,
+      "repeat_query_cost_s": 0.0,
+      "same_position_duplicate_count": 0,
+      "same_square_owner_duplicate_count": 0,
+      "top_repeated_exact_query_multiplicities": [],
+      "total_attack_queries": 0,
+      "unique_exact_attack_queries": 0,
+      "unique_positions_queried": 0
+    },
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 495,
+      "pop_calls": 495,
+      "pop_s": 0.003221199986001011,
+      "push_calls": 495,
+      "push_s": 0.07116540004062699,
+      "runtime_pops": 495,
+      "runtime_pushes": 495,
+      "search_key_calls": 6,
+      "snapshot_updates": 495
+    },
+    "score": 6,
+    "search": {
+      "legal_actions_generated": 1320,
+      "position_key_cache_hits": 28,
+      "position_keys_computed": 34,
+      "successors_materialized": 28,
+      "successors_searched": 28,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 28,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 6,
+      "tt_stores": 5
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 0.14031750000140164
+  },
+  {
+    "action": "legacy_112:g6:f1-g2",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.014989600000262726,
+        "inclusive_s": 0.014989600000262726
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 2.50044780002645,
+        "inclusive_s": 2.50044780002645
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.005501200022990815,
+        "inclusive_s": 0.005501200022990815
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 30.90930049999588,
+        "inclusive_s": 30.90930049999588
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.002585599992016796,
+        "inclusive_s": 0.002585599992016796
+      }
+    },
+    "candidate": false,
+    "case_id": "semantic_prefix_0",
+    "completed_depth": 1,
+    "diagnostic_classification": true,
+    "nodes": 158,
+    "profile": "B",
+    "pv": [
+      "legacy_112:g6:f1-g2"
+    ],
+    "qnodes": 98,
+    "query_reuse": {
+      "callsite_counts": {
+        "OTHER": 2537,
+        "RUNTIME_GAVE_CHECK": 1298,
+        "S3_INVARIANT": 4908
+      },
+      "callsite_first_vs_repeat": {
+        "OTHER:repeat": 2537,
+        "RUNTIME_GAVE_CHECK:first": 834,
+        "RUNTIME_GAVE_CHECK:repeat": 464,
+        "S3_INVARIANT:first": 3128,
+        "S3_INVARIANT:repeat": 1780
+      },
+      "duplicate_exact_attack_queries": 4781,
+      "duplicate_rate": 0.5468374699759808,
+      "first_query_cost_mean_s": 0.00032739926802434835,
+      "first_query_cost_s": 1.2971558999124682,
+      "in_check_calls": 8743,
+      "is_square_attacked_calls": 8743,
+      "negative_queries": 8743,
+      "positive_queries": 0,
+      "queries_per_position_max": 53,
+      "queries_per_position_median": 2,
+      "queries_per_position_p90": 8,
+      "repeat_query_cost_mean_s": 0.0003272987659654859,
+      "repeat_query_cost_s": 1.5648154000809882,
+      "same_position_duplicate_count": 5615,
+      "same_square_owner_duplicate_count": 8729,
+      "top_repeated_exact_query_multiplicities": [
+        39,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        14,
+        13,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "total_attack_queries": 8743,
+      "unique_exact_attack_queries": 3962,
+      "unique_positions_queried": 3128
+    },
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1298,
+      "pop_calls": 1298,
+      "pop_s": 0.03486219993646955,
+      "push_calls": 1298,
+      "push_s": 17.11391750020266,
+      "runtime_pops": 1298,
+      "runtime_pushes": 1298,
+      "search_key_calls": 30,
+      "snapshot_updates": 1298
+    },
+    "score": 9,
+    "search": {
+      "legal_actions_generated": 3639,
+      "position_key_cache_hits": 126,
+      "position_keys_computed": 156,
+      "successors_materialized": 126,
+      "successors_searched": 126,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 126,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 28
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 35.84607099999994
+  },
+  {
+    "action": "legacy_112:g6:d9-c8",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.017081999983929563,
+        "inclusive_s": 0.017081999983929563
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 2.808888899984595,
+        "inclusive_s": 2.808888899984595
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.006314800011750776,
+        "inclusive_s": 0.006314800011750776
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 35.453518599970266,
+        "inclusive_s": 35.453518599970266
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.003423800015298184,
+        "inclusive_s": 0.003423800015298184
+      }
+    },
+    "candidate": false,
+    "case_id": "semantic_prefix_1",
+    "completed_depth": 1,
+    "diagnostic_classification": true,
+    "nodes": 158,
+    "profile": "B",
+    "pv": [
+      "legacy_112:g6:d9-c8"
+    ],
+    "qnodes": 98,
+    "query_reuse": {
+      "callsite_counts": {
+        "OTHER": 2636,
+        "RUNTIME_GAVE_CHECK": 1347,
+        "S3_INVARIANT": 4899
+      },
+      "callsite_first_vs_repeat": {
+        "OTHER:first": 1,
+        "OTHER:repeat": 2635,
+        "RUNTIME_GAVE_CHECK:first": 907,
+        "RUNTIME_GAVE_CHECK:repeat": 440,
+        "S3_INVARIANT:first": 3188,
+        "S3_INVARIANT:repeat": 1711
+      },
+      "duplicate_exact_attack_queries": 4786,
+      "duplicate_rate": 0.5388426030173384,
+      "first_query_cost_mean_s": 0.0003568992675972993,
+      "first_query_cost_s": 1.4618594000785379,
+      "in_check_calls": 8882,
+      "is_square_attacked_calls": 8882,
+      "negative_queries": 8882,
+      "positive_queries": 0,
+      "queries_per_position_max": 53,
+      "queries_per_position_median": 2,
+      "queries_per_position_p90": 8,
+      "repeat_query_cost_mean_s": 0.0003663390723143904,
+      "repeat_query_cost_s": 1.7532988000966725,
+      "same_position_duplicate_count": 5694,
+      "same_square_owner_duplicate_count": 8869,
+      "top_repeated_exact_query_multiplicities": [
+        39,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        14,
+        13,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "total_attack_queries": 8882,
+      "unique_exact_attack_queries": 4096,
+      "unique_positions_queried": 3188
+    },
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1347,
+      "pop_calls": 1347,
+      "pop_s": 0.04249179980251938,
+      "push_calls": 1347,
+      "push_s": 20.47060720004083,
+      "runtime_pops": 1347,
+      "runtime_pushes": 1347,
+      "search_key_calls": 30,
+      "snapshot_updates": 1347
+    },
+    "score": 3,
+    "search": {
+      "legal_actions_generated": 3490,
+      "position_key_cache_hits": 126,
+      "position_keys_computed": 156,
+      "successors_materialized": 126,
+      "successors_searched": 126,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 126,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 28
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "node_limit",
+    "wall_s": 40.908919200002856
+  },
+  {
+    "action": "legacy_028:g21:g3-g4",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.013975999972899444,
+        "inclusive_s": 0.013975999972899444
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 2.3037171000032686,
+        "inclusive_s": 2.3037171000032686
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.005013200003304519,
+        "inclusive_s": 0.005013200003304519
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 22.022199800019735,
+        "inclusive_s": 22.022199800019735
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.0019407999789109454,
+        "inclusive_s": 0.0019407999789109454
+      }
+    },
+    "candidate": false,
+    "case_id": "semantic_prefix_2",
+    "completed_depth": 2,
+    "diagnostic_classification": true,
+    "nodes": 149,
+    "profile": "B",
+    "pv": [
+      "legacy_028:g21:g3-g4",
+      "legacy_028:g21:c7-c6"
+    ],
+    "qnodes": 104,
+    "query_reuse": {
+      "callsite_counts": {
+        "OTHER": 2630,
+        "RUNTIME_GAVE_CHECK": 1342,
+        "S3_INVARIANT": 5899
+      },
+      "callsite_first_vs_repeat": {
+        "OTHER:first": 2,
+        "OTHER:repeat": 2628,
+        "RUNTIME_GAVE_CHECK:first": 847,
+        "RUNTIME_GAVE_CHECK:repeat": 495,
+        "S3_INVARIANT:first": 3821,
+        "S3_INVARIANT:repeat": 2078
+      },
+      "duplicate_exact_attack_queries": 5201,
+      "duplicate_rate": 0.5268969709249316,
+      "first_query_cost_mean_s": 0.00017973877954262116,
+      "first_query_cost_s": 0.8393801004640409,
+      "in_check_calls": 9871,
+      "is_square_attacked_calls": 9871,
+      "negative_queries": 9737,
+      "positive_queries": 134,
+      "queries_per_position_max": 45,
+      "queries_per_position_median": 2,
+      "queries_per_position_p90": 8,
+      "repeat_query_cost_mean_s": 0.00024396348785284404,
+      "repeat_query_cost_s": 1.268854100322642,
+      "same_position_duplicate_count": 6050,
+      "same_square_owner_duplicate_count": 9856,
+      "top_repeated_exact_query_multiplicities": [
+        33,
+        12,
+        12,
+        11,
+        9,
+        9,
+        9,
+        9,
+        9,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "total_attack_queries": 9871,
+      "unique_exact_attack_queries": 4670,
+      "unique_positions_queried": 3821
+    },
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1342,
+      "pop_calls": 1342,
+      "pop_s": 0.023649400005524512,
+      "push_calls": 1342,
+      "push_s": 12.086856200105103,
+      "runtime_pops": 1342,
+      "runtime_pushes": 1342,
+      "search_key_calls": 30,
+      "snapshot_updates": 1342
+    },
+    "score": 0,
+    "search": {
+      "legal_actions_generated": 4292,
+      "position_key_cache_hits": 119,
+      "position_keys_computed": 149,
+      "successors_materialized": 119,
+      "successors_searched": 119,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 119,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 30,
+      "tt_stores": 30
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 26.416783699998632
+  },
+  {
+    "action": "legacy_112:g6:d9-c8",
+    "audit": {
+      "EVALUATION": {
+        "calls": 0,
+        "exclusive_s": 0.01489529998798389,
+        "inclusive_s": 0.01489529998798389
+      },
+      "MOVE_GEN": {
+        "calls": 0,
+        "exclusive_s": 3.5272791999959736,
+        "inclusive_s": 3.5272791999959736
+      },
+      "ORDERING": {
+        "calls": 0,
+        "exclusive_s": 0.008070699994277675,
+        "inclusive_s": 0.008070699994277675
+      },
+      "QUIESCENCE": {
+        "calls": 0,
+        "exclusive_s": 34.27381379999133,
+        "inclusive_s": 34.27381379999133
+      },
+      "TT_PROBE_STORE": {
+        "calls": 0,
+        "exclusive_s": 0.003658200010249857,
+        "inclusive_s": 0.003658200010249857
+      }
+    },
+    "candidate": false,
+    "case_id": "semantic_prefix_3",
+    "completed_depth": 2,
+    "diagnostic_classification": true,
+    "nodes": 150,
+    "profile": "B",
+    "pv": [
+      "legacy_112:g6:d9-c8",
+      "legacy_012:g14:e1-e2"
+    ],
+    "qnodes": 88,
+    "query_reuse": {
+      "callsite_counts": {
+        "OTHER": 2269,
+        "RUNTIME_GAVE_CHECK": 1163,
+        "S3_INVARIANT": 4772
+      },
+      "callsite_first_vs_repeat": {
+        "OTHER:first": 3,
+        "OTHER:repeat": 2266,
+        "RUNTIME_GAVE_CHECK:first": 673,
+        "RUNTIME_GAVE_CHECK:repeat": 490,
+        "S3_INVARIANT:first": 2761,
+        "S3_INVARIANT:repeat": 2011
+      },
+      "duplicate_exact_attack_queries": 4767,
+      "duplicate_rate": 0.5810580204778157,
+      "first_query_cost_mean_s": 0.00037947692753385903,
+      "first_query_cost_s": 1.3042621999338735,
+      "in_check_calls": 8204,
+      "is_square_attacked_calls": 8204,
+      "negative_queries": 8204,
+      "positive_queries": 0,
+      "queries_per_position_max": 53,
+      "queries_per_position_median": 2,
+      "queries_per_position_p90": 8,
+      "repeat_query_cost_mean_s": 0.0004157246905397313,
+      "repeat_query_cost_s": 1.9817595998028992,
+      "same_position_duplicate_count": 5443,
+      "same_square_owner_duplicate_count": 8191,
+      "top_repeated_exact_query_multiplicities": [
+        39,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        14,
+        13,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "total_attack_queries": 8204,
+      "unique_exact_attack_queries": 3437,
+      "unique_positions_queried": 2761
+    },
+    "recorder": "timing",
+    "repetition": 1,
+    "runtime": {
+      "history_context_updates": 1163,
+      "pop_calls": 1163,
+      "pop_s": 0.0425442000705516,
+      "push_calls": 1163,
+      "push_s": 19.950503599946387,
+      "runtime_pops": 1163,
+      "runtime_pushes": 1163,
+      "search_key_calls": 32,
+      "snapshot_updates": 1163
+    },
+    "score": -2,
+    "search": {
+      "legal_actions_generated": 3371,
+      "position_key_cache_hits": 118,
+      "position_keys_computed": 150,
+      "successors_materialized": 118,
+      "successors_searched": 118,
+      "terminal_cache_hits": 0,
+      "terminal_results_computed": 118,
+      "tt_cutoffs": 0,
+      "tt_hits": 1,
+      "tt_probes": 32,
+      "tt_stores": 32
+    },
+    "terminal_status": "ongoing",
+    "termination_reason": "completed_depth",
+    "wall_s": 40.67986530000053
+  }
+]

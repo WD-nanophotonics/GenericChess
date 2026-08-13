@@ -236,6 +236,67 @@ def run_search(spec, profile, candidate=False, classify=False, profile_path=None
     return result
 
 
+def _differential_case(case_name):
+    if case_name.startswith("semantic_prefix_"):
+        spec = next(spec for spec in SEMANTIC_PREFIXES if spec["id"] == case_name)
+        session = make_session(spec)
+        compiled = session.compiled
+        position = session.state.position
+        labels = []
+    else:
+        from scripts.probe_f5_source_index import curated_specs
+
+        name, compiled, position, labels = next(
+            item for item in curated_specs() if item[0] == case_name
+        )
+    engine = se.semantic_engine_for(compiled)
+    square_count = engine.support.board_size ** 2
+    original_attack = SemanticEngine.is_square_attacked
+    original_in_check = SemanticEngine.in_check
+    baseline_attack = [
+        engine.is_square_attacked(position, square, owner)
+        for square in range(square_count)
+        for owner in (0, 1)
+    ]
+    baseline_checks = tuple(engine.in_check(position, side) for side in (0, 1))
+    baseline_actions = tuple(str(action) for action in engine.iter_legal_actions(position))
+    baseline_reply = engine._exists_s3_reply(position)
+    audit = QueryAudit()
+    _old_attack, _old_check, cache = install_wrappers(audit, candidate=True)
+    try:
+        candidate_attack = [
+            engine.is_square_attacked(position, square, owner)
+            for square in range(square_count)
+            for owner in (0, 1)
+        ]
+        candidate_checks = tuple(engine.in_check(position, side) for side in (0, 1))
+        candidate_actions = tuple(str(action) for action in engine.iter_legal_actions(position))
+        candidate_reply = engine._exists_s3_reply(position)
+    finally:
+        restore_wrappers(original_attack, original_in_check)
+    return {
+        "case_id": case_name,
+        "labels": list(labels),
+        "fingerprint": compiled.ruleset_fingerprint,
+        "attack_query_count": len(baseline_attack),
+        "attack_mismatches": sum(a != b for a, b in zip(baseline_attack, candidate_attack)),
+        "check_mismatches": sum(a != b for a, b in zip(baseline_checks, candidate_checks)),
+        "legal_order_parity": baseline_actions == candidate_actions,
+        "s3_reply_probe_parity": baseline_reply == candidate_reply,
+        "baseline_s3_reply": baseline_reply,
+        "candidate_s3_reply": candidate_reply,
+        "baseline_legal_action_count": len(baseline_actions),
+        "candidate_legal_action_count": len(candidate_actions),
+        "memoization": cache.snapshot(),
+    }
+
+
+def differential_cases():
+    return [spec["id"] for spec in SEMANTIC_PREFIXES] + [
+        "s4_nested", "s4_capture", "s4_drop",
+    ]
+
+
 def _worker(payload, queue):
     try:
         if payload["mode"] == "search":
@@ -243,6 +304,8 @@ def _worker(payload, queue):
                 payload["spec"], payload["profile"], payload.get("candidate", False),
                 payload.get("classify", False), payload.get("profile_path"),
             )
+        elif payload["mode"] == "differential":
+            result = _differential_case(payload["case"])
         else:
             raise ValueError(payload["mode"])
         queue.put({"ok": True, "result": result})
@@ -281,13 +344,21 @@ def run_profile(profile, candidate=False, reps=5, classify=False):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--profile", choices=("A", "B"), required=True)
+    parser.add_argument("--profile", choices=("A", "B"))
+    parser.add_argument("--mode", choices=("search", "differential"), default="search")
     parser.add_argument("--candidate", action="store_true")
     parser.add_argument("--classify", action="store_true")
     parser.add_argument("--reps", type=int, default=5)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--case")
     args = parser.parse_args()
-    rows = run_profile(args.profile, args.candidate, args.reps, args.classify)
+    if args.mode == "differential":
+        cases = [args.case] if args.case else differential_cases()
+        rows = [safe_run({"mode": "differential", "case": case}) for case in cases]
+    else:
+        if args.profile is None:
+            parser.error("--profile is required for search mode")
+        rows = run_profile(args.profile, args.candidate, args.reps, args.classify)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(rows, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
