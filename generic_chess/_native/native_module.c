@@ -2637,6 +2637,19 @@ static PyObject *gc_semantic_make_checked(PyObject *self, PyObject *args) {
     return PyCapsule_New(child, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
 }
 
+static PyObject *gc_semantic_action_delivers_check_debug(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    unsigned long long action;
+    if (!PyArg_ParseTuple(args, "OOK", &rules_capsule, &pos_capsule, &action)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *parent = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !parent) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, parent)) return NULL;
+    return PyBool_FromLong(gc_semantic_runtime_action_delivers_check_debug(
+        rules, parent, (uint64_t)action));
+}
+
 static PyObject *gc_semantic_make_unmake_roundtrip(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -3154,6 +3167,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_history_occurrences(position, lo, hi) -> occurrence count"},
     {"semantic_make_checked", gc_semantic_make_checked, METH_VARARGS,
      "semantic_make_checked(rules, position, action) -> child position capsule"},
+    {"_semantic_action_delivers_check_debug", gc_semantic_action_delivers_check_debug, METH_VARARGS,
+     "test-only semantic action witness inspection; not a production API"},
     {"semantic_make_unmake_roundtrip", gc_semantic_make_unmake_roundtrip, METH_VARARGS,
      "semantic_make_unmake_roundtrip(rules, position, action) -> roundtrip result"},
     {"semantic_candidate_perft", gc_semantic_perft, METH_VARARGS,

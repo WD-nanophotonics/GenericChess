@@ -12,6 +12,12 @@ int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
                                       const GCSemanticPosition *parent,
                                       uint64_t action);
 
+/* Test-only witness inspection; not exposed through generic_chess.native.semantic. */
+int gc_semantic_runtime_action_delivers_check_debug(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *parent,
+    uint64_t action);
+
 int gc_semantic_runtime_in_check(const GCSemanticRules *rules,
                                  const GCSemanticPosition *position,
                                  uint8_t side);

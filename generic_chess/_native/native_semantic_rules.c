@@ -824,7 +824,7 @@ static int sem_parse_invariant(PyObject *d, GCSemInvariant *out,
 static int sem_parse_postcondition(PyObject *d, GCSemPostcondition *out) {
     memset(out, 0, sizeof(*out));
     uint8_t kind;
-    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 1, &kind)) {
+    if (!sem_enum(PyDict_GetItemString(d, "kind"), 0, 2, &kind)) {
         return 0;
     }
     uint8_t stratum;

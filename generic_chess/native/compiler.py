@@ -93,7 +93,11 @@ _SEM_EFFECT_CODES = {
 }
 _SEM_DISPOSITION_CODES = {"capture_to_hand": 0, "remove_from_game": 1}
 _SEM_INVARIANT_CODES = {"own_anchor_safe": 0, "squares_not_attacked": 1}
-_SEM_POSTCONDITION_CODES = {"opponent_checked": 0, "no_legal_reply": 1}
+_SEM_POSTCONDITION_CODES = {
+    "opponent_checked": 0,
+    "no_legal_reply": 1,
+    "action_delivers_check": 2,
+}
 _SEM_PROMOTION_MODE_CODES = {
     "none": 0,
     "inherit_compiled_masks": 1,
