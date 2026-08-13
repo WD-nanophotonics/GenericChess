@@ -1,0 +1,15 @@
+{
+  "hypothesis": "_sources_by_owner_type(position) was rebuilt inside _iter_board_candidates per board-move pattern.",
+  "isolated_path": "ATTACK_QUERY remains independently indexed per query.",
+  "operation_scope": [
+    "FULL_LEGAL_BINDINGS",
+    "HAS_LEGAL_ACTION",
+    "S3_REPLY_EXISTENCE"
+  ],
+  "production_chain": [
+    "SemanticEngine.iter_legal_action_bindings",
+    "_iter_candidates",
+    "_iter_board_candidates",
+    "_sources_by_owner_type"
+  ]
+}

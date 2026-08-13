@@ -1,0 +1,24 @@
+{
+  "control_cases": [
+    "continuous_check_prefix",
+    "legacy_draw_root"
+  ],
+  "measured_repetitions": 5,
+  "operation_types": [
+    "FULL_LEGAL_BINDINGS",
+    "HAS_LEGAL_ACTION",
+    "S3_REPLY_EXISTENCE",
+    "ATTACK_QUERY",
+    "OTHER"
+  ],
+  "profiles": {
+    "A": "Profile A",
+    "B": "Profile B"
+  },
+  "semantic_cases": [
+    "semantic_prefix_0",
+    "semantic_prefix_1",
+    "semantic_prefix_2",
+    "semantic_prefix_3"
+  ]
+}
