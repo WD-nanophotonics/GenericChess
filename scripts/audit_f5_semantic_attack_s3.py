@@ -282,9 +282,11 @@ def run_micro(mode: str):
     raise ValueError(mode)
 
 
-def run_search(profile_name: str, reps: int = 1):
+def run_search(profile_name: str, reps: int = 1, warmup: bool = True):
     rows = []
     for spec in corpus_specs():
+        if warmup:
+            safe_run({"mode": "search", "spec": spec, "profile_name": profile_name})
         for repetition in range(reps):
             row = safe_run({"mode": "search", "spec": spec, "profile_name": profile_name})
             row["repetition"] = repetition + 1
@@ -300,7 +302,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     if args.mode == "search":
-        payload = run_search(args.profile, args.reps)
+        payload = run_search(args.profile, args.reps, warmup=True)
     else:
         payload = run_micro(args.mode)
     if args.output:
