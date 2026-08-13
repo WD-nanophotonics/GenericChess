@@ -188,13 +188,24 @@ def _install(trace, candidate):
             _record_check(trace, runtime, position, result, elapsed, current_phase)
         return result
 
-    def terminal_known(runtime, checkpoint=None):
+    def terminal_known(runtime, checkpoint=None, *, known_checked=None):
         record = trace.active.get(id(runtime))
-        if not candidate or record is None or not record["gave_check_called"]:
+        if not candidate:
             current["runtime"] = runtime
             current["phase"] = "terminal"
             try:
-                return original_terminal(runtime, checkpoint)
+                return original_terminal(
+                    runtime, checkpoint, known_checked=known_checked
+                )
+            finally:
+                current["phase"] = None
+        if record is None or not record["gave_check_called"]:
+            current["runtime"] = runtime
+            current["phase"] = "terminal"
+            try:
+                return original_terminal(
+                    runtime, checkpoint, known_checked=known_checked
+                )
             finally:
                 current["phase"] = None
         # This is the narrow candidate: terminal logic is unchanged except
@@ -202,7 +213,12 @@ def _install(trace, candidate):
         current["runtime"] = runtime
         current["phase"] = "known_terminal"
         try:
-            return terminal_from_runtime_known(runtime, checkpoint, bool(record["gave_check_result"]))
+            return terminal_from_runtime_known(
+                runtime,
+                checkpoint,
+                bool(record["gave_check_result"])
+                if known_checked is None else bool(known_checked),
+            )
         finally:
             current["phase"] = None
 
