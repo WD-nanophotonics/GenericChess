@@ -93,6 +93,23 @@ def _own_anchor(position: Position, support, side: int) -> int | None:
     return None
 
 
+def _sources_by_owner_type(position: Position) -> dict[tuple[int, str], tuple[tuple[int, Piece], ...]]:
+    """Return a position-local source index in board order.
+
+    Semantic candidate and pseudo-attack dispatch both need the same
+    owner/current-type filtering.  Building this immutable-by-convention local
+    view once per operation removes repeated full-board scans without changing
+    Position identity, public ordering, or any ruleset authority.
+    """
+    indexed: dict[tuple[int, str], list[tuple[int, Piece]]] = {}
+    for source, piece in enumerate(position.board):
+        if piece is not None:
+            indexed.setdefault((piece.owner, piece.current_type_id), []).append(
+                (source, piece)
+            )
+    return {key: tuple(value) for key, value in indexed.items()}
+
+
 def is_semantic_compiled(compiled) -> bool:
     from ..rules.ir import CompiledSemanticRuleset
 
@@ -576,18 +593,15 @@ class SemanticEngine:
         capture eligibility to pseudo-attack; S4 postconditions are never
         consulted here."""
         self._ensure_match(position)
+        sources_by_owner_type = _sources_by_owner_type(position)
         for pattern in self._patterns:
             _checkpoint(checkpoint)
             if pattern.target.kind != "target_enemy":
                 continue  # attack eligibility = capture eligibility
             for tid in pattern.type_ids:
                 _checkpoint(checkpoint)
-                for source, piece in enumerate(position.board):
+                for source, piece in sources_by_owner_type.get((by_owner, tid), ()):
                     _checkpoint(checkpoint)
-                    if piece is None or piece.owner != by_owner:
-                        continue
-                    if piece.current_type_id != tid:
-                        continue
                     for gid in pattern.geometry_ids:
                         _checkpoint(checkpoint)
                         geometry = self.ir.geometry.get(gid)
@@ -995,14 +1009,11 @@ class SemanticEngine:
         self, pattern, position: Position, checkpoint: Checkpoint | None = None
     ):
         side = position.side_to_move
+        sources_by_owner_type = _sources_by_owner_type(position)
         for tid in pattern.type_ids:
             _checkpoint(checkpoint)
-            for source, piece in enumerate(position.board):
+            for source, piece in sources_by_owner_type.get((side, tid), ()):
                 _checkpoint(checkpoint)
-                if piece is None or piece.owner != side:
-                    continue
-                if piece.current_type_id != tid:
-                    continue
                 for gid in pattern.geometry_ids:
                     _checkpoint(checkpoint)
                     geometry = self.ir.geometry.get(gid)
