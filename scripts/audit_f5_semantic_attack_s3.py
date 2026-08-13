@@ -67,7 +67,7 @@ class F5Counters:
 
 
 @contextmanager
-def instrument_semantic_executor(counters: F5Counters):
+def instrument_semantic_executor(counters: F5Counters, *, detailed_trace: bool = False):
     """Install reversible, test-only wrappers and a targeted line tracer."""
     original_attack = SemanticEngine.is_square_attacked
     original_in_check = SemanticEngine.in_check
@@ -145,7 +145,8 @@ def instrument_semantic_executor(counters: F5Counters):
     se._own_anchor = anchor
     se.geometry_candidates = geometry
     old_trace = sys.gettrace()
-    sys.settrace(trace)
+    if detailed_trace:
+        sys.settrace(trace)
     try:
         yield
     finally:
@@ -185,7 +186,7 @@ def _run_attack_micro(spec):
     position = session.state.position
     counters = F5Counters()
     started = time.perf_counter()
-    with instrument_semantic_executor(counters):
+    with instrument_semantic_executor(counters, detailed_trace=True):
         results = []
         for square in range(engine.support.board_size * engine.support.board_size):
             for owner in spec["owners"]:
