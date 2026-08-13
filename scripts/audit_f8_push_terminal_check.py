@@ -151,7 +151,7 @@ def _record_check(trace, runtime, position, result, elapsed, phase):
         record["boolean_equal"] = record["gave_check_result"] == record["terminal_check_result"]
 
 
-def _install(trace, candidate):
+def _install(trace, candidate, force_recompute=False):
     original_push_impl = sr.SearchPathRuntime._push_impl
     original_gave_check = sr.SearchPathRuntime._gave_check
     original_terminal = sr.terminal_from_search_runtime
@@ -202,7 +202,9 @@ def _install(trace, candidate):
             current["phase"] = "terminal"
             try:
                 return original_terminal(
-                    runtime, checkpoint, known_checked=known_checked
+                    runtime,
+                    checkpoint,
+                    known_checked=None if force_recompute else known_checked,
                 )
             finally:
                 current["phase"] = None
@@ -211,7 +213,9 @@ def _install(trace, candidate):
             current["phase"] = "terminal"
             try:
                 return original_terminal(
-                    runtime, checkpoint, known_checked=known_checked
+                    runtime,
+                    checkpoint,
+                    known_checked=None if force_recompute else known_checked,
                 )
             finally:
                 current["phase"] = None
@@ -276,9 +280,9 @@ def _restore(originals):
     SemanticEngine.in_check = original_engine_in_check
 
 
-def run_search(spec, profile, candidate=False):
+def run_search(spec, profile, candidate=False, force_recompute=False):
     trace = PushTrace()
-    originals = _install(trace, candidate)
+    originals = _install(trace, candidate, force_recompute)
     try:
         result = run_once(spec, profile, "timing")
     finally:
@@ -288,9 +292,44 @@ def run_search(spec, profile, candidate=False):
     return result, trace.rows
 
 
+def run_search_performance_lite(spec, profile, force_recompute=False):
+    """Run timing with no trace wrappers or stack inspection.
+
+    The before mode disables the production forwarding argument so it models
+    the exact duplicate-check path.  The after mode uses the current runtime
+    unchanged.  This path is reserved for formal performance evidence.
+    """
+    original_terminal = sr.terminal_from_search_runtime
+    if force_recompute:
+        def terminal_without_forwarding(runtime, checkpoint=None, *, known_checked=None):
+            try:
+                return original_terminal(runtime, checkpoint, known_checked=None)
+            except TypeError:
+                return original_terminal(runtime, checkpoint)
+
+        sr.terminal_from_search_runtime = terminal_without_forwarding
+    try:
+        result = run_once(spec, profile, "timing")
+    finally:
+        sr.terminal_from_search_runtime = original_terminal
+    result["f8_trace"] = {"formal_performance_trace": False}
+    result["candidate"] = False
+    return result, []
+
+
 def _worker(payload, queue):
     try:
-        result, rows = run_search(payload["spec"], payload["profile"], payload.get("candidate", False))
+        if payload.get("performance_lite", False):
+            result, rows = run_search_performance_lite(
+                payload["spec"], payload["profile"], payload.get("force_recompute", False)
+            )
+        else:
+            result, rows = run_search(
+                payload["spec"],
+                payload["profile"],
+                payload.get("candidate", False),
+                payload.get("force_recompute", False),
+            )
         for row in rows:
             row["child_position"] = PushTrace._position_summary(row["child_position"])
             row["terminal_position"] = PushTrace._position_summary(row["terminal_position"])
@@ -324,13 +363,13 @@ def safe_run(payload, timeout=DEFAULT_TIMEOUT):
     return message
 
 
-def run_profile(profile, candidate=False, reps=5):
+def run_profile(profile, candidate=False, reps=5, force_recompute=False, performance_lite=False):
     results = []
     trace_rows = []
     for spec in corpus_specs():
-        safe_run({"spec": spec, "profile": profile, "candidate": candidate})
+        safe_run({"spec": spec, "profile": profile, "candidate": candidate, "force_recompute": force_recompute, "performance_lite": performance_lite})
         for repetition in range(reps):
-            message = safe_run({"spec": spec, "profile": profile, "candidate": candidate})
+            message = safe_run({"spec": spec, "profile": profile, "candidate": candidate, "force_recompute": force_recompute, "performance_lite": performance_lite})
             row = message["result"]
             row["repetition"] = repetition + 1
             results.append(row)
@@ -347,11 +386,15 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--profile", choices=("A", "B"), required=True)
     parser.add_argument("--candidate", action="store_true")
+    parser.add_argument("--force-recompute", action="store_true")
+    parser.add_argument("--performance-lite", action="store_true")
     parser.add_argument("--reps", type=int, default=5)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--trace-output", type=Path)
     args = parser.parse_args()
-    results, traces = run_profile(args.profile, args.candidate, args.reps)
+    results, traces = run_profile(
+        args.profile, args.candidate, args.reps, args.force_recompute, args.performance_lite
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     if args.trace_output:

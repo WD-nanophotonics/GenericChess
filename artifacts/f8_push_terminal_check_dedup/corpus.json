@@ -1,0 +1,42 @@
+{
+  "cases": [
+    {
+      "id": "legacy_draw_root",
+      "kind": "legacy"
+    },
+    {
+      "id": "continuous_check_prefix",
+      "kind": "continuous"
+    },
+    {
+      "id": "semantic_prefix_0",
+      "kind": "semantic"
+    },
+    {
+      "id": "semantic_prefix_1",
+      "kind": "semantic"
+    },
+    {
+      "id": "semantic_prefix_2",
+      "kind": "semantic"
+    },
+    {
+      "id": "semantic_prefix_3",
+      "kind": "semantic"
+    }
+  ],
+  "ruleset_fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+  "semantic_cases": 4,
+  "witness_contracts": [
+    "ongoing",
+    "in_check_with_legal_reply",
+    "checkmate",
+    "stalemate",
+    "repetition",
+    "continuous_check_loss",
+    "max_ply",
+    "promotion",
+    "capture",
+    "drop"
+  ]
+}
