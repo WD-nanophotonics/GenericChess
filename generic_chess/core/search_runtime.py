@@ -1059,11 +1059,7 @@ class SearchPathRuntime:
         self.runtime_hash = child_hash
         self._legal_cache = None
         self._bindings = {}
-        self.terminal_status = terminal_from_search_runtime(
-            self,
-            checkpoint,
-            known_checked=gave_check if engine is not None else None,
-        )
+        self.terminal_status = terminal_from_search_runtime(self, checkpoint)
         self.hash_updates += 1
         self.pushes += 1
         self.peak_depth = max(self.peak_depth, len(self._frames))
