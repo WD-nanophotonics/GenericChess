@@ -1,0 +1,10 @@
+{
+  "allowed_family": "canonical semantic key streaming + direct raw-digest history append",
+  "forbidden": [
+    "zobrist_external_identity",
+    "truncated_sha",
+    "global_cache",
+    "incremental_sha_under_arbitrary_edits"
+  ],
+  "status": "H18A_CANDIDATE_PENDING"
+}

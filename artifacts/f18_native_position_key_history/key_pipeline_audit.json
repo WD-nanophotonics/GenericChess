@@ -1,0 +1,17 @@
+{
+  "make_history_pipeline": [
+    "make_checked",
+    "key_hex",
+    "parse_64_hex_to_4_words",
+    "append_history_words"
+  ],
+  "old_pipeline": [
+    "sort_public_type_ids_per_call",
+    "sort_aux_slots_per_call",
+    "grow_realloc_heap_json_buffer",
+    "sha256_completed_buffer",
+    "hex_encode_32_bytes"
+  ],
+  "optimization_family_authorized": "canonical semantic key streaming + direct raw-digest history append",
+  "status": "FROZEN"
+}

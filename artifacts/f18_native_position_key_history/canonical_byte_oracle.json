@@ -1,0 +1,15 @@
+{
+  "coverage": {
+    "ascii_type_ids": true,
+    "empty_nonempty_hands": true,
+    "escaped_type_ids": true,
+    "global_per_owner_aux": true,
+    "owner_0_1": true,
+    "promotion_drop_capture": true,
+    "quotes_backslashes_controls": "compiler_fixture_dependent",
+    "side_0_1": true
+  },
+  "old_native_vs_python_digest": "PASS",
+  "oracle": "Python json.dumps(sort_keys=True,separators=(',',':'),ensure_ascii=True).encode('utf-8')",
+  "status": "PASS"
+}

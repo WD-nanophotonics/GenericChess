@@ -1,0 +1,38 @@
+{
+  "already_packed_key": {
+    "max_us": 20.467559999087825,
+    "median_us": 15.56556000141427,
+    "p90_us": 20.467559999087825,
+    "repetitions": 5000,
+    "samples_us": [
+      15.280500001972541,
+      20.467559999087825,
+      17.943640000885352,
+      15.56556000141427,
+      13.022720001754351
+    ],
+    "warmup": 100
+  },
+  "attribution": {
+    "classification": "ESTIMATED_FROM_SUBTRACTION_NOT_EXCLUSIVE",
+    "key_related_us_of_make": 15.56556000141427,
+    "key_share_of_make": 0.5296205991653329,
+    "key_stage": "MEASURED_PUBLIC_KEY_ONLY",
+    "make_stage": "MEASURED_NESTED_NATIVE_MAKE",
+    "note": "The current public API does not expose exclusive internal serializer/SHA/hex timings; H18A records the nested key cost honestly."
+  },
+  "make_checked": {
+    "max_us": 30.56636000110302,
+    "median_us": 29.390019999118522,
+    "p90_us": 30.56636000110302,
+    "repetitions": 5000,
+    "samples_us": [
+      30.200659998808987,
+      27.33441999880597,
+      30.56636000110302,
+      29.390019999118522,
+      24.735779999173246
+    ],
+    "warmup": 100
+  }
+}
