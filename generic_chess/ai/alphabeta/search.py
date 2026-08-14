@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import time
+from contextlib import contextmanager
 from dataclasses import dataclass
 from itertools import chain
 
@@ -29,6 +30,7 @@ from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
 from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
 from ..audit_instrumentation import AuditMetric, AuditRecorder, NullAuditRecorder
+from ...native.mirror import NativeSemanticPositionMirror, mirrored_pushed
 from .ordering import MoveOrderer, StagedMovePicker
 from .quiescence import classify_noisy
 from .statistics import SearchStatistics
@@ -111,6 +113,7 @@ class _Context:
         "qhard_depth_limit",
         "qnode_limit",
         "runtime",
+        "mirror",
     )
 
     def __init__(
@@ -128,6 +131,7 @@ class _Context:
         qnode_limit: int | None,
         recorder: AuditRecorder | None = None,
         runtime: SearchPathRuntime | None = None,
+        mirror=None,
     ) -> None:
         self.compiled = compiled
         self.evaluator = evaluator
@@ -143,6 +147,7 @@ class _Context:
         self.qhard_depth_limit = qhard_depth_limit
         self.qnode_limit = qnode_limit
         self.runtime = runtime
+        self.mirror = mirror
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
@@ -160,6 +165,17 @@ class _Context:
             and self.stats.nodes + self.stats.qnodes >= self.budget._max_nodes
         ):
             raise SearchAborted("node_limit")
+
+
+@contextmanager
+def _runtime_pushed(ctx: _Context, action):
+    """Use the Core runtime normally, or the AI-layer Native shadow hook."""
+    if ctx.mirror is None:
+        with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
+            yield ctx.runtime.state
+        return
+    with mirrored_pushed(ctx.runtime, ctx.mirror, action, checkpoint=ctx.checkpoint):
+        yield ctx.runtime.state
 
 
 def terminal_score(result, side_to_move: int, ply: int) -> int:
@@ -361,7 +377,7 @@ def negamax(
             ctx.budget.check(ctx.stats, force=True)
         def child_search(window_alpha, window_beta):
             if ctx.runtime is not None:
-                with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
+                with _runtime_pushed(ctx, action):
                     return negamax(
                         ctx.runtime.state, depth - 1, window_alpha, window_beta,
                         ply + 1, ctx, prev_action=action,
@@ -435,7 +451,7 @@ def _runtime_noisy_actions(ctx: _Context, actions):
                 noisy.append(action)
                 ctx.stats.capture_qactions += 1
                 continue
-        with runtime.pushed(action, checkpoint=ctx.checkpoint):
+        with _runtime_pushed(ctx, action):
             child = runtime.state
             if child.terminal_status.is_terminal:
                 noisy.append(action)
@@ -486,7 +502,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         if not actions:
             raise SearchAborted("qsearch_check_no_evasions")
         for action in sorted(actions, key=str):
-            with runtime.pushed(action, checkpoint=ctx.checkpoint):
+            with _runtime_pushed(ctx, action):
                 score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
             if score >= beta:
                 return score
@@ -511,7 +527,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         ctx.stats.qsearch_budget_aborts += 1
         raise SearchAborted("qsearch_budget")
     for action in sorted(_runtime_noisy_actions(ctx, actions), key=str):
-        with runtime.pushed(action, checkpoint=ctx.checkpoint):
+        with _runtime_pushed(ctx, action):
             score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
         if score >= beta:
             return score
@@ -712,7 +728,7 @@ def root_tactical_scan(
         stream = ctx.runtime.legal_actions(ctx.checkpoint)
         for action in stream:
             ctx.budget.check(ctx.stats, force=True)
-            with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
+            with _runtime_pushed(ctx, action):
                 child = ctx.runtime.state
                 ctx.stats.nodes += 1
                 ctx.stats.root_scan_nodes += 1
@@ -819,6 +835,7 @@ def run_root_search(
     _history_witnesses=None,
     recorder: AuditRecorder | None = None,
     progress_callback=None,
+    _shadow_mirror=False,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
     started = time.monotonic()
@@ -836,6 +853,23 @@ def run_root_search(
             (),
             stats.termination_reason,
         )
+    shadow_mirror = None
+    if _shadow_mirror:
+        if isinstance(_shadow_mirror, NativeSemanticPositionMirror):
+            shadow_mirror = _shadow_mirror
+        else:
+            from ...native.compiler import compile_native_semantic_rules
+
+            native_rules = compile_native_semantic_rules(compiled)
+            shadow_mirror = NativeSemanticPositionMirror.from_state(
+                compiled,
+                native_rules,
+                state,
+                history_certified=(
+                    runtime.history_witness_misses == 0
+                    and runtime.history_witness_hits == len(state.history)
+                ),
+            )
     budget = _Budget(limits, cancel_token)
     tt.new_generation()
     ctx = _Context(
@@ -852,6 +886,7 @@ def run_root_search(
         limits.quiescence_max_nodes,
         recorder,
         runtime,
+        shadow_mirror,
     )
     runtime.attach_stats(stats)
 
