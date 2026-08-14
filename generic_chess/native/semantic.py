@@ -79,22 +79,6 @@ def position_key(native_rules, position) -> str:
     return str(_module().semantic_position_key(native_rules.capsule, position))
 
 
-def position_key_stream_probe(native_rules, position) -> str:
-    """H18A test-only streaming/raw-digest key candidate."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return str(_module().semantic_position_key_stream_probe(native_rules.capsule, position))
-
-
-def key_history_probe(native_rules, position, repetitions: int = 5000) -> dict:
-    """H18A test-only raw-digest/direct-history versus hex-history probe."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    if not isinstance(repetitions, int) or isinstance(repetitions, bool) or repetitions < 1:
-        raise ValueError("repetitions must be a positive integer")
-    return dict(_module().semantic_key_history_probe(native_rules.capsule, position, int(repetitions)))
-
-
 def pack_action(fields: dict) -> int:
     """Pack an exact semantic action using the frozen Native bit layout."""
     if not native_available():

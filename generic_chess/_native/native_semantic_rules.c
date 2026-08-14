@@ -14,47 +14,6 @@
 
 /* ------------------------------------------------------------------ helpers */
 
-static void sem_prepare_canonical_key_order(GCSemanticRules *rules) {
-    if (rules == NULL || rules->type_ids == NULL) return;
-    for (uint16_t i = 0; i < rules->type_count; i++) {
-        rules->canonical_type_indices[i] = i;
-        size_t length = strlen(rules->type_ids[i]);
-        rules->canonical_type_lengths[i] = length > UINT16_MAX ? UINT16_MAX : (uint16_t)length;
-        rules->canonical_type_simple[i] = 1;
-        for (size_t j = 0; j < length; j++) {
-            unsigned char c = (unsigned char)rules->type_ids[i][j];
-            if (c < 0x20 || c >= 0x80 || c == '\"' || c == '\\') {
-                rules->canonical_type_simple[i] = 0;
-                break;
-            }
-        }
-    }
-    for (uint16_t i = 1; i < rules->type_count; i++) {
-        uint16_t value = rules->canonical_type_indices[i];
-        uint16_t j = i;
-        while (j > 0 && strcmp(rules->type_ids[rules->canonical_type_indices[j - 1]],
-                              rules->type_ids[value]) > 0) {
-            rules->canonical_type_indices[j] = rules->canonical_type_indices[j - 1];
-            j--;
-        }
-        rules->canonical_type_indices[j] = value;
-    }
-    for (uint8_t i = 0; i < rules->aux_slot_count; i++) {
-        rules->canonical_aux_indices[i] = i;
-    }
-    for (uint8_t i = 1; i < rules->aux_slot_count; i++) {
-        uint8_t value = rules->canonical_aux_indices[i];
-        uint8_t j = i;
-        while (j > 0 && rules->aux_slots[rules->canonical_aux_indices[j - 1]].slot_id >
-                             rules->aux_slots[value].slot_id) {
-            rules->canonical_aux_indices[j] = rules->canonical_aux_indices[j - 1];
-            j--;
-        }
-        rules->canonical_aux_indices[j] = value;
-    }
-    rules->canonical_order_ready = 1;
-}
-
 static int sem_get_list(PyObject *dict, const char *key, PyObject **out) {
     *out = PyDict_GetItemString(dict, key);
     if (*out == NULL || !PyList_Check(*out)) {
@@ -1953,7 +1912,6 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         }
     }
 
-    sem_prepare_canonical_key_order(rules);
     return rules;
 }
 

@@ -207,12 +207,6 @@ typedef struct {
     /* Payload v2 owns stable public type IDs for semantic position identity.
      * v1 compile-only capsules leave this NULL. */
     char **type_ids;
-    /* Immutable canonical ordering for the exact external key serializer. */
-    uint16_t canonical_type_indices[GC_MAX_TYPES];
-    uint16_t canonical_type_lengths[GC_MAX_TYPES];
-    uint8_t canonical_type_simple[GC_MAX_TYPES];
-    uint8_t canonical_aux_indices[GC_SEM_MAX_AUX_SLOTS];
-    uint8_t canonical_order_ready;
     GCSemType types[GC_MAX_TYPES];
     GCSemPairList promo_allowed[GC_MAX_TYPES][2];
     GCSemSquareList promo_forced[GC_MAX_TYPES][2];

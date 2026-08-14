@@ -1,13 +1,10 @@
 {
-  "actual": {
-    "origin/chat": "d6b0d5720efe23019a7a2b4cce72e05beee2e6c4",
-    "origin/master": "4f1d03a308f5fd04a01bbd980c7411888ea1ed9d",
-    "origin/sandbox": "abddca45077c7ce3df987a435fcf9bb056ec49d9"
-  },
-  "required": {
+  "initial_hard_lock": {
     "origin/chat": "d6b0d5720efe23019a7a2b4cce72e05beee2e6c4",
     "origin/master": "4f1d03a308f5fd04a01bbd980c7411888ea1ed9d",
     "origin/sandbox": "4999be31b6fc91655d7d0df9c948ef3bbdb43408"
   },
-  "status": "BASELINE_MOVED"
+  "phase_progression": ["4999be3", "abddca4", "2876f63"],
+  "master_chat_unchanged": true,
+  "status": "PASS"
 }

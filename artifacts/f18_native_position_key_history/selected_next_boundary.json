@@ -1,9 +1,5 @@
 {
-  "choices": [
-    "NATIVE_DELTA_POSITION_RUNTIME_CERTIFICATION",
-    "NATIVE_POSITION_KEY_ARCHITECTURE_REASSESSMENT",
-    "NATIVE_LEGALITY_KERNEL",
-    "SEARCH_STRENGTH_EVALUATOR_PHASE"
-  ],
-  "status": "PENDING_E18"
+  "selected_next_boundary": "NATIVE_POSITION_KEY_ARCHITECTURE_REASSESSMENT",
+  "reason": "Exact streaming/raw-digest candidate passed parity but failed the material key-speed and raw-history gates; a broader identity redesign is not authorized in F18.",
+  "status": "AUDIT_ONLY_PASS"
 }
