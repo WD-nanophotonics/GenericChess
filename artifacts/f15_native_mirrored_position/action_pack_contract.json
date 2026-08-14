@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "case_id": "semantic_prefix_0",
+      "guarded": 30,
+      "legal": 30
+    },
+    {
+      "case_id": "semantic_prefix_1",
+      "guarded": 30,
+      "legal": 30
+    },
+    {
+      "case_id": "semantic_prefix_2",
+      "guarded": 28,
+      "legal": 28
+    },
+    {
+      "case_id": "semantic_prefix_3",
+      "guarded": 30,
+      "legal": 30
+    }
+  ],
+  "coordinate_only_fallback": "REJECT",
+  "direct_packing": "PASS",
+  "enumeration_in_hot_path": "REJECT",
+  "status": "PASS"
+}

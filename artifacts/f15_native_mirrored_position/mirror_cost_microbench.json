@@ -1,0 +1,38 @@
+{
+  "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+  "max_native_make_us": 23.92400012467988,
+  "rows": [
+    {
+      "max_us": 271.7600000323728,
+      "median_us": 101.4149995171465,
+      "min_us": 98.41999999480322,
+      "operation": "exact_root_semantic_pack",
+      "p90_us": 267.3589999903925,
+      "repetitions": 100
+    },
+    {
+      "max_us": 41.914000030374154,
+      "median_us": 18.008499973802827,
+      "min_us": 15.905999898677692,
+      "operation": "direct_semantic_action_pack",
+      "p90_us": 41.88530001556501,
+      "repetitions": 1000
+    },
+    {
+      "max_us": 23.92400012467988,
+      "median_us": 19.353000025148503,
+      "min_us": 19.23900010297075,
+      "operation": "native_make_checked_child_creation",
+      "p90_us": 23.51030011777766,
+      "repetitions": 1000
+    },
+    {
+      "max_us": 93.88899998157285,
+      "median_us": 38.18549994321074,
+      "min_us": 36.9729999511037,
+      "operation": "mirror_stack_push_pop",
+      "p90_us": 93.16739998757839,
+      "repetitions": 1000
+    }
+  ]
+}
