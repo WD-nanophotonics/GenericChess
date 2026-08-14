@@ -28,6 +28,7 @@ class MirrorCounters:
     native_makes: int = 0
     mirror_pushes: int = 0
     mirror_pops: int = 0
+    peak_depth: int = 0
     root_pack_seconds: float = 0.0
     action_pack_seconds: float = 0.0
     native_make_seconds: float = 0.0
@@ -41,6 +42,7 @@ class MirrorCounters:
             "native_makes": self.native_makes,
             "mirror_pushes": self.mirror_pushes,
             "mirror_pops": self.mirror_pops,
+            "peak_depth": self.peak_depth,
             "root_pack_seconds": self.root_pack_seconds,
             "action_pack_seconds": self.action_pack_seconds,
             "native_make_seconds": self.native_make_seconds,
@@ -260,6 +262,7 @@ class NativeSemanticPositionMirror:
         self._parents.append(self._position)
         self._position = child
         self.counters.mirror_pushes += 1
+        self.counters.peak_depth = max(self.counters.peak_depth, len(self._parents))
         self.counters.push_seconds += time.perf_counter() - started
         return child
 

@@ -1,0 +1,21 @@
+{
+  "profiles": {
+    "A": {
+      "conservative_expected_routing_saving": 0.16130467899891185,
+      "f11_attack_check_wall_share_lower_bound": 0.181,
+      "f14_packed_speedup": 9.19,
+      "gate_g6": false,
+      "measured_mirror_overhead": 0.09284513691815666,
+      "projected_net_headroom": 0.06845954208075519
+    },
+    "B": {
+      "conservative_expected_routing_saving": 0.20372727272727273,
+      "f11_attack_check_wall_share_lower_bound": 0.231,
+      "f14_packed_speedup": 8.47,
+      "gate_g6": true,
+      "measured_mirror_overhead": 0.062476159443235035,
+      "projected_net_headroom": 0.1412511132840377
+    }
+  },
+  "status": "FAIL"
+}
