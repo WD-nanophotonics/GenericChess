@@ -1,0 +1,18 @@
+{
+  "h14a_commit": "163284a",
+  "h14b_commit": "37b49db",
+  "evidence_directory": "artifacts/f14_native_semantic_attack_api",
+  "old_evidence_immutable": true,
+  "required_files": [
+    "baseline.json", "environment.json", "fresh_native_build_before.txt",
+    "public_api_before.json", "python_attack_contract.json", "native_attack_authority.json",
+    "standard_shogi_attack_rows.jsonl", "standard_shogi_attack_summary.json", "standard_shogi_in_check.json",
+    "curated_attack_differential.json", "f13_action_witness_regression.json",
+    "standard_shogi_candidate_guarded_make_regression.json", "existing_10case_regression.json",
+    "fail_closed_api.json", "packed_capsule_microbench.json", "per_query_pack_microbench.json",
+    "break_even_model.json", "interruptibility_latency.json", "gil_audit.json",
+    "integration_options.json", "selected_next_boundary.json",
+    "old_evidence_before.sha256", "old_evidence_after.sha256",
+    "focused_tests.txt", "full_pytest.txt", "final_native_build.txt", "final_verdict.json", "manifest.json"
+  ]
+}

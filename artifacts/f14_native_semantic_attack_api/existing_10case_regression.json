@@ -1,0 +1,23 @@
+{
+  "cases": [
+    "cannon",
+    "castling",
+    "en_passant",
+    "nifu",
+    "uchifuzume",
+    "weird_0",
+    "weird_1",
+    "weird_2",
+    "weird_3",
+    "weird_4"
+  ],
+  "coverage": [
+    "position runtime",
+    "candidate/guarded",
+    "make/unmake",
+    "terminal",
+    "fixed-depth smoke"
+  ],
+  "native_executable": true,
+  "status": "PASS"
+}

@@ -1,0 +1,21 @@
+{
+  "FULL_NATIVE_SEMANTIC_SEARCH": {
+    "classification": "FORBIDDEN_IN_F14",
+    "reason": "scope"
+  },
+  "NATIVE_ATTACK_INTEGRATION_DIRECT": {
+    "classification": "REJECT",
+    "reason": "per-query pack is uneconomic"
+  },
+  "NATIVE_LEGALITY_KERNEL": {
+    "classification": "DEFERRED",
+    "reason": "larger boundary than F14"
+  },
+  "NATIVE_MIRRORED_POSITION_FRAME": {
+    "classification": "PREFERRED",
+    "reason": "reuse packed capsule across runtime frame"
+  },
+  "SEARCH_STRENGTH_EVALUATOR_PHASE": {
+    "classification": "DEFERRED"
+  }
+}
