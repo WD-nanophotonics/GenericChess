@@ -6,9 +6,9 @@ F19 closed as `ARCHITECTURE_DECISION_PASS` on the locked sandbox baseline. The e
 
 - `S0_S4_HISTORY_INDEPENDENT = true`.
 - State, attack/check, legality, nested-reply, and fail-closed differentials all reported zero mismatches.
-- Exact-history delta push/pop median: `21.34 us` in the recorded run.
-- `TRANSIENT_NONE` delta push/pop median: `10.39 us` in the recorded run.
-- Historyless saving: `10.95 us`; exact/transient speedup: `2.05x`.
+- Exact-history delta push/pop median: `36.38 us` in the final recorded run.
+- `TRANSIENT_NONE` delta push/pop median: `14.29 us` in the final recorded run.
+- Historyless saving: `22.08 us`; exact/transient speedup: `2.55x`.
 - G1, G2, G3, and G4: `PASS`.
 - Conservative end-to-end Profile A/B routing gain was not evidenced at `>=10%` for both profiles; fine-grained attack/check routing is therefore not selected.
 - Selected next boundary: `NATIVE_LEGALITY_KERNEL`.

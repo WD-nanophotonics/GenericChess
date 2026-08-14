@@ -18,7 +18,7 @@ F19 used a test-only F17 delta journal plus `TRANSIENT_NONE` policy to validate 
 
 ## Evidence
 
-The transient state differential, attack/check differential, legality differential, nested S3-reply differential, and fail-closed misuse tests all passed with zero mismatches. Nested S3 reply probes performed zero canonical child-key computations in the transient path. The historyless delta lifecycle measured 10.39 us median versus 21.34 us exact-history delta, a 2.05x separation and 10.95 us absolute saving.
+The transient state differential, attack/check differential, legality differential, nested S3-reply differential, and fail-closed misuse tests all passed with zero mismatches. Nested S3 reply probes performed zero canonical child-key computations in the transient path. The final recorded historyless delta lifecycle measured 14.29 us median versus 36.38 us exact-history delta, a 2.55x separation and 22.08 us absolute saving.
 
 ## Economics and next boundary
 
