@@ -3,6 +3,19 @@
 
 #include "native_semantic_key.h"
 
+typedef struct {
+    unsigned long long candidate_count;
+    unsigned long long s3_trial_count;
+    unsigned long long s4_count;
+    unsigned long long nested_reply_count;
+    unsigned long long child_canonical_key_computations;
+    unsigned long long history_appends;
+    unsigned long long attack_check_calls;
+} GCSemanticRuntimeAudit;
+
+void gc_semantic_runtime_audit_start(GCSemanticRuntimeAudit *audit);
+void gc_semantic_runtime_audit_stop(void);
+
 /* Apply one exact semantic action to a copied position.  This first validates
  * the action's pattern/geometry/target binding, then executes the declared
  * board, hand, type and auxiliary effects in order.  Returns 1 on success;

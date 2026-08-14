@@ -1,0 +1,11 @@
+F20 H20A initial Native build
+command: python scripts/build_native_zig.py
+zig: C:\Users\icywo\PycharmProjects\GenericChess\.venv\Lib\site-packages\ziglang\zig.exe
+output: C:\Users\icywo\AppData\Local\Temp\generic_chess_native_f20_before.pyd
+status: PASS
+bytes: 335360
+
+F20 H20A audit-probe build
+output: C:\Users\icywo\AppData\Local\Temp\generic_chess_native_f20_h20a.pyd
+status: PASS
+bytes: 337408

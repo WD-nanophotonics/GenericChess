@@ -2,6 +2,16 @@
 
 #include <string.h>
 
+static GCSemanticRuntimeAudit *gc_runtime_audit = NULL;
+
+void gc_semantic_runtime_audit_start(GCSemanticRuntimeAudit *audit) {
+    gc_runtime_audit = audit;
+}
+
+void gc_semantic_runtime_audit_stop(void) {
+    gc_runtime_audit = NULL;
+}
+
 static int gc_semantic_runtime_make_mode(GCSemanticPosition *child,
                                          const GCSemanticRules *rules,
                                          const GCSemanticPosition *parent,
@@ -177,6 +187,7 @@ static int slot_guards_hold(const GCSemanticRules *r, const GCSemanticPosition *
     return 1;
 }
 static int semantic_attacked_by(const GCSemanticRules *r, const GCSemanticPosition *pos, uint16_t target_square, uint8_t attacker) {
+    if (gc_runtime_audit) gc_runtime_audit->attack_check_calls++;
     if (target_square >= r->board_size * r->board_size) return 0;
     for (uint16_t pi=0; pi<r->pattern_count; pi++) {
         const GCSemPattern *pattern=&r->patterns[pi];
@@ -336,6 +347,7 @@ static int semantic_has_s3_reply(const GCSemanticRules *r, const GCSemanticPosit
 }
 
 static int postconditions_hold(const GCSemanticRules *r, const GCSemanticPosition *child, const GCSemPattern *pattern, uint8_t actor_side, uint16_t actor_source) {
+    if (gc_runtime_audit && pattern->postcondition_count > 0) gc_runtime_audit->s4_count++;
     int has_action_checked=0, has_checked=0, has_no_reply=0;
     for(uint8_t i=0;i<pattern->postcondition_count;i++){
         if(pattern->postconditions[i].kind==0)has_checked=1;
@@ -348,11 +360,15 @@ static int postconditions_hold(const GCSemanticRules *r, const GCSemanticPositio
     int opponent_checked=0;
     for(uint16_t sq=0;sq<r->board_size*r->board_size;sq++)if(child->board[sq].occupied&&child->board[sq].owner==(uint8_t)(1-actor_side)&&r->types[child->board[sq].current_type].is_anchor&&semantic_attacked_by(r,child,sq,actor_side)){opponent_checked=1;break;}
     if(has_checked&&!opponent_checked)return 1;
-    if(has_no_reply&&semantic_has_s3_reply(r,child))return 1;
+    if(has_no_reply) {
+        if (gc_runtime_audit) gc_runtime_audit->nested_reply_count++;
+        if (semantic_has_s3_reply(r,child)) return 1;
+    }
     return 0;
 }
 
 static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action, int include_postconditions) {
+    if (gc_runtime_audit) gc_runtime_audit->s3_trial_count++;
     if(!child||!r||!parent||parent->ply>=r->max_ply)return 0; const GCSemPattern *pattern=NULL; const GCSemGeometry *geo=NULL; uint16_t source=0,target=0; if(!validate_action(r,parent,action,&pattern,&geo,&source,&target))return 0; (void)geo;
     GCSemanticPosition work=*parent; uint8_t side=parent->side_to_move;
     for (uint8_t i = 0; i < r->aux_slot_count; i++) if (r->aux_slots[i].lifetime == 1) {
@@ -379,7 +395,7 @@ static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSema
         }
     }
     for(uint8_t i=0;i<pattern->effect_count;i++){const GCSemEffect *e=&pattern->effects[i];if(e->kind<5||e->kind>8)continue;uint8_t slot_index=0;const GCSemAuxSlot *slot=slot_meta(r,e->slot_id,&slot_index);if(!slot)return 0;uint8_t owner_index=slot->scope==1?(uint8_t)(side+1):0;GCSemAuxValue *v=&work.aux[slot_index][owner_index];v->kind=slot->value_kind;v->has_value=1;if(e->kind==5)v->bool_value=e->has_value?e->value:0;else if(e->kind==6)v->bool_value=0;else if(e->kind==7){uint16_t sq;if(!resolve_square(&e->square_ref,r,NULL,parent,side,source,target,&sq))return 0;v->square=sq;}else v->has_value=0;}
-    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side,target))return 0;if(work.history_len>=GC_MAX_PLY+1)return 0;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_exact=parent->history_exact;work.history_len++;*child=work;return 1;
+    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side,target))return 0;if(work.history_len>=GC_MAX_PLY+1)return 0;if(gc_runtime_audit)gc_runtime_audit->child_canonical_key_computations++;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_exact=parent->history_exact;if(gc_runtime_audit)gc_runtime_audit->history_appends++;work.history_len++;*child=work;return 1;
 }
 
 int gc_semantic_runtime_make_checked(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {

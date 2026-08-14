@@ -2749,6 +2749,55 @@ static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
     return result;
 }
 
+static PyObject *gc_semantic_guarded_actions_audit(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    if (!gc_semantic_generate_candidate_buffer(rules, position, &candidates)) {
+        gc_semantic_action_buffer_free(&candidates);
+        return NULL;
+    }
+    GCSemanticRuntimeAudit audit = {0};
+    audit.candidate_count = (unsigned long long)candidates.count;
+    gc_semantic_runtime_audit_start(&audit);
+    PyObject *actions = gc_semantic_guarded_actions(self, args);
+    gc_semantic_runtime_audit_stop();
+    gc_semantic_action_buffer_free(&candidates);
+    if (!actions) return NULL;
+    PyObject *out = PyDict_New();
+    if (!out) { Py_DECREF(actions); return NULL; }
+    PyObject *value = PyLong_FromUnsignedLongLong(audit.candidate_count);
+    if (!value || PyDict_SetItemString(out, "candidate_count", value) != 0) goto audit_error;
+    Py_DECREF(value); value = PyLong_FromUnsignedLongLong(audit.s3_trial_count);
+    if (!value || PyDict_SetItemString(out, "s3_trial_count", value) != 0) goto audit_error;
+    Py_DECREF(value); value = PyLong_FromUnsignedLongLong(audit.s4_count);
+    if (!value || PyDict_SetItemString(out, "s4_count", value) != 0) goto audit_error;
+    Py_DECREF(value); value = PyLong_FromUnsignedLongLong(audit.nested_reply_count);
+    if (!value || PyDict_SetItemString(out, "nested_reply_count", value) != 0) goto audit_error;
+    Py_DECREF(value); value = PyLong_FromUnsignedLongLong(audit.child_canonical_key_computations);
+    if (!value || PyDict_SetItemString(out, "child_canonical_key_computations", value) != 0) goto audit_error;
+    Py_DECREF(value); value = PyLong_FromUnsignedLongLong(audit.history_appends);
+    if (!value || PyDict_SetItemString(out, "history_appends", value) != 0) goto audit_error;
+    Py_DECREF(value); value = PyLong_FromUnsignedLongLong(audit.attack_check_calls);
+    if (!value || PyDict_SetItemString(out, "attack_check_calls", value) != 0) goto audit_error;
+    Py_DECREF(value);
+    if (PyDict_SetItemString(out, "actions", actions) != 0) goto audit_error_no_value;
+    Py_DECREF(actions);
+    return out;
+audit_error:
+    Py_XDECREF(value);
+audit_error_no_value:
+    Py_DECREF(actions);
+    Py_DECREF(out);
+    return NULL;
+}
+
 static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
                                           const GCSemanticPosition *position,
                                           int *ok) {
@@ -3218,6 +3267,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_candidate_perft(rules, position, depth) -> recursive guarded candidate node count"},
     {"semantic_guarded_actions", gc_semantic_guarded_actions, METH_VARARGS,
      "semantic_guarded_actions(rules, position) -> exact guarded action set"},
+    {"semantic_guarded_actions_audit", gc_semantic_guarded_actions_audit, METH_VARARGS,
+     "test-only guarded action counters and exact action set"},
     {"semantic_terminal", gc_semantic_terminal, METH_VARARGS,
      "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,

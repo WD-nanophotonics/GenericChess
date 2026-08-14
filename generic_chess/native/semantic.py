@@ -107,6 +107,20 @@ def guarded_actions(native_rules, position) -> tuple[int, ...]:
     return tuple(int(action) for action in _module().semantic_guarded_actions(native_rules.capsule, position))
 
 
+def guarded_actions_audit(native_rules, position) -> dict:
+    """Test-only baseline counters for the exact guarded-action path."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    raw = dict(_module().semantic_guarded_actions_audit(native_rules.capsule, position))
+    raw["actions"] = tuple(int(action) for action in raw.get("actions", ()))
+    for key in (
+        "candidate_count", "s3_trial_count", "s4_count", "nested_reply_count",
+        "child_canonical_key_computations", "history_appends", "attack_check_calls",
+    ):
+        raw[key] = int(raw.get(key, 0))
+    return raw
+
+
 def history_occurrences(position, lo: int, hi: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")
