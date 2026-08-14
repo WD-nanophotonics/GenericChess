@@ -1,37 +1,57 @@
 {
   "already_packed_key": {
-    "max_us": 19.714659999590367,
-    "median_us": 15.394239997840486,
-    "p90_us": 19.714659999590367,
+    "max_us": 15.102379999007098,
+    "median_us": 13.5576000000583,
+    "p90_us": 15.102379999007098,
     "repetitions": 5000,
     "samples_us": [
-      15.394239997840486,
-      13.342999998712912,
-      15.339079999830574,
-      15.492420000373386,
-      19.714659999590367
+      13.30489999963902,
+      14.087339999969117,
+      15.102379999007098,
+      13.5576000000583,
+      13.107160001527518
     ],
     "warmup": 100
   },
   "attribution": {
     "classification": "ESTIMATED_FROM_SUBTRACTION_NOT_EXCLUSIVE",
-    "key_related_us_of_make": 15.394239997840486,
-    "key_share_of_make": 0.5129351333301464,
+    "key_related_us_of_make": 13.5576000000583,
+    "key_share_of_make": 0.5384889137211621,
     "key_stage": "MEASURED_PUBLIC_KEY_ONLY",
     "make_stage": "MEASURED_NESTED_NATIVE_MAKE",
     "note": "The current public API does not expose exclusive internal serializer/SHA/hex timings; H18A records the nested key cost honestly."
   },
   "make_checked": {
-    "max_us": 31.677740000304766,
-    "median_us": 30.012060000444762,
-    "p90_us": 31.677740000304766,
+    "max_us": 25.500640002428554,
+    "median_us": 25.177120001171716,
+    "p90_us": 25.500640002428554,
     "repetitions": 5000,
     "samples_us": [
-      31.28487999783829,
-      31.677740000304766,
-      30.012060000444762,
-      29.52852000016719,
-      29.40414000186138
+      25.177120001171716,
+      25.19800000009127,
+      25.500640002428554,
+      25.04276000254322,
+      24.879199999850243
+    ],
+    "warmup": 100
+  },
+  "raw_history_candidate": {
+    "hex_parse_history_us": 12.4,
+    "raw_digest_direct_history_us": 10.4,
+    "sink": 0,
+    "speedup": 1.1923076923076923
+  },
+  "streaming_candidate_key": {
+    "max_us": 13.922879999154247,
+    "median_us": 11.385680001694709,
+    "p90_us": 13.922879999154247,
+    "repetitions": 5000,
+    "samples_us": [
+      11.26086000003852,
+      11.259879998397082,
+      11.385680001694709,
+      11.512160001439042,
+      13.922879999154247
     ],
     "warmup": 100
   }

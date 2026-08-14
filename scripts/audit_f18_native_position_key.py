@@ -48,7 +48,12 @@ from generic_chess.native.mirror import (  # noqa: E402
     NativeSemanticPositionMirror,
     _position_payload,
 )
-from generic_chess.native.semantic import make_checked, position_key  # noqa: E402
+from generic_chess.native.semantic import (  # noqa: E402
+    key_history_probe,
+    make_checked,
+    position_key,
+    position_key_stream_probe,
+)
 from phase19c1_native_semantic_fixtures import semantic_corpus  # noqa: E402
 from scripts.audit_f4_runtime_cost import corpus_specs, make_session  # noqa: E402
 
@@ -121,6 +126,7 @@ def oracle(position, compiled) -> tuple[str, bytes]:
 def row(case_id: str, depth: int, position, compiled, native, native_position) -> dict:
     expected, raw = oracle(position, compiled)
     public = position_key(native, native_position)
+    candidate = position_key_stream_probe(native, native_position)
     return {
         "case_id": case_id,
         "depth": depth,
@@ -129,8 +135,10 @@ def row(case_id: str, depth: int, position, compiled, native, native_position) -
         "canonical_bytes_sha256": hashlib.sha256(raw).hexdigest(),
         "python_key": expected,
         "old_native_key": public,
+        "candidate_native_key": candidate,
         "key_match": expected == public,
-        "status": "PASS" if expected == public else "FAIL",
+        "candidate_match": expected == candidate,
+        "status": "PASS" if expected == public == candidate else "FAIL",
     }
 
 
@@ -204,9 +212,13 @@ def baseline_bench() -> dict:
     action = legal_actions(session.state, session.compiled)[0]
     packed = mirror.direct_pack(action, session.state.position)
     key_result = bench(lambda: position_key(native, mirror.position))
+    candidate_result = bench(lambda: position_key_stream_probe(native, mirror.position))
     make_result = bench(lambda: make_checked(native, mirror.position, packed))
+    raw_history = key_history_probe(native, mirror.position, 5000)
     return {
         "already_packed_key": key_result,
+        "streaming_candidate_key": candidate_result,
+        "raw_history_candidate": raw_history,
         "make_checked": make_result,
         "attribution": {
             "key_stage": "MEASURED_PUBLIC_KEY_ONLY",
@@ -230,20 +242,27 @@ def main() -> None:
     (OUT / "fresh_native_build_before.txt").write_text(os.environ.get("F18_INITIAL_BUILD_OUTPUT", "baseline build output supplied externally\n"), encoding="utf-8")
     write_json("key_pipeline_audit.json", {"old_pipeline": ["sort_public_type_ids_per_call", "sort_aux_slots_per_call", "grow_realloc_heap_json_buffer", "sha256_completed_buffer", "hex_encode_32_bytes"], "make_history_pipeline": ["make_checked", "key_hex", "parse_64_hex_to_4_words", "append_history_words"], "optimization_family_authorized": "canonical semantic key streaming + direct raw-digest history append", "status": "FROZEN"})
     rows, depths = collect_rows()
-    write_json("key_cost_attribution.json", baseline_bench())
+    bench_data = baseline_bench()
+    write_json("key_cost_attribution.json", bench_data)
     (OUT / "old_key_corpus.jsonl").write_text("".join(json.dumps(item, sort_keys=True) + "\n" for item in rows), encoding="utf-8")
     (OUT / "key_differential.jsonl").write_text("".join(json.dumps(item, sort_keys=True) + "\n" for item in rows), encoding="utf-8")
     mismatches = sum(1 for item in rows if not item["key_match"])
-    write_json("key_differential_summary.json", {"rows": len(rows), "depths": depths, "mismatches": mismatches, "status": "PASS" if mismatches == 0 else "FAIL"})
+    candidate_mismatches = sum(1 for item in rows if not item["candidate_match"])
+    write_json("key_differential_summary.json", {"rows": len(rows), "depths": depths, "old_mismatches": mismatches, "candidate_mismatches": candidate_mismatches, "status": "PASS" if mismatches == 0 and candidate_mismatches == 0 else "FAIL"})
     write_json("canonical_byte_oracle.json", {"oracle": "Python json.dumps(sort_keys=True,separators=(',',':'),ensure_ascii=True).encode('utf-8')", "old_native_vs_python_digest": "PASS" if mismatches == 0 else "FAIL", "coverage": {"ascii_type_ids": True, "escaped_type_ids": any(any(token in item["case_id"] for token in ("weird", "cannon")) for item in rows), "quotes_backslashes_controls": "compiler_fixture_dependent", "empty_nonempty_hands": True, "promotion_drop_capture": True, "global_per_owner_aux": True, "owner_0_1": True, "side_0_1": True}, "status": "PASS" if mismatches == 0 else "FAIL"})
     write_json("history_append_differential.json", {"status": "NOT_RUN_NOT_AUTHORIZED", "reason": "H18A freezes the old public key before raw-digest candidate authorization"})
     write_json("failure_atomicity.json", {"status": "NOT_RUN_NOT_AUTHORIZED", "reason": "H18A baseline-only phase"})
-    write_json("h18b_authorization_gate.json", {"G1_exact_key_parity": "PASS" if mismatches == 0 else "FAIL", "G2_material_key_speedup": "PENDING_CANDIDATE", "G3_raw_digest_benefit": "PENDING_CANDIDATE", "G4_version_identity": "PASS", "authorized": False, "status": "PENDING_CANDIDATE"})
+    old_key = bench_data["already_packed_key"]["median_us"]
+    candidate_key = bench_data["streaming_candidate_key"]["median_us"]
+    raw_history_speedup = bench_data["raw_history_candidate"]["speedup"]
+    gates = {"G1_exact_key_parity": "PASS" if candidate_mismatches == 0 else "FAIL", "G2_material_key_speedup": {"baseline_median_us": old_key, "candidate_median_us": candidate_key, "speedup": old_key / candidate_key if candidate_key else 0, "required_speedup": 1.67, "status": "PASS" if candidate_key <= old_key * 0.60 else "FAIL"}, "G3_raw_digest_benefit": {"raw_direct_history_speedup": raw_history_speedup, "required_speedup": 1.20, "status": "PASS" if raw_history_speedup >= 1.20 else "FAIL"}, "G4_version_identity": "PASS"}
+    authorized = all((gates["G1_exact_key_parity"] == "PASS", gates["G2_material_key_speedup"]["status"] == "PASS", gates["G3_raw_digest_benefit"]["status"] == "PASS", gates["G4_version_identity"] == "PASS"))
+    write_json("h18b_authorization_gate.json", {**gates, "authorized": authorized, "status": "AUTHORIZED" if authorized else "NOT_AUTHORIZED"})
     write_json("optimization_design.json", {"status": "H18A_CANDIDATE_PENDING", "allowed_family": "canonical semantic key streaming + direct raw-digest history append", "forbidden": ["zobrist_external_identity", "truncated_sha", "global_cache", "incremental_sha_under_arbitrary_edits"]})
     for name in ("public_api_regression.json", "repetition_history_regression.json", "f13_f14_regression.json", "key_microbench_after.json", "key_microbench_comparison.json", "make_checked_after.json", "make_checked_comparison.json", "f17_delta_requalification.json", "delta_requalification_gate.json"):
         write_json(name, {"status": "NOT_RUN_NOT_AUTHORIZED", "reason": "H18B has not been authorized"})
-    write_json("key_microbench_before.json", baseline_bench())
-    write_json("make_checked_before.json", baseline_bench()["make_checked"])
+    write_json("key_microbench_before.json", bench_data["already_packed_key"])
+    write_json("make_checked_before.json", bench_data["make_checked"])
     write_json("selected_next_boundary.json", {"status": "PENDING_E18", "choices": ["NATIVE_DELTA_POSITION_RUNTIME_CERTIFICATION", "NATIVE_POSITION_KEY_ARCHITECTURE_REASSESSMENT", "NATIVE_LEGALITY_KERNEL", "SEARCH_STRENGTH_EVALUATOR_PHASE"]})
     (OUT / "focused_tests.txt").write_text("pending H18A closure\n", encoding="utf-8")
     (OUT / "full_pytest.txt").write_text("pending E18 closure\n", encoding="utf-8")

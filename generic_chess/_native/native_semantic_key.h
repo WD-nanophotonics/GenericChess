@@ -10,4 +10,9 @@ int gc_semantic_position_key_digest(const GCSemanticRules *rules,
                                     const GCSemanticPosition *position,
                                     char out_hex[65]);
 
+/* H18A candidate: stream the exact canonical bytes directly into SHA-256. */
+int gc_semantic_position_key_digest_raw(const GCSemanticRules *rules,
+                                        const GCSemanticPosition *position,
+                                        uint8_t digest[32]);
+
 #endif

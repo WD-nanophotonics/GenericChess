@@ -4,10 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <time.h>
 #ifdef _WIN32
 #include <windows.h>
-#else
-#include <time.h>
 #endif
 
 #include "native_types.h"
@@ -2334,6 +2333,91 @@ static PyObject *gc_semantic_position_key(PyObject *self, PyObject *args) {
     return PyUnicode_FromString(digest);
 }
 
+static PyObject *gc_semantic_position_key_stream_probe(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (rules == NULL || pos == NULL) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
+    uint8_t raw[32]; char hex[65];
+    if (!gc_semantic_position_key_digest_raw(rules, pos, raw)) {
+        PyErr_SetString(PyExc_ValueError, "semantic position cannot be streamed to a canonical key");
+        return NULL;
+    }
+    gc_sha256_hex(raw, hex);
+    return PyUnicode_FromString(hex);
+}
+
+static void gc_digest_words(const uint8_t digest[32], uint64_t words[4]) {
+    for (int w = 0; w < 4; w++) {
+        uint64_t value = 0;
+        for (int i = 0; i < 8; i++) value = (value << 8) | digest[w * 8 + i];
+        words[w] = value;
+    }
+}
+
+static int gc_hex_words(const char hex[65], uint64_t words[4]) {
+    for (int w = 0; w < 4; w++) {
+        uint64_t value = 0;
+        for (int i = 0; i < 16; i++) {
+            char c = hex[w * 16 + i];
+            uint8_t nibble;
+            if (c >= '0' && c <= '9') nibble = (uint8_t)(c - '0');
+            else if (c >= 'a' && c <= 'f') nibble = (uint8_t)(c - 'a' + 10);
+            else if (c >= 'A' && c <= 'F') nibble = (uint8_t)(c - 'A' + 10);
+            else return 0;
+            value = (value << 4) | nibble;
+        }
+        words[w] = value;
+    }
+    return 1;
+}
+
+static PyObject *gc_semantic_key_history_probe(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    unsigned long repetitions = 0;
+    if (!PyArg_ParseTuple(args, "OOk", &rules_capsule, &pos_capsule, &repetitions)) return NULL;
+    if (repetitions == 0 || repetitions > 10000000UL) {
+        PyErr_SetString(PyExc_ValueError, "repetitions must be in 1..10000000");
+        return NULL;
+    }
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (rules == NULL || pos == NULL) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
+    volatile uint64_t sink = 0;
+    clock_t started = clock();
+    for (unsigned long i = 0; i < repetitions; i++) {
+        uint8_t raw[32]; uint64_t words[4];
+        if (!gc_semantic_position_key_digest_raw(rules, pos, raw)) {
+            PyErr_SetString(PyExc_ValueError, "raw semantic key failed");
+            return NULL;
+        }
+        gc_digest_words(raw, words);
+        sink ^= words[0] ^ words[1] ^ words[2] ^ words[3];
+    }
+    clock_t raw_done = clock();
+    for (unsigned long i = 0; i < repetitions; i++) {
+        char hex[65]; uint64_t words[4];
+        if (!gc_semantic_position_key_digest(rules, pos, hex) || !gc_hex_words(hex, words)) {
+            PyErr_SetString(PyExc_ValueError, "hex semantic key failed");
+            return NULL;
+        }
+        sink ^= words[0] ^ words[1] ^ words[2] ^ words[3];
+    }
+    clock_t old_done = clock();
+    double scale = 1000000.0 / (double)CLOCKS_PER_SEC / (double)repetitions;
+    PyObject *out = Py_BuildValue("{s:d,s:d,s:d,s:K}",
+                                  "raw_digest_direct_history_us", (double)(raw_done - started) * scale,
+                                  "hex_parse_history_us", (double)(old_done - raw_done) * scale,
+                                  "speedup", (double)(old_done - raw_done) / (double)(raw_done - started),
+                                  "sink", (unsigned long long)sink);
+    return out;
+}
+
 static PyObject *gc_sha256_hex_api(PyObject *self, PyObject *args) {
     (void)self;
     const char *data = NULL;
@@ -3194,6 +3278,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_position_snapshot(rules, position) -> canonical board snapshot"},
     {"semantic_position_key", gc_semantic_position_key, METH_VARARGS,
      "semantic_position_key(rules, position) -> SHA-256 hex digest"},
+    {"semantic_position_key_stream_probe", gc_semantic_position_key_stream_probe, METH_VARARGS,
+     "test-only streaming canonical key probe"},
+    {"semantic_key_history_probe", gc_semantic_key_history_probe, METH_VARARGS,
+     "test-only raw-digest versus hex-history append probe"},
     {"sha256_hex", gc_sha256_hex_api, METH_VARARGS,
      "sha256_hex(bytes) -> lowercase SHA-256 digest"},
     {"semantic_action_pack", gc_semantic_action_pack, METH_VARARGS,
