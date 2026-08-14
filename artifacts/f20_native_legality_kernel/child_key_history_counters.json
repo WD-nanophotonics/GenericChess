@@ -1,16 +1,7 @@
 {
-  "candidate_child_canonical_key_computations": 2354,
-  "candidate_child_history_appends": 2354,
-  "implementation": "current exact-history guarded_actions",
-  "nested_reply_child_canonical_key_computations": "included in candidate_child_canonical_key_computations",
-  "status": "BASELINE_LEAK_CONFIRMED",
-  "totals": {
-    "attack_check_calls": 2354,
-    "candidate_count": 2354,
-    "child_canonical_key_computations": 2354,
-    "history_appends": 2354,
-    "nested_reply_count": 0,
-    "s3_trial_count": 2354,
-    "s4_count": 0
-  }
+  "nested_reply_child_key_computations": 0,
+  "standard_rows": 84,
+  "status": "PASS",
+  "transient_child_key_computations": 0,
+  "transient_history_appends": 0
 }

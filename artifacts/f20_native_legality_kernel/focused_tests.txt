@@ -2,3 +2,8 @@ command: preloaded F20 H20A extension; pytest -q -p no:cacheprovider tests/test_
 status: PASS
 exit_code: 0
 scope: existing exact Native semantic position and stress differential regressions
+
+command: preloaded F20 H20B extension; pytest -q -p no:cacheprovider tests/test_f13_native_action_delivers_check.py tests/test_f14_native_semantic_attack_api.py tests/test_native_semantic_position.py tests/test_native_semantic_stress_differential.py tests/test_native_semantic_probe_search.py tests/test_native_history.py tests/test_native_repetition_context.py tests/test_native_differential.py
+status: PASS
+exit_code: 0
+scope: F13/F14/F19 semantic legality, attack/check, exact-history, repetition and Native differential regressions

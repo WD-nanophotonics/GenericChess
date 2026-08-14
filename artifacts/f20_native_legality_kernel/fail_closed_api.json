@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "case": "wrong_fingerprint",
+      "error": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "case": "malformed_board",
+      "error": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "case": "invalid_side",
+      "error": "ValueError",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

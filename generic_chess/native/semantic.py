@@ -121,6 +121,31 @@ def guarded_actions_audit(native_rules, position) -> dict:
     return raw
 
 
+def transient_legal_actions(native_rules, position) -> tuple[int, ...]:
+    """Return ordered S0-S4 actions without child key/history authority."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return tuple(int(action) for action in _module().semantic_transient_legal_actions(
+        native_rules.capsule, position
+    ))
+
+
+def transient_legal_actions_audit(native_rules, position) -> dict:
+    """Test-only transient legality counters and ordered action set."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    raw = dict(_module().semantic_transient_legal_actions_audit(
+        native_rules.capsule, position
+    ))
+    raw["actions"] = tuple(int(action) for action in raw.get("actions", ()))
+    for key in (
+        "candidate_count", "s3_trial_count", "s4_count", "nested_reply_count",
+        "child_canonical_key_computations", "history_appends", "attack_check_calls",
+    ):
+        raw[key] = int(raw.get(key, 0))
+    return raw
+
+
 def history_occurrences(position, lo: int, hi: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")

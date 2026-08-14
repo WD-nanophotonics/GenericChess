@@ -2798,6 +2798,81 @@ audit_error_no_value:
     return NULL;
 }
 
+static PyObject *gc_semantic_transient_legal_actions_impl(
+    PyObject *self, PyObject *args, GCSemanticRuntimeAudit *audit_out) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    if (!gc_semantic_generate_candidate_buffer(rules, position, &candidates)) {
+        gc_semantic_action_buffer_free(&candidates);
+        return NULL;
+    }
+    GCSemanticRuntimeAudit local_audit = {0};
+    if (audit_out) {
+        local_audit.candidate_count = (unsigned long long)candidates.count;
+        gc_semantic_runtime_audit_start(&local_audit);
+    }
+    gc_semantic_runtime_history_mode_start();
+    PyObject *out = PyList_New(0);
+    if (out) {
+        for (size_t i = 0; i < candidates.count; i++) {
+            GCSemanticPosition child;
+            if (!gc_semantic_runtime_make_checked(&child, rules, position, candidates.data[i])) continue;
+            PyObject *value = PyLong_FromUnsignedLongLong(candidates.data[i]);
+            if (!value) { Py_DECREF(out); out = NULL; break; }
+            if (PyList_Append(out, value) != 0) { Py_DECREF(value); Py_DECREF(out); out = NULL; break; }
+            Py_DECREF(value);
+        }
+    }
+    gc_semantic_runtime_history_mode_stop();
+    if (audit_out) gc_semantic_runtime_audit_stop();
+    gc_semantic_action_buffer_free(&candidates);
+    if (!out) return NULL;
+    PyObject *tuple = PySequence_Tuple(out);
+    Py_DECREF(out);
+    if (!tuple) return NULL;
+    if (audit_out) *audit_out = local_audit;
+    return tuple;
+}
+
+static PyObject *gc_semantic_transient_legal_actions(PyObject *self, PyObject *args) {
+    return gc_semantic_transient_legal_actions_impl(self, args, NULL);
+}
+
+static PyObject *gc_semantic_transient_legal_actions_audit(PyObject *self, PyObject *args) {
+    GCSemanticRuntimeAudit audit = {0};
+    PyObject *actions = gc_semantic_transient_legal_actions_impl(self, args, &audit);
+    if (!actions) return NULL;
+    PyObject *out = PyDict_New();
+    if (!out) { Py_DECREF(actions); return NULL; }
+    const char *names[] = {
+        "candidate_count", "s3_trial_count", "s4_count", "nested_reply_count",
+        "child_canonical_key_computations", "history_appends", "attack_check_calls"
+    };
+    unsigned long long values[] = {
+        audit.candidate_count, audit.s3_trial_count, audit.s4_count, audit.nested_reply_count,
+        audit.child_canonical_key_computations, audit.history_appends, audit.attack_check_calls
+    };
+    for (int i = 0; i < 7; i++) {
+        PyObject *value = PyLong_FromUnsignedLongLong(values[i]);
+        if (!value || PyDict_SetItemString(out, names[i], value) != 0) {
+            Py_XDECREF(value); Py_DECREF(actions); Py_DECREF(out); return NULL;
+        }
+        Py_DECREF(value);
+    }
+    if (PyDict_SetItemString(out, "actions", actions) != 0) {
+        Py_DECREF(actions); Py_DECREF(out); return NULL;
+    }
+    Py_DECREF(actions);
+    return out;
+}
+
 static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
                                           const GCSemanticPosition *position,
                                           int *ok) {
@@ -3269,6 +3344,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_guarded_actions(rules, position) -> exact guarded action set"},
     {"semantic_guarded_actions_audit", gc_semantic_guarded_actions_audit, METH_VARARGS,
      "test-only guarded action counters and exact action set"},
+    {"semantic_transient_legal_actions", gc_semantic_transient_legal_actions, METH_VARARGS,
+     "semantic_transient_legal_actions(rules, position) -> ordered legal action set without history"},
+    {"semantic_transient_legal_actions_audit", gc_semantic_transient_legal_actions_audit, METH_VARARGS,
+     "test-only transient legality counters and exact action set"},
     {"semantic_terminal", gc_semantic_terminal, METH_VARARGS,
      "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,

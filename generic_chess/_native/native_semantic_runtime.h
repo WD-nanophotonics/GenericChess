@@ -15,6 +15,8 @@ typedef struct {
 
 void gc_semantic_runtime_audit_start(GCSemanticRuntimeAudit *audit);
 void gc_semantic_runtime_audit_stop(void);
+void gc_semantic_runtime_history_mode_start(void);
+void gc_semantic_runtime_history_mode_stop(void);
 
 /* Apply one exact semantic action to a copied position.  This first validates
  * the action's pattern/geometry/target binding, then executes the declared
