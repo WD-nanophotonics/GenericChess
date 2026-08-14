@@ -126,68 +126,6 @@ def make_unmake_roundtrip(native_rules, position, action: int) -> dict:
     return dict(_module().semantic_make_unmake_roundtrip(native_rules.capsule, position, int(action)))
 
 
-def delta_runtime_layout() -> dict:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return {key: int(value) for key, value in _module().semantic_delta_runtime_layout().items()}
-
-
-def delta_runtime_new(native_rules, position):
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    _require_executable(native_rules)
-    return _module().semantic_delta_runtime_new(native_rules.capsule, position)
-
-
-def delta_runtime_push(runtime, action: int) -> None:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    _module().semantic_delta_runtime_push(runtime, int(action))
-
-
-def delta_runtime_pop(runtime) -> None:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    _module().semantic_delta_runtime_pop(runtime)
-
-
-def delta_runtime_info(runtime) -> dict:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return {key: int(value) for key, value in _module().semantic_delta_runtime_info(runtime).items()}
-
-
-def delta_runtime_snapshot(runtime) -> dict:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    out = dict(_module().semantic_delta_runtime_snapshot(runtime))
-    out["aux_state"] = tuple(
-        ((int(entry[0]), int(entry[1])), tuple(entry[2]) if isinstance(entry[2], (list, tuple)) else entry[2])
-        for entry in out.get("aux_state", ())
-    )
-    out["history"] = tuple(tuple(int(word) for word in entry) for entry in out.get("history", ()))
-    out["history_occurrences"] = int(out.get("history_occurrences", 0))
-    return out
-
-
-def delta_runtime_position_key(runtime) -> str:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return str(_module().semantic_delta_runtime_position_key(runtime))
-
-
-def delta_runtime_is_square_attacked(runtime, square: int, by_owner: int) -> bool:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return bool(_module().semantic_delta_runtime_is_square_attacked(runtime, int(square), int(by_owner)))
-
-
-def delta_runtime_in_check(runtime, side: int) -> bool:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return bool(_module().semantic_delta_runtime_in_check(runtime, int(side)))
-
-
 def candidate_perft(native_rules, position, depth: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")
