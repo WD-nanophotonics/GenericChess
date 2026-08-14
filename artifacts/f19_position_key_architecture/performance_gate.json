@@ -1,0 +1,19 @@
+{
+  "G1_historyless_delta_lifecycle": {
+    "median_us": 14.29336000001058,
+    "p90_us": 16.637819999596104,
+    "status": "PASS"
+  },
+  "G2_material_key_history_removal": {
+    "absolute_saving_us": 22.083459998248145,
+    "exact_over_transient_speedup": 2.5450153076835536,
+    "status": "PASS"
+  },
+  "G3_s3_s4_no_history_benefit": {
+    "canonical_child_key_computations_in_nested_reply": 0,
+    "positive_benefit_observed": true,
+    "status": "PASS"
+  },
+  "G4_capability_safety": "PASS",
+  "status": "PASS"
+}

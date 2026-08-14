@@ -35,6 +35,7 @@
 #define GC_CANCEL_CAPSULE "generic_chess._native_core.gc_cancel"
 #define GC_SEM_RULES_CAPSULE "generic_chess._native_core.gc_semantic_rules"
 #define GC_SEM_POSITION_CAPSULE "generic_chess._native_core.gc_semantic_position"
+#define GC_SEM_DELTA_RUNTIME_CAPSULE "generic_chess._native_core.gc_semantic_delta_runtime"
 
 static PyObject *gc_native_error = NULL;
 
@@ -105,6 +106,12 @@ static void gc_semantic_position_capsule_free(PyObject *capsule) {
     GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(
         capsule, GC_SEM_POSITION_CAPSULE);
     if (pos != NULL) free(pos);
+}
+
+static void gc_semantic_delta_runtime_capsule_free(PyObject *capsule) {
+    GCSemanticDeltaRuntimeStack *runtime = (GCSemanticDeltaRuntimeStack *)PyCapsule_GetPointer(
+        capsule, GC_SEM_DELTA_RUNTIME_CAPSULE);
+    if (runtime != NULL) gc_semantic_delta_runtime_free(runtime);
 }
 
 static uint64_t gc_py_long_as_u64(PyObject *obj, int *ok) {
@@ -2334,6 +2341,111 @@ static PyObject *gc_semantic_position_key(PyObject *self, PyObject *args) {
     return PyUnicode_FromString(digest);
 }
 
+static GCSemanticDeltaRuntimeStack *gc_semantic_delta_runtime_from_capsule(PyObject *capsule) {
+    return (GCSemanticDeltaRuntimeStack *)PyCapsule_GetPointer(capsule, GC_SEM_DELTA_RUNTIME_CAPSULE);
+}
+
+static PyObject *gc_semantic_delta_runtime_layout(PyObject *self, PyObject *args) {
+    (void)self; (void)args;
+    return Py_BuildValue("{s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+        "sizeof_position", (unsigned long long)sizeof(GCSemanticPosition),
+        "sizeof_full_undo", (unsigned long long)sizeof(GCSemanticUndo),
+        "sizeof_delta_undo", (unsigned long long)sizeof(GCSemanticDeltaUndo),
+        "board_capacity", (unsigned long long)GC_SEM_DELTA_MAX_BOARD_CELLS,
+        "hand_capacity", (unsigned long long)GC_SEM_DELTA_MAX_HAND_CELLS,
+        "aux_capacity", (unsigned long long)GC_SEM_DELTA_MAX_AUX_CELLS,
+        "max_depth_delta_bytes", (unsigned long long)(sizeof(GCSemanticDeltaUndo) * GC_MAX_PLY));
+}
+
+static PyObject *gc_semantic_delta_runtime_new_api(PyObject *self, PyObject *args) {
+    (void)self; PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_new(rules, position);
+    if (!runtime) { PyErr_NoMemory(); return NULL; }
+    return PyCapsule_New(runtime, GC_SEM_DELTA_RUNTIME_CAPSULE, gc_semantic_delta_runtime_capsule_free);
+}
+
+static PyObject *gc_semantic_delta_runtime_new_transient_api(PyObject *self, PyObject *args) {
+    (void)self; PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_new_transient(rules, position);
+    if (!runtime) { PyErr_NoMemory(); return NULL; }
+    return PyCapsule_New(runtime, GC_SEM_DELTA_RUNTIME_CAPSULE, gc_semantic_delta_runtime_capsule_free);
+}
+
+static PyObject *gc_semantic_delta_runtime_push_api(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule; unsigned long long action;
+    if (!PyArg_ParseTuple(args, "OK", &runtime_capsule, &action)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL;
+    if (!gc_semantic_delta_runtime_push(runtime, (uint64_t)action)) { PyErr_SetString(PyExc_ValueError, "semantic delta runtime push rejected action or capacity growth"); return NULL; }
+    Py_RETURN_NONE;
+}
+
+static PyObject *gc_semantic_delta_runtime_pop_api(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule;
+    if (!PyArg_ParseTuple(args, "O", &runtime_capsule)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL;
+    if (!gc_semantic_delta_runtime_pop(runtime)) { PyErr_SetString(PyExc_IndexError, "semantic delta runtime pop underflow"); return NULL; }
+    Py_RETURN_NONE;
+}
+
+static PyObject *gc_semantic_delta_runtime_info(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule;
+    if (!PyArg_ParseTuple(args, "O", &runtime_capsule)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL;
+    return Py_BuildValue("{s:i,s:i,s:i,s:i,s:i,s:i,s:i}", "depth", runtime->depth, "capacity", runtime->capacity, "peak_depth", runtime->peak_depth, "peak_undo_frames", runtime->peak_depth, "capacity_grows", runtime->capacity_grows, "delta_frame_bytes", (int)sizeof(GCSemanticDeltaUndo), "history_policy", (int)runtime->history_policy);
+}
+
+static PyObject *gc_semantic_delta_runtime_snapshot(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule;
+    if (!PyArg_ParseTuple(args, "O", &runtime_capsule)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL;
+    PyObject *rules = PyCapsule_New((void *)runtime->rules, GC_SEM_RULES_CAPSULE, NULL);
+    PyObject *position = PyCapsule_New((void *)&runtime->current, GC_SEM_POSITION_CAPSULE, NULL);
+    if (!rules || !position) { Py_XDECREF(rules); Py_XDECREF(position); return NULL; }
+    PyObject *call_args = PyTuple_Pack(2, rules, position); Py_DECREF(rules); Py_DECREF(position);
+    if (!call_args) return NULL; PyObject *out = gc_semantic_position_snapshot(NULL, call_args); Py_DECREF(call_args); return out;
+}
+
+static PyObject *gc_semantic_delta_runtime_position_key(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule;
+    if (!PyArg_ParseTuple(args, "O", &runtime_capsule)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL; char digest[65];
+    if (!gc_semantic_position_key_digest(runtime->rules, &runtime->current, digest)) { PyErr_SetString(PyExc_ValueError, "semantic delta runtime position cannot be keyed"); return NULL; }
+    return PyUnicode_FromString(digest);
+}
+
+static PyObject *gc_semantic_delta_runtime_is_square_attacked_api(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule; Py_ssize_t square; int by_owner;
+    if (!PyArg_ParseTuple(args, "OnI", &runtime_capsule, &square, &by_owner)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL;
+    if (square < 0 || square >= (Py_ssize_t)(runtime->rules->board_size * runtime->rules->board_size) || by_owner < 0 || by_owner > 1) { PyErr_SetString(PyExc_ValueError, "semantic delta runtime attack query is out of range"); return NULL; }
+    return PyBool_FromLong(gc_semantic_runtime_is_square_attacked(runtime->rules, &runtime->current, (uint16_t)square, (uint8_t)by_owner));
+}
+
+static PyObject *gc_semantic_delta_runtime_in_check_api(PyObject *self, PyObject *args) {
+    (void)self; PyObject *runtime_capsule; int side;
+    if (!PyArg_ParseTuple(args, "Oi", &runtime_capsule, &side)) return NULL;
+    GCSemanticDeltaRuntimeStack *runtime = gc_semantic_delta_runtime_from_capsule(runtime_capsule);
+    if (!runtime) return NULL;
+    if (side < 0 || side > 1) { PyErr_SetString(PyExc_ValueError, "semantic delta runtime side must be 0 or 1"); return NULL; }
+    return PyBool_FromLong(gc_semantic_runtime_in_check(runtime->rules, &runtime->current, (uint8_t)side));
+}
+
 static PyObject *gc_sha256_hex_api(PyObject *self, PyObject *args) {
     (void)self;
     const char *data = NULL;
@@ -3194,6 +3306,26 @@ static PyMethodDef gc_methods[] = {
      "semantic_position_snapshot(rules, position) -> canonical board snapshot"},
     {"semantic_position_key", gc_semantic_position_key, METH_VARARGS,
      "semantic_position_key(rules, position) -> SHA-256 hex digest"},
+    {"semantic_delta_runtime_layout", gc_semantic_delta_runtime_layout, METH_NOARGS,
+     "semantic_delta_runtime_layout() -> delta journal sizes and capacities"},
+    {"semantic_delta_runtime_new", gc_semantic_delta_runtime_new_api, METH_VARARGS,
+     "semantic_delta_runtime_new(rules, position) -> exact delta runtime capsule"},
+    {"semantic_delta_runtime_new_transient", gc_semantic_delta_runtime_new_transient_api, METH_VARARGS,
+     "semantic_delta_runtime_new_transient(rules, position) -> historyless audit capsule"},
+    {"semantic_delta_runtime_push", gc_semantic_delta_runtime_push_api, METH_VARARGS,
+     "semantic_delta_runtime_push(runtime, packed_action) -> None"},
+    {"semantic_delta_runtime_pop", gc_semantic_delta_runtime_pop_api, METH_VARARGS,
+     "semantic_delta_runtime_pop(runtime) -> None"},
+    {"semantic_delta_runtime_info", gc_semantic_delta_runtime_info, METH_VARARGS,
+     "semantic_delta_runtime_info(runtime) -> lifecycle counters"},
+    {"semantic_delta_runtime_snapshot", gc_semantic_delta_runtime_snapshot, METH_VARARGS,
+     "semantic_delta_runtime_snapshot(runtime) -> current snapshot"},
+    {"semantic_delta_runtime_position_key", gc_semantic_delta_runtime_position_key, METH_VARARGS,
+     "semantic_delta_runtime_position_key(runtime) -> SHA-256 hex digest"},
+    {"semantic_delta_runtime_is_square_attacked", gc_semantic_delta_runtime_is_square_attacked_api, METH_VARARGS,
+     "semantic_delta_runtime_is_square_attacked(runtime, square, owner) -> bool"},
+    {"semantic_delta_runtime_in_check", gc_semantic_delta_runtime_in_check_api, METH_VARARGS,
+     "semantic_delta_runtime_in_check(runtime, side) -> bool"},
     {"sha256_hex", gc_sha256_hex_api, METH_VARARGS,
      "sha256_hex(bytes) -> lowercase SHA-256 digest"},
     {"semantic_action_pack", gc_semantic_action_pack, METH_VARARGS,
