@@ -1,0 +1,163 @@
+{
+  "attack_check": [
+    {
+      "attack_mismatches": 0,
+      "attack_queries": 162,
+      "case_id": "semantic_prefix_0",
+      "check_mismatches": 0,
+      "check_queries": 2,
+      "status": "PASS"
+    },
+    {
+      "attack_mismatches": 0,
+      "attack_queries": 162,
+      "case_id": "semantic_prefix_1",
+      "check_mismatches": 0,
+      "check_queries": 2,
+      "status": "PASS"
+    },
+    {
+      "attack_mismatches": 0,
+      "attack_queries": 162,
+      "case_id": "semantic_prefix_2",
+      "check_mismatches": 0,
+      "check_queries": 2,
+      "status": "PASS"
+    },
+    {
+      "attack_mismatches": 0,
+      "attack_queries": 162,
+      "case_id": "semantic_prefix_3",
+      "check_mismatches": 0,
+      "check_queries": 2,
+      "status": "PASS"
+    }
+  ],
+  "generic": [
+    {
+      "actions_checked": 3,
+      "case_id": "cannon",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 15,
+      "case_id": "castling",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "en_passant",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "nifu",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "uchifuzume",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "weird_0",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "weird_1",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "weird_2",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "weird_3",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "actions_checked": 3,
+      "case_id": "weird_4",
+      "mismatches": 0,
+      "rollback_failures": 0,
+      "status": "PASS"
+    }
+  ],
+  "standard": [
+    {
+      "case_id": "semantic_prefix_0",
+      "depth2_pairs": 64,
+      "depth_mismatches": 0,
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "guarded_count": 30,
+      "history_mismatches": 0,
+      "legal_count": 30,
+      "pack_mismatches": 0,
+      "pop_mismatches": 0,
+      "push_mismatches": 30,
+      "status": "FAIL"
+    },
+    {
+      "case_id": "semantic_prefix_1",
+      "depth2_pairs": 64,
+      "depth_mismatches": 0,
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "guarded_count": 30,
+      "history_mismatches": 0,
+      "legal_count": 30,
+      "pack_mismatches": 0,
+      "pop_mismatches": 0,
+      "push_mismatches": 30,
+      "status": "FAIL"
+    },
+    {
+      "case_id": "semantic_prefix_2",
+      "depth2_pairs": 64,
+      "depth_mismatches": 0,
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "guarded_count": 28,
+      "history_mismatches": 0,
+      "legal_count": 28,
+      "pack_mismatches": 0,
+      "pop_mismatches": 0,
+      "push_mismatches": 28,
+      "status": "FAIL"
+    },
+    {
+      "case_id": "semantic_prefix_3",
+      "depth2_pairs": 64,
+      "depth_mismatches": 0,
+      "fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
+      "guarded_count": 30,
+      "history_mismatches": 0,
+      "legal_count": 30,
+      "pack_mismatches": 0,
+      "pop_mismatches": 0,
+      "push_mismatches": 30,
+      "status": "FAIL"
+    }
+  ],
+  "status": "PASS"
+}

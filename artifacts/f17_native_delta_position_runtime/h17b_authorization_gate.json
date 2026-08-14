@@ -1,0 +1,20 @@
+{
+  "G1_delta_size": "PASS",
+  "G2_prestate": "PASS",
+  "G3_failure_atomicity": "PASS_FOR_REACHABLE_FIXTURES",
+  "G4_lifecycle": {
+    "median_us": 31.389020002097823,
+    "p90_us": 32.087959998170845,
+    "required_f16_ratio_us": 17.92,
+    "required_median_us": 18.0,
+    "status": "FAIL"
+  },
+  "G5_action_pack": {
+    "required": 5.0,
+    "speedup_vs_f15_rebuild": 8.84,
+    "status": "PASS"
+  },
+  "G6_raw_differential": "PASS",
+  "authorized": false,
+  "failed_gate": "G4_DELTA_LIFECYCLE_NOT_UNDER_18_US"
+}
