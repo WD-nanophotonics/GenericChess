@@ -2650,6 +2650,45 @@ static PyObject *gc_semantic_action_delivers_check_debug(PyObject *self, PyObjec
         rules, parent, (uint64_t)action));
 }
 
+static PyObject *gc_semantic_is_square_attacked(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    Py_ssize_t square;
+    int by_owner;
+    if (!PyArg_ParseTuple(args, "OOnI", &rules_capsule, &pos_capsule, &square, &by_owner)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (square < 0 || square >= (Py_ssize_t)(rules->board_size * rules->board_size)) {
+        PyErr_SetString(PyExc_ValueError, "semantic square is outside board");
+        return NULL;
+    }
+    if (by_owner > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic attacker owner must be 0 or 1");
+        return NULL;
+    }
+    return PyBool_FromLong(gc_semantic_runtime_is_square_attacked(
+        rules, position, (uint16_t)square, (uint8_t)by_owner));
+}
+
+static PyObject *gc_semantic_in_check(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    int side;
+    if (!PyArg_ParseTuple(args, "OOi", &rules_capsule, &pos_capsule, &side)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (side < 0 || side > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic side must be 0 or 1");
+        return NULL;
+    }
+    return PyBool_FromLong(gc_semantic_runtime_in_check(
+        rules, position, (uint8_t)side));
+}
+
 static PyObject *gc_semantic_make_unmake_roundtrip(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -3167,6 +3206,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_history_occurrences(position, lo, hi) -> occurrence count"},
     {"semantic_make_checked", gc_semantic_make_checked, METH_VARARGS,
      "semantic_make_checked(rules, position, action) -> child position capsule"},
+    {"semantic_is_square_attacked", gc_semantic_is_square_attacked, METH_VARARGS,
+     "semantic_is_square_attacked(rules, position, square, by_owner) -> bool"},
+    {"semantic_in_check", gc_semantic_in_check, METH_VARARGS,
+     "semantic_in_check(rules, position, side) -> bool"},
     {"_semantic_action_delivers_check_debug", gc_semantic_action_delivers_check_debug, METH_VARARGS,
      "test-only semantic action witness inspection; not a production API"},
     {"semantic_make_unmake_roundtrip", gc_semantic_make_unmake_roundtrip, METH_VARARGS,

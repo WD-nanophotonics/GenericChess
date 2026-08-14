@@ -7,6 +7,11 @@ from collections.abc import Mapping
 from . import _module, native_available
 
 
+def _require_executable(native_rules):
+    if not getattr(native_rules, "native_executable", False):
+        raise ValueError("Native semantic attack/check requires an executable rules capsule")
+
+
 def pack_position(native_rules, payload):
     """Pack an independent semantic position.
 
@@ -27,6 +32,30 @@ def pack_position(native_rules, payload):
             [int(word) for word in words] for words in payload["history"]
         ]
     return _module().semantic_pack_position(native_rules.capsule, normalized)
+
+
+def is_square_attacked(native_rules, position, square: int, by_owner: int) -> bool:
+    """Query semantic pseudo-attack on an already-packed Native position."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    _require_executable(native_rules)
+    if not isinstance(square, int) or isinstance(square, bool):
+        raise TypeError("square must be an integer board index")
+    if not isinstance(by_owner, int) or isinstance(by_owner, bool) or by_owner not in (0, 1):
+        raise ValueError("by_owner must be 0 or 1")
+    return bool(_module().semantic_is_square_attacked(
+        native_rules.capsule, position, int(square), int(by_owner)
+    ))
+
+
+def in_check(native_rules, position, side: int) -> bool:
+    """Query semantic check on an already-packed Native position."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    _require_executable(native_rules)
+    if not isinstance(side, int) or isinstance(side, bool) or side not in (0, 1):
+        raise ValueError("side must be 0 or 1")
+    return bool(_module().semantic_in_check(native_rules.capsule, position, int(side)))
 
 
 def snapshot(native_rules, position):

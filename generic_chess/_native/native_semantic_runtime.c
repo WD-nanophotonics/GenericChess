@@ -180,6 +180,10 @@ static int semantic_attacked_by(const GCSemanticRules *r, const GCSemanticPositi
     if (target_square >= r->board_size * r->board_size) return 0;
     for (uint16_t pi=0; pi<r->pattern_count; pi++) {
         const GCSemPattern *pattern=&r->patterns[pi];
+        /* Semantic pseudo-attack is capture eligibility only.  Keep this
+         * identical to SemanticEngine.is_square_attacked: target_any and
+         * target_empty patterns never contribute attack truth. */
+        if (pattern->target != 1) continue;
         for (uint8_t gi=0; gi<pattern->geometry_count; gi++) {
             uint16_t gid=pattern->geometry_indices[gi]; if(gid>=r->geometry_count)continue;
             const GCSemGeometry *geo=&r->geometries[gid]; if(geo->kind==2)continue;
@@ -188,7 +192,7 @@ static int semantic_attacked_by(const GCSemanticRules *r, const GCSemanticPositi
                 const GCPiece *actor=&pos->board[si]; if(!actor->occupied||actor->owner!=attacker||!pattern_has_type(pattern,actor->current_type))continue;
                 if(geo->has_atom_source&&geo->atom_source_type!=actor->current_type)continue;
                 const GCSemPathEntry *entry=NULL;if(!path_entry(geo,attacker,si,&entry))continue;
-                for(uint16_t ti=0;ti<entry->count;ti++)if(entry->squares[ti]==target_square){uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;if(ti<start)continue;if(!target_ok(pattern->target,&pos->board[target_square],attacker))continue;if(!path_ok(pattern,entry,ti,pos,attacker))continue;if(!state_guards_hold(r,pos,pattern,attacker,si,target_square,actor->base_type,actor->current_type))continue;if(!slot_guards_hold(r,pos,pattern,attacker,si,target_square))continue;return 1;}
+                for(uint16_t ti=0;ti<entry->count;ti++)if(entry->squares[ti]==target_square){uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;if(ti<start)continue;if(!path_ok(pattern,entry,ti,pos,attacker))continue;if(!state_guards_hold(r,pos,pattern,attacker,si,target_square,actor->base_type,actor->current_type))continue;if(!slot_guards_hold(r,pos,pattern,attacker,si,target_square))continue;return 1;}
             }
         }
     }
@@ -398,6 +402,14 @@ int gc_semantic_runtime_in_check(const GCSemanticRules *r, const GCSemanticPosit
             return semantic_attacked_by(r, position, sq, (uint8_t)(1 - side));
     }
     return 0;
+}
+
+int gc_semantic_runtime_is_square_attacked(const GCSemanticRules *r,
+                                           const GCSemanticPosition *position,
+                                           uint16_t square,
+                                           uint8_t by_owner) {
+    if (!r || !position || by_owner > 1 || square >= r->board_size * r->board_size) return 0;
+    return semantic_attacked_by(r, position, square, by_owner);
 }
 
 int gc_semantic_runtime_make_trusted(GCSemanticPosition *position, const GCSemanticRules *rules, uint64_t action, GCSemanticUndo *undo) {
