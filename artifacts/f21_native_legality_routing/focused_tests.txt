@@ -1,0 +1,4 @@
+{
+  "command": "python -m pytest -q -p no:cacheprovider tests/test_f21_native_legality_provider.py tests/test_search_path_runtime.py tests/test_qsearch_correctness.py tests/test_search_upgrades.py",
+  "result": "57 passed"
+}

@@ -1,0 +1,5 @@
+{
+  "command": "python -m pytest -q -p no:cacheprovider",
+  "environment_note": "elevated only for existing workspace temporary-directory ACL",
+  "result": "exit_code=0; 100% passed"
+}
