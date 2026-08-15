@@ -106,6 +106,14 @@ def test_native_on_and_python_off_search_results_match():
         use_ordering=False,
     )
     assert native_player.native_legality_provider is not None
+    default_player = AlphaBetaPlayer(
+        session.compiled,
+        use_disk_cache=False,
+        use_tt=False,
+        use_ordering=False,
+    )
+    assert default_player.use_native_semantic_legality is True
+    assert default_player.native_legality_provider is not None
     left = python_player.choose_action(session, limits)
     right = native_player.choose_action(session, limits)
     for name in (

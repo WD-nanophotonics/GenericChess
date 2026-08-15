@@ -38,9 +38,9 @@ class AlphaBetaPlayer:
         disk_cache_dir: str | None = None,
         use_tt: bool = True,
         use_ordering: bool = True,
-        # H21A keeps this explicit route opt-in until its authorization gates
-        # pass; H21B changes the default to True without changing the hook.
-        use_native_semantic_legality: bool = False,
+        # H21B default-on policy.  ``False`` remains the explicit Python
+        # authority control for parity, diagnostics, and emergency rollback.
+        use_native_semantic_legality: bool = True,
         tuning: SearchTuning = SearchTuning(),
     ) -> None:
         self._compiled = compiled

@@ -18,8 +18,6 @@ from ...core.semantic_executor import (
     _semantic_public_action,
     semantic_engine_for,
 )
-from ...native.compiler import compile_native_semantic_rules
-from ...native.semantic import pack_position, transient_legal_actions
 from ...rules.ir import CompiledSemanticRuleset
 
 
@@ -58,6 +56,10 @@ class NativeSemanticLegalityProvider:
             return None
         started = time.perf_counter()
         try:
+            # Deferred imports avoid a package-initialization cycle when the
+            # compiler is imported directly by Native contract tests.
+            from ...native.compiler import compile_native_semantic_rules
+
             native_rules = compile_native_semantic_rules(compiled)
             if not native_rules.native_executable:
                 return None
@@ -153,6 +155,8 @@ class NativeSemanticLegalityProvider:
         )
 
     def __call__(self, position, ply_count, checkpoint=None):
+        from ...native.semantic import pack_position, transient_legal_actions
+
         started = time.perf_counter()
         if checkpoint is not None:
             checkpoint()
