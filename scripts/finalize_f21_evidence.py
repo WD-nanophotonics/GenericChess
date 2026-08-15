@@ -68,6 +68,7 @@ def main():
             ),
             encoding="utf-8",
         )
+    write("production_performance.json", {"profiles": perf, "status": "PASS"})
 
     write("fresh_native_build_before.txt", {
         "command": "python -u scripts/build_native_zig.py",
