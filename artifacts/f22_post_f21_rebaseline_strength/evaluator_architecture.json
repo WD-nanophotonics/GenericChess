@@ -1,0 +1,21 @@
+{
+  "authority": "generic-v1",
+  "evaluator_version": "generic-v1",
+  "inputs": [
+    "rule-derived movement-capability profile",
+    "board material",
+    "hand material",
+    "promotion potential",
+    "pseudo-attack mobility",
+    "anchor escape",
+    "check penalty"
+  ],
+  "legacy_compiled_use": "evaluation and movement inspection only; not a semantic execution dependency",
+  "semantic_limitations": [
+    "generic-v1 does not directly value Shogi-specific strategic concepts beyond generic mobility/anchor/check/promotion terms",
+    "semantic legality is richer than evaluator feature vocabulary"
+  ],
+  "semantic_support_inputs": [
+    "compiled piece types and promotion/drop metadata via legacy-compatible facade"
+  ]
+}
