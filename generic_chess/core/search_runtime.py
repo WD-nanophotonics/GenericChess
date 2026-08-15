@@ -13,7 +13,7 @@ import hashlib
 import json
 from contextlib import contextmanager
 from dataclasses import dataclass
-from typing import Any, Iterable, Mapping
+from typing import Any, Callable, Iterable, Mapping
 
 from .actions import Action, BoardMove, DropMove, action_from_dict, action_to_dict
 from .attacks import is_in_check
@@ -456,9 +456,21 @@ def _semantic_component_diff_hash(parent: Position, child: Position, compiled, c
 class SearchPathRuntime:
     """Core-owned mutable DFS context with strict exception-safe undo."""
 
-    def __init__(self, state: GameState, compiled, *, hash_override=None, history_witnesses=None):
+    def __init__(
+        self,
+        state: GameState,
+        compiled,
+        *,
+        hash_override=None,
+        history_witnesses=None,
+        legal_binding_provider: Callable | None = None,
+    ):
         ensure_ruleset_match(state.position, compiled)
         self.compiled = compiled
+        # Opaque Core-neutral callback: Core never imports Native and never
+        # stores a Native capsule/rules object.
+        self._legal_binding_provider = legal_binding_provider
+        self._legal_provider_active = legal_binding_provider is not None
         self.position = state.position
         self.ply_count = state.ply_count
         self.terminal_status = state.terminal_status
@@ -575,6 +587,13 @@ class SearchPathRuntime:
         self.snapshot_entry_digest_calls = 0
         self.search_key_calls = 0
         self.peak_depth = 0
+        self.legal_provider_calls = 0
+        self.legal_provider_actions = 0
+        self.legal_provider_seconds = 0.0
+        self.legal_provider_payload_seconds = 0.0
+        self.legal_provider_decode_binding_seconds = 0.0
+        self.legal_provider_fallbacks = 0
+        self.legal_provider_operational_failures = 0
 
     @staticmethod
     def _coerce_hash(value) -> RuntimeHash:
@@ -689,12 +708,21 @@ class SearchPathRuntime:
         return RuntimeCountsSnapshot.from_counts(values, fast_hashes=fast_hashes)
 
     @classmethod
-    def from_state(cls, state: GameState, compiled, *, hash_override=None, history_witnesses=None):
+    def from_state(
+        cls,
+        state: GameState,
+        compiled,
+        *,
+        hash_override=None,
+        history_witnesses=None,
+        legal_binding_provider: Callable | None = None,
+    ):
         return cls(
             state,
             compiled,
             hash_override=hash_override,
             history_witnesses=history_witnesses,
+            legal_binding_provider=legal_binding_provider,
         )
 
     @property
@@ -777,9 +805,86 @@ class SearchPathRuntime:
             self.stats.runtime_history_context_updates = self._history_context_updates
             self.stats.runtime_history_context_exact_comparisons = self._history_context_exact_comparisons
             self.stats.runtime_tt_eligible = int(self.tt_eligible)
+        if hasattr(self.stats, "native_legality_enabled"):
+            self.stats.native_legality_enabled = int(
+                self._legal_binding_provider is not None and self._legal_provider_active
+            )
+            self.stats.native_legality_calls = self.legal_provider_calls
+            self.stats.native_legality_actions = self.legal_provider_actions
+            self.stats.native_legality_seconds = self.legal_provider_seconds
+            self.stats.native_legality_payload_seconds = self.legal_provider_payload_seconds
+            self.stats.native_legality_decode_binding_seconds = self.legal_provider_decode_binding_seconds
+            self.stats.native_legality_fallbacks = self.legal_provider_fallbacks
+            self.stats.native_legality_operational_failures = self.legal_provider_operational_failures
         self.stats.runtime_root_imports = 1
         self.stats.runtime_peak_depth = self.peak_depth
         self.stats.runtime_depth_balanced = not self._frames and self.pushes == self.pops
+
+    def _provider_checkpoint(self, checkpoint):
+        """Wrap the search checkpoint so cancellation is never swallowed."""
+        aborted = False
+
+        def checked():
+            nonlocal aborted
+            try:
+                if checkpoint is not None:
+                    checkpoint()
+            except BaseException:
+                aborted = True
+                raise
+
+        return checked, lambda: aborted
+
+    def _legal_actions_from_provider(self, checkpoint):
+        """Validate one complete opaque-provider result before mutating caches."""
+        import time
+
+        provider = self._legal_binding_provider
+        checked, was_aborted = self._provider_checkpoint(checkpoint)
+        started = time.perf_counter()
+        try:
+            checked()
+            raw = provider(self.position, self.ply_count, checked)
+            checked()
+            pairs = tuple(raw)
+            actions = []
+            bindings = {}
+            for index, pair in enumerate(pairs):
+                if index and index % 64 == 0:
+                    checked()
+                if not isinstance(pair, (tuple, list)) or len(pair) != 2:
+                    raise ValueError("legal binding provider returned a malformed pair")
+                public, binding = pair
+                if public in bindings:
+                    raise ValueError("legal binding provider returned a duplicate action")
+                if binding is None:
+                    raise ValueError("legal binding provider returned an empty binding")
+                actions.append(public)
+                bindings[public] = binding
+            checked()
+        except BaseException as exc:
+            if was_aborted() or not isinstance(exc, Exception):
+                raise
+            provider_owner = getattr(provider, "__self__", None)
+            if bool(getattr(provider_owner, "strict", False)):
+                raise
+            self.legal_provider_fallbacks += 1
+            self.legal_provider_operational_failures += 1
+            self._legal_provider_active = False
+            self._sync_stats()
+            return None
+
+        self.legal_provider_calls += 1
+        self.legal_provider_actions += len(actions)
+        self.legal_provider_seconds += time.perf_counter() - started
+        provider_owner = getattr(provider, "__self__", None)
+        metrics = getattr(provider_owner, "last_call_metrics", {}) or {}
+        self.legal_provider_payload_seconds += float(metrics.get("payload_seconds", 0.0))
+        self.legal_provider_decode_binding_seconds += float(
+            metrics.get("decode_binding_seconds", 0.0)
+        )
+        self._sync_stats()
+        return tuple(actions), bindings
 
     def legal_actions(self, checkpoint=None) -> tuple[Action, ...]:
         if self._legal_cache is not None:
@@ -789,6 +894,13 @@ class SearchPathRuntime:
             return self._legal_cache
         engine = semantic_engine_for(self.compiled)
         if engine is not None:
+            if self._legal_provider_active and self._legal_binding_provider is not None:
+                provided = self._legal_actions_from_provider(checkpoint)
+                if provided is not None:
+                    actions, bindings = provided
+                    self._bindings = bindings
+                    self._legal_cache = actions
+                    return self._legal_cache
             actions = []
             bindings = {}
             for semantic_action, binding in engine.iter_legal_action_bindings(self.position, checkpoint=checkpoint):

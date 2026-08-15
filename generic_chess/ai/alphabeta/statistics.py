@@ -101,3 +101,13 @@ class SearchStatistics:
     runtime_root_imports: int = 0
     runtime_peak_depth: int = 0
     runtime_depth_balanced: bool = True
+    # Optional Native semantic legality provider observability.  These are
+    # populated through the Core-neutral SearchPathRuntime callback boundary.
+    native_legality_enabled: int = 0
+    native_legality_calls: int = 0
+    native_legality_actions: int = 0
+    native_legality_seconds: float = 0.0
+    native_legality_payload_seconds: float = 0.0
+    native_legality_decode_binding_seconds: float = 0.0
+    native_legality_fallbacks: int = 0
+    native_legality_operational_failures: int = 0

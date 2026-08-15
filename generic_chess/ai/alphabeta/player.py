@@ -13,6 +13,7 @@ from ..evaluation.config import EvaluationConfig
 from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
 from .search import run_root_search
+from .native_legality import NativeSemanticLegalityProvider
 from .statistics import SearchStatistics
 from .transposition import TranspositionTable
 from .tuning import SearchTuning
@@ -37,6 +38,9 @@ class AlphaBetaPlayer:
         disk_cache_dir: str | None = None,
         use_tt: bool = True,
         use_ordering: bool = True,
+        # H21A keeps this explicit route opt-in until its authorization gates
+        # pass; H21B changes the default to True without changing the hook.
+        use_native_semantic_legality: bool = False,
         tuning: SearchTuning = SearchTuning(),
     ) -> None:
         self._compiled = compiled
@@ -51,6 +55,12 @@ class AlphaBetaPlayer:
         self._tt = TranspositionTable(max_entries=tt_max_entries)
         self._use_tt = use_tt
         self._use_ordering = use_ordering
+        self._use_native_semantic_legality = bool(use_native_semantic_legality)
+        self._native_legality_provider = (
+            NativeSemanticLegalityProvider.try_create(compiled)
+            if self._use_native_semantic_legality
+            else None
+        )
         self._tuning = tuning
 
     @property
@@ -64,6 +74,14 @@ class AlphaBetaPlayer:
     @property
     def evaluation_profile_cache_hit(self) -> bool:
         return self._profile_cache_hit
+
+    @property
+    def use_native_semantic_legality(self) -> bool:
+        return self._use_native_semantic_legality
+
+    @property
+    def native_legality_provider(self):
+        return self._native_legality_provider
 
     def reset(self) -> None:
         """Clear search state (e.g., after loading a different RuleSet)."""
@@ -93,6 +111,11 @@ class AlphaBetaPlayer:
             use_ordering=self._use_ordering,
             tuning=self._tuning,
             _history_witnesses=session._search_witnesses,
+            legal_binding_provider=(
+                self._native_legality_provider
+                if self._use_native_semantic_legality
+                else None
+            ),
             recorder=recorder,
             progress_callback=progress_callback,
         )
