@@ -1,0 +1,15 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "policy",
+  "policy_id": "single-run-execution-v2",
+  "supersedes": "continuous-execution-v1",
+  "priority": "hard",
+  "valid_end_states": [
+    "COMPLETE",
+    "HARD_BLOCKED"
+  ],
+  "checkpoint_semantics": "forbidden",
+  "intermediate_progress_return": "forbidden",
+  "git_commits_pushes": "allowed only as mechanical persistence; must not interrupt execution",
+  "active_task": "native-semantic-runtime-search-002"
+}
