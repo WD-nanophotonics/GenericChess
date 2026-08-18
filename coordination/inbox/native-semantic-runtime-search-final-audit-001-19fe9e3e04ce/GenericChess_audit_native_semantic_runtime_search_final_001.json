@@ -1,0 +1,23 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "audit",
+  "audit_id": "native-semantic-runtime-search-final-audit-001",
+  "candidate_sha": "1303c03b114434cc6dc05bc94abe23cec8940437",
+  "base_master_sha": "3629c52b8c0bb4e92bd55851f2fc970d0407dadc",
+  "verdict": "PASS",
+  "required_tests": [
+    "Zig Native build",
+    "standard wheel/setuptools smoke",
+    "C1 static semantic payload specification",
+    "C2 ADR-018 runtime specification",
+    "semantic position/runtime/differential tests",
+    "fixed-depth semantic search/minimax/PV tests",
+    "legacy Native focused regressions",
+    "full pytest"
+  ],
+  "findings": [],
+  "sha_bound": true,
+  "post_audit_change_invalidates": true,
+  "promotion_authorized": false,
+  "note": "Audit PASS establishes the Chat gate. Formal master promotion is a separate explicit step."
+}
