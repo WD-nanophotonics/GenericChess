@@ -1,0 +1,13 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "control",
+  "control_id": "bridge-control-001",
+  "created_at": "2026-08-09T23:17:00+09:00",
+  "purpose": "Verify Chat -> Gmail -> local courier delivery without manual copy/download.",
+  "expected": {
+    "subject_prefix": "[GC-BRIDGE][CONTROL]",
+    "attachment_filename": "genericchess_bridge_control_001.json",
+    "duplicate_sync_received": 0
+  },
+  "instruction": "Courier only: receive and persist this artifact. Do not execute product work from this control message."
+}
