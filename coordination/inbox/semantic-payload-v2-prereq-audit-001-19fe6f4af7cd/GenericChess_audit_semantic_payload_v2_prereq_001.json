@@ -1,0 +1,27 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "audit",
+  "audit_id": "semantic-payload-v2-prereq-audit-001",
+  "base_master_sha": "3629c52b8c0bb4e92bd55851f2fc970d0407dadc",
+  "targets": [
+    {
+      "candidate_sha": "a5fd94eb9940330904e73c2714335e02edd504a7",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "candidate_sha": "750c10a718cc045b8abdd0b992455131579be8d8",
+      "verdict": "FAIL",
+      "findings": [
+        "Reject duplicate v2 type_ids in C payload parser.",
+        "Prevent embedded-NUL truncation of type_ids; fail closed or explicitly narrow high-level contract.",
+        "Add explicit v1 payload compile + exact round-trip regression."
+      ]
+    }
+  ],
+  "required_tests": [
+    "v2 duplicate type_ids rejected",
+    "embedded-NUL type identity cannot silently truncate",
+    "v1 payload exact round-trip remains supported"
+  ]
+}
