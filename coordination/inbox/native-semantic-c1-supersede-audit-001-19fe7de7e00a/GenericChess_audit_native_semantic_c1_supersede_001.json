@@ -1,0 +1,25 @@
+{
+  "protocol": "genericchess-chat-agent-v1",
+  "kind": "audit",
+  "audit_id": "native-semantic-c1-supersede-audit-001",
+  "candidate_sha": "9779d5d5dfbbadb38879f75ea396f60c7f78c784",
+  "verdict": "CONDITIONAL_PASS",
+  "authorization": {
+    "supersede_adr017_c1_compile_only_boundary": true,
+    "register_public_semantic_terminal": true,
+    "register_public_semantic_fixed_depth_search": true,
+    "flip_semantic_position_state_when_tests_green": true,
+    "flip_semantic_s0_s4_executor_when_tests_green": true,
+    "native_executable_must_be_per_ruleset_fail_closed": true
+  },
+  "blocking_finding": {
+    "id": "SEMANTIC_EVAL_BOARD_CURRENT_TYPE",
+    "summary": "On-board semantic evaluation must use current type, while hand evaluation uses base type. Current probe/oracle incorrectly use base type for board material."
+  },
+  "active_task": "native-semantic-runtime-search-002",
+  "hard_blocker_resolved": true,
+  "continue_until": [
+    "COMPLETE",
+    "HARD_BLOCKED"
+  ]
+}
