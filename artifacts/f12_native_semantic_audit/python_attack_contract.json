@@ -1,5 +1,0 @@
-{
-  "authority": "SemanticEngine.is_square_attacked / in_check",
-  "requirements": ["owner/current-type source index", "target_enemy only", "type/geometry compatibility", "owner-relative geometry", "path predicates", "state guards", "slot guards", "S4 patterns project only S0/S1 capture eligibility", "in_check resolves own anchor then queries opponent attack"],
-  "evidence": ["generic_chess/core/semantic_executor.py:96", "generic_chess/core/semantic_executor.py:580-637", "generic_chess/core/semantic_executor.py:801-836", "tests/specification/test_phase19b2_review_r2.py:406-552", "tests/test_phase19b3_s4_executor.py:96-145"]
-}

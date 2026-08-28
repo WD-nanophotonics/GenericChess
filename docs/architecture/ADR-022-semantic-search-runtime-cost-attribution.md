@@ -38,7 +38,8 @@ target micro/whole-search evidence.
 
 ## Measurements and limits
 
-The required evidence lives under `artifacts/f4_runtime_cost/`.  Recorder
+The raw evidence is preserved in Git history at the F4 commits indexed by
+`docs/archive/HISTORY.md`. Recorder
 timing is opt-in; default search still uses `NullAuditRecorder`.  Inclusive
 timer fields are not added together as if they were exclusive.  cProfile
 cumulative values are explicitly nested.  Profile B cProfile hit the 60 s

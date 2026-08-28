@@ -1,8 +1,0 @@
-{
-  "ruleset_fingerprint": "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345",
-  "counts": {"types": 14, "patterns": 155, "geometries": 73, "aux_slots": 0, "max_ply": 512, "repetition_limit": 4},
-  "postconditions": [{"pattern_id": "sem_00_standard_drop_contract", "kinds": ["action_delivers_check", "no_legal_reply"], "max_stratum": "S3"}],
-  "native_executable": false,
-  "compile_error": {"type": "NativeUnsupportedRuleError", "message": "unsupported semantic postcondition kind 'action_delivers_check' (native schema native-0.5.0)"},
-  "classification": "FAIL_CLOSED_UNSUPPORTED"
-}

@@ -20,4 +20,4 @@ Select `RULE_DERIVED_EVALUATOR_V2` as the next boundary. The evidence meets the 
 
 ## Consequences
 
-F22 closes with `AUDIT_PASS`, `POST_F21_RUNTIME_SINGLE_WINNER = false`, `PRODUCTION_BEHAVIOR_CHANGED = false`, and `F23_STARTED = false`. The next evaluator phase requires separate review and authorization. F4–F21 evidence and ADRs remain byte-identical, and all F22 artifacts are isolated under `artifacts/f22_post_f21_rebaseline_strength/`.
+F22 closes with `AUDIT_PASS`, `POST_F21_RUNTIME_SINGLE_WINNER = false`, `PRODUCTION_BEHAVIOR_CHANGED = false`, and `F23_STARTED = false`. The next evaluator phase requires separate review and authorization. F4–F21 evidence and ADRs were byte-identical at audit close. Raw F22 artifacts remain recoverable from commit `3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38`.

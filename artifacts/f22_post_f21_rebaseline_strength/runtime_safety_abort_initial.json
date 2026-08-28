@@ -1,7 +1,0 @@
-{
-  "status": "RUNTIME_SAFETY_ABORT",
-  "phase": "H22B_initial_node_ladder_attempt",
-  "reason": "The first harness version lacked a per-position five-second hard limit; the runner was terminated before retaining H22B results.",
-  "retained": "H22A evidence remains intact; the bounded H22B rerun adds a five-second SearchLimits cap and stops at the first unsafe node budget.",
-  "production_behavior_changed": false
-}

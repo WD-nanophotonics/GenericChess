@@ -1,9 +1,0 @@
-{
-  "candidate_A": "CANDIDATE_A_NOT_LOCAL",
-  "candidate_A_reason": "safe continuation requires preserving a generator/cursor and its SemanticEngine across terminal and later legal_actions calls, with checkpoint rebinding and frame-local destruction; current API captures the terminal callback and does not provide this local contract",
-  "candidate_B": "NOT_ELIGIBLE",
-  "candidate_B_profile_A_reuse_rate": 0.09915966386554621,
-  "candidate_B_profile_B_reuse_rate": 0.0970873786407767,
-  "candidate_B_threshold": 0.85,
-  "selected_route": "NONE"
-}

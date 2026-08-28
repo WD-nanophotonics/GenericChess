@@ -1,9 +1,0 @@
-{
-  "attack_behavior": "ATTACK_QUERY path remains isolated.",
-  "authorized": true,
-  "drop_behavior": "Drop-only patterns do not build a board source index.",
-  "implementation": "Build once per legality operation, pass through board-pattern iteration, do not retain across operations.",
-  "interruptible": true,
-  "locality": true,
-  "route": "operation-local optional source-index parameter"
-}

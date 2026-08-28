@@ -1,5 +1,0 @@
-{
-  "toy_semantic_corpus": {"cases": 10, "initial_position_attack_maps": "MATCH", "differences": []},
-  "standard_shogi": {"status": "NOT_RUN_UNSUPPORTED", "reason": "legacy native compiler rejects history-dependent repetition policy before a common attack-map comparison exists", "error": "history-dependent repetition policy is unsupported by native schema"},
-  "interpretation": "native_attack_map consumes legacy movement atoms; it is not a certified implementation of SemanticEngine.is_square_attacked. No public semantic attack/check endpoint is exposed."
-}

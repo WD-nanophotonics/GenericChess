@@ -1,8 +1,0 @@
-{
-  "candidates": [
-    ["NATIVE_ATTACK_CHECK_SLICE", "deferred", "no public API; Standard Shogi lowering gap"],
-    ["NATIVE_SEMANTIC_POSITION_FRAME", "deferred", "ownership/history not safe for Standard Shogi"],
-    ["NATIVE_SEMANTIC_SEARCH_PATH", "deferred", "probe lacks production budgets/TT/qsearch/evaluator"],
-    ["NATIVE_CAPABILITY_GAP_CLOSURE", "selected", "action_delivers_check blocks the target before migration is safe"]
-  ]
-}

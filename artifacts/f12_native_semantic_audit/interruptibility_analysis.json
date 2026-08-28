@@ -1,6 +1,0 @@
-{
-  "python": "SemanticEngine accepts Checkpoint and checks it through attack, guards, candidate and reply-probe loops",
-  "semantic_native": "no Checkpoint, cancellation token, node budget or monotonic deadline in semantic probe entry point",
-  "consequence": "semantic native search cannot replace interruptible Python production search",
-  "evidence": ["generic_chess/core/semantic_executor.py:580-637", "generic_chess/_native/native_module.c:2931-3050"]
-}

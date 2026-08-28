@@ -23,5 +23,6 @@ made.
 
 ## Evidence
 
-Closure evidence is under `artifacts/f7_semantic_attack_query_reuse/`.
+Closure evidence is preserved in the historical F7 commit indexed by
+`docs/archive/HISTORY.md`.
 Previous F4/F5/F6 evidence is hash-bound before and after F7.

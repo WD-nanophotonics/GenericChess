@@ -24,8 +24,8 @@ identity, or production semantic executor code was changed in F6.
 
 ## Evidence
 
-Machine-readable closure evidence is under
-`artifacts/f6_target_directed_semantic/`. The exhaustive geometry matrix is
+Machine-readable closure evidence is preserved in the historical F6 commit
+indexed by `docs/archive/HISTORY.md`. The exhaustive geometry matrix is
 losslessly grouped by `(geometry, owner, source)` with target-aligned arrays;
 the H6A test still checks every target individually against the oracle.
 

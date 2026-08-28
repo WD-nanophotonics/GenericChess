@@ -1,7 +1,0 @@
-{
-  "native_schema": "native-0.5.0",
-  "semantic_python_entry_points": ["pack_position", "snapshot", "position_key", "pack_action", "unpack_action", "candidate_actions", "guarded_actions", "history_occurrences", "make_checked", "make_unmake_roundtrip", "candidate_perft", "terminal_status", "probe_search", "fixed_depth_search"],
-  "semantic_extension_entry_points": {"pack": true, "snapshot": true, "key": true, "action_pack": true, "candidate": true, "guarded": true, "make_checked": true, "terminal": true, "probe_search": true, "fixed_depth_search": true, "public_semantic_attack": false, "public_semantic_legal_actions": false, "public_semantic_search": false},
-  "internal_symbols": {"semantic_attacked_by": "generic_chess/_native/native_semantic_runtime.c:179", "gc_semantic_runtime_in_check": "generic_chess/_native/native_semantic_runtime.c:327", "gc_semantic_terminal_status": "generic_chess/_native/native_module.c:2756", "gc_semantic_probe_search": "generic_chess/_native/native_module.c:2931"},
-  "global_capabilities": {"semantic_position_state": true, "semantic_s0_s4_executor": true, "semantic_terminal": true, "semantic_fixed_depth_search": true, "semantic_material_evaluator": true, "production_dynamic_evaluator": false, "production_search_backend": false, "native_qsearch": false}
-}

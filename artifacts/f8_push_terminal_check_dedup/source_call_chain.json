@@ -1,7 +1,0 @@
-{
-  "current_source_after_revert": "terminal_from_search_runtime(runtime, checkpoint) has no known_checked forwarding; _push_impl calls the original two-argument API",
-  "gave_check": "_gave_check(child, checkpoint) -> SemanticEngine.in_check(child, child.side_to_move, checkpoint)",
-  "push": "SearchPathRuntime._push_impl(action)",
-  "scope": "diagnostic only; no generalized cache or attack-map change",
-  "terminal": "terminal_from_search_runtime(runtime, checkpoint) -> has_legal_action(runtime.position) -> SemanticEngine.in_check(runtime.position, runtime.position.side_to_move, checkpoint)"
-}
