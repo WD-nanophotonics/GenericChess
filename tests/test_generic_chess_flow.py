@@ -63,9 +63,18 @@ def test_active_session_cannot_change_authority_mode(monkeypatch, tmp_path):
         flow.command_start(tmp_path, SimpleNamespace(mode="local", message_file=None))
 
 
+def test_commands_reject_finished_session(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        flow, "load_state", lambda _root, required=True: {"active": False, "mode": "courier"}
+    )
+    with pytest.raises(flow.FlowError, match="no active"):
+        flow.command_closeout(tmp_path, SimpleNamespace(report_file="unused.txt"))
+
+
 def test_courier_promotion_requires_exact_approved_sha(monkeypatch, tmp_path):
     candidate = "c" * 40
     state = {
+        "active": True,
         "mode": "courier",
         "tested_shas": {candidate: ["tests/test_session.py"]},
         "chat_control": {
@@ -94,7 +103,11 @@ def test_promotion_rejects_unpublished_or_untested_candidate(monkeypatch, tmp_pa
     sandbox = tmp_path / "sandbox"
     master.mkdir()
     sandbox.mkdir()
-    monkeypatch.setattr(flow, "load_state", lambda _root: {"mode": "local", "tested_shas": {}})
+    monkeypatch.setattr(
+        flow,
+        "load_state",
+        lambda _root: {"active": True, "mode": "local", "tested_shas": {}},
+    )
     monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
     monkeypatch.setattr(flow, "require_clean", lambda _root: None)
     monkeypatch.setattr(flow, "require_synced", lambda _root, _branch: None)
