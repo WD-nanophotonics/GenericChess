@@ -145,6 +145,13 @@ def load_state(root: Path, *, required: bool = True) -> dict[str, Any]:
     return value
 
 
+def active_state(root: Path) -> dict[str, Any]:
+    state = load_state(root)
+    if state.get("active") is not True:
+        raise FlowError("no active GenericChess flow session")
+    return state
+
+
 def save_state(root: Path, state: dict[str, Any]) -> None:
     path = runtime_dir(root) / "session.json"
     temporary = path.with_suffix(".tmp")
@@ -324,7 +331,7 @@ def command_start(root: Path, args: argparse.Namespace) -> None:
 def command_publish(root: Path, args: argparse.Namespace) -> None:
     if branch(root) != "sandbox":
         raise FlowError("publish must be run from the sandbox worktree")
-    state = load_state(root)
+    state = active_state(root)
     require_clean(root)
     fetch(root, "sandbox")
     remote_sha = sha(root, "origin/sandbox")
@@ -346,7 +353,7 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
 
 
 def command_resume(root: Path, _args: argparse.Namespace) -> None:
-    state = load_state(root)
+    state = active_state(root)
     if state.get("mode") != "courier":
         raise FlowError("resume is only available in courier mode")
     directory = state.get("active_request_directory")
@@ -357,14 +364,14 @@ def command_resume(root: Path, _args: argparse.Namespace) -> None:
 
 
 def command_closeout(root: Path, args: argparse.Namespace) -> None:
-    state = load_state(root)
+    state = active_state(root)
     if state.get("mode") != "courier":
         raise FlowError("closeout is only available in courier mode")
     dispatch_message(root, state, Path(args.report_file).resolve(), "closeout")
 
 
 def command_promote(root: Path, args: argparse.Namespace) -> None:
-    state = load_state(root)
+    state = active_state(root)
     candidate = args.candidate.lower()
     if not FULL_SHA.fullmatch(candidate):
         raise FlowError("candidate must be a full 40-character lowercase SHA")
@@ -399,7 +406,7 @@ def command_promote(root: Path, args: argparse.Namespace) -> None:
 
 
 def command_finish(root: Path, _args: argparse.Namespace) -> None:
-    state = load_state(root)
+    state = active_state(root)
     trees = worktrees(root)
     for name in ("master", "sandbox"):
         require_clean(trees[name])
