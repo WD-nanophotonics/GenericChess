@@ -1,0 +1,34 @@
+#!/bin/sh
+set -eu
+
+while read local_ref local_sha remote_ref remote_sha
+do
+  case "$remote_ref" in
+    refs/heads/sandbox)
+      if [ "${GENERIC_CHESS_FLOW_PUSH:-}" != "publish" ] && [ "${GENERIC_CHESS_FLOW_PUSH:-}" != "bootstrap" ]; then
+        echo "GENERIC_CHESS_SANDBOX_PUSH_REQUIRES_FLOW_PUBLISH" >&2
+        exit 1
+      fi
+      ;;
+    refs/heads/master)
+      if [ "${GENERIC_CHESS_FLOW_PUSH:-}" != "promote" ] && [ "${GENERIC_CHESS_FLOW_PUSH:-}" != "bootstrap" ]; then
+        echo "GENERIC_CHESS_MASTER_PUSH_REQUIRES_FLOW_PROMOTE" >&2
+        exit 1
+      fi
+      ;;
+    refs/tags/archive/*)
+      ;;
+    *)
+      echo "GENERIC_CHESS_ONLY_MASTER_SANDBOX_AND_ARCHIVE_TAGS_SUPPORTED: $remote_ref" >&2
+      exit 1
+      ;;
+  esac
+
+  zeros=0000000000000000000000000000000000000000
+  if [ "$remote_sha" != "$zeros" ] && [ "$local_sha" != "$zeros" ]; then
+    if ! git merge-base --is-ancestor "$remote_sha" "$local_sha"; then
+      echo "GENERIC_CHESS_NON_FAST_FORWARD_PUSH_FORBIDDEN: $remote_ref" >&2
+      exit 1
+    fi
+  fi
+done
