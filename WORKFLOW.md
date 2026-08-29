@@ -12,6 +12,19 @@ whole task.
 
 Authority is user, then the current Chat work order, then the local Agent.
 
+The normal bootstrap is simply:
+
+```text
+User: 开始工作
+Agent: switch to GenericChess-sandbox and run generic-chess-flow.cmd work
+```
+
+`work` starts Courier with a built-in request, resumes the same interrupted
+request, or redisplays the current work order. It never creates a replacement
+for an active request. The Agent keeps following the loop below in the same
+turn until Chat returns `COMPLETE` or `BLOCKED`, a hard error needs the user, or
+the user stops it.
+
 ```text
 start --mode courier --message-file <request>
 → follow the returned work order without expanding it
@@ -52,6 +65,7 @@ start --mode local
 
 ```powershell
 generic-chess-flow.cmd status
+generic-chess-flow.cmd work
 generic-chess-flow.cmd start --mode courier|local [--message-file <path>]
 generic-chess-flow.cmd heavy -- <long-running command>
 generic-chess-flow.cmd publish --tests <pytest-target> [...]

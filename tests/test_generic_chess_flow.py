@@ -87,6 +87,115 @@ def test_local_status_does_not_inspect_courier(monkeypatch, tmp_path, capsys):
     }
 
 
+def test_work_starts_courier_with_builtin_request(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    sandbox.mkdir()
+    seen = {}
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: {})
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+
+    def fake_start(_root, args):
+        seen["mode"] = args.mode
+        seen["message"] = Path(args.message_file).read_text(encoding="utf-8")
+
+    monkeypatch.setattr(flow, "command_start", fake_start)
+
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    assert seen["mode"] == "courier"
+    assert "next concrete GenericChess work order" in seen["message"]
+
+
+def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": r"C:\outbox\same-request",
+    }
+    called = []
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "command_resume", lambda root, args: called.append((root, args)))
+
+    marker = SimpleNamespace()
+    flow.command_work(tmp_path, marker)
+
+    assert called == [(tmp_path, marker)]
+
+
+def test_work_redisplays_the_current_order_without_new_courier_request(
+    monkeypatch, tmp_path, capsys
+):
+    response = tmp_path / "response.txt"
+    response.write_text("Do the bounded task.\n", encoding="utf-8")
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": None,
+        "last_response_path": str(response),
+    }
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(
+        flow,
+        "command_start",
+        lambda *_args: pytest.fail("an active work order must not create another request"),
+    )
+
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    output = capsys.readouterr().out
+    assert "Do the bounded task." in output
+    assert "NEXT_ACTION=execute this work order" in output
+
+
+def test_work_recovers_session_saved_before_request_directory(monkeypatch, tmp_path):
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": None,
+    }
+    seen = {}
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+
+    def fake_dispatch(root, current_state, source, purpose):
+        seen.update(
+            root=root,
+            state=current_state,
+            message=source.read_text(encoding="utf-8"),
+            purpose=purpose,
+        )
+
+    monkeypatch.setattr(flow, "dispatch_message", fake_dispatch)
+
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    assert seen["root"] == tmp_path
+    assert seen["state"] is state
+    assert seen["purpose"] == "start"
+    assert "next concrete GenericChess work order" in seen["message"]
+
+
+def test_work_does_not_probe_courier_during_local_mode(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(
+        flow,
+        "load_state",
+        lambda _root, required=False: {"active": True, "mode": "local"},
+    )
+    monkeypatch.setattr(
+        flow,
+        "courier_capabilities",
+        lambda _root: pytest.fail("work must not probe Courier during Local mode"),
+    )
+
+    with pytest.raises(flow.FlowError, match="Local mode session is active"):
+        flow.command_work(tmp_path, SimpleNamespace())
+
+
 def test_courier_events_are_streamed_in_order(monkeypatch, tmp_path, capsys):
     events = [
         '{"event":"queue_waiting","ok":true,"queue_position":2}\n',

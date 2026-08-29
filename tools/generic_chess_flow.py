@@ -13,6 +13,12 @@ from typing import Any, Sequence
 
 
 PROJECT_ID = "GENERICCHESS"
+WORK_BOOTSTRAP = """Issue the next concrete GenericChess work order.
+
+Inspect the current published sandbox SHA and choose one bounded, useful next
+step toward a product-ready GenericChess. Return COMPLETE if no further work is
+currently needed, or BLOCKED only when user action is genuinely required.
+"""
 FULL_SHA = re.compile(r"^[0-9a-f]{40}$")
 CONTROL_FIELDS = {
     "GENERICCHESS_STATUS",
@@ -417,6 +423,34 @@ def command_start(root: Path, args: argparse.Namespace) -> None:
         print(json.dumps(state, indent=2, sort_keys=True))
 
 
+def command_work(root: Path, _args: argparse.Namespace) -> None:
+    """Start or recover the one-line Courier workflow without another state machine."""
+    if branch(root) != "sandbox":
+        raise FlowError("work must be run from the sandbox worktree")
+    state = load_state(root, required=False)
+    if state.get("active") is True:
+        if state.get("mode") != "courier":
+            raise FlowError(
+                "a Local mode session is active; continue that task or finish it before Courier work"
+            )
+        if state.get("active_request_directory"):
+            command_resume(root, _args)
+            return
+        response_path = state.get("last_response_path")
+        if isinstance(response_path, str) and Path(response_path).is_file():
+            print(Path(response_path).read_text(encoding="utf-8-sig"))
+            print("NEXT_ACTION=execute this work order, then publish and closeout")
+            return
+        source = runtime_dir(root) / "work-bootstrap.txt"
+        source.write_text(WORK_BOOTSTRAP, encoding="utf-8")
+        dispatch_message(root, state, source, "start")
+        return
+
+    source = runtime_dir(root) / "work-bootstrap.txt"
+    source.write_text(WORK_BOOTSTRAP, encoding="utf-8")
+    command_start(root, argparse.Namespace(mode="courier", message_file=str(source)))
+
+
 def command_publish(root: Path, args: argparse.Namespace) -> None:
     if branch(root) != "sandbox":
         raise FlowError("publish must be run from the sandbox worktree")
@@ -515,6 +549,7 @@ def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(prog="generic-chess-flow")
     sub = value.add_subparsers(dest="command", required=True)
     sub.add_parser("status").set_defaults(handler=command_status)
+    sub.add_parser("work").set_defaults(handler=command_work)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)
     start.add_argument("--message-file")

@@ -21,3 +21,11 @@ Read `WORKFLOW.md` before changing this repository.
    behavior guarantees as tests.
 8. Run long tests, self-play, benchmarks, and large audits through
    `generic-chess-flow.cmd heavy`; never start two GenericChess heavy jobs.
+9. Treat the user's bare instruction `开始工作` or `start work` as Courier mode:
+   switch to the `GenericChess-sandbox` worktree and run
+   `generic-chess-flow.cmd work`. If the user explicitly says Local mode, run
+   `generic-chess-flow.cmd start --mode local` instead.
+10. In Courier mode, continue the work-order loop in the same turn: implement
+    the current order, test, commit, publish, close out, and follow the next
+    order. Stop only at `COMPLETE`, `BLOCKED`, a hard error requiring the user,
+    or an explicit user stop. Do not stop merely because one work order ended.
