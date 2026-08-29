@@ -1,0 +1,271 @@
+{
+  "candidate_spec": {
+    "base": {
+      "feature_definition_version": "ADR-040-probe-v1-child-minus-root",
+      "name": "evaluator-v1"
+    },
+    "coefficients": {
+      "anchor_check_pressure": 0,
+      "attack_defense_hanging": 0,
+      "capture_recapture_pressure": 1,
+      "legal_safe_mobility": 1
+    },
+    "correction_clip": 2.0,
+    "development_root_ids": [
+      "generic-strong-bishop_knight-0",
+      "generic-strong-bishop_knight-1",
+      "generic-strong-bishop_knight-3",
+      "generic-strong-bishop_knight-4",
+      "generic-strong-bishop_knight-5",
+      "generic-strong-drop_lance-0",
+      "generic-strong-drop_lance-1",
+      "generic-strong-drop_lance-2",
+      "generic-strong-drop_lance-3",
+      "generic-strong-drop_lance-4",
+      "generic-strong-drop_lance-5",
+      "generic-strong-knights-0",
+      "generic-strong-knights-2",
+      "generic-strong-knights-3",
+      "generic-strong-knights-4",
+      "generic-strong-orthogonal-0",
+      "generic-strong-orthogonal-2",
+      "generic-strong-orthogonal-3",
+      "generic-strong-orthogonal-4",
+      "generic-strong-orthogonal-5"
+    ],
+    "development_ruleset_groups": [
+      "strong-bishop-knight-7x7",
+      "strong-drop-lance-8x8",
+      "strong-knight-6x6",
+      "strong-ray-8x8"
+    ],
+    "features": [
+      "attack_defense_hanging",
+      "anchor_check_pressure",
+      "legal_safe_mobility",
+      "capture_recapture_pressure"
+    ],
+    "fit_algorithm": "bounded_grid_coefficients_-2_to_2_v1",
+    "loo_summary": {
+      "strong-bishop-knight-7x7": {
+        "candidate": {
+          "best_optimal_rank_mean": 1.0,
+          "best_optimal_rank_median": 1,
+          "by_ruleset": {
+            "strong-bishop-knight-7x7": {
+              "dedup_correct": 34,
+              "dedup_total": 34,
+              "raw_correct": 89,
+              "raw_total": 89
+            }
+          },
+          "dedup_constraints": 34,
+          "dedup_pairwise_accuracy": 1.0,
+          "exact_optimal_set_roots": 5,
+          "exact_optimal_set_top1": 5,
+          "inferior_draw_outranks_all_wins": 0,
+          "macro_equal_ruleset_pairwise_accuracy": 1.0,
+          "raw_constraints": 89,
+          "raw_pairwise_accuracy": 1.0
+        },
+        "improved": false,
+        "train_rulesets": [
+          "strong-drop-lance-8x8",
+          "strong-knight-6x6",
+          "strong-ray-8x8"
+        ],
+        "v1": {
+          "best_optimal_rank_mean": 1.0,
+          "best_optimal_rank_median": 1,
+          "by_ruleset": {
+            "strong-bishop-knight-7x7": {
+              "dedup_correct": 34,
+              "dedup_total": 34,
+              "raw_correct": 89,
+              "raw_total": 89
+            }
+          },
+          "dedup_constraints": 34,
+          "dedup_pairwise_accuracy": 1.0,
+          "exact_optimal_set_roots": 5,
+          "exact_optimal_set_top1": 5,
+          "inferior_draw_outranks_all_wins": 0,
+          "macro_equal_ruleset_pairwise_accuracy": 1.0,
+          "raw_constraints": 89,
+          "raw_pairwise_accuracy": 1.0
+        }
+      },
+      "strong-drop-lance-8x8": {
+        "candidate": {
+          "best_optimal_rank_mean": 1.0,
+          "best_optimal_rank_median": 1.0,
+          "by_ruleset": {
+            "strong-drop-lance-8x8": {
+              "dedup_correct": 203,
+              "dedup_total": 203,
+              "raw_correct": 2772,
+              "raw_total": 2772
+            }
+          },
+          "dedup_constraints": 203,
+          "dedup_pairwise_accuracy": 1.0,
+          "exact_optimal_set_roots": 6,
+          "exact_optimal_set_top1": 6,
+          "inferior_draw_outranks_all_wins": 0,
+          "macro_equal_ruleset_pairwise_accuracy": 1.0,
+          "raw_constraints": 2772,
+          "raw_pairwise_accuracy": 1.0
+        },
+        "improved": false,
+        "train_rulesets": [
+          "strong-bishop-knight-7x7",
+          "strong-knight-6x6",
+          "strong-ray-8x8"
+        ],
+        "v1": {
+          "best_optimal_rank_mean": 1.0,
+          "best_optimal_rank_median": 1.0,
+          "by_ruleset": {
+            "strong-drop-lance-8x8": {
+              "dedup_correct": 203,
+              "dedup_total": 203,
+              "raw_correct": 2772,
+              "raw_total": 2772
+            }
+          },
+          "dedup_constraints": 203,
+          "dedup_pairwise_accuracy": 1.0,
+          "exact_optimal_set_roots": 6,
+          "exact_optimal_set_top1": 6,
+          "inferior_draw_outranks_all_wins": 0,
+          "macro_equal_ruleset_pairwise_accuracy": 1.0,
+          "raw_constraints": 2772,
+          "raw_pairwise_accuracy": 1.0
+        }
+      },
+      "strong-knight-6x6": {
+        "candidate": {
+          "best_optimal_rank_mean": 1.0,
+          "best_optimal_rank_median": 1.0,
+          "by_ruleset": {
+            "strong-knight-6x6": {
+              "dedup_correct": 22,
+              "dedup_total": 22,
+              "raw_correct": 72,
+              "raw_total": 72
+            }
+          },
+          "dedup_constraints": 22,
+          "dedup_pairwise_accuracy": 1.0,
+          "exact_optimal_set_roots": 4,
+          "exact_optimal_set_top1": 4,
+          "inferior_draw_outranks_all_wins": 0,
+          "macro_equal_ruleset_pairwise_accuracy": 1.0,
+          "raw_constraints": 72,
+          "raw_pairwise_accuracy": 1.0
+        },
+        "improved": false,
+        "train_rulesets": [
+          "strong-bishop-knight-7x7",
+          "strong-drop-lance-8x8",
+          "strong-ray-8x8"
+        ],
+        "v1": {
+          "best_optimal_rank_mean": 1.0,
+          "best_optimal_rank_median": 1.0,
+          "by_ruleset": {
+            "strong-knight-6x6": {
+              "dedup_correct": 22,
+              "dedup_total": 22,
+              "raw_correct": 72,
+              "raw_total": 72
+            }
+          },
+          "dedup_constraints": 22,
+          "dedup_pairwise_accuracy": 1.0,
+          "exact_optimal_set_roots": 4,
+          "exact_optimal_set_top1": 4,
+          "inferior_draw_outranks_all_wins": 0,
+          "macro_equal_ruleset_pairwise_accuracy": 1.0,
+          "raw_constraints": 72,
+          "raw_pairwise_accuracy": 1.0
+        }
+      },
+      "strong-ray-8x8": {
+        "candidate": {
+          "best_optimal_rank_mean": 1.2,
+          "best_optimal_rank_median": 1,
+          "by_ruleset": {
+            "strong-ray-8x8": {
+              "dedup_correct": 132,
+              "dedup_total": 138,
+              "raw_correct": 271,
+              "raw_total": 278
+            }
+          },
+          "dedup_constraints": 138,
+          "dedup_pairwise_accuracy": 0.9565217391304348,
+          "exact_optimal_set_roots": 5,
+          "exact_optimal_set_top1": 4,
+          "inferior_draw_outranks_all_wins": 2,
+          "macro_equal_ruleset_pairwise_accuracy": 0.9565217391304348,
+          "raw_constraints": 278,
+          "raw_pairwise_accuracy": 0.9748201438848921
+        },
+        "improved": false,
+        "train_rulesets": [
+          "strong-bishop-knight-7x7",
+          "strong-drop-lance-8x8",
+          "strong-knight-6x6"
+        ],
+        "v1": {
+          "best_optimal_rank_mean": 1.2,
+          "best_optimal_rank_median": 1,
+          "by_ruleset": {
+            "strong-ray-8x8": {
+              "dedup_correct": 132,
+              "dedup_total": 138,
+              "raw_correct": 271,
+              "raw_total": 278
+            }
+          },
+          "dedup_constraints": 138,
+          "dedup_pairwise_accuracy": 0.9565217391304348,
+          "exact_optimal_set_roots": 5,
+          "exact_optimal_set_top1": 4,
+          "inferior_draw_outranks_all_wins": 2,
+          "macro_equal_ruleset_pairwise_accuracy": 0.9565217391304348,
+          "raw_constraints": 278,
+          "raw_pairwise_accuracy": 0.9748201438848921
+        }
+      }
+    },
+    "normalizers": {
+      "anchor_check_pressure": {
+        "center": -0.027777777777777762,
+        "scale": 0.12097604166666669
+      },
+      "attack_defense_hanging": {
+        "center": 0.0,
+        "scale": 1e-06
+      },
+      "capture_recapture_pressure": {
+        "center": 0.0,
+        "scale": 1e-06
+      },
+      "legal_safe_mobility": {
+        "center": -0.2777777777777778,
+        "scale": 0.5328619047619048
+      }
+    },
+    "source_fixture_sha256": {
+      "v1": "4c88b409b9dd8188f0c9f2c587c55199b74c8b9bc3bec3a91457e0af499d73ac",
+      "v2": "16244ab39508d319fdf9cdbbe69fb813daa4835f12a54f2a227d9794aacc11fa",
+      "v3": "34c59315b11f6b8f18bf3746e870c1b48bf7645c1e18718b77bba7fdcd77ba97"
+    },
+    "status": "FROZEN_DEVELOPMENT_CANDIDATE",
+    "weighting": "equal ruleset; deduplicate identical feature/preference signatures within ruleset"
+  },
+  "candidate_spec_sha256": "687a3611d991961cc51b8e97baa0b0c4f1ff47286ed623ac1251181a9f7268b0",
+  "status": "REJECTED_BEFORE_HOLDOUT"
+}
