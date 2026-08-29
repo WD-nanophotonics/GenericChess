@@ -41,6 +41,14 @@ class _TTEntry:
     proof_depth: int
 
 
+@dataclass(frozen=True)
+class _SearchOutcome:
+    value: int
+    proof_depth: int
+    exact: bool
+    bound_flag: str = "EXACT"
+
+
 def _state_key(state) -> str:
     """Full-history identity; no board-only merge is attempted."""
     return repr((state.position, state.ply_count, state.repetition_counts, state.history))
@@ -63,10 +71,14 @@ def _action_order(item):
     return (0 if terminal is not None and terminal.status is not TerminalStatus.ONGOING else 1, status, encoded)
 
 
-def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> ProofSolveResult:
+def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int | None) -> ProofSolveResult:
     """Solve every root action exactly, or explicitly refuse certification."""
 
     root_actor = state.position.side_to_move
+    configured_max_ply = getattr(compiled, "max_ply", None)
+    if configured_max_ply is None:
+        configured_max_ply = compiled.support.max_ply
+    effective_max_depth = max(0, configured_max_ply - state.ply_count) if max_depth is None else max_depth
     stats = Counter(
         states_expanded=0,
         legal_successors_generated=0,
@@ -81,6 +93,8 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
         proof_cutoffs=0,
         repetition_adjudications=0,
         perpetual_check_adjudications=0,
+        authoritative_horizon=max_depth is None,
+        effective_max_depth=effective_max_depth,
     )
     terminal_statuses = Counter()
     unresolved = Counter()
@@ -96,16 +110,16 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
                 stats["repetition_adjudications"] += 1
             if status is TerminalStatus.PERPETUAL_CHECK:
                 stats["perpetual_check_adjudications"] += 1
-            return VALUE_SCORE[terminal], 0
+            return _SearchOutcome(VALUE_SCORE[terminal], 0, True)
         if stats["states_expanded"] >= max_nodes:
             stats["cap_hits"] += 1; stats["node_cap_hits"] += 1
             unresolved["REFERENCE_SOLVE_UNRESOLVED:node_cap"] += 1
             return None
-        if depth >= max_depth:
+        if depth >= effective_max_depth:
             stats["cap_hits"] += 1; stats["depth_cap_hits"] += 1
             unresolved["REFERENCE_SOLVE_UNRESOLVED:depth_cap"] += 1
             return None
-        key = (_state_key(node), max_depth - depth)
+        key = (_state_key(node), effective_max_depth - depth)
         state_key = key[0]
         if state_key in active:
             stats["cycle_edges"] += 1
@@ -116,18 +130,18 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
         if cached is not None:
             if cached.flag == "EXACT":
                 stats["exact_tt_hits"] += 1
-                return cached.value, cached.proof_depth
+                return _SearchOutcome(cached.value, cached.proof_depth, True)
             if cached.flag == "LOWER" and cached.value >= beta:
                 stats["lower_bound_hits"] += 1; stats["proof_cutoffs"] += 1
-                return cached.value, cached.proof_depth
+                return _SearchOutcome(cached.value, cached.proof_depth, False, "LOWER")
             if cached.flag == "UPPER" and cached.value <= alpha:
                 stats["upper_bound_hits"] += 1; stats["proof_cutoffs"] += 1
-                return cached.value, cached.proof_depth
+                return _SearchOutcome(cached.value, cached.proof_depth, False, "UPPER")
             if cached.flag == "LOWER": alpha = max(alpha, cached.value)
             elif cached.flag == "UPPER": beta = min(beta, cached.value)
             if alpha >= beta:
                 stats["proof_cutoffs"] += 1
-                return cached.value, cached.proof_depth
+                return _SearchOutcome(cached.value, cached.proof_depth, False, cached.flag)
         stats["states_expanded"] += 1
         active.add(state_key)
         successors = list(legal_successors(node, compiled))
@@ -146,7 +160,12 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
             if solved is None:
                 complete = False
                 break
-            value, proof_depth = solved
+            if not solved.exact:
+                solved = visit(child, depth + 1, -1, 1)
+                if solved is None or not solved.exact:
+                    complete = False
+                    break
+            value, proof_depth = solved.value, solved.proof_depth
             if (maximizing and value > best) or ((not maximizing) and value < best):
                 best, best_depth = value, proof_depth
             best_depth = max(best_depth, proof_depth)
@@ -162,7 +181,8 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
                     break
         active.remove(state_key)
         if not complete:
-            table[key] = _TTEntry(0, "UPPER" if maximizing else "LOWER", best_depth)
+            # An unresolved descendant supplies no certified bound.  In
+            # particular, never cache an arbitrary zero for a capped node.
             return None
         if best <= original_alpha:
             flag = "UPPER"
@@ -175,7 +195,7 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
         if (maximizing and best == 1) or ((not maximizing) and best == -1):
             flag = "EXACT"
         table[key] = _TTEntry(best, flag, 1 + best_depth)
-        return best, 1 + best_depth
+        return _SearchOutcome(best, 1 + best_depth, flag == "EXACT", flag)
 
     root_terminal, root_status = _terminal_value(state, compiled, root_actor)
     if root_terminal is not None:
@@ -185,11 +205,13 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int) -> P
     action_values = []
     for action, child in root_successors:
         solved = visit(child, 1, -1, 1)
-        action_values.append({"action": action_to_dict(action), "value": SCORE_VALUE[solved[0]] if solved else None, "proof_depth": solved[1] + 1 if solved else None})
+        if solved is not None and not solved.exact:
+            solved = visit(child, 1, -1, 1)
+        action_values.append({"action": action_to_dict(action), "value": SCORE_VALUE[solved.value] if solved and solved.exact else None, "proof_depth": solved.proof_depth + 1 if solved and solved.exact else None})
     stats["terminal_statuses"] = dict(sorted(terminal_statuses.items()))
     if any(item["value"] is None for item in action_values):
         reason = next(iter(unresolved), "REFERENCE_SOLVE_UNRESOLVED:unknown")
-        return ProofSolveResult(False, None, (), tuple(action_values), {**dict(stats), "unresolved": dict(unresolved), "root_actions": len(root_successors)}, reason)
+        return ProofSolveResult(False, None, (), tuple(action_values), {**dict(stats), "unresolved": dict(unresolved), "root_actions": len(root_successors), "tt_entries": len(table), "history_key_mode": "full_state_and_history"}, reason)
     root_value = SCORE_VALUE[max(VALUE_SCORE[item["value"]] for item in action_values)]
     optimal = tuple(item["action"] for item in action_values if item["value"] == root_value)
     depths = [item["proof_depth"] for item in action_values]

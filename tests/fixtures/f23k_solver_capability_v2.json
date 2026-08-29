@@ -1,0 +1,629 @@
+{
+  "benchmark_version": "f23k-solver-foundation-v2",
+  "capability_gate_passed": false,
+  "differential_parity_on_fixed_v1_cases": true,
+  "horizon_mode": "max_depth=None derives compiled RuleSet max_ply minus current ply",
+  "non_control_families": 5,
+  "non_control_solved_families": 0,
+  "proof_budget_ladder": [
+    [
+      "SMALL",
+      {
+        "max_depth": null,
+        "max_nodes": 20
+      }
+    ],
+    [
+      "MEDIUM",
+      {
+        "max_depth": null,
+        "max_nodes": 50
+      }
+    ],
+    [
+      "LARGE",
+      {
+        "max_depth": null,
+        "max_nodes": 100
+      }
+    ]
+  ],
+  "rows": [
+    {
+      "attempts": [
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 0,
+          "legal_successors_generated": 157,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 8,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 20,
+          "strong": false,
+          "terminal_statuses": {
+            "checkmate": 2,
+            "max_ply": 69,
+            "stalemate": 13
+          },
+          "tier": "SMALL",
+          "tt_entries": 10,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 2,
+          "legal_successors_generated": 675,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 50
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 23,
+          "proof_depth": 0,
+          "repetition_adjudications": 1,
+          "root_value": null,
+          "states_expanded": 50,
+          "strong": false,
+          "terminal_statuses": {
+            "checkmate": 2,
+            "max_ply": 316,
+            "repetition": 1,
+            "stalemate": 13
+          },
+          "tier": "MEDIUM",
+          "tt_entries": 25,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 4,
+          "legal_successors_generated": 1720,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 100
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 48,
+          "proof_depth": 0,
+          "repetition_adjudications": 3,
+          "root_value": null,
+          "states_expanded": 100,
+          "strong": false,
+          "terminal_statuses": {
+            "checkmate": 2,
+            "max_ply": 834,
+            "repetition": 3,
+            "stalemate": 13
+          },
+          "tier": "LARGE",
+          "tt_entries": 50,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        }
+      ],
+      "construction_family": "ordinary_anchor_movement",
+      "first_resolving_tier": null,
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "anchor_check_movement",
+      "new": {
+        "blocker": "NODE_EXPLOSION",
+        "exact_tt_hits": 4,
+        "legal_successors_generated": 1720,
+        "limits": {
+          "max_depth": null,
+          "max_nodes": 100
+        },
+        "lower_bound_hits": 0,
+        "optimal_set_size": 0,
+        "perpetual_check_adjudications": 0,
+        "proof_cutoffs": 48,
+        "proof_depth": 0,
+        "repetition_adjudications": 3,
+        "root_value": null,
+        "states_expanded": 100,
+        "strong": false,
+        "terminal_statuses": {
+          "checkmate": 2,
+          "max_ply": 834,
+          "repetition": 3,
+          "stalemate": 13
+        },
+        "tier": "LARGE",
+        "tt_entries": 50,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        5,
+        true
+      ],
+      "representative_id": "generic-f23j-legacy_anchor_mate-0"
+    },
+    {
+      "attempts": [
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 1,
+          "legal_successors_generated": 147,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 8,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 20,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 54
+          },
+          "tier": "SMALL",
+          "tt_entries": 10,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 3,
+          "legal_successors_generated": 393,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 50
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 23,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 50,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 175
+          },
+          "tier": "MEDIUM",
+          "tt_entries": 25,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 5,
+          "legal_successors_generated": 728,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 100
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 48,
+          "proof_depth": 0,
+          "repetition_adjudications": 4,
+          "root_value": null,
+          "states_expanded": 100,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 347,
+            "repetition": 4
+          },
+          "tier": "LARGE",
+          "tt_entries": 50,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        }
+      ],
+      "construction_family": "capture_recapture_tactics",
+      "first_resolving_tier": null,
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "capture_recapture",
+      "new": {
+        "blocker": "NODE_EXPLOSION",
+        "exact_tt_hits": 5,
+        "legal_successors_generated": 728,
+        "limits": {
+          "max_depth": null,
+          "max_nodes": 100
+        },
+        "lower_bound_hits": 0,
+        "optimal_set_size": 0,
+        "perpetual_check_adjudications": 0,
+        "proof_cutoffs": 48,
+        "proof_depth": 0,
+        "repetition_adjudications": 4,
+        "root_value": null,
+        "states_expanded": 100,
+        "strong": false,
+        "terminal_statuses": {
+          "max_ply": 347,
+          "repetition": 4
+        },
+        "tier": "LARGE",
+        "tt_entries": 50,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        5,
+        0
+      ],
+      "representative_id": "generic-f23j-legacy_capture_recapture-0"
+    },
+    {
+      "attempts": [
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 1,
+          "legal_successors_generated": 153,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 8,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 20,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 41
+          },
+          "tier": "SMALL",
+          "tt_entries": 10,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 2,
+          "legal_successors_generated": 308,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 50
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 22,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 50,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 122
+          },
+          "tier": "MEDIUM",
+          "tt_entries": 24,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 5,
+          "legal_successors_generated": 571,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 100
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 48,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 100,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 254
+          },
+          "tier": "LARGE",
+          "tt_entries": 50,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        }
+      ],
+      "construction_family": "drop_hand_tactics",
+      "first_resolving_tier": null,
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "drop_hand",
+      "new": {
+        "blocker": "NODE_EXPLOSION",
+        "exact_tt_hits": 5,
+        "legal_successors_generated": 571,
+        "limits": {
+          "max_depth": null,
+          "max_nodes": 100
+        },
+        "lower_bound_hits": 0,
+        "optimal_set_size": 0,
+        "perpetual_check_adjudications": 0,
+        "proof_cutoffs": 48,
+        "proof_depth": 0,
+        "repetition_adjudications": 0,
+        "root_value": null,
+        "states_expanded": 100,
+        "strong": false,
+        "terminal_statuses": {
+          "max_ply": 254
+        },
+        "tier": "LARGE",
+        "tt_entries": 50,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        5,
+        0,
+        1
+      ],
+      "representative_id": "generic-f23j-legacy_drop_hand-0"
+    },
+    {
+      "attempts": [
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 1,
+          "legal_successors_generated": 110,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 8,
+          "proof_depth": 0,
+          "repetition_adjudications": 1,
+          "root_value": null,
+          "states_expanded": 20,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 42,
+            "repetition": 1
+          },
+          "tier": "SMALL",
+          "tt_entries": 10,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 3,
+          "legal_successors_generated": 284,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 50
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 22,
+          "proof_depth": 0,
+          "repetition_adjudications": 3,
+          "root_value": null,
+          "states_expanded": 50,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 131,
+            "repetition": 3
+          },
+          "tier": "MEDIUM",
+          "tt_entries": 25,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 7,
+          "legal_successors_generated": 589,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 100
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 47,
+          "proof_depth": 0,
+          "repetition_adjudications": 5,
+          "root_value": null,
+          "states_expanded": 100,
+          "strong": false,
+          "terminal_statuses": {
+            "max_ply": 276,
+            "repetition": 5
+          },
+          "tier": "LARGE",
+          "tt_entries": 50,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        }
+      ],
+      "construction_family": "promotion_race",
+      "first_resolving_tier": null,
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "promotion_choice",
+      "new": {
+        "blocker": "NODE_EXPLOSION",
+        "exact_tt_hits": 7,
+        "legal_successors_generated": 589,
+        "limits": {
+          "max_depth": null,
+          "max_nodes": 100
+        },
+        "lower_bound_hits": 0,
+        "optimal_set_size": 0,
+        "perpetual_check_adjudications": 0,
+        "proof_cutoffs": 47,
+        "proof_depth": 0,
+        "repetition_adjudications": 5,
+        "root_value": null,
+        "states_expanded": 100,
+        "strong": false,
+        "terminal_statuses": {
+          "max_ply": 276,
+          "repetition": 5
+        },
+        "tier": "LARGE",
+        "tt_entries": 50,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        1,
+        4
+      ],
+      "representative_id": "generic-f23j-auto_promotion_race-0"
+    },
+    {
+      "attempts": [
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 0,
+          "legal_successors_generated": 1118,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 0,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 20,
+          "strong": false,
+          "terminal_statuses": {},
+          "tier": "SMALL",
+          "tt_entries": 0,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 0,
+          "legal_successors_generated": 2925,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 50
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 0,
+          "proof_depth": 0,
+          "repetition_adjudications": 0,
+          "root_value": null,
+          "states_expanded": 50,
+          "strong": false,
+          "terminal_statuses": {},
+          "tier": "MEDIUM",
+          "tt_entries": 0,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        },
+        {
+          "blocker": "NODE_EXPLOSION",
+          "exact_tt_hits": 0,
+          "legal_successors_generated": 5947,
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 100
+          },
+          "lower_bound_hits": 0,
+          "optimal_set_size": 0,
+          "perpetual_check_adjudications": 0,
+          "proof_cutoffs": 0,
+          "proof_depth": 0,
+          "repetition_adjudications": 3,
+          "root_value": null,
+          "states_expanded": 100,
+          "strong": false,
+          "terminal_statuses": {
+            "repetition": 3
+          },
+          "tier": "LARGE",
+          "tt_entries": 0,
+          "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+          "upper_bound_hits": 0
+        }
+      ],
+      "construction_family": "semantic_guard_auxiliary",
+      "first_resolving_tier": null,
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "semantic_guard_aux_state",
+      "new": {
+        "blocker": "NODE_EXPLOSION",
+        "exact_tt_hits": 0,
+        "legal_successors_generated": 5947,
+        "limits": {
+          "max_depth": null,
+          "max_nodes": 100
+        },
+        "lower_bound_hits": 0,
+        "optimal_set_size": 0,
+        "perpetual_check_adjudications": 0,
+        "proof_cutoffs": 0,
+        "proof_depth": 0,
+        "repetition_adjudications": 3,
+        "root_value": null,
+        "states_expanded": 100,
+        "strong": false,
+        "terminal_statuses": {
+          "repetition": 3
+        },
+        "tier": "LARGE",
+        "tt_entries": 0,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        "cannon",
+        0
+      ],
+      "representative_id": "generic-f23j-semantic_fixture_mix-0"
+    }
+  ],
+  "selected_next_boundary": "F23L_EXACT_REFERENCE_SOLVER_FOUNDATION_R2",
+  "selection_frozen_before_results": true
+}

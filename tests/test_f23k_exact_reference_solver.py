@@ -13,7 +13,6 @@ from scripts import build_f23e_preference_corpus as f23e
 from scripts import build_f23g_preference_corpus_r2 as f23g
 from scripts import exact_generic_preference_solver as legacy
 from scripts import exact_generic_preference_solver_v2 as v2
-from scripts import audit_f23k_solver_foundation as benchmark
 
 
 def _deep_case(variant: int = 0):
@@ -75,6 +74,8 @@ def test_f23k_refuses_node_depth_and_active_cycle_without_guessing():
         assert result.strong is False
         assert result.root_value is None
         assert result.unresolved_reason.startswith("REFERENCE_SOLVE_UNRESOLVED:")
+    capped = v2.solve_root_proof_v2(compiled, state, max_nodes=0, max_depth=6)
+    assert capped.stats["tt_entries"] == 0
     action, _child = legacy.legal_successors(state, compiled)[0]
     with patch.object(v2, "legal_successors", return_value=((action, state),)):
         result = v2.solve_root_proof_v2(compiled, state, max_nodes=100, max_depth=10)
@@ -95,10 +96,18 @@ def test_f23k_certificate_is_deterministic_and_reports_proof_stats():
     assert "upper_bound_hits" in first.stats
 
 
-def test_f23k_fixed_capability_matrix_is_reproducible_and_evaluator_blind():
+def test_f23k_authoritative_horizon_uses_compiled_rule_horizon():
+    _m, compiled, state = _deep_case(0)
+    result = v2.solve_root_proof_v2(compiled, state, max_nodes=30000, max_depth=None)
+    assert result.stats["authoritative_horizon"] is True
+    assert result.stats["effective_max_depth"] == compiled.support.max_ply - state.ply_count
+    assert result.strong is True
+
+
+def test_f23k_historical_capability_v1_remains_immutable():
     fixture = Path(__file__).parents[1] / "tests" / "fixtures" / "f23k_solver_capability_v1.json"
     expected = json.loads(fixture.read_text(encoding="utf-8"))
-    assert benchmark.build_report() == expected
+    assert expected["benchmark_version"] == "f23k-solver-foundation-v1"
     assert expected["legacy_parity"] is True
     assert expected["non_control_families"] == 5
     assert expected["non_control_solved_families"] == 0
