@@ -97,6 +97,7 @@ def test_work_starts_courier_with_builtin_request(monkeypatch, tmp_path):
 
     def fake_start(_root, args):
         seen["mode"] = args.mode
+        seen["token"] = args.work_request_token
         seen["message"] = Path(args.message_file).read_text(encoding="utf-8")
 
     monkeypatch.setattr(flow, "command_start", fake_start)
@@ -105,6 +106,26 @@ def test_work_starts_courier_with_builtin_request(monkeypatch, tmp_path):
 
     assert seen["mode"] == "courier"
     assert "next concrete GenericChess work order" in seen["message"]
+    assert f"WORK_SESSION_ID={seen['token']}" in seen["message"]
+
+
+def test_work_uses_a_new_idempotency_token_for_a_new_finished_session(
+    monkeypatch, tmp_path
+):
+    tokens = iter(("first-session", "second-session"))
+    started = []
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: {"active": False})
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow.uuid, "uuid4", lambda: SimpleNamespace(hex=next(tokens)))
+    monkeypatch.setattr(
+        flow, "command_start", lambda _root, args: started.append(args.work_request_token)
+    )
+
+    flow.command_work(tmp_path, SimpleNamespace())
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    assert started == ["first-session", "second-session"]
 
 
 def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
@@ -133,6 +154,7 @@ def test_work_redisplays_the_current_order_without_new_courier_request(
         "active": True,
         "mode": "courier",
         "active_request_directory": None,
+        "work_request_token": "same-session-token",
         "last_response_path": str(response),
     }
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
@@ -155,6 +177,7 @@ def test_work_recovers_session_saved_before_request_directory(monkeypatch, tmp_p
         "active": True,
         "mode": "courier",
         "active_request_directory": None,
+        "work_request_token": "same-session-token",
     }
     seen = {}
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
@@ -177,6 +200,7 @@ def test_work_recovers_session_saved_before_request_directory(monkeypatch, tmp_p
     assert seen["state"] is state
     assert seen["purpose"] == "start"
     assert "next concrete GenericChess work order" in seen["message"]
+    assert "WORK_SESSION_ID=same-session-token" in seen["message"]
 
 
 def test_work_does_not_probe_courier_during_local_mode(monkeypatch, tmp_path):

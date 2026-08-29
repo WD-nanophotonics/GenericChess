@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import uuid
 from typing import Any, Sequence
 
 
@@ -410,6 +411,9 @@ def command_start(root: Path, args: argparse.Namespace) -> None:
         "tested_shas": {},
         "active_request_directory": None,
     }
+    work_request_token = getattr(args, "work_request_token", None)
+    if work_request_token:
+        state["work_request_token"] = work_request_token
     if args.mode == "courier":
         caps = courier_capabilities(root)
         if PROJECT_ID not in caps.get("projects", []):
@@ -441,14 +445,25 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
             print(Path(response_path).read_text(encoding="utf-8-sig"))
             print("NEXT_ACTION=execute this work order, then publish and closeout")
             return
+        token = state.get("work_request_token")
+        if not isinstance(token, str) or not token:
+            token = uuid.uuid4().hex
+            state["work_request_token"] = token
+            save_state(root, state)
         source = runtime_dir(root) / "work-bootstrap.txt"
-        source.write_text(WORK_BOOTSTRAP, encoding="utf-8")
+        source.write_text(f"{WORK_BOOTSTRAP}\nWORK_SESSION_ID={token}\n", encoding="utf-8")
         dispatch_message(root, state, source, "start")
         return
 
+    token = uuid.uuid4().hex
     source = runtime_dir(root) / "work-bootstrap.txt"
-    source.write_text(WORK_BOOTSTRAP, encoding="utf-8")
-    command_start(root, argparse.Namespace(mode="courier", message_file=str(source)))
+    source.write_text(f"{WORK_BOOTSTRAP}\nWORK_SESSION_ID={token}\n", encoding="utf-8")
+    command_start(
+        root,
+        argparse.Namespace(
+            mode="courier", message_file=str(source), work_request_token=token
+        ),
+    )
 
 
 def command_publish(root: Path, args: argparse.Namespace) -> None:
