@@ -1,0 +1,1357 @@
+{
+  "alpha_sho_changed": false,
+  "corpus_id": "evaluator-v2-corpus-v1",
+  "coverage": {
+    "families": [
+      "checking_anchor_pressure",
+      "drops_hands",
+      "promotion_structure",
+      "semantic_constraint_effect"
+    ],
+    "generic_positions": 8,
+    "generic_rulesets": 5,
+    "shogi_positions_added": 0,
+    "shogi_positions_available": 10
+  },
+  "frozen_legacy_f22": {
+    "positions": [
+      {
+        "name": "iteration-000086-game-000001-ply12",
+        "sfen": "lnsgkgsnl/2r4b1/pp1pp1ppp/2p6/5p3/5PP2/PPPPP1NPP/1B2G3R/LNS1KGS1L b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000002-ply12",
+        "sfen": "lns4nl/1r1gksgb1/pp1p1pppp/2p1p4/9/1P4P2/P1PPPPNPP/1B2G1SR1/LNS1KG2L b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000003-ply12",
+        "sfen": "ln1gkgsnl/1s4rb1/1p1pppp1p/p1p4p1/9/P2P1P3/1PP1P1PPP/LB2R4/1NSGKGSNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000004-ply12",
+        "sfen": "1nsgkg1n1/l4srb1/ppp1ppppl/3p4p/9/3P5/PPP1PPPPP/1B3G2R/LNSGK1SNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000005-ply12",
+        "sfen": "1nsg2gnl/l2rk1sb1/pppppp1pp/6p2/9/P4P2P/1PPPP1PP1/1B1G1GSR1/LNS1K2NL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000006-ply12",
+        "sfen": "ln1gkgsn1/1s3r1bl/ppp1ppp1p/3p3p1/9/P4P3/1PPPP1PPP/1BK4R1/LNSG1GSNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000007-ply12",
+        "sfen": "lnsg2snl/1r2k1gb1/pp1pp1pp1/2p5p/P4p3/L7P/1PPPPPPP1/1BR4S1/1NSGKG1NL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000008-ply12",
+        "sfen": "1ng1kgsn1/l2s2rbl/ppppppp1p/7p1/3P5/9/PPP1PPPPP/1B1S1R3/LN1GKGSNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000009-ply12",
+        "sfen": "ln2kg1nl/1r1sgs1b1/1pppp1pp1/p4p2p/9/2P6/PP1PPPPPP/LB1SG1R2/1N1GK1SNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000010-ply12",
+        "sfen": "lnsg1g1nl/4ksrb1/pp2ppppp/2pp5/9/3P3PP/PPP1PPP2/1B2G1R1L/LNSGK1SN1 b - 13"
+      }
+    ],
+    "reference_artifact": "artifacts/f22_post_f21_rebaseline_strength/alphasho_reference_provenance.json",
+    "reference_authority": "preserved AlphaSho move at frozen F22 state",
+    "references": {
+      "iteration-000086-game-000001-ply12": "3g4e",
+      "iteration-000086-game-000002-ply12": "5i6h",
+      "iteration-000086-game-000003-ply12": "5i6h",
+      "iteration-000086-game-000004-ply12": "5i6h",
+      "iteration-000086-game-000005-ply12": "3h4g",
+      "iteration-000086-game-000006-ply12": "8h9g",
+      "iteration-000086-game-000007-ply12": "5i4h",
+      "iteration-000086-game-000008-ply12": "6h6g",
+      "iteration-000086-game-000009-ply12": "8h4d",
+      "iteration-000086-game-000010-ply12": "5i6h"
+    },
+    "source_artifact": "artifacts/f22_post_f21_rebaseline_strength/round5_frozen_positions.json",
+    "source_commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38"
+  },
+  "generic_exact": [
+    {
+      "family": "checking_anchor_pressure",
+      "id": "generic-ray-mate-in-one",
+      "label": {
+        "diagnostic_reference_action": {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        "reference_actions": [
+          {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          }
+        ]
+      },
+      "label_kind": "terminal_mate_in_one",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "legacy-ray-8x8",
+      "solver": {
+        "kind": "mate_in_one",
+        "max_nodes": 128
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [],
+          []
+        ],
+        "rows": [
+          "........",
+          "........",
+          "........",
+          ".R......",
+          "........",
+          "........",
+          ".....R..",
+          "k.K....."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "ae6cc89aa3cb2f46e00237becd32b0aa3d6a42ca3def69e63f531f8414a6c788"
+    },
+    {
+      "family": "drops_hands",
+      "id": "generic-drop-mate-in-one",
+      "label": {
+        "diagnostic_reference_action": {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        "reference_actions": [
+          {
+            "base_type_id": "R",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "kind": "drop",
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "kind": "drop",
+            "to": [
+              0,
+              4
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "kind": "drop",
+            "to": [
+              0,
+              5
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "kind": "drop",
+            "to": [
+              0,
+              6
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "kind": "drop",
+            "to": [
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "label_kind": "terminal_mate_in_one",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "legacy-drop-ray-8x8",
+      "solver": {
+        "kind": "mate_in_one",
+        "max_nodes": 256
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [
+            [
+              "R",
+              1
+            ]
+          ],
+          []
+        ],
+        "rows": [
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "..K.....",
+          "k......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "aab68a479c3635bd611f101f06e8390db3ee896ba5998e50e3eb695f9b180f44"
+    },
+    {
+      "family": "promotion_structure",
+      "id": "generic-promotion-pawn",
+      "label": {
+        "diagnostic_reference_action": {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        "reference_actions": [
+          {
+            "from": [
+              4,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": "G",
+            "to": [
+              4,
+              7
+            ]
+          }
+        ]
+      },
+      "label_kind": "forced_promotion_actions",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "legacy-promotion-8x8",
+      "solver": {
+        "kind": "forced_promotion",
+        "max_nodes": 256
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [],
+          []
+        ],
+        "rows": [
+          ".......k",
+          "....P...",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "K......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "261d4e16267c886e614929d7b384fb36440be52a384753d8e3c08cf989e1d419"
+    },
+    {
+      "family": "promotion_structure",
+      "id": "generic-promotion-lance",
+      "label": {
+        "diagnostic_reference_action": {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        "reference_actions": [
+          {
+            "from": [
+              4,
+              6
+            ],
+            "kind": "board",
+            "promotion_target_id": "G",
+            "to": [
+              4,
+              7
+            ]
+          }
+        ]
+      },
+      "label_kind": "forced_promotion_actions",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "legacy-promotion-8x8",
+      "solver": {
+        "kind": "forced_promotion",
+        "max_nodes": 256
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [],
+          []
+        ],
+        "rows": [
+          ".......k",
+          "....L...",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "K......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "056063cf48ea08ced9113657bae26ec1a31c76a02282cb802045e34ac16d2415"
+    },
+    {
+      "family": "promotion_structure",
+      "id": "generic-promotion-knight",
+      "label": {
+        "diagnostic_reference_action": {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        "reference_actions": [
+          {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": "G",
+            "to": [
+              5,
+              6
+            ]
+          },
+          {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": "G",
+            "to": [
+              3,
+              6
+            ]
+          }
+        ]
+      },
+      "label_kind": "forced_promotion_actions",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "legacy-promotion-8x8",
+      "solver": {
+        "kind": "forced_promotion",
+        "max_nodes": 256
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [],
+          []
+        ],
+        "rows": [
+          ".......k",
+          "........",
+          "........",
+          "....N...",
+          "........",
+          "........",
+          "........",
+          "K......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "f22dfa0a1c2211371b40188240c71e55e6564195c2c9f9b39fbd125869205c4b"
+    },
+    {
+      "family": "semantic_constraint_effect",
+      "id": "generic-semantic-file-guard-4",
+      "label": {
+        "added_actions": [],
+        "diagnostic_reference_action": {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        "suppressed_actions": [
+          [
+            "drop",
+            "P",
+            4,
+            0
+          ],
+          [
+            "drop",
+            "P",
+            4,
+            2
+          ],
+          [
+            "drop",
+            "P",
+            4,
+            3
+          ],
+          [
+            "drop",
+            "P",
+            4,
+            4
+          ],
+          [
+            "drop",
+            "P",
+            4,
+            5
+          ],
+          [
+            "drop",
+            "P",
+            4,
+            6
+          ],
+          [
+            "drop",
+            "P",
+            4,
+            7
+          ]
+        ]
+      },
+      "label_kind": "semantic_suppression_set",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "semantic-file-guard-8x8",
+      "solver": {
+        "kind": "semantic_suppression",
+        "max_nodes": 512
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "rows": [
+          ".......k",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "....P...",
+          "K......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "6c6dca455963b24723a5d64fd70e256f6cc5ef38eae0a8a79824e850be052d59"
+    },
+    {
+      "family": "semantic_constraint_effect",
+      "id": "generic-semantic-file-guard-3",
+      "label": {
+        "added_actions": [],
+        "diagnostic_reference_action": {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        "suppressed_actions": [
+          [
+            "drop",
+            "P",
+            3,
+            0
+          ],
+          [
+            "drop",
+            "P",
+            3,
+            2
+          ],
+          [
+            "drop",
+            "P",
+            3,
+            3
+          ],
+          [
+            "drop",
+            "P",
+            3,
+            4
+          ],
+          [
+            "drop",
+            "P",
+            3,
+            5
+          ],
+          [
+            "drop",
+            "P",
+            3,
+            6
+          ],
+          [
+            "drop",
+            "P",
+            3,
+            7
+          ]
+        ]
+      },
+      "label_kind": "semantic_suppression_set",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "semantic-file-guard-8x8",
+      "solver": {
+        "kind": "semantic_suppression",
+        "max_nodes": 512
+      },
+      "split": "DEVELOPMENT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "rows": [
+          ".......k",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "...P....",
+          "K......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "5ca9e71f2e7ffb62ef6b941610fbe51763cf17961d88442372cb8555fc113ce5"
+    },
+    {
+      "family": "semantic_constraint_effect",
+      "id": "generic-semantic-s4-no-reply-filter",
+      "label": {
+        "diagnostic_reference_action": {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g10",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_004",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        "reference_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_018",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_022",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              7,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              7,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              7,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              7,
+              3
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              7,
+              4
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              7,
+              5
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              6
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              0,
+              7
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              1,
+              7
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              2,
+              7
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              3,
+              7
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              4,
+              7
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              5,
+              7
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g13",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
+            "to": [
+              6,
+              7
+            ]
+          }
+        ]
+      },
+      "label_kind": "semantic_legal_action_set",
+      "reference_authority": "bounded exact GenericChess legality/terminal solver",
+      "ruleset_id": "semantic-s4-drop-8x8",
+      "solver": {
+        "kind": "semantic_legal_set",
+        "max_nodes": 512
+      },
+      "split": "HOLDOUT",
+      "state": {
+        "board_size": 8,
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "rows": [
+          ".......k",
+          ".......P",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "K......."
+        ],
+        "side_to_move": 0
+      },
+      "state_identity_sha256": "73771f90c7b456f4253635d952e1d05e0d89f521cd1b320c8e2665e897a7834f"
+    }
+  ],
+  "production_changed": false,
+  "sampling": {
+    "algorithm": "preserve F22; generic cases selected by provenance/rule-family coverage and exact-solver availability",
+    "deduplication": "sha256(canonical ruleset_id/state/label_kind)",
+    "feature_blind": true
+  },
+  "schema_version": 1,
+  "split": {
+    "algorithm": "HOLDOUT iff int(state_identity_sha256[:8], 16) mod 4 == 0; otherwise DEVELOPMENT",
+    "development_count": 7,
+    "frozen_before_fitting": true,
+    "holdout_count": 1
+  }
+}
