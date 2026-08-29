@@ -146,7 +146,7 @@ def build_corpus() -> dict[str, Any]:
             "preference_authority": {
                 "root_actor": case["state"]["side_to_move"], "root_value": result.root_value,
                 "legal_root_action_count": len(result.action_values),
-                "optimal_root_actions": optimal, "all_root_action_values": list(result.action_values),
+                "optimal_root_actions": optimal, "all_root_action_values": [{"action": item["action"], "value": item["value"]} for item in result.action_values],
                 "states_expanded": result.stats["states_expanded"], "terminal_leaves": result.stats["terminal_leaves"],
                 "cycle_edges": result.stats["cycle_edges"], "cap_hits": result.stats["cap_hits"],
                 "unresolved": result.stats["unresolved"], "solver_version": SOLVER_VERSION,

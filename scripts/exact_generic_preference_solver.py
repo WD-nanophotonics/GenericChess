@@ -24,6 +24,8 @@ class SolveResult:
     action_values: tuple[dict[str, Any], ...]
     stats: dict[str, Any]
     unresolved_reason: str | None = None
+    max_proof_ply: int = 0
+    min_distinguishing_ply: int | None = None
 
 
 def _state_key(state) -> str:
@@ -48,12 +50,12 @@ def solve_root(compiled, state, *, max_nodes: int, max_depth: int) -> SolveResul
     draw.  W/D/L ties are preserved without distance tie-breaking.
     """
     root_actor = state.position.side_to_move
-    stats = Counter(states_expanded=0, terminal_leaves=0, cycle_edges=0, cap_hits=0)
+    stats = Counter(states_expanded=0, terminal_leaves=0, cycle_edges=0, cap_hits=0, transposition_hits=0, repetition_adjudications=0)
     unresolved = Counter()
-    cache: dict[str, str | None] = {}
+    cache: dict[str, tuple[str, int] | None] = {}
     active: set[str] = set()
 
-    def visit(node, depth: int) -> str | None:
+    def visit(node, depth: int) -> tuple[str, int] | None:
         if stats["states_expanded"] >= max_nodes:
             stats["cap_hits"] += 1
             unresolved["REFERENCE_SOLVE_UNRESOLVED:node_cap"] += 1
@@ -61,7 +63,9 @@ def solve_root(compiled, state, *, max_nodes: int, max_depth: int) -> SolveResul
         terminal = _terminal_value(node, compiled, root_actor)
         if terminal is not None:
             stats["terminal_leaves"] += 1
-            return terminal
+            if terminal_result(node, compiled).status in (TerminalStatus.REPETITION, TerminalStatus.PERPETUAL_CHECK):
+                stats["repetition_adjudications"] += 1
+            return terminal, 0
         if depth >= max_depth:
             stats["cap_hits"] += 1
             unresolved["REFERENCE_SOLVE_UNRESOLVED:depth_cap"] += 1
@@ -72,6 +76,7 @@ def solve_root(compiled, state, *, max_nodes: int, max_depth: int) -> SolveResul
             unresolved["REFERENCE_SOLVE_UNRESOLVED:cycle"] += 1
             return None
         if key in cache:
+            stats["transposition_hits"] += 1
             return cache[key]
         stats["states_expanded"] += 1
         active.add(key)
@@ -82,10 +87,12 @@ def solve_root(compiled, state, *, max_nodes: int, max_depth: int) -> SolveResul
             cache[key] = None
             return None
         maximizing = node.position.side_to_move == root_actor
-        best_score = (max if maximizing else min)(VALUE_SCORE[value] for value in values)
+        best_score = (max if maximizing else min)(VALUE_SCORE[value[0]] for value in values)
+        chosen = [value for value in values if VALUE_SCORE[value[0]] == best_score]
         result = next(value for value in VALUES if VALUE_SCORE[value] == best_score)
-        cache[key] = result
-        return result
+        solved = result, 1 + max(value[1] for value in chosen)
+        cache[key] = solved
+        return solved
 
     root_terminal = _terminal_value(state, compiled, root_actor)
     if root_terminal is not None:
@@ -93,18 +100,24 @@ def solve_root(compiled, state, *, max_nodes: int, max_depth: int) -> SolveResul
     root_successors = legal_successors(state, compiled)
     action_values = []
     for action, child in root_successors:
-        value = visit(child, 1)
-        action_values.append({"action": action_to_dict(action), "value": value})
+        solved = visit(child, 1)
+        action_values.append({"action": action_to_dict(action), "value": solved[0] if solved else None, "proof_depth": solved[1] + 1 if solved else None})
     if any(item["value"] is None for item in action_values):
         reason = next(iter(unresolved), "REFERENCE_SOLVE_UNRESOLVED:unknown")
         return SolveResult(False, None, (), tuple(action_values), {**dict(stats), "unresolved": dict(unresolved)}, reason)
     best_score = max(VALUE_SCORE[item["value"]] for item in action_values)
     root_value = next(value for value in VALUES if VALUE_SCORE[value] == best_score)
     optimal = tuple(item["action"] for item in action_values if item["value"] == root_value)
+    proof_depths = [item["proof_depth"] for item in action_values]
+    optimal_depths = [item["proof_depth"] for item in action_values if item["value"] == root_value]
+    inferior_depths = [item["proof_depth"] for item in action_values if item["value"] != root_value]
     return SolveResult(
         True,
         root_value,
         optimal,
         tuple(action_values),
         {**dict(stats), "unresolved": dict(unresolved), "root_actions": len(action_values)},
+        None,
+        max(proof_depths, default=0),
+        min([depth for depth in optimal_depths for other in inferior_depths if depth != other] or [None]),
     )
