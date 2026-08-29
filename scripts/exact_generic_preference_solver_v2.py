@@ -71,7 +71,7 @@ def _action_order(item):
     return (0 if terminal is not None and terminal.status is not TerminalStatus.ONGOING else 1, status, encoded)
 
 
-def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int | None) -> ProofSolveResult:
+def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int | None, use_tt: bool = True) -> ProofSolveResult:
     """Solve every root action exactly, or explicitly refuse certification."""
 
     root_actor = state.position.side_to_move
@@ -126,7 +126,7 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int | Non
             unresolved["REFERENCE_SOLVE_UNRESOLVED:cycle"] += 1
             return None
         original_alpha, original_beta = alpha, beta
-        cached = table.get(key)
+        cached = table.get(key) if use_tt else None
         if cached is not None:
             if cached.flag == "EXACT":
                 stats["exact_tt_hits"] += 1
@@ -194,7 +194,8 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int | Non
         # siblings were skipped; non-extremal bounds retain their flag.
         if (maximizing and best == 1) or ((not maximizing) and best == -1):
             flag = "EXACT"
-        table[key] = _TTEntry(best, flag, 1 + best_depth)
+        if use_tt:
+            table[key] = _TTEntry(best, flag, 1 + best_depth)
         return _SearchOutcome(best, 1 + best_depth, flag == "EXACT", flag)
 
     root_terminal, root_status = _terminal_value(state, compiled, root_actor)
@@ -204,9 +205,9 @@ def solve_root_proof_v2(compiled, state, *, max_nodes: int, max_depth: int | Non
     stats["legal_successors_generated"] += len(root_successors)
     action_values = []
     for action, child in root_successors:
-        solved = visit(child, 1, -1, 1)
+        solved = visit(child, 1, -2, 2)
         if solved is not None and not solved.exact:
-            solved = visit(child, 1, -1, 1)
+            solved = visit(child, 1, -2, 2)
         action_values.append({"action": action_to_dict(action), "value": SCORE_VALUE[solved.value] if solved and solved.exact else None, "proof_depth": solved.proof_depth + 1 if solved and solved.exact else None})
     stats["terminal_statuses"] = dict(sorted(terminal_statuses.items()))
     if any(item["value"] is None for item in action_values):

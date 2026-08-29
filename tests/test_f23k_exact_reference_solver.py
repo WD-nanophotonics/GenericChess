@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
+from generic_chess.core.actions import BoardMove
+from generic_chess.core.coordinates import Square
 from generic_chess.core.position import HistoryRecord
 from generic_chess.core.terminal import TerminalResult, TerminalStatus, _perpetual_check_result
 from scripts import build_f23c_evaluator_corpus_r2 as f23c
@@ -102,6 +105,40 @@ def test_f23k_authoritative_horizon_uses_compiled_rule_horizon():
     assert result.stats["authoritative_horizon"] is True
     assert result.stats["effective_max_depth"] == compiled.support.max_ply - state.ply_count
     assert result.strong is True
+
+
+def test_f23l_domain_outside_window_certifies_root_win_draw_and_loss_actions():
+    root = SimpleNamespace(label="root", position=SimpleNamespace(side_to_move=0), ply_count=0, repetition_counts=(), history=())
+    children = [SimpleNamespace(label="win", position=SimpleNamespace(side_to_move=1), ply_count=1, repetition_counts=(), history=()), SimpleNamespace(label="draw", position=SimpleNamespace(side_to_move=1), ply_count=1, repetition_counts=(), history=()), SimpleNamespace(label="loss", position=SimpleNamespace(side_to_move=1), ply_count=1, repetition_counts=(), history=())]
+    actions = tuple(BoardMove(Square(index, 0), Square(index, 1)) for index in range(3))
+    compiled = SimpleNamespace(max_ply=4)
+
+    def fake_terminal(node, _compiled):
+        if node.label == "root":
+            return TerminalResult(TerminalStatus.ONGOING)
+        if node.label == "win":
+            return TerminalResult(TerminalStatus.CHECKMATE, winner=0)
+        if node.label == "loss":
+            return TerminalResult(TerminalStatus.CHECKMATE, winner=1)
+        return TerminalResult(TerminalStatus.STALEMATE)
+
+    def fake_successors(node, _compiled):
+        return tuple((action, child) for action, child in zip(actions, children)) if node.label == "root" else ()
+
+    with patch.object(v2, "terminal_result", side_effect=fake_terminal), patch.object(v2, "legal_successors", side_effect=fake_successors):
+        result = v2.solve_root_proof_v2(compiled, root, max_nodes=20, max_depth=2)
+    assert result.strong is True
+    assert [row["value"] for row in result.action_values] == ["WIN", "DRAW", "LOSS"]
+    assert result.stats["proof_cutoffs"] == 0
+
+
+def test_f23l_tt_enabled_and_disabled_match_on_deep_control():
+    _m, compiled, state = _deep_case()
+    enabled = v2.solve_root_proof_v2(compiled, state, max_nodes=30000, max_depth=6, use_tt=True)
+    disabled = v2.solve_root_proof_v2(compiled, state, max_nodes=30000, max_depth=6, use_tt=False)
+    assert enabled.strong == disabled.strong is True
+    assert enabled.root_value == disabled.root_value
+    assert enabled.action_values == disabled.action_values
 
 
 def test_f23k_historical_capability_v1_remains_immutable():
