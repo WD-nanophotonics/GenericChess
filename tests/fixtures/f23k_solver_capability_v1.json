@@ -1,0 +1,217 @@
+{
+  "benchmark_version": "f23k-solver-foundation-v1",
+  "evaluator_blind": true,
+  "legacy_parity": true,
+  "non_control_families": 5,
+  "non_control_solved_families": 0,
+  "rows": [
+    {
+      "construction_family": "ordinary_anchor_movement",
+      "historical": {
+        "root_value": null,
+        "strong": false,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap"
+      },
+      "limits": {
+        "max_depth": 1,
+        "max_nodes": 50
+      },
+      "mechanic_family": "anchor_check_movement",
+      "new": {
+        "exact_tt_hits": 0,
+        "history_key_mode": "full_state_and_history",
+        "legal_successors_generated": 16,
+        "lower_bound_hits": 0,
+        "proof_cutoffs": 0,
+        "proof_depth": 0,
+        "root_value": null,
+        "states_expanded": 0,
+        "strong": false,
+        "terminal_statuses": {
+          "checkmate": 2,
+          "stalemate": 13
+        },
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        5,
+        true
+      ],
+      "parity": true,
+      "representative_id": "generic-f23j-legacy_anchor_mate-0"
+    },
+    {
+      "construction_family": "capture_recapture_tactics",
+      "historical": {
+        "root_value": null,
+        "strong": false,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap"
+      },
+      "limits": {
+        "max_depth": 1,
+        "max_nodes": 50
+      },
+      "mechanic_family": "capture_recapture",
+      "new": {
+        "exact_tt_hits": 0,
+        "history_key_mode": "full_state_and_history",
+        "legal_successors_generated": 9,
+        "lower_bound_hits": 0,
+        "proof_cutoffs": 0,
+        "proof_depth": 0,
+        "root_value": null,
+        "states_expanded": 0,
+        "strong": false,
+        "terminal_statuses": {},
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        5,
+        0
+      ],
+      "parity": true,
+      "representative_id": "generic-f23j-legacy_capture_recapture-0"
+    },
+    {
+      "construction_family": "drop_hand_tactics",
+      "historical": {
+        "root_value": null,
+        "strong": false,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap"
+      },
+      "limits": {
+        "max_depth": 1,
+        "max_nodes": 50
+      },
+      "mechanic_family": "drop_hand",
+      "new": {
+        "exact_tt_hits": 0,
+        "history_key_mode": "full_state_and_history",
+        "legal_successors_generated": 26,
+        "lower_bound_hits": 0,
+        "proof_cutoffs": 0,
+        "proof_depth": 0,
+        "root_value": null,
+        "states_expanded": 0,
+        "strong": false,
+        "terminal_statuses": {},
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        5,
+        0,
+        1
+      ],
+      "parity": true,
+      "representative_id": "generic-f23j-legacy_drop_hand-0"
+    },
+    {
+      "construction_family": "promotion_race",
+      "historical": {
+        "root_value": null,
+        "strong": false,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap"
+      },
+      "limits": {
+        "max_depth": 1,
+        "max_nodes": 50
+      },
+      "mechanic_family": "promotion_choice",
+      "new": {
+        "exact_tt_hits": 0,
+        "history_key_mode": "full_state_and_history",
+        "legal_successors_generated": 5,
+        "lower_bound_hits": 0,
+        "proof_cutoffs": 0,
+        "proof_depth": 0,
+        "root_value": null,
+        "states_expanded": 0,
+        "strong": false,
+        "terminal_statuses": {},
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        1,
+        4
+      ],
+      "parity": true,
+      "representative_id": "generic-f23j-auto_promotion_race-0"
+    },
+    {
+      "construction_family": "semantic_guard_auxiliary",
+      "historical": {
+        "root_value": null,
+        "strong": false,
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap"
+      },
+      "limits": {
+        "max_depth": 1,
+        "max_nodes": 50
+      },
+      "mechanic_family": "semantic_guard_aux_state",
+      "new": {
+        "exact_tt_hits": 0,
+        "history_key_mode": "full_state_and_history",
+        "legal_successors_generated": 37,
+        "lower_bound_hits": 0,
+        "proof_cutoffs": 0,
+        "proof_depth": 0,
+        "root_value": null,
+        "states_expanded": 0,
+        "strong": false,
+        "terminal_statuses": {},
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap",
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        "cannon",
+        0
+      ],
+      "parity": true,
+      "representative_id": "generic-f23j-semantic_fixture_mix-0"
+    },
+    {
+      "construction_family": "auxiliary_reply_chain_control",
+      "historical": {
+        "root_value": "DRAW",
+        "strong": true,
+        "unresolved_reason": null
+      },
+      "limits": {
+        "max_depth": 6,
+        "max_nodes": 30000
+      },
+      "mechanic_family": "auxiliary_state_chain",
+      "new": {
+        "exact_tt_hits": 0,
+        "history_key_mode": "full_state_and_history",
+        "legal_successors_generated": 20,
+        "lower_bound_hits": 0,
+        "proof_cutoffs": 4,
+        "proof_depth": 5,
+        "root_value": "DRAW",
+        "states_expanded": 8,
+        "strong": true,
+        "terminal_statuses": {
+          "checkmate": 2,
+          "max_ply": 1,
+          "stalemate": 8
+        },
+        "unresolved_reason": null,
+        "upper_bound_hits": 0
+      },
+      "parameter": [
+        0,
+        false
+      ],
+      "parity": true,
+      "representative_id": "generic-f23j-f23g_reply_chain_control-0"
+    }
+  ],
+  "selected_next_boundary": "F23L_EXACT_REFERENCE_SOLVER_FOUNDATION_R2",
+  "selection_frozen_before_results": true
+}
