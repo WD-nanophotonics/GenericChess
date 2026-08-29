@@ -10,8 +10,9 @@ from unittest.mock import patch
 from scripts import build_f23c_evaluator_corpus_r2 as f23c
 from scripts import build_f23e_preference_corpus as f23e
 from scripts import build_f23g_preference_corpus_r2 as f23g
+from scripts.audit_f23g_decision_orbits import audit
 from scripts import exact_generic_preference_solver as solver
-from scripts.exact_generic_preference_solver import solve_root
+from scripts.exact_generic_preference_solver import decision_subtree_fingerprint, solve_root
 
 
 ROOT = Path(__file__).parents[1]
@@ -96,3 +97,28 @@ def test_f23g_solver_has_no_evaluator_or_f23f_sampling_dependency():
     assert "Evaluator" not in source
     assert "generic_chess.ai" not in builder
     assert "generic_chess.learning" not in builder
+
+
+def test_f23g_behavioral_orbits_collapse_inert_hands_and_detect_leakage():
+    result = audit()
+    assert result["physical_corpus_rows"] == 30
+    assert result["canonical_state_identity_count"] == 30
+    assert result["effective_decision_orbit_count"] == 5
+    assert set(result["duplicate_multiplicity_per_orbit"].values()) == {6}
+    assert result["decision_orbit_split_leakage_count"] == 4
+    assert result["eligible_development_orbits_after_leakage_exclusion"] == 1
+    assert result["eligible_holdout_orbits_after_leakage_exclusion"] == 0
+    assert result["corrected_deep_supervision_gate"]["passes"] is False
+
+
+def test_f23g_behavioral_fingerprint_changes_when_a_reply_branch_changes():
+    m = f23c._imports()
+    compiled, pieces = f23g._semantic_variant(m, 0)
+    base = m["make_state"](compiled, f23g._rows(5, pieces))
+    changed_pieces = dict(pieces)
+    del changed_pieces[(2, 2)]
+    changed_pieces[(2, 1)] = "b"
+    changed = m["make_state"](compiled, f23g._rows(5, changed_pieces))
+    base_fp = decision_subtree_fingerprint(compiled, base, max_nodes=30000, max_depth=6)
+    changed_fp = decision_subtree_fingerprint(compiled, changed, max_nodes=30000, max_depth=6)
+    assert base_fp != changed_fp

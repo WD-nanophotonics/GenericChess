@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from collections import Counter
 from dataclasses import dataclass
 from typing import Any
@@ -121,3 +122,73 @@ def solve_root(compiled, state, *, max_nodes: int, max_depth: int) -> SolveResul
         max(proof_depths, default=0),
         min([depth for depth in optimal_depths for other in inferior_depths if depth != other] or [None]),
     )
+
+
+def decision_subtree_fingerprint(compiled, state, *, max_nodes: int, max_depth: int) -> str:
+    """Return a behavior-only fingerprint for an exactly solved decision tree.
+
+    The fingerprint intentionally omits corpus/provenance/state-identity
+    payload, including inert hand counters.  It retains actor role, terminal
+    W/D/L outcome, canonical public action signatures, child fingerprints, and
+    proof depths.  A bounded or cyclic tree is refused rather than assigned a
+    guessed fingerprint.
+    """
+    root_actor = state.position.side_to_move
+    stats = Counter(states_expanded=0)
+    cache: dict[str, tuple[str, int, str] | None] = {}
+    active: set[str] = set()
+
+    def visit(node, depth: int) -> tuple[str, int, str] | None:
+        if stats["states_expanded"] >= max_nodes:
+            return None
+        terminal = _terminal_value(node, compiled, root_actor)
+        key = _state_key(node)
+        if terminal is not None:
+            payload = {"role": node.position.side_to_move, "terminal_value": terminal, "proof_depth": 0, "actions": []}
+            encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+            return terminal, 0, hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+        if depth >= max_depth or key in active:
+            return None
+        if key in cache:
+            return cache[key]
+        stats["states_expanded"] += 1
+        active.add(key)
+        children = []
+        for action, child in legal_successors(node, compiled):
+            solved = visit(child, depth + 1)
+            if solved is None:
+                active.remove(key)
+                cache[key] = None
+                return None
+            value, child_depth, child_fp = solved
+            children.append({
+                "action": action_to_dict(action),
+                "value": value,
+                "proof_depth": child_depth + 1,
+                "child": child_fp,
+            })
+        active.remove(key)
+        if not children:
+            cache[key] = None
+            return None
+        maximizing = node.position.side_to_move == root_actor
+        best_score = (max if maximizing else min)(VALUE_SCORE[item["value"]] for item in children)
+        chosen = [item for item in children if VALUE_SCORE[item["value"]] == best_score]
+        value = next(name for name in VALUES if VALUE_SCORE[name] == best_score)
+        proof_depth = 1 + max(item["proof_depth"] - 1 for item in chosen)
+        payload = {
+            "role": node.position.side_to_move,
+            "terminal_value": None,
+            "value": value,
+            "proof_depth": proof_depth,
+            "actions": children,
+        }
+        encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+        result = value, proof_depth, hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+        cache[key] = result
+        return result
+
+    solved = visit(state, 0)
+    if solved is None:
+        raise ValueError("REFERENCE_SOLVE_UNRESOLVED:decision_subtree_fingerprint")
+    return solved[2]
