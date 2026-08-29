@@ -1,0 +1,638 @@
+{
+  "advancement_gate": {
+    "passes": false,
+    "reason": "exact solver rejected all existing multi-mechanic fixture candidates except two deduplicated auxiliary-chain control orbits",
+    "requirements": {
+      "behavioral_orbit_leakage": 0,
+      "construction_families_minimum": 4,
+      "development_effective_minimum": 20,
+      "holdout_effective_minimum": 6,
+      "mechanic_families_minimum": 4,
+      "source_family_leakage": 0
+    }
+  },
+  "candidate_plan": [
+    {
+      "builder": "legacy_anchor_mate",
+      "construction_family": "ordinary_anchor_movement",
+      "mechanic_family": "anchor_check_movement",
+      "parameters": [
+        [
+          5,
+          true
+        ],
+        [
+          5,
+          false
+        ],
+        [
+          6,
+          true
+        ],
+        [
+          6,
+          false
+        ],
+        [
+          7,
+          true
+        ],
+        [
+          7,
+          false
+        ]
+      ],
+      "source_families": [
+        "ordinary-anchor-sibling-demo",
+        "ordinary-anchor-sibling-demo",
+        "ordinary-anchor-6",
+        "ordinary-anchor-6",
+        "ordinary-anchor-7",
+        "ordinary-anchor-7"
+      ],
+      "splits": [
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "DEVELOPMENT"
+      ]
+    },
+    {
+      "builder": "legacy_capture_recapture",
+      "construction_family": "capture_recapture_tactics",
+      "mechanic_family": "capture_recapture",
+      "parameters": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "source_families": [
+        "capture-ray-5-0",
+        "capture-ray-5-1",
+        "capture-ray-5-2",
+        "capture-ray-6-0",
+        "capture-ray-6-1",
+        "capture-ray-6-2"
+      ],
+      "splits": [
+        "DEVELOPMENT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT"
+      ]
+    },
+    {
+      "builder": "legacy_drop_hand",
+      "construction_family": "drop_hand_tactics",
+      "mechanic_family": "drop_hand",
+      "parameters": [
+        [
+          5,
+          0,
+          1
+        ],
+        [
+          5,
+          0,
+          2
+        ],
+        [
+          5,
+          1,
+          1
+        ],
+        [
+          5,
+          1,
+          2
+        ],
+        [
+          6,
+          0,
+          1
+        ],
+        [
+          6,
+          1,
+          1
+        ]
+      ],
+      "source_families": [
+        "drop-ray-5-0-1",
+        "drop-ray-5-0-2",
+        "drop-ray-5-1-1",
+        "drop-ray-5-1-2",
+        "drop-ray-6-0-1",
+        "drop-ray-6-1-1"
+      ],
+      "splits": [
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT"
+      ]
+    },
+    {
+      "builder": "auto_promotion_race",
+      "construction_family": "promotion_race",
+      "mechanic_family": "promotion_choice",
+      "parameters": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "source_families": [
+        "promotion-race-rank4-1",
+        "promotion-race-rank4-2",
+        "promotion-race-rank4-3",
+        "promotion-race-rank3-1",
+        "promotion-race-rank3-2",
+        "promotion-race-rank3-3"
+      ],
+      "splits": [
+        "DEVELOPMENT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT"
+      ]
+    },
+    {
+      "builder": "semantic_fixture_mix",
+      "construction_family": "semantic_guard_auxiliary",
+      "mechanic_family": "semantic_guard_aux_state",
+      "parameters": [
+        [
+          "cannon",
+          0
+        ],
+        [
+          "cannon",
+          1
+        ],
+        [
+          "nifu",
+          1
+        ],
+        [
+          "nifu",
+          6
+        ],
+        [
+          "en_passant",
+          0
+        ],
+        [
+          "en_passant",
+          1
+        ]
+      ],
+      "source_families": [
+        "semantic-cannon-0",
+        "semantic-cannon-1",
+        "semantic-nifu-1",
+        "semantic-nifu-6",
+        "semantic-en-passant-0",
+        "semantic-en-passant-1"
+      ],
+      "splits": [
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT"
+      ]
+    },
+    {
+      "builder": "f23g_reply_chain_control",
+      "construction_family": "auxiliary_reply_chain_control",
+      "mechanic_family": "auxiliary_state_chain",
+      "parameters": [
+        [
+          0,
+          false
+        ],
+        [
+          1,
+          false
+        ],
+        [
+          2,
+          false
+        ],
+        [
+          3,
+          false
+        ],
+        [
+          4,
+          false
+        ],
+        [
+          0,
+          true
+        ]
+      ],
+      "solver_limits": {
+        "max_depth": 6,
+        "max_nodes": 30000
+      },
+      "source_families": [
+        "f23g-control-sibling-demo",
+        "f23g-control-1",
+        "f23g-control-sibling-demo",
+        "f23g-control-3",
+        "f23g-control-4",
+        "f23g-control-capture"
+      ],
+      "splits": [
+        "DEVELOPMENT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT",
+        "HOLDOUT",
+        "DEVELOPMENT"
+      ]
+    }
+  ],
+  "corpus_id": "evaluator-v2-corpus-v6",
+  "coverage": {
+    "canonical_solved_count": 2,
+    "construction_family_attempt_count": 6,
+    "construction_family_distribution": {
+      "auxiliary_reply_chain_control": 1
+    },
+    "effective_development_count": 1,
+    "effective_holdout_count": 0,
+    "max_ply_dependent_count": 0,
+    "mechanic_family_attempt_count": 6,
+    "mechanic_family_distribution": {
+      "auxiliary_state_chain": 1
+    },
+    "physical_solved_count": 6,
+    "planned_candidate_count": 36,
+    "proof_depth_distribution": {
+      "MULTIPLY_DEPENDENT": 1
+    },
+    "solved_candidate_count": 6,
+    "source_family_distribution": {
+      "f23g-control-capture": 1
+    },
+    "unresolved_candidate_count": 30,
+    "wdl_partition_distribution": {
+      "('DRAW', 'LOSS')": 1
+    }
+  },
+  "decision": {
+    "reason": "genuinely independent mechanics are not yet producing enough strong finite preference roots under the current exact reference contract",
+    "selected_next_boundary": "F23K_EXACT_REFERENCE_SOLVER_FOUNDATION"
+  },
+  "effective_orbits": {
+    "duplicate_candidate_ids": [
+      "generic-f23j-f23g_reply_chain_control-1",
+      "generic-f23j-f23g_reply_chain_control-2",
+      "generic-f23j-f23g_reply_chain_control-3",
+      "generic-f23j-f23g_reply_chain_control-4"
+    ],
+    "excluded_behavioral_leakage_orbit_ids": [],
+    "excluded_source_family_leakage_ids": [
+      "f23g-control-sibling-demo"
+    ],
+    "fit_eligible_development_orbit_ids": [
+      "d6ff517a7cf0ef2a88fe"
+    ],
+    "validation_eligible_holdout_orbit_ids": []
+  },
+  "evaluator_inspection": false,
+  "generic_exact": [
+    {
+      "action_values": [
+        {
+          "action": {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_prepare",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "proof_depth": 5,
+          "value": "DRAW"
+        },
+        {
+          "action": {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_bad_move",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "proof_depth": 2,
+          "value": "LOSS"
+        }
+      ],
+      "builder": "f23g_reply_chain_control",
+      "construction_family": "auxiliary_reply_chain_control",
+      "decision_subtree_fingerprint": "1760c14e412f058caed2d975eb971565db8b5cb0c4f06729023290d898168a7a",
+      "effective_orbit_id": "67623b2f4fa050e3d676",
+      "id": "generic-f23j-f23g_reply_chain_control-0",
+      "mechanic_family": "auxiliary_state_chain",
+      "parameter": [
+        0,
+        false
+      ],
+      "planned_split": "DEVELOPMENT",
+      "preference_authority": {
+        "max_ply_dependence": false,
+        "optimal_proof_depths": [
+          5
+        ],
+        "optimal_root_actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_prepare",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          }
+        ],
+        "proof_depth_class": "MULTIPLY_DEPENDENT",
+        "root_action_wdl_partition": [
+          "DRAW",
+          "LOSS"
+        ],
+        "root_value": "DRAW"
+      },
+      "root_action_count": 2,
+      "root_value": "DRAW",
+      "ruleset_id": "f23j-f23g_reply_chain_control",
+      "solver": {
+        "kind": "exact_root_wdl",
+        "max_depth": 6,
+        "max_nodes": 30000,
+        "version": "f23j-exact-generic-preference-solver-v2"
+      },
+      "solver_stats": {
+        "cap_hits": 0,
+        "cycle_edges": 0,
+        "repetition_adjudications": 0,
+        "root_actions": 2,
+        "states_expanded": 20,
+        "terminal_leaves": 20,
+        "transposition_hits": 0,
+        "unresolved": {}
+      },
+      "source": "fixture:f23j-f23g_reply_chain_control",
+      "source_family_id": "f23g-control-sibling-demo",
+      "state": {
+        "board_size": 5,
+        "hands": [
+          [],
+          []
+        ],
+        "rows": [
+          "...DK",
+          ".A.D.",
+          "..b..",
+          "ddh.d",
+          "kd..c"
+        ],
+        "side_to_move": 0
+      },
+      "strong": true,
+      "unresolved_reason": null
+    },
+    {
+      "action_values": [
+        {
+          "action": {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_prepare",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "proof_depth": 5,
+          "value": "DRAW"
+        },
+        {
+          "action": {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_bad_move",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "proof_depth": 2,
+          "value": "LOSS"
+        },
+        {
+          "action": {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_02_capture_bad",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "proof_depth": 2,
+          "value": "LOSS"
+        }
+      ],
+      "builder": "f23g_reply_chain_control",
+      "construction_family": "auxiliary_reply_chain_control",
+      "decision_subtree_fingerprint": "96fe9b6d89955e2893e58e06f68eced76bbe00ccbc5605d68d47517da86a8bb1",
+      "effective_orbit_id": "d6ff517a7cf0ef2a88fe",
+      "id": "generic-f23j-f23g_reply_chain_control-5",
+      "mechanic_family": "auxiliary_state_chain",
+      "parameter": [
+        0,
+        true
+      ],
+      "planned_split": "DEVELOPMENT",
+      "preference_authority": {
+        "max_ply_dependence": false,
+        "optimal_proof_depths": [
+          5
+        ],
+        "optimal_root_actions": [
+          {
+            "actor_type_id": "A",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_prepare",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          }
+        ],
+        "proof_depth_class": "MULTIPLY_DEPENDENT",
+        "root_action_wdl_partition": [
+          "DRAW",
+          "LOSS"
+        ],
+        "root_value": "DRAW"
+      },
+      "root_action_count": 3,
+      "root_value": "DRAW",
+      "ruleset_id": "f23j-f23g_reply_chain_control",
+      "solver": {
+        "kind": "exact_root_wdl",
+        "max_depth": 6,
+        "max_nodes": 30000,
+        "version": "f23j-exact-generic-preference-solver-v2"
+      },
+      "solver_stats": {
+        "cap_hits": 0,
+        "cycle_edges": 0,
+        "repetition_adjudications": 0,
+        "root_actions": 3,
+        "states_expanded": 27,
+        "terminal_leaves": 25,
+        "transposition_hits": 0,
+        "unresolved": {}
+      },
+      "source": "fixture:f23j-f23g_reply_chain_control",
+      "source_family_id": "f23g-control-capture",
+      "state": {
+        "board_size": 5,
+        "hands": [
+          [],
+          []
+        ],
+        "rows": [
+          "...DK",
+          ".A.D.",
+          "..b..",
+          "ddh.d",
+          "kd..c"
+        ],
+        "side_to_move": 0
+      },
+      "strong": true,
+      "unresolved_reason": null
+    }
+  ],
+  "historical_strata": {
+    "f23f_spec_sha256": "88894da595105a4e53a4d21dbab69c6565cf8417b8c8e24f424f08397e186097",
+    "note": "Historical V1-V5 and F23F are preserved separately and never used as V6 fit data.",
+    "v1_sha256": "4c88b409b9dd8188f0c9f2c587c55199b74c8b9bc3bec3a91457e0af499d73ac",
+    "v2_sha256": "16244ab39508d319fdf9cdbbe69fb813daa4835f12a54f2a227d9794aacc11fa",
+    "v3_sha256": "34c59315b11f6b8f18bf3746e870c1b48bf7645c1e18718b77bba7fdcd77ba97",
+    "v4_sha256": "de6910025ab78a2bdf04fafeaedfdf2d18af8c67a3a45d042ecff0e4412e96a0",
+    "v5_sha256": "3a94a8a295a4c0de197a45f593d44ff03da0e620cdcd56824a9bca4bcf6341c8"
+  },
+  "production_changed": false,
+  "schema_version": 6,
+  "shogi_opened": false,
+  "solver_contract": {
+    "authority": "exact GenericChess legal successors, transition, terminal, and history/repetition semantics",
+    "cycles": "unresolved",
+    "evaluator_blind": true,
+    "max_depth": 2,
+    "max_nodes": 2000
+  },
+  "source_f23j_plan_sha256": "e265f3ee6e06680773478803826892f8583fe6186baa63dad92c0af2a8c20db6"
+}
