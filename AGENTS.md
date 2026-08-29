@@ -19,3 +19,5 @@ Read `WORKFLOW.md` before changing this repository.
 7. Keep generated binaries, Courier state, raw benchmark output, and transient
    evidence out of Git. Retain durable architecture decisions as ADRs and
    behavior guarantees as tests.
+8. Run long tests, self-play, benchmarks, and large audits through
+   `generic-chess-flow.cmd heavy`; never start two GenericChess heavy jobs.

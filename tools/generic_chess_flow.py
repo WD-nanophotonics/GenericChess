@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import hashlib
 import json
 import os
@@ -30,10 +31,11 @@ def run(
     cwd: Path,
     check: bool = True,
     env: dict[str, str] | None = None,
+    creationflags: int = 0,
 ) -> subprocess.CompletedProcess[str]:
     result = subprocess.run(
         list(argv), cwd=cwd, text=True, encoding="utf-8", errors="replace",
-        capture_output=True, env=env,
+        capture_output=True, env=env, creationflags=creationflags,
     )
     if check and result.returncode:
         detail = (result.stderr or result.stdout).strip()
@@ -171,7 +173,13 @@ def python_for(root: Path) -> str:
 def run_tests(root: Path, targets: list[str]) -> None:
     command = [python_for(root), "-m", "pytest", "-q", "-p", "no:cacheprovider"]
     command.extend(targets)
-    result = run(command, cwd=root, check=False)
+    with heavy_lock(root):
+        result = run(
+            command,
+            cwd=root,
+            check=False,
+            creationflags=getattr(subprocess, "BELOW_NORMAL_PRIORITY_CLASS", 0),
+        )
     if result.stdout:
         print(result.stdout, end="")
     if result.stderr:
@@ -187,20 +195,43 @@ def courier_launcher(root: Path) -> Path:
     return launcher
 
 
-def courier(root: Path, *args: str) -> dict[str, Any]:
+def courier(root: Path, *args: str, stream: bool = False) -> dict[str, Any]:
     comspec = os.environ.get("COMSPEC", r"C:\Windows\System32\cmd.exe")
-    result = run((comspec, "/d", "/c", str(courier_launcher(root)), *args), cwd=root, check=False)
+    process = subprocess.Popen(
+        (comspec, "/d", "/c", str(courier_launcher(root)), *args),
+        cwd=root,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
     events: list[dict[str, Any]] = []
-    for line in result.stdout.splitlines():
+    output: list[str] = []
+    assert process.stdout is not None
+    for raw in process.stdout:
+        line = raw.rstrip("\r\n")
+        output.append(line)
+        if stream:
+            print(line, flush=True)
         try:
             value = json.loads(line)
         except json.JSONDecodeError:
             continue
         if isinstance(value, dict):
             events.append(value)
-    if result.returncode or not events:
-        detail = (result.stderr or result.stdout).strip()
-        raise FlowError(f"ChatCourier failed ({result.returncode}): {detail}")
+    returncode = process.wait()
+    if returncode or not events:
+        detail = "\n".join(output).strip()
+        next_action = "stop and report the Courier terminal event to the user"
+        if events and events[-1].get("event") in {
+            "queue_timeout", "queue_recovery_required", "courier_interrupted",
+            "response_timeout", "response_protocol_error",
+        }:
+            next_action = "run generic-chess-flow.cmd resume with the same request"
+        raise FlowError(
+            f"ChatCourier failed ({returncode}): {detail}\nNEXT_ACTION={next_action}"
+        )
     final = events[-1]
     if not final.get("ok", False):
         raise FlowError(f"ChatCourier terminal event: {json.dumps(final, ensure_ascii=False)}")
@@ -268,7 +299,7 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
     state["active_request_directory"] = request_directory
     state["last_request_key"] = key
     save_state(root, state)
-    event = courier(root, "courier_dispatch", request_directory)
+    event = courier(root, "courier_dispatch", request_directory, stream=True)
     update_response_state(root, state, event)
 
 
@@ -287,13 +318,71 @@ def command_status(root: Path, _args: argparse.Namespace) -> None:
         payload["topology_ok"] = git_ok(
             root, "merge-base", "--is-ancestor", sha(trees["master"]), sha(trees["sandbox"])
         )
-    payload["session"] = load_state(root, required=False)
-    try:
-        caps = courier_capabilities(root)
-        payload["courier"] = {"available": True, "projects": caps.get("projects", [])}
-    except FlowError as exc:
-        payload["courier"] = {"available": False, "detail": str(exc)}
+    session = load_state(root, required=False)
+    payload["session"] = session
+    if session.get("active") is True and session.get("mode") == "local":
+        payload["courier"] = {"checked": False, "reason": "skipped_due_to_local_mode"}
+    else:
+        try:
+            caps = courier_capabilities(root)
+            payload["courier"] = {"available": True, "projects": caps.get("projects", [])}
+        except FlowError as exc:
+            payload["courier"] = {"available": False, "detail": str(exc)}
     print(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True))
+
+
+@contextmanager
+def heavy_lock(root: Path):
+    """Allow one low-priority GenericChess compute command at a time."""
+    path = runtime_dir(root) / "heavy.lock"
+    handle = path.open("a+b")
+    if path.stat().st_size == 0:
+        handle.write(b"0")
+        handle.flush()
+    handle.seek(0)
+    try:
+        if os.name == "nt":
+            import msvcrt
+
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        else:  # pragma: no cover - the workflow is Windows-only
+            import fcntl
+
+            fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError as exc:
+        handle.close()
+        raise FlowError("another GenericChess heavy command is already running") from exc
+    try:
+        yield
+    finally:
+        handle.seek(0)
+        if os.name == "nt":
+            import msvcrt
+
+            msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+        else:  # pragma: no cover - the workflow is Windows-only
+            import fcntl
+
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+        handle.close()
+
+
+def command_heavy(root: Path, args: argparse.Namespace) -> int:
+    active_state(root)
+    if branch(root) != "sandbox":
+        raise FlowError("heavy must be run from the sandbox worktree")
+    command = list(args.argv)
+    if command and command[0] == "--":
+        command.pop(0)
+    if not command:
+        raise FlowError("heavy requires a command after --")
+    with heavy_lock(root):
+        process = subprocess.Popen(
+            command,
+            cwd=root,
+            creationflags=getattr(subprocess, "BELOW_NORMAL_PRIORITY_CLASS", 0),
+        )
+        return process.wait()
 
 
 def command_start(root: Path, args: argparse.Namespace) -> None:
@@ -359,7 +448,7 @@ def command_resume(root: Path, _args: argparse.Namespace) -> None:
     directory = state.get("active_request_directory")
     if not isinstance(directory, str) or not directory:
         raise FlowError("there is no active Courier request to resume")
-    event = courier(root, "courier_dispatch", directory)
+    event = courier(root, "courier_dispatch", directory, stream=True)
     update_response_state(root, state, event)
 
 
@@ -433,6 +522,9 @@ def parser() -> argparse.ArgumentParser:
     publish = sub.add_parser("publish")
     publish.add_argument("--tests", nargs="*")
     publish.set_defaults(handler=command_publish)
+    heavy = sub.add_parser("heavy")
+    heavy.add_argument("argv", nargs=argparse.REMAINDER)
+    heavy.set_defaults(handler=command_heavy)
     sub.add_parser("resume").set_defaults(handler=command_resume)
     closeout = sub.add_parser("closeout")
     closeout.add_argument("--report-file", required=True)
@@ -448,8 +540,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     try:
         root = repository_root()
-        args.handler(root, args)
-        return 0
+        result = args.handler(root, args)
+        return int(result or 0)
     except FlowError as exc:
         print(f"GENERIC_CHESS_FLOW_ERROR: {exc}", file=sys.stderr)
         return 2

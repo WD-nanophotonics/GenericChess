@@ -35,6 +35,7 @@ Run the desktop application with `run_ui.bat`, or use:
 ```powershell
 generic-chess-flow.cmd status
 generic-chess-flow.cmd start --mode local
+generic-chess-flow.cmd heavy -- .venv\Scripts\python.exe -m generic_chess.learning.experiment --help
 generic-chess-flow.cmd publish --tests tests/test_session.py tests/test_ai_search.py
 generic-chess-flow.cmd finish
 ```
