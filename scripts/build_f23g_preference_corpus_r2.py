@@ -49,7 +49,7 @@ def _rows(n: int, pieces: dict[tuple[int, int], str]) -> list[str]:
     return ["".join(board[rank]) for rank in range(n - 1, -1, -1)]
 
 
-def _semantic_variant(m: dict[str, Any], variant: int):
+def _semantic_variant(m: dict[str, Any], variant: int, *, capture: bool = False):
     """A compact two-reply game with an evaluator-blind exact preference."""
     n = 5
     extra_a = (
@@ -86,6 +86,16 @@ def _semantic_variant(m: dict[str, Any], variant: int):
         target_relation="empty", slot_guards=(RuleSlotGuard("bad", value=0),),
         aux_state=(bad,),
         effects=(RuleActionEffect("move", from_ref=ref("source"), to_ref=ref("target")),
+                 RuleActionEffect("set_bool", slot_name="bad", value=1)),
+        invariants=own_safe,
+    )
+    capture_bad = RuleSemanticAction(
+        name="capture_bad", type_ids=("A",),
+        geometry=RuleGeometrySpec(kind="leap", offset=(1, -1)),
+        target_relation="enemy", slot_guards=(RuleSlotGuard("bad", value=0),),
+        aux_state=(bad,),
+        effects=(RuleActionEffect("remove", square_ref=ref("target"), disposition="remove_from_game", piece_owner="opponent"),
+                 RuleActionEffect("move", from_ref=ref("source"), to_ref=ref("target")),
                  RuleActionEffect("set_bool", slot_name="bad", value=1)),
         invariants=own_safe,
     )
@@ -165,7 +175,7 @@ def _semantic_variant(m: dict[str, Any], variant: int):
         slot_guards=(RuleSlotGuard("replied", value=0), RuleSlotGuard("started", value=0)),
         effects=(RuleActionEffect("move", from_ref=ref("source"), to_ref=ref("target")),), invariants=own_safe,
     )
-    actions = (prepare, bad_move, stage, suppress_capture, finish, reply1, reply2, strike, h_guarded, h_guarded_capture)
+    actions = (prepare, bad_move, *((capture_bad,) if capture else ()), stage, suppress_capture, finish, reply1, reply2, strike, h_guarded, h_guarded_capture)
     rules = replace(
         _semantic_ruleset((m["king"](), A, B, C, H, D), actions, n=n),
         max_ply=6, repetition_limit=2,
