@@ -29,3 +29,11 @@ Read `WORKFLOW.md` before changing this repository.
     the current order, test, commit, publish, close out, and follow the next
     order. Stop only at `COMPLETE`, `BLOCKED`, a hard error requiring the user,
     or an explicit user stop. Do not stop merely because one work order ended.
+11. Courier transport faults follow the bounded recovery ladder: read-only
+    `capture_latest`, existing-request recover/wait, one evidence-gated retry of
+    the immutable request, registered Supervisor escalation, then human action.
+    Transport faults are never reported as Chat `BLOCKED`.
+12. On escalation, stop repository writes, notify the Supervisor task recorded
+    by `CODEX_THREAD_ID`, and wait for its signed resolution. Do not create a
+    replacement task or request. Only the claiming Supervisor may review the
+    single `resend_once`, and recovery responses never authorize promotion.

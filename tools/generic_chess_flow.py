@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import time
 import uuid
 from typing import Any, Sequence
 
@@ -26,6 +27,9 @@ CONTROL_FIELDS = {
     "GENERICCHESS_CANDIDATE_SHA",
     "GENERICCHESS_PROMOTION",
 }
+CONTROL_STATUSES = {"CONTINUE", "COMPLETE", "BLOCKED"}
+PROMOTION_VALUES = {"APPROVE", "HOLD"}
+WORK_ORDER_ID = re.compile(r"(?m)^WORK_ORDER_ID=([^\s]+)\s*$")
 
 
 class FlowError(RuntimeError):
@@ -161,6 +165,11 @@ def active_state(root: Path) -> dict[str, Any]:
     return state
 
 
+def require_worker_write_authority(state: dict[str, Any]) -> None:
+    if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
+        raise FlowError("repository writes are frozen until Supervisor resolution")
+
+
 def save_state(root: Path, state: dict[str, Any]) -> None:
     path = runtime_dir(root) / "session.json"
     temporary = path.with_suffix(".tmp")
@@ -202,7 +211,8 @@ def courier_launcher(root: Path) -> Path:
     return launcher
 
 
-def courier(root: Path, *args: str, stream: bool = False) -> dict[str, Any]:
+def courier(root: Path, *args: str, stream: bool = False,
+            allow_failure: bool = False) -> dict[str, Any]:
     comspec = os.environ.get("COMSPEC", r"C:\Windows\System32\cmd.exe")
     process = subprocess.Popen(
         (comspec, "/d", "/c", str(courier_launcher(root)), *args),
@@ -228,6 +238,8 @@ def courier(root: Path, *args: str, stream: bool = False) -> dict[str, Any]:
         if isinstance(value, dict):
             events.append(value)
     returncode = process.wait()
+    if allow_failure and events:
+        return events[-1]
     if returncode or not events:
         detail = "\n".join(output).strip()
         next_action = "stop and report the Courier terminal event to the user"
@@ -261,16 +273,56 @@ def parse_control_footer(text: str) -> dict[str, str]:
     return found
 
 
-def update_response_state(root: Path, state: dict[str, Any], event: dict[str, Any]) -> None:
-    if event.get("event") in {"response_received", "response_duplicate"}:
+def validate_control_footer(text: str) -> dict[str, str]:
+    control = parse_control_footer(text)
+    missing = CONTROL_FIELDS - control.keys()
+    if missing:
+        raise FlowError("Courier response is missing control fields: " + ", ".join(sorted(missing)))
+    if control["GENERICCHESS_STATUS"] not in CONTROL_STATUSES:
+        raise FlowError("Courier response has an invalid GENERICCHESS_STATUS")
+    candidate = control["GENERICCHESS_CANDIDATE_SHA"]
+    if candidate != "NONE" and not FULL_SHA.fullmatch(candidate):
+        raise FlowError("Courier response has an invalid GENERICCHESS_CANDIDATE_SHA")
+    if control["GENERICCHESS_PROMOTION"] not in PROMOTION_VALUES:
+        raise FlowError("Courier response has an invalid GENERICCHESS_PROMOTION")
+    return control
+
+
+def recovery_event(state: dict[str, Any], name: str, **values: Any) -> None:
+    timeline = state.setdefault("recovery_timeline", [])
+    timeline.append({"event": name, "at": time.time(), **values})
+    if len(timeline) > 100:
+        del timeline[:-100]
+
+
+def _atomic_json(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True) + "\n",
+                         encoding="utf-8")
+    os.replace(temporary, path)
+
+
+def update_response_state(root: Path, state: dict[str, Any], event: dict[str, Any],
+                          *, source: str = "normal") -> None:
+    if event.get("event") in {"response_received", "response_duplicate", "courier_latest_response_captured"}:
         response_path = event.get("response_path")
         if not isinstance(response_path, str):
             raise FlowError("Courier response event did not include response_path")
         response = Path(response_path)
         text = response.read_text(encoding="utf-8-sig")
         state["last_response_path"] = str(response)
-        state["chat_control"] = parse_control_footer(text)
+        control = validate_control_footer(text)
+        work_order = WORK_ORDER_ID.search(text)
+        state["chat_control"] = control
+        state["last_work_order_id"] = work_order.group(1) if work_order else None
+        state["work_order_active"] = control["GENERICCHESS_STATUS"] == "CONTINUE"
+        state["last_response_sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        state["last_response_source"] = source
         state["active_request_directory"] = None
+        state["recovery_state"] = "RECOVERED" if source != "normal" else "IDLE"
+        recovery_event(state, "response_accepted", source=source,
+                       response_sha256=state["last_response_sha256"])
         save_state(root, state)
         print(text)
 
@@ -375,7 +427,8 @@ def heavy_lock(root: Path):
 
 
 def command_heavy(root: Path, args: argparse.Namespace) -> int:
-    active_state(root)
+    state = active_state(root)
+    require_worker_write_authority(state)
     if branch(root) != "sandbox":
         raise FlowError("heavy must be run from the sandbox worktree")
     command = list(args.argv)
@@ -410,6 +463,13 @@ def command_start(root: Path, args: argparse.Namespace) -> None:
         "base_sandbox_sha": sha(trees["sandbox"]),
         "tested_shas": {},
         "active_request_directory": None,
+        "work_order_active": False,
+        "last_work_order_id": None,
+        "recovery_state": "IDLE",
+        "recovery_attempts": 0,
+        "recovery_timeline": [],
+        "last_probe": None,
+        "escalation_id": None,
     }
     work_request_token = getattr(args, "work_request_token", None)
     if work_request_token:
@@ -438,7 +498,7 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
                 "a Local mode session is active; continue that task or finish it before Courier work"
             )
         if state.get("active_request_directory"):
-            command_resume(root, _args)
+            command_recover(root, _args)
             return
         response_path = state.get("last_response_path")
         if isinstance(response_path, str) and Path(response_path).is_file():
@@ -470,6 +530,7 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
     if branch(root) != "sandbox":
         raise FlowError("publish must be run from the sandbox worktree")
     state = active_state(root)
+    require_worker_write_authority(state)
     require_clean(root)
     fetch(root, "sandbox")
     remote_sha = sha(root, "origin/sandbox")
@@ -490,19 +551,263 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
     print(f"PUBLISHED_SANDBOX_SHA={sha(root)}")
 
 
-def command_resume(root: Path, _args: argparse.Namespace) -> None:
+def supervisor_config_path(root: Path) -> Path:
+    return runtime_dir(root) / "supervisor.json"
+
+
+def escalation_root(root: Path) -> Path:
+    return runtime_dir(root) / "escalations"
+
+
+def _file_digest(path: Path) -> str | None:
+    try:
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+    except OSError:
+        return None
+
+
+def _supervisor_config(root: Path) -> dict[str, Any]:
+    path = supervisor_config_path(root)
+    if not path.exists():
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise FlowError(f"invalid supervisor config: {path}") from exc
+    if not isinstance(value, dict):
+        raise FlowError(f"invalid supervisor config: {path}")
+    return value
+
+
+def create_escalation(root: Path, state: dict[str, Any], *, reason: str,
+                      worker_thread_id: str | None = None) -> dict[str, Any]:
+    directory_value = state.get("active_request_directory")
+    request_directory = Path(directory_value) if isinstance(directory_value, str) else None
+    identity = f"{directory_value}|{state.get('last_published_sha')}"
+    escalation_id = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:20]
+    directory = escalation_root(root) / escalation_id
+    dossier_path = directory / "dossier.json"
+    if dossier_path.exists() and not (directory / "resolution.json").exists():
+        dossier = json.loads(dossier_path.read_text(encoding="utf-8"))
+    else:
+        receipt_path = request_directory / "receipt.json" if request_directory else Path()
+        events_path = request_directory / "events.jsonl" if request_directory else Path()
+        config = _supervisor_config(root)
+        dossier = {
+            "schema": "generic-chess-supervisor-escalation-v1",
+            "escalation_id": escalation_id,
+            "status": "PENDING",
+            "created_at": time.time(),
+            "reason": reason,
+            "master_sha": sha(worktrees(root)["master"]),
+            "sandbox_sha": sha(sandbox_root(root)),
+            "request_directory": directory_value,
+            "request_receipt_sha256": _file_digest(receipt_path) if request_directory else None,
+            "request_events_sha256": _file_digest(events_path) if request_directory else None,
+            "last_probe": state.get("last_probe"),
+            "recovery_attempts": state.get("recovery_attempts", 0),
+            "worker_thread_id": worker_thread_id or os.environ.get("CODEX_THREAD_ID"),
+            "worker_host_id": "local",
+            "supervisor_thread_id": config.get("supervisor_thread_id"),
+            "supervisor_host_id": config.get("supervisor_host_id", "local"),
+            "recommended_action": "inspect the evidence, repair within existing authority, then resume the worker",
+        }
+        _atomic_json(dossier_path, dossier)
+        message = (
+            f"GenericChess recovery escalation {escalation_id} requires Supervisor review.\n"
+            f"Dossier: {dossier_path}\nSandbox SHA: {dossier['sandbox_sha']}\n"
+            "Inspect without creating a replacement Courier request. Resolve the transport/framework issue, "
+            "then send an exact continuation message to the recorded worker task."
+        )
+        (directory / "notification.txt").write_text(message + "\n", encoding="utf-8")
+    state["recovery_state"] = "ESCALATED"
+    state["escalation_id"] = escalation_id
+    recovery_event(state, "supervisor_escalated", escalation_id=escalation_id, reason=reason)
+    save_state(root, state)
+    print(json.dumps(dossier, indent=2, ensure_ascii=False, sort_keys=True))
+    print(f"SUPERVISOR_NOTIFICATION_FILE={directory / 'notification.txt'}")
+    return dossier
+
+
+def command_recover(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
+    require_worker_write_authority(state)
     if state.get("mode") != "courier":
-        raise FlowError("resume is only available in courier mode")
+        raise FlowError("recover is only available in courier mode")
     directory = state.get("active_request_directory")
     if not isinstance(directory, str) or not directory:
-        raise FlowError("there is no active Courier request to resume")
-    event = courier(root, "courier_dispatch", directory, stream=True)
-    update_response_state(root, state, event)
+        raise FlowError("there is no active Courier request to recover")
+    worker_thread_id = getattr(args, "worker_thread_id", None) or os.environ.get("CODEX_THREAD_ID")
+    state["worker_thread_id"] = worker_thread_id
+    state["recovery_state"] = "RECOVERING"
+    recovery_event(state, "recovery_started", request_directory=directory)
+    save_state(root, state)
+    try:
+        status = courier(root, "courier_status", directory, allow_failure=True)
+        recovery_event(state, "status_read", courier_state=status.get("state"))
+        probe = courier(root, "courier_capture_latest", directory,
+                        stream=True, allow_failure=True)
+        state["last_probe"] = {
+            key: probe.get(key) for key in (
+                "event", "ok", "fingerprint", "captured_at", "latest_user_turn_found",
+                "post_submission_reply_found", "request_match", "response_path",
+                "submission_count", "message_sent", "error_code",
+            ) if key in probe
+        }
+        recovery_event(state, "latest_response_probed", **state["last_probe"])
+        save_state(root, state)
+        if probe.get("ok") and probe.get("request_match") is True and probe.get("response_path"):
+            update_response_state(root, state, probe, source="capture_latest")
+            return
+        if (probe.get("event") == "courier_capture_latest_empty"
+                and probe.get("latest_user_turn_found") is False):
+            state["recovery_attempts"] = int(state.get("recovery_attempts", 0)) + 1
+            recovery_event(state, "evidence_retry_requested",
+                           attempt=state["recovery_attempts"])
+            save_state(root, state)
+            result = courier(root, "courier_retry_once", directory,
+                             stream=True, allow_failure=True)
+            if result.get("event") in {"response_received", "response_duplicate"} and result.get("response_path"):
+                update_response_state(root, state, result, source="evidence_retry")
+                return
+            reason = f"evidence retry did not recover the request: {result.get('event')}"
+        elif (probe.get("event") == "courier_capture_latest_empty"
+              and probe.get("latest_user_turn_found") is True):
+            result = courier(root, "courier_recover", directory,
+                             stream=True, allow_failure=True)
+            if result.get("event") in {"response_received", "response_duplicate"} and result.get("response_path"):
+                update_response_state(root, state, result, source="read_only_recover")
+                return
+            reason = f"the Chat request exists but read-only recovery did not complete: {result.get('event')}"
+        else:
+            reason = f"read-only Chat probe needs Supervisor judgment: {probe.get('event')}"
+    except FlowError as exc:
+        reason = f"Courier recovery command failed: {exc}"
+    create_escalation(root, state, reason=reason, worker_thread_id=worker_thread_id)
+
+
+def command_resume(root: Path, args: argparse.Namespace) -> None:
+    command_recover(root, args)
+
+
+def command_register_supervisor(root: Path, args: argparse.Namespace) -> None:
+    thread_id = args.thread_id or os.environ.get("CODEX_THREAD_ID")
+    if not isinstance(thread_id, str) or not thread_id:
+        raise FlowError("a supervisor thread id is required")
+    value = {
+        "schema": "generic-chess-supervisor-v1",
+        "supervisor_thread_id": thread_id,
+        "supervisor_host_id": args.host_id,
+        "heartbeat_seconds": 300,
+        "registered_at": time.time(),
+    }
+    _atomic_json(supervisor_config_path(root), value)
+    print(json.dumps(value, indent=2, sort_keys=True))
+
+
+def command_escalate(root: Path, args: argparse.Namespace) -> None:
+    state = active_state(root)
+    create_escalation(root, state, reason=args.reason,
+                      worker_thread_id=args.worker_thread_id)
+
+
+def _escalation_directory(root: Path, escalation_id: str) -> Path:
+    if not re.fullmatch(r"[0-9a-f]{20}", escalation_id):
+        raise FlowError("invalid escalation id")
+    directory = escalation_root(root) / escalation_id
+    if not (directory / "dossier.json").is_file():
+        raise FlowError("unknown escalation id")
+    return directory
+
+
+def command_supervisor_pending(root: Path, _args: argparse.Namespace) -> None:
+    pending = []
+    base = escalation_root(root)
+    if base.exists():
+        for dossier_path in sorted(base.glob("*/dossier.json")):
+            if not (dossier_path.parent / "resolution.json").exists():
+                pending.append(json.loads(dossier_path.read_text(encoding="utf-8")))
+    print(json.dumps({"pending": pending}, indent=2, ensure_ascii=False, sort_keys=True))
+
+
+def command_supervisor_claim(root: Path, args: argparse.Namespace) -> None:
+    config = _supervisor_config(root)
+    current = os.environ.get("CODEX_THREAD_ID")
+    if current != config.get("supervisor_thread_id"):
+        raise FlowError("only the registered Supervisor task may claim an escalation")
+    directory = _escalation_directory(root, args.escalation_id)
+    claim_path = directory / "claim.json"
+    value = {"escalation_id": args.escalation_id, "supervisor_thread_id": current,
+             "claimed_at": time.time()}
+    if claim_path.exists():
+        existing = json.loads(claim_path.read_text(encoding="utf-8"))
+        if existing.get("supervisor_thread_id") != current:
+            raise FlowError("the escalation is claimed by another task")
+        value = existing
+    else:
+        claim_path.parent.mkdir(parents=True, exist_ok=True)
+        with claim_path.open("x", encoding="utf-8") as handle:
+            json.dump(value, handle, indent=2, sort_keys=True)
+            handle.write("\n")
+    print(json.dumps(value, indent=2, sort_keys=True))
+
+
+def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
+    directory = _escalation_directory(root, args.escalation_id)
+    claim = json.loads((directory / "claim.json").read_text(encoding="utf-8"))
+    current = os.environ.get("CODEX_THREAD_ID")
+    if current != claim.get("supervisor_thread_id"):
+        raise FlowError("only the claiming Supervisor task may resolve an escalation")
+    detail = Path(args.detail_file).read_text(encoding="utf-8-sig") if args.detail_file else args.action
+    payload = {
+        "schema": "generic-chess-supervisor-resolution-v1",
+        "escalation_id": args.escalation_id,
+        "action": args.action,
+        "detail": detail,
+        "supervisor_thread_id": current,
+        "resolved_at": time.time(),
+    }
+    canonical = json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    payload["resolution_sha256"] = hashlib.sha256(canonical).hexdigest()
+    _atomic_json(directory / "resolution.json", payload)
+    dossier = json.loads((directory / "dossier.json").read_text(encoding="utf-8"))
+    state = active_state(root)
+    state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
+    recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,
+                   action=args.action, resolution_sha256=payload["resolution_sha256"])
+    save_state(root, state)
+    print(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True))
+    print(f"WORKER_THREAD_ID={dossier.get('worker_thread_id')}")
+    print(f"WORKER_HOST_ID={dossier.get('worker_host_id', 'local')}")
+
+
+def command_supervisor_resend(root: Path, args: argparse.Namespace) -> None:
+    directory = _escalation_directory(root, args.escalation_id)
+    claim_path = directory / "claim.json"
+    if not claim_path.is_file():
+        raise FlowError("the Supervisor must claim the escalation before resend review")
+    claim = json.loads(claim_path.read_text(encoding="utf-8"))
+    current = os.environ.get("CODEX_THREAD_ID")
+    if current != claim.get("supervisor_thread_id"):
+        raise FlowError("only the claiming Supervisor task may authorize resend_once")
+    state = active_state(root)
+    request_directory = state.get("active_request_directory")
+    if not isinstance(request_directory, str) or not request_directory:
+        raise FlowError("there is no active immutable Courier request to resend")
+    result = courier(root, "courier_resend_once", request_directory,
+                     stream=True, allow_failure=True)
+    recovery_event(state, "supervisor_resend_reviewed", escalation_id=args.escalation_id,
+                   result_event=result.get("event"))
+    save_state(root, state)
+    if result.get("event") in {"response_received", "response_duplicate"} and result.get("response_path"):
+        update_response_state(root, state, result, source="supervisor_resend")
+        return
+    raise FlowError(f"Supervisor resend_once did not recover the request: {result.get('event')}")
 
 
 def command_closeout(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
+    require_worker_write_authority(state)
     if state.get("mode") != "courier":
         raise FlowError("closeout is only available in courier mode")
     dispatch_message(root, state, Path(args.report_file).resolve(), "closeout")
@@ -510,6 +815,7 @@ def command_closeout(root: Path, args: argparse.Namespace) -> None:
 
 def command_promote(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
+    require_worker_write_authority(state)
     candidate = args.candidate.lower()
     if not FULL_SHA.fullmatch(candidate):
         raise FlowError("candidate must be a full 40-character lowercase SHA")
@@ -526,6 +832,8 @@ def command_promote(root: Path, args: argparse.Namespace) -> None:
     if not git_ok(master, "merge-base", "--is-ancestor", sha(master), candidate):
         raise FlowError("master is not an ancestor of the candidate; non-fast-forward promotion is forbidden")
     if state.get("mode") == "courier":
+        if state.get("last_response_source") not in {None, "normal"}:
+            raise FlowError("a recovery response cannot implicitly authorize promotion")
         control = state.get("chat_control", {})
         if control.get("GENERICCHESS_PROMOTION") != "APPROVE":
             raise FlowError("the latest Chat response does not approve promotion")
@@ -575,7 +883,32 @@ def parser() -> argparse.ArgumentParser:
     heavy = sub.add_parser("heavy")
     heavy.add_argument("argv", nargs=argparse.REMAINDER)
     heavy.set_defaults(handler=command_heavy)
-    sub.add_parser("resume").set_defaults(handler=command_resume)
+    recover = sub.add_parser("recover")
+    recover.add_argument("--worker-thread-id")
+    recover.set_defaults(handler=command_recover)
+    resume = sub.add_parser("resume")
+    resume.add_argument("--worker-thread-id")
+    resume.set_defaults(handler=command_resume)
+    register = sub.add_parser("register-supervisor")
+    register.add_argument("--thread-id")
+    register.add_argument("--host-id", default="local")
+    register.set_defaults(handler=command_register_supervisor)
+    escalate = sub.add_parser("escalate")
+    escalate.add_argument("--reason", required=True)
+    escalate.add_argument("--worker-thread-id")
+    escalate.set_defaults(handler=command_escalate)
+    sub.add_parser("supervisor-pending").set_defaults(handler=command_supervisor_pending)
+    claim = sub.add_parser("supervisor-claim")
+    claim.add_argument("--escalation-id", required=True)
+    claim.set_defaults(handler=command_supervisor_claim)
+    resolve = sub.add_parser("supervisor-resolve")
+    resolve.add_argument("--escalation-id", required=True)
+    resolve.add_argument("--action", choices=("RESUME_WORKER", "RECOVERED", "HUMAN_REQUIRED"), required=True)
+    resolve.add_argument("--detail-file")
+    resolve.set_defaults(handler=command_supervisor_resolve)
+    resend = sub.add_parser("supervisor-resend")
+    resend.add_argument("--escalation-id", required=True)
+    resend.set_defaults(handler=command_supervisor_resend)
     closeout = sub.add_parser("closeout")
     closeout.add_argument("--report-file", required=True)
     closeout.set_defaults(handler=command_closeout)

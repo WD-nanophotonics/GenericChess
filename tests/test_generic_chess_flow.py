@@ -137,7 +137,7 @@ def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
     called = []
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
-    monkeypatch.setattr(flow, "command_resume", lambda root, args: called.append((root, args)))
+    monkeypatch.setattr(flow, "command_recover", lambda root, args: called.append((root, args)))
 
     marker = SimpleNamespace()
     flow.command_work(tmp_path, marker)
@@ -259,18 +259,159 @@ def test_resume_reuses_the_saved_request_directory(monkeypatch, tmp_path):
     }
     called = []
     monkeypatch.setattr(flow, "load_state", lambda _root: state)
-    monkeypatch.setattr(
-        flow,
-        "courier",
-        lambda _root, *args, **kwargs: called.append((args, kwargs))
-        or {"event": "queue_duplicate_runner", "ok": True},
-    )
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+
+    def fake_courier(_root, *args, **kwargs):
+        called.append((args, kwargs))
+        if args[0] == "courier_status":
+            return {"event": "courier_status", "ok": True, "state": "queue_recovery_required"}
+        if args[0] == "courier_capture_latest":
+            return {
+                "event": "courier_capture_latest_empty", "ok": True,
+                "latest_user_turn_found": True,
+            }
+        return {"event": "queue_recovery_required", "ok": False}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    monkeypatch.setattr(flow, "create_escalation", lambda *_args, **_kwargs: None)
 
     flow.command_resume(tmp_path, SimpleNamespace())
 
-    assert called == [
-        (("courier_dispatch", r"C:\outbox\same-request"), {"stream": True})
+    assert [entry[0][0] for entry in called] == [
+        "courier_status", "courier_capture_latest", "courier_recover"
     ]
+
+
+def test_recover_uses_single_evidence_retry_when_probe_finds_no_request(monkeypatch, tmp_path):
+    state = {"active": True, "mode": "courier", "active_request_directory": "request", "recovery_attempts": 0}
+    calls = []
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "create_escalation", lambda *_args, **_kwargs: calls.append("escalate"))
+
+    def fake_courier(_root, operation, *_args, **_kwargs):
+        calls.append(operation)
+        if operation == "courier_status":
+            return {"event": operation, "ok": True, "state": "queue_recovery_required"}
+        if operation == "courier_capture_latest":
+            return {"event": "courier_capture_latest_empty", "ok": True,
+                    "latest_user_turn_found": False, "captured_at": 1.0}
+        return {"event": "queue_recovery_required", "ok": False}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="worker"))
+
+    assert calls == ["courier_status", "courier_capture_latest", "courier_retry_once", "escalate"]
+    assert state["recovery_attempts"] == 1
+    assert state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "BLOCKED"
+
+
+def test_recover_imports_matching_reply_without_retry(monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text(
+        "Continue safely.\nWORK_ORDER_ID=F24B\nGENERICCHESS_STATUS=CONTINUE\n"
+        "GENERICCHESS_CANDIDATE_SHA=NONE\nGENERICCHESS_PROMOTION=HOLD\n",
+        encoding="utf-8",
+    )
+    state = {"active": True, "mode": "courier", "active_request_directory": "request"}
+    saved = []
+    operations = []
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda _root, value: saved.append(dict(value)))
+
+    def fake_courier(_root, operation, *_args, **_kwargs):
+        operations.append(operation)
+        if operation == "courier_status":
+            return {"event": operation, "ok": True}
+        return {"event": "courier_latest_response_captured", "ok": True,
+                "request_match": True, "response_path": str(response)}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="worker"))
+
+    assert operations == ["courier_status", "courier_capture_latest"]
+    assert state["last_work_order_id"] == "F24B"
+    assert state["recovery_state"] == "RECOVERED"
+
+
+def test_escalation_is_idempotent_and_records_thread_identity(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    master = tmp_path / "master"
+    sandbox.mkdir()
+    master.mkdir()
+    request = tmp_path / "request"
+    request.mkdir()
+    (request / "receipt.json").write_text("{}", encoding="utf-8")
+    (request / "events.jsonl").write_text("{}\n", encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": str(request),
+             "last_published_sha": "a" * 40, "last_probe": {"request_match": False}}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: tmp_path / "runtime")
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "sha", lambda path, ref="HEAD": "b" * 40 if path == master else "a" * 40)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+
+    first = flow.create_escalation(tmp_path, state, reason="transport", worker_thread_id="worker")
+    second = flow.create_escalation(tmp_path, state, reason="transport again", worker_thread_id="other")
+
+    assert first["escalation_id"] == second["escalation_id"]
+    assert second["worker_thread_id"] == "worker"
+    assert len(list((tmp_path / "runtime" / "escalations").glob("*/dossier.json"))) == 1
+
+
+def test_heartbeat_pending_and_resolution_return_to_original_worker(monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("a" * 20)
+    directory.mkdir(parents=True)
+    dossier = {"escalation_id": "a" * 20, "worker_thread_id": "worker-1",
+               "worker_host_id": "local", "status": "PENDING"}
+    (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-1"}), encoding="utf-8")
+    state = {"active": True, "mode": "courier", "recovery_timeline": []}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
+
+    flow.command_supervisor_pending(tmp_path, SimpleNamespace())
+    assert json.loads(capsys.readouterr().out)["pending"][0]["worker_thread_id"] == "worker-1"
+    flow.command_supervisor_claim(tmp_path, SimpleNamespace(escalation_id="a" * 20))
+    capsys.readouterr()
+    flow.command_supervisor_resolve(
+        tmp_path,
+        SimpleNamespace(escalation_id="a" * 20, action="RESUME_WORKER", detail_file=None),
+    )
+    output = capsys.readouterr().out
+    resolution = json.loads((directory / "resolution.json").read_text(encoding="utf-8"))
+    assert "WORKER_THREAD_ID=worker-1" in output
+    assert len(resolution["resolution_sha256"]) == 64
+    assert state["recovery_state"] == "RECOVERED"
+
+
+def test_recovery_response_cannot_approve_promotion(monkeypatch, tmp_path):
+    candidate = "c" * 40
+    state = {"active": True, "mode": "courier", "last_response_source": "read_only_recover",
+             "tested_shas": {candidate: ["test"]}, "chat_control": {
+                 "GENERICCHESS_PROMOTION": "APPROVE", "GENERICCHESS_CANDIDATE_SHA": candidate}}
+    master, sandbox = tmp_path / "master", tmp_path / "sandbox"
+    master.mkdir(); sandbox.mkdir()
+    monkeypatch.setattr(flow, "load_state", lambda _root: state)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda path, ref="HEAD": candidate if path == sandbox else "a" * 40)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+
+    with pytest.raises(flow.FlowError, match="cannot implicitly authorize promotion"):
+        flow.command_promote(tmp_path, SimpleNamespace(candidate=candidate))
+
+
+def test_escalation_freezes_worker_repository_commands(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: {
+        "active": True, "mode": "courier", "recovery_state": "ESCALATED"})
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    with pytest.raises(flow.FlowError, match="writes are frozen"):
+        flow.command_publish(tmp_path, SimpleNamespace(tests=[]))
 
 
 def test_heavy_uses_below_normal_priority_and_returns_child_code(monkeypatch, tmp_path):
