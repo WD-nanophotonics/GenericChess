@@ -64,6 +64,17 @@
       "512": 2
     }
   },
+  "full_regression": {
+    "command": "generic-chess-flow.cmd heavy -- Python312 -m pytest -q --tb=short",
+    "result": "13 pre-existing environment/native-gate failures; F24B focused and related tests pass",
+    "native_gate_failures": [
+      "F13/F14: native semantic compiler rejects enum code (ValueError: enum code out of allowed domain)",
+      "F21: native legality provider unavailable (provider is None)",
+      "F21: runtime provider call count remains zero because provider is unavailable"
+    ],
+    "external_dependency_failure": "learning_phase18: external alphasho repository at C:\\Users\\icywo\\PycharmProjects\\alphasho is absent",
+    "python_fallback_nonblocking": true
+  },
   "scope": {
     "production_files": [
       "generic_chess/core/actions.py",

@@ -45,6 +45,13 @@ budgets completed, runtime push/pop counts balanced, and repeated results
 matched. Native availability was unchanged, so the recorded mode is
 `PYTHON_AUTHORITY_FALLBACK`.
 
+The full pytest regression completed with 13 known environment/native-gate
+failures: F13/F14 native semantic compilation rejects an enum code, F21 native
+legality provider tests observe unavailable native support, and the
+learning-phase audit cannot find the external `alphasho` repository. These
+failures are outside this bounded production diff; Python fallback and all
+F24B-focused/related tests pass.
+
 ## Scope and next boundary
 
 The production diff is limited to action helpers, qsearch classification,
