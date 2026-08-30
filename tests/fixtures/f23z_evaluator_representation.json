@@ -1,0 +1,476 @@
+{
+  "accepted_f23y_evidence_ledger": {
+    "contract_specific_rename": true,
+    "evaluator_fraction": {
+      "0.25": 0.8437977701049015,
+      "1.0": 0.8648791268876038
+    },
+    "m9_positive_gain": true,
+    "p0_median_seconds": 0.03825479999068193,
+    "p0_p1_math_parity": true,
+    "p1_median_seconds": 0.012886949989479035,
+    "p1_p0_speedup": 2.9684913825159036,
+    "paired_nps": {
+      "0.25": 0.16117330127098678,
+      "1.0": 0.263042971259117
+    },
+    "playing_strength": "NOT_RUN",
+    "real_shogi_2048": {
+      "controls_passed": false,
+      "top1_delta": -1,
+      "valid": true
+    },
+    "root_rank": "ROOT_RANK_HARNESS_UNAVAILABLE",
+    "semantic_contracts": "PASS",
+    "v1_median_seconds": 0.0005099499830976129
+  },
+  "artifact_identity": {
+    "f23x_r1_commit": "fe27c26d475eca60fe1686a4c77488de9571d576",
+    "f23y_commit": "c4af3b93b6ac9d5185fcd7f225b5e2e4fd7eb136",
+    "f23y_files_unchanged": true,
+    "files": [
+      {
+        "matches": true,
+        "path": "docs/architecture/ADR-073-minimal-analytic-context-performance.md"
+      },
+      {
+        "matches": true,
+        "path": "scripts/audit_f23y_context_performance.py"
+      },
+      {
+        "matches": true,
+        "path": "tests/fixtures/f23y_context_performance.json"
+      },
+      {
+        "matches": true,
+        "path": "tests/test_f23y_context_performance.py"
+      }
+    ],
+    "historical_f23x_r1_fixture_identity": true
+  },
+  "cheap_ruleset_ingredients": [
+    {
+      "available": true,
+      "cost": "bounded board lookup",
+      "cross_ruleset": true,
+      "ingredient": "board_value_by_type",
+      "source": "RuleSetEvaluationProfile"
+    },
+    {
+      "available": true,
+      "cost": "bounded hand-entry lookup",
+      "cross_ruleset": true,
+      "ingredient": "hand_value_by_base_type",
+      "source": "RuleSetEvaluationProfile"
+    },
+    {
+      "available": true,
+      "cost": "static promotion graph lookup",
+      "cross_ruleset": true,
+      "ingredient": "promotion_gain_by_type",
+      "source": "RuleSetEvaluationProfile"
+    },
+    {
+      "available": true,
+      "cost": "precomputed positional lookup",
+      "cross_ruleset": true,
+      "ingredient": "empty_board_mobility_and_forward_mobility",
+      "source": "CompiledRuleSet"
+    },
+    {
+      "available": true,
+      "cost": "static mask/lookup",
+      "cross_ruleset": true,
+      "ingredient": "drop_freedom_and_drop_mobility",
+      "source": "RuleSetEvaluationProfile"
+    },
+    {
+      "available": true,
+      "cost": "constant metadata lookup",
+      "cross_ruleset": true,
+      "ingredient": "current_base_type_and_anchor_identity",
+      "source": "Piece/CompiledRuleSet metadata"
+    },
+    {
+      "available": true,
+      "cost": "single board scan",
+      "cross_ruleset": true,
+      "ingredient": "occupancy_and_local_friendly_enemy_occupancy",
+      "source": "Position.board"
+    }
+  ],
+  "complexity_budget": {
+    "board_cost": "O(board occupancy + hand entries + bounded precomputed lookups)",
+    "prohibitions": [
+      "full legal actions",
+      "second-side legal actions",
+      "full semantic attack sweep",
+      "multi-ply tactical search",
+      "game-name branches",
+      "piece-name scoring",
+      "per-game coefficient tables",
+      "search-policy hidden state"
+    ],
+    "score_concepts": "approximately 2-5"
+  },
+  "decision": {
+    "basis": [
+      "material_and_inventory",
+      "rule_derived_positional_capability",
+      "bounded_anchor_structural_space",
+      "promotion_and_drop_structural_capability"
+    ],
+    "conclusion": "CONTINUE_WITH_MINIMAL_CHEAP_EVALUATOR",
+    "cross_ruleset": {
+      "Standard Shogi": true,
+      "Western Chess": true,
+      "future mixed-mechanic RuleSet": true
+    },
+    "frozen_constraints": [
+      "no semantic legal-action enumeration in evaluate()",
+      "no opponent-side legal-action enumeration in evaluate()",
+      "no full-board semantic attack sweep in evaluate()",
+      "no multi-ply tactical search",
+      "no game-name branch, piece-name logic, per-game coefficient table, or search-policy hidden state",
+      "at most five score concepts; exact formula remains pre-registered from existing normalized profile data before implementation"
+    ],
+    "gates": {
+      "completed_2048_quality": "candidate top1 >= v1 + 2 and zero frozen-control regression",
+      "fixed_time_fraction": "<=0.25",
+      "fixed_time_paired_nps": ">=0.65",
+      "if_micro_fail": "do not run full Shogi search",
+      "micro_median_candidate_vs_v1": "<=2.0x on frozen F23Y Standard Shogi leaf sample",
+      "micro_p95_candidate_vs_v1": "<=3.0x"
+    },
+    "next_boundary": "F24A_MINIMAL_CHEAP_RULE_DERIVED_EVALUATOR_SIGNAL_PROBE"
+  },
+  "double_counting_finding": "Immediate captures, promotions, checks, drops, recaptures, and tactical mobility are already represented by search/qsearch/order; the leaf should distinguish quiet structural state after tactical continuation, not replay tactical analysis.",
+  "master_locked": true,
+  "production_changed": false,
+  "responsibility_matrix": [
+    {
+      "attack_map": false,
+      "class": "LEAF_STRUCTURAL",
+      "cost": "O(board occupancy)",
+      "genericity": "Shogi/Chess/Xiangqi/mixed",
+      "information": "board occupancy and rule-derived current-type value",
+      "leaf_role": "retain",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "production-v1.material",
+      "search_overlap": "material remains useful after search",
+      "static": true
+    },
+    {
+      "attack_map": false,
+      "class": "LEAF_STRUCTURAL",
+      "cost": "O(hand entries)",
+      "genericity": "all rulesets with hands; neutral when absent",
+      "information": "hand counts times rule-derived base-type hand value",
+      "leaf_role": "retain",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "production-v1.hand_inventory",
+      "search_overlap": "drops may be searched, ownership/value is structural",
+      "static": true
+    },
+    {
+      "attack_map": "implicit pseudo map",
+      "class": "STATIC_PROXY_CANDIDATE",
+      "cost": "board scan plus compiled geometry traversal",
+      "genericity": "compiled geometry is generic",
+      "information": "pseudo attack/reachability geometry",
+      "leaf_role": "bounded proxy only",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "production-v1.cheap_pseudo_mobility",
+      "search_overlap": "partly overlaps move generation",
+      "static": "geometry only"
+    },
+    {
+      "attack_map": "local/query",
+      "class": "STATIC_PROXY_CANDIDATE",
+      "cost": "bounded anchor probes plus attack query",
+      "genericity": "anchor-based rulesets; neutral without anchor",
+      "information": "bounded anchor escapes plus current check",
+      "leaf_role": "retain cheap proxy; do not add full safety",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "production-v1.anchor_escape_check",
+      "search_overlap": "checking/evasions are search/qsearch resident",
+      "static": "anchor identity and movement are static"
+    },
+    {
+      "attack_map": false,
+      "class": "STATIC_PROXY_CANDIDATE",
+      "cost": "O(board occupancy)",
+      "genericity": "compiled promotion graph",
+      "information": "precomputed gain and promotion-zone/progress lookup",
+      "leaf_role": "retain structural potential",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "production-v1.promotion_potential",
+      "search_overlap": "immediate promotion is qsearch/order resident",
+      "static": true
+    },
+    {
+      "attack_map": false,
+      "class": "LEAF_STRUCTURAL",
+      "cost": "O(board occupancy + hand entries)",
+      "genericity": "all rulesets",
+      "information": "same board/hand structural values",
+      "leaf_role": "keep",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "F23.full_material_inventory",
+      "search_overlap": "low",
+      "static": true
+    },
+    {
+      "attack_map": true,
+      "class": "REJECT_LEAF_HOT_PATH",
+      "cost": "two semantic legal-action passes plus full attack sweep",
+      "genericity": "generic but expensive",
+      "information": "full legal actions and attack/control for both sides",
+      "leaf_role": "search resident",
+      "legal_actions": true,
+      "opponent_legal_actions": true,
+      "representation": "F23.safe_mobility_control",
+      "search_overlap": "search already traverses legal actions",
+      "static": false
+    },
+    {
+      "attack_map": true,
+      "class": "REJECT_LEAF_HOT_PATH",
+      "cost": "repeated semantic attack queries/maps",
+      "genericity": "generic semantics but high cost",
+      "information": "checks, anchor safety, and attacked-piece exposure",
+      "leaf_role": "search resident",
+      "legal_actions": false,
+      "opponent_legal_actions": false,
+      "representation": "F23.attack_defense_anchor_safety",
+      "search_overlap": "checks/evasions and tactical exposure are searched",
+      "static": false
+    },
+    {
+      "attack_map": false,
+      "class": "SEARCH_RESIDENT",
+      "cost": "legal actions, capture classification, and history context",
+      "genericity": "generic but duplicated",
+      "information": "legal captures plus history-linked recapture target",
+      "leaf_role": "remove from leaf",
+      "legal_actions": true,
+      "opponent_legal_actions": true,
+      "representation": "F23.forcing_capture_recapture",
+      "search_overlap": "qsearch captures, ordering, history/countermove, and continuation",
+      "static": false
+    },
+    {
+      "attack_map": false,
+      "class": "STATIC_PROXY_CANDIDATE",
+      "cost": "legal-action enumeration and classification",
+      "genericity": "generic but dynamic",
+      "information": "immediate legal promotion/drop actions",
+      "leaf_role": "retain only precomputed capability/value proxy",
+      "legal_actions": true,
+      "opponent_legal_actions": true,
+      "representation": "F23.promotion_drop_opportunity",
+      "search_overlap": "promotion/drop tactics are qsearch/order/search resident",
+      "static": "only capability portion"
+    }
+  ],
+  "schema_version": 1,
+  "search_responsibility_evidence": {
+    "checks": {
+      "evaluator": {
+        "Static-profile lookup": true,
+        "_anchor_escape": true,
+        "_promotion_bonus": true,
+        "is_in_check": true,
+        "pseudo_attacks": true
+      },
+      "ordering": {
+        "_countermoves": true,
+        "_history": true,
+        "_killers": true,
+        "capture_order_value": true,
+        "checking-action stage": true,
+        "promotion_target_id": true
+      },
+      "profile": {
+        "board_value_by_type": true,
+        "empty_mobility": true,
+        "hand_value_by_base_type": true,
+        "promotion_gain_by_type": true
+      },
+      "quiescence": {
+        "capture_qactions": true,
+        "checking_drop_qactions": true,
+        "nonchecking_drop_excluded": true,
+        "promotion_qactions": true
+      },
+      "runtime": {
+        "def _push_impl": true,
+        "def legal_actions": true,
+        "def pushed": true,
+        "repetition": true,
+        "terminal_from_search_runtime": true
+      },
+      "search": {
+        "ctx.runtime.legal_actions": true,
+        "ctx.runtime.pushed": true,
+        "quiescence": true,
+        "terminal_status": true
+      }
+    },
+    "findings": {
+      "evaluator": "Production v1 uses board/hand values, pseudo mobility, bounded anchor escape/check, and profile-derived promotion potential.",
+      "ordering": "Ordering prioritizes TT, captures, promotions, killers/countermoves, and history; checking classification is intentionally deferred because it requires expensive legality/attack probes.",
+      "profile": "The static profile exposes board values, hand values, promotion gains, piece capability metadata, drop freedom/mobility, and compiler-provided empty-board mobility.",
+      "quiescence": "Qsearch explicitly includes captures, promotions, terminal actions, checking moves, and checking drops; quiet drops are excluded.",
+      "runtime": "SearchPathRuntime owns legal actions, push/pop transitions, history, repetition, terminal state, and runtime balance.",
+      "search": "Search owns legal-action generation, transitions through pushed runtime state, terminal handling, TT, and recursive continuation."
+    },
+    "passed": true,
+    "sources": {
+      "evaluator": {
+        "path": "generic_chess/ai/evaluation/evaluator.py",
+        "sha256": "729cc5394c94a5312df57b7bd7a01b93bf5bf8dcfab5b75a6aae0508bd7d5a92"
+      },
+      "ordering": {
+        "path": "generic_chess/ai/alphabeta/ordering.py",
+        "sha256": "041811334af6a2caf303cb97c5fa5a3ca52872707c28e60a68652b95fff679bc"
+      },
+      "profile": {
+        "path": "generic_chess/ai/evaluation/profile.py",
+        "sha256": "4db0bc7d3137ce1d1b2cbe0f1016c520e1c7de5f5aec717af0d1de09f7d954a3"
+      },
+      "quiescence": {
+        "path": "generic_chess/ai/alphabeta/quiescence.py",
+        "sha256": "7712eee73c125b1f77b9f851fc3afd56f7d682dcd66967c2b79db5e3842c92e3"
+      },
+      "runtime": {
+        "path": "generic_chess/core/search_runtime.py",
+        "sha256": "3aae0059c4c42d986e65f9927e85ebd8806f95f3e98259e57dbc7b358e1a6b73"
+      },
+      "search": {
+        "path": "generic_chess/ai/alphabeta/search.py",
+        "sha256": "a36a5f216747960143d49197a138b60d749359d4907d4456b6d0f7c203336f45"
+      }
+    }
+  },
+  "selected_representation_philosophy": "generic adversarial search + TT/order/qsearch + small cheap RuleSet-derived structural leaf evaluator",
+  "status": "PASS",
+  "strategy_matrix": {
+    "dimensions": [
+      "conceptual_simplicity",
+      "genericity",
+      "per_leaf_cost",
+      "production_complexity",
+      "search_evaluator_coupling",
+      "duplicated_computation",
+      "incremental_state_burden",
+      "rollback_correctness_burden",
+      "mixed_mechanic_compatibility",
+      "standard_shogi_applicability",
+      "western_chess_applicability",
+      "type_name_invariance",
+      "game_label_dependence",
+      "falsifiability",
+      "path_to_playing_strength_evidence"
+    ],
+    "ranking": [
+      {
+        "strategy": "CHEAP_RULE_DERIVED_LEAF_WITH_SEARCH_RESIDENT_TACTICS",
+        "total": 72
+      },
+      {
+        "strategy": "LEARNED_SMALL_RULE_DERIVED_LEAF",
+        "total": 52
+      },
+      {
+        "strategy": "FULL_DYNAMIC_SEMANTIC_LEAF",
+        "total": 44
+      },
+      {
+        "strategy": "INCREMENTAL_DYNAMIC_EVALUATION_STATE",
+        "total": 43
+      }
+    ],
+    "score_scale": "1=poor fit, 5=strong fit; planning evidence only; no existing-infrastructure bonus",
+    "scores": {
+      "CHEAP_RULE_DERIVED_LEAF_WITH_SEARCH_RESIDENT_TACTICS": {
+        "conceptual_simplicity": 5,
+        "duplicated_computation": 5,
+        "falsifiability": 4,
+        "game_label_dependence": 5,
+        "genericity": 5,
+        "incremental_state_burden": 5,
+        "mixed_mechanic_compatibility": 5,
+        "path_to_playing_strength_evidence": 3,
+        "per_leaf_cost": 5,
+        "production_complexity": 5,
+        "rollback_correctness_burden": 5,
+        "search_evaluator_coupling": 5,
+        "standard_shogi_applicability": 5,
+        "total": 72,
+        "type_name_invariance": 5,
+        "western_chess_applicability": 5
+      },
+      "FULL_DYNAMIC_SEMANTIC_LEAF": {
+        "conceptual_simplicity": 1,
+        "duplicated_computation": 1,
+        "falsifiability": 4,
+        "game_label_dependence": 5,
+        "genericity": 4,
+        "incremental_state_burden": 5,
+        "mixed_mechanic_compatibility": 4,
+        "path_to_playing_strength_evidence": 2,
+        "per_leaf_cost": 1,
+        "production_complexity": 1,
+        "rollback_correctness_burden": 5,
+        "search_evaluator_coupling": 1,
+        "standard_shogi_applicability": 3,
+        "total": 44,
+        "type_name_invariance": 4,
+        "western_chess_applicability": 3
+      },
+      "INCREMENTAL_DYNAMIC_EVALUATION_STATE": {
+        "conceptual_simplicity": 2,
+        "duplicated_computation": 3,
+        "falsifiability": 3,
+        "game_label_dependence": 5,
+        "genericity": 4,
+        "incremental_state_burden": 1,
+        "mixed_mechanic_compatibility": 4,
+        "path_to_playing_strength_evidence": 3,
+        "per_leaf_cost": 3,
+        "production_complexity": 1,
+        "rollback_correctness_burden": 1,
+        "search_evaluator_coupling": 1,
+        "standard_shogi_applicability": 4,
+        "total": 43,
+        "type_name_invariance": 4,
+        "western_chess_applicability": 4
+      },
+      "LEARNED_SMALL_RULE_DERIVED_LEAF": {
+        "conceptual_simplicity": 2,
+        "duplicated_computation": 5,
+        "falsifiability": 2,
+        "game_label_dependence": 1,
+        "genericity": 3,
+        "incremental_state_burden": 5,
+        "mixed_mechanic_compatibility": 4,
+        "path_to_playing_strength_evidence": 4,
+        "per_leaf_cost": 5,
+        "production_complexity": 3,
+        "rollback_correctness_burden": 5,
+        "search_evaluator_coupling": 2,
+        "standard_shogi_applicability": 4,
+        "total": 52,
+        "type_name_invariance": 3,
+        "western_chess_applicability": 4
+      }
+    }
+  }
+}
