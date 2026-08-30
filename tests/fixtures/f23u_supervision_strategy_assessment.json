@@ -1,0 +1,646 @@
+{
+  "assessment_id": "f23u-supervision-strategy-assessment",
+  "attrition": {
+    "all_equal": {
+      "V10": 15,
+      "V11": 20,
+      "V12": 11,
+      "V5": 0,
+      "V6": 0,
+      "V7": 12,
+      "V8": 12,
+      "V9": 11
+    },
+    "behavioral_duplication_orbit_exclusions": {
+      "V10": 3,
+      "V11": 0,
+      "V12": 0,
+      "V5": 3,
+      "V6": 4,
+      "V7": 0,
+      "V8": 1,
+      "V9": 0
+    },
+    "family_mechanic_diversity_gate_failures": {
+      "V10": 0,
+      "V11": 4,
+      "V12": 4,
+      "V5": "not gated",
+      "V6": 2,
+      "V7": 4,
+      "V8": 1,
+      "V9": 1
+    },
+    "known_max_ply_dependent": {
+      "V10": 9,
+      "V11": 0,
+      "V12": 0,
+      "V5": 0,
+      "V6": 0,
+      "V7": 0,
+      "V8": 8,
+      "V9": 6
+    },
+    "mechanic_witness_failures_explicit": {
+      "V10": 2,
+      "V11": "not separately recorded",
+      "V12": 0,
+      "V5": 0,
+      "V6": 0,
+      "V7": 0,
+      "V8": 2,
+      "V9": 2
+    },
+    "notes": "Counts are direct fixture fields or explicit gate failures; unknown/refused horizon cases are not relabeled as MAX_PLY dependence.",
+    "solver_cost_or_unresolved": {
+      "V10": 0,
+      "V11": 9,
+      "V12": 41,
+      "V5": 0,
+      "V6": 30,
+      "V7": 16,
+      "V8": 0,
+      "V9": 0
+    },
+    "source_split_leakage_exclusions": {
+      "V10": 0,
+      "V11": 0,
+      "V12": 0,
+      "V5": 0,
+      "V6": 1,
+      "V7": 0,
+      "V8": 0,
+      "V9": 0
+    }
+  },
+  "feature_reassessment": [
+    {
+      "candidate": "value-weighted attack/defense/hanging exposure",
+      "classification": "core generic concept worth retaining"
+    },
+    {
+      "candidate": "immediate legal capture and recapture pressure",
+      "classification": "core generic concept worth retaining"
+    },
+    {
+      "candidate": "legal safe mobility with value-weighted captures",
+      "classification": "core generic concept worth retaining"
+    },
+    {
+      "candidate": "anchor escape, checking threats, defensive pressure",
+      "classification": "core generic concept, folded into safety/control"
+    },
+    {
+      "candidate": "promotion opportunity/forced promotion/threat",
+      "classification": "core generic transition concept, capability-gated"
+    },
+    {
+      "candidate": "hand/drop pressure",
+      "classification": "core generic transition concept, capability-gated"
+    },
+    {
+      "candidate": "semantic legality suppression/additions",
+      "classification": "too expensive as a direct evaluator feature; consume legal actions instead"
+    }
+  ],
+  "future_benchmark_matrix": {
+    "future_optional": [
+      "Xiangqi",
+      "Janggi",
+      "Chaturanga/Indian-family",
+      "other mature chess-family games adding new mechanics"
+    ],
+    "standard_shogi": [
+      "rules/perft/legality",
+      "AlphaSho move-ranking comparison",
+      "fixed-node/fixed-time search",
+      "later strength tests"
+    ],
+    "status": "future validation axes, not F23U implementation requirements",
+    "western_chess": [
+      "rules/perft/legality",
+      "verified mature heuristic reference when available",
+      "fixed-node/fixed-time move/PV/evaluation",
+      "later match strength"
+    ]
+  },
+  "genericity_checkpoint": {
+    "implementation_in_f23u": false,
+    "mixed_mechanic_acceptance_target": "one RuleSet containing capture-to-hand/drop, remove-from-game/promotable, and non-promotable special movement; verify Core legality, search runtime, identity/repetition, terminal handling, and generic evaluator with no game-name branches",
+    "result": "architecture can express the three requested piece behaviors and their coexistence through semantic IR; legacy path remains narrower"
+  },
+  "historical_generations": [
+    {
+      "dev": 20,
+      "exact": 30,
+      "failure": "3 historical V4 duplicate/non-eligible orbits",
+      "generation": "V5",
+      "holdout": 7,
+      "horizon": 20,
+      "horizon_basis": "non_max_ply_development",
+      "independent": 30,
+      "physical": 30,
+      "preference": 30
+    },
+    {
+      "dev": 1,
+      "exact": 6,
+      "failure": "30 unresolved; 4 duplicate candidates; 1 source-family exclusion",
+      "generation": "V6",
+      "holdout": 0,
+      "horizon": 1,
+      "horizon_basis": "effective development with max_ply_dependent_count=0",
+      "independent": 2,
+      "physical": 36,
+      "preference": 2
+    },
+    {
+      "dev": 10,
+      "exact": 24,
+      "failure": "16 unresolved + 12 all-equal; family/mechanic scale failed",
+      "generation": "V7",
+      "holdout": 2,
+      "horizon": 10,
+      "horizon_basis": "non_max_ply_development",
+      "independent": 12,
+      "physical": 40,
+      "preference": 12
+    },
+    {
+      "dev": 23,
+      "exact": 32,
+      "failure": "1 behavioral leakage orbit; holdout minimum failed",
+      "generation": "V8",
+      "holdout": 5,
+      "horizon": 16,
+      "horizon_basis": "non_max_ply_development",
+      "independent": 28,
+      "physical": 32,
+      "preference": 18
+    },
+    {
+      "dev": 22,
+      "exact": 24,
+      "failure": "11 all-equal + 2 no-witness; only 1 stable development horizon",
+      "generation": "V9",
+      "holdout": 5,
+      "horizon": 5,
+      "horizon_basis": "natural_terminal_certified",
+      "independent": 27,
+      "physical": 24,
+      "preference": 11
+    },
+    {
+      "dev": 32,
+      "exact": 32,
+      "failure": "15 materially max-ply-dependent/24 unknown; 3 cross-split behavioral collisions",
+      "generation": "V10",
+      "holdout": 10,
+      "horizon": 3,
+      "horizon_basis": "horizon stable exact",
+      "independent": 42,
+      "physical": 32,
+      "preference": 15
+    },
+    {
+      "dev": 1,
+      "exact": 39,
+      "failure": "9 V3 unresolved + 20 all-equal; 18 abstraction refusals",
+      "generation": "V11",
+      "holdout": 0,
+      "horizon": 1,
+      "horizon_basis": "abstraction certified",
+      "independent": 1,
+      "physical": 48,
+      "preference": 19
+    },
+    {
+      "dev": 6,
+      "exact": 19,
+      "failure": "41 V3 unresolved + 11 all-equal; core diversity and scale failed",
+      "generation": "V12",
+      "holdout": 1,
+      "horizon": 7,
+      "horizon_basis": "abstraction certified (historical V12 count)",
+      "independent": 7,
+      "physical": 60,
+      "preference": 8
+    }
+  ],
+  "minimal_next_experiment": {
+    "development_validation": "frozen exact W/D/L root-action ordering on a small pre-registered DEVELOPMENT slice; no labels from AlphaSho/AlphaChess",
+    "failure_disposition": "discard the probe; retain no production evaluator change",
+    "feature_set": [
+      "material_and_inventory",
+      "safe_mobility_and_control",
+      "attack_defense_and_anchor_safety",
+      "forcing_capture_recapture",
+      "capability_gated_promotion_drop"
+    ],
+    "grouped_transfer": [
+      "Shogi-like semantic ruleset",
+      "Western-Chess-like ruleset",
+      "one mixed-mechanic ruleset"
+    ],
+    "name": "MINIMAL_ANALYTIC_EVALUATOR_SIGNAL_PROBE",
+    "no_iterative_feature_addition": true,
+    "parameter_budget": "five fixed rule-derived scales; no fitted coefficients; one common score form",
+    "stop_conditions": [
+      "fail if any threshold misses",
+      "fail if any group has contradictory direction on >=50% of cases",
+      "fail if feature count or coefficient budget must increase",
+      "fail if any production game-specific branch is proposed"
+    ],
+    "success_thresholds": [
+      ">=0.70 top-choice agreement with exact action set on DEVELOPMENT",
+      ">=0.60 grouped-transfer agreement in each family",
+      "no group below 0.50",
+      "zero ruleset-name branches"
+    ]
+  },
+  "production_changed": false,
+  "production_complexity_budget": {
+    "bounded_coefficients": 5,
+    "coefficient_range": "[-4, 4]",
+    "common_form": "one bounded linear score over normalized generic features",
+    "feature_families": 5,
+    "game_specific_branches": 0,
+    "game_specific_coefficient_tables": 0,
+    "piece_name_specific_logic": 0
+  },
+  "r10_corrected_reaudit": {
+    "metadata_free_behavior": {
+      "cross_split_collisions": [],
+      "cross_split_effective_collisions": [],
+      "deduplicated_effective_orbit_count": 7,
+      "deduplicated_strict_count": 8,
+      "raw_effective_count": 7,
+      "raw_strict_count": 8,
+      "raw_strict_orbit_count": 8
+    },
+    "short_natural_terminal_visibility": {
+      "by_family": {
+        "drop_hand_terminal": 2,
+        "interposition_leaper_terminal": 1,
+        "ordinary_anchor_terminal": 5,
+        "semantic_guard_terminal": 2
+      },
+      "planned_count": 60,
+      "visible_count": 10
+    },
+    "source_v12_sha256": "7a07f9654e4592fe9698a089b7b7de97946e365c2b3ab4d5522af433d6e6189f",
+    "strict_witness": {
+      "causal_surviving_count": 8,
+      "current_count": 8,
+      "details": [
+        {
+          "causal": {
+            "action": {
+              "from": [
+                2,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "check_vector_after": [
+              false,
+              true
+            ],
+            "check_vector_before": [
+              false,
+              false
+            ],
+            "child_terminal": "ongoing",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "LOSS",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "1f721b9ad37355cf94b5db6433de52ff0be1989b3c43c1135df1533699fe6df3",
+          "id": "f23t-r10-ordinary_anchor_terminal-0083c9acfd",
+          "planned_split": "DEVELOPMENT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                0,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            "check_vector_after": [
+              false,
+              true
+            ],
+            "check_vector_before": [
+              false,
+              true
+            ],
+            "child_terminal": "checkmate",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "WIN",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "2f027ca8155bd18733b679d24109ec757d0f058c92debd0fc250bd37070639eb",
+          "id": "f23t-r10-ordinary_anchor_terminal-01ed38866d",
+          "planned_split": "DEVELOPMENT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                0,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "check_vector_after": [
+              false,
+              true
+            ],
+            "check_vector_before": [
+              false,
+              true
+            ],
+            "child_terminal": "checkmate",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "WIN",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "85bc5262f1b01151b998f0793c533353510a9f1dd19810909b62e0c8e15fd290",
+          "id": "f23t-r10-ordinary_anchor_terminal-04645fdfdd",
+          "planned_split": "DEVELOPMENT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                1,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "check_vector_after": [
+              false,
+              true
+            ],
+            "check_vector_before": [
+              true,
+              true
+            ],
+            "child_terminal": "ongoing",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "WIN",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "cbce565c692015139ff99be603bac0f98cda2e572f5e08679632d7a3f54215ef",
+          "id": "f23t-r10-ordinary_anchor_terminal-04d358dd8c",
+          "planned_split": "HOLDOUT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                1,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "check_vector_after": [
+              false,
+              true
+            ],
+            "check_vector_before": [
+              false,
+              false
+            ],
+            "child_terminal": "ongoing",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "LOSS",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "1b101a60b6d9657bcad36f70d343a832aa9290e8c60de7e2c00b575c6e3538de",
+          "id": "f23t-r10-ordinary_anchor_terminal-09877091ff",
+          "planned_split": "DEVELOPMENT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                0,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "check_vector_after": [
+              false,
+              false
+            ],
+            "check_vector_before": [
+              false,
+              true
+            ],
+            "child_terminal": "ongoing",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "WIN",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "770605ca1496672bf30309e4b2588e3ca92c31aac765c90c5a993fcd3566adf6",
+          "id": "f23t-r10-ordinary_anchor_terminal-0a2863e1b8",
+          "planned_split": "DEVELOPMENT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                0,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                3
+              ]
+            },
+            "captured_piece": "r",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "WIN",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "ee6d7ebee208afd855a8402c62bb39f5286704f91b61f56f3fea56cc08184d4e",
+          "id": "f23t-r10-capture_recapture_terminal-0008ac6da0",
+          "planned_split": "DEVELOPMENT"
+        },
+        {
+          "causal": {
+            "action": {
+              "from": [
+                1,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "captured_piece": "r",
+            "mechanic_occurs": true,
+            "passes": true,
+            "value": "WIN",
+            "wdl_distinguishes": true
+          },
+          "fingerprint": "98ad84ee395ab5c1dcc6f45cdb3cbf565f10f3fa357eec2171b84669461d9f2b",
+          "id": "f23t-r10-capture_recapture_terminal-078283c74b",
+          "planned_split": "DEVELOPMENT"
+        }
+      ]
+    },
+    "v12_rewritten": false
+  },
+  "recommended_philosophy": "Prefer a small analytic evaluator whose feature scales are derived from RuleSet structure; do not fit synthetic coefficients or route external-engine labels into the generic core.",
+  "schema_version": 1,
+  "selected_boundary": "F23V_MINIMAL_ANALYTIC_EVALUATOR_SIGNAL_PROBE",
+  "source_v12_sha256": "7a07f9654e4592fe9698a089b7b7de97946e365c2b3ab4d5522af433d6e6189f",
+  "strategy_comparison": {
+    "criteria": [
+      "genericity_across_families",
+      "conceptual_simplicity",
+      "production_concept_budget",
+      "low_game_specific_label_dependence",
+      "low_max_ply_dependence",
+      "compute_cost",
+      "data_generation_cost",
+      "falsifiability",
+      "grouped_transfer_testing",
+      "shogi_compatibility",
+      "western_chess_compatibility",
+      "low_overfit_risk",
+      "mixed_mechanic_compatibility"
+    ],
+    "scale": "1 (poor) to 5 (strong); all criteria equal weight; compute/data cost score means low cost; label/max-ply/overfit score means low dependence/risk",
+    "selected": "B_ANALYTIC_RULE_DERIVED_EVALUATOR",
+    "table": [
+      {
+        "mean": 1.615,
+        "scores": {
+          "compute_cost": 1,
+          "conceptual_simplicity": 1,
+          "data_generation_cost": 1,
+          "falsifiability": 3,
+          "genericity_across_families": 2,
+          "grouped_transfer_testing": 2,
+          "low_game_specific_label_dependence": 2,
+          "low_max_ply_dependence": 1,
+          "low_overfit_risk": 1,
+          "mixed_mechanic_compatibility": 2,
+          "production_concept_budget": 1,
+          "shogi_compatibility": 2,
+          "western_chess_compatibility": 2
+        },
+        "strategy": "A_SYNTHETIC_EXACT_PREFERENCE_FITTING",
+        "total": 21
+      },
+      {
+        "mean": 4.769,
+        "scores": {
+          "compute_cost": 4,
+          "conceptual_simplicity": 5,
+          "data_generation_cost": 5,
+          "falsifiability": 5,
+          "genericity_across_families": 5,
+          "grouped_transfer_testing": 5,
+          "low_game_specific_label_dependence": 5,
+          "low_max_ply_dependence": 5,
+          "low_overfit_risk": 4,
+          "mixed_mechanic_compatibility": 5,
+          "production_concept_budget": 4,
+          "shogi_compatibility": 5,
+          "western_chess_compatibility": 5
+        },
+        "strategy": "B_ANALYTIC_RULE_DERIVED_EVALUATOR",
+        "total": 62
+      },
+      {
+        "mean": 3.385,
+        "scores": {
+          "compute_cost": 2,
+          "conceptual_simplicity": 3,
+          "data_generation_cost": 3,
+          "falsifiability": 3,
+          "genericity_across_families": 4,
+          "grouped_transfer_testing": 4,
+          "low_game_specific_label_dependence": 4,
+          "low_max_ply_dependence": 3,
+          "low_overfit_risk": 3,
+          "mixed_mechanic_compatibility": 4,
+          "production_concept_budget": 3,
+          "shogi_compatibility": 4,
+          "western_chess_compatibility": 4
+        },
+        "strategy": "C_GENERIC_SELFPLAY_OR_TD_BOOTSTRAP",
+        "total": 44
+      },
+      {
+        "mean": 2.154,
+        "scores": {
+          "compute_cost": 1,
+          "conceptual_simplicity": 2,
+          "data_generation_cost": 1,
+          "falsifiability": 4,
+          "genericity_across_families": 2,
+          "grouped_transfer_testing": 2,
+          "low_game_specific_label_dependence": 1,
+          "low_max_ply_dependence": 5,
+          "low_overfit_risk": 1,
+          "mixed_mechanic_compatibility": 2,
+          "production_concept_budget": 2,
+          "shogi_compatibility": 2,
+          "western_chess_compatibility": 3
+        },
+        "strategy": "D_EXTERNAL_ENGINE_REFERENCE_SUPERVISION",
+        "total": 28
+      }
+    ]
+  },
+  "v12_rewritten": false
+}
