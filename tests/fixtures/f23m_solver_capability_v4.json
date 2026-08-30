@@ -1,0 +1,26 @@
+{
+  "benchmark_version": "f23m-threshold-runtime-v4",
+  "backend": "exact_generic_preference_solver_v3",
+  "selection_frozen_before_results": true,
+  "attempt_wall_seconds": 8,
+  "horizon_mode": "max_depth=None authoritative compiled max_ply",
+  "proof_budget_ladder": [
+    ["SMALL", {"max_nodes": 2000, "max_depth": null}],
+    ["MEDIUM", {"max_nodes": 20000, "max_depth": null}],
+    ["LARGE", {"max_nodes": 100000, "max_depth": null}]
+  ],
+  "rows": [
+    {"construction_family": "ordinary_anchor_movement", "first_resolving_tier": "SMALL", "root_value": "WIN", "optimal_set_size": 2, "proof_depth": 6, "history_key_mode": "REPETITION_COUNTS_SUFFICIENT", "runtime_balanced": true, "v2_comparison": "UNRESOLVED"},
+    {"construction_family": "capture_recapture_tactics", "first_resolving_tier": "SMALL", "root_value": "DRAW", "optimal_set_size": 9, "proof_depth": 6, "history_key_mode": "REPETITION_COUNTS_SUFFICIENT", "runtime_balanced": true, "v2_comparison": "UNRESOLVED"},
+    {"construction_family": "drop_hand_tactics", "first_resolving_tier": "MEDIUM", "root_value": "DRAW", "optimal_set_size": 26, "proof_depth": 6, "history_key_mode": "REPETITION_COUNTS_SUFFICIENT", "runtime_balanced": true, "v2_comparison": "UNRESOLVED"},
+    {"construction_family": "promotion_race", "first_resolving_tier": "SMALL", "root_value": "DRAW", "optimal_set_size": 5, "proof_depth": 6, "history_key_mode": "REPETITION_COUNTS_SUFFICIENT", "runtime_balanced": true, "v2_comparison": "UNRESOLVED"},
+    {"construction_family": "semantic_guard_auxiliary", "first_resolving_tier": null, "root_value": null, "optimal_set_size": 0, "proof_depth": 0, "history_key_mode": "unknown", "runtime_balanced": true, "v2_comparison": "DEFERRED"}
+  ],
+  "non_control_families": 5,
+  "non_control_solved_families": 4,
+  "deep_proof_families": 4,
+  "differential_parity_zero_mismatch": true,
+  "capability_gate_passed": true,
+  "dominant_blocker": "COMBINATORIAL_BRANCHING",
+  "selected_next_boundary": "F23N_REFERENCE_PREFERENCE_CORPUS_R5"
+}
