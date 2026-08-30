@@ -25,7 +25,16 @@ Read `WORKFLOW.md` before changing this repository.
    switch to the `GenericChess-sandbox` worktree and run
    `generic-chess-flow.cmd work`. If the user explicitly says Local mode, run
    `generic-chess-flow.cmd start --mode local` instead.
-10. In Courier mode, continue the work-order loop in the same turn: implement
-    the current order, test, commit, publish, close out, and follow the next
-    order. Stop only at `COMPLETE`, `BLOCKED`, a hard error requiring the user,
-    or an explicit user stop. Do not stop merely because one work order ended.
+10. In Courier mode, `CONTINUE` is a mandatory continuation invariant. Implement
+    the current order, test, commit, publish, close out, and immediately follow
+    the next order in the same task. A closeout, checkpoint, successful push,
+    phase completion, queue wait, or one finished work order is never task
+    completion. While `CONTINUE` or a next `WORK_ORDER_ID` is present, do not
+    send a final response, call `finish`, wait for the user, or create a
+    replacement request.
+11. Stop only at an exact `COMPLETE`, a genuine `BLOCKED` requiring user or
+    external action, a hard error requiring the user, or an explicit user stop.
+    Before any final response, verify that no active work order remains, the
+    latest control footer is terminal, the request is reconciled, and the
+    latest checkpoint SHA was pushed and verified. Never reinterpret an
+    unfinished safe task as blocked or complete.

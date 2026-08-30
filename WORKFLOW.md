@@ -35,6 +35,18 @@ start --mode courier --message-file <request>
 → continue with the next work order, or finish after COMPLETE/BLOCKED
 ```
 
+### Continuation invariant
+
+The lifecycle is `work order active → checkpoint published → closeout sent →
+CONTINUE/next work order`, which returns to `work order active`. Closeout is a
+handoff event, not a terminal event. `COMPLETE` or genuine `BLOCKED` is the
+only Courier response that may enter terminal reconciliation. A queue wait,
+successful checkpoint, phase boundary, or failed gate with another safe order
+is not permission to stop. While `CONTINUE` or `WORK_ORDER_ID` is present, the
+Agent must continue the same immutable request, must not call `finish`, and
+must not send a final response or create a replacement request. The flow
+script independently rejects `finish` in this state.
+
 Courier is only transport. While waiting, its queue events are printed live;
 `queue_waiting` means keep waiting, not start another request. `resume` always
 uses the same immutable request. Never use Gmail, another browser/profile, a
@@ -78,6 +90,11 @@ generic-chess-flow.cmd finish
 Run long tests, self-play, benchmarks, and large audits through `heavy`. It runs
 one GenericChess compute task at a time at Windows Below Normal priority.
 `publish` applies the same rule to pytest automatically.
+
+Before a final response, verify: the latest control footer is terminal, no
+work order is active, no Courier request needs reconciliation, and the latest
+published sandbox SHA is known and synchronized. `BLOCKED` is reserved for a
+hard error or genuinely required user/external action.
 
 On a Courier error, follow the printed `NEXT_ACTION`. Resume only the same
 request. Login, target, access, or uncertain-send errors require the user; they
