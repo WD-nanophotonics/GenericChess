@@ -165,8 +165,15 @@ def active_state(root: Path) -> dict[str, Any]:
     return state
 
 
-def require_worker_write_authority(state: dict[str, Any]) -> None:
+def require_worker_write_authority(state: dict[str, Any], root: Path | None = None) -> None:
     if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
+        escalation_id = state.get("escalation_id")
+        if root is not None and isinstance(escalation_id, str):
+            claim_path = escalation_root(root) / escalation_id / "claim.json"
+            if claim_path.is_file():
+                claim = json.loads(claim_path.read_text(encoding="utf-8"))
+                if os.environ.get("CODEX_THREAD_ID") == claim.get("supervisor_thread_id"):
+                    return
         raise FlowError("repository writes are frozen until Supervisor resolution")
 
 
@@ -428,7 +435,7 @@ def heavy_lock(root: Path):
 
 def command_heavy(root: Path, args: argparse.Namespace) -> int:
     state = active_state(root)
-    require_worker_write_authority(state)
+    require_worker_write_authority(state, root)
     if branch(root) != "sandbox":
         raise FlowError("heavy must be run from the sandbox worktree")
     command = list(args.argv)
@@ -530,7 +537,7 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
     if branch(root) != "sandbox":
         raise FlowError("publish must be run from the sandbox worktree")
     state = active_state(root)
-    require_worker_write_authority(state)
+    require_worker_write_authority(state, root)
     require_clean(root)
     fetch(root, "sandbox")
     remote_sha = sha(root, "origin/sandbox")
@@ -631,7 +638,7 @@ def create_escalation(root: Path, state: dict[str, Any], *, reason: str,
 
 def command_recover(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
-    require_worker_write_authority(state)
+    require_worker_write_authority(state, root)
     if state.get("mode") != "courier":
         raise FlowError("recover is only available in courier mode")
     directory = state.get("active_request_directory")
@@ -794,6 +801,14 @@ def command_supervisor_resend(root: Path, args: argparse.Namespace) -> None:
     request_directory = state.get("active_request_directory")
     if not isinstance(request_directory, str) or not request_directory:
         raise FlowError("there is no active immutable Courier request to resend")
+    probe = courier(root, "courier_capture_latest", request_directory,
+                    stream=True, allow_failure=True)
+    if probe.get("request_match") is True and probe.get("response_path"):
+        update_response_state(root, state, probe, source="supervisor_capture_latest")
+        return
+    if (probe.get("event") != "courier_capture_latest_empty"
+            or probe.get("latest_user_turn_found") is not False):
+        raise FlowError("Supervisor resend requires fresh proof that the request is absent")
     result = courier(root, "courier_resend_once", request_directory,
                      stream=True, allow_failure=True)
     recovery_event(state, "supervisor_resend_reviewed", escalation_id=args.escalation_id,
@@ -807,7 +822,7 @@ def command_supervisor_resend(root: Path, args: argparse.Namespace) -> None:
 
 def command_closeout(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
-    require_worker_write_authority(state)
+    require_worker_write_authority(state, root)
     if state.get("mode") != "courier":
         raise FlowError("closeout is only available in courier mode")
     dispatch_message(root, state, Path(args.report_file).resolve(), "closeout")
@@ -815,7 +830,7 @@ def command_closeout(root: Path, args: argparse.Namespace) -> None:
 
 def command_promote(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
-    require_worker_write_authority(state)
+    require_worker_write_authority(state, root)
     candidate = args.candidate.lower()
     if not FULL_SHA.fullmatch(candidate):
         raise FlowError("candidate must be a full 40-character lowercase SHA")
