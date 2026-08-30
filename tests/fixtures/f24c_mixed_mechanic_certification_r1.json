@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "work_order_id": "GENERICCHESS-F24C-CORRECTIVE-R1-RUNTIME-LIFECYCLE-AND-SEARCH-CERTIFICATION",
+  "status": "PASS",
+  "first_pass_artifacts_byte_identical": true,
+  "public_action_roundtrip": {
+    "simultaneous_root_all_actions": true,
+    "serialized_identity_collisions": 0,
+    "pattern_geometry_actor_source_target_promotion_preserved": true
+  },
+  "ruleset_roundtrip": {
+    "canonical_fingerprint_stable": true,
+    "simultaneous_root_shapes_equal": true,
+    "representative_child_outcomes_equal": true,
+    "metadata_does_not_change_gameplay_fingerprint": true
+  },
+  "full_type_rename_isomorphism": {
+    "mapping": {"A0": "RA0", "A1": "RA1", "B0": "RB0", "B1": "RB1", "C0": "RC0", "H0": "RH0"},
+    "victim_matrix": true,
+    "promotions": true,
+    "drops": true,
+    "path": true,
+    "simultaneous_shapes": true,
+    "mapped_children": true
+  },
+  "runtime_lifecycle": {
+    "representative_mechanics": ["capture_to_hand_A", "remove_capture_B", "promoted_A1_victim", "promoted_B1_victim", "drop_A0", "promote_A0", "promote_B0", "C_path_capture", "ordinary_quiet"],
+    "push_fields_verified": ["position", "hands", "aux_state", "side_to_move", "ply", "terminal", "repetition", "history", "identity", "legal_action_digest"],
+    "pop_exact_restoration": true,
+    "nested_sibling_isolation": true,
+    "invalid_and_stale_rollback": true,
+    "assert_balanced": true
+  },
+  "terminal_lifecycle": {
+    "reversible_sequence": "two four-ply anchor cycles",
+    "repetition_limit": 3,
+    "repetition_terminal": true,
+    "max_ply_terminal": true,
+    "pure_and_runtime_terminal_agree": true
+  },
+  "search_smoke": {
+    "state_count": 8,
+    "budgets": [128, 512],
+    "repetitions": 2,
+    "qsearch_max_depth": 0,
+    "fresh_tt_each_run": true,
+    "all_actions_legal": true,
+    "all_budgets_complete": true,
+    "deterministic_action_score_pv": true,
+    "provider_mode": "NATIVE_PROVIDER_ACTIVE",
+    "descriptor_frozen_before_search": true
+  },
+  "focused_tests": {
+    "r1_passed": 16,
+    "expanded_collection_passed": 100
+  },
+  "full_regression": {
+    "known_failures": 12,
+    "classes": "F13/F14 enum-code native compile gate; F21 historical Standard Shogi native provider unavailable",
+    "new_r1_failures": 0,
+    "python_fallback_nonblocking": true
+  },
+  "production_diff": [],
+  "next_boundary": "F24D_WESTERN_CHESS_RULESET_PERFT_CERTIFICATION",
+  "promotion": "HOLD"
+}
