@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "ruleset": "generic_chess_3x3_king_rook_repetition2",
+  "cases": [
+    {
+      "id": "A_horizon_independent_win",
+      "rows": ["R..", "...", "kK."],
+      "side_to_move": 0,
+      "max_ply": 3,
+      "expected": "WIN"
+    },
+    {
+      "id": "B_horizon_independent_loss",
+      "rows": ["R..", "..k", "K.."],
+      "side_to_move": 1,
+      "max_ply": 3,
+      "expected": "LOSS"
+    },
+    {
+      "id": "C_horizon_independent_draw",
+      "rows": ["...", ".R.", "kK."],
+      "side_to_move": 0,
+      "max_ply": 3,
+      "expected": "DRAW"
+    },
+    {
+      "id": "D_base_draw_deeper_win",
+      "rows": ["...", "..k", "KR."],
+      "side_to_move": 0,
+      "max_ply": 1,
+      "expected": "DRAW",
+      "deeper_max_ply": 3,
+      "deeper_expected": "WIN"
+    },
+    {
+      "id": "E_irrelevant_max_ply_branch",
+      "rows": ["R..", "..k", "K.."],
+      "side_to_move": 1,
+      "max_ply": 3,
+      "expected": "LOSS",
+      "expects_abstract_leaf_visitation": true
+    },
+    {
+      "id": "F_mixed_root",
+      "rows": ["...", "..k", "KR."],
+      "side_to_move": 0,
+      "max_ply": 3,
+      "expected": "UNRESOLVED"
+    },
+    {
+      "id": "G_exact_tied_optimal_actions",
+      "rows": ["R..", "...", "kK."],
+      "side_to_move": 0,
+      "max_ply": 3,
+      "expected": "WIN",
+      "minimum_optimal_actions": 2
+    }
+  ]
+}
