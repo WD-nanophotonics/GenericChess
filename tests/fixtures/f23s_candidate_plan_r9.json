@@ -1,0 +1,1026 @@
+{
+  "abstraction_contract": {
+    "backend": "exact_generic_horizon_abstraction_v2",
+    "eligibility": "every root action exact and equal to V3; MAX_PLY is unknown"
+  },
+  "candidate_count": 48,
+  "candidate_count_per_family": 8,
+  "candidate_order": [
+    "f23s-r9-ordinary-00",
+    "f23s-r9-ordinary-01",
+    "f23s-r9-ordinary-02",
+    "f23s-r9-ordinary-03",
+    "f23s-r9-ordinary-04",
+    "f23s-r9-ordinary-05",
+    "f23s-r9-ordinary-06",
+    "f23s-r9-ordinary-07",
+    "f23s-r9-capture-00",
+    "f23s-r9-capture-01",
+    "f23s-r9-capture-02",
+    "f23s-r9-capture-03",
+    "f23s-r9-capture-04",
+    "f23s-r9-capture-05",
+    "f23s-r9-capture-06",
+    "f23s-r9-capture-07",
+    "f23s-r9-drop-00",
+    "f23s-r9-drop-01",
+    "f23s-r9-drop-02",
+    "f23s-r9-drop-03",
+    "f23s-r9-drop-04",
+    "f23s-r9-drop-05",
+    "f23s-r9-drop-06",
+    "f23s-r9-drop-07",
+    "f23s-r9-promotion-00",
+    "f23s-r9-promotion-01",
+    "f23s-r9-promotion-02",
+    "f23s-r9-promotion-03",
+    "f23s-r9-promotion-04",
+    "f23s-r9-promotion-05",
+    "f23s-r9-promotion-06",
+    "f23s-r9-promotion-07",
+    "f23s-r9-semantic-00",
+    "f23s-r9-semantic-01",
+    "f23s-r9-semantic-02",
+    "f23s-r9-semantic-03",
+    "f23s-r9-semantic-04",
+    "f23s-r9-semantic-05",
+    "f23s-r9-semantic-06",
+    "f23s-r9-semantic-07",
+    "f23s-r9-leaper-00",
+    "f23s-r9-leaper-01",
+    "f23s-r9-leaper-02",
+    "f23s-r9-leaper-03",
+    "f23s-r9-leaper-04",
+    "f23s-r9-leaper-05",
+    "f23s-r9-leaper-06",
+    "f23s-r9-leaper-07"
+  ],
+  "candidate_plan_sha256": "f4f6029b30ec28025cf0a113f70dc11d438d95385821e8b6ca62f3a906211bcc",
+  "families": [
+    {
+      "builder": "ordinary_anchor_terminal",
+      "candidates": [
+        {
+          "board_size": 3,
+          "id": "f23s-r9-ordinary-00",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "R..",
+            "...",
+            "kK."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-a15a949915773d8b",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":3,\"id\":\"f23s-r9-ordinary-00\",\"max_ply\":3,\"rows\":[\"R..\",\"...\",\"kK.\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 3,
+          "id": "f23s-r9-ordinary-01",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "R..",
+            "..k",
+            "K.."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-83ce179e4a627072",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":3,\"id\":\"f23s-r9-ordinary-01\",\"max_ply\":3,\"rows\":[\"R..\",\"..k\",\"K..\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 3,
+          "id": "f23s-r9-ordinary-02",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...",
+            ".R.",
+            "kK."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-12b69345048cdb52",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":3,\"id\":\"f23s-r9-ordinary-02\",\"max_ply\":3,\"rows\":[\"...\",\".R.\",\"kK.\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 3,
+          "id": "f23s-r9-ordinary-03",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...",
+            "..k",
+            "KR."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-cd6d36a0d4182ba6",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":3,\"id\":\"f23s-r9-ordinary-03\",\"max_ply\":3,\"rows\":[\"...\",\"..k\",\"KR.\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 3,
+          "id": "f23s-r9-ordinary-04",
+          "max_ply": 3,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "R..",
+            "...",
+            "k.K"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-482196e337cc8ebb",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":3,\"id\":\"f23s-r9-ordinary-04\",\"max_ply\":3,\"rows\":[\"R..\",\"...\",\"k.K\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 3,
+          "id": "f23s-r9-ordinary-05",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            ".k.",
+            ".R.",
+            "K.."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-bc2c8fd830a50b69",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":3,\"id\":\"f23s-r9-ordinary-05\",\"max_ply\":3,\"rows\":[\".k.\",\".R.\",\"K..\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-ordinary-06",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "R...",
+            "....",
+            "k...",
+            "...K"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-53c931a3bfe7bfbc",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-ordinary-06\",\"max_ply\":3,\"rows\":[\"R...\",\"....\",\"k...\",\"...K\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-ordinary-07",
+          "max_ply": 3,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....",
+            "...k",
+            "K...",
+            "...R"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-131d7c90739affd3",
+          "source_lineage_key": "{\"builder\":\"ordinary_anchor_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-ordinary-07\",\"max_ply\":3,\"rows\":[\"....\",\"...k\",\"K...\",\"...R\"],\"side_to_move\":0},\"family\":\"ordinary_anchor_terminal\",\"mechanic\":\"anchor_check_movement\"}"
+        }
+      ],
+      "construction_family": "ordinary_anchor_terminal",
+      "mechanic_family": "anchor_check_movement"
+    },
+    {
+      "builder": "capture_recapture_terminal",
+      "candidates": [
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-00",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....",
+            "....",
+            ".kr.",
+            "KR.."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-e6f7142e29d43d47",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-00\",\"max_ply\":4,\"rows\":[\"....\",\"....\",\".kr.\",\"KR..\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-01",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....",
+            "....",
+            "..kr",
+            "KR.."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-39877f6689621b90",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-01\",\"max_ply\":4,\"rows\":[\"....\",\"....\",\"..kr\",\"KR..\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-02",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....",
+            "..k.",
+            ".rR.",
+            "...K"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-0286cfe7665bc236",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-02\",\"max_ply\":4,\"rows\":[\"....\",\"..k.\",\".rR.\",\"...K\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-03",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "..k.",
+            "..r.",
+            "....",
+            ".KR."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-93bd2387a21332dd",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-03\",\"max_ply\":4,\"rows\":[\"..k.\",\"..r.\",\"....\",\".KR.\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-04",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "..rk",
+            "....",
+            "....",
+            "KR.."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-c07a950771cdfa0d",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-04\",\"max_ply\":4,\"rows\":[\"..rk\",\"....\",\"....\",\"KR..\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-05",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            ".k..",
+            "....",
+            ".Rr.",
+            "..K."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-b450dce67ae8c119",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-05\",\"max_ply\":4,\"rows\":[\".k..\",\"....\",\".Rr.\",\"..K.\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-06",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "k...",
+            ".r..",
+            "....",
+            "R..K"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-34bce11cb9f57a72",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-06\",\"max_ply\":4,\"rows\":[\"k...\",\".r..\",\"....\",\"R..K\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-capture-07",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            ".r..",
+            "k...",
+            "....",
+            ".KR."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-80e0dd4bade0497b",
+          "source_lineage_key": "{\"builder\":\"capture_recapture_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-capture-07\",\"max_ply\":4,\"rows\":[\".r..\",\"k...\",\"....\",\".KR.\"],\"side_to_move\":0},\"family\":\"capture_recapture_terminal\",\"mechanic\":\"capture_recapture\"}"
+        }
+      ],
+      "construction_family": "capture_recapture_terminal",
+      "mechanic_family": "capture_recapture"
+    },
+    {
+      "builder": "drop_hand_terminal",
+      "candidates": [
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-00",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "....",
+            "k...",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-afdba656a91a0cf8",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-00\",\"max_ply\":4,\"rows\":[\"....\",\"k...\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-01",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....",
+            "k...",
+            "....",
+            ".K.."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-ac6b25c0826c2b9c",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-01\",\"max_ply\":4,\"rows\":[\"....\",\"k...\",\"....\",\".K..\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-02",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....",
+            "k...",
+            "....",
+            "..K."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-4d7ecfe46f096fdd",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-02\",\"max_ply\":4,\"rows\":[\"....\",\"k...\",\"....\",\"..K.\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-03",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "k...",
+            "....",
+            "....",
+            "...K"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-44fb66f01ca4a8f4",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-03\",\"max_ply\":4,\"rows\":[\"k...\",\"....\",\"....\",\"...K\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-04",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "k...",
+            "....",
+            "K...",
+            "...."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-d2e5077132328196",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-04\",\"max_ply\":4,\"rows\":[\"k...\",\"....\",\"K...\",\"....\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-05",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "k...",
+            "....",
+            ".K..",
+            "...."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-9f37de1e5d78124f",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-05\",\"max_ply\":4,\"rows\":[\"k...\",\"....\",\".K..\",\"....\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-06",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "...k",
+            "....",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-40e6e2ccde40d2aa",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-06\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        },
+        {
+          "board_size": 4,
+          "hands": [
+            [
+              [
+                "R",
+                1
+              ]
+            ],
+            []
+          ],
+          "id": "f23s-r9-drop-07",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            "....",
+            "...K"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-5e47f33e3ea27c78",
+          "source_lineage_key": "{\"builder\":\"drop_hand_terminal\",\"candidate\":{\"board_size\":4,\"hands\":[[[\"R\",1]],[]],\"id\":\"f23s-r9-drop-07\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"....\",\"...K\"],\"side_to_move\":0},\"family\":\"drop_hand_terminal\",\"mechanic\":\"drop_hand\"}"
+        }
+      ],
+      "construction_family": "drop_hand_terminal",
+      "mechanic_family": "drop_hand"
+    },
+    {
+      "builder": "promotion_terminal",
+      "candidates": [
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-00",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "promotion_from": [
+            0,
+            2
+          ],
+          "promotion_to": [
+            0,
+            3
+          ],
+          "rows": [
+            "...k",
+            "P...",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-8a175aadbc9194fc",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-00\",\"max_ply\":4,\"promotion_from\":[0,2],\"promotion_to\":[0,3],\"rows\":[\"...k\",\"P...\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-01",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "promotion_from": [
+            1,
+            2
+          ],
+          "promotion_to": [
+            1,
+            3
+          ],
+          "rows": [
+            "...k",
+            ".P..",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-d01436d041c51ddc",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-01\",\"max_ply\":4,\"promotion_from\":[1,2],\"promotion_to\":[1,3],\"rows\":[\"...k\",\".P..\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-02",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "promotion_from": [
+            2,
+            2
+          ],
+          "promotion_to": [
+            2,
+            3
+          ],
+          "rows": [
+            "...k",
+            "..P.",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-9b58405fbcb436bf",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-02\",\"max_ply\":4,\"promotion_from\":[2,2],\"promotion_to\":[2,3],\"rows\":[\"...k\",\"..P.\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-03",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "promotion_from": [
+            3,
+            2
+          ],
+          "promotion_to": [
+            3,
+            3
+          ],
+          "rows": [
+            "...k",
+            "...P",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-5ec026aea302fe4c",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-03\",\"max_ply\":4,\"promotion_from\":[3,2],\"promotion_to\":[3,3],\"rows\":[\"...k\",\"...P\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-04",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "promotion_from": [
+            0,
+            1
+          ],
+          "promotion_to": [
+            0,
+            2
+          ],
+          "rows": [
+            "...k",
+            "....",
+            "P...",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-59e21eb353a8a51e",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-04\",\"max_ply\":4,\"promotion_from\":[0,1],\"promotion_to\":[0,2],\"rows\":[\"...k\",\"....\",\"P...\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-05",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "promotion_from": [
+            1,
+            1
+          ],
+          "promotion_to": [
+            1,
+            2
+          ],
+          "rows": [
+            "...k",
+            "....",
+            ".P..",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-3e413712d29d4e91",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-05\",\"max_ply\":4,\"promotion_from\":[1,1],\"promotion_to\":[1,2],\"rows\":[\"...k\",\"....\",\".P..\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-06",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "promotion_from": [
+            2,
+            1
+          ],
+          "promotion_to": [
+            2,
+            2
+          ],
+          "rows": [
+            "...k",
+            "....",
+            "..P.",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-de9ab9835a17651a",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-06\",\"max_ply\":4,\"promotion_from\":[2,1],\"promotion_to\":[2,2],\"rows\":[\"...k\",\"....\",\"..P.\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-promotion-07",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "promotion_from": [
+            3,
+            1
+          ],
+          "promotion_to": [
+            3,
+            2
+          ],
+          "rows": [
+            "...k",
+            "....",
+            "...P",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-618270a9b6154bda",
+          "source_lineage_key": "{\"builder\":\"promotion_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-promotion-07\",\"max_ply\":4,\"promotion_from\":[3,1],\"promotion_to\":[3,2],\"rows\":[\"...k\",\"....\",\"...P\",\"K...\"],\"side_to_move\":0},\"family\":\"promotion_terminal\",\"mechanic\":\"promotion_choice\"}"
+        }
+      ],
+      "construction_family": "promotion_terminal",
+      "mechanic_family": "promotion_choice"
+    },
+    {
+      "builder": "semantic_guard_terminal",
+      "candidates": [
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-00",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            ".....",
+            ".C...",
+            "K..R."
+          ],
+          "semantic_offset": [
+            1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-be5ccea0e1462180",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-00\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\".....\",\".C...\",\"K..R.\"],\"semantic_offset\":[1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-01",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            ".....",
+            "..C..",
+            "K..R."
+          ],
+          "semantic_offset": [
+            1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-d1c831364398b009",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-01\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\".....\",\"..C..\",\"K..R.\"],\"semantic_offset\":[1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-02",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            ".....",
+            "...C.",
+            "K..R."
+          ],
+          "semantic_offset": [
+            1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-172fc216081506ef",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-02\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\".....\",\"...C.\",\"K..R.\"],\"semantic_offset\":[1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-03",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            ".C...",
+            ".....",
+            "K..R."
+          ],
+          "semantic_offset": [
+            -1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-d77254f1576b4b2e",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-03\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\".C...\",\".....\",\"K..R.\"],\"semantic_offset\":[-1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-04",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            "..C..",
+            ".....",
+            "K..R."
+          ],
+          "semantic_offset": [
+            1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-ec29bae3f299e7ec",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-04\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\"..C..\",\".....\",\"K..R.\"],\"semantic_offset\":[1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-05",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            "...C.",
+            ".....",
+            "K..R."
+          ],
+          "semantic_offset": [
+            1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-1f61ece82ff3bae9",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-05\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\"...C.\",\".....\",\"K..R.\"],\"semantic_offset\":[1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-06",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            ".....",
+            "C....",
+            "K..R."
+          ],
+          "semantic_offset": [
+            -1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-3f0c7c301b54c540",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-06\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\".....\",\"C....\",\"K..R.\"],\"semantic_offset\":[-1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        },
+        {
+          "board_size": 5,
+          "id": "f23s-r9-semantic-07",
+          "max_ply": 6,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "....k",
+            ".....",
+            ".....",
+            "....C",
+            "K..R."
+          ],
+          "semantic_offset": [
+            -1,
+            0
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-ec5094fec5f81f63",
+          "source_lineage_key": "{\"builder\":\"semantic_guard_terminal\",\"candidate\":{\"board_size\":5,\"id\":\"f23s-r9-semantic-07\",\"max_ply\":6,\"rows\":[\"....k\",\".....\",\".....\",\"....C\",\"K..R.\"],\"semantic_offset\":[-1,0],\"side_to_move\":0},\"family\":\"semantic_guard_terminal\",\"mechanic\":\"semantic_guard_aux_state\"}"
+        }
+      ],
+      "construction_family": "semantic_guard_terminal",
+      "mechanic_family": "semantic_guard_aux_state"
+    },
+    {
+      "builder": "interposition_leaper_terminal",
+      "candidates": [
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-00",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            "....",
+            "KLR."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-d0cac9240f0f1849",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-00\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"....\",\"KLR.\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-01",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            "....",
+            "K.LR"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-f13e725488eff3fd",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-01\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"....\",\"K.LR\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-02",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            "R...",
+            "K..L"
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-cac0e9d514820b1b",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-02\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"R...\",\"K..L\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-03",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            "LR..",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-838679ae9cb2c0ae",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-03\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"LR..\",\"K...\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-04",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            ".LR.",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-940b0ea2c2476ae5",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-04\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\".LR.\",\"K...\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-05",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "....",
+            "..LR",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-5e8d65186c1376cc",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-05\",\"max_ply\":4,\"rows\":[\"...k\",\"....\",\"..LR\",\"K...\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-06",
+          "max_ply": 4,
+          "planned_split": "HOLDOUT",
+          "rows": [
+            "...k",
+            "R...",
+            "...L",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-8fb9297576d257bb",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-06\",\"max_ply\":4,\"rows\":[\"...k\",\"R...\",\"...L\",\"K...\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        },
+        {
+          "board_size": 4,
+          "id": "f23s-r9-leaper-07",
+          "max_ply": 4,
+          "planned_split": "DEVELOPMENT",
+          "rows": [
+            "...k",
+            "LR..",
+            "....",
+            "K..."
+          ],
+          "side_to_move": 0,
+          "source_lineage_id": "r9-b3fb9538ac082cd5",
+          "source_lineage_key": "{\"builder\":\"interposition_leaper_terminal\",\"candidate\":{\"board_size\":4,\"id\":\"f23s-r9-leaper-07\",\"max_ply\":4,\"rows\":[\"...k\",\"LR..\",\"....\",\"K...\"],\"side_to_move\":0},\"family\":\"interposition_leaper_terminal\",\"mechanic\":\"interposition_leaper\"}"
+        }
+      ],
+      "construction_family": "interposition_leaper_terminal",
+      "mechanic_family": "interposition_leaper"
+    }
+  ],
+  "plan_version": "f23s-natural-terminal-reference-corpus-r9",
+  "solver_contract": {
+    "attempt_wall_seconds": 8,
+    "backend": "exact_generic_preference_solver_v3",
+    "ladder": [
+      [
+        "SMALL",
+        {
+          "max_depth": null,
+          "max_nodes": 2000
+        }
+      ],
+      [
+        "MEDIUM",
+        {
+          "max_depth": null,
+          "max_nodes": 20000
+        }
+      ],
+      [
+        "LARGE",
+        {
+          "max_depth": null,
+          "max_nodes": 100000
+        }
+      ]
+    ],
+    "max_depth": null
+  },
+  "source_baseline_commit": "f37c12762116b3fe61b163e3124a319f8600d2d3",
+  "source_f23r_r2_sha256": "dd976335cd7f7128405e9951d8806513cc71099b8e9dccd396cbf4b1c861e84c",
+  "source_v10_sha256": "65ba64f17effb4e96977b59a806153efae49a91dcb28948c89a9d73290350a43",
+  "split_algorithm": "HOLDOUT iff int(sha256(F23N-V7|source_lineage_id)[:8],16) mod 4 == 0; otherwise DEVELOPMENT"
+}
