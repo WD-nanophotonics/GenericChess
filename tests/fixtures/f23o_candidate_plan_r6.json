@@ -1,0 +1,98 @@
+{
+  "plan_version": "f23o-independent-preference-corpus-r6",
+  "candidate_plan_sha256": "60574b17c45cd16533ce25b11287fef56b2f498020ac7966f25e2b76c725407f",
+  "source_v7_fixture": "evaluator_v2_corpus_v7.json",
+  "source_v7_sha256": "57d0d40ad4e74815ca1c542c2fa680750ea8a6411e47249a3892f23954dd064b",
+  "solver_contract": {
+    "backend": "exact_generic_preference_solver_v3",
+    "attempt_wall_seconds": 8,
+    "authoritative_horizon": "max_depth=None compiled max_ply",
+    "ladder": [
+      ["SMALL", {"max_nodes": 2000, "max_depth": null}],
+      ["MEDIUM", {"max_nodes": 20000, "max_depth": null}],
+      ["LARGE", {"max_nodes": 100000, "max_depth": null}]
+    ]
+  },
+  "split_algorithm": "HOLDOUT iff int(sha256(F23N-V7|source_lineage_id)[:8],16) mod 4 == 0; otherwise DEVELOPMENT",
+  "max_candidates_per_family": 8,
+  "candidate_order": [
+    "generic-f23o-r6-capture-00", "generic-f23o-r6-capture-01",
+    "generic-f23o-r6-capture-02", "generic-f23o-r6-capture-03",
+    "generic-f23o-r6-capture-04", "generic-f23o-r6-capture-05",
+    "generic-f23o-r6-capture-06", "generic-f23o-r6-capture-07",
+    "generic-f23o-r6-drop-00", "generic-f23o-r6-drop-01",
+    "generic-f23o-r6-drop-02", "generic-f23o-r6-drop-03",
+    "generic-f23o-r6-drop-04", "generic-f23o-r6-drop-05",
+    "generic-f23o-r6-drop-06", "generic-f23o-r6-drop-07",
+    "generic-f23o-r6-promotion-00", "generic-f23o-r6-promotion-01",
+    "generic-f23o-r6-promotion-02", "generic-f23o-r6-promotion-03",
+    "generic-f23o-r6-promotion-04", "generic-f23o-r6-promotion-05",
+    "generic-f23o-r6-promotion-06", "generic-f23o-r6-promotion-07",
+    "generic-f23o-r6-semantic-00", "generic-f23o-r6-semantic-01",
+    "generic-f23o-r6-semantic-02", "generic-f23o-r6-semantic-03",
+    "generic-f23o-r6-semantic-04", "generic-f23o-r6-semantic-05",
+    "generic-f23o-r6-semantic-06", "generic-f23o-r6-semantic-07"
+  ],
+  "families": [
+    {
+      "construction_family": "capture_recapture_tactics",
+      "mechanic_family": "capture_recapture",
+      "builder": "capture_mate_choice",
+      "candidates": [
+        {"id": "generic-f23o-r6-capture-00", "source_lineage_id": "r6-capture-mate-a", "board_size": 4, "max_ply": 4, "rows": ["...k", ".Rr.", ".K..", "...."]},
+        {"id": "generic-f23o-r6-capture-01", "source_lineage_id": "r6-capture-mate-a", "board_size": 4, "max_ply": 4, "rows": ["...k", ".Rr.", "K...", "...."]},
+        {"id": "generic-f23o-r6-capture-02", "source_lineage_id": "r6-capture-mate-b", "board_size": 4, "max_ply": 4, "rows": ["k...", "rR..", ".K..", "...."]},
+        {"id": "generic-f23o-r6-capture-03", "source_lineage_id": "r6-capture-mate-b", "board_size": 4, "max_ply": 4, "rows": ["k...", "rR..", "K...", "...."]},
+        {"id": "generic-f23o-r6-capture-04", "source_lineage_id": "r6-capture-mate-c", "board_size": 4, "max_ply": 4, "rows": ["...k", "Rr..", "..K.", "...."]},
+        {"id": "generic-f23o-r6-capture-05", "source_lineage_id": "r6-capture-mate-d", "board_size": 4, "max_ply": 4, "rows": ["k...", "..rR", "..K.", "...."]},
+        {"id": "generic-f23o-r6-capture-06", "source_lineage_id": "r6-capture-mate-e", "board_size": 4, "max_ply": 4, "rows": ["...k", ".Rr.", "...K", "...."]},
+        {"id": "generic-f23o-r6-capture-07", "source_lineage_id": "r6-capture-mate-f", "board_size": 4, "max_ply": 4, "rows": ["k...", "r.R.", "..K.", "...."]}
+      ]
+    },
+    {
+      "construction_family": "drop_hand_tactics",
+      "mechanic_family": "drop_hand",
+      "builder": "drop_check_choice",
+      "candidates": [
+        {"id": "generic-f23o-r6-drop-00", "source_lineage_id": "r6-drop-check-a", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["...k", ".K..", "....", "...."]},
+        {"id": "generic-f23o-r6-drop-01", "source_lineage_id": "r6-drop-check-a", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["...k", "..K.", "....", "...."]},
+        {"id": "generic-f23o-r6-drop-02", "source_lineage_id": "r6-drop-check-b", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["k...", "..K.", "....", "...."]},
+        {"id": "generic-f23o-r6-drop-03", "source_lineage_id": "r6-drop-check-b", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["k...", ".K..", "....", "...."]},
+        {"id": "generic-f23o-r6-drop-04", "source_lineage_id": "r6-drop-check-c", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["...k", "....", ".K..", "...."]},
+        {"id": "generic-f23o-r6-drop-05", "source_lineage_id": "r6-drop-check-d", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["k...", "....", "..K.", "...."]},
+        {"id": "generic-f23o-r6-drop-06", "source_lineage_id": "r6-drop-check-e", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": ["..k.", ".K..", "....", "...."]},
+        {"id": "generic-f23o-r6-drop-07", "source_lineage_id": "r6-drop-check-f", "board_size": 4, "max_ply": 4, "hands": [[["R", 1]], []], "rows": [".k..", "..K.", "....", "...."]}
+      ]
+    },
+    {
+      "construction_family": "promotion_choice",
+      "mechanic_family": "promotion_choice",
+      "builder": "promotion_mate_choice",
+      "candidates": [
+        {"id": "generic-f23o-r6-promotion-00", "source_lineage_id": "r6-promotion-file-a", "board_size": 4, "max_ply": 4, "rows": ["...k", "..P.", "....", "K..."]},
+        {"id": "generic-f23o-r6-promotion-01", "source_lineage_id": "r6-promotion-file-a", "board_size": 4, "max_ply": 4, "rows": ["...k", "..P.", "....", ".K.."]},
+        {"id": "generic-f23o-r6-promotion-02", "source_lineage_id": "r6-promotion-file-b", "board_size": 4, "max_ply": 4, "rows": ["k...", "P...", "....", "...K"]},
+        {"id": "generic-f23o-r6-promotion-03", "source_lineage_id": "r6-promotion-file-b", "board_size": 4, "max_ply": 4, "rows": ["k...", "P...", "....", "..K."]},
+        {"id": "generic-f23o-r6-promotion-04", "source_lineage_id": "r6-promotion-file-c", "board_size": 4, "max_ply": 4, "rows": ["...k", ".P..", "....", "K..."]},
+        {"id": "generic-f23o-r6-promotion-05", "source_lineage_id": "r6-promotion-file-d", "board_size": 4, "max_ply": 4, "rows": ["k...", ".P..", "....", "...K"]},
+        {"id": "generic-f23o-r6-promotion-06", "source_lineage_id": "r6-promotion-file-e", "board_size": 4, "max_ply": 4, "rows": [".k..", "..P.", "....", "K..."]},
+        {"id": "generic-f23o-r6-promotion-07", "source_lineage_id": "r6-promotion-file-f", "board_size": 4, "max_ply": 4, "rows": ["..k.", "P...", "....", "...K"]}
+      ]
+    },
+    {
+      "construction_family": "semantic_guard_auxiliary",
+      "mechanic_family": "semantic_guard_aux_state",
+      "builder": "semantic_guard_choice",
+      "candidates": [
+        {"id": "generic-f23o-r6-semantic-00", "source_lineage_id": "r6-semantic-step-a", "board_size": 4, "max_ply": 4, "semantic_offset": [1, 0], "rows": [".C.k", ".K..", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-01", "source_lineage_id": "r6-semantic-step-a", "board_size": 4, "max_ply": 4, "semantic_offset": [1, 0], "rows": ["C..k", ".K..", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-02", "source_lineage_id": "r6-semantic-step-b", "board_size": 4, "max_ply": 4, "semantic_offset": [-1, 0], "rows": ["..Ck", ".K..", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-03", "source_lineage_id": "r6-semantic-step-c", "board_size": 4, "max_ply": 4, "semantic_offset": [1, 0], "rows": [".C.k", "..K.", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-04", "source_lineage_id": "r6-semantic-step-d", "board_size": 4, "max_ply": 4, "semantic_offset": [1, 0], "rows": ["C..k", "..K.", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-05", "source_lineage_id": "r6-semantic-step-e", "board_size": 4, "max_ply": 4, "semantic_offset": [-1, 0], "rows": ["..Ck", "..K.", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-06", "source_lineage_id": "r6-semantic-step-f", "board_size": 4, "max_ply": 4, "semantic_offset": [1, 0], "rows": [".C.k", "K...", "...R", "...."]},
+        {"id": "generic-f23o-r6-semantic-07", "source_lineage_id": "r6-semantic-step-g", "board_size": 4, "max_ply": 4, "semantic_offset": [-1, 0], "rows": ["..Ck", "..K.", "...R", "...."]}
+      ]
+    }
+  ]
+}
