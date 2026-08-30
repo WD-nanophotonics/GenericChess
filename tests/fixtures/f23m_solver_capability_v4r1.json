@@ -1,0 +1,81 @@
+{
+  "baseline_sandbox_sha": "d03e9fa6ca9d89cb22555393103d0eacaf9d762d",
+  "benchmark_plan_digest": "cf3d58a9ca5708df43b0f9328b9ce5d2538a6eefda8c496e0408f37e553bba4a",
+  "benchmark_version": "f23m-threshold-runtime-v4r1",
+  "capability_gate_passed": true,
+  "deep_proof_families": 4,
+  "differential_parity_zero_mismatch": true,
+  "dominant_blocker": "COMBINATORIAL_BRANCHING",
+  "exact_root_action_families": 4,
+  "first_resolving_tiers": {
+    "capture_recapture_tactics": "SMALL",
+    "drop_hand_tactics": "MEDIUM",
+    "ordinary_anchor_movement": "SMALL",
+    "promotion_race": "SMALL",
+    "semantic_guard_auxiliary": null
+  },
+  "non_control_families": 5,
+  "non_control_solved_families": 4,
+  "representative_ids": [
+    "generic-f23m-legacy_anchor_mate-0",
+    "generic-f23m-legacy_capture_recapture-0",
+    "generic-f23m-legacy_drop_hand-0",
+    "generic-f23m-auto_promotion_race-0",
+    "generic-f23m-semantic_fixture_mix-0"
+  ],
+  "rows": [
+    {
+      "blocker": null,
+      "construction_family": "ordinary_anchor_movement",
+      "first_resolving_tier": "SMALL",
+      "proof_depth": 6,
+      "representative_id": "generic-f23m-legacy_anchor_mate-0",
+      "root_action_certificate_complete": true,
+      "root_value": "WIN",
+      "runtime_balanced_derived": true
+    },
+    {
+      "blocker": null,
+      "construction_family": "capture_recapture_tactics",
+      "first_resolving_tier": "SMALL",
+      "proof_depth": 6,
+      "representative_id": "generic-f23m-legacy_capture_recapture-0",
+      "root_action_certificate_complete": true,
+      "root_value": "DRAW",
+      "runtime_balanced_derived": true
+    },
+    {
+      "blocker": null,
+      "construction_family": "drop_hand_tactics",
+      "first_resolving_tier": "MEDIUM",
+      "proof_depth": 6,
+      "representative_id": "generic-f23m-legacy_drop_hand-0",
+      "root_action_certificate_complete": true,
+      "root_value": "DRAW",
+      "runtime_balanced_derived": true
+    },
+    {
+      "blocker": null,
+      "construction_family": "promotion_race",
+      "first_resolving_tier": "SMALL",
+      "proof_depth": 6,
+      "representative_id": "generic-f23m-auto_promotion_race-0",
+      "root_action_certificate_complete": true,
+      "root_value": "DRAW",
+      "runtime_balanced_derived": true
+    },
+    {
+      "blocker": "UNCLASSIFIED_TIME_CAP",
+      "construction_family": "semantic_guard_auxiliary",
+      "first_resolving_tier": null,
+      "proof_depth": 0,
+      "representative_id": "generic-f23m-semantic_fixture_mix-0",
+      "root_action_certificate_complete": false,
+      "root_value": null,
+      "runtime_balanced_derived": null
+    }
+  ],
+  "runtime_balanced_families": 4,
+  "selected_next_boundary": "F23N_REFERENCE_PREFERENCE_CORPUS_R5",
+  "target_families_solved": 3
+}

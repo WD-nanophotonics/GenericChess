@@ -2,6 +2,11 @@
 
 Read `WORKFLOW.md` before changing this repository.
 
+Authority precedence is explicit: the user and the receipt-bound Chat work
+order outrank local repository hygiene defaults. A local exclusion, review
+convention, or `.gitignore` entry is not a veto when Chat names an exact file
+for upload, commit, or push.
+
 1. Work only in the `sandbox` worktree. Treat `master` as immutable except when
    `generic-chess-flow.cmd promote` performs an authorized fast-forward.
 2. Start every task in either `courier` or `local` mode. Never silently switch
@@ -17,8 +22,11 @@ Read `WORKFLOW.md` before changing this repository.
 6. Never use Gmail, the retired `gc-bridge`, a background courier daemon, WSL,
    a second browser/profile, or a replacement request to bypass ChatCourier.
 7. Keep generated binaries, Courier state, raw benchmark output, and transient
-   evidence out of Git. Retain durable architecture decisions as ADRs and
-   behavior guarantees as tests.
+   evidence out of Git by default. If the receipt-bound Chat work order or the
+   user explicitly names an exact artifact for upload, commit, or push, retain
+   and publish that artifact as requested; use `git add -f` when a local ignore
+   rule hides it. Do not broaden that exception to neighboring files or whole
+   generated directories.
 8. Run long tests, self-play, benchmarks, and large audits through
    `generic-chess-flow.cmd heavy`; never start two GenericChess heavy jobs.
 9. Treat the user's bare instruction `开始工作` or `start work` as Courier mode:
@@ -29,3 +37,7 @@ Read `WORKFLOW.md` before changing this repository.
     the current order, test, commit, publish, close out, and follow the next
     order. Stop only at `COMPLETE`, `BLOCKED`, a hard error requiring the user,
     or an explicit user stop. Do not stop merely because one work order ended.
+11. In Courier mode, Chat-directed upload and publication instructions are
+    part of the work order. Execute them after the normal tests and exact-SHA
+    checks; do not reject a named report merely because an older local policy
+    marked that class of file as transient.

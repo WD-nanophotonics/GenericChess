@@ -1,0 +1,1443 @@
+{
+  "attempt_wall_seconds": 8,
+  "backend": "exact_generic_preference_solver_v3",
+  "baseline_sandbox_sha": "d03e9fa6ca9d89cb22555393103d0eacaf9d762d",
+  "benchmark_plan_digest": "cf3d58a9ca5708df43b0f9328b9ce5d2538a6eefda8c496e0408f37e553bba4a",
+  "benchmark_version": "f23m-threshold-runtime-v4r1",
+  "differential_parity_zero_mismatch": true,
+  "horizon_mode": "max_depth=None authoritative compiled max_ply",
+  "proof_budget_ladder": [
+    [
+      "SMALL",
+      {
+        "max_depth": null,
+        "max_nodes": 2000
+      }
+    ],
+    [
+      "MEDIUM",
+      {
+        "max_depth": null,
+        "max_nodes": 20000
+      }
+    ],
+    [
+      "LARGE",
+      {
+        "max_depth": null,
+        "max_nodes": 100000
+      }
+    ]
+  ],
+  "representative_ids": [
+    "generic-f23m-legacy_anchor_mate-0",
+    "generic-f23m-legacy_capture_recapture-0",
+    "generic-f23m-legacy_drop_hand-0",
+    "generic-f23m-auto_promotion_race-0",
+    "generic-f23m-semantic_fixture_mix-0"
+  ],
+  "rows": [
+    {
+      "attempts": [
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 2000
+          },
+          "result": {
+            "authoritative_horizon": true,
+            "blocker": null,
+            "cycle_refusals": 0,
+            "effective_max_depth": 6,
+            "final_runtime_depth": 0,
+            "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+            "legal_actions_enumerated": 965,
+            "optimal_set_size": 2,
+            "perpetual_check_adjudications": 0,
+            "pops": 310,
+            "profile_proportions": {
+              "legal_actions_seconds": 0.21534336729113066,
+              "proof_bookkeeping_seconds": 0.08519403182727207,
+              "runtime_pop_seconds": 0.01332312092354676,
+              "runtime_push_transition_seconds": 0.5606406014243981,
+              "terminal_seconds": 0.0033453651476372612,
+              "tt_key_seconds": 0.10177790381427212,
+              "tt_lookup_seconds": 0.010299640595000705,
+              "tt_store_seconds": 0.010075968976742303
+            },
+            "profile_seconds": {
+              "legal_actions_seconds": 0.022143500042147934,
+              "proof_bookkeeping_seconds": 0.008760400058235973,
+              "runtime_pop_seconds": 0.0013700005365535617,
+              "runtime_push_transition_seconds": 0.05765000026440248,
+              "terminal_seconds": 0.00034399988362565637,
+              "total_seconds": 0.10282879997976124,
+              "tt_key_seconds": 0.010465699713677168,
+              "tt_lookup_seconds": 0.0010590996826067567,
+              "tt_store_seconds": 0.0010360997985117137
+            },
+            "proof_depth": 6,
+            "proof_short_circuits": 93,
+            "pushes": 310,
+            "repetition_adjudications": 0,
+            "root_action_certificate_complete": true,
+            "root_action_values": [
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    1
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "WIN"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    0
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "WIN"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    2
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    3
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    4
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    2,
+                    1
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    3,
+                    1
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    2,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    2,
+                    1
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    2,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    3,
+                    0
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    2,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    3,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    2,
+                    1
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    3,
+                    1
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    4,
+                    0
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    4,
+                    2
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    4,
+                    3
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    4,
+                    4
+                  ]
+                },
+                "proof_depth": 1,
+                "value": "DRAW"
+              }
+            ],
+            "root_branching": 16,
+            "root_value": "WIN",
+            "runtime_balanced_derived": true,
+            "runtime_pops": 310,
+            "runtime_pushes": 310,
+            "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+            "states_expanded": 110,
+            "strong": true,
+            "threshold_tt_hits": 0,
+            "tt_entries": 110,
+            "unresolved_reason": null
+          },
+          "tier": "SMALL"
+        }
+      ],
+      "construction_family": "ordinary_anchor_movement",
+      "first_resolving_tier": "SMALL",
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "anchor_check_movement",
+      "parameter": [
+        5,
+        true
+      ],
+      "representative_id": "generic-f23m-legacy_anchor_mate-0",
+      "selected_result_tier": "SMALL",
+      "v2_comparison": {
+        "optimal_set_size": 0,
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "root_value": null,
+        "status": "UNRESOLVED"
+      }
+    },
+    {
+      "attempts": [
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 2000
+          },
+          "result": {
+            "authoritative_horizon": true,
+            "blocker": null,
+            "cycle_refusals": 0,
+            "effective_max_depth": 6,
+            "final_runtime_depth": 0,
+            "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+            "legal_actions_enumerated": 12482,
+            "optimal_set_size": 9,
+            "perpetual_check_adjudications": 0,
+            "pops": 5854,
+            "profile_proportions": {
+              "legal_actions_seconds": 0.17160940497326635,
+              "proof_bookkeeping_seconds": 0.08031527976006303,
+              "runtime_pop_seconds": 0.01883039475185291,
+              "runtime_push_transition_seconds": 0.6303185000778591,
+              "terminal_seconds": 0.005698703185521553,
+              "tt_key_seconds": 0.0759593270514921,
+              "tt_lookup_seconds": 0.008712179935661868,
+              "tt_store_seconds": 0.008556210264283126
+            },
+            "profile_seconds": {
+              "legal_actions_seconds": 0.2451411004876718,
+              "proof_bookkeeping_seconds": 0.11472900374792516,
+              "runtime_pop_seconds": 0.02689889690373093,
+              "runtime_push_transition_seconds": 0.9003991989302449,
+              "terminal_seconds": 0.008140500052832067,
+              "total_seconds": 1.4284829000243917,
+              "tt_key_seconds": 0.10850659979041666,
+              "tt_lookup_seconds": 0.012445200060028583,
+              "tt_store_seconds": 0.012222400051541626
+            },
+            "proof_depth": 6,
+            "proof_short_circuits": 778,
+            "pushes": 5854,
+            "repetition_adjudications": 201,
+            "root_action_certificate_complete": true,
+            "root_action_values": [
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    2
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    3
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    2,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    3,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    4,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              }
+            ],
+            "root_branching": 9,
+            "root_value": "DRAW",
+            "runtime_balanced_derived": true,
+            "runtime_pops": 5854,
+            "runtime_pushes": 5854,
+            "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+            "states_expanded": 1291,
+            "strong": true,
+            "threshold_tt_hits": 0,
+            "tt_entries": 1291,
+            "unresolved_reason": null
+          },
+          "tier": "SMALL"
+        }
+      ],
+      "construction_family": "capture_recapture_tactics",
+      "first_resolving_tier": "SMALL",
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "capture_recapture",
+      "parameter": [
+        5,
+        0
+      ],
+      "representative_id": "generic-f23m-legacy_capture_recapture-0",
+      "selected_result_tier": "SMALL",
+      "v2_comparison": {
+        "optimal_set_size": 0,
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "root_value": null,
+        "status": "UNRESOLVED"
+      }
+    },
+    {
+      "attempts": [
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 2000
+          },
+          "result": {
+            "authoritative_horizon": true,
+            "blocker": "COMBINATORIAL_BRANCHING",
+            "cycle_refusals": 0,
+            "effective_max_depth": 6,
+            "final_runtime_depth": 0,
+            "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+            "legal_actions_enumerated": 12968,
+            "optimal_set_size": 0,
+            "perpetual_check_adjudications": 0,
+            "pops": 4013,
+            "profile_proportions": {
+              "legal_actions_seconds": 0.2346926780146801,
+              "proof_bookkeeping_seconds": 0.10783396993657211,
+              "runtime_pop_seconds": 0.014906129694181125,
+              "runtime_push_transition_seconds": 0.4969684208721233,
+              "terminal_seconds": 0.0030670549518662035,
+              "tt_key_seconds": 0.11456190712009252,
+              "tt_lookup_seconds": 0.013944274282950355,
+              "tt_store_seconds": 0.014025565127534298
+            },
+            "profile_seconds": {
+              "legal_actions_seconds": 0.2791851995862089,
+              "proof_bookkeeping_seconds": 0.12827689672121778,
+              "runtime_pop_seconds": 0.017732000967953354,
+              "runtime_push_transition_seconds": 0.5911826007650234,
+              "terminal_seconds": 0.0036485004820860922,
+              "total_seconds": 1.1895777999889106,
+              "tt_key_seconds": 0.13628030143445358,
+              "tt_lookup_seconds": 0.016587799123954028,
+              "tt_store_seconds": 0.016684500908013433
+            },
+            "proof_depth": 0,
+            "proof_short_circuits": 1672,
+            "pushes": 4013,
+            "repetition_adjudications": 125,
+            "root_action_certificate_complete": false,
+            "root_action_values": [],
+            "root_branching": 26,
+            "root_value": null,
+            "runtime_balanced_derived": true,
+            "runtime_pops": 4013,
+            "runtime_pushes": 4013,
+            "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+            "states_expanded": 2000,
+            "strong": false,
+            "threshold_tt_hits": 0,
+            "tt_entries": 1999,
+            "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap"
+          },
+          "tier": "SMALL"
+        },
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20000
+          },
+          "result": {
+            "authoritative_horizon": true,
+            "blocker": null,
+            "cycle_refusals": 0,
+            "effective_max_depth": 6,
+            "final_runtime_depth": 0,
+            "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+            "legal_actions_enumerated": 30025,
+            "optimal_set_size": 26,
+            "perpetual_check_adjudications": 0,
+            "pops": 10486,
+            "profile_proportions": {
+              "legal_actions_seconds": 0.2184343878474336,
+              "proof_bookkeeping_seconds": 0.1059985099698527,
+              "runtime_pop_seconds": 0.01613808333997817,
+              "runtime_push_transition_seconds": 0.5222104360102955,
+              "terminal_seconds": 0.003748293546967468,
+              "tt_key_seconds": 0.10715518556753455,
+              "tt_lookup_seconds": 0.01291888332793562,
+              "tt_store_seconds": 0.013396220390002371
+            },
+            "profile_seconds": {
+              "legal_actions_seconds": 0.6773556003463455,
+              "proof_bookkeeping_seconds": 0.32869680027943105,
+              "runtime_pop_seconds": 0.05004349927185103,
+              "runtime_push_transition_seconds": 1.61935200256994,
+              "terminal_seconds": 0.011623296362813562,
+              "total_seconds": 3.1009567999863066,
+              "tt_key_seconds": 0.3322836013394408,
+              "tt_lookup_seconds": 0.04006089910399169,
+              "tt_store_seconds": 0.04154110071249306
+            },
+            "proof_depth": 6,
+            "proof_short_circuits": 3975,
+            "pushes": 10486,
+            "repetition_adjudications": 175,
+            "root_action_certificate_complete": true,
+            "root_action_values": [
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    0,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    0,
+                    2
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    0,
+                    3
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    0,
+                    4
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    1,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    1,
+                    2
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    1,
+                    3
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    1,
+                    4
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    2,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    2,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    2,
+                    2
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    2,
+                    3
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    2,
+                    4
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    3,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    3,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    3,
+                    2
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    3,
+                    3
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    3,
+                    4
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    4,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    4,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    4,
+                    2
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "base_type_id": "R",
+                  "kind": "drop",
+                  "to": [
+                    4,
+                    3
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              }
+            ],
+            "root_branching": 26,
+            "root_value": "DRAW",
+            "runtime_balanced_derived": true,
+            "runtime_pops": 10486,
+            "runtime_pushes": 10486,
+            "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+            "states_expanded": 4686,
+            "strong": true,
+            "threshold_tt_hits": 0,
+            "tt_entries": 4686,
+            "unresolved_reason": null
+          },
+          "tier": "MEDIUM"
+        }
+      ],
+      "construction_family": "drop_hand_tactics",
+      "first_resolving_tier": "MEDIUM",
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "drop_hand",
+      "parameter": [
+        5,
+        0,
+        1
+      ],
+      "representative_id": "generic-f23m-legacy_drop_hand-0",
+      "selected_result_tier": "MEDIUM",
+      "v2_comparison": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:time_cap",
+        "status": "UNRESOLVED"
+      }
+    },
+    {
+      "attempts": [
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 2000
+          },
+          "result": {
+            "authoritative_horizon": true,
+            "blocker": null,
+            "cycle_refusals": 0,
+            "effective_max_depth": 6,
+            "final_runtime_depth": 0,
+            "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+            "legal_actions_enumerated": 2477,
+            "optimal_set_size": 5,
+            "perpetual_check_adjudications": 0,
+            "pops": 1131,
+            "profile_proportions": {
+              "legal_actions_seconds": 0.15311260956159903,
+              "proof_bookkeeping_seconds": 0.11828056256397085,
+              "runtime_pop_seconds": 0.016802743233362075,
+              "runtime_push_transition_seconds": 0.5529978853143275,
+              "terminal_seconds": 0.0036863159340390288,
+              "tt_key_seconds": 0.12063888945641169,
+              "tt_lookup_seconds": 0.017832355695769637,
+              "tt_store_seconds": 0.01664863824052024
+            },
+            "profile_seconds": {
+              "legal_actions_seconds": 0.0436163010308519,
+              "proof_bookkeeping_seconds": 0.0336938978289254,
+              "runtime_pop_seconds": 0.004786500008776784,
+              "runtime_push_transition_seconds": 0.15752930019516498,
+              "terminal_seconds": 0.0010500994394533336,
+              "total_seconds": 0.2848641999880783,
+              "tt_key_seconds": 0.03436570073245093,
+              "tt_lookup_seconds": 0.00507979973917827,
+              "tt_store_seconds": 0.004742601013276726
+            },
+            "proof_depth": 6,
+            "proof_short_circuits": 392,
+            "pushes": 1131,
+            "repetition_adjudications": 37,
+            "root_action_certificate_complete": true,
+            "root_action_values": [
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    0
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    0,
+                    0
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    4
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": "G",
+                  "to": [
+                    1,
+                    5
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              },
+              {
+                "action": {
+                  "from": [
+                    1,
+                    4
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": "H",
+                  "to": [
+                    1,
+                    5
+                  ]
+                },
+                "proof_depth": 6,
+                "value": "DRAW"
+              }
+            ],
+            "root_branching": 5,
+            "root_value": "DRAW",
+            "runtime_balanced_derived": true,
+            "runtime_pops": 1131,
+            "runtime_pushes": 1131,
+            "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+            "states_expanded": 512,
+            "strong": true,
+            "threshold_tt_hits": 0,
+            "tt_entries": 512,
+            "unresolved_reason": null
+          },
+          "tier": "SMALL"
+        }
+      ],
+      "construction_family": "promotion_race",
+      "first_resolving_tier": "SMALL",
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "promotion_choice",
+      "parameter": [
+        1,
+        4
+      ],
+      "representative_id": "generic-f23m-auto_promotion_race-0",
+      "selected_result_tier": "SMALL",
+      "v2_comparison": {
+        "optimal_set_size": 0,
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:node_cap",
+        "root_value": null,
+        "status": "UNRESOLVED"
+      }
+    },
+    {
+      "attempts": [
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 2000
+          },
+          "result": {
+            "authoritative_horizon": null,
+            "blocker": "UNCLASSIFIED_TIME_CAP",
+            "cycle_refusals": null,
+            "effective_max_depth": null,
+            "final_runtime_depth": null,
+            "history_key_mode": null,
+            "legal_actions_enumerated": null,
+            "optimal_set_size": 0,
+            "perpetual_check_adjudications": null,
+            "pops": null,
+            "profile_proportions": null,
+            "profile_seconds": null,
+            "proof_depth": 0,
+            "proof_short_circuits": null,
+            "pushes": null,
+            "repetition_adjudications": null,
+            "root_action_certificate_complete": false,
+            "root_action_values": [],
+            "root_branching": null,
+            "root_value": null,
+            "runtime_balanced_derived": null,
+            "runtime_pops": null,
+            "runtime_pushes": null,
+            "solver_version": null,
+            "states_expanded": null,
+            "strong": false,
+            "threshold_tt_hits": null,
+            "tt_entries": null,
+            "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:time_cap"
+          },
+          "tier": "SMALL"
+        },
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 20000
+          },
+          "result": {
+            "authoritative_horizon": null,
+            "blocker": "UNCLASSIFIED_TIME_CAP",
+            "cycle_refusals": null,
+            "effective_max_depth": null,
+            "final_runtime_depth": null,
+            "history_key_mode": null,
+            "legal_actions_enumerated": null,
+            "optimal_set_size": 0,
+            "perpetual_check_adjudications": null,
+            "pops": null,
+            "profile_proportions": null,
+            "profile_seconds": null,
+            "proof_depth": 0,
+            "proof_short_circuits": null,
+            "pushes": null,
+            "repetition_adjudications": null,
+            "root_action_certificate_complete": false,
+            "root_action_values": [],
+            "root_branching": null,
+            "root_value": null,
+            "runtime_balanced_derived": null,
+            "runtime_pops": null,
+            "runtime_pushes": null,
+            "solver_version": null,
+            "states_expanded": null,
+            "strong": false,
+            "threshold_tt_hits": null,
+            "tt_entries": null,
+            "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:time_cap"
+          },
+          "tier": "MEDIUM"
+        },
+        {
+          "limits": {
+            "max_depth": null,
+            "max_nodes": 100000
+          },
+          "result": {
+            "authoritative_horizon": null,
+            "blocker": "UNCLASSIFIED_TIME_CAP",
+            "cycle_refusals": null,
+            "effective_max_depth": null,
+            "final_runtime_depth": null,
+            "history_key_mode": null,
+            "legal_actions_enumerated": null,
+            "optimal_set_size": 0,
+            "perpetual_check_adjudications": null,
+            "pops": null,
+            "profile_proportions": null,
+            "profile_seconds": null,
+            "proof_depth": 0,
+            "proof_short_circuits": null,
+            "pushes": null,
+            "repetition_adjudications": null,
+            "root_action_certificate_complete": false,
+            "root_action_values": [],
+            "root_branching": null,
+            "root_value": null,
+            "runtime_balanced_derived": null,
+            "runtime_pops": null,
+            "runtime_pushes": null,
+            "solver_version": null,
+            "states_expanded": null,
+            "strong": false,
+            "threshold_tt_hits": null,
+            "tt_entries": null,
+            "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:time_cap"
+          },
+          "tier": "LARGE"
+        }
+      ],
+      "construction_family": "semantic_guard_auxiliary",
+      "first_resolving_tier": null,
+      "historical_f23j": {
+        "reason": "REFERENCE_SOLVE_UNRESOLVED:depth_cap under frozen F23J bounds",
+        "status": "UNRESOLVED"
+      },
+      "mechanic_family": "semantic_guard_aux_state",
+      "parameter": [
+        "cannon",
+        0
+      ],
+      "representative_id": "generic-f23m-semantic_fixture_mix-0",
+      "selected_result_tier": "LARGE",
+      "v2_comparison": {
+        "reason": "v3 remained unresolved within the fixed ladder",
+        "status": "DEFERRED"
+      }
+    }
+  ],
+  "selection_frozen_before_results": true,
+  "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+  "summary": {
+    "baseline_sandbox_sha": "d03e9fa6ca9d89cb22555393103d0eacaf9d762d",
+    "benchmark_plan_digest": "cf3d58a9ca5708df43b0f9328b9ce5d2538a6eefda8c496e0408f37e553bba4a",
+    "benchmark_version": "f23m-threshold-runtime-v4r1",
+    "capability_gate_passed": true,
+    "deep_proof_families": 4,
+    "differential_parity_zero_mismatch": true,
+    "dominant_blocker": "COMBINATORIAL_BRANCHING",
+    "exact_root_action_families": 4,
+    "first_resolving_tiers": {
+      "capture_recapture_tactics": "SMALL",
+      "drop_hand_tactics": "MEDIUM",
+      "ordinary_anchor_movement": "SMALL",
+      "promotion_race": "SMALL",
+      "semantic_guard_auxiliary": null
+    },
+    "non_control_families": 5,
+    "non_control_solved_families": 4,
+    "representative_ids": [
+      "generic-f23m-legacy_anchor_mate-0",
+      "generic-f23m-legacy_capture_recapture-0",
+      "generic-f23m-legacy_drop_hand-0",
+      "generic-f23m-auto_promotion_race-0",
+      "generic-f23m-semantic_fixture_mix-0"
+    ],
+    "rows": [
+      {
+        "blocker": null,
+        "construction_family": "ordinary_anchor_movement",
+        "first_resolving_tier": "SMALL",
+        "proof_depth": 6,
+        "representative_id": "generic-f23m-legacy_anchor_mate-0",
+        "root_action_certificate_complete": true,
+        "root_value": "WIN",
+        "runtime_balanced_derived": true
+      },
+      {
+        "blocker": null,
+        "construction_family": "capture_recapture_tactics",
+        "first_resolving_tier": "SMALL",
+        "proof_depth": 6,
+        "representative_id": "generic-f23m-legacy_capture_recapture-0",
+        "root_action_certificate_complete": true,
+        "root_value": "DRAW",
+        "runtime_balanced_derived": true
+      },
+      {
+        "blocker": null,
+        "construction_family": "drop_hand_tactics",
+        "first_resolving_tier": "MEDIUM",
+        "proof_depth": 6,
+        "representative_id": "generic-f23m-legacy_drop_hand-0",
+        "root_action_certificate_complete": true,
+        "root_value": "DRAW",
+        "runtime_balanced_derived": true
+      },
+      {
+        "blocker": null,
+        "construction_family": "promotion_race",
+        "first_resolving_tier": "SMALL",
+        "proof_depth": 6,
+        "representative_id": "generic-f23m-auto_promotion_race-0",
+        "root_action_certificate_complete": true,
+        "root_value": "DRAW",
+        "runtime_balanced_derived": true
+      },
+      {
+        "blocker": "UNCLASSIFIED_TIME_CAP",
+        "construction_family": "semantic_guard_auxiliary",
+        "first_resolving_tier": null,
+        "proof_depth": 0,
+        "representative_id": "generic-f23m-semantic_fixture_mix-0",
+        "root_action_certificate_complete": false,
+        "root_value": null,
+        "runtime_balanced_derived": null
+      }
+    ],
+    "runtime_balanced_families": 4,
+    "selected_next_boundary": "F23N_REFERENCE_PREFERENCE_CORPUS_R5",
+    "target_families_solved": 3
+  }
+}

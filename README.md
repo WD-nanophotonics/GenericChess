@@ -15,6 +15,12 @@ See [WORKFLOW.md](WORKFLOW.md) for the authority and promotion rules. Historical
 audit material removed from the live tree remains available through Git history
 and the index in [docs/archive/HISTORY.md](docs/archive/HISTORY.md).
 
+Courier/Chat is also the authoritative review channel for receipt-bound work.
+When a Chat work order names a generated report, fixture, or other exact
+artifact, that file is a first-class checkpoint deliverable even if the local
+repository defaults normally exclude that category. The exception is limited
+to the named path; unrelated generated output remains excluded.
+
 ## Setup
 
 ```powershell
@@ -42,4 +48,6 @@ generic-chess-flow.cmd finish
 
 Courier-driven work uses `start --mode courier`, `resume`, and `closeout`. The
 project control layer delegates transport to the sibling ChatCourier checkout;
-it does not use Gmail or directly automate a browser.
+it does not use Gmail or directly automate a browser. A Chat-directed artifact
+must be tested, committed, pushed to `origin/sandbox`, and reported by its
+exact full SHA; `.gitignore` is not a veto for that named deliverable.

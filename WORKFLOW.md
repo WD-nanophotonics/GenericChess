@@ -5,12 +5,43 @@ and changes only through an authorized fast-forward promotion. A checkpoint is
 real only after it is tested, committed, pushed to `origin/sandbox`, and the
 local and remote full SHAs match.
 
-The user is always the highest authority. Start one mode and keep it for the
+The user is always the highest authority. In Courier mode, the current
+receipt-bound Chat work order is the next authority, followed by the local
+Agent and repository hygiene defaults. Start one mode and keep it for the
 whole task.
+
+## Authority and artifact publication
+
+Local `.gitignore` entries and “generated/raw/transient evidence stays out of
+Git” rules are defaults for unrequested files, not publication vetoes. When
+the user or the current Chat work order names an exact file for upload, commit,
+or push, that instruction wins. Preserve the exact generated file, include it
+in the checkpoint, and use `git add -f <path>` if needed. The exception is
+path-specific: never widen it to an entire output directory or unrelated
+artifacts.
+
+The review control chain is therefore:
+
+```text
+Chat names exact artifact
+→ generate or preserve that artifact
+→ run required tests and inspect the exact path
+→ stage it (force-add only when the named path is ignored)
+→ commit and publish origin/sandbox
+→ verify local == remote full SHA
+→ close out with that exact SHA
+```
+
+An older ADR or local exclusion remains historical context unless the active
+Chat work order explicitly changes the handling for its named artifact. The
+Agent must still preserve sandbox-only scope, avoid production changes outside
+the work order, and never substitute a different transport or a broader file
+selection.
 
 ## Courier mode
 
-Authority is user, then the current Chat work order, then the local Agent.
+Authority is user, then the current Chat work order, then the local Agent and
+its repository defaults.
 
 The normal bootstrap is simply:
 
