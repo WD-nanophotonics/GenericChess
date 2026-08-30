@@ -26,9 +26,6 @@ CONTROL_FIELDS = {
     "GENERICCHESS_CANDIDATE_SHA",
     "GENERICCHESS_PROMOTION",
 }
-CONTROL_STATUSES = {"CONTINUE", "COMPLETE", "BLOCKED"}
-PROMOTION_VALUES = {"APPROVE", "HOLD"}
-WORK_ORDER_ID = re.compile(r"(?m)^WORK_ORDER_ID=([^\s]+)\s*$")
 
 
 class FlowError(RuntimeError):
@@ -264,23 +261,6 @@ def parse_control_footer(text: str) -> dict[str, str]:
     return found
 
 
-def validate_control_footer(text: str) -> dict[str, str]:
-    control = parse_control_footer(text)
-    missing = CONTROL_FIELDS - control.keys()
-    if missing:
-        raise FlowError(
-            "Courier response is missing control fields: " + ", ".join(sorted(missing))
-        )
-    if control["GENERICCHESS_STATUS"] not in CONTROL_STATUSES:
-        raise FlowError("Courier response has an invalid GENERICCHESS_STATUS")
-    candidate = control["GENERICCHESS_CANDIDATE_SHA"]
-    if candidate != "NONE" and not FULL_SHA.fullmatch(candidate):
-        raise FlowError("Courier response has an invalid GENERICCHESS_CANDIDATE_SHA")
-    if control["GENERICCHESS_PROMOTION"] not in PROMOTION_VALUES:
-        raise FlowError("Courier response has an invalid GENERICCHESS_PROMOTION")
-    return control
-
-
 def update_response_state(root: Path, state: dict[str, Any], event: dict[str, Any]) -> None:
     if event.get("event") in {"response_received", "response_duplicate"}:
         response_path = event.get("response_path")
@@ -289,14 +269,7 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         response = Path(response_path)
         text = response.read_text(encoding="utf-8-sig")
         state["last_response_path"] = str(response)
-        control = validate_control_footer(text)
-        work_order = WORK_ORDER_ID.search(text)
-        state["chat_control"] = control
-        state["last_work_order_id"] = work_order.group(1) if work_order else None
-        state["work_order_active"] = (
-            control["GENERICCHESS_STATUS"] == "CONTINUE" or work_order is not None
-        )
-        state["last_response_sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        state["chat_control"] = parse_control_footer(text)
         state["active_request_directory"] = None
         save_state(root, state)
         print(text)
@@ -437,8 +410,6 @@ def command_start(root: Path, args: argparse.Namespace) -> None:
         "base_sandbox_sha": sha(trees["sandbox"]),
         "tested_shas": {},
         "active_request_directory": None,
-        "work_order_active": False,
-        "last_work_order_id": None,
     }
     work_request_token = getattr(args, "work_request_token", None)
     if work_request_token:
@@ -472,12 +443,7 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
         response_path = state.get("last_response_path")
         if isinstance(response_path, str) and Path(response_path).is_file():
             print(Path(response_path).read_text(encoding="utf-8-sig"))
-            # Older sessions predate the persisted flag; a saved response is
-            # conservatively treated as an active order until reconciled.
-            if state.get("work_order_active", True):
-                print("NEXT_ACTION=execute this work order, then publish and closeout")
-            else:
-                print("NEXT_ACTION=the latest Courier response is terminal; reconcile and finish")
+            print("NEXT_ACTION=execute this work order, then publish and closeout")
             return
         token = state.get("work_request_token")
         if not isinstance(token, str) or not token:
@@ -587,8 +553,6 @@ def command_finish(root: Path, _args: argparse.Namespace) -> None:
         raise FlowError("cannot finish while a Courier request still needs reconciliation")
     if state.get("mode") == "courier":
         status = state.get("chat_control", {}).get("GENERICCHESS_STATUS")
-        if state.get("work_order_active"):
-            raise FlowError("an active Courier work order requires continuation before finish")
         if status not in {"COMPLETE", "BLOCKED"}:
             raise FlowError("Chat has not marked the Courier workflow COMPLETE or BLOCKED")
     state["active"] = False

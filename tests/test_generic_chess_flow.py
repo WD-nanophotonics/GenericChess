@@ -172,57 +172,6 @@ def test_work_redisplays_the_current_order_without_new_courier_request(
     assert "NEXT_ACTION=execute this work order" in output
 
 
-def test_invalid_or_incomplete_control_footer_fails_closed():
-    with pytest.raises(flow.FlowError, match="missing control fields"):
-        flow.validate_control_footer("GENERICCHESS_STATUS=CONTINUE\n")
-    with pytest.raises(flow.FlowError, match="invalid GENERICCHESS_STATUS"):
-        flow.validate_control_footer(
-            "GENERICCHESS_STATUS=STOP\n"
-            "GENERICCHESS_CANDIDATE_SHA=NONE\n"
-            "GENERICCHESS_PROMOTION=HOLD\n"
-        )
-
-
-def test_continue_response_persists_active_work_order(monkeypatch, tmp_path):
-    response = tmp_path / "response.txt"
-    response.write_text(
-        "WORK_ORDER_ID=F23Q\n"
-        "GENERICCHESS_STATUS=CONTINUE\n"
-        "GENERICCHESS_CANDIDATE_SHA=NONE\n"
-        "GENERICCHESS_PROMOTION=HOLD\n",
-        encoding="utf-8",
-    )
-    state = {"active": True, "mode": "courier", "active_request_directory": "request"}
-    saved = {}
-    monkeypatch.setattr(flow, "save_state", lambda _root, value: saved.update(value))
-
-    flow.update_response_state(
-        tmp_path, state, {"event": "response_received", "response_path": str(response)}
-    )
-
-    assert saved["work_order_active"] is True
-    assert saved["last_work_order_id"] == "F23Q"
-    assert saved["active_request_directory"] is None
-
-
-def test_finish_rejects_persisted_continuation(monkeypatch, tmp_path):
-    state = {
-        "active": True,
-        "mode": "courier",
-        "work_order_active": True,
-        "chat_control": {"GENERICCHESS_STATUS": "CONTINUE"},
-    }
-    monkeypatch.setattr(flow, "load_state", lambda _root: state)
-    tree = tmp_path / "tree"
-    tree.mkdir()
-    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": tree, "sandbox": tree})
-    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
-    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
-
-    with pytest.raises(flow.FlowError, match="active Courier work order"):
-        flow.command_finish(tmp_path, SimpleNamespace())
-
-
 def test_work_recovers_session_saved_before_request_directory(monkeypatch, tmp_path):
     state = {
         "active": True,
