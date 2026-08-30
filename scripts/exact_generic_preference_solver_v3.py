@@ -85,7 +85,8 @@ def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int |
     if policy is None:
         support = getattr(compiled, "support", None)
         policy = getattr(support, "repetition_policy", "draw")
-    stats = Counter(states_expanded=0, legal_actions_enumerated=0, pushes=0, pops=0, threshold_tt_hits=0, unresolved_cap_hits=0, cycle_refusals=0, proof_short_circuits=0, repetition_adjudications=0, perpetual_check_adjudications=0)
+    stats = Counter(states_expanded=0, legal_actions_enumerated=0, pushes=0, pops=0, threshold_tt_hits=0, unresolved_cap_hits=0, cycle_refusals=0, proof_short_circuits=0, repetition_adjudications=0, perpetual_check_adjudications=0, max_ply_terminal_adjudications=0)
+    terminal_statuses = Counter()
     table: dict[tuple[object, int], str] = {}
     active: set[tuple[object, int]] = set()
     unresolved = Counter()
@@ -105,6 +106,9 @@ def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int |
         terminal = _status_for_terminal(runtime, root_actor, threshold)
         profile["terminal_seconds"] += time.perf_counter() - started
         if terminal is not None:
+            terminal_statuses[runtime.terminal_status.status.value] += 1
+            if runtime.terminal_status.status is TerminalStatus.MAX_PLY:
+                stats["max_ply_terminal_adjudications"] += 1
             if runtime.terminal_status.status is TerminalStatus.REPETITION:
                 stats["repetition_adjudications"] += 1
             if runtime.terminal_status.status is TerminalStatus.PERPETUAL_CHECK:
@@ -204,7 +208,7 @@ def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int |
     total = profile["total_seconds"] or 1.0
     profile_proportions = {key: value / total for key, value in profile.items() if key != "total_seconds"}
     stats_dict = dict(stats)
-    stats_dict.update({"tt_entries": len(table) if use_tt else 0, "threshold_tt_enabled": use_tt, "history_key_mode": "FULL_HISTORY_REQUIRED" if policy == "continuous_check_loss" else "REPETITION_COUNTS_SUFFICIENT", "authoritative_horizon": max_depth is None, "effective_max_depth": horizon, "runtime_pushes": runtime.pushes, "runtime_pops": runtime.pops, "peak_depth": runtime.peak_depth, "unresolved": dict(unresolved)})
+    stats_dict.update({"tt_entries": len(table) if use_tt else 0, "threshold_tt_enabled": use_tt, "history_key_mode": "FULL_HISTORY_REQUIRED" if policy == "continuous_check_loss" else "REPETITION_COUNTS_SUFFICIENT", "authoritative_horizon": max_depth is None, "effective_max_depth": horizon, "runtime_pushes": runtime.pushes, "runtime_pops": runtime.pops, "peak_depth": runtime.peak_depth, "unresolved": dict(unresolved), "terminal_statuses": dict(sorted(terminal_statuses.items()))})
     stats_dict.update({"solver_version": SOLVER_VERSION, "final_runtime_depth": runtime.depth, "profile_seconds": dict(profile), "profile_proportions": profile_proportions})
     if any(row["value"] is None for row in values):
         return ThresholdSolveResult(False, None, (), tuple(values), stats_dict, next(iter(unresolved), "REFERENCE_SOLVE_UNRESOLVED:unknown"))

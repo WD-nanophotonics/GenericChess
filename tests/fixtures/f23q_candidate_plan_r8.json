@@ -1,0 +1,88 @@
+{
+  "plan_version": "f23q-reference-preference-corpus-r8",
+  "candidate_plan_sha256": "66de96b989128ada43ae72a5ccbd741c2005df63981f003f2d2f486c723e172f",
+  "source_v9_fixture": "evaluator_v2_corpus_v9.json",
+  "solver_contract": {
+    "backend": "exact_generic_preference_solver_v3",
+    "attempt_wall_seconds": 8,
+    "authoritative_horizon": "max_depth=None compiled max_ply",
+    "ladder": [
+      ["SMALL", {"max_nodes": 2000, "max_depth": null}],
+      ["MEDIUM", {"max_nodes": 20000, "max_depth": null}],
+      ["LARGE", {"max_nodes": 100000, "max_depth": null}]
+    ],
+    "horizon_checks": [2, 4],
+    "unknown_horizon_counts_as_non_max_ply": false
+  },
+  "split_algorithm": "HOLDOUT iff int(sha256(F23N-V7|derived_source_lineage_id)[:8],16) mod 4 == 0; otherwise DEVELOPMENT",
+  "lineage_id_derivation": "r8- + sha256(canonical_source_lineage_key)[:16]",
+  "candidate_count": 32,
+  "candidate_order": [
+    "generic-f23q-r8-drop-00", "generic-f23q-r8-drop-01", "generic-f23q-r8-drop-02", "generic-f23q-r8-drop-03", "generic-f23q-r8-drop-04", "generic-f23q-r8-drop-05", "generic-f23q-r8-drop-06", "generic-f23q-r8-drop-07",
+    "generic-f23q-r8-promotion-00", "generic-f23q-r8-promotion-01", "generic-f23q-r8-promotion-02", "generic-f23q-r8-promotion-03", "generic-f23q-r8-promotion-04", "generic-f23q-r8-promotion-05", "generic-f23q-r8-promotion-06", "generic-f23q-r8-promotion-07",
+    "generic-f23q-r8-semantic-00", "generic-f23q-r8-semantic-01", "generic-f23q-r8-semantic-02", "generic-f23q-r8-semantic-03", "generic-f23q-r8-semantic-04", "generic-f23q-r8-semantic-05", "generic-f23q-r8-semantic-06", "generic-f23q-r8-semantic-07",
+    "generic-f23q-r8-anchor-00", "generic-f23q-r8-anchor-01", "generic-f23q-r8-anchor-02", "generic-f23q-r8-anchor-03", "generic-f23q-r8-anchor-04", "generic-f23q-r8-anchor-05", "generic-f23q-r8-anchor-06", "generic-f23q-r8-anchor-07"
+  ],
+  "families": [
+    {
+      "construction_family": "drop_hand_tactics_r8",
+      "mechanic_family": "drop_hand",
+      "builder": "drop_check_choice",
+      "candidates": [
+        {"id":"generic-f23q-r8-drop-00","source_lineage_key":"r8|drop|corner|a","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["...k",".K..","....","...."]},
+        {"id":"generic-f23q-r8-drop-01","source_lineage_key":"r8|drop|corner|b","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["k...","..K.","....","...."]},
+        {"id":"generic-f23q-r8-drop-02","source_lineage_key":"r8|drop|edge|a","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["...k","....",".K..","...."]},
+        {"id":"generic-f23q-r8-drop-03","source_lineage_key":"r8|drop|edge|b","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["k...","....","..K.","...."]},
+        {"id":"generic-f23q-r8-drop-04","source_lineage_key":"r8|drop|offset|a","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["..k.",".K..","....","...."]},
+        {"id":"generic-f23q-r8-drop-05","source_lineage_key":"r8|drop|offset|b","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":[".k..","..K.","....","...."]},
+        {"id":"generic-f23q-r8-drop-06","source_lineage_key":"r8|drop|diagonal|a","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["...k","K...","....","...."]},
+        {"id":"generic-f23q-r8-drop-07","source_lineage_key":"r8|drop|diagonal|b","board_size":4,"max_ply":4,"hands":[[["R",1]],[]],"rows":["k...","...K","....","...."]}
+      ]
+    },
+    {
+      "construction_family": "promotion_terminal_tactics_r8",
+      "mechanic_family": "promotion_choice",
+      "builder": "promotion_optional_choice",
+      "candidates": [
+        {"id":"generic-f23q-r8-promotion-00","source_lineage_key":"r8|promotion|file-a|a","board_size":4,"max_ply":4,"promotion_from":[2,2],"promotion_to":[2,3],"rows":["...k","..P.","....","K..."]},
+        {"id":"generic-f23q-r8-promotion-01","source_lineage_key":"r8|promotion|file-a|b","board_size":4,"max_ply":4,"promotion_from":[2,2],"promotion_to":[2,3],"rows":["...k","..P.","....",".K.."]},
+        {"id":"generic-f23q-r8-promotion-02","source_lineage_key":"r8|promotion|file-b|a","board_size":4,"max_ply":4,"promotion_from":[0,2],"promotion_to":[0,3],"rows":["k...","P...","....","...K"]},
+        {"id":"generic-f23q-r8-promotion-03","source_lineage_key":"r8|promotion|file-b|b","board_size":4,"max_ply":4,"promotion_from":[0,2],"promotion_to":[0,3],"rows":["k...","P...","....","..K."]},
+        {"id":"generic-f23q-r8-promotion-04","source_lineage_key":"r8|promotion|file-c|a","board_size":4,"max_ply":4,"promotion_from":[1,2],"promotion_to":[1,3],"rows":["...k",".P..","....","K..."]},
+        {"id":"generic-f23q-r8-promotion-05","source_lineage_key":"r8|promotion|file-c|b","board_size":4,"max_ply":4,"promotion_from":[1,2],"promotion_to":[1,3],"rows":["...k",".P..","....",".K.."]},
+        {"id":"generic-f23q-r8-promotion-06","source_lineage_key":"r8|promotion|file-d|a","board_size":4,"max_ply":4,"promotion_from":[2,2],"promotion_to":[2,3],"rows":[".k..","..P.","....","K..."]},
+        {"id":"generic-f23q-r8-promotion-07","source_lineage_key":"r8|promotion|file-d|b","board_size":4,"max_ply":4,"promotion_from":[0,2],"promotion_to":[0,3],"rows":["..k.","P...","....","...K"]}
+      ]
+    },
+    {
+      "construction_family": "semantic_guard_tactics_r8",
+      "mechanic_family": "semantic_guard_aux_state",
+      "builder": "semantic_guard_choice",
+      "candidates": [
+        {"id":"generic-f23q-r8-semantic-00","source_lineage_key":"r8|semantic|guard-a|a","board_size":4,"max_ply":4,"semantic_offset":[1,0],"rows":[".C.k",".K..","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-01","source_lineage_key":"r8|semantic|guard-a|b","board_size":4,"max_ply":4,"semantic_offset":[1,0],"rows":["C..k",".K..","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-02","source_lineage_key":"r8|semantic|guard-b|a","board_size":4,"max_ply":4,"semantic_offset":[-1,0],"rows":["..Ck",".K..","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-03","source_lineage_key":"r8|semantic|guard-b|b","board_size":4,"max_ply":4,"semantic_offset":[-1,0],"rows":["..Ck","..K.","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-04","source_lineage_key":"r8|semantic|guard-c|a","board_size":4,"max_ply":4,"semantic_offset":[1,0],"rows":[".C.k","..K.","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-05","source_lineage_key":"r8|semantic|guard-c|b","board_size":4,"max_ply":4,"semantic_offset":[1,0],"rows":["C..k","..K.","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-06","source_lineage_key":"r8|semantic|guard-d|a","board_size":4,"max_ply":4,"semantic_offset":[1,0],"rows":[".C.k","K...","...R","...."]},
+        {"id":"generic-f23q-r8-semantic-07","source_lineage_key":"r8|semantic|guard-d|b","board_size":4,"max_ply":4,"semantic_offset":[-1,0],"rows":["..Ck","K...","...R","...."]}
+      ]
+    },
+    {
+      "construction_family": "ordinary_anchor_tactics_r8",
+      "mechanic_family": "anchor_check_movement",
+      "builder": "ordinary_anchor_choice",
+      "candidates": [
+        {"id":"generic-f23q-r8-anchor-00","source_lineage_key":"r8|anchor|corner|a","board_size":4,"max_ply":4,"rows":["...k",".R..",".K..","...."]},
+        {"id":"generic-f23q-r8-anchor-01","source_lineage_key":"r8|anchor|corner|b","board_size":4,"max_ply":4,"rows":["k...","..R.","..K.","...."]},
+        {"id":"generic-f23q-r8-anchor-02","source_lineage_key":"r8|anchor|edge|a","board_size":4,"max_ply":4,"rows":["...k","R...",".K..","...."]},
+        {"id":"generic-f23q-r8-anchor-03","source_lineage_key":"r8|anchor|edge|b","board_size":4,"max_ply":4,"rows":["k...","...R","..K.","...."]},
+        {"id":"generic-f23q-r8-anchor-04","source_lineage_key":"r8|anchor|diagonal|a","board_size":4,"max_ply":4,"rows":["..k.",".R..","K...","...."]},
+        {"id":"generic-f23q-r8-anchor-05","source_lineage_key":"r8|anchor|diagonal|b","board_size":4,"max_ply":4,"rows":[".k..","..R.","...K","...."]},
+        {"id":"generic-f23q-r8-anchor-06","source_lineage_key":"r8|anchor|guard|a","board_size":4,"max_ply":4,"rows":["...k",".R..","K...","...."]},
+        {"id":"generic-f23q-r8-anchor-07","source_lineage_key":"r8|anchor|guard|b","board_size":4,"max_ply":4,"rows":["k...","..R.","...K","...."]}
+      ]
+    }
+  ]
+}
