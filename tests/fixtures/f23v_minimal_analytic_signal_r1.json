@@ -1,0 +1,6266 @@
+{
+  "admitted_records": [],
+  "child_state_probe": {
+    "history_matches_runtime": true,
+    "parent_history_prefix_preserved": true,
+    "parent_restored_after_pop": true,
+    "ply_matches_runtime": true,
+    "position_matches_runtime": true,
+    "repetition_matches_runtime": true
+  },
+  "coefficient_vector": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "complexity_audit": {
+    "coefficient_fitting": false,
+    "feature_method_count": 5,
+    "fixed_coefficients": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "forbidden_decision_strings": [],
+    "game_specific_branches": false,
+    "per_ruleset_parameter_table": false,
+    "piece_name_logic": false
+  },
+  "corrected_child_state_contract": "position, ply_count, repetition_counts, history, and terminal_status are projected from the pushed SearchPathRuntime child",
+  "cost": {
+    "measured": false,
+    "median_seconds": null,
+    "p95_seconds": null
+  },
+  "coverage": {
+    "by_group": {
+      "MIXED_MECHANIC": {
+        "active_coverage": {
+          "capture_to_hand": 0,
+          "drop": 0,
+          "path_special": 0,
+          "promotion": 0,
+          "remove_from_game": 0
+        },
+        "admitted": 0,
+        "direction_diagnostics": {
+          "attack_defense_and_anchor_safety": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "capability_gated_promotion_drop": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "forcing_capture_recapture": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "material_and_inventory": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "safe_mobility_and_control": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          }
+        },
+        "mean_top_set_precision": 0.0,
+        "optimal_hit": 0.0,
+        "pairwise": {
+          "accuracy": null,
+          "correct": 0,
+          "pair_count": 0,
+          "reversed": 0,
+          "tied": 0
+        },
+        "planned": 10
+      },
+      "SHOGI_LIKE": {
+        "active_coverage": {
+          "capture_to_hand": 0,
+          "drop": 0,
+          "path_special": 0,
+          "promotion": 0,
+          "remove_from_game": 0
+        },
+        "admitted": 0,
+        "direction_diagnostics": {
+          "attack_defense_and_anchor_safety": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "capability_gated_promotion_drop": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "forcing_capture_recapture": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "material_and_inventory": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "safe_mobility_and_control": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          }
+        },
+        "mean_top_set_precision": 0.0,
+        "optimal_hit": 0.0,
+        "pairwise": {
+          "accuracy": null,
+          "correct": 0,
+          "pair_count": 0,
+          "reversed": 0,
+          "tied": 0
+        },
+        "planned": 10
+      },
+      "WESTERN_CHESS_LIKE": {
+        "active_coverage": {
+          "capture_to_hand": 0,
+          "drop": 0,
+          "path_special": 0,
+          "promotion": 0,
+          "remove_from_game": 0
+        },
+        "admitted": 0,
+        "direction_diagnostics": {
+          "attack_defense_and_anchor_safety": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "capability_gated_promotion_drop": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "forcing_capture_recapture": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "material_and_inventory": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          },
+          "safe_mobility_and_control": {
+            "informative_pair_count": 0,
+            "negative": 0,
+            "negative_rate": null,
+            "positive": 0,
+            "positive_rate": null,
+            "zero": 0
+          }
+        },
+        "mean_top_set_precision": 0.0,
+        "optimal_hit": 0.0,
+        "pairwise": {
+          "accuracy": null,
+          "correct": 0,
+          "pair_count": 0,
+          "reversed": 0,
+          "tied": 0
+        },
+        "planned": 10
+      }
+    },
+    "overall": {
+      "admitted": 0,
+      "mean_top_set_precision": 0.0,
+      "optimal_hit": 0.0,
+      "pairwise": {
+        "accuracy": null,
+        "correct": 0,
+        "pair_count": 0,
+        "reversed": 0,
+        "tied": 0
+      }
+    }
+  },
+  "direction_diagnostics": {
+    "MIXED_MECHANIC": {
+      "attack_defense_and_anchor_safety": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "capability_gated_promotion_drop": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "forcing_capture_recapture": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "material_and_inventory": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "safe_mobility_and_control": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      }
+    },
+    "SHOGI_LIKE": {
+      "attack_defense_and_anchor_safety": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "capability_gated_promotion_drop": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "forcing_capture_recapture": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "material_and_inventory": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "safe_mobility_and_control": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      }
+    },
+    "WESTERN_CHESS_LIKE": {
+      "attack_defense_and_anchor_safety": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "capability_gated_promotion_drop": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "forcing_capture_recapture": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "material_and_inventory": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      },
+      "safe_mobility_and_control": {
+        "informative_pair_count": 0,
+        "negative": 0,
+        "negative_rate": null,
+        "positive": 0,
+        "positive_rate": null,
+        "zero": 0
+      }
+    }
+  },
+  "evaluator_v1_baseline": {
+    "available": false,
+    "reason_by_group": {
+      "MIXED_MECHANIC": "no technically valid evaluator-v1 scorer for active semantic group",
+      "SHOGI_LIKE": "no technically valid evaluator-v1 scorer for active semantic group",
+      "WESTERN_CHESS_LIKE": "no technically valid evaluator-v1 scorer for active semantic group"
+    }
+  },
+  "failure_code": "INSUFFICIENT_MECHANIC_ACTIVE_EXACT_COVERAGE",
+  "feature_definitions": {
+    "attack_defense_and_anchor_safety": "bounded signed root-side advantage derived from semantic legal position",
+    "capability_gated_promotion_drop": "bounded signed root-side advantage derived from semantic legal position",
+    "forcing_capture_recapture": "bounded signed root-side advantage derived from semantic legal position",
+    "material_and_inventory": "bounded signed root-side advantage derived from semantic legal position",
+    "safe_mobility_and_control": "bounded signed root-side advantage derived from semantic legal position"
+  },
+  "feature_direction_contradictions": [],
+  "first_pass_artifacts_byte_identical": true,
+  "gates": {
+    "complexity": true,
+    "coverage": false,
+    "feature_direction_contradiction": true,
+    "group_optimal_hit": false,
+    "group_pairwise": false,
+    "group_top_precision": false,
+    "mechanic_active_exact_coverage": false,
+    "overall_optimal_hit": false,
+    "overall_pairwise": false,
+    "overall_top_precision": false,
+    "type_name_invariance": true
+  },
+  "invariance": {
+    "feature_vectors_equal": true,
+    "mechanic_active_renamed": true,
+    "mechanic_active_source": true,
+    "mixed_path_contract_checked": true,
+    "promotion_and_drop_contract_checked": true,
+    "scores_equal": true
+  },
+  "mechanic_active_coverage_gate": {
+    "MIXED_MECHANIC": false,
+    "SHOGI_LIKE": false,
+    "WESTERN_CHESS_LIKE": false
+  },
+  "passed": false,
+  "plan_sha256": "827e0c25baeb5e47f7308a314c7499ebcd9aeb402264a6096d01f216c15e9ccd",
+  "planned_active_coverage": {
+    "MIXED_MECHANIC": {
+      "capture_to_hand": 5,
+      "drop": 0,
+      "path_special": 3,
+      "promotion": 2,
+      "remove_from_game": 5
+    },
+    "SHOGI_LIKE": {
+      "capture_to_hand": 4,
+      "drop": 4,
+      "path_special": 0,
+      "promotion": 2,
+      "remove_from_game": 0
+    },
+    "WESTERN_CHESS_LIKE": {
+      "capture_to_hand": 0,
+      "drop": 0,
+      "path_special": 0,
+      "promotion": 3,
+      "remove_from_game": 4
+    }
+  },
+  "production_changed": false,
+  "recapture_definition": "immediate legal capture pressure plus legal capture onto the authoritative most-recent action target when history provides it",
+  "recapture_probe": {
+    "found": true,
+    "history_increases_signal": true,
+    "with_history": 0.37625000000000003,
+    "without_history": 0.25125000000000003
+  },
+  "records": [
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_to_hand_01",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 0,
+        "planned_mechanics": [
+          "capture_to_hand"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [],
+        "optimal_actions": [],
+        "proof_depth": 0,
+        "root_value": null,
+        "stats": {},
+        "strong": false,
+        "unresolved_reason": "TIME_CAP"
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_to_hand_02",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 1,
+        "planned_mechanics": [
+          "capture_to_hand"
+        ],
+        "rows": [
+          ".pK",
+          "RP.",
+          "k.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_025",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_capture_to_hand",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 9,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_025",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 7235,
+          "max_ply_terminal_adjudications": 1606,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 3918,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.27801996318502975,
+            "proof_bookkeeping_seconds": 0.07619249760511496,
+            "runtime_pop_seconds": 0.00943296877186166,
+            "runtime_push_transition_seconds": 0.5091908850206122,
+            "terminal_seconds": 0.001977236088598756,
+            "tt_key_seconds": 0.10049670478049597,
+            "tt_lookup_seconds": 0.012946137038688993,
+            "tt_store_seconds": 0.011743607509597832
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.5279360003769398,
+            "proof_bookkeeping_seconds": 0.14468300039879978,
+            "runtime_pop_seconds": 0.017912396462634206,
+            "runtime_push_transition_seconds": 0.9669097002479248,
+            "terminal_seconds": 0.003754601289983839,
+            "total_seconds": 1.8989140000194311,
+            "tt_key_seconds": 0.19083459966350347,
+            "tt_lookup_seconds": 0.024583600868936628,
+            "tt_store_seconds": 0.022300100710708648
+          },
+          "proof_short_circuits": 1141,
+          "pushes": 3918,
+          "repetition_adjudications": 147,
+          "root_actions": 4,
+          "runtime_pops": 3918,
+          "runtime_pushes": 3918,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 1901,
+          "terminal_statuses": {
+            "checkmate": 24,
+            "max_ply": 1606,
+            "repetition": 147,
+            "stalemate": 242
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 1901,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_to_hand_03",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 2,
+        "planned_mechanics": [
+          "capture_to_hand"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "R.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [],
+        "optimal_actions": [],
+        "proof_depth": 0,
+        "root_value": null,
+        "stats": {},
+        "strong": false,
+        "unresolved_reason": "TIME_CAP"
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "drop_inventory_01",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "index": 3,
+        "planned_mechanics": [
+          "drop"
+        ],
+        "rows": [
+          "..K",
+          "k..",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": true,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 3,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 4763,
+          "max_ply_terminal_adjudications": 1029,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 3046,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2816427117422438,
+            "proof_bookkeeping_seconds": 0.07153282597190874,
+            "runtime_pop_seconds": 0.011023131122951283,
+            "runtime_push_transition_seconds": 0.5179798998736388,
+            "terminal_seconds": 0.0019002804482365298,
+            "tt_key_seconds": 0.09352357798237855,
+            "tt_lookup_seconds": 0.011602429041486935,
+            "tt_store_seconds": 0.010795143817155406
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.40741770004387945,
+            "proof_bookkeeping_seconds": 0.10347769787767902,
+            "runtime_pop_seconds": 0.015945801336783916,
+            "runtime_push_transition_seconds": 0.74929749884177,
+            "terminal_seconds": 0.00274890084983781,
+            "total_seconds": 1.4465764000196941,
+            "tt_key_seconds": 0.1352890007547103,
+            "tt_lookup_seconds": 0.01678380003431812,
+            "tt_store_seconds": 0.015616000280715525
+          },
+          "proof_short_circuits": 854,
+          "pushes": 3046,
+          "repetition_adjudications": 234,
+          "root_actions": 10,
+          "runtime_pops": 3046,
+          "runtime_pushes": 3046,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 1620,
+          "terminal_statuses": {
+            "checkmate": 31,
+            "max_ply": 1029,
+            "repetition": 234,
+            "stalemate": 134
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 1620,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "drop_inventory_02",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "index": 4,
+        "planned_mechanics": [
+          "drop"
+        ],
+        "rows": [
+          "K.k",
+          "...",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": true,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                0,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 2206,
+          "max_ply_terminal_adjudications": 533,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 1513,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2672617525945866,
+            "proof_bookkeeping_seconds": 0.07539009472669372,
+            "runtime_pop_seconds": 0.009639963644226495,
+            "runtime_push_transition_seconds": 0.5295360485124535,
+            "terminal_seconds": 0.0020413693417251724,
+            "tt_key_seconds": 0.09227886647661304,
+            "tt_lookup_seconds": 0.011789524069104253,
+            "tt_store_seconds": 0.012062380634597256
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.18551750056212768,
+            "proof_bookkeeping_seconds": 0.05233140097698197,
+            "runtime_pop_seconds": 0.006691499787848443,
+            "runtime_push_transition_seconds": 0.3675729999667965,
+            "terminal_seconds": 0.0014169993810355663,
+            "total_seconds": 0.6941415999899618,
+            "tt_key_seconds": 0.06405460002133623,
+            "tt_lookup_seconds": 0.008183599100448191,
+            "tt_store_seconds": 0.00837300019338727
+          },
+          "proof_short_circuits": 422,
+          "pushes": 1513,
+          "repetition_adjudications": 105,
+          "root_actions": 10,
+          "runtime_pops": 1513,
+          "runtime_pushes": 1513,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 805,
+          "terminal_statuses": {
+            "checkmate": 12,
+            "max_ply": 533,
+            "repetition": 105,
+            "stalemate": 59
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 805,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "drop_inventory_03",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "index": 5,
+        "planned_mechanics": [
+          "drop"
+        ],
+        "rows": [
+          "k.K",
+          "R..",
+          "..."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": true,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g16",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                2,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "base_type_id": "P",
+              "geometry_id": "g18",
+              "kind": "semantic_drop",
+              "pattern_id": "sem_01_semantic_drop_inventory",
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 2,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g18",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_01_semantic_drop_inventory",
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 3059,
+          "max_ply_terminal_adjudications": 488,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 1764,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2912410857378179,
+            "proof_bookkeeping_seconds": 0.07839778714489189,
+            "runtime_pop_seconds": 0.010152445377110407,
+            "runtime_push_transition_seconds": 0.4945181656410389,
+            "terminal_seconds": 0.002127230517116367,
+            "tt_key_seconds": 0.09875217163765561,
+            "tt_lookup_seconds": 0.012426893764555564,
+            "tt_store_seconds": 0.012384220179813367
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.23066759976791218,
+            "proof_bookkeeping_seconds": 0.06209230178501457,
+            "runtime_pop_seconds": 0.008040899178013206,
+            "runtime_push_transition_seconds": 0.3916662994888611,
+            "terminal_seconds": 0.001684800605289638,
+            "total_seconds": 0.7920160000212491,
+            "tt_key_seconds": 0.07821329997386783,
+            "tt_lookup_seconds": 0.0098422986920923,
+            "tt_store_seconds": 0.009808500530198216
+          },
+          "proof_short_circuits": 584,
+          "pushes": 1764,
+          "repetition_adjudications": 147,
+          "root_actions": 10,
+          "runtime_pops": 1764,
+          "runtime_pushes": 1764,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 1041,
+          "terminal_statuses": {
+            "checkmate": 2,
+            "max_ply": 488,
+            "repetition": 147,
+            "stalemate": 94
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 1041,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_01",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 6,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          "K..",
+          ".P.",
+          "..k"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": "G",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": "G",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 1507,
+          "max_ply_terminal_adjudications": 228,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 906,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.28469469533663594,
+            "proof_bookkeeping_seconds": 0.07660407686710174,
+            "runtime_pop_seconds": 0.010594590035006056,
+            "runtime_push_transition_seconds": 0.5015688789397998,
+            "terminal_seconds": 0.004650811076238182,
+            "tt_key_seconds": 0.09584374636448705,
+            "tt_lookup_seconds": 0.012447241846227237,
+            "tt_store_seconds": 0.01359595953450395
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.12315029895398766,
+            "proof_bookkeeping_seconds": 0.033136602549348027,
+            "runtime_pop_seconds": 0.0045828986330889165,
+            "runtime_push_transition_seconds": 0.2169634994934313,
+            "terminal_seconds": 0.0020117999520152807,
+            "total_seconds": 0.4325697000022046,
+            "tt_key_seconds": 0.041459100611973554,
+            "tt_lookup_seconds": 0.005384299671277404,
+            "tt_store_seconds": 0.005881200137082487
+          },
+          "proof_short_circuits": 340,
+          "pushes": 906,
+          "repetition_adjudications": 97,
+          "root_actions": 4,
+          "runtime_pops": 906,
+          "runtime_pushes": 906,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 533,
+          "terminal_statuses": {
+            "checkmate": 1,
+            "max_ply": 228,
+            "repetition": 97,
+            "stalemate": 50
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 1,
+          "tt_entries": 533,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_02",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 7,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          ".K.",
+          "P..",
+          "..k"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 705,
+          "max_ply_terminal_adjudications": 121,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 398,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2939922916025247,
+            "proof_bookkeeping_seconds": 0.07907828032763808,
+            "runtime_pop_seconds": 0.008788573271346262,
+            "runtime_push_transition_seconds": 0.49222825936492326,
+            "terminal_seconds": 0.0017084775320947662,
+            "tt_key_seconds": 0.09808866480302507,
+            "tt_lookup_seconds": 0.012339574350164756,
+            "tt_store_seconds": 0.013775878748283078
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.05768069962505251,
+            "proof_bookkeeping_seconds": 0.01551500044297427,
+            "runtime_pop_seconds": 0.0017243004986084998,
+            "runtime_push_transition_seconds": 0.0965742000262253,
+            "terminal_seconds": 0.0003351998748257756,
+            "total_seconds": 0.1961979999905452,
+            "tt_key_seconds": 0.019244799856096506,
+            "tt_lookup_seconds": 0.0024209998082369566,
+            "tt_store_seconds": 0.0027027998585253954
+          },
+          "proof_short_circuits": 177,
+          "pushes": 398,
+          "repetition_adjudications": 19,
+          "root_actions": 3,
+          "runtime_pops": 398,
+          "runtime_pushes": 398,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 256,
+          "terminal_statuses": {
+            "max_ply": 121,
+            "repetition": 19,
+            "stalemate": 5
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 256,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_03",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 8,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          "k.K",
+          "RP.",
+          "..."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": "G",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g16",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 1,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g16",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 1654,
+          "max_ply_terminal_adjudications": 264,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 966,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.28878046550057646,
+            "proof_bookkeeping_seconds": 0.07700467653398274,
+            "runtime_pop_seconds": 0.009416755536297509,
+            "runtime_push_transition_seconds": 0.4926722304122652,
+            "terminal_seconds": 0.0018213612665158054,
+            "tt_key_seconds": 0.10501716790361454,
+            "tt_lookup_seconds": 0.012525527341112919,
+            "tt_store_seconds": 0.012761815505634847
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.1340715002734214,
+            "proof_bookkeeping_seconds": 0.035750799463130534,
+            "runtime_pop_seconds": 0.00437189731746912,
+            "runtime_push_transition_seconds": 0.2287319017923437,
+            "terminal_seconds": 0.0008455995703116059,
+            "total_seconds": 0.46426789998076856,
+            "tt_key_seconds": 0.048756100004538894,
+            "tt_lookup_seconds": 0.005815200274810195,
+            "tt_store_seconds": 0.0059249012847431
+          },
+          "proof_short_circuits": 362,
+          "pushes": 966,
+          "repetition_adjudications": 81,
+          "root_actions": 4,
+          "runtime_pops": 966,
+          "runtime_pushes": 966,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 565,
+          "terminal_statuses": {
+            "checkmate": 2,
+            "max_ply": 264,
+            "repetition": 81,
+            "stalemate": 57
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 565,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_drop_combo",
+        "group": "SHOGI_LIKE",
+        "hands": [
+          [
+            [
+              "P",
+              1
+            ]
+          ],
+          []
+        ],
+        "index": 9,
+        "planned_mechanics": [
+          "capture_to_hand",
+          "drop"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": true,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [],
+        "optimal_actions": [],
+        "proof_depth": 0,
+        "root_value": null,
+        "stats": {},
+        "strong": false,
+        "unresolved_reason": "TIME_CAP"
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_capture_01",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 0,
+        "planned_mechanics": [
+          "remove_from_game"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_semantic_remove_from_game",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 852,
+          "max_ply_terminal_adjudications": 114,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 569,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2742831742371285,
+            "proof_bookkeeping_seconds": 0.0845196996674491,
+            "runtime_pop_seconds": 0.009963580493625678,
+            "runtime_push_transition_seconds": 0.5009858211290548,
+            "terminal_seconds": 0.0018958607265996035,
+            "tt_key_seconds": 0.10315899498471529,
+            "tt_lookup_seconds": 0.01286888058193776,
+            "tt_store_seconds": 0.012323988179489279
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.07782049989327788,
+            "proof_bookkeeping_seconds": 0.02398019965039566,
+            "runtime_pop_seconds": 0.0028268989408388734,
+            "runtime_push_transition_seconds": 0.14214130031177774,
+            "terminal_seconds": 0.0005378996720537543,
+            "total_seconds": 0.28372319997288287,
+            "tt_key_seconds": 0.029268600163049996,
+            "tt_lookup_seconds": 0.003651199978776276,
+            "tt_store_seconds": 0.0034966013627126813
+          },
+          "proof_short_circuits": 212,
+          "pushes": 569,
+          "repetition_adjudications": 65,
+          "root_actions": 5,
+          "runtime_pops": 569,
+          "runtime_pushes": 569,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 362,
+          "terminal_statuses": {
+            "checkmate": 6,
+            "max_ply": 114,
+            "repetition": 65,
+            "stalemate": 25
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 362,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_capture_02",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 1,
+        "planned_mechanics": [
+          "remove_from_game"
+        ],
+        "rows": [
+          ".pK",
+          "RP.",
+          "k.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_017",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_017",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 789,
+          "max_ply_terminal_adjudications": 159,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 599,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.27449664624058046,
+            "proof_bookkeeping_seconds": 0.07833609905207299,
+            "runtime_pop_seconds": 0.009683070227948046,
+            "runtime_push_transition_seconds": 0.5000479790166221,
+            "terminal_seconds": 0.001903258710243513,
+            "tt_key_seconds": 0.1092561164846494,
+            "tt_lookup_seconds": 0.013839182071479347,
+            "tt_store_seconds": 0.012437648196404087
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.07867449941113591,
+            "proof_bookkeeping_seconds": 0.022452199191320688,
+            "runtime_pop_seconds": 0.0027753005851991475,
+            "runtime_push_transition_seconds": 0.14332060143351555,
+            "terminal_seconds": 0.0005455000209622085,
+            "total_seconds": 0.2866136999800801,
+            "tt_key_seconds": 0.03131429979111999,
+            "tt_lookup_seconds": 0.0039664991782046854,
+            "tt_store_seconds": 0.0035648003686219454
+          },
+          "proof_short_circuits": 201,
+          "pushes": 599,
+          "repetition_adjudications": 43,
+          "root_actions": 4,
+          "runtime_pops": 599,
+          "runtime_pushes": 599,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 348,
+          "terminal_statuses": {
+            "checkmate": 12,
+            "max_ply": 159,
+            "repetition": 43,
+            "stalemate": 39
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 348,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_capture_03",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 2,
+        "planned_mechanics": [
+          "remove_from_game"
+        ],
+        "rows": [
+          "p.K",
+          "RP.",
+          "..k"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": "G",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_011",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_011",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 1621,
+          "max_ply_terminal_adjudications": 353,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 1258,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.26027062502684445,
+            "proof_bookkeeping_seconds": 0.07528356893137177,
+            "runtime_pop_seconds": 0.010174302018223638,
+            "runtime_push_transition_seconds": 0.5239428507207932,
+            "terminal_seconds": 0.002017608145743749,
+            "tt_key_seconds": 0.10190369202551922,
+            "tt_lookup_seconds": 0.013418367586700779,
+            "tt_store_seconds": 0.012988985544803296
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.14935569954104722,
+            "proof_bookkeeping_seconds": 0.04320130287669599,
+            "runtime_pop_seconds": 0.0058384998119436204,
+            "runtime_push_transition_seconds": 0.3006633998011239,
+            "terminal_seconds": 0.0011577997938729823,
+            "total_seconds": 0.57384769996861,
+            "tt_key_seconds": 0.05847719928715378,
+            "tt_lookup_seconds": 0.007700099376961589,
+            "tt_store_seconds": 0.0074536994798108935
+          },
+          "proof_short_circuits": 377,
+          "pushes": 1258,
+          "repetition_adjudications": 121,
+          "root_actions": 5,
+          "runtime_pops": 1258,
+          "runtime_pushes": 1258,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 687,
+          "terminal_statuses": {
+            "checkmate": 25,
+            "max_ply": 353,
+            "repetition": 121,
+            "stalemate": 76
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 687,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_01",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 3,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          "K..",
+          ".P.",
+          "..k"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_026",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": "G",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_026",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": "G",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 687,
+          "max_ply_terminal_adjudications": 123,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 562,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.28236661319326856,
+            "proof_bookkeeping_seconds": 0.07780441957713036,
+            "runtime_pop_seconds": 0.009843287474050591,
+            "runtime_push_transition_seconds": 0.49745294648273886,
+            "terminal_seconds": 0.0020192301873511046,
+            "tt_key_seconds": 0.10333551691529642,
+            "tt_lookup_seconds": 0.014231994585847287,
+            "tt_store_seconds": 0.012945991584316856
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.06901040027150884,
+            "proof_bookkeeping_seconds": 0.01901540014659986,
+            "runtime_pop_seconds": 0.0024056994589045644,
+            "runtime_push_transition_seconds": 0.12157750013284385,
+            "terminal_seconds": 0.0004934998578391969,
+            "total_seconds": 0.24440000002505258,
+            "tt_key_seconds": 0.025255200336687267,
+            "tt_lookup_seconds": 0.0034782994771376252,
+            "tt_store_seconds": 0.00316400034353137
+          },
+          "proof_short_circuits": 185,
+          "pushes": 562,
+          "repetition_adjudications": 92,
+          "root_actions": 4,
+          "runtime_pops": 562,
+          "runtime_pushes": 562,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 347,
+          "terminal_statuses": {
+            "max_ply": 123,
+            "repetition": 92,
+            "stalemate": 4
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 347,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_02",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 4,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          ".K.",
+          "P..",
+          "k.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_026",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_026",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 276,
+          "max_ply_terminal_adjudications": 21,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 196,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.3040895768005261,
+            "proof_bookkeeping_seconds": 0.07850099334090237,
+            "runtime_pop_seconds": 0.008153995997259085,
+            "runtime_push_transition_seconds": 0.4645922568149236,
+            "terminal_seconds": 0.001634618432259562,
+            "tt_key_seconds": 0.11908897646020986,
+            "tt_lookup_seconds": 0.01184564966237224,
+            "tt_store_seconds": 0.012093932491547194
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.027067499759141356,
+            "proof_bookkeeping_seconds": 0.006987499014940113,
+            "runtime_pop_seconds": 0.0007258002297021449,
+            "runtime_push_transition_seconds": 0.041354100103490055,
+            "terminal_seconds": 0.000145500001963228,
+            "total_seconds": 0.08901159995002672,
+            "tt_key_seconds": 0.010600300331134349,
+            "tt_lookup_seconds": 0.001054400228895247,
+            "tt_store_seconds": 0.0010765002807602286
+          },
+          "proof_short_circuits": 86,
+          "pushes": 196,
+          "repetition_adjudications": 27,
+          "root_actions": 4,
+          "runtime_pops": 196,
+          "runtime_pushes": 196,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 148,
+          "terminal_statuses": {
+            "max_ply": 21,
+            "repetition": 27,
+            "stalemate": 4
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 148,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_03",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 5,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          "..K",
+          "P..",
+          "k.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 274,
+          "max_ply_terminal_adjudications": 26,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 199,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.31309797387997923,
+            "proof_bookkeeping_seconds": 0.09056543706650981,
+            "runtime_pop_seconds": 0.008979577235971538,
+            "runtime_push_transition_seconds": 0.46034479606037576,
+            "terminal_seconds": 0.0017110914696734155,
+            "tt_key_seconds": 0.09797642512960368,
+            "tt_lookup_seconds": 0.012901051800928322,
+            "tt_store_seconds": 0.014423647356958223
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.027904700371436775,
+            "proof_bookkeeping_seconds": 0.00807159929536283,
+            "runtime_pop_seconds": 0.0008003003313206136,
+            "runtime_push_transition_seconds": 0.04102799977408722,
+            "terminal_seconds": 0.0001525001716800034,
+            "total_seconds": 0.08912449999479577,
+            "tt_key_seconds": 0.008732099900953472,
+            "tt_lookup_seconds": 0.0011497997911646962,
+            "tt_store_seconds": 0.0012855003587901592
+          },
+          "proof_short_circuits": 87,
+          "pushes": 199,
+          "repetition_adjudications": 25,
+          "root_actions": 3,
+          "runtime_pops": 199,
+          "runtime_pushes": 199,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 149,
+          "terminal_statuses": {
+            "max_ply": 26,
+            "repetition": 25,
+            "stalemate": 2
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 149,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_promotion_01",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 6,
+        "planned_mechanics": [
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "R.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 878,
+          "max_ply_terminal_adjudications": 131,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 603,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.28832711879481454,
+            "proof_bookkeeping_seconds": 0.08403712078174982,
+            "runtime_pop_seconds": 0.013130813387848588,
+            "runtime_push_transition_seconds": 0.4781591108963141,
+            "terminal_seconds": 0.0017692300636393682,
+            "tt_key_seconds": 0.10623546207333899,
+            "tt_lookup_seconds": 0.01374851278903154,
+            "tt_store_seconds": 0.01459263121326304
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.08009859989397228,
+            "proof_bookkeeping_seconds": 0.023345898720435798,
+            "runtime_pop_seconds": 0.003647800360340625,
+            "runtime_push_transition_seconds": 0.13283480051904917,
+            "terminal_seconds": 0.0004915002500638366,
+            "total_seconds": 0.27780459995847195,
+            "tt_key_seconds": 0.029512700042687356,
+            "tt_lookup_seconds": 0.0038194000953808427,
+            "tt_store_seconds": 0.00405390007654205
+          },
+          "proof_short_circuits": 226,
+          "pushes": 603,
+          "repetition_adjudications": 59,
+          "root_actions": 4,
+          "runtime_pops": 603,
+          "runtime_pushes": 603,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 384,
+          "terminal_statuses": {
+            "checkmate": 5,
+            "max_ply": 131,
+            "repetition": 59,
+            "stalemate": 27
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 384,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_promotion_02",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 7,
+        "planned_mechanics": [
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          "p.K",
+          "kP.",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 1,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": "G",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 1,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 1,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g13",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_020",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": "G",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 1719,
+          "max_ply_terminal_adjudications": 335,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 1235,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.25892298751394255,
+            "proof_bookkeeping_seconds": 0.08207547455795922,
+            "runtime_pop_seconds": 0.008906079308593431,
+            "runtime_push_transition_seconds": 0.5179525980679534,
+            "terminal_seconds": 0.001815322569266209,
+            "tt_key_seconds": 0.10339910504845036,
+            "tt_lookup_seconds": 0.013431923914871031,
+            "tt_store_seconds": 0.013496509018963796
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.15274459967622533,
+            "proof_bookkeeping_seconds": 0.048418201971799135,
+            "runtime_pop_seconds": 0.005253900133538991,
+            "runtime_push_transition_seconds": 0.30555209872545674,
+            "terminal_seconds": 0.0010709003545343876,
+            "total_seconds": 0.5899229000206105,
+            "tt_key_seconds": 0.06099749990971759,
+            "tt_lookup_seconds": 0.007923799508716911,
+            "tt_store_seconds": 0.007961899740621448
+          },
+          "proof_short_circuits": 389,
+          "pushes": 1235,
+          "repetition_adjudications": 103,
+          "root_actions": 6,
+          "runtime_pops": 1235,
+          "runtime_pushes": 1235,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 690,
+          "terminal_statuses": {
+            "checkmate": 25,
+            "max_ply": 335,
+            "repetition": 103,
+            "stalemate": 88
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 690,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "promotion_04",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 8,
+        "planned_mechanics": [
+          "promotion"
+        ],
+        "rows": [
+          "K..",
+          "P..",
+          "..k"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_026",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_026",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 47,
+          "max_ply_terminal_adjudications": 3,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 37,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.24616841369873296,
+            "proof_bookkeeping_seconds": 0.08173174923200788,
+            "runtime_pop_seconds": 0.012370335826544255,
+            "runtime_push_transition_seconds": 0.42152347435596954,
+            "terminal_seconds": 0.0016549377663191778,
+            "tt_key_seconds": 0.21708222556604673,
+            "tt_lookup_seconds": 0.009908770314402583,
+            "tt_store_seconds": 0.009560093239976872
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.004730199929326773,
+            "proof_bookkeeping_seconds": 0.0015705000841990113,
+            "runtime_pop_seconds": 0.00023769971448928118,
+            "runtime_push_transition_seconds": 0.008099700033199042,
+            "terminal_seconds": 3.180012572556734e-05,
+            "total_seconds": 0.019215300038922578,
+            "tt_key_seconds": 0.004171300097368658,
+            "tt_lookup_seconds": 0.00019039999460801482,
+            "tt_store_seconds": 0.00018370006000623107
+          },
+          "proof_short_circuits": 14,
+          "pushes": 37,
+          "repetition_adjudications": 6,
+          "root_actions": 1,
+          "runtime_pops": 37,
+          "runtime_pushes": 37,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 27,
+          "terminal_statuses": {
+            "max_ply": 3,
+            "repetition": 6,
+            "stalemate": 2
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 27,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_capture_04",
+        "group": "WESTERN_CHESS_LIKE",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 9,
+        "planned_mechanics": [
+          "remove_from_game"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "R.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_020",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 878,
+          "max_ply_terminal_adjudications": 131,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 603,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2873051511903379,
+            "proof_bookkeeping_seconds": 0.08097197516645684,
+            "runtime_pop_seconds": 0.00885313404303851,
+            "runtime_push_transition_seconds": 0.47949052247185087,
+            "terminal_seconds": 0.0017886961505030076,
+            "tt_key_seconds": 0.11112091117566408,
+            "tt_lookup_seconds": 0.015446918576623442,
+            "tt_store_seconds": 0.01502269122552534
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.08045590022811666,
+            "proof_bookkeeping_seconds": 0.022675100422929972,
+            "runtime_pop_seconds": 0.0024791997857391834,
+            "runtime_push_transition_seconds": 0.13427479972597212,
+            "terminal_seconds": 0.0005009000306017697,
+            "total_seconds": 0.28003639995586127,
+            "tt_key_seconds": 0.031117899925448,
+            "tt_lookup_seconds": 0.004325699468608946,
+            "tt_store_seconds": 0.0042069003684446216
+          },
+          "proof_short_circuits": 226,
+          "pushes": 603,
+          "repetition_adjudications": 59,
+          "root_actions": 4,
+          "runtime_pops": 603,
+          "runtime_pushes": 603,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 384,
+          "terminal_statuses": {
+            "checkmate": 5,
+            "max_ply": 131,
+            "repetition": 59,
+            "stalemate": 27
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 384,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_drop_01",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 0,
+        "planned_mechanics": [
+          "capture_to_hand"
+        ],
+        "rows": [
+          ".pK",
+          "kP.",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [],
+        "optimal_actions": [],
+        "proof_depth": 0,
+        "root_value": null,
+        "stats": {},
+        "strong": false,
+        "unresolved_reason": "TIME_CAP"
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_drop_02",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 1,
+        "planned_mechanics": [
+          "capture_to_hand"
+        ],
+        "rows": [
+          ".pK",
+          "RP.",
+          "k.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_043",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_capture_to_hand",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 9,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_043",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 7235,
+          "max_ply_terminal_adjudications": 1606,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 3918,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2878026307505344,
+            "proof_bookkeeping_seconds": 0.06989557039806504,
+            "runtime_pop_seconds": 0.009596993939694726,
+            "runtime_push_transition_seconds": 0.5186499686110042,
+            "terminal_seconds": 0.0024348079248447574,
+            "tt_key_seconds": 0.0902273081183049,
+            "tt_lookup_seconds": 0.010759318189275517,
+            "tt_store_seconds": 0.01063340206827645
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.6137004006304778,
+            "proof_bookkeeping_seconds": 0.14904290292179212,
+            "runtime_pop_seconds": 0.02046429878100753,
+            "runtime_push_transition_seconds": 1.1059512996580452,
+            "terminal_seconds": 0.005191900418139994,
+            "total_seconds": 2.1323655000305735,
+            "tt_key_seconds": 0.19239759899210185,
+            "tt_lookup_seconds": 0.022942798910662532,
+            "tt_store_seconds": 0.022674299718346447
+          },
+          "proof_short_circuits": 1141,
+          "pushes": 3918,
+          "repetition_adjudications": 147,
+          "root_actions": 4,
+          "runtime_pops": 3918,
+          "runtime_pushes": 3918,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 1901,
+          "terminal_statuses": {
+            "checkmate": 24,
+            "max_ply": 1606,
+            "repetition": 147,
+            "stalemate": 242
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 1901,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "capture_drop_03",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 2,
+        "planned_mechanics": [
+          "capture_to_hand",
+          "remove_from_game"
+        ],
+        "rows": [
+          "r.K",
+          "kP.",
+          "X.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": "G",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "LOSS"
+          },
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "sem_02_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": "G",
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "X",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g17",
+            "kind": "semantic_board",
+            "pattern_id": "sem_02_semantic_remove_from_game",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 2623,
+          "max_ply_terminal_adjudications": 481,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 1642,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2941932870866762,
+            "proof_bookkeeping_seconds": 0.07268071102846575,
+            "runtime_pop_seconds": 0.010652067660850053,
+            "runtime_push_transition_seconds": 0.49120374227374786,
+            "terminal_seconds": 0.0017192014302610313,
+            "tt_key_seconds": 0.10094502122035828,
+            "tt_lookup_seconds": 0.012165073019873667,
+            "tt_store_seconds": 0.016440896279767216
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.26994519971776754,
+            "proof_bookkeeping_seconds": 0.06669019965920597,
+            "runtime_pop_seconds": 0.009774099744390696,
+            "runtime_push_transition_seconds": 0.4507176000624895,
+            "terminal_seconds": 0.0015775008942000568,
+            "total_seconds": 0.9175776999909431,
+            "tt_key_seconds": 0.09262490039691329,
+            "tt_lookup_seconds": 0.011162399721797556,
+            "tt_store_seconds": 0.015085799794178456
+          },
+          "proof_short_circuits": 676,
+          "pushes": 1642,
+          "repetition_adjudications": 104,
+          "root_actions": 4,
+          "runtime_pops": 1642,
+          "runtime_pushes": 1642,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 962,
+          "terminal_statuses": {
+            "checkmate": 11,
+            "max_ply": 481,
+            "repetition": 104,
+            "stalemate": 88
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 962,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_promotion_01",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 3,
+        "planned_mechanics": [
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          ".xK",
+          "kX.",
+          "..R"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "sem_02_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "X",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g17",
+            "kind": "semantic_board",
+            "pattern_id": "sem_02_semantic_remove_from_game",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 1522,
+          "max_ply_terminal_adjudications": 311,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 1118,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2877066705398759,
+            "proof_bookkeeping_seconds": 0.07077352877208128,
+            "runtime_pop_seconds": 0.008640257819457394,
+            "runtime_push_transition_seconds": 0.5157595151825315,
+            "terminal_seconds": 0.0018795150762948595,
+            "tt_key_seconds": 0.09218411036508879,
+            "tt_lookup_seconds": 0.011375518575931831,
+            "tt_store_seconds": 0.01168088366873849
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.16780060000019148,
+            "proof_bookkeeping_seconds": 0.041277599055320024,
+            "runtime_pop_seconds": 0.00503930076956749,
+            "runtime_push_transition_seconds": 0.30080900085158646,
+            "terminal_seconds": 0.0010961989755742252,
+            "total_seconds": 0.5832350000273436,
+            "tt_key_seconds": 0.05376499961130321,
+            "tt_lookup_seconds": 0.006634600576944649,
+            "tt_store_seconds": 0.006812700186856091
+          },
+          "proof_short_circuits": 346,
+          "pushes": 1118,
+          "repetition_adjudications": 98,
+          "root_actions": 5,
+          "runtime_pops": 1118,
+          "runtime_pushes": 1118,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 621,
+          "terminal_statuses": {
+            "checkmate": 30,
+            "max_ply": 311,
+            "repetition": 98,
+            "stalemate": 60
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 621,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_promotion_02",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 4,
+        "planned_mechanics": [
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          ".xK",
+          "RX.",
+          "k.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_043",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "R",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "sem_02_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_043",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 686,
+          "max_ply_terminal_adjudications": 114,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 503,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2903324633481138,
+            "proof_bookkeeping_seconds": 0.07029172749712691,
+            "runtime_pop_seconds": 0.008576720305144257,
+            "runtime_push_transition_seconds": 0.5055712242376947,
+            "terminal_seconds": 0.0018033364761195039,
+            "tt_key_seconds": 0.09959800183599217,
+            "tt_lookup_seconds": 0.012263705061869173,
+            "tt_store_seconds": 0.01156282123793946
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.07410709996474907,
+            "proof_bookkeeping_seconds": 0.017941900179721415,
+            "runtime_pop_seconds": 0.0021892001386731863,
+            "runtime_push_transition_seconds": 0.1290465999627486,
+            "terminal_seconds": 0.00046030001249164343,
+            "total_seconds": 0.2552490999805741,
+            "tt_key_seconds": 0.02542230032850057,
+            "tt_lookup_seconds": 0.003130299679469317,
+            "tt_store_seconds": 0.0029513997142203152
+          },
+          "proof_short_circuits": 177,
+          "pushes": 503,
+          "repetition_adjudications": 51,
+          "root_actions": 4,
+          "runtime_pops": 503,
+          "runtime_pushes": 503,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 307,
+          "terminal_statuses": {
+            "checkmate": 9,
+            "max_ply": 114,
+            "repetition": 51,
+            "stalemate": 24
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 307,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "remove_promotion_03",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 5,
+        "planned_mechanics": [
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          "K..",
+          ".X.",
+          "..k"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": true,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                0,
+                2
+              ],
+              "geometry_id": "g7",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": "XG",
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "WIN"
+          },
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "X",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g17",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_018",
+            "promotion_target_id": "XG",
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "WIN",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 418,
+          "max_ply_terminal_adjudications": 63,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 305,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.26633610440694905,
+            "proof_bookkeeping_seconds": 0.0689416693658061,
+            "runtime_pop_seconds": 0.009338090148954998,
+            "runtime_push_transition_seconds": 0.560491929352111,
+            "terminal_seconds": 0.0021483818654752847,
+            "tt_key_seconds": 0.07370377682495322,
+            "tt_lookup_seconds": 0.009856872663171742,
+            "tt_store_seconds": 0.009183175372578657
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.04435660026501864,
+            "proof_bookkeeping_seconds": 0.011481800698675215,
+            "runtime_pop_seconds": 0.0015552000841125846,
+            "runtime_push_transition_seconds": 0.0933463997207582,
+            "terminal_seconds": 0.00035779946483671665,
+            "total_seconds": 0.16654369997559115,
+            "tt_key_seconds": 0.012274899694602937,
+            "tt_lookup_seconds": 0.0016416000435128808,
+            "tt_store_seconds": 0.0015294000040739775
+          },
+          "proof_short_circuits": 103,
+          "pushes": 305,
+          "repetition_adjudications": 44,
+          "root_actions": 4,
+          "runtime_pops": 305,
+          "runtime_pushes": 305,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 178,
+          "terminal_statuses": {
+            "checkmate": 9,
+            "max_ply": 63,
+            "repetition": 44,
+            "stalemate": 13
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 178,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "path_special_01",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 6,
+        "planned_mechanics": [
+          "path_special",
+          "capture_to_hand"
+        ],
+        "rows": [
+          "r.k",
+          "P..",
+          "Z.K"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": true,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                2,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_042",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "LOSS"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_capture_to_hand",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "Z",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g22",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_030",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "LOSS"
+          },
+          {
+            "action": {
+              "actor_type_id": "Z",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g24",
+              "kind": "semantic_board",
+              "pattern_id": "sem_03_semantic_path_restricted",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_semantic_capture_to_hand",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "Z",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g24",
+            "kind": "semantic_board",
+            "pattern_id": "sem_03_semantic_path_restricted",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 9458,
+          "max_ply_terminal_adjudications": 1564,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 4149,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.3362239933434351,
+            "proof_bookkeeping_seconds": 0.07247092776904485,
+            "runtime_pop_seconds": 0.009288146798527496,
+            "runtime_push_transition_seconds": 0.4642608491724705,
+            "terminal_seconds": 0.001886248315541228,
+            "tt_key_seconds": 0.09285234585965078,
+            "tt_lookup_seconds": 0.011317846830151034,
+            "tt_store_seconds": 0.011699641911179014
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.7617517018807121,
+            "proof_bookkeeping_seconds": 0.16419069922994822,
+            "runtime_pop_seconds": 0.021043297834694386,
+            "runtime_push_transition_seconds": 1.0518330011400394,
+            "terminal_seconds": 0.004273498896509409,
+            "total_seconds": 2.2656078000436537,
+            "tt_key_seconds": 0.21036699903197587,
+            "tt_lookup_seconds": 0.025641802058089525,
+            "tt_store_seconds": 0.026506799971684813
+          },
+          "proof_short_circuits": 1522,
+          "pushes": 4149,
+          "repetition_adjudications": 288,
+          "root_actions": 4,
+          "runtime_pops": 4149,
+          "runtime_pushes": 4149,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 2190,
+          "terminal_statuses": {
+            "checkmate": 41,
+            "max_ply": 1564,
+            "repetition": 288,
+            "stalemate": 70
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 2190,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "path_special_02",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 7,
+        "planned_mechanics": [
+          "path_special",
+          "capture_to_hand"
+        ],
+        "rows": [
+          "r.k",
+          "P..",
+          "ZK."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": true,
+        "promotion": false,
+        "remove_from_game": false
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "geometry_id": "g10",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_004",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "LOSS"
+          },
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_capture_to_hand",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "Z",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g24",
+              "kind": "semantic_board",
+              "pattern_id": "sem_03_semantic_path_restricted",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_semantic_capture_to_hand",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "Z",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g24",
+            "kind": "semantic_board",
+            "pattern_id": "sem_03_semantic_path_restricted",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 6207,
+          "max_ply_terminal_adjudications": 931,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 2593,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.3379269937747293,
+            "proof_bookkeeping_seconds": 0.07414925779335393,
+            "runtime_pop_seconds": 0.00886125783137445,
+            "runtime_push_transition_seconds": 0.4585056951921521,
+            "terminal_seconds": 0.0021904417224226517,
+            "tt_key_seconds": 0.09508743633582435,
+            "tt_lookup_seconds": 0.011387168915236398,
+            "tt_store_seconds": 0.011891748434906797
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.49217839969787747,
+            "proof_bookkeeping_seconds": 0.10799570236122236,
+            "runtime_pop_seconds": 0.012906100368127227,
+            "runtime_push_transition_seconds": 0.667796901310794,
+            "terminal_seconds": 0.0031902988557703793,
+            "total_seconds": 1.4564637000439689,
+            "tt_key_seconds": 0.13849139935337007,
+            "tt_lookup_seconds": 0.016584998171310872,
+            "tt_store_seconds": 0.01731989992549643
+          },
+          "proof_short_circuits": 946,
+          "pushes": 2593,
+          "repetition_adjudications": 226,
+          "root_actions": 3,
+          "runtime_pops": 2593,
+          "runtime_pushes": 2593,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 1392,
+          "terminal_statuses": {
+            "checkmate": 28,
+            "max_ply": 931,
+            "repetition": 226,
+            "stalemate": 19
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 1392,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "mixed_all_01",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 8,
+        "planned_mechanics": [
+          "path_special",
+          "capture_to_hand",
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          "r.k",
+          "Pp.",
+          "ZXK"
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": true,
+        "drop": false,
+        "path_special": true,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "P",
+              "from": [
+                0,
+                1
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_semantic_capture_to_hand",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                1,
+                0
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "sem_02_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            "proof_depth": 11,
+            "value": "LOSS"
+          },
+          {
+            "action": {
+              "actor_type_id": "Z",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g24",
+              "kind": "semantic_board",
+              "pattern_id": "sem_03_semantic_path_restricted",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_semantic_capture_to_hand",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "Z",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g24",
+            "kind": "semantic_board",
+            "pattern_id": "sem_03_semantic_path_restricted",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 11874,
+          "max_ply_terminal_adjudications": 3220,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 6122,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.2942517276119845,
+            "proof_bookkeeping_seconds": 0.0669025366394378,
+            "runtime_pop_seconds": 0.00965023658031736,
+            "runtime_push_transition_seconds": 0.5210064015129107,
+            "terminal_seconds": 0.0023109608822922127,
+            "tt_key_seconds": 0.08590674071832147,
+            "tt_lookup_seconds": 0.009852488275006505,
+            "tt_store_seconds": 0.01011890777972951
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.980877099558711,
+            "proof_bookkeeping_seconds": 0.22301709704333916,
+            "runtime_pop_seconds": 0.03216870175674558,
+            "runtime_push_transition_seconds": 1.7367553017102182,
+            "terminal_seconds": 0.007703501440118998,
+            "total_seconds": 3.333462500013411,
+            "tt_key_seconds": 0.2863668986828998,
+            "tt_lookup_seconds": 0.032842900196556,
+            "tt_store_seconds": 0.03373099962482229
+          },
+          "proof_short_circuits": 1597,
+          "pushes": 6122,
+          "repetition_adjudications": 249,
+          "root_actions": 3,
+          "runtime_pops": 6122,
+          "runtime_pushes": 6122,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 2503,
+          "terminal_statuses": {
+            "checkmate": 54,
+            "max_ply": 3220,
+            "repetition": 249,
+            "stalemate": 99
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 2503,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    },
+    {
+      "abstract": null,
+      "admitted": false,
+      "candidate": {
+        "board_size": 3,
+        "descriptor": "mixed_all_02",
+        "group": "MIXED_MECHANIC",
+        "hands": [
+          [],
+          []
+        ],
+        "index": 9,
+        "planned_mechanics": [
+          "path_special",
+          "remove_from_game",
+          "promotion"
+        ],
+        "rows": [
+          ".xK",
+          "kXP",
+          "Z.."
+        ],
+        "side_to_move": 0
+      },
+      "planned_active_mechanics": {
+        "capture_to_hand": false,
+        "drop": false,
+        "path_special": false,
+        "promotion": false,
+        "remove_from_game": true
+      },
+      "v3": {
+        "action_values": [
+          {
+            "action": {
+              "actor_type_id": "X",
+              "from": [
+                1,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "sem_02_semantic_remove_from_game",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                2
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "Z",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g22",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_030",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          },
+          {
+            "action": {
+              "actor_type_id": "Z",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g22",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_030",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            "proof_depth": 11,
+            "value": "DRAW"
+          }
+        ],
+        "optimal_actions": [
+          {
+            "actor_type_id": "X",
+            "from": [
+              1,
+              1
+            ],
+            "geometry_id": "g17",
+            "kind": "semantic_board",
+            "pattern_id": "sem_02_semantic_remove_from_game",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "Z",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "Z",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "proof_depth": 11,
+        "root_value": "DRAW",
+        "stats": {
+          "authoritative_horizon": true,
+          "cycle_refusals": 0,
+          "effective_max_depth": 11,
+          "final_runtime_depth": 0,
+          "history_key_mode": "REPETITION_COUNTS_SUFFICIENT",
+          "legal_actions_enumerated": 781,
+          "max_ply_terminal_adjudications": 84,
+          "peak_depth": 11,
+          "perpetual_check_adjudications": 0,
+          "pops": 519,
+          "profile_proportions": {
+            "legal_actions_seconds": 0.3056041470014754,
+            "proof_bookkeeping_seconds": 0.07646362566938499,
+            "runtime_pop_seconds": 0.008371601904463555,
+            "runtime_push_transition_seconds": 0.4762002365877557,
+            "terminal_seconds": 0.001635879856894376,
+            "tt_key_seconds": 0.10368804166847889,
+            "tt_lookup_seconds": 0.014280376743024615,
+            "tt_store_seconds": 0.013756090568522502
+          },
+          "profile_seconds": {
+            "legal_actions_seconds": 0.08825050137238577,
+            "proof_bookkeeping_seconds": 0.022080699389334768,
+            "runtime_pop_seconds": 0.0024175001308321953,
+            "runtime_push_transition_seconds": 0.13751419947948307,
+            "terminal_seconds": 0.00047239940613508224,
+            "total_seconds": 0.28877389995614067,
+            "tt_key_seconds": 0.029942400171421468,
+            "tt_lookup_seconds": 0.004123800084926188,
+            "tt_store_seconds": 0.003972399921622127
+          },
+          "proof_short_circuits": 198,
+          "pushes": 519,
+          "repetition_adjudications": 47,
+          "root_actions": 3,
+          "runtime_pops": 519,
+          "runtime_pushes": 519,
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1",
+          "states_expanded": 338,
+          "terminal_statuses": {
+            "checkmate": 1,
+            "max_ply": 84,
+            "repetition": 47,
+            "stalemate": 52
+          },
+          "threshold_tt_enabled": true,
+          "threshold_tt_hits": 0,
+          "tt_entries": 338,
+          "unresolved": {},
+          "unresolved_cap_hits": 0
+        },
+        "strong": true,
+        "unresolved_reason": null
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selected_boundary": "F23W_EVALUATOR_SUPERVISION_STRATEGY_REASSESSMENT_R2",
+  "semantic_attack_control_contract": "semantic compiled rulesets use SemanticEngine legal/attack/check APIs; legacy movement is used only for static profile normalization",
+  "strict_pairwise_contract": "one unordered unequal-WDL pair; analytic tie is incorrect",
+  "terminal_override_contract": "winner root actor=WIN, winner opponent=LOSS, winner None=DRAW",
+  "terminal_probe": {
+    "checkmate_winner": true,
+    "perpetual_winner": true,
+    "stalemate_draw": true
+  }
+}

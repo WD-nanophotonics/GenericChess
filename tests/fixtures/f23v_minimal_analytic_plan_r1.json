@@ -1,0 +1,644 @@
+{
+  "candidate_count": 30,
+  "candidate_order": [
+    {
+      "board_size": 3,
+      "descriptor": "capture_to_hand_01",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 0,
+      "planned_mechanics": [
+        "capture_to_hand"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "capture_to_hand_02",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 1,
+      "planned_mechanics": [
+        "capture_to_hand"
+      ],
+      "rows": [
+        ".pK",
+        "RP.",
+        "k.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "capture_to_hand_03",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 2,
+      "planned_mechanics": [
+        "capture_to_hand"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "R.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "drop_inventory_01",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [
+          [
+            "P",
+            1
+          ]
+        ],
+        []
+      ],
+      "index": 3,
+      "planned_mechanics": [
+        "drop"
+      ],
+      "rows": [
+        "..K",
+        "k..",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "drop_inventory_02",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [
+          [
+            "P",
+            1
+          ]
+        ],
+        []
+      ],
+      "index": 4,
+      "planned_mechanics": [
+        "drop"
+      ],
+      "rows": [
+        "K.k",
+        "...",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "drop_inventory_03",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [
+          [
+            "P",
+            1
+          ]
+        ],
+        []
+      ],
+      "index": 5,
+      "planned_mechanics": [
+        "drop"
+      ],
+      "rows": [
+        "k.K",
+        "R..",
+        "..."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_01",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 6,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        "K..",
+        ".P.",
+        "..k"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_02",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 7,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        ".K.",
+        "P..",
+        "..k"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_03",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 8,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        "k.K",
+        "RP.",
+        "..."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "capture_drop_combo",
+      "group": "SHOGI_LIKE",
+      "hands": [
+        [
+          [
+            "P",
+            1
+          ]
+        ],
+        []
+      ],
+      "index": 9,
+      "planned_mechanics": [
+        "capture_to_hand",
+        "drop"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_capture_01",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 0,
+      "planned_mechanics": [
+        "remove_from_game"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_capture_02",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 1,
+      "planned_mechanics": [
+        "remove_from_game"
+      ],
+      "rows": [
+        ".pK",
+        "RP.",
+        "k.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_capture_03",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 2,
+      "planned_mechanics": [
+        "remove_from_game"
+      ],
+      "rows": [
+        "p.K",
+        "RP.",
+        "..k"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_01",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 3,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        "K..",
+        ".P.",
+        "..k"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_02",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 4,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        ".K.",
+        "P..",
+        "k.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_03",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 5,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        "..K",
+        "P..",
+        "k.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_promotion_01",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 6,
+      "planned_mechanics": [
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "R.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_promotion_02",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 7,
+      "planned_mechanics": [
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        "p.K",
+        "kP.",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "promotion_04",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 8,
+      "planned_mechanics": [
+        "promotion"
+      ],
+      "rows": [
+        "K..",
+        "P..",
+        "..k"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_capture_04",
+      "group": "WESTERN_CHESS_LIKE",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 9,
+      "planned_mechanics": [
+        "remove_from_game"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "R.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "capture_drop_01",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 0,
+      "planned_mechanics": [
+        "capture_to_hand"
+      ],
+      "rows": [
+        ".pK",
+        "kP.",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "capture_drop_02",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 1,
+      "planned_mechanics": [
+        "capture_to_hand"
+      ],
+      "rows": [
+        ".pK",
+        "RP.",
+        "k.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "capture_drop_03",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 2,
+      "planned_mechanics": [
+        "capture_to_hand",
+        "remove_from_game"
+      ],
+      "rows": [
+        "r.K",
+        "kP.",
+        "X.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_promotion_01",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 3,
+      "planned_mechanics": [
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        ".xK",
+        "kX.",
+        "..R"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_promotion_02",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 4,
+      "planned_mechanics": [
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        ".xK",
+        "RX.",
+        "k.."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "remove_promotion_03",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 5,
+      "planned_mechanics": [
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        "K..",
+        ".X.",
+        "..k"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "path_special_01",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 6,
+      "planned_mechanics": [
+        "path_special",
+        "capture_to_hand"
+      ],
+      "rows": [
+        "r.k",
+        "P..",
+        "Z.K"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "path_special_02",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 7,
+      "planned_mechanics": [
+        "path_special",
+        "capture_to_hand"
+      ],
+      "rows": [
+        "r.k",
+        "P..",
+        "ZK."
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "mixed_all_01",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 8,
+      "planned_mechanics": [
+        "path_special",
+        "capture_to_hand",
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        "r.k",
+        "Pp.",
+        "ZXK"
+      ],
+      "side_to_move": 0
+    },
+    {
+      "board_size": 3,
+      "descriptor": "mixed_all_02",
+      "group": "MIXED_MECHANIC",
+      "hands": [
+        [],
+        []
+      ],
+      "index": 9,
+      "planned_mechanics": [
+        "path_special",
+        "remove_from_game",
+        "promotion"
+      ],
+      "rows": [
+        ".xK",
+        "kXP",
+        "Z.."
+      ],
+      "side_to_move": 0
+    }
+  ],
+  "evaluator_blind": true,
+  "group_counts": {
+    "MIXED_MECHANIC": 10,
+    "SHOGI_LIKE": 10,
+    "WESTERN_CHESS_LIKE": 10
+  },
+  "plan_sha256": "827e0c25baeb5e47f7308a314c7499ebcd9aeb402264a6096d01f216c15e9ccd",
+  "plan_version": "f23v-mechanic-active-corrective-r1",
+  "reference_contract": {
+    "abstraction": {
+      "max_nodes": 100000,
+      "wall_seconds": 4
+    },
+    "v3": {
+      "max_nodes": 100000,
+      "wall_seconds": 4
+    }
+  },
+  "required_planned_coverage": {
+    "MIXED_MECHANIC": {
+      "capture_to_hand": 3,
+      "path_special": 3,
+      "remove_from_game": 3
+    },
+    "SHOGI_LIKE": {
+      "capture_to_hand": 3,
+      "drop": 3,
+      "promotion": 3
+    },
+    "WESTERN_CHESS_LIKE": {
+      "promotion": 3,
+      "remove_from_game": 3
+    }
+  },
+  "source": "compact pre-registered semantic descriptors; no F23V outcomes copied"
+}
