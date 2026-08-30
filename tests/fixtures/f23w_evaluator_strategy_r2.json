@@ -1,0 +1,398 @@
+{
+  "artifact_integrity": {
+    "all_match": true,
+    "baseline_commit": "3b2a104ce2f13863720ecde601578e7795fa2d65",
+    "files": [
+      {
+        "matches_f23v_close": true,
+        "path": "docs/architecture/ADR-067-f23v-minimal-analytic-evaluator-signal-probe.md",
+        "sha256": "5afbc3fde1eb6c9f56e87b36f1b65e4fe169ea2834592052c5549450536cba9d"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "docs/architecture/ADR-068-f23v-mechanic-active-signal-corrective.md",
+        "sha256": "3501a8bc958b1a18d2bd0aa815c60c67dbe513f82ff9c4d31add1b6da5c410c7"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "docs/architecture/ADR-069-f23v-admission-correction-final.md",
+        "sha256": "068a23a830673fa3915156ec1c2eb46cae72f4c6264f61db494ae3e7133b7d7a"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "scripts/audit_f23v_minimal_analytic_evaluator.py",
+        "sha256": "c164f5319c72e9536ed2e50c7ab1546c6b32c4a985a1ef597a151d6435845433"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "scripts/audit_f23v_minimal_analytic_evaluator_r1.py",
+        "sha256": "ac62e0469ee79a7da63b9bcc1a503689408debba455e6b38bcfddb0398898420"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "scripts/audit_f23v_minimal_analytic_evaluator_r2.py",
+        "sha256": "c97dad73460293bad7f9fa7f34b09eae8a7f67aa8758976162526765f9c0bcbd"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "tests/fixtures/f23v_minimal_analytic_plan.json",
+        "sha256": "a0bf472549b93447649268c8c30017b138bd17e2e256ebaf507ce64838cd4d54"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "tests/fixtures/f23v_minimal_analytic_signal.json",
+        "sha256": "1e4fc5f7653569afaa9625d14cd0d55c26a5fc9a6a7edfeecade465c5a1efcee"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "tests/fixtures/f23v_minimal_analytic_plan_r1.json",
+        "sha256": "599f0b6e7efa1e57e88672fa6bffabea589be0ec2fd66ed23c60b0b9363c4e65"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "tests/fixtures/f23v_minimal_analytic_signal_r1.json",
+        "sha256": "3fdcb5ca963e7537afe26c5c80014fdb6ba390d79049a2af80dcf4531ae8fdfe"
+      },
+      {
+        "matches_f23v_close": true,
+        "path": "tests/fixtures/f23v_minimal_analytic_signal_r2.json",
+        "sha256": "7e90891735cd08c8ca604c5deac58318db47717c5523d2208aa4d21c0bfeb418"
+      }
+    ]
+  },
+  "evaluation_context_design": {
+    "consumers": [
+      "material_and_inventory",
+      "safe_mobility_and_control",
+      "attack_defense_and_anchor_safety",
+      "forcing_capture_recapture",
+      "capability_gated_promotion_drop"
+    ],
+    "facts": [
+      "legal actions by side where safely obtainable",
+      "captures",
+      "promotions",
+      "drops",
+      "semantic attack/check information",
+      "anchor locations and safety",
+      "authoritative recent-action target",
+      "RuleSet-derived values/profile"
+    ],
+    "invalidation": "per-position immutable; rebuild after transition",
+    "one_shared_read_only_pass": true,
+    "purpose": "separate local semantic correctness from search-shadow playing evidence and avoid five independent legality scans",
+    "scope": "audit-only next experiment; no production framework change",
+    "status": "DESIGN_ONLY"
+  },
+  "evaluator_v1": {
+    "available_for_standard_shogi": true,
+    "basis": "existing production Evaluator and F22 component-parity audit",
+    "candidate_comparison_required": true
+  },
+  "evidence_classes": [
+    "SEMANTIC_CONTRACT_EVIDENCE",
+    "REAL_GAME_BENCHMARK_EVIDENCE",
+    "PLAYING_STRENGTH_EVIDENCE"
+  ],
+  "f22_evidence": {
+    "position_count": 10,
+    "rank_rows": 10,
+    "read_only": true,
+    "reference_count": 10,
+    "sha256": {
+      "agreement": "e73c0aef44983fbf6b5dae4d46c7eea94f4aa8e15a97f85cdaf1112e6d142f3e",
+      "positions": "30b69f451b3e338fa0ffe0f4cf8f6b7ee4e400d9eaef86f4559b872e4c11b3f0",
+      "provenance": "0900cf7358c7cc31fdb5ebc69daa4379f95e513a34ee36c88a64c1debe3afac0",
+      "rank": "cd61b00d71ae8cd1de8a9af8cb99d18390919dc37b0ca8b11555fca9acc344ab"
+    },
+    "source_commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38",
+    "source_paths": {
+      "agreement": "artifacts/f22_post_f21_rebaseline_strength/alphasho_move_agreement.json",
+      "positions": "artifacts/f22_post_f21_rebaseline_strength/round5_frozen_positions.json",
+      "provenance": "artifacts/f22_post_f21_rebaseline_strength/alphasho_reference_provenance.json",
+      "rank": "artifacts/f22_post_f21_rebaseline_strength/one_ply_reference_rank.json"
+    }
+  },
+  "f23v_closure": {
+    "candidate_sha": "3b2a104ce2f13863720ecde601578e7795fa2d65",
+    "conclusion": "strict active-mechanic full W/D/L plus abstraction is too sparse/expensive for default evaluator validation",
+    "exact_supervision_default": "RETIRED",
+    "no_f23v_rerun": true
+  },
+  "f23x_implemented": false,
+  "feature_budget": {
+    "coefficients": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "concrete_piece_scoring_branch": false,
+    "families": [
+      "material_and_inventory",
+      "safe_mobility_and_control",
+      "attack_defense_and_anchor_safety",
+      "forcing_capture_recapture",
+      "capability_gated_promotion_drop"
+    ],
+    "game_name_branch": false,
+    "score_form": "S * sum(feature_i)"
+  },
+  "ledger_corrections": {
+    "max_ply": "R2 certified abstraction may have nonzero MAX_PLY diagnostics; the earlier four-certification field used V3 visitation and must not be restated as abstraction visitation",
+    "western_drop": "structural zero-drop requirement is equality to zero, not >= 0"
+  },
+  "metamorphic_contract_matrix": [
+    {
+      "expected": "actor term must not decrease",
+      "feature": "material_and_inventory",
+      "transformation": "remove opponent non-anchor piece with unrelated state fixed",
+      "variants": [
+        "renamed-equivalent",
+        "capture-to-hand",
+        "remove-from-game"
+      ]
+    },
+    {
+      "expected": "actor term must not decrease",
+      "feature": "material_and_inventory",
+      "transformation": "add legal owned hand inventory",
+      "variants": [
+        "renamed-equivalent",
+        "drop-capable",
+        "no-drop"
+      ]
+    },
+    {
+      "expected": "actor term must not decrease",
+      "feature": "safe_mobility_and_control",
+      "transformation": "unblock an otherwise identical own legal path",
+      "variants": [
+        "renamed-equivalent",
+        "semantic",
+        "legacy-profile-only"
+      ]
+    },
+    {
+      "expected": "relative term must not decrease",
+      "feature": "safe_mobility_and_control",
+      "transformation": "remove one legal opponent action without changing actor actions",
+      "variants": [
+        "renamed-equivalent",
+        "mixed-mechanic"
+      ]
+    },
+    {
+      "expected": "actor term must improve",
+      "feature": "attack_defense_and_anchor_safety",
+      "transformation": "move actor anchor from attacked to equivalent unattacked square",
+      "variants": [
+        "renamed-equivalent",
+        "semantic-check"
+      ]
+    },
+    {
+      "expected": "relative term must not decrease",
+      "feature": "attack_defense_and_anchor_safety",
+      "transformation": "add an actual attack against opponent anchor while preserving actor safety",
+      "variants": [
+        "renamed-equivalent",
+        "mixed-mechanic"
+      ]
+    },
+    {
+      "expected": "actor term must not decrease",
+      "feature": "forcing_capture_recapture",
+      "transformation": "introduce a profitable legal capture",
+      "variants": [
+        "renamed-equivalent",
+        "capture-to-hand",
+        "remove-from-game"
+      ]
+    },
+    {
+      "expected": "recapture component must increase",
+      "feature": "forcing_capture_recapture",
+      "transformation": "provide legal recapture onto authoritative previous-action target",
+      "variants": [
+        "renamed-equivalent",
+        "history-present",
+        "history-absent-control"
+      ]
+    },
+    {
+      "expected": "actor term must not decrease",
+      "feature": "capability_gated_promotion_drop",
+      "transformation": "make a positive-gain legal promotion available",
+      "variants": [
+        "renamed-equivalent",
+        "promotable",
+        "non-promotable-control"
+      ]
+    },
+    {
+      "expected": "actor term must not decrease",
+      "feature": "capability_gated_promotion_drop",
+      "transformation": "add usable hand inventory with a legal drop",
+      "variants": [
+        "renamed-equivalent",
+        "capture-to-hand",
+        "mixed-mechanic"
+      ]
+    }
+  ],
+  "mixed_mechanic_role": [
+    "capture-to-hand/drop coexisting with remove-from-game",
+    "promotion and non-promotion coexistence",
+    "path/special movement",
+    "generic identity/history/runtime/no game-name branch"
+  ],
+  "performance_warning": "pre-registered candidate evaluator fraction <=25% and fixed-time median nodes/second decline <=35%",
+  "production_changed": false,
+  "schema_version": 1,
+  "selected_boundary": "F23X_MINIMAL_ANALYTIC_EVALUATOR_METAMORPHIC_AND_SHOGI_SHADOW",
+  "selected_philosophy": "LOCAL_METAMORPHIC_PLUS_REAL_GAME_SEARCH_SHADOW",
+  "standard_shogi_shadow_plan": {
+    "evaluators": [
+      "production_evaluator_v1",
+      "unchanged_five_feature_analytic_candidate"
+    ],
+    "fixed_node_budgets": [
+      128,
+      512,
+      2048
+    ],
+    "fixed_time_budgets_seconds": [
+      0.25,
+      1.0
+    ],
+    "interpretation": "signal validation only; no parity or playing-strength claim",
+    "move_ordering": "same production move ordering",
+    "performance_gate": {
+      "candidate_evaluator_fraction": "<= 25% of total search wall time",
+      "fixed_node_completion": "all declared node budgets complete",
+      "fixed_time_nodes_per_second": "not below evaluator-v1 by >35% on median"
+    },
+    "quality_gate": {
+      "agreement_controls": "zero catastrophic regression: no frozen control agreement may be lost",
+      "candidate_mean_reference_rank": "strictly better than evaluator-v1 by pre-registered material margin >= 10%",
+      "candidate_reference_top1_agreement_delta": ">= +2 positions out of 10 over evaluator-v1 OR",
+      "completion": "all 10 positions complete under every declared budget"
+    },
+    "required_per_position": [
+      "selected_move",
+      "reference_move_rank",
+      "reference_move_top_k",
+      "root_score_ordering",
+      "pv_if_available",
+      "nodes",
+      "completed_depth",
+      "nodes_per_second",
+      "evaluator_calls",
+      "evaluator_time",
+      "total_search_wall",
+      "evaluator_fraction"
+    ],
+    "same_legality_runtime": true,
+    "same_search_policy": true,
+    "source": {
+      "artifact": "round5_frozen_positions.json",
+      "commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38",
+      "positions": 10,
+      "reference": "read-only preserved mature-engine moves"
+    },
+    "tt_policy": "same enabled policy and fresh deterministic table per comparison"
+  },
+  "status": "ASSESSMENT_COMPLETE",
+  "strategies": {
+    "CONTINUE_EXACT_SYNTHETIC_SUPERVISION": {
+      "artificial_horizon_dependence": 1,
+      "benchmark_leakage_resistance": 2,
+      "compute_cost": 1,
+      "conceptual_simplicity": 1,
+      "data_generation_burden": 1,
+      "falsifiability": 3,
+      "genericity": 3,
+      "mixed_mechanic_validation": 2,
+      "overfit_resistance": 1,
+      "playing_strength_evidence": 2,
+      "production_complexity": 2,
+      "standard_shogi_validation": 2,
+      "western_chess_validation": 2
+    },
+    "EXTERNAL_ENGINE_DIRECT_SUPERVISION": {
+      "artificial_horizon_dependence": 4,
+      "benchmark_leakage_resistance": 1,
+      "compute_cost": 3,
+      "conceptual_simplicity": 2,
+      "data_generation_burden": 3,
+      "falsifiability": 4,
+      "genericity": 1,
+      "mixed_mechanic_validation": 1,
+      "overfit_resistance": 1,
+      "playing_strength_evidence": 5,
+      "production_complexity": 2,
+      "standard_shogi_validation": 5,
+      "western_chess_validation": 3
+    },
+    "GENERIC_SELFPLAY_TD_SCALE_LEARNING": {
+      "artificial_horizon_dependence": 4,
+      "benchmark_leakage_resistance": 4,
+      "compute_cost": 2,
+      "conceptual_simplicity": 3,
+      "data_generation_burden": 2,
+      "falsifiability": 4,
+      "genericity": 5,
+      "mixed_mechanic_validation": 5,
+      "overfit_resistance": 2,
+      "playing_strength_evidence": 4,
+      "production_complexity": 3,
+      "standard_shogi_validation": 4,
+      "western_chess_validation": 4
+    },
+    "LOCAL_METAMORPHIC_PLUS_REAL_GAME_SEARCH_SHADOW": {
+      "artificial_horizon_dependence": 5,
+      "benchmark_leakage_resistance": 5,
+      "compute_cost": 4,
+      "conceptual_simplicity": 5,
+      "data_generation_burden": 4,
+      "falsifiability": 5,
+      "genericity": 5,
+      "mixed_mechanic_validation": 5,
+      "overfit_resistance": 4,
+      "playing_strength_evidence": 5,
+      "production_complexity": 4,
+      "standard_shogi_validation": 5,
+      "western_chess_validation": 4
+    }
+  },
+  "strategy_criteria": [
+    "conceptual_simplicity",
+    "genericity",
+    "artificial_horizon_dependence",
+    "benchmark_leakage_resistance",
+    "production_complexity",
+    "data_generation_burden",
+    "compute_cost",
+    "falsifiability",
+    "mixed_mechanic_validation",
+    "standard_shogi_validation",
+    "western_chess_validation",
+    "overfit_resistance",
+    "playing_strength_evidence"
+  ],
+  "strategy_totals": {
+    "CONTINUE_EXACT_SYNTHETIC_SUPERVISION": 23,
+    "EXTERNAL_ENGINE_DIRECT_SUPERVISION": 35,
+    "GENERIC_SELFPLAY_TD_SCALE_LEARNING": 46,
+    "LOCAL_METAMORPHIC_PLUS_REAL_GAME_SEARCH_SHADOW": 60
+  },
+  "western_chess_future_plan": {
+    "phase_1": "full rule correctness/perft",
+    "phase_2": "verified mature heuristic reference",
+    "phase_3": "fixed-node/fixed-time move/PV/evaluation",
+    "phase_4": "later match-strength evidence",
+    "status": "DESIGN_ONLY"
+  }
+}
