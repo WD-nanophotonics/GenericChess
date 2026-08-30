@@ -2,7 +2,13 @@
 
 from __future__ import annotations
 
-from ...core.actions import Action, BoardMove, DropMove
+from ...core.actions import (
+    Action,
+    action_is_board,
+    action_is_drop,
+    action_promotion_target_id,
+    action_target_square,
+)
 from ...core.attacks import is_in_check
 from ...core.coordinates import square_to_index
 from ...core.position import GameState
@@ -28,13 +34,14 @@ def classify_noisy(
     semantic_engine = semantic_engine_for(compiled)
     noisy: list[Action] = []
     for action, child in successors:
-        if isinstance(action, BoardMove):
-            if action.promotion_target_id is not None:
+        if action_is_board(action):
+            if action_promotion_target_id(action) is not None:
                 noisy.append(action)
                 if stats is not None:
                     stats.promotion_qactions += 1
                 continue
-            occupant = state.position.board[action.to_square.rank * n + action.to_square.file]
+            target = action_target_square(action)
+            occupant = state.position.board[target.rank * n + target.file]
             if occupant is not None and occupant.owner != side:
                 noisy.append(action)
                 if stats is not None:
@@ -51,11 +58,11 @@ def classify_noisy(
         if child_in_check:
             noisy.append(action)
             if stats is not None:
-                if isinstance(action, DropMove):
+                if action_is_drop(action):
                     stats.checking_drop_qactions += 1
                 else:
                     stats.checking_move_qactions += 1
             continue
-        if isinstance(action, DropMove) and stats is not None:
+        if action_is_drop(action) and stats is not None:
             stats.nonchecking_drop_excluded += 1
     return noisy

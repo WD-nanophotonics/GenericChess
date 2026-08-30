@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "work_order_id": "GENERICCHESS-F24B-SEMANTIC-ACTION-SEARCH-CLASSIFICATION-PARITY",
+  "status": "PASS",
+  "before_f24b": {
+    "qsearch": {
+      "legacy_board_capture": "classified as capture",
+      "semantic_board_capture": "not classified as capture",
+      "legacy_board_promotion": "classified as promotion",
+      "semantic_board_promotion": "not classified as promotion",
+      "semantic_checking_drop": "counted as checking move, not checking drop",
+      "semantic_nonchecking_drop": "not recognized by legacy drop diagnostic path"
+    },
+    "ordering": {
+      "semantic_board_capture": "not in capture branch",
+      "semantic_board_promotion": "not in promotion branch"
+    }
+  },
+  "after_f24b": {
+    "action_shape": [
+      "board_vs_drop",
+      "source_square",
+      "target_square",
+      "promotion_target_id",
+      "drop_base_type_id"
+    ],
+    "qsearch_parity": {
+      "quiet_board": true,
+      "direct_capture": true,
+      "promotion": true,
+      "checking_board": true,
+      "terminal_board": true,
+      "nonchecking_drop": true,
+      "checking_drop": true,
+      "semantic_identity_preserved": true,
+      "duplicate_inclusion": false
+    },
+    "ordering_parity": {
+      "move_orderer_capture_stage": true,
+      "move_orderer_promotion_stage": true,
+      "staged_picker_capture_stage": true,
+      "staged_picker_promotion_stage": true,
+      "semantic_identity_preserved": true,
+      "drop_ordering_changed": false
+    },
+    "standard_shogi_cases": {
+      "semantic_capture": true,
+      "semantic_promotion": true,
+      "semantic_checking_drop": true,
+      "semantic_nonchecking_drop_control": true,
+      "runtime_qsearch_capture": true
+    }
+  },
+  "f22_search_smoke": {
+    "positions": 10,
+    "node_budgets": [128, 512],
+    "repetitions_per_position_budget": 2,
+    "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+    "all_declared_node_budgets_complete": true,
+    "all_runtime_push_pop_balanced": true,
+    "deterministic_repeats": true,
+    "top1_count_by_budget": {
+      "128": 2,
+      "512": 2
+    }
+  },
+  "scope": {
+    "production_files": [
+      "generic_chess/core/actions.py",
+      "generic_chess/ai/alphabeta/quiescence.py",
+      "generic_chess/ai/alphabeta/ordering.py",
+      "generic_chess/ai/alphabeta/search.py"
+    ],
+    "evaluator_changed": false,
+    "rules_compiler_changed": false,
+    "runtime_identity_changed": false,
+    "workflow_changed": false,
+    "promotion": "HOLD",
+    "next_boundary": "F24C_MIXED_MECHANIC_RULESET_CERTIFICATION"
+  }
+}

@@ -76,6 +76,40 @@ class SemanticDropMove:
 Action = BoardMove | DropMove | SemanticBoardMove | SemanticDropMove
 
 
+def action_is_board(action: Action) -> bool:
+    """Return whether an action moves an on-board piece.
+
+    This shape check deliberately preserves the concrete action object and
+    semantic identity; callers only use it to share legacy/semantic routing.
+    """
+    return isinstance(action, (BoardMove, SemanticBoardMove))
+
+
+def action_is_drop(action: Action) -> bool:
+    """Return whether an action places a piece from a hand."""
+    return isinstance(action, (DropMove, SemanticDropMove))
+
+
+def action_source_square(action: Action) -> Square | None:
+    """Return a board action's source square, or ``None`` for drops."""
+    return action.from_square if action_is_board(action) else None
+
+
+def action_target_square(action: Action) -> Square:
+    """Return the destination square for any public action shape."""
+    return action.to_square
+
+
+def action_promotion_target_id(action: Action) -> str | None:
+    """Return the public promotion target for board actions."""
+    return action.promotion_target_id if action_is_board(action) else None
+
+
+def action_drop_base_type_id(action: Action) -> str | None:
+    """Return the hand piece type for drop actions."""
+    return action.base_type_id if action_is_drop(action) else None
+
+
 def action_to_dict(action: Action) -> dict[str, Any]:
     """Stable dict representation of an action (JSON-serializable)."""
     if isinstance(action, BoardMove):

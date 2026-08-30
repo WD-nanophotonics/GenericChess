@@ -6,7 +6,13 @@ import time
 from dataclasses import dataclass
 from itertools import chain
 
-from ...core.actions import Action
+from ...core.actions import (
+    Action,
+    action_is_board,
+    action_is_drop,
+    action_promotion_target_id,
+    action_target_square,
+)
 from ...core.attacks import is_in_check
 from ...core.identity import (
     ExternalStableKey,
@@ -421,13 +427,12 @@ def _runtime_noisy_actions(ctx: _Context, actions):
     side = state.position.side_to_move
     noisy = []
     for action in actions:
-        from ...core.actions import BoardMove, DropMove
         from ...core.coordinates import square_to_index
 
-        if isinstance(action, BoardMove):
-            index = square_to_index(action.to_square, state.position.board_size())
+        if action_is_board(action):
+            index = square_to_index(action_target_square(action), state.position.board_size())
             occupant = state.position.board[index]
-            if action.promotion_target_id is not None:
+            if action_promotion_target_id(action) is not None:
                 noisy.append(action)
                 ctx.stats.promotion_qactions += 1
                 continue
@@ -447,12 +452,11 @@ def _runtime_noisy_actions(ctx: _Context, actions):
             )
             if child_in_check:
                 noisy.append(action)
-                from ...core.actions import DropMove
-                if isinstance(action, DropMove):
+                if action_is_drop(action):
                     ctx.stats.checking_drop_qactions += 1
                 else:
                     ctx.stats.checking_move_qactions += 1
-            elif isinstance(action, DropMove):
+            elif action_is_drop(action):
                 ctx.stats.nonchecking_drop_excluded += 1
     return noisy
 

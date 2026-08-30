@@ -15,7 +15,13 @@ which is too expensive for the generic hot path.
 
 from __future__ import annotations
 
-from ...core.actions import Action, BoardMove
+from ...core.actions import (
+    Action,
+    action_is_board,
+    action_promotion_target_id,
+    action_source_square,
+    action_target_square,
+)
 from ...core.coordinates import square_to_index
 from ...core.position import GameState
 from ..evaluation.evaluator import Evaluator
@@ -79,12 +85,12 @@ class MoveOrderer:
         def priority(action: Action) -> int:
             if tt_move is not None and action == tt_move:
                 return -1000
-            if isinstance(action, BoardMove):
-                occupant = state.position.board[square_to_index(action.to_square, n)]
+            if action_is_board(action):
+                occupant = state.position.board[square_to_index(action_target_square(action), n)]
                 if occupant is not None and occupant.owner != side:
-                    mover = state.position.board[square_to_index(action.from_square, n)]
+                    mover = state.position.board[square_to_index(action_source_square(action), n)]
                     return -100 - evaluator.capture_order_value(mover, occupant)
-                if action.promotion_target_id is not None:
+                if action_promotion_target_id(action) is not None:
                     return -60
             if counter is not None and action == counter:
                 return -40
@@ -135,14 +141,14 @@ class StagedMovePicker:
             if tt_move is not None and action == tt_move:
                 tt_stage.append(action)
                 continue
-            if isinstance(action, BoardMove):
-                occupant = state.position.board[square_to_index(action.to_square, n)]
+            if action_is_board(action):
+                occupant = state.position.board[square_to_index(action_target_square(action), n)]
                 if occupant is not None and occupant.owner != side:
-                    mover = state.position.board[square_to_index(action.from_square, n)]
+                    mover = state.position.board[square_to_index(action_source_square(action), n)]
                     delta = evaluator.capture_order_value(mover, occupant)
                     (good if delta >= 0 else bad).append(action)
                     continue
-                if action.promotion_target_id is not None:
+                if action_promotion_target_id(action) is not None:
                     promotions.append(action)
                     continue
             if action in killers or (counter is not None and action == counter):
@@ -158,19 +164,19 @@ class StagedMovePicker:
 
         good.sort(
             key=lambda a: evaluator.capture_order_value(
-                state.position.board[square_to_index(a.from_square, n)],
-                state.position.board[square_to_index(a.to_square, n)],
+                state.position.board[square_to_index(action_source_square(a), n)],
+                state.position.board[square_to_index(action_target_square(a), n)],
             ),
             reverse=True,
         )
         promotions.sort(
-            key=lambda a: evaluator.type_value(a.promotion_target_id),
+            key=lambda a: evaluator.type_value(action_promotion_target_id(a)),
             reverse=True,
         )
         bad.sort(
             key=lambda a: evaluator.capture_order_value(
-                state.position.board[square_to_index(a.from_square, n)],
-                state.position.board[square_to_index(a.to_square, n)],
+                state.position.board[square_to_index(action_source_square(a), n)],
+                state.position.board[square_to_index(action_target_square(a), n)],
             ),
             reverse=True,
         )
