@@ -1,0 +1,151 @@
+{
+  "by_family": {
+    "capture_recapture_terminal": {
+      "abstraction_certified": 0,
+      "abstraction_refusal_causes": {
+        "NOT_RECORDED": 4
+      },
+      "abstraction_refused": 4,
+      "all_equal": 3,
+      "max_ply_abstract_leaves": 5237,
+      "node_cycle_refusals": 0,
+      "planned": 8,
+      "planned_split": {
+        "DEVELOPMENT": 6,
+        "HOLDOUT": 2
+      },
+      "preference_bearing": 4,
+      "strict_root_mechanic_witness": 1,
+      "strict_witness_failures": {
+        "ACTUAL_CAPTURE_REQUIRED": 3,
+        "NO_WITNESS": 4
+      },
+      "v3_exact": 7,
+      "v3_unresolved": 1
+    },
+    "drop_hand_terminal": {
+      "abstraction_certified": 0,
+      "abstraction_refusal_causes": {},
+      "abstraction_refused": 0,
+      "all_equal": 0,
+      "max_ply_abstract_leaves": 0,
+      "node_cycle_refusals": 0,
+      "planned": 8,
+      "planned_split": {
+        "DEVELOPMENT": 5,
+        "HOLDOUT": 3
+      },
+      "preference_bearing": 0,
+      "strict_root_mechanic_witness": 0,
+      "strict_witness_failures": {
+        "NO_WITNESS": 8
+      },
+      "v3_exact": 0,
+      "v3_unresolved": 8
+    },
+    "interposition_leaper_terminal": {
+      "abstraction_certified": 0,
+      "abstraction_refusal_causes": {
+        "NOT_RECORDED": 2
+      },
+      "abstraction_refused": 2,
+      "all_equal": 6,
+      "max_ply_abstract_leaves": 1135,
+      "node_cycle_refusals": 0,
+      "planned": 8,
+      "planned_split": {
+        "DEVELOPMENT": 7,
+        "HOLDOUT": 1
+      },
+      "preference_bearing": 2,
+      "strict_root_mechanic_witness": 0,
+      "strict_witness_failures": {
+        "DESIGNATED_LEAPER_REQUIRED": 2,
+        "NO_WITNESS": 6
+      },
+      "v3_exact": 8,
+      "v3_unresolved": 0
+    },
+    "ordinary_anchor_terminal": {
+      "abstraction_certified": 0,
+      "abstraction_refusal_causes": {
+        "NOT_RECORDED": 5
+      },
+      "abstraction_refused": 5,
+      "all_equal": 3,
+      "max_ply_abstract_leaves": 756,
+      "node_cycle_refusals": 0,
+      "planned": 8,
+      "planned_split": {
+        "DEVELOPMENT": 7,
+        "HOLDOUT": 1
+      },
+      "preference_bearing": 5,
+      "strict_root_mechanic_witness": 5,
+      "strict_witness_failures": {
+        "NOT_DISTINGUISHING": 1,
+        "NO_WITNESS": 2
+      },
+      "v3_exact": 8,
+      "v3_unresolved": 0
+    },
+    "promotion_terminal": {
+      "abstraction_certified": 0,
+      "abstraction_refusal_causes": {},
+      "abstraction_refused": 0,
+      "all_equal": 8,
+      "max_ply_abstract_leaves": 0,
+      "node_cycle_refusals": 0,
+      "planned": 8,
+      "planned_split": {
+        "DEVELOPMENT": 6,
+        "HOLDOUT": 2
+      },
+      "preference_bearing": 0,
+      "strict_root_mechanic_witness": 0,
+      "strict_witness_failures": {
+        "NOT_DISTINGUISHING": 3,
+        "NO_WITNESS": 5
+      },
+      "v3_exact": 8,
+      "v3_unresolved": 0
+    },
+    "semantic_guard_terminal": {
+      "abstraction_certified": 1,
+      "abstraction_refusal_causes": {
+        "NOT_RECORDED": 7
+      },
+      "abstraction_refused": 7,
+      "all_equal": 0,
+      "max_ply_abstract_leaves": 279957,
+      "node_cycle_refusals": 0,
+      "planned": 8,
+      "planned_split": {
+        "DEVELOPMENT": 8
+      },
+      "preference_bearing": 8,
+      "strict_root_mechanic_witness": 0,
+      "strict_witness_failures": {
+        "CUSTOM_SEMANTIC_PATTERN_REQUIRED": 8
+      },
+      "v3_exact": 8,
+      "v3_unresolved": 0
+    }
+  },
+  "historical_v11_effective_count": 1,
+  "production_changed": false,
+  "r9_runner_contract_mismatch": {
+    "abstraction_ladder_executed": false,
+    "historical_note": "R9 declared both contracts but used direct V3 calls and one max_nodes=100000 abstraction call.",
+    "v3_isolated_8_second_wall": false
+  },
+  "schema_version": 1,
+  "source_v11_sha256": "3942dbabd46eb1ed0de8e941b735c36c11f441881b991a60b5c7fd6e8804c18b",
+  "strict_reaudit": {
+    "f23s-r9-semantic-02": {
+      "passes": false,
+      "reason": "CUSTOM_SEMANTIC_PATTERN_REQUIRED"
+    }
+  },
+  "v11_rewritten": false
+}
