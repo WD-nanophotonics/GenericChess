@@ -358,7 +358,7 @@ def test_escalation_is_idempotent_and_records_thread_identity(monkeypatch, tmp_p
     assert len(list((tmp_path / "runtime" / "escalations").glob("*/dossier.json"))) == 1
 
 
-def test_heartbeat_pending_and_resolution_return_to_original_worker(monkeypatch, tmp_path, capsys):
+def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"
     directory = runtime / "escalations" / ("a" * 20)
     directory.mkdir(parents=True)
@@ -412,6 +412,61 @@ def test_escalation_freezes_worker_repository_commands(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     with pytest.raises(flow.FlowError, match="writes are frozen"):
         flow.command_publish(tmp_path, SimpleNamespace(tests=[]))
+
+
+def test_user_superseded_resolution_retires_request_without_deleting_evidence(monkeypatch, tmp_path):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("b" * 20)
+    request = tmp_path / "immutable-request"
+    request.mkdir()
+    directory.mkdir(parents=True)
+    (directory / "dossier.json").write_text(json.dumps({
+        "escalation_id": "b" * 20, "worker_thread_id": "worker"}), encoding="utf-8")
+    (directory / "claim.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor"}), encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": str(request),
+             "last_response_path": "old-response", "work_order_active": True,
+             "recovery_timeline": []}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor")
+
+    flow.command_supervisor_resolve(tmp_path, SimpleNamespace(
+        escalation_id="b" * 20, action="USER_SUPERSEDED_REQUEST", detail_file=None))
+
+    assert state["retired_request_directory"] == str(request)
+    assert state["active_request_directory"] is None
+    assert state["last_response_path"] is None
+    assert request.is_dir()
+
+
+def test_large_chat_report_requires_published_git_reference(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    sandbox.mkdir()
+    external = tmp_path / "large-report.json"
+    external.write_text("x" * (flow.INLINE_CHAT_REFERENCE_THRESHOLD + 1), encoding="utf-8")
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+    with pytest.raises(flow.FlowError, match="committed inside the sandbox"):
+        flow.chat_message_body(tmp_path, external)
+
+
+def test_large_published_report_becomes_compact_sha_bound_reference(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    report = sandbox / "docs" / "audit.json"
+    report.parent.mkdir(parents=True)
+    report.write_text("x" * (flow.INLINE_CHAT_REFERENCE_THRESHOLD + 1), encoding="utf-8")
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+    monkeypatch.setattr(flow, "sha", lambda *_args: "a" * 40)
+    monkeypatch.setattr(flow, "git", lambda _root, *args, **_kwargs:
+                        "https://example.invalid/repo.git" if args[:3] == ("remote", "get-url", "origin") else "")
+
+    body = flow.chat_message_body(tmp_path, report)
+
+    assert len(body.encode("utf-8")) < flow.INLINE_CHAT_REFERENCE_THRESHOLD
+    assert "COMMIT=" + "a" * 40 in body
+    assert "PATH=docs/audit.json" in body
 
 
 def test_heavy_uses_below_normal_priority_and_returns_child_code(monkeypatch, tmp_path):

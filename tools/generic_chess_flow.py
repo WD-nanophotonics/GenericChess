@@ -30,6 +30,7 @@ CONTROL_FIELDS = {
 CONTROL_STATUSES = {"CONTINUE", "COMPLETE", "BLOCKED"}
 PROMOTION_VALUES = {"APPROVE", "HOLD"}
 WORK_ORDER_ID = re.compile(r"(?m)^WORK_ORDER_ID=([^\s]+)\s*$")
+INLINE_CHAT_REFERENCE_THRESHOLD = 24 * 1024
 
 
 class FlowError(RuntimeError):
@@ -334,11 +335,37 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         print(text)
 
 
+def chat_message_body(root: Path, source: Path) -> str:
+    body = source.read_text(encoding="utf-8-sig")
+    if len(body.encode("utf-8")) <= INLINE_CHAT_REFERENCE_THRESHOLD:
+        return body
+    sandbox = sandbox_root(root).resolve()
+    resolved = source.resolve()
+    try:
+        relative = resolved.relative_to(sandbox)
+    except ValueError as exc:
+        raise FlowError(
+            "large Courier reports must be committed inside the sandbox and published before closeout"
+        ) from exc
+    relative_git = relative.as_posix()
+    if not git_ok(sandbox, "ls-files", "--error-unmatch", "--", relative_git):
+        raise FlowError("large Courier report is not tracked by Git")
+    if git(sandbox, "diff", "--name-only", "HEAD", "--", relative_git):
+        raise FlowError("large Courier report differs from the committed version")
+    return (
+        "Review the large report from the already published immutable Git checkpoint.\n"
+        f"REPOSITORY={git(sandbox, 'remote', 'get-url', 'origin')}\n"
+        f"COMMIT={sha(sandbox)}\n"
+        f"PATH={relative_git}\n"
+        "Do not request the report body through the chat composer; inspect it at this exact commit.\n"
+    )
+
+
 def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: str) -> None:
     sandbox = sandbox_root(root)
     require_clean(sandbox)
     require_synced(sandbox, "sandbox")
-    body = source.read_text(encoding="utf-8-sig")
+    body = chat_message_body(root, source)
     digest = hashlib.sha256(body.encode("utf-8")).hexdigest()
     key = f"{purpose}-{sha(sandbox)[:12]}-{digest[:12]}"
     generated = runtime_dir(root) / f"{key}.txt"
@@ -705,7 +732,6 @@ def command_register_supervisor(root: Path, args: argparse.Namespace) -> None:
         "schema": "generic-chess-supervisor-v1",
         "supervisor_thread_id": thread_id,
         "supervisor_host_id": args.host_id,
-        "heartbeat_seconds": 300,
         "registered_at": time.time(),
     }
     _atomic_json(supervisor_config_path(root), value)
@@ -779,6 +805,11 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
     _atomic_json(directory / "resolution.json", payload)
     dossier = json.loads((directory / "dossier.json").read_text(encoding="utf-8"))
     state = active_state(root)
+    if args.action == "USER_SUPERSEDED_REQUEST":
+        state["retired_request_directory"] = state.get("active_request_directory")
+        state["active_request_directory"] = None
+        state["last_response_path"] = None
+        state["work_order_active"] = False
     state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
     recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,
                    action=args.action, resolution_sha256=payload["resolution_sha256"])
@@ -918,7 +949,7 @@ def parser() -> argparse.ArgumentParser:
     claim.set_defaults(handler=command_supervisor_claim)
     resolve = sub.add_parser("supervisor-resolve")
     resolve.add_argument("--escalation-id", required=True)
-    resolve.add_argument("--action", choices=("RESUME_WORKER", "RECOVERED", "HUMAN_REQUIRED"), required=True)
+    resolve.add_argument("--action", choices=("RESUME_WORKER", "RECOVERED", "USER_SUPERSEDED_REQUEST", "HUMAN_REQUIRED"), required=True)
     resolve.add_argument("--detail-file")
     resolve.set_defaults(handler=command_supervisor_resolve)
     resend = sub.add_parser("supervisor-resend")

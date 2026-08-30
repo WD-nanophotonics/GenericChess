@@ -57,9 +57,9 @@ browser/profile, a replacement request, WSL, or a background Courier process.
 
 The worker records its `CODEX_THREAD_ID` in the escalation dossier. The current
 management task is registered as Supervisor by its `CODEX_THREAD_ID`, not its
-title. The worker sends the dossier notification directly to that task; a
-five-minute heartbeat checks `supervisor-pending` as loss recovery. While an
-escalation is claimed, the worker must stop repository writes. The Supervisor
+title. The worker sends the dossier notification directly to that task. There
+is no polling heartbeat: completion and escalation handoffs are direct task
+messages. While an escalation is claimed, the worker must stop repository writes. The Supervisor
 may diagnose transport/framework state, repair within the original authority,
 or review the sole `resend_once`; it may not expand the work order, change the
 Chat target, delete unknown data, or promote `master`. A signed resolution must
@@ -98,10 +98,10 @@ generic-chess-flow.cmd recover [--worker-thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd resume
 generic-chess-flow.cmd register-supervisor [--thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd escalate --reason <text> [--worker-thread-id <id>]
-generic-chess-flow.cmd supervisor-pending
+generic-chess-flow.cmd supervisor-pending  # manual diagnostic only
 generic-chess-flow.cmd supervisor-claim --escalation-id <id>
 generic-chess-flow.cmd supervisor-resend --escalation-id <id>
-generic-chess-flow.cmd supervisor-resolve --escalation-id <id> --action RESUME_WORKER|RECOVERED|HUMAN_REQUIRED [--detail-file <path>]
+generic-chess-flow.cmd supervisor-resolve --escalation-id <id> --action RESUME_WORKER|RECOVERED|USER_SUPERSEDED_REQUEST|HUMAN_REQUIRED [--detail-file <path>]
 generic-chess-flow.cmd closeout --report-file <path>
 generic-chess-flow.cmd promote --candidate <full-sandbox-sha>
 generic-chess-flow.cmd finish
@@ -114,3 +114,15 @@ one GenericChess compute task at a time at Windows Below Normal priority.
 On a Courier error, run `recover` for the same request. Login, target, access,
 or uncertain external side effects escalate to the Supervisor before they reach
 the user; they never authorize a different transport or request.
+
+Only an explicit user instruction may let the claiming Supervisor resolve an
+irrecoverable active transport request as `USER_SUPERSEDED_REQUEST`. This keeps
+the retired request and dossier as evidence, clears it from the live session,
+and lets the same worker task request fresh work without changing authority mode.
+
+Courier messages are intentionally small. If a report exceeds 24 KiB, place the
+durable, reviewable report inside the repository, commit it, publish that exact
+sandbox SHA, and send only its repository/commit/path reference. An untracked,
+unpublished, or modified large local report is rejected before any browser is
+opened. Raw transient output still stays out of Git; summarize it into a durable
+audit report first.
