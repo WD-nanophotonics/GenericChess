@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "work_order_id": "GENERICCHESS-F24C-VICTIM-SPECIFIC-MIXED-MECHANIC-RULESET-CERTIFICATION",
+  "status": "PASS",
+  "ruleset": {
+    "type_ids": ["A0", "A1", "B0", "B1", "C0", "H0"],
+    "families": {
+      "A0_A1": "captured victim goes to capturer hand as base A0; A0 drops; A1 never stored",
+      "B0_B1": "captured victim removed; B0/B1 not droppable",
+      "C0": "captured victim removed; not droppable; ray capture requires exactly one blocker",
+      "H0": "ordinary anchor"
+    },
+    "victim_selector": "opponent-owned target-local exact-square guard, compare_field=base",
+    "capturer_independence": true,
+    "global_capture_disposition_switch": false,
+    "game_name_or_piece_name_branch": false
+  },
+  "certification": {
+    "cross_capturer_matrix": "A0/A1 victims go to hand for A0, B0, C0 capturers; B0/B1/C0 victims are removed for every capturer",
+    "promoted_victim_base_identity": true,
+    "promoted_A1_enters_hand_as_A0": true,
+    "promoted_B1_enters_hand": false,
+    "drop_contract": "A0 only; B0, B1, C0, and imported non-droppable inventory produce no drop action",
+    "promotion_contract": "A0->A1 and B0->B1 legal; C0 has no promotion action",
+    "family_c_path": "0 blockers illegal, 1 blocker legal, 2 blockers illegal",
+    "simultaneous_root": "capture-to-hand, remove capture, C path capture, A drop, A promotion, and B promotion all active",
+    "public_action_uniqueness": true,
+    "semantic_identity_preserved": true,
+    "serialization_and_fingerprint": true,
+    "type_id_renaming_invariance": true,
+    "runtime_push_pop_and_invalid_rollback": true,
+    "f24b_qsearch_and_ordering_mixed_actions": true
+  },
+  "native_provider_mode": "NATIVE_PROVIDER_ACTIVE",
+  "focused_tests": {
+    "command": "Python312 -m pytest -q -p no:cacheprovider tests/test_f24c_mixed_mechanic_certification.py",
+    "passed": 9
+  },
+  "production_diff": [],
+  "full_regression": {
+    "result": "12 known pre-existing Native-gate failures; no F24C production files changed",
+    "details": "F13/F14 enum-code native compile gate and F21 native provider unavailable for historical Standard Shogi",
+    "python_fallback_nonblocking": true
+  },
+  "next_boundary": "F24D_WESTERN_CHESS_RULESET_PERFT_CERTIFICATION",
+  "promotion": "HOLD"
+}
