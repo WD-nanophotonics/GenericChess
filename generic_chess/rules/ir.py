@@ -136,6 +136,7 @@ class CompiledStatePredicate:
     spatial: CompiledSpatialSelector
     comparison: str
     value: int = 0
+    subject_ref: CompiledSquareRef | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -329,6 +330,11 @@ class CompiledSemanticIR:
                     "spatial": _spatial_dict(g.spatial),
                     "comparison": g.comparison,
                     "value": g.value,
+                    "subject_ref": (
+                        _square_ref_dict(g.subject_ref)
+                        if g.subject_ref is not None
+                        else None
+                    ),
                 }
                 for g in p.guards
             ],
@@ -791,6 +797,12 @@ def validate_executable_completeness(
             for ref in guard.spatial.refs:
                 _complete_square_ref(
                     ref, slot_ids, slot_kinds, pattern.pattern_id, errors,
+                    exact_ray_steps=exact_ray_steps,
+                )
+            if guard.subject_ref is not None:
+                _complete_square_ref(
+                    guard.subject_ref, slot_ids, slot_kinds,
+                    pattern.pattern_id, errors,
                     exact_ray_steps=exact_ray_steps,
                 )
         for sg in pattern.slot_guards:

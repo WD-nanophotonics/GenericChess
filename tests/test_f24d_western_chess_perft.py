@@ -32,7 +32,7 @@ REF = lambda kind, **kwargs: RuleSquareRef(kind=kind, **kwargs)
 BASE = RuleTypeRef(kind="action_base")
 
 
-def western_preflight_ruleset():
+def western_preflight_ruleset(*, source_bound=False):
     """Build the smallest complete-shape Western ruleset for DSL auditing."""
     king = PieceType(
         "K", "K",
@@ -52,6 +52,7 @@ def western_preflight_ruleset():
         promoted="no", location="board",
         spatial=RuleSpatialSelector(kind="same_rank", refs=(REF("fixed", square=(0, 1)),)),
         comparison="ge", value=1,
+        subject_ref=REF("source") if source_bound else None,
     )
     double = RuleSemanticAction(
         name="pawn_double_start_rank_probe", type_ids=("P",),
@@ -62,11 +63,20 @@ def western_preflight_ruleset():
                  RuleActionEffect("set_token", slot_name="ep_target", square_ref=REF("path_step", step=0))),
         aux_state=rights + (ep,), invariants=(RuleInvariant("own_anchor_safe"),),
     )
+    castle_source_guard = RuleStateGuard(
+        aggregation="count", owner="self", type_ref=RuleTypeRef(kind="explicit", type_id="K"),
+        compare_field="base", promoted="no", location="board",
+        spatial=RuleSpatialSelector(
+            kind="exact", refs=(REF("fixed", square=(4, 0), owner_relative=False),)
+        ),
+        comparison="eq", value=1, subject_ref=REF("source"),
+    )
     castle = RuleSemanticAction(
         name="castle_probe", type_ids=("K",),
         geometry=RuleGeometrySpec(kind="ray", direction=(1, 0), min_steps=2, max_steps=2, owner_relative=False),
         target_relation="empty", composition="augment",
         path_constraints=(RulePathConstraint("path_clear"),),
+        state_guards=(castle_source_guard,) if source_bound else (),
         slot_guards=(RuleSlotGuard(slot_name="w_ks", value=1),),
         effects=(RuleActionEffect("move", from_ref=REF("source"), to_ref=REF("target")),
                  RuleActionEffect("move", from_ref=REF("fixed", square=(7, 0), owner_relative=False), to_ref=REF("fixed", square=(5, 0), owner_relative=False)),
@@ -108,3 +118,47 @@ def test_f24d_preflight_records_source_binding_gap_before_perft():
     position = replace(engine._initial_position(), board=tuple(board))
     leaked = [a for a in engine.legal_actions(position) if a.source == 27 and a.target == 43]
     assert leaked, "current same-rank guard is not source-bound; F24E is required"
+
+
+def _pawn_position(engine, side, *, start=True, non_start=False, blocked=False):
+    board = [None] * 64
+    board[4] = Piece(0, "K", "K")
+    board[60] = Piece(1, "K", "K")
+    if side == 0:
+        if start:
+            board[8] = Piece(0, "P", "P")
+            if blocked:
+                board[16] = Piece(0, "N", "N")
+        if non_start:
+            board[27] = Piece(0, "P", "P")
+    else:
+        if start:
+            board[48] = Piece(1, "P", "P")
+            if blocked:
+                board[40] = Piece(1, "N", "N")
+        if non_start:
+            board[35] = Piece(1, "P", "P")
+    return replace(engine._initial_position(), board=tuple(board), side_to_move=side)
+
+
+def _has_double(engine, position, source, target):
+    return any(a.source == source and a.target == target for a in engine.legal_actions(position))
+
+
+def test_f24e_source_bound_pawn_matrix_and_owner_mirror():
+    semantic = compile_semantic_ruleset(western_preflight_ruleset(source_bound=True))
+    engine = semantic_engine_for(semantic)
+    assert _has_double(engine, _pawn_position(engine, 0, start=True), 8, 24)
+    assert not _has_double(engine, _pawn_position(engine, 0, start=True, blocked=True), 8, 24)
+    assert not _has_double(engine, _pawn_position(engine, 0, non_start=True), 27, 43)
+    assert not _has_double(engine, _pawn_position(engine, 0, start=True, non_start=True), 27, 43)
+    assert _has_double(engine, _pawn_position(engine, 1, start=True), 48, 32)
+    assert not _has_double(engine, _pawn_position(engine, 1, start=True, blocked=True), 48, 32)
+    assert not _has_double(engine, _pawn_position(engine, 1, non_start=True), 35, 19)
+    assert not _has_double(engine, _pawn_position(engine, 1, start=True, non_start=True), 35, 19)
+
+
+def test_f24e_castling_preflight_binds_king_guard_to_action_source():
+    semantic = compile_semantic_ruleset(western_preflight_ruleset(source_bound=True))
+    castle = next(pattern for pattern in semantic.ir.patterns if pattern.name == "castle_probe")
+    assert castle.guards[0].subject_ref.kind == "source"

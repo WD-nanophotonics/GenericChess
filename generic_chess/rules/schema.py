@@ -300,6 +300,7 @@ class RuleStateGuard:
     spatial: RuleSpatialSelector
     comparison: str = "eq"
     value: int = 0
+    subject_ref: RuleSquareRef | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -605,8 +606,10 @@ def spatial_selector_from_dict(data: Mapping[str, Any], path: str) -> RuleSpatia
     return RuleSpatialSelector(kind=kind, refs=refs, zone_squares=zone)
 
 
-def state_guard_to_dict(value: RuleStateGuard) -> dict:
-    return {
+def state_guard_to_dict(
+    value: RuleStateGuard, *, include_none_subject_ref: bool = True
+) -> dict:
+    data = {
         "aggregation": value.aggregation,
         "owner": value.owner,
         "type_ref": type_ref_to_dict(value.type_ref),
@@ -617,6 +620,11 @@ def state_guard_to_dict(value: RuleStateGuard) -> dict:
         "comparison": value.comparison,
         "value": value.value,
     }
+    if value.subject_ref is not None or include_none_subject_ref:
+        data["subject_ref"] = (
+            square_ref_to_dict(value.subject_ref) if value.subject_ref is not None else None
+        )
+    return data
 
 
 def state_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleStateGuard:
@@ -666,6 +674,15 @@ def state_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleStateGuard:
         "COMPARISON_INVALID",
     )
     value = _require_int(data.get("value", 0), f"{path}.value")
+    subject_raw = data.get("subject_ref")
+    subject_ref = (
+        None
+        if subject_raw is None
+        else square_ref_from_dict(
+            _require_mapping(subject_raw, f"{path}.subject_ref"),
+            f"{path}.subject_ref",
+        )
+    )
     return RuleStateGuard(
         aggregation=aggregation,
         owner=owner,
@@ -676,6 +693,7 @@ def state_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleStateGuard:
         spatial=spatial,
         comparison=comparison,
         value=value,
+        subject_ref=subject_ref,
     )
 
 
@@ -971,7 +989,9 @@ def postcondition_from_dict(data: Mapping[str, Any], path: str) -> RulePostcondi
     return RulePostcondition(kind=kind, max_stratum=max_stratum)
 
 
-def semantic_action_to_dict(value: RuleSemanticAction) -> dict:
+def semantic_action_to_dict(
+    value: RuleSemanticAction, *, include_none_subject_ref: bool = True
+) -> dict:
     return {
         "name": value.name,
         "type_ids": list(value.type_ids),
@@ -984,7 +1004,10 @@ def semantic_action_to_dict(value: RuleSemanticAction) -> dict:
             else None
         ),
         "path_constraints": [path_constraint_to_dict(c) for c in value.path_constraints],
-        "state_guards": [state_guard_to_dict(g) for g in value.state_guards],
+        "state_guards": [
+            state_guard_to_dict(g, include_none_subject_ref=include_none_subject_ref)
+            for g in value.state_guards
+        ],
         "slot_guards": [slot_guard_to_dict(g) for g in value.slot_guards],
         "aux_state": [aux_state_to_dict(a) for a in value.aux_state],
         "effects": [effect_to_dict(e) for e in value.effects],
@@ -1084,7 +1107,12 @@ def semantic_action_from_dict(data: Mapping[str, Any], path: str) -> RuleSemanti
     )
 
 
-def ruleset_to_dict(ruleset: RuleSet, include_metadata: bool = True) -> dict[str, Any]:
+def ruleset_to_dict(
+    ruleset: RuleSet,
+    include_metadata: bool = True,
+    *,
+    include_none_subject_ref: bool = True,
+) -> dict[str, Any]:
     """Convert a RuleSet to a JSON-friendly dict with canonical ordering."""
     piece_types = []
     for pt in ruleset.piece_types:
@@ -1135,7 +1163,10 @@ def ruleset_to_dict(ruleset: RuleSet, include_metadata: bool = True) -> dict[str
     if ruleset.semantic_actions:
         data["semantic_dsl_version"] = ruleset.semantic_dsl_version
         data["semantic_actions"] = [
-            semantic_action_to_dict(a) for a in ruleset.semantic_actions
+            semantic_action_to_dict(
+                a, include_none_subject_ref=include_none_subject_ref
+            )
+            for a in ruleset.semantic_actions
         ]
     if include_metadata:
         data["metadata"] = dict(ruleset.metadata)
@@ -1320,5 +1351,9 @@ def canonical_json(data: Any) -> str:
 
 def compute_fingerprint(ruleset: RuleSet) -> str:
     """SHA-256 of the canonical JSON of all semantic fields (no metadata)."""
-    payload = canonical_json(ruleset_to_dict(ruleset, include_metadata=False))
+    payload = canonical_json(
+        ruleset_to_dict(
+            ruleset, include_metadata=False, include_none_subject_ref=False
+        )
+    )
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()

@@ -1008,6 +1008,11 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
                 spatial=_resolve_spatial(g.spatial, slot_ids_by_name, zone_ids_by_set),
                 comparison=g.comparison,
                 value=g.value,
+                subject_ref=(
+                    _resolve_square_ref(g.subject_ref, slot_ids_by_name)
+                    if g.subject_ref is not None
+                    else None
+                ),
             )
             for g in action.state_guards
         )

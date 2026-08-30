@@ -165,6 +165,11 @@ def _sem_spatial(sel, n, type_map, zone_map, fingerprint):
 
 
 def _sem_state_guard(g, n, type_map, zone_map, fingerprint):
+    if g.subject_ref is not None:
+        raise NativeUnsupportedRuleError(
+            "state-guard subject_ref is not supported by native semantic payload "
+            f"(ruleset fingerprint {fingerprint})"
+        )
     return {
         "aggregation": _sem_enum(_SEM_AGGREGATION_CODES, g.aggregation, "aggregation", fingerprint),
         "owner": _sem_enum(_SEM_OWNER_CODES, g.owner, "owner", fingerprint),

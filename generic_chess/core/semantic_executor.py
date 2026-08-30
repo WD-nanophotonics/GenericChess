@@ -855,7 +855,23 @@ class SemanticEngine:
         bound_base = binding.actor_base
         bound_current = binding.actor_current
         count = 0
-        for idx, piece in enumerate(position.board):
+        if guard.subject_ref is None:
+            candidates = enumerate(position.board)
+        else:
+            subject_idx = _resolve_square_ref(
+                guard.subject_ref,
+                self.support,
+                self.ir.aux_slots,
+                position,
+                perspective,
+                binding,
+            )
+            candidates = (
+                ((subject_idx, position.board[subject_idx]),)
+                if subject_idx is not None and 0 <= subject_idx < len(position.board)
+                else ()
+            )
+        for idx, piece in candidates:
             _checkpoint(checkpoint)
             if piece is None:
                 continue
