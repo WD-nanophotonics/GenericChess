@@ -100,9 +100,10 @@ def test_compiled_ruleset_is_frozen_derived_no_runtime_state():
         "promotion_forced",
             "repetition_limit",
             "repetition_policy",
-            "max_ply",
-            "stalemate_result",
-            "declarations",
+                "max_ply",
+                "stalemate_result",
+                "automatic_adjudications",
+                "declarations",
     }
     assert fields == expected
 
@@ -125,8 +126,9 @@ def test_rule_schema_field_set_is_frozen():
         "stalemate_result",
         "semantic_actions",  # additive Phase 1.9B-1 high-level DSL (legacy empty)
         "semantic_dsl_version",  # Phase 1.9B-1.5 explicit DSL version axis
-        "declarations",  # F26 action-independent declaration semantics
-        "metadata",
+            "declarations",  # F26 action-independent declaration semantics
+            "automatic_adjudications",  # F28 generic ply-threshold adjudication
+            "metadata",
     }
 
 

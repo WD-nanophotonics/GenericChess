@@ -30,7 +30,12 @@ from .rules.catalog import build_builtin_ruleset, builtin_ruleset_names
 from .rules.western_chess import build_western_chess_ruleset
 from .rules.standard_shogi import build_standard_shogi_ruleset
 from .rules.schema import RuleSet
-from .rules.schema import RuleDeclaration, RuleDeclarationOutcomeBand, RuleWeightedMaterialMetric
+from .rules.schema import (
+    RuleAutomaticAdjudication,
+    RuleDeclaration,
+    RuleDeclarationOutcomeBand,
+    RuleWeightedMaterialMetric,
+)
 from .core.declarations import (
     DeclarationAssessment,
     InvalidDeclarationError,
@@ -72,6 +77,7 @@ __all__ = [
     "TerminalResult",
     "TerminalStatus",
     "RuleSet",
+    "RuleAutomaticAdjudication",
     "GeneratorConfig",
     "IllegalActionError",
     "RuleSetMismatchError",

@@ -131,6 +131,18 @@ def piece_from_dict(data: Mapping[str, Any], path: str = "initial_position[]") -
 
 SEMANTIC_DSL_VERSION = 2
 REPETITION_POLICIES = ("draw", "continuous_check_loss")
+AUTOMATIC_ADJUDICATION_OUTCOMES = ("NO_CONTEST",)
+AUTOMATIC_ADJUDICATION_POLICIES = ("threshold_actor_continuous_check",)
+
+
+@dataclass(frozen=True, slots=True)
+class RuleAutomaticAdjudication:
+    """Optional generic state adjudication triggered by completed plies."""
+
+    adjudication_id: str
+    trigger_ply: int
+    outcome: str = "NO_CONTEST"
+    continuation_policy: str = "threshold_actor_continuous_check"
 
 
 @dataclass(frozen=True, slots=True)
@@ -166,6 +178,9 @@ class RuleSet:
     semantic_dsl_version: int = SEMANTIC_DSL_VERSION
     # Optional action-independent claims; omitted from legacy JSON when empty.
     declarations: tuple[RuleDeclaration, ...] = ()
+    # Optional action-independent automatic adjudication; omitted when empty
+    # so historical serialized rulesets and fingerprints remain unchanged.
+    automatic_adjudications: tuple[RuleAutomaticAdjudication, ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
 
 
@@ -873,6 +888,60 @@ def declaration_from_dict(data: Mapping[str, Any], path: str) -> RuleDeclaration
     )
 
 
+def automatic_adjudication_to_dict(value: RuleAutomaticAdjudication) -> dict:
+    return {
+        "adjudication_id": value.adjudication_id,
+        "trigger_ply": value.trigger_ply,
+        "outcome": value.outcome,
+        "continuation_policy": value.continuation_policy,
+    }
+
+
+def automatic_adjudication_from_dict(
+    data: Mapping[str, Any], path: str
+) -> RuleAutomaticAdjudication:
+    data = _require_mapping(data, path)
+    adjudication_id = _require_str(
+        _require_field(data, "adjudication_id", path), f"{path}.adjudication_id"
+    )
+    if not adjudication_id:
+        raise _err(
+            "AUTOMATIC_ADJUDICATION_ID_INVALID",
+            f"{path}.adjudication_id",
+            "must be non-empty",
+        )
+    trigger_ply = _require_int(
+        _require_field(data, "trigger_ply", path), f"{path}.trigger_ply"
+    )
+    if trigger_ply < 1:
+        raise _err(
+            "AUTOMATIC_ADJUDICATION_PLY_INVALID",
+            f"{path}.trigger_ply",
+            "must be positive",
+        )
+    outcome = _require_member(
+        _require_str(data.get("outcome", "NO_CONTEST"), f"{path}.outcome"),
+        AUTOMATIC_ADJUDICATION_OUTCOMES,
+        f"{path}.outcome",
+        "AUTOMATIC_ADJUDICATION_OUTCOME_INVALID",
+    )
+    continuation_policy = _require_member(
+        _require_str(
+            data.get("continuation_policy", "threshold_actor_continuous_check"),
+            f"{path}.continuation_policy",
+        ),
+        AUTOMATIC_ADJUDICATION_POLICIES,
+        f"{path}.continuation_policy",
+        "AUTOMATIC_ADJUDICATION_POLICY_INVALID",
+    )
+    return RuleAutomaticAdjudication(
+        adjudication_id=adjudication_id,
+        trigger_ply=trigger_ply,
+        outcome=outcome,
+        continuation_policy=continuation_policy,
+    )
+
+
 def aux_state_to_dict(value: RuleAuxState) -> dict:
     initial = value.initial
     if isinstance(initial, tuple):
@@ -1346,6 +1415,11 @@ def ruleset_to_dict(
         ]
     if ruleset.declarations:
         data["declarations"] = [declaration_to_dict(d) for d in ruleset.declarations]
+    if ruleset.automatic_adjudications:
+        data["automatic_adjudications"] = [
+            automatic_adjudication_to_dict(a)
+            for a in ruleset.automatic_adjudications
+        ]
     if include_metadata:
         data["metadata"] = dict(ruleset.metadata)
     return data
@@ -1509,6 +1583,19 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         declaration_from_dict(item, f"{path}.declarations[{i}]")
         for i, item in enumerate(declarations_raw)
     )
+    automatic_raw = data.get("automatic_adjudications", ())
+    if not isinstance(automatic_raw, (list, tuple)):
+        raise _err(
+            "FIELD_NOT_LIST",
+            f"{path}.automatic_adjudications",
+            "automatic_adjudications must be a list",
+        )
+    automatic_adjudications = tuple(
+        automatic_adjudication_from_dict(
+            item, f"{path}.automatic_adjudications[{i}]"
+        )
+        for i, item in enumerate(automatic_raw)
+    )
     metadata = _require_mapping(data.get("metadata", {}), f"{path}.metadata")
 
     return RuleSet(
@@ -1526,6 +1613,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         semantic_actions=semantic_actions,
         semantic_dsl_version=semantic_dsl_version,
         declarations=declarations,
+        automatic_adjudications=automatic_adjudications,
         metadata=dict(metadata),
     )
 

@@ -1,0 +1,25 @@
+{
+  "work_order": "GENERICCHESS-F28-SHOGI-500-MOVE-IMPASSE-AND-NO-CONTEST-SEMANTIC-FOUNDATION",
+  "scope": "audit-only Standard-Shogi-derived ruleset; live product remains unconfigured",
+  "policy": "threshold_actor_continuous_check",
+  "trigger_ply": 500,
+  "outcome": "NO_CONTEST",
+  "witnesses": [
+    {"ply": 499, "threshold_check": null, "expected": "ONGOING"},
+    {"ply": 500, "threshold_check": false, "expected": "NO_CONTEST"},
+    {"ply": 500, "threshold_check": true, "expected": "ONGOING"},
+    {"ply": 501, "threshold_check": true, "expected": "ONGOING"},
+    {"ply": 502, "threshold_check": true, "expected": "ONGOING"},
+    {"ply": 503, "threshold_check": true, "expected": "ONGOING"},
+    {"ply": 504, "threshold_check": false, "expected": "NO_CONTEST"},
+    {"ply": 514, "threshold_check": true, "expected": "ONGOING"},
+    {"ply": 516, "threshold_check": false, "expected": "NO_CONTEST"}
+  ],
+  "status_flags": {
+    "GENERIC_PLY_ADJUDICATION_FOUNDATION": true,
+    "SHOGI_500_MOVE_NO_CONTEST_SEMANTICS_CERTIFIED": true,
+    "SHOGI_THRESHOLD_CHECK_EXTENSION_CERTIFIED": true,
+    "STANDARD_SHOGI_500_MOVE_RULE_PRODUCT_AVAILABLE": false,
+    "STANDARD_SHOGI_FULL_RULE_PRODUCT_READY": false
+  }
+}

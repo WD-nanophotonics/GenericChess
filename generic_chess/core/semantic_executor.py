@@ -1522,6 +1522,7 @@ class SemanticEngine:
             TerminalStatus,
             _perpetual_check_result,
         )
+        from .adjudication import automatic_adjudication_status
 
         self._ensure_match(position)
         if not self.has_legal_action(position, checkpoint=checkpoint):
@@ -1538,6 +1539,15 @@ class SemanticEngine:
                 return perpetual
         if any(count >= self.support.repetition_limit for _, count in repetition_counts):
             return TerminalResult(TerminalStatus.REPETITION)
+        automatic = automatic_adjudication_status(
+            self.support.automatic_adjudications,
+            ply_count,
+            history,
+        )
+        if automatic == "NO_CONTEST":
+            return TerminalResult(TerminalStatus.NO_CONTEST)
+        if automatic == "PENDING":
+            return TerminalResult(TerminalStatus.ONGOING)
         if ply_count >= self.support.max_ply:
             return TerminalResult(TerminalStatus.MAX_PLY)
         return TerminalResult(TerminalStatus.ONGOING)

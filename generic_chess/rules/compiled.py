@@ -11,6 +11,16 @@ from ..core.position import Position
 
 
 @dataclass(frozen=True, slots=True)
+class CompiledAutomaticAdjudication:
+    """Immutable execution form of an automatic ply adjudication."""
+
+    adjudication_id: str
+    trigger_ply: int
+    outcome: str
+    continuation_policy: str
+
+
+@dataclass(frozen=True, slots=True)
 class CompiledRuleSet:
     """Everything the core kernel needs to reason about one game.
 
@@ -47,4 +57,5 @@ class CompiledRuleSet:
     max_ply: int
     stalemate_result: str
     repetition_policy: str = "draw"
+    automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     declarations: tuple[object, ...] = ()

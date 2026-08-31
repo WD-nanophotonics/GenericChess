@@ -22,8 +22,14 @@ from ..core.movement import LeapAtom, RayAtom, MovementAtom
 from ..core.movegen import legal_actions_from_position
 from ..core.pieces import Piece, PieceType
 from ..core.position import Hands, Position
-from .compiled import CompiledRuleSet
-from .schema import RuleSet, compute_fingerprint, ruleset_from_dict
+from .compiled import CompiledAutomaticAdjudication, CompiledRuleSet
+from .schema import (
+    AUTOMATIC_ADJUDICATION_OUTCOMES,
+    AUTOMATIC_ADJUDICATION_POLICIES,
+    RuleSet,
+    compute_fingerprint,
+    ruleset_from_dict,
+)
 from .serialization import deserialize_ruleset, serialize_ruleset
 from .validation import RuleValidationError, ValidationIssue
 
@@ -358,6 +364,7 @@ def compile_ruleset(
         repetition_policy=ruleset.repetition_policy,
         max_ply=ruleset.max_ply,
         stalemate_result=ruleset.stalemate_result,
+        automatic_adjudications=_compile_automatic_adjudications(ruleset),
         declarations=_compile_declarations(ruleset, tuple(sorted(types_by_id))),
     )
 
@@ -379,6 +386,75 @@ def compile_ruleset(
         )
 
     return compiled
+
+
+def _compile_automatic_adjudications(ruleset: RuleSet):
+    """Compile the small generic automatic-adjudication vocabulary."""
+    definitions = ruleset.automatic_adjudications
+    issues: list[ValidationIssue] = []
+    ids = [item.adjudication_id for item in definitions]
+    if len(definitions) > 1:
+        issues.append(
+            ValidationIssue(
+                "AUTOMATIC_ADJUDICATION_MULTIPLE_UNSUPPORTED",
+                "automatic_adjudications",
+                "v0 supports at most one automatic adjudication",
+            )
+        )
+    if len(set(ids)) != len(ids):
+        issues.append(
+            ValidationIssue(
+                "AUTOMATIC_ADJUDICATION_ID_DUPLICATE",
+                "automatic_adjudications",
+                "adjudication IDs must be unique",
+            )
+        )
+    output = []
+    for index, item in enumerate(definitions):
+        path = f"automatic_adjudications[{index}]"
+        if not isinstance(item.adjudication_id, str) or not item.adjudication_id:
+            issues.append(
+                ValidationIssue(
+                    "AUTOMATIC_ADJUDICATION_ID_INVALID",
+                    f"{path}.adjudication_id",
+                    "must be non-empty",
+                )
+            )
+        if isinstance(item.trigger_ply, bool) or not isinstance(item.trigger_ply, int) or item.trigger_ply < 1:
+            issues.append(
+                ValidationIssue(
+                    "AUTOMATIC_ADJUDICATION_PLY_INVALID",
+                    f"{path}.trigger_ply",
+                    "must be a positive integer",
+                )
+            )
+        if item.outcome not in AUTOMATIC_ADJUDICATION_OUTCOMES:
+            issues.append(
+                ValidationIssue(
+                    "AUTOMATIC_ADJUDICATION_OUTCOME_INVALID",
+                    f"{path}.outcome",
+                    repr(item.outcome),
+                )
+            )
+        if item.continuation_policy not in AUTOMATIC_ADJUDICATION_POLICIES:
+            issues.append(
+                ValidationIssue(
+                    "AUTOMATIC_ADJUDICATION_POLICY_INVALID",
+                    f"{path}.continuation_policy",
+                    repr(item.continuation_policy),
+                )
+            )
+        output.append(
+            CompiledAutomaticAdjudication(
+                adjudication_id=item.adjudication_id,
+                trigger_ply=item.trigger_ply,
+                outcome=item.outcome,
+                continuation_policy=item.continuation_policy,
+            )
+        )
+    if issues:
+        raise RuleValidationError(issues)
+    return tuple(output)
 
 
 def compile_ruleset_for_execution(
@@ -651,6 +727,7 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         geometry=geometry,
         patterns=tuple(patterns),
+        automatic_adjudications=compiled.automatic_adjudications,
         declarations=compiled.declarations,
         capabilities=SemanticCapabilities(
             legacy_core_executable=True,
@@ -693,6 +770,7 @@ def _build_semantic_support(compiled: CompiledRuleSet):
         repetition_policy=compiled.repetition_policy,
         max_ply=compiled.max_ply,
         stalemate_result=compiled.stalemate_result,
+        automatic_adjudications=compiled.automatic_adjudications,
     )
 
 
@@ -1315,6 +1393,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         patterns=tuple(normalized),
         aux_slots=compiled_slots,
         triggers=triggers,
+        automatic_adjudications=legacy.automatic_adjudications,
         declarations=legacy.declarations,
         capabilities=capabilities,
     )
@@ -1334,10 +1413,14 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         _, native_report = build_semantic_compile_payload(
             CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)
         )
-        # The current Native semantic payload has no declaration section.
-        # Never advertise a declaration-bearing RuleSet as fully Native
-        # executable while silently dropping its out-of-band semantics.
-        if native_report.native_executable and not ir.declarations:
+        # The current Native semantic payload has neither declaration nor
+        # automatic-adjudication sections.  Never advertise a ruleset as
+        # fully Native executable while silently dropping either semantic.
+        if (
+            native_report.native_executable
+            and not ir.declarations
+            and not ir.automatic_adjudications
+        ):
             ir = replace(
                 ir,
                 capabilities=replace(ir.capabilities, native_executable=True),

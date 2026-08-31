@@ -1,4 +1,4 @@
-"""Terminal conditions: checkmate, stalemate, repetition and ply limits."""
+"""Terminal conditions: mate, repetition, automatic adjudication and ply limits."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ from enum import Enum
 from typing import TYPE_CHECKING
 
 from .attacks import is_in_check
+from .adjudication import automatic_adjudication_status
 from .errors import ensure_ruleset_match
 from .movegen import has_legal_action
 from .position import Position
@@ -24,6 +25,7 @@ class TerminalStatus(Enum):
     REPETITION = "repetition"
     PERPETUAL_CHECK = "perpetual_check"
     MAX_PLY = "max_ply"
+    NO_CONTEST = "no_contest"
 
 
 @dataclass(frozen=True, slots=True)
@@ -42,6 +44,8 @@ class TerminalResult:
             return "ongoing"
         if self.status is TerminalStatus.PERPETUAL_CHECK:
             return f"perpetual check, player {1 - self.winner} loses"
+        if self.status is TerminalStatus.NO_CONTEST:
+            return "no-contest/restart"
         return f"{self.status.value}, draw"
 
 
@@ -100,6 +104,15 @@ def _terminal_from_parts(
             return perpetual
     if is_repetition_draw(repetition_counts, compiled.repetition_limit):
         return TerminalResult(TerminalStatus.REPETITION)
+    automatic = automatic_adjudication_status(
+        getattr(compiled, "automatic_adjudications", ()),
+        ply_count,
+        history,
+    )
+    if automatic == "NO_CONTEST":
+        return TerminalResult(TerminalStatus.NO_CONTEST)
+    if automatic == "PENDING":
+        return TerminalResult(TerminalStatus.ONGOING)
     if ply_count >= compiled.max_ply:
         return TerminalResult(TerminalStatus.MAX_PLY)
     return TerminalResult(TerminalStatus.ONGOING)
@@ -160,6 +173,16 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     limit = getattr(compiled, "repetition_limit", compiled.support.repetition_limit if hasattr(compiled, "support") else 4)
     if runtime.occurrence_count() >= limit:
         return TerminalResult(TerminalStatus.REPETITION)
+    automatic = automatic_adjudication_status(
+        getattr(compiled, "automatic_adjudications", ()),
+        runtime.ply_count,
+        runtime.history,
+        history_complete=getattr(runtime, "_history_complete", False),
+    )
+    if automatic == "NO_CONTEST":
+        return TerminalResult(TerminalStatus.NO_CONTEST)
+    if automatic == "PENDING":
+        return TerminalResult(TerminalStatus.ONGOING)
     max_ply = getattr(compiled, "max_ply", compiled.support.max_ply if hasattr(compiled, "support") else 512)
     if runtime.ply_count >= max_ply:
         return TerminalResult(TerminalStatus.MAX_PLY)

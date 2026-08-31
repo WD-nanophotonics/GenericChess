@@ -174,7 +174,12 @@ class _Context:
 
 
 def terminal_score(result, side_to_move: int, ply: int) -> int:
-    if result.status in (TerminalStatus.STALEMATE, TerminalStatus.REPETITION, TerminalStatus.MAX_PLY):
+    if result.status in (
+        TerminalStatus.STALEMATE,
+        TerminalStatus.REPETITION,
+        TerminalStatus.MAX_PLY,
+        TerminalStatus.NO_CONTEST,
+    ):
         return 0
     if result.winner == side_to_move:
         return MATE_SCORE - ply

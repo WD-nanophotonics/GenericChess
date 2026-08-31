@@ -18,6 +18,7 @@ import json
 from dataclasses import asdict, dataclass, field
 from typing import Any, Mapping
 
+from .compiled import CompiledAutomaticAdjudication
 from .schema import (
     AUX_LIFETIMES,
     AUX_SCOPES,
@@ -279,6 +280,7 @@ class CompiledSemanticIR:
     patterns: tuple[CompiledMovePattern, ...] = ()
     aux_slots: tuple[CompiledAuxSlot, ...] = ()
     triggers: tuple[CompiledTransitionTrigger, ...] = ()
+    automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     declarations: tuple[CompiledDeclaration, ...] = ()
     capabilities: SemanticCapabilities = SemanticCapabilities()
 
@@ -326,6 +328,15 @@ class CompiledSemanticIR:
                     "owner": t.owner,
                 }
                 for t in self.triggers
+            ],
+            "automatic_adjudications": [
+                {
+                    "adjudication_id": a.adjudication_id,
+                    "trigger_ply": a.trigger_ply,
+                    "outcome": a.outcome,
+                    "continuation_policy": a.continuation_policy,
+                }
+                for a in self.automatic_adjudications
             ],
             "declarations": [_declaration_dict(d) for d in self.declarations],
             "capabilities": self.capabilities.to_dict(),
@@ -511,6 +522,10 @@ class CompiledSemanticRuleset:
         return self.ir.declarations
 
     @property
+    def automatic_adjudications(self) -> tuple[CompiledAutomaticAdjudication, ...]:
+        return self.ir.automatic_adjudications
+
+    @property
     def board_size(self) -> int:
         if self.support is not None:
             return self.support.board_size
@@ -557,6 +572,7 @@ class CompiledSemanticSupport:
     repetition_policy: str = "draw"
     max_ply: int = 512
     stalemate_result: str = "draw"
+    automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
 
 
 # ================================================================ validation
