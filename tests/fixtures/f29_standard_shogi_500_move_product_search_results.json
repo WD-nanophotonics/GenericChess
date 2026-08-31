@@ -1,0 +1,27 @@
+{
+  "work_order": "GENERICCHESS-F29-SHOGI-500-MOVE-NO-CONTEST-PRODUCT-INTEGRATION",
+  "old_f27_product_fingerprint": "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4",
+  "new_f29_product_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+  "f27_r2_fixture_sha256": "5F8829A3139CBA923610C50FFC81986630C70AE8F3C0271369C58A1B72DBD9E9",
+  "executed_rows_sha256": "88749295340195f275a14b26e55dcd9ca8dfd3ce1358e7c537e4b4fbd8c1124f",
+  "settings": {
+    "rows": 30,
+    "fresh_repeats_per_row": 2,
+    "evaluator": "generic-v1",
+    "max_depth": 8,
+    "qsearch": [4, 8],
+    "tt": true,
+    "ordering": true,
+    "native_requested": true,
+    "provider_mode": "PYTHON_AUTHORITY_FALLBACK"
+  },
+  "parity": {
+    "zero_option_rows": 30,
+    "pass": 30,
+    "fail": 0,
+    "all_repeats_deterministic": true,
+    "all_roots_unchanged": true,
+    "action_pv_declaration_separation": true
+  },
+  "threshold_product_witness": "500-move no-contest with threshold-actor continuous-check extension; pending at ply 514, resolves on first same-actor non-check"
+}

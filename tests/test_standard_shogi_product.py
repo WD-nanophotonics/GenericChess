@@ -34,10 +34,16 @@ def test_product_builder_matches_historical_semantic_gameplay_fields():
     historical = build_semantic_shogi_ruleset()
     product_data = ruleset_to_dict(product, include_metadata=False)
     historical_data = ruleset_to_dict(historical, include_metadata=False)
-    assert {key: value for key, value in product_data.items() if key != "declarations"} == historical_data
+    assert {
+        key: value
+        for key, value in product_data.items()
+        if key not in {"declarations", "automatic_adjudications"}
+    } == historical_data
     assert compute_fingerprint(historical) == "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345"
-    assert compute_fingerprint(product) == "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
+    assert compute_fingerprint(product) == "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
     assert product.metadata["nyugyoku_supported"] is True
+    assert product.metadata["move_500_no_contest_supported"] is True
+    assert product.automatic_adjudications[0].trigger_ply == 500
 
 
 def test_catalog_contains_exact_productized_builtins():
@@ -106,7 +112,7 @@ def test_standard_shogi_cli_smoke_renders_9x9_and_30_initial_actions():
         encoding="utf-8",
     )
     assert proc.returncode == 0, proc.stderr
-    header = next(line for line in proc.stdout.splitlines() if "a" in line and "i" in line)
+    header = next(line for line in proc.stdout.splitlines() if line.lstrip().startswith("a "))
     assert all(letter in header for letter in "abcdefghi")
     assert "legal actions:" in proc.stdout
     assert sum(

@@ -152,13 +152,10 @@ def test_checkmate_precedes_automatic(monkeypatch):
 
 def test_semantic_compile_carries_the_same_immutable_primitive_without_live_drift():
     live = build_standard_shogi_ruleset()
-    assert live.automatic_adjudications == ()
-    assert compute_fingerprint(live) == "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
-    audit_definition = replace(
-        live,
-        repetition_limit=10_000,
-        automatic_adjudications=(RuleAutomaticAdjudication("audit_500", 500),),
-    )
+    assert live.automatic_adjudications[0].adjudication_id == "standard_shogi_500_move_no_contest"
+    assert compute_fingerprint(replace(live, automatic_adjudications=())) == "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
+    assert compute_fingerprint(live) == "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    audit_definition = replace(live, repetition_limit=10_000)
     semantic = compile_semantic_ruleset(audit_definition)
     assert semantic.ir.automatic_adjudications == semantic.support.automatic_adjudications
     assert semantic.automatic_adjudications[0].trigger_ply == 500
@@ -169,7 +166,7 @@ def test_semantic_compile_carries_the_same_immutable_primitive_without_live_drif
         [HistoryRecord(key, -1, "", False)]
         + [HistoryRecord(key, (move - 500) % 2, f"m{move}", move == 500 and False) for move in range(1, 501)]
     )
-    state = GameState(position, 500, ((key, 501),), TerminalResult(TerminalStatus.ONGOING), history)
+    state = GameState(position, 500, ((key, 1),), TerminalResult(TerminalStatus.ONGOING), history)
     assert terminal_result(state, semantic).status is TerminalStatus.NO_CONTEST
 
 

@@ -1,9 +1,9 @@
 """Production-owned semantic Standard Shogi RuleSet.
 
-The ordinary movement, promotion, drop, nifu, uchifuzume and repetition
-contracts are reproduced here independently of the historical learning/audit
-modules.  Nyugyoku is an out-of-band declaration; the separate official
-500-move impasse/no-contest procedure remains outside the current product.
+The ordinary movement, promotion, drop, nifu, uchifuzume, repetition and
+500-move no-contest contract is reproduced here independently of the
+historical learning/audit modules.  Nyugyoku remains an out-of-band
+declaration; bilateral replay administration remains outside the product.
 """
 
 from __future__ import annotations
@@ -13,6 +13,7 @@ from ..core.movement import LeapAtom, RayAtom, empty_mobility
 from ..core.pieces import Piece, PieceType
 from ..generation.drop_derivation import derive_drop_mask
 from .schema import (
+    RuleAutomaticAdjudication,
     RuleActionEffect,
     RuleDeclaration,
     RuleDeclarationOutcomeBand,
@@ -227,10 +228,20 @@ def build_standard_shogi_ruleset() -> RuleSet:
         repetition_limit=4, repetition_policy="continuous_check_loss", max_ply=512,
         stalemate_result="draw", semantic_actions=(_pawn_drop_pattern(),), semantic_dsl_version=2,
         declarations=_declaration_definitions(),
+        automatic_adjudications=(
+            RuleAutomaticAdjudication(
+                "standard_shogi_500_move_no_contest",
+                500,
+            ),
+        ),
         metadata={
             "preset": "standard_shogi_semantic",
             "source": "round4_semantic_certification",
             "nyugyoku_supported": STANDARD_SHOGI_NYUGYOKU_SUPPORTED,
-            "unsupported_rules": ("standard_shogi_500_move_impasse_no_contest",),
+            "move_500_no_contest_supported": True,
+            "unsupported_rules": (
+                "article_9_paragraph_4_bilateral_agreed_jishogi_replay_administration",
+                "automatic_replay_side_reversal_time_control_administration",
+            ),
         },
     )

@@ -806,6 +806,16 @@ def root_tactical_scan(
                 ):
                     ctx.stats.root_scan_seconds += time.monotonic() - started
                     return action, best_action
+                if child.terminal_status.is_terminal:
+                    score = -terminal_score(
+                        child.terminal_status,
+                        child.position.side_to_move,
+                        1,
+                    )
+                    if score > best_score:
+                        best_score = score
+                        best_action = action
+                    continue
                 ctx.stats.evaluation_calls += 1
                 with ctx.recorder.time_block(AuditMetric.EVALUATION):
                     score = -evaluator.evaluate(child)
@@ -839,6 +849,16 @@ def root_tactical_scan(
         ):
             ctx.stats.root_scan_seconds += time.monotonic() - started
             return action, best_action
+        if child.terminal_status.is_terminal:
+            score = -terminal_score(
+                child.terminal_status,
+                child.position.side_to_move,
+                1,
+            )
+            if score > best_score:
+                best_score = score
+                best_action = action
+            continue
         ctx.stats.evaluation_calls += 1
         with ctx.recorder.time_block(AuditMetric.EVALUATION):
             score = -evaluator.evaluate(child)

@@ -135,7 +135,11 @@ class AlphaBetaPlayer:
             beta_cutoffs=stats.beta_cutoffs,
             evaluation_profile_cache_hit=self._profile_cache_hit,
             termination_reason=reason,
-            choice_kind="DECLARATION" if stats.declaration_root_selected else "ACTION",
+            choice_kind=(
+                "TERMINAL"
+                if reason == "terminal_position" and not stats.declaration_root_selected
+                else "DECLARATION" if stats.declaration_root_selected else "ACTION"
+            ),
             declaration=stats.root_declaration,
             time_to_first_legal_action=stats.time_to_first_legal_action,
             time_to_first_completed_iteration=stats.time_to_first_completed_iteration,
