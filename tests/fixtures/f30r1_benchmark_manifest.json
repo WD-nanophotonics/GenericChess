@@ -1,0 +1,121 @@
+{
+  "alphasho_environment": {
+    "alphasho_root": "C:\\Users\\icywo\\PycharmProjects\\alphasho",
+    "audit_host": {
+      "python": "3.12.0"
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\artifacts\\checkpoints\\best.pt",
+      "present": true,
+      "sha256": "65204194f06e60c2d66955967e55595b514816300f4d576f1c981f1cfc50b4f1",
+      "used_by_entry_point": false
+    },
+    "entry_point": {
+      "class": "alphasho.heuristicplayer.HeuristicPlayer",
+      "kind": "AlphaSho current heuristic full profile",
+      "module": "benchmarks.heuristic_strength",
+      "profile": "FULL",
+      "seconds_per_move": 0.5
+    },
+    "python": {
+      "cshogi": "1.0.4",
+      "cuda": "False",
+      "executable": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Scripts\\python.exe",
+      "raw_version": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+      "torch": "2.13.0+cpu"
+    },
+    "repo": {
+      "branch": "codex/web-last-move-highlight",
+      "head": "61c35fa70ca1f59264045ad1425d6757ad6666a2",
+      "origin": "https://github.com/WD-nanophotonics/alphasho.git",
+      "status_porcelain": ""
+    },
+    "source_sha256": {
+      "benchmarks/heuristic_strength.py": "9dbc4e62026d5ac5ef239a1f5753df5e1276b39a0f2ff25e7edba9d8e1b1aa3a",
+      "benchmarks/legacy_3262cc8.py": "102805120fa30dc8b49b4756114c8d98943e1910246fa9b139f5a5a5c3251915",
+      "src/alphasho/heuristicplayer/evaluation.py": "7f6c0cff2575beaf91656ae9a2372cf6b700cebf6e2db7373911a33d1d6dc619",
+      "src/alphasho/heuristicplayer/player.py": "dc1a64c09be5d3da808ea9a026b6699ff3185274757cc6f40c694b701d62dabe",
+      "src/alphasho/heuristicplayer/search.py": "266746deffbd888cfc1695509b86bb7059a33f088204acf9b6c0aeee84cc116d"
+    }
+  },
+  "controls": {
+    "external_entry": "benchmarks.heuristic_strength._thinking(seconds)",
+    "fresh_seconds": [
+      0.5,
+      2.0
+    ],
+    "profile": "FULL",
+    "repetitions_per_position_time": 3
+  },
+  "descriptor": {
+    "count": 10,
+    "path": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+    "sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151",
+    "source_commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38"
+  },
+  "device": {
+    "external_device_from_environment_manifest": true,
+    "generic_chess_python": "3.12.0"
+  },
+  "f22_reference": {
+    "commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38",
+    "reference_count": 10,
+    "source_paths": {
+      "agreement": "artifacts/f22_post_f21_rebaseline_strength/alphasho_move_agreement.json",
+      "positions": "artifacts/f22_post_f21_rebaseline_strength/round5_frozen_positions.json",
+      "provenance": "artifacts/f22_post_f21_rebaseline_strength/alphasho_reference_provenance.json"
+    },
+    "source_sha256": {
+      "agreement": "e73c0aef44983fbf6b5dae4d46c7eea94f4aa8e15a97f85cdaf1112e6d142f3e",
+      "positions": "30b69f451b3e338fa0ffe0f4cf8f6b7ee4e400d9eaef86f4559b872e4c11b3f0",
+      "provenance": "0900cf7358c7cc31fdb5ebc69daa4379f95e513a34ee36c88a64c1debe3afac0"
+    }
+  },
+  "first_pass": {
+    "path": "tests/fixtures/f30_alphasho_reference_benchmark.json",
+    "preserve": true,
+    "sha256": "7dcb4250ad9eaf18424cb7fe788be7875a2c7eeb1db6991a0a9f7e9b21cbf1be"
+  },
+  "generic_chess_commit": "a389adc50ed42096874ee38f818584978468c6ac",
+  "generic_chess_head_at_freeze": "5b701fa0ff1b83faadc866f74b62eaecb3f26a4d",
+  "generic_chess_policy": {
+    "disk_cache": false,
+    "evaluator": "v1",
+    "max_depth": 64,
+    "native_requested": true,
+    "ordering": true,
+    "qsearch_hard_max_depth": 8,
+    "qsearch_max_depth": 4,
+    "search_tuning": "default",
+    "tt": true
+  },
+  "harness": {
+    "path": "scripts/audit_f30r1_alphasho_reference.py",
+    "sha256": "48100f91b8859babf649d90df3542699f77d04cfce254f70bafae7c74faa6728"
+  },
+  "kind": "F30_R1_PRE_RUN_MANIFEST",
+  "manifest_sha256": "3af3ac415bf5fee1f52bae7fe09d6a888db1a90be3d12c10cce1acd477ed2d7e",
+  "paired_policy": {
+    "arbiter": "F29 GameSession",
+    "colors_per_position": 2,
+    "games": 20,
+    "history_boundary": "IMPORTED_HISTORY_PREFIX_UNAVAILABLE",
+    "max_additional_plies": 256,
+    "persistent_player_per_game": true,
+    "positions": 10,
+    "seconds_per_move": 0.5,
+    "transcript_fields": [
+      "benchmark_ply",
+      "actor",
+      "engine",
+      "usi_or_declaration",
+      "elapsed_seconds",
+      "legal",
+      "submission_status",
+      "choice_kind"
+    ]
+  },
+  "production_change_policy": "zero files under generic_chess/",
+  "schema_version": 1,
+  "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+}

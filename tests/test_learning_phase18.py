@@ -1,6 +1,7 @@
 """Learning Phase 1.8: AlphaSho positive control tests."""
 
 import sys
+import subprocess
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -151,7 +152,29 @@ def test_human_material_reference_mapping():
 
 
 @requires_alphasho
-def test_alphasho_audit_readonly():
+def test_alphasho_audit_readonly(monkeypatch):
+    # The external checkout is intentionally owned by another Windows
+    # identity.  Keep this read-only positive control safe without global Git
+    # configuration; production search/rules code remains untouched.
+    import generic_chess.learning.alphasho_bridge as bridge
+
+    def safe_git_capture(*args: str) -> str:
+        result = subprocess.run(
+            [
+                "git",
+                "-c",
+                f"safe.directory={bridge.ALPHASHO_ROOT}",
+                "-C",
+                str(bridge.ALPHASHO_ROOT),
+                *args,
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.stdout.strip()
+
+    monkeypatch.setattr(bridge, "_git_capture", safe_git_capture)
     compiled = _compiled()
     before = capture_repo_state()
     audit = audit_alphasho(compiled)
