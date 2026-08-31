@@ -1,0 +1,2429 @@
+{
+  "environment": {
+    "alphasho_root": "C:\\Users\\icywo\\PycharmProjects\\alphasho",
+    "audit_host": {
+      "python": "3.12.0"
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\artifacts\\checkpoints\\best.pt",
+      "present": true,
+      "sha256": "65204194f06e60c2d66955967e55595b514816300f4d576f1c981f1cfc50b4f1",
+      "used_by_entry_point": false
+    },
+    "entry_point": {
+      "class": "alphasho.heuristicplayer.HeuristicPlayer",
+      "kind": "AlphaSho current heuristic full profile",
+      "module": "benchmarks.heuristic_strength",
+      "profile": "FULL",
+      "seconds_per_move": 0.5
+    },
+    "python": {
+      "cshogi": "1.0.4",
+      "cuda": "False",
+      "executable": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Scripts\\python.exe",
+      "raw_version": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+      "torch": "2.13.0+cpu"
+    },
+    "repo": {
+      "branch": "codex/web-last-move-highlight",
+      "head": "61c35fa70ca1f59264045ad1425d6757ad6666a2",
+      "origin": "https://github.com/WD-nanophotonics/alphasho.git",
+      "status_porcelain": ""
+    },
+    "source_sha256": {
+      "benchmarks/heuristic_strength.py": "9dbc4e62026d5ac5ef239a1f5753df5e1276b39a0f2ff25e7edba9d8e1b1aa3a",
+      "benchmarks/legacy_3262cc8.py": "102805120fa30dc8b49b4756114c8d98943e1910246fa9b139f5a5a5c3251915",
+      "src/alphasho/heuristicplayer/evaluation.py": "7f6c0cff2575beaf91656ae9a2372cf6b700cebf6e2db7373911a33d1d6dc619",
+      "src/alphasho/heuristicplayer/player.py": "dc1a64c09be5d3da808ea9a026b6699ff3185274757cc6f40c694b701d62dabe",
+      "src/alphasho/heuristicplayer/search.py": "266746deffbd888cfc1695509b86bb7059a33f088204acf9b6c0aeee84cc116d"
+    }
+  },
+  "flags": {
+    "ALPHASHO_EXTERNAL_REFERENCE_REPRODUCIBLE": true,
+    "ALPHASHO_FRESH_MOVE_REFERENCE_COMPLETE": true,
+    "ALPHASHO_PAIRED_BENCHMARK_COMPLETE": true,
+    "F22_HISTORICAL_REFERENCE_REPLAY_COMPLETE": true,
+    "STANDARD_SHOGI_EXTERNAL_STRENGTH_BASELINE_FROZEN": true
+  },
+  "fresh_alphasho": {
+    "complete": true,
+    "modal_move_by_position": {
+      "iteration-000086-game-000001-ply12": "3g4e",
+      "iteration-000086-game-000002-ply12": "5i6h",
+      "iteration-000086-game-000003-ply12": "5i6h",
+      "iteration-000086-game-000004-ply12": "5i6h",
+      "iteration-000086-game-000005-ply12": "3h4g",
+      "iteration-000086-game-000006-ply12": "8h9g",
+      "iteration-000086-game-000007-ply12": "5i4h",
+      "iteration-000086-game-000008-ply12": "6h6g",
+      "iteration-000086-game-000009-ply12": "8h4d",
+      "iteration-000086-game-000010-ply12": "5i6h"
+    },
+    "repeat_count": 3,
+    "runs": [
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.42622010002378374,
+        "nodes": 11692,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "3g4e",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.44825180002953857,
+        "nodes": 7201,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "3g4e",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.42587039998034015,
+        "nodes": 7506,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "3g4e",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4258106999914162,
+        "nodes": 6686,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.42555770004400983,
+        "nodes": 7118,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.42567090003285557,
+        "nodes": 7006,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.4255579999880865,
+        "nodes": 7528,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.4260050000157207,
+        "nodes": 8304,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.4264289000420831,
+        "nodes": 8454,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4256017000298016,
+        "nodes": 6686,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.42578900000080466,
+        "nodes": 6405,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4254194000386633,
+        "nodes": 6820,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4257392999716103,
+        "nodes": 7192,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "3h4g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4257299000164494,
+        "nodes": 7371,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "3h4g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4255777000216767,
+        "nodes": 7420,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "3h4g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4257997000240721,
+        "nodes": 8025,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "8h9g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.42619319999357685,
+        "nodes": 7718,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "8h9g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4254674999974668,
+        "nodes": 7822,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "8h9g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4258263999945484,
+        "nodes": 7857,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "5i4h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4256160000222735,
+        "nodes": 7479,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "5i4h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.42574750003404915,
+        "nodes": 7659,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "5i4h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.4256700999685563,
+        "nodes": 7482,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "6h6g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.42557860002852976,
+        "nodes": 7342,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "6h6g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.42568370001390576,
+        "nodes": 7672,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "6h6g",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4255566000356339,
+        "nodes": 7873,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "8h4d",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4279013000195846,
+        "nodes": 7794,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "8h4d",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 3,
+        "elapsed_seconds": 0.4255713999737054,
+        "nodes": 7577,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "8h4d",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.42542889999458566,
+        "nodes": 7176,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.4256642000400461,
+        "nodes": 7103,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      },
+      {
+        "completed_depth": 4,
+        "elapsed_seconds": 0.42566340003395453,
+        "nodes": 7149,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "5i6h",
+        "used_fallback": false
+      }
+    ],
+    "seconds_per_move": 0.5,
+    "stable_positions": 10
+  },
+  "fresh_generic_chess": {
+    "complete": true,
+    "modal_move_by_position": {
+      "iteration-000086-game-000001-ply12": "3g4e",
+      "iteration-000086-game-000002-ply12": "7g7f",
+      "iteration-000086-game-000003-ply12": "4i3h",
+      "iteration-000086-game-000004-ply12": "5i5h",
+      "iteration-000086-game-000005-ply12": "5i5h",
+      "iteration-000086-game-000006-ply12": "7g7f",
+      "iteration-000086-game-000007-ply12": "7g7f",
+      "iteration-000086-game-000008-ply12": "6i7i",
+      "iteration-000086-game-000009-ply12": "8h4d",
+      "iteration-000086-game-000010-ply12": "6i7h"
+    },
+    "repeat_count": 3,
+    "runs": [
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4981717999908142,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "3g4e",
+        "termination_reason": "fallback",
+        "total_nodes": 63
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4951080000028014,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "3g4e",
+        "termination_reason": "fallback",
+        "total_nodes": 59
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.5020007999846712,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "3g4e",
+        "termination_reason": "fallback",
+        "total_nodes": 63
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4987816999782808,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 44
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4961656999657862,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 42
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4880424999864772,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 40
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.5003747000009753,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "4i3h",
+        "termination_reason": "fallback",
+        "total_nodes": 68
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.49572749994695187,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "4i3h",
+        "termination_reason": "fallback",
+        "total_nodes": 58
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.5007880000048317,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "4i3h",
+        "termination_reason": "fallback",
+        "total_nodes": 70
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.49741650000214577,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "5i5h",
+        "termination_reason": "fallback",
+        "total_nodes": 66
+      },
+      {
+        "completed_depth": 1,
+        "elapsed_seconds": 0.4955043999943882,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "5i5h",
+        "termination_reason": "time_limit",
+        "total_nodes": 80
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.49306830001296476,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "5i5h",
+        "termination_reason": "fallback",
+        "total_nodes": 62
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4880309999571182,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "5i5h",
+        "termination_reason": "fallback",
+        "total_nodes": 36
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4957014999818057,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "5i5h",
+        "termination_reason": "fallback",
+        "total_nodes": 36
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.49381129996618256,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "5i5h",
+        "termination_reason": "fallback",
+        "total_nodes": 38
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4983401999925263,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 61
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.48748949996661395,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 63
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4941334000322968,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 67
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4981472999788821,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 62
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.490346500009764,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 62
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4875136999762617,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "7g7f",
+        "termination_reason": "fallback",
+        "total_nodes": 62
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4892204999923706,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "6i7i",
+        "termination_reason": "fallback",
+        "total_nodes": 61
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.48907369998050854,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "6i7i",
+        "termination_reason": "fallback",
+        "total_nodes": 61
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4935942000010982,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "6i7i",
+        "termination_reason": "fallback",
+        "total_nodes": 61
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4976345000322908,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d",
+        "reference_top1": true,
+        "repeat": 0,
+        "selected_move": "8h4d",
+        "termination_reason": "fallback",
+        "total_nodes": 68
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4931781000341289,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d",
+        "reference_top1": true,
+        "repeat": 1,
+        "selected_move": "8h4d",
+        "termination_reason": "fallback",
+        "total_nodes": 72
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4978687000111677,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d",
+        "reference_top1": true,
+        "repeat": 2,
+        "selected_move": "8h4d",
+        "termination_reason": "fallback",
+        "total_nodes": 68
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4886978999711573,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 0,
+        "selected_move": "6i7h",
+        "termination_reason": "fallback",
+        "total_nodes": 41
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.49447840003995225,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 1,
+        "selected_move": "6i7h",
+        "termination_reason": "fallback",
+        "total_nodes": 43
+      },
+      {
+        "completed_depth": 0,
+        "elapsed_seconds": 0.4945214000181295,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h",
+        "reference_top1": false,
+        "repeat": 2,
+        "selected_move": "6i7h",
+        "termination_reason": "fallback",
+        "total_nodes": 41
+      }
+    ],
+    "seconds_per_move": 0.5,
+    "stable_positions": 10
+  },
+  "generic_chess_commit": "a389adc50ed42096874ee38f818584978468c6ac",
+  "historical_reference": {
+    "positions": [
+      {
+        "name": "iteration-000086-game-000001-ply12",
+        "sfen": "lnsgkgsnl/2r4b1/pp1pp1ppp/2p6/5p3/5PP2/PPPPP1NPP/1B2G3R/LNS1KGS1L b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000002-ply12",
+        "sfen": "lns4nl/1r1gksgb1/pp1p1pppp/2p1p4/9/1P4P2/P1PPPPNPP/1B2G1SR1/LNS1KG2L b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000003-ply12",
+        "sfen": "ln1gkgsnl/1s4rb1/1p1pppp1p/p1p4p1/9/P2P1P3/1PP1P1PPP/LB2R4/1NSGKGSNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000004-ply12",
+        "sfen": "1nsgkg1n1/l4srb1/ppp1ppppl/3p4p/9/3P5/PPP1PPPPP/1B3G2R/LNSGK1SNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000005-ply12",
+        "sfen": "1nsg2gnl/l2rk1sb1/pppppp1pp/6p2/9/P4P2P/1PPPP1PP1/1B1G1GSR1/LNS1K2NL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000006-ply12",
+        "sfen": "ln1gkgsn1/1s3r1bl/ppp1ppp1p/3p3p1/9/P4P3/1PPPP1PPP/1BK4R1/LNSG1GSNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000007-ply12",
+        "sfen": "lnsg2snl/1r2k1gb1/pp1pp1pp1/2p5p/P4p3/L7P/1PPPPPPP1/1BR4S1/1NSGKG1NL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000008-ply12",
+        "sfen": "1ng1kgsn1/l2s2rbl/ppppppp1p/7p1/3P5/9/PPP1PPPPP/1B1S1R3/LN1GKGSNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000009-ply12",
+        "sfen": "ln2kg1nl/1r1sgs1b1/1pppp1pp1/p4p2p/9/2P6/PP1PPPPPP/LB1SG1R2/1N1GK1SNL b - 13"
+      },
+      {
+        "name": "iteration-000086-game-000010-ply12",
+        "sfen": "lnsg1g1nl/4ksrb1/pp2ppppp/2pp5/9/3P3PP/PPP1PPP2/1B2G1R1L/LNSGK1SN1 b - 13"
+      }
+    ],
+    "reference_count": 10,
+    "references": {
+      "iteration-000086-game-000001-ply12": "3g4e",
+      "iteration-000086-game-000002-ply12": "5i6h",
+      "iteration-000086-game-000003-ply12": "5i6h",
+      "iteration-000086-game-000004-ply12": "5i6h",
+      "iteration-000086-game-000005-ply12": "3h4g",
+      "iteration-000086-game-000006-ply12": "8h9g",
+      "iteration-000086-game-000007-ply12": "5i4h",
+      "iteration-000086-game-000008-ply12": "6h6g",
+      "iteration-000086-game-000009-ply12": "8h4d",
+      "iteration-000086-game-000010-ply12": "5i6h"
+    },
+    "source_commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38",
+    "source_sha256": {
+      "agreement": "e73c0aef44983fbf6b5dae4d46c7eea94f4aa8e15a97f85cdaf1112e6d142f3e",
+      "positions": "30b69f451b3e338fa0ffe0f4cf8f6b7ee4e400d9eaef86f4559b872e4c11b3f0",
+      "provenance": "0900cf7358c7cc31fdb5ebc69daa4379f95e513a34ee36c88a64c1debe3afac0"
+    }
+  },
+  "historical_replay": {
+    "all_deterministic": true,
+    "budgets": [
+      128,
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "legal_reference_moves": [
+      {
+        "legal": true,
+        "legal_move_count": 28,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "reference_move": "3g4e"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 25,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "reference_move": "5i6h"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 31,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "reference_move": "5i6h"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 25,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "reference_move": "5i6h"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 29,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "reference_move": "3h4g"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 30,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "reference_move": "8h9g"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 31,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "reference_move": "5i4h"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 26,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "reference_move": "6h6g"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 29,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "reference_move": "8h4d"
+      },
+      {
+        "legal": true,
+        "legal_move_count": 26,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "reference_move": "5i6h"
+      }
+    ],
+    "runs": [
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.1232206000131555,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.03499750001356,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 4.858081999991555,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 4.909689899999648,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 10.74807759997202,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 358,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 10.381412699993234,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 358,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 17.8133582000155,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 358,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 18.298738099983893,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 358,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 28.060807000030763,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 358,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 27.576358000049368,
+            "reference_move": "3g4e",
+            "reference_top1": false,
+            "score": 358,
+            "selected_move": "4f4e",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.300658399995882,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.262983099964913,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 2.597870699944906,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 2.7857569999760017,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 7.2204621999990195,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -2,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 6.910634399973787,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -2,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 17.5074415000272,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -2,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 17.34824090002803,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -2,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 34.67376139998669,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -2,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 35.244078299961984,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -2,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9919179999851622,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.027578999986872,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.477249199990183,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.3465965000214055,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 9.01943929999834,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 9.152377500024159,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 18.014481400023215,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 18.181502900028136,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 27.44165090000024,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 27.67644690000452,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "4i3h",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9892161999596283,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9614269000012428,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 3.260859099973459,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 4,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 3.158931899990421,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 4,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 8.634757699968759,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 4,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 8.461221800011117,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 4,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 13.62045250000665,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 4,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 13.625625999993645,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 4,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "repeats": [
+          {
+            "completed_depth": 3,
+            "elapsed_seconds": 21.760857800021768,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 11,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 3,
+            "elapsed_seconds": 22.105509500019252,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 11,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.7051352999988012,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.5461057999636978,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.8774329999578185,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.9127138000330888,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 11.941489799995907,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 11.80603700003121,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 30.52654299995629,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -9,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 30.347650000010617,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -9,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 60.10011380002834,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -9,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 60.986024699988775,
+            "reference_move": "3h4g",
+            "reference_top1": false,
+            "score": -9,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9703158999909647,
+            "reference_move": "8h9g",
+            "reference_top1": false,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9257322999765165,
+            "reference_move": "8h9g",
+            "reference_top1": false,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.4238440000335686,
+            "reference_move": "8h9g",
+            "reference_top1": false,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.4509966000332497,
+            "reference_move": "8h9g",
+            "reference_top1": false,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 9.976879699970596,
+            "reference_move": "8h9g",
+            "reference_top1": true,
+            "score": 4,
+            "selected_move": "8h9g",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 9.751626499986742,
+            "reference_move": "8h9g",
+            "reference_top1": true,
+            "score": 4,
+            "selected_move": "8h9g",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 13.51065730000846,
+            "reference_move": "8h9g",
+            "reference_top1": true,
+            "score": 4,
+            "selected_move": "8h9g",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 14.174764499999583,
+            "reference_move": "8h9g",
+            "reference_top1": true,
+            "score": 4,
+            "selected_move": "8h9g",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 28.886705500015523,
+            "reference_move": "8h9g",
+            "reference_top1": true,
+            "score": 4,
+            "selected_move": "8h9g",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 28.951500699971803,
+            "reference_move": "8h9g",
+            "reference_top1": true,
+            "score": 4,
+            "selected_move": "8h9g",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.3430303999921307,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.339016799989622,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 4.212563799985219,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 4.420572800037917,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 12.060783300024923,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -15,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 12.304072899976745,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -15,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 21.754013699945062,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -15,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 21.685850899957586,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -15,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 43.048303099989425,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -15,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 42.56726889999118,
+            "reference_move": "5i4h",
+            "reference_top1": false,
+            "score": -15,
+            "selected_move": "7g7f",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9666449999785982,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.9501264999853447,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 2.9336493000155315,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 3.2856951000285335,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 6.8915876999963075,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": -7,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 7.502461299998686,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": -7,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 12.290722200006712,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": -7,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 11.270058099995367,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": -7,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 23.98585609998554,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": -7,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 24.16526999999769,
+            "reference_move": "6h6g",
+            "reference_top1": false,
+            "score": -7,
+            "selected_move": "6i7i",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.7001825000043027,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.6160534000373445,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 6.20827860001009,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 6.283799699973315,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 13.395455399993807,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 359,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 13.571773500007112,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 359,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 25.569265600002836,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 359,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 25.8959941000212,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 359,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 50.57209219998913,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 359,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 50.356042100000195,
+            "reference_move": "8h4d",
+            "reference_top1": true,
+            "score": 359,
+            "selected_move": "8h4d",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      },
+      {
+        "budget": 128,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.235945000022184,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.2550952000310645,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 128
+          }
+        ]
+      },
+      {
+        "budget": 256,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 2.2876126000192016,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 2.4036965999985114,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 256
+          }
+        ]
+      },
+      {
+        "budget": 512,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "repeats": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 5.254674700030591,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 5.408703900000546,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 512
+          }
+        ]
+      },
+      {
+        "budget": 1024,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 16.743919700034894,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 16.78891730000032,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 1024
+          }
+        ]
+      },
+      {
+        "budget": 2048,
+        "deterministic": true,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "repeats": [
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 31.530517300008796,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          },
+          {
+            "completed_depth": 2,
+            "elapsed_seconds": 32.120210799970664,
+            "reference_move": "5i6h",
+            "reference_top1": false,
+            "score": 1,
+            "selected_move": "6i7h",
+            "termination_reason": "node_limit",
+            "total_nodes": 2048
+          }
+        ]
+      }
+    ]
+  },
+  "next_boundary": "F31_STANDARD_SHOGI_PAIRED_EXTERNAL_BENCHMARK",
+  "paired_benchmark": {
+    "complete": true,
+    "game_count": 20,
+    "games": [
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "000dfed45822c5cc577a30f6b22691bc2051f5270f0750d0678e4c0871b30b91",
+        "played_plies": 21,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "6f227f01186d1c5e1da1ea7479a0b7aef400ae7d4b0cf6a329949b907901eaff",
+        "played_plies": 58,
+        "position_id": "iteration-000086-game-000001-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "3017daaddcbbac10fcc4f38965377c36796865ce53810b1fe8a7e2a5b84f70f5",
+        "played_plies": 67,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "status": "stalemate",
+        "winner": null
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "b597e0ba09cb02c288bad4b0c5332eafa7b60962e486644581c2236a591686fe",
+        "played_plies": 34,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "562fc66358d269375f579f3f0c8398abb8b3ee7052efa040fca4206f631ebc55",
+        "played_plies": 35,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "8c6dab26d359902f7e57d35f4d6662259fce17a23380efed8ec4ffdb3897938f",
+        "played_plies": 66,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "8cda16cd100f7a3812b5eb77467a945137e31082a6227437026287a1ae950f24",
+        "played_plies": 37,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "4141dc17ab2b4c1b7463de08b9c5cb5999312c86586c16cf41db5fcced6c2662",
+        "played_plies": 54,
+        "position_id": "iteration-000086-game-000004-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "13c1b2066b99381f6ff8b2daf70926eb750188e02191334d404f5c6c5d391bae",
+        "played_plies": 43,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "e6b33a866f4d4c6bf0e86b337fbeb9180f136d69d24e0a29c6365c45b6d2f5ee",
+        "played_plies": 58,
+        "position_id": "iteration-000086-game-000005-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "faec02947fb931a2dbf899a4e3c353179e40168870956729399a560b515bdd50",
+        "played_plies": 65,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "35ac304a19559523e4206f977447d228bceb228eb980e57737a59f08a0c4bc55",
+        "played_plies": 54,
+        "position_id": "iteration-000086-game-000006-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "8449f1c5aca38188320733c8a421d2e739f2848b50ee279c992166893f4a43dd",
+        "played_plies": 23,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "87ff1d5af466b587b9f6462a8533d53069811d9b903b48bc585a4ba9675055cd",
+        "played_plies": 82,
+        "position_id": "iteration-000086-game-000007-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "316bcad4e237fbd66683e69e83267d2a0063a02525c195c0b705adf625ef60d3",
+        "played_plies": 63,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "d5238f0f648383324bc635ddb5ddcb75efb7d431f33dea20610ea70f7144aeb2",
+        "played_plies": 36,
+        "position_id": "iteration-000086-game-000008-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "9ceba7663cb23134fef6474bcad9038b9b84ed8909fd8b8b97f5aff0d8581527",
+        "played_plies": 75,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "status": "stalemate",
+        "winner": null
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "7c600178d73e4e0bdba10fdd40c594c1539d6078d8c0f44a553d8d5ae46bb9a2",
+        "played_plies": 58,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "status": "checkmate",
+        "winner": 1
+      },
+      {
+        "external_color": "BLACK",
+        "failure": null,
+        "moves_sha256": "3b2487ca413284065d0ad3811ee5ad103073c6d27d01dc9b3f4f09b7ccd7c845",
+        "played_plies": 41,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "status": "checkmate",
+        "winner": 0
+      },
+      {
+        "external_color": "WHITE",
+        "failure": null,
+        "moves_sha256": "7972b3e23d29b787088b0e5ad63249b51412866f0cd1f282a4cf9ab7f5403075",
+        "played_plies": 70,
+        "position_id": "iteration-000086-game-000010-ply12",
+        "status": "checkmate",
+        "winner": 1
+      }
+    ],
+    "max_plies": 256,
+    "seconds_per_move": 0.5,
+    "technical_failures": 0
+  },
+  "schema_version": 1,
+  "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+  "status": "PASS"
+}
