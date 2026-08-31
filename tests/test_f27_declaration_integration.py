@@ -212,6 +212,7 @@ def test_f27r1_results_fixture_has_all_repeats_and_f25_zero_option_parity():
         )
     )
     rows = results["rows"]
+    assert results["corrective_parent_sha"] == "5b08bf47b8e2b0ab9697feca2aa9e1b84e4fd6c3"
     assert results["integrity"] == {
         "row_count": 30,
         "repeats_per_row": 2,

@@ -1,7 +1,8 @@
 {
   "status": "PASS",
   "implementation_sha": "71ad3ed7afc5e666397d6e48b2f7ab3e323368a4",
-  "corrective_provenance": "TT reconstruction fix is the uncommitted corrective parent of this evidence; fixture is frozen in the subsequent commit.",
+  "corrective_parent_sha": "5b08bf47b8e2b0ab9697feca2aa9e1b84e4fd6c3",
+  "corrective_provenance": "TT reconstruction fix is implemented by corrective_parent_sha; this fixture freezes the executed evidence generated from that fix.",
   "first_pass_manifest_sha256": "50B52810526348B66D3BD54E3D9E1EBE1111607A79227F823051D5DA2441F58E",
   "f25_manifest_sha256": "88c94ba6607b3dea85bdbf4b8a08c4265680135fc7b3ccc2833aca21cb693de4",
   "descriptor_sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151",
