@@ -1,4 +1,4 @@
-"""Session-level results (resignation lives here, not in Core)."""
+"""Session-level results (resignation and declarations live here, not in Core)."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ class SessionStatus(Enum):
     PERPETUAL_CHECK = "perpetual_check"
     MAX_PLY = "max_ply"
     RESIGNATION = "resignation"
+    DECLARATION = "declaration"
 
 
 @dataclass(frozen=True, slots=True)
@@ -23,12 +24,26 @@ class SessionResult:
     status: SessionStatus
     winner: int | None
     resigned_by: int | None = None
+    declaration_id: str | None = None
+    declared_by: int | None = None
+    declaration_outcome: str | None = None
+    declaration_score: int | None = None
 
     def __str__(self) -> str:
         if self.status is SessionStatus.ONGOING:
             return "ongoing"
         if self.status is SessionStatus.RESIGNATION:
             return f"resignation, player {self.winner} wins (player {self.resigned_by} resigned)"
+        if self.status is SessionStatus.DECLARATION:
+            if self.declaration_outcome == "RESTART":
+                return (
+                    f"declaration {self.declaration_id}, player {self.declared_by} "
+                    "RESTART/no-contest"
+                )
+            return (
+                f"declaration {self.declaration_id}, player {self.declared_by} "
+                f"{self.declaration_outcome}, player {self.winner} wins"
+            )
         if self.status is SessionStatus.CHECKMATE:
             return f"checkmate, player {self.winner} wins"
         if self.status is SessionStatus.PERPETUAL_CHECK:

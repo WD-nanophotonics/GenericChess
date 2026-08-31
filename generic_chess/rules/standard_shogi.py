@@ -2,8 +2,8 @@
 
 The ordinary movement, promotion, drop, nifu, uchifuzume and repetition
 contracts are reproduced here independently of the historical learning/audit
-modules.  Nyugyoku is intentionally not part of the current generic terminal
-model and is disclosed in product metadata.
+modules.  Nyugyoku is an out-of-band declaration; the separate official
+500-move impasse/no-contest procedure remains outside the current product.
 """
 
 from __future__ import annotations
@@ -14,6 +14,8 @@ from ..core.pieces import Piece, PieceType
 from ..generation.drop_derivation import derive_drop_mask
 from .schema import (
     RuleActionEffect,
+    RuleDeclaration,
+    RuleDeclarationOutcomeBand,
     RuleGeometrySpec,
     RuleInvariant,
     RulePostcondition,
@@ -24,11 +26,12 @@ from .schema import (
     RuleSquareRef,
     RuleStateGuard,
     RuleTypeRef,
+    RuleWeightedMaterialMetric,
 )
 
 
 N = 9
-STANDARD_SHOGI_NYUGYOKU_SUPPORTED = False
+STANDARD_SHOGI_NYUGYOKU_SUPPORTED = True
 
 
 def _king_atoms():
@@ -165,6 +168,42 @@ def _pawn_drop_pattern():
     )
 
 
+def _declaration_definitions():
+    """Return the certified owner-bound Standard Shogi nyugyoku claims."""
+    def declaration(owner: int) -> RuleDeclaration:
+        ranks = (6, 7, 8) if owner == 0 else (0, 1, 2)
+        zone = tuple((file, rank) for rank in ranks for file in range(N))
+        spatial = RuleSpatialSelector("zone", zone_squares=zone)
+        return RuleDeclaration(
+            declaration_id=f"claim_owner_{owner}",
+            owner=owner,
+            state_guards=(
+                RuleStateGuard(
+                    "exists", "self", RuleTypeRef("explicit", "K"),
+                    "base", "any", "board", spatial, value=1,
+                ),
+                RuleStateGuard(
+                    "count", "self", RuleTypeRef("any"),
+                    "base", "any", "board", spatial,
+                    comparison="ge", value=11,
+                ),
+            ),
+            ply_limit=500,
+            weighted_metric=RuleWeightedMaterialMetric(
+                weights={"K": 0, "P": 1, "L": 1, "N": 1, "S": 1,
+                         "G": 1, "B": 5, "R": 5},
+                spatial=spatial,
+                include_hands=True,
+            ),
+            outcome_bands=(
+                RuleDeclarationOutcomeBand(31, "WIN"),
+                RuleDeclarationOutcomeBand(24, "RESTART"),
+            ),
+        )
+
+    return (declaration(0), declaration(1))
+
+
 def build_standard_shogi_ruleset() -> RuleSet:
     """Build the certified ordinary Standard Shogi product definition."""
     promotion_allowed = {}
@@ -187,10 +226,11 @@ def build_standard_shogi_ruleset() -> RuleSet:
         promotion_forced={key: tuple(value) for key, value in promotion_forced.items()},
         repetition_limit=4, repetition_policy="continuous_check_loss", max_ply=512,
         stalemate_result="draw", semantic_actions=(_pawn_drop_pattern(),), semantic_dsl_version=2,
+        declarations=_declaration_definitions(),
         metadata={
             "preset": "standard_shogi_semantic",
             "source": "round4_semantic_certification",
             "nyugyoku_supported": STANDARD_SHOGI_NYUGYOKU_SUPPORTED,
+            "unsupported_rules": ("standard_shogi_500_move_impasse_no_contest",),
         },
     )
-

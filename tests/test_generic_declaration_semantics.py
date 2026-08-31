@@ -168,7 +168,9 @@ def test_declarations_do_not_change_board_action_sets_or_production_fingerprints
         str(a) for a in legal_actions(initial_state(claimed_compiled), claimed_compiled)
     }
     assert not build_western_chess_ruleset().declarations
-    assert not build_standard_shogi_ruleset().declarations
+    assert [d.declaration_id for d in build_standard_shogi_ruleset().declarations] == [
+        "claim_owner_0", "claim_owner_1"
+    ]
 
 
 def test_perpetual_check_session_mapping_preserves_winner():
@@ -259,8 +261,8 @@ def test_standard_shogi_certification_copy_uses_generic_declaration_semantics():
         ruleset_fingerprint=compiled.ruleset_fingerprint,
     )
     assert assess_declaration(_state(compiled, owner1), compiled, "claim_owner_1").outcome == "WIN"
-    assert compute_fingerprint(product) == "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345"
-    assert product.metadata["nyugyoku_supported"] is False
+    assert compute_fingerprint(product) == "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
+    assert product.metadata["nyugyoku_supported"] is True
 
 
 def _shogi_boundary_state(compiled, score: int, *, owner: int = 0, ply: int = 0, condition: str = "valid") -> GameState:

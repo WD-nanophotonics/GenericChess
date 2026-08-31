@@ -32,11 +32,12 @@ def test_product_builder_matches_historical_semantic_gameplay_fields():
 
     product = build_standard_shogi_ruleset()
     historical = build_semantic_shogi_ruleset()
-    assert ruleset_to_dict(product, include_metadata=False) == ruleset_to_dict(
-        historical, include_metadata=False
-    )
-    assert compute_fingerprint(product) == compute_fingerprint(historical)
-    assert product.metadata["nyugyoku_supported"] is False
+    product_data = ruleset_to_dict(product, include_metadata=False)
+    historical_data = ruleset_to_dict(historical, include_metadata=False)
+    assert {key: value for key, value in product_data.items() if key != "declarations"} == historical_data
+    assert compute_fingerprint(historical) == "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345"
+    assert compute_fingerprint(product) == "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
+    assert product.metadata["nyugyoku_supported"] is True
 
 
 def test_catalog_contains_exact_productized_builtins():

@@ -10,7 +10,8 @@ from ..core.identity import position_identity_key
 from ..core.movegen import legal_actions
 from ..core.position import GameState
 from ..core.transition import apply_action, initial_state
-from .record import ActionRecord, GameRecord
+from ..core.declarations import assess_declaration, available_declarations
+from .record import ActionRecord, DeclarationRecord, GameRecord
 from .result import SessionResult, SessionStatus, session_result_from_terminal
 
 if TYPE_CHECKING:
@@ -38,6 +39,7 @@ class GameSession:
         "_state",
         "_history",
         "_resigned_by",
+        "_declaration",
         "_search_history_witnesses",
     )
 
@@ -47,6 +49,7 @@ class GameSession:
         self._search_history_witnesses = (self._state.position,)
         self._history: tuple[ActionRecord, ...] = ()
         self._resigned_by: int | None = None
+        self._declaration: DeclarationRecord | None = None
 
     @property
     def compiled(self) -> "CompiledRuleSet":
@@ -68,10 +71,46 @@ class GameSession:
                 winner=1 - self._resigned_by,
                 resigned_by=self._resigned_by,
             )
+        if self._declaration is not None:
+            declaration = self._declaration
+            winner = declaration.declared_by if declaration.outcome == "WIN" else (
+                1 - declaration.declared_by if declaration.outcome == "LOSS" else None
+            )
+            return SessionResult(
+                status=SessionStatus.DECLARATION,
+                winner=winner,
+                declaration_id=declaration.declaration_id,
+                declared_by=declaration.declared_by,
+                declaration_outcome=declaration.outcome,
+                declaration_score=declaration.weighted_score,
+            )
         return session_result_from_terminal(self._state.terminal_status)
 
     def legal_actions(self) -> tuple[Action, ...]:
+        if self.result.status is not SessionStatus.ONGOING:
+            return ()
         return tuple(legal_actions(self._state, self._compiled))
+
+    def available_declarations(self):
+        if self.result.status is not SessionStatus.ONGOING:
+            return ()
+        return available_declarations(self._state, self._compiled)
+
+    def declare(self, declaration_id: str) -> SessionResult:
+        if self.result.status is not SessionStatus.ONGOING:
+            raise SessionFinishedError(
+                f"cannot declare in a finished session ({self.result})"
+            )
+        assessment = assess_declaration(self._state, self._compiled, declaration_id)
+        # Commit only the session-level terminal marker.  The authoritative
+        # GameState and its history are intentionally untouched.
+        self._declaration = DeclarationRecord(
+            declaration_id=assessment.declaration_id,
+            declared_by=assessment.actor,
+            outcome=assessment.outcome,
+            weighted_score=assessment.weighted_score,
+        )
+        return self.result
 
     def submit(self, action: Action) -> GameState:
         if self.result.status is not SessionStatus.ONGOING:
@@ -103,26 +142,31 @@ class GameSession:
     def resign(self) -> SessionResult:
         if self._resigned_by is not None:
             raise SessionFinishedError("the session already ended by resignation")
-        if self._state.terminal_status.is_terminal:
+        if self.result.status is not SessionStatus.ONGOING:
             raise SessionFinishedError(f"cannot resign after the game ended ({self.result})")
         self._resigned_by = self._state.position.side_to_move
         return self.result
 
     def to_record(self) -> GameRecord:
         return GameRecord(
-            schema_version=1,
+            schema_version=2 if self._declaration is not None else 1,
             ruleset_fingerprint=self._compiled.ruleset_fingerprint,
             actions=tuple(rec.action for rec in self._history),
             resigned_by=self._resigned_by,
+            declaration=self._declaration,
         )
 
     @classmethod
     def replay(cls, compiled: "CompiledRuleSet", record: GameRecord) -> "GameSession":
         """Rebuild a session by replaying a record through ``submit``."""
-        if record.schema_version != 1:
+        if record.schema_version not in (1, 2):
             raise SessionRecordError(
                 f"unsupported game record schema_version {record.schema_version!r}"
             )
+        if record.schema_version == 2 and record.declaration is None:
+            raise SessionRecordError("schema v2 requires a declaration")
+        if record.schema_version == 1 and record.declaration is not None:
+            raise SessionRecordError("schema v1 cannot contain a declaration")
         if record.ruleset_fingerprint != compiled.ruleset_fingerprint:
             raise SessionRecordError(
                 f"record fingerprint {record.ruleset_fingerprint!r} does not match "
@@ -150,4 +194,28 @@ class GameSession:
                     f"({session._state.position.side_to_move})"
                 )
             session.resign()
+        if record.declaration is not None:
+            if record.schema_version != 2:
+                raise SessionRecordError("declaration requires game record schema_version 2")
+            if record.resigned_by is not None:
+                raise SessionRecordError("record cannot contain resignation and declaration")
+            if session.result.status is not SessionStatus.ONGOING:
+                raise SessionRecordError(
+                    "record declares a declaration after the game already ended"
+                )
+            try:
+                result = session.declare(record.declaration.declaration_id)
+            except (SessionFinishedError, IllegalActionError, ValueError) as exc:
+                raise SessionRecordError(f"record declaration cannot be replayed: {exc}") from exc
+            actual = session._declaration
+            expected = record.declaration
+            if (
+                actual is None
+                or actual.declared_by != expected.declared_by
+                or actual.outcome != expected.outcome
+                or actual.weighted_score != expected.weighted_score
+            ):
+                raise SessionRecordError(
+                    "record declaration does not match the authoritative assessment"
+                )
         return session

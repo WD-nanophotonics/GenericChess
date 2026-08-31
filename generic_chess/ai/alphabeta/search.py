@@ -30,6 +30,10 @@ from ...core.search_runtime import SearchPathRuntime
 from ...core.terminal import TerminalStatus
 from ...core.transition import legal_successors
 from ...core.semantic_executor import semantic_engine_for
+from ...core.declarations import (
+    DeclarationAssessment,
+    _available_declarations_position,
+)
 from ..cancellation import CancellationToken
 from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
 from ..evaluation.evaluator import Evaluator
@@ -54,6 +58,7 @@ class SearchResult:
     score: int
     best_action: Action | None
     pv: tuple[Action, ...]
+    declaration: DeclarationAssessment | None = None
 
 
 class _Budget:
@@ -176,6 +181,17 @@ def terminal_score(result, side_to_move: int, ply: int) -> int:
     return -MATE_SCORE + ply
 
 
+def _declaration_options(state, compiled, stats):
+    """Assess node-local declarations without making a runtime transition."""
+    options = _available_declarations_position(
+        state.position, state.ply_count, compiled
+    )
+    stats.declaration_checks += len(getattr(compiled, "declarations", ()))
+    stats.declaration_win_options += sum(a.outcome == "WIN" for a in options)
+    stats.declaration_restart_options += sum(a.outcome == "RESTART" for a in options)
+    return options
+
+
 def _tt_key(state: GameState, compiled) -> SearchStateIdentity:
     """Build the authoritative, path-aware search/transposition identity."""
     return search_state_identity(state, compiled)
@@ -201,6 +217,11 @@ def negamax(
         return SearchResult(
             terminal_score(terminal, state.position.side_to_move, ply), None, ()
         )
+    declarations = _declaration_options(state, ctx.compiled, ctx.stats)
+    winning = next((a for a in declarations if a.outcome == "WIN"), None)
+    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    if winning is not None:
+        return SearchResult(MATE_SCORE - ply, None, (), winning)
     if depth <= 0:
         if ctx.qdepth_limit > 0:
             with ctx.recorder.time_block(AuditMetric.QUIESCENCE):
@@ -209,7 +230,7 @@ def negamax(
             with ctx.recorder.time_block(AuditMetric.EVALUATION):
                 score = ctx.evaluator.evaluate(state)
         ctx.budget.check(ctx.stats, force=True)
-        return SearchResult(score, None, ())
+        return SearchResult(max(score, 0) if restart is not None else score, None, ())
 
     if ctx.tuning.use_mate_distance_pruning:
         alpha = max(alpha, -MATE_SCORE + ply)
@@ -407,6 +428,14 @@ def negamax(
                     ctx.orderer.record_countermove(prev_action, action)
             break
 
+    if restart is not None and best < 0:
+        best = 0
+        best_action = None
+        best_pv = ()
+        best_declaration = restart
+    else:
+        best_declaration = None
+
     if tt_compatible:
         with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
             if best <= original_alpha:
@@ -417,7 +446,7 @@ def negamax(
                 bound = BoundType.EXACT
             ctx.tt.store(key, depth, score_to_tt(best, ply), bound, best_action)
             ctx.stats.tt_stores += 1
-    return SearchResult(best, best_action, best_pv)
+    return SearchResult(best, best_action, best_pv, best_declaration)
 
 
 def _runtime_noisy_actions(ctx: _Context, actions):
@@ -469,6 +498,13 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     terminal = runtime.terminal_status
     if terminal.is_terminal:
         return terminal_score(terminal, state.position.side_to_move, ply)
+    declarations = _declaration_options(state, ctx.compiled, ctx.stats)
+    winning = next((a for a in declarations if a.outcome == "WIN"), None)
+    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    if winning is not None:
+        return MATE_SCORE - ply
+    if restart is not None:
+        alpha = max(alpha, 0)
     side = state.position.side_to_move
     engine = semantic_engine_for(ctx.compiled)
     in_check = (
@@ -505,7 +541,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
-        return stand_pat
+        return max(stand_pat, 0) if restart is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= ctx.qdepth_limit:
@@ -540,6 +576,13 @@ def quiescence(
     terminal = state.terminal_status
     if terminal.is_terminal:
         return terminal_score(terminal, state.position.side_to_move, ply)
+    declarations = _declaration_options(state, ctx.compiled, ctx.stats)
+    winning = next((a for a in declarations if a.outcome == "WIN"), None)
+    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    if winning is not None:
+        return MATE_SCORE - ply
+    if restart is not None:
+        alpha = max(alpha, 0)
 
     side = state.position.side_to_move
     semantic_engine = semantic_engine_for(ctx.compiled)
@@ -611,7 +654,7 @@ def quiescence(
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
-        return stand_pat
+        return max(stand_pat, 0) if restart is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= ctx.qdepth_limit:
@@ -682,8 +725,16 @@ def reference_minimax(
     terminal = state.terminal_status
     if terminal.is_terminal:
         return terminal_score(terminal, state.position.side_to_move, ply), None
+    declarations = _available_declarations_position(
+        state.position, state.ply_count, compiled
+    )
+    winning = next((a for a in declarations if a.outcome == "WIN"), None)
+    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    if winning is not None:
+        return MATE_SCORE - ply, None
     if depth <= 0:
-        return evaluator.evaluate(state), None
+        score = evaluator.evaluate(state)
+        return max(score, 0) if restart is not None else score, None
     successors = sorted(legal_successors(state, compiled), key=lambda pair: str(pair[0]))
     best = -INF
     best_action: Action | None = None
@@ -693,6 +744,8 @@ def reference_minimax(
         if score > best:
             best = score
             best_action = action
+    if restart is not None and best < 0:
+        return 0, None
     return best, best_action
 
 
@@ -861,6 +914,16 @@ def run_root_search(
     )
     runtime.attach_stats(stats)
 
+    # Root declaration assessment is deliberately before legal-action
+    # fallback/tactical scanning so no root path can bypass a valid WIN.
+    root_declarations = _declaration_options(runtime.state, compiled, stats)
+    root_winning = next((a for a in root_declarations if a.outcome == "WIN"), None)
+    if root_winning is not None:
+        stats.declaration_root_selected = True
+        stats.root_declaration = root_winning
+        stats.termination_reason = "root_declaration_win"
+        return None, MATE_SCORE, (), stats.termination_reason
+
     root_first_action: Action | None = None
     root_handles = None
     actions: list[Action] | None = None
@@ -972,6 +1035,10 @@ def run_root_search(
 
     if best is not None:
         stats.termination_reason = "completed_depth" if abort_reason is None else abort_reason
+        if best.declaration is not None:
+            stats.declaration_root_selected = True
+            stats.root_declaration = best.declaration
+            return None, best.score, (), stats.termination_reason
         return best.best_action, best.score, best.pv, stats.termination_reason
 
     # No full iteration completed: prefer the root scan's best action.

@@ -5,7 +5,7 @@ front end (currently the minimal CLI).  It only uses Core's public semantics:
 ``legal_actions``, ``apply_action``, ``terminal_result`` and ``position_key``.
 """
 
-from .record import ActionRecord, GameRecord
+from .record import ActionRecord, DeclarationRecord, GameRecord
 from .result import SessionResult, SessionStatus
 from .serialization import deserialize_game_record, serialize_game_record
 from ..core.declarations import (
@@ -24,6 +24,7 @@ __all__ = [
     "GameSession",
     "ActionRecord",
     "GameRecord",
+    "DeclarationRecord",
     "SessionResult",
     "SessionStatus",
     "SessionFinishedError",

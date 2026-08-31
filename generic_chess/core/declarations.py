@@ -134,9 +134,10 @@ def _score(position: Position, declaration, actor: int) -> int:
     return score
 
 
-def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAssessment:
-    """Assess one explicitly selected declaration without changing state."""
-    position, ply = _state_parts(state)
+def _assess_declaration_position(
+    position: Position, ply: int, compiled, declaration_id: str
+) -> DeclarationAssessment:
+    """Assess an authoritative position/ply pair for Core and search callers."""
     ensure_ruleset_match(position, compiled)
     matches = [d for d in _declarations(compiled) if d.declaration_id == declaration_id]
     if not matches:
@@ -164,6 +165,12 @@ def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAsses
     return DeclarationAssessment(declaration.declaration_id, actor, outcome, score)
 
 
+def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAssessment:
+    """Assess one explicitly selected declaration without changing state."""
+    position, ply = _state_parts(state)
+    return _assess_declaration_position(position, ply, compiled, declaration_id)
+
+
 def available_declarations(state, compiled) -> tuple[DeclarationAssessment, ...]:
     """Return only non-losing declarations belonging to the side to move."""
     position, _ = _state_parts(state)
@@ -172,10 +179,28 @@ def available_declarations(state, compiled) -> tuple[DeclarationAssessment, ...]
     for declaration in _declarations(compiled):
         if declaration.owner != position.side_to_move:
             continue
-        assessment = assess_declaration(state, compiled, declaration.declaration_id)
+        assessment = _assess_declaration_position(
+            position, state.ply_count, compiled, declaration.declaration_id
+        )
         if assessment.outcome != "LOSS":
             out.append(assessment)
     return tuple(out)
+
+
+def _available_declarations_position(position: Position, ply: int, compiled):
+    """Private search bridge using an explicit authoritative runtime pair."""
+    ensure_ruleset_match(position, compiled)
+    return tuple(
+        assessment
+        for declaration in _declarations(compiled)
+        if declaration.owner == position.side_to_move
+        for assessment in (
+            _assess_declaration_position(
+                position, ply, compiled, declaration.declaration_id
+            ),
+        )
+        if assessment.outcome != "LOSS"
+    )
 
 
 __all__ = [
@@ -183,4 +208,6 @@ __all__ = [
     "InvalidDeclarationError",
     "assess_declaration",
     "available_declarations",
+    "_assess_declaration_position",
+    "_available_declarations_position",
 ]

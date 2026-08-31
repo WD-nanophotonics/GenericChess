@@ -135,6 +135,8 @@ class AlphaBetaPlayer:
             beta_cutoffs=stats.beta_cutoffs,
             evaluation_profile_cache_hit=self._profile_cache_hit,
             termination_reason=reason,
+            choice_kind="DECLARATION" if stats.declaration_root_selected else "ACTION",
+            declaration=stats.root_declaration,
             time_to_first_legal_action=stats.time_to_first_legal_action,
             time_to_first_completed_iteration=stats.time_to_first_completed_iteration,
             qdepth_cutoffs=stats.qdepth_cutoffs,
@@ -174,4 +176,8 @@ class AlphaBetaPlayer:
             terminal_cache_hits=stats.terminal_cache_hits,
             position_keys_computed=stats.position_keys_computed,
             position_key_cache_hits=stats.position_key_cache_hits,
+            declaration_checks=stats.declaration_checks,
+            declaration_win_options=stats.declaration_win_options,
+            declaration_restart_options=stats.declaration_restart_options,
+            declaration_root_selected=stats.declaration_root_selected,
         )

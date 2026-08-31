@@ -7,6 +7,11 @@ from dataclasses import dataclass, field
 
 @dataclass(slots=True)
 class SearchStatistics:
+    declaration_checks: int = 0
+    declaration_win_options: int = 0
+    declaration_restart_options: int = 0
+    declaration_root_selected: bool = False
+    root_declaration: object | None = None
     nodes: int = 0
     qnodes: int = 0
     tt_probes: int = 0

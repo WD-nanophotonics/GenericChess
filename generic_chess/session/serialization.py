@@ -13,7 +13,7 @@ from ..core.actions import (
     SemanticDropMove,
 )
 from ..core.coordinates import Square
-from .record import GameRecord
+from .record import DeclarationRecord, GameRecord
 from .session import SessionRecordError
 
 
@@ -159,6 +159,17 @@ def serialize_game_record(record: GameRecord) -> str:
         "actions": actions,
         "resigned_by": record.resigned_by,
     }
+    if record.schema_version == 2:
+        if record.declaration is None or record.resigned_by is not None:
+            raise SessionRecordError("schema v2 requires a declaration and forbids resignation")
+        data["declaration"] = {
+            "declaration_id": record.declaration.declaration_id,
+            "declared_by": record.declaration.declared_by,
+            "outcome": record.declaration.outcome,
+            "weighted_score": record.declaration.weighted_score,
+        }
+    elif record.schema_version != 1 or record.declaration is not None:
+        raise SessionRecordError("schema v1 cannot contain a declaration")
     return json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
 
 
@@ -171,14 +182,14 @@ def deserialize_game_record(text: str) -> GameRecord:
 
     path = "game_record"
     payload = _require_mapping(payload, path)
-    allowed_top = {"schema_version", "ruleset_fingerprint", "actions", "resigned_by"}
+    allowed_top = {"schema_version", "ruleset_fingerprint", "actions", "resigned_by", "declaration"}
     unknown = set(payload) - allowed_top
     if unknown:
         raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
 
     schema_version = _require_int(_require_field(payload, "schema_version", path), f"{path}.schema_version")
-    if schema_version != 1:
-        raise _err("UNSUPPORTED_SCHEMA", f"{path}.schema_version", "schema_version must be 1")
+    if schema_version not in (1, 2):
+        raise _err("UNSUPPORTED_SCHEMA", f"{path}.schema_version", "schema_version must be 1 or 2")
 
     fingerprint = _require_str(
         _require_field(payload, "ruleset_fingerprint", path), f"{path}.ruleset_fingerprint"
@@ -198,9 +209,37 @@ def deserialize_game_record(text: str) -> GameRecord:
         if resigned not in (0, 1):
             raise _err("INVALID_PLAYER", f"{path}.resigned_by", "resigned_by must be 0, 1 or null")
 
+    declaration = None
+    if schema_version == 1 and "declaration" in payload:
+        raise _err("INVALID_SCHEMA", f"{path}.declaration", "declaration requires schema_version 2")
+    if schema_version == 2:
+        if "declaration" not in payload:
+            raise _err("MISSING_FIELD", f"{path}.declaration", "schema v2 requires declaration")
+        raw_declaration = _require_mapping(payload["declaration"], f"{path}.declaration")
+        allowed = {"declaration_id", "declared_by", "outcome", "weighted_score"}
+        unknown = set(raw_declaration) - allowed
+        if unknown:
+            raise _err("UNKNOWN_FIELD", f"{path}.declaration", f"unknown field(s): {sorted(unknown)}")
+        declaration = DeclarationRecord(
+            declaration_id=_require_str(_require_field(raw_declaration, "declaration_id", f"{path}.declaration"), f"{path}.declaration.declaration_id"),
+            declared_by=_require_int(_require_field(raw_declaration, "declared_by", f"{path}.declaration"), f"{path}.declaration.declared_by"),
+            outcome=_require_str(_require_field(raw_declaration, "outcome", f"{path}.declaration"), f"{path}.declaration.outcome"),
+            weighted_score=(
+                _require_int(raw_declaration["weighted_score"], f"{path}.declaration.weighted_score")
+                if raw_declaration.get("weighted_score") is not None else None
+            ),
+        )
+        if declaration.declared_by not in (0, 1):
+            raise _err("INVALID_PLAYER", f"{path}.declaration.declared_by", "declared_by must be 0 or 1")
+        if declaration.outcome not in ("WIN", "RESTART", "LOSS"):
+            raise _err("INVALID_OUTCOME", f"{path}.declaration.outcome", "outcome must be WIN, RESTART or LOSS")
+        if resigned is not None:
+            raise _err("INVALID_SCHEMA", f"{path}.resigned_by", "resignation and declaration are mutually exclusive")
+
     return GameRecord(
         schema_version=schema_version,
         ruleset_fingerprint=fingerprint,
         actions=actions,
         resigned_by=resigned,
+        declaration=declaration,
     )

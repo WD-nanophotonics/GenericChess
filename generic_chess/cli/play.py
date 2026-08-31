@@ -135,6 +135,8 @@ HELP_TEXT = """commands:
   moves        list legal actions
   board        show the board, hands and status
   history      show the move history
+  declarations list currently non-losing declarations
+  declare <id> submit a declaration (a failed claim ends in LOSS)
   help         show this help
   resign       resign as the current player
   quit         quit without resigning
@@ -223,7 +225,7 @@ def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: Tex
         command = raw.strip()
         if not command:
             continue
-        if command in ("moves", "board", "history", "help", "resign", "quit"):
+        if command in ("moves", "board", "history", "declarations", "help", "resign", "quit"):
             if command == "moves":
                 for line in format_actions(actions):
                     print_out(line)
@@ -231,6 +233,16 @@ def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: Tex
                 print_out(render_session(session))
             elif command == "history":
                 print_out(render_history(session))
+            elif command == "declarations":
+                declarations = session.available_declarations()
+                if declarations:
+                    for assessment in declarations:
+                        print_out(
+                            f"{assessment.declaration_id}: {assessment.outcome} "
+                            f"(score={assessment.weighted_score})"
+                        )
+                else:
+                    print_out("no non-losing declarations")
             elif command == "help":
                 print_out(HELP_TEXT)
             elif command == "resign":
@@ -244,6 +256,19 @@ def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: Tex
             else:  # quit
                 break
             continue
+
+        if command.startswith("declare "):
+            declaration_id = command[len("declare "):].strip()
+            if not declaration_id:
+                print_out("usage: declare <declaration_id>")
+                continue
+            try:
+                result = session.declare(declaration_id)
+            except ValueError as exc:
+                print_out(f"cannot declare: {exc}")
+                continue
+            print_out(f"declared: {result}")
+            break
 
         # Numbered action or exact action string.
         chosen = None

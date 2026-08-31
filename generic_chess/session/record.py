@@ -23,6 +23,16 @@ class ActionRecord:
 
 
 @dataclass(frozen=True, slots=True)
+class DeclarationRecord:
+    """The terminal out-of-band declaration following the action history."""
+
+    declaration_id: str
+    declared_by: int
+    outcome: str
+    weighted_score: int | None = None
+
+
+@dataclass(frozen=True, slots=True)
 class GameRecord:
     """Minimal, deterministic, serializable record of one game.
 
@@ -35,3 +45,4 @@ class GameRecord:
     ruleset_fingerprint: str
     actions: tuple[Action, ...]
     resigned_by: int | None
+    declaration: DeclarationRecord | None = None

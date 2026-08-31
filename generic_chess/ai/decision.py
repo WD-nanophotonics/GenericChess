@@ -29,6 +29,8 @@ class PlayerDecision:
     beta_cutoffs: int
     evaluation_profile_cache_hit: bool
     termination_reason: str
+    choice_kind: str = "ACTION"
+    declaration: object | None = None
     time_to_first_legal_action: float | None = None
     time_to_first_completed_iteration: float | None = None
     # Fine-grained diagnostics (0.6.0 search lab).
@@ -69,3 +71,7 @@ class PlayerDecision:
     terminal_cache_hits: int = 0
     position_keys_computed: int = 0
     position_key_cache_hits: int = 0
+    declaration_checks: int = 0
+    declaration_win_options: int = 0
+    declaration_restart_options: int = 0
+    declaration_root_selected: bool = False
