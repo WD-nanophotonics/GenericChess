@@ -30,7 +30,7 @@ def test_f25_descriptor_and_baseline_integrity():
     assert fixture["standard_shogi_nyugyoku_supported"] is False
     assert fixture["standard_shogi_full_rule_product_ready"] is False
     assert fixture["dual_standard_internal_baseline"] is True
-    assert fixture["manifest_sha256"] == "17523fba73b38640258e6aac65b92c803b8d8cf52194c5bb30e91c34dd07c121"
+    assert fixture["manifest_sha256"] == "8fc8c261a79cb4901cde3eab0c441f2c18793cc1f3d10bfbcf769840d710c30d"
     assert hashlib.sha256(canonical_json(fixture["manifest"]).encode()).hexdigest() == fixture["manifest_sha256"]
     assert len(fixture["manifest"]["positions"]) == 10
     assert len(fixture["fixed_node"]) == 30
