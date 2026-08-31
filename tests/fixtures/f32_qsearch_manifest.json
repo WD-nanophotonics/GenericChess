@@ -1,0 +1,86 @@
+{
+  "constraints": [
+    "NO_TUNING_FROM_RESULTS=true",
+    "NO_PRODUCTION_CHANGE=true",
+    "NO_NEW_PAIRED_BENCHMARK",
+    "NO_ALPHASHO_RERUN",
+    "NO_NATIVE_REPAIR",
+    "REDUCED_VARIANTS_AUDIT_ONLY"
+  ],
+  "diagnostic_matrix": {
+    "fixed_node_budgets": [
+      512,
+      2048
+    ],
+    "lazy_variant": "LAZY_NONCHECK_LEGAL_GENERATION",
+    "noisy_variants": [
+      "Q0_PRODUCTION_EXACT",
+      "Q1_CAPTURES_PROMOTIONS",
+      "Q2_PLUS_CHECKING_BOARD_MOVES",
+      "Q3_PLUS_CHECKING_DROPS"
+    ],
+    "qdepths": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "qnode_cap_subset": "first four position IDs at both wall controls",
+    "qnode_caps": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "times_seconds": [
+      0.5,
+      2.0
+    ]
+  },
+  "frozen_inputs": {
+    "descriptor": {
+      "path": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+      "sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151"
+    },
+    "f30_r1_fresh": {
+      "path": "tests/fixtures/f30r1_fresh_move_reference.json",
+      "sha256": "8ec60aebdde3e7fb4d192d99e77948a954d7aab83c6942e0704a8956721a3eba"
+    },
+    "f30_r1_manifest": {
+      "path": "tests/fixtures/f30r1_benchmark_manifest.json",
+      "sha256": "de1ffc84b635d96fa8abd5a23eed42c79ef9a7fd48b7d07351c38ac6ecac4f1a"
+    },
+    "f30_r1_paired": {
+      "path": "tests/fixtures/f30r1_paired_match.json",
+      "sha256": "3e80b5a5488624c7afd34638fbbfee8f200dd96af472d5345672ff69439ca256"
+    },
+    "f31_manifest": {
+      "path": "tests/fixtures/f31_causal_manifest.json",
+      "sha256": "e08867b24fc268581b7853caf8e6bf2da0d2c25307c36120540313ea44f677dd"
+    },
+    "f31_result": {
+      "path": "tests/fixtures/f31_causal_diagnosis.json",
+      "sha256": "9eaaccf9ecea8717e6a2ffe198da9136cb1e7fee0ee9ac2edcb60d6f70d8b77e"
+    },
+    "f31r1_result": {
+      "path": "tests/fixtures/f31r1_counterfactual_causal_reclassification.json",
+      "sha256": "ed0834b4a591d9a0b0dddd529a1c1ce205f22fd268caafe7951d79966113a83f"
+    }
+  },
+  "generic_chess_head_at_freeze": "7696c171d56fef4f827777993c228fc0738e339b",
+  "generic_chess_product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+  "host": {
+    "python": "3.12.0"
+  },
+  "kind": "F32_PRE_DIAGNOSIS_MANIFEST",
+  "manifest_sha256": "2cf3c6f0fd2eba2f3830e63c627103e3646b6220b3187194069f9b243b27f9ec",
+  "product_settings": {
+    "evaluator": "v1",
+    "native_requested": true,
+    "ordering": true,
+    "qsearch": "4/8",
+    "search_tuning": "default",
+    "tt": true
+  },
+  "schema_version": 1
+}
