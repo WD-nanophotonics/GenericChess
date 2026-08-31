@@ -160,7 +160,7 @@ def run_baseline(commit_sha=None):
     descriptors = _descriptors()
     compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
     _NATIVE_PROVIDER = NativeSemanticLegalityProvider.try_create(compiled)
-    manifest = _manifest(compiled, commit_sha or _git_sha())
+    manifest = _manifest(compiled, descriptors, commit_sha or _git_sha())
     manifest_sha = hashlib.sha256(canonical_json(manifest).encode()).hexdigest()
     fixed_node = []
     for item in descriptors["positions"]:
@@ -231,4 +231,3 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
