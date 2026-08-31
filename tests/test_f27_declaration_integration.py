@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from dataclasses import replace
 from pathlib import Path
 
@@ -23,6 +24,7 @@ from generic_chess.session import (
     deserialize_game_record,
     serialize_game_record,
 )
+from generic_chess.core.search_runtime import SearchPathRuntime
 
 from test_generic_declaration_semantics import (
     _claim_position,
@@ -199,6 +201,38 @@ def test_qsearch_declaration_outcomes_are_terminal_or_floor_values():
     assert score_for("loss", -1) == -1
 
 
+def test_runtime_qsearch_declaration_outcomes_match_direct_path():
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+
+    compiled = compile_ruleset_for_execution(_claim_ruleset())
+    limits = SearchLimits(max_nodes=100, quiescence_max_depth=0)
+
+    def score_for(score_state, evaluator_value):
+        stats = SearchStatistics()
+        state = _state(compiled, _claim_position(compiled, score_state=score_state))
+        runtime = SearchPathRuntime.from_state(state, compiled)
+        runtime.attach_stats(stats)
+        ctx = _Context(
+            compiled,
+            _ConstantEvaluator(evaluator_value),
+            TranspositionTable(),
+            stats,
+            _Budget(limits, None),
+            SearchTuning(),
+            False,
+            False,
+            limits.quiescence_max_depth,
+            limits.quiescence_hard_max_depth,
+            limits.quiescence_max_nodes,
+            runtime=runtime,
+        )
+        return quiescence(state, -10**12, 10**12, 0, 0, ctx)
+
+    assert score_for("win", -1) == 1_000_000_000
+    assert score_for("restart", -1) == 0
+    assert score_for("loss", -1) == -1
+
+
 def test_f27r1_results_fixture_has_all_repeats_and_f25_zero_option_parity():
     root = Path(__file__).resolve().parents[1]
     results = json.loads(
@@ -277,6 +311,104 @@ def test_descendant_declaration_win_is_seen_by_parent_search(use_pvs):
     assert decision.action in session.legal_actions()
     assert decision.score <= -999_999_999
     assert decision.declaration_win_options > 0
+
+
+def test_descendant_declaration_restart_is_a_zero_game_result():
+    from generic_chess import Hands, Piece, Position
+
+    base = _claim_ruleset()
+    child_claim = replace(base.declarations[0], owner=1)
+    compiled = compile_ruleset_for_execution(replace(base, declarations=(child_claim,)))
+    board = [None] * 64
+    board[0] = Piece(1, "K", "K")
+    board[1] = Piece(1, "R", "R")
+    board[2] = Piece(1, "P", "P")
+    board[63] = Piece(0, "K", "K")
+    board[54] = Piece(0, "P", "P")
+    position = Position(
+        tuple(board), hands=(Hands.empty(), Hands.empty()), side_to_move=0,
+        ruleset_fingerprint=compiled.ruleset_fingerprint,
+    )
+    session = GameSession(compiled)
+    session._state = _state(compiled, position)
+    player = AlphaBetaPlayer(
+        compiled,
+        use_disk_cache=False,
+        use_tt=False,
+        use_ordering=False,
+        use_native_semantic_legality=False,
+        tuning=SearchTuning(use_root_tactical=False),
+    )
+    player._evaluator = _ConstantEvaluator(-1)
+    decision = player.choose_action(
+        session, SearchLimits(max_depth=1, quiescence_max_depth=0)
+    )
+    assert decision.choice_kind == "ACTION"
+    assert decision.action in session.legal_actions()
+    assert decision.score == 0
+    assert decision.declaration_root_selected is False
+    assert decision.declaration_restart_options > 0
+
+
+def test_f27r2_fixture_freezes_provenance_repeats_and_parity():
+    root = Path(__file__).resolve().parents[1]
+    fixture_path = root / "tests/fixtures/f27r2_standard_shogi_declaration_search_results.json"
+    fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+    assert fixture["actual_corrective_code_commit"] == "5b08bf4319c77b10f0d5811bd47d2fb65a351818"
+    assert fixture["ancestry"] == [
+        "f388d32ce84a9db989482a4b4574e3fe377c4d6a",
+        "5b08bf4319c77b10f0d5811bd47d2fb65a351818",
+        "8afe16884a33383823cd801f344cbb3543a748a5",
+        "db224a4721a85a00c3b84f4022b8a0fb17d0bf05",
+    ]
+    expected_sha = {
+        "f27_manifest": "50B52810526348B66D3BD54E3D9E1EBE1111607A79227F823051D5DA2441F58E",
+        "f27r1_results": "09B39841C9F7753525D98B5FB4F4D92F81D745AB0DA8128E1B77AADA530451B3",
+        "f25_descriptors": "2429DD0BA53497B47C14FD020D2BFFA1A2C89BBA6FAD3B91D72FF62357A0D151",
+        "f25_baseline": "6B15BED8C66439BA9E6FDBCBBBFA4D21CAF4D6BE0DE798197146612DC7FC9967",
+    }
+    assert {key: value.upper() for key, value in fixture["source_sha256"].items()} == expected_sha
+    for key, path in fixture["source_paths"].items():
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest().upper() == expected_sha[key]
+    assert fixture["integrity"] == {
+        "action_pv_declaration_separation": True,
+        "all_repeats_deterministic": True,
+        "all_roots_unchanged": True,
+        "declaration_affected_rows": 0,
+        "repeat_results_per_row": 2,
+        "row_count": 30,
+        "zero_option_parity_fail": 0,
+        "zero_option_parity_pass": 30,
+        "zero_option_parity_rows": 30,
+    }
+    required = {
+        "repeat", "choice_kind", "action", "visible_action", "score", "pv_head",
+        "completed_depth", "nodes", "qnodes", "total_nodes", "termination_reason",
+        "declaration_checks", "declaration_win_options", "declaration_restart_options",
+        "declaration_root_selected", "provider_mode", "root_unchanged", "elapsed_seconds",
+    }
+    historical = json.loads(
+        (root / "tests/fixtures/f25_standard_shogi_search_baseline.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    expected_rows = {
+        (row["position_id"], row["budget"]): row["repeats"][0]
+        for row in historical["fixed_node"]
+    }
+    assert len(fixture["rows"]) == 30
+    for row in fixture["rows"]:
+        repeats = row["repeat_results"]
+        assert [repeat["repeat"] for repeat in repeats] == [1, 2]
+        assert all(required <= repeat.keys() for repeat in repeats)
+        stable = ("choice_kind", "action", "visible_action", "score", "pv_head", "completed_depth", "declaration_root_selected")
+        assert tuple(repeats[0][key] for key in stable) == tuple(repeats[1][key] for key in stable)
+        baseline = expected_rows[(row["position_id"], row["budget"])]
+        for repeat in repeats:
+            assert repeat["action"] == baseline["action"]
+            assert repeat["score"] == baseline["score"]
+            assert repeat["pv_head"] == baseline["pv_visible"][0]
+            assert repeat["completed_depth"] == baseline["completed_depth"]
 
 
 def test_initial_product_shogi_has_only_ordinary_actions_and_cli_commands():

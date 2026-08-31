@@ -1,0 +1,3924 @@
+{
+  "actual_corrective_code_commit": "5b08bf4319c77b10f0d5811bd47d2fb65a351818",
+  "ancestry": [
+    "f388d32ce84a9db989482a4b4574e3fe377c4d6a",
+    "5b08bf4319c77b10f0d5811bd47d2fb65a351818",
+    "8afe16884a33383823cd801f344cbb3543a748a5",
+    "db224a4721a85a00c3b84f4022b8a0fb17d0bf05"
+  ],
+  "executed_rows_sha256": "f02ea089d2ffaefe119d65ad25db95bc8e0d0ff68a5b8902e16526a8f7e8c084",
+  "integrity": {
+    "action_pv_declaration_separation": true,
+    "all_repeats_deterministic": true,
+    "all_roots_unchanged": true,
+    "declaration_affected_rows": 0,
+    "repeat_results_per_row": 2,
+    "row_count": 30,
+    "zero_option_parity_fail": 0,
+    "zero_option_parity_pass": 30,
+    "zero_option_parity_rows": 30
+  },
+  "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+  "rows": [
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000001-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 200,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 0.7029999999795109,
+          "nodes": 80,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_029",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            }
+          ],
+          "pv_head": "d4-d5",
+          "qnodes": 48,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 369,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "d4-d5"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 200,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 0.8130000000237487,
+          "nodes": 80,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_029",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            }
+          ],
+          "pv_head": "d4-d5",
+          "qnodes": 48,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 369,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "d4-d5"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000001-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 968,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 10.89100000000326,
+          "nodes": 232,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_029",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d4-d5",
+          "qnodes": 280,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 358,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "d4-d5"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 968,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 11.15700000000652,
+          "nodes": 232,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_029",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d4-d5",
+          "qnodes": 280,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 358,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "d4-d5"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000001-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4040,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 28.73399999999674,
+          "nodes": 1020,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_029",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d4-d5",
+          "qnodes": 1028,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 358,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "d4-d5"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4040,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 28.844000000040978,
+          "nodes": 1020,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_029",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d4-d5",
+          "qnodes": 1028,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 358,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "d4-d5"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000002-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 206,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.3119999999762513,
+          "nodes": 78,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 50,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 5,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 206,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.312999999965541,
+          "nodes": 78,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 50,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 5,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000002-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 974,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 6.85899999999674,
+          "nodes": 263,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "S",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g30",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_048",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 249,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -2,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 974,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 7.311999999976251,
+          "nodes": 263,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "S",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g30",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_048",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 249,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -2,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000002-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4046,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 36.375,
+          "nodes": 963,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "S",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g30",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_048",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 1085,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -2,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4046,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 35.5,
+          "nodes": 963,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "S",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g30",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_048",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 1085,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -2,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000003-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_090",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 194,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.077999999979511,
+          "nodes": 81,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_090",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            }
+          ],
+          "pv_head": "d1-c2",
+          "qnodes": 47,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 0,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "d1-c2"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_090",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 194,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.047000000020489,
+          "nodes": 81,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_090",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            }
+          ],
+          "pv_head": "d1-c2",
+          "qnodes": 47,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 0,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "d1-c2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000003-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_090",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 962,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 9.23499999998603,
+          "nodes": 245,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_090",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d1-c2",
+          "qnodes": 267,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -10,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "d1-c2"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_090",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 962,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 9.063000000023749,
+          "nodes": 245,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_090",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d1-c2",
+          "qnodes": 267,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -10,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "d1-c2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000003-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_090",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4034,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 28.764999999955762,
+          "nodes": 1031,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_090",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d1-c2",
+          "qnodes": 1017,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -10,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "d1-c2"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_090",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4034,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 28.31199999997625,
+          "nodes": 1031,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g5",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_090",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "d1-c2",
+          "qnodes": 1017,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -10,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "d1-c2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000004-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 206,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 0.9529999999795109,
+          "nodes": 79,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 49,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 14,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "e1-e2"
+        },
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 206,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 0.9679999999934807,
+          "nodes": 79,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 49,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 14,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "e1-e2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000004-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 974,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 8.546999999962281,
+          "nodes": 285,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 227,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 4,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "e1-e2"
+        },
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 974,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 8.328000000037719,
+          "nodes": 285,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                8
+              ],
+              "geometry_id": "g12",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 227,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 4,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "e1-e2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000004-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 3,
+          "declaration_checks": 4046,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 22.64100000000326,
+          "nodes": 1084,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                2,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                5
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                2
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 964,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 11,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "e1-e2"
+        },
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 3,
+          "declaration_checks": 4046,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 22.70299999997951,
+          "nodes": 1084,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                2,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                5
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_018",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                2
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 964,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 11,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "e1-e2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000005-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 198,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.6709999999729916,
+          "nodes": 74,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 54,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "e1-e2"
+        },
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 198,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.5780000000377186,
+          "nodes": 74,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 54,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "e1-e2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000005-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 966,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 11.952999999979511,
+          "nodes": 216,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 296,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -1,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "e1-e2"
+        },
+        {
+          "action": {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              0
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 966,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 12.26600000000326,
+          "nodes": 216,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g14",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_012",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                1
+              ]
+            }
+          ],
+          "pv_head": "e1-e2",
+          "qnodes": 296,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -1,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "e1-e2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000005-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4038,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 62.56200000003446,
+          "nodes": 590,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                5,
+                7
+              ],
+              "geometry_id": "g25",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_036",
+              "promotion_target_id": null,
+              "to": [
+                7,
+                7
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 1458,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -9,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4038,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 62.53100000001723,
+          "nodes": 590,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                5,
+                7
+              ],
+              "geometry_id": "g25",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_036",
+              "promotion_target_id": null,
+              "to": [
+                7,
+                7
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 1458,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -9,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000006-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 196,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 0.9850000000442378,
+          "nodes": 81,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 47,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 12,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 196,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 0.9380000000237487,
+          "nodes": 81,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 47,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 12,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000006-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              8,
+              2
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 964,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 10.561999999976251,
+          "nodes": 281,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                8,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g25",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_036",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "h2-i3",
+          "qnodes": 231,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 4,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "h2-i3"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              8,
+              2
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 964,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 10.53100000001723,
+          "nodes": 281,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                8,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g25",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_036",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "h2-i3",
+          "qnodes": 231,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 4,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "h2-i3"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000006-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              8,
+              2
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4036,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 29.65600000001723,
+          "nodes": 1035,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                8,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g25",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_036",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "h2-i3",
+          "qnodes": 1013,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 4,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "h2-i3"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_046",
+            "promotion_target_id": null,
+            "to": [
+              8,
+              2
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4036,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 29.889999999955762,
+          "nodes": 1035,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_046",
+              "promotion_target_id": null,
+              "to": [
+                8,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g25",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_036",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "h2-i3",
+          "qnodes": 1013,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 4,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "h2-i3"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000007-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 194,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.375,
+          "nodes": 81,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 47,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -10,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 194,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.327999999979511,
+          "nodes": 81,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 47,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -10,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000007-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 962,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 12.125,
+          "nodes": 227,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                5
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 285,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -15,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 962,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 12.452999999979511,
+          "nodes": 227,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                5
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 285,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -15,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000007-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4034,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 42.86000000004424,
+          "nodes": 863,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                5
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 1185,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -15,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "g3-g4"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              6,
+              2
+            ],
+            "geometry_id": "g21",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              3
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4034,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 43.65600000001723,
+          "nodes": 863,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                6,
+                2
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                5
+              ]
+            }
+          ],
+          "pv_head": "g3-g4",
+          "qnodes": 1185,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -15,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "g3-g4"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000008-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_138",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              0
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 204,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.0619999999762513,
+          "nodes": 79,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                0
+              ]
+            }
+          ],
+          "pv_head": "f1-g1",
+          "qnodes": 49,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "f1-g1"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_138",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              0
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 204,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.0780000000377186,
+          "nodes": 79,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                0
+              ]
+            }
+          ],
+          "pv_head": "f1-g1",
+          "qnodes": 49,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "f1-g1"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000008-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_138",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              0
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 972,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 7.297000000020489,
+          "nodes": 278,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                2,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                5
+              ]
+            }
+          ],
+          "pv_head": "f1-g1",
+          "qnodes": 234,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -7,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "f1-g1"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_138",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              0
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 972,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 7.420999999972992,
+          "nodes": 278,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                2,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                5
+              ]
+            }
+          ],
+          "pv_head": "f1-g1",
+          "qnodes": 234,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -7,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "f1-g1"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000008-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_138",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              0
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4044,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 25.01600000000326,
+          "nodes": 1061,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                2,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                5
+              ]
+            }
+          ],
+          "pv_head": "f1-g1",
+          "qnodes": 987,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": -7,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "f1-g1"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_138",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              0
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4044,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 25.51500000001397,
+          "nodes": 1061,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                2,
+                6
+              ],
+              "geometry_id": "g21",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                5
+              ]
+            }
+          ],
+          "pv_head": "f1-g1",
+          "qnodes": 987,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": -7,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "f1-g1"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000009-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 198,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.75,
+          "nodes": 72,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                5
+              ]
+            }
+          ],
+          "pv_head": "h2-d6",
+          "qnodes": 56,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 368,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "h2-d6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 198,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.6719999999622814,
+          "nodes": 72,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                5
+              ]
+            }
+          ],
+          "pv_head": "h2-d6",
+          "qnodes": 56,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 368,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "h2-d6"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000009-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 966,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 14.125,
+          "nodes": 222,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                5
+              ]
+            },
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                8
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "h2-d6",
+          "qnodes": 290,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 359,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "h2-d6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 966,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 13.71899999998277,
+          "nodes": 222,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                5
+              ]
+            },
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                8
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "h2-d6",
+          "qnodes": 290,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 359,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "h2-d6"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000009-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4038,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 52,
+          "nodes": 716,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                5
+              ]
+            },
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                8
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "h2-d6",
+          "qnodes": 1332,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 359,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "h2-d6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              7,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              5
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4038,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 50.85899999999674,
+          "nodes": 716,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                7,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_003",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                5
+              ]
+            },
+            {
+              "actor_type_id": "G",
+              "from": [
+                3,
+                8
+              ],
+              "geometry_id": "g8",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_138",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                8
+              ]
+            }
+          ],
+          "pv_head": "h2-d6",
+          "qnodes": 1332,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 359,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "h2-d6"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000010-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_112",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 204,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.2810000000172295,
+          "nodes": 79,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_112",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                1
+              ]
+            }
+          ],
+          "pv_head": "f1-g2",
+          "qnodes": 49,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 9,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "f1-g2"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_112",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 204,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 1.297000000020489,
+          "nodes": 79,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_112",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                1
+              ]
+            }
+          ],
+          "pv_head": "f1-g2",
+          "qnodes": 49,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 9,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "visible_action": "f1-g2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000010-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_112",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 972,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 5.436999999976251,
+          "nodes": 282,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_112",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                1
+              ]
+            }
+          ],
+          "pv_head": "f1-g2",
+          "qnodes": 230,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 9,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "f1-g2"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_112",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 1,
+          "declaration_checks": 972,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 5.375,
+          "nodes": 282,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_112",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                1
+              ]
+            }
+          ],
+          "pv_head": "f1-g2",
+          "qnodes": 230,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 9,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "visible_action": "f1-g2"
+        }
+      ],
+      "root_unchanged": true
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "position_id": "iteration-000086-game-000010-ply12",
+      "repeat_results": [
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_112",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4044,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 32.31300000002375,
+          "nodes": 1092,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_112",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                7
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "f1-g2",
+          "qnodes": 956,
+          "repeat": 1,
+          "root_unchanged": true,
+          "score": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "f1-g2"
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_112",
+            "promotion_target_id": null,
+            "to": [
+              6,
+              1
+            ]
+          },
+          "choice_kind": "ACTION",
+          "completed_depth": 2,
+          "declaration_checks": 4044,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "declaration_win_options": 0,
+          "elapsed_seconds": 32.625,
+          "nodes": 1092,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "G",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_112",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                7
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                7
+              ]
+            }
+          ],
+          "pv_head": "f1-g2",
+          "qnodes": 956,
+          "repeat": 2,
+          "root_unchanged": true,
+          "score": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "visible_action": "f1-g2"
+        }
+      ],
+      "root_unchanged": true
+    }
+  ],
+  "ruleset_fingerprint": "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4",
+  "settings": {
+    "default_tuning": true,
+    "deterministic": true,
+    "disk_cache": false,
+    "evaluator": "generic-v1",
+    "fresh_player_and_tt_per_repeat": true,
+    "max_depth": 8,
+    "qsearch": [
+      4,
+      8
+    ],
+    "use_native_semantic_legality": true,
+    "use_ordering": true,
+    "use_tt": true
+  },
+  "source_paths": {
+    "f25_baseline": "tests/fixtures/f25_standard_shogi_search_baseline.json",
+    "f25_descriptors": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+    "f27_manifest": "tests/fixtures/f27_standard_shogi_declaration_search_manifest.json",
+    "f27r1_results": "tests/fixtures/f27r1_standard_shogi_declaration_search_results.json"
+  },
+  "source_sha256": {
+    "f25_baseline": "6b15bed8c66439ba9e6fdbcbbbfa4d21caf4d6be0de798197146612dc7fc9967",
+    "f25_descriptors": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151",
+    "f27_manifest": "50b52810526348b66d3bd54e3d9e1ebe1111607a79227f823051d5da2441f58e",
+    "f27r1_results": "09b39841c9f7753525d98b5fb4f4d92f81d745ab0da8128e1b77aada530451b3"
+  },
+  "status": "PASS"
+}
+
