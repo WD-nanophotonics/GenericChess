@@ -21,7 +21,7 @@ def test_f24h_baseline_fixture_is_complete_and_passed():
     fixture = _fixture()
     assert fixture["status"] == "PASS"
     assert fixture["western_chess_product_ready_baseline"] is True
-    assert fixture["manifest_sha256"] == "cbf3d5bfdaad12dd54a7868f9bbf68bf9ce875931e2b4e8acdc34129c847e308"
+    assert fixture["manifest_sha256"] == "55b4e4c5253fae932bf201675b93636c80b68b7335a581711d2d475d4c4aa55b"
     assert fixture["manifest"]["ruleset_fingerprint"] == "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35"
     assert fixture["manifest"]["native_provider_policy"]["actual"] == "PYTHON_AUTHORITY_FALLBACK"
     assert len(fixture["canonical_perft"]) == 20
@@ -35,4 +35,3 @@ def test_f24h_baseline_fixture_is_complete_and_passed():
         assert row["repeats"][0]["action"] == row["repeats"][1]["action"]
         assert row["repeats"][0]["score"] == row["repeats"][1]["score"]
         assert row["repeats"][0]["pv"] == row["repeats"][1]["pv"]
-

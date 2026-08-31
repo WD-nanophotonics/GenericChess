@@ -36,7 +36,7 @@ The production builder reran all six F24G canonical perft positions exactly:
 
 The reproducible evidence is in
 `tests/fixtures/f24h_western_search_baseline.json`, with manifest SHA-256
-`cbf3d5bfdaad12dd54a7868f9bbf68bf9ce875931e2b4e8acdc34129c847e308`.
+`55b4e4c5253fae932bf201675b93636c80b68b7335a581711d2d475d4c4aa55b`.
 It records fresh-player fixed-node runs at 128, 512, and 2048 nodes (twice
 each), plus three repetitions at 0.25 and 1.0 seconds for every canonical
 position.  Fixed-node decisions were deterministic, roots remained unchanged,
@@ -55,4 +55,3 @@ transition, runtime, or master branch was changed.
 
 The next boundary is
 `F25_STANDARD_SHOGI_PRODUCTIZATION_AND_DUAL_STANDARD_SEARCH_BASELINE`.
-
