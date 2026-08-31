@@ -4,6 +4,11 @@ from .catalog import build_builtin_ruleset, builtin_ruleset_names
 from .compiler import compile_ruleset, compile_ruleset_for_execution
 from .western_chess import build_western_chess_ruleset
 from .standard_shogi import build_standard_shogi_ruleset
+from .schema import (
+    RuleDeclaration,
+    RuleDeclarationOutcomeBand,
+    RuleWeightedMaterialMetric,
+)
 
 __all__ = [
     "build_builtin_ruleset",
@@ -12,4 +17,7 @@ __all__ = [
     "build_standard_shogi_ruleset",
     "compile_ruleset",
     "compile_ruleset_for_execution",
+    "RuleDeclaration",
+    "RuleDeclarationOutcomeBand",
+    "RuleWeightedMaterialMetric",
 ]

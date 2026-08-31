@@ -358,6 +358,7 @@ def compile_ruleset(
         repetition_policy=ruleset.repetition_policy,
         max_ply=ruleset.max_ply,
         stalemate_result=ruleset.stalemate_result,
+        declarations=_compile_declarations(ruleset, tuple(sorted(types_by_id))),
     )
 
     issues = _position_validation(compiled)
@@ -650,6 +651,7 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         geometry=geometry,
         patterns=tuple(patterns),
+        declarations=compiled.declarations,
         capabilities=SemanticCapabilities(
             legacy_core_executable=True,
             new_ir_core_executable=False,
@@ -726,6 +728,153 @@ def _resolve_spatial(sel, slot_ids_by_name, zone_ids_by_set):
         refs=tuple(_resolve_square_ref(r, slot_ids_by_name) for r in sel.refs),
         zone_id=zone_id,
     )
+
+
+def _compile_declarations(ruleset: RuleSet, type_ids: tuple[str, ...]):
+    """Lower action-independent declarations without retaining RuleSet objects."""
+    from .ir import (
+        CompiledDeclaration,
+        CompiledDeclarationOutcomeBand,
+        CompiledStatePredicate,
+        CompiledWeightedMaterialMetric,
+        CompiledZone,
+    )
+    from .schema import DECLARATION_OUTCOMES
+
+    declarations = ruleset.declarations
+    ids = [d.declaration_id for d in declarations]
+    issues: list[ValidationIssue] = []
+    if len(set(ids)) != len(ids):
+        issues.append(ValidationIssue("DECLARATION_ID_DUPLICATE", "declarations", "declaration IDs must be unique"))
+    type_set = set(type_ids)
+    zone_sets: dict[tuple[tuple[int, int], ...], str] = {}
+    n = ruleset.board_size
+
+    def register_zone(spatial):
+        if spatial is None or spatial.kind != "zone":
+            return
+        key = tuple(sorted(spatial.zone_squares))
+        if key not in zone_sets:
+            zone_sets[key] = f"dzone{len(zone_sets)}"
+        for file, rank in key:
+            if not (0 <= file < n and 0 <= rank < n):
+                issues.append(ValidationIssue("DECLARATION_ZONE_BOUNDS", "declarations", str((file, rank))))
+
+    for index, declaration in enumerate(declarations):
+        path = f"declarations[{index}]"
+        if not isinstance(declaration.declaration_id, str) or not declaration.declaration_id:
+            issues.append(ValidationIssue("DECLARATION_ID_INVALID", f"{path}.declaration_id", "must be non-empty"))
+        if declaration.owner not in (0, 1):
+            issues.append(ValidationIssue("DECLARATION_OWNER_INVALID", f"{path}.owner", "must be 0 or 1"))
+        if declaration.ply_limit is not None and declaration.ply_limit < 1:
+            issues.append(ValidationIssue("DECLARATION_PLY_LIMIT_INVALID", f"{path}.ply_limit", "must be positive"))
+        if declaration.failure_outcome not in DECLARATION_OUTCOMES:
+            issues.append(ValidationIssue("DECLARATION_OUTCOME_INVALID", f"{path}.failure_outcome", declaration.failure_outcome))
+        previous = None
+        if declaration.outcome_bands and declaration.weighted_metric is None:
+            issues.append(ValidationIssue("DECLARATION_BANDS_NO_METRIC", f"{path}.outcome_bands", "score thresholds require a weighted metric"))
+        for bi, band in enumerate(declaration.outcome_bands):
+            if band.outcome not in DECLARATION_OUTCOMES:
+                issues.append(ValidationIssue("DECLARATION_OUTCOME_INVALID", f"{path}.outcome_bands[{bi}].outcome", band.outcome))
+            if previous is not None and band.threshold >= previous:
+                issues.append(ValidationIssue("DECLARATION_BANDS_NOT_DESCENDING", f"{path}.outcome_bands", "thresholds must be strictly descending"))
+            previous = band.threshold
+        for gi, guard in enumerate(declaration.state_guards):
+            gpath = f"{path}.state_guards[{gi}]"
+            if guard.location != "board":
+                issues.append(ValidationIssue("DECLARATION_GUARD_LOCATION", gpath, "declaration guards support board only"))
+            if guard.type_ref.kind not in ("explicit", "any"):
+                issues.append(ValidationIssue("DECLARATION_GUARD_TYPE_BINDING", gpath, "action-bound type refs fail closed"))
+            if guard.type_ref.kind == "explicit" and guard.type_ref.type_id not in type_set:
+                issues.append(ValidationIssue("DECLARATION_TYPE_UNKNOWN", gpath, guard.type_ref.type_id or ""))
+            refs = list(guard.spatial.refs)
+            if guard.subject_ref is not None:
+                refs.append(guard.subject_ref)
+            for ref in refs:
+                if ref.kind != "fixed":
+                    issues.append(ValidationIssue("DECLARATION_SQUARE_REF_UNBOUND", gpath, f"unsupported action-bound ref {ref.kind!r}"))
+            register_zone(guard.spatial)
+        if declaration.weighted_metric is not None:
+            metric = declaration.weighted_metric
+            mpath = f"{path}.weighted_metric"
+            if metric.compare_field not in ("base", "current"):
+                issues.append(ValidationIssue("COMPARE_FIELD_INVALID", mpath, metric.compare_field))
+            if metric.owner not in ("self", "opponent", "any"):
+                issues.append(ValidationIssue("OWNER_INVALID", mpath, metric.owner))
+            for tid, weight in metric.weights.items():
+                if not isinstance(tid, str) or not tid:
+                    issues.append(ValidationIssue("WEIGHT_TYPE_INVALID", mpath, str(tid)))
+                if not isinstance(weight, int) or isinstance(weight, bool):
+                    issues.append(ValidationIssue("WEIGHT_INVALID", f"{mpath}.weights", str(tid)))
+                if tid not in type_set:
+                    issues.append(ValidationIssue("DECLARATION_TYPE_UNKNOWN", f"{mpath}.weights", tid))
+            if metric.spatial is not None:
+                if metric.spatial.kind != "zone":
+                    issues.append(ValidationIssue("DECLARATION_METRIC_SPATIAL", mpath, "only zone spatial filtering is supported"))
+                for ref in metric.spatial.refs:
+                    if ref.kind != "fixed":
+                        issues.append(ValidationIssue("DECLARATION_SQUARE_REF_UNBOUND", mpath, f"unsupported action-bound ref {ref.kind!r}"))
+                register_zone(metric.spatial)
+    if issues:
+        raise RuleValidationError(issues)
+
+    zones = {
+        zone_id: CompiledZone(
+            zone_id,
+            tuple(rank * n + file for file, rank in squares),
+        )
+        for squares, zone_id in zone_sets.items()
+    }
+    out = []
+    for declaration in declarations:
+        guards = tuple(
+            CompiledStatePredicate(
+                aggregation=g.aggregation,
+                owner=g.owner,
+                type_ref=_resolve_type_ref(g.type_ref, type_ids),
+                compare_field=g.compare_field,
+                promoted=g.promoted,
+                location=g.location,
+                spatial=_resolve_spatial(g.spatial, {}, zone_sets),
+                comparison=g.comparison,
+                value=g.value,
+                subject_ref=(
+                    _resolve_square_ref(g.subject_ref, {})
+                    if g.subject_ref is not None else None
+                ),
+            )
+            for g in declaration.state_guards
+        )
+        metric = declaration.weighted_metric
+        compiled_metric = None
+        if metric is not None:
+            compiled_metric = CompiledWeightedMaterialMetric(
+                owner=metric.owner,
+                compare_field=metric.compare_field,
+                weights=tuple(sorted(metric.weights.items())),
+                spatial=(
+                    _resolve_spatial(metric.spatial, {}, zone_sets)
+                    if metric.spatial is not None else None
+                ),
+                include_hands=metric.include_hands,
+            )
+        out.append(
+            CompiledDeclaration(
+                declaration_id=declaration.declaration_id,
+                owner=declaration.owner,
+                state_guards=guards,
+                require_not_in_check=declaration.require_not_in_check,
+                ply_limit=declaration.ply_limit,
+                weighted_metric=compiled_metric,
+                outcome_bands=tuple(
+                    CompiledDeclarationOutcomeBand(b.threshold, b.outcome)
+                    for b in declaration.outcome_bands
+                ),
+                failure_outcome=declaration.failure_outcome,
+                zones=zones,
+            )
+        )
+    return tuple(out)
 
 
 def _pattern_components(pattern) -> list[str]:
@@ -1166,6 +1315,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         patterns=tuple(normalized),
         aux_slots=compiled_slots,
         triggers=triggers,
+        declarations=legacy.declarations,
         capabilities=capabilities,
     )
     errors = validate_ir(ir)
@@ -1184,7 +1334,10 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         _, native_report = build_semantic_compile_payload(
             CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)
         )
-        if native_report.native_executable:
+        # The current Native semantic payload has no declaration section.
+        # Never advertise a declaration-bearing RuleSet as fully Native
+        # executable while silently dropping its out-of-band semantics.
+        if native_report.native_executable and not ir.declarations:
             ir = replace(
                 ir,
                 capabilities=replace(ir.capabilities, native_executable=True),

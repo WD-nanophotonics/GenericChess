@@ -164,6 +164,8 @@ class RuleSet:
     # (fail-closed) and ``compile_semantic_ruleset`` is the IR entry point.
     semantic_actions: tuple["RuleSemanticAction", ...] = ()
     semantic_dsl_version: int = SEMANTIC_DSL_VERSION
+    # Optional action-independent claims; omitted from legacy JSON when empty.
+    declarations: tuple[RuleDeclaration, ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
 
 
@@ -301,6 +303,42 @@ class RuleStateGuard:
     comparison: str = "eq"
     value: int = 0
     subject_ref: RuleSquareRef | None = None
+
+
+DECLARATION_OUTCOMES = ("WIN", "RESTART", "LOSS")
+
+
+@dataclass(frozen=True, slots=True)
+class RuleWeightedMaterialMetric:
+    """Generic board/hand integer scoring used by an out-of-band claim."""
+
+    owner: str = "self"
+    compare_field: str = "base"
+    weights: Mapping[str, int] = field(default_factory=dict)
+    spatial: RuleSpatialSelector | None = None
+    include_hands: bool = False
+
+
+@dataclass(frozen=True, slots=True)
+class RuleDeclarationOutcomeBand:
+    """An ordered inclusive score threshold and its generic outcome."""
+
+    threshold: int
+    outcome: str
+
+
+@dataclass(frozen=True, slots=True)
+class RuleDeclaration:
+    """An optional, action-independent player declaration/claim."""
+
+    declaration_id: str
+    owner: int
+    state_guards: tuple[RuleStateGuard, ...] = ()
+    require_not_in_check: bool = True
+    ply_limit: int | None = None
+    weighted_metric: RuleWeightedMaterialMetric | None = None
+    outcome_bands: tuple[RuleDeclarationOutcomeBand, ...] = ()
+    failure_outcome: str = "LOSS"
 
 
 @dataclass(frozen=True, slots=True)
@@ -694,6 +732,144 @@ def state_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleStateGuard:
         comparison=comparison,
         value=value,
         subject_ref=subject_ref,
+    )
+
+
+def weighted_material_metric_to_dict(value: RuleWeightedMaterialMetric) -> dict:
+    return {
+        "owner": value.owner,
+        "compare_field": value.compare_field,
+        "weights": dict(sorted(value.weights.items())),
+        "spatial": spatial_selector_to_dict(value.spatial) if value.spatial else None,
+        "include_hands": value.include_hands,
+    }
+
+
+def weighted_material_metric_from_dict(
+    data: Mapping[str, Any], path: str
+) -> RuleWeightedMaterialMetric:
+    data = _require_mapping(data, path)
+    owner = _require_member(
+        _require_str(data.get("owner", "self"), f"{path}.owner"),
+        SELECTOR_OWNERS,
+        f"{path}.owner",
+        "OWNER_INVALID",
+    )
+    compare_field = _require_member(
+        _require_str(data.get("compare_field", "base"), f"{path}.compare_field"),
+        ("base", "current"),
+        f"{path}.compare_field",
+        "COMPARE_FIELD_INVALID",
+    )
+    weights_raw = _require_mapping(data.get("weights", {}), f"{path}.weights")
+    weights: dict[str, int] = {}
+    for type_id, weight in weights_raw.items():
+        if not isinstance(type_id, str) or not type_id:
+            raise _err("WEIGHT_TYPE_INVALID", f"{path}.weights", "type IDs must be strings")
+        weights[type_id] = _require_int(weight, f"{path}.weights[{type_id!r}]")
+    spatial_raw = data.get("spatial")
+    spatial = (
+        None
+        if spatial_raw is None
+        else spatial_selector_from_dict(
+            _require_mapping(spatial_raw, f"{path}.spatial"), f"{path}.spatial"
+        )
+    )
+    include_hands = _require_bool(data.get("include_hands", False), f"{path}.include_hands")
+    return RuleWeightedMaterialMetric(
+        owner=owner,
+        compare_field=compare_field,
+        weights=weights,
+        spatial=spatial,
+        include_hands=include_hands,
+    )
+
+
+def declaration_outcome_band_to_dict(value: RuleDeclarationOutcomeBand) -> dict:
+    return {"threshold": value.threshold, "outcome": value.outcome}
+
+
+def declaration_outcome_band_from_dict(
+    data: Mapping[str, Any], path: str
+) -> RuleDeclarationOutcomeBand:
+    data = _require_mapping(data, path)
+    threshold = _require_int(_require_field(data, "threshold", path), f"{path}.threshold")
+    outcome = _require_member(
+        _require_str(_require_field(data, "outcome", path), f"{path}.outcome"),
+        DECLARATION_OUTCOMES,
+        f"{path}.outcome",
+        "DECLARATION_OUTCOME_INVALID",
+    )
+    return RuleDeclarationOutcomeBand(threshold=threshold, outcome=outcome)
+
+
+def declaration_to_dict(value: RuleDeclaration) -> dict:
+    return {
+        "declaration_id": value.declaration_id,
+        "owner": value.owner,
+        "state_guards": [state_guard_to_dict(g) for g in value.state_guards],
+        "require_not_in_check": value.require_not_in_check,
+        "ply_limit": value.ply_limit,
+        "weighted_metric": (
+            weighted_material_metric_to_dict(value.weighted_metric)
+            if value.weighted_metric
+            else None
+        ),
+        "outcome_bands": [declaration_outcome_band_to_dict(b) for b in value.outcome_bands],
+        "failure_outcome": value.failure_outcome,
+    }
+
+
+def declaration_from_dict(data: Mapping[str, Any], path: str) -> RuleDeclaration:
+    data = _require_mapping(data, path)
+    declaration_id = _require_str(
+        _require_field(data, "declaration_id", path), f"{path}.declaration_id"
+    )
+    owner = _require_int(_require_field(data, "owner", path), f"{path}.owner")
+    guards_raw = data.get("state_guards", ())
+    if not isinstance(guards_raw, (list, tuple)):
+        raise _err("FIELD_NOT_LIST", f"{path}.state_guards", "state_guards must be a list")
+    guards = tuple(
+        state_guard_from_dict(item, f"{path}.state_guards[{i}]")
+        for i, item in enumerate(guards_raw)
+    )
+    require_not_in_check = _require_bool(
+        data.get("require_not_in_check", True), f"{path}.require_not_in_check"
+    )
+    ply_limit = data.get("ply_limit")
+    if ply_limit is not None:
+        ply_limit = _require_int(ply_limit, f"{path}.ply_limit")
+    metric_raw = data.get("weighted_metric")
+    metric = (
+        None
+        if metric_raw is None
+        else weighted_material_metric_from_dict(
+            _require_mapping(metric_raw, f"{path}.weighted_metric"),
+            f"{path}.weighted_metric",
+        )
+    )
+    bands_raw = data.get("outcome_bands", ())
+    if not isinstance(bands_raw, (list, tuple)):
+        raise _err("FIELD_NOT_LIST", f"{path}.outcome_bands", "outcome_bands must be a list")
+    bands = tuple(
+        declaration_outcome_band_from_dict(item, f"{path}.outcome_bands[{i}]")
+        for i, item in enumerate(bands_raw)
+    )
+    failure_outcome = _require_member(
+        _require_str(data.get("failure_outcome", "LOSS"), f"{path}.failure_outcome"),
+        DECLARATION_OUTCOMES,
+        f"{path}.failure_outcome",
+        "DECLARATION_OUTCOME_INVALID",
+    )
+    return RuleDeclaration(
+        declaration_id=declaration_id,
+        owner=owner,
+        state_guards=guards,
+        require_not_in_check=require_not_in_check,
+        ply_limit=ply_limit,
+        weighted_metric=metric,
+        outcome_bands=bands,
+        failure_outcome=failure_outcome,
     )
 
 
@@ -1168,6 +1344,8 @@ def ruleset_to_dict(
             )
             for a in ruleset.semantic_actions
         ]
+    if ruleset.declarations:
+        data["declarations"] = [declaration_to_dict(d) for d in ruleset.declarations]
     if include_metadata:
         data["metadata"] = dict(ruleset.metadata)
     return data
@@ -1324,6 +1502,13 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
                 f"unsupported semantic DSL version {semantic_dsl_version}; "
                 f"current is {SEMANTIC_DSL_VERSION}",
             )
+    declarations_raw = data.get("declarations", ())
+    if not isinstance(declarations_raw, (list, tuple)):
+        raise _err("FIELD_NOT_LIST", f"{path}.declarations", "declarations must be a list")
+    declarations = tuple(
+        declaration_from_dict(item, f"{path}.declarations[{i}]")
+        for i, item in enumerate(declarations_raw)
+    )
     metadata = _require_mapping(data.get("metadata", {}), f"{path}.metadata")
 
     return RuleSet(
@@ -1340,6 +1525,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         stalemate_result=stalemate_result,
         semantic_actions=semantic_actions,
         semantic_dsl_version=semantic_dsl_version,
+        declarations=declarations,
         metadata=dict(metadata),
     )
 

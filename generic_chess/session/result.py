@@ -13,6 +13,7 @@ class SessionStatus(Enum):
     CHECKMATE = "checkmate"
     STALEMATE = "stalemate"
     REPETITION = "repetition"
+    PERPETUAL_CHECK = "perpetual_check"
     MAX_PLY = "max_ply"
     RESIGNATION = "resignation"
 
@@ -30,6 +31,9 @@ class SessionResult:
             return f"resignation, player {self.winner} wins (player {self.resigned_by} resigned)"
         if self.status is SessionStatus.CHECKMATE:
             return f"checkmate, player {self.winner} wins"
+        if self.status is SessionStatus.PERPETUAL_CHECK:
+            loser = 1 - self.winner if self.winner is not None else None
+            return f"perpetual check, player {self.winner} wins (player {loser} loses)"
         return f"{self.status.value}, draw"
 
 
@@ -39,6 +43,7 @@ def _session_status_from_terminal(terminal: TerminalResult) -> SessionStatus:
         TerminalStatus.CHECKMATE: SessionStatus.CHECKMATE,
         TerminalStatus.STALEMATE: SessionStatus.STALEMATE,
         TerminalStatus.REPETITION: SessionStatus.REPETITION,
+        TerminalStatus.PERPETUAL_CHECK: SessionStatus.PERPETUAL_CHECK,
         TerminalStatus.MAX_PLY: SessionStatus.MAX_PLY,
     }
     return mapping[terminal.status]

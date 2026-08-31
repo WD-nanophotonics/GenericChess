@@ -1,0 +1,25 @@
+{
+  "work_order": "GENERICCHESS-F26-GENERIC-DECLARATION-CLAIM-SEMANTIC-FOUNDATION",
+  "official_authority": "Japan Shogi Association Article 9, corrected 2025-10-01",
+  "thresholds": {"win": 31, "restart": [24, 30], "loss": 23},
+  "controls": {
+    "ply_499": "non_loss",
+    "ply_500": "loss",
+    "nine_nonking_pieces": "loss",
+    "king_outside_zone": "loss",
+    "king_in_check": "loss",
+    "promoted_rook_base_weight": 5,
+    "promoted_bishop_base_weight": 5,
+    "promoted_minor_base_weight": 1,
+    "board_outside_zone": 0,
+    "hands_when_enabled": "included"
+  },
+  "status_flags": {
+    "GENERIC_DECLARATION_SEMANTIC_FOUNDATION": true,
+    "STANDARD_SHOGI_DECLARATION_ASSESSMENT_CERTIFIED": true,
+    "STANDARD_SHOGI_PRODUCT_DECLARATION_AVAILABLE": false,
+    "STANDARD_SHOGI_FULL_RULE_PRODUCT_READY": false,
+    "PERPETUAL_CHECK_SESSION_MAPPING_FIXED": true
+  },
+  "residual_rule_gap": "official 500-move impasse/no-contest and administrative restart procedure remain outside this foundation"
+}

@@ -140,6 +140,34 @@ class CompiledStatePredicate:
 
 
 @dataclass(frozen=True, slots=True)
+class CompiledWeightedMaterialMetric:
+    owner: str = "self"
+    compare_field: str = "base"
+    weights: tuple[tuple[str, int], ...] = ()
+    spatial: CompiledSpatialSelector | None = None
+    include_hands: bool = False
+
+
+@dataclass(frozen=True, slots=True)
+class CompiledDeclarationOutcomeBand:
+    threshold: int
+    outcome: str
+
+
+@dataclass(frozen=True, slots=True)
+class CompiledDeclaration:
+    declaration_id: str
+    owner: int
+    state_guards: tuple[CompiledStatePredicate, ...] = ()
+    require_not_in_check: bool = True
+    ply_limit: int | None = None
+    weighted_metric: CompiledWeightedMaterialMetric | None = None
+    outcome_bands: tuple[CompiledDeclarationOutcomeBand, ...] = ()
+    failure_outcome: str = "LOSS"
+    zones: Mapping[str, CompiledZone] = field(default_factory=dict)
+
+
+@dataclass(frozen=True, slots=True)
 class CompiledSlotGuard:
     slot_id: int
     comparison: str
@@ -251,6 +279,7 @@ class CompiledSemanticIR:
     patterns: tuple[CompiledMovePattern, ...] = ()
     aux_slots: tuple[CompiledAuxSlot, ...] = ()
     triggers: tuple[CompiledTransitionTrigger, ...] = ()
+    declarations: tuple[CompiledDeclaration, ...] = ()
     capabilities: SemanticCapabilities = SemanticCapabilities()
 
     def serialized(self) -> str:
@@ -298,6 +327,7 @@ class CompiledSemanticIR:
                 }
                 for t in self.triggers
             ],
+            "declarations": [_declaration_dict(d) for d in self.declarations],
             "capabilities": self.capabilities.to_dict(),
         }
 
@@ -412,6 +442,52 @@ def _effect_dict(value: CompiledEffect) -> dict:
     }
 
 
+def _declaration_dict(value: CompiledDeclaration) -> dict:
+    return {
+        "declaration_id": value.declaration_id,
+        "owner": value.owner,
+        "state_guards": [
+            {
+                "aggregation": g.aggregation,
+                "owner": g.owner,
+                "type_ref": _type_ref_dict(g.type_ref),
+                "compare_field": g.compare_field,
+                "promoted": g.promoted,
+                "location": g.location,
+                "spatial": _spatial_dict(g.spatial),
+                "comparison": g.comparison,
+                "value": g.value,
+                "subject_ref": _square_ref_dict(g.subject_ref) if g.subject_ref else None,
+            }
+            for g in value.state_guards
+        ],
+        "require_not_in_check": value.require_not_in_check,
+        "ply_limit": value.ply_limit,
+        "weighted_metric": (
+            {
+                "owner": value.weighted_metric.owner,
+                "compare_field": value.weighted_metric.compare_field,
+                "weights": [list(item) for item in value.weighted_metric.weights],
+                "spatial": (
+                    _spatial_dict(value.weighted_metric.spatial)
+                    if value.weighted_metric.spatial else None
+                ),
+                "include_hands": value.weighted_metric.include_hands,
+            }
+            if value.weighted_metric else None
+        ),
+        "outcome_bands": [
+            {"threshold": b.threshold, "outcome": b.outcome}
+            for b in value.outcome_bands
+        ],
+        "failure_outcome": value.failure_outcome,
+        "zones": {
+            zid: {"zone_id": z.zone_id, "squares": list(z.squares)}
+            for zid, z in sorted(value.zones.items())
+        },
+    }
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledSemanticRuleset:
     """Compiled product for semantic-DSL rulesets.
@@ -429,6 +505,10 @@ class CompiledSemanticRuleset:
     def ruleset_fingerprint(self) -> str:
         """Public ruleset identity used by :func:`ensure_ruleset_match`."""
         return self.ir.ruleset_fingerprint
+
+    @property
+    def declarations(self) -> tuple[CompiledDeclaration, ...]:
+        return self.ir.declarations
 
     @property
     def board_size(self) -> int:

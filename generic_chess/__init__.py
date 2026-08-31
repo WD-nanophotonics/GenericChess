@@ -30,6 +30,13 @@ from .rules.catalog import build_builtin_ruleset, builtin_ruleset_names
 from .rules.western_chess import build_western_chess_ruleset
 from .rules.standard_shogi import build_standard_shogi_ruleset
 from .rules.schema import RuleSet
+from .rules.schema import RuleDeclaration, RuleDeclarationOutcomeBand, RuleWeightedMaterialMetric
+from .core.declarations import (
+    DeclarationAssessment,
+    InvalidDeclarationError,
+    assess_declaration,
+    available_declarations,
+)
 from .rules.serialization import deserialize_ruleset, serialize_ruleset
 from .core.transition import apply_action, initial_state, legal_successors
 from .core.terminal import terminal_result
@@ -70,4 +77,11 @@ __all__ = [
     "RuleSetMismatchError",
     "action_to_dict",
     "action_from_dict",
+    "RuleDeclaration",
+    "RuleDeclarationOutcomeBand",
+    "RuleWeightedMaterialMetric",
+    "DeclarationAssessment",
+    "InvalidDeclarationError",
+    "assess_declaration",
+    "available_declarations",
 ]

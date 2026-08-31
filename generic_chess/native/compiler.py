@@ -744,6 +744,10 @@ def build_semantic_compile_payload(semantic):
     """
     ir = semantic.ir
     support = semantic.support
+    if getattr(ir, "declarations", ()):
+        raise NativeUnsupportedRuleError(
+            "declaration-bearing semantic rulesets are outside the Native payload contract"
+        )
     fingerprint = support.ruleset_fingerprint
     n = support.board_size
 

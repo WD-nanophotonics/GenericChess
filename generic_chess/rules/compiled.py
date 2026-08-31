@@ -47,3 +47,4 @@ class CompiledRuleSet:
     max_ply: int
     stalemate_result: str
     repetition_policy: str = "draw"
+    declarations: tuple[object, ...] = ()
