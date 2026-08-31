@@ -1,0 +1,162 @@
+{
+  "alphasho_environment": {
+    "alphasho_root": "C:\\Users\\icywo\\PycharmProjects\\alphasho",
+    "audit_host": {
+      "python": "3.12.0"
+    },
+    "checkpoint": {
+      "path": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\artifacts\\checkpoints\\best.pt",
+      "present": true,
+      "sha256": "65204194f06e60c2d66955967e55595b514816300f4d576f1c981f1cfc50b4f1",
+      "used_by_entry_point": false
+    },
+    "entry_point": {
+      "class": "alphasho.heuristicplayer.HeuristicPlayer",
+      "kind": "AlphaSho current heuristic full profile",
+      "module": "benchmarks.heuristic_strength",
+      "profile": "FULL",
+      "seconds_per_move": 0.5
+    },
+    "python": {
+      "cshogi": "1.0.4",
+      "cuda": "False",
+      "executable": "C:\\Users\\icywo\\PycharmProjects\\alphasho\\.venv\\Scripts\\python.exe",
+      "raw_version": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+      "torch": "2.13.0+cpu"
+    },
+    "repo": {
+      "branch": "codex/web-last-move-highlight",
+      "head": "61c35fa70ca1f59264045ad1425d6757ad6666a2",
+      "origin": "https://github.com/WD-nanophotonics/alphasho.git",
+      "status_porcelain": ""
+    },
+    "source_sha256": {
+      "benchmarks/heuristic_strength.py": "9dbc4e62026d5ac5ef239a1f5753df5e1276b39a0f2ff25e7edba9d8e1b1aa3a",
+      "benchmarks/legacy_3262cc8.py": "102805120fa30dc8b49b4756114c8d98943e1910246fa9b139f5a5a5c3251915",
+      "src/alphasho/heuristicplayer/evaluation.py": "7f6c0cff2575beaf91656ae9a2372cf6b700cebf6e2db7373911a33d1d6dc619",
+      "src/alphasho/heuristicplayer/player.py": "dc1a64c09be5d3da808ea9a026b6699ff3185274757cc6f40c694b701d62dabe",
+      "src/alphasho/heuristicplayer/search.py": "266746deffbd888cfc1695509b86bb7059a33f088204acf9b6c0aeee84cc116d"
+    }
+  },
+  "constraints": [
+    "NO_TUNING_FROM_RESULTS",
+    "production_diff_zero",
+    "no_new_broad_paired_match",
+    "no_AlphaChess",
+    "audit_only_ruleset_stripping_declarations_and_automatic_adjudications_only"
+  ],
+  "descriptor": {
+    "count": 10,
+    "path": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+    "sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151",
+    "source_commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38"
+  },
+  "diagnostic_matrix": {
+    "fixed_node_budgets": [
+      512,
+      2048
+    ],
+    "fixed_node_variants": [
+      "baseline",
+      "tt_off",
+      "ordering_off",
+      "qsearch_off",
+      "root_tactical_off",
+      "pvs_on"
+    ],
+    "forced_candidate_depths": [
+      0,
+      1,
+      2
+    ],
+    "horizon_extension_subset": "first five position IDs disagree with AlphaSho at 2048, lexicographic position order",
+    "horizon_ladder": [
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192
+    ],
+    "native_counterfactual": [
+      "live_native_requested",
+      "stripped_native_off",
+      "stripped_native_requested"
+    ],
+    "qsearch_root_ranking": {
+      "max_nodes_per_child": 128,
+      "qsearch_hard_max_depth": 8,
+      "qsearch_max_depth": 4,
+      "uses_production_qsearch": true
+    },
+    "root_timing_and_counterfactuals": [
+      "baseline",
+      "root_tactical_off",
+      "qsearch_off"
+    ],
+    "static_root_ranking": {
+      "all_legal_actions": true,
+      "evaluator": "v1",
+      "uses_alphabeta": false
+    },
+    "times_seconds": [
+      0.5,
+      2.0
+    ]
+  },
+  "f22_source": {
+    "commit": "3281b3cfd0a495b0fe75ce8a3c0a28cc20343b38",
+    "reference_count": 10,
+    "sha256": {
+      "agreement": "e73c0aef44983fbf6b5dae4d46c7eea94f4aa8e15a97f85cdaf1112e6d142f3e",
+      "positions": "30b69f451b3e338fa0ffe0f4cf8f6b7ee4e400d9eaef86f4559b872e4c11b3f0",
+      "provenance": "0900cf7358c7cc31fdb5ebc69daa4379f95e513a34ee36c88a64c1debe3afac0"
+    }
+  },
+  "f30_r1_evidence": {
+    "f30_r1_fresh": {
+      "path": "tests/fixtures/f30r1_fresh_move_reference.json",
+      "sha256": "8ec60aebdde3e7fb4d192d99e77948a954d7aab83c6942e0704a8956721a3eba"
+    },
+    "f30_r1_manifest": {
+      "path": "tests/fixtures/f30r1_benchmark_manifest.json",
+      "sha256": "de1ffc84b635d96fa8abd5a23eed42c79ef9a7fd48b7d07351c38ac6ecac4f1a"
+    },
+    "f30_r1_paired": {
+      "path": "tests/fixtures/f30r1_paired_match.json",
+      "sha256": "3e80b5a5488624c7afd34638fbbfee8f200dd96af472d5345672ff69439ca256"
+    }
+  },
+  "f31_harness": {
+    "path": "scripts/audit_f31_gap_causal.py",
+    "sha256": "b738d3bc2515b8b3c469ce7e059ea02d3d4495910d5f92503eb3f35f348dcf79"
+  },
+  "generic_chess_head_at_freeze": "6d0016a3f5e792173b04df5262e29f2d6e5bd1ee",
+  "generic_chess_product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+  "generic_chess_settings": {
+    "disk_cache": false,
+    "evaluator": "v1",
+    "max_depth": 64,
+    "native_requested": true,
+    "ordering": true,
+    "qsearch": "4/8",
+    "search_tuning": "default",
+    "tt": true
+  },
+  "host": {
+    "python": "3.12.0"
+  },
+  "kind": "F31_PRE_DIAGNOSIS_MANIFEST",
+  "manifest_sha256": "85639cacc06443c2ddfa5df6c362781913ced768ff2fcb86714f7e5de7748765",
+  "paired_anchor": {
+    "caps": 0,
+    "clean_wdl": "0W/3D/17L",
+    "do_not_rerun": true,
+    "path": "tests/fixtures/f30r1_paired_match.json",
+    "score": 0.075,
+    "technical_failures": 0
+  },
+  "schema_version": 1,
+  "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+}
