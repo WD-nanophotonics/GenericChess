@@ -118,10 +118,12 @@ def test_legacy_board_move_ambiguous_across_semantic_patterns_fails_closed():
         apply_action(state, BoardMove(Square(1, 1), Square(2, 1)), compiled)
 
 
-def test_session_record_serialization_rejects_semantic_actions():
+def test_session_record_serialization_preserves_semantic_actions():
     from generic_chess.session.record import GameRecord
-    from generic_chess.session.serialization import serialize_game_record
-    from generic_chess.session.session import SessionRecordError
+    from generic_chess.session.serialization import (
+        deserialize_game_record,
+        serialize_game_record,
+    )
 
     record = GameRecord(
         schema_version=1,
@@ -137,8 +139,8 @@ def test_session_record_serialization_rejects_semantic_actions():
         ),
         resigned_by=None,
     )
-    with pytest.raises(SessionRecordError, match="(?i)semantic"):
-        serialize_game_record(record)
+    restored = deserialize_game_record(serialize_game_record(record))
+    assert restored == record
 
 
 def test_public_semantic_apply_rejects_ruleset_mismatch():
