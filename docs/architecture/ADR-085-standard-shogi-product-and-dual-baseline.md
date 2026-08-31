@@ -46,7 +46,7 @@ AlphaSho labels, reference moves, ranks, or agreement outcomes enter search.
 
 The full baseline is in
 `tests/fixtures/f25_standard_shogi_search_baseline.json`, manifest SHA-256
-`8fc8c261a79cb4901cde3eab0c441f2c18793cc1f3d10bfbcf769840d710c30d`, bound
+`88c94ba6607b3dea85bdbf4b8a08c4265680135fc7b3ccc2833aca21cb693de4`, bound
 to product/audit commit `b74f80c466a911ae03d41575fd93e3baa83f294b`.
 It contains 30 fixed-node runs (128/512/2048, twice per position), 20
 fixed-time runs (0.25/1.0 seconds, three repetitions per position), full
