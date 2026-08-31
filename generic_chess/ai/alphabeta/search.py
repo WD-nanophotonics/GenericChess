@@ -278,14 +278,36 @@ def negamax(
                 with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
                     score = score_from_tt(entry.score, ply)
                     if entry.bound is BoundType.EXACT:
-                        return SearchResult(score, entry.best_action, ())
+                        # A RESTART floor is intentionally not encoded in the
+                        # TT's Action slot.  Reconstruct its out-of-band
+                        # identity from the already-assessed current node,
+                        # but only for a live qualifying RESTART option.
+                        cached_declaration = (
+                            restart
+                            if score == 0
+                            and entry.best_action is None
+                            and restart is not None
+                            else None
+                        )
+                        return SearchResult(
+                            score, entry.best_action, (), cached_declaration
+                        )
                     if entry.bound is BoundType.LOWER:
                         alpha = max(alpha, score)
                     else:
                         beta = min(beta, score)
                     if alpha >= beta:
                         ctx.stats.tt_cutoffs += 1
-                        return SearchResult(score, entry.best_action, ())
+                        cached_declaration = (
+                            restart
+                            if score == 0
+                            and entry.best_action is None
+                            and restart is not None
+                            else None
+                        )
+                        return SearchResult(
+                            score, entry.best_action, (), cached_declaration
+                        )
 
     lazy = False
     child_by_action = {}
