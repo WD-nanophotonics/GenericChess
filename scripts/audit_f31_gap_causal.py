@@ -218,8 +218,28 @@ def static_and_qsearch() -> dict[str, Any]:
         target_ranks = {}
         for name, move in targets.items():
             target_ranks[name] = {"move": move, "static_rank": by_move_static.get(move, {}).get("rank"), "static_score": by_move_static.get(move, {}).get("score"), "qsearch_rank": by_move_q.get(move, {}).get("rank"), "qsearch_score": by_move_q.get(move, {}).get("score")}
-        result["roots"][item["position_id"]] = {"sfen": item["sfen"], "legal_action_count": len(actions), "static_top": static_rows[:5], "qsearch_top": q_rows[:5], "target_ranks": target_ranks, "all_static_actions": static_rows, "all_qsearch_actions": q_rows}
+        top_score = static_rows[0]["score"] if static_rows else None
+        result["roots"][item["position_id"]] = {"sfen": item["sfen"], "legal_action_count": len(actions), "static_top": static_rows[:5], "static_top1": static_rows[:1], "static_top3": static_rows[:3], "static_top5": static_rows[:5], "static_score_gap_from_top1": {row["move"]: top_score - row["score"] for row in static_rows[:5]} if top_score is not None else {}, "qsearch_top": q_rows[:5], "target_ranks": target_ranks, "all_static_actions": static_rows, "all_qsearch_actions": q_rows}
     return result
+
+
+def historical_reference_context(static: dict[str, Any]) -> dict[str, Any]:
+    source = historical_source()
+    rows = {}
+    outside = 0
+    for position_id, root in static["roots"].items():
+        move = source["references"][position_id]
+        ranked = {row["move"]: row["rank"] for row in root["all_static_actions"]}
+        rank = ranked.get(move)
+        if rank is None or rank > 3:
+            outside += 1
+        rows[position_id] = {"historical_f22_move": move, "static_rank": rank, "outside_static_top3": rank is None or rank > 3}
+    fresh_outside = sum(
+        1
+        for root in static["roots"].values()
+        if any((value["static_rank"] or 99) > 3 for name, value in root["target_ranks"].items() if name.startswith("alphasho_"))
+    )
+    return {"prior_observation_outside_evaluator_v1_top3": 8, "current_historical_f22_outside_static_top3": outside, "current_fresh_alphasho_any_control_outside_static_top3": fresh_outside, "roots": rows}
 
 
 def timing_and_ablations() -> dict[str, Any]:
@@ -251,6 +271,24 @@ def timing_and_ablations() -> dict[str, Any]:
                 row["reference_top1_200"] = row["selected_move"] == row["reference_200"]
                 rows[item["position_id"]] = row
             result["fixed_node_matrix"][variant][str(budget)] = rows
+    summary = {}
+    for seconds in TIMES:
+        key = str(seconds)
+        base = result["baseline"][key]
+        summary[key] = {}
+        for variant in ("root_tactical_off", "qsearch_off"):
+            alt = result[variant][key]
+            summary[key][variant] = {
+                "baseline_depths": [row["completed_depth"] for row in base.values()],
+                "variant_depths": [row["completed_depth"] for row in alt.values()],
+                "baseline_reference_top1_count": sum(row["reference_top1"] for row in base.values()),
+                "variant_reference_top1_count": sum(row["reference_top1"] for row in alt.values()),
+                "baseline_fallback_count": sum(row["fallback"] for row in base.values()),
+                "variant_fallback_count": sum(row["fallback"] for row in alt.values()),
+                "baseline_elapsed_seconds": sum(row["elapsed_seconds"] for row in base.values()),
+                "variant_elapsed_seconds": sum(row["elapsed_seconds"] for row in alt.values()),
+            }
+    result["summary"] = summary
     return result
 
 
@@ -268,7 +306,18 @@ def horizon_native_forced(static: dict[str, Any]) -> dict[str, Any]:
         rows = {}
         for budget in HORIZON_BUDGETS:
             rows[str(budget)] = _direct(m, compiled, evaluator, state, nodes=budget, max_depth=8, qmax=4, qhard=8)
-        ladder["roots"][item["position_id"]] = rows
+        target_moves = {modal[item["position_id"]]["alphasho_0.5"], modal[item["position_id"]]["alphasho_2.0"]}
+        selected = [rows[str(budget)]["selected_move"] for budget in HORIZON_BUDGETS]
+        recovered_indices = [index for index, move in enumerate(selected) if move in target_moves]
+        if not recovered_indices:
+            recovery_class = "never_recovered"
+        elif all(move in target_moves for move in selected[recovered_indices[0]:]):
+            recovery_class = "stable_recovered"
+        elif any(move in target_moves for move in selected[recovered_indices[0] + 1:]):
+            recovery_class = "recovered_then_lost_or_unstable"
+        else:
+            recovery_class = "unstable"
+        ladder["roots"][item["position_id"]] = {"rows": rows, "alpha_sho_target_moves": sorted(target_moves), "selected_moves_by_budget": dict(zip((str(budget) for budget in HORIZON_BUDGETS), selected)), "recovery_class": recovery_class}
     stripped_ruleset = replace(m["build_standard_shogi_ruleset"](), declarations=(), automatic_adjudications=())
     sm, stripped, sevaluator = _contexts(stripped_ruleset)
     native = {"live": {}, "stripped_native_off": {}, "stripped_native_requested": {}, "legal_set_proof": {}, "static_score_proof": {}}
@@ -307,6 +356,15 @@ def horizon_native_forced(static: dict[str, Any]) -> dict[str, Any]:
                 depths[str(depth)] = {"root_perspective_score": -evaluator.evaluate(child) if depth == 0 else -_direct(m, compiled, evaluator, child, nodes=256, max_depth=depth, qmax=4, qhard=8, tuning=replace(m["SearchTuning"](), use_root_tactical=False))["score"]}
             rows[move] = depths
         forced["roots"][item["position_id"]] = rows
+    requested_rows = [row for position in native["live"].values() for row in position.values()] + [row for position in native["stripped_native_requested"].values() for row in position.values()]
+    native_active = any(row["provider_mode"] == "NATIVE_PROVIDER_ACTIVE" for row in requested_rows)
+    depth_gains = [
+        native["stripped_native_requested"][pid][str(seconds)]["completed_depth"] - native["stripped_native_off"][pid][str(seconds)]["completed_depth"]
+        for pid in native["stripped_native_off"]
+        for seconds in TIMES
+    ]
+    native["availability"] = "NATIVE_COUNTERFACTUAL_AVAILABLE" if native_active else "NATIVE_COUNTERFACTUAL_UNAVAILABLE"
+    native["material_completed_depth_gain"] = native_active and max(depth_gains, default=0) > 0
     return {"horizon_ladder": ladder, "native_counterfactual": native, "forced_candidates": forced}
 
 
@@ -339,13 +397,14 @@ def classify(static: dict[str, Any], timing: dict[str, Any], extra: dict[str, An
         pid = item["position_id"]
         target = static["roots"][pid]["target_ranks"]
         ladder = extra["horizon_ladder"]["roots"].get(pid, {})
-        recovered = [budget for budget, row in ladder.items() if row["selected_move"] in {modal[pid]["alphasho_0.5"], modal[pid]["alphasho_2.0"]}]
+        recovered = [budget for budget, move in ladder.get("selected_moves_by_budget", {}).items() if move in {modal[pid]["alphasho_0.5"], modal[pid]["alphasho_2.0"]}]
         base050 = timing["baseline"]["0.5"][pid]
         base200 = timing["baseline"]["2.0"][pid]
         rows[pid] = {
             "alpha_sho_050": modal[pid]["alphasho_0.5"], "alpha_sho_200": modal[pid]["alphasho_2.0"], "generic_050": modal[pid]["generic_chess_0.5"], "generic_200": modal[pid]["generic_chess_2.0"],
             "static_ranks": target,
             "horizon_recovery_budgets": recovered,
+            "horizon_recovery_class": ladder.get("recovery_class", "not_run"),
             "labels": {
                 "evaluator_value": "PRIMARY" if all((target[key]["static_rank"] or 99) > 5 for key in ("alphasho_0.5", "alphasho_2.0")) else "SECONDARY",
                 "horizon_depth": "PRIMARY" if recovered else "UNRESOLVED",
@@ -357,7 +416,21 @@ def classify(static: dict[str, Any], timing: dict[str, Any], extra: dict[str, An
             },
         }
     aggregate = {family: statistics.mode([row["labels"][family] for row in rows.values()]) for family in next(iter(rows.values()))["labels"]}
-    return {"per_root": rows, "aggregate_labels": aggregate, "stalemate_gate": "PASS" if stalemate["all_exhausted"] and stalemate["external_move_exhaustion_agrees"] else "F31A_STANDARD_SHOGI_STALEMATE_CORRECTNESS_DIAGNOSIS"}
+    native = extra["native_counterfactual"]
+    if stalemate["all_exhausted"] and stalemate["external_move_exhaustion_agrees"]:
+        if aggregate["root_fallback_tactical_scan_overhead"] == "PRIMARY":
+            next_boundary = "F32_ROOT_SEARCH_FALLBACK_AND_BUDGET_ARCHITECTURE"
+        elif native["availability"] == "NATIVE_COUNTERFACTUAL_AVAILABLE" and native["material_completed_depth_gain"] and aggregate["python_semantic_legal_generation_throughput"] == "PRIMARY":
+            next_boundary = "F32_CAPABILITY_SCOPED_NATIVE_LEGALITY_REENABLEMENT"
+        elif aggregate["evaluator_value"] == "PRIMARY":
+            next_boundary = "F32_RULE_DERIVED_EVALUATOR_REENTRY"
+        elif aggregate["horizon_depth"] == "PRIMARY" or aggregate["qsearch"] == "PRIMARY":
+            next_boundary = "F32_SEARCH_HORIZON_AND_QUIESCENCE_DIAGNOSIS"
+        else:
+            next_boundary = "F32_STANDARD_SHOGI_GAP_MINIMAL_INTERVENTION_SELECTION"
+    else:
+        next_boundary = "F31A_STANDARD_SHOGI_STALEMATE_CORRECTNESS_DIAGNOSIS"
+    return {"per_root": rows, "aggregate_labels": aggregate, "stalemate_gate": "PASS" if stalemate["all_exhausted"] and stalemate["external_move_exhaustion_agrees"] else "F31A_STANDARD_SHOGI_STALEMATE_CORRECTNESS_DIAGNOSIS", "native_counterfactual_status": native["availability"], "next_boundary": next_boundary}
 
 
 def run_stage_b(manifest: dict[str, Any]) -> dict[str, Any]:
@@ -365,10 +438,10 @@ def run_stage_b(manifest: dict[str, Any]) -> dict[str, Any]:
     timing = timing_and_ablations()
     extra = horizon_native_forced(static)
     stalemate = stalemate_audit()
-    result = {"schema_version": 1, "status": "PASS", "manifest_sha256": manifest["manifest_sha256"], "production_changed": False, "static_and_qsearch": static, "timing_and_ablations": timing, "horizon_native_forced": extra, "stalemate_audit": stalemate}
+    result = {"schema_version": 1, "status": "PASS", "manifest_sha256": manifest["manifest_sha256"], "production_changed": False, "static_and_qsearch": static, "historical_reference_context": historical_reference_context(static), "timing_and_ablations": timing, "horizon_native_forced": extra, "stalemate_audit": stalemate}
     result["causal_classification"] = classify(static, timing, extra, stalemate)
     result["flags"] = {"F30_EXTERNAL_BASELINE_CONSUMED": True, "STATIC_EVALUATOR_CAUSAL_AUDIT_COMPLETE": True, "SEARCH_HORIZON_CAUSAL_AUDIT_COMPLETE": True, "SEARCH_POLICY_ABLATION_COMPLETE": True, "RUNTIME_THROUGHPUT_CAUSAL_AUDIT_COMPLETE": True, "STANDARD_SHOGI_EXTERNAL_GAP_CAUSAL_DIAGNOSIS_COMPLETE": True}
-    result["next_boundary"] = "F31A_STANDARD_SHOGI_STALEMATE_CORRECTNESS_DIAGNOSIS" if result["causal_classification"]["stalemate_gate"] != "PASS" else "F32_CAPABILITY_SCOPED_NATIVE_LEGALITY_REENABLEMENT"
+    result["next_boundary"] = result["causal_classification"]["next_boundary"]
     return result
 
 

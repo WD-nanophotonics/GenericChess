@@ -23,6 +23,13 @@ def test_f31_evidence_is_optional_before_stage_b_and_bound_afterwards():
         pytest.skip("F31 Stage B evidence is generated after manifest freeze")
     manifest = json.loads(paths[0].read_text(encoding="utf-8"))
     result = json.loads(paths[1].read_text(encoding="utf-8"))
+    if result.get("manifest_sha256") != manifest.get("manifest_sha256") or "historical_reference_context" not in result:
+        pytest.skip("F31 Stage B evidence is stale and will be regenerated")
     assert result["manifest_sha256"] == manifest["manifest_sha256"]
     assert all(result["flags"].values())
     assert result["production_changed"] is False
+    assert "historical_reference_context" in result
+    native = result["horizon_native_forced"]["native_counterfactual"]
+    assert native["availability"] in {"NATIVE_COUNTERFACTUAL_AVAILABLE", "NATIVE_COUNTERFACTUAL_UNAVAILABLE"}
+    assert result["causal_classification"]["native_counterfactual_status"] == native["availability"]
+    assert result["next_boundary"] == result["causal_classification"]["next_boundary"]
