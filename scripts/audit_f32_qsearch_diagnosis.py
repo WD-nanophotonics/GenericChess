@@ -11,11 +11,14 @@ import hashlib
 import json
 import platform
 import subprocess
+import sys
 import time
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 F30_MANIFEST = ROOT / "tests" / "fixtures" / "f30r1_benchmark_manifest.json"
 F30_FRESH = ROOT / "tests" / "fixtures" / "f30r1_fresh_move_reference.json"
 F30_PAIRED = ROOT / "tests" / "fixtures" / "f30r1_paired_match.json"
