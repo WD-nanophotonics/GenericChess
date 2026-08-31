@@ -150,12 +150,16 @@ def _full_classify(ctx, actions, *, reuse_gave_check: bool):
 
 def _history_sensitive(runtime, child_position):
     compiled = runtime.compiled
-    if not getattr(runtime, "_history_complete", False) or getattr(runtime, "_opaque_imported_keys", ()):
+    # A fresh imported root has the synthetic root record but no opaque
+    # history.  Treat that as safe; only incomplete imported history or an
+    # opaque occurrence can make the next-child adjudication unknowable.
+    if getattr(runtime, "_opaque_imported_keys", ()) or (not getattr(runtime, "_history_complete", False) and len(getattr(runtime, "_counts_external", {})) > 1):
         return True
     if runtime.ply_count + 1 >= getattr(compiled, "max_ply", 512):
         return True
-    if getattr(compiled, "automatic_adjudications", ()):
-        return True
+    for adjudication in getattr(compiled, "automatic_adjudications", ()):
+        if runtime.ply_count + 1 >= int(getattr(adjudication, "trigger_ply", 10**9)):
+            return True
     limit = int(getattr(compiled, "repetition_limit", 4))
     for bucket in runtime._occurrences.values():
         for entry in bucket:
