@@ -1,0 +1,72 @@
+{
+  "candidate_definitions": {
+    "A": "POST_PUSH_CHECK_EVIDENCE_REUSE; use runtime.history[-1].gave_check after the existing push, never _action_delivers_check",
+    "B": "SEMANTIC_PREVIEW_NOISY_CLASSIFIER; exact semantic binding -> child Position -> resulting-position check -> conservative history fallback -> legal-existence probe",
+    "legacy_rulesets": "retain full production push classifier"
+  },
+  "constraints": [
+    "NO_TUNING_FROM_RESULTS=true",
+    "NO_PRODUCTION_CHANGE_IN_H33A",
+    "NO_QSEARCH_SET_REDUCTION",
+    "NO_QDEPTH_CHANGE",
+    "NO_NATIVE_REPAIR",
+    "NO_RULE_SCHEMA IR CHANGE",
+    "NO_ALPHASHO_RERUN",
+    "NO_PAIRED_BENCHMARK",
+    "NO_ALPHA CHESS"
+  ],
+  "frozen_inputs": {
+    "adr_025": "docs/architecture/ADR-025-runtime-push-terminal-check-deduplication.md",
+    "adr_026": "docs/architecture/ADR-026-terminal-legal-existence-probe-reuse.md",
+    "f32_manifest": {
+      "path": "tests/fixtures/f32_qsearch_manifest.json",
+      "sha256": "dfd8b8394ba25136b650450b25e3429c3487a9de05d25d4c253c2ecebc6e6b2b"
+    },
+    "f32_result": {
+      "path": "tests/fixtures/f32_qsearch_diagnosis.json",
+      "sha256": "878dccd45d2d9bf325d26d1947a5ee8e85b8005176e3dbfdf0772c9e46becd56"
+    },
+    "f32r1_result": {
+      "path": "tests/fixtures/f32r1_qsearch_exact_counterfactual.json",
+      "sha256": "0805a97b12de1fd011386a11e1e0a532e13c42b44266269671a2499f29259b88"
+    },
+    "frozen_descriptor": {
+      "path": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+      "sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151"
+    }
+  },
+  "host": {
+    "python": "3.12.0"
+  },
+  "kind": "F33_H33A_CHECK_DISCOVERY_MANIFEST",
+  "manifest_sha256": "8028de32fc6b8f21798798b0ea14529ceb9f17ca15fe8a48489c8087988e39d2",
+  "matrix": {
+    "fixed_nodes": [
+      512,
+      2048
+    ],
+    "times_seconds": [
+      0.5,
+      2.0
+    ],
+    "timing_repetitions": 1,
+    "variants": [
+      "BASELINE",
+      "CANDIDATE_A_POST_PUSH_GAVE_CHECK",
+      "CANDIDATE_B_SEMANTIC_PREVIEW"
+    ]
+  },
+  "pre_run_sandbox_sha": "e64ee5e4cac463a055f443f70c334596966289e1",
+  "retention_gates": {
+    "candidate_b_performance": "median fixed-node improvement >=20% at either budget without >10% regression at the other plus root accessibility gain",
+    "candidate_b_structural": "classification pushes reduction >=80% at both 512 and 2048",
+    "classifier_parity": "zero noisy-sequence mismatches",
+    "fallback_boundaries": [
+      "F33A_SEMANTIC_NOISY_CLASSIFIER_PARITY_DIAGNOSIS",
+      "F33A_QSEARCH_TERMINAL_PREVIEW_DIAGNOSIS",
+      "F33A_SEARCH_RUNTIME_PREVIEW_ISOLATION_DIAGNOSIS"
+    ],
+    "fixed_result_parity": "selected action, score, PV head, completed depth, main nodes, qnodes, termination reason"
+  },
+  "schema_version": 1
+}
