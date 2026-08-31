@@ -115,7 +115,7 @@ def load_manifest(path: Path) -> dict[str, Any]:
 
 def _imports():
     from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
-    from generic_chess.ai.alphabeta.search import run_root_search
+    from generic_chess.ai.alphabeta.search import run_root_search, terminal_score
     from generic_chess.ai.alphabeta.statistics import SearchStatistics
     from generic_chess.ai.alphabeta.transposition import TranspositionTable
     from generic_chess.ai.alphabeta.tuning import SearchTuning
@@ -126,7 +126,6 @@ def _imports():
     from generic_chess.core.actions import action_to_dict
     from generic_chess.core.attacks import is_in_check
     from generic_chess.core.movegen import legal_actions
-    from generic_chess.core.terminal import terminal_score
     from generic_chess.core.transition import apply_action
     from generic_chess.learning.shogi_rules import gc_action_to_usi, gc_legal_usi_set, gc_to_sfen, sfen_to_gc_state
     from generic_chess.rules.compiler import compile_ruleset_for_execution
