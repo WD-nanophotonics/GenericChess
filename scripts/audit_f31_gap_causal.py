@@ -127,7 +127,7 @@ def _imports():
     from generic_chess.core.attacks import is_in_check
     from generic_chess.core.movegen import legal_actions
     from generic_chess.core.transition import apply_action
-    from generic_chess.learning.shogi_rules import gc_action_to_usi, gc_legal_usi_set, gc_to_sfen, sfen_to_gc_state
+    from generic_chess.learning.shogi_rules import cshogi_legal_usi_set, gc_action_to_usi, gc_legal_usi_set, gc_to_sfen, sfen_to_gc_state
     from generic_chess.rules.compiler import compile_ruleset_for_execution
     from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
     from generic_chess.session.session import GameSession
@@ -327,7 +327,7 @@ def stalemate_audit() -> dict[str, Any]:
                 raise AssertionError(f"stalemate transcript action not legal: {usi}")
             session.submit(legal[usi])
         final_sfen = m["gc_to_sfen"](session.state, compiled)
-        cshogi_legal = sorted(m["gc_legal_usi_set"](final_sfen))
+        cshogi_legal = sorted(m["cshogi_legal_usi_set"](final_sfen))
         rows.append({"position_id": game["position_id"], "external_color": game["external_color"], "game_id": f"{game['position_id']}::{game['external_color']}", "product_status": session.result.status.value, "legal_action_count": len(session.legal_actions()), "side_to_move_in_check": bool(m["is_in_check"](session.state.position, session.state.position.side_to_move, compiled)), "final_sfen": final_sfen, "cshogi_legal_action_count": len(cshogi_legal), "cshogi_legal_moves": cshogi_legal})
     return {"stalemate_games": rows, "all_exhausted": all(row["legal_action_count"] == 0 for row in rows), "external_move_exhaustion_agrees": all(row["cshogi_legal_action_count"] == 0 for row in rows)}
 
