@@ -6,7 +6,7 @@ import argparse
 import sys
 from typing import TextIO
 
-from ..rules.compiler import compile_ruleset
+from ..rules.compiler import compile_ruleset_for_execution
 from ..rules.serialization import deserialize_ruleset
 from ..session.serialization import deserialize_game_record
 from ..session.session import GameSession, SessionRecordError
@@ -39,7 +39,7 @@ def main(argv: list[str] | None = None, stdout: TextIO | None = None) -> int:
         return 1
 
     try:
-        compiled = compile_ruleset(deserialize_ruleset(ruleset_text))
+        compiled = compile_ruleset_for_execution(deserialize_ruleset(ruleset_text))
         record = deserialize_game_record(record_text)
         session = GameSession.replay(compiled, record)
     except (ValueError, SessionRecordError) as exc:

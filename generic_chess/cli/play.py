@@ -10,7 +10,16 @@ from typing import TextIO
 from ..generation.config import GeneratorConfig
 from ..generation.config import GenerationError
 from ..generation.generator import generate_game
-from ..rules.compiler import compile_ruleset
+from ..core.actions import (
+    Action,
+    action_drop_base_type_id,
+    action_promotion_target_id,
+    action_source_square,
+    action_target_square,
+)
+from ..core.coordinates import square_str
+from ..rules.catalog import build_builtin_ruleset
+from ..rules.compiler import compile_ruleset_for_execution
 from ..rules.serialization import deserialize_ruleset, serialize_ruleset
 from ..session.serialization import serialize_game_record
 from ..session.session import GameSession, SessionFinishedError
@@ -36,6 +45,12 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--hybrid", action="store_true", help="allow hybrid leap/ray pieces")
     parser.add_argument("--ruleset", type=str, default=None, help="path to a JSON RuleSet file")
+    parser.add_argument(
+        "--builtin-ruleset",
+        type=str,
+        default=None,
+        help="use a named production RuleSet (currently western_chess)",
+    )
     parser.add_argument("--record-out", type=str, default=None, help="save the GameRecord to PATH")
     parser.add_argument("--ruleset-out", type=str, default=None, help="save the actual RuleSet to PATH")
     return parser
@@ -43,8 +58,27 @@ def _build_parser() -> argparse.ArgumentParser:
 
 def _load_ruleset(args) -> tuple:
     """Return ``(compiled, ruleset)``; raise _CliError on user-facing errors."""
+    if args.builtin_ruleset is not None:
+        explicit = [
+            name for name in ("ruleset", "seed", "board_size", "preset")
+            if getattr(args, name) is not None
+        ]
+        if args.hybrid:
+            explicit.append("hybrid")
+        if explicit:
+            raise _CliError(
+                f"--builtin-ruleset cannot be combined with --{', --'.join(explicit)}"
+            )
+        try:
+            ruleset = build_builtin_ruleset(args.builtin_ruleset)
+            return compile_ruleset_for_execution(ruleset), ruleset
+        except (ValueError, TypeError) as exc:
+            raise _CliError(f"cannot build built-in ruleset: {exc}") from exc
     if args.ruleset is not None:
-        explicit = [name for name in ("seed", "board_size", "preset") if getattr(args, name) is not None]
+        explicit = [
+            name for name in ("builtin_ruleset", "seed", "board_size", "preset")
+            if getattr(args, name) is not None
+        ]
         if args.hybrid:
             explicit.append("hybrid")
         if explicit:
@@ -58,7 +92,7 @@ def _load_ruleset(args) -> tuple:
             raise _CliError(f"cannot read ruleset file: {exc}") from exc
         try:
             ruleset = deserialize_ruleset(text)
-            compiled = compile_ruleset(ruleset)
+            compiled = compile_ruleset_for_execution(ruleset)
         except ValueError as exc:
             raise _CliError(f"invalid ruleset file: {exc}") from exc
         return compiled, ruleset
@@ -105,6 +139,29 @@ HELP_TEXT = """commands:
   resign       resign as the current player
   quit         quit without resigning
 """
+
+
+def visible_action_alias(action: Action) -> str:
+    """Return the generic coordinate alias accepted by the CLI."""
+    source = action_source_square(action)
+    if source is None:
+        return f"{action_drop_base_type_id(action)}@{square_str(action_target_square(action))}"
+    alias = f"{square_str(source)}-{square_str(action_target_square(action))}"
+    promotion = action_promotion_target_id(action)
+    return f"{alias}={promotion}" if promotion is not None else alias
+
+
+def _resolve_action_input(command: str, actions: tuple[Action, ...]):
+    """Resolve exact semantic strings before unambiguous visible aliases."""
+    exact = [action for action in actions if str(action) == command]
+    if exact:
+        return exact[0], None
+    aliases = [action for action in actions if visible_action_alias(action) == command]
+    if len(aliases) == 1:
+        return aliases[0], None
+    if len(aliases) > 1:
+        return None, f"ambiguous action alias: {command!r} (use a number or exact action string)"
+    return None, None
 
 
 def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: TextIO | None = None) -> int:
@@ -198,11 +255,13 @@ def main(argv: list[str] | None = None, stdin: TextIO | None = None, stdout: Tex
                 print_out(f"invalid action number: {command}")
                 continue
         else:
-            matches = [a for a in actions if str(a) == command]
-            if not matches:
+            chosen, error = _resolve_action_input(command, actions)
+            if error:
+                print_out(error)
+                continue
+            if chosen is None:
                 print_out(f"unknown input: {command!r} (try 'help')")
                 continue
-            chosen = matches[0]
         try:
             session.submit(chosen)
         except ValueError as exc:

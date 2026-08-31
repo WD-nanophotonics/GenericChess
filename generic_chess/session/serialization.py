@@ -56,13 +56,24 @@ def _require_int_pair(value: Any, path: str) -> tuple[int, int]:
 
 
 def _action_to_dict(action: Action) -> dict[str, Any]:
-    if isinstance(action, (SemanticBoardMove, SemanticDropMove)):
-        raise _err(
-            "SEMANTIC_ACTION_UNSUPPORTED",
-            "actions",
-            "GameRecord schema v1 cannot store semantic public actions; "
-            f"refusing to reinterpret {action!r}",
-        )
+    if isinstance(action, SemanticBoardMove):
+        return {
+            "kind": "semantic_board",
+            "pattern_id": action.pattern_id,
+            "geometry_id": action.geometry_id,
+            "actor_type_id": action.actor_type_id,
+            "from": [action.from_square.file, action.from_square.rank],
+            "to": [action.to_square.file, action.to_square.rank],
+            "promotion_target_id": action.promotion_target_id,
+        }
+    if isinstance(action, SemanticDropMove):
+        return {
+            "kind": "semantic_drop",
+            "pattern_id": action.pattern_id,
+            "geometry_id": action.geometry_id,
+            "base_type_id": action.base_type_id,
+            "to": [action.to_square.file, action.to_square.rank],
+        }
     if isinstance(action, BoardMove):
         return {
             "kind": "board",
@@ -103,6 +114,39 @@ def _action_from_dict(data: dict, path: str) -> Action:
         base = _require_str(_require_field(data, "base_type_id", path), f"{path}.base_type_id")
         to_pair = _require_int_pair(_require_field(data, "to", path), f"{path}.to")
         return DropMove(base, Square(to_pair[0], to_pair[1]))
+    if kind == "semantic_board":
+        allowed = {
+            "kind", "pattern_id", "geometry_id", "actor_type_id", "from", "to",
+            "promotion_target_id",
+        }
+        unknown = set(data) - allowed
+        if unknown:
+            raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
+        from_pair = _require_int_pair(_require_field(data, "from", path), f"{path}.from")
+        to_pair = _require_int_pair(_require_field(data, "to", path), f"{path}.to")
+        promotion = data.get("promotion_target_id")
+        if promotion is not None:
+            promotion = _require_str(promotion, f"{path}.promotion_target_id")
+        return SemanticBoardMove(
+            pattern_id=_require_str(_require_field(data, "pattern_id", path), f"{path}.pattern_id"),
+            geometry_id=_require_str(_require_field(data, "geometry_id", path), f"{path}.geometry_id"),
+            actor_type_id=_require_str(_require_field(data, "actor_type_id", path), f"{path}.actor_type_id"),
+            from_square=Square(from_pair[0], from_pair[1]),
+            to_square=Square(to_pair[0], to_pair[1]),
+            promotion_target_id=promotion,
+        )
+    if kind == "semantic_drop":
+        allowed = {"kind", "pattern_id", "geometry_id", "base_type_id", "to"}
+        unknown = set(data) - allowed
+        if unknown:
+            raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
+        to_pair = _require_int_pair(_require_field(data, "to", path), f"{path}.to")
+        return SemanticDropMove(
+            pattern_id=_require_str(_require_field(data, "pattern_id", path), f"{path}.pattern_id"),
+            geometry_id=_require_str(_require_field(data, "geometry_id", path), f"{path}.geometry_id"),
+            base_type_id=_require_str(_require_field(data, "base_type_id", path), f"{path}.base_type_id"),
+            to_square=Square(to_pair[0], to_pair[1]),
+        )
     raise _err("UNKNOWN_KIND", f"{path}.kind", f"unknown action kind {kind!r}")
 
 

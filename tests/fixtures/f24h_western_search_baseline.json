@@ -1,0 +1,4617 @@
+{
+  "canonical_perft": [
+    {
+      "actual": 20,
+      "depth": 1,
+      "expected": 20,
+      "label": "initial",
+      "nodes_per_second": 6902.263935301912,
+      "wall_seconds": 0.002897600003052503
+    },
+    {
+      "actual": 400,
+      "depth": 2,
+      "expected": 400,
+      "label": "initial",
+      "nodes_per_second": 6606.034282012549,
+      "wall_seconds": 0.06055070000002161
+    },
+    {
+      "actual": 8902,
+      "depth": 3,
+      "expected": 8902,
+      "label": "initial",
+      "nodes_per_second": 6458.925601079177,
+      "wall_seconds": 1.3782477999920957
+    },
+    {
+      "actual": 197281,
+      "depth": 4,
+      "expected": 197281,
+      "label": "initial",
+      "nodes_per_second": 3991.2318050471763,
+      "wall_seconds": 49.42859990004217
+    },
+    {
+      "actual": 48,
+      "depth": 1,
+      "expected": 48,
+      "label": "kiwipete",
+      "nodes_per_second": 4379.1225359441905,
+      "wall_seconds": 0.010961099993437529
+    },
+    {
+      "actual": 2039,
+      "depth": 2,
+      "expected": 2039,
+      "label": "kiwipete",
+      "nodes_per_second": 3726.3468804748636,
+      "wall_seconds": 0.5471847000299022
+    },
+    {
+      "actual": 97862,
+      "depth": 3,
+      "expected": 97862,
+      "label": "kiwipete",
+      "nodes_per_second": 4125.815613461609,
+      "wall_seconds": 23.719431300007273
+    },
+    {
+      "actual": 14,
+      "depth": 1,
+      "expected": 14,
+      "label": "position-3",
+      "nodes_per_second": 7132.667455738098,
+      "wall_seconds": 0.001962800044566393
+    },
+    {
+      "actual": 191,
+      "depth": 2,
+      "expected": 191,
+      "label": "position-3",
+      "nodes_per_second": 6158.667921782884,
+      "wall_seconds": 0.03101320000132546
+    },
+    {
+      "actual": 2812,
+      "depth": 3,
+      "expected": 2812,
+      "label": "position-3",
+      "nodes_per_second": 6146.94790448029,
+      "wall_seconds": 0.4574628000264056
+    },
+    {
+      "actual": 43238,
+      "depth": 4,
+      "expected": 43238,
+      "label": "position-3",
+      "nodes_per_second": 6274.908959902419,
+      "wall_seconds": 6.890617900004145
+    },
+    {
+      "actual": 6,
+      "depth": 1,
+      "expected": 6,
+      "label": "position-4",
+      "nodes_per_second": 918.8220763178465,
+      "wall_seconds": 0.006530099955853075
+    },
+    {
+      "actual": 264,
+      "depth": 2,
+      "expected": 264,
+      "label": "position-4",
+      "nodes_per_second": 3925.971641970636,
+      "wall_seconds": 0.06724449998000637
+    },
+    {
+      "actual": 9467,
+      "depth": 3,
+      "expected": 9467,
+      "label": "position-4",
+      "nodes_per_second": 4136.218290570555,
+      "wall_seconds": 2.2888057000236586
+    },
+    {
+      "actual": 44,
+      "depth": 1,
+      "expected": 44,
+      "label": "position-5",
+      "nodes_per_second": 4065.942175732282,
+      "wall_seconds": 0.01082160003716126
+    },
+    {
+      "actual": 1486,
+      "depth": 2,
+      "expected": 1486,
+      "label": "position-5",
+      "nodes_per_second": 4695.550728424495,
+      "wall_seconds": 0.31646980001823977
+    },
+    {
+      "actual": 62379,
+      "depth": 3,
+      "expected": 62379,
+      "label": "position-5",
+      "nodes_per_second": 4384.811920812634,
+      "wall_seconds": 14.226151800015941
+    },
+    {
+      "actual": 46,
+      "depth": 1,
+      "expected": 46,
+      "label": "position-6",
+      "nodes_per_second": 4239.318772227116,
+      "wall_seconds": 0.010850799968466163
+    },
+    {
+      "actual": 2079,
+      "depth": 2,
+      "expected": 2079,
+      "label": "position-6",
+      "nodes_per_second": 4399.796072713645,
+      "wall_seconds": 0.4725219000247307
+    },
+    {
+      "actual": 89890,
+      "depth": 3,
+      "expected": 89890,
+      "label": "position-6",
+      "nodes_per_second": 4348.831686051077,
+      "wall_seconds": 20.669919300009497
+    }
+  ],
+  "fixed_node": [
+    {
+      "budget": 128,
+      "deterministic": true,
+      "label": "initial",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 3,
+          "capture_qactions": 3,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 1,
+          "completed_depth": 1,
+          "elapsed_seconds": 0.9701308999792673,
+          "evaluation_calls": 74,
+          "evaluation_seconds": 0.021391599846538156,
+          "evaluator_wall_fraction": 0.02205022007545097,
+          "legal_generation_calls": 63,
+          "legal_generation_seconds": 0.03307419997872785,
+          "legal_generation_wall_fraction": 0.03409251264899889,
+          "main_nodes": 72,
+          "nodes_per_second": 131.94095766121407,
+          "ordering_calls": 7,
+          "ordering_seconds": 0.0009083999902941287,
+          "ordering_wall_fraction": 0.0009363684738972257,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3"
+          ],
+          "qnodes": 56,
+          "score": 17,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 7,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 3,
+          "capture_qactions": 3,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 1,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.0421248000347987,
+          "evaluation_calls": 74,
+          "evaluation_seconds": 0.04745580011513084,
+          "evaluator_wall_fraction": 0.04553754033446493,
+          "legal_generation_calls": 63,
+          "legal_generation_seconds": 0.03352219995576888,
+          "legal_generation_wall_fraction": 0.03216716458014386,
+          "main_nodes": 72,
+          "nodes_per_second": 122.82598014722019,
+          "ordering_calls": 7,
+          "ordering_seconds": 0.0007251999340951443,
+          "ordering_wall_fraction": 0.0006958858805307468,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3"
+          ],
+          "qnodes": 56,
+          "score": 17,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 7,
+          "visible_action": "e2-e3"
+        }
+      ]
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "label": "initial",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 37,
+          "capture_qactions": 14,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 2,
+          "completed_depth": 2,
+          "elapsed_seconds": 4.987621599982958,
+          "evaluation_calls": 250,
+          "evaluation_seconds": 0.11134860006859526,
+          "evaluator_wall_fraction": 0.02232498954390921,
+          "legal_generation_calls": 285,
+          "legal_generation_seconds": 0.3160907998098992,
+          "legal_generation_wall_fraction": 0.06337505632163018,
+          "main_nodes": 274,
+          "nodes_per_second": 102.65413879869102,
+          "ordering_calls": 47,
+          "ordering_seconds": 0.0058186998357996345,
+          "ordering_wall_fraction": 0.0011666281651798757,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                6
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                5
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3",
+            "e7-e6"
+          ],
+          "qnodes": 238,
+          "score": 0,
+          "selective_depth": 2,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 4,
+          "tt_probes": 47,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 37,
+          "capture_qactions": 14,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 2,
+          "completed_depth": 2,
+          "elapsed_seconds": 4.951019000029191,
+          "evaluation_calls": 250,
+          "evaluation_seconds": 0.10936890006996691,
+          "evaluator_wall_fraction": 0.022090179833549835,
+          "legal_generation_calls": 285,
+          "legal_generation_seconds": 0.31460040027741343,
+          "legal_generation_wall_fraction": 0.06354255563865914,
+          "main_nodes": 274,
+          "nodes_per_second": 103.41305496847845,
+          "ordering_calls": 47,
+          "ordering_seconds": 0.005833099770825356,
+          "ordering_wall_fraction": 0.0011781614594472297,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                6
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                5
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3",
+            "e7-e6"
+          ],
+          "qnodes": 238,
+          "score": 0,
+          "selective_depth": 2,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 4,
+          "tt_probes": 47,
+          "visible_action": "e2-e3"
+        }
+      ]
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "label": "initial",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 75,
+          "capture_qactions": 194,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 34,
+          "completed_depth": 3,
+          "elapsed_seconds": 18.779655499965884,
+          "evaluation_calls": 1085,
+          "evaluation_seconds": 0.5528981998795643,
+          "evaluator_wall_fraction": 0.029441338787102287,
+          "legal_generation_calls": 1259,
+          "legal_generation_seconds": 0.7427994999452494,
+          "legal_generation_wall_fraction": 0.03955341459520377,
+          "main_nodes": 898,
+          "nodes_per_second": 109.0541836618739,
+          "ordering_calls": 110,
+          "ordering_seconds": 0.017786200041882694,
+          "ordering_wall_fraction": 0.0009470993779366723,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                6
+              ],
+              "geometry_id": "g34",
+              "kind": "semantic_board",
+              "pattern_id": "sem_11_pawn_double_step",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "Q",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g24",
+              "kind": "semantic_board",
+              "pattern_id": "sem_08_q_quiet",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3",
+            "d7-d5",
+            "d1-f3"
+          ],
+          "qnodes": 1150,
+          "score": 15,
+          "selective_depth": 3,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 25,
+          "tt_probes": 110,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 75,
+          "capture_qactions": 194,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 34,
+          "completed_depth": 3,
+          "elapsed_seconds": 18.86189870000817,
+          "evaluation_calls": 1085,
+          "evaluation_seconds": 0.5696874003624544,
+          "evaluator_wall_fraction": 0.03020307814304016,
+          "legal_generation_calls": 1259,
+          "legal_generation_seconds": 0.7311519000213593,
+          "legal_generation_wall_fraction": 0.03876343053528554,
+          "main_nodes": 898,
+          "nodes_per_second": 108.57867665247895,
+          "ordering_calls": 110,
+          "ordering_seconds": 0.013984599965624511,
+          "ordering_wall_fraction": 0.0007414205848544004,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                6
+              ],
+              "geometry_id": "g34",
+              "kind": "semantic_board",
+              "pattern_id": "sem_11_pawn_double_step",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                4
+              ]
+            },
+            {
+              "actor_type_id": "Q",
+              "from": [
+                3,
+                0
+              ],
+              "geometry_id": "g24",
+              "kind": "semantic_board",
+              "pattern_id": "sem_08_q_quiet",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3",
+            "d7-d5",
+            "d1-f3"
+          ],
+          "qnodes": 1150,
+          "score": 15,
+          "selective_depth": 3,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 25,
+          "tt_probes": 110,
+          "visible_action": "e2-e3"
+        }
+      ]
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "label": "kiwipete",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 158,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 9,
+          "completed_depth": 0,
+          "elapsed_seconds": 2.458939999982249,
+          "evaluation_calls": 116,
+          "evaluation_seconds": 0.06318120006471872,
+          "evaluator_wall_fraction": 0.025694486268544505,
+          "legal_generation_calls": 78,
+          "legal_generation_seconds": 7.199996616691351e-06,
+          "legal_generation_wall_fraction": 2.9280895901255533e-06,
+          "main_nodes": 50,
+          "nodes_per_second": 52.05495050750487,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00015899998834356666,
+          "ordering_wall_fraction": 6.466200409311105e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 78,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 158,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 9,
+          "completed_depth": 0,
+          "elapsed_seconds": 2.2046931000077166,
+          "evaluation_calls": 116,
+          "evaluation_seconds": 0.054449399933218956,
+          "evaluator_wall_fraction": 0.02469704283695013,
+          "legal_generation_calls": 78,
+          "legal_generation_seconds": 6.199989002197981e-06,
+          "legal_generation_wall_fraction": 2.812177804782117e-06,
+          "main_nodes": 50,
+          "nodes_per_second": 58.057967342280875,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011720001930370927,
+          "ordering_wall_fraction": 5.315933510351126e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 78,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        }
+      ]
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "label": "kiwipete",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 852,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 19,
+          "completed_depth": 0,
+          "elapsed_seconds": 12.42196279997006,
+          "evaluation_calls": 465,
+          "evaluation_seconds": 0.3292216003173962,
+          "evaluator_wall_fraction": 0.026503186784474168,
+          "legal_generation_calls": 461,
+          "legal_generation_seconds": 6.999995093792677e-06,
+          "legal_generation_wall_fraction": 5.635176345729798e-07,
+          "main_nodes": 51,
+          "nodes_per_second": 41.217318731725236,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00015199999324977398,
+          "ordering_wall_fraction": 1.2236390955070348e-05,
+          "promotion_qactions": 40,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 461,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 852,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 19,
+          "completed_depth": 0,
+          "elapsed_seconds": 12.27079760003835,
+          "evaluation_calls": 465,
+          "evaluation_seconds": 0.30079729977296665,
+          "evaluator_wall_fraction": 0.02451326389508915,
+          "legal_generation_calls": 461,
+          "legal_generation_seconds": 6.299989763647318e-06,
+          "legal_generation_wall_fraction": 5.13413224550915e-07,
+          "main_nodes": 51,
+          "nodes_per_second": 41.72507906074499,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00013340002624318004,
+          "ordering_wall_fraction": 1.0871341097074498e-05,
+          "promotion_qactions": 40,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 461,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        }
+      ]
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "label": "kiwipete",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 29,
+          "capture_qactions": 2739,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 57,
+          "completed_depth": 1,
+          "elapsed_seconds": 41.01621149998391,
+          "evaluation_calls": 1721,
+          "evaluation_seconds": 1.2817351995618083,
+          "evaluator_wall_fraction": 0.03124947801584042,
+          "legal_generation_calls": 1846,
+          "legal_generation_seconds": 0.4046173999668099,
+          "legal_generation_wall_fraction": 0.009864816499860516,
+          "main_nodes": 235,
+          "nodes_per_second": 49.931476484628604,
+          "ordering_calls": 34,
+          "ordering_seconds": 0.008888900105375797,
+          "ordering_wall_fraction": 0.00021671675126259,
+          "promotion_qactions": 132,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "sem_05_b_capture",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                5
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-a6"
+          ],
+          "qnodes": 1813,
+          "score": 260,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 34,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 29,
+          "capture_qactions": 2739,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 57,
+          "completed_depth": 1,
+          "elapsed_seconds": 42.40760899998713,
+          "evaluation_calls": 1721,
+          "evaluation_seconds": 1.333503000321798,
+          "evaluator_wall_fraction": 0.03144489943590554,
+          "legal_generation_calls": 1846,
+          "legal_generation_seconds": 0.4604980999720283,
+          "legal_generation_wall_fraction": 0.010858855541046137,
+          "main_nodes": 235,
+          "nodes_per_second": 48.29322020962373,
+          "ordering_calls": 34,
+          "ordering_seconds": 0.006652800133451819,
+          "ordering_wall_fraction": 0.00015687751067158345,
+          "promotion_qactions": 132,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "B",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "sem_05_b_capture",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                5
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-a6"
+          ],
+          "qnodes": 1813,
+          "score": 260,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 34,
+          "visible_action": "e2-a6"
+        }
+      ]
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "label": "position-3",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 12,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 29,
+          "completed_depth": 1,
+          "elapsed_seconds": 0.6850353999761865,
+          "evaluation_calls": 78,
+          "evaluation_seconds": 0.02563589991768822,
+          "evaluator_wall_fraction": 0.03742273745061845,
+          "legal_generation_calls": 98,
+          "legal_generation_seconds": 0.0022989001008681953,
+          "legal_generation_wall_fraction": 0.003355885113306715,
+          "main_nodes": 32,
+          "nodes_per_second": 186.85165759966506,
+          "ordering_calls": 3,
+          "ordering_seconds": 0.0002494999789632857,
+          "ordering_wall_fraction": 0.0003642147237529023,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4"
+          ],
+          "qnodes": 96,
+          "score": 15,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 3,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 12,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 29,
+          "completed_depth": 1,
+          "elapsed_seconds": 0.6442567000049166,
+          "evaluation_calls": 78,
+          "evaluation_seconds": 0.02926920005120337,
+          "evaluator_wall_fraction": 0.0454309595088107,
+          "legal_generation_calls": 98,
+          "legal_generation_seconds": 0.002605399931780994,
+          "legal_generation_wall_fraction": 0.004044040103519468,
+          "main_nodes": 32,
+          "nodes_per_second": 198.6785702019446,
+          "ordering_calls": 3,
+          "ordering_seconds": 0.00021599995670840144,
+          "ordering_wall_fraction": 0.000335270020019587,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4"
+          ],
+          "qnodes": 96,
+          "score": 15,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 3,
+          "visible_action": "b4-f4"
+        }
+      ]
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "label": "position-3",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 13,
+          "capture_qactions": 40,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 117,
+          "completed_depth": 2,
+          "elapsed_seconds": 2.8640436000423506,
+          "evaluation_calls": 333,
+          "evaluation_seconds": 0.13725900021381676,
+          "evaluator_wall_fraction": 0.04792489898260875,
+          "legal_generation_calls": 465,
+          "legal_generation_seconds": 0.04511849983828142,
+          "legal_generation_wall_fraction": 0.015753426322704815,
+          "main_nodes": 65,
+          "nodes_per_second": 178.76822824639578,
+          "ordering_calls": 19,
+          "ordering_seconds": 0.0015180999762378633,
+          "ordering_wall_fraction": 0.0005300547715877702,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                7,
+                3
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4",
+            "h4-g3"
+          ],
+          "qnodes": 447,
+          "score": 15,
+          "selective_depth": 2,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 3,
+          "tt_probes": 19,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 13,
+          "capture_qactions": 40,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 117,
+          "completed_depth": 2,
+          "elapsed_seconds": 2.852885000000242,
+          "evaluation_calls": 333,
+          "evaluation_seconds": 0.1561271998216398,
+          "evaluator_wall_fraction": 0.05472607547154076,
+          "legal_generation_calls": 465,
+          "legal_generation_seconds": 0.0479154001805,
+          "legal_generation_wall_fraction": 0.01679541943698955,
+          "main_nodes": 65,
+          "nodes_per_second": 179.46745136938802,
+          "ordering_calls": 19,
+          "ordering_seconds": 0.0014724999200552702,
+          "ordering_wall_fraction": 0.0005161441558475526,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                7,
+                3
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4",
+            "h4-g3"
+          ],
+          "qnodes": 447,
+          "score": 15,
+          "selective_depth": 2,
+          "termination_reason": "node_limit",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 3,
+          "tt_probes": 19,
+          "visible_action": "b4-f4"
+        }
+      ]
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "label": "position-3",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 24,
+          "capture_qactions": 143,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 433,
+          "completed_depth": 2,
+          "elapsed_seconds": 10.450079599977471,
+          "evaluation_calls": 1291,
+          "evaluation_seconds": 0.5604886014480144,
+          "evaluator_wall_fraction": 0.053634864317131395,
+          "legal_generation_calls": 1792,
+          "legal_generation_seconds": 0.09609499992802739,
+          "legal_generation_wall_fraction": 0.00919562372790295,
+          "main_nodes": 299,
+          "nodes_per_second": 195.97936842552045,
+          "ordering_calls": 43,
+          "ordering_seconds": 0.0034974002046510577,
+          "ordering_wall_fraction": 0.0003346768961126954,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                7,
+                3
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4",
+            "h4-g3"
+          ],
+          "qnodes": 1749,
+          "score": 15,
+          "selective_depth": 2,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 13,
+          "tt_probes": 43,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 24,
+          "capture_qactions": 143,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 433,
+          "completed_depth": 2,
+          "elapsed_seconds": 10.334394000004977,
+          "evaluation_calls": 1291,
+          "evaluation_seconds": 0.5715630996855907,
+          "evaluator_wall_fraction": 0.05530688105033691,
+          "legal_generation_calls": 1792,
+          "legal_generation_seconds": 0.09712889994261786,
+          "legal_generation_wall_fraction": 0.009398606240730814,
+          "main_nodes": 299,
+          "nodes_per_second": 198.17320686621912,
+          "ordering_calls": 43,
+          "ordering_seconds": 0.003348599886521697,
+          "ordering_wall_fraction": 0.00032402479395696393,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                7,
+                3
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "promotion_target_id": null,
+              "to": [
+                6,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4",
+            "h4-g3"
+          ],
+          "qnodes": 1749,
+          "score": 15,
+          "selective_depth": 2,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 13,
+          "tt_probes": 43,
+          "visible_action": "b4-f4"
+        }
+      ]
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "label": "position-4",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 100,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 28,
+          "completed_depth": 0,
+          "elapsed_seconds": 2.6109417999978177,
+          "evaluation_calls": 100,
+          "evaluation_seconds": 0.06856000010157004,
+          "evaluator_wall_fraction": 0.026258723998224452,
+          "legal_generation_calls": 120,
+          "legal_generation_seconds": 7.299997378140688e-06,
+          "legal_generation_wall_fraction": 2.795924971650762e-06,
+          "main_nodes": 8,
+          "nodes_per_second": 49.024455466646934,
+          "ordering_calls": 1,
+          "ordering_seconds": 4.409998655319214e-05,
+          "ordering_wall_fraction": 1.6890451772317943e-05,
+          "promotion_qactions": 32,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 120,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 100,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 28,
+          "completed_depth": 0,
+          "elapsed_seconds": 2.721808600006625,
+          "evaluation_calls": 100,
+          "evaluation_seconds": 0.06881010020151734,
+          "evaluator_wall_fraction": 0.025281020936354547,
+          "legal_generation_calls": 120,
+          "legal_generation_seconds": 1.379998866468668e-05,
+          "legal_generation_wall_fraction": 5.070153964776615e-06,
+          "main_nodes": 8,
+          "nodes_per_second": 47.027553664019,
+          "ordering_calls": 1,
+          "ordering_seconds": 7.299997378140688e-05,
+          "ordering_wall_fraction": 2.6820392066227283e-05,
+          "promotion_qactions": 32,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 120,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        }
+      ]
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "label": "position-4",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 437,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 88,
+          "completed_depth": 0,
+          "elapsed_seconds": 11.80534500000067,
+          "evaluation_calls": 427,
+          "evaluation_seconds": 0.3004453995381482,
+          "evaluator_wall_fraction": 0.02544994657404177,
+          "legal_generation_calls": 504,
+          "legal_generation_seconds": 8.200004231184721e-06,
+          "legal_generation_wall_fraction": 6.946009821131237e-07,
+          "main_nodes": 8,
+          "nodes_per_second": 43.37018528471391,
+          "ordering_calls": 1,
+          "ordering_seconds": 4.710000939667225e-05,
+          "ordering_wall_fraction": 3.989719012588753e-06,
+          "promotion_qactions": 120,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 504,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 437,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 88,
+          "completed_depth": 0,
+          "elapsed_seconds": 11.873785000003409,
+          "evaluation_calls": 427,
+          "evaluation_seconds": 0.30486179958097637,
+          "evaluator_wall_fraction": 0.025675199574599746,
+          "legal_generation_calls": 504,
+          "legal_generation_seconds": 5.799985956400633e-06,
+          "legal_generation_wall_fraction": 4.884698481906964e-07,
+          "main_nodes": 8,
+          "nodes_per_second": 43.120201351115334,
+          "ordering_calls": 1,
+          "ordering_seconds": 3.579998156055808e-05,
+          "ordering_wall_fraction": 3.015043775893517e-06,
+          "promotion_qactions": 120,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 504,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        }
+      ]
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "label": "position-4",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 2219,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 267,
+          "completed_depth": 0,
+          "elapsed_seconds": 48.6317525000195,
+          "evaluation_calls": 1784,
+          "evaluation_seconds": 1.2970631016069092,
+          "evaluator_wall_fraction": 0.026671115781944914,
+          "legal_generation_calls": 2037,
+          "legal_generation_seconds": 1.4499993994832039e-05,
+          "legal_generation_wall_fraction": 2.9815898563034973e-07,
+          "main_nodes": 11,
+          "nodes_per_second": 42.11240382503548,
+          "ordering_calls": 1,
+          "ordering_seconds": 7.389998063445091e-05,
+          "ordering_wall_fraction": 1.5195829234083489e-06,
+          "promotion_qactions": 396,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2037,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 2219,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 267,
+          "completed_depth": 0,
+          "elapsed_seconds": 48.213784700026736,
+          "evaluation_calls": 1784,
+          "evaluation_seconds": 1.246469400706701,
+          "evaluator_wall_fraction": 0.02585296733002605,
+          "legal_generation_calls": 2037,
+          "legal_generation_seconds": 7.299997378140688e-06,
+          "legal_generation_wall_fraction": 1.5140892637985833e-07,
+          "main_nodes": 11,
+          "nodes_per_second": 42.47747843779757,
+          "ordering_calls": 1,
+          "ordering_seconds": 3.920000744983554e-05,
+          "ordering_wall_fraction": 8.130456402401822e-07,
+          "promotion_qactions": 396,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2037,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        }
+      ]
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "label": "position-5",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 42,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 30,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.2527560999733396,
+          "evaluation_calls": 104,
+          "evaluation_seconds": 0.03653039992786944,
+          "evaluator_wall_fraction": 0.029160025585704078,
+          "legal_generation_calls": 82,
+          "legal_generation_seconds": 1.0899966582655907e-05,
+          "legal_generation_wall_fraction": 8.700789070504525e-06,
+          "main_nodes": 46,
+          "nodes_per_second": 102.1747170121335,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011239998275414109,
+          "ordering_wall_fraction": 8.972215960994572e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 82,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 42,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 30,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.5312113999971189,
+          "evaluation_calls": 104,
+          "evaluation_seconds": 0.0410685000824742,
+          "evaluator_wall_fraction": 0.02682092105802731,
+          "legal_generation_calls": 82,
+          "legal_generation_seconds": 1.7400016076862812e-05,
+          "legal_generation_wall_fraction": 1.1363562259852266e-05,
+          "main_nodes": 46,
+          "nodes_per_second": 83.59394398463913,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00028980005299672484,
+          "ordering_wall_fraction": 0.0001892619484137005,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 82,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        }
+      ]
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "label": "position-5",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 228,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 116,
+          "completed_depth": 0,
+          "elapsed_seconds": 7.788393500028178,
+          "evaluation_calls": 380,
+          "evaluation_seconds": 0.25780359940836206,
+          "evaluator_wall_fraction": 0.033100998223501335,
+          "legal_generation_calls": 462,
+          "legal_generation_seconds": 5.699985194951296e-06,
+          "legal_generation_wall_fraction": 7.318563443065214e-07,
+          "main_nodes": 49,
+          "nodes_per_second": 65.73884588627264,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00010439998004585505,
+          "ordering_wall_fraction": 1.3404558981961727e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 463,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 228,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 116,
+          "completed_depth": 0,
+          "elapsed_seconds": 8.05818019999424,
+          "evaluation_calls": 380,
+          "evaluation_seconds": 0.26746480021392927,
+          "evaluator_wall_fraction": 0.03319171246804836,
+          "legal_generation_calls": 462,
+          "legal_generation_seconds": 1.4199991710484028e-05,
+          "legal_generation_wall_fraction": 1.762183440684806e-06,
+          "main_nodes": 49,
+          "nodes_per_second": 63.537918896423534,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0002772999578155577,
+          "ordering_wall_fraction": 3.441223091731753e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 463,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        }
+      ]
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "label": "position-5",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 34,
+          "capture_qactions": 614,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 417,
+          "completed_depth": 1,
+          "elapsed_seconds": 29.025462399993557,
+          "evaluation_calls": 1397,
+          "evaluation_seconds": 1.0842602020711638,
+          "evaluator_wall_fraction": 0.03735548419967306,
+          "legal_generation_calls": 1842,
+          "legal_generation_seconds": 0.3405504000838846,
+          "legal_generation_wall_fraction": 0.011732815670284039,
+          "main_nodes": 236,
+          "nodes_per_second": 70.55873810990362,
+          "ordering_calls": 39,
+          "ordering_seconds": 0.0064254001481458545,
+          "ordering_wall_fraction": 0.0002213711554220504,
+          "promotion_qactions": 148,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                6
+              ],
+              "geometry_id": "g36",
+              "kind": "semantic_board",
+              "pattern_id": "sem_13_pawn_capture_left",
+              "promotion_target_id": "Q",
+              "to": [
+                2,
+                7
+              ]
+            }
+          ],
+          "pv_visible": [
+            "d7-c8=Q"
+          ],
+          "qnodes": 1812,
+          "score": 1781,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 39,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 34,
+          "capture_qactions": 614,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 417,
+          "completed_depth": 1,
+          "elapsed_seconds": 28.9104882000247,
+          "evaluation_calls": 1397,
+          "evaluation_seconds": 1.0726249996805564,
+          "evaluator_wall_fraction": 0.03710158722534612,
+          "legal_generation_calls": 1842,
+          "legal_generation_seconds": 0.3590150000527501,
+          "legal_generation_wall_fraction": 0.01241815764468631,
+          "main_nodes": 236,
+          "nodes_per_second": 70.83934334938868,
+          "ordering_calls": 39,
+          "ordering_seconds": 0.005866199848242104,
+          "ordering_wall_fraction": 0.00020290905527624718,
+          "promotion_qactions": 148,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                6
+              ],
+              "geometry_id": "g36",
+              "kind": "semantic_board",
+              "pattern_id": "sem_13_pawn_capture_left",
+              "promotion_target_id": "Q",
+              "to": [
+                2,
+                7
+              ]
+            }
+          ],
+          "pv_visible": [
+            "d7-c8=Q"
+          ],
+          "qnodes": 1812,
+          "score": 1781,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 39,
+          "visible_action": "d7-c8=Q"
+        }
+      ]
+    },
+    {
+      "budget": 128,
+      "deterministic": true,
+      "label": "position-6",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 118,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.9305685000144877,
+          "evaluation_calls": 116,
+          "evaluation_seconds": 0.04559380008140579,
+          "evaluator_wall_fraction": 0.02361677406477089,
+          "legal_generation_calls": 80,
+          "legal_generation_seconds": 7.00005330145359e-06,
+          "legal_generation_wall_fraction": 3.6259025781271474e-06,
+          "main_nodes": 48,
+          "nodes_per_second": 66.3017137175083,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00012640003114938736,
+          "ordering_wall_fraction": 6.547295843086573e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 80,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 118,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.9304854999645613,
+          "evaluation_calls": 116,
+          "evaluation_seconds": 0.04519320011604577,
+          "evaluator_wall_fraction": 0.0234102769054082,
+          "legal_generation_calls": 80,
+          "legal_generation_seconds": 1.8099963199347258e-05,
+          "legal_generation_wall_fraction": 9.375860735384713e-06,
+          "main_nodes": 48,
+          "nodes_per_second": 66.30456431936409,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0002921000123023987,
+          "ordering_wall_fraction": 0.00015130909416712058,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 80,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 128,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        }
+      ]
+    },
+    {
+      "budget": 512,
+      "deterministic": true,
+      "label": "position-6",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 572,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 35,
+          "completed_depth": 0,
+          "elapsed_seconds": 10.707664499990642,
+          "evaluation_calls": 426,
+          "evaluation_seconds": 0.24831890122732148,
+          "evaluator_wall_fraction": 0.023190762208466515,
+          "legal_generation_calls": 461,
+          "legal_generation_seconds": 1.379998866468668e-05,
+          "legal_generation_wall_fraction": 1.2887953918147828e-06,
+          "main_nodes": 51,
+          "nodes_per_second": 47.81621613195365,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0003829000052064657,
+          "ordering_wall_fraction": 3.575943243335653e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 461,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 572,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 35,
+          "completed_depth": 0,
+          "elapsed_seconds": 10.594145099981688,
+          "evaluation_calls": 426,
+          "evaluation_seconds": 0.20753950020298362,
+          "evaluator_wall_fraction": 0.019590018660716885,
+          "legal_generation_calls": 461,
+          "legal_generation_seconds": 1.379998866468668e-05,
+          "legal_generation_wall_fraction": 1.3026052158480003e-06,
+          "main_nodes": 51,
+          "nodes_per_second": 48.328581038680035,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0003097999724559486,
+          "ordering_wall_fraction": 2.924256459886358e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 461,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 512,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        }
+      ]
+    },
+    {
+      "budget": 2048,
+      "deterministic": true,
+      "label": "position-6",
+      "overshoot": 0,
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g29",
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 2756,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 57,
+          "completed_depth": 1,
+          "elapsed_seconds": 46.798251000000164,
+          "evaluation_calls": 1711,
+          "evaluation_seconds": 1.0700585990562104,
+          "evaluator_wall_fraction": 0.02286535449917149,
+          "legal_generation_calls": 1904,
+          "legal_generation_seconds": 0.022493300028145313,
+          "legal_generation_wall_fraction": 0.00048064403150761413,
+          "main_nodes": 147,
+          "nodes_per_second": 43.76231923710125,
+          "ordering_calls": 4,
+          "ordering_seconds": 0.0013561000232584774,
+          "ordering_wall_fraction": 2.8977579167616173e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g29",
+              "kind": "semantic_board",
+              "pattern_id": "sem_06_r_quiet",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "pv_visible": [
+            "f1-b1"
+          ],
+          "qnodes": 1901,
+          "score": 7,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 4,
+          "visible_action": "f1-b1"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              5,
+              0
+            ],
+            "geometry_id": "g29",
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 2756,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 57,
+          "completed_depth": 1,
+          "elapsed_seconds": 45.9639959000051,
+          "evaluation_calls": 1711,
+          "evaluation_seconds": 1.0456249989219941,
+          "evaluator_wall_fraction": 0.02274878366094968,
+          "legal_generation_calls": 1904,
+          "legal_generation_seconds": 0.02252930006943643,
+          "legal_generation_wall_fraction": 0.0004901510329617346,
+          "main_nodes": 147,
+          "nodes_per_second": 44.556613494950135,
+          "ordering_calls": 4,
+          "ordering_seconds": 0.0007084000390022993,
+          "ordering_wall_fraction": 1.541206383673489e-05,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g29",
+              "kind": "semantic_board",
+              "pattern_id": "sem_06_r_quiet",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "pv_visible": [
+            "f1-b1"
+          ],
+          "qnodes": 1901,
+          "score": 7,
+          "selective_depth": 1,
+          "termination_reason": "node_limit",
+          "total_nodes": 2048,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 4,
+          "visible_action": "f1-b1"
+        }
+      ]
+    }
+  ],
+  "fixed_time": [
+    {
+      "label": "initial",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 0,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25169199996162206,
+          "evaluation_calls": 29,
+          "evaluation_seconds": 0.0032910999725572765,
+          "evaluator_wall_fraction": 0.013075902186239939,
+          "legal_generation_calls": 10,
+          "legal_generation_seconds": 1.279998105019331e-05,
+          "legal_generation_wall_fraction": 5.085573261027386e-05,
+          "main_nodes": 31,
+          "nodes_per_second": 162.89750967949587,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0001449999981559813,
+          "ordering_wall_fraction": 0.0005761009415400206,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 10,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 41,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 0,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25173519999952987,
+          "evaluation_calls": 30,
+          "evaluation_seconds": 0.004054799966979772,
+          "evaluator_wall_fraction": 0.016107401614821226,
+          "legal_generation_calls": 11,
+          "legal_generation_seconds": 7.499998901039362e-06,
+          "legal_generation_wall_fraction": 2.9793206913667096e-05,
+          "main_nodes": 32,
+          "nodes_per_second": 170.81441133413327,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011920003453269601,
+          "ordering_wall_fraction": 0.0004735135751095541,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 11,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 43,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 0,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25097029999597,
+          "evaluation_calls": 31,
+          "evaluation_seconds": 0.004433799942489713,
+          "evaluator_wall_fraction": 0.01766663203797784,
+          "legal_generation_calls": 12,
+          "legal_generation_seconds": 1.4699995517730713e-05,
+          "legal_generation_wall_fraction": 5.857264990306328e-05,
+          "main_nodes": 33,
+          "nodes_per_second": 179.30408498823405,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00014700001338496804,
+          "ordering_wall_fraction": 0.0005857267309611079,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 12,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 45,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-e3"
+        }
+      ],
+      "seconds": 0.25
+    },
+    {
+      "label": "initial",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 3,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 1,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.0009048000210896,
+          "evaluation_calls": 63,
+          "evaluation_seconds": 0.01862209982937202,
+          "evaluator_wall_fraction": 0.018605265784497827,
+          "legal_generation_calls": 48,
+          "legal_generation_seconds": 0.005575999908614904,
+          "legal_generation_wall_fraction": 0.005570959304518686,
+          "main_nodes": 57,
+          "nodes_per_second": 102.90688984389898,
+          "ordering_calls": 3,
+          "ordering_seconds": 0.00031509995460510254,
+          "ordering_wall_fraction": 0.00031481510988703743,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3"
+          ],
+          "qnodes": 46,
+          "score": 17,
+          "selective_depth": 1,
+          "termination_reason": "time_limit",
+          "total_nodes": 103,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 3,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 3,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 1,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.001566399994772,
+          "evaluation_calls": 63,
+          "evaluation_seconds": 0.019590499927289784,
+          "evaluator_wall_fraction": 0.019559861360556867,
+          "legal_generation_calls": 48,
+          "legal_generation_seconds": 0.008728499989956617,
+          "legal_generation_wall_fraction": 0.008714849050449554,
+          "main_nodes": 57,
+          "nodes_per_second": 102.83891312701549,
+          "ordering_calls": 3,
+          "ordering_seconds": 0.0003209999995306134,
+          "ordering_wall_fraction": 0.0003204979715097162,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3"
+          ],
+          "qnodes": 46,
+          "score": 17,
+          "selective_depth": 1,
+          "termination_reason": "time_limit",
+          "total_nodes": 103,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 3,
+          "visible_action": "e2-e3"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g33",
+            "kind": "semantic_board",
+            "pattern_id": "sem_10_pawn_one_step",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 3,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 1,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.0007969999569468,
+          "evaluation_calls": 60,
+          "evaluation_seconds": 0.019728499930351973,
+          "evaluator_wall_fraction": 0.01971278883849639,
+          "legal_generation_calls": 45,
+          "legal_generation_seconds": 0.009576000040397048,
+          "legal_generation_wall_fraction": 0.009568374046693782,
+          "main_nodes": 54,
+          "nodes_per_second": 96.92275257037424,
+          "ordering_calls": 3,
+          "ordering_seconds": 0.0002999999560415745,
+          "ordering_wall_fraction": 0.0002997610465004193,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                4,
+                1
+              ],
+              "geometry_id": "g33",
+              "kind": "semantic_board",
+              "pattern_id": "sem_10_pawn_one_step",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                2
+              ]
+            }
+          ],
+          "pv_visible": [
+            "e2-e3"
+          ],
+          "qnodes": 43,
+          "score": 17,
+          "selective_depth": 1,
+          "termination_reason": "time_limit",
+          "total_nodes": 97,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 3,
+          "visible_action": "e2-e3"
+        }
+      ],
+      "seconds": 1.0
+    },
+    {
+      "label": "kiwipete",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 10,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2509274000185542,
+          "evaluation_calls": 50,
+          "evaluation_seconds": 0.005599999974947423,
+          "evaluator_wall_fraction": 0.02231721196861461,
+          "legal_generation_calls": 3,
+          "legal_generation_seconds": 9.400013368576765e-06,
+          "legal_generation_wall_fraction": 3.7461087820149196e-05,
+          "main_nodes": 50,
+          "nodes_per_second": 207.23125492136367,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0001598999951966107,
+          "ordering_wall_fraction": 0.0006372360897406473,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 52,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 10,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2518726999987848,
+          "evaluation_calls": 50,
+          "evaluation_seconds": 0.0015764000127092004,
+          "evaluator_wall_fraction": 0.006258717251678351,
+          "legal_generation_calls": 3,
+          "legal_generation_seconds": 9.90001717582345e-06,
+          "legal_generation_wall_fraction": 3.930563803012877e-05,
+          "main_nodes": 50,
+          "nodes_per_second": 206.4534981371577,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00014680001186206937,
+          "ordering_wall_fraction": 0.0005828341533750089,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 52,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 10,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2519789999932982,
+          "evaluation_calls": 50,
+          "evaluation_seconds": 0.0010363999172113836,
+          "evaluator_wall_fraction": 0.004113040837684681,
+          "legal_generation_calls": 3,
+          "legal_generation_seconds": 6.399990525096655e-06,
+          "legal_generation_wall_fraction": 2.5398904374042573e-05,
+          "main_nodes": 50,
+          "nodes_per_second": 206.3664035549908,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00012849998893216252,
+          "ordering_wall_fraction": 0.000509963087938202,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 52,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        }
+      ],
+      "seconds": 0.25
+    },
+    {
+      "label": "kiwipete",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 56,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 5,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0009805000154302,
+          "evaluation_calls": 64,
+          "evaluation_seconds": 0.01407059992197901,
+          "evaluator_wall_fraction": 0.01405681721248527,
+          "legal_generation_calls": 20,
+          "legal_generation_seconds": 1.4300050679594278e-05,
+          "legal_generation_wall_fraction": 1.4286043214002513e-05,
+          "main_nodes": 50,
+          "nodes_per_second": 68.93241176919666,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00029440002981573343,
+          "ordering_wall_fraction": 0.00029411165333510016,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 19,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 69,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 50,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 5,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0010304999887012,
+          "evaluation_calls": 64,
+          "evaluation_seconds": 0.014537199982441962,
+          "evaluator_wall_fraction": 0.014522234819624422,
+          "legal_generation_calls": 20,
+          "legal_generation_seconds": 8.100003469735384e-06,
+          "legal_generation_wall_fraction": 8.091665009034999e-06,
+          "main_nodes": 50,
+          "nodes_per_second": 68.92896869853497,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00012889999197795987,
+          "ordering_wall_fraction": 0.00012876729727956819,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 19,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 69,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              4,
+              1
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 53,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 5,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0022098000044934,
+          "evaluation_calls": 64,
+          "evaluation_seconds": 0.012651699827983975,
+          "evaluator_wall_fraction": 0.012623803746408438,
+          "legal_generation_calls": 20,
+          "legal_generation_seconds": 1.6900012269616127e-05,
+          "legal_generation_wall_fraction": 1.686274896687336e-05,
+          "main_nodes": 50,
+          "nodes_per_second": 68.84785999866558,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00012159999459981918,
+          "ordering_wall_fraction": 0.00012133187542096873,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 19,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 69,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "e2-a6"
+        }
+      ],
+      "seconds": 1.0
+    },
+    {
+      "label": "position-3",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 10,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 6,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2517169000348076,
+          "evaluation_calls": 36,
+          "evaluation_seconds": 0.00733229995239526,
+          "evaluator_wall_fraction": 0.029129152438240515,
+          "legal_generation_calls": 29,
+          "legal_generation_seconds": 1.3199984095990658e-05,
+          "legal_generation_wall_fraction": 5.2439800800682646e-05,
+          "main_nodes": 24,
+          "nodes_per_second": 210.55399932492062,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0001737999846227467,
+          "ordering_wall_fraction": 0.0006904581480175288,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 29,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 53,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 10,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 6,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25094699999317527,
+          "evaluation_calls": 38,
+          "evaluation_seconds": 0.009008699969854206,
+          "evaluator_wall_fraction": 0.0358988151685384,
+          "legal_generation_calls": 32,
+          "legal_generation_seconds": 1.4299992471933365e-05,
+          "legal_generation_wall_fraction": 5.698411406521005e-05,
+          "main_nodes": 26,
+          "nodes_per_second": 227.13959521950918,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00012010004138574004,
+          "ordering_wall_fraction": 0.00047858727695093494,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 31,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 57,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 10,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 6,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25086909998208284,
+          "evaluation_calls": 38,
+          "evaluation_seconds": 0.007863299921154976,
+          "evaluator_wall_fraction": 0.031344234589738534,
+          "legal_generation_calls": 31,
+          "legal_generation_seconds": 1.3699987903237343e-05,
+          "legal_generation_wall_fraction": 5.461010504767546e-05,
+          "main_nodes": 26,
+          "nodes_per_second": 227.2101267317137,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011490000179037452,
+          "ordering_wall_fraction": 0.000458007788916932,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 31,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 57,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-f4"
+        }
+      ],
+      "seconds": 0.25
+    },
+    {
+      "label": "position-3",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 13,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 37,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.0007490999996662,
+          "evaluation_calls": 95,
+          "evaluation_seconds": 0.03884230018593371,
+          "evaluator_wall_fraction": 0.038813225198950134,
+          "legal_generation_calls": 125,
+          "legal_generation_seconds": 0.003566499915905297,
+          "legal_generation_wall_fraction": 0.0035638302506657126,
+          "main_nodes": 35,
+          "nodes_per_second": 156.8824793347827,
+          "ordering_calls": 4,
+          "ordering_seconds": 0.00025649997405707836,
+          "ordering_wall_fraction": 0.0002563079737540248,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4"
+          ],
+          "qnodes": 122,
+          "score": 15,
+          "selective_depth": 1,
+          "termination_reason": "time_limit",
+          "total_nodes": 157,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 4,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 13,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 35,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.0035665000323206,
+          "evaluation_calls": 90,
+          "evaluation_seconds": 0.02819199993973598,
+          "evaluator_wall_fraction": 0.028091810496691582,
+          "legal_generation_calls": 118,
+          "legal_generation_seconds": 0.003790799994021654,
+          "legal_generation_wall_fraction": 0.003777328153041745,
+          "main_nodes": 35,
+          "nodes_per_second": 149.4669262028666,
+          "ordering_calls": 4,
+          "ordering_seconds": 0.00019320001592859626,
+          "ordering_wall_fraction": 0.000192513416821281,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4"
+          ],
+          "qnodes": 115,
+          "score": 15,
+          "selective_depth": 1,
+          "termination_reason": "time_limit",
+          "total_nodes": 150,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 4,
+          "visible_action": "b4-f4"
+        },
+        {
+          "action": {
+            "actor_type_id": "R",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g28",
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 13,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 35,
+          "completed_depth": 1,
+          "elapsed_seconds": 1.0013165000127628,
+          "evaluation_calls": 90,
+          "evaluation_seconds": 0.03074909996939823,
+          "evaluator_wall_fraction": 0.03070867200231525,
+          "legal_generation_calls": 117,
+          "legal_generation_seconds": 0.0049662000383250415,
+          "legal_generation_wall_fraction": 0.004959670631874879,
+          "main_nodes": 35,
+          "nodes_per_second": 147.80541417035832,
+          "ordering_calls": 4,
+          "ordering_seconds": 0.00025559996720403433,
+          "ordering_wall_fraction": 0.00025526391226028574,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [
+            {
+              "actor_type_id": "R",
+              "from": [
+                1,
+                3
+              ],
+              "geometry_id": "g28",
+              "kind": "semantic_board",
+              "pattern_id": "sem_07_r_capture",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                3
+              ]
+            }
+          ],
+          "pv_visible": [
+            "b4-f4"
+          ],
+          "qnodes": 113,
+          "score": 15,
+          "selective_depth": 1,
+          "termination_reason": "time_limit",
+          "total_nodes": 148,
+          "tt_cutoffs": 0,
+          "tt_hits": 1,
+          "tt_probes": 4,
+          "visible_action": "b4-f4"
+        }
+      ],
+      "seconds": 1.0
+    },
+    {
+      "label": "position-4",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 19,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 2,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.251767200010363,
+          "evaluation_calls": 9,
+          "evaluation_seconds": 0.0025305000599473715,
+          "evaluator_wall_fraction": 0.010050952069384786,
+          "legal_generation_calls": 4,
+          "legal_generation_seconds": 7.90000194683671e-06,
+          "legal_generation_wall_fraction": 3.137820155489491e-05,
+          "main_nodes": 8,
+          "nodes_per_second": 43.69115595497439,
+          "ordering_calls": 1,
+          "ordering_seconds": 4.0000013541430235e-05,
+          "ordering_wall_fraction": 0.00015887698453088327,
+          "promotion_qactions": 8,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 3,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 11,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 23,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 2,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2516272999928333,
+          "evaluation_calls": 9,
+          "evaluation_seconds": 0.0019930999842472374,
+          "evaluator_wall_fraction": 0.007920841595105158,
+          "legal_generation_calls": 4,
+          "legal_generation_seconds": 1.4399993233382702e-05,
+          "legal_generation_wall_fraction": 5.722746790110944e-05,
+          "main_nodes": 8,
+          "nodes_per_second": 43.71544741096572,
+          "ordering_calls": 1,
+          "ordering_seconds": 7.840001489967108e-05,
+          "ordering_wall_fraction": 0.00031157197530595456,
+          "promotion_qactions": 12,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 3,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 11,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 25,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 8,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25098389998311177,
+          "evaluation_calls": 10,
+          "evaluation_seconds": 0.002515500003937632,
+          "evaluator_wall_fraction": 0.010022555247993576,
+          "legal_generation_calls": 5,
+          "legal_generation_seconds": 1.309998333454132e-05,
+          "legal_generation_wall_fraction": 5.2194516602151745e-05,
+          "main_nodes": 8,
+          "nodes_per_second": 47.811831758162405,
+          "ordering_calls": 1,
+          "ordering_seconds": 7.120001828297973e-05,
+          "ordering_wall_fraction": 0.0002836836079436595,
+          "promotion_qactions": 16,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 4,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 12,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        }
+      ],
+      "seconds": 0.25
+    },
+    {
+      "label": "position-4",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 34,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 14,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0017137000104412,
+          "evaluation_calls": 27,
+          "evaluation_seconds": 0.019478799717035145,
+          "evaluator_wall_fraction": 0.019445476004603023,
+          "legal_generation_calls": 32,
+          "legal_generation_seconds": 1.2399978004395962e-05,
+          "legal_generation_wall_fraction": 1.2378764515516472e-05,
+          "main_nodes": 8,
+          "nodes_per_second": 38.933280037593065,
+          "ordering_calls": 1,
+          "ordering_seconds": 7.000000914558768e-05,
+          "ordering_wall_fraction": 6.988025535126258e-05,
+          "promotion_qactions": 16,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 31,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 39,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 36,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 14,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0010302999871783,
+          "evaluation_calls": 27,
+          "evaluation_seconds": 0.014182299957610667,
+          "evaluator_wall_fraction": 0.014167702973418808,
+          "legal_generation_calls": 32,
+          "legal_generation_seconds": 1.0500021744519472e-05,
+          "legal_generation_wall_fraction": 1.0489214706741605e-05,
+          "main_nodes": 8,
+          "nodes_per_second": 38.959859657094825,
+          "ordering_calls": 1,
+          "ordering_seconds": 4.7200010158121586e-05,
+          "ordering_wall_fraction": 4.715143004035557e-05,
+          "promotion_qactions": 16,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 31,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 39,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "sem_04_b_quiet",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 36,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 14,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.001516999967862,
+          "evaluation_calls": 27,
+          "evaluation_seconds": 0.015755100117530674,
+          "evaluator_wall_fraction": 0.015731235833277166,
+          "legal_generation_calls": 32,
+          "legal_generation_seconds": 1.290004001930356e-05,
+          "legal_generation_wall_fraction": 1.288050030076126e-05,
+          "main_nodes": 8,
+          "nodes_per_second": 39.93941191341093,
+          "ordering_calls": 1,
+          "ordering_seconds": 4.360004095360637e-05,
+          "ordering_wall_fraction": 4.353399987719177e-05,
+          "promotion_qactions": 16,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 32,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 40,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "b4-c5"
+        }
+      ],
+      "seconds": 1.0
+    },
+    {
+      "label": "position-5",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 7,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 4,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2539130999939516,
+          "evaluation_calls": 46,
+          "evaluation_seconds": 0.0012047000345773995,
+          "evaluator_wall_fraction": 0.0047445367513771295,
+          "legal_generation_calls": 4,
+          "legal_generation_seconds": 1.7000013031065464e-05,
+          "legal_generation_wall_fraction": 6.695209121337346e-05,
+          "main_nodes": 46,
+          "nodes_per_second": 192.97940910164624,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00012669997522607446,
+          "ordering_wall_fraction": 0.0004989895173943074,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 3,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 49,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 6,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 4,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25074740004492924,
+          "evaluation_calls": 46,
+          "evaluation_seconds": 0.0015662999940104783,
+          "evaluator_wall_fraction": 0.006246525362694994,
+          "legal_generation_calls": 4,
+          "legal_generation_seconds": 1.4499993994832039e-05,
+          "legal_generation_wall_fraction": 5.782709608248744e-05,
+          "main_nodes": 46,
+          "nodes_per_second": 195.41578493424106,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0002772999578155577,
+          "ordering_wall_fraction": 0.001105893651403248,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 3,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 49,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 6,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 4,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25118849996943027,
+          "evaluation_calls": 46,
+          "evaluation_seconds": 0.001016099937260151,
+          "evaluator_wall_fraction": 0.004045169016033022,
+          "legal_generation_calls": 4,
+          "legal_generation_seconds": 1.4599994756281376e-05,
+          "legal_generation_wall_fraction": 5.812365915660231e-05,
+          "main_nodes": 46,
+          "nodes_per_second": 195.07262476571705,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0002943999716080725,
+          "ordering_wall_fraction": 0.0011720280651538629,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 3,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 49,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        }
+      ],
+      "seconds": 0.25
+    },
+    {
+      "label": "position-5",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 21,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 16,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0009876000112854,
+          "evaluation_calls": 73,
+          "evaluation_seconds": 0.020313299843110144,
+          "evaluator_wall_fraction": 0.020293258221062007,
+          "legal_generation_calls": 39,
+          "legal_generation_seconds": 0.00014409999130293727,
+          "legal_generation_wall_fraction": 0.0001439578185597031,
+          "main_nodes": 46,
+          "nodes_per_second": 84.91613682231596,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00017229997320100665,
+          "ordering_wall_fraction": 0.00017212997763315358,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 39,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 85,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 19,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 15,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.001412599987816,
+          "evaluation_calls": 73,
+          "evaluation_seconds": 0.021229199948720634,
+          "evaluator_wall_fraction": 0.02119925388294388,
+          "legal_generation_calls": 39,
+          "legal_generation_seconds": 6.89999433234334e-06,
+          "legal_generation_wall_fraction": 6.890261149527468e-06,
+          "main_nodes": 46,
+          "nodes_per_second": 83.88150898143483,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011369999265298247,
+          "ordering_wall_fraction": 0.00011353960660607409,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 38,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 84,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        },
+        {
+          "action": {
+            "actor_type_id": "P",
+            "from": [
+              3,
+              6
+            ],
+            "geometry_id": "g36",
+            "kind": "semantic_board",
+            "pattern_id": "sem_13_pawn_capture_left",
+            "promotion_target_id": "Q",
+            "to": [
+              2,
+              7
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 19,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 14,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0019406000501476,
+          "evaluation_calls": 73,
+          "evaluation_seconds": 0.02729770017322153,
+          "evaluator_wall_fraction": 0.02724482885697542,
+          "legal_generation_calls": 39,
+          "legal_generation_seconds": 7.199996616691351e-06,
+          "legal_generation_wall_fraction": 7.186051365051967e-06,
+          "main_nodes": 46,
+          "nodes_per_second": 83.83730532108966,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0001504000392742455,
+          "ordering_wall_fraction": 0.00015010873824927137,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 38,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 84,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "d7-c8=Q"
+        }
+      ],
+      "seconds": 1.0
+    },
+    {
+      "label": "position-6",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 6,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2509958000155166,
+          "evaluation_calls": 48,
+          "evaluation_seconds": 0.0011904999846592546,
+          "evaluator_wall_fraction": 0.004743107193768413,
+          "legal_generation_calls": 3,
+          "legal_generation_seconds": 7.499998901039362e-06,
+          "legal_generation_wall_fraction": 2.9880973707829818e-05,
+          "main_nodes": 48,
+          "nodes_per_second": 199.20652057488212,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0001173000200651586,
+          "ordering_wall_fraction": 0.00046733857721088204,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 50,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 6,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.2518802999984473,
+          "evaluation_calls": 48,
+          "evaluation_seconds": 0.0012190000270493329,
+          "evaluator_wall_fraction": 0.004839600504909861,
+          "legal_generation_calls": 3,
+          "legal_generation_seconds": 8.200004231184721e-06,
+          "legal_generation_wall_fraction": 3.255516303273924e-05,
+          "main_nodes": 48,
+          "nodes_per_second": 198.5069892338076,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0001403999631293118,
+          "ordering_wall_fraction": 0.0005574074793867456,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 50,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 12,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 0.25135919998865575,
+          "evaluation_calls": 48,
+          "evaluation_seconds": 0.0007877000025473535,
+          "evaluator_wall_fraction": 0.0031337623710725676,
+          "legal_generation_calls": 3,
+          "legal_generation_seconds": 7.90000194683671e-06,
+          "legal_generation_wall_fraction": 3.142913387372831e-05,
+          "main_nodes": 48,
+          "nodes_per_second": 198.91851980057456,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011449999874457717,
+          "ordering_wall_fraction": 0.00045552340534877874,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 2,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 50,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        }
+      ],
+      "seconds": 0.25
+    },
+    {
+      "label": "position-6",
+      "repeats": [
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 52,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0021792000043206,
+          "evaluation_calls": 72,
+          "evaluation_seconds": 0.012509900087025017,
+          "evaluator_wall_fraction": 0.012482697791942882,
+          "legal_generation_calls": 30,
+          "legal_generation_seconds": 6.399990525096655e-06,
+          "legal_generation_wall_fraction": 6.386073992624336e-06,
+          "main_nodes": 48,
+          "nodes_per_second": 77.83039200939685,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011650001397356391,
+          "ordering_wall_fraction": 0.0001162466891879832,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 30,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 78,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 52,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0009880000143312,
+          "evaluation_calls": 70,
+          "evaluation_seconds": 0.011304500221740454,
+          "evaluator_wall_fraction": 0.011293342399288111,
+          "legal_generation_calls": 28,
+          "legal_generation_seconds": 1.4199991710484028e-05,
+          "legal_generation_wall_fraction": 1.4185975966026292e-05,
+          "main_nodes": 48,
+          "nodes_per_second": 74.9259731374664,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.0002875000354833901,
+          "ordering_wall_fraction": 0.000287216265808655,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 27,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 75,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        },
+        {
+          "action": {
+            "actor_type_id": "B",
+            "from": [
+              6,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "sem_05_b_capture",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              5
+            ]
+          },
+          "beta_cutoffs": 0,
+          "capture_qactions": 52,
+          "checking_drop_qactions": 0,
+          "checking_move_qactions": 0,
+          "completed_depth": 0,
+          "elapsed_seconds": 1.0009542999905534,
+          "evaluation_calls": 70,
+          "evaluation_seconds": 0.011934199719689786,
+          "evaluator_wall_fraction": 0.011922821770986363,
+          "legal_generation_calls": 28,
+          "legal_generation_seconds": 8.800008799880743e-06,
+          "legal_generation_wall_fraction": 8.791618957992181e-06,
+          "main_nodes": 48,
+          "nodes_per_second": 75.92754234705546,
+          "ordering_calls": 1,
+          "ordering_seconds": 0.00011299998732283711,
+          "ordering_wall_fraction": 0.00011289225424567691,
+          "promotion_qactions": 0,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv": [],
+          "pv_visible": [],
+          "qnodes": 28,
+          "score": 0,
+          "selective_depth": 0,
+          "termination_reason": "fallback",
+          "total_nodes": 76,
+          "tt_cutoffs": 0,
+          "tt_hits": 0,
+          "tt_probes": 1,
+          "visible_action": "g5-f6"
+        }
+      ],
+      "seconds": 1.0
+    }
+  ],
+  "fixed_time_summaries": [
+    {
+      "label": "initial",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.016107401614821226,
+      "median_legal_generation_wall_fraction": 5.085573261027386e-05,
+      "median_nodes_per_second": 170.81441133413327,
+      "median_ordering_wall_fraction": 0.0005761009415400206,
+      "median_total_nodes": 43,
+      "seconds": 0.25
+    },
+    {
+      "label": "initial",
+      "median_completed_depth": 1,
+      "median_evaluator_wall_fraction": 0.019559861360556867,
+      "median_legal_generation_wall_fraction": 0.008714849050449554,
+      "median_nodes_per_second": 102.83891312701549,
+      "median_ordering_wall_fraction": 0.00031481510988703743,
+      "median_total_nodes": 103,
+      "seconds": 1.0
+    },
+    {
+      "label": "kiwipete",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.006258717251678351,
+      "median_legal_generation_wall_fraction": 3.7461087820149196e-05,
+      "median_nodes_per_second": 206.4534981371577,
+      "median_ordering_wall_fraction": 0.0005828341533750089,
+      "median_total_nodes": 52,
+      "seconds": 0.25
+    },
+    {
+      "label": "kiwipete",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.01405681721248527,
+      "median_legal_generation_wall_fraction": 1.4286043214002513e-05,
+      "median_nodes_per_second": 68.92896869853497,
+      "median_ordering_wall_fraction": 0.00012876729727956819,
+      "median_total_nodes": 69,
+      "seconds": 1.0
+    },
+    {
+      "label": "position-3",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.031344234589738534,
+      "median_legal_generation_wall_fraction": 5.461010504767546e-05,
+      "median_nodes_per_second": 227.13959521950918,
+      "median_ordering_wall_fraction": 0.00047858727695093494,
+      "median_total_nodes": 57,
+      "seconds": 0.25
+    },
+    {
+      "label": "position-3",
+      "median_completed_depth": 1,
+      "median_evaluator_wall_fraction": 0.03070867200231525,
+      "median_legal_generation_wall_fraction": 0.003777328153041745,
+      "median_nodes_per_second": 149.4669262028666,
+      "median_ordering_wall_fraction": 0.00025526391226028574,
+      "median_total_nodes": 150,
+      "seconds": 1.0
+    },
+    {
+      "label": "position-4",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.010022555247993576,
+      "median_legal_generation_wall_fraction": 5.2194516602151745e-05,
+      "median_nodes_per_second": 43.71544741096572,
+      "median_ordering_wall_fraction": 0.0002836836079436595,
+      "median_total_nodes": 11,
+      "seconds": 0.25
+    },
+    {
+      "label": "position-4",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.015731235833277166,
+      "median_legal_generation_wall_fraction": 1.2378764515516472e-05,
+      "median_nodes_per_second": 38.959859657094825,
+      "median_ordering_wall_fraction": 4.715143004035557e-05,
+      "median_total_nodes": 39,
+      "seconds": 1.0
+    },
+    {
+      "label": "position-5",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.0047445367513771295,
+      "median_legal_generation_wall_fraction": 5.812365915660231e-05,
+      "median_nodes_per_second": 195.07262476571705,
+      "median_ordering_wall_fraction": 0.001105893651403248,
+      "median_total_nodes": 49,
+      "seconds": 0.25
+    },
+    {
+      "label": "position-5",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.02119925388294388,
+      "median_legal_generation_wall_fraction": 7.186051365051967e-06,
+      "median_nodes_per_second": 83.88150898143483,
+      "median_ordering_wall_fraction": 0.00015010873824927137,
+      "median_total_nodes": 84,
+      "seconds": 1.0
+    },
+    {
+      "label": "position-6",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.004743107193768413,
+      "median_legal_generation_wall_fraction": 3.142913387372831e-05,
+      "median_nodes_per_second": 198.91851980057456,
+      "median_ordering_wall_fraction": 0.00046733857721088204,
+      "median_total_nodes": 50,
+      "seconds": 0.25
+    },
+    {
+      "label": "position-6",
+      "median_completed_depth": 0,
+      "median_evaluator_wall_fraction": 0.011922821770986363,
+      "median_legal_generation_wall_fraction": 8.791618957992181e-06,
+      "median_nodes_per_second": 75.92754234705546,
+      "median_ordering_wall_fraction": 0.0001162466891879832,
+      "median_total_nodes": 76,
+      "seconds": 1.0
+    }
+  ],
+  "manifest": {
+    "compiled_ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+    "evaluation_config": {
+      "anchor_escape_weight": 5,
+      "coverage_weight": 0.1,
+      "density_points": [
+        0.0,
+        0.125,
+        0.25,
+        0.375,
+        0.5
+      ],
+      "density_weights": [
+        0.25,
+        0.2,
+        0.2,
+        0.18,
+        0.17
+      ],
+      "dynamic_mobility_weight": 2,
+      "evaluator_version": "generic-v1",
+      "hand_weight": 0.9,
+      "mc_samples": 64,
+      "normal_piece_median_value": 1000,
+      "path_efficiency_weight": 0.05,
+      "promotion_potential_weight": 3,
+      "reachability_weight": 0.05
+    },
+    "evaluation_config_hash": "a2b783f75e98e57a3d1feae2998ccf57f17e89489021be2affb481e100f0145c",
+    "fen_corpus": [
+      {
+        "expected": [
+          20,
+          400,
+          8902,
+          197281
+        ],
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "label": "initial"
+      },
+      {
+        "expected": [
+          48,
+          2039,
+          97862
+        ],
+        "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+        "label": "kiwipete"
+      },
+      {
+        "expected": [
+          14,
+          191,
+          2812,
+          43238
+        ],
+        "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+        "label": "position-3"
+      },
+      {
+        "expected": [
+          6,
+          264,
+          9467
+        ],
+        "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+        "label": "position-4"
+      },
+      {
+        "expected": [
+          44,
+          1486,
+          62379
+        ],
+        "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+        "label": "position-5"
+      },
+      {
+        "expected": [
+          46,
+          2079,
+          89890
+        ],
+        "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+        "label": "position-6"
+      }
+    ],
+    "fixed_node_budgets": [
+      128,
+      512,
+      2048
+    ],
+    "fixed_time_budgets_seconds": [
+      0.25,
+      1.0
+    ],
+    "generic_chess_commit_sha": "ce04fcb9d31f4521a44adfd39debae3097a5e260",
+    "native_provider_policy": {
+      "actual": "PYTHON_AUTHORITY_FALLBACK",
+      "reason": "certified subject_ref shape is intentionally unsupported by Native",
+      "requested": true
+    },
+    "ordering": {
+      "use_ordering": true
+    },
+    "python": "3.13.2",
+    "qsearch": {
+      "quiescence_hard_max_depth": 8,
+      "quiescence_max_depth": 4
+    },
+    "repetitions": 3,
+    "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+    "search_tuning": {
+      "aspiration_delta": 50,
+      "aspiration_start_depth": 4,
+      "history_max": 65536,
+      "quiet_buckets": 8,
+      "use_aspiration": false,
+      "use_countermove": false,
+      "use_lazy_successors": false,
+      "use_mate_distance_pruning": false,
+      "use_pvs": false,
+      "use_root_tactical": true,
+      "use_staged_move_picker": false
+    },
+    "tt": {
+      "fresh_per_run": true,
+      "max_entries": 250000,
+      "use_tt": true
+    }
+  },
+  "manifest_sha256": "cbf3d5bfdaad12dd54a7868f9bbf68bf9ce875931e2b4e8acdc34129c847e308",
+  "next_boundary": "F25_STANDARD_SHOGI_PRODUCTIZATION_AND_DUAL_STANDARD_SEARCH_BASELINE",
+  "status": "PASS",
+  "western_chess_product_ready_baseline": true
+}

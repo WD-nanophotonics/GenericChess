@@ -380,6 +380,32 @@ def compile_ruleset(
     return compiled
 
 
+def compile_ruleset_for_execution(
+    rule_definition: RuleSet | Mapping[str, Any],
+):
+    """Compile either legacy or semantic rules through the product boundary.
+
+    The choice is made from the declarative RuleSet shape.  Semantic rules
+    never fall back to the legacy compiler, and a semantic validation error is
+    propagated unchanged.
+    """
+    ruleset = (
+        rule_definition
+        if isinstance(rule_definition, RuleSet)
+        else ruleset_from_dict(rule_definition)
+    )
+    if ruleset.semantic_actions:
+        from .execution import ExecutableSemanticRuleset
+
+        compiled = compile_semantic_ruleset(ruleset)
+        return ExecutableSemanticRuleset(
+            ir=compiled.ir,
+            _legacy_compiled=compiled._legacy_compiled,
+            support=compiled.support,
+        )
+    return compile_ruleset(ruleset)
+
+
 # ================================================================ semantic IR
 
 
