@@ -155,6 +155,43 @@ def _manifest(compiled, descriptors, commit_sha):
     }
 
 
+def _summary(fixed_node, fixed_time_summaries, provider_mode, position_count):
+    return {
+        "position_count": position_count,
+        "provider_mode": provider_mode,
+        "median_fixed_time_nps": {
+            str(seconds): statistics.median(
+                row["median_nodes_per_second"]
+                for row in fixed_time_summaries
+                if row["seconds"] == seconds
+            )
+            for seconds in TIME_BUDGETS
+        },
+        "median_completed_depth_by_node_budget": {
+            str(budget): statistics.median(
+                row["repeats"][0]["completed_depth"]
+                for row in fixed_node
+                if row["budget"] == budget
+            )
+            for budget in NODE_BUDGETS
+        },
+        "median_evaluator_fraction": statistics.median(
+            row["repeats"][0]["evaluator_wall_fraction"] for row in fixed_node
+        ),
+        "median_legal_generation_fraction": statistics.median(
+            row["repeats"][0]["legal_generation_wall_fraction"] for row in fixed_node
+        ),
+        "median_ordering_fraction": statistics.median(
+            row["repeats"][0]["ordering_wall_fraction"] for row in fixed_node
+        ),
+        "median_qnode_fraction": statistics.median(
+            row["repeats"][0]["qnodes"] / row["repeats"][0]["total_nodes"]
+            if row["repeats"][0]["total_nodes"] else 0.0
+            for row in fixed_node
+        ),
+    }
+
+
 def run_baseline(commit_sha=None):
     global _NATIVE_PROVIDER
     descriptors = _descriptors()
@@ -200,10 +237,26 @@ def run_baseline(commit_sha=None):
                 "median_qnode_fraction": statistics.median(r["qnode_fraction"] for r in repeats),
             })
 
+    fixed_time_summary = _summary(
+        fixed_node, fixed_time_summaries,
+        "NATIVE" if _NATIVE_PROVIDER else "PYTHON_AUTHORITY_FALLBACK",
+        len(descriptors["positions"]),
+    )
+    western_fixture = json.loads(F24H_FIXTURE.read_text(encoding="utf-8"))
+    western_summary = _summary(
+        western_fixture["fixed_node"], western_fixture["fixed_time_summaries"],
+        western_fixture["manifest"]["native_provider_policy"]["actual"],
+        len({row["label"] for row in western_fixture["fixed_time_summaries"]}),
+    )
     return {
         "status": "PASS", "manifest": manifest, "manifest_sha256": manifest_sha,
         "fixed_node": fixed_node, "fixed_time": fixed_time,
         "fixed_time_summaries": fixed_time_summaries,
+        "dual_standard_summary": {
+            "western_chess": western_summary,
+            "standard_shogi": fixed_time_summary,
+            "comparison": "descriptive instrumentation only; no cross-game score/move/accuracy comparison",
+        },
         "standard_shogi_product_surface_available": True,
         "standard_shogi_search_baseline_frozen": True,
         "standard_shogi_nyugyoku_supported": False,

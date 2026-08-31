@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
 import uuid
 from pathlib import Path
 
@@ -91,3 +93,23 @@ def test_product_shogi_record_replay_and_alphabeta_smoke():
         SearchLimits(max_nodes=512, max_depth=8, quiescence_max_depth=4, quiescence_hard_max_depth=8),
     )
     assert decision.action in replayed.legal_actions()
+
+
+def test_standard_shogi_cli_smoke_renders_9x9_and_30_initial_actions():
+    proc = subprocess.run(
+        [sys.executable, "-m", "generic_chess.cli.play", "--builtin-ruleset", "standard_shogi"],
+        cwd=ROOT,
+        input="quit\n",
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    assert proc.returncode == 0, proc.stderr
+    header = next(line for line in proc.stdout.splitlines() if "a" in line and "i" in line)
+    assert all(letter in header for letter in "abcdefghi")
+    assert "legal actions:" in proc.stdout
+    assert sum(
+        line.split(".", 1)[0].strip().isdigit()
+        for line in proc.stdout.splitlines()
+        if "." in line
+    ) >= 30
