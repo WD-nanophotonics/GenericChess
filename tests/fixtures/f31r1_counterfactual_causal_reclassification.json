@@ -1,0 +1,964 @@
+{
+  "aggregate_effects": {
+    "0.5": {
+      "qsearch_effect": {
+        "fallbacks_added": 0,
+        "fallbacks_removed": 10,
+        "reference_count_delta": -1,
+        "roots_gaining_depth": 10,
+        "roots_losing_depth": 0
+      },
+      "root_tactical_effect": {
+        "fallbacks_added": 0,
+        "fallbacks_removed": 0,
+        "reference_count_delta": -3,
+        "roots_gaining_depth": 0,
+        "roots_losing_depth": 0
+      }
+    },
+    "2.0": {
+      "qsearch_effect": {
+        "fallbacks_added": 0,
+        "fallbacks_removed": 0,
+        "reference_count_delta": -1,
+        "roots_gaining_depth": 10,
+        "roots_losing_depth": 0
+      },
+      "root_tactical_effect": {
+        "fallbacks_added": 0,
+        "fallbacks_removed": 0,
+        "reference_count_delta": 0,
+        "roots_gaining_depth": 0,
+        "roots_losing_depth": 0
+      }
+    }
+  },
+  "boundary_rationale": [
+    "qsearch OFF gains one completed main-search ply on all ten roots at both controls",
+    "qsearch OFF removes all ten 0.50 s fallbacks while retaining a quality contribution signal",
+    "root-tactical OFF gains no depth and removes no fallback",
+    "Native remains unavailable, so no Native boundary is selected"
+  ],
+  "causal_families": {
+    "accessible_horizon_depth_efficiency": {
+      "basis": "qsearch OFF gains one completed main-search ply on 10/10 roots at both controls",
+      "label": "PRIMARY"
+    },
+    "evaluator_value": {
+      "basis": "fresh AlphaSho modal moves are outside current evaluator-v1 static top-3 on 8/10 roots",
+      "label": "MATERIAL"
+    },
+    "native_capability_gating": {
+      "basis": "live and stripped requested runs all report Python fallback",
+      "label": "UNRESOLVED",
+      "status": "NATIVE_COUNTERFACTUAL_UNAVAILABLE"
+    },
+    "python_semantic_runtime_throughput": {
+      "basis": "provider remains Python fallback and qsearch cost suppresses accessible depth under equal wall time",
+      "label": "PRIMARY"
+    },
+    "qsearch_computational_cost": {
+      "basis": "qsearch OFF gains depth on 10/10 roots at 0.50 s and 2.00 s and removes all 10 short-control fallbacks",
+      "label": "PRIMARY"
+    },
+    "qsearch_decision_quality_contribution": {
+      "basis": "qsearch OFF loses one external-reference hit at each control, so qsearch quality benefit is not discarded",
+      "label": "MATERIAL"
+    },
+    "root_fallback_mechanism": {
+      "basis": "fallback is an observed output; qsearch OFF removes 10/10 short-control fallbacks while root-tactical OFF removes none",
+      "label": "NOT_SUPPORTED"
+    },
+    "root_tactical_scan_computational_overhead": {
+      "basis": "root-tactical OFF gains depth on 0/10 roots, removes 0/10 fallbacks at both controls",
+      "label": "NOT_SUPPORTED"
+    },
+    "tt_order_pvs": {
+      "basis": "frozen fixed-node matrix has no consistent move/depth winner across TT, ordering, and PVS variants",
+      "label": "UNRESOLVED"
+    }
+  },
+  "corrected_next_boundary": "F32_SEARCH_HORIZON_AND_QUIESCENCE_DIAGNOSIS",
+  "first_pass_aggregate_labels": {
+    "evaluator_value": "SECONDARY",
+    "horizon_depth": "UNRESOLVED",
+    "native_capability_gating": "UNRESOLVED",
+    "python_semantic_legal_generation_throughput": "PRIMARY",
+    "qsearch": "NOT_SUPPORTED",
+    "root_fallback_tactical_scan_overhead": "PRIMARY",
+    "tt_order": "UNRESOLVED"
+  },
+  "flags": {
+    "F30_EXTERNAL_BASELINE_CONSUMED": true,
+    "RUNTIME_THROUGHPUT_CAUSAL_AUDIT_COMPLETE": true,
+    "SEARCH_HORIZON_CAUSAL_AUDIT_COMPLETE": true,
+    "SEARCH_POLICY_ABLATION_COMPLETE": true,
+    "STANDARD_SHOGI_EXTERNAL_GAP_CAUSAL_DIAGNOSIS_COMPLETE": true,
+    "STATIC_EVALUATOR_CAUSAL_AUDIT_COMPLETE": true
+  },
+  "forced_candidate_summary": {
+    "counts": {
+      "alpha_sho_candidate_becomes_better": 1,
+      "alpha_sho_candidate_catches_or_equalizes": 2,
+      "alpha_sho_candidate_remains_worse_through_depth_2": 6
+    },
+    "roots": {
+      "iteration-000086-game-000001-ply12": {
+        "alphasho_0.5_move": "3g4e",
+        "alphasho_depth_2_score": 358,
+        "category": "alpha_sho_candidate_catches_or_equalizes",
+        "generic_chess_0.5_move": "3g4e",
+        "generic_chess_depth_2_score": 358
+      },
+      "iteration-000086-game-000002-ply12": {
+        "alphasho_0.5_move": "5i6h",
+        "alphasho_depth_2_score": -8,
+        "category": "alpha_sho_candidate_remains_worse_through_depth_2",
+        "generic_chess_0.5_move": "7g7f",
+        "generic_chess_depth_2_score": -2
+      },
+      "iteration-000086-game-000003-ply12": {
+        "alphasho_0.5_move": "5i6h",
+        "alphasho_depth_2_score": -14,
+        "category": "alpha_sho_candidate_remains_worse_through_depth_2",
+        "generic_chess_0.5_move": "4i3h",
+        "generic_chess_depth_2_score": -10
+      },
+      "iteration-000086-game-000004-ply12": {
+        "alphasho_0.5_move": "5i6h",
+        "alphasho_depth_2_score": 4,
+        "category": "alpha_sho_candidate_catches_or_equalizes",
+        "generic_chess_0.5_move": "5i5h",
+        "generic_chess_depth_2_score": 4
+      },
+      "iteration-000086-game-000005-ply12": {
+        "alphasho_0.5_move": "3h4g",
+        "alphasho_depth_2_score": -15,
+        "category": "alpha_sho_candidate_remains_worse_through_depth_2",
+        "generic_chess_0.5_move": "5i5h",
+        "generic_chess_depth_2_score": -10
+      },
+      "iteration-000086-game-000006-ply12": {
+        "alphasho_0.5_move": "8h9g",
+        "alphasho_depth_2_score": 4,
+        "category": "alpha_sho_candidate_becomes_better",
+        "generic_chess_0.5_move": "7g7f",
+        "generic_chess_depth_2_score": -5
+      },
+      "iteration-000086-game-000007-ply12": {
+        "alphasho_0.5_move": "5i4h",
+        "alphasho_depth_2_score": -21,
+        "category": "alpha_sho_candidate_remains_worse_through_depth_2",
+        "generic_chess_0.5_move": "7g7f",
+        "generic_chess_depth_2_score": -15
+      },
+      "iteration-000086-game-000008-ply12": {
+        "alphasho_0.5_move": "6h6g",
+        "alphasho_depth_2_score": -11,
+        "category": "alpha_sho_candidate_remains_worse_through_depth_2",
+        "generic_chess_0.5_move": "6i7i",
+        "generic_chess_depth_2_score": -7
+      },
+      "iteration-000086-game-000010-ply12": {
+        "alphasho_0.5_move": "5i6h",
+        "alphasho_depth_2_score": -8,
+        "category": "alpha_sho_candidate_remains_worse_through_depth_2",
+        "generic_chess_0.5_move": "6i7h",
+        "generic_chess_depth_2_score": 1
+      }
+    }
+  },
+  "input_identities": {
+    "diagnosis_file_sha256": "9eaaccf9ecea8717e6a2ffe198da9136cb1e7fee0ee9ac2edcb60d6f70d8b77e",
+    "diagnosis_path": "tests/fixtures/f31_causal_diagnosis.json",
+    "manifest_path": "tests/fixtures/f31_causal_manifest.json",
+    "manifest_sha256": "e08867b24fc268581b7853caf8e6bf2da0d2c25307c36120540313ea44f677dd",
+    "product_authority": "a389adc50ed42096874ee38f818584978468c6ac"
+  },
+  "kind": "F31R1_COUNTERFACTUAL_CAUSAL_RECLASSIFICATION",
+  "production_changed": false,
+  "rerun_policy": "No expensive F31 experiments rerun; reclassification consumes frozen measurements byte-identically.",
+  "schema_version": 1,
+  "stalemate_gate": {
+    "all_exhausted": true,
+    "external_move_exhaustion_agrees": true,
+    "stalemate_games": [
+      {
+        "cshogi_legal_action_count": 0,
+        "cshogi_legal_moves": [],
+        "external_color": "BLACK",
+        "final_sfen": "5k2+B/7G1/+B3+R4/4+S4/9/1PP1P1P2/P1SPGPSPP/3K3R1/LN2G3L w 1G1S3N2L9P 80",
+        "game_id": "iteration-000086-game-000002-ply12::BLACK",
+        "legal_action_count": 0,
+        "position_id": "iteration-000086-game-000002-ply12",
+        "product_status": "stalemate",
+        "side_to_move_in_check": false
+      },
+      {
+        "cshogi_legal_action_count": 0,
+        "cshogi_legal_moves": [],
+        "external_color": "WHITE",
+        "final_sfen": "6s1p/2gk1r3/n2pgp3/1ps1p2p1/4r1p2/5K3/+p1+p3+n1+p/7+b1/+p7+p b 1b2g2s2n4l6p 113",
+        "game_id": "iteration-000086-game-000003-ply12::WHITE",
+        "legal_action_count": 0,
+        "position_id": "iteration-000086-game-000003-ply12",
+        "product_status": "stalemate",
+        "side_to_move_in_check": false
+      },
+      {
+        "cshogi_legal_action_count": 0,
+        "cshogi_legal_moves": [],
+        "external_color": "BLACK",
+        "final_sfen": "+P7+P/5+B3/+P+N2+R3+L/2k6/9/L1P6/1PNPPPPP1/3S1KR2/3GG1SN1 w 1B2G2S1N2L8P 88",
+        "game_id": "iteration-000086-game-000009-ply12::BLACK",
+        "legal_action_count": 0,
+        "position_id": "iteration-000086-game-000009-ply12",
+        "product_status": "stalemate",
+        "side_to_move_in_check": false
+      }
+    ]
+  },
+  "status": "PASS",
+  "throughput_context": {
+    "0.5": {
+      "average_nodes_per_second": 118.02627859464114,
+      "average_total_nodes": 58.8,
+      "provider_modes": [
+        "PYTHON_AUTHORITY_FALLBACK"
+      ]
+    },
+    "2.0": {
+      "average_nodes_per_second": 77.21409354890257,
+      "average_total_nodes": 154.3,
+      "provider_modes": [
+        "PYTHON_AUTHORITY_FALLBACK"
+      ]
+    }
+  },
+  "wall_time_effect_table": {
+    "0.5": [
+      {
+        "alpha_sho_0.5_modal": "3g4e",
+        "alpha_sho_2.0_modal": "3g4e",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4971819999627769,
+          "fallback": true,
+          "selected_move": "3g4e",
+          "total_nodes": 69
+        },
+        "position_id": "iteration-000086-game-000001-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": -1
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.4983926999848336,
+          "fallback": false,
+          "selected_move": "4f4e",
+          "total_nodes": 103
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": -1
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4980056000058539,
+          "fallback": true,
+          "selected_move": "5i4h",
+          "total_nodes": 41
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "5i6h",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49873530003242195,
+          "fallback": true,
+          "selected_move": "7g7f",
+          "total_nodes": 46
+        },
+        "position_id": "iteration-000086-game-000002-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.49944819998927414,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 128
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.498427799961064,
+          "fallback": true,
+          "selected_move": "5i4h",
+          "total_nodes": 25
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "5i6h",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49808069999562576,
+          "fallback": true,
+          "selected_move": "4i3h",
+          "total_nodes": 62
+        },
+        "position_id": "iteration-000086-game-000003-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.4969283000100404,
+          "fallback": false,
+          "selected_move": "4i3h",
+          "total_nodes": 109
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49937420000787824,
+          "fallback": true,
+          "selected_move": "5i4h",
+          "total_nodes": 39
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "7i7h",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4980477999779396,
+          "fallback": true,
+          "selected_move": "5i5h",
+          "total_nodes": 62
+        },
+        "position_id": "iteration-000086-game-000004-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.4982052999548614,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 116
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49841850000666454,
+          "fallback": true,
+          "selected_move": "5i4i",
+          "total_nodes": 47
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "3h4g",
+        "alpha_sho_2.0_modal": "5i5h",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4985276000224985,
+          "fallback": true,
+          "selected_move": "5i5h",
+          "total_nodes": 38
+        },
+        "position_id": "iteration-000086-game-000005-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.49976139998761937,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 129
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": -1
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49728190002497286,
+          "fallback": true,
+          "selected_move": "5i4i",
+          "total_nodes": 10
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "8h9g",
+        "alpha_sho_2.0_modal": "7g7f",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49770269996952266,
+          "fallback": true,
+          "selected_move": "7g7f",
+          "total_nodes": 71
+        },
+        "position_id": "iteration-000086-game-000006-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.49879099999088794,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 108
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": -1
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49927769997157156,
+          "fallback": true,
+          "selected_move": "7h6h",
+          "total_nodes": 43
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i4h",
+        "alpha_sho_2.0_modal": "5i4h",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4989826999953948,
+          "fallback": true,
+          "selected_move": "7g7f",
+          "total_nodes": 62
+        },
+        "position_id": "iteration-000086-game-000007-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.49868730001617223,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 113
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 1
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4978929999633692,
+          "fallback": true,
+          "selected_move": "5i4h",
+          "total_nodes": 37
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "6h6g",
+        "alpha_sho_2.0_modal": "6h6g",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4980419999919832,
+          "fallback": true,
+          "selected_move": "6i7i",
+          "total_nodes": 63
+        },
+        "position_id": "iteration-000086-game-000008-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.4980754999560304,
+          "fallback": false,
+          "selected_move": "6i7i",
+          "total_nodes": 120
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.49855329998536035,
+          "fallback": true,
+          "selected_move": "8h7i",
+          "total_nodes": 45
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "8h4d",
+        "alpha_sho_2.0_modal": "8h4d",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.498208099976182,
+          "fallback": true,
+          "selected_move": "8h4d",
+          "total_nodes": 74
+        },
+        "position_id": "iteration-000086-game-000009-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.4988147999974899,
+          "fallback": false,
+          "selected_move": "8h4d",
+          "total_nodes": 109
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": -1
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4979804999893531,
+          "fallback": true,
+          "selected_move": "8h7i",
+          "total_nodes": 49
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "5i6h",
+        "baseline": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4992506999988109,
+          "fallback": true,
+          "selected_move": "6i7h",
+          "total_nodes": 41
+        },
+        "position_id": "iteration-000086-game-000010-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": -1,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 0.4984415000071749,
+          "fallback": false,
+          "selected_move": "6i7h",
+          "total_nodes": 136
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 0,
+          "elapsed_seconds": 0.4987492000218481,
+          "fallback": true,
+          "selected_move": "5i4i",
+          "total_nodes": 21
+        }
+      }
+    ],
+    "2.0": [
+      {
+        "alpha_sho_0.5_modal": "3g4e",
+        "alpha_sho_2.0_modal": "3g4e",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9984004000434652,
+          "fallback": false,
+          "selected_move": "4f4e",
+          "total_nodes": 155
+        },
+        "position_id": "iteration-000086-game-000001-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9981362000107765,
+          "fallback": false,
+          "selected_move": "4f4e",
+          "total_nodes": 298
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9973786000045948,
+          "fallback": false,
+          "selected_move": "4f4e",
+          "total_nodes": 130
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "5i6h",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9976997000048868,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 153
+        },
+        "position_id": "iteration-000086-game-000002-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.998226399999112,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 408
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9990585999912582,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 134
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "5i6h",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.998127500002738,
+          "fallback": false,
+          "selected_move": "4i3h",
+          "total_nodes": 170
+        },
+        "position_id": "iteration-000086-game-000003-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9983413000009023,
+          "fallback": false,
+          "selected_move": "4i3h",
+          "total_nodes": 367
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9974418000201695,
+          "fallback": false,
+          "selected_move": "4i3h",
+          "total_nodes": 139
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "7i7h",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9978259999770671,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 182
+        },
+        "position_id": "iteration-000086-game-000004-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.999467299960088,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 323
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.998823000001721,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 160
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "3h4g",
+        "alpha_sho_2.0_modal": "5i5h",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9990572000388056,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 112
+        },
+        "position_id": "iteration-000086-game-000005-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": -1
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9970915999729186,
+          "fallback": false,
+          "selected_move": "6g6f",
+          "total_nodes": 446
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9980420000501908,
+          "fallback": false,
+          "selected_move": "5i5h",
+          "total_nodes": 91
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "8h9g",
+        "alpha_sho_2.0_modal": "7g7f",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9981170000392012,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 162
+        },
+        "position_id": "iteration-000086-game-000006-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9990367999998853,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 375
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9982608000282198,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 134
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i4h",
+        "alpha_sho_2.0_modal": "5i4h",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9977757000015117,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 161
+        },
+        "position_id": "iteration-000086-game-000007-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9980683000176214,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 339
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9974116999655962,
+          "fallback": false,
+          "selected_move": "7g7f",
+          "total_nodes": 130
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "6h6g",
+        "alpha_sho_2.0_modal": "6h6g",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9991236999630928,
+          "fallback": false,
+          "selected_move": "6i7i",
+          "total_nodes": 184
+        },
+        "position_id": "iteration-000086-game-000008-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9978596000000834,
+          "fallback": false,
+          "selected_move": "6i7i",
+          "total_nodes": 391
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9992012999719009,
+          "fallback": false,
+          "selected_move": "6i7i",
+          "total_nodes": 158
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "8h4d",
+        "alpha_sho_2.0_modal": "8h4d",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9988113000290468,
+          "fallback": false,
+          "selected_move": "8h4d",
+          "total_nodes": 110
+        },
+        "position_id": "iteration-000086-game-000009-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.998572900018189,
+          "fallback": false,
+          "selected_move": "8h4d",
+          "total_nodes": 355
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9984393999911845,
+          "fallback": false,
+          "selected_move": "8h4d",
+          "total_nodes": 115
+        }
+      },
+      {
+        "alpha_sho_0.5_modal": "5i6h",
+        "alpha_sho_2.0_modal": "5i6h",
+        "baseline": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9987870999611914,
+          "fallback": false,
+          "selected_move": "6i7h",
+          "total_nodes": 154
+        },
+        "position_id": "iteration-000086-game-000010-ply12",
+        "qsearch_effect": {
+          "depth_delta": 1,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "qsearch_off": {
+          "completed_depth": 2,
+          "elapsed_seconds": 1.9983036000048742,
+          "fallback": false,
+          "selected_move": "6i7h",
+          "total_nodes": 387
+        },
+        "root_tactical_effect": {
+          "depth_delta": 0,
+          "fallback_delta": 0,
+          "reference_delta": 0
+        },
+        "root_tactical_off": {
+          "completed_depth": 1,
+          "elapsed_seconds": 1.9973114000167698,
+          "fallback": false,
+          "selected_move": "6i7h",
+          "total_nodes": 156
+        }
+      }
+    ]
+  }
+}
