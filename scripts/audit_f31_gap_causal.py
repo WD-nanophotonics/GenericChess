@@ -160,7 +160,7 @@ def _direct(m, compiled, evaluator, state, *, nodes=None, seconds=None, tuning=N
     # prefix is intentionally unavailable for this audit.  Re-import the
     # position-only SFEN before direct root-search probes so the runtime sees
     # a self-consistent one-position history rather than a partial transcript.
-    if state.history and len(state.history) != len(state.repetition_counts):
+    if state.history:
         state = m["sfen_to_gc_state"](compiled, m["gc_to_sfen"](state, compiled))
     provider = m["NativeSemanticLegalityProvider"].try_create(compiled) if native_requested else None
     stats = m["SearchStatistics"]()
