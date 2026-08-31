@@ -1,0 +1,71 @@
+{
+  "constraints": [
+    "PRESERVE_H33A_EVIDENCE_BYTE_IDENTICALLY",
+    "NO_PRODUCTION_CHANGE",
+    "NO_TUNING_FROM_RESULTS",
+    "NO_QSEARCH_SET_REDUCTION",
+    "NO_QDEPTH_CHANGE",
+    "NO_NATIVE_REPAIR",
+    "NO_ALPHASHO_RERUN",
+    "NO_PAIRED_BENCHMARK",
+    "NO_ALPHA_CHESS"
+  ],
+  "frozen_inputs": {
+    "candidate_harness": {
+      "path": "scripts/audit_f33_check_discovery.py",
+      "sha256": "bebac88acbd17a33d9706709476599a815d060c68ea00d8fa6cd1d31e2bbc769"
+    },
+    "f32r1_result": {
+      "path": "tests/fixtures/f32r1_qsearch_exact_counterfactual.json",
+      "sha256": "0805a97b12de1fd011386a11e1e0a532e13c42b44266269671a2499f29259b88"
+    },
+    "h33a_manifest": {
+      "path": "tests/fixtures/f33_check_discovery_manifest.json",
+      "sha256": "14de91028470b9bf4d3a8933a73912fa1e0b2567fb70ca106e0a284d778378bf"
+    },
+    "h33a_result": {
+      "path": "tests/fixtures/f33_check_discovery_audit.json",
+      "sha256": "e65300346bb7be48bcf933a163d25f5700fe7c2b93efc5b577b491eee973f25c"
+    }
+  },
+  "host": {
+    "python": "3.12.0"
+  },
+  "kind": "F33_R1_RETENTION_TIMING_MANIFEST",
+  "manifest_sha256": "76199c945586864aa62182c0a56b866049bbafa4ec0f2a8c47c2b7f8d9f23a84",
+  "matrix": {
+    "fixed_nodes": [
+      512,
+      2048
+    ],
+    "timing_repetitions": 3,
+    "variants": [
+      "BASELINE",
+      "CANDIDATE_A_POST_PUSH_GAVE_CHECK",
+      "CANDIDATE_B_SEMANTIC_PREVIEW"
+    ],
+    "wall_repetitions": 1,
+    "wall_times_seconds": [
+      0.5,
+      2.0
+    ]
+  },
+  "pre_run_sandbox_sha": "f5289de44f10878c146e21d36557abc4e3b05b7f",
+  "retention_gates": {
+    "candidate_a_accessibility": "same complete accessibility gate as Candidate B",
+    "candidate_a_fallback_performance": "median per-root improvement >=15% at either budget and no regression worse than 10% at the other",
+    "candidate_b_accessibility": "depth gain >=3 at 0.50s or 2.00s, fallback reduction >=3 at 0.50s, or comparable first-iteration median gain >=15% at either control",
+    "candidate_b_performance": "median per-root improvement >=20% at either budget and no regression worse than 10% at the other",
+    "candidate_b_structural": "classification pushes reduction >=80% at both 512 and 2048",
+    "selection": "B if all B gates; else A if all A gates; else NONE"
+  },
+  "schema_version": 1,
+  "timing_protocol": {
+    "decision_aggregate": "median of the ten per-root speedup ratios",
+    "fixed_node_runs": "three independent repetitions per variant/budget/root",
+    "measured_region": "run_root_search only; no independent reference classifier",
+    "per_root_aggregation": "median elapsed seconds, NPS, and time to first completed iteration",
+    "per_root_speedup": "1 - candidate median elapsed / baseline median elapsed",
+    "whole_corpus_aggregate": "1 - sum(candidate per-root medians) / sum(baseline per-root medians)"
+  }
+}
