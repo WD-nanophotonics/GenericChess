@@ -6,6 +6,7 @@ import pytest
 
 from generic_chess import (
     Hands,
+    GameState,
     Position,
     assess_declaration,
     available_declarations,
@@ -93,6 +94,19 @@ def _claim_position(compiled, *, score_state: str = "win") -> Position:
     )
 
 
+def _state(compiled, position: Position, ply_count: int = 0) -> GameState:
+    from generic_chess.core.identity import position_identity_key
+
+    key = str(position_identity_key(position, compiled))
+    return GameState(
+        position=position,
+        ply_count=ply_count,
+        repetition_counts=((key, 1),),
+        terminal_status=TerminalResult(TerminalStatus.ONGOING),
+        history=(),
+    )
+
+
 def test_empty_declarations_are_backward_compatible_and_nonempty_changes_identity():
     base = build_western_chess_ruleset()
     assert "declarations" not in serialize_ruleset(base)
@@ -109,22 +123,37 @@ def test_assessment_scores_zone_and_hands_without_mutating_position():
     compiled = compile_ruleset_for_execution(_claim_ruleset())
     position = _claim_position(compiled)
     before = position
-    result = assess_declaration(position, compiled, "opaque_claim")
+    result = assess_declaration(_state(compiled, position), compiled, "opaque_claim")
     assert result.outcome == "WIN"
     assert result.weighted_score == 7
     assert position == before
-    assert [item.declaration_id for item in available_declarations(position, compiled)] == ["opaque_claim"]
+    assert [item.declaration_id for item in available_declarations(_state(compiled, position), compiled)] == ["opaque_claim"]
     assert compiled.ir.capabilities.native_executable is False
 
 
 def test_threshold_owner_and_failed_declaration_controls():
     compiled = compile_ruleset_for_execution(_claim_ruleset())
-    assert assess_declaration(_claim_position(compiled, score_state="restart"), compiled, "opaque_claim").outcome == "RESTART"
-    assert assess_declaration(_claim_position(compiled, score_state="loss"), compiled, "opaque_claim").outcome == "LOSS"
+    assert assess_declaration(_state(compiled, _claim_position(compiled, score_state="restart")), compiled, "opaque_claim").outcome == "RESTART"
+    assert assess_declaration(_state(compiled, _claim_position(compiled, score_state="loss")), compiled, "opaque_claim").outcome == "LOSS"
     with pytest.raises(InvalidDeclarationError):
-        assess_declaration(replace(_claim_position(compiled), side_to_move=1), compiled, "opaque_claim")
+        assess_declaration(_state(compiled, replace(_claim_position(compiled), side_to_move=1)), compiled, "opaque_claim")
     with pytest.raises(InvalidDeclarationError):
-        assess_declaration(_claim_position(compiled), compiled, "missing")
+        assess_declaration(_state(compiled, _claim_position(compiled)), compiled, "missing")
+    with pytest.raises(TypeError, match="GameState"):
+        assess_declaration(_claim_position(compiled), compiled, "opaque_claim")
+    with pytest.raises(TypeError, match="GameState"):
+        available_declarations(_claim_position(compiled), compiled)
+
+
+def test_game_state_identity_and_exact_ply_boundary():
+    compiled = compile_ruleset_for_execution(_claim_ruleset())
+    position = _claim_position(compiled)
+    assert assess_declaration(_state(compiled, position, 499), compiled, "opaque_claim").outcome == "WIN"
+    assert assess_declaration(_state(compiled, position, 500), compiled, "opaque_claim").outcome == "LOSS"
+    assert assess_declaration(_state(compiled, position, 501), compiled, "opaque_claim").outcome == "LOSS"
+    other = compile_ruleset_for_execution(build_western_chess_ruleset())
+    with pytest.raises(__import__("generic_chess").RuleSetMismatchError):
+        assess_declaration(_state(compiled, position), other, "opaque_claim")
 
 
 def test_declarations_do_not_change_board_action_sets_or_production_fingerprints():
@@ -213,7 +242,7 @@ def test_standard_shogi_certification_copy_uses_generic_declaration_semantics():
         side_to_move=0,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
     )
-    result = assess_declaration(position, compiled, "claim_owner_0")
+    result = assess_declaration(_state(compiled, position), compiled, "claim_owner_0")
     assert result.outcome == "WIN"
     assert result.weighted_score == 31
     board1 = [None] * 81
@@ -229,6 +258,130 @@ def test_standard_shogi_certification_copy_uses_generic_declaration_semantics():
         side_to_move=1,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
     )
-    assert assess_declaration(owner1, compiled, "claim_owner_1").outcome == "WIN"
+    assert assess_declaration(_state(compiled, owner1), compiled, "claim_owner_1").outcome == "WIN"
     assert compute_fingerprint(product) == "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345"
     assert product.metadata["nyugyoku_supported"] is False
+
+
+def _shogi_boundary_state(compiled, score: int, *, owner: int = 0, ply: int = 0, condition: str = "valid") -> GameState:
+    from generic_chess import Piece
+
+    board = [None] * 81
+    if owner == 0:
+        board[0] = Piece(1, "K", "K")
+        king_index = 54
+        ranks = (6, 7, 8)
+        own_hand = 0
+        opponent_hand = 1
+    else:
+        board[80] = Piece(0, "K", "K")
+        king_index = 26
+        ranks = (0, 1, 2)
+        own_hand = 1
+        opponent_hand = 0
+    if condition == "king_outside_zone":
+        king_index = 45 if owner == 0 else 35
+    board[king_index] = Piece(owner, "K", "K")
+    high = 5 if score >= 30 else 3
+    hand_count = score - (10 + 4 * high)
+    if hand_count < 0:
+        hand_count = 0
+    slots = [index for rank in ranks for index in range(rank * 9, (rank + 1) * 9) if board[index] is None]
+    if condition == "nine_pieces":
+        slots = slots[:9]
+    for index in slots[:high]:
+        board[index] = Piece(owner, "R", "R")
+    for index in slots[high:high + (9 if condition == "nine_pieces" else 10 - high)]:
+        board[index] = Piece(owner, "P", "P")
+    if condition == "checked":
+        if owner == 0:
+            board[63] = None
+            board[71] = Piece(owner, "P", "P")
+            board[72] = Piece(1 - owner, "R", "R")
+        else:
+            board[17] = None
+            board[35] = Piece(owner, "P", "P")
+            board[8] = Piece(1 - owner, "R", "R")
+    hands = [Hands.empty(), Hands.empty()]
+    hands[own_hand] = Hands((("P", hand_count),)) if hand_count else Hands.empty()
+    if condition == "opponent_hand":
+        hands[opponent_hand] = Hands((("R", 4),))
+    position = Position(
+        tuple(board),
+        hands=tuple(hands),
+        side_to_move=owner,
+        ruleset_fingerprint=compiled.ruleset_fingerprint,
+    )
+    return _state(compiled, position, ply)
+
+
+def test_standard_shogi_exact_official_thresholds_and_controls():
+    compiled = compile_ruleset_for_execution(
+        replace(build_standard_shogi_ruleset(), declarations=_shogi_certification_declarations())
+    )
+    for score, expected in ((23, "LOSS"), (24, "RESTART"), (30, "RESTART"), (31, "WIN")):
+        assert assess_declaration(_shogi_boundary_state(compiled, score), compiled, "claim_owner_0").outcome == expected
+    for owner in (0, 1):
+        assert assess_declaration(_shogi_boundary_state(compiled, 31, owner=owner), compiled, f"claim_owner_{owner}").outcome == "WIN"
+        assert assess_declaration(_shogi_boundary_state(compiled, 24, owner=owner), compiled, f"claim_owner_{owner}").outcome == "RESTART"
+    for ply, expected in ((499, "WIN"), (500, "LOSS"), (501, "LOSS")):
+        assert assess_declaration(_shogi_boundary_state(compiled, 31, ply=ply), compiled, "claim_owner_0").outcome == expected
+    assert assess_declaration(_shogi_boundary_state(compiled, 31, condition="nine_pieces"), compiled, "claim_owner_0").outcome == "LOSS"
+    assert assess_declaration(_shogi_boundary_state(compiled, 31, condition="king_outside_zone"), compiled, "claim_owner_0").outcome == "LOSS"
+    assert assess_declaration(_shogi_boundary_state(compiled, 31, condition="checked"), compiled, "claim_owner_0").outcome == "LOSS"
+    assert assess_declaration(_shogi_boundary_state(compiled, 31, condition="opponent_hand"), compiled, "claim_owner_0").weighted_score == 31
+
+
+def test_standard_shogi_declaration_assessment_is_state_immutable_and_available_filtering():
+    compiled = compile_ruleset_for_execution(
+        replace(build_standard_shogi_ruleset(), declarations=_shogi_certification_declarations())
+    )
+    state = _shogi_boundary_state(compiled, 31)
+    before = state
+    assert assess_declaration(state, compiled, "claim_owner_0").outcome == "WIN"
+    assert state == before
+    assert [a.outcome for a in available_declarations(state, compiled)] == ["WIN"]
+    losing = _shogi_boundary_state(compiled, 23)
+    assert available_declarations(losing, compiled) == ()
+    with pytest.raises(InvalidDeclarationError):
+        assess_declaration(state, compiled, "claim_owner_1")
+
+
+def test_standard_shogi_promotion_scoring_uses_base_family_weights():
+    compiled = compile_ruleset_for_execution(
+        replace(build_standard_shogi_ruleset(), declarations=_shogi_certification_declarations())
+    )
+    from generic_chess import Piece
+
+    state = _shogi_boundary_state(compiled, 31)
+    board = list(state.position.board)
+    board[55] = Piece(0, "R", "TR", True)
+    board[56] = Piece(0, "B", "TB", True)
+    board[60] = Piece(0, "P", "TP", True)
+    board[61] = Piece(0, "S", "TS", True)
+    promoted = replace(state, position=replace(state.position, board=tuple(board)))
+    result = assess_declaration(promoted, compiled, "claim_owner_0")
+    assert result.weighted_score == 31
+    assert result.outcome == "WIN"
+
+
+def test_real_continuous_check_witness_reaches_game_session_result():
+    from generic_chess.learning.shogi_certification import (
+        PERPETUAL_CHECK_MOVES,
+        PERPETUAL_CHECK_SFEN,
+        _seed_history,
+    )
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state, usi_to_gc_action
+    from generic_chess.session.session import GameSession
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    state = _seed_history(compiled, sfen_to_gc_state(compiled, PERPETUAL_CHECK_SFEN))
+    session = GameSession(compiled)
+    session._state = state
+    for usi in PERPETUAL_CHECK_MOVES:
+        session.submit(usi_to_gc_action(compiled, session.state, usi))
+    assert session.state.terminal_status.status is TerminalStatus.PERPETUAL_CHECK
+    assert session.state.terminal_status.winner == 1
+    assert session.result.status is SessionStatus.PERPETUAL_CHECK
+    assert session.result.winner == 1
+    assert "player 0 loses" in str(session.result)

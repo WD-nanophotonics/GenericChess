@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .attacks import is_in_check
+from .errors import ensure_ruleset_match
 from .position import GameState, Position
 
 
@@ -27,9 +28,7 @@ def _declarations(compiled):
 def _state_parts(state):
     if isinstance(state, GameState):
         return state.position, state.ply_count
-    if isinstance(state, Position):
-        return state, 0
-    raise TypeError("state must be a Position or GameState")
+    raise TypeError("declaration assessment requires authoritative GameState context")
 
 
 def _owner_matches(selector: str, piece_owner: int, actor: int) -> bool:
@@ -138,6 +137,7 @@ def _score(position: Position, declaration, actor: int) -> int:
 def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAssessment:
     """Assess one explicitly selected declaration without changing state."""
     position, ply = _state_parts(state)
+    ensure_ruleset_match(position, compiled)
     matches = [d for d in _declarations(compiled) if d.declaration_id == declaration_id]
     if not matches:
         raise InvalidDeclarationError(f"unknown declaration ID {declaration_id!r}")
@@ -167,6 +167,7 @@ def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAsses
 def available_declarations(state, compiled) -> tuple[DeclarationAssessment, ...]:
     """Return only non-losing declarations belonging to the side to move."""
     position, _ = _state_parts(state)
+    ensure_ruleset_match(position, compiled)
     out = []
     for declaration in _declarations(compiled):
         if declaration.owner != position.side_to_move:
