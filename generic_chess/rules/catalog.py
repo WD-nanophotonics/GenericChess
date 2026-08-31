@@ -4,10 +4,12 @@ from __future__ import annotations
 
 from .schema import RuleSet
 from .western_chess import build_western_chess_ruleset
+from .standard_shogi import build_standard_shogi_ruleset
 
 
 _BUILTIN_BUILDERS = {
     "western_chess": build_western_chess_ruleset,
+    "standard_shogi": build_standard_shogi_ruleset,
 }
 
 
@@ -27,4 +29,3 @@ def build_builtin_ruleset(name: str) -> RuleSet:
             f"unknown built-in ruleset {name!r}; expected one of {builtin_ruleset_names()}"
         ) from exc
     return builder()
-

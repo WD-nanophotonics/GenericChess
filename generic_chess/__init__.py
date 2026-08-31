@@ -28,6 +28,7 @@ from .generation.config import GeneratorConfig
 from .rules.compiler import compile_ruleset, compile_ruleset_for_execution
 from .rules.catalog import build_builtin_ruleset, builtin_ruleset_names
 from .rules.western_chess import build_western_chess_ruleset
+from .rules.standard_shogi import build_standard_shogi_ruleset
 from .rules.schema import RuleSet
 from .rules.serialization import deserialize_ruleset, serialize_ruleset
 from .core.transition import apply_action, initial_state, legal_successors
@@ -39,6 +40,7 @@ __all__ = [
     "build_builtin_ruleset",
     "builtin_ruleset_names",
     "build_western_chess_ruleset",
+    "build_standard_shogi_ruleset",
     "initial_state",
     "legal_actions",
     "legal_successors",
