@@ -1,0 +1,42 @@
+{
+  "candidate": "R37C",
+  "checked_original_roots_and_children": 290,
+  "generic_transfer_contract": {
+    "no_dynamic_action_enumeration": true,
+    "no_game_or_piece_branches": true,
+    "passed": true,
+    "supported_rule_families": [
+      "SHOGI_LIKE",
+      "WESTERN_CHESS_LIKE",
+      "MIXED_MECHANIC"
+    ],
+    "witness_score_identity": true
+  },
+  "implementation_path": "scripts/audit_f38_activity_anchor_prototype.py",
+  "mismatches": [],
+  "no_candidate_evaluator_implementation_call": true,
+  "production_diff_zero": true,
+  "schema_version": 1,
+  "score_identity": true,
+  "status": "PASS",
+  "witness_rows": [
+    {
+      "equal": true,
+      "group": "SHOGI_LIKE",
+      "oracle": 1428,
+      "prototype": 1428
+    },
+    {
+      "equal": true,
+      "group": "WESTERN_CHESS_LIKE",
+      "oracle": 2003,
+      "prototype": 2003
+    },
+    {
+      "equal": true,
+      "group": "MIXED_MECHANIC",
+      "oracle": 1490,
+      "prototype": 1490
+    }
+  ]
+}
