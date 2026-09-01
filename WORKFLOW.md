@@ -126,3 +126,13 @@ sandbox SHA, and send only its repository/commit/path reference. An untracked,
 unpublished, or modified large local report is rejected before any browser is
 opened. Raw transient output still stays out of Git; summarize it into a durable
 audit report first.
+
+## Cross-machine ownership
+
+The public `workflow-state` branch is a separate, fast-forward-only control
+history. It does not change `master` or `sandbox`. A machine must run
+`machine-setup`, then own the latest `CLAIMED` capsule before any mutating flow
+command succeeds. Release is allowed only at a clean published checkpoint with
+an empty Courier queue and no browser owner. See `MIGRATION.md` for setup and
+handoff commands. Chat URLs, browser profiles, credentials, absolute paths, and
+Codex task IDs never enter the branch.

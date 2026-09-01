@@ -37,3 +37,7 @@ Read `WORKFLOW.md` before changing this repository.
     by `CODEX_THREAD_ID`, and wait for its signed resolution. Do not create a
     replacement task or request. Only the claiming Supervisor may review the
     single `resend_once`, and recovery responses never authorize promotion.
+13. When `.workflow-state-enabled` exists, only the machine which owns the
+    remote `workflow-state` capsule may run mutating flow commands. Cross-machine
+    transfer must use `handoff-release` and `handoff-claim`; never copy runtime
+    directories or force-push ownership.

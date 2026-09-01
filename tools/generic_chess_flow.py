@@ -31,6 +31,10 @@ CONTROL_STATUSES = {"CONTINUE", "COMPLETE", "BLOCKED"}
 PROMOTION_VALUES = {"APPROVE", "HOLD"}
 WORK_ORDER_ID = re.compile(r"(?m)^WORK_ORDER_ID=([^\s]+)\s*$")
 INLINE_CHAT_REFERENCE_THRESHOLD = 24 * 1024
+HANDOFF_BRANCH = "workflow-state"
+HANDOFF_SCHEMA = "generic-chess-handoff-v1"
+HANDOFF_HOST = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
+HANDOFF_STAGES = {"SUBMIT_CLOSEOUT", "REQUEST_NEXT_ORDER", "COMPLETE"}
 
 
 class FlowError(RuntimeError):
@@ -144,6 +148,162 @@ def state_path(root: Path) -> Path:
     return runtime_dir(root, create=False) / "session.json"
 
 
+def machine_config_path() -> Path:
+    base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+    return base / "GenericChess" / "machine.json"
+
+
+def load_machine(*, required: bool = True) -> dict[str, Any]:
+    path = machine_config_path()
+    if not path.is_file():
+        if required:
+            raise FlowError("machine identity is not configured; run machine-setup --host-id <id>")
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise FlowError(f"invalid machine identity: {path}") from exc
+    if (not isinstance(value, dict) or value.get("schema") != "generic-chess-machine-v1"
+            or not HANDOFF_HOST.fullmatch(str(value.get("host_id", "")))):
+        raise FlowError(f"invalid machine identity: {path}")
+    return value
+
+
+def save_machine(host_id: str) -> dict[str, Any]:
+    if not HANDOFF_HOST.fullmatch(host_id):
+        raise FlowError("host ID must contain only letters, numbers, dot, underscore, or hyphen")
+    path = machine_config_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    existing = load_machine(required=False)
+    if existing and existing.get("host_id") != host_id:
+        raise FlowError(f"this machine is already registered as {existing.get('host_id')}")
+    value = existing or {
+        "schema": "generic-chess-machine-v1",
+        "host_id": host_id,
+        "machine_id": uuid.uuid4().hex,
+        "registered_at": int(time.time()),
+    }
+    temporary = path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    os.replace(temporary, path)
+    return value
+
+
+def handoff_repo_path(root: Path) -> Path:
+    return runtime_dir(root) / "workflow-state-repo"
+
+
+def _remote_handoff_sha(root: Path) -> str | None:
+    result = run(
+        ("git", "-c", f"safe.directory={root.resolve()}", "ls-remote", "--heads", "origin", HANDOFF_BRANCH),
+        cwd=root, check=False,
+    )
+    if result.returncode:
+        raise FlowError(f"cannot read remote workflow ownership: {(result.stderr or result.stdout).strip()}")
+    line = result.stdout.strip()
+    return line.split()[0] if line else None
+
+
+def _configure_handoff_repo(repo: Path, product_root: Path) -> None:
+    git(repo, "config", "user.name", "GenericChess Flow")
+    git(repo, "config", "user.email", "generic-chess-flow@local.invalid")
+    git(repo, "config", "core.hooksPath", str((product_root / ".githooks").resolve()))
+
+
+def ensure_handoff_repo(root: Path, *, initialize: dict[str, Any] | None = None) -> Path:
+    product_root = root
+    hooks_root = sandbox_root(root)
+    repo = handoff_repo_path(root)
+    remote_url = git(product_root, "remote", "get-url", "origin")
+    remote_sha = _remote_handoff_sha(product_root)
+    if not (repo / ".git").exists():
+        if remote_sha:
+            repo.parent.mkdir(parents=True, exist_ok=True)
+            run(("git", "clone", "--single-branch", "--branch", HANDOFF_BRANCH,
+                 remote_url, str(repo)), cwd=repo.parent)
+        else:
+            if initialize is None:
+                raise FlowError("remote workflow-state branch is not initialized")
+            repo.mkdir(parents=True, exist_ok=True)
+            git(repo, "init", "-b", HANDOFF_BRANCH)
+            git(repo, "remote", "add", "origin", remote_url)
+            _configure_handoff_repo(repo, hooks_root)
+            _write_handoff_files(repo, initialize, None)
+            git(repo, "add", "handoff.json")
+            git(repo, "commit", "-m", "Initialize GenericChess workflow ownership")
+            env = os.environ.copy(); env["GENERIC_CHESS_FLOW_PUSH"] = "handoff"
+            git(repo, "push", "-u", "origin", f"{HANDOFF_BRANCH}:{HANDOFF_BRANCH}", env=env)
+            return repo
+    _configure_handoff_repo(repo, hooks_root)
+    git(repo, "fetch", "origin", HANDOFF_BRANCH)
+    local_sha = sha(repo)
+    remote_sha = sha(repo, f"origin/{HANDOFF_BRANCH}")
+    if local_sha != remote_sha:
+        if git_ok(repo, "merge-base", "--is-ancestor", local_sha, remote_sha):
+            git(repo, "merge", "--ff-only", f"origin/{HANDOFF_BRANCH}")
+        elif not git_ok(repo, "merge-base", "--is-ancestor", remote_sha, local_sha):
+            raise FlowError("local workflow-state history diverged; preserve it for audit and re-clone")
+    return repo
+
+
+def load_handoff(repo: Path) -> dict[str, Any]:
+    path = repo / "handoff.json"
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise FlowError(f"invalid handoff capsule: {path}") from exc
+    if (not isinstance(value, dict) or value.get("schema") != HANDOFF_SCHEMA
+            or value.get("state") not in {"CLAIMED", "RELEASED"}
+            or not isinstance(value.get("generation"), int)):
+        raise FlowError(f"invalid handoff capsule: {path}")
+    return value
+
+
+def _write_handoff_files(repo: Path, capsule: dict[str, Any], closeout: str | None) -> None:
+    (repo / "handoff.json").write_text(
+        json.dumps(capsule, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    payload = repo / "closeout.md"
+    if closeout is None:
+        payload.unlink(missing_ok=True)
+    else:
+        payload.write_text(closeout.rstrip() + "\n", encoding="utf-8")
+
+
+def commit_handoff(root: Path, repo: Path, capsule: dict[str, Any], *,
+                   closeout: str | None, message: str) -> None:
+    _write_handoff_files(repo, capsule, closeout)
+    git(repo, "add", "-A")
+    git(repo, "commit", "-m", message)
+    env = os.environ.copy(); env["GENERIC_CHESS_FLOW_PUSH"] = "handoff"
+    git(repo, "push", "origin", f"{HANDOFF_BRANCH}:{HANDOFF_BRANCH}", env=env)
+    git(repo, "fetch", "origin", HANDOFF_BRANCH)
+    if sha(repo) != sha(repo, f"origin/{HANDOFF_BRANCH}"):
+        raise FlowError("workflow-state push did not synchronize exactly")
+
+
+def require_handoff_owner(root: Path) -> None:
+    marker = root / ".workflow-state-enabled"
+    if not marker.is_file():
+        if not (root / ".git").exists():
+            return
+        try:
+            marker = sandbox_root(root) / ".workflow-state-enabled"
+        except FlowError:
+            return
+        if not marker.is_file():
+            return
+    machine = load_machine()
+    repo = ensure_handoff_repo(root)
+    capsule = load_handoff(repo)
+    owner = capsule.get("owner")
+    if (capsule.get("state") != "CLAIMED" or not isinstance(owner, dict)
+            or owner.get("machine_id") != machine.get("machine_id")
+            or owner.get("host_id") != machine.get("host_id")):
+        raise FlowError("this machine does not own the remote GenericChess workflow")
+
+
 def load_state(root: Path, *, required: bool = True) -> dict[str, Any]:
     path = state_path(root)
     if not path.exists():
@@ -167,6 +327,8 @@ def active_state(root: Path) -> dict[str, Any]:
 
 
 def require_worker_write_authority(state: dict[str, Any], root: Path | None = None) -> None:
+    if root is not None:
+        require_handoff_owner(root)
     if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
         escalation_id = state.get("escalation_id")
         if root is not None and isinstance(escalation_id, str):
@@ -480,6 +642,7 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
 
 
 def command_start(root: Path, args: argparse.Namespace) -> None:
+    require_handoff_owner(root)
     previous = load_state(root, required=False)
     if previous.get("active"):
         if previous.get("mode") != args.mode:
@@ -525,6 +688,7 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
     """Start or recover the one-line Courier workflow without another state machine."""
     if branch(root) != "sandbox":
         raise FlowError("work must be run from the sandbox worktree")
+    require_handoff_owner(root)
     state = load_state(root, required=False)
     if state.get("active") is True:
         if state.get("mode") != "courier":
@@ -534,6 +698,13 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
         if state.get("active_request_directory"):
             command_recover(root, _args)
             return
+        if state.get("resume_stage") == "SUBMIT_CLOSEOUT":
+            report = state.get("handoff_closeout_path")
+            if isinstance(report, str) and Path(report).is_file():
+                print(f"NEXT_ACTION=submit the preserved closeout with --report-file {report}")
+                print(f"WORK_ORDER_ID={state.get('last_work_order_id')}")
+                print(f"BUSINESS_CANDIDATE_SHA={state.get('business_candidate_sha')}")
+                return
         response_path = state.get("last_response_path")
         if isinstance(response_path, str) and Path(response_path).is_file():
             print(Path(response_path).read_text(encoding="utf-8-sig"))
@@ -580,7 +751,10 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
         raise FlowError("sandbox push completed but local and remote SHA differ")
     tested = state.setdefault("tested_shas", {})
     tested[sha(root)] = targets or ["<full-pytest>"]
-    state["last_published_sha"] = sha(root)
+    if getattr(args, "infrastructure", False):
+        state["framework_published_sha"] = sha(root)
+    else:
+        state["last_published_sha"] = sha(root)
     save_state(root, state)
     print(f"PUBLISHED_SANDBOX_SHA={sha(root)}")
 
@@ -898,6 +1072,7 @@ def command_promote(root: Path, args: argparse.Namespace) -> None:
 
 
 def command_finish(root: Path, _args: argparse.Namespace) -> None:
+    require_handoff_owner(root)
     state = active_state(root)
     trees = worktrees(root)
     for name in ("master", "sandbox"):
@@ -914,10 +1089,247 @@ def command_finish(root: Path, _args: argparse.Namespace) -> None:
     print("GENERIC_CHESS_FLOW_FINISHED")
 
 
+def courier_repository(root: Path) -> Path:
+    return courier_launcher(root).parent.parent.resolve()
+
+
+def courier_quiescence(root: Path) -> dict[str, Any]:
+    value = courier(root, "courier_quiescence", allow_failure=True)
+    if value.get("event") != "courier_quiescence" or value.get("quiescent") is not True:
+        raise FlowError(f"ChatCourier is not quiescent: {json.dumps(value, ensure_ascii=False)}")
+    return value
+
+
+def _capsule_repository_state(root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+    trees = worktrees(root)
+    courier_root = courier_repository(root)
+    fetch(courier_root, "sandbox")
+    courier_sha = sha(courier_root)
+    remote_courier_sha = sha(courier_root, "origin/sandbox")
+    if courier_sha != remote_courier_sha:
+        raise FlowError(
+            f"Courier must equal origin/sandbox before handoff: local={courier_sha} remote={remote_courier_sha}"
+        )
+    caps = courier_capabilities(root)
+    generic = {
+        "repository": git(root, "remote", "get-url", "origin"),
+        "master_sha": sha(trees["master"]),
+        "sandbox_sha": sha(trees["sandbox"]),
+    }
+    courier_info = {
+        "repository": git(courier_root, "remote", "get-url", "origin"),
+        "branch": "sandbox",
+        "sha": courier_sha,
+        "build_id": caps.get("courier_build_id"),
+    }
+    return generic, courier_info
+
+
+def _portable_closeout(path_value: str | None) -> tuple[str | None, str | None]:
+    if path_value is None:
+        return None, None
+    path = Path(path_value).resolve()
+    if not path.is_file():
+        raise FlowError(f"closeout file does not exist: {path}")
+    data = path.read_bytes()
+    if len(data) > 32 * 1024:
+        raise FlowError("handoff closeout exceeds 32 KiB; publish it and hand off a repository path")
+    try:
+        text = data.decode("utf-8-sig")
+    except UnicodeDecodeError as exc:
+        raise FlowError("handoff closeout must be UTF-8") from exc
+    forbidden = (
+        r"https://(?:www\.)?chatgpt\.com/",
+        r"(?i)C:\\Users\\",
+        r"(?i)CODEX_THREAD_ID",
+        r"(?i)(?:password|private[_ -]?key|access[_ -]?token)\s*[:=]",
+    )
+    for pattern in forbidden:
+        if re.search(pattern, text):
+            raise FlowError(f"closeout contains non-portable or sensitive text matching {pattern}")
+    text = text.rstrip() + "\n"
+    return text, hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def command_machine_setup(root: Path, args: argparse.Namespace) -> None:
+    machine = save_machine(args.host_id)
+    remote_sha = _remote_handoff_sha(root)
+    if remote_sha is None:
+        generic, courier_info = _capsule_repository_state(root)
+        capsule = {
+            "schema": HANDOFF_SCHEMA,
+            "generation": 0,
+            "state": "CLAIMED",
+            "owner": {
+                "host_id": machine["host_id"],
+                "machine_id": machine["machine_id"],
+            },
+            "target_host_id": None,
+            "generic": generic,
+            "courier": courier_info,
+            "workflow": {"resume_stage": "REQUEST_NEXT_ORDER"},
+            "created_at": int(time.time()),
+        }
+        ensure_handoff_repo(root, initialize=capsule)
+    else:
+        ensure_handoff_repo(root)
+    print(json.dumps({"machine": machine, "workflow_state_initialized": True},
+                     indent=2, sort_keys=True))
+
+
+def command_handoff_status(root: Path, _args: argparse.Namespace) -> None:
+    repo = ensure_handoff_repo(root)
+    value = load_handoff(repo)
+    print(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True))
+
+
+def command_handoff_release(root: Path, args: argparse.Namespace) -> None:
+    if not HANDOFF_HOST.fullmatch(args.to):
+        raise FlowError("target host ID is invalid")
+    require_handoff_owner(root)
+    state = active_state(root)
+    trees = worktrees(root)
+    for name in ("master", "sandbox"):
+        require_clean(trees[name])
+        require_synced(trees[name], name)
+    if state.get("active_request_directory"):
+        raise FlowError("cannot release while a Courier request needs reconciliation")
+    if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
+        raise FlowError("cannot release with an unresolved escalation")
+    courier_quiescence(root)
+    status = state.get("chat_control", {}).get("GENERICCHESS_STATUS")
+    if status == "COMPLETE":
+        stage = "COMPLETE"
+    elif state.get("work_order_active") is True:
+        stage = "SUBMIT_CLOSEOUT"
+    else:
+        stage = "REQUEST_NEXT_ORDER"
+    closeout, closeout_sha = _portable_closeout(args.closeout_file)
+    if stage == "SUBMIT_CLOSEOUT" and closeout is None:
+        raise FlowError("an active work order requires --closeout-file at handoff")
+    generic, courier_info = _capsule_repository_state(root)
+    candidate = (state.get("business_candidate_sha") or state.get("last_published_sha")
+                 or generic["sandbox_sha"])
+    tested = state.get("tested_shas", {}).get(candidate, [])
+    generic["business_candidate_sha"] = candidate
+    repo = ensure_handoff_repo(root)
+    previous = load_handoff(repo)
+    capsule = {
+        "schema": HANDOFF_SCHEMA,
+        "generation": int(previous["generation"]) + 1,
+        "state": "RELEASED",
+        "owner": None,
+        "target_host_id": args.to,
+        "generic": generic,
+        "courier": courier_info,
+        "workflow": {
+            "mode": state.get("mode"),
+            "resume_stage": stage,
+            "work_order_active": bool(state.get("work_order_active")),
+            "last_work_order_id": state.get("last_work_order_id"),
+            "chat_control": state.get("chat_control", {}),
+            "work_request_token": state.get("work_request_token"),
+            "tested_candidate_targets": tested,
+            "closeout_sha256": closeout_sha,
+        },
+        "created_at": int(time.time()),
+    }
+    commit_handoff(root, repo, capsule, closeout=closeout,
+                   message=f"Release GenericChess workflow to {args.to}")
+    state["handoff_released"] = True
+    state["handoff_generation"] = capsule["generation"]
+    state["resume_stage"] = stage
+    save_state(root, state)
+    print(json.dumps(capsule, ensure_ascii=False, indent=2, sort_keys=True))
+
+
+def command_handoff_claim(root: Path, args: argparse.Namespace) -> None:
+    machine = save_machine(args.host_id)
+    repo = ensure_handoff_repo(root)
+    capsule = load_handoff(repo)
+    if capsule.get("state") != "RELEASED":
+        raise FlowError("workflow is not released")
+    if capsule.get("target_host_id") not in {args.host_id, "*"}:
+        raise FlowError(f"workflow is released to {capsule.get('target_host_id')}, not {args.host_id}")
+    trees = worktrees(root)
+    for name in ("master", "sandbox"):
+        require_clean(trees[name])
+        require_synced(trees[name], name)
+        expected = capsule["generic"][f"{name}_sha"]
+        if sha(trees[name]) != expected:
+            raise FlowError(f"{name} SHA does not match handoff capsule")
+    courier_root = courier_repository(root)
+    fetch(courier_root, "sandbox")
+    if sha(courier_root) != capsule["courier"]["sha"] or not synced(courier_root, "sandbox"):
+        raise FlowError("Courier checkout does not match the handoff capsule")
+    caps = courier_capabilities(root)
+    if PROJECT_ID not in caps.get("projects", []):
+        raise FlowError("ChatCourier project GENERICCHESS is not registered on this machine")
+    courier_quiescence(root)
+
+    claimed = dict(capsule)
+    claimed["generation"] = int(capsule["generation"]) + 1
+    claimed["state"] = "CLAIMED"
+    claimed["owner"] = {"host_id": args.host_id, "machine_id": machine["machine_id"]}
+    claimed["target_host_id"] = None
+    claimed["created_at"] = int(time.time())
+    closeout_path = repo / "closeout.md"
+    closeout = closeout_path.read_text(encoding="utf-8") if closeout_path.is_file() else None
+    expected_closeout = capsule.get("workflow", {}).get("closeout_sha256")
+    if expected_closeout and hashlib.sha256((closeout or "").encode("utf-8")).hexdigest() != expected_closeout:
+        raise FlowError("handoff closeout payload hash does not match")
+    commit_handoff(root, repo, claimed, closeout=closeout,
+                   message=f"Claim GenericChess workflow on {args.host_id}")
+
+    workflow = claimed.get("workflow", {})
+    candidate = claimed["generic"].get("business_candidate_sha")
+    local_closeout = None
+    if closeout is not None:
+        local_path = runtime_dir(root) / "handoff-closeout.md"
+        local_path.write_text(closeout, encoding="utf-8")
+        local_closeout = str(local_path)
+    restored = {
+        "active": workflow.get("resume_stage") != "COMPLETE",
+        "mode": workflow.get("mode", "courier"),
+        "base_master_sha": claimed["generic"]["master_sha"],
+        "base_sandbox_sha": claimed["generic"]["sandbox_sha"],
+        "active_request_directory": None,
+        "work_order_active": bool(workflow.get("work_order_active")),
+        "last_work_order_id": workflow.get("last_work_order_id"),
+        "last_published_sha": candidate,
+        "business_candidate_sha": candidate,
+        "chat_control": workflow.get("chat_control", {}),
+        "work_request_token": workflow.get("work_request_token"),
+        "tested_shas": {candidate: workflow.get("tested_candidate_targets", [])} if candidate else {},
+        "recovery_state": "IDLE",
+        "recovery_attempts": 0,
+        "recovery_timeline": [],
+        "last_probe": None,
+        "escalation_id": None,
+        "resume_stage": workflow.get("resume_stage"),
+        "handoff_closeout_path": local_closeout,
+        "handoff_generation": claimed["generation"],
+    }
+    save_state(root, restored)
+    print(json.dumps({"claimed": claimed, "restored_session": restored},
+                     ensure_ascii=False, indent=2, sort_keys=True))
+
+
 def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(prog="generic-chess-flow")
     sub = value.add_subparsers(dest="command", required=True)
     sub.add_parser("status").set_defaults(handler=command_status)
+    machine = sub.add_parser("machine-setup")
+    machine.add_argument("--host-id", required=True)
+    machine.set_defaults(handler=command_machine_setup)
+    sub.add_parser("handoff-status").set_defaults(handler=command_handoff_status)
+    release = sub.add_parser("handoff-release")
+    release.add_argument("--to", required=True)
+    release.add_argument("--closeout-file")
+    release.set_defaults(handler=command_handoff_release)
+    claim_handoff = sub.add_parser("handoff-claim")
+    claim_handoff.add_argument("--host-id", required=True)
+    claim_handoff.set_defaults(handler=command_handoff_claim)
     sub.add_parser("work").set_defaults(handler=command_work)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)
@@ -925,6 +1337,8 @@ def parser() -> argparse.ArgumentParser:
     start.set_defaults(handler=command_start)
     publish = sub.add_parser("publish")
     publish.add_argument("--tests", nargs="*")
+    publish.add_argument("--infrastructure", action="store_true",
+                         help="publish workflow infrastructure without replacing the business candidate")
     publish.set_defaults(handler=command_publish)
     heavy = sub.add_parser("heavy")
     heavy.add_argument("argv", nargs=argparse.REMAINDER)

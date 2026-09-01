@@ -16,10 +16,16 @@ do
         exit 1
       fi
       ;;
+    refs/heads/workflow-state)
+      if [ "${GENERIC_CHESS_FLOW_PUSH:-}" != "handoff" ]; then
+        echo "GENERIC_CHESS_WORKFLOW_STATE_PUSH_REQUIRES_HANDOFF" >&2
+        exit 1
+      fi
+      ;;
     refs/tags/archive/*)
       ;;
     *)
-      echo "GENERIC_CHESS_ONLY_MASTER_SANDBOX_AND_ARCHIVE_TAGS_SUPPORTED: $remote_ref" >&2
+      echo "GENERIC_CHESS_ONLY_MASTER_SANDBOX_WORKFLOW_STATE_AND_ARCHIVE_TAGS_SUPPORTED: $remote_ref" >&2
       exit 1
       ;;
   esac

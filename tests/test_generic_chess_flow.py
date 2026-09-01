@@ -544,6 +544,148 @@ def test_active_session_cannot_change_authority_mode(monkeypatch, tmp_path):
         flow.command_start(tmp_path, SimpleNamespace(mode="local", message_file=None))
 
 
+def test_portable_closeout_is_normalized_and_rejects_local_or_chat_data(tmp_path):
+    report = tmp_path / "closeout.md"
+    report.write_text("F41 complete at d50aff9.\n", encoding="utf-8")
+    text, digest = flow._portable_closeout(str(report))
+    assert text == "F41 complete at d50aff9.\n"
+    assert len(digest) == 64
+
+    report.write_text(r"local C:\Users\person\secret", encoding="utf-8")
+    with pytest.raises(flow.FlowError, match="non-portable"):
+        flow._portable_closeout(str(report))
+    report.write_text("https://chatgpt.com/c/private", encoding="utf-8")
+    with pytest.raises(flow.FlowError, match="non-portable"):
+        flow._portable_closeout(str(report))
+
+
+def test_remote_owner_mismatch_blocks_mutation(monkeypatch, tmp_path):
+    (tmp_path / ".workflow-state-enabled").write_text("v1", encoding="utf-8")
+    repo = tmp_path / "state"
+    repo.mkdir()
+    (repo / "handoff.json").write_text(json.dumps({
+        "schema": flow.HANDOFF_SCHEMA,
+        "generation": 2,
+        "state": "CLAIMED",
+        "owner": {"host_id": "other", "machine_id": "other-id"},
+    }), encoding="utf-8")
+    monkeypatch.setattr(flow, "load_machine", lambda required=True: {
+        "host_id": "primary", "machine_id": "primary-id"})
+    monkeypatch.setattr(flow, "ensure_handoff_repo", lambda _root: repo)
+
+    with pytest.raises(flow.FlowError, match="does not own"):
+        flow.require_handoff_owner(tmp_path)
+
+
+def test_release_capsule_preserves_business_candidate_without_paths(monkeypatch, tmp_path):
+    master = tmp_path / "master"; master.mkdir()
+    sandbox = tmp_path / "sandbox"; sandbox.mkdir()
+    report = tmp_path / "report.md"; report.write_text("F41 closeout\n", encoding="utf-8")
+    state = {
+        "active": True, "mode": "courier", "active_request_directory": None,
+        "recovery_state": "RECOVERED", "work_order_active": True,
+        "last_work_order_id": "F41", "last_published_sha": "d" * 40,
+        "tested_shas": {"d" * 40: ["tests/test_f41.py"]},
+        "chat_control": {"GENERICCHESS_STATUS": "CONTINUE"},
+        "work_request_token": "token",
+    }
+    repo = tmp_path / "state"; repo.mkdir()
+    captured = {}
+    monkeypatch.setattr(flow, "require_handoff_owner", lambda _root: None)
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "courier_quiescence", lambda _root: {"quiescent": True})
+    monkeypatch.setattr(flow, "_capsule_repository_state", lambda _root: (
+        {"repository": "https://example/generic", "master_sha": "a" * 40,
+         "sandbox_sha": "f" * 40},
+        {"repository": "https://example/courier", "branch": "sandbox",
+         "sha": "c" * 40, "build_id": "build"},
+    ))
+    monkeypatch.setattr(flow, "ensure_handoff_repo", lambda _root: repo)
+    monkeypatch.setattr(flow, "load_handoff", lambda _repo: {
+        "schema": flow.HANDOFF_SCHEMA, "generation": 4, "state": "CLAIMED"})
+    monkeypatch.setattr(flow, "commit_handoff", lambda _root, _repo, capsule, **kwargs:
+                        captured.update(capsule=capsule, closeout=kwargs["closeout"]))
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+
+    flow.command_handoff_release(
+        tmp_path, SimpleNamespace(to="standby", closeout_file=str(report)))
+    capsule = captured["capsule"]
+    assert capsule["state"] == "RELEASED"
+    assert capsule["generation"] == 5
+    assert capsule["generic"]["business_candidate_sha"] == "d" * 40
+    assert capsule["workflow"]["resume_stage"] == "SUBMIT_CLOSEOUT"
+    serialized = json.dumps(capsule)
+    assert "C:\\" not in serialized and "THREAD" not in serialized
+
+
+def test_courier_non_quiescent_state_blocks_handoff(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: {
+        "event": "courier_quiescence", "ok": False, "quiescent": False,
+        "queue_entries": [{"request_id": "P-1"}],
+    })
+    with pytest.raises(flow.FlowError, match="not quiescent"):
+        flow.courier_quiescence(tmp_path)
+
+
+def test_claim_restores_exact_closeout_stage_after_remote_claim(monkeypatch, tmp_path):
+    master = tmp_path / "master"; master.mkdir()
+    sandbox = tmp_path / "sandbox"; sandbox.mkdir()
+    courier = tmp_path / "courier"; courier.mkdir()
+    repo = tmp_path / "state"; repo.mkdir()
+    closeout = "F41 closeout\n"
+    (repo / "closeout.md").write_text(closeout, encoding="utf-8")
+    capsule = {
+        "schema": flow.HANDOFF_SCHEMA, "generation": 6, "state": "RELEASED",
+        "owner": None, "target_host_id": "standby",
+        "generic": {"master_sha": "a" * 40, "sandbox_sha": "f" * 40,
+                    "business_candidate_sha": "d" * 40},
+        "courier": {"sha": "c" * 40},
+        "workflow": {
+            "mode": "courier", "resume_stage": "SUBMIT_CLOSEOUT",
+            "work_order_active": True, "last_work_order_id": "F41",
+            "chat_control": {"GENERICCHESS_STATUS": "CONTINUE"},
+            "tested_candidate_targets": ["tests/test_f41.py"],
+            "closeout_sha256": __import__("hashlib").sha256(closeout.encode()).hexdigest(),
+        },
+    }
+    saved = {}
+    monkeypatch.setattr(flow, "save_machine", lambda host_id: {
+        "host_id": host_id, "machine_id": "standby-id"})
+    monkeypatch.setattr(flow, "ensure_handoff_repo", lambda _root: repo)
+    monkeypatch.setattr(flow, "load_handoff", lambda _repo: capsule)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda path, ref="HEAD": {
+        master: "a" * 40, sandbox: "f" * 40, courier: "c" * 40}[path])
+    monkeypatch.setattr(flow, "courier_repository", lambda _root: courier)
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "synced", lambda *_args: True)
+    monkeypatch.setattr(flow, "courier_capabilities", lambda _root: {
+        "projects": [flow.PROJECT_ID]})
+    monkeypatch.setattr(flow, "courier_quiescence", lambda _root: {"quiescent": True})
+    monkeypatch.setattr(flow, "commit_handoff", lambda *_args, **_kwargs: None)
+    runtime = tmp_path / "runtime"; runtime.mkdir()
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: runtime)
+    monkeypatch.setattr(flow, "save_state", lambda _root, value: saved.update(value))
+
+    flow.command_handoff_claim(tmp_path, SimpleNamespace(host_id="standby"))
+    assert saved["last_work_order_id"] == "F41"
+    assert saved["business_candidate_sha"] == "d" * 40
+    assert saved["resume_stage"] == "SUBMIT_CLOSEOUT"
+    assert Path(saved["handoff_closeout_path"]).read_text(encoding="utf-8") == closeout
+
+
+def test_pre_push_hook_allows_only_flow_owned_fast_forward_state_push():
+    hook = (ROOT / ".githooks" / "pre-push").read_text(encoding="utf-8")
+    assert "refs/heads/workflow-state" in hook
+    assert 'GENERIC_CHESS_FLOW_PUSH:-}' in hook
+    assert "GENERIC_CHESS_NON_FAST_FORWARD_PUSH_FORBIDDEN" in hook
+
+
 def test_commands_reject_finished_session(monkeypatch, tmp_path):
     monkeypatch.setattr(
         flow, "load_state", lambda _root, required=True: {"active": False, "mode": "courier"}
