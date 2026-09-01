@@ -1,0 +1,290 @@
+{
+  "authoritative_rulesets": [
+    "Western Chess",
+    "Standard Shogi"
+  ],
+  "baseline": {
+    "f39_final": "8df63494e9f4f1228d78b851e5fe8866d567fe3b",
+    "master": "44fce4f9dfeee0ef9480597c7ab34195db984100",
+    "product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+    "sandbox_before_f40": "8df63494e9f4f1228d78b851e5fe8866d567fe3b",
+    "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+  },
+  "boundary_mapping": {
+    "FEATURE_UTILIZATION_GAP_PRIMARY": "F41_RULE_FEATURE_UTILIZATION_PROTOTYPE",
+    "MATERIAL_AND_FEATURE_UTILIZATION_GAP": "F41_RULE_DERIVED_MATERIAL_PRIOR_AND_SIGNAL_UTILIZATION_CORRECTIVE",
+    "MATERIAL_PRIOR_HEALTHY_STRUCTURAL_REPRESENTATION_GAP": "F41_LEARNABLE_STRUCTURAL_FEATURE_SCHEMA_REASSESSMENT",
+    "MATERIAL_PRIOR_PATHOLOGY_PRIMARY": "F41_RULE_DERIVED_MATERIAL_PRIOR_CORRECTIVE",
+    "MIXED_OR_UNRESOLVED": "F41_GENERIC_EVALUATOR_ARCHITECTURE_REASSESSMENT"
+  },
+  "classification_precedence": [
+    "MATERIAL_PRIOR_PATHOLOGY_PRIMARY if severe material pathology and no meaningful utilization gap",
+    "MATERIAL_AND_FEATURE_UTILIZATION_GAP if severe material pathology and meaningful utilization gap",
+    "FEATURE_UTILIZATION_GAP_PRIMARY if mature material priors healthy and meaningful utilization gap",
+    "MATERIAL_PRIOR_HEALTHY_STRUCTURAL_REPRESENTATION_GAP if mature priors healthy and no meaningful precomputed signal wasted",
+    "MIXED_OR_UNRESOLVED otherwise"
+  ],
+  "constraints": {
+    "HUMAN_MATERIAL_REFERENCE_VALIDATION_ONLY": true,
+    "NO_ALPHASHO_EXECUTION": true,
+    "NO_COEFFICIENT_FITTING": true,
+    "NO_FITTING_TO_HUMAN_RATIOS": true,
+    "NO_LEARNING_RUN": true,
+    "NO_NATIVE_SEARCH_MIGRATION": true,
+    "NO_NEW_EVALUATOR_FEATURE": true,
+    "NO_PAIRED_BENCHMARK": true,
+    "NO_PRODUCTION_EVALUATOR_SEARCH_NATIVE_RULE_RUNTIME_CHANGE": true,
+    "NO_R37_RESCUE_OR_RESELECTION": true,
+    "NO_SELF_PLAY_OR_TRAINING": true,
+    "NO_XIANGQI_MATERIAL_CLAIM": true,
+    "PRODUCTION_DIFF_ZERO": true
+  },
+  "flags": [
+    "F39_BROAD_TRANSFER_FAILURE_CONSUMED",
+    "MATURE_RULESET_MATERIAL_PRIORS_AUDITED",
+    "PROFILE_NORMALIZATION_PATHOLOGY_AUDITED",
+    "RULE_INFORMATION_UTILIZATION_LEDGER_COMPLETE",
+    "HISTORICAL_LEARNING_LEVERAGE_CONSUMED",
+    "COMPILED_NATIVE_INFORMATION_FLOW_AUDITED",
+    "NEXT_GENERIC_EVALUATOR_FOUNDATION_BOUNDARY_SELECTED"
+  ],
+  "inputs": {
+    "docs/learning_phase1_5_arena_audit.md": {
+      "path": "docs/learning_phase1_5_arena_audit.md",
+      "sha256": "9d23cf2d495afbe3940f001ccde89ec29d2aa5633da27d888450382d368e711e"
+    },
+    "docs/learning_phase1_6_signal_diagnostics.md": {
+      "path": "docs/learning_phase1_6_signal_diagnostics.md",
+      "sha256": "43c6fa88df3abfc1577088d0a161cd1f886adc779d3ab4a65fa8b9c4798e1a76"
+    },
+    "docs/learning_phase1_7_evaluation_leverage.md": {
+      "path": "docs/learning_phase1_7_evaluation_leverage.md",
+      "sha256": "a36ed5cc0fac9b7524800a4117f0e301b1e759e76e6e28054e5e759b0053e3dc"
+    },
+    "docs/learning_phase1_8_alphasho_positive_control.md": {
+      "path": "docs/learning_phase1_8_alphasho_positive_control.md",
+      "sha256": "afb6fc531815d663dfb8729cea5ca09b08c12160f2041a8829d499b27957f15f"
+    },
+    "generic_chess/ai/alphabeta/player.py": {
+      "path": "generic_chess/ai/alphabeta/player.py",
+      "sha256": "1c5e0978dbceba3840878acef6d5d893348bba5b86c376b3839e00b95cf0b08e"
+    },
+    "generic_chess/ai/evaluation/analyzer.py": {
+      "path": "generic_chess/ai/evaluation/analyzer.py",
+      "sha256": "fb929b6fe5404ffef3e6ee8f7f80e79e9ed4abe67a8ea6313772011c892174a6"
+    },
+    "generic_chess/ai/evaluation/config.py": {
+      "path": "generic_chess/ai/evaluation/config.py",
+      "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"
+    },
+    "generic_chess/ai/evaluation/evaluator.py": {
+      "path": "generic_chess/ai/evaluation/evaluator.py",
+      "sha256": "10fa59b364e3519456d16a6913e12084d803dbde51a2e638fddf48133466fda3"
+    },
+    "generic_chess/ai/evaluation/profile.py": {
+      "path": "generic_chess/ai/evaluation/profile.py",
+      "sha256": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b"
+    },
+    "generic_chess/learning/arena.py": {
+      "path": "generic_chess/learning/arena.py",
+      "sha256": "bed3f742bcc7b2e7fed2a0153f925aa42d781111277a3981764d9bbb08f441e1"
+    },
+    "generic_chess/learning/experiment.py": {
+      "path": "generic_chess/learning/experiment.py",
+      "sha256": "25f933f23980ba1d45110efa0a595f1d63fd31a1d4cbbc921d68be0fc4970e47"
+    },
+    "generic_chess/learning/features.py": {
+      "path": "generic_chess/learning/features.py",
+      "sha256": "1a212ee4d54f74e2934abff77b4a8ceaa668030c34c95af48fe0e4190b300115"
+    },
+    "generic_chess/learning/material.py": {
+      "path": "generic_chess/learning/material.py",
+      "sha256": "2db58e7134b84ac95d6bd1d13886ab9aba64d699c6bdc1dad91c7226a8be298f"
+    },
+    "generic_chess/learning/selfplay.py": {
+      "path": "generic_chess/learning/selfplay.py",
+      "sha256": "d631ac821877cc762c42cabf7d1eddd1780eba1b0d35edfc9567d33e43262001"
+    },
+    "generic_chess/learning/tdleaf.py": {
+      "path": "generic_chess/learning/tdleaf.py",
+      "sha256": "cdcffb3fdc0286ce9b02082e5deb03c309b880c908881a8a9c74bc2a46461df1"
+    },
+    "generic_chess/native/compiler.py": {
+      "path": "generic_chess/native/compiler.py",
+      "sha256": "ad80ab2c90d6de6b870b553a456905ace78bb22bae8a755949547d4af186ab20"
+    },
+    "generic_chess/native/engine.py": {
+      "path": "generic_chess/native/engine.py",
+      "sha256": "6658857232cdeb8a4ee4a631d5389af5e8728f1d96769baa943a95964cec067c"
+    },
+    "generic_chess/rules/compiler.py": {
+      "path": "generic_chess/rules/compiler.py",
+      "sha256": "b93bc5f9e1f719419b9d489a0f4aeced4ce5422415135ea98ca0d70612e6ec60"
+    },
+    "generic_chess/rules/standard_shogi.py": {
+      "path": "generic_chess/rules/standard_shogi.py",
+      "sha256": "3a1a69b3eb922ed18ea8463b4cf0157f166d48efbcc6a6c8dc69c2dce6ea46d4"
+    },
+    "generic_chess/rules/western_chess.py": {
+      "path": "generic_chess/rules/western_chess.py",
+      "sha256": "5c7bff31132a05f003ae4e6ea2b063882ba362add95cd0616a987f7a981d72bd"
+    },
+    "tests/fixtures/f24a_minimal_cheap_evaluator.json": {
+      "path": "tests/fixtures/f24a_minimal_cheap_evaluator.json",
+      "sha256": "46686486ac731e778ea265d74499dd14fc1723896877aa2f74c1177f1989df50"
+    },
+    "tests/fixtures/f39_component_ablation.json": {
+      "path": "tests/fixtures/f39_component_ablation.json",
+      "sha256": "707867e133b71961138f8ca48f34a4a47da9a0d57ee762478dbbb560f6f70d2b"
+    },
+    "tests/fixtures/f39_distribution_shift.json": {
+      "path": "tests/fixtures/f39_distribution_shift.json",
+      "sha256": "a9757379c7a15c8979c9c1c742f8ab6ed3c597cc8c0e3956573562de0617444d"
+    },
+    "tests/fixtures/f39_generalization_selection.json": {
+      "path": "tests/fixtures/f39_generalization_selection.json",
+      "sha256": "eb3e19400166b17fd82df2fccc95562b1ccf6f904ab66c65534add478bb73b93"
+    }
+  },
+  "kind": "F40_RULE_DERIVED_MATERIAL_AND_FEATURE_UTILIZATION_AUDIT",
+  "learning": {
+    "historical_findings": [
+      "clean_paired_arena_no_strength_reproduction",
+      "parameter_updates_real",
+      "decision_flip_rate_approximately_0.2_to_2.9_percent",
+      "updates_low_leverage",
+      "global_scale_energy_about_0.531",
+      "shogi_gen0_material_prior_near_reference"
+    ],
+    "low_leverage_gate": "historical evidence plus current parameter basis demonstrate primarily weak-decision-leverage dimensions"
+  },
+  "manifest_sha256": "9652ca5e4c705008a076fcb915f1ca3b3512e887fe3827a6d9a74ffd0845df16",
+  "native_sidecar": {
+    "conclusions": [
+      "SECOND_RULE_COMPILER_REQUIRED",
+      "COMPILED_SEMANTIC_RESULTS_UNDERCONSUMED_BY_PRODUCT_SEARCH"
+    ],
+    "path": [
+      "RuleSet",
+      "compiled_semantics",
+      "Native_rule_evaluation_tables",
+      "NativeSearchEngine",
+      "AlphaBetaPlayer"
+    ]
+  },
+  "normalization_audit": [
+    "raw_score_range",
+    "final_score_range",
+    "floor_count",
+    "smallest_positive_ratio",
+    "near_floor_sensitivity",
+    "low_capability_collapse",
+    "uniform_rescale_pairwise_ratio",
+    "integer_rounding_floor_loss"
+  ],
+  "recomposition": {
+    "exact_gate": "CURRENT_PROFILE_EXACT_RECOMPOSITION",
+    "required_fields": [
+      "type_identity",
+      "rule_capability_quantities",
+      "raw_capability_score",
+      "normalization_denominator",
+      "normalization_scale",
+      "pre_clamp_integer",
+      "final_board_value",
+      "floor_fired",
+      "upper_clamp_fired",
+      "hand_value",
+      "hand_board_ratio",
+      "promotion_gain",
+      "promotion_base_relation"
+    ]
+  },
+  "schema_version": 1,
+  "shogi_reference": {
+    "healthy_gates": {
+      "cosine_min": 0.95,
+      "pairwise_ordering_min": 0.9,
+      "spearman_min": 0.9
+    },
+    "historical_control_approximation": {
+      "cosine": 0.989,
+      "pairwise_ordering": 0.965,
+      "pearson": 0.976,
+      "spearman": 0.952
+    },
+    "pieces": [
+      "pawn",
+      "knight",
+      "lance",
+      "silver",
+      "gold",
+      "bishop",
+      "rook"
+    ]
+  },
+  "utilization_ledger": {
+    "meaningful_gap": "computed-but-unused signal has material nonzero variation and semantics unavailable through the final scalar",
+    "required_signal_families": [
+      "movement_density_capability",
+      "coverage",
+      "reachability",
+      "path_ray",
+      "promotion",
+      "drop_freedom",
+      "drop_mobility",
+      "anchor_structure",
+      "normalization"
+    ],
+    "states": [
+      "SOURCE_RULE_SEMANTIC",
+      "COMPUTED",
+      "STORED",
+      "USED_IN_BOARD_PRIOR",
+      "USED_IN_HAND_PRIOR",
+      "USED_IN_PROMOTION_PRIOR",
+      "USED_BY_PYTHON_EVALUATOR",
+      "COMPILED_INTO_NATIVE_EVALUATION",
+      "AVAILABLE_TO_LEARNING",
+      "COMPUTED_BUT_UNUSED",
+      "COLLAPSED_BY_NORMALIZATION",
+      "UNIFORM_FACTOR_ERASES_VARIATION"
+    ]
+  },
+  "western_reference": {
+    "bishop": [
+      2.5,
+      3.75
+    ],
+    "floor_collapse": "non-anchor at floor and next-smallest non-anchor >= 20 * floor",
+    "knight": [
+      2.5,
+      3.5
+    ],
+    "knight_bishop_ratio": [
+      0.75,
+      1.25
+    ],
+    "ordinal": [
+      "Pawn<Knight",
+      "Pawn<Bishop",
+      "Knight<Rook",
+      "Bishop<Rook",
+      "Rook<Queen"
+    ],
+    "pawn": [
+      1.0,
+      1.0
+    ],
+    "queen": [
+      7.5,
+      11.0
+    ],
+    "rook": [
+      4.0,
+      6.0
+    ],
+    "severe_pathology": "floor collapse OR major ratio > 5 * upper band OR major ratio < lower band / 5 OR ordinal failure"
+  },
+  "work_order": "GENERICCHESS-F40-RULE-DERIVED-MATERIAL-AND-FEATURE-UTILIZATION-AUDIT"
+}
