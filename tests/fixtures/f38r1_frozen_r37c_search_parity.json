@@ -1,0 +1,1039 @@
+{
+  "evidence_bindings": {
+    "f37_r1_recertification": {
+      "path": "tests/fixtures/f37r1_gate_recertification.json",
+      "sha256": "00ad8117beb90a026c4a8588218cb8aac4725fae84380e6e0a0e1d2e0eacaba4"
+    },
+    "f37_representation_ranks": {
+      "path": "tests/fixtures/f37_evaluator_representation_ranks.json",
+      "sha256": "74425f8c4310d86dbb8e1a3543de1cc7529404a96b5b0ade579de8faae4e48a1"
+    },
+    "f37_search_shadow": {
+      "path": "tests/fixtures/f37_evaluator_search_shadow.json",
+      "sha256": "05fe2a0527e75c9beb0d89549258c6b7da714ad0c6962198748575d7337d3548"
+    },
+    "f37_selection": {
+      "path": "tests/fixtures/f37_evaluator_selection.json",
+      "sha256": "a1446e0ffcef8cc1c566790628cf3b909d267d5d0bc09a2d96e8d2bf9de9252d"
+    },
+    "f38_first_pass_selection": {
+      "path": "tests/fixtures/f38_activity_anchor_selection.json",
+      "sha256": "5135f05de5635d513d1572da29aa90ab13caea7ec2f47880ce269ca0742654e7"
+    },
+    "f38_holdout_ranks": {
+      "path": "tests/fixtures/f38_activity_anchor_holdout_ranks.json",
+      "sha256": "ffa9d97ddb57b3d37cb8cb185da678478e097b544246a4964dbd56ae9bf1da11"
+    },
+    "f38_holdout_search": {
+      "path": "tests/fixtures/f38_activity_anchor_holdout_search.json",
+      "sha256": "0fa748b16818d593ffccede753bc47a923bb097169ea0d8bfc087678f61d5a50"
+    },
+    "f38_micro_cost": {
+      "path": "tests/fixtures/f38_activity_anchor_micro_cost.json",
+      "sha256": "e9a9c3367526562fb96402b02ddfcbb9cea9232870d2c7c2015567901ecb6739"
+    },
+    "f38_prototype_identity": {
+      "path": "tests/fixtures/f38_activity_anchor_prototype_identity.json",
+      "sha256": "1e07ace70dde3121a7b7ee6c661084f67471c911b119d8c56e442933314e2b3f"
+    },
+    "f38_prototype_script": {
+      "path": "scripts/audit_f38_activity_anchor_prototype.py",
+      "sha256": "d45bef8c62611ecbeb5501bc3d1bcd13b24f450d5b34680706123537fda0457b"
+    },
+    "h38a_descriptor": {
+      "path": "tests/fixtures/f38_external_holdout_descriptor.json",
+      "sha256": "a2be225db01c940d6c32181a713cd0398309ff4b630624d338d3b952ed4e9131"
+    },
+    "h38a_manifest": {
+      "path": "tests/fixtures/f38_activity_anchor_manifest.json",
+      "sha256": "15bf3e134d52972c3c35a19e45b01d44b50e8e40778e91268a4901aece11d306"
+    }
+  },
+  "no_rerun": {
+    "alphasho": true,
+    "candidate_formula_change": true,
+    "holdout_reselection": true,
+    "paired_benchmark": true,
+    "production_change": true
+  },
+  "parity": {
+    "all_runs": {
+      "F37_ORACLE_REPLAY_PARITY": {
+        "exact_identity_count": 20,
+        "first_divergent_row": null,
+        "passed": true,
+        "run_count": 20
+      },
+      "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+        "exact_identity_count": 20,
+        "first_divergent_row": null,
+        "passed": true,
+        "run_count": 20
+      },
+      "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+        "exact_identity_count": 20,
+        "first_divergent_row": null,
+        "passed": true,
+        "run_count": 20
+      }
+    },
+    "by_budget": {
+      "2048": {
+        "F37_ORACLE_REPLAY_PARITY": {
+          "exact_identity_count": 10,
+          "first_divergent_row": null,
+          "passed": true,
+          "run_count": 10
+        },
+        "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+          "exact_identity_count": 10,
+          "first_divergent_row": null,
+          "passed": true,
+          "run_count": 10
+        },
+        "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+          "exact_identity_count": 10,
+          "first_divergent_row": null,
+          "passed": true,
+          "run_count": 10
+        },
+        "rows": [
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 1012,
+              "pv_head": "3g4e",
+              "qnodes": 1036,
+              "score": 349,
+              "selected_move": "3g4e",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 1012,
+              "pv_head": "3g4e",
+              "qnodes": 1036,
+              "score": 349,
+              "selected_move": "3g4e",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 1012,
+              "pv_head": "3g4e",
+              "qnodes": 1036,
+              "score": 349,
+              "selected_move": "3g4e",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000001-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 989,
+              "pv_head": "5i4h",
+              "qnodes": 1059,
+              "score": -13,
+              "selected_move": "5i4h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 989,
+              "pv_head": "5i4h",
+              "qnodes": 1059,
+              "score": -13,
+              "selected_move": "5i4h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 989,
+              "pv_head": "5i4h",
+              "qnodes": 1059,
+              "score": -13,
+              "selected_move": "5i4h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000002-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 1040,
+              "pv_head": "8h9g",
+              "qnodes": 1008,
+              "score": 7,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 1040,
+              "pv_head": "8h9g",
+              "qnodes": 1008,
+              "score": 7,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 1040,
+              "pv_head": "8h9g",
+              "qnodes": 1008,
+              "score": 7,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000003-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 3,
+              "nodes": 1103,
+              "pv_head": "5i6h",
+              "qnodes": 945,
+              "score": 8,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 3,
+              "nodes": 1103,
+              "pv_head": "5i6h",
+              "qnodes": 945,
+              "score": 8,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 3,
+              "nodes": 1103,
+              "pv_head": "5i6h",
+              "qnodes": 945,
+              "score": 8,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000004-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 494,
+              "pv_head": "5i5h",
+              "qnodes": 1554,
+              "score": -14,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 494,
+              "pv_head": "5i5h",
+              "qnodes": 1554,
+              "score": -14,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 494,
+              "pv_head": "5i5h",
+              "qnodes": 1554,
+              "score": -14,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000005-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 970,
+              "pv_head": "8h9g",
+              "qnodes": 1078,
+              "score": 20,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 970,
+              "pv_head": "8h9g",
+              "qnodes": 1078,
+              "score": 20,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 970,
+              "pv_head": "8h9g",
+              "qnodes": 1078,
+              "score": 20,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000006-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 797,
+              "pv_head": "8h9g",
+              "qnodes": 1251,
+              "score": -5,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 797,
+              "pv_head": "8h9g",
+              "qnodes": 1251,
+              "score": -5,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 797,
+              "pv_head": "8h9g",
+              "qnodes": 1251,
+              "score": -5,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000007-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 1071,
+              "pv_head": "5i5h",
+              "qnodes": 977,
+              "score": 4,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 1071,
+              "pv_head": "5i5h",
+              "qnodes": 977,
+              "score": 4,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 1071,
+              "pv_head": "5i5h",
+              "qnodes": 977,
+              "score": 4,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000008-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 558,
+              "pv_head": "8h4d",
+              "qnodes": 1490,
+              "score": 362,
+              "selected_move": "8h4d",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 558,
+              "pv_head": "8h4d",
+              "qnodes": 1490,
+              "score": 362,
+              "selected_move": "8h4d",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 558,
+              "pv_head": "8h4d",
+              "qnodes": 1490,
+              "score": 362,
+              "selected_move": "8h4d",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000009-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 2048,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 1092,
+              "pv_head": "5i6h",
+              "qnodes": 956,
+              "score": -5,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 1092,
+              "pv_head": "5i6h",
+              "qnodes": 956,
+              "score": -5,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 1092,
+              "pv_head": "5i6h",
+              "qnodes": 956,
+              "score": -5,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000010-ply12"
+          }
+        ]
+      },
+      "512": {
+        "F37_ORACLE_REPLAY_PARITY": {
+          "exact_identity_count": 10,
+          "first_divergent_row": null,
+          "passed": true,
+          "run_count": 10
+        },
+        "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+          "exact_identity_count": 10,
+          "first_divergent_row": null,
+          "passed": true,
+          "run_count": 10
+        },
+        "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+          "exact_identity_count": 10,
+          "first_divergent_row": null,
+          "passed": true,
+          "run_count": 10
+        },
+        "rows": [
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 270,
+              "pv_head": "3g4e",
+              "qnodes": 242,
+              "score": 349,
+              "selected_move": "3g4e",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 270,
+              "pv_head": "3g4e",
+              "qnodes": 242,
+              "score": 349,
+              "selected_move": "3g4e",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 270,
+              "pv_head": "3g4e",
+              "qnodes": 242,
+              "score": 349,
+              "selected_move": "3g4e",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000001-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 241,
+              "pv_head": "5i4h",
+              "qnodes": 271,
+              "score": -13,
+              "selected_move": "5i4h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 241,
+              "pv_head": "5i4h",
+              "qnodes": 271,
+              "score": -13,
+              "selected_move": "5i4h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 241,
+              "pv_head": "5i4h",
+              "qnodes": 271,
+              "score": -13,
+              "selected_move": "5i4h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000002-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 245,
+              "pv_head": "8h9g",
+              "qnodes": 267,
+              "score": 7,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 245,
+              "pv_head": "8h9g",
+              "qnodes": 267,
+              "score": 7,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 245,
+              "pv_head": "8h9g",
+              "qnodes": 267,
+              "score": 7,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000003-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 288,
+              "pv_head": "5i5h",
+              "qnodes": 224,
+              "score": 3,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 288,
+              "pv_head": "5i5h",
+              "qnodes": 224,
+              "score": 3,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 288,
+              "pv_head": "5i5h",
+              "qnodes": 224,
+              "score": 3,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000004-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 1,
+              "nodes": 196,
+              "pv_head": "5i5h",
+              "qnodes": 316,
+              "score": -12,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 1,
+              "nodes": 196,
+              "pv_head": "5i5h",
+              "qnodes": 316,
+              "score": -12,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 1,
+              "nodes": 196,
+              "pv_head": "5i5h",
+              "qnodes": 316,
+              "score": -12,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000005-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 1,
+              "nodes": 262,
+              "pv_head": "7g7f",
+              "qnodes": 250,
+              "score": 28,
+              "selected_move": "7g7f",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 1,
+              "nodes": 262,
+              "pv_head": "7g7f",
+              "qnodes": 250,
+              "score": 28,
+              "selected_move": "7g7f",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 1,
+              "nodes": 262,
+              "pv_head": "7g7f",
+              "qnodes": 250,
+              "score": 28,
+              "selected_move": "7g7f",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000006-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 1,
+              "nodes": 197,
+              "pv_head": "8h9g",
+              "qnodes": 315,
+              "score": 6,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 1,
+              "nodes": 197,
+              "pv_head": "8h9g",
+              "qnodes": 315,
+              "score": 6,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 1,
+              "nodes": 197,
+              "pv_head": "8h9g",
+              "qnodes": 315,
+              "score": 6,
+              "selected_move": "8h9g",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000007-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 292,
+              "pv_head": "5i5h",
+              "qnodes": 220,
+              "score": 4,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 292,
+              "pv_head": "5i5h",
+              "qnodes": 220,
+              "score": 4,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 292,
+              "pv_head": "5i5h",
+              "qnodes": 220,
+              "score": 4,
+              "selected_move": "5i5h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000008-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 1,
+              "nodes": 143,
+              "pv_head": "8h4d",
+              "qnodes": 369,
+              "score": 370,
+              "selected_move": "8h4d",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 1,
+              "nodes": 143,
+              "pv_head": "8h4d",
+              "qnodes": 369,
+              "score": 370,
+              "selected_move": "8h4d",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 1,
+              "nodes": 143,
+              "pv_head": "8h4d",
+              "qnodes": 369,
+              "score": 370,
+              "selected_move": "8h4d",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000009-ply12"
+          },
+          {
+            "F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_FROZEN_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "PROTOTYPE_VS_F37_ORACLE_REPLAY_PARITY": {
+              "equal": true,
+              "mismatches": {}
+            },
+            "budget": 512,
+            "fresh_f37_r37c_oracle": {
+              "completed_depth": 2,
+              "nodes": 283,
+              "pv_head": "5i6h",
+              "qnodes": 229,
+              "score": -5,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "fresh_production_shaped_prototype": {
+              "completed_depth": 2,
+              "nodes": 283,
+              "pv_head": "5i6h",
+              "qnodes": 229,
+              "score": -5,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "frozen_r37c": {
+              "completed_depth": 2,
+              "nodes": 283,
+              "pv_head": "5i6h",
+              "qnodes": 229,
+              "score": -5,
+              "selected_move": "5i6h",
+              "termination_reason": "node_limit"
+            },
+            "position_id": "iteration-000086-game-000010-ply12"
+          }
+        ]
+      }
+    },
+    "protocol": {
+      "budgets": [
+        512,
+        2048
+      ],
+      "deterministic_fields": [
+        "selected_move",
+        "score",
+        "pv_head",
+        "completed_depth",
+        "nodes",
+        "qnodes",
+        "termination_reason"
+      ],
+      "fresh_tt_per_run": true,
+      "max_depth": 8,
+      "native_requested": true,
+      "qsearch": "4/8",
+      "roots": 10,
+      "timing_fields_excluded": true
+    }
+  },
+  "production_diff_zero": true,
+  "reclassification": {
+    "F39_IMPLEMENTATION_ELIGIBLE": false,
+    "first_pass_boundary_invalidated": true,
+    "first_pass_defect": "WRONG_ORIGINAL_SEARCH_PARITY_ORACLE",
+    "first_pass_mechanically_compared": "ProductionShapedR37CPrototype == V1 production evaluator",
+    "flags": {
+      "F37_FROZEN_SEARCH_REPLAY_CERTIFIED": true,
+      "F38_FINAL_BOUNDARY_RECLASSIFIED": true,
+      "F38_FIRST_PASS_EVIDENCE_PRESERVED": true,
+      "F38_HOLDOUT_NEGATIVE_SIGNAL_PRESERVED": true,
+      "F38_WRONG_PARITY_ORACLE_IDENTIFIED": true,
+      "R37C_PRODUCTION_SHAPE_SEARCH_IDENTITY_CERTIFIED": true
+    },
+    "gates": {
+      "exact_static_identity": true,
+      "generic_transfer": true,
+      "holdout_corpus": true,
+      "holdout_static_signal": false,
+      "independent_search_cost": true,
+      "independent_search_signal": false,
+      "micro_cost": true,
+      "original_ten_root_r37c_search_identity": true,
+      "runtime_2s_safety": true
+    },
+    "required_comparison": "ProductionShapedR37CPrototype == frozen F37 R37C",
+    "selected_boundary": "F39_EVALUATOR_REENTRY_GENERALIZATION_CORRECTIVE"
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "work_order": "GENERICCHESS-F38-CORRECTIVE-R1-FROZEN-R37C-SEARCH-PARITY-AND-BOUNDARY-RECLASSIFICATION"
+}
