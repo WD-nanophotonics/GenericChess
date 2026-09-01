@@ -48,18 +48,18 @@ def _candidate_channels(compiled: Any, type_id: str, owner: int, source: int, de
     # duplicate semantic patterns or channels describe the same executable
     # relation, they must not multiply option mass.
     candidates: dict[tuple[int, tuple[int, ...]], dict[str, Any]] = {}
-    for pattern in f42._pattern_rows(compiled, type_id):
-        relation = pattern.target.kind
-        for gid in pattern.geometry_ids:
-            geometry = compiled.ir.geometry[gid]
-            if geometry.kind == "drop":
-                continue
-            channel = _channel_signature(geometry)
-            for target, path in f41._geometry_candidates(geometry, str(owner), source):
-                key = (target, tuple(path))
-                row = candidates.setdefault(key, {"relations": set(), "channels": set()})
-                row["relations"].add(relation)
-                row["channels"].add(channel)
+    for row in f41._pattern_candidates(compiled, type_id):
+        relation = row["target"]
+        gid = row["geometry_id"]
+        geometry = compiled.ir.geometry[gid]
+        if geometry.kind == "drop":
+            continue
+        channel = _channel_signature(geometry)
+        for target, path in f41._geometry_candidates(geometry, str(owner), source):
+            key = (target, tuple(path))
+            item = candidates.setdefault(key, {"relations": set(), "channels": set()})
+            item["relations"].add(relation)
+            item["channels"].add(channel)
     masses: dict[tuple[Any, ...], float] = {}
     total = 0.0
     for (_target, path), row in candidates.items():
@@ -141,7 +141,50 @@ def _shogi_metrics(values: dict[str, int], f42_result: dict[str, Any]) -> dict[s
     dot = sum(x * y for x, y in zip(a, b))
     cosine = dot / max(1e-12, math.sqrt(sum(x * x for x in a) * sum(y * y for y in b))) if a else 0.0
     hand_range = f42_result["reproduction"]["standard_shogi"]["positive_control_metrics"]["hand_board_ratio_range"]
-    return {"board_value_cosine_vs_current": cosine, "spearman_vs_current": f41._spearman(a, b), "pairwise_ordering_vs_current": f41._pairwise_ordering(a, b), "board_values": values, "hand_board_ratio_range": hand_range}
+    current_rank = sorted(common, key=lambda type_id: (-current[type_id], type_id))
+    candidate_rank = sorted(common, key=lambda type_id: (-values[type_id], type_id))
+    largest_displacement = max(abs(current_rank.index(type_id) - candidate_rank.index(type_id)) for type_id in common) if common else 0
+    return {"board_value_cosine_vs_current": cosine, "spearman_vs_current": f41._spearman(a, b), "pairwise_ordering_vs_current": f41._pairwise_ordering(a, b), "board_values": values, "hand_board_ratio_range": hand_range, "largest_rank_displacement": largest_displacement, "ranking": candidate_rank}
+
+
+def _linear_reproduction_gate(variants: dict[str, Any], f42_result: dict[str, Any]) -> dict[str, Any]:
+    checks = {}
+    linear = variants["G43-0_LINEAR_CONTROL"]["rulesets"]
+    for ruleset in ("western_chess", "standard_shogi"):
+        expected = f42_result["reproduction"]["western" if ruleset == "western_chess" else "standard_shogi"]
+        expected_mobility = {
+            row["type"]: row["components"]["mobility"]["unweighted"]
+            for row in f42_result["component_ledger"][ruleset]["rows"]
+        }
+        actual = linear[ruleset]
+        type_checks = {}
+        for type_id, expected_raw in expected["raw"].items():
+            actual_detail = actual["details"][type_id]
+            type_checks[type_id] = {
+                "mobility": math.isclose(actual_detail["transformed_mobility"], expected_mobility[type_id], rel_tol=1e-12, abs_tol=1e-12),
+                "raw": math.isclose(actual["raw"][type_id], expected_raw, rel_tol=1e-12, abs_tol=1e-12),
+                "normalized_board": actual["normalized_board"][type_id] == expected["normalized_board"][type_id],
+            }
+        checks[ruleset] = {"per_type": type_checks, "pass": all(all(row.values()) for row in type_checks.values())}
+    return {"pass": all(row["pass"] for row in checks.values()), "rulesets": checks, "predicate": "G43_LINEAR_CONTROL_REPRODUCES_F42"}
+
+
+def _western_pawn_contract(compiled: Any, variants: dict[str, Any], f42_result: dict[str, Any]) -> dict[str, Any]:
+    patterns = f42._pattern_rows(compiled, "P")
+    ordinary = {pattern.pattern_id for pattern in patterns if f41._ordinary_pattern(pattern)}
+    conditional = {pattern.pattern_id for pattern in patterns if not f41._ordinary_pattern(pattern)}
+    participating = {row["pattern_id"] for row in f41._pattern_candidates(compiled, "P")}
+    accepted_mobility = next(row for row in f42_result["component_ledger"]["western_chess"]["rows"] if row["type"] == "P")["components"]["mobility"]["unweighted"]
+    linear_mobility = variants["G43-0_LINEAR_CONTROL"]["rulesets"]["western_chess"]["details"]["P"]["transformed_mobility"]
+    return {
+        "ordinary_pattern_count": len(ordinary),
+        "conditional_pattern_count": len(conditional),
+        "ordinary_patterns_participate": ordinary <= participating,
+        "conditional_patterns_excluded": not (conditional & participating),
+        "accepted_f42_mobility": accepted_mobility,
+        "g43_linear_mobility": linear_mobility,
+        "accepted_f42_mobility_reproduced": math.isclose(accepted_mobility, linear_mobility, rel_tol=1e-12, abs_tol=1e-12),
+    }
 
 
 def _synthetic_rules():
@@ -212,6 +255,13 @@ def _audit():
         shogi = _shogi_metrics(rulesets["standard_shogi"]["normalized_board"], f42_result)
         shogi["pass"] = shogi["board_value_cosine_vs_current"] >= 0.95 and shogi["spearman_vs_current"] >= 0.9 and shogi["pairwise_ordering_vs_current"] >= 0.9
         variants[variant] = {"rulesets": rulesets, "western": {"raw_ratios_by_pawn": raw_ratios, "normalized_ratios_by_pawn": normalized, "broad_band_pass": western_pass}, "shogi": shogi, "counterfactual_only": True}
+    linear_reproduction = _linear_reproduction_gate(variants, f42_result)
+    pawn_contract = _western_pawn_contract(compiled["western_chess"], variants, f42_result)
+    if not linear_reproduction["pass"] or not pawn_contract["conditional_patterns_excluded"]:
+        result = {"schema_version": 1, "status": "FAIL_LINEAR_CONTROL_REPRODUCTION", "kind": "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE", "baseline": BASELINE, "production_changed": False, "variants": variants, "linear_control_reproduction": linear_reproduction, "western_pawn_contract": pawn_contract, "selection": None, "qualification_matrix": {}, "frozen_inputs": {"f42_baseline": BASELINE, "analyzer": "F41 ordinary semantic candidate extraction", "endpoint_and_path_semantics": "unchanged accepted F41/F42 semantics"}}
+        _json(OUT / "f43_geometry_scaling.json", result)
+        _json(OUT / "f43_qualification.json", result["qualification_matrix"])
+        return result
     synthetic = _synthetic_ledger()
     linear = next(row for row in synthetic["paired_comparisons"] if row["variant"] == "G43-0_LINEAR_CONTROL" and row["left"] == "short_ray" and row["right"] == "long_ray")
     direction_linear = next(row for row in synthetic["paired_comparisons"] if row["variant"] == "G43-0_LINEAR_CONTROL" and row["left"] == "single_direction" and row["right"] == "multi_direction")
@@ -238,7 +288,7 @@ def _audit():
         classification, boundary = "GEOMETRY_SCALING_INSUFFICIENT", "F44_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS"
     else:
         classification, boundary = "MIXED_OR_UNRESOLVED", "F44_CAPABILITY_PRIOR_REASSESSMENT"
-    result = {"schema_version": 1, "status": "PASS", "kind": "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE", "baseline": BASELINE, "production_changed": False, "variants": variants, "synthetic_geometry": synthetic, "geometry_marginal_growth": geometry, "qualification_matrix": qualifications, "selection": {"classification": classification, "next_boundary": boundary, "passing_variants": passing, "predicate_rule": "all frozen structural, monotonicity, diminishing-growth, Western, Shogi, and no-new-feature gates must pass; no post-result alternatives or cross-unit comparison"}, "frozen_inputs": {"f42_baseline": BASELINE, "analyzer": "F42 canonical semantic candidate channel extraction", "endpoint_and_path_semantics": "unchanged accepted F41/F42 semantics"}}
+    result = {"schema_version": 1, "status": "PASS", "kind": "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE", "baseline": BASELINE, "production_changed": False, "variants": variants, "linear_control_reproduction": linear_reproduction, "western_pawn_contract": pawn_contract, "synthetic_geometry": synthetic, "geometry_marginal_growth": geometry, "qualification_matrix": qualifications, "selection": {"classification": classification, "next_boundary": boundary, "passing_variants": passing, "predicate_rule": "all frozen structural, monotonicity, diminishing-growth, Western, Shogi, and no-new-feature gates must pass; no post-result alternatives or cross-unit comparison"}, "frozen_inputs": {"f42_baseline": BASELINE, "analyzer": "F41 ordinary semantic candidate extraction", "endpoint_and_path_semantics": "unchanged accepted F41/F42 semantics"}}
     for name in ("f43_geometry_scaling", "f43_qualification", "f43_synthetic_geometry", "f43_western_material", "f43_shogi_control"):
         value = result if name == "f43_geometry_scaling" else result["qualification_matrix"] if name == "f43_qualification" else result["synthetic_geometry"] if name == "f43_synthetic_geometry" else {variant: data["western"] for variant, data in variants.items()} if name == "f43_western_material" else {variant: data["shogi"] for variant, data in variants.items()}
         _json(OUT / f"{name}.json", value)
@@ -247,4 +297,7 @@ def _audit():
 
 if __name__ == "__main__":
     value = _audit()
-    print(json.dumps({"status": value["status"], "classification": value["selection"]["classification"], "next_boundary": value["selection"]["next_boundary"]}, sort_keys=True))
+    summary = {"status": value["status"]}
+    if value["selection"]:
+        summary.update({"classification": value["selection"]["classification"], "next_boundary": value["selection"]["next_boundary"]})
+    print(json.dumps(summary, sort_keys=True))

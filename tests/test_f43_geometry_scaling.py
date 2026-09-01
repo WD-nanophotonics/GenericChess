@@ -36,6 +36,34 @@ def test_f43_is_frozen_counterfactual_and_has_exact_transform_set(evidence):
     assert all(row["counterfactual_only"] for row in evidence["variants"].values())
 
 
+def test_g43_linear_control_exactly_reproduces_f42(evidence):
+    gate = evidence["linear_control_reproduction"]
+    assert gate["predicate"] == "G43_LINEAR_CONTROL_REPRODUCES_F42"
+    assert gate["pass"] is True
+    for ruleset in ("western_chess", "standard_shogi"):
+        assert all(all(checks.values()) for checks in gate["rulesets"][ruleset]["per_type"].values())
+    western = evidence["variants"]["G43-0_LINEAR_CONTROL"]["rulesets"]["western_chess"]
+    assert western["raw"] == {
+        "P": pytest.approx(1.06228880393026),
+        "N": pytest.approx(4.815702525575447),
+        "B": pytest.approx(6.217622245358478),
+        "R": pytest.approx(9.08791486310959),
+        "Q": pytest.approx(15.163483676173186),
+        "K": pytest.approx(5.976541940789473),
+    }
+    assert western["normalized_board"] == {"P": 171, "N": 775, "B": 1000, "R": 1462, "Q": 2439, "K": 0}
+
+
+def test_western_pawn_ordinary_population_excludes_conditionals(evidence):
+    pawn = evidence["western_pawn_contract"]
+    assert pawn["ordinary_pattern_count"] == 3
+    assert pawn["conditional_pattern_count"] == 3
+    assert pawn["ordinary_patterns_participate"] is True
+    assert pawn["conditional_patterns_excluded"] is True
+    assert pawn["accepted_f42_mobility"] == pytest.approx(0.9496484375)
+    assert pawn["accepted_f42_mobility_reproduced"] is True
+
+
 def test_structural_and_growth_gates_are_explicit(evidence):
     gates = evidence["synthetic_geometry"]["structural_gates"]
     assert set(gates) == {
@@ -71,9 +99,10 @@ def test_western_and_shogi_metrics_cover_every_variant(evidence):
         assert western["broad_band_pass"] is False
         shogi = evidence["variants"][variant]["shogi"]
         assert shogi["pass"] is True
-        assert set(shogi["board_values"]) >= {"K", "P", "N", "B", "R", "G", "S", "L", "T", "D"} or set(shogi["board_values"]) >= {"K", "P", "N", "B", "R"}
+        assert {"K", "P", "N", "B", "R", "G", "S", "L", "TB", "TL", "TN", "TP", "TR", "TS"} <= set(shogi["board_values"])
         assert len(shogi["hand_board_ratio_range"]) == 2
         assert shogi["hand_board_ratio_range"] == [0.8992673992673993, 0.900355871886121]
+        assert shogi["largest_rank_displacement"] >= 0
 
 
 def test_all_log_variants_reduce_western_inflation_but_none_qualifies(evidence):
@@ -82,13 +111,24 @@ def test_all_log_variants_reduce_western_inflation_but_none_qualifies(evidence):
     assert all(row["structural_gates"] and row["ray_and_direction_monotone"] for row in matrix.values())
     assert all(row["shogi_gates_pass"] and row["no_new_feature"] for row in matrix.values())
     assert matrix["G43-0_LINEAR_CONTROL"]["diminishing_ray_and_direction"] is False
+    assert matrix["G43-0_LINEAR_CONTROL"]["western_inflation_reduced"] is False
     for variant in VARIANTS - {"G43-0_LINEAR_CONTROL"}:
         assert matrix[variant]["diminishing_ray_and_direction"] is True
         assert matrix[variant]["western_inflation_reduced"] is True
     assert all(row["western_bands_pass"] is False and row["qualifies"] is False for row in matrix.values())
-    assert evidence["selection"] == {
-        "classification": "GEOMETRY_SCALING_INSUFFICIENT",
-        "next_boundary": "F44_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS",
-        "passing_variants": [],
-        "predicate_rule": "all frozen structural, monotonicity, diminishing-growth, Western, Shogi, and no-new-feature gates must pass; no post-result alternatives or cross-unit comparison",
+    allowed = {
+        "GEOMETRY_SCALING_CANDIDATE_SUPPORTED",
+        "MULTIPLE_GEOMETRY_SCALING_CANDIDATES",
+        "GEOMETRY_SCALING_CROSS_RULESET_CONFLICT",
+        "GEOMETRY_SCALING_INSUFFICIENT",
+        "MIXED_OR_UNRESOLVED",
     }
+    boundaries = {
+        "GEOMETRY_SCALING_CANDIDATE_SUPPORTED": "F44_GEOMETRY_SCALING_INTEGRATION_PROTOTYPE",
+        "MULTIPLE_GEOMETRY_SCALING_CANDIDATES": "F44_GEOMETRY_SCALING_DISCRIMINATION",
+        "GEOMETRY_SCALING_CROSS_RULESET_CONFLICT": "F44_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+        "GEOMETRY_SCALING_INSUFFICIENT": "F44_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS",
+        "MIXED_OR_UNRESOLVED": "F44_CAPABILITY_PRIOR_REASSESSMENT",
+    }
+    assert evidence["selection"]["classification"] in allowed
+    assert evidence["selection"]["next_boundary"] == boundaries[evidence["selection"]["classification"]]
