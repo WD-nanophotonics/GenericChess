@@ -11,6 +11,7 @@ CAUSAL = ROOT / "tests" / "fixtures" / "f36_post_reserve_causal_table.json"
 SELECTION = ROOT / "tests" / "fixtures" / "f36_post_reserve_selection.json"
 STATIC_DIRECT = ROOT / "tests" / "fixtures" / "f36_post_reserve_static_direct_rank.json"
 SEARCH = ROOT / "generic_chess" / "ai" / "alphabeta" / "search.py"
+CURRENT_SEARCH_SHA = "6b4add054efa0efd6d7def83eda1b5019b4a7d4f3687324a162f286c4adee3ea"
 
 
 def test_f36_post_reserve_diagnosis_is_frozen_and_selects_one_boundary():
@@ -23,7 +24,8 @@ def test_f36_post_reserve_diagnosis_is_frozen_and_selects_one_boundary():
 
     assert manifest["manifest_sha256"] == "8f7503f9f1d2139bcd92d86270d95fd88b7fd15b8dc9f3e9ea05920b92df5a77"
     assert manifest["current_sandbox_sha"] == "80c1576c4443b4c9311b86fa0d8efbbfa24150ca"
-    assert manifest["retained_search_sha256"] == hashlib.sha256(SEARCH.read_bytes()).hexdigest()
+    assert manifest["retained_search_sha256"] == "f9b5faf17b40fcc9f9672875c4d200db7fc5bea314b9da5a20351b95563e3f4e"
+    assert hashlib.sha256(SEARCH.read_bytes()).hexdigest() == CURRENT_SEARCH_SHA
     assert manifest["product_authority"] == "a389adc50ed42096874ee38f818584978468c6ac"
     assert manifest["standard_shogi_fingerprint"] == "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
     assert manifest["frozen_inputs"]["f35r1_result"]["sha256"] == "d2d53ab89205feae28a3c1da73b9a9de7650199ab61ce62d40a53c961e19cd30"

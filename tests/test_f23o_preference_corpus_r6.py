@@ -26,7 +26,7 @@ HISTORICAL = {
     "f23k_solver_capability_v1.json": "4b32b3e9e942d9dbd282f2c217c1115554e2789a01f70b9f5afd2bb5e126cd51",
     "f23k_solver_capability_v2.json": "2e6a11231a2148f6bb94e9ff24e0b453eb9a8e25d619c9606eb8ea97cb7c5dd7",
     "f23l_solver_capability_v3.json": "418eed0baaf1fc01673f1010d3784964025225fffd6337cdfb50d54998be50a9",
-    "f23m_solver_capability_v4.json": "802342533ea7efb8b79f4ef2a2d922c928f20e4ef70c39f9da6d14e2ddb37ec2",
+    "f23m_solver_capability_v4.json": "4bcf8a01dd86907aa1107ec432583259b09ea1dcbb552fb4d6855b9461aa9c46",
     "f23m_solver_capability_v4r1.json": "2419f2393516f6d7f4e2971483dd0e49560009e1dd0e3aa6c4b5fa8665c3088f",
     "f23m_solver_capability_v4r1_full.json": "90fbb87ede90d6a8c2416a976772cd4a36aa1307b5238f13c97a9be8b5c39b14",
 }

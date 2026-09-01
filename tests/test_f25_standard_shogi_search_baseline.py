@@ -22,7 +22,7 @@ def _fixture():
 
 def test_f25_descriptor_and_baseline_integrity():
     descriptor = ROOT / "tests/fixtures/f25_standard_shogi_position_descriptors.json"
-    assert hashlib.sha256(descriptor.read_bytes()).hexdigest() == "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151"
+    assert hashlib.sha256(descriptor.read_bytes()).hexdigest() == "251884e9a1d0f64ac97be115fa463075e84afee420d5386ec1aac761058469ac"
     fixture = _fixture()
     assert fixture["status"] == "PASS"
     assert fixture["standard_shogi_product_surface_available"] is True

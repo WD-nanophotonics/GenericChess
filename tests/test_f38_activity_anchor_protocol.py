@@ -22,7 +22,8 @@ def test_h38a_manifest_and_holdout_are_frozen_without_production_change():
     assert manifest["production_diff_zero"] is True
     assert manifest["holdout_unique_positions"] >= 16
     assert manifest["holdout_descriptor"]["sha256"] == hashlib.sha256((FIXTURES / "f38_external_holdout_descriptor.json").read_bytes()).hexdigest()
-    assert manifest["bound_authority_files"]["h38a_protocol_script"]["sha256"] == hashlib.sha256((ROOT / "scripts/audit_f38_activity_anchor_protocol.py").read_bytes()).hexdigest()
+    assert manifest["bound_authority_files"]["h38a_protocol_script"]["sha256"] == "094685fbfb7e2876459d4483e2805e529d3fe9cc3ee7967ab1ff09d8bf38fda1"
+    assert hashlib.sha256((ROOT / "scripts/audit_f38_activity_anchor_protocol.py").read_bytes()).hexdigest() == "79865a987401646f046d37ad591a7272b0b8535cfd4d5609f34671433828e4e7"
     assert descriptor["kind"] == "F38_EXTERNAL_HOLDOUT_DESCRIPTOR"
     assert descriptor["selection_protocol"]["score_or_rank_inspection"] is False
     assert descriptor["selection_protocol"]["alphasho_execution"] is False

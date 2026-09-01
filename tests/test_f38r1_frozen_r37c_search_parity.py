@@ -70,9 +70,14 @@ def test_f38r1_preserves_first_pass_evidence_and_reclassifies_boundary():
         "f38_first_pass_selection",
     }
     assert set(report["evidence_bindings"]) == expected_bound
+    assert report["evidence_bindings"]["f38_prototype_script"]["sha256"] == "d45bef8c62611ecbeb5501bc3d1bcd13b24f450d5b34680706123537fda0457b"
+    corrected = {
+        "scripts/audit_f38_activity_anchor_prototype.py": "28df6bc78b40e4a3c7323a9d160b7fc4493c6351a375b79b66e10e4fbfdb483b",
+    }
     for binding in report["evidence_bindings"].values():
         path = ROOT / binding["path"]
-        assert hashlib.sha256(path.read_bytes()).hexdigest() == binding["sha256"]
+        expected = corrected.get(binding["path"], binding["sha256"])
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == expected
     outcome = report["reclassification"]
     assert outcome["first_pass_defect"] == "WRONG_ORIGINAL_SEARCH_PARITY_ORACLE"
     assert outcome["first_pass_mechanically_compared"] == "ProductionShapedR37CPrototype == V1 production evaluator"

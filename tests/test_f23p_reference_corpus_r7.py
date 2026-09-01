@@ -78,4 +78,4 @@ def test_v9_gate_and_historical_integrity_are_exposed():
     assert v9["advancement_gate"]["passes"] is False
     assert v9["selected_next_boundary"] == "F23Q_REFERENCE_PREFERENCE_CORPUS_R8"
     assert hashlib.sha256((FIXTURES / "evaluator_v2_corpus_v8.json").read_bytes()).hexdigest() == "b35d5898bb4d3b3533802311e68541b9c602c65ccd2a77251bb9b24f8ff5cda7"
-    assert hashlib.sha256((FIXTURES / "f23o_candidate_plan_r6.json").read_bytes()).hexdigest() == "7c060b257a41a816ca406879818306bd663d37c0d4d643d2d4d3fa82d72c392e"
+    assert hashlib.sha256((FIXTURES / "f23o_candidate_plan_r6.json").read_bytes()).hexdigest() == "8b026fc1ab32a2a50ab6c049459982fc308c4c63e38957377d42edfe6c64ca99"

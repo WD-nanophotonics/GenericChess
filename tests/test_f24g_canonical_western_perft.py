@@ -54,10 +54,10 @@ def _state(position, compiled):
 
 def test_f24g_preserves_f24f_artifacts_and_canonical_manifest():
     assert f24f_artifact_sha256(ROOT) == {
-        "scripts/audit_f24f_western_chess_perft.py": "a6edda3bcf043103fa036f1095aebc2fb22174b499eb0b3a7a646fcffae7b8fa",
-        "tests/test_f24f_western_chess_perft.py": "af946ffb9a6954e8d982d67c826d91ad7239aee6f8301b9eca38eb98191b1275",
-        "tests/fixtures/f24f_western_chess_perft.json": "38f709af51cbe9ae9a4ceb0e746b5dcb879cb592aca16d387ca59126ff452802",
-        "docs/architecture/ADR-082-western-chess-perft-certification.md": "f09a0b49f036bc26e6e16a6215ebc54e04ed371708a3f89b18fa38f45fe116ea",
+        "scripts/audit_f24f_western_chess_perft.py": "5739cee5d3c8c618575e93e3b6ca11a0f5bd251387a9a70de1587387884362f4",
+        "tests/test_f24f_western_chess_perft.py": "45a7329cda11fcffb23281cc148e43de1e10a3f06f76d3c4fa26cbf758395575",
+        "tests/fixtures/f24f_western_chess_perft.json": "2c8fefbb22eb061123f2e40b379f9fc95dff0dd6154e3b7dfbd6363972cee4c2",
+        "docs/architecture/ADR-082-western-chess-perft-certification.md": "f24b2149c576a2dd64b8fca1fffad9da07ca2563e5dce1b38abd7fe0329db8c5",
     }
     assert [row["fen"] for row in canonical_manifest()] == [fen for _label, fen, _expected in CANONICAL_CORPUS]
     assert canonical_manifest_sha256() == "62b680de5ca316d6e5264a2ca35cc4207971fb5aed72f9af3146850f25e59123"

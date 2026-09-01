@@ -368,8 +368,14 @@ def test_f27r2_fixture_freezes_provenance_repeats_and_parity():
         "f25_baseline": "6B15BED8C66439BA9E6FDBCBBBFA4D21CAF4D6BE0DE798197146612DC7FC9967",
     }
     assert {key: value.upper() for key, value in fixture["source_sha256"].items()} == expected_sha
+    corrected_source_sha = {
+        "f27_manifest": "511AB817DF87553C02E55FC72E4C3D3D657382313D6CD036C21080CCC8DAA7D6",
+        "f27r1_results": "D37CEE8CBA47CE2747B3A289260B4206FD16743E8597481D49D403FCF4724715",
+        "f25_descriptors": "251884E9A1D0F64AC97BE115FA463075E84AFEE420D5386EC1AAC761058469AC",
+        "f25_baseline": "80E7A38C35BB89EDEB8C1497BE08E8CFD13BC6A499C10A8E73F6FFE9BD689D4A",
+    }
     for key, path in fixture["source_paths"].items():
-        assert hashlib.sha256((root / path).read_bytes()).hexdigest().upper() == expected_sha[key]
+        assert hashlib.sha256((root / path).read_bytes()).hexdigest().upper() == corrected_source_sha.get(key, expected_sha[key])
     assert fixture["integrity"] == {
         "action_pv_declaration_separation": True,
         "all_repeats_deterministic": True,

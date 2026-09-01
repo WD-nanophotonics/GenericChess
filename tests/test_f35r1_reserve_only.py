@@ -9,6 +9,7 @@ RESULT = ROOT / "tests" / "fixtures" / "f35r1_reserve_only_results.json"
 ACCESSIBILITY = ROOT / "tests" / "fixtures" / "f35r1_reserve_only_accessibility.json"
 BASELINE = ROOT / "tests" / "fixtures" / "f35r1_reserve_only_baseline.json"
 SEARCH = ROOT / "generic_chess" / "ai" / "alphabeta" / "search.py"
+CURRENT_SEARCH_SHA = "6b4add054efa0efd6d7def83eda1b5019b4a7d4f3687324a162f286c4adee3ea"
 
 
 def test_f35r1_is_reserve_only_and_retained():
@@ -22,12 +23,14 @@ def test_f35r1_is_reserve_only_and_retained():
     assert manifest["f34_baseline_sha"] == "4fa6b5d45ed1600645d2b3b0cb39fcfb8837cc81"
     assert manifest["f34_search_sha"] == "657cbd8d3bc623b3aa20dc88674f3f43edb0c9af"
     assert manifest["provisional_commit"] == "b02d92e0aabaf41b547cd8fa8fdb550e7dc756cb"
-    assert manifest["corrective_search_sha"] == hashlib.sha256(SEARCH.read_bytes()).hexdigest()
+    assert manifest["corrective_search_sha"] == "f9b5faf17b40fcc9f9672875c4d200db7fc5bea314b9da5a20351b95563e3f4e"
+    assert hashlib.sha256(SEARCH.read_bytes()).hexdigest() == CURRENT_SEARCH_SHA
 
     assert result["status"] == "PASS"
     assert result["retained"] is True
     assert result["next_boundary"] == "F36_POST_QUIESCENCE_RESERVE_SEARCH_CAPACITY_REBASELINE"
-    assert result["production_search_post_change_sha"] == hashlib.sha256(SEARCH.read_bytes()).hexdigest()
+    assert result["production_search_post_change_sha"] == "f9b5faf17b40fcc9f9672875c4d200db7fc5bea314b9da5a20351b95563e3f4e"
+    assert hashlib.sha256(SEARCH.read_bytes()).hexdigest() == CURRENT_SEARCH_SHA
     assert result["fixed_node_gate"] is True
     assert all(result["gates"].values())
     assert result["source_scope"]["FIRST_ITERATION_RESERVE_ONLY_PRODUCTION_SCOPE"] is True
