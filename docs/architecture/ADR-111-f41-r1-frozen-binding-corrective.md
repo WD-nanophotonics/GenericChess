@@ -1,4 +1,4 @@
-# ADR-110: F41 R1 frozen-binding corrective
+# ADR-111: F41 R1 frozen-binding corrective
 
 - Status: Accepted for the F41 R1 prerequisite gate
 - Scope: additive stale SHA/hash/provenance bindings only
