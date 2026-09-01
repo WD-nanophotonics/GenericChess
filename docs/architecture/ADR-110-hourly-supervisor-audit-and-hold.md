@@ -21,6 +21,11 @@ all durable worker progress while the HOLD is active. The worker carries the
 evidence to ChatCourier for resolution; unresolved authority conflicts reach the
 human user.
 
+The ignored `supervisor-audit.json` record stores the latest classification,
+worker status/cursor, message key, and HOLD ID. Message-bearing decisions reserve
+a key before delivery; repeating the same key at the same worker cursor is
+rejected, so an hourly wakeup does not repeatedly queue the same intervention.
+
 ## Consequences
 
 An hourly audit can be cheap when work is healthy and can restart a worker that

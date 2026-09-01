@@ -107,6 +107,8 @@ generic-chess-flow.cmd recover [--worker-thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd resume
 generic-chess-flow.cmd register-supervisor [--thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd register-worker --thread-id <CODEX_THREAD_ID>
+generic-chess-flow.cmd supervisor-audit-status
+generic-chess-flow.cmd supervisor-audit-record --classification <CLASS> --worker-status <STATE> [--worker-cursor <cursor>] [--message-key <key>] [--hold-id <id>]
 generic-chess-flow.cmd supervisor-hold --reason-file <path> [--worker-thread-id <id>]
 generic-chess-flow.cmd supervisor-hold-status [--check-write]
 generic-chess-flow.cmd supervisor-release --hold-id <id> --detail-file <path>

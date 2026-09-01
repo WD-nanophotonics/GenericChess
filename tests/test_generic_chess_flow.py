@@ -503,6 +503,35 @@ def test_hold_status_check_write_returns_nonzero(monkeypatch, tmp_path, capsys):
     assert json.loads(capsys.readouterr().out)["active"] is True
 
 
+def test_supervisor_audit_record_is_authorized_and_deduplicates_messages(
+        monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "schema": "generic-chess-supervisor-v1",
+        "supervisor_thread_id": "supervisor-1",
+        "worker_thread_id": "worker-1",
+    }), encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
+    args = SimpleNamespace(
+        classification="UNJUSTIFIED_IDLE", worker_status="idle",
+        worker_cursor="cursor-7", message_key="wake:cursor-7", hold_id=None)
+
+    assert flow.command_supervisor_audit_record(tmp_path, args) == 0
+    first = json.loads(capsys.readouterr().out)
+    assert first["audit"]["worker_thread_id"] == "worker-1"
+    assert flow.command_supervisor_audit_record(tmp_path, args) == 4
+    assert json.loads(capsys.readouterr().out)["duplicate"] is True
+
+    flow.command_supervisor_audit_status(tmp_path, SimpleNamespace())
+    assert json.loads(capsys.readouterr().out)["audit"]["message_key"] == "wake:cursor-7"
+
+    monkeypatch.setenv("CODEX_THREAD_ID", "worker-1")
+    with pytest.raises(flow.FlowError, match="registered Supervisor"):
+        flow.command_supervisor_audit_record(tmp_path, args)
+
+
 def test_user_superseded_resolution_retires_request_without_deleting_evidence(monkeypatch, tmp_path):
     runtime = tmp_path / "runtime"
     directory = runtime / "escalations" / ("b" * 20)

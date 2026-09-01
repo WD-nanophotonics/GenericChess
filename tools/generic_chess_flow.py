@@ -786,6 +786,10 @@ def supervisor_hold_history_root(root: Path) -> Path:
     return runtime_dir(root) / "supervisor-holds"
 
 
+def supervisor_audit_path(root: Path) -> Path:
+    return runtime_dir(root) / "supervisor-audit.json"
+
+
 def escalation_root(root: Path) -> Path:
     return runtime_dir(root) / "escalations"
 
@@ -852,6 +856,64 @@ def command_register_worker(root: Path, args: argparse.Namespace) -> None:
     })
     _atomic_json(supervisor_config_path(root), value)
     print(json.dumps(value, indent=2, sort_keys=True))
+
+
+def command_supervisor_audit_status(root: Path, _args: argparse.Namespace) -> None:
+    path = supervisor_audit_path(root)
+    if not path.is_file():
+        print(json.dumps({"recorded": False, "audit": None}, indent=2, sort_keys=True))
+        return
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise FlowError(f"invalid Supervisor audit state: {path}") from exc
+    if not isinstance(value, dict) or value.get("schema") != "generic-chess-supervisor-audit-v1":
+        raise FlowError(f"invalid Supervisor audit state: {path}")
+    print(json.dumps({"recorded": True, "audit": value}, indent=2,
+                     ensure_ascii=False, sort_keys=True))
+
+
+def command_supervisor_audit_record(root: Path, args: argparse.Namespace) -> int:
+    config, current = _current_supervisor(root)
+    worker_thread_id = config.get("worker_thread_id")
+    if not isinstance(worker_thread_id, str) or not worker_thread_id:
+        raise FlowError("a worker task must be registered before recording an audit")
+    path = supervisor_audit_path(root)
+    previous: dict[str, Any] | None = None
+    if path.is_file():
+        try:
+            candidate = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise FlowError(f"invalid Supervisor audit state: {path}") from exc
+        if not isinstance(candidate, dict):
+            raise FlowError(f"invalid Supervisor audit state: {path}")
+        previous = candidate
+    message_key = args.message_key or None
+    duplicate = bool(
+        message_key
+        and previous
+        and previous.get("message_key") == message_key
+        and previous.get("worker_cursor") == (args.worker_cursor or None)
+    )
+    if duplicate:
+        print(json.dumps({"recorded": False, "duplicate": True, "audit": previous},
+                         indent=2, ensure_ascii=False, sort_keys=True))
+        return 4
+    value = {
+        "schema": "generic-chess-supervisor-audit-v1",
+        "classification": args.classification,
+        "worker_status": args.worker_status,
+        "worker_cursor": args.worker_cursor or None,
+        "message_key": message_key,
+        "hold_id": args.hold_id or None,
+        "recorded_at": time.time(),
+        "supervisor_thread_id": current,
+        "worker_thread_id": worker_thread_id,
+    }
+    _atomic_json(path, value)
+    print(json.dumps({"recorded": True, "duplicate": False, "audit": value},
+                     indent=2, ensure_ascii=False, sort_keys=True))
+    return 0
 
 
 def command_supervisor_hold(root: Path, args: argparse.Namespace) -> None:
@@ -1537,6 +1599,17 @@ def parser() -> argparse.ArgumentParser:
     worker.add_argument("--thread-id", required=True)
     worker.add_argument("--host-id", default="local")
     worker.set_defaults(handler=command_register_worker)
+    audit_status = sub.add_parser("supervisor-audit-status")
+    audit_status.set_defaults(handler=command_supervisor_audit_status)
+    audit = sub.add_parser("supervisor-audit-record")
+    audit.add_argument("--classification", required=True, choices=(
+        "HEALTHY_RUNNING", "UNJUSTIFIED_IDLE", "NONURGENT_CORRECTION",
+        "URGENT_HOLD", "LEGITIMATE_STOP", "HUMAN_REQUIRED"))
+    audit.add_argument("--worker-status", required=True)
+    audit.add_argument("--worker-cursor")
+    audit.add_argument("--message-key")
+    audit.add_argument("--hold-id")
+    audit.set_defaults(handler=command_supervisor_audit_record)
     hold = sub.add_parser("supervisor-hold")
     hold.add_argument("--reason-file", required=True)
     hold.add_argument("--worker-thread-id")
