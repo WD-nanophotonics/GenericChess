@@ -1,0 +1,44 @@
+{
+  "budget_semantics": {
+    "classification": "MIXED",
+    "in_check_cap_hit": true,
+    "no_prior_completed_iteration": true,
+    "ordinary_noncheck_cap_hit": true,
+    "prior_completed_iteration": true,
+    "production_abort_rows": 13,
+    "source": "F32 qnode-cap evidence plus executable one-node ordinary/in-check witnesses"
+  },
+  "flags": {
+    "CURRENT_QNODE_BUDGET_SEMANTICS_CERTIFIED": true,
+    "F33_QSEARCH_BASELINE_CONSUMED": true,
+    "PROGRESSIVE_QSEARCH_SCHEDULING_AUDIT_COMPLETE": true,
+    "QSEARCH_TACTICAL_SAFETY_AUDIT_COMPLETE": true,
+    "QUIESCENCE_BUDGET_ARCHITECTURE_SELECTED": true,
+    "SOFT_QSEARCH_BUDGET_AUDIT_COMPLETE": true
+  },
+  "gates": {
+    "Q34A_SOFT_CAP_256": {
+      "accessibility_material": false,
+      "no_depth_regression_over_two": true,
+      "tactical_safety": true
+    },
+    "Q34B_D": {
+      "accessibility_material": false,
+      "no_depth_regression_over_two": true,
+      "tactical_safety": true
+    },
+    "Q34B_D_MINUS_1": {
+      "accessibility_material": true,
+      "no_depth_regression_over_two": true,
+      "tactical_safety": true
+    },
+    "Q34C": {
+      "accessibility_material": true,
+      "no_depth_regression_over_two": true,
+      "tactical_safety": true
+    }
+  },
+  "next_boundary": "F35_FIRST_ITERATION_QUIESCENCE_RESERVE_IMPLEMENTATION",
+  "selected_architecture": "Q34C",
+  "selected_soft_cap": "Q34A_SOFT_CAP_256"
+}

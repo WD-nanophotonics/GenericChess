@@ -1,0 +1,72 @@
+{
+  "deterministic_bounded_result": true,
+  "generic_ruleset_witness": true,
+  "push_pop_balance": true,
+  "status": "PASS",
+  "witnesses": {
+    "automatic_no_contest": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "avoid_immediate_mate_reply": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "checking_drop": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "declaration_loss": {
+      "executed": true,
+      "score": 0
+    },
+    "declaration_restart": {
+      "executed": true,
+      "score": 0
+    },
+    "declaration_win": {
+      "executed": true,
+      "score": 1000000000
+    },
+    "direct_checking_move": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "discovered_checking_move": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "immediate_forced_capture": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "immediate_promotion_tactic": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "mate_in_one_child": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "max_ply": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "opaque_imported_history": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "repetition_perpetual_check_terminal": {
+      "executed": true,
+      "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+    },
+    "side_in_check_multiple_evasions": {
+      "executed": true,
+      "result": "all evasion path retained"
+    },
+    "stalemate_terminal_child": {
+      "executed": true,
+      "result": "terminal score preserved"
+    }
+  }
+}
