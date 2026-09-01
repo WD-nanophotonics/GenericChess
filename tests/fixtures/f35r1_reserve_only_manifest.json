@@ -1,0 +1,87 @@
+{
+  "constraints": [
+    "NO_EVALUATOR_CHANGE",
+    "NO_NATIVE_REPAIR",
+    "NO_RULE_SCHEMA_SESSION_RECORD_CLI_CHANGE",
+    "NO_ALPHASHO_RERUN",
+    "NO_PAIRED_BENCHMARK",
+    "NO_ALPHA_CHESS",
+    "PRODUCTION_DIFF_ONLY_SEARCH_PY"
+  ],
+  "contract": {
+    "configured_qdepth": 4,
+    "hard_qdepth": 8,
+    "in_check": "unchanged full legal evasion path",
+    "lazy_noncheck_legal_generation": "must remain F34 ordering; not retained",
+    "production_scope": "Q34C first-iteration reserve machinery only",
+    "state": "context-local; aborted first iteration never completes reserve"
+  },
+  "corrective_search_sha": "f9b5faf17b40fcc9f9672875c4d200db7fc5bea314b9da5a20351b95563e3f4e",
+  "f34_baseline_sha": "4fa6b5d45ed1600645d2b3b0cb39fcfb8837cc81",
+  "f34_search_sha": "657cbd8d3bc623b3aa20dc88674f3f43edb0c9af",
+  "frozen_inputs": {
+    "f34_manifest": {
+      "file_sha256": "f65588fdbb35a1ab42508a33937735cb50e0d0b0c1ed3e3230fdd3f1572793cc",
+      "path": "tests/fixtures/f34_qsearch_budget_manifest.json",
+      "sha256": "6a5600c4fc1fb82582b42d47235fd72b4e02d60322749e1b97ebbae98500b75d"
+    },
+    "f34_matrix": {
+      "file_sha256": "f6ac85a2485c32dd03658811ce9a88618c749a2fffed233efd76363226647605",
+      "path": "tests/fixtures/f34_qsearch_budget_matrix.json",
+      "sha256": "f6ac85a2485c32dd03658811ce9a88618c749a2fffed233efd76363226647605"
+    },
+    "f34_safety": {
+      "file_sha256": "d12105d9b2667d0485c318bff1b99c31055618b1c93899f97fd196e669e798ca",
+      "path": "tests/fixtures/f34_qsearch_tactical_safety.json",
+      "sha256": "d12105d9b2667d0485c318bff1b99c31055618b1c93899f97fd196e669e798ca"
+    },
+    "f34_selection": {
+      "file_sha256": "fac977997eaa50f7e017d934aeda775f5fd1083825162e472dbdbcdf8c5fba3c",
+      "path": "tests/fixtures/f34_qsearch_budget_selection.json",
+      "sha256": "654a4076ca736591b4007ebb43b086e6d3d9e2b1152177b858c18c4257d58027"
+    },
+    "provisional_accessibility": {
+      "file_sha256": "6c9cbae6a15711a423eb108028bd2700941ba5dc763ff5221b4ec392ac2df607",
+      "path": "tests/fixtures/f35_first_iteration_reserve_accessibility.json",
+      "sha256": "6c9cbae6a15711a423eb108028bd2700941ba5dc763ff5221b4ec392ac2df607"
+    },
+    "provisional_baseline": {
+      "file_sha256": "d2307cca8743c7250e1fb9b48059843e7d7734deee8adf0ec283719fd338f8fd",
+      "path": "tests/fixtures/f35_first_iteration_reserve_baseline.json",
+      "sha256": "d2307cca8743c7250e1fb9b48059843e7d7734deee8adf0ec283719fd338f8fd"
+    },
+    "provisional_manifest": {
+      "file_sha256": "c7b06bdd10f6e580cebc0e1513741c33aa165333679aa6a5dce19145f61696a8",
+      "path": "tests/fixtures/f35_first_iteration_reserve_manifest.json",
+      "sha256": "cb2afd22c4235cbafb7804dc80a6ba44cf5c2a38a2ed21d36ca5f0dd94b35787"
+    },
+    "provisional_result": {
+      "file_sha256": "e7fa2c81340de6aa1aa04e53e4842ff64fe1e6e4ac4ebed5483548b119cbaa4a",
+      "path": "tests/fixtures/f35_q34c_fixed_node_parity.json",
+      "sha256": "e7fa2c81340de6aa1aa04e53e4842ff64fe1e6e4ac4ebed5483548b119cbaa4a"
+    }
+  },
+  "gates": {
+    "accessibility": "unchanged F34 gate using root medians and no more fallback",
+    "fixed_reproduction": "20/20 exact F34 Q34C rows",
+    "scope": "only reserve machinery differs from F34 search.py"
+  },
+  "kind": "F35R1_RESERVE_ONLY_MANIFEST",
+  "manifest_sha256": "e6446cb1d436e6bcabf71dfc188bb4a3fbd4933fabf7b702981feb86f67a4fdb",
+  "matrix": {
+    "fixed_nodes": [
+      512,
+      2048
+    ],
+    "roots": 10,
+    "wall_repetitions": 3,
+    "wall_times_seconds": [
+      0.5,
+      2.0
+    ]
+  },
+  "pre_run_sandbox_sha": "b02d92e0aabaf41b547cd8fa8fdb550e7dc756cb",
+  "provisional_commit": "b02d92e0aabaf41b547cd8fa8fdb550e7dc756cb",
+  "provisional_search_sha": "0345adfa5ac63c13d7cae0538e8153dcf24ee0cdfd4d41d782a401e421cdba0e",
+  "schema_version": 1
+}

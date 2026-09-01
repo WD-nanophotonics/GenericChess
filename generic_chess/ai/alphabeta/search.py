@@ -558,11 +558,11 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
         if engine is not None else is_in_check(state.position, side, ctx.compiled)
     )
+    actions = list(runtime.legal_actions(ctx.checkpoint))
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_actions_generated += len(actions)
+    ctx.budget.check(ctx.stats, force=True)
     if in_check:
-        actions = list(runtime.legal_actions(ctx.checkpoint))
-        ctx.stats.legal_generation_calls += 1
-        ctx.stats.legal_actions_generated += len(actions)
-        ctx.budget.check(ctx.stats, force=True)
         ctx.stats.in_check_qnodes += 1
         if qdepth >= ctx.qhard_depth_limit:
             ctx.stats.qsearch_check_hard_limit_aborts += 1
@@ -597,10 +597,6 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
         ctx.stats.qsearch_budget_aborts += 1
         raise SearchAborted("qsearch_budget")
-    actions = list(runtime.legal_actions(ctx.checkpoint))
-    ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_actions_generated += len(actions)
-    ctx.budget.check(ctx.stats, force=True)
     for action in sorted(_runtime_noisy_actions(ctx, actions), key=str):
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
             score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)

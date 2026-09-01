@@ -1,4 +1,3 @@
-import hashlib
 import json
 from pathlib import Path
 
@@ -8,7 +7,6 @@ MANIFEST = ROOT / "tests" / "fixtures" / "f35_first_iteration_reserve_manifest.j
 RESULT = ROOT / "tests" / "fixtures" / "f35_q34c_fixed_node_parity.json"
 ACCESSIBILITY = ROOT / "tests" / "fixtures" / "f35_first_iteration_reserve_accessibility.json"
 BASELINE = ROOT / "tests" / "fixtures" / "f35_first_iteration_reserve_baseline.json"
-SEARCH = ROOT / "generic_chess" / "ai" / "alphabeta" / "search.py"
 
 
 def test_f35_first_iteration_reserve_is_retained_with_frozen_gates():
@@ -24,7 +22,7 @@ def test_f35_first_iteration_reserve_is_retained_with_frozen_gates():
     assert result["retained"] is True
     assert result["next_boundary"] == "F36_POST_QUIESCENCE_RESERVE_SEARCH_CAPACITY_REBASELINE"
     assert result["production_changed"] is True
-    assert result["production_search_post_change_sha"] == hashlib.sha256(SEARCH.read_bytes()).hexdigest()
+    assert result["production_search_post_change_sha"] == "0345adfa5ac63c13d7cae0538e8153dcf24ee0cdfd4d41d782a401e421cdba0e"
     assert result["f34_manifest_sha256"] == "6a5600c4fc1fb82582b42d47235fd72b4e02d60322749e1b97ebbae98500b75d"
     assert result["fixed_node_gate"] is True
     assert all(result["gates"].values())

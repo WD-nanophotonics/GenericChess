@@ -1,0 +1,4164 @@
+{
+  "accessibility": {
+    "0.5": {
+      "comparable_first_iteration_roots": 0,
+      "depth_improved_roots": 3,
+      "depth_regressed_roots": 0,
+      "fallbacks_removed_0.50": 3,
+      "median_first_iteration_gain": 0.0,
+      "new_fallbacks": 0
+    },
+    "2.0": {
+      "comparable_first_iteration_roots": 10,
+      "depth_improved_roots": 0,
+      "depth_regressed_roots": 0,
+      "fallbacks_removed_0.50": 0,
+      "median_first_iteration_gain": 0.22023047369844684,
+      "new_fallbacks": 0
+    },
+    "depth_regression_gate": true,
+    "gate": true
+  },
+  "cancellation_witness": {
+    "fallback": true,
+    "fresh_context_after_cancel": true,
+    "termination_reason": "cancelled"
+  },
+  "direct_and_zero_qdepth_witness": {
+    "direct_internal_configured_qdepth_four": true,
+    "explicit_qdepth_zero_static_eval": true
+  },
+  "evaluator_context": {
+    "fresh_alphasho_outside_evaluator_v1_static_top3": "8/10",
+    "modified": false
+  },
+  "external_descriptive_comparison": {
+    "alphasho_rerun": false,
+    "candidate_modal_agreement": {
+      "0.5": 2,
+      "2.0": 3
+    },
+    "f22_historical_move": "consumed from frozen F30 reference only",
+    "used_for_selection": false
+  },
+  "f34_manifest_sha256": "6a5600c4fc1fb82582b42d47235fd72b4e02d60322749e1b97ebbae98500b75d",
+  "f35r1_manifest_sha256": "e6446cb1d436e6bcabf71dfc188bb4a3fbd4933fabf7b702981feb86f67a4fdb",
+  "first_iteration_in_check_evasion": {
+    "effective_ordinary_qdepth": 0,
+    "evasions_searched": 2,
+    "passed": true,
+    "stand_pat_evaluations": 0
+  },
+  "fixed_node": {
+    "production_candidate": {
+      "2048": {
+        "iteration-000086-game-000001-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 28.310438300017267,
+          "fallback": false,
+          "main_nodes": 1020,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4f4e",
+          "qnode_fraction": 0.501953125,
+          "qnodes": 1028,
+          "score": 358,
+          "selected_move": "4f4e",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.98499999998603,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000002-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 34.92301010002848,
+          "fallback": false,
+          "main_nodes": 963,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.52978515625,
+          "qnodes": 1085,
+          "score": -2,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 6.655999999959022,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000003-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 27.50316560000647,
+          "fallback": false,
+          "main_nodes": 1031,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4i3h",
+          "qnode_fraction": 0.49658203125,
+          "qnodes": 1017,
+          "score": -10,
+          "selected_move": "4i3h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.733999999938533,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000004-ply12": {
+          "completed_depth": 3,
+          "elapsed_seconds": 22.108643400017172,
+          "fallback": false,
+          "main_nodes": 1084,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "5i5h",
+          "qnode_fraction": 0.470703125,
+          "qnodes": 964,
+          "score": 11,
+          "selected_move": "5i5h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 21.29700000002049,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000005-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 61.26263049989939,
+          "fallback": false,
+          "main_nodes": 590,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.7119140625,
+          "qnodes": 1458,
+          "score": -9,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 29.95299999997951,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000006-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 28.377328300033696,
+          "fallback": false,
+          "main_nodes": 1035,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h9g",
+          "qnode_fraction": 0.49462890625,
+          "qnodes": 1013,
+          "score": 4,
+          "selected_move": "8h9g",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.452999999979511,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000007-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 42.297275400022045,
+          "fallback": false,
+          "main_nodes": 863,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.57861328125,
+          "qnodes": 1185,
+          "score": -15,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 8.469000000040978,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000008-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 24.825720100081526,
+          "fallback": false,
+          "main_nodes": 1061,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7i",
+          "qnode_fraction": 0.48193359375,
+          "qnodes": 987,
+          "score": -7,
+          "selected_move": "6i7i",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.547000000020489,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000009-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 50.935384599957615,
+          "fallback": false,
+          "main_nodes": 716,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h4d",
+          "qnode_fraction": 0.650390625,
+          "qnodes": 1332,
+          "score": 359,
+          "selected_move": "8h4d",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 11.922000000020489,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000010-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 31.653988600010052,
+          "fallback": false,
+          "main_nodes": 1092,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7h",
+          "qnode_fraction": 0.466796875,
+          "qnodes": 956,
+          "score": 1,
+          "selected_move": "6i7h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 5.094000000040978,
+          "total_nodes": 2048
+        }
+      },
+      "512": {
+        "iteration-000086-game-000001-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 10.545533300028183,
+          "fallback": false,
+          "main_nodes": 232,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4f4e",
+          "qnode_fraction": 0.546875,
+          "qnodes": 280,
+          "score": 358,
+          "selected_move": "4f4e",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.547000000020489,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000002-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 6.849441900034435,
+          "fallback": false,
+          "main_nodes": 263,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.486328125,
+          "qnodes": 249,
+          "score": -2,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 6.766000000061467,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000003-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 8.591348499991,
+          "fallback": false,
+          "main_nodes": 245,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4i3h",
+          "qnode_fraction": 0.521484375,
+          "qnodes": 267,
+          "score": -10,
+          "selected_move": "4i3h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.922000000020489,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000004-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 8.56984510004986,
+          "fallback": false,
+          "main_nodes": 285,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "5i5h",
+          "qnode_fraction": 0.443359375,
+          "qnodes": 227,
+          "score": 4,
+          "selected_move": "5i5h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 2.9369999999180436,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000005-ply12": {
+          "completed_depth": 1,
+          "elapsed_seconds": 10.96932209993247,
+          "fallback": false,
+          "main_nodes": 217,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "5i5h",
+          "qnode_fraction": 0.576171875,
+          "qnodes": 295,
+          "score": -1,
+          "selected_move": "5i5h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 0.42099999997299165,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000006-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 10.087332999915816,
+          "fallback": false,
+          "main_nodes": 281,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h9g",
+          "qnode_fraction": 0.451171875,
+          "qnodes": 231,
+          "score": 4,
+          "selected_move": "8h9g",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.281000000075437,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000007-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 11.965914400061592,
+          "fallback": false,
+          "main_nodes": 227,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.556640625,
+          "qnodes": 285,
+          "score": -15,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 8.26500000001397,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000008-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 7.112891700002365,
+          "fallback": false,
+          "main_nodes": 278,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7i",
+          "qnode_fraction": 0.45703125,
+          "qnodes": 234,
+          "score": -7,
+          "selected_move": "6i7i",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.422000000020489,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000009-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 13.409808699972928,
+          "fallback": false,
+          "main_nodes": 222,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h4d",
+          "qnode_fraction": 0.56640625,
+          "qnodes": 290,
+          "score": 359,
+          "selected_move": "8h4d",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 12.156000000075437,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000010-ply12": {
+          "completed_depth": 1,
+          "elapsed_seconds": 4.993814699933864,
+          "fallback": false,
+          "main_nodes": 282,
+          "parity": {
+            "completed_depth": true,
+            "main_nodes": true,
+            "pv_head": true,
+            "qnodes": true,
+            "score": true,
+            "selected_move": true,
+            "termination_reason": true
+          },
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7h",
+          "qnode_fraction": 0.44921875,
+          "qnodes": 230,
+          "score": 9,
+          "selected_move": "6i7h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 0.4380000000819564,
+          "total_nodes": 512
+        }
+      }
+    },
+    "shadow_baseline": {
+      "2048": {
+        "iteration-000086-game-000001-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 27.55844229995273,
+          "fallback": false,
+          "main_nodes": 1020,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4f4e",
+          "qnode_fraction": 0.501953125,
+          "qnodes": 1028,
+          "score": 358,
+          "selected_move": "4f4e",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 5.078000000095926,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000002-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 34.395908599952236,
+          "fallback": false,
+          "main_nodes": 963,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.52978515625,
+          "qnodes": 1085,
+          "score": -2,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 6.422000000020489,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000003-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 27.874636400025338,
+          "fallback": false,
+          "main_nodes": 1031,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4i3h",
+          "qnode_fraction": 0.49658203125,
+          "qnodes": 1017,
+          "score": -10,
+          "selected_move": "4i3h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.952999999979511,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000004-ply12": {
+          "completed_depth": 3,
+          "elapsed_seconds": 21.320233599981293,
+          "fallback": false,
+          "main_nodes": 1084,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "5i5h",
+          "qnode_fraction": 0.470703125,
+          "qnodes": 964,
+          "score": 11,
+          "selected_move": "5i5h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 20.515999999945052,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000005-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 62.31749329995364,
+          "fallback": false,
+          "main_nodes": 590,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.7119140625,
+          "qnodes": 1458,
+          "score": -9,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 31.188000000081956,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000006-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 29.688227700069547,
+          "fallback": false,
+          "main_nodes": 1035,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h9g",
+          "qnode_fraction": 0.49462890625,
+          "qnodes": 1013,
+          "score": 4,
+          "selected_move": "8h9g",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.484000000054948,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000007-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 42.44606460002251,
+          "fallback": false,
+          "main_nodes": 863,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.57861328125,
+          "qnodes": 1185,
+          "score": -15,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 8.202999999979511,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000008-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 23.831327500054613,
+          "fallback": false,
+          "main_nodes": 1061,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7i",
+          "qnode_fraction": 0.48193359375,
+          "qnodes": 987,
+          "score": -7,
+          "selected_move": "6i7i",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.405999999959022,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000009-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 50.53906109998934,
+          "fallback": false,
+          "main_nodes": 716,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h4d",
+          "qnode_fraction": 0.650390625,
+          "qnodes": 1332,
+          "score": 359,
+          "selected_move": "8h4d",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 12.35999999998603,
+          "total_nodes": 2048
+        },
+        "iteration-000086-game-000010-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 32.4628768999828,
+          "fallback": false,
+          "main_nodes": 1092,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7h",
+          "qnode_fraction": 0.466796875,
+          "qnodes": 956,
+          "score": 1,
+          "selected_move": "6i7h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 5.547000000020489,
+          "total_nodes": 2048
+        }
+      },
+      "512": {
+        "iteration-000086-game-000001-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 9.969860299956053,
+          "fallback": false,
+          "main_nodes": 232,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4f4e",
+          "qnode_fraction": 0.546875,
+          "qnodes": 280,
+          "score": 358,
+          "selected_move": "4f4e",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.10999999998603,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000002-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 7.230506899999455,
+          "fallback": false,
+          "main_nodes": 263,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.486328125,
+          "qnodes": 249,
+          "score": -2,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.140999999945052,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000003-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 9.140703699900769,
+          "fallback": false,
+          "main_nodes": 245,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "4i3h",
+          "qnode_fraction": 0.521484375,
+          "qnodes": 267,
+          "score": -10,
+          "selected_move": "4i3h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 8.375,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000004-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 8.472945399931632,
+          "fallback": false,
+          "main_nodes": 285,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "5i5h",
+          "qnode_fraction": 0.443359375,
+          "qnodes": 227,
+          "score": 4,
+          "selected_move": "5i5h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 2.905999999959022,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000005-ply12": {
+          "completed_depth": 1,
+          "elapsed_seconds": 11.808801399893127,
+          "fallback": false,
+          "main_nodes": 216,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "5i5h",
+          "qnode_fraction": 0.578125,
+          "qnodes": 296,
+          "score": -1,
+          "selected_move": "5i5h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 1.125,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000006-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 10.106119300005957,
+          "fallback": false,
+          "main_nodes": 281,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h9g",
+          "qnode_fraction": 0.451171875,
+          "qnodes": 231,
+          "score": 4,
+          "selected_move": "8h9g",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 7.266000000061467,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000007-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 11.664242299972102,
+          "fallback": false,
+          "main_nodes": 227,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "7g7f",
+          "qnode_fraction": 0.556640625,
+          "qnodes": 285,
+          "score": -15,
+          "selected_move": "7g7f",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 8.094000000040978,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000008-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 7.097808000049554,
+          "fallback": false,
+          "main_nodes": 278,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7i",
+          "qnode_fraction": 0.45703125,
+          "qnodes": 234,
+          "score": -7,
+          "selected_move": "6i7i",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 4.60999999998603,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000009-ply12": {
+          "completed_depth": 2,
+          "elapsed_seconds": 13.814507700037211,
+          "fallback": false,
+          "main_nodes": 222,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "8h4d",
+          "qnode_fraction": 0.56640625,
+          "qnodes": 290,
+          "score": 359,
+          "selected_move": "8h4d",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 12.5,
+          "total_nodes": 512
+        },
+        "iteration-000086-game-000010-ply12": {
+          "completed_depth": 1,
+          "elapsed_seconds": 5.052322300034575,
+          "fallback": false,
+          "main_nodes": 282,
+          "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+          "pv_head": "6i7h",
+          "qnode_fraction": 0.44921875,
+          "qnodes": 230,
+          "score": 9,
+          "selected_move": "6i7h",
+          "termination_reason": "node_limit",
+          "time_to_first_completed_iteration": 0.75,
+          "total_nodes": 512
+        }
+      }
+    }
+  },
+  "fixed_node_gate": true,
+  "fixed_search_regression": {
+    "1024": {
+      "iteration-000086-game-000001-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 17.681088399956934,
+        "fallback": false,
+        "main_nodes": 490,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.521484375,
+        "qnodes": 534,
+        "score": 358,
+        "selected_move": "4f4e",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 4.625,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000002-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 17.998839500010945,
+        "fallback": false,
+        "main_nodes": 536,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.4765625,
+        "qnodes": 488,
+        "score": -2,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 6.922000000020489,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000003-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 17.261607499909587,
+        "fallback": false,
+        "main_nodes": 504,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.5078125,
+        "qnodes": 520,
+        "score": -10,
+        "selected_move": "4i3h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 7.718999999924563,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000004-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 13.699151600012556,
+        "fallback": false,
+        "main_nodes": 553,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.4599609375,
+        "qnodes": 471,
+        "score": 4,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 2.76500000001397,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000005-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 29.6088617000496,
+        "fallback": false,
+        "main_nodes": 309,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.6982421875,
+        "qnodes": 715,
+        "score": -9,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 29.26500000001397,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000006-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 13.598525200039148,
+        "fallback": false,
+        "main_nodes": 545,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h9g",
+        "qnode_fraction": 0.4677734375,
+        "qnodes": 479,
+        "score": 4,
+        "selected_move": "8h9g",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 7.437999999965541,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000007-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 22.016496500000358,
+        "fallback": false,
+        "main_nodes": 451,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.5595703125,
+        "qnodes": 573,
+        "score": -15,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 8.311999999918044,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000008-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 11.303482099901885,
+        "fallback": false,
+        "main_nodes": 552,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.4609375,
+        "qnodes": 472,
+        "score": -7,
+        "selected_move": "6i7i",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 4.484000000054948,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000009-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 24.529854399967007,
+        "fallback": false,
+        "main_nodes": 387,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.6220703125,
+        "qnodes": 637,
+        "score": 359,
+        "selected_move": "8h4d",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 11.358999999938533,
+        "total_nodes": 1024
+      },
+      "iteration-000086-game-000010-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 15.944343099952675,
+        "fallback": false,
+        "main_nodes": 549,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.4638671875,
+        "qnodes": 475,
+        "score": 1,
+        "selected_move": "6i7h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 4.891000000061467,
+        "total_nodes": 1024
+      }
+    },
+    "128": {
+      "iteration-000086-game-000001-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 1.0209064999362454,
+        "fallback": false,
+        "main_nodes": 80,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.375,
+        "qnodes": 48,
+        "score": 369,
+        "selected_move": "4f4e",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5469999999040738,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000002-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 1.0025105000240728,
+        "fallback": false,
+        "main_nodes": 78,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.390625,
+        "qnodes": 50,
+        "score": 5,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.46799999999348074,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000003-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 0.9140257000690326,
+        "fallback": false,
+        "main_nodes": 81,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.3671875,
+        "qnodes": 47,
+        "score": 0,
+        "selected_move": "4i3h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.6099999999860302,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000004-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 0.8812030999688432,
+        "fallback": false,
+        "main_nodes": 79,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.3828125,
+        "qnodes": 49,
+        "score": 14,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.3910000000614673,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000005-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 1.2213635999942198,
+        "fallback": false,
+        "main_nodes": 78,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.390625,
+        "qnodes": 50,
+        "score": -1,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5939999999245629,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000006-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 0.8427447000285611,
+        "fallback": false,
+        "main_nodes": 81,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.3671875,
+        "qnodes": 47,
+        "score": 12,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000007-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 1.2150569999357685,
+        "fallback": false,
+        "main_nodes": 81,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.3671875,
+        "qnodes": 47,
+        "score": -10,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.609000000054948,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000008-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 0.9072119999909773,
+        "fallback": false,
+        "main_nodes": 79,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.3828125,
+        "qnodes": 49,
+        "score": 1,
+        "selected_move": "6i7i",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.40700000000651926,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000009-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 1.5578465999569744,
+        "fallback": false,
+        "main_nodes": 72,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.4375,
+        "qnodes": 56,
+        "score": 368,
+        "selected_move": "8h4d",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.42099999997299165,
+        "total_nodes": 128
+      },
+      "iteration-000086-game-000010-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 0.8839161000214517,
+        "fallback": false,
+        "main_nodes": 79,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.3828125,
+        "qnodes": 49,
+        "score": 9,
+        "selected_move": "6i7h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.46899999992456287,
+        "total_nodes": 128
+      }
+    },
+    "2048": {
+      "iteration-000086-game-000001-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 27.561677300021984,
+        "fallback": false,
+        "main_nodes": 1020,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.501953125,
+        "qnodes": 1028,
+        "score": 358,
+        "selected_move": "4f4e",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 5.01500000001397,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000002-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 33.637892800034024,
+        "fallback": false,
+        "main_nodes": 963,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.52978515625,
+        "qnodes": 1085,
+        "score": -2,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 6.391000000061467,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000003-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 27.632048800005578,
+        "fallback": false,
+        "main_nodes": 1031,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.49658203125,
+        "qnodes": 1017,
+        "score": -10,
+        "selected_move": "4i3h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 7.780999999959022,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000004-ply12": {
+        "completed_depth": 3,
+        "elapsed_seconds": 21.609005599981174,
+        "fallback": false,
+        "main_nodes": 1084,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.470703125,
+        "qnodes": 964,
+        "score": 11,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 20.92099999997299,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000005-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 59.842407800024375,
+        "fallback": false,
+        "main_nodes": 590,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.7119140625,
+        "qnodes": 1458,
+        "score": -9,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 29.483999999938533,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000006-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 27.64482919999864,
+        "fallback": false,
+        "main_nodes": 1035,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h9g",
+        "qnode_fraction": 0.49462890625,
+        "qnodes": 1013,
+        "score": 4,
+        "selected_move": "8h9g",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 6.906000000075437,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000007-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 41.825284200022,
+        "fallback": false,
+        "main_nodes": 863,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.57861328125,
+        "qnodes": 1185,
+        "score": -15,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 8.094000000040978,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000008-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 24.333051300025545,
+        "fallback": false,
+        "main_nodes": 1061,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.48193359375,
+        "qnodes": 987,
+        "score": -7,
+        "selected_move": "6i7i",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 4.188000000081956,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000009-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 49.33874779997859,
+        "fallback": false,
+        "main_nodes": 716,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.650390625,
+        "qnodes": 1332,
+        "score": 359,
+        "selected_move": "8h4d",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 11.920999999972992,
+        "total_nodes": 2048
+      },
+      "iteration-000086-game-000010-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 31.422135600005277,
+        "fallback": false,
+        "main_nodes": 1092,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.466796875,
+        "qnodes": 956,
+        "score": 1,
+        "selected_move": "6i7h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 4.702999999979511,
+        "total_nodes": 2048
+      }
+    },
+    "256": {
+      "iteration-000086-game-000001-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 4.751546800020151,
+        "fallback": false,
+        "main_nodes": 139,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.45703125,
+        "qnodes": 117,
+        "score": 369,
+        "selected_move": "4f4e",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5629999999655411,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000002-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 2.4764933000551537,
+        "fallback": false,
+        "main_nodes": 144,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.4375,
+        "qnodes": 112,
+        "score": 5,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.4529999999795109,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000003-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 3.1994218999752775,
+        "fallback": false,
+        "main_nodes": 153,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.40234375,
+        "qnodes": 103,
+        "score": 0,
+        "selected_move": "4i3h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5630000000819564,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000004-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 3.051189999911003,
+        "fallback": false,
+        "main_nodes": 156,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.390625,
+        "qnodes": 100,
+        "score": 4,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 2.827999999979511,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000005-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 3.6618120999773964,
+        "fallback": false,
+        "main_nodes": 134,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.4765625,
+        "qnodes": 122,
+        "score": -1,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5320000000065193,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000006-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 2.8298765999497846,
+        "fallback": false,
+        "main_nodes": 153,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.40234375,
+        "qnodes": 103,
+        "score": 12,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.48499999998603016,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000007-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 4.225821000058204,
+        "fallback": false,
+        "main_nodes": 138,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.4609375,
+        "qnodes": 118,
+        "score": -10,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.6410000000614673,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000008-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 3.044415200012736,
+        "fallback": false,
+        "main_nodes": 136,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.46875,
+        "qnodes": 120,
+        "score": 1,
+        "selected_move": "6i7i",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.40600000007543713,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000009-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 6.011930100037716,
+        "fallback": false,
+        "main_nodes": 112,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.5625,
+        "qnodes": 144,
+        "score": 368,
+        "selected_move": "8h4d",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.46799999999348074,
+        "total_nodes": 256
+      },
+      "iteration-000086-game-000010-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 2.018681599991396,
+        "fallback": false,
+        "main_nodes": 144,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.4375,
+        "qnodes": 112,
+        "score": 9,
+        "selected_move": "6i7h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.46799999999348074,
+        "total_nodes": 256
+      }
+    },
+    "512": {
+      "iteration-000086-game-000001-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 10.596121500013396,
+        "fallback": false,
+        "main_nodes": 232,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.546875,
+        "qnodes": 280,
+        "score": 358,
+        "selected_move": "4f4e",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 5.015999999945052,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000002-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 6.848483800073154,
+        "fallback": false,
+        "main_nodes": 263,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.486328125,
+        "qnodes": 249,
+        "score": -2,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 6.76500000001397,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000003-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 8.467173199984245,
+        "fallback": false,
+        "main_nodes": 245,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.521484375,
+        "qnodes": 267,
+        "score": -10,
+        "selected_move": "4i3h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 7.813000000081956,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000004-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 8.412698799977079,
+        "fallback": false,
+        "main_nodes": 285,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.443359375,
+        "qnodes": 227,
+        "score": 4,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 2.719000000040978,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000005-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 11.96727170003578,
+        "fallback": false,
+        "main_nodes": 217,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.576171875,
+        "qnodes": 295,
+        "score": -1,
+        "selected_move": "5i5h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.5309999999590218,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000006-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 10.284139900002629,
+        "fallback": false,
+        "main_nodes": 281,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h9g",
+        "qnode_fraction": 0.451171875,
+        "qnodes": 231,
+        "score": 4,
+        "selected_move": "8h9g",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 7.437000000034459,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000007-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 11.306289199972525,
+        "fallback": false,
+        "main_nodes": 227,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.556640625,
+        "qnodes": 285,
+        "score": -15,
+        "selected_move": "7g7f",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 7.655999999959022,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000008-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 6.737473400076851,
+        "fallback": false,
+        "main_nodes": 278,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.45703125,
+        "qnodes": 234,
+        "score": -7,
+        "selected_move": "6i7i",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 4.062000000034459,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000009-ply12": {
+        "completed_depth": 2,
+        "elapsed_seconds": 13.704614900052547,
+        "fallback": false,
+        "main_nodes": 222,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.56640625,
+        "qnodes": 290,
+        "score": 359,
+        "selected_move": "8h4d",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 12.436999999918044,
+        "total_nodes": 512
+      },
+      "iteration-000086-game-000010-ply12": {
+        "completed_depth": 1,
+        "elapsed_seconds": 4.938927700044587,
+        "fallback": false,
+        "main_nodes": 282,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.44921875,
+        "qnodes": 230,
+        "score": 9,
+        "selected_move": "6i7h",
+        "termination_reason": "node_limit",
+        "time_to_first_completed_iteration": 0.4839999999385327,
+        "total_nodes": 512
+      }
+    }
+  },
+  "flags": {
+    "F34_Q34C_FIXED_NODE_REPRODUCED": true,
+    "F34_QSEARCH_ARCHITECTURE_CONSUMED": true,
+    "FIRST_ITERATION_IN_CHECK_EVASION_PARITY": true,
+    "FIRST_ITERATION_QUIESCENCE_RESERVE_RETAINED": true,
+    "FIRST_ITERATION_QUIESCENCE_RESERVE_SEMANTICS_CERTIFIED": true,
+    "FIRST_ITERATION_RESERVE_ACCESSIBILITY_GATE": true,
+    "FIRST_ITERATION_RESERVE_ONLY_PRODUCTION_SCOPE": true,
+    "LAZY_NONCHECK_LEGAL_GENERATION_RETAINED": false
+  },
+  "gates": {
+    "ACCESSIBILITY_MATERIAL": true,
+    "DIRECT_INTERNAL_QDEPTH_ISOLATION": true,
+    "EXPLICIT_QDEPTH_ZERO_COMPATIBILITY": true,
+    "F34_Q34C_FIXED_NODE_REPRODUCED": true,
+    "FIRST_ITERATION_IN_CHECK_EVASION_PARITY": true,
+    "FIRST_ITERATION_RESERVE_ONLY_PRODUCTION_SCOPE": true,
+    "QSEARCH_FULL_DEPTH_RESTORED_AFTER_FIRST_ITERATION": true,
+    "depth_regression_gate": true,
+    "runtime_balance_and_cancellation": true,
+    "tactical_safety": true
+  },
+  "next_boundary": "F36_POST_QUIESCENCE_RESERVE_SEARCH_CAPACITY_REBASELINE",
+  "production_changed": true,
+  "production_search_post_change_sha": "f9b5faf17b40fcc9f9672875c4d200db7fc5bea314b9da5a20351b95563e3f4e",
+  "provisional_evidence": {
+    "accessibility_sha256": "6c9cbae6a15711a423eb108028bd2700941ba5dc763ff5221b4ec392ac2df607",
+    "baseline_sha256": "d2307cca8743c7250e1fb9b48059843e7d7734deee8adf0ec283719fd338f8fd",
+    "commit": "b02d92e0aabaf41b547cd8fa8fdb550e7dc756cb",
+    "manifest_sha256": "cb2afd22c4235cbafb7804dc80a6ba44cf5c2a38a2ed21d36ca5f0dd94b35787",
+    "result_sha256": "e7fa2c81340de6aa1aa04e53e4842ff64fe1e6e4ac4ebed5483548b119cbaa4a",
+    "search_sha256": "0345adfa5ac63c13d7cae0538e8153dcf24ee0cdfd4d41d782a401e421cdba0e"
+  },
+  "reserve_state_witness": {
+    "aborted_iteration_did_not_complete": true,
+    "independent_run_starts_reserved": true,
+    "post_first_iteration_configured_qdepth_four": true,
+    "pre_first_iteration_ordinary_qdepth_zero": true
+  },
+  "retained": true,
+  "safety": {
+    "deterministic_bounded_result": true,
+    "generic_ruleset_witness": true,
+    "push_pop_balance": true,
+    "status": "PASS",
+    "witnesses": {
+      "automatic_no_contest": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "avoid_immediate_mate_reply": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "checking_drop": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "declaration_loss": {
+        "executed": true,
+        "score": 0
+      },
+      "declaration_restart": {
+        "executed": true,
+        "score": 0
+      },
+      "declaration_win": {
+        "executed": true,
+        "score": 1000000000
+      },
+      "direct_checking_move": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "discovered_checking_move": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "immediate_forced_capture": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "immediate_promotion_tactic": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "mate_in_one_child": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "max_ply": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "opaque_imported_history": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "repetition_perpetual_check_terminal": {
+        "executed": true,
+        "result": "covered by frozen F32/F34 Standard-Shogi and generic runtime corpus"
+      },
+      "side_in_check_multiple_evasions": {
+        "executed": true,
+        "result": "all evasion path retained"
+      },
+      "stalemate_terminal_child": {
+        "executed": true,
+        "result": "terminal score preserved"
+      }
+    }
+  },
+  "schema_version": 1,
+  "source_scope": {
+    "FIRST_ITERATION_RESERVE_ONLY_PRODUCTION_SCOPE": true,
+    "LAZY_NONCHECK_LEGAL_GENERATION_RETAINED": false,
+    "corrective_order_matches_f34": true,
+    "f34_order_restored": true
+  },
+  "status": "PASS",
+  "unambiguous_aggregates": {
+    "controls": {
+      "0.5": {
+        "aggregate_median_first_iteration": {
+          "production_candidate": 0.48400000005494803,
+          "shadow_baseline": null
+        },
+        "comparable_roots": [],
+        "depth_improved_roots": 3,
+        "depth_regressed_roots": 0,
+        "fallback_events": {
+          "production_candidate": 24,
+          "shadow_baseline": 30
+        },
+        "fallback_roots_improved": 3,
+        "retention_statistic": 0.0
+      },
+      "2.0": {
+        "aggregate_median_first_iteration": {
+          "production_candidate": 0.609000000054948,
+          "shadow_baseline": 0.7810000000172295
+        },
+        "comparable_roots": [
+          "iteration-000086-game-000001-ply12",
+          "iteration-000086-game-000002-ply12",
+          "iteration-000086-game-000003-ply12",
+          "iteration-000086-game-000004-ply12",
+          "iteration-000086-game-000005-ply12",
+          "iteration-000086-game-000006-ply12",
+          "iteration-000086-game-000007-ply12",
+          "iteration-000086-game-000008-ply12",
+          "iteration-000086-game-000009-ply12",
+          "iteration-000086-game-000010-ply12"
+        ],
+        "depth_improved_roots": 0,
+        "depth_regressed_roots": 0,
+        "fallback_events": {
+          "production_candidate": 0,
+          "shadow_baseline": 0
+        },
+        "fallback_roots_improved": 0,
+        "retention_statistic": 0.22023047369844684
+      }
+    },
+    "per_root_medians": {
+      "production_candidate": {
+        "0.5": {
+          "iteration-000086-game-000001-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.4984581000171602,
+            "fallback": 3,
+            "main_nodes": 50,
+            "qnode_fraction": 0.29577464788732394,
+            "qnodes": 21,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 71
+          },
+          "iteration-000086-game-000002-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 0.49820619996171445,
+            "fallback": 0,
+            "main_nodes": 54,
+            "qnode_fraction": 0.325,
+            "qnodes": 26,
+            "time_to_first_completed_iteration": 0.46799999999348074,
+            "total_nodes": 80
+          },
+          "iteration-000086-game-000003-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.498009099974297,
+            "fallback": 3,
+            "main_nodes": 56,
+            "qnode_fraction": 0.3,
+            "qnodes": 24,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 80
+          },
+          "iteration-000086-game-000004-ply12": {
+            "completed_depth": [
+              0,
+              1
+            ],
+            "elapsed_seconds": 0.4988953999709338,
+            "fallback": 2,
+            "main_nodes": 51,
+            "qnode_fraction": 0.32432432432432434,
+            "qnodes": 25,
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 76
+          },
+          "iteration-000086-game-000005-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49824640003498644,
+            "fallback": 3,
+            "main_nodes": 50,
+            "qnode_fraction": 0.2857142857142857,
+            "qnodes": 20,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          },
+          "iteration-000086-game-000006-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.4977051999885589,
+            "fallback": 3,
+            "main_nodes": 54,
+            "qnode_fraction": 0.2987012987012987,
+            "qnodes": 23,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 77
+          },
+          "iteration-000086-game-000007-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.4982583000091836,
+            "fallback": 3,
+            "main_nodes": 52,
+            "qnode_fraction": 0.2777777777777778,
+            "qnodes": 20,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 72
+          },
+          "iteration-000086-game-000008-ply12": {
+            "completed_depth": [
+              0,
+              1
+            ],
+            "elapsed_seconds": 0.497892800020054,
+            "fallback": 1,
+            "main_nodes": 54,
+            "qnode_fraction": 0.325,
+            "qnodes": 26,
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 80
+          },
+          "iteration-000086-game-000009-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49818909994792193,
+            "fallback": 3,
+            "main_nodes": 53,
+            "qnode_fraction": 0.3026315789473684,
+            "qnodes": 23,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 76
+          },
+          "iteration-000086-game-000010-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49798200000077486,
+            "fallback": 3,
+            "main_nodes": 49,
+            "qnode_fraction": 0.30985915492957744,
+            "qnodes": 22,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 71
+          }
+        },
+        "2.0": {
+          "iteration-000086-game-000001-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9985160999931395,
+            "fallback": 0,
+            "main_nodes": 91,
+            "qnode_fraction": 0.4129032258064516,
+            "qnodes": 64,
+            "time_to_first_completed_iteration": 0.6870000000344589,
+            "total_nodes": 155
+          },
+          "iteration-000086-game-000002-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9989397999597713,
+            "fallback": 0,
+            "main_nodes": 103,
+            "qnode_fraction": 0.4180790960451977,
+            "qnodes": 74,
+            "time_to_first_completed_iteration": 0.5470000000204891,
+            "total_nodes": 177
+          },
+          "iteration-000086-game-000003-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9972380000399426,
+            "fallback": 0,
+            "main_nodes": 106,
+            "qnode_fraction": 0.3872832369942196,
+            "qnodes": 67,
+            "time_to_first_completed_iteration": 0.75,
+            "total_nodes": 173
+          },
+          "iteration-000086-game-000004-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9979031999828294,
+            "fallback": 0,
+            "main_nodes": 113,
+            "qnode_fraction": 0.4083769633507853,
+            "qnodes": 78,
+            "time_to_first_completed_iteration": 0.46799999999348074,
+            "total_nodes": 191
+          },
+          "iteration-000086-game-000005-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.998022299958393,
+            "fallback": 0,
+            "main_nodes": 93,
+            "qnode_fraction": 0.41139240506329117,
+            "qnodes": 65,
+            "time_to_first_completed_iteration": 0.6720000000204891,
+            "total_nodes": 158
+          },
+          "iteration-000086-game-000006-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9978702999651432,
+            "fallback": 0,
+            "main_nodes": 104,
+            "qnode_fraction": 0.3772455089820359,
+            "qnodes": 63,
+            "time_to_first_completed_iteration": 0.609000000054948,
+            "total_nodes": 167
+          },
+          "iteration-000086-game-000007-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9982819999568164,
+            "fallback": 0,
+            "main_nodes": 101,
+            "qnode_fraction": 0.39520958083832336,
+            "qnodes": 66,
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 167
+          },
+          "iteration-000086-game-000008-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9978679999476299,
+            "fallback": 0,
+            "main_nodes": 111,
+            "qnode_fraction": 0.4095744680851064,
+            "qnodes": 77,
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 188
+          },
+          "iteration-000086-game-000009-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9980113999918103,
+            "fallback": 0,
+            "main_nodes": 66,
+            "qnode_fraction": 0.43103448275862066,
+            "qnodes": 50,
+            "time_to_first_completed_iteration": 0.609000000054948,
+            "total_nodes": 116
+          },
+          "iteration-000086-game-000010-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9980974999489263,
+            "fallback": 0,
+            "main_nodes": 115,
+            "qnode_fraction": 0.4221105527638191,
+            "qnodes": 84,
+            "time_to_first_completed_iteration": 0.5779999999795109,
+            "total_nodes": 199
+          }
+        }
+      },
+      "shadow_baseline": {
+        "0.5": {
+          "iteration-000086-game-000001-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49802910001017153,
+            "fallback": 3,
+            "main_nodes": 46,
+            "qnode_fraction": 0.2698412698412698,
+            "qnodes": 17,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 63
+          },
+          "iteration-000086-game-000002-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49723390000872314,
+            "fallback": 3,
+            "main_nodes": 35,
+            "qnode_fraction": 0.20454545454545456,
+            "qnodes": 9,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 44
+          },
+          "iteration-000086-game-000003-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49860559997614473,
+            "fallback": 3,
+            "main_nodes": 48,
+            "qnode_fraction": 0.25,
+            "qnodes": 16,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 64
+          },
+          "iteration-000086-game-000004-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.4977641999721527,
+            "fallback": 3,
+            "main_nodes": 46,
+            "qnode_fraction": 0.30303030303030304,
+            "qnodes": 20,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 66
+          },
+          "iteration-000086-game-000005-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.4981904000742361,
+            "fallback": 3,
+            "main_nodes": 32,
+            "qnode_fraction": 0.15789473684210525,
+            "qnodes": 6,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 38
+          },
+          "iteration-000086-game-000006-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49767359998077154,
+            "fallback": 3,
+            "main_nodes": 47,
+            "qnode_fraction": 0.25396825396825395,
+            "qnodes": 16,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 63
+          },
+          "iteration-000086-game-000007-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.498030100017786,
+            "fallback": 3,
+            "main_nodes": 47,
+            "qnode_fraction": 0.24193548387096775,
+            "qnodes": 15,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 62
+          },
+          "iteration-000086-game-000008-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49915509996935725,
+            "fallback": 3,
+            "main_nodes": 47,
+            "qnode_fraction": 0.29850746268656714,
+            "qnodes": 20,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 67
+          },
+          "iteration-000086-game-000009-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.4985005999915302,
+            "fallback": 3,
+            "main_nodes": 50,
+            "qnode_fraction": 0.2857142857142857,
+            "qnodes": 20,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          },
+          "iteration-000086-game-000010-ply12": {
+            "completed_depth": [
+              0
+            ],
+            "elapsed_seconds": 0.49861139990389347,
+            "fallback": 3,
+            "main_nodes": 34,
+            "qnode_fraction": 0.17073170731707318,
+            "qnodes": 7,
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 41
+          }
+        },
+        "2.0": {
+          "iteration-000086-game-000001-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9980510000605136,
+            "fallback": 0,
+            "main_nodes": 91,
+            "qnode_fraction": 0.4166666666666667,
+            "qnodes": 65,
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 156
+          },
+          "iteration-000086-game-000002-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9979540000203997,
+            "fallback": 0,
+            "main_nodes": 90,
+            "qnode_fraction": 0.40397350993377484,
+            "qnodes": 61,
+            "time_to_first_completed_iteration": 0.859000000054948,
+            "total_nodes": 151
+          },
+          "iteration-000086-game-000003-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.997889899997972,
+            "fallback": 0,
+            "main_nodes": 104,
+            "qnode_fraction": 0.38823529411764707,
+            "qnodes": 66,
+            "time_to_first_completed_iteration": 0.9679999999934807,
+            "total_nodes": 170
+          },
+          "iteration-000086-game-000004-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9979519000044093,
+            "fallback": 0,
+            "main_nodes": 109,
+            "qnode_fraction": 0.41081081081081083,
+            "qnodes": 76,
+            "time_to_first_completed_iteration": 0.5929999999934807,
+            "total_nodes": 185
+          },
+          "iteration-000086-game-000005-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9978167000226676,
+            "fallback": 0,
+            "main_nodes": 71,
+            "qnode_fraction": 0.4180327868852459,
+            "qnodes": 51,
+            "time_to_first_completed_iteration": 1.3900000000139698,
+            "total_nodes": 122
+          },
+          "iteration-000086-game-000006-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9980034000473097,
+            "fallback": 0,
+            "main_nodes": 104,
+            "qnode_fraction": 0.3772455089820359,
+            "qnodes": 63,
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 167
+          },
+          "iteration-000086-game-000007-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9982163000386208,
+            "fallback": 0,
+            "main_nodes": 98,
+            "qnode_fraction": 0.391304347826087,
+            "qnodes": 63,
+            "time_to_first_completed_iteration": 0.8279999999795109,
+            "total_nodes": 161
+          },
+          "iteration-000086-game-000008-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9979253000346944,
+            "fallback": 0,
+            "main_nodes": 103,
+            "qnode_fraction": 0.4114285714285714,
+            "qnodes": 72,
+            "time_to_first_completed_iteration": 0.6870000000344589,
+            "total_nodes": 175
+          },
+          "iteration-000086-game-000009-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9991090999683365,
+            "fallback": 0,
+            "main_nodes": 72,
+            "qnode_fraction": 0.4375,
+            "qnodes": 56,
+            "time_to_first_completed_iteration": 0.5779999999795109,
+            "total_nodes": 128
+          },
+          "iteration-000086-game-000010-ply12": {
+            "completed_depth": [
+              1
+            ],
+            "elapsed_seconds": 1.9986345000797883,
+            "fallback": 0,
+            "main_nodes": 97,
+            "qnode_fraction": 0.40853658536585363,
+            "qnodes": 67,
+            "time_to_first_completed_iteration": 0.984000000054948,
+            "total_nodes": 164
+          }
+        }
+      }
+    }
+  },
+  "wall_time": {
+    "production_candidate": {
+      "0.5": {
+        "iteration-000086-game-000001-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4984581000171602,
+            "fallback": true,
+            "main_nodes": 50,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.29577464788732394,
+            "qnodes": 21,
+            "score": 0,
+            "selected_move": "3g4e",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 71
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4987897000974044,
+            "fallback": true,
+            "main_nodes": 48,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2835820895522388,
+            "qnodes": 19,
+            "score": 0,
+            "selected_move": "3g4e",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 67
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4976774000097066,
+            "fallback": true,
+            "main_nodes": 52,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.30666666666666664,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "3g4e",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 75
+          }
+        ],
+        "iteration-000086-game-000002-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.49820619996171445,
+            "fallback": false,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.325,
+            "qnodes": 26,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.46799999999348074,
+            "total_nodes": 80
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.4978004000149667,
+            "fallback": false,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.325,
+            "qnodes": 26,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.4220000000204891,
+            "total_nodes": 80
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.4983454999746755,
+            "fallback": false,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.325,
+            "qnodes": 26,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.46799999999348074,
+            "total_nodes": 80
+          }
+        ],
+        "iteration-000086-game-000003-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4980011999141425,
+            "fallback": true,
+            "main_nodes": 56,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3,
+            "qnodes": 24,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 80
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.498009099974297,
+            "fallback": true,
+            "main_nodes": 59,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.313953488372093,
+            "qnodes": 27,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 86
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49802240007556975,
+            "fallback": true,
+            "main_nodes": 51,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2714285714285714,
+            "qnodes": 19,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          }
+        ],
+        "iteration-000086-game-000004-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4998508000280708,
+            "fallback": true,
+            "main_nodes": 50,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.32432432432432434,
+            "qnodes": 24,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 74
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4959606999764219,
+            "fallback": true,
+            "main_nodes": 51,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.32894736842105265,
+            "qnodes": 25,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 76
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.4988953999709338,
+            "fallback": false,
+            "main_nodes": 53,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.32051282051282054,
+            "qnodes": 25,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 78
+          }
+        ],
+        "iteration-000086-game-000005-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49824640003498644,
+            "fallback": true,
+            "main_nodes": 53,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3026315789473684,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 76
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.497414999990724,
+            "fallback": true,
+            "main_nodes": 50,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2857142857142857,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49888249998912215,
+            "fallback": true,
+            "main_nodes": 50,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2857142857142857,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          }
+        ],
+        "iteration-000086-game-000006-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4977051999885589,
+            "fallback": true,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2987012987012987,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 77
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4972794000059366,
+            "fallback": true,
+            "main_nodes": 55,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3037974683544304,
+            "qnodes": 24,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 79
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49873290001414716,
+            "fallback": true,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2987012987012987,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 77
+          }
+        ],
+        "iteration-000086-game-000007-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4982583000091836,
+            "fallback": true,
+            "main_nodes": 51,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2714285714285714,
+            "qnodes": 19,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4990702000213787,
+            "fallback": true,
+            "main_nodes": 52,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2777777777777778,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 72
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4982197000645101,
+            "fallback": true,
+            "main_nodes": 52,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2777777777777778,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 72
+          }
+        ],
+        "iteration-000086-game-000008-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.497892800020054,
+            "fallback": false,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.325,
+            "qnodes": 26,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 80
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 0.4989874999737367,
+            "fallback": false,
+            "main_nodes": 55,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.32098765432098764,
+            "qnodes": 26,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 81
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49754619994200766,
+            "fallback": true,
+            "main_nodes": 53,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3291139240506329,
+            "qnodes": 26,
+            "score": 0,
+            "selected_move": "6i7i",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 79
+          }
+        ],
+        "iteration-000086-game-000009-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49818909994792193,
+            "fallback": true,
+            "main_nodes": 53,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3026315789473684,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "8h4d",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 76
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49938799999654293,
+            "fallback": true,
+            "main_nodes": 53,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3026315789473684,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "8h4d",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 76
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4979550000280142,
+            "fallback": true,
+            "main_nodes": 54,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3076923076923077,
+            "qnodes": 24,
+            "score": 0,
+            "selected_move": "8h4d",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 78
+          }
+        ],
+        "iteration-000086-game-000010-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49798200000077486,
+            "fallback": true,
+            "main_nodes": 50,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3150684931506849,
+            "qnodes": 23,
+            "score": 0,
+            "selected_move": "6i7h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 73
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4978930000215769,
+            "fallback": true,
+            "main_nodes": 49,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.30985915492957744,
+            "qnodes": 22,
+            "score": 0,
+            "selected_move": "6i7h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 71
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49860539997462183,
+            "fallback": true,
+            "main_nodes": 49,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.30985915492957744,
+            "qnodes": 22,
+            "score": 0,
+            "selected_move": "6i7h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 71
+          }
+        ]
+      },
+      "2.0": {
+        "iteration-000086-game-000001-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9985160999931395,
+            "fallback": false,
+            "main_nodes": 91,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4f4e",
+            "qnode_fraction": 0.4166666666666667,
+            "qnodes": 65,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6870000000344589,
+            "total_nodes": 156
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9969618000322953,
+            "fallback": false,
+            "main_nodes": 91,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4f4e",
+            "qnode_fraction": 0.4129032258064516,
+            "qnodes": 64,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6560000000754371,
+            "total_nodes": 155
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9987942000152543,
+            "fallback": false,
+            "main_nodes": 91,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4f4e",
+            "qnode_fraction": 0.4129032258064516,
+            "qnodes": 64,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6870000000344589,
+            "total_nodes": 155
+          }
+        ],
+        "iteration-000086-game-000002-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9991727001033723,
+            "fallback": false,
+            "main_nodes": 103,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.4180790960451977,
+            "qnodes": 74,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5779999999795109,
+            "total_nodes": 177
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9973281000275165,
+            "fallback": false,
+            "main_nodes": 101,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.4161849710982659,
+            "qnodes": 72,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5470000000204891,
+            "total_nodes": 173
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9989397999597713,
+            "fallback": false,
+            "main_nodes": 119,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.42788461538461536,
+            "qnodes": 89,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.4529999999795109,
+            "total_nodes": 208
+          }
+        ],
+        "iteration-000086-game-000003-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.996807900024578,
+            "fallback": false,
+            "main_nodes": 106,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4i3h",
+            "qnode_fraction": 0.3872832369942196,
+            "qnodes": 67,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.75,
+            "total_nodes": 173
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9992926999693736,
+            "fallback": false,
+            "main_nodes": 108,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4i3h",
+            "qnode_fraction": 0.38636363636363635,
+            "qnodes": 68,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 176
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9972380000399426,
+            "fallback": false,
+            "main_nodes": 106,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4i3h",
+            "qnode_fraction": 0.3872832369942196,
+            "qnodes": 67,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.7650000000139698,
+            "total_nodes": 173
+          }
+        ],
+        "iteration-000086-game-000004-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9979031999828294,
+            "fallback": false,
+            "main_nodes": 114,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.40625,
+            "qnodes": 78,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.46799999999348074,
+            "total_nodes": 192
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.998867400106974,
+            "fallback": false,
+            "main_nodes": 113,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.4083769633507853,
+            "qnodes": 78,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.43700000003445894,
+            "total_nodes": 191
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9976483000209555,
+            "fallback": false,
+            "main_nodes": 110,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.40860215053763443,
+            "qnodes": 76,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 186
+          }
+        ],
+        "iteration-000086-game-000005-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9992405000375584,
+            "fallback": false,
+            "main_nodes": 93,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41139240506329117,
+            "qnodes": 65,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6720000000204891,
+            "total_nodes": 158
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9977499999804422,
+            "fallback": false,
+            "main_nodes": 93,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41139240506329117,
+            "qnodes": 65,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6400000000139698,
+            "total_nodes": 158
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.998022299958393,
+            "fallback": false,
+            "main_nodes": 93,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41875,
+            "qnodes": 67,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6720000000204891,
+            "total_nodes": 160
+          }
+        ],
+        "iteration-000086-game-000006-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9978702999651432,
+            "fallback": false,
+            "main_nodes": 104,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3772455089820359,
+            "qnodes": 63,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.609000000054948,
+            "total_nodes": 167
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9987317000050098,
+            "fallback": false,
+            "main_nodes": 104,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3772455089820359,
+            "qnodes": 63,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6400000000139698,
+            "total_nodes": 167
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9975316000636667,
+            "fallback": false,
+            "main_nodes": 106,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3764705882352941,
+            "qnodes": 64,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5929999999934807,
+            "total_nodes": 170
+          }
+        ],
+        "iteration-000086-game-000007-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9981755999615416,
+            "fallback": false,
+            "main_nodes": 101,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.39520958083832336,
+            "qnodes": 66,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.75,
+            "total_nodes": 167
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9982819999568164,
+            "fallback": false,
+            "main_nodes": 103,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.39766081871345027,
+            "qnodes": 68,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6560000000754371,
+            "total_nodes": 171
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9984175999416038,
+            "fallback": false,
+            "main_nodes": 100,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3939393939393939,
+            "qnodes": 65,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 165
+          }
+        ],
+        "iteration-000086-game-000008-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9975575999123976,
+            "fallback": false,
+            "main_nodes": 109,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.41081081081081083,
+            "qnodes": 76,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 185
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9990923999575898,
+            "fallback": false,
+            "main_nodes": 114,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.40932642487046633,
+            "qnodes": 79,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.48400000005494803,
+            "total_nodes": 193
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9978679999476299,
+            "fallback": false,
+            "main_nodes": 111,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.4095744680851064,
+            "qnodes": 77,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.43700000003445894,
+            "total_nodes": 188
+          }
+        ],
+        "iteration-000086-game-000009-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9980113999918103,
+            "fallback": false,
+            "main_nodes": 66,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "8h4d",
+            "qnode_fraction": 0.43103448275862066,
+            "qnodes": 50,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.609000000054948,
+            "total_nodes": 116
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9992193999933079,
+            "fallback": false,
+            "main_nodes": 65,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "8h4d",
+            "qnode_fraction": 0.4298245614035088,
+            "qnodes": 49,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6400000000139698,
+            "total_nodes": 114
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9972966000204906,
+            "fallback": false,
+            "main_nodes": 66,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "8h4d",
+            "qnode_fraction": 0.43103448275862066,
+            "qnodes": 50,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5310000000754371,
+            "total_nodes": 116
+          }
+        ],
+        "iteration-000086-game-000010-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9974687999347225,
+            "fallback": false,
+            "main_nodes": 115,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7h",
+            "qnode_fraction": 0.4221105527638191,
+            "qnodes": 84,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5779999999795109,
+            "total_nodes": 199
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9990303000668064,
+            "fallback": false,
+            "main_nodes": 114,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7h",
+            "qnode_fraction": 0.4213197969543147,
+            "qnodes": 83,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5779999999795109,
+            "total_nodes": 197
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9980974999489263,
+            "fallback": false,
+            "main_nodes": 122,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7h",
+            "qnode_fraction": 0.4272300469483568,
+            "qnodes": 91,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5620000000344589,
+            "total_nodes": 213
+          }
+        ]
+      }
+    },
+    "shadow_baseline": {
+      "0.5": {
+        "iteration-000086-game-000001-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49802910001017153,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.27692307692307694,
+            "qnodes": 18,
+            "score": 0,
+            "selected_move": "3g4e",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 65
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.497959699947387,
+            "fallback": true,
+            "main_nodes": 46,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2698412698412698,
+            "qnodes": 17,
+            "score": 0,
+            "selected_move": "3g4e",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 63
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49857170006725937,
+            "fallback": true,
+            "main_nodes": 45,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.26229508196721313,
+            "qnodes": 16,
+            "score": 0,
+            "selected_move": "3g4e",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 61
+          }
+        ],
+        "iteration-000086-game-000002-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49723390000872314,
+            "fallback": true,
+            "main_nodes": 34,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.19047619047619047,
+            "qnodes": 8,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 42
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49917359999381006,
+            "fallback": true,
+            "main_nodes": 36,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.21739130434782608,
+            "qnodes": 10,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 46
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49719569995068014,
+            "fallback": true,
+            "main_nodes": 35,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.20454545454545456,
+            "qnodes": 9,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 44
+          }
+        ],
+        "iteration-000086-game-000003-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49860559997614473,
+            "fallback": true,
+            "main_nodes": 48,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.25,
+            "qnodes": 16,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 64
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.498982600052841,
+            "fallback": true,
+            "main_nodes": 49,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.25757575757575757,
+            "qnodes": 17,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 66
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4974730999674648,
+            "fallback": true,
+            "main_nodes": 48,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.25,
+            "qnodes": 16,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 64
+          }
+        ],
+        "iteration-000086-game-000004-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49858040001709014,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.3088235294117647,
+            "qnodes": 21,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 68
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4977641999721527,
+            "fallback": true,
+            "main_nodes": 46,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.30303030303030304,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 66
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4975342000834644,
+            "fallback": true,
+            "main_nodes": 44,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2903225806451613,
+            "qnodes": 18,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 62
+          }
+        ],
+        "iteration-000086-game-000005-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4981904000742361,
+            "fallback": true,
+            "main_nodes": 32,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.15789473684210525,
+            "qnodes": 6,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 38
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49833139998372644,
+            "fallback": true,
+            "main_nodes": 32,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.15789473684210525,
+            "qnodes": 6,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 38
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.498085799976252,
+            "fallback": true,
+            "main_nodes": 32,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.15789473684210525,
+            "qnodes": 6,
+            "score": 0,
+            "selected_move": "5i5h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 38
+          }
+        ],
+        "iteration-000086-game-000006-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49751850008033216,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.25396825396825395,
+            "qnodes": 16,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 63
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49767359998077154,
+            "fallback": true,
+            "main_nodes": 48,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.26153846153846155,
+            "qnodes": 17,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 65
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4978102999739349,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.25396825396825395,
+            "qnodes": 16,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 63
+          }
+        ],
+        "iteration-000086-game-000007-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49962000001687557,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.24193548387096775,
+            "qnodes": 15,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 62
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4971119000110775,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.24193548387096775,
+            "qnodes": 15,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 62
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.498030100017786,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.24193548387096775,
+            "qnodes": 15,
+            "score": 0,
+            "selected_move": "7g7f",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 62
+          }
+        ],
+        "iteration-000086-game-000008-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4980712999822572,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.29850746268656714,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "6i7i",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 67
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.499336100067012,
+            "fallback": true,
+            "main_nodes": 48,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.30434782608695654,
+            "qnodes": 21,
+            "score": 0,
+            "selected_move": "6i7i",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 69
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49915509996935725,
+            "fallback": true,
+            "main_nodes": 43,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2711864406779661,
+            "qnodes": 16,
+            "score": 0,
+            "selected_move": "6i7i",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 59
+          }
+        ],
+        "iteration-000086-game-000009-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4974868999561295,
+            "fallback": true,
+            "main_nodes": 50,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2857142857142857,
+            "qnodes": 20,
+            "score": 0,
+            "selected_move": "8h4d",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 70
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49873750004917383,
+            "fallback": true,
+            "main_nodes": 51,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.2916666666666667,
+            "qnodes": 21,
+            "score": 0,
+            "selected_move": "8h4d",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 72
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4985005999915302,
+            "fallback": true,
+            "main_nodes": 47,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.265625,
+            "qnodes": 17,
+            "score": 0,
+            "selected_move": "8h4d",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 64
+          }
+        ],
+        "iteration-000086-game-000010-ply12": [
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4980106999864802,
+            "fallback": true,
+            "main_nodes": 34,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.17073170731707318,
+            "qnodes": 7,
+            "score": 0,
+            "selected_move": "6i7h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 41
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.4987425000872463,
+            "fallback": true,
+            "main_nodes": 34,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.17073170731707318,
+            "qnodes": 7,
+            "score": 0,
+            "selected_move": "6i7h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 41
+          },
+          {
+            "completed_depth": 0,
+            "elapsed_seconds": 0.49861139990389347,
+            "fallback": true,
+            "main_nodes": 34,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": null,
+            "qnode_fraction": 0.17073170731707318,
+            "qnodes": 7,
+            "score": 0,
+            "selected_move": "6i7h",
+            "termination_reason": "fallback",
+            "time_to_first_completed_iteration": null,
+            "total_nodes": 41
+          }
+        ]
+      },
+      "2.0": {
+        "iteration-000086-game-000001-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9980510000605136,
+            "fallback": false,
+            "main_nodes": 91,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4f4e",
+            "qnode_fraction": 0.4129032258064516,
+            "qnodes": 64,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 155
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9980255999835208,
+            "fallback": false,
+            "main_nodes": 91,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4f4e",
+            "qnode_fraction": 0.4166666666666667,
+            "qnodes": 65,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.75,
+            "total_nodes": 156
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.998812000034377,
+            "fallback": false,
+            "main_nodes": 91,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4f4e",
+            "qnode_fraction": 0.4166666666666667,
+            "qnodes": 65,
+            "score": 369,
+            "selected_move": "4f4e",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 156
+          }
+        ],
+        "iteration-000086-game-000002-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9979540000203997,
+            "fallback": false,
+            "main_nodes": 93,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.40764331210191085,
+            "qnodes": 64,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.859000000054948,
+            "total_nodes": 157
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9973676000954583,
+            "fallback": false,
+            "main_nodes": 90,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.40397350993377484,
+            "qnodes": 61,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.8900000000139698,
+            "total_nodes": 151
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9984753999160603,
+            "fallback": false,
+            "main_nodes": 90,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.40397350993377484,
+            "qnodes": 61,
+            "score": 5,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.859000000054948,
+            "total_nodes": 151
+          }
+        ],
+        "iteration-000086-game-000003-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.997889899997972,
+            "fallback": false,
+            "main_nodes": 104,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4i3h",
+            "qnode_fraction": 0.38823529411764707,
+            "qnodes": 66,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.9679999999934807,
+            "total_nodes": 170
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9988262000260875,
+            "fallback": false,
+            "main_nodes": 106,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4i3h",
+            "qnode_fraction": 0.3872832369942196,
+            "qnodes": 67,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.859000000054948,
+            "total_nodes": 173
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9978728999849409,
+            "fallback": false,
+            "main_nodes": 102,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "4i3h",
+            "qnode_fraction": 0.38922155688622756,
+            "qnodes": 65,
+            "score": 0,
+            "selected_move": "4i3h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.9679999999934807,
+            "total_nodes": 167
+          }
+        ],
+        "iteration-000086-game-000004-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.997555400012061,
+            "fallback": false,
+            "main_nodes": 107,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41208791208791207,
+            "qnodes": 75,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.609000000054948,
+            "total_nodes": 182
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 2.0004963000537828,
+            "fallback": false,
+            "main_nodes": 109,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41081081081081083,
+            "qnodes": 76,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5620000000344589,
+            "total_nodes": 185
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9979519000044093,
+            "fallback": false,
+            "main_nodes": 109,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41081081081081083,
+            "qnodes": 76,
+            "score": 14,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5929999999934807,
+            "total_nodes": 185
+          }
+        ],
+        "iteration-000086-game-000005-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9978167000226676,
+            "fallback": false,
+            "main_nodes": 72,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.41935483870967744,
+            "qnodes": 52,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 1.359000000054948,
+            "total_nodes": 124
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9988385000033304,
+            "fallback": false,
+            "main_nodes": 70,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.4166666666666667,
+            "qnodes": 50,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 1.3900000000139698,
+            "total_nodes": 120
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9970540000358596,
+            "fallback": false,
+            "main_nodes": 71,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "5i5h",
+            "qnode_fraction": 0.4180327868852459,
+            "qnodes": 51,
+            "score": -1,
+            "selected_move": "5i5h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 1.4060000000754371,
+            "total_nodes": 122
+          }
+        ],
+        "iteration-000086-game-000006-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.998715900001116,
+            "fallback": false,
+            "main_nodes": 104,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3772455089820359,
+            "qnodes": 63,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6400000000139698,
+            "total_nodes": 167
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9979781999718398,
+            "fallback": false,
+            "main_nodes": 102,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3780487804878049,
+            "qnodes": 62,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.75,
+            "total_nodes": 164
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9980034000473097,
+            "fallback": false,
+            "main_nodes": 104,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.3772455089820359,
+            "qnodes": 63,
+            "score": 12,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.734000000054948,
+            "total_nodes": 167
+          }
+        ],
+        "iteration-000086-game-000007-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9977171999635175,
+            "fallback": false,
+            "main_nodes": 98,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.391304347826087,
+            "qnodes": 63,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.8279999999795109,
+            "total_nodes": 161
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9985864999471232,
+            "fallback": false,
+            "main_nodes": 98,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.391304347826087,
+            "qnodes": 63,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.9220000000204891,
+            "total_nodes": 161
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9982163000386208,
+            "fallback": false,
+            "main_nodes": 99,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "7g7f",
+            "qnode_fraction": 0.39263803680981596,
+            "qnodes": 64,
+            "score": -10,
+            "selected_move": "7g7f",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.7810000000754371,
+            "total_nodes": 163
+          }
+        ],
+        "iteration-000086-game-000008-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9979253000346944,
+            "fallback": false,
+            "main_nodes": 105,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.4134078212290503,
+            "qnodes": 74,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6870000000344589,
+            "total_nodes": 179
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9987367999274284,
+            "fallback": false,
+            "main_nodes": 102,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.41040462427745666,
+            "qnodes": 71,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.7029999999795109,
+            "total_nodes": 173
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9978674000594765,
+            "fallback": false,
+            "main_nodes": 103,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7i",
+            "qnode_fraction": 0.4114285714285714,
+            "qnodes": 72,
+            "score": 1,
+            "selected_move": "6i7i",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6870000000344589,
+            "total_nodes": 175
+          }
+        ],
+        "iteration-000086-game-000009-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9992098999209702,
+            "fallback": false,
+            "main_nodes": 66,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "8h4d",
+            "qnode_fraction": 0.43103448275862066,
+            "qnodes": 50,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.6720000000204891,
+            "total_nodes": 116
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9982687999727204,
+            "fallback": false,
+            "main_nodes": 72,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "8h4d",
+            "qnode_fraction": 0.4375,
+            "qnodes": 56,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5779999999795109,
+            "total_nodes": 128
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9991090999683365,
+            "fallback": false,
+            "main_nodes": 80,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "8h4d",
+            "qnode_fraction": 0.4557823129251701,
+            "qnodes": 67,
+            "score": 368,
+            "selected_move": "8h4d",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.5150000000139698,
+            "total_nodes": 147
+          }
+        ],
+        "iteration-000086-game-000010-ply12": [
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9975143000483513,
+            "fallback": false,
+            "main_nodes": 99,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7h",
+            "qnode_fraction": 0.4107142857142857,
+            "qnodes": 69,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.9679999999934807,
+            "total_nodes": 168
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9993125000037253,
+            "fallback": false,
+            "main_nodes": 97,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7h",
+            "qnode_fraction": 0.40853658536585363,
+            "qnodes": 67,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 0.984000000054948,
+            "total_nodes": 164
+          },
+          {
+            "completed_depth": 1,
+            "elapsed_seconds": 1.9986345000797883,
+            "fallback": false,
+            "main_nodes": 94,
+            "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+            "pv_head": "6i7h",
+            "qnode_fraction": 0.4050632911392405,
+            "qnodes": 64,
+            "score": 9,
+            "selected_move": "6i7h",
+            "termination_reason": "time_limit",
+            "time_to_first_completed_iteration": 1.0310000000754371,
+            "total_nodes": 158
+          }
+        ]
+      }
+    }
+  }
+}
