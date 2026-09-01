@@ -1,0 +1,28 @@
+{
+  "actionable": {
+    "classification": "EVALUATOR_VALUE_PRIMARY",
+    "evaluator_value": true,
+    "search_capacity": false
+  },
+  "aggregate_quantities": {
+    "LONGER_SEARCH_EXTERNAL_RECOVERY_ROOTS": 0,
+    "NEXT_ITERATION_NEAR_ROOTS": 0,
+    "SHORT_CONTROL_FALLBACK_ROOTS": 8,
+    "STABLE_VALUE_MISMATCH_ROOTS": 6,
+    "STATIC_TOP3_GAP_ROOTS": 8,
+    "TWO_SECOND_DEPTH2_ROOTS": 0
+  },
+  "flags": {
+    "F35_RESERVE_BASELINE_CONSUMED": true,
+    "POST_RESERVE_DEPTH_CAPACITY_LADDER_COMPLETE": true,
+    "POST_RESERVE_EQUAL_TIME_BASELINE_FROZEN": true,
+    "POST_RESERVE_EXTERNAL_REFERENCE_DIAGNOSIS_COMPLETE": true,
+    "POST_RESERVE_STATIC_VALUE_GAP_REVALIDATED": true,
+    "STANDARD_SHOGI_NEXT_STRENGTH_BOUNDARY_SELECTED": true
+  },
+  "selection": {
+    "boundary": "F37_RULE_DERIVED_EVALUATOR_REENTRY",
+    "evaluator_value_primary": true,
+    "search_capacity_primary": false
+  }
+}

@@ -1,0 +1,1307 @@
+{
+  "capacity_aggregates": {
+    "controls": {
+      "0.5": {
+        "depth_ge_1_roots": 2,
+        "depth_ge_2_roots": 0,
+        "depth_ge_3_roots": 0,
+        "fallback_roots": 8,
+        "final_depth_distribution": {
+          "0": 8,
+          "1": 2
+        }
+      },
+      "1.0": {
+        "depth_ge_1_roots": 10,
+        "depth_ge_2_roots": 0,
+        "depth_ge_3_roots": 0,
+        "fallback_roots": 0,
+        "final_depth_distribution": {
+          "1": 10
+        }
+      },
+      "2.0": {
+        "depth_ge_1_roots": 10,
+        "depth_ge_2_roots": 0,
+        "depth_ge_3_roots": 0,
+        "fallback_roots": 0,
+        "final_depth_distribution": {
+          "1": 10
+        }
+      },
+      "4.0": {
+        "depth_ge_1_roots": 10,
+        "depth_ge_2_roots": 1,
+        "depth_ge_3_roots": 0,
+        "fallback_roots": 0,
+        "final_depth_distribution": {
+          "1": 9,
+          "2": 1
+        }
+      },
+      "8.0": {
+        "depth_ge_1_roots": 10,
+        "depth_ge_2_roots": 4,
+        "depth_ge_3_roots": 0,
+        "fallback_roots": 0,
+        "final_depth_distribution": {
+          "1": 6,
+          "2": 4
+        }
+      }
+    },
+    "per_root_depth_distribution": {}
+  },
+  "ladder": {
+    "iteration-000086-game-000001-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 50,
+        "median_qnode_fraction": 0.29577464788732394,
+        "median_qnodes": 21,
+        "modal_frequency": 3,
+        "modal_move": "3g4e",
+        "moves": [
+          "3g4e",
+          "3g4e",
+          "3g4e"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6705872000893578,
+            "main_nodes": 57,
+            "qnodes": 28
+          }
+        ],
+        "elapsed_seconds": 0.9938074999954551,
+        "fallback": false,
+        "main_nodes": 68,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.3523809523809524,
+        "qnodes": 37,
+        "score": 369,
+        "selected_move": "4f4e",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.6709999999729916,
+        "total_nodes": 105
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.6870000000344589,
+        "median_main_nodes": 91,
+        "median_qnode_fraction": 0.4129032258064516,
+        "median_qnodes": 64,
+        "modal_frequency": 3,
+        "modal_move": "4f4e",
+        "moves": [
+          "4f4e",
+          "4f4e",
+          "4f4e"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.659943800070323,
+            "main_nodes": 57,
+            "qnodes": 28
+          }
+        ],
+        "elapsed_seconds": 3.9985004999907687,
+        "fallback": false,
+        "main_nodes": 103,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.47715736040609136,
+        "qnodes": 94,
+        "score": 369,
+        "selected_move": "4f4e",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.6559999999590218,
+        "total_nodes": 197
+      },
+      "8.0": {
+        "completed_depth": 2,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6878087000222877,
+            "main_nodes": 57,
+            "qnodes": 28
+          },
+          {
+            "depth": 2,
+            "elapsed_seconds": 6.255058499984443,
+            "main_nodes": 144,
+            "qnodes": 121
+          }
+        ],
+        "elapsed_seconds": 7.998611600021832,
+        "fallback": false,
+        "main_nodes": 194,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4f4e",
+        "qnode_fraction": 0.4550561797752809,
+        "qnodes": 162,
+        "score": 358,
+        "selected_move": "4f4e",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 6.25,
+        "total_nodes": 356
+      }
+    },
+    "iteration-000086-game-000002-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.46799999999348074,
+        "median_main_nodes": 54,
+        "median_qnode_fraction": 0.325,
+        "median_qnodes": 26,
+        "modal_frequency": 3,
+        "modal_move": "7g7f",
+        "moves": [
+          "7g7f",
+          "7g7f",
+          "7g7f"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.4830067999428138,
+            "main_nodes": 51,
+            "qnodes": 25
+          }
+        ],
+        "elapsed_seconds": 0.999585899990052,
+        "fallback": false,
+        "main_nodes": 74,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.38333333333333336,
+        "qnodes": 46,
+        "score": 5,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.48400000005494803,
+        "total_nodes": 120
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.5470000000204891,
+        "median_main_nodes": 103,
+        "median_qnode_fraction": 0.4180790960451977,
+        "median_qnodes": 74,
+        "modal_frequency": 3,
+        "modal_move": "7g7f",
+        "moves": [
+          "7g7f",
+          "7g7f",
+          "7g7f"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5654600000707433,
+            "main_nodes": 51,
+            "qnodes": 25
+          }
+        ],
+        "elapsed_seconds": 3.9993709000991657,
+        "fallback": false,
+        "main_nodes": 167,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.4506578947368421,
+        "qnodes": 137,
+        "score": 5,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5620000000344589,
+        "total_nodes": 304
+      },
+      "8.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5283717999700457,
+            "main_nodes": 51,
+            "qnodes": 25
+          }
+        ],
+        "elapsed_seconds": 7.999751599971205,
+        "fallback": false,
+        "main_nodes": 252,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.49193548387096775,
+        "qnodes": 244,
+        "score": 5,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5150000000139698,
+        "total_nodes": 496
+      }
+    },
+    "iteration-000086-game-000003-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 56,
+        "median_qnode_fraction": 0.3,
+        "median_qnodes": 24,
+        "modal_frequency": 3,
+        "modal_move": "4i3h",
+        "moves": [
+          "4i3h",
+          "4i3h",
+          "4i3h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.7194248999003321,
+            "main_nodes": 63,
+            "qnodes": 31
+          }
+        ],
+        "elapsed_seconds": 0.9984226999804378,
+        "fallback": false,
+        "main_nodes": 76,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.3559322033898305,
+        "qnodes": 42,
+        "score": 0,
+        "selected_move": "4i3h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.7179999999934807,
+        "total_nodes": 118
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.75,
+        "median_main_nodes": 106,
+        "median_qnode_fraction": 0.3872832369942196,
+        "median_qnodes": 67,
+        "modal_frequency": 3,
+        "modal_move": "4i3h",
+        "moves": [
+          "4i3h",
+          "4i3h",
+          "4i3h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6940845000790432,
+            "main_nodes": 63,
+            "qnodes": 31
+          }
+        ],
+        "elapsed_seconds": 3.9989054000470787,
+        "fallback": false,
+        "main_nodes": 156,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.40458015267175573,
+        "qnodes": 106,
+        "score": 0,
+        "selected_move": "4i3h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.6870000000344589,
+        "total_nodes": 262
+      },
+      "8.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.7434392999857664,
+            "main_nodes": 63,
+            "qnodes": 31
+          }
+        ],
+        "elapsed_seconds": 7.999168100068346,
+        "fallback": false,
+        "main_nodes": 178,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "4i3h",
+        "qnode_fraction": 0.5240641711229946,
+        "qnodes": 196,
+        "score": 0,
+        "selected_move": "4i3h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.734000000054948,
+        "total_nodes": 374
+      }
+    },
+    "iteration-000086-game-000004-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          1
+        ],
+        "fallback_event_count": 2,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": 0.48400000005494803,
+        "median_main_nodes": 51,
+        "median_qnode_fraction": 0.32432432432432434,
+        "median_qnodes": 25,
+        "modal_frequency": 3,
+        "modal_move": "5i5h",
+        "moves": [
+          "5i5h",
+          "5i5h",
+          "5i5h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.4763082000426948,
+            "main_nodes": 51,
+            "qnodes": 25
+          }
+        ],
+        "elapsed_seconds": 0.9992207000032067,
+        "fallback": false,
+        "main_nodes": 78,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.3858267716535433,
+        "qnodes": 49,
+        "score": 14,
+        "selected_move": "5i5h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.46799999999348074,
+        "total_nodes": 127
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.46799999999348074,
+        "median_main_nodes": 113,
+        "median_qnode_fraction": 0.4083769633507853,
+        "median_qnodes": 78,
+        "modal_frequency": 3,
+        "modal_move": "5i5h",
+        "moves": [
+          "5i5h",
+          "5i5h",
+          "5i5h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 2,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.43979610002133995,
+            "main_nodes": 51,
+            "qnodes": 25
+          },
+          {
+            "depth": 2,
+            "elapsed_seconds": 3.492128900019452,
+            "main_nodes": 147,
+            "qnodes": 95
+          }
+        ],
+        "elapsed_seconds": 3.999817500007339,
+        "fallback": false,
+        "main_nodes": 165,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.4,
+        "qnodes": 110,
+        "score": 4,
+        "selected_move": "5i5h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 3.484000000054948,
+        "total_nodes": 275
+      },
+      "8.0": {
+        "completed_depth": 2,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.4980865999823436,
+            "main_nodes": 51,
+            "qnodes": 25
+          },
+          {
+            "depth": 2,
+            "elapsed_seconds": 3.497883499949239,
+            "main_nodes": 147,
+            "qnodes": 95
+          }
+        ],
+        "elapsed_seconds": 7.998399400035851,
+        "fallback": false,
+        "main_nodes": 223,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.4466501240694789,
+        "qnodes": 180,
+        "score": 4,
+        "selected_move": "5i5h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 3.484000000054948,
+        "total_nodes": 403
+      }
+    },
+    "iteration-000086-game-000005-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 50,
+        "median_qnode_fraction": 0.2857142857142857,
+        "median_qnodes": 20,
+        "modal_frequency": 3,
+        "modal_move": "5i5h",
+        "moves": [
+          "5i5h",
+          "5i5h",
+          "5i5h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5031758999684826,
+            "main_nodes": 59,
+            "qnodes": 29
+          }
+        ],
+        "elapsed_seconds": 0.9988237000070512,
+        "fallback": false,
+        "main_nodes": 70,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.375,
+        "qnodes": 42,
+        "score": -1,
+        "selected_move": "5i5h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5,
+        "total_nodes": 112
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.6720000000204891,
+        "median_main_nodes": 93,
+        "median_qnode_fraction": 0.41139240506329117,
+        "median_qnodes": 65,
+        "modal_frequency": 3,
+        "modal_move": "5i5h",
+        "moves": [
+          "5i5h",
+          "5i5h",
+          "5i5h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6902015000814572,
+            "main_nodes": 59,
+            "qnodes": 29
+          }
+        ],
+        "elapsed_seconds": 3.998745399992913,
+        "fallback": false,
+        "main_nodes": 130,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.46502057613168724,
+        "qnodes": 113,
+        "score": -1,
+        "selected_move": "5i5h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.6870000000344589,
+        "total_nodes": 243
+      },
+      "8.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6049789999378845,
+            "main_nodes": 59,
+            "qnodes": 29
+          }
+        ],
+        "elapsed_seconds": 7.99914109997917,
+        "fallback": false,
+        "main_nodes": 164,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "5i5h",
+        "qnode_fraction": 0.521865889212828,
+        "qnodes": 179,
+        "score": -1,
+        "selected_move": "5i5h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5929999999934807,
+        "total_nodes": 343
+      }
+    },
+    "iteration-000086-game-000006-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 54,
+        "median_qnode_fraction": 0.2987012987012987,
+        "median_qnodes": 23,
+        "modal_frequency": 3,
+        "modal_move": "7g7f",
+        "moves": [
+          "7g7f",
+          "7g7f",
+          "7g7f"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.49182660004589707,
+            "main_nodes": 61,
+            "qnodes": 30
+          }
+        ],
+        "elapsed_seconds": 0.9989597001112998,
+        "fallback": false,
+        "main_nodes": 90,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.3835616438356164,
+        "qnodes": 56,
+        "score": 12,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.48400000005494803,
+        "total_nodes": 146
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.609000000054948,
+        "median_main_nodes": 104,
+        "median_qnode_fraction": 0.3772455089820359,
+        "median_qnodes": 63,
+        "modal_frequency": 3,
+        "modal_move": "7g7f",
+        "moves": [
+          "7g7f",
+          "7g7f",
+          "7g7f"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6287344999145716,
+            "main_nodes": 61,
+            "qnodes": 30
+          }
+        ],
+        "elapsed_seconds": 3.999555899994448,
+        "fallback": false,
+        "main_nodes": 148,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.40562248995983935,
+        "qnodes": 101,
+        "score": 12,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.625,
+        "total_nodes": 249
+      },
+      "8.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.621207500109449,
+            "main_nodes": 61,
+            "qnodes": 30
+          }
+        ],
+        "elapsed_seconds": 7.998834100086242,
+        "fallback": false,
+        "main_nodes": 172,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.4691358024691358,
+        "qnodes": 152,
+        "score": 12,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.609000000054948,
+        "total_nodes": 324
+      }
+    },
+    "iteration-000086-game-000007-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 52,
+        "median_qnode_fraction": 0.2777777777777778,
+        "median_qnodes": 20,
+        "modal_frequency": 3,
+        "modal_move": "7g7f",
+        "moves": [
+          "7g7f",
+          "7g7f",
+          "7g7f"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5723003000020981,
+            "main_nodes": 63,
+            "qnodes": 31
+          }
+        ],
+        "elapsed_seconds": 0.9997127999085933,
+        "fallback": false,
+        "main_nodes": 75,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.35344827586206895,
+        "qnodes": 41,
+        "score": -10,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5620000000344589,
+        "total_nodes": 116
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.734000000054948,
+        "median_main_nodes": 101,
+        "median_qnode_fraction": 0.39520958083832336,
+        "median_qnodes": 66,
+        "modal_frequency": 3,
+        "modal_move": "7g7f",
+        "moves": [
+          "7g7f",
+          "7g7f",
+          "7g7f"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.7600312000140548,
+            "main_nodes": 63,
+            "qnodes": 31
+          }
+        ],
+        "elapsed_seconds": 3.999426400056109,
+        "fallback": false,
+        "main_nodes": 134,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.3991031390134529,
+        "qnodes": 89,
+        "score": -10,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.75,
+        "total_nodes": 223
+      },
+      "8.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.7618615999817848,
+            "main_nodes": 63,
+            "qnodes": 31
+          }
+        ],
+        "elapsed_seconds": 7.999122899957001,
+        "fallback": false,
+        "main_nodes": 184,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "7g7f",
+        "qnode_fraction": 0.48169014084507045,
+        "qnodes": 171,
+        "score": -10,
+        "selected_move": "7g7f",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.75,
+        "total_nodes": 355
+      }
+    },
+    "iteration-000086-game-000008-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          1,
+          1,
+          0
+        ],
+        "fallback_event_count": 1,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.48400000005494803,
+        "median_main_nodes": 54,
+        "median_qnode_fraction": 0.325,
+        "median_qnodes": 26,
+        "modal_frequency": 3,
+        "modal_move": "6i7i",
+        "moves": [
+          "6i7i",
+          "6i7i",
+          "6i7i"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.4955979000078514,
+            "main_nodes": 53,
+            "qnodes": 26
+          }
+        ],
+        "elapsed_seconds": 0.9993851000908762,
+        "fallback": false,
+        "main_nodes": 74,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.37815126050420167,
+        "qnodes": 45,
+        "score": 1,
+        "selected_move": "6i7i",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.48400000005494803,
+        "total_nodes": 119
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.48400000005494803,
+        "median_main_nodes": 111,
+        "median_qnode_fraction": 0.4095744680851064,
+        "median_qnodes": 77,
+        "modal_frequency": 3,
+        "modal_move": "6i7i",
+        "moves": [
+          "6i7i",
+          "6i7i",
+          "6i7i"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.47016080003231764,
+            "main_nodes": 53,
+            "qnodes": 26
+          }
+        ],
+        "elapsed_seconds": 3.998705600039102,
+        "fallback": false,
+        "main_nodes": 136,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.4708171206225681,
+        "qnodes": 121,
+        "score": 1,
+        "selected_move": "6i7i",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.46799999999348074,
+        "total_nodes": 257
+      },
+      "8.0": {
+        "completed_depth": 2,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.4976911999983713,
+            "main_nodes": 53,
+            "qnodes": 26
+          },
+          {
+            "depth": 2,
+            "elapsed_seconds": 5.763375099981204,
+            "main_nodes": 192,
+            "qnodes": 162
+          }
+        ],
+        "elapsed_seconds": 7.998832199955359,
+        "fallback": false,
+        "main_nodes": 247,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7i",
+        "qnode_fraction": 0.45714285714285713,
+        "qnodes": 208,
+        "score": -7,
+        "selected_move": "6i7i",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 5.75,
+        "total_nodes": 455
+      }
+    },
+    "iteration-000086-game-000009-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 53,
+        "median_qnode_fraction": 0.3026315789473684,
+        "median_qnodes": 23,
+        "modal_frequency": 3,
+        "modal_move": "8h4d",
+        "moves": [
+          "8h4d",
+          "8h4d",
+          "8h4d"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5722145999316126,
+            "main_nodes": 59,
+            "qnodes": 29
+          }
+        ],
+        "elapsed_seconds": 0.9983412999426946,
+        "fallback": false,
+        "main_nodes": 62,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.3673469387755102,
+        "qnodes": 36,
+        "score": 368,
+        "selected_move": "8h4d",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5620000000344589,
+        "total_nodes": 98
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.609000000054948,
+        "median_main_nodes": 66,
+        "median_qnode_fraction": 0.43103448275862066,
+        "median_qnodes": 50,
+        "modal_frequency": 3,
+        "modal_move": "8h4d",
+        "moves": [
+          "8h4d",
+          "8h4d",
+          "8h4d"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6076027000090107,
+            "main_nodes": 59,
+            "qnodes": 29
+          }
+        ],
+        "elapsed_seconds": 3.999029100057669,
+        "fallback": false,
+        "main_nodes": 90,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.5027624309392266,
+        "qnodes": 91,
+        "score": 368,
+        "selected_move": "8h4d",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5929999999934807,
+        "total_nodes": 181
+      },
+      "8.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.6082513000583276,
+            "main_nodes": 59,
+            "qnodes": 29
+          }
+        ],
+        "elapsed_seconds": 7.998511300073005,
+        "fallback": false,
+        "main_nodes": 114,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "8h4d",
+        "qnode_fraction": 0.5598455598455598,
+        "qnodes": 145,
+        "score": 368,
+        "selected_move": "8h4d",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.609000000054948,
+        "total_nodes": 259
+      }
+    },
+    "iteration-000086-game-000010-ply12": {
+      "0.5": {
+        "completed_depth_values": [
+          0,
+          0,
+          0
+        ],
+        "fallback_event_count": 3,
+        "fallback_limited": true,
+        "median_completed_depth": 0,
+        "median_first_completed_iteration": null,
+        "median_main_nodes": 49,
+        "median_qnode_fraction": 0.30985915492957744,
+        "median_qnodes": 22,
+        "modal_frequency": 3,
+        "modal_move": "6i7h",
+        "moves": [
+          "6i7h",
+          "6i7h",
+          "6i7h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "1.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5687403999036178,
+            "main_nodes": 53,
+            "qnodes": 26
+          }
+        ],
+        "elapsed_seconds": 0.9997956999577582,
+        "fallback": false,
+        "main_nodes": 72,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.3739130434782609,
+        "qnodes": 43,
+        "score": 9,
+        "selected_move": "6i7h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5620000000344589,
+        "total_nodes": 115
+      },
+      "2.0": {
+        "completed_depth_values": [
+          1,
+          1,
+          1
+        ],
+        "fallback_event_count": 0,
+        "fallback_limited": false,
+        "median_completed_depth": 1,
+        "median_first_completed_iteration": 0.5779999999795109,
+        "median_main_nodes": 115,
+        "median_qnode_fraction": 0.4221105527638191,
+        "median_qnodes": 84,
+        "modal_frequency": 3,
+        "modal_move": "6i7h",
+        "moves": [
+          "6i7h",
+          "6i7h",
+          "6i7h"
+        ],
+        "source": "F35_R1_FROZEN_RAW_CANDIDATE",
+        "stable": true,
+        "unique_move_count": 1
+      },
+      "4.0": {
+        "completed_depth": 1,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5773077999474481,
+            "main_nodes": 53,
+            "qnodes": 26
+          }
+        ],
+        "elapsed_seconds": 3.99932009994518,
+        "fallback": false,
+        "main_nodes": 203,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.44986449864498645,
+        "qnodes": 166,
+        "score": 9,
+        "selected_move": "6i7h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 0.5620000000344589,
+        "total_nodes": 369
+      },
+      "8.0": {
+        "completed_depth": 2,
+        "completion_events": [
+          {
+            "depth": 1,
+            "elapsed_seconds": 0.5259261999744922,
+            "main_nodes": 53,
+            "qnodes": 26
+          },
+          {
+            "depth": 2,
+            "elapsed_seconds": 6.408909999998286,
+            "main_nodes": 289,
+            "qnodes": 235
+          }
+        ],
+        "elapsed_seconds": 7.9991658999351785,
+        "fallback": false,
+        "main_nodes": 344,
+        "provider_mode": "PYTHON_AUTHORITY_FALLBACK",
+        "pv_head": "6i7h",
+        "qnode_fraction": 0.4504792332268371,
+        "qnodes": 282,
+        "score": 1,
+        "selected_move": "6i7h",
+        "source": "F36_LIVE_POST_F35",
+        "termination_reason": "time_limit",
+        "time_to_first_completed_iteration": 6.405999999959022,
+        "total_nodes": 626
+      }
+    }
+  }
+}
