@@ -1,0 +1,159 @@
+{
+  "audit_harness_sha256": "d1eef01c1d6d97bd3069736e5fc10859716b0db44346446db4988a219a8c01d6",
+  "candidate_definitions": {
+    "R37A": "PIECE_LOCAL_REALIZED_ACTIVITY_REPLACEMENT",
+    "R37B": "ANCHOR_RING_CONTROL_REPLACEMENT",
+    "R37C": "ACTIVITY_PLUS_ANCHOR_RING_REPLACEMENT"
+  },
+  "constraints": [
+    "NO_F24A_REINTRODUCTION",
+    "NO_F23_FULL_DYNAMIC_LEAF",
+    "NO_COEFFICIENT_FITTING",
+    "NO_GAME_OR_PIECE_BRANCHES",
+    "NO_PRODUCTION_CHANGE",
+    "NO_ALPHASHO_RERUN",
+    "NO_PAIRED_BENCHMARK",
+    "NO_NATIVE",
+    "NO_SEARCH_POLICY_CHANGE"
+  ],
+  "current_sandbox_sha": "91e586fe45baed0b055892d980ada21ec3d57a35",
+  "f35_r1": {
+    "accessibility": "c861c07f7e3016bf373d18c337f80862d122ff73ab6800e81b65a6a0204140c8",
+    "baseline": "6206073e94dffa4d373d35282f5712a519adaae462a186e9f3b4de6579d9ff89",
+    "manifest": "e6446cb1d436e6bcabf71dfc188bb4a3fbd4933fabf7b702981feb86f67a4fdb",
+    "result": "d2d53ab89205feae28a3c1da73b9a9de7650199ab61ce62d40a53c961e19cd30"
+  },
+  "f36_evidence": {
+    "capacity_sha256": "5bd9ae980de1e0af9cb207840e3a9ccfcd82bc4900441965095e9f2c5126183e",
+    "causal_sha256": "fbd9f4ff2b33cfb86e5951b0df5a7515db42ba721c2916720e50ff6427c1ad2d",
+    "manifest_sha256": "8f7503f9f1d2139bcd92d86270d95fd88b7fd15b8dc9f3e9ea05920b92df5a77",
+    "selection_sha256": "f93f2d2f8c814f851351d8cf64ace8b36da96671e405afcfd7d24b3b3ed6de15",
+    "static_sha256": "c9690d5c088a0850d0df6288702cf8e923d9896eb4dc48355d8e79dcd713c447"
+  },
+  "formulas": {
+    "R37A": "round(dynamic_mobility_weight * board_size * (activity(0)-activity(1)))",
+    "R37A_activity": "sum(board_value[current_type]/max(1,median_non_anchor_value) * (realized/potential if potential else 0))",
+    "R37B": "anchor_escape_weight * (ring_balance(0)-ring_balance(1))",
+    "R37B_ring": "friendly_pseudo_controlled_ring - enemy_pseudo_controlled_ring",
+    "R37C": "R37A and R37B simultaneously; all other v1 terms unchanged"
+  },
+  "gates": {
+    "ALPHASHO_VALIDATION_ONLY": true,
+    "NO_TUNING_FROM_RESULTS": true,
+    "PRODUCTION_DIFF_ZERO": true,
+    "micro_median_ratio_max": 1.5,
+    "micro_p95_ratio_max": 2.0,
+    "runtime_depth_regressions_max": 2,
+    "search_nps_ratio_min": 0.8,
+    "search_signal_improvement_min": 1,
+    "static_stable_improvements_min": 4,
+    "static_stable_worsened_max": 1
+  },
+  "historical_exclusions": {
+    "F23_full_dynamic_leaf": [
+      "full safe legal mobility/control",
+      "full attack/defense maps",
+      "forcing capture/recapture continuation",
+      "history-linked tactical features",
+      "exact W/D/L fitting",
+      "fitted coefficients",
+      "per-game/per-piece tables"
+    ],
+    "F24A": [
+      "material/inventory",
+      "empty-board positional capability",
+      "occupancy-only anchor structural space",
+      "promotion/drop structural capability"
+    ],
+    "F24A_result": {
+      "cost": "extremely cheap",
+      "production_integration": false,
+      "quality_top1_delta": 0
+    }
+  },
+  "historical_inputs": {
+    "ADR-066": {
+      "path": "docs/architecture/ADR-066-evaluator-supervision-strategy-reassessment.md",
+      "sha256": "d02d4d91702527d1314188ff1c219e858c5a311f1e91d0d1c94e2e100da6eb42"
+    },
+    "ADR-067": {
+      "path": "docs/architecture/ADR-067-f23v-minimal-analytic-evaluator-signal-probe.md",
+      "sha256": "5afbc3fde1eb6c9f56e87b36f1b65e4fe169ea2834592052c5549450536cba9d"
+    },
+    "ADR-068": {
+      "path": "docs/architecture/ADR-068-f23v-mechanic-active-signal-corrective.md",
+      "sha256": "3501a8bc958b1a18d2bd0aa815c60c67dbe513f82ff9c4d31add1b6da5c410c7"
+    },
+    "ADR-070": {
+      "path": "docs/architecture/ADR-070-evaluator-validation-strategy-r2.md",
+      "sha256": "ad1c0edf8401993c662784b9a7e54343c07672aa7fb9469ed6263c51091e084a"
+    },
+    "ADR-074": {
+      "path": "docs/architecture/ADR-074-evaluator-representation-reassessment.md",
+      "sha256": "65bd952455522844149bfb8847d0670d1bf5085ca560657311a289c35b40b53b"
+    },
+    "ADR-075": {
+      "path": "docs/architecture/ADR-075-minimal-cheap-rule-derived-evaluator.md",
+      "sha256": "2dedf4ab62df0e52f276df07dcd98985e2b98eca769d8527be9a3cf673710abc"
+    },
+    "F24A_RESULT": {
+      "path": "tests/fixtures/f24a_minimal_cheap_evaluator.json",
+      "sha256": "46686486ac731e778ea265d74499dd14fc1723896877aa2f74c1177f1989df50"
+    },
+    "F30_FRESH": {
+      "path": "tests/fixtures/f30r1_fresh_move_reference.json",
+      "sha256": "8ec60aebdde3e7fb4d192d99e77948a954d7aab83c6942e0704a8956721a3eba"
+    },
+    "F30_MANIFEST": {
+      "path": "tests/fixtures/f30r1_benchmark_manifest.json",
+      "sha256": "de1ffc84b635d96fa8abd5a23eed42c79ef9a7fd48b7d07351c38ac6ecac4f1a"
+    },
+    "F31": {
+      "path": "tests/fixtures/f31_causal_diagnosis.json",
+      "sha256": "9eaaccf9ecea8717e6a2ffe198da9136cb1e7fee0ee9ac2edcb60d6f70d8b77e"
+    },
+    "F31_R1": {
+      "path": "tests/fixtures/f31r1_counterfactual_causal_reclassification.json",
+      "sha256": "ed0834b4a591d9a0b0dddd529a1c1ce205f22fd268caafe7951d79966113a83f"
+    },
+    "F36_capacity": {
+      "path": "tests/fixtures/f36_post_reserve_capacity_ladder.json",
+      "sha256": "5bd9ae980de1e0af9cb207840e3a9ccfcd82bc4900441965095e9f2c5126183e"
+    },
+    "F36_causal": {
+      "path": "tests/fixtures/f36_post_reserve_causal_table.json",
+      "sha256": "fbd9f4ff2b33cfb86e5951b0df5a7515db42ba721c2916720e50ff6427c1ad2d"
+    },
+    "F36_manifest": {
+      "path": "tests/fixtures/f36_post_reserve_manifest.json",
+      "sha256": "1405fc15938656489a833813dd46a29b53e5c429a91142dcd864fa17a1ee7eb8"
+    },
+    "F36_selection": {
+      "path": "tests/fixtures/f36_post_reserve_selection.json",
+      "sha256": "f93f2d2f8c814f851351d8cf64ace8b36da96671e405afcfd7d24b3b3ed6de15"
+    },
+    "F36_static": {
+      "path": "tests/fixtures/f36_post_reserve_static_direct_rank.json",
+      "sha256": "c9690d5c088a0850d0df6288702cf8e923d9896eb4dc48355d8e79dcd713c447"
+    }
+  },
+  "kind": "F37_EVALUATOR_REENTRY_MANIFEST",
+  "manifest_sha256": "f9c973859bd816f66cf733699c5b5940c356d0599f360b898a8bbe58ee0c9956",
+  "product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+  "production_sources": {
+    "config.py": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e",
+    "evaluator.py": "10fa59b364e3519456d16a6913e12084d803dbde51a2e638fddf48133466fda3",
+    "profile.py": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b"
+  },
+  "retained_search_sha256": "f9b5faf17b40fcc9f9672875c4d200db7fc5bea314b9da5a20351b95563e3f4e",
+  "schema_version": 1,
+  "selection_tiebreak": [
+    "smallest_AS050_plus_AS200_gap",
+    "largest_stable_strict_improvements",
+    "largest_2048_hit_improvement",
+    "lowest_median_evaluator_cost_ratio",
+    "prefer_single_replacement_over_R37C_on_exact_tie"
+  ],
+  "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+  "ten_root_descriptor_sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151"
+}

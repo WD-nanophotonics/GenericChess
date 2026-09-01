@@ -1,0 +1,4638 @@
+{
+  "full_v1": {
+    "parity": true,
+    "roots": {
+      "iteration-000086-game-000001-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_008\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g16\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_016\",\"promotion_target_id\":null,\"to\":[5,0]}",
+            "move": "5i6i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[2,2],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[1,4]}",
+            "move": "3g2e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[2,2],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_027\",\"promotion_target_id\":null,\"to\":[3,4]}",
+            "move": "3g4e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 189,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 170,
+              "promotion_potential": 0,
+              "raw_total": 369,
+              "side_to_move_score": -369
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "6g6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 12,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 12,
+              "side_to_move_score": -12
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+            "move": "9g9f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,4]}",
+            "move": "3f3e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[3,4]}",
+            "move": "4f4e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 189,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 170,
+              "promotion_potential": 0,
+              "raw_total": 369,
+              "side_to_move_score": -369
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[0,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "1h2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[0,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "1h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[0,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "1h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "3i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 12,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 12,
+              "side_to_move_score": -12
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "7i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3i2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 10,
+              "side_to_move_score": -10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "4i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 15,
+              "side_to_move_score": -15
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "move": "5h4g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 13,
+              "side_to_move_score": -13
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          }
+        ],
+        "legal_action_count": 28,
+        "parity": true,
+        "sfen": "lnsgkgsnl/2r4b1/pp1pp1ppp/2p6/5p3/5PP2/PPPPP1NPP/1B2G3R/LNS1KGS1L b - 13"
+      },
+      "iteration-000086-game-000002-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_008\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g16\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_016\",\"promotion_target_id\":null,\"to\":[5,0]}",
+            "move": "5i6i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[2,2],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[1,4]}",
+            "move": "3g2e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[2,2],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_026\",\"promotion_target_id\":null,\"to\":[3,4]}",
+            "move": "3g4e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+            "move": "4g4f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "6g6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+            "move": "9g9f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,4]}",
+            "move": "3f3e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,4]}",
+            "move": "8f8e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g23\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_032\",\"promotion_target_id\":null,\"to\":[1,0]}",
+            "move": "2h2i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "2h1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "7i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,1],\"geometry_id\":\"g29\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_044\",\"promotion_target_id\":null,\"to\":[1,0]}",
+            "move": "3h2i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "4i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[2,0]}",
+            "move": "4i3i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          }
+        ],
+        "legal_action_count": 25,
+        "parity": true,
+        "sfen": "lns4nl/1r1gksgb1/pp1p1pppp/2p1p4/9/1P4P2/P1PPPPNPP/1B2G1SR1/LNS1KG2L b - 13"
+      },
+      "iteration-000086-game-000003-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_008\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,1],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "9h9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_024\",\"promotion_target_id\":null,\"to\":[8,0]}",
+            "move": "8h9i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_026\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8i9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,4]}",
+            "move": "4f4e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,4]}",
+            "move": "6f6e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,4]}",
+            "move": "9f9e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[4,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[4,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "5h7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[4,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[4,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "5h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[4,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "5h2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -2,
+              "side_to_move_score": 2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[4,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "5h1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "3i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "7i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3i2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -14,
+              "side_to_move_score": 14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -14,
+              "side_to_move_score": 14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_046\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8h9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "4i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -9,
+              "side_to_move_score": 9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "6i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "6i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          }
+        ],
+        "legal_action_count": 31,
+        "parity": true,
+        "sfen": "ln1gkgsnl/1s4rb1/1p1pppp1p/p1p4p1/9/P2P1P3/1PP1P1PPP/LB2R4/1NSGKGSNL b - 13"
+      },
+      "iteration-000086-game-000004-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "5i4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_012\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "5i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 14,
+              "side_to_move_score": -14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 14,
+              "side_to_move_score": -14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+            "move": "4g4f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+            "move": "9g9f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,4]}",
+            "move": "6f6e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[0,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "1h2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[0,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "1h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "3i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 11,
+              "side_to_move_score": -11
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "7i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 11,
+              "side_to_move_score": -11
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3i2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 11,
+              "side_to_move_score": -11
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "6i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "6i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "6i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 14,
+              "side_to_move_score": -14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 14,
+              "side_to_move_score": -14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "4h5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g9\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_140\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "4h4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          }
+        ],
+        "legal_action_count": 25,
+        "parity": true,
+        "sfen": "1nsgkg1n1/l4srb1/ppp1ppppl/3p4p/9/3P5/PPP1PPPPP/1B3G2R/LNSGK1SNL b - 13"
+      },
+      "iteration-000086-game-000005-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "5i4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_012\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "5i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g16\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_016\",\"promotion_target_id\":null,\"to\":[5,0]}",
+            "move": "5i6i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "1i1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "9i9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[1,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "2i1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_026\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8i9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "6g6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -2,
+              "side_to_move_score": 2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,4]}",
+            "move": "1f1e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,4]}",
+            "move": "4f4e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,4]}",
+            "move": "9f9e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "2h1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "7i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,1],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "move": "3h4g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_046\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8h9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,1],\"geometry_id\":\"g30\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_048\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "3h4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -13,
+              "side_to_move_score": 13
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "move": "4h4g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,1],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "6h5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "4h5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "6h7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g9\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_140\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "4h4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,1],\"geometry_id\":\"g9\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_140\",\"promotion_target_id\":null,\"to\":[5,0]}",
+            "move": "6h6i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          }
+        ],
+        "legal_action_count": 29,
+        "parity": true,
+        "sfen": "1nsg2gnl/l2rk1sb1/pppppp1pp/6p2/9/P4P2P/1PPPP1PP1/1B1G1GSR1/LNS1K2NL b - 13"
+      },
+      "iteration-000086-game-000006-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[6,1],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "9i9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_026\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8i9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "6g6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 12,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 12,
+              "side_to_move_score": -12
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,4]}",
+            "move": "4f4e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,4]}",
+            "move": "9f9e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "2h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "2h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "2h5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "2h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "2h1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "3i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_046\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8h9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "4i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "6i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "6i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 10,
+              "side_to_move_score": -10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "4i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[4,0]}",
+            "move": "6i5i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[4,0]}",
+            "move": "4i5i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          }
+        ],
+        "legal_action_count": 30,
+        "parity": true,
+        "sfen": "ln1gkgsn1/1s3r1bl/ppp1ppp1p/3p3p1/9/P4P3/1PPPP1PPP/1BK4R1/LNSG1GSNL b - 13"
+      },
+      "iteration-000086-game-000007-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_008\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -13,
+              "side_to_move_score": 13
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_012\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "5i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -14,
+              "side_to_move_score": 14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -15,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -23,
+              "side_to_move_score": 23
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -20,
+              "side_to_move_score": 20
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "1i1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -20,
+              "side_to_move_score": 20
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[1,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "2i1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_024\",\"promotion_target_id\":null,\"to\":[8,0]}",
+            "move": "8h9i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_026\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8i9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -16,
+              "side_to_move_score": 16
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+            "move": "4g4f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "6g6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,4]}",
+            "move": "1f1e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -16,
+              "side_to_move_score": 16
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,5]}",
+            "move": "9e9d",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -16,
+              "side_to_move_score": 16
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[6,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -15,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -21,
+              "side_to_move_score": 21
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[6,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "7h5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -15,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -21,
+              "side_to_move_score": 21
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[6,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "7h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -15,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -21,
+              "side_to_move_score": 21
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[6,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "7h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -18,
+              "side_to_move_score": 18
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -15,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -21,
+              "side_to_move_score": 21
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[1,1],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "2h1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -12,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -22,
+              "side_to_move_score": 22
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_046\",\"promotion_target_id\":null,\"to\":[8,2]}",
+            "move": "8h9g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -12,
+              "side_to_move_score": 12
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[1,1],\"geometry_id\":\"g30\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_048\",\"promotion_target_id\":null,\"to\":[2,0]}",
+            "move": "2h3i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -12,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -22,
+              "side_to_move_score": 22
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "4i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -16,
+              "side_to_move_score": 16
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "6i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -16,
+              "side_to_move_score": 16
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -11,
+              "side_to_move_score": 11
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "6i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -14,
+              "side_to_move_score": 14
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "4i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -16,
+              "side_to_move_score": 16
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[2,0]}",
+            "move": "4i3i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -11,
+              "side_to_move_score": 11
+            }
+          }
+        ],
+        "legal_action_count": 31,
+        "parity": true,
+        "sfen": "lnsg2snl/1r2k1gb1/pp1pp1pp1/2p5p/P4p3/L7P/1PPPPPPP1/1BR4S1/1NSGKG1NL b - 13"
+      },
+      "iteration-000086-game-000008-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[6,0]}",
+            "move": "8h7i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_012\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "5i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+            "move": "4g4f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 10,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+            "move": "9g9f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "move": "6e6d",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -8,
+              "side_to_move_score": 8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[3,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "4h5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[3,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4h3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[3,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "4h2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[3,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "4h1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "3i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[5,1],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[5,2]}",
+            "move": "6h6g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3i2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -4,
+              "side_to_move_score": 4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[5,1],\"geometry_id\":\"g30\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_048\",\"promotion_target_id\":null,\"to\":[6,0]}",
+            "move": "6h7i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[2,1]}",
+            "move": "4i3h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_090\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "6i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[3,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[4,1]}",
+            "move": "4i5h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -10,
+              "side_to_move_score": 10
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "6i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[6,0]}",
+            "move": "6i7i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          }
+        ],
+        "legal_action_count": 26,
+        "parity": true,
+        "sfen": "1ng1kgsn1/l2s2rbl/ppppppp1p/7p1/3P5/9/PPP1PPPPP/1B1S1R3/LN1GKGSNL b - 13"
+      },
+      "iteration-000086-game-000009-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[6,0]}",
+            "move": "8h7i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[6,2]}",
+            "move": "8h7g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "8h6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 7,
+              "side_to_move_score": -7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[4,4]}",
+            "move": "8h5e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_003\",\"promotion_target_id\":null,\"to\":[3,5]}",
+            "move": "8h4d",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 189,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 170,
+              "promotion_potential": 0,
+              "raw_total": 368,
+              "side_to_move_score": -368
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "5i4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -8,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -3,
+              "side_to_move_score": 3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_008\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "1i1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+            "move": "8i7g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"B\",\"from\":[7,1],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_024\",\"promotion_target_id\":null,\"to\":[8,0]}",
+            "move": "8h9i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+            "move": "1g1f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+            "move": "2g2f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+            "move": "4g4f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,3]}",
+            "move": "6g6f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -1,
+              "side_to_move_score": 1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+            "move": "9g9f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,4]}",
+            "move": "7f7e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[2,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[2,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3h2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[2,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "move": "3h1h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3i2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 3,
+              "side_to_move_score": -3
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -6,
+              "side_to_move_score": 6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[5,1],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[6,2]}",
+            "move": "6h7g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[5,1],\"geometry_id\":\"g30\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_048\",\"promotion_target_id\":null,\"to\":[6,0]}",
+            "move": "6h7i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "6i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 8,
+              "side_to_move_score": -8
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 1,
+              "side_to_move_score": -1
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[6,0]}",
+            "move": "6i7i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 10,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 10,
+              "side_to_move_score": -10
+            }
+          }
+        ],
+        "legal_action_count": 29,
+        "parity": true,
+        "sfen": "ln2kg1nl/1r1sgs1b1/1pppp1pp1/p4p2p/9/2P6/PP1PPPPPP/LB1SG1R2/1N1GK1SNL b - 13"
+      },
+      "iteration-000086-game-000010-ply12": {
+        "all_legal_children": [
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,0]}",
+            "move": "5i4i",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": -2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -7,
+              "side_to_move_score": 7
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_008\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[8,0],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[8,1]}",
+            "move": "9i9h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"L\",\"from\":[0,1],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_020\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "1h1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"N\",\"from\":[1,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "move": "2i1g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[2,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "move": "3g3f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+            "move": "4g4f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[4,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[4,3]}",
+            "move": "5g5f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "move": "7g7f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[7,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[7,3]}",
+            "move": "8g8f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+            "move": "9g9f",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[0,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,4]}",
+            "move": "1f1e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[1,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,4]}",
+            "move": "2f2e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"P\",\"from\":[5,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[5,4]}",
+            "move": "6f6e",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[2,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"R\",\"from\":[2,1],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_036\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3h2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 6,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 6,
+              "side_to_move_score": -6
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "7i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 4,
+              "side_to_move_score": -4
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[1,1]}",
+            "move": "3i2h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[6,0],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_040\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "7i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "3i4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": -5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": -5,
+              "side_to_move_score": 5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g4\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_068\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "6i6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 2,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 2,
+              "side_to_move_score": -2
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[6,1]}",
+            "move": "6i7h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 4,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 9,
+              "side_to_move_score": -9
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_112\",\"promotion_target_id\":null,\"to\":[5,2]}",
+            "move": "5h6g",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 5,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 5,
+              "side_to_move_score": -5
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "move": "5h4h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          },
+          {
+            "action_key": "{\"actor_type_id\":\"G\",\"from\":[4,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[5,1]}",
+            "move": "5h6h",
+            "recomposed_exact": true,
+            "terms": {
+              "anchor_escape": 0,
+              "board_material": 0,
+              "check_penalty": 0,
+              "global_pseudo_control": 0,
+              "hand_inventory": 0,
+              "promotion_potential": 0,
+              "raw_total": 0,
+              "side_to_move_score": 0
+            }
+          }
+        ],
+        "legal_action_count": 26,
+        "parity": true,
+        "sfen": "lnsg1g1nl/4ksrb1/pp2ppppp/2pp5/9/3P3PP/PPP1PPP2/1B2G1R1L/LNSGK1SN1 b - 13"
+      }
+    },
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "stable_mismatch_summary": {
+    "roots": {
+      "iteration-000086-game-000002-ply12": {
+        "alphasho_0.5_child": "5i6h",
+        "alphasho_2.0_child": "5i6h",
+        "production_score_margin_over_reference": {
+          "alphasho_0.5": -6,
+          "alphasho_2.0": -6
+        },
+        "production_selected_child": "7g7f",
+        "reference_term_delta_vs_production_selection": {
+          "alphasho_0.5": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -6,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -6
+          },
+          "alphasho_2.0": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -6,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -6
+          }
+        },
+        "term_ranges_across_all_legal_children": {
+          "anchor_escape": {
+            "max": 0,
+            "min": -10
+          },
+          "board_material": {
+            "max": 0,
+            "min": 0
+          },
+          "check_penalty": {
+            "max": 0,
+            "min": 0
+          },
+          "global_pseudo_control": {
+            "max": 10,
+            "min": 0
+          },
+          "hand_inventory": {
+            "max": 0,
+            "min": 0
+          },
+          "promotion_potential": {
+            "max": 0,
+            "min": 0
+          },
+          "raw_total": {
+            "max": 5,
+            "min": -10
+          }
+        }
+      },
+      "iteration-000086-game-000003-ply12": {
+        "alphasho_0.5_child": "5i6h",
+        "alphasho_2.0_child": "5i6h",
+        "production_score_margin_over_reference": {
+          "alphasho_0.5": -4,
+          "alphasho_2.0": -4
+        },
+        "production_selected_child": "4i3h",
+        "reference_term_delta_vs_production_selection": {
+          "alphasho_0.5": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -4,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -4
+          },
+          "alphasho_2.0": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -4,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -4
+          }
+        },
+        "term_ranges_across_all_legal_children": {
+          "anchor_escape": {
+            "max": 0,
+            "min": -10
+          },
+          "board_material": {
+            "max": 0,
+            "min": 0
+          },
+          "check_penalty": {
+            "max": 0,
+            "min": 0
+          },
+          "global_pseudo_control": {
+            "max": 0,
+            "min": -6
+          },
+          "hand_inventory": {
+            "max": 0,
+            "min": 0
+          },
+          "promotion_potential": {
+            "max": 0,
+            "min": 0
+          },
+          "raw_total": {
+            "max": 0,
+            "min": -14
+          }
+        }
+      },
+      "iteration-000086-game-000004-ply12": {
+        "alphasho_0.5_child": "5i6h",
+        "alphasho_2.0_child": "7i7h",
+        "production_score_margin_over_reference": {
+          "alphasho_0.5": 0,
+          "alphasho_2.0": -3
+        },
+        "production_selected_child": "5i5h",
+        "reference_term_delta_vs_production_selection": {
+          "alphasho_0.5": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 0
+          },
+          "alphasho_2.0": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": 2,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -3
+          }
+        },
+        "term_ranges_across_all_legal_children": {
+          "anchor_escape": {
+            "max": 10,
+            "min": 0
+          },
+          "board_material": {
+            "max": 0,
+            "min": 0
+          },
+          "check_penalty": {
+            "max": 0,
+            "min": 0
+          },
+          "global_pseudo_control": {
+            "max": 6,
+            "min": 0
+          },
+          "hand_inventory": {
+            "max": 0,
+            "min": 0
+          },
+          "promotion_potential": {
+            "max": 0,
+            "min": 0
+          },
+          "raw_total": {
+            "max": 14,
+            "min": 2
+          }
+        }
+      },
+      "iteration-000086-game-000007-ply12": {
+        "alphasho_0.5_child": "5i4h",
+        "alphasho_2.0_child": "5i4h",
+        "production_score_margin_over_reference": {
+          "alphasho_0.5": -3,
+          "alphasho_2.0": -3
+        },
+        "production_selected_child": "7g7f",
+        "reference_term_delta_vs_production_selection": {
+          "alphasho_0.5": {
+            "anchor_escape": 5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -8,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -3
+          },
+          "alphasho_2.0": {
+            "anchor_escape": 5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -8,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -3
+          }
+        },
+        "term_ranges_across_all_legal_children": {
+          "anchor_escape": {
+            "max": -5,
+            "min": -15
+          },
+          "board_material": {
+            "max": 0,
+            "min": 0
+          },
+          "check_penalty": {
+            "max": 0,
+            "min": 0
+          },
+          "global_pseudo_control": {
+            "max": 0,
+            "min": -12
+          },
+          "hand_inventory": {
+            "max": 0,
+            "min": 0
+          },
+          "promotion_potential": {
+            "max": 0,
+            "min": 0
+          },
+          "raw_total": {
+            "max": -10,
+            "min": -23
+          }
+        }
+      },
+      "iteration-000086-game-000008-ply12": {
+        "alphasho_0.5_child": "6h6g",
+        "alphasho_2.0_child": "6h6g",
+        "production_score_margin_over_reference": {
+          "alphasho_0.5": -4,
+          "alphasho_2.0": -4
+        },
+        "production_selected_child": "6i7i",
+        "reference_term_delta_vs_production_selection": {
+          "alphasho_0.5": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -4,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -4
+          },
+          "alphasho_2.0": {
+            "anchor_escape": 0,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -4,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -4
+          }
+        },
+        "term_ranges_across_all_legal_children": {
+          "anchor_escape": {
+            "max": -5,
+            "min": -10
+          },
+          "board_material": {
+            "max": 0,
+            "min": 0
+          },
+          "check_penalty": {
+            "max": 0,
+            "min": 0
+          },
+          "global_pseudo_control": {
+            "max": 10,
+            "min": 0
+          },
+          "hand_inventory": {
+            "max": 0,
+            "min": 0
+          },
+          "promotion_potential": {
+            "max": 0,
+            "min": 0
+          },
+          "raw_total": {
+            "max": 1,
+            "min": -10
+          }
+        }
+      },
+      "iteration-000086-game-000010-ply12": {
+        "alphasho_0.5_child": "5i6h",
+        "alphasho_2.0_child": "5i6h",
+        "production_score_margin_over_reference": {
+          "alphasho_0.5": -9,
+          "alphasho_2.0": -9
+        },
+        "production_selected_child": "6i7h",
+        "reference_term_delta_vs_production_selection": {
+          "alphasho_0.5": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -4,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -9
+          },
+          "alphasho_2.0": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -4,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -9
+          }
+        },
+        "term_ranges_across_all_legal_children": {
+          "anchor_escape": {
+            "max": 5,
+            "min": -5
+          },
+          "board_material": {
+            "max": 0,
+            "min": 0
+          },
+          "check_penalty": {
+            "max": 0,
+            "min": 0
+          },
+          "global_pseudo_control": {
+            "max": 6,
+            "min": -2
+          },
+          "hand_inventory": {
+            "max": 0,
+            "min": 0
+          },
+          "promotion_potential": {
+            "max": 0,
+            "min": 0
+          },
+          "raw_total": {
+            "max": 9,
+            "min": -7
+          }
+        }
+      }
+    },
+    "stable_root_count": 6
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "admitted_to_search_shadow": false,
+      "candidate": "R37A",
+      "eligible": false,
+      "fixed_node_search_cost_gate": false,
+      "fixed_node_search_signal_gate": false,
+      "local_gate": true,
+      "micro_cost_gate": true,
+      "runtime_2s_safety_gate": false,
+      "static_gate": false
+    },
+    {
+      "admitted_to_search_shadow": true,
+      "candidate": "R37B",
+      "eligible": true,
+      "fixed_node_hits": {
+        "2048": {
+          "candidate": 4,
+          "v1": 2
+        },
+        "512": {
+          "candidate": 4,
+          "v1": 3
+        }
+      },
+      "fixed_node_nps_ratios": {
+        "2048": 0.9874720606682326,
+        "512": 0.983650928812528
+      },
+      "fixed_node_search_cost_gate": true,
+      "fixed_node_search_signal_gate": true,
+      "local_gate": true,
+      "micro_cost_gate": true,
+      "no_v1_hit_lost": true,
+      "runtime_2s_safety_gate": true,
+      "static_gate": true
+    },
+    {
+      "admitted_to_search_shadow": true,
+      "candidate": "R37C",
+      "eligible": true,
+      "fixed_node_hits": {
+        "2048": {
+          "candidate": 6,
+          "v1": 2
+        },
+        "512": {
+          "candidate": 5,
+          "v1": 3
+        }
+      },
+      "fixed_node_nps_ratios": {
+        "2048": 0.9646495875504418,
+        "512": 0.9427835195114789
+      },
+      "fixed_node_search_cost_gate": true,
+      "fixed_node_search_signal_gate": true,
+      "local_gate": true,
+      "micro_cost_gate": true,
+      "no_v1_hit_lost": true,
+      "runtime_2s_safety_gate": true,
+      "static_gate": true
+    }
+  ],
+  "eligible_candidates": [
+    "R37B",
+    "R37C"
+  ],
+  "flags": {
+    "EVALUATOR_REENTRY_TRANSFER_COST_GATES_COMPLETE": true,
+    "EVALUATOR_V1_TERM_DECOMPOSITION_COMPLETE": true,
+    "F36_EVALUATOR_CAUSAL_BASELINE_CONSUMED": true,
+    "HISTORICAL_EVALUATOR_FAILURE_LEDGER_CONSUMED": true,
+    "NEXT_EVALUATOR_BOUNDARY_SELECTED": true,
+    "RULE_DERIVED_REPRESENTATION_SIGNAL_AUDIT_COMPLETE": true
+  },
+  "selected_boundary": "F38_ACTIVITY_AND_ANCHOR_CONTROL_EVALUATOR_PROTOTYPE",
+  "selected_candidate": "R37C",
+  "selection_inputs": {
+    "R37A": {
+      "gap_sum": 12,
+      "median_cost_ratio": 1.3979205579602862,
+      "search_hit_improvement_2048": 0,
+      "stable_strict_improvements": 2
+    },
+    "R37B": {
+      "gap_sum": 5,
+      "median_cost_ratio": 1.2480770772103262,
+      "search_hit_improvement_2048": 2,
+      "stable_strict_improvements": 5
+    },
+    "R37C": {
+      "gap_sum": 2,
+      "median_cost_ratio": 1.473336046367387,
+      "search_hit_improvement_2048": 4,
+      "stable_strict_improvements": 6
+    }
+  },
+  "status": "PASS"
+}
