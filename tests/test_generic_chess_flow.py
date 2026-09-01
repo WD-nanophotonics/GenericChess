@@ -137,6 +137,7 @@ def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
     called = []
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
     monkeypatch.setattr(flow, "command_recover", lambda root, args: called.append((root, args)))
 
     marker = SimpleNamespace()
@@ -159,6 +160,7 @@ def test_work_redisplays_the_current_order_without_new_courier_request(
     }
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
     monkeypatch.setattr(
         flow,
         "command_start",
@@ -414,6 +416,75 @@ def test_escalation_freezes_worker_repository_commands(monkeypatch, tmp_path):
         flow.command_publish(tmp_path, SimpleNamespace(tests=[]))
 
 
+def test_supervisor_hold_is_authorized_idempotent_and_hashed_on_release(
+        monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "schema": "generic-chess-supervisor-v1",
+        "supervisor_thread_id": "supervisor-1",
+        "supervisor_host_id": "local",
+        "worker_thread_id": "worker-1",
+        "worker_host_id": "local",
+    }), encoding="utf-8")
+    reason = tmp_path / "reason.md"
+    reason.write_text("The worker is about to publish outside the work order.", encoding="utf-8")
+    detail = tmp_path / "release.md"
+    detail.write_text("Chat revised the order and the worker acknowledged it.", encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
+
+    args = SimpleNamespace(reason_file=str(reason), worker_thread_id=None)
+    flow.command_supervisor_hold(tmp_path, args)
+    first = json.loads(capsys.readouterr().out)
+    flow.command_supervisor_hold(tmp_path, args)
+    second = json.loads(capsys.readouterr().out)
+
+    assert first["hold_id"] == second["hold_id"]
+    assert flow.active_supervisor_hold(tmp_path)["worker_thread_id"] == "worker-1"
+    with pytest.raises(flow.FlowError, match="blocks worker writes"):
+        flow.require_no_supervisor_hold(tmp_path)
+
+    flow.command_supervisor_release(tmp_path, SimpleNamespace(
+        hold_id=first["hold_id"], detail_file=str(detail)))
+    released = json.loads(capsys.readouterr().out)
+    assert released["status"] == "RELEASED"
+    assert len(released["resolution_sha256"]) == 64
+    assert flow.active_supervisor_hold(tmp_path) is None
+
+
+def test_unregistered_task_cannot_hold_or_release(monkeypatch, tmp_path):
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-1",
+        "worker_thread_id": "worker-1",
+    }), encoding="utf-8")
+    reason = tmp_path / "reason.md"
+    reason.write_text("urgent", encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setenv("CODEX_THREAD_ID", "worker-1")
+
+    with pytest.raises(flow.FlowError, match="registered Supervisor"):
+        flow.command_supervisor_hold(tmp_path, SimpleNamespace(
+            reason_file=str(reason), worker_thread_id=None))
+
+
+def test_hold_status_check_write_returns_nonzero(monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    (runtime / "active-supervisor-hold.json").write_text(json.dumps({
+        "schema": "generic-chess-supervisor-hold-v1",
+        "hold_id": "a" * 20,
+        "status": "ACTIVE",
+    }), encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+
+    assert flow.command_supervisor_hold_status(
+        tmp_path, SimpleNamespace(check_write=True)) == 3
+    assert json.loads(capsys.readouterr().out)["active"] is True
+
+
 def test_user_superseded_resolution_retires_request_without_deleting_evidence(monkeypatch, tmp_path):
     runtime = tmp_path / "runtime"
     directory = runtime / "escalations" / ("b" * 20)
@@ -487,6 +558,7 @@ def test_heavy_uses_below_normal_priority_and_returns_child_code(monkeypatch, tm
     monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True, "mode": "local"})
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "heavy_lock", lambda _root: FakeLock())
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
 
     def fake_popen(argv, **kwargs):
         seen.update({"argv": argv, **kwargs})
@@ -519,6 +591,7 @@ def test_publish_tests_use_the_same_low_priority_lock(monkeypatch, tmp_path):
 
     monkeypatch.setattr(flow, "python_for", lambda _root: "python")
     monkeypatch.setattr(flow, "heavy_lock", lambda _root: FakeLock())
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path / "runtime")
     monkeypatch.setattr(flow, "run", fake_run)
 
     flow.run_tests(tmp_path, ["tests/test_session.py"])
@@ -679,11 +752,37 @@ def test_claim_restores_exact_closeout_stage_after_remote_claim(monkeypatch, tmp
     assert Path(saved["handoff_closeout_path"]).read_text(encoding="utf-8") == closeout
 
 
+def test_handoff_closeout_accepts_legacy_double_cr_checkout(tmp_path):
+    path = tmp_path / "closeout.md"
+    expected_text = "# Closeout\r\n\r\n- result\r\n"
+    path.write_bytes(expected_text.replace("\r\n", "\r\r\n").encode("utf-8"))
+    expected = __import__("hashlib").sha256(expected_text.encode("utf-8")).hexdigest()
+
+    assert flow._validated_handoff_closeout(path, expected) == expected_text
+
+
+def test_portable_closeout_uses_lf_on_every_platform(tmp_path):
+    path = tmp_path / "closeout.md"
+    path.write_bytes(b"# Closeout\r\n\r\n- result\r\n")
+
+    text, digest = flow._portable_closeout(str(path))
+
+    assert text == "# Closeout\n\n- result\n"
+    assert digest == __import__("hashlib").sha256(text.encode("utf-8")).hexdigest()
+
+
 def test_pre_push_hook_allows_only_flow_owned_fast_forward_state_push():
     hook = (ROOT / ".githooks" / "pre-push").read_text(encoding="utf-8")
     assert "refs/heads/workflow-state" in hook
     assert 'GENERIC_CHESS_FLOW_PUSH:-}' in hook
     assert "GENERIC_CHESS_NON_FAST_FORWARD_PUSH_FORBIDDEN" in hook
+    assert "GENERIC_CHESS_SUPERVISOR_HOLD_BLOCKS_PUSH" in hook
+
+
+def test_pre_commit_hook_blocks_active_supervisor_hold():
+    hook = (ROOT / ".githooks" / "pre-commit").read_text(encoding="utf-8")
+    assert "active-supervisor-hold.json" in hook
+    assert "GENERIC_CHESS_SUPERVISOR_HOLD_BLOCKS_COMMIT" in hook
 
 
 def test_commands_reject_finished_session(monkeypatch, tmp_path):

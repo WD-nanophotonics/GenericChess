@@ -262,13 +262,13 @@ def load_handoff(repo: Path) -> dict[str, Any]:
 def _write_handoff_files(repo: Path, capsule: dict[str, Any], closeout: str | None) -> None:
     (repo / "handoff.json").write_text(
         json.dumps(capsule, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+        encoding="utf-8", newline="\n",
     )
     payload = repo / "closeout.md"
     if closeout is None:
         payload.unlink(missing_ok=True)
     else:
-        payload.write_text(closeout.rstrip() + "\n", encoding="utf-8")
+        payload.write_text(closeout.rstrip() + "\n", encoding="utf-8", newline="")
 
 
 def commit_handoff(root: Path, repo: Path, capsule: dict[str, Any], *,
@@ -357,7 +357,12 @@ def python_for(root: Path) -> str:
 
 
 def run_tests(root: Path, targets: list[str]) -> None:
-    command = [python_for(root), "-m", "pytest", "-q", "-p", "no:cacheprovider"]
+    basetemp = runtime_dir(root) / "pytest-runs" / uuid.uuid4().hex
+    basetemp.mkdir(parents=True, exist_ok=False)
+    command = [
+        python_for(root), "-m", "pytest", "-q", "-p", "no:cacheprovider",
+        "--basetemp", str(basetemp),
+    ]
     command.extend(targets)
     with heavy_lock(root):
         result = run(
@@ -625,6 +630,7 @@ def heavy_lock(root: Path):
 def command_heavy(root: Path, args: argparse.Namespace) -> int:
     state = active_state(root)
     require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
     if branch(root) != "sandbox":
         raise FlowError("heavy must be run from the sandbox worktree")
     command = list(args.argv)
@@ -642,12 +648,13 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
 
 
 def command_start(root: Path, args: argparse.Namespace) -> None:
-    require_handoff_owner(root)
     previous = load_state(root, required=False)
     if previous.get("active"):
         if previous.get("mode") != args.mode:
             raise FlowError("an active session cannot change authority mode")
         raise FlowError("a GenericChess flow session is already active")
+    require_no_supervisor_hold(root)
+    require_handoff_owner(root)
     install_hooks(root)
     trees = worktrees(root)
     for name in ("master", "sandbox"):
@@ -695,6 +702,7 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
             raise FlowError(
                 "a Local mode session is active; continue that task or finish it before Courier work"
             )
+        require_no_supervisor_hold(root)
         if state.get("active_request_directory"):
             command_recover(root, _args)
             return
@@ -720,6 +728,7 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
         dispatch_message(root, state, source, "start")
         return
 
+    require_no_supervisor_hold(root)
     token = uuid.uuid4().hex
     source = runtime_dir(root) / "work-bootstrap.txt"
     source.write_text(f"{WORK_BOOTSTRAP}\nWORK_SESSION_ID={token}\n", encoding="utf-8")
@@ -736,6 +745,7 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
         raise FlowError("publish must be run from the sandbox worktree")
     state = active_state(root)
     require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
     require_clean(root)
     fetch(root, "sandbox")
     remote_sha = sha(root, "origin/sandbox")
@@ -763,6 +773,14 @@ def supervisor_config_path(root: Path) -> Path:
     return runtime_dir(root) / "supervisor.json"
 
 
+def supervisor_hold_path(root: Path) -> Path:
+    return runtime_dir(root) / "active-supervisor-hold.json"
+
+
+def supervisor_hold_history_root(root: Path) -> Path:
+    return runtime_dir(root) / "supervisor-holds"
+
+
 def escalation_root(root: Path) -> Path:
     return runtime_dir(root) / "escalations"
 
@@ -785,6 +803,136 @@ def _supervisor_config(root: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise FlowError(f"invalid supervisor config: {path}")
     return value
+
+
+def _current_supervisor(root: Path) -> tuple[dict[str, Any], str]:
+    config = _supervisor_config(root)
+    current = os.environ.get("CODEX_THREAD_ID")
+    if not current or current != config.get("supervisor_thread_id"):
+        raise FlowError("only the registered Supervisor task may perform this action")
+    return config, current
+
+
+def active_supervisor_hold(root: Path) -> dict[str, Any] | None:
+    path = supervisor_hold_path(root)
+    if not path.is_file():
+        return None
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise FlowError(f"invalid Supervisor HOLD: {path}") from exc
+    if not isinstance(value, dict) or value.get("schema") != "generic-chess-supervisor-hold-v1":
+        raise FlowError(f"invalid Supervisor HOLD: {path}")
+    return value if value.get("status") == "ACTIVE" else None
+
+
+def require_no_supervisor_hold(root: Path) -> None:
+    hold = active_supervisor_hold(root)
+    if hold is not None:
+        raise FlowError(
+            f"Supervisor HOLD {hold.get('hold_id')} blocks worker writes and workflow progress"
+        )
+
+
+def command_register_worker(root: Path, args: argparse.Namespace) -> None:
+    config, _current = _current_supervisor(root)
+    thread_id = args.thread_id
+    if not isinstance(thread_id, str) or not thread_id:
+        raise FlowError("a worker thread id is required")
+    value = dict(config)
+    value.update({
+        "worker_thread_id": thread_id,
+        "worker_host_id": args.host_id,
+        "worker_registered_at": time.time(),
+    })
+    _atomic_json(supervisor_config_path(root), value)
+    print(json.dumps(value, indent=2, sort_keys=True))
+
+
+def command_supervisor_hold(root: Path, args: argparse.Namespace) -> None:
+    config, current = _current_supervisor(root)
+    existing = active_supervisor_hold(root)
+    if existing is not None:
+        print(json.dumps(existing, indent=2, ensure_ascii=False, sort_keys=True))
+        return
+    reason_path = Path(args.reason_file).resolve()
+    try:
+        reason = reason_path.read_text(encoding="utf-8-sig").strip()
+    except OSError as exc:
+        raise FlowError(f"cannot read HOLD reason file: {reason_path}") from exc
+    if not reason:
+        raise FlowError("HOLD reason must not be empty")
+    worker_thread_id = args.worker_thread_id or config.get("worker_thread_id")
+    if not isinstance(worker_thread_id, str) or not worker_thread_id:
+        raise FlowError("a registered or explicit worker thread id is required")
+    created_at = time.time()
+    identity = f"{current}|{worker_thread_id}|{created_at}|{reason}"
+    hold_id = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:20]
+    value = {
+        "schema": "generic-chess-supervisor-hold-v1",
+        "hold_id": hold_id,
+        "status": "ACTIVE",
+        "severity": "URGENT",
+        "reason": reason,
+        "reason_file": str(reason_path),
+        "supervisor_thread_id": current,
+        "supervisor_host_id": config.get("supervisor_host_id", "local"),
+        "worker_thread_id": worker_thread_id,
+        "worker_host_id": config.get("worker_host_id", "local"),
+        "created_at": created_at,
+    }
+    history = supervisor_hold_history_root(root) / hold_id
+    history.mkdir(parents=True, exist_ok=False)
+    _atomic_json(history / "hold.json", value)
+    _atomic_json(supervisor_hold_path(root), value)
+    print(json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True))
+
+
+def command_supervisor_hold_status(root: Path, args: argparse.Namespace) -> int:
+    hold = active_supervisor_hold(root)
+    payload = {"active": hold is not None, "hold": hold}
+    print(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True))
+    return 3 if hold is not None and getattr(args, "check_write", False) else 0
+
+
+def command_supervisor_release(root: Path, args: argparse.Namespace) -> None:
+    _config, current = _current_supervisor(root)
+    path = supervisor_hold_path(root)
+    if not path.is_file():
+        raise FlowError("there is no Supervisor HOLD to release")
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if value.get("hold_id") != args.hold_id:
+        raise FlowError("the requested HOLD is not the current HOLD")
+    if value.get("status") == "RELEASED":
+        print(json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True))
+        return
+    detail_path = Path(args.detail_file).resolve()
+    try:
+        detail = detail_path.read_text(encoding="utf-8-sig").strip()
+    except OSError as exc:
+        raise FlowError(f"cannot read HOLD release detail: {detail_path}") from exc
+    if not detail:
+        raise FlowError("HOLD release detail must not be empty")
+    resolution = {
+        "schema": "generic-chess-supervisor-hold-resolution-v1",
+        "hold_id": args.hold_id,
+        "detail": detail,
+        "detail_file": str(detail_path),
+        "supervisor_thread_id": current,
+        "released_at": time.time(),
+    }
+    canonical = json.dumps(resolution, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    resolution["resolution_sha256"] = hashlib.sha256(canonical).hexdigest()
+    history = supervisor_hold_history_root(root) / args.hold_id
+    _atomic_json(history / "resolution.json", resolution)
+    released = dict(value)
+    released.update({
+        "status": "RELEASED",
+        "released_at": resolution["released_at"],
+        "resolution_sha256": resolution["resolution_sha256"],
+    })
+    _atomic_json(path, released)
+    print(json.dumps(released, indent=2, ensure_ascii=False, sort_keys=True))
 
 
 def create_escalation(root: Path, state: dict[str, Any], *, reason: str,
@@ -1028,6 +1176,7 @@ def command_supervisor_resend(root: Path, args: argparse.Namespace) -> None:
 def command_closeout(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
     require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
     if state.get("mode") != "courier":
         raise FlowError("closeout is only available in courier mode")
     dispatch_message(root, state, Path(args.report_file).resolve(), "closeout")
@@ -1036,6 +1185,7 @@ def command_closeout(root: Path, args: argparse.Namespace) -> None:
 def command_promote(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
     require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
     candidate = args.candidate.lower()
     if not FULL_SHA.fullmatch(candidate):
         raise FlowError("candidate must be a full 40-character lowercase SHA")
@@ -1074,6 +1224,7 @@ def command_promote(root: Path, args: argparse.Namespace) -> None:
 def command_finish(root: Path, _args: argparse.Namespace) -> None:
     require_handoff_owner(root)
     state = active_state(root)
+    require_no_supervisor_hold(root)
     trees = worktrees(root)
     for name in ("master", "sandbox"):
         require_clean(trees[name])
@@ -1147,8 +1298,34 @@ def _portable_closeout(path_value: str | None) -> tuple[str | None, str | None]:
     for pattern in forbidden:
         if re.search(pattern, text):
             raise FlowError(f"closeout contains non-portable or sensitive text matching {pattern}")
-    text = text.rstrip() + "\n"
+    text = text.replace("\r\n", "\n").replace("\r", "\n").rstrip() + "\n"
     return text, hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def _validated_handoff_closeout(path: Path, expected_sha256: str | None) -> str | None:
+    if not path.is_file():
+        return None
+    try:
+        text = path.read_bytes().decode("utf-8-sig")
+    except UnicodeDecodeError as exc:
+        raise FlowError("handoff closeout must be UTF-8") from exc
+    legacy_windows = text.replace("\r\n", "\n")
+    collapsed_windows = re.sub(r"\r+(?=\n)", "\r", text)
+    canonical_lf = text.replace("\r\n", "\n").replace("\r", "\n")
+    candidates = []
+    for candidate in (text, legacy_windows, collapsed_windows, canonical_lf):
+        for representation in (
+            candidate,
+            candidate.rstrip() + ("\r\n" if "\r\n" in candidate else "\n"),
+        ):
+            if representation not in candidates:
+                candidates.append(representation)
+    if expected_sha256:
+        for candidate in candidates:
+            if hashlib.sha256(candidate.encode("utf-8")).hexdigest() == expected_sha256:
+                return candidate
+        raise FlowError("handoff closeout payload hash does not match")
+    return candidates[0]
 
 
 def command_machine_setup(root: Path, args: argparse.Namespace) -> None:
@@ -1274,10 +1451,8 @@ def command_handoff_claim(root: Path, args: argparse.Namespace) -> None:
     claimed["target_host_id"] = None
     claimed["created_at"] = int(time.time())
     closeout_path = repo / "closeout.md"
-    closeout = closeout_path.read_text(encoding="utf-8") if closeout_path.is_file() else None
     expected_closeout = capsule.get("workflow", {}).get("closeout_sha256")
-    if expected_closeout and hashlib.sha256((closeout or "").encode("utf-8")).hexdigest() != expected_closeout:
-        raise FlowError("handoff closeout payload hash does not match")
+    closeout = _validated_handoff_closeout(closeout_path, expected_closeout)
     commit_handoff(root, repo, claimed, closeout=closeout,
                    message=f"Claim GenericChess workflow on {args.host_id}")
 
@@ -1286,7 +1461,7 @@ def command_handoff_claim(root: Path, args: argparse.Namespace) -> None:
     local_closeout = None
     if closeout is not None:
         local_path = runtime_dir(root) / "handoff-closeout.md"
-        local_path.write_text(closeout, encoding="utf-8")
+        local_path.write_text(closeout, encoding="utf-8", newline="")
         local_closeout = str(local_path)
     restored = {
         "active": workflow.get("resume_stage") != "COMPLETE",
@@ -1353,6 +1528,21 @@ def parser() -> argparse.ArgumentParser:
     register.add_argument("--thread-id")
     register.add_argument("--host-id", default="local")
     register.set_defaults(handler=command_register_supervisor)
+    worker = sub.add_parser("register-worker")
+    worker.add_argument("--thread-id", required=True)
+    worker.add_argument("--host-id", default="local")
+    worker.set_defaults(handler=command_register_worker)
+    hold = sub.add_parser("supervisor-hold")
+    hold.add_argument("--reason-file", required=True)
+    hold.add_argument("--worker-thread-id")
+    hold.set_defaults(handler=command_supervisor_hold)
+    hold_status = sub.add_parser("supervisor-hold-status")
+    hold_status.add_argument("--check-write", action="store_true")
+    hold_status.set_defaults(handler=command_supervisor_hold_status)
+    release_hold = sub.add_parser("supervisor-release")
+    release_hold.add_argument("--hold-id", required=True)
+    release_hold.add_argument("--detail-file", required=True)
+    release_hold.set_defaults(handler=command_supervisor_release)
     escalate = sub.add_parser("escalate")
     escalate.add_argument("--reason", required=True)
     escalate.add_argument("--worker-thread-id")

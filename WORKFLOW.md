@@ -58,12 +58,21 @@ browser/profile, a replacement request, WSL, or a background Courier process.
 The worker records its `CODEX_THREAD_ID` in the escalation dossier. The current
 management task is registered as Supervisor by its `CODEX_THREAD_ID`, not its
 title. The worker sends the dossier notification directly to that task. There
-is no polling heartbeat: completion and escalation handoffs are direct task
-messages. While an escalation is claimed, the worker must stop repository writes. The Supervisor
+is no transport-recovery polling heartbeat: completion and escalation handoffs
+are direct task messages. A separate hourly management heartbeat may audit
+progress and wake an unjustifiably idle worker, but it never replaces Courier or
+creates another writer. While an escalation or Supervisor HOLD is active, the
+worker must stop repository writes. The Supervisor
 may diagnose transport/framework state, repair within the original authority,
 or review the sole `resend_once`; it may not expand the work order, change the
 Chat target, delete unknown data, or promote `master`. A signed resolution must
 name the original worker task so execution returns to the same task and request.
+
+The registered Supervisor may place an urgent HOLD for execution drift that is
+not a Courier transport failure. HOLD is runtime-only and blocks work/start,
+heavy commands, commits, pushes, publish, closeout, promotion, and finish. The
+same Supervisor must record a hashed release before the original worker resumes.
+Normal review feedback is queued to the worker without a HOLD.
 
 Chat may approve promotion only for the exact pushed sandbox SHA using:
 
@@ -97,6 +106,10 @@ generic-chess-flow.cmd publish --tests <pytest-target> [...]
 generic-chess-flow.cmd recover [--worker-thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd resume
 generic-chess-flow.cmd register-supervisor [--thread-id <CODEX_THREAD_ID>]
+generic-chess-flow.cmd register-worker --thread-id <CODEX_THREAD_ID>
+generic-chess-flow.cmd supervisor-hold --reason-file <path> [--worker-thread-id <id>]
+generic-chess-flow.cmd supervisor-hold-status [--check-write]
+generic-chess-flow.cmd supervisor-release --hold-id <id> --detail-file <path>
 generic-chess-flow.cmd escalate --reason <text> [--worker-thread-id <id>]
 generic-chess-flow.cmd supervisor-pending  # manual diagnostic only
 generic-chess-flow.cmd supervisor-claim --escalation-id <id>
