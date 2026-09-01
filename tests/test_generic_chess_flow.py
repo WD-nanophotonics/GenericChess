@@ -33,6 +33,24 @@ GENERICCHESS_CANDIDATE_SHA=0123456789abcdef0123456789abcdef01234567
     }
 
 
+def test_response_console_output_survives_legacy_windows_encoding(
+        monkeypatch, tmp_path, capsys):
+    response = tmp_path / "response.txt"
+    response.write_text("next → step\nGENERICCHESS_STATUS=CONTINUE\n"
+                        "GENERICCHESS_CANDIDATE_SHA=NONE\n"
+                        "GENERICCHESS_PROMOTION=HOLD\n", encoding="utf-8")
+    state = {"recovery_timeline": []}
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    original = flow._console_safe
+    monkeypatch.setattr(flow, "_console_safe", lambda text: original(text, "cp1252"))
+
+    flow.update_response_state(tmp_path, state, {
+        "event": "response_received", "response_path": str(response)})
+
+    assert r"\u2192" in capsys.readouterr().out
+    assert state["work_order_active"] is True
+
+
 def test_local_start_never_requires_courier(monkeypatch, tmp_path):
     master = tmp_path / "master"
     sandbox = tmp_path / "sandbox"

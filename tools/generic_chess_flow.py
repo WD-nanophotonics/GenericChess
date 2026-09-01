@@ -478,6 +478,11 @@ def _atomic_json(path: Path, value: dict[str, Any]) -> None:
     os.replace(temporary, path)
 
 
+def _console_safe(text: str, encoding: str | None = None) -> str:
+    selected = encoding or getattr(sys.stdout, "encoding", None) or "utf-8"
+    return text.encode(selected, errors="backslashreplace").decode(selected)
+
+
 def update_response_state(root: Path, state: dict[str, Any], event: dict[str, Any],
                           *, source: str = "normal") -> None:
     if event.get("event") in {"response_received", "response_duplicate", "courier_latest_response_captured"}:
@@ -499,7 +504,7 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         recovery_event(state, "response_accepted", source=source,
                        response_sha256=state["last_response_sha256"])
         save_state(root, state)
-        print(text)
+        print(_console_safe(text))
 
 
 def chat_message_body(root: Path, source: Path) -> str:
