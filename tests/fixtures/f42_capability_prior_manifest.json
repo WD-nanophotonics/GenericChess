@@ -1,0 +1,112 @@
+{
+  "baseline": {
+    "sandbox_sha": "fa9a9c334fce331a5059f05a3e261e1fd85fbc7c",
+    "parent_f41_r1_sha": "91f1488b37945dd4de8ce7ef756801a92cdcd21a",
+    "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100"
+  },
+  "classification_mapping": {
+    "CAPABILITY_COMPONENT_DOUBLE_COUNTING_PRIMARY": "F43_CAPABILITY_FORMULA_STRUCTURE_PROTOTYPE",
+    "CROSS_RULESET_PRIOR_CONFLICT": "F43_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F43_CAPABILITY_PRIOR_REASSESSMENT",
+    "NORMALIZATION_PRIMARY": "F43_MATERIAL_NORMALIZATION_DIAGNOSIS",
+    "RAY_OR_DIRECTIONAL_SCALING_PRIMARY": "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE",
+    "SEMANTIC_CAPABILITY_INFORMATION_MISSING": "F43_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS"
+  },
+  "constraints": {
+    "DIAGNOSIS_ONLY": true,
+    "NO_ALPHASHO": true,
+    "NO_COEFFICIENT_FITTING": true,
+    "NO_HUMAN_VALUE_REGRESSION": true,
+    "NO_NATIVE_MIGRATION": true,
+    "NO_NEW_PRODUCTION_EVALUATOR_FORMULA": true,
+    "NO_R37_EXPERIMENT": true,
+    "NO_SECOND_RULE_COMPILER": true,
+    "NO_SEARCH_SELFPLAY_TDLEAF": true,
+    "PRODUCTION_DIFF_ZERO": true
+  },
+  "diagnostic_variants": [
+    "full_formula",
+    "mobility_only",
+    "minus_coverage",
+    "minus_reachability",
+    "minus_path_efficiency",
+    "graph_global_only",
+    "mobility_plus_coverage",
+    "mobility_plus_reachability",
+    "mobility_plus_path_efficiency"
+  ],
+  "gates": {
+    "f41_reproduction": "accepted F41 R1 semantic source, raw values, normalized values, ratios, and complete Shogi positive-control metrics match exactly",
+    "normalization_primary": "raw ratios are within the frozen Western bands while normalized ratios are not",
+    "shogi_cosine": 0.95,
+    "shogi_pairwise_ordering": 0.9,
+    "shogi_spearman": 0.9,
+    "western_bands": {
+      "B": [2.5, 3.75],
+      "N": [2.5, 3.5],
+      "P": [1.0, 1.0],
+      "Q": [7.5, 11.0],
+      "R": [4.0, 6.0]
+    }
+  },
+  "input_files": {
+    "f41_audit": {
+      "path": "scripts/audit_f41_semantic_material_prior.py",
+      "sha256": "38ef27fc423e29d4d155b92e3f1528283c84f764f5e7885ab7d65c7fe1910b76"
+    },
+    "evaluation_analyzer": {
+      "path": "generic_chess/ai/evaluation/analyzer.py",
+      "sha256": "fb929b6fe5404ffef3e6ee8f7f80e79e9ed4abe67a8ea6313772011c892174a6"
+    },
+    "evaluation_config": {
+      "path": "generic_chess/ai/evaluation/config.py",
+      "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"
+    },
+    "evaluation_profile": {
+      "path": "generic_chess/ai/evaluation/profile.py",
+      "sha256": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b"
+    },
+    "rule_compiler": {
+      "path": "generic_chess/rules/compiler.py",
+      "sha256": "f895ffe7648cd66a69125205ece00c6455dde5114b38bcbc11cf97cd461c1de9"
+    },
+    "rule_schema": {
+      "path": "generic_chess/rules/schema.py",
+      "sha256": "6087fadb114b00446b6bbf8a44eddd8394600e14da9d581c93acf039df9f2cfd"
+    },
+    "western_ruleset": {
+      "path": "generic_chess/rules/western_chess.py",
+      "sha256": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a"
+    },
+    "shogi_ruleset": {
+      "path": "generic_chess/rules/standard_shogi.py",
+      "sha256": "a2a0f0e1b1076b8cc365a2bdcea3fa105730935b77fce3970790125f4d502923"
+    },
+    "f41_manifest": {
+      "path": "tests/fixtures/f41_semantic_prior_manifest.json",
+      "sha256": "5ddf172e3f5e38f725376dbdb5fd18681bc66c362beefc42068b1e7da55085a2"
+    }
+  },
+  "kind": "F42_SEMANTIC_CAPABILITY_PRIOR_DIAGNOSIS",
+  "manifest_sha256": "f8d67890195811c1f90b14abb03f3539bb03907f4c6440c57a19162a4d69b574",
+  "required_outputs": [
+    "f42_reproduction.json",
+    "f42_component_ledger.json",
+    "f42_formula_ablation.json",
+    "f42_redundancy.json",
+    "f42_synthetic_geometry.json",
+    "f42_pawn_suppression.json",
+    "f42_shogi_cross_rule.json",
+    "f42_selection.json",
+    "f42_closeout_report.md"
+  ],
+  "synthetic_control_families": [
+    "one_step_leap_vs_multi_square_ray",
+    "short_ray_vs_long_ray",
+    "single_direction_vs_multi_direction",
+    "quiet_only_vs_capture_only_vs_quiet_capture",
+    "symmetric_vs_directional"
+  ],
+  "work_order": "GENERICCHESS-F42-SEMANTIC-CAPABILITY-PRIOR-DIAGNOSIS",
+  "schema_version": 1
+}
