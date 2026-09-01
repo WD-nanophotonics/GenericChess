@@ -1,0 +1,73 @@
+{
+  "baseline": {
+    "f43_r1_sha": "7166a743911926156de75825cd02c7c622aaa172",
+    "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100"
+  },
+  "classification_mapping": {
+    "CHANNEL_DIVERSITY_INFORMATION_MISSING": "F45_CHANNEL_DIVERSITY_FEATURE_PROTOTYPE",
+    "CONDITIONAL_CAPABILITY_INFORMATION_MISSING": "F45_CONDITIONAL_CAPABILITY_FEATURE_PROTOTYPE",
+    "CROSS_RULESET_STRUCTURAL_CONFLICT": "F45_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "DENSITY_PROFILE_INFORMATION_MISSING": "F45_DENSITY_PROFILE_FEATURE_PROTOTYPE",
+    "ENDPOINT_CONTROL_INFORMATION_MISSING": "F45_ENDPOINT_CONTROL_FEATURE_PROTOTYPE",
+    "MULTIPLE_STRUCTURAL_INFORMATION_GAPS": "F45_STRUCTURAL_FEATURE_DISCRIMINATION",
+    "STRUCTURAL_DIAGNOSIS_INSUFFICIENT": "F45_GENERIC_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "constraints": {
+    "DIAGNOSIS_ONLY": true,
+    "NO_ALPHASHO": true,
+    "NO_COEFFICIENT_FITTING": true,
+    "NO_GEOMETRY_TRANSFORM_EXPANSION": true,
+    "NO_HUMAN_VALUE_REGRESSION": true,
+    "NO_NEW_PRODUCTION_EVALUATOR_FORMULA": true,
+    "NO_R37": true,
+    "NO_SECOND_RULE_COMPILER": true,
+    "NO_SEARCH_SELFPLAY_TDLEAF_TRAINING": true,
+    "PRODUCTION_DIFF_ZERO": true
+  },
+  "cross_rule_gates": {
+    "shogi_cosine": 0.95,
+    "shogi_hand_board_ratio": [0.8, 1.0],
+    "shogi_pairwise_ordering": 0.9,
+    "shogi_spearman": 0.9,
+    "western_types": ["P", "N", "B", "R", "Q"],
+    "shogi_types": ["P", "L", "N", "S", "G", "B", "R", "TP", "TL", "TN", "TS", "TG", "TB", "TR"]
+  },
+  "families": {
+    "S44-A_ENDPOINT_CONTROL_SEMANTICS": {
+      "signals": ["quiet_geometry_mass", "attack_geometry_mass", "dual_use_overlap_mass", "quiet_capture_union_mass", "quiet_capture_overlap_ratio", "split_semantics_ratio", "current_expected_quiet_contribution", "current_expected_capture_contribution", "latent_attack_gap"],
+      "required_controls": ["quiet_only", "capture_only", "quiet_plus_capture_same_targets", "disjoint_quiet_capture_same_union"]
+    },
+    "S44-B_CONDITIONAL_CAPABILITY_RESERVE": {
+      "signals": ["conditional_pattern_count", "canonical_conditional_geometry", "quiet_capture_relation", "path_clear_only_reserve_mass", "conditional_reserve_over_ordinary_mass", "guard_categories", "ordinary_geometry_overlap"],
+      "required_controls": ["ordinary_base", "ordinary_base_plus_guarded_identical_capability"]
+    },
+    "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": {
+      "signals": ["canonical_channel_masses", "channel_count", "normalized_channel_weights", "effective_channel_count", "concentration_sum_p_squared", "largest_channel_share"],
+      "required_controls": ["one_channel", "two_channels", "multiple_channels"]
+    },
+    "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": {
+      "signals": ["mobility_retention_by_density", "weighted_retention", "maximum_fractional_drop", "discrete_curvature", "blocker_fragility_ordering"],
+      "required_controls": ["matched_empty_board_mass_short_path", "matched_empty_board_mass_long_path"]
+    }
+  },
+  "independence_predicates": {
+    "A_matched_synthetic_collision": "same current four-component representation within deterministic tolerance but different structural signal",
+    "B_executable_information_discarded": "signal is explicitly discarded by current aggregation and discarded path is mechanically demonstrated",
+    "correlation_only_is_insufficient": true,
+    "western_only_correlation_is_insufficient": true
+  },
+  "input_files": {
+    "evaluation_config": {"path": "generic_chess/ai/evaluation/config.py", "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"},
+    "f42_audit": {"path": "scripts/audit_f42_semantic_capability_prior.py", "sha256": "872450b8f6dd7910933cb6e1280500d575decdd3500fee4becfe6b7f74142de3"},
+    "f42_manifest": {"path": "tests/fixtures/f42_capability_prior_manifest.json", "sha256": "ec1b316f5723d616f1358d471b65320247a46851b132e5c46ee1e1bea1df06e6"},
+    "f43_audit": {"path": "scripts/audit_f43_geometry_scaling.py", "sha256": "7b75ac306786e8f87fc447b793921e904000c4416ddc4c93ac5272b5aa0e247b"},
+    "f43_manifest": {"path": "tests/fixtures/f43_geometry_scaling_manifest.json", "sha256": "df0e46aab0a4865efb7988d8a0dc3b8b2b6060d407c3cd66917056fe6f65fd73"},
+    "rule_compiler": {"path": "generic_chess/rules/compiler.py", "sha256": "f895ffe7648cd66a69125205ece00c6455dde5114b38bcbc11cf97cd461c1de9"},
+    "rule_schema": {"path": "generic_chess/rules/schema.py", "sha256": "6087fadb114b00446b6bbf8a44eddd8394600e14da9d581c93acf039df9f2cfd"}
+  },
+  "prohibited_operations": ["production evaluator integration", "new fitted weight", "geometry-transform expansion", "human-value regression", "AlphaSho strength benchmark", "self-play", "TDLeaf", "training", "R37", "native-search migration", "second compiler", "F45 execution", "master promotion"],
+  "synthetic_matched_controls": ["endpoint quiet/capture/dual/disjoint", "conditional ordinary base plus guarded identical capability", "channel one/two/multiple with matched total mass", "density matched empty-board mass with short/long blocker paths"],
+  "work_order": "GENERICCHESS-F44-STRUCTURAL-CAPABILITY-FEATURE-DIAGNOSIS",
+  "schema_version": 1,
+  "manifest_sha256": "e7787d9dd3d0b73a4ac88ff9fa23a48b0df45a3f396ab650937c541e4014c786"
+}
