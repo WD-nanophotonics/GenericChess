@@ -1,0 +1,150 @@
+{
+  "defect_classification": "NON_OUTCOME_CHANGING_GATE_IMPLEMENTATION_DEFECT",
+  "eligibility": {
+    "R37A": {
+      "corrected_static_gate": false,
+      "eligible": false,
+      "fixed_node_search_cost_gate": false,
+      "fixed_node_search_signal_gate": false,
+      "local_genericity_gate": true,
+      "micro_cost_gate": true,
+      "runtime_2s_safety_gate": false
+    },
+    "R37B": {
+      "corrected_static_gate": true,
+      "eligible": true,
+      "fixed_node_search_cost_gate": true,
+      "fixed_node_search_signal_gate": true,
+      "local_genericity_gate": true,
+      "micro_cost_gate": true,
+      "runtime_2s_safety_gate": true
+    },
+    "R37C": {
+      "corrected_static_gate": true,
+      "eligible": true,
+      "fixed_node_search_cost_gate": true,
+      "fixed_node_search_signal_gate": true,
+      "local_genericity_gate": true,
+      "micro_cost_gate": true,
+      "runtime_2s_safety_gate": true
+    }
+  },
+  "eligible_candidates": [
+    "R37B",
+    "R37C"
+  ],
+  "flags": {
+    "EVALUATOR_REENTRY_TRANSFER_COST_GATES_COMPLETE": true,
+    "EVALUATOR_V1_TERM_DECOMPOSITION_COMPLETE": true,
+    "F36_EVALUATOR_CAUSAL_BASELINE_CONSUMED": true,
+    "F37_EXACT_STATIC_GATE_RECERTIFIED": true,
+    "F37_FULL_REGRESSION_CURRENT_TREE_CERTIFIED": true,
+    "HISTORICAL_EVALUATOR_FAILURE_LEDGER_CONSUMED": true,
+    "NEXT_EVALUATOR_BOUNDARY_SELECTED": true,
+    "RULE_DERIVED_REPRESENTATION_SIGNAL_AUDIT_COMPLETE": true
+  },
+  "focused_regression": {
+    "failed": 0,
+    "passed": 28,
+    "total": 28
+  },
+  "full_regression": {
+    "failed": 13,
+    "historical_failures": [
+      "tests/test_f13_native_action_delivers_check.py::test_f13_standard_shogi_checking_drop_witness_matches_python",
+      "tests/test_f13_native_action_delivers_check.py::test_f13_nonchecking_drop_does_not_collapse_to_opponent_checked",
+      "tests/test_f13_native_action_delivers_check.py::test_f13_compile_gate_and_frozen_postcondition_code_contract",
+      "tests/test_f13_native_action_delivers_check.py::test_f13_standard_shogi_four_prefix_native_candidate_and_guarded_order",
+      "tests/test_f14_native_semantic_attack_api.py::test_f14_standard_shogi_648_attack_queries_and_in_check_match_python",
+      "tests/test_f14_native_semantic_attack_api.py::test_f14_public_api_rejects_invalid_bounds_and_owners",
+      "tests/test_f21_native_legality_provider.py::test_provider_matches_python_order_identity_and_binding[semantic_prefix_0]",
+      "tests/test_f21_native_legality_provider.py::test_provider_matches_python_order_identity_and_binding[semantic_prefix_1]",
+      "tests/test_f21_native_legality_provider.py::test_provider_matches_python_order_identity_and_binding[semantic_prefix_2]",
+      "tests/test_f21_native_legality_provider.py::test_provider_matches_python_order_identity_and_binding[semantic_prefix_3]",
+      "tests/test_f21_native_legality_provider.py::test_runtime_provider_cache_and_push_pop_restore",
+      "tests/test_f21_native_legality_provider.py::test_native_on_and_python_off_search_results_match",
+      "tests/test_f24f_western_chess_perft.py::test_f24f_mandatory_perft_one_shot"
+    ],
+    "passed": 1238,
+    "total": 1251,
+    "unexpected_failures": []
+  },
+  "no_rerun": {
+    "alphasho": true,
+    "candidate_experiments": true,
+    "microbenchmark": true,
+    "paired_benchmark": true,
+    "search_shadow": true
+  },
+  "original_artifacts_byte_identical": true,
+  "original_f37_hashes": {
+    "f24a_result": "46686486ac731e778ea265d74499dd14fc1723896877aa2f74c1177f1989df50",
+    "f36_selection": "f93f2d2f8c814f851351d8cf64ace8b36da96671e405afcfd7d24b3b3ed6de15",
+    "f37_decomposition": "5d0124878c83b340f6733150132e60705691f28e9618ea888165bc49a420bbaa",
+    "f37_manifest": "da880a49f10788c62cfc4388b9a6da7c3c4db4ba90928493cbf952ce9b7893b4",
+    "f37_ranks": "74425f8c4310d86dbb8e1a3543de1cc7529404a96b5b0ade579de8faae4e48a1",
+    "f37_script": "d1eef01c1d6d97bd3069736e5fc10859716b0db44346446db4988a219a8c01d6",
+    "f37_search_shadow": "05fe2a0527e75c9beb0d89549258c6b7da714ad0c6962198748575d7337d3548",
+    "f37_selection": "a1446e0ffcef8cc1c566790628cf3b909d267d5d0bc09a2d96e8d2bf9de9252d"
+  },
+  "production_diff_zero": true,
+  "schema_version": 1,
+  "selected_boundary": "F38_ACTIVITY_AND_ANCHOR_CONTROL_EVALUATOR_PROTOTYPE",
+  "selected_candidate": "R37C",
+  "selection_inputs": {
+    "R37A": {
+      "gap_sum": 12,
+      "median_cost_ratio": 1.3979205579602862,
+      "search_hit_improvement_2048": 0,
+      "stable_strict_improvements": 2
+    },
+    "R37B": {
+      "gap_sum": 5,
+      "median_cost_ratio": 1.2480770772103262,
+      "search_hit_improvement_2048": 2,
+      "stable_strict_improvements": 5
+    },
+    "R37C": {
+      "gap_sum": 2,
+      "median_cost_ratio": 1.473336046367387,
+      "search_hit_improvement_2048": 4,
+      "stable_strict_improvements": 6
+    }
+  },
+  "static_gate_recertification": {
+    "R37A": {
+      "static_components": {
+        "AS050_mean_rank_improvement": false,
+        "AS200_mean_rank_improvement": false,
+        "best_mean_rank_improvement": false,
+        "controls_preserved": false,
+        "stable_strict_improvements": false,
+        "stable_worsened": false
+      },
+      "static_gate_exact": false
+    },
+    "R37B": {
+      "static_components": {
+        "AS050_mean_rank_improvement": true,
+        "AS200_mean_rank_improvement": true,
+        "best_mean_rank_improvement": true,
+        "controls_preserved": true,
+        "stable_strict_improvements": true,
+        "stable_worsened": true
+      },
+      "static_gate_exact": true
+    },
+    "R37C": {
+      "static_components": {
+        "AS050_mean_rank_improvement": true,
+        "AS200_mean_rank_improvement": true,
+        "best_mean_rank_improvement": true,
+        "controls_preserved": true,
+        "stable_strict_improvements": true,
+        "stable_worsened": true
+      },
+      "static_gate_exact": true
+    }
+  },
+  "status": "PASS"
+}
