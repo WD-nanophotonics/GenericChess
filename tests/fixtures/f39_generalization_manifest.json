@@ -1,0 +1,199 @@
+{
+  "action_strata": [
+    "board/drop",
+    "capture/non-capture",
+    "promotion/non-promotion",
+    "checking/non-checking",
+    "anchor-actor/non-anchor-actor"
+  ],
+  "aggregate_classification_precedence": [
+    "ACTIVITY_NEGATIVE_TRANSFER: A strict rank and normalized margin both worse than V1, and C is not better than B on both",
+    "ANCHOR_NEGATIVE_TRANSFER: B strict rank and normalized margin both worse than V1, and C is not better than A on both",
+    "COMBINATION_NEGATIVE_TRANSFER: A and B do not both materially worsen, but C does",
+    "METRIC_INSTABILITY_PRIMARY: majority deterministic regressions are RANK_TIE_INSTABILITY and C mean normalized margin does not worsen by 0.01",
+    "BROAD_REPRESENTATION_TRANSFER_FAILURE: A, B, and C all lack positive transfer on both strict rank and normalized margin",
+    "MIXED_OR_UNRESOLVED: otherwise"
+  ],
+  "baseline": {
+    "f37_final": "6174c773eea1ab40fb57066a8266295ad14ce1f9",
+    "f38_r1": "c982386983c86b1c8f2798bc6670c76212af9701",
+    "master": "44fce4f9dfeee0ef9480597c7ab34195db984100",
+    "product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+    "sandbox_before_f39": "c982386983c86b1c8f2798bc6670c76212af9701",
+    "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+  },
+  "boundary_mapping": {
+    "ACTIVITY_NEGATIVE_TRANSFER": "F40_RULE_DERIVED_DYNAMIC_FEATURE_REDESIGN",
+    "ANCHOR_NEGATIVE_TRANSFER": "F40_RULE_DERIVED_DYNAMIC_FEATURE_REDESIGN",
+    "BROAD_REPRESENTATION_TRANSFER_FAILURE": "F40_RULE_DERIVED_MATERIAL_AND_FEATURE_UTILIZATION_AUDIT",
+    "COMBINATION_NEGATIVE_TRANSFER": "F40_RULE_DERIVED_DYNAMIC_FEATURE_REDESIGN",
+    "METRIC_INSTABILITY_PRIMARY": "F40_EVALUATOR_VALIDATION_METRIC_AND_HOLDOUT_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F40_GENERIC_EVALUATOR_ARCHITECTURE_REASSESSMENT"
+  },
+  "component_protocol": {
+    "additivity": "R37C_score - V1_score == (R37A_score - V1_score) + (R37B_score - V1_score)",
+    "allowed_counterfactuals": [
+      "V1",
+      "R37A",
+      "R37B",
+      "R37C"
+    ],
+    "causal_label_precedence": [
+      "TIE_STRUCTURE_DOMINATED if row classification is RANK_TIE_INSTABILITY",
+      "BOTH_SAME_DIRECTION if activity and anchor normalized target-vs-V1-top margin effects are both >= 0.01",
+      "ACTIVITY_DRIVEN if activity >= 0.01 and anchor < 0.01",
+      "ANCHOR_DRIVEN if anchor >= 0.01 and activity < 0.01",
+      "COMPONENTS_OPPOSE if effects have opposite signs and either absolute effect >= 0.01",
+      "UNRESOLVED otherwise"
+    ],
+    "required_terms": [
+      "board_material",
+      "hand_inventory",
+      "promotion_potential",
+      "global_pseudo_control",
+      "anchor_escape",
+      "check_penalty",
+      "raw_total",
+      "side_to_move_score"
+    ]
+  },
+  "component_search_protocol": {
+    "fresh_tt": true,
+    "holdout_prefix": 10,
+    "max_depth": 8,
+    "native_legality_requested": true,
+    "no_512_rerun": true,
+    "no_v1_or_r37c_rerun": true,
+    "no_wall_time_run": true,
+    "nodes": 2048,
+    "only_missing_counterfactuals": [
+      "R37A",
+      "R37B"
+    ],
+    "qdepth": 4,
+    "qhard": 8
+  },
+  "constraints": {
+    "ALPHASHO_ACTION_IS_VALIDATION_LABEL_NOT_ORACLE": true,
+    "NO_ALPHASHO_EXECUTION": true,
+    "NO_COEFFICIENT_FITTING": true,
+    "NO_FEATURE_TUNING": true,
+    "NO_HOLDOUT_DRIVEN_CANDIDATE_SELECTION": true,
+    "NO_HOLDOUT_RESELECTION": true,
+    "NO_NEW_EXTERNAL_LABELS": true,
+    "NO_PAIRED_BENCHMARK_RERUN": true,
+    "NO_PRODUCTION_EVALUATOR_SEARCH_NATIVE_RULE_RUNTIME_CHANGE": true,
+    "NO_TUNING_FROM_F38_LABELS": true,
+    "PRODUCTION_DIFF_ZERO": true
+  },
+  "distribution_protocol": {
+    "material_shift": "non-overlapping IQR or absolute median delta / pooled_iqr >= 1",
+    "pooled_iqr": "max(1.0, (IQR_F37 + IQR_F38) / 2)",
+    "quantities": [
+      "legal_action_count",
+      "board_occupancy",
+      "total_hand_inventory",
+      "drop_action_fraction",
+      "capture_action_fraction",
+      "promotion_action_fraction",
+      "checking_action_fraction",
+      "in_check",
+      "material_imbalance_magnitude",
+      "v1_pseudo_control",
+      "activity_term",
+      "v1_anchor_escape",
+      "anchor_ring_term",
+      "legal_child_term_ranges"
+    ],
+    "summary": "median and IQR per F37/F38 corpus"
+  },
+  "inputs": {
+    "config_source": {
+      "path": "generic_chess/ai/evaluation/config.py",
+      "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"
+    },
+    "evaluator_source": {
+      "path": "generic_chess/ai/evaluation/evaluator.py",
+      "sha256": "10fa59b364e3519456d16a6913e12084d803dbde51a2e638fddf48133466fda3"
+    },
+    "f37_r1": {
+      "path": "tests/fixtures/f37r1_gate_recertification.json",
+      "sha256": "00ad8117beb90a026c4a8588218cb8aac4725fae84380e6e0a0e1d2e0eacaba4"
+    },
+    "f37_ranks": {
+      "path": "tests/fixtures/f37_evaluator_representation_ranks.json",
+      "sha256": "74425f8c4310d86dbb8e1a3543de1cc7529404a96b5b0ade579de8faae4e48a1"
+    },
+    "f37_search": {
+      "path": "tests/fixtures/f37_evaluator_search_shadow.json",
+      "sha256": "05fe2a0527e75c9beb0d89549258c6b7da714ad0c6962198748575d7337d3548"
+    },
+    "f37_selection": {
+      "path": "tests/fixtures/f37_evaluator_selection.json",
+      "sha256": "a1446e0ffcef8cc1c566790628cf3b909d267d5d0bc09a2d96e8d2bf9de9252d"
+    },
+    "f38_cost": {
+      "path": "tests/fixtures/f38_activity_anchor_micro_cost.json",
+      "sha256": "e9a9c3367526562fb96402b02ddfcbb9cea9232870d2c7c2015567901ecb6739"
+    },
+    "f38_identity": {
+      "path": "tests/fixtures/f38_activity_anchor_prototype_identity.json",
+      "sha256": "1e07ace70dde3121a7b7ee6c661084f67471c911b119d8c56e442933314e2b3f"
+    },
+    "f38_r1": {
+      "path": "tests/fixtures/f38r1_frozen_r37c_search_parity.json",
+      "sha256": "3070a499e73b1ba9509066e188e163bf4c0953208740ba1d4aabf5a87fdaee30"
+    },
+    "f38_ranks": {
+      "path": "tests/fixtures/f38_activity_anchor_holdout_ranks.json",
+      "sha256": "ffa9d97ddb57b3d37cb8cb185da678478e097b544246a4964dbd56ae9bf1da11"
+    },
+    "f38_search": {
+      "path": "tests/fixtures/f38_activity_anchor_holdout_search.json",
+      "sha256": "0fa748b16818d593ffccede753bc47a923bb097169ea0d8bfc087678f61d5a50"
+    },
+    "f38_selection": {
+      "path": "tests/fixtures/f38_activity_anchor_selection.json",
+      "sha256": "5135f05de5635d513d1572da29aa90ab13caea7ec2f47880ce269ca0742654e7"
+    },
+    "h38a_descriptor": {
+      "path": "tests/fixtures/f38_external_holdout_descriptor.json",
+      "sha256": "a2be225db01c940d6c32181a713cd0398309ff4b630624d338d3b952ed4e9131"
+    },
+    "h38a_manifest": {
+      "path": "tests/fixtures/f38_activity_anchor_manifest.json",
+      "sha256": "15bf3e134d52972c3c35a19e45b01d44b50e8e40778e91268a4901aece11d306"
+    },
+    "profile_source": {
+      "path": "generic_chess/ai/evaluation/profile.py",
+      "sha256": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b"
+    }
+  },
+  "kind": "F39_EVALUATOR_REENTRY_GENERALIZATION_DIAGNOSIS",
+  "manifest_sha256": "2f4487bf458656243cf5677181d1bada73605ee016b9a7d7a79694bdb8472d48",
+  "rank_protocol": {
+    "deterministic_rank": "score descending, then canonical action key ascending",
+    "evaluators": [
+      "V1",
+      "R37A",
+      "R37B",
+      "R37C"
+    ],
+    "margin_from_top": "top_score - target_score",
+    "material_deterministic_rank_delta": 3,
+    "material_normalized_margin_delta": 0.01,
+    "normalized_margin": "margin_from_top / max(1, median_non_anchor_board_value)",
+    "rank_percentile": "strict_rank / legal_action_count",
+    "row_classification_precedence": [
+      "MATERIAL_VALUE_WORSENING: strict_rank_delta > 0 and normalized_margin_delta >= 0.01",
+      "RANK_TIE_INSTABILITY: deterministic_rank_delta >= 3 and strict_rank_delta == 0 and normalized_margin_delta < 0.01",
+      "MIXED_RANK_AND_MARGIN: exactly one of strict_rank_delta > 0 and normalized_margin_delta >= 0.01",
+      "UNCHANGED_OR_IMPROVED: otherwise"
+    ],
+    "strict_rank": "1 + count(score strictly greater than target score)",
+    "tie_span_high": "count(score greater than or equal to target score)",
+    "tie_span_low": "strict_rank"
+  },
+  "schema_version": 1,
+  "work_order": "GENERICCHESS-F39-EVALUATOR-REENTRY-GENERALIZATION-CORRECTIVE"
+}
