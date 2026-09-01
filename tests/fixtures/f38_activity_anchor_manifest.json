@@ -1,0 +1,104 @@
+{
+  "bound_authority_files": {
+    "config.py": {
+      "path": "generic_chess/ai/evaluation/config.py",
+      "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"
+    },
+    "evaluator.py": {
+      "path": "generic_chess/ai/evaluation/evaluator.py",
+      "sha256": "10fa59b364e3519456d16a6913e12084d803dbde51a2e638fddf48133466fda3"
+    },
+    "f25_ten_root_descriptor": {
+      "path": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+      "sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151"
+    },
+    "f30_r1_fresh_reference": {
+      "path": "tests/fixtures/f30r1_fresh_move_reference.json",
+      "sha256": "8ec60aebdde3e7fb4d192d99e77948a954d7aab83c6942e0704a8956721a3eba"
+    },
+    "f30_r1_paired_match": {
+      "path": "tests/fixtures/f30r1_paired_match.json",
+      "sha256": "3e80b5a5488624c7afd34638fbbfee8f200dd96af472d5345672ff69439ca256"
+    },
+    "f36_selection": {
+      "path": "tests/fixtures/f36_post_reserve_selection.json",
+      "sha256": "f93f2d2f8c814f851351d8cf64ace8b36da96671e405afcfd7d24b3b3ed6de15"
+    },
+    "f37_decomposition": {
+      "path": "tests/fixtures/f37_evaluator_v1_decomposition.json",
+      "sha256": "5d0124878c83b340f6733150132e60705691f28e9618ea888165bc49a420bbaa"
+    },
+    "f37_first_pass_manifest": {
+      "path": "tests/fixtures/f37_evaluator_reentry_manifest.json",
+      "sha256": "da880a49f10788c62cfc4388b9a6da7c3c4db4ba90928493cbf952ce9b7893b4"
+    },
+    "f37_first_pass_script": {
+      "path": "scripts/audit_f37_evaluator_reentry.py",
+      "sha256": "d1eef01c1d6d97bd3069736e5fc10859716b0db44346446db4988a219a8c01d6"
+    },
+    "f37_r1_fixture": {
+      "path": "tests/fixtures/f37r1_gate_recertification.json",
+      "sha256": "00ad8117beb90a026c4a8588218cb8aac4725fae84380e6e0a0e1d2e0eacaba4"
+    },
+    "f37_r1_script": {
+      "path": "scripts/audit_f37r1_gate_recertification.py",
+      "sha256": "f4a463a70a2cfa3242b71060f06a4dfd9ccb3dc791b1b8ccfa93f4f79f5a1d6b"
+    },
+    "f37_ranks": {
+      "path": "tests/fixtures/f37_evaluator_representation_ranks.json",
+      "sha256": "74425f8c4310d86dbb8e1a3543de1cc7529404a96b5b0ade579de8faae4e48a1"
+    },
+    "f37_search_shadow": {
+      "path": "tests/fixtures/f37_evaluator_search_shadow.json",
+      "sha256": "05fe2a0527e75c9beb0d89549258c6b7da714ad0c6962198748575d7337d3548"
+    },
+    "f37_selection": {
+      "path": "tests/fixtures/f37_evaluator_selection.json",
+      "sha256": "a1446e0ffcef8cc1c566790628cf3b909d267d5d0bc09a2d96e8d2bf9de9252d"
+    },
+    "h38a_protocol_script": {
+      "path": "scripts/audit_f38_activity_anchor_protocol.py",
+      "sha256": "094685fbfb7e2876459d4483e2805e529d3fe9cc3ee7967ab1ff09d8bf38fda1"
+    },
+    "profile.py": {
+      "path": "generic_chess/ai/evaluation/profile.py",
+      "sha256": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b"
+    }
+  },
+  "current_sandbox_sha": "6174c773eea1ab40fb57066a8266295ad14ce1f9",
+  "external_holdout_not_training_data": true,
+  "frozen_selection_fields": [
+    "game_id",
+    "event_index",
+    "imported_root_id",
+    "additional_ply",
+    "canonical_state_sha256",
+    "canonical_state",
+    "alphasho_played_move",
+    "transcript_provenance",
+    "legality_witness"
+  ],
+  "h38a_freeze_gates": {
+    "f37_roots_and_direct_children_excluded": true,
+    "production_diff_zero": true,
+    "protocol_frozen_before_candidate_scoring": true,
+    "selection_uses_no_score_or_rank": true,
+    "unique_holdout_minimum_met": true
+  },
+  "holdout_descriptor": {
+    "path": "tests/fixtures/f38_external_holdout_descriptor.json",
+    "sha256": "a2be225db01c940d6c32181a713cd0398309ff4b630624d338d3b952ed4e9131"
+  },
+  "holdout_minimum_unique_positions": 16,
+  "holdout_unique_positions": 20,
+  "kind": "F38_ACTIVITY_ANCHOR_H38A_PROTOCOL_FREEZE",
+  "manifest_sha256": "a97b87511f2ea5ad0d4a7c02288ee57adb7d99fd50a57265b336fad6aecf5f52",
+  "no_tuning_from_results": true,
+  "origin_master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100",
+  "product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+  "production_change_policy": "zero files under generic_chess/",
+  "production_diff_zero": true,
+  "schema_version": 1,
+  "selected_f37_candidate": "R37C",
+  "standard_shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+}
