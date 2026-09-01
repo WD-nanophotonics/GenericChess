@@ -1,0 +1,170 @@
+{
+  "baseline": {
+    "f40": "20d76c14ea2702d76439ac0f880b600dc3846a8e",
+    "master": "44fce4f9dfeee0ef9480597c7ab34195db984100",
+    "product_authority": "a389adc50ed42096874ee38f818584978468c6ac",
+    "sandbox": "20d76c14ea2702d76439ac0f880b600dc3846a8e",
+    "shogi_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+  },
+  "classification": {
+    "MIXED_OR_UNRESOLVED": "F42_GENERIC_PROFILE_PRIOR_REASSESSMENT",
+    "SEMANTIC_MATERIAL_AND_HAND_PRIOR_SUPPORTED": "F42_SEMANTIC_MATERIAL_AND_HAND_PRIOR_INTEGRATION_PROTOTYPE",
+    "SEMANTIC_MATERIAL_PRIOR_CROSS_RULESET_FAILURE": "F42_SEMANTIC_MATERIAL_PRIOR_COMPATIBILITY_DIAGNOSIS",
+    "SEMANTIC_MATERIAL_PRIOR_INSUFFICIENT": "F42_SEMANTIC_CAPABILITY_PRIOR_DIAGNOSIS",
+    "SEMANTIC_MATERIAL_PRIOR_SUPPORTED_DROP_PRIOR_NOT_SUPPORTED": "F42_SEMANTIC_MATERIAL_PRIOR_INTEGRATION_PROTOTYPE"
+  },
+  "constraints": {
+    "NO_ALPHASHO": true,
+    "NO_HUMAN_RATIO_FITTING": true,
+    "NO_NATIVE_MIGRATION": true,
+    "NO_NEW_EVALUATOR_FEATURE": true,
+    "NO_PAIRED_BENCHMARK": true,
+    "NO_R37_EXPERIMENT": true,
+    "NO_SECOND_RULE_COMPILER": true,
+    "NO_TRAINING": true,
+    "PRODUCTION_DIFF_ZERO": true
+  },
+  "flags": [
+    "F40_MATERIAL_FEATURE_GAP_CONSUMED",
+    "SEMANTIC_MOVEMENT_SOURCE_COVERAGE_AUDITED",
+    "SEMANTIC_ANALYZER_LEGACY_COMPATIBLE",
+    "WESTERN_MATERIAL_PRIOR_RETEST_COMPLETE",
+    "STANDARD_SHOGI_MATERIAL_POSITIVE_CONTROL_COMPLETE",
+    "DROP_SIGNAL_INDEPENDENCE_AUDITED",
+    "STATIC_LEARNING_SPAN_AUDITED",
+    "NEXT_SEMANTIC_PROFILE_BOUNDARY_SELECTED"
+  ],
+  "frozen_algorithms": {
+    "deployment_index": "drop_freedom * drop_mobility / max(1e-12, all_square_mobility)",
+    "hand_candidate": "round(M41_board * hand_weight * D_t / median_positive_D)",
+    "normalization": "existing median/scale/round/clamp unchanged",
+    "raw_score": "existing _raw_capability_score unchanged"
+  },
+  "inputs": {
+    "generic_chess/ai/evaluation/analyzer.py": {
+      "path": "generic_chess/ai/evaluation/analyzer.py",
+      "sha256": "fb929b6fe5404ffef3e6ee8f7f80e79e9ed4abe67a8ea6313772011c892174a6"
+    },
+    "generic_chess/ai/evaluation/mobility.py": {
+      "path": "generic_chess/ai/evaluation/mobility.py",
+      "sha256": "ed7db8231d292d29d02c4462807af265609ebf4cbbdc64126d096660ae9623ae"
+    },
+    "generic_chess/ai/evaluation/movement_graph.py": {
+      "path": "generic_chess/ai/evaluation/movement_graph.py",
+      "sha256": "1bfd3ec54a7111f3a429a651072a9a3dff6b622d45e79359e4b524a0d61f059d"
+    },
+    "generic_chess/ai/evaluation/profile.py": {
+      "path": "generic_chess/ai/evaluation/profile.py",
+      "sha256": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b"
+    },
+    "generic_chess/learning/features.py": {
+      "path": "generic_chess/learning/features.py",
+      "sha256": "1a212ee4d54f74e2934abff77b4a8ceaa668030c34c95af48fe0e4190b300115"
+    },
+    "generic_chess/learning/material.py": {
+      "path": "generic_chess/learning/material.py",
+      "sha256": "2db58e7134b84ac95d6bd1d13886ab9aba64d699c6bdc1dad91c7226a8be298f"
+    },
+    "generic_chess/learning/tdleaf.py": {
+      "path": "generic_chess/learning/tdleaf.py",
+      "sha256": "cdcffb3fdc0286ce9b02082e5deb03c309b880c908881a8a9c74bc2a46461df1"
+    },
+    "generic_chess/native/compiler.py": {
+      "path": "generic_chess/native/compiler.py",
+      "sha256": "ad80ab2c90d6de6b870b553a456905ace78bb22bae8a755949547d4af186ab20"
+    },
+    "generic_chess/rules/compiler.py": {
+      "path": "generic_chess/rules/compiler.py",
+      "sha256": "b93bc5f9e1f719419b9d489a0f4aeced4ce5422415135ea98ca0d70612e6ec60"
+    },
+    "generic_chess/rules/execution.py": {
+      "path": "generic_chess/rules/execution.py",
+      "sha256": "d3cdeb6427a0c134fceab19fb17356faf4a69935675483283c97dcd804ee5cd8"
+    },
+    "generic_chess/rules/ir.py": {
+      "path": "generic_chess/rules/ir.py",
+      "sha256": "064ed02ff709b469de60bdfe4fd5daff3f64cf4a188b3cfd5f46b92b20f6a321"
+    },
+    "generic_chess/rules/standard_shogi.py": {
+      "path": "generic_chess/rules/standard_shogi.py",
+      "sha256": "3a1a69b3eb922ed18ea8463b4cf0157f166d48efbcc6a6c8dc69c2dce6ea46d4"
+    },
+    "generic_chess/rules/western_chess.py": {
+      "path": "generic_chess/rules/western_chess.py",
+      "sha256": "5c7bff31132a05f003ae4e6ea2b063882ba362add95cd0616a987f7a981d72bd"
+    },
+    "tests/fixtures/f39_generalization_selection.json": {
+      "path": "tests/fixtures/f39_generalization_selection.json",
+      "sha256": "eb3e19400166b17fd82df2fccc95562b1ccf6f904ab66c65534add478bb73b93"
+    },
+    "tests/fixtures/f40_feature_utilization_ledger.json": {
+      "path": "tests/fixtures/f40_feature_utilization_ledger.json",
+      "sha256": "a3ccd50bf58d6ea864434d3d44e4eda81184d1b4a490f09f8b98cd1b072b9606"
+    },
+    "tests/fixtures/f40_learning_leverage_ledger.json": {
+      "path": "tests/fixtures/f40_learning_leverage_ledger.json",
+      "sha256": "a8f382678444ddd1823d1e41d79067c41fbb3ddc2c60b0494ab1179069437e53"
+    },
+    "tests/fixtures/f40_material_feature_manifest.json": {
+      "path": "tests/fixtures/f40_material_feature_manifest.json",
+      "sha256": "a107881b3f44abf29bea6092852b59c8d34f478462a124faaa9568dde74e6c7b"
+    },
+    "tests/fixtures/f40_material_feature_selection.json": {
+      "path": "tests/fixtures/f40_material_feature_selection.json",
+      "sha256": "47f781cd99b4cb4d213f0f08b667cbb56117a6fdd64947fd9e46b978989f0244"
+    },
+    "tests/fixtures/f40_material_prior_audit.json": {
+      "path": "tests/fixtures/f40_material_prior_audit.json",
+      "sha256": "b28f07e4ddfa5d977251b6ba302072f1138cdcc3c30580a7f013a896b05b75ba"
+    },
+    "tests/fixtures/f40_native_consumption_sidecar.json": {
+      "path": "tests/fixtures/f40_native_consumption_sidecar.json",
+      "sha256": "f8dafea851f4e9e410a5a4486343f4e8bdac1913fded87e84eb9c1b040056651"
+    }
+  },
+  "kind": "F41_SEMANTIC_MATERIAL_PRIOR_CORRECTIVE",
+  "manifest_sha256": "6bd7d52b196e7eccb2309f813b6e1417c77ee3a9992e22f0dcfafc8f01084e01",
+  "schema_version": 1,
+  "semantic_pattern_rules": {
+    "allow_capture_remove": true,
+    "conditional_record": "conditional_capability_patterns",
+    "exactly_one_actor_move": true,
+    "exclude_state_slot_postcondition": true,
+    "ordinary_geometry": [
+      "leap",
+      "ray"
+    ]
+  },
+  "shogi_gates": {
+    "cosine": 0.95,
+    "hand_board_ratio": [
+      0.8,
+      1.0
+    ],
+    "pairwise_ordering": 0.9,
+    "spearman": 0.9
+  },
+  "western_bands": {
+    "B": [
+      2.5,
+      3.75
+    ],
+    "N": [
+      2.5,
+      3.5
+    ],
+    "P": [
+      1,
+      1
+    ],
+    "Q": [
+      7.5,
+      11
+    ],
+    "R": [
+      4,
+      6
+    ]
+  },
+  "work_order": "GENERICCHESS-F41-RULE-DERIVED-MATERIAL-PRIOR-AND-SIGNAL-UTILIZATION-CORRECTIVE"
+}
