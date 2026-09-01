@@ -1,0 +1,839 @@
+{
+  "MATERIAL_DISTRIBUTION_SHIFT": {
+    "activity_term": true,
+    "activity_term_range": true,
+    "anchor_ring_term": false,
+    "anchor_ring_term_range": true,
+    "board_occupancy": true,
+    "capture_action_fraction": true,
+    "checking_action_fraction": false,
+    "drop_action_fraction": false,
+    "in_check": false,
+    "legal_action_count": true,
+    "material_imbalance_magnitude": true,
+    "promotion_action_fraction": false,
+    "total_hand_inventory": true,
+    "v1_anchor_escape": false,
+    "v1_anchor_escape_range": true,
+    "v1_pseudo_control": false,
+    "v1_pseudo_control_range": true
+  },
+  "groups": {
+    "f37_selection_set": [
+      {
+        "activity_term": -11,
+        "activity_term_range": 18,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.07142857142857142,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 28,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": 0,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": 6,
+        "v1_pseudo_control_range": 10
+      },
+      {
+        "activity_term": -2,
+        "activity_term_range": 12,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 25,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": 4,
+        "v1_pseudo_control_range": 10
+      },
+      {
+        "activity_term": 2,
+        "activity_term_range": 18,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 31,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -4,
+        "v1_pseudo_control_range": 6
+      },
+      {
+        "activity_term": 3,
+        "activity_term_range": 15,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 25,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": 5,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": 2,
+        "v1_pseudo_control_range": 6
+      },
+      {
+        "activity_term": -12,
+        "activity_term_range": 13,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 29,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": 0,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -8,
+        "v1_pseudo_control_range": 8
+      },
+      {
+        "activity_term": 2,
+        "activity_term_range": 20,
+        "anchor_ring_term": 15,
+        "anchor_ring_term_range": 0,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 30,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 15,
+        "v1_pseudo_control": 6,
+        "v1_pseudo_control_range": 10
+      },
+      {
+        "activity_term": 4,
+        "activity_term_range": 22,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 31,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -8,
+        "v1_pseudo_control_range": 12
+      },
+      {
+        "activity_term": 4,
+        "activity_term_range": 15,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 26,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 5,
+        "v1_pseudo_control": 2,
+        "v1_pseudo_control_range": 10
+      },
+      {
+        "activity_term": 7,
+        "activity_term_range": 13,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.034482758620689655,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 29,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": 5,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -4,
+        "v1_pseudo_control_range": 12
+      },
+      {
+        "activity_term": 5,
+        "activity_term_range": 9,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 40,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 26,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 0,
+        "v1_anchor_escape": 0,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": 2,
+        "v1_pseudo_control_range": 8
+      }
+    ],
+    "f38_holdout": [
+      {
+        "activity_term": -6,
+        "activity_term_range": 27,
+        "anchor_ring_term": -10,
+        "anchor_ring_term_range": 20,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.2,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 1.0,
+        "legal_action_count": 5,
+        "material_imbalance_magnitude": 359,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -6,
+        "v1_pseudo_control_range": 24
+      },
+      {
+        "activity_term": -15,
+        "activity_term_range": 0,
+        "anchor_ring_term": -5,
+        "anchor_ring_term_range": 20,
+        "board_occupancy": 37,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 1.0,
+        "legal_action_count": 5,
+        "material_imbalance_magnitude": 2071,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 3,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": 0,
+        "v1_pseudo_control_range": 8
+      },
+      {
+        "activity_term": -5,
+        "activity_term_range": 26,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 25,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.027777777777777776,
+        "drop_action_fraction": 0.5972222222222222,
+        "in_check": 0.0,
+        "legal_action_count": 72,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": 2,
+        "v1_pseudo_control_range": 22
+      },
+      {
+        "activity_term": -13,
+        "activity_term_range": 30,
+        "anchor_ring_term": 10,
+        "anchor_ring_term_range": 20,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.04878048780487805,
+        "checking_action_fraction": 0.04878048780487805,
+        "drop_action_fraction": 0.5121951219512195,
+        "in_check": 0.0,
+        "legal_action_count": 82,
+        "material_imbalance_magnitude": 2789,
+        "promotion_action_fraction": 0.04878048780487805,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": 0,
+        "v1_anchor_escape_range": 25,
+        "v1_pseudo_control": -2,
+        "v1_pseudo_control_range": 18
+      },
+      {
+        "activity_term": 4,
+        "activity_term_range": 35,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 25,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.11538461538461539,
+        "drop_action_fraction": 0.5512820512820513,
+        "in_check": 0.0,
+        "legal_action_count": 78,
+        "material_imbalance_magnitude": 2430,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": -2,
+        "v1_pseudo_control_range": 18
+      },
+      {
+        "activity_term": -11,
+        "activity_term_range": 29,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.09259259259259259,
+        "checking_action_fraction": 0.037037037037037035,
+        "drop_action_fraction": 0.09259259259259259,
+        "in_check": 0.0,
+        "legal_action_count": 54,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.037037037037037035,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 25,
+        "v1_pseudo_control": 0,
+        "v1_pseudo_control_range": 22
+      },
+      {
+        "activity_term": -11,
+        "activity_term_range": 24,
+        "anchor_ring_term": -10,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.03125,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 32,
+        "material_imbalance_magnitude": 359,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 15,
+        "v1_pseudo_control": -10,
+        "v1_pseudo_control_range": 16
+      },
+      {
+        "activity_term": -16,
+        "activity_term_range": 26,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.10256410256410256,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 39,
+        "material_imbalance_magnitude": 359,
+        "promotion_action_fraction": 0.05128205128205128,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": 20,
+        "v1_anchor_escape_range": 25,
+        "v1_pseudo_control": -8,
+        "v1_pseudo_control_range": 22
+      },
+      {
+        "activity_term": 26,
+        "activity_term_range": 27,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.1,
+        "checking_action_fraction": 0.025,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 40,
+        "material_imbalance_magnitude": 2577,
+        "promotion_action_fraction": 0.025,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": -15,
+        "v1_anchor_escape_range": 15,
+        "v1_pseudo_control": 12,
+        "v1_pseudo_control_range": 14
+      },
+      {
+        "activity_term": -10,
+        "activity_term_range": 26,
+        "anchor_ring_term": -5,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.11627906976744186,
+        "checking_action_fraction": 0.023255813953488372,
+        "drop_action_fraction": 0.11627906976744186,
+        "in_check": 0.0,
+        "legal_action_count": 43,
+        "material_imbalance_magnitude": 0,
+        "promotion_action_fraction": 0.046511627906976744,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": 15,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": -2,
+        "v1_pseudo_control_range": 20
+      },
+      {
+        "activity_term": 14,
+        "activity_term_range": 33,
+        "anchor_ring_term": 5,
+        "anchor_ring_term_range": 20,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.09090909090909091,
+        "checking_action_fraction": 0.06818181818181818,
+        "drop_action_fraction": 0.5340909090909091,
+        "in_check": 0.0,
+        "legal_action_count": 88,
+        "material_imbalance_magnitude": 2770,
+        "promotion_action_fraction": 0.022727272727272728,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": -15,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": 14,
+        "v1_pseudo_control_range": 22
+      },
+      {
+        "activity_term": -19,
+        "activity_term_range": 38,
+        "anchor_ring_term": -5,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 37,
+        "capture_action_fraction": 0.043478260869565216,
+        "checking_action_fraction": 0.07608695652173914,
+        "drop_action_fraction": 0.5434782608695652,
+        "in_check": 0.0,
+        "legal_action_count": 92,
+        "material_imbalance_magnitude": 3129,
+        "promotion_action_fraction": 0.021739130434782608,
+        "total_hand_inventory": 3,
+        "v1_anchor_escape": -5,
+        "v1_anchor_escape_range": 30,
+        "v1_pseudo_control": -4,
+        "v1_pseudo_control_range": 24
+      },
+      {
+        "activity_term": 2,
+        "activity_term_range": 34,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 25,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.025974025974025976,
+        "drop_action_fraction": 0.5584415584415584,
+        "in_check": 0.0,
+        "legal_action_count": 77,
+        "material_imbalance_magnitude": 2642,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": 0,
+        "v1_pseudo_control_range": 18
+      },
+      {
+        "activity_term": -11,
+        "activity_term_range": 28,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 25,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.0125,
+        "checking_action_fraction": 0.05,
+        "drop_action_fraction": 0.525,
+        "in_check": 0.0,
+        "legal_action_count": 80,
+        "material_imbalance_magnitude": 2789,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": 0,
+        "v1_anchor_escape_range": 15,
+        "v1_pseudo_control": -10,
+        "v1_pseudo_control_range": 20
+      },
+      {
+        "activity_term": 15,
+        "activity_term_range": 49,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.05555555555555555,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 36,
+        "material_imbalance_magnitude": 2577,
+        "promotion_action_fraction": 0.027777777777777776,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": 0,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": 2,
+        "v1_pseudo_control_range": 30
+      },
+      {
+        "activity_term": 2,
+        "activity_term_range": 25,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 25,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.0,
+        "checking_action_fraction": 0.029850746268656716,
+        "drop_action_fraction": 0.6417910447761194,
+        "in_check": 0.0,
+        "legal_action_count": 67,
+        "material_imbalance_magnitude": 2642,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": 10,
+        "v1_anchor_escape_range": 15,
+        "v1_pseudo_control": 2,
+        "v1_pseudo_control_range": 16
+      },
+      {
+        "activity_term": 20,
+        "activity_term_range": 29,
+        "anchor_ring_term": 15,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.05194805194805195,
+        "checking_action_fraction": 0.05194805194805195,
+        "drop_action_fraction": 0.5584415584415584,
+        "in_check": 0.0,
+        "legal_action_count": 77,
+        "material_imbalance_magnitude": 1871,
+        "promotion_action_fraction": 0.025974025974025976,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": -10,
+        "v1_anchor_escape_range": 15,
+        "v1_pseudo_control": -2,
+        "v1_pseudo_control_range": 20
+      },
+      {
+        "activity_term": -23,
+        "activity_term_range": 36,
+        "anchor_ring_term": -15,
+        "anchor_ring_term_range": 20,
+        "board_occupancy": 38,
+        "capture_action_fraction": 0.10810810810810811,
+        "checking_action_fraction": 0.08108108108108109,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 37,
+        "material_imbalance_magnitude": 2218,
+        "promotion_action_fraction": 0.02702702702702703,
+        "total_hand_inventory": 2,
+        "v1_anchor_escape": 10,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -20,
+        "v1_pseudo_control_range": 20
+      },
+      {
+        "activity_term": -14,
+        "activity_term_range": 21,
+        "anchor_ring_term": -10,
+        "anchor_ring_term_range": 15,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.037037037037037035,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 27,
+        "material_imbalance_magnitude": 359,
+        "promotion_action_fraction": 0.0,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": -15,
+        "v1_anchor_escape_range": 10,
+        "v1_pseudo_control": -12,
+        "v1_pseudo_control_range": 14
+      },
+      {
+        "activity_term": -7,
+        "activity_term_range": 29,
+        "anchor_ring_term": 0,
+        "anchor_ring_term_range": 30,
+        "board_occupancy": 39,
+        "capture_action_fraction": 0.07894736842105263,
+        "checking_action_fraction": 0.0,
+        "drop_action_fraction": 0.0,
+        "in_check": 0.0,
+        "legal_action_count": 38,
+        "material_imbalance_magnitude": 359,
+        "promotion_action_fraction": 0.02631578947368421,
+        "total_hand_inventory": 1,
+        "v1_anchor_escape": 15,
+        "v1_anchor_escape_range": 20,
+        "v1_pseudo_control": 4,
+        "v1_pseudo_control_range": 20
+      }
+    ]
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "summary": {
+    "activity_term": {
+      "f37_selection_set": {
+        "iqr": 6,
+        "median": 2.5,
+        "q1": -2,
+        "q3": 4
+      },
+      "f38_holdout": {
+        "iqr": 15,
+        "median": -8.5,
+        "q1": -13,
+        "q3": 2
+      }
+    },
+    "activity_term_range": {
+      "f37_selection_set": {
+        "iqr": 5,
+        "median": 15.0,
+        "q1": 13,
+        "q3": 18
+      },
+      "f38_holdout": {
+        "iqr": 7,
+        "median": 28.5,
+        "q1": 26,
+        "q3": 33
+      }
+    },
+    "anchor_ring_term": {
+      "f37_selection_set": {
+        "iqr": 15,
+        "median": 0.0,
+        "q1": -15,
+        "q3": 0
+      },
+      "f38_holdout": {
+        "iqr": 10,
+        "median": -5.0,
+        "q1": -10,
+        "q3": 0
+      }
+    },
+    "anchor_ring_term_range": {
+      "f37_selection_set": {
+        "iqr": 0,
+        "median": 15.0,
+        "q1": 15,
+        "q3": 15
+      },
+      "f38_holdout": {
+        "iqr": 10,
+        "median": 25.0,
+        "q1": 20,
+        "q3": 30
+      }
+    },
+    "board_occupancy": {
+      "f37_selection_set": {
+        "iqr": 0,
+        "median": 40.0,
+        "q1": 40,
+        "q3": 40
+      },
+      "f38_holdout": {
+        "iqr": 1,
+        "median": 38.0,
+        "q1": 38,
+        "q3": 39
+      }
+    },
+    "capture_action_fraction": {
+      "f37_selection_set": {
+        "iqr": 0.0,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "f38_holdout": {
+        "iqr": 0.08009259259259259,
+        "median": 0.050364269876465,
+        "q1": 0.0125,
+        "q3": 0.09259259259259259
+      }
+    },
+    "checking_action_fraction": {
+      "f37_selection_set": {
+        "iqr": 0.0,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "f38_holdout": {
+        "iqr": 0.05,
+        "median": 0.026875901875901876,
+        "q1": 0.0,
+        "q3": 0.05
+      }
+    },
+    "drop_action_fraction": {
+      "f37_selection_set": {
+        "iqr": 0.0,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "f38_holdout": {
+        "iqr": 0.5434782608695652,
+        "median": 0.10443583118001723,
+        "q1": 0.0,
+        "q3": 0.5434782608695652
+      }
+    },
+    "in_check": {
+      "f37_selection_set": {
+        "iqr": 0.0,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "f38_holdout": {
+        "iqr": 0.0,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      }
+    },
+    "legal_action_count": {
+      "f37_selection_set": {
+        "iqr": 4,
+        "median": 28.5,
+        "q1": 26,
+        "q3": 30
+      },
+      "f38_holdout": {
+        "iqr": 40,
+        "median": 48.5,
+        "q1": 37,
+        "q3": 77
+      }
+    },
+    "material_imbalance_magnitude": {
+      "f37_selection_set": {
+        "iqr": 0,
+        "median": 0.0,
+        "q1": 0,
+        "q3": 0
+      },
+      "f38_holdout": {
+        "iqr": 2283,
+        "median": 2144.5,
+        "q1": 359,
+        "q3": 2642
+      }
+    },
+    "promotion_action_fraction": {
+      "f37_selection_set": {
+        "iqr": 0.0,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "f38_holdout": {
+        "iqr": 0.02702702702702703,
+        "median": 0.022233201581027668,
+        "q1": 0.0,
+        "q3": 0.02702702702702703
+      }
+    },
+    "total_hand_inventory": {
+      "f37_selection_set": {
+        "iqr": 0,
+        "median": 0.0,
+        "q1": 0,
+        "q3": 0
+      },
+      "f38_holdout": {
+        "iqr": 1,
+        "median": 2.0,
+        "q1": 1,
+        "q3": 2
+      }
+    },
+    "v1_anchor_escape": {
+      "f37_selection_set": {
+        "iqr": 5,
+        "median": -2.5,
+        "q1": -5,
+        "q3": 0
+      },
+      "f38_holdout": {
+        "iqr": 10,
+        "median": -5.0,
+        "q1": -10,
+        "q3": 0
+      }
+    },
+    "v1_anchor_escape_range": {
+      "f37_selection_set": {
+        "iqr": 0,
+        "median": 10.0,
+        "q1": 10,
+        "q3": 10
+      },
+      "f38_holdout": {
+        "iqr": 5,
+        "median": 20.0,
+        "q1": 15,
+        "q3": 20
+      }
+    },
+    "v1_pseudo_control": {
+      "f37_selection_set": {
+        "iqr": 8,
+        "median": 2.0,
+        "q1": -4,
+        "q3": 4
+      },
+      "f38_holdout": {
+        "iqr": 8,
+        "median": -2.0,
+        "q1": -6,
+        "q3": 2
+      }
+    },
+    "v1_pseudo_control_range": {
+      "f37_selection_set": {
+        "iqr": 2,
+        "median": 10.0,
+        "q1": 8,
+        "q3": 10
+      },
+      "f38_holdout": {
+        "iqr": 4,
+        "median": 20.0,
+        "q1": 18,
+        "q3": 22
+      }
+    }
+  }
+}

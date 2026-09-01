@@ -1,0 +1,4375 @@
+{
+  "R37_COMPONENT_SCORE_ADDITIVITY": true,
+  "additivity_checked_states": 1069,
+  "additivity_failures": [],
+  "aggregates": {
+    "R37A": {
+      "margin_vs_v1": {
+        "improved": 0,
+        "unchanged": 16,
+        "worsened": 4
+      },
+      "mean_deterministic_rank": 10.2,
+      "mean_normalized_margin": 0.7694,
+      "mean_percentile": 0.1894553102451741,
+      "mean_strict_rank": 8.95,
+      "median_deterministic_rank": 5.0,
+      "median_strict_rank": 4.5,
+      "strict_rank_vs_v1": {
+        "improved": 2,
+        "unchanged": 12,
+        "worsened": 6
+      },
+      "strict_top1": 5,
+      "strict_top3": 9,
+      "strict_top5": 12
+    },
+    "R37B": {
+      "margin_vs_v1": {
+        "improved": 0,
+        "unchanged": 18,
+        "worsened": 2
+      },
+      "mean_deterministic_rank": 9.6,
+      "mean_normalized_margin": 0.7655000000000001,
+      "mean_percentile": 0.18631072752592795,
+      "mean_strict_rank": 8.35,
+      "median_deterministic_rank": 4.0,
+      "median_strict_rank": 4.0,
+      "strict_rank_vs_v1": {
+        "improved": 4,
+        "unchanged": 14,
+        "worsened": 2
+      },
+      "strict_top1": 5,
+      "strict_top3": 10,
+      "strict_top5": 12
+    },
+    "R37C": {
+      "margin_vs_v1": {
+        "improved": 2,
+        "unchanged": 14,
+        "worsened": 4
+      },
+      "mean_deterministic_rank": 11.4,
+      "mean_normalized_margin": 0.76915,
+      "mean_percentile": 0.20091739925245483,
+      "mean_strict_rank": 9.6,
+      "median_deterministic_rank": 7.5,
+      "median_strict_rank": 6.5,
+      "strict_rank_vs_v1": {
+        "improved": 2,
+        "unchanged": 8,
+        "worsened": 10
+      },
+      "strict_top1": 5,
+      "strict_top3": 8,
+      "strict_top5": 9
+    },
+    "V1": {
+      "margin_vs_v1": {
+        "improved": 0,
+        "unchanged": 20,
+        "worsened": 0
+      },
+      "mean_deterministic_rank": 8.9,
+      "mean_normalized_margin": 0.7655000000000001,
+      "mean_percentile": 0.17574879403518684,
+      "mean_strict_rank": 8.05,
+      "median_deterministic_rank": 4.5,
+      "median_strict_rank": 4.0,
+      "strict_rank_vs_v1": {
+        "improved": 0,
+        "unchanged": 20,
+        "worsened": 0
+      },
+      "strict_top1": 5,
+      "strict_top3": 9,
+      "strict_top5": 12
+    }
+  },
+  "rows": [
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 19,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3167,
+            "side_to_move_score": -3167
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3159,
+            "side_to_move_score": -3159
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 19,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3162,
+            "side_to_move_score": -3162
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3164,
+            "side_to_move_score": -3164
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 19,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3167,
+            "side_to_move_score": -3167
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3159,
+            "side_to_move_score": -3159
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 19,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3162,
+            "side_to_move_score": -3162
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3164,
+            "side_to_move_score": -3164
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 19,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3167,
+            "side_to_move_score": -3167
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3159,
+            "side_to_move_score": -3159
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 19,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3162,
+            "side_to_move_score": -3162
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1657,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1491,
+            "promotion_potential": 0,
+            "raw_total": 3164,
+            "side_to_move_score": -3164
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000001-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 1,
+          "distinct_scores": 4,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 3167,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3167,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 1,
+          "distinct_scores": 5,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 3159,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3159,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 1,
+          "distinct_scores": 5,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 3162,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3162,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 1,
+          "distinct_scores": 5,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 3164,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3164,
+          "top_tie_width": 1
+        }
+      },
+      "move": "8i7g",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.0,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "8i7g",
+        "v1": "8i7g"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2101,
+            "side_to_move_score": -2101
+          },
+          "R37B": {
+            "anchor_escape": -10,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2075,
+            "side_to_move_score": -2075
+          },
+          "R37C": {
+            "anchor_escape": -10,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2096,
+            "side_to_move_score": -2096
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2080,
+            "side_to_move_score": -2080
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2101,
+            "side_to_move_score": -2101
+          },
+          "R37B": {
+            "anchor_escape": -10,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2075,
+            "side_to_move_score": -2075
+          },
+          "R37C": {
+            "anchor_escape": -10,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2096,
+            "side_to_move_score": -2096
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2080,
+            "side_to_move_score": -2080
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2101,
+            "side_to_move_score": -2101
+          },
+          "R37B": {
+            "anchor_escape": -10,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2075,
+            "side_to_move_score": -2075
+          },
+          "R37C": {
+            "anchor_escape": -10,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2096,
+            "side_to_move_score": -2096
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": -1090,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -981,
+            "promotion_potential": 0,
+            "raw_total": -2080,
+            "side_to_move_score": -2080
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000001-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 1,
+          "distinct_scores": 5,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 2101,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2101,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 1,
+          "distinct_scores": 5,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 2075,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2075,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 1,
+          "distinct_scores": 4,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 2096,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2096,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 1,
+          "distinct_scores": 5,
+          "legal_action_count": 5,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.2,
+          "strict_rank": 1,
+          "target_score": 2080,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2080,
+          "top_tie_width": 1
+        }
+      },
+      "move": "4d4c",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.0,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": true,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "4d4c",
+        "v1": "4d4c"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": 163,
+            "side_to_move_score": -163
+          },
+          "R37B": {
+            "anchor_escape": 10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 12,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": 169,
+            "side_to_move_score": -169
+          },
+          "R37C": {
+            "anchor_escape": 10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": 173,
+            "side_to_move_score": -173
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 12,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": 159,
+            "side_to_move_score": -159
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 5,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 200,
+            "side_to_move_score": -200
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 208,
+            "side_to_move_score": -208
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 5,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 205,
+            "side_to_move_score": -205
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 203,
+            "side_to_move_score": -203
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 5,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 200,
+            "side_to_move_score": -200
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 208,
+            "side_to_move_score": -208
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 5,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 205,
+            "side_to_move_score": -205
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": -1321,
+            "promotion_potential": 3,
+            "raw_total": 203,
+            "side_to_move_score": -203
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000002-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 11,
+          "distinct_scores": 32,
+          "legal_action_count": 72,
+          "margin_from_top": 37,
+          "normalized_margin": 0.037,
+          "rank_percentile": 0.1527777777777778,
+          "strict_rank": 11,
+          "target_score": 163,
+          "target_tie_width": 2,
+          "tie_span_high": 12,
+          "tie_span_low": 11,
+          "top_score": 200,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 13,
+          "distinct_scores": 26,
+          "legal_action_count": 72,
+          "margin_from_top": 39,
+          "normalized_margin": 0.039,
+          "rank_percentile": 0.18055555555555555,
+          "strict_rank": 13,
+          "target_score": 169,
+          "target_tie_width": 3,
+          "tie_span_high": 15,
+          "tie_span_low": 13,
+          "top_score": 208,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 11,
+          "distinct_scores": 30,
+          "legal_action_count": 72,
+          "margin_from_top": 32,
+          "normalized_margin": 0.032,
+          "rank_percentile": 0.1527777777777778,
+          "strict_rank": 11,
+          "target_score": 173,
+          "target_tie_width": 2,
+          "tie_span_high": 12,
+          "tie_span_low": 11,
+          "top_score": 205,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 13,
+          "distinct_scores": 36,
+          "legal_action_count": 72,
+          "margin_from_top": 44,
+          "normalized_margin": 0.044,
+          "rank_percentile": 0.18055555555555555,
+          "strict_rank": 13,
+          "target_score": 159,
+          "target_tie_width": 2,
+          "tie_span_high": 14,
+          "tie_span_low": 13,
+          "top_score": 203,
+          "top_tie_width": 1
+        }
+      },
+      "move": "B*2f",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": -0.007,
+        "anchor": -0.005
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": false,
+        "capture": false,
+        "checking": false,
+        "drop": true,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "B*6a",
+        "v1": "B*6a"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -32,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3853,
+            "side_to_move_score": -3853
+          },
+          "R37B": {
+            "anchor_escape": 5,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -14,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3825,
+            "side_to_move_score": -3825
+          },
+          "R37C": {
+            "anchor_escape": 5,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -32,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3843,
+            "side_to_move_score": -3843
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -14,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3835,
+            "side_to_move_score": -3835
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -41,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5075,
+            "side_to_move_score": -5075
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5040,
+            "side_to_move_score": -5040
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -41,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5065,
+            "side_to_move_score": -5065
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5050,
+            "side_to_move_score": -5050
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -41,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5075,
+            "side_to_move_score": -5075
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5040,
+            "side_to_move_score": -5040
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -41,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5065,
+            "side_to_move_score": -5065
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": -2932,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -2037,
+            "promotion_potential": 0,
+            "raw_total": -5050,
+            "side_to_move_score": -5050
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000002-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 3,
+          "distinct_scores": 36,
+          "legal_action_count": 82,
+          "margin_from_top": 1222,
+          "normalized_margin": 1.222,
+          "rank_percentile": 0.036585365853658534,
+          "strict_rank": 3,
+          "target_score": 3853,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 5075,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 3,
+          "distinct_scores": 33,
+          "legal_action_count": 82,
+          "margin_from_top": 1215,
+          "normalized_margin": 1.215,
+          "rank_percentile": 0.036585365853658534,
+          "strict_rank": 3,
+          "target_score": 3825,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 5040,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 3,
+          "distinct_scores": 38,
+          "legal_action_count": 82,
+          "margin_from_top": 1222,
+          "normalized_margin": 1.222,
+          "rank_percentile": 0.036585365853658534,
+          "strict_rank": 3,
+          "target_score": 3843,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 5065,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 3,
+          "distinct_scores": 36,
+          "legal_action_count": 82,
+          "margin_from_top": 1215,
+          "normalized_margin": 1.215,
+          "rank_percentile": 0.036585365853658534,
+          "strict_rank": 3,
+          "target_score": 3835,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 5050,
+          "top_tie_width": 1
+        }
+      },
+      "move": "8g7f+",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.007,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": true
+      },
+      "top_children": {
+        "r37c": "8g7h+",
+        "v1": "8g7h+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2590,
+            "side_to_move_score": -2590
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2585,
+            "side_to_move_score": -2585
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2600,
+            "side_to_move_score": -2600
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2575,
+            "side_to_move_score": -2575
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2645,
+            "side_to_move_score": -2645
+          },
+          "R37B": {
+            "anchor_escape": 5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 12,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2644,
+            "side_to_move_score": -2644
+          },
+          "R37C": {
+            "anchor_escape": 5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2655,
+            "side_to_move_score": -2655
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 12,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2634,
+            "side_to_move_score": -2634
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2645,
+            "side_to_move_score": -2645
+          },
+          "R37B": {
+            "anchor_escape": 5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 12,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2644,
+            "side_to_move_score": -2644
+          },
+          "R37C": {
+            "anchor_escape": 5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2655,
+            "side_to_move_score": -2655
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 2747,
+            "check_penalty": 50,
+            "global_pseudo_control": 12,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": 2634,
+            "side_to_move_score": -2634
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000003-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 20,
+          "distinct_scores": 40,
+          "legal_action_count": 78,
+          "margin_from_top": 60,
+          "normalized_margin": 0.06,
+          "rank_percentile": 0.2564102564102564,
+          "strict_rank": 20,
+          "target_score": 2590,
+          "target_tie_width": 1,
+          "tie_span_high": 20,
+          "tie_span_low": 20,
+          "top_score": 2650,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 22,
+          "distinct_scores": 26,
+          "legal_action_count": 78,
+          "margin_from_top": 59,
+          "normalized_margin": 0.059,
+          "rank_percentile": 0.2564102564102564,
+          "strict_rank": 20,
+          "target_score": 2585,
+          "target_tie_width": 4,
+          "tie_span_high": 23,
+          "tie_span_low": 20,
+          "top_score": 2644,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 23,
+          "distinct_scores": 39,
+          "legal_action_count": 78,
+          "margin_from_top": 55,
+          "normalized_margin": 0.055,
+          "rank_percentile": 0.2948717948717949,
+          "strict_rank": 23,
+          "target_score": 2600,
+          "target_tie_width": 1,
+          "tie_span_high": 23,
+          "tie_span_low": 23,
+          "top_score": 2655,
+          "top_tie_width": 2
+        },
+        "V1": {
+          "deterministic_rank": 22,
+          "distinct_scores": 34,
+          "legal_action_count": 78,
+          "margin_from_top": 59,
+          "normalized_margin": 0.059,
+          "rank_percentile": 0.2564102564102564,
+          "strict_rank": 20,
+          "target_score": 2575,
+          "target_tie_width": 4,
+          "tie_span_high": 23,
+          "tie_span_low": 20,
+          "top_score": 2634,
+          "top_tie_width": 1
+        }
+      },
+      "move": "B*5f",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.001,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": false,
+        "capture": false,
+        "checking": false,
+        "drop": true,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "B*4d",
+        "v1": "B*4d"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -9,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -14,
+            "side_to_move_score": -14
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -2,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -17,
+            "side_to_move_score": -17
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -9,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -24,
+            "side_to_move_score": -24
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -2,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -7,
+            "side_to_move_score": -7
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -32,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1119,
+            "side_to_move_score": -1119
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1113,
+            "side_to_move_score": -1113
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -32,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1129,
+            "side_to_move_score": -1129
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1103,
+            "side_to_move_score": -1103
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -32,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1119,
+            "side_to_move_score": -1119
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1113,
+            "side_to_move_score": -1113
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -32,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1129,
+            "side_to_move_score": -1129
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1103,
+            "side_to_move_score": -1103
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000003-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 28,
+          "distinct_scores": 24,
+          "legal_action_count": 54,
+          "margin_from_top": 1105,
+          "normalized_margin": 1.105,
+          "rank_percentile": 0.5185185185185185,
+          "strict_rank": 28,
+          "target_score": 14,
+          "target_tie_width": 7,
+          "tie_span_high": 34,
+          "tie_span_low": 28,
+          "top_score": 1119,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 16,
+          "distinct_scores": 17,
+          "legal_action_count": 54,
+          "margin_from_top": 1096,
+          "normalized_margin": 1.096,
+          "rank_percentile": 0.2962962962962963,
+          "strict_rank": 16,
+          "target_score": 17,
+          "target_tie_width": 16,
+          "tie_span_high": 31,
+          "tie_span_low": 16,
+          "top_score": 1113,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 33,
+          "distinct_scores": 22,
+          "legal_action_count": 54,
+          "margin_from_top": 1105,
+          "normalized_margin": 1.105,
+          "rank_percentile": 0.6111111111111112,
+          "strict_rank": 33,
+          "target_score": 24,
+          "target_tie_width": 10,
+          "tie_span_high": 42,
+          "tie_span_low": 33,
+          "top_score": 1129,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 16,
+          "distinct_scores": 25,
+          "legal_action_count": 54,
+          "margin_from_top": 1096,
+          "normalized_margin": 1.096,
+          "rank_percentile": 0.2962962962962963,
+          "strict_rank": 16,
+          "target_score": 7,
+          "target_tie_width": 13,
+          "tie_span_high": 28,
+          "tie_span_low": 16,
+          "top_score": 1103,
+          "top_tie_width": 1
+        }
+      },
+      "move": "6f5e",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.009,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "6f7g+",
+        "v1": "6f7g+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2438,
+            "side_to_move_score": -2438
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 4,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2434,
+            "side_to_move_score": -2434
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2438,
+            "side_to_move_score": -2438
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 4,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2434,
+            "side_to_move_score": -2434
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2438,
+            "side_to_move_score": -2438
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 4,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2434,
+            "side_to_move_score": -2434
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2438,
+            "side_to_move_score": -2438
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 4,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2434,
+            "side_to_move_score": -2434
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2438,
+            "side_to_move_score": -2438
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 4,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2434,
+            "side_to_move_score": -2434
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2438,
+            "side_to_move_score": -2438
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 4,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2434,
+            "side_to_move_score": -2434
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000004-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 1,
+          "distinct_scores": 12,
+          "legal_action_count": 32,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.03125,
+          "strict_rank": 1,
+          "target_score": 2438,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2438,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 1,
+          "distinct_scores": 10,
+          "legal_action_count": 32,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.03125,
+          "strict_rank": 1,
+          "target_score": 2434,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2434,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 1,
+          "distinct_scores": 9,
+          "legal_action_count": 32,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.03125,
+          "strict_rank": 1,
+          "target_score": 2438,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2438,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 1,
+          "distinct_scores": 11,
+          "legal_action_count": 32,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.03125,
+          "strict_rank": 1,
+          "target_score": 2434,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2434,
+          "top_tie_width": 1
+        }
+      },
+      "move": "6g6f",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.0,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "6g6f",
+        "v1": "6g6f"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 20,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": -16,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -355,
+            "side_to_move_score": -355
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": -10,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -369,
+            "side_to_move_score": -369
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": -16,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -375,
+            "side_to_move_score": -375
+          },
+          "V1": {
+            "anchor_escape": 20,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": -10,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -349,
+            "side_to_move_score": -349
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -36,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1417,
+            "side_to_move_score": -1417
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -22,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1423,
+            "side_to_move_score": -1423
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -36,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1437,
+            "side_to_move_score": -1437
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -22,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1403,
+            "side_to_move_score": -1403
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -36,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1417,
+            "side_to_move_score": -1417
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -22,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1423,
+            "side_to_move_score": -1423
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -36,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1437,
+            "side_to_move_score": -1437
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -22,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1403,
+            "side_to_move_score": -1403
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000004-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 23,
+          "distinct_scores": 15,
+          "legal_action_count": 39,
+          "margin_from_top": 1062,
+          "normalized_margin": 1.062,
+          "rank_percentile": 0.358974358974359,
+          "strict_rank": 14,
+          "target_score": 355,
+          "target_tie_width": 10,
+          "tie_span_high": 23,
+          "tie_span_low": 14,
+          "top_score": 1417,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 14,
+          "distinct_scores": 13,
+          "legal_action_count": 39,
+          "margin_from_top": 1054,
+          "normalized_margin": 1.054,
+          "rank_percentile": 0.20512820512820512,
+          "strict_rank": 8,
+          "target_score": 369,
+          "target_tie_width": 8,
+          "tie_span_high": 15,
+          "tie_span_low": 8,
+          "top_score": 1423,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 26,
+          "distinct_scores": 14,
+          "legal_action_count": 39,
+          "margin_from_top": 1062,
+          "normalized_margin": 1.062,
+          "rank_percentile": 0.3076923076923077,
+          "strict_rank": 12,
+          "target_score": 375,
+          "target_tie_width": 16,
+          "tie_span_high": 27,
+          "tie_span_low": 12,
+          "top_score": 1437,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 16,
+          "distinct_scores": 20,
+          "legal_action_count": 39,
+          "margin_from_top": 1054,
+          "normalized_margin": 1.054,
+          "rank_percentile": 0.28205128205128205,
+          "strict_rank": 11,
+          "target_score": 349,
+          "target_tie_width": 6,
+          "tie_span_high": 16,
+          "tie_span_low": 11,
+          "top_score": 1403,
+          "top_tie_width": 1
+        }
+      },
+      "move": "7a7b",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.008,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "4d7g+",
+        "v1": "4d7g+"
+      }
+    },
+    {
+      "causal_label": "ACTIVITY_DRIVEN",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 2936,
+            "check_penalty": 0,
+            "global_pseudo_control": 31,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 2962,
+            "side_to_move_score": -2962
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": 2936,
+            "check_penalty": 0,
+            "global_pseudo_control": 22,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 2953,
+            "side_to_move_score": -2953
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": 2936,
+            "check_penalty": 0,
+            "global_pseudo_control": 31,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 2962,
+            "side_to_move_score": -2962
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 2936,
+            "check_penalty": 0,
+            "global_pseudo_control": 22,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 2953,
+            "side_to_move_score": -2953
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 49,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3638,
+            "side_to_move_score": -3638
+          },
+          "R37B": {
+            "anchor_escape": -10,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 22,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3616,
+            "side_to_move_score": -3616
+          },
+          "R37C": {
+            "anchor_escape": -10,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 49,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3643,
+            "side_to_move_score": -3643
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 22,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3611,
+            "side_to_move_score": -3611
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 49,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3638,
+            "side_to_move_score": -3638
+          },
+          "R37B": {
+            "anchor_escape": -10,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 22,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3616,
+            "side_to_move_score": -3616
+          },
+          "R37C": {
+            "anchor_escape": -10,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 49,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3643,
+            "side_to_move_score": -3643
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": 3604,
+            "check_penalty": 0,
+            "global_pseudo_control": 22,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 3611,
+            "side_to_move_score": -3611
+          }
+        }
+      },
+      "classification": "MATERIAL_VALUE_WORSENING",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000005-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 2,
+          "distinct_scores": 14,
+          "legal_action_count": 40,
+          "margin_from_top": 676,
+          "normalized_margin": 0.676,
+          "rank_percentile": 0.05,
+          "strict_rank": 2,
+          "target_score": 2962,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 3638,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 2,
+          "distinct_scores": 11,
+          "legal_action_count": 40,
+          "margin_from_top": 663,
+          "normalized_margin": 0.663,
+          "rank_percentile": 0.05,
+          "strict_rank": 2,
+          "target_score": 2953,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 3616,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 4,
+          "distinct_scores": 15,
+          "legal_action_count": 40,
+          "margin_from_top": 681,
+          "normalized_margin": 0.681,
+          "rank_percentile": 0.1,
+          "strict_rank": 4,
+          "target_score": 2962,
+          "target_tie_width": 1,
+          "tie_span_high": 4,
+          "tie_span_low": 4,
+          "top_score": 3643,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 2,
+          "distinct_scores": 13,
+          "legal_action_count": 40,
+          "margin_from_top": 658,
+          "normalized_margin": 0.658,
+          "rank_percentile": 0.05,
+          "strict_rank": 2,
+          "target_score": 2953,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 3611,
+          "top_tie_width": 1
+        }
+      },
+      "move": "9g6d",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.018,
+        "anchor": 0.005
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "6e8c+",
+        "v1": "6e8c+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 15,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -5,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 10,
+            "side_to_move_score": 10
+          },
+          "R37B": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -2,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -7,
+            "side_to_move_score": -7
+          },
+          "R37C": {
+            "anchor_escape": -5,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -5,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": -10,
+            "side_to_move_score": -10
+          },
+          "V1": {
+            "anchor_escape": 15,
+            "board_material": 0,
+            "check_penalty": 0,
+            "global_pseudo_control": -2,
+            "hand_inventory": 0,
+            "promotion_potential": 0,
+            "raw_total": 13,
+            "side_to_move_score": 13
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1100,
+            "side_to_move_score": -1100
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -14,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1111,
+            "side_to_move_score": -1111
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1120,
+            "side_to_move_score": -1120
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -14,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1091,
+            "side_to_move_score": -1091
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1100,
+            "side_to_move_score": -1100
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -14,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1111,
+            "side_to_move_score": -1111
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -23,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1120,
+            "side_to_move_score": -1120
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -857,
+            "check_penalty": -50,
+            "global_pseudo_control": -14,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -1091,
+            "side_to_move_score": -1091
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000005-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 43,
+          "distinct_scores": 22,
+          "legal_action_count": 43,
+          "margin_from_top": 1110,
+          "normalized_margin": 1.11,
+          "rank_percentile": 0.9302325581395349,
+          "strict_rank": 40,
+          "target_score": -10,
+          "target_tie_width": 4,
+          "tie_span_high": 43,
+          "tie_span_low": 40,
+          "top_score": 1100,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 25,
+          "distinct_scores": 20,
+          "legal_action_count": 43,
+          "margin_from_top": 1104,
+          "normalized_margin": 1.104,
+          "rank_percentile": 0.4418604651162791,
+          "strict_rank": 19,
+          "target_score": 7,
+          "target_tie_width": 7,
+          "tie_span_high": 25,
+          "tie_span_low": 19,
+          "top_score": 1111,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 39,
+          "distinct_scores": 21,
+          "legal_action_count": 43,
+          "margin_from_top": 1110,
+          "normalized_margin": 1.11,
+          "rank_percentile": 0.8604651162790697,
+          "strict_rank": 37,
+          "target_score": 10,
+          "target_tie_width": 3,
+          "tie_span_high": 39,
+          "tie_span_low": 37,
+          "top_score": 1120,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 27,
+          "distinct_scores": 21,
+          "legal_action_count": 43,
+          "margin_from_top": 1104,
+          "normalized_margin": 1.104,
+          "rank_percentile": 0.5348837209302325,
+          "strict_rank": 23,
+          "target_score": -13,
+          "target_tie_width": 5,
+          "tie_span_high": 27,
+          "tie_span_low": 23,
+          "top_score": 1091,
+          "top_tie_width": 1
+        }
+      },
+      "move": "7a7b",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.006,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "6f5g+",
+        "v1": "6f5g+"
+      }
+    },
+    {
+      "causal_label": "ACTIVITY_DRIVEN",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 17,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3136,
+            "side_to_move_score": -3136
+          },
+          "R37B": {
+            "anchor_escape": 10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 18,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3157,
+            "side_to_move_score": -3157
+          },
+          "R37C": {
+            "anchor_escape": 10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 17,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3156,
+            "side_to_move_score": -3156
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 18,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3137,
+            "side_to_move_score": -3137
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 36,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3878,
+            "side_to_move_score": -3878
+          },
+          "R37B": {
+            "anchor_escape": 5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 24,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3876,
+            "side_to_move_score": -3876
+          },
+          "R37C": {
+            "anchor_escape": 5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 36,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3888,
+            "side_to_move_score": -3888
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 24,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3866,
+            "side_to_move_score": -3866
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 31,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3873,
+            "side_to_move_score": -3873
+          },
+          "R37B": {
+            "anchor_escape": 5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 26,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3878,
+            "side_to_move_score": -3878
+          },
+          "R37C": {
+            "anchor_escape": 5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 31,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3883,
+            "side_to_move_score": -3883
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 2136,
+            "check_penalty": 50,
+            "global_pseudo_control": 26,
+            "hand_inventory": 1661,
+            "promotion_potential": 0,
+            "raw_total": 3868,
+            "side_to_move_score": -3868
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000006-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 7,
+          "distinct_scores": 42,
+          "legal_action_count": 88,
+          "margin_from_top": 742,
+          "normalized_margin": 0.742,
+          "rank_percentile": 0.056818181818181816,
+          "strict_rank": 5,
+          "target_score": 3136,
+          "target_tie_width": 3,
+          "tie_span_high": 7,
+          "tie_span_low": 5,
+          "top_score": 3878,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 6,
+          "distinct_scores": 34,
+          "legal_action_count": 88,
+          "margin_from_top": 721,
+          "normalized_margin": 0.721,
+          "rank_percentile": 0.056818181818181816,
+          "strict_rank": 5,
+          "target_score": 3157,
+          "target_tie_width": 2,
+          "tie_span_high": 6,
+          "tie_span_low": 5,
+          "top_score": 3878,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 8,
+          "distinct_scores": 43,
+          "legal_action_count": 88,
+          "margin_from_top": 732,
+          "normalized_margin": 0.732,
+          "rank_percentile": 0.06818181818181818,
+          "strict_rank": 6,
+          "target_score": 3156,
+          "target_tie_width": 3,
+          "tie_span_high": 8,
+          "tie_span_low": 6,
+          "top_score": 3888,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 6,
+          "distinct_scores": 36,
+          "legal_action_count": 88,
+          "margin_from_top": 731,
+          "normalized_margin": 0.731,
+          "rank_percentile": 0.056818181818181816,
+          "strict_rank": 5,
+          "target_score": 3137,
+          "target_tie_width": 2,
+          "tie_span_high": 6,
+          "tie_span_low": 5,
+          "top_score": 3868,
+          "top_tie_width": 1
+        }
+      },
+      "move": "7i6h",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.011,
+        "anchor": -0.01
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "6d5c+",
+        "v1": "6d7c+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -15,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -35,
+            "hand_inventory": -1831,
+            "promotion_potential": 0,
+            "raw_total": -4206,
+            "side_to_move_score": -4206
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1831,
+            "promotion_potential": 0,
+            "raw_total": -4189,
+            "side_to_move_score": -4189
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -35,
+            "hand_inventory": -1831,
+            "promotion_potential": 0,
+            "raw_total": -4206,
+            "side_to_move_score": -4206
+          },
+          "V1": {
+            "anchor_escape": -15,
+            "board_material": -2325,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1831,
+            "promotion_potential": 0,
+            "raw_total": -4189,
+            "side_to_move_score": -4189
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -44,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4445,
+            "side_to_move_score": -4445
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -24,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4425,
+            "side_to_move_score": -4425
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -44,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4445,
+            "side_to_move_score": -4445
+          },
+          "V1": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -24,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4425,
+            "side_to_move_score": -4425
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -44,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4445,
+            "side_to_move_score": -4445
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -24,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4425,
+            "side_to_move_score": -4425
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -44,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4445,
+            "side_to_move_score": -4445
+          },
+          "V1": {
+            "anchor_escape": -20,
+            "board_material": -2417,
+            "check_penalty": -50,
+            "global_pseudo_control": -24,
+            "hand_inventory": -1914,
+            "promotion_potential": 0,
+            "raw_total": -4425,
+            "side_to_move_score": -4425
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000006-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 2,
+          "distinct_scores": 51,
+          "legal_action_count": 92,
+          "margin_from_top": 239,
+          "normalized_margin": 0.239,
+          "rank_percentile": 0.021739130434782608,
+          "strict_rank": 2,
+          "target_score": 4206,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 4445,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 2,
+          "distinct_scores": 34,
+          "legal_action_count": 92,
+          "margin_from_top": 236,
+          "normalized_margin": 0.236,
+          "rank_percentile": 0.021739130434782608,
+          "strict_rank": 2,
+          "target_score": 4189,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 4425,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 2,
+          "distinct_scores": 51,
+          "legal_action_count": 92,
+          "margin_from_top": 239,
+          "normalized_margin": 0.239,
+          "rank_percentile": 0.021739130434782608,
+          "strict_rank": 2,
+          "target_score": 4206,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 4445,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 2,
+          "distinct_scores": 41,
+          "legal_action_count": 92,
+          "margin_from_top": 236,
+          "normalized_margin": 0.236,
+          "rank_percentile": 0.021739130434782608,
+          "strict_rank": 2,
+          "target_score": 4189,
+          "target_tie_width": 1,
+          "tie_span_high": 2,
+          "tie_span_low": 2,
+          "top_score": 4425,
+          "top_tie_width": 1
+        }
+      },
+      "move": "6f5g+",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.003,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": true
+      },
+      "top_children": {
+        "r37c": "6f7g+",
+        "v1": "6f7g+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 26,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2815,
+            "side_to_move_score": -2815
+          },
+          "R37B": {
+            "anchor_escape": 10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2815,
+            "side_to_move_score": -2815
+          },
+          "R37C": {
+            "anchor_escape": 10,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 26,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2825,
+            "side_to_move_score": -2825
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 0,
+            "global_pseudo_control": 16,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2805,
+            "side_to_move_score": -2805
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 11,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2845,
+            "side_to_move_score": -2845
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2847,
+            "side_to_move_score": -2847
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 11,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2850,
+            "side_to_move_score": -2850
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2842,
+            "side_to_move_score": -2842
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 11,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2845,
+            "side_to_move_score": -2845
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2847,
+            "side_to_move_score": -2847
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 11,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2850,
+            "side_to_move_score": -2850
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 1468,
+            "check_penalty": 50,
+            "global_pseudo_control": 8,
+            "hand_inventory": 1321,
+            "promotion_potential": 0,
+            "raw_total": 2842,
+            "side_to_move_score": -2842
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000007-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 9,
+          "distinct_scores": 34,
+          "legal_action_count": 77,
+          "margin_from_top": 30,
+          "normalized_margin": 0.03,
+          "rank_percentile": 0.1038961038961039,
+          "strict_rank": 8,
+          "target_score": 2815,
+          "target_tie_width": 2,
+          "tie_span_high": 9,
+          "tie_span_low": 8,
+          "top_score": 2845,
+          "top_tie_width": 2
+        },
+        "R37B": {
+          "deterministic_rank": 3,
+          "distinct_scores": 21,
+          "legal_action_count": 77,
+          "margin_from_top": 32,
+          "normalized_margin": 0.032,
+          "rank_percentile": 0.03896103896103896,
+          "strict_rank": 3,
+          "target_score": 2815,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 2847,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 9,
+          "distinct_scores": 29,
+          "legal_action_count": 77,
+          "margin_from_top": 25,
+          "normalized_margin": 0.025,
+          "rank_percentile": 0.1038961038961039,
+          "strict_rank": 8,
+          "target_score": 2825,
+          "target_tie_width": 2,
+          "tie_span_high": 9,
+          "tie_span_low": 8,
+          "top_score": 2850,
+          "top_tie_width": 2
+        },
+        "V1": {
+          "deterministic_rank": 7,
+          "distinct_scores": 26,
+          "legal_action_count": 77,
+          "margin_from_top": 37,
+          "normalized_margin": 0.037,
+          "rank_percentile": 0.09090909090909091,
+          "strict_rank": 7,
+          "target_score": 2805,
+          "target_tie_width": 1,
+          "tie_span_high": 7,
+          "tie_span_low": 7,
+          "top_score": 2842,
+          "top_tie_width": 1
+        }
+      },
+      "move": "B*4d",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": -0.007,
+        "anchor": -0.005
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": false,
+        "capture": false,
+        "checking": false,
+        "drop": true,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "B*4c",
+        "v1": "B*4c"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3166,
+            "side_to_move_score": -3166
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3181,
+            "side_to_move_score": -3181
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3181,
+            "side_to_move_score": -3181
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3166,
+            "side_to_move_score": -3166
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3166,
+            "side_to_move_score": -3166
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3181,
+            "side_to_move_score": -3181
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3181,
+            "side_to_move_score": -3181
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3166,
+            "side_to_move_score": -3166
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3166,
+            "side_to_move_score": -3166
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3181,
+            "side_to_move_score": -3181
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3181,
+            "side_to_move_score": -3181
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -1657,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": -1491,
+            "promotion_potential": 0,
+            "raw_total": -3166,
+            "side_to_move_score": -3166
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000007-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 1,
+          "distinct_scores": 37,
+          "legal_action_count": 80,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.0125,
+          "strict_rank": 1,
+          "target_score": 3166,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3166,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 1,
+          "distinct_scores": 24,
+          "legal_action_count": 80,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.0125,
+          "strict_rank": 1,
+          "target_score": 3181,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3181,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 1,
+          "distinct_scores": 33,
+          "legal_action_count": 80,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.0125,
+          "strict_rank": 1,
+          "target_score": 3181,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3181,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 1,
+          "distinct_scores": 28,
+          "legal_action_count": 80,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.0125,
+          "strict_rank": 1,
+          "target_score": 3166,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 3166,
+          "top_tie_width": 1
+        }
+      },
+      "move": "3c6f",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.0,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "3c6f",
+        "v1": "3c6f"
+      }
+    },
+    {
+      "causal_label": "BOTH_SAME_DIRECTION",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 10,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 28,
+            "hand_inventory": -170,
+            "promotion_potential": 3,
+            "raw_total": 2618,
+            "side_to_move_score": -2618
+          },
+          "R37B": {
+            "anchor_escape": 5,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": -170,
+            "promotion_potential": 3,
+            "raw_total": 2593,
+            "side_to_move_score": -2593
+          },
+          "R37C": {
+            "anchor_escape": 5,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 28,
+            "hand_inventory": -170,
+            "promotion_potential": 3,
+            "raw_total": 2613,
+            "side_to_move_score": -2613
+          },
+          "V1": {
+            "anchor_escape": 10,
+            "board_material": 2747,
+            "check_penalty": 0,
+            "global_pseudo_control": 8,
+            "hand_inventory": -170,
+            "promotion_potential": 3,
+            "raw_total": 2598,
+            "side_to_move_score": -2598
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 10,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 59,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7342,
+            "side_to_move_score": -7342
+          },
+          "R37B": {
+            "anchor_escape": 15,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 28,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7316,
+            "side_to_move_score": -7316
+          },
+          "R37C": {
+            "anchor_escape": 15,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 59,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7347,
+            "side_to_move_score": -7347
+          },
+          "V1": {
+            "anchor_escape": 10,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 28,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7311,
+            "side_to_move_score": -7311
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 10,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 59,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7342,
+            "side_to_move_score": -7342
+          },
+          "R37B": {
+            "anchor_escape": 15,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 28,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7316,
+            "side_to_move_score": -7316
+          },
+          "R37C": {
+            "anchor_escape": 15,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 59,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7347,
+            "side_to_move_score": -7347
+          },
+          "V1": {
+            "anchor_escape": 10,
+            "board_material": 5535,
+            "check_penalty": 0,
+            "global_pseudo_control": 28,
+            "hand_inventory": 1738,
+            "promotion_potential": 0,
+            "raw_total": 7311,
+            "side_to_move_score": -7311
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000008-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 3,
+          "distinct_scores": 14,
+          "legal_action_count": 36,
+          "margin_from_top": 4724,
+          "normalized_margin": 4.724,
+          "rank_percentile": 0.08333333333333333,
+          "strict_rank": 3,
+          "target_score": 2618,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 7342,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 3,
+          "distinct_scores": 10,
+          "legal_action_count": 36,
+          "margin_from_top": 4723,
+          "normalized_margin": 4.723,
+          "rank_percentile": 0.08333333333333333,
+          "strict_rank": 3,
+          "target_score": 2593,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 7316,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 3,
+          "distinct_scores": 10,
+          "legal_action_count": 36,
+          "margin_from_top": 4734,
+          "normalized_margin": 4.734,
+          "rank_percentile": 0.08333333333333333,
+          "strict_rank": 3,
+          "target_score": 2613,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 7347,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 3,
+          "distinct_scores": 16,
+          "legal_action_count": 36,
+          "margin_from_top": 4713,
+          "normalized_margin": 4.713,
+          "rank_percentile": 0.08333333333333333,
+          "strict_rank": 3,
+          "target_score": 2598,
+          "target_tie_width": 1,
+          "tie_span_high": 3,
+          "tie_span_low": 3,
+          "top_score": 7311,
+          "top_tie_width": 1
+        }
+      },
+      "move": "7g8e",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.011,
+        "anchor": 0.01
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "1a2b+",
+        "v1": "1a2b+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -1468,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2799,
+            "side_to_move_score": -2799
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -1468,
+            "check_penalty": 0,
+            "global_pseudo_control": -10,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2819,
+            "side_to_move_score": -2819
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -1468,
+            "check_penalty": 0,
+            "global_pseudo_control": -15,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2824,
+            "side_to_move_score": -2824
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -1468,
+            "check_penalty": 0,
+            "global_pseudo_control": -10,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2794,
+            "side_to_move_score": -2794
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2850,
+            "side_to_move_score": -2850
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -10,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2864,
+            "side_to_move_score": -2864
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2870,
+            "side_to_move_score": -2870
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -10,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2844,
+            "side_to_move_score": -2844
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2850,
+            "side_to_move_score": -2850
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -10,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2864,
+            "side_to_move_score": -2864
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -16,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2870,
+            "side_to_move_score": -2870
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -1468,
+            "check_penalty": -50,
+            "global_pseudo_control": -10,
+            "hand_inventory": -1321,
+            "promotion_potential": 0,
+            "raw_total": -2844,
+            "side_to_move_score": -2844
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000008-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 5,
+          "distinct_scores": 23,
+          "legal_action_count": 67,
+          "margin_from_top": 51,
+          "normalized_margin": 0.051,
+          "rank_percentile": 0.07462686567164178,
+          "strict_rank": 5,
+          "target_score": 2799,
+          "target_tie_width": 2,
+          "tie_span_high": 6,
+          "tie_span_low": 5,
+          "top_score": 2850,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 5,
+          "distinct_scores": 20,
+          "legal_action_count": 67,
+          "margin_from_top": 45,
+          "normalized_margin": 0.045,
+          "rank_percentile": 0.07462686567164178,
+          "strict_rank": 5,
+          "target_score": 2819,
+          "target_tie_width": 2,
+          "tie_span_high": 6,
+          "tie_span_low": 5,
+          "top_score": 2864,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 7,
+          "distinct_scores": 22,
+          "legal_action_count": 67,
+          "margin_from_top": 46,
+          "normalized_margin": 0.046,
+          "rank_percentile": 0.1044776119402985,
+          "strict_rank": 7,
+          "target_score": 2824,
+          "target_tie_width": 1,
+          "tie_span_high": 7,
+          "tie_span_low": 7,
+          "top_score": 2870,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 4,
+          "distinct_scores": 23,
+          "legal_action_count": 67,
+          "margin_from_top": 50,
+          "normalized_margin": 0.05,
+          "rank_percentile": 0.05970149253731343,
+          "strict_rank": 4,
+          "target_score": 2794,
+          "target_tie_width": 2,
+          "tie_span_high": 5,
+          "tie_span_low": 4,
+          "top_score": 2844,
+          "top_tie_width": 1
+        }
+      },
+      "move": "B*4e",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.001,
+        "anchor": -0.005
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": false,
+        "capture": false,
+        "checking": false,
+        "drop": true,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "B*7h",
+        "v1": "B*7h"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": 1781,
+            "check_penalty": 0,
+            "global_pseudo_control": 34,
+            "hand_inventory": 170,
+            "promotion_potential": 0,
+            "raw_total": 1975,
+            "side_to_move_score": -1975
+          },
+          "R37B": {
+            "anchor_escape": 15,
+            "board_material": 1781,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": 170,
+            "promotion_potential": 0,
+            "raw_total": 1972,
+            "side_to_move_score": -1972
+          },
+          "R37C": {
+            "anchor_escape": 15,
+            "board_material": 1781,
+            "check_penalty": 0,
+            "global_pseudo_control": 34,
+            "hand_inventory": 170,
+            "promotion_potential": 0,
+            "raw_total": 2000,
+            "side_to_move_score": -2000
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": 1781,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": 170,
+            "promotion_potential": 0,
+            "raw_total": 1947,
+            "side_to_move_score": -1947
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 41,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 2984,
+            "side_to_move_score": -2984
+          },
+          "R37B": {
+            "anchor_escape": 20,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 14,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 2982,
+            "side_to_move_score": -2982
+          },
+          "R37C": {
+            "anchor_escape": 20,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 41,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 3009,
+            "side_to_move_score": -3009
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 14,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 2957,
+            "side_to_move_score": -2957
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -5,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 41,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 2984,
+            "side_to_move_score": -2984
+          },
+          "R37B": {
+            "anchor_escape": 20,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 14,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 2982,
+            "side_to_move_score": -2982
+          },
+          "R37C": {
+            "anchor_escape": 20,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 41,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 3009,
+            "side_to_move_score": -3009
+          },
+          "V1": {
+            "anchor_escape": -5,
+            "board_material": 1842,
+            "check_penalty": 50,
+            "global_pseudo_control": 14,
+            "hand_inventory": 1056,
+            "promotion_potential": 0,
+            "raw_total": 2957,
+            "side_to_move_score": -2957
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000009-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 25,
+          "distinct_scores": 30,
+          "legal_action_count": 77,
+          "margin_from_top": 1009,
+          "normalized_margin": 1.009,
+          "rank_percentile": 0.2077922077922078,
+          "strict_rank": 16,
+          "target_score": 1975,
+          "target_tie_width": 22,
+          "tie_span_high": 37,
+          "tie_span_low": 16,
+          "top_score": 2984,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 16,
+          "distinct_scores": 23,
+          "legal_action_count": 77,
+          "margin_from_top": 1010,
+          "normalized_margin": 1.01,
+          "rank_percentile": 0.16883116883116883,
+          "strict_rank": 13,
+          "target_score": 1972,
+          "target_tie_width": 9,
+          "tie_span_high": 21,
+          "tie_span_low": 13,
+          "top_score": 2982,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 27,
+          "distinct_scores": 27,
+          "legal_action_count": 77,
+          "margin_from_top": 1009,
+          "normalized_margin": 1.009,
+          "rank_percentile": 0.2077922077922078,
+          "strict_rank": 16,
+          "target_score": 2000,
+          "target_tie_width": 24,
+          "tie_span_high": 39,
+          "tie_span_low": 16,
+          "top_score": 3009,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 16,
+          "distinct_scores": 26,
+          "legal_action_count": 77,
+          "margin_from_top": 1010,
+          "normalized_margin": 1.01,
+          "rank_percentile": 0.16883116883116883,
+          "strict_rank": 13,
+          "target_score": 1947,
+          "target_tie_width": 9,
+          "tie_span_high": 21,
+          "tie_span_low": 13,
+          "top_score": 2957,
+          "top_tie_width": 1
+        }
+      },
+      "move": "S*5d",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": -0.001,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": false,
+        "capture": false,
+        "checking": false,
+        "drop": true,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "4d3c+",
+        "v1": "4d3c+"
+      }
+    },
+    {
+      "causal_label": "ACTIVITY_DRIVEN",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 10,
+            "board_material": -2558,
+            "check_penalty": 0,
+            "global_pseudo_control": -25,
+            "hand_inventory": 340,
+            "promotion_potential": 0,
+            "raw_total": -2233,
+            "side_to_move_score": -2233
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -2558,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": 340,
+            "promotion_potential": 0,
+            "raw_total": -2251,
+            "side_to_move_score": -2251
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -2558,
+            "check_penalty": 0,
+            "global_pseudo_control": -25,
+            "hand_inventory": 340,
+            "promotion_potential": 0,
+            "raw_total": -2258,
+            "side_to_move_score": -2258
+          },
+          "V1": {
+            "anchor_escape": 10,
+            "board_material": -2558,
+            "check_penalty": 0,
+            "global_pseudo_control": -18,
+            "hand_inventory": 340,
+            "promotion_potential": 0,
+            "raw_total": -2226,
+            "side_to_move_score": -2226
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -56,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4499,
+            "side_to_move_score": -4499
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -36,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4504,
+            "side_to_move_score": -4504
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -56,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4524,
+            "side_to_move_score": -4524
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -36,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4479,
+            "side_to_move_score": -4479
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -56,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4499,
+            "side_to_move_score": -4499
+          },
+          "R37B": {
+            "anchor_escape": -20,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -36,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4504,
+            "side_to_move_score": -4504
+          },
+          "R37C": {
+            "anchor_escape": -20,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -56,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4524,
+            "side_to_move_score": -4524
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -4022,
+            "check_penalty": -50,
+            "global_pseudo_control": -36,
+            "hand_inventory": -376,
+            "promotion_potential": 0,
+            "raw_total": -4479,
+            "side_to_move_score": -4479
+          }
+        }
+      },
+      "classification": "MIXED_RANK_AND_MARGIN",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000009-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 13,
+          "distinct_scores": 13,
+          "legal_action_count": 37,
+          "margin_from_top": 2266,
+          "normalized_margin": 2.266,
+          "rank_percentile": 0.35135135135135137,
+          "strict_rank": 13,
+          "target_score": 2233,
+          "target_tie_width": 6,
+          "tie_span_high": 18,
+          "tie_span_low": 13,
+          "top_score": 4499,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 27,
+          "distinct_scores": 12,
+          "legal_action_count": 37,
+          "margin_from_top": 2253,
+          "normalized_margin": 2.253,
+          "rank_percentile": 0.7027027027027027,
+          "strict_rank": 26,
+          "target_score": 2251,
+          "target_tie_width": 8,
+          "tie_span_high": 33,
+          "tie_span_low": 26,
+          "top_score": 4504,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 8,
+          "distinct_scores": 12,
+          "legal_action_count": 37,
+          "margin_from_top": 2266,
+          "normalized_margin": 2.266,
+          "rank_percentile": 0.21621621621621623,
+          "strict_rank": 8,
+          "target_score": 2258,
+          "target_tie_width": 7,
+          "tie_span_high": 14,
+          "tie_span_low": 8,
+          "top_score": 4524,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 31,
+          "distinct_scores": 12,
+          "legal_action_count": 37,
+          "margin_from_top": 2253,
+          "normalized_margin": 2.253,
+          "rank_percentile": 0.8108108108108109,
+          "strict_rank": 30,
+          "target_score": 2226,
+          "target_tie_width": 6,
+          "tie_span_high": 35,
+          "tie_span_low": 30,
+          "top_score": 4479,
+          "top_tie_width": 1
+        }
+      },
+      "move": "5d6e",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.013,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "3c7g+",
+        "v1": "3c7g+"
+      }
+    },
+    {
+      "causal_label": "UNRESOLVED",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 5,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2425,
+            "side_to_move_score": -2425
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2430,
+            "side_to_move_score": -2430
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 5,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2435,
+            "side_to_move_score": -2435
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2420,
+            "side_to_move_score": -2420
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 5,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2425,
+            "side_to_move_score": -2425
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2430,
+            "side_to_move_score": -2430
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 5,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2435,
+            "side_to_move_score": -2435
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2420,
+            "side_to_move_score": -2420
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": -10,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 5,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2425,
+            "side_to_move_score": -2425
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2430,
+            "side_to_move_score": -2430
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 5,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2435,
+            "side_to_move_score": -2435
+          },
+          "V1": {
+            "anchor_escape": -10,
+            "board_material": 1279,
+            "check_penalty": 0,
+            "global_pseudo_control": 0,
+            "hand_inventory": 1151,
+            "promotion_potential": 0,
+            "raw_total": 2420,
+            "side_to_move_score": -2420
+          }
+        }
+      },
+      "classification": "UNCHANGED_OR_IMPROVED",
+      "event_index": 8,
+      "game_id": "iteration-000086-game-000010-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 1,
+          "distinct_scores": 9,
+          "legal_action_count": 27,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.037037037037037035,
+          "strict_rank": 1,
+          "target_score": 2425,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2425,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 1,
+          "distinct_scores": 9,
+          "legal_action_count": 27,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.037037037037037035,
+          "strict_rank": 1,
+          "target_score": 2430,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2430,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 1,
+          "distinct_scores": 9,
+          "legal_action_count": 27,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.037037037037037035,
+          "strict_rank": 1,
+          "target_score": 2435,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2435,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 1,
+          "distinct_scores": 12,
+          "legal_action_count": 27,
+          "margin_from_top": 0,
+          "normalized_margin": 0.0,
+          "rank_percentile": 0.037037037037037035,
+          "strict_rank": 1,
+          "target_score": 2420,
+          "target_tie_width": 1,
+          "tie_span_high": 1,
+          "tie_span_low": 1,
+          "top_score": 2420,
+          "top_tie_width": 1
+        }
+      },
+      "move": "6g6f",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.0,
+        "anchor": 0.0
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": false,
+        "board": true,
+        "capture": true,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "6g6f",
+        "v1": "6g6f"
+      }
+    },
+    {
+      "causal_label": "ANCHOR_DRIVEN",
+      "child_decompositions": {
+        "target": {
+          "R37A": {
+            "anchor_escape": 5,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": -7,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -361,
+            "side_to_move_score": -361
+          },
+          "R37B": {
+            "anchor_escape": 0,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -353,
+            "side_to_move_score": -353
+          },
+          "R37C": {
+            "anchor_escape": 0,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": -7,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -366,
+            "side_to_move_score": -366
+          },
+          "V1": {
+            "anchor_escape": 5,
+            "board_material": -189,
+            "check_penalty": 0,
+            "global_pseudo_control": 6,
+            "hand_inventory": -170,
+            "promotion_potential": 0,
+            "raw_total": -348,
+            "side_to_move_score": -348
+          }
+        },
+        "top_r37c": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -30,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1416,
+            "side_to_move_score": -1416
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -12,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1413,
+            "side_to_move_score": -1413
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -30,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1431,
+            "side_to_move_score": -1431
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -12,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1398,
+            "side_to_move_score": -1398
+          }
+        },
+        "top_v1": {
+          "R37A": {
+            "anchor_escape": 0,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -30,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1416,
+            "side_to_move_score": -1416
+          },
+          "R37B": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -12,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1413,
+            "side_to_move_score": -1413
+          },
+          "R37C": {
+            "anchor_escape": -15,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -30,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1431,
+            "side_to_move_score": -1431
+          },
+          "V1": {
+            "anchor_escape": 0,
+            "board_material": -1046,
+            "check_penalty": 0,
+            "global_pseudo_control": -12,
+            "hand_inventory": -340,
+            "promotion_potential": 0,
+            "raw_total": -1398,
+            "side_to_move_score": -1398
+          }
+        }
+      },
+      "classification": "MATERIAL_VALUE_WORSENING",
+      "event_index": 9,
+      "game_id": "iteration-000086-game-000010-ply12",
+      "metrics": {
+        "R37A": {
+          "deterministic_rank": 5,
+          "distinct_scores": 15,
+          "legal_action_count": 38,
+          "margin_from_top": 1055,
+          "normalized_margin": 1.055,
+          "rank_percentile": 0.10526315789473684,
+          "strict_rank": 4,
+          "target_score": 361,
+          "target_tie_width": 2,
+          "tie_span_high": 5,
+          "tie_span_low": 4,
+          "top_score": 1416,
+          "top_tie_width": 1
+        },
+        "R37B": {
+          "deterministic_rank": 30,
+          "distinct_scores": 9,
+          "legal_action_count": 38,
+          "margin_from_top": 1060,
+          "normalized_margin": 1.06,
+          "rank_percentile": 0.631578947368421,
+          "strict_rank": 24,
+          "target_score": 353,
+          "target_tie_width": 14,
+          "tie_span_high": 37,
+          "tie_span_low": 24,
+          "top_score": 1413,
+          "top_tie_width": 1
+        },
+        "R37C": {
+          "deterministic_rank": 20,
+          "distinct_scores": 13,
+          "legal_action_count": 38,
+          "margin_from_top": 1065,
+          "normalized_margin": 1.065,
+          "rank_percentile": 0.3684210526315789,
+          "strict_rank": 14,
+          "target_score": 366,
+          "target_tie_width": 15,
+          "tie_span_high": 28,
+          "tie_span_low": 14,
+          "top_score": 1431,
+          "top_tie_width": 1
+        },
+        "V1": {
+          "deterministic_rank": 5,
+          "distinct_scores": 12,
+          "legal_action_count": 38,
+          "margin_from_top": 1050,
+          "normalized_margin": 1.05,
+          "rank_percentile": 0.10526315789473684,
+          "strict_rank": 4,
+          "target_score": 348,
+          "target_tie_width": 2,
+          "tie_span_high": 5,
+          "tie_span_low": 4,
+          "top_score": 1398,
+          "top_tie_width": 1
+        }
+      },
+      "move": "5b6c",
+      "normalized_target_vs_v1_top_margin_effect": {
+        "activity": 0.005,
+        "anchor": 0.01
+      },
+      "score_additivity": true,
+      "strata": {
+        "anchor_actor": true,
+        "board": true,
+        "capture": false,
+        "checking": false,
+        "drop": false,
+        "promotion": false
+      },
+      "top_children": {
+        "r37c": "4d7g+",
+        "v1": "4d7g+"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}
