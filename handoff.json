@@ -5,18 +5,21 @@
     "repository": "https://github.com/WD-nanophotonics/agent-relay-read-wake.git",
     "sha": "b9d4b195b888679a3c3ef0694eb9194dfc190549"
   },
-  "created_at": 1788277279,
-  "generation": 1,
+  "created_at": 1788284044,
+  "generation": 2,
   "generic": {
     "business_candidate_sha": "d50aff9b1dcbb11c1ef0f2988517bb48e4e8ce1b",
     "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100",
     "repository": "https://github.com/WD-nanophotonics/GenericChess.git",
     "sandbox_sha": "8029c5a86e1f2d514b9692d3f735a63248a15379"
   },
-  "owner": null,
+  "owner": {
+    "host_id": "standby",
+    "machine_id": "18a2a802fb9049548b36d189ab6e10e6"
+  },
   "schema": "generic-chess-handoff-v1",
-  "state": "RELEASED",
-  "target_host_id": "standby",
+  "state": "CLAIMED",
+  "target_host_id": null,
   "workflow": {
     "chat_control": {
       "GENERICCHESS_CANDIDATE_SHA": "NONE",
