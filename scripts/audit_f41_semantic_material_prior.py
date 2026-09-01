@@ -37,6 +37,23 @@ def _json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def _full_pytest_evidence() -> dict[str, Any]:
+    path = OUT / "f41_full_pytest.json"
+    if not path.exists():
+        return {"status": "NOT_RUN", "collected": None, "passed": None, "failed": None, "failures": []}
+    value = json.loads(path.read_text(encoding="utf-8"))
+    failures = value.get("failures", [])
+    if not isinstance(failures, list) or any(not isinstance(item, str) for item in failures):
+        raise ValueError("f41_full_pytest.json failures must be a list of node ids")
+    return {
+        "status": value.get("status", "UNKNOWN"),
+        "collected": value.get("collected"),
+        "passed": value.get("passed"),
+        "failed": value.get("failed"),
+        "failures": failures,
+    }
+
+
 def _write_report(result: dict) -> None:
     def sha(command: list[str]) -> str:
         return subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
@@ -54,22 +71,23 @@ def _write_report(result: dict) -> None:
         "",
         "## Source coverage",
         "",
-        "| Ruleset | Type | Legacy destinations | Final executable semantic destinations | Ordinary patterns | Conditional patterns | Omitted |",
-        "|---|---:|---:|---:|---:|---:|---:|",
+        "| Ruleset | Type | Legacy destinations | Final executable semantic destinations | Semantic-only | Legacy-only | Ordinary patterns | Conditional patterns |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for name, data in (("Western Chess", western), ("Standard Shogi", shogi)):
         for row in data["source_coverage"]["rows"]:
-            lines.append(f"| {name} | {row['type']} | {row['legacy_destination_count']} | {row['semantic_destination_count']} | {row['ordinary_pattern_count']} | {row['conditional_pattern_count']} | {len(row['omitted_destinations'])} |")
+            lines.append(f"| {name} | {row['type']} | {row['legacy_destination_count']} | {row['semantic_destination_count']} | {len(row['semantic_only_destinations'])} | {len(row['legacy_only_destinations'])} | {row['ordinary_pattern_count']} | {row['conditional_pattern_count']} |")
     lines += [
         "",
         "## Findings",
         "",
         "- Western cause: canonical Pawn `PieceType.movement_atoms` is empty; Pawn movement is present in semantic actions, so legacy atom normalization produced the F40 floor collapse.",
         "- F41 ordinary capability source uses only compiled leap/ray patterns with one source→target move, no state/slot/postcondition; conditional patterns are recorded separately.",
+        "- Source orientation is semantic targets minus legacy targets; legacy-only coverage is retained separately. Western Pawn exposes its semantic-only movement coverage.",
         f"- Western current/candidate Pawn: `{western['current_profile']['P']['raw']}` → `{western['candidate_profile']['values']['P']['raw']}` raw; board `{western['current_profile']['P']['board']}` → `{western['candidate_profile']['values']['P']['board']}`.",
         f"- Western candidate Pawn is positive and avoids the floor, but band gate is `{result['western_gate']['bands_pass']}`; normalized ratios: `{json.dumps(result['western_gate']['normalized_by_pawn'], sort_keys=True)}`.",
-        f"- Standard Shogi material positive control cosine: `{result['shogi_gate']['board_value_cosine_vs_current']}`; drop independence: `{result['shogi_gate']['drop_independence']}`.",
-        "- Legacy compatibility: pure atom controls have exact destination coverage and raw deltas ≤1e-9; mixed leap/ray controls are reported without altering production code.",
+        f"- Standard Shogi gate: cosine `{result['shogi_gate']['board_value_cosine_vs_current']}`, Spearman `{result['shogi_gate']['spearman_vs_current']}`, pairwise ordering `{result['shogi_gate']['pairwise_ordering_vs_current']}`, hand/board ratios `{result['shogi_gate']['hand_board_ratio_range']}`, pass `{result['shogi_gate']['pass']}`; drop independence remains `{result['shogi_gate']['drop_independence']}`.",
+        f"- Legacy compatibility aggregate: `{result['legacy_compatibility']['aggregate_gate']['pass']}` across `{', '.join(result['legacy_compatibility']['aggregate_gate']['required_classes'])}`; leap, ray, and hybrid controls are all executable gates, with hybrid raw deltas retained as diagnostic evidence.",
         "- Drop deployment: `D = drop_freedom * drop_mobility / max(1e-12, all_square_mobility)`; hand candidate is `round(board * hand_weight * D / median_positive_D)` for droppable base types.",
         f"- Metamorphic contracts: Western `{result['metamorphic']['western_chess']['all_pass']}`, Standard Shogi `{result['metamorphic']['standard_shogi']['all_pass']}`.",
         "- Static learning span: no new learning capacity; current board/hand weights remain the only static material parameters.",
@@ -79,7 +97,7 @@ def _write_report(result: dict) -> None:
         f"- Classification: `{result['classification']}`",
         f"- F42 boundary: `{result['next_boundary']}`",
         f"- Flags: `{json.dumps(result['flags'], sort_keys=True)}`",
-        "- Focused tests: 5 passed at audit generation; full regression is a required final workflow gate.",
+        f"- Focused tests: 5 passed at audit generation; fresh full pytest: `{result['full_pytest']['status']}` (collected `{result['full_pytest']['collected']}`, passed `{result['full_pytest']['passed']}`, failed `{result['full_pytest']['failed']}`); failures: `{json.dumps(result['full_pytest']['failures'])}`.",
         "- Historical failure nodes retained exactly: F13 (4), F14 (2), F21 (6), F24F (1); no historical failure was rewritten or promoted.",
     ]
     (OUT / "f41_closeout_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -293,7 +311,8 @@ def _source_coverage(compiled: Any) -> dict:
         ordinary_patterns = [p for p in compiled.ir.patterns if tid in p.type_ids and _ordinary_pattern(p)]
         conditional_patterns = [p for p in compiled.ir.patterns if tid in p.type_ids and _capability_pattern(p) and not _ordinary_pattern(p)]
         semantic_targets = {target for by_source in semantic[0].values() for target, _path in by_source}
-        omitted = sorted(legacy_targets - semantic_targets)
+        semantic_only = sorted(semantic_targets - legacy_targets)
+        legacy_only = sorted(legacy_targets - semantic_targets)
         source_omission = legacy_atoms == 0 and semantic_targets
         rows.append({"type": tid, "legacy_atom_count": legacy_atoms,
                      "legacy_destination_count": len(legacy_targets),
@@ -302,7 +321,11 @@ def _source_coverage(compiled: Any) -> dict:
                      "ordinary_pattern_count": len(ordinary_patterns),
                      "conditional_pattern_count": len(conditional_patterns),
                      "conditional_pattern_ids": [p.pattern_id for p in conditional_patterns],
-                     "omitted_destinations": omitted,
+                     "semantic_only_destinations": semantic_only,
+                     "legacy_only_destinations": legacy_only,
+                     "semantic_only_destination_count": len(semantic_only),
+                     "legacy_only_destination_count": len(legacy_only),
+                     "omitted_destinations": semantic_only,
                      "semantic_movement_source_omission": bool(source_omission),
                      "semantic_source_coverage": sum(bool(x) for x in semantic[0].values()) / (n * n) if n else 0.0})
     return {"rows": rows, "omission_types": [r["type"] for r in rows if r["semantic_movement_source_omission"]]}
@@ -324,6 +347,52 @@ def _legacy_targets(n: int, source: int, atom: Any) -> tuple[int, ...]:
         result.append(r * n + f)
         steps += 1
     return tuple(result)
+
+
+def _rank(values: list[int]) -> list[float]:
+    ordered = sorted(enumerate(values), key=lambda item: item[1])
+    ranks = [0.0] * len(values)
+    index = 0
+    while index < len(ordered):
+        end = index + 1
+        while end < len(ordered) and ordered[end][1] == ordered[index][1]:
+            end += 1
+        average = (index + 1 + end) / 2.0
+        for position in range(index, end):
+            ranks[ordered[position][0]] = average
+        index = end
+    return ranks
+
+
+def _spearman(left: list[int], right: list[int]) -> float:
+    if len(left) != len(right) or not left:
+        return 0.0
+    a, b = _rank(left), _rank(right)
+    mean_a, mean_b = sum(a) / len(a), sum(b) / len(b)
+    numerator = sum((x - mean_a) * (y - mean_b) for x, y in zip(a, b))
+    denominator = math.sqrt(sum((x - mean_a) ** 2 for x in a) * sum((y - mean_b) ** 2 for y in b))
+    return numerator / denominator if denominator else 1.0 if a == b else 0.0
+
+
+def _pairwise_ordering(left: list[int], right: list[int]) -> float:
+    comparisons = []
+    for index in range(len(left)):
+        for other in range(index + 1, len(left)):
+            left_sign = (left[index] > left[other]) - (left[index] < left[other])
+            right_sign = (right[index] > right[other]) - (right[index] < right[other])
+            comparisons.append(left_sign == right_sign)
+    return sum(comparisons) / len(comparisons) if comparisons else 1.0
+
+
+def _atom_class(piece_type: Any) -> str:
+    shapes = {_legacy_atom_shape(atom)[0] for atom in piece_type.movement_atoms}
+    if shapes == {"leap"}:
+        return "leap-only"
+    if shapes == {"ray"}:
+        return "ray-only"
+    if shapes == {"leap", "ray"}:
+        return "hybrid leap/ray"
+    return "none"
 
 
 def _profile_summary(compiled: Any, semantic: dict[str, dict], config: EvaluationConfig) -> dict:
@@ -402,13 +471,34 @@ def audit() -> dict:
         for row, pt in zip(coverage["rows"], legacy.piece_types):
             if row["legacy_atom_count"] == 0:
                 continue
-            pure = len({_legacy_atom_shape(atom)[0] for atom in pt.movement_atoms}) <= 1
+            atom_class = _atom_class(pt)
             raw_delta = abs(semantic[pt.type_id]["raw_capability_score"] - current_values[pt.type_id]["raw"])
-            compatibility_rows.append({"type": pt.type_id, "pure_atom_rule": pure,
-                                       "destination_coverage_exact": not row["omitted_destinations"] and row["semantic_destination_count"] == row["legacy_destination_count"],
-                                       "raw_delta": raw_delta, "raw_exact": (raw_delta <= 1e-9) if pure else None})
-        final[name]["legacy_compatibility"] = {"rows": compatibility_rows,
-            "pure_atom_controls_pass": all(r["destination_coverage_exact"] and r["raw_exact"] for r in compatibility_rows if r["pure_atom_rule"])}
+            edge_exact = not row["semantic_only_destinations"] and not row["legacy_only_destinations"]
+            raw_exact = raw_delta <= 1e-9
+            compatibility_rows.append({
+                "type": pt.type_id,
+                "atom_class": atom_class,
+                "pure_atom_rule": atom_class in ("leap-only", "ray-only"),
+                "destination_coverage_exact": edge_exact,
+                "source_target_coverage_exact": edge_exact,
+                "raw_delta": raw_delta,
+                "raw_finite": math.isfinite(raw_delta),
+                "raw_exact": raw_exact if atom_class in ("leap-only", "ray-only") else None,
+                "control_pass": edge_exact and (raw_exact if atom_class in ("leap-only", "ray-only") else math.isfinite(raw_delta)),
+            })
+        class_controls = {}
+        for atom_class in ("leap-only", "ray-only", "hybrid leap/ray"):
+            rows = [row for row in compatibility_rows if row["atom_class"] == atom_class]
+            class_controls[atom_class] = {
+                "present": bool(rows),
+                "rows": rows,
+                "pass": bool(rows) and all(row["control_pass"] for row in rows),
+            }
+        final[name]["legacy_compatibility"] = {
+            "rows": compatibility_rows,
+            "class_controls": class_controls,
+            "pure_atom_controls_pass": all(row["control_pass"] for row in compatibility_rows if row["pure_atom_rule"]),
+        }
         final[name]["drop"] = _drop_rows(compiled, semantic, {k: v["board"] for k, v in profile["values"].items()}, config)
         final[name]["metamorphic"] = _metamorphic(final[name]["drop"], compiled, semantic, config)
 
@@ -425,27 +515,47 @@ def audit() -> dict:
     b = [shogi_candidate[tid]["board"] for tid in common]
     dot = sum(x * y for x, y in zip(a, b))
     cosine = dot / max(1e-12, math.sqrt(sum(x*x for x in a) * sum(y*y for y in b))) if a else 0.0
-    shogi_material_gate = cosine >= 0.95
-    shogi_drop_gate = shogi["drop"]["drop_signal_independent"] and all(
-        row["hand_board_ratio"] is not None and 0.5 <= row["hand_board_ratio"] <= 2.0
-        for row in shogi["drop"]["rows"] if row["allowed_squares"] > 0
+    spearman = _spearman(a, b)
+    pairwise_ordering = _pairwise_ordering(a, b)
+    hand_ratios = [row["hand_board_ratio"] for row in shogi["drop"]["rows"] if row["allowed_squares"] > 0 and row["hand_board_ratio"] is not None]
+    hand_ratio_gate = bool(hand_ratios) and all(0.8 <= ratio <= 1.0 for ratio in hand_ratios)
+    shogi_material_gate = cosine >= 0.95 and spearman >= 0.90 and pairwise_ordering >= 0.90 and hand_ratio_gate
+    shogi_drop_gate = hand_ratio_gate
+    shogi_gate = shogi_material_gate
+    required_classes = ["leap-only", "ray-only", "hybrid leap/ray"]
+    compatibility_classes = {
+        atom_class: any(final[name]["legacy_compatibility"]["class_controls"][atom_class]["present"] for name in final)
+        for atom_class in required_classes
+    }
+    compatibility_pass = all(
+        compatibility_classes[atom_class]
+        and all(final[name]["legacy_compatibility"]["class_controls"][atom_class]["pass"]
+                for name in final if final[name]["legacy_compatibility"]["class_controls"][atom_class]["present"])
+        for atom_class in required_classes
     )
-    shogi_gate = shogi_material_gate and shogi_drop_gate
-    classification = "SEMANTIC_MATERIAL_AND_HAND_PRIOR_SUPPORTED" if western_gate and shogi_gate else "SEMANTIC_MATERIAL_PRIOR_SUPPORTED_DROP_PRIOR_NOT_SUPPORTED" if western_gate and shogi_material_gate else "SEMANTIC_MATERIAL_PRIOR_CROSS_RULESET_FAILURE" if shogi_material_gate else "SEMANTIC_MATERIAL_PRIOR_INSUFFICIENT"
+    # Western band failure means the semantic material prior is not sufficient,
+    # even when the Shogi positive control itself passes its complete gate.
+    if western_gate and shogi_gate and shogi["drop"]["drop_signal_independent"]:
+        classification = "SEMANTIC_MATERIAL_AND_HAND_PRIOR_SUPPORTED"
+    elif western_gate and shogi_gate:
+        classification = "SEMANTIC_MATERIAL_PRIOR_SUPPORTED_DROP_PRIOR_NOT_SUPPORTED"
+    else:
+        classification = "SEMANTIC_MATERIAL_PRIOR_INSUFFICIENT"
     boundary = {"SEMANTIC_MATERIAL_AND_HAND_PRIOR_SUPPORTED": "F42_SEMANTIC_MATERIAL_AND_HAND_PRIOR_INTEGRATION_PROTOTYPE", "SEMANTIC_MATERIAL_PRIOR_SUPPORTED_DROP_PRIOR_NOT_SUPPORTED": "F42_SEMANTIC_MATERIAL_PRIOR_INTEGRATION_PROTOTYPE", "SEMANTIC_MATERIAL_PRIOR_CROSS_RULESET_FAILURE": "F42_SEMANTIC_MATERIAL_PRIOR_COMPATIBILITY_DIAGNOSIS", "SEMANTIC_MATERIAL_PRIOR_INSUFFICIENT": "F42_SEMANTIC_CAPABILITY_PRIOR_DIAGNOSIS"}[classification]
     source = {"western_chess": western["source_coverage"], "standard_shogi": shogi["source_coverage"]}
     outputs = {
         "schema_version": 1, "status": "PASS", "kind": "F41_SEMANTIC_MATERIAL_PRIOR_AUDIT",
         "production_changed": False, "source_coverage": source,
         "semantic_profiles": {name: final[name] for name in final},
-        "western_gate": {"pawn_positive_no_floor_collapse": p > 1, "normalized_by_pawn": ratios, "bands_pass": western_gate},
-        "shogi_gate": {"board_value_cosine_vs_current": cosine, "material_positive_control": shogi_material_gate, "drop_independence": shogi["drop"]["drop_signal_independent"], "drop_hand_gate": shogi_drop_gate, "pass": shogi_gate},
+        "western_gate": {"pawn_positive_no_floor_collapse": p > 1, "normalized_by_pawn": ratios, "bands_pass": western_gate, "bands": {"P": [1, 1], "N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4, 6], "Q": [7.5, 11]}},
+        "shogi_gate": {"board_value_cosine_vs_current": cosine, "spearman_vs_current": spearman, "pairwise_ordering_vs_current": pairwise_ordering, "hand_board_ratio_range": [min(hand_ratios), max(hand_ratios)] if hand_ratios else None, "hand_board_ratios": hand_ratios, "material_positive_control": shogi_material_gate, "drop_independence": shogi["drop"]["drop_signal_independent"], "drop_hand_gate": shogi_drop_gate, "pass": shogi_gate, "thresholds": {"cosine": 0.95, "spearman": 0.90, "pairwise_ordering": 0.90, "hand_board_ratio": [0.8, 1.0]}},
         "deployment_and_hand": {name: final[name]["drop"] for name in final},
         "metamorphic": {name: final[name]["metamorphic"] for name in final},
         "static_learning_span": {"status": "PASS", "source": "tests/fixtures/f40_learning_leverage_ledger.json", "new_learning_capacity": False, "basis": "current board/hand weights only"},
-        "legacy_compatibility": {"status": "PASS" if all(final[name]["legacy_compatibility"]["pure_atom_controls_pass"] for name in final) else "FAIL", "control": "compiled legacy patterns and geometry are the same final-IR source for pure atom rules; mixed leap/ray controls are reported separately", "rulesets": {name: final[name]["legacy_compatibility"] for name in final}},
+        "legacy_compatibility": {"status": "PASS" if compatibility_pass else "FAIL", "control": "compiled legacy patterns and geometry are the same final-IR source; all leap-only, ray-only, and hybrid leap/ray classes are executable compatibility gates", "aggregate_gate": {"required_classes": required_classes, "covered_classes": [name for name, present in compatibility_classes.items() if present], "class_coverage": compatibility_classes, "pass": compatibility_pass}, "rulesets": {name: final[name]["legacy_compatibility"] for name in final}},
         "classification": classification, "next_boundary": boundary,
-        "flags": {"F40_MATERIAL_FEATURE_GAP_CONSUMED": True, "SEMANTIC_MOVEMENT_SOURCE_COVERAGE_AUDITED": True, "SEMANTIC_ANALYZER_LEGACY_COMPATIBLE": all(final[name]["legacy_compatibility"]["pure_atom_controls_pass"] for name in final), "WESTERN_MATERIAL_PRIOR_RETEST_COMPLETE": western_gate, "STANDARD_SHOGI_MATERIAL_POSITIVE_CONTROL_COMPLETE": shogi_material_gate, "DROP_SIGNAL_INDEPENDENCE_AUDITED": True, "STATIC_LEARNING_SPAN_AUDITED": True, "NEXT_SEMANTIC_PROFILE_BOUNDARY_SELECTED": True},
+        "full_pytest": _full_pytest_evidence(),
+        "flags": {"F40_MATERIAL_FEATURE_GAP_CONSUMED": True, "SEMANTIC_MOVEMENT_SOURCE_COVERAGE_AUDITED": True, "SEMANTIC_ANALYZER_LEGACY_COMPATIBLE": compatibility_pass, "WESTERN_MATERIAL_PRIOR_RETEST_COMPLETE": western_gate, "STANDARD_SHOGI_MATERIAL_POSITIVE_CONTROL_COMPLETE": shogi_material_gate, "DROP_SIGNAL_INDEPENDENCE_AUDITED": True, "STATIC_LEARNING_SPAN_AUDITED": True, "NEXT_SEMANTIC_PROFILE_BOUNDARY_SELECTED": True},
     }
     _json(OUT / "f41_semantic_source_coverage.json", source)
     _json(OUT / "f41_semantic_material_prior.json", {name: final[name] for name in final})
