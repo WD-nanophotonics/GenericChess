@@ -1,0 +1,197 @@
+{
+  "MEANINGFUL_RULE_SIGNAL_UTILIZATION_GAP": true,
+  "drop_information": {
+    "DROP_INFORMATION_COMPUTED_BUT_NOT_UTILIZED": true,
+    "hand_derivation": "round(board_value * EvaluationConfig.hand_weight), then upper clamp",
+    "per_type_rows": [
+      {
+        "board": 189,
+        "drop_freedom": 0.8888888888888888,
+        "drop_mobility": 1.0,
+        "hand": 170,
+        "hand_board_ratio": 0.8994708994708994,
+        "type": "P"
+      },
+      {
+        "board": 546,
+        "drop_freedom": 0.8888888888888888,
+        "drop_mobility": 4.5,
+        "hand": 491,
+        "hand_board_ratio": 0.8992673992673993,
+        "type": "L"
+      },
+      {
+        "board": 281,
+        "drop_freedom": 0.7777777777777778,
+        "drop_mobility": 1.7777777777777777,
+        "hand": 253,
+        "hand_board_ratio": 0.900355871886121,
+        "type": "N"
+      },
+      {
+        "board": 796,
+        "drop_freedom": 1.0,
+        "drop_mobility": 4.049382716049383,
+        "hand": 716,
+        "hand_board_ratio": 0.8994974874371859,
+        "type": "S"
+      },
+      {
+        "board": 1000,
+        "drop_freedom": 1.0,
+        "drop_mobility": 5.135802469135802,
+        "hand": 900,
+        "hand_board_ratio": 0.9,
+        "type": "G"
+      },
+      {
+        "board": 1468,
+        "drop_freedom": 1.0,
+        "drop_mobility": 10.074074074074074,
+        "hand": 1321,
+        "hand_board_ratio": 0.8998637602179836,
+        "type": "B"
+      },
+      {
+        "board": 2120,
+        "drop_freedom": 1.0,
+        "drop_mobility": 16.0,
+        "hand": 1908,
+        "hand_board_ratio": 0.9,
+        "type": "R"
+      }
+    ]
+  },
+  "ledger": [
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": true,
+      "COMPILED_INTO_NATIVE_EVALUATION": "only through board scalar",
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": false,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": false,
+      "UNIFORM_FACTOR_ERASES_VARIATION": false,
+      "USED_BY_PYTHON_EVALUATOR": "only through board scalar",
+      "USED_IN_BOARD_PRIOR": true,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "movement_density_capability",
+      "source": "analyzer.build_movement_capability"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": true,
+      "COMPILED_INTO_NATIVE_EVALUATION": "only through board scalar",
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": false,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": false,
+      "UNIFORM_FACTOR_ERASES_VARIATION": false,
+      "USED_BY_PYTHON_EVALUATOR": "only through board scalar",
+      "USED_IN_BOARD_PRIOR": true,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "coverage",
+      "source": "analyzer._coverage_ratio"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": true,
+      "COMPILED_INTO_NATIVE_EVALUATION": "only through board scalar",
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": false,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": false,
+      "UNIFORM_FACTOR_ERASES_VARIATION": false,
+      "USED_BY_PYTHON_EVALUATOR": "only through board scalar",
+      "USED_IN_BOARD_PRIOR": true,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "reachability_and_path",
+      "source": "analyzer.graph_metrics"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": false,
+      "COMPILED_INTO_NATIVE_EVALUATION": false,
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": true,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": true,
+      "UNIFORM_FACTOR_ERASES_VARIATION": true,
+      "USED_BY_PYTHON_EVALUATOR": false,
+      "USED_IN_BOARD_PRIOR": false,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "drop_freedom",
+      "source": "profile._drop_profile"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": false,
+      "COMPILED_INTO_NATIVE_EVALUATION": false,
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": true,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": true,
+      "UNIFORM_FACTOR_ERASES_VARIATION": true,
+      "USED_BY_PYTHON_EVALUATOR": false,
+      "USED_IN_BOARD_PRIOR": false,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "drop_mobility",
+      "source": "profile._drop_profile"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": false,
+      "COMPILED_INTO_NATIVE_EVALUATION": true,
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": false,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": true,
+      "UNIFORM_FACTOR_ERASES_VARIATION": false,
+      "USED_BY_PYTHON_EVALUATOR": true,
+      "USED_IN_BOARD_PRIOR": false,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": true,
+      "signal": "promotion_targets_and_zones",
+      "source": "profile.build_ruleset_profile + evaluator._promotion_bonus"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": false,
+      "COLLAPSED_BY_NORMALIZATION": false,
+      "COMPILED_INTO_NATIVE_EVALUATION": false,
+      "COMPUTED": "per position",
+      "COMPUTED_BUT_UNUSED": false,
+      "SOURCE_RULE_SEMANTIC": true,
+      "STORED": false,
+      "UNIFORM_FACTOR_ERASES_VARIATION": false,
+      "USED_BY_PYTHON_EVALUATOR": true,
+      "USED_IN_BOARD_PRIOR": false,
+      "USED_IN_HAND_PRIOR": false,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "anchor_escape_structure",
+      "source": "evaluator._anchor_escape"
+    },
+    {
+      "AVAILABLE_TO_LEARNING": true,
+      "COLLAPSED_BY_NORMALIZATION": false,
+      "COMPILED_INTO_NATIVE_EVALUATION": true,
+      "COMPUTED": true,
+      "COMPUTED_BUT_UNUSED": false,
+      "SOURCE_RULE_SEMANTIC": false,
+      "STORED": true,
+      "UNIFORM_FACTOR_ERASES_VARIATION": true,
+      "USED_BY_PYTHON_EVALUATOR": true,
+      "USED_IN_BOARD_PRIOR": false,
+      "USED_IN_HAND_PRIOR": true,
+      "USED_IN_PROMOTION_PRIOR": false,
+      "signal": "hand_weight",
+      "source": "EvaluationConfig.hand_weight"
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}

@@ -1,0 +1,26 @@
+{
+  "MATERIAL_ONLY_LEARNING_CAPACITY_LOW_LEVERAGE": true,
+  "current_learnable_parameter_basis": {
+    "board_weights": "one per non-anchor current type",
+    "hand_weights": "one per non-anchor base type",
+    "other": [
+      "global normalization scale is derived, not an independent learned feature",
+      "no bias or position-dependent feature weight"
+    ]
+  },
+  "historical_authorities": {
+    "phase_1_5": "clean paired arena did not reproduce positive strength; updates had L2 about 23\u201349",
+    "phase_1_6": "parameter updates were real; decision flip rate roughly 0.2\u20132.9%",
+    "phase_1_7": "learned directions were low leverage while artificial material perturbations had observable leverage",
+    "phase_1_8": "Standard-Shogi Gen0 material prior close to human reference; mean global-scale update-energy fraction about 0.531"
+  },
+  "not_learnable_currently": [
+    "position-dependent realized activity",
+    "anchor-local structure/control",
+    "promotion context beyond fixed material values",
+    "drop context beyond scalar hand weights",
+    "coverage/reachability/path properties independently of their collapsed material scalar"
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}

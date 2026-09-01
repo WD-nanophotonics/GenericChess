@@ -1,0 +1,26 @@
+{
+  "COMPILED_SEMANTIC_RESULTS_UNDERCONSUMED_BY_PRODUCT_SEARCH": true,
+  "SECOND_RULE_COMPILER_REQUIRED": false,
+  "compile_once": [
+    "movement and semantic rule tables",
+    "drop/promotion masks",
+    "rule-derived board/hand/promotion values when native evaluation is explicitly compiled"
+  ],
+  "flow": [
+    "RuleSet -> rules.compiler.compile_ruleset_for_execution -> CompiledRuleSet geometry/drop/promotion tables",
+    "CompiledRuleSet -> native.compiler.build_compile_payload -> native rule capsule",
+    "RuleSetEvaluationProfile -> native.compiler.compile_native_evaluation -> board/hand/promotion native evaluation tables",
+    "native.engine.NativeSearchEngine -> experimental native iterative search",
+    "ai.alphabeta.player.AlphaBetaPlayer -> Python run_root_search production backend; native semantic legality provider may be used"
+  ],
+  "native_capability_gap": [
+    "NativeSearchEngine rejects nonzero qsearch limits",
+    "NativeSearchEngine is explicitly not the production SearchBackend"
+  ],
+  "product_python_hot_path": [
+    "AlphaBetaPlayer constructs Evaluator and calls Python run_root_search",
+    "Python AlphaBeta retains qsearch"
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}

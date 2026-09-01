@@ -1,0 +1,838 @@
+{
+  "profiles": {
+    "standard_shogi": {
+      "CURRENT_PROFILE_EXACT_RECOMPOSITION": true,
+      "config": {
+        "hand_weight": 0.9,
+        "max_static_eval": 10000000,
+        "normal_piece_median_value": 1000
+      },
+      "fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+      "median_non_anchor_value": 1000,
+      "median_raw": 4.709791718138191,
+      "normalization": {
+        "final_score_range": [
+          189,
+          2696
+        ],
+        "floor_dominated_scale_collapse": false,
+        "integer_rounding_or_floor_loses_low_end_information": false,
+        "low_capability_can_collapse_to_one_while_median_is_O_1000": false,
+        "minimum_floor_count": 0,
+        "raw_score_range": [
+          0.8907051282051281,
+          12.695529753721372
+        ],
+        "smallest_two_positive_ratio": 1.4867724867724867,
+        "uniform_rescale_preserves_unrounded_ratios": true
+      },
+      "ruleset": "Standard Shogi",
+      "types": [
+        {
+          "final_board_value": 0,
+          "floor_fired": false,
+          "hand_board_ratio": null,
+          "hand_value": 0,
+          "is_anchor": true,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": null,
+          "promotion_base_relation": null,
+          "promotion_gain": 0,
+          "raw_capability_score": 6.111686833613917,
+          "rule_capability_quantities": {
+            "average_shortest_path": 4.214814814814815,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 5.952098765432099,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              6.716049382716049,
+              6.296296296296297,
+              5.8765432098765435,
+              5.45679012345679,
+              5.037037037037037
+            ],
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.19176136363636362,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "K",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 189,
+          "floor_fired": false,
+          "hand_board_ratio": 0.8994708994708994,
+          "hand_value": 170,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 189,
+          "promotion_base_relation": 4.291005291005291,
+          "promotion_gain": 811,
+          "raw_capability_score": 0.8907051282051281,
+          "rule_capability_quantities": {
+            "average_shortest_path": 3.3333333333333335,
+            "coverage_ratio": 0.8888888888888888,
+            "density_weighted_mobility": 0.7877777777777778,
+            "directional_asymmetry": 1.0,
+            "drop_freedom_ratio": 0.8888888888888888,
+            "drop_mobility": 1.0,
+            "expected_mobility": [
+              0.8888888888888888,
+              0.8333333333333334,
+              0.7777777777777778,
+              0.7222222222222222,
+              0.6666666666666666
+            ],
+            "movement_signature": "[[\"L\",0,1]]",
+            "path_efficiency": 0.23076923076923073,
+            "reachable_pair_ratio": 0.05
+          },
+          "type_identity": "P",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 546,
+          "floor_fired": false,
+          "hand_board_ratio": 0.8992673992673993,
+          "hand_value": 491,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 546,
+          "promotion_base_relation": 0.8315018315018315,
+          "promotion_gain": 454,
+          "raw_capability_score": 2.570751202570068,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.0,
+            "coverage_ratio": 0.8888888888888888,
+            "density_weighted_mobility": 2.454362313681179,
+            "directional_asymmetry": 1.0,
+            "drop_freedom_ratio": 0.8888888888888888,
+            "drop_mobility": 4.5,
+            "expected_mobility": [
+              4.0,
+              2.8377186755339303,
+              2.061242845323351,
+              1.534033328294754,
+              1.1673177083333333
+            ],
+            "movement_signature": "[[\"R\",0,1,-1]]",
+            "path_efficiency": 0.5,
+            "reachable_pair_ratio": 0.05
+          },
+          "type_identity": "L",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 281,
+          "floor_fired": false,
+          "hand_board_ratio": 0.900355871886121,
+          "hand_value": 253,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 281,
+          "promotion_base_relation": 2.5587188612099645,
+          "promotion_gain": 719,
+          "raw_capability_score": 1.3219389638860044,
+          "rule_capability_quantities": {
+            "average_shortest_path": 2.11046511627907,
+            "coverage_ratio": 0.7777777777777778,
+            "density_weighted_mobility": 1.2254320987654321,
+            "directional_asymmetry": 1.0,
+            "drop_freedom_ratio": 0.7777777777777778,
+            "drop_mobility": 1.7777777777777777,
+            "expected_mobility": [
+              1.382716049382716,
+              1.2962962962962963,
+              1.2098765432098766,
+              1.123456790123457,
+              1.037037037037037
+            ],
+            "movement_signature": "[[\"L\",-1,2],[\"L\",1,2]]",
+            "path_efficiency": 0.3214953271028037,
+            "reachable_pair_ratio": 0.05308641975308642
+          },
+          "type_identity": "N",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 796,
+          "floor_fired": false,
+          "hand_board_ratio": 0.8994974874371859,
+          "hand_value": 716,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 796,
+          "promotion_base_relation": 0.2562814070351759,
+          "promotion_gain": 204,
+          "raw_capability_score": 3.7475051817750713,
+          "rule_capability_quantities": {
+            "average_shortest_path": 4.720987654320988,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 3.5887654320987656,
+            "directional_asymmetry": 0.21951219512195122,
+            "drop_freedom_ratio": 1.0,
+            "drop_mobility": 4.049382716049383,
+            "expected_mobility": [
+              4.049382716049383,
+              3.7962962962962963,
+              3.54320987654321,
+              3.2901234567901234,
+              3.037037037037037
+            ],
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,1]]",
+            "path_efficiency": 0.17479499352611136,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "S",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1000,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 900,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1000,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 4.709791718138191,
+          "rule_capability_quantities": {
+            "average_shortest_path": 5.107407407407408,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 4.5516049382716055,
+            "directional_asymmetry": 0.47058823529411764,
+            "drop_freedom_ratio": 1.0,
+            "drop_mobility": 5.135802469135802,
+            "expected_mobility": [
+              5.135802469135802,
+              4.814814814814815,
+              4.493827160493828,
+              4.172839506172839,
+              3.8518518518518516
+            ],
+            "movement_signature": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.1637355973317162,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "G",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1468,
+          "floor_fired": false,
+          "hand_board_ratio": 0.8998637602179836,
+          "hand_value": 1321,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1468,
+          "promotion_base_relation": 0.4550408719346049,
+          "promotion_gain": 668,
+          "raw_capability_score": 6.9144141295134265,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.745,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 6.771507835241012,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 1.0,
+            "drop_mobility": 10.074074074074074,
+            "expected_mobility": [
+              10.074074074074074,
+              7.74854216310713,
+              6.031688925660687,
+              4.7492691455064,
+              3.7769097222222223
+            ],
+            "movement_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+            "path_efficiency": 0.36429872495446264,
+            "reachable_pair_ratio": 0.49382716049382713
+          },
+          "type_identity": "B",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 2120,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 1908,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 2120,
+          "promotion_base_relation": 0.27169811320754716,
+          "promotion_gain": 576,
+          "raw_capability_score": 9.985306397581859,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.8,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 9.817449254724716,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 1.0,
+            "drop_mobility": 16.0,
+            "expected_mobility": [
+              16.0,
+              11.350874702135721,
+              8.244971381293404,
+              6.136133313179016,
+              4.669270833333333
+            ],
+            "movement_signature": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+            "path_efficiency": 0.35714285714285715,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "R",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1000,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 900,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1000,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 4.709791718138191,
+          "rule_capability_quantities": {
+            "average_shortest_path": 5.107407407407408,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 4.5516049382716055,
+            "directional_asymmetry": 0.47058823529411764,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              5.135802469135802,
+              4.814814814814815,
+              4.493827160493828,
+              4.172839506172839,
+              3.8518518518518516
+            ],
+            "movement_signature": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.1637355973317162,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "TP",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1000,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 900,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1000,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 4.709791718138191,
+          "rule_capability_quantities": {
+            "average_shortest_path": 5.107407407407408,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 4.5516049382716055,
+            "directional_asymmetry": 0.47058823529411764,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              5.135802469135802,
+              4.814814814814815,
+              4.493827160493828,
+              4.172839506172839,
+              3.8518518518518516
+            ],
+            "movement_signature": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.1637355973317162,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "TL",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1000,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 900,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1000,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 4.709791718138191,
+          "rule_capability_quantities": {
+            "average_shortest_path": 5.107407407407408,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 4.5516049382716055,
+            "directional_asymmetry": 0.47058823529411764,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              5.135802469135802,
+              4.814814814814815,
+              4.493827160493828,
+              4.172839506172839,
+              3.8518518518518516
+            ],
+            "movement_signature": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.1637355973317162,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "TN",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1000,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 900,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1000,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 4.709791718138191,
+          "rule_capability_quantities": {
+            "average_shortest_path": 5.107407407407408,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 4.5516049382716055,
+            "directional_asymmetry": 0.47058823529411764,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              5.135802469135802,
+              4.814814814814815,
+              4.493827160493828,
+              4.172839506172839,
+              3.8518518518518516
+            ],
+            "movement_signature": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.1637355973317162,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "TS",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 2136,
+          "floor_fired": false,
+          "hand_board_ratio": 0.899812734082397,
+          "hand_value": 1922,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 2136,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 10.060038201857784,
+          "rule_capability_quantities": {
+            "average_shortest_path": 2.083950617283951,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 9.893825231481483,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              13.62962962962963,
+              11.071180555555555,
+              9.036072530864198,
+              7.712962962962963,
+              6.333140432098766
+            ],
+            "movement_signature": "[[\"L\",-1,0],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+            "path_efficiency": 0.3242594075260208,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "TB",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 2696,
+          "floor_fired": false,
+          "hand_board_ratio": 0.8998516320474778,
+          "hand_value": 2426,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 4.709791718138191,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 2696,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 12.695529753721372,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.7604938271604937,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 12.527417052469136,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              19.160493827160494,
+              14.262538580246913,
+              10.704668209876543,
+              8.642168209876543,
+              6.989776234567901
+            ],
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",1,-1],[\"L\",1,1],[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+            "path_efficiency": 0.3622540250447227,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "TR",
+          "upper_clamp_fired": false
+        }
+      ]
+    },
+    "western_chess": {
+      "CURRENT_PROFILE_EXACT_RECOMPOSITION": true,
+      "config": {
+        "hand_weight": 0.9,
+        "max_static_eval": 10000000,
+        "normal_piece_median_value": 1000
+      },
+      "fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "median_non_anchor_value": 1000,
+      "median_raw": 6.217622245358478,
+      "normalization": {
+        "final_score_range": [
+          1,
+          2439
+        ],
+        "floor_dominated_scale_collapse": true,
+        "integer_rounding_or_floor_loses_low_end_information": true,
+        "low_capability_can_collapse_to_one_while_median_is_O_1000": true,
+        "minimum_floor_count": 1,
+        "raw_score_range": [
+          0.0,
+          15.163483676173186
+        ],
+        "smallest_two_positive_ratio": 775.0,
+        "uniform_rescale_preserves_unrounded_ratios": true
+      },
+      "ruleset": "Western Chess",
+      "types": [
+        {
+          "final_board_value": 0,
+          "floor_fired": false,
+          "hand_board_ratio": null,
+          "hand_value": 0,
+          "is_anchor": true,
+          "is_promotable": false,
+          "normalization_denominator": 6.217622245358478,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": null,
+          "promotion_base_relation": null,
+          "promotion_gain": 0,
+          "raw_capability_score": 5.976541940789473,
+          "rule_capability_quantities": {
+            "average_shortest_path": 3.75,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 5.816015625,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              6.5625,
+              6.15234375,
+              5.7421875,
+              5.33203125,
+              4.921875
+            ],
+            "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+            "path_efficiency": 0.21052631578947367,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "K",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1,
+          "floor_fired": true,
+          "hand_board_ratio": 1.0,
+          "hand_value": 1,
+          "is_anchor": false,
+          "is_promotable": true,
+          "normalization_denominator": 6.217622245358478,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 0,
+          "promotion_base_relation": 2438.0,
+          "promotion_gain": 2438,
+          "raw_capability_score": 0.0,
+          "rule_capability_quantities": {
+            "average_shortest_path": null,
+            "coverage_ratio": 0.0,
+            "density_weighted_mobility": 0.0,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "movement_signature": "[]",
+            "path_efficiency": 0.0,
+            "reachable_pair_ratio": 0.0
+          },
+          "type_identity": "P",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 775,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9006451612903226,
+          "hand_value": 698,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 6.217622245358478,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 775,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 4.815702525575447,
+          "rule_capability_quantities": {
+            "average_shortest_path": 2.878968253968254,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 4.6528125000000005,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              5.25,
+              4.921875,
+              4.59375,
+              4.265625,
+              3.9375
+            ],
+            "movement_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+            "path_efficiency": 0.2578005115089514,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "N",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1000,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9,
+          "hand_value": 900,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 6.217622245358478,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1000,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 6.217622245358478,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.717741935483871,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 6.074621444642544,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              8.75,
+              6.921998485922813,
+              5.511808395385742,
+              4.417270019650459,
+              3.560302734375
+            ],
+            "movement_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+            "path_efficiency": 0.36795252225519287,
+            "reachable_pair_ratio": 0.49206349206349204
+          },
+          "type_identity": "B",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 1462,
+          "floor_fired": false,
+          "hand_board_ratio": 0.9001367989056087,
+          "hand_value": 1316,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 6.217622245358478,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 1462,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 9.08791486310959,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.7777777777777777,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 8.91991486310959,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              14.0,
+              10.3082674741745,
+              7.7007904052734375,
+              5.845039963722229,
+              4.505859375
+            ],
+            "movement_signature": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+            "path_efficiency": 0.36,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "R",
+          "upper_clamp_fired": false
+        },
+        {
+          "final_board_value": 2439,
+          "floor_fired": false,
+          "hand_board_ratio": 0.8999589995899959,
+          "hand_value": 2195,
+          "is_anchor": false,
+          "is_promotable": false,
+          "normalization_denominator": 6.217622245358478,
+          "normalization_scale": 1000,
+          "pre_clamp_integer": 2439,
+          "promotion_base_relation": 0.0,
+          "promotion_gain": 0,
+          "raw_capability_score": 15.163483676173186,
+          "rule_capability_quantities": {
+            "average_shortest_path": 1.6388888888888888,
+            "coverage_ratio": 1.0,
+            "density_weighted_mobility": 14.994536307752133,
+            "directional_asymmetry": 0.0,
+            "drop_freedom_ratio": 0.0,
+            "drop_mobility": 0.0,
+            "expected_mobility": [
+              22.75,
+              17.230265960097313,
+              13.21259880065918,
+              10.262309983372688,
+              8.066162109375
+            ],
+            "movement_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,0,-1],[\"R\",-1,1,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,-1,-1],[\"R\",1,0,-1],[\"R\",1,1,-1]]",
+            "path_efficiency": 0.37894736842105264,
+            "reachable_pair_ratio": 1.0
+          },
+          "type_identity": "Q",
+          "upper_clamp_fired": false
+        }
+      ]
+    }
+  },
+  "schema_version": 1,
+  "standard_shogi_human_validation": {
+    "board_types": {
+      "B": 1468,
+      "G": 1000,
+      "L": 546,
+      "N": 281,
+      "P": 189,
+      "R": 2120,
+      "S": 796,
+      "TB": 2136,
+      "TL": 1000,
+      "TN": 1000,
+      "TP": 1000,
+      "TR": 2696,
+      "TS": 1000
+    },
+    "drift_explanation": "Current product Standard Shogi includes semantic drop/declaration integration; F40 remeasures its current rule-derived profile without treating the historical AlphaSho table as a fitting target.",
+    "hand_types": {
+      "B": 1321,
+      "G": 900,
+      "L": 491,
+      "N": 253,
+      "P": 170,
+      "R": 1908,
+      "S": 716
+    },
+    "healthy": true,
+    "historical_phase18_control": {
+      "cosine": 0.989,
+      "pairwise_ordering_accuracy": 0.965,
+      "pearson": 0.976,
+      "spearman": 0.952
+    },
+    "human_reference": {
+      "board": {
+        "B": 800,
+        "G": 520,
+        "L": 300,
+        "N": 320,
+        "P": 100,
+        "R": 1000,
+        "S": 450,
+        "TB": 950,
+        "TL": 520,
+        "TN": 520,
+        "TP": 520,
+        "TR": 1150,
+        "TS": 520
+      },
+      "hand": {
+        "B": 800,
+        "G": 520,
+        "L": 300,
+        "N": 320,
+        "P": 100,
+        "R": 1000,
+        "S": 450
+      }
+    },
+    "metrics": {
+      "best_fit_scale": 0.49590196377124435,
+      "cosine": 0.9889899943194949,
+      "pairwise_ordering_accuracy": 0.9644970414201184,
+      "pearson": 0.9761485757810693,
+      "spearman": 0.9750222095227322
+    }
+  },
+  "status": "PASS",
+  "western_human_validation": {
+    "WESTERN_MATERIAL_PRIOR_SEVERE_PATHOLOGY": true,
+    "distance_to_band": {
+      "B": 996.25,
+      "N": 771.5,
+      "P": 0.0,
+      "Q": 2428.0,
+      "R": 1456.0
+    },
+    "knight_bishop_ratio": 0.775,
+    "knight_bishop_ratio_in_band": true,
+    "normalized_by_pawn": {
+      "B": 1000.0,
+      "N": 775.0,
+      "P": 1.0,
+      "Q": 2439.0,
+      "R": 1462.0
+    },
+    "ordinal": {
+      "B<R": true,
+      "N<B": true,
+      "P<N": true,
+      "R<Q": true
+    }
+  }
+}
