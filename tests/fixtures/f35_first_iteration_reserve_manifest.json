@@ -1,0 +1,127 @@
+{
+  "constraints": [
+    "NO_EVALUATOR_CHANGE",
+    "NO_EVALUATOR_V2",
+    "NO_NATIVE_REPAIR",
+    "NO_RULE_SCHEMA_SESSION_RECORD_CLI_CHANGE",
+    "NO_ALPHASHO_RERUN",
+    "NO_PAIRED_BENCHMARK",
+    "NO_ALPHA_CHESS",
+    "PRODUCTION_DIFF_ONLY_SEARCH_PY"
+  ],
+  "contract": {
+    "configured_qdepth": 4,
+    "hard_qdepth": 8,
+    "in_check": "unchanged full legal evasion path",
+    "reserve": "ordinary non-check qsearch effective depth 0 until first successful main iteration; then configured depth",
+    "state": "context-local per run_root_search; aborted first iteration never completes reserve"
+  },
+  "frozen_inputs": {
+    "f25_descriptor": {
+      "file_sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151",
+      "path": "tests/fixtures/f25_standard_shogi_position_descriptors.json",
+      "sha256": "2429dd0ba53497b47c14fd020d2bffa1a2c89bba6fad3b91d72ff62357a0d151"
+    },
+    "f30_fresh": {
+      "file_sha256": "8ec60aebdde3e7fb4d192d99e77948a954d7aab83c6942e0704a8956721a3eba",
+      "path": "tests/fixtures/f30r1_fresh_move_reference.json",
+      "sha256": "8ec60aebdde3e7fb4d192d99e77948a954d7aab83c6942e0704a8956721a3eba"
+    },
+    "f30_manifest": {
+      "file_sha256": "de1ffc84b635d96fa8abd5a23eed42c79ef9a7fd48b7d07351c38ac6ecac4f1a",
+      "path": "tests/fixtures/f30r1_benchmark_manifest.json",
+      "sha256": "3af3ac415bf5fee1f52bae7fe09d6a888db1a90be3d12c10cce1acd477ed2d7e"
+    },
+    "f30_paired": {
+      "file_sha256": "3e80b5a5488624c7afd34638fbbfee8f200dd96af472d5345672ff69439ca256",
+      "path": "tests/fixtures/f30r1_paired_match.json",
+      "sha256": "3e80b5a5488624c7afd34638fbbfee8f200dd96af472d5345672ff69439ca256"
+    },
+    "f31_result": {
+      "file_sha256": "9eaaccf9ecea8717e6a2ffe198da9136cb1e7fee0ee9ac2edcb60d6f70d8b77e",
+      "path": "tests/fixtures/f31_causal_diagnosis.json",
+      "sha256": "9eaaccf9ecea8717e6a2ffe198da9136cb1e7fee0ee9ac2edcb60d6f70d8b77e"
+    },
+    "f31r1_result": {
+      "file_sha256": "ed0834b4a591d9a0b0dddd529a1c1ce205f22fd268caafe7951d79966113a83f",
+      "path": "tests/fixtures/f31r1_counterfactual_causal_reclassification.json",
+      "sha256": "ed0834b4a591d9a0b0dddd529a1c1ce205f22fd268caafe7951d79966113a83f"
+    },
+    "f32_result": {
+      "file_sha256": "878dccd45d2d9bf325d26d1947a5ee8e85b8005176e3dbfdf0772c9e46becd56",
+      "path": "tests/fixtures/f32_qsearch_diagnosis.json",
+      "sha256": "878dccd45d2d9bf325d26d1947a5ee8e85b8005176e3dbfdf0772c9e46becd56"
+    },
+    "f32r1_result": {
+      "file_sha256": "0805a97b12de1fd011386a11e1e0a532e13c42b44266269671a2499f29259b88",
+      "path": "tests/fixtures/f32r1_qsearch_exact_counterfactual.json",
+      "sha256": "0805a97b12de1fd011386a11e1e0a532e13c42b44266269671a2499f29259b88"
+    },
+    "f33_h33a_result": {
+      "file_sha256": "e65300346bb7be48bcf933a163d25f5700fe7c2b93efc5b577b491eee973f25c",
+      "path": "tests/fixtures/f33_check_discovery_audit.json",
+      "sha256": "e65300346bb7be48bcf933a163d25f5700fe7c2b93efc5b577b491eee973f25c"
+    },
+    "f33_manifest": {
+      "file_sha256": "f7dd15cb032e1c9aad9198c5afb334ad62a07d814069dcaa0466c0531ddd2eeb",
+      "path": "tests/fixtures/f33_check_discovery_manifest.json",
+      "sha256": "14de91028470b9bf4d3a8933a73912fa1e0b2567fb70ca106e0a284d778378bf"
+    },
+    "f33r1_manifest": {
+      "file_sha256": "b75d62b946caea52655de79d2f672a2b94d8a668d57b01f7ca3774f8e403ef8d",
+      "path": "tests/fixtures/f33r1_retention_timing_manifest.json",
+      "sha256": "76199c945586864aa62182c0a56b866049bbafa4ec0f2a8c47c2b7f8d9f23a84"
+    },
+    "f33r1_result": {
+      "file_sha256": "4884b06fca9e2d5ae0483c008cc227a190ecbdc6d56170ed10d16a66b346a309",
+      "path": "tests/fixtures/f33r1_retention_gate_results.json",
+      "sha256": "4884b06fca9e2d5ae0483c008cc227a190ecbdc6d56170ed10d16a66b346a309"
+    },
+    "f34_manifest": {
+      "file_sha256": "f65588fdbb35a1ab42508a33937735cb50e0d0b0c1ed3e3230fdd3f1572793cc",
+      "path": "tests/fixtures/f34_qsearch_budget_manifest.json",
+      "sha256": "6a5600c4fc1fb82582b42d47235fd72b4e02d60322749e1b97ebbae98500b75d"
+    },
+    "f34_matrix": {
+      "file_sha256": "f6ac85a2485c32dd03658811ce9a88618c749a2fffed233efd76363226647605",
+      "path": "tests/fixtures/f34_qsearch_budget_matrix.json",
+      "sha256": "f6ac85a2485c32dd03658811ce9a88618c749a2fffed233efd76363226647605"
+    },
+    "f34_safety": {
+      "file_sha256": "d12105d9b2667d0485c318bff1b99c31055618b1c93899f97fd196e669e798ca",
+      "path": "tests/fixtures/f34_qsearch_tactical_safety.json",
+      "sha256": "d12105d9b2667d0485c318bff1b99c31055618b1c93899f97fd196e669e798ca"
+    },
+    "f34_selection": {
+      "file_sha256": "fac977997eaa50f7e017d934aeda775f5fd1083825162e472dbdbcdf8c5fba3c",
+      "path": "tests/fixtures/f34_qsearch_budget_selection.json",
+      "sha256": "654a4076ca736591b4007ebb43b086e6d3d9e2b1152177b858c18c4257d58027"
+    }
+  },
+  "gates": {
+    "accessibility": "F34 gate: depth >=5 at either control, fallback reduction >=5 at 0.50s, or 2.00s first-iteration gain >=20% without more fallback",
+    "disqualifier": "depth regression >2 roots at either control",
+    "fixed_reproduction": "20/20 exact F34 Q34C rows",
+    "retention": "all correctness, safety, accessibility, balance and cancellation gates"
+  },
+  "kind": "F35_FIRST_ITERATION_RESERVE_MANIFEST",
+  "manifest_sha256": "cb2afd22c4235cbafb7804dc80a6ba44cf5c2a38a2ed21d36ca5f0dd94b35787",
+  "matrix": {
+    "fixed_nodes": [
+      128,
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "roots": 10,
+    "wall_repetitions": 3,
+    "wall_times_seconds": [
+      0.5,
+      2.0
+    ]
+  },
+  "pre_run_sandbox_sha": "4fa6b5d45ed1600645d2b3b0cb39fcfb8837cc81",
+  "production_search_pre_change_sha": "657cbd8d3bc623b3aa20dc88674f3f43edb0c9af",
+  "schema_version": 1
+}

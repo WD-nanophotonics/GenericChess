@@ -122,6 +122,7 @@ class _Context:
         "qhard_depth_limit",
         "qnode_limit",
         "runtime",
+        "first_main_iteration_complete",
     )
 
     def __init__(
@@ -139,6 +140,7 @@ class _Context:
         qnode_limit: int | None,
         recorder: AuditRecorder | None = None,
         runtime: SearchPathRuntime | None = None,
+        first_main_iteration_complete: bool | None = None,
     ) -> None:
         self.compiled = compiled
         self.evaluator = evaluator
@@ -154,6 +156,10 @@ class _Context:
         self.qhard_depth_limit = qhard_depth_limit
         self.qnode_limit = qnode_limit
         self.runtime = runtime
+        # ``None`` means this context is not owned by iterative-deepening
+        # reserve scheduling.  ``run_root_search`` supplies False and flips
+        # it only after a complete main iteration succeeds.
+        self.first_main_iteration_complete = first_main_iteration_complete
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
@@ -197,6 +203,16 @@ def _declaration_options(state, compiled, stats):
     return options
 
 
+def _ordinary_qdepth_limit(ctx: _Context) -> int:
+    """Return the effective qdepth for ordinary (non-check) qsearch.
+
+    Direct/internal qsearch contexts retain the configured limit.  Only a
+    run-root context that explicitly owns the first-iteration reserve uses
+    the temporary stand-pat-only ordinary phase.
+    """
+    if ctx.first_main_iteration_complete is False:
+        return 0
+    return ctx.qdepth_limit
 def _tt_key(state: GameState, compiled) -> SearchStateIdentity:
     """Build the authoritative, path-aware search/transposition identity."""
     return search_state_identity(state, compiled)
@@ -228,6 +244,10 @@ def negamax(
     if winning is not None:
         return SearchResult(MATE_SCORE - ply, None, (), winning)
     if depth <= 0:
+        # An explicit qdepth=0 caller retains the historical static-eval
+        # contract.  The F35 reserve applies to the production qdepth=4
+        # run-root path while still entering qsearch before its first
+        # completed iteration.
         if ctx.qdepth_limit > 0:
             with ctx.recorder.time_block(AuditMetric.QUIESCENCE):
                 score = quiescence(state, alpha, beta, ply, 0, ctx)
@@ -538,11 +558,11 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
         if engine is not None else is_in_check(state.position, side, ctx.compiled)
     )
-    actions = list(runtime.legal_actions(ctx.checkpoint))
-    ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_actions_generated += len(actions)
-    ctx.budget.check(ctx.stats, force=True)
     if in_check:
+        actions = list(runtime.legal_actions(ctx.checkpoint))
+        ctx.stats.legal_generation_calls += 1
+        ctx.stats.legal_actions_generated += len(actions)
+        ctx.budget.check(ctx.stats, force=True)
         ctx.stats.in_check_qnodes += 1
         if qdepth >= ctx.qhard_depth_limit:
             ctx.stats.qsearch_check_hard_limit_aborts += 1
@@ -571,12 +591,16 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         return max(stand_pat, 0) if restart is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
-    if qdepth >= ctx.qdepth_limit:
+    if qdepth >= _ordinary_qdepth_limit(ctx):
         ctx.stats.qdepth_cutoffs += 1
         return alpha
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
         ctx.stats.qsearch_budget_aborts += 1
         raise SearchAborted("qsearch_budget")
+    actions = list(runtime.legal_actions(ctx.checkpoint))
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_actions_generated += len(actions)
+    ctx.budget.check(ctx.stats, force=True)
     for action in sorted(_runtime_noisy_actions(ctx, actions), key=str):
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
             score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
@@ -684,7 +708,7 @@ def quiescence(
         return max(stand_pat, 0) if restart is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
-    if qdepth >= ctx.qdepth_limit:
+    if qdepth >= _ordinary_qdepth_limit(ctx):
         ctx.stats.qdepth_cutoffs += 1
         return alpha
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
@@ -958,6 +982,7 @@ def run_root_search(
         limits.quiescence_max_nodes,
         recorder,
         runtime,
+        first_main_iteration_complete=False,
     )
     runtime.attach_stats(stats)
 
@@ -1076,6 +1101,7 @@ def run_root_search(
             break
         stats.completed_depth = depth
         stats.selective_depth = depth
+        ctx.first_main_iteration_complete = True
         stats.time_to_first_completed_iteration = time.monotonic() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
