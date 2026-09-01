@@ -91,7 +91,13 @@ def test_single_final_diagnosis_and_boundary_are_mapped(evidence):
     assert selection["primary_diagnosis"] == "RAY_OR_DIRECTIONAL_SCALING_PRIMARY"
     assert selection["next_boundary"] == "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE"
     assert selection["normalization_assessment"]["classification"] == "NORMALIZATION_NON_PRIMARY"
-    assert selection["quantitative_selection_evidence"]["ray_directional_score"] > 0
+    predicates = selection["predicate_ledger"]
+    assert sum(value["supported"] for value in predicates.values()) == 1
+    assert predicates["NORMALIZATION_PRIMARY"]["supported"] is False
+    assert predicates["CAPABILITY_COMPONENT_DOUBLE_COUNTING_PRIMARY"]["supported"] is False
+    assert predicates["RAY_OR_DIRECTIONAL_SCALING_PRIMARY"]["supported"] is True
+    assert selection["quantitative_selection_evidence"]["ray_length_delta"] > 0
+    assert selection["quantitative_selection_evidence"]["direction_count_delta"] > 0
+    assert "compared across units" in selection["quantitative_selection_evidence"]["selection_rule"]
     assert selection["western_inflation_not_a_loss_function"] is True
     assert evidence["production_changed"] is False
-

@@ -111,7 +111,7 @@ def _write_closeout_report(result: dict[str, Any]) -> None:
         f"- Primary diagnosis: `{selection['primary_diagnosis']}`.",
         f"- Next boundary: `{selection['next_boundary']}`.",
         f"- Normalization: `{selection['normalization_assessment']['classification']}`; raw Western ratios already fail the bands.",
-        f"- Dominant component: density-weighted mobility; ray/directional score `{selection['quantitative_selection_evidence']['ray_directional_score']}`.",
+        f"- Dominant component: density-weighted mobility; ray-length delta `{selection['quantitative_selection_evidence']['ray_length_delta']}`, direction-count delta `{selection['quantitative_selection_evidence']['direction_count_delta']}`.",
         f"- Shogi positive control: cosine `{result['reproduction']['standard_shogi']['positive_control_metrics']['board_value_cosine_vs_current']}`, Spearman `{result['reproduction']['standard_shogi']['positive_control_metrics']['spearman_vs_current']}`, pairwise `{result['reproduction']['standard_shogi']['positive_control_metrics']['pairwise_ordering_vs_current']}`.",
         f"- Full regression: `{full['status']}`, collected `{full['collected']}`, passed `{full['passed']}`, failed `{full['failed']}`, errors `{full['errors']}`, skipped `{full['skipped']}`; failures `{json.dumps(full['failures'])}`.",
         "- Production `generic_chess/` diff: zero. F43 and promotion were not started.",
@@ -665,43 +665,122 @@ def _reproduction(f41_result: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _select_diagnosis(ablation: dict[str, Any], redundancy: dict[str, Any], synthetic: dict[str, Any], reproduction: dict[str, Any]) -> dict[str, Any]:
+def _band_distance(ratios: dict[str, float]) -> float:
+    bands = {"N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]}
+    return sum(max(bands[type_id][0] - ratios[type_id], 0.0, ratios[type_id] - bands[type_id][1]) for type_id in bands)
+
+
+def _shogi_gate_predicate(metrics: dict[str, float]) -> bool:
+    return metrics["board_value_cosine_vs_current"] >= 0.95 and metrics["spearman_vs_current"] >= 0.90 and metrics["pairwise_ordering_vs_current"] >= 0.90
+
+
+def _select_diagnosis(
+    ablation: dict[str, Any],
+    redundancy: dict[str, Any],
+    synthetic: dict[str, Any],
+    reproduction: dict[str, Any],
+    component_ledger: dict[str, Any],
+) -> dict[str, Any]:
     comparison = {row["comparison"]: row for row in synthetic["paired_comparisons"]}
-    ray_growth = [
-        comparison["short ray versus long ray"]["raw_delta_right_minus_left"],
-        comparison["single direction versus multi-direction"]["raw_delta_right_minus_left"],
-    ]
-    double_score = max((abs(row["pearson"]) for row in redundancy["near_redundant_pairs_abs_r_ge_0_90"]), default=0.0)
-    ray_score = sum(max(0.0, value) for value in ray_growth) / 2.0
-    # This comparison is a fixed descriptive rule over audit evidence, not a
-    # fitted threshold: choose the larger observed generic mechanism score.
-    if ray_score > double_score:
-        primary = "RAY_OR_DIRECTIONAL_SCALING_PRIMARY"
-        boundary = "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE"
-    elif double_score > 0.0:
-        primary = "CAPABILITY_COMPONENT_DOUBLE_COUNTING_PRIMARY"
-        boundary = "F43_CAPABILITY_FORMULA_STRUCTURE_PROTOTYPE"
-    else:
-        primary = "SEMANTIC_CAPABILITY_INFORMATION_MISSING"
-        boundary = "F43_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS"
+    western_rows = {row["type"]: row for row in component_ledger["western_chess"]["rows"]}
     raw_ratios = reproduction["western"]["raw_ratios_by_pawn"]
     bands = {"N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]}
     raw_band_pass = all(bands[key][0] <= raw_ratios[key] <= bands[key][1] for key in bands)
+    normalized_band_pass = reproduction["western"]["bands_pass"]
+    normalization_primary = raw_band_pass and not normalized_band_pass
+
+    minus_variants = {name: ablation[name] for name in ("minus_coverage", "minus_reachability", "minus_path_efficiency")}
+    full_distance = _band_distance(ablation["full_formula"]["western"]["raw_ratios_by_pawn"])
+    minus_reduces_and_preserves_shogi = {
+        name: {
+            "western_distance": _band_distance(value["western"]["raw_ratios_by_pawn"]),
+            "reduces_western_distance": _band_distance(value["western"]["raw_ratios_by_pawn"]) < full_distance,
+            "shogi_gates_pass": _shogi_gate_predicate(value["shogi"]),
+            "supported": _band_distance(value["western"]["raw_ratios_by_pawn"]) < full_distance and _shogi_gate_predicate(value["shogi"]),
+        }
+        for name, value in minus_variants.items()
+    }
+    double_counting_primary = bool(redundancy["near_redundant_pairs_abs_r_ge_0_90"]) and any(row["supported"] for row in minus_reduces_and_preserves_shogi.values())
+
+    geometry_predicates = {
+        "ray_length_growth": comparison["short ray versus long ray"]["raw_delta_right_minus_left"] > 0.0,
+        "direction_count_growth": comparison["single direction versus multi-direction"]["raw_delta_right_minus_left"] > 0.0,
+        "leap_to_ray_growth": comparison["one-step leap versus multi-square ray"]["raw_delta_right_minus_left"] > 0.0,
+        "ray_length_delta": comparison["short ray versus long ray"]["raw_delta_right_minus_left"],
+        "direction_count_delta": comparison["single direction versus multi-direction"]["raw_delta_right_minus_left"],
+        "leap_to_ray_delta": comparison["one-step leap versus multi-square ray"]["raw_delta_right_minus_left"],
+    }
+    mobility_dominant = all(
+        western_rows[type_id]["components"]["mobility"]["weighted_contribution"] >= western_rows[type_id]["components"][component]["weighted_contribution"]
+        for type_id in ("N", "B", "R", "Q")
+        for component in ("coverage", "reachability", "path_efficiency")
+    )
+    graph_terms_do_not_cure = all(not value["western"]["broad_band_pass"] for value in minus_variants.values())
+    shogi_compatible = _shogi_gate_predicate(reproduction["standard_shogi"]["positive_control_metrics"])
+    ray_directional_primary = mobility_dominant and geometry_predicates["ray_length_growth"] and geometry_predicates["direction_count_growth"] and synthetic["same_analyzer_and_compiler"] and graph_terms_do_not_cure and shogi_compatible
+
+    semantic_information_missing = not ray_directional_primary and not double_counting_primary and not normalization_primary and shogi_compatible
+    cross_ruleset_conflict = not shogi_compatible and not ray_directional_primary and not double_counting_primary
+    mixed_or_unresolved = not any((normalization_primary, double_counting_primary, ray_directional_primary, semantic_information_missing, cross_ruleset_conflict))
+    predicate_ledger = {
+        "NORMALIZATION_PRIMARY": {
+            "supported": normalization_primary,
+            "next_boundary": "F43_MATERIAL_NORMALIZATION_DIAGNOSIS",
+            "evidence": {"raw_bands_pass": raw_band_pass, "normalized_bands_pass": normalized_band_pass},
+            "reason": "Rejected: raw Western ratios already fail the frozen bands." if not normalization_primary else "Accepted: normalization introduces the failure.",
+        },
+        "CAPABILITY_COMPONENT_DOUBLE_COUNTING_PRIMARY": {
+            "supported": double_counting_primary,
+            "next_boundary": "F43_CAPABILITY_FORMULA_STRUCTURE_PROTOTYPE",
+            "evidence": {"near_redundant_pairs": redundancy["near_redundant_pairs_abs_r_ge_0_90"], "one_at_a_time_ablation": minus_reduces_and_preserves_shogi},
+            "reason": "Rejected: correlation threshold and a Shogi-preserving pathology reduction are both required; current evidence provides neither." if not double_counting_primary else "Accepted: redundant components and a Shogi-preserving reduction are both shown.",
+        },
+        "RAY_OR_DIRECTIONAL_SCALING_PRIMARY": {
+            "supported": ray_directional_primary,
+            "next_boundary": "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE",
+            "evidence": {"mobility_dominant": mobility_dominant, "geometry": geometry_predicates, "same_analyzer_and_compiler": synthetic["same_analyzer_and_compiler"], "graph_terms_do_not_cure": graph_terms_do_not_cure, "shogi_compatible": shogi_compatible},
+            "reason": "Accepted only because every independent geometry-scaling predicate is true; no cross-unit score comparison is used." if ray_directional_primary else "Rejected: one or more independent geometry-scaling predicates is false.",
+        },
+        "SEMANTIC_CAPABILITY_INFORMATION_MISSING": {
+            "supported": semantic_information_missing,
+            "next_boundary": "F43_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS",
+            "evidence": {"existing_geometry_explains_scaling": ray_directional_primary},
+            "reason": "Rejected: existing semantic geometry and the four measured quantities explain the observed scaling." if not semantic_information_missing else "Accepted: existing quantities do not sufficiently explain the pathology.",
+        },
+        "CROSS_RULESET_PRIOR_CONFLICT": {
+            "supported": cross_ruleset_conflict,
+            "next_boundary": "F43_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+            "evidence": {"shogi_compatible": shogi_compatible},
+            "reason": "Rejected: Standard Shogi positive-control gates remain intact." if not cross_ruleset_conflict else "Accepted: no generic explanation survives the cross-ruleset control.",
+        },
+        "MIXED_OR_UNRESOLVED": {
+            "supported": mixed_or_unresolved,
+            "next_boundary": "F43_CAPABILITY_PRIOR_REASSESSMENT",
+            "evidence": {"supported_primary_predicates": [name for name, value in (("NORMALIZATION_PRIMARY", normalization_primary), ("CAPABILITY_COMPONENT_DOUBLE_COUNTING_PRIMARY", double_counting_primary), ("RAY_OR_DIRECTIONAL_SCALING_PRIMARY", ray_directional_primary), ("SEMANTIC_CAPABILITY_INFORMATION_MISSING", semantic_information_missing), ("CROSS_RULESET_PRIOR_CONFLICT", cross_ruleset_conflict)) if value]},
+            "reason": "Rejected: one independent primary diagnosis is supported." if not mixed_or_unresolved else "Accepted: evidence remains materially unresolved.",
+        },
+    }
+    supported = [name for name, value in predicate_ledger.items() if value["supported"]]
+    if len(supported) != 1:
+        raise ValueError(f"F42 selection must support exactly one classification, got {supported}")
+    selected = predicate_ledger[supported[0]]
     return {
-        "primary_diagnosis": primary,
-        "next_boundary": boundary,
+        "primary_diagnosis": supported[0],
+        "next_boundary": selected["next_boundary"],
+        "predicate_ledger": predicate_ledger,
         "normalization_assessment": {
             "raw_ratios": raw_ratios,
             "raw_bands_pass": raw_band_pass,
-            "normalized_bands_pass": reproduction["western"]["bands_pass"],
+            "normalized_bands_pass": normalized_band_pass,
             "classification": "NORMALIZATION_NON_PRIMARY" if not raw_band_pass else "NORMALIZATION_REQUIRES_REVIEW",
             "reason": "The Western inflation is already present in raw capability ratios; median/scale/round normalization preserves the ordering and only changes values through scale and integer rounding." if not raw_band_pass else "Raw ratios are within the frozen bands, so normalization requires a separate causal review.",
         },
         "quantitative_selection_evidence": {
-            "ray_directional_score": ray_score,
-            "maximum_near_redundancy_abs_pearson": double_score,
-            "ray_comparisons": ray_growth,
-            "selection_rule": "larger observed generic mechanism score; no coefficient tuning or human-value fitting",
+            "ray_length_delta": geometry_predicates["ray_length_delta"],
+            "direction_count_delta": geometry_predicates["direction_count_delta"],
+            "leap_to_ray_delta": geometry_predicates["leap_to_ray_delta"],
+            "one_at_a_time_ablation": minus_reduces_and_preserves_shogi,
+            "selection_rule": "exactly one independent causal predicate supported; raw deltas and correlations are reported separately and never compared across units",
         },
         "western_inflation_not_a_loss_function": True,
     }
@@ -722,7 +801,7 @@ def audit() -> dict[str, Any]:
     synthetic = _synthetic_ledger()
     pawn = _pawn_suppression(compiled_by_name, f41_result, components)
     shogi = _shogi_cross_rule(components, f41_result)
-    selection = _select_diagnosis(ablation, redundancy, synthetic, reproduction)
+    selection = _select_diagnosis(ablation, redundancy, synthetic, reproduction, components)
     result = {
         "schema_version": 1,
         "status": "PASS" if reproduction["accepted_f41_r1_reproduction_matches"] else "FAIL_F41_REPRODUCTION",

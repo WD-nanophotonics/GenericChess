@@ -20,6 +20,22 @@ ratios were N/P `4.5321637426900585`, B/P `5.847953216374269`, R/P
 cosine `0.9999953399256223`, Spearman `1.0`, pairwise ordering `1.0`, and
 hand/board ratios within the accepted `0.8..1.0` gate.
 
+The selection is based on independent causal predicates, not a comparison of
+unlike numeric scales. `NORMALIZATION_PRIMARY` is rejected because the raw
+ratios already fail. `CAPABILITY_COMPONENT_DOUBLE_COUNTING_PRIMARY` is
+rejected because no substantial absolute-correlation pair also has a
+Shogi-preserving one-at-a-time pathology reduction. `RAY_OR_DIRECTIONAL_
+SCALING_PRIMARY` is accepted because mobility is the largest weighted
+contribution for every Western N/B/R/Q gap, ray-length and direction-count
+controls both grow systematically, the controls use the same generic
+compiler/analyzer, removing each small graph-global term does not make the
+Western bands pass, and the Shogi positive control remains intact. The
+remaining predicates (`SEMANTIC_CAPABILITY_INFORMATION_MISSING`,
+`CROSS_RULESET_PRIOR_CONFLICT`, and `MIXED_OR_UNRESOLVED`) are rejected by
+those same positive controls. The machine-readable predicate ledger is in
+`.generic_chess_flow/f42_selection.json`; it records each predicate's evidence
+and reason independently.
+
 ## Causal component ledger
 
 The four terms are measured from the same executable semantic candidate graph:
@@ -116,4 +132,3 @@ changes. Focused deterministic F42 tests pass. The accepted F41 full regression
 remains the governing regression evidence: candidate `1288` collected, `1285`
 passed, `1` retained F24F failure, `0` errors, `2` skipped; no candidate-only
 failure. F42 does not authorize F43 execution or promotion.
-
