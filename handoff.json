@@ -5,21 +5,33 @@
     "repository": "https://github.com/WD-nanophotonics/agent-relay-read-wake.git",
     "sha": "b9d4b195b888679a3c3ef0694eb9194dfc190549"
   },
-  "created_at": 1788277089,
-  "generation": 0,
+  "created_at": 1788277279,
+  "generation": 1,
   "generic": {
+    "business_candidate_sha": "d50aff9b1dcbb11c1ef0f2988517bb48e4e8ce1b",
     "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100",
     "repository": "https://github.com/WD-nanophotonics/GenericChess.git",
-    "sandbox_sha": "d50aff9b1dcbb11c1ef0f2988517bb48e4e8ce1b"
+    "sandbox_sha": "8029c5a86e1f2d514b9692d3f735a63248a15379"
   },
-  "owner": {
-    "host_id": "primary",
-    "machine_id": "72933be61dd04c41a15c3dbed5e7d2e3"
-  },
+  "owner": null,
   "schema": "generic-chess-handoff-v1",
-  "state": "CLAIMED",
-  "target_host_id": null,
+  "state": "RELEASED",
+  "target_host_id": "standby",
   "workflow": {
-    "resume_stage": "REQUEST_NEXT_ORDER"
+    "chat_control": {
+      "GENERICCHESS_CANDIDATE_SHA": "NONE",
+      "GENERICCHESS_PROMOTION": "HOLD",
+      "GENERICCHESS_STATUS": "CONTINUE"
+    },
+    "closeout_sha256": "ff8919ee7d996cefba9ef56b10589e66d57bf010a288c3448f1ef74030cc682e",
+    "last_work_order_id": "GENERICCHESS-F41-RULE-DERIVED-MATERIAL-PRIOR-AND-SIGNAL-UTILIZATION-CORRECTIVE",
+    "mode": "courier",
+    "resume_stage": "SUBMIT_CLOSEOUT",
+    "tested_candidate_targets": [
+      "tests\\test_f41_semantic_material_prior.py",
+      "tests\\test_f41_semantic_prior_manifest.py"
+    ],
+    "work_order_active": true,
+    "work_request_token": "dcb2fdf240674121a8ebdaec364b22fc"
   }
 }
