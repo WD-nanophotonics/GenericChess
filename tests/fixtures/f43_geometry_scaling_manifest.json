@@ -1,0 +1,60 @@
+{
+  "baseline": {
+    "f42_sha": "6504a45dff2e1a726feb94d6aa83ac5128e0985d",
+    "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100"
+  },
+  "candidate_selection": {
+    "GEOMETRY_SCALING_CANDIDATE_SUPPORTED": "F44_GEOMETRY_SCALING_INTEGRATION_PROTOTYPE",
+    "GEOMETRY_SCALING_CROSS_RULESET_CONFLICT": "F44_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "GEOMETRY_SCALING_INSUFFICIENT": "F44_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS",
+    "MIXED_OR_UNRESOLVED": "F44_CAPABILITY_PRIOR_REASSESSMENT",
+    "MULTIPLE_GEOMETRY_SCALING_CANDIDATES": "F44_GEOMETRY_SCALING_DISCRIMINATION"
+  },
+  "constraints": {
+    "DIAGNOSIS_ONLY": true,
+    "NO_ALPHASHO": true,
+    "NO_COEFFICIENT_FITTING": true,
+    "NO_HUMAN_VALUE_REGRESSION": true,
+    "NO_NEW_PRODUCTION_EVALUATOR_FORMULA": true,
+    "NO_R37": true,
+    "NO_SECOND_RULE_COMPILER": true,
+    "NO_SEARCH_SELFPLAY_TDLEAF": true,
+    "PRODUCTION_DIFF_ZERO": true
+  },
+  "gates": {
+    "candidate_only_failures": [],
+    "shogi_cosine": 0.95,
+    "shogi_hand_board_ratio": [0.8, 1.0],
+    "shogi_pairwise_ordering": 0.9,
+    "shogi_spearman": 0.9,
+    "structural": [
+      "zero_movement_zero_contribution",
+      "non_negative",
+      "monotone_option_mass",
+      "owner_mirror_invariant",
+      "type_ruleset_rename_invariant",
+      "action_pattern_order_invariant",
+      "candidate_dedup_invariant",
+      "finite_deterministic"
+    ],
+    "western_bands": {"B": [2.5, 3.75], "N": [2.5, 3.5], "P": [1.0, 1.0], "Q": [7.5, 11.0], "R": [4.0, 6.0]}
+  },
+  "input_files": {
+    "f42_audit": {"path": "scripts/audit_f42_semantic_capability_prior.py", "sha256": "872450b8f6dd7910933cb6e1280500d575decdd3500fee4becfe6b7f74142de3"},
+    "f42_manifest": {"path": "tests/fixtures/f42_capability_prior_manifest.json", "sha256": "ec1b316f5723d616f1358d471b65320247a46851b132e5c46ee1e1bea1df06e6"},
+    "evaluation_config": {"path": "generic_chess/ai/evaluation/config.py", "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"},
+    "rule_compiler": {"path": "generic_chess/rules/compiler.py", "sha256": "f895ffe7648cd66a69125205ece00c6455dde5114b38bcbc11cf97cd461c1de9"},
+    "rule_schema": {"path": "generic_chess/rules/schema.py", "sha256": "6087fadb114b00446b6bbf8a44eddd8394600e14da9d581c93acf039df9f2cfd"}
+  },
+  "kind": "F43_CAPABILITY_GEOMETRY_SCALING_PROTOTYPE",
+  "manifest_sha256": "b1f426263aa4ee059e1c44fc70fc35c38345b05500181d4e7a1fac5428dfca3c",
+  "synthetic_families": ["one_step_leap_vs_multi_square_ray", "short_ray_vs_long_ray", "single_direction_vs_multi_direction", "quiet_only_vs_capture_only_vs_quiet_capture", "symmetric_vs_directional"],
+  "transforms": {
+    "G43-0_LINEAR_CONTROL": "accepted F42/F41 density-weighted mobility",
+    "G43-1_PER_GEOMETRY_LOG": "log1p each canonical geometry-channel mass, then sum over channels",
+    "G43-2_PER_SOURCE_LOG": "log1p total option mass at each source after existing endpoint/path semantics",
+    "G43-3_HIERARCHICAL_LOG": "log1p each geometry channel, sum at source, then log1p source sum"
+  },
+  "work_order": "GENERICCHESS-F43-CAPABILITY-GEOMETRY-SCALING-PROTOTYPE",
+  "schema_version": 1
+}
