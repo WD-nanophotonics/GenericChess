@@ -2,9 +2,15 @@
 
 from __future__ import annotations
 
+import json
+
+import pytest
+
+import scripts.f48_protocol as protocol
 from scripts.f48_protocol import (
     RULESET_FINGERPRINTS,
     build_partition_plan,
+    guard_corpus_identities,
     partition_id,
     preflight,
     recompute_selector,
@@ -63,6 +69,42 @@ def test_preflight_binds_authority_and_separates_holdout():
         "mechanically_checked": True,
     }
     assert all(len(row["input_hash"]) == 64 for row in plan["partitions"])
+
+
+def test_collision_witness_is_atomic_and_blocks_later_partition(tmp_path, monkeypatch):
+    monkeypatch.setattr(protocol, "ROOT", tmp_path)
+    later_partition_started = []
+    identities = {"training": {"same"}, "holdout": {"same"}, "arena": {"other"}}
+    with pytest.raises(RuntimeError, match="witness="):
+        guard_corpus_identities(
+            ruleset_id="A_CANONICAL_WESTERN_CHESS",
+            ruleset_fingerprint=RULESET_FINGERPRINTS["A_CANONICAL_WESTERN_CHESS"],
+            identities=identities,
+            authority_hash="a" * 64,
+            config_hash="b" * 64,
+            input_hash="c" * 64,
+            proceed=lambda ledger: later_partition_started.append(ledger),
+        )
+    witness = json.loads((tmp_path / ".generic_chess_flow" / "f48" / "collision-witnesses" / "A_CANONICAL_WESTERN_CHESS.json").read_text())
+    assert witness["status"] == "FAIL_CLOSED_COLLISION"
+    assert witness["collisions"] == [{"left": "training", "right": "holdout", "keys": ["same"]}]
+    assert later_partition_started == []
+
+
+def test_normal_corpus_guard_records_all_identity_sets():
+    identities = {"training": {"t1", "t2"}, "holdout": {"h1"}, "arena": {"a1"}}
+    ledger = guard_corpus_identities(
+        ruleset_id="A_CANONICAL_WESTERN_CHESS",
+        ruleset_fingerprint=RULESET_FINGERPRINTS["A_CANONICAL_WESTERN_CHESS"],
+        identities=identities,
+        authority_hash="a" * 64,
+        config_hash="b" * 64,
+        input_hash="c" * 64,
+        proceed=lambda value: value,
+    )
+    assert ledger["pairwise_disjoint"] is True
+    assert ledger["counts"] == {"arena": 1, "holdout": 1, "training": 2}
+    assert ledger["sets"]["training"] == ["t1", "t2"]
 
 
 def test_selector_terminal_prerequisite_paths():

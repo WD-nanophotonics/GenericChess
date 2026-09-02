@@ -37,6 +37,7 @@ from generic_chess.session.session import GameSession
 
 try:
     from .f48_protocol import (
+        AUTHORITY,
         BASELINE_SHA,
         H48B_SELECTED_FINGERPRINT,
         ROOT,
@@ -46,10 +47,12 @@ try:
         partition_input_hash,
         preflight,
         recompute_selector,
+        guard_corpus_identities,
         validate_raw_result,
     )
 except ImportError:  # direct ``python scripts/audit_*.py`` execution
     from f48_protocol import (
+        AUTHORITY,
         BASELINE_SHA,
         H48B_SELECTED_FINGERPRINT,
         ROOT,
@@ -59,6 +62,7 @@ except ImportError:  # direct ``python scripts/audit_*.py`` execution
         partition_input_hash,
         preflight,
         recompute_selector,
+        guard_corpus_identities,
         validate_raw_result,
     )
 
@@ -324,7 +328,7 @@ def _run_ruleset(ruleset_id, compiled, store):
     native_rules = compile_native_rules(_native_compile_input(compiled))
     native_compile_seconds = time.perf_counter() - native_started
     priors = _priors(compiled)
-    corpus_id = lambda phase: f"{ruleset_id}:{phase}"
+    corpus_partition_id = next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["phase"] == "corpus")
 
     def corpus_data():
         training_openings = generate_arena_openings(compiled, count=16, seed=480700, min_plies=2, max_plies=6)
@@ -333,11 +337,11 @@ def _run_ruleset(ruleset_id, compiled, store):
         training = generate_diagnostic_corpus(compiled, training_openings, count=64, seed=480700, min_plies=2, max_plies=6)
         holdout = generate_diagnostic_corpus(compiled, holdout_openings, count=64, seed=480701, min_plies=2, max_plies=6)
         identities = {"training": {p.position_key for p in training.positions}, "holdout": {p.position_key for p in holdout.positions}, "arena": {o.final_position_key for o in arena_openings.openings}}
-        if any(identities[left] & identities[right] for left, right in (("training", "holdout"), ("training", "arena"), ("holdout", "arena"))):
-            raise RuntimeError(f"corpus identity collision for {ruleset_id}")
-        return {"training": {"opening": training_openings.to_dict(), "corpus": training.to_dict()}, "holdout": {"opening": holdout_openings.to_dict(), "corpus": holdout.to_dict()}, "arena": arena_openings.to_dict(), "pairwise_disjoint": True}
+        def finish(ledger):
+            return {"training": {"opening": training_openings.to_dict(), "corpus": training.to_dict()}, "holdout": {"opening": holdout_openings.to_dict(), "corpus": holdout.to_dict()}, "arena": arena_openings.to_dict(), "identity_ledger": ledger}
+        return guard_corpus_identities(ruleset_id=ruleset_id, ruleset_fingerprint=compiled.ruleset_fingerprint, identities=identities, authority_hash=stable_sha256(AUTHORITY), config_hash=stable_sha256(store.config), input_hash=store.by_id[corpus_partition_id]["input_hash"], proceed=finish)
 
-    data = store.run(next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["phase"] == "corpus"), corpus_data)
+    data = store.run(corpus_partition_id, corpus_data)
     training_openings = ArenaOpeningCorpus.from_dict(data["training"]["opening"])
     holdout_openings = ArenaOpeningCorpus.from_dict(data["holdout"]["opening"])
     arena_openings = ArenaOpeningCorpus.from_dict(data["arena"])

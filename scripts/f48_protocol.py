@@ -140,6 +140,34 @@ def atomic_write_json(path: Path, value: dict[str, Any]) -> None:
     os.replace(temporary, path)
 
 
+def guard_corpus_identities(
+    *,
+    ruleset_id: str,
+    ruleset_fingerprint: str,
+    identities: dict[str, set[str]],
+    authority_hash: str,
+    config_hash: str,
+    input_hash: str,
+    proceed: Any,
+) -> Any:
+    """Record a collision witness and abort before any later partition.
+
+    ``proceed`` is deliberately invoked only after all pairwise identity
+    checks pass.  The witness is ignored runtime evidence, never a Git input.
+    """
+    collisions = []
+    for left, right in (("training", "holdout"), ("training", "arena"), ("holdout", "arena")):
+        shared = sorted(identities[left] & identities[right])
+        if shared:
+            collisions.append({"left": left, "right": right, "keys": shared})
+    if collisions:
+        witness_path = ROOT / ".generic_chess_flow" / "f48" / "collision-witnesses" / f"{ruleset_id}.json"
+        atomic_write_json(witness_path, {"kind": "F48_CORPUS_IDENTITY_COLLISION_WITNESS", "status": "FAIL_CLOSED_COLLISION", "ruleset_id": ruleset_id, "ruleset_fingerprint": ruleset_fingerprint, "collisions": collisions, "authority_hash": authority_hash, "config_hash": config_hash, "input_hash": input_hash})
+        raise RuntimeError(f"corpus identity collision for {ruleset_id}; witness={witness_path}")
+    ledger = {name: sorted(values) for name, values in sorted(identities.items())}
+    return proceed({"sets": ledger, "counts": {name: len(values) for name, values in sorted(identities.items())}, "pairwise_disjoint": True})
+
+
 def resource_estimate(partitions: Iterable[dict[str, Any]] | None = None) -> dict[str, Any]:
     rows = list(partitions or build_partition_plan())
     search_units = {
