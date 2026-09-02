@@ -25,6 +25,12 @@ from scripts.f49_protocol import (
     load_h49r2a_manifest,
     validate_h49r2a_manifest,
     verify_nonmaterial_liveness,
+    build_h49r3a_primary_execution,
+    current_native_runtime_provenance,
+    load_h49r3a_manifest,
+    source_tree_ledger,
+    validate_h49r3a_execution_bindings,
+    validate_h49r3a_manifest,
 )
 
 
@@ -134,3 +140,89 @@ def test_h49r2a_rejects_tampered_contract():
     tampered["python_nonmaterial_execution"]["limits"]["max_nodes"] = 4000
     with pytest.raises(RuntimeError, match="manifest hash"):
         validate_h49r2a_manifest(tampered)
+
+
+def test_h49r3a_freezes_parent_execution_routes_and_no_measurements():
+    manifest = load_h49r3a_manifest()
+    assert manifest["checkpoint_name"] == "H49R3A"
+    assert manifest["parent_h49r2a_sha"] == "628c4c5a34f547a413fb56d5295b71d2f4dcf1f1"
+    assert manifest["h49r2a_manifest_sha256"] == "9b6b98997b7656f845283b20297d325c83c8451c6da55255e3f481e638e9beaf"
+    assert manifest["observed_results_present"] is False
+    assert manifest["measurements_invoked"] is False
+    assert manifest["learning_invoked"] is False
+    assert manifest["execution_compilation"]["separate_ruleset_compilation"] is False
+    assert manifest["execution_compilation"]["generated_candidate"] == {
+        "seed": 20260807009,
+        "board_size": 6,
+        "setup_preset": "free_random",
+        "source": "H48B candidate index 9 high-level RuleSet",
+    }
+
+
+def test_h49r3a_primary_rulesets_reproduce_fingerprints_and_legacy_binding():
+    executions = build_h49r3a_primary_execution()
+    assert set(executions) == {
+        "A_CANONICAL_WESTERN_CHESS",
+        "B_CANONICAL_STANDARD_SHOGI",
+        "C_H48B_SELECTED_GENERATED",
+    }
+    for entry in executions.values():
+        semantic = entry["semantic_execution"]
+        legacy = entry["legacy_transport"]
+        assert semantic.ruleset_fingerprint == legacy.ruleset_fingerprint
+        assert semantic._legacy_compiled is legacy
+    assert executions["C_H48B_SELECTED_GENERATED"]["ruleset"].metadata["seed"] == 20260807009
+    assert executions["C_H48B_SELECTED_GENERATED"]["ruleset"].metadata["setup_preset"] == "free_random"
+
+
+def test_h49r3a_requires_nonnull_native_legality_provider_without_fallback():
+    bound = validate_h49r3a_execution_bindings()
+    assert set(bound) == {
+        "A_CANONICAL_WESTERN_CHESS",
+        "B_CANONICAL_STANDARD_SHOGI",
+        "C_H48B_SELECTED_GENERATED",
+    }
+    assert bound["C_H48B_SELECTED_GENERATED"]["native_legality_provider"] is True
+    assert bound["C_H48B_SELECTED_GENERATED"]["status"] == "VALID"
+    assert all(
+        row["native_legality_provider"] is True
+        or row["status"] == "NONMATERIAL_CONTROL_NATIVE_LEGALITY_UNAVAILABLE"
+        for row in bound.values()
+    )
+    assert all(row["player_compiled_type"] == "ExecutableSemanticRuleset" for row in bound.values())
+    assert bound["C_H48B_SELECTED_GENERATED"]["ruleset_fingerprint"] == bound["C_H48B_SELECTED_GENERATED"]["provider_compiled_fingerprint"]
+    assert all(row["ruleset_fingerprint"] == row["legacy_transport_fingerprint"] for row in bound.values())
+
+
+def test_h49r3a_complete_source_tree_and_native_provenance_are_frozen():
+    manifest = load_h49r3a_manifest()
+    tree = manifest["generic_chess_source_tree"]
+    assert tree["file_count"] == 212
+    assert tree["aggregate_sha256"] == "10b3752af976844908a773ef3f017d92c2004b29fc82e9ffaf7c21acccd7bff7"
+    assert tree == source_tree_ledger()
+    paths = {item["path"] for item in tree["files"]}
+    assert {
+        "generic_chess/ai/evaluation/mobility.py",
+        "generic_chess/ai/evaluation/movement_graph.py",
+        "generic_chess/rules/compiler.py",
+        "generic_chess/rules/ir.py",
+        "generic_chess/native/semantic.py",
+        "generic_chess/_native/native_module.c",
+        "generic_chess/_native/native_semantic_rules.c",
+    } <= paths
+    runtime = manifest["native_runtime_provenance"]
+    current = current_native_runtime_provenance()
+    assert runtime == current
+    assert runtime["native_schema_version"] == "native-0.5.0"
+    assert runtime["semantic_payload_version"] == 2
+    assert runtime["native_module_sha256"] == "ae6358d7caf71b3e5d33d4673c61b75fce3342ad25ae5d6482f29bf4761a1614"
+    assert set(runtime["build_authority"]) == {"pyproject.toml", "scripts/build_native_zig.py"}
+
+
+def test_h49r3a_rejects_tampered_parent_or_provenance():
+    manifest = load_h49r3a_manifest()
+    tampered = copy.deepcopy(manifest)
+    tampered["parent_h49r2a_sha"] = "wrong"
+    tampered["manifest_sha256"] = __import__("scripts.f49_protocol", fromlist=["_manifest_sha"])._manifest_sha(tampered)
+    with pytest.raises(RuntimeError, match="parent binding"):
+        validate_h49r3a_manifest(tampered)

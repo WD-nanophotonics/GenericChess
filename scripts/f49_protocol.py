@@ -5,8 +5,11 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import platform
 import random
 import subprocess
+import sys
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -18,9 +21,11 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49a_learning_signal_architecture_protocol_manifest.json"
 H49R1A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r1a_executable_diagnostic_protocol_manifest.json"
 H49R2A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r2a_nonmaterial_execution_protocol_manifest.json"
+H49R3A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r3a_execution_dependency_and_ruleset_binding_manifest.json"
 F48_BASELINE_SHA = "4bd25d405af0890668c2940eefc8b68faae1b594"
 H49A_MANIFEST_SHA = "e294a27ed1a4ea4c03578321b1beeb61ba233aafe19fcad98e968a016ed14f90"
 H49R1A_MANIFEST_SHA = "57d2d189712138efa352b8e93edae83cb4938d74c5140717976aecf722a31215"
+H49R2A_MANIFEST_SHA = "9b6b98997b7656f845283b20297d325c83c8451c6da55255e3f481e638e9beaf"
 RULESET_FINGERPRINTS = {
     "A_CANONICAL_WESTERN_CHESS": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
     "B_CANONICAL_STANDARD_SHOGI": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
@@ -296,6 +301,230 @@ def load_h49r2a_manifest() -> dict[str, Any]:
     return manifest
 
 
+def _git_blob_sha256(ref: str, path: str) -> str:
+    raw = subprocess.run(
+        ["git", "cat-file", "blob", f"{ref}:{path}"],
+        cwd=ROOT,
+        capture_output=True,
+        check=True,
+    ).stdout
+    return hashlib.sha256(raw).hexdigest()
+
+
+def source_tree_ledger(ref: str = F48_BASELINE_SHA) -> dict[str, Any]:
+    """Return the fail-closed raw ledger for every tracked generic_chess file."""
+    paths = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", ref, "generic_chess/"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout.splitlines()
+    files = [{"path": path, "sha256": _git_blob_sha256(ref, path)} for path in paths]
+    files.sort(key=lambda item: item["path"])
+    aggregate = hashlib.sha256(canonical_json(files).encode("utf-8")).hexdigest()
+    return {"baseline_sha": ref, "file_count": len(files), "aggregate_sha256": aggregate, "files": files}
+
+
+def current_native_runtime_provenance() -> dict[str, Any]:
+    """Capture the exact loaded native binary and its build/runtime identity."""
+    from generic_chess.native import native_capabilities, native_version
+    import generic_chess._native_core as native_module
+
+    binary = Path(native_module.__file__).resolve()
+    try:
+        relative = binary.relative_to(ROOT).as_posix()
+    except ValueError as exc:
+        raise RuntimeError("NATIVE_BINARY_OUTSIDE_REPOSITORY_ROOT") from exc
+    capabilities = dict(native_capabilities())
+    return {
+        "python_implementation": sys.implementation.name,
+        "python_version": platform.python_version(),
+        "platform": platform.platform(),
+        "machine": platform.machine(),
+        "native_module_path": relative,
+        "native_module_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(),
+        "native_module_size_bytes": binary.stat().st_size,
+        "native_version": native_version(),
+        "native_schema_version": capabilities.get("native_schema"),
+        "semantic_payload_version": capabilities.get("semantic_payload_version"),
+        "native_capabilities": capabilities,
+        "build_authority": {
+            "pyproject.toml": _git_blob_sha256(F48_BASELINE_SHA, "pyproject.toml"),
+            "scripts/build_native_zig.py": _git_blob_sha256(F48_BASELINE_SHA, "scripts/build_native_zig.py"),
+        },
+    }
+
+
+def build_h49r3a_primary_execution() -> dict[str, Any]:
+    """Build the three bound execution objects without running a search."""
+    from generic_chess.generation.config import GeneratorConfig
+    from generic_chess.generation.generator import generate_game
+    from generic_chess.rules.compiler import (
+        _build_semantic_support,
+        compile_ruleset_for_execution,
+        compile_semantic_ir,
+    )
+    from generic_chess.rules.execution import ExecutableSemanticRuleset
+    from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+    from generic_chess.rules.western_chess import build_western_chess_ruleset
+
+    definitions = {
+        "A_CANONICAL_WESTERN_CHESS": build_western_chess_ruleset(),
+        "B_CANONICAL_STANDARD_SHOGI": build_standard_shogi_ruleset(),
+        "C_H48B_SELECTED_GENERATED": generate_game(
+            GeneratorConfig(seed=20260807009, board_size=6, setup_preset="free_random")
+        ).ruleset,
+    }
+    output: dict[str, Any] = {}
+    for ruleset_id, ruleset in definitions.items():
+        compiled = compile_ruleset_for_execution(ruleset)
+        if isinstance(compiled, ExecutableSemanticRuleset):
+            executable = compiled
+        else:
+            # H48B candidate 9 is intentionally legacy-shaped.  Lower that
+            # exact compiled object into the existing semantic execution
+            # adapter; do not compile a second RuleSet or change its identity.
+            legacy_ir = compile_semantic_ir(compiled)
+            legacy_ir = replace(
+                legacy_ir,
+                capabilities=replace(legacy_ir.capabilities, new_ir_core_executable=True),
+            )
+            executable = ExecutableSemanticRuleset(
+                ir=legacy_ir,
+                _legacy_compiled=compiled,
+                support=_build_semantic_support(compiled),
+            )
+        legacy = executable._legacy_compiled
+        if legacy.ruleset_fingerprint != executable.ruleset_fingerprint:
+            raise RuntimeError(f"RULESET_TRANSPORT_FINGERPRINT_MISMATCH: {ruleset_id}")
+        if executable.ruleset_fingerprint != RULESET_FINGERPRINTS[ruleset_id]:
+            raise RuntimeError(f"RULESET_FINGERPRINT_MISMATCH: {ruleset_id}")
+        output[ruleset_id] = {
+            "ruleset": ruleset,
+            "semantic_execution": executable,
+            "legacy_transport": legacy,
+        }
+    return output
+
+
+def validate_h49r3a_execution_bindings() -> dict[str, Any]:
+    """Require native legality or an explicit fail-closed stop status."""
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.rules.execution import ExecutableSemanticRuleset
+
+    executions = build_h49r3a_primary_execution()
+    result = {}
+    for ruleset_id, entry in executions.items():
+        executable = entry["semantic_execution"]
+        if not isinstance(executable, ExecutableSemanticRuleset):
+            raise RuntimeError(f"NONMATERIAL_CONTROL_NATIVE_LEGALITY_UNAVAILABLE: {ruleset_id}")
+        player = AlphaBetaPlayer(
+            executable,
+            tt_max_entries=250000,
+            use_disk_cache=False,
+            use_tt=True,
+            use_ordering=True,
+            use_native_semantic_legality=True,
+        )
+        if player.compiled is not executable:
+            raise RuntimeError(f"NONMATERIAL_CONTROL_EXECUTION_OBJECT_MISMATCH: {ruleset_id}")
+        expected = RULESET_FINGERPRINTS[ruleset_id]
+        provider = player.native_legality_provider
+        if provider is None:
+            result[ruleset_id] = {
+                "semantic_execution_type": type(executable).__name__,
+                "ruleset_fingerprint": executable.ruleset_fingerprint,
+                "legacy_transport_fingerprint": entry["legacy_transport"].ruleset_fingerprint,
+                "player_compiled_type": type(player.compiled).__name__,
+                "native_legality_provider": False,
+                "status": "NONMATERIAL_CONTROL_NATIVE_LEGALITY_UNAVAILABLE",
+            }
+            continue
+        if provider.compiled.ruleset_fingerprint != expected:
+            raise RuntimeError(f"NATIVE_LEGALITY_FINGERPRINT_MISMATCH: {ruleset_id}")
+        if provider.native_rules.fingerprint != expected:
+            raise RuntimeError(f"NATIVE_LEGALITY_FINGERPRINT_MISMATCH: {ruleset_id}")
+        result[ruleset_id] = {
+            "semantic_execution_type": type(executable).__name__,
+            "ruleset_fingerprint": executable.ruleset_fingerprint,
+            "legacy_transport_fingerprint": entry["legacy_transport"].ruleset_fingerprint,
+            "player_compiled_type": type(player.compiled).__name__,
+            "native_legality_provider": True,
+            "provider_compiled_fingerprint": provider.native_rules.fingerprint,
+            "status": "VALID",
+        }
+    return result
+
+
+def validate_h49r3a_manifest(manifest: dict[str, Any]) -> None:
+    if _manifest_sha(manifest) != manifest.get("manifest_sha256"):
+        raise RuntimeError("H49R3A manifest hash mismatch")
+    if manifest.get("checkpoint_name") != "H49R3A":
+        raise RuntimeError("H49R3A checkpoint drift")
+    if manifest.get("parent_h49r2a_sha") != "628c4c5a34f547a413fb56d5295b71d2f4dcf1f1" or manifest.get("h49r2a_manifest_sha256") != H49R2A_MANIFEST_SHA:
+        raise RuntimeError("H49R3A parent binding drift")
+    if manifest.get("baseline_sha") != F48_BASELINE_SHA:
+        raise RuntimeError("H49R3A baseline drift")
+    if manifest.get("protocol_status") != "PRE_REGISTERED_NO_OBSERVED_RESULTS" or manifest.get("observed_results_present") or manifest.get("measurements_invoked") or manifest.get("learning_invoked"):
+        raise RuntimeError("H49R3A contains observed or executed work")
+    if manifest.get("production_diff_required") != "ZERO" or manifest.get("master_promotion") is not False:
+        raise RuntimeError("H49R3A production scope drift")
+    if manifest.get("ruleset_fingerprints") != RULESET_FINGERPRINTS:
+        raise RuntimeError("H49R3A RuleSet fingerprint drift")
+    execution = manifest.get("execution_compilation", {})
+    if execution.get("entry_point") != "generic_chess.rules.compiler.compile_ruleset_for_execution":
+        raise RuntimeError("H49R3A execution compiler drift")
+    if execution.get("generated_candidate") != {"seed": 20260807009, "board_size": 6, "setup_preset": "free_random", "source": "H48B candidate index 9 high-level RuleSet"}:
+        raise RuntimeError("H49R3A generated candidate construction drift")
+    if execution.get("semantic_execution_type") != "generic_chess.rules.execution.ExecutableSemanticRuleset":
+        raise RuntimeError("H49R3A semantic execution type drift")
+    if execution.get("legacy_transport") != "semantic_execution_ruleset._legacy_compiled":
+        raise RuntimeError("H49R3A legacy transport drift")
+    if execution.get("separate_ruleset_compilation") is not False:
+        raise RuntimeError("H49R3A permits an alternative RuleSet compilation")
+    legality = manifest.get("python_nonmaterial_legality", {})
+    if legality.get("use_native_semantic_legality") is not True or legality.get("provider_required") is not True or legality.get("silent_fallback") is not False:
+        raise RuntimeError("H49R3A Python legality binding drift")
+    if legality.get("unavailable_status") != "NONMATERIAL_CONTROL_NATIVE_LEGALITY_UNAVAILABLE":
+        raise RuntimeError("H49R3A Python legality failure status drift")
+    source_tree = manifest.get("generic_chess_source_tree", {})
+    actual_tree = source_tree_ledger(manifest["baseline_sha"])
+    if source_tree != actual_tree:
+        raise RuntimeError("H49R3A complete source-tree ledger drift")
+    omitted_required = {
+        "generic_chess/ai/evaluation/mobility.py",
+        "generic_chess/ai/evaluation/movement_graph.py",
+        "generic_chess/rules/compiler.py",
+        "generic_chess/rules/ir.py",
+        "generic_chess/native/semantic.py",
+        "generic_chess/_native/native_module.c",
+        "generic_chess/_native/native_semantic_rules.c",
+    }
+    if not omitted_required.issubset({item["path"] for item in source_tree["files"]}):
+        raise RuntimeError("H49R3A source-tree ledger omitted required execution files")
+    runtime = manifest.get("native_runtime_provenance", {})
+    for key in ("python_implementation", "python_version", "platform", "machine", "native_module_path", "native_module_sha256", "native_version", "native_schema_version", "semantic_payload_version", "build_authority"):
+        if key not in runtime:
+            raise RuntimeError(f"H49R3A native provenance missing: {key}")
+    if runtime["build_authority"] != {
+        "pyproject.toml": _git_blob_sha256(F48_BASELINE_SHA, "pyproject.toml"),
+        "scripts/build_native_zig.py": _git_blob_sha256(F48_BASELINE_SHA, "scripts/build_native_zig.py"),
+    }:
+        raise RuntimeError("H49R3A native build authority drift")
+    if current_native_runtime_provenance() != runtime:
+        raise RuntimeError("H49R3A native runtime or binary drift")
+    if set(manifest.get("selector", {}).get("mapping", {})) != {"LEARNER_ALIGNED_SIGNAL_SUPPORTED", "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING", "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING", "MATERIAL_ONLY_REPRESENTATION_LIMITING", "EVALUATION_SIGNAL_BROADLY_WEAK", "MIXED_OR_UNRESOLVED"}:
+        raise RuntimeError("H49R3A selector mapping incomplete")
+
+
+def load_h49r3a_manifest() -> dict[str, Any]:
+    manifest = json.loads(H49R3A_MANIFEST_PATH.read_text(encoding="utf-8"))
+    validate_h49r3a_manifest(manifest)
+    verify_nonmaterial_liveness()
+    return manifest
+
+
 def verify_nonmaterial_liveness() -> dict[str, Any]:
     """Prove the selected Python path reads each non-material coefficient."""
     sources = {
@@ -314,5 +543,6 @@ def verify_nonmaterial_liveness() -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    value = load_h49r2a_manifest()
+    value = load_h49r3a_manifest()
+    validate_h49r3a_execution_bindings()
     print(json.dumps({"status": "PASS", "kind": value["kind"], "next_boundary": value["next_authorized_boundary"]}))
