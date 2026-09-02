@@ -1,0 +1,242 @@
+{
+  "kind": "H49A_F49_LEARNING_SIGNAL_ARCHITECTURE_PROTOCOL",
+  "work_order_id": "GENERICCHESS-F49-LEARNING-SIGNAL-ARCHITECTURE-REASSESSMENT",
+  "protocol_status": "PRE_REGISTERED_NO_OBSERVED_RESULTS",
+  "baseline_sha": "4bd25d405af0890668c2940eefc8b68faae1b594",
+  "f48_result_path": "tests/fixtures/f48_learnable_material_recovery_results.json",
+  "f48_classification": "MIXED_OR_UNRESOLVED",
+  "f48_next_boundary": "F49_LEARNING_ARCHITECTURE_REASSESSMENT",
+  "f48_status": "CLOSED",
+  "f49_status": "DIAGNOSIS_ONLY",
+  "f50_status": "NOT_STARTED",
+  "authority": {
+    "h48c_checkpoint_sha": "742bc536f0ae2ed44e28c23b43b71a3ca859fb9f",
+    "resolved_seed_triple": {
+      "training": 480700,
+      "holdout": 480703,
+      "arena": 480708
+    },
+    "holdout_positions": {
+      "count": 64,
+      "min_plies": 2,
+      "max_plies": 6
+    },
+    "rulesets": {
+      "A_CANONICAL_WESTERN_CHESS": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "B_CANONICAL_STANDARD_SHOGI": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+      "C_H48B_SELECTED_GENERATED": "9f7e7201a19f8f0ee6c0eacc766c2ac3a6c313e06bbc960d5d6dfb89137db923"
+    },
+    "identity_key": "generic_chess.core.identity.position_identity_key",
+    "f48_r4_erratum": {
+      "fresh_r4_partition_root": ".generic_chess_flow/f48-r4-prerequisite-closure-final-v3",
+      "actual_diff_files": [
+        "docs/architecture/ADR-118-f48-learnable-material-recovery-protocol.md",
+        "scripts/audit_f48_learnable_material_recovery.py",
+        "scripts/f48_protocol.py",
+        "tests/fixtures/f48_learnable_material_recovery_results.json",
+        "tests/test_f48_execution_authority.py",
+        "tests/test_f48_protocol.py"
+      ]
+    }
+  },
+  "control_corpus": {
+    "name": "F48_H48C_CONTROL",
+    "training_seed": 480700,
+    "holdout_seed": 480703,
+    "arena_seed": 480708,
+    "count": 64,
+    "min_plies": 2,
+    "max_plies": 6,
+    "preserve_results": true,
+    "interpretation": "evaluator_neutral_structural_control_only"
+  },
+  "structural_ledger": {
+    "required_fields": [
+      "total_positions",
+      "unique_identities",
+      "duplication_histogram",
+      "effective_unique_fraction",
+      "ply_histogram",
+      "legal_action_count_distribution",
+      "inventory_change_frequency",
+      "capture_remove_event_frequency",
+      "promotion_type_change_frequency",
+      "hand_drop_state_change_frequency"
+    ],
+    "identity_definition": "position_identity_key",
+    "evaluator_neutral": true,
+    "no_causal_inference_from_control": true
+  },
+  "diagnostic_strata": {
+    "S49-M": {
+      "name": "MID_REACHABLE_UNIQUE",
+      "seed": 490100,
+      "count": 64,
+      "target_plies": [8, 20],
+      "target_plies_inclusive": true,
+      "identity_unique": true,
+      "core_legal_actions_only": true,
+      "reject_duplicate_identities": true,
+      "reject_terminal_positions": true,
+      "minimum_legal_actions": 1,
+      "selection_order": "first_valid_candidate_in_deterministic_generation_order",
+      "attempt_cap": 100000,
+      "unavailable_status": "STRUCTURAL_STRATUM_UNAVAILABLE",
+      "evaluator_neutral": true
+    },
+    "S49-E": {
+      "name": "INVENTORY_EVENT_UNIQUE",
+      "seed": 490200,
+      "count": 64,
+      "target_plies": [6, 24],
+      "target_plies_inclusive": true,
+      "identity_unique": true,
+      "core_legal_actions_only": true,
+      "reject_duplicate_identities": true,
+      "reject_terminal_positions": true,
+      "minimum_legal_actions": 2,
+      "required_history_event": [
+        "remove_or_capture_effect",
+        "type_or_promotion_transformation",
+        "hand_or_inventory_count_change"
+      ],
+      "event_predicate_uses_piece_values": false,
+      "event_predicate_uses_game_name": false,
+      "selection_order": "first_valid_candidate_in_deterministic_generation_order",
+      "attempt_cap": 100000,
+      "unavailable_status": "STRUCTURAL_STRATUM_UNAVAILABLE",
+      "evaluator_neutral": true
+    }
+  },
+  "leverage_surfaces": {
+    "L49-0": {
+      "name": "SINGLE_TYPE_LOCAL",
+      "basis": "F48_control",
+      "channel": "non_anchor_board_and_corresponding_hand_jointly",
+      "factors": [0.75, 1.25],
+      "budgets": [500, 2000, 8000],
+      "diagnostic_only": true
+    },
+    "L49-1": {
+      "name": "LEARNER_DIRECTION_LOCAL",
+      "directions": [
+        "alternating_sign",
+        "first_half_positive",
+        "board_hand_differential",
+        "seeded_normalized_pseudorandom"
+      ],
+      "signs": [-1, 1],
+      "magnitude": "0.10 * l2_norm(P48-0_material_vector)",
+      "positivity_constraint": true,
+      "median_rescaling": true,
+      "budgets": [500, 2000, 8000],
+      "diagnostic_only": true
+    },
+    "L49-2": {
+      "name": "LARGE_SINGLE_TYPE_DIAGNOSTIC",
+      "channel": "non_anchor_board_and_corresponding_hand_jointly",
+      "factors": [0.5, 1.5],
+      "budget": 2000,
+      "diagnostic_only": true,
+      "does_not_replace_f48_prerequisite": true
+    },
+    "report_fields": [
+      "per_perturbation_flip_rate",
+      "mean_flip_rate",
+      "score_displacement",
+      "failed_searches",
+      "usable_direction_or_type_count"
+    ]
+  },
+  "teacher_stability_surface": {
+    "checkpoint": "P48-0",
+    "adjacent_budget_pairs": [[10000, 20000], [20000, 40000], [40000, 80000]],
+    "required_fields": [
+      "exact_best_move_agreement",
+      "failed_searches",
+      "score_sign_agreement",
+      "top_action_stability",
+      "convergence_trend"
+    ],
+    "control_gate": "F48_20k_vs_40k_agreement_at_least_0.85",
+    "no_retrospective_redefinition": true
+  },
+  "interpretation_gates": {
+    "learner_direction_signal": "L49-1 mean flip at 2000 >= 0.05",
+    "single_type_signal": "L49-0 mean flip at 2000 >= 0.05",
+    "stable_teacher_40_80": "40k_vs_80k agreement >= 0.85 AND zero failures",
+    "structural_corpus_gain": "max(S49-M learner-direction leverage, S49-E learner-direction leverage) - control learner-direction leverage >= 0.05 absolute",
+    "weights_fit_from_results": false
+  },
+  "existing_non_material_control": {
+    "condition": "stable_teacher_on_at_least_one_diagnostic_corpus",
+    "mode": "NON_TRAINING",
+    "families": [
+      "dynamic_mobility",
+      "promotion_potential",
+      "anchor_escape_or_safety_where_applicable"
+    ],
+    "factors": [-0.25, 0.25],
+    "source": "existing_generic_dynamic_evaluator_coefficients_only",
+    "label": "NON_MATERIAL_EXISTING_FEATURE_LEVERAGE",
+    "production_defaults_changed": false,
+    "new_feature_family_allowed": false
+  },
+  "classification": {
+    "precedence": [
+      "LEARNER_ALIGNED_SIGNAL_SUPPORTED",
+      "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING",
+      "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING",
+      "MATERIAL_ONLY_REPRESENTATION_LIMITING",
+      "EVALUATION_SIGNAL_BROADLY_WEAK",
+      "MIXED_OR_UNRESOLVED"
+    ],
+    "mapping": {
+      "LEARNER_ALIGNED_SIGNAL_SUPPORTED": "F50_LEARNABLE_MATERIAL_RECOVERY_PROTOCOL_V2",
+      "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING": "F50_STRUCTURAL_CORPUS_RECOVERY_PROTOCOL",
+      "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING": "F50_NATIVE_SEARCH_STRENGTH_REASSESSMENT",
+      "MATERIAL_ONLY_REPRESENTATION_LIMITING": "F50_GENERIC_LEARNABLE_EVALUATOR_EXPANSION",
+      "EVALUATION_SIGNAL_BROADLY_WEAK": "F50_SEARCH_DOMINANCE_AND_EVALUATION_ROLE_DIAGNOSIS",
+      "MIXED_OR_UNRESOLVED": "F50_LEARNING_ARCHITECTURE_REASSESSMENT"
+    },
+    "mixed_outcome_allowed": true,
+    "precedence_frozen_before_measurements": true
+  },
+  "required_causal_distinctions": {
+    "A": "single_type_low_but_learner_direction_adequate_on_two_primary_rulesets_with_stable_teachers",
+    "B": "control_weak_and_unique_structural_corpora_materially_improve_signal_or_stability",
+    "C": "fewer_than_two_rulesets_stable_at_40k_vs_80k_on_most_usable_strata",
+    "D": "stable_teachers_material_learner_direction_weak_and_existing_non_material_leverage_substantial"
+  },
+  "compile_and_runtime_ledger": {
+    "required_fields": [
+      "native_ruleset_compile_count",
+      "evaluation_table_compile_count",
+      "nodes_per_second_by_ruleset_corpus_budget",
+      "ruleset_recompilation_for_evaluator_perturbations",
+      "evaluator_analysis_inside_node_loop"
+    ],
+    "ruleset_recompilation_for_evaluator_perturbations": false,
+    "evaluator_analysis_inside_node_loop": false
+  },
+  "prohibitions": [
+    "no_observed_f49_results_in_h49a",
+    "no_tdleaf_training",
+    "no_m48_1_optimization",
+    "no_production_evaluator_or_search_change",
+    "no_changed_production_evaluator_coefficients",
+    "no_new_static_material_formulas",
+    "no_human_piece_value_fitting",
+    "no_game_name_specific_branches",
+    "no_f50_execution",
+    "no_master_promotion",
+    "no_alphasho_comparison"
+  ],
+  "observed_results_present": false,
+  "measurements_invoked": false,
+  "learning_invoked": false,
+  "production_diff_required": "ZERO",
+  "master_promotion": false,
+  "next_authorized_boundary": "GENERICCHESS-F49-DIAGNOSTIC-MEASUREMENTS-AFTER-H49A",
+  "manifest_sha256": "e294a27ed1a4ea4c03578321b1beeb61ba233aafe19fcad98e968a016ed14f90"
+}
