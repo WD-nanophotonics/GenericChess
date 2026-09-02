@@ -22,6 +22,9 @@ from scripts.f49_protocol import (
     teacher_pair_metrics,
     validate_h49a_manifest,
     validate_h49r1a_manifest,
+    load_h49r2a_manifest,
+    validate_h49r2a_manifest,
+    verify_nonmaterial_liveness,
 )
 
 
@@ -69,11 +72,14 @@ def test_h49r1a_executable_helpers_are_mechanical():
     assert inventory_event_flags({"board": {"A": 2}, "inventory": {}}, {"board": {"A": 2}, "inventory": {"A": 1}})["hand_or_inventory_count_change"]
     assert aggregate_leverage_cells([{"status": "VALID", "failed_searches": 0, "flip_rate": 0.0}, {"status": "VALID", "failed_searches": 0, "flip_rate": 0.1}])["mean_flip_rate"] == pytest.approx(0.05)
     assert aggregate_leverage_cells([{"status": "CELL_INVALID_SEARCH_FAILURE", "failed_searches": 1, "flip_rate": 1.0}])["status"] == "CELL_INVALID_SEARCH_FAILURE"
+    assert aggregate_leverage_cells([{"status": "VALID", "failed_searches": 0, "flip_rate": 0.1}, {"construction_failed": True, "status": "CONSTRUCTION_FAILED"}])["mean_flip_rate"] == pytest.approx(0.1)
+    assert aggregate_leverage_cells([{"status": "VALID", "failed_searches": 0, "flip_rate": 0.1}, {"status": "CELL_INVALID_SEARCH_FAILURE", "failed_searches": 1, "flip_rate": 0.0}])["status"] == "CELL_INVALID_SEARCH_FAILURE"
+    assert aggregate_leverage_cells([{"construction_failed": True}, {"construction_failed": True}])["status"] == "NO_USABLE_PERTURBATIONS"
     assert teacher_pair_metrics(["a", "b"], ["a", "c"], [-1.0, 0.0], [1.0, 0.0])["score_sign_agreement"] == pytest.approx(0.5)
 
 
 def _observation(stable=True, control_learner=0.0, structural=0.0, nonmaterial=False):
-    teacher = {"status": "VALID", "failed_searches": 0, "agreement": 0.9} if stable else {"status": "UNAVAILABLE", "failed_searches": 0, "agreement": 0.0}
+    teacher = {"status": "VALID", "failed_searches": 0, "exact_best_move_agreement": 0.9} if stable else {"status": "UNAVAILABLE", "failed_searches": 0, "exact_best_move_agreement": 0.0}
     def corpus(value, nonmaterial_value=False):
         return {"teacher_40_80": teacher, "L49_0_2000": {"status": "VALID", "failed_searches": 0, "mean_flip_rate": 0.0}, "L49_1_2000": {"status": "VALID", "failed_searches": 0, "mean_flip_rate": value}, "non_material_signal": nonmaterial_value}
     return {"F48_CONTROL": corpus(control_learner, nonmaterial), "S49-M": corpus(structural, nonmaterial), "S49-E": corpus(structural, nonmaterial)}
@@ -98,3 +104,33 @@ def test_h49r1a_rejects_tampered_manifest():
     tampered["search_contract"]["tt_megabytes"] = 16
     with pytest.raises(RuntimeError, match="manifest hash"):
         validate_h49r1a_manifest(tampered)
+
+
+def test_h49r1a_selector_uses_exact_teacher_schema_without_agreement_alias():
+    stable = _observation(True)
+    for corpus in stable.values():
+        corpus["teacher_40_80"].pop("agreement", None)
+        corpus["teacher_40_80"]["exact_best_move_agreement"] = 0.9
+    assert select_f49_classification({"a": stable, "b": stable, "c": stable}) == ("EVALUATION_SIGNAL_BROADLY_WEAK", "F50_SEARCH_DOMINANCE_AND_EVALUATION_ROLE_DIAGNOSIS", {"A": False, "B": False, "C": False, "D": False, "E": True})
+    unstable = _observation(True)
+    for corpus in unstable.values():
+        corpus["teacher_40_80"] = {"status": "VALID", "failed_searches": 0, "exact_best_move_agreement": 0.5, "agreement": 0.99}
+    assert select_f49_classification({"a": unstable, "b": unstable, "c": unstable})[0] == "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING"
+
+
+def test_h49r2a_binds_python_nonmaterial_path_and_live_coefficients():
+    manifest = load_h49r2a_manifest()
+    assert manifest["python_nonmaterial_execution"]["player_entry_point"].endswith("AlphaBetaPlayer.choose_action")
+    assert manifest["coefficient_control"]["candidate_formula"] == "candidate_field = baseline_field * factor"
+    assert manifest["observed_results_present"] is False
+    assert len(manifest["raw_git_blob_sha256"]) >= 40
+    proof = verify_nonmaterial_liveness()
+    assert set(proof["generic_chess/ai/evaluation/evaluator.py"]) == {"dynamic_mobility_weight", "promotion_potential_weight", "anchor_escape_weight"}
+
+
+def test_h49r2a_rejects_tampered_contract():
+    manifest = load_h49r2a_manifest()
+    tampered = copy.deepcopy(manifest)
+    tampered["python_nonmaterial_execution"]["limits"]["max_nodes"] = 4000
+    with pytest.raises(RuntimeError, match="manifest hash"):
+        validate_h49r2a_manifest(tampered)

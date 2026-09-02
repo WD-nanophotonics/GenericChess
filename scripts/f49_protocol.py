@@ -17,8 +17,10 @@ from generic_chess.learning.serialization import canonical_json, stable_sha256
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49a_learning_signal_architecture_protocol_manifest.json"
 H49R1A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r1a_executable_diagnostic_protocol_manifest.json"
+H49R2A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r2a_nonmaterial_execution_protocol_manifest.json"
 F48_BASELINE_SHA = "4bd25d405af0890668c2940eefc8b68faae1b594"
 H49A_MANIFEST_SHA = "e294a27ed1a4ea4c03578321b1beeb61ba233aafe19fcad98e968a016ed14f90"
+H49R1A_MANIFEST_SHA = "57d2d189712138efa352b8e93edae83cb4938d74c5140717976aecf722a31215"
 RULESET_FINGERPRINTS = {
     "A_CANONICAL_WESTERN_CHESS": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
     "B_CANONICAL_STANDARD_SHOGI": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
@@ -144,9 +146,10 @@ def inventory_event_flags(before: dict[str, Any], after: dict[str, Any]) -> dict
 
 
 def aggregate_leverage_cells(cells: list[dict[str, Any]]) -> dict[str, Any]:
-    if any(cell.get("status") != "VALID" or cell.get("failed_searches", 1) != 0 for cell in cells):
+    constructed = [cell for cell in cells if not cell.get("construction_failed", False)]
+    if any(cell.get("status") != "VALID" or cell.get("failed_searches", 1) != 0 for cell in constructed):
         return {"status": "CELL_INVALID_SEARCH_FAILURE", "mean_flip_rate": None, "usable_perturbations": 0}
-    usable = [cell for cell in cells if not cell.get("construction_failed", False)]
+    usable = constructed
     if not usable:
         return {"status": "NO_USABLE_PERTURBATIONS", "mean_flip_rate": None, "usable_perturbations": 0}
     return {"status": "VALID", "mean_flip_rate": sum(cell["flip_rate"] for cell in usable) / len(usable), "usable_perturbations": len(usable)}
@@ -180,7 +183,7 @@ def select_f49_classification(observations: dict[str, dict[str, dict[str, Any]]]
     witnesses = {name: [] for name in ("A", "B", "C", "D", "E")}
     for ruleset_id, corpora in observations.items():
         control = corpora["F48_CONTROL"]
-        stable = {name for name, value in corpora.items() if _valid_cell(value, "teacher_40_80") and value["teacher_40_80"].get("agreement", -1.0) >= 0.85}
+        stable = {name for name, value in corpora.items() if _valid_cell(value, "teacher_40_80") and value["teacher_40_80"].get("exact_best_move_agreement", -1.0) >= 0.85}
         learner_control = _signal(control, "L49_1_2000")
         single_control = _signal(control, "L49_0_2000")
         if "F48_CONTROL" in stable and not single_control and learner_control:
@@ -259,6 +262,57 @@ def load_h49r1a_manifest() -> dict[str, Any]:
     return manifest
 
 
+def validate_h49r2a_manifest(manifest: dict[str, Any]) -> None:
+    if hashlib.sha256(canonical_json({key: value for key, value in manifest.items() if key != "manifest_sha256"}).encode("utf-8")).hexdigest() != manifest.get("manifest_sha256"):
+        raise RuntimeError("H49R2A manifest hash mismatch")
+    if manifest.get("parent_h49r1a_sha") != "cd43e9c97a04c5279ff9791ecf15270756b2f6fa" or manifest.get("h49r1a_manifest_sha256") != H49R1A_MANIFEST_SHA:
+        raise RuntimeError("H49R2A parent binding drift")
+    if manifest.get("protocol_status") != "PRE_REGISTERED_NO_OBSERVED_RESULTS" or manifest.get("observed_results_present") or manifest.get("measurements_invoked") or manifest.get("learning_invoked"):
+        raise RuntimeError("H49R2A contains observed or executed work")
+    if manifest.get("production_diff_required") != "ZERO" or manifest.get("master_promotion") is not False:
+        raise RuntimeError("H49R2A production scope drift")
+    execution = manifest.get("python_nonmaterial_execution", {})
+    if execution.get("player_entry_point") != "generic_chess.ai.alphabeta.player.AlphaBetaPlayer.choose_action" or execution.get("search_entry_point") != "generic_chess.ai.alphabeta.search.run_root_search" or execution.get("evaluator_entry_point") != "generic_chess.ai.evaluation.evaluator.Evaluator.evaluate":
+        raise RuntimeError("H49R2A Python execution path drift")
+    if manifest.get("coefficient_control", {}).get("fields") != ["dynamic_mobility_weight", "promotion_potential_weight", "anchor_escape_weight"] or manifest.get("coefficient_control", {}).get("factors") != [0.75, 1.25] or manifest.get("coefficient_control", {}).get("budget") != 2000:
+        raise RuntimeError("H49R2A coefficient control drift")
+    dependencies = manifest.get("raw_git_blob_sha256", {})
+    if len(dependencies) < 40:
+        raise RuntimeError("H49R2A expanded dependency ledger is incomplete")
+    for path, expected in dependencies.items():
+        actual = hashlib.sha256(subprocess.run(["git", "show", f"{manifest['baseline_sha']}:{path}"], cwd=ROOT, capture_output=True, check=True).stdout).hexdigest()
+        if actual != expected:
+            raise RuntimeError(f"H49R2A dependency hash drift: {path}")
+    if manifest.get("liveness_proof") != {"generic_chess/ai/evaluation/evaluator.py": ["dynamic_mobility_weight", "promotion_potential_weight", "anchor_escape_weight"], "generic_chess/ai/alphabeta/search.py": ["ctx.evaluator.evaluate", "evaluator.evaluate"], "generic_chess/ai/alphabeta/player.py": ["run_root_search", "self._evaluator"]}:
+        raise RuntimeError("H49R2A liveness proof binding drift")
+    if set(manifest.get("selector", {}).get("mapping", {})) != {"LEARNER_ALIGNED_SIGNAL_SUPPORTED", "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING", "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING", "MATERIAL_ONLY_REPRESENTATION_LIMITING", "EVALUATION_SIGNAL_BROADLY_WEAK", "MIXED_OR_UNRESOLVED"}:
+        raise RuntimeError("H49R2A selector mapping incomplete")
+
+
+def load_h49r2a_manifest() -> dict[str, Any]:
+    manifest = json.loads(H49R2A_MANIFEST_PATH.read_text(encoding="utf-8"))
+    validate_h49r2a_manifest(manifest)
+    verify_nonmaterial_liveness()
+    return manifest
+
+
+def verify_nonmaterial_liveness() -> dict[str, Any]:
+    """Prove the selected Python path reads each non-material coefficient."""
+    sources = {
+        "generic_chess/ai/evaluation/evaluator.py": ("dynamic_mobility_weight", "promotion_potential_weight", "anchor_escape_weight"),
+        "generic_chess/ai/alphabeta/search.py": ("ctx.evaluator.evaluate", "evaluator.evaluate"),
+        "generic_chess/ai/alphabeta/player.py": ("run_root_search", "self._evaluator"),
+    }
+    proof = {}
+    for path, needles in sources.items():
+        source = subprocess.run(["git", "show", f"{F48_BASELINE_SHA}:{path}"], cwd=ROOT, capture_output=True, check=True).stdout.decode("utf-8")
+        missing = [needle for needle in needles if needle not in source]
+        if missing:
+            raise RuntimeError(f"UNMEASURABLE_IN_SELECTED_SEARCH_PATH: {path}: {missing}")
+        proof[path] = {needle: True for needle in needles}
+    return proof
+
+
 if __name__ == "__main__":
-    value = load_h49r1a_manifest()
+    value = load_h49r2a_manifest()
     print(json.dumps({"status": "PASS", "kind": value["kind"], "next_boundary": value["next_authorized_boundary"]}))
