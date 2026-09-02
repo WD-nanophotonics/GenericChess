@@ -159,3 +159,33 @@ agreement gain, paired mean `> 0.5`, and bootstrap lower bound `> 0.5`.
 H48R2A remains protocol-only: no H48B screening, search, self-play, mutation
 scoring, arena, production change, F49 work, or master promotion occurs before
 its independent checkpoint review.
+
+## H48B generated-benchmark screening addendum
+
+H48R2A was accepted as the F48 protocol authority. H48B then executed only the
+required generated-benchmark screen at baseline
+`d02212e85e9e0b50a946ec74b21e45a315dcb6d8`, reusing the bound Phase-1.7
+implementation authority at commit
+`a695fd6e89fb771952e208e562858710ae1e0b3d`. The audit-side script
+`scripts/audit_f48_h48b_generated_benchmark_selection.py` records raw Git blob
+SHA-256 dependencies, all candidate rows, predicate ledgers, and an
+independent selection proof in
+`tests/fixtures/h48b_generated_benchmark_selection.json`.
+
+All 32 candidates were generated from the frozen seed/preset cycle and screened
+with the exact viability, branching, tactical, and material-leverage constants.
+Four candidates were eligible: indices `9`, `11`, `12`, and `29`. The bound
+`select_benchmarks` path and an independent direct sort agreed on exactly one
+evaluation-sensitive selection: index `9`, seed `20260807009`, preset
+`free_random`, full fingerprint
+`9f7e7201a19f8f0ee6c0eacc766c2ac3a6c313e06bbc960d5d6dfb89137db923`.
+Reconstruction reproduced the selected fingerprint. The match to historical
+Phase-1.7 candidate 9 is recorded only as a post-selection diagnostic; it was
+not a selection input.
+
+The H48B fixture has `learned_checkpoint_input=false` and
+`selection_completed_before_learning=true`. No TDLeaf update, M48-1 mutation
+optimization, learned-checkpoint arena, F49 work, production change, or master
+promotion occurred. The H48B selection checkpoint is the sole authority for
+the third primary F48 RuleSet; learning remains a separately authorized next
+boundary.
