@@ -262,3 +262,41 @@ frozen early-stop classification was `MIXED_OR_UNRESOLVED`, and no TDLeaf,
 M48-1, learned-checkpoint, or arena-game partition was executed. Production
 RuleSet/evaluator/search semantics remained unchanged and production diff was
 zero. F49 remains a later boundary and was not started.
+
+## F48 R4 prerequisite-closure corrective addendum
+
+Courier corrective order `GENERICCHESS-F48-CORRECTIVE-R4-PREREQUISITE-EARLY-STOP-AND-BOUNDARY-CLOSURE`
+closed the resumed-execution defects without changing the H48C authority
+files. The fresh execution partition was
+`.generic_chess_flow/f48-r4-prerequisite-closure-final/`. Before any native
+search, the driver reconstructed all three H48C-resolved corpora through the
+existing generation and position-identity paths; the recorded corpus IDs,
+identity hashes, counts, empty intersections, and runtime guards matched the
+H48C ledger exactly.
+
+R4 runs the prerequisite stage globally. Its fresh authoritative ledger is:
+
+- Western Chess: `832` searches, `13` evaluation-table compiles, `832`
+  engines, and requested budgets `20000:64`, `40000:64`, `2000:704`.
+- Standard Shogi: `1856` searches, `29` evaluation-table compiles, `1856`
+  engines, and requested budgets `20000:64`, `40000:64`, `2000:1728`.
+- Selected generated RuleSet: `704` searches, `11` evaluation-table compiles,
+  `704` engines, and requested budgets `20000:64`, `40000:64`, `2000:576`.
+
+Each RuleSet has exactly one native-rules compile. The persisted efficiency
+ledger covers total authoritative prerequisite cost, including native compile,
+static metadata, corpus materialization, and all prerequisite searches; its
+current-process and total-authoritative timings are identical. No initial
+competence, training, TDLeaf, M48-1, learned-holdout, learner-arena, or
+self-play partition is present or executed. The result records
+`NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP` globally and
+`NOT_RUN_PREREQUISITE_SHORTAGE` for each learner.
+
+The prerequisite matrix remains Western leverage fail / stability `0.921875`
+pass, Shogi leverage fail / stability `0.906250` pass, and generated leverage
+`0.109375` pass / stability `0.812500` fail. Therefore the admissible count is
+zero, the terminal classification is `MIXED_OR_UNRESOLVED`, and the frozen
+seven-way mapping selects `F49_LEARNING_ARCHITECTURE_REASSESSMENT`. The
+previous incorrect `F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION` boundary
+is not used for this classification. F49 remains blocked and no production
+source or master state changed.

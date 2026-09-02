@@ -9,12 +9,15 @@ import pytest
 import scripts.f48_protocol as protocol
 from scripts.f48_protocol import (
     RULESET_FINGERPRINTS,
+    CLASSIFICATION_BOUNDARY,
     build_partition_plan,
     guard_corpus_identities,
     partition_id,
     preflight,
     recompute_selector,
     resolved_corpus_config,
+    next_boundary_for,
+    validate_raw_result,
 )
 
 
@@ -143,3 +146,17 @@ def test_selector_terminal_learning_paths():
             for prior in ("P48-1", "P48-2", "P48-3"):
                 row["learners"][learner]["by_prior"][prior]["generations"][0]["holdout_teacher_agreement"]["agreement"] = 0.5
     assert recompute_selector(rows) == "LEARNING_DIRECTION_FAILURE"
+
+
+def test_classification_boundary_mapping_is_complete_and_frozen():
+    expected = {
+        "TDLEAF_MATERIAL_RECOVERY_SUPPORTED": "F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION",
+        "SEARCH_AWARE_MATERIAL_EVOLUTION_SUPPORTED": "F49_SEARCH_AWARE_CALIBRATION_INTEGRATION",
+        "COLD_START_RECOVERY_SUPPORTED": "F49_COLD_START_LEARNING_PIPELINE",
+        "LEARNING_DIRECTION_FAILURE": "F49_GENERIC_LEARNER_REDESIGN",
+        "MATERIAL_ONLY_LEVERAGE_INSUFFICIENT": "F49_EVALUATION_FEATURE_EXPANSION_DIAGNOSIS",
+        "SEARCH_ENGINE_LIMITS_LEARNING": "F49_NATIVE_SEARCH_STRENGTH_REASSESSMENT",
+        "MIXED_OR_UNRESOLVED": "F49_LEARNING_ARCHITECTURE_REASSESSMENT",
+    }
+    assert CLASSIFICATION_BOUNDARY == expected
+    assert all(next_boundary_for(key) == value for key, value in expected.items())

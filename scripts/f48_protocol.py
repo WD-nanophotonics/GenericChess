@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
 import shutil
 import subprocess
@@ -62,6 +63,15 @@ AUTHORITY = {
 _PHASES = ("corpus", "leverage", "stability", "calibration", "initial", "training", "holdout", "arena")
 _LEARNERS = ("M48-0", "M48-1")
 _PRIORS = ("P48-0", "P48-1", "P48-2", "P48-3")
+CLASSIFICATION_BOUNDARY = {
+    "TDLEAF_MATERIAL_RECOVERY_SUPPORTED": "F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION",
+    "SEARCH_AWARE_MATERIAL_EVOLUTION_SUPPORTED": "F49_SEARCH_AWARE_CALIBRATION_INTEGRATION",
+    "COLD_START_RECOVERY_SUPPORTED": "F49_COLD_START_LEARNING_PIPELINE",
+    "LEARNING_DIRECTION_FAILURE": "F49_GENERIC_LEARNER_REDESIGN",
+    "MATERIAL_ONLY_LEVERAGE_INSUFFICIENT": "F49_EVALUATION_FEATURE_EXPANSION_DIAGNOSIS",
+    "SEARCH_ENGINE_LIMITS_LEARNING": "F49_NATIVE_SEARCH_STRENGTH_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F49_LEARNING_ARCHITECTURE_REASSESSMENT",
+}
 
 
 def _sha256_bytes(value: bytes) -> str:
@@ -170,7 +180,8 @@ def build_partition_plan() -> list[dict[str, Any]]:
 
 
 def partition_input_hash(partition: dict[str, Any], *, config: dict[str, Any]) -> str:
-    return stable_sha256({"authority": AUTHORITY, "ruleset_fingerprints": RULESET_FINGERPRINTS, "partition": partition, "config": config})
+    bound_partition = {key: value for key, value in partition.items() if key != "input_hash"}
+    return stable_sha256({"authority": AUTHORITY, "ruleset_fingerprints": RULESET_FINGERPRINTS, "partition": bound_partition, "config": config})
 
 
 def atomic_write_json(path: Path, value: dict[str, Any]) -> None:
@@ -225,12 +236,13 @@ def resource_estimate(partitions: Iterable[dict[str, Any]] | None = None) -> dic
     return {"partition_count": len(rows), "search_units": search_units, "total_search_units": total_units, "estimated_runtime_seconds": estimated_runtime_seconds, "estimated_evidence_bytes": estimated_evidence_bytes}
 
 
-def preflight(*, output_dir: Path | None = None, minimum_free_bytes: int = 256 * 1024 * 1024) -> dict[str, Any]:
+def preflight(*, output_dir: Path | None = None, partition_root: Path | None = None, minimum_free_bytes: int = 256 * 1024 * 1024) -> dict[str, Any]:
     authority = verify_authority()
     partitions = build_partition_plan()
     config = {"search": {"max_depth": 12, "student_nodes": 2000, "teacher_nodes": 20000, "stability_nodes": 40000, "arena_nodes": 1000}, "corpora": resolved_corpus_config(), "h48c": {"checkpoint_sha": H48C_CHECKPOINT_SHA, "resolution_fixture": str(H48C_PATH.relative_to(ROOT)), "collision_auxiliary": str(H48C_COLLISION_PATH.relative_to(ROOT)), "collision_auxiliary_sha256": load_h48c_resolution()["collision_auxiliary_sha256"]}, "holdout_in_ranking": False}
+    relative_partition_root = partition_root.relative_to(ROOT) if partition_root is not None else Path(".generic_chess_flow") / "f48" / "partitions"
     for row in partitions:
-        row["output_path"] = str(Path(".generic_chess_flow") / "f48" / "partitions" / (row["partition_id"] + ".json"))
+        row["output_path"] = str(relative_partition_root / (row["partition_id"] + ".json"))
         row["input_hash"] = partition_input_hash(row, config=config)
     estimate = resource_estimate(partitions)
     capacity_path = output_dir if output_dir is not None and output_dir.exists() else ROOT
@@ -294,6 +306,83 @@ def recompute_selector(rulesets: list[dict[str, Any]]) -> str:
     return "MIXED_OR_UNRESOLVED"
 
 
+def next_boundary_for(classification: str) -> str:
+    try:
+        return CLASSIFICATION_BOUNDARY[classification]
+    except KeyError as exc:
+        raise RuntimeError(f"unknown F48 classification: {classification}") from exc
+
+
+def _validate_r4_authoritative_inventory(payload: dict[str, Any]) -> None:
+    """Validate the six content-addressed prerequisite files independently."""
+    root_value = payload.get("r4_partition_root")
+    if not isinstance(root_value, str) or not root_value.replace("\\", "/").startswith(".generic_chess_flow/f48-r4-prerequisite-closure-final"):
+        raise RuntimeError("F48 R4 partition root binding is missing or incorrect")
+    root = (ROOT / Path(root_value)).resolve()
+    if not root.is_dir():
+        raise RuntimeError("F48 R4 partition root is missing")
+    forbidden = {"initial", "training", "holdout", "arena"}
+    forbidden_paths = [path for path in root.rglob("*.json") if path.is_file() and path.stem.rsplit(".", 1)[-1] in forbidden]
+    if forbidden_paths:
+        raise RuntimeError("F48 R4 contains a forbidden post-prerequisite partition")
+    inventory = payload.get("authoritative_partition_inventory")
+    if not isinstance(inventory, list):
+        raise RuntimeError("F48 R4 authoritative partition inventory is missing")
+    expected_keys = {(ruleset_id, phase) for ruleset_id in RULESET_FINGERPRINTS for phase in ("corpus", "leverage")}
+    actual_keys = {(item.get("ruleset_id"), item.get("phase")) for item in inventory if isinstance(item, dict)}
+    if len(inventory) != 6 or actual_keys != expected_keys:
+        raise RuntimeError("F48 R4 authoritative partition inventory is incomplete")
+    for item in inventory:
+        try:
+            path = (ROOT / Path(item["path"])).resolve()
+            relative = path.relative_to(root)
+            if path not in {candidate.resolve() for candidate in root.glob("*.json")}:
+                raise RuntimeError("F48 R4 authoritative inventory path is not a root partition")
+            actual_sha = _sha256_bytes(path.read_bytes())
+            if actual_sha != item.get("sha256"):
+                raise RuntimeError("F48 R4 authoritative partition hash mismatch")
+            saved = json.loads(path.read_text(encoding="utf-8"))
+            if saved.get("partition_id") != item.get("partition_id"):
+                raise RuntimeError("F48 R4 authoritative partition identity mismatch")
+            if saved.get("input_hash") != item.get("input_hash"):
+                raise RuntimeError("F48 R4 authoritative partition input binding mismatch")
+            if saved["partition_id"].rsplit(".", 1)[-1] != item.get("phase"):
+                raise RuntimeError("F48 R4 authoritative partition phase mismatch")
+            if relative.name != Path(item["path"]).name:
+                raise RuntimeError("F48 R4 authoritative partition path mismatch")
+        except (KeyError, OSError, ValueError, json.JSONDecodeError) as exc:
+            raise RuntimeError("F48 R4 authoritative partition inventory is invalid") from exc
+    for row in payload["rulesets"]:
+        entries = [item for item in inventory if item["ruleset_id"] == row["ruleset_id"]]
+        leverage_entry = next(item for item in entries if item["phase"] == "leverage")
+        leverage = json.loads((ROOT / leverage_entry["path"]).read_text(encoding="utf-8"))["data"]
+        rows = leverage["material_leverage"]["rows"]
+        valid_perturbations = sum(not item.get("skipped", False) for item in rows)
+        if leverage["material_leverage"]["valid_perturbations"] != valid_perturbations:
+            raise RuntimeError("F48 R4 raw leverage inventory count mismatch")
+        expected_searches = 64 + 64 + 64 + 64 * valid_perturbations
+        expected_tables = 3 + valid_perturbations
+        expected_budgets = {"20000": 64, "40000": 64, "2000": 64 + 64 * valid_perturbations}
+        efficiency = row.get("efficiency", {})
+        if efficiency.get("search_count") != expected_searches:
+            raise RuntimeError("F48 R4 search count is not derived from raw prerequisite inventory")
+        if efficiency.get("evaluation_table_compile_count") != expected_tables:
+            raise RuntimeError("F48 R4 evaluation-table count is not derived from raw prerequisite inventory")
+        if efficiency.get("engine_creation_count") != expected_searches:
+            raise RuntimeError("F48 R4 engine count is not derived from raw prerequisite inventory")
+        if efficiency.get("requested_node_budgets") != expected_budgets or efficiency.get("selfplay_calls") != 0:
+            raise RuntimeError("F48 R4 requested-budget or self-play ledger mismatch")
+        total = efficiency.get("total_authoritative_prerequisite_cost_seconds")
+        search = efficiency.get("search_wall_seconds")
+        if not isinstance(total, (int, float)) or not isinstance(search, (int, float)) or total <= 0 or search < 0 or search > total:
+            raise RuntimeError("F48 R4 authoritative timing ledger is invalid")
+        expected_outside_fraction = (total - search) / total
+        if not math.isclose(efficiency.get("fraction_outside_native_search", -1), expected_outside_fraction, rel_tol=1e-9, abs_tol=1e-9):
+            raise RuntimeError("F48 R4 outside-native-search fraction is not derived")
+        if efficiency.get("learning_fraction_status") != "NOT_APPLICABLE_PREREQUISITE_ONLY" or efficiency.get("non_native_learning_fraction") != 0.0:
+            raise RuntimeError("F48 R4 learning fraction is not marked not applicable")
+
+
 def validate_raw_result(payload: dict[str, Any]) -> dict[str, Any]:
     if payload.get("baseline_sha") != BASELINE_SHA or payload.get("production_diff") != "ZERO":
         raise RuntimeError("F48 result is not bound to the authorized baseline or production-diff contract")
@@ -302,8 +391,35 @@ def validate_raw_result(payload: dict[str, Any]) -> dict[str, Any]:
     for row in payload["rulesets"]:
         if row["ruleset_fingerprint"] != RULESET_FINGERPRINTS[row["ruleset_id"]]:
             raise RuntimeError("RuleSet fingerprint drift in F48 result")
-        row["validated_aggregation"] = {learner: recompute_aggregation(row, learner) for learner in _LEARNERS}
     classification = recompute_selector(payload["rulesets"])
     if classification != payload.get("final_classification"):
         raise RuntimeError(f"driver classification disagrees with raw evidence: {payload.get('final_classification')} != {classification}")
+    if payload.get("next_boundary") != next_boundary_for(classification):
+        raise RuntimeError("F48 classification-to-boundary mapping mismatch")
+    equivalence = payload.get("h48c_execution_equivalence", {})
+    if set(equivalence) != set(RULESET_FINGERPRINTS) or any(not row.get("passed") for row in equivalence.values()):
+        raise RuntimeError("H48C execution equivalence is incomplete")
+    admissible_count = sum(bool(row["prerequisites"].get("admissible")) for row in payload["rulesets"])
+    if payload.get("admissible_ruleset_count") != admissible_count:
+        raise RuntimeError("F48 admissible RuleSet count mismatch")
+    if admissible_count >= 2:
+        for row in payload["rulesets"]:
+            row["validated_aggregation"] = {learner: recompute_aggregation(row, learner) for learner in _LEARNERS}
+    if admissible_count < 2:
+        if payload.get("F49_status") != "NOT_STARTED":
+            raise RuntimeError("F49 status is not explicitly NOT_STARTED")
+        _validate_r4_authoritative_inventory(payload)
+        if payload.get("early_stop_status") != "NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP":
+            raise RuntimeError("F48 global prerequisite early-stop status missing")
+        for row in payload["rulesets"]:
+            if row.get("initial_competence_status") != "NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP":
+                raise RuntimeError("initial competence evidence present after global prerequisite stop")
+            if "initial_competence" in row:
+                raise RuntimeError("initial competence evidence present after global prerequisite stop")
+            if row.get("learner_statuses") != {learner: "NOT_RUN_PREREQUISITE_SHORTAGE" for learner in _LEARNERS}:
+                raise RuntimeError("learner evidence present after global prerequisite stop")
+            if row.get("executed_partitions", {}).get("initial") is not False or row.get("executed_partitions", {}).get("training") is not False:
+                raise RuntimeError("initial/training partition executed after global prerequisite stop")
+            if row.get("efficiency", {}).get("ledger_scope") != "TOTAL_AUTHORITATIVE_PREREQUISITE_COST":
+                raise RuntimeError("F48 efficiency ledger is not authoritative total work")
     return {"status": "PASS", "classification": classification, "rulesets": len(payload["rulesets"]), "holdout_separation": payload.get("holdout_separation", {})}

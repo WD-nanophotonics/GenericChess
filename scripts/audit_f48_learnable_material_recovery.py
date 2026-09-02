@@ -8,6 +8,8 @@ partition through the atomic, input-hash-bound store in ``f48_protocol``.
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import math
 import random
 import time
@@ -49,6 +51,7 @@ try:
         partition_input_hash,
         preflight,
         recompute_selector,
+        next_boundary_for,
         resolved_corpus_config,
         guard_corpus_identities,
         validate_raw_result,
@@ -67,6 +70,7 @@ except ImportError:  # direct ``python scripts/audit_*.py`` execution
         partition_input_hash,
         preflight,
         recompute_selector,
+        next_boundary_for,
         resolved_corpus_config,
         guard_corpus_identities,
         validate_raw_result,
@@ -74,7 +78,7 @@ except ImportError:  # direct ``python scripts/audit_*.py`` execution
 
 
 OUT = ROOT / "tests" / "fixtures" / "f48_learnable_material_recovery_results.json"
-PARTITION_ROOT = ROOT / ".generic_chess_flow" / "f48" / "partitions"
+PARTITION_ROOT = ROOT / ".generic_chess_flow" / "f48-r4-prerequisite-closure-final-v3"
 SEED = 7
 HAND_WEIGHT = EvaluationConfig().hand_weight
 SEARCH = {"max_depth": 12, "quiescence_max_depth": 0, "quiescence_max_nodes": 0, "tt_megabytes": 8}
@@ -197,7 +201,11 @@ def _search(compiled, native_rules, tables, pos, nodes, metrics):
     created = time.perf_counter()
     engine = NativeSearchEngine(compiled, native_rules, tables, SEARCH["tt_megabytes"])
     metrics["engine_creation_wall_seconds"] += time.perf_counter() - created
+    metrics["engine_creation_count"] += 1
+    metrics["requested_node_budgets"][str(nodes)] = metrics["requested_node_budgets"].get(str(nodes), 0) + 1
+    search_started = time.perf_counter()
     result = engine.search(session, SearchLimits(max_depth=SEARCH["max_depth"], max_nodes=nodes, quiescence_max_depth=0, quiescence_max_nodes=0))
+    metrics["search_wall_seconds"] += time.perf_counter() - search_started
     metrics["search_count"] += 1
     metrics["search_nodes"] += result.nodes
     if result.termination_reason not in ("completed", "node_limit", "depth_limit"):
@@ -362,7 +370,92 @@ def _verify_h48c_execution_equivalence(ruleset_id, compiled, corpus_config, reso
     return bundle
 
 
-def _run_ruleset(ruleset_id, compiled, store, corpus_bundle):
+def _run_ruleset_prerequisites(ruleset_id, compiled, store, corpus_bundle):
+    started = time.perf_counter()
+    metrics = {
+        "evaluation_table_compile_count": 0,
+        "evaluation_table_compile_wall_seconds": 0.0,
+        "engine_creation_count": 0,
+        "engine_creation_wall_seconds": 0.0,
+        "search_count": 0,
+        "search_nodes": 0,
+        "search_wall_seconds": 0.0,
+        "requested_node_budgets": {},
+        "selfplay_calls": 0,
+    }
+    native_started = time.perf_counter()
+    native_rules = compile_native_rules(_native_compile_input(compiled))
+    native_compile_seconds = time.perf_counter() - native_started
+    priors = _priors(compiled)
+    corpus_partition_id = next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["phase"] == "corpus")
+
+    def corpus_data():
+        training_openings = corpus_bundle["training_openings"]
+        holdout_openings = corpus_bundle["holdout_openings"]
+        arena_openings = corpus_bundle["arena_openings"]
+        training = corpus_bundle["training"]
+        holdout = corpus_bundle["holdout"]
+        identities = corpus_bundle["identities"]
+        def finish(ledger):
+            return {"training": {"opening": training_openings.to_dict(), "corpus": training.to_dict()}, "holdout": {"opening": holdout_openings.to_dict(), "corpus": holdout.to_dict()}, "arena": arena_openings.to_dict(), "identity_ledger": ledger}
+        return guard_corpus_identities(ruleset_id=ruleset_id, ruleset_fingerprint=compiled.ruleset_fingerprint, identities=identities, authority_hash=stable_sha256(AUTHORITY), config_hash=stable_sha256(store.config), input_hash=store.by_id[corpus_partition_id]["input_hash"], proceed=finish)
+
+    data = store.run(corpus_partition_id, corpus_data)
+    training = LearningDiagnosticCorpus.from_dict(data["training"]["corpus"])
+    holdout = LearningDiagnosticCorpus.from_dict(data["holdout"]["corpus"])
+    arena_openings = ArenaOpeningCorpus.from_dict(data["arena"])
+    training.validate(compiled)
+    holdout.validate(compiled)
+    arena_openings.validate(compiled)
+    p0 = priors["P48-0"]
+
+    def prerequisite_data():
+        teacher = _actions(compiled, native_rules, p0, holdout, 20000, metrics)
+        stable = _actions(compiled, native_rules, p0, holdout, 40000, metrics)
+        stability = _agreement(teacher, stable)
+        student = _actions(compiled, native_rules, p0, holdout, 2000, metrics)
+        leverage = _leverage(compiled, native_rules, p0, holdout, metrics, student)
+        return {"material_leverage": leverage, "teacher_stability": stability, "leverage_pass": leverage["mean_flip_rate"] is not None and leverage["mean_flip_rate"] >= 0.05, "teacher_stability_pass": stability["agreement"] >= 0.85 and stability["failed_searches"] == 0}
+
+    prereq_id = next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["phase"] == "leverage")
+    prereq = store.run(prereq_id, prerequisite_data)
+    prerequisite_wall_seconds = time.perf_counter() - started
+    admissible = prereq["leverage_pass"] and prereq["teacher_stability_pass"]
+    search_seconds = metrics["search_wall_seconds"]
+    table_seconds = metrics["evaluation_table_compile_wall_seconds"]
+    engine_seconds = metrics["engine_creation_wall_seconds"]
+    python_overhead = max(0.0, prerequisite_wall_seconds - search_seconds - table_seconds - engine_seconds)
+    result = {
+        "ruleset_id": ruleset_id,
+        "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        "selected_h48b_fingerprint": H48B_SELECTED_FINGERPRINT if ruleset_id.startswith("C_") else None,
+        "corpora": {"training": {"corpus_id": training.corpus_id, "position_keys": [p.position_key for p in training.positions]}, "holdout": {"corpus_id": holdout.corpus_id, "position_keys": [p.position_key for p in holdout.positions]}, "arena": {"corpus_id": arena_openings.corpus_id, "position_keys": [o.final_position_key for o in arena_openings.openings]}, "pairwise_disjoint": True},
+        "priors": {name: _checkpoint_metadata(cp, p0) for name, cp in priors.items()},
+        "prerequisites": {**prereq, "admissible": admissible},
+        "initial_competence_status": "NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP",
+        "learner_statuses": {learner: "NOT_RUN_PREREQUISITE_SHORTAGE" for learner in ("M48-0", "M48-1")},
+        "executed_partitions": {"h48c_equivalence": True, "corpus": True, "leverage": True, "stability": True, "initial": False, "training": False, "holdout": False, "arena": False},
+        "learners": {learner: {"status": "NOT_RUN_PREREQUISITE_SHORTAGE", "by_prior": {prior: {"generations": []} for prior in priors}} for learner in ("M48-0", "M48-1")},
+        "efficiency": {"ruleset_compile_count": 1, "ruleset_compile_wall_seconds": native_compile_seconds, "evaluation_table_compile_count": metrics["evaluation_table_compile_count"], "evaluation_table_compile_wall_seconds": table_seconds, "engine_creation_count": metrics["engine_creation_count"], "engine_creation_wall_seconds": engine_seconds, "search_count": metrics["search_count"], "search_nodes": metrics["search_nodes"], "requested_node_budgets": metrics["requested_node_budgets"], "search_wall_seconds": search_seconds, "nodes_per_second": metrics["search_nodes"] / search_seconds if search_seconds else None, "python_prerequisite_overhead_seconds": python_overhead, "current_process_execution_cost_seconds": prerequisite_wall_seconds, "total_authoritative_prerequisite_cost_seconds": prerequisite_wall_seconds, "total_prerequisite_wall_seconds": prerequisite_wall_seconds, "fraction_outside_native_search": max(0.0, prerequisite_wall_seconds - search_seconds) / prerequisite_wall_seconds if prerequisite_wall_seconds else None, "ledger_scope": "TOTAL_AUTHORITATIVE_PREREQUISITE_COST", "authoritative_total_work": True, "selfplay_calls": 0, "learning_fraction_status": "NOT_APPLICABLE_PREREQUISITE_ONLY", "non_native_learning_fraction": 0.0, "semantic_analysis_inside_node_loop": False},
+        "holdout_separation": {"holdout_in_training": False, "holdout_in_ranking": False, "mechanically_checked": True},
+        "status": "PREREQUISITE_MEASURED",
+    }
+    return result
+
+
+def _authoritative_partition_inventory(store, rulesets):
+    inventory = []
+    for ruleset_id, _compiled in rulesets:
+        for phase in ("corpus", "leverage"):
+            partition = next(row for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["phase"] == phase)
+            path = ROOT / partition["output_path"]
+            if not path.is_file():
+                raise RuntimeError(f"missing R4 authoritative partition: {partition['partition_id']}")
+            inventory.append({"ruleset_id": ruleset_id, "phase": phase, "partition_id": partition["partition_id"], "path": partition["output_path"], "input_hash": partition["input_hash"], "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    return inventory
+
+
+def _run_ruleset_stage_l(ruleset_id, compiled, store, corpus_bundle):
     started = time.perf_counter()
     metrics = {"evaluation_table_compile_count": 0, "evaluation_table_compile_wall_seconds": 0.0, "engine_creation_wall_seconds": 0.0, "search_count": 0, "search_nodes": 0, "selfplay_calls": 0}
     native_started = time.perf_counter()
@@ -455,7 +548,9 @@ def _run_ruleset(ruleset_id, compiled, store, corpus_bundle):
 
 
 def run() -> dict[str, Any]:
-    plan = preflight(output_dir=PARTITION_ROOT)
+    if PARTITION_ROOT.exists() and any(PARTITION_ROOT.rglob("*.json")):
+        raise RuntimeError(f"R4 prerequisite root is not fresh: {PARTITION_ROOT}")
+    plan = preflight(output_dir=PARTITION_ROOT, partition_root=PARTITION_ROOT)
     resolution = load_h48c_resolution()
     corpus_config = resolved_corpus_config()
     if plan["config"]["corpora"] != corpus_config:
@@ -463,8 +558,16 @@ def run() -> dict[str, Any]:
     ruleset_inputs = _rulesets()
     corpus_bundles = {ruleset_id: _verify_h48c_execution_equivalence(ruleset_id, compiled, corpus_config, resolution) for ruleset_id, compiled in ruleset_inputs}
     store = PartitionStore(plan["partitions"], plan["config"])
-    rulesets = [_run_ruleset(name, compiled, store, corpus_bundles[name]) for name, compiled in ruleset_inputs]
-    payload = {"kind": "F48_LEARNABLE_MATERIAL_RECOVERY_RESULTS", "baseline_sha": BASELINE_SHA, "protocol": "H48R2A+H48R3A+H48C", "h48b_selected_fingerprint": H48B_SELECTED_FINGERPRINT, "h48c_checkpoint_sha": H48C_CHECKPOINT_SHA, "h48c_resolved_seed_triple": resolution["resolved_seed_triple"], "h48c_execution_equivalence": {name: {"passed": True, "corpora": bundle["h48c_ledger"], "pairwise_intersections": bundle["h48c_intersections"]} for name, bundle in corpus_bundles.items()}, "learned_checkpoint_input_to_benchmark_selection": False, "rulesets": rulesets, "holdout_separation": plan["holdout_separation"], "final_classification": recompute_selector(rulesets), "next_boundary": "F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION", "production_diff": "ZERO", "observed_results_present": True}
+    rulesets = [_run_ruleset_prerequisites(name, compiled, store, corpus_bundles[name]) for name, compiled in ruleset_inputs]
+    admissible_ruleset_count = sum(bool(row["prerequisites"]["admissible"]) for row in rulesets)
+    if admissible_ruleset_count >= 2:
+        raise RuntimeError("R4 only authorizes the zero-admissible prerequisite closure; Stage L needs a separate order")
+    for row in rulesets:
+        row["status"] = "NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP"
+        row["initial_competence_status"] = "NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP"
+        row["learner_statuses"] = {learner: "NOT_RUN_PREREQUISITE_SHORTAGE" for learner in ("M48-0", "M48-1")}
+    classification = recompute_selector(rulesets)
+    payload = {"kind": "F48_LEARNABLE_MATERIAL_RECOVERY_RESULTS", "baseline_sha": BASELINE_SHA, "protocol": "H48R2A+H48R3A+H48C+R4", "h48b_selected_fingerprint": H48B_SELECTED_FINGERPRINT, "h48c_checkpoint_sha": H48C_CHECKPOINT_SHA, "h48c_resolved_seed_triple": resolution["resolved_seed_triple"], "h48c_execution_equivalence": {name: {"passed": True, "corpora": bundle["h48c_ledger"], "pairwise_intersections": bundle["h48c_intersections"]} for name, bundle in corpus_bundles.items()}, "r4_partition_root": str(PARTITION_ROOT.relative_to(ROOT)).replace("\\", "/"), "authoritative_partition_inventory": _authoritative_partition_inventory(store, ruleset_inputs), "admissible_ruleset_count": admissible_ruleset_count, "early_stop_status": "NOT_RUN_GLOBAL_PREREQUISITE_EARLY_STOP", "execution_mode": "GLOBAL_PREREQUISITE_ONLY", "F49_status": "NOT_STARTED", "learned_checkpoint_input_to_benchmark_selection": False, "rulesets": rulesets, "holdout_separation": plan["holdout_separation"], "final_classification": classification, "next_boundary": next_boundary_for(classification), "next_boundary_mapping": "scripts.f48_protocol.CLASSIFICATION_BOUNDARY", "production_diff": "ZERO", "observed_results_present": True}
     validate_raw_result(payload)
     atomic_write_json(OUT, payload)
     return payload
@@ -475,7 +578,7 @@ def main() -> None:
     parser.add_argument("--preflight", action="store_true")
     args = parser.parse_args()
     if args.preflight:
-        plan = preflight(output_dir=PARTITION_ROOT)
+        plan = preflight(output_dir=PARTITION_ROOT, partition_root=PARTITION_ROOT)
         atomic_write_json(ROOT / "tests" / "fixtures" / "f48_preflight_plan.json", plan)
         print(canonical_json({"status": plan["status"], "partitions": len(plan["partitions"]), "capacity": plan["capacity"]}))
         return
