@@ -111,3 +111,51 @@ learner. The five-way parameter ownership matrix and eight-step classification
 precedence are explicit in H48R1A. H48R1A itself contains no screening,
 self-play, teacher search, perturbation measurement, arena measurement,
 production change, or observed result.
+
+## H48R2A executable-training-and-screening addendum
+
+H48R1A closed the formulas and most protocol constants, but Courier review
+identified an undefined initial M48-1 population, a duplicate-producing modulo
+offspring rule, an ambiguous TDLeaf calibration schedule, incomplete H48B
+screening authority, per-parent ranking displacement, a false P48-3 rename
+invariance claim, under-specified `SearchLimits`, and prose-only selector
+precedence. H48R2A closes these without changing H48A or H48R1A.
+
+The exact corrective manifest is
+`tests/fixtures/h48r2a_executable_training_screening_manifest.json`. It binds
+the H48R1A parent, preserves the two historical manifests, and contains no
+observed result. TDLeaf calibration is now 16 independent games per
+RuleSet/prior at seed `4807000`, with calibrated alpha frozen across three
+subsequent 16-game generations using seeds `4807001..4807003`. Calibration
+trajectories derive alpha only; the existing `tdleaf_update` remains
+unchanged.
+
+M48-1 begins with eight explicit candidates (`C0..C7`) and selects two elites.
+Later generations preserve those elites and use six explicit non-duplicate
+templates (`O0..O5`). Candidate ranking uses a common concatenated board+hand
+L2 displacement from the corresponding P48 starting checkpoint. The historic
+H48R1A direction L2 field is marked unused; executable mutation magnitude is
+`0.10 * ||P48-start||_2`. P48-3 is explicitly dependent on canonical generic
+type ordering while forbidding game-specific identity or name branching.
+
+All relevant searches use `max_depth=12`,
+`quiescence_max_depth=0`, `quiescence_max_nodes=0`, explicit 2,000/20,000/
+40,000 node budgets, fresh checkpoint-specific engines, no cross-checkpoint TT
+sharing, and fail-closed search errors. H48B is mandatory before learning and
+is bound to the raw Git-blob SHA-256 inputs from Phase 1.7 commit
+`a695fd6e89fb771952e208e562858710ae1e0b3d`, including the exact candidate
+generator, corpus, rollout, leverage, tactical, eligibility, and selection
+constants. It must publish all 32 candidate fingerprints and complete metrics
+before learning.
+
+The selector is represented as structured boolean predicates and an explicit
+A1-G precedence table. It first removes leverage- or teacher-invalid
+benchmarks, then evaluates recovery and beyond-prior improvement only on
+admissible RuleSets. Recovery requires two of three disturbed priors per
+RuleSet and two primary RuleSets per learner; catastrophic arena regression is
+`paired mean < 0.25`; beyond-prior improvement requires `>= 0.02` holdout
+agreement gain, paired mean `> 0.5`, and bootstrap lower bound `> 0.5`.
+
+H48R2A remains protocol-only: no H48B screening, search, self-play, mutation
+scoring, arena, production change, F49 work, or master promotion occurs before
+its independent checkpoint review.

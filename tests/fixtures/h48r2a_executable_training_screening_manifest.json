@@ -1,0 +1,211 @@
+{
+  "kind": "H48R2A_F48_EXECUTABLE_TRAINING_AND_SCREENING_CLOSURE",
+  "work_order_id": "GENERICCHESS-F48-CORRECTIVE-R2-EXECUTABLE-TRAINING-AND-SCREENING-CLOSURE",
+  "protocol_status": "PRE_REGISTERED_NO_OBSERVED_RESULTS",
+  "parent_h48r1a_sha": "7e2f17bdc7ac46aabaa8b1a139c5866f1b0689ab",
+  "h48a_manifest_sha256": "684e33d261e08b89b74187e3b7fbcc02e514148869366dafcb155aa459214490",
+  "h48r1a_manifest_sha256": "cfc9db0c0b25433a6b6c77f0adf41a7b0132dc017daf277f2467edab0270b3cf",
+  "preservation": {
+    "h48a_untouched": true,
+    "h48r1a_untouched": true,
+    "no_h48b_or_learning_before_h48r2a": true,
+    "production_diff_required": "ZERO",
+    "master_promotion": false
+  },
+  "tdleaf_control_schedule": {
+    "starting_priors": ["P48-0", "P48-1", "P48-2", "P48-3"],
+    "calibration": {
+      "games": 16,
+      "seed": 4807000,
+      "nodes_per_move": 2000,
+      "max_depth": 12,
+      "epsilon": 0.10,
+      "independent_per_ruleset_and_prior": true,
+      "trajectory_use": "derive alpha only; do not use calibration trajectories for a training update",
+      "target_l2_fraction": 0.10,
+      "max_multiplier": 200.0,
+      "nominal_alpha": "0.01 * max(P48-start.reference_median, 1.0)",
+      "measured_l2_floor": 1e-9,
+      "formula": "calibrated_alpha = max(nominal_alpha, min(nominal_alpha * target_l2 / max(measured_nominal_l2,1e-9), nominal_alpha * max_multiplier))"
+    },
+    "training": {
+      "generations": [1, 2, 3],
+      "games_per_generation": 16,
+      "seed_formula": "4807000 + generation",
+      "parent": "generation g collects new trajectories from checkpoint g-1",
+      "calibrated_alpha": "frozen from the independent calibration for the RuleSet/P48 start across generations 1..3",
+      "gamma": 1.0,
+      "lambda": 0.7,
+      "updates_per_generation": 1,
+      "implementation": "existing generic_chess.learning.tdleaf.tdleaf_update unchanged",
+      "checkpoint_training_seed": 7,
+      "checkpoint_training_seed_role": "experiment provenance only; does not override explicit self-play seeds"
+    }
+  },
+  "m48_1_population": {
+    "initial_optimizer_generation": 1,
+    "initial_population_size": 8,
+    "initial_members": [
+      {"id": "C0", "source": "unchanged starting checkpoint", "direction": null, "sign": null},
+      {"id": "C1", "source": "P48 start", "direction": "alternating_sign", "sign": "+1"},
+      {"id": "C2", "source": "P48 start", "direction": "alternating_sign", "sign": "-1"},
+      {"id": "C3", "source": "P48 start", "direction": "first_half_positive", "sign": "+1"},
+      {"id": "C4", "source": "P48 start", "direction": "first_half_positive", "sign": "-1"},
+      {"id": "C5", "source": "P48 start", "direction": "board_hand_differential", "sign": "+1"},
+      {"id": "C6", "source": "P48 start", "direction": "board_hand_differential", "sign": "-1"},
+      {"id": "C7", "source": "P48 start", "direction": "seeded_normalized_pseudorandom", "sign": "+1"}
+    ],
+    "mutation_magnitude": "0.10 * Euclidean_L2_norm(concatenated_vector(P48-start))",
+    "mutation_application": "source vector plus sign times magnitude times the normalized direction",
+    "normalization": "existing common median rescaling to the P48-start reference_median",
+    "ranking_input": "search-aware training corpus only",
+    "ranking": ["exact teacher agreement descending", "concatenated board+hand L2 displacement from original P48 starting checkpoint ascending", "canonical checkpoint hash ascending"],
+    "later_optimizer_generations": [2, 3],
+    "later_population": {
+      "elite_survival": ["elite_0 unchanged", "elite_1 unchanged"],
+      "offspring_templates": [
+        {"id": "O0", "parent": "elite_0", "direction": "alternating_sign", "sign": "+1"},
+        {"id": "O1", "parent": "elite_0", "direction": "first_half_positive", "sign": "-1"},
+        {"id": "O2", "parent": "elite_0", "direction": "board_hand_differential", "sign": "+1"},
+        {"id": "O3", "parent": "elite_1", "direction": "alternating_sign", "sign": "-1"},
+        {"id": "O4", "parent": "elite_1", "direction": "first_half_positive", "sign": "+1"},
+        {"id": "O5", "parent": "elite_1", "direction": "seeded_normalized_pseudorandom", "sign": "-1"}
+      ],
+      "nominal_population_size": 8,
+      "deduplication": "canonical checkpoint ID; keep first occurrence in elite-then-O0..O5 order; do not refill",
+      "effective_population": "report after deduplication",
+      "minimum_valid_unique_candidates": 2,
+      "abort_on_insufficient_unique_candidates": true,
+      "checkpoint_generation": "offspring checkpoint generation = parent checkpoint generation + 1; optimizer generation is tracked separately",
+      "legacy_h48r1a_direction_l2_fraction_of_reference": {"value": 0.25, "status": "unused legacy field; not executable"}
+    }
+  },
+  "p48_3_dependency_semantics": {
+    "canonical_type_order_dependency": true,
+    "ordering_helper": "generic_chess.learning.features.non_anchor_type_ids(compiled)",
+    "ordering": "lexicographically sorted tuple returned by helper",
+    "game_specific_piece_identity_dependency": false,
+    "game_name_branching": false,
+    "permutation": "new_weight(t_i) = old_weight(t_(i+1 mod n)); same source-to-destination shift for board and corresponding hand channels; n < 2 is identity"
+  },
+  "search_limits": {
+    "max_depth": 12,
+    "quiescence_max_depth": 0,
+    "quiescence_max_nodes": 0,
+    "student_nodes": 2000,
+    "teacher_nodes": 20000,
+    "stability_nodes": 40000,
+    "fresh_engine_per_evaluator_comparison": true,
+    "tt_sharing_across_checkpoints": false,
+    "failed_search": "abort that candidate/benchmark measurement; never score as disagreement or draw",
+    "applies_to": ["material_leverage", "M48-1 objective", "holdout teacher comparison", "teacher stability"]
+  },
+  "h48b_screening_authority": {
+    "required": true,
+    "required_before_learning": true,
+    "source_ref": "a695fd6e89fb771952e208e562858710ae1e0b3d",
+    "source_blobs": [
+      {"path": "generic_chess/learning/leverage.py", "blob_sha256": "e95d1ee0822b08d05a097f4e5843ebfb3b453b30d7df69f6296d2eac33732bd5"},
+      {"path": "tests/test_learning_leverage.py", "blob_sha256": "b7d69a238532f5e9b753e7a761f73f076b94c67b6c42b3d7ef3928062d728a52"},
+      {"path": "docs/learning_phase1_7_evaluation_leverage.md", "blob_sha256": "f26b557fdcc87ccdfd0b11234224c30fdf766ddb6af9cac979906511ef281723"},
+      {"path": "pyproject.toml", "blob_sha256": "df3301af0099d1b74d5c6cd00dce991adeb1583bc3ed86034d569cb3c27eb195"}
+    ],
+    "candidate_count": 32,
+    "candidate_master_seed": 20260807,
+    "candidate_seed_formula": "candidate_seed = candidate_master_seed * 1000 + index",
+    "candidate_board_size": 6,
+    "candidate_presets_cycle": ["free_random", "bilateral_random", "classic_like"],
+    "candidate_opening_count": 4,
+    "candidate_opening_seed": 314159,
+    "candidate_arena_pairs": 2,
+    "candidate_arena_nodes": 800,
+    "candidate_arena_max_depth": 12,
+    "candidate_corpus_count": 16,
+    "candidate_corpus_seed": 42,
+    "candidate_corpus_max_plies": 40,
+    "leverage_factors": [0.75, 1.25],
+    "candidate_leverage_budget": 1000,
+    "candidate_tactical_shallow": 500,
+    "candidate_tactical_deep": 4000,
+    "eligibility": {
+      "terminal_rate": "== 1.0",
+      "average_plies": "[4,200] inclusive",
+      "endless_draw_fraction": "<= 0.5",
+      "owner0_win_rate": "<= 0.90",
+      "owner1_win_rate": ">= 0.05",
+      "tactical_shallow_deep_agreement": "[0.30,0.98] inclusive",
+      "evaluation_leverage": ">= 0.10",
+      "forced_move_fraction": "<= 0.30",
+      "mean_legal_actions": ">= 2.0"
+    },
+    "metric_generation": "reuse bound leverage.py candidate_specs, _candidate_summary, screen_candidates, and select_benchmarks; record every candidate including generation failures",
+    "selection": "maximum eligible evaluation leverage; tie-break owner0 win rate ascending then fingerprint ascending",
+    "learned_checkpoint_input": false,
+    "h48b_outputs_required": ["all 32 fingerprints", "complete screening metrics", "eligible set", "selected fingerprint", "exact selection proof"]
+  },
+  "classification_selector": {
+    "booleans": {
+      "admissible": "leverage_pass AND teacher_stability_pass",
+      "ruleset_recovered": "at_least_two_of_three_disturbed_priors_recover AND none_catastrophic",
+      "generic_recovery": "at_least_two_admissible_primary_rulesets satisfy ruleset_recovered",
+      "beyond_prior": "p48_0_holdout_agreement_delta >= 0.02 AND arena_mean > 0.5 AND bootstrap_lower_bound > 0.5 AND integrity_gates_pass",
+      "generic_beyond_prior": "beyond_prior on at_least_two_admissible_primary_rulesets"
+    },
+    "precedence": [
+      {"step": "A1", "if": "admissible_primary_rulesets < 2 AND leverage is the only limiting cause", "classification": "MATERIAL_ONLY_LEVERAGE_INSUFFICIENT"},
+      {"step": "A2", "if": "admissible_primary_rulesets < 2 AND teacher instability is the only limiting cause", "classification": "SEARCH_ENGINE_LIMITS_LEARNING"},
+      {"step": "A3", "if": "admissible_primary_rulesets < 2 AND both leverage and teacher instability limit", "classification": "MIXED_OR_UNRESOLVED"},
+      {"step": "B", "if": "admissible_primary_rulesets >= 2", "classification": "evaluate learning only on admissible RuleSets"},
+      {"step": "C", "if": "any learner generic_recovery AND no recovering learner generic_beyond_prior", "classification": "COLD_START_RECOVERY_SUPPORTED"},
+      {"step": "D", "if": "M48-0 generic_recovery AND generic_beyond_prior", "classification": "TDLEAF_MATERIAL_RECOVERY_SUPPORTED"},
+      {"step": "E", "if": "M48-1 generic_recovery AND generic_beyond_prior AND D is false", "classification": "SEARCH_AWARE_MATERIAL_EVOLUTION_SUPPORTED"},
+      {"step": "F", "if": "neither learner generic_recovery", "classification": "LEARNING_DIRECTION_FAILURE"},
+      {"step": "G", "if": "otherwise", "classification": "MIXED_OR_UNRESOLVED"}
+    ],
+    "both_learners_supported": "report both; TDLeaf classification has precedence over M48-1"
+  },
+  "parameter_ownership": [
+    {"parameter_family": "rule semantics, legality, terminal and repetition semantics", "ownership": "RULE_INVARIANT", "trained_in_f48": false},
+    {"parameter_family": "rule-derived Generation-0 material profile", "ownership": "COMPILE_TIME_DERIVED", "trained_in_f48": false},
+    {"parameter_family": "board and hand material checkpoint weights", "ownership": "RULESET_LEARNABLE_EVALUATION", "trained_in_f48": true},
+    {"parameter_family": "dynamic mobility, promotion-potential, and anchor-safety coefficients", "ownership": "RULESET_LEARNABLE_EVALUATION", "trained_in_f48": false},
+    {"parameter_family": "search algorithm semantics and correctness", "ownership": "GLOBAL_SEARCH_ALGORITHM", "trained_in_f48": false},
+    {"parameter_family": "per-RuleSet search enabling and parameterization", "ownership": "RULESET_SEARCH_PROFILE_CANDIDATE", "trained_in_f48": false}
+  ],
+  "recovery_aggregation": {
+    "per_ruleset": "at least two of three disturbed priors recover and none catastrophic",
+    "generic_recovery": "at least two admissible primary RuleSets recover for the learner",
+    "beyond_prior_improvement": "P48-0 holdout agreement improves >= 0.02 absolute, arena mean > 0.5, bootstrap lower bound > 0.5, and integrity gates pass"
+  },
+  "arena_qualification": {
+    "catastrophic_regression_threshold": "paired mean score < 0.25 against corresponding starting checkpoint",
+    "arena_execution_failure": "automatically catastrophic and fail closed",
+    "strength_improvement": "paired mean score > 0.5 and bootstrap lower bound > 0.5"
+  },
+  "prohibitions": {
+    "h48b_or_learning_before_h48r2a": true,
+    "learner_implementation_in_h48r2a": true,
+    "benchmark_screening_in_h48r2a": true,
+    "teacher_search_self_play_or_arena_in_h48r2a": true,
+    "production_code_change": true,
+    "new_static_material_feature_family": true,
+    "human_piece_value_fitting": true,
+    "rule_or_compiler_semantics_change": true,
+    "production_evaluator_or_search_default_change": true,
+    "search_tuning": true,
+    "second_rule_compiler": true,
+    "alphasho_teacher_or_fabricated_dataset": true,
+    "f49_execution": true,
+    "master_promotion": true
+  },
+  "observation_policy": {
+    "observed_f48_results_present": false,
+    "benchmark_screening_performed": false,
+    "teacher_search_performed": false,
+    "self_play_performed": false,
+    "mutation_scoring_performed": false,
+    "arena_performed": false,
+    "human_values_used": false
+  },
+  "manifest_sha256": "9db3a74f5e942e0c4bd89c99d8e275e1b1ce5273ce39dac5de0679d7e3dcdbb9"
+}
