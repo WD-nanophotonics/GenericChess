@@ -1,0 +1,81 @@
+{
+  "baseline": {
+    "scientific_f45_sha": "1f4fc5f1dc12675e6bafcf1992245441d36104f5",
+    "first_pass_f45_sha": "e6c90819388cb056ad669b246ed22b209484c46e",
+    "original_h45a_manifest_sha256": "e7d6061f54348b173648907995214b6a01c68bfa9f12c7acf7f94a6335a5f0d9"
+  },
+  "families": {
+    "surviving": [
+      "S44-A_ENDPOINT_CONTROL_SEMANTICS",
+      "S44-B_CONDITIONAL_CAPABILITY_RESERVE",
+      "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY"
+    ],
+    "negative_independence_control": "S44-C_CHANNEL_DIVERSITY_CONCENTRATION"
+  },
+  "placement_predicates": {
+    "ALREADY_EQUIVALENTLY_CONSUMED": "existing consumer retains the same semantic distinction with the required invariances",
+    "STATIC_MATERIAL_ADMISSIBLE": "compile-once RuleSet/type information, no position-state availability, independent support, and no equivalent consumer",
+    "DYNAMIC_EVALUATOR_ADMISSIBLE": "correct consumption requires current position/state/guard availability and no equivalent consumer",
+    "DIAGNOSTIC_ONLY_NOT_ADMISSIBLE": "frozen independence or novelty gate fails",
+    "UNRESOLVED": "consumer evidence is insufficient to choose safely"
+  },
+  "endpoint_probe": {
+    "required_controls": ["quiet_only", "quiet_plus_capture_same_targets"],
+    "existing_feature_paths": ["material_result", "dynamic_pseudo_attack_count", "anchor_escape", "promotion_potential"],
+    "required_predicates": ["matched_current_component_collision", "same_complete_pre_search_representation", "quiet_control_split_not_consumed"]
+  },
+  "conditional_probe": {
+    "required_predicates": ["ordinary_material_unchanged", "guarded_reserve_differs", "semantic_execution_depends_on_state", "no_compile_once_availability_probability", "promotion_consumer_partial_not_equivalent"]
+  },
+  "density_probe": {
+    "required_predicates": ["full_five_point_curve", "weighted_scalar_reduction", "curve_shape_absent_from_material_component", "all_downstream_consumers_inspected", "no_equivalent_dynamic_blocker_consumer", "matched_equal_mass_different_curve"]
+  },
+  "residual_predicates": {
+    "R1": {
+      "endpoint": "generic endpoint split separates Western Pawn from Western N/B/R/Q",
+      "conditional": "guarded reserve gives generic Western-Pawn structural distinction",
+      "density": "blocker profile separates Western Pawn from Western N/B/R/Q"
+    },
+    "R2": {
+      "endpoint": "false unless endpoint coordinates separate Knight from ray residual",
+      "conditional": "false unless reserve separates Knight from ray residual",
+      "density": "Knight blocker profile separates from Western B/R/Q rays"
+    },
+    "R3": "derive per family from actual Western/Shogi structures and healthy Shogi gates; never default true"
+  },
+  "redundancy_algorithm": {
+    "pair_direction": "ordered pairs among A/B/D",
+    "recoverability": "true only when matched controls show equal source coordinates and different target coordinates; otherwise UNRESOLVED",
+    "partition": "compute deterministic equality classes over frozen Western plus Standard-Shogi type signatures",
+    "relation_values": ["same_partition", "left_refines_right", "right_refines_left", "incomparable", "UNRESOLVED"]
+  },
+  "minimum_subset_algorithm": {
+    "eligibility": ["F44 independent/material support", "evidence-derived admissible placement", "no equivalent consumer", "family-specific R3 pass"],
+    "coverage": "smallest subset whose boolean union covers R1 and R2",
+    "tie": "unresolved/discrimination-insufficient unless a frozen non-numeric structural discriminator selects one",
+    "no_numeric_fit": true
+  },
+  "classification_mapping": {
+    "ENDPOINT_CONTROL_FEATURE_PRIMARY": "F46_ENDPOINT_CONTROL_FEATURE_PROTOTYPE",
+    "CONDITIONAL_CAPABILITY_FEATURE_PRIMARY": "F46_CONDITIONAL_CAPABILITY_RUNTIME_PROTOTYPE",
+    "DENSITY_PROFILE_FEATURE_PRIMARY": "F46_DENSITY_PROFILE_FEATURE_PROTOTYPE",
+    "ENDPOINT_DENSITY_COMPOSITE_REQUIRED": "F46_ENDPOINT_DENSITY_COMPOSITE_PROTOTYPE",
+    "STATIC_DYNAMIC_STRUCTURAL_COMPOSITE_REQUIRED": "F46_STRUCTURAL_CONSUMER_SPLIT_PROTOTYPE",
+    "STRUCTURAL_INFORMATION_ALREADY_CONSUMED": "F46_MATERIAL_PRIOR_REASSESSMENT",
+    "STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT": "F46_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "CROSS_RULESET_STRUCTURAL_CONFLICT": "F46_GENERIC_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "prohibited_operations": [
+    "freeze observed classification as expected result",
+    "family-name placement constants",
+    "hardcoded duplication or cross-rule facts",
+    "coefficient fitting",
+    "production evaluator change",
+    "post-result feature-family expansion",
+    "F46 execution",
+    "master promotion"
+  ],
+  "work_order": "GENERICCHESS-F45-CORRECTIVE-R1-EVIDENCE-DERIVED-DISCRIMINATION-CLOSURE",
+  "schema_version": 1,
+  "manifest_sha256": "1c6ff5341308207526df7ffa8fe07becbf7a6453c6fea3a9f9ead900f0010d16"
+}
