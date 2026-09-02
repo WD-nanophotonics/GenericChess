@@ -213,3 +213,28 @@ learning. H48C is the separate resolution boundary. The runtime atomic guard
 remains mandatory after H48C and stops on any discrepancy. Aggregation also
 now evaluates beyond-prior support as an OR over generations 1, 2, and 3 and
 records the first qualifying generation.
+
+## H48C corpus-disjointness resolution addendum
+
+H48C resolved the invalid original corpus seed triple using only deterministic
+Core legal-action generation and the authoritative
+`generic_chess.core.identity.position_identity_key`. The machine-readable
+resolution is
+`tests/fixtures/h48c_corpus_disjointness_resolution.json`, with collision keys
+bound separately in
+`tests/fixtures/h48c_corpus_disjointness_collision_keys.json`. Its parent is
+H48R3A checkpoint `d829f14e4c7c939bb1c2e06bc8b7d2b6f4b9e510` and its exact
+resolved triple is training `480700`, holdout `480703`, and arena `480708`.
+
+The complete attempted prefixes are recorded: holdout `480701..480703`, and
+arena `480702`, `480704..480708`, skipping the selected holdout seed. Every
+earlier candidate fails at least one cross-partition identity check, while the
+selected candidate passes for all three bound RuleSets. Direct-first and
+sequential selection agree, reconstruction is repeatable, and the final
+training/holdout/arena identity intersections are empty for Western Chess,
+Standard Shogi, and the selected generated RuleSet.
+
+H48C records evaluator, search, learner, self-play, and arena-game invocation
+flags as false. It does not run F48 learning, material perturbation, teacher
+search, arena games, F49 work, production changes, or master promotion. The
+separate H48C checkpoint is the only authority for resuming F48 corpus use.
