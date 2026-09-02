@@ -2565,20 +2565,27 @@ static int gc_semantic_append_board_actions(GCSemanticActionBuffer *out,
         if (!pattern->has_explicit_promotion) return 0;
         promotions[promotion_count++] = pattern->explicit_promotion_type;
     } else if (pattern->promotion_mode == 1) {
-        int allowed = 0;
-        uint32_t pair = ((uint32_t)source << 16) | target;
-        const GCSemPairList *pairs = &rules->promo_allowed[piece->base_type][side];
-        for (uint16_t i = 0; i < pairs->count; i++) if (pairs->pairs[i] == pair) { allowed = 1; break; }
-        if (!allowed || !rules->types[piece->base_type].is_promotable) {
+        /* Promotion is a one-way transition.  An already-promoted actor may
+         * keep its current movement geometry, but never receives another
+         * promotion variant merely because its base type has masks. */
+        if (piece->promoted) {
             promotions[promotion_count++] = 255;
         } else {
-            int forced = 0;
-            const GCSemSquareList *forced_squares = &rules->promo_forced[piece->base_type][side];
-            for (uint16_t i = 0; i < forced_squares->count; i++) if (forced_squares->squares[i] == target) { forced = 1; break; }
-            if (!forced) promotions[promotion_count++] = 255;
-            uint64_t alive = rules->alive_promo[piece->base_type][side][target];
-            for (uint8_t i = 0; i < rules->types[piece->base_type].promo_target_count; i++)
-                if (alive & (1ull << i)) promotions[promotion_count++] = rules->types[piece->base_type].promo_targets[i];
+            int allowed = 0;
+            uint32_t pair = ((uint32_t)source << 16) | target;
+            const GCSemPairList *pairs = &rules->promo_allowed[piece->base_type][side];
+            for (uint16_t i = 0; i < pairs->count; i++) if (pairs->pairs[i] == pair) { allowed = 1; break; }
+            if (!allowed || !rules->types[piece->base_type].is_promotable) {
+            promotions[promotion_count++] = 255;
+            } else {
+                int forced = 0;
+                const GCSemSquareList *forced_squares = &rules->promo_forced[piece->base_type][side];
+                for (uint16_t i = 0; i < forced_squares->count; i++) if (forced_squares->squares[i] == target) { forced = 1; break; }
+                if (!forced) promotions[promotion_count++] = 255;
+                uint64_t alive = rules->alive_promo[piece->base_type][side][target];
+                for (uint8_t i = 0; i < rules->types[piece->base_type].promo_target_count; i++)
+                    if (alive & (1ull << i)) promotions[promotion_count++] = rules->types[piece->base_type].promo_targets[i];
+            }
         }
     } else return 0;
     for (uint8_t i = 0; i < promotion_count; i++) {
