@@ -4,6 +4,14 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 
+from ..core.actions import SemanticBoardMove, SemanticDropMove
+from ..core.coordinates import Square, index_to_square
+from ..core.pieces import Piece
+from ..core.position import Hands, Position
+from ..core.declarations import (
+    _assess_declaration_position,
+    _available_declarations_position,
+)
 from . import _module, native_available
 
 
@@ -68,6 +76,9 @@ def snapshot(native_rules, position):
         for entry in out.get("aux_state", ())
     )
     out["history"] = tuple(tuple(int(word) for word in entry) for entry in out.get("history", ()))
+    out["history_events"] = tuple(
+        (int(event[0]), bool(event[1])) for event in out.get("history_events", ())
+    )
     out["history_occurrences"] = int(out.get("history_occurrences", 0))
     return out
 
@@ -91,6 +102,89 @@ def unpack_action(action: int) -> dict:
     if not native_available():
         raise RuntimeError("native extension is not built")
     return {key: int(value) for key, value in _module().semantic_action_unpack(int(action)).items()}
+
+
+def public_action(native_rules, action: int):
+    """Decode an exact packed action without reducing semantic identity.
+
+    The returned object retains pattern, geometry, actor type, coordinates,
+    and promotion identity, so packing it again is lossless.
+    """
+    fields = unpack_action(action)
+    n = int(native_rules.report.board_squares ** 0.5)
+    pattern = int(fields["pattern"])
+    geometry = int(fields["geometry"])
+    if pattern >= len(native_rules.pattern_ids) or geometry >= len(native_rules.geometry_ids):
+        raise ValueError("packed semantic action is outside this ruleset mapping")
+    to_square = index_to_square(int(fields["to"]), n)
+    if fields["kind"] == 2:
+        source = int(fields["from"])
+        promotion = int(fields["promotion"])
+        if source >= n * n or int(fields["actor_current"]) >= len(native_rules.type_ids):
+            raise ValueError("packed semantic board action is outside board/type mapping")
+        if promotion != 255 and promotion >= len(native_rules.type_ids):
+            raise ValueError("packed promotion type is outside mapping")
+        return SemanticBoardMove(
+            pattern_id=native_rules.pattern_ids[pattern],
+            geometry_id=native_rules.geometry_ids[geometry],
+            actor_type_id=native_rules.type_ids[int(fields["actor_current"])],
+            from_square=index_to_square(source, n),
+            to_square=to_square,
+            promotion_target_id=(
+                None if promotion == 255 else native_rules.type_ids[promotion]
+            ),
+        )
+    base = int(fields["base"])
+    if base >= len(native_rules.type_ids):
+        raise ValueError("packed semantic drop action type is outside mapping")
+    return SemanticDropMove(
+        pattern_id=native_rules.pattern_ids[pattern],
+        geometry_id=native_rules.geometry_ids[geometry],
+        base_type_id=native_rules.type_ids[base],
+        to_square=to_square,
+    )
+
+
+def _position_for_declarations(native_rules, position):
+    """Rehydrate a public Position for the generic declaration contract."""
+    if native_rules.semantic_ruleset is None:
+        raise ValueError("Native semantic ruleset has no declaration authority")
+    raw = snapshot(native_rules, position)
+    type_ids = tuple(native_rules.type_ids)
+    board = tuple(
+        None if cell is None else Piece(
+            int(cell[2]), type_ids[int(cell[0])], type_ids[int(cell[1])], bool(cell[3])
+        )
+        for cell in raw["board"]
+    )
+    hands = []
+    for counts in raw["hands"]:
+        hands.append(Hands(tuple(
+            (type_ids[i], int(count)) for i, count in enumerate(counts) if count
+        )))
+    return Position(
+        board=board,
+        hands=(hands[0], hands[1]),
+        side_to_move=int(raw["side"]),
+        ruleset_fingerprint=native_rules.fingerprint,
+        aux_state=raw.get("aux_state", ()),
+    ), int(raw["ply"])
+
+
+def assess_declaration(native_rules, position, declaration_id: str):
+    """Assess one generic declaration against the exact Native position."""
+    public_position, ply = _position_for_declarations(native_rules, position)
+    return _assess_declaration_position(
+        public_position, ply, native_rules.semantic_ruleset, declaration_id
+    )
+
+
+def available_declarations(native_rules, position):
+    """Return non-losing declaration assessments for the side to move."""
+    public_position, ply = _position_for_declarations(native_rules, position)
+    return _available_declarations_position(
+        public_position, ply, native_rules.semantic_ruleset
+    )
 
 
 def candidate_actions(native_rules, position) -> tuple[int, ...]:

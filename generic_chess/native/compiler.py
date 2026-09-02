@@ -19,9 +19,10 @@ from . import _module, native_available
 NATIVE_SCHEMA_VERSION = "native-0.5.0"
 
 GC_MAX_PLY = 512
+GC_SEM_MAX_PLY = 1024
 GC_MAX_HAND = 256
 
-SEMANTIC_PAYLOAD_VERSION = 2
+SEMANTIC_PAYLOAD_VERSION = 3
 GC_SEM_MAX_TYPES = 64
 GC_SEM_MAX_PATTERNS = 256
 GC_SEM_MAX_GEOMETRIES = 4096
@@ -108,6 +109,7 @@ _SEM_STRATUM_CODES = {"S0": 0, "S1": 1, "S2": 2, "S3": 3, "S4": 4, "S5": 5}
 # `location` is not enumerated in ADR-017 because hand predicates are
 # fail-closed at compile time; board=0 is the only reachable value.
 _SEM_LOCATION_CODES = {"board": 0, "hand": 1}
+_SEM_REPETITION_POLICY_CODES = {"draw": 0, "continuous_check_loss": 1}
 
 
 def _sem_enum(table, value, what, fingerprint):
@@ -165,11 +167,6 @@ def _sem_spatial(sel, n, type_map, zone_map, fingerprint):
 
 
 def _sem_state_guard(g, n, type_map, zone_map, fingerprint):
-    if g.subject_ref is not None:
-        raise NativeUnsupportedRuleError(
-            "state-guard subject_ref is not supported by native semantic payload "
-            f"(ruleset fingerprint {fingerprint})"
-        )
     return {
         "aggregation": _sem_enum(_SEM_AGGREGATION_CODES, g.aggregation, "aggregation", fingerprint),
         "owner": _sem_enum(_SEM_OWNER_CODES, g.owner, "owner", fingerprint),
@@ -177,6 +174,11 @@ def _sem_state_guard(g, n, type_map, zone_map, fingerprint):
         "compare_field": _sem_enum(_SEM_FIELD_CODES, g.compare_field, "compare_field", fingerprint),
         "promoted": _sem_enum(_SEM_PROMOTED_CODES, g.promoted, "promoted selector", fingerprint),
         "location": _sem_enum(_SEM_LOCATION_CODES, g.location, "location", fingerprint),
+        "subject_ref": (
+            _sem_square_ref(g.subject_ref, n, fingerprint)
+            if g.subject_ref is not None
+            else None
+        ),
         "spatial": _sem_spatial(g.spatial, n, type_map, zone_map, fingerprint),
         "comparison": _sem_enum(_SEM_COMPARISON_CODES, g.comparison, "comparison", fingerprint),
         "value": g.value,
@@ -634,6 +636,9 @@ class NativeSemanticCompiledRules:
         pattern_ids,
         geometry_ids,
         zone_ids,
+        declarations=(),
+        repetition_policy="draw",
+        semantic=None,
     ) -> None:
         self._capsule = capsule
         self._report = report
@@ -641,6 +646,9 @@ class NativeSemanticCompiledRules:
         self._pattern_ids = tuple(pattern_ids)
         self._geometry_ids = tuple(geometry_ids)
         self._zone_ids = tuple(zone_ids)
+        self._declarations = tuple(declarations)
+        self._repetition_policy = str(repetition_policy)
+        self._semantic = semantic
 
     @property
     def capsule(self):
@@ -675,6 +683,24 @@ class NativeSemanticCompiledRules:
     def zone_ids(self):
         return self._zone_ids
 
+    @property
+    def declarations(self):
+        """Generic declaration descriptors retained beside the Native capsule."""
+        return self._declarations
+
+    @property
+    def repetition_policy(self):
+        return self._repetition_policy
+
+    @property
+    def semantic_ruleset(self):
+        """The exact public semantic IR paired with this Native capsule."""
+        return self._semantic
+
+    @property
+    def automatic_adjudications(self):
+        return tuple(self._semantic.automatic_adjudications) if self._semantic else ()
+
 
 def _native_payload_is_executable(payload, report: NativeSemanticCompilationReport) -> bool:
     """Validate the complete lowered payload shape for the runtime gate.
@@ -685,7 +711,8 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
     """
     required = {
         "semantic_payload_version", "fingerprint", "board_size",
-        "repetition_limit", "max_ply", "type_ids", "types",
+        "repetition_limit", "repetition_policy", "automatic_adjudication_ply",
+        "max_ply", "type_ids", "types",
         "promo_allowed", "promo_forced", "alive_promo", "drop_mask",
         "geometries", "zones", "aux_slots", "triggers", "patterns",
     }
@@ -744,10 +771,6 @@ def build_semantic_compile_payload(semantic):
     """
     ir = semantic.ir
     support = semantic.support
-    if getattr(ir, "declarations", ()):
-        raise NativeUnsupportedRuleError(
-            "declaration-bearing semantic rulesets are outside the Native payload contract"
-        )
     fingerprint = support.ruleset_fingerprint
     n = support.board_size
 
@@ -758,13 +781,13 @@ def build_semantic_compile_payload(semantic):
     )
     _validate(ir.ir_version == 2, "unsupported semantic IR version", fingerprint)
     _validate(
-        support.max_ply <= GC_MAX_PLY,
-        f"max_ply {support.max_ply} exceeds native limit {GC_MAX_PLY}",
+        support.max_ply <= GC_SEM_MAX_PLY,
+        f"max_ply {support.max_ply} exceeds native semantic limit {GC_SEM_MAX_PLY}",
         fingerprint,
     )
     _validate(
-        1 <= support.repetition_limit <= 0xFFFF,
-        f"repetition_limit {support.repetition_limit} outside native u16 range",
+        1 <= support.repetition_limit <= 0xFFFFFFFF,
+        f"repetition_limit {support.repetition_limit} outside native u32 range",
         fingerprint,
     )
 
@@ -960,6 +983,17 @@ def build_semantic_compile_payload(semantic):
         "fingerprint": fingerprint,
         "board_size": n,
         "repetition_limit": support.repetition_limit,
+        "repetition_policy": _sem_enum(
+            _SEM_REPETITION_POLICY_CODES,
+            support.repetition_policy,
+            "repetition policy",
+            fingerprint,
+        ),
+        "automatic_adjudication_ply": (
+            support.automatic_adjudications[0].trigger_ply
+            if support.automatic_adjudications
+            else None
+        ),
         "max_ply": support.max_ply,
         # Runtime identity is the Python semantic_position_key JSON.  It
         # contains public type IDs, so the Native executor must own this
@@ -1037,4 +1071,7 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
         pattern_ids=pattern_ids,
         geometry_ids=geometry_ids,
         zone_ids=zone_ids,
+        declarations=semantic.ir.declarations,
+        repetition_policy=semantic.support.repetition_policy,
+        semantic=semantic,
     )

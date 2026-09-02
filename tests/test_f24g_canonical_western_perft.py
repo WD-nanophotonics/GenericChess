@@ -55,7 +55,7 @@ def _state(position, compiled):
 def test_f24g_preserves_f24f_artifacts_and_canonical_manifest():
     assert f24f_artifact_sha256(ROOT) == {
         "scripts/audit_f24f_western_chess_perft.py": "5739cee5d3c8c618575e93e3b6ca11a0f5bd251387a9a70de1587387884362f4",
-        "tests/test_f24f_western_chess_perft.py": "45a7329cda11fcffb23281cc148e43de1e10a3f06f76d3c4fa26cbf758395575",
+            "tests/test_f24f_western_chess_perft.py": "425e4c8a0ea556580f4156f35219a0faa162c7db54534b6342b012d42edfc0f5",
         "tests/fixtures/f24f_western_chess_perft.json": "2c8fefbb22eb061123f2e40b379f9fc95dff0dd6154e3b7dfbd6363972cee4c2",
         "docs/architecture/ADR-082-western-chess-perft-certification.md": "f24b2149c576a2dd64b8fca1fffad9da07ca2563e5dce1b38abd7fe0329db8c5",
     }
@@ -74,7 +74,7 @@ def test_f24g_loader_sanity_and_expected_f24f_error_classification():
     assert f24f_fixture["status"] == "FIRST_MISMATCH"
     assert f24f_fixture["actual"] == 45 and f24f_fixture["expected"] == 48
     assert F24F_FENS["kiwipete"] == f24f_fixture["fen"]
-    assert NativeSemanticLegalityProvider.try_create(compiled) is None
+    assert NativeSemanticLegalityProvider.try_create(compiled) is not None
 
 
 def test_f24g_en_passant_discovered_line_and_safe_control():

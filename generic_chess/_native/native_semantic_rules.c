@@ -70,6 +70,21 @@ static int sem_u16(PyObject *obj, uint16_t *out) {
     return 1;
 }
 
+static int sem_u32(PyObject *obj, uint32_t *out) {
+    if (obj == NULL || !PyLong_Check(obj)) {
+        PyErr_SetString(PyExc_ValueError, "expected unsigned 32-bit integer");
+        return 0;
+    }
+    unsigned long long value = PyLong_AsUnsignedLongLong(obj);
+    if (PyErr_Occurred() || value > 0xFFFFFFFFULL) {
+        PyErr_Clear();
+        PyErr_SetString(PyExc_ValueError, "unsigned 32-bit integer out of range");
+        return 0;
+    }
+    *out = (uint32_t)value;
+    return 1;
+}
+
 static int sem_i16(PyObject *obj, int16_t *out) {
     int64_t v;
     if (!sem_int_read(obj, &v)) {
@@ -512,6 +527,14 @@ static int sem_parse_state_guard(PyObject *d, GCSemStateGuard *out,
         PyErr_SetString(PyExc_ValueError,
                         "state guard location must be board(0)");
         return 0;
+    }
+    PyObject *subject = PyDict_GetItemString(d, "subject_ref");
+    if (subject != NULL && subject != Py_None) {
+        if (!PyDict_Check(subject) ||
+            !sem_parse_square_ref(subject, &out->subject_ref, rules)) {
+            return 0;
+        }
+        out->has_subject_ref = 1;
     }
     PyObject *tr = PyDict_GetItemString(d, "type_ref");
     if (tr == NULL || !PyDict_Check(tr) ||
@@ -958,7 +981,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (payload_version != 1 && payload_version != 2) {
+    if (payload_version != 1 && payload_version != 2 && payload_version != 3) {
         PyErr_SetString(PyExc_ValueError,
                         "unsupported semantic_payload_version");
         gc_semantic_rules_free(rules);
@@ -979,8 +1002,8 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     }
     rules->board_size = (uint8_t)board_size;
 
-    uint16_t repetition_limit;
-    if (!sem_u16(PyDict_GetItemString(payload, "repetition_limit"),
+    uint32_t repetition_limit;
+    if (!sem_u32(PyDict_GetItemString(payload, "repetition_limit"),
                  &repetition_limit)) {
         gc_semantic_rules_free(rules);
         return NULL;
@@ -993,12 +1016,34 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     }
     rules->repetition_limit = repetition_limit;
 
+    uint8_t repetition_policy = 0;
+    PyObject *policy_obj = PyDict_GetItemString(payload, "repetition_policy");
+    if (policy_obj != NULL && !sem_u8(policy_obj, &repetition_policy)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (repetition_policy > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic repetition_policy out of range");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->repetition_policy = repetition_policy;
+
+    uint16_t automatic_ply = 0;
+    PyObject *automatic_obj = PyDict_GetItemString(payload, "automatic_adjudication_ply");
+    if (automatic_obj != NULL && automatic_obj != Py_None &&
+        !sem_u16(automatic_obj, &automatic_ply)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->automatic_adjudication_ply = automatic_ply;
+
     uint16_t max_ply;
     if (!sem_u16(PyDict_GetItemString(payload, "max_ply"), &max_ply)) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (max_ply < 1 || max_ply > GC_MAX_PLY) {
+    if (max_ply < 1 || max_ply > GC_SEM_MAX_PLY) {
         PyErr_SetString(PyExc_ValueError, "semantic max_ply out of range");
         gc_semantic_rules_free(rules);
         return NULL;
@@ -1036,7 +1081,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (payload_version == 2) {
+    if (payload_version >= 2) {
         PyObject *type_ids = NULL;
         if (!sem_get_list(payload, "type_ids", &type_ids) ||
             PyList_Size(type_ids) != rules->type_count) {
@@ -2128,9 +2173,11 @@ static PyObject *sem_info_state_guard(const GCSemStateGuard *g) {
     }
     PyObject *tr = sem_info_type_ref(&g->type_ref);
     PyObject *sp = sem_info_spatial(&g->spatial);
-    if (tr == NULL || sp == NULL) {
+    PyObject *sr = g->has_subject_ref ? sem_info_square_ref(&g->subject_ref) : Py_NewRef(Py_None);
+    if (tr == NULL || sp == NULL || sr == NULL) {
         Py_XDECREF(tr);
         Py_XDECREF(sp);
+        Py_XDECREF(sr);
         Py_DECREF(d);
         return NULL;
     }
@@ -2141,18 +2188,19 @@ static PyObject *sem_info_state_guard(const GCSemStateGuard *g) {
         PyLong_FromUnsignedLong(g->compare_field),
         PyLong_FromUnsignedLong(g->promoted),
         PyLong_FromUnsignedLong(g->location),
+        sr,
         sp,
         PyLong_FromUnsignedLong(g->comparison),
         PyLong_FromLong(g->value),
     };
     const char *keys[] = {
         "aggregation", "owner", "type_ref", "compare_field", "promoted",
-        "location", "spatial", "comparison", "value",
+        "location", "subject_ref", "spatial", "comparison", "value",
     };
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 10; i++) {
         if (items[i] == NULL ||
             PyDict_SetItemString(d, keys[i], items[i]) != 0) {
-            for (int j = 0; j < 9; j++) {
+            for (int j = 0; j < 10; j++) {
                 Py_XDECREF(items[j]);
             }
             Py_DECREF(d);
@@ -2565,6 +2613,11 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
     SEM_INFO_SET("fingerprint", PyUnicode_FromString(rules->fingerprint));
     SEM_INFO_SET("board_size", PyLong_FromUnsignedLong(rules->board_size));
     SEM_INFO_SET("repetition_limit", PyLong_FromUnsignedLong(rules->repetition_limit));
+    SEM_INFO_SET("repetition_policy", PyLong_FromUnsignedLong(rules->repetition_policy));
+    SEM_INFO_SET("automatic_adjudication_ply",
+                 rules->automatic_adjudication_ply
+                     ? PyLong_FromUnsignedLong(rules->automatic_adjudication_ply)
+                     : Py_NewRef(Py_None));
     SEM_INFO_SET("max_ply", PyLong_FromUnsignedLong(rules->max_ply));
     if (rules->semantic_payload_version >= 2) {
         PyObject *type_ids = PyList_New(rules->type_count);

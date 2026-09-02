@@ -17,6 +17,7 @@
 #define GC_SEM_MAX_AUX_SLOTS 8
 #define GC_SEM_MAX_EFFECTS 4
 #define GC_SEM_MAX_INVARIANT_REFS 4
+#define GC_SEM_MAX_PLY 1024
 
 typedef struct {
     uint8_t kind;            /* square_ref enum code */
@@ -53,6 +54,8 @@ typedef struct {
     uint8_t compare_field;
     uint8_t promoted;
     uint8_t location;
+    uint8_t has_subject_ref;
+    GCSemSquareRef subject_ref;
     GCSemSpatial spatial;
     uint8_t comparison;
     int32_t value;
@@ -201,7 +204,9 @@ typedef struct {
     char fingerprint[65];
     uint8_t semantic_payload_version;
     uint8_t board_size;
-    uint16_t repetition_limit;
+    uint32_t repetition_limit;
+    uint8_t repetition_policy;
+    uint16_t automatic_adjudication_ply;
     uint16_t max_ply;
     uint16_t type_count;
     /* Payload v2 owns stable public type IDs for semantic position identity.

@@ -32,12 +32,15 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
     memcpy(pos->board, payload->board, sizeof(GCPiece) *
            (size_t)(rules->board_size * rules->board_size));
     memcpy(pos->hand_counts, payload->hand_counts, sizeof(pos->hand_counts));
-    if (payload->history_len > GC_MAX_PLY + 1) return 0;
+    if (payload->history_len > GC_SEM_MAX_PLY + 1) return 0;
     pos->history_len = payload->history_len;
     memcpy(pos->history_lo, payload->history_lo, sizeof(pos->history_lo));
     memcpy(pos->history_hi, payload->history_hi, sizeof(pos->history_hi));
     memcpy(pos->history_digest, payload->history_digest, sizeof(pos->history_digest));
+    memcpy(pos->history_actor, payload->history_actor, sizeof(pos->history_actor));
+    memcpy(pos->history_gave_check, payload->history_gave_check, sizeof(pos->history_gave_check));
     pos->history_exact = payload->history_exact;
+    pos->history_events_exact = payload->history_events_exact;
     for (uint16_t sq = 0; sq < (uint16_t)(rules->board_size * rules->board_size); sq++) {
         const GCPiece *piece = &pos->board[sq];
         if (!piece->occupied) continue;

@@ -20,14 +20,11 @@ The complete matrix, source/dependency SHA-256 ledger, API inventory, and
 route comparison are frozen in
 `tests/fixtures/h50a_semantic_native_search_architecture_audit.json`.
 
-The current semantic Native path is not yet an iterative search path. Missing
-primitives are semantic TT identity/value/bound handling with evaluator
-isolation, deterministic node/time budgets, cancellation, complete
-continuous-check adjudication or an explicit gate, public exact action/PV
-conversion, and Core PV replay verification. The Native semantic compiler
-also rejects the complete Western fixture at its current `max_ply` and
-`subject_ref` lowering boundary, and rejects Standard Shogi declarations;
-these are explicit F50B certification gates, not legacy fallbacks.
+The current semantic Native path is not yet an iterative search path. Remaining
+F50B2 primitives are semantic TT identity/value/bound handling with evaluator
+isolation, deterministic node/time budgets, cancellation, and Core PV replay
+verification. F50B1 closes the Western `max_ply`/`subject_ref` and Standard
+Shogi declaration, repetition, and exact public-action execution gates.
 
 ## Rule coverage
 
@@ -35,15 +32,35 @@ The semantic IR/runtime represents Western pawn single/double steps, pawn
 captures, en passant, promotion, castling, castling rights, and en-passant
 auxiliary state. Standard Shogi ordinary moves, promotion, drops, hands,
 nifu, and uchifuzume are represented, while continuous-check repetition and
-declaration adjudication remain Native gaps. The H48B selected generated
-surface is currently a legacy `CompiledRuleSet` object, so semantic-Native
-execution is not certified there; future F50B certification must include a
-compiler-produced generated RuleSet.
+declaration adjudication are carried by the semantic Native closure. The H48B
+selected generated surface is currently a legacy `CompiledRuleSet` object, so
+semantic-Native execution is not certified there; F50B1 instead includes a
+deterministic compiler-produced generic RuleSet witness.
+
+## H50B1 execution-closure addendum
+
+H50B1 keeps `CompiledSemanticRuleset.ir + .support` and `GCSemanticPosition`
+as the only semantic authorities. Semantic payload version 3 adds an explicit
+semantic history capacity of 1024, accepts Western `max_ply=1000` unchanged,
+lowers generic `subject_ref`, and carries repetition-policy and automatic
+adjudication metadata. Exact public conversion is exposed by
+`generic_chess.native.semantic.public_action`; no semantic action is reduced
+to legacy `BoardMove` or `DropMove`.
+
+Standard Shogi declarations remain present on the compiled Native wrapper and
+are assessed through the generic declaration contract with owner, outcome,
+weighted score, failure outcome, and outcome bands. Exact history entries may
+carry actor and `gave_check` metadata; Native terminal classification supports
+ordinary repetition, continuous-check loss, and the generic automatic
+adjudication trigger. These path fields are excluded from public position
+identity. F50B1 still does not add iterative search, TT, budgets, cancellation,
+or production routing; those remain the F50B2 boundary.
 
 ## Scope and consequences
 
 H50A is audit-only: no production `generic_chess/` code, native C/H code,
 RuleSet, compiler, F49 runner, S49 corpus, learner, or F50B implementation is
-changed. F50B is not started. The next implementation must reuse the existing
+changed. H50B1 uses only the existing semantic IR/compiler/runtime authority;
+F50B2 remains the next boundary. The next implementation must reuse the existing
 semantic IR/compiler/runtime authority and must never project semantic
 special actions through incomplete legacy movement atoms.

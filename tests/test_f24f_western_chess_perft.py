@@ -59,7 +59,7 @@ def test_f24f_complete_shape_initial_legal_count_and_capture_disposition():
                 effect.kind == "remove" and effect.disposition == "remove_from_game"
                 for effect in pattern.effects
             )
-    assert NativeSemanticLegalityProvider.try_create(compiled) is None
+    assert NativeSemanticLegalityProvider.try_create(compiled) is not None
 
 
 def test_f24f_pawn_contract_and_owner_mirror():

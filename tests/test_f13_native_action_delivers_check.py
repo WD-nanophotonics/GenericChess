@@ -125,7 +125,7 @@ def test_f13_compile_gate_and_frozen_postcondition_code_contract():
     assert native_rules.native_executable is True
     assert report.ruleset_fingerprint == semantic.ruleset_fingerprint
     assert report.ir_version == 2
-    assert report.semantic_payload_version == 2
+    assert report.semantic_payload_version == 3
     assert report.native_schema_version == "native-0.5.0"
     assert 2 in {
         post["kind"]

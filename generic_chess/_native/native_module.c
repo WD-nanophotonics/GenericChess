@@ -301,7 +301,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_ir_v2_compile", value);
     Py_DECREF(value);
-    value = PyLong_FromLong(2);
+    value = PyLong_FromLong(3);
     PyDict_SetItemString(dict, "semantic_payload_version", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
@@ -2201,7 +2201,7 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
     }
     PyObject *history = PyDict_GetItemString(payload, "history");
     if (history != NULL) {
-        if (!PyList_Check(history) || PyList_Size(history) > GC_MAX_PLY + 1) {
+        if (!PyList_Check(history) || PyList_Size(history) > GC_SEM_MAX_PLY + 1) {
             PyErr_SetString(PyExc_ValueError, "semantic history must be a bounded list");
             return NULL;
         }
@@ -2213,8 +2213,8 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                 return NULL;
             }
             Py_ssize_t word_count = PySequence_Size(entry);
-            if (word_count != 2 && word_count != 4) {
-                PyErr_SetString(PyExc_ValueError, "semantic history entry must have two or four words");
+            if (word_count != 2 && word_count != 4 && word_count != 6) {
+                PyErr_SetString(PyExc_ValueError, "semantic history entry must have two, four, or six words");
                 return NULL;
             }
             if (word_count == 2) bp.history_exact = 0;
@@ -2230,9 +2230,49 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                     if (word == 0) bp.history_lo[i] = (uint64_t)raw;
                     else bp.history_hi[i] = (uint64_t)raw;
                 }
-                bp.history_digest[i][word] = (uint64_t)raw;
+                if (word < 4) bp.history_digest[i][word] = (uint64_t)raw;
+                else if (word == 4) bp.history_actor[i] = (uint8_t)raw;
+                else bp.history_gave_check[i] = (uint8_t)raw;
+            }
+            if (word_count == 6) {
+                bp.history_events_exact = 1;
+                if (bp.history_digest[i][0] == 0 && bp.history_digest[i][1] == 0) {
+                    /* no special case; the first four words remain the exact key */
+                }
+                if (bp.history_actor[i] > 1 || bp.history_gave_check[i] > 1) {
+                    PyErr_SetString(PyExc_ValueError, "semantic history actor/check flag invalid");
+                    return NULL;
+                }
             }
         }
+    }
+    PyObject *history_events = PyDict_GetItemString(payload, "history_events");
+    if (history_events != NULL) {
+        if (!PyList_Check(history_events) || PyList_Size(history_events) != bp.history_len) {
+            PyErr_SetString(PyExc_ValueError, "semantic history_events length mismatch");
+            return NULL;
+        }
+        for (Py_ssize_t i = 0; i < PyList_Size(history_events); i++) {
+            PyObject *event = PyList_GetItem(history_events, i);
+            if ((!PyList_Check(event) && !PyTuple_Check(event)) || PySequence_Size(event) != 2) {
+                PyErr_SetString(PyExc_ValueError, "semantic history event must be [actor, gave_check]");
+                return NULL;
+            }
+            int event_ok = 1;
+            PyObject *actor_obj = PySequence_GetItem(event, 0);
+            PyObject *gave_obj = PySequence_GetItem(event, 1);
+            long actor = gc_py_long_as_long(actor_obj, &event_ok);
+            long gave = gc_py_long_as_long(gave_obj, &event_ok);
+            Py_XDECREF(actor_obj);
+            Py_XDECREF(gave_obj);
+            if (!event_ok || actor < 0 || actor > 1 || gave < 0 || gave > 1) {
+                PyErr_SetString(PyExc_ValueError, "semantic history event is outside domain");
+                return NULL;
+            }
+            bp.history_actor[i] = (uint8_t)actor;
+            bp.history_gave_check[i] = (uint8_t)gave;
+        }
+        bp.history_events_exact = 1;
     }
     GCSemanticPosition *pos = (GCSemanticPosition *)malloc(sizeof(*pos));
     if (pos == NULL) { PyErr_NoMemory(); return NULL; }
@@ -2304,6 +2344,15 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
         PyList_SET_ITEM(history, i, entry);
     }
     PyDict_SetItemString(out, "history", history); Py_DECREF(history);
+    PyObject *events = PyList_New(pos->history_len);
+    if (events == NULL) { Py_DECREF(out); return NULL; }
+    for (uint16_t i = 0; i < pos->history_len; i++) {
+        PyObject *event = Py_BuildValue("(ii)", (int)pos->history_actor[i],
+                                        (int)pos->history_gave_check[i]);
+        if (event == NULL) { Py_DECREF(events); Py_DECREF(out); return NULL; }
+        PyList_SET_ITEM(events, i, event);
+    }
+    PyDict_SetItemString(out, "history_events", events); Py_DECREF(events);
     uint64_t current_digest[4] = {0, 0, 0, 0};
     if (pos->history_len > 0) memcpy(current_digest, pos->history_digest[pos->history_len - 1], sizeof(current_digest));
     unsigned long occurrences = 0;
@@ -2929,6 +2978,49 @@ static int gc_semantic_require_exact_history(const GCSemanticPosition *position)
     return 1;
 }
 
+static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
+                                               const GCSemanticPosition *position,
+                                               int *winner_out) {
+    if (rules->repetition_limit < 1 || !position->history_events_exact ||
+        position->history_len == 0) return 0;
+    char digest[65];
+    if (!gc_semantic_position_key_digest(rules, position, digest)) return -1;
+    uint64_t words[4] = {0, 0, 0, 0};
+    for (int w = 0; w < 4; w++) for (int i = 0; i < 16; i++) {
+        char c = digest[w * 16 + i];
+        uint8_t n = (uint8_t)(c >= '0' && c <= '9' ? c - '0' : c - 'a' + 10);
+        words[w] = (words[w] << 4) | n;
+    }
+    uint16_t occurrences[GC_SEM_MAX_PLY + 1];
+    uint16_t count = 0;
+    for (uint16_t i = 0; i < position->history_len; i++) {
+        if (memcmp(position->history_digest[i], words, sizeof(words)) == 0)
+            occurrences[count++] = i;
+    }
+    if (count < rules->repetition_limit) return 0;
+    uint16_t start = occurrences[count - rules->repetition_limit];
+    uint16_t end = occurrences[count - 1];
+    if (start >= end) return 0;
+    int seen[2] = {0, 0};
+    int all_checks[2] = {1, 1};
+    for (uint16_t i = (uint16_t)(start + 1); i <= end; i++) {
+        uint8_t actor = position->history_actor[i];
+        if (actor > 1) return 0;
+        seen[actor] = 1;
+        if (!position->history_gave_check[i]) all_checks[actor] = 0;
+    }
+    int checking_side = -1;
+    for (int actor = 0; actor < 2; actor++) {
+        if (seen[actor] && all_checks[actor]) {
+            if (checking_side >= 0) return 0;
+            checking_side = actor;
+        }
+    }
+    if (checking_side < 0 || !seen[0] || !seen[1]) return 0;
+    if (winner_out) *winner_out = 1 - checking_side;
+    return 1;
+}
+
 static int gc_semantic_terminal_status(const GCSemanticRules *rules,
                                        const GCSemanticPosition *position,
                                        int *winner_out) {
@@ -2945,7 +3037,18 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
     }
     unsigned long repetitions = 0;
     if (gc_semantic_repetition_count(rules, position, &repetitions) < 0) return -1;
+    if (rules->repetition_policy == 1) {
+        int perpetual_winner = -1;
+        int perpetual = gc_semantic_continuous_check_winner(rules, position, &perpetual_winner);
+        if (perpetual < 0) return -1;
+        if (perpetual > 0) {
+            if (winner_out) *winner_out = perpetual_winner;
+            return 5;
+        }
+    }
     if (repetitions >= rules->repetition_limit) return 3; /* repetition */
+    if (rules->automatic_adjudication_ply > 0 &&
+        position->ply >= rules->automatic_adjudication_ply) return 6; /* no contest */
     if (position->ply >= rules->max_ply) return 4; /* max ply */
     return 0; /* ongoing */
 }
@@ -2965,7 +3068,7 @@ static PyObject *gc_semantic_terminal(PyObject *self, PyObject *args) {
         if (!PyErr_Occurred()) PyErr_SetString(PyExc_ValueError, "semantic terminal requires exact full history");
         return NULL;
     }
-    const char *names[] = {"ongoing", "checkmate", "stalemate", "repetition", "max_ply"};
+    const char *names[] = {"ongoing", "checkmate", "stalemate", "repetition", "max_ply", "perpetual_check", "no_contest"};
     PyObject *out = Py_BuildValue("{s:s}", "status", names[status]);
     if (!out) return NULL;
     if (winner >= 0) {

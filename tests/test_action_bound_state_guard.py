@@ -137,10 +137,11 @@ def test_action_bound_schema_round_trip_and_fingerprint_contract():
         ruleset_from_dict(bad)
 
 
-def test_action_bound_compiled_ir_and_native_fail_closed():
+def test_action_bound_compiled_ir_and_native_support():
     semantic = compile_semantic_ruleset(_generic_ruleset())
     pattern = next(p for p in semantic.ir.patterns if p.name == "opaque_source_bound")
     assert pattern.guards[0].subject_ref.kind == "source"
-    assert semantic.ir.capabilities.native_executable is False
-    with pytest.raises(NativeUnsupportedRuleError, match="subject_ref"):
-        build_semantic_compile_payload(semantic)
+    assert semantic.ir.capabilities.native_executable is True
+    payload, report = build_semantic_compile_payload(semantic)
+    assert report.native_executable is True
+    assert payload["patterns"]
