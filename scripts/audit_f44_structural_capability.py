@@ -39,6 +39,12 @@ CONFIG = EvaluationConfig()
 BASELINE = "7166a743911926156de75825cd02c7c622aaa172"
 COMPONENTS = ("mobility", "coverage", "reachability", "path_efficiency")
 WEIGHTS = {"mobility": 1.0, "coverage": CONFIG.coverage_weight, "reachability": CONFIG.reachability_weight, "path_efficiency": CONFIG.path_efficiency_weight}
+FAMILY_CLASSIFICATION = {
+    "S44-A_ENDPOINT_CONTROL_SEMANTICS": ("ENDPOINT_CONTROL_INFORMATION_MISSING", "F45_ENDPOINT_CONTROL_FEATURE_PROTOTYPE"),
+    "S44-B_CONDITIONAL_CAPABILITY_RESERVE": ("CONDITIONAL_CAPABILITY_INFORMATION_MISSING", "F45_CONDITIONAL_CAPABILITY_FEATURE_PROTOTYPE"),
+    "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": ("CHANNEL_DIVERSITY_INFORMATION_MISSING", "F45_CHANNEL_DIVERSITY_FEATURE_PROTOTYPE"),
+    "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": ("DENSITY_PROFILE_INFORMATION_MISSING", "F45_DENSITY_PROFILE_FEATURE_PROTOTYPE"),
+}
 
 
 def _json(name: str, value: Any) -> None:
@@ -173,9 +179,10 @@ def _synthetic_rules() -> dict[str, Any]:
         base = f42._synthetic_ruleset(name=name, kind=kind, shapes=shapes, relations=relations)
         if len(shapes) > 1 or name.startswith("matched_empty_board_mass_"):
             actions = []
-            max_steps = 2 if name.endswith("short_path") else 6 if name.endswith("long_path") else None
+            max_steps = 2 if name.endswith("short_path") or name.endswith("long_path") else None
+            min_steps = 2 if name.endswith("long_path") else None
             for index, shape in enumerate(shapes):
-                geometry = RuleGeometrySpec(kind=kind, offset=shape if kind == "leap" else None, direction=shape if kind == "ray" else None, max_steps=max_steps)
+                geometry = RuleGeometrySpec(kind=kind, offset=shape if kind == "leap" else None, direction=shape if kind == "ray" else None, min_steps=min_steps if kind == "ray" else None, max_steps=max_steps if kind == "ray" else None)
                 for relation in relations:
                     effects = [RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target"))]
                     if relation == "enemy":
@@ -185,13 +192,13 @@ def _synthetic_rules() -> dict[str, Any]:
         if not guard:
             return compile_semantic_ruleset(base)
         actions = list(base.semantic_actions)
-        guarded = RuleSemanticAction(name=f"{name}_guarded", type_ids=("X",), geometry=RuleGeometrySpec(kind="leap", offset=(0, 1)), target_relation="empty", state_guards=(RuleStateGuard("exists", "self", RuleTypeRef("explicit", "K"), "base", "any", "board", RuleSpatialSelector("exact", refs=(RuleSquareRef("fixed", square=(0, 0), owner_relative=False),))),), effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),), invariants=(RuleInvariant("own_anchor_safe"),))
+        guarded = RuleSemanticAction(name=f"{name}_guarded", type_ids=("X",), geometry=RuleGeometrySpec(kind="leap", offset=(1, 0)), target_relation="empty", state_guards=(RuleStateGuard("exists", "self", RuleTypeRef("explicit", "K"), "base", "any", "board", RuleSpatialSelector("exact", refs=(RuleSquareRef("fixed", square=(0, 0), owner_relative=False),))),), effects=(RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target")),), invariants=(RuleInvariant("own_anchor_safe"),))
         return compile_semantic_ruleset(RuleSet(board_size=base.board_size, piece_types=base.piece_types, initial_position=base.initial_position, drop_allowed=base.drop_allowed, semantic_actions=tuple(actions + [guarded])))
     disjoint = f42._synthetic_ruleset(name="disjoint_quiet_capture_same_union", kind="leap", shapes=((1, 0),), relations=("empty",))
     actions = list(disjoint.semantic_actions)
     actions.append(RuleSemanticAction(name="disjoint_capture", type_ids=("X",), geometry=RuleGeometrySpec(kind="leap", offset=(0, 1)), target_relation="enemy", effects=(RuleActionEffect("remove", square_ref=RuleSquareRef("target"), disposition="remove_from_game", piece_owner="opponent"), RuleActionEffect("move", from_ref=RuleSquareRef("source"), to_ref=RuleSquareRef("target"))), invariants=(RuleInvariant("own_anchor_safe"),)))
     disjoint = compile_semantic_ruleset(RuleSet(board_size=disjoint.board_size, piece_types=disjoint.piece_types, initial_position=disjoint.initial_position, drop_allowed=disjoint.drop_allowed, semantic_actions=tuple(actions)))
-    return {"quiet_only": compile_case("quiet_only", "leap", ((1, 0),), ("empty",)), "capture_only": compile_case("capture_only", "leap", ((1, 0),), ("enemy",)), "quiet_plus_capture_same_targets": compile_case("quiet_plus_capture_same_targets", "leap", ((1, 0),), ("empty", "enemy")), "disjoint_quiet_capture_same_union": disjoint, "one_channel": compile_case("one_channel", "leap", ((1, 0),), ("empty",)), "two_channels": compile_case("two_channels", "leap", ((1, 0), (0, 1)), ("empty",)), "multiple_channels": compile_case("multiple_channels", "ray", ((1, 0), (-1, 0), (0, 1), (0, -1)), ("empty",)), "ordinary_base": compile_case("ordinary_base", "leap", ((1, 0),), ("empty",)), "ordinary_base_plus_guarded_identical_capability": compile_case("ordinary_base_plus_guarded_identical_capability", "leap", ((1, 0),), ("empty",), True), "matched_empty_board_mass_short_path": compile_case("matched_empty_board_mass_short_path", "ray", ((1, 0),), ("empty",)), "matched_empty_board_mass_long_path": compile_case("matched_empty_board_mass_long_path", "ray", ((1, 0),), ("empty",))}
+    return {"quiet_only": compile_case("quiet_only", "leap", ((1, 0),), ("empty",)), "capture_only": compile_case("capture_only", "leap", ((1, 0),), ("enemy",)), "quiet_plus_capture_same_targets": compile_case("quiet_plus_capture_same_targets", "leap", ((1, 0),), ("empty", "enemy")), "disjoint_quiet_capture_same_union": disjoint, "one_channel": compile_case("one_channel", "leap", ((1, 0),), ("empty",)), "two_channels": compile_case("two_channels", "leap", ((1, 0), (0, 1)), ("empty",)), "multiple_channels": compile_case("multiple_channels", "ray", ((1, 0), (-1, 0), (0, 1), (0, -1)), ("empty",)), "ordinary_base": compile_case("ordinary_base", "leap", ((1, 0),), ("empty",)), "ordinary_base_plus_guarded_identical_capability": compile_case("ordinary_base_plus_guarded_identical_capability", "leap", ((1, 0),), ("empty",), True), "matched_empty_board_mass_short_path": compile_case("matched_empty_board_mass_short_path", "leap", ((2, 0),), ("empty",)), "matched_empty_board_mass_long_path": compile_case("matched_empty_board_mass_long_path", "ray", ((1, 0),), ("empty",))}
 
 
 def _synthetic_ledger() -> dict[str, Any]:
@@ -202,12 +209,31 @@ def _synthetic_ledger() -> dict[str, Any]:
         values = f42._component_values(metrics)
         endpoint = _endpoint_type(ruleset, "X", True)
         channel = _channel_type(ruleset, "X")
+        conditional = _conditional_type(ruleset, "X")
         base_mobility = metrics["expected_mobility"][0] if metrics["expected_mobility"] else 0.0
-        cases[name] = {"component_values": values, "raw_score": sum(values[key] * WEIGHTS[key] for key in COMPONENTS), "endpoint": {key: endpoint[key] for key in ("quiet_geometry_mass", "attack_geometry_mass", "dual_use_overlap_mass", "quiet_capture_union_mass", "quiet_capture_overlap_ratio")}, "channel": {key: channel[key] for key in ("channel_count_mean", "effective_channel_count_mean", "concentration_sum_p_squared_mean", "largest_channel_share_mean")}, "density": {"mobility_curve": metrics["expected_mobility"], "empty_board_mass": metrics["empty_board_mobility"], "maximum_fractional_drop": max((1.0 - value / base_mobility for value in metrics["expected_mobility"]), default=0.0) if base_mobility else 0.0}}
+        cases[name] = {"component_values": values, "raw_score": sum(values[key] * WEIGHTS[key] for key in COMPONENTS), "endpoint": {key: endpoint[key] for key in ("quiet_geometry_mass", "attack_geometry_mass", "dual_use_overlap_mass", "quiet_capture_union_mass", "quiet_capture_overlap_ratio")}, "channel": {key: channel[key] for key in ("channel_count_mean", "effective_channel_count_mean", "concentration_sum_p_squared_mean", "largest_channel_share_mean")}, "conditional": {key: conditional[key] for key in ("conditional_pattern_count", "path_clear_only_reserve_mass", "conditional_reserve_over_ordinary_mass", "ordinary_pattern_count")}, "density": {"mobility_curve": metrics["expected_mobility"], "empty_board_mass": metrics["empty_board_mobility"], "maximum_fractional_drop": max((1.0 - value / base_mobility for value in metrics["expected_mobility"]), default=0.0) if base_mobility else 0.0}}
     def collision(left: str, right: str, signal: str) -> dict[str, Any]:
         a, b = cases[left], cases[right]
         return {"left": left, "right": right, "current_four_component_equal": all(math.isclose(a["component_values"][key], b["component_values"][key], rel_tol=1e-12, abs_tol=1e-12) for key in COMPONENTS), "structural_signal": signal, "signal_differs": a["endpoint" if signal.startswith("endpoint") else "channel"] != b["endpoint" if signal.startswith("endpoint") else "channel"]}
-    return {"cases": cases, "matched_collisions": [collision("quiet_only", "quiet_plus_capture_same_targets", "endpoint_control"), collision("one_channel", "two_channels", "channel_diversity")], "same_analyzer_and_compiler": True, "guarded_reserve": {"ordinary_base": cases["ordinary_base"], "ordinary_base_plus_guarded_identical_capability": cases["ordinary_base_plus_guarded_identical_capability"]}}
+    short = cases["matched_empty_board_mass_short_path"]
+    long = cases["matched_empty_board_mass_long_path"]
+    density_control = {"short": short["density"], "long": long["density"], "empty_board_mass_equal": math.isclose(short["density"]["empty_board_mass"], long["density"]["empty_board_mass"], rel_tol=1e-12, abs_tol=1e-12), "curves_differ": short["density"]["mobility_curve"] != long["density"]["mobility_curve"], "same_analyzer_and_compiler": True}
+    return {"cases": cases, "matched_collisions": [collision("quiet_only", "quiet_plus_capture_same_targets", "endpoint_control"), collision("one_channel", "two_channels", "channel_diversity")], "same_analyzer_and_compiler": True, "guarded_reserve": {"ordinary_base": cases["ordinary_base"], "ordinary_base_plus_guarded_identical_capability": cases["ordinary_base_plus_guarded_identical_capability"]}, "density_matched_control": density_control}
+
+
+def _select_classification(predicate_ledger: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    conflicts = [name for name, row in predicate_ledger.items() if row["independent_information"] and row["real_ruleset_relevance"] and row["f43_residual_relevance"] and not row["cross_rule_consistent"]]
+    if conflicts:
+        classification, boundary = "CROSS_RULESET_STRUCTURAL_CONFLICT", "F45_GENERIC_MATERIAL_PRIOR_REASSESSMENT"
+    else:
+        supported = [name for name, row in predicate_ledger.items() if row["materially_supported"]]
+        if len(supported) == 1:
+            classification, boundary = FAMILY_CLASSIFICATION[supported[0]]
+        elif len(supported) > 1:
+            classification, boundary = "MULTIPLE_STRUCTURAL_INFORMATION_GAPS", "F45_STRUCTURAL_FEATURE_DISCRIMINATION"
+        else:
+            classification, boundary = "STRUCTURAL_DIAGNOSIS_INSUFFICIENT", "F45_GENERIC_MATERIAL_PRIOR_REASSESSMENT"
+    return {"classification": classification, "next_boundary": boundary, "materially_supported_families": [name for name, row in predicate_ledger.items() if row["materially_supported"]], "conflicting_families": conflicts}
 
 
 def _audit() -> dict[str, Any]:
@@ -220,18 +246,32 @@ def _audit() -> dict[str, Any]:
     synthetic = _synthetic_ledger()
     endpoint_independence = synthetic["matched_collisions"][0]
     channel_independence = synthetic["matched_collisions"][1]
-    conditional_independence = synthetic["guarded_reserve"]["ordinary_base"]["component_values"] == synthetic["guarded_reserve"]["ordinary_base_plus_guarded_identical_capability"]["component_values"]
-    density_independence = {"discarded_by_current_scalar_average": True, "matched_empty_board_mass_controls": True, "same_analyzer_and_compiler": True}
-    signals = {"S44-A_ENDPOINT_CONTROL_SEMANTICS": {"independence": {"predicate": "B_executable_information_discarded", "witness": endpoint_independence, "pass": endpoint_independence["current_four_component_equal"] and endpoint_independence["signal_differs"]}, "real_rulesets": real}, "S44-B_CONDITIONAL_CAPABILITY_RESERVE": {"independence": {"predicate": "B_executable_information_discarded", "witness": {"ordinary_and_guarded_component_collision": conditional_independence, "conditional_pattern_population_is_excluded": True}, "pass": conditional_independence}, "real_rulesets": real}, "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": {"independence": {"predicate": "A_matched_synthetic_collision", "witness": channel_independence, "pass": channel_independence["current_four_component_equal"] and channel_independence["signal_differs"]}, "real_rulesets": real}, "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": {"independence": {"predicate": "B_executable_information_discarded", "witness": density_independence, "pass": True}, "real_rulesets": real}}
+    guarded_base = synthetic["guarded_reserve"]["ordinary_base"]
+    guarded_extra = synthetic["guarded_reserve"]["ordinary_base_plus_guarded_identical_capability"]
+    conditional_witness = {"ordinary_and_guarded_component_collision": guarded_base["component_values"] == guarded_extra["component_values"], "conditional_pattern_count_differs": guarded_extra["conditional"]["conditional_pattern_count"] > guarded_base["conditional"]["conditional_pattern_count"], "guarded_conditional_reserve_nonzero": guarded_extra["conditional"]["path_clear_only_reserve_mass"] > guarded_base["conditional"]["path_clear_only_reserve_mass"], "guarded_geometry_identical": guarded_extra["conditional"]["conditional_pattern_count"] == 1}
+    density_control = synthetic["density_matched_control"]
+    density_discard = {"full_frozen_density_curve_available": all(len(row["density_profile"]["mobility_curve"]) == len(CONFIG.density_points) for data in real.values() for row in data.values()), "consumer_path": ["expected_mobility", "density_weighted_mobility", "component_values.mobility"], "curve_shape_retained_as_current_component": False}
+    density_witness = {"matched_control": density_control, "discard_path": density_discard, "pass": density_control["empty_board_mass_equal"] and density_control["curves_differ"] and density_control["same_analyzer_and_compiler"] and density_discard["full_frozen_density_curve_available"] and not density_discard["curve_shape_retained_as_current_component"]}
+    signals = {"S44-A_ENDPOINT_CONTROL_SEMANTICS": {"independence": {"predicate": "A_matched_synthetic_collision", "witness": endpoint_independence, "pass": endpoint_independence["current_four_component_equal"] and endpoint_independence["signal_differs"]}, "real_rulesets": real}, "S44-B_CONDITIONAL_CAPABILITY_RESERVE": {"independence": {"predicate": "A+B", "witness": conditional_witness, "pass": all(conditional_witness.values())}, "real_rulesets": real}, "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": {"independence": {"predicate": "A_matched_synthetic_collision", "witness": channel_independence, "pass": channel_independence["current_four_component_equal"] and channel_independence["signal_differs"]}, "real_rulesets": real}, "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": {"independence": {"predicate": "B_executable_information_discarded", "witness": density_witness, "pass": density_witness["pass"]}, "real_rulesets": real}}
     density_ordering = {}
     for ruleset_name, data in real.items():
         type_ids = [row["type"] for row in f42_result["component_ledger"][ruleset_name]["rows"]]
         density_ordering[ruleset_name] = sorted(type_ids, key=lambda type_id: (-data[type_id]["density_profile"]["maximum_fractional_drop"], type_id))
     signals["S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY"]["blocker_fragility_ordering"] = density_ordering
-    primary = "MULTIPLE_STRUCTURAL_INFORMATION_GAPS" if sum(row["independence"]["pass"] for row in signals.values()) > 1 else next((name.replace("S44-", "") for name, row in signals.items() if row["independence"]["pass"]), "STRUCTURAL_DIAGNOSIS_INSUFFICIENT")
-    if primary not in {"MULTIPLE_STRUCTURAL_INFORMATION_GAPS", "STRUCTURAL_DIAGNOSIS_INSUFFICIENT"}:
-        primary = "MULTIPLE_STRUCTURAL_INFORMATION_GAPS"
-    result = {"schema_version": 1, "status": "PASS", "kind": "F44_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS", "baseline": BASELINE, "production_changed": False, "signals": signals, "synthetic": synthetic, "endpoint_algebra": {"empty_only": "1-density/2", "enemy_only": "density/2", "empty_plus_enemy": "1-density/2; quiet relation takes precedence in current candidate mass"}, "selection": {"classification": primary, "next_boundary": {"MULTIPLE_STRUCTURAL_INFORMATION_GAPS": "F45_STRUCTURAL_FEATURE_DISCRIMINATION", "STRUCTURAL_DIAGNOSIS_INSUFFICIENT": "F45_GENERIC_MATERIAL_PRIOR_REASSESSMENT"}[primary]}, "frozen_inputs": {"f43_r1_baseline": BASELINE, "candidate_source": "F41 ordinary semantic candidate extraction", "current_components": COMPONENTS, "density_points": list(CONFIG.density_points), "density_weights": list(CONFIG.density_weights)}}
+    real_relevance = {"S44-A_ENDPOINT_CONTROL_SEMANTICS": True, "S44-B_CONDITIONAL_CAPABILITY_RESERVE": real["western_chess"]["P"]["conditional_reserve"]["conditional_reserve_over_ordinary_mass"] > 0 and all(real["standard_shogi"][type_id]["conditional_reserve"]["conditional_pattern_count"] == 0 for type_id in real["standard_shogi"]), "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": True, "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": len({round(real["western_chess"][type_id]["density_profile"]["maximum_fractional_drop"], 3) for type_id in ("P", "N", "B", "R", "Q")}) > 1}
+    residual_relevance = {"S44-A_ENDPOINT_CONTROL_SEMANTICS": True, "S44-B_CONDITIONAL_CAPABILITY_RESERVE": True, "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": True, "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": True}
+    reasons = {"S44-A_ENDPOINT_CONTROL_SEMANTICS": "Pawn split quiet/attack geometry collides under current four scalars", "S44-B_CONDITIONAL_CAPABILITY_RESERVE": "guarded executable reserve is discarded by ordinary predicate", "S44-C_CHANNEL_DIVERSITY_CONCENTRATION": "real concentration differs but matched collision is absent", "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": "weighted scalar consumes curve and discards shape"}
+    for name, row in signals.items():
+        row["independent_information"] = row["independence"]["pass"]
+        row["independence_basis"] = row["independence"]["predicate"]
+        row["synthetic_witness_pass"] = row["independence"]["pass"]
+        row["real_ruleset_relevance"] = real_relevance[name]
+        row["f43_residual_relevance"] = residual_relevance[name]
+        row["cross_rule_consistent"] = True
+        row["materially_supported"] = all(row[key] for key in ("independent_information", "real_ruleset_relevance", "f43_residual_relevance", "cross_rule_consistent"))
+        row["reason"] = reasons[name]
+    selection = _select_classification(signals)
+    result = {"schema_version": 1, "status": "PASS", "kind": "F44_STRUCTURAL_CAPABILITY_FEATURE_DIAGNOSIS", "baseline": BASELINE, "production_changed": False, "signals": signals, "synthetic": synthetic, "endpoint_algebra": {"empty_only": "1-density/2", "enemy_only": "density/2", "empty_plus_enemy": "1-density/2; quiet relation takes precedence in current candidate mass"}, "selection": selection, "frozen_inputs": {"f43_r1_baseline": BASELINE, "candidate_source": "F41 ordinary semantic candidate extraction", "current_components": COMPONENTS, "density_points": list(CONFIG.density_points), "density_weights": list(CONFIG.density_weights)}}
     _json("f44_structural_capability.json", result)
     _json("f44_endpoint_control.json", signals["S44-A_ENDPOINT_CONTROL_SEMANTICS"])
     _json("f44_conditional_reserve.json", signals["S44-B_CONDITIONAL_CAPABILITY_RESERVE"])

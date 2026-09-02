@@ -9,10 +9,11 @@ from pathlib import Path
 
 import pytest
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "audit_f44_structural_capability.py"
 EVIDENCE = ROOT / ".generic_chess_flow" / "f44_structural_capability.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+import audit_f44_structural_capability as audit  # noqa: E402
 
 
 @pytest.fixture(scope="module")
@@ -63,6 +64,12 @@ def test_channel_and_density_ledgers_are_canonical_and_complete(evidence):
         profile = row["density_profile"]
         assert len(profile["mobility_retention_by_density"]) == 5
         assert len(profile["discrete_curvature"]) == 3
+    control = evidence["synthetic"]["density_matched_control"]
+    assert control["empty_board_mass_equal"] is True
+    assert control["curves_differ"] is True
+    assert control["same_analyzer_and_compiler"] is True
+    assert density["independence"]["witness"]["discard_path"]["full_frozen_density_curve_available"] is True
+    assert density["independence"]["witness"]["discard_path"]["curve_shape_retained_as_current_component"] is False
 
 
 def test_all_real_ruleset_structural_families_have_metrics(evidence):
@@ -81,3 +88,25 @@ def test_exactly_one_frozen_selection_and_boundary(evidence):
     selection = evidence["selection"]
     assert selection["classification"] == "MULTIPLE_STRUCTURAL_INFORMATION_GAPS"
     assert selection["next_boundary"] == "F45_STRUCTURAL_FEATURE_DISCRIMINATION"
+
+
+def test_every_family_exposes_independence_materiality_and_residual_predicates(evidence):
+    required = {"independent_information", "independence_basis", "synthetic_witness_pass", "real_ruleset_relevance", "f43_residual_relevance", "cross_rule_consistent", "materially_supported", "reason"}
+    for row in evidence["signals"].values():
+        assert required <= set(row)
+        assert row["materially_supported"] == all(row[key] for key in ("independent_information", "real_ruleset_relevance", "f43_residual_relevance", "cross_rule_consistent"))
+
+
+def test_frozen_selector_reachability_for_all_classification_paths():
+    names = list(audit.FAMILY_CLASSIFICATION)
+
+    def ledger(supported=(), conflict=()):
+        return {name: {"independent_information": name in supported or name in conflict, "real_ruleset_relevance": name in supported or name in conflict, "f43_residual_relevance": name in supported or name in conflict, "cross_rule_consistent": name not in conflict, "materially_supported": name in supported} for name in names}
+
+    assert audit._select_classification(ledger(supported=(names[0],)))["classification"] == "ENDPOINT_CONTROL_INFORMATION_MISSING"
+    assert audit._select_classification(ledger(supported=(names[1],)))["classification"] == "CONDITIONAL_CAPABILITY_INFORMATION_MISSING"
+    assert audit._select_classification(ledger(supported=(names[2],)))["classification"] == "CHANNEL_DIVERSITY_INFORMATION_MISSING"
+    assert audit._select_classification(ledger(supported=(names[3],)))["classification"] == "DENSITY_PROFILE_INFORMATION_MISSING"
+    assert audit._select_classification(ledger(supported=(names[0], names[1])))["classification"] == "MULTIPLE_STRUCTURAL_INFORMATION_GAPS"
+    assert audit._select_classification(ledger())["classification"] == "STRUCTURAL_DIAGNOSIS_INSUFFICIENT"
+    assert audit._select_classification(ledger(conflict=(names[0],)))["classification"] == "CROSS_RULESET_STRUCTURAL_CONFLICT"

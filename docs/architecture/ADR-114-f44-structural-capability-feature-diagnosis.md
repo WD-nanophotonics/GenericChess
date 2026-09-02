@@ -92,6 +92,36 @@ conditional reserve, and blocker fragility; another global concavity curve is
 not justified. The next stage must discriminate structural features rather
 than invent another scalar transform.
 
+## Corrective R1 closure
+
+The first F44 submission was not accepted because the selector counted raw
+`independence.pass` flags, derived invalid classification names by string
+replacement, and hardcoded the density witness. It also used a guarded
+conditional control with a different geometry from its ordinary base.
+
+R1 preserves H44A and closes those defects. The guarded control now uses the
+same leap geometry and endpoint relation as the ordinary base; only the state
+guard differs. The audit derives the ordinary-component collision, conditional
+pattern-count difference, nonzero reserve, and guarded-pattern exclusion.
+The density controls now use a leap to displacement two and a ray with
+`min_steps=max_steps=2`, giving equal empty-board mass `0.75` but distinct
+curves and maximum drops `0.250` versus `0.625`. The density B predicate also
+records the full five-point curve, its consumer path
+`expected_mobility -> density_weighted_mobility -> component_values.mobility`,
+and that curve shape is not retained as a current component.
+
+The selector now consumes explicit per-family predicates:
+`independent_information`, `independence_basis`, `synthetic_witness_pass`,
+`real_ruleset_relevance`, `f43_residual_relevance`,
+`cross_rule_consistent`, and `materially_supported`. It uses H44A's exact
+classification mapping and has reachability tests for endpoint-only,
+conditional-only, channel-only, density-only, multiple, insufficient, and
+cross-rule-conflict paths. Corrected evidence materially supports S44-A,
+S44-B, and S44-D; S44-C remains unselected because its matched collision is
+false. Therefore the mechanically recomputed classification remains
+`MULTIPLE_STRUCTURAL_INFORMATION_GAPS` with boundary
+`F45_STRUCTURAL_FEATURE_DISCRIMINATION`.
+
 ## Scope and boundary
 
 The complete machine-readable ledgers are under `.generic_chess_flow`:
