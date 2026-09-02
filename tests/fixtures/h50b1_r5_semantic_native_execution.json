@@ -1,0 +1,90 @@
+{
+  "schema": "H50B1-R5-NATIVE-PYTHON-DIFFERENTIAL-V1",
+  "work_order": "GENERICCHESS-F50B1-CORRECTIVE-R5-ZONE-SPATIAL-SELECTOR-NATIVE-PARITY-CLOSURE",
+  "checkpoint": "H50B1-R5_F50_SEMANTIC_NATIVE_ZONE_SPATIAL_CLOSURE",
+  "parent_sha": "8a1306645b43e642da732272c866f6654cea018c",
+  "production_scope": ["generic_chess/_native/native_semantic_runtime.c"],
+  "production_diff_required": "R5_RUNTIME_ONLY",
+  "forbidden_surfaces_changed": false,
+  "native_payload_version": 4,
+  "matrix": {
+    "western_count": 24,
+    "western_ids": [
+      "initial_action_parity", "pawn_single_step", "pawn_double_step",
+      "pawn_capture", "en_passant_token_creation", "en_passant_execution",
+      "en_passant_expiry", "promotion", "kingside_castling",
+      "queenside_castling", "king_move_rights_loss", "rook_move_rights_loss",
+      "rook_removal_rights_loss", "board_parity", "hand_parity",
+      "side_to_move_parity", "aux_state_parity", "ply_parity", "attack_parity",
+      "check_parity", "terminal_parity", "position_key_parity",
+      "checked_make_unmake_parity", "public_semantic_action_roundtrip"
+    ],
+    "standard_shogi_count": 21,
+    "standard_shogi_ids": [
+      "initial_action_parity", "ordinary_move", "promotion", "drop",
+      "hand_update", "nifu", "uchifuzume", "attack_check",
+      "ordinary_repetition", "continuous_check_loss_owner_0",
+      "continuous_check_loss_owner_1", "mixed_non_continuous_cycle",
+      "insufficient_repetition_count", "imported_history_roundtrip",
+      "declaration_unavailable", "declaration_successful",
+      "declaration_unsuccessful", "weighted_declaration_score",
+      "automatic_adjudication", "make_unmake", "semantic_key_state_parity"
+    ],
+    "all_rows_pass": true
+  },
+  "differential": {
+    "attack_check": {"western_queries": 384, "standard_shogi_queries": 324, "equal": true},
+    "history": {
+      "ordinary_repetition": "PASS",
+      "continuous_check_loss_owner_0": {"status": "PASS", "winner": 1},
+      "continuous_check_loss_owner_1": {"status": "PASS", "winner": 0},
+      "imported_history_roundtrip": {"status": "PASS", "history_length": 5, "exact": true}
+    },
+    "declarations": {
+      "status": "PASS",
+      "scores": [23, 24, 31],
+      "owners": [0, 1],
+      "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    },
+    "zone_guard": {"status": "PASS", "inside_and_outside_equal": true},
+    "generic_witness": {
+      "status": "PASS",
+      "ruleset_fingerprint": "816540704484bf2f964e47ce24970687961c4f31f535548408ea15f2a4db2c35",
+      "canonical_ir_sha256": "6c4de59a20d3314c2031235a27287d52484012625ddb6ec52c886f97f4579b5e"
+    }
+  },
+  "automatic_500": {
+    "status": "PASS",
+    "actual_legal_plies": 500,
+    "history_length": 501,
+    "history_exact": true,
+    "history_events_exact": true,
+    "python_terminal": "no_contest",
+    "native_terminal": "no_contest",
+    "owners_seen": [0, 1],
+    "action_history_sha256": "adee102a1071157c263ff35e8512667d3f8a03dbedebaecb7e18a64216995977"
+  },
+  "native_build": {
+    "path": "generic_chess/_native_core.cp312-win_amd64.pyd",
+    "sha256": "6653bb1867d6fb70bb1bec341ddc427cba2e89623c31efc3eb8bd89076467416",
+    "size_bytes": 354816,
+    "semantic_payload_version": 4
+  },
+  "sizeof_gsemantic_position": {
+    "H50A_ref_7ff0039": 27296,
+    "H50B1_R1_R2": 53920,
+    "H50B1_R5_current": 53920,
+    "method": "C ABI layout reproduced with ctypes and frozen header constants"
+  },
+  "historical_regression": {
+    "isolated_baseline_ref": "7ff0039bcc469bdc6b0b3c5ade61558d72ccf681",
+    "known_baseline_total": {"passed": 1473, "skipped": 3, "failed": 17},
+    "current_full_regression_expected_residuals": 2,
+    "F50B2_status": "NOT_STARTED"
+  },
+  "source_hashes": {
+    "generic_chess/_native/native_semantic_runtime.c": "aa494164401a7c52ef8ef2e887757bbe7b5dd94139dfcc1d0c13c784f84bcb58",
+    "scripts/audit_h50b1_r3_native_differential.py": "d80b625a82b714fda110069278e8ae9bde67baecf39a6484ab45c5d0d78489b9"
+  },
+  "status": "PASS"
+}

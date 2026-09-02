@@ -160,7 +160,14 @@ static int compare_value(uint8_t comparison, int value, int expected) {
     return 0;
 }
 static int spatial_holds(const GCSemSpatial *spatial, const GCSemanticRules *r, const GCSemanticPosition *pos, uint8_t side, uint16_t source, uint16_t target, uint16_t square) {
-    if (!spatial || (spatial->refs_count == 0 && spatial->kind != 5)) return 1;
+    if (!spatial) return 1;
+    if (spatial->kind == 5) {
+        if (!spatial->has_zone || spatial->zone_index >= r->zone_count) return 0;
+        const GCSemZone *zone = &r->zones[spatial->zone_index];
+        for (uint16_t i = 0; i < zone->count; i++) if (zone->squares[i] == square) return 1;
+        return 0;
+    }
+    if (spatial->refs_count == 0) return 1;
     uint16_t ref_square = 0;
     if (!resolve_square(&spatial->refs[0], r, NULL, pos, side, source, target, &ref_square)) return 0;
     int sf = square % r->board_size, sr = square / r->board_size;
@@ -181,7 +188,6 @@ static int spatial_holds(const GCSemSpatial *spatial, const GCSemanticRules *r, 
         for (int k = 1; k < g; k++) if (sf == rf + k * step_f && sr == rr + k * step_r) return 1;
         return 0;
     }
-    if (spatial->kind == 5 && spatial->has_zone && spatial->zone_index < r->zone_count) { const GCSemZone *zone=&r->zones[spatial->zone_index]; for(uint16_t i=0;i<zone->count;i++)if(zone->squares[i]==square)return 1; return 0; }
     return 0;
 }
 static int state_guards_hold(const GCSemanticRules *r, const GCSemanticPosition *pos, const GCSemPattern *pattern, uint8_t side, uint16_t source, uint16_t target, uint16_t action_base_type, uint16_t action_current_type) {

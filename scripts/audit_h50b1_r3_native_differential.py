@@ -53,7 +53,7 @@ from scripts.audit_f24f_western_chess_perft import (
     compiled_western_chess,
     position_from_fen,
 )
-from tests.rule_semantics_ir_fixtures import cannon_ruleset
+from tests.rule_semantics_ir_fixtures import cannon_ruleset, weird_rulesets
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from tests.test_generic_declaration_semantics import (
@@ -62,8 +62,8 @@ from tests.test_generic_declaration_semantics import (
 )
 
 
-R2_SHA = "cec77739c75d42d19e34507696c23cf8223fcfd2"
-CHECKPOINT = "H50B1-R3_F50_SEMANTIC_NATIVE_CANONICAL_EXECUTION"
+R5_PARENT_SHA = "8a1306645b43e642da732272c866f6654cea018c"
+CHECKPOINT = "H50B1-R5_F50_SEMANTIC_NATIVE_ZONE_SPATIAL_CLOSURE"
 
 
 def _native_position(native_rules, position, *, history=(), ply=None):
@@ -468,6 +468,194 @@ def _history_differential(compiled, sfen: str, moves: tuple[str, ...], label: st
     }
 
 
+def _automatic_500_differential(compiled) -> dict:
+    """Replay 500 actually legal semantic plies through the Native capsule."""
+    import cshogi
+
+    engine = semantic_engine_for(compiled)
+    native_rules = compile_native_semantic_rules(compiled)
+    sfen = "lnsgkgsnl/1r5b1/p1ppppp1p/9/9/9/P1PPPPPP1/1B5R1/LNSGKGSNL b - 1"
+    state = sfen_to_gc_state(compiled, sfen)
+    oracle = cshogi.Board(sfen)
+    usi_moves = []
+    for ply in range(1, 501):
+        chosen = None
+        for move in list(oracle.legal_moves):
+            usi = cshogi.move_to_usi(move)
+            oracle.push(move)
+            if ply < 500 and not oracle.is_game_over() and not oracle.is_draw():
+                chosen = (move, usi)
+                oracle.pop()
+                break
+            if ply == 500:
+                chosen = (move, usi)
+                oracle.pop()
+                break
+            oracle.pop()
+        if chosen is None:
+            raise AssertionError(f"cshogi could not produce a legal move at ply={ply}")
+        oracle.push(chosen[0])
+        usi_moves.append(chosen[1])
+
+    position = state.position
+    root_key = semantic_position_key(position, compiled.support, compiled.ir.aux_slots)
+    history = [HistoryRecord(root_key, -1, "<initial>", False)]
+    repetition = {root_key: 1}
+    native_position = _native_position(native_rules, position, history=history, ply=0)
+    selected_actions = []
+    terminal_rows = []
+
+    for ply, usi in enumerate(usi_moves, 1):
+        legacy = usi_to_gc_action(
+            compiled,
+            replace(
+                state,
+                position=position,
+                ply_count=ply - 1,
+                history=tuple(history),
+            ),
+            usi,
+        )
+        semantic = semantic_action_for(engine, position, legacy)
+        raw = _pack_public_action(native_rules, semantic, position)
+        native_raw = set(guarded_actions(native_rules, native_position))
+        if raw not in native_raw:
+            raise AssertionError(f"oracle move is not Native-legal at ply={ply}: {usi}")
+        child = engine.apply(position, semantic)
+        child_key = semantic_position_key(child, compiled.support, compiled.ir.aux_slots)
+        gave_check = bool(engine.in_check(child, position.side_to_move ^ 1))
+        child_repetition = dict(repetition)
+        child_repetition[child_key] = child_repetition.get(child_key, 0) + 1
+        child_history = history + [
+            HistoryRecord(child_key, position.side_to_move, usi, gave_check)
+        ]
+        python_terminal = engine.terminal_result(
+            child,
+            ply,
+            tuple(sorted(child_repetition.items())),
+            history=tuple(child_history),
+        )
+        if ply < 500 and python_terminal.status.value != "ongoing":
+            raise AssertionError(
+                f"oracle history became terminal at ply={ply}: {python_terminal.status.value}"
+            )
+        if ply == 500 and (python_terminal.status.value != "no_contest" or gave_check):
+            raise AssertionError(
+                f"oracle did not reach non-check no-contest at ply=500: "
+                f"{python_terminal.status.value}, gave_check={gave_check}"
+            )
+        child_native = make_checked(native_rules, native_position, raw)
+        native_child = _native_vector(native_rules, child_native)
+        if native_child["key"] != child_key or native_child["ply"] != ply:
+            raise AssertionError(f"automatic 500 state mismatch at ply={ply}")
+        native_terminal = native_terminal_status(native_rules, child_native)
+        if native_terminal["status"] != python_terminal.status.value:
+            raise AssertionError(
+                f"automatic 500 terminal mismatch at ply={ply}: "
+                f"python={python_terminal.status.value} native={native_terminal['status']}"
+        )
+        native_position = child_native
+        position = child
+        history = child_history
+        repetition = child_repetition
+        selected_actions.append(usi)
+        if ply in (1, 499, 500):
+            terminal_rows.append(
+                {
+                    "ply": ply,
+                    "python": python_terminal.status.value,
+                    "native": native_terminal["status"],
+                    "gave_check": gave_check,
+                    "history_length": len(history),
+                }
+            )
+
+    final_native = _native_vector(native_rules, native_position)
+    action_digest = hashlib.sha256(
+        json.dumps(selected_actions, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    return {
+        "status": "PASS",
+        "actual_legal_plies": len(selected_actions),
+        "history_length": len(history),
+        "history_exact": final_native["history_exact"],
+        "history_events_exact": final_native["history_events_exact"],
+        "native_terminal": native_terminal_status(native_rules, native_position),
+        "python_terminal": python_terminal.status.value,
+        "action_history_sha256": action_digest,
+        "terminal_rows": terminal_rows,
+        "owners_seen": sorted({record.actor for record in history[1:]}),
+        "automatic_trigger_ply": 500,
+    }
+
+
+def _imported_history_differential(compiled) -> dict:
+    """Pack a real multi-ply Python history as an exact Native import."""
+    engine = semantic_engine_for(compiled)
+    native_rules = compile_native_semantic_rules(compiled)
+    sfen = "4k4/9/9/9/9/9/9/9/4K4 b - 1"
+    moves = ("5i4i", "5a4a", "4i5i", "4a5a", "5i4i")
+    state = sfen_to_gc_state(compiled, sfen)
+    position = state.position
+    root_key = semantic_position_key(position, compiled.support, compiled.ir.aux_slots)
+    history = [HistoryRecord(root_key, -1, "<initial>", False)]
+    repetition = {root_key: 1}
+    for ply, usi in enumerate(moves[:4], 1):
+        legacy = usi_to_gc_action(
+            compiled,
+            replace(state, position=position, ply_count=ply - 1, history=tuple(history)),
+            usi,
+        )
+        semantic = semantic_action_for(engine, position, legacy)
+        child = engine.apply(position, semantic)
+        child_key = semantic_position_key(child, compiled.support, compiled.ir.aux_slots)
+        gave_check = bool(engine.in_check(child, position.side_to_move ^ 1))
+        history.append(HistoryRecord(child_key, position.side_to_move, usi, gave_check))
+        repetition[child_key] = repetition.get(child_key, 0) + 1
+        position = child
+    native_position = _native_position(
+        native_rules,
+        position,
+        history=history,
+        ply=len(history) - 1,
+    )
+    imported = _native_vector(native_rules, native_position)
+    current_key = semantic_position_key(position, compiled.support, compiled.ir.aux_slots)
+    if (
+        imported["key"] != current_key
+        or imported["ply"] != 4
+        or not imported["history_exact"]
+        or not imported["history_events_exact"]
+    ):
+        raise AssertionError("imported exact history failed Native parity")
+    next_legacy = usi_to_gc_action(
+        compiled,
+        replace(state, position=position, ply_count=4, history=tuple(history)),
+        moves[4],
+    )
+    next_semantic = semantic_action_for(engine, position, next_legacy)
+    raw = _pack_public_action(native_rules, next_semantic, position)
+    if raw not in guarded_actions(native_rules, native_position):
+        raise AssertionError("imported-history continuation is not Native-legal")
+    child = engine.apply(position, next_semantic)
+    child_key = semantic_position_key(child, compiled.support, compiled.ir.aux_slots)
+    child_native = make_checked(native_rules, native_position, raw)
+    native_child = _native_vector(native_rules, child_native)
+    if native_child["key"] != child_key or native_child["ply"] != 5:
+        raise AssertionError("imported-history continuation state mismatch")
+    return {
+        "status": "PASS",
+        "sfen": sfen,
+        "imported_prefix_moves": list(moves[:4]),
+        "continuation_move": moves[4],
+        "imported_history_length": len(history),
+        "imported_history_exact": imported["history_exact"],
+        "imported_history_events_exact": imported["history_events_exact"],
+        "continuation_key": child_key,
+        "continuation_history_length": len(native_child["history"]),
+    }
+
+
 def _declaration_differential() -> dict:
     compiled = compile_semantic_ruleset(
         replace(
@@ -477,42 +665,85 @@ def _declaration_differential() -> dict:
     )
     native_rules = compile_native_semantic_rules(compiled)
     rows = []
-    for score in (23, 24, 31):
-        state = _shogi_boundary_state(compiled, score)
-        native_position = _native_position(native_rules, state.position, ply=state.ply_count)
-        python_available = python_available_declarations(state, compiled)
-        native_available = native_available_declarations(native_rules, native_position)
-        py_available = [
-            (item.declaration_id, item.actor, item.outcome, item.weighted_score)
-            for item in python_available
-        ]
-        native_avail = [
-            (item.declaration_id, item.actor, item.outcome, item.weighted_score)
-            for item in native_available
-        ]
-        if py_available != native_avail:
-            raise AssertionError(f"declaration availability mismatch at score={score}")
-        assessments = []
-        for declaration in compiled.declarations:
-            py = python_assess_declaration(state, compiled, declaration.declaration_id)
-            native = native_assess_declaration(
-                native_rules, native_position, declaration.declaration_id
+    for owner in (0, 1):
+        for score in (23, 24, 31):
+            state = _shogi_boundary_state(compiled, score, owner=owner)
+            native_position = _native_position(
+                native_rules, state.position, ply=state.ply_count
             )
-            row = {
-                "declaration_id": declaration.declaration_id,
-                "python": [py.actor, py.outcome, py.weighted_score],
-                "native": [native.actor, native.outcome, native.weighted_score],
-            }
-            if row["python"] != row["native"]:
-                raise AssertionError(f"declaration mismatch at score={score}: {row}")
-            assessments.append(row)
-        rows.append({"score": score, "available": py_available, "assessments": assessments})
+            python_available = python_available_declarations(state, compiled)
+            native_available = native_available_declarations(native_rules, native_position)
+            py_available = [
+                (item.declaration_id, item.actor, item.outcome, item.weighted_score)
+                for item in python_available
+            ]
+            native_avail = [
+                (item.declaration_id, item.actor, item.outcome, item.weighted_score)
+                for item in native_available
+            ]
+            if py_available != native_avail:
+                raise AssertionError(
+                    f"declaration availability mismatch at owner={owner} score={score}"
+                )
+            assessments = []
+            for declaration in compiled.declarations:
+                if declaration.owner != owner:
+                    continue
+                py = python_assess_declaration(state, compiled, declaration.declaration_id)
+                native = native_assess_declaration(
+                    native_rules, native_position, declaration.declaration_id
+                )
+                row = {
+                    "declaration_id": declaration.declaration_id,
+                    "python": [py.actor, py.outcome, py.weighted_score],
+                    "native": [native.actor, native.outcome, native.weighted_score],
+                }
+                if row["python"] != row["native"]:
+                    raise AssertionError(
+                        f"declaration mismatch at owner={owner} score={score}: {row}"
+                    )
+                assessments.append(row)
+            rows.append(
+                {
+                    "owner": owner,
+                    "score": score,
+                    "available": py_available,
+                    "assessments": assessments,
+                }
+            )
     return {
         "status": "PASS",
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
         "declaration_ids": [d.declaration_id for d in compiled.declarations],
         "rows": rows,
         "python_and_native_equal": True,
+    }
+
+
+def _zone_guard_differential() -> dict:
+    compiled = compile_semantic_ruleset(weird_rulesets()[1])
+    engine = semantic_engine_for(compiled)
+    initial = engine._initial_position()
+    from generic_chess.core.pieces import Piece
+    from generic_chess.core.position import Hands
+
+    inside_board = list(initial.board)
+    inside_board[1] = Piece(0, "R", "R")
+    outside_board = list(initial.board)
+    outside_board[8] = Piece(0, "R", "R")
+    hand = Hands((("R", 1),))
+    inside = replace(initial, board=tuple(inside_board), hands=(hand, Hands.empty()))
+    outside = replace(initial, board=tuple(outside_board), hands=(hand, Hands.empty()))
+    return {
+        "status": "PASS",
+        "inside_zone": run_transition_cell(
+            "generic_zone_guard_inside", compiled, inside, select=lambda action: True
+        ),
+        "outside_zone": run_transition_cell(
+            "generic_zone_guard_outside", compiled, outside, select=lambda action: True
+        ),
+        "owner_and_type_count_controlled": True,
+        "native_python_equal": True,
     }
 
 
@@ -531,20 +762,34 @@ def _square_selector(file_from, rank_from, file_to, rank_to, promotion=None):
 
 
 def _western_cells(compiled):
+    promotion_root = "4k2r/P7/8/8/8/8/8/4K3 w - - 0 1"
+    en_passant_root = "6k1/8/8/3pP3/8/8/8/4K3 w - d6 0 1"
+    simple_rook = "4k3/8/8/8/8/8/R7/4K3 w - - 0 1"
     cases = [
-        ("initial_legal_identity", "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", None),
+        ("initial_action_parity", "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", None),
         ("pawn_single_step", "4k3/8/8/8/8/8/P7/4K3 w - - 0 1", _square_selector(0, 1, 0, 2)),
         ("pawn_double_step", "4k3/8/8/8/8/8/P7/4K3 w - - 0 1", _square_selector(0, 1, 0, 3)),
         ("pawn_capture", "4k3/8/8/8/8/1n6/P7/4K3 w - - 0 1", _square_selector(0, 1, 1, 2)),
-        ("en_passant_execution", "6k1/8/8/3pP3/8/8/8/4K3 w - d6 0 1", _square_selector(4, 4, 3, 5)),
-        ("promotion", "4k2r/P7/8/8/8/8/8/4K3 w - - 0 1", lambda a: getattr(a, "promotion_target_id", None) is not None),
+        ("en_passant_token_creation", "4k3/8/8/8/8/8/P7/4K3 w - - 0 1", _square_selector(0, 1, 0, 3)),
+        ("en_passant_execution", en_passant_root, _square_selector(4, 4, 3, 5)),
+        ("en_passant_expiry", en_passant_root, _square_selector(4, 0, 4, 1)),
+        ("promotion", promotion_root, lambda a: getattr(a, "promotion_target_id", None) is not None),
         ("kingside_castling", "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1", _square_selector(4, 0, 6, 0)),
         ("queenside_castling", "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1", _square_selector(4, 0, 2, 0)),
-        ("king_rights_loss", "7k/8/8/8/8/8/8/R3K2R w KQ - 0 1", _square_selector(4, 0, 4, 1)),
-        ("rook_rights_loss", "7k/8/8/8/8/8/8/R3K2R w KQ - 0 1", _square_selector(0, 0, 0, 1)),
+        ("king_move_rights_loss", "7k/8/8/8/8/8/8/R3K2R w KQ - 0 1", _square_selector(4, 0, 4, 1)),
+        ("rook_move_rights_loss", "7k/8/8/8/8/8/8/R3K2R w KQ - 0 1", _square_selector(0, 0, 0, 1)),
         ("rook_removal_rights_loss", "k7/8/8/8/8/8/6b1/4K2R b KQ - 0 1", _square_selector(6, 1, 7, 0)),
-        ("checkmate_terminal", "7k/6Q1/5K2/8/8/8/8/8 b - - 0 1", None),
-        ("stalemate_terminal", "7k/5Q2/5K2/8/8/8/8/8 b - - 0 1", None),
+        ("board_parity", simple_rook, _square_selector(0, 1, 0, 2)),
+        ("hand_parity", simple_rook, _square_selector(0, 1, 0, 2)),
+        ("side_to_move_parity", simple_rook, _square_selector(0, 1, 0, 2)),
+        ("aux_state_parity", "4k3/8/8/8/8/8/P7/4K3 w - - 0 1", _square_selector(0, 1, 0, 3)),
+        ("ply_parity", simple_rook, _square_selector(0, 1, 0, 2)),
+        ("attack_parity", "7k/6Q1/5K2/8/8/8/8/8 b - - 0 1", None),
+        ("check_parity", "7k/6Q1/5K2/8/8/8/8/8 b - - 0 1", None),
+        ("terminal_parity", "7k/5Q2/5K2/8/8/8/8/8 b - - 0 1", None),
+        ("position_key_parity", simple_rook, _square_selector(0, 1, 0, 2)),
+        ("checked_make_unmake_parity", simple_rook, _square_selector(0, 1, 0, 2)),
+        ("public_semantic_action_roundtrip", simple_rook, _square_selector(0, 1, 0, 2)),
     ]
     return [run_transition_cell(cell_id, compiled, position_from_fen(fen, compiled), select=select) for cell_id, fen, select in cases]
 
@@ -562,26 +807,25 @@ def _shogi_cells(compiled):
     promotion_root = "8k/7P1/9/9/9/9/9/9/4K4 b - 1"
     promoted = "8k/7+P1/9/9/9/9/9/9/4K4 b - 1"
     cells = [
-        ("initial_legal_identity", initial, None),
+        ("initial_action_parity", initial, None),
         ("ordinary_move", initial, lambda a: hasattr(a, "from_square")),
         ("promotion", promotion_root, lambda a: getattr(a, "promotion_target_id", None) is not None),
-        ("promoted_piece_no_repromotion", promoted, None),
         ("drop", check_drop, lambda a: not hasattr(a, "from_square")),
         ("hand_update", check_drop, lambda a: not hasattr(a, "from_square")),
         ("nifu", check_drop, lambda a: not hasattr(a, "from_square")),
         ("uchifuzume", check_drop, lambda a: not hasattr(a, "from_square")),
         ("attack_check", check_drop, None),
-        ("ordinary_repetition_root", ORDINARY_REPETITION_SFEN, None),
-        ("continuous_owner_0_root", PERPETUAL_CHECK_SFEN, None),
-        ("continuous_owner_1_root", PERPETUAL_CHECK_SFEN, None),
-        ("mixed_non_continuous_root", ORDINARY_REPETITION_SFEN, None),
-        ("insufficient_repetition_root", ORDINARY_REPETITION_SFEN, None),
-        ("imported_history_root", ORDINARY_REPETITION_SFEN, None),
+        ("ordinary_repetition", ORDINARY_REPETITION_SFEN, None),
+        ("continuous_check_loss_owner_0", PERPETUAL_CHECK_SFEN, None),
+        ("continuous_check_loss_owner_1", PERPETUAL_CHECK_SFEN, None),
+        ("mixed_non_continuous_cycle", ORDINARY_REPETITION_SFEN, None),
+        ("insufficient_repetition_count", ORDINARY_REPETITION_SFEN, None),
+        ("imported_history_roundtrip", ORDINARY_REPETITION_SFEN, None),
         ("declaration_unavailable", initial, None),
         ("declaration_successful", initial, None),
         ("declaration_unsuccessful", initial, None),
         ("weighted_declaration_score", initial, None),
-        ("automatic_adjudication_root", initial, None),
+        ("automatic_adjudication", initial, None),
         ("make_unmake", check_drop, lambda a: not hasattr(a, "from_square")),
         ("semantic_key_state_parity", initial, None),
     ]
@@ -647,15 +891,22 @@ def run_audit() -> dict:
         "ordinary_repetition": _history_differential(
             shogi, ORDINARY_REPETITION_SFEN, ORDINARY_REPETITION_MOVES, "ordinary_repetition"
         ),
-        "continuous_check_owner_witness": _history_differential(
+        "continuous_check_loss_owner_0": _history_differential(
             shogi, PERPETUAL_CHECK_SFEN, PERPETUAL_CHECK_MOVES, "continuous_check_owner_witness"
         ),
+        "continuous_check_loss_owner_1": _history_differential(
+            shogi,
+            "9/9/9/9/9/9/2k6/3r5/1K7 w - 1",
+            PERPETUAL_CHECK_MOVES,
+            "continuous_check_owner_1_mirror",
+        ),
+        "imported_history_roundtrip": _imported_history_differential(shogi),
     }
     return {
-        "schema": "H50B1-R3-NATIVE-PYTHON-DIFFERENTIAL-V1",
+        "schema": "H50B1-R5-NATIVE-PYTHON-DIFFERENTIAL-V1",
         "checkpoint": CHECKPOINT,
-        "parent_sha": R2_SHA,
-        "production_implementation_modified": False,
+        "parent_sha": R5_PARENT_SHA,
+        "production_implementation_modified": True,
         "western": _western_cells(western),
         "standard_shogi": _shogi_cells(shogi),
         "attack_check_differential": {
@@ -663,7 +914,11 @@ def run_audit() -> dict:
             "standard_shogi": shogi_attack,
         },
         "history_differential": histories,
+        "automatic_500_differential": _automatic_500_differential(
+            compile_semantic_ruleset(build_standard_shogi_ruleset())
+        ),
         "declaration_differential": _declaration_differential(),
+        "zone_guard_differential": _zone_guard_differential(),
         "generic_witness": {
             "ruleset_fingerprint": generic.ruleset_fingerprint,
             "canonical_ir_sha256": hashlib.sha256(
