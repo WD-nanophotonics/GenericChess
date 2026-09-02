@@ -40,13 +40,16 @@ try:
         AUTHORITY,
         BASELINE_SHA,
         H48B_SELECTED_FINGERPRINT,
+        H48C_CHECKPOINT_SHA,
         ROOT,
         RULESET_FINGERPRINTS,
         atomic_write_json,
         build_partition_plan,
+        load_h48c_resolution,
         partition_input_hash,
         preflight,
         recompute_selector,
+        resolved_corpus_config,
         guard_corpus_identities,
         validate_raw_result,
     )
@@ -55,13 +58,16 @@ except ImportError:  # direct ``python scripts/audit_*.py`` execution
         AUTHORITY,
         BASELINE_SHA,
         H48B_SELECTED_FINGERPRINT,
+        H48C_CHECKPOINT_SHA,
         ROOT,
         RULESET_FINGERPRINTS,
         atomic_write_json,
         build_partition_plan,
+        load_h48c_resolution,
         partition_input_hash,
         preflight,
         recompute_selector,
+        resolved_corpus_config,
         guard_corpus_identities,
         validate_raw_result,
     )
@@ -312,8 +318,8 @@ def _m48_generation(start, elites, generation, training_corpus, teacher_actions,
     return scored, [row["checkpoint"] for row in scored[:2]]
 
 
-def _arena_summary(compiled, native_rules, parent, child, openings):
-    summary = run_arena(compiled, native_rules, parent, child, ArenaConfig(pairs=16, nodes_per_move=1000, max_depth=12, tt_megabytes=8, opening_seed=480702, opening_count=16, min_plies=2, max_plies=6), openings=openings)
+def _arena_summary(compiled, native_rules, parent, child, openings, arena_seed):
+    summary = run_arena(compiled, native_rules, parent, child, ArenaConfig(pairs=16, nodes_per_move=1000, max_depth=12, tt_megabytes=8, opening_seed=arena_seed, opening_count=16, min_plies=2, max_plies=6), openings=openings)
     return {"pair_count": summary.pair_count, "mean_pair_score": summary.mean_pair_score, "bootstrap_low": summary.bootstrap_low, "bootstrap_high": summary.bootstrap_high, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses, "child_better_pairs": summary.child_better_pairs, "tied_pairs": summary.tied_pairs, "child_worse_pairs": summary.child_worse_pairs, "catastrophic": summary.mean_pair_score < 0.25}
 
 
@@ -321,7 +327,42 @@ def _safe_checkpoint_data(checkpoint):
     return checkpoint.to_dict()
 
 
-def _run_ruleset(ruleset_id, compiled, store):
+def _execution_corpora(compiled, corpus_config):
+    training_count, training_seed, training_min, training_max = corpus_config["training"]
+    holdout_count, holdout_seed, holdout_min, holdout_max = corpus_config["holdout"]
+    arena_count, arena_seed, arena_min, arena_max = corpus_config["arena"]
+    training_openings = generate_arena_openings(compiled, count=16, seed=training_seed, min_plies=training_min, max_plies=training_max)
+    holdout_openings = generate_arena_openings(compiled, count=16, seed=holdout_seed, min_plies=holdout_min, max_plies=holdout_max)
+    arena_openings = generate_arena_openings(compiled, count=arena_count, seed=arena_seed, min_plies=arena_min, max_plies=arena_max)
+    training = generate_diagnostic_corpus(compiled, training_openings, count=training_count, seed=training_seed, min_plies=training_min, max_plies=training_max)
+    holdout = generate_diagnostic_corpus(compiled, holdout_openings, count=holdout_count, seed=holdout_seed, min_plies=holdout_min, max_plies=holdout_max)
+    identities = {"training": {p.position_key for p in training.positions}, "holdout": {p.position_key for p in holdout.positions}, "arena": {o.final_position_key for o in arena_openings.openings}}
+    return {"training_openings": training_openings, "holdout_openings": holdout_openings, "arena_openings": arena_openings, "training": training, "holdout": holdout, "identities": identities}
+
+
+def _corpus_ledger(bundle):
+    return {name: {"corpus_id": corpus.corpus_id, "identity_set_hash": stable_sha256(sorted(values)), "identity_set_count": len(values)} for name, corpus, values in (("training", bundle["training"], bundle["identities"]["training"]), ("holdout", bundle["holdout"], bundle["identities"]["holdout"]), ("arena", bundle["arena_openings"], bundle["identities"]["arena"]))}
+
+
+def _verify_h48c_execution_equivalence(ruleset_id, compiled, corpus_config, resolution):
+    bundle = _execution_corpora(compiled, corpus_config)
+    actual = _corpus_ledger(bundle)
+    expected = resolution["final_corpora"][ruleset_id]
+    for name in ("training", "holdout", "arena"):
+        for field in ("corpus_id", "identity_set_hash", "identity_set_count"):
+            if actual[name][field] != expected[name][field]:
+                raise RuntimeError(f"STOP_ON_H48C_EXECUTION_DISCREPANCY: {ruleset_id} {name} {field}")
+    pairs = (("training", "holdout"), ("training", "arena"), ("holdout", "arena"))
+    intersections = {f"{left}_{right}": sorted(bundle["identities"][left] & bundle["identities"][right]) for left, right in pairs}
+    if any(intersections.values()) or expected["pairwise_intersections"] != {name: [] for name in expected["pairwise_intersections"]}:
+        raise RuntimeError(f"STOP_ON_H48C_EXECUTION_DISCREPANCY: {ruleset_id} pairwise intersections")
+    guard_corpus_identities(ruleset_id=ruleset_id, ruleset_fingerprint=compiled.ruleset_fingerprint, identities=bundle["identities"], authority_hash=stable_sha256({"h48c": H48C_CHECKPOINT_SHA}), config_hash=stable_sha256(corpus_config), input_hash=stable_sha256({"ruleset_id": ruleset_id, "h48c": H48C_CHECKPOINT_SHA, "corpus_config": corpus_config}), proceed=lambda ledger: ledger)
+    bundle["h48c_ledger"] = actual
+    bundle["h48c_intersections"] = intersections
+    return bundle
+
+
+def _run_ruleset(ruleset_id, compiled, store, corpus_bundle):
     started = time.perf_counter()
     metrics = {"evaluation_table_compile_count": 0, "evaluation_table_compile_wall_seconds": 0.0, "engine_creation_wall_seconds": 0.0, "search_count": 0, "search_nodes": 0, "selfplay_calls": 0}
     native_started = time.perf_counter()
@@ -331,12 +372,12 @@ def _run_ruleset(ruleset_id, compiled, store):
     corpus_partition_id = next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["phase"] == "corpus")
 
     def corpus_data():
-        training_openings = generate_arena_openings(compiled, count=16, seed=480700, min_plies=2, max_plies=6)
-        holdout_openings = generate_arena_openings(compiled, count=16, seed=480701, min_plies=2, max_plies=6)
-        arena_openings = generate_arena_openings(compiled, count=16, seed=480702, min_plies=2, max_plies=6)
-        training = generate_diagnostic_corpus(compiled, training_openings, count=64, seed=480700, min_plies=2, max_plies=6)
-        holdout = generate_diagnostic_corpus(compiled, holdout_openings, count=64, seed=480701, min_plies=2, max_plies=6)
-        identities = {"training": {p.position_key for p in training.positions}, "holdout": {p.position_key for p in holdout.positions}, "arena": {o.final_position_key for o in arena_openings.openings}}
+        training_openings = corpus_bundle["training_openings"]
+        holdout_openings = corpus_bundle["holdout_openings"]
+        arena_openings = corpus_bundle["arena_openings"]
+        training = corpus_bundle["training"]
+        holdout = corpus_bundle["holdout"]
+        identities = corpus_bundle["identities"]
         def finish(ledger):
             return {"training": {"opening": training_openings.to_dict(), "corpus": training.to_dict()}, "holdout": {"opening": holdout_openings.to_dict(), "corpus": holdout.to_dict()}, "arena": arena_openings.to_dict(), "identity_ledger": ledger}
         return guard_corpus_identities(ruleset_id=ruleset_id, ruleset_fingerprint=compiled.ruleset_fingerprint, identities=identities, authority_hash=stable_sha256(AUTHORITY), config_hash=stable_sha256(store.config), input_hash=store.by_id[corpus_partition_id]["input_hash"], proceed=finish)
@@ -406,7 +447,7 @@ def _run_ruleset(ruleset_id, compiled, store):
                 holdout_id = next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["prior_id"] == prior_id and row["learner_id"] == learner_id and row["generation"] == generation and row["phase"] == "holdout")
                 holdout_result = store.run(holdout_id, lambda child=child: {"holdout_teacher_agreement": _agreement(teacher_holdout, _actions(compiled, native_rules, child, holdout, 2000, metrics)), "checkpoint": _safe_checkpoint_data(child), "integrity_gates": True})
                 arena_id = next(row["partition_id"] for row in store.by_id.values() if row["ruleset_id"] == ruleset_id and row["prior_id"] == prior_id and row["learner_id"] == learner_id and row["generation"] == generation and row["phase"] == "arena")
-                arena_result = store.run(arena_id, lambda child=child: {"arena_vs_prior_start": _arena_summary(compiled, native_rules, prior, child, arena_openings), "arena_vs_p48_0": _arena_summary(compiled, native_rules, p0, child, arena_openings) if prior_id == "P48-0" else None})
+                arena_result = store.run(arena_id, lambda child=child: {"arena_vs_prior_start": _arena_summary(compiled, native_rules, prior, child, arena_openings, store.config["corpora"]["arena"][1]), "arena_vs_p48_0": _arena_summary(compiled, native_rules, p0, child, arena_openings, store.config["corpora"]["arena"][1]) if prior_id == "P48-0" else None})
                 generations.append({"generation": generation, "checkpoint": holdout_result["checkpoint"], "training": raw_training, "holdout_teacher_agreement": holdout_result["holdout_teacher_agreement"], "arena_vs_prior_start": arena_result["arena_vs_prior_start"], "arena_vs_p48_0": arena_result["arena_vs_p48_0"] or arena_result["arena_vs_prior_start"], "catastrophic_arena_regression": arena_result["arena_vs_prior_start"]["catastrophic"], "integrity_gates": holdout_result["integrity_gates"]})
             result["learners"][learner_id]["by_prior"][prior_id] = {"calibration": calibration, "generations": generations}
     result["efficiency"].update({"evaluation_table_compile_count": metrics["evaluation_table_compile_count"], "evaluation_table_compile_wall_seconds": metrics["evaluation_table_compile_wall_seconds"], "engine_creation_wall_seconds": metrics["engine_creation_wall_seconds"], "search_count": metrics["search_count"], "search_nodes": metrics["search_nodes"], "selfplay_calls": metrics["selfplay_calls"], "wall_seconds": time.perf_counter() - started, "non_native_learning_fraction": 1.0, "semantic_analysis_inside_node_loop": False})
@@ -415,9 +456,15 @@ def _run_ruleset(ruleset_id, compiled, store):
 
 def run() -> dict[str, Any]:
     plan = preflight(output_dir=PARTITION_ROOT)
+    resolution = load_h48c_resolution()
+    corpus_config = resolved_corpus_config()
+    if plan["config"]["corpora"] != corpus_config:
+        raise RuntimeError("H48C corpus configuration disagrees with preflight")
+    ruleset_inputs = _rulesets()
+    corpus_bundles = {ruleset_id: _verify_h48c_execution_equivalence(ruleset_id, compiled, corpus_config, resolution) for ruleset_id, compiled in ruleset_inputs}
     store = PartitionStore(plan["partitions"], plan["config"])
-    rulesets = [_run_ruleset(name, compiled, store) for name, compiled in _rulesets()]
-    payload = {"kind": "F48_LEARNABLE_MATERIAL_RECOVERY_RESULTS", "baseline_sha": BASELINE_SHA, "protocol": "H48R2A", "h48b_selected_fingerprint": H48B_SELECTED_FINGERPRINT, "learned_checkpoint_input_to_benchmark_selection": False, "rulesets": rulesets, "holdout_separation": plan["holdout_separation"], "final_classification": recompute_selector(rulesets), "next_boundary": "F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION", "production_diff": "ZERO", "observed_results_present": True}
+    rulesets = [_run_ruleset(name, compiled, store, corpus_bundles[name]) for name, compiled in ruleset_inputs]
+    payload = {"kind": "F48_LEARNABLE_MATERIAL_RECOVERY_RESULTS", "baseline_sha": BASELINE_SHA, "protocol": "H48R2A+H48R3A+H48C", "h48b_selected_fingerprint": H48B_SELECTED_FINGERPRINT, "h48c_checkpoint_sha": H48C_CHECKPOINT_SHA, "h48c_resolved_seed_triple": resolution["resolved_seed_triple"], "h48c_execution_equivalence": {name: {"passed": True, "corpora": bundle["h48c_ledger"], "pairwise_intersections": bundle["h48c_intersections"]} for name, bundle in corpus_bundles.items()}, "learned_checkpoint_input_to_benchmark_selection": False, "rulesets": rulesets, "holdout_separation": plan["holdout_separation"], "final_classification": recompute_selector(rulesets), "next_boundary": "F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION", "production_diff": "ZERO", "observed_results_present": True}
     validate_raw_result(payload)
     atomic_write_json(OUT, payload)
     return payload

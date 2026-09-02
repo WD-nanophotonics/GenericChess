@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from generic_chess.learning.serialization import stable_sha256
+from scripts.f48_protocol import load_h48c_resolution
 from scripts.audit_f48_h48c_corpus_disjointness_resolution import _direct_first
 
 
@@ -95,3 +96,16 @@ def test_h48c_fixture_reconstruction_runtime_guard_and_collision_binding():
     assert stable_sha256(auxiliary) == fixture["collision_auxiliary_sha256"]
     assert [row["seed"] for row in auxiliary["holdout"]] == [480701, 480702]
     assert [row["seed"] for row in auxiliary["arena"]] == [480702, 480704, 480705, 480706, 480707]
+
+
+def test_h48c_execution_authority_loader_rejects_drift_and_exposes_resolved_triple():
+    resolution = load_h48c_resolution()
+    assert resolution["resolved_seed_triple"] == {"training": 480700, "holdout": 480703, "arena": 480708}
+    assert resolution["collision_auxiliary_sha256"] == stable_sha256(json.loads(AUXILIARY.read_text(encoding="utf-8")))
+    source = (ROOT / "scripts" / "audit_f48_learnable_material_recovery.py").read_text(encoding="utf-8")
+    assert "_verify_h48c_execution_equivalence" in source
+    assert "STOP_ON_H48C_EXECUTION_DISCREPANCY" in source
+    assert "generate_diagnostic_corpus" in source
+    assert "resolved_corpus_config()" in source
+    assert "seed=480701" not in source
+    assert "seed=480702" not in source

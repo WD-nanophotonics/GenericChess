@@ -14,6 +14,7 @@ from scripts.f48_protocol import (
     partition_id,
     preflight,
     recompute_selector,
+    resolved_corpus_config,
 )
 
 
@@ -61,7 +62,11 @@ def test_partition_inventory_is_deterministic_and_unique():
 def test_preflight_binds_authority_and_separates_holdout():
     plan = preflight()
     assert plan["status"] == "PASS"
-    assert plan["baseline_sha"] == "dc1fe20964354b6494e90830408c8747018d6102"
+    assert plan["baseline_sha"] == "742bc536f0ae2ed44e28c23b43b71a3ca859fb9f"
+    assert plan["authority"]["artifacts"]["h48c"]["commit"] == plan["baseline_sha"]
+    assert plan["config"]["corpora"] == {"training": [64, 480700, 2, 6], "holdout": [64, 480703, 2, 6], "arena": [16, 480708, 2, 6]}
+    assert resolved_corpus_config() == plan["config"]["corpora"]
+    assert plan["config"]["h48c"]["checkpoint_sha"] == plan["baseline_sha"]
     assert plan["authority"]["selected_h48b"]["index"] == 9
     assert plan["holdout_separation"] == {
         "holdout_in_training": False,

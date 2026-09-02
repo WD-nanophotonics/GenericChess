@@ -238,3 +238,27 @@ H48C records evaluator, search, learner, self-play, and arena-game invocation
 flags as false. It does not run F48 learning, material perturbation, teacher
 search, arena games, F49 work, production changes, or master promotion. The
 separate H48C checkpoint is the only authority for resuming F48 corpus use.
+
+## F48 resumed execution addendum after H48C
+
+The resumed F48 execution checkpoint is bound to H48C checkpoint
+`742bc536f0ae2ed44e28c23b43b71a3ca859fb9f`. The audit-side authority ledger
+and preflight now include H48C, and every partition input hash includes the
+resolved corpus configuration, preventing reuse of partitions made under the
+invalid original seed triple.
+
+Before native search, the driver reconstructed the training, holdout, and
+arena corpora through the existing `generate_arena_openings`,
+`generate_diagnostic_corpus`, and position-identity paths. Corpus IDs and
+identity-set counts/hashes matched H48C for all three RuleSets, all pairwise
+intersections were empty, and the runtime guard accepted each set. This
+equivalence result is persisted in
+`tests/fixtures/f48_learnable_material_recovery_results.json`.
+
+The prerequisite matrix was: Western Chess leverage fail / stability pass;
+Standard Shogi leverage fail / stability pass; selected generated RuleSet
+leverage pass / stability fail. Therefore zero RuleSets were admissible, the
+frozen early-stop classification was `MIXED_OR_UNRESOLVED`, and no TDLeaf,
+M48-1, learned-checkpoint, or arena-game partition was executed. Production
+RuleSet/evaluator/search semantics remained unchanged and production diff was
+zero. F49 remains a later boundary and was not started.

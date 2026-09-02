@@ -20,7 +20,11 @@ from generic_chess.learning.serialization import canonical_json, stable_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 H48B_PATH = ROOT / "tests" / "fixtures" / "h48b_generated_benchmark_selection.json"
-BASELINE_SHA = "dc1fe20964354b6494e90830408c8747018d6102"
+H48B_BASELINE_SHA = "dc1fe20964354b6494e90830408c8747018d6102"
+BASELINE_SHA = "742bc536f0ae2ed44e28c23b43b71a3ca859fb9f"
+H48C_CHECKPOINT_SHA = BASELINE_SHA
+H48C_PATH = ROOT / "tests" / "fixtures" / "h48c_corpus_disjointness_resolution.json"
+H48C_COLLISION_PATH = ROOT / "tests" / "fixtures" / "h48c_corpus_disjointness_collision_keys.json"
 H48B_SELECTED_FINGERPRINT = "9f7e7201a19f8f0ee6c0eacc766c2ac3a6c313e06bbc960d5d6dfb89137db923"
 RULESET_FINGERPRINTS = {
     "A_CANONICAL_WESTERN_CHESS": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
@@ -45,8 +49,13 @@ AUTHORITY = {
         "sha256": "9db3a74f5e942e0c4bd89c99d8e275e1b1ce5273ce39dac5de0679d7e3dcdbb9",
     },
     "h48b": {
-        "commit": BASELINE_SHA,
+        "commit": H48B_BASELINE_SHA,
         "path": "tests/fixtures/h48b_generated_benchmark_selection.json",
+    },
+    "h48c": {
+        "commit": H48C_CHECKPOINT_SHA,
+        "path": "tests/fixtures/h48c_corpus_disjointness_resolution.json",
+        "sha256": "ca7473e2e684f473060d0de82a13e853e3059591917c6fd3a4a0e0bfad7a9b01",
     },
 }
 
@@ -104,6 +113,38 @@ def verify_authority() -> dict[str, Any]:
     if h48b.get("learned_checkpoint_input") is not False or h48b.get("selection_completed_before_learning") is not True:
         raise RuntimeError("H48B is not marked as a pre-learning selection")
     return {"artifacts": bound, "selected_h48b": selected}
+
+
+def load_h48c_resolution() -> dict[str, Any]:
+    """Load and validate the accepted H48C seed-resolution authority."""
+    if not H48C_PATH.is_file() or not H48C_COLLISION_PATH.is_file():
+        raise RuntimeError("missing H48C resolution authority")
+    resolution = json.loads(H48C_PATH.read_text(encoding="utf-8"))
+    collision_auxiliary = json.loads(H48C_COLLISION_PATH.read_text(encoding="utf-8"))
+    if resolution.get("status") != "PASS":
+        raise RuntimeError("H48C resolution is not accepted")
+    if resolution.get("parent_h48r3a_sha") != "d829f14e4c7c939bb1c2e06bc8b7d2b6f4b9e510":
+        raise RuntimeError("H48C parent binding drift")
+    if resolution.get("ruleset_fingerprints") != RULESET_FINGERPRINTS:
+        raise RuntimeError("H48C RuleSet fingerprint binding drift")
+    if resolution.get("collision_auxiliary_path") != str(H48C_COLLISION_PATH.relative_to(ROOT)):
+        raise RuntimeError("H48C collision auxiliary path drift")
+    if stable_sha256(collision_auxiliary) != resolution.get("collision_auxiliary_sha256"):
+        raise RuntimeError("H48C collision auxiliary hash drift")
+    if any(resolution.get(name) is not False for name in ("evaluator_invoked", "search_invoked", "learner_invoked", "selfplay_invoked", "arena_games_invoked")):
+        raise RuntimeError("H48C contains a forbidden execution flag")
+    return resolution
+
+
+def resolved_corpus_config() -> dict[str, Any]:
+    """Return execution corpus settings sourced only from H48C."""
+    resolution = load_h48c_resolution()
+    seeds = resolution["resolved_seed_triple"]
+    return {
+        "training": [64, seeds["training"], 2, 6],
+        "holdout": [64, seeds["holdout"], 2, 6],
+        "arena": [16, seeds["arena"], 2, 6],
+    }
 
 
 def partition_id(*, ruleset_id: str, prior_id: str = "none", learner_id: str = "none", generation: int = 0, phase: str) -> str:
@@ -187,7 +228,7 @@ def resource_estimate(partitions: Iterable[dict[str, Any]] | None = None) -> dic
 def preflight(*, output_dir: Path | None = None, minimum_free_bytes: int = 256 * 1024 * 1024) -> dict[str, Any]:
     authority = verify_authority()
     partitions = build_partition_plan()
-    config = {"search": {"max_depth": 12, "student_nodes": 2000, "teacher_nodes": 20000, "stability_nodes": 40000, "arena_nodes": 1000}, "corpora": {"training": [64, 480700, 2, 6], "holdout": [64, 480701, 2, 6], "arena": [16, 480702, 2, 6]}, "holdout_in_ranking": False}
+    config = {"search": {"max_depth": 12, "student_nodes": 2000, "teacher_nodes": 20000, "stability_nodes": 40000, "arena_nodes": 1000}, "corpora": resolved_corpus_config(), "h48c": {"checkpoint_sha": H48C_CHECKPOINT_SHA, "resolution_fixture": str(H48C_PATH.relative_to(ROOT)), "collision_auxiliary": str(H48C_COLLISION_PATH.relative_to(ROOT)), "collision_auxiliary_sha256": load_h48c_resolution()["collision_auxiliary_sha256"]}, "holdout_in_ranking": False}
     for row in partitions:
         row["output_path"] = str(Path(".generic_chess_flow") / "f48" / "partitions" / (row["partition_id"] + ".json"))
         row["input_hash"] = partition_input_hash(row, config=config)
