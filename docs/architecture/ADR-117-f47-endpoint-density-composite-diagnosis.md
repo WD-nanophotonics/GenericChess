@@ -118,3 +118,16 @@ The Windows semantic test proves on a pristine `core.autocrlf=true` checkout
 that a CRLF working-tree digest can differ while the raw Git-blob digest and
 canonical binding remain stable. No manifest, fixture, `.gitattributes`,
 production, evaluator, search, or allowlist content was changed.
+
+The final pristine differential used fresh detached `core.autocrlf=true`
+worktrees at baseline `e68336e0855ce3c1009ceaafc7ff63f04698972e` and candidate
+`5443c614421a380d8f282539c1ace30c092f1cbb`. The baseline collected 1365 tests
+(`1336 passed, 15 failed, 12 errors, 2 skipped`); the candidate collected 1372
+(`1368 passed, 2 failed, 2 skipped`). The candidate-only failure set was empty;
+the two shared residuals were the known F24F Kiwipete depth-one result and the
+Round5 harness's missing external AlphaSho evaluation file. The baseline-only
+set contained the 13 legacy-provenance/F45/H47R1A failures and 12 F47 setup
+errors, all removed by the migration. The focused R4R1 suite passed `55`
+tests, including the Windows CRLF-versus-raw-blob proof, and the independent
+F47 audit passed with `ENDPOINT_DENSITY_COMPOSITE_INSUFFICIENT` pointing to
+`F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT`.
