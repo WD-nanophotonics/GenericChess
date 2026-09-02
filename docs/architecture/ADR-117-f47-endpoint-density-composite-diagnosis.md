@@ -64,3 +64,31 @@ hand/board gates.
 
 F47 remains audit-only. F48, production integration, AlphaSho/search/self-play,
 training, F43 combination, and master promotion remain out of scope.
+
+## Corrective R1 closure
+
+The first-pass H47A provenance defect is retained as history and is not
+rewritten. Standalone H47R1A (`tests/fixtures/f47r1_endpoint_density_composite_manifest.json`)
+binds the accepted F44 endpoint, F45 placement, and F46 density authorities by
+path and SHA-256, and is verified before the F47 audit runs. It is anchored to
+the immediate F47 candidate `d8d39bb4ef15f018e97afedf97733041490686b2` and has
+no observed result field.
+
+R1 replaces nominal structural checks with executable perturbations: the F47
+candidate fingerprint contains owner/source, target, path, relation set, and
+canonical geometry/channel identity; it is compared independently with the
+accepted F44 extraction and the F41 core candidate helper. Duplicate semantic
+descriptions, actual X→Y type relabeling, RuleSet metadata relabeling, reversed
+action order, and insertion of an unrelated action that shifts generated
+geometry IDs all preserve the fingerprint and gap curve. A known ray-path
+control mechanically verifies `clear * (1 - density / 2)`. C47-0 reproduces
+F46/F42 curves, reductions, raw values, and normalized values, while C47-1
+through C47-4 directly reproduce their frozen F46 reducer definitions.
+
+The complete semantic predicate now includes Western-Pawn nonzero gap,
+compiled Standard-Shogi-Pawn derivation, and relation-multiplicity control.
+The selector reachability evidence also executes the mixed case in which a
+coherent insufficiency and directional mismatch coexist; coherent
+insufficiency wins by the frozen selector priority. These corrections do not
+change the evidence-derived classification: `ENDPOINT_DENSITY_COMPOSITE_INSUFFICIENT`
+→ `F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT`. F48 remains out of scope.

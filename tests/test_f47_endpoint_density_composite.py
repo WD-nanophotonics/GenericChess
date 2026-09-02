@@ -55,6 +55,22 @@ def test_conditional_exclusion_and_pawn_relevance(evidence):
 def test_structural_controls_and_invariances(evidence):
     controls = evidence["structural_controls"]
     assert all(controls.values())
+    assert controls["candidate_deduplication_invariant"] is True
+    assert controls["type_rename_invariant"] is True
+    assert controls["ruleset_rename_invariant"] is True
+    assert controls["action_pattern_order_invariant"] is True
+    assert controls["generated_geometry_id_invariant"] is True
+    assert controls["same_path_clear_semantics"] is True
+    assert controls["current_control_reproduces_f46_f42"] is True
+    assert controls["density_reducers_reproduce_f46_definitions"] is True
+
+
+def test_f47_records_independent_f44_and_f41_population_bindings(evidence):
+    for ruleset in ("western_chess", "standard_shogi"):
+        for row in evidence["gap_ledger"][ruleset].values():
+            assert row["candidate_population_fingerprint"]
+            assert row["accepted_f44_population_equal"] is True
+            assert row["accepted_f41_population_equal"] is True
 
 
 def test_c47_zero_reproduces_f46_f42_values(evidence):
@@ -111,6 +127,12 @@ def test_all_seven_selector_paths_are_real_and_reachable(evidence):
     assert evidence["selector_reachability"]["all_reachable"] is True
     assert set(evidence["selector_reachability"]["cases"]) == set(audit.QUALIFICATION_MAPPING)
     assert all(evidence["selector_reachability"]["cases"].values())
+    assert evidence["selector_reachability"]["mixed_priority"]["coherent_insufficient_and_directional_mismatch"] is True
+
+
+def test_h47r1a_is_verified_before_f47_result(evidence):
+    assert evidence["h47r1a"] == "tests/fixtures/f47r1_endpoint_density_composite_manifest.json"
+    assert evidence["gates"]["h47r1a_manifest"] is True
 
 
 def test_f47_has_no_production_change(evidence):
