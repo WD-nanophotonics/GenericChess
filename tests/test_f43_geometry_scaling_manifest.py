@@ -4,11 +4,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tests" / "fixtures" / "f43_geometry_scaling_manifest.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from repository_provenance import require_migrated_binding  # noqa: E402
 
 
 def test_h43a_manifest_is_frozen_and_inputs_match():
@@ -19,6 +23,5 @@ def test_h43a_manifest_is_frozen_and_inputs_match():
     assert data["baseline"]["f42_sha"] == "6504a45dff2e1a726feb94d6aa83ac5128e0985d"
     assert list(data["transforms"]) == ["G43-0_LINEAR_CONTROL", "G43-1_PER_GEOMETRY_LOG", "G43-2_PER_SOURCE_LOG", "G43-3_HIERARCHICAL_LOG"]
     assert all(data["constraints"].values())
-    for binding in data["input_files"].values():
-        assert hashlib.sha256((ROOT / binding["path"]).read_bytes()).hexdigest() == binding["sha256"]
-
+    for name, binding in data["input_files"].items():
+        require_migrated_binding(ROOT, "F43", "tests/fixtures/f43_geometry_scaling_manifest.json", name, data["baseline"]["f42_sha"], binding["path"], binding["sha256"])

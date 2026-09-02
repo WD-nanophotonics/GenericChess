@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT))
 
 import audit_f44_structural_capability as f44  # noqa: E402
+from repository_provenance import require_migrated_binding  # noqa: E402
 
 
 BASELINE = "1f4fc5f1dc12675e6bafcf1992245441d36104f5"
@@ -69,7 +70,9 @@ def _sha(path: Path) -> str:
 
 def _verify_bindings(manifest: dict[str, Any]) -> dict[str, Any]:
     results = {}
-    for name, binding in {**manifest["input_files"], **manifest["f44_evidence_bindings"]}.items():
+    for name, binding in manifest["input_files"].items():
+        results[name] = require_migrated_binding(ROOT, "F45", "tests/fixtures/f45_structural_feature_discrimination_manifest.json", name, manifest["baseline"]["f44_sha"], binding["path"], binding["sha256"])
+    for name, binding in manifest["f44_evidence_bindings"].items():
         path = ROOT / binding["path"]
         actual = _sha(path) if path.exists() else None
         results[name] = {"path": binding["path"], "expected": binding["sha256"], "actual": actual, "match": actual == binding["sha256"]}

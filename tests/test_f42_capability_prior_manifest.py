@@ -4,11 +4,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tests" / "fixtures" / "f42_capability_prior_manifest.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from repository_provenance import require_migrated_binding  # noqa: E402
 
 
 def test_h42a_manifest_is_frozen_and_inputs_match():
@@ -24,7 +28,5 @@ def test_h42a_manifest_is_frozen_and_inputs_match():
     assert data["constraints"]["PRODUCTION_DIFF_ZERO"] is True
     assert len(data["diagnostic_variants"]) == 9
     assert len(data["synthetic_control_families"]) == 5
-    for binding in data["input_files"].values():
-        actual_input = hashlib.sha256((ROOT / binding["path"]).read_bytes()).hexdigest()
-        assert actual_input == binding["sha256"]
-
+    for name, binding in data["input_files"].items():
+        require_migrated_binding(ROOT, "F42", "tests/fixtures/f42_capability_prior_manifest.json", name, data["baseline"]["sandbox_sha"], binding["path"], binding["sha256"])

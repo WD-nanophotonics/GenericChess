@@ -4,11 +4,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tests" / "fixtures" / "f44_structural_capability_manifest.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from repository_provenance import require_migrated_binding  # noqa: E402
 
 
 def test_h44a_manifest_is_frozen_and_inputs_match():
@@ -24,8 +28,8 @@ def test_h44a_manifest_is_frozen_and_inputs_match():
         "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY",
     ]
     assert all(data["constraints"].values())
-    for binding in data["input_files"].values():
-        assert hashlib.sha256((ROOT / binding["path"]).read_bytes()).hexdigest() == binding["sha256"]
+    for name, binding in data["input_files"].items():
+        require_migrated_binding(ROOT, "F44", "tests/fixtures/f44_structural_capability_manifest.json", name, data["baseline"]["f43_r1_sha"], binding["path"], binding["sha256"])
 
 
 def test_h44a_freezes_independence_gates_and_boundary_mapping():

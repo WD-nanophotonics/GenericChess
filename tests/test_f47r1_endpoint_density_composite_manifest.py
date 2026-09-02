@@ -5,11 +5,15 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tests" / "fixtures" / "f47r1_endpoint_density_composite_manifest.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from repository_provenance import require_repository_blob  # noqa: E402
 
 
 def test_h47r1a_hashes_all_accepted_stage_bindings_and_is_pre_result():
@@ -17,11 +21,15 @@ def test_h47r1a_hashes_all_accepted_stage_bindings_and_is_pre_result():
     unsigned = {key: value for key, value in data.items() if key != "manifest_sha256"}
     assert hashlib.sha256(json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()).hexdigest() == data["manifest_sha256"]
     assert "observed_result" not in data
-    for binding in data["provenance_bindings"].values():
-        assert (ROOT / binding["path"]).is_file()
-        assert (ROOT / binding["protocol_path"]).is_file()
-        assert hashlib.sha256((ROOT / binding["path"]).read_bytes()).hexdigest() == binding["sha256"]
-        assert hashlib.sha256((ROOT / binding["protocol_path"]).read_bytes()).hexdigest() == binding["protocol_sha256"]
+    stage_refs = {
+        "f44_endpoint_authority": "f44_stage_sha",
+        "f45_placement_authority": "f45_stage_sha",
+        "f46_density_authority": "f46_stage_sha",
+    }
+    for name, binding in data["provenance_bindings"].items():
+        ref = data["baseline"][stage_refs[name]]
+        require_repository_blob(ROOT, ref, binding["path"], binding["sha256"])
+        require_repository_blob(ROOT, ref, binding["protocol_path"], binding["protocol_sha256"])
 
 
 def test_h47r1a_preserves_frozen_formula_variants_and_mappings():

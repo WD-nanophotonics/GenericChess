@@ -21,6 +21,7 @@ import audit_f41_semantic_material_prior as f41  # noqa: E402
 import audit_f42_semantic_capability_prior as f42  # noqa: E402
 import audit_f44_structural_capability as f44  # noqa: E402
 import audit_f46_density_profile as f46  # noqa: E402
+from repository_provenance import require_repository_blob  # noqa: E402
 
 from generic_chess.rules.compiler import compile_semantic_ruleset  # noqa: E402
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset  # noqa: E402
@@ -74,11 +75,15 @@ def _h47r1a_manifest() -> dict[str, Any]:
         raise AssertionError("H47R1A manifest hash mismatch")
     if data["baseline"]["immediate_f47_sha"] != "d8d39bb4ef15f018e97afedf97733041490686b2":
         raise AssertionError("H47R1A immediate F47 baseline mismatch")
-    for binding in data["provenance_bindings"].values():
+    stage_refs = {
+        "f44_endpoint_authority": "f44_stage_sha",
+        "f45_placement_authority": "f45_stage_sha",
+        "f46_density_authority": "f46_stage_sha",
+    }
+    for name, binding in data["provenance_bindings"].items():
+        ref = data["baseline"][stage_refs[name]]
         for field, hash_field in (("path", "sha256"), ("protocol_path", "protocol_sha256")):
-            path = ROOT / binding[field]
-            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != binding[hash_field]:
-                raise AssertionError(f"H47R1A provenance mismatch: {binding[field]}")
+            require_repository_blob(ROOT, ref, binding[field], binding[hash_field])
     return data
 
 

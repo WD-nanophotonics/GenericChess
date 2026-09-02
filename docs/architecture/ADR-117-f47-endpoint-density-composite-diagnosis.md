@@ -92,3 +92,29 @@ coherent insufficiency and directional mismatch coexist; coherent
 insufficiency wins by the frozen selector priority. These corrections do not
 change the evidence-derived classification: `ENDPOINT_DENSITY_COMPOSITE_INSUFFICIENT`
 → `F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT`. F48 remains out of scope.
+
+## Corrective R4R1 legacy-hash migration closure
+
+R3 established that the F42-F44 historical `sha256` fields were captured from
+checkout bytes and therefore have legacy CRLF, LF, mixed, or nonreproducible
+semantics. Their values remain unchanged in the original frozen manifests.
+Standalone H47R4A (`73b5e5f7f97b4e78aa4dcd6331698c7e61398519`) freezes
+`tests/fixtures/f47r4_legacy_provenance_migration.json`, a complete 34-row
+ledger covering F42-F45 repository bindings and the direct H47R1A F44/F45/F46
+authority bindings. Each row preserves `legacy_sha256` and its explicit
+semantics while separately freezing `canonical_ref`, `canonical_path`, and
+`repository_blob_sha256`.
+
+The non-production `scripts/repository_provenance.py` helper retrieves raw
+bytes only through `git cat-file blob <ref>:<path>`. It exposes raw retrieval,
+canonical SHA-256 calculation, structured expected-hash comparison, missing
+ref/path errors, and explicit legacy-ledger validation. No checkout bytes are
+used for canonical provenance, no newline normalization is performed, and no
+worktree is mutated. F45 generated `.generic_chess_flow` evidence remains a
+working-tree-local artifact and is not reinterpreted as repository authority.
+
+Negative tests cover altered canonical hashes, paths, refs, and missing blobs.
+The Windows semantic test proves on a pristine `core.autocrlf=true` checkout
+that a CRLF working-tree digest can differ while the raw Git-blob digest and
+canonical binding remain stable. No manifest, fixture, `.gitattributes`,
+production, evaluator, search, or allowlist content was changed.
