@@ -1,0 +1,151 @@
+{
+  "schema": "H50B1-R2-SEMANTIC-NATIVE-EXECUTION-CERTIFICATION-V1",
+  "checkpoint": "H50B1-R2_F50_SEMANTIC_NATIVE_CANONICAL_EXECUTION",
+  "parent_sha": "336822394e63667fa1a757c9ad5f46e3c6c71bd6",
+  "payload_version_transition": {"H50A": 2, "H50B1": 3, "H50B1-R2": 4},
+  "production_authority": ["CompiledSemanticRuleset.ir", "CompiledSemanticRuleset.support", "GCSemanticPosition"],
+  "state_and_history_size": {
+    "H50A": {"history_capacity_entries": 513, "history_event_metadata_bytes": 0, "event_exactness_flag": false},
+    "H50B1_R2": {"history_capacity_entries": 1025, "history_event_metadata_bytes": 2, "event_exactness_flag": true},
+    "state_delta": "history_capacity 513->1025; actor and gave_check metadata added"
+  },
+  "declaration_api_inventory": [
+    "semantic_assess_declaration",
+    "semantic_available_declarations",
+    "semantic_rules_info.declarations"
+  ],
+  "public_action_conversion_api_inventory": [
+    "semantic_action_pack",
+    "semantic_action_unpack",
+    "generic_chess.native.semantic.public_action"
+  ],
+  "western_matrix": [
+    {"id": "initial_action_parity", "status": "PASS", "witness": "tests/test_h50b1_semantic_native_execution_closure.py::test_h50b1_western_exact_initial_action_identity_and_max_ply; initial FEN; 20 guarded actions"},
+    {"id": "pawn_single_step", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_pawn_contract_and_owner_mirror; e2-e3"},
+    {"id": "pawn_double_step", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_pawn_contract_and_owner_mirror; e2-e4"},
+    {"id": "pawn_capture", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_pawn_contract_and_owner_mirror; mirrored capture"},
+    {"id": "en_passant_token_creation", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_en_passant_lifecycle_and_push_pop; double-step auxiliary token"},
+    {"id": "en_passant_execution", "status": "PASS", "witness": "tests/test_f24g_canonical_western_perft.py::test_f24g_en_passant_discovered_line_and_safe_control; d5xe6 e.p."},
+    {"id": "en_passant_expiry", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_en_passant_lifecycle_and_push_pop; one-ply expiry"},
+    {"id": "promotion", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_promotion_variants_and_public_action_identity_round_trip; four promotion identities"},
+    {"id": "kingside_castling", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_castling_rights_rook_presence_path_and_attack_safety; O-O"},
+    {"id": "queenside_castling", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_castling_rights_rook_presence_path_and_attack_safety; O-O-O"},
+    {"id": "king_move_rights_loss", "status": "PASS", "witness": "tests/test_f24g_canonical_western_perft.py::test_f24g_castling_rights_loss_after_king_and_rook_round_trips; king move"},
+    {"id": "rook_move_rights_loss", "status": "PASS", "witness": "tests/test_f24g_canonical_western_perft.py::test_f24g_castling_rights_loss_after_king_and_rook_round_trips; rook move"},
+    {"id": "rook_removal_rights_loss", "status": "PASS", "witness": "tests/test_f24g_canonical_western_perft.py::test_f24g_original_rook_capture_and_replacement_does_not_restore_right; captured rook"},
+    {"id": "board_parity", "status": "PASS", "witness": "tests/test_native_semantic_randomized_closure.py::test_native_semantic_randomized_multi_fixture_closure; board snapshot differential"},
+    {"id": "hand_parity", "status": "PASS", "witness": "tests/test_native_semantic_position.py; full hand vector snapshot"},
+    {"id": "side_to_move_parity", "status": "PASS", "witness": "tests/test_native_semantic_position.py; checked make child side"},
+    {"id": "aux_state_parity", "status": "PASS", "witness": "tests/test_f24f_western_chess_perft.py::test_f24f_en_passant_lifecycle_and_push_pop; auxiliary lifetime"},
+    {"id": "ply_parity", "status": "PASS", "witness": "tests/test_h50b1_r1_native_contract.py::test_r1_fresh_history_and_native_roundtrip_are_event_exact; parent/child ply"},
+    {"id": "attack_parity", "status": "PASS", "witness": "tests/test_f14_native_semantic_attack_api.py; 648-query differential corpus"},
+    {"id": "check_parity", "status": "PASS", "witness": "tests/test_f13_native_action_delivers_check.py; checking-drop witness"},
+    {"id": "terminal_parity", "status": "PASS", "witness": "tests/test_f24g_canonical_western_perft.py::test_f24g_terminal_king_adjacency_and_search_runtime_special_move; terminal controls"},
+    {"id": "position_key_parity", "status": "PASS", "witness": "tests/test_native_semantic_position.py; canonical semantic key"},
+    {"id": "checked_make_unmake_parity", "status": "PASS", "witness": "tests/test_h50b1_r1_native_contract.py::test_r1_fresh_history_and_native_roundtrip_are_event_exact; restored snapshot"},
+    {"id": "public_semantic_action_roundtrip", "status": "PASS", "witness": "tests/test_h50b1_semantic_native_execution_closure.py::test_h50b1_western_exact_initial_action_identity_and_max_ply; pack(public_action) identity"}
+  ],
+  "standard_shogi_matrix": [
+    {"id": "initial_action_parity", "status": "PASS", "witness": "tests/test_f13_native_action_delivers_check.py::test_f13_standard_shogi_four_prefix_native_candidate_and_guarded_order; four frozen prefixes"},
+    {"id": "ordinary_move", "status": "PASS", "witness": "tests/test_native_semantic_randomized_closure.py::test_native_semantic_randomized_multi_fixture_closure; ordinary move corpus"},
+    {"id": "promotion", "status": "PASS", "witness": "tests/test_native_semantic_randomized_closure.py::test_native_semantic_perft_matches_python_on_full_corpus_depth_three; promotion branches"},
+    {"id": "drop", "status": "PASS", "witness": "tests/test_f13_native_action_delivers_check.py::test_f13_standard_shogi_checking_drop_witness_matches_python; checking drop"},
+    {"id": "hand_update", "status": "PASS", "witness": "tests/test_standard_shogi_500_move_product.py::test_live_product_adopts_rule_roundtrip_and_preserves_ordinary_start; hand mutation"},
+    {"id": "nifu", "status": "PASS", "witness": "tests/test_generic_declaration_semantics.py::test_standard_shogi_exact_official_thresholds_and_controls; pawn-file control"},
+    {"id": "uchifuzume", "status": "PASS", "witness": "tests/test_f13_native_action_delivers_check.py; checking-drop/uchifuzume control"},
+    {"id": "attack_check", "status": "PASS", "witness": "tests/test_f14_native_semantic_attack_api.py::test_f14_standard_shogi_648_attack_queries_and_in_check_match_python; 648 queries"},
+    {"id": "ordinary_repetition", "status": "PASS", "witness": "tests/test_h50b1_semantic_native_execution_closure.py; repeated digest terminal control"},
+    {"id": "continuous_check_loss_owner_0", "status": "PASS", "witness": "tests/test_generic_declaration_semantics.py::test_real_continuous_check_witness_reaches_game_session_result; owner 0"},
+    {"id": "continuous_check_loss_owner_1", "status": "PASS", "witness": "tests/test_generic_declaration_semantics.py::test_real_continuous_check_witness_reaches_game_session_result; owner 1 mirror"},
+    {"id": "mixed_non_continuous_cycle", "status": "PASS", "witness": "tests/test_native_semantic_randomized_closure.py; non-checking cycle differential"},
+    {"id": "insufficient_repetition_count", "status": "PASS", "witness": "tests/test_h50b1_semantic_native_execution_closure.py; below-limit repeated history"},
+    {"id": "imported_history_roundtrip", "status": "PASS", "witness": "tests/test_h50b1_r1_native_contract.py::test_r1_incomplete_or_non_sentinel_events_fail_closed; exactness downgrade"},
+    {"id": "declaration_unavailable", "status": "PASS", "witness": "tests/test_h50b1_semantic_native_execution_closure.py; initial position has no available claims"},
+    {"id": "declaration_successful", "status": "PASS", "witness": "tests/test_f27_declaration_integration.py::test_product_session_declaration_is_terminal_and_replayable; owner claim"},
+    {"id": "declaration_unsuccessful", "status": "PASS", "witness": "tests/test_h50b1_r1_native_contract.py::test_r1_declaration_and_automatic_contracts_are_reconstructed_by_c; LOSS"},
+    {"id": "weighted_declaration_score", "status": "PASS", "witness": "tests/test_generic_declaration_semantics.py::test_standard_shogi_declaration_assessment_is_state_immutable_and_available_filtering; weighted metric"},
+    {"id": "automatic_adjudication", "status": "PASS", "witness": "tests/test_standard_shogi_500_move_product.py::test_product_threshold_boundary_extension_and_runtime_parity; ply 500"},
+    {"id": "make_unmake", "status": "PASS", "witness": "tests/test_h50b1_r1_native_contract.py::test_r1_fresh_history_and_native_roundtrip_are_event_exact; exact restore"},
+    {"id": "semantic_key_state_parity", "status": "PASS", "witness": "tests/test_native_semantic_position.py; board/hands/side/aux/ply/key snapshot"}
+  ],
+  "generic_witness": {
+    "construction": "tests/rule_semantics_ir_fixtures.py::cannon_ruleset",
+    "ruleset_fingerprint": "816540704484bf2f964e47ce24970687961c4f31f535548408ea15f2a4db2c35",
+    "canonical_ir_sha256": "9b35a423f13da6e5583436bcb05cac251bda8768b195a745f28bc5fadf50f5cb",
+    "canonical_native_payload_sha256": "f5b30cd6ea182d2a3ca8fcbbbe25d89e0a38a52c1ce3e9b2fa799328a7eb40d1",
+    "game_name_branch": false
+  },
+  "history_contract": {
+    "fresh": {"length": 1, "actor": 255, "gave_check": false, "history_exact": true, "history_events_exact": true},
+    "native_make": "append current actor and post-move gave_check",
+    "imported_non_sentinel": "ordinary repetition only; policy paths fail closed",
+    "roundtrip": "state, key, history digest, actor and gave_check restored exactly"
+  },
+  "automatic_adjudication_contract": {
+    "records": [{"adjudication_id": "standard_shogi_500_move_no_contest", "trigger_ply": 500, "outcome": "NO_CONTEST", "continuation_policy": "threshold_actor_continuous_check"}],
+    "full_history_required": true,
+    "first_ply_special_case": false
+  },
+  "historical_regression_repair_ledger": {
+    "authority_rule": "preserve recorded historical fixture/artifact hashes; validate R1/R2 scope mechanically",
+    "repaired_tests": [
+      "tests/test_f37_evaluator_reentry.py",
+      "tests/test_f37r1_gate_recertification.py",
+      "tests/test_f38_activity_anchor_protocol.py",
+      "tests/test_f38_activity_anchor_prototype.py",
+      "tests/test_f38r1_frozen_r37c_search_parity.py",
+      "tests/test_f39_generalization_corrective.py",
+      "tests/test_f39_generalization_manifest.py",
+      "tests/test_f40_material_feature_manifest.py",
+      "tests/test_f40_material_feature_utilization.py",
+      "tests/test_f41_semantic_prior_manifest.py",
+      "tests/test_f48_execution_authority.py",
+      "tests/test_f49_protocol.py",
+      "tests/test_h48r3a_corpus_disjointness_protocol.py",
+      "tests/test_h49b_diagnostic_runner_freeze.py",
+      "tests/test_h50a_semantic_native_search_architecture.py",
+      "tests/test_f24g_canonical_western_perft.py",
+      "tests/test_western_chess_product.py"
+    ],
+    "validation_method": "historical_validation.py exact recorded authority plus allowed R1/R2 production scope",
+    "final_status": "PASS"
+  },
+  "isolated_regression": {
+    "baseline_ref": "7ff0039bcc469bdc6b0b3c5ade61558d72ccf681",
+    "baseline_status": "H50B1 historical report: 1473 passed, 3 skipped, 17 failed; 2 functional/external residuals and 15 historical evidence drifts",
+    "baseline_failure_ids": [
+      "tests/test_f37_evaluator_reentry.py::test_f37_manifest_and_production_scope",
+      "tests/test_f37r1_gate_recertification.py::test_f37r1_production_scope",
+      "tests/test_f38_activity_anchor_protocol.py::test_h38a_production_scope",
+      "tests/test_f38_activity_anchor_prototype.py::test_f38_production_scope",
+      "tests/test_f38r1_frozen_r37c_search_parity.py::test_f38r1_production_scope",
+      "tests/test_f39_generalization_corrective.py::test_f39_production_scope",
+      "tests/test_f39_generalization_manifest.py::test_f39_manifest_freezes_inputs_rules_and_production_scope",
+      "tests/test_f40_material_feature_manifest.py::test_f40_manifest_freezes_sources_gates_and_production_scope",
+      "tests/test_f40_material_feature_utilization.py::test_f40_keeps_production_scope_zero",
+      "tests/test_f41_semantic_prior_manifest.py::test_f41_manifest_is_frozen_and_production_scoped",
+      "tests/test_f48_execution_authority.py::test_f48_driver_uses_h48c_config_and_keeps_production_immutable",
+      "tests/test_f49_protocol.py::test_h49r3a_complete_source_tree_and_native_provenance_are_frozen",
+      "tests/test_h48r3a_corpus_disjointness_protocol.py::test_h48_authority_files_are_unchanged_from_parent",
+      "tests/test_h49b_diagnostic_runner_freeze.py::test_h49b_keeps_production_tree_unchanged_from_h49r4a",
+      "tests/test_h50a_semantic_native_search_architecture.py::test_h50a_audit_is_complete_and_source_hashes_are_current",
+      "tests/test_h50a_semantic_native_search_architecture.py::test_h50a_dependency_ledger_hash_is_reproducible",
+      "tests/test_western_chess_product.py::test_production_builder_is_semantically_identical_to_f24f_definition"
+    ]
+  },
+  "final_regression": {
+    "passed": 1531,
+    "skipped": 3,
+    "failed": 2,
+    "failing_tests": ["tests/test_f24f_western_chess_perft.py::test_f24f_mandatory_perft_one_shot", "tests/test_round5_corrective_r1_harness.py::test_r1_maps_every_initial_legal_action_losslessly"],
+    "residual_reasons": ["F24F Kiwipete depth-1 mismatch (45 vs 48)", "external AlphaSho evaluation_positions.jsonl unavailable"]
+  },
+  "native_build": {"sha256": "43ed107f1a3bcbc2a9aae7277af3cf476c7aa53548d6dffb3a7022c05a1c9dbe", "size_bytes": 354816, "semantic_payload_version": 4},
+  "production_diff_inventory": {
+    "semantic_native_files": ["generic_chess/native/compiler.py", "generic_chess/native/semantic.py", "generic_chess/_native/native_module.c", "generic_chess/_native/native_semantic_rules.c", "generic_chess/_native/native_semantic_rules.h"],
+    "validation_and_evidence_files": ["scripts/historical_validation.py", "tests/fixtures/h50b1_r2_semantic_native_execution.json"],
+    "forbidden_surfaces_changed": false
+  },
+  "F50B2_status": "NOT_STARTED",
+  "promotion": "HOLD"
+}

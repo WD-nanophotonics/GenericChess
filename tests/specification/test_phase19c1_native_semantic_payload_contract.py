@@ -50,7 +50,7 @@ def test_c1_spec02_static_payload_capabilities_are_additive():
     assert 'NATIVE_SCHEMA_VERSION  == "native-0.4.0"' in adr017
     caps = native.native_capabilities()
     assert caps["semantic_ir_v2_compile"] is True
-    assert caps["semantic_payload_version"] == 3
+    assert caps["semantic_payload_version"] == 4
     assert caps["semantic_exact_action_identity"] is True
 
 
@@ -71,7 +71,7 @@ def test_c1_spec04_all_frozen_semantic_corpus_compiles_to_separate_capsules():
         assert compiled.capsule is not None, name
         assert compiled.fingerprint == semantic.ruleset_fingerprint, name
         assert compiled.report.ir_version == 2, name
-        assert compiled.report.semantic_payload_version == 3, name
+        assert compiled.report.semantic_payload_version == 4, name
 
 
 def test_c1_spec05_deterministic_reversible_numeric_id_maps():

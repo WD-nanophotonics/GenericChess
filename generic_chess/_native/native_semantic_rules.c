@@ -1084,7 +1084,8 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (payload_version != 1 && payload_version != 2 && payload_version != 3) {
+    if (payload_version != 1 && payload_version != 2 &&
+        payload_version != 3 && payload_version != GC_SEMANTIC_PAYLOAD_VERSION) {
         PyErr_SetString(PyExc_ValueError,
                         "unsupported semantic_payload_version");
         gc_semantic_rules_free(rules);
@@ -1143,7 +1144,13 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
 
     PyObject *automatic_list = PyDict_GetItemString(
         payload, "automatic_adjudications");
-    if (payload_version >= 3 && automatic_list == NULL) {
+    if (payload_version == 3 && automatic_list != NULL) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic v4 automatic adjudications require payload v4");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (payload_version >= GC_SEMANTIC_PAYLOAD_VERSION && automatic_list == NULL) {
         PyErr_SetString(PyExc_ValueError,
                         "missing semantic automatic adjudications");
         gc_semantic_rules_free(rules);
@@ -2115,32 +2122,39 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         }
     }
 
-    PyObject *declarations = PyDict_GetItemString(payload, "declarations");
-    if (declarations == NULL) {
-        PyErr_SetString(PyExc_ValueError, "missing semantic declarations");
-        gc_semantic_rules_free(rules);
-        return NULL;
-    }
-    uint64_t declaration_count;
-    if (!PyList_Check(declarations) ||
-        !sem_list_len(declarations, GC_SEM_MAX_DECLARATIONS,
-                      &declaration_count)) {
-        PyErr_SetString(PyExc_ValueError, "too many semantic declarations");
-        gc_semantic_rules_free(rules);
-        return NULL;
-    }
-    rules->declaration_count = (uint8_t)declaration_count;
-    if (declaration_count > 0) {
-        rules->declarations = (GCSemDeclaration *)calloc(
-            declaration_count, sizeof(GCSemDeclaration));
-        if (rules->declarations == NULL) { PyErr_NoMemory(); gc_semantic_rules_free(rules); return NULL; }
-        for (uint8_t i = 0; i < rules->declaration_count; i++) {
-            if (!sem_parse_declaration(PyList_GetItem(declarations, i),
-                                       &rules->declarations[i], rules)) {
-                gc_semantic_rules_free(rules);
-                return NULL;
+    if (payload_version >= GC_SEMANTIC_PAYLOAD_VERSION) {
+        PyObject *declarations = PyDict_GetItemString(payload, "declarations");
+        if (declarations == NULL) {
+            PyErr_SetString(PyExc_ValueError, "missing semantic declarations");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        uint64_t declaration_count;
+        if (!PyList_Check(declarations) ||
+            !sem_list_len(declarations, GC_SEM_MAX_DECLARATIONS,
+                          &declaration_count)) {
+            PyErr_SetString(PyExc_ValueError, "too many semantic declarations");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        rules->declaration_count = (uint8_t)declaration_count;
+        if (declaration_count > 0) {
+            rules->declarations = (GCSemDeclaration *)calloc(
+                declaration_count, sizeof(GCSemDeclaration));
+            if (rules->declarations == NULL) { PyErr_NoMemory(); gc_semantic_rules_free(rules); return NULL; }
+            for (uint8_t i = 0; i < rules->declaration_count; i++) {
+                if (!sem_parse_declaration(PyList_GetItem(declarations, i),
+                                           &rules->declarations[i], rules)) {
+                    gc_semantic_rules_free(rules);
+                    return NULL;
+                }
             }
         }
+    } else if (PyDict_GetItemString(payload, "declarations") != NULL) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic v4 declarations require payload v4");
+        gc_semantic_rules_free(rules);
+        return NULL;
     }
 
     return rules;

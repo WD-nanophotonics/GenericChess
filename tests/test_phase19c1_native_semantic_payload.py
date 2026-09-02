@@ -43,7 +43,7 @@ def test_c1_capsule_survives_python_payload_deletion(module):
     gc.collect()
     observed = dict(module.semantic_rules_info(compiled.capsule))
     assert observed["fingerprint"] == compiled.fingerprint
-    assert observed["semantic_payload_version"] == 3
+    assert observed["semantic_payload_version"] == 4
     assert observed["type_ids"] == list(compiled.type_ids)
     assert observed["board_size"] >= 4
 
@@ -96,9 +96,14 @@ def test_c1_v1_payload_roundtrips_without_v2_type_ids(module):
     v1 = copy.deepcopy(payload)
     v1["semantic_payload_version"] = 1
     v1.pop("type_ids")
+    v1.pop("automatic_adjudications")
+    v1.pop("declarations")
     capsule = module.compile_semantic_rules(v1)
     observed = dict(module.semantic_rules_info(capsule))
-    assert observed == v1
+    expected = dict(v1)
+    expected["automatic_adjudications"] = []
+    expected["declarations"] = []
+    assert observed == expected
     assert "type_ids" not in observed
 
 
@@ -130,7 +135,7 @@ def test_c1_single_field_mutations_fail_closed(module):
     n2 = n * n
 
     # top-level version / scalars
-    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("semantic_payload_version", 4), "version 4")
+    _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("semantic_payload_version", 5), "unknown version 5")
     _mutate_rejected(module, p_cannon, lambda p: p.pop("type_ids"), "missing v2 type_ids")
     _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("board_size", 257), "board_size 257")
     _mutate_rejected(module, p_cannon, lambda p: p.__setitem__("board_size", -1), "board_size -1")
