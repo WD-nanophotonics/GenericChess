@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "work_order": "GENERICCHESS-F47-ENDPOINT-DENSITY-COMPOSITE-DIAGNOSIS",
+  "baseline": {
+    "sandbox_sha": "979c7e026442e9dbb479658d0a770daefd15da85",
+    "f44_sha": "1f4fc5f1dc12675e6bafcf1992245441d36104f5",
+    "f45_sha": "b0fc4d2da1a6cb0b818b713305dce84cef3e8e6e",
+    "f46_sha": "979c7e026442e9dbb479658d0a770daefd15da85"
+  },
+  "accepted_evidence": {
+    "f44_endpoint": "docs/architecture/ADR-115-f44-structural-capability.md",
+    "f45_placement": "docs/architecture/ADR-115-f44-structural-capability.md",
+    "f46_density": "docs/architecture/ADR-116-f46-density-profile-feature-prototype.md"
+  },
+  "endpoint_completion": {
+    "candidate_population": "accepted ordinary, deduplicated semantic candidate population",
+    "quiet_relation": "target_empty",
+    "attack_relation": "target_enemy",
+    "attack_only": "target_enemy AND NOT target_empty",
+    "clear": "(1-density) ** path_length",
+    "accepted_attack_only_contribution": "clear * density / 2",
+    "split_attack_control_gap": "clear * (1 - density / 2) for attack-only candidates, zero otherwise",
+    "completed_contribution": {
+      "quiet_capable": "unchanged accepted F42 contribution",
+      "dual_use_quiet_attack": "unchanged accepted F42 contribution",
+      "attack_only": "clear * density / 2 + clear * (1 - density / 2) = clear"
+    },
+    "multiplicity_rule": "same-target quiet-only and quiet+attack candidates receive identical completed geometric mass"
+  },
+  "variants": {
+    "C47-0_CURRENT_ARITHMETIC_CONTROL": "accepted D46-0 arithmetic reduction over m_i",
+    "C47-1_ENDPOINT_ARITHMETIC": "weighted arithmetic reduction over c_i",
+    "C47-2_ENDPOINT_GEOMETRIC": "accepted D46 weighted-geometric reduction over c_i",
+    "C47-3_ENDPOINT_HARMONIC": "accepted D46 weighted-harmonic reduction over c_i",
+    "C47-4_ENDPOINT_LOWER_ENVELOPE": "accepted D46 lower-envelope reduction over c_i"
+  },
+  "density_points": [0.0, 0.125, 0.25, 0.375, 0.5],
+  "density_weights": [0.25, 0.2, 0.2, 0.18, 0.17],
+  "raw_capability": "candidate_reduced_mobility + 0.10 * coverage + 0.05 * reachability + 0.05 * path_efficiency",
+  "semantic_controls": [
+    "same-target quiet-only versus quiet+capture no-double-count",
+    "split attack-only target positive gap",
+    "no-attack zero gap",
+    "dual-use-only zero gap",
+    "Western Pawn nonzero attack-only gap",
+    "Standard-Shogi Pawn endpoint gap derived from compiled semantics",
+    "conditional/guarded patterns excluded"
+  ],
+  "structural_gates": [
+    "deterministic",
+    "finite",
+    "non-negative gap",
+    "candidate deduplication invariant",
+    "owner-mirror invariant",
+    "type rename invariant",
+    "RuleSet rename invariant",
+    "action/pattern ordering invariant",
+    "generated geometry-ID invariant",
+    "conditional-pattern exclusion",
+    "same accepted candidate population",
+    "same path-clear semantics",
+    "no relation-multiplicity double count",
+    "current control exactly reproduces F46/F42",
+    "density reducers exactly reproduce accepted F46 definitions",
+    "no additional scalar parameter"
+  ],
+  "no_drift_gates": [
+    "accepted ordinary candidate population equality",
+    "unchanged coverage",
+    "unchanged reachability",
+    "unchanged path efficiency",
+    "unchanged endpoint definitions except attack-only completion",
+    "unchanged density points",
+    "unchanged density weights",
+    "unchanged normalization",
+    "unchanged hand-value relation",
+    "unchanged graph-global weights",
+    "no conditional capability inclusion",
+    "no production code path"
+  ],
+  "western_bands": {"P": [1.0, 1.0], "N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]},
+  "shogi_gates": {"cosine": 0.95, "spearman": 0.9, "pairwise_ordering": 0.9, "hand_board_ratio": [0.8, 1.0]},
+  "classification_mapping": {
+    "ENDPOINT_CONTROL_CANDIDATE_SUPPORTED": "F48_ENDPOINT_CONTROL_INTEGRATION_PROTOTYPE",
+    "ENDPOINT_DENSITY_COMPOSITE_CANDIDATE_SUPPORTED": "F48_ENDPOINT_DENSITY_INTEGRATION_PROTOTYPE",
+    "MULTIPLE_ENDPOINT_DENSITY_CANDIDATES": "F48_ENDPOINT_DENSITY_DISCRIMINATION",
+    "ENDPOINT_DENSITY_CROSS_RULESET_CONFLICT": "F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "ENDPOINT_DENSITY_COMPOSITE_INSUFFICIENT": "F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "ENDPOINT_DENSITY_DIRECTIONAL_MISMATCH": "F48_MATERIAL_PRIOR_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F48_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "prohibited_operations": [
+    "production evaluator integration",
+    "fitted coefficient",
+    "new density points or weights",
+    "conditional feature",
+    "extra endpoint transform",
+    "F43 geometry combination",
+    "AlphaSho strength benchmark",
+    "search/self-play/TDLeaf/training",
+    "R37",
+    "Native-search migration",
+    "second Rule Compiler",
+    "F48 execution",
+    "master promotion"
+  ],
+  "tie_policy": "all seven selector paths must execute the real selector; no hardcoded reachability booleans",
+  "manifest_sha256": "246f307fbc1fbef834286bc531ad95f7060a0543ba82590781b5d174e2c79f37"
+}
