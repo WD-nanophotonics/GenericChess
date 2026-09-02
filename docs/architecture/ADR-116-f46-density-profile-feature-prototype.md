@@ -77,3 +77,23 @@ structural, semantic, Shogi, and Western residual-reduction predicates but
 fail the frozen Western broad bands. The final classification remains
 `DENSITY_PROFILE_REDUCTION_INSUFFICIENT` with
 `F47_ENDPOINT_DENSITY_COMPOSITE_DIAGNOSIS`.
+
+## Corrective R2 closure
+
+R2 closes the remaining no-drift gate defect without changing the H46R2A
+protocol or any manifest. For every reducer and both rulesets, the audit now
+records per-type equality for the consumed F42 density curve, with an aggregate
+candidate-population gate. It also compares coverage, reachability, and path
+efficiency against the F42 component ledger per type, rather than evaluating
+dictionary truthiness. The endpoint-algebra comparison is exposed as a named
+evidence record.
+
+Normalization is independently recomputed through the accepted F42 helper and
+the frozen median/rounding/anchor/clamp contract, then compared per type with
+the F46 candidate board vector. The no-new-feature/parameter gate is derived
+from exact reducer-set, point, weight, reducer-signature, non-mobility,
+population, and endpoint-algebra predicates. D46-0 now exposes per-type curve,
+reduced-mobility, raw-capability, and normalized-board reproduction for both
+rulesets. The corrected result remains
+`DENSITY_PROFILE_REDUCTION_INSUFFICIENT` →
+`F47_ENDPOINT_DENSITY_COMPOSITE_DIAGNOSIS`; F47 remains unexecuted.

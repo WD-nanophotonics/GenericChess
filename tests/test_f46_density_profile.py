@@ -28,6 +28,7 @@ def test_f46_protocol_and_f44_witness_are_bound(evidence):
     assert evidence["baseline"] == "b0fc4d2da1a6cb0b818b713305dce84cef3e8e6e"
     assert evidence["gates"]["f44_density_witness"] is True
     assert evidence["h46r1a"] == "tests/fixtures/f46r1_density_profile_manifest.json"
+    assert evidence["h46r2a"] == "tests/fixtures/f46r2_density_profile_manifest.json"
 
 
 def test_all_four_fixed_reducers_are_present_and_structural(evidence):
@@ -42,6 +43,12 @@ def test_arithmetic_control_reproduces_current_both_rulesets(evidence):
     control = evidence["reducers"][audit.REDUCERS[0]]
     assert control["arithmetic_reproduces_current"] is True
     assert control["western"]["reduced_mobility"]["P"] == pytest.approx(0.9496484375)
+    for ruleset in ("western", "standard_shogi"):
+        assert control["exact_profile_reproduction"][ruleset]["curve"] is True
+        assert control["exact_profile_reproduction"][ruleset]["reduced_mobility"] is True
+        assert control["exact_profile_reproduction"][ruleset]["raw_capability"] is True
+        assert control["exact_profile_reproduction"][ruleset]["normalized_board_value"] is True
+        assert all(all(per_type.values()) for per_type in (value for value in control["exact_profile_reproduction"][ruleset]["per_type"].values()))
 
 
 def test_reducer_algebra_controls_cover_identity_scale_monotonicity_and_zero():
@@ -114,9 +121,29 @@ def test_qualification_includes_semantic_control_for_every_reducer(evidence):
     assert all(row["qualification"]["semantic_control"] for row in evidence["reducers"].values())
 
 
+def test_no_drift_ledger_is_derived_for_every_reducer_and_ruleset(evidence):
+    for name, row in evidence["reducers"].items():
+        assert row["no_drift"]["same_candidate_population"] is True
+        assert row["no_drift"]["unchanged_non_mobility_gate"] is True
+        assert row["no_drift"]["unchanged_graph_global_terms_gate"] is True
+        assert row["no_drift"]["unchanged_normalization_gate"] is True
+        assert row["no_drift"]["unchanged_endpoint_algebra"]["equal"] is True
+        assert row["no_new_feature_evidence"]["all"] is True
+        for ruleset in ("western", "standard_shogi"):
+            population = row["no_drift"]["candidate_population"][ruleset]
+            assert population["all_types_equal"] is True
+            assert all(population["per_type_curve_equality"].values())
+            assert row["no_drift"]["unchanged_non_mobility"][ruleset]["all_components_equal"] is True
+            assert row["no_drift"]["unchanged_graph_global_terms"][ruleset]["all_terms_equal"] is True
+            normalization = row["no_drift"]["unchanged_normalization"][ruleset]
+            assert normalization["all_values_equal"] is True
+            assert all(normalization["contract_gates"].values())
+
+
 def test_all_six_qualification_paths_are_reachable(evidence):
+    assert evidence["selector_reachability"]["all_reachable"] is True
     assert set(evidence["selector_reachability"]["cases"]) == set(audit.QUALIFICATION_MAPPING)
-    assert all(evidence["selector_reachability"].values())
+    assert all(evidence["selector_reachability"]["cases"].values())
 
 
 def test_f46_has_no_production_change(evidence):

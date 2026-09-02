@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import hashlib
+import inspect
 import itertools
 import json
 import math
 import sys
 from pathlib import Path
+from statistics import median
 from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +24,7 @@ from generic_chess.ai.evaluation.config import EvaluationConfig  # noqa: E402
 
 BASELINE = "b0fc4d2da1a6cb0b818b713305dce84cef3e8e6e"
 MANIFEST = ROOT / "tests" / "fixtures" / "f46r1_density_profile_manifest.json"
+R2_MANIFEST = ROOT / "tests" / "fixtures" / "f46r2_density_profile_manifest.json"
 REDUCERS = (
     "D46-0_WEIGHTED_ARITHMETIC_CONTROL",
     "D46-1_WEIGHTED_GEOMETRIC_MOBILITY",
@@ -44,6 +47,15 @@ def _manifest() -> dict[str, Any]:
     actual = hashlib.sha256(json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     if actual != data["manifest_sha256"] or data["baseline"]["f45_sha"] != BASELINE:
         raise AssertionError("H46R1A manifest mismatch")
+    return data
+
+
+def _h46r2_manifest() -> dict[str, Any]:
+    data = json.loads(R2_MANIFEST.read_text(encoding="utf-8"))
+    unsigned = {key: value for key, value in data.items() if key != "manifest_sha256"}
+    actual = hashlib.sha256(json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    if actual != data["manifest_sha256"] or data["baseline"]["first_pass_f46_sha"] != "6eed502b944cfa1398a160d2c6d0efcf1df0f025":
+        raise AssertionError("H46R2A manifest mismatch")
     return data
 
 
@@ -115,6 +127,154 @@ def _profile(rows: list[dict[str, Any]], reducer: str, config: EvaluationConfig)
         "raw_ratios_by_pawn": {type_id: raw[type_id] / pawn for type_id in raw if type_id != "P" and pawn},
         "normalized_ratios_by_pawn": {type_id: board[type_id] / board["P"] for type_id in board if type_id != "P" and board.get("P")},
         "unchanged_non_mobility": {row["type"]: {key: row["components"][key]["unweighted"] for key in ("coverage", "reachability", "path_efficiency")} for row in rows},
+    }
+
+
+def _normalization_contract(compiled: Any, raw: dict[str, float], config: EvaluationConfig) -> tuple[dict[str, int], dict[str, Any]]:
+    ordinary = [pt.type_id for pt in compiled._legacy_compiled.piece_types if not pt.is_anchor]
+    scale = median(raw[type_id] for type_id in ordinary) if ordinary else 0.0
+    values: dict[str, int] = {}
+    for pt in compiled._legacy_compiled.piece_types:
+        if pt.is_anchor:
+            values[pt.type_id] = 0
+        elif scale <= 0:
+            values[pt.type_id] = 1
+        else:
+            values[pt.type_id] = max(1, min(10_000_000, int(round(config.normal_piece_median_value * raw[pt.type_id] / scale))))
+    return values, {
+        "ordinary_types": ordinary,
+        "median": scale,
+        "normal_piece_median_value": config.normal_piece_median_value,
+        "rounding": "round-half-to-even via Python int(round(...))",
+        "anchor_value": 0,
+        "lower_clamp": 1,
+        "upper_clamp": 10_000_000,
+    }
+
+
+def _same_curve(left: tuple[float, ...], right: list[float] | tuple[float, ...]) -> bool:
+    return len(left) == len(right) and all(math.isclose(a, float(b), rel_tol=1e-12, abs_tol=1e-12) for a, b in zip(left, right))
+
+
+def _no_drift_evidence(
+    f42_result: dict[str, Any],
+    profiles: dict[str, dict[str, dict[str, Any]]],
+    compiled_by_name: dict[str, Any],
+    config: EvaluationConfig,
+    endpoint_algebra: dict[str, Any],
+) -> dict[str, Any]:
+    accepted_rows = {
+        "western": {row["type"]: row for row in f42_result["component_ledger"]["western_chess"]["rows"]},
+        "standard_shogi": {row["type"]: row for row in f42_result["component_ledger"]["standard_shogi"]["rows"]},
+    }
+    compiled_names = {"western": "western_chess", "standard_shogi": "standard_shogi"}
+    per_reducer: dict[str, Any] = {}
+    for reducer, rulesets in profiles.items():
+        population: dict[str, Any] = {}
+        non_mobility: dict[str, Any] = {}
+        graph_global: dict[str, Any] = {}
+        normalization: dict[str, Any] = {}
+        for short_name, profile in rulesets.items():
+            rows = accepted_rows[short_name]
+            candidate_types = sorted(profile["curves"])
+            accepted_types = sorted(rows)
+            curve_equality = {
+                type_id: type_id in profile["curves"] and _same_curve(profile["curves"][type_id], rows[type_id]["density_mobility_curve"])
+                for type_id in sorted(set(candidate_types) | set(accepted_types))
+            }
+            population[short_name] = {
+                "candidate_types": candidate_types,
+                "accepted_types": accepted_types,
+                "per_type_curve_equality": curve_equality,
+                "all_types_equal": candidate_types == accepted_types and all(curve_equality.values()),
+            }
+
+            component_names = ("coverage", "reachability", "path_efficiency")
+            component_equality = {
+                type_id: {
+                    component: type_id in profile["unchanged_non_mobility"] and math.isclose(
+                        profile["unchanged_non_mobility"][type_id][component],
+                        rows[type_id]["components"][component]["unweighted"],
+                        rel_tol=1e-12,
+                        abs_tol=1e-12,
+                    )
+                    for component in component_names
+                }
+                for type_id in sorted(set(profile["unchanged_non_mobility"]) | set(rows))
+            }
+            non_mobility[short_name] = {
+                "per_type": component_equality,
+                "all_components_equal": bool(component_equality) and all(all(values.values()) for values in component_equality.values()),
+            }
+            graph_global[short_name] = {
+                "per_type": {
+                    type_id: {component: values[component] for component in component_names}
+                    for type_id, values in component_equality.items()
+                },
+                "all_terms_equal": non_mobility[short_name]["all_components_equal"],
+            }
+
+            compiled = compiled_by_name[compiled_names[short_name]]
+            independently_normalized, contract = _normalization_contract(compiled, profile["raw_capability"], config)
+            accepted_helper_normalized = f42._normalize(compiled, profile["raw_capability"])
+            normalized_equality = {
+                type_id: profile["normalized_board_value"].get(type_id) == independently_normalized.get(type_id)
+                for type_id in sorted(set(profile["normalized_board_value"]) | set(independently_normalized))
+            }
+            ordinary = [type_id for type_id in accepted_types if not rows[type_id]["is_anchor"]]
+            anchors = [type_id for type_id in accepted_types if rows[type_id]["is_anchor"]]
+            normalization[short_name] = {
+                "contract": contract,
+                "independent_normalized_board_value": independently_normalized,
+                "accepted_f42_helper_normalized_board_value": accepted_helper_normalized,
+                "per_type_equality": normalized_equality,
+                "contract_gates": {
+                    "same_non_anchor_population": set(contract["ordinary_types"]) == set(ordinary),
+                    "same_median_operation": math.isclose(contract["median"], median(profile["raw_capability"][type_id] for type_id in ordinary), rel_tol=1e-12, abs_tol=1e-12),
+                    "normal_piece_median_value": contract["normal_piece_median_value"] == config.normal_piece_median_value,
+                    "same_rounding": independently_normalized == accepted_helper_normalized,
+                    "same_anchor_handling": all(independently_normalized[type_id] == 0 for type_id in anchors),
+                    "same_lower_upper_clamp": all(1 <= independently_normalized[type_id] <= 10_000_000 for type_id in ordinary),
+                },
+                "all_values_equal": independently_normalized == accepted_helper_normalized and bool(normalized_equality) and all(normalized_equality.values()),
+            }
+        per_reducer[reducer] = {
+            "candidate_population": population,
+            "same_candidate_population": all(value["all_types_equal"] for value in population.values()),
+            "unchanged_non_mobility": non_mobility,
+            "unchanged_non_mobility_gate": all(value["all_components_equal"] for value in non_mobility.values()),
+            "unchanged_graph_global_terms": graph_global,
+            "unchanged_graph_global_terms_gate": all(value["all_terms_equal"] for value in graph_global.values()),
+            "unchanged_normalization": normalization,
+            "unchanged_normalization_gate": all(value["all_values_equal"] and all(value["contract_gates"].values()) for value in normalization.values()),
+        }
+    endpoint_expected = {"empty_only": "1-density/2", "enemy_only": "density/2", "empty_plus_enemy": "1-density/2; quiet relation takes precedence in current candidate mass"}
+    endpoint = {"expected": endpoint_expected, "observed": endpoint_algebra, "equal": endpoint_algebra == endpoint_expected}
+    for value in per_reducer.values():
+        value["unchanged_endpoint_algebra"] = endpoint
+    return {"per_reducer": per_reducer, "endpoint_algebra": endpoint}
+
+
+def _no_new_feature_evidence(
+    reducer: str,
+    r2_manifest: dict[str, Any],
+    config: EvaluationConfig,
+    no_drift: dict[str, Any],
+) -> dict[str, Any]:
+    reducer_set_exact = tuple(REDUCERS) == tuple(r2_manifest["reducer_definitions"])
+    points_exact = list(config.density_points) == r2_manifest["density_points"]
+    weights_exact = list(config.density_weights) == r2_manifest["density_weights"]
+    reducer_parameters = tuple(inspect.signature(_reduce).parameters)
+    no_extra_reducer_parameter = reducer_parameters == ("name", "curve", "weights")
+    return {
+        "reducer_set_exact": reducer_set_exact,
+        "density_points_exact": points_exact,
+        "density_weights_exact": weights_exact,
+        "no_extra_reducer_parameter": no_extra_reducer_parameter,
+        "non_mobility_components_unchanged": no_drift["unchanged_non_mobility_gate"],
+        "candidate_population_unchanged": no_drift["same_candidate_population"],
+        "endpoint_algebra_unchanged": no_drift["unchanged_endpoint_algebra"]["equal"],
+        "all": reducer_set_exact and points_exact and weights_exact and no_extra_reducer_parameter and no_drift["unchanged_non_mobility_gate"] and no_drift["same_candidate_population"] and no_drift["unchanged_endpoint_algebra"]["equal"],
     }
 
 
@@ -199,7 +359,8 @@ def _controls(config: EvaluationConfig, f44_result: dict[str, Any]) -> dict[str,
 def _select(rows: dict[str, Any]) -> dict[str, Any]:
     qualified = [name for name in REDUCERS[1:] if rows[name]["qualification"]["all"]]
     cross = [name for name in REDUCERS[1:] if rows[name]["qualification"]["western_bands"] and not rows[name]["qualification"]["shogi_gates"]]
-    coherent = [name for name in REDUCERS[1:] if rows[name]["qualification"]["structural"] and rows[name]["qualification"]["semantic_control"] and rows[name]["qualification"]["shogi_gates"] and rows[name]["qualification"]["reduces_all_western_residuals"]]
+    coherent_keys = ("structural", "semantic_control", "shogi_gates", "reduces_all_western_residuals", "same_candidate_population", "unchanged_non_mobility", "unchanged_normalization", "unchanged_endpoint_algebra", "unchanged_graph_global_terms", "no_new_feature_or_parameter")
+    coherent = [name for name in REDUCERS[1:] if all(rows[name]["qualification"].get(key, False) for key in coherent_keys)]
     if len(qualified) == 1:
         classification = "DENSITY_PROFILE_CANDIDATE_SUPPORTED"
     elif len(qualified) > 1:
@@ -217,21 +378,21 @@ def _select(rows: dict[str, Any]) -> dict[str, Any]:
 
 def _reachability() -> dict[str, Any]:
     def row(**values: Any) -> dict[str, Any]:
-        qualification = {"structural": False, "semantic_control": False, "western_bands": False, "shogi_gates": False, "reduces_all_western_residuals": False, "all": False}
+        qualification = {"structural": False, "semantic_control": False, "western_bands": False, "shogi_gates": False, "reduces_all_western_residuals": False, "same_candidate_population": False, "unchanged_non_mobility": False, "unchanged_normalization": False, "unchanged_endpoint_algebra": False, "unchanged_graph_global_terms": False, "no_new_feature_or_parameter": False, "all": False}
         qualification.update(values)
         return {"qualification": qualification}
     cases = {}
     for classification in QUALIFICATION_MAPPING:
         rows = {name: row() for name in REDUCERS[1:]}
         if classification == "DENSITY_PROFILE_CANDIDATE_SUPPORTED":
-            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=True, reduces_all_western_residuals=True, all=True)
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=True, reduces_all_western_residuals=True, same_candidate_population=True, unchanged_non_mobility=True, unchanged_normalization=True, unchanged_endpoint_algebra=True, unchanged_graph_global_terms=True, no_new_feature_or_parameter=True, all=True)
         elif classification == "MULTIPLE_DENSITY_PROFILE_CANDIDATES":
             for name in REDUCERS[1:3]:
-                rows[name] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=True, reduces_all_western_residuals=True, all=True)
+                rows[name] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=True, reduces_all_western_residuals=True, same_candidate_population=True, unchanged_non_mobility=True, unchanged_normalization=True, unchanged_endpoint_algebra=True, unchanged_graph_global_terms=True, no_new_feature_or_parameter=True, all=True)
         elif classification == "DENSITY_PROFILE_CROSS_RULESET_CONFLICT":
-            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=False, reduces_all_western_residuals=True)
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=False, reduces_all_western_residuals=True, same_candidate_population=True, unchanged_non_mobility=True, unchanged_normalization=True, unchanged_endpoint_algebra=True, unchanged_graph_global_terms=True, no_new_feature_or_parameter=True)
         elif classification == "DENSITY_PROFILE_REDUCTION_INSUFFICIENT":
-            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=False, shogi_gates=True, reduces_all_western_residuals=True)
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=False, shogi_gates=True, reduces_all_western_residuals=True, same_candidate_population=True, unchanged_non_mobility=True, unchanged_normalization=True, unchanged_endpoint_algebra=True, unchanged_graph_global_terms=True, no_new_feature_or_parameter=True)
         elif classification == "DENSITY_PROFILE_REDUCTION_MISMATCH":
             rows[REDUCERS[1]] = row(structural=True, semantic_control=False)
         cases[classification] = _select(rows)["classification"] == classification
@@ -240,40 +401,123 @@ def _reachability() -> dict[str, Any]:
 
 def audit() -> dict[str, Any]:
     manifest = _manifest()
+    r2_manifest = _h46r2_manifest()
     config = EvaluationConfig()
     f42_result = f42.audit()
     f44_result = f44._audit()
+    compiled_by_name = {
+        "western_chess": f42.compile_semantic_ruleset(f42.build_western_chess_ruleset()),
+        "standard_shogi": f42.compile_semantic_ruleset(f42.build_standard_shogi_ruleset()),
+    }
     western_rows = f42_result["component_ledger"]["western_chess"]["rows"]
     shogi_rows = f42_result["component_ledger"]["standard_shogi"]["rows"]
     current_shogi_board = f42_result["reproduction"]["standard_shogi"]["normalized_board"]
     controls = _controls(config, f44_result)
-    reducers = {}
+    profiles: dict[str, dict[str, dict[str, Any]]] = {}
+    reducers: dict[str, Any] = {}
     for reducer in REDUCERS:
         western = _profile(western_rows, reducer, config)
         shogi = _profile(shogi_rows, reducer, config)
+        profiles[reducer] = {"western": western, "standard_shogi": shogi}
+    no_drift = _no_drift_evidence(
+        f42_result,
+        profiles,
+        compiled_by_name,
+        config,
+        f44_result["endpoint_algebra"],
+    )
+    accepted_western = f42_result["reproduction"]["western"]["raw"]
+    accepted_western_board = f42_result["reproduction"]["western"]["normalized_board"]
+    accepted_shogi_raw = f42_result["reproduction"]["standard_shogi"]["raw"]
+    accepted_shogi_board = f42_result["reproduction"]["standard_shogi"]["normalized_board"]
+    bands = {"N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]}
+    base_ratios: dict[str, float] | None = None
+    for reducer in REDUCERS:
+        western = profiles[reducer]["western"]
+        shogi = profiles[reducer]["standard_shogi"]
         shogi_gate = _shogi_metrics(shogi, current_shogi_board, shogi_rows, config)
-        accepted_western = f42_result["reproduction"]["western"]["raw"]
-        accepted_western_board = f42_result["reproduction"]["western"]["normalized_board"]
-        accepted_shogi_raw = f42_result["reproduction"]["standard_shogi"]["raw"]
-        accepted_shogi_board = f42_result["reproduction"]["standard_shogi"]["normalized_board"]
-        exact_profile = {"western": {"reduced_mobility": all(math.isclose(western["reduced_mobility"][row["type"]], row["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12) for row in western_rows), "raw_capability": all(math.isclose(western["raw_capability"][type_id], accepted_western[type_id], rel_tol=1e-12, abs_tol=1e-12) for type_id in accepted_western), "normalized_board_value": western["normalized_board_value"] == accepted_western_board}, "standard_shogi": {"reduced_mobility": all(math.isclose(shogi["reduced_mobility"][row["type"]], row["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12) for row in shogi_rows), "raw_capability": all(math.isclose(shogi["raw_capability"][type_id], accepted_shogi_raw[type_id], rel_tol=1e-12, abs_tol=1e-12) for type_id in accepted_shogi_raw), "normalized_board_value": shogi["normalized_board_value"] == accepted_shogi_board}}
-        arithmetic_reproduces = all(exact_profile[ruleset][field] for ruleset in exact_profile for field in exact_profile[ruleset]) if reducer == REDUCERS[0] else False
+        exact_profile: dict[str, Any] = {}
+        for ruleset, profile, rows, accepted_raw, accepted_board in (
+            ("western", western, western_rows, accepted_western, accepted_western_board),
+            ("standard_shogi", shogi, shogi_rows, accepted_shogi_raw, accepted_shogi_board),
+        ):
+            accepted_curves = {row["type"]: row["density_mobility_curve"] for row in rows}
+            per_type = {
+                type_id: {
+                    "curve": _same_curve(profile["curves"].get(type_id, ()), accepted_curves[type_id]) if type_id in profile["curves"] else False,
+                    "reduced_mobility": type_id in profile["reduced_mobility"] and math.isclose(profile["reduced_mobility"][type_id], next(row for row in rows if row["type"] == type_id)["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12),
+                    "raw_capability": type_id in profile["raw_capability"] and type_id in accepted_raw and math.isclose(profile["raw_capability"][type_id], accepted_raw[type_id], rel_tol=1e-12, abs_tol=1e-12),
+                    "normalized_board_value": profile["normalized_board_value"].get(type_id) == accepted_board.get(type_id),
+                }
+                for type_id in sorted(set(profile["curves"]) | set(accepted_curves) | set(accepted_raw) | set(accepted_board))
+            }
+            exact_profile[ruleset] = {
+                "per_type": per_type,
+                "curve": all(value["curve"] for value in per_type.values()),
+                "reduced_mobility": all(value["reduced_mobility"] for value in per_type.values()),
+                "raw_capability": all(value["raw_capability"] for value in per_type.values()),
+                "normalized_board_value": all(value["normalized_board_value"] for value in per_type.values()),
+            }
+        arithmetic_reproduces = reducer == REDUCERS[0] and all(
+            exact_profile[ruleset][field]
+            for ruleset in exact_profile
+            for field in ("curve", "reduced_mobility", "raw_capability", "normalized_board_value")
+        )
         ratios = western["raw_ratios_by_pawn"]
-        bands = {"N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]}
         western_bands = all(bands[key][0] <= ratios.get(key, -1.0) <= bands[key][1] for key in bands)
-        base_ratios = None
-        structural = all(_algebra_gates(reducer, config.density_points, config.density_weights).values())
+        algebra_gates = _algebra_gates(reducer, config.density_points, config.density_weights)
+        structural = all(algebra_gates.values())
         semantic_control = controls["reducers"][reducer]["f44_short_long"]["long_minus_short"] < 0.0 and controls["reducers"][reducer]["constant_curve"]["result"] == 2.0 and (controls["reducers"][reducer]["matched_arithmetic_shape"]["result_a"] == controls["reducers"][reducer]["matched_arithmetic_shape"]["result_b"] if reducer == REDUCERS[0] else controls["reducers"][reducer]["matched_arithmetic_shape"]["result_a"] != controls["reducers"][reducer]["matched_arithmetic_shape"]["result_b"])
-        reducers[reducer] = {"western": western, "standard_shogi": shogi, "shogi_gates": shogi_gate, "algebra_gates": _algebra_gates(reducer, config.density_points, config.density_weights), "arithmetic_reproduces_current": arithmetic_reproduces, "exact_profile_reproduction": exact_profile}
-        reducers[reducer]["qualification"] = {"structural": structural, "semantic_control": semantic_control, "western_bands": western_bands, "shogi_gates": shogi_gate["pass"], "reduces_all_western_residuals": True, "same_candidate_population": True, "unchanged_non_mobility": all(western["unchanged_non_mobility"].values()), "unchanged_normalization": all(value >= 0 for value in western["normalized_board_value"].values()), "unchanged_endpoint_algebra": f44_result["endpoint_algebra"] == {"empty_only": "1-density/2", "enemy_only": "density/2", "empty_plus_enemy": "1-density/2; quiet relation takes precedence in current candidate mass"}, "unchanged_graph_global_terms": True, "no_new_feature_or_parameter": True, "all": False}
-    base_ratios = reducers[REDUCERS[0]]["western"]["raw_ratios_by_pawn"]
-    for reducer in REDUCERS[1:]:
-        reducers[reducer]["qualification"]["reduces_all_western_residuals"] = all(reducers[reducer]["western"]["raw_ratios_by_pawn"].get(key, 0.0) < base_ratios.get(key, 0.0) for key in ("N", "B", "R", "Q"))
-        reducers[reducer]["qualification"]["reduces_all_western_residuals"] = all(reducers[reducer]["western"]["raw_ratios_by_pawn"].get(key, 0.0) < base_ratios.get(key, 0.0) for key in ("N", "B", "R", "Q"))
-        reducers[reducer]["qualification"]["all"] = reducer != REDUCERS[0] and all(reducers[reducer]["qualification"][key] for key in ("structural", "semantic_control", "western_bands", "shogi_gates", "reduces_all_western_residuals", "same_candidate_population", "unchanged_non_mobility", "unchanged_normalization", "unchanged_endpoint_algebra", "unchanged_graph_global_terms", "no_new_feature_or_parameter"))
+        drift = no_drift["per_reducer"][reducer]
+        no_new_feature = _no_new_feature_evidence(reducer, r2_manifest, config, drift)
+        if base_ratios is None:
+            base_ratios = ratios
+        reduces_all = reducer != REDUCERS[0] and all(ratios.get(key, 0.0) < base_ratios.get(key, 0.0) for key in ("N", "B", "R", "Q"))
+        qualification = {
+            "structural": structural,
+            "semantic_control": semantic_control,
+            "western_bands": western_bands,
+            "shogi_gates": shogi_gate["pass"],
+            "reduces_all_western_residuals": reduces_all,
+            "same_candidate_population": drift["same_candidate_population"],
+            "unchanged_non_mobility": drift["unchanged_non_mobility_gate"],
+            "unchanged_normalization": drift["unchanged_normalization_gate"],
+            "unchanged_endpoint_algebra": drift["unchanged_endpoint_algebra"]["equal"],
+            "unchanged_graph_global_terms": drift["unchanged_graph_global_terms_gate"],
+            "no_new_feature_or_parameter": no_new_feature["all"],
+            "all": False,
+        }
+        qualification["all"] = reducer != REDUCERS[0] and all(
+            qualification[key]
+            for key in (
+                "structural",
+                "semantic_control",
+                "western_bands",
+                "shogi_gates",
+                "reduces_all_western_residuals",
+                "same_candidate_population",
+                "unchanged_non_mobility",
+                "unchanged_normalization",
+                "unchanged_endpoint_algebra",
+                "unchanged_graph_global_terms",
+                "no_new_feature_or_parameter",
+            )
+        )
+        reducers[reducer] = {
+            "western": western,
+            "standard_shogi": shogi,
+            "shogi_gates": shogi_gate,
+            "algebra_gates": algebra_gates,
+            "arithmetic_reproduces_current": arithmetic_reproduces,
+            "exact_profile_reproduction": exact_profile,
+            "no_drift": drift,
+            "no_new_feature_evidence": no_new_feature,
+            "qualification": qualification,
+        }
     selection = _select(reducers)
-    gates = {"manifest": True, "f44_density_witness": f44_result["signals"]["S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY"]["independence"]["pass"], "all_reducers_present": len(reducers) == 4, "control_present": controls["arithmetic_equal"] and controls["arithmetic_control_curves_differ"], "selector_reachability": all(_reachability().values()), "production_unchanged": True}
-    result = {"schema_version": 1, "status": "PASS" if all(gates.values()) else "FAIL", "kind": "F46_DENSITY_PROFILE_FEATURE_PROTOTYPE", "baseline": BASELINE, "production_changed": False, "h46r1a": str(MANIFEST.relative_to(ROOT)).replace("\\", "/"), "controls": controls, "reducers": reducers, "selection": selection, "selector_reachability": _reachability(), "gates": gates}
+    selector_reachability = _reachability()
+    gates = {"manifest": True, "h46r2a_manifest": True, "f44_density_witness": f44_result["signals"]["S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY"]["independence"]["pass"], "all_reducers_present": len(reducers) == 4, "control_present": controls["arithmetic_equal"] and controls["arithmetic_control_curves_differ"], "selector_reachability": selector_reachability["all_reachable"], "production_unchanged": True}
+    result = {"schema_version": 1, "status": "PASS" if all(gates.values()) else "FAIL", "kind": "F46_DENSITY_PROFILE_FEATURE_PROTOTYPE", "baseline": BASELINE, "production_changed": False, "h46r1a": str(MANIFEST.relative_to(ROOT)).replace("\\", "/"), "h46r2a": str(R2_MANIFEST.relative_to(ROOT)).replace("\\", "/"), "controls": controls, "reducers": reducers, "no_drift": no_drift, "selection": selection, "selector_reachability": selector_reachability, "gates": gates}
     _write(result)
     return result
 
