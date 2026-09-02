@@ -22,10 +22,13 @@ MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49a_learning_signal_architecture
 H49R1A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r1a_executable_diagnostic_protocol_manifest.json"
 H49R2A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r2a_nonmaterial_execution_protocol_manifest.json"
 H49R3A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r3a_execution_dependency_and_ruleset_binding_manifest.json"
+H49R4A_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49r4a_nonmaterial_availability_and_selector_closure_manifest.json"
 F48_BASELINE_SHA = "4bd25d405af0890668c2940eefc8b68faae1b594"
 H49A_MANIFEST_SHA = "e294a27ed1a4ea4c03578321b1beeb61ba233aafe19fcad98e968a016ed14f90"
 H49R1A_MANIFEST_SHA = "57d2d189712138efa352b8e93edae83cb4938d74c5140717976aecf722a31215"
 H49R2A_MANIFEST_SHA = "9b6b98997b7656f845283b20297d325c83c8451c6da55255e3f481e638e9beaf"
+H49R3A_SHA = "f3146f7e31f07b15e39fcd50f0f18138c3c28024"
+H49R3A_MANIFEST_SHA = "6279a3e12bd9e397fea02e210c0f936ed5afe657888f125829ddc111a455a8ab"
 RULESET_FINGERPRINTS = {
     "A_CANONICAL_WESTERN_CHESS": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
     "B_CANONICAL_STANDARD_SHOGI": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
@@ -183,6 +186,23 @@ def _signal(corpus: dict[str, Any], key: str) -> bool:
     return _valid_cell(corpus, key) and corpus[key].get("mean_flip_rate", -1.0) >= 0.05
 
 
+NONMATERIAL_CELL_STATUSES = {
+    "VALID",
+    "NOT_RUN_NO_STABLE_TEACHER",
+    "UNMEASURABLE_IN_SELECTED_SEARCH_PATH",
+    "CELL_INVALID_SEARCH_FAILURE",
+}
+
+
+def _nonmaterial_valid(corpus: dict[str, Any], stable: bool) -> bool:
+    control = corpus.get("non_material_control", {})
+    return stable and control.get("status") == "VALID"
+
+
+def _nonmaterial_signal(corpus: dict[str, Any], stable: bool) -> bool:
+    return _nonmaterial_valid(corpus, stable) and corpus["non_material_control"].get("non_material_signal") is True
+
+
 def select_f49_classification(observations: dict[str, dict[str, dict[str, Any]]]) -> tuple[str, str, dict[str, bool]]:
     """Apply the frozen H49R1A selector to structured observations."""
     witnesses = {name: [] for name in ("A", "B", "C", "D", "E")}
@@ -199,10 +219,11 @@ def select_f49_classification(observations: dict[str, dict[str, dict[str, Any]]]
         if not stable:
             witnesses["C"].append(ruleset_id)
         material = any(name in stable and _signal(corpora[name], "L49_1_2000") for name in corpora)
-        nonmaterial = any(name in stable and corpora[name].get("non_material_signal", False) for name in corpora)
+        nonmaterial_valid = any(_nonmaterial_valid(corpora[name], name in stable) for name in corpora)
+        nonmaterial = any(_nonmaterial_signal(corpora[name], name in stable) for name in corpora)
         if stable and not material and nonmaterial:
             witnesses["D"].append(ruleset_id)
-        if stable and not material and not nonmaterial:
+        if stable and not material and nonmaterial_valid and not nonmaterial:
             witnesses["E"].append(ruleset_id)
     if len(witnesses["A"]) >= 2:
         classification = "LEARNER_ALIGNED_SIGNAL_SUPPORTED"
@@ -525,6 +546,97 @@ def load_h49r3a_manifest() -> dict[str, Any]:
     return manifest
 
 
+def validate_h49r4a_python_legality_bindings() -> dict[str, Any]:
+    """Freeze one explicit Python-authority legality route for all RuleSets."""
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.rules.execution import ExecutableSemanticRuleset
+
+    executions = build_h49r3a_primary_execution()
+    result = {}
+    for ruleset_id, entry in executions.items():
+        executable = entry["semantic_execution"]
+        if not isinstance(executable, ExecutableSemanticRuleset):
+            raise RuntimeError(f"NONMATERIAL_CONTROL_EXECUTION_OBJECT_MISMATCH: {ruleset_id}")
+        player = AlphaBetaPlayer(
+            executable,
+            tt_max_entries=250000,
+            use_disk_cache=False,
+            use_tt=True,
+            use_ordering=True,
+            use_native_semantic_legality=False,
+        )
+        if player.compiled is not executable or player.native_legality_provider is not None:
+            raise RuntimeError(f"NONMATERIAL_CONTROL_PYTHON_LEGALITY_BINDING_MISMATCH: {ruleset_id}")
+        if player.compiled.ruleset_fingerprint != RULESET_FINGERPRINTS[ruleset_id]:
+            raise RuntimeError(f"RULESET_FINGERPRINT_MISMATCH: {ruleset_id}")
+        result[ruleset_id] = {
+            "player_compiled_type": type(player.compiled).__name__,
+            "ruleset_fingerprint": player.compiled.ruleset_fingerprint,
+            "native_legality_provider": None,
+            "legality_route": "PYTHON_AUTHORITY",
+        }
+    return result
+
+
+def validate_h49r4a_manifest(manifest: dict[str, Any]) -> None:
+    if _manifest_sha(manifest) != manifest.get("manifest_sha256"):
+        raise RuntimeError("H49R4A manifest hash mismatch")
+    if manifest.get("checkpoint_name") != "H49R4A":
+        raise RuntimeError("H49R4A checkpoint drift")
+    if manifest.get("work_order_id") != "GENERICCHESS-F49-CORRECTIVE-R4-NONMATERIAL-AVAILABILITY-AND-SELECTOR-CLOSURE":
+        raise RuntimeError("H49R4A work order drift")
+    if manifest.get("parent_h49r3a_sha") != H49R3A_SHA or manifest.get("h49r3a_manifest_sha256") != H49R3A_MANIFEST_SHA:
+        raise RuntimeError("H49R4A parent binding drift")
+    if manifest.get("protocol_status") != "PRE_REGISTERED_NO_OBSERVED_RESULTS" or manifest.get("observed_results_present") or manifest.get("measurements_invoked") or manifest.get("learning_invoked"):
+        raise RuntimeError("H49R4A contains observed or executed work")
+    if manifest.get("production_diff_required") != "ZERO" or manifest.get("master_promotion") is not False:
+        raise RuntimeError("H49R4A production scope drift")
+    if manifest.get("h49r3a_erratum") != {
+        "historical_manifest_field": "work_order_id",
+        "historical_value": "GENERICCHESS-F49-CORRECTIVE-R2-METRIC-SCHEMA-AND-NONMATERIAL-EXECUTION-CLOSURE",
+        "correct_value": "GENERICCHESS-F49-CORRECTIVE-R3-EXECUTION-DEPENDENCY-AND-RULESET-BINDING-CLOSURE",
+        "immutable_commit": H49R3A_SHA,
+        "immutable_manifest_sha256": H49R3A_MANIFEST_SHA,
+    }:
+        raise RuntimeError("H49R4A H49R3A erratum drift")
+    legality = manifest.get("python_full_evaluator_nonmaterial_control", {})
+    if legality.get("label") != "PYTHON_FULL_EVALUATOR_NONMATERIAL_CONTROL" or legality.get("use_native_semantic_legality") is not False or legality.get("native_legality_provider") is not None or legality.get("route") != "PYTHON_AUTHORITY":
+        raise RuntimeError("H49R4A non-material legality route drift")
+    if legality.get("player_entry_point") != "generic_chess.ai.alphabeta.player.AlphaBetaPlayer.choose_action" or legality.get("search_entry_point") != "generic_chess.ai.alphabeta.search.run_root_search" or legality.get("evaluator_entry_point") != "generic_chess.ai.evaluation.evaluator.Evaluator.evaluate":
+        raise RuntimeError("H49R4A Python evaluator path drift")
+    if legality.get("settings") != {
+        "tt_max_entries": 250000,
+        "use_disk_cache": False,
+        "use_tt": True,
+        "use_ordering": True,
+        "max_nodes": 2000,
+        "max_depth": None,
+        "max_time_seconds": None,
+        "qsearch_depth": 4,
+        "qsearch_hard_depth": 8,
+        "qsearch_nodes": None,
+        "deterministic": True,
+        "fresh_player_evaluator_profile_cache_tt_session_context_per_evaluator_position": True,
+    }:
+        raise RuntimeError("H49R4A Python search settings drift")
+    statuses = manifest.get("non_material_cell_status", {})
+    if set(statuses.get("allowed", ())) != NONMATERIAL_CELL_STATUSES or statuses.get("non_valid_signal") is not None or statuses.get("valid_requires") != ["every coefficient family", "factors 0.75 and 1.25", "per-factor flip rates", "failed searches", "family_mean_flip", "non_material_signal"]:
+        raise RuntimeError("H49R4A non-material cell schema drift")
+    selector = manifest.get("selector", {})
+    if selector.get("unavailable_is_negative_evidence") is not False or selector.get("nonmaterial_valid_definition") != "stable AND non_material_control.status == VALID" or selector.get("nonmaterial_signal_definition") != "nonmaterial_valid AND non_material_control.non_material_signal == true":
+        raise RuntimeError("H49R4A selector validity drift")
+    if set(selector.get("mapping", {})) != {"LEARNER_ALIGNED_SIGNAL_SUPPORTED", "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING", "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING", "MATERIAL_ONLY_REPRESENTATION_LIMITING", "EVALUATION_SIGNAL_BROADLY_WEAK", "MIXED_OR_UNRESOLVED"}:
+        raise RuntimeError("H49R4A selector mapping incomplete")
+
+
+def load_h49r4a_manifest() -> dict[str, Any]:
+    manifest = json.loads(H49R4A_MANIFEST_PATH.read_text(encoding="utf-8"))
+    validate_h49r4a_manifest(manifest)
+    load_h49r3a_manifest()
+    verify_nonmaterial_liveness()
+    return manifest
+
+
 def verify_nonmaterial_liveness() -> dict[str, Any]:
     """Prove the selected Python path reads each non-material coefficient."""
     sources = {
@@ -543,6 +655,6 @@ def verify_nonmaterial_liveness() -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    value = load_h49r3a_manifest()
-    validate_h49r3a_execution_bindings()
+    value = load_h49r4a_manifest()
+    validate_h49r4a_python_legality_bindings()
     print(json.dumps({"status": "PASS", "kind": value["kind"], "next_boundary": value["next_authorized_boundary"]}))

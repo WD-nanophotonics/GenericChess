@@ -31,6 +31,9 @@ from scripts.f49_protocol import (
     source_tree_ledger,
     validate_h49r3a_execution_bindings,
     validate_h49r3a_manifest,
+    load_h49r4a_manifest,
+    validate_h49r4a_manifest,
+    validate_h49r4a_python_legality_bindings,
 )
 
 
@@ -87,7 +90,7 @@ def test_h49r1a_executable_helpers_are_mechanical():
 def _observation(stable=True, control_learner=0.0, structural=0.0, nonmaterial=False):
     teacher = {"status": "VALID", "failed_searches": 0, "exact_best_move_agreement": 0.9} if stable else {"status": "UNAVAILABLE", "failed_searches": 0, "exact_best_move_agreement": 0.0}
     def corpus(value, nonmaterial_value=False):
-        return {"teacher_40_80": teacher, "L49_0_2000": {"status": "VALID", "failed_searches": 0, "mean_flip_rate": 0.0}, "L49_1_2000": {"status": "VALID", "failed_searches": 0, "mean_flip_rate": value}, "non_material_signal": nonmaterial_value}
+        return {"teacher_40_80": teacher, "L49_0_2000": {"status": "VALID", "failed_searches": 0, "mean_flip_rate": 0.0}, "L49_1_2000": {"status": "VALID", "failed_searches": 0, "mean_flip_rate": value}, "non_material_control": {"status": "VALID", "non_material_signal": nonmaterial_value}}
     return {"F48_CONTROL": corpus(control_learner, nonmaterial), "S49-M": corpus(structural, nonmaterial), "S49-E": corpus(structural, nonmaterial)}
 
 
@@ -226,3 +229,62 @@ def test_h49r3a_rejects_tampered_parent_or_provenance():
     tampered["manifest_sha256"] = __import__("scripts.f49_protocol", fromlist=["_manifest_sha"])._manifest_sha(tampered)
     with pytest.raises(RuntimeError, match="parent binding"):
         validate_h49r3a_manifest(tampered)
+
+
+def test_h49r4a_freezes_python_authority_route_and_h49r3a_erratum():
+    manifest = load_h49r4a_manifest()
+    assert manifest["work_order_id"] == "GENERICCHESS-F49-CORRECTIVE-R4-NONMATERIAL-AVAILABILITY-AND-SELECTOR-CLOSURE"
+    assert manifest["parent_h49r3a_sha"] == "f3146f7e31f07b15e39fcd50f0f18138c3c28024"
+    assert manifest["h49r3a_manifest_sha256"] == "6279a3e12bd9e397fea02e210c0f936ed5afe657888f125829ddc111a455a8ab"
+    assert manifest["h49r3a_erratum"]["historical_value"].endswith("NONMATERIAL-EXECUTION-CLOSURE")
+    assert manifest["python_full_evaluator_nonmaterial_control"]["use_native_semantic_legality"] is False
+    assert manifest["python_full_evaluator_nonmaterial_control"]["native_legality_provider"] is None
+
+
+def test_h49r4a_python_authority_legality_is_identical_for_all_primary_rulesets():
+    bound = validate_h49r4a_python_legality_bindings()
+    assert set(bound) == {
+        "A_CANONICAL_WESTERN_CHESS",
+        "B_CANONICAL_STANDARD_SHOGI",
+        "C_H48B_SELECTED_GENERATED",
+    }
+    assert all(row["player_compiled_type"] == "ExecutableSemanticRuleset" for row in bound.values())
+    assert all(row["native_legality_provider"] is None for row in bound.values())
+    assert all(row["legality_route"] == "PYTHON_AUTHORITY" for row in bound.values())
+
+
+def test_h49r4a_valid_nonmaterial_evidence_can_reach_d_or_e():
+    negative = {"a": _observation(True, 0.0, 0.0, False), "b": _observation(True, 0.0, 0.0, False), "c": _observation(True, 0.0, 0.0, False)}
+    positive = {"a": _observation(True, 0.0, 0.0, True), "b": _observation(True, 0.0, 0.0, True), "c": _observation(True, 0.0, 0.0, False)}
+    assert select_f49_classification(negative)[0] == "EVALUATION_SIGNAL_BROADLY_WEAK"
+    assert select_f49_classification(positive)[0] == "MATERIAL_ONLY_REPRESENTATION_LIMITING"
+
+
+@pytest.mark.parametrize("status", ["NOT_RUN_NO_STABLE_TEACHER", "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "CELL_INVALID_SEARCH_FAILURE"])
+def test_h49r4a_unavailable_nonmaterial_evidence_is_neither_d_nor_e(status):
+    observations = {"a": _observation(True, 0.0, 0.0, False), "b": _observation(True, 0.0, 0.0, False), "c": _observation(True, 0.0, 0.0, False)}
+    for corpora in observations.values():
+        for corpus in corpora.values():
+            corpus["non_material_control"] = {"status": status, "non_material_signal": None}
+    classification, _, witnesses = select_f49_classification(observations)
+    assert classification == "MIXED_OR_UNRESOLVED"
+    assert witnesses["D"] is False
+    assert witnesses["E"] is False
+
+
+def test_h49r4a_two_unavailable_nonmaterial_controls_cannot_create_e():
+    observations = {"a": _observation(True, 0.0, 0.0, False), "b": _observation(True, 0.0, 0.0, False), "c": _observation(True, 0.0, 0.0, False)}
+    for ruleset_id in ("a", "b"):
+        for corpus in observations[ruleset_id].values():
+            corpus["non_material_control"] = {"status": "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "non_material_signal": None}
+    assert select_f49_classification(observations)[0] != "EVALUATION_SIGNAL_BROADLY_WEAK"
+
+
+def test_h49r4a_rejects_work_order_erratum_or_status_drift():
+    manifest = load_h49r4a_manifest()
+    tampered = copy.deepcopy(manifest)
+    tampered["work_order_id"] = "GENERICCHESS-F49-CORRECTIVE-R3-EXECUTION-DEPENDENCY-AND-RULESET-BINDING-CLOSURE"
+    from scripts.f49_protocol import _manifest_sha
+    tampered["manifest_sha256"] = _manifest_sha(tampered)
+    with pytest.raises(RuntimeError, match="work order"):
+        validate_h49r4a_manifest(tampered)
