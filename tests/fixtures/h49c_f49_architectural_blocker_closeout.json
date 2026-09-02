@@ -1,0 +1,28 @@
+{
+  "schema": "H49C-F49-ARCHITECTURAL-BLOCKER-CLOSEOUT-V1",
+  "checkpoint": "H49C_F49_ARCHITECTURAL_BLOCKER_CLOSEOUT",
+  "work_order_id": "GENERICCHESS-F49-ARCHITECTURAL-TRANSPORT-BLOCKER-CLOSEOUT",
+  "parent_sandbox_sha": "287962de6d54060d4c65f680e8d812646119f8a9",
+  "classification": "BLOCKED_ARCHITECTURAL_TRANSPORT",
+  "causal_finding": "CANONICAL_SEMANTIC_RULESET_NOT_REPRESENTABLE_BY_CURRENT_LEGACY_NATIVE_SEARCH_TRANSPORT",
+  "next_boundary": "F50_SEMANTIC_NATIVE_SEARCH_EXECUTION_PATH",
+  "F50_status": "NOT_STARTED",
+  "f49_scientific_hypotheses": "NOT_MEASURED_DUE_TO_PREREQUISITE_FAILURE",
+  "r5_transport_certification": {
+    "western": {"semantic_legal_actions": 20, "legacy_transport_legal_actions": 4, "missing": 16, "e2_e4_missing": true},
+    "standard_shogi": {"semantic_legal_actions": 30, "legacy_transport_legal_actions": 30},
+    "selected_generated": {"semantic_legal_actions": 14, "legacy_transport_legal_actions": 14}
+  },
+  "aborted_run_records": {
+    "r3_root": {"root": ".generic_chess_flow/f49-r3-authoritative", "evidentiary_status": "NONE", "disposition": "QUARANTINED_NEVER_REUSE"},
+    "r4_root": {"root": ".generic_chess_flow/f49-r4-authoritative", "evidentiary_status": "NONE", "disposition": "QUARANTINED_NEVER_REUSE"}
+  },
+  "valid_f49_native_search_matrix_exists": false,
+  "valid_f49_python_search_matrix_exists": false,
+  "selector_classification_inferred": false,
+  "production_diff": "ZERO",
+  "S49_regenerated": false,
+  "native_search_invoked": false,
+  "python_search_invoked": false,
+  "learner_invoked": false
+}
