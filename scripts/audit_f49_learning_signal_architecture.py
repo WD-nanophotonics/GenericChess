@@ -19,7 +19,7 @@ import random
 import statistics
 import subprocess
 import time
-from dataclasses import replace
+from dataclasses import fields, replace
 from pathlib import Path
 from typing import Any
 
@@ -60,6 +60,10 @@ H49B_R1_SHA = "42c521554c02e91bd62781c8dad7baabcbf6db1b"
 H49B_R1_MANIFEST_SHA = "16dab8f5bf549849e8fe07fb81a46268b39c9d3a6c263311c5c904ceead62fc7"
 H49B_R2_KIND = "H49B-R2_F49_DIAGNOSTIC_RUNNER_FREEZE"
 H49B_R2_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R2-RUNNER-SEMANTICS-AND-RESUMABILITY-CLOSURE"
+H49B_R2_SHA = "fd60ec1ef3d0d44f7f54271b3dca9438a8a28b17"
+H49B_R2_MANIFEST_SHA = "484ff7b8417c86e7557c13d55fbf52961731cfaecfeb97f4a896eaeebed62a8f"
+H49B_R3_KIND = "H49B-R3_F49_DIAGNOSTIC_RUNNER_FREEZE"
+H49B_R3_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R3-VECTOR-PARTITION-AND-EXECUTION-VIEW-CLOSURE"
 H49R4A_SHA = "6f1038d91f9667625a59c73a97aec77c01e9f817"
 H49R4A_MANIFEST_SHA = "929a7e9fc2d04cb24a15b66eb07e97966baef83048c755c9f2bc900320f7a2b0"
 H49R3A_SOURCE_TREE_SHA = "10b3752af976844908a773ef3f017d92c2004b29fc82e9ffaf7c21acccd7bff7"
@@ -148,6 +152,7 @@ PARTITION_ROUTES = {
 }
 MEASUREMENT_FAMILIES = ("S49-M", "S49-E", "L49-0", "L49-1", "L49-2", "TEACHER", "PYTHON_NONMATERIAL", "SELECTOR")
 R2_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r2_f49_diagnostic_runner_freeze_manifest.json"
+R3_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r3_f49_diagnostic_runner_freeze_manifest.json"
 R1_PARTITION_INPUT_FIELDS = (
     "H49B_R1_runner_sha256",
     "H49R4A_manifest_sha256",
@@ -675,17 +680,44 @@ def _native_search_once(compiled, native_rules, native_evaluation, record: dict[
     session = _replay(compiled, [action_from_dict(action) for action in record["action_history"]])
     started = time.perf_counter()
     engine = NativeSearchEngine(compiled, native_rules, native_evaluation, tt_megabytes=8)
-    metrics["engine_creation_count"] += 1
-    metrics["engine_creation_wall_seconds"] += time.perf_counter() - started
-    metrics["requested_nodes"] += node_budget
+    metrics["native_current_process"]["engine_creation_count"] += 1
+    metrics["native_current_process"]["engine_creation_wall_seconds"] += time.perf_counter() - started
+    metrics["native_current_process"]["requested_nodes"] += node_budget
     search_started = time.perf_counter()
     result = engine.search(session, SearchLimits(max_depth=12, max_nodes=node_budget, quiescence_max_depth=0, quiescence_max_nodes=0))
-    metrics["search_count"] += 1
-    metrics["actual_nodes"] += result.nodes
-    metrics["search_wall_seconds"] += time.perf_counter() - search_started
+    metrics["native_current_process"]["search_count"] += 1
+    metrics["native_current_process"]["actual_nodes"] += result.nodes + result.qnodes
+    metrics["native_current_process"]["search_wall_seconds"] += time.perf_counter() - search_started
     allowed = {"completed", "node_limit", "depth_limit"}
     failed = result.termination_reason not in allowed or (session.result.status.value == "ongoing" and result.action is None)
     return {"action_key": f49_protocol.canonical_action_order_key(result.action) if result.action is not None else None, "score": int(result.score), "nodes": int(result.nodes), "qnodes": int(result.qnodes), "elapsed_seconds": float(result.elapsed_seconds), "completed_depth": int(result.completed_depth), "termination_reason": result.termination_reason, "failed_search": failed}
+
+
+def _counter_delta(after: dict[str, Any], before: dict[str, Any]) -> dict[str, Any]:
+    return {key: (float(after.get(key, 0.0)) - float(before.get(key, 0.0))) if isinstance(after.get(key, 0), float) else int(after.get(key, 0)) - int(before.get(key, 0)) for key in after}
+
+
+def _add_counter(target: dict[str, Any], source: dict[str, Any]) -> None:
+    for key, value in source.items():
+        target[key] = target.get(key, 0.0 if isinstance(value, float) else 0) + value
+
+
+def _validate_vector(data: dict[str, Any], corpus: dict[str, Any]) -> list[dict[str, Any]]:
+    records = list(corpus.get("records", []))
+    expected = [record["position_identity_key"] for record in records]
+    rows = data.get("rows", [])
+    if data.get("position_identities") != expected or len(rows) != len(expected):
+        raise RuntimeError("stale or mismatched F49 result vector")
+    if [row.get("output_index") for row in rows] != [record["output_index"] for record in records]:
+        raise RuntimeError("stale or mismatched F49 result vector output order")
+    return rows
+
+
+def _record_authoritative(metrics: dict[str, Any], partition_id: str, ledger: dict[str, Any], key: str) -> None:
+    seen = metrics.setdefault("authoritative_partitions_seen", [])
+    if partition_id not in seen:
+        seen.append(partition_id)
+        _add_counter(metrics[key], ledger)
 
 
 def _concrete_corpus_id(corpus: dict[str, Any]) -> str:
@@ -696,7 +728,7 @@ def _concrete_corpus_id(corpus: dict[str, Any]) -> str:
     raise ValueError("partition corpus_id must be concrete")
 
 
-def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], route: str, family: str, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]] | None = None, partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
+def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], route: str, family: str, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]] | None = None, partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
     native_compiled = _native_transport(compiled)
     contexts = context_cache if context_cache is not None else {}
     rules_key = (compiled.ruleset_fingerprint, "native_rules")
@@ -704,30 +736,33 @@ def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], rout
     if rules_key not in contexts:
         started = time.perf_counter()
         contexts[rules_key] = (compile_native_rules(native_compiled), None)
-        metrics["ruleset_compile_count"] = metrics.get("ruleset_compile_count", 0) + 1
-        metrics["ruleset_compile_wall_seconds"] = metrics.get("ruleset_compile_wall_seconds", 0.0) + time.perf_counter() - started
+        metrics["native_current_process"]["ruleset_compile_count"] += 1
+        metrics["native_current_process"]["ruleset_compile_wall_seconds"] += time.perf_counter() - started
     native_rules = contexts[rules_key][0]
     if checkpoint_key not in contexts:
         started = time.perf_counter()
         profile = _native_profile(native_compiled, checkpoint)
         table = compile_native_evaluation(native_rules, profile, EvaluationConfig(), material_override=checkpoint)
         contexts[checkpoint_key] = (native_rules, table)
-        metrics["evaluation_table_compile_count"] = metrics.get("evaluation_table_compile_count", 0) + 1
-        metrics["evaluation_table_compile_wall_seconds"] = metrics.get("evaluation_table_compile_wall_seconds", 0.0) + time.perf_counter() - started
+        metrics["native_current_process"]["evaluation_table_compile_count"] += 1
+        metrics["native_current_process"]["evaluation_table_compile_wall_seconds"] += time.perf_counter() - started
     table = contexts[checkpoint_key][1]
     results = {}
     for budget in budgets:
-        rows = []
-        for record in corpus["records"]:
-            key = (compiled.ruleset_fingerprint, corpus["corpus_id"], record["position_identity_key"], checkpoint.checkpoint_id, budget)
-            if key not in cache:
-                if partition_store is None:
-                    cache[key] = _native_search_once(native_compiled, native_rules, table, record, budget, metrics)
-                else:
-                    partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=checkpoint.checkpoint_id, search_route=route, node_budget=budget, measurement_family=family, ruleset_fingerprint=compiled.ruleset_fingerprint)
-                    cache[key] = run_partition(partition_store, partition, lambda: _native_search_once(native_compiled, native_rules, table, record, budget, metrics))
-            rows.append(cache[key])
-        results[str(budget)] = rows
+        key = (compiled.ruleset_fingerprint, _concrete_corpus_id(corpus), checkpoint.checkpoint_id, route, budget, family)
+        partition = partition_identity(corpus_id=key[1], checkpoint_or_config_hash=checkpoint.checkpoint_id, search_route=route, node_budget=budget, measurement_family=family, ruleset_fingerprint=compiled.ruleset_fingerprint)
+        def produce_vector():
+            before = dict(metrics["native_current_process"])
+            rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics)} for record in corpus["records"]]
+            return {"position_identities": [record["position_identity_key"] for record in corpus["records"]], "rows": rows, "execution_ledger": _counter_delta(metrics["native_current_process"], before)}
+        if key not in cache:
+            data = produce_vector() if partition_store is None else run_partition(partition_store, partition, produce_vector)
+            _validate_vector(data, corpus)
+            cache[key] = data
+            _record_authoritative(metrics, partition["partition_id"], data["execution_ledger"], "native_authoritative")
+        data = cache[key]
+        _validate_vector(data, corpus)
+        results[str(budget)] = data["rows"]
     return results
 
 
@@ -789,7 +824,7 @@ def _l49_checkpoint_rows(compiled, start, surface: str) -> list[dict[str, Any]]:
     return [{"name": name, "checkpoint": checkpoint, "construction_failed": False, "reason": None} for name, checkpoint in candidates]
 
 
-def _independent_selector(observations: dict[str, dict[str, dict[str, Any]]]) -> tuple[str, str, dict[str, bool]]:
+def _independent_selector_ledger(observations: dict[str, dict[str, dict[str, Any]]]) -> tuple[str, str, dict[str, list[str]]]:
     witnesses = {name: [] for name in ("A", "B", "C", "D", "E")}
     for ruleset_id, corpora in observations.items():
         stable = {name for name, value in corpora.items() if value.get("teacher_40_80", {}).get("status") == "VALID" and value["teacher_40_80"].get("failed_searches", 1) == 0 and value["teacher_40_80"].get("exact_best_move_agreement", -1.0) >= 0.85}
@@ -825,16 +860,48 @@ def _independent_selector(observations: dict[str, dict[str, dict[str, Any]]]) ->
         classification = names[4]
     else:
         classification = names[5]
-    return classification, mapping[classification], {key: bool(value) for key, value in witnesses.items()}
+    return classification, mapping[classification], witnesses
+
+
+def _independent_selector(observations: dict[str, dict[str, dict[str, Any]]]) -> tuple[str, str, dict[str, bool]]:
+    classification, boundary, witnesses = _independent_selector_ledger(observations)
+    return classification, boundary, {key: bool(value) for key, value in witnesses.items()}
+
+
+def _production_selector_witness_ledger(observations: dict[str, dict[str, dict[str, Any]]]) -> dict[str, list[str]]:
+    """Recompute RuleSet witnesses from production-shaped cells independently."""
+    witnesses = {name: [] for name in ("A", "B", "C", "D", "E")}
+    for ruleset_id, corpora in observations.items():
+        stable = {name for name, value in corpora.items() if value.get("teacher_40_80", {}).get("status") == "VALID" and value["teacher_40_80"].get("failed_searches", 1) == 0 and value["teacher_40_80"].get("exact_best_move_agreement", -1.0) >= 0.85}
+        control = corpora["F48_CONTROL"]
+        def signal(name, cell):
+            return name in stable and cell.get("status") == "VALID" and cell.get("failed_searches", 1) == 0 and cell.get("mean_flip_rate", -1.0) >= 0.05
+        control_l0 = control.get("L49_0_2000", {})
+        control_l1 = control.get("L49_1_2000", {})
+        if "F48_CONTROL" in stable and not signal("F48_CONTROL", control_l0) and signal("F48_CONTROL", control_l1):
+            witnesses["A"].append(ruleset_id)
+        structural = [corpora[name]["L49_1_2000"].get("mean_flip_rate") for name in ("S49-M", "S49-E") if signal(name, corpora[name].get("L49_1_2000", {}))]
+        if structural and max(structural) - control_l1.get("mean_flip_rate", 0.0) >= 0.05:
+            witnesses["B"].append(ruleset_id)
+        if not stable:
+            witnesses["C"].append(ruleset_id)
+        valid_nonmaterial = [name for name in corpora if name in stable and corpora[name].get("non_material_control", {}).get("status") == "VALID"]
+        positive_nonmaterial = [name for name in valid_nonmaterial if corpora[name]["non_material_control"].get("non_material_signal") is True]
+        material = any(signal(name, corpora[name].get("L49_1_2000", {})) for name in corpora)
+        if stable and not material and positive_nonmaterial:
+            witnesses["D"].append(ruleset_id)
+        if stable and not material and valid_nonmaterial and not positive_nonmaterial:
+            witnesses["E"].append(ruleset_id)
+    return witnesses
 
 def _python_decision(semantic_execution, record: dict[str, Any], config: EvaluationConfig, metrics: dict[str, Any]) -> dict[str, Any]:
     session = _replay(semantic_execution, [action_from_dict(action) for action in record["action_history"]])
     started = time.perf_counter()
     player = AlphaBetaPlayer(semantic_execution, evaluation_config=config, tt_max_entries=250000, profile_cache=EvaluationProfileCache(use_disk=False), use_disk_cache=False, use_tt=True, use_ordering=True, use_native_semantic_legality=False)
-    metrics["player_construction_count"] += 1
-    metrics["profile_construction_count"] += 1
-    metrics["evaluator_construction_count"] += 1
-    metrics["player_construction_wall_seconds"] += time.perf_counter() - started
+    metrics["python_current_process"]["player_construction_count"] += 1
+    metrics["python_current_process"]["profile_construction_count"] += 1
+    metrics["python_current_process"]["evaluator_construction_count"] += 1
+    metrics["python_current_process"]["player_construction_wall_seconds"] += time.perf_counter() - started
     if player.native_legality_provider is not None:
         raise RuntimeError("H49B-R1 Python path unexpectedly enabled native legality")
     search_started = time.perf_counter()
@@ -845,10 +912,10 @@ def _python_decision(semantic_execution, record: dict[str, Any], config: Evaluat
     except Exception as exc:  # recorded as a cell failure by the frozen contract
         decision = None
         exception = type(exc).__name__ + ": " + str(exc)
-    metrics["search_count"] += 1
-    metrics["requested_nodes"] += 2000
-    metrics["actual_nodes"] += (decision.nodes + decision.qnodes) if decision is not None else 0
-    metrics["search_wall_seconds"] += time.perf_counter() - search_started
+    metrics["python_current_process"]["search_count"] += 1
+    metrics["python_current_process"]["requested_nodes"] += 2000
+    metrics["python_current_process"]["actual_nodes"] += (decision.nodes + decision.qnodes) if decision is not None else 0
+    metrics["python_current_process"]["search_wall_seconds"] += time.perf_counter() - search_started
     legal = set(session.legal_actions())
     valid = exception is None and decision is not None and decision.choice_kind == "ACTION" and decision.action is not None and decision.action in legal
     return {"action_key": f49_protocol.canonical_action_order_key(decision.action) if valid else None, "score": int(decision.score) if decision is not None else None, "nodes": int(decision.nodes) if decision is not None else 0, "qnodes": int(decision.qnodes) if decision is not None else 0, "completed_depth": int(decision.completed_depth) if decision is not None else None, "termination_reason": decision.termination_reason if decision is not None else "exception", "valid": valid, "exception": exception}
@@ -870,37 +937,44 @@ def python_nonmaterial_control(semantic_execution, corpus: dict[str, Any], *, te
     live, reason = _python_liveness_precheck(semantic_execution)
     if not live:
         return {"status": "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "non_material_signal": None, "families": [], "liveness_failure": reason}
-    metrics = metrics if metrics is not None else {"player_construction_count": 0, "player_construction_wall_seconds": 0.0, "profile_construction_count": 0, "evaluator_construction_count": 0, "search_count": 0, "requested_nodes": 0, "actual_nodes": 0, "search_wall_seconds": 0.0}
+    metrics = metrics if metrics is not None else _measurement_metrics()
     baseline_config = EvaluationConfig()
-    baseline: dict[int, dict[str, Any]] = {}
+
+    def vector(config: EvaluationConfig) -> dict[int, dict[str, Any]]:
+        config_id = config_hash(config)
+        partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=config_id, search_route="PYTHON_ALPHABETA_FULL_EVALUATOR", node_budget=2000, measurement_family="PYTHON_NONMATERIAL", ruleset_fingerprint=ruleset_fingerprint or semantic_execution.ruleset_fingerprint)
+        def produce_vector():
+            before = dict(metrics["python_current_process"])
+            rows = [{"output_index": record["output_index"], **_python_decision(semantic_execution, record, config, metrics)} for record in corpus["records"]]
+            return {"position_identities": [record["position_identity_key"] for record in corpus["records"]], "rows": rows, "execution_ledger": _counter_delta(metrics["python_current_process"], before), "evaluation_config_hash": config_id}
+        data = produce_vector() if partition_store is None else run_partition(partition_store, partition, produce_vector)
+        _validate_vector(data, corpus)
+        _record_authoritative(metrics, partition["partition_id"], data["execution_ledger"], "python_authoritative")
+        return {record["output_index"]: row for record, row in zip(corpus["records"], data["rows"])}
+
+    baseline = vector(baseline_config)
     families = []
-    for record in corpus["records"]:
-        if partition_store is None:
-            baseline[record["output_index"]] = _python_decision(semantic_execution, record, baseline_config, metrics)
-        else:
-            partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=config_hash(baseline_config), search_route="PYTHON_ALPHABETA_FULL_EVALUATOR", node_budget=2000, measurement_family="PYTHON_NONMATERIAL", ruleset_fingerprint=ruleset_fingerprint or semantic_execution.ruleset_fingerprint)
-            baseline[record["output_index"]] = run_partition(partition_store, partition, lambda: _python_decision(semantic_execution, record, baseline_config, metrics))
     for field in ("dynamic_mobility_weight", "promotion_potential_weight", "anchor_escape_weight"):
         factor_rows = []
         for factor in (0.75, 1.25):
             candidate_config = replace(baseline_config, **{field: getattr(baseline_config, field) * factor})
+            for config_field in fields(EvaluationConfig):
+                if config_field.name != field and getattr(candidate_config, config_field.name) != getattr(baseline_config, config_field.name):
+                    raise RuntimeError("PYTHON_NONMATERIAL_COEFFICIENT_ISOLATION_FAILURE")
+            candidate = vector(candidate_config)
             rows = []
             for record in corpus["records"]:
-                if partition_store is None:
-                    candidate = _python_decision(semantic_execution, record, candidate_config, metrics)
-                else:
-                    partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=config_hash(candidate_config), search_route="PYTHON_ALPHABETA_FULL_EVALUATOR", node_budget=2000, measurement_family="PYTHON_NONMATERIAL", ruleset_fingerprint=ruleset_fingerprint or semantic_execution.ruleset_fingerprint)
-                    candidate = run_partition(partition_store, partition, lambda: _python_decision(semantic_execution, record, candidate_config, metrics))
                 base = baseline[record["output_index"]]
-                rows.append({"baseline_action_key": base["action_key"], "perturbed_action_key": candidate["action_key"], "baseline_score": base["score"], "perturbed_score": candidate["score"], "flip": base["action_key"] != candidate["action_key"], "nodes": candidate["nodes"], "qnodes": candidate["qnodes"], "termination_reason": candidate["termination_reason"], "valid": base["valid"] and candidate["valid"], "exception": candidate["exception"]})
-            factor_rows.append({"factor": factor, "flip_rate": sum(row["flip"] for row in rows) / len(rows) if rows else 0.0, "failed_searches": sum(not row["valid"] for row in rows), "rows": rows})
+                candidate_row = candidate[record["output_index"]]
+                rows.append({"baseline_action_key": base["action_key"], "perturbed_action_key": candidate_row["action_key"], "baseline_score": base["score"], "perturbed_score": candidate_row["score"], "flip": base["action_key"] != candidate_row["action_key"], "nodes": candidate_row["nodes"], "qnodes": candidate_row["qnodes"], "termination_reason": candidate_row["termination_reason"], "valid": base["valid"] and candidate_row["valid"], "exception": candidate_row["exception"]})
+            factor_rows.append({"field": field, "factor": factor, "baseline_value": getattr(baseline_config, field), "candidate_value": getattr(candidate_config, field), "config_hash": config_hash(candidate_config), "flip_rate": sum(row["flip"] for row in rows) / len(rows) if rows else 0.0, "failed_searches": sum(not row["valid"] for row in rows), "rows": rows})
         families.append({"field": field, "factors": factor_rows, "family_mean_flip": sum(row["flip_rate"] for row in factor_rows) / 2.0})
     failed = sum(row["failed_searches"] for family in families for row in family["factors"])
     valid = failed == 0
     return {"status": "VALID" if valid else "CELL_INVALID_SEARCH_FAILURE", "non_material_signal": max((family["family_mean_flip"] for family in families), default=0.0) >= 0.05 if valid else None, "families": families, "metrics": metrics}
 
 
-def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMaterialCheckpoint, surface: str, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
+def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMaterialCheckpoint, surface: str, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
     budgets = [500, 2000, 8000] if surface in ("L49-0", "L49-1") else [2000]
     baseline = _native_search_matrix(compiled, start, corpus, budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, start, corpus, budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store)
     candidate_rows = _l49_checkpoint_rows(compiled, start, surface)
@@ -924,7 +998,7 @@ def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMa
     return {"surface": surface, "baseline": baseline, "cells": cells, "deduplicated_checkpoint_count": len(unique), "candidate_count": len(candidate_rows), "construction_failures": construction_failures, "aliases": aliases}
 
 
-def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMaterialCheckpoint, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
+def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMaterialCheckpoint, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
     budgets = [10000, 20000, 40000, 80000]
     results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store)
     pairs = {}
@@ -937,7 +1011,7 @@ def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMater
         pairs[f"{low}_{high}"] = metric
     stable = pairs["40000_80000"]["status"] == "VALID" and pairs["40000_80000"]["failed_searches"] == 0 and pairs["40000_80000"]["exact_best_move_agreement"] >= 0.85
     agreements = [pairs[key]["exact_best_move_agreement"] for key in ("10000_20000", "20000_40000", "40000_80000")]
-    return {"results": results, "adjacent": pairs, "teacher_convergence": {"agreement_10_20": agreements[0], "agreement_20_40": agreements[1], "agreement_40_80": agreements[2], "adjacent_deltas": [agreements[1] - agreements[0], agreements[2] - agreements[1]]}, "teacher_40_80": {**pairs["40000_80000"], "stable": stable}}
+    return {"results": results, "adjacent": pairs, "teacher_convergence": {"agreement_vector": agreements, "agreement_10_20": agreements[0], "agreement_20_40": agreements[1], "agreement_40_80": agreements[2], "adjacent_deltas": [agreements[1] - agreements[0], agreements[2] - agreements[1]]}, "teacher_40_80": {**pairs["40000_80000"], "stable": stable}}
 
 
 def production_observations(cells: dict[str, dict[str, dict[str, Any]]]) -> dict[str, dict[str, dict[str, Any]]]:
@@ -946,7 +1020,9 @@ def production_observations(cells: dict[str, dict[str, dict[str, Any]]]) -> dict
 
 
 def _measurement_metrics() -> dict[str, Any]:
-    return {"ruleset_compile_count": 0, "ruleset_compile_wall_seconds": 0.0, "evaluation_table_compile_count": 0, "evaluation_table_compile_wall_seconds": 0.0, "engine_creation_count": 0, "engine_creation_wall_seconds": 0.0, "player_construction_count": 0, "player_construction_wall_seconds": 0.0, "profile_construction_count": 0, "evaluator_construction_count": 0, "search_count": 0, "requested_nodes": 0, "actual_nodes": 0, "search_wall_seconds": 0.0}
+    native = {"ruleset_compile_count": 0, "ruleset_compile_wall_seconds": 0.0, "evaluation_table_compile_count": 0, "evaluation_table_compile_wall_seconds": 0.0, "engine_creation_count": 0, "engine_creation_wall_seconds": 0.0, "search_count": 0, "requested_nodes": 0, "actual_nodes": 0, "search_wall_seconds": 0.0}
+    python = {"player_construction_count": 0, "player_construction_wall_seconds": 0.0, "profile_construction_count": 0, "evaluator_construction_count": 0, "search_count": 0, "requested_nodes": 0, "actual_nodes": 0, "search_wall_seconds": 0.0}
+    return {"native_current_process": native, "python_current_process": python, "native_authoritative": dict(native), "python_authoritative": dict(python), "authoritative_partitions_seen": []}
 
 
 def _write_partition(store: AtomicPartitionStore, *, ruleset_id: str, ruleset_fingerprint: str, corpus: dict[str, Any], checkpoint_id: str, route: str, node_budget: int | None, family: str, data: dict[str, Any]) -> None:
@@ -971,7 +1047,7 @@ def _control_records(legacy, control) -> list[dict[str, Any]]:
 
 def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
     """Run the complete registered F49 sequence after the R1 freeze."""
-    validate_r2_measurement_freeze()
+    validate_r3_measurement_freeze()
     preflight = run_preflight()
     executions = f49_protocol.build_h49r3a_primary_execution()
     root = partition_root or (ROOT / ".generic_chess_flow" / "f49")
@@ -982,16 +1058,18 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
     efficiency: dict[str, Any] = {}
     corpus_ledgers: dict[str, Any] = {}
     for ruleset_id, entry in executions.items():
+        semantic = entry["semantic_execution"]
         legacy = entry["legacy_transport"]
         control_openings = generate_arena_openings(legacy, count=16, seed=480703, min_plies=2, max_plies=6)
         control = generate_diagnostic_corpus(legacy, control_openings, count=64, seed=480703, min_plies=2, max_plies=6)
         control_data = {"status": "VALID", "corpus_id": control.corpus_id, "records": _control_records(legacy, control)}
-        structural = {"S49-M": generate_structural_corpus(legacy, stratum_id="S49-M", seed=490100, target_plies=(8, 20), minimum_legal_actions=1), "S49-E": generate_structural_corpus(legacy, stratum_id="S49-E", seed=490200, target_plies=(6, 24), minimum_legal_actions=2)}
+        structural = {"S49-M": generate_structural_corpus(semantic, stratum_id="S49-M", seed=490100, target_plies=(8, 20), minimum_legal_actions=1), "S49-E": generate_structural_corpus(semantic, stratum_id="S49-E", seed=490200, target_plies=(6, 24), minimum_legal_actions=2)}
         corpora = {"F48_CONTROL": control_data, **structural}
-        p0 = reconstruct_p48_0(ruleset_id, legacy)
+        p0 = reconstruct_p48_0(ruleset_id, semantic)
         metrics = _measurement_metrics()
         for corpus_name, corpus in corpora.items():
-            _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=entry["semantic_execution"].ruleset_fingerprint, corpus=corpus, checkpoint_id="NONE", route="EVALUATOR_NEUTRAL_CORE_CORPUS", node_budget=None, family=corpus_name if corpus_name in ("S49-M", "S49-E") else "SELECTOR", data=corpus)
+            if corpus_name in ("S49-M", "S49-E"):
+                _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=semantic.ruleset_fingerprint, corpus=corpus, checkpoint_id="NONE", route="EVALUATOR_NEUTRAL_CORE_CORPUS", node_budget=None, family=corpus_name, data=corpus)
             if corpus["status"] != "VALID":
                 corpus["teacher_40_80"] = {"status": "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "failed_searches": 0, "exact_best_move_agreement": 0.0}
                 corpus["non_material_control"] = {"status": "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "non_material_signal": None}
@@ -1005,22 +1083,28 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
                     corpus[f"{surface}_{budget}"] = f49_protocol.aggregate_leverage_cells(values)
             teacher = teacher_surface(legacy, corpus, p0, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store)
             corpus.update(teacher)
-            corpus["non_material_control"] = python_nonmaterial_control(entry["semantic_execution"], corpus, teacher_stable=teacher["teacher_40_80"]["stable"], metrics=metrics, partition_store=store, ruleset_fingerprint=entry["semantic_execution"].ruleset_fingerprint)
+            corpus["non_material_control"] = python_nonmaterial_control(semantic, corpus, teacher_stable=teacher["teacher_40_80"]["stable"], metrics=metrics, partition_store=store, ruleset_fingerprint=semantic.ruleset_fingerprint)
         corpus_ledgers[ruleset_id] = {name: structural_ledger(corpus) for name, corpus in corpora.items()}
         for left, right in (("F48_CONTROL", "S49-M"), ("F48_CONTROL", "S49-E"), ("S49-M", "S49-E")):
             corpus_ledgers[ruleset_id][f"intersection_{left}_{right}"] = sorted({row["position_identity_key"] for row in corpora[left].get("records", [])} & {row["position_identity_key"] for row in corpora[right].get("records", [])})
         observations[ruleset_id] = corpora
+        metrics["CURRENT_PROCESS_EXECUTION_COST"] = {"native": metrics["native_current_process"], "python": metrics["python_current_process"]}
+        metrics["TOTAL_AUTHORITATIVE_MEASUREMENT_COST"] = {"native": metrics["native_authoritative"], "python": metrics["python_authoritative"]}
+        metrics.pop("authoritative_partitions_seen", None)
         efficiency[ruleset_id] = metrics
-    classification, boundary, witnesses = f49_protocol.select_f49_classification(production_observations(observations))
-    direct_classification, direct_boundary, direct_witnesses = _independent_selector(observations)
-    if (classification, boundary, witnesses) != (direct_classification, direct_boundary, direct_witnesses):
+    classification, boundary, aggregate_witnesses = f49_protocol.select_f49_classification(production_observations(observations))
+    direct_classification, direct_boundary, direct_witness_ledger = _independent_selector_ledger(observations)
+    production_witness_ledger = _production_selector_witness_ledger(observations)
+    if direct_witness_ledger != production_witness_ledger:
+        raise RuntimeError("F49 RuleSet witness ledger disagreement")
+    if (classification, boundary, aggregate_witnesses) != (direct_classification, direct_boundary, {key: bool(value) for key, value in direct_witness_ledger.items()}):
         raise RuntimeError("F49 selector disagreement")
     python_efficiency_fields = ("player_construction_count", "profile_construction_count", "evaluator_construction_count", "search_count", "requested_nodes", "actual_nodes", "search_wall_seconds")
-    python_efficiency = {field: sum(int(values.get(field, 0)) if field not in ("search_wall_seconds",) else float(values.get(field, 0.0)) for values in efficiency.values()) for field in python_efficiency_fields}
-    result = {"kind": "F49_DIAGNOSTIC_RESULTS", "preflight": preflight, "observations": observations, "structural_ledgers": corpus_ledgers, "efficiency": efficiency, "python_efficiency": python_efficiency, "classification": classification, "next_boundary": boundary, "witnesses": witnesses, "direct_selector_agreement": True, "observed_results_present": True, "learning_invoked": False, "F50_status": "NOT_STARTED", "partition_root": str(root)}
+    python_efficiency = {field: sum(int(values["python_current_process"].get(field, 0)) if field not in ("search_wall_seconds",) else float(values["python_current_process"].get(field, 0.0)) for values in efficiency.values()) for field in python_efficiency_fields}
+    result = {"kind": "F49_DIAGNOSTIC_RESULTS", "preflight": preflight, "observations": observations, "structural_ledgers": corpus_ledgers, "efficiency": efficiency, "python_efficiency": python_efficiency, "classification": classification, "next_boundary": boundary, "witness_ledger": direct_witness_ledger, "production_witness_ledger": production_witness_ledger, "witness_aggregate": {key: bool(value) for key, value in direct_witness_ledger.items()}, "direct_selector_agreement": True, "observed_results_present": True, "learning_invoked": False, "F50_status": "NOT_STARTED", "partition_root": str(root)}
     for ruleset_id, corpora in observations.items():
         selector_corpus = {"corpus_id": stable_sha256({name: corpus.get("corpus_id") for name, corpus in corpora.items()}), "records": []}
-        _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=executions[ruleset_id]["semantic_execution"].ruleset_fingerprint, corpus=selector_corpus, checkpoint_id="NONE", route="AUDIT_SELECTOR", node_budget=None, family="SELECTOR", data={"classification": classification, "next_boundary": boundary, "witnesses": witnesses, "direct_selector_agreement": True})
+        _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=executions[ruleset_id]["semantic_execution"].ruleset_fingerprint, corpus=selector_corpus, checkpoint_id="NONE", route="AUDIT_SELECTOR", node_budget=None, family="SELECTOR", data={"classification": classification, "next_boundary": boundary, "witness_ledger": direct_witness_ledger, "witness_aggregate": {key: bool(value) for key, value in direct_witness_ledger.items()}, "direct_selector_agreement": True})
     result["evidence_bundle_path"] = str(root / "f49_evidence_bundle.json")
     write_evidence_bundle(result, root)
     return result
@@ -1082,7 +1166,7 @@ def validate_h49b_r2_manifest(manifest: dict[str, Any]) -> None:
         raise RuntimeError("H49B-R2 contains observations or learning")
     if manifest.get("concrete_partition_routes") != sorted(PARTITION_ROUTES) or set(manifest.get("measurement_families", ())) != set(MEASUREMENT_FAMILIES) or manifest.get("partition_input_fields") != list(R1_PARTITION_INPUT_FIELDS):
         raise RuntimeError("H49B-R2 partition surface drift")
-    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()):
+    if manifest.get("runner_raw_sha256") != _git_blob_sha256(H49B_R2_SHA, "scripts/audit_f49_learning_signal_architecture.py") or manifest.get("protocol_raw_sha256") != _git_blob_sha256(H49B_R2_SHA, "scripts/f49_protocol.py"):
         raise RuntimeError("H49B-R2 source hash drift")
 
 
@@ -1096,6 +1180,116 @@ def validate_r2_measurement_freeze() -> None:
     manifest = load_h49b_r2_manifest()
     if manifest.get("h49r4a_manifest_sha256") != H49R4A_MANIFEST_SHA or manifest.get("h49r3a_source_tree_aggregate_sha256") != H49R3A_SOURCE_TREE_SHA or manifest.get("native_binary_sha256") != H49R3A_NATIVE_SHA:
         raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
+    if manifest.get("runner_raw_sha256") != _git_blob_sha256(H49B_R2_SHA, "scripts/audit_f49_learning_signal_architecture.py") or manifest.get("protocol_raw_sha256") != _git_blob_sha256(H49B_R2_SHA, "scripts/f49_protocol.py"):
+        raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
+
+
+def build_h49b_r3_manifest() -> dict[str, Any]:
+    """Build the no-observation R3 runner-freeze manifest."""
+    preflight = run_preflight()
+    executions = f49_protocol.build_h49r3a_primary_execution()
+    return {
+        "checkpoint_name": "H49B-R3",
+        "kind": H49B_R3_KIND,
+        "work_order_id": H49B_R3_WORK_ORDER_ID,
+        "parent_h49b_r2_sha": H49B_R2_SHA,
+        "h49b_r2_manifest_sha256": H49B_R2_MANIFEST_SHA,
+        "runner_raw_sha256": _sha256_bytes(SOURCE_PATH.read_bytes()),
+        "protocol_raw_sha256": _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()),
+        "h49r4a_manifest_sha256": H49R4A_MANIFEST_SHA,
+        "h49r3a_source_tree_aggregate_sha256": H49R3A_SOURCE_TREE_SHA,
+        "native_binary_sha256": H49R3A_NATIVE_SHA,
+        "measurement_entry_point": "scripts.audit_f49_learning_signal_architecture.run_measurements",
+        "preflight_entry_point": "scripts.audit_f49_learning_signal_architecture.run_preflight",
+        "evidence_writer": "scripts.audit_f49_learning_signal_architecture.write_evidence_bundle",
+        "partition_runner": "scripts.audit_f49_learning_signal_architecture.run_partition",
+        "orchestration_phases": [
+            "verify accepted R3 freeze",
+            "preflight",
+            "reconstruct accepted control through legacy transport",
+            "construct S49-M/S49-E through semantic execution",
+            "reconstruct P48-0 through semantic execution",
+            "compile Native rules and evaluation tables",
+            "Native material leverage surfaces through legacy transport",
+            "Native teacher surfaces through legacy transport",
+            "stable-corpus determination",
+            "Python non-material controls through semantic execution only where authorized",
+            "cross-corpus intersections and observation assembly",
+            "real selector",
+            "independent RuleSet witness selector",
+            "fail closed on selector disagreement",
+            "assemble and atomically write complete evidence bundle",
+        ],
+        "concrete_partition_routes": sorted(PARTITION_ROUTES),
+        "measurement_families": list(MEASUREMENT_FAMILIES),
+        "partition_input_fields": list(PARTITION_INPUT_FIELDS),
+        "partition_identity_entry_point": "scripts.audit_f49_learning_signal_architecture.partition_identity",
+        "atomic_partition_writer": "scripts.audit_f49_learning_signal_architecture.AtomicPartitionStore.write",
+        "vector_partition_schema": {"position_identities": "complete ordered identity vector", "rows": "complete ordered result vector with output_index", "execution_ledger": "per-partition authoritative cost"},
+        "execution_view_contract": {"structural": "semantic_execution", "python": "semantic_execution", "control": "legacy_transport", "native_material": "legacy_transport", "native_teacher": "legacy_transport"},
+        "efficiency_ledgers": ["CURRENT_PROCESS_EXECUTION_COST", "TOTAL_AUTHORITATIVE_MEASUREMENT_COST", "native_current_process", "python_current_process", "native_authoritative", "python_authoritative"],
+        "selector_witness_ledgers": {"rulesets": list(RULESET_IDS), "witnesses": ["A", "B", "C", "D", "E"], "independent_and_production_required": True, "aggregate_required": True},
+        "observed_results_present": False,
+        "measurements_invoked": False,
+        "learning_invoked": False,
+        "F50_status": "NOT_STARTED",
+        "production_diff_required": "ZERO",
+        "master_promotion": False,
+        "native_transport_provenance": _native_transport_provenance(executions),
+        "preflight_authority": {"h49r3a_source_tree_aggregate_sha256": preflight["authority"]["h49r3a_source_tree_aggregate_sha256"], "native_binary_sha256": preflight["authority"]["native_runtime_provenance"]["native_module_sha256"], "ruleset_fingerprints": preflight["authority"]["ruleset_fingerprints"], "generic_chess_diff_from_h49r4a": "ZERO"},
+        "freeze_rule": "runner and scripts/f49_protocol.py byte-identical after R3 acceptance and before first observed position/search result",
+    }
+
+
+def validate_h49b_r3_manifest(manifest: dict[str, Any]) -> None:
+    if _manifest_sha(manifest) != manifest.get("manifest_sha256"):
+        raise RuntimeError("H49B-R3 manifest hash mismatch")
+    expected = {
+        "checkpoint_name": "H49B-R3",
+        "kind": H49B_R3_KIND,
+        "work_order_id": H49B_R3_WORK_ORDER_ID,
+        "parent_h49b_r2_sha": H49B_R2_SHA,
+        "h49b_r2_manifest_sha256": H49B_R2_MANIFEST_SHA,
+        "h49r4a_manifest_sha256": H49R4A_MANIFEST_SHA,
+        "h49r3a_source_tree_aggregate_sha256": H49R3A_SOURCE_TREE_SHA,
+        "native_binary_sha256": H49R3A_NATIVE_SHA,
+        "measurement_entry_point": "scripts.audit_f49_learning_signal_architecture.run_measurements",
+        "preflight_entry_point": "scripts.audit_f49_learning_signal_architecture.run_preflight",
+        "partition_runner": "scripts.audit_f49_learning_signal_architecture.run_partition",
+        "evidence_writer": "scripts.audit_f49_learning_signal_architecture.write_evidence_bundle",
+        "F50_status": "NOT_STARTED",
+        "production_diff_required": "ZERO",
+    }
+    for key, value in expected.items():
+        if manifest.get(key) != value:
+            raise RuntimeError(f"H49B-R3 {key} drift")
+    if any(manifest.get(key) is not False for key in ("observed_results_present", "measurements_invoked", "learning_invoked", "master_promotion")):
+        raise RuntimeError("H49B-R3 contains observations or learning")
+    if manifest.get("concrete_partition_routes") != sorted(PARTITION_ROUTES) or manifest.get("measurement_families") != list(MEASUREMENT_FAMILIES) or manifest.get("partition_input_fields") != list(PARTITION_INPUT_FIELDS):
+        raise RuntimeError("H49B-R3 partition surface drift")
+    if manifest.get("vector_partition_schema", {}).get("rows") != "complete ordered result vector with output_index":
+        raise RuntimeError("H49B-R3 vector schema drift")
+    if manifest.get("execution_view_contract", {}).get("structural") != "semantic_execution" or manifest.get("execution_view_contract", {}).get("control") != "legacy_transport":
+        raise RuntimeError("H49B-R3 execution view drift")
+    phases = manifest.get("orchestration_phases", [])
+    if phases.index("Native material leverage surfaces through legacy transport") > phases.index("Native teacher surfaces through legacy transport") or phases.index("Native teacher surfaces through legacy transport") > phases.index("Python non-material controls through semantic execution only where authorized"):
+        raise RuntimeError("H49B-R3 orchestration order drift")
+    if set(manifest.get("selector_witness_ledgers", {}).get("rulesets", ())) != set(RULESET_IDS) or manifest.get("selector_witness_ledgers", {}).get("independent_and_production_required") is not True:
+        raise RuntimeError("H49B-R3 selector witness contract drift")
+    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()):
+        raise RuntimeError("H49B-R3 source hash drift")
+
+
+def load_h49b_r3_manifest() -> dict[str, Any]:
+    manifest = json.loads(R3_MANIFEST_PATH.read_text(encoding="utf-8"))
+    validate_h49b_r3_manifest(manifest)
+    return manifest
+
+
+def validate_r3_measurement_freeze() -> None:
+    manifest = load_h49b_r3_manifest()
+    if manifest.get("h49r4a_manifest_sha256") != H49R4A_MANIFEST_SHA or manifest.get("h49r3a_source_tree_aggregate_sha256") != H49R3A_SOURCE_TREE_SHA or manifest.get("native_binary_sha256") != H49R3A_NATIVE_SHA:
+        raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
     if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()):
         raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
 
@@ -1105,6 +1299,7 @@ def main() -> None:
     parser.add_argument("--write-preflight", action="store_true", help="deprecated; H49B historical preflight is immutable")
     parser.add_argument("--write-r1-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R1 manifest")
     parser.add_argument("--write-r2-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R2 manifest")
+    parser.add_argument("--write-r3-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R3 manifest")
     parser.add_argument("--measure", action="store_true", help="execute the full frozen F49 measurement runner")
     args = parser.parse_args()
     if args.measure:
@@ -1113,7 +1308,12 @@ def main() -> None:
         return
     if args.write_preflight:
         raise RuntimeError("historical H49B preflight is immutable; use --write-r1-manifest")
-    if args.write_r2_manifest:
+    if args.write_r3_manifest:
+        manifest = build_h49b_r3_manifest()
+        manifest["manifest_sha256"] = _manifest_sha(manifest)
+        _atomic_write_json(R3_MANIFEST_PATH, manifest)
+        validate_h49b_r3_manifest(manifest)
+    elif args.write_r2_manifest:
         manifest = build_h49b_r2_manifest()
         manifest["manifest_sha256"] = _manifest_sha(manifest)
         _atomic_write_json(R2_MANIFEST_PATH, manifest)
@@ -1125,7 +1325,7 @@ def main() -> None:
         _atomic_write_json(path, manifest)
         validate_h49b_r1_manifest(manifest)
     else:
-        manifest = load_h49b_r2_manifest()
+        manifest = load_h49b_r3_manifest()
     print(json.dumps({"status": "PASS", "kind": manifest["kind"], "observed_results_present": manifest["observed_results_present"], "next_boundary": H49B_WORK_ORDER_ID}, sort_keys=True))
 
 
