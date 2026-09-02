@@ -1,0 +1,168 @@
+{
+  "kind": "H49R1A_F49_EXECUTABLE_DIAGNOSTIC_PROTOCOL_CLOSURE",
+  "work_order_id": "GENERICCHESS-F49-CORRECTIVE-R1-EXECUTABLE-DIAGNOSTIC-PROTOCOL-CLOSURE",
+  "checkpoint_name": "H49R1A",
+  "protocol_status": "PRE_REGISTERED_NO_OBSERVED_RESULTS",
+  "parent_h49a_sha": "93eee26a090c5a83487046b9165356fa1187b44e",
+  "h49a_manifest_sha256": "e294a27ed1a4ea4c03578321b1beeb61ba233aafe19fcad98e968a016ed14f90",
+  "baseline_sha": "4bd25d405af0890668c2940eefc8b68faae1b594",
+  "h48r1a": {
+    "commit": "7e2f17bdc7ac46aabaa8b1a139c5866f1b0689ab",
+    "manifest_sha256": "cfc9db0c0b25433a6b6c77f0adf41a7b0132dc017daf277f2467edab0270b3cf"
+  },
+  "raw_git_blob_sha256": {
+    "generic_chess/ai/evaluation/config.py": "0ff95ef95c53f10ac4547c21c2f5462b9a6f306adf1cfa1e3555588def74a0be",
+    "generic_chess/learning/features.py": "2a939ff7fe2c54a82dcaa55a9002699144cbdb7cb074229c21e4dc3605ae20af",
+    "generic_chess/learning/openings.py": "8403430c175c05cf6bdab248218a7a2957c4f84fedf248fe4a2ad18765f55d31",
+    "generic_chess/core/actions.py": "7fc82ea1a5fad9bd1a44040785a604bf4e79d847252d18f3322b3813cf684f3e",
+    "generic_chess/core/identity.py": "224702826c7659e881010d322561280e2dad09a66b29c769c0df71d89b0ff785",
+    "generic_chess/native/compiler.py": "c858767ab1c032f6174ef5bb32e21228e203f4c04d75f4a7f358683709994969",
+    "generic_chess/native/engine.py": "e40558982d17efa4b30722b7f83c942bf3ae70af9e045365bc91938c8a53957f"
+  },
+  "preservation": {
+    "h49a_immutable": true,
+    "f48_control_immutable": true,
+    "production_diff_required": "ZERO",
+    "master_promotion": false
+  },
+  "source_openings": {
+    "generator": "generic_chess.learning.openings.generate_arena_openings",
+    "count": 16,
+    "min_plies": 2,
+    "max_plies": 6,
+    "evaluator_or_search_used": false,
+    "strata": {"S49-M": {"seed": 490100}, "S49-E": {"seed": 490200}}
+  },
+  "stratum_generation": {
+    "output_count": 64,
+    "attempt_cap": 100000,
+    "attempt_cap_semantics": "100000 attempts per output position",
+    "base_rng": "random.Random(stratum_seed) created once per stratum",
+    "target_ply": "base_rng.randint(min_target_ply, max_target_ply) exactly once per output index",
+    "opening": "source_openings[output_index mod 16]",
+    "candidate_seed": "int(stable_sha256({stage:F49_STRATUM_POSITION,stratum,seed,index,attempt})[:16], 16)",
+    "candidate_rng": "random.Random(candidate_seed)",
+    "continuation": "replay source opening through GameSession, obtain Core legal actions at each step, sort by canonical_json(action_to_dict(action)), select ordered[rng.randrange(len(ordered))]",
+    "reject_conditions": ["terminal before target ply", "no legal action before target ply", "terminal at target", "duplicate position_identity_key", "minimum legal-action count failure", "S49-E event predicate failure"],
+    "selection": "first valid attempt in deterministic order",
+    "unavailable": "STRUCTURAL_STRATUM_UNAVAILABLE"
+  },
+  "strata": {
+    "S49-M": {"name": "MID_REACHABLE_UNIQUE", "seed": 490100, "target_plies": [8, 20], "minimum_legal_actions": 1, "event_required": false},
+    "S49-E": {"name": "INVENTORY_EVENT_UNIQUE", "seed": 490200, "target_plies": [6, 24], "minimum_legal_actions": 2, "event_required": true}
+  },
+  "event_predicate": {
+    "board_summary": "total occupied squares and count by (owner,type_id)",
+    "inventory_summary": "canonical count by (owner,type_id) from Position hand/inventory; empty mapping if absent",
+    "remove_or_capture_effect": "board_total_after < board_total_before",
+    "type_or_promotion_transformation": "board population unchanged but (owner,type_id) count map changes",
+    "hand_or_inventory_count_change": "hand/inventory count map changes",
+    "accepted_if": "at least one A/B/C event occurs in source opening or continuation",
+    "piece_values_used": false,
+    "game_name_used": false
+  },
+  "material_vector_and_directions": {
+    "coordinate_vector": "x = board[t0..tn-1] || hand[t0..tn-1]",
+    "type_order": "generic_chess.learning.features.non_anchor_type_ids(compiled), deterministic lexicographic tuple",
+    "distance": "Euclidean L2",
+    "families": {
+      "alternating_sign": "d_j = +1 for even j, -1 for odd j",
+      "first_half_positive": "d_j = +1 for j < ceil(D/2), otherwise -1",
+      "board_hand_differential": "board coordinates +1, hand coordinates -1",
+      "seeded_normalized_pseudorandom": "CPython random.Random(480703), uniform(-1.0,1.0) drawn in coordinate order"
+    },
+    "normalization": "every nonzero raw direction divided by Euclidean L2 norm",
+    "candidate": "P48-0_vector + sign * 0.10 * ||P48-0_vector||2 * normalized_direction for sign in [-1,+1]",
+    "validity": "reject nonfinite/nonpositive non-anchor coordinates, apply one common scale to restore P48-0 reference_median, call existing checkpoint validity checks, reject rather than clip",
+    "deduplication": "deduplicate identical resulting checkpoint IDs, retain first named direction/sign in frozen order, record aliases, do not refill",
+    "direction_order": ["alternating_sign", "first_half_positive", "board_hand_differential", "seeded_normalized_pseudorandom"],
+    "sign_order": [-1, 1]
+  },
+  "leverage": {
+    "L49-0": {"name": "SINGLE_TYPE_LOCAL", "factors": [0.75, 1.25], "budgets": [500, 2000, 8000]},
+    "L49-1": {"name": "LEARNER_DIRECTION_LOCAL", "budgets": [500, 2000, 8000]},
+    "L49-2": {"name": "LARGE_SINGLE_TYPE_DIAGNOSTIC", "factors": [0.5, 1.5], "budget": 2000, "replaces_f48_prerequisite": false},
+    "channel_rule": "multiply each non-anchor board channel and corresponding existing hand channel by the same factor; do not invent absent hand channels; all other coordinates unchanged",
+    "flip_rate": "number of positions whose best action differs from P48-0 baseline / total corpus positions",
+    "score_displacement": "mean absolute perturbed_score - baseline_score in existing native score units",
+    "mean_flip_rate": "arithmetic mean over unique usable perturbations; no position/type weighting or fitting",
+    "failure": "construction failure is reported and excluded; any search failure invalidates the entire corpus/budget cell"
+  },
+  "search_contract": {
+    "max_depth": 12,
+    "quiescence_max_depth": 0,
+    "quiescence_max_nodes": 0,
+    "tt_megabytes": 8,
+    "fresh_engine_per_search": true,
+    "tt_sharing": false,
+    "accepted_termination_reasons": ["completed", "node_limit", "depth_limit"],
+    "null_action_policy": "failed_search",
+    "failed_search_policy": "CELL_INVALID_SEARCH_FAILURE; retain failed positions in denominator"
+  },
+  "teacher_stability": {
+    "checkpoint": "P48-0",
+    "adjacent_budget_pairs": [[10000, 20000], [20000, 40000], [40000, 80000]],
+    "exact_best_move_agreement": "count(best_move_low == best_move_high) / N",
+    "score_sign_agreement": "count(sign(score_low) == sign(score_high)) / N, sign exactly -1/0/+1",
+    "top_action_stability": "exact_best_move_agreement",
+    "top_k_ranking_available": false,
+    "convergence_vector": "[agreement_10_20, agreement_20_40, agreement_40_80] and adjacent deltas",
+    "stable_teacher_40_80": "agreement >= 0.85 AND zero failed searches"
+  },
+  "non_material_control": {
+    "condition": "only on a RuleSet/corpus with stable 40k-vs-80k teacher",
+    "mode": "NON_TRAINING",
+    "fields": ["dynamic_mobility_weight", "promotion_potential_weight", "anchor_escape_weight"],
+    "factors": [0.75, 1.25],
+    "candidate": "baseline_field * factor; all other EvaluationConfig fields unchanged",
+    "budget": 2000,
+    "threshold": 0.05,
+    "signal": "max family_mean_flip, where family_mean_flip is mean of valid 0.75/1.25 flip rates, >= 0.05",
+    "no_stable_teacher": "NOT_RUN_NO_STABLE_TEACHER",
+    "label": "NON_MATERIAL_EXISTING_FEATURE_LEVERAGE"
+  },
+  "available_corpora": {
+    "definition": "F48_CONTROL plus each available S49-M/S49-E",
+    "stable_definition": "available corpus with valid zero-failure 40k-vs-80k agreement >= 0.85",
+    "unavailable_semantics": "does not count as passing or failing leverage"
+  },
+  "selector": {
+    "threshold": 0.05,
+    "per_corpus": {
+      "learner_signal": "valid L49-1@2000 and mean_flip_rate >= 0.05",
+      "single_type_signal": "valid L49-0@2000 and mean_flip_rate >= 0.05",
+      "stable_teacher": "valid 40k-vs-80k and agreement >= 0.85",
+      "non_material_signal": "stable corpus and max existing family_mean_flip >= 0.05"
+    },
+    "cases": {
+      "A": "count(r: stable_teacher(r,F48_CONTROL) AND NOT single_type_signal(r,F48_CONTROL) AND learner_signal(r,F48_CONTROL)) >= 2",
+      "B": "count(r: max stable structural S49 learner-direction flip - control learner-direction flip >= 0.05) >= 2",
+      "C": "count(r: stable_any(r)) < 2",
+      "D": "count(r: stable_any(r) AND NOT material_signal_any_stable(r) AND nonmaterial_signal_any_stable(r)) >= 2",
+      "E": "count(r: stable_any(r) AND NOT material_signal_any_stable(r) AND NOT nonmaterial_signal_any_stable(r)) >= 2"
+    },
+    "precedence": ["A", "B", "C", "D", "E", "otherwise"],
+    "mapping": {
+      "A": "LEARNER_ALIGNED_SIGNAL_SUPPORTED -> F50_LEARNABLE_MATERIAL_RECOVERY_PROTOCOL_V2",
+      "B": "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING -> F50_STRUCTURAL_CORPUS_RECOVERY_PROTOCOL",
+      "C": "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING -> F50_NATIVE_SEARCH_STRENGTH_REASSESSMENT",
+      "D": "MATERIAL_ONLY_REPRESENTATION_LIMITING -> F50_GENERIC_LEARNABLE_EVALUATOR_EXPANSION",
+      "E": "EVALUATION_SIGNAL_BROADLY_WEAK -> F50_SEARCH_DOMINANCE_AND_EVALUATION_ROLE_DIAGNOSIS",
+      "otherwise": "MIXED_OR_UNRESOLVED -> F50_LEARNING_ARCHITECTURE_REASSESSMENT"
+    }
+  },
+  "compile_runtime_ledger": {
+    "native_ruleset_compile_count": true,
+    "evaluation_table_compile_count": true,
+    "nodes_per_second_by_ruleset_corpus_budget": true,
+    "ruleset_recompilation_for_evaluator_perturbations": false,
+    "evaluator_analysis_inside_node_loop": false
+  },
+  "observed_results_present": false,
+  "measurements_invoked": false,
+  "learning_invoked": false,
+  "production_diff_required": "ZERO",
+  "master_promotion": false,
+  "next_authorized_boundary": "GENERICCHESS-F49-DIAGNOSTIC-MEASUREMENTS-AFTER-H49R1A",
+  "manifest_sha256": "57d2d189712138efa352b8e93edae83cb4938d74c5140717976aecf722a31215"
+}
