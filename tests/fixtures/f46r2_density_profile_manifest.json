@@ -1,0 +1,35 @@
+{
+  "baseline": {
+    "scientific_f46_sha": "b0fc4d2da1a6cb0b818b713305dce84cef3e8e6e",
+    "first_pass_f46_sha": "6eed502b944cfa1398a160d2c6d0efcf1df0f025",
+    "h46r1a_commit": "69c9c5bd98a8e3be4d5aa2a63d2a9f19d4c502f5",
+    "h46r1a_manifest_sha256": "f5468106053c68360a6c8c78310f03563233e0809a310f83c7485f32bcebdd76"
+  },
+  "density_points": [0.0, 0.125, 0.25, 0.375, 0.5],
+  "density_weights": [0.25, 0.2, 0.2, 0.18, 0.17],
+  "reducer_definitions": {
+    "D46-0_WEIGHTED_ARITHMETIC_CONTROL": "sum(w_i * m_i)",
+    "D46-1_WEIGHTED_GEOMETRIC_MOBILITY": "exp(sum(w_i * log(m_i))) for positive entries, otherwise 0",
+    "D46-2_WEIGHTED_HARMONIC_MOBILITY": "1 / sum(w_i / m_i) for positive entries, otherwise 0",
+    "D46-3_LOWER_ENVELOPE_MOBILITY": "min(m_i)"
+  },
+  "shogi_reference": {
+    "representation": "accepted current normalized board-value profile from F42/F45, never candidate raw capability",
+    "metrics": ["candidate board vector", "reference board vector", "cosine dot/norm", "Spearman", "pairwise ordering", "largest rank displacement", "accepted hand values", "hand/board range"]
+  },
+  "algebra_gates": ["finite", "non_negative", "all_coordinate_monotone", "positive_scale_equivariant", "constant_curve_identity", "zero_handling", "frozen_point_weight_binding", "label_order_invariant", "min_le_harmonic_le_geometric_le_arithmetic"],
+  "semantic_qualification_gates": ["F44_blocker_witness", "constant_curve_control", "equal_arithmetic_different_shape_control", "same_candidate_population", "unchanged_endpoint_algebra", "unchanged_graph_global_terms", "unchanged_non_mobility", "unchanged_normalization", "no_new_feature_or_parameter"],
+  "qualification_mapping": {
+    "DENSITY_PROFILE_CANDIDATE_SUPPORTED": "F47_DENSITY_PROFILE_INTEGRATION_PROTOTYPE",
+    "MULTIPLE_DENSITY_PROFILE_CANDIDATES": "F47_DENSITY_PROFILE_DISCRIMINATION",
+    "DENSITY_PROFILE_CROSS_RULESET_CONFLICT": "F47_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "DENSITY_PROFILE_REDUCTION_INSUFFICIENT": "F47_ENDPOINT_DENSITY_COMPOSITE_DIAGNOSIS",
+    "DENSITY_PROFILE_REDUCTION_MISMATCH": "F47_MATERIAL_PRIOR_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F47_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "tie_policy": "all six selector paths must execute _select; no hardcoded reachability",
+  "prohibited_operations": ["production evaluator integration", "coefficient fitting", "new density points or weights", "endpoint or conditional feature addition", "F43 combination", "F47 execution", "master promotion"],
+  "work_order": "GENERICCHESS-F46-CORRECTIVE-R1-SHOGI-METRIC-AND-GATE-CLOSURE",
+  "schema_version": 1,
+  "manifest_sha256": "20872abac728ac9280fff4f2923f5b26e9123927b021ec620092c8fc5c12a03f"
+}
