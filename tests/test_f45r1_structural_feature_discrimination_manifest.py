@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 
@@ -20,6 +21,7 @@ def test_h45r1a_manifest_is_frozen_without_an_expected_observed_result():
     assert data["baseline"]["first_pass_f45_sha"] == "e6c90819388cb056ad669b246ed22b209484c46e"
     assert "DENSITY_PROFILE_FEATURE_PRIMARY" in data["classification_mapping"]
     assert "observed_result" not in data
+    assert data["prohibited_operations"][0] == "freeze observed classification as expected result"
     assert data["families"]["surviving"] == [
         "S44-A_ENDPOINT_CONTROL_SEMANTICS",
         "S44-B_CONDITIONAL_CAPABILITY_RESERVE",
@@ -48,3 +50,9 @@ def test_h45r1a_freezes_derivation_algorithms_and_all_mappings():
         "STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT",
         "CROSS_RULESET_STRUCTURAL_CONFLICT",
     }
+
+
+def test_h45r1a_is_an_ancestor_of_corrective_execution():
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", "8940031", "HEAD"], cwd=ROOT).returncode == 0
+    parent = subprocess.check_output(["git", "show", "-s", "--format=%P", "8940031"], cwd=ROOT, text=True).strip()
+    assert parent.startswith("e6c90819388cb056ad669b246ed22b209484c46e")

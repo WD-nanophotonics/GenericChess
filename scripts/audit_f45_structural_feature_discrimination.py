@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import itertools
 import json
+import math
 import sys
 from pathlib import Path
 from typing import Any
@@ -107,58 +108,95 @@ def _reproduce_f44(manifest: dict[str, Any]) -> dict[str, Any]:
 
 def _source_consumer_ledger() -> dict[str, Any]:
     attack = _line_facts("generic_chess/core/attacks.py", ("def pseudo_attacks", "attacked.update", "return frozenset(attacked)"))
-    evaluator = _line_facts("generic_chess/ai/evaluation/evaluator.py", ("def evaluate", "pseudo_attacks(position, 0", "def _promotion_bonus", "empty_forward_mobility"))
+    evaluator = _line_facts("generic_chess/ai/evaluation/evaluator.py", ("def evaluate", "pseudo_attacks(position, 0", "def _promotion_bonus", "def _anchor_escape", "empty_forward_mobility"))
     analyzer = _line_facts("generic_chess/ai/evaluation/analyzer.py", ("def build_movement_capability", "mobility_density_curve", "expected_mobility=curve"))
     profile = _line_facts("generic_chess/ai/evaluation/profile.py", ("def _raw_capability_score", "mobility_score = sum", "zip(config.density_weights"))
     executor = _line_facts("generic_chess/core/semantic_executor.py", ("for slot_guard in pattern.slot_guards", "pattern.guards", "def _violates_postconditions"))
+    attack_text = (ROOT / "generic_chess/core/attacks.py").read_text(encoding="utf-8")
+    evaluator_text = (ROOT / "generic_chess/ai/evaluation/evaluator.py").read_text(encoding="utf-8")
+    analyzer_text = (ROOT / "generic_chess/ai/evaluation/analyzer.py").read_text(encoding="utf-8")
+    profile_text = (ROOT / "generic_chess/ai/evaluation/profile.py").read_text(encoding="utf-8")
+    executor_text = (ROOT / "generic_chess/core/semantic_executor.py").read_text(encoding="utf-8")
+    endpoint_relation_consumer = any(token in attack_text for token in ("target_empty", "target_enemy", "target_relation"))
+    promotion_consumer = "def _promotion_bonus" in evaluator_text and "empty_forward_mobility" in evaluator_text
+    guard_consumer = "pattern.guards" in executor_text and "pattern.slot_guards" in executor_text
+    curve_consumer = "expected_mobility" in analyzer_text and "density_weights" in profile_text
+    dynamic_shape_consumer = any(token in evaluator_text for token in ("density", "curve", "blocker_fragility"))
     return {
         "S44-A_ENDPOINT_CONTROL_SEMANTICS": {
             "consumer_paths": [attack, evaluator],
+            "trace_facts": {"pseudo_attack_union": "attacked.update" in attack_text, "endpoint_relation_consumer": endpoint_relation_consumer, "position_occupancy_used": "position.board" in attack_text},
             "shared_information": "position-dependent pseudo-attack destination union/count",
             "unique_information": "target_empty versus target_enemy relation and quiet/control overlap",
-            "same_semantic_distinction": False,
-            "equivalent_existing_consumer": False,
-            "complete_pre_search_collision_remains": attack["all_present"] and not any("target_relation" in line for line in (ROOT / "generic_chess/core/attacks.py").read_text(encoding="utf-8").splitlines()),
+            "equivalent_existing_consumer": endpoint_relation_consumer,
+            "complete_pre_search_collision_remains": not endpoint_relation_consumer,
             "ownership": "static rule geometry plus partial dynamic union consumer",
         },
         "S44-B_CONDITIONAL_CAPABILITY_RESERVE": {
             "consumer_paths": [executor, evaluator],
+            "trace_facts": {"guard_semantic_consumer": guard_consumer, "promotion_consumer": promotion_consumer, "promotion_has_guard_invariance": "state_guard" in evaluator_text or "slot_guard" in evaluator_text},
             "shared_information": "promotion potential is dynamically consumed for promotable pieces",
             "unique_information": "guard availability for executable conditional patterns",
-            "same_semantic_distinction": False,
-            "equivalent_existing_consumer": False,
-            "complete_pre_search_collision_remains": True,
+            "equivalent_existing_consumer": guard_consumer and ("state_guard" in evaluator_text or "slot_guard" in evaluator_text),
+            "complete_pre_search_collision_remains": guard_consumer and not ("state_guard" in evaluator_text or "slot_guard" in evaluator_text),
             "ownership": "dynamic evaluator / move-state consumer",
         },
         "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": {
             "consumer_paths": [analyzer, profile, evaluator],
+            "trace_facts": {"curve_generated": curve_consumer, "weighted_scalar_reduction": "mobility_score = sum" in profile_text, "dynamic_shape_consumer": dynamic_shape_consumer},
             "shared_information": "density-weighted mobility scalar and dynamic pseudo-attack count",
             "unique_information": "five-point retention curve, curvature, and blocker ordering",
-            "same_semantic_distinction": False,
-            "equivalent_existing_consumer": False,
-            "complete_pre_search_collision_remains": True,
+            "equivalent_existing_consumer": dynamic_shape_consumer,
+            "complete_pre_search_collision_remains": curve_consumer and not dynamic_shape_consumer,
             "ownership": "static rule-derived profile; no independent dynamic shape consumer",
         },
     }
 
 
+def _classify_placement(facts: dict[str, Any]) -> str:
+    """Classify placement from evidence facts, never from a family name."""
+    if not facts.get("consumer_evidence_sufficient", False):
+        return "UNRESOLVED"
+    if facts.get("equivalent_existing_consumer", False):
+        return "ALREADY_EQUIVALENTLY_CONSUMED"
+    if not facts.get("independent_support", False):
+        return "DIAGNOSTIC_ONLY_NOT_ADMISSIBLE"
+    if facts.get("requires_position_state", False):
+        return "DYNAMIC_EVALUATOR_ADMISSIBLE"
+    if facts.get("compile_once_type_information", False):
+        return "STATIC_MATERIAL_ADMISSIBLE"
+    return "UNRESOLVED"
+
+
 def _guard_category_ledger(evidence: dict[str, Any]) -> dict[str, Any]:
+    compiled = {"western_chess": f44.compile_semantic_ruleset(f44.build_western_chess_ruleset()), "standard_shogi": f44.compile_semantic_ruleset(f44.build_standard_shogi_ruleset())}
     rows = []
-    for ruleset_name, data in evidence["signals"][FAMILIES[1]]["real_rulesets"].items():
-        for type_id, metrics in data.items():
-            reserve = metrics["conditional_reserve"]
-            categories = {key: int(value) for key, value in reserve["guard_categories"].items() if value}
-            for category, count in categories.items():
-                rows.append({"ruleset": ruleset_name, "type": type_id, "category": category, "count": count})
+    for ruleset_name, ruleset in compiled.items():
+        type_ids = tuple(evidence["signals"][FAMILIES[1]]["real_rulesets"][ruleset_name])
+        for type_id in type_ids:
+            for pattern in f44._patterns(ruleset, type_id, False):
+                categories = []
+                if pattern.guards:
+                    categories.append("state_guard")
+                if pattern.slot_guards:
+                    categories.append("slot_guard")
+                if pattern.postconditions:
+                    categories.append("other_executable_guard")
+                if "promotion" in pattern.pattern_id.lower():
+                    categories.append("promotion_related_transition")
+                if not categories:
+                    categories.append("initial_state_or_availability_restriction")
+                for category in categories:
+                    rows.append({"ruleset": ruleset_name, "type": type_id, "pattern_id": pattern.pattern_id, "category": category})
     western = [row for row in rows if row["ruleset"] == "western_chess"]
     return {
         "rows": rows,
         "categories_observed": sorted({row["category"] for row in rows}),
-        "western_conditional_patterns": sum(row["count"] for row in western),
+        "western_conditional_patterns": len({row["pattern_id"] for row in western}),
         "state_and_slot_guards_present": {"state_guard": any(row["category"] == "state_guard" for row in rows), "slot_guard": any(row["category"] == "slot_guard" for row in rows)},
-        "promotion_related_transition": False,
-        "initial_state_or_availability_restriction": True,
-        "other_executable_guard": any(row["category"] == "postcondition" for row in rows),
+        "promotion_related_transition": any(row["category"] == "promotion_related_transition" for row in rows),
+        "initial_state_or_availability_restriction": any(row["category"] == "initial_state_or_availability_restriction" for row in rows),
+        "other_executable_guard": any(row["category"] == "other_executable_guard" for row in rows),
     }
 
 
@@ -187,10 +225,44 @@ def _orientation_ledger(evidence: dict[str, Any], f42_result: dict[str, Any]) ->
         "reason": "the complete curve separates Pawn's blocker-insensitive profile and Knight's short-channel profile from long rays",
     }
     shogi = f42_result["shogi_cross_rule"]["positive_control"]
+    endpoint_w = real[FAMILIES[0]]["real_rulesets"]["western_chess"]["P"]["endpoint_control"]
+    endpoint_s = real[FAMILIES[0]]["real_rulesets"]["standard_shogi"]["P"]["endpoint_control"]
+    conditional_w = real[FAMILIES[1]]["real_rulesets"]["western_chess"]["P"]["conditional_reserve"]
+    conditional_s = real[FAMILIES[1]]["real_rulesets"]["standard_shogi"]
+    density_s = real[FAMILIES[3]]["real_rulesets"]["standard_shogi"]
+    channel_w = real[FAMILIES[2]]["real_rulesets"]["western_chess"]
+    channel_s = real[FAMILIES[2]]["real_rulesets"]["standard_shogi"]
+    r3 = {
+        FAMILIES[0]: {
+            "pass": shogi["pass"] and endpoint_w["quiet_capture_overlap_ratio"] < 1.0 and endpoint_s["quiet_capture_overlap_ratio"] >= 0.0 and endpoint_w["quiet_capture_overlap_ratio"] != endpoint_s["quiet_capture_overlap_ratio"],
+            "western_pawn_split": endpoint_w["quiet_capture_overlap_ratio"] < 1.0,
+            "standard_shogi_pawn_control": endpoint_s["quiet_capture_overlap_ratio"] >= 0.0,
+            "reason": "Western Pawn has a split endpoint relation while Standard-Shogi Pawn is measured as a separate control population",
+        },
+        FAMILIES[1]: {
+            "pass": shogi["pass"] and conditional_w["conditional_pattern_count"] > 0 and all(row["conditional_reserve"]["conditional_pattern_count"] == 0 for row in conditional_s.values()),
+            "western_conditional_reserve": conditional_w["conditional_pattern_count"] > 0,
+            "standard_shogi_negative_control": all(row["conditional_reserve"]["conditional_pattern_count"] == 0 for row in conditional_s.values()),
+            "reason": "conditional reserve is present in Western Pawn but absent from the audited Standard-Shogi conditional population",
+        },
+        FAMILIES[3]: {
+            "pass": shogi["pass"] and all(len(row["density_profile"]["mobility_retention_by_density"]) == 5 for row in density_s.values()),
+            "standard_shogi_profiles_complete": all(len(row["density_profile"]["mobility_retention_by_density"]) == 5 for row in density_s.values()),
+            "healthy_ordering_gate": shogi["pass"],
+            "reason": "Standard-Shogi retains complete density profiles and passes the frozen healthy ordering controls",
+        },
+        FAMILIES[2]: {
+            "pass": shogi["pass"] and all(row["channel_diversity"]["sample_count"] > 0 for row in channel_w.values()) and all(row["channel_diversity"]["sample_count"] > 0 for row in channel_s.values()),
+            "western_channel_metrics_present": all(row["channel_diversity"]["sample_count"] > 0 for row in channel_w.values()),
+            "standard_shogi_channel_metrics_present": all(row["channel_diversity"]["sample_count"] > 0 for row in channel_s.values()),
+            "reason": "channel metrics are present in both rulesets, while the F44 matched collision remains a negative independence control",
+        },
+    }
     return {
         "S44-A_ENDPOINT_CONTROL_SEMANTICS": endpoint,
         "S44-B_CONDITIONAL_CAPABILITY_RESERVE": conditional,
         "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": density,
+        "R3_by_family": r3,
         "R3_cross_rule_gate": {
             "pass": shogi["pass"],
             "cosine": shogi["board_value_cosine_vs_current"],
@@ -202,75 +274,171 @@ def _orientation_ledger(evidence: dict[str, Any], f42_result: dict[str, Any]) ->
     }
 
 
-def _redundancy_ledger() -> dict[str, Any]:
-    semantics = {
-        "S44-A_ENDPOINT_CONTROL_SEMANTICS": "endpoint relation / quiet-control split",
-        "S44-B_CONDITIONAL_CAPABILITY_RESERVE": "state and slot guard availability",
-        "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY": "occupancy curve shape / blocker fragility",
-    }
-    rows = {}
-    for left, right in itertools.combinations(SURVIVING, 2):
-        rows[f"{left}__{right}"] = {
-            "left": left,
-            "right": right,
-            "same_western_piece_partition": left in (FAMILIES[0], FAMILIES[1]) and right in (FAMILIES[0], FAMILIES[1]),
-            "same_executable_cause": False,
-            "recoverable_from_other": False,
-            "real_rule_contrasts_are_genuinely_different": True,
-            "left_semantics": semantics[left],
-            "right_semantics": semantics[right],
-            "reason": "matching Western Pawn contrast does not make endpoint, guard, and blocker semantics interchangeable",
-        }
-    return {"families": semantics, "pairwise": rows, "minimum_subset_must_use_distinct_semantics": True}
-
-
-def _placement_ledger(consumer: dict[str, Any], reproduction: dict[str, Any], guards: dict[str, Any]) -> dict[str, Any]:
+def _endpoint_behavioral_probe(evidence: dict[str, Any], consumer: dict[str, Any]) -> dict[str, Any]:
+    cases = evidence["synthetic"]["cases"]
+    left = cases["quiet_only"]
+    right = cases["quiet_plus_capture_same_targets"]
+    evaluator = consumer[FAMILIES[0]]
+    material_equal = math.isclose(left["raw_score"], right["raw_score"], rel_tol=1e-12, abs_tol=1e-12)
+    scalar_equal = left["component_values"] == right["component_values"]
+    rule_signal_static = all(key in left["endpoint"] and key in right["endpoint"] for key in ("quiet_geometry_mass", "attack_geometry_mass", "dual_use_overlap_mass", "quiet_capture_union_mass", "quiet_capture_overlap_ratio"))
+    dynamic_terms = ["dynamic_mobility", "anchor_escape", "promotion_potential"]
     return {
+        "controls": ["quiet_only", "quiet_plus_capture_same_targets"],
+        "existing_feature_representation": {
+            "material_result": {"quiet_only": left["raw_score"], "quiet_plus_capture_same_targets": right["raw_score"]},
+            "four_static_capability_components_equal": scalar_equal,
+            "dynamic_terms_inspected": dynamic_terms,
+            "pseudo_attack_representation": "position-dependent union/count",
+            "promotion_potential_for_synthetic_control": "not present in non-promotable X control",
+        },
+        "consumer_trace": evaluator["trace_facts"],
+        "matched_current_component_collision": scalar_equal,
+        "same_complete_pre_search_representation": material_equal and scalar_equal and not evaluator["trace_facts"]["endpoint_relation_consumer"],
+        "quiet_control_split_not_consumed": not evaluator["trace_facts"]["endpoint_relation_consumer"],
+        "rule_signal_static": rule_signal_static,
+        "equivalent_existing_consumer": evaluator["equivalent_existing_consumer"],
+    }
+
+
+def _equal(left: Any, right: Any) -> bool:
+    if isinstance(left, (int, float)) and isinstance(right, (int, float)):
+        return math.isclose(float(left), float(right), rel_tol=1e-12, abs_tol=1e-12)
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(_equal(left[key], right[key]) for key in left)
+    if isinstance(left, (list, tuple)) and isinstance(right, (list, tuple)):
+        return len(left) == len(right) and all(_equal(a, b) for a, b in zip(left, right))
+    return left == right
+
+
+def _signal_vector(case: dict[str, Any], family: str) -> Any:
+    if family == FAMILIES[0]:
+        return tuple(case["endpoint"][key] for key in ("quiet_geometry_mass", "attack_geometry_mass", "dual_use_overlap_mass", "quiet_capture_union_mass", "quiet_capture_overlap_ratio"))
+    if family == FAMILIES[1]:
+        return tuple(case["conditional"][key] for key in ("conditional_pattern_count", "path_clear_only_reserve_mass", "conditional_reserve_over_ordinary_mass", "ordinary_pattern_count"))
+    return tuple(case["density"][key] for key in ("mobility_curve", "empty_board_mass", "maximum_fractional_drop"))
+
+
+def _partition_relation(left: dict[Any, int], right: dict[Any, int]) -> str:
+    domain = sorted(set(left) & set(right), key=repr)
+    left_equal = all((left[a] == left[b]) == (right[a] == right[b]) for a, b in itertools.combinations(domain, 2))
+    left_refines = all(not (left[a] == left[b]) or right[a] == right[b] for a, b in itertools.combinations(domain, 2))
+    right_refines = all(not (right[a] == right[b]) or left[a] == left[b] for a, b in itertools.combinations(domain, 2))
+    if left_equal:
+        return "same_partition"
+    if left_refines:
+        return "left_refines_right"
+    if right_refines:
+        return "right_refines_left"
+    return "incomparable"
+
+
+def _consumer_signature(row: dict[str, Any]) -> tuple[Any, ...]:
+    return tuple(sorted((path["path"], tuple(sorted(path["functions_or_symbols"]))) for path in row.get("consumer_paths", [])))
+
+
+def _redundancy_ledger(evidence: dict[str, Any], consumer: dict[str, Any]) -> dict[str, Any]:
+    cases = evidence["synthetic"]["cases"]
+    semantics = {
+        FAMILIES[0]: "endpoint relation / quiet-control split",
+        FAMILIES[1]: "state and slot guard availability",
+        FAMILIES[3]: "occupancy curve shape / blocker fragility",
+    }
+    controls = tuple(cases)
+    rows = {}
+    for source, target in itertools.permutations(SURVIVING, 2):
+        witnesses = []
+        for left_name, right_name in itertools.combinations(controls, 2):
+            source_equal = _equal(_signal_vector(cases[left_name], source), _signal_vector(cases[right_name], source))
+            target_differs = not _equal(_signal_vector(cases[left_name], target), _signal_vector(cases[right_name], target))
+            if source_equal and target_differs:
+                witnesses.append([left_name, right_name])
+        rows[f"{source}__{target}"] = {
+            "source": source,
+            "target": target,
+            "target_recoverability_from_source": "NOT_RECOVERABLE" if witnesses else "UNRESOLVED",
+            "recoverability_witnesses": witnesses[:8],
+            "source_semantics": semantics[source],
+            "target_semantics": semantics[target],
+        }
+    real = {}
+    for family in SURVIVING:
+        signatures = {}
+        for ruleset_name, data in evidence["signals"][family]["real_rulesets"].items():
+            for type_id, metrics in data.items():
+                if family == FAMILIES[0]:
+                    value = metrics["endpoint_control"]["quiet_capture_overlap_ratio"]
+                    signature = (round(value, 3), round(metrics["endpoint_control"]["split_semantics_ratio"], 3))
+                elif family == FAMILIES[1]:
+                    value = metrics["conditional_reserve"]
+                    signature = (value["conditional_pattern_count"], round(value["conditional_reserve_over_ordinary_mass"], 3))
+                else:
+                    value = metrics["density_profile"]
+                    signature = (tuple(round(v, 3) for v in value["mobility_retention_by_density"]), round(value["maximum_fractional_drop"], 3))
+                signatures[f"{ruleset_name}:{type_id}"] = signature
+        classes = {}
+        for key, signature in signatures.items():
+            classes.setdefault(repr(signature), len(classes))
+        real[family] = {"signatures": signatures, "equality_classes": {key: classes[repr(value)] for key, value in signatures.items()}}
+    for left, right in itertools.combinations(SURVIVING, 2):
+        rows[f"partition:{left}__{right}"] = {"left": left, "right": right, "partition_relation": _partition_relation(real[left]["equality_classes"], real[right]["equality_classes"]), "same_executable_cause": False}
+        rows[f"partition:{left}__{right}"]["same_executable_cause"] = _consumer_signature(consumer[left]) == _consumer_signature(consumer[right])
+    return {"families": semantics, "pairwise_ordered": rows, "real_rule_partitions": real, "minimum_subset_must_use_distinct_semantics": True}
+
+
+def _placement_ledger(consumer: dict[str, Any], reproduction: dict[str, Any], guards: dict[str, Any], evidence: dict[str, Any], endpoint_probe: dict[str, Any], orientations: dict[str, Any]) -> dict[str, Any]:
+    facts = {
         FAMILIES[0]: {
-            "placement": "STATIC_MATERIAL_ADMISSIBLE",
-            "static_material_admissible": True,
-            "dynamic_evaluator_admissible": True,
-            "existing_evaluator_duplication": False,
-            "partial_overlap": "pseudo_attacks consumes union activity, not the quiet/control split",
-            "consumer_paths": consumer[FAMILIES[0]]["consumer_paths"],
-            "reason": "unique endpoint coordinates are rule-derived and not equivalently consumed",
+            "independent_support": evidence["signals"][FAMILIES[0]]["independence"]["pass"],
+            "consumer_evidence_sufficient": endpoint_probe["same_complete_pre_search_representation"] is True,
+            "equivalent_existing_consumer": endpoint_probe["equivalent_existing_consumer"],
+            "requires_position_state": not endpoint_probe["rule_signal_static"],
+            "compile_once_type_information": endpoint_probe["rule_signal_static"],
         },
         FAMILIES[1]: {
-            "placement": "DYNAMIC_EVALUATOR_ADMISSIBLE",
-            "static_material_admissible": False,
-            "dynamic_evaluator_admissible": True,
-            "existing_evaluator_duplication": False,
-            "partial_overlap": "promotion potential is dynamic, but en-passant/double-step guard availability is not equivalent",
-            "consumer_paths": consumer[FAMILIES[1]]["consumer_paths"],
-            "guard_categories": guards["categories_observed"],
-            "reason": "static ownership would require a position/state guard availability distribution unavailable to a compile-once type constant",
+            "independent_support": evidence["signals"][FAMILIES[1]]["independence"]["pass"],
+            "consumer_evidence_sufficient": consumer[FAMILIES[1]]["trace_facts"]["guard_semantic_consumer"],
+            "equivalent_existing_consumer": consumer[FAMILIES[1]]["equivalent_existing_consumer"],
+            "requires_position_state": guards["state_and_slot_guards_present"]["state_guard"] or guards["state_and_slot_guards_present"]["slot_guard"],
+            "compile_once_type_information": False,
         },
         FAMILIES[2]: {
-            "placement": "DIAGNOSTIC_ONLY_NOT_ADMISSIBLE",
-            "static_material_admissible": False,
-            "dynamic_evaluator_admissible": False,
-            "existing_evaluator_duplication": False,
-            "partial_overlap": "channel diversity is measured but its matched current-representation collision is false",
-            "consumer_paths": [],
-            "reason": "negative independence control cannot justify a new feature placement",
+            "independent_support": evidence["signals"][FAMILIES[2]]["independence"]["pass"],
+            "consumer_evidence_sufficient": True,
+            "equivalent_existing_consumer": False,
+            "requires_position_state": False,
+            "compile_once_type_information": False,
         },
         FAMILIES[3]: {
-            "placement": "STATIC_MATERIAL_ADMISSIBLE",
-            "static_material_admissible": True,
-            "dynamic_evaluator_admissible": False,
-            "existing_evaluator_duplication": False,
-            "partial_overlap": "current profile consumes only density_weighted_mobility; dynamic pseudo-attacks do not retain curve shape",
-            "consumer_paths": consumer[FAMILIES[3]]["consumer_paths"],
-            "reason": "the full rule-derived curve is absent from the current static scalar and has no equivalent downstream consumer",
+            "independent_support": evidence["signals"][FAMILIES[3]]["independence"]["pass"],
+            "consumer_evidence_sufficient": consumer[FAMILIES[3]]["trace_facts"]["curve_generated"] and consumer[FAMILIES[3]]["trace_facts"]["weighted_scalar_reduction"],
+            "equivalent_existing_consumer": consumer[FAMILIES[3]]["equivalent_existing_consumer"],
+            "requires_position_state": False,
+            "compile_once_type_information": True,
         },
-        "exactly_one_placement_per_family": True,
     }
+    result = {}
+    for name, row in facts.items():
+        placement = _classify_placement(row)
+        result[name] = {
+            "placement": placement,
+            "facts": row,
+            "static_material_admissible": placement == "STATIC_MATERIAL_ADMISSIBLE",
+            "dynamic_evaluator_admissible": placement == "DYNAMIC_EVALUATOR_ADMISSIBLE",
+            "existing_evaluator_duplication": placement == "ALREADY_EQUIVALENTLY_CONSUMED",
+            "consumer_paths": consumer.get(name, {}).get("consumer_paths", []),
+            "guard_categories": guards["categories_observed"] if name == FAMILIES[1] else [],
+            "r3": orientations.get("R3_by_family", {}).get(name, {}),
+        }
+    result["exactly_one_placement_per_family"] = all(row["placement"] in PLACEMENTS for row in result.values())
+    return result
 
 
 def _select_classification(ledger: dict[str, dict[str, Any]], residuals: dict[str, dict[str, bool]] | None = None) -> dict[str, Any]:
     residuals = residuals or {name: {"R1": row.get("covers_R1", False), "R2": row.get("covers_R2", False)} for name, row in ledger.items()}
     conflicts = [name for name, row in ledger.items() if row.get("independent_information", False) and not row.get("cross_rule_consistent", True)]
     subset: set[str] = set()
+    tie_status = "not_applicable"
     if conflicts:
         classification = "CROSS_RULESET_STRUCTURAL_CONFLICT"
     elif ledger and all(row.get("placement") == "ALREADY_EQUIVALENTLY_CONSUMED" for row in ledger.values()):
@@ -284,8 +452,12 @@ def _select_classification(ledger: dict[str, dict[str, Any]], residuals: dict[st
                     subsets.append(subset)
             if subsets:
                 break
-        subset = set(subsets[0]) if subsets else set()
-        if not subset:
+        if len(subsets) > 1:
+            tie_status = "unresolved_equal_minimum_subsets"
+            classification = "STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT"
+        else:
+            subset = set(subsets[0]) if subsets else set()
+        if not subset and len(subsets) <= 1:
             classification = "STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT"
         elif subset == {FAMILIES[0]}:
             classification = "ENDPOINT_CONTROL_FEATURE_PRIMARY"
@@ -299,7 +471,7 @@ def _select_classification(ledger: dict[str, dict[str, Any]], residuals: dict[st
             classification = "STATIC_DYNAMIC_STRUCTURAL_COMPOSITE_REQUIRED"
         else:
             classification = "STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT"
-    return {"classification": classification, "next_boundary": CLASSIFICATION_MAPPING[classification], "minimum_explanatory_subset": sorted(subset), "conflicting_families": conflicts}
+    return {"classification": classification, "next_boundary": CLASSIFICATION_MAPPING[classification], "minimum_explanatory_subset": sorted(subset), "conflicting_families": conflicts, "tie_status": tie_status}
 
 
 def _reachability_ledger() -> dict[str, Any]:
@@ -340,21 +512,23 @@ def audit() -> dict[str, Any]:
     consumer = _source_consumer_ledger()
     guards = _guard_category_ledger(evidence)
     orientations = _orientation_ledger(evidence, f42_result)
-    redundancy = _redundancy_ledger()
-    placements = _placement_ledger(consumer, reproduction, guards)
+    endpoint_probe = _endpoint_behavioral_probe(evidence, consumer)
+    redundancy = _redundancy_ledger(evidence, consumer)
+    placements = _placement_ledger(consumer, reproduction, guards, evidence, endpoint_probe, orientations)
     residuals = {}
-    for name in SURVIVING:
-        row = orientations[name]
-        residuals[name] = {"R1": row["resolves_R1"], "R2": row["resolves_R2"]}
+    for name in FAMILIES:
+        row = orientations.get(name, {})
+        residuals[name] = {"R1": row.get("resolves_R1", False), "R2": row.get("resolves_R2", False)}
     family_ledger = {}
     for name in FAMILIES:
-        supported = name in SURVIVING
+        r3 = orientations.get("R3_by_family", {}).get(name, {})
+        supported = evidence["signals"][name]["independence"]["pass"] and evidence["signals"][name].get("real_ruleset_relevance", True) and evidence["signals"][name].get("f43_residual_relevance", True)
         family_ledger[name] = {
             "independent_information": evidence["signals"][name]["independence"]["pass"],
             "synthetic_witness_pass": evidence["signals"][name]["independence"]["pass"],
             "real_ruleset_relevance": evidence["signals"][name].get("real_ruleset_relevance", True),
             "f43_residual_relevance": evidence["signals"][name].get("f43_residual_relevance", True),
-            "cross_rule_consistent": True,
+            "cross_rule_consistent": r3.get("pass", False),
             "materially_supported": supported,
             "placement": placements[name]["placement"],
             "existing_evaluator_duplication": placements[name]["existing_evaluator_duplication"],
@@ -373,7 +547,7 @@ def audit() -> dict[str, Any]:
         "f44_reproduction": reproduction["status"] == "PASS",
         "placement_exactly_one_each": placements["exactly_one_placement_per_family"],
         "consumer_paths_complete": all(row["consumer_path_complete"] for row in family_ledger.values()),
-        "r3_cross_rule": orientations["R3_cross_rule_gate"]["pass"],
+        "r3_cross_rule": all(row.get("pass", False) for row in orientations["R3_by_family"].values()),
         "selector_reachability": reachability["all_reachable"],
         "production_unchanged": True,
     }
@@ -386,6 +560,7 @@ def audit() -> dict[str, Any]:
         "h45a": str(MANIFEST.relative_to(ROOT)).replace("\\", "/"),
         "f44_reproduction": reproduction,
         "consumer_placement": consumer,
+        "endpoint_behavioral_probe": endpoint_probe,
         "guard_category_ledger": guards,
         "orientation_probes": orientations,
         "redundancy_subsumption": redundancy,

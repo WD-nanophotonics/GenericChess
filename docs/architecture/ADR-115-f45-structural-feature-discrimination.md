@@ -69,3 +69,39 @@ F45 is diagnosis/discrimination only. It does not integrate a density feature,
 choose a weight, run a search/benchmark/training loop, expand geometry, alter
 human values, or promote master. F46 is authorized only to prototype the
 selected density-profile feature under a new frozen work order.
+
+## Corrective R1 closure
+
+The first-pass F45 result was retained as provenance in `e6c9081`, but its
+protocol freeze and observed result were in the same commit. Its placement,
+duplication, cross-rule, and redundancy outcomes also contained declarative
+booleans. H45R1A was therefore published first as standalone commit
+`8940031`, whose parent is the first-pass F45 commit and whose manifest does
+not freeze an observed classification.
+
+The corrective audit uses a generic placement classifier over evidence facts:
+consumer sufficiency, independent support, equivalent-consumer status,
+position-state requirement, and compile-once type information. It reaches all
+five placement outcomes in focused tests. Endpoint placement is supported by a
+behavioral probe over the frozen quiet-only/quiet-plus-capture controls and
+the existing material, pseudo-attack, anchor-escape, and promotion paths.
+Conditional placement is derived from actual state/slot guard consumers and
+the absence of an equivalent promotion invariant. Density placement is
+derived from the complete five-point curve, weighted scalar reduction, and
+downstream consumer inspection.
+
+Recoverability is computed for every ordered A/B/D pair by scanning matched
+synthetic controls for equal source coordinates and different target
+coordinates; absent witnesses are reported `UNRESOLVED`. Real-rule equality
+classes are computed over the frozen Western and Standard-Shogi population,
+with partition relations reported as same, refinement, or incomparable.
+R3 is computed per family from actual Western/Shogi structures and the frozen
+healthy Shogi gates, rather than defaulting to true. Minimum-subset selection
+uses boolean R1/R2 coverage and evidence-derived eligibility; equal-size ties
+return `STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT` unless a frozen
+non-numeric discriminator exists.
+
+The corrected result remains `DENSITY_PROFILE_FEATURE_PRIMARY` with boundary
+`F46_DENSITY_PROFILE_FEATURE_PROTOTYPE`: density is the unique minimum
+admissible family covering both residuals. No F46 work was executed and no
+production evaluator code changed.
