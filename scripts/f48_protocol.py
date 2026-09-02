@@ -161,10 +161,11 @@ def preflight(*, output_dir: Path | None = None, minimum_free_bytes: int = 256 *
     partitions = build_partition_plan()
     config = {"search": {"max_depth": 12, "student_nodes": 2000, "teacher_nodes": 20000, "stability_nodes": 40000, "arena_nodes": 1000}, "corpora": {"training": [64, 480700, 2, 6], "holdout": [64, 480701, 2, 6], "arena": [16, 480702, 2, 6]}, "holdout_in_ranking": False}
     for row in partitions:
+        row["output_path"] = str(Path(".generic_chess_flow") / "f48" / "partitions" / (row["partition_id"] + ".json"))
         row["input_hash"] = partition_input_hash(row, config=config)
-        row["output_path"] = str((output_dir or ROOT / ".generic_chess_flow" / "f48" / "partitions") / (row["partition_id"] + ".json"))
     estimate = resource_estimate(partitions)
-    usage = shutil.disk_usage(output_dir or ROOT)
+    capacity_path = output_dir if output_dir is not None and output_dir.exists() else ROOT
+    usage = shutil.disk_usage(capacity_path)
     capacity = {"free_bytes": usage.free, "required_free_bytes": max(minimum_free_bytes, estimate["estimated_evidence_bytes"] * 2), "pass": usage.free >= max(minimum_free_bytes, estimate["estimated_evidence_bytes"] * 2)}
     if not capacity["pass"]:
         raise RuntimeError("F48 preflight capacity guard failed")
