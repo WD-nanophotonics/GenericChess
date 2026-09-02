@@ -142,6 +142,13 @@ unpublished, or modified large local report is rejected before any browser is
 opened. Raw transient output still stays out of Git; summarize it into a durable
 audit report first.
 
+Closeout and blocker details always follow this immutable-reference rule, even
+when the report is small: the report must be tracked inside the sandbox, the
+working tree must be clean, and the exact sandbox HEAD must match
+`origin/sandbox` before browser dispatch. Chat receives only the repository,
+commit, path, and report SHA; the report body is never sent inline. Start
+requests retain their existing inline bootstrap behavior.
+
 ## Cross-machine ownership
 
 The public `workflow-state` branch is a separate, fast-forward-only control

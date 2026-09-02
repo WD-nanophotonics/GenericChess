@@ -10,6 +10,8 @@ from types import SimpleNamespace
 
 import pytest
 
+from generic_chess.core.actions import BoardMove, DropMove, SemanticBoardMove, SemanticDropMove
+from generic_chess.core.coordinates import Square
 from scripts import audit_f49_learning_signal_architecture as runner
 
 
@@ -293,7 +295,7 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     compiled = SimpleNamespace(ruleset_fingerprint="synthetic-ruleset")
     entry = {"semantic_execution": compiled, "legacy_transport": compiled}
     checkpoint = _checkpoint()
-    monkeypatch.setattr(runner, "validate_r4_measurement_freeze", lambda: events.append("freeze"))
+    monkeypatch.setattr(runner, "validate_r5_measurement_freeze", lambda: events.append("freeze"))
     monkeypatch.setattr(runner, "run_preflight", lambda: events.append("preflight") or {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: events.append("execution") or {"synthetic": entry})
     monkeypatch.setattr(runner, "generate_arena_openings", lambda *args, **kwargs: events.append("openings") or SimpleNamespace())
@@ -410,7 +412,7 @@ def test_r2_python_partitions_bind_real_evaluation_config_hash(monkeypatch, tmp_
 
 
 def test_r2_freeze_drift_blocks_before_observation(monkeypatch, tmp_path):
-    monkeypatch.setattr(runner, "load_h49b_r4_manifest", lambda: {"runner_raw_sha256": "wrong", "protocol_raw_sha256": "wrong", "f48_audit_runner_raw_sha256": "wrong", "h49r4a_manifest_sha256": runner.H49R4A_MANIFEST_SHA, "h49r3a_source_tree_aggregate_sha256": runner.H49R3A_SOURCE_TREE_SHA, "native_binary_sha256": runner.H49R3A_NATIVE_SHA})
+    monkeypatch.setattr(runner, "validate_r5_measurement_freeze", lambda: (_ for _ in ()).throw(RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")))
     monkeypatch.setattr(runner, "run_preflight", lambda: (_ for _ in ()).throw(AssertionError("preflight ran after freeze drift")))
     with pytest.raises(RuntimeError, match="STOP_ON_H49_RUNNER_FREEZE_DRIFT"):
         runner.run_measurements(partition_root=tmp_path)
@@ -499,7 +501,7 @@ def test_r3_execution_views_route_control_structural_native_and_python(monkeypat
     entry = {"semantic_execution": semantic, "legacy_transport": legacy}
     seen = {"openings": [], "structural": [], "native": [], "python": [], "writes": []}
     checkpoint = _checkpoint()
-    monkeypatch.setattr(runner, "validate_r4_measurement_freeze", lambda: None)
+    monkeypatch.setattr(runner, "validate_r5_measurement_freeze", lambda: None)
     monkeypatch.setattr(runner, "run_preflight", lambda: {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: {"synthetic": entry})
     monkeypatch.setattr(runner, "generate_arena_openings", lambda compiled, **kwargs: seen["openings"].append(compiled) or SimpleNamespace())
@@ -605,10 +607,12 @@ def test_r4_p48_reconstruction_rejects_ruleset_fingerprint_mismatch():
         runner.reconstruct_p48_0("A_CANONICAL_WESTERN_CHESS", wrong)
 
 
-def test_r4_quarantines_r3_root_and_accepts_new_root():
+def test_r5_quarantines_r3_and_r4_roots_and_accepts_new_root():
     with pytest.raises(RuntimeError, match="STOP_ON_QUARANTINED_F49_ROOT_REUSE"):
         runner._validate_measurement_root(runner.R3_AUTHORITY_ROOT)
-    runner._validate_measurement_root(runner.R4_AUTHORITY_ROOT)
+    with pytest.raises(RuntimeError, match="STOP_ON_QUARANTINED_F49_ROOT_REUSE"):
+        runner._validate_measurement_root(runner.R4_AUTHORITY_ROOT)
+    runner._validate_measurement_root(runner.R5_AUTHORITY_ROOT)
 
 
 def test_r4_freeze_reconstructs_p48_without_primary_generation_or_search(monkeypatch):
@@ -624,3 +628,81 @@ def test_r4_manifest_binds_quarantine_and_f48_authority():
     assert manifest["aborted_run_quarantine"]["disposition"] == "QUARANTINED_NEVER_REUSE"
     assert manifest["p48_reconstruction_authority"]["summary_interpretation"] == "F48 checkpoint metadata, not LearnableMaterialCheckpoint serialization"
     assert all(row["durable_metadata_exact"] for row in manifest["p48_0_checkpoints"].values())
+
+
+def test_r5_projects_semantic_actions_without_string_parsing():
+    board = SemanticBoardMove("pattern", "geometry", "P", Square(4, 1), Square(4, 3), "Q")
+    drop = SemanticDropMove("pattern", "geometry", "P", Square(3, 3))
+    projected_board = runner._project_semantic_action(board)
+    projected_drop = runner._project_semantic_action(drop)
+    assert projected_board == BoardMove(Square(4, 1), Square(4, 3), "Q")
+    assert projected_drop == DropMove("P", Square(3, 3))
+    legacy_board = BoardMove(Square(0, 0), Square(0, 1))
+    legacy_drop = DropMove("P", Square(1, 1))
+    assert runner._project_semantic_action(legacy_board) is legacy_board
+    assert runner._project_semantic_action(legacy_drop) is legacy_drop
+
+
+def _synthetic_bridge(monkeypatch, *, projected_actions, transport_actions, divergent=False, identity_mismatch=False):
+    semantic = SemanticBoardMove("pattern", "geometry", "P", Square(0, 0), Square(0, 1))
+    second = SemanticBoardMove("other", "geometry", "P", Square(0, 0), Square(0, 1))
+    legacy = BoardMove(Square(0, 0), Square(0, 1))
+
+    class FakeSession:
+        def __init__(self, compiled):
+            self.transport = compiled == "transport"
+            self.state = SimpleNamespace(position="root", ply_count=0)
+            self.history = []
+
+        def legal_actions(self):
+            return tuple(transport_actions if self.transport else (semantic, second) if len(projected_actions) == 2 else (semantic,))
+
+        def submit(self, action):
+            self.history.append(SimpleNamespace(action=action))
+            self.state.position = "transport-child" if self.transport and divergent else "child"
+            self.state.ply_count += 1
+
+    monkeypatch.setattr(runner, "GameSession", FakeSession)
+    monkeypatch.setattr(runner, "_project_semantic_action", lambda action: projected_actions[0] if action == semantic else projected_actions[1])
+    monkeypatch.setattr(runner, "position_identity_key", lambda *_args: "wrong" if identity_mismatch else "identity")
+    record = {"action_history": [runner.action_to_dict(semantic)], "position_identity_key": "identity"}
+    return runner._semantic_to_legacy_replay("semantic", "transport", record), legacy
+
+
+def test_r5_synthetic_bridge_gates_fail_closed(monkeypatch):
+    legacy = BoardMove(Square(0, 0), Square(0, 1))
+    with pytest.raises(RuntimeError, match="STOP_ON_NATIVE_TRANSPORT_REPLAY_AMBIGUITY"):
+        _synthetic_bridge(monkeypatch, projected_actions=[legacy, legacy], transport_actions=[legacy])
+    with pytest.raises(RuntimeError, match="STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE"):
+        _synthetic_bridge(monkeypatch, projected_actions=[legacy], transport_actions=[])
+    with pytest.raises(RuntimeError, match="STOP_ON_NATIVE_TRANSPORT_REPLAY_POSITION_DIVERGENCE"):
+        _synthetic_bridge(monkeypatch, projected_actions=[legacy], transport_actions=[legacy], divergent=True)
+    with pytest.raises(RuntimeError, match="STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE"):
+        _synthetic_bridge(monkeypatch, projected_actions=[legacy], transport_actions=[legacy], identity_mismatch=True)
+
+
+def test_r5_synthetic_bridge_returns_legacy_only_history(monkeypatch):
+    legacy = BoardMove(Square(0, 0), Square(0, 1))
+    (_, metadata), _ = _synthetic_bridge(monkeypatch, projected_actions=[legacy], transport_actions=[legacy])
+    assert metadata["transport_history_legacy_only"] is True
+    assert metadata["semantic_action_count"] == metadata["projected_action_count"] == 1
+
+
+def test_r5_blocker_evidence_freezes_zero_work_and_quarantine():
+    evidence = json.loads((runner.ROOT / "tests" / "fixtures" / "h49b_r5_blocker_evidence.json").read_text(encoding="utf-8"))
+    assert evidence["status"] == "BLOCKED_ARCHITECTURAL_TRANSPORT"
+    assert evidence["certification"]["A_CANONICAL_WESTERN_CHESS"]["required_e2_e4"]["legacy_transport_legal"] is False
+    assert evidence["r4_quarantine"]["disposition"] == "QUARANTINED_NEVER_REUSE"
+    assert evidence["observed_results_present"] is False
+    assert evidence["s49_regenerated"] is False
+    assert evidence["native_search_invoked"] is False
+    assert evidence["python_search_invoked"] is False
+    assert evidence["production_diff"] == "ZERO"
+
+
+def test_r5_initial_bridge_certification_fails_closed_before_search(monkeypatch):
+    monkeypatch.setattr(runner, "generate_structural_corpus", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("S49 generation invoked")))
+    monkeypatch.setattr(runner, "NativeSearchEngine", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("Native search invoked")))
+    monkeypatch.setattr(runner, "AlphaBetaPlayer", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("Python search invoked")))
+    with pytest.raises(RuntimeError, match="STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE"):
+        runner.certify_native_transport_bridge()

@@ -34,7 +34,7 @@ from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.evaluation.cache import EvaluationProfileCache
 from generic_chess.ai.evaluation.config import EvaluationConfig, config_hash
 from generic_chess.ai.limits import SearchLimits
-from generic_chess.core.actions import action_from_dict, action_to_dict
+from generic_chess.core.actions import BoardMove, DropMove, SemanticBoardMove, SemanticDropMove, action_from_dict, action_to_dict
 from generic_chess.core.identity import position_identity_key
 from generic_chess.learning.diagnostics import DiagnosticPosition, generate_diagnostic_corpus
 from generic_chess.learning.features import non_anchor_type_ids
@@ -65,6 +65,10 @@ H49B_R2_SHA = "fd60ec1ef3d0d44f7f54271b3dca9438a8a28b17"
 H49B_R2_MANIFEST_SHA = "484ff7b8417c86e7557c13d55fbf52961731cfaecfeb97f4a896eaeebed62a8f"
 H49B_R3_KIND = "H49B-R3_F49_DIAGNOSTIC_RUNNER_FREEZE"
 H49B_R3_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R3-VECTOR-PARTITION-AND-EXECUTION-VIEW-CLOSURE"
+H49B_R4_SHA = "9fe836ac0ca86ff8dd8f138a6d0fff1412a5f59e"
+H49B_R4_MANIFEST_SHA = "bda472c5fb7e4eee1b8e838f87d9a4b178db14a8721c0072036188aefb5881e7"
+H49B_R5_KIND = "H49B-R5_F49_DIAGNOSTIC_RUNNER_FREEZE"
+H49B_R5_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R5-SEMANTIC-TO-NATIVE-TRANSPORT-REPLAY-CLOSURE"
 H49R4A_SHA = "6f1038d91f9667625a59c73a97aec77c01e9f817"
 H49R4A_MANIFEST_SHA = "929a7e9fc2d04cb24a15b66eb07e97966baef83048c755c9f2bc900320f7a2b0"
 H49R3A_SOURCE_TREE_SHA = "10b3752af976844908a773ef3f017d92c2004b29fc82e9ffaf7c21acccd7bff7"
@@ -157,6 +161,8 @@ R3_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r3_f49_diagnostic_runner_
 R4_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r4_f49_diagnostic_runner_freeze_manifest.json"
 R3_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r3-authoritative"
 R4_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r4-authoritative"
+R5_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r5_f49_diagnostic_runner_freeze_manifest.json"
+R5_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r5-authoritative"
 H49B_R4_KIND = "H49B-R4_F49_DIAGNOSTIC_RUNNER_FREEZE"
 H49B_R4_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R4-P48-AUTHORITY-RECONSTRUCTION-AND-ABORTED-RUN-QUARANTINE"
 H49B_R3_SHA = "c67adb4cf20701ef4497e013a5303071a03bd708"
@@ -537,6 +543,56 @@ def _replay(compiled, action_history: list[Any] | tuple[Any, ...]) -> GameSessio
     return session
 
 
+def _project_semantic_action(action):
+    """Project one semantic public action without parsing or rebinding it."""
+    if isinstance(action, SemanticBoardMove):
+        return BoardMove(action.from_square, action.to_square, action.promotion_target_id)
+    if isinstance(action, SemanticDropMove):
+        return DropMove(action.base_type_id, action.to_square)
+    if isinstance(action, (BoardMove, DropMove)):
+        return action
+    raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+
+
+def _semantic_to_legacy_replay(semantic_execution, transport_compiled, record: dict[str, Any]) -> tuple[GameSession, dict[str, Any]]:
+    authority = GameSession(semantic_execution)
+    transport = GameSession(transport_compiled)
+    mappings = []
+    max_multiplicity = 0
+    semantic_actions = [action_from_dict(action) for action in record["action_history"]]
+    for semantic_action in semantic_actions:
+        legal_semantic = authority.legal_actions()
+        if semantic_action not in legal_semantic:
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+        projected_legal = [_project_semantic_action(candidate) for candidate in legal_semantic]
+        projected = _project_semantic_action(semantic_action)
+        multiplicity = sum(candidate == projected for candidate in projected_legal)
+        max_multiplicity = max(max_multiplicity, multiplicity)
+        if multiplicity != 1:
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_AMBIGUITY")
+        if projected not in transport.legal_actions():
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+        authority.submit(semantic_action)
+        transport.submit(projected)
+        if authority.state.position != transport.state.position or authority.state.ply_count != transport.state.ply_count:
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_POSITION_DIVERGENCE")
+        mappings.append({"semantic": action_to_dict(semantic_action), "legacy": action_to_dict(projected)})
+    if position_identity_key(authority.state.position, semantic_execution) != record["position_identity_key"]:
+        raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+    if not all(isinstance(item.action, (BoardMove, DropMove)) for item in transport.history):
+        raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+    return transport, {"semantic_action_count": len(semantic_actions), "projected_action_count": len(mappings), "projection_mapping_sha256": stable_sha256(mappings), "maximum_projection_multiplicity_observed": max_multiplicity, "physical_position_parity": True, "final_semantic_position_identity": position_identity_key(authority.state.position, semantic_execution), "transport_history_legacy_only": True}
+
+
+def _native_replay(compiled, record: dict[str, Any], *, replay_mode: str, semantic_execution=None) -> tuple[GameSession, dict[str, Any]]:
+    if replay_mode == "LEGACY_DIRECT":
+        return _replay(compiled, [action_from_dict(action) for action in record["action_history"]]), {"replay_mode": replay_mode}
+    if replay_mode == "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION" and semantic_execution is not None:
+        session, metadata = _semantic_to_legacy_replay(semantic_execution, compiled, record)
+        return session, {"replay_mode": replay_mode, **metadata}
+    raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+
+
 def _replay_with_events(compiled, action_history: list[Any] | tuple[Any, ...]) -> tuple[GameSession, dict[str, bool]]:
     session = GameSession(compiled)
     events = {"remove_or_capture_effect": False, "type_or_promotion_transformation": False, "hand_or_inventory_count_change": False}
@@ -609,9 +665,9 @@ def generate_structural_corpus(
             }
             break
         if selected is None:
-            return {"status": "STRUCTURAL_STRATUM_UNAVAILABLE", "stratum_id": stratum_id, "seed": seed, "generation_config": config, "failed_output_index": output_index, "records": [], "corpus_id": None, "attempt_cap": attempt_cap}
+            return {"status": "STRUCTURAL_STRATUM_UNAVAILABLE", "stratum_id": stratum_id, "seed": seed, "generation_config": config, "failed_output_index": output_index, "records": [], "corpus_id": None, "attempt_cap": attempt_cap, "replay_mode": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION"}
         records.append(selected)
-    return {"status": "VALID", "stratum_id": stratum_id, "generation_config": config, "records": records, "corpus_id": stable_sha256({"generation_config": config, "records": records})}
+    return {"status": "VALID", "stratum_id": stratum_id, "generation_config": config, "records": records, "corpus_id": stable_sha256({"generation_config": config, "records": records}), "replay_mode": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION"}
 
 
 def _percentile(values: list[int], fraction: float) -> float:
@@ -696,8 +752,8 @@ def _native_profile(compiled, checkpoint):
     return build_ruleset_profile(compiled, EvaluationConfig())
 
 
-def _native_search_once(compiled, native_rules, native_evaluation, record: dict[str, Any], node_budget: int, metrics: dict[str, Any]) -> dict[str, Any]:
-    session = _replay(compiled, [action_from_dict(action) for action in record["action_history"]])
+def _native_search_once(compiled, native_rules, native_evaluation, record: dict[str, Any], node_budget: int, metrics: dict[str, Any], *, replay_mode: str = "LEGACY_DIRECT", semantic_execution=None) -> dict[str, Any]:
+    session, transport_metadata = _native_replay(compiled, record, replay_mode=replay_mode, semantic_execution=semantic_execution)
     started = time.perf_counter()
     engine = NativeSearchEngine(compiled, native_rules, native_evaluation, tt_megabytes=8)
     metrics["native_current_process"]["engine_creation_count"] += 1
@@ -710,7 +766,7 @@ def _native_search_once(compiled, native_rules, native_evaluation, record: dict[
     metrics["native_current_process"]["search_wall_seconds"] += time.perf_counter() - search_started
     allowed = {"completed", "node_limit", "depth_limit"}
     failed = result.termination_reason not in allowed or (session.result.status.value == "ongoing" and result.action is None)
-    return {"action_key": f49_protocol.canonical_action_order_key(result.action) if result.action is not None else None, "score": int(result.score), "nodes": int(result.nodes), "qnodes": int(result.qnodes), "elapsed_seconds": float(result.elapsed_seconds), "completed_depth": int(result.completed_depth), "termination_reason": result.termination_reason, "failed_search": failed}
+    return {**transport_metadata, "action_key": f49_protocol.canonical_action_order_key(result.action) if result.action is not None else None, "score": int(result.score), "nodes": int(result.nodes), "qnodes": int(result.qnodes), "elapsed_seconds": float(result.elapsed_seconds), "completed_depth": int(result.completed_depth), "termination_reason": result.termination_reason, "failed_search": failed}
 
 
 def _counter_delta(after: dict[str, Any], before: dict[str, Any]) -> dict[str, Any]:
@@ -748,7 +804,7 @@ def _concrete_corpus_id(corpus: dict[str, Any]) -> str:
     raise ValueError("partition corpus_id must be concrete")
 
 
-def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], route: str, family: str, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]] | None = None, partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
+def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], route: str, family: str, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]] | None = None, partition_store: AtomicPartitionStore | None = None, *, semantic_execution=None) -> dict[str, Any]:
     native_compiled = _native_transport(compiled)
     contexts = context_cache if context_cache is not None else {}
     rules_key = (compiled.ruleset_fingerprint, "native_rules")
@@ -773,7 +829,10 @@ def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], rout
         partition = partition_identity(corpus_id=key[1], checkpoint_or_config_hash=checkpoint.checkpoint_id, search_route=route, node_budget=budget, measurement_family=family, ruleset_fingerprint=compiled.ruleset_fingerprint)
         def produce_vector():
             before = dict(metrics["native_current_process"])
-            rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics)} for record in corpus["records"]]
+            if semantic_execution is None:
+                rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics)} for record in corpus["records"]]
+            else:
+                rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics, replay_mode=corpus.get("replay_mode", "LEGACY_DIRECT"), semantic_execution=semantic_execution)} for record in corpus["records"]]
             return {"position_identities": [record["position_identity_key"] for record in corpus["records"]], "rows": rows, "execution_ledger": _counter_delta(metrics["native_current_process"], before)}
         if key not in cache:
             data = produce_vector() if partition_store is None else run_partition(partition_store, partition, produce_vector)
@@ -994,9 +1053,13 @@ def python_nonmaterial_control(semantic_execution, corpus: dict[str, Any], *, te
     return {"status": "VALID" if valid else "CELL_INVALID_SEARCH_FAILURE", "non_material_signal": max((family["family_mean_flip"] for family in families), default=0.0) >= 0.05 if valid else None, "families": families, "metrics": metrics}
 
 
-def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMaterialCheckpoint, surface: str, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
+def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMaterialCheckpoint, surface: str, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None, semantic_execution=None) -> dict[str, Any]:
     budgets = [500, 2000, 8000] if surface in ("L49-0", "L49-1") else [2000]
-    baseline = _native_search_matrix(compiled, start, corpus, budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, start, corpus, budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store)
+    def search_matrix(checkpoint, selected_budgets):
+        if semantic_execution is None:
+            return _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store)
+        return _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store, semantic_execution=semantic_execution)
+    baseline = search_matrix(start, budgets)
     candidate_rows = _l49_checkpoint_rows(compiled, start, surface)
     unique: dict[str, tuple[str, LearnableMaterialCheckpoint]] = {}
     aliases: dict[str, list[str]] = {}
@@ -1013,14 +1076,17 @@ def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMa
             aliases.setdefault(checkpoint.checkpoint_id, [])
     cells = {}
     for checkpoint_id, (name, checkpoint) in unique.items():
-        perturbed = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store)
+        perturbed = search_matrix(checkpoint, budgets)
         cells[checkpoint_id] = {"name": name, "aliases": aliases[checkpoint_id], "checkpoint": checkpoint.to_dict(), "budgets": {str(budget): _flip_surface(baseline[str(budget)], perturbed[str(budget)]) for budget in budgets}}
     return {"surface": surface, "baseline": baseline, "cells": cells, "deduplicated_checkpoint_count": len(unique), "candidate_count": len(candidate_rows), "construction_failures": construction_failures, "aliases": aliases}
 
 
-def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMaterialCheckpoint, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None) -> dict[str, Any]:
+def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMaterialCheckpoint, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None, semantic_execution=None) -> dict[str, Any]:
     budgets = [10000, 20000, 40000, 80000]
-    results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store)
+    if semantic_execution is None:
+        results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store)
+    else:
+        results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store, semantic_execution=semantic_execution)
     pairs = {}
     for low, high in ((10000, 20000), (20000, 40000), (40000, 80000)):
         low_rows, high_rows = results[str(low)], results[str(high)]
@@ -1058,7 +1124,7 @@ def write_evidence_bundle(result: dict[str, Any], root: Path) -> Path:
 
 
 def _validate_measurement_root(root: Path) -> None:
-    if root.resolve() == R3_AUTHORITY_ROOT.resolve():
+    if root.resolve() in {R3_AUTHORITY_ROOT.resolve(), R4_AUTHORITY_ROOT.resolve()}:
         raise RuntimeError("STOP_ON_QUARANTINED_F49_ROOT_REUSE")
 
 
@@ -1072,9 +1138,9 @@ def _control_records(legacy, control) -> list[dict[str, Any]]:
 
 def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
     """Run the complete registered F49 sequence after the R1 freeze."""
-    root = partition_root or R4_AUTHORITY_ROOT
+    root = partition_root or R5_AUTHORITY_ROOT
     _validate_measurement_root(root)
-    validate_r4_measurement_freeze()
+    validate_r5_measurement_freeze()
     preflight = run_preflight()
     executions = f49_protocol.build_h49r3a_primary_execution()
     store = AtomicPartitionStore(root)
@@ -1088,7 +1154,7 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
         legacy = entry["legacy_transport"]
         control_openings = generate_arena_openings(legacy, count=16, seed=480703, min_plies=2, max_plies=6)
         control = generate_diagnostic_corpus(legacy, control_openings, count=64, seed=480703, min_plies=2, max_plies=6)
-        control_data = {"status": "VALID", "corpus_id": control.corpus_id, "records": _control_records(legacy, control)}
+        control_data = {"status": "VALID", "corpus_id": control.corpus_id, "records": _control_records(legacy, control), "replay_mode": "LEGACY_DIRECT"}
         structural = {"S49-M": generate_structural_corpus(semantic, stratum_id="S49-M", seed=490100, target_plies=(8, 20), minimum_legal_actions=1), "S49-E": generate_structural_corpus(semantic, stratum_id="S49-E", seed=490200, target_plies=(6, 24), minimum_legal_actions=2)}
         corpora = {"F48_CONTROL": control_data, **structural}
         p0 = reconstruct_p48_0(ruleset_id, semantic)
@@ -1102,12 +1168,12 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
                 continue
             corpus["structural_ledger"] = structural_ledger(corpus)
             for surface in ("L49-0", "L49-1", "L49-2"):
-                surface_data = native_material_surface(legacy, corpus, p0, surface, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store)
+                surface_data = native_material_surface(legacy, corpus, p0, surface, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store, semantic_execution=semantic)
                 corpus[surface] = surface_data
                 for budget in ([500, 2000, 8000] if surface != "L49-2" else [2000]):
                     values = [cell["budgets"][str(budget)] for cell in surface_data["cells"].values()]
                     corpus[f"{surface}_{budget}"] = f49_protocol.aggregate_leverage_cells(values)
-            teacher = teacher_surface(legacy, corpus, p0, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store)
+            teacher = teacher_surface(legacy, corpus, p0, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store, semantic_execution=semantic)
             corpus.update(teacher)
             corpus["non_material_control"] = python_nonmaterial_control(semantic, corpus, teacher_stable=teacher["teacher_40_80"]["stable"], metrics=metrics, partition_store=store, ruleset_fingerprint=semantic.ruleset_fingerprint)
         corpus_ledgers[ruleset_id] = {name: structural_ledger(corpus) for name, corpus in corpora.items()}
@@ -1380,7 +1446,7 @@ def validate_h49b_r4_manifest(manifest: dict[str, Any]) -> None:
         raise RuntimeError("H49B-R4 P48 checkpoint authority drift")
     if manifest.get("f48_audit_runner_raw_sha256") != _git_blob_sha256(H49B_R3_SHA, "scripts/audit_f48_learnable_material_recovery.py"):
         raise RuntimeError("H49B-R4 F48 audit dependency drift")
-    if manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()) or manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()):
+    if manifest.get("protocol_raw_sha256") != _git_blob_sha256(H49B_R4_SHA, "scripts/f49_protocol.py") or manifest.get("runner_raw_sha256") != _git_blob_sha256(H49B_R4_SHA, "scripts/audit_f49_learning_signal_architecture.py"):
         raise RuntimeError("H49B-R4 source hash drift")
 
 
@@ -1394,11 +1460,154 @@ def validate_r4_measurement_freeze() -> None:
     manifest = load_h49b_r4_manifest()
     if manifest.get("h49r4a_manifest_sha256") != H49R4A_MANIFEST_SHA or manifest.get("h49r3a_source_tree_aggregate_sha256") != H49R3A_SOURCE_TREE_SHA or manifest.get("native_binary_sha256") != H49R3A_NATIVE_SHA:
         raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
-    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()) or manifest.get("f48_audit_runner_raw_sha256") != _sha256_bytes(F48_AUDIT_PATH.read_bytes()):
+    if manifest.get("runner_raw_sha256") != _git_blob_sha256(H49B_R4_SHA, "scripts/audit_f49_learning_signal_architecture.py") or manifest.get("protocol_raw_sha256") != _git_blob_sha256(H49B_R4_SHA, "scripts/f49_protocol.py") or manifest.get("f48_audit_runner_raw_sha256") != _git_blob_sha256(H49B_R4_SHA, "scripts/audit_f48_learnable_material_recovery.py"):
         raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
     executions = f49_protocol.build_h49r3a_primary_execution()
     for ruleset_id in RULESET_IDS:
         reconstruct_p48_0(ruleset_id, executions[ruleset_id]["semantic_execution"])
+
+
+def _one_ply_transport_certification(ruleset_id: str, entry: dict[str, Any]) -> dict[str, Any]:
+    semantic_execution = entry["semantic_execution"]
+    transport_execution = _native_transport(entry["legacy_transport"])
+    authority = GameSession(semantic_execution)
+    semantic_legal = authority.legal_actions()
+    transport_legal = set(GameSession(transport_execution).legal_actions())
+    mappings = []
+    maximum_multiplicity = 0
+    projected_legal = [_project_semantic_action(candidate) for candidate in semantic_legal]
+    for semantic_action, projected in zip(semantic_legal, projected_legal):
+        multiplicity = sum(candidate == projected for candidate in projected_legal)
+        maximum_multiplicity = max(maximum_multiplicity, multiplicity)
+        if multiplicity != 1:
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_AMBIGUITY")
+        if projected not in transport_legal:
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+    for semantic_action, projected in zip(semantic_legal, projected_legal):
+        projected = _project_semantic_action(semantic_action)
+        left = GameSession(semantic_execution)
+        right = GameSession(transport_execution)
+        left.submit(semantic_action)
+        right.submit(projected)
+        if left.state.position != right.state.position or left.state.ply_count != right.state.ply_count:
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_POSITION_DIVERGENCE")
+        if not all(isinstance(item.action, (BoardMove, DropMove)) for item in right.history):
+            raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+        mappings.append({"semantic": action_to_dict(semantic_action), "legacy": action_to_dict(projected)})
+    return {
+        "ruleset_id": ruleset_id,
+        "semantic_action_count": len(mappings),
+        "projected_action_count": len(mappings),
+        "projection_mapping_sha256": stable_sha256(mappings),
+        "maximum_projection_multiplicity_observed": maximum_multiplicity,
+        "physical_position_parity": True,
+        "transport_history_legacy_only": True,
+    }
+
+
+def certify_native_transport_bridge() -> dict[str, Any]:
+    """Certify the audit-side semantic-to-legacy bridge without generating or searching."""
+    executions = f49_protocol.build_h49r3a_primary_execution()
+    summaries = {
+        ruleset_id: _one_ply_transport_certification(ruleset_id, executions[ruleset_id])
+        for ruleset_id in RULESET_IDS
+    }
+    western = executions["A_CANONICAL_WESTERN_CHESS"]["semantic_execution"]
+    western_session = GameSession(western)
+    expected_from = next(action for action in western_session.legal_actions() if isinstance(action, SemanticBoardMove) and action.from_square.file == 4 and action.from_square.rank == 1 and action.to_square.file == 4 and action.to_square.rank == 3)
+    projected = _project_semantic_action(expected_from)
+    if not isinstance(projected, BoardMove) or projected.from_square.file != 4 or projected.from_square.rank != 1 or projected.to_square.file != 4 or projected.to_square.rank != 3:
+        raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE")
+    summaries["A_CANONICAL_WESTERN_CHESS"]["western_e2_e4"] = {
+        "located": True,
+        "semantic": action_to_dict(expected_from),
+        "legacy": action_to_dict(projected),
+    }
+    return {
+        "certification": "PASS",
+        "scope": "ONE_PLY_EXHAUSTIVE_INITIAL_LEGAL_ACTIONS",
+        "rulesets": summaries,
+        "S49_generation": False,
+        "search_invoked": False,
+    }
+
+
+def build_h49b_r5_manifest() -> dict[str, Any]:
+    """Build the no-observation R5 semantic-to-native transport closure manifest."""
+    preflight = run_preflight()
+    certification = certify_native_transport_bridge()
+    return {
+        "checkpoint_name": "H49B-R5",
+        "kind": H49B_R5_KIND,
+        "work_order_id": H49B_R5_WORK_ORDER_ID,
+        "parent_h49b_r4_sha": H49B_R4_SHA,
+        "parent_h49b_r4_manifest_sha256": H49B_R4_MANIFEST_SHA,
+        "r3_authoritative_root": ".generic_chess_flow/f49-r3-authoritative",
+        "r4_authoritative_root": ".generic_chess_flow/f49-r4-authoritative",
+        "new_authoritative_root": ".generic_chess_flow/f49-r5-authoritative",
+        "quarantine": {
+            "r3": {"disposition": "QUARANTINED_NEVER_REUSE", "native_search_observed": False, "root": ".generic_chess_flow/f49-r3-authoritative"},
+            "r4": {"aborted_runner_sha": H49B_R4_SHA, "aborted_root": ".generic_chess_flow/f49-r4-authoritative", "primary_structural_positions_generated": True, "native_material_surface_entered": True, "failing_stage": "NATIVE_TRANSPORT_HISTORY_REPLAY_BEFORE_SEARCH_RESULT", "observed_failure": "IllegalActionError", "representative_action": "sem_11_pawn_double_step:g34:e2-e4", "partial_artifacts_may_exist": True, "partial_artifacts_evidentiary_status": "NONE", "disposition": "QUARANTINED_NEVER_REUSE"},
+        },
+        "runner_raw_sha256": _sha256_bytes(SOURCE_PATH.read_bytes()),
+        "protocol_raw_sha256": _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()),
+        "f48_audit_runner_raw_sha256": _sha256_bytes(F48_AUDIT_PATH.read_bytes()),
+        "h49r4a_manifest_sha256": H49R4A_MANIFEST_SHA,
+        "h49r3a_source_tree_aggregate_sha256": H49R3A_SOURCE_TREE_SHA,
+        "native_binary_sha256": H49R3A_NATIVE_SHA,
+        "replay_modes": {"F48_CONTROL": "LEGACY_DIRECT", "S49-M": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION", "S49-E": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION"},
+        "projection_contract": {"semantic_board_move": "BoardMove(from_square,to_square,promotion_target_id)", "semantic_drop_move": "DropMove(base_type_id,to_square)", "string_parsing": False, "existing_legacy_actions_unchanged": True, "exact_projection_multiplicity": 1, "lockstep_position_and_ply_parity": True, "repetition_key_parity_required": False, "transport_history": "BoardMove/DropMove only"},
+        "bridge_certification": certification,
+        "measurement_entry_point": "scripts.audit_f49_learning_signal_architecture.run_measurements",
+        "preflight_entry_point": "scripts.audit_f49_learning_signal_architecture.run_preflight",
+        "partition_runner": "scripts.audit_f49_learning_signal_architecture.run_partition",
+        "evidence_writer": "scripts.audit_f49_learning_signal_architecture.write_evidence_bundle",
+        "observed_results_present": False,
+        "measurements_invoked": False,
+        "learning_invoked": False,
+        "F50_status": "NOT_STARTED",
+        "production_diff_required": "ZERO",
+        "master_promotion": False,
+        "no_observations": True,
+        "no_S49_generation_or_search": True,
+        "preflight_authority": {"h49r3a_source_tree_aggregate_sha256": preflight["authority"]["h49r3a_source_tree_aggregate_sha256"], "native_binary_sha256": preflight["authority"]["native_runtime_provenance"]["native_module_sha256"], "ruleset_fingerprints": preflight["authority"]["ruleset_fingerprints"], "generic_chess_diff_from_h49r4a": "ZERO"},
+        "freeze_rule": "R5 runner and unchanged protocol/F48 dependencies remain byte-identical after R5 acceptance and before first observed position/search result",
+    }
+
+
+def validate_h49b_r5_manifest(manifest: dict[str, Any]) -> None:
+    if _manifest_sha(manifest) != manifest.get("manifest_sha256"):
+        raise RuntimeError("H49B-R5 manifest hash mismatch")
+    expected = {"checkpoint_name": "H49B-R5", "kind": H49B_R5_KIND, "work_order_id": H49B_R5_WORK_ORDER_ID, "parent_h49b_r4_sha": H49B_R4_SHA, "parent_h49b_r4_manifest_sha256": H49B_R4_MANIFEST_SHA, "new_authoritative_root": ".generic_chess_flow/f49-r5-authoritative", "h49r4a_manifest_sha256": H49R4A_MANIFEST_SHA, "h49r3a_source_tree_aggregate_sha256": H49R3A_SOURCE_TREE_SHA, "native_binary_sha256": H49R3A_NATIVE_SHA, "measurement_entry_point": "scripts.audit_f49_learning_signal_architecture.run_measurements", "F50_status": "NOT_STARTED", "production_diff_required": "ZERO"}
+    for key, value in expected.items():
+        if manifest.get(key) != value:
+            raise RuntimeError(f"H49B-R5 {key} drift")
+    if any(manifest.get(key) is not False for key in ("observed_results_present", "measurements_invoked", "learning_invoked", "master_promotion")) or manifest.get("no_observations") is not True or manifest.get("no_S49_generation_or_search") is not True:
+        raise RuntimeError("H49B-R5 contains observations or search")
+    if manifest.get("replay_modes") != {"F48_CONTROL": "LEGACY_DIRECT", "S49-M": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION", "S49-E": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION"}:
+        raise RuntimeError("H49B-R5 replay mode drift")
+    certification = manifest.get("bridge_certification", {})
+    if certification.get("certification") != "PASS" or certification.get("search_invoked") is not False or set(certification.get("rulesets", {})) != set(RULESET_IDS):
+        raise RuntimeError("H49B-R5 bridge certification drift")
+    for summary in certification["rulesets"].values():
+        if summary.get("maximum_projection_multiplicity_observed") != 1 or summary.get("physical_position_parity") is not True or summary.get("transport_history_legacy_only") is not True:
+            raise RuntimeError("H49B-R5 bridge certification failure")
+    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()) or manifest.get("f48_audit_runner_raw_sha256") != _sha256_bytes(F48_AUDIT_PATH.read_bytes()):
+        raise RuntimeError("H49B-R5 source hash drift")
+
+
+def load_h49b_r5_manifest() -> dict[str, Any]:
+    manifest = json.loads(R5_MANIFEST_PATH.read_text(encoding="utf-8"))
+    validate_h49b_r5_manifest(manifest)
+    return manifest
+
+
+def validate_r5_measurement_freeze() -> None:
+    manifest = load_h49b_r5_manifest()
+    validate_h49b_r5_manifest(manifest)
+    validate_r4_measurement_freeze()
+    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()) or manifest.get("f48_audit_runner_raw_sha256") != _sha256_bytes(F48_AUDIT_PATH.read_bytes()):
+        raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
 
 
 def main() -> None:
@@ -1408,6 +1617,7 @@ def main() -> None:
     parser.add_argument("--write-r2-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R2 manifest")
     parser.add_argument("--write-r3-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R3 manifest")
     parser.add_argument("--write-r4-manifest", action="store_true", help="run no-observation P48 authority reconstruction and atomically write H49B-R4 manifest")
+    parser.add_argument("--write-r5-manifest", action="store_true", help="run no-observation semantic-to-native bridge certification and atomically write H49B-R5 manifest")
     parser.add_argument("--measure", action="store_true", help="execute the full frozen F49 measurement runner")
     args = parser.parse_args()
     if args.measure:
@@ -1416,7 +1626,12 @@ def main() -> None:
         return
     if args.write_preflight:
         raise RuntimeError("historical H49B preflight is immutable; use --write-r1-manifest")
-    if args.write_r4_manifest:
+    if args.write_r5_manifest:
+        manifest = build_h49b_r5_manifest()
+        manifest["manifest_sha256"] = _manifest_sha(manifest)
+        _atomic_write_json(R5_MANIFEST_PATH, manifest)
+        validate_h49b_r5_manifest(manifest)
+    elif args.write_r4_manifest:
         manifest = build_h49b_r4_manifest()
         manifest["manifest_sha256"] = _manifest_sha(manifest)
         _atomic_write_json(R4_MANIFEST_PATH, manifest)
@@ -1438,7 +1653,7 @@ def main() -> None:
         _atomic_write_json(path, manifest)
         validate_h49b_r1_manifest(manifest)
     else:
-        manifest = load_h49b_r3_manifest()
+        manifest = load_h49b_r5_manifest()
     print(json.dumps({"status": "PASS", "kind": manifest["kind"], "observed_results_present": manifest["observed_results_present"], "next_boundary": H49B_WORK_ORDER_ID}, sort_keys=True))
 
 

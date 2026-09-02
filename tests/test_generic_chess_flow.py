@@ -587,6 +587,56 @@ def test_large_published_report_becomes_compact_sha_bound_reference(monkeypatch,
     assert "PATH=docs/audit.json" in body
 
 
+def _stub_reference_git(monkeypatch, sandbox, *, tracked=True, dirty=False, published=True):
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+    monkeypatch.setattr(flow, "git_ok", lambda _root, *args: tracked if args[:1] == ("ls-files",) else True)
+    monkeypatch.setattr(flow, "git", lambda _root, *args, **_kwargs:
+                        "report.md" if args[:2] == ("diff", "--name-only") and dirty
+                        else "https://example.invalid/repo.git" if args[:3] == ("remote", "get-url", "origin")
+                        else "")
+    monkeypatch.setattr(flow, "sha", lambda _root, ref="HEAD": "a" * 40 if ref == "HEAD" or published else "b" * 40)
+
+
+def test_small_tracked_closeout_is_reference_only(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    report = sandbox / "report.md"
+    sandbox.mkdir()
+    report.write_text("private blocker details\n", encoding="utf-8")
+    _stub_reference_git(monkeypatch, sandbox)
+
+    body = flow.chat_message_body(tmp_path, report, reference_only=True)
+
+    assert "private blocker details" not in body
+    assert "COMMIT=" + "a" * 40 in body
+    assert "PATH=report.md" in body
+    assert "REPORT_SHA256=" in body
+
+
+@pytest.mark.parametrize("case", ["untracked", "dirty", "unpublished"])
+def test_closeout_rejects_untracked_dirty_or_unpublished_before_browser_dispatch(monkeypatch, tmp_path, case):
+    sandbox = tmp_path / "sandbox"
+    report = sandbox / "report.md"
+    sandbox.mkdir()
+    report.write_text("blocker details\n", encoding="utf-8")
+    _stub_reference_git(monkeypatch, sandbox, tracked=case != "untracked", dirty=case == "dirty", published=case != "unpublished")
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: pytest.fail("browser dispatch must not start"))
+
+    with pytest.raises(flow.FlowError):
+        flow.dispatch_message(tmp_path, {"active": True}, report, "closeout")
+
+
+def test_start_message_remains_inline(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    sandbox.mkdir()
+    source = tmp_path / "bootstrap.txt"
+    source.write_text("start request body\n", encoding="utf-8")
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+
+    assert flow.chat_message_body(tmp_path, source) == "start request body\n"
+
+
 def test_heavy_uses_below_normal_priority_and_returns_child_code(monkeypatch, tmp_path):
     seen = {}
 

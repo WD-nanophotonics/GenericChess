@@ -1,0 +1,47 @@
+{
+  "schema": "H49B-R5-BLOCKER-EVIDENCE-V1",
+  "checkpoint": "H49B-R5_F49_DIAGNOSTIC_RUNNER_FREEZE",
+  "work_order_id": "GENERICCHESS-F49-H49B-CORRECTIVE-R5-SEMANTIC-TO-NATIVE-TRANSPORT-REPLAY-CLOSURE",
+  "parent_h49b_r4_sha": "9fe836ac0ca86ff8dd8f138a6d0fff1412a5f59e",
+  "status": "BLOCKED_ARCHITECTURAL_TRANSPORT",
+  "certification": {
+    "scope": "ONE_PLY_EXHAUSTIVE_INITIAL_LEGAL_ACTIONS",
+    "A_CANONICAL_WESTERN_CHESS": {
+      "semantic_initial_legal_action_count": 20,
+      "legacy_transport_initial_legal_action_count": 4,
+      "missing_projected_action_count": 16,
+      "required_e2_e4": {
+        "semantic": "sem_11_pawn_double_step:g34:e2-e4",
+        "projected": "BoardMove(e2,e4)",
+        "legacy_transport_legal": false
+      }
+    },
+    "B_CANONICAL_STANDARD_SHOGI": {
+      "semantic_initial_legal_action_count": 30,
+      "legacy_transport_initial_legal_action_count": 30,
+      "projected_initial_actions_all_legal": true
+    },
+    "C_H48B_SELECTED_GENERATED": {
+      "semantic_initial_legal_action_count": 14,
+      "legacy_transport_initial_legal_action_count": 14,
+      "projected_initial_actions_all_legal": true
+    },
+    "failure_code": "STOP_ON_NATIVE_TRANSPORT_REPLAY_BRIDGE_FAILURE"
+  },
+  "r4_quarantine": {
+    "root": ".generic_chess_flow/f49-r4-authoritative",
+    "aborted_runner_sha": "9fe836ac0ca86ff8dd8f138a6d0fff1412a5f59e",
+    "primary_structural_positions_generated": true,
+    "native_material_surface_entered": true,
+    "failing_stage": "NATIVE_TRANSPORT_HISTORY_REPLAY_BEFORE_SEARCH_RESULT",
+    "observed_failure": "IllegalActionError",
+    "partial_artifacts_evidentiary_status": "NONE",
+    "disposition": "QUARANTINED_NEVER_REUSE"
+  },
+  "observed_results_present": false,
+  "measurements_invoked": false,
+  "native_search_invoked": false,
+  "python_search_invoked": false,
+  "s49_regenerated": false,
+  "production_diff": "ZERO"
+}

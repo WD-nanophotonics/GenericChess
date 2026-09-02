@@ -507,9 +507,9 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         print(_console_safe(text))
 
 
-def chat_message_body(root: Path, source: Path) -> str:
+def chat_message_body(root: Path, source: Path, *, reference_only: bool = False) -> str:
     body = source.read_text(encoding="utf-8-sig")
-    if len(body.encode("utf-8")) <= INLINE_CHAT_REFERENCE_THRESHOLD:
+    if not reference_only and len(body.encode("utf-8")) <= INLINE_CHAT_REFERENCE_THRESHOLD:
         return body
     sandbox = sandbox_root(root).resolve()
     resolved = source.resolve()
@@ -521,15 +521,24 @@ def chat_message_body(root: Path, source: Path) -> str:
         ) from exc
     relative_git = relative.as_posix()
     if not git_ok(sandbox, "ls-files", "--error-unmatch", "--", relative_git):
-        raise FlowError("large Courier report is not tracked by Git")
+        raise FlowError("Courier closeout report is not tracked by Git")
     if git(sandbox, "diff", "--name-only", "HEAD", "--", relative_git):
-        raise FlowError("large Courier report differs from the committed version")
+        raise FlowError("Courier closeout report differs from the committed version")
+    if not git_ok(sandbox, "rev-parse", "--verify", "origin/sandbox"):
+        raise FlowError("Courier closeout report requires a published sandbox checkpoint")
+    local_sha = sha(sandbox)
+    published_sha = sha(sandbox, "origin/sandbox")
+    if local_sha != published_sha:
+        raise FlowError(
+            f"Courier closeout report requires the published sandbox SHA: local={local_sha} remote={published_sha}"
+        )
     return (
-        "Review the large report from the already published immutable Git checkpoint.\n"
+        "Review the Courier closeout/blocker report from this published immutable Git checkpoint.\n"
         f"REPOSITORY={git(sandbox, 'remote', 'get-url', 'origin')}\n"
-        f"COMMIT={sha(sandbox)}\n"
+        f"COMMIT={local_sha}\n"
         f"PATH={relative_git}\n"
-        "Do not request the report body through the chat composer; inspect it at this exact commit.\n"
+        f"REPORT_SHA256={hashlib.sha256(resolved.read_bytes()).hexdigest()}\n"
+        "Do not include or request the report body through the chat composer; inspect it at this exact commit.\n"
     )
 
 
@@ -537,7 +546,7 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
     sandbox = sandbox_root(root)
     require_clean(sandbox)
     require_synced(sandbox, "sandbox")
-    body = chat_message_body(root, source)
+    body = chat_message_body(root, source, reference_only=purpose in {"closeout", "blocker"})
     digest = hashlib.sha256(body.encode("utf-8")).hexdigest()
     key = f"{purpose}-{sha(sandbox)[:12]}-{digest[:12]}"
     generated = runtime_dir(root) / f"{key}.txt"
