@@ -64,3 +64,18 @@ changed. H50B1 uses only the existing semantic IR/compiler/runtime authority;
 F50B2 remains the next boundary. The next implementation must reuse the existing
 semantic IR/compiler/runtime authority and must never project semantic
 special actions through incomplete legacy movement atoms.
+
+## H50B1-R1 corrective closure
+
+R1 closes the declaration and history-contract corrections without changing
+the selected Route A architecture. The Native C payload and runtime now own
+the complete declaration contract, including outcome bands and weighted
+metrics. Fresh history has an explicit sentinel event; imported incomplete or
+non-sentinel event streams are marked non-exact for policy paths; and the
+500-ply automatic adjudication is evaluated from complete history records.
+
+The Western and Standard Shogi matrices, generic compiler witness, and
+historical validation ledger are recorded in
+`tests/fixtures/h50b1_r1_semantic_native_execution.json`. F50B2 remains
+`NOT_STARTED`; no iterative search, TT, budget, cancellation, learner,
+F49/S49, or production routing work is authorized by R1.

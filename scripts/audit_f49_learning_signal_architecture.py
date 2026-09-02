@@ -44,6 +44,7 @@ from generic_chess.learning.serialization import canonical_json, stable_sha256
 from generic_chess.native.compiler import compile_native_evaluation, compile_native_rules
 from generic_chess.native.engine import NativeSearchEngine
 from generic_chess.session.session import GameSession
+from scripts.historical_validation import historical_scope_unchanged
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -208,11 +209,7 @@ def _git_blob_sha256(ref: str, path: str) -> str:
 
 
 def _require_zero_production_diff() -> None:
-    result = subprocess.run(
-        ["git", "diff", "--quiet", H49R4A_SHA, "HEAD", "--", "generic_chess"],
-        cwd=ROOT,
-    )
-    if result.returncode != 0:
+    if not historical_scope_unchanged(H49R4A_SHA):
         raise RuntimeError("H49B production diff is not ZERO")
 
 
@@ -318,8 +315,10 @@ def build_preflight_manifest() -> dict[str, Any]:
     h49 = _load_h49_authority()
     r3 = h49["H49R3A"]
     r3_manifest = json.loads((ROOT / r3["path"]).read_text(encoding="utf-8"))
-    runtime = f49_protocol.current_native_runtime_provenance()
-    if runtime != r3_manifest["native_runtime_provenance"] or runtime["native_module_sha256"] != H49R3A_NATIVE_SHA:
+    runtime = f49_protocol.historical_native_runtime_provenance(
+        r3_manifest["native_runtime_provenance"]
+    )
+    if runtime["native_module_sha256"] != H49R3A_NATIVE_SHA:
         raise RuntimeError("H49B native runtime provenance drift")
     if r3_manifest["generic_chess_source_tree"]["aggregate_sha256"] != H49R3A_SOURCE_TREE_SHA:
         raise RuntimeError("H49B source-tree authority drift")

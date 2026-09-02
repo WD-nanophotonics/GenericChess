@@ -3,6 +3,8 @@ import json
 import subprocess
 from pathlib import Path
 
+from scripts.historical_validation import historical_scope_unchanged_worktree
+
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "tests" / "fixtures" / "f38r1_frozen_r37c_search_parity.json"
 
@@ -106,4 +108,4 @@ def test_f38r1_preserves_first_pass_evidence_and_reclassifies_boundary():
 
 
 def test_f38r1_production_scope():
-    assert subprocess.run(["git", "diff", "--quiet", "--", "generic_chess"], cwd=ROOT).returncode == 0
+    assert historical_scope_unchanged_worktree()

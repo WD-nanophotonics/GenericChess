@@ -29,6 +29,7 @@ GC_SEM_MAX_GEOMETRIES = 4096
 GC_SEM_MAX_AUX_SLOTS = 8
 GC_SEM_MAX_EFFECTS = 4
 GC_SEM_MAX_INVARIANT_REFS = 4
+GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS = 16
 
 # Frozen numeric enum codes (ADR-017 section 9).  Unknown values fail closed.
 _SEM_GEOMETRY_CODES = {"leap": 0, "ray": 1, "drop": 2}
@@ -110,6 +111,7 @@ _SEM_STRATUM_CODES = {"S0": 0, "S1": 1, "S2": 2, "S3": 3, "S4": 4, "S5": 5}
 # fail-closed at compile time; board=0 is the only reachable value.
 _SEM_LOCATION_CODES = {"board": 0, "hand": 1}
 _SEM_REPETITION_POLICY_CODES = {"draw": 0, "continuous_check_loss": 1}
+_SEM_OUTCOME_CODES = {"WIN": 0, "LOSS": 1, "RESTART": 2, "NO_CONTEST": 3}
 
 
 def _sem_enum(table, value, what, fingerprint):
@@ -182,6 +184,43 @@ def _sem_state_guard(g, n, type_map, zone_map, fingerprint):
         "spatial": _sem_spatial(g.spatial, n, type_map, zone_map, fingerprint),
         "comparison": _sem_enum(_SEM_COMPARISON_CODES, g.comparison, "comparison", fingerprint),
         "value": g.value,
+    }
+
+
+def _sem_declaration(d, n, type_map, zone_map, fingerprint):
+    return {
+        "declaration_id": d.declaration_id,
+        "owner": d.owner,
+        "state_guards": [
+            _sem_state_guard(g, n, type_map, zone_map, fingerprint)
+            for g in d.state_guards
+        ],
+        "require_not_in_check": 1 if d.require_not_in_check else 0,
+        "ply_limit": d.ply_limit,
+        "weighted_metric": (
+            {
+                "owner": _sem_enum(_SEM_OWNER_CODES, d.weighted_metric.owner, "metric owner", fingerprint),
+                "compare_field": _sem_enum(_SEM_FIELD_CODES, d.weighted_metric.compare_field, "metric compare_field", fingerprint),
+                "weights": [
+                    [type_map[type_id], weight]
+                    for type_id, weight in d.weighted_metric.weights
+                ],
+                "spatial": (
+                    _sem_spatial(d.weighted_metric.spatial, n, type_map, zone_map, fingerprint)
+                    if d.weighted_metric.spatial is not None else None
+                ),
+                "include_hands": 1 if d.weighted_metric.include_hands else 0,
+            }
+            if d.weighted_metric is not None else None
+        ),
+        "outcome_bands": [
+            {
+                "threshold": band.threshold,
+                "outcome": _sem_enum(_SEM_OUTCOME_CODES, band.outcome, "declaration outcome", fingerprint),
+            }
+            for band in d.outcome_bands
+        ],
+        "failure_outcome": _sem_enum(_SEM_OUTCOME_CODES, d.failure_outcome, "declaration failure outcome", fingerprint),
     }
 
 
@@ -621,6 +660,7 @@ class NativeSemanticCompilationReport:
     zone_count: int
     aux_slot_count: int
     trigger_count: int
+    declaration_count: int
     estimated_bytes: int
     native_executable: bool = False
 
@@ -712,11 +752,19 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
     required = {
         "semantic_payload_version", "fingerprint", "board_size",
         "repetition_limit", "repetition_policy", "automatic_adjudication_ply",
+        "automatic_adjudications",
         "max_ply", "type_ids", "types",
         "promo_allowed", "promo_forced", "alive_promo", "drop_mask",
         "geometries", "zones", "aux_slots", "triggers", "patterns",
+        "declarations",
     }
     if not isinstance(payload, dict) or not required.issubset(payload):
+        return False
+    if not isinstance(payload["declarations"], list):
+        return False
+    if not isinstance(payload["automatic_adjudications"], list):
+        return False
+    if len(payload["automatic_adjudications"]) > GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS:
         return False
     patterns = payload["patterns"]
     if not isinstance(patterns, list) or len(patterns) != report.pattern_count:
@@ -794,7 +842,16 @@ def build_semantic_compile_payload(semantic):
     type_ids = tuple(sorted(support.type_metadata))
     pattern_ids = tuple(p.pattern_id for p in ir.patterns)
     geometry_ids = tuple(sorted(ir.geometry))
-    zone_ids = tuple(sorted(ir.zones))
+    zone_ids = list(sorted(ir.zones))
+    declaration_zone_keys = {}
+    zone_squares = {zid: tuple(ir.zones[zid].squares) for zid in zone_ids}
+    for declaration in ir.declarations:
+        for zone_id, zone in sorted(declaration.zones.items()):
+            key = f"decl:{declaration.declaration_id}:{zone_id}"
+            declaration_zone_keys[(declaration.declaration_id, zone_id)] = key
+            zone_ids.append(key)
+            zone_squares[key] = tuple(zone.squares)
+    zone_ids = tuple(zone_ids)
     _validate(len(type_ids) <= GC_SEM_MAX_TYPES, "too many semantic types", fingerprint)
     _validate(
         len(pattern_ids) <= GC_SEM_MAX_PATTERNS,
@@ -898,7 +955,7 @@ def build_semantic_compile_payload(semantic):
             }
         )
 
-    zones = [{"squares": list(ir.zones[zid].squares)} for zid in zone_ids]
+    zones = [{"squares": list(zone_squares[zid])} for zid in zone_ids]
 
     aux_slots = []
     for slot in ir.aux_slots:
@@ -933,6 +990,7 @@ def build_semantic_compile_payload(semantic):
             f"pattern {p.pattern_id}: too many effects",
             fingerprint,
         )
+
         for inv in p.invariants:
             if inv.kind == "squares_not_attacked":
                 _validate(
@@ -978,6 +1036,48 @@ def build_semantic_compile_payload(semantic):
             }
         )
 
+    automatic_adjudications = []
+    for adjudication in support.automatic_adjudications:
+        _validate(
+            adjudication.outcome == "NO_CONTEST",
+            f"unsupported automatic adjudication outcome {adjudication.outcome!r}",
+            fingerprint,
+        )
+        _validate(
+            adjudication.continuation_policy == "threshold_actor_continuous_check",
+            f"unsupported automatic adjudication policy {adjudication.continuation_policy!r}",
+            fingerprint,
+        )
+        automatic_adjudications.append(
+            {
+                "adjudication_id": adjudication.adjudication_id,
+                "trigger_ply": adjudication.trigger_ply,
+                "outcome": _sem_enum(
+                    _SEM_OUTCOME_CODES, adjudication.outcome,
+                    "automatic adjudication outcome", fingerprint,
+                ),
+                "continuation_policy": 0,
+            }
+        )
+    _validate(
+        len(automatic_adjudications) <= GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS,
+        "too many automatic adjudications",
+        fingerprint,
+    )
+
+    declarations = []
+    for declaration in ir.declarations:
+        declaration_map = dict(zone_map)
+        for zone_id in declaration.zones:
+            declaration_map[zone_id] = zone_map[
+                declaration_zone_keys[(declaration.declaration_id, zone_id)]
+            ]
+        declarations.append(
+            _sem_declaration(
+                declaration, n, type_map, declaration_map, fingerprint
+            )
+        )
+
     payload = {
         "semantic_payload_version": SEMANTIC_PAYLOAD_VERSION,
         "fingerprint": fingerprint,
@@ -994,6 +1094,7 @@ def build_semantic_compile_payload(semantic):
             if support.automatic_adjudications
             else None
         ),
+        "automatic_adjudications": automatic_adjudications,
         "max_ply": support.max_ply,
         # Runtime identity is the Python semantic_position_key JSON.  It
         # contains public type IDs, so the Native executor must own this
@@ -1009,6 +1110,7 @@ def build_semantic_compile_payload(semantic):
         "aux_slots": aux_slots,
         "triggers": triggers,
         "patterns": patterns,
+        "declarations": declarations,
     }
 
     estimated = (
@@ -1044,6 +1146,7 @@ def build_semantic_compile_payload(semantic):
         zone_count=len(zone_ids),
         aux_slot_count=len(aux_slots),
         trigger_count=len(triggers),
+        declaration_count=len(declarations),
         estimated_bytes=estimated,
         native_executable=False,
     )
@@ -1063,7 +1166,13 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
     type_ids = tuple(sorted(semantic.support.type_metadata))
     pattern_ids = tuple(p.pattern_id for p in semantic.ir.patterns)
     geometry_ids = tuple(sorted(semantic.ir.geometry))
-    zone_ids = tuple(sorted(semantic.ir.zones))
+    zone_ids = list(sorted(semantic.ir.zones))
+    for declaration in semantic.ir.declarations:
+        zone_ids.extend(
+            f"decl:{declaration.declaration_id}:{zone_id}"
+            for zone_id in sorted(declaration.zones)
+        )
+    zone_ids = tuple(zone_ids)
     return NativeSemanticCompiledRules(
         capsule=capsule,
         report=report,

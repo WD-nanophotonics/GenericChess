@@ -43,6 +43,21 @@ int gc_semantic_runtime_is_square_attacked(const GCSemanticRules *rules,
                                            uint8_t by_owner);
 
 typedef struct {
+    uint8_t outcome;
+    uint8_t has_weighted_score;
+    int64_t weighted_score;
+} GCSemanticDeclarationAssessment;
+
+/* Assess a C-owned declaration against a packed semantic position.  The
+ * caller supplies the declaration ID; actor binding is the position's side
+ * to move, matching the public Core declaration contract. */
+int gc_semantic_runtime_assess_declaration(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    const char *declaration_id,
+    GCSemanticDeclarationAssessment *out);
+
+typedef struct {
     GCSemanticPosition saved;
 } GCSemanticUndo;
 

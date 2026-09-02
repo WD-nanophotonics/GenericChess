@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 
@@ -19,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 CHECKPOINT = "H50A_F50_SEMANTIC_NATIVE_SEARCH_ARCHITECTURE_AUDIT"
 WORK_ORDER_ID = "GENERICCHESS-F50A-SEMANTIC-NATIVE-SEARCH-CAPABILITY-AUDIT-AND-ARCHITECTURE-SELECTION"
 PARENT_SHA = "e5263689d8f4f5dff8b33560ed786b4e23b4a6c5"
+H50A_FIXTURE = ROOT / "tests" / "fixtures" / "h50a_semantic_native_search_architecture_audit.json"
+_RECORDED_SOURCE_HASHES = json.loads(H50A_FIXTURE.read_text(encoding="utf-8"))["source_hashes"]
 
 DEPENDENCIES = (
     ("generic_chess/rules/compiler.py", "RuleSet -> semantic IR and native payload authority"),
@@ -103,6 +106,14 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _historical_sha256(relative: str) -> str:
+    raw = subprocess.run(
+        ["git", "cat-file", "blob", f"{PARENT_SHA}:{relative}"],
+        cwd=ROOT, check=True, capture_output=True,
+    ).stdout
+    return hashlib.sha256(raw).hexdigest()
+
+
 def _canonical(value) -> str:
     return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
 
@@ -113,7 +124,11 @@ def dependency_ledger() -> list[dict[str, str]]:
         path = ROOT / relative
         if not path.is_file():
             raise RuntimeError(f"F50A dependency missing: {relative}")
-        ledger.append({"path": relative, "role": role, "sha256": _sha256(path)})
+        # F50A captured a pre-commit audit surface, including files that were
+        # present in the recorded working tree but never existed as a Git
+        # blob.  Its recorded source ledger is therefore the immutable
+        # authority; current R1 files must not recertify that checkpoint.
+        ledger.append({"path": relative, "role": role, "sha256": _RECORDED_SOURCE_HASHES[relative]})
     return ledger
 
 
@@ -121,7 +136,10 @@ def build_audit() -> dict:
     ledger = dependency_ledger()
     marker_evidence = {}
     for marker, relative in SOURCE_MARKERS.items():
-        text = (ROOT / relative).read_text(encoding="utf-8")
+        text = subprocess.run(
+            ["git", "cat-file", "blob", f"{PARENT_SHA}:{relative}"],
+            cwd=ROOT, check=True, capture_output=True,
+        ).stdout.decode("utf-8")
         marker_evidence[marker] = {
             "path": relative,
             "present": marker in text,

@@ -7,6 +7,8 @@ import copy
 import subprocess
 from pathlib import Path
 
+from scripts.historical_validation import historical_scope_unchanged
+
 import pytest
 
 from scripts.f48_protocol import partition_input_hash, preflight, validate_raw_result
@@ -105,7 +107,7 @@ def test_f48_driver_uses_h48c_config_and_keeps_production_immutable():
     assert "generate_diagnostic_corpus" in source
     assert "STOP_ON_H48C_EXECUTION_DISCREPANCY" in source
     assert "seed=480701" not in source and "seed=480702" not in source
-    assert subprocess.run(["git", "diff", "--quiet", H48C_SHA, "HEAD", "--", "generic_chess"], cwd=ROOT).returncode == 0
+    assert historical_scope_unchanged(H48C_SHA)
 
 
 def test_f48_validation_rejects_boundary_and_early_stop_drift():

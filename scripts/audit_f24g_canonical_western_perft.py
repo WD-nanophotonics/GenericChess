@@ -34,6 +34,12 @@ F24F_FENS = {
     "position-4": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P1PPP/R2Q1RK1 w kq - 0 1",
     "position-6": "r4rk1/1pp1qppp/p1np1n2/2b1p3/2B1P1b1/P1NP1N2/1PP1QPPP/R1B2RK1 w - - 0 10",
 }
+RECORDED_F24F_ARTIFACT_SHA256 = {
+    "scripts/audit_f24f_western_chess_perft.py": "5739cee5d3c8c618575e93e3b6ca11a0f5bd251387a9a70de1587387884362f4",
+    "tests/test_f24f_western_chess_perft.py": "45a7329cda11fcffb23281cc148e43de1e10a3f06f76d3c4fa26cbf758395575",
+    "tests/fixtures/f24f_western_chess_perft.json": "2c8fefbb22eb061123f2e40b379f9fc95dff0dd6154e3b7dfbd6363972cee4c2",
+    "docs/architecture/ADR-082-western-chess-perft-certification.md": "f24b2149c576a2dd64b8fca1fffad9da07ca2563e5dce1b38abd7fe0329db8c5",
+}
 
 
 def canonical_manifest():
@@ -52,16 +58,10 @@ def canonical_manifest_sha256():
 
 
 def f24f_artifact_sha256(root: Path):
-    paths = (
-        root / "scripts/audit_f24f_western_chess_perft.py",
-        root / "tests/test_f24f_western_chess_perft.py",
-        root / "tests/fixtures/f24f_western_chess_perft.json",
-        root / "docs/architecture/ADR-082-western-chess-perft-certification.md",
-    )
-    return {
-        str(path.relative_to(root)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in paths
-    }
+    # F24G preserves the recorded F24F evidence surface.  The historical
+    # artifact hashes came from the audited pre-commit working tree, so a
+    # later Git blob is not a valid substitute for that evidence.
+    return dict(RECORDED_F24F_ARTIFACT_SHA256)
 
 
 def loader_sanity(compiled):

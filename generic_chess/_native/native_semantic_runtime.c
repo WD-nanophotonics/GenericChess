@@ -158,7 +158,7 @@ static int compare_value(uint8_t comparison, int value, int expected) {
     return 0;
 }
 static int spatial_holds(const GCSemSpatial *spatial, const GCSemanticRules *r, const GCSemanticPosition *pos, uint8_t side, uint16_t source, uint16_t target, uint16_t square) {
-    if (!spatial || spatial->refs_count == 0) return 1;
+    if (!spatial || (spatial->refs_count == 0 && spatial->kind != 5)) return 1;
     uint16_t ref_square = 0;
     if (!resolve_square(&spatial->refs[0], r, NULL, pos, side, source, target, &ref_square)) return 0;
     int sf = square % r->board_size, sr = square / r->board_size;
@@ -195,6 +195,121 @@ static int state_guards_hold(const GCSemanticRules *r, const GCSemanticPosition 
     }
     return 1;
 }
+
+static int declaration_guard_holds(const GCSemanticRules *r,
+                                   const GCSemanticPosition *pos,
+                                   const GCSemStateGuard *g,
+                                   uint8_t side) {
+    if (g->location != 0) return 0;
+    uint16_t subject = 0;
+    if (g->has_subject_ref &&
+        !resolve_square(&g->subject_ref, r, NULL, pos, side, 0, 0, &subject))
+        return 0;
+    uint16_t first = g->has_subject_ref ? subject : 0;
+    uint16_t last = g->has_subject_ref
+        ? (uint16_t)(subject + 1)
+        : (uint16_t)(r->board_size * r->board_size);
+    int count = 0;
+    for (uint16_t sq = first; sq < last; sq++) {
+        const GCPiece *piece = &pos->board[sq];
+        if (!piece->occupied || !owner_ok(g->owner, piece->owner, side)) continue;
+        if (g->type_ref.kind == 2) {
+            uint16_t actual = g->compare_field == 0
+                ? piece->base_type : piece->current_type;
+            if (!g->type_ref.has_type || actual != g->type_ref.type_index)
+                continue;
+        } else if (g->type_ref.kind != 3) {
+            return 0;
+        }
+        if (g->promoted == 0 && !piece->promoted) continue;
+        if (g->promoted == 1 && piece->promoted) continue;
+        if (g->promoted > 2) return 0;
+        if (!spatial_holds(&g->spatial, r, pos, side, 0, 0, sq)) continue;
+        count++;
+    }
+    int value = g->aggregation == 0 ? (count ? 1 : 0) : count;
+    return compare_value(g->comparison, value, g->value);
+}
+
+static int declaration_metric_holds(const GCSemanticRules *r,
+                                    const GCSemanticPosition *pos,
+                                    const GCSemDeclarationMetric *metric,
+                                    uint8_t side,
+                                    int64_t *score_out) {
+    int64_t score = 0;
+    for (uint16_t sq = 0; sq < r->board_size * r->board_size; sq++) {
+        const GCPiece *piece = &pos->board[sq];
+        if (!piece->occupied || !owner_ok(metric->owner, piece->owner, side))
+            continue;
+        if (metric->has_spatial &&
+            !spatial_holds(&metric->spatial, r, pos, side, 0, 0, sq))
+            continue;
+        uint16_t type = metric->compare_field == 0
+            ? piece->base_type : piece->current_type;
+        if (type >= r->type_count) return 0;
+        score += metric->weights[type];
+    }
+    if (metric->include_hands) {
+        for (uint8_t owner = 0; owner < 2; owner++) {
+            if (!owner_ok(metric->owner, owner, side)) continue;
+            for (uint16_t type = 0; type < r->type_count; type++)
+                score += (int64_t)metric->weights[type] *
+                         pos->hand_counts[owner][type];
+        }
+    }
+    *score_out = score;
+    return 1;
+}
+
+int gc_semantic_runtime_assess_declaration(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    const char *declaration_id,
+    GCSemanticDeclarationAssessment *out) {
+    if (!rules || !position || !declaration_id || !out) return 0;
+    const GCSemDeclaration *declaration = NULL;
+    for (uint8_t i = 0; i < rules->declaration_count; i++) {
+        if (strcmp(rules->declarations[i].declaration_id, declaration_id) == 0) {
+            declaration = &rules->declarations[i];
+            break;
+        }
+    }
+    if (!declaration) return -1;
+    uint8_t actor = position->side_to_move;
+    if (declaration->owner != actor) return -2;
+    int64_t score = 0;
+    out->has_weighted_score = declaration->has_metric;
+    out->weighted_score = 0;
+    if (declaration->has_metric &&
+        !declaration_metric_holds(rules, position, &declaration->metric,
+                                  actor, &score)) return 0;
+    out->weighted_score = score;
+    int valid = 1;
+    for (uint8_t i = 0; i < declaration->state_guard_count; i++) {
+        if (!declaration_guard_holds(rules, position,
+                                     &declaration->state_guards[i], actor)) {
+            valid = 0;
+            break;
+        }
+    }
+    if (valid && declaration->require_not_in_check &&
+        gc_semantic_runtime_in_check(rules, position, actor)) valid = 0;
+    if (valid && declaration->has_ply_limit && position->ply >= declaration->ply_limit)
+        valid = 0;
+    uint8_t outcome = declaration->failure_outcome;
+    if (valid) {
+        for (uint8_t i = 0; i < declaration->outcome_band_count; i++) {
+            if (declaration->has_metric &&
+                score >= declaration->outcome_bands[i].threshold) {
+                outcome = declaration->outcome_bands[i].outcome;
+                break;
+            }
+        }
+    }
+    out->outcome = outcome;
+    return 1;
+}
+
 static int slot_guards_hold(const GCSemanticRules *r, const GCSemanticPosition *pos, const GCSemPattern *pattern, uint8_t side, uint16_t source, uint16_t target) {
     for (uint8_t i=0;i<pattern->slot_guard_count;i++) { const GCSemSlotGuard *g=&pattern->slot_guards[i]; uint8_t index=0; const GCSemAuxSlot *slot=slot_meta(r,g->slot_id,&index); if(!slot)return 0; uint8_t owner_index=slot->scope==1?(uint8_t)(side+1):0; const GCSemAuxValue *value=&pos->aux[index][owner_index]; if(g->has_square_ref){uint16_t expected=0;if(!resolve_square(&g->square_ref,r,NULL,pos,side,source,target,&expected))return 0;int equal=value->has_value&&value->kind==1&&value->square==expected;if(g->comparison==0&&!equal)return 0;if(g->comparison==1&&equal)return 0;}else{int actual=value->has_value?value->bool_value:0;if(!value->has_value&&g->has_value&&g->value!=0&&g->comparison==0)return 0;if(g->has_value&&!compare_value(g->comparison,actual,g->value))return 0;} }
     return 1;

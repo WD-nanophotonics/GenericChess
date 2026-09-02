@@ -8,10 +8,7 @@ from ..core.actions import SemanticBoardMove, SemanticDropMove
 from ..core.coordinates import Square, index_to_square
 from ..core.pieces import Piece
 from ..core.position import Hands, Position
-from ..core.declarations import (
-    _assess_declaration_position,
-    _available_declarations_position,
-)
+from ..core.declarations import DeclarationAssessment
 from . import _module, native_available
 
 
@@ -79,6 +76,8 @@ def snapshot(native_rules, position):
     out["history_events"] = tuple(
         (int(event[0]), bool(event[1])) for event in out.get("history_events", ())
     )
+    out["history_exact"] = bool(out.get("history_exact", False))
+    out["history_events_exact"] = bool(out.get("history_events_exact", False))
     out["history_occurrences"] = int(out.get("history_occurrences", 0))
     return out
 
@@ -145,45 +144,31 @@ def public_action(native_rules, action: int):
     )
 
 
-def _position_for_declarations(native_rules, position):
-    """Rehydrate a public Position for the generic declaration contract."""
-    if native_rules.semantic_ruleset is None:
-        raise ValueError("Native semantic ruleset has no declaration authority")
-    raw = snapshot(native_rules, position)
-    type_ids = tuple(native_rules.type_ids)
-    board = tuple(
-        None if cell is None else Piece(
-            int(cell[2]), type_ids[int(cell[0])], type_ids[int(cell[1])], bool(cell[3])
-        )
-        for cell in raw["board"]
-    )
-    hands = []
-    for counts in raw["hands"]:
-        hands.append(Hands(tuple(
-            (type_ids[i], int(count)) for i, count in enumerate(counts) if count
-        )))
-    return Position(
-        board=board,
-        hands=(hands[0], hands[1]),
-        side_to_move=int(raw["side"]),
-        ruleset_fingerprint=native_rules.fingerprint,
-        aux_state=raw.get("aux_state", ()),
-    ), int(raw["ply"])
-
-
 def assess_declaration(native_rules, position, declaration_id: str):
     """Assess one generic declaration against the exact Native position."""
-    public_position, ply = _position_for_declarations(native_rules, position)
-    return _assess_declaration_position(
-        public_position, ply, native_rules.semantic_ruleset, declaration_id
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    raw = dict(_module().semantic_assess_declaration(
+        native_rules.capsule, position, str(declaration_id)
+    ))
+    return DeclarationAssessment(
+        str(raw["declaration_id"]), int(raw["actor"]), str(raw["outcome"]),
+        None if raw.get("weighted_score") is None else int(raw["weighted_score"]),
     )
 
 
 def available_declarations(native_rules, position):
     """Return non-losing declaration assessments for the side to move."""
-    public_position, ply = _position_for_declarations(native_rules, position)
-    return _available_declarations_position(
-        public_position, ply, native_rules.semantic_ruleset
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return tuple(
+        DeclarationAssessment(
+            str(raw["declaration_id"]), int(raw["actor"]), str(raw["outcome"]),
+            None if raw.get("weighted_score") is None else int(raw["weighted_score"]),
+        )
+        for raw in _module().semantic_available_declarations(
+            native_rules.capsule, position
+        )
     )
 
 

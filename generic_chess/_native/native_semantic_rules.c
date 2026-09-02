@@ -554,6 +554,109 @@ static int sem_parse_state_guard(PyObject *d, GCSemStateGuard *out,
     return 1;
 }
 
+static int sem_parse_declaration(PyObject *d, GCSemDeclaration *out,
+                                 const GCSemanticRules *rules) {
+    memset(out, 0, sizeof(*out));
+    PyObject *id = PyDict_GetItemString(d, "declaration_id");
+    if (id == NULL || !PyUnicode_Check(id)) {
+        PyErr_SetString(PyExc_ValueError, "declaration_id must be text");
+        return 0;
+    }
+    const char *id_text = PyUnicode_AsUTF8(id);
+    if (id_text == NULL || strlen(id_text) >= sizeof(out->declaration_id)) {
+        PyErr_SetString(PyExc_ValueError, "declaration_id is too long");
+        return 0;
+    }
+    strcpy(out->declaration_id, id_text);
+    if (!sem_enum(PyDict_GetItemString(d, "owner"), 0, 1, &out->owner) ||
+        !sem_u8(PyDict_GetItemString(d, "require_not_in_check"),
+                &out->require_not_in_check) ||
+        !sem_opt_u16(d, "ply_limit", &out->has_ply_limit, &out->ply_limit)) {
+        return 0;
+    }
+    PyObject *guards = NULL;
+    if (!sem_get_list(d, "state_guards", &guards)) return 0;
+    uint64_t guard_count;
+    if (!sem_list_len(guards, GC_SEM_MAX_DECLARATION_GUARDS, &guard_count)) {
+        PyErr_SetString(PyExc_ValueError, "too many declaration state guards");
+        return 0;
+    }
+    out->state_guard_count = (uint8_t)guard_count;
+    if (guard_count > 0) {
+        out->state_guards = (GCSemStateGuard *)calloc(
+            guard_count, sizeof(GCSemStateGuard));
+        if (out->state_guards == NULL) { PyErr_NoMemory(); return 0; }
+        for (uint8_t i = 0; i < out->state_guard_count; i++) {
+            if (!sem_parse_state_guard(PyList_GetItem(guards, i),
+                                        &out->state_guards[i], rules)) return 0;
+        }
+    }
+    PyObject *metric = PyDict_GetItemString(d, "weighted_metric");
+    if (metric != NULL && metric != Py_None) {
+        if (!PyDict_Check(metric) ||
+            !sem_enum(PyDict_GetItemString(metric, "owner"), 0, 2,
+                      &out->metric.owner) ||
+            !sem_enum(PyDict_GetItemString(metric, "compare_field"), 0, 1,
+                      &out->metric.compare_field) ||
+            !sem_u8(PyDict_GetItemString(metric, "include_hands"),
+                    &out->metric.include_hands)) return 0;
+        PyObject *weights = PyDict_GetItemString(metric, "weights");
+        if (weights == NULL || !PyList_Check(weights) ||
+            PyList_Size(weights) > rules->type_count) {
+            PyErr_SetString(PyExc_ValueError, "declaration metric weights invalid");
+            return 0;
+        }
+        for (Py_ssize_t i = 0; i < PyList_Size(weights); i++) {
+            PyObject *pair = PyList_GetItem(weights, i);
+            if ((!PyList_Check(pair) && !PyTuple_Check(pair)) ||
+                PySequence_Size(pair) != 2) {
+                PyErr_SetString(PyExc_ValueError, "declaration metric weight must be [type,value]");
+                return 0;
+            }
+            uint16_t type_index;
+            int32_t weight;
+            PyObject *ti = PySequence_GetItem(pair, 0);
+            PyObject *wv = PySequence_GetItem(pair, 1);
+            int ok = sem_u16(ti, &type_index) && sem_i32(wv, &weight);
+            Py_XDECREF(ti); Py_XDECREF(wv);
+            if (!ok || type_index >= rules->type_count) return 0;
+            out->metric.weight_types[out->metric.weight_count++] = type_index;
+            out->metric.weights[type_index] = weight;
+        }
+        PyObject *spatial = PyDict_GetItemString(metric, "spatial");
+        if (spatial != NULL && spatial != Py_None) {
+            if (!PyDict_Check(spatial) ||
+                !sem_parse_spatial(spatial, &out->metric.spatial, rules)) return 0;
+            out->metric.has_spatial = 1;
+        }
+        out->has_metric = 1;
+    }
+    PyObject *bands = NULL;
+    if (!sem_get_list(d, "outcome_bands", &bands)) return 0;
+    uint64_t band_count;
+    if (!sem_list_len(bands, GC_SEM_MAX_DECLARATION_BANDS, &band_count)) {
+        PyErr_SetString(PyExc_ValueError, "too many declaration outcome bands");
+        return 0;
+    }
+    out->outcome_band_count = (uint8_t)band_count;
+    if (band_count > 0) {
+        out->outcome_bands = (GCSemDeclarationBand *)calloc(
+            band_count, sizeof(GCSemDeclarationBand));
+        if (out->outcome_bands == NULL) { PyErr_NoMemory(); return 0; }
+        for (uint8_t i = 0; i < out->outcome_band_count; i++) {
+            PyObject *band = PyList_GetItem(bands, i);
+            if (!PyDict_Check(band) ||
+                !sem_i32(PyDict_GetItemString(band, "threshold"),
+                         &out->outcome_bands[i].threshold) ||
+                !sem_enum(PyDict_GetItemString(band, "outcome"), 0, 3,
+                          &out->outcome_bands[i].outcome)) return 0;
+        }
+    }
+    if (!sem_enum(PyDict_GetItemString(d, "failure_outcome"), 0, 3,
+                  &out->failure_outcome)) return 0;
+    return 1;
+}
+
 static int sem_parse_slot_guard(PyObject *d, GCSemSlotGuard *out,
                                 const GCSemanticRules *rules) {
     memset(out, 0, sizeof(*out));
@@ -1037,6 +1140,61 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         return NULL;
     }
     rules->automatic_adjudication_ply = automatic_ply;
+
+    PyObject *automatic_list = PyDict_GetItemString(
+        payload, "automatic_adjudications");
+    if (payload_version >= 3 && automatic_list == NULL) {
+        PyErr_SetString(PyExc_ValueError,
+                        "missing semantic automatic adjudications");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (automatic_list != NULL) {
+        uint64_t automatic_count;
+        if (!PyList_Check(automatic_list) ||
+            !sem_list_len(automatic_list, GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS,
+                          &automatic_count)) {
+            PyErr_SetString(PyExc_ValueError,
+                            "too many semantic automatic adjudications");
+            gc_semantic_rules_free(rules);
+            return NULL;
+        }
+        rules->automatic_adjudication_count = (uint8_t)automatic_count;
+        for (uint8_t i = 0; i < rules->automatic_adjudication_count; i++) {
+            PyObject *entry = PyList_GetItem(automatic_list, i);
+            if (!PyDict_Check(entry)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "automatic adjudication entry must be a dict");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            PyObject *id = PyDict_GetItemString(entry, "adjudication_id");
+            if (id == NULL || !PyUnicode_Check(id)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "automatic adjudication ID must be text");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            const char *id_text = PyUnicode_AsUTF8(id);
+            if (id_text == NULL || strlen(id_text) >= sizeof(rules->automatic_adjudications[i].adjudication_id)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "automatic adjudication ID is too long");
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+            strcpy(rules->automatic_adjudications[i].adjudication_id, id_text);
+            if (!sem_u16(PyDict_GetItemString(entry, "trigger_ply"),
+                         &rules->automatic_adjudications[i].trigger_ply) ||
+                !sem_enum(PyDict_GetItemString(entry, "outcome"), 0, 3,
+                          &rules->automatic_adjudications[i].outcome) ||
+                !sem_enum(PyDict_GetItemString(entry, "continuation_policy"),
+                          0, 0,
+                          &rules->automatic_adjudications[i].continuation_policy)) {
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+        }
+    }
 
     uint16_t max_ply;
     if (!sem_u16(PyDict_GetItemString(payload, "max_ply"), &max_ply)) {
@@ -1957,6 +2115,34 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         }
     }
 
+    PyObject *declarations = PyDict_GetItemString(payload, "declarations");
+    if (declarations == NULL) {
+        PyErr_SetString(PyExc_ValueError, "missing semantic declarations");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    uint64_t declaration_count;
+    if (!PyList_Check(declarations) ||
+        !sem_list_len(declarations, GC_SEM_MAX_DECLARATIONS,
+                      &declaration_count)) {
+        PyErr_SetString(PyExc_ValueError, "too many semantic declarations");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->declaration_count = (uint8_t)declaration_count;
+    if (declaration_count > 0) {
+        rules->declarations = (GCSemDeclaration *)calloc(
+            declaration_count, sizeof(GCSemDeclaration));
+        if (rules->declarations == NULL) { PyErr_NoMemory(); gc_semantic_rules_free(rules); return NULL; }
+        for (uint8_t i = 0; i < rules->declaration_count; i++) {
+            if (!sem_parse_declaration(PyList_GetItem(declarations, i),
+                                       &rules->declarations[i], rules)) {
+                gc_semantic_rules_free(rules);
+                return NULL;
+            }
+        }
+    }
+
     return rules;
 }
 
@@ -1989,6 +2175,16 @@ void gc_semantic_rules_free(GCSemanticRules *rules) {
             free(pat->postconditions);
         }
         free(rules->patterns);
+    }
+    if (rules->declarations != NULL) {
+        for (uint8_t d = 0; d < rules->declaration_count; d++) {
+            for (uint8_t g = 0; g < rules->declarations[d].state_guard_count; g++)
+                free(rules->declarations[d].state_guards[g].spatial.refs);
+            free(rules->declarations[d].state_guards);
+            free(rules->declarations[d].outcome_bands);
+            free(rules->declarations[d].metric.spatial.refs);
+        }
+        free(rules->declarations);
     }
     if (rules->geometries != NULL) {
         for (uint16_t g = 0; g < rules->geometry_count; g++) {
@@ -2592,6 +2788,72 @@ static PyObject *sem_info_pattern(const GCSemPattern *pat) {
     return d;
 }
 
+static PyObject *sem_info_declaration(const GCSemDeclaration *decl) {
+    PyObject *d = PyDict_New();
+    if (!d) return NULL;
+    PyObject *guards = PyList_New(decl->state_guard_count);
+    PyObject *bands = PyList_New(decl->outcome_band_count);
+    PyObject *metric = decl->has_metric ? PyDict_New() : Py_NewRef(Py_None);
+    if (!guards || !bands || !metric) goto error;
+    for (uint8_t i = 0; i < decl->state_guard_count; i++) {
+        PyObject *item = sem_info_state_guard(&decl->state_guards[i]);
+        if (!item) goto error;
+        PyList_SET_ITEM(guards, i, item);
+    }
+    for (uint8_t i = 0; i < decl->outcome_band_count; i++) {
+        const GCSemDeclarationBand *band = &decl->outcome_bands[i];
+        PyObject *item = Py_BuildValue("{s:i,s:i}", "threshold",
+                                       (int)band->threshold, "outcome",
+                                       (int)band->outcome);
+        if (!item) goto error;
+        PyList_SET_ITEM(bands, i, item);
+    }
+    if (decl->has_metric) {
+        PyObject *weights = PyList_New(decl->metric.weight_count);
+        if (!weights) goto error;
+        for (uint8_t i = 0; i < decl->metric.weight_count; i++) {
+            uint16_t t = decl->metric.weight_types[i];
+            PyObject *pair = Py_BuildValue("[ii]", (int)t,
+                                           (int)decl->metric.weights[t]);
+            if (!pair) { Py_DECREF(weights); goto error; }
+            PyList_SET_ITEM(weights, i, pair);
+        }
+        PyObject *spatial = decl->metric.has_spatial
+            ? sem_info_spatial(&decl->metric.spatial) : Py_NewRef(Py_None);
+        if (!spatial ||
+            PyDict_SetItemString(metric, "owner",
+                                 PyLong_FromUnsignedLong(decl->metric.owner)) != 0 ||
+            PyDict_SetItemString(metric, "compare_field",
+                                 PyLong_FromUnsignedLong(decl->metric.compare_field)) != 0 ||
+            PyDict_SetItemString(metric, "include_hands",
+                                 PyLong_FromUnsignedLong(decl->metric.include_hands)) != 0 ||
+            PyDict_SetItemString(metric, "weights", weights) != 0 ||
+            PyDict_SetItemString(metric, "spatial", spatial) != 0) {
+            Py_XDECREF(spatial); Py_DECREF(weights); goto error;
+        }
+        Py_DECREF(spatial);
+        Py_DECREF(weights);
+    }
+    if (PyDict_SetItemString(d, "declaration_id",
+                             PyUnicode_FromString(decl->declaration_id)) != 0 ||
+        PyDict_SetItemString(d, "owner",
+                             PyLong_FromUnsignedLong(decl->owner)) != 0 ||
+        PyDict_SetItemString(d, "state_guards", guards) != 0 ||
+        PyDict_SetItemString(d, "require_not_in_check",
+                             PyLong_FromUnsignedLong(decl->require_not_in_check)) != 0 ||
+        PyDict_SetItemString(d, "ply_limit",
+                             decl->has_ply_limit ? PyLong_FromUnsignedLong(decl->ply_limit) : Py_NewRef(Py_None)) != 0 ||
+        PyDict_SetItemString(d, "weighted_metric", metric) != 0 ||
+        PyDict_SetItemString(d, "outcome_bands", bands) != 0 ||
+        PyDict_SetItemString(d, "failure_outcome",
+                             PyLong_FromUnsignedLong(decl->failure_outcome)) != 0) goto error;
+    Py_DECREF(guards); Py_DECREF(bands); Py_DECREF(metric);
+    return d;
+error:
+    Py_XDECREF(guards); Py_XDECREF(bands); Py_XDECREF(metric); Py_DECREF(d);
+    return NULL;
+}
+
 PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
     PyObject *payload = PyDict_New();
     if (payload == NULL) {
@@ -2618,6 +2880,18 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
                  rules->automatic_adjudication_ply
                      ? PyLong_FromUnsignedLong(rules->automatic_adjudication_ply)
                      : Py_NewRef(Py_None));
+    PyObject *automatic = PyList_New(rules->automatic_adjudication_count);
+    if (automatic == NULL) { Py_DECREF(payload); return NULL; }
+    for (uint8_t i = 0; i < rules->automatic_adjudication_count; i++) {
+        const GCSemAutomaticAdjudication *a = &rules->automatic_adjudications[i];
+        PyObject *entry = Py_BuildValue(
+            "{s:s,s:i,s:i,s:i}", "adjudication_id", a->adjudication_id,
+            "trigger_ply", (int)a->trigger_ply, "outcome", (int)a->outcome,
+            "continuation_policy", (int)a->continuation_policy);
+        if (entry == NULL) { Py_DECREF(automatic); Py_DECREF(payload); return NULL; }
+        PyList_SET_ITEM(automatic, i, entry);
+    }
+    SEM_INFO_SET("automatic_adjudications", automatic);
     SEM_INFO_SET("max_ply", PyLong_FromUnsignedLong(rules->max_ply));
     if (rules->semantic_payload_version >= 2) {
         PyObject *type_ids = PyList_New(rules->type_count);
@@ -2970,6 +3244,16 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
         PyList_SET_ITEM(patterns, p, pd);
     }
     SEM_INFO_SET("patterns", patterns);
+    PyObject *declarations = PyList_New(rules->declaration_count);
+    if (declarations == NULL) { Py_DECREF(payload); return NULL; }
+    for (uint8_t i = 0; i < rules->declaration_count; i++) {
+        PyObject *item = sem_info_declaration(&rules->declarations[i]);
+        if (item == NULL) {
+            Py_DECREF(declarations); Py_DECREF(payload); return NULL;
+        }
+        PyList_SET_ITEM(declarations, i, item);
+    }
+    SEM_INFO_SET("declarations", declarations);
 #undef SEM_INFO_SET
     return payload;
 }

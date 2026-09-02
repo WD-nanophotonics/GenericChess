@@ -2,6 +2,8 @@ import json
 import subprocess
 from pathlib import Path
 
+from scripts.historical_validation import historical_scope_unchanged_worktree
+
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "tests" / "fixtures"
 
@@ -44,4 +46,4 @@ def test_f38_holdout_and_selection_are_recorded():
 
 
 def test_f38_production_scope():
-    assert subprocess.run(["git", "diff", "--quiet", "--", "generic_chess"], cwd=ROOT).returncode == 0
+    assert historical_scope_unchanged_worktree()

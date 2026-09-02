@@ -22,6 +22,7 @@ from scripts.audit_f49_learning_signal_architecture import (
     load_preflight_manifest,
     validate_preflight_manifest,
 )
+from scripts.historical_validation import historical_scope_unchanged
 
 
 def test_h49b_freezes_only_the_pre_measurement_boundary():
@@ -104,4 +105,4 @@ def test_h49b_rejects_observation_or_runner_entrypoint_drift():
 
 
 def test_h49b_keeps_production_tree_unchanged_from_h49r4a():
-    assert subprocess.run(["git", "diff", "--quiet", H49R4A_SHA, "HEAD", "--", "generic_chess"], cwd=ROOT).returncode == 0
+    assert historical_scope_unchanged(H49R4A_SHA)

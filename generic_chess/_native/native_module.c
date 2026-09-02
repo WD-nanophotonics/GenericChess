@@ -2200,6 +2200,7 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
         }
     }
     PyObject *history = PyDict_GetItemString(payload, "history");
+    int history_events_complete = 1;
     if (history != NULL) {
         if (!PyList_Check(history) || PyList_Size(history) > GC_SEM_MAX_PLY + 1) {
             PyErr_SetString(PyExc_ValueError, "semantic history must be a bounded list");
@@ -2218,6 +2219,7 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                 return NULL;
             }
             if (word_count == 2) bp.history_exact = 0;
+            if (word_count != 6) history_events_complete = 0;
             for (Py_ssize_t word = 0; word < word_count; word++) {
                 PyObject *value = PySequence_GetItem(entry, word);
                 unsigned long long raw = PyLong_AsUnsignedLongLong(value);
@@ -2235,16 +2237,15 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                 else bp.history_gave_check[i] = (uint8_t)raw;
             }
             if (word_count == 6) {
-                bp.history_events_exact = 1;
-                if (bp.history_digest[i][0] == 0 && bp.history_digest[i][1] == 0) {
-                    /* no special case; the first four words remain the exact key */
-                }
-                if (bp.history_actor[i] > 1 || bp.history_gave_check[i] > 1) {
+                if ((bp.history_actor[i] > 1 &&
+                     !(i == 0 && bp.history_actor[i] == 255)) ||
+                    bp.history_gave_check[i] > 1) {
                     PyErr_SetString(PyExc_ValueError, "semantic history actor/check flag invalid");
                     return NULL;
                 }
             }
         }
+        bp.history_events_exact = history_events_complete ? 1 : 0;
     }
     PyObject *history_events = PyDict_GetItemString(payload, "history_events");
     if (history_events != NULL) {
@@ -2265,7 +2266,7 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
             long gave = gc_py_long_as_long(gave_obj, &event_ok);
             Py_XDECREF(actor_obj);
             Py_XDECREF(gave_obj);
-            if (!event_ok || actor < 0 || actor > 1 || gave < 0 || gave > 1) {
+            if (!event_ok || (actor < 0 || (actor > 1 && actor != 255)) || gave < 0 || gave > 1) {
                 PyErr_SetString(PyExc_ValueError, "semantic history event is outside domain");
                 return NULL;
             }
@@ -2274,10 +2275,36 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
         }
         bp.history_events_exact = 1;
     }
+    if (bp.history_events_exact && bp.history_len > 0 &&
+        bp.history_actor[0] != 255) {
+        /* A complete event stream must identify history[0] as the initial
+         * sentinel.  Keep the import usable for ordinary repetition, but
+         * fail closed for continuous-check/automatic adjudication. */
+        bp.history_events_exact = 0;
+    }
     GCSemanticPosition *pos = (GCSemanticPosition *)malloc(sizeof(*pos));
     if (pos == NULL) { PyErr_NoMemory(); return NULL; }
     if (!gc_semantic_position_pack(pos, rules, &bp)) {
         free(pos); PyErr_SetString(PyExc_ValueError, "semantic position pack rejected payload"); return NULL;
+    }
+    if (pos->history_len == 0) {
+        char digest[65];
+        if (!gc_semantic_position_key_digest(rules, pos, digest)) {
+            free(pos); PyErr_SetString(PyExc_ValueError, "fresh semantic position cannot be canonically keyed"); return NULL;
+        }
+        uint64_t words[4] = {0, 0, 0, 0};
+        for (int w = 0; w < 4; w++) for (int j = 0; j < 16; j++) {
+            char c = digest[w * 16 + j];
+            uint8_t n = (uint8_t)(c >= '0' && c <= '9' ? c - '0' : c - 'a' + 10);
+            words[w] = (words[w] << 4) | n;
+        }
+        pos->history_lo[0] = words[0];
+        pos->history_hi[0] = words[1];
+        memcpy(pos->history_digest[0], words, sizeof(words));
+        pos->history_actor[0] = 255;
+        pos->history_gave_check[0] = 0;
+        pos->history_len = 1;
+        pos->history_events_exact = 1;
     }
     return PyCapsule_New(pos, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
 }
@@ -2353,6 +2380,15 @@ static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
         PyList_SET_ITEM(events, i, event);
     }
     PyDict_SetItemString(out, "history_events", events); Py_DECREF(events);
+    PyObject *history_exact = PyLong_FromLong(pos->history_exact);
+    PyObject *history_events_exact = PyLong_FromLong(pos->history_events_exact);
+    if (!history_exact || !history_events_exact ||
+        PyDict_SetItemString(out, "history_exact", history_exact) != 0 ||
+        PyDict_SetItemString(out, "history_events_exact", history_events_exact) != 0) {
+        Py_XDECREF(history_exact); Py_XDECREF(history_events_exact);
+        Py_DECREF(out); return NULL;
+    }
+    Py_DECREF(history_exact); Py_DECREF(history_events_exact);
     uint64_t current_digest[4] = {0, 0, 0, 0};
     if (pos->history_len > 0) memcpy(current_digest, pos->history_digest[pos->history_len - 1], sizeof(current_digest));
     unsigned long occurrences = 0;
@@ -2978,6 +3014,94 @@ static int gc_semantic_require_exact_history(const GCSemanticPosition *position)
     return 1;
 }
 
+static const char *gc_semantic_declaration_outcome_name(uint8_t outcome) {
+    static const char *names[] = {"WIN", "LOSS", "RESTART", "NO_CONTEST"};
+    return outcome < 4 ? names[outcome] : "LOSS";
+}
+
+static PyObject *gc_semantic_declaration_result(
+    const GCSemanticDeclarationAssessment *assessment,
+    const char *declaration_id, uint8_t actor) {
+    PyObject *out = Py_BuildValue(
+        "{s:s,s:i,s:s}", "declaration_id", declaration_id,
+        "actor", (int)actor,
+        "outcome", gc_semantic_declaration_outcome_name(assessment->outcome));
+    if (!out) return NULL;
+    PyObject *score = assessment->has_weighted_score
+        ? PyLong_FromLongLong(assessment->weighted_score) : Py_NewRef(Py_None);
+    if (!score || PyDict_SetItemString(out, "weighted_score", score) != 0) {
+        Py_XDECREF(score); Py_DECREF(out); return NULL;
+    }
+    Py_DECREF(score);
+    return out;
+}
+
+static PyObject *gc_semantic_assess_declaration(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    const char *declaration_id;
+    if (!PyArg_ParseTuple(args, "OOs", &rules_capsule, &position_capsule,
+                          &declaration_id)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
+        position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position || !gc_semantic_require_matching_rules(rules, position))
+        return NULL;
+    GCSemanticDeclarationAssessment assessment;
+    int status = gc_semantic_runtime_assess_declaration(
+        rules, position, declaration_id, &assessment);
+    if (status == -1) {
+        PyErr_Format(PyExc_ValueError, "unknown declaration ID %R",
+                     PyUnicode_FromString(declaration_id));
+        return NULL;
+    }
+    if (status == -2) {
+        PyErr_Format(PyExc_ValueError,
+                     "declaration %s belongs to the other player",
+                     declaration_id);
+        return NULL;
+    }
+    if (status <= 0) {
+        PyErr_SetString(PyExc_ValueError, "declaration assessment failed closed");
+        return NULL;
+    }
+    return gc_semantic_declaration_result(&assessment, declaration_id,
+                                          position->side_to_move);
+}
+
+static PyObject *gc_semantic_available_declarations(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &position_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
+        position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position || !gc_semantic_require_matching_rules(rules, position))
+        return NULL;
+    PyObject *out = PyTuple_New(0);
+    if (!out) return NULL;
+    for (uint8_t i = 0; i < rules->declaration_count; i++) {
+        GCSemDeclaration *declaration = &rules->declarations[i];
+        if (declaration->owner != position->side_to_move) continue;
+        GCSemanticDeclarationAssessment assessment;
+        int status = gc_semantic_runtime_assess_declaration(
+            rules, position, declaration->declaration_id, &assessment);
+        if (status <= 0) { Py_DECREF(out); PyErr_SetString(PyExc_ValueError, "declaration assessment failed closed"); return NULL; }
+        if (assessment.outcome == 1) continue;
+        PyObject *item = gc_semantic_declaration_result(
+            &assessment, declaration->declaration_id, position->side_to_move);
+        if (!item) { Py_DECREF(out); return NULL; }
+        PyObject *next = PySequence_Concat(out, PyTuple_Pack(1, item));
+        Py_DECREF(item);
+        Py_DECREF(out);
+        out = next;
+        if (!out) return NULL;
+    }
+    return out;
+}
+
 static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
                                                const GCSemanticPosition *position,
                                                int *winner_out) {
@@ -3005,6 +3129,7 @@ static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
     int all_checks[2] = {1, 1};
     for (uint16_t i = (uint16_t)(start + 1); i <= end; i++) {
         uint8_t actor = position->history_actor[i];
+        if (actor == 255) continue;
         if (actor > 1) return 0;
         seen[actor] = 1;
         if (!position->history_gave_check[i]) all_checks[actor] = 0;
@@ -3019,6 +3144,35 @@ static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
     if (checking_side < 0 || !seen[0] || !seen[1]) return 0;
     if (winner_out) *winner_out = 1 - checking_side;
     return 1;
+}
+
+/* Return 0 for no automatic result, 1 for pending continuation, 2 for the
+ * configured terminal outcome, and -1 when the authoritative history is
+ * incomplete or the record cannot be interpreted safely. */
+static int gc_semantic_automatic_status(const GCSemanticRules *rules,
+                                        const GCSemanticPosition *position) {
+    for (uint8_t a = 0; a < rules->automatic_adjudication_count; a++) {
+        const GCSemAutomaticAdjudication *record =
+            &rules->automatic_adjudications[a];
+        if (position->ply < record->trigger_ply) continue;
+        if (!position->history_events_exact ||
+            position->history_len != position->ply + 1 ||
+            position->history_len == 0 || position->history_actor[0] != 255)
+            return -1;
+        for (uint16_t i = 1; i < position->history_len; i++)
+            if (position->history_actor[i] > 1) return -1;
+        if (record->trigger_ply >= position->history_len) return -1;
+        if (record->continuation_policy != 0) return -1;
+        uint8_t checker = position->history_actor[record->trigger_ply];
+        if (!position->history_gave_check[record->trigger_ply]) return 2;
+        for (uint16_t i = record->trigger_ply + 1;
+             i < position->history_len; i++) {
+            if (position->history_actor[i] == checker &&
+                !position->history_gave_check[i]) return 2;
+        }
+        return 1;
+    }
+    return 0;
 }
 
 static int gc_semantic_terminal_status(const GCSemanticRules *rules,
@@ -3047,8 +3201,10 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
         }
     }
     if (repetitions >= rules->repetition_limit) return 3; /* repetition */
-    if (rules->automatic_adjudication_ply > 0 &&
-        position->ply >= rules->automatic_adjudication_ply) return 6; /* no contest */
+    int automatic = gc_semantic_automatic_status(rules, position);
+    if (automatic < 0) return -1;
+    if (automatic == 2 && rules->automatic_adjudication_count > 0 &&
+        rules->automatic_adjudications[0].outcome == 3) return 6;
     if (position->ply >= rules->max_ply) return 4; /* max ply */
     return 0; /* ongoing */
 }
@@ -3437,6 +3593,10 @@ static PyMethodDef gc_methods[] = {
      "semantic_is_square_attacked(rules, position, square, by_owner) -> bool"},
     {"semantic_in_check", gc_semantic_in_check, METH_VARARGS,
      "semantic_in_check(rules, position, side) -> bool"},
+    {"semantic_assess_declaration", gc_semantic_assess_declaration, METH_VARARGS,
+     "semantic_assess_declaration(rules, position, declaration_id) -> result"},
+    {"semantic_available_declarations", gc_semantic_available_declarations, METH_VARARGS,
+     "semantic_available_declarations(rules, position) -> tuple of results"},
     {"_semantic_action_delivers_check_debug", gc_semantic_action_delivers_check_debug, METH_VARARGS,
      "test-only semantic action witness inspection; not a production API"},
     {"semantic_make_unmake_roundtrip", gc_semantic_make_unmake_roundtrip, METH_VARARGS,

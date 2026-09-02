@@ -18,6 +18,10 @@
 #define GC_SEM_MAX_EFFECTS 4
 #define GC_SEM_MAX_INVARIANT_REFS 4
 #define GC_SEM_MAX_PLY 1024
+#define GC_SEM_MAX_DECLARATIONS 16
+#define GC_SEM_MAX_DECLARATION_BANDS 8
+#define GC_SEM_MAX_DECLARATION_GUARDS 16
+#define GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS 16
 
 typedef struct {
     uint8_t kind;            /* square_ref enum code */
@@ -184,6 +188,44 @@ typedef struct {
 } GCSemTrigger;
 
 typedef struct {
+    int32_t threshold;
+    uint8_t outcome;
+} GCSemDeclarationBand;
+
+typedef struct {
+    uint8_t owner;
+    uint8_t compare_field;
+    uint8_t include_hands;
+    uint8_t weight_count;
+    uint16_t weight_types[GC_MAX_TYPES];
+    int32_t weights[GC_MAX_TYPES];
+    uint8_t has_spatial;
+    GCSemSpatial spatial;
+} GCSemDeclarationMetric;
+
+typedef struct {
+    char declaration_id[96];
+    uint8_t owner;
+    GCSemStateGuard *state_guards;
+    uint8_t state_guard_count;
+    uint8_t require_not_in_check;
+    uint8_t has_ply_limit;
+    uint16_t ply_limit;
+    uint8_t has_metric;
+    GCSemDeclarationMetric metric;
+    GCSemDeclarationBand *outcome_bands;
+    uint8_t outcome_band_count;
+    uint8_t failure_outcome;
+} GCSemDeclaration;
+
+typedef struct {
+    char adjudication_id[96];
+    uint16_t trigger_ply;
+    uint8_t outcome;
+    uint8_t continuation_policy;
+} GCSemAutomaticAdjudication;
+
+typedef struct {
     uint8_t is_anchor;
     uint8_t is_promotable;
     uint8_t promo_target_count;
@@ -207,6 +249,9 @@ typedef struct {
     uint32_t repetition_limit;
     uint8_t repetition_policy;
     uint16_t automatic_adjudication_ply;
+    GCSemAutomaticAdjudication automatic_adjudications[
+        GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS];
+    uint8_t automatic_adjudication_count;
     uint16_t max_ply;
     uint16_t type_count;
     /* Payload v2 owns stable public type IDs for semantic position identity.
@@ -227,6 +272,8 @@ typedef struct {
     uint16_t trigger_count;
     GCSemPattern *patterns;
     uint16_t pattern_count;
+    GCSemDeclaration *declarations;
+    uint8_t declaration_count;
 } GCSemanticRules;
 
 /* Parse a Python payload dict into an owned GCSemanticRules.

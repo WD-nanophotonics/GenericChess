@@ -2,6 +2,8 @@ import json
 import subprocess
 from pathlib import Path
 
+from scripts.historical_validation import historical_scope_unchanged_worktree
+
 ROOT = Path(__file__).resolve().parents[1]
 FX = ROOT / "tests" / "fixtures"
 
@@ -40,4 +42,4 @@ def test_f40_utilization_learning_native_and_boundary_selection():
 
 
 def test_f40_keeps_production_scope_zero():
-    assert subprocess.run(["git", "diff", "--quiet", "--", "generic_chess"], cwd=ROOT).returncode == 0
+    assert historical_scope_unchanged_worktree()

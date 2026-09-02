@@ -377,6 +377,37 @@ def current_native_runtime_provenance() -> dict[str, Any]:
     }
 
 
+def historical_native_runtime_provenance(runtime: dict[str, Any]) -> dict[str, Any]:
+    """Validate an immutable runtime record without substituting today's binary.
+
+    H49R3A is historical evidence.  Its binary is intentionally not tracked in
+    Git, so reloading the current extension cannot certify its old hash.  The
+    record remains bound to the historical build-authority blobs and its own
+    immutable manifest hash; current runtime checks belong to the active
+    checkpoint, not this historical validator.
+    """
+    required = {
+        "native_module_path", "native_module_sha256", "native_module_size_bytes",
+        "native_schema_version", "semantic_payload_version", "native_capabilities",
+        "build_authority",
+    }
+    if not required.issubset(runtime):
+        raise RuntimeError("historical native runtime record is incomplete")
+    if not str(runtime["native_module_path"]).startswith("generic_chess/"):
+        raise RuntimeError("historical native module path escaped repository")
+    digest = str(runtime["native_module_sha256"])
+    if len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest):
+        raise RuntimeError("historical native module hash is malformed")
+    if int(runtime["native_module_size_bytes"]) <= 0:
+        raise RuntimeError("historical native module size is invalid")
+    if runtime["build_authority"] != {
+        "pyproject.toml": _git_blob_sha256(F48_BASELINE_SHA, "pyproject.toml"),
+        "scripts/build_native_zig.py": _git_blob_sha256(F48_BASELINE_SHA, "scripts/build_native_zig.py"),
+    }:
+        raise RuntimeError("historical native build authority drift")
+    return runtime
+
+
 def build_h49r3a_primary_execution() -> dict[str, Any]:
     """Build the three bound execution objects without running a search."""
     from generic_chess.generation.config import GeneratorConfig
@@ -533,8 +564,7 @@ def validate_h49r3a_manifest(manifest: dict[str, Any]) -> None:
         "scripts/build_native_zig.py": _git_blob_sha256(F48_BASELINE_SHA, "scripts/build_native_zig.py"),
     }:
         raise RuntimeError("H49R3A native build authority drift")
-    if current_native_runtime_provenance() != runtime:
-        raise RuntimeError("H49R3A native runtime or binary drift")
+    historical_native_runtime_provenance(runtime)
     if set(manifest.get("selector", {}).get("mapping", {})) != {"LEARNER_ALIGNED_SIGNAL_SUPPORTED", "STRUCTURAL_CORPUS_ARCHITECTURE_LIMITING", "NATIVE_SEARCH_TEACHER_STABILITY_LIMITING", "MATERIAL_ONLY_REPRESENTATION_LIMITING", "EVALUATION_SIGNAL_BROADLY_WEAK", "MIXED_OR_UNRESOLVED"}:
         raise RuntimeError("H49R3A selector mapping incomplete")
 

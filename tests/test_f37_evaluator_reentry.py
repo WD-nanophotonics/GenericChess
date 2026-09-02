@@ -2,6 +2,8 @@ import json
 import subprocess
 from pathlib import Path
 
+from scripts.historical_validation import historical_scope_unchanged_worktree
+
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "tests" / "fixtures"
 
@@ -21,7 +23,7 @@ def test_f37_manifest_and_production_scope():
         "R37B": "ANCHOR_RING_CONTROL_REPLACEMENT",
         "R37C": "ACTIVITY_PLUS_ANCHOR_RING_REPLACEMENT",
     }
-    assert subprocess.run(["git", "diff", "--quiet", "--", "generic_chess"], cwd=ROOT).returncode == 0
+    assert historical_scope_unchanged_worktree()
 
 
 def test_f37_decomposition_and_static_gates():

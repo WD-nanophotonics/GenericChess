@@ -87,30 +87,53 @@ def test_h50b1_shogi_declarations_continuous_check_and_adjudication():
             for piece in row
         ],
         "hands": [[0] * len(native.type_ids), [0] * len(native.type_ids)],
-        "history": [words] * 4,
-        "history_events": [(0, 1), (1, 0), (0, 1), (1, 0)],
+        "history": [words] * 5,
+        "history_events": [(255, 0), (0, 1), (1, 0), (0, 1), (1, 0)],
         "aux_state": (),
     })
     assert terminal_status(native, repeated) == {
         "status": "perpetual_check", "winner": 1,
     }
 
+    incomplete_at_five_hundred = pack_position(native, {
+        "side": 0,
+        "ply": 500,
+        "board": [
+            None if piece is None else [
+                native.type_ids.index(piece.base_type_id),
+                native.type_ids.index(piece.current_type_id),
+                piece.owner, int(piece.promoted),
+            ]
+            for row in semantic.support.initial_position
+            for piece in row
+        ],
+        "hands": [[0] * len(native.type_ids), [0] * len(native.type_ids)],
+        "aux_state": (),
+    })
+    import pytest
+
+    with pytest.raises(ValueError, match="exact full history"):
+        terminal_status(native, incomplete_at_five_hundred)
+
+    full_history = [tuple((i + 1) * (j + 3) for j in range(4)) for i in range(500)]
+    full_history.append(words)
+    full_events = [(255, 0)] + [(i % 2, 0) for i in range(500)]
     at_five_hundred = pack_position(native, {
-        **{
-            "side": 0,
-            "ply": 500,
-            "board": [
-                None if piece is None else [
-                    native.type_ids.index(piece.base_type_id),
-                    native.type_ids.index(piece.current_type_id),
-                    piece.owner, int(piece.promoted),
-                ]
-                for row in semantic.support.initial_position
-                for piece in row
-            ],
-            "hands": [[0] * len(native.type_ids), [0] * len(native.type_ids)],
-            "aux_state": (),
-        }
+        "side": 0,
+        "ply": 500,
+        "board": [
+            None if piece is None else [
+                native.type_ids.index(piece.base_type_id),
+                native.type_ids.index(piece.current_type_id),
+                piece.owner, int(piece.promoted),
+            ]
+            for row in semantic.support.initial_position
+            for piece in row
+        ],
+        "hands": [[0] * len(native.type_ids), [0] * len(native.type_ids)],
+        "history": full_history,
+        "history_events": full_events,
+        "aux_state": (),
     })
     assert terminal_status(native, at_five_hundred)["status"] == "no_contest"
 

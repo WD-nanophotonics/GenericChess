@@ -27,6 +27,7 @@ from scripts.f49_protocol import (
     verify_nonmaterial_liveness,
     build_h49r3a_primary_execution,
     current_native_runtime_provenance,
+    historical_native_runtime_provenance,
     load_h49r3a_manifest,
     source_tree_ledger,
     validate_h49r3a_execution_bindings,
@@ -214,8 +215,7 @@ def test_h49r3a_complete_source_tree_and_native_provenance_are_frozen():
         "generic_chess/_native/native_semantic_rules.c",
     } <= paths
     runtime = manifest["native_runtime_provenance"]
-    current = current_native_runtime_provenance()
-    assert runtime == current
+    assert historical_native_runtime_provenance(runtime) == runtime
     assert runtime["native_schema_version"] == "native-0.5.0"
     assert runtime["semantic_payload_version"] == 2
     assert runtime["native_module_sha256"] == "ae6358d7caf71b3e5d33d4673c61b75fce3342ad25ae5d6482f29bf4761a1614"

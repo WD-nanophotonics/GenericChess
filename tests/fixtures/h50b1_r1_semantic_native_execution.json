@@ -1,0 +1,85 @@
+{
+  "schema": "H50B1-R1-SEMANTIC-NATIVE-EXECUTION-CLOSURE-V1",
+  "checkpoint": "H50B1-R1_F50_SEMANTIC_NATIVE_CANONICAL_EXECUTION",
+  "parent_sha": "66f1186908a48692b0e5b514b34dc77c78c7ec09",
+  "work_order": "GENERICCHESS-F50B1-CORRECTIVE-R1-NATIVE-DECLARATION-HISTORY-AND-CERTIFICATION-CLOSURE",
+  "production_authority": [
+    "CompiledSemanticRuleset.ir",
+    "CompiledSemanticRuleset.support",
+    "GCSemanticPosition"
+  ],
+  "declarations": {
+    "owner": "native_c_payload_and_c_runtime",
+    "python_private_oracle_calls": false,
+    "standard_shogi_count": 2,
+    "contract_fields": [
+      "declaration_id",
+      "actor",
+      "failure_outcome",
+      "outcome_bands",
+      "weighted_metric"
+    ],
+    "assessment_outcomes": ["WIN", "LOSS", "RESTART", "NO_CONTEST"]
+  },
+  "history": {
+    "fresh_entry": {"actor": 255, "gave_check": false},
+    "fresh_history_length": 1,
+    "capacity": 1025,
+    "exact_flags": ["history_exact", "history_events_exact"],
+    "incomplete_or_non_sentinel_import": "ordinary_history_only; continuous_check_and_automatic_adjudication_fail_closed",
+    "roundtrip_restores_history_and_state": true
+  },
+  "automatic_adjudication": {
+    "standard_shogi_500_move_no_contest": {
+      "trigger_ply": 500,
+      "outcome": "NO_CONTEST",
+      "continuation_policy": "threshold_actor_continuous_check",
+      "requires_complete_history": true
+    }
+  },
+  "native_build": {
+    "module_path": "generic_chess/_native_core.cp312-win_amd64.pyd",
+    "sha256": "602984dfb9e0b1cc32cd68b9298143ca20bfa02a3cde5816d0b6a6b94c5c8fa2",
+    "size_bytes": 354304,
+    "build_command": "generic-chess-flow.cmd heavy -- .venv\\Scripts\\python.exe scripts\\build_native_zig.py"
+  },
+  "matrix": {
+    "western": {
+      "native_executable": true,
+      "pattern_count": 25,
+      "max_ply": 1000,
+      "initial_guarded_actions": 20,
+      "public_action_identity_roundtrip": true,
+      "special_actions": ["en_passant", "promotion", "castling"]
+    },
+    "standard_shogi": {
+      "native_executable": true,
+      "pattern_count": 155,
+      "declaration_count": 2,
+      "repetition_policy": "continuous_check_loss",
+      "ordinary_repetition": true,
+      "continuous_check_loss": true,
+      "automatic_500_ply_no_contest": true,
+      "special_actions": ["promotion", "drop", "hands", "nifu", "uchifuzume"]
+    },
+    "generic_compiler_witness": {
+      "native_executable": true,
+      "game_name_branch": false,
+      "public_action_identity_roundtrip": true
+    }
+  },
+  "historical_validation": {
+    "historical_scope": "R1_ALLOWED_PRODUCTION_PATHS_ONLY",
+    "f39_f41_manifests": "PASS",
+    "f48_h48r3a_h49b": "PASS",
+    "h50a_architecture_audit": "PASS",
+    "f24g_western_artifact_preservation": "PASS",
+    "known_residuals": [
+      "F24F Kiwipete depth-1 mismatch (45 vs 48)",
+      "external AlphaSho evaluation_positions.jsonl is unavailable"
+    ],
+    "historical_fixtures_rewritten": false
+  },
+  "F50B2_status": "NOT_STARTED",
+  "promotion": "HOLD"
+}
