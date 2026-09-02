@@ -24,8 +24,9 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from scripts import f48_protocol, f49_protocol
+    from scripts import audit_f48_learnable_material_recovery as f48_recovery, f48_protocol, f49_protocol
 except ImportError:  # direct ``python scripts/audit_*.py`` execution
+    import audit_f48_learnable_material_recovery as f48_recovery  # type: ignore[no-redef]
     import f48_protocol  # type: ignore[no-redef]
     import f49_protocol  # type: ignore[no-redef]
 
@@ -153,6 +154,14 @@ PARTITION_ROUTES = {
 MEASUREMENT_FAMILIES = ("S49-M", "S49-E", "L49-0", "L49-1", "L49-2", "TEACHER", "PYTHON_NONMATERIAL", "SELECTOR")
 R2_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r2_f49_diagnostic_runner_freeze_manifest.json"
 R3_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r3_f49_diagnostic_runner_freeze_manifest.json"
+R4_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r4_f49_diagnostic_runner_freeze_manifest.json"
+R3_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r3-authoritative"
+R4_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r4-authoritative"
+H49B_R4_KIND = "H49B-R4_F49_DIAGNOSTIC_RUNNER_FREEZE"
+H49B_R4_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R4-P48-AUTHORITY-RECONSTRUCTION-AND-ABORTED-RUN-QUARANTINE"
+H49B_R3_SHA = "c67adb4cf20701ef4497e013a5303071a03bd708"
+H49B_R3_MANIFEST_SHA = "b402963729678f31eb868af3392f902d9100904233799b6189589bc83a98f3a4"
+F48_AUDIT_PATH = ROOT / "scripts" / "audit_f48_learnable_material_recovery.py"
 R1_PARTITION_INPUT_FIELDS = (
     "H49B_R1_runner_sha256",
     "H49R4A_manifest_sha256",
@@ -652,11 +661,22 @@ def _checkpoint_from_vector(start: LearnableMaterialCheckpoint, compiled, vector
 def reconstruct_p48_0(ruleset_id: str, compiled) -> LearnableMaterialCheckpoint:
     payload = json.loads(F48_RESULTS_PATH.read_text(encoding="utf-8"))
     row = next(item for item in payload["rulesets"] if item["ruleset_id"] == ruleset_id)
-    checkpoint = LearnableMaterialCheckpoint.from_dict(row["priors"]["P48-0"])
+    durable = row["priors"]["P48-0"]
+    expected_fields = {"checkpoint_id", "config_hash", "generation", "board_weights", "hand_weights", "reference_median", "value_scale", "vector_l2_displacement_from_start", "board_median"}
+    if set(durable) != expected_fields:
+        raise RuntimeError("STOP_ON_F48_P48_AUTHORITY_MISMATCH")
+    try:
+        checkpoint = f48_recovery._priors(compiled)["P48-0"]
+        reconstructed = f48_recovery._checkpoint_metadata(checkpoint, checkpoint)
+    except Exception as exc:
+        raise RuntimeError("STOP_ON_F48_P48_AUTHORITY_MISMATCH") from exc
+    if reconstructed != durable:
+        raise RuntimeError("STOP_ON_F48_P48_AUTHORITY_MISMATCH")
     expected = P48_0_CHECKPOINTS[ruleset_id]
     if checkpoint.checkpoint_id != expected["checkpoint_id"] or checkpoint.config_hash != expected["config_hash"]:
-        raise RuntimeError(f"P48-0 checkpoint drift: {ruleset_id}")
+        raise RuntimeError("STOP_ON_F48_P48_AUTHORITY_MISMATCH")
     checkpoint.validate_ruleset(compiled)
+    checkpoint.ensure_within_limits()
     return checkpoint
 
 
@@ -1037,6 +1057,11 @@ def write_evidence_bundle(result: dict[str, Any], root: Path) -> Path:
     return path
 
 
+def _validate_measurement_root(root: Path) -> None:
+    if root.resolve() == R3_AUTHORITY_ROOT.resolve():
+        raise RuntimeError("STOP_ON_QUARANTINED_F49_ROOT_REUSE")
+
+
 def _control_records(legacy, control) -> list[dict[str, Any]]:
     records = []
     for position in control.positions:
@@ -1047,10 +1072,11 @@ def _control_records(legacy, control) -> list[dict[str, Any]]:
 
 def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
     """Run the complete registered F49 sequence after the R1 freeze."""
-    validate_r3_measurement_freeze()
+    root = partition_root or R4_AUTHORITY_ROOT
+    _validate_measurement_root(root)
+    validate_r4_measurement_freeze()
     preflight = run_preflight()
     executions = f49_protocol.build_h49r3a_primary_execution()
-    root = partition_root or (ROOT / ".generic_chess_flow" / "f49")
     store = AtomicPartitionStore(root)
     result_cache: dict[tuple[str, str, str, str, int], dict[str, Any]] = {}
     context_cache: dict[tuple[str, str], tuple[Any, Any]] = {}
@@ -1276,7 +1302,7 @@ def validate_h49b_r3_manifest(manifest: dict[str, Any]) -> None:
         raise RuntimeError("H49B-R3 orchestration order drift")
     if set(manifest.get("selector_witness_ledgers", {}).get("rulesets", ())) != set(RULESET_IDS) or manifest.get("selector_witness_ledgers", {}).get("independent_and_production_required") is not True:
         raise RuntimeError("H49B-R3 selector witness contract drift")
-    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()):
+    if manifest.get("runner_raw_sha256") != _git_blob_sha256(H49B_R3_SHA, "scripts/audit_f49_learning_signal_architecture.py") or manifest.get("protocol_raw_sha256") != _git_blob_sha256(H49B_R3_SHA, "scripts/f49_protocol.py"):
         raise RuntimeError("H49B-R3 source hash drift")
 
 
@@ -1294,12 +1320,94 @@ def validate_r3_measurement_freeze() -> None:
         raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
 
 
+def build_h49b_r4_manifest() -> dict[str, Any]:
+    """Build the no-observation R4 P48 authority reconstruction manifest."""
+    preflight = run_preflight()
+    executions = f49_protocol.build_h49r3a_primary_execution()
+    reconstructed = {ruleset_id: reconstruct_p48_0(ruleset_id, executions[ruleset_id]["semantic_execution"]) for ruleset_id in RULESET_IDS}
+    durable = json.loads(F48_RESULTS_PATH.read_text(encoding="utf-8"))
+    p48_rows = {row["ruleset_id"]: row["priors"]["P48-0"] for row in durable["rulesets"]}
+    return {
+        "checkpoint_name": "H49B-R4",
+        "kind": H49B_R4_KIND,
+        "work_order_id": H49B_R4_WORK_ORDER_ID,
+        "parent_h49b_r3_sha": H49B_R3_SHA,
+        "parent_h49b_r3_manifest_sha256": H49B_R3_MANIFEST_SHA,
+        "aborted_runner_sha": H49B_R3_SHA,
+        "aborted_authoritative_root": ".generic_chess_flow/f49-r3-authoritative",
+        "aborted_run_quarantine": {"primary_structural_positions_constructed_in_memory": True, "native_search_observed": False, "python_search_observed": False, "f49_observed_partition_persisted": False, "evidence_bundle_persisted": False, "failure_phase": "P48_0_AUTHORITY_RECONSTRUCTION_BEFORE_SEARCH", "disposition": "QUARANTINED_NEVER_REUSE"},
+        "new_authoritative_root": ".generic_chess_flow/f49-r4-authoritative",
+        "runner_raw_sha256": _sha256_bytes(SOURCE_PATH.read_bytes()),
+        "protocol_raw_sha256": _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()),
+        "f48_audit_runner_raw_sha256": _sha256_bytes(F48_AUDIT_PATH.read_bytes()),
+        "h49r4a_manifest_sha256": H49R4A_MANIFEST_SHA,
+        "h49r3a_source_tree_aggregate_sha256": H49R3A_SOURCE_TREE_SHA,
+        "native_binary_sha256": H49R3A_NATIVE_SHA,
+        "p48_reconstruction_authority": {"module": "scripts.audit_f48_learnable_material_recovery", "construction": "_priors(compiled)['P48-0']", "summary": "_checkpoint_metadata(reconstructed, reconstructed)", "summary_path": "tests/fixtures/f48_learnable_material_recovery_results.json", "summary_interpretation": "F48 checkpoint metadata, not LearnableMaterialCheckpoint serialization"},
+        "p48_0_checkpoints": {ruleset_id: {"checkpoint_id": checkpoint.checkpoint_id, "config_hash": checkpoint.config_hash, "durable_metadata_exact": f48_recovery._checkpoint_metadata(checkpoint, checkpoint) == p48_rows[ruleset_id]} for ruleset_id, checkpoint in reconstructed.items()},
+        "measurement_entry_point": "scripts.audit_f49_learning_signal_architecture.run_measurements",
+        "preflight_entry_point": "scripts.audit_f49_learning_signal_architecture.run_preflight",
+        "evidence_writer": "scripts.audit_f49_learning_signal_architecture.write_evidence_bundle",
+        "partition_runner": "scripts.audit_f49_learning_signal_architecture.run_partition",
+        "observed_results_present": False,
+        "measurements_invoked": False,
+        "learning_invoked": False,
+        "F50_status": "NOT_STARTED",
+        "production_diff_required": "ZERO",
+        "master_promotion": False,
+        "preflight_authority": {"h49r3a_source_tree_aggregate_sha256": preflight["authority"]["h49r3a_source_tree_aggregate_sha256"], "native_binary_sha256": preflight["authority"]["native_runtime_provenance"]["native_module_sha256"], "ruleset_fingerprints": preflight["authority"]["ruleset_fingerprints"], "generic_chess_diff_from_h49r4a": "ZERO"},
+        "forbidden_after_acceptance": ["modify scripts/audit_f49_learning_signal_architecture.py outside the permitted R4 region", "modify scripts/f49_protocol.py", "modify scripts/audit_f48_learnable_material_recovery.py", "modify any historical H49 manifest", "reuse the R3 authoritative root", "run primary S49 generation or search before a later R4 acceptance"],
+        "freeze_rule": "R4 runner, f49 protocol, F48 audit dependency, and historical manifests remain byte-identical after R4 acceptance and before first observed position/search result",
+    }
+
+
+def validate_h49b_r4_manifest(manifest: dict[str, Any]) -> None:
+    if _manifest_sha(manifest) != manifest.get("manifest_sha256"):
+        raise RuntimeError("H49B-R4 manifest hash mismatch")
+    expected = {"checkpoint_name": "H49B-R4", "kind": H49B_R4_KIND, "work_order_id": H49B_R4_WORK_ORDER_ID, "parent_h49b_r3_sha": H49B_R3_SHA, "parent_h49b_r3_manifest_sha256": H49B_R3_MANIFEST_SHA, "aborted_runner_sha": H49B_R3_SHA, "aborted_authoritative_root": ".generic_chess_flow/f49-r3-authoritative", "new_authoritative_root": ".generic_chess_flow/f49-r4-authoritative", "h49r4a_manifest_sha256": H49R4A_MANIFEST_SHA, "h49r3a_source_tree_aggregate_sha256": H49R3A_SOURCE_TREE_SHA, "native_binary_sha256": H49R3A_NATIVE_SHA, "measurement_entry_point": "scripts.audit_f49_learning_signal_architecture.run_measurements", "preflight_entry_point": "scripts.audit_f49_learning_signal_architecture.run_preflight", "F50_status": "NOT_STARTED", "production_diff_required": "ZERO"}
+    for key, value in expected.items():
+        if manifest.get(key) != value:
+            raise RuntimeError(f"H49B-R4 {key} drift")
+    if any(manifest.get(key) is not False for key in ("observed_results_present", "measurements_invoked", "learning_invoked", "master_promotion")):
+        raise RuntimeError("H49B-R4 contains observations or learning")
+    quarantine = manifest.get("aborted_run_quarantine", {})
+    expected_quarantine = {"primary_structural_positions_constructed_in_memory": True, "native_search_observed": False, "python_search_observed": False, "f49_observed_partition_persisted": False, "evidence_bundle_persisted": False, "failure_phase": "P48_0_AUTHORITY_RECONSTRUCTION_BEFORE_SEARCH", "disposition": "QUARANTINED_NEVER_REUSE"}
+    if quarantine != expected_quarantine:
+        raise RuntimeError("H49B-R4 quarantine drift")
+    if manifest.get("p48_reconstruction_authority", {}).get("summary_interpretation") != "F48 checkpoint metadata, not LearnableMaterialCheckpoint serialization":
+        raise RuntimeError("H49B-R4 P48 authority interpretation drift")
+    if set(manifest.get("p48_0_checkpoints", {})) != set(RULESET_IDS) or not all(row.get("durable_metadata_exact") is True for row in manifest["p48_0_checkpoints"].values()):
+        raise RuntimeError("H49B-R4 P48 checkpoint authority drift")
+    if manifest.get("f48_audit_runner_raw_sha256") != _git_blob_sha256(H49B_R3_SHA, "scripts/audit_f48_learnable_material_recovery.py"):
+        raise RuntimeError("H49B-R4 F48 audit dependency drift")
+    if manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()) or manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()):
+        raise RuntimeError("H49B-R4 source hash drift")
+
+
+def load_h49b_r4_manifest() -> dict[str, Any]:
+    manifest = json.loads(R4_MANIFEST_PATH.read_text(encoding="utf-8"))
+    validate_h49b_r4_manifest(manifest)
+    return manifest
+
+
+def validate_r4_measurement_freeze() -> None:
+    manifest = load_h49b_r4_manifest()
+    if manifest.get("h49r4a_manifest_sha256") != H49R4A_MANIFEST_SHA or manifest.get("h49r3a_source_tree_aggregate_sha256") != H49R3A_SOURCE_TREE_SHA or manifest.get("native_binary_sha256") != H49R3A_NATIVE_SHA:
+        raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
+    if manifest.get("runner_raw_sha256") != _sha256_bytes(SOURCE_PATH.read_bytes()) or manifest.get("protocol_raw_sha256") != _sha256_bytes((ROOT / "scripts" / "f49_protocol.py").read_bytes()) or manifest.get("f48_audit_runner_raw_sha256") != _sha256_bytes(F48_AUDIT_PATH.read_bytes()):
+        raise RuntimeError("STOP_ON_H49_RUNNER_FREEZE_DRIFT")
+    executions = f49_protocol.build_h49r3a_primary_execution()
+    for ruleset_id in RULESET_IDS:
+        reconstruct_p48_0(ruleset_id, executions[ruleset_id]["semantic_execution"])
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write-preflight", action="store_true", help="deprecated; H49B historical preflight is immutable")
     parser.add_argument("--write-r1-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R1 manifest")
     parser.add_argument("--write-r2-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R2 manifest")
     parser.add_argument("--write-r3-manifest", action="store_true", help="run no-observation preflight and atomically write H49B-R3 manifest")
+    parser.add_argument("--write-r4-manifest", action="store_true", help="run no-observation P48 authority reconstruction and atomically write H49B-R4 manifest")
     parser.add_argument("--measure", action="store_true", help="execute the full frozen F49 measurement runner")
     args = parser.parse_args()
     if args.measure:
@@ -1308,7 +1416,12 @@ def main() -> None:
         return
     if args.write_preflight:
         raise RuntimeError("historical H49B preflight is immutable; use --write-r1-manifest")
-    if args.write_r3_manifest:
+    if args.write_r4_manifest:
+        manifest = build_h49b_r4_manifest()
+        manifest["manifest_sha256"] = _manifest_sha(manifest)
+        _atomic_write_json(R4_MANIFEST_PATH, manifest)
+        validate_h49b_r4_manifest(manifest)
+    elif args.write_r3_manifest:
         manifest = build_h49b_r3_manifest()
         manifest["manifest_sha256"] = _manifest_sha(manifest)
         _atomic_write_json(R3_MANIFEST_PATH, manifest)

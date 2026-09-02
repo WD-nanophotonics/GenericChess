@@ -179,7 +179,7 @@ def test_p48_reconstruction_rejects_exact_checkpoint_or_config_drift(monkeypatch
     monkeypatch.setattr(runner, "F48_RESULTS_PATH", path)
     wrong = SimpleNamespace(checkpoint_id="wrong-checkpoint", config_hash="wrong-config", validate_ruleset=lambda compiled: None)
     monkeypatch.setattr(runner.LearnableMaterialCheckpoint, "from_dict", classmethod(lambda cls, payload: wrong))
-    with pytest.raises(RuntimeError, match="P48-0 checkpoint drift"):
+    with pytest.raises(RuntimeError, match="STOP_ON_F48_P48_AUTHORITY_MISMATCH"):
         runner.reconstruct_p48_0("A_CANONICAL_WESTERN_CHESS", SimpleNamespace())
 
 
@@ -293,7 +293,7 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     compiled = SimpleNamespace(ruleset_fingerprint="synthetic-ruleset")
     entry = {"semantic_execution": compiled, "legacy_transport": compiled}
     checkpoint = _checkpoint()
-    monkeypatch.setattr(runner, "validate_r3_measurement_freeze", lambda: events.append("freeze"))
+    monkeypatch.setattr(runner, "validate_r4_measurement_freeze", lambda: events.append("freeze"))
     monkeypatch.setattr(runner, "run_preflight", lambda: events.append("preflight") or {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: events.append("execution") or {"synthetic": entry})
     monkeypatch.setattr(runner, "generate_arena_openings", lambda *args, **kwargs: events.append("openings") or SimpleNamespace())
@@ -409,11 +409,11 @@ def test_r2_python_partitions_bind_real_evaluation_config_hash(monkeypatch, tmp_
     assert all(row["checkpoint_or_config_hash"] != "EvaluationConfig" for row in identities)
 
 
-def test_r2_freeze_drift_blocks_before_observation(monkeypatch):
-    monkeypatch.setattr(runner, "load_h49b_r3_manifest", lambda: {"runner_raw_sha256": "wrong", "protocol_raw_sha256": "wrong", "h49r4a_manifest_sha256": runner.H49R4A_MANIFEST_SHA, "h49r3a_source_tree_aggregate_sha256": runner.H49R3A_SOURCE_TREE_SHA, "native_binary_sha256": runner.H49R3A_NATIVE_SHA})
+def test_r2_freeze_drift_blocks_before_observation(monkeypatch, tmp_path):
+    monkeypatch.setattr(runner, "load_h49b_r4_manifest", lambda: {"runner_raw_sha256": "wrong", "protocol_raw_sha256": "wrong", "f48_audit_runner_raw_sha256": "wrong", "h49r4a_manifest_sha256": runner.H49R4A_MANIFEST_SHA, "h49r3a_source_tree_aggregate_sha256": runner.H49R3A_SOURCE_TREE_SHA, "native_binary_sha256": runner.H49R3A_NATIVE_SHA})
     monkeypatch.setattr(runner, "run_preflight", lambda: (_ for _ in ()).throw(AssertionError("preflight ran after freeze drift")))
     with pytest.raises(RuntimeError, match="STOP_ON_H49_RUNNER_FREEZE_DRIFT"):
-        runner.run_measurements(partition_root=SimpleNamespace())
+        runner.run_measurements(partition_root=tmp_path)
 
 
 def test_r2_l49_construction_failure_is_durable_and_excluded(monkeypatch):
@@ -499,7 +499,7 @@ def test_r3_execution_views_route_control_structural_native_and_python(monkeypat
     entry = {"semantic_execution": semantic, "legacy_transport": legacy}
     seen = {"openings": [], "structural": [], "native": [], "python": [], "writes": []}
     checkpoint = _checkpoint()
-    monkeypatch.setattr(runner, "validate_r3_measurement_freeze", lambda: None)
+    monkeypatch.setattr(runner, "validate_r4_measurement_freeze", lambda: None)
     monkeypatch.setattr(runner, "run_preflight", lambda: {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: {"synthetic": entry})
     monkeypatch.setattr(runner, "generate_arena_openings", lambda compiled, **kwargs: seen["openings"].append(compiled) or SimpleNamespace())
@@ -559,3 +559,68 @@ def test_r3_python_candidate_changes_exactly_one_config_field(monkeypatch):
     for config in configs[1:]:
         assert sum(getattr(config, field.name) != getattr(baseline, field.name) for field in fields(runner.EvaluationConfig)) == 1
     assert all("config_hash" in factor for family in result["families"] for factor in family["factors"])
+
+
+def _r4_execution():
+    return runner.f49_protocol.build_h49r3a_primary_execution()
+
+
+def test_r4_p48_reconstruction_uses_f48_priors_not_summary_deserialization(monkeypatch):
+    executions = _r4_execution()
+    monkeypatch.setattr(runner.LearnableMaterialCheckpoint, "from_dict", classmethod(lambda cls, data: (_ for _ in ()).throw(AssertionError("P48 summary was passed to from_dict"))))
+    for ruleset_id, entry in executions.items():
+        checkpoint = runner.reconstruct_p48_0(ruleset_id, entry["semantic_execution"])
+        assert checkpoint.checkpoint_id == runner.P48_0_CHECKPOINTS[ruleset_id]["checkpoint_id"]
+        assert checkpoint.config_hash == runner.P48_0_CHECKPOINTS[ruleset_id]["config_hash"]
+
+
+@pytest.mark.parametrize("tamper", ["board_weights", "hand_weights", "checkpoint_id", "config_hash", "missing", "unexpected"])
+def test_r4_p48_reconstruction_rejects_tampered_or_malformed_summary(monkeypatch, tmp_path, tamper):
+    payload = json.loads(runner.F48_RESULTS_PATH.read_text(encoding="utf-8"))
+    summary = payload["rulesets"][0]["priors"]["P48-0"]
+    if tamper == "board_weights":
+        summary["board_weights"][next(iter(summary["board_weights"]))] += 1
+    elif tamper == "hand_weights":
+        summary["hand_weights"][next(iter(summary["hand_weights"]))] += 1
+    elif tamper == "checkpoint_id":
+        summary["checkpoint_id"] = "tampered"
+    elif tamper == "config_hash":
+        summary["config_hash"] = "tampered"
+    elif tamper == "missing":
+        del summary["board_median"]
+    else:
+        summary["unexpected"] = True
+    path = tmp_path / "f48-results.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    monkeypatch.setattr(runner, "F48_RESULTS_PATH", path)
+    execution = _r4_execution()["A_CANONICAL_WESTERN_CHESS"]
+    with pytest.raises(RuntimeError, match="STOP_ON_F48_P48_AUTHORITY_MISMATCH"):
+        runner.reconstruct_p48_0("A_CANONICAL_WESTERN_CHESS", execution["semantic_execution"])
+
+
+def test_r4_p48_reconstruction_rejects_ruleset_fingerprint_mismatch():
+    executions = _r4_execution()
+    wrong = executions["B_CANONICAL_STANDARD_SHOGI"]["semantic_execution"]
+    with pytest.raises(RuntimeError, match="STOP_ON_F48_P48_AUTHORITY_MISMATCH"):
+        runner.reconstruct_p48_0("A_CANONICAL_WESTERN_CHESS", wrong)
+
+
+def test_r4_quarantines_r3_root_and_accepts_new_root():
+    with pytest.raises(RuntimeError, match="STOP_ON_QUARANTINED_F49_ROOT_REUSE"):
+        runner._validate_measurement_root(runner.R3_AUTHORITY_ROOT)
+    runner._validate_measurement_root(runner.R4_AUTHORITY_ROOT)
+
+
+def test_r4_freeze_reconstructs_p48_without_primary_generation_or_search(monkeypatch):
+    monkeypatch.setattr(runner, "generate_structural_corpus", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("primary generation invoked")))
+    monkeypatch.setattr(runner, "NativeSearchEngine", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("Native search invoked")))
+    monkeypatch.setattr(runner, "AlphaBetaPlayer", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("Python search invoked")))
+    runner.validate_r4_measurement_freeze()
+
+
+def test_r4_manifest_binds_quarantine_and_f48_authority():
+    manifest = runner.build_h49b_r4_manifest()
+    assert manifest["parent_h49b_r3_sha"] == runner.H49B_R3_SHA
+    assert manifest["aborted_run_quarantine"]["disposition"] == "QUARANTINED_NEVER_REUSE"
+    assert manifest["p48_reconstruction_authority"]["summary_interpretation"] == "F48 checkpoint metadata, not LearnableMaterialCheckpoint serialization"
+    assert all(row["durable_metadata_exact"] for row in manifest["p48_0_checkpoints"].values())
