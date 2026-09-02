@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "work_order": "GENERICCHESS-F47-CORRECTIVE-R1-PROVENANCE-AND-STRUCTURAL-GATE-CLOSURE",
+  "supersedes": "tests/fixtures/f47_endpoint_density_composite_manifest.json",
+  "baseline": {
+    "immediate_f47_sha": "d8d39bb4ef15f018e97afedf97733041490686b2",
+    "h47a_sha": "b6d4f31a289c0f0f6b5df2e4e14be8ab2ab54b20",
+    "f44_stage_sha": "1f4fc5f1dc12675e6bafcf1992245441d36104f5",
+    "f45_stage_sha": "b0fc4d2da1a6cb0b818b713305dce84cef3e8e6e",
+    "f46_stage_sha": "979c7e026442e9dbb479658d0a770daefd15da85"
+  },
+  "provenance_bindings": {
+    "f44_endpoint_authority": {
+      "path": "docs/architecture/ADR-114-f44-structural-capability-feature-diagnosis.md",
+      "sha256": "179add993574382503b92e2253e91c977e71880abb7eae1c8029f4318f4c9c9b",
+      "protocol_path": "tests/fixtures/f44_structural_capability_manifest.json",
+      "protocol_sha256": "8b23d525c10b77fe727cccd3754eac9c5e587ebae3aec2fef29ab344dd3c7187"
+    },
+    "f45_placement_authority": {
+      "path": "docs/architecture/ADR-115-f45-structural-feature-discrimination.md",
+      "sha256": "5e41359554a5cb130cffbf5cd293b0aa9ea249c12fdb36f2597cf9742ec1245d",
+      "protocol_path": "tests/fixtures/f45r1_structural_feature_discrimination_manifest.json",
+      "protocol_sha256": "5980ec325b6b1b85027bd05f5cca4d0b6d9947e94791275999099e7d28cf9d58"
+    },
+    "f46_density_authority": {
+      "path": "docs/architecture/ADR-116-f46-density-profile-feature-prototype.md",
+      "sha256": "4e97bf41512cf1e38cc69a08c1701a4c9c106092c936d7f633e2d5a2f709895a",
+      "protocol_path": "tests/fixtures/f46r2_density_profile_manifest.json",
+      "protocol_sha256": "4535905c58aa0bc15aa1bb816cfe061b6abbe01361e78040154aeca4095f6952"
+    }
+  },
+  "endpoint_completion": {
+    "candidate_population": "accepted ordinary, deduplicated semantic candidate population",
+    "quiet_relation": "target_empty",
+    "attack_relation": "target_enemy",
+    "attack_only": "target_enemy AND NOT target_empty",
+    "clear": "(1-density) ** path_length",
+    "accepted_attack_only_contribution": "clear * density / 2",
+    "split_attack_control_gap": "clear * (1 - density / 2) for attack-only candidates, zero otherwise",
+    "completed_attack_only_contribution": "clear"
+  },
+  "variants": {
+    "C47-0_CURRENT_ARITHMETIC_CONTROL": "accepted D46-0 arithmetic reduction over m_i",
+    "C47-1_ENDPOINT_ARITHMETIC": "weighted arithmetic reduction over c_i",
+    "C47-2_ENDPOINT_GEOMETRIC": "accepted D46 weighted-geometric reduction over c_i",
+    "C47-3_ENDPOINT_HARMONIC": "accepted D46 weighted-harmonic reduction over c_i",
+    "C47-4_ENDPOINT_LOWER_ENVELOPE": "accepted D46 lower-envelope reduction over c_i"
+  },
+  "density_points": [0.0, 0.125, 0.25, 0.375, 0.5],
+  "density_weights": [0.25, 0.2, 0.2, 0.18, 0.17],
+  "western_bands": {"P": [1.0, 1.0], "N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]},
+  "shogi_gates": {"cosine": 0.95, "spearman": 0.9, "pairwise_ordering": 0.9, "hand_board_ratio": [0.8, 1.0]},
+  "classification_mapping": {
+    "ENDPOINT_CONTROL_CANDIDATE_SUPPORTED": "F48_ENDPOINT_CONTROL_INTEGRATION_PROTOTYPE",
+    "ENDPOINT_DENSITY_COMPOSITE_CANDIDATE_SUPPORTED": "F48_ENDPOINT_DENSITY_INTEGRATION_PROTOTYPE",
+    "MULTIPLE_ENDPOINT_DENSITY_CANDIDATES": "F48_ENDPOINT_DENSITY_DISCRIMINATION",
+    "ENDPOINT_DENSITY_CROSS_RULESET_CONFLICT": "F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "ENDPOINT_DENSITY_COMPOSITE_INSUFFICIENT": "F48_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "ENDPOINT_DENSITY_DIRECTIONAL_MISMATCH": "F48_MATERIAL_PRIOR_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F48_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "structural_gate_mechanics": {
+    "candidate_population_fingerprint": ["target", "path", "relation_set", "canonical_geometry_channel"],
+    "duplicate_description_control": "duplicate semantic descriptions must preserve fingerprint, gap curve, and completed curve",
+    "type_rename_control": "actual type ID X renamed to Y with all references updated",
+    "ruleset_rename_control": "only RuleSet metadata identity changes",
+    "action_order_control": "reversed semantic action declaration order",
+    "geometry_id_control": "unrelated semantic geometry inserted to shift generated IDs",
+    "path_clear_control": "known ray path length compared to clear * (1-density/2)",
+    "current_control_reproduces_f46_f42": true,
+    "density_reducers_reproduce_f46_definitions": true,
+    "no_additional_scalar_parameter": true
+  },
+  "semantic_controls": ["same-target no-double-count", "split-target positive gap", "no-attack zero gap", "dual-use-only zero gap", "conditional exclusion", "Western Pawn nonzero compiled gap", "Standard-Shogi Pawn compiled gap", "no relation-multiplicity double count"],
+  "no_drift_gates": ["accepted population equality", "coverage", "reachability", "path efficiency", "endpoint definitions except attack-only completion", "density points", "density weights", "normalization", "hand-value relation", "graph-global weights", "no conditional capability inclusion", "no production code path"],
+  "prohibited_operations": ["production evaluator integration", "fitted coefficient", "new density points or weights", "conditional feature", "extra endpoint transform", "F43 combination", "F48 execution", "master promotion"],
+  "tie_policy": "all seven selector paths execute the real selector; include mixed coherent-insufficient plus directional-mismatch scenario",
+  "manifest_sha256": "a41906362aee6118c63f9d60f8ec50d9078f8170dd3bc8246a7c1d8f5bea8ba6"
+}
