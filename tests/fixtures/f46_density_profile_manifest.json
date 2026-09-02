@@ -1,0 +1,36 @@
+{
+  "baseline": {
+    "f45_sha": "b0fc4d2da1a6cb0b818b713305dce84cef3e8e6e",
+    "f45_classification": "DENSITY_PROFILE_FEATURE_PRIMARY"
+  },
+  "f44_f45_evidence_bindings": {
+    "f44_density": {"path": ".generic_chess_flow/f44_density_profile.json", "sha256": "c07e3b8f7f2b88c800c866d6a3a0f23c3fee3251b800d97f055afccafc442440"},
+    "f45_discrimination": {"path": ".generic_chess_flow/f45_structural_feature_discrimination.json", "sha256": "3b5b128e8a4e8f7f5dfa6e0b202c693decf19de67d3afe074e81656a15f0df16"},
+    "f45_orientation": {"path": ".generic_chess_flow/f45_orientation.json", "sha256": "3d2652e4303265133d8cd7372eca878cbded862dd0bcdf303fc984883e613e35"},
+    "f45_placement": {"path": ".generic_chess_flow/f45_placement.json", "sha256": "7cfce06ea7f645aaac0ddde2958cb71e561bfe7ae14b47b3117d7a2e61c47455"},
+    "f45_selection": {"path": ".generic_chess_flow/f45_selection.json", "sha256": "3cb8df1bb97ae37bc187e51422d63437985400b87931787e22aab8befca3f74e"}
+  },
+  "density_points": [0.0, 0.25, 0.5, 0.75, 1.0],
+  "reducer_definitions": {
+    "D46-0_WEIGHTED_ARITHMETIC_CONTROL": "sum(w_i * m_i)",
+    "D46-1_WEIGHTED_GEOMETRIC_MOBILITY": "exp(sum(w_i * log(m_i))) for positive entries, otherwise 0",
+    "D46-2_WEIGHTED_HARMONIC_MOBILITY": "1 / sum(w_i / m_i) for positive entries, otherwise 0",
+    "D46-3_LOWER_ENVELOPE_MOBILITY": "min(m_i)"
+  },
+  "structural_gates": ["finite", "non_negative", "coordinatewise_monotone", "positive_scale_equivariant", "constant_curve_identity", "rename_ruleset_invariant", "frozen_weight_binding", "no_new_points_or_weights", "no_game_branch", "same_semantic_population", "arithmetic_control_reproduces_current"],
+  "semantic_controls": ["F44 matched equal-empty-board-mass short/long curves", "constant curve", "matched arithmetic mean different shape", "F44 density witness"],
+  "western_bands": {"P": [1, 1], "N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4, 6], "Q": [7.5, 11]},
+  "shogi_gates": {"cosine": 0.95, "spearman": 0.9, "pairwise_ordering": 0.9, "hand_board_ratio": [0.8, 1.0]},
+  "qualification_mapping": {
+    "DENSITY_PROFILE_CANDIDATE_SUPPORTED": "F47_DENSITY_PROFILE_INTEGRATION_PROTOTYPE",
+    "MULTIPLE_DENSITY_PROFILE_CANDIDATES": "F47_DENSITY_PROFILE_DISCRIMINATION",
+    "DENSITY_PROFILE_CROSS_RULESET_CONFLICT": "F47_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "DENSITY_PROFILE_REDUCTION_INSUFFICIENT": "F47_ENDPOINT_DENSITY_COMPOSITE_DIAGNOSIS",
+    "DENSITY_PROFILE_REDUCTION_MISMATCH": "F47_MATERIAL_PRIOR_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F47_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "prohibited_operations": ["production evaluator integration", "coefficient fitting", "new density points or weights", "endpoint feature addition", "conditional feature addition", "F43 combination", "AlphaSho strength benchmark", "search/selfplay/TDLeaf/training", "F47 execution", "master promotion"],
+  "work_order": "GENERICCHESS-F46-DENSITY-PROFILE-FEATURE-PROTOTYPE",
+  "schema_version": 1,
+  "manifest_sha256": "1def92e1847b2cbefc0d0d37a7513566920b0694434790b29c84748cfb2a50be"
+}
