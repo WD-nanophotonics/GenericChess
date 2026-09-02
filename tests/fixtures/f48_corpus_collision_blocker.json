@@ -1,0 +1,33 @@
+{
+  "kind": "F48_CORPUS_COLLISION_BLOCKER",
+  "candidate_sha": "67a35e6c88798e54bce1dd95b35ed9ed82c5b4d1",
+  "original_registered_seeds": {
+    "training": 480700,
+    "holdout": 480701,
+    "arena": 480702
+  },
+  "ruleset_id": "A_CANONICAL_WESTERN_CHESS",
+  "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+  "intersections": {
+    "training_holdout": [
+      "05791139d850e973eca4dd73460a7efdb4164f0d4519674844c6e1b51cbb8fc2",
+      "37f09298bb9da90526702980c76aadee3f6d4064ac8363bdfce9b77d2f2b40c3",
+      "e4b3335bd92a07f5b3c76daa5f7eab0a5e77bc36f9ee734ff84b1f7e651a2498"
+    ],
+    "training_arena": [
+      "05791139d850e973eca4dd73460a7efdb4164f0d4519674844c6e1b51cbb8fc2",
+      "e4427b1473158a6f49ff120dd57c7b5081829158d4ebbf5a59eedbdcf15dcebf"
+    ],
+    "holdout_arena": [
+      "05791139d850e973eca4dd73460a7efdb4164f0d4519674844c6e1b51cbb8fc2",
+      "8037eef1132c92eb08f491a6c10087fe8f9b0e972aaf23894d084a201d5c8ef5"
+    ]
+  },
+  "authority_hash": "d09b8d9ded3cde7195cab34db96f859d456146e0c125f25ca13eb4e7f142700c",
+  "config_hash": "a8c48935eba5ade7fd70969ccb2eb0296d81166e9b0f5f5f132e439eb5dc63e8",
+  "corpus_partition_input_hash": "2196b3a222a9936046edab7cfa60f046fd8c561b38ed82448330dc9681f01537",
+  "witness_raw_sha256": "eec95ff59229c0d2fb46999cafb1593b57c540caa2f6962c9a4330258d3829f5",
+  "learning_started": false,
+  "later_partition_started": false,
+  "blocker_reason": "FROZEN_CORPUS_IDENTITY_COLLISION"
+}

@@ -221,10 +221,12 @@ def recompute_aggregation(ruleset: dict[str, Any], learner_id: str) -> dict[str,
             for row in raw_by_prior[prior_id]["generations"]
         )
     p0_rows = raw_by_prior["P48-0"]["generations"]
-    final = p0_rows[-1]
-    arena = final["arena_vs_p48_0"]
-    beyond = final["holdout_teacher_agreement"]["agreement"] - p0_initial >= 0.02 and arena["mean_pair_score"] > 0.5 and arena["bootstrap_low"] > 0.5 and _flag(final.get("integrity_gates", True))
-    return {"disturbed_recovery_by_prior": recovered, "ruleset_recovered": sum(recovered.values()) >= 2, "beyond_prior": beyond}
+    beyond_by_generation = {}
+    for row in p0_rows:
+        arena = row["arena_vs_p48_0"]
+        beyond_by_generation[str(row["generation"])] = row["holdout_teacher_agreement"]["agreement"] - p0_initial >= 0.02 and arena["mean_pair_score"] > 0.5 and arena["bootstrap_low"] > 0.5 and _flag(row.get("integrity_gates", True))
+    qualifying = [int(generation) for generation, passed in beyond_by_generation.items() if passed]
+    return {"disturbed_recovery_by_prior": recovered, "ruleset_recovered": sum(recovered.values()) >= 2, "beyond_prior_by_generation": beyond_by_generation, "beyond_prior": bool(qualifying), "first_beyond_prior_generation": min(qualifying) if qualifying else None}
 
 
 def recompute_selector(rulesets: list[dict[str, Any]]) -> str:

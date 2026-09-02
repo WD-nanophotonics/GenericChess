@@ -189,3 +189,27 @@ optimization, learned-checkpoint arena, F49 work, production change, or master
 promotion occurred. The H48B selection checkpoint is the sole authority for
 the third primary F48 RuleSet; learning remains a separately authorized next
 boundary.
+
+## H48R3A corpus-disjointness corrective addendum
+
+The first authorized F48 execution stopped before learning because the exact
+registered corpus seeds produced identity collisions in the Western-Chess
+training, teacher-holdout, and paired-arena sets. The machine-readable
+blocker is preserved in
+`tests/fixtures/f48_corpus_collision_blocker.json`; it is evidence of an
+invalid execution input, not an F48 scientific classification.
+
+H48R3A freezes the corrective protocol in
+`tests/fixtures/h48r3a_corpus_disjointness_protocol_manifest.json`. Training
+remains anchored at seed `480700`. Holdout candidates are `480701..490700`
+and arena candidates are `480702..490701`, both inclusive. The numerically
+smallest sequential pair passing identity-only disjointness for all three
+primary RuleSets is selected, which is equivalently lexicographic minimization
+of `(holdout_seed, arena_seed)`. No evaluator, search, teacher, checkpoint,
+material, outcome, performance, or learner value may influence selection.
+
+H48R3A contains no resolved seeds and authorizes no corpus resolution or
+learning. H48C is the separate resolution boundary. The runtime atomic guard
+remains mandatory after H48C and stops on any discrepancy. Aggregation also
+now evaluates beyond-prior support as an OR over generations 1, 2, and 3 and
+records the first qualifying generation.

@@ -29,6 +29,7 @@ def _ruleset(*, admissible: bool = True, leverage: bool = True, stability: bool 
             by_prior[prior] = {
                 "generations": [
                     {
+                        "generation": 1,
                         "holdout_teacher_agreement": {"agreement": 0.8 if prior == "P48-0" else 0.75},
                         "catastrophic_arena_regression": False,
                         "integrity_gates": True,

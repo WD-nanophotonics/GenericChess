@@ -1,0 +1,65 @@
+{
+  "kind": "H48R3A_F48_CORPUS_DISJOINTNESS_PROTOCOL",
+  "work_order_id": "GENERICCHESS-F48-CORRECTIVE-R3-CORPUS-DISJOINTNESS-PROTOCOL",
+  "protocol_status": "PRE_REGISTERED_NO_RESOLVED_SEEDS",
+  "parent_h48r2a_sha": "d02212e85e9e0b50a946ec74b21e45a315dcb6d8",
+  "parent_checkpoint_sha": "67a35e6c88798e54bce1dd95b35ed9ed82c5b4d1",
+  "preservation": {
+    "h48a_untouched": true,
+    "h48r1a_untouched": true,
+    "h48r2a_untouched": true,
+    "h48b_untouched": true,
+    "production_diff_required": "ZERO",
+    "master_promotion": false
+  },
+  "original_seed_triple": {
+    "training": 480700,
+    "holdout": 480701,
+    "arena": 480702
+  },
+  "training_anchor": {
+    "seed": 480700,
+    "count": 64,
+    "min_plies": 2,
+    "max_plies": 6
+  },
+  "candidate_ranges": {
+    "holdout": {"start": 480701, "end": 490700, "inclusive": true, "count": 10000},
+    "arena": {"start": 480702, "end": 490701, "inclusive": true, "count": 10000}
+  },
+  "selection_rule": {
+    "algorithm": "sequential_identity_only_smallest_passing_seed",
+    "order": ["holdout_seed", "arena_seed"],
+    "constraint": "candidate must pass for all three primary RuleSets",
+    "holdout_constraint": "training identity set is disjoint from holdout identity set",
+    "arena_constraints": ["training identity set is disjoint from arena identity set", "holdout identity set is disjoint from arena identity set"],
+    "arena_excludes_holdout_candidate": true,
+    "lexicographic": true
+  },
+  "primary_rulesets": {
+    "A_CANONICAL_WESTERN_CHESS": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+    "B_CANONICAL_STANDARD_SHOGI": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+    "C_H48B_SELECTED_GENERATED": "9f7e7201a19f8f0ee6c0eacc766c2ac3a6c313e06bbc960d5d6dfb89137db923"
+  },
+  "identity_authority": "generic_chess.core.identity.position_identity_key",
+  "corpus_protocol": {
+    "holdout_count": 64,
+    "holdout_min_plies": 2,
+    "holdout_max_plies": 6,
+    "arena_count": 16,
+    "arena_min_plies": 2,
+    "arena_max_plies": 6,
+    "generator": "existing_generic_chess_corpus_generation",
+    "evaluator_neutral": true
+  },
+  "seed_selection_inputs": ["position_identity_key", "training_identity_set", "holdout_identity_set", "arena_identity_set", "candidate_seed_integer"],
+  "seed_selection_excludes": ["evaluation", "search", "teacher", "checkpoint", "material_values", "game_outcome", "performance_metric", "learner"],
+  "failure_boundary": {
+    "none_passing": "F48_CORPUS_DISJOINTNESS_UNRESOLVED",
+    "later_guard_collision": "STOP_ON_H48C_EXECUTION_DISCREPANCY"
+  },
+  "next_authorized_boundary": "GENERICCHESS-F48-H48C-CORPUS-DISJOINTNESS-RESOLUTION",
+  "resolved_seed_fields_present": false,
+  "learning_authorized": false,
+  "manifest_sha256": "c3f45e4afd1899679704ffd60d68e12b9664b61064f907d98e4be405dde91a7e"
+}
