@@ -1,0 +1,75 @@
+{
+  "baseline": {
+    "f44_sha": "1f4fc5f1dc12675e6bafcf1992245441d36104f5",
+    "f44_classification": "MULTIPLE_STRUCTURAL_INFORMATION_GAPS",
+    "f44_boundary": "F45_STRUCTURAL_FEATURE_DISCRIMINATION"
+  },
+  "families": {
+    "surviving": [
+      "S44-A_ENDPOINT_CONTROL_SEMANTICS",
+      "S44-B_CONDITIONAL_CAPABILITY_RESERVE",
+      "S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY"
+    ],
+    "negative_independence_control": "S44-C_CHANNEL_DIVERSITY_CONCENTRATION"
+  },
+  "consumer_placement_predicates": {
+    "endpoint": "trace quiet/control through pseudo_attacks and determine duplication at the complete pre-search feature representation",
+    "conditional": "classify executable guards and reject static ownership when availability requires position state",
+    "density": "trace the complete curve beyond density_weighted_mobility and quantify any equivalent dynamic consumer"
+  },
+  "residual_obligations": {
+    "R1_pawn_anchor": "generic structural distinction changes Western Pawn relative to N/B/R/Q without piece-name fitting",
+    "R2_knight_vs_ray": "distinguish short-channel Knight from long-ray/blocker-sensitive B/R/Q after F43 saturation",
+    "R3_cross_rule_consistency": "remain compatible with healthy Standard-Shogi ordering and explain the absence of the Western pathology"
+  },
+  "cross_rule_gates": {
+    "shogi_cosine": 0.95,
+    "shogi_hand_board_ratio": [0.8, 1.0],
+    "shogi_pairwise_ordering": 0.9,
+    "shogi_spearman": 0.9
+  },
+  "input_files": {
+    "f44_audit": {"path": "scripts/audit_f44_structural_capability.py", "sha256": "ea44a25c2d6d03f65d3127a8f5c958b0cb6d3145e27a1ff76175712b5ba1fb46"},
+    "f44_tests": {"path": "tests/test_f44_structural_capability.py", "sha256": "906c83a68f453eccadf8d03c945c6522be0e2d5a795022004e4ec9e34582c5a9"},
+    "f44_manifest": {"path": "tests/fixtures/f44_structural_capability_manifest.json", "sha256": "8b23d525c10b77fe727cccd3754eac9c5e587ebae3aec2fef29ab344dd3c7187"},
+    "f44_adr": {"path": "docs/architecture/ADR-114-f44-structural-capability-feature-diagnosis.md", "sha256": "179add993574382503b92e2253e91c977e71880abb7eae1c8029f4318f4c9c9b"},
+    "evaluation_config": {"path": "generic_chess/ai/evaluation/config.py", "sha256": "465a0d38335c45ac95ac91e458e5fb4b81d4be051c8e83da3af6130b01f6343e"},
+    "rule_compiler": {"path": "generic_chess/rules/compiler.py", "sha256": "f895ffe7648cd66a69125205ece00c6455dde5114b38bcbc11cf97cd461c1de9"},
+    "rule_schema": {"path": "generic_chess/rules/schema.py", "sha256": "6087fadb114b00446b6bbf8a44eddd8394600e14da9d581c93acf039df9f2cfd"}
+  },
+  "f44_evidence_bindings": {
+    "structural": {"path": ".generic_chess_flow/f44_structural_capability.json", "sha256": "0599d0cc9d56ba18c8e24d0c510eb47988133b3c33e134b293114d83faacbc46"},
+    "endpoint": {"path": ".generic_chess_flow/f44_endpoint_control.json", "sha256": "8e93d6a8b92907e1bc4a95d1d57d055b906e57298f616200fb00d8c2cc6e0017"},
+    "conditional": {"path": ".generic_chess_flow/f44_conditional_reserve.json", "sha256": "3ea4e0c32cc57411554978ab603ff89d1683c0605a38d6ff5ac90c859008e436"},
+    "channel_negative_control": {"path": ".generic_chess_flow/f44_channel_diversity.json", "sha256": "bf8f7dd90ba32c22dec6f0bce9061fce5ba1d0036c00e0b02840b57f8832c4b4"},
+    "density": {"path": ".generic_chess_flow/f44_density_profile.json", "sha256": "c07e3b8f7f2b88c800c866d6a3a0f23c3fee3251b800d97f055afccafc442440"},
+    "synthetic": {"path": ".generic_chess_flow/f44_synthetic_controls.json", "sha256": "6569f6d14df54f99072e775c78f96f7cf302e57bf405ca7aad10e32bc62cf1ea"},
+    "selection": {"path": ".generic_chess_flow/f44_selection.json", "sha256": "8d382e128455c0fe8692dbf79f15e1f2bbc15687c8ffba671ed02e3ecef6dbcb"}
+  },
+  "classification_mapping": {
+    "ENDPOINT_CONTROL_FEATURE_PRIMARY": "F46_ENDPOINT_CONTROL_FEATURE_PROTOTYPE",
+    "CONDITIONAL_CAPABILITY_FEATURE_PRIMARY": "F46_CONDITIONAL_CAPABILITY_RUNTIME_PROTOTYPE",
+    "DENSITY_PROFILE_FEATURE_PRIMARY": "F46_DENSITY_PROFILE_FEATURE_PROTOTYPE",
+    "ENDPOINT_DENSITY_COMPOSITE_REQUIRED": "F46_ENDPOINT_DENSITY_COMPOSITE_PROTOTYPE",
+    "STATIC_DYNAMIC_STRUCTURAL_COMPOSITE_REQUIRED": "F46_STRUCTURAL_CONSUMER_SPLIT_PROTOTYPE",
+    "STRUCTURAL_INFORMATION_ALREADY_CONSUMED": "F46_MATERIAL_PRIOR_REASSESSMENT",
+    "STRUCTURAL_FEATURE_DISCRIMINATION_INSUFFICIENT": "F46_GENERIC_MATERIAL_PRIOR_REASSESSMENT",
+    "CROSS_RULESET_STRUCTURAL_CONFLICT": "F46_GENERIC_MATERIAL_PRIOR_REASSESSMENT"
+  },
+  "prohibited_operations": [
+    "production evaluator integration",
+    "new fitted weight",
+    "geometry-transform expansion",
+    "human-value regression",
+    "AlphaSho strength benchmark",
+    "search/selfplay/TDLeaf/training",
+    "R37",
+    "native-search migration",
+    "second compiler",
+    "F46 execution",
+    "master promotion"
+  ],
+  "work_order": "GENERICCHESS-F45-STRUCTURAL-FEATURE-DISCRIMINATION",
+  "schema_version": 1,
+  "manifest_sha256": "551c28a91d8e46cfb577cae3d3e1d05301639ca7917b253cbd957ec24e705d41"
+}
