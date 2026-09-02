@@ -87,7 +87,7 @@ def test_western_matrix_has_curves_ratios_and_band_gates(evidence):
 def test_shogi_gates_are_reported_for_every_reducer(evidence):
     for name, row in evidence["reducers"].items():
         metrics = row["shogi_gates"]
-        assert metrics["cosine_vs_current"] >= 0.95 if name != audit.REDUCERS[3] else metrics["cosine_vs_current"] < 0.95
+        assert metrics["cosine_vs_current"] >= 0.95
         assert metrics["spearman_vs_current"] >= 0.90
         assert metrics["pairwise_ordering"] >= 0.90
         assert 0.8 <= metrics["hand_board_ratio_range"][0] <= metrics["hand_board_ratio_range"][1] <= 1.0
@@ -97,14 +97,25 @@ def test_qualification_is_evidence_derived_and_does_not_qualify_control(evidence
     assert evidence["reducers"][audit.REDUCERS[0]]["qualification"]["all"] is False
     assert evidence["selection"] == {
         "classification": "DENSITY_PROFILE_REDUCTION_INSUFFICIENT",
-        "coherent_nonqualified": [audit.REDUCERS[1], audit.REDUCERS[2]],
+        "coherent_nonqualified": [audit.REDUCERS[1], audit.REDUCERS[2], audit.REDUCERS[3]],
         "next_boundary": "F47_ENDPOINT_DENSITY_COMPOSITE_DIAGNOSIS",
         "qualified": [],
     }
 
 
+def test_cosine_is_dot_over_norm_not_pearson():
+    left = {"a": 1.0, "b": 2.0}
+    right = {"a": 2.0, "b": 1.0}
+    assert audit._cosine(left, right) == pytest.approx(0.8)
+    assert audit._correlation(left, right) == pytest.approx(-1.0)
+
+
+def test_qualification_includes_semantic_control_for_every_reducer(evidence):
+    assert all(row["qualification"]["semantic_control"] for row in evidence["reducers"].values())
+
+
 def test_all_six_qualification_paths_are_reachable(evidence):
-    assert set(evidence["selector_reachability"]) == set(audit.QUALIFICATION_MAPPING)
+    assert set(evidence["selector_reachability"]["cases"]) == set(audit.QUALIFICATION_MAPPING)
     assert all(evidence["selector_reachability"].values())
 
 

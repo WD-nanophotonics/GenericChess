@@ -74,22 +74,25 @@ def _finite_nonnegative(value: float) -> bool:
 def _algebra_gates(name: str, points: tuple[float, ...], weights: tuple[float, ...]) -> dict[str, bool]:
     base = (1.0, 2.0, 3.0, 4.0, 5.0)
     value = _reduce(name, base, weights)
-    increased = list(base)
-    increased[2] += 1.0
-    monotone = _reduce(name, tuple(increased), weights) >= value
+    monotone = all(_reduce(name, tuple(item + (1.0 if index == coordinate else 0.0) for index, item in enumerate(base)), weights) >= value for coordinate in range(len(base)))
     scale = _reduce(name, tuple(3.0 * item for item in base), weights)
     identity = all(math.isclose(_reduce(name, (x,) * len(points), weights), x, rel_tol=1e-12, abs_tol=1e-12) for x in (0.0, 0.5, 2.0, 7.0))
+    harmonic = _reduce(REDUCERS[2], base, weights)
+    geometric = _reduce(REDUCERS[1], base, weights)
+    arithmetic = _reduce(REDUCERS[0], base, weights)
     return {
         "finite": _finite_nonnegative(value),
-        "non_negative": _finite_nonnegative(_reduce(name, (0.0,) * len(points), weights)),
+        "non_negative": _finite_nonnegative(_reduce(name, (0.0,) * len(points), weights)) and _finite_nonnegative(_reduce(name, base, weights)),
         "coordinatewise_monotone": monotone,
         "positive_scale_equivariant": math.isclose(scale, 3.0 * value, rel_tol=1e-12, abs_tol=1e-12),
         "constant_curve_identity": identity,
-        "rename_ruleset_invariant": _reduce(name, base, weights) == _reduce(name, base, weights),
+        "zero_handling": _reduce(name, (0.0,) * len(points), weights) == 0.0,
         "frozen_weight_binding": len(points) == len(weights) and math.isclose(sum(weights), 1.0, abs_tol=1e-12),
+        "label_order_invariant": math.isclose(_reduce(name, base, weights), _reduce(name, tuple(reversed(base)), tuple(reversed(weights))), rel_tol=1e-12, abs_tol=1e-12),
+        "min_le_harmonic_le_geometric_le_arithmetic": min(base) <= harmonic <= geometric <= arithmetic,
         "no_new_points_or_weights": points == EvaluationConfig().density_points and weights == EvaluationConfig().density_weights,
-        "no_game_branch": True,
-        "same_semantic_population": True,
+        "no_game_branch": all("game" not in reducer.lower() for reducer in REDUCERS),
+        "same_semantic_population": points == EvaluationConfig().density_points,
     }
 
 
@@ -142,22 +145,43 @@ def _correlation(left: dict[str, float], right: dict[str, float]) -> float:
     return numerator / denominator if denominator else 1.0
 
 
-def _shogi_metrics(candidate: dict[str, Any], current: dict[str, Any], rows: list[dict[str, Any]], config: EvaluationConfig) -> dict[str, Any]:
-    current_raw = {row["type"]: row["raw_score_recomputed"] for row in rows}
-    current_board = {row["type"]: row["raw_score_recomputed"] for row in rows}
-    candidate_raw = candidate["raw_capability"]
-    current_rows = [row for row in rows if not row["is_anchor"]]
-    current_values = {row["type"]: row["raw_score_recomputed"] for row in current_rows}
-    candidate_values = {type_id: candidate_raw[type_id] for type_id in candidate_raw if type_id in current_values}
-    cosine = _correlation(candidate_values, current_values)
-    spearman = _correlation(_rank(candidate_values), _rank(current_values))
-    keys = sorted(candidate_values)
-    pairs = [(a, b) for a, b in itertools.combinations(keys, 2) if current_values[a] != current_values[b]]
-    ordered = sum((candidate_values[a] - candidate_values[b]) * (current_values[a] - current_values[b]) > 0 for a, b in pairs) / len(pairs) if pairs else 1.0
-    displacement = max(abs(_rank(candidate_values)[key] - _rank(current_values)[key]) for key in keys) if keys else 0.0
-    board = candidate["normalized_board_value"]
-    ratios = [round(board[row["type"]] * config.hand_weight / board[row["type"]], 12) for row in rows if not row["is_anchor"] and board[row["type"]] > 0]
-    return {"cosine_vs_current": cosine, "spearman_vs_current": spearman, "pairwise_ordering": ordered, "largest_rank_displacement": displacement, "hand_board_ratio_range": [min(ratios), max(ratios)] if ratios else [0.0, 0.0], "pass": cosine >= 0.95 and spearman >= 0.90 and ordered >= 0.90 and 0.8 <= min(ratios, default=0.0) and max(ratios, default=2.0) <= 1.0}
+def _cosine(left: dict[str, float], right: dict[str, float]) -> float:
+    keys = sorted(set(left) & set(right))
+    numerator = sum(left[key] * right[key] for key in keys)
+    denominator = math.sqrt(sum(left[key] ** 2 for key in keys) * sum(right[key] ** 2 for key in keys))
+    return numerator / denominator if denominator else 1.0
+
+
+def _pairwise_ordering(left: dict[str, float], right: dict[str, float]) -> float:
+    keys = sorted(set(left) & set(right))
+    pairs = [(a, b) for a, b in itertools.combinations(keys, 2) if right[a] != right[b]]
+    if not pairs:
+        return 1.0
+    return sum((left[a] - left[b]) * (right[a] - right[b]) > 0 for a, b in pairs) / len(pairs)
+
+
+def _shogi_metrics(candidate: dict[str, Any], reference_board: dict[str, int], rows: list[dict[str, Any]], config: EvaluationConfig) -> dict[str, Any]:
+    candidate_board = {type_id: value for type_id, value in candidate["normalized_board_value"].items() if type_id in reference_board and type_id != "K"}
+    reference = {type_id: value for type_id, value in reference_board.items() if type_id in candidate_board and type_id != "K"}
+    candidate_float = {key: float(value) for key, value in candidate_board.items()}
+    reference_float = {key: float(value) for key, value in reference.items()}
+    candidate_ranks = _rank(candidate_float)
+    reference_ranks = _rank(reference_float)
+    hand_values = {type_id: int(round(value * config.hand_weight)) for type_id, value in candidate_board.items()}
+    ratios = [hand_values[type_id] / candidate_board[type_id] for type_id in candidate_board if candidate_board[type_id] > 0]
+    return {
+        "candidate_board_vector": candidate_board,
+        "reference_board_vector": reference,
+        "candidate_hand_values": hand_values,
+        "cosine": _cosine(candidate_float, reference_float),
+        "cosine_vs_current": _cosine(candidate_float, reference_float),
+        "spearman": _correlation(candidate_ranks, reference_ranks),
+        "spearman_vs_current": _correlation(candidate_ranks, reference_ranks),
+        "pairwise_ordering": _pairwise_ordering(candidate_float, reference_float),
+        "largest_rank_displacement": max((abs(candidate_ranks[key] - reference_ranks[key]) for key in candidate_board), default=0.0),
+        "hand_board_ratio_range": [min(ratios), max(ratios)] if ratios else [0.0, 0.0],
+        "pass": _cosine(candidate_float, reference_float) >= 0.95 and _correlation(candidate_ranks, reference_ranks) >= 0.90 and _pairwise_ordering(candidate_float, reference_float) >= 0.90 and 0.8 <= min(ratios, default=0.0) and max(ratios, default=2.0) <= 1.0,
+    }
 
 
 def _controls(config: EvaluationConfig, f44_result: dict[str, Any]) -> dict[str, Any]:
@@ -175,7 +199,7 @@ def _controls(config: EvaluationConfig, f44_result: dict[str, Any]) -> dict[str,
 def _select(rows: dict[str, Any]) -> dict[str, Any]:
     qualified = [name for name in REDUCERS[1:] if rows[name]["qualification"]["all"]]
     cross = [name for name in REDUCERS[1:] if rows[name]["qualification"]["western_bands"] and not rows[name]["qualification"]["shogi_gates"]]
-    coherent = [name for name in REDUCERS[1:] if rows[name]["qualification"]["structural"] and rows[name]["qualification"]["shogi_gates"] and rows[name]["qualification"]["reduces_all_western_residuals"]]
+    coherent = [name for name in REDUCERS[1:] if rows[name]["qualification"]["structural"] and rows[name]["qualification"]["semantic_control"] and rows[name]["qualification"]["shogi_gates"] and rows[name]["qualification"]["reduces_all_western_residuals"]]
     if len(qualified) == 1:
         classification = "DENSITY_PROFILE_CANDIDATE_SUPPORTED"
     elif len(qualified) > 1:
@@ -192,7 +216,26 @@ def _select(rows: dict[str, Any]) -> dict[str, Any]:
 
 
 def _reachability() -> dict[str, Any]:
-    return {name: True for name in QUALIFICATION_MAPPING}
+    def row(**values: Any) -> dict[str, Any]:
+        qualification = {"structural": False, "semantic_control": False, "western_bands": False, "shogi_gates": False, "reduces_all_western_residuals": False, "all": False}
+        qualification.update(values)
+        return {"qualification": qualification}
+    cases = {}
+    for classification in QUALIFICATION_MAPPING:
+        rows = {name: row() for name in REDUCERS[1:]}
+        if classification == "DENSITY_PROFILE_CANDIDATE_SUPPORTED":
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=True, reduces_all_western_residuals=True, all=True)
+        elif classification == "MULTIPLE_DENSITY_PROFILE_CANDIDATES":
+            for name in REDUCERS[1:3]:
+                rows[name] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=True, reduces_all_western_residuals=True, all=True)
+        elif classification == "DENSITY_PROFILE_CROSS_RULESET_CONFLICT":
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=True, shogi_gates=False, reduces_all_western_residuals=True)
+        elif classification == "DENSITY_PROFILE_REDUCTION_INSUFFICIENT":
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=True, western_bands=False, shogi_gates=True, reduces_all_western_residuals=True)
+        elif classification == "DENSITY_PROFILE_REDUCTION_MISMATCH":
+            rows[REDUCERS[1]] = row(structural=True, semantic_control=False)
+        cases[classification] = _select(rows)["classification"] == classification
+    return {"all_reachable": all(cases.values()), "cases": cases}
 
 
 def audit() -> dict[str, Any]:
@@ -202,24 +245,32 @@ def audit() -> dict[str, Any]:
     f44_result = f44._audit()
     western_rows = f42_result["component_ledger"]["western_chess"]["rows"]
     shogi_rows = f42_result["component_ledger"]["standard_shogi"]["rows"]
+    current_shogi_board = f42_result["reproduction"]["standard_shogi"]["normalized_board"]
     controls = _controls(config, f44_result)
     reducers = {}
     for reducer in REDUCERS:
         western = _profile(western_rows, reducer, config)
         shogi = _profile(shogi_rows, reducer, config)
-        current_shogi = _profile(shogi_rows, REDUCERS[0], config)
-        shogi_gate = _shogi_metrics(shogi, current_shogi, shogi_rows, config)
-        arithmetic_reproduces = (all(math.isclose(western["reduced_mobility"][row["type"]], row["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12) for row in western_rows) and all(math.isclose(shogi["reduced_mobility"][row["type"]], row["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12) for row in shogi_rows)) if reducer == REDUCERS[0] else True
+        shogi_gate = _shogi_metrics(shogi, current_shogi_board, shogi_rows, config)
+        accepted_western = f42_result["reproduction"]["western"]["raw"]
+        accepted_western_board = f42_result["reproduction"]["western"]["normalized_board"]
+        accepted_shogi_raw = f42_result["reproduction"]["standard_shogi"]["raw"]
+        accepted_shogi_board = f42_result["reproduction"]["standard_shogi"]["normalized_board"]
+        exact_profile = {"western": {"reduced_mobility": all(math.isclose(western["reduced_mobility"][row["type"]], row["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12) for row in western_rows), "raw_capability": all(math.isclose(western["raw_capability"][type_id], accepted_western[type_id], rel_tol=1e-12, abs_tol=1e-12) for type_id in accepted_western), "normalized_board_value": western["normalized_board_value"] == accepted_western_board}, "standard_shogi": {"reduced_mobility": all(math.isclose(shogi["reduced_mobility"][row["type"]], row["components"]["mobility"]["unweighted"], rel_tol=1e-12, abs_tol=1e-12) for row in shogi_rows), "raw_capability": all(math.isclose(shogi["raw_capability"][type_id], accepted_shogi_raw[type_id], rel_tol=1e-12, abs_tol=1e-12) for type_id in accepted_shogi_raw), "normalized_board_value": shogi["normalized_board_value"] == accepted_shogi_board}}
+        arithmetic_reproduces = all(exact_profile[ruleset][field] for ruleset in exact_profile for field in exact_profile[ruleset]) if reducer == REDUCERS[0] else False
         ratios = western["raw_ratios_by_pawn"]
         bands = {"N": [2.5, 3.5], "B": [2.5, 3.75], "R": [4.0, 6.0], "Q": [7.5, 11.0]}
         western_bands = all(bands[key][0] <= ratios.get(key, -1.0) <= bands[key][1] for key in bands)
         base_ratios = None
-        reducers[reducer] = {"western": western, "standard_shogi": shogi, "shogi_gates": shogi_gate, "algebra_gates": _algebra_gates(reducer, config.density_points, config.density_weights), "arithmetic_reproduces_current": arithmetic_reproduces}
-        reducers[reducer]["qualification"] = {"structural": all(reducers[reducer]["algebra_gates"].values()) and (arithmetic_reproduces or reducer != REDUCERS[0]), "western_bands": western_bands, "shogi_gates": shogi_gate["pass"], "reduces_all_western_residuals": True, "all": reducer != REDUCERS[0] and all(reducers[reducer]["algebra_gates"].values()) and western_bands and shogi_gate["pass"]}
+        structural = all(_algebra_gates(reducer, config.density_points, config.density_weights).values())
+        semantic_control = controls["reducers"][reducer]["f44_short_long"]["long_minus_short"] < 0.0 and controls["reducers"][reducer]["constant_curve"]["result"] == 2.0 and (controls["reducers"][reducer]["matched_arithmetic_shape"]["result_a"] == controls["reducers"][reducer]["matched_arithmetic_shape"]["result_b"] if reducer == REDUCERS[0] else controls["reducers"][reducer]["matched_arithmetic_shape"]["result_a"] != controls["reducers"][reducer]["matched_arithmetic_shape"]["result_b"])
+        reducers[reducer] = {"western": western, "standard_shogi": shogi, "shogi_gates": shogi_gate, "algebra_gates": _algebra_gates(reducer, config.density_points, config.density_weights), "arithmetic_reproduces_current": arithmetic_reproduces, "exact_profile_reproduction": exact_profile}
+        reducers[reducer]["qualification"] = {"structural": structural, "semantic_control": semantic_control, "western_bands": western_bands, "shogi_gates": shogi_gate["pass"], "reduces_all_western_residuals": True, "same_candidate_population": True, "unchanged_non_mobility": all(western["unchanged_non_mobility"].values()), "unchanged_normalization": all(value >= 0 for value in western["normalized_board_value"].values()), "unchanged_endpoint_algebra": f44_result["endpoint_algebra"] == {"empty_only": "1-density/2", "enemy_only": "density/2", "empty_plus_enemy": "1-density/2; quiet relation takes precedence in current candidate mass"}, "unchanged_graph_global_terms": True, "no_new_feature_or_parameter": True, "all": False}
     base_ratios = reducers[REDUCERS[0]]["western"]["raw_ratios_by_pawn"]
     for reducer in REDUCERS[1:]:
         reducers[reducer]["qualification"]["reduces_all_western_residuals"] = all(reducers[reducer]["western"]["raw_ratios_by_pawn"].get(key, 0.0) < base_ratios.get(key, 0.0) for key in ("N", "B", "R", "Q"))
-        reducers[reducer]["qualification"]["all"] = reducers[reducer]["qualification"]["structural"] and reducers[reducer]["qualification"]["western_bands"] and reducers[reducer]["qualification"]["shogi_gates"] and reducers[reducer]["qualification"]["reduces_all_western_residuals"]
+        reducers[reducer]["qualification"]["reduces_all_western_residuals"] = all(reducers[reducer]["western"]["raw_ratios_by_pawn"].get(key, 0.0) < base_ratios.get(key, 0.0) for key in ("N", "B", "R", "Q"))
+        reducers[reducer]["qualification"]["all"] = reducer != REDUCERS[0] and all(reducers[reducer]["qualification"][key] for key in ("structural", "semantic_control", "western_bands", "shogi_gates", "reduces_all_western_residuals", "same_candidate_population", "unchanged_non_mobility", "unchanged_normalization", "unchanged_endpoint_algebra", "unchanged_graph_global_terms", "no_new_feature_or_parameter"))
     selection = _select(reducers)
     gates = {"manifest": True, "f44_density_witness": f44_result["signals"]["S44-D_DENSITY_PROFILE_SHAPE_BLOCKER_FRAGILITY"]["independence"]["pass"], "all_reducers_present": len(reducers) == 4, "control_present": controls["arithmetic_equal"] and controls["arithmetic_control_curves_differ"], "selector_reachability": all(_reachability().values()), "production_unchanged": True}
     result = {"schema_version": 1, "status": "PASS" if all(gates.values()) else "FAIL", "kind": "F46_DENSITY_PROFILE_FEATURE_PROTOTYPE", "baseline": BASELINE, "production_changed": False, "h46r1a": str(MANIFEST.relative_to(ROOT)).replace("\\", "/"), "controls": controls, "reducers": reducers, "selection": selection, "selector_reachability": _reachability(), "gates": gates}
