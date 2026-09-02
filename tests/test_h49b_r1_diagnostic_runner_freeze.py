@@ -265,6 +265,9 @@ def test_teacher_surface_derives_all_adjacent_pairs(monkeypatch):
     assert list(teacher["adjacent"]) == ["10000_20000", "20000_40000", "40000_80000"]
     assert teacher["adjacent"]["40000_80000"]["exact_best_move_agreement"] == 1.0
     assert teacher["teacher_40_80"]["stable"] is True
+    assert teacher["teacher_convergence"]["agreement_10_20"] == 0.5
+    assert teacher["teacher_convergence"]["agreement_20_40"] == 1.0
+    assert teacher["teacher_convergence"]["adjacent_deltas"] == [0.5, 0.0]
 
 
 def test_python_nonmaterial_control_gates_and_fails_closed(monkeypatch):
@@ -273,12 +276,12 @@ def test_python_nonmaterial_control_gates_and_fails_closed(monkeypatch):
     assert not_run == {"status": "NOT_RUN_NO_STABLE_TEACHER", "non_material_signal": None, "families": []}
     valid = {"action_key": "a", "score": 1, "nodes": 1, "qnodes": 0, "termination_reason": "node_limit", "valid": True, "exception": None}
     monkeypatch.setattr(runner, "_python_decision", lambda *args, **kwargs: dict(valid))
-    measured = runner.python_nonmaterial_control(SimpleNamespace(), corpus, teacher_stable=True)
+    measured = runner.python_nonmaterial_control(SimpleNamespace(ruleset_fingerprint="synthetic"), corpus, teacher_stable=True)
     assert measured["status"] == "VALID"
     assert len(measured["families"]) == 3
     assert all(len(family["factors"]) == 2 for family in measured["families"])
     monkeypatch.setattr(runner, "_python_decision", lambda *args, **kwargs: {**valid, "valid": False, "action_key": None, "exception": "synthetic failure"})
-    failed = runner.python_nonmaterial_control(SimpleNamespace(), corpus, teacher_stable=True)
+    failed = runner.python_nonmaterial_control(SimpleNamespace(ruleset_fingerprint="synthetic"), corpus, teacher_stable=True)
     assert failed["status"] == "CELL_INVALID_SEARCH_FAILURE"
     assert failed["non_material_signal"] is None
 
@@ -288,6 +291,7 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     compiled = SimpleNamespace(ruleset_fingerprint="synthetic-ruleset")
     entry = {"semantic_execution": compiled, "legacy_transport": compiled}
     checkpoint = _checkpoint()
+    monkeypatch.setattr(runner, "validate_r2_measurement_freeze", lambda: events.append("freeze"))
     monkeypatch.setattr(runner, "run_preflight", lambda: events.append("preflight") or {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: events.append("execution") or {"synthetic": entry})
     monkeypatch.setattr(runner, "generate_arena_openings", lambda *args, **kwargs: events.append("openings") or SimpleNamespace())
@@ -319,7 +323,7 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     monkeypatch.setattr(runner, "native_material_surface", material)
     monkeypatch.setattr(runner, "python_nonmaterial_control", lambda *args, **kwargs: events.append("PYTHON_NONMATERIAL") or {"status": "VALID", "non_material_signal": False, "families": []})
     result = runner.run_measurements(partition_root=tmp_path)
-    assert events[:7] == ["preflight", "execution", "openings", "F48_CONTROL", "S49-M", "S49-E", "P48-0"]
+    assert events[:8] == ["freeze", "preflight", "execution", "openings", "F48_CONTROL", "S49-M", "S49-E", "P48-0"]
     assert events.count("TEACHER") == 3
     assert events.count("PYTHON_NONMATERIAL") == 3
     assert result["observed_results_present"] is True
@@ -327,5 +331,108 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     assert result["direct_selector_agreement"] is True
     assert result["efficiency"]["synthetic"]["search_count"] == 12
     assert result["efficiency"]["synthetic"]["requested_nodes"] == 3 * (80000 + 3 * 2000)
+    assert events.index("L49-0") < events.index("TEACHER") < events.index("PYTHON_NONMATERIAL")
+    assert {"profile_construction_count", "evaluator_construction_count", "search_wall_seconds"} <= result["efficiency"]["synthetic"].keys()
     evidence_path = runner.write_evidence_bundle(result, tmp_path / "evidence")
     assert json.loads(evidence_path.read_text(encoding="utf-8"))["direct_selector_agreement"] is True
+    assert (tmp_path / "f49_evidence_bundle.json").is_file()
+
+
+def test_r2_manifest_binds_resumability_order_and_transport_provenance():
+    manifest = runner.load_h49b_r2_manifest()
+    assert manifest["kind"] == runner.H49B_R2_KIND
+    assert manifest["parent_h49b_r1_sha"] == runner.H49B_R1_SHA
+    assert manifest["partition_runner"].endswith("run_partition")
+    assert manifest["orchestration_phases"].index("Native material leverage surfaces") < manifest["orchestration_phases"].index("Native teacher surfaces") < manifest["orchestration_phases"].index("Python non-material controls only where authorized")
+    assert set(manifest["native_transport_provenance"]) == set(runner.RULESET_IDS)
+    assert all("original_max_ply" in row and "native_transport_max_ply" in row and row["ruleset_fingerprint"] for row in manifest["native_transport_provenance"].values())
+
+
+def test_r2_control_events_are_replayed_not_fabricated(monkeypatch):
+    action = _FakeAction("a")
+    position = SimpleNamespace(index=4, ply=1, action_history=[action], position_key="accepted-position")
+    control = SimpleNamespace(corpus_id="accepted-control", positions=[position])
+    flags = {"remove_or_capture_effect": True, "type_or_promotion_transformation": False, "hand_or_inventory_count_change": True}
+    monkeypatch.setattr(runner, "_replay_with_events", lambda compiled, history: (SimpleNamespace(legal_actions=lambda: [action, _FakeAction("b")]), flags))
+    monkeypatch.setattr(runner, "action_to_dict", lambda value: {"name": value.name})
+    rows = runner._control_records(SimpleNamespace(), control)
+    assert rows == [{"output_index": 4, "target_ply": 1, "selected_attempt": None, "candidate_rng_seed": None, "action_history": [{"name": "a"}], "position_identity_key": "accepted-position", "legal_action_count": 2, "event_flags": flags}]
+
+
+def test_r2_unavailable_stratum_gets_concrete_deterministic_partition_identity(tmp_path):
+    corpus = {"status": "STRUCTURAL_STRATUM_UNAVAILABLE", "stratum_id": "S49-E", "generation_config": {"seed": 1, "attempt_cap": 2}, "failed_output_index": 7, "attempt_cap": 2, "corpus_id": None}
+    first = runner._concrete_corpus_id(corpus)
+    assert first == runner._concrete_corpus_id(corpus)
+    assert first.startswith("UNAVAILABLE.")
+    partition = runner.partition_identity(corpus_id=first, checkpoint_or_config_hash="NONE", search_route="EVALUATOR_NEUTRAL_CORE_CORPUS", node_budget=None, measurement_family="S49-E", ruleset_fingerprint="synthetic")
+    runner.AtomicPartitionStore(tmp_path).write(partition, corpus)
+
+
+def test_r2_run_partition_exact_hit_avoids_reexecution(tmp_path):
+    partition = runner.partition_identity(corpus_id="synthetic", checkpoint_or_config_hash="checkpoint", search_route="AUDIT_SELECTOR", node_budget=None, measurement_family="SELECTOR", ruleset_fingerprint="synthetic")
+    store = runner.AtomicPartitionStore(tmp_path)
+    calls = []
+    producer = lambda: calls.append("executed") or {"value": 1}
+    assert runner.run_partition(store, partition, producer) == {"value": 1}
+    assert runner.run_partition(store, partition, producer) == {"value": 1}
+    assert calls == ["executed"]
+
+
+def test_r2_native_raw_partitions_bind_one_budget_each(monkeypatch, tmp_path):
+    compiled = SimpleNamespace(ruleset_fingerprint="synthetic")
+    checkpoint = SimpleNamespace(checkpoint_id="checkpoint")
+    corpus = {"corpus_id": "corpus", "records": [{"position_identity_key": "p", "action_history": []}]}
+    monkeypatch.setattr(runner, "compile_native_rules", lambda value: "rules")
+    monkeypatch.setattr(runner, "compile_native_evaluation", lambda *args, **kwargs: "eval")
+    monkeypatch.setattr(runner, "_native_profile", lambda *args: "profile")
+    monkeypatch.setattr(runner, "_native_search_once", lambda *args: {"action_key": "a", "score": 1, "nodes": 1, "qnodes": 0, "elapsed_seconds": 0.0, "completed_depth": 1, "termination_reason": "node_limit", "failed_search": False})
+    store = runner.AtomicPartitionStore(tmp_path)
+    runner._native_search_matrix(compiled, checkpoint, corpus, [500, 2000], "NATIVE_SEARCH_ENGINE_MATERIAL", "L49-0", runner._measurement_metrics(), {}, {}, store)
+    identities = [json.loads(path.read_text(encoding="utf-8"))["input_identity"] for path in tmp_path.glob("*.json")]
+    assert {row["node_budget"] for row in identities} == {500, 2000}
+    assert all(row["checkpoint_or_config_hash"] == "checkpoint" for row in identities)
+
+
+def test_r2_python_partitions_bind_real_evaluation_config_hash(monkeypatch, tmp_path):
+    semantic = SimpleNamespace(ruleset_fingerprint="synthetic")
+    corpus = {"corpus_id": "corpus", "records": [{"output_index": 0, "action_history": []}]}
+    valid = {"action_key": "a", "score": 1, "nodes": 1, "qnodes": 0, "termination_reason": "node_limit", "valid": True, "exception": None}
+    monkeypatch.setattr(runner, "_python_decision", lambda *args, **kwargs: dict(valid))
+    store = runner.AtomicPartitionStore(tmp_path)
+    runner.python_nonmaterial_control(semantic, corpus, teacher_stable=True, partition_store=store)
+    identities = [json.loads(path.read_text(encoding="utf-8"))["input_identity"] for path in tmp_path.glob("*.json")]
+    assert len(identities) == 7
+    assert runner.config_hash(runner.EvaluationConfig()) in {row["checkpoint_or_config_hash"] for row in identities}
+    assert all(row["checkpoint_or_config_hash"] != "EvaluationConfig" for row in identities)
+
+
+def test_r2_freeze_drift_blocks_before_observation(monkeypatch):
+    monkeypatch.setattr(runner, "load_h49b_r2_manifest", lambda: {"runner_raw_sha256": "wrong", "protocol_raw_sha256": "wrong", "h49r4a_manifest_sha256": runner.H49R4A_MANIFEST_SHA, "h49r3a_source_tree_aggregate_sha256": runner.H49R3A_SOURCE_TREE_SHA, "native_binary_sha256": runner.H49R3A_NATIVE_SHA})
+    monkeypatch.setattr(runner, "run_preflight", lambda: (_ for _ in ()).throw(AssertionError("preflight ran after freeze drift")))
+    with pytest.raises(RuntimeError, match="STOP_ON_H49_RUNNER_FREEZE_DRIFT"):
+        runner.run_measurements(partition_root=SimpleNamespace())
+
+
+def test_r2_l49_construction_failure_is_durable_and_excluded(monkeypatch):
+    monkeypatch.setattr(runner, "_l49_candidate_vectors", lambda *args: [("bad", []), ("also_bad", [])])
+    monkeypatch.setattr(runner, "_checkpoint_from_vector", lambda *args: (_ for _ in ()).throw(ValueError("limit")))
+    rows = runner._l49_checkpoint_rows(SimpleNamespace(), _checkpoint(), "L49-1")
+    assert [row["construction_failed"] for row in rows] == [True, True]
+    assert all(row["checkpoint"] is None and row["reason"] for row in rows)
+    assert runner._flip_surface([{"action_key": "a", "score": 1, "failed_search": 1}], [{"action_key": "a", "score": 1, "failed_search": 0}])["status"] == "CELL_INVALID_SEARCH_FAILURE"
+
+
+def test_r2_l49_identical_weight_vectors_deduplicate_by_actual_checkpoint_id(monkeypatch):
+    compiled = SimpleNamespace(ruleset_fingerprint="synthetic")
+    start = _checkpoint()
+    monkeypatch.setattr(runner, "non_anchor_type_ids", lambda compiled: ("P", "Q"))
+    monkeypatch.setattr(runner, "_l49_candidate_vectors", lambda *args: [("first", [2.0, 4.0, 1.0, 2.0]), ("alias", [2.0, 4.0, 1.0, 2.0])])
+    candidates = runner._l49_checkpoints(compiled, start, "L49-1")
+    assert candidates[0][1].checkpoint_id == candidates[1][1].checkpoint_id
+
+
+def test_r2_nonmaterial_liveness_failure_is_unmeasurable(monkeypatch):
+    monkeypatch.setattr(runner, "_python_liveness_precheck", lambda execution: (False, "synthetic liveness failure"))
+    result = runner.python_nonmaterial_control(SimpleNamespace(ruleset_fingerprint="synthetic"), {"records": []}, teacher_stable=True)
+    assert result["status"] == "UNMEASURABLE_IN_SELECTED_SEARCH_PATH"
+    assert result["non_material_signal"] is None
