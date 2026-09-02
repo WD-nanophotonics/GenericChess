@@ -1,0 +1,227 @@
+{
+  "kind": "H48A_LEARNABLE_MATERIAL_RECOVERY_PROTOCOL",
+  "work_order_id": "GENERICCHESS-F48-LEARNABLE-MATERIAL-RECOVERY-REASSESSMENT",
+  "protocol_status": "PRE_REGISTERED_NO_OBSERVED_RESULTS",
+  "baseline": {
+    "sandbox_sha": "d4a0d8baf00f95dc9eef315183c59e394ed5928f",
+    "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100",
+    "production_diff_required": "ZERO"
+  },
+  "questions": [
+    "Can learning recover decision quality lost from deliberately damaged material priors?",
+    "Can learning improve a reasonably good rule-derived cold-start prior?"
+  ],
+  "architecture_layers": {
+    "L0_rule_semantics": {
+      "owner": "GenericChess RuleSet",
+      "immutable": ["board_topology", "legal_actions", "state_guards", "effects", "promotion_drop_semantics", "terminal_repetition_semantics", "ruleset_fingerprint"],
+      "learning_may_change": false
+    },
+    "L1_compiled_ruleset_execution": {
+      "owner": "compiled RuleSet/native rule payload",
+      "contract": "compile once per RuleSet per run and reuse across generations and checkpoint evaluations",
+      "learning_may_change": false
+    },
+    "L2_cold_start_evaluation_prior": {
+      "owner": "existing generic rule-derived evaluation profile",
+      "contract": "finite values, sensible scale, basic structural orientation, usable Generation 0",
+      "learning_may_change": false
+    },
+    "L3_ruleset_specific_learnable_evaluation": {
+      "owner": "LearnableMaterialCheckpoint",
+      "trainable_parameters": ["per_current_type_board_material_weight", "per_base_type_hand_material_weight_where_applicable"],
+      "contract": "one checkpoint belongs to exactly one RuleSet fingerprint; evaluation is frozen within each search and game; checkpoint changes require fresh native evaluation tables and TT identity",
+      "learning_may_change": true
+    },
+    "L4_search": {
+      "owner": "existing NativeSearchEngine",
+      "contract": "fixed algorithm and budget within each comparison; no joint search optimization",
+      "learning_may_change": false
+    },
+    "L5_learning_meta_controller": {
+      "owner": "audit/prototype driver outside the search tree",
+      "contract": "learner, optimizer, and mutable updates never execute per node",
+      "learning_may_change": true
+    }
+  },
+  "benchmark_rulesets": [
+    {
+      "id": "A_CANONICAL_WESTERN_CHESS",
+      "label": "Canonical Western Chess",
+      "construction": "current generic_chess.rules.western_chess implementation",
+      "fingerprint_source": "compiled RuleSet fingerprint at runtime",
+      "role": "primary"
+    },
+    {
+      "id": "B_CANONICAL_STANDARD_SHOGI",
+      "label": "Canonical Standard Shogi",
+      "construction": "current generic_chess.rules.standard_shogi implementation",
+      "fingerprint_source": "compiled RuleSet fingerprint at runtime",
+      "role": "primary"
+    },
+    {
+      "id": "C_GENERATED_EVALUATION_SENSITIVE",
+      "label": "deterministic generated GenericChess evaluation-sensitive benchmark",
+      "construction": "generator board_size=6, master_seed=20260807, candidate_seeds=20260807000..20260807031, presets cycling free_random/bilateral_random/classic_like",
+      "fingerprint_source": "compiled RuleSet fingerprint at runtime",
+      "role": "primary",
+      "selection_before_learning": true,
+      "selection_rule": "screen all candidates using only checkpoint-independent structural, terminal, search-sensitivity, and Gen0 artificial-perturbation metrics; select maximum eligible evaluation leverage, tie-breaking by owner0 win rate then fingerprint",
+      "h48b_required_if_screening_is_needed": true
+    }
+  ],
+  "corpora": {
+    "training": {
+      "source": "generic self-play trajectories from the existing collect_self_play path",
+      "games_per_generation": 16,
+      "seed_formula": "4807000 + generation",
+      "epsilon": 0.10,
+      "max_depth": 12,
+      "nodes_per_move": 2000,
+      "rule_compiler": "reuse one compiled RuleSet",
+      "external_data": false
+    },
+    "teacher_holdout": {
+      "source": "deterministic generic position/opening generation from the current RuleSet implementation",
+      "position_count": 64,
+      "seed": 480701,
+      "min_plies": 2,
+      "max_plies": 6,
+      "identity_key": "generic_chess.core.identity.position_identity_key",
+      "disjoint_from_training": true,
+      "disjointness_gate": "fail the run before learning if any position identity occurs in both corpora",
+      "teacher_nodes": 20000,
+      "student_nodes": 2000,
+      "teacher_checkpoint": "fixed P48-0 checkpoint",
+      "external_data": false
+    },
+    "paired_arena": {
+      "pairs": 16,
+      "opening_seed": 480702,
+      "opening_count": 16,
+      "min_plies": 2,
+      "max_plies": 6,
+      "nodes_per_move": 1000,
+      "max_depth": 12,
+      "color_swap": true,
+      "fresh_engines": true,
+      "exploration": false,
+      "tt_isolation": "checkpoint-specific"
+    }
+  },
+  "starting_priors": [
+    {
+      "id": "P48-0",
+      "label": "RULE_DERIVED_CONTROL",
+      "definition": "existing rule-derived Generation-0 material checkpoint"
+    },
+    {
+      "id": "P48-1",
+      "label": "FLAT_MATERIAL",
+      "definition": "every non-anchor board type receives the same positive reference-median value; hand values receive the same generic transformation; anchor remains excluded/zero"
+    },
+    {
+      "id": "P48-2",
+      "label": "DETERMINISTIC_PERTURBED",
+      "definition": "type-label-invariant deterministic positive multiplicative perturbation with fixed magnitude, then median rescaled to the P48-0 reference median; board and corresponding hand channels move together"
+    },
+    {
+      "id": "P48-3",
+      "label": "CYCLIC_PERMUTED",
+      "definition": "cyclic permutation of non-anchor material values under canonical type ordering; board and corresponding hand channels move consistently; global scale preserved"
+    }
+  ],
+  "learner_variants": [
+    {
+      "id": "M48-0",
+      "label": "EXISTING_TDLEAF_CONTROL",
+      "contract": "use current TDLeaf implementation unchanged"
+    },
+    {
+      "id": "M48-1",
+      "label": "SEARCH_AWARE_MATERIAL_EVOLUTION",
+      "contract": "audit/prototype driver over LearnableMaterialCheckpoint only; fixed generic material perturbation directions; score deeper-teacher best-move agreement on training positions; deterministic tie-break by agreement, displacement, checkpoint hash",
+      "population_size": 8,
+      "elite_count": 2,
+      "offspring_count": 6,
+      "generations": 3,
+      "direction_families": ["alternating_sign", "first_half_positive", "board_hand_differential", "seeded_normalized_pseudorandom"],
+      "direction_seed": 480703,
+      "direction_l2_fraction": 0.25,
+      "human_material_target": false
+    }
+  ],
+  "fixed_compute_budget": {
+    "training_generations": [0, 1, 2, 3],
+    "training_seed": 7,
+    "tdleaf_gamma": 1.0,
+    "tdleaf_lambda": 0.7,
+    "calibration_target_l2_fraction": 0.10,
+    "calibration_max_multiplier": 200.0,
+    "search_budgets": [250, 500, 1000, 2000, 4000],
+    "teacher_nodes": 20000,
+    "student_nodes": 2000,
+    "arena_nodes_per_move": 1000,
+    "arena_pairs": 16,
+    "tt_megabytes": 8
+  },
+  "metrics": {
+    "recovery": ["initial_teacher_agreement", "teacher_agreement_by_generation", "holdout_teacher_agreement", "best_move_flip_rate", "material_vector_displacement", "arena_vs_disturbed_gen0", "arena_vs_p48_0", "search_nodes", "training_positions", "wall_clock_seconds", "first_generation_reaching_threshold"],
+    "improvement": ["same_metrics_from_p48_0_start"],
+    "strength": ["paired_wins_draws_losses", "paired_score", "bootstrap_confidence_interval"],
+    "efficiency": ["ruleset_compile_count", "rules_compile_wall_seconds", "evaluation_table_compile_wall_seconds_per_checkpoint", "engine_creation_wall_seconds", "nodes_per_second", "total_learning_wall_seconds", "non_native_learning_fraction", "semantic_analysis_inside_node_loop"]
+  },
+  "qualification": {
+    "recovery_threshold": {
+      "holdout_agreement_fraction_of_p48_0": 0.90,
+      "minimum_absolute_improvement_over_disturbed_initial": 0.05,
+      "catastrophic_arena_regression": false
+    },
+    "strength_improvement": {
+      "minimum_paired_score": 0.5,
+      "confidence_criterion": "pre-registered paired bootstrap interval excludes 0.5 on the positive side"
+    },
+    "generic_support": "architecture gates pass; no RuleSet-specific branch/value; at least two primary RuleSets recover; holdout improves; paired arenas improve; no catastrophic regression; finite node and wall budgets reported"
+  },
+  "efficiency_gates": [
+    "native rules compile once per RuleSet per run",
+    "material checkpoint changes do not rebuild rule semantics",
+    "no rule compiler call from the node loop",
+    "no learner callback from the node loop",
+    "native material lookup remains table-based",
+    "checkpoint changes cannot share TT score semantics with a different evaluation config"
+  ],
+  "classification_mapping": {
+    "TDLEAF_MATERIAL_RECOVERY_SUPPORTED": "F49_LEARNABLE_MATERIAL_CALIBRATION_INTEGRATION",
+    "SEARCH_AWARE_MATERIAL_EVOLUTION_SUPPORTED": "F49_SEARCH_AWARE_CALIBRATION_INTEGRATION",
+    "COLD_START_RECOVERY_SUPPORTED": "F49_COLD_START_LEARNING_PIPELINE",
+    "LEARNING_DIRECTION_FAILURE": "F49_GENERIC_LEARNER_REDESIGN",
+    "MATERIAL_ONLY_LEVERAGE_INSUFFICIENT": "F49_EVALUATION_FEATURE_EXPANSION_DIAGNOSIS",
+    "SEARCH_ENGINE_LIMITS_LEARNING": "F49_NATIVE_SEARCH_STRENGTH_REASSESSMENT",
+    "MIXED_OR_UNRESOLVED": "F49_LEARNING_ARCHITECTURE_REASSESSMENT"
+  },
+  "prohibitions": {
+    "production_learning_integration": true,
+    "new_static_material_feature_family": true,
+    "human_piece_value_fitting": true,
+    "game_name_or_piece_name_branching": true,
+    "rule_or_compiler_semantics_change": true,
+    "production_evaluator_default_change": true,
+    "production_search_default_change": true,
+    "dynamic_mobility_promotion_anchor_training": true,
+    "search_tuning_training": true,
+    "qsearch_lmr_see_null_move_implementation": true,
+    "second_rule_compiler": true,
+    "alphasho_teacher": true,
+    "fabricated_external_dataset": true,
+    "f49_execution": true,
+    "master_promotion": true
+  },
+  "result_policy": {
+    "observed_results_in_h48a": false,
+    "benchmark_selection_uses_learned_checkpoints": false,
+    "human_values_used_by_learner": false,
+    "h48b_before_training_if_generated_selection_needed": true
+  },
+  "manifest_sha256": "684e33d261e08b89b74187e3b7fbcc02e514148869366dafcb155aa459214490"
+}
