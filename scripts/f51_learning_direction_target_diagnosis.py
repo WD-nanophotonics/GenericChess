@@ -1,9 +1,10 @@
 """F51 TD-direction and teacher-target diagnosis.
 
-This experiment freezes the F50 semantic evaluator/search and uses the
-accepted F49 80k-node results as a fixed teacher.  It measures normalized
-versions of the actual TD direction and a small positive/negative dynamic
-finite-difference surface; no engine or learner infrastructure is changed.
+This experiment freezes the F50 semantic evaluator/search and five-block
+representation.  It builds a fixed teacher from the current v2 parent at
+deeper budgets, then measures raw and block-preconditioned versions of the
+actual TD direction plus a small positive/negative dynamic finite-difference
+surface; no engine or learner infrastructure is changed.
 """
 
 from __future__ import annotations
@@ -37,11 +38,23 @@ AMPLITUDES = (0.005, 0.01, 0.02, 0.05, 0.10)
 DYNAMIC_NAMES = ("mobility", "promotion_potential", "anchor_safety")
 
 
-def _teacher(label: str, limit: int) -> list[dict]:
-    raw = json.loads(BUNDLE.read_text(encoding="utf-8"))
-    rows = raw["observations"][label]["S49-M"]["results"]["80000"]
+def _teacher_rows(label: str, parent, limit: int, nodes: int) -> list[dict]:
+    compiled, native, _profile = _ruleset(label)
     records = _records(label, limit)
-    return [rows[int(record["output_index"])] for record in records]
+
+    def run(record):
+        row = _case(compiled, native, record, parent, nodes)
+        return {"action_key": _action_key(row["action"]), "score": row["score"]}
+
+    workers = min(8, max(1, os.cpu_count() or 1), len(records) or 1)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        return list(pool.map(run, records))
+
+
+def _agreement(left: list[dict], right: list[dict]) -> float:
+    if not left:
+        return 0.0
+    return sum(_action_key(a["action_key"]) == _action_key(b["action_key"]) for a, b in zip(left, right)) / len(left)
 
 
 def _blocks(checkpoint) -> dict[str, dict[str, float]]:
@@ -85,6 +98,29 @@ def _scaled_direction_checkpoint(parent, direction, fraction):
         hand_weights=updated["hand"],
         dynamic_weights=updated["dynamic"],
         training_config_hash=f"F51:td-direction:{fraction}",
+        training_seed=None,
+    )
+
+
+def _raw_scaled_direction_checkpoint(parent, direction, fraction):
+    """Apply one scalar in the complete, un-preconditioned parameter space."""
+    base = _blocks(parent)
+    base_norm = math.sqrt(sum(_block_norm(base[block]) ** 2 for block in BLOCKS))
+    direction_norm = math.sqrt(sum(_block_norm(direction[block]) ** 2 for block in BLOCKS))
+    multiplier = fraction * base_norm / direction_norm if base_norm > 0.0 and direction_norm > 0.0 else 0.0
+    updated = {
+        block: {
+            key: base[block].get(key, 0.0) + multiplier * value
+            for key, value in direction[block].items()
+        }
+        for block in BLOCKS
+    }
+    return replace(
+        parent,
+        board_weights=updated["board"],
+        hand_weights=updated["hand"],
+        dynamic_weights=updated["dynamic"],
+        training_config_hash=f"F51:td-raw-direction:{fraction}",
         training_seed=None,
     )
 
@@ -184,18 +220,41 @@ def _run_label(label: str, games: int, limit: int, nodes: int) -> dict:
         training_config_hash=stable_sha256({"stage": "F51", "label": label}),
         training_seed=4807000,
     )
-    teacher_rows = _teacher(label, limit)
     direction = _direction(parent, child)
+    effective = _native_delta(compiled, native, parent, child)
+    teacher_surfaces = {}
+    for budget in (20000, 40000, 80000):
+        teacher_surfaces[str(budget)] = _teacher_rows(label, parent, limit, budget)
+    teacher_stability = {
+        "20k_vs_40k": _agreement(teacher_surfaces["20000"], teacher_surfaces["40000"]),
+        "40k_vs_80k": _agreement(teacher_surfaces["40000"], teacher_surfaces["80000"]),
+        "stable_threshold": 0.80,
+    }
+    teacher_rows = teacher_surfaces["80000"]
+    if teacher_stability["40k_vs_80k"] < teacher_stability["stable_threshold"]:
+        return {
+            "label": label,
+            "classification": "TEACHER_UNSTABLE",
+            "teacher_stability": teacher_stability,
+            "actual_child_native_delta": effective,
+            "floating_td_direction": direction,
+        }
     natural_child_comparison = _compare(label, parent, child, teacher_rows, limit, nodes)
     parent_comparison = _compare(label, parent, parent, teacher_rows, limit, nodes)
-    effective = _native_delta(compiled, native, parent, child)
-    td_amplitudes = []
+    raw_td_amplitudes = []
+    block_td_amplitudes = []
     for fraction in AMPLITUDES:
-        candidate = _scaled_direction_checkpoint(parent, direction, fraction)
-        td_amplitudes.append({
+        raw_candidate = _raw_scaled_direction_checkpoint(parent, direction, fraction)
+        block_candidate = _scaled_direction_checkpoint(parent, direction, fraction)
+        raw_td_amplitudes.append({
+            "amplitude_fraction_of_full_norm": fraction,
+            "native_bound_delta": _native_delta(compiled, native, parent, raw_candidate),
+            "comparison": _compare(label, parent, raw_candidate, teacher_rows, limit, nodes),
+        })
+        block_td_amplitudes.append({
             "amplitude_fraction_of_block_norm": fraction,
-            "native_bound_delta": _native_delta(compiled, native, parent, candidate),
-            "comparison": _compare(label, parent, candidate, teacher_rows, limit, nodes),
+            "native_bound_delta": _native_delta(compiled, native, parent, block_candidate),
+            "comparison": _compare(label, parent, block_candidate, teacher_rows, limit, nodes),
         })
     finite = []
     finite_jobs = [(name, sign, fraction) for name in DYNAMIC_NAMES for sign in (-1, 1) for fraction in (0.01, 0.05, 0.10)]
@@ -216,13 +275,15 @@ def _run_label(label: str, games: int, limit: int, nodes: int) -> dict:
     best = max(finite, key=lambda row: (row["comparison"]["teacher_best_move_agreement"], row["comparison"]["teacher_score_ranking_agreement"] or -1.0))
     td_dynamic = [direction["dynamic"].get(name, 0.0) for name in DYNAMIC_NAMES]
     teacher_dynamic = [best["sign"] * best["fraction_of_dynamic_norm"] * _block_norm(parent.dynamic_weights) if name == best["feature"] else 0.0 for name in DYNAMIC_NAMES]
-    best_td = max(td_amplitudes, key=lambda row: row["comparison"]["teacher_best_move_agreement"])
+    best_raw = max(raw_td_amplitudes, key=lambda row: row["comparison"]["teacher_best_move_agreement"])
+    best_block = max(block_td_amplitudes, key=lambda row: row["comparison"]["teacher_best_move_agreement"])
     parent_agreement = parent_comparison["teacher_best_move_agreement"]
     best_agreement = best["comparison"]["teacher_best_move_agreement"]
-    best_td_agreement = best_td["comparison"]["teacher_best_move_agreement"]
+    best_raw_agreement = best_raw["comparison"]["teacher_best_move_agreement"]
+    best_block_agreement = best_block["comparison"]["teacher_best_move_agreement"]
     if natural_child_comparison["teacher_best_move_agreement"] > parent_agreement + 0.01:
         classification = "POSITIVE_LEARNED_CHILD_SIGNAL"
-    elif best_td_agreement > parent_agreement + 0.01:
+    elif best_raw_agreement > parent_agreement + 0.01 or best_block_agreement > parent_agreement + 0.01:
         classification = "TD_DIRECTION_GOOD_STEP_TOO_SMALL"
     elif best_agreement > parent_agreement + 0.01:
         classification = "TD_DIRECTION_GOOD_STEP_TOO_SMALL" if (_cosine(td_dynamic, teacher_dynamic) or -1.0) > 0.5 else "TD_TARGET_OR_CREDIT_ASSIGNMENT_MISALIGNED"
@@ -238,9 +299,11 @@ def _run_label(label: str, games: int, limit: int, nodes: int) -> dict:
         "td_mean_abs_error": td.mean_abs_td_error,
         "floating_td_direction": direction,
         "actual_child_native_delta": effective,
+        "teacher_stability": teacher_stability,
         "parent_teacher_comparison": parent_comparison,
         "natural_child_teacher_comparison": natural_child_comparison,
-        "normalized_td_amplitudes": td_amplitudes,
+        "raw_td_amplitudes": raw_td_amplitudes,
+        "block_preconditioned_td_amplitudes": block_td_amplitudes,
         "dynamic_finite_difference": finite,
         "best_local_teacher_direction": best,
         "td_dynamic_teacher_direction_cosine": _cosine(td_dynamic, teacher_dynamic),
@@ -248,7 +311,7 @@ def _run_label(label: str, games: int, limit: int, nodes: int) -> dict:
 
 
 def _natural_only(label: str, previous: dict, limit: int, nodes: int) -> dict:
-    compiled, _native, profile = _ruleset(label)
+    compiled, native, profile = _ruleset(label)
     parent = LearnableMaterialCheckpoint.from_profile(
         compiled, profile, training_seed=4807000, dynamic_weights=dict(WEIGHTS)
     )
@@ -260,11 +323,12 @@ def _natural_only(label: str, previous: dict, limit: int, nodes: int) -> dict:
         hand_weights={key: base["hand"].get(key, 0.0) + value for key, value in direction["hand"].items()},
         dynamic_weights={key: base["dynamic"].get(key, 0.0) + value for key, value in direction["dynamic"].items()},
     )
+    teacher_rows = _teacher_rows(label, parent, limit, 80000)
     return {
         "label": label,
-        "parent_teacher_comparison": _compare(label, parent, parent, _teacher(label, limit), limit, nodes),
-        "natural_child_teacher_comparison": _compare(label, parent, child, _teacher(label, limit), limit, nodes),
-        "native_delta": _native_delta(compiled, _ruleset(label)[1], parent, child),
+        "parent_teacher_comparison": _compare(label, parent, parent, teacher_rows, limit, nodes),
+        "natural_child_teacher_comparison": _compare(label, parent, child, teacher_rows, limit, nodes),
+        "native_delta": _native_delta(compiled, native, parent, child),
     }
 
 

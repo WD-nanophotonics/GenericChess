@@ -11,6 +11,7 @@ from f51_learning_direction_target_diagnosis import (
     _action_key,
     _cosine,
     _direction,
+    _raw_scaled_direction_checkpoint,
     _scaled_direction_checkpoint,
 )
 from generic_chess.ai.evaluation.config import EvaluationConfig
@@ -39,6 +40,22 @@ def test_td_direction_is_scaled_by_block_norm_not_tiny_natural_step():
     expected_norm = 0.05 * sum(value * value for value in parent.dynamic_weights.values()) ** 0.5
     assert abs(actual_norm - expected_norm) < 1e-12
     assert actual_norm > sum(value * value for value in direction["dynamic"].values()) ** 0.5
+
+
+def test_raw_and_block_preconditioned_amplitudes_are_distinct_contracts():
+    parent = _parent()
+    child = replace(parent, dynamic_weights={
+        key: parent.dynamic_weights[key] + delta
+        for key, delta in (("mobility", -0.002), ("promotion_potential", 0.0001), ("anchor_safety", -0.0008))
+    })
+    direction = _direction(parent, child)
+    raw = _raw_scaled_direction_checkpoint(parent, direction, 0.05)
+    block = _scaled_direction_checkpoint(parent, direction, 0.05)
+    raw_delta = tuple(raw.dynamic_weights[name] - parent.dynamic_weights[name] for name in WEIGHTS)
+    block_delta = tuple(block.dynamic_weights[name] - parent.dynamic_weights[name] for name in WEIGHTS)
+    assert raw_delta != block_delta
+    assert abs(sum(value * value for value in raw_delta) ** 0.5) > 0.0
+    assert abs(sum(value * value for value in block_delta) ** 0.5) > 0.0
 
 
 def test_cosine_reports_alignment_and_zero_vectors_as_none():
