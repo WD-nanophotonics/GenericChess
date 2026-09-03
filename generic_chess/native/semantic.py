@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
+import hashlib
+import json
 
 from ..core.actions import SemanticBoardMove, SemanticDropMove
 from ..core.coordinates import Square, index_to_square
@@ -303,3 +305,74 @@ def probe_search(native_rules, position, depth: int, *, board_values=None, hand_
     if not native_available():
         raise RuntimeError("native extension is not built")
     return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_probe_search")
+
+
+def semantic_iterative_search(
+    native_rules,
+    position,
+    max_depth: int,
+    *,
+    max_nodes: int | None = None,
+    max_time_seconds: float | None = None,
+    cancel_token=None,
+    board_values=None,
+    hand_values=None,
+) -> dict:
+    """Run deterministic no-TT iterative search on a semantic position.
+
+    The Native entrypoint owns the recursive semantic state stack and checks
+    node, monotonic-time, and cooperative-cancellation budgets.  Evaluator
+    tables are an immutable call binding; they are not part of the RuleSet
+    fingerprint and may be changed between searches.
+    """
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    if (board_values is None) != (hand_values is None):
+        raise ValueError("board_values and hand_values must be supplied together")
+    expected = tuple(native_rules.type_ids)
+    if isinstance(board_values, Mapping) or isinstance(hand_values, Mapping):
+        if not isinstance(board_values, Mapping) or not isinstance(hand_values, Mapping):
+            raise ValueError("board_values and hand_values must use the same profile form")
+        if set(board_values) != set(expected) or set(hand_values) != set(expected):
+            raise ValueError("semantic evaluator profile must cover exactly native type IDs")
+        board_values = tuple(int(board_values[type_id]) for type_id in expected)
+        hand_values = tuple(int(hand_values[type_id]) for type_id in expected)
+    if board_values is not None:
+        board_values = tuple(int(value) for value in board_values)
+        hand_values = tuple(int(value) for value in hand_values)
+    flag = None
+    unregister = None
+    if cancel_token is not None:
+        flag = _module().create_cancel_flag()
+        unregister = cancel_token.register_callback(lambda: _module().request_cancel(flag))
+    try:
+        raw = dict(_module().semantic_iterative_search(
+            native_rules.capsule,
+            position,
+            int(max_depth),
+            None if max_nodes is None else int(max_nodes),
+            None if max_time_seconds is None else float(max_time_seconds),
+            flag,
+            board_values,
+            hand_values,
+        ))
+    finally:
+        if unregister is not None:
+            unregister()
+    raw["best_action"] = None if raw.get("best_action") is None else int(raw["best_action"])
+    raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
+    for key in ("score", "nodes", "completed_depth", "selective_depth", "qnodes", "elapsed_nanoseconds", "legal_generation_count", "transition_count", "beta_cutoffs", "tt_probes", "tt_hits", "tt_stores", "tt_cutoffs"):
+        raw[key] = int(raw.get(key, 0))
+    raw["used_fallback"] = bool(raw.get("used_fallback", False))
+    raw["elapsed_seconds"] = raw["elapsed_nanoseconds"] / 1e9
+    raw["ruleset_fingerprint"] = str(native_rules.fingerprint)
+    raw["tt_status"] = "NOT_STARTED"
+    raw["evaluator_config_hash"] = hashlib.sha256(json.dumps({
+        "ruleset_fingerprint": native_rules.fingerprint,
+        "board_values": board_values,
+        "hand_values": hand_values,
+    }, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+    return raw
+
+
+iterative_search = semantic_iterative_search

@@ -102,6 +102,13 @@ def __getattr__(name: str):
             "NativeSearchEngine": NativeSearchEngine,
             "NativeIterativeSearchResult": NativeIterativeSearchResult,
         }[name]
+    if name in ("semantic_iterative_search", "iterative_search"):
+        from .semantic import iterative_search, semantic_iterative_search
+
+        return {
+            "semantic_iterative_search": semantic_iterative_search,
+            "iterative_search": iterative_search,
+        }[name]
     if name in (
         "NativeSemanticCompilationReport",
         "NativeSemanticCompiledRules",

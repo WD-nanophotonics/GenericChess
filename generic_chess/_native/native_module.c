@@ -3440,6 +3440,334 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     return out;
 }
 
+typedef struct {
+    const GCSemanticRules *rules;
+    GCSemanticProbeProfile profile;
+    GCSemanticPosition *stack;
+    uint64_t *pv_table;
+    uint16_t *pv_length;
+    uint32_t max_depth;
+    uint32_t pv_stride;
+    uint64_t nodes;
+    uint64_t max_nodes;
+    uint64_t deadline_ns;
+    uint64_t last_time_check_nodes;
+    GCCancelFlag *cancel;
+    int control; /* 0 continue, 1 node, 2 time, 3 cancellation, 4 error */
+    uint32_t selective_depth;
+    uint64_t legal_generation_count;
+    uint64_t transition_count;
+    uint64_t beta_cutoffs;
+} GCSemanticIterativeContext;
+
+static int gc_semantic_iterative_check_budget(GCSemanticIterativeContext *ctx,
+                                               int force) {
+    if (ctx->cancel != NULL && gc_cancel_flag_is_requested(ctx->cancel)) {
+        ctx->control = 3;
+        return 0;
+    }
+    if (ctx->max_nodes != UINT64_MAX && ctx->nodes >= ctx->max_nodes) {
+        ctx->control = 1;
+        return 0;
+    }
+    if (ctx->deadline_ns != UINT64_MAX &&
+        (force || ctx->nodes >= ctx->last_time_check_nodes + 128)) {
+        ctx->last_time_check_nodes = ctx->nodes;
+        if (gc_monotonic_ns() >= ctx->deadline_ns) {
+            ctx->control = 2;
+            return 0;
+        }
+    }
+    return 1;
+}
+
+static int gc_semantic_iterative_terminal_score(int terminal, int ply) {
+    if (terminal == 1) return -100000000 + ply;
+    return 0;
+}
+
+static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
+                                         uint32_t ply, uint32_t depth,
+                                         int alpha, int beta) {
+    if (!gc_semantic_iterative_check_budget(ctx, 0)) return 0;
+    ctx->nodes++;
+    if (ply > ctx->selective_depth) ctx->selective_depth = ply;
+    ctx->pv_length[ply] = 0;
+
+    GCSemanticPosition *position = &ctx->stack[ply];
+    int winner = -1;
+    int terminal = gc_semantic_terminal_status(ctx->rules, position, &winner);
+    if (terminal < 0) {
+        ctx->control = 4;
+        return 0;
+    }
+    if (terminal != 0) return gc_semantic_iterative_terminal_score(terminal, (int)ply);
+    if (depth == 0) return gc_semantic_probe_material(ctx->rules, position, &ctx->profile);
+
+    GCSemanticActionBuffer actions;
+    gc_semantic_action_buffer_init(&actions);
+    if (!gc_semantic_generate_candidate_buffer(ctx->rules, position, &actions)) {
+        gc_semantic_action_buffer_free(&actions);
+        ctx->control = 4;
+        return 0;
+    }
+    ctx->legal_generation_count++;
+    int best = -GC_SEMANTIC_PROBE_INF;
+    uint64_t best_action = 0;
+    int found = 0;
+    size_t i;
+    for (i = 0; i < actions.count; i++) {
+        if (!gc_semantic_iterative_check_budget(ctx, 1)) break;
+        GCSemanticPosition *child = &ctx->stack[ply + 1];
+        uint64_t action = actions.data[i];
+        if (!gc_semantic_runtime_make_checked(child, ctx->rules, position, action)) continue;
+        ctx->transition_count++;
+        int branch = gc_semantic_iterative_negamax(ctx, ply + 1, depth - 1,
+                                                   -beta, -alpha);
+        if (ctx->control != 0) break;
+        int score = -branch;
+        if (!found || score > best || (score == best && action < best_action)) {
+            found = 1;
+            best = score;
+            best_action = action;
+            ctx->pv_table[(size_t)ply * ctx->pv_stride] = action;
+            uint16_t child_len = ctx->pv_length[ply + 1];
+            ctx->pv_length[ply] = (uint16_t)(1 + child_len);
+            if (child_len > 0) {
+                memcpy(&ctx->pv_table[(size_t)ply * ctx->pv_stride + 1],
+                       &ctx->pv_table[(size_t)(ply + 1) * ctx->pv_stride],
+                       sizeof(uint64_t) * child_len);
+            }
+        }
+        if (score > alpha) alpha = score;
+        if (alpha >= beta) {
+            ctx->beta_cutoffs++;
+            break;
+        }
+    }
+    gc_semantic_action_buffer_free(&actions);
+    if (ctx->control != 0) return 0;
+    return found ? best : 0;
+}
+
+static int gc_semantic_iterative_fallback(GCSemanticIterativeContext *ctx,
+                                          uint64_t *action_out) {
+    GCSemanticActionBuffer actions;
+    gc_semantic_action_buffer_init(&actions);
+    if (!gc_semantic_generate_candidate_buffer(ctx->rules, &ctx->stack[0], &actions)) {
+        gc_semantic_action_buffer_free(&actions);
+        return 0;
+    }
+    uint64_t best = 0;
+    int found = 0;
+    size_t i;
+    for (i = 0; i < actions.count; i++) {
+        if (gc_semantic_runtime_make_checked(&ctx->stack[1], ctx->rules,
+                                             &ctx->stack[0], actions.data[i])) {
+            if (!found || actions.data[i] < best) {
+                best = actions.data[i];
+                found = 1;
+            }
+        }
+    }
+    gc_semantic_action_buffer_free(&actions);
+    if (found && action_out != NULL) *action_out = best;
+    return found;
+}
+
+static int gc_semantic_parse_profile(PyObject *board_values,
+                                     PyObject *hand_values,
+                                     const GCSemanticRules *rules,
+                                     GCSemanticProbeProfile *profile) {
+    memset(profile, 0, sizeof(*profile));
+    if (board_values == Py_None) board_values = NULL;
+    if (hand_values == Py_None) hand_values = NULL;
+    if ((board_values == NULL) != (hand_values == NULL)) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic evaluator board/hand profile must be supplied together");
+        return 0;
+    }
+    if (board_values == NULL) return 1;
+    if ((!PyList_Check(board_values) && !PyTuple_Check(board_values)) ||
+        (!PyList_Check(hand_values) && !PyTuple_Check(hand_values)) ||
+        PySequence_Size(board_values) != rules->type_count ||
+        PySequence_Size(hand_values) != rules->type_count) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic evaluator profile length must match type_count");
+        return 0;
+    }
+    for (uint16_t type = 0; type < rules->type_count; type++) {
+        PyObject *bv = PySequence_GetItem(board_values, type);
+        PyObject *hv = PySequence_GetItem(hand_values, type);
+        long b = PyLong_AsLong(bv), h = PyLong_AsLong(hv);
+        Py_DECREF(bv); Py_DECREF(hv);
+        if (PyErr_Occurred() || b < -1000000 || b > 1000000 ||
+            h < -1000000 || h > 1000000) {
+            PyErr_SetString(PyExc_ValueError,
+                            "semantic evaluator values must be bounded integers");
+            return 0;
+        }
+        profile->board[type] = (int)b;
+        profile->hand[type] = (int)h;
+    }
+    profile->supplied = 1;
+    return 1;
+}
+
+static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule;
+    PyObject *max_nodes_obj = Py_None, *max_time_obj = Py_None;
+    PyObject *cancel_capsule = Py_None, *board_values = NULL, *hand_values = NULL;
+    unsigned int max_depth;
+    if (!PyArg_ParseTuple(args, "OOI|OOOOO", &rules_capsule, &position_capsule,
+                          &max_depth, &max_nodes_obj, &max_time_obj,
+                          &cancel_capsule, &board_values, &hand_values)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
+        position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (max_depth > GC_SEM_MAX_PLY) {
+        PyErr_SetString(PyExc_ValueError, "semantic max_depth exceeds GC_SEM_MAX_PLY");
+        return NULL;
+    }
+    if (!gc_semantic_require_matching_rules(rules, position) ||
+        !gc_semantic_require_exact_history(position)) return NULL;
+    GCSemanticProbeProfile profile;
+    if (!gc_semantic_parse_profile(board_values, hand_values, rules, &profile)) return NULL;
+    GCCancelFlag *cancel = NULL;
+    if (cancel_capsule != Py_None) {
+        cancel = gc_get_cancel(cancel_capsule);
+        if (!cancel) return NULL;
+    }
+    uint64_t max_nodes = UINT64_MAX;
+    if (max_nodes_obj != Py_None) {
+        long long value = PyLong_AsLongLong(max_nodes_obj);
+        if (value == -1 && PyErr_Occurred()) return NULL;
+        if (value < 0) {
+            PyErr_SetString(PyExc_ValueError, "semantic max_nodes must be >= 0");
+            return NULL;
+        }
+        max_nodes = (uint64_t)value;
+    }
+    uint64_t max_time_ns = UINT64_MAX;
+    if (max_time_obj != Py_None) {
+        double seconds = PyFloat_AsDouble(max_time_obj);
+        if (PyErr_Occurred() || seconds < 0 || seconds != seconds || seconds > 1e12) {
+            PyErr_SetString(PyExc_ValueError,
+                            "semantic max_time_seconds must be finite and non-negative");
+            return NULL;
+        }
+        max_time_ns = (uint64_t)(seconds * 1e9);
+    }
+    GCSemanticIterativeContext ctx;
+    memset(&ctx, 0, sizeof(ctx));
+    ctx.rules = rules;
+    ctx.profile = profile;
+    ctx.max_depth = max_depth;
+    ctx.pv_stride = max_depth + 1;
+    ctx.max_nodes = max_nodes;
+    ctx.cancel = cancel;
+    ctx.deadline_ns = max_time_ns == UINT64_MAX
+        ? UINT64_MAX : gc_deadline_after(gc_monotonic_ns(), max_time_ns);
+    /* Keep one spare semantic position for the deterministic root fallback. */
+    size_t levels = (size_t)max_depth + 2;
+    size_t position_bytes = 0, pv_bytes = 0, length_bytes = 0;
+    if (!gc_checked_size_mul(levels, sizeof(GCSemanticPosition), &position_bytes) ||
+        !gc_checked_size_mul(levels, levels, &pv_bytes) ||
+        !gc_checked_size_mul(pv_bytes, sizeof(uint64_t), &pv_bytes) ||
+        !gc_checked_size_mul(levels, sizeof(uint16_t), &length_bytes)) {
+        PyErr_SetString(PyExc_OverflowError, "semantic search state size overflow");
+        return NULL;
+    }
+    ctx.stack = (GCSemanticPosition *)calloc(1, position_bytes);
+    ctx.pv_table = (uint64_t *)calloc(1, pv_bytes);
+    ctx.pv_length = (uint16_t *)calloc(1, length_bytes);
+    if (!ctx.stack || !ctx.pv_table || !ctx.pv_length) {
+        free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
+        PyErr_NoMemory();
+        return NULL;
+    }
+    memcpy(&ctx.stack[0], position, sizeof(GCSemanticPosition));
+    uint64_t completed_pv[GC_SEM_MAX_PLY + 1];
+    uint16_t completed_len = 0;
+    uint64_t completed_action = 0;
+    int completed_has_action = 0;
+    int completed_score = 0;
+    uint32_t completed_depth = 0;
+    int used_fallback = 0;
+    uint64_t start_ns = gc_monotonic_ns();
+    Py_BEGIN_ALLOW_THREADS
+    for (uint32_t depth = 1; depth <= max_depth; depth++) {
+        if (!gc_semantic_iterative_check_budget(&ctx, 1)) break;
+        int score = gc_semantic_iterative_negamax(&ctx, 0, depth,
+                                                  -GC_SEMANTIC_PROBE_INF,
+                                                  GC_SEMANTIC_PROBE_INF);
+        if (ctx.control != 0) break;
+        completed_score = score;
+        completed_depth = depth;
+        completed_len = ctx.pv_length[0];
+        completed_has_action = completed_len > 0;
+        completed_action = completed_has_action ? ctx.pv_table[0] : 0;
+        if (completed_len > GC_SEM_MAX_PLY + 1) completed_len = GC_SEM_MAX_PLY + 1;
+        memcpy(completed_pv, ctx.pv_table,
+               sizeof(uint64_t) * completed_len);
+    }
+    if (!completed_has_action) {
+        uint64_t fallback = 0;
+        if (gc_semantic_iterative_fallback(&ctx, &fallback)) {
+            completed_action = fallback;
+            completed_has_action = 1;
+            used_fallback = 1;
+        }
+    }
+    Py_END_ALLOW_THREADS
+    const char *reason = "completed";
+    if (ctx.control == 1) reason = "node_budget";
+    else if (ctx.control == 2) reason = "time_budget";
+    else if (ctx.control == 3) reason = "cancelled";
+    else if (ctx.control == 4) reason = "internal_error";
+    uint64_t elapsed_ns = gc_monotonic_ns() - start_ns;
+    PyObject *pv = PyTuple_New((Py_ssize_t)completed_len);
+    if (!pv) { free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length); return NULL; }
+    for (uint16_t i = 0; i < completed_len; i++) {
+        PyObject *value = PyLong_FromUnsignedLongLong(completed_pv[i]);
+        if (!value) { Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length); return NULL; }
+        PyTuple_SET_ITEM(pv, (Py_ssize_t)i, value);
+    }
+    PyObject *best_action_obj = completed_has_action
+        ? PyLong_FromUnsignedLongLong(completed_action) : Py_NewRef(Py_None);
+    if (!best_action_obj) {
+        Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
+        return NULL;
+    }
+    PyObject *out = Py_BuildValue(
+        "{s:i,s:O,s:K,s:I,s:I,s:O,s:K,s:K,s:K,s:K,s:K,s:s,s:i,s:i,s:K,s:K,s:K}",
+        "score", completed_score,
+        "best_action", best_action_obj,
+        "nodes", ctx.nodes,
+        "completed_depth", completed_depth,
+        "selective_depth", ctx.selective_depth,
+        "principal_variation", pv,
+        "elapsed_nanoseconds", elapsed_ns,
+        "legal_generation_count", ctx.legal_generation_count,
+        "transition_count", ctx.transition_count,
+        "beta_cutoffs", ctx.beta_cutoffs,
+        "qnodes", (uint64_t)0,
+        "termination_reason", reason,
+        "used_fallback", used_fallback,
+        "tt_probes", 0,
+        "tt_hits", (uint64_t)0,
+        "tt_stores", (uint64_t)0,
+        "tt_cutoffs", (uint64_t)0);
+    Py_DECREF(best_action_obj);
+    Py_DECREF(pv);
+    free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
+    if (!out) return NULL;
+    return out;
+}
+
 static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *position_capsule;
@@ -3622,6 +3950,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,
      "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
+    {"semantic_iterative_search", gc_semantic_iterative_search, METH_VARARGS,
+     "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values]) -> no-TT iterative result"},
     {"semantic_fixed_depth_search", gc_semantic_probe_search, METH_VARARGS,
      "semantic_fixed_depth_search(rules, position, depth[, board_values, hand_values]) -> fixed-depth semantic AlphaBeta"},
     {NULL, NULL, 0, NULL}
