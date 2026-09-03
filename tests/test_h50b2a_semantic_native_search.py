@@ -287,3 +287,36 @@ def test_root_parallel_preserves_deeper_terminal_score_parity():
     assert (parallel["score"], parallel["best_action"], parallel["principal_variation"]) == (
         reference["score"], reference["best_action"], reference["principal_variation"],
     )
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_semantic_tt_preserves_result_and_reuses_iterative_work():
+    semantic, native, position = _semantic_mate()
+    baseline = semantic_iterative_search(native, position, 3)
+    with_tt = semantic_iterative_search(native, position, 3, tt_megabytes=1)
+    assert (with_tt["score"], with_tt["best_action"], with_tt["principal_variation"]) == (
+        baseline["score"], baseline["best_action"], baseline["principal_variation"],
+    )
+    assert with_tt["score"] == 99_999_999
+    assert with_tt["tt_status"] == "ENABLED"
+    assert with_tt["tt_probes"] > 0
+    assert with_tt["tt_stores"] > 0
+    assert with_tt["tt_hits"] > 0
+    assert with_tt["tt_previous_iteration_hits"] > 0
+    assert with_tt["tt_allocated_bytes"] > 0
+    assert with_tt["tt_entry_bytes"] > 0
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_semantic_tt_keeps_history_sensitive_terminal_behavior():
+    semantic, native = _declaration_free_shogi()
+    fresh = _pack_initial(semantic, native)
+    words = snapshot(native, fresh)["history"][0]
+    repetition = _pack_initial(semantic, native, history=(
+        (*words, 255, 0), (*words, 0, 0), (*words, 1, 0), (*words, 0, 0),
+    ))
+    baseline = semantic_iterative_search(native, repetition, 2)
+    with_tt = semantic_iterative_search(native, repetition, 2, tt_megabytes=1)
+    assert terminal_status(native, repetition)["status"] == "repetition"
+    assert with_tt["score"] == baseline["score"] == 0
+    assert with_tt["best_action"] == baseline["best_action"] is None

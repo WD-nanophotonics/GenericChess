@@ -329,6 +329,7 @@ def semantic_iterative_search(
     board_values=None,
     hand_values=None,
     _root_ply_offset: int = 0,
+    tt_megabytes: int = 0,
 ) -> dict:
     """Run deterministic no-TT iterative search on a semantic position.
 
@@ -341,6 +342,8 @@ def semantic_iterative_search(
         raise RuntimeError("native extension is not built")
     if _root_ply_offset not in (0, 1):
         raise ValueError("_root_ply_offset must be 0 or 1")
+    if isinstance(tt_megabytes, bool) or not isinstance(tt_megabytes, int) or not 0 <= tt_megabytes <= 1024:
+        raise ValueError("tt_megabytes must be an integer in [0, 1024]")
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     expected = tuple(native_rules.type_ids)
@@ -370,18 +373,19 @@ def semantic_iterative_search(
             board_values,
             hand_values,
             int(_root_ply_offset),
+            int(tt_megabytes),
         ))
     finally:
         if unregister is not None:
             unregister()
     raw["best_action"] = None if raw.get("best_action") is None else int(raw["best_action"])
     raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
-    for key in ("score", "nodes", "completed_depth", "selective_depth", "qnodes", "elapsed_nanoseconds", "legal_generation_count", "transition_count", "beta_cutoffs", "tt_probes", "tt_hits", "tt_stores", "tt_cutoffs"):
+    for key in ("score", "nodes", "completed_depth", "selective_depth", "qnodes", "elapsed_nanoseconds", "legal_generation_count", "transition_count", "beta_cutoffs", "tt_probes", "tt_hits", "tt_exact_hits", "tt_stores", "tt_replacements", "tt_collisions", "tt_cutoffs", "tt_previous_iteration_hits", "tt_current_iteration_hits", "tt_allocated_bytes", "tt_occupied_entries", "tt_entry_bytes"):
         raw[key] = int(raw.get(key, 0))
     raw["used_fallback"] = bool(raw.get("used_fallback", False))
+    raw["tt_status"] = "ENABLED" if tt_megabytes else "NOT_STARTED"
     raw["elapsed_seconds"] = raw["elapsed_nanoseconds"] / 1e9
     raw["ruleset_fingerprint"] = str(native_rules.fingerprint)
-    raw["tt_status"] = "NOT_STARTED"
     raw["evaluator_config_hash"] = hashlib.sha256(json.dumps({
         "ruleset_fingerprint": native_rules.fingerprint,
         "board_values": board_values,
