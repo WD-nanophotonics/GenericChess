@@ -32,14 +32,14 @@ null move, LMR, quiescence, or heuristic ordering is enabled.
 
 Exact full history is required by the semantic position capsule. Terminal
 evaluation delegates to the existing semantic terminal policy, including
-repetition, max-ply, no-contest, and continuous-check adjudication where the
-compiled payload supports it. Declaration-bearing rulesets remain behind the
-existing Native compilation capability gate; the search does not invent a
-second declaration or game-specific path.
+winner-aware checkmate and continuous-check adjudication plus neutral
+repetition, max-ply, and no-contest outcomes. Declaration-bearing rulesets are
+explicitly rejected by this no-TT action-only entrypoint; declaration-aware
+search remains a later capability rather than a silent second action model.
 
 ## Resource policy
 
-The search is intentionally deterministic and single-worker. It does not spawn
+The search is the deterministic single-worker baseline. It does not yet spawn
 threads or share mutable TT/evaluator state. The resource preflight is therefore
 bounded by one `GCSemanticPosition` per depth slot plus PV tables sized by the
 requested depth, with checked allocation arithmetic and a hard

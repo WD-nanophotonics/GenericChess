@@ -3481,8 +3481,11 @@ static int gc_semantic_iterative_check_budget(GCSemanticIterativeContext *ctx,
     return 1;
 }
 
-static int gc_semantic_iterative_terminal_score(int terminal, int ply) {
-    if (terminal == 1) return -100000000 + ply;
+static int gc_semantic_iterative_terminal_score(int winner,
+                                                uint8_t side_to_move,
+                                                int ply) {
+    if (winner >= 0)
+        return winner == side_to_move ? 100000000 - ply : -100000000 + ply;
     return 0;
 }
 
@@ -3501,7 +3504,9 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         ctx->control = 4;
         return 0;
     }
-    if (terminal != 0) return gc_semantic_iterative_terminal_score(terminal, (int)ply);
+    if (terminal != 0)
+        return gc_semantic_iterative_terminal_score(winner, position->side_to_move,
+                                                    (int)ply);
     if (depth == 0) return gc_semantic_probe_material(ctx->rules, position, &ctx->profile);
 
     GCSemanticActionBuffer actions;
@@ -3634,6 +3639,11 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     }
     if (!gc_semantic_require_matching_rules(rules, position) ||
         !gc_semantic_require_exact_history(position)) return NULL;
+    if (rules->declaration_count != 0) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic iterative search does not support declaration-bearing rulesets");
+        return NULL;
+    }
     GCSemanticProbeProfile profile;
     if (!gc_semantic_parse_profile(board_values, hand_values, rules, &profile)) return NULL;
     GCCancelFlag *cancel = NULL;
@@ -3696,6 +3706,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     int completed_has_action = 0;
     int completed_score = 0;
     uint32_t completed_depth = 0;
+    int completed_iteration = 0;
     int used_fallback = 0;
     uint64_t start_ns = gc_monotonic_ns();
     Py_BEGIN_ALLOW_THREADS
@@ -3707,6 +3718,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         if (ctx.control != 0) break;
         completed_score = score;
         completed_depth = depth;
+        completed_iteration = 1;
         completed_len = ctx.pv_length[0];
         completed_has_action = completed_len > 0;
         completed_action = completed_has_action ? ctx.pv_table[0] : 0;
@@ -3714,7 +3726,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         memcpy(completed_pv, ctx.pv_table,
                sizeof(uint64_t) * completed_len);
     }
-    if (!completed_has_action) {
+    if (!completed_iteration) {
         uint64_t fallback = 0;
         if (gc_semantic_iterative_fallback(&ctx, &fallback)) {
             completed_action = fallback;

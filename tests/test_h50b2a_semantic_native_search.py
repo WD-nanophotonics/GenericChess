@@ -1,5 +1,7 @@
 """F50B2A semantic Native no-TT search contract."""
 
+from dataclasses import replace
+
 import pytest
 
 from generic_chess.ai.cancellation import CancellationToken
@@ -9,17 +11,23 @@ from generic_chess.native.semantic import (
     fixed_depth_search,
     make_checked,
     pack_position,
-    snapshot,
     public_action,
     semantic_iterative_search,
+    snapshot,
+    terminal_status,
 )
 from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
 def _initial():
     semantic = compile_semantic_ruleset(build_western_chess_ruleset())
     native = compile_native_semantic_rules(semantic)
+    return semantic, native, _pack_initial(semantic, native)
+
+
+def _pack_initial(semantic, native, *, side=0, ply=0, history=None):
     ids = {type_id: index for index, type_id in enumerate(native.type_ids)}
     board = [
         None if piece is None else [
@@ -29,14 +37,34 @@ def _initial():
         for row in semantic.support.initial_position
         for piece in row
     ]
-    position = pack_position(native, {
-        "side": 0,
-        "ply": 0,
+    payload = {
+        "side": side,
+        "ply": ply,
         "board": board,
         "hands": [[0] * len(ids), [0] * len(ids)],
         "aux_state": (),
-    })
-    return semantic, native, position
+    }
+    if history is not None:
+        payload["history"] = [list(entry) for entry in history]
+    return pack_position(native, payload)
+
+
+def _declaration_free_shogi():
+    semantic = compile_semantic_ruleset(
+        replace(build_standard_shogi_ruleset(), declarations=())
+    )
+    native = compile_native_semantic_rules(semantic)
+    return semantic, native
+
+
+def _continuous_history(native, position, checker):
+    words = snapshot(native, position)["history"][0]
+    return (
+        (*words, 255, 0),
+        (*words, checker, 1),
+        (*words, 1 - checker, 0),
+        (*words, checker, 1),
+    )
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
@@ -131,3 +159,58 @@ def test_zero_depth_uses_safe_root_fallback_without_recursing_state():
     assert result["principal_variation"] == ()
     assert public_action(native, result["best_action"])
     assert snapshot(native, position) == before
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+@pytest.mark.parametrize(
+    "checker,side,sign", ((0, 0, -1), (0, 1, 1), (1, 0, 1), (1, 1, -1))
+)
+def test_continuous_check_winner_is_scored_for_both_owners(checker, side, sign):
+    semantic, native = _declaration_free_shogi()
+    fresh = _pack_initial(semantic, native, side=side)
+    position = _pack_initial(
+        semantic, native, side=side,
+        history=_continuous_history(native, fresh, checker),
+    )
+    assert terminal_status(native, position) == {
+        "status": "perpetual_check", "winner": 1 - checker,
+    }
+    result = semantic_iterative_search(native, position, 1)
+    assert result["score"] * sign > 0
+    assert result["best_action"] is None
+    assert result["principal_variation"] == ()
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_repetition_and_no_contest_terminal_scores_are_neutral():
+    semantic, native = _declaration_free_shogi()
+    fresh = _pack_initial(semantic, native)
+    words = snapshot(native, fresh)["history"][0]
+    repetition = _pack_initial(semantic, native, history=(
+        (*words, 255, 0), (*words, 0, 0), (*words, 1, 0), (*words, 0, 0),
+    ))
+    assert terminal_status(native, repetition)["status"] == "repetition"
+    assert semantic_iterative_search(native, repetition, 1)["score"] == 0
+    history = [(1, 2, 3, 4, 255, 0)]
+    history.extend(
+        (index + 10, index + 20, index + 30, index + 40, index % 2, 0)
+        for index in range(1, 501)
+    )
+    no_contest = _pack_initial(semantic, native, ply=500, history=history)
+    assert terminal_status(native, no_contest)["status"] == "no_contest"
+    result = semantic_iterative_search(native, no_contest, 1)
+    assert result["score"] == 0
+    assert result["best_action"] is None
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_declaration_bearing_rulesets_fail_closed_but_shogi_without_them_executes():
+    semantic = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    native = compile_native_semantic_rules(semantic)
+    with pytest.raises(ValueError, match="declaration-bearing rulesets"):
+        semantic_iterative_search(native, _pack_initial(semantic, native), 1)
+    clear_semantic, clear_native = _declaration_free_shogi()
+    result = semantic_iterative_search(
+        clear_native, _pack_initial(clear_semantic, clear_native), 1
+    )
+    assert result["best_action"] is not None
