@@ -328,6 +328,7 @@ def semantic_iterative_search(
     cancel_token=None,
     board_values=None,
     hand_values=None,
+    _root_ply_offset: int = 0,
 ) -> dict:
     """Run deterministic no-TT iterative search on a semantic position.
 
@@ -338,6 +339,8 @@ def semantic_iterative_search(
     """
     if not native_available():
         raise RuntimeError("native extension is not built")
+    if _root_ply_offset not in (0, 1):
+        raise ValueError("_root_ply_offset must be 0 or 1")
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     expected = tuple(native_rules.type_ids)
@@ -366,6 +369,7 @@ def semantic_iterative_search(
             flag,
             board_values,
             hand_values,
+            int(_root_ply_offset),
         ))
     finally:
         if unregister is not None:
@@ -412,6 +416,7 @@ def root_parallel_search(native_rules, position, max_depth: int, *, workers: int
         reply = semantic_iterative_search(
             native_rules, child, max_depth - 1, board_values=board_values,
             hand_values=hand_values,
+            _root_ply_offset=1,
         )
         return -reply["score"], action, (action, *reply["principal_variation"]), reply
 

@@ -9,6 +9,7 @@ from generic_chess.native import native_available
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import (
     fixed_depth_search,
+    guarded_actions,
     make_checked,
     pack_position,
     public_action,
@@ -57,6 +58,26 @@ def _declaration_free_shogi():
     )
     native = compile_native_semantic_rules(semantic)
     return semantic, native
+
+
+def _semantic_mate(king_file=2):
+    """Return a standard-semantic-rule mate-in-one position."""
+    n = 8
+    semantic = compile_semantic_ruleset(build_western_chess_ruleset())
+    native = compile_native_semantic_rules(semantic)
+    ids = {type_id: index for index, type_id in enumerate(native.type_ids)}
+    board = [None] * (n * n)
+    for row, column, owner, type_id in (
+        (0, 0, 1, "K"), (0, king_file, 0, "K"),
+        (4, 1, 0, "R"), (1, 5, 0, "R"),
+    ):
+        index = row * n + column
+        board[index] = [ids[type_id], ids[type_id], owner, 0]
+    position = pack_position(native, {
+        "side": 0, "ply": 0, "board": board,
+        "hands": [[0] * len(ids), [0] * len(ids)], "aux_state": (),
+    })
+    return semantic, native, position
 
 
 def _continuous_history(native, position, checker):
@@ -237,3 +258,32 @@ def test_experimental_root_parallel_search_matches_one_position_reference():
         reference["score"], reference["best_action"], reference["principal_variation"],
     )
     assert snapshot(native, position) == before
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_root_parallel_preserves_mate_in_one_score_and_state():
+    semantic, native, position = _semantic_mate()
+    before = snapshot(native, position)
+    reference = semantic_iterative_search(native, position, 2)
+    assert reference["score"] == 99_999_999
+    assert reference["principal_variation"]
+    for workers in (1, 2, 4):
+        parallel = root_parallel_search(native, position, 2, workers=workers)
+        assert (parallel["score"], parallel["best_action"], parallel["principal_variation"]) == (
+            reference["score"], reference["best_action"], reference["principal_variation"],
+        )
+    assert snapshot(native, position) == before
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_root_parallel_preserves_deeper_terminal_score_parity():
+    semantic, native, position = _semantic_mate()
+    first_action = min(action for action in guarded_actions(native, position)
+                       if terminal_status(native, make_checked(native, position, action))["status"] == "ongoing")
+    child = make_checked(native, position, first_action)
+    reference = semantic_iterative_search(native, child, 2)
+    assert len(reference["principal_variation"]) >= 2
+    parallel = root_parallel_search(native, child, 2, workers=4)
+    assert (parallel["score"], parallel["best_action"], parallel["principal_variation"]) == (
+        reference["score"], reference["best_action"], reference["principal_variation"],
+    )

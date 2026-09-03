@@ -3458,6 +3458,7 @@ typedef struct {
     uint64_t legal_generation_count;
     uint64_t transition_count;
     uint64_t beta_cutoffs;
+    uint32_t root_ply_offset;
 } GCSemanticIterativeContext;
 
 static int gc_semantic_iterative_check_budget(GCSemanticIterativeContext *ctx,
@@ -3506,7 +3507,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     }
     if (terminal != 0)
         return gc_semantic_iterative_terminal_score(winner, position->side_to_move,
-                                                    (int)ply);
+                                                    (int)(ctx->root_ply_offset + ply));
     if (depth == 0) return gc_semantic_probe_material(ctx->rules, position, &ctx->profile);
 
     GCSemanticActionBuffer actions;
@@ -3625,9 +3626,11 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *max_nodes_obj = Py_None, *max_time_obj = Py_None;
     PyObject *cancel_capsule = Py_None, *board_values = NULL, *hand_values = NULL;
     unsigned int max_depth;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOO", &rules_capsule, &position_capsule,
+    unsigned int root_ply_offset = 0;
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOI", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
-                          &cancel_capsule, &board_values, &hand_values)) return NULL;
+                          &cancel_capsule, &board_values, &hand_values,
+                          &root_ply_offset)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
@@ -3635,6 +3638,10 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (!rules || !position) return NULL;
     if (max_depth > GC_SEM_MAX_PLY) {
         PyErr_SetString(PyExc_ValueError, "semantic max_depth exceeds GC_SEM_MAX_PLY");
+        return NULL;
+    }
+    if (root_ply_offset > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic root ply offset must be 0 or 1");
         return NULL;
     }
     if (!gc_semantic_require_matching_rules(rules, position) ||
@@ -3676,6 +3683,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     ctx.rules = rules;
     ctx.profile = profile;
     ctx.max_depth = max_depth;
+    ctx.root_ply_offset = root_ply_offset;
     ctx.pv_stride = max_depth + 1;
     ctx.max_nodes = max_nodes;
     ctx.cancel = cancel;
