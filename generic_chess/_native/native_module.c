@@ -3598,6 +3598,24 @@ static int gc_semantic_declaration_win(
     return 0;
 }
 
+static int gc_semantic_declaration_neutral(
+        const GCSemanticRules *rules, const GCSemanticPosition *position,
+        uint64_t *action_out) {
+    for (uint8_t i = 0; i < rules->declaration_count; i++) {
+        const GCSemDeclaration *declaration = &rules->declarations[i];
+        if (declaration->owner != position->side_to_move) continue;
+        GCSemanticDeclarationAssessment assessment;
+        int status = gc_semantic_runtime_assess_declaration(
+            rules, position, declaration->declaration_id, &assessment);
+        if (status <= 0) return -1;
+        if (assessment.outcome == 2 || assessment.outcome == 3) {
+            if (action_out != NULL) *action_out = gc_semantic_declaration_action(i);
+            return 1;
+        }
+    }
+    return 0;
+}
+
 static void gc_semantic_tt_store_node(GCSemanticIterativeContext *ctx,
                                       GCSemanticPosition *position,
                                       uint32_t ply, int depth, int score,
@@ -3712,35 +3730,35 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
 
     GCSemanticActionBuffer actions;
     gc_semantic_action_buffer_init(&actions);
+    uint64_t neutral_action = 0;
+    int neutral_declaration = gc_semantic_declaration_neutral(
+        ctx->rules, position, &neutral_action);
+    if (neutral_declaration < 0) {
+        gc_semantic_action_buffer_free(&actions);
+        ctx->control = 4;
+        return 0;
+    }
     if (!gc_semantic_generate_candidate_buffer(ctx->rules, position, &actions)) {
+        if (neutral_declaration > 0) {
+            ctx->pv_table[(size_t)ply * ctx->pv_stride] = neutral_action;
+            ctx->pv_length[ply] = 1;
+            gc_semantic_tt_store_node(ctx, position, ply, depth, 0,
+                                      alpha_original, beta_original,
+                                      neutral_action, 1);
+            gc_semantic_action_buffer_free(&actions);
+            return 0;
+        }
         gc_semantic_action_buffer_free(&actions);
         ctx->control = 4;
         return 0;
     }
     ctx->legal_generation_count++;
-    int best = -GC_SEMANTIC_PROBE_INF;
-    uint64_t best_action = 0;
-    int found = 0;
-    for (uint8_t i = 0; i < ctx->rules->declaration_count; i++) {
-        const GCSemDeclaration *declaration = &ctx->rules->declarations[i];
-        if (declaration->owner != position->side_to_move) continue;
-        GCSemanticDeclarationAssessment assessment;
-        int status = gc_semantic_runtime_assess_declaration(
-            ctx->rules, position, declaration->declaration_id, &assessment);
-        if (status <= 0) {
-            gc_semantic_action_buffer_free(&actions);
-            ctx->control = 4;
-            return 0;
-        }
-        if (assessment.outcome != 2) continue; /* LOSS is unavailable; WIN returned above. */
-        uint64_t action = gc_semantic_declaration_action(i);
-        if (!found || best < 0) {
-            found = 1;
-            best = 0;
-            best_action = action;
-            ctx->pv_table[(size_t)ply * ctx->pv_stride] = action;
-            ctx->pv_length[ply] = 1;
-        }
+    int best = neutral_declaration > 0 ? 0 : -GC_SEMANTIC_PROBE_INF;
+    uint64_t best_action = neutral_declaration > 0 ? neutral_action : 0;
+    int found = neutral_declaration > 0;
+    if (neutral_declaration > 0) {
+        ctx->pv_table[(size_t)ply * ctx->pv_stride] = neutral_action;
+        ctx->pv_length[ply] = 1;
     }
     if (found && best > alpha) alpha = best;
     if (found && alpha >= beta) {
@@ -3785,7 +3803,13 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             pv_replay);
         if (ctx->control != 0) break;
         int score = -branch;
-        if (!found || score > best || (score == best && action < best_action)) {
+        int prefer_equal = score == best &&
+            ((!gc_semantic_is_declaration_action(best_action) &&
+              gc_semantic_is_declaration_action(action)) ||
+             (!gc_semantic_is_declaration_action(action) &&
+              !gc_semantic_is_declaration_action(best_action) &&
+              action < best_action));
+        if (!found || score > best || prefer_equal) {
             found = 1;
             best = score;
             best_action = action;
@@ -3863,6 +3887,14 @@ static int gc_semantic_iterative_fallback(GCSemanticIterativeContext *ctx,
     }
     if (declaration_win > 0) {
         if (action_out != NULL) *action_out = declaration_action;
+        return 1;
+    }
+    uint64_t neutral_action = 0;
+    int neutral_declaration = gc_semantic_declaration_neutral(
+        ctx->rules, &ctx->stack[0], &neutral_action);
+    if (neutral_declaration < 0) return 0;
+    if (neutral_declaration > 0) {
+        if (action_out != NULL) *action_out = neutral_action;
         return 1;
     }
     GCSemanticActionBuffer actions;

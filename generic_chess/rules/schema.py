@@ -320,7 +320,7 @@ class RuleStateGuard:
     subject_ref: RuleSquareRef | None = None
 
 
-DECLARATION_OUTCOMES = ("WIN", "RESTART", "LOSS")
+DECLARATION_OUTCOMES = ("WIN", "RESTART", "NO_CONTEST", "LOSS")
 
 
 @dataclass(frozen=True, slots=True)

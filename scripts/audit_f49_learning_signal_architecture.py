@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import argparse
 import collections
+from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import math
@@ -18,6 +20,7 @@ import os
 import random
 import statistics
 import subprocess
+import threading
 import time
 from dataclasses import fields, replace
 from pathlib import Path
@@ -41,8 +44,15 @@ from generic_chess.learning.features import non_anchor_type_ids
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
 from generic_chess.learning.serialization import canonical_json, stable_sha256
-from generic_chess.native.compiler import compile_native_evaluation, compile_native_rules
+from generic_chess.native.adapter import pack_semantic_search_position
+from generic_chess.native.compiler import (
+    compile_native_evaluation,
+    compile_native_rules,
+    compile_native_semantic_rules,
+)
 from generic_chess.native.engine import NativeSearchEngine
+from generic_chess.native.semantic_engine import SemanticSearchEngine
+from generic_chess.native.semantic import guarded_actions, make_checked, position_key as native_position_key, public_action, snapshot as native_snapshot, terminal_status
 from generic_chess.session.session import GameSession
 from scripts.historical_validation import historical_scope_unchanged
 
@@ -51,6 +61,10 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_f49_diagnostic_runner_freeze_manifest.json"
 SOURCE_PATH = ROOT / "scripts" / "audit_f49_learning_signal_architecture.py"
 F48_RESULTS_PATH = ROOT / "tests" / "fixtures" / "f48_learnable_material_recovery_results.json"
+# Parallel scheduling changes do not alter the F49 measurement semantics.  Keep
+# the accepted node-budget-correct semantic partition identity stable so an
+# interrupted run can resume instead of duplicating hundreds of partitions.
+SEMANTIC_REENTRY_PARTITION_SHA256 = "5f08af687b36e65ac8ed94ce0c617b9c527223c5cf9a832df52f805733d37490"
 
 H49B_KIND = "H49B_F49_DIAGNOSTIC_RUNNER_FREEZE"
 H49B_WORK_ORDER_ID = "GENERICCHESS-F49-DIAGNOSTIC-MEASUREMENTS-AFTER-H49R4A"
@@ -164,6 +178,7 @@ R3_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r3-authoritative"
 R4_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r4-authoritative"
 R5_MANIFEST_PATH = ROOT / "tests" / "fixtures" / "h49b_r5_f49_diagnostic_runner_freeze_manifest.json"
 R5_AUTHORITY_ROOT = ROOT / ".generic_chess_flow" / "f49-r5-authoritative"
+F49_SEMANTIC_REENTRY_ROOT = ROOT / ".generic_chess_flow" / "f49-semantic-reentry-authoritative"
 H49B_R4_KIND = "H49B-R4_F49_DIAGNOSTIC_RUNNER_FREEZE"
 H49B_R4_WORK_ORDER_ID = "GENERICCHESS-F49-H49B-CORRECTIVE-R4-P48-AUTHORITY-RECONSTRUCTION-AND-ABORTED-RUN-QUARANTINE"
 H49B_R3_SHA = "c67adb4cf20701ef4497e013a5303071a03bd708"
@@ -311,7 +326,7 @@ def _partition_templates(runtime: dict[str, Any], p48: dict[str, Any]) -> list[d
     return templates
 
 
-def build_preflight_manifest() -> dict[str, Any]:
+def build_preflight_manifest(*, allow_current_production_diff: bool = False) -> dict[str, Any]:
     h49 = _load_h49_authority()
     r3 = h49["H49R3A"]
     r3_manifest = json.loads((ROOT / r3["path"]).read_text(encoding="utf-8"))
@@ -328,7 +343,8 @@ def build_preflight_manifest() -> dict[str, Any]:
     python_bindings = f49_protocol.validate_h49r4a_python_legality_bindings()
     if any(row["legality_route"] != "PYTHON_AUTHORITY" or row["native_legality_provider"] is not None for row in python_bindings.values()):
         raise RuntimeError("H49B Python-authority binding failed")
-    _require_zero_production_diff()
+    if not allow_current_production_diff:
+        _require_zero_production_diff()
     f48_authority, resolution = _load_f48_authority()
     control_corpora = _reconstruct_control_corpora(executions, resolution)
     f48_result = json.loads(F48_RESULTS_PATH.read_text(encoding="utf-8"))
@@ -343,7 +359,7 @@ def build_preflight_manifest() -> dict[str, Any]:
         "observed_results_present": False,
         "measurements_invoked": False,
         "learning_invoked": False,
-        "production_diff_required": "ZERO",
+        "production_diff_required": "SEMANTIC_REENTRY_BOUNDARY" if allow_current_production_diff else "ZERO",
         "master_promotion": False,
         "runner": {
             "path": "scripts/audit_f49_learning_signal_architecture.py",
@@ -369,7 +385,7 @@ def build_preflight_manifest() -> dict[str, Any]:
             "native_runtime_provenance": runtime,
             "ruleset_fingerprints": f49_protocol.RULESET_FINGERPRINTS,
             "python_legality_bindings": python_bindings,
-            "generic_chess_diff_from_h49r4a": "ZERO",
+            "generic_chess_diff_from_h49r4a": "SEMANTIC_REENTRY_BOUNDARY" if allow_current_production_diff else "ZERO",
             "f48": f48_authority,
         },
         "f48_control": {
@@ -542,6 +558,17 @@ def _replay(compiled, action_history: list[Any] | tuple[Any, ...]) -> GameSessio
     return session
 
 
+def _semantic_action_for_legacy(authority: GameSession, legacy_action) -> Any:
+    candidates = [
+        action
+        for action in authority.legal_actions()
+        if _project_semantic_action(action) == legacy_action
+    ]
+    if len(candidates) != 1:
+        raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_AMBIGUITY")
+    return candidates[0]
+
+
 def _project_semantic_action(action):
     """Project one semantic public action without parsing or rebinding it."""
     if isinstance(action, SemanticBoardMove):
@@ -664,9 +691,310 @@ def generate_structural_corpus(
             }
             break
         if selected is None:
-            return {"status": "STRUCTURAL_STRATUM_UNAVAILABLE", "stratum_id": stratum_id, "seed": seed, "generation_config": config, "failed_output_index": output_index, "records": [], "corpus_id": None, "attempt_cap": attempt_cap, "replay_mode": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION"}
+            return {"status": "STRUCTURAL_STRATUM_UNAVAILABLE", "stratum_id": stratum_id, "seed": seed, "generation_config": config, "failed_output_index": output_index, "records": [], "corpus_id": None, "attempt_cap": attempt_cap, "replay_mode": "SEMANTIC_DIRECT"}
         records.append(selected)
-    return {"status": "VALID", "stratum_id": stratum_id, "generation_config": config, "records": records, "corpus_id": stable_sha256({"generation_config": config, "records": records}), "replay_mode": "SEMANTIC_TO_LEGACY_UNIQUE_PHYSICAL_PROJECTION"}
+    return {"status": "VALID", "stratum_id": stratum_id, "generation_config": config, "records": records, "corpus_id": stable_sha256({"generation_config": config, "records": records}), "replay_mode": "SEMANTIC_DIRECT"}
+
+
+_SEMANTIC_WORKER_EXECUTIONS: dict[str, Any] | None = None
+_SEMANTIC_WORKER_OPENINGS: dict[tuple[str, int], Any] = {}
+_SEMANTIC_SEARCH_THREAD_LOCAL = threading.local()
+_SEMANTIC_SEARCH_PROCESS_EXECUTIONS: dict[str, Any] | None = None
+_SEMANTIC_SEARCH_PROCESS_RULES: dict[str, Any] = {}
+_SEMANTIC_SEARCH_PROCESS_ENGINES: dict[tuple[str, str], SemanticSearchEngine] = {}
+
+
+def _init_semantic_structural_worker() -> None:
+    global _SEMANTIC_WORKER_EXECUTIONS, _SEMANTIC_WORKER_OPENINGS
+    _SEMANTIC_WORKER_EXECUTIONS = f49_protocol.build_h49r3a_primary_execution()
+    _SEMANTIC_WORKER_OPENINGS = {
+        (ruleset_id, seed): generate_arena_openings(
+            entry["semantic_execution"], count=16, seed=seed, min_plies=2, max_plies=6
+        )
+        for ruleset_id, entry in _SEMANTIC_WORKER_EXECUTIONS.items()
+        for seed in (490100, 490200)
+    }
+
+
+def _native_position_summary(position_snapshot: dict[str, Any]) -> dict[str, Any]:
+    board = collections.Counter(
+        (int(piece[2]), int(piece[1]))
+        for piece in position_snapshot.get("board", ())
+        if piece is not None
+    )
+    inventory = collections.Counter()
+    for owner, hand in enumerate(position_snapshot.get("hands", ())):
+        for type_id, count in enumerate(hand):
+            if count:
+                inventory[(owner, type_id)] = int(count)
+    return {"board": dict(board), "inventory": dict(inventory)}
+
+
+def _semantic_structural_record_worker(task: tuple[str, str, int, tuple[int, int], int, int]) -> tuple[str, str, int, dict[str, Any] | None]:
+    ruleset_id, stratum_id, seed, target_plies, minimum_legal_actions, output_index = task
+    if _SEMANTIC_WORKER_EXECUTIONS is None:
+        _init_semantic_structural_worker()
+    compiled = _SEMANTIC_WORKER_EXECUTIONS[ruleset_id]["semantic_execution"]
+    source_openings = _SEMANTIC_WORKER_OPENINGS[(ruleset_id, seed)]
+    base_rng = random.Random(seed)
+    target = 0
+    for _ in range(output_index + 1):
+        target = base_rng.randint(*target_plies)
+    opening = source_openings.openings[output_index % len(source_openings.openings)]
+    opening_session = GameSession(compiled)
+    opening_events = {"remove_or_capture_effect": False, "type_or_promotion_transformation": False, "hand_or_inventory_count_change": False}
+    for action in opening.actions:
+        before = opening_session.state.position
+        opening_session.submit(action)
+        _merge_event_flags(opening_events, _event_between(before, opening_session.state.position))
+    native_rules = compile_native_semantic_rules(compiled)
+    opening_position = pack_semantic_search_position(compiled, native_rules, opening_session)
+    for attempt in range(100_000):
+        candidate_seed = f49_protocol.derive_stratum_candidate_seed(stratum_id, seed, output_index, attempt)
+        rng = random.Random(candidate_seed)
+        position = opening_position
+        events = dict(opening_events)
+        history = list(opening.actions)
+        accepted = True
+        while len(history) < target:
+            packed_legal = guarded_actions(native_rules, position)
+            if not packed_legal:
+                accepted = False
+                break
+            ordered = sorted(
+                packed_legal,
+                key=lambda packed: f49_protocol.canonical_action_order_key(
+                    public_action(native_rules, packed)
+                ),
+            )
+            packed_action = ordered[rng.randrange(len(ordered))]
+            before = native_snapshot(native_rules, position)
+            position = make_checked(native_rules, position, packed_action)
+            after = native_snapshot(native_rules, position)
+            _merge_event_flags(events, f49_protocol.inventory_event_flags(_native_position_summary(before), _native_position_summary(after)))
+            action = public_action(native_rules, packed_action)
+            history.append(action)
+        final_legal = guarded_actions(native_rules, position)
+        final_status = str(terminal_status(native_rules, position)["status"])
+        if not accepted or final_status != "ongoing" or len(final_legal) < minimum_legal_actions:
+            continue
+        if stratum_id == "S49-E" and not any(events.values()):
+            continue
+        identity = native_position_key(native_rules, position)
+        return ruleset_id, stratum_id, output_index, {
+            "output_index": output_index,
+            "target_ply": target,
+            "selected_attempt": attempt,
+            "candidate_rng_seed": candidate_seed,
+            "action_history": [action_to_dict(action) for action in history],
+            "position_identity_key": identity,
+            "legal_action_count": len(final_legal),
+            "event_flags": events,
+        }
+    return ruleset_id, stratum_id, output_index, None
+
+
+def _semantic_structural_worker(task: tuple[str, str, int, tuple[int, int], int]) -> tuple[str, str, dict[str, Any]]:
+    """Compatibility worker for one complete stratum outside re-entry runs."""
+    ruleset_id, stratum_id, seed, target_plies, minimum_legal_actions = task
+    executions = f49_protocol.build_h49r3a_primary_execution()
+    corpus = generate_structural_corpus(executions[ruleset_id]["semantic_execution"], stratum_id=stratum_id, seed=seed, target_plies=target_plies, minimum_legal_actions=minimum_legal_actions)
+    return ruleset_id, stratum_id, corpus
+
+
+def _semantic_search_thread_worker(task: tuple[Any, Any, Any, dict[str, Any], int]) -> dict[str, Any]:
+    """Search one semantic position with a thread-local persistent engine."""
+    compiled, native_rules, checkpoint, record, node_budget = task
+    key = (compiled.ruleset_fingerprint, checkpoint.checkpoint_id)
+    cached_key = getattr(_SEMANTIC_SEARCH_THREAD_LOCAL, "key", None)
+    engine = getattr(_SEMANTIC_SEARCH_THREAD_LOCAL, "engine", None)
+    engine_created = 0
+    engine_wall = 0.0
+    if cached_key != key or engine is None:
+        started = time.perf_counter()
+        engine = SemanticSearchEngine(
+            compiled,
+            native_rules,
+            checkpoint=checkpoint,
+            tt_megabytes=128,
+        )
+        _SEMANTIC_SEARCH_THREAD_LOCAL.key = key
+        _SEMANTIC_SEARCH_THREAD_LOCAL.engine = engine
+        engine_created = 1
+        engine_wall = time.perf_counter() - started
+    session = _replay(compiled, [action_from_dict(action) for action in record["action_history"]])
+    started = time.perf_counter()
+    result = engine.search(
+        session,
+        SearchLimits(
+            max_depth=12,
+            max_nodes=node_budget,
+            quiescence_max_depth=0,
+            quiescence_max_nodes=0,
+        ),
+    )
+    allowed = {"completed", "node_limit", "node_budget", "depth_limit", "cancelled"}
+    failed = result.termination_reason not in allowed or (
+        session.result.status.value == "ongoing"
+        and result.action is None
+        and result.declaration_id is None
+    )
+    return {
+        "replay_mode": "SEMANTIC_DIRECT",
+        "action_key": f49_protocol.canonical_action_order_key(result.action)
+        if result.action is not None
+        else ("DECLARATION:" + result.declaration_id if result.declaration_id is not None else None),
+        "score": int(result.score),
+        "nodes": int(result.nodes),
+        "qnodes": int(result.qnodes),
+        "elapsed_seconds": float(result.elapsed_seconds),
+        "completed_depth": int(result.completed_depth),
+        "termination_reason": result.termination_reason,
+        "failed_search": failed,
+        "execution_ledger": {
+            "engine_creation_count": engine_created,
+            "engine_creation_wall_seconds": engine_wall,
+            "requested_nodes": node_budget,
+            "actual_nodes": result.nodes + result.qnodes,
+            "search_count": 1,
+            "search_wall_seconds": time.perf_counter() - started,
+        },
+    }
+
+
+def _init_semantic_search_process_worker() -> None:
+    global _SEMANTIC_SEARCH_PROCESS_EXECUTIONS, _SEMANTIC_SEARCH_PROCESS_RULES
+    _SEMANTIC_SEARCH_PROCESS_EXECUTIONS = f49_protocol.build_h49r3a_primary_execution()
+    _SEMANTIC_SEARCH_PROCESS_RULES = {
+        entry["semantic_execution"].ruleset_fingerprint: compile_native_semantic_rules(
+            entry["semantic_execution"]
+        )
+        for entry in _SEMANTIC_SEARCH_PROCESS_EXECUTIONS.values()
+    }
+
+
+def _semantic_search_process_worker(
+    task: tuple[str, dict[str, Any], dict[str, Any], int]
+) -> dict[str, Any]:
+    """Search one position in a real process worker, reusing its TT."""
+    ruleset_fingerprint, checkpoint_data, record, node_budget = task
+    if _SEMANTIC_SEARCH_PROCESS_EXECUTIONS is None:
+        _init_semantic_search_process_worker()
+    execution = next(
+        entry["semantic_execution"]
+        for entry in _SEMANTIC_SEARCH_PROCESS_EXECUTIONS.values()
+        if entry["semantic_execution"].ruleset_fingerprint == ruleset_fingerprint
+    )
+    checkpoint = LearnableMaterialCheckpoint.from_dict(checkpoint_data)
+    key = (ruleset_fingerprint, checkpoint.checkpoint_id)
+    engine = _SEMANTIC_SEARCH_PROCESS_ENGINES.get(key)
+    engine_created = 0
+    engine_wall = 0.0
+    if engine is None:
+        started = time.perf_counter()
+        engine = SemanticSearchEngine(
+            execution,
+            _SEMANTIC_SEARCH_PROCESS_RULES[ruleset_fingerprint],
+            checkpoint=checkpoint,
+            tt_megabytes=128,
+        )
+        _SEMANTIC_SEARCH_PROCESS_ENGINES[key] = engine
+        engine_created = 1
+        engine_wall = time.perf_counter() - started
+    session = _replay(execution, [action_from_dict(action) for action in record["action_history"]])
+    started = time.perf_counter()
+    result = engine.search(
+        session,
+        SearchLimits(
+            max_depth=12,
+            max_nodes=node_budget,
+            quiescence_max_depth=0,
+            quiescence_max_nodes=0,
+        ),
+    )
+    allowed = {"completed", "node_limit", "node_budget", "depth_limit", "cancelled"}
+    failed = result.termination_reason not in allowed or (
+        session.result.status.value == "ongoing"
+        and result.action is None
+        and result.declaration_id is None
+    )
+    return {
+        "replay_mode": "SEMANTIC_DIRECT",
+        "action_key": f49_protocol.canonical_action_order_key(result.action)
+        if result.action is not None
+        else ("DECLARATION:" + result.declaration_id if result.declaration_id is not None else None),
+        "score": int(result.score),
+        "nodes": int(result.nodes),
+        "qnodes": int(result.qnodes),
+        "elapsed_seconds": float(result.elapsed_seconds),
+        "completed_depth": int(result.completed_depth),
+        "termination_reason": result.termination_reason,
+        "failed_search": failed,
+        "execution_ledger": {
+            "engine_creation_count": engine_created,
+            "engine_creation_wall_seconds": engine_wall,
+            "requested_nodes": node_budget,
+            "actual_nodes": result.nodes + result.qnodes,
+            "search_count": 1,
+            "search_wall_seconds": time.perf_counter() - started,
+        },
+    }
+
+
+def _python_decision_process_worker(
+    task: tuple[str, dict[str, Any], dict[str, Any]]
+) -> dict[str, Any]:
+    """Run one authorized Python control decision in a process worker."""
+    ruleset_fingerprint, record, config_data = task
+    if _SEMANTIC_SEARCH_PROCESS_EXECUTIONS is None:
+        _init_semantic_search_process_worker()
+    execution = next(
+        entry["semantic_execution"]
+        for entry in _SEMANTIC_SEARCH_PROCESS_EXECUTIONS.values()
+        if entry["semantic_execution"].ruleset_fingerprint == ruleset_fingerprint
+    )
+    metrics = _measurement_metrics()
+    row = _python_decision(execution, record, EvaluationConfig(**config_data), metrics)
+    row["execution_ledger"] = metrics["python_current_process"]
+    return row
+
+
+def _generate_semantic_structural_parallel(executions: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    tasks = [
+        (ruleset_id, stratum_id, seed, target_plies, minimum_legal_actions, output_index)
+        for ruleset_id in executions
+        for stratum_id, seed, target_plies, minimum_legal_actions in (
+            ("S49-M", 490100, (8, 20), 1),
+            ("S49-E", 490200, (6, 24), 2),
+        )
+        for output_index in range(64)
+    ]
+    with ProcessPoolExecutor(
+        max_workers=12, initializer=_init_semantic_structural_worker
+    ) as executor:
+        generated = list(executor.map(_semantic_structural_record_worker, tasks, chunksize=2))
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    missing: dict[tuple[str, str], int] = {}
+    for ruleset_id, stratum_id, output_index, record in generated:
+        key = (ruleset_id, stratum_id)
+        if record is None:
+            missing.setdefault(key, output_index)
+        else:
+            grouped.setdefault(key, []).append(record)
+    output: dict[str, dict[str, Any]] = {}
+    for ruleset_id in executions:
+        for stratum_id, seed, target_plies, minimum_legal_actions in (
+            ("S49-M", 490100, (8, 20), 1),
+            ("S49-E", 490200, (6, 24), 2),
+        ):
+            key = (ruleset_id, stratum_id)
+            config = {"stratum_id": stratum_id, "seed": seed, "count": 64, "target_plies": list(target_plies), "minimum_legal_actions": minimum_legal_actions, "attempt_cap": 100_000, "source_openings": {"count": 16, "min_plies": 2, "max_plies": 6}}
+            records = sorted(grouped.get(key, []), key=lambda row: row["output_index"])
+            if key in missing or len(records) != 64:
+                output.setdefault(ruleset_id, {})[stratum_id] = {"status": "STRUCTURAL_STRATUM_UNAVAILABLE", "stratum_id": stratum_id, "seed": seed, "generation_config": config, "failed_output_index": missing.get(key, len(records)), "records": [], "corpus_id": None, "attempt_cap": 100_000, "replay_mode": "SEMANTIC_DIRECT"}
+            else:
+                output.setdefault(ruleset_id, {})[stratum_id] = {"status": "VALID", "stratum_id": stratum_id, "generation_config": config, "records": records, "corpus_id": stable_sha256({"generation_config": config, "records": records}), "replay_mode": "SEMANTIC_DIRECT"}
+    return output
 
 
 def _percentile(values: list[int], fraction: float) -> float:
@@ -752,6 +1080,45 @@ def _native_profile(compiled, checkpoint):
 
 
 def _native_search_once(compiled, native_rules, native_evaluation, record: dict[str, Any], node_budget: int, metrics: dict[str, Any], *, replay_mode: str = "LEGACY_DIRECT", semantic_execution=None) -> dict[str, Any]:
+    if semantic_execution is not None:
+        session = _replay(semantic_execution, [action_from_dict(action) for action in record["action_history"]])
+        metrics["native_current_process"]["requested_nodes"] += node_budget
+        search_started = time.perf_counter()
+        result = native_evaluation.search(
+            session,
+            SearchLimits(
+                max_depth=12,
+                max_nodes=node_budget,
+                quiescence_max_depth=0,
+                quiescence_max_nodes=0,
+            ),
+        )
+        metrics["native_current_process"]["search_count"] += 1
+        metrics["native_current_process"]["actual_nodes"] += result.nodes + result.qnodes
+        metrics["native_current_process"]["search_wall_seconds"] += time.perf_counter() - search_started
+        if result.action is not None:
+            action_key = f49_protocol.canonical_action_order_key(result.action)
+        elif result.declaration_id is not None:
+            action_key = "DECLARATION:" + result.declaration_id
+        else:
+            action_key = None
+        allowed = {"completed", "node_limit", "node_budget", "depth_limit", "cancelled"}
+        failed = result.termination_reason not in allowed or (
+            session.result.status.value == "ongoing"
+            and result.action is None
+            and result.declaration_id is None
+        )
+        return {
+            "replay_mode": "SEMANTIC_DIRECT",
+            "action_key": action_key,
+            "score": int(result.score),
+            "nodes": int(result.nodes),
+            "qnodes": int(result.qnodes),
+            "elapsed_seconds": float(result.elapsed_seconds),
+            "completed_depth": int(result.completed_depth),
+            "termination_reason": result.termination_reason,
+            "failed_search": failed,
+        }
     session, transport_metadata = _native_replay(compiled, record, replay_mode=replay_mode, semantic_execution=semantic_execution)
     started = time.perf_counter()
     engine = NativeSearchEngine(compiled, native_rules, native_evaluation, tt_megabytes=8)
@@ -803,35 +1170,61 @@ def _concrete_corpus_id(corpus: dict[str, Any]) -> str:
     raise ValueError("partition corpus_id must be concrete")
 
 
-def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], route: str, family: str, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]] | None = None, partition_store: AtomicPartitionStore | None = None, *, semantic_execution=None) -> dict[str, Any]:
-    native_compiled = _native_transport(compiled)
+def _native_search_matrix(compiled, checkpoint, corpus, budgets: list[int], route: str, family: str, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]] | None = None, partition_store: AtomicPartitionStore | None = None, *, semantic_execution=None, search_pool=None) -> dict[str, Any]:
+    native_compiled = semantic_execution if semantic_execution is not None else _native_transport(compiled)
     contexts = context_cache if context_cache is not None else {}
     rules_key = (compiled.ruleset_fingerprint, "native_rules")
     checkpoint_key = (compiled.ruleset_fingerprint, checkpoint.checkpoint_id)
     if rules_key not in contexts:
         started = time.perf_counter()
-        contexts[rules_key] = (compile_native_rules(native_compiled), None)
+        contexts[rules_key] = (
+            compile_native_semantic_rules(native_compiled)
+            if semantic_execution is not None
+            else compile_native_rules(native_compiled),
+            None,
+        )
         metrics["native_current_process"]["ruleset_compile_count"] += 1
         metrics["native_current_process"]["ruleset_compile_wall_seconds"] += time.perf_counter() - started
     native_rules = contexts[rules_key][0]
     if checkpoint_key not in contexts:
         started = time.perf_counter()
-        profile = _native_profile(native_compiled, checkpoint)
-        table = compile_native_evaluation(native_rules, profile, EvaluationConfig(), material_override=checkpoint)
+        if semantic_execution is not None:
+            table = SemanticSearchEngine(
+                native_compiled,
+                native_rules,
+                checkpoint=checkpoint,
+                tt_megabytes=128,
+            )
+        else:
+            profile = _native_profile(native_compiled, checkpoint)
+            table = compile_native_evaluation(native_rules, profile, EvaluationConfig(), material_override=checkpoint)
         contexts[checkpoint_key] = (native_rules, table)
-        metrics["native_current_process"]["evaluation_table_compile_count"] += 1
-        metrics["native_current_process"]["evaluation_table_compile_wall_seconds"] += time.perf_counter() - started
+        elapsed = time.perf_counter() - started
+        if semantic_execution is not None:
+            metrics["native_current_process"]["engine_creation_count"] += 1
+            metrics["native_current_process"]["engine_creation_wall_seconds"] += elapsed
+        else:
+            metrics["native_current_process"]["evaluation_table_compile_count"] += 1
+            metrics["native_current_process"]["evaluation_table_compile_wall_seconds"] += elapsed
     table = contexts[checkpoint_key][1]
     results = {}
     for budget in budgets:
         key = (compiled.ruleset_fingerprint, _concrete_corpus_id(corpus), checkpoint.checkpoint_id, route, budget, family)
-        partition = partition_identity(corpus_id=key[1], checkpoint_or_config_hash=checkpoint.checkpoint_id, search_route=route, node_budget=budget, measurement_family=family, ruleset_fingerprint=compiled.ruleset_fingerprint)
+        partition = partition_identity(corpus_id=key[1], checkpoint_or_config_hash=checkpoint.checkpoint_id, search_route=route, node_budget=budget, measurement_family=family, ruleset_fingerprint=compiled.ruleset_fingerprint, runner_sha256=SEMANTIC_REENTRY_PARTITION_SHA256 if semantic_execution is not None else None)
         def produce_vector():
             before = dict(metrics["native_current_process"])
-            if semantic_execution is None:
-                rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics)} for record in corpus["records"]]
+            if semantic_execution is not None and search_pool is not None:
+                tasks = [
+                    (native_compiled.ruleset_fingerprint, checkpoint.to_dict(), record, budget)
+                    for record in corpus["records"]
+                ]
+                searched = list(search_pool.map(_semantic_search_process_worker, tasks))
+                rows = []
+                for record, row in zip(corpus["records"], searched):
+                    _add_counter(metrics["native_current_process"], row.pop("execution_ledger"))
+                    rows.append({"output_index": record["output_index"], **row})
             else:
-                rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics, replay_mode=corpus.get("replay_mode", "LEGACY_DIRECT"), semantic_execution=semantic_execution)} for record in corpus["records"]]
+                rows = [{"output_index": record["output_index"], **_native_search_once(native_compiled, native_rules, table, record, budget, metrics, semantic_execution=semantic_execution)} for record in corpus["records"]]
             return {"position_identities": [record["position_identity_key"] for record in corpus["records"]], "rows": rows, "execution_ledger": _counter_delta(metrics["native_current_process"], before)}
         if key not in cache:
             data = produce_vector() if partition_store is None else run_partition(partition_store, partition, produce_vector)
@@ -1008,7 +1401,7 @@ def _python_liveness_precheck(semantic_execution) -> tuple[bool, str | None]:
     return True, None
 
 
-def python_nonmaterial_control(semantic_execution, corpus: dict[str, Any], *, teacher_stable: bool, metrics: dict[str, Any] | None = None, partition_store: AtomicPartitionStore | None = None, ruleset_fingerprint: str | None = None) -> dict[str, Any]:
+def python_nonmaterial_control(semantic_execution, corpus: dict[str, Any], *, teacher_stable: bool, metrics: dict[str, Any] | None = None, partition_store: AtomicPartitionStore | None = None, ruleset_fingerprint: str | None = None, search_pool=None) -> dict[str, Any]:
     """Run the H49R4A Python coefficient control only on stable teachers."""
     if not teacher_stable:
         return {"status": "NOT_RUN_NO_STABLE_TEACHER", "non_material_signal": None, "families": []}
@@ -1020,10 +1413,19 @@ def python_nonmaterial_control(semantic_execution, corpus: dict[str, Any], *, te
 
     def vector(config: EvaluationConfig) -> dict[int, dict[str, Any]]:
         config_id = config_hash(config)
-        partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=config_id, search_route="PYTHON_ALPHABETA_FULL_EVALUATOR", node_budget=2000, measurement_family="PYTHON_NONMATERIAL", ruleset_fingerprint=ruleset_fingerprint or semantic_execution.ruleset_fingerprint)
+        partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=config_id, search_route="PYTHON_ALPHABETA_FULL_EVALUATOR", node_budget=2000, measurement_family="PYTHON_NONMATERIAL", ruleset_fingerprint=ruleset_fingerprint or semantic_execution.ruleset_fingerprint, runner_sha256=SEMANTIC_REENTRY_PARTITION_SHA256)
         def produce_vector():
             before = dict(metrics["python_current_process"])
-            rows = [{"output_index": record["output_index"], **_python_decision(semantic_execution, record, config, metrics)} for record in corpus["records"]]
+            if search_pool is not None:
+                config_data = {field.name: getattr(config, field.name) for field in fields(EvaluationConfig)}
+                tasks = [(semantic_execution.ruleset_fingerprint, record, config_data) for record in corpus["records"]]
+                searched = list(search_pool.map(_python_decision_process_worker, tasks))
+                rows = []
+                for record, row in zip(corpus["records"], searched):
+                    _add_counter(metrics["python_current_process"], row.pop("execution_ledger"))
+                    rows.append({"output_index": record["output_index"], **row})
+            else:
+                rows = [{"output_index": record["output_index"], **_python_decision(semantic_execution, record, config, metrics)} for record in corpus["records"]]
             return {"position_identities": [record["position_identity_key"] for record in corpus["records"]], "rows": rows, "execution_ledger": _counter_delta(metrics["python_current_process"], before), "evaluation_config_hash": config_id}
         data = produce_vector() if partition_store is None else run_partition(partition_store, partition, produce_vector)
         _validate_vector(data, corpus)
@@ -1052,12 +1454,12 @@ def python_nonmaterial_control(semantic_execution, corpus: dict[str, Any], *, te
     return {"status": "VALID" if valid else "CELL_INVALID_SEARCH_FAILURE", "non_material_signal": max((family["family_mean_flip"] for family in families), default=0.0) >= 0.05 if valid else None, "families": families, "metrics": metrics}
 
 
-def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMaterialCheckpoint, surface: str, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None, semantic_execution=None) -> dict[str, Any]:
+def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMaterialCheckpoint, surface: str, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None, semantic_execution=None, search_pool=None) -> dict[str, Any]:
     budgets = [500, 2000, 8000] if surface in ("L49-0", "L49-1") else [2000]
     def search_matrix(checkpoint, selected_budgets):
         if semantic_execution is None:
             return _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store)
-        return _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store, semantic_execution=semantic_execution)
+        return _native_search_matrix(compiled, checkpoint, corpus, selected_budgets, "NATIVE_SEARCH_ENGINE_MATERIAL", surface, metrics, cache, context_cache, partition_store, semantic_execution=semantic_execution, search_pool=search_pool)
     baseline = search_matrix(start, budgets)
     candidate_rows = _l49_checkpoint_rows(compiled, start, surface)
     unique: dict[str, tuple[str, LearnableMaterialCheckpoint]] = {}
@@ -1080,12 +1482,12 @@ def native_material_surface(compiled, corpus: dict[str, Any], start: LearnableMa
     return {"surface": surface, "baseline": baseline, "cells": cells, "deduplicated_checkpoint_count": len(unique), "candidate_count": len(candidate_rows), "construction_failures": construction_failures, "aliases": aliases}
 
 
-def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMaterialCheckpoint, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None, semantic_execution=None) -> dict[str, Any]:
+def teacher_surface(compiled, corpus: dict[str, Any], checkpoint: LearnableMaterialCheckpoint, *, metrics: dict[str, Any], cache: dict[tuple[str, str, str, str, int, str], dict[str, Any]], context_cache: dict[tuple[str, str], tuple[Any, Any]], partition_store: AtomicPartitionStore | None = None, semantic_execution=None, search_pool=None) -> dict[str, Any]:
     budgets = [10000, 20000, 40000, 80000]
     if semantic_execution is None:
         results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache) if partition_store is None else _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store)
     else:
-        results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store, semantic_execution=semantic_execution)
+        results = _native_search_matrix(compiled, checkpoint, corpus, budgets, "NATIVE_SEARCH_ENGINE_TEACHER", "TEACHER", metrics, cache, context_cache, partition_store, semantic_execution=semantic_execution, search_pool=search_pool)
     pairs = {}
     for low, high in ((10000, 20000), (20000, 40000), (40000, 80000)):
         low_rows, high_rows = results[str(low)], results[str(high)]
@@ -1110,8 +1512,8 @@ def _measurement_metrics() -> dict[str, Any]:
     return {"native_current_process": native, "python_current_process": python, "native_authoritative": dict(native), "python_authoritative": dict(python), "authoritative_partitions_seen": []}
 
 
-def _write_partition(store: AtomicPartitionStore, *, ruleset_id: str, ruleset_fingerprint: str, corpus: dict[str, Any], checkpoint_id: str, route: str, node_budget: int | None, family: str, data: dict[str, Any]) -> None:
-    partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=checkpoint_id, search_route=route, node_budget=node_budget, measurement_family=family, ruleset_fingerprint=ruleset_fingerprint)
+def _write_partition(store: AtomicPartitionStore, *, ruleset_id: str, ruleset_fingerprint: str, corpus: dict[str, Any], checkpoint_id: str, route: str, node_budget: int | None, family: str, data: dict[str, Any], runner_sha256: str | None = None) -> None:
+    partition = partition_identity(corpus_id=_concrete_corpus_id(corpus), checkpoint_or_config_hash=checkpoint_id, search_route=route, node_budget=node_budget, measurement_family=family, ruleset_fingerprint=ruleset_fingerprint, runner_sha256=runner_sha256)
     run_partition(store, partition, lambda: data)
 
 
@@ -1127,20 +1529,53 @@ def _validate_measurement_root(root: Path) -> None:
         raise RuntimeError("STOP_ON_QUARANTINED_F49_ROOT_REUSE")
 
 
-def _control_records(legacy, control) -> list[dict[str, Any]]:
+def _control_records(legacy, control, semantic_execution=None) -> list[dict[str, Any]]:
     records = []
     for position in control.positions:
+        if semantic_execution is not None:
+            authority = GameSession(semantic_execution)
+            transport = GameSession(legacy)
+            semantic_history = []
+            events = {"remove_or_capture_effect": False, "type_or_promotion_transformation": False, "hand_or_inventory_count_change": False}
+            for action in position.action_history:
+                semantic_action = _semantic_action_for_legacy(authority, action)
+                before = authority.state.position
+                authority.submit(semantic_action)
+                transport.submit(action)
+                _merge_event_flags(events, _event_between(before, authority.state.position))
+                if authority.state.position != transport.state.position or authority.state.ply_count != transport.state.ply_count:
+                    raise RuntimeError("STOP_ON_NATIVE_TRANSPORT_REPLAY_POSITION_DIVERGENCE")
+                semantic_history.append(semantic_action)
+            records.append({"output_index": position.index, "target_ply": position.ply, "selected_attempt": None, "candidate_rng_seed": None, "action_history": [action_to_dict(action) for action in semantic_history], "position_identity_key": position.position_key, "legal_action_count": len(authority.legal_actions()), "event_flags": events})
+            continue
         session, events = _replay_with_events(legacy, position.action_history)
         records.append({"output_index": position.index, "target_ply": position.ply, "selected_attempt": None, "candidate_rng_seed": None, "action_history": [action_to_dict(action) for action in position.action_history], "position_identity_key": position.position_key, "legal_action_count": len(session.legal_actions()), "event_flags": events})
     return records
 
 
-def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
-    """Run the complete registered F49 sequence after the R1 freeze."""
-    root = partition_root or R5_AUTHORITY_ROOT
+def _validate_semantic_reentry_authority() -> None:
+    """Validate historical inputs while allowing this deliberate runner fork."""
+    manifest = json.loads(R4_MANIFEST_PATH.read_text(encoding="utf-8"))
+    if manifest.get("h49r4a_manifest_sha256") != H49R4A_MANIFEST_SHA or manifest.get("h49r3a_source_tree_aggregate_sha256") != H49R3A_SOURCE_TREE_SHA or manifest.get("native_binary_sha256") != H49R3A_NATIVE_SHA:
+        raise RuntimeError("STOP_ON_H49_SEMANTIC_REENTRY_AUTHORITY_DRIFT")
+    if manifest.get("f48_audit_runner_raw_sha256") != _sha256_bytes(F48_AUDIT_PATH.read_bytes()):
+        raise RuntimeError("STOP_ON_H49_SEMANTIC_REENTRY_DEPENDENCY_DRIFT")
+    executions = f49_protocol.build_h49r3a_primary_execution()
+    for ruleset_id in RULESET_IDS:
+        reconstruct_p48_0(ruleset_id, executions[ruleset_id]["semantic_execution"])
+
+
+def run_measurements(*, partition_root: Path | None = None, semantic_reentry: bool = False) -> dict[str, Any]:
+    """Run the registered F49 sequence, optionally through semantic Native search."""
+    root = partition_root or (F49_SEMANTIC_REENTRY_ROOT if semantic_reentry else R5_AUTHORITY_ROOT)
     _validate_measurement_root(root)
-    validate_r5_measurement_freeze()
-    preflight = run_preflight()
+    if semantic_reentry:
+        _validate_semantic_reentry_authority()
+    else:
+        validate_r5_measurement_freeze()
+    preflight = build_preflight_manifest(
+        allow_current_production_diff=semantic_reentry
+    )
     executions = f49_protocol.build_h49r3a_primary_execution()
     store = AtomicPartitionStore(root)
     result_cache: dict[tuple[str, str, str, str, int], dict[str, Any]] = {}
@@ -1148,33 +1583,50 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
     observations: dict[str, dict[str, dict[str, Any]]] = {}
     efficiency: dict[str, Any] = {}
     corpus_ledgers: dict[str, Any] = {}
+    semantic_structural: dict[str, dict[str, dict[str, Any]]] = {}
+    if semantic_reentry:
+        semantic_structural = _generate_semantic_structural_parallel(executions)
+    search_pool = (
+        ProcessPoolExecutor(
+            # Eight 128-MB semantic TT processes fit this host's memory; a
+            # 12–16 process fan-out exhausts RAM before CPU becomes limiting.
+            max_workers=8,
+            initializer=_init_semantic_search_process_worker,
+        )
+        if semantic_reentry
+        else None
+    )
     for ruleset_id, entry in executions.items():
         semantic = entry["semantic_execution"]
         legacy = entry["legacy_transport"]
-        control_openings = generate_arena_openings(legacy, count=16, seed=480703, min_plies=2, max_plies=6)
-        control = generate_diagnostic_corpus(legacy, control_openings, count=64, seed=480703, min_plies=2, max_plies=6)
-        control_data = {"status": "VALID", "corpus_id": control.corpus_id, "records": _control_records(legacy, control), "replay_mode": "LEGACY_DIRECT"}
-        structural = {"S49-M": generate_structural_corpus(semantic, stratum_id="S49-M", seed=490100, target_plies=(8, 20), minimum_legal_actions=1), "S49-E": generate_structural_corpus(semantic, stratum_id="S49-E", seed=490200, target_plies=(6, 24), minimum_legal_actions=2)}
+        corpus_execution = semantic if semantic_reentry else legacy
+        control_openings = generate_arena_openings(corpus_execution, count=16, seed=480703, min_plies=2, max_plies=6)
+        control = generate_diagnostic_corpus(corpus_execution, control_openings, count=64, seed=480703, min_plies=2, max_plies=6)
+        control_data = {"status": "VALID", "corpus_id": control.corpus_id, "records": _control_records(corpus_execution, control), "replay_mode": "SEMANTIC_DIRECT" if semantic_reentry else "LEGACY_DIRECT"}
+        if semantic_reentry:
+            structural = semantic_structural[ruleset_id]
+        else:
+            structural = {"S49-M": generate_structural_corpus(semantic, stratum_id="S49-M", seed=490100, target_plies=(8, 20), minimum_legal_actions=1), "S49-E": generate_structural_corpus(semantic, stratum_id="S49-E", seed=490200, target_plies=(6, 24), minimum_legal_actions=2)}
         corpora = {"F48_CONTROL": control_data, **structural}
         p0 = reconstruct_p48_0(ruleset_id, semantic)
         metrics = _measurement_metrics()
         for corpus_name, corpus in corpora.items():
             if corpus_name in ("S49-M", "S49-E"):
-                _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=semantic.ruleset_fingerprint, corpus=corpus, checkpoint_id="NONE", route="EVALUATOR_NEUTRAL_CORE_CORPUS", node_budget=None, family=corpus_name, data=corpus)
+                _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=semantic.ruleset_fingerprint, corpus=corpus, checkpoint_id="NONE", route="EVALUATOR_NEUTRAL_CORE_CORPUS", node_budget=None, family=corpus_name, data=corpus, runner_sha256=SEMANTIC_REENTRY_PARTITION_SHA256 if semantic_reentry else None)
             if corpus["status"] != "VALID":
                 corpus["teacher_40_80"] = {"status": "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "failed_searches": 0, "exact_best_move_agreement": 0.0}
                 corpus["non_material_control"] = {"status": "UNMEASURABLE_IN_SELECTED_SEARCH_PATH", "non_material_signal": None}
                 continue
             corpus["structural_ledger"] = structural_ledger(corpus)
             for surface in ("L49-0", "L49-1", "L49-2"):
-                surface_data = native_material_surface(legacy, corpus, p0, surface, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store, semantic_execution=semantic)
+                surface_data = native_material_surface(semantic, corpus, p0, surface, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store, semantic_execution=semantic, search_pool=search_pool)
                 corpus[surface] = surface_data
                 for budget in ([500, 2000, 8000] if surface != "L49-2" else [2000]):
                     values = [cell["budgets"][str(budget)] for cell in surface_data["cells"].values()]
                     corpus[f"{surface}_{budget}"] = f49_protocol.aggregate_leverage_cells(values)
-            teacher = teacher_surface(legacy, corpus, p0, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store, semantic_execution=semantic)
+            teacher = teacher_surface(semantic, corpus, p0, metrics=metrics, cache=result_cache, context_cache=context_cache, partition_store=store, semantic_execution=semantic, search_pool=search_pool)
             corpus.update(teacher)
-            corpus["non_material_control"] = python_nonmaterial_control(semantic, corpus, teacher_stable=teacher["teacher_40_80"]["stable"], metrics=metrics, partition_store=store, ruleset_fingerprint=semantic.ruleset_fingerprint)
+            corpus["non_material_control"] = python_nonmaterial_control(semantic, corpus, teacher_stable=teacher["teacher_40_80"]["stable"], metrics=metrics, partition_store=store, ruleset_fingerprint=semantic.ruleset_fingerprint, search_pool=search_pool)
         corpus_ledgers[ruleset_id] = {name: structural_ledger(corpus) for name, corpus in corpora.items()}
         for left, right in (("F48_CONTROL", "S49-M"), ("F48_CONTROL", "S49-E"), ("S49-M", "S49-E")):
             corpus_ledgers[ruleset_id][f"intersection_{left}_{right}"] = sorted({row["position_identity_key"] for row in corpora[left].get("records", [])} & {row["position_identity_key"] for row in corpora[right].get("records", [])})
@@ -1183,6 +1635,8 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
         metrics["TOTAL_AUTHORITATIVE_MEASUREMENT_COST"] = {"native": metrics["native_authoritative"], "python": metrics["python_authoritative"]}
         metrics.pop("authoritative_partitions_seen", None)
         efficiency[ruleset_id] = metrics
+    if search_pool is not None:
+        search_pool.shutdown(wait=True)
     classification, boundary, aggregate_witnesses = f49_protocol.select_f49_classification(production_observations(observations))
     direct_classification, direct_boundary, direct_witness_ledger = _independent_selector_ledger(observations)
     production_witness_ledger = _production_selector_witness_ledger(observations)
@@ -1192,10 +1646,10 @@ def run_measurements(*, partition_root: Path | None = None) -> dict[str, Any]:
         raise RuntimeError("F49 selector disagreement")
     python_efficiency_fields = ("player_construction_count", "profile_construction_count", "evaluator_construction_count", "search_count", "requested_nodes", "actual_nodes", "search_wall_seconds")
     python_efficiency = {field: sum(int(values["python_current_process"].get(field, 0)) if field not in ("search_wall_seconds",) else float(values["python_current_process"].get(field, 0.0)) for values in efficiency.values()) for field in python_efficiency_fields}
-    result = {"kind": "F49_DIAGNOSTIC_RESULTS", "preflight": preflight, "observations": observations, "structural_ledgers": corpus_ledgers, "efficiency": efficiency, "python_efficiency": python_efficiency, "classification": classification, "next_boundary": boundary, "witness_ledger": direct_witness_ledger, "production_witness_ledger": production_witness_ledger, "witness_aggregate": {key: bool(value) for key, value in direct_witness_ledger.items()}, "direct_selector_agreement": True, "observed_results_present": True, "learning_invoked": False, "F50_status": "NOT_STARTED", "partition_root": str(root)}
+    result = {"kind": "F49_DIAGNOSTIC_RESULTS", "preflight": preflight, "observations": observations, "structural_ledgers": corpus_ledgers, "efficiency": efficiency, "python_efficiency": python_efficiency, "classification": classification, "next_boundary": boundary, "witness_ledger": direct_witness_ledger, "production_witness_ledger": production_witness_ledger, "witness_aggregate": {key: bool(value) for key, value in direct_witness_ledger.items()}, "direct_selector_agreement": True, "observed_results_present": True, "learning_invoked": False, "F50_status": "NOT_STARTED", "partition_root": str(root), "native_search_transport": "SEMANTIC_PERSISTENT_ENGINE" if semantic_reentry else "LEGACY_NATIVE_ENGINE", "control_corpus_transport": "SEMANTIC_GENERATED" if semantic_reentry else "LEGACY_GENERATED"}
     for ruleset_id, corpora in observations.items():
         selector_corpus = {"corpus_id": stable_sha256({name: corpus.get("corpus_id") for name, corpus in corpora.items()}), "records": []}
-        _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=executions[ruleset_id]["semantic_execution"].ruleset_fingerprint, corpus=selector_corpus, checkpoint_id="NONE", route="AUDIT_SELECTOR", node_budget=None, family="SELECTOR", data={"classification": classification, "next_boundary": boundary, "witness_ledger": direct_witness_ledger, "witness_aggregate": {key: bool(value) for key, value in direct_witness_ledger.items()}, "direct_selector_agreement": True})
+        _write_partition(store, ruleset_id=ruleset_id, ruleset_fingerprint=executions[ruleset_id]["semantic_execution"].ruleset_fingerprint, corpus=selector_corpus, checkpoint_id="NONE", route="AUDIT_SELECTOR", node_budget=None, family="SELECTOR", data={"classification": classification, "next_boundary": boundary, "witness_ledger": direct_witness_ledger, "witness_aggregate": {key: bool(value) for key, value in direct_witness_ledger.items()}, "direct_selector_agreement": True}, runner_sha256=SEMANTIC_REENTRY_PARTITION_SHA256 if semantic_reentry else None)
     result["evidence_bundle_path"] = str(root / "f49_evidence_bundle.json")
     write_evidence_bundle(result, root)
     return result
@@ -1618,9 +2072,10 @@ def main() -> None:
     parser.add_argument("--write-r4-manifest", action="store_true", help="run no-observation P48 authority reconstruction and atomically write H49B-R4 manifest")
     parser.add_argument("--write-r5-manifest", action="store_true", help="run no-observation semantic-to-native bridge certification and atomically write H49B-R5 manifest")
     parser.add_argument("--measure", action="store_true", help="execute the full frozen F49 measurement runner")
+    parser.add_argument("--measure-semantic-reentry", action="store_true", help="execute F49 with persistent semantic Native search")
     args = parser.parse_args()
-    if args.measure:
-        result = run_measurements()
+    if args.measure or args.measure_semantic_reentry:
+        result = run_measurements(semantic_reentry=args.measure_semantic_reentry)
         print(json.dumps({"status": "PASS", "kind": result["kind"], "observed_results_present": result["observed_results_present"], "next_boundary": result["next_boundary"]}, sort_keys=True))
         return
     if args.write_preflight:

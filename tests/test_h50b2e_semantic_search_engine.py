@@ -128,13 +128,63 @@ def test_declaration_decision_is_selected_and_decoded_generically():
         history=(HistoryRecord(key, -1, "", False),),
     )
     session._search_history_witnesses = (position,)
-    result = SemanticSearchEngine(compiled, native, tt_megabytes=1).search(
+    zero_values = (0,) * len(native.type_ids)
+    result = SemanticSearchEngine(
+        compiled,
+        native,
+        board_values=zero_values,
+        hand_values=zero_values,
+        tt_megabytes=1,
+    ).search(
         session, _search_limits(max_depth=1, max_nodes=100)
     )
     assert result.action is None
     assert result.declaration_id == "opaque_claim"
     assert result.decision_line == ("opaque_claim",)
     assert result.principal_variation == ()
+
+
+def test_no_contest_declaration_is_a_neutral_terminal_decision():
+    from test_generic_declaration_semantics import _claim_position, _claim_ruleset
+    from generic_chess.rules.schema import RuleDeclarationOutcomeBand
+
+    ruleset = replace(
+        _claim_ruleset(),
+        declarations=tuple(
+            replace(
+                declaration,
+                outcome_bands=(RuleDeclarationOutcomeBand(7, "NO_CONTEST"),),
+            )
+            for declaration in _claim_ruleset().declarations
+        ),
+    )
+    compiled = compile_semantic_ruleset(ruleset)
+    native = compile_native_semantic_rules(compiled)
+    position = _claim_position(compiled)
+    key = str(position_identity_key(position, compiled))
+    session = GameSession(compiled)
+    session._state = replace(
+        session.state,
+        position=position,
+        ply_count=0,
+        repetition_counts=((key, 1),),
+        history=(HistoryRecord(key, -1, "", False),),
+    )
+    session._search_history_witnesses = (position,)
+    zero_values = (0,) * len(native.type_ids)
+    result = SemanticSearchEngine(
+        compiled,
+        native,
+        board_values=zero_values,
+        hand_values=zero_values,
+        tt_megabytes=1,
+    ).search(
+        session, _search_limits(max_depth=1, max_nodes=100)
+    )
+    assert result.action is None
+    assert result.declaration_id == "opaque_claim"
+    assert result.score == 0
+    assert result.decision_line == ("opaque_claim",)
 
 
 def test_cancel_and_node_budget_remain_bounded_on_persistent_engine():
