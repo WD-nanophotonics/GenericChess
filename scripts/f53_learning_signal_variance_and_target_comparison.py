@@ -147,7 +147,13 @@ def _sign_consistency(directions: list[dict]) -> dict:
     return {"full": result.pop("full"), "by_block": result}
 
 
-def _raw_target_direction(trajectories, parent, target_kind: str, distill_targets=None) -> dict:
+def _raw_target_direction(
+    trajectories,
+    parent,
+    target_kind: str,
+    distill_targets=None,
+    selected_points_by_trajectory=None,
+) -> dict:
     """Compute an unscaled gradient direction for one target on fixed data."""
     direction = _zero_like(parent)
     value_scale = parent.value_scale
@@ -165,15 +171,12 @@ def _raw_target_direction(trajectories, parent, target_kind: str, distill_target
             for point in points
         ]
         eligibility = {block: {} for block in ("board", "hand", "dynamic")}
+        selected_points = (
+            None if selected_points_by_trajectory is None
+            else set(selected_points_by_trajectory[trajectory_index])
+        )
         for point_index, point in enumerate(points):
             current = values[point_index]
-            if target_kind == "tdleaf_lambda":
-                target = trajectory.terminal_z if point_index == len(points) - 1 else values[point_index + 1]
-            elif target_kind == "monte_carlo_terminal":
-                target = trajectory.terminal_z
-            else:
-                target = distill_targets.get((trajectory_index, point_index), trajectory.terminal_z)
-            delta = target - current
             grad_scale = (1.0 - current * current) / value_scale
             for key, count in zip(trajectory.type_ids, point.leaf_feature_board):
                 eligibility["board"][key] = 0.7 * eligibility["board"].get(key, 0.0) + grad_scale * count
@@ -181,6 +184,20 @@ def _raw_target_direction(trajectories, parent, target_kind: str, distill_target
                 eligibility["hand"][key] = 0.7 * eligibility["hand"].get(key, 0.0) + grad_scale * count
             for name, feature in zip(DYNAMIC_FEATURE_NAMES, trajectory.dynamic_features_at(point).as_tuple()):
                 eligibility["dynamic"][name] = 0.7 * eligibility["dynamic"].get(name, 0.0) + grad_scale * feature
+            if selected_points is not None and point_index not in selected_points:
+                continue
+            if target_kind == "tdleaf_lambda":
+                target = trajectory.terminal_z if point_index == len(points) - 1 else values[point_index + 1]
+            elif target_kind == "monte_carlo_terminal":
+                target = trajectory.terminal_z
+            else:
+                try:
+                    target = distill_targets[(trajectory_index, point_index)]
+                except KeyError as exc:
+                    raise ValueError(
+                        "deep-search distillation requires a label for every selected point"
+                    ) from exc
+            delta = target - current
             for block in ("board", "hand", "dynamic"):
                 for key, value in eligibility[block].items():
                     direction[block][key] = direction[block].get(key, 0.0) + delta * value
@@ -189,6 +206,16 @@ def _raw_target_direction(trajectories, parent, target_kind: str, distill_target
 
 def _tdleaf_direction(trajectories, parent) -> dict:
     return _raw_target_direction(trajectories, parent, "tdleaf_lambda")
+
+
+def _normalized_distillation_target(native_score: int, side_to_move: int, parent) -> float:
+    """Convert semantic Native score to the owner-0 learning target domain."""
+    if side_to_move not in (0, 1):
+        raise ValueError("side_to_move must be 0 or 1")
+    owner0_score = native_score / parent.semantic_native_scale
+    if side_to_move == 1:
+        owner0_score = -owner0_score
+    return math.tanh(owner0_score / parent.value_scale) if parent.value_scale else 0.0
 
 
 def _candidate(parent, direction, fraction=DIAGNOSTIC_FRACTION):
@@ -302,10 +329,11 @@ def _distill_target_for_point(compiled, native, parent, trajectory, point_index:
     if session.result.status.value != "ongoing":
         winner = session.result.winner
         return 0.0 if winner is None else (1.0 if winner == 0 else -1.0)
+    side_to_move = session.state.position.side_to_move
     result = __import__("generic_chess.native.semantic_engine", fromlist=["SemanticSearchEngine"]).SemanticSearchEngine(
         compiled, native, checkpoint=parent, tt_megabytes=8
     ).search(session, SearchLimits(max_depth=12, max_nodes=DISTILL_NODES, quiescence_max_depth=0))
-    return math.tanh(result.score / parent.value_scale) if parent.value_scale else 0.0
+    return _normalized_distillation_target(result.score, side_to_move, parent)
 
 
 def _distill_targets(compiled, native, parent, trajectories):
@@ -332,6 +360,10 @@ def _learn_label(label: str, batch_trajectories: list[list], validation_nodes: i
     distill_by_batch = []
     target_directions = {name: [] for name in TARGET_NAMES}
     for trajectories in batch_trajectories:
+        selected_points = [
+            tuple(range(min(DISTILL_POINTS_PER_TRAJECTORY, len(trajectory.points))))
+            for trajectory in trajectories
+        ]
         distill_targets = _distill_targets(compiled, native, parent, trajectories)
         distill_values = list(distill_targets.values())
         distill_by_batch.append({
@@ -340,9 +372,25 @@ def _learn_label(label: str, batch_trajectories: list[list], validation_nodes: i
             "label_max": max(distill_values) if distill_values else None,
             "label_mean": sum(distill_values) / len(distill_values) if distill_values else None,
         })
-        target_directions["tdleaf_lambda"].append(_tdleaf_direction(trajectories, parent))
-        target_directions["monte_carlo_terminal"].append(_raw_target_direction(trajectories, parent, "monte_carlo_terminal"))
-        target_directions["deep_search_distillation"].append(_raw_target_direction(trajectories, parent, "deep_search_distillation", distill_targets))
+        # Compare all three targets on exactly the points that have deep labels.
+        target_directions["tdleaf_lambda"].append(
+            _raw_target_direction(
+                trajectories, parent, "tdleaf_lambda",
+                selected_points_by_trajectory=selected_points,
+            )
+        )
+        target_directions["monte_carlo_terminal"].append(
+            _raw_target_direction(
+                trajectories, parent, "monte_carlo_terminal",
+                selected_points_by_trajectory=selected_points,
+            )
+        )
+        target_directions["deep_search_distillation"].append(
+            _raw_target_direction(
+                trajectories, parent, "deep_search_distillation", distill_targets,
+                selected_points_by_trajectory=selected_points,
+            )
+        )
     records_by_slice = {
         f"{offset}:{offset + count}": _records(label, offset, count)
         for offset, count in VALIDATION_SLICES
@@ -467,7 +515,7 @@ def main() -> None:
         for label in grouped
     ]
     result = {
-        "work_order": "GENERICCHESS-F53-LEARNING-SIGNAL-VARIANCE-AND-TARGET-COMPARISON",
+        "work_order": "GENERICCHESS-F53-CORRECTIVE-DISTILLATION-TARGET-SEMANTICS",
         "batch_count": args.batches,
         "trajectories_per_batch": args.games_per_batch,
         "diagnostic_fraction": DIAGNOSTIC_FRACTION,

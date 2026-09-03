@@ -1,11 +1,15 @@
+import math
 import sys
 from pathlib import Path
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from f53_learning_signal_variance_and_target_comparison import (  # noqa: E402
     DIAGNOSTIC_FRACTION,
     _cosine,
+    _normalized_distillation_target,
     _sign_consistency,
     _zero_like,
 )
@@ -43,3 +47,14 @@ def test_f53_zero_like_preserves_all_three_feature_blocks():
         "hand": {"P": 0.0},
         "dynamic": {"mobility": 0.0},
     }
+
+
+def test_distillation_target_uses_semantic_fixed_point_scale_and_owner_zero_perspective():
+    class Checkpoint:
+        semantic_native_scale = 256
+        value_scale = 4.0
+
+    owner_zero = _normalized_distillation_target(256, 0, Checkpoint())
+    owner_one = _normalized_distillation_target(256, 1, Checkpoint())
+    assert owner_zero == pytest.approx(math.tanh(1.0 / 4.0))
+    assert owner_one == pytest.approx(-owner_zero)
