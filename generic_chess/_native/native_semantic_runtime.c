@@ -5,6 +5,26 @@
 static GCSemanticRuntimeAudit *gc_runtime_audit = NULL;
 static int gc_runtime_transient = 0;
 
+/* A semantic position reserves history storage for every possible ply.  Search
+ * only observes entries below history_len, so copying that unused tail for
+ * every edge is pure memory-bandwidth cost.  Keep the public ABI unchanged,
+ * but copy exactly the live state and the append-only history prefix. */
+static void copy_live_position(GCSemanticPosition *dst,
+                               const GCSemanticPosition *src) {
+    size_t fixed_bytes = offsetof(GCSemanticPosition, history_lo);
+    size_t history_bytes = (size_t)src->history_len;
+    memcpy(dst, src, fixed_bytes);
+    memcpy(dst->history_lo, src->history_lo, sizeof(uint64_t) * history_bytes);
+    memcpy(dst->history_hi, src->history_hi, sizeof(uint64_t) * history_bytes);
+    memcpy(dst->history_digest, src->history_digest,
+           sizeof(src->history_digest[0]) * history_bytes);
+    memcpy(dst->history_actor, src->history_actor, sizeof(uint8_t) * history_bytes);
+    memcpy(dst->history_gave_check, src->history_gave_check,
+           sizeof(uint8_t) * history_bytes);
+    memcpy(&dst->history_len, &src->history_len,
+           sizeof(GCSemanticPosition) - offsetof(GCSemanticPosition, history_len));
+}
+
 void gc_semantic_runtime_audit_start(GCSemanticRuntimeAudit *audit) {
     gc_runtime_audit = audit;
 }
@@ -506,7 +526,9 @@ static int postconditions_hold(const GCSemanticRules *r, const GCSemanticPositio
 static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action, int include_postconditions) {
     if (gc_runtime_audit) gc_runtime_audit->s3_trial_count++;
     if(!child||!r||!parent||parent->ply>=r->max_ply)return 0; const GCSemPattern *pattern=NULL; const GCSemGeometry *geo=NULL; uint16_t source=0,target=0; if(!validate_action(r,parent,action,&pattern,&geo,&source,&target))return 0; (void)geo;
-    GCSemanticPosition work=*parent; uint8_t side=parent->side_to_move;
+    GCSemanticPosition work;
+    copy_live_position(&work, parent);
+    uint8_t side=parent->side_to_move;
     for (uint8_t i = 0; i < r->aux_slot_count; i++) if (r->aux_slots[i].lifetime == 1) {
         reset_aux_value(&r->aux_slots[i], &work.aux[i][0], r->board_size);
         if (r->aux_slots[i].scope == 1) {
@@ -531,7 +553,7 @@ static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSema
         }
     }
     for(uint8_t i=0;i<pattern->effect_count;i++){const GCSemEffect *e=&pattern->effects[i];if(e->kind<5||e->kind>8)continue;uint8_t slot_index=0;const GCSemAuxSlot *slot=slot_meta(r,e->slot_id,&slot_index);if(!slot)return 0;uint8_t owner_index=slot->scope==1?(uint8_t)(side+1):0;GCSemAuxValue *v=&work.aux[slot_index][owner_index];v->kind=slot->value_kind;v->has_value=1;if(e->kind==5)v->bool_value=e->has_value?e->value:0;else if(e->kind==6)v->bool_value=0;else if(e->kind==7){uint16_t sq;if(!resolve_square(&e->square_ref,r,NULL,parent,side,source,target,&sq))return 0;v->square=sq;}else v->has_value=0;}
-    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side,target))return 0;if(gc_runtime_transient){*child=work;return 1;}if(work.history_len>=GC_SEM_MAX_PLY+1)return 0;if(gc_runtime_audit)gc_runtime_audit->child_canonical_key_computations++;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_actor[work.history_len]=side;work.history_gave_check[work.history_len]=(uint8_t)gc_semantic_runtime_in_check(r,&work,1-side);work.history_exact=parent->history_exact;if(gc_runtime_audit)gc_runtime_audit->history_appends++;work.history_len++;*child=work;return 1;
+    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side,target))return 0;if(gc_runtime_transient){copy_live_position(child,&work);return 1;}if(work.history_len>=GC_SEM_MAX_PLY+1)return 0;if(gc_runtime_audit)gc_runtime_audit->child_canonical_key_computations++;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_actor[work.history_len]=side;work.history_gave_check[work.history_len]=(uint8_t)gc_semantic_runtime_in_check(r,&work,1-side);work.history_exact=parent->history_exact;if(gc_runtime_audit)gc_runtime_audit->history_appends++;work.history_len++;copy_live_position(child,&work);return 1;
 }
 
 int gc_semantic_runtime_make_checked(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {

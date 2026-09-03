@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 
@@ -383,6 +384,48 @@ def semantic_iterative_search(
         "hand_values": hand_values,
     }, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
     return raw
+
+
+def root_parallel_search(native_rules, position, max_depth: int, *, workers: int = 1,
+                         board_values=None, hand_values=None) -> dict:
+    """Experimental deterministic root split for one semantic search position.
+
+    Each root child is an isolated Native position and each worker invokes the
+    accepted GIL-free iterative engine.  There is deliberately no shared TT or
+    mutable state.  This mode is for latency experiments; budgets remain owned
+    by the single-thread entrypoint.
+    """
+    if max_depth < 1:
+        return semantic_iterative_search(
+            native_rules, position, max_depth, board_values=board_values,
+            hand_values=hand_values,
+        )
+    actions = guarded_actions(native_rules, position)
+    if not actions:
+        return semantic_iterative_search(
+            native_rules, position, max_depth, board_values=board_values,
+            hand_values=hand_values,
+        )
+
+    def evaluate(action):
+        child = make_checked(native_rules, position, action)
+        reply = semantic_iterative_search(
+            native_rules, child, max_depth - 1, board_values=board_values,
+            hand_values=hand_values,
+        )
+        return -reply["score"], action, (action, *reply["principal_variation"]), reply
+
+    with ThreadPoolExecutor(max_workers=max(1, int(workers))) as pool:
+        rows = list(pool.map(evaluate, actions))
+    score, action, pv, _reply = max(rows, key=lambda row: (row[0], -row[1]))
+    return {
+        "score": score,
+        "best_action": action,
+        "principal_variation": pv,
+        "root_actions": len(actions),
+        "workers": max(1, int(workers)),
+        "mode": "ROOT_PARALLEL_EXPERIMENTAL",
+    }
 
 
 iterative_search = semantic_iterative_search

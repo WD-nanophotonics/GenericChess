@@ -365,12 +365,7 @@ def run_tests(root: Path, targets: list[str]) -> None:
     ]
     command.extend(targets)
     with heavy_lock(root):
-        result = run(
-            command,
-            cwd=root,
-            check=False,
-            creationflags=getattr(subprocess, "BELOW_NORMAL_PRIORITY_CLASS", 0),
-        )
+        result = run(command, cwd=root, check=False)
     if result.stdout:
         print(result.stdout, end="")
     if result.stderr:
@@ -653,11 +648,7 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
     if not command:
         raise FlowError("heavy requires a command after --")
     with heavy_lock(root):
-        process = subprocess.Popen(
-            command,
-            cwd=root,
-            creationflags=getattr(subprocess, "BELOW_NORMAL_PRIORITY_CLASS", 0),
-        )
+        process = subprocess.Popen(command, cwd=root)
         return process.wait()
 
 

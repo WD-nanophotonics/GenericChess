@@ -637,7 +637,7 @@ def test_start_message_remains_inline(monkeypatch, tmp_path):
     assert flow.chat_message_body(tmp_path, source) == "start request body\n"
 
 
-def test_heavy_uses_below_normal_priority_and_returns_child_code(monkeypatch, tmp_path):
+def test_heavy_uses_normal_priority_and_returns_child_code(monkeypatch, tmp_path):
     seen = {}
 
     class FakeProcess:
@@ -667,10 +667,10 @@ def test_heavy_uses_below_normal_priority_and_returns_child_code(monkeypatch, tm
     assert code == 7
     assert seen["argv"] == ["python", "work.py"]
     assert seen["cwd"] == tmp_path
-    assert seen["creationflags"] == getattr(subprocess, "BELOW_NORMAL_PRIORITY_CLASS", 0)
+    assert "creationflags" not in seen
 
 
-def test_publish_tests_use_the_same_low_priority_lock(monkeypatch, tmp_path):
+def test_publish_tests_use_the_same_exclusive_lock(monkeypatch, tmp_path):
     seen = {"locked": False}
 
     class FakeLock:
@@ -683,7 +683,7 @@ def test_publish_tests_use_the_same_low_priority_lock(monkeypatch, tmp_path):
     def fake_run(argv, **kwargs):
         assert seen["locked"] is True
         seen["argv"] = argv
-        seen["creationflags"] = kwargs["creationflags"]
+        seen["creationflags"] = kwargs.get("creationflags", 0)
         return SimpleNamespace(returncode=0, stdout="", stderr="")
 
     monkeypatch.setattr(flow, "python_for", lambda _root: "python")
@@ -694,7 +694,7 @@ def test_publish_tests_use_the_same_low_priority_lock(monkeypatch, tmp_path):
     flow.run_tests(tmp_path, ["tests/test_session.py"])
 
     assert seen["argv"][-1] == "tests/test_session.py"
-    assert seen["creationflags"] == getattr(subprocess, "BELOW_NORMAL_PRIORITY_CLASS", 0)
+    assert seen["creationflags"] == 0
 
 
 @pytest.mark.skipif(flow.os.name != "nt", reason="the workflow lock is Windows-only")

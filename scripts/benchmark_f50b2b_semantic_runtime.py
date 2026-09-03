@@ -18,6 +18,7 @@ from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import (
     fixed_depth_search, guarded_actions, make_checked, pack_position,
     position_key, search_runtime_sizes, semantic_iterative_search,
+    root_parallel_search,
 )
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
@@ -43,7 +44,7 @@ def _case_specs():
     )
 
 
-def _midgames(native, position, variants=3, plies=4):
+def _midgames(native, position, variants=3, plies=18):
     """Build deterministic, distinct legal positions rather than timing only setup."""
     positions = []
     seen = set()
@@ -115,7 +116,15 @@ def _measure_peak_rss(run):
 
 
 def _checked_transition_benchmark(native, positions, repeats, position_bytes):
-    work = [(position, guarded_actions(native, position)[0]) for position in positions]
+    work = []
+    for position in positions:
+        actions = guarded_actions(native, position)
+        if actions:
+            work.append((position, actions[0]))
+    if not work:
+        return {"calls": 0, "elapsed_seconds": 0.0, "calls_per_second": 0.0,
+                "latency_microseconds": None,
+                "approximate_copy_bandwidth_bytes_per_second": 0.0}
     started = time.perf_counter()
     for index in range(repeats):
         position, action = work[index % len(work)]
@@ -125,6 +134,27 @@ def _checked_transition_benchmark(native, positions, repeats, position_bytes):
     return {"calls": repeats, "elapsed_seconds": elapsed, "calls_per_second": rate,
             "latency_microseconds": (elapsed * 1_000_000 / repeats) if repeats else 0.0,
             "approximate_copy_bandwidth_bytes_per_second": rate * position_bytes}
+
+
+def _root_parallel_scaling(native, position, depth, worker_counts):
+    reference = semantic_iterative_search(native, position, depth)
+    rows = []
+    for workers in worker_counts:
+        started = time.perf_counter()
+        cpu_started = time.process_time()
+        result, memory = _measure_peak_rss(
+            lambda: root_parallel_search(native, position, depth, workers=workers)
+        )
+        elapsed = time.perf_counter() - started
+        cpu = time.process_time() - cpu_started
+        rows.append({"workers": workers, "elapsed_seconds": elapsed,
+                     "process_cpu_seconds": cpu,
+                     "cpu_utilization_cores": cpu / elapsed if elapsed else 0.0,
+                     "memory": memory,
+                     "parity": (result["score"], result["best_action"], result["principal_variation"]) ==
+                               (reference["score"], reference["best_action"], reference["principal_variation"]),
+                     "root_actions": result.get("root_actions", 0)})
+    return rows
 
 
 def _run_many(native, positions, depth, workers, repeats):
@@ -172,18 +202,23 @@ def main(argv=None):
                         help="comma-separated independent-search worker counts")
     parser.add_argument("--cases", default="western,shogi_without_declarations,generated",
                         help="comma-separated case names to include")
+    parser.add_argument("--root-workers", default="1,2,4,8,16",
+                        help="comma-separated worker counts for one-position root split")
+    parser.add_argument("--midgame-plies", type=int, default=18,
+                        help="legal plies used to build each representative midgame")
     parser.add_argument("--repeats", type=int, default=16)
     parser.add_argument("--transition-repeats", type=int, default=20_000)
     args = parser.parse_args(argv)
     scaling_workers = tuple(sorted({int(value) for value in args.scaling_workers.split(",") if int(value) > 1} | {args.workers}))
     selected_cases = frozenset(args.cases.split(","))
+    root_workers = tuple(sorted({int(value) for value in args.root_workers.split(",") if int(value) > 0}))
     rows = []
     for name, ruleset in _case_specs():
         if name not in selected_cases:
             continue
         semantic = compile_semantic_ruleset(ruleset)
         native = compile_native_semantic_rules(semantic)
-        positions = _midgames(native, _pack_initial(semantic, native))
+        positions = _midgames(native, _pack_initial(semantic, native), plies=args.midgame_plies)
         fixed_rows = []
         for position in positions:
             fixed_started = time.perf_counter()
@@ -195,12 +230,21 @@ def main(argv=None):
             for worker_count in scaling_workers
         }
         parallel = parallel_scaling[args.workers]
-        parity = all((result["score"], result["best_action"], result["principal_variation"]) == (fixed["score"], fixed["best_action"], fixed["principal_variation"])
-                     for result, fixed in zip(parallel["identities"], (fixed_rows[index % len(fixed_rows)] for index in range(args.repeats))))
+        parity = parallel["identities"] == serial["identities"]
+        fixed_parity = all(
+            (result["best_action"], result["principal_variation"]) ==
+            (fixed["best_action"], fixed["principal_variation"])
+            for result, fixed in zip(
+                parallel["identities"],
+                (fixed_rows[index % len(fixed_rows)] for index in range(args.repeats)),
+            )
+        )
         rows.append({"case": name, "midgame_positions": len(positions), "fixed": fixed_rows,
                      "checked_transition": _checked_transition_benchmark(native, positions, args.transition_repeats, search_runtime_sizes()["position_bytes"]),
+                     "root_parallel": _root_parallel_scaling(native, positions[0], args.depth, root_workers),
                      "serial": serial, "parallel": parallel,
                      "parallel_scaling": parallel_scaling, "parity": parity,
+                     "fixed_action_pv_parity": fixed_parity,
                      "speedup": parallel["nodes_per_second"] / serial["nodes_per_second"] if serial["nodes_per_second"] else None})
     report = {"schema": "F50B2B-SEMANTIC-RUNTIME-BENCHMARK-V1", "depth": args.depth,
               "workers": args.workers, "scaling_workers": scaling_workers, "selected_cases": sorted(selected_cases), "repeats": args.repeats, "transition_repeats": args.transition_repeats, "logical_cpus": os.cpu_count(),

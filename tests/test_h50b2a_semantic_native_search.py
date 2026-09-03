@@ -12,6 +12,7 @@ from generic_chess.native.semantic import (
     make_checked,
     pack_position,
     public_action,
+    root_parallel_search,
     semantic_iterative_search,
     search_runtime_sizes,
     snapshot,
@@ -223,3 +224,16 @@ def test_runtime_size_measurement_exposes_copy_pressure_without_legacy_aliasing(
     assert sizes["position_bytes"] > 50_000
     assert sizes["undo_bytes"] >= sizes["position_bytes"]
     assert sizes["max_ply"] >= 1_000
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_experimental_root_parallel_search_matches_one_position_reference():
+    _semantic, native, position = _initial()
+    before = snapshot(native, position)
+    reference = semantic_iterative_search(native, position, 2)
+    parallel = root_parallel_search(native, position, 2, workers=4)
+    assert parallel["mode"] == "ROOT_PARALLEL_EXPERIMENTAL"
+    assert (parallel["score"], parallel["best_action"], parallel["principal_variation"]) == (
+        reference["score"], reference["best_action"], reference["principal_variation"],
+    )
+    assert snapshot(native, position) == before
