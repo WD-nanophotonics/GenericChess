@@ -139,6 +139,89 @@ def _prescreen(label: str, limit: int, nodes: int = 2000) -> dict:
             "workers": workers, "variants": summary}
 
 
+def _native_delta(compiled, native, parent, child) -> dict:
+    parent_values = SemanticSearchEngine(
+        compiled, native, checkpoint=parent, tt_megabytes=0
+    ).native_evaluator_values
+    child_values = SemanticSearchEngine(
+        compiled, native, checkpoint=child, tt_megabytes=0
+    ).native_evaluator_values
+    return {
+        "scale": {"parent": parent_values["scale"], "child": child_values["scale"]},
+        "board": {
+            "parent": list(parent_values["board"]),
+            "child": list(child_values["board"]),
+            "delta": [b - a for a, b in zip(parent_values["board"], child_values["board"])],
+        },
+        "hand": {
+            "parent": list(parent_values["hand"]),
+            "child": list(child_values["hand"]),
+            "delta": [b - a for a, b in zip(parent_values["hand"], child_values["hand"])],
+        },
+        "dynamic": {
+            "parent": list(parent_values["dynamic"]),
+            "child": list(child_values["dynamic"]),
+            "delta": [b - a for a, b in zip(parent_values["dynamic"], child_values["dynamic"])],
+        },
+    }
+
+
+def _stable_checkpoint_comparison(label: str, parent, child, limit: int = 16, nodes: int = 2000, workers: int | None = None) -> dict:
+    compiled, native, _profile = _ruleset(label)
+    cases = _records(label, limit)
+    def compare(record):
+        before = _case(compiled, native, record, parent, nodes)
+        after = _case(compiled, native, record, child, nodes)
+        return before, after
+    worker_count = min(workers or 8, max(1, os.cpu_count() or 1), len(cases) or 1)
+    with ThreadPoolExecutor(max_workers=worker_count) as pool:
+        rows = list(pool.map(compare, cases))
+    score_delta = [after["score"] - before["score"] for before, after in rows]
+    return {
+        "positions": len(rows),
+        "move_flip_rate": (
+            sum(before["action"] != after["action"] for before, after in rows) / len(rows)
+            if rows else 0.0
+        ),
+        "mean_score_difference": sum(score_delta) / len(score_delta) if score_delta else 0.0,
+        "score_difference_min": min(score_delta) if score_delta else 0,
+        "score_difference_max": max(score_delta) if score_delta else 0,
+        "workers": worker_count,
+    }
+
+
+def _amplitude_surface(label: str, parent, child, limit: int = 16, nodes: int = 2000) -> list[dict]:
+    compiled, native, _profile = _ruleset(label)
+    cases = _records(label, limit)
+    board_delta = {
+        key: child.board_weights.get(key, 0.0) - parent.board_weights.get(key, 0.0)
+        for key in set(parent.board_weights) | set(child.board_weights)
+    }
+    hand_delta = {
+        key: child.hand_weights.get(key, 0.0) - parent.hand_weights.get(key, 0.0)
+        for key in set(parent.hand_weights) | set(child.hand_weights)
+    }
+    dynamic_delta = {
+        key: child.dynamic_weights.get(key, 0.0) - parent.dynamic_weights.get(key, 0.0)
+        for key in set(parent.dynamic_weights) | set(child.dynamic_weights)
+    }
+    amplitudes = (0.25, 0.5, 1.0, 2.0, 4.0)
+
+    def measure(amplitude):
+        candidate = replace(
+            parent,
+            board_weights={key: parent.board_weights.get(key, 0.0) + amplitude * value for key, value in board_delta.items()},
+            hand_weights={key: parent.hand_weights.get(key, 0.0) + amplitude * value for key, value in hand_delta.items()},
+            dynamic_weights={key: parent.dynamic_weights.get(key, 0.0) + amplitude * value for key, value in dynamic_delta.items()},
+        )
+        comparison = _stable_checkpoint_comparison(label, parent, candidate, limit, nodes, workers=1)
+        comparison["amplitude"] = amplitude
+        return comparison
+
+    with ThreadPoolExecutor(max_workers=min(len(amplitudes), max(1, os.cpu_count() or 1))) as pool:
+        return list(pool.map(measure, amplitudes))
+
+
 def _learn_and_arena(label: str, games: int, arena_pairs: int) -> dict:
     compiled, native, profile = _ruleset(label)
     parent = LearnableMaterialCheckpoint.from_profile(
@@ -163,6 +246,40 @@ def _learn_and_arena(label: str, games: int, arena_pairs: int) -> dict:
         training_config_hash=stable_sha256({"stage": "F50", "label": label}),
         training_seed=4807000,
     )
+    effective_delta = _native_delta(compiled, native, parent, child)
+    floating_delta = {
+        "board": {
+            key: child.board_weights.get(key, 0.0) - parent.board_weights.get(key, 0.0)
+            for key in sorted(set(parent.board_weights) | set(child.board_weights))
+        },
+        "hand": {
+            key: child.hand_weights.get(key, 0.0) - parent.hand_weights.get(key, 0.0)
+            for key in sorted(set(parent.hand_weights) | set(child.hand_weights))
+        },
+        "dynamic": {
+            key: child.dynamic_weights.get(key, 0.0) - parent.dynamic_weights.get(key, 0.0)
+            for key in sorted(set(parent.dynamic_weights) | set(child.dynamic_weights))
+        },
+    }
+    effective_changed = any(
+        value
+        for group in (effective_delta["board"], effective_delta["hand"], effective_delta["dynamic"])
+        for value in group["delta"]
+    )
+    if not effective_changed:
+        return {
+            "label": label,
+            "status": "QUANTIZATION_NOOP",
+            "floating_checkpoint_delta": floating_delta,
+            "native_bound_evaluator_delta": effective_delta,
+            "training_seconds": training_seconds,
+            "trajectories": len(trajectories),
+            "training_positions": td.positions_seen,
+        }
+    stable_comparison = _stable_checkpoint_comparison(label, parent, child)
+    amplitude_surface = []
+    if stable_comparison["move_flip_rate"] == 0.0:
+        amplitude_surface = _amplitude_surface(label, parent, child)
     arena_started = time.perf_counter()
     arena = run_arena(
         compiled, native, parent, child,
@@ -170,11 +287,12 @@ def _learn_and_arena(label: str, games: int, arena_pairs: int) -> dict:
                     tt_megabytes=8, opening_seed=480708,
                     opening_count=arena_pairs, min_plies=2, max_plies=6,
                     workers=min(4, arena_pairs)),
-    )
+    ) if stable_comparison["move_flip_rate"] > 0.0 else None
     return {
         "label": label,
+        "status": "EFFECTIVE_CHILD",
         "training_seconds": training_seconds,
-        "arena_seconds": time.perf_counter() - arena_started,
+        "arena_seconds": time.perf_counter() - arena_started if arena is not None else 0.0,
         "trajectories": len(trajectories),
         "training_positions": td.positions_seen,
         "td_mean_abs_error": td.mean_abs_td_error,
@@ -184,14 +302,18 @@ def _learn_and_arena(label: str, games: int, arena_pairs: int) -> dict:
             name: child.dynamic_weights.get(name, 0.0) - parent.dynamic_weights.get(name, 0.0)
             for name in DYNAMIC_FEATURE_NAMES
         },
+        "floating_checkpoint_delta": floating_delta,
+        "native_bound_evaluator_delta": effective_delta,
+        "stable_corpus_comparison": stable_comparison,
+        "td_direction_amplitude_surface": amplitude_surface,
         "arena": {
-            "pair_count": arena.pair_count,
-            "wins": arena.game_wins,
-            "draws": arena.game_draws,
-            "losses": arena.game_losses,
-            "mean_pair_score": arena.mean_pair_score,
-            "bootstrap_low": arena.bootstrap_low,
-            "bootstrap_high": arena.bootstrap_high,
+            "pair_count": 0 if arena is None else arena.pair_count,
+            "wins": 0 if arena is None else arena.game_wins,
+            "draws": 0 if arena is None else arena.game_draws,
+            "losses": 0 if arena is None else arena.game_losses,
+            "mean_pair_score": None if arena is None else arena.mean_pair_score,
+            "bootstrap_low": None if arena is None else arena.bootstrap_low,
+            "bootstrap_high": None if arena is None else arena.bootstrap_high,
             "workers": min(4, arena_pairs),
         },
     }
@@ -235,13 +357,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--positions", type=int, default=16)
     parser.add_argument("--games", type=int, default=2)
-    parser.add_argument("--arena-pairs", type=int, default=2)
+    parser.add_argument("--arena-pairs", type=int, default=8)
     parser.add_argument("--sanity-only", action="store_true")
+    parser.add_argument("--corrective-only", action="store_true")
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
+    work_order = (
+        "GENERICCHESS-F50-CORRECTIVE-EFFECTIVE-LEARNED-WEIGHT-RESOLUTION-AND-ARENA-RERUN"
+        if args.corrective_only
+        else "GENERICCHESS-F50-GENERIC-LEARNABLE-EVALUATOR-EXPANSION"
+    )
     if args.sanity_only:
         result = {
-            "work_order": "GENERICCHESS-F50-GENERIC-LEARNABLE-EVALUATOR-EXPANSION",
+            "work_order": work_order,
             "generated_sanity": _generated_sanity(),
         }
         (OUT / "f50_generated_sanity.json").write_text(
@@ -251,10 +379,10 @@ def main() -> None:
         return
     started = time.perf_counter()
     result = {
-        "work_order": "GENERICCHESS-F50-GENERIC-LEARNABLE-EVALUATOR-EXPANSION",
+        "work_order": work_order,
         "dynamic_feature_names": DYNAMIC_FEATURE_NAMES,
         "seeded_weights": WEIGHTS,
-        "prescreen": [
+        "prescreen": [] if args.corrective_only else [
             _prescreen("A_CANONICAL_WESTERN_CHESS", args.positions),
             _prescreen("B_CANONICAL_STANDARD_SHOGI", args.positions),
         ],

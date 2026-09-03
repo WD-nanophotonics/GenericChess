@@ -10,7 +10,8 @@ from typing import Any
 from .features import DYNAMIC_FEATURE_NAMES, non_anchor_type_ids
 from .serialization import stable_sha256
 
-MATERIAL_SCALE = 1.0  # fixed, versioned; native = round(float * MATERIAL_SCALE)
+MATERIAL_SCALE = 1.0  # historical material-only scale; semantic v2 uses 256
+SEMANTIC_NATIVE_SCALE = 256
 SCHEMA_VERSION = 2
 
 
@@ -157,6 +158,25 @@ class LearnableMaterialCheckpoint:
 
     def quantized_dynamic(self) -> list[int]:
         return [int(round(self.dynamic_weights.get(name, 0.0))) for name in DYNAMIC_FEATURE_NAMES]
+
+    @property
+    def semantic_native_scale(self) -> int:
+        """Fixed-point scale used by the versioned semantic evaluator."""
+        return SEMANTIC_NATIVE_SCALE if self.dynamic_weights else int(self.material_scale)
+
+    def semantic_quantized_board(self, type_ids: tuple[str, ...]) -> list[int]:
+        scale = self.semantic_native_scale
+        return [int(round(self.board_weights.get(tid, 0.0) * scale)) for tid in type_ids]
+
+    def semantic_quantized_hand(self, type_ids: tuple[str, ...]) -> list[int]:
+        scale = self.semantic_native_scale
+        return [int(round(self.hand_weights.get(tid, 0.0) * scale)) for tid in type_ids]
+
+    def semantic_quantized_dynamic(self) -> list[int] | None:
+        if not self.dynamic_weights:
+            return None
+        scale = self.semantic_native_scale
+        return [int(round(self.dynamic_weights.get(name, 0.0) * scale)) for name in DYNAMIC_FEATURE_NAMES]
 
     def native_board_value(self, type_id: str) -> int:
         return int(round(self.board_weights.get(type_id, 0.0) * self.material_scale))

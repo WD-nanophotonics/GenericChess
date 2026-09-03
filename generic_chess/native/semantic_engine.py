@@ -90,6 +90,7 @@ class SemanticSearchEngine:
         hand_values=None,
         dynamic_values=None,
         checkpoint=None,
+        evaluator_scale: int = 1,
         tt_megabytes: int = 64,
     ) -> None:
         if not native_available():
@@ -98,12 +99,15 @@ class SemanticSearchEngine:
             raise ValueError("ruleset fingerprint mismatch for semantic engine")
         if isinstance(tt_megabytes, bool) or not isinstance(tt_megabytes, int) or not 0 <= tt_megabytes <= 1024:
             raise ValueError("tt_megabytes must be an integer in [0, 1024]")
+        if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
+            raise ValueError("evaluator_scale must be an integer in [1, 1024]")
         self._compiled = compiled
         self._native_rules = native_rules
         self._checkpoint_id = None
         self._board_values = _profile_tuple(native_rules, board_values)
         self._hand_values = _profile_tuple(native_rules, hand_values)
         self._dynamic_values = _dynamic_tuple(dynamic_values)
+        self._evaluator_scale = evaluator_scale
         if (self._board_values is None) != (self._hand_values is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._tt_megabytes = tt_megabytes
@@ -114,9 +118,11 @@ class SemanticSearchEngine:
     def _set_checkpoint_values(self, checkpoint) -> None:
         checkpoint.validate_ruleset(self._compiled)
         type_ids = tuple(self._native_rules.type_ids)
-        self._board_values = tuple(checkpoint.quantized_board(type_ids))
-        self._hand_values = tuple(checkpoint.quantized_hand(type_ids))
-        self._dynamic_values = tuple(checkpoint.quantized_dynamic())
+        self._board_values = tuple(checkpoint.semantic_quantized_board(type_ids))
+        self._hand_values = tuple(checkpoint.semantic_quantized_hand(type_ids))
+        dynamic = checkpoint.semantic_quantized_dynamic()
+        self._dynamic_values = None if dynamic is None else tuple(dynamic)
+        self._evaluator_scale = checkpoint.semantic_native_scale
         self._checkpoint_id = checkpoint.checkpoint_id
 
     def _new_capsule(self):
@@ -126,6 +132,7 @@ class SemanticSearchEngine:
             self._hand_values,
             self._dynamic_values,
             self._tt_megabytes,
+            self._evaluator_scale,
         )
 
     @property
@@ -148,15 +155,28 @@ class SemanticSearchEngine:
         self._set_checkpoint_values(checkpoint)
         self._capsule = self._new_capsule()
 
-    def bind_evaluator(self, board_values, hand_values, dynamic_values=None) -> None:
+    def bind_evaluator(self, board_values, hand_values, dynamic_values=None, *, evaluator_scale: int = 1) -> None:
         board = _profile_tuple(self._native_rules, board_values)
         hand = _profile_tuple(self._native_rules, hand_values)
         if (board is None) != (hand is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._board_values, self._hand_values = board, hand
         self._dynamic_values = _dynamic_tuple(dynamic_values)
+        if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
+            raise ValueError("evaluator_scale must be an integer in [1, 1024]")
+        self._evaluator_scale = evaluator_scale
         self._checkpoint_id = None
         self._capsule = self._new_capsule()
+
+    @property
+    def native_evaluator_values(self) -> dict:
+        """Return the exact fixed-point values bound to the Native engine."""
+        return {
+            "scale": self._evaluator_scale,
+            "board": tuple(self._board_values or ()),
+            "hand": tuple(self._hand_values or ()),
+            "dynamic": tuple(self._dynamic_values or ()),
+        }
 
     def clear_tt(self) -> None:
         _module().semantic_engine_clear_tt(self._capsule)

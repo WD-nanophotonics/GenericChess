@@ -108,6 +108,38 @@ def test_v1_checkpoint_roundtrip_remains_material_only_and_v2_seeds_from_config(
     assert LearnableMaterialCheckpoint.from_dict(v2.to_dict()).checkpoint_id == v2.checkpoint_id
 
 
+def test_semantic_v2_fixed_point_resolution_preserves_seed_and_small_deltas():
+    compiled = compile_semantic_ruleset(build_western_chess_ruleset())
+    native = compile_native_semantic_rules(compiled)
+    legacy = compile_ruleset_for_execution(build_western_chess_ruleset())
+    profile = build_ruleset_profile(legacy, EvaluationConfig())
+    parent = LearnableMaterialCheckpoint.from_profile(
+        compiled, profile,
+        dynamic_weights={"mobility": 2.0, "promotion_potential": 3.0, "anchor_safety": 5.0},
+    )
+    child = replace(parent, dynamic_weights={
+        "mobility": 2.001,
+        "promotion_potential": 3.0,
+        "anchor_safety": 5.0,
+    })
+    assert parent.semantic_native_scale == 256
+    assert parent.semantic_quantized_dynamic() == [512, 768, 1280]
+    assert child.semantic_quantized_dynamic()[0] == 512  # below one fixed-point quantum
+    child2 = replace(parent, dynamic_weights={
+        "mobility": 2.004,
+        "promotion_potential": 3.0,
+        "anchor_safety": 5.0,
+    })
+    assert child2.semantic_quantized_dynamic()[0] != parent.semantic_quantized_dynamic()[0]
+    parent_engine = SemanticSearchEngine(compiled, native, checkpoint=parent, tt_megabytes=0)
+    child_engine = SemanticSearchEngine(compiled, native, checkpoint=child2, tt_megabytes=0)
+    assert parent_engine.native_evaluator_values["scale"] == 256
+    assert parent_engine.native_evaluator_values["board"] == tuple(
+        value * 256 for value in parent.quantized_board(native.type_ids)
+    )
+    assert child_engine.native_evaluator_values["dynamic"] != parent_engine.native_evaluator_values["dynamic"]
+
+
 def test_dynamic_checkpoint_rebind_clears_persistent_tt():
     compiled, native, _position = _initial()
     legacy = compile_ruleset_for_execution(build_western_chess_ruleset())
