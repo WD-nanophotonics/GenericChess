@@ -227,11 +227,11 @@ def test_repetition_and_no_contest_terminal_scores_are_neutral():
 
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
-def test_declaration_bearing_rulesets_fail_closed_but_shogi_without_them_executes():
+def test_declaration_bearing_rulesets_execute_generically_and_shogi_without_them_executes():
     semantic = compile_semantic_ruleset(build_standard_shogi_ruleset())
     native = compile_native_semantic_rules(semantic)
-    with pytest.raises(ValueError, match="declaration-bearing rulesets"):
-        semantic_iterative_search(native, _pack_initial(semantic, native), 1)
+    result = semantic_iterative_search(native, _pack_initial(semantic, native), 1)
+    assert result["best_action"] is not None
     clear_semantic, clear_native = _declaration_free_shogi()
     result = semantic_iterative_search(
         clear_native, _pack_initial(clear_semantic, clear_native), 1

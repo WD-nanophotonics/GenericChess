@@ -35,6 +35,9 @@
 #define GC_CANCEL_CAPSULE "generic_chess._native_core.gc_cancel"
 #define GC_SEM_RULES_CAPSULE "generic_chess._native_core.gc_semantic_rules"
 #define GC_SEM_POSITION_CAPSULE "generic_chess._native_core.gc_semantic_position"
+#define GC_SEM_ENGINE_CAPSULE "generic_chess._native_core.gc_semantic_engine"
+#define GC_SEM_TT_CAPSULE "generic_chess._native_core.gc_semantic_tt"
+#define GC_SEM_DECL_ACTION_TAG UINT64_C(0x8000000000000000)
 
 static PyObject *gc_native_error = NULL;
 
@@ -52,6 +55,15 @@ typedef struct {
     GCTable *tt;
     int busy;
 } GCSearchEngine;
+
+typedef struct {
+    GCSemanticRules *rules;
+    PyObject *rules_capsule;
+    PyObject *board_values;
+    PyObject *hand_values;
+    GCSemanticTable *tt;
+    int busy;
+} GCSemanticSearchEngine;
 
 static void gc_rules_capsule_free(PyObject *capsule) {
     GCRules *rules = (GCRules *)PyCapsule_GetPointer(capsule, GC_RULES_CAPSULE);
@@ -81,6 +93,18 @@ static void gc_engine_capsule_free(PyObject *capsule) {
         capsule, GC_ENGINE_CAPSULE);
     if (engine != NULL) {
         gc_tt_free(engine->tt);
+        free(engine);
+    }
+}
+
+static void gc_semantic_engine_capsule_free(PyObject *capsule) {
+    GCSemanticSearchEngine *engine = (GCSemanticSearchEngine *)PyCapsule_GetPointer(
+        capsule, GC_SEM_ENGINE_CAPSULE);
+    if (engine != NULL) {
+        gc_semantic_tt_free(engine->tt);
+        Py_XDECREF(engine->rules_capsule);
+        Py_XDECREF(engine->board_values);
+        Py_XDECREF(engine->hand_values);
         free(engine);
     }
 }
@@ -3548,6 +3572,32 @@ static int32_t gc_semantic_score_from_tt(int32_t score, uint32_t ply) {
     return score;
 }
 
+static uint64_t gc_semantic_declaration_action(uint8_t declaration_index) {
+    return GC_SEM_DECL_ACTION_TAG | (uint64_t)declaration_index;
+}
+
+static int gc_semantic_is_declaration_action(uint64_t action) {
+    return (action & GC_SEM_DECL_ACTION_TAG) != 0;
+}
+
+static int gc_semantic_declaration_win(
+        const GCSemanticRules *rules, const GCSemanticPosition *position,
+        uint32_t ply, uint64_t *action_out) {
+    for (uint8_t i = 0; i < rules->declaration_count; i++) {
+        const GCSemDeclaration *declaration = &rules->declarations[i];
+        if (declaration->owner != position->side_to_move) continue;
+        GCSemanticDeclarationAssessment assessment;
+        int status = gc_semantic_runtime_assess_declaration(
+            rules, position, declaration->declaration_id, &assessment);
+        if (status <= 0) return -1;
+        if (assessment.outcome == 0) {
+            if (action_out != NULL) *action_out = gc_semantic_declaration_action(i);
+            return 1;
+        }
+    }
+    return 0;
+}
+
 static void gc_semantic_tt_store_node(GCSemanticIterativeContext *ctx,
                                       GCSemanticPosition *position,
                                       uint32_t ply, int depth, int score,
@@ -3583,6 +3633,25 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     int beta_original = beta;
     uint64_t tt_action = 0;
     int tt_has_action = 0;
+    uint64_t declaration_action = 0;
+    int declaration_win = gc_semantic_declaration_win(
+        ctx->rules, position, ctx->root_ply_offset + ply,
+        &declaration_action);
+    if (declaration_win < 0) {
+        ctx->control = 4;
+        return 0;
+    }
+    if (declaration_win > 0) {
+        int score = gc_semantic_iterative_terminal_score(
+            position->side_to_move, position->side_to_move,
+            (int)(ctx->root_ply_offset + ply));
+        ctx->pv_table[(size_t)ply * ctx->pv_stride] = declaration_action;
+        ctx->pv_length[ply] = 1;
+        gc_semantic_tt_store_node(ctx, position, ply, depth, score,
+                                  alpha_original, beta_original,
+                                  declaration_action, 1);
+        return score;
+    }
     int winner = -1;
     int terminal = gc_semantic_terminal_status(ctx->rules, position, &winner);
     if (terminal < 0) {
@@ -3604,21 +3673,12 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         uint8_t stored_bound = GC_TT_BOUND_NONE;
         uint32_t stored_generation = 0;
         uint64_t collisions = 0;
-        GCPackedAction stored_pv[GC_SEM_TT_PV_MAX_DEPTH];
-        uint16_t stored_pv_length = 0;
         if (gc_semantic_tt_probe(
                 ctx->tt, position, ctx->history_context[ply], depth,
                 &stored_score, &tt_action, &tt_has_action,
                 &stored_depth, &stored_bound, &stored_generation,
-                &collisions, stored_pv, &stored_pv_length)) {
+                &collisions, NULL, NULL)) {
             ctx->tt_hits++;
-            uint16_t pv_copy_length = stored_pv_length;
-            if (pv_copy_length > ctx->pv_stride) pv_copy_length = ctx->pv_stride;
-            if (pv_copy_length != 0) {
-                memcpy(&ctx->pv_table[(size_t)ply * ctx->pv_stride],
-                       stored_pv, sizeof(GCPackedAction) * pv_copy_length);
-                ctx->pv_length[ply] = pv_copy_length;
-            }
             if (stored_generation < ctx->tt_iteration_generation)
                 ctx->tt_previous_iteration_hits++;
             else
@@ -3661,6 +3721,35 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     int best = -GC_SEMANTIC_PROBE_INF;
     uint64_t best_action = 0;
     int found = 0;
+    for (uint8_t i = 0; i < ctx->rules->declaration_count; i++) {
+        const GCSemDeclaration *declaration = &ctx->rules->declarations[i];
+        if (declaration->owner != position->side_to_move) continue;
+        GCSemanticDeclarationAssessment assessment;
+        int status = gc_semantic_runtime_assess_declaration(
+            ctx->rules, position, declaration->declaration_id, &assessment);
+        if (status <= 0) {
+            gc_semantic_action_buffer_free(&actions);
+            ctx->control = 4;
+            return 0;
+        }
+        if (assessment.outcome != 2) continue; /* LOSS is unavailable; WIN returned above. */
+        uint64_t action = gc_semantic_declaration_action(i);
+        if (!found || best < 0) {
+            found = 1;
+            best = 0;
+            best_action = action;
+            ctx->pv_table[(size_t)ply * ctx->pv_stride] = action;
+            ctx->pv_length[ply] = 1;
+        }
+    }
+    if (found && best > alpha) alpha = best;
+    if (found && alpha >= beta) {
+        gc_semantic_action_buffer_free(&actions);
+        gc_semantic_tt_store_node(ctx, position, ply, depth, best,
+                                  alpha_original, beta_original,
+                                  best_action, 1);
+        return best;
+    }
     if (!pv_node && tt_has_action) {
         for (size_t j = 0; j < actions.count; j++) {
             if (actions.data[j] == tt_action) {
@@ -3676,6 +3765,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         if (!gc_semantic_iterative_check_budget(ctx, 1)) break;
         GCSemanticPosition *child = &ctx->stack[ply + 1];
         uint64_t action = actions.data[i];
+        if (gc_semantic_is_declaration_action(action)) continue;
         if (!gc_semantic_runtime_make_checked(child, ctx->rules, position, action)) continue;
         ctx->transition_count++;
         gc_semantic_context_step(
@@ -3716,7 +3806,8 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     }
     gc_semantic_action_buffer_free(&actions);
     if (ctx->control != 0) return 0;
-    if (ctx->tt != NULL && !pv_replay && pv_node && found) {
+    if (ctx->tt != NULL && !pv_replay && pv_node && found &&
+        !gc_semantic_is_declaration_action(best_action)) {
         /* Re-search the selected branch with a full PV window so TT ordering
          * cannot change the deterministic principal line. */
         GCSemanticPosition *best_child = &ctx->stack[ply + 1];
@@ -3762,6 +3853,18 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
 
 static int gc_semantic_iterative_fallback(GCSemanticIterativeContext *ctx,
                                           uint64_t *action_out) {
+    uint64_t declaration_action = 0;
+    int declaration_win = gc_semantic_declaration_win(
+        ctx->rules, &ctx->stack[0], ctx->root_ply_offset,
+        &declaration_action);
+    if (declaration_win < 0) {
+        ctx->control = 4;
+        return 0;
+    }
+    if (declaration_win > 0) {
+        if (action_out != NULL) *action_out = declaration_action;
+        return 1;
+    }
     GCSemanticActionBuffer actions;
     gc_semantic_action_buffer_init(&actions);
     if (!gc_semantic_generate_candidate_buffer(ctx->rules, &ctx->stack[0], &actions)) {
@@ -3829,13 +3932,14 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *rules_capsule, *position_capsule;
     PyObject *max_nodes_obj = Py_None, *max_time_obj = Py_None;
     PyObject *cancel_capsule = Py_None, *board_values = NULL, *hand_values = NULL;
+    PyObject *tt_capsule = Py_None;
     unsigned int max_depth;
     unsigned int root_ply_offset = 0;
     unsigned int tt_megabytes = 0;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOII", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOIIO", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
-                          &root_ply_offset, &tt_megabytes)) return NULL;
+                          &root_ply_offset, &tt_megabytes, &tt_capsule)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
@@ -3855,11 +3959,6 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     }
     if (!gc_semantic_require_matching_rules(rules, position) ||
         !gc_semantic_require_exact_history(position)) return NULL;
-    if (rules->declaration_count != 0) {
-        PyErr_SetString(PyExc_ValueError,
-                        "semantic iterative search does not support declaration-bearing rulesets");
-        return NULL;
-    }
     GCSemanticProbeProfile profile;
     if (!gc_semantic_parse_profile(board_values, hand_values, rules, &profile)) return NULL;
     GCCancelFlag *cancel = NULL;
@@ -3887,6 +3986,17 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         }
         max_time_ns = (uint64_t)(seconds * 1e9);
     }
+    GCSemanticTable *borrowed_tt = NULL;
+    if (tt_capsule != Py_None) {
+        borrowed_tt = (GCSemanticTable *)PyCapsule_GetPointer(
+            tt_capsule, GC_SEM_TT_CAPSULE);
+        if (borrowed_tt == NULL) return NULL;
+        if (tt_megabytes != 0) {
+            PyErr_SetString(PyExc_ValueError,
+                            "semantic engine search cannot combine a TT capsule and tt_megabytes");
+            return NULL;
+        }
+    }
     GCSemanticIterativeContext ctx;
     memset(&ctx, 0, sizeof(ctx));
     ctx.rules = rules;
@@ -3898,7 +4008,9 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     ctx.cancel = cancel;
     ctx.deadline_ns = max_time_ns == UINT64_MAX
         ? UINT64_MAX : gc_deadline_after(gc_monotonic_ns(), max_time_ns);
-    if (tt_megabytes != 0) {
+    if (borrowed_tt != NULL) {
+        ctx.tt = borrowed_tt;
+    } else if (tt_megabytes != 0) {
         size_t requested_bytes = (size_t)tt_megabytes * (size_t)1024 * (size_t)1024;
         ctx.tt = gc_semantic_tt_create(requested_bytes, NULL);
         if (ctx.tt == NULL) {
@@ -3914,7 +4026,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         !gc_checked_size_mul(pv_bytes, sizeof(uint64_t), &pv_bytes) ||
         !gc_checked_size_mul(levels, sizeof(uint16_t), &length_bytes)) {
         PyErr_SetString(PyExc_OverflowError, "semantic search state size overflow");
-        gc_semantic_tt_free(ctx.tt);
+        if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         return NULL;
     }
     ctx.stack = (GCSemanticPosition *)calloc(1, position_bytes);
@@ -3922,7 +4034,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     ctx.pv_length = (uint16_t *)calloc(1, length_bytes);
     if (!ctx.stack || !ctx.pv_table || !ctx.pv_length) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
-        gc_semantic_tt_free(ctx.tt);
+        if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         PyErr_NoMemory();
         return NULL;
     }
@@ -3973,23 +4085,25 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *pv = PyTuple_New((Py_ssize_t)completed_len);
     if (!pv) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
-        gc_semantic_tt_free(ctx.tt);
+        if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         return NULL;
     }
     for (uint16_t i = 0; i < completed_len; i++) {
         PyObject *value = PyLong_FromUnsignedLongLong(completed_pv[i]);
         if (!value) {
             Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
-            gc_semantic_tt_free(ctx.tt);
+            if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
             return NULL;
         }
         PyTuple_SET_ITEM(pv, (Py_ssize_t)i, value);
     }
-    PyObject *best_action_obj = completed_has_action
+    int completed_is_declaration = completed_has_action &&
+        gc_semantic_is_declaration_action(completed_action);
+    PyObject *best_action_obj = completed_has_action && !completed_is_declaration
         ? PyLong_FromUnsignedLongLong(completed_action) : Py_NewRef(Py_None);
     if (!best_action_obj) {
         Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
-        gc_semantic_tt_free(ctx.tt);
+        if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         return NULL;
     }
     PyObject *out = Py_BuildValue(
@@ -4024,8 +4138,29 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     Py_DECREF(best_action_obj);
     Py_DECREF(pv);
     free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
-    gc_semantic_tt_free(ctx.tt);
+    if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
     if (!out) return NULL;
+    if (completed_is_declaration) {
+        uint8_t declaration_index = (uint8_t)(completed_action & 0xFFu);
+        if (declaration_index >= rules->declaration_count) {
+            Py_DECREF(out);
+            PyErr_SetString(PyExc_RuntimeError,
+                            "semantic search returned an invalid declaration tag");
+            return NULL;
+        }
+        PyObject *declaration_id = PyUnicode_FromString(
+            rules->declarations[declaration_index].declaration_id);
+        if (declaration_id == NULL || PyDict_SetItemString(
+                out, "declaration_id", declaration_id) != 0) {
+            Py_XDECREF(declaration_id);
+            Py_DECREF(out);
+            return NULL;
+        }
+        Py_DECREF(declaration_id);
+    } else if (PyDict_SetItemString(out, "declaration_id", Py_None) != 0) {
+        Py_DECREF(out);
+        return NULL;
+    }
     return out;
 }
 
@@ -4036,6 +4171,132 @@ static PyObject *gc_semantic_search_runtime_sizes(PyObject *self, PyObject *args
                          "position_bytes", (Py_ssize_t)sizeof(GCSemanticPosition),
                          "undo_bytes", (Py_ssize_t)sizeof(GCSemanticUndo),
                          "max_ply", (Py_ssize_t)GC_SEM_MAX_PLY);
+}
+
+static GCSemanticSearchEngine *gc_get_semantic_engine(PyObject *capsule) {
+    if (!PyCapsule_CheckExact(capsule)) {
+        PyErr_SetString(PyExc_TypeError, "expected a native semantic engine capsule");
+        return NULL;
+    }
+    return (GCSemanticSearchEngine *)PyCapsule_GetPointer(
+        capsule, GC_SEM_ENGINE_CAPSULE);
+}
+
+static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *board_values, *hand_values;
+    unsigned int tt_megabytes;
+    if (!PyArg_ParseTuple(args, "OOOI", &rules_capsule, &board_values,
+                          &hand_values, &tt_megabytes)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    if (rules == NULL) return NULL;
+    if (tt_megabytes > 1024) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic engine tt_megabytes must be in [0, 1024]");
+        return NULL;
+    }
+    GCSemanticProbeProfile profile;
+    if (!gc_semantic_parse_profile(board_values, hand_values, rules, &profile))
+        return NULL;
+    GCSemanticSearchEngine *engine = (GCSemanticSearchEngine *)calloc(
+        1, sizeof(*engine));
+    if (engine == NULL) { PyErr_NoMemory(); return NULL; }
+    engine->rules = rules;
+    engine->rules_capsule = Py_NewRef(rules_capsule);
+    engine->board_values = Py_NewRef(board_values);
+    engine->hand_values = Py_NewRef(hand_values);
+    if (tt_megabytes != 0) {
+        size_t requested = (size_t)tt_megabytes * (size_t)1024 * (size_t)1024;
+        engine->tt = gc_semantic_tt_create(requested, NULL);
+        if (engine->tt == NULL) {
+            Py_DECREF(engine->rules_capsule);
+            Py_DECREF(engine->board_values);
+            Py_DECREF(engine->hand_values);
+            free(engine);
+            PyErr_NoMemory();
+            return NULL;
+        }
+    }
+    (void)profile;
+    return PyCapsule_New(engine, GC_SEM_ENGINE_CAPSULE,
+                         gc_semantic_engine_capsule_free);
+}
+
+static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule, *position_capsule;
+    unsigned int max_depth;
+    PyObject *max_nodes = Py_None, *max_time = Py_None, *cancel = Py_None;
+    if (!PyArg_ParseTuple(args, "OOI|OOO", &engine_capsule, &position_capsule,
+                          &max_depth, &max_nodes, &max_time, &cancel)) return NULL;
+    GCSemanticSearchEngine *engine = gc_get_semantic_engine(engine_capsule);
+    if (engine == NULL) return NULL;
+    if (engine->busy) {
+        PyErr_SetString(PyExc_RuntimeError, "semantic search engine is busy");
+        return NULL;
+    }
+    PyObject *tt_capsule = engine->tt != NULL
+        ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
+        : Py_NewRef(Py_None);
+    if (tt_capsule == NULL) return NULL;
+    PyObject *call_args = PyTuple_New(11);
+    if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
+    Py_INCREF(engine->rules_capsule);
+    PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
+    Py_INCREF(position_capsule);
+    PyTuple_SET_ITEM(call_args, 1, position_capsule);
+    PyTuple_SET_ITEM(call_args, 2, PyLong_FromUnsignedLong(max_depth));
+    Py_INCREF(max_nodes); PyTuple_SET_ITEM(call_args, 3, max_nodes);
+    Py_INCREF(max_time); PyTuple_SET_ITEM(call_args, 4, max_time);
+    Py_INCREF(cancel); PyTuple_SET_ITEM(call_args, 5, cancel);
+    Py_INCREF(engine->board_values); PyTuple_SET_ITEM(call_args, 6, engine->board_values);
+    Py_INCREF(engine->hand_values); PyTuple_SET_ITEM(call_args, 7, engine->hand_values);
+    PyTuple_SET_ITEM(call_args, 8, PyLong_FromLong(0));
+    PyTuple_SET_ITEM(call_args, 9, PyLong_FromLong(0));
+    PyTuple_SET_ITEM(call_args, 10, tt_capsule);
+    engine->busy = 1;
+    PyObject *result = gc_semantic_iterative_search(self, call_args);
+    engine->busy = 0;
+    Py_DECREF(call_args);
+    return result;
+}
+
+static PyObject *gc_semantic_engine_clear_tt(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule;
+    if (!PyArg_ParseTuple(args, "O", &engine_capsule)) return NULL;
+    GCSemanticSearchEngine *engine = gc_get_semantic_engine(engine_capsule);
+    if (engine == NULL) return NULL;
+    if (engine->busy) {
+        PyErr_SetString(PyExc_RuntimeError, "semantic search engine is busy");
+        return NULL;
+    }
+    gc_semantic_tt_clear(engine->tt);
+    Py_RETURN_NONE;
+}
+
+static PyObject *gc_semantic_engine_tt_info(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *engine_capsule;
+    if (!PyArg_ParseTuple(args, "O", &engine_capsule)) return NULL;
+    GCSemanticSearchEngine *engine = gc_get_semantic_engine(engine_capsule);
+    if (engine == NULL) return NULL;
+    if (engine->tt == NULL) {
+        return Py_BuildValue("{s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+            "requested_bytes", (uint64_t)0, "allocated_bytes", (uint64_t)0,
+            "bucket_count", (uint64_t)0, "entry_capacity", (uint64_t)0,
+            "entry_size", (uint64_t)gc_semantic_tt_entry_bytes(),
+            "generation", (uint64_t)0, "occupied_entries", (uint64_t)0);
+    }
+    return Py_BuildValue("{s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+        "requested_bytes", (uint64_t)engine->tt->requested_bytes,
+        "allocated_bytes", (uint64_t)engine->tt->allocated_bytes,
+        "bucket_count", (uint64_t)engine->tt->bucket_count,
+        "entry_capacity", (uint64_t)(engine->tt->bucket_count * GC_SEM_TT_WAYS),
+        "entry_size", (uint64_t)gc_semantic_tt_entry_bytes(),
+        "generation", (uint64_t)engine->tt->generation,
+        "occupied_entries", (uint64_t)engine->tt->occupied_entries);
 }
 
 static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
@@ -4222,6 +4483,14 @@ static PyMethodDef gc_methods[] = {
      "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
     {"semantic_iterative_search", gc_semantic_iterative_search, METH_VARARGS,
      "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values]) -> no-TT iterative result"},
+    {"create_semantic_search_engine", gc_create_semantic_search_engine, METH_VARARGS,
+     "create_semantic_search_engine(rules, board_values, hand_values, tt_megabytes) -> engine"},
+    {"semantic_engine_search", gc_semantic_engine_search, METH_VARARGS,
+     "semantic_engine_search(engine, position, max_depth[, max_nodes, max_time_seconds, cancel]) -> result"},
+    {"semantic_engine_clear_tt", gc_semantic_engine_clear_tt, METH_VARARGS,
+     "semantic_engine_clear_tt(engine) -> None"},
+    {"semantic_engine_tt_info", gc_semantic_engine_tt_info, METH_VARARGS,
+     "semantic_engine_tt_info(engine) -> dict"},
     {"semantic_search_runtime_sizes", gc_semantic_search_runtime_sizes, METH_NOARGS,
      "semantic_search_runtime_sizes() -> semantic search state byte sizes"},
     {"semantic_fixed_depth_search", gc_semantic_probe_search, METH_VARARGS,

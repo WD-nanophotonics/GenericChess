@@ -331,7 +331,7 @@ def semantic_iterative_search(
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
 ) -> dict:
-    """Run deterministic no-TT iterative search on a semantic position.
+    """Run deterministic iterative search on a semantic position.
 
     The Native entrypoint owns the recursive semantic state stack and checks
     node, monotonic-time, and cooperative-cancellation budgets.  Evaluator
@@ -383,6 +383,9 @@ def semantic_iterative_search(
     for key in ("score", "nodes", "completed_depth", "selective_depth", "qnodes", "elapsed_nanoseconds", "legal_generation_count", "transition_count", "beta_cutoffs", "tt_probes", "tt_hits", "tt_exact_hits", "tt_stores", "tt_replacements", "tt_collisions", "tt_cutoffs", "tt_previous_iteration_hits", "tt_current_iteration_hits", "tt_allocated_bytes", "tt_occupied_entries", "tt_entry_bytes"):
         raw[key] = int(raw.get(key, 0))
     raw["used_fallback"] = bool(raw.get("used_fallback", False))
+    raw["declaration_id"] = (
+        None if raw.get("declaration_id") is None else str(raw["declaration_id"])
+    )
     raw["tt_status"] = "ENABLED" if tt_megabytes else "NOT_STARTED"
     raw["elapsed_seconds"] = raw["elapsed_nanoseconds"] / 1e9
     raw["ruleset_fingerprint"] = str(native_rules.fingerprint)
@@ -404,6 +407,15 @@ def root_parallel_search(native_rules, position, max_depth: int, *, workers: int
     by the single-thread entrypoint.
     """
     if max_depth < 1:
+        return semantic_iterative_search(
+            native_rules, position, max_depth, board_values=board_values,
+            hand_values=hand_values,
+        )
+    if native_rules.declarations and any(
+        item.outcome != "LOSS" for item in available_declarations(native_rules, position)
+    ):
+        # Declaration decisions are out-of-band public actions.  Keep the
+        # experimental root splitter from silently dropping one.
         return semantic_iterative_search(
             native_rules, position, max_depth, board_values=board_values,
             hand_values=hand_values,

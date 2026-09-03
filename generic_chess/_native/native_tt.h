@@ -72,17 +72,13 @@ int gc_tt_store(GCTable *tt, const GCPosition *pos, int depth,
  * position digest and an incremental digest of the exact history/event path;
  * it must not be mixed with the legacy table above. */
 #define GC_SEM_TT_WAYS 4
-#define GC_SEM_TT_PV_MAX_DEPTH 64
-
 typedef struct {
     uint64_t position_digest[4];
     uint64_t history_context[4];
     uint16_t history_len;
     uint16_t depth;
-    uint16_t pv_length;
     int32_t score;
     GCPackedAction best_action;
-    GCPackedAction pv[GC_SEM_TT_PV_MAX_DEPTH];
     uint32_t generation;
     uint8_t bound;
     uint8_t occupied;

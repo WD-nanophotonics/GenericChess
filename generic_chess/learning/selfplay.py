@@ -11,6 +11,7 @@ from ..core.identity import position_identity_key
 from ..core.transition import apply_action
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
+from ..native.semantic_engine import SemanticSearchEngine
 from ..session.session import GameSession
 from .features import linear_value, material_features, non_anchor_type_ids
 from .material import LearnableMaterialCheckpoint
@@ -43,7 +44,10 @@ def collect_self_play(
     """Play ``config.games`` games of Gen-N vs Gen-N with one frozen
     evaluator, recording a TDLeaf trajectory per game."""
     checkpoint.validate_ruleset(compiled)
-    eval_tables = compile_native_evaluation(
+    from ..rules.ir import CompiledSemanticRuleset
+
+    semantic_path = isinstance(compiled, CompiledSemanticRuleset)
+    eval_tables = None if semantic_path else compile_native_evaluation(
         native_rules,
         _dummy_profile(compiled, checkpoint),
         EvaluationConfig(),
@@ -55,8 +59,14 @@ def collect_self_play(
         game_seed = config.seed * 1000 + game_index
         rng = random.Random(game_seed)
         session = GameSession(compiled)
-        engine = NativeSearchEngine(
-            compiled, native_rules, eval_tables, config.tt_megabytes
+        engine = (
+            SemanticSearchEngine(
+                compiled, native_rules, checkpoint=checkpoint,
+                tt_megabytes=config.tt_megabytes,
+            )
+            if semantic_path else NativeSearchEngine(
+                compiled, native_rules, eval_tables, config.tt_megabytes
+            )
         )
         points: list[TrainingPoint] = []
         ply = 0
@@ -100,6 +110,9 @@ def collect_self_play(
                         completed_depth=result.completed_depth,
                     )
                 )
+            if getattr(result, "declaration_id", None) is not None:
+                session.declare(result.declaration_id)
+                break
             legal = session.legal_actions()
             if not legal:
                 break
@@ -125,7 +138,10 @@ def collect_self_play(
             session.submit(action)
             ply += 1
         result = session.result
-        initial_key = position_identity_key(compiled.initial_position, compiled)
+        from ..core.transition import initial_state
+        initial_key = position_identity_key(
+            initial_state(compiled).position, compiled
+        )
         trajectories.append(
             TrainingTrajectory(
                 ruleset_fingerprint=compiled.ruleset_fingerprint,

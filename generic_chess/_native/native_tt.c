@@ -306,11 +306,10 @@ int gc_semantic_tt_probe(const GCSemanticTable *tt,
             if (entry_depth_out != NULL) *entry_depth_out = entry->depth;
             if (bound_out != NULL) *bound_out = entry->bound;
             if (generation_out != NULL) *generation_out = entry->generation;
-            if (pv_length_out != NULL) *pv_length_out = entry->pv_length;
-            if (pv_out != NULL && entry->pv_length != 0) {
-                memcpy(pv_out, entry->pv,
-                       sizeof(GCPackedAction) * entry->pv_length);
-            }
+            /* PVs are reconstructed by the search's full-window replay;
+             * storing one in every entry wastes most of persistent TT memory. */
+            if (pv_length_out != NULL) *pv_length_out = 0;
+            (void)pv_out;
             return 1;
         }
         if (collision_out != NULL) (*collision_out)++;
@@ -365,13 +364,10 @@ int gc_semantic_tt_store(GCSemanticTable *tt,
     }
     target->history_len = position->history_len;
     target->depth = (uint16_t)(depth < 0 ? 0 : depth);
-    target->pv_length = pv_length > GC_SEM_TT_PV_MAX_DEPTH
-        ? GC_SEM_TT_PV_MAX_DEPTH : pv_length;
     target->score = score;
     target->best_action = best_action;
-    if (pv != NULL && target->pv_length != 0)
-        memcpy(target->pv, pv,
-               sizeof(GCPackedAction) * target->pv_length);
+    (void)pv;
+    (void)pv_length;
     target->generation = tt->generation;
     target->bound = (uint8_t)bound;
     target->occupied = 1;

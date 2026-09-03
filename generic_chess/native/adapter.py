@@ -7,6 +7,7 @@ from typing import Any
 from ..core.actions import BoardMove, DropMove, action_from_dict, action_to_dict
 from ..core.coordinates import Square, square_to_index
 from ..core.identity import repetition_identity_key
+from ..core.identity import position_identity_key
 from ..core.transition import apply_action, initial_state
 from ..rules.compiled import CompiledRuleSet
 from .compiler import (
@@ -143,6 +144,59 @@ def pack_native_search_position(
     )
     _verify_replay_root(compiled, native_rules, pos, session)
     return pos
+
+
+def pack_semantic_search_position(compiled, native_rules, session):
+    """Pack an exact :class:`GameSession` root for semantic Native search.
+
+    Unlike the legacy adapter, this transport preserves the complete semantic
+    position-key history and the actor/check event stream.  The initial
+    sentinel is explicit so repetition and continuous-check adjudication stay
+    authoritative inside Native.
+    """
+    if compiled.ruleset_fingerprint != native_rules.fingerprint:
+        raise ValueError("ruleset fingerprint mismatch while packing semantic position")
+    state = session.state
+    n = compiled.board_size
+    type_map = {type_id: index for index, type_id in enumerate(native_rules.type_ids)}
+    board = []
+    for piece in state.position.board:
+        board.append(None if piece is None else [
+            type_map[piece.base_type_id], type_map[piece.current_type_id],
+            int(piece.owner), int(piece.promoted),
+        ])
+    hands = []
+    for owner in (0, 1):
+        counts = [0] * len(native_rules.type_ids)
+        for type_id, count in state.position.hands[owner].counts:
+            counts[type_map[type_id]] = int(count)
+        hands.append(counts)
+
+    history = []
+    records = state.history
+    if len(records) != len(session._search_witnesses):
+        raise ValueError("semantic session history witness length mismatch")
+    for witness, record in zip(session._search_witnesses, records):
+        key = str(position_identity_key(witness, compiled))
+        if len(key) != 64:
+            raise ValueError("semantic position identity must be a SHA-256 hex key")
+        words = tuple(int(key[offset:offset + 16], 16) for offset in range(0, 64, 16))
+        history.append(words + (255 if record.actor < 0 else int(record.actor), int(bool(record.gave_check))))
+
+    payload = {
+        "side": int(state.position.side_to_move),
+        "ply": int(state.ply_count),
+        "board": board,
+        "hands": hands,
+        "history": history,
+        "aux_state": tuple(state.position.aux_state),
+    }
+    from .semantic import pack_position, position_key
+
+    native_position = pack_position(native_rules, payload)
+    if position_key(native_rules, native_position) != str(position_identity_key(state.position, compiled)):
+        raise ValueError("semantic Native root key does not match GameSession state")
+    return native_position
 
 
 def session_packed_actions(

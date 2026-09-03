@@ -18,6 +18,7 @@ from ..core.actions import Action, action_to_dict
 from ..core.identity import position_identity_key
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
+from ..native.semantic_engine import SemanticSearchEngine
 from ..session.session import GameSession
 from .material import LearnableMaterialCheckpoint
 from .openings import ArenaOpeningCorpus, generate_arena_openings
@@ -97,6 +98,13 @@ class ArenaSummary:
 
 
 def _engine_for(compiled, native_rules, checkpoint, tt_mb):
+    from ..rules.ir import CompiledSemanticRuleset
+
+    if isinstance(compiled, CompiledSemanticRuleset):
+        return SemanticSearchEngine(
+            compiled, native_rules, checkpoint=checkpoint,
+            tt_megabytes=tt_mb,
+        )
     eval_tables = compile_native_evaluation(
         native_rules,
         _dummy_profile(compiled, checkpoint),
@@ -155,6 +163,9 @@ def _play_one_game(
                 quiescence_max_depth=0,
             ),
         )
+        if getattr(result, "declaration_id", None) is not None:
+            session.declare(result.declaration_id)
+            break
         if result.action is None:
             raise ArenaExecutionError(
                 "engine returned no action on an ongoing position "

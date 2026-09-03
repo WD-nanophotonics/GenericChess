@@ -38,6 +38,12 @@ class MaterialFeatureVector:
 
 
 def non_anchor_type_ids(compiled) -> tuple[str, ...]:
+    if not hasattr(compiled, "piece_types"):
+        metadata = getattr(getattr(compiled, "support", None), "type_metadata", {})
+        return tuple(sorted(
+            type_id for type_id, item in metadata.items()
+            if not getattr(item, "is_anchor", False)
+        ))
     return tuple(
         sorted(
             pt.type_id

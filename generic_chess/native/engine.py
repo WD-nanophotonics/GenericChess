@@ -188,3 +188,14 @@ class NativeSearchEngine:
 
     def tt_info(self) -> dict:
         return dict(_module().search_engine_tt_info(self._capsule))
+
+
+# Semantic search has a separate capsule and evaluator binding.  Re-exporting
+# the names here keeps the native engine module convenient without conflating
+# the legacy and semantic TT implementations.
+from .semantic_engine import (  # noqa: E402
+    NativeSemanticSearchEngine,
+    NativeSemanticSearchResult,
+    SemanticIterativeSearchResult,
+    SemanticSearchEngine,
+)
