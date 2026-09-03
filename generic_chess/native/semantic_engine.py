@@ -21,6 +21,7 @@ from .compiler import GC_SEM_MAX_PLY
 from .semantic import public_action
 
 DYNAMIC_FEATURE_NAMES = ("mobility", "promotion_potential", "anchor_safety")
+SPATIAL_CELL_COUNT = 9
 
 
 DECLARATION_ACTION_TAG = 1 << 63
@@ -78,6 +79,37 @@ def _dynamic_tuple(values):
     return result
 
 
+def _spatial_tuple(native_rules, values):
+    if values is None:
+        return None
+    type_ids = tuple(native_rules.type_ids)
+    if isinstance(values, Mapping):
+        expected = {f"{owner}:{type_id}" for owner in (0, 1) for type_id in type_ids}
+        if set(values) != expected:
+            raise ValueError("semantic spatial evaluator profile must cover every owner/current type")
+        rows = [values[f"{owner}:{type_id}"] for owner in (0, 1) for type_id in type_ids]
+        result = tuple(int(value) for row in rows for value in row)
+    else:
+        result = tuple(int(value) for value in values)
+    if len(result) != len(type_ids) * SPATIAL_CELL_COUNT:
+        raise ValueError("semantic spatial evaluator profile length must match type_count * 9")
+    for offset in range(0, len(result), SPATIAL_CELL_COUNT):
+        if sum(result[offset:offset + SPATIAL_CELL_COUNT]) != 0:
+            raise ValueError("semantic spatial evaluator rows must have zero sum")
+    return result
+
+
+def _localized_control_tuple(values):
+    if values is None:
+        return None
+    result = tuple(int(value) for value in values)
+    if len(result) != SPATIAL_CELL_COUNT:
+        raise ValueError("semantic localized control profile must contain nine values")
+    if sum(result) != 0:
+        raise ValueError("semantic localized control profile must have zero sum")
+    return result
+
+
 class SemanticSearchEngine:
     """Reusable, single-thread semantic Native search engine."""
 
@@ -89,6 +121,8 @@ class SemanticSearchEngine:
         board_values=None,
         hand_values=None,
         dynamic_values=None,
+        spatial_occupancy_values=None,
+        localized_control_values=None,
         checkpoint=None,
         evaluator_scale: int = 1,
         tt_megabytes: int = 64,
@@ -107,6 +141,8 @@ class SemanticSearchEngine:
         self._board_values = _profile_tuple(native_rules, board_values)
         self._hand_values = _profile_tuple(native_rules, hand_values)
         self._dynamic_values = _dynamic_tuple(dynamic_values)
+        self._spatial_values = _spatial_tuple(native_rules, spatial_occupancy_values)
+        self._localized_control_values = _localized_control_tuple(localized_control_values)
         self._evaluator_scale = evaluator_scale
         if (self._board_values is None) != (self._hand_values is None):
             raise ValueError("board_values and hand_values must be supplied together")
@@ -122,6 +158,10 @@ class SemanticSearchEngine:
         self._hand_values = tuple(checkpoint.semantic_quantized_hand(type_ids))
         dynamic = checkpoint.semantic_quantized_dynamic()
         self._dynamic_values = None if dynamic is None else tuple(dynamic)
+        spatial = checkpoint.semantic_quantized_spatial(type_ids)
+        self._spatial_values = None if spatial is None else tuple(spatial)
+        control = checkpoint.semantic_quantized_localized_control()
+        self._localized_control_values = None if control is None else tuple(control)
         self._evaluator_scale = checkpoint.semantic_native_scale
         self._checkpoint_id = checkpoint.checkpoint_id
 
@@ -131,6 +171,8 @@ class SemanticSearchEngine:
             self._board_values,
             self._hand_values,
             self._dynamic_values,
+            self._spatial_values,
+            self._localized_control_values,
             self._tt_megabytes,
             self._evaluator_scale,
         )
@@ -155,13 +197,19 @@ class SemanticSearchEngine:
         self._set_checkpoint_values(checkpoint)
         self._capsule = self._new_capsule()
 
-    def bind_evaluator(self, board_values, hand_values, dynamic_values=None, *, evaluator_scale: int = 1) -> None:
+    def bind_evaluator(
+        self, board_values, hand_values, dynamic_values=None,
+        spatial_occupancy_values=None, localized_control_values=None,
+        *, evaluator_scale: int = 1,
+    ) -> None:
         board = _profile_tuple(self._native_rules, board_values)
         hand = _profile_tuple(self._native_rules, hand_values)
         if (board is None) != (hand is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._board_values, self._hand_values = board, hand
         self._dynamic_values = _dynamic_tuple(dynamic_values)
+        self._spatial_values = _spatial_tuple(self._native_rules, spatial_occupancy_values)
+        self._localized_control_values = _localized_control_tuple(localized_control_values)
         if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
             raise ValueError("evaluator_scale must be an integer in [1, 1024]")
         self._evaluator_scale = evaluator_scale
@@ -176,6 +224,8 @@ class SemanticSearchEngine:
             "board": tuple(self._board_values or ()),
             "hand": tuple(self._hand_values or ()),
             "dynamic": tuple(self._dynamic_values or ()),
+            "spatial_occupancy": tuple(self._spatial_values or ()),
+            "localized_control": tuple(self._localized_control_values or ()),
         }
 
     def clear_tt(self) -> None:

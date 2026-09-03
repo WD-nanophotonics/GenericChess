@@ -274,6 +274,41 @@ def dynamic_features(native_rules, position) -> tuple[int, int, int]:
     )
 
 
+def spatial_features(native_rules, position) -> dict:
+    """Return Native 3x3 occupancy and localized-control feature vectors."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    raw = dict(_module().semantic_spatial_features(native_rules.capsule, position))
+    return {
+        "occupancy": tuple(int(value) for value in raw["occupancy"]),
+        "localized_control": tuple(int(value) for value in raw["localized_control"]),
+    }
+
+
+def evaluate(
+    native_rules,
+    position,
+    *,
+    board_values=None,
+    hand_values=None,
+    dynamic_values=None,
+    spatial_occupancy_values=None,
+    localized_control_values=None,
+    evaluator_scale: int = 1,
+) -> int:
+    """Evaluate one packed leaf with the exact Native fixed-point profile."""
+    return int(_module().semantic_evaluate(
+        native_rules.capsule,
+        position,
+        board_values,
+        hand_values,
+        dynamic_values,
+        spatial_occupancy_values,
+        localized_control_values,
+        int(evaluator_scale),
+    ))
+
+
 def search_runtime_sizes() -> dict:
     """Return Native semantic search-state byte sizes for performance planning."""
     if not native_available():
@@ -340,6 +375,8 @@ def semantic_iterative_search(
     board_values=None,
     hand_values=None,
     dynamic_values=None,
+    spatial_occupancy_values=None,
+    localized_control_values=None,
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
 ) -> dict:
@@ -380,6 +417,29 @@ def semantic_iterative_search(
             dynamic_values = tuple(int(value) for value in dynamic_values)
         if len(dynamic_values) != 3:
             raise ValueError("semantic dynamic evaluator profile must contain three values")
+    if spatial_occupancy_values is not None:
+        if isinstance(spatial_occupancy_values, Mapping):
+            spatial_keys = {
+                f"{owner}:{type_id}" for owner in (0, 1) for type_id in expected
+            }
+            if set(spatial_occupancy_values) != spatial_keys:
+                raise ValueError("semantic spatial evaluator profile must cover every owner/current type")
+            spatial_occupancy_values = tuple(
+                int(value)
+                for owner in (0, 1)
+                for type_id in expected
+                for value in spatial_occupancy_values[f"{owner}:{type_id}"]
+            )
+        else:
+            spatial_occupancy_values = tuple(int(value) for value in spatial_occupancy_values)
+        if len(spatial_occupancy_values) != len(expected) * 9:
+            raise ValueError("semantic spatial evaluator profile length must match type_count * 9")
+        if any(sum(spatial_occupancy_values[i:i + 9]) != 0 for i in range(0, len(spatial_occupancy_values), 9)):
+            raise ValueError("semantic spatial evaluator rows must have zero sum")
+    if localized_control_values is not None:
+        localized_control_values = tuple(int(value) for value in localized_control_values)
+        if len(localized_control_values) != 9 or sum(localized_control_values) != 0:
+            raise ValueError("semantic localized control profile must contain nine values with zero sum")
     flag = None
     unregister = None
     if cancel_token is not None:
@@ -396,8 +456,12 @@ def semantic_iterative_search(
             board_values,
             hand_values,
             dynamic_values,
+            spatial_occupancy_values,
+            localized_control_values,
             int(_root_ply_offset),
             int(tt_megabytes),
+            None,
+            1,
         ))
     finally:
         if unregister is not None:

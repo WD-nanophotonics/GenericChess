@@ -14,6 +14,8 @@ DYNAMIC_FEATURE_NAMES = (
     "promotion_potential",
     "anchor_safety",
 )
+SPATIAL_GRID_SIZE = 3
+SPATIAL_CELL_COUNT = SPATIAL_GRID_SIZE * SPATIAL_GRID_SIZE
 
 
 @dataclass(frozen=True, slots=True)
@@ -120,6 +122,10 @@ def linear_value(
     hand_weights,
     dynamic: DynamicFeatureVector | tuple[int, ...] | None = None,
     dynamic_weights=None,
+    spatial_occupancy=None,
+    localized_control=None,
+    spatial_occupancy_weights=None,
+    localized_control_weights=None,
 ) -> float:
     """V = sum(board_weights[t] * board_counts[t]) +
            sum(hand_weights[t] * hand_counts[t])."""
@@ -136,7 +142,85 @@ def linear_value(
             float(dynamic_weights.get(name, 0.0)) * feature
             for name, feature in zip(DYNAMIC_FEATURE_NAMES, values)
         )
+    if spatial_occupancy is not None and spatial_occupancy_weights:
+        for type_id, cells in spatial_occupancy.items():
+            weights = spatial_occupancy_weights.get(type_id, ())
+            value += sum(float(weight) * feature for weight, feature in zip(weights, cells))
+    if localized_control is not None and localized_control_weights:
+        value += sum(
+            float(weight) * feature
+            for weight, feature in zip(localized_control_weights, localized_control)
+        )
     return value
+
+
+def spatial_cell(index: int, board_size: int) -> int:
+    """Map a row-major board square to a deterministic 3x3 cell."""
+    if board_size <= 0 or not 0 <= index < board_size * board_size:
+        raise ValueError("index must be inside a non-empty square board")
+    rank, file = divmod(index, board_size)
+    cell_rank = min(SPATIAL_GRID_SIZE - 1, rank * SPATIAL_GRID_SIZE // board_size)
+    cell_file = min(SPATIAL_GRID_SIZE - 1, file * SPATIAL_GRID_SIZE // board_size)
+    return cell_rank * SPATIAL_GRID_SIZE + cell_file
+
+
+def spatial_occupancy_features(
+    position: Position,
+    type_ids: tuple[str, ...],
+) -> dict[str, tuple[int, ...]]:
+    """Return owner-specific occupancy per type and spatial cell.
+
+    Owner-1 features are signed negative in the owner-0 value convention;
+    they still have their own weight table, so asymmetric RuleSets retain an
+    explicit owner axis rather than inheriting a mirrored evaluator.
+    """
+    features = {
+        f"{owner}:{type_id}": [0] * SPATIAL_CELL_COUNT
+        for owner in (0, 1) for type_id in type_ids
+    }
+    board_size = position.board_size()
+    for index, piece in enumerate(position.board):
+        if piece is None or f"{piece.owner}:{piece.current_type_id}" not in features:
+            continue
+        features[f"{piece.owner}:{piece.current_type_id}"][spatial_cell(index, board_size)] += (
+            1 if piece.owner == 0 else -1
+        )
+    return {key: tuple(cells) for key, cells in features.items()}
+
+
+def localized_control_features(position: Position, compiled) -> tuple[int, ...]:
+    """Return zero-sum per-cell legal-control residuals.
+
+    Each owner's cell count is residualized as ``9 * count - total`` before
+    taking the owner-0 minus owner-1 difference.  This deliberately removes
+    the global mobility direction already present in ``DYNAMIC_FEATURE_NAMES``.
+    """
+    from dataclasses import replace
+
+    from ..core.actions import action_target_square
+    from ..core.movegen import legal_actions_from_position
+    from ..core.semantic_executor import semantic_engine_for
+
+    board_size = position.board_size()
+    counts = [[0] * SPATIAL_CELL_COUNT for _ in range(2)]
+    engine = semantic_engine_for(compiled)
+    for owner in (0, 1):
+        view = replace(position, side_to_move=owner)
+        actions = (
+            engine.legal_actions(view)
+            if engine is not None
+            else legal_actions_from_position(view, compiled)
+        )
+        for action in actions:
+            target = action.target if hasattr(action, "target") else action_target_square(action)
+            target_index = target if isinstance(target, int) else target.rank * board_size + target.file
+            counts[owner][spatial_cell(target_index, board_size)] += 1
+    totals = [sum(row) for row in counts]
+    return tuple(
+        (SPATIAL_GRID_SIZE * SPATIAL_GRID_SIZE * counts[0][cell] - totals[0])
+        - (SPATIAL_GRID_SIZE * SPATIAL_GRID_SIZE * counts[1][cell] - totals[1])
+        for cell in range(SPATIAL_CELL_COUNT)
+    )
 
 
 def dynamic_features(position: Position, compiled) -> DynamicFeatureVector:

@@ -7,7 +7,11 @@ import time
 from dataclasses import dataclass, field
 from typing import Any
 
-from .features import DYNAMIC_FEATURE_NAMES, non_anchor_type_ids
+from .features import (
+    DYNAMIC_FEATURE_NAMES,
+    SPATIAL_CELL_COUNT,
+    non_anchor_type_ids,
+)
 from .serialization import stable_sha256
 
 MATERIAL_SCALE = 1.0  # historical material-only scale; semantic v2 uses 256
@@ -53,6 +57,11 @@ class LearnableMaterialCheckpoint:
     promoted_to_champion: bool = False
     # Appended to preserve the positional field order of material-only v1.
     dynamic_weights: dict[str, float] = field(default_factory=dict)
+    # Optional v3 additive representation.  Spatial tables include anchors;
+    # each nine-cell row is a zero-sum location residual, so it cannot absorb
+    # the constant material direction.
+    spatial_occupancy_weights: dict[str, tuple[float, ...]] = field(default_factory=dict)
+    localized_control_weights: tuple[float, ...] = ()
 
     # ------------------------------------------------------------------ ids
 
@@ -85,6 +94,10 @@ class LearnableMaterialCheckpoint:
         # carrying a non-empty dynamic vector.
         if self.dynamic_weights:
             state["dynamic_weights"] = self.dynamic_weights
+        if self.spatial_occupancy_weights:
+            state["spatial_occupancy_weights"] = self.spatial_occupancy_weights
+        if self.localized_control_weights:
+            state["localized_control_weights"] = self.localized_control_weights
         return state
 
     @property
@@ -99,10 +112,16 @@ class LearnableMaterialCheckpoint:
         }
         if self.dynamic_weights:
             payload["dynamic_weights"] = self.dynamic_weights
+        if self.spatial_occupancy_weights:
+            payload["spatial_occupancy_weights"] = self.spatial_occupancy_weights
+        if self.localized_control_weights:
+            payload["localized_control_weights"] = self.localized_control_weights
         return stable_sha256(payload)
 
     @property
     def evaluator_version(self) -> str:
+        if self.spatial_occupancy_weights or self.localized_control_weights:
+            return "learnable-generic-v3"
         return "learnable-generic-v2" if self.dynamic_weights else "learnable-material-v1"
 
     # ---------------------------------------------------------------- init
@@ -178,6 +197,36 @@ class LearnableMaterialCheckpoint:
         scale = self.semantic_native_scale
         return [int(round(self.dynamic_weights.get(name, 0.0) * scale)) for name in DYNAMIC_FEATURE_NAMES]
 
+    def semantic_quantized_spatial(self, type_ids: tuple[str, ...]) -> list[int] | None:
+        if not self.spatial_occupancy_weights:
+            return None
+        scale = self.semantic_native_scale
+        result: list[int] = []
+        for owner in (0, 1):
+            for type_id in type_ids:
+                key = f"{owner}:{type_id}"
+                row = tuple(self.spatial_occupancy_weights.get(key, ()))
+                if len(row) != SPATIAL_CELL_COUNT:
+                    raise LearningNumericalError(
+                        f"spatial occupancy row for {key!r} must contain {SPATIAL_CELL_COUNT} values"
+                    )
+                quantized = [int(round(value * scale)) for value in row[:-1]]
+                quantized.append(-sum(quantized))
+                result.extend(quantized)
+        return result
+
+    def semantic_quantized_localized_control(self) -> list[int] | None:
+        if not self.localized_control_weights:
+            return None
+        if len(self.localized_control_weights) != SPATIAL_CELL_COUNT:
+            raise LearningNumericalError(
+                f"localized control weights must contain {SPATIAL_CELL_COUNT} values"
+            )
+        scale = self.semantic_native_scale
+        result = [int(round(value * scale)) for value in self.localized_control_weights[:-1]]
+        result.append(-sum(result))
+        return result
+
     def native_board_value(self, type_id: str) -> int:
         return int(round(self.board_weights.get(type_id, 0.0) * self.material_scale))
 
@@ -227,6 +276,8 @@ class LearnableMaterialCheckpoint:
         training_seed: int | None,
         value_scale: float | None = None,
         dynamic_weights: dict[str, float] | None = None,
+        spatial_occupancy_weights: dict[str, tuple[float, ...]] | None = None,
+        localized_control_weights: tuple[float, ...] | None = None,
     ) -> "LearnableMaterialCheckpoint":
         """Create the next generation with a deterministic parent chain."""
         return LearnableMaterialCheckpoint(
@@ -240,6 +291,14 @@ class LearnableMaterialCheckpoint:
             hand_weights=dict(hand_weights),
             dynamic_weights=dict(
                 self.dynamic_weights if dynamic_weights is None else dynamic_weights
+            ),
+            spatial_occupancy_weights=dict(
+                self.spatial_occupancy_weights
+                if spatial_occupancy_weights is None else spatial_occupancy_weights
+            ),
+            localized_control_weights=tuple(
+                self.localized_control_weights
+                if localized_control_weights is None else localized_control_weights
             ),
             material_scale=self.material_scale,
             value_scale=value_scale if value_scale is not None else self.value_scale,
@@ -269,6 +328,8 @@ class LearnableMaterialCheckpoint:
             "board_weights",
             "hand_weights",
             "dynamic_weights",
+            "spatial_occupancy_weights",
+            "localized_control_weights",
             "material_scale",
             "value_scale",
             "reference_median",
@@ -294,6 +355,8 @@ class LearnableMaterialCheckpoint:
             )
         payload = {k: data[k] for k in allowed if k in data}
         payload.setdefault("dynamic_weights", {})
+        payload.setdefault("spatial_occupancy_weights", {})
+        payload.setdefault("localized_control_weights", ())
         return cls(**payload)
 
     def validate_ruleset(self, compiled) -> None:
@@ -303,6 +366,17 @@ class LearnableMaterialCheckpoint:
                 f"ruleset ({self.ruleset_fingerprint} vs "
                 f"{compiled.ruleset_fingerprint})"
             )
+        if self.spatial_occupancy_weights:
+            metadata = getattr(getattr(compiled, "support", None), "type_metadata", None)
+            if metadata is not None:
+                type_ids = tuple(sorted(metadata))
+            else:
+                type_ids = tuple(sorted(pt.type_id for pt in compiled.piece_types))
+            expected = {f"{owner}:{type_id}" for owner in (0, 1) for type_id in type_ids}
+            if set(self.spatial_occupancy_weights) != expected:
+                raise ValueError(
+                    "spatial occupancy checkpoint must cover every owner/current type"
+                )
 
     def ensure_within_limits(self) -> None:
         for tid, w in self.board_weights.items():
@@ -328,3 +402,39 @@ class LearnableMaterialCheckpoint:
                 raise LearningNumericalError(
                     f"dynamic weight {name} exceeds w_max ({w} > {self.w_max})"
                 )
+        for type_id, row in self.spatial_occupancy_weights.items():
+            if len(row) != SPATIAL_CELL_COUNT:
+                raise LearningNumericalError(
+                    f"spatial occupancy row for {type_id!r} must contain {SPATIAL_CELL_COUNT} values"
+                )
+            if abs(sum(row)) > 1e-9:
+                raise LearningNumericalError(
+                    f"spatial occupancy row for {type_id!r} must have zero mean"
+                )
+            for index, w in enumerate(row):
+                if not math.isfinite(w):
+                    raise LearningNumericalError(
+                        f"non-finite spatial occupancy weight for {type_id}[{index}]"
+                    )
+                if abs(w) > self.w_max:
+                    raise LearningNumericalError(
+                        f"spatial occupancy weight {type_id}[{index}] exceeds w_max"
+                    )
+        if self.localized_control_weights:
+            if len(self.localized_control_weights) != SPATIAL_CELL_COUNT:
+                raise LearningNumericalError(
+                    f"localized control weights must contain {SPATIAL_CELL_COUNT} values"
+                )
+            if abs(sum(self.localized_control_weights)) > 1e-9:
+                raise LearningNumericalError(
+                    "localized control weights must have zero mean"
+                )
+            for index, w in enumerate(self.localized_control_weights):
+                if not math.isfinite(w):
+                    raise LearningNumericalError(
+                        f"non-finite localized control weight at {index}"
+                    )
+                if abs(w) > self.w_max:
+                    raise LearningNumericalError(
+                        f"localized control weight {index} exceeds w_max"
+                    )

@@ -30,6 +30,8 @@ class TDLeafUpdateResult:
     normalization_factor: float
     positions_seen: int
     dynamic_weights: dict[str, float] = field(default_factory=dict)
+    spatial_occupancy_weights: dict[str, tuple[float, ...]] = field(default_factory=dict)
+    localized_control_weights: tuple[float, ...] = ()
 
 
 def _normalized_value(
@@ -149,6 +151,8 @@ def tdleaf_update(
         board_weights=board,
         hand_weights=hand,
         dynamic_weights=dynamic,
+        spatial_occupancy_weights=checkpoint.spatial_occupancy_weights,
+        localized_control_weights=checkpoint.localized_control_weights,
         material_scale=checkpoint.material_scale,
         value_scale=value_scale,
         reference_median=checkpoint.reference_median,
@@ -192,4 +196,6 @@ def tdleaf_update(
         normalization_factor=normalization_factor,
         positions_seen=positions_seen,
         dynamic_weights=candidate.dynamic_weights,
+        spatial_occupancy_weights=candidate.spatial_occupancy_weights,
+        localized_control_weights=candidate.localized_control_weights,
     )
