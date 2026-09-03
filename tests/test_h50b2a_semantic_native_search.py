@@ -13,6 +13,7 @@ from generic_chess.native.semantic import (
     pack_position,
     public_action,
     semantic_iterative_search,
+    search_runtime_sizes,
     snapshot,
     terminal_status,
 )
@@ -214,3 +215,11 @@ def test_declaration_bearing_rulesets_fail_closed_but_shogi_without_them_execute
         clear_native, _pack_initial(clear_semantic, clear_native), 1
     )
     assert result["best_action"] is not None
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+def test_runtime_size_measurement_exposes_copy_pressure_without_legacy_aliasing():
+    sizes = search_runtime_sizes()
+    assert sizes["position_bytes"] > 50_000
+    assert sizes["undo_bytes"] >= sizes["position_bytes"]
+    assert sizes["max_ply"] >= 1_000

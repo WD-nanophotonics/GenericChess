@@ -3780,6 +3780,15 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     return out;
 }
 
+static PyObject *gc_semantic_search_runtime_sizes(PyObject *self, PyObject *args) {
+    (void)self;
+    (void)args;
+    return Py_BuildValue("{s:n,s:n,s:n}",
+                         "position_bytes", (Py_ssize_t)sizeof(GCSemanticPosition),
+                         "undo_bytes", (Py_ssize_t)sizeof(GCSemanticUndo),
+                         "max_ply", (Py_ssize_t)GC_SEM_MAX_PLY);
+}
+
 static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *position_capsule;
@@ -3964,6 +3973,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
     {"semantic_iterative_search", gc_semantic_iterative_search, METH_VARARGS,
      "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values]) -> no-TT iterative result"},
+    {"semantic_search_runtime_sizes", gc_semantic_search_runtime_sizes, METH_NOARGS,
+     "semantic_search_runtime_sizes() -> semantic search state byte sizes"},
     {"semantic_fixed_depth_search", gc_semantic_probe_search, METH_VARARGS,
      "semantic_fixed_depth_search(rules, position, depth[, board_values, hand_values]) -> fixed-depth semantic AlphaBeta"},
     {NULL, NULL, 0, NULL}

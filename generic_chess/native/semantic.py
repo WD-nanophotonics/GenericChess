@@ -262,6 +262,16 @@ def terminal_status(native_rules, position) -> dict:
     return raw
 
 
+def search_runtime_sizes() -> dict:
+    """Return Native semantic search-state byte sizes for performance planning."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return {
+        key: int(value)
+        for key, value in _module().semantic_search_runtime_sizes().items()
+    }
+
+
 def _run_search(native_rules, position, depth: int, *, board_values=None, hand_values=None, entrypoint: str) -> dict:
     args = (native_rules.capsule, position, int(depth))
     if (board_values is None) != (hand_values is None):
