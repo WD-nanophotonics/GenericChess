@@ -25,7 +25,13 @@ def _test_id(case: ET.Element, worktree: Path) -> str:
             try:
                 file_name = path.relative_to(worktree).as_posix()
             except ValueError:
-                file_name = path.as_posix()
+                normalized = path.as_posix()
+                marker = "/tests/"
+                if marker in normalized:
+                    file_name = normalized.split(marker, 1)[1]
+                    file_name = f"tests/{file_name}"
+                else:
+                    file_name = normalized
         else:
             file_name = path.as_posix()
     else:

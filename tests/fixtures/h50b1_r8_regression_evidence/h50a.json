@@ -1,0 +1,40 @@
+{
+  "command": [
+    "C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=no",
+    "--junitxml=C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.generic_chess_flow\\r7-evidence\\h50a.junit.xml",
+    "--basetemp=C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.generic_chess_flow\\r7-evidence\\h50a-basetemp"
+  ],
+  "cwd": "C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.generic_chess_flow\\r7-h50a-baseline",
+  "ended_epoch": 1788394206.2322466,
+  "errors": 0,
+  "failing_test_ids": [
+    "tests/test_f24f_western_chess_perft.py::test_f24f_mandatory_perft_one_shot",
+    "tests/test_f48_execution_authority.py::test_f48_preflight_binds_h48c_and_invalid_old_partitions_cannot_reuse",
+    "tests/test_f48_execution_authority.py::test_f48_validation_rejects_boundary_and_early_stop_drift",
+    "tests/test_f48_execution_authority.py::test_f48_validation_rejects_efficiency_and_inventory_drift",
+    "tests/test_f48_protocol.py::test_preflight_binds_authority_and_separates_holdout",
+    "tests/test_f49_protocol.py::test_h49r3a_freezes_parent_execution_routes_and_no_measurements",
+    "tests/test_f49_protocol.py::test_h49r3a_complete_source_tree_and_native_provenance_are_frozen",
+    "tests/test_f49_protocol.py::test_h49r3a_rejects_tampered_parent_or_provenance",
+    "tests/test_f49_protocol.py::test_h49r4a_freezes_python_authority_route_and_h49r3a_erratum",
+    "tests/test_f49_protocol.py::test_h49r4a_rejects_work_order_erratum_or_status_drift",
+    "tests/test_h49b_r1_diagnostic_runner_freeze.py::test_preflight_does_not_invoke_measurement_primitives",
+    "tests/test_h49b_r1_diagnostic_runner_freeze.py::test_r4_manifest_binds_quarantine_and_f48_authority",
+    "tests/test_round5_corrective_r1_harness.py::test_r1_maps_every_initial_legal_action_losslessly"
+  ],
+  "failures": 13,
+  "junit_path": "C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.generic_chess_flow\\r7-evidence\\h50a.junit.xml",
+  "junit_sha256": "530ca0ffab204e037455661ba7f148b7a417a3aad399f23cc3dc8ceebb9a04c1",
+  "label": "h50a",
+  "passed": 1506,
+  "raw_path": "C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.generic_chess_flow\\r7-evidence\\h50a.raw.txt",
+  "raw_sha256": "6f8b2984cc76b0193423627a662d93dd4f3257b0448aef26d03636d5212d5696",
+  "returncode": 1,
+  "skipped": 2,
+  "started_epoch": 1788393829.1283176,
+  "tests": 1521
+}
