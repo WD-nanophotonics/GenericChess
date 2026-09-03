@@ -65,9 +65,11 @@ Shogi's best was negative mobility at 1%, with 68.75% agreement versus a
 68.75% parent, zero move flips, and mean absolute score change 125.  Their
 alignment with the TD dynamic direction was 0.9487 and 0.9992, respectively.
 
-No arena was run: neither natural child nor normalized probe satisfied the
-strict gate of both a decision flip and improved teacher agreement from the
-same candidate.  No external AlphaSho comparison is warranted.
+No arena was run in F51 because the normalized probes were diagnostic
+perturbations rather than trained children; Western's block-preconditioned
+probes and Shogi's 5% probe did satisfy the decision-flip plus teacher-
+improvement diagnostic gate.  No external AlphaSho comparison was warranted
+at this stage.
 
 ## Conclusion
 
