@@ -7,7 +7,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Any
 
-from .features import non_anchor_type_ids
+from .features import DYNAMIC_FEATURE_NAMES, non_anchor_type_ids
 from .serialization import stable_sha256
 
 MATERIAL_SCALE = 1.0  # fixed, versioned; native = round(float * MATERIAL_SCALE)
@@ -50,6 +50,8 @@ class LearnableMaterialCheckpoint:
     training_updates: int = 0
     training_seed: int | None = None
     promoted_to_champion: bool = False
+    # Appended to preserve the positional field order of material-only v1.
+    dynamic_weights: dict[str, float] = field(default_factory=dict)
 
     # ------------------------------------------------------------------ ids
 
@@ -58,7 +60,7 @@ class LearnableMaterialCheckpoint:
         return stable_sha256(self._learning_state())
 
     def _learning_state(self) -> dict[str, Any]:
-        return {
+        state = {
             "schema_version": self.schema_version,
             "ruleset_fingerprint": self.ruleset_fingerprint,
             "evaluation_profile_version": self.evaluation_profile_version,
@@ -77,23 +79,30 @@ class LearnableMaterialCheckpoint:
             "training_seed": self.training_seed,
             "promoted_to_champion": self.promoted_to_champion,
         }
+        # Keep the serialized identity of historical material-only v1
+        # checkpoints byte-for-byte stable.  v2 checkpoints opt in by
+        # carrying a non-empty dynamic vector.
+        if self.dynamic_weights:
+            state["dynamic_weights"] = self.dynamic_weights
+        return state
 
     @property
     def config_hash(self) -> str:
         """Distinct per checkpoint, so TT entries are never shared across
         evaluators (the experiment also creates a fresh engine per
         checkpoint)."""
-        return stable_sha256(
-            {
+        payload = {
                 "checkpoint_id": self.checkpoint_id,
                 "board_weights": self.board_weights,
                 "hand_weights": self.hand_weights,
-            }
-        )
+        }
+        if self.dynamic_weights:
+            payload["dynamic_weights"] = self.dynamic_weights
+        return stable_sha256(payload)
 
     @property
     def evaluator_version(self) -> str:
-        return "learnable-material-v1"
+        return "learnable-generic-v2" if self.dynamic_weights else "learnable-material-v1"
 
     # ---------------------------------------------------------------- init
 
@@ -108,6 +117,7 @@ class LearnableMaterialCheckpoint:
         parent_checkpoint_id: str | None = None,
         value_scale_factor: float = 4.0,
         w_max_factor: float = 10.0,
+        dynamic_weights: dict[str, float] | None = None,
     ) -> "LearnableMaterialCheckpoint":
         type_ids = non_anchor_type_ids(compiled)
         board = {t: float(profile.board_value_by_type[t]) for t in type_ids}
@@ -124,6 +134,7 @@ class LearnableMaterialCheckpoint:
             created_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             board_weights=board,
             hand_weights=hand,
+            dynamic_weights=dict(dynamic_weights or {}),
             value_scale=value_scale,
             reference_median=median,
             w_max=w_max,
@@ -143,6 +154,9 @@ class LearnableMaterialCheckpoint:
             int(round(self.hand_weights.get(tid, 0.0) * self.material_scale))
             for tid in type_ids
         ]
+
+    def quantized_dynamic(self) -> list[int]:
+        return [int(round(self.dynamic_weights.get(name, 0.0))) for name in DYNAMIC_FEATURE_NAMES]
 
     def native_board_value(self, type_id: str) -> int:
         return int(round(self.board_weights.get(type_id, 0.0) * self.material_scale))
@@ -175,6 +189,10 @@ class LearnableMaterialCheckpoint:
             self.hand_weights[tid] = max(
                 -self.w_max, min(self.w_max, self.hand_weights[tid] * factor)
             )
+        for name in list(self.dynamic_weights):
+            self.dynamic_weights[name] = max(
+                -self.w_max, min(self.w_max, self.dynamic_weights[name] * factor)
+            )
         return factor
 
     def child_checkpoint(
@@ -188,6 +206,7 @@ class LearnableMaterialCheckpoint:
         training_config_hash: str,
         training_seed: int | None,
         value_scale: float | None = None,
+        dynamic_weights: dict[str, float] | None = None,
     ) -> "LearnableMaterialCheckpoint":
         """Create the next generation with a deterministic parent chain."""
         return LearnableMaterialCheckpoint(
@@ -199,6 +218,9 @@ class LearnableMaterialCheckpoint:
             training_config_hash=training_config_hash,
             board_weights=dict(board_weights),
             hand_weights=dict(hand_weights),
+            dynamic_weights=dict(
+                self.dynamic_weights if dynamic_weights is None else dynamic_weights
+            ),
             material_scale=self.material_scale,
             value_scale=value_scale if value_scale is not None else self.value_scale,
             reference_median=self.reference_median,
@@ -226,6 +248,7 @@ class LearnableMaterialCheckpoint:
             "training_config_hash",
             "board_weights",
             "hand_weights",
+            "dynamic_weights",
             "material_scale",
             "value_scale",
             "reference_median",
@@ -249,7 +272,9 @@ class LearnableMaterialCheckpoint:
             raise ValueError(
                 f"unsupported checkpoint schema {data.get('schema_version')}"
             )
-        return cls(**{k: data[k] for k in allowed if k in data})
+        payload = {k: data[k] for k in allowed if k in data}
+        payload.setdefault("dynamic_weights", {})
+        return cls(**payload)
 
     def validate_ruleset(self, compiled) -> None:
         if self.ruleset_fingerprint != compiled.ruleset_fingerprint:
@@ -270,3 +295,16 @@ class LearnableMaterialCheckpoint:
         for tid, w in self.hand_weights.items():
             if not math.isfinite(w):
                 raise LearningNumericalError(f"non-finite hand weight for {tid}")
+            if abs(w) > self.w_max:
+                raise LearningNumericalError(
+                    f"hand weight {tid} exceeds w_max ({w} > {self.w_max})"
+                )
+        for name, w in self.dynamic_weights.items():
+            if name not in DYNAMIC_FEATURE_NAMES:
+                raise LearningNumericalError(f"unknown dynamic weight {name}")
+            if not math.isfinite(w):
+                raise LearningNumericalError(f"non-finite dynamic weight for {name}")
+            if abs(w) > self.w_max:
+                raise LearningNumericalError(
+                    f"dynamic weight {name} exceeds w_max ({w} > {self.w_max})"
+                )

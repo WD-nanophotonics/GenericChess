@@ -10,6 +10,7 @@ Measurement rules:
 
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 
 from ..ai.evaluation.config import EvaluationConfig
@@ -39,10 +40,13 @@ class ArenaConfig:
     opening_count: int = 0  # 0 -> use pairs
     min_plies: int = 2
     max_plies: int = 6
+    workers: int = 1
 
     def __post_init__(self) -> None:
         if self.pairs <= 0 or self.nodes_per_move <= 0 or self.max_depth <= 0:
             raise ValueError("arena budgets must be positive")
+        if self.workers <= 0:
+            raise ValueError("arena workers must be positive")
 
 
 @dataclass(frozen=True, slots=True)
@@ -219,7 +223,7 @@ def run_arena(
 
     pairs: list[ArenaPairResult] = []
     game_wins = game_draws = game_losses = 0
-    for pair_index in range(config.pairs):
+    def play_pair(pair_index: int) -> ArenaPairResult:
         opening = openings.openings[pair_index]
         game_child_owner0 = _play_one_game(
             compiled, native_rules, parent, child,
@@ -229,14 +233,21 @@ def run_arena(
             compiled, native_rules, parent, child,
             opening=opening, child_owner=1, config=config,
         )
-        pairs.append(
-            ArenaPairResult(
-                pair_index=pair_index,
-                opening_id=opening.final_position_key,
-                game_child_owner0=game_child_owner0,
-                game_child_owner1=game_child_owner1,
-            )
+        return ArenaPairResult(
+            pair_index=pair_index,
+            opening_id=opening.final_position_key,
+            game_child_owner0=game_child_owner0,
+            game_child_owner1=game_child_owner1,
         )
+
+    if config.workers == 1:
+        pairs = [play_pair(pair_index) for pair_index in range(config.pairs)]
+    else:
+        with ThreadPoolExecutor(max_workers=config.workers) as pool:
+            pairs = list(pool.map(play_pair, range(config.pairs)))
+    for pair in pairs:
+        game_child_owner0 = pair.game_child_owner0
+        game_child_owner1 = pair.game_child_owner1
         game_wins += sum(
             1 for g in (game_child_owner0, game_child_owner1) if g.child_points == 1.0
         )

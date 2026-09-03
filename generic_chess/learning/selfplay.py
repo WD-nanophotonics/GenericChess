@@ -13,7 +13,7 @@ from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
 from ..native.semantic_engine import SemanticSearchEngine
 from ..session.session import GameSession
-from .features import linear_value, material_features, non_anchor_type_ids
+from .features import dynamic_features, linear_value, material_features, non_anchor_type_ids
 from .material import LearnableMaterialCheckpoint
 from .tdleaf import _normalized_value
 from .trajectory import TrainingPoint, TrainingTrajectory
@@ -27,12 +27,15 @@ class SelfPlayConfig:
     seed: int = 0
     epsilon: float = 0.10
     tt_megabytes: int = 8
+    max_plies: int | None = None
 
     def __post_init__(self) -> None:
         if not (0.0 <= self.epsilon <= 1.0):
             raise ValueError("epsilon must be in [0, 1]")
         if self.nodes_per_move <= 0 or self.max_depth <= 0:
             raise ValueError("node/depth budgets must be positive")
+        if self.max_plies is not None and self.max_plies <= 0:
+            raise ValueError("max_plies must be positive when supplied")
 
 
 def collect_self_play(
@@ -70,7 +73,10 @@ def collect_self_play(
         )
         points: list[TrainingPoint] = []
         ply = 0
-        while session.result.status.value == "ongoing":
+        while (
+            session.result.status.value == "ongoing"
+            and (config.max_plies is None or ply < config.max_plies)
+        ):
             result = engine.search(
                 session,
                 SearchLimits(
@@ -88,11 +94,18 @@ def collect_self_play(
                 features = material_features(
                     leaf_state.position, type_ids, perspective=0
                 )
+                dynamic = (
+                    result.dynamic_features
+                    if semantic_path
+                    else dynamic_features(leaf_state.position, compiled).as_tuple()
+                )
                 u = _normalized_value(
                     features,
                     checkpoint.board_weights,
                     checkpoint.hand_weights,
                     checkpoint.value_scale,
+                    dynamic,
+                    checkpoint.dynamic_weights,
                 )
                 points.append(
                     TrainingPoint(
@@ -108,6 +121,7 @@ def collect_self_play(
                         leaf_feature_hand=features.hand_counts,
                         leaf_value=u,
                         completed_depth=result.completed_depth,
+                        leaf_feature_dynamic=tuple(dynamic),
                     )
                 )
             if getattr(result, "declaration_id", None) is not None:
@@ -134,6 +148,7 @@ def collect_self_play(
                     leaf_feature_hand=old.leaf_feature_hand,
                     leaf_value=old.leaf_value,
                     completed_depth=old.completed_depth,
+                    leaf_feature_dynamic=old.leaf_feature_dynamic,
                 )
             session.submit(action)
             ply += 1

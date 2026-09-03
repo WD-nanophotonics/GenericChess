@@ -263,6 +263,17 @@ def terminal_status(native_rules, position) -> dict:
     return raw
 
 
+def dynamic_features(native_rules, position) -> tuple[int, int, int]:
+    """Return the Native semantic evaluator's generic dynamic feature vector."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return tuple(
+        int(value) for value in _module().semantic_dynamic_features(
+            native_rules.capsule, position
+        )
+    )
+
+
 def search_runtime_sizes() -> dict:
     """Return Native semantic search-state byte sizes for performance planning."""
     if not native_available():
@@ -328,6 +339,7 @@ def semantic_iterative_search(
     cancel_token=None,
     board_values=None,
     hand_values=None,
+    dynamic_values=None,
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
 ) -> dict:
@@ -357,6 +369,17 @@ def semantic_iterative_search(
     if board_values is not None:
         board_values = tuple(int(value) for value in board_values)
         hand_values = tuple(int(value) for value in hand_values)
+    if dynamic_values is not None:
+        if isinstance(dynamic_values, Mapping):
+            if set(dynamic_values) != {"mobility", "promotion_potential", "anchor_safety"}:
+                raise ValueError("semantic dynamic evaluator profile must cover exactly the dynamic feature names")
+            dynamic_values = tuple(int(dynamic_values[name]) for name in (
+                "mobility", "promotion_potential", "anchor_safety"
+            ))
+        else:
+            dynamic_values = tuple(int(value) for value in dynamic_values)
+        if len(dynamic_values) != 3:
+            raise ValueError("semantic dynamic evaluator profile must contain three values")
     flag = None
     unregister = None
     if cancel_token is not None:
@@ -372,6 +395,7 @@ def semantic_iterative_search(
             flag,
             board_values,
             hand_values,
+            dynamic_values,
             int(_root_ply_offset),
             int(tt_megabytes),
         ))

@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from ..core.actions import Action, action_from_dict, action_to_dict
-from .features import MaterialFeatureVector
+from .features import DynamicFeatureVector, MaterialFeatureVector
 from .serialization import canonical_json, stable_sha256
 
 
@@ -21,6 +21,7 @@ class TrainingPoint:
     leaf_feature_hand: tuple[int, ...]
     leaf_value: float
     completed_depth: int
+    leaf_feature_dynamic: tuple[int, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -72,6 +73,7 @@ class TrainingTrajectory:
                     "leaf_feature_hand": list(p.leaf_feature_hand),
                     "leaf_value": p.leaf_value,
                     "completed_depth": p.completed_depth,
+                    "leaf_feature_dynamic": list(p.leaf_feature_dynamic),
                 }
                 for p in self.points
             ],
@@ -102,6 +104,9 @@ class TrainingTrajectory:
                     leaf_feature_hand=tuple(int(v) for v in p["leaf_feature_hand"]),
                     leaf_value=float(p["leaf_value"]),
                     completed_depth=int(p["completed_depth"]),
+                    leaf_feature_dynamic=tuple(
+                        int(v) for v in p.get("leaf_feature_dynamic", ())
+                    ),
                 )
                 for p in data["points"]
             ),
@@ -119,5 +124,10 @@ class TrainingTrajectory:
             {
                 "board": list(point.leaf_feature_board),
                 "hand": list(point.leaf_feature_hand),
+                "dynamic": list(point.leaf_feature_dynamic),
             }
         )
+
+    def dynamic_features_at(self, point: TrainingPoint) -> DynamicFeatureVector:
+        values = tuple(point.leaf_feature_dynamic) + (0, 0, 0)
+        return DynamicFeatureVector(*values[:3])

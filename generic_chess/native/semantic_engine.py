@@ -20,6 +20,8 @@ from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY
 from .semantic import public_action
 
+DYNAMIC_FEATURE_NAMES = ("mobility", "promotion_potential", "anchor_safety")
+
 
 DECLARATION_ACTION_TAG = 1 << 63
 
@@ -46,6 +48,7 @@ class SemanticIterativeSearchResult:
     tt_replacements: int
     tt_entry_bytes: int
     tt_allocated_bytes: int
+    dynamic_features: tuple[int, int, int] = ()
 
 
 def _profile_tuple(native_rules, values):
@@ -62,6 +65,19 @@ def _profile_tuple(native_rules, values):
     return result
 
 
+def _dynamic_tuple(values):
+    if values is None:
+        return None
+    if isinstance(values, Mapping):
+        if set(values) != set(DYNAMIC_FEATURE_NAMES):
+            raise ValueError("semantic dynamic evaluator profile must cover exactly the dynamic feature names")
+        return tuple(int(values[name]) for name in DYNAMIC_FEATURE_NAMES)
+    result = tuple(int(value) for value in values)
+    if len(result) != len(DYNAMIC_FEATURE_NAMES):
+        raise ValueError("semantic dynamic evaluator profile must contain three values")
+    return result
+
+
 class SemanticSearchEngine:
     """Reusable, single-thread semantic Native search engine."""
 
@@ -72,6 +88,7 @@ class SemanticSearchEngine:
         *,
         board_values=None,
         hand_values=None,
+        dynamic_values=None,
         checkpoint=None,
         tt_megabytes: int = 64,
     ) -> None:
@@ -86,6 +103,7 @@ class SemanticSearchEngine:
         self._checkpoint_id = None
         self._board_values = _profile_tuple(native_rules, board_values)
         self._hand_values = _profile_tuple(native_rules, hand_values)
+        self._dynamic_values = _dynamic_tuple(dynamic_values)
         if (self._board_values is None) != (self._hand_values is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._tt_megabytes = tt_megabytes
@@ -98,6 +116,7 @@ class SemanticSearchEngine:
         type_ids = tuple(self._native_rules.type_ids)
         self._board_values = tuple(checkpoint.quantized_board(type_ids))
         self._hand_values = tuple(checkpoint.quantized_hand(type_ids))
+        self._dynamic_values = tuple(checkpoint.quantized_dynamic())
         self._checkpoint_id = checkpoint.checkpoint_id
 
     def _new_capsule(self):
@@ -105,6 +124,7 @@ class SemanticSearchEngine:
             self._native_rules.capsule,
             self._board_values,
             self._hand_values,
+            self._dynamic_values,
             self._tt_megabytes,
         )
 
@@ -128,12 +148,13 @@ class SemanticSearchEngine:
         self._set_checkpoint_values(checkpoint)
         self._capsule = self._new_capsule()
 
-    def bind_evaluator(self, board_values, hand_values) -> None:
+    def bind_evaluator(self, board_values, hand_values, dynamic_values=None) -> None:
         board = _profile_tuple(self._native_rules, board_values)
         hand = _profile_tuple(self._native_rules, hand_values)
         if (board is None) != (hand is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._board_values, self._hand_values = board, hand
+        self._dynamic_values = _dynamic_tuple(dynamic_values)
         self._checkpoint_id = None
         self._capsule = self._new_capsule()
 
@@ -218,6 +239,19 @@ class SemanticSearchEngine:
         for pv_action in pv:
             state = apply_action(state, pv_action, self._compiled)
 
+        leaf_dynamic: tuple[int, int, int] = ()
+        if pv:
+            leaf_position = position
+            for packed in raw.get("principal_variation", ()):
+                packed = int(packed)
+                if packed & DECLARATION_ACTION_TAG:
+                    break
+                leaf_position = _module().semantic_make_checked(
+                    self._native_rules.capsule, leaf_position, packed
+                )
+            from .semantic import dynamic_features as native_dynamic_features
+            leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
+
         return SemanticIterativeSearchResult(
             score=int(raw["score"]),
             action=action,
@@ -239,6 +273,7 @@ class SemanticSearchEngine:
             tt_replacements=int(raw.get("tt_replacements", 0)),
             tt_entry_bytes=int(raw.get("tt_entry_bytes", 0)),
             tt_allocated_bytes=int(raw.get("tt_allocated_bytes", 0)),
+            dynamic_features=leaf_dynamic,
         )
 
 

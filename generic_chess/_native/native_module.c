@@ -61,9 +61,15 @@ typedef struct {
     PyObject *rules_capsule;
     PyObject *board_values;
     PyObject *hand_values;
+    PyObject *dynamic_values;
     GCSemanticTable *tt;
     int busy;
 } GCSemanticSearchEngine;
+
+static int gc_semantic_dynamic_feature_vector(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    int out[3]);
 
 static void gc_rules_capsule_free(PyObject *capsule) {
     GCRules *rules = (GCRules *)PyCapsule_GetPointer(capsule, GC_RULES_CAPSULE);
@@ -105,6 +111,7 @@ static void gc_semantic_engine_capsule_free(PyObject *capsule) {
         Py_XDECREF(engine->rules_capsule);
         Py_XDECREF(engine->board_values);
         Py_XDECREF(engine->hand_values);
+        Py_XDECREF(engine->dynamic_values);
         free(engine);
     }
 }
@@ -2805,6 +2812,21 @@ static PyObject *gc_semantic_in_check(PyObject *self, PyObject *args) {
         rules, position, (uint8_t)side));
 }
 
+static PyObject *gc_semantic_dynamic_features(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
+        pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    int features[3];
+    if (!gc_semantic_dynamic_feature_vector(rules, position, features)) return NULL;
+    return Py_BuildValue("(iii)", features[0], features[1], features[2]);
+}
+
 static PyObject *gc_semantic_make_unmake_roundtrip(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -3310,7 +3332,9 @@ typedef struct {
 typedef struct {
     int board[GC_MAX_TYPES];
     int hand[GC_MAX_TYPES];
+    int dynamic[3];
     int supplied;
+    int dynamic_supplied;
 } GCSemanticProbeProfile;
 
 #define GC_SEMANTIC_PROBE_INF 1000000000
@@ -3330,7 +3354,59 @@ static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSema
             score += owner == position->side_to_move ? hand_score : -hand_score;
         }
     }
+    if (profile && profile->dynamic_supplied) {
+        int features[3] = {0, 0, 0};
+        /* The vector is owner-0 minus owner-1; leaf scores are always from
+         * the side-to-move perspective, matching the material terms above. */
+        if (!gc_semantic_dynamic_feature_vector(rules, position, features)) return score;
+        for (int i = 0; i < 3; i++) {
+            score += (position->side_to_move == 0 ? 1 : -1) *
+                profile->dynamic[i] * features[i];
+        }
+    }
     return score;
+}
+
+static int gc_semantic_dynamic_feature_vector(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    int out[3]) {
+    int mobility[2] = {0, 0};
+    int promotions[2] = {0, 0};
+    int anchor_moves[2] = {0, 0};
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        GCSemanticPosition view = *position;
+        view.side_to_move = owner;
+        GCSemanticActionBuffer actions;
+        gc_semantic_action_buffer_init(&actions);
+        if (!gc_semantic_generate_candidate_buffer(rules, &view, &actions)) {
+            gc_semantic_action_buffer_free(&actions);
+            return 0;
+        }
+        for (size_t i = 0; i < actions.count; i++) {
+            uint64_t raw = actions.data[i];
+            if (raw == 0 || (raw >> 63) != 0) continue;
+            GCSemanticPosition child;
+            if (!gc_semantic_runtime_make_checked(&child, rules, &view, raw)) continue;
+            mobility[owner]++;
+            if (((raw >> 16) & 0xFFu) != 0xFFu) promotions[owner]++;
+            if (((raw >> 32) & 0xFu) == 2u) {
+                uint16_t from = (uint16_t)((raw >> 8) & 0xFFu);
+                if (from < rules->board_size * rules->board_size &&
+                    view.board[from].occupied &&
+                    rules->types[view.board[from].current_type].is_anchor) {
+                    anchor_moves[owner]++;
+                }
+            }
+        }
+        gc_semantic_action_buffer_free(&actions);
+    }
+    out[0] = mobility[0] - mobility[1];
+    out[1] = promotions[0] - promotions[1];
+    out[2] = anchor_moves[0] - anchor_moves[1];
+    if (gc_semantic_runtime_in_check(rules, position, 0)) out[2] -= 10;
+    if (gc_semantic_runtime_in_check(rules, position, 1)) out[2] += 10;
+    return 1;
 }
 
 static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *rules,
@@ -3922,6 +3998,7 @@ static int gc_semantic_iterative_fallback(GCSemanticIterativeContext *ctx,
 
 static int gc_semantic_parse_profile(PyObject *board_values,
                                      PyObject *hand_values,
+                                     PyObject *dynamic_values,
                                      const GCSemanticRules *rules,
                                      GCSemanticProbeProfile *profile) {
     memset(profile, 0, sizeof(*profile));
@@ -3931,6 +4008,27 @@ static int gc_semantic_parse_profile(PyObject *board_values,
         PyErr_SetString(PyExc_ValueError,
                         "semantic evaluator board/hand profile must be supplied together");
         return 0;
+    }
+    if (dynamic_values == Py_None) dynamic_values = NULL;
+    if (dynamic_values != NULL) {
+        if ((!PyList_Check(dynamic_values) && !PyTuple_Check(dynamic_values)) ||
+            PySequence_Size(dynamic_values) != 3) {
+            PyErr_SetString(PyExc_ValueError,
+                            "semantic dynamic evaluator profile must contain three values");
+            return 0;
+        }
+        for (int i = 0; i < 3; i++) {
+            PyObject *value = PySequence_GetItem(dynamic_values, i);
+            long v = PyLong_AsLong(value);
+            Py_DECREF(value);
+            if (PyErr_Occurred() || v < -1000000 || v > 1000000) {
+                PyErr_SetString(PyExc_ValueError,
+                                "semantic dynamic evaluator values must be bounded integers");
+                return 0;
+            }
+            profile->dynamic[i] = (int)v;
+        }
+        profile->dynamic_supplied = 1;
     }
     if (board_values == NULL) return 1;
     if ((!PyList_Check(board_values) && !PyTuple_Check(board_values)) ||
@@ -3964,13 +4062,15 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *rules_capsule, *position_capsule;
     PyObject *max_nodes_obj = Py_None, *max_time_obj = Py_None;
     PyObject *cancel_capsule = Py_None, *board_values = NULL, *hand_values = NULL;
+    PyObject *dynamic_values = Py_None;
     PyObject *tt_capsule = Py_None;
     unsigned int max_depth;
     unsigned int root_ply_offset = 0;
     unsigned int tt_megabytes = 0;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOIIO", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOIIO", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
+                          &dynamic_values,
                           &root_ply_offset, &tt_megabytes, &tt_capsule)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
@@ -3992,7 +4092,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (!gc_semantic_require_matching_rules(rules, position) ||
         !gc_semantic_require_exact_history(position)) return NULL;
     GCSemanticProbeProfile profile;
-    if (!gc_semantic_parse_profile(board_values, hand_values, rules, &profile)) return NULL;
+    if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values, rules, &profile)) return NULL;
     GCCancelFlag *cancel = NULL;
     if (cancel_capsule != Py_None) {
         cancel = gc_get_cancel(cancel_capsule);
@@ -4216,10 +4316,10 @@ static GCSemanticSearchEngine *gc_get_semantic_engine(PyObject *capsule) {
 
 static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args) {
     (void)self;
-    PyObject *rules_capsule, *board_values, *hand_values;
+    PyObject *rules_capsule, *board_values, *hand_values, *dynamic_values;
     unsigned int tt_megabytes;
-    if (!PyArg_ParseTuple(args, "OOOI", &rules_capsule, &board_values,
-                          &hand_values, &tt_megabytes)) return NULL;
+    if (!PyArg_ParseTuple(args, "OOOOI", &rules_capsule, &board_values,
+                          &hand_values, &dynamic_values, &tt_megabytes)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     if (rules == NULL) return NULL;
@@ -4229,7 +4329,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
         return NULL;
     }
     GCSemanticProbeProfile profile;
-    if (!gc_semantic_parse_profile(board_values, hand_values, rules, &profile))
+    if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values, rules, &profile))
         return NULL;
     GCSemanticSearchEngine *engine = (GCSemanticSearchEngine *)calloc(
         1, sizeof(*engine));
@@ -4238,6 +4338,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     engine->rules_capsule = Py_NewRef(rules_capsule);
     engine->board_values = Py_NewRef(board_values);
     engine->hand_values = Py_NewRef(hand_values);
+    engine->dynamic_values = Py_NewRef(dynamic_values);
     if (tt_megabytes != 0) {
         size_t requested = (size_t)tt_megabytes * (size_t)1024 * (size_t)1024;
         engine->tt = gc_semantic_tt_create(requested, NULL);
@@ -4245,6 +4346,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
             Py_DECREF(engine->rules_capsule);
             Py_DECREF(engine->board_values);
             Py_DECREF(engine->hand_values);
+            Py_DECREF(engine->dynamic_values);
             free(engine);
             PyErr_NoMemory();
             return NULL;
@@ -4272,7 +4374,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
         : Py_NewRef(Py_None);
     if (tt_capsule == NULL) return NULL;
-    PyObject *call_args = PyTuple_New(11);
+    PyObject *call_args = PyTuple_New(12);
     if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
     Py_INCREF(engine->rules_capsule);
     PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
@@ -4284,9 +4386,10 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     Py_INCREF(cancel); PyTuple_SET_ITEM(call_args, 5, cancel);
     Py_INCREF(engine->board_values); PyTuple_SET_ITEM(call_args, 6, engine->board_values);
     Py_INCREF(engine->hand_values); PyTuple_SET_ITEM(call_args, 7, engine->hand_values);
-    PyTuple_SET_ITEM(call_args, 8, PyLong_FromLong(0));
+    Py_INCREF(engine->dynamic_values); PyTuple_SET_ITEM(call_args, 8, engine->dynamic_values);
     PyTuple_SET_ITEM(call_args, 9, PyLong_FromLong(0));
-    PyTuple_SET_ITEM(call_args, 10, tt_capsule);
+    PyTuple_SET_ITEM(call_args, 10, PyLong_FromLong(0));
+    PyTuple_SET_ITEM(call_args, 11, tt_capsule);
     engine->busy = 1;
     PyObject *result = gc_semantic_iterative_search(self, call_args);
     engine->busy = 0;
@@ -4491,6 +4594,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_is_square_attacked(rules, position, square, by_owner) -> bool"},
     {"semantic_in_check", gc_semantic_in_check, METH_VARARGS,
      "semantic_in_check(rules, position, side) -> bool"},
+    {"semantic_dynamic_features", gc_semantic_dynamic_features, METH_VARARGS,
+     "semantic_dynamic_features(rules, position) -> (mobility, promotion, anchor_safety)"},
     {"semantic_assess_declaration", gc_semantic_assess_declaration, METH_VARARGS,
      "semantic_assess_declaration(rules, position, declaration_id) -> result"},
     {"semantic_available_declarations", gc_semantic_available_declarations, METH_VARARGS,
@@ -4514,9 +4619,9 @@ static PyMethodDef gc_methods[] = {
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,
      "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
     {"semantic_iterative_search", gc_semantic_iterative_search, METH_VARARGS,
-     "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values]) -> no-TT iterative result"},
+     "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values, dynamic_values]) -> no-TT iterative result"},
     {"create_semantic_search_engine", gc_create_semantic_search_engine, METH_VARARGS,
-     "create_semantic_search_engine(rules, board_values, hand_values, tt_megabytes) -> engine"},
+     "create_semantic_search_engine(rules, board_values, hand_values, dynamic_values, tt_megabytes) -> engine"},
     {"semantic_engine_search", gc_semantic_engine_search, METH_VARARGS,
      "semantic_engine_search(engine, position, max_depth[, max_nodes, max_time_seconds, cancel]) -> result"},
     {"semantic_engine_clear_tt", gc_semantic_engine_clear_tt, METH_VARARGS,
