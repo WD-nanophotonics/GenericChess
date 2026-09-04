@@ -45,3 +45,7 @@ Read `WORKFLOW.md` before changing this repository.
     published at the exact synchronized `origin/sandbox` SHA before dispatch.
     Chat receives only an immutable repository/commit/path/report-SHA reference,
     including for small reports; start-request bootstrap messages remain inline.
+15. For evaluator, learning, self-improvement, or playing-strength work, a
+    high-capability local reviewer/supervisor must read
+    `docs/architecture/GENERICCHESS_THEORY_ROADMAP.md` before redirecting the
+    route. Low-capability execution agents follow the concrete work order.
