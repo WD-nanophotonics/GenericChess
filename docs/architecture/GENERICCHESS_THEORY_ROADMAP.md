@@ -47,10 +47,10 @@ TDLeaf/self-play trajectory path.
   semantics explicit; test that a better leaf value does not silently change
   the search objective or action-sign convention.
 
-### 2. Increasing the Action Gap: A Unifying Perspective on Asymmetric Losses
+### 2. Increasing the Action Gap: New Operators for Reinforcement Learning
 
-**Authors:** Marc G. Bellemare, Georg Ostrovski, Arthur Guez, Thomas Schaul,
-Remi Munos.  
+**Authors:** Marc G. Bellemare, Georg Ostrovski, Arthur Guez, Philip S. Thomas,
+Rémi Munos.
 **URL:** <https://arxiv.org/abs/1512.04860>
 
 **Core idea:** action-gap increasing transformations can improve robustness of
@@ -60,9 +60,10 @@ Remi Munos.
 **Diagnostic/design consequence:** measure action gaps and regret by gap
   quartile; do not use aggregate MSE as the sole policy-risk proxy.
 
-### 3. Classification-based Approximate Policy Iteration
+### 3. Classification-based Approximate Policy Iteration: Experiments and Extended Discussions
 
-**Authors:** Mohammad Ghavamzadeh, Alessandro Lazaric, Rémi Munos.  
+**Authors:** Amir-massoud Farahmand, Doina Precup, André M. S. Barreto,
+Mohammad Ghavamzadeh.
 **URL:** <https://arxiv.org/abs/1407.0449>
 
 **Core idea:** approximate policy iteration can separate value estimation from
@@ -74,7 +75,7 @@ Remi Munos.
 
 ### 4. Thinking Fast and Slow with Deep Learning and Tree Search
 
-**Authors:** Thomas Anthony, ZhengTian, David Barber.  
+**Authors:** Thomas Anthony, Zheng Tian, David Barber.
 **URL:** <https://arxiv.org/abs/1705.08439>
 
 **Core idea:** Expert Iteration uses tree search as an expert to produce policy
@@ -100,7 +101,7 @@ Remi Munos.
 
 ### 6. Targeted Search Control in AlphaZero
 
-**Authors:** Maxime Trudeau, Michael Bowling.  
+**Authors:** Alexandre Trudeau, Michael Bowling.
 **URL:** <https://arxiv.org/abs/2302.12359>
 
 **Core idea:** search-control choices alter the state distribution and the
@@ -124,10 +125,10 @@ Remi Munos.
   attributing policy failure to architecture; later data collection may need
   learner/on-policy states.
 
-### 8. Learning to Search Better than Your Teacher
+### 8. Learning to Search Better Than Your Teacher
 
-**Authors:** Ching-An Cheng, Xuefeng Bai, Yaser Abbasi-Yadkori, Wei-Lun Chao,
-Wei Chai, Bo Li, et al.  
+**Authors:** Kai-Wei Chang, Akshay Krishnamurthy, Alekh Agarwal, Hal Daumé
+III, John Langford.
 **URL:** <https://arxiv.org/abs/1502.02206>
 
 **Core idea:** learning-to-search objectives can optimize the learner's future
@@ -183,7 +184,8 @@ Geist.
 
 ### 12. Deep Learning for General Game Playing with Ludii and Polygames
 
-**Authors:** Cameron Browne et al.  
+**Authors:** Dennis J. N. J. Soemers, Vegard Mella, Cameron Browne,
+Olivier Teytaud.
 **URL:** <https://arxiv.org/abs/2101.09562>
 
 **Core idea:** studies deep learning and general game-playing systems across
@@ -197,7 +199,7 @@ Geist.
 
 ### 13. Policy Improvement by Planning with Gumbel
 
-**Authors:** Daniil Shaposhnikov et al.  
+**Authors:** Ivo Danihelka, Arthur Guez, Julian Schrittwieser, David Silver.
 **URL:** <https://openreview.net/forum?id=bERaNdoegnO>
 
 **Core idea:** Gumbel-based planning allocates a fixed search budget to improve
@@ -225,4 +227,3 @@ The allowed conclusions are diagnostic classifications, not causal claims:
 `POLICY_RELEVANT_DISTRIBUTION_DIFFERS`, `STATE_DISTRIBUTION_MISMATCH_SUPPORTED`,
 `REPRESENTATION_REMAINS_PRIMARY`, or a documented mixture. Western is a smaller
 sanity diagnostic; F59 does not run AlphaSho.
-

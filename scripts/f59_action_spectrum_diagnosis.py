@@ -250,6 +250,41 @@ def _softmax(values, temperature=TEMPERATURE):
     return probabilities / np.sum(probabilities)
 
 
+def _predict_total_q(root_rows, residual_predictor):
+    """Return per-action total Q = that action's base Q plus residual Q."""
+    rows = list(root_rows)
+    features = np.vstack([row.features for row in rows])
+    residual = np.asarray(residual_predictor(features), dtype=float)
+    return np.asarray([row.base_q for row in rows], dtype=float) + residual
+
+
+def _soft_policy_loss(teacher_q, base_q, normalized_prediction, target_scale,
+                      temperature=TEMPERATURE):
+    teacher = _softmax(teacher_q, temperature)
+    student = _softmax(np.asarray(base_q) + np.asarray(normalized_prediction) * target_scale, temperature)
+    return float(-np.sum(teacher * np.log(np.maximum(student, 1e-12))))
+
+
+def _soft_policy_grad_prediction(teacher_q, base_q, normalized_prediction,
+                                 target_scale, temperature=TEMPERATURE):
+    """Derivative of soft policy cross-entropy wrt normalized residual output."""
+    teacher = _softmax(teacher_q, temperature)
+    student = _softmax(np.asarray(base_q) + np.asarray(normalized_prediction) * target_scale, temperature)
+    return (student - teacher) * (float(target_scale) / float(temperature))
+
+
+def _is_mate_band_native(score):
+    return abs(float(score)) > MATE_THRESHOLD
+
+
+def _is_mate_band_q(value, semantic_native_scale):
+    return abs(float(value)) * float(semantic_native_scale) > MATE_THRESHOLD
+
+
+def _ordinary_usable(root_meta):
+    return not root_meta["root_80k_mate_band"] and not root_meta["retained_q20_any_mate_band"]
+
+
 def _fit_model(features, base_q, targets, groups, objective, seed):
     """Fit the fixed width-32 tanh residual with one of three losses."""
     x = np.asarray(features, dtype=float)
@@ -273,9 +308,9 @@ def _fit_model(features, base_q, targets, groups, objective, seed):
             grad_prediction = (prediction - yn) / len(x)
         elif objective == "SOFT_POLICY_DISTILLATION":
             for indices in groups:
-                teacher = _softmax(targets[indices])
-                student = _softmax(base_q[indices] + prediction[indices] * target_scale)
-                grad_prediction[indices] = (student - teacher) / TEMPERATURE
+                grad_prediction[indices] = _soft_policy_grad_prediction(
+                    targets[indices], base_q[indices], prediction[indices], target_scale
+                )
             grad_prediction /= max(len(groups), 1)
         elif objective == "PAIRWISE_RANKING":
             pair_count = 0
@@ -398,6 +433,19 @@ def _spectrum_for_root(compiled, native, parent, observer, record, smoke=False):
         "v2_action_regret_q20": teacher_max - float(v2_row.q_20k),
         "v4_action_regret_q20": teacher_max - float(v4_row.q_20k),
         "root_2k_score_error_vs_80k": abs(root_2k["score"] - root_80k["score"]),
+        "root_80k_mate_band": _is_mate_band_native(root_80k["score"]),
+        "retained_q20_mate_band_action_count": sum(
+            _is_mate_band_q(row.q_20k, parent.semantic_native_scale) for row in rows
+        ),
+        "retained_q20_any_mate_band": any(
+            _is_mate_band_q(row.q_20k, parent.semantic_native_scale) for row in rows
+        ),
+        "action_rows": [
+            {"action": row.action, "action_key": row.action_key,
+             "features": row.features.tolist(), "base_q": row.base_q,
+             "q_1k": row.q_1k, "q_10k": row.q_10k, "q_20k": row.q_20k}
+            for row in rows
+        ],
     }
 
 
@@ -462,19 +510,48 @@ def _run_distribution(label, distribution, records, compiled, native, parent, ob
         metadata.append({"index": index, "position_key": records[index]["position_key"], "root": root_meta})
     stable = [m["root"]["spectrum_top_10k_action_key"] == m["root"]["spectrum_top_20k_action_key"] for m in metadata]
     stable_roots = [i for i, value in enumerate(stable) if value]
+    ordinary_roots = [i for i in stable_roots if _ordinary_usable(metadata[i]["root"])]
+    root_mate_roots = [i for i, m in enumerate(metadata) if m["root"]["root_80k_mate_band"]]
+    candidate_mate_roots = [i for i, m in enumerate(metadata) if m["root"]["retained_q20_any_mate_band"]]
+    spectrum_summary = {
+        "candidate_count_mean": float(np.mean([len(rows) for rows in all_roots])),
+        "legal_action_count_mean": float(np.mean([m["root"]["legal_action_count"] for m in metadata])),
+        "top1_10k_vs_20k": float(np.mean([m["root"]["spectrum_top_10k_action_key"] == m["root"]["spectrum_top_20k_action_key"] for m in metadata])),
+        "root_40k_vs_80k_agreement": float(np.mean([m["root"]["root_40k"]["action_key"] == m["root"]["root_80k"]["action_key"] for m in metadata])),
+        "v2_2k_agreement_with_80k": float(np.mean([m["root"]["root_2k"]["action_key"] == m["root"]["root_80k"]["action_key"] for m in metadata])),
+        "v4_2k_agreement_with_80k": float(np.mean([m["root"]["observer_2k"]["action_key"] == m["root"]["root_80k"]["action_key"] for m in metadata])),
+    }
+    mate_counts = {
+        "root_80k_mate_band_roots": len(root_mate_roots),
+        "retained_q20_mate_band_roots": len(candidate_mate_roots),
+        "retained_q20_mate_band_actions": int(sum(
+            metadata[i]["root"]["retained_q20_mate_band_action_count"] for i in range(len(metadata))
+        )),
+        "stable_non_mate_roots": len(ordinary_roots),
+        "excluded_from_objective_gate": len(records) - len(ordinary_roots),
+    }
     if len(stable_roots) < 2:
-        return {"classification": "TEACHER_POLICY_SURFACE_UNSTABLE", "stable_count": len(stable_roots), "roots": len(records)}
-    dev = [i for i in stable_roots if i < DEV_COUNT]
-    holdout = [i for i in stable_roots if i >= DEV_COUNT]
+        return {
+            "classification": "TEACHER_POLICY_SURFACE_UNSTABLE", "stable_count": len(stable_roots),
+            "stable_rate": len(stable_roots) / len(records), "roots": len(records),
+            "stable_indices": stable_roots, "ordinary_usable_indices": ordinary_roots,
+            "development_indices": [], "holdout_indices": [],
+            "teacher_action_spectrum": spectrum_summary, "mate_band_counts": mate_counts,
+            "roots_metadata": metadata,
+        }
+    dev = [i for i in ordinary_roots if i < DEV_COUNT]
+    holdout = [i for i in ordinary_roots if i >= DEV_COUNT]
     if diagnostic_only:
-        dev, holdout = [], stable_roots
+        dev, holdout = [], ordinary_roots
     elif not dev or not holdout:
         return {
             "classification": "INSUFFICIENT_FROZEN_SPLIT",
             "roots": len(records), "stable_count": len(stable_roots),
             "stable_rate": len(stable_roots) / len(records),
-            "stable_indices": stable_roots,
+            "stable_indices": stable_roots, "ordinary_usable_indices": ordinary_roots,
             "development_indices": dev, "holdout_indices": holdout,
+            "teacher_action_spectrum": spectrum_summary, "mate_band_counts": mate_counts,
+            "roots_metadata": metadata,
         }
     objective_results = {}
     if not diagnostic_only:
@@ -492,17 +569,28 @@ def _run_distribution(label, distribution, records, compiled, native, parent, ob
             runs = []
             for seed in TRAINING_SEEDS:
                 model = _fit_model(x, base, y, groups, objective, seed)
-                predicted = [row[0].base_q + model(np.vstack([item.features for item in row])) for row in holdout_rows]
+                predicted = [_predict_total_q(row, model) for row in holdout_rows]
                 runs.append(_metrics(holdout_rows, predicted))
             objective_results[objective] = {"seeds": list(TRAINING_SEEDS), "runs": runs}
-    baseline = {}
-    for name in ("v2_parent", "v4_observer"):
-        predicted_rows = []
-        for i in holdout:
-            key = metadata[i]["root"]["root_2k" if name == "v2_parent" else "observer_2k"]["action_key"]
-            predicted_rows.append(next(row for row in all_roots[i] if row.action_key == key))
-        regrets = [float(max(row.q_20k for row in all_roots[i]) - selected.q_20k) for i, selected in zip(holdout, predicted_rows)]
-        baseline[name] = {"roots": len(regrets), "teacher_regret_mean": float(np.mean(regrets)), "teacher_regret_median": float(np.median(regrets))}
+
+    def baseline_for(indices):
+        baseline = {}
+        for name in ("v2_parent", "v4_observer"):
+            predicted_rows = []
+            for i in indices:
+                key = metadata[i]["root"]["root_2k" if name == "v2_parent" else "observer_2k"]["action_key"]
+                predicted_rows.append(next(row for row in all_roots[i] if row.action_key == key))
+            regrets = [float(max(row.q_20k for row in all_roots[i]) - selected.q_20k)
+                       for i, selected in zip(indices, predicted_rows)]
+            baseline[name] = {
+                "roots": len(regrets),
+                "teacher_regret_mean": float(np.mean(regrets)) if regrets else 0.0,
+                "teacher_regret_median": float(np.median(regrets)) if regrets else 0.0,
+            }
+        return baseline
+
+    baseline = baseline_for(holdout)
+    descriptive_baseline = baseline_for(stable_roots)
     stable_metadata = [metadata[i]["root"] for i in stable_roots]
     score_error = [root["root_2k_score_error_vs_80k"] / parent.semantic_native_scale for root in stable_metadata]
     v2_regret = [root["v2_action_regret_q20"] for root in stable_metadata]
@@ -511,16 +599,13 @@ def _run_distribution(label, distribution, records, compiled, native, parent, ob
     return {
         "classification": "PENDING_REVIEW", "roots": len(records), "stable_count": len(stable_roots),
         "stable_rate": len(stable_roots) / len(records), "stable_indices": stable_roots,
+        "ordinary_usable_indices": ordinary_roots,
         "development_indices": dev, "holdout_indices": holdout,
-        "teacher_action_spectrum": {
-            "candidate_count_mean": float(np.mean([len(rows) for rows in all_roots])),
-            "legal_action_count_mean": float(np.mean([m["root"]["legal_action_count"] for m in metadata])),
-            "top1_10k_vs_20k": float(np.mean([m["root"]["spectrum_top_10k_action_key"] == m["root"]["spectrum_top_20k_action_key"] for m in metadata])),
-            "root_40k_vs_80k_agreement": float(np.mean([m["root"]["root_40k"]["action_key"] == m["root"]["root_80k"]["action_key"] for m in metadata])),
-            "v2_2k_agreement_with_80k": float(np.mean([m["root"]["root_2k"]["action_key"] == m["root"]["root_80k"]["action_key"] for m in metadata])),
-            "v4_2k_agreement_with_80k": float(np.mean([m["root"]["observer_2k"]["action_key"] == m["root"]["root_80k"]["action_key"] for m in metadata])),
-        },
-        "baseline_regret": baseline, "objectives": objective_results,
+        "teacher_action_spectrum": spectrum_summary,
+        "mate_band_counts": mate_counts,
+        "baseline_regret": baseline,
+        "descriptive_stable_baseline_regret": descriptive_baseline,
+        "objectives": objective_results,
         "policy_error_correlations": {
             "root_2k_score_error_vs_v2_action_regret": _correlations(score_error, v2_regret),
             "root_2k_score_error_vs_v4_action_regret": _correlations(score_error, v4_regret),

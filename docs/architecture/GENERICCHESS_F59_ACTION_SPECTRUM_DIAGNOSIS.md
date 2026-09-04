@@ -23,9 +23,11 @@ development and the final 12 roots as holdout. Teacher stability was measured
 by the top action from equal-budget child searches at 10k versus 20k nodes;
 root-level stability was also measured at 40k versus 80k. Candidate-spectrum
 regret is relative to the retained candidate set (cheap top six actions plus
-the v2/v4 and teacher probe actions), not every legal action. Unstable teacher
-roots were excluded from objective gates. D0, D1, and D2 were generated with
-fixed seeds and fingerprints by `scripts/f59_action_spectrum_diagnosis.py`.
+the v2/v4 and teacher probe actions), not every legal action. Objective
+training and evaluation use one common stable non-mate root/action surface;
+unstable and mate-band roots remain descriptive but are excluded from that
+gate. D0, D1, and D2 were generated with fixed seeds and fingerprints by
+`scripts/f59_action_spectrum_diagnosis.py`.
 
 The Western run was a 12-root, diagnostic-only sanity run. It intentionally
 did not train objectives or claim cross-game generality.
@@ -40,11 +42,15 @@ did not train objectives or claim cross-game generality.
 | D1 self-play | 36/36 (100%) | 7.25 | 36.64 | 100% | 77.8% | 52.8% |
 | D2 PV corridor | 36/36 (100%) | 6.83 | 36.17 | 100% | 83.3% | 66.7% |
 
-On the 12-root Shogi holdouts, the v2 parent’s mean/median teacher action
-regret was 185.27/140 on D0, 40.50/1 on D1, and 4.25/0 on D2. The v4
-comparator was 382.82/381, 104.83/20, and 40/1 respectively. Thus the
-learner-facing policy risk is distribution-sensitive and is not described by
-one global scalar-fit number.
+The corrected run found zero 80k root mate-band roots and zero retained q20
+mate-band actions in D0, D1, and D2. D0 had 35/36 stable non-mate roots; one
+unstable root was excluded. D1 and D2 each had 36/36 stable non-mate roots.
+On the ordinary 12-root Shogi holdouts, the v2 parent’s mean/median teacher
+action regret was 185.27/140 on D0, 40.50/1 on D1, and 4.25/0 on D2. The v4
+comparator was 382.82/381, 104.83/20, and 40/1 respectively. Mate-band counts
+and the stable/non-mate gate are persisted in the corrected transient result;
+the learner-facing policy risk is distribution-sensitive and is not described
+by one global scalar-fit number.
 
 The diagnostic correlations also show why root score error is only a partial
 proxy. Pearson/Spearman correlation of root 2k score error with v2 action
@@ -59,24 +65,33 @@ The three objectives used the same architecture and three seeds. Primary
 metrics are action regret, top-1 action, and pairwise ranking; MSE and soft
 cross-entropy/KL are secondary.
 
-| Distribution/objective | Mean regret by seed | Top-1 by seed | Ranking by seed |
+| Distribution/objective | Mean regret by seed | Top-1 by seed | Ranking by seed | Secondary MSE by seed |
 | --- | --- | --- | --- |
-| D0 pointwise Q | 264.45 / 326.27 / 265.27 | .364 / .273 / .273 | .507 / .493 / .498 |
-| D0 pairwise | 272.00 / 237.27 / 272.00 | .182 / .273 / .182 | .546 / .556 / .541 |
-| D0 soft policy | 562.45 / 539.64 / 179.64 | .091 / .091 / .182 | .507 / .517 / .517 |
-| D1 pointwise Q | 1.83 / 15.00 / 30.42 | .500 / .333 / .500 | .660 / .655 / .634 |
-| D1 pairwise | 29.58 / 2.17 / 30.92 | .583 / .583 / .583 | .664 / .690 / .685 |
-| D1 soft policy | 40.50 / 39.00 / 10.92 | .500 / .417 / .500 | .056 / .375 / .000 |
-| D2 pointwise Q | 881.00 / 1048.00 / 1046.67 | .333 / .250 / .333 | .624 / .597 / .667 |
-| D2 pairwise | 706.67 / 707.50 / 707.50 | .750 / .667 / .667 | .726 / .715 / .715 |
-| D2 soft policy | 316.42 / 638.08 / 336.92 | .500 / .333 / .333 | .511 / .479 / .043 |
+| D0 pointwise Q | 200.91 / 260.18 / 200.45 | .182 / .182 / .182 | .500 / .491 / .491 | 700787 / 718252 / 637128 |
+| D0 pairwise | 310.09 / 275.36 / 310.09 | .091 / .182 / .091 | .550 / .564 / .523 | 79483867 / 80610251 / 71105367 |
+| D0 soft policy | 200.73 / 201.09 / 200.73 | .091 / .091 / .091 | .518 / .523 / .536 | 924345 / 803802 / 940872 |
+| D1 pointwise Q | 1.83 / 14.42 / 30.42 | .500 / .333 / .500 | .660 / .667 / .660 | 463821 / 619049 / 764473 |
+| D1 pairwise | 29.58 / .83 / 30.92 | .583 / .583 / .583 | .664 / .690 / .690 | 19571201 / 17849254 / 18678716 |
+| D1 soft policy | 40.42 / 40.33 / 40.25 | .167 / .333 / .167 | .698 / .724 / .698 | 810151 / 809843 / 926328 |
+| D2 pointwise Q | 5.00 / 5.17 / 3.83 | .583 / .583 / .667 | .633 / .633 / .690 | 742164 / 577097 / 614569 |
+| D2 pairwise | .17 / 1.00 / 1.00 | .917 / .833 / .833 | .740 / .730 / .730 | 61557739 / 61128374 / 61683521 |
+| D2 soft policy | 4.33 / 4.67 / 4.00 | .583 / .667 / .667 | .724 / .707 / .698 | 792420 / 564405 / 778006 |
 
-The result supports an objective-to-policy mismatch diagnosis. Pointwise
-fitting is not a reliable policy gate; pairwise ranking can improve top-1 or
-ranking without consistently minimizing regret; and soft policy distillation
-does not guarantee ranking quality. The D0 soft objective is especially poor,
-while D1/D2 behavior changes with the state distribution. These are small
-diagnostic samples, not a strength claim.
+Corrected soft-policy cross-entropy/KL by seed were D0 pointwise 2.05/2.05/2.05
+and .16/.17/.17, D0 pairwise 4.05/4.15/4.29 and 2.17/2.27/2.41, D0 soft
+2.04/2.05/2.04 and .16/.16/.16; D1 pointwise 1.96/1.96/1.96 and .01/.01/.02,
+D1 pairwise 4.58/4.46/4.45 and 2.63/2.51/2.51, D1 soft 1.96/1.96/1.96 and
+.01/.01/.01; D2 pointwise 1.32/1.32/1.32 and .04/.04/.04, D2 pairwise
+4.99/4.94/4.98 and 3.71/3.66/3.70, and D2 soft 1.31/1.31/1.32 and .03/.03/.04.
+Values are ordered by seeds 59011, 59012, 59013.
+
+The corrected result does not yet resolve the objective question. Pairwise is
+clearly better on D2 across all three seeds for top-1, ranking, and regret,
+but D1 regret is not consistently better and D0 is unfavorable. Soft policy
+distillation improves some ranking values but not regret consistently. The
+required classification is therefore `LEARNING_OBJECTIVE_MISMATCH_UNRESOLVED`,
+not a deployment claim. MSE/CE/KL remain secondary to action regret, top-1,
+and ranking.
 
 ### D1/D2 overlap sensitivity
 
@@ -115,9 +130,9 @@ conclusion is drawn.
 ## Answers to the F59 questions
 
 1. **Is the teacher action surface stable?** Mostly at 10k→20k, but not at
-   the larger root budget: Shogi is 77.8–88.9% at 40k→80k for D1/D0, and
-   Western D1 is 33.3%. Therefore the classification is a mixture including
-   `TEACHER_POLICY_SURFACE_UNSTABLE` for budget-sensitive use.
+   the larger root budget: Shogi is 88.9%, 77.8%, and 83.3% at 40k→80k for
+   D0/D1/D2, and Western D1 is 33.3%. The accepted classification is
+   `TEACHER_POLICY_SURFACE_IS_BUDGET_SENSITIVE`.
 2. **Does MSE predict policy regret?** Not reliably. Score-error and gap
    correlations vary by distribution and rank statistic; MSE remains
    secondary.
@@ -125,18 +140,22 @@ conclusion is drawn.
    differ in baseline regret, gaps, legal-action counts, and budget stability.
    The supported classification is `POLICY_RELEVANT_DISTRIBUTION_DIFFERS`,
    with the D1/D2 comparison restricted to exploratory correlated samples.
-4. **Is there objective mismatch?** Yes:
-   `VALUE_TO_POLICY_OBJECTIVE_MISMATCH_SUPPORTED`. Fixed-representation
-   pointwise, pairwise, and soft objectives trade off regret, top-1, and rank
-   differently, and lower scalar-fit loss is not a deployment guarantee.
+4. **Is there objective mismatch?** Not resolved. Pairwise clearly wins on D2
+   across all three seeds, but D1 regret is not consistently better and D0 is
+   unfavorable. The corrected classification is
+   `LEARNING_OBJECTIVE_MISMATCH_UNRESOLVED`; lower scalar-fit loss is still not
+   a deployment guarantee.
 5. **Does this make representation the primary issue?** No. F58 already showed
    that nonlinear value capacity alone could improve intermediate fit while
-   damaging policy transfer; F59 now supplies stronger T1–T3 evidence.
-   `REPRESENTATION_REMAINS_PRIMARY` is not supported.
-6. **What is the next route?** Hold evaluator/CNN/native redesign. First run a
-   larger, disjoint, learner-distribution experiment with policy-regret and
-   ranking gates, then paired strength tests. Only after those gates pass
-   should representation capacity or runtime redesign be revisited.
+   damaging policy transfer; F59 supplies accepted T1/T2 evidence but leaves
+   T3 unresolved. `REPRESENTATION_REMAINS_PRIMARY` is not supported.
+6. **What is the next route?** Hold evaluator/CNN/native redesign. Because T3
+   is unresolved and the teacher is sufficiently stable at 10k→20k, the next
+   boundary is fresh, fully disjoint data to reassess objective versus
+   learner-induced distribution. If a decision-aware objective then wins on
+   policy-relevant holdouts, proceed to
+   `DISJOINT_POLICY_OBJECTIVE_VALIDATION_AND_SELF_IMPROVEMENT`; only after
+   those gates pass should Native or arena strength be considered.
 7. **Go/no-go?** No-go for deployment or promotion. F59 is a diagnostic
    checkpoint, not a candidate release.
 

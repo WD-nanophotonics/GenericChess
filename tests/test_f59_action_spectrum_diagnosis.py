@@ -5,8 +5,13 @@ import numpy as np
 from scripts.f59_action_spectrum_diagnosis import (
     SpectrumRow,
     _fit_model,
+    _is_mate_band_native,
     _metrics,
+    _ordinary_usable,
+    _predict_total_q,
     _root_player_q,
+    _soft_policy_grad_prediction,
+    _soft_policy_loss,
     _softmax,
 )
 from scripts.f59_overlap_sensitivity import overlap_matrix, unique_indices
@@ -46,6 +51,45 @@ def test_pairwise_objective_ranks_total_q_not_residual_only():
     predict = _fit_model(features, base, targets, [np.arange(2)], "PAIRWISE_RANKING", 59011)
     values = base + predict(features)
     assert values[1] > values[0]
+
+
+def test_holdout_total_q_prediction_preserves_each_base_q():
+    rows = [
+        SpectrumRow({"index": 0}, "0", np.asarray([0.0]), 10.0, 0.0, 0.0, 0.0),
+        SpectrumRow({"index": 1}, "1", np.asarray([1.0]), 0.0, 0.0, 0.0, 0.0),
+    ]
+    zero_residual = lambda features: np.zeros(len(features))
+    total = _predict_total_q(rows, zero_residual)
+    assert np.array_equal(total, np.asarray([10.0, 0.0]))
+
+    nonconstant_residual = lambda features: np.asarray([1.0, 20.0])
+    assert np.array_equal(_predict_total_q(rows, nonconstant_residual), np.asarray([11.0, 20.0]))
+
+
+def test_soft_policy_gradient_matches_finite_difference():
+    teacher = np.asarray([120.0, 10.0, -40.0])
+    base = np.asarray([30.0, 0.0, -5.0])
+    prediction = np.asarray([0.2, -0.1, 0.4])
+    target_scale = 37.0
+    analytic = _soft_policy_grad_prediction(teacher, base, prediction, target_scale)
+    epsilon = 1e-5
+    numeric = []
+    for index in range(len(prediction)):
+        plus = prediction.copy()
+        minus = prediction.copy()
+        plus[index] += epsilon
+        minus[index] -= epsilon
+        numeric.append((_soft_policy_loss(teacher, base, plus, target_scale)
+                        - _soft_policy_loss(teacher, base, minus, target_scale)) / (2 * epsilon))
+    assert np.allclose(analytic, numeric, rtol=1e-5, atol=1e-8)
+
+
+def test_mate_band_roots_are_not_ordinary_usable():
+    assert _is_mate_band_native(90_000_001)
+    assert not _is_mate_band_native(90_000_000)
+    assert _ordinary_usable({"root_80k_mate_band": False, "retained_q20_any_mate_band": False})
+    assert not _ordinary_usable({"root_80k_mate_band": True, "retained_q20_any_mate_band": False})
+    assert not _ordinary_usable({"root_80k_mate_band": False, "retained_q20_any_mate_band": True})
 
 
 def test_fixed_architecture_objectives_return_finite_predictions():
