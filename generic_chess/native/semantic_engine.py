@@ -91,8 +91,11 @@ def _spatial_tuple(native_rules, values):
         result = tuple(int(value) for row in rows for value in row)
     else:
         result = tuple(int(value) for value in values)
-    if len(result) != len(type_ids) * SPATIAL_CELL_COUNT:
-        raise ValueError("semantic spatial evaluator profile length must match type_count * 9")
+    expected_length = 2 * len(type_ids) * SPATIAL_CELL_COUNT
+    if len(result) != expected_length:
+        raise ValueError(
+            "semantic spatial evaluator profile length must match 2 * type_count * 9"
+        )
     for offset in range(0, len(result), SPATIAL_CELL_COUNT):
         if sum(result[offset:offset + SPATIAL_CELL_COUNT]) != 0:
             raise ValueError("semantic spatial evaluator rows must have zero sum")

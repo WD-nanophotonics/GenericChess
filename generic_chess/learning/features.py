@@ -16,6 +16,11 @@ DYNAMIC_FEATURE_NAMES = (
 )
 SPATIAL_GRID_SIZE = 3
 SPATIAL_CELL_COUNT = SPATIAL_GRID_SIZE * SPATIAL_GRID_SIZE
+TACTICAL_INTERACTION_FEATURE_NAMES = (
+    "attacked_by_type",
+    "defended_by_type",
+    "hanging_by_type",
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -221,6 +226,47 @@ def localized_control_features(position: Position, compiled) -> tuple[int, ...]:
         - (SPATIAL_GRID_SIZE * SPATIAL_GRID_SIZE * counts[1][cell] - totals[1])
         for cell in range(SPATIAL_CELL_COUNT)
     )
+
+
+def tactical_interaction_features(
+    position: Position,
+    compiled,
+    type_ids: tuple[str, ...] | None = None,
+) -> dict[str, int]:
+    """Count semantic attack/defense relations per owner and current type.
+
+    The extractor intentionally requires a compiled semantic attack engine;
+    legacy movement atoms are not a safe substitute for RuleSets whose attack
+    contract includes semantic guards.  Values are unsigned owner-specific
+    counts so a later evaluator can learn asymmetric owner coefficients.
+    """
+    from ..core.semantic_executor import semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    if engine is None:
+        raise TypeError("tactical interaction features require compiled semantic rules")
+    if type_ids is None:
+        metadata = getattr(getattr(compiled, "support", None), "type_metadata", {})
+        type_ids = tuple(sorted(metadata))
+    type_ids = tuple(type_ids)
+    expected = {
+        f"{feature}:{owner}:{type_id}": 0
+        for feature in TACTICAL_INTERACTION_FEATURE_NAMES
+        for owner in (0, 1)
+        for type_id in type_ids
+    }
+    allowed = set(type_ids)
+    for square, piece in enumerate(position.board):
+        if piece is None or piece.current_type_id not in allowed:
+            continue
+        owner = piece.owner
+        type_id = piece.current_type_id
+        attacked = engine.is_square_attacked(position, square, 1 - owner)
+        defended = engine.is_square_attacked(position, square, owner)
+        expected[f"attacked_by_type:{owner}:{type_id}"] += int(attacked)
+        expected[f"defended_by_type:{owner}:{type_id}"] += int(defended)
+        expected[f"hanging_by_type:{owner}:{type_id}"] += int(attacked and not defended)
+    return expected
 
 
 def dynamic_features(position: Position, compiled) -> DynamicFeatureVector:
