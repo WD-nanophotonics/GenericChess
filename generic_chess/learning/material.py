@@ -62,6 +62,9 @@ class LearnableMaterialCheckpoint:
     # the constant material direction.
     spatial_occupancy_weights: dict[str, tuple[float, ...]] = field(default_factory=dict)
     localized_control_weights: tuple[float, ...] = ()
+    # Optional F58 one-hidden-layer residual. Empty preserves prior checkpoint
+    # identities and evaluator behavior.
+    compact_nonlinear: dict[str, Any] = field(default_factory=dict)
 
     # ------------------------------------------------------------------ ids
 
@@ -98,6 +101,8 @@ class LearnableMaterialCheckpoint:
             state["spatial_occupancy_weights"] = self.spatial_occupancy_weights
         if self.localized_control_weights:
             state["localized_control_weights"] = self.localized_control_weights
+        if self.compact_nonlinear:
+            state["compact_nonlinear"] = self.compact_nonlinear
         return state
 
     @property
@@ -116,10 +121,14 @@ class LearnableMaterialCheckpoint:
             payload["spatial_occupancy_weights"] = self.spatial_occupancy_weights
         if self.localized_control_weights:
             payload["localized_control_weights"] = self.localized_control_weights
+        if self.compact_nonlinear:
+            payload["compact_nonlinear"] = self.compact_nonlinear
         return stable_sha256(payload)
 
     @property
     def evaluator_version(self) -> str:
+        if self.compact_nonlinear:
+            return "learnable-generic-v4"
         if self.spatial_occupancy_weights or self.localized_control_weights:
             return "learnable-generic-v3"
         return "learnable-generic-v2" if self.dynamic_weights else "learnable-material-v1"
@@ -278,6 +287,7 @@ class LearnableMaterialCheckpoint:
         dynamic_weights: dict[str, float] | None = None,
         spatial_occupancy_weights: dict[str, tuple[float, ...]] | None = None,
         localized_control_weights: tuple[float, ...] | None = None,
+        compact_nonlinear: dict[str, Any] | None = None,
     ) -> "LearnableMaterialCheckpoint":
         """Create the next generation with a deterministic parent chain."""
         return LearnableMaterialCheckpoint(
@@ -299,6 +309,10 @@ class LearnableMaterialCheckpoint:
             localized_control_weights=tuple(
                 self.localized_control_weights
                 if localized_control_weights is None else localized_control_weights
+            ),
+            compact_nonlinear=dict(
+                self.compact_nonlinear
+                if compact_nonlinear is None else compact_nonlinear
             ),
             material_scale=self.material_scale,
             value_scale=value_scale if value_scale is not None else self.value_scale,
@@ -330,6 +344,7 @@ class LearnableMaterialCheckpoint:
             "dynamic_weights",
             "spatial_occupancy_weights",
             "localized_control_weights",
+            "compact_nonlinear",
             "material_scale",
             "value_scale",
             "reference_median",
@@ -357,6 +372,7 @@ class LearnableMaterialCheckpoint:
         payload.setdefault("dynamic_weights", {})
         payload.setdefault("spatial_occupancy_weights", {})
         payload.setdefault("localized_control_weights", ())
+        payload.setdefault("compact_nonlinear", {})
         return cls(**payload)
 
     def validate_ruleset(self, compiled) -> None:

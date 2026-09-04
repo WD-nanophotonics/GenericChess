@@ -294,6 +294,7 @@ def evaluate(
     dynamic_values=None,
     spatial_occupancy_values=None,
     localized_control_values=None,
+    compact_values=None,
     evaluator_scale: int = 1,
 ) -> int:
     """Evaluate one packed leaf with the exact Native fixed-point profile."""
@@ -305,6 +306,7 @@ def evaluate(
         dynamic_values,
         spatial_occupancy_values,
         localized_control_values,
+        compact_values,
         int(evaluator_scale),
     ))
 
@@ -377,6 +379,7 @@ def semantic_iterative_search(
     dynamic_values=None,
     spatial_occupancy_values=None,
     localized_control_values=None,
+    compact_values=None,
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
 ) -> dict:
@@ -458,6 +461,7 @@ def semantic_iterative_search(
             dynamic_values,
             spatial_occupancy_values,
             localized_control_values,
+            compact_values,
             int(_root_ply_offset),
             int(tt_megabytes),
             None,

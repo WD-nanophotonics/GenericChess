@@ -126,6 +126,7 @@ class SemanticSearchEngine:
         dynamic_values=None,
         spatial_occupancy_values=None,
         localized_control_values=None,
+        compact_values=None,
         checkpoint=None,
         evaluator_scale: int = 1,
         tt_megabytes: int = 64,
@@ -146,6 +147,7 @@ class SemanticSearchEngine:
         self._dynamic_values = _dynamic_tuple(dynamic_values)
         self._spatial_values = _spatial_tuple(native_rules, spatial_occupancy_values)
         self._localized_control_values = _localized_control_tuple(localized_control_values)
+        self._compact_values = None if compact_values is None else dict(compact_values)
         self._evaluator_scale = evaluator_scale
         if (self._board_values is None) != (self._hand_values is None):
             raise ValueError("board_values and hand_values must be supplied together")
@@ -165,6 +167,7 @@ class SemanticSearchEngine:
         self._spatial_values = None if spatial is None else tuple(spatial)
         control = checkpoint.semantic_quantized_localized_control()
         self._localized_control_values = None if control is None else tuple(control)
+        self._compact_values = dict(checkpoint.compact_nonlinear) if checkpoint.compact_nonlinear else None
         self._evaluator_scale = checkpoint.semantic_native_scale
         self._checkpoint_id = checkpoint.checkpoint_id
 
@@ -176,6 +179,7 @@ class SemanticSearchEngine:
             self._dynamic_values,
             self._spatial_values,
             self._localized_control_values,
+            self._compact_values,
             self._tt_megabytes,
             self._evaluator_scale,
         )
@@ -203,6 +207,7 @@ class SemanticSearchEngine:
     def bind_evaluator(
         self, board_values, hand_values, dynamic_values=None,
         spatial_occupancy_values=None, localized_control_values=None,
+        compact_values=None,
         *, evaluator_scale: int = 1,
     ) -> None:
         board = _profile_tuple(self._native_rules, board_values)
@@ -213,6 +218,7 @@ class SemanticSearchEngine:
         self._dynamic_values = _dynamic_tuple(dynamic_values)
         self._spatial_values = _spatial_tuple(self._native_rules, spatial_occupancy_values)
         self._localized_control_values = _localized_control_tuple(localized_control_values)
+        self._compact_values = None if compact_values is None else dict(compact_values)
         if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
             raise ValueError("evaluator_scale must be an integer in [1, 1024]")
         self._evaluator_scale = evaluator_scale
@@ -229,6 +235,7 @@ class SemanticSearchEngine:
             "dynamic": tuple(self._dynamic_values or ()),
             "spatial_occupancy": tuple(self._spatial_values or ()),
             "localized_control": tuple(self._localized_control_values or ()),
+            "compact_nonlinear": self._compact_values,
         }
 
     def clear_tt(self) -> None:

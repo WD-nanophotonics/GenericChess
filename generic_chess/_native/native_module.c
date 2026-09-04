@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <math.h>
 #ifdef _WIN32
 #include <windows.h>
 #else
@@ -41,6 +42,7 @@
 #define GC_SEMANTIC_SPATIAL_CELLS 9
 
 static PyObject *gc_native_error = NULL;
+typedef struct GCSemanticProbeProfile GCSemanticProbeProfile;
 
 static int gc_semantic_require_matching_rules(const GCSemanticRules *rules,
                                               const GCSemanticPosition *position) {
@@ -65,6 +67,7 @@ typedef struct {
     PyObject *dynamic_values;
     PyObject *spatial_values;
     PyObject *localized_control_values;
+    PyObject *compact_values;
     unsigned int evaluator_scale;
     GCSemanticTable *tt;
     int busy;
@@ -74,6 +77,12 @@ static int gc_semantic_dynamic_feature_vector(
     const GCSemanticRules *rules,
     const GCSemanticPosition *position,
     int out[3]);
+
+static int gc_semantic_compact_residual(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    const GCSemanticProbeProfile *profile,
+    double *out);
 
 static void gc_rules_capsule_free(PyObject *capsule) {
     GCRules *rules = (GCRules *)PyCapsule_GetPointer(capsule, GC_RULES_CAPSULE);
@@ -118,6 +127,7 @@ static void gc_semantic_engine_capsule_free(PyObject *capsule) {
         Py_XDECREF(engine->dynamic_values);
         Py_XDECREF(engine->spatial_values);
         Py_XDECREF(engine->localized_control_values);
+        Py_XDECREF(engine->compact_values);
         free(engine);
     }
 }
@@ -3336,17 +3346,44 @@ typedef struct {
 } GCSemanticProbeSearch;
 
 typedef struct {
+    int input_dimension;
+    int width;
+    int hand_type_count;
+    int hand_type_indices[GC_MAX_TYPES];
+    double *input_mean;
+    double *input_scale;
+    double *hidden_weights;
+    double *hidden_bias;
+    double *output_weights;
+    double output_bias;
+    double target_scale;
+} GCSemanticCompactModel;
+
+typedef struct GCSemanticProbeProfile {
     int board[GC_MAX_TYPES];
     int hand[GC_MAX_TYPES];
     int dynamic[3];
     int spatial[2][GC_MAX_TYPES][GC_SEMANTIC_SPATIAL_CELLS];
     int localized_control[GC_SEMANTIC_SPATIAL_CELLS];
+    int compact_supplied;
+    GCSemanticCompactModel *compact;
     int evaluator_scale;
     int supplied;
     int dynamic_supplied;
     int spatial_supplied;
     int localized_control_supplied;
 } GCSemanticProbeProfile;
+
+static void gc_semantic_profile_free(GCSemanticProbeProfile *profile) {
+    if (!profile || !profile->compact) return;
+    free(profile->compact->input_mean);
+    free(profile->compact->input_scale);
+    free(profile->compact->hidden_weights);
+    free(profile->compact->hidden_bias);
+    free(profile->compact->output_weights);
+    free(profile->compact);
+    profile->compact = NULL;
+}
 
 #define GC_SEMANTIC_PROBE_INF 1000000000
 #define GC_SEMANTIC_STATIC_LIMIT 90000000
@@ -3426,6 +3463,17 @@ static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSema
                 (int64_t)profile->localized_control[cell] * features[cell];
         }
     }
+    if (profile && profile->compact) {
+        double residual = 0.0;
+        if (gc_semantic_compact_residual(rules, position, profile, &residual)) {
+            /* Compact targets use the checkpoint's human-value units, just
+             * like the Python training residual.  Convert back to Native's
+             * fixed-point score units with the semantic evaluator scale. */
+            int64_t fixed_residual = (int64_t)llround(
+                residual * (double)profile->evaluator_scale);
+            score += position->side_to_move == 0 ? fixed_residual : -fixed_residual;
+        }
+    }
     if (score > GC_SEMANTIC_STATIC_LIMIT) return GC_SEMANTIC_STATIC_LIMIT;
     if (score < -GC_SEMANTIC_STATIC_LIMIT) return -GC_SEMANTIC_STATIC_LIMIT;
     return (int)score;
@@ -3471,6 +3519,72 @@ static int gc_semantic_dynamic_feature_vector(
     if (gc_semantic_runtime_in_check(rules, position, 0)) out[2] -= 10;
     if (gc_semantic_runtime_in_check(rules, position, 1)) out[2] += 10;
     return 1;
+}
+
+static int gc_semantic_compact_residual(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    const GCSemanticProbeProfile *profile,
+    double *out) {
+    if (!rules || !position || !profile || !out || !profile->compact) return 0;
+    const GCSemanticCompactModel *model = profile->compact;
+    double features[4096] = {0.0};
+    int index = 0;
+    uint16_t board_squares = (uint16_t)rules->board_size * rules->board_size;
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        for (uint16_t type = 0; type < rules->type_count; type++) {
+            for (uint16_t square = 0; square < board_squares; square++) {
+                const GCPiece *piece = &position->board[square];
+                features[index++] = piece->occupied && piece->owner == owner &&
+                    piece->current_type == type ? 1.0 : 0.0;
+            }
+        }
+    }
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        for (int slot = 0; slot < model->hand_type_count; slot++) {
+            int type = model->hand_type_indices[slot];
+            features[index++] = (double)position->hand_counts[owner][type];
+        }
+    }
+    features[index++] = position->side_to_move == 0 ? 1.0 : 0.0;
+    features[index++] = position->side_to_move == 1 ? 1.0 : 0.0;
+    int dynamic[3] = {0, 0, 0};
+    if (!gc_semantic_dynamic_feature_vector(rules, position, dynamic)) return 0;
+    for (int i = 0; i < 3; i++) features[index++] = (double)dynamic[i];
+    for (uint8_t slot_index = 0; slot_index < rules->aux_slot_count; slot_index++) {
+        const GCSemAuxSlot *slot = &rules->aux_slots[slot_index];
+        uint8_t first_owner = slot->scope == 1 ? 1 : 0;
+        uint8_t owner_count = slot->scope == 1 ? 2 : 1;
+        for (uint8_t owner_index = first_owner;
+             owner_index < (uint8_t)(first_owner + owner_count); owner_index++) {
+            const GCSemAuxValue *value = &position->aux[slot_index][owner_index];
+            if (slot->value_kind == 0) {
+                features[index++] = value->has_value ? (double)value->bool_value : 0.0;
+            } else {
+                features[index++] = value->has_value && value->kind == 1 ? 1.0 : 0.0;
+                features[index++] = value->has_value && value->kind == 1
+                    ? (double)(value->square % rules->board_size) / rules->board_size : 0.0;
+                features[index++] = value->has_value && value->kind == 1
+                    ? (double)(value->square / rules->board_size) / rules->board_size : 0.0;
+            }
+        }
+    }
+    if (index != model->input_dimension) return 0;
+    double hidden[32];
+    for (int h = 0; h < model->width; h++) {
+        double value = model->hidden_bias[h];
+        for (int i = 0; i < index; i++) {
+            value += ((features[i] - model->input_mean[i]) /
+                      model->input_scale[i]) *
+                model->hidden_weights[h * model->input_dimension + i];
+        }
+        hidden[h] = tanh(value);
+    }
+    double result = model->output_bias;
+    for (int h = 0; h < model->width; h++)
+        result += hidden[h] * model->output_weights[h];
+    *out = result * model->target_scale;
+    return isfinite(*out);
 }
 
 static int gc_semantic_spatial_feature_vector(
@@ -4159,6 +4273,7 @@ static int gc_semantic_parse_profile(PyObject *board_values,
                                      PyObject *dynamic_values,
                                      PyObject *spatial_values,
                                      PyObject *localized_control_values,
+                                     PyObject *compact_values,
                                      const GCSemanticRules *rules,
                                      unsigned int evaluator_scale,
                                      GCSemanticProbeProfile *profile) {
@@ -4179,6 +4294,7 @@ static int gc_semantic_parse_profile(PyObject *board_values,
     if (dynamic_values == Py_None) dynamic_values = NULL;
     if (spatial_values == Py_None) spatial_values = NULL;
     if (localized_control_values == Py_None) localized_control_values = NULL;
+    if (compact_values == Py_None) compact_values = NULL;
     if (dynamic_values != NULL) {
         if ((!PyList_Check(dynamic_values) && !PyTuple_Check(dynamic_values)) ||
             PySequence_Size(dynamic_values) != 3) {
@@ -4260,6 +4376,156 @@ static int gc_semantic_parse_profile(PyObject *board_values,
         }
         profile->localized_control_supplied = 1;
     }
+    if (compact_values != NULL) {
+        if (!PyDict_Check(compact_values)) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear evaluator profile must be a mapping");
+            return 0;
+        }
+        PyObject *mean = PyDict_GetItemString(compact_values, "input_mean");
+        PyObject *scale = PyDict_GetItemString(compact_values, "input_scale");
+        PyObject *hidden = PyDict_GetItemString(compact_values, "hidden_weights");
+        PyObject *hidden_bias = PyDict_GetItemString(compact_values, "hidden_bias");
+        PyObject *output = PyDict_GetItemString(compact_values, "output_weights");
+        PyObject *output_bias = PyDict_GetItemString(compact_values, "output_bias");
+        PyObject *target_scale = PyDict_GetItemString(compact_values, "target_scale");
+        PyObject *width_obj = PyDict_GetItemString(compact_values, "width");
+        PyObject *hand_indices = PyDict_GetItemString(compact_values, "hand_type_indices");
+        if (!mean || !scale || !hidden || !hidden_bias || !output || !output_bias ||
+            !target_scale || !width_obj || !hand_indices) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear evaluator profile is incomplete");
+            return 0;
+        }
+        long width = PyLong_AsLong(width_obj);
+        if (PyErr_Occurred() || (width != 16 && width != 32)) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear width must be 16 or 32");
+            return 0;
+        }
+        Py_ssize_t dimension = PySequence_Size(mean);
+        if (dimension < 1 || dimension > 4096 || PySequence_Size(scale) != dimension ||
+            PySequence_Size(hidden_bias) != width || PySequence_Size(output) != width ||
+            PySequence_Size(hidden) != width) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear evaluator dimensions are invalid");
+            return 0;
+        }
+        Py_ssize_t expected = (Py_ssize_t)2 * rules->type_count * rules->board_size * rules->board_size;
+        Py_ssize_t hand_count = PySequence_Size(hand_indices);
+        if (hand_count < 1 || hand_count > GC_MAX_TYPES) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear hand axis is invalid");
+            return 0;
+        }
+        expected += 2 * hand_count + 5;
+        for (uint8_t i = 0; i < rules->aux_slot_count; i++) {
+            expected += rules->aux_slots[i].scope == 1
+                ? (rules->aux_slots[i].value_kind == 0 ? 2 : 6)
+                : (rules->aux_slots[i].value_kind == 0 ? 1 : 3);
+        }
+        if (dimension != expected) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear input dimension does not match ruleset schema");
+            return 0;
+        }
+        if (PySequence_Size(hidden_bias) != width) {
+            PyErr_SetString(PyExc_ValueError, "compact nonlinear hidden bias dimension mismatch");
+            return 0;
+        }
+        GCSemanticCompactModel *model = (GCSemanticCompactModel *)calloc(1, sizeof(*model));
+        if (!model) { PyErr_NoMemory(); return 0; }
+        model->input_mean = (double *)calloc((size_t)dimension, sizeof(double));
+        model->input_scale = (double *)calloc((size_t)dimension, sizeof(double));
+        model->hidden_weights = (double *)calloc((size_t)width * (size_t)dimension, sizeof(double));
+        model->hidden_bias = (double *)calloc((size_t)width, sizeof(double));
+        model->output_weights = (double *)calloc((size_t)width, sizeof(double));
+        if (!model->input_mean || !model->input_scale || !model->hidden_weights ||
+            !model->hidden_bias || !model->output_weights) {
+            free(model->input_mean); free(model->input_scale); free(model->hidden_weights);
+            free(model->hidden_bias); free(model->output_weights); free(model);
+            PyErr_NoMemory();
+            return 0;
+        }
+        profile->compact = model;
+        for (Py_ssize_t i = 0; i < hand_count; i++) {
+            PyObject *value = PySequence_GetItem(hand_indices, i);
+            long index = PyLong_AsLong(value);
+            Py_DECREF(value);
+            if (PyErr_Occurred() || index < 0 || index >= rules->type_count) {
+                PyErr_SetString(PyExc_ValueError,
+                                "compact nonlinear hand type index is outside native type table");
+                gc_semantic_profile_free(profile);
+                return 0;
+            }
+            model->hand_type_indices[i] = (int)index;
+        }
+        double model_target_scale = PyFloat_AsDouble(target_scale);
+        double model_output_bias = PyFloat_AsDouble(output_bias);
+        if (PyErr_Occurred() || !isfinite(model_target_scale) || model_target_scale <= 0.0 ||
+            !isfinite(model_output_bias)) {
+            PyErr_SetString(PyExc_ValueError,
+                            "compact nonlinear scales and biases must be finite");
+            gc_semantic_profile_free(profile);
+            return 0;
+        }
+        for (Py_ssize_t i = 0; i < dimension; i++) {
+            PyObject *m = PySequence_GetItem(mean, i);
+            PyObject *s = PySequence_GetItem(scale, i);
+            double mv = PyFloat_AsDouble(m), sv = PyFloat_AsDouble(s);
+            Py_DECREF(m); Py_DECREF(s);
+            if (PyErr_Occurred() || !isfinite(mv) || !isfinite(sv) || sv <= 0.0) {
+                PyErr_SetString(PyExc_ValueError,
+                                "compact nonlinear input normalization is invalid");
+                gc_semantic_profile_free(profile);
+                return 0;
+            }
+            model->input_mean[i] = mv;
+            model->input_scale[i] = sv;
+        }
+        for (long h = 0; h < width; h++) {
+            PyObject *b = PySequence_GetItem(hidden_bias, h);
+            PyObject *o = PySequence_GetItem(output, h);
+            double bv = PyFloat_AsDouble(b), ov = PyFloat_AsDouble(o);
+            Py_DECREF(b); Py_DECREF(o);
+            if (PyErr_Occurred() || !isfinite(bv) || !isfinite(ov)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "compact nonlinear hidden/output values must be finite");
+                gc_semantic_profile_free(profile);
+                return 0;
+            }
+            model->hidden_bias[h] = bv;
+            model->output_weights[h] = ov;
+            PyObject *row = PySequence_GetItem(hidden, h);
+            if (!row || PySequence_Size(row) != dimension) {
+                Py_XDECREF(row);
+                PyErr_SetString(PyExc_ValueError,
+                                "compact nonlinear hidden row dimension mismatch");
+                gc_semantic_profile_free(profile);
+                return 0;
+            }
+            for (Py_ssize_t i = 0; i < dimension; i++) {
+                PyObject *value = PySequence_GetItem(row, i);
+                double v = PyFloat_AsDouble(value);
+                Py_DECREF(value);
+                if (PyErr_Occurred() || !isfinite(v)) {
+                    Py_DECREF(row);
+                    PyErr_SetString(PyExc_ValueError,
+                                    "compact nonlinear hidden values must be finite");
+                    gc_semantic_profile_free(profile);
+                    return 0;
+                }
+                model->hidden_weights[h * dimension + i] = v;
+            }
+            Py_DECREF(row);
+        }
+        model->input_dimension = (int)dimension;
+        model->width = (int)width;
+        model->hand_type_count = (int)hand_count;
+        model->output_bias = model_output_bias;
+        model->target_scale = model_target_scale;
+        profile->compact_supplied = 1;
+    }
     if (board_values == NULL) return 1;
     if ((!PyList_Check(board_values) && !PyTuple_Check(board_values)) ||
         (!PyList_Check(hand_values) && !PyTuple_Check(hand_values)) ||
@@ -4267,6 +4533,7 @@ static int gc_semantic_parse_profile(PyObject *board_values,
         PySequence_Size(hand_values) != rules->type_count) {
         PyErr_SetString(PyExc_ValueError,
                         "semantic evaluator profile length must match type_count");
+        gc_semantic_profile_free(profile);
         return 0;
     }
     for (uint16_t type = 0; type < rules->type_count; type++) {
@@ -4278,6 +4545,7 @@ static int gc_semantic_parse_profile(PyObject *board_values,
             h < -1000000 || h > 1000000) {
             PyErr_SetString(PyExc_ValueError,
                             "semantic evaluator values must be bounded integers");
+            gc_semantic_profile_free(profile);
             return 0;
         }
         profile->board[type] = (int)b;
@@ -4291,11 +4559,11 @@ static PyObject *gc_semantic_evaluate(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *position_capsule;
     PyObject *board_values, *hand_values, *dynamic_values;
-    PyObject *spatial_values, *localized_control_values;
+    PyObject *spatial_values, *localized_control_values, *compact_values;
     unsigned int evaluator_scale = 1;
-    if (!PyArg_ParseTuple(args, "OOOOOOO|I", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOOOOOOO|I", &rules_capsule, &position_capsule,
                           &board_values, &hand_values, &dynamic_values,
-                          &spatial_values, &localized_control_values,
+                          &spatial_values, &localized_control_values, &compact_values,
                           &evaluator_scale)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
@@ -4306,9 +4574,11 @@ static PyObject *gc_semantic_evaluate(PyObject *self, PyObject *args) {
         !gc_semantic_require_exact_history(position)) return NULL;
     GCSemanticProbeProfile profile;
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
-                                   spatial_values, localized_control_values,
+                                   spatial_values, localized_control_values, compact_values,
                                    rules, evaluator_scale, &profile)) return NULL;
-    return PyLong_FromLong(gc_semantic_probe_material(rules, position, &profile));
+    int score = gc_semantic_probe_material(rules, position, &profile);
+    gc_semantic_profile_free(&profile);
+    return PyLong_FromLong(score);
 }
 
 static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
@@ -4318,16 +4588,17 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *cancel_capsule = Py_None, *board_values = NULL, *hand_values = NULL;
     PyObject *dynamic_values = Py_None;
     PyObject *spatial_values = Py_None, *localized_control_values = Py_None;
+    PyObject *compact_values = Py_None;
     PyObject *tt_capsule = Py_None;
     unsigned int max_depth;
     unsigned int root_ply_offset = 0;
     unsigned int tt_megabytes = 0;
     unsigned int evaluator_scale = 1;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOIIOI", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOI", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
                           &dynamic_values,
-                          &spatial_values, &localized_control_values,
+                          &spatial_values, &localized_control_values, &compact_values,
                           &root_ply_offset, &tt_megabytes, &tt_capsule,
                           &evaluator_scale)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
@@ -4351,19 +4622,20 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         !gc_semantic_require_exact_history(position)) return NULL;
     GCSemanticProbeProfile profile;
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
-                                   spatial_values, localized_control_values, rules,
+                                   spatial_values, localized_control_values, compact_values, rules,
                                    evaluator_scale, &profile)) return NULL;
     GCCancelFlag *cancel = NULL;
     if (cancel_capsule != Py_None) {
         cancel = gc_get_cancel(cancel_capsule);
-        if (!cancel) return NULL;
+        if (!cancel) { gc_semantic_profile_free(&profile); return NULL; }
     }
     uint64_t max_nodes = UINT64_MAX;
     if (max_nodes_obj != Py_None) {
         long long value = PyLong_AsLongLong(max_nodes_obj);
-        if (value == -1 && PyErr_Occurred()) return NULL;
+        if (value == -1 && PyErr_Occurred()) { gc_semantic_profile_free(&profile); return NULL; }
         if (value < 0) {
             PyErr_SetString(PyExc_ValueError, "semantic max_nodes must be >= 0");
+            gc_semantic_profile_free(&profile);
             return NULL;
         }
         max_nodes = (uint64_t)value;
@@ -4374,6 +4646,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         if (PyErr_Occurred() || seconds < 0 || seconds != seconds || seconds > 1e12) {
             PyErr_SetString(PyExc_ValueError,
                             "semantic max_time_seconds must be finite and non-negative");
+            gc_semantic_profile_free(&profile);
             return NULL;
         }
         max_time_ns = (uint64_t)(seconds * 1e9);
@@ -4382,10 +4655,11 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (tt_capsule != Py_None) {
         borrowed_tt = (GCSemanticTable *)PyCapsule_GetPointer(
             tt_capsule, GC_SEM_TT_CAPSULE);
-        if (borrowed_tt == NULL) return NULL;
+        if (borrowed_tt == NULL) { gc_semantic_profile_free(&profile); return NULL; }
         if (tt_megabytes != 0) {
             PyErr_SetString(PyExc_ValueError,
                             "semantic engine search cannot combine a TT capsule and tt_megabytes");
+            gc_semantic_profile_free(&profile);
             return NULL;
         }
     }
@@ -4407,6 +4681,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         ctx.tt = gc_semantic_tt_create(requested_bytes, NULL);
         if (ctx.tt == NULL) {
             PyErr_NoMemory();
+            gc_semantic_profile_free(&profile);
             return NULL;
         }
     }
@@ -4419,6 +4694,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         !gc_checked_size_mul(levels, sizeof(uint16_t), &length_bytes)) {
         PyErr_SetString(PyExc_OverflowError, "semantic search state size overflow");
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
+        gc_semantic_profile_free(&profile);
         return NULL;
     }
     ctx.stack = (GCSemanticPosition *)calloc(1, position_bytes);
@@ -4428,6 +4704,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         PyErr_NoMemory();
+        gc_semantic_profile_free(&profile);
         return NULL;
     }
     memcpy(&ctx.stack[0], position, sizeof(GCSemanticPosition));
@@ -4478,6 +4755,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (!pv) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
+        gc_semantic_profile_free(&profile);
         return NULL;
     }
     for (uint16_t i = 0; i < completed_len; i++) {
@@ -4485,6 +4763,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         if (!value) {
             Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
             if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
+            gc_semantic_profile_free(&profile);
             return NULL;
         }
         PyTuple_SET_ITEM(pv, (Py_ssize_t)i, value);
@@ -4496,6 +4775,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (!best_action_obj) {
         Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
+        gc_semantic_profile_free(&profile);
         return NULL;
     }
     PyObject *out = Py_BuildValue(
@@ -4531,6 +4811,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     Py_DECREF(pv);
     free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
     if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
+    gc_semantic_profile_free(&profile);
     if (!out) return NULL;
     if (completed_is_declaration) {
         uint8_t declaration_index = (uint8_t)(completed_action & 0xFFu);
@@ -4577,12 +4858,12 @@ static GCSemanticSearchEngine *gc_get_semantic_engine(PyObject *capsule) {
 static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *board_values, *hand_values, *dynamic_values;
-    PyObject *spatial_values, *localized_control_values;
+    PyObject *spatial_values, *localized_control_values, *compact_values;
     unsigned int tt_megabytes;
     unsigned int evaluator_scale = 1;
-    if (!PyArg_ParseTuple(args, "OOOOOOI|I", &rules_capsule, &board_values,
+    if (!PyArg_ParseTuple(args, "OOOOOOOI|I", &rules_capsule, &board_values,
                           &hand_values, &dynamic_values, &spatial_values,
-                          &localized_control_values, &tt_megabytes,
+                          &localized_control_values, &compact_values, &tt_megabytes,
                           &evaluator_scale)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
@@ -4594,9 +4875,12 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     }
     GCSemanticProbeProfile profile;
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
-                                   spatial_values, localized_control_values, rules,
+                                   spatial_values, localized_control_values, compact_values, rules,
                                    evaluator_scale, &profile))
         return NULL;
+    /* The engine retains the Python compact payload and reparses it per search;
+       the validation parse owns only temporary native allocations. */
+    gc_semantic_profile_free(&profile);
     GCSemanticSearchEngine *engine = (GCSemanticSearchEngine *)calloc(
         1, sizeof(*engine));
     if (engine == NULL) { PyErr_NoMemory(); return NULL; }
@@ -4607,6 +4891,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     engine->dynamic_values = Py_NewRef(dynamic_values);
     engine->spatial_values = Py_NewRef(spatial_values);
     engine->localized_control_values = Py_NewRef(localized_control_values);
+    engine->compact_values = Py_NewRef(compact_values);
     engine->evaluator_scale = evaluator_scale;
     if (tt_megabytes != 0) {
         size_t requested = (size_t)tt_megabytes * (size_t)1024 * (size_t)1024;
@@ -4618,14 +4903,27 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
             Py_DECREF(engine->dynamic_values);
             Py_DECREF(engine->spatial_values);
             Py_DECREF(engine->localized_control_values);
+            Py_DECREF(engine->compact_values);
             free(engine);
             PyErr_NoMemory();
             return NULL;
         }
     }
-    (void)profile;
-    return PyCapsule_New(engine, GC_SEM_ENGINE_CAPSULE,
-                         gc_semantic_engine_capsule_free);
+    PyObject *capsule = PyCapsule_New(engine, GC_SEM_ENGINE_CAPSULE,
+                                      gc_semantic_engine_capsule_free);
+    if (capsule == NULL) {
+        gc_semantic_tt_free(engine->tt);
+        Py_DECREF(engine->rules_capsule);
+        Py_DECREF(engine->board_values);
+        Py_DECREF(engine->hand_values);
+        Py_DECREF(engine->dynamic_values);
+        Py_DECREF(engine->spatial_values);
+        Py_DECREF(engine->localized_control_values);
+        Py_DECREF(engine->compact_values);
+        free(engine);
+        return NULL;
+    }
+    return capsule;
 }
 
 static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
@@ -4645,7 +4943,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
         : Py_NewRef(Py_None);
     if (tt_capsule == NULL) return NULL;
-    PyObject *call_args = PyTuple_New(15);
+    PyObject *call_args = PyTuple_New(16);
     if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
     Py_INCREF(engine->rules_capsule);
     PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
@@ -4660,10 +4958,11 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     Py_INCREF(engine->dynamic_values); PyTuple_SET_ITEM(call_args, 8, engine->dynamic_values);
     Py_INCREF(engine->spatial_values); PyTuple_SET_ITEM(call_args, 9, engine->spatial_values);
     Py_INCREF(engine->localized_control_values); PyTuple_SET_ITEM(call_args, 10, engine->localized_control_values);
-    PyTuple_SET_ITEM(call_args, 11, PyLong_FromLong(0));
+    Py_INCREF(engine->compact_values); PyTuple_SET_ITEM(call_args, 11, engine->compact_values);
     PyTuple_SET_ITEM(call_args, 12, PyLong_FromLong(0));
-    PyTuple_SET_ITEM(call_args, 13, tt_capsule);
-    PyTuple_SET_ITEM(call_args, 14, PyLong_FromUnsignedLong((unsigned long)engine->evaluator_scale));
+    PyTuple_SET_ITEM(call_args, 13, PyLong_FromLong(0));
+    PyTuple_SET_ITEM(call_args, 14, tt_capsule);
+    PyTuple_SET_ITEM(call_args, 15, PyLong_FromUnsignedLong((unsigned long)engine->evaluator_scale));
     engine->busy = 1;
     PyObject *result = gc_semantic_iterative_search(self, call_args);
     engine->busy = 0;
