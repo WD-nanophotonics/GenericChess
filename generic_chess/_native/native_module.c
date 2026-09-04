@@ -2233,6 +2233,7 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
             GCSemAuxValue *value = &bp.aux[slot][owner < 0 ? 0 : owner + 1];
             PyObject *raw = PyList_GetItem(entry, 2);
             value->kind = rules->aux_slots[slot].value_kind;
+            value->supplied = 1;
             if (raw == Py_None) { value->has_value = 0; continue; }
             if (value->kind == 0) {
                 long flag = gc_py_long_as_long(raw, &ok);

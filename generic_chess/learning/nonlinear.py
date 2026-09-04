@@ -39,7 +39,11 @@ def semantic_state_features(position, compiled, dynamic_values) -> np.ndarray:
     for slot in getattr(ir, "aux_slots", ()):
         owner_tags = (-1,) if slot.scope == "global" else (0, 1)
         for owner_tag in owner_tags:
-            value = aux_state.get((slot.slot_id, owner_tag))
+            # Position.aux_state is intentionally sparse.  Missing physical
+            # entries still have the compiled logical initial value; keep an
+            # explicit square None distinct from a missing entry.
+            key = (slot.slot_id, owner_tag)
+            value = aux_state[key] if key in aux_state else slot.initial
             if slot.value_kind == "bool":
                 aux.append(float(value or 0))
             elif isinstance(value, tuple) and len(value) == 2:

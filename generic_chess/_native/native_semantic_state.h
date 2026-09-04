@@ -8,6 +8,7 @@
 typedef struct {
     uint8_t kind; /* 0 bool, 1 square-or-none */
     uint8_t has_value;
+    uint8_t supplied; /* physical aux entry was supplied, including None */
     int32_t bool_value;
     uint16_t square;
 } GCSemAuxValue;

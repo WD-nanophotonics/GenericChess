@@ -20,6 +20,8 @@ from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.native.adapter import pack_semantic_search_position
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import evaluate as native_evaluate
+from generic_chess.native.semantic import snapshot as native_snapshot
+from generic_chess.native.semantic import pack_position
 from generic_chess.native.semantic_engine import SemanticSearchEngine
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.session.session import GameSession
@@ -68,6 +70,135 @@ def test_f58_state_encoding_has_fixed_aux_width_and_base_hand_axis():
     base_ids = tuple(sorted(piece_type.type_id for piece_type in compiled._legacy_compiled.piece_types))
     hand_offset = 2 * len(current_ids) * len(initial.board)
     assert promoted_features[hand_offset + base_ids.index(base_type.type_id)] == 1.0
+
+
+def _aux_probe_model(compiled, session, feature_index):
+    model = _native_constant_compact_model(compiled, session)
+    model["hidden_weights"][0][feature_index] = 1.0
+    model["output_weights"][0] = 1.0
+    model["output_bias"] = 0.0
+    return model
+
+
+def _aux_feature_offset(compiled, position, ruleset, slot_name, owner_tag=-1, component=0):
+    current_ids = tuple(sorted(compiled.support.type_metadata))
+    base_ids = tuple(sorted(piece_type.type_id for piece_type in compiled._legacy_compiled.piece_types))
+    offset = 2 * len(current_ids) * len(position.board) + 2 * len(base_ids) + 2 + 3
+    slot_id = _aux_slot_id(ruleset, slot_name)
+    for slot in compiled.ir.aux_slots:
+        owners = (-1,) if slot.scope == "global" else (0, 1)
+        for owner in owners:
+            width = 1 if slot.value_kind == "bool" else 3
+            if slot.slot_id == slot_id and owner == owner_tag:
+                return offset + component
+            offset += width
+    raise AssertionError(f"missing aux slot {slot_name!r}")
+
+
+def _aux_slot_id(ruleset, slot_name):
+    names = {
+        aux.name
+        for action in ruleset.semantic_actions
+        for aux in action.aux_state
+    }
+    return tuple(sorted(names)).index(slot_name)
+
+
+def test_f58_aux_missing_uses_logical_initial_but_explicit_clear_does_not():
+    ruleset = build_western_chess_ruleset()
+    compiled = compile_semantic_ruleset(ruleset)
+    session = GameSession(compiled)
+    position = session.state.position
+    slot = next(slot for slot in compiled.ir.aux_slots if slot.slot_id == _aux_slot_id(ruleset, "w_ks"))
+    missing = semantic_state_features(position, compiled, (0, 0, 0))
+    cleared = replace(position, aux_state=(((slot.slot_id, -1), 0),))
+    cleared_features = semantic_state_features(cleared, compiled, (0, 0, 0))
+    index = _aux_feature_offset(compiled, position, ruleset, "w_ks")
+    assert missing[index] == 1.0
+    assert cleared_features[index] == 0.0
+
+
+def test_f58_native_aux_defaults_and_explicit_clear_match_python_features():
+    pytest.importorskip("generic_chess._native_core")
+    ruleset = build_western_chess_ruleset()
+    compiled = compile_semantic_ruleset(ruleset)
+    native = compile_native_semantic_rules(compiled)
+    type_map = {type_id: index for index, type_id in enumerate(native.type_ids)}
+    session = GameSession(compiled)
+    position = session.state.position
+    slot = next(slot for slot in compiled.ir.aux_slots if slot.slot_id == _aux_slot_id(ruleset, "w_ks"))
+    index = _aux_feature_offset(compiled, position, ruleset, "w_ks")
+    model = _aux_probe_model(compiled, session, index)
+    for aux_state, expected_feature in (((), 1.0), ((((slot.slot_id, -1), 0),), 0.0)):
+        py_position = replace(position, aux_state=aux_state)
+        py_value = CompactNonlinearResidual.from_dict(model).predict(
+            semantic_state_features(py_position, compiled, (0, 0, 0))[None, :]
+        )[0]
+        packed = pack_position(native, {
+            "side": 0, "ply": 0,
+            "board": [None if piece is None else [
+                    type_map[piece.base_type_id], type_map[piece.current_type_id],
+                piece.owner, int(piece.promoted)
+            ] for piece in position.board],
+            "hands": [[0] * len(native.type_ids), [0] * len(native.type_ids)],
+            "aux_state": aux_state,
+        })
+        observed = native_snapshot(native, packed)
+        observed_aux = dict(observed["aux_state"])[(slot.slot_id, -1)]
+        assert (observed_aux == 1) is (expected_feature == 1.0)
+        assert native_evaluate(native, packed, compact_values=model, evaluator_scale=1) == round(py_value)
+
+
+def test_f58_generated_square_aux_initial_and_explicit_none_are_distinct():
+    pytest.importorskip("generic_chess._native_core")
+    import sys
+    sys.path.insert(0, "tests")
+    from rule_semantics_ir_fixtures import en_passant_ruleset
+
+    ruleset = en_passant_ruleset()
+    ruleset = replace(
+        ruleset,
+        semantic_actions=tuple(
+            replace(action, aux_state=tuple(
+                replace(slot, initial=(2, 1)) if slot.name == "ep_token" else slot
+                for slot in action.aux_state
+            ))
+            for action in ruleset.semantic_actions
+        ),
+    )
+    compiled = compile_semantic_ruleset(ruleset)
+    native = compile_native_semantic_rules(compiled)
+    type_map = {type_id: index for index, type_id in enumerate(native.type_ids)}
+    session = GameSession(compiled)
+    position = session.state.position
+    slot = next(slot for slot in compiled.ir.aux_slots if slot.slot_id == _aux_slot_id(ruleset, "ep_token"))
+    index = _aux_feature_offset(compiled, position, ruleset, "ep_token", component=0)
+    model = _aux_probe_model(compiled, session, index)
+    features = semantic_state_features(position, compiled, (0, 0, 0))
+    explicit_none = replace(position, aux_state=(((slot.slot_id, -1), None),))
+    none_features = semantic_state_features(explicit_none, compiled, (0, 0, 0))
+    assert features[index] == 1.0
+    assert none_features[index] == 0.0
+    def payload(aux_state):
+        return {
+            "side": 0, "ply": 0,
+            "board": [None if piece is None else [
+                type_map[piece.base_type_id], type_map[piece.current_type_id],
+                piece.owner, int(piece.promoted)
+            ] for piece in position.board],
+            "hands": [[0] * len(native.type_ids), [0] * len(native.type_ids)],
+            "aux_state": aux_state,
+        }
+    default_native = pack_position(native, payload(()))
+    none_native = pack_position(native, payload((((slot.slot_id, -1), None),)))
+    assert dict(native_snapshot(native, default_native)["aux_state"])[(slot.slot_id, -1)] == (2, 1)
+    assert dict(native_snapshot(native, none_native)["aux_state"])[(slot.slot_id, -1)] is None
+    assert native_evaluate(native, default_native, compact_values=model, evaluator_scale=1) == round(
+        CompactNonlinearResidual.from_dict(model).predict(features[None, :])[0]
+    )
+    assert native_evaluate(native, none_native, compact_values=model, evaluator_scale=1) == round(
+        CompactNonlinearResidual.from_dict(model).predict(none_features[None, :])[0]
+    )
 
 
 def _native_constant_compact_model(compiled, session):

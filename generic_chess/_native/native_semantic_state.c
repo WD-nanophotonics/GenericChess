@@ -67,7 +67,7 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
             gc_semantic_aux_default(&pos->aux[slot_i][2], slot, rules->board_size);
         }
         for (uint8_t owner = 0; owner < 3; owner++)
-            if (provided[slot_i][owner].has_value)
+            if (provided[slot_i][owner].supplied)
                 pos->aux[slot_i][owner] = provided[slot_i][owner];
     }
     return 1;
