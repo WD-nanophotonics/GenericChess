@@ -99,7 +99,7 @@ Mohammad Ghavamzadeh.
   action policy as first-class experimental variables; do not extrapolate from
   offline MSE to self-play strength.
 
-### 6. Targeted Search Control in AlphaZero
+### 6. Targeted Search Control in AlphaZero for Effective Policy Improvement
 
 **Authors:** Alexandre Trudeau, Michael Bowling.
 **URL:** <https://arxiv.org/abs/2302.12359>
@@ -207,8 +207,16 @@ Olivier Teytaud.
 **GenericChess relevance:** candidate coverage and budget allocation can change
   the action spectrum seen by the learner even with a fixed evaluator.  
 **Diagnostic/design consequence:** freeze the evaluator/search architecture for
-  F59 and measure spectrum coverage, budget-dependent top-action stability, and
-  regret before considering a planning redesign.
+F59 and measure spectrum coverage, budget-dependent top-action stability, and
+regret before considering a planning redesign.
+
+## Current empirical status after F59
+
+* **T1:** teacher action surfaces are budget-sensitive, but equal-budget
+  candidate spectra are usable.
+* **T2:** policy-relevant state distributions differ observationally.
+* **T3:** learning-objective mismatch remains unresolved.
+* **T4:** representation is not currently the leading authorized bottleneck.
 
 ## F59 decision protocol
 
