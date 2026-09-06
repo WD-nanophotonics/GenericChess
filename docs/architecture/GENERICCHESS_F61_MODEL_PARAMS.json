@@ -3,6 +3,8 @@
     {
       "candidate_id": "F60_D0_PAIRWISE_SEED_59012",
       "checkpoint_id": "15ea86075a15379bfa7758886ddb5855ceddcdbf540b33763130c3551875662a",
+      "corrected_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+      "corrected_model_sha256": "d63f5061a80ff016fd8eb1848f85a1308d0c9bc457b939c3aae1cae39c24b5a5",
       "input_dimension": 2301,
       "model": {
         "hand_type_indices": [
@@ -78401,13 +78403,18 @@
       },
       "model_sha256": "4c7198565335c67a2642e94a8855366d743e34b1acea27ae1f51611f832b31ab",
       "objective": "PAIRWISE_RANKING",
+      "old_checkpoint_id": "15ea86075a15379bfa7758886ddb5855ceddcdbf540b33763130c3551875662a",
+      "old_model_sha256": "4c7198565335c67a2642e94a8855366d743e34b1acea27ae1f51611f832b31ab",
       "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+      "perspective": "owner0",
       "seed": 59012,
       "training_distribution": "D0_RANDOM_REACHABLE"
     },
     {
       "candidate_id": "F60_D12_MEDIAN_DEVELOPMENT_SEED",
       "checkpoint_id": "1768912761b6dfc2826889f6ec80d024eb79ece06a6f61e9cd8087c2c2367f87",
+      "corrected_checkpoint_id": "da51634c07eaa86b300e6e7c7e563bb79c002218156ec49900fc3dc1a32946d3",
+      "corrected_model_sha256": "6a90d09aeae427fa22afdb5ae31b112de07cb6895ea8fdd82651b3f3bb980448",
       "input_dimension": 2301,
       "model": {
         "hand_type_indices": [
@@ -156806,13 +156813,18 @@
       },
       "model_sha256": "ba0b3ecc0b123dceba4e7649eef696593b6d7a64bf8616d856c5fd4c923b7224",
       "objective": "PAIRWISE_RANKING",
+      "old_checkpoint_id": "1768912761b6dfc2826889f6ec80d024eb79ece06a6f61e9cd8087c2c2367f87",
+      "old_model_sha256": "ba0b3ecc0b123dceba4e7649eef696593b6d7a64bf8616d856c5fd4c923b7224",
       "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+      "perspective": "owner0",
       "seed": 59013,
       "training_distribution": "D12_D1_D2_MIX"
     },
     {
       "candidate_id": "F60_D2_MEDIAN_DEVELOPMENT_SEED",
       "checkpoint_id": "b352edefee0ebd226dca8345d60949f4d77122dd0592910bffefebec415168ae",
+      "corrected_checkpoint_id": "3bc950ed46b483f09852de56d1d942505b04ac2ca9aeacd1ea40f5cae1825f29",
+      "corrected_model_sha256": "99125599f0f6ff288b338f8f7dc65511a6636b5e1158999fbce0e9d38c87b660",
       "input_dimension": 2301,
       "model": {
         "hand_type_indices": [
@@ -235211,7 +235223,10 @@
       },
       "model_sha256": "255bd567ab001b6e4a7a8a449b4c6d267b85b058b22cb13d52bfc83de8da752d",
       "objective": "POINTWISE_Q",
+      "old_checkpoint_id": "b352edefee0ebd226dca8345d60949f4d77122dd0592910bffefebec415168ae",
+      "old_model_sha256": "255bd567ab001b6e4a7a8a449b4c6d267b85b058b22cb13d52bfc83de8da752d",
       "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+      "perspective": "owner0",
       "seed": 59011,
       "training_distribution": "D2_V2_PV_CORRIDOR"
     }
@@ -235219,7 +235234,9 @@
   "corrected_candidates": [
     {
       "candidate_id": "F60_D0_PAIRWISE_SEED_59012",
-      "checkpoint_id": "15ea86075a15379bfa7758886ddb5855ceddcdbf540b33763130c3551875662a",
+      "checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+      "corrected_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+      "corrected_model_sha256": "d63f5061a80ff016fd8eb1848f85a1308d0c9bc457b939c3aae1cae39c24b5a5",
       "input_dimension": 2301,
       "model": {
         "hand_type_indices": [
@@ -313617,15 +313634,20 @@
         "target_scale": 729.1066906228515,
         "width": 32
       },
-      "model_sha256": "4c7198565335c67a2642e94a8855366d743e34b1acea27ae1f51611f832b31ab",
+      "model_sha256": "d63f5061a80ff016fd8eb1848f85a1308d0c9bc457b939c3aae1cae39c24b5a5",
       "objective": "PAIRWISE_RANKING",
+      "old_checkpoint_id": "15ea86075a15379bfa7758886ddb5855ceddcdbf540b33763130c3551875662a",
+      "old_model_sha256": "4c7198565335c67a2642e94a8855366d743e34b1acea27ae1f51611f832b31ab",
       "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+      "perspective": "successor_root_q",
       "seed": 59012,
       "training_distribution": "D0_RANDOM_REACHABLE"
     },
     {
       "candidate_id": "F60_D12_MEDIAN_DEVELOPMENT_SEED",
-      "checkpoint_id": "1768912761b6dfc2826889f6ec80d024eb79ece06a6f61e9cd8087c2c2367f87",
+      "checkpoint_id": "da51634c07eaa86b300e6e7c7e563bb79c002218156ec49900fc3dc1a32946d3",
+      "corrected_checkpoint_id": "da51634c07eaa86b300e6e7c7e563bb79c002218156ec49900fc3dc1a32946d3",
+      "corrected_model_sha256": "6a90d09aeae427fa22afdb5ae31b112de07cb6895ea8fdd82651b3f3bb980448",
       "input_dimension": 2301,
       "model": {
         "hand_type_indices": [
@@ -392023,15 +392045,20 @@
         "target_scale": 958.806281450192,
         "width": 32
       },
-      "model_sha256": "ba0b3ecc0b123dceba4e7649eef696593b6d7a64bf8616d856c5fd4c923b7224",
+      "model_sha256": "6a90d09aeae427fa22afdb5ae31b112de07cb6895ea8fdd82651b3f3bb980448",
       "objective": "PAIRWISE_RANKING",
+      "old_checkpoint_id": "1768912761b6dfc2826889f6ec80d024eb79ece06a6f61e9cd8087c2c2367f87",
+      "old_model_sha256": "ba0b3ecc0b123dceba4e7649eef696593b6d7a64bf8616d856c5fd4c923b7224",
       "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+      "perspective": "successor_root_q",
       "seed": 59013,
       "training_distribution": "D12_D1_D2_MIX"
     },
     {
       "candidate_id": "F60_D2_MEDIAN_DEVELOPMENT_SEED",
-      "checkpoint_id": "b352edefee0ebd226dca8345d60949f4d77122dd0592910bffefebec415168ae",
+      "checkpoint_id": "3bc950ed46b483f09852de56d1d942505b04ac2ca9aeacd1ea40f5cae1825f29",
+      "corrected_checkpoint_id": "3bc950ed46b483f09852de56d1d942505b04ac2ca9aeacd1ea40f5cae1825f29",
+      "corrected_model_sha256": "99125599f0f6ff288b338f8f7dc65511a6636b5e1158999fbce0e9d38c87b660",
       "input_dimension": 2301,
       "model": {
         "hand_type_indices": [
@@ -470429,14 +470456,18 @@
         "target_scale": 1044.2264007111328,
         "width": 32
       },
-      "model_sha256": "255bd567ab001b6e4a7a8a449b4c6d267b85b058b22cb13d52bfc83de8da752d",
+      "model_sha256": "99125599f0f6ff288b338f8f7dc65511a6636b5e1158999fbce0e9d38c87b660",
       "objective": "POINTWISE_Q",
+      "old_checkpoint_id": "b352edefee0ebd226dca8345d60949f4d77122dd0592910bffefebec415168ae",
+      "old_model_sha256": "255bd567ab001b6e4a7a8a449b4c6d267b85b058b22cb13d52bfc83de8da752d",
       "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+      "perspective": "successor_root_q",
       "seed": 59011,
       "training_distribution": "D2_V2_PV_CORRIDOR"
     }
   ],
   "f60_result_sha256": "7bef87a473beb20831be37c738669bd26068dc8e382bff84d972f9b205e0b396",
   "parent_checkpoint_id": "2c98cdd7c9e7b878decb15c2baf91b9d0150c65953e22481ce607d926ae43362",
+  "schema": "generic-chess-f61-model-params-v2",
   "work_order": "GENERICCHESS-F61-STRENGTH-FIRST-TRIAGE-AND-TERMINAL-CONTRACT"
 }

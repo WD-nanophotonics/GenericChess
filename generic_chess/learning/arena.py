@@ -15,6 +15,7 @@ from dataclasses import asdict, dataclass
 import json
 import os
 from pathlib import Path
+import time
 
 from ..ai.evaluation.config import EvaluationConfig
 from ..ai.limits import SearchLimits
@@ -35,6 +36,17 @@ class ArenaExecutionError(RuntimeError):
 
 
 ARENA_PROGRESS_SCHEMA = "generic-chess-arena-progress-v1"
+
+
+def _trusted_search_elapsed(native_elapsed: float, wall_elapsed: float):
+    credible = (
+        native_elapsed > 0.0
+        and native_elapsed <= max(wall_elapsed * 2.0, wall_elapsed + 1.0)
+    )
+    return (
+        (native_elapsed, "native")
+        if credible else (wall_elapsed, "wall_fallback")
+    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -68,6 +80,7 @@ class ArenaGameResult:
     actions: tuple[Action, ...]
     final_position_key: str
     declaration_id: str | None = None
+    search_metrics: tuple[dict, ...] = ()
 
     @property
     def child_points(self) -> float:
@@ -145,6 +158,7 @@ def _play_one_game(
     opening,
     child_owner: int,
     config: ArenaConfig,
+    capture_search_metrics: bool = False,
 ) -> ArenaGameResult:
     """Replay ``opening``, then play one game with fresh engines."""
     session = GameSession(compiled)
@@ -160,6 +174,7 @@ def _play_one_game(
     actions: list[Action] = []
     plies = 0
     declaration_id = None
+    search_metrics = []
     while session.result.status.value == "ongoing":
         legal = session.legal_actions()
         if not legal:
@@ -168,6 +183,7 @@ def _play_one_game(
             )
         side = session.state.position.side_to_move
         engine = child_engine if side == child_owner else parent_engine
+        wall_started = time.perf_counter()
         result = engine.search(
             session,
             SearchLimits(
@@ -176,6 +192,30 @@ def _play_one_game(
                 quiescence_max_depth=0,
             ),
         )
+        wall_elapsed = time.perf_counter() - wall_started
+        if capture_search_metrics:
+            native_elapsed = float(result.elapsed_seconds)
+            elapsed, elapsed_source = _trusted_search_elapsed(
+                native_elapsed, wall_elapsed
+            )
+            search_metrics.append({
+                "side_to_move": side,
+                "engine_role": "child" if side == child_owner else "parent",
+                "score": int(result.score),
+                "nodes": int(result.nodes),
+                "elapsed_seconds": elapsed,
+                "elapsed_source": elapsed_source,
+                "nps": (float(result.nodes) / elapsed if elapsed > 0.0 else None),
+                "completed_depth": int(result.completed_depth),
+                "selective_depth": int(result.selective_depth),
+                "termination_reason": str(result.termination_reason),
+                "used_fallback": bool(result.used_fallback),
+                "decision_kind": (
+                    "declaration"
+                    if getattr(result, "declaration_id", None) is not None
+                    else "action"
+                ),
+            })
         if getattr(result, "declaration_id", None) is not None:
             declaration_id = result.declaration_id
             session.declare(declaration_id)
@@ -199,6 +239,7 @@ def _play_one_game(
         actions=tuple(actions),
         final_position_key=position_identity_key(session.state.position, compiled),
         declaration_id=declaration_id,
+        search_metrics=tuple(search_metrics),
     )
 
 
@@ -236,15 +277,19 @@ def _play_pair(
     config: ArenaConfig,
     openings: ArenaOpeningCorpus,
     pair_index: int,
+    *,
+    capture_search_metrics: bool = False,
 ) -> ArenaPairResult:
     opening = openings.openings[pair_index]
     game_child_owner0 = _play_one_game(
         compiled, native_rules, parent, child,
         opening=opening, child_owner=0, config=config,
+        capture_search_metrics=capture_search_metrics,
     )
     game_child_owner1 = _play_one_game(
         compiled, native_rules, parent, child,
         opening=opening, child_owner=1, config=config,
+        capture_search_metrics=capture_search_metrics,
     )
     return ArenaPairResult(
         pair_index=pair_index,
@@ -297,7 +342,7 @@ def _summarize_pairs(pairs: list[ArenaPairResult]) -> ArenaSummary:
 
 
 def _game_to_dict(game: ArenaGameResult) -> dict:
-    return {
+    payload = {
         "pair": game.pair,
         "opening_id": game.opening_id,
         "opening_position_key": game.opening_position_key,
@@ -309,6 +354,9 @@ def _game_to_dict(game: ArenaGameResult) -> dict:
         "final_position_key": game.final_position_key,
         "declaration_id": game.declaration_id,
     }
+    if game.search_metrics:
+        payload["search_metrics"] = list(game.search_metrics)
+    return payload
 
 
 def _game_from_dict(data: dict) -> ArenaGameResult:
@@ -316,7 +364,7 @@ def _game_from_dict(data: dict) -> ArenaGameResult:
         "pair", "opening_id", "opening_position_key", "child_owner", "winner",
         "result", "plies", "actions", "final_position_key", "declaration_id",
     }
-    if set(data) != required:
+    if set(data) not in (required, required | {"search_metrics"}):
         raise ValueError("arena game fields do not match the progress schema")
     winner = data["winner"]
     if winner not in (None, 0, 1) or data["child_owner"] not in (0, 1):
@@ -334,6 +382,7 @@ def _game_from_dict(data: dict) -> ArenaGameResult:
         declaration_id=(
             None if data["declaration_id"] is None else str(data["declaration_id"])
         ),
+        search_metrics=tuple(dict(row) for row in data.get("search_metrics", ())),
     )
 
 
@@ -392,12 +441,29 @@ def _validate_replayed_game(compiled, opening, game: ArenaGameResult) -> None:
         raise ValueError("arena game opening position does not replay")
     if len(game.actions) != game.plies:
         raise ValueError("arena game ply count does not match its actions")
-    for action in game.actions:
+    for index, action in enumerate(game.actions):
+        if game.search_metrics:
+            metric = game.search_metrics[index]
+            if (
+                metric.get("side_to_move") != session.state.position.side_to_move
+                or metric.get("decision_kind") != "action"
+            ):
+                raise ValueError("arena game search telemetry does not replay")
         if action not in session.legal_actions():
             raise ValueError("arena game contains an illegal action")
         session.submit(action)
     if game.declaration_id is not None:
+        if game.search_metrics:
+            metric = game.search_metrics[-1]
+            if (
+                len(game.search_metrics) != game.plies + 1
+                or metric.get("side_to_move") != session.state.position.side_to_move
+                or metric.get("decision_kind") != "declaration"
+            ):
+                raise ValueError("arena declaration telemetry does not replay")
         session.declare(game.declaration_id)
+    elif game.search_metrics and len(game.search_metrics) != game.plies:
+        raise ValueError("arena game search telemetry count does not match plies")
     if (
         session.result.status.value != game.result
         or session.result.winner != game.winner
@@ -413,15 +479,20 @@ def _progress_identity(
     child: LearnableMaterialCheckpoint,
     config: ArenaConfig,
     openings: ArenaOpeningCorpus,
+    *,
+    capture_search_metrics: bool = False,
 ) -> dict:
     opening_rows = openings.to_dict()["openings"][:config.pairs]
-    return {
+    identity = {
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
         "parent_checkpoint_id": parent.checkpoint_id,
         "child_checkpoint_id": child.checkpoint_id,
         "config": asdict(config),
         "ordered_openings": opening_rows,
     }
+    if capture_search_metrics:
+        identity["capture_search_metrics"] = True
+    return identity
 
 
 def run_arena(
@@ -431,23 +502,23 @@ def run_arena(
     child: LearnableMaterialCheckpoint,
     config: ArenaConfig,
     openings: ArenaOpeningCorpus | None = None,
+    *,
+    capture_search_metrics: bool = False,
 ) -> ArenaSummary:
     """Paired matches over a fixed evaluator-neutral opening corpus."""
     openings = _prepare_arena(compiled, parent, child, config, openings)
     indexes = range(config.pairs)
+    def execute(index: int) -> ArenaPairResult:
+        args = (compiled, native_rules, parent, child, config, openings, index)
+        if capture_search_metrics:
+            return _play_pair(*args, capture_search_metrics=True)
+        return _play_pair(*args)
+
     if config.workers == 1:
-        pairs = [
-            _play_pair(compiled, native_rules, parent, child, config, openings, index)
-            for index in indexes
-        ]
+        pairs = [execute(index) for index in indexes]
     else:
         with ThreadPoolExecutor(max_workers=config.workers) as pool:
-            pairs = list(pool.map(
-                lambda index: _play_pair(
-                    compiled, native_rules, parent, child, config, openings, index
-                ),
-                indexes,
-            ))
+            pairs = list(pool.map(execute, indexes))
     return _summarize_pairs(pairs)
 
 
@@ -460,12 +531,16 @@ def run_arena_resumable(
     *,
     progress_dir: str | Path,
     openings: ArenaOpeningCorpus | None = None,
+    capture_search_metrics: bool = False,
 ) -> ArenaSummary:
     """Run an arena while atomically checkpointing complete swapped-color pairs."""
     openings = _prepare_arena(compiled, parent, child, config, openings)
     directory = Path(progress_dir)
     directory.mkdir(parents=True, exist_ok=True)
-    identity = _progress_identity(compiled, parent, child, config, openings)
+    identity = _progress_identity(
+        compiled, parent, child, config, openings,
+        capture_search_metrics=capture_search_metrics,
+    )
     identity_sha256 = stable_sha256(identity)
     expected_manifest = {
         "schema": ARENA_PROGRESS_SCHEMA,
@@ -484,6 +559,16 @@ def run_arena_resumable(
         _atomic_write_json(manifest_path, expected_manifest)
 
     completed: dict[int, ArenaPairResult] = {}
+
+    def require_telemetry(pair: ArenaPairResult) -> None:
+        if capture_search_metrics and (
+            not pair.game_child_owner0.search_metrics
+            or not pair.game_child_owner1.search_metrics
+        ):
+            raise ArenaExecutionError(
+                "arena progress pair is missing requested search telemetry"
+            )
+
     for pair_path in directory.glob("pair-*.json"):
         try:
             data = json.loads(pair_path.read_text(encoding="utf-8"))
@@ -509,17 +594,20 @@ def run_arena_resumable(
             ) from exc
         if pair.pair_index in completed:
             raise ArenaExecutionError(f"conflicting arena progress pair: {pair.pair_index}")
+        require_telemetry(pair)
         completed[pair.pair_index] = pair
 
     missing = [index for index in range(config.pairs) if index not in completed]
     def execute(index: int) -> ArenaPairResult:
-        return _play_pair(
-            compiled, native_rules, parent, child, config, openings, index
-        )
+        args = (compiled, native_rules, parent, child, config, openings, index)
+        if capture_search_metrics:
+            return _play_pair(*args, capture_search_metrics=True)
+        return _play_pair(*args)
 
     if config.workers == 1:
         produced = (execute(index) for index in missing)
         for pair in produced:
+            require_telemetry(pair)
             _atomic_write_json(
                 directory / f"pair-{pair.pair_index:06d}.json",
                 _pair_to_dict(pair, identity_sha256),
@@ -530,6 +618,7 @@ def run_arena_resumable(
             futures = {pool.submit(execute, index): index for index in missing}
             for future in as_completed(futures):
                 pair = future.result()
+                require_telemetry(pair)
                 _atomic_write_json(
                     directory / f"pair-{pair.pair_index:06d}.json",
                     _pair_to_dict(pair, identity_sha256),

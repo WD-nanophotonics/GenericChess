@@ -60,6 +60,28 @@ def bounded_value_domain(values: np.ndarray, value_scale: float) -> np.ndarray:
     return np.tanh(np.asarray(values, dtype=np.float64) / float(value_scale))
 
 
+def compact_residual_native_value(
+    residual: float,
+    *,
+    perspective: str,
+    side_to_move: int,
+) -> float:
+    """Convert one Python compact residual to Native leaf-score perspective.
+
+    ``owner0`` is the pre-corrective v4 compatibility contract.  A
+    ``successor_root_q`` residual is already attached to the action's root
+    player, while Native evaluates its successor with the opponent to move,
+    so its contribution has one fixed negative sign in either orientation.
+    """
+    if side_to_move not in (0, 1):
+        raise ValueError("side_to_move must be 0 or 1")
+    if perspective == "owner0":
+        return float(residual) if side_to_move == 0 else -float(residual)
+    if perspective == "successor_root_q":
+        return -float(residual)
+    raise ValueError(f"unknown compact nonlinear perspective: {perspective}")
+
+
 @dataclass(frozen=True)
 class CompactNonlinearResidual:
     input_mean: tuple[float, ...]

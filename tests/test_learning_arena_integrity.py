@@ -19,6 +19,7 @@ from generic_chess.learning.arena import (
     ArenaPairResult,
     run_arena,
     run_arena_resumable,
+    _trusted_search_elapsed,
 )
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
@@ -80,6 +81,54 @@ def test_pair_games_share_opening_and_swap_colors():
         assert a.child_owner == 0
         assert b.child_owner == 1
         assert pair.opening_id == openings.openings[pair.pair_index].final_position_key
+
+
+@requires_native
+def test_search_telemetry_captures_and_replays_every_decision(tmp_path):
+    compiled, rules, checkpoint, child = _setup()
+    config = ArenaConfig(pairs=1, nodes_per_move=200, max_depth=4)
+    progress = tmp_path / "telemetry"
+    summary = run_arena_resumable(
+        compiled,
+        rules,
+        checkpoint,
+        child,
+        config,
+        progress_dir=progress,
+        capture_search_metrics=True,
+    )
+    for game in (
+        summary.pairs[0].game_child_owner0,
+        summary.pairs[0].game_child_owner1,
+    ):
+        assert len(game.search_metrics) in (game.plies, game.plies + 1)
+        assert all(metric["nodes"] <= config.nodes_per_move for metric in game.search_metrics)
+        assert all(metric["completed_depth"] >= 0 for metric in game.search_metrics)
+        assert all(metric["termination_reason"] for metric in game.search_metrics)
+        assert all(metric["nps"] is None or metric["nps"] > 0 for metric in game.search_metrics)
+        assert all(
+            metric["elapsed_source"] in ("native", "wall_fallback")
+            for metric in game.search_metrics
+        )
+    resumed = run_arena_resumable(
+        compiled,
+        rules,
+        checkpoint,
+        child,
+        config,
+        progress_dir=progress,
+        capture_search_metrics=True,
+    )
+    assert resumed == summary
+
+
+def test_search_telemetry_rejects_unsigned_elapsed_underflow_shape():
+    elapsed, source = _trusted_search_elapsed(18_446_742_229.0, 0.25)
+    assert elapsed == 0.25
+    assert source == "wall_fallback"
+    elapsed, source = _trusted_search_elapsed(0.24, 0.25)
+    assert elapsed == 0.24
+    assert source == "native"
 
 
 @requires_native
