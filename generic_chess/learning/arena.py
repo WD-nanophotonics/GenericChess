@@ -10,12 +10,15 @@ Measurement rules:
 
 from __future__ import annotations
 
-from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import asdict, dataclass
+import json
+import os
+from pathlib import Path
 
 from ..ai.evaluation.config import EvaluationConfig
 from ..ai.limits import SearchLimits
-from ..core.actions import Action, action_to_dict
+from ..core.actions import Action, action_from_dict, action_to_dict
 from ..core.identity import position_identity_key
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
@@ -23,11 +26,15 @@ from ..native.semantic_engine import SemanticSearchEngine
 from ..session.session import GameSession
 from .material import LearnableMaterialCheckpoint
 from .openings import ArenaOpeningCorpus, generate_arena_openings
+from .serialization import stable_sha256
 from .statistics import bootstrap_pair_mean_ci
 
 
 class ArenaExecutionError(RuntimeError):
     """Raised when the arena cannot produce a valid measurement."""
+
+
+ARENA_PROGRESS_SCHEMA = "generic-chess-arena-progress-v1"
 
 
 @dataclass(frozen=True, slots=True)
@@ -60,6 +67,7 @@ class ArenaGameResult:
     plies: int
     actions: tuple[Action, ...]
     final_position_key: str
+    declaration_id: str | None = None
 
     @property
     def child_points(self) -> float:
@@ -151,6 +159,7 @@ def _play_one_game(
     )
     actions: list[Action] = []
     plies = 0
+    declaration_id = None
     while session.result.status.value == "ongoing":
         legal = session.legal_actions()
         if not legal:
@@ -168,7 +177,8 @@ def _play_one_game(
             ),
         )
         if getattr(result, "declaration_id", None) is not None:
-            session.declare(result.declaration_id)
+            declaration_id = result.declaration_id
+            session.declare(declaration_id)
             break
         if result.action is None:
             raise ArenaExecutionError(
@@ -188,22 +198,17 @@ def _play_one_game(
         plies=plies,
         actions=tuple(actions),
         final_position_key=position_identity_key(session.state.position, compiled),
+        declaration_id=declaration_id,
     )
 
 
-def run_arena(
+def _prepare_arena(
     compiled,
-    native_rules,
     parent: LearnableMaterialCheckpoint,
     child: LearnableMaterialCheckpoint,
     config: ArenaConfig,
     openings: ArenaOpeningCorpus | None = None,
-) -> ArenaSummary:
-    """Paired matches over a fixed evaluator-neutral opening corpus.
-
-    Each pair plays the same opening twice with swapped colors; every game
-    uses fresh parent/child engines so TT never crosses games.
-    """
+) -> ArenaOpeningCorpus:
     parent.validate_ruleset(compiled)
     child.validate_ruleset(compiled)
     if openings is None:
@@ -220,31 +225,38 @@ def run_arena(
             f"opening corpus has {len(openings.openings)} openings but "
             f"{config.pairs} pairs requested"
         )
+    return openings
 
-    pairs: list[ArenaPairResult] = []
+
+def _play_pair(
+    compiled,
+    native_rules,
+    parent: LearnableMaterialCheckpoint,
+    child: LearnableMaterialCheckpoint,
+    config: ArenaConfig,
+    openings: ArenaOpeningCorpus,
+    pair_index: int,
+) -> ArenaPairResult:
+    opening = openings.openings[pair_index]
+    game_child_owner0 = _play_one_game(
+        compiled, native_rules, parent, child,
+        opening=opening, child_owner=0, config=config,
+    )
+    game_child_owner1 = _play_one_game(
+        compiled, native_rules, parent, child,
+        opening=opening, child_owner=1, config=config,
+    )
+    return ArenaPairResult(
+        pair_index=pair_index,
+        opening_id=opening.final_position_key,
+        game_child_owner0=game_child_owner0,
+        game_child_owner1=game_child_owner1,
+    )
+
+
+def _summarize_pairs(pairs: list[ArenaPairResult]) -> ArenaSummary:
+    pairs.sort(key=lambda pair: pair.pair_index)
     game_wins = game_draws = game_losses = 0
-    def play_pair(pair_index: int) -> ArenaPairResult:
-        opening = openings.openings[pair_index]
-        game_child_owner0 = _play_one_game(
-            compiled, native_rules, parent, child,
-            opening=opening, child_owner=0, config=config,
-        )
-        game_child_owner1 = _play_one_game(
-            compiled, native_rules, parent, child,
-            opening=opening, child_owner=1, config=config,
-        )
-        return ArenaPairResult(
-            pair_index=pair_index,
-            opening_id=opening.final_position_key,
-            game_child_owner0=game_child_owner0,
-            game_child_owner1=game_child_owner1,
-        )
-
-    if config.workers == 1:
-        pairs = [play_pair(pair_index) for pair_index in range(config.pairs)]
-    else:
-        with ThreadPoolExecutor(max_workers=config.workers) as pool:
-            pairs = list(pool.map(play_pair, range(config.pairs)))
     for pair in pairs:
         game_child_owner0 = pair.game_child_owner0
         game_child_owner1 = pair.game_child_owner1
@@ -282,3 +294,245 @@ def run_arena(
         ),
         pairs=tuple(pairs),
     )
+
+
+def _game_to_dict(game: ArenaGameResult) -> dict:
+    return {
+        "pair": game.pair,
+        "opening_id": game.opening_id,
+        "opening_position_key": game.opening_position_key,
+        "child_owner": game.child_owner,
+        "winner": game.winner,
+        "result": game.result,
+        "plies": game.plies,
+        "actions": [action_to_dict(action) for action in game.actions],
+        "final_position_key": game.final_position_key,
+        "declaration_id": game.declaration_id,
+    }
+
+
+def _game_from_dict(data: dict) -> ArenaGameResult:
+    required = {
+        "pair", "opening_id", "opening_position_key", "child_owner", "winner",
+        "result", "plies", "actions", "final_position_key", "declaration_id",
+    }
+    if set(data) != required:
+        raise ValueError("arena game fields do not match the progress schema")
+    winner = data["winner"]
+    if winner not in (None, 0, 1) or data["child_owner"] not in (0, 1):
+        raise ValueError("arena game owner/winner is invalid")
+    return ArenaGameResult(
+        pair=int(data["pair"]),
+        opening_id=str(data["opening_id"]),
+        opening_position_key=str(data["opening_position_key"]),
+        child_owner=int(data["child_owner"]),
+        winner=winner,
+        result=str(data["result"]),
+        plies=int(data["plies"]),
+        actions=tuple(action_from_dict(action) for action in data["actions"]),
+        final_position_key=str(data["final_position_key"]),
+        declaration_id=(
+            None if data["declaration_id"] is None else str(data["declaration_id"])
+        ),
+    )
+
+
+def _pair_to_dict(pair: ArenaPairResult, identity_sha256: str) -> dict:
+    return {
+        "schema": ARENA_PROGRESS_SCHEMA,
+        "identity_sha256": identity_sha256,
+        "pair_index": pair.pair_index,
+        "opening_id": pair.opening_id,
+        "game_child_owner0": _game_to_dict(pair.game_child_owner0),
+        "game_child_owner1": _game_to_dict(pair.game_child_owner1),
+    }
+
+
+def _pair_from_dict(data: dict, *, identity_sha256: str) -> ArenaPairResult:
+    required = {
+        "schema", "identity_sha256", "pair_index", "opening_id",
+        "game_child_owner0", "game_child_owner1",
+    }
+    if set(data) != required or data.get("schema") != ARENA_PROGRESS_SCHEMA:
+        raise ValueError("arena pair fields do not match the progress schema")
+    if data.get("identity_sha256") != identity_sha256:
+        raise ValueError("arena pair identity does not match the manifest")
+    pair = ArenaPairResult(
+        pair_index=int(data["pair_index"]),
+        opening_id=str(data["opening_id"]),
+        game_child_owner0=_game_from_dict(data["game_child_owner0"]),
+        game_child_owner1=_game_from_dict(data["game_child_owner1"]),
+    )
+    if (
+        pair.game_child_owner0.child_owner != 0
+        or pair.game_child_owner1.child_owner != 1
+        or pair.game_child_owner0.opening_id != pair.opening_id
+        or pair.game_child_owner1.opening_id != pair.opening_id
+        or pair.game_child_owner0.opening_position_key
+        != pair.game_child_owner1.opening_position_key
+    ):
+        raise ValueError("arena pair is incomplete or internally inconsistent")
+    return pair
+
+
+def _atomic_write_json(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    temporary.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    os.replace(temporary, path)
+
+
+def _validate_replayed_game(compiled, opening, game: ArenaGameResult) -> None:
+    session = GameSession(compiled)
+    for action in opening.actions:
+        session.submit(action)
+    if position_identity_key(session.state.position, compiled) != game.opening_position_key:
+        raise ValueError("arena game opening position does not replay")
+    if len(game.actions) != game.plies:
+        raise ValueError("arena game ply count does not match its actions")
+    for action in game.actions:
+        if action not in session.legal_actions():
+            raise ValueError("arena game contains an illegal action")
+        session.submit(action)
+    if game.declaration_id is not None:
+        session.declare(game.declaration_id)
+    if (
+        session.result.status.value != game.result
+        or session.result.winner != game.winner
+        or position_identity_key(session.state.position, compiled)
+        != game.final_position_key
+    ):
+        raise ValueError("arena game result does not replay")
+
+
+def _progress_identity(
+    compiled,
+    parent: LearnableMaterialCheckpoint,
+    child: LearnableMaterialCheckpoint,
+    config: ArenaConfig,
+    openings: ArenaOpeningCorpus,
+) -> dict:
+    opening_rows = openings.to_dict()["openings"][:config.pairs]
+    return {
+        "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        "parent_checkpoint_id": parent.checkpoint_id,
+        "child_checkpoint_id": child.checkpoint_id,
+        "config": asdict(config),
+        "ordered_openings": opening_rows,
+    }
+
+
+def run_arena(
+    compiled,
+    native_rules,
+    parent: LearnableMaterialCheckpoint,
+    child: LearnableMaterialCheckpoint,
+    config: ArenaConfig,
+    openings: ArenaOpeningCorpus | None = None,
+) -> ArenaSummary:
+    """Paired matches over a fixed evaluator-neutral opening corpus."""
+    openings = _prepare_arena(compiled, parent, child, config, openings)
+    indexes = range(config.pairs)
+    if config.workers == 1:
+        pairs = [
+            _play_pair(compiled, native_rules, parent, child, config, openings, index)
+            for index in indexes
+        ]
+    else:
+        with ThreadPoolExecutor(max_workers=config.workers) as pool:
+            pairs = list(pool.map(
+                lambda index: _play_pair(
+                    compiled, native_rules, parent, child, config, openings, index
+                ),
+                indexes,
+            ))
+    return _summarize_pairs(pairs)
+
+
+def run_arena_resumable(
+    compiled,
+    native_rules,
+    parent: LearnableMaterialCheckpoint,
+    child: LearnableMaterialCheckpoint,
+    config: ArenaConfig,
+    *,
+    progress_dir: str | Path,
+    openings: ArenaOpeningCorpus | None = None,
+) -> ArenaSummary:
+    """Run an arena while atomically checkpointing complete swapped-color pairs."""
+    openings = _prepare_arena(compiled, parent, child, config, openings)
+    directory = Path(progress_dir)
+    directory.mkdir(parents=True, exist_ok=True)
+    identity = _progress_identity(compiled, parent, child, config, openings)
+    identity_sha256 = stable_sha256(identity)
+    expected_manifest = {
+        "schema": ARENA_PROGRESS_SCHEMA,
+        "identity_sha256": identity_sha256,
+        "identity": identity,
+    }
+    manifest_path = directory / "manifest.json"
+    if manifest_path.exists():
+        try:
+            actual_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ArenaExecutionError("arena progress manifest is corrupt") from exc
+        if actual_manifest != expected_manifest:
+            raise ArenaExecutionError("arena progress identity does not match this run")
+    else:
+        _atomic_write_json(manifest_path, expected_manifest)
+
+    completed: dict[int, ArenaPairResult] = {}
+    for pair_path in directory.glob("pair-*.json"):
+        try:
+            data = json.loads(pair_path.read_text(encoding="utf-8"))
+            pair = _pair_from_dict(data, identity_sha256=identity_sha256)
+        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+            raise ArenaExecutionError(f"arena progress pair is corrupt: {pair_path.name}") from exc
+        expected_name = f"pair-{pair.pair_index:06d}.json"
+        if pair_path.name != expected_name or not 0 <= pair.pair_index < config.pairs:
+            raise ArenaExecutionError(f"arena progress pair has invalid index: {pair_path.name}")
+        expected_opening = openings.openings[pair.pair_index]
+        if (
+            pair.opening_id != expected_opening.final_position_key
+            or pair.game_child_owner0.pair != expected_opening.index
+            or pair.game_child_owner1.pair != expected_opening.index
+        ):
+            raise ArenaExecutionError(f"arena progress opening mismatch: {pair_path.name}")
+        try:
+            _validate_replayed_game(compiled, expected_opening, pair.game_child_owner0)
+            _validate_replayed_game(compiled, expected_opening, pair.game_child_owner1)
+        except Exception as exc:
+            raise ArenaExecutionError(
+                f"arena progress game does not replay: {pair_path.name}"
+            ) from exc
+        if pair.pair_index in completed:
+            raise ArenaExecutionError(f"conflicting arena progress pair: {pair.pair_index}")
+        completed[pair.pair_index] = pair
+
+    missing = [index for index in range(config.pairs) if index not in completed]
+    def execute(index: int) -> ArenaPairResult:
+        return _play_pair(
+            compiled, native_rules, parent, child, config, openings, index
+        )
+
+    if config.workers == 1:
+        produced = (execute(index) for index in missing)
+        for pair in produced:
+            _atomic_write_json(
+                directory / f"pair-{pair.pair_index:06d}.json",
+                _pair_to_dict(pair, identity_sha256),
+            )
+            completed[pair.pair_index] = pair
+    else:
+        with ThreadPoolExecutor(max_workers=config.workers) as pool:
+            futures = {pool.submit(execute, index): index for index in missing}
+            for future in as_completed(futures):
+                pair = future.result()
+                _atomic_write_json(
+                    directory / f"pair-{pair.pair_index:06d}.json",
+                    _pair_to_dict(pair, identity_sha256),
+                )
+                completed[pair.pair_index] = pair
+    return _summarize_pairs(list(completed.values()))

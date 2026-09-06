@@ -465,9 +465,9 @@ def recovery_event(state: dict[str, Any], name: str, **values: Any) -> None:
         del timeline[:-100]
 
 
-def _atomic_json(path: Path, value: dict[str, Any]) -> None:
+def _atomic_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
     temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True) + "\n",
                          encoding="utf-8")
     os.replace(temporary, path)
@@ -602,7 +602,7 @@ def command_status(root: Path, _args: argparse.Namespace) -> None:
 
 @contextmanager
 def heavy_lock(root: Path):
-    """Allow one low-priority GenericChess compute command at a time."""
+    """Allow one GenericChess compute command at a time."""
     path = runtime_dir(root) / "heavy.lock"
     handle = path.open("a+b")
     if path.stat().st_size == 0:
@@ -650,6 +650,319 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
     with heavy_lock(root):
         process = subprocess.Popen(command, cwd=root)
         return process.wait()
+
+
+def _heavy_run_dir(root: Path, run_id: str) -> Path:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", run_id):
+        raise FlowError("invalid heavy run id")
+    return runtime_dir(root) / "heavy-runs" / run_id
+
+
+def _process_creation_time(pid: int) -> float | None:
+    """Return OS process creation time, or None when the PID is not alive."""
+    if not isinstance(pid, int) or pid <= 0:
+        return None
+    if os.name == "nt":
+        import ctypes
+        from ctypes import wintypes
+
+        process_query_limited_information = 0x1000
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+        kernel32.OpenProcess.restype = wintypes.HANDLE
+        kernel32.GetProcessTimes.argtypes = [
+            wintypes.HANDLE,
+            ctypes.POINTER(wintypes.FILETIME),
+            ctypes.POINTER(wintypes.FILETIME),
+            ctypes.POINTER(wintypes.FILETIME),
+            ctypes.POINTER(wintypes.FILETIME),
+        ]
+        kernel32.GetProcessTimes.restype = wintypes.BOOL
+        kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+        kernel32.CloseHandle.restype = wintypes.BOOL
+        handle = kernel32.OpenProcess(process_query_limited_information, False, pid)
+        if not handle:
+            return None
+        try:
+            created = wintypes.FILETIME()
+            exited = wintypes.FILETIME()
+            kernel = wintypes.FILETIME()
+            user = wintypes.FILETIME()
+            if not kernel32.GetProcessTimes(
+                handle,
+                ctypes.byref(created),
+                ctypes.byref(exited),
+                ctypes.byref(kernel),
+                ctypes.byref(user),
+            ):
+                return None
+            ticks = (created.dwHighDateTime << 32) | created.dwLowDateTime
+            return (ticks - 116444736000000000) / 10_000_000
+        finally:
+            kernel32.CloseHandle(handle)
+    try:  # pragma: no cover - the workflow is Windows-only
+        stat = Path(f"/proc/{pid}/stat").read_text(encoding="ascii").split()
+        boot_time = next(
+            float(line.split()[1])
+            for line in Path("/proc/stat").read_text(encoding="ascii").splitlines()
+            if line.startswith("btime ")
+        )
+        return boot_time + int(stat[21]) / os.sysconf("SC_CLK_TCK")
+    except (OSError, StopIteration, ValueError, IndexError):
+        return None
+
+
+def _same_process(pid: Any, created_at: Any) -> bool:
+    if not isinstance(pid, int) or not isinstance(created_at, (int, float)):
+        return False
+    actual = _process_creation_time(pid)
+    return actual is not None and abs(actual - float(created_at)) < 0.01
+
+
+def _classified_heavy_state(payload: Any, *, now: float | None = None) -> dict[str, Any]:
+    if not isinstance(payload, dict) or payload.get("schema") != "generic-chess-heavy-v1":
+        raise FlowError("invalid heavy run state schema")
+    required = {
+        "run_id", "label", "argv_digest", "status", "started_at",
+        "stdout_path", "stderr_path", "state_path",
+    }
+    if not required.issubset(payload):
+        raise FlowError("invalid heavy run state fields")
+    if (
+        not isinstance(payload["run_id"], str)
+        or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", payload["run_id"])
+        or not isinstance(payload["label"], str)
+        or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", payload["label"])
+        or not isinstance(payload["argv_digest"], str)
+        or not re.fullmatch(r"[0-9a-f]{64}", payload["argv_digest"])
+        or not isinstance(payload["started_at"], (int, float))
+        or not all(isinstance(payload[field], str) for field in (
+            "stdout_path", "stderr_path", "state_path"
+        ))
+    ):
+        raise FlowError("invalid heavy run state values")
+    if payload["status"] not in {"starting", "running", "completed", "failed", "stale"}:
+        raise FlowError("invalid heavy run status")
+    result = dict(payload)
+    if payload["status"] in {"completed", "failed", "stale"}:
+        return result
+    current_time = time.time() if now is None else now
+    heartbeat = payload.get("heartbeat_at", payload["started_at"])
+    if not isinstance(heartbeat, (int, float)) or current_time - heartbeat > 60:
+        result["status"] = "stale"
+        result["stale_reason"] = "heartbeat_expired"
+        return result
+    if payload["status"] == "running":
+        if not _same_process(payload.get("monitor_pid"), payload.get("monitor_created_at")):
+            result["status"] = "stale"
+            result["stale_reason"] = "monitor_process_identity_mismatch"
+        elif not _same_process(payload.get("child_pid"), payload.get("child_created_at")):
+            result["status"] = "stale"
+            result["stale_reason"] = "child_process_identity_mismatch"
+    return result
+
+
+def command_heavy_monitor(root: Path, args: argparse.Namespace) -> int:
+    run_dir = _heavy_run_dir(root, args.run_id)
+    state_path = run_dir / "state.json"
+    state: dict[str, Any] = {}
+    try:
+        command = json.loads((run_dir / "command.json").read_text(encoding="utf-8"))
+        if not isinstance(command, list) or not command or not all(
+            isinstance(part, str) and part for part in command
+        ):
+            raise FlowError("invalid heavy command payload")
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        if not isinstance(state, dict) or state.get("status") != "starting":
+            raise FlowError("heavy monitor requires a starting run state")
+        with heavy_lock(root):
+            now = time.time()
+            monitor_created_at = _process_creation_time(os.getpid())
+            if monitor_created_at is None:
+                raise FlowError("cannot read heavy monitor process identity")
+            state.update({
+                "monitor_pid": os.getpid(),
+                "monitor_created_at": monitor_created_at,
+                "lock_acquired_at": now,
+                "heartbeat_at": now,
+            })
+            _atomic_json(state_path, state)
+            with (run_dir / "stdout.log").open("ab") as out, (
+                run_dir / "stderr.log"
+            ).open("ab") as err:
+                child_flags = (
+                    subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_NO_WINDOW
+                    if os.name == "nt" else 0
+                )
+                process = subprocess.Popen(
+                    command, cwd=root, stdout=out, stderr=err,
+                    creationflags=child_flags,
+                )
+                child_created_at = _process_creation_time(process.pid)
+                if child_created_at is None:
+                    process.terminate()
+                    raise FlowError("cannot read heavy child process identity")
+                now = time.time()
+                state.update({
+                    "status": "running",
+                    "child_pid": process.pid,
+                    "child_created_at": child_created_at,
+                    "child_started_at": now,
+                    "handshake_at": now,
+                    "heartbeat_at": now,
+                })
+                _atomic_json(state_path, state)
+                while True:
+                    try:
+                        code = process.wait(timeout=5)
+                    except subprocess.TimeoutExpired:
+                        code = None
+                    now = time.time()
+                    state["heartbeat_at"] = now
+                    _atomic_json(state_path, state)
+                    if code is not None:
+                        break
+            state.update({
+                "status": "completed" if code == 0 else "failed",
+                "exit_code": code,
+                "finished_at": time.time(),
+                "heartbeat_at": time.time(),
+            })
+            _atomic_json(state_path, state)
+            return int(code)
+    except BaseException as exc:
+        if not state and state_path.is_file():
+            try:
+                loaded = json.loads(state_path.read_text(encoding="utf-8"))
+                state = loaded if isinstance(loaded, dict) else {}
+            except (OSError, json.JSONDecodeError):
+                state = {}
+        state.update({
+            "schema": "generic-chess-heavy-v1",
+            "run_id": args.run_id,
+            "status": "failed",
+            "exit_code": None,
+            "error": f"{type(exc).__name__}: {exc}",
+            "finished_at": time.time(),
+            "heartbeat_at": time.time(),
+        })
+        _atomic_json(state_path, state)
+        return 1
+
+
+def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
+    state = active_state(root)
+    require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
+    if branch(root) != "sandbox":
+        raise FlowError("heavy-start must be run from the sandbox worktree")
+    label = args.label
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", label):
+        raise FlowError("invalid heavy label")
+    command = list(args.argv)
+    if command and command[0] == "--":
+        command.pop(0)
+    if not command:
+        raise FlowError("heavy-start requires a command after --")
+    run_id = f"{label}-{uuid.uuid4().hex[:12]}"
+    run_dir = _heavy_run_dir(root, run_id)
+    run_dir.mkdir(parents=True, exist_ok=False)
+    digest = hashlib.sha256(
+        json.dumps(command, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    stdout_path = run_dir / "stdout.log"
+    stderr_path = run_dir / "stderr.log"
+    _atomic_json(run_dir / "command.json", command)
+    _atomic_json(run_dir / "state.json", {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": run_id,
+        "label": label,
+        "argv_digest": digest,
+        "status": "starting",
+        "started_at": time.time(),
+        "stdout_path": str(stdout_path),
+        "stderr_path": str(stderr_path),
+        "state_path": str(run_dir / "state.json"),
+    })
+    flags = (
+        subprocess.DETACHED_PROCESS
+        | subprocess.CREATE_NEW_PROCESS_GROUP
+        | subprocess.CREATE_NO_WINDOW
+        if os.name == "nt" else 0
+    )
+    try:
+        monitor = subprocess.Popen(
+            [sys.executable, str(Path(__file__).resolve()), "__heavy-monitor", "--run-id", run_id],
+            cwd=root,
+            creationflags=flags,
+            close_fds=True,
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except OSError as exc:
+        failed = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+        failed.update({
+            "status": "failed",
+            "error": f"{type(exc).__name__}: {exc}",
+            "exit_code": None,
+            "finished_at": time.time(),
+            "heartbeat_at": time.time(),
+        })
+        _atomic_json(run_dir / "state.json", failed)
+        raise FlowError(f"heavy-start could not launch monitor: {exc}") from exc
+    deadline = time.time() + 30
+    while time.time() < deadline:
+        try:
+            current = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            time.sleep(.1)
+            continue
+        if current.get("handshake_at") and current.get("child_pid"):
+            print(json.dumps(current, sort_keys=True))
+            return 0
+        if current.get("status") == "failed":
+            raise FlowError(f"heavy-start failed: {current.get('error', 'unknown monitor error')}")
+        if monitor.poll() is not None:
+            raise FlowError(f"heavy-start monitor exited before handshake ({monitor.returncode})")
+        time.sleep(.1)
+    try:
+        monitor.terminate()
+    except OSError:
+        pass
+    current = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+    if current.get("status") == "starting":
+        current.update({
+            "status": "failed",
+            "error": "heavy-start monitor handshake timed out",
+            "exit_code": None,
+            "finished_at": time.time(),
+            "heartbeat_at": time.time(),
+        })
+        _atomic_json(run_dir / "state.json", current)
+    raise FlowError("heavy-start monitor handshake timed out")
+
+
+def command_heavy_status(root: Path, args: argparse.Namespace) -> int:
+    base = runtime_dir(root) / "heavy-runs"
+    paths = ([_heavy_run_dir(root, args.run_id)] if args.run_id else
+             sorted(base.glob("*/state.json")) if base.exists() else [])
+    rows = []
+    for path in paths:
+        if path.is_dir():
+            path = path / "state.json"
+        if not path.is_file():
+            raise FlowError(f"heavy run state does not exist: {path}")
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise FlowError(f"invalid heavy run state: {path}") from exc
+        try:
+            rows.append(_classified_heavy_state(payload))
+        except FlowError as exc:
+            raise FlowError(f"invalid heavy run state: {path}: {exc}") from exc
+    print(json.dumps(rows, indent=2, sort_keys=True))
+    return 0
 
 
 def command_start(root: Path, args: argparse.Namespace) -> None:
@@ -1585,6 +1898,16 @@ def parser() -> argparse.ArgumentParser:
     heavy = sub.add_parser("heavy")
     heavy.add_argument("argv", nargs=argparse.REMAINDER)
     heavy.set_defaults(handler=command_heavy)
+    heavy_start = sub.add_parser("heavy-start")
+    heavy_start.add_argument("--label", required=True)
+    heavy_start.add_argument("argv", nargs=argparse.REMAINDER)
+    heavy_start.set_defaults(handler=command_heavy_start)
+    heavy_status = sub.add_parser("heavy-status")
+    heavy_status.add_argument("--run-id")
+    heavy_status.set_defaults(handler=command_heavy_status)
+    heavy_monitor = sub.add_parser("__heavy-monitor")
+    heavy_monitor.add_argument("--run-id", required=True)
+    heavy_monitor.set_defaults(handler=command_heavy_monitor)
     recover = sub.add_parser("recover")
     recover.add_argument("--worker-thread-id")
     recover.set_defaults(handler=command_recover)

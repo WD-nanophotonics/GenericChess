@@ -102,6 +102,8 @@ generic-chess-flow.cmd status
 generic-chess-flow.cmd work
 generic-chess-flow.cmd start --mode courier|local [--message-file <path>]
 generic-chess-flow.cmd heavy -- <long-running command>
+generic-chess-flow.cmd heavy-start --label <safe-label> -- <long-running command>
+generic-chess-flow.cmd heavy-status [--run-id <id>]
 generic-chess-flow.cmd publish --tests <pytest-target> [...]
 generic-chess-flow.cmd recover [--worker-thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd resume
@@ -123,8 +125,10 @@ generic-chess-flow.cmd finish
 ```
 
 Run long tests, self-play, benchmarks, and large audits through `heavy`. It runs
-one GenericChess compute task at a time at Windows Below Normal priority.
-`publish` applies the same rule to pytest automatically.
+one GenericChess compute task at a time. Use `heavy-start` when the work must
+survive the launching shell or agent turn, and inspect its durable PID-bound
+state and separate logs with `heavy-status`. `publish` applies the same
+single-Heavy rule to pytest automatically.
 
 On a Courier error, run `recover` for the same request. Login, target, access,
 or uncertain external side effects escalate to the Supervisor before they reach

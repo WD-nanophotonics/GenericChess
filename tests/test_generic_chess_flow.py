@@ -4,6 +4,7 @@ import importlib.util
 import json
 from pathlib import Path
 import subprocess
+import sys
 from types import SimpleNamespace
 
 import pytest
@@ -16,6 +17,22 @@ SPEC = importlib.util.spec_from_file_location(
 assert SPEC and SPEC.loader
 flow = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(flow)
+
+
+class _NoopContext:
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *_args):
+        return False
+
+
+def _heavy_start_mocks(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True})
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
 
 
 def test_chat_control_footer_is_explicit_and_last_value_wins():
@@ -934,3 +951,193 @@ def test_promotion_rejects_unpublished_or_untested_candidate(monkeypatch, tmp_pa
 
     with pytest.raises(flow.FlowError, match="has not passed publish tests"):
         flow.command_promote(tmp_path, SimpleNamespace(candidate=candidate))
+
+
+def test_heavy_state_uses_pid_and_creation_time_to_detect_reuse(monkeypatch):
+    now = 1_000.0
+    payload = {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "run-1",
+        "label": "unit",
+        "argv_digest": "a" * 64,
+        "status": "running",
+        "started_at": 900.0,
+        "heartbeat_at": 999.0,
+        "monitor_pid": 10,
+        "monitor_created_at": 800.0,
+        "child_pid": 11,
+        "child_created_at": 810.0,
+        "stdout_path": "stdout.log",
+        "stderr_path": "stderr.log",
+        "state_path": "state.json",
+    }
+    identities = {10: 800.0, 11: 810.0}
+    monkeypatch.setattr(flow, "_process_creation_time", identities.get)
+    assert flow._classified_heavy_state(payload, now=now)["status"] == "running"
+
+    identities[11] = 811.0
+    stale = flow._classified_heavy_state(payload, now=now)
+    assert stale["status"] == "stale"
+    assert stale["stale_reason"] == "child_process_identity_mismatch"
+    assert payload["status"] == "running"
+
+    malformed = dict(payload, argv_digest="not-a-digest")
+    with pytest.raises(flow.FlowError, match="values"):
+        flow._classified_heavy_state(malformed, now=now)
+
+
+@pytest.mark.parametrize("exit_code, expected_status", [(0, "completed"), (3, "failed")])
+def test_heavy_monitor_records_completion_failure_and_separate_logs(
+    monkeypatch, tmp_path, exit_code, expected_status
+):
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "heavy_lock", lambda _root: _NoopContext())
+    run_dir = tmp_path / "heavy-runs" / "logs-run"
+    run_dir.mkdir(parents=True)
+    command = [
+        sys.executable,
+        "-c",
+        "import sys,time; print('OUT'); print('ERR', file=sys.stderr); "
+        f"time.sleep(.2); raise SystemExit({exit_code})",
+    ]
+    flow._atomic_json(run_dir / "command.json", command)
+    flow._atomic_json(run_dir / "state.json", {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "logs-run",
+        "label": "logs",
+        "argv_digest": "a" * 64,
+        "status": "starting",
+        "started_at": 1.0,
+        "stdout_path": str(run_dir / "stdout.log"),
+        "stderr_path": str(run_dir / "stderr.log"),
+        "state_path": str(run_dir / "state.json"),
+    })
+
+    result = flow.command_heavy_monitor(
+        tmp_path, SimpleNamespace(run_id="logs-run")
+    )
+
+    state = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+    assert result == exit_code
+    assert state["status"] == expected_status
+    assert state["exit_code"] == exit_code
+    assert state["monitor_created_at"] > 0
+    assert state["child_created_at"] > 0
+    assert "OUT" in (run_dir / "stdout.log").read_text(encoding="utf-8")
+    assert "ERR" in (run_dir / "stderr.log").read_text(encoding="utf-8")
+
+
+def test_heavy_monitor_marks_lock_failure_for_prompt_handshake(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    run_dir = tmp_path / "heavy-runs" / "locked-run"
+    run_dir.mkdir(parents=True)
+    flow._atomic_json(run_dir / "command.json", [sys.executable, "-c", "pass"])
+    flow._atomic_json(run_dir / "state.json", {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "locked-run",
+        "label": "locked",
+        "argv_digest": "a" * 64,
+        "status": "starting",
+        "started_at": 1.0,
+        "stdout_path": str(run_dir / "stdout.log"),
+        "stderr_path": str(run_dir / "stderr.log"),
+        "state_path": str(run_dir / "state.json"),
+    })
+
+    def reject_lock(_root):
+        raise flow.FlowError("another GenericChess heavy command is already running")
+
+    monkeypatch.setattr(flow, "heavy_lock", reject_lock)
+    assert flow.command_heavy_monitor(
+        tmp_path, SimpleNamespace(run_id="locked-run")
+    ) == 1
+    state = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+    assert state["status"] == "failed"
+    assert "already running" in state["error"]
+
+
+def test_heavy_start_uses_detached_hidden_monitor_and_waits_for_handshake(
+    monkeypatch, tmp_path, capsys
+):
+    _heavy_start_mocks(monkeypatch, tmp_path)
+    observed = {}
+
+    class FakeMonitor:
+        returncode = None
+
+        def poll(self):
+            return None
+
+    def fake_popen(argv, **kwargs):
+        observed["argv"] = argv
+        observed.update(kwargs)
+        run_id = argv[-1]
+        state_path = tmp_path / "heavy-runs" / run_id / "state.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state.update({
+            "status": "running",
+            "monitor_pid": 10,
+            "monitor_created_at": 100.0,
+            "child_pid": 11,
+            "child_created_at": 101.0,
+            "handshake_at": 102.0,
+            "heartbeat_at": 102.0,
+        })
+        flow._atomic_json(state_path, state)
+        return FakeMonitor()
+
+    monkeypatch.setattr(flow.subprocess, "Popen", fake_popen)
+    result = flow.command_heavy_start(
+        tmp_path,
+        SimpleNamespace(label="survival", argv=["--", sys.executable, "-c", "pass"]),
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert result == 0
+    assert payload["status"] == "running"
+    assert observed["creationflags"] & flow.subprocess.DETACHED_PROCESS
+    assert observed["creationflags"] & flow.subprocess.CREATE_NO_WINDOW
+
+
+def test_heavy_start_atomically_records_monitor_launch_failure(monkeypatch, tmp_path):
+    _heavy_start_mocks(monkeypatch, tmp_path)
+    monkeypatch.setattr(
+        flow.subprocess, "Popen",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(OSError("launch failed")),
+    )
+    with pytest.raises(flow.FlowError, match="could not launch monitor"):
+        flow.command_heavy_start(
+            tmp_path,
+            SimpleNamespace(label="launch", argv=["--", sys.executable, "-c", "pass"]),
+        )
+    state_paths = list((tmp_path / "heavy-runs").glob("*/state.json"))
+    assert len(state_paths) == 1
+    state = json.loads(state_paths[0].read_text(encoding="utf-8"))
+    assert state["status"] == "failed"
+    assert "launch failed" in state["error"]
+
+
+@pytest.mark.parametrize("gate", ["worker", "hold", "master"])
+def test_heavy_start_rejects_authority_hold_and_master(
+    monkeypatch, tmp_path, gate
+):
+    _heavy_start_mocks(monkeypatch, tmp_path)
+    if gate == "worker":
+        monkeypatch.setattr(
+            flow, "require_worker_write_authority",
+            lambda *_args: (_ for _ in ()).throw(flow.FlowError("wrong worker")),
+        )
+        match = "wrong worker"
+    elif gate == "hold":
+        monkeypatch.setattr(
+            flow, "require_no_supervisor_hold",
+            lambda _root: (_ for _ in ()).throw(flow.FlowError("HOLD")),
+        )
+        match = "HOLD"
+    else:
+        monkeypatch.setattr(flow, "branch", lambda _root: "master")
+        match = "sandbox"
+    with pytest.raises(flow.FlowError, match=match):
+        flow.command_heavy_start(
+            tmp_path,
+            SimpleNamespace(label="rejected", argv=["--", sys.executable, "-c", "pass"]),
+        )

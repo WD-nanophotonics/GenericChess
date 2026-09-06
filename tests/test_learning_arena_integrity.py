@@ -1,7 +1,10 @@
 """Learning Phase 1.5: arena measurement integrity gates."""
 
+from dataclasses import asdict, replace
+import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -12,7 +15,10 @@ from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.learning.arena import (
     ArenaConfig,
     ArenaExecutionError,
+    ArenaGameResult,
+    ArenaPairResult,
     run_arena,
+    run_arena_resumable,
 )
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
@@ -133,3 +139,198 @@ def test_engine_failure_is_not_a_draw(monkeypatch):
     config = ArenaConfig(pairs=1, nodes_per_move=200, max_depth=4)
     with pytest.raises(ArenaExecutionError):
         run_arena(compiled, rules, checkpoint, child, config)
+
+
+def _synthetic_pair(index: int) -> ArenaPairResult:
+    def game(owner: int, winner: int | None) -> ArenaGameResult:
+        return ArenaGameResult(
+            pair=index,
+            opening_id=f"opening-{index}",
+            opening_position_key=f"position-{index}",
+            child_owner=owner,
+            winner=winner,
+            result="draw" if winner is None else "win",
+            plies=index + owner,
+            actions=(),
+            final_position_key=f"final-{index}-{owner}",
+        )
+    return ArenaPairResult(
+        pair_index=index,
+        opening_id=f"opening-{index}",
+        game_child_owner0=game(0, None if index % 2 else 0),
+        game_child_owner1=game(1, None if index % 2 else 0),
+    )
+
+
+def _synthetic_resumable_inputs(monkeypatch, *, pairs=4, workers=1):
+    from generic_chess.learning import arena as arena_module
+
+    openings = SimpleNamespace(
+        openings=tuple(
+            SimpleNamespace(index=index, final_position_key=f"opening-{index}")
+            for index in range(pairs)
+        ),
+        to_dict=lambda: {
+            "openings": [
+                {"index": index, "final_position_key": f"opening-{index}", "actions": []}
+                for index in range(pairs)
+            ]
+        },
+    )
+    monkeypatch.setattr(
+        arena_module, "_prepare_arena", lambda *_args, **_kwargs: openings
+    )
+    monkeypatch.setattr(
+        arena_module, "_validate_replayed_game", lambda *_args, **_kwargs: None
+    )
+    compiled = SimpleNamespace(ruleset_fingerprint="rules-v1")
+    parent = SimpleNamespace(checkpoint_id="parent-v1")
+    child = SimpleNamespace(checkpoint_id="child-v1")
+    config = ArenaConfig(
+        pairs=pairs, nodes_per_move=17, max_depth=3, tt_megabytes=2,
+        opening_seed=91, opening_count=pairs, min_plies=1, max_plies=2,
+        workers=workers,
+    )
+    return arena_module, compiled, parent, child, config, openings
+
+
+def test_resumable_arena_interrupts_then_executes_only_missing_pairs(
+    monkeypatch, tmp_path
+):
+    arena_module, compiled, parent, child, config, openings = (
+        _synthetic_resumable_inputs(monkeypatch)
+    )
+    calls = []
+
+    def interrupted(*args):
+        index = args[-1]
+        calls.append(index)
+        if index == 2:
+            raise RuntimeError("simulated interruption")
+        return _synthetic_pair(index)
+
+    monkeypatch.setattr(arena_module, "_play_pair", interrupted)
+    with pytest.raises(RuntimeError, match="simulated interruption"):
+        run_arena_resumable(
+            compiled, None, parent, child, config,
+            progress_dir=tmp_path / "resume", openings=openings,
+        )
+    assert calls == [0, 1, 2]
+
+    resumed_calls = []
+    monkeypatch.setattr(
+        arena_module, "_play_pair",
+        lambda *args: resumed_calls.append(args[-1]) or _synthetic_pair(args[-1]),
+    )
+    resumed = run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "resume", openings=openings,
+    )
+    uninterrupted = run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "fresh", openings=openings,
+    )
+
+    assert resumed_calls[:2] == [2, 3]
+    assert resumed == uninterrupted
+
+
+def test_resumable_arena_rejects_identity_mismatch_corruption_and_half_pair(
+    monkeypatch, tmp_path
+):
+    arena_module, compiled, parent, child, config, openings = (
+        _synthetic_resumable_inputs(monkeypatch, pairs=1)
+    )
+    monkeypatch.setattr(
+        arena_module, "_play_pair", lambda *args: _synthetic_pair(args[-1])
+    )
+    identity_dir = tmp_path / "identity"
+    run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=identity_dir, openings=openings,
+    )
+    manifest = json.loads(
+        (identity_dir / "manifest.json").read_text(encoding="utf-8")
+    )
+    assert manifest["identity"]["config"] == asdict(config)
+    assert manifest["identity"]["ordered_openings"] == openings.to_dict()["openings"]
+    with pytest.raises(ArenaExecutionError, match="identity"):
+        run_arena_resumable(
+            compiled, None, parent, child,
+            replace(config, nodes_per_move=config.nodes_per_move + 1),
+            progress_dir=identity_dir, openings=openings,
+        )
+
+    corrupt_dir = tmp_path / "corrupt"
+    run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=corrupt_dir, openings=openings,
+    )
+    (corrupt_dir / "pair-000000.json").write_text("{bad", encoding="utf-8")
+    with pytest.raises(ArenaExecutionError, match="corrupt"):
+        run_arena_resumable(
+            compiled, None, parent, child, config,
+            progress_dir=corrupt_dir, openings=openings,
+        )
+
+    half_dir = tmp_path / "half"
+    run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=half_dir, openings=openings,
+    )
+    pair_path = half_dir / "pair-000000.json"
+    payload = json.loads(pair_path.read_text(encoding="utf-8"))
+    del payload["game_child_owner1"]
+    pair_path.write_text(json.dumps(payload), encoding="utf-8")
+    with pytest.raises(ArenaExecutionError, match="corrupt"):
+        run_arena_resumable(
+            compiled, None, parent, child, config,
+            progress_dir=half_dir, openings=openings,
+        )
+
+
+def test_resumable_arena_concurrent_completion_order_is_deterministic(
+    monkeypatch, tmp_path
+):
+    import time
+
+    arena_module, compiled, parent, child, config, openings = (
+        _synthetic_resumable_inputs(monkeypatch, pairs=6, workers=4)
+    )
+
+    def out_of_order(*args):
+        index = args[-1]
+        time.sleep((config.pairs - index) * 0.002)
+        return _synthetic_pair(index)
+
+    monkeypatch.setattr(arena_module, "_play_pair", out_of_order)
+    first = run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "first", openings=openings,
+    )
+    second = run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "second", openings=openings,
+    )
+    assert first == second
+    assert [pair.pair_index for pair in first.pairs] == list(range(config.pairs))
+
+
+@requires_native
+def test_resumable_arena_rejects_semantically_corrupted_game_by_replay(tmp_path):
+    compiled, rules, checkpoint, child = _setup()
+    config = ArenaConfig(pairs=1, nodes_per_move=200, max_depth=4)
+    progress = tmp_path / "semantic-corruption"
+    run_arena_resumable(
+        compiled, rules, checkpoint, child, config, progress_dir=progress
+    )
+    pair_path = progress / "pair-000000.json"
+    payload = json.loads(pair_path.read_text(encoding="utf-8"))
+    game = payload["game_child_owner0"]
+    game["final_position_key"] = "corrupted-final-position"
+    pair_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(ArenaExecutionError, match="does not replay"):
+        run_arena_resumable(
+            compiled, rules, checkpoint, child, config, progress_dir=progress
+        )
