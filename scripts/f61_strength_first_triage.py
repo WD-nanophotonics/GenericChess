@@ -230,7 +230,10 @@ def _hand_type_indices(compiled):
 
 
 def _candidate_checkpoint(parent, compiled, model, spec):
-    payload = replace(model, hand_type_indices=_hand_type_indices(compiled)).to_dict()
+    payload = replace(
+        model, hand_type_indices=_hand_type_indices(compiled),
+        perspective="successor_root_q",
+    ).to_dict()
     config_hash = stable_sha256({
         "stage": "F61_STRENGTH_FIRST_TRIAGE",
         "parent": parent.checkpoint_id,

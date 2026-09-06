@@ -27,3 +27,15 @@ The four-pair decision rule is explicit: a candidate is catastrophic only when m
 `TrainingTrajectory` now records `termination_reason`, `truncated`, and optional `bootstrap_value`. Ongoing or truncated trajectories fail closed in `terminal_z` and TDLeaf unless a finite explicit bootstrap is supplied. Self-play marks max-ply cutoffs as `ongoing`/`truncated` with reason `max_plies`; serialization preserves the fields. Historical F50–F53 evidence is not reclassified.
 
 The F61 result is a credible offline Arena signal for D2, not a promotion authorization. Any next-generation work must remain receipt-bound and preserve the same parent/child behavioral gate.
+
+## Corrective deployment identities
+
+The corrective checkpoint uses the identical persisted tensors and changes only the serialized perspective contract plus the corrective training-config binding, so it intentionally has a fresh identity and TT. Old → corrected IDs are:
+
+| Candidate | Old mismatched ID | Corrected ID |
+|---|---|---|
+| D0 | `15ea86075a15379bfa7758886ddb5855ceddcdbf540b33763130c3551875662a` | `d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4` |
+| D12 | `1768912761b6dfc2826889f6ec80d024eb79ece06a6f61e9cd8087c2c2367f87` | `da51634c07eaa86b300e6e7c7e563bb79c002218156ec49900fc3dc1a32946d3` |
+| D2 | `b352edefee0ebd226dca8345d60949f4d77122dd0592910bffefebec415168ae` | `3bc950ed46b483f09852de56d1d942505b04ac2ca9aeacd1ea40f5cae1825f29` |
+
+The corrected IDs are prepared for the next fresh-opening diagnostic; the original 0.875 Arena record remains bound to the old mismatched D2 ID and is not relabeled as corrected strength evidence.

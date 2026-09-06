@@ -13,21 +13,28 @@ DEST = ROOT / "docs" / "architecture" / "GENERICCHESS_F61_MODEL_PARAMS.json"
 
 def main() -> None:
     payload = json.loads(SOURCE.read_text(encoding="utf-8"))
+    candidates = [
+        {
+            key: candidate[key]
+            for key in (
+                "candidate_id", "training_distribution", "objective", "seed",
+                "parent_checkpoint_id", "checkpoint_id", "model_sha256",
+                "input_dimension", "model",
+            )
+        }
+        for candidate in payload["candidates"]
+    ]
+    corrected = []
+    for candidate in candidates:
+        model = dict(candidate["model"])
+        model["perspective"] = "successor_root_q"
+        corrected.append({**candidate, "model": model})
     durable = {
         "work_order": payload["work_order"],
         "parent_checkpoint_id": payload["parent_checkpoint_id"],
         "f60_result_sha256": payload["f60_result_sha256"],
-        "candidates": [
-            {
-                key: candidate[key]
-                for key in (
-                    "candidate_id", "training_distribution", "objective", "seed",
-                    "parent_checkpoint_id", "checkpoint_id", "model_sha256",
-                    "input_dimension", "model",
-                )
-            }
-            for candidate in payload["candidates"]
-        ],
+        "candidates": candidates,
+        "corrected_candidates": corrected,
     }
     DEST.write_text(json.dumps(durable, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 

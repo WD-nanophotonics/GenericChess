@@ -75,6 +75,9 @@ class CompactNonlinearResidual:
     # Indices into the Native current-type table for the base-type hand axis.
     # Populated when a trained model is bound to a checkpoint.
     hand_type_indices: tuple[int, ...] = ()
+    # owner0 preserves v4 behavior; successor_root_q is rooted in the player
+    # who made the action and needs a fixed negative sign at every leaf.
+    perspective: str = "owner0"
 
     def predict(self, features: np.ndarray) -> np.ndarray:
         x = np.asarray(features, dtype=np.float64)
@@ -94,6 +97,8 @@ class CompactNonlinearResidual:
         }
         if self.hand_type_indices:
             payload["hand_type_indices"] = list(self.hand_type_indices)
+        if self.perspective != "owner0":
+            payload["perspective"] = self.perspective
         return payload
 
     @classmethod
@@ -106,6 +111,7 @@ class CompactNonlinearResidual:
             output_bias=float(payload["output_bias"]), width=int(payload["width"]),
             regularization=float(payload["regularization"]), seed=int(payload["seed"]),
             hand_type_indices=tuple(int(v) for v in payload.get("hand_type_indices", ())),
+            perspective=str(payload.get("perspective", "owner0")),
         )
 
 

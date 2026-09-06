@@ -3358,6 +3358,7 @@ typedef struct {
     double *output_weights;
     double output_bias;
     double target_scale;
+    int perspective;
 } GCSemanticCompactModel;
 
 typedef struct GCSemanticProbeProfile {
@@ -3472,7 +3473,9 @@ static int gc_semantic_probe_material(const GCSemanticRules *rules, const GCSema
              * fixed-point score units with the semantic evaluator scale. */
             int64_t fixed_residual = (int64_t)llround(
                 residual * (double)profile->evaluator_scale);
-            score += position->side_to_move == 0 ? fixed_residual : -fixed_residual;
+            score += profile->compact->perspective == 1
+                ? -fixed_residual
+                : (position->side_to_move == 0 ? fixed_residual : -fixed_residual);
         }
     }
     if (score > GC_SEMANTIC_STATIC_LIMIT) return GC_SEMANTIC_STATIC_LIMIT;
@@ -4392,6 +4395,7 @@ static int gc_semantic_parse_profile(PyObject *board_values,
         PyObject *target_scale = PyDict_GetItemString(compact_values, "target_scale");
         PyObject *width_obj = PyDict_GetItemString(compact_values, "width");
         PyObject *hand_indices = PyDict_GetItemString(compact_values, "hand_type_indices");
+        PyObject *perspective = PyDict_GetItemString(compact_values, "perspective");
         if (!mean || !scale || !hidden || !hidden_bias || !output || !output_bias ||
             !target_scale || !width_obj || !hand_indices) {
             PyErr_SetString(PyExc_ValueError,
@@ -4449,6 +4453,23 @@ static int gc_semantic_parse_profile(PyObject *board_values,
             return 0;
         }
         profile->compact = model;
+        model->perspective = 0;
+        if (perspective != NULL) {
+            if (!PyUnicode_Check(perspective)) {
+                PyErr_SetString(PyExc_ValueError, "compact nonlinear perspective must be a string");
+                gc_semantic_profile_free(profile);
+                return 0;
+            }
+            const char *name = PyUnicode_AsUTF8(perspective);
+            if (!name) { gc_semantic_profile_free(profile); return 0; }
+            if (strcmp(name, "owner0") == 0) model->perspective = 0;
+            else if (strcmp(name, "successor_root_q") == 0) model->perspective = 1;
+            else {
+                PyErr_SetString(PyExc_ValueError, "unknown compact nonlinear perspective");
+                gc_semantic_profile_free(profile);
+                return 0;
+            }
+        }
         for (Py_ssize_t i = 0; i < hand_count; i++) {
             PyObject *value = PySequence_GetItem(hand_indices, i);
             long index = PyLong_AsLong(value);
