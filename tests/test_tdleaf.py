@@ -2,6 +2,7 @@
 
 import math
 import sys
+from dataclasses import replace
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -184,3 +185,52 @@ def test_owner_zero_perspective_terminal_sign():
     r_loss = tdleaf_update([loss], checkpoint, config)
     assert math.copysign(1.0, r_win.board_weights["P"] - checkpoint.board_weights["P"]) == \
         -math.copysign(1.0, r_loss.board_weights["P"] - checkpoint.board_weights["P"])
+
+
+@pytest.mark.parametrize("terminal,truncated", [("ongoing", False), ("ongoing", True)])
+def test_tdleaf_rejects_ongoing_or_truncated_trajectory_without_bootstrap(
+    terminal, truncated
+):
+    trajectory = _trajectory(
+        ("P", "Q"),
+        [_point(0, (1, 0), (0, 0), 0.0)],
+        terminal,
+        None,
+    )
+    if truncated:
+        trajectory = replace(trajectory, truncated=True)
+    with pytest.raises(ValueError, match="bootstrap_value"):
+        tdleaf_update([trajectory], _checkpoint(), TDLeafConfig(alpha=0.1))
+
+
+def test_terminal_z_accepts_explicit_bootstrap_for_truncated_trajectory():
+    trajectory = replace(
+        _trajectory(
+            ("P", "Q"),
+            [_point(0, (1, 0), (0, 0), 0.0)],
+            "ongoing",
+            None,
+        ),
+        truncated=True,
+        termination_reason="max_plies",
+        bootstrap_value=0.375,
+    )
+    assert trajectory.terminal_z == pytest.approx(0.375)
+
+
+def test_trajectory_roundtrip_preserves_cutoff_contract():
+    trajectory = replace(
+        _trajectory(
+            ("P", "Q"),
+            [_point(0, (1, 0), (0, 0), 0.0)],
+            "ongoing",
+            None,
+        ),
+        truncated=True,
+        termination_reason="max_plies",
+    )
+    restored = TrainingTrajectory.from_dict(trajectory.to_dict())
+    assert restored.truncated is True
+    assert restored.termination_reason == "max_plies"
+    with pytest.raises(ValueError, match="bootstrap_value"):
+        _ = restored.terminal_z

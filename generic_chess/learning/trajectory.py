@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 
 from ..core.actions import Action, action_from_dict, action_to_dict
 from .features import DynamicFeatureVector, MaterialFeatureVector
@@ -37,6 +38,9 @@ class TrainingTrajectory:
     terminal: str
     winner: int | None
     type_ids: tuple[str, ...]
+    termination_reason: str = ""
+    truncated: bool = False
+    bootstrap_value: float | None = None
 
     @property
     def trajectory_id(self) -> str:
@@ -45,6 +49,15 @@ class TrainingTrajectory:
     @property
     def terminal_z(self) -> float:
         """Owner-0 perspective terminal target (+1/-1/0)."""
+        if self.terminal == "ongoing" or self.truncated:
+            if self.bootstrap_value is None:
+                raise ValueError(
+                    "ongoing or truncated trajectories require an explicit "
+                    "bootstrap_value before TDLeaf training"
+                )
+            if not math.isfinite(self.bootstrap_value):
+                raise ValueError("bootstrap_value must be finite")
+            return float(self.bootstrap_value)
         if self.winner is None:
             return 0.0
         return 1.0 if self.winner == 0 else -1.0
@@ -61,6 +74,9 @@ class TrainingTrajectory:
             "terminal": self.terminal,
             "winner": self.winner,
             "type_ids": list(self.type_ids),
+            "termination_reason": self.termination_reason,
+            "truncated": self.truncated,
+            "bootstrap_value": self.bootstrap_value,
             "points": [
                 {
                     "ply": p.ply,
@@ -92,6 +108,15 @@ class TrainingTrajectory:
             terminal=str(data["terminal"]),
             winner=data["winner"],
             type_ids=tuple(data["type_ids"]),
+            termination_reason=str(
+                data.get("termination_reason", data["terminal"])
+            ),
+            truncated=bool(data.get("truncated", data["terminal"] == "ongoing")),
+            bootstrap_value=(
+                None
+                if data.get("bootstrap_value") is None
+                else float(data["bootstrap_value"])
+            ),
             points=tuple(
                 TrainingPoint(
                     ply=int(p["ply"]),

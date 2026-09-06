@@ -79,6 +79,9 @@ def tdleaf_update(
     td_errors: list[float] = []
     positions_seen = 0
     for trajectory in trajectories:
+        # Resolve the terminal contract even for empty trajectories so a
+        # truncated/ongoing game cannot silently become a draw target.
+        terminal = trajectory.terminal_z
         points = trajectory.points
         if not points:
             continue
@@ -94,7 +97,6 @@ def tdleaf_update(
             )
             for p in points
         ]
-        terminal = trajectory.terminal_z
         eligibility_board: dict[str, float] = {}
         eligibility_hand: dict[str, float] = {}
         eligibility_dynamic: dict[str, float] = {}

@@ -5,11 +5,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import pytest
+
 from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.learning.arena import ArenaConfig, run_arena
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.selfplay import SelfPlayConfig, collect_self_play
+from generic_chess.learning.tdleaf import TDLeafConfig, tdleaf_update
 from generic_chess.native.compiler import compile_native_rules
 
 from native_test_helpers import generated_compiled, requires_native
@@ -61,6 +64,29 @@ def test_selfplay_has_some_exploration_and_some_search_moves():
     all_points = [p for t in trajectories for p in t.points]
     assert any(p.exploration for p in all_points)
     assert any(not p.exploration for p in all_points)
+
+
+@requires_native
+def test_selfplay_marks_max_ply_cutoff_and_tdleaf_rejects_it():
+    compiled, rules, checkpoint = _setup(size=6)
+    trajectories = collect_self_play(
+        compiled,
+        rules,
+        checkpoint,
+        SelfPlayConfig(
+            games=1,
+            nodes_per_move=200,
+            max_depth=4,
+            seed=13,
+            max_plies=1,
+        ),
+    )
+    trajectory = trajectories[0]
+    assert trajectory.terminal == "ongoing"
+    assert trajectory.truncated is True
+    assert trajectory.termination_reason == "max_plies"
+    with pytest.raises(ValueError, match="bootstrap_value"):
+        tdleaf_update([trajectory], checkpoint, TDLeafConfig(alpha=0.1))
 
 
 @requires_native

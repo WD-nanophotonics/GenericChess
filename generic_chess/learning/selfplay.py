@@ -153,6 +153,15 @@ def collect_self_play(
             session.submit(action)
             ply += 1
         result = session.result
+        truncated = result.status.value == "ongoing"
+        if truncated:
+            termination_reason = (
+                "max_plies"
+                if config.max_plies is not None and ply >= config.max_plies
+                else "ongoing_after_loop"
+            )
+        else:
+            termination_reason = result.status.value
         from ..core.transition import initial_state
         initial_key = position_identity_key(
             initial_state(compiled).position, compiled
@@ -170,6 +179,8 @@ def collect_self_play(
                 terminal=result.status.value,
                 winner=result.winner,
                 type_ids=type_ids,
+                termination_reason=termination_reason,
+                truncated=truncated,
             )
         )
     return trajectories
