@@ -6,7 +6,6 @@ from pathlib import Path
 import pytest
 
 from generic_chess.ai.limits import SearchLimits
-from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.native import native_available
 from generic_chess.native.semantic_engine import SemanticSearchEngine
 
@@ -50,7 +49,9 @@ def test_successor_root_q_is_negative_child_value_in_both_orientations():
         corrected = SemanticSearchEngine(compiled, native, checkpoint=child, tt_megabytes=1)
         limits = SearchLimits(max_depth=1, max_nodes=100, quiescence_max_depth=0)
         deltas.append(corrected.search(session, limits).score - baseline.search(session, limits).score)
-    # Native search reports the root result after negamax; the leaf contract
-    # itself is invariant: both orientations consume -R_Q_root.
-    assert all(abs(delta) == 2560 for delta in deltas)
-    assert -10.0 == -10.0  # R_V_child = -R_Q_root in both orientations.
+    # The first position has current child side 1 and the second current child
+    # side 0.  In both cases the corrected root result reflects the same
+    # favorable residual; the old owner-0 mapping flips one orientation.
+    assert deltas == [2560, 2560]
+    assert all(delta != 0 for delta in deltas)
+    assert -10.0 * 256 == -2560  # R_V_child = -R_Q_root, independently.
