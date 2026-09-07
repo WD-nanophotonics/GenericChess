@@ -60,12 +60,20 @@ class ArenaConfig:
     min_plies: int = 2
     max_plies: int = 6
     workers: int = 1
+    parent_nodes_per_move: int | None = None
+    child_nodes_per_move: int | None = None
 
     def __post_init__(self) -> None:
         if self.pairs <= 0 or self.nodes_per_move <= 0 or self.max_depth <= 0:
             raise ValueError("arena budgets must be positive")
         if self.workers <= 0:
             raise ValueError("arena workers must be positive")
+        for role, budget in (
+            ("parent", self.parent_nodes_per_move),
+            ("child", self.child_nodes_per_move),
+        ):
+            if budget is not None and budget <= 0:
+                raise ValueError(f"{role} nodes_per_move must be positive")
 
 
 @dataclass(frozen=True, slots=True)
@@ -183,12 +191,17 @@ def _play_one_game(
             )
         side = session.state.position.side_to_move
         engine = child_engine if side == child_owner else parent_engine
+        role = "child" if side == child_owner else "parent"
+        nodes_per_move = (
+            config.child_nodes_per_move if role == "child"
+            else config.parent_nodes_per_move
+        ) or config.nodes_per_move
         wall_started = time.perf_counter()
         result = engine.search(
             session,
             SearchLimits(
                 max_depth=config.max_depth,
-                max_nodes=config.nodes_per_move,
+                max_nodes=nodes_per_move,
                 quiescence_max_depth=0,
             ),
         )
@@ -200,7 +213,8 @@ def _play_one_game(
             )
             search_metrics.append({
                 "side_to_move": side,
-                "engine_role": "child" if side == child_owner else "parent",
+                "engine_role": role,
+                "nodes_budget": nodes_per_move,
                 "score": int(result.score),
                 "nodes": int(result.nodes),
                 "elapsed_seconds": elapsed,

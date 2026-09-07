@@ -122,6 +122,35 @@ def test_search_telemetry_captures_and_replays_every_decision(tmp_path):
     assert resumed == summary
 
 
+@requires_native
+def test_role_specific_node_budgets_are_recorded_and_enforced():
+    compiled, rules, checkpoint, child = _setup()
+    config = ArenaConfig(
+        pairs=1,
+        nodes_per_move=200,
+        parent_nodes_per_move=50,
+        child_nodes_per_move=100,
+        max_depth=4,
+    )
+    summary = run_arena(
+        compiled, rules, checkpoint, child, config,
+        capture_search_metrics=True,
+    )
+    metrics = [
+        metric
+        for game in (
+            summary.pairs[0].game_child_owner0,
+            summary.pairs[0].game_child_owner1,
+        )
+        for metric in game.search_metrics
+    ]
+    assert {metric["nodes_budget"] for metric in metrics} <= {50, 100}
+    assert all(
+        metric["nodes"] <= (100 if metric["engine_role"] == "child" else 50)
+        for metric in metrics
+    )
+
+
 def test_search_telemetry_rejects_unsigned_elapsed_underflow_shape():
     elapsed, source = _trusted_search_elapsed(18_446_742_229.0, 0.25)
     assert elapsed == 0.25

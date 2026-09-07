@@ -235,3 +235,17 @@ The allowed conclusions are diagnostic classifications, not causal claims:
 `POLICY_RELEVANT_DISTRIBUTION_DIFFERS`, `STATE_DISTRIBUTION_MISMATCH_SUPPORTED`,
 `REPRESENTATION_REMAINS_PRIMARY`, or a documented mixture. Western is a smaller
 sanity diagnostic; F59 does not run AlphaSho.
+
+## Current empirical status after F61/F62
+
+* **F61:** the corrected Gen0 -> Gen1 Standard Shogi mechanism produced a
+  confirmed internal paired-strength improvement.
+* **F62:** one exact-mechanism Gen1 -> Gen2 replacement re-distillation changed
+  4 of 8 fresh search decisions but scored 0.15625 across the frozen 8-pair
+  Arena. It therefore did not establish monotonic next-generation improvement.
+* **Authority:** equal-budget paired Arena is the strength authority;
+  teacher-fit and offline metrics remain diagnostic.
+* **Boundary:** the unresolved question is repeatable policy improvement and
+  teacher-to-student transfer, not evaluator feature invention. F63 therefore
+  tests whether deeper Gen1 search is itself an improving teacher before
+  evaluating a bounded champion-retention candidate loop.
