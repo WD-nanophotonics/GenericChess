@@ -97,6 +97,22 @@ def test_candidate_resume_source_has_no_teacher_stage_call():
     assert "CANDIDATE_PATH" in source
 
 
+@pytest.mark.parametrize(
+    ("stage", "expected"),
+    [
+        ({"status": "INCOMPLETE", "decision_state": "PASS_LOCKED"}, "RUN_32"),
+        ({"status": "COMPLETE", "decision_state": "PASS_LOCKED"}, "RUN_32"),
+        ({"status": "INCOMPLETE", "decision_state": "FAIL_LOCKED"}, "FAIL_LOCKED"),
+        ({"status": "COMPLETE", "decision_state": "FAIL_LOCKED"}, "FAIL_LOCKED"),
+        ({"status": "PAUSED", "decision_state": "UNRESOLVED"}, "INCONCLUSIVE_RESUMABLE"),
+        ({"status": "INCOMPLETE", "decision_state": "UNRESOLVED"}, "INCONCLUSIVE_RESUMABLE"),
+        ({"status": "COMPLETE", "decision_state": "UNRESOLVED"}, "RUN_32"),
+    ],
+)
+def test_selected_eight_continuation_is_decision_aware(stage, expected):
+    assert f63._selected_eight_continuation(stage) == expected
+
+
 def test_candidate_resume_freezes_all_identities_before_first_arena(monkeypatch):
     compiled = object()
     gen1 = type("Checkpoint", (), {"checkpoint_id": f63.GEN1_ID})()

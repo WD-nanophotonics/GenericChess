@@ -25,6 +25,7 @@ from generic_chess.learning.arena import (
     run_arena_game_resumable,
     run_arena_resumable,
     _pair_from_dict,
+    _validate_game_telemetry,
     _validate_replayed_game,
 )
 from generic_chess.learning.material import LearnableMaterialCheckpoint
@@ -180,6 +181,15 @@ def validate_frozen_teacher_decision(
             opening = openings.openings[row["pair_index"]]
             _validate_replayed_game(compiled, opening, pair.game_child_owner0)
             _validate_replayed_game(compiled, opening, pair.game_child_owner1)
+            teacher_config = ArenaConfig(**config)
+            _validate_game_telemetry(
+                pair.game_child_owner0, teacher_config,
+                capture_search_metrics=True,
+            )
+            _validate_game_telemetry(
+                pair.game_child_owner1, teacher_config,
+                capture_search_metrics=True,
+            )
         except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
             raise RuntimeError(f"F63 teacher pair validation failed: {row['file']}") from exc
         if pair.pair_index != row["pair_index"] or pair.opening_id != opening.final_position_key:
@@ -398,6 +408,18 @@ def _run_candidate_stage(
     return payload
 
 
+def _selected_eight_continuation(stage: dict) -> str:
+    """Choose 32-pair continuation from decision state and execution state."""
+    state = stage.get("decision_state")
+    if state == "PASS_LOCKED":
+        return "RUN_32"
+    if state == "FAIL_LOCKED":
+        return "FAIL_LOCKED"
+    if stage.get("status") != "COMPLETE":
+        return "INCONCLUSIVE_RESUMABLE"
+    return "RUN_32"
+
+
 def _select_candidate(results):
     # Every key is a game-result statistic; seed is only the deterministic tie break.
     return min(
@@ -513,13 +535,33 @@ def run_candidate_resume(*, smoke: bool = False):
         decision_criterion="f63_teacher_gate",
     )
     result["candidate_loop"]["selected_8_pairs"] = selected_eight
-    if selected_eight["status"] == "COMPLETE":
-        selected_32 = _run_candidate_stage(
-            compiled, native, gen1, selected_candidate, 32, 630405,
-            f"selected-{selected['seed']}-32",
-            decision_criterion="f63_teacher_gate",
+    continuation = _selected_eight_continuation(selected_eight)
+    result["candidate_loop"]["selected_8_continuation"] = continuation
+    if continuation == "FAIL_LOCKED":
+        result["candidate_loop"]["classification"] = (
+            "TEACHER_IMPROVES_BUT_REPLACEMENT_DISTILLATION_FAILS"
         )
-        result["candidate_loop"]["selected_32_pairs"] = selected_32
+        _atomic_json(RESULT_PATH, result)
+        return result
+    if continuation == "INCONCLUSIVE_RESUMABLE":
+        result["candidate_loop"]["classification"] = (
+            "CANDIDATE_STAGE_INCOMPLETE_RESUMABLE"
+        )
+        _atomic_json(RESULT_PATH, result)
+        return result
+
+    selected_32 = _run_candidate_stage(
+        compiled, native, gen1, selected_candidate, 32, 630405,
+        f"selected-{selected['seed']}-32",
+        decision_criterion="f63_teacher_gate",
+    )
+    result["candidate_loop"]["selected_32_pairs"] = selected_32
+    if selected_32["status"] != "COMPLETE":
+        result["candidate_loop"]["classification"] = (
+            "CANDIDATE_CONFIRMATION_INCOMPLETE_RESUMABLE"
+        )
+        _atomic_json(RESULT_PATH, result)
+        return result
     result["candidate_loop"]["classification"] = (
         "BOUNDED_CHAMPION_LOOP_REPEATABILITY_SIGNAL"
         if result["candidate_loop"].get("selected_32_pairs", {}).get(
