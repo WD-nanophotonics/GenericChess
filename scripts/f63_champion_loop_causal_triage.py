@@ -433,7 +433,7 @@ def _select_candidate(results):
     )
 
 
-def run_candidate_resume(*, smoke: bool = False):
+def _run_candidate_resume_legacy(*, smoke: bool = False):
     """Resume F63 after the frozen teacher decision; never runs teacher games."""
     if smoke:
         raise RuntimeError(
@@ -573,6 +573,176 @@ def run_candidate_resume(*, smoke: bool = False):
     return result
 
 
+def _resume_context(compiled):
+    gen1 = _load_gen1(compiled)
+    teacher = validate_frozen_teacher_decision(compiled)
+    teacher_artifact = teacher["artifact"]
+    if (
+        not teacher_artifact.get("authorizes_candidate_branch")
+        or teacher["bound"].decision_state != "PASS_LOCKED"
+    ):
+        raise RuntimeError("F63 frozen teacher decision does not unlock candidates")
+    summary, provenance, persisted_gen2, persisted_identity = (
+        _load_f62_training_summary(compiled, gen1)
+    )
+    candidates = []
+    for seed in GEN2_SEEDS:
+        if seed == 59012:
+            candidate = persisted_gen2
+            if candidate.checkpoint_id != persisted_identity["gen2_checkpoint_id"]:
+                raise RuntimeError("F62 persisted Gen2 checkpoint identity mismatch")
+            identity = persisted_identity | {
+                "checkpoint_id": persisted_identity["gen2_checkpoint_id"],
+                "reused_exact_f62_candidate": True,
+            }
+        else:
+            candidate, identity = _fit_candidate(
+                compiled, gen1, summary, provenance, seed
+            )
+        candidates.append({"seed": seed, "checkpoint": candidate, "identity": identity})
+    candidate_payload = {
+        "schema": "generic-chess-f63-candidates-v1",
+        "source_stage_identity_sha256": F62_STAGE_SHA,
+        "records_sha256": F62_RECORDS_SHA,
+        "teacher_decision_identity_sha256": teacher_artifact[
+            "original_teacher_identity_sha256"
+        ],
+        "candidates": [row["identity"] for row in candidates],
+    }
+    if CANDIDATE_PATH.exists():
+        try:
+            existing = json.loads(CANDIDATE_PATH.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise RuntimeError("F63 candidate identity file is corrupt") from exc
+        if existing != candidate_payload:
+            raise RuntimeError("F63 candidate identity file does not match frozen inputs")
+    else:
+        _atomic_json(CANDIDATE_PATH, candidate_payload)
+    return gen1, teacher, candidates
+
+
+def _resume_result_base(teacher: dict, gen1) -> dict:
+    return {
+        "work_order": RESUME_WORK_ORDER,
+        "parent_repository_sha": RESUME_PARENT_SHA,
+        "gen1_checkpoint_id": gen1.checkpoint_id,
+        "teacher": {
+            "status": "FROZEN_DECISION_ONLY",
+            "artifact": str(TEACHER_DECISION_PATH.relative_to(ROOT)).replace("\\", "/"),
+            "decision_state": teacher["bound"].decision_state,
+            "decision_sufficient": teacher["bound"].decision_sufficient,
+            "strength_estimate_complete": teacher["bound"].strength_estimate_complete,
+        },
+        "candidate_loop": {"status": "IDENTITIES_FROZEN"},
+    }
+
+
+def _read_resume_result() -> dict:
+    try:
+        result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(
+            "F63 resume stage prerequisite is missing or corrupt"
+        ) from exc
+    if result.get("work_order") != RESUME_WORK_ORDER:
+        raise RuntimeError("F63 resume result belongs to another work order")
+    return result
+
+
+def _run_candidate_resume_stage(stage: str):
+    if stage not in {"common-4", "selected-8", "selected-32"}:
+        raise ValueError("F63 resume stage must be common-4, selected-8, or selected-32")
+    compiled, native, _profile = f59._ruleset(LABEL)
+    gen1, teacher, candidates = _resume_context(compiled)
+    result = _resume_result_base(teacher, gen1)
+    candidate_by_seed = {row["seed"]: row for row in candidates}
+
+    if stage == "common-4":
+        common = []
+        for row in candidates:
+            arena = _run_candidate_stage(
+                compiled, native, gen1, row["checkpoint"], 4,
+                COMMON_TRIAGE_SEED, f"candidate-{row['seed']}-common-4",
+            )
+            common.append({
+                "seed": row["seed"],
+                "checkpoint_id": row["identity"]["checkpoint_id"],
+                "arena": arena,
+            })
+            if arena["status"] != "COMPLETE":
+                result["candidate_loop"] = {
+                    "status": "COMMON_INCOMPLETE_RESUMABLE",
+                    "candidates": common,
+                    "incomplete_stage": row["seed"],
+                }
+                _atomic_json(RESULT_PATH, result)
+                return result
+        result["candidate_loop"] = {
+            "status": "COMMON_COMPLETE",
+            "source_stage_identity_sha256": F62_STAGE_SHA,
+            "records_sha256": F62_RECORDS_SHA,
+            "candidates": common,
+        }
+        _atomic_json(RESULT_PATH, result)
+        return result
+
+    prior = _read_resume_result()
+    prior_loop = prior.get("candidate_loop", {})
+    if prior_loop.get("status") != "COMMON_COMPLETE":
+        raise RuntimeError("F63 common-4 stage is not complete; selected stage is not eligible")
+    selected = _select_candidate(prior_loop["candidates"])
+    selected_row = candidate_by_seed[selected["seed"]]
+    if stage == "selected-8":
+        selected_eight = _run_candidate_stage(
+            compiled, native, gen1, selected_row["checkpoint"], 8, 630404,
+            f"selected-{selected['seed']}-8",
+            stop_on_decision=True,
+            decision_criterion="f63_teacher_gate",
+        )
+        result["candidate_loop"] = dict(prior_loop)
+        result["candidate_loop"]["selected_seed"] = selected["seed"]
+        result["candidate_loop"]["selected_checkpoint_id"] = selected["checkpoint_id"]
+        result["candidate_loop"]["selected_8_pairs"] = selected_eight
+        result["candidate_loop"]["selected_8_continuation"] = _selected_eight_continuation(
+            selected_eight
+        )
+        _atomic_json(RESULT_PATH, result)
+        return result
+
+    selected_eight = prior_loop.get("selected_8_pairs")
+    if not isinstance(selected_eight, dict):
+        raise RuntimeError("F63 selected-8 stage is not complete")
+    continuation = _selected_eight_continuation(selected_eight)
+    if continuation != "RUN_32":
+        raise RuntimeError(
+            f"F63 selected-32 stage is not eligible after selected-8: {continuation}"
+        )
+    selected_32 = _run_candidate_stage(
+        compiled, native, gen1, selected_row["checkpoint"], 32, 630405,
+        f"selected-{selected['seed']}-32",
+        decision_criterion="f63_teacher_gate",
+    )
+    result["candidate_loop"] = dict(prior_loop)
+    result["candidate_loop"]["selected_32_pairs"] = selected_32
+    if selected_32["status"] != "COMPLETE":
+        result["candidate_loop"]["classification"] = (
+            "CANDIDATE_CONFIRMATION_INCOMPLETE_RESUMABLE"
+        )
+    else:
+        result["candidate_loop"]["classification"] = (
+            "BOUNDED_CHAMPION_LOOP_REPEATABILITY_SIGNAL"
+            if selected_32.get("bootstrap_low", 0.0) > 0.5
+            else "TEACHER_IMPROVES_BUT_REPLACEMENT_DISTILLATION_FAILS"
+        )
+    _atomic_json(RESULT_PATH, result)
+    return result
+
+
+def run_candidate_resume(*, stage: str):
+    """Run exactly one approved F63 candidate stage; never runs teacher games."""
+    return _run_candidate_resume_stage(stage)
+
+
 def run(*, smoke: bool = False):
     compiled, native, _profile = f59._ruleset(LABEL)
     gen1 = _load_gen1(compiled)
@@ -671,10 +841,20 @@ def main() -> None:
         "--resume-only", action="store_true",
         help="run only the frozen-teacher candidate resume path",
     )
+    parser.add_argument(
+        "--stage", choices=("common-4", "selected-8", "selected-32"),
+        help="exactly one stage for the stage-scoped candidate resume path",
+    )
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     if args.resume_only:
-        result = run_candidate_resume(smoke=args.smoke)
+        if args.smoke or args.stage is None:
+            raise SystemExit(
+                "--resume-only requires exactly one explicit --stage and has no smoke mode"
+            )
+        result = run_candidate_resume(stage=args.stage)
+    elif args.stage is not None:
+        raise SystemExit("--stage is only valid with --resume-only")
     elif not args.smoke:
         raise SystemExit(
             "refusing unbounded F63 teacher entry; use --resume-only after compute approval"

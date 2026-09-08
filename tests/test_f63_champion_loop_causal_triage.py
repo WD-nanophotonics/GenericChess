@@ -92,9 +92,11 @@ def test_candidate_stage_routes_game_v1_with_explicit_caps_and_pause_path(monkey
 
 def test_candidate_resume_source_has_no_teacher_stage_call():
     source = inspect.getsource(f63.run_candidate_resume)
+    context_source = inspect.getsource(f63._resume_context)
     assert "_run_teacher_stage" not in source
-    assert "validate_frozen_teacher_decision" in source
-    assert "CANDIDATE_PATH" in source
+    assert "_run_candidate_resume_stage" in source
+    assert "validate_frozen_teacher_decision" in context_source
+    assert "CANDIDATE_PATH" in context_source
 
 
 @pytest.mark.parametrize(
@@ -173,14 +175,14 @@ def test_candidate_resume_freezes_all_identities_before_first_arena(monkeypatch)
         }
 
     monkeypatch.setattr(f63, "_run_candidate_stage", fake_stage)
-    result = f63.run_candidate_resume()
+    result = f63.run_candidate_resume(stage="common-4")
     assert result["candidate_loop"]["status"] == "COMMON_COMPLETE"
     candidate_write_index = next(
         index for index, (path, _payload) in enumerate(writes)
         if path == f63.CANDIDATE_PATH
     )
     assert candidate_write_index == 0
-    assert len(arena_calls) == 5
+    assert len(arena_calls) == 3
     assert all(
         writes[candidate_write_index][1]["candidates"][index]["checkpoint_id"]
         for index in range(3)
