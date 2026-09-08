@@ -1,17 +1,19 @@
 """Bounded protocol tests for F63-R1 game-atomic arena progress."""
 
-from dataclasses import replace
 import json
-from pathlib import Path
+import time
 from types import SimpleNamespace
 
 import pytest
 
 from generic_chess.learning.arena import (
     ArenaConfig,
+    ArenaCapHit,
     ArenaExecutionCaps,
     ArenaExecutionError,
     ArenaGameResult,
+    ArenaDecisionCriterion,
+    _play_one_game,
     arena_decision_bound,
     run_arena_game_resumable,
 )
@@ -193,7 +195,8 @@ def test_hard_game_cap_is_incomplete_not_a_draw(monkeypatch, tmp_path):
 
 def test_decision_bound_locks_f63_seven_of_eight_regression():
     bound = arena_decision_bound(
-        [1.0, 0.5, 0.0, 1.0, 1.0, 0.5, 0.75], 8
+        [1.0, 0.5, 0.0, 1.0, 1.0, 0.5, 0.75], 8,
+        criterion="f63_teacher_gate",
     )
     assert bound.completed_total == pytest.approx(4.75)
     assert bound.worst_final_mean == pytest.approx(0.59375)
@@ -204,6 +207,78 @@ def test_decision_bound_locks_f63_seven_of_eight_regression():
     ) == (4, 2, 2)
     assert bound.decision_sufficient is True
     assert bound.strength_estimate_complete is False
+    assert bound.decision_state == "PASS_LOCKED"
+
+
+def test_decision_bound_has_symmetric_fail_and_unresolved_states():
+    failed = arena_decision_bound([0.0, 0.0], 4)
+    assert failed.decision_state == "FAIL_LOCKED"
+    assert failed.decision_sufficient is True
+
+    unresolved = arena_decision_bound([0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5], 8)
+    assert unresolved.decision_state == "UNRESOLVED"
+    assert unresolved.decision_sufficient is False
+
+    composite = arena_decision_bound(
+        [1.0, 1.0, 1.0, 0.0, 0.0, 0.5, 0.5], 8,
+        criterion=ArenaDecisionCriterion(
+            mean_threshold=0.5,
+            mean_operator=">=",
+            require_better_than_worse=True,
+        ),
+    )
+    assert composite.worst_final_mean == pytest.approx(0.5)
+    assert composite.decision_state == "UNRESOLVED"
+
+
+def test_finite_wall_budget_reaches_the_actual_search_call(monkeypatch):
+    from generic_chess.learning import arena as arena_module
+
+    action = object()
+    search_limits = []
+
+    class FakeSession:
+        def __init__(self, _compiled):
+            self.state = SimpleNamespace(position=SimpleNamespace(side_to_move=0))
+            self.result = SimpleNamespace(status=SimpleNamespace(value="ongoing"))
+
+        def submit(self, _action):
+            raise AssertionError("time-limited search must not apply a fallback")
+
+        def legal_actions(self):
+            return [action]
+
+    class SpyEngine:
+        def search(self, _session, limits):
+            search_limits.append(limits)
+            return SimpleNamespace(
+                action=action,
+                declaration_id=None,
+                elapsed_seconds=0.0,
+                nodes=0,
+                qnodes=0,
+                score=0,
+                completed_depth=0,
+                selective_depth=0,
+                termination_reason="time_limit",
+                used_fallback=True,
+            )
+
+    monkeypatch.setattr(arena_module, "GameSession", FakeSession)
+    monkeypatch.setattr(arena_module, "_engine_for", lambda *args: SpyEngine())
+    monkeypatch.setattr(arena_module, "position_identity_key", lambda *_args: "key")
+    with pytest.raises(ArenaCapHit, match="per_game_wall_seconds"):
+        _play_one_game(
+            SimpleNamespace(ruleset_fingerprint="rules-v1"), None,
+            SimpleNamespace(), SimpleNamespace(),
+            opening=SimpleNamespace(actions=(), index=0, final_position_key="key"),
+            child_owner=0,
+            config=ArenaConfig(pairs=1, nodes_per_move=17, max_depth=3),
+            execution_caps=ArenaExecutionCaps(per_game_wall_seconds=1.0),
+            stage_deadline=time.perf_counter() + 2.0,
+        )
+    assert len(search_limits) == 1
+    assert 0.0 < search_limits[0].max_time_seconds <= 1.0
 
 
 def test_game_progress_rejects_wrong_owner_or_stale_identity(monkeypatch, tmp_path):

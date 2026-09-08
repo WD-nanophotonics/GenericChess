@@ -20,9 +20,14 @@ The game scheduler uses at most
 max_concurrent_games)` lanes and never nests pair-level executors. Pause,
 stage-wall, stage-game, per-game-wall, per-game-node, and per-game-ply limits
 stop new launches or return an explicit `PAUSED`/`INCOMPLETE` result. A cap-hit
-game is not converted into an Arena result.
+game is not converted into an Arena result. When a hard wall is declared, the
+minimum remaining game/stage wall budget is also passed into
+`SearchLimits.max_time_seconds`; time-limited or deadline-expired search
+results are rejected before applying a move.
 
 `arena_decision_bound` reports conservative best and worst totals and means for
 unfinished pairs. `decision_sufficient` can become true before
-`strength_estimate_complete`; this is the intended distinction for the F63
-7/8 evidence (total 4.75, worst mean 0.59375, worst classes 4/2/2).
+`strength_estimate_complete` and exposes `PASS_LOCKED`, `FAIL_LOCKED`, or
+`UNRESOLVED` for a predeclared simple mean or F63 mean-plus-class criterion.
+This is the intended distinction for the F63 7/8 evidence (total 4.75, worst
+mean 0.59375, worst classes 4/2/2).

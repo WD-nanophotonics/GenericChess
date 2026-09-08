@@ -231,6 +231,7 @@ def _play_one_game(
     config: ArenaConfig,
     capture_search_metrics: bool = False,
     execution_caps: ArenaExecutionCaps | None = None,
+    stage_deadline: float | None = None,
 ) -> ArenaGameResult:
     """Replay ``opening``, then play one game with fresh engines."""
     session = GameSession(compiled)
@@ -279,12 +280,31 @@ def _play_one_game(
             if remaining_nodes <= 0:
                 raise ArenaCapHit("per_game_nodes")
             nodes_per_move = min(nodes_per_move, remaining_nodes)
+        remaining_wall = []
+        if execution_caps is not None and execution_caps.per_game_wall_seconds is not None:
+            remaining_wall.append((
+                execution_caps.per_game_wall_seconds
+                - (time.perf_counter() - game_started),
+                "per_game_wall_seconds",
+            ))
+        if stage_deadline is not None:
+            remaining_wall.append((
+                stage_deadline - time.perf_counter(),
+                "stage_wall_seconds",
+            ))
+        wall_limit = None
+        wall_limit_name = None
+        if remaining_wall:
+            wall_limit, wall_limit_name = min(remaining_wall, key=lambda item: item[0])
+            if wall_limit <= 0:
+                raise ArenaCapHit(wall_limit_name)
         wall_started = time.perf_counter()
         result = engine.search(
             session,
             SearchLimits(
                 max_depth=config.max_depth,
                 max_nodes=nodes_per_move,
+                max_time_seconds=wall_limit,
                 quiescence_max_depth=0,
             ),
         )
@@ -296,6 +316,13 @@ def _play_one_game(
             >= execution_caps.per_game_wall_seconds
         ):
             raise ArenaCapHit("per_game_wall_seconds")
+        if stage_deadline is not None and time.perf_counter() >= stage_deadline:
+            raise ArenaCapHit("stage_wall_seconds")
+        termination_reason = str(getattr(result, "termination_reason", "")).lower()
+        if termination_reason in {
+            "time_limit", "timeout", "deadline", "cancelled", "canceled",
+        } or "deadline" in termination_reason:
+            raise ArenaCapHit(wall_limit_name or "per_game_wall_seconds")
         searched_nodes += int(getattr(result, "nodes", 0))
         searched_nodes += int(getattr(result, "qnodes", 0))
         if (
@@ -740,6 +767,21 @@ def run_arena_resumable(
 
 
 @dataclass(frozen=True, slots=True)
+class ArenaDecisionCriterion:
+    """Predeclared pass criterion for decision-aware early stopping."""
+
+    mean_threshold: float = 0.5
+    mean_operator: str = ">"
+    require_better_than_worse: bool = False
+
+    def __post_init__(self) -> None:
+        if not 0.0 <= self.mean_threshold <= 1.0:
+            raise ValueError("mean_threshold must be in [0, 1]")
+        if self.mean_operator not in {">", ">=", "<", "<="}:
+            raise ValueError("unsupported mean criterion operator")
+
+
+@dataclass(frozen=True, slots=True)
 class ArenaDecisionBound:
     """Best/worst possible final decision from complete pair scores only."""
 
@@ -757,6 +799,8 @@ class ArenaDecisionBound:
     worst_better_pairs: int
     worst_tied_pairs: int
     worst_worse_pairs: int
+    criterion: dict
+    decision_state: str
     decision_sufficient: bool
     strength_estimate_complete: bool
 
@@ -766,6 +810,8 @@ def arena_decision_bound(
     requested_pairs: int,
     *,
     target_mean: float = 0.5,
+    criterion: ArenaDecisionCriterion | str | dict | None = None,
+    require_better_than_worse: bool | None = None,
 ) -> ArenaDecisionBound:
     """Return conservative bounds without inventing scores for missing pairs.
 
@@ -781,8 +827,45 @@ def arena_decision_bound(
         raise ValueError("more completed pairs than requested pairs")
     if any(score < 0.0 or score > 1.0 for score in scores):
         raise ValueError("pair scores must be in [0, 1]")
-    if not 0.0 <= target_mean <= 1.0:
-        raise ValueError("target_mean must be in [0, 1]")
+    if criterion is None:
+        resolved = ArenaDecisionCriterion(
+            mean_threshold=target_mean,
+            require_better_than_worse=bool(require_better_than_worse),
+        )
+    elif isinstance(criterion, ArenaDecisionCriterion):
+        resolved = criterion
+        if require_better_than_worse is not None:
+            resolved = ArenaDecisionCriterion(
+                mean_threshold=resolved.mean_threshold,
+                mean_operator=resolved.mean_operator,
+                require_better_than_worse=require_better_than_worse,
+            )
+    elif isinstance(criterion, str):
+        if criterion in {"f63_teacher_gate", "mean_gt_half_and_better"}:
+            resolved = ArenaDecisionCriterion(
+                mean_threshold=target_mean,
+                require_better_than_worse=True,
+            )
+        elif criterion in {"mean_gt", "mean_gt_half", "mean_threshold"}:
+            resolved = ArenaDecisionCriterion(mean_threshold=target_mean)
+        else:
+            raise ValueError(f"unknown arena decision criterion: {criterion}")
+    elif isinstance(criterion, dict):
+        resolved = ArenaDecisionCriterion(
+            mean_threshold=float(criterion.get("mean_threshold", target_mean)),
+            mean_operator=str(criterion.get("mean_operator", ">")),
+            require_better_than_worse=bool(
+                criterion.get("require_better_than_worse", False)
+            ),
+        )
+        if require_better_than_worse is not None:
+            resolved = ArenaDecisionCriterion(
+                mean_threshold=resolved.mean_threshold,
+                mean_operator=resolved.mean_operator,
+                require_better_than_worse=require_better_than_worse,
+            )
+    else:
+        raise TypeError("criterion must be a criterion, string, dict, or None")
     remaining = requested_pairs - len(scores)
     completed_total = sum(scores)
     best_total = completed_total + remaining
@@ -790,6 +873,38 @@ def arena_decision_bound(
     completed_better = sum(score > 0.5 for score in scores)
     completed_tied = sum(score == 0.5 for score in scores)
     completed_worse = sum(score < 0.5 for score in scores)
+    criterion_payload = asdict(resolved)
+
+    def mean_pass(value: float) -> bool:
+        if resolved.mean_operator == ">":
+            return value > resolved.mean_threshold
+        if resolved.mean_operator == ">=":
+            return value >= resolved.mean_threshold
+        if resolved.mean_operator == "<":
+            return value < resolved.mean_threshold
+        return value <= resolved.mean_threshold
+
+    def class_pass(better: int, worse: int) -> bool:
+        return (
+            not resolved.require_better_than_worse
+            or better > worse
+        )
+
+    best_passes = mean_pass(best_total / requested_pairs) and class_pass(
+        completed_better + remaining, completed_worse
+    )
+    worst_passes = mean_pass(worst_total / requested_pairs) and class_pass(
+        completed_better, completed_worse + remaining
+    )
+    higher_is_better = resolved.mean_operator in {">", ">="}
+    pass_locked = worst_passes if higher_is_better else best_passes
+    fail_locked = (not best_passes) if higher_is_better else (not worst_passes)
+    if pass_locked:
+        decision_state = "PASS_LOCKED"
+    elif fail_locked:
+        decision_state = "FAIL_LOCKED"
+    else:
+        decision_state = "UNRESOLVED"
     return ArenaDecisionBound(
         requested_pairs=requested_pairs,
         completed_pairs=len(scores),
@@ -805,9 +920,9 @@ def arena_decision_bound(
         worst_better_pairs=completed_better,
         worst_tied_pairs=completed_tied,
         worst_worse_pairs=completed_worse + remaining,
-        decision_sufficient=(
-            worst_total / requested_pairs > target_mean
-        ),
+        criterion=criterion_payload,
+        decision_state=decision_state,
+        decision_sufficient=(decision_state != "UNRESOLVED"),
         strength_estimate_complete=(remaining == 0),
     )
 
@@ -845,6 +960,7 @@ def _game_progress_identity(
     *,
     stage_id: str,
     capture_search_metrics: bool,
+    decision_criterion: dict | str | None = None,
 ) -> dict:
     identity = _progress_identity(
         compiled, parent, child, config, openings,
@@ -859,6 +975,12 @@ def _game_progress_identity(
         "execution_caps": asdict(caps),
         "effective_game_lanes": caps.game_lanes(config.pairs, config.workers),
     })
+    if decision_criterion is not None:
+        identity["decision_criterion"] = (
+            asdict(decision_criterion)
+            if isinstance(decision_criterion, ArenaDecisionCriterion)
+            else decision_criterion
+        )
     return identity
 
 
@@ -1017,6 +1139,7 @@ def run_arena_game_resumable(
     stage_id: str = "arena",
     pause_requested=None,
     pause_file: str | Path | None = None,
+    decision_criterion: ArenaDecisionCriterion | str | dict | None = None,
 ) -> ArenaRunResult:
     """Run one game per checkpoint and aggregate only complete pairs.
 
@@ -1037,6 +1160,7 @@ def run_arena_game_resumable(
     identity = _game_progress_identity(
         compiled, parent, child, config, openings, caps,
         stage_id=stage_id, capture_search_metrics=capture_search_metrics,
+        decision_criterion=decision_criterion,
     )
     identity_sha256 = stable_sha256(identity)
     expected_manifest = {
@@ -1138,6 +1262,8 @@ def run_arena_game_resumable(
         }
         if caps.has_per_game_caps:
             kwargs["execution_caps"] = caps
+        if stage_deadline is not None:
+            kwargs["stage_deadline"] = stage_deadline
         return _play_one_game(
             compiled, native_rules, parent, child, **kwargs
         )
@@ -1212,7 +1338,8 @@ def run_arena_game_resumable(
         raise fatal_error
     pairs = _pair_results_from_games(completed_games, openings)
     bound = arena_decision_bound(
-        [pair.child_pair_score for pair in pairs], config.pairs
+        [pair.child_pair_score for pair in pairs], config.pairs,
+        criterion=decision_criterion,
     )
     summary = _summarize_pairs(pairs) if len(pairs) == config.pairs else None
     if len(completed_games) == 2 * config.pairs:
