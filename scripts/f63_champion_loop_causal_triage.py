@@ -17,7 +17,16 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from generic_chess.learning.arena import ArenaConfig, run_arena_resumable
+from generic_chess.learning.arena import (
+    ArenaConfig,
+    ArenaDecisionCriterion,
+    ArenaExecutionCaps,
+    arena_decision_bound,
+    run_arena_game_resumable,
+    run_arena_resumable,
+    _pair_from_dict,
+    _validate_replayed_game,
+)
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
 from generic_chess.learning.serialization import stable_sha256
@@ -47,6 +56,15 @@ TEACHER_STAGES = ((4, 630401), (8, 630402))
 COMMON_TRIAGE_SEED = 630403
 SELECTED_FRESH_SEEDS = (8, 630404), (32, 630405)
 PARENT_SHA = "a19a8048b36b6460db7ec6aeefa2bf3e3172d5e6"
+RESUME_PARENT_SHA = "acc74ac9063530da7137b460d2bc035858d30809"
+TEACHER_DECISION_PATH = ROOT / "docs" / "architecture" / "GENERICCHESS_F63_TEACHER_DECISION_V1.json"
+TEACHER_PROGRESS = PROGRESS / "teacher-8-seed-630402"
+RESUME_WORK_ORDER = "GENERICCHESS-F63-R1-R3-CANDIDATE-RESUME-HARNESS-AND-COMPUTE-PLAN"
+RESUME_LOGICAL_CPUS = 10
+RESUME_PER_GAME_WALL_SECONDS = 900.0
+RESUME_PER_GAME_NODES = 200_000
+RESUME_PER_GAME_PLIES = 80
+RESUME_STAGE_WALL_SECONDS = {4: 3_600.0, 8: 7_200.0, 32: 28_800.0}
 
 
 def _atomic_json(path: Path, payload: dict) -> None:
@@ -85,6 +103,116 @@ def _load_gen2():
 def _arena_payload(summary: object) -> dict:
     payload = f62._arena_payload(summary)
     return payload
+
+
+def _file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def validate_frozen_teacher_decision(
+    compiled,
+    *,
+    artifact_path: Path = TEACHER_DECISION_PATH,
+    progress_dir: Path = TEACHER_PROGRESS,
+) -> dict:
+    """Validate the preserved seven-pair teacher evidence without rerunning it."""
+    try:
+        artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+        progress_manifest_path = progress_dir / "manifest.json"
+        manifest_bytes = progress_manifest_path.read_bytes()
+        manifest = json.loads(manifest_bytes.decode("utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError("F63 frozen teacher decision evidence is unavailable") from exc
+    if artifact.get("schema") != "generic-chess-f63-teacher-decision-v1":
+        raise RuntimeError("F63 frozen teacher decision schema mismatch")
+    stage = artifact.get("stage", {})
+    if (
+        stage.get("requested_pairs") != 8
+        or stage.get("completed_pairs") != 7
+        or stage.get("opening_seed") != 630402
+    ):
+        raise RuntimeError("F63 frozen teacher stage identity mismatch")
+    if manifest.get("schema") != "generic-chess-arena-progress-v1":
+        raise RuntimeError("F63 teacher progress is not the legacy pair-v1 schema")
+    identity = manifest.get("identity")
+    identity_sha = manifest.get("identity_sha256")
+    if not isinstance(identity, dict) or stable_sha256(identity) != identity_sha:
+        raise RuntimeError("F63 teacher manifest identity is invalid")
+    config = identity.get("config", {})
+    if (
+        identity.get("parent_checkpoint_id") != GEN1_ID
+        or identity.get("child_checkpoint_id") != GEN1_ID
+        or config.get("pairs") != 8
+        or config.get("opening_seed") != 630402
+        or config.get("opening_count") != 8
+        or config.get("nodes_per_move") != SHALLOW_NODES
+        or config.get("child_nodes_per_move") != DEEP_NODES
+    ):
+        raise RuntimeError("F63 teacher configuration identity is invalid")
+    if _file_sha256(progress_manifest_path) != stage.get("manifest_sha256"):
+        raise RuntimeError("F63 teacher manifest hash mismatch")
+    if identity_sha != artifact.get("original_teacher_identity_sha256"):
+        raise RuntimeError("F63 teacher identity hash mismatch")
+
+    openings = generate_arena_openings(
+        compiled,
+        count=config["opening_count"],
+        seed=config["opening_seed"],
+        min_plies=config["min_plies"],
+        max_plies=config["max_plies"],
+    )
+    if openings.to_dict()["openings"] != identity.get("ordered_openings"):
+        raise RuntimeError("F63 teacher opening corpus does not replay identically")
+    rows = artifact.get("pair_files")
+    if not isinstance(rows, list) or [row.get("pair_index") for row in rows] != list(range(1, 8)):
+        raise RuntimeError("F63 teacher pair inventory is not exactly seven pairs")
+    actual_pair_names = sorted(path.name for path in progress_dir.glob("pair-*.json"))
+    if actual_pair_names != sorted(row["file"] for row in rows):
+        raise RuntimeError("F63 teacher pair inventory has unexpected files")
+    pairs = []
+    for row in rows:
+        pair_path = progress_dir / row["file"]
+        if _file_sha256(pair_path) != row["sha256"]:
+            raise RuntimeError(f"F63 teacher pair hash mismatch: {row['file']}")
+        try:
+            payload = json.loads(pair_path.read_text(encoding="utf-8"))
+            pair = _pair_from_dict(payload, identity_sha256=identity_sha)
+            opening = openings.openings[row["pair_index"]]
+            _validate_replayed_game(compiled, opening, pair.game_child_owner0)
+            _validate_replayed_game(compiled, opening, pair.game_child_owner1)
+        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+            raise RuntimeError(f"F63 teacher pair validation failed: {row['file']}") from exc
+        if pair.pair_index != row["pair_index"] or pair.opening_id != opening.final_position_key:
+            raise RuntimeError(f"F63 teacher pair identity mismatch: {row['file']}")
+        if pair.child_pair_score != row["pair_score"]:
+            raise RuntimeError(f"F63 teacher pair score mismatch: {row['file']}")
+        pairs.append(pair)
+    scores = [pair.child_pair_score for pair in pairs]
+    bound = arena_decision_bound(scores, 8, criterion=artifact["criterion"])
+    expected = {
+        "observed_total": sum(scores),
+        "observed_mean": sum(scores) / len(scores),
+        "observed_better_pairs": sum(score > 0.5 for score in scores),
+        "observed_tied_pairs": sum(score == 0.5 for score in scores),
+        "observed_worse_pairs": sum(score < 0.5 for score in scores),
+    }
+    for key, value in expected.items():
+        if isinstance(value, float):
+            matches = abs(float(artifact.get(key)) - value) <= 1e-12
+        else:
+            matches = artifact.get(key) == value
+        if not matches:
+            raise RuntimeError(f"F63 teacher decision field mismatch: {key}")
+    if (
+        bound.decision_state != artifact.get("decision_state")
+        or abs(bound.worst_final_mean - artifact.get("worst_possible_final_mean")) > 1e-12
+        or bound.worst_better_pairs != artifact.get("worst_possible_final_better_pairs")
+        or bound.worst_tied_pairs != artifact.get("worst_possible_final_tied_pairs")
+        or bound.worst_worse_pairs != artifact.get("worst_possible_final_worse_pairs")
+        or bound.strength_estimate_complete != artifact.get("strength_estimate_complete")
+    ):
+        raise RuntimeError("F63 frozen teacher decision bound mismatch")
+    return {"artifact": artifact, "manifest": manifest, "pairs": pairs, "bound": bound}
 
 
 def _run_teacher_stage(compiled, native, gen1, pairs: int, seed: int, *, smoke: bool):
@@ -204,11 +332,36 @@ def _fit_candidate(compiled, gen1, summary, provenance, seed: int):
     }
 
 
-def _run_candidate_stage(compiled, native, gen1, candidate, pairs, seed, label):
+def _candidate_caps(pairs: int) -> ArenaExecutionCaps:
+    if pairs not in RESUME_STAGE_WALL_SECONDS:
+        raise ValueError(f"unsupported F63 candidate stage size: {pairs}")
+    return ArenaExecutionCaps(
+        per_game_wall_seconds=RESUME_PER_GAME_WALL_SECONDS,
+        per_game_nodes=RESUME_PER_GAME_NODES,
+        per_game_plies=RESUME_PER_GAME_PLIES,
+        max_stage_games=2 * pairs,
+        max_concurrent_games=min(RESUME_LOGICAL_CPUS, 2 * pairs, 16),
+        stage_wall_seconds=RESUME_STAGE_WALL_SECONDS[pairs],
+        logical_cpu_count=RESUME_LOGICAL_CPUS,
+    )
+
+
+def _run_candidate_stage(
+    compiled,
+    native,
+    gen1,
+    candidate,
+    pairs,
+    seed,
+    label,
+    *,
+    stop_on_decision: bool = False,
+    decision_criterion=None,
+):
     openings = generate_arena_openings(
         compiled, count=pairs, seed=seed, min_plies=2, max_plies=6
     )
-    summary = run_arena_resumable(
+    run_result = run_arena_game_resumable(
         compiled, native, gen1, candidate,
         ArenaConfig(
             pairs=pairs,
@@ -224,8 +377,25 @@ def _run_candidate_stage(compiled, native, gen1, candidate, pairs, seed, label):
         progress_dir=PROGRESS / f"{label}-seed-{seed}",
         openings=openings,
         capture_search_metrics=True,
+        execution_caps=_candidate_caps(pairs),
+        stage_id=label,
+        pause_file=OUT / "candidate-pause.request",
+        decision_criterion=decision_criterion,
+        stop_on_decision=stop_on_decision,
     )
-    return _arena_payload(summary)
+    payload = {
+        "status": run_result.status,
+        "completed_games": run_result.completed_games,
+        "completed_pairs": run_result.completed_pairs,
+        "total_games": run_result.total_games,
+        "stop_reason": run_result.reason,
+        "decision_state": run_result.decision_bound.decision_state,
+        "decision_sufficient": run_result.decision_bound.decision_sufficient,
+        "strength_estimate_complete": run_result.decision_bound.strength_estimate_complete,
+    }
+    if run_result.summary is not None:
+        payload.update(_arena_payload(run_result.summary))
+    return payload
 
 
 def _select_candidate(results):
@@ -239,6 +409,126 @@ def _select_candidate(results):
             row["seed"],
         ),
     )
+
+
+def run_candidate_resume(*, smoke: bool = False):
+    """Resume F63 after the frozen teacher decision; never runs teacher games."""
+    if smoke:
+        raise RuntimeError(
+            "F63 candidate resume has no reduced smoke mode; use the bounded protocol tests"
+        )
+    compiled, native, _profile = f59._ruleset(LABEL)
+    gen1 = _load_gen1(compiled)
+    teacher = validate_frozen_teacher_decision(compiled)
+    teacher_artifact = teacher["artifact"]
+    if (
+        not teacher_artifact.get("authorizes_candidate_branch")
+        or teacher["bound"].decision_state != "PASS_LOCKED"
+    ):
+        raise RuntimeError("F63 frozen teacher decision does not unlock candidates")
+
+    summary, provenance, persisted_gen2, persisted_identity = (
+        _load_f62_training_summary(compiled, gen1)
+    )
+    candidates = []
+    for seed in GEN2_SEEDS:
+        if seed == 59012:
+            candidate = persisted_gen2
+            if candidate.checkpoint_id != persisted_identity["gen2_checkpoint_id"]:
+                raise RuntimeError("F62 persisted Gen2 checkpoint identity mismatch")
+            identity = persisted_identity | {
+                "checkpoint_id": persisted_identity["gen2_checkpoint_id"],
+                "reused_exact_f62_candidate": True,
+            }
+        else:
+            candidate, identity = _fit_candidate(
+                compiled, gen1, summary, provenance, seed
+            )
+        candidates.append({"seed": seed, "checkpoint": candidate, "identity": identity})
+
+    # This durable identity freeze is deliberately before the first candidate
+    # Arena call.  A crash after this write cannot create an unregistered
+    # candidate game.
+    _atomic_json(CANDIDATE_PATH, {
+        "schema": "generic-chess-f63-candidates-v1",
+        "source_stage_identity_sha256": F62_STAGE_SHA,
+        "records_sha256": F62_RECORDS_SHA,
+        "teacher_decision_identity_sha256": teacher_artifact[
+            "original_teacher_identity_sha256"
+        ],
+        "candidates": [row["identity"] for row in candidates],
+    })
+
+    result = {
+        "work_order": RESUME_WORK_ORDER,
+        "parent_repository_sha": RESUME_PARENT_SHA,
+        "gen1_checkpoint_id": gen1.checkpoint_id,
+        "teacher": {
+            "status": "FROZEN_DECISION_ONLY",
+            "artifact": str(TEACHER_DECISION_PATH.relative_to(ROOT)).replace("\\", "/"),
+            "decision_state": teacher["bound"].decision_state,
+            "decision_sufficient": teacher["bound"].decision_sufficient,
+            "strength_estimate_complete": teacher["bound"].strength_estimate_complete,
+        },
+        "candidate_loop": {"status": "IDENTITIES_FROZEN"},
+    }
+
+    common = []
+    for row in candidates:
+        arena = _run_candidate_stage(
+            compiled, native, gen1, row["checkpoint"], 4,
+            COMMON_TRIAGE_SEED, f"candidate-{row['seed']}-common-4",
+        )
+        if arena["status"] != "COMPLETE":
+            result["candidate_loop"] = {
+                "status": "INCOMPLETE",
+                "candidates": common,
+                "incomplete_stage": row["seed"],
+                "arena": arena,
+            }
+            _atomic_json(RESULT_PATH, result)
+            return result
+        common.append({
+            "seed": row["seed"],
+            "checkpoint_id": row["identity"]["checkpoint_id"],
+            "arena": arena,
+        })
+
+    selected = _select_candidate(common)
+    result["candidate_loop"] = {
+        "status": "COMMON_COMPLETE",
+        "source_stage_identity_sha256": F62_STAGE_SHA,
+        "records_sha256": F62_RECORDS_SHA,
+        "candidates": common,
+        "selected_seed": selected["seed"],
+        "selected_checkpoint_id": selected["checkpoint_id"],
+    }
+    selected_candidate = next(
+        row["checkpoint"] for row in candidates if row["seed"] == selected["seed"]
+    )
+    selected_eight = _run_candidate_stage(
+        compiled, native, gen1, selected_candidate, 8, 630404,
+        f"selected-{selected['seed']}-8",
+        stop_on_decision=True,
+        decision_criterion="f63_teacher_gate",
+    )
+    result["candidate_loop"]["selected_8_pairs"] = selected_eight
+    if selected_eight["status"] == "COMPLETE":
+        selected_32 = _run_candidate_stage(
+            compiled, native, gen1, selected_candidate, 32, 630405,
+            f"selected-{selected['seed']}-32",
+            decision_criterion="f63_teacher_gate",
+        )
+        result["candidate_loop"]["selected_32_pairs"] = selected_32
+    result["candidate_loop"]["classification"] = (
+        "BOUNDED_CHAMPION_LOOP_REPEATABILITY_SIGNAL"
+        if result["candidate_loop"].get("selected_32_pairs", {}).get(
+            "bootstrap_low", 0.0
+        ) > 0.5
+        else "TEACHER_IMPROVES_BUT_REPLACEMENT_DISTILLATION_FAILS"
+    )
+    _atomic_json(RESULT_PATH, result)
+    return result
 
 
 def run(*, smoke: bool = False):
@@ -335,9 +625,20 @@ def run(*, smoke: bool = False):
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--smoke", action="store_true")
+    parser.add_argument(
+        "--resume-only", action="store_true",
+        help="run only the frozen-teacher candidate resume path",
+    )
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
-    result = run(smoke=args.smoke)
+    if args.resume_only:
+        result = run_candidate_resume(smoke=args.smoke)
+    elif not args.smoke:
+        raise SystemExit(
+            "refusing unbounded F63 teacher entry; use --resume-only after compute approval"
+        )
+    else:
+        result = run(smoke=True)
     print(json.dumps({
         "teacher_classification": result["teacher"]["classification"],
         "teacher_scores": {

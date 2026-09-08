@@ -1140,6 +1140,7 @@ def run_arena_game_resumable(
     pause_requested=None,
     pause_file: str | Path | None = None,
     decision_criterion: ArenaDecisionCriterion | str | dict | None = None,
+    stop_on_decision: bool = False,
 ) -> ArenaRunResult:
     """Run one game per checkpoint and aggregate only complete pairs.
 
@@ -1234,6 +1235,23 @@ def run_arena_game_resumable(
     stop_reason = None
     fatal_error = None
 
+    def current_decision_bound() -> ArenaDecisionBound:
+        return arena_decision_bound(
+            [pair.child_pair_score for pair in _pair_results_from_games(
+                completed_games, openings
+            )],
+            config.pairs,
+            criterion=decision_criterion,
+        )
+
+    if stop_on_decision:
+        initial_bound = current_decision_bound()
+        if (
+            initial_bound.decision_state != "UNRESOLVED"
+            and len(completed_games) < 2 * config.pairs
+        ):
+            stop_reason = f"decision_{initial_bound.decision_state}"
+
     def is_paused() -> bool:
         if pause_requested is not None:
             value = pause_requested() if callable(pause_requested) else pause_requested
@@ -1324,6 +1342,14 @@ def run_arena_game_resumable(
                         ),
                     )
                     completed_games[key] = game
+                    if stop_on_decision and all(
+                        (key[0], owner) in completed_games for owner in (0, 1)
+                    ):
+                        completed_bound = current_decision_bound()
+                        if completed_bound.decision_state != "UNRESOLVED":
+                            stop_reason = (
+                                f"decision_{completed_bound.decision_state}"
+                            )
                 except ArenaCapHit as exc:
                     stop_reason = exc.cap
                 except Exception as exc:  # preserve other engine failures

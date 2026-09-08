@@ -193,6 +193,34 @@ def test_hard_game_cap_is_incomplete_not_a_draw(monkeypatch, tmp_path):
     assert result.summary is None
 
 
+def test_locked_pair_decision_stops_future_launches(monkeypatch, tmp_path):
+    arena_module, compiled, parent, child, config, _openings = _inputs(
+        monkeypatch, pairs=4, workers=1
+    )
+    calls = []
+    monkeypatch.setattr(
+        arena_module,
+        "_play_one_game",
+        lambda *args, **kwargs: calls.append(
+            (kwargs["opening"].index, kwargs["child_owner"])
+        ) or _game(kwargs["opening"].index, kwargs["child_owner"]),
+    )
+    result = run_arena_game_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "decision-stop",
+        execution_caps=ArenaExecutionCaps(max_stage_games=8),
+        decision_criterion={
+            "mean_threshold": 0.2,
+            "mean_operator": ">=",
+        },
+        stop_on_decision=True,
+    )
+    assert result.status == "INCOMPLETE"
+    assert result.reason == "decision_PASS_LOCKED"
+    assert result.completed_pairs == 1
+    assert calls == [(0, 0), (0, 1)]
+
+
 def test_decision_bound_locks_f63_seven_of_eight_regression():
     bound = arena_decision_bound(
         [1.0, 0.5, 0.0, 1.0, 1.0, 0.5, 0.75], 8,

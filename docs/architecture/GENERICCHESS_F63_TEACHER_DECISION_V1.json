@@ -1,0 +1,43 @@
+{
+  "schema": "generic-chess-f63-teacher-decision-v1",
+  "stage": {
+    "name": "teacher-8-seed-630402",
+    "requested_pairs": 8,
+    "completed_pairs": 7,
+    "opening_seed": 630402,
+    "progress_path": ".generic_chess_flow/f63-champion-loop-causal-triage/progress/teacher-8-seed-630402",
+    "manifest_sha256": "42daa12bb32329b209e9313e480dcdaf33a8d81092295f95b1f440f006c89ca8"
+  },
+  "original_teacher_identity_sha256": "f33d64c495731b8571d3bcef9d658d46297273db555b2da31111d55c69bf706b",
+  "original_teacher_parent_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+  "original_teacher_child_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+  "pair_files": [
+    {"pair_index": 1, "file": "pair-000001.json", "sha256": "39d13ff7df8e16183a32f06bf9cf629bff108dfdfdd733b650bc68620aa292d9", "pair_score": 0.75},
+    {"pair_index": 2, "file": "pair-000002.json", "sha256": "24cad60b256d347dde98488113084bfb5e1cda4ec7148379f1c58abc49c69535", "pair_score": 0.5},
+    {"pair_index": 3, "file": "pair-000003.json", "sha256": "52e7705d8d7945eced74e9d01433669af4a42b32039f1aab90f6840fb5b32db2", "pair_score": 1.0},
+    {"pair_index": 4, "file": "pair-000004.json", "sha256": "dbe80953d3dfa6251dfc78d24d7452c1b06a282dc45da615a9facfd6d6b25334", "pair_score": 1.0},
+    {"pair_index": 5, "file": "pair-000005.json", "sha256": "53fc06a813f2c1c200e0a36d18817debb8bea426206ef23fc6afe1b09695c28d", "pair_score": 0.5},
+    {"pair_index": 6, "file": "pair-000006.json", "sha256": "895cdee39cf23bc6dac0ce1293d5d4730a10dea27730b019342fc4971a35a5c0", "pair_score": 1.0},
+    {"pair_index": 7, "file": "pair-000007.json", "sha256": "364fe6dd1e81595736cf87a6e32211b35ed1d751075034445594002fa2862d01", "pair_score": 0.0}
+  ],
+  "observed_total": 4.75,
+  "observed_mean": 0.678571428571429,
+  "observed_better_pairs": 4,
+  "observed_tied_pairs": 2,
+  "observed_worse_pairs": 1,
+  "worst_possible_final_mean": 0.59375,
+  "worst_possible_final_better_pairs": 4,
+  "worst_possible_final_tied_pairs": 2,
+  "worst_possible_final_worse_pairs": 2,
+  "criterion": {
+    "mean_threshold": 0.5,
+    "mean_operator": ">",
+    "require_better_than_worse": true
+  },
+  "decision_state": "PASS_LOCKED",
+  "decision_sufficient": true,
+  "strength_estimate_complete": false,
+  "classification": "GEN1_SEARCH_POLICY_IMPROVEMENT_SUPPORTED_FOR_F63_GATE",
+  "authorizes_candidate_branch": true,
+  "is_eight_pair_strength_estimate": false
+}
