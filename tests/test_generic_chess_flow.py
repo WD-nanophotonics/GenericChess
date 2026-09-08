@@ -33,6 +33,7 @@ def _heavy_start_mocks(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
     monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
 
 
 def test_chat_control_footer_is_explicit_and_last_value_wins():
@@ -673,6 +674,7 @@ def test_heavy_uses_normal_priority_and_returns_child_code(monkeypatch, tmp_path
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "heavy_lock", lambda _root: FakeLock())
     monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
 
     def fake_popen(argv, **kwargs):
         seen.update({"argv": argv, **kwargs})

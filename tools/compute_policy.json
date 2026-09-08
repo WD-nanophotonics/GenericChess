@@ -1,0 +1,11 @@
+{
+  "schema": "generic-chess-compute-policy-v1",
+  "thresholds": {
+    "expected_wall_minutes_gt": 30,
+    "maximum_games_gt": 20,
+    "expected_cpu_hours_gt": 5,
+    "arena_pairs_gte": 16,
+    "stage_count_gt": 1
+  },
+  "max_declared_logical_cpu": 20
+}

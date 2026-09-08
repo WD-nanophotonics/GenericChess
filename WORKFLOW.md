@@ -104,6 +104,9 @@ generic-chess-flow.cmd start --mode courier|local [--message-file <path>]
 generic-chess-flow.cmd heavy -- <long-running command>
 generic-chess-flow.cmd heavy-start --label <safe-label> -- <long-running command>
 generic-chess-flow.cmd heavy-status [--run-id <id>]
+generic-chess-flow.cmd compute-plan-status --plan-file <path>
+generic-chess-flow.cmd compute-plan-approve --plan-file <path> --chat-approval-file <path>
+generic-chess-flow.cmd compute-plan-revoke --plan-file <path>
 generic-chess-flow.cmd publish --tests <pytest-target> [...]
 generic-chess-flow.cmd recover [--worker-thread-id <CODEX_THREAD_ID>]
 generic-chess-flow.cmd resume
@@ -129,6 +132,16 @@ one GenericChess compute task at a time. Use `heavy-start` when the work must
 survive the launching shell or agent turn, and inspect its durable PID-bound
 state and separate logs with `heavy-status`. `publish` applies the same
 single-Heavy rule to pytest automatically.
+
+Every Heavy command requires `--resource-envelope <path>`. The structured
+envelope declares expected and hard wall/CPU bounds, games, nodes, plies,
+stages, logical CPUs, and concurrency. Thresholds are centralized in
+`tools/compute_policy.json`; missing estimates are treated as large work.
+Large work additionally requires `--compute-plan <path>` and an active
+approval created by the registered Supervisor after Chat approves the exact
+plan and envelope for the current sandbox SHA. Runtime approvals live under
+`.generic_chess_flow/compute-approvals/`, are single-plan and revocable, and
+fail closed on stale SHA, envelope, budget, seed, or stage changes.
 
 On a Courier error, run `recover` for the same request. Login, target, access,
 or uncertain external side effects escalate to the Supervisor before they reach

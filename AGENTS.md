@@ -49,3 +49,10 @@ Read `WORKFLOW.md` before changing this repository.
     high-capability local reviewer/supervisor must read
     `docs/architecture/GENERICCHESS_THEORY_ROADMAP.md` before redirecting the
     route. Low-capability execution agents follow the concrete work order.
+
+16. Every `heavy`/`heavy-start` invocation must carry an explicit structured
+    resource envelope. Large work is fail-closed unless a versioned compute
+    plan has matching Chat scientific approval and registered-Supervisor
+    approval bound to the exact plan SHA, sandbox SHA, and envelope digest.
+    Never infer compute size from command text or bypass the gate with a second
+    worker/request.
