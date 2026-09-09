@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from generic_chess.learning.arena import (
+    ARENA_GAME_PROGRESS_SCHEMA,
     ArenaConfig,
     ArenaDecisionCriterion,
     ArenaExecutionCaps,
@@ -25,6 +26,11 @@ from generic_chess.learning.arena import (
     run_arena_game_resumable,
     run_arena_resumable,
     _pair_from_dict,
+    _game_progress_from_dict,
+    _game_progress_identity,
+    _game_progress_identity_for,
+    _game_progress_to_dict,
+    _validate_game_progress,
     _validate_game_telemetry,
     _validate_replayed_game,
 )
@@ -66,6 +72,22 @@ RESUME_PER_GAME_WALL_SECONDS = 900.0
 RESUME_PER_GAME_NODES = 200_000
 RESUME_PER_GAME_PLIES = 80
 RESUME_STAGE_WALL_SECONDS = {4: 3_600.0, 8: 7_200.0, 32: 28_800.0}
+COMMON4_PER_GAME_WALL_SECONDS = 10_000.0
+COMMON4_PER_GAME_NODES = 1_000_000
+COMMON4_PER_GAME_PLIES = 512
+COMMON4_STAGE_WALL_SECONDS = 10_800.0
+R6_SOURCE_PROGRESS = PROGRESS / "candidate-59011-common-4-seed-630403"
+R6_SOURCE_MANIFEST = R6_SOURCE_PROGRESS / "manifest.json"
+R6_SOURCE_GAME = R6_SOURCE_PROGRESS / "game-000000-owner-0.json"
+R6_SOURCE_MANIFEST_SHA256 = (
+    "9668d1c38d490f4275916e0a2968461968f2220ed1a8b433af645ce4427e8004"
+)
+R6_SOURCE_GAME_SHA256 = (
+    "e205dcfab1b4eff012ac496919ae80b4ab93b882e310fcf59c52f42b504c92f2"
+)
+R6_SOURCE_IDENTITY_SHA256 = (
+    "ec802b9492a36d86c9c4be4644e652afb136e7754c0dfc1dc919b6b45a15f1bf"
+)
 
 
 def _atomic_json(path: Path, payload: dict) -> None:
@@ -342,9 +364,23 @@ def _fit_candidate(compiled, gen1, summary, provenance, seed: int):
     }
 
 
+def _calibrated_common4_caps() -> ArenaExecutionCaps:
+    return ArenaExecutionCaps(
+        per_game_wall_seconds=COMMON4_PER_GAME_WALL_SECONDS,
+        per_game_nodes=COMMON4_PER_GAME_NODES,
+        per_game_plies=COMMON4_PER_GAME_PLIES,
+        max_stage_games=8,
+        max_concurrent_games=8,
+        stage_wall_seconds=COMMON4_STAGE_WALL_SECONDS,
+        logical_cpu_count=RESUME_LOGICAL_CPUS,
+    )
+
+
 def _candidate_caps(pairs: int) -> ArenaExecutionCaps:
     if pairs not in RESUME_STAGE_WALL_SECONDS:
         raise ValueError(f"unsupported F63 candidate stage size: {pairs}")
+    if pairs == 4:
+        return _calibrated_common4_caps()
     return ArenaExecutionCaps(
         per_game_wall_seconds=RESUME_PER_GAME_WALL_SECONDS,
         per_game_nodes=RESUME_PER_GAME_NODES,
@@ -354,6 +390,142 @@ def _candidate_caps(pairs: int) -> ArenaExecutionCaps:
         stage_wall_seconds=RESUME_STAGE_WALL_SECONDS[pairs],
         logical_cpu_count=RESUME_LOGICAL_CPUS,
     )
+
+
+def _candidate_progress_dir(label: str, seed: int, pairs: int) -> Path:
+    if pairs == 4:
+        return PROGRESS / f"{label}-calibrated-seed-{seed}"
+    return PROGRESS / f"{label}-seed-{seed}"
+
+
+def _assert_monotonic_cap_relaxation(source_caps: dict, destination_caps: dict) -> None:
+    for name, source_value in source_caps.items():
+        destination_value = destination_caps.get(name)
+        if source_value is None:
+            if destination_value is not None:
+                raise RuntimeError(f"R6 carry-forward tightened cap: {name}")
+        elif destination_value is not None and destination_value < source_value:
+            raise RuntimeError(f"R6 carry-forward tightened cap: {name}")
+
+
+def _carry_forward_r6_game(
+    compiled,
+    parent,
+    candidate,
+    config: ArenaConfig,
+    openings,
+    destination: Path,
+    *,
+    stage_id: str,
+) -> None:
+    """Import exactly the one validated R6 game into the calibrated namespace."""
+    if not R6_SOURCE_MANIFEST.exists() or not R6_SOURCE_GAME.exists():
+        return
+    if _file_sha256(R6_SOURCE_MANIFEST) != R6_SOURCE_MANIFEST_SHA256:
+        raise RuntimeError("R6 source manifest changed")
+    if _file_sha256(R6_SOURCE_GAME) != R6_SOURCE_GAME_SHA256:
+        raise RuntimeError("R6 source game changed")
+    source_manifest = json.loads(R6_SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    if (
+        set(source_manifest) != {"schema", "identity_sha256", "identity"}
+        or source_manifest["schema"] != ARENA_GAME_PROGRESS_SCHEMA
+        or source_manifest["identity_sha256"] != R6_SOURCE_IDENTITY_SHA256
+        or stable_sha256(source_manifest["identity"]) != R6_SOURCE_IDENTITY_SHA256
+    ):
+        raise RuntimeError("R6 source manifest identity is invalid")
+    source_identity = source_manifest["identity"]
+    destination_caps = _candidate_caps(4)
+    if destination_caps != _calibrated_common4_caps():
+        raise RuntimeError("R6 carry-forward destination caps are not calibrated")
+    destination_identity = _game_progress_identity(
+        compiled, parent, candidate, config, openings, destination_caps,
+        stage_id=stage_id, capture_search_metrics=True,
+    )
+    scientific_identity_fields = (
+        "schema", "arena_id", "capture_search_metrics", "child_checkpoint_id",
+        "config", "ordered_openings", "parent_checkpoint_id",
+        "ruleset_fingerprint", "stage_id",
+    )
+    if any(
+        source_identity.get(name) != destination_identity.get(name)
+        for name in scientific_identity_fields
+    ):
+        raise RuntimeError("R6 carry-forward changed scientific stage identity")
+    if source_identity.get("effective_game_lanes") != 4 or destination_identity.get(
+        "effective_game_lanes"
+    ) != 4:
+        raise RuntimeError("R6 carry-forward changed effective common-4 lanes")
+    _assert_monotonic_cap_relaxation(
+        source_identity["execution_caps"], destination_identity["execution_caps"]
+    )
+
+    source_config = ArenaConfig(**source_identity["config"])
+    payload = json.loads(R6_SOURCE_GAME.read_text(encoding="utf-8"))
+    source_game_identity, source_game = _game_progress_from_dict(payload)
+    if source_game_identity.get("hard_caps") != source_identity["execution_caps"]:
+        raise RuntimeError("R6 source game caps do not match its manifest")
+    game_scientific_fields = (
+        "stage_id", "arena_id", "pair_index", "opening", "child_owner",
+        "parent_checkpoint_id", "child_checkpoint_id", "node_budgets",
+        "max_depth", "tt_megabytes", "capture_search_metrics",
+    )
+    destination_game_identity = _game_progress_identity_for(
+        destination_identity, config, destination_caps,
+        openings.to_dict()["openings"][0], 0, 0,
+        capture_search_metrics=True,
+    )
+    if any(
+        source_game_identity.get(name) != destination_game_identity.get(name)
+        for name in game_scientific_fields
+    ):
+        raise RuntimeError("R6 carry-forward changed scientific game identity")
+    if source_game_identity["node_budgets"] != {"parent": 2_000, "child": 2_000}:
+        raise RuntimeError("R6 source role budgets are not the common-4 2k budget")
+    if source_game_identity["max_depth"] != 12 or source_game_identity["tt_megabytes"] != 8:
+        raise RuntimeError("R6 source depth or TT identity is invalid")
+    if source_game_identity["capture_search_metrics"] is not True:
+        raise RuntimeError("R6 source telemetry identity is invalid")
+    if source_game.pair != 0 or source_game.child_owner != 0:
+        raise RuntimeError("R6 source game pair or owner is invalid")
+    opening = openings.openings[0]
+    source_caps = ArenaExecutionCaps(**source_identity["execution_caps"])
+    try:
+        _validate_game_progress(
+            compiled, opening, payload,
+            expected_identity=source_game_identity,
+            identity_sha256=R6_SOURCE_IDENTITY_SHA256,
+            config=source_config, capture_search_metrics=True,
+            pair_index=0, child_owner=0,
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        raise RuntimeError("R6 source game replay or telemetry validation failed") from exc
+    if source_caps.per_game_nodes != 200_000:
+        raise RuntimeError("R6 source node cap is not the frozen 200k cap")
+    destination.mkdir(parents=True, exist_ok=True)
+    expected_manifest = {
+        "schema": ARENA_GAME_PROGRESS_SCHEMA,
+        "identity_sha256": stable_sha256(destination_identity),
+        "identity": destination_identity,
+    }
+    manifest_path = destination / "manifest.json"
+    if manifest_path.exists():
+        if json.loads(manifest_path.read_text(encoding="utf-8")) != expected_manifest:
+            raise RuntimeError("calibrated R6 destination manifest conflicts")
+    else:
+        if list(destination.glob("pair-*.json")):
+            raise RuntimeError("calibrated R6 destination mixes pair-v1 progress")
+        _atomic_json(manifest_path, expected_manifest)
+    imported = _game_progress_to_dict(
+        source_game,
+        identity_sha256=expected_manifest["identity_sha256"],
+        game_identity=destination_game_identity,
+    )
+    game_path = destination / "game-000000-owner-0.json"
+    if game_path.exists():
+        if json.loads(game_path.read_text(encoding="utf-8")) != imported:
+            raise RuntimeError("calibrated R6 destination game conflicts")
+    else:
+        _atomic_json(game_path, imported)
 
 
 def _run_candidate_stage(
@@ -371,20 +543,27 @@ def _run_candidate_stage(
     openings = generate_arena_openings(
         compiled, count=pairs, seed=seed, min_plies=2, max_plies=6
     )
+    config = ArenaConfig(
+        pairs=pairs,
+        nodes_per_move=SHALLOW_NODES,
+        max_depth=MAX_DEPTH,
+        tt_megabytes=8,
+        opening_seed=seed,
+        opening_count=pairs,
+        min_plies=2,
+        max_plies=6,
+        workers=_workers(pairs),
+    )
+    progress_dir = _candidate_progress_dir(label, seed, pairs)
+    if pairs == 4 and seed == 59011:
+        _carry_forward_r6_game(
+            compiled, gen1, candidate, config, openings, progress_dir,
+            stage_id=label,
+        )
     run_result = run_arena_game_resumable(
         compiled, native, gen1, candidate,
-        ArenaConfig(
-            pairs=pairs,
-            nodes_per_move=SHALLOW_NODES,
-            max_depth=MAX_DEPTH,
-            tt_megabytes=8,
-            opening_seed=seed,
-            opening_count=pairs,
-            min_plies=2,
-            max_plies=6,
-            workers=_workers(pairs),
-        ),
-        progress_dir=PROGRESS / f"{label}-seed-{seed}",
+        config,
+        progress_dir=progress_dir,
         openings=openings,
         capture_search_metrics=True,
         execution_caps=_candidate_caps(pairs),

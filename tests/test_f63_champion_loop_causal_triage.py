@@ -1,7 +1,9 @@
 """Static contracts for the F63 causal triage harness."""
 
 import inspect
+import hashlib
 import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -86,8 +88,163 @@ def test_candidate_stage_routes_game_v1_with_explicit_caps_and_pause_path(monkey
     assert captured["stage_id"] == "candidate-test"
     assert captured["pause_file"] == f63.OUT / "candidate-pause.request"
     assert captured["execution_caps"].max_stage_games == 8
-    assert captured["execution_caps"].per_game_wall_seconds == 900.0
-    assert captured["execution_caps"].per_game_nodes == 200_000
+    assert captured["execution_caps"].per_game_wall_seconds == 10_000.0
+    assert captured["execution_caps"].per_game_nodes == 1_000_000
+    assert captured["execution_caps"].per_game_plies == 512
+    assert captured["execution_caps"].stage_wall_seconds == 10_800.0
+
+
+def test_common4_caps_are_calibrated_but_selected_caps_remain_frozen():
+    common = f63._candidate_caps(4)
+    assert common == f63._calibrated_common4_caps()
+    assert common.game_lanes(4, 4) == 4
+    assert common.logical_cpu_count == 10
+    assert f63._candidate_caps(8) == f63.ArenaExecutionCaps(
+        per_game_wall_seconds=900.0,
+        per_game_nodes=200_000,
+        per_game_plies=80,
+        max_stage_games=16,
+        max_concurrent_games=10,
+        stage_wall_seconds=7_200.0,
+        logical_cpu_count=10,
+    )
+    assert f63._candidate_caps(32) == f63.ArenaExecutionCaps(
+        per_game_wall_seconds=900.0,
+        per_game_nodes=200_000,
+        per_game_plies=80,
+        max_stage_games=64,
+        max_concurrent_games=10,
+        stage_wall_seconds=28_800.0,
+        logical_cpu_count=10,
+    )
+
+
+def test_r6_completed_game_carries_forward_without_mutating_source(tmp_path):
+    compiled, _native, _profile = f63.f59._ruleset(f63.LABEL)
+    source_manifest = json.loads(f63.R6_SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    openings = f63.generate_arena_openings(
+        compiled, count=4, seed=630403, min_plies=2, max_plies=6
+    )
+    config = f63.ArenaConfig(
+        pairs=4, nodes_per_move=2_000, max_depth=12, tt_megabytes=8,
+        opening_seed=630403, opening_count=4, min_plies=2, max_plies=6, workers=4,
+    )
+    parent = SimpleNamespace(checkpoint_id=f63.GEN1_ID)
+    candidate = SimpleNamespace(
+        checkpoint_id=source_manifest["identity"]["child_checkpoint_id"]
+    )
+    source_before = f63.R6_SOURCE_GAME.read_bytes()
+    destination = tmp_path / "calibrated"
+
+    f63._carry_forward_r6_game(
+        compiled, parent, candidate, config, openings, destination,
+        stage_id="candidate-59011-common-4",
+    )
+
+    assert f63.R6_SOURCE_GAME.read_bytes() == source_before
+    assert hashlib.sha256(source_before).hexdigest() == f63.R6_SOURCE_GAME_SHA256
+    manifest = json.loads((destination / "manifest.json").read_text(encoding="utf-8"))
+    imported = json.loads(
+        (destination / "game-000000-owner-0.json").read_text(encoding="utf-8")
+    )
+    assert manifest["identity"]["execution_caps"]["per_game_plies"] == 512
+    assert imported["identity_sha256"] == manifest["identity_sha256"]
+    assert imported["game"]["plies"] == 72
+    assert imported["game"]["result"] == "checkmate"
+    assert imported["game_identity"]["hard_caps"]["per_game_nodes"] == 1_000_000
+    assert imported["game_identity"]["node_budgets"] == {
+        "parent": 2_000, "child": 2_000
+    }
+
+
+def test_r6_carry_forward_rejects_equal_or_tighter_caps(monkeypatch, tmp_path):
+    compiled, _native, _profile = f63.f59._ruleset(f63.LABEL)
+    source_manifest = json.loads(f63.R6_SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    openings = f63.generate_arena_openings(
+        compiled, count=4, seed=630403, min_plies=2, max_plies=6
+    )
+    config = f63.ArenaConfig(
+        pairs=4, nodes_per_move=2_000, max_depth=12, tt_megabytes=8,
+        opening_seed=630403, opening_count=4, min_plies=2, max_plies=6, workers=4,
+    )
+    parent = SimpleNamespace(checkpoint_id=f63.GEN1_ID)
+    candidate = SimpleNamespace(
+        checkpoint_id=source_manifest["identity"]["child_checkpoint_id"]
+    )
+    monkeypatch.setattr(
+        f63, "_candidate_caps",
+        lambda _pairs: f63.ArenaExecutionCaps(
+            per_game_wall_seconds=900.0,
+            per_game_nodes=200_000,
+            per_game_plies=80,
+            max_stage_games=8,
+            max_concurrent_games=8,
+            stage_wall_seconds=3_600.0,
+            logical_cpu_count=10,
+        ),
+    )
+    with pytest.raises(RuntimeError, match="caps are not calibrated"):
+        f63._carry_forward_r6_game(
+            compiled, parent, candidate, config, openings, tmp_path / "reject",
+            stage_id="candidate-59011-common-4",
+        )
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    ["checkpoint", "opening", "owner", "search_budget", "depth", "tt", "telemetry"],
+)
+def test_r6_carry_forward_rejects_scientific_identity_changes(
+    monkeypatch, tmp_path, mutation
+):
+    compiled, _native, _profile = f63.f59._ruleset(f63.LABEL)
+    source_manifest = json.loads(f63.R6_SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    source_game = json.loads(f63.R6_SOURCE_GAME.read_text(encoding="utf-8"))
+    if mutation == "checkpoint":
+        source_manifest["identity"]["child_checkpoint_id"] = "changed-checkpoint"
+        source_manifest["identity_sha256"] = f63.stable_sha256(source_manifest["identity"])
+    elif mutation == "opening":
+        source_game["game_identity"]["opening"]["final_position_key"] = "changed-opening"
+    elif mutation == "owner":
+        source_game["game"]["child_owner"] = 1
+    elif mutation == "search_budget":
+        source_game["game_identity"]["node_budgets"]["child"] = 1_000
+    elif mutation == "depth":
+        source_game["game_identity"]["max_depth"] = 11
+    elif mutation == "tt":
+        source_game["game_identity"]["tt_megabytes"] = 4
+    else:
+        source_game["game_identity"]["capture_search_metrics"] = False
+    manifest_path = tmp_path / "manifest.json"
+    game_path = tmp_path / "source-game.json"
+    manifest_path.write_text(json.dumps(source_manifest), encoding="utf-8")
+    game_path.write_text(json.dumps(source_game), encoding="utf-8")
+    monkeypatch.setattr(f63, "R6_SOURCE_MANIFEST", manifest_path)
+    monkeypatch.setattr(f63, "R6_SOURCE_GAME", game_path)
+    monkeypatch.setattr(
+        f63, "R6_SOURCE_MANIFEST_SHA256", hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+    )
+    monkeypatch.setattr(
+        f63, "R6_SOURCE_GAME_SHA256", hashlib.sha256(game_path.read_bytes()).hexdigest()
+    )
+    if mutation == "checkpoint":
+        monkeypatch.setattr(f63, "R6_SOURCE_IDENTITY_SHA256", source_manifest["identity_sha256"])
+    openings = f63.generate_arena_openings(
+        compiled, count=4, seed=630403, min_plies=2, max_plies=6
+    )
+    config = f63.ArenaConfig(
+        pairs=4, nodes_per_move=2_000, max_depth=12, tt_megabytes=8,
+        opening_seed=630403, opening_count=4, min_plies=2, max_plies=6, workers=4,
+    )
+    parent = SimpleNamespace(checkpoint_id=f63.GEN1_ID)
+    candidate = SimpleNamespace(
+        checkpoint_id=source_game["game_identity"]["child_checkpoint_id"]
+    )
+    with pytest.raises(RuntimeError):
+        f63._carry_forward_r6_game(
+            compiled, parent, candidate, config, openings, tmp_path / "reject",
+            stage_id="candidate-59011-common-4",
+        )
 
 
 def test_candidate_resume_source_has_no_teacher_stage_call():
