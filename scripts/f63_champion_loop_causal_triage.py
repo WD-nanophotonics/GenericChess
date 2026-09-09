@@ -834,6 +834,30 @@ def run(*, smoke: bool = False):
     return result
 
 
+def _terminal_summary(result: dict) -> dict:
+    """Serialize both legacy teacher and stage-scoped candidate results."""
+    teacher = result.get("teacher")
+    if not isinstance(teacher, dict):
+        teacher = {}
+    candidate_loop = result.get("candidate_loop")
+    if not isinstance(candidate_loop, dict):
+        candidate_loop = {}
+    return {
+        # Candidate-only resume results intentionally have no teacher
+        # classification.  Keep this optional value null instead of inventing
+        # a scientific teacher conclusion for an operational stage result.
+        "teacher_classification": teacher.get("classification"),
+        "teacher_decision_state": teacher.get("decision_state"),
+        "teacher_scores": {
+            stage: payload["mean_pair_score"]
+            for stage, payload in teacher.items()
+            if isinstance(payload, dict) and "mean_pair_score" in payload
+        },
+        "candidate_status": candidate_loop.get("status"),
+        "candidate_classification": candidate_loop.get("classification"),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--smoke", action="store_true")
@@ -861,16 +885,7 @@ def main() -> None:
         )
     else:
         result = run(smoke=True)
-    print(json.dumps({
-        "teacher_classification": result["teacher"]["classification"],
-        "teacher_scores": {
-            stage: payload["mean_pair_score"]
-            for stage, payload in result["teacher"].items()
-            if isinstance(payload, dict) and "mean_pair_score" in payload
-        },
-        "candidate_status": result["candidate_loop"]["status"],
-        "candidate_classification": result["candidate_loop"].get("classification"),
-    }, sort_keys=True), flush=True)
+    print(json.dumps(_terminal_summary(result), sort_keys=True), flush=True)
 
 
 if __name__ == "__main__":

@@ -99,6 +99,26 @@ def test_candidate_resume_source_has_no_teacher_stage_call():
     assert "CANDIDATE_PATH" in context_source
 
 
+def test_terminal_summary_accepts_candidate_only_resumable_result():
+    result = {
+        "teacher": {
+            "status": "FROZEN_DECISION_ONLY",
+            "decision_state": "PASS_LOCKED",
+            "decision_sufficient": True,
+        },
+        "candidate_loop": {
+            "status": "COMMON_INCOMPLETE_RESUMABLE",
+            "candidates": [{"seed": 59011}],
+        },
+    }
+    summary = f63._terminal_summary(result)
+    assert summary["teacher_classification"] is None
+    assert summary["teacher_decision_state"] == "PASS_LOCKED"
+    assert summary["candidate_status"] == "COMMON_INCOMPLETE_RESUMABLE"
+    assert summary["candidate_classification"] is None
+    assert json.dumps(summary, sort_keys=True)
+
+
 @pytest.mark.parametrize(
     ("stage", "expected"),
     [
@@ -115,7 +135,7 @@ def test_selected_eight_continuation_is_decision_aware(stage, expected):
     assert f63._selected_eight_continuation(stage) == expected
 
 
-def test_candidate_resume_freezes_all_identities_before_first_arena(monkeypatch):
+def test_candidate_resume_freezes_all_identities_before_first_arena(monkeypatch, tmp_path):
     compiled = object()
     gen1 = type("Checkpoint", (), {"checkpoint_id": f63.GEN1_ID})()
     checkpoints = {
@@ -162,6 +182,7 @@ def test_candidate_resume_freezes_all_identities_before_first_arena(monkeypatch)
     )
     writes = []
     monkeypatch.setattr(f63, "_atomic_json", lambda path, payload: writes.append((path, payload)))
+    monkeypatch.setattr(f63, "CANDIDATE_PATH", tmp_path / "candidates.json")
     arena_calls = []
 
     def fake_stage(*args, **kwargs):
