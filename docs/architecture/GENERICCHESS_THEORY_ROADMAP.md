@@ -324,3 +324,13 @@ root 44 still selecting the cached Gen1 action while root 72 retained its
 cached action. The routing classification is
 `DEPLOYMENT_CORRECTION_NOT_VISIBLE`; no additional probes or Arena are
 authorized by this result.
+
+## F68 deployment-aligned correction witness
+
+The zero-compute precondition found only 8/96 roots where Gen1 static top
+matched the cached Gen1 2k deployment action. Six had at least two deeper
+signals supporting one alternative, but every such fixed-feature direction
+hit an unrelated unsafe top-action breakpoint before its intended target flip.
+The route is therefore closed as
+`DEPLOYMENT_ALIGNED_FIXED_FEATURE_CORRECTION_NOT_SAFE`: no child, extra probe,
+beta increase, Arena, or warm-start training was authorized.
