@@ -349,6 +349,9 @@ def _play_one_game(
                 "selective_depth": int(result.selective_depth),
                 "termination_reason": str(result.termination_reason),
                 "used_fallback": bool(result.used_fallback),
+                "root_window_pruning": bool(
+                    getattr(result, "root_window_pruning", False)
+                ),
                 "decision_kind": (
                     "declaration"
                     if getattr(result, "declaration_id", None) is not None
