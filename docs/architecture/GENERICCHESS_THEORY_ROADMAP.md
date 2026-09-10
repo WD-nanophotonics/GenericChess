@@ -288,3 +288,16 @@ The route is closed as
 `PARENT_RETENTION / BOUNDED_CORRECTION`: preserve Gen1 as an anchor and learn
 only a bounded additive correction. This is a design diagnosis, not an
 implemented learner or a claim that the mechanism is globally impossible.
+
+## F65 exact blend breakpoint feasibility
+
+Using only the 96 cached F62 action rows, all three frozen replacement
+directions have a nonzero safe affine prefix, but each permits only one
+diagnostically supported correction before an unsafe transition. The prescribed
+tie break selects seed 59011 with virtual `alpha*=0.004315178940`; this changes
+only root 44 to the stable/ordinary cached teacher action and preserves all 24
+upper-quartile Gen1 decisions. The result is
+`BLEND_REUSE_FEASIBLE_BUT_RUNTIME_EXTENSION_REQUIRED`: exact blending of the
+different width-32 parent and child networks needs a width-64 concatenation,
+while the current Native runtime accepts only width 16 or 32. No blend
+checkpoint or runtime extension was implemented.
