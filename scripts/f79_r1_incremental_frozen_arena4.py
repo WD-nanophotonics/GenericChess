@@ -38,7 +38,7 @@ MAX_DEPTH = 12
 TT_MEGABYTES = 8
 F78_RESULT = ROOT / ".generic_chess_flow" / "f78-parent-anchored-full-residual-arena2" / "f78_results.json"
 F78_OPENINGS = f79.F78_OPENINGS
-OUT = ROOT / ".generic_chess_flow" / "f79-r1-incremental-frozen-arena4"
+OUT = ROOT / ".generic_chess_flow" / "f79-r1-incremental-frozen-arena4-corrected"
 PROGRESS = OUT / "progress"
 RESULT_PATH = OUT / "f79_r1_results.json"
 
@@ -63,12 +63,16 @@ def _load_frozen_openings(compiled):
         seed=corpus.seed,
         min_plies=corpus.min_plies,
         max_plies=corpus.max_plies,
-        openings=selected,
+        # The arena progress schema uses local pair indices for game identity.
+        # Retain the durable source indices in the result metadata while
+        # reindexing this two-opening view only for the local scheduler.
+        openings=tuple(replace(opening, index=local_index) for local_index, opening in enumerate(selected)),
     )
     return subset, {
         "source_path": str(F78_OPENINGS.relative_to(ROOT)),
         "source_corpus_id": corpus.corpus_id,
         "source_opening_indices": list(SOURCE_OPENING_INDICES),
+        "source_final_position_keys": [opening.final_position_key for opening in selected],
         "source_seed": corpus.seed,
         "selected_subset_id": subset.corpus_id,
     }
