@@ -18,6 +18,7 @@ from ..core.transition import apply_action
 from . import _module, native_available
 from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY
+from .mirror import pack_semantic_action
 from .semantic import public_action
 
 DYNAMIC_FEATURE_NAMES = ("mobility", "promotion_potential", "anchor_safety")
@@ -50,6 +51,11 @@ class SemanticIterativeSearchResult:
     tt_entry_bytes: int
     tt_allocated_bytes: int
     dynamic_features: tuple[int, int, int] = ()
+    root_hint_requested: Action | None = None
+    root_hint_legal: bool = False
+    root_hint_apply_count: int = 0
+    root_iterations_attempted: int = 0
+    root_iteration_first_actions: tuple[Action | None, ...] = ()
 
 
 def _profile_tuple(native_rules, values):
@@ -252,6 +258,8 @@ class SemanticSearchEngine:
         session,
         limits: SearchLimits,
         cancel_token: CancellationToken | None = None,
+        *,
+        root_order_hint: Action | None = None,
     ) -> SemanticIterativeSearchResult:
         if self._compiled.ruleset_fingerprint != session.compiled.ruleset_fingerprint:
             raise ValueError("session ruleset fingerprint does not match semantic engine")
@@ -276,6 +284,9 @@ class SemanticSearchEngine:
             )
 
         position = pack_semantic_search_position(self._compiled, self._native_rules, session)
+        packed_root_hint = None if root_order_hint is None else int(
+            pack_semantic_action(self._native_rules, session.state.position, root_order_hint)
+        )
         flag = None
         unregister = None
         if cancel_token is not None:
@@ -291,6 +302,7 @@ class SemanticSearchEngine:
                 None if limits.max_nodes is None else int(limits.max_nodes),
                 None if limits.max_time_seconds is None else float(limits.max_time_seconds),
                 flag,
+                packed_root_hint,
             ))
         finally:
             if unregister is not None:
@@ -332,6 +344,13 @@ class SemanticSearchEngine:
             from .semantic import dynamic_features as native_dynamic_features
             leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
 
+        root_first_actions = []
+        for packed in raw.get("root_iteration_first_actions", ()):
+            packed = None if packed is None else int(packed)
+            root_first_actions.append(
+                None if packed is None else public_action(self._native_rules, packed)
+            )
+
         return SemanticIterativeSearchResult(
             score=int(raw["score"]),
             action=action,
@@ -354,6 +373,11 @@ class SemanticSearchEngine:
             tt_entry_bytes=int(raw.get("tt_entry_bytes", 0)),
             tt_allocated_bytes=int(raw.get("tt_allocated_bytes", 0)),
             dynamic_features=leaf_dynamic,
+            root_hint_requested=root_order_hint,
+            root_hint_legal=bool(raw.get("root_hint_legal", False)),
+            root_hint_apply_count=int(raw.get("root_hint_apply_count", 0)),
+            root_iterations_attempted=int(raw.get("root_iterations_attempted", 0)),
+            root_iteration_first_actions=tuple(root_first_actions),
         )
 
 

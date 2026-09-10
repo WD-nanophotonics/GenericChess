@@ -1,17 +1,14 @@
-"""F71 causal probe for a learned root move-ordering hint.
+"""F71-R1 causal probe for a learned root move-ordering hint.
 
-This is deliberately an experiment-local harness.  It replays the twenty
-stable F62 development roots with fresh Gen1 D0 engines and injects one
-depth-zero, score-free root TT entry for the seed-59011 policy action.  The
-native semantic engine has no public TT-store API, so the narrow capsule
-bridge below is guarded by the native structure sizes and writes no production
-search state outside the fresh experiment engine.
+This is deliberately an experiment-local harness. It replays the twenty
+stable F62 development roots with fresh Gen1 D0 engines and passes one
+score-free root-only ordering hint for the seed-59011 policy action through the
+narrow internal Native search capability. The result records the first root
+action searched at every attempted iterative-deepening depth.
 """
 from __future__ import annotations
 
 import argparse
-import ctypes
-from dataclasses import dataclass
 import hashlib
 import json
 import os
@@ -28,16 +25,14 @@ sys.path.insert(0, str(ROOT))
 from generic_chess.ai.limits import SearchLimits  # noqa: E402
 from generic_chess.learning.material import LearnableMaterialCheckpoint  # noqa: E402
 from generic_chess.learning.nonlinear import CompactNonlinearResidual  # noqa: E402
-from generic_chess.native.adapter import pack_semantic_search_position  # noqa: E402
 from generic_chess.native.mirror import pack_semantic_action  # noqa: E402
 from generic_chess.native.semantic_engine import SemanticSearchEngine  # noqa: E402
-from generic_chess.native import _module  # noqa: E402
 from scripts import f59_action_spectrum_diagnosis as f59  # noqa: E402
 from scripts import f61_r2_fresh_strength as f61r2  # noqa: E402
 
 
-WORK_ORDER = "GENERICCHESS-F71-CAUSAL-ROOT-HINT-PROBE"
-PARENT_SHA = "a180486b6a709a456d4a55a44a35ef716d4e4e20"
+WORK_ORDER = "GENERICCHESS-F71-R1-ROOT-HINT-HARNESS-CORRECTIVE"
+PARENT_SHA = "1f378782db9c1b1c314abdf863d4a94d37294cd4"
 LABEL = "B_CANONICAL_STANDARD_SHOGI"
 GEN1_ID = "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4"
 GEN1_CANDIDATE = "F60_D0_PAIRWISE_SEED_59012"
@@ -48,14 +43,12 @@ F62_STAGE_SHA = "e7a93423d6058c68fe7ccbc61302584ca1e8869aa828586254f72f4dfdac2c7
 F62_RECORDS_SHA = "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61"
 F62_OUT = ROOT / ".generic_chess_flow" / "f62-learned-champion-repeatability"
 F63_CANDIDATES = ROOT / ".generic_chess_flow" / "f63-champion-loop-causal-triage" / "candidates.json"
-OUT = ROOT / ".generic_chess_flow" / "f71-causal-root-hint-probe"
+OUT = ROOT / ".generic_chess_flow" / "f71-r1-root-hint-harness-corrective"
 PROGRESS = OUT / "progress"
 RESULT_PATH = OUT / "f71_results.json"
 F62_ROOT_INDICES = tuple(range(96))
 EXPECTED_STABLE_ROOTS = 20
 TT_MEGABYTES = 8
-TT_HINT_DEPTH = 0
-_MASK64 = (1 << 64) - 1
 
 
 def _atomic_json(path: Path, payload: Any) -> None:
@@ -146,157 +139,20 @@ def _scorer_hint(compiled, native, gen1, scorer, record: dict):
     }
 
 
-class _SemAux(ctypes.Structure):
-    _fields_ = [
-        ("kind", ctypes.c_uint8), ("has_value", ctypes.c_uint8),
-        ("supplied", ctypes.c_uint8), ("bool_value", ctypes.c_int32),
-        ("square", ctypes.c_uint16),
-    ]
-
-
-class _SemPosition(ctypes.Structure):
-    _fields_ = [
-        ("rules_fingerprint", ctypes.c_char * 65),
-        ("board", ctypes.c_uint8 * (256 * 8)),
-        ("hand_counts", ctypes.c_uint16 * (2 * 64)),
-        ("side_to_move", ctypes.c_uint8), ("ply", ctypes.c_uint16),
-        ("aux", _SemAux * (8 * 3)),
-        ("history_lo", ctypes.c_uint64 * 1025),
-        ("history_hi", ctypes.c_uint64 * 1025),
-        ("history_digest", (ctypes.c_uint64 * 4) * 1025),
-        ("history_actor", ctypes.c_uint8 * 1025),
-        ("history_gave_check", ctypes.c_uint8 * 1025),
-        ("history_len", ctypes.c_uint16),
-        ("history_exact", ctypes.c_uint8),
-        ("history_events_exact", ctypes.c_uint8),
-    ]
-
-
-class _SemEntry(ctypes.Structure):
-    _fields_ = [
-        ("position_digest", ctypes.c_uint64 * 4),
-        ("history_context", ctypes.c_uint64 * 4),
-        ("history_len", ctypes.c_uint16), ("depth", ctypes.c_uint16),
-        ("score", ctypes.c_int32), ("best_action", ctypes.c_uint64),
-        ("generation", ctypes.c_uint32), ("bound", ctypes.c_uint8),
-        ("occupied", ctypes.c_uint8), ("has_action", ctypes.c_uint8),
-    ]
-
-
-class _SemBucket(ctypes.Structure):
-    _fields_ = [("entries", _SemEntry * 4)]
-
-
-class _SemTable(ctypes.Structure):
-    _fields_ = [
-        ("buckets", ctypes.c_void_p), ("bucket_count", ctypes.c_size_t),
-        ("requested_bytes", ctypes.c_size_t), ("allocated_bytes", ctypes.c_size_t),
-        ("generation", ctypes.c_uint32), ("occupied_entries", ctypes.c_uint64),
-    ]
-
-
-class _SemEngine(ctypes.Structure):
-    _fields_ = [
-        ("rules", ctypes.c_void_p), ("rules_capsule", ctypes.c_void_p),
-        ("board_values", ctypes.c_void_p), ("hand_values", ctypes.c_void_p),
-        ("dynamic_values", ctypes.c_void_p), ("spatial_values", ctypes.c_void_p),
-        ("localized_control_values", ctypes.c_void_p), ("compact_values", ctypes.c_void_p),
-        ("evaluator_scale", ctypes.c_uint), ("_padding", ctypes.c_uint),
-        ("tt", ctypes.c_void_p), ("busy", ctypes.c_int),
-    ]
-
-
-def _capsule_pointer(capsule, name: str) -> int:
-    getter = ctypes.pythonapi.PyCapsule_GetPointer
-    getter.argtypes = [ctypes.py_object, ctypes.c_char_p]
-    getter.restype = ctypes.c_void_p
-    pointer = getter(capsule, name.encode("ascii"))
-    if not pointer:
-        raise RuntimeError(f"F71 failed to unwrap {name}")
-    return int(pointer)
-
-
-def _mix(value: int) -> int:
-    value ^= value >> 30
-    value = (value * 0xBF58476D1CE4E5B9) & _MASK64
-    value ^= value >> 27
-    value = (value * 0x94D049BB133111EB) & _MASK64
-    return (value ^ (value >> 31)) & _MASK64
-
-
-def _root_context(position: _SemPosition) -> tuple[int, ...]:
-    context = [0, 0, 0, 0]
-    for index in range(int(position.history_len)):
-        event = (int(position.history_actor[index]) << 8) | int(position.history_gave_check[index])
-        digest = position.history_digest[index]
-        next_context = []
-        for lane in range(4):
-            value = context[lane] ^ int(digest[lane]) ^ event
-            value ^= index * 0x9E3779B97F4A7C15
-            value ^= (lane + 1) * 0xD6E8FEB86659FD93
-            next_context.append(_mix((value + context[(lane + 1) & 3]) & _MASK64))
-        context = next_context
-    return tuple(context)
-
-
 def _search_arm_fixed(compiled, native, gen1, record, *, hint=None):
-    """Search arm with the hint pack performed from the exact Python root."""
+    """Search one fresh arm, optionally passing a root-only ordering hint."""
     session = f59._session(compiled, record)
     engine = SemanticSearchEngine(compiled, native, checkpoint=gen1, tt_megabytes=TT_MEGABYTES)
-    injection = None
-    if hint is not None:
-        position = pack_semantic_search_position(compiled, native, session)
-        injection = _inject_root_hint_with_action(engine, position, session.state.position, hint, native)
-    result = engine.search(session, SearchLimits(max_depth=MAX_DEPTH, max_nodes=NODES, quiescence_max_depth=0))
-    return _result_payload(result, injection)
+    result = engine.search(
+        session,
+        SearchLimits(max_depth=MAX_DEPTH, max_nodes=NODES, quiescence_max_depth=0),
+        root_order_hint=hint,
+    )
+    return _result_payload(result)
 
 
-def _inject_root_hint_with_action(engine, position_capsule, python_position, action, native):
-    expected_size = int(_module().semantic_search_runtime_sizes()["position_bytes"])
-    expected_entry = int(engine.tt_info()["entry_size"])
-    if ctypes.sizeof(_SemPosition) != expected_size or ctypes.sizeof(_SemEntry) != expected_entry:
-        raise RuntimeError("F71 native capsule layout mismatch")
-    engine_pointer = _capsule_pointer(engine._capsule, "generic_chess._native_core.gc_semantic_engine")
-    position_pointer = _capsule_pointer(position_capsule, "generic_chess._native_core.gc_semantic_position")
-    native_position = _SemPosition.from_address(position_pointer)
-    native_engine = _SemEngine.from_address(engine_pointer)
-    if not native_engine.tt:
-        raise RuntimeError("F71 hinted arm unexpectedly has no TT")
-    table = _SemTable.from_address(int(native_engine.tt))
-    context = _root_context(native_position)
-    history_len = int(native_position.history_len)
-    digest = tuple(int(value) for value in native_position.history_digest[history_len - 1])
-    mixed = history_len
-    for lane in range(4):
-        mixed = _mix(mixed ^ digest[lane] ^ context[lane])
-    bucket_index = mixed & (int(table.bucket_count) - 1)
-    bucket = _SemBucket.from_address(int(table.buckets) + bucket_index * ctypes.sizeof(_SemBucket))
-    target = next((entry for entry in bucket.entries if not entry.occupied), bucket.entries[0])
-    packed = int(pack_semantic_action(native, python_position, action))
-    for lane in range(4):
-        target.position_digest[lane] = digest[lane]
-        target.history_context[lane] = context[lane]
-    target.history_len = history_len
-    target.depth = TT_HINT_DEPTH
-    target.score = 0
-    target.best_action = packed
-    target.generation = int(table.generation)
-    target.bound = 0
-    target.occupied = 1
-    target.has_action = 1
-    return {
-        "entry_depth": TT_HINT_DEPTH,
-        "entry_score": 0,
-        "entry_bound": "NONE",
-        "entry_has_action": True,
-        "entry_generation": int(table.generation),
-        "bucket_index": int(bucket_index),
-        "packed_action": packed,
-        "history_len": history_len,
-    }
-
-
-def _result_payload(result, injection=None):
+def _result_payload(result):
+    first_actions = tuple(result.root_iteration_first_actions)
     return {
         "action": _action_payload(result.action),
         "action_key": None if result.action is None else _action_key(result.action),
@@ -315,7 +171,17 @@ def _result_payload(result, injection=None):
         "tt_replacements": int(result.tt_replacements),
         "tt_entry_bytes": int(result.tt_entry_bytes),
         "tt_allocated_bytes": int(result.tt_allocated_bytes),
-        "hint_injection": injection,
+        "root_hint_requested": _action_payload(result.root_hint_requested),
+        "root_hint_requested_action_key": (
+            None if result.root_hint_requested is None else _action_key(result.root_hint_requested)
+        ),
+        "root_hint_legal": bool(result.root_hint_legal),
+        "root_hint_apply_count": int(result.root_hint_apply_count),
+        "root_iterations_attempted": int(result.root_iterations_attempted),
+        "root_iteration_first_actions": [_action_payload(action) for action in first_actions],
+        "root_iteration_first_action_keys": [
+            None if action is None else _action_key(action) for action in first_actions
+        ],
     }
 
 
@@ -326,13 +192,18 @@ def _arm_contract(arm: dict, *, hinted: bool) -> list[str]:
     if arm["qnodes"] != 0:
         failures.append(f"{'hinted' if hinted else 'baseline'} qnodes is nonzero")
     if hinted:
-        if not arm.get("hint_injection"):
-            failures.append("hint injection missing")
-        else:
-            injection = arm["hint_injection"]
-            for key, expected in (("entry_depth", 0), ("entry_score", 0), ("entry_bound", "NONE"), ("entry_has_action", True)):
-                if injection.get(key) != expected:
-                    failures.append(f"hint entry {key} contract failed")
+        if not arm.get("root_hint_requested_action_key"):
+            failures.append("root hint request missing")
+        if not arm.get("root_hint_legal"):
+            failures.append("root hint was not found in the legal root action list")
+        attempted = int(arm.get("root_iterations_attempted", 0))
+        first = arm.get("root_iteration_first_action_keys", [])[:attempted]
+        if len(first) != attempted:
+            failures.append("root first-action telemetry length mismatch")
+        if any(action_key != arm.get("root_hint_requested_action_key") for action_key in first):
+            failures.append("hinted iteration did not search the requested root action first")
+        if int(arm.get("root_hint_apply_count", 0)) != attempted:
+            failures.append("root hint apply count did not cover every attempted iteration")
     return failures
 
 
@@ -342,14 +213,19 @@ def _classify(rows: list[dict], failures: list[str]) -> str:
     baseline = sum(row["baseline_deep_agreement"] for row in rows)
     hinted = sum(row["hinted_deep_agreement"] for row in rows)
     if hinted > baseline:
-        return "ROOT_HINT_CAUSAL_SUPPORTED"
+        return "SUPPORTED"
     if hinted == baseline:
-        return "ROOT_HINT_CAUSAL_NEUTRAL"
-    return "ROOT_HINT_CAUSAL_NEGATIVE"
+        return "NEUTRAL"
+    return "NEGATIVE"
 
 
 def _code_provenance() -> dict[str, str]:
-    paths = ("scripts/f71_causal_root_hint_probe.py", "scripts/f59_action_spectrum_diagnosis.py", "generic_chess/native/semantic_engine.py")
+    paths = (
+        "scripts/f71_causal_root_hint_probe.py",
+        "scripts/f59_action_spectrum_diagnosis.py",
+        "generic_chess/native/semantic_engine.py",
+        "generic_chess/_native/native_module.c",
+    )
     return {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in paths}
 
 
@@ -375,8 +251,8 @@ def run(*, smoke: bool = False) -> dict:
         hinted = _search_arm_fixed(compiled, native, gen1, record, hint=hint_action)
         root_failures.extend(_arm_contract(baseline, hinted=False))
         root_failures.extend(_arm_contract(hinted, hinted=True))
-        if hinted["hint_injection"]["packed_action"] != hint_meta["packed_action"]:
-            root_failures.append("hint packed action mismatch")
+        if hinted["root_hint_requested_action_key"] != hint_meta["action_key"]:
+            root_failures.append("hint action mismatch")
         repeat = _search_arm_fixed(compiled, native, gen1, record, hint=hint_action)
         if any(repeat[key] != hinted[key] for key in ("action_key", "score", "nodes", "qnodes", "completed_depth", "termination_mode")):
             root_failures.append("hinted repeatability mismatch")
@@ -406,7 +282,7 @@ def run(*, smoke: bool = False) -> dict:
         _atomic_json(PROGRESS / f"root-{root['root_index']:03d}.json", row)
     classification = _classify(rows, failures)
     result = {
-        "schema": "generic-chess-f71-causal-root-hint-v1",
+        "schema": "generic-chess-f71-r1-root-hint-harness-corrective-v1",
         "work_order": WORK_ORDER,
         "classification": classification,
         "baseline_sha": PARENT_SHA,
@@ -414,7 +290,7 @@ def run(*, smoke: bool = False) -> dict:
         "f62_records_sha256": F62_RECORDS_SHA,
         "gen1_checkpoint_id": gen1.checkpoint_id,
         "hint_scorer": {"seed": HINT_SEED, "checkpoint_id": scorer.checkpoint_id, "model_sha256": scorer_row["model_sha256"]},
-        "config": {"root_count": len(rows), "requested_root_count": EXPECTED_STABLE_ROOTS, "nodes": NODES, "max_depth": MAX_DEPTH, "tt_megabytes": TT_MEGABYTES, "tt_hint_depth": TT_HINT_DEPTH, "fresh_runtime_per_arm": True, "smoke": smoke},
+        "config": {"root_count": len(rows), "requested_root_count": EXPECTED_STABLE_ROOTS, "nodes": NODES, "max_depth": MAX_DEPTH, "tt_megabytes": TT_MEGABYTES, "fresh_runtime_per_arm": True, "root_only_hint": True, "smoke": smoke},
         "code_provenance": _code_provenance(),
         "aggregate": {
             "baseline_deep_agreement": sum(row["baseline_deep_agreement"] for row in rows),
@@ -424,6 +300,23 @@ def run(*, smoke: bool = False) -> dict:
             "away_from_deep": sum(row["decision_relation"] == "away-from-deep" for row in rows),
             "lateral": sum(row["decision_relation"] == "lateral" for row in rows),
             "unchanged": sum(row["decision_relation"] == "unchanged" for row in rows),
+            "root_hint_requested": sum(
+                row["hinted"]["root_hint_requested_action_key"] is not None for row in rows
+            ),
+            "root_hint_legal": sum(row["hinted"]["root_hint_legal"] for row in rows),
+            "root_hint_apply_count": sum(
+                row["hinted"]["root_hint_apply_count"] for row in rows
+            ),
+            "root_iterations_attempted": sum(
+                row["hinted"]["root_iterations_attempted"] for row in rows
+            ),
+            "root_hint_first_action_mismatches": sum(
+                sum(
+                    action_key != row["hinted"]["root_hint_requested_action_key"]
+                    for action_key in row["hinted"]["root_iteration_first_action_keys"][:row["hinted"]["root_iterations_attempted"]]
+                )
+                for row in rows
+            ),
         },
         "contract_failures": failures,
         "rows": rows,
