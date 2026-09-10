@@ -301,3 +301,15 @@ upper-quartile Gen1 decisions. The result is
 different width-32 parent and child networks needs a width-64 concatenation,
 while the current Native runtime accepts only width 16 or 32. No blend
 checkpoint or runtime extension was implemented.
+
+## F66 analytic fixed-feature output correction
+
+F66 froze Gen1's feature map and solved a one-direction output-weight
+perturbation toward the stable/ordinary root-44 teacher action. The exact
+safe interval is `[0.144922902134, 1.740628460696)`, with fixed midpoint
+`beta*=0.942775681415`; it changes exactly root 44, preserves all 24/24
+high-confidence Gen1 actions, and increases the cached residual maximum only
+from about 20,303 to 20,513. The classification is
+`FIXED_FEATURE_OUTPUT_CORRECTION_FEASIBLE`. The correction fits the existing
+width-32 `CompactNonlinearResidual` by changing only `output_weights`; no
+runtime extension or checkpoint has yet been created.
