@@ -834,6 +834,7 @@ static PyObject *gc_list_to_tuple(GCMoveList *list) {
         return NULL;
     }
     size_t i;
+    int root_child_searched = 0;
     for (i = 0; i < list->count; i++) {
         PyObject *value = PyLong_FromUnsignedLongLong(list->data[i]);
         if (value == NULL) {
@@ -3849,6 +3850,7 @@ typedef struct {
     uint32_t root_ply_offset;
     uint64_t root_order_hint;
     int root_order_hint_present;
+    int root_window_pruning;
     int root_hint_legal;
     uint64_t root_hint_apply_count;
     uint8_t root_iteration_attempted[GC_SEM_MAX_PLY + 1];
@@ -4149,6 +4151,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         }
     }
     size_t i;
+    int root_child_searched = 0;
     for (i = 0; i < actions.count; i++) {
         if (!gc_semantic_iterative_check_budget(ctx, 1)) break;
         GCSemanticPosition *child = &ctx->stack[ply + 1];
@@ -4169,11 +4172,20 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             child->history_gave_check[child->history_len - 1],
             child->history_len - 1,
             ctx->history_context[ply + 1]);
-        int child_pv = ply == 0 ? 1 : (pv_node && i == 0);
-        int child_alpha = pv_node || ply == 0
-            ? -GC_SEMANTIC_PROBE_INF : -beta;
-        int child_beta = pv_node || ply == 0
-            ? GC_SEMANTIC_PROBE_INF : -alpha;
+        int root_first_child = 0;
+        if (ply == 0 && ctx->root_window_pruning) {
+            root_first_child = !root_child_searched;
+            root_child_searched = 1;
+        }
+        int child_pv = ply == 0
+            ? (ctx->root_window_pruning ? root_first_child : 1)
+            : (pv_node && i == 0);
+        int child_alpha = (ply == 0 && ctx->root_window_pruning && !root_first_child)
+            ? -beta
+            : (pv_node || ply == 0 ? -GC_SEMANTIC_PROBE_INF : -beta);
+        int child_beta = (ply == 0 && ctx->root_window_pruning && !root_first_child)
+            ? -alpha
+            : (pv_node || ply == 0 ? GC_SEMANTIC_PROBE_INF : -alpha);
         int branch = gc_semantic_iterative_negamax(
             ctx, ply + 1, depth - 1, child_alpha, child_beta, child_pv,
             pv_replay);
@@ -4206,7 +4218,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     }
     gc_semantic_action_buffer_free(&actions);
     if (ctx->control != 0) return 0;
-    if (ctx->tt != NULL && !pv_replay && pv_node && found &&
+    if ((ctx->tt != NULL || ctx->root_window_pruning) && !pv_replay && pv_node && found &&
         !gc_semantic_is_declaration_action(best_action)) {
         /* Re-search the selected branch with a full PV window so TT ordering
          * cannot change the deterministic principal line. */
@@ -4637,17 +4649,19 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *compact_values = Py_None;
     PyObject *tt_capsule = Py_None;
     PyObject *root_order_hint_obj = Py_None;
+    PyObject *root_window_pruning_obj = Py_False;
     unsigned int max_depth;
     unsigned int root_ply_offset = 0;
     unsigned int tt_megabytes = 0;
     unsigned int evaluator_scale = 1;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIO", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOO", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
                           &dynamic_values,
                           &spatial_values, &localized_control_values, &compact_values,
                           &root_ply_offset, &tt_megabytes, &tt_capsule,
-                          &evaluator_scale, &root_order_hint_obj)) return NULL;
+                          &evaluator_scale, &root_order_hint_obj,
+                          &root_window_pruning_obj)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
@@ -4670,6 +4684,10 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (root_order_hint_present) {
         root_order_hint = PyLong_AsUnsignedLongLong(root_order_hint_obj);
         if (PyErr_Occurred()) return NULL;
+    }
+    if (!PyBool_Check(root_window_pruning_obj)) {
+        PyErr_SetString(PyExc_TypeError, "semantic root_window_pruning must be a bool");
+        return NULL;
     }
     if (!gc_semantic_require_matching_rules(rules, position) ||
         !gc_semantic_require_exact_history(position)) return NULL;
@@ -4724,6 +4742,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     ctx.root_ply_offset = root_ply_offset;
     ctx.root_order_hint = root_order_hint;
     ctx.root_order_hint_present = root_order_hint_present;
+    ctx.root_window_pruning = root_window_pruning_obj == Py_True;
     ctx.pv_stride = max_depth + 1;
     ctx.max_nodes = max_nodes;
     ctx.cancel = cancel;
@@ -4915,6 +4934,8 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         PyDict_SetItemString(out, "root_hint_legal", ctx.root_hint_legal ? Py_True : Py_False) != 0 ||
         PyDict_SetItemString(out, "root_hint_apply_count", root_hint_apply_count) != 0 ||
         PyDict_SetItemString(out, "root_iterations_attempted", root_iterations_attempted) != 0 ||
+        PyDict_SetItemString(out, "root_window_pruning",
+                             ctx.root_window_pruning ? Py_True : Py_False) != 0 ||
         PyDict_SetItemString(out, "root_iteration_first_actions", root_first_actions) != 0) {
         Py_XDECREF(root_hint_apply_count);
         Py_XDECREF(root_iterations_attempted);
@@ -5057,9 +5078,10 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     unsigned int max_depth;
     PyObject *max_nodes = Py_None, *max_time = Py_None, *cancel = Py_None;
     PyObject *root_order_hint = Py_None;
-    if (!PyArg_ParseTuple(args, "OOI|OOOO", &engine_capsule, &position_capsule,
+    PyObject *root_window_pruning = Py_False;
+    if (!PyArg_ParseTuple(args, "OOI|OOOOO", &engine_capsule, &position_capsule,
                           &max_depth, &max_nodes, &max_time, &cancel,
-                          &root_order_hint)) return NULL;
+                          &root_order_hint, &root_window_pruning)) return NULL;
     GCSemanticSearchEngine *engine = gc_get_semantic_engine(engine_capsule);
     if (engine == NULL) return NULL;
     if (engine->busy) {
@@ -5070,7 +5092,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
         : Py_NewRef(Py_None);
     if (tt_capsule == NULL) return NULL;
-    PyObject *call_args = PyTuple_New(17);
+    PyObject *call_args = PyTuple_New(18);
     if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
     Py_INCREF(engine->rules_capsule);
     PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
@@ -5091,6 +5113,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     PyTuple_SET_ITEM(call_args, 14, tt_capsule);
     PyTuple_SET_ITEM(call_args, 15, PyLong_FromUnsignedLong((unsigned long)engine->evaluator_scale));
     Py_INCREF(root_order_hint); PyTuple_SET_ITEM(call_args, 16, root_order_hint);
+    Py_INCREF(root_window_pruning); PyTuple_SET_ITEM(call_args, 17, root_window_pruning);
     engine->busy = 1;
     PyObject *result = gc_semantic_iterative_search(self, call_args);
     engine->busy = 0;
@@ -5324,7 +5347,7 @@ static PyMethodDef gc_methods[] = {
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,
      "semantic_probe_search(rules, position, depth) -> bounded generic AlphaBeta probe"},
     {"semantic_iterative_search", gc_semantic_iterative_search, METH_VARARGS,
-     "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values, dynamic_values, spatial_values, localized_control_values, root_ply_offset, tt_megabytes, tt_capsule, evaluator_scale, root_order_hint]) -> iterative result"},
+     "semantic_iterative_search(rules, position, max_depth[, max_nodes, max_time_seconds, cancel, board_values, hand_values, dynamic_values, spatial_values, localized_control_values, root_ply_offset, tt_megabytes, tt_capsule, evaluator_scale, root_order_hint, root_window_pruning]) -> iterative result"},
     {"create_semantic_search_engine", gc_create_semantic_search_engine, METH_VARARGS,
      "create_semantic_search_engine(rules, board_values, hand_values, dynamic_values, spatial_values, localized_control_values, tt_megabytes[, evaluator_scale]) -> engine"},
     {"semantic_engine_search", gc_semantic_engine_search, METH_VARARGS,

@@ -56,6 +56,8 @@ class SemanticIterativeSearchResult:
     root_hint_apply_count: int = 0
     root_iterations_attempted: int = 0
     root_iteration_first_actions: tuple[Action | None, ...] = ()
+    root_window_pruning: bool = False
+    beta_cutoffs: int = 0
 
 
 def _profile_tuple(native_rules, values):
@@ -260,6 +262,7 @@ class SemanticSearchEngine:
         cancel_token: CancellationToken | None = None,
         *,
         root_order_hint: Action | None = None,
+        root_window_pruning: bool = False,
     ) -> SemanticIterativeSearchResult:
         if self._compiled.ruleset_fingerprint != session.compiled.ruleset_fingerprint:
             raise ValueError("session ruleset fingerprint does not match semantic engine")
@@ -277,6 +280,8 @@ class SemanticSearchEngine:
             raise ValueError("max_time_seconds must be a finite non-negative value")
         if limits.quiescence_max_depth != 0 or limits.quiescence_max_nodes not in (None, 0):
             raise ValueError("SemanticSearchEngine does not implement qsearch")
+        if not isinstance(root_window_pruning, bool):
+            raise TypeError("root_window_pruning must be a bool")
         if session.result.status.value != "ongoing":
             return SemanticIterativeSearchResult(
                 0, None, None, (), (), 0, 0, 0, 0, 0.0,
@@ -303,6 +308,7 @@ class SemanticSearchEngine:
                 None if limits.max_time_seconds is None else float(limits.max_time_seconds),
                 flag,
                 packed_root_hint,
+                root_window_pruning,
             ))
         finally:
             if unregister is not None:
@@ -378,6 +384,8 @@ class SemanticSearchEngine:
             root_hint_apply_count=int(raw.get("root_hint_apply_count", 0)),
             root_iterations_attempted=int(raw.get("root_iterations_attempted", 0)),
             root_iteration_first_actions=tuple(root_first_actions),
+            root_window_pruning=bool(raw.get("root_window_pruning", False)),
+            beta_cutoffs=int(raw.get("beta_cutoffs", 0)),
         )
 
 
