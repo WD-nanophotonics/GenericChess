@@ -112,9 +112,9 @@ def _run_incremental(compiled, native, gen1, candidate, openings):
         openings=openings, capture_search_metrics=True, caps=caps,
         stage_id="f79-r1-incremental-arena4",
     )
-    summary = f77._summary_payload(first)
-    replay_summary = f77._summary_payload(replay)
-    telemetry = f77._telemetry(first) if first is not None else {}
+    summary = f77._summary_payload(first.summary)
+    replay_summary = f77._summary_payload(replay.summary)
+    telemetry = f77._telemetry(first.summary) if first.summary is not None else {}
     failures = []
     if summary is not None and summary["pair_count"] != 2:
         failures.append("incremental summary does not contain two pairs")
