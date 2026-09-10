@@ -271,3 +271,20 @@ authority. The candidate population stays frozen: Gen1
 reconstructed from the same frozen F62 training evidence. No retraining recipe,
 evaluator architecture, handcrafted feature family, or external-engine role is
 changed.
+
+## F64 zero-compute generation-operator contrast
+
+F64 compared Gen0, accepted Gen1, and all three frozen replacement children on
+the same 96 cached F62 action spectra. The children retained Gen1's top action
+on 72/96, 72/96, and 71/96 roots, but their centered output correlations with
+one another were 0.989--0.991 versus 0.699--0.707 against Gen1. Their maximum
+absolute residuals were approximately 240k, versus 20k for Gen1. The evidence
+supports replacement forgetting/over-correction on this frozen batch; it does
+not classify `59013`, whose strength run was unresolved, as weak.
+
+The route is closed as
+`F63_FROZEN_REPLACEMENT_BATCH_NOT_WORTH_FURTHER_STRENGTH_COMPUTE`, with
+`GEN1_RETAINED_AS_CHAMPION`. The one selected next mechanism is
+`PARENT_RETENTION / BOUNDED_CORRECTION`: preserve Gen1 as an anchor and learn
+only a bounded additive correction. This is a design diagnosis, not an
+implemented learner or a claim that the mechanism is globally impossible.
