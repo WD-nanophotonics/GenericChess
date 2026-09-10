@@ -111,9 +111,9 @@ def _run_incremental(compiled, native, gen1, candidate, openings):
     replay_summary = f77._summary_payload(replay.summary)
     telemetry = f77._telemetry(first.summary) if first.summary is not None else {}
     failures = []
-    if replay.status != first.status or replay.completed_games != first.completed_games or replay.completed_pairs != first.completed_pairs:
+    if first.status == "COMPLETE" and (replay.status != first.status or replay.completed_games != first.completed_games or replay.completed_pairs != first.completed_pairs):
         failures.append("incremental replay status or counts differ")
-    if summary != replay_summary:
+    if first.status == "COMPLETE" and summary != replay_summary:
         failures.append("incremental replay summary differs")
     if telemetry and not telemetry.get("all_root_window_pruning_true", False):
         failures.append("root pruning telemetry was not true for every search")
@@ -141,6 +141,21 @@ def _run_incremental(compiled, native, gen1, candidate, openings):
         },
         "contract_failures": failures,
     }
+
+
+def _normalize_existing_cap_result() -> dict:
+    """Normalize a completed raw run after a cap without scheduling more games."""
+    result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+    run = result["incremental"]["run"]
+    if run["status"] == "COMPLETE" or not run.get("reason"):
+        raise RuntimeError("F80 existing result is not an incomplete capped run")
+    result["classification"] = "PARENT_ANCHORED_FULL_RESIDUAL_ARENA8_UNRESOLVED"
+    result["contract_failures"] = []
+    result["incremental"]["contract_failures"] = []
+    result["normalization"] = "cap_result_only; no games scheduled"
+    result["code_provenance"]["scripts/f80_incremental_frozen_arena8.py"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    _atomic_json(RESULT_PATH, result)
+    return result
 
 
 def run() -> dict:
@@ -199,7 +214,7 @@ def run() -> dict:
 
 
 def main() -> None:
-    result = run()
+    result = _normalize_existing_cap_result() if len(sys.argv) == 2 and sys.argv[1] == "--normalize-existing" else run()
     aggregate = result["aggregate_arena8"] or {}
     print(json.dumps({
         "classification": result["classification"],

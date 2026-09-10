@@ -34,6 +34,7 @@ def test_f80_uses_durable_arena4_prefix_and_two_lanes():
     assert "workers=2" in source
     assert "max_concurrent_games=2" in source
     assert "effective game lanes did not equal two" in source
+    assert 'if first.status == "COMPLETE"' in source
     assert 'stage_id="f80-incremental-arena8"' in source
     assert "max_stage_games=8" in source
 
