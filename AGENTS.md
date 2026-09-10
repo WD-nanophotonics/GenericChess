@@ -62,3 +62,7 @@ Read `WORKFLOW.md` before changing this repository.
     benefit must be stopped or reduced unless a written, evidence-backed
     justification covers recurrence, avoided loss, maintenance cost, and why a
     smaller solution is insufficient.
+
+18. Before any test, evaluation, or sweep, use the cheapest sufficient decision
+    procedure; if algebra, existing evidence, a witness, or a decision bound
+    can decide the question, do not authorize expensive new experiments.
