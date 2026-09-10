@@ -147,6 +147,7 @@ def _search_arm_fixed(compiled, native, gen1, record, *, hint=None):
         session,
         SearchLimits(max_depth=MAX_DEPTH, max_nodes=NODES, quiescence_max_depth=0),
         root_order_hint=hint,
+        root_window_pruning=False,
     )
     return _result_payload(result)
 

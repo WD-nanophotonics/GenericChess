@@ -834,7 +834,6 @@ static PyObject *gc_list_to_tuple(GCMoveList *list) {
         return NULL;
     }
     size_t i;
-    int root_child_searched = 0;
     for (i = 0; i < list->count; i++) {
         PyObject *value = PyLong_FromUnsignedLongLong(list->data[i]);
         if (value == NULL) {

@@ -75,7 +75,8 @@ class SpectrumRow:
 def _root_search(compiled, native, checkpoint, record, nodes):
     session = _session(compiled, record)
     result = SemanticSearchEngine(compiled, native, checkpoint=checkpoint, tt_megabytes=8).search(
-        session, SearchLimits(max_depth=12, max_nodes=nodes, quiescence_max_depth=0)
+        session, SearchLimits(max_depth=12, max_nodes=nodes, quiescence_max_depth=0),
+        root_window_pruning=False,
     )
     payload = None if result.action is None else action_to_dict(result.action)
     return {
@@ -118,7 +119,8 @@ def _child_search(compiled, native, parent, record, action_payload, nodes):
     action = action_from_dict(action_payload)
     session.submit(action)
     result = SemanticSearchEngine(compiled, native, checkpoint=parent, tt_megabytes=8).search(
-        session, SearchLimits(max_depth=12, max_nodes=nodes, quiescence_max_depth=0)
+        session, SearchLimits(max_depth=12, max_nodes=nodes, quiescence_max_depth=0),
+        root_window_pruning=False,
     )
     # Native score is from the child side-to-move perspective; negate it back
     # to the player who owned the root action.

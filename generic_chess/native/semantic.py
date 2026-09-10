@@ -382,6 +382,7 @@ def semantic_iterative_search(
     compact_values=None,
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
+    root_window_pruning: bool = False,
 ) -> dict:
     """Run deterministic iterative search on a semantic position.
 
@@ -396,6 +397,8 @@ def semantic_iterative_search(
         raise ValueError("_root_ply_offset must be 0 or 1")
     if isinstance(tt_megabytes, bool) or not isinstance(tt_megabytes, int) or not 0 <= tt_megabytes <= 1024:
         raise ValueError("tt_megabytes must be an integer in [0, 1024]")
+    if not isinstance(root_window_pruning, bool):
+        raise TypeError("root_window_pruning must be a bool")
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     expected = tuple(native_rules.type_ids)
@@ -466,6 +469,8 @@ def semantic_iterative_search(
             int(tt_megabytes),
             None,
             1,
+            None,
+            root_window_pruning,
         ))
     finally:
         if unregister is not None:

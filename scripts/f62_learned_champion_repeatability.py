@@ -467,10 +467,10 @@ def _validate_decisions(compiled, native, gen1, gen2, stage_sha, *, smoke):
         )
         parent_result = SemanticSearchEngine(
             compiled, native, checkpoint=gen1, tt_megabytes=8
-        ).search(session, limits)
+        ).search(session, limits, root_window_pruning=False)
         child_result = SemanticSearchEngine(
             compiled, native, checkpoint=gen2, tt_megabytes=8
-        ).search(session, limits)
+        ).search(session, limits, root_window_pruning=False)
         parent_payload = _search_payload(parent_result)
         child_payload = _search_payload(child_result)
         return index, {

@@ -262,7 +262,7 @@ class SemanticSearchEngine:
         cancel_token: CancellationToken | None = None,
         *,
         root_order_hint: Action | None = None,
-        root_window_pruning: bool = False,
+        root_window_pruning: bool = True,
     ) -> SemanticIterativeSearchResult:
         if self._compiled.ruleset_fingerprint != session.compiled.ruleset_fingerprint:
             raise ValueError("session ruleset fingerprint does not match semantic engine")
