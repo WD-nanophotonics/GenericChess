@@ -334,3 +334,14 @@ hit an unrelated unsafe top-action breakpoint before its intended target flip.
 The route is therefore closed as
 `DEPLOYMENT_ALIGNED_FIXED_FEATURE_CORRECTION_NOT_SAFE`: no child, extra probe,
 beta increase, Arena, or warm-start training was authorized.
+
+## F69 cached search-control surface audit
+
+On the 77 roots where cached root40k/root80k actions agree, Gen1 root2k is
+correct on only 2 roots and misses on 75. The cached q20k target recovers 61
+misses, with q10k/q20k consensus recovering the same 61; the deeper action is
+present in every retained spectrum. As an offline policy-prior thought
+experiment, seed 59011 recovers 62/75 misses with 2/2 correct retention,
+versus Gen1 static at 57/75 and 1/2. The route is
+`EXISTING_REPLACEMENT_REUSABLE_AS_POLICY_PRIOR`, selecting seed 59011. No
+search-control implementation or Arena is authorized by F69 itself.
