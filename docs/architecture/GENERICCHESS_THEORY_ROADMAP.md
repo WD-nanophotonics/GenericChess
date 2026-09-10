@@ -313,3 +313,14 @@ from about 20,303 to 20,513. The classification is
 `FIXED_FEATURE_OUTPUT_CORRECTION_FEASIBLE`. The correction fits the existing
 width-32 `CompactNonlinearResidual` by changing only `output_weights`; no
 runtime extension or checkpoint has yet been created.
+
+## F67 deterministic deployment visibility
+
+The approved deterministic width-32 output-layer child was materialized with
+`beta*=0.942775681415` and reproduced the F66 cached algebra exactly: only
+root 44 changed, all 24 high-confidence roots were preserved, and residual
+scale remained near 20,513. Two authorized 2k deployment probes then showed
+root 44 still selecting the cached Gen1 action while root 72 retained its
+cached action. The routing classification is
+`DEPLOYMENT_CORRECTION_NOT_VISIBLE`; no additional probes or Arena are
+authorized by this result.
