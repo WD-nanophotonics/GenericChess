@@ -44,3 +44,22 @@ engines are restricted to Arena opponents and benchmark use.
 This is a route proposal and closeout coordination artifact, not authorization
 to start a new Heavy or to implement the funnel before Chat returns the revised
 work order.
+
+## R2 execution result
+
+Chat subsequently authorized `GENERICCHESS-F63-R2-STRENGTH-FIRST-CHEAP-FUNNEL`.
+The minimal Stage 0 screen was implemented in
+`scripts/f63_r2_strength_first_cheap_funnel.py` with a new output namespace;
+there is no aggregate stage runner. To avoid over-engineering, the first
+execution was reduced to three deterministic correctness-smoke roots (one
+under each named D0/D1/D2 label), cached Gen1/exact probes, one deployment
+search per candidate, and a single repeatability sample. It completed in about
+102 seconds with no correctness hard failures for seeds 59011, 59012, or
+59013. These smoke observations are diagnostic and do not eliminate a
+candidate.
+
+The work also appended the route update to the theory roadmap and persisted
+the user's reusable anti-overengineering rule in `AGENTS.md`: one-off
+engineering/process/safety scaffolding expected to exceed 30 minutes must be
+stopped or reduced unless recurrence, avoided loss, maintenance cost, and the
+failure of a smaller solution are justified in writing.
