@@ -54,26 +54,64 @@ One primary witness is sufficient; no reserve is selected yet.
 
 | field | value |
 |---|---|
-| F62 root index | 20 |
-| position key | `bc19eaa3b66990cb9ede36b9cfeecbaaee33d57b20b873967728452d74d6feed` |
+| F62 root index | 84 |
+| position key | `ca4bc3b1d680f82ad2e24faf1ef97214300a2b7ab05278e56ded084a90688d20` |
 | provenance | `F62_OPENING_20_9508ed917e0201d4e0b614967e26279094c24c366d938b80811463d1c7ce961a`, `development` split |
-| reason | maximizes cached candidate top-action/order disagreement |
-| 59011 | top `G g5 [3,8]->[4,7]`; top-two margin `1617.15` |
-| 59012 | top `K g16 [5,8]->[4,8]`; top-two margin `4203.46` |
-| 59013 | top `G g5 [3,8]->[4,7]`; top-two margin `17360.44` |
+| reason | 59013-focused cached rank disagreement; no root made 59013 differ from both alternatives; root 84 maximized tied rank difference, then relevant margin, then lower index |
+| 59011 | top `P g21 [6,2]->[6,3]`; top-two margin `67210.50` |
+| 59012 | top `P g21 [6,2]->[6,3]`; top-two margin `48904.57` |
+| 59013 | top `P g21 [6,2]->[6,3]`; top-two margin `61708.63` |
 
-At this witness the complete cached order differs materially: 59012 puts the
-king move first, while 59011 and 59013 put the gold move first, and 59011/59013
-also differ in the remainder of the order. The full eight-action orders and
-scores are in the immutable runtime evidence file.
+At this witness all three candidates share the same top action, but their
+cached remainder ordering differs materially; the 59013-vs-(59011,59012)
+combined rank disagreement is maximal among the eligible cached roots. The
+full seven-action orders and scores are in the immutable runtime evidence file.
+
+## Existing-game validation and routing deduction
+
+The existing game-v1 validator was run against all 15 persisted R10 game
+files. It verified the manifest-bound pair/owner identities, parent and child
+checkpoint identities, common opening identities, equal 2,000-node role
+budgets, legal replay, terminal semantics, telemetry, and complete-pair
+status. It reproduced the reported complete-pair scores exactly.
+
+This permits a zero-new-game routing deduction, without treating R10 as a fair
+three-way tournament:
+
+| seed | complete-pair scores | routing bound |
+|---|---:|---|
+| 59011 | `0.00, 0.50, 0.00, 0.00`; mean `0.125` | `HISTORICAL_STRENGTH_FAIL` |
+| 59012 | `0.50, 0.00, 0.25`; observed total `0.75` | even missing pair score `1.00` gives `(0.75+1.00)/4 = 0.4375 < 0.5`; `HISTORICAL_STRENGTH_FAIL_LOCKED` |
+
+The missing 59012 game was not completed.
+
+## Single-candidate active witness result
+
+The authorized test used only seed 59013 against Gen1 at the cached root-84
+witness above. It ran exactly two swapped-role games, with 2,000 nodes per
+move and a 64-ply cap. Both games reached the cap while ongoing:
+
+| child owner | result | cap | wall seconds |
+|---:|---|---|---:|
+| 0 | `UNRESOLVED` | `per_game_plies` | `465.504` |
+| 1 | `UNRESOLVED` | `per_game_plies` | `246.174` |
+
+The pair is incomplete and has no score. New search-work was bounded at
+`128,000` nodes/game and `256,000` nodes total. No Arena/Heavy continuation,
+reserve witness, or larger stage was launched. Runtime witness and result
+artifacts are retained under `.generic_chess_flow/f63-r2-r2-single-candidate-active-witness/`.
+
+This unresolved pair does not establish a strength result for 59013; it only
+prevents declaring the candidate route supported from this witness.
 
 ## Smallest proposed next experiment — not run
 
-Use the primary witness only, with one swapped-role pair for each of the three
-behavior classes: representatives 59011, 59012, and 59013. This is at most six
-new games, 2,000 nodes per move, and a 64-ply cap. A game reaching the cap is
-`UNRESOLVED`, not a draw or a win. No reserve witness is added unless this
-first test leaves a decision-relevant ambiguity.
+No further experiment is authorized by this closeout. The 59011/59012 tests
+were eliminated by the validated arithmetic bounds, while 59013's one pair is
+unresolved. Any follow-up must be a new Courier work order that first uses the
+smallest decision procedure and a fresh resource estimate; it must not repeat
+59011/59012, complete 59012's missing R10 game, or silently reinterpret the
+two unresolved games as a score.
 
 Stop conditions are explicit: stop after those complete pairs; stop selection
 if any pair is incomplete or unresolved; do not infer a winner from the
@@ -81,4 +119,4 @@ historical unequal R10 exposure; do not resume the stopped R10 run; and do not
 expand to a larger Arena unless the smallest test remains decision-relevant
 and a new work order authorizes it.
 
-Status: `DESIGNED_NOT_RUN`; promotion: `HOLD`.
+Status: `59013_UNRESOLVED_SINGLE_PAIR`; promotion: `HOLD`.

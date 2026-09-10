@@ -195,19 +195,37 @@ def _fingerprint(compiled) -> dict[str, Any]:
             "roots_effectively_indistinguishable": indistinguishable_roots,
         }
 
-    disagreement = []
+    focused = []
     for index in range(len(roots)):
-        top_actions = {rows_by_seed[str(seed)][index]["top_action"] for seed in SEEDS}
-        orderings = {tuple(rows_by_seed[str(seed)][index]["ordering"]) for seed in SEEDS}
-        disagreement.append((len(top_actions), len(orderings), index))
-    disagreement.sort(key=lambda item: (-item[0], -item[1], item[2]))
-    primary_index = disagreement[0][2]
+        rank_difference = 0
+        for other in ("59011", "59012"):
+            left = {key: rank for rank, key in enumerate(rows_by_seed["59013"][index]["ordering"])}
+            right = {key: rank for rank, key in enumerate(rows_by_seed[other][index]["ordering"])}
+            rank_difference += sum(left[key] != right[key] for key in left.keys() & right.keys())
+        top_differs_from_both = (
+            rows_by_seed["59013"][index]["top_action"]
+            != rows_by_seed["59011"][index]["top_action"]
+            and rows_by_seed["59013"][index]["top_action"]
+            != rows_by_seed["59012"][index]["top_action"]
+        )
+        focused.append({
+            "index": index,
+            "rank_difference": rank_difference,
+            "top_differs_from_both": top_differs_from_both,
+            "relevant_margin": rows_by_seed["59013"][index]["top_two_margin"],
+        })
+    preferred = [row for row in focused if row["top_differs_from_both"]]
+    pool = preferred or focused
+    selected = max(pool, key=lambda row: (row["rank_difference"], row["relevant_margin"], -row["index"]))
+    primary_index = selected["index"]
     primary = {
         "root_index": primary_index,
         "position_key": root_meta[primary_index]["position_key"],
         "source_group": records[primary_index].get("source_group"),
         "source_split": records[primary_index].get("source_split"),
-        "reason": "maximizes cached candidate top-action/order disagreement",
+        "reason": "59013-focused cached rank disagreement; top-differs-from-both preferred, then margin and lower index",
+        "selection_candidates_with_top_difference": [row["index"] for row in preferred],
+        "selection_rank_difference": selected["rank_difference"],
         "candidate_fingerprints": {str(seed): rows_by_seed[str(seed)][primary_index] for seed in SEEDS},
     }
     observable_signatures = {str(seed): () for seed in SEEDS}
