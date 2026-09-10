@@ -249,3 +249,25 @@ sanity diagnostic; F59 does not run AlphaSho.
   teacher-to-student transfer, not evaluator feature invention. F63 therefore
   tests whether deeper Gen1 search is itself an improving teacher before
   evaluating a bounded champion-retention candidate loop.
+
+## F63-R2 strength-first route update
+
+The old F63 deeper-teacher gate supplied a useful diagnostic signal, but the
+long equal-budget common-4 Arena was computationally expensive. The user
+redirected and cooperatively paused its incomplete three-seed continuation;
+its unequal exposure is historical side evidence only and cannot select a candidate. Future candidate
+selection therefore uses a staged strength-first funnel:
+
+1. bounded correctness and cheap search diagnostics;
+2. short-horizon middlegame/endgame strength screening;
+3. complete 2-pair, then 4-pair, then 8-pair equal-budget Arena stages;
+4. a separately approved final confirmation, if warranted.
+
+Teacher agreement, regret, action-spectrum ranking, and scalar fit remain
+diagnostic signals. Equal-budget paired game strength is the promotion
+authority. The candidate population stays frozen: Gen1
+`d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4`, seeds
+59011/59012/59013, with 59012 the exact persisted F62 Gen2 and 59011/59013
+reconstructed from the same frozen F62 training evidence. No retraining recipe,
+evaluator architecture, handcrafted feature family, or external-engine role is
+changed.

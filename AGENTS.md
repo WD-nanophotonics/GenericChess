@@ -56,3 +56,9 @@ Read `WORKFLOW.md` before changing this repository.
     approval bound to the exact plan SHA, sandbox SHA, and envelope digest.
     Never infer compute size from command text or bypass the gate with a second
     worker/request.
+
+17. Avoid over-engineering: work expected to exceed 30 minutes on one-off
+    engineering, process, or safety scaffolding with little reusable long-term
+    benefit must be stopped or reduced unless a written, evidence-backed
+    justification covers recurrence, avoided loss, maintenance cost, and why a
+    smaller solution is insufficient.

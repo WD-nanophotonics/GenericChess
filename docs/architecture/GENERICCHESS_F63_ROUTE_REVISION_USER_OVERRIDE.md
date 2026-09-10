@@ -13,8 +13,8 @@ checkpoint files were deleted.
   envelope `37cd153ac74cdecafb5ced5a4eb6d14a6d26fa42ae04cce333c2bda0e21e1c5f`.
 - Preserved progress: candidate-59011 common-4 calibrated `8/8`;
   candidate-59012 common-4 calibrated `6/8`.
-- The user-directed stop ended the old Heavy after the already persisted
-  evidence. Candidate-59013 was never launched.
+- The user redirected and cooperatively paused the old Heavy after the already
+  persisted evidence. Candidate-59013 was never launched.
 
 ## Revised funnel requested for the next Chat work order
 
