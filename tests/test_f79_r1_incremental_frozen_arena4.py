@@ -27,10 +27,12 @@ def test_f79_r1_scope_and_reduced_budget():
 
 
 def test_f79_r1_reuses_the_audited_f78_prefix_and_frozen_corpus():
-    payload = json.loads(f79r1.F78_RESULT.read_text(encoding="utf-8"))
-    assert payload["arena"]["summary"]["pair_scores"] == [0.5, 1.0]
+    payload = json.loads(f79r1.F78_EVIDENCE.read_text(encoding="utf-8"))
+    assert payload["pair_scores"] == [0.5, 1.0]
+    assert payload["source_opening_indices"] == [0, 1]
+    assert payload["source_report_sha256"] == "3f67f1d6c5d4c0c2e23abd84f04c4903479705076e0bb9fd83e8f0ecd5144b3d"
     openings = json.loads(f79r1.F78_OPENINGS.read_text(encoding="utf-8"))
-    assert openings["corpus_id"] == "2923f457e56454520f89c682614b3b10d07da974f03040bfc6c3a831ab41da48"
+    assert openings["corpus_id"] == payload["corpus_id"]
     assert len(openings["corpus"]["openings"]) == 8
     assert "source_opening_indices" in (ROOT / "scripts" / "f79_r1_incremental_frozen_arena4.py").read_text(encoding="utf-8")
 
@@ -38,6 +40,8 @@ def test_f79_r1_reuses_the_audited_f78_prefix_and_frozen_corpus():
 def test_f79_r1_has_no_candidate_or_opening_outputs():
     source = (ROOT / "scripts" / "f79_r1_incremental_frozen_arena4.py").read_text(encoding="utf-8")
     assert "candidate.json" not in source
+    assert "F78_RESULT" not in source
+    assert "f78_results.json" not in source
     assert "generate_arena_openings" not in source
     assert 'stage_id="f79-r1-incremental-arena4"' in source
     assert "max_stage_games=4" in source

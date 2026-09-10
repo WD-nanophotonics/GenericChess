@@ -27,6 +27,7 @@ WORK_ORDER = "GENERICCHESS-F79-R1-INCREMENTAL-FROZEN-ARENA4"
 BASELINE_SHA = "b40be3aad27c157877dbffaa7d7b2c5e50fa2c82"
 PARENT_SHA = f79.PARENT_SHA
 CHILD_SHA = f79.CHILD_SHA
+CANDIDATE_MODEL_SHA = "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6"
 LABEL = f79.LABEL
 F78_PREFIX_PAIR_SCORES = [0.5, 1.0]
 SOURCE_OPENING_INDICES = (2, 3)
@@ -36,7 +37,7 @@ PAIRS = 2
 NODES = 512
 MAX_DEPTH = 12
 TT_MEGABYTES = 8
-F78_RESULT = ROOT / ".generic_chess_flow" / "f78-parent-anchored-full-residual-arena2" / "f78_results.json"
+F78_EVIDENCE = ROOT / "artifacts" / "f78_parent_anchored_full_residual" / "arena2_strength_evidence.json"
 F78_OPENINGS = f79.F78_OPENINGS
 OUT = ROOT / ".generic_chess_flow" / "f79-r1-incremental-frozen-arena4-corrected"
 PROGRESS = OUT / "progress"
@@ -79,15 +80,22 @@ def _load_frozen_openings(compiled):
 
 
 def _load_frozen_pair_prefix():
-    payload = json.loads(F78_RESULT.read_text(encoding="utf-8"))
-    summary = payload["arena"]["summary"]
+    payload = json.loads(F78_EVIDENCE.read_text(encoding="utf-8"))
+    report_path = ROOT / payload["source_report_path"]
+    report_sha = hashlib.sha256(report_path.read_bytes()).hexdigest()
+    if payload["source_report_sha256"] != report_sha:
+        raise RuntimeError("F79-R2 F78 source report SHA mismatch")
     if payload["parent_checkpoint_id"] != PARENT_SHA or payload["child_checkpoint_id"] != CHILD_SHA:
         raise RuntimeError("F79-R1 F78 prefix checkpoint identity mismatch")
-    if summary["pair_scores"] != F78_PREFIX_PAIR_SCORES:
+    if payload["candidate_model_sha256"] != CANDIDATE_MODEL_SHA:
+        raise RuntimeError("F79-R2 candidate identity mismatch")
+    if payload["corpus_id"] != f79.CORPUS_ID or payload["source_opening_indices"] != [0, 1]:
+        raise RuntimeError("F79-R2 F78 prefix corpus/index mismatch")
+    if payload["pair_scores"] != F78_PREFIX_PAIR_SCORES:
         raise RuntimeError("F79-R1 F78 prefix pair-score mismatch")
-    if summary["pair_count"] != 2 or summary["game_wins"] != 3 or summary["game_draws"] != 0 or summary["game_losses"] != 1:
+    if payload["completed_games"] != 4 or payload["completed_pairs"] != 2 or payload["game_wins"] != 3 or payload["game_draws"] != 0 or payload["game_losses"] != 1:
         raise RuntimeError("F79-R1 F78 prefix W/D/L mismatch")
-    return summary
+    return payload
 
 
 def _run_incremental(compiled, native, gen1, candidate, openings):
