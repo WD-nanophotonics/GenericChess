@@ -48,6 +48,11 @@ def test_durable_arena8_evidence_recomputes_and_links_exact_sources():
     prefix = ROOT / evidence["f79_evidence_path"]
     assert evidence["source_report_sha256"] == hashlib.sha256(report.read_bytes()).hexdigest()
     assert evidence["f79_evidence_sha256"] == hashlib.sha256(prefix.read_bytes()).hexdigest()
+    assert evidence["schema"] == "generic-chess-f80-arena8-strength-evidence-v2"
+    assert evidence["work_order_baseline_sha"] == "f4fc8411079e25fe1cfeab1c9be79535881e4274"
+    assert evidence["execution_harness_checkpoint"] == "0fd011f9f34799fc087209a73538aacb61019e7b"
+    assert evidence["result_report_checkpoint"] == "fe1f395224df199fd0244dcf2da297032953c1c7"
+    assert evidence["source_checkpoint"] == evidence["result_report_checkpoint"]
     scores = evidence["prefix_pair_scores"] + evidence["incremental_pair_scores"]
     assert scores == evidence["combined_pair_scores"]
     assert sum(scores) / len(scores) == evidence["combined_mean_pair_score"]
