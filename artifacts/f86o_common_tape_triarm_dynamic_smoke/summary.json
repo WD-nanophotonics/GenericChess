@@ -1,0 +1,994 @@
+{
+  "bfs_expansions": 0,
+  "by_arm": {
+    "F": {
+      "arm": "F",
+      "by_sample": {
+        "V4-3": {
+          "game_count": 2,
+          "quality": {
+            "branching_collapse_fraction": 0.1875,
+            "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+            "forced_move_fraction": 0.046875,
+            "low_branch_fraction": 0.15625,
+            "median_branching": 5.0,
+            "median_game_length": 32.0,
+            "p10_game_branching": 2.0,
+            "p10_game_length": 32.0,
+            "p90_game_branching": 6.0,
+            "p90_game_length": 32.0,
+            "terminal_distribution": {
+              "ongoing": 2
+            },
+            "trajectory_count": 2,
+            "trajectory_lengths": [
+              32,
+              32
+            ]
+          },
+          "terminal_distribution": {
+            "ongoing@32": 2
+          }
+        },
+        "V5-3": {
+          "game_count": 2,
+          "quality": {
+            "branching_collapse_fraction": 0.020833333333333332,
+            "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+            "forced_move_fraction": 0.015625,
+            "low_branch_fraction": 0.046875,
+            "median_branching": 6.5,
+            "median_game_length": 32.0,
+            "p10_game_branching": 4.0,
+            "p10_game_length": 32.0,
+            "p90_game_branching": 10.0,
+            "p90_game_length": 32.0,
+            "terminal_distribution": {
+              "ongoing": 2
+            },
+            "trajectory_count": 2,
+            "trajectory_lengths": [
+              32,
+              32
+            ]
+          },
+          "terminal_distribution": {
+            "ongoing@32": 2
+          }
+        }
+      },
+      "game_count": 4,
+      "paired_outcomes": {
+        "V4-3": {
+          "first_player_score": null,
+          "incomplete_pair_is_unresolved": true,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-3": {
+          "first_player_score": null,
+          "incomplete_pair_is_unresolved": true,
+          "scoreable": false,
+          "second_player_score": null
+        }
+      },
+      "quality": {
+        "branching_collapse_fraction": 0.10416666666666667,
+        "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+        "forced_move_fraction": 0.03125,
+        "low_branch_fraction": 0.1015625,
+        "median_branching": 5.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 3.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 9.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 4
+        },
+        "trajectory_count": 4,
+        "trajectory_lengths": [
+          32,
+          32,
+          32,
+          32
+        ]
+      },
+      "terminal_distribution": {
+        "ongoing@32": 4
+      }
+    },
+    "L": {
+      "arm": "L",
+      "by_sample": {
+        "V4-3": {
+          "game_count": 2,
+          "quality": {
+            "branching_collapse_fraction": 0.2916666666666667,
+            "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+            "forced_move_fraction": 0.02631578947368421,
+            "low_branch_fraction": 0.23684210526315788,
+            "median_branching": 3.0,
+            "median_game_length": 19.0,
+            "p10_game_branching": 2.0,
+            "p10_game_length": 6.0,
+            "p90_game_branching": 4.0,
+            "p90_game_length": 32.0,
+            "terminal_distribution": {
+              "ongoing": 1,
+              "stalemate": 1
+            },
+            "trajectory_count": 2,
+            "trajectory_lengths": [
+              32,
+              6
+            ]
+          },
+          "terminal_distribution": {
+            "ongoing@32": 1,
+            "stalemate": 1
+          }
+        },
+        "V5-3": {
+          "game_count": 2,
+          "quality": {
+            "branching_collapse_fraction": 0.18181818181818182,
+            "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+            "forced_move_fraction": 0.016666666666666666,
+            "low_branch_fraction": 0.21666666666666667,
+            "median_branching": 3.0,
+            "median_game_length": 30.0,
+            "p10_game_branching": 2.0,
+            "p10_game_length": 28.0,
+            "p90_game_branching": 4.0,
+            "p90_game_length": 32.0,
+            "terminal_distribution": {
+              "ongoing": 1,
+              "stalemate": 1
+            },
+            "trajectory_count": 2,
+            "trajectory_lengths": [
+              32,
+              28
+            ]
+          },
+          "terminal_distribution": {
+            "ongoing@32": 1,
+            "stalemate": 1
+          }
+        }
+      },
+      "game_count": 4,
+      "paired_outcomes": {
+        "V4-3": {
+          "first_player_score": null,
+          "incomplete_pair_is_unresolved": true,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-3": {
+          "first_player_score": null,
+          "incomplete_pair_is_unresolved": true,
+          "scoreable": false,
+          "second_player_score": null
+        }
+      },
+      "quality": {
+        "branching_collapse_fraction": 0.22058823529411764,
+        "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+        "forced_move_fraction": 0.02040816326530612,
+        "low_branch_fraction": 0.22448979591836735,
+        "median_branching": 3.0,
+        "median_game_length": 30.0,
+        "p10_game_branching": 2.0,
+        "p10_game_length": 6.0,
+        "p90_game_branching": 4.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2,
+          "stalemate": 2
+        },
+        "trajectory_count": 4,
+        "trajectory_lengths": [
+          32,
+          6,
+          32,
+          28
+        ]
+      },
+      "terminal_distribution": {
+        "ongoing@32": 2,
+        "stalemate": 2
+      }
+    },
+    "N": {
+      "arm": "N",
+      "by_sample": {
+        "V4-3": {
+          "game_count": 2,
+          "quality": {
+            "branching_collapse_fraction": 0.16666666666666666,
+            "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+            "forced_move_fraction": 0.03125,
+            "low_branch_fraction": 0.125,
+            "median_branching": 4.0,
+            "median_game_length": 32.0,
+            "p10_game_branching": 2.0,
+            "p10_game_length": 32.0,
+            "p90_game_branching": 7.0,
+            "p90_game_length": 32.0,
+            "terminal_distribution": {
+              "ongoing": 2
+            },
+            "trajectory_count": 2,
+            "trajectory_lengths": [
+              32,
+              32
+            ]
+          },
+          "terminal_distribution": {
+            "ongoing@32": 2
+          }
+        },
+        "V5-3": {
+          "game_count": 2,
+          "quality": {
+            "branching_collapse_fraction": 0.020833333333333332,
+            "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+            "forced_move_fraction": 0.0,
+            "low_branch_fraction": 0.015625,
+            "median_branching": 5.0,
+            "median_game_length": 32.0,
+            "p10_game_branching": 3.0,
+            "p10_game_length": 32.0,
+            "p90_game_branching": 8.0,
+            "p90_game_length": 32.0,
+            "terminal_distribution": {
+              "ongoing": 2
+            },
+            "trajectory_count": 2,
+            "trajectory_lengths": [
+              32,
+              32
+            ]
+          },
+          "terminal_distribution": {
+            "ongoing@32": 2
+          }
+        }
+      },
+      "game_count": 4,
+      "paired_outcomes": {
+        "V4-3": {
+          "first_player_score": null,
+          "incomplete_pair_is_unresolved": true,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-3": {
+          "first_player_score": null,
+          "incomplete_pair_is_unresolved": true,
+          "scoreable": false,
+          "second_player_score": null
+        }
+      },
+      "quality": {
+        "branching_collapse_fraction": 0.09375,
+        "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+        "forced_move_fraction": 0.015625,
+        "low_branch_fraction": 0.0703125,
+        "median_branching": 5.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 3.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 7.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 4
+        },
+        "trajectory_count": 4,
+        "trajectory_lengths": [
+          32,
+          32,
+          32,
+          32
+        ]
+      },
+      "terminal_distribution": {
+        "ongoing@32": 4
+      }
+    }
+  },
+  "comparisons": {
+    "by_sample": [
+      {
+        "arm_n_vs_full_reverse": {
+          "median_length_delta": 0.0,
+          "ongoing_or_repetition_count_delta": 0
+        },
+        "arm_n_vs_legacy": {
+          "median_length_delta": 13.0,
+          "stalemate_count_delta": -1
+        },
+        "branching_collapse_fraction": {
+          "F": 0.1875,
+          "L": 0.2916666666666667,
+          "N": 0.16666666666666666
+        },
+        "checkmate_count": {
+          "F": 0,
+          "L": 0,
+          "N": 0
+        },
+        "sample_id": "V4-3"
+      },
+      {
+        "arm_n_vs_full_reverse": {
+          "median_length_delta": 0.0,
+          "ongoing_or_repetition_count_delta": 0
+        },
+        "arm_n_vs_legacy": {
+          "median_length_delta": 2.0,
+          "stalemate_count_delta": -1
+        },
+        "branching_collapse_fraction": {
+          "F": 0.020833333333333332,
+          "L": 0.18181818181818182,
+          "N": 0.020833333333333332
+        },
+        "checkmate_count": {
+          "F": 0,
+          "L": 0,
+          "N": 0
+        },
+        "sample_id": "V5-3"
+      }
+    ]
+  },
+  "default_generator_changed": false,
+  "f85_actual_compute": 0,
+  "games": [
+    {
+      "action_sequence_sha256": "bf498955a8b5d4ec7ebd7ad31b52ba25f3ca74de8be6e85d836f14d9a6527836",
+      "arm": "L",
+      "branching_counts": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        2,
+        2,
+        3,
+        5,
+        3,
+        2,
+        4,
+        3,
+        5,
+        1,
+        4,
+        3,
+        4,
+        2,
+        4,
+        3,
+        3,
+        2,
+        2,
+        3,
+        4,
+        2,
+        3,
+        3,
+        4
+      ],
+      "final_position_digest": "1f6637cb40662919d4938dda6f2230a0288d8e366ef75160dd78aead47da67cd",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "ea993a6147595b1ce740cc91ad426a96395edcb6de479c95c23ecc88800a0e17",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "464e7585eb8c3574248bbcaff08e3540f5eb2152ba8ef432834576882bfb517d",
+      "arm": "L",
+      "branching_counts": [
+        3,
+        4,
+        4,
+        3,
+        2,
+        5
+      ],
+      "final_position_digest": "4afdc68e502ecf18f964a4bce509a1d50572f50c7294eca9f4dec51d13ce25b6",
+      "outcome_label": "stalemate",
+      "plies": 6,
+      "policy_move_counts": {
+        "A": 3,
+        "B": 3
+      },
+      "ruleset_fingerprint": "ea993a6147595b1ce740cc91ad426a96395edcb6de479c95c23ecc88800a0e17",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "stalemate",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "1e47448a63739fd9faa4e0927fd5ed0304c51dca455e66ee1c114c107cc8e2e3",
+      "arm": "F",
+      "branching_counts": [
+        5,
+        5,
+        5,
+        3,
+        5,
+        2,
+        8,
+        4,
+        5,
+        5,
+        3,
+        3,
+        3,
+        2,
+        5,
+        2,
+        5,
+        2,
+        5,
+        2,
+        5,
+        3,
+        6,
+        1,
+        3,
+        3,
+        5,
+        2,
+        4,
+        1,
+        5,
+        1
+      ],
+      "final_position_digest": "90c40afb84aef3d6c25abec1b3dd6f2ce593a64e8a9752b3e970ac66cd815dcc",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "542e4a2f829eda20ec6be8147c965f2b4bd10dd8e35a6d0af4a65f2392fab470",
+      "arm": "F",
+      "branching_counts": [
+        5,
+        5,
+        5,
+        5,
+        8,
+        4,
+        7,
+        4,
+        6,
+        3,
+        6,
+        4,
+        5,
+        3,
+        6,
+        4,
+        3,
+        5,
+        3,
+        5,
+        6,
+        5,
+        5,
+        7,
+        4,
+        5,
+        4,
+        5,
+        6,
+        6,
+        5,
+        2
+      ],
+      "final_position_digest": "4fcc0bbfe577846835fad85892b997f9edf1fcd392e1d0a860d7d82cb078ec06",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "0b91b9ce68e558642feae465689b6b9c04d9673374dc02ebad62e21c2cc63dd3",
+      "arm": "N",
+      "branching_counts": [
+        5,
+        5,
+        5,
+        6,
+        5,
+        7,
+        4,
+        4,
+        7,
+        3,
+        5,
+        4,
+        5,
+        3,
+        5,
+        2,
+        7,
+        3,
+        7,
+        4,
+        8,
+        2,
+        8,
+        4,
+        7,
+        3,
+        4,
+        2,
+        7,
+        3,
+        6,
+        3
+      ],
+      "final_position_digest": "7a9cdc5c102a6dba4b7e308db7abe6e560bcd8e7508a42d1febafd26ce1d6783",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "ce640e937e1a763ddbfd6db327519c499c4ddf7db36cfbd046cf9881b728d726",
+      "arm": "N",
+      "branching_counts": [
+        5,
+        5,
+        5,
+        5,
+        4,
+        5,
+        5,
+        5,
+        3,
+        5,
+        5,
+        4,
+        1,
+        4,
+        3,
+        5,
+        1,
+        3,
+        3,
+        4,
+        2,
+        4,
+        3,
+        5,
+        3,
+        4,
+        3,
+        3,
+        2,
+        2,
+        3,
+        3
+      ],
+      "final_position_digest": "42b5a78ded07fd0c20d15c8d8b6aa1650cf3b5bdcbb235e18829e96647d80be0",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "135fd8833a52f98fc4c46ab86aa28b6aa866ac5b8203bae1783140e0fad4204b",
+      "arm": "L",
+      "branching_counts": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        5,
+        2,
+        5,
+        2,
+        5,
+        3,
+        4,
+        2,
+        5,
+        2,
+        5,
+        3,
+        5,
+        3,
+        4,
+        2,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        3,
+        4,
+        4,
+        3
+      ],
+      "final_position_digest": "456f24f2e2758612728e93715ce185e0cebae555e52b3e4ef526542f180d49fc",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "dee88b4b9510338a96ed389e59b2f8ae10b6e02e89bd2adb6ffe1887207e3db5",
+      "arm": "L",
+      "branching_counts": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        4,
+        2,
+        4,
+        3,
+        4,
+        2,
+        4,
+        3,
+        4,
+        2,
+        4,
+        1,
+        4
+      ],
+      "final_position_digest": "af19d8e0b639afc9104f60f51732877d8f8fd19f4b949e97902013336466bdbe",
+      "outcome_label": "stalemate",
+      "plies": 28,
+      "policy_move_counts": {
+        "A": 14,
+        "B": 14
+      },
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "stalemate",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "fe0b6df18a7605b1f16c885f9fea89d6b8e91462f808dd3f006edb3a568b76dd",
+      "arm": "F",
+      "branching_counts": [
+        6,
+        6,
+        5,
+        5,
+        1,
+        7,
+        2,
+        7,
+        10,
+        5,
+        10,
+        5,
+        9,
+        5,
+        10,
+        8,
+        6,
+        8,
+        10,
+        7,
+        9,
+        5,
+        10,
+        5,
+        10,
+        5,
+        6,
+        7,
+        6,
+        3,
+        7,
+        5
+      ],
+      "final_position_digest": "132dae9ea020639a85603f2ce3234be8ef02ff068ce4e7db5204d3d9eb695909",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "93af93f69aa61619abb2a08b67119e086776082f0dcd3ae65aba0f3cb8d6419a",
+      "arm": "F",
+      "branching_counts": [
+        6,
+        6,
+        5,
+        5,
+        9,
+        7,
+        9,
+        5,
+        11,
+        5,
+        11,
+        7,
+        13,
+        5,
+        4,
+        9,
+        7,
+        5,
+        8,
+        4,
+        11,
+        7,
+        8,
+        7,
+        8,
+        4,
+        5,
+        7,
+        5,
+        4,
+        8,
+        2
+      ],
+      "final_position_digest": "4810369275406e9c95e882be6a74139a46c9553c47af40ede9384d470f94e196",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "37a7266392338d07252b3d0f51a79dd8cd0531c36ae3c99110270aabba8927a8",
+      "arm": "N",
+      "branching_counts": [
+        5,
+        5,
+        5,
+        5,
+        8,
+        6,
+        8,
+        6,
+        2,
+        6,
+        8,
+        7,
+        9,
+        5,
+        8,
+        3,
+        4,
+        4,
+        5,
+        5,
+        6,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5
+      ],
+      "final_position_digest": "f30440b6bfa39abeeac62304d691ff87fa249331a9fe8bea0ca5c61976361a86",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "action_sequence_sha256": "10c1dd51ebb3470dae7fae3e07369fcc52a030e17bf9c6fedb5763af54bf82ee",
+      "arm": "N",
+      "branching_counts": [
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        7,
+        4,
+        5,
+        10,
+        4,
+        8,
+        5,
+        8,
+        6,
+        7,
+        5,
+        5,
+        5,
+        4,
+        5,
+        7,
+        4,
+        6,
+        3,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4
+      ],
+      "final_position_digest": "fb17eb8e6750d0cca61b2304e08c640d601c17e84f9eb1ef0b99b0afb3ef351f",
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    }
+  ],
+  "incomplete_pairs_are_unresolved": true,
+  "manifest": "artifacts/f86o_common_tape_triarm_dynamic_smoke/manifest.json",
+  "manifest_result_driven_replacement_forbidden": true,
+  "max_ply": 32,
+  "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+  "policy_tape_seeds": {
+    "V4-3": {
+      "A": 8624301,
+      "B": 8624302
+    },
+    "V5-3": {
+      "A": 8625301,
+      "B": 8625302
+    }
+  },
+  "real_games": 12,
+  "routing": {
+    "dynamic": [
+      "TRANSPORT_BACKBONE_DYNAMIC_NONTERMINATION_FAILURE"
+    ],
+    "overall": [
+      "TRANSPORT_BACKBONE_DYNAMIC_NONTERMINATION_FAILURE"
+    ]
+  },
+  "ruleset_fingerprints": {
+    "F/V4-3": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+    "F/V5-3": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+    "L/V4-3": "ea993a6147595b1ce740cc91ad426a96395edcb6de479c95c23ecc88800a0e17",
+    "L/V5-3": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+    "N/V4-3": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+    "N/V5-3": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5"
+  },
+  "schema_version": 1,
+  "status": "F86O_COMMON_TAPE_TRIARM_DYNAMIC_SMOKE_COMPLETE",
+  "tactical_nodes": 0,
+  "teacher_training_compute": 0
+}
