@@ -46,6 +46,11 @@ def _canonical_successors(state, compiled):
     return sorted(pairs, key=lambda pair: _action_key(pair[0]))
 
 
+def _child_gives_check(child, compiled) -> bool:
+    """Return whether a child move checks the side now to move."""
+    return is_in_check(child.position, child.position.side_to_move, compiled)
+
+
 def _ordinary_counts(position, compiled) -> dict[str, int]:
     counts = {"player0": 0, "player1": 0}
     for piece in position.board:
@@ -108,9 +113,8 @@ def _shortest_empty_distance(compiled, type_id: str, owner: int, source: int, ta
 def _minimum_assignment_distances(actual: list[int], targets: list[int], compiled, type_id: str, owner: int) -> int:
     if not actual and not targets:
         return 0
-    penalty = compiled.board_size * compiled.board_size + 1
-    if len(actual) != len(targets):
-        penalty *= abs(len(actual) - len(targets))
+    mismatch_penalty = compiled.board_size * compiled.board_size + 1
+    penalty = mismatch_penalty * abs(len(actual) - len(targets))
     if not actual or not targets:
         return penalty
     best = None
@@ -169,7 +173,8 @@ def _template_distance(position, compiled, templates: list[dict[str, Any]]) -> i
         if anchors[1] is None:
             distance += penalty
         else:
-            distance += _shortest_empty_distance(compiled, "K", 1, anchors[1], defender_target) or penalty
+            defender_distance = _shortest_empty_distance(compiled, "K", 1, anchors[1], defender_target)
+            distance += penalty if defender_distance is None else defender_distance
         attacker_targets = [y * n + x for x, y in map(_square_pair, template.get("allowed_attacker_anchor_squares", []))]
         if anchors[0] is None or not attacker_targets:
             distance += penalty
@@ -214,11 +219,16 @@ def _instrument_game(entry: dict[str, Any], compiled, tape_payload: dict[str, An
         current_key = position_identity_key(state.position, compiled)
         pressure = _anchor_pressure(state.position, actor, compiled)
         capture_flags = [_is_capture(action, state.position, actor, compiled) for action, _child in successors]
-        check_flags = [is_in_check(child.position, actor, compiled) for _action, child in successors]
+        check_flags = [_child_gives_check(child, compiled) for _action, child in successors]
+        history_check_flags = [child.history[-1].gave_check for _action, child in successors]
+        if check_flags != history_check_flags:
+            raise RuntimeError("F86P check semantic disagreement between core history and helper")
         mate_flags = [child.terminal_status.status is TerminalStatus.CHECKMATE and child.terminal_status.winner == actor for _action, child in successors]
         capture_available = sum(capture_flags)
         check_available = sum(check_flags)
         mate_available = sum(mate_flags)
+        if any(mate and not check for mate, check in zip(mate_flags, check_flags)):
+            raise RuntimeError("F86P mate-in-one child did not also give check")
         policy_id = seats[actor]
         tape_index = consumed[policy_id]
         chosen_index = tapes[policy_id].choose_index(tape_index, legal_count)
@@ -293,6 +303,7 @@ def _instrument_game(entry: dict[str, Any], compiled, tape_payload: dict[str, An
     if entry["arm"] == "N":
         record["template_distance_surrogate"] = {
             "definition": "occupancy/check/capture-ignorant empty-board minimum assignment plus two Anchor distances",
+            "authority": "NON_AUTHORITY_CROSS_RULESET_GEOMETRY_REFERENCE",
             "template_source": "artifacts/f86h_kinematic_mate_reachability/templates.json:ORTHO4_CURRENT frozen target geometry; F86N-R1 compact result retained counts, not target rows",
             "start_value": template_trace[0] if template_trace else None,
             "minimum_value": min(template_trace) if template_trace else None,
@@ -311,6 +322,7 @@ def _aggregate(games: list[dict[str, Any]]) -> dict[str, Any]:
         "chosen_capture_count": sum(game["chosen_capture_count"] for game in games),
         "captures_per_game": [game["chosen_capture_count"] for game in games],
         "plies_with_check_available_fraction": sum(game["check_available_ply_count"] for game in games) / total_plies if total_plies else 0.0,
+        "check_available_ply_count": sum(game["check_available_ply_count"] for game in games),
         "chosen_check_count": sum(game["chosen_check_count"] for game in games),
         "mate_in_one_opportunity_count": sum(game["mate_in_one_opportunity_count"] for game in games),
         "material_reduction": [game["material_reduction"] for game in games],
@@ -323,19 +335,14 @@ def _aggregate(games: list[dict[str, Any]]) -> dict[str, Any]:
 
 def _route(by_arm: dict[str, dict[str, Any]]) -> str:
     n = by_arm["N"]
-    low_pressure = n["plies_with_capture_available_fraction"] <= 0.10 and n["plies_with_check_available_fraction"] <= 0.10
-    no_material = sum(n["material_reduction"]) == 0
-    no_mate_one = n["mate_in_one_opportunity_count"] == 0
-    if low_pressure and no_material and no_mate_one:
-        return "DYNAMIC_INTERACTION_PRESSURE_INSUFFICIENT"
-    if (
-        n["mate_in_one_opportunity_count"] > 0
-        and n["plies_with_check_available_fraction"] > 0.10
-        and n["chosen_check_count"] < n["plies"] * 0.10
-    ):
+    if n["mate_in_one_opportunity_count"] > 0:
         return "RANDOM_POLICY_MISSES_EXISTING_TERMINATION_OPPORTUNITIES"
-    if sum(n["material_reduction"]) > 0 and no_mate_one:
-        return "LEGAL_PATH_OR_MATE_BASIN_OBSTRUCTION_REMAINS"
+    if n["chosen_capture_count"] > 0 and sum(n["material_reduction"]) > 0 and n["check_available_ply_count"] == 0:
+        return "CAPTURE_INTERACTION_WITHOUT_CHECK_PRESSURE"
+    if n["check_available_ply_count"] > 0 and n["chosen_check_count"] == 0:
+        return "RANDOM_POLICY_UNDERUSES_CHECK_PRESSURE"
+    if n["check_available_ply_count"] > 0 and n["chosen_check_count"] > 0:
+        return "CHECK_PRESSURE_PRESENT_BUT_MATE_BASIN_UNREACHED"
     return "DYNAMIC_TERMINATION_FAILURE_IS_MULTI_MECHANISM"
 
 

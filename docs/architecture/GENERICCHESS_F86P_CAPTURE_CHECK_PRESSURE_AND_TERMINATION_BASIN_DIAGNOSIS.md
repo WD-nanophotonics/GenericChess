@@ -1,8 +1,15 @@
-# GenericChess F86P capture/check pressure and termination-basin diagnosis
+# GenericChess F86P-R1 capture/check pressure and termination-basin diagnosis
 
-Status: deterministic diagnostic replay complete. This checkpoint replays only
-the 12 frozen F86O trajectories; it creates zero new games and does not alter
-any F86O ruleset, tape, action ordering, or result artifact.
+Status: corrected deterministic diagnostic replay complete. F86P-R1 corrects
+the child-check side-to-move semantics and the retained geometry arithmetic
+from the prior F86P checkpoint. It replays only the 12 frozen F86O
+trajectories; it creates zero new games and does not alter any F86O ruleset,
+tape, action ordering, or result artifact. The direct successor contract test
+proves that the diagnostic helper agrees with both the core check predicate and
+the move-history `gave_check` flag.
+
+The implementation baseline for this correction is F86P commit
+`d089535fccd67e939b8afa225e8fc3e982c28816`.
 
 ## Authority and replay equality
 
@@ -51,59 +58,62 @@ for the two seat-swapped games, and first capture plies.
 | Arm | Sample | Capture opportunity fraction | Chosen captures | Check opportunity fraction | Chosen checks | Mate-one opportunities | Material reduction | First capture plies |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
 | L | V4-3 | 12/38 | 6 | 0/38 | 0 | 0 | 4, 2 | 4, 3 |
-| L | V5-3 | 9/60 | 3 | 0/60 | 0 | 0 | 1, 2 | 5, 7 |
-| F | V4-3 | 21/64 | 8 | 0/64 | 0 | 0 | 5, 3 | 1, 7 |
-| F | V5-3 | 43/64 | 5 | 0/64 | 0 | 0 | 2, 3 | 7, 16 |
-| N | V4-3 | 26/64 | 6 | 0/64 | 0 | 0 | 2, 4 | 6, 1 |
-| N | V5-3 | 23/64 | 7 | 0/64 | 0 | 0 | 4, 3 | 7, 9 |
+| L | V5-3 | 9/60 | 3 | 7/60 | 1 | 0 | 1, 2 | 5, 7 |
+| F | V4-3 | 21/64 | 8 | 7/64 | 1 | 0 | 5, 3 | 1, 7 |
+| F | V5-3 | 43/64 | 5 | 25/64 | 4 | 0 | 2, 3 | 7, 16 |
+| N | V4-3 | 26/64 | 6 | 1/64 | 0 | 0 | 2, 4 | 6, 1 |
+| N | V5-3 | 23/64 | 7 | 12/64 | 2 | 0 | 4, 3 | 7, 9 |
 
 ARM-N therefore had frequent legal capture opportunities (49/128 plies),
-selected 13 captures, and reduced material in all four trajectories. It had
-zero checking opportunities, zero chosen checks, and zero mate-in-one
-opportunities. Per-ply legal action counts, start-in-check flags, capture and
-check availability, cumulative captures, ordinary material counts, and
-opponent-anchor pressure trajectories are retained in `summary.json` for all
-three arms.
+selected 13 captures, and reduced material in all four trajectories. Corrected
+child semantics find 13 checking-opportunity plies and 2 chosen checks, but no
+mate-in-one opportunities. Per-ply legal action counts, start-in-check flags,
+capture and check availability, cumulative captures, ordinary material
+counts, and opponent-anchor pressure trajectories are retained in
+`summary.json` for all three arms. A mate-in-one child is asserted to be a
+checking child during instrumentation.
 
 ## Static-witness distance surrogate
 
 F86N-R1’s compact accepted result retained joint-witness counts and the
 backbone witness, but not the target-square rows. Because re-enumerating its
-mate census is forbidden, F86P uses the already persisted F86H
-`ORTHO4_CURRENT` witness geometry as a clearly labeled target-geometry
-surrogate; it does not claim those rows were revalidated under ARM-N and does
-not call the metric a legal mate distance. The metric is the empty-board
-minimum assignment distance for same-type ordinary pieces plus the two empty-
-board Anchor distances, ignoring occupancy, check, and capture.
+mate census is forbidden, F86P-R1 retains the already persisted F86H
+`ORTHO4_CURRENT` witness geometry only as a clearly labeled, non-authority
+cross-ruleset reference. It does not participate in scientific routing, does
+not claim those rows were revalidated under ARM-N, and does not call the
+metric a legal mate distance. The metric is the empty-board minimum assignment
+distance for same-type ordinary pieces plus the two empty-board Anchor
+distances, ignoring occupancy, check, and capture. Equal piece counts carry no
+implicit penalty, and a zero Anchor distance remains zero.
 
 | ARM-N sample / seats | Start | Minimum | Ply of minimum | Final |
 | --- | ---: | ---: | ---: | ---: |
-| V4-3 A/B | 58 | 38 | 8 | 39 |
-| V4-3 B/A | 58 | 35 | 20 | 53 |
-| V5-3 A/B | 62 | 54 | 17 | 55 |
-| V5-3 B/A | 62 | 53 | 29 | 54 |
+| V4-3 A/B | 4 | 2 | 3 | 21 |
+| V4-3 B/A | 4 | 4 | 1 | 53 |
+| V5-3 A/B | 1 | 0 | 4 | 55 |
+| V5-3 B/A | 1 | 0 | 10 | 54 |
 
 The trajectories move closer to the persisted target geometry at some points,
-but no trajectory supplies a check or mate-in-one opportunity and none
-terminates. The route is therefore
-`LEGAL_PATH_OR_MATE_BASIN_OBSTRUCTION_REMAINS`: material/capture interaction
-exists, but the frozen trajectories never reach a legal checking/terminal
-basin. This is a diagnostic route, not a generator threshold.
+but no trajectory supplies a mate-in-one opportunity and none terminates. The
+corrected route is therefore
+`CHECK_PRESSURE_PRESENT_BUT_MATE_BASIN_UNREACHED`: material/capture
+interaction and legal checking pressure exist, with two checking moves chosen,
+but the frozen trajectories never reach a mate basin. This is a diagnostic
+route, not a generator threshold.
 
 ## Scope and verification
 
 Replayed trajectories: 12. New real games: 0. Search depth greater than one:
 0. BFS: 0. AlphaBeta: 0. Training: 0. Teacher: 0. F85: 0. Heavy: 0.
-Rulesets, movement samplers, seeds, tapes, and the default generator were not
-changed. The workflow policy files also received only the authorized
-same-Project context-capacity rollover clarification; scientific behavior is
-unchanged.
+Static census rerun: 0. Rulesets, movement samplers, seeds, tapes, and the
+default generator were not changed. The workflow policy files were not
+changed.
 
 Exact verification:
 
 ```text
 .venv\Scripts\python.exe -m pytest tests/test_f86p_capture_check_pressure_diagnosis.py
-5 passed
+6 passed
 ```
 
 The durable compact result is
