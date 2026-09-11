@@ -361,8 +361,8 @@ def _aggregate(actions: list[dict[str, Any]]) -> dict[str, Any]:
         "checking_actions": len(actions),
         "breaking_replies": sum(breaking_counts),
         "breaking_reply_mechanism_counts": dict(sorted(mechanisms.items())),
-        "mean_min_max_legal_replies": [sum(reply_counts) / len(reply_counts), min(reply_counts, default=0), max(reply_counts, default=0)],
-        "mean_min_max_breaking_replies": [sum(breaking_counts) / len(breaking_counts), min(breaking_counts, default=0), max(breaking_counts, default=0)],
+        "mean_min_max_legal_replies": [sum(reply_counts) / len(reply_counts) if reply_counts else 0.0, min(reply_counts, default=0), max(reply_counts, default=0)],
+        "mean_min_max_breaking_replies": [sum(breaking_counts) / len(breaking_counts) if breaking_counts else 0.0, min(breaking_counts, default=0), max(breaking_counts, default=0)],
         "checker_multiplicity_distribution": dict(sorted(checker_dist.items(), key=lambda item: int(item[0]))),
         "anchor_neighborhood_coverage_distribution": dict(sorted(neighborhood_dist.items(), key=lambda item: int(item[0]))),
         "route": _route({"breaking_reply_mechanism_counts": dict(mechanisms)}),
@@ -423,10 +423,12 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         raise RuntimeError("F86R did not reproduce the complete F86Q selected action cohort")
     all_actions = list(actions_by_key.values())
     by_arm_sample = {}
+    fingerprints = {(item["arm"], item["sample_id"]): item["ruleset_fingerprint"] for item in prep["selected_f86q_checking_actions"]}
     for arm in ARMS:
         by_arm_sample[arm] = {}
         for sample in SAMPLES:
-            rows = [row for key, row in actions_by_key.items() if key[0] == next(item["ruleset_fingerprint"] for item in prep["selected_f86q_checking_actions"] if item["arm"] == arm and item["sample_id"] == sample) and next(item["sample_id"] for item in prep["selected_f86q_checking_actions"] if item["arm"] == arm and item["sample_id"] == sample) == sample]
+            fingerprint = fingerprints.get((arm, sample))
+            rows = [row for key, row in actions_by_key.items() if fingerprint is not None and key[0] == fingerprint]
             by_arm_sample[arm][sample] = _aggregate(rows)
     n_routes = [by_arm_sample["N"][sample]["route"] for sample in SAMPLES]
     overall = "CHECK_ESCAPE_MECHANISM_UNRESOLVED_DUE_TO_PROBE_CAP" if probe["truncated"] else ("CHECK_ESCAPE_STRUCTURE_IS_SAMPLE_DEPENDENT" if len(set(n_routes)) > 1 else n_routes[0])
