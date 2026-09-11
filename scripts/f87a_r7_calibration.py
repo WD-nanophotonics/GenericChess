@@ -77,20 +77,23 @@ def _freeze_samples(output_dir: Path) -> tuple[tuple[str, MinimalGeneratedGame],
     return games
 
 
-def _random_action(session: GameSession, rng: random.Random) -> Action:
+def _random_action(session: GameSession, tape: list[int], cursor: list[int]) -> Action:
     actions = session.legal_actions()
-    return actions[rng.randrange(len(actions))]
+    index = tape[cursor[0] % len(tape)] % len(actions)
+    cursor[0] += 1
+    return actions[index]
 
 
 def _play_game(
     game: MinimalGeneratedGame,
     seats: tuple[str, str],
     seed: int,
+    random_tape: list[int],
     node_budget: int,
     deadline: float,
 ) -> tuple[dict[str, Any], int, str | None]:
     session = GameSession(game.compiled)
-    rng = random.Random(seed)
+    tape_cursor = [0]
     players = {
         name: AlphaBetaPlayer(game.compiled, use_disk_cache=False)
         for name in seats if POLICIES[name] is not None
@@ -105,15 +108,19 @@ def _play_game(
         actor = session.state.position.side_to_move
         policy = seats[actor]
         if policy == "random_legal":
-            action = _random_action(session, rng)
+            action = _random_action(session, random_tape, tape_cursor)
             event = {"policy": policy, "nodes": 0, "termination_reason": "random"}
         else:
             max_nodes, max_depth = POLICIES[policy]
+            remaining_nodes = node_budget - nodes
+            if remaining_nodes <= 0:
+                stop_reason = "EARLY_STOP_NODE_CAP"
+                break
             decision = players[policy].choose_action(
                 session,
-                SearchLimits(max_nodes=max_nodes, max_depth=max_depth, quiescence_max_depth=0),
+                SearchLimits(max_nodes=min(max_nodes, remaining_nodes), max_depth=max_depth, quiescence_max_depth=0),
             )
-            action = decision.action or _random_action(session, rng)
+            action = decision.action or _random_action(session, random_tape, tape_cursor)
             event = {
                 "policy": policy,
                 "nodes": decision.nodes,
@@ -142,16 +149,30 @@ def _play_game(
     }, nodes, stop_reason
 
 
-def _score(rows: list[dict[str, Any]], stronger: str) -> float | None:
+def _pair_summary(rows: list[dict[str, Any]], stronger: str) -> dict[str, Any]:
+    resolved = [row for row in rows if row["resolved"]]
+    censored = [row for row in rows if not row["resolved"]]
+    if len(rows) != 2 or censored:
+        return {
+            "paired_score": None,
+            "pair_resolved": False,
+            "resolved_game_count": len(resolved),
+            "censored_game_count": len(censored),
+            "status": "DEFER_CENSORED",
+        }
     scores = []
-    for row in rows:
-        if not row["resolved"]:
-            continue
+    for row in resolved:
         if row["winner"] is None:
             scores.append(0.5)
         else:
             scores.append(1.0 if row["seats"][row["winner"]] == stronger else 0.0)
-    return sum(scores) / len(scores) if scores else None
+    return {
+        "paired_score": sum(scores) / len(scores),
+        "pair_resolved": True,
+        "resolved_game_count": 2,
+        "censored_game_count": 0,
+        "status": "RESOLVED",
+    }
 
 
 def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
@@ -159,35 +180,59 @@ def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
     deadline = started + WALL_CAP_SECONDS
     games = _freeze_samples(output_dir)
     rows = []
+    pair_summaries = []
     total_nodes = 0
     stop_reason = None
-    for sample_id, game in games:
+    for sample_index, (sample_id, game) in enumerate(games):
         for matchup_index, (weaker, stronger) in enumerate(MATCHUPS):
             if total_nodes >= NODE_CAP or time.monotonic() >= deadline:
                 stop_reason = "EARLY_STOP_NODE_CAP" if total_nodes >= NODE_CAP else "EARLY_STOP_WALL_CAP"
                 break
+            pair_seed = 870700 + sample_index * 100 + matchup_index * 10
+            random_source = random.Random(pair_seed)
+            random_tape = [random_source.getrandbits(64) for _ in range(MAX_PLY)]
+            pair_rows = []
             for swapped in (False, True):
                 seats = (weaker, stronger) if not swapped else (stronger, weaker)
                 row, nodes, game_stop = _play_game(
-                    game, seats, 870700 + len(rows), NODE_CAP - total_nodes, deadline
+                    game, seats, pair_seed, random_tape, NODE_CAP - total_nodes, deadline
                 )
-                rows.append({"sample_id": sample_id, "matchup": [weaker, stronger], **row})
+                row = {"sample_id": sample_id, "matchup": [weaker, stronger], **row}
+                rows.append(row)
+                pair_rows.append(row)
                 total_nodes += nodes
                 if game_stop:
                     stop_reason = game_stop
                     break
             if stop_reason:
                 break
+            pair_summaries.append({
+                "sample_id": sample_id,
+                "matchup": [weaker, stronger],
+                "stronger_policy": stronger,
+                **_pair_summary(pair_rows, stronger),
+            })
         if stop_reason:
             break
-    matchup_scores = {
-        f"{weaker}>{stronger}": _score(
-            [row for row in rows if row["matchup"] == [weaker, stronger]], stronger
-        )
-        for weaker, stronger in MATCHUPS
-    }
+    matchup_scores = {}
+    for weaker, stronger in MATCHUPS:
+        pairs = [row for row in pair_summaries if row["matchup"] == [weaker, stronger]]
+        valid_scores = [row["paired_score"] for row in pairs if row["pair_resolved"]]
+        key = f"{stronger}_score_vs_{weaker}"
+        matchup_scores[key] = {
+            "paired_score": sum(valid_scores) / len(valid_scores) if len(valid_scores) == len(pairs) and pairs else None,
+            "sample_pair_count": len(pairs),
+            "resolved_pair_count": sum(row["pair_resolved"] for row in pairs),
+            "censored_pair_count": sum(not row["pair_resolved"] for row in pairs),
+            "status": "RESOLVED" if len(pairs) == len(games) and all(row["pair_resolved"] for row in pairs) else "DEFER_CENSORED",
+        }
     completed = stop_reason is None and len(rows) == len(games) * len(MATCHUPS) * 2
-    success = completed and all(score is not None and score > 0.5 for score in matchup_scores.values())
+    success = completed and all(
+        summary["status"] == "RESOLVED"
+        and summary["paired_score"] is not None
+        and summary["paired_score"] > 0.5
+        for summary in matchup_scores.values()
+    )
     result = {
         "schema_version": 1,
         "experiment": "GENERICCHESS-F87A-R7-CALIBRATION",
@@ -195,9 +240,14 @@ def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
         "baseline_sha": BASELINE_SHA,
         "sample_ids": [sample_id for sample_id, _ in games],
         "rows": rows,
+        "pair_summaries": pair_summaries,
         "played_game_count": len(rows),
         "expected_game_count": len(games) * len(MATCHUPS) * 2,
         "actual_search_nodes": total_nodes,
+        "resolved_game_count": sum(row["resolved"] for row in rows),
+        "censored_game_count": sum(not row["resolved"] for row in rows),
+        "resolved_pair_count": sum(row["pair_resolved"] for row in pair_summaries),
+        "censored_pair_count": sum(not row["pair_resolved"] for row in pair_summaries),
         "node_cap": NODE_CAP,
         "wall_seconds": time.monotonic() - started,
         "wall_cap_seconds": WALL_CAP_SECONDS,
