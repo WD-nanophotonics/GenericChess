@@ -120,14 +120,14 @@
       "checked_position_count": 132,
       "engine_validated_mate_anchor_fraction": 0.3125,
       "engine_validated_mate_exists": true,
+      "full_material_validated_mate_position_count_by_attacker_count": {
+        "3": 89
+      },
       "geometric_full_net_anchor_fraction": 0.3125,
       "max_anchor_zone_coverage_fraction": 1.0,
       "mean_anchor_zone_coverage_fraction": 0.7052083333333333,
       "minimum_geometric_attackers_distribution": {
         "3": 5
-      },
-      "minimum_validated_ordinary_attackers_distribution": {
-        "3": 89
       },
       "ordinary_type_multiset": [
         "P0",
@@ -148,13 +148,13 @@
       "checked_position_count": 12,
       "engine_validated_mate_anchor_fraction": 0.0,
       "engine_validated_mate_exists": false,
+      "full_material_validated_mate_position_count_by_attacker_count": {},
       "geometric_full_net_anchor_fraction": 0.0625,
       "max_anchor_zone_coverage_fraction": 1.0,
       "mean_anchor_zone_coverage_fraction": 0.5746527777777778,
       "minimum_geometric_attackers_distribution": {
         "3": 1
       },
-      "minimum_validated_ordinary_attackers_distribution": {},
       "ordinary_type_multiset": [
         "P0",
         "P0",
@@ -274,14 +274,14 @@
       "checked_position_count": 1407,
       "engine_validated_mate_anchor_fraction": 0.28,
       "engine_validated_mate_exists": true,
+      "full_material_validated_mate_position_count_by_attacker_count": {
+        "3": 1262
+      },
       "geometric_full_net_anchor_fraction": 0.28,
       "max_anchor_zone_coverage_fraction": 1.0,
       "mean_anchor_zone_coverage_fraction": 0.7446666666666667,
       "minimum_geometric_attackers_distribution": {
         "3": 7
-      },
-      "minimum_validated_ordinary_attackers_distribution": {
-        "3": 1262
       },
       "ordinary_type_multiset": [
         "P0",
@@ -402,14 +402,14 @@
       "checked_position_count": 42,
       "engine_validated_mate_anchor_fraction": 0.04,
       "engine_validated_mate_exists": true,
+      "full_material_validated_mate_position_count_by_attacker_count": {
+        "3": 37
+      },
       "geometric_full_net_anchor_fraction": 0.04,
       "max_anchor_zone_coverage_fraction": 1.0,
       "mean_anchor_zone_coverage_fraction": 0.6233333333333334,
       "minimum_geometric_attackers_distribution": {
         "3": 1
-      },
-      "minimum_validated_ordinary_attackers_distribution": {
-        "3": 37
       },
       "ordinary_type_multiset": [
         "P0",
@@ -423,11 +423,17 @@
   ],
   "real_games": 0,
   "routing": {
-    "by_cell": {
-      "FULL8_CURRENT": [
+    "by_sample_cell": {
+      "V4-3:FULL8_CURRENT": [
+        "GEOMETRIC_NET_EXISTS_BUT_RULE_LEGAL_MATE_ABSENT"
+      ],
+      "V4-3:ORTHO4_CURRENT": [
         "STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"
       ],
-      "ORTHO4_CURRENT": [
+      "V5-3:FULL8_CURRENT": [
+        "STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"
+      ],
+      "V5-3:ORTHO4_CURRENT": [
         "STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"
       ]
     },

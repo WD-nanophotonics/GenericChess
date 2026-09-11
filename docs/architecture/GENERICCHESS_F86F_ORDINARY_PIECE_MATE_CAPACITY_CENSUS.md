@@ -55,11 +55,13 @@ cells. The actual census checked 1,593 positions, with no truncation.
 | V5-3 | FULL8_CURRENT | P0,P1,P1 | 20/25 | 0.623333 | 1.0 | 1/25 | yes, 1/25 | 42 |
 
 Minimum geometric attacker distributions are `{3: 5}`, `{3: 1}`, `{3: 7}`,
-and `{3: 1}` in the table's row order. Every validated mate uses all three
-ordinary attackers; validated-position distributions are respectively
-`{3: 89}`, empty, `{3: 1262}`, and `{3: 37}`. The large V5-3 ORTHO4 count is
-still below its per-cell cap and is a count of static candidate positions, not
-played games or search nodes.
+and `{3: 1}` in the table's row order. The
+`full_material_validated_mate_position_count_by_attacker_count` distributions
+are respectively `{3: 89}`, empty, `{3: 1262}`, and `{3: 37}`. These counts
+use the full three-piece material multiset in each sample; they are not a
+minimum-attacker result. The large V5-3 ORTHO4 count is still below its
+per-cell cap and is a count of static candidate positions, not played games
+or search nodes.
 
 ## Canonical validated-mate examples
 
@@ -87,6 +89,10 @@ static stripped-Anchor mates in three of four cells. The routing is therefore:
 STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS
 ```
 
+Per-cell routing is retained under `(sample_id, cell)` keys: V4-3/FULL8 is
+`GEOMETRIC_NET_EXISTS_BUT_RULE_LEGAL_MATE_ABSENT`; the other three cells are
+`STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS`.
+
 This proves that the ordinary material has static mating geometry under a
 stripped defender model. It does not prove that normal generated games can
 reach those positions. The next question is MATE_REACHABILITY under real
@@ -99,7 +105,9 @@ placement ablation.
 \.venv\Scripts\python.exe -m pytest tests/test_f86a_minimal_game_benchmark.py tests/test_f86b_quality_calibration.py tests/test_f86c_generator_viability.py tests/test_f86d_mobility_ablation.py tests/test_f86e_anchor_placement_ablation.py tests/test_f86e_r1_common_policy_replay.py tests/test_f86f_ordinary_mate_capacity_census.py tests/test_f85_lane_scaling_calibration.py tests/test_f85_c2_train_teacher_acquisition.py tests/test_benchmark.py --tb=no
 ```
 
-Result: **48/48 PASS**. Real played games: 0. Teacher/search compute: 0.
+Result: **49/49 PASS**. This includes direct Core revalidation of one V4-3
+ORTHO4 and one V5-3 FULL8 canonical example. Real played games: 0.
+Teacher/search compute: 0.
 Checked candidate positions: 1,593/8,192 maximum; truncation: false. F85
 actual compute is 0. The default generator and all frozen rulesets remain
 unchanged.

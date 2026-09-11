@@ -153,7 +153,7 @@ def _census_cell(sample_id: str, cell: str, compiled) -> tuple[MateCapacityProfi
     full_net_squares = 0
     checkable_squares = 0
     minimum_geometric: dict[str, int] = {}
-    minimum_validated: dict[str, int] = {}
+    full_material_validated: dict[str, int] = {}
     validated_anchor_squares: set[int] = set()
     examples: list[dict[str, Any]] = []
     checked_positions = 0
@@ -229,7 +229,7 @@ def _census_cell(sample_id: str, cell: str, compiled) -> tuple[MateCapacityProfi
                     continue
                 validated_anchor_squares.add(defender_anchor)
                 attacker_count = len(type_ids)
-                minimum_validated[str(attacker_count)] = minimum_validated.get(str(attacker_count), 0) + 1
+                full_material_validated[str(attacker_count)] = full_material_validated.get(str(attacker_count), 0) + 1
                 if len(examples) < 3:
                     examples.append({
                         "defender_anchor": _square_payload(defender_anchor, n),
@@ -258,7 +258,7 @@ def _census_cell(sample_id: str, cell: str, compiled) -> tuple[MateCapacityProfi
         minimum_geometric_attackers_distribution=minimum_geometric,
         engine_validated_mate_exists=bool(validated_anchor_squares),
         engine_validated_mate_anchor_fraction=len(validated_anchor_squares) / (n * n),
-        minimum_validated_ordinary_attackers_distribution=minimum_validated,
+        full_material_validated_mate_position_count_by_attacker_count=full_material_validated,
         checked_position_count=checked_positions,
         candidate_position_count=candidate_positions,
         truncation=truncated,
@@ -268,7 +268,6 @@ def _census_cell(sample_id: str, cell: str, compiled) -> tuple[MateCapacityProfi
 
 
 def _routing(profiles: list[MateCapacityProfile]) -> dict[str, Any]:
-    by_cell = {profile.cell: profile for profile in profiles}
     labels: list[str] = []
     if any(profile.truncation for profile in profiles):
         labels.append("MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP")
@@ -279,13 +278,15 @@ def _routing(profiles: list[MateCapacityProfile]) -> dict[str, Any]:
             labels.append("GEOMETRIC_NET_EXISTS_BUT_RULE_LEGAL_MATE_ABSENT")
         if any(profile.engine_validated_mate_exists for profile in profiles):
             labels.append("STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS")
-        if (
-            by_cell["ORTHO4_CURRENT"].geometric_full_net_anchor_fraction > 0.0
-            and by_cell["FULL8_CURRENT"].geometric_full_net_anchor_fraction == 0.0
+        by_sample = {sample_id: {profile.cell: profile for profile in profiles if profile.sample_id == sample_id} for sample_id in SAMPLES}
+        if all(
+            by_sample[sample_id]["ORTHO4_CURRENT"].geometric_full_net_anchor_fraction > 0.0
+            and by_sample[sample_id]["FULL8_CURRENT"].geometric_full_net_anchor_fraction == 0.0
+            for sample_id in SAMPLES
         ):
             labels.append("ANCHOR_ESCAPE_PROFILE_LIMITS_MATE_CAPACITY")
-    return {"labels": labels, "by_cell": {
-        profile.cell: (
+    return {"labels": labels, "by_sample_cell": {
+        f"{profile.sample_id}:{profile.cell}": (
             ["MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP"] if profile.truncation else
             ["STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"] if profile.engine_validated_mate_exists else
             ["GEOMETRIC_NET_EXISTS_BUT_RULE_LEGAL_MATE_ABSENT"] if profile.geometric_full_net_anchor_fraction > 0.0 else

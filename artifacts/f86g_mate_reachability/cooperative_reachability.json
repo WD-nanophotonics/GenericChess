@@ -1,0 +1,87 @@
+{
+  "any_node_truncation": true,
+  "cell_names": [
+    "ORTHO4_CURRENT",
+    "FULL8_CURRENT"
+  ],
+  "default_generator_changed": false,
+  "depth_cap": 8,
+  "f85_actual_compute": 0,
+  "real_new_random_seeds": 0,
+  "results": {
+    "V4-3:FULL8_CURRENT": {
+      "cell": "FULL8_CURRENT",
+      "deepest_fully_completed_bfs_depth": 5,
+      "depth_cap_reached": false,
+      "first_reachable_check_depth": 2,
+      "first_reachable_checkmate_depth": null,
+      "frontier_size": 22391,
+      "node_truncated": true,
+      "sample_id": "V4-3",
+      "state_expansions": 8192,
+      "truncation": true,
+      "winner": null
+    },
+    "V4-3:ORTHO4_CURRENT": {
+      "cell": "ORTHO4_CURRENT",
+      "deepest_fully_completed_bfs_depth": 7,
+      "depth_cap_reached": false,
+      "first_reachable_check_depth": 7,
+      "first_reachable_checkmate_depth": null,
+      "frontier_size": 0,
+      "node_truncated": true,
+      "sample_id": "V4-3",
+      "state_expansions": 8192,
+      "truncation": true,
+      "winner": null
+    },
+    "V5-3:FULL8_CURRENT": {
+      "cell": "FULL8_CURRENT",
+      "deepest_fully_completed_bfs_depth": 5,
+      "depth_cap_reached": false,
+      "first_reachable_check_depth": 2,
+      "first_reachable_checkmate_depth": null,
+      "frontier_size": 24820,
+      "node_truncated": true,
+      "sample_id": "V5-3",
+      "state_expansions": 8192,
+      "truncation": true,
+      "winner": null
+    },
+    "V5-3:ORTHO4_CURRENT": {
+      "cell": "ORTHO4_CURRENT",
+      "deepest_fully_completed_bfs_depth": 7,
+      "depth_cap_reached": false,
+      "first_reachable_check_depth": 2,
+      "first_reachable_checkmate_depth": null,
+      "frontier_size": 0,
+      "node_truncated": true,
+      "sample_id": "V5-3",
+      "state_expansions": 8192,
+      "truncation": true,
+      "winner": null
+    }
+  },
+  "routing": [
+    "MATE_REACHABILITY_UNRESOLVED_DUE_TO_STATE_CAP"
+  ],
+  "ruleset_fingerprints": {
+    "V4-3": {
+      "FULL8_CURRENT": "7511327e944c195de71de536f818e8a2028136d4b04123937596f4dce46bda62",
+      "ORTHO4_CURRENT": "ea993a6147595b1ce740cc91ad426a96395edcb6de479c95c23ecc88800a0e17"
+    },
+    "V5-3": {
+      "FULL8_CURRENT": "8d77e9671449b2d6952aa7c80c898d7e390eff0fa534ac8be6d55e7f055ec1d8",
+      "ORTHO4_CURRENT": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d"
+    }
+  },
+  "sample_ids": [
+    "V4-3",
+    "V5-3"
+  ],
+  "schema_version": 1,
+  "state_expansion_cap_per_cell": 8192,
+  "state_expansion_cap_total": 32768,
+  "teacher_learned_search_compute": 0,
+  "total_state_expansions": 32768
+}

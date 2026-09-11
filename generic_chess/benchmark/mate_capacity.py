@@ -21,7 +21,7 @@ class MateCapacityProfile:
     minimum_geometric_attackers_distribution: dict[str, int]
     engine_validated_mate_exists: bool
     engine_validated_mate_anchor_fraction: float
-    minimum_validated_ordinary_attackers_distribution: dict[str, int]
+    full_material_validated_mate_position_count_by_attacker_count: dict[str, int]
     checked_position_count: int
     candidate_position_count: int
     truncation: bool
