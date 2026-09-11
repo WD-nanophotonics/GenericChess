@@ -752,6 +752,155 @@ def semantic_tape_games(
     }
 
 
+def _semantic_position_material_score(position, compiled, perspective: int) -> int:
+    score = 0
+    for piece in position.board:
+        if piece is not None:
+            value = _semantic_piece_value(piece, compiled)
+            score += value if piece.owner == perspective else -value
+    for owner, hand in enumerate(position.hands):
+        hand_score = sum(_semantic_piece_value(type("HandPiece", (), {"current_type_id": type_id})(), compiled) * count for type_id, count in hand)
+        score += hand_score if owner == perspective else -hand_score
+    return score
+
+
+def _semantic_search_action_score(state, action, compiled, engine, root_actor, nodes, node_cap, depth: int = 2) -> tuple[float, int]:
+    if nodes[0] >= node_cap:
+        return float("-inf"), nodes[0]
+    child = apply_action(state, action, compiled)
+    nodes[0] += 1
+    result = child.terminal_status
+    if result.winner is not None:
+        terminal_value = 1_000_000 if result.winner == root_actor else -1_000_000
+        return float(terminal_value), nodes[0]
+    value = float(_semantic_position_material_score(child.position, compiled, root_actor))
+    if depth <= 1 or result.status.value != "ongoing" or nodes[0] >= node_cap:
+        return value, nodes[0]
+    replies = sorted(semantic_public_actions(engine, child.position), key=_semantic_action_key)
+    reply_values = []
+    for reply in replies:
+        if nodes[0] >= node_cap:
+            break
+        reply_value, _ = _semantic_search_action_score(child, reply, compiled, engine, root_actor, nodes, node_cap, depth=1)
+        reply_values.append(reply_value)
+    if reply_values:
+        value = min(reply_values)
+    return value, nodes[0]
+
+
+def semantic_search_games(
+    compiled,
+    *,
+    pair_count: int,
+    max_ply: int,
+    node_cap: int,
+) -> dict[str, Any]:
+    """Run a deterministic, terminal-aware shallow semantic search control."""
+    engine = semantic_engine_for(compiled)
+    if engine is None:
+        raise TypeError("semantic_search_games requires a compiled semantic ruleset")
+    records: list[dict[str, Any]] = []
+    for pair in range(pair_count):
+        for swapped in (False, True):
+            state = initial_state(compiled)
+            branchings: list[int] = []
+            action_sequence: list[dict[str, Any]] = []
+            captures = checks = 0
+            nodes = [0]
+            identities = [position_identity_key(state.position, compiled)]
+            recurrence_counts = Counter(identities)
+            while state.terminal_status.status.value == "ongoing" and state.ply_count < max_ply:
+                legal = sorted(semantic_public_actions(engine, state.position), key=_semantic_action_key)
+                if not legal:
+                    break
+                branchings.append(len(legal))
+                actor = state.position.side_to_move
+                root_actor = actor
+                scored = []
+                for index, action in enumerate(legal):
+                    if nodes[0] >= node_cap and scored:
+                        break
+                    value, _ = _semantic_search_action_score(state, action, compiled, engine, root_actor, nodes, node_cap)
+                    scored.append((value, -index, index))
+                choice = max(scored)[-1] if scored else 0
+                action = legal[choice]
+                target = state.position.board[square_to_index(action.to_square, compiled.board_size)]
+                if action_is_board(action) and target is not None and target.owner != actor:
+                    captures += 1
+                action_sequence.append({"actor": actor, "action": action_to_dict(action), "legal_action_count": len(legal), "search_nodes": nodes[0]})
+                state = apply_action(state, action, compiled)
+                if engine.in_check(state.position, state.position.side_to_move):
+                    checks += 1
+                identity = position_identity_key(state.position, compiled)
+                identities.append(identity)
+                recurrence_counts[identity] += 1
+            status = state.terminal_status.status.value
+            censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
+            terminal = "CENSORED" if censored else status
+            winner = None if censored else state.terminal_status.winner
+            sequence_bytes = json.dumps(action_sequence, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            repeated_positions = sum(count - 1 for count in recurrence_counts.values() if count > 1)
+            records.append({
+                "policy_id": "deterministic_semantic_shallow_search",
+                "pair_index": pair,
+                "role_swap": swapped,
+                "seat_assignment": {"player0": "B" if swapped else "A", "player1": "A" if swapped else "B"},
+                "opening_identity": identities[0],
+                "terminal_status": terminal,
+                "completion": "CENSORED" if censored else "TERMINAL",
+                "winner": winner,
+                "first_player_score": None if censored else (0.5 if winner is None else (1.0 if winner == 0 else 0.0)),
+                "second_player_score": None if censored else (0.5 if winner is None else (1.0 if winner == 1 else 0.0)),
+                "plies": state.ply_count,
+                "branching_sequence": list(branchings),
+                "capture_count": captures,
+                "check_count": checks,
+                "search_nodes": nodes[0],
+                "search_node_cap": node_cap,
+                "distinct_position_count": len(recurrence_counts),
+                "position_return_count": repeated_positions,
+                "max_position_multiplicity": max(recurrence_counts.values()),
+                "recurrence_fraction": repeated_positions / len(identities) if identities else 0.0,
+                "side_to_move_final": state.position.side_to_move,
+                "action_sequence_sha256": hashlib.sha256(sequence_bytes).hexdigest(),
+                "final_position_digest": identities[-1],
+            })
+    branchings = [count for row in records for count in row["branching_sequence"]]
+    terminal_counts = Counter(row["terminal_status"] for row in records)
+    total_moves = sum(row["plies"] for row in records)
+    return {
+        "policy_id": "deterministic_semantic_shallow_search",
+        "pair_count": pair_count,
+        "game_count": len(records),
+        "max_ply": max_ply,
+        "search_node_cap": node_cap,
+        "records": records,
+        "terminal_counts": dict(sorted(terminal_counts.items())),
+        "censored_count": terminal_counts["CENSORED"],
+        "completion_fraction": sum(row["completion"] != "CENSORED" for row in records) / len(records) if records else 0.0,
+        "terminal_fractions": {
+            "checkmate": terminal_counts["checkmate"] / len(records) if records else 0.0,
+            "stalemate": terminal_counts["stalemate"] / len(records) if records else 0.0,
+            "repetition": terminal_counts["repetition"] / len(records) if records else 0.0,
+            "other_draw": sum(terminal_counts[key] for key in ("perpetual_check", "no_contest")) / len(records) if records else 0.0,
+            "censored": terminal_counts["CENSORED"] / len(records) if records else 0.0,
+        },
+        "branching_distribution": dict(sorted(Counter(branchings).items())),
+        "legal_action_collapse_fraction": sum(count <= 1 for count in branchings) / len(branchings) if branchings else 0.0,
+        "capture_check_density": {
+            "captures": sum(row["capture_count"] for row in records),
+            "checks": sum(row["check_count"] for row in records),
+            "moves": total_moves,
+        },
+        "recurrence": {
+            "games_with_position_return": sum(row["position_return_count"] > 0 for row in records),
+            "total_position_returns": sum(row["position_return_count"] for row in records),
+            "max_position_multiplicity": max((row["max_position_multiplicity"] for row in records), default=0),
+        },
+        "search_nodes": sum(row["search_nodes"] for row in records),
+    }
+
+
 def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, layer_c_status: str = STATUS_DEFER, layer_c_reason: str = "playability authority is not calibrated in F87A-R1", scope: str = "F87A") -> QualificationReport:
     required_layers = ("A", "B", "C")
     layer_c_integrity = dynamic_status if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else (STATUS_PASS if replay_equal else STATUS_FAIL)
@@ -815,5 +964,5 @@ __all__ = [
     "GateOutcome", "MetricEvidence", "QualificationReport", "STATUS_DEFER", "STATUS_FAIL",
     "STATUS_PASS", "STATUS_UNMEASURED", "calibration_reason_codes", "common_tape_games", "component_info",
     "lattice_info", "movement_graph", "opening_sources", "qualification_report", "reachable_squares",
-    "reduce_qualification_status", "scc_info", "semantic_runtime_contract", "semantic_tape_games", "structural_profile", "transport_type_profile",
+    "reduce_qualification_status", "scc_info", "semantic_runtime_contract", "semantic_search_games", "semantic_tape_games", "structural_profile", "transport_type_profile",
 ]
