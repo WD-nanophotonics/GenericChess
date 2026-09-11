@@ -1351,7 +1351,7 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
                 return
         response_path = state.get("last_response_path")
         if isinstance(response_path, str) and Path(response_path).is_file():
-            print(Path(response_path).read_text(encoding="utf-8-sig"))
+            print(_console_safe(Path(response_path).read_text(encoding="utf-8-sig")))
             print("NEXT_ACTION=execute this work order, then publish and closeout")
             return
         token = state.get("work_request_token")

@@ -183,7 +183,7 @@ def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
 
 
 def test_work_redisplays_the_current_order_without_new_courier_request(
-    monkeypatch, tmp_path, capsys
+        monkeypatch, tmp_path, capsys
 ):
     response = tmp_path / "response.txt"
     response.write_text("Do the bounded task.\n", encoding="utf-8")
@@ -207,6 +207,24 @@ def test_work_redisplays_the_current_order_without_new_courier_request(
 
     output = capsys.readouterr().out
     assert "Do the bounded task." in output
+    assert "NEXT_ACTION=execute this work order" in output
+
+
+def test_work_redisplay_survives_legacy_windows_encoding(monkeypatch, tmp_path, capsys):
+    response = tmp_path / "response.txt"
+    response.write_text("下一工单：保持 DEFER\n", encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": None,
+             "last_response_path": str(response), "work_order_active": True}
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
+    original = flow._console_safe
+    monkeypatch.setattr(flow, "_console_safe", lambda text: original(text, "cp1252"))
+
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    output = capsys.readouterr().out
+    assert r"\u4e0b" in output
     assert "NEXT_ACTION=execute this work order" in output
 
 
