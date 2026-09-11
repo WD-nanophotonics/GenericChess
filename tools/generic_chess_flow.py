@@ -1706,6 +1706,32 @@ def _healthy_live_owner_wait(state: dict[str, Any], probe: dict[str, Any]) -> bo
     return True
 
 
+def _healthy_chat_contention_wait(state: dict[str, Any], status: dict[str, Any]) -> bool:
+    """Accept only Courier's live, request-bound shared-Chat wait proof."""
+    if status.get("event") != "courier_status":
+        return False
+    if status.get("state") not in {"chat_busy_waiting", "chat_busy_reconnecting"}:
+        return False
+    if status.get("contention_wait_active") is not True:
+        return False
+    if status.get("agent_action_required") is not False:
+        return False
+    if status.get("safe_next_action") != "wait_for_same_request":
+        return False
+    request_directory = state.get("active_request_directory")
+    if not isinstance(request_directory, str) or not request_directory:
+        return False
+    expected_request_id = state.get("active_request_id") or Path(request_directory).name
+    if status.get("project_id") != PROJECT_ID or status.get("request_id") != expected_request_id:
+        return False
+    expected_fingerprint = state.get("active_request_fingerprint")
+    return (
+        isinstance(expected_fingerprint, str)
+        and bool(expected_fingerprint)
+        and status.get("fingerprint") == expected_fingerprint
+    )
+
+
 def command_recover(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
     require_worker_write_authority(state, root)
@@ -1722,6 +1748,28 @@ def command_recover(root: Path, args: argparse.Namespace) -> None:
     try:
         status = courier(root, "courier_status", directory, allow_failure=True)
         recovery_event(state, "status_read", courier_state=status.get("state"))
+        if _healthy_chat_contention_wait(state, status):
+            state["recovery_state"] = "IDLE"
+            state["last_probe"] = {
+                key: status.get(key) for key in (
+                    "event", "ok", "state", "project_id", "request_id", "fingerprint",
+                    "contention_wait_active", "agent_action_required", "safe_next_action",
+                )
+            }
+            recovery_event(
+                state, "healthy_chat_contention_waiting",
+                request_id=status["request_id"], courier_state=status["state"],
+            )
+            save_state(root, state)
+            print(json.dumps({
+                "event": "healthy_chat_contention_waiting",
+                "ok": True,
+                "project_id": status["project_id"],
+                "request_id": status["request_id"],
+                "courier_state": status["state"],
+                "agent_action_required": False,
+            }, sort_keys=True))
+            return
         probe = courier(root, "courier_capture_latest", directory,
                         stream=True, allow_failure=True)
         state["last_probe"] = {

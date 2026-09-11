@@ -417,6 +417,79 @@ def test_recover_escalates_unverifiable_busy_owner(monkeypatch, tmp_path):
     assert escalated == ["read-only Chat probe needs Supervisor judgment: courier_capture_latest_busy"]
 
 
+def test_recover_treats_verified_chat_contention_as_healthy(monkeypatch, tmp_path, capsys):
+    request_id = "GENERICCHESS-20260911-145701-eeb145bb"
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": str(tmp_path / request_id),
+        "active_request_id": request_id,
+        "active_request_fingerprint": "f" * 64,
+        "recovery_attempts": 5,
+    }
+    calls = []
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(
+        flow, "create_escalation",
+        lambda *_args, **_kwargs: pytest.fail("live Chat contention must not escalate"),
+    )
+
+    def fake_courier(_root, operation, *_args, **_kwargs):
+        calls.append(operation)
+        assert operation == "courier_status"
+        return {
+            "event": "courier_status",
+            "ok": True,
+            "state": "chat_busy_waiting",
+            "project_id": "GENERICCHESS",
+            "request_id": request_id,
+            "fingerprint": "f" * 64,
+            "contention_wait_active": True,
+            "agent_action_required": False,
+            "safe_next_action": "wait_for_same_request",
+        }
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="worker"))
+
+    assert calls == ["courier_status"]
+    assert state["recovery_attempts"] == 5
+    assert state["recovery_state"] == "IDLE"
+    assert state["last_probe"]["contention_wait_active"] is True
+    assert "healthy_chat_contention_waiting" in capsys.readouterr().out
+
+
+def test_recover_rejects_stale_chat_contention(monkeypatch, tmp_path):
+    request_id = "GENERICCHESS-20260911-145701-eeb145bb"
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": str(tmp_path / request_id),
+        "active_request_id": request_id,
+        "active_request_fingerprint": "f" * 64,
+    }
+    escalated = []
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "create_escalation", lambda *_args, **kwargs: escalated.append(kwargs["reason"]))
+
+    def fake_courier(_root, operation, *_args, **_kwargs):
+        if operation == "courier_status":
+            return {
+                "event": "courier_status", "ok": True, "state": "chat_busy_waiting",
+                "project_id": "GENERICCHESS", "request_id": request_id,
+                "fingerprint": "f" * 64, "contention_wait_active": False,
+                "agent_action_required": False, "safe_next_action": "wait_for_same_request",
+            }
+        return {"event": "courier_capture_latest_failed", "ok": False}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="worker"))
+
+    assert escalated == ["read-only Chat probe needs Supervisor judgment: courier_capture_latest_failed"]
+
+
 def test_recover_imports_matching_reply_without_retry(monkeypatch, tmp_path):
     response = tmp_path / "response.txt"
     response.write_text(
