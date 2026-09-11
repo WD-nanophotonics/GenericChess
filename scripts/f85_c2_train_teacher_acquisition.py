@@ -218,31 +218,108 @@ def _run_teacher_one(record: dict) -> dict:
         return {"status": "HARNESS_MISMATCH", "error": f"worker exited with code {process.exitcode}"}
 
 
-def _run_approved_acquisition(manifest: dict, compute_plan_path: Path) -> dict:
+def _unit_provenance(record: dict, *, plan_sha: str, manifest_sha: str) -> dict:
+    return {
+        "compute_plan_sha256": plan_sha,
+        "manifest_content_sha256": manifest_sha,
+        "root_record_sha256": _stable_sha(record),
+        "root_id": record["root_id"],
+        "position_key": record["position_key"],
+        "stratum": record["stratum"],
+        "role": record["role"],
+        "c1_checkpoint_id": f83.C1_ID,
+        "c1_model_sha256": f83.C1_MODEL_SHA,
+        "f59_script_sha256": _sha(ROOT / "scripts/f59_action_spectrum_diagnosis.py"),
+        "f62_script_sha256": _sha(ROOT / "scripts/f62_learned_champion_repeatability.py"),
+    }
+
+
+def _execution_record(record: dict, source_by_id: dict[str, dict]) -> dict:
+    source = source_by_id[record["root_id"]]
+    return {
+        **record,
+        "action_history": source["action_history"],
+        "replay_actions": source["replay_actions"],
+    }
+
+
+def _run_approved_acquisition(
+    manifest: dict,
+    compute_plan_path: Path,
+    *,
+    runtime_dir: Path | None = None,
+    evidence_path: Path | None = None,
+    runner=None,
+    max_concurrent_roots: int = MAX_CONCURRENT_ROOTS,
+) -> dict:
     """Run each frozen train root once; this path is only for an approved plan."""
-    progress_dir = F85_RUNTIME_DIR / "progress"
+    plan_sha = _sha(compute_plan_path)
+    manifest_sha = _sha(F85_MANIFEST_PATH)
+    runtime_root = F85_RUNTIME_DIR if runtime_dir is None else Path(runtime_dir)
+    progress_dir = runtime_root / plan_sha / "progress"
     progress_dir.mkdir(parents=True, exist_ok=True)
+    root_payload = json.loads((ROOT / "artifacts/f83_c1_relative_evidence/root_corpus.json").read_text(encoding="utf-8"))
+    source_by_id = {root["root_id"]: root for root in root_payload["roots"]}
+    run_one = _run_teacher_one if runner is None else runner
     completed = []
     pending = []
     for record in manifest["roots"]:
         path = progress_dir / f"{record['root_id']}.json"
         if path.exists():
             prior = json.loads(path.read_text(encoding="utf-8"))
-            if prior.get("status") == "COMPLETE" and prior.get("position_key") == record["position_key"]:
+            expected = _unit_provenance(record, plan_sha=plan_sha, manifest_sha=manifest_sha)
+            if prior.get("provenance") != expected:
+                return {"status": "HARNESS_MISMATCH", "reason": "STALE_PROGRESS_PROVENANCE", "root_id": record["root_id"]}
+            if prior.get("status") == "COMPLETE":
                 completed.append(prior)
                 continue
+            if prior.get("status") in {"TIME_CAP", "HARNESS_MISMATCH"}:
+                return {
+                    "status": "INCOMPLETE",
+                    "reason": "RETRY_REQUIRES_NEW_AUTHORIZATION",
+                    "completed_count": len(completed),
+                    "root_id": record["root_id"],
+                }
+            return {"status": "HARNESS_MISMATCH", "reason": "UNKNOWN_PROGRESS_STATUS", "root_id": record["root_id"]}
         pending.append(record)
     results = []
-    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_ROOTS) as pool:
-        for record, result in zip(pending, pool.map(_run_teacher_one, pending)):
-            row = {"root_id": record["root_id"], "position_key": record["position_key"], **result}
+    for start in range(0, len(pending), MAX_CONCURRENT_ROOTS):
+        batch = pending[start:start + MAX_CONCURRENT_ROOTS]
+        execution_batch = [_execution_record(record, source_by_id) for record in batch]
+        with ThreadPoolExecutor(max_workers=max_concurrent_roots) as pool:
+            batch_results = list(pool.map(run_one, execution_batch))
+        batch_failed = False
+        for record, result in zip(batch, batch_results):
+            provenance = _unit_provenance(record, plan_sha=plan_sha, manifest_sha=manifest_sha)
+            row = {
+                "root_id": record["root_id"],
+                "position_key": record["position_key"],
+                "stratum": record["stratum"],
+                "role": record["role"],
+                "provenance": provenance,
+                **result,
+            }
+            path = progress_dir / f"{record['root_id']}.json"
             if row["status"] == "COMPLETE":
-                row["stratum"] = record["stratum"]
-                row["role"] = record["role"]
-                path = progress_dir / f"{record['root_id']}.json"
+                if row.get("position_key") != record["position_key"]:
+                    row = {"root_id": record["root_id"], "status": "HARNESS_MISMATCH", "provenance": provenance, "error": "worker position identity mismatch"}
+                    batch_failed = True
+                else:
+                    _atomic_json(path, row)
+                    completed.append(row)
+            else:
+                row.pop("teacher_rows", None)
+                row.pop("root_metadata", None)
                 _atomic_json(path, row)
-                completed.append(row)
+                batch_failed = True
             results.append(row)
+        if batch_failed:
+            return {
+                "status": "INCOMPLETE",
+                "reason": "TERMINAL_ROOT_REQUIRES_NEW_AUTHORIZATION",
+                "completed_count": len(completed),
+                "results": results,
+            }
     all_rows = sorted(completed, key=lambda row: row["root_id"])
     if len(all_rows) != 36 or any(row.get("status") != "COMPLETE" for row in all_rows):
         return {"status": "INCOMPLETE", "completed_count": len(all_rows), "results": results}
@@ -250,12 +327,16 @@ def _run_approved_acquisition(manifest: dict, compute_plan_path: Path) -> dict:
         "schema": "generic-chess-f85-c2-train-teacher-evidence-v1",
         "work_order": WORK_ORDER,
         "status": "COMPLETE_TRAIN_TEACHER_EVIDENCE_SEALED",
-        "manifest_sha256": _sha(F85_MANIFEST_PATH),
-        "compute_plan_sha256": _sha(compute_plan_path),
+        "manifest_content_sha256": manifest_sha,
+        "compute_plan_sha256": plan_sha,
+        "c1_checkpoint_id": f83.C1_ID,
+        "c1_model_sha256": f83.C1_MODEL_SHA,
+        "f59_script_sha256": _sha(ROOT / "scripts/f59_action_spectrum_diagnosis.py"),
+        "f62_script_sha256": _sha(ROOT / "scripts/f62_learned_champion_repeatability.py"),
         "root_count": 36,
         "roots": all_rows,
     }
-    _atomic_json(ROOT / "artifacts/f85_c2_train_teacher_evidence/training_evidence.json", evidence)
+    _atomic_json(evidence_path or (ROOT / "artifacts/f85_c2_train_teacher_evidence/training_evidence.json"), evidence)
     return {"status": evidence["status"], "completed_count": 36}
 
 
@@ -271,7 +352,17 @@ def main() -> None:
     if args.approved_run:
         if args.compute_plan is None:
             raise SystemExit("--approved-run requires --compute-plan")
-        print(json.dumps(_run_approved_acquisition(manifest, args.compute_plan), sort_keys=True), flush=True)
+        plan = json.loads(args.compute_plan.read_text(encoding="utf-8"))
+        plan_sha = _sha(args.compute_plan)
+        if plan.get("sandbox_sha") != _git_sha() or plan.get("precompute_manifest_sha256") != _sha(F85_MANIFEST_PATH):
+            raise SystemExit("approved compute plan is stale or not bound to the exact precompute manifest")
+        envelope = plan.get("resource_envelope", {})
+        lanes = envelope.get("intended_cpu_lanes")
+        if not isinstance(lanes, int) or lanes < 1 or lanes > 4:
+            raise SystemExit("approved compute plan has an invalid root concurrency")
+        result = _run_approved_acquisition(manifest, args.compute_plan, max_concurrent_roots=lanes)
+        result["compute_plan_sha256"] = plan_sha
+        print(json.dumps(result, sort_keys=True), flush=True)
         return
     print(json.dumps({
         "status": manifest["status"],

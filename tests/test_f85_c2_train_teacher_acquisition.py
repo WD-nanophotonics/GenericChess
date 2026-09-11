@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from scripts import f50_generic_learnable_evaluator as f50
 from scripts import f85_c2_train_teacher_acquisition as f85
 from scripts import f83_c1_relative_evidence_roots_and_cost_calibration as f83
@@ -18,6 +20,9 @@ def test_f85_harness_is_precompute_only_until_approved_plan():
     assert f85.WORK_ORDER == "GENERICCHESS-F85A-C2-TRAIN-TEACHER-ACQUISITION-HARNESS-AND-LARGE-PLAN"
     assert "--precompute-only" in source
     assert "acquisition is withheld" in source.lower()
+    assert "RETRY_REQUIRES_NEW_AUTHORIZATION" in source
+    assert "STALE_PROGRESS_PROVENANCE" in source
+    assert "max_concurrent_roots=lanes" in source
     assert "Arena" not in source
     assert "selfplay" not in source.lower()
 
@@ -70,3 +75,82 @@ def test_f85_precompute_replays_all_36_train_roots_and_recomputes_legal_counts()
         replayed.append(record["position_key"])
     assert len(replayed) == 36
     assert len(set(replayed)) == 36
+
+
+def _fake_complete(record):
+    return {
+        "status": "COMPLETE",
+        "position_key": record["position_key"],
+        "selected_action_count": 0,
+        "actual_teacher_calls": 0,
+        "actual_search_calls": 4,
+        "teacher_rows": [],
+        "root_metadata": {},
+    }
+
+
+def test_f85_fake_complete_seals_only_after_all_36_units(tmp_path):
+    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    evidence = tmp_path / "training_evidence.json"
+    calls = []
+
+    def runner(record):
+        calls.append(record["root_id"])
+        return _fake_complete(record)
+
+    result = f85._run_approved_acquisition(manifest, plan, runtime_dir=tmp_path / "runtime", evidence_path=evidence, runner=runner)
+    assert result["status"] == "COMPLETE_TRAIN_TEACHER_EVIDENCE_SEALED"
+    assert len(calls) == 36
+    assert json.loads(evidence.read_text(encoding="utf-8"))["root_count"] == 36
+
+
+def test_f85_terminal_first_batch_stops_before_submitting_later_batches(tmp_path):
+    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    calls = []
+
+    def runner(record):
+        calls.append(record["root_id"])
+        return {"status": "TIME_CAP", "termination_reason": "per_root_wall_cap"} if len(calls) == 1 else _fake_complete(record)
+
+    result = f85._run_approved_acquisition(manifest, plan, runtime_dir=tmp_path / "runtime", runner=runner)
+    assert result["status"] == "INCOMPLETE"
+    assert len(calls) == 2
+    assert result["completed_count"] == 1
+    assert len(list((tmp_path / "runtime").rglob("*.json"))) == 2
+
+
+def test_f85_same_plan_terminal_progress_never_retries_teacher(tmp_path):
+    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    calls = []
+
+    def failing_runner(record):
+        calls.append(record["root_id"])
+        return {"status": "HARNESS_MISMATCH", "error": "fake"}
+
+    first = f85._run_approved_acquisition(manifest, plan, runtime_dir=tmp_path / "runtime", runner=failing_runner)
+    assert first["status"] == "INCOMPLETE"
+    first_calls = len(calls)
+
+    def forbidden_runner(record):
+        raise AssertionError("same-plan terminal progress was retried")
+
+    second = f85._run_approved_acquisition(manifest, plan, runtime_dir=tmp_path / "runtime", runner=forbidden_runner)
+    assert second["reason"] == "RETRY_REQUIRES_NEW_AUTHORIZATION"
+    assert len(calls) == first_calls
+
+
+def test_f85_stale_complete_progress_is_not_reused(tmp_path):
+    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    runtime = tmp_path / "runtime"
+    f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=_fake_complete)
+    progress = next(runtime.rglob("*.json"))
+    prior = json.loads(progress.read_text(encoding="utf-8"))
+    prior["provenance"]["manifest_content_sha256"] = "0" * 64
+    progress.write_text(json.dumps(prior), encoding="utf-8")
+    result = f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=lambda _record: pytest.fail("stale unit reused"))
+    assert result["status"] == "HARNESS_MISMATCH"
+    assert result["reason"] == "STALE_PROGRESS_PROVENANCE"

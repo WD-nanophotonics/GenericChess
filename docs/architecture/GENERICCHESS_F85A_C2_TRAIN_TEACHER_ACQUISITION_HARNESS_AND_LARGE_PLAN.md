@@ -1,10 +1,10 @@
 # GenericChess F85A C2 Train Teacher Acquisition Harness and Large Plan
 
 F85A prepares the next large-compute approval tuple without executing teacher
-acquisition. The harness is resumable at per-root units, but its normal entry
-point is intentionally withheld unless `--precompute-only` is supplied; no
-teacher path, C2 fitting, candidate generation, Arena, or Heavy acquisition is
-run in this work order.
+acquisition. The harness is resumable at per-root units, but acquisition is
+withheld until the workflow validates an exact approved plan; `--precompute-only`
+is the only mode used in this work order. No teacher path, C2 fitting,
+candidate generation, Arena, or Heavy acquisition is run here.
 
 ## Frozen work set
 
