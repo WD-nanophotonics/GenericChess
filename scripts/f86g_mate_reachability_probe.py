@@ -5,17 +5,20 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter
-from collections import deque
 from pathlib import Path
 from typing import Any
 
 from generic_chess.benchmark.policy_tape import PolicyTape
-from generic_chess.core.actions import BoardMove
+from generic_chess.core.actions import (
+    action_is_board,
+    action_to_dict,
+    action_target_square,
+)
 from generic_chess.core.attacks import is_in_check
 from generic_chess.core.coordinates import index_to_square, square_to_index
 from generic_chess.core.movement import LeapAtom
 from generic_chess.core.pieces import Piece
-from generic_chess.core.position import Hands, Position
+from generic_chess.core.position import Position
 from generic_chess.rules.compiler import compile_ruleset
 from generic_chess.rules.schema import ruleset_from_dict
 from generic_chess.session.session import GameSession
@@ -74,14 +77,19 @@ def _square_payload(square, n: int) -> list[int]:
 def _anchor_zone(position: Position, owner: int, compiled) -> set[int]:
     n = compiled.board_size
     anchor_type = _anchor_type_id(compiled)
-    anchor_index = next(
-        index for index, piece in enumerate(position.board)
-        if piece is not None and piece.owner == owner and piece.current_type_id == anchor_type
-    )
+    anchor_index = _anchor_index(position, owner, compiled)
     return {
         anchor_index,
         *(square_to_index(target, n) for target in compiled.empty_mobility[anchor_type][owner][anchor_index]),
     }
+
+
+def _anchor_index(position: Position, owner: int, compiled) -> int:
+    anchor_type = _anchor_type_id(compiled)
+    return next(
+        index for index, piece in enumerate(position.board)
+        if piece is not None and piece.owner == owner and piece.current_type_id == anchor_type
+    )
 
 
 def _ordinary_attack_squares(position: Position, owner: int, compiled) -> set[int]:
@@ -115,8 +123,39 @@ def _ordinary_counts(position: Position, compiled) -> dict[str, dict[str, int]]:
     return {owner: dict(sorted(counter.items())) for owner, counter in counts.items()}
 
 
-def _action_captures(position: Position, action) -> bool:
-    return isinstance(action, BoardMove) and position.board[action.to_square.rank * position.board_size() + action.to_square.file] is not None
+def _action_captured_piece(position: Position, action):
+    if not action_is_board(action):
+        return None
+    n = position.board_size()
+    target_index = action_target_square(action).rank * n + action_target_square(action).file
+    return position.board[target_index]
+
+
+def _action_sort_key(action) -> str:
+    return json.dumps(action_to_dict(action), sort_keys=True, separators=(",", ":"))
+
+
+def _canonical_actions(session: GameSession) -> tuple:
+    return tuple(sorted(session.legal_actions(), key=_action_sort_key))
+
+
+def _coverage_by_owner(position: Position, compiled) -> dict[str, dict[str, Any]]:
+    n = compiled.board_size
+    result: dict[str, dict[str, Any]] = {}
+    for owner in (0, 1):
+        anchor_index = _anchor_index(position, owner, compiled)
+        zone = _anchor_zone(position, owner, compiled)
+        attacks = _ordinary_attack_squares(position, 1 - owner, compiled)
+        covered = sorted(zone & attacks)
+        result[str(owner)] = {
+            "anchor_zone_size": len(zone),
+            "ordinary_attacked_squares": [
+                _square_payload(index_to_square(index, n), n) for index in covered
+            ],
+            "coverage_fraction": len(covered) / len(zone) if zone else 0.0,
+            "anchor_itself_ordinary_attacked": anchor_index in attacks,
+        }
+    return result
 
 
 class ChildProbeBudget:
@@ -137,18 +176,19 @@ def _probe_state(
     session: GameSession,
     compiled,
     budget: ChildProbeBudget,
-    capture_occurred: bool,
-    previous_coverage: float | None,
+    capture_event: dict[str, Any] | None,
 ) -> dict[str, Any]:
     position = session.state.position
     side = position.side_to_move
     enemy = 1 - side
     n = compiled.board_size
-    zone = _anchor_zone(position, enemy, compiled)
     attacks = _ordinary_attack_squares(position, side, compiled)
-    covered = sorted(zone & attacks)
-    coverage = len(covered) / len(zone) if zone else 0.0
-    actions = list(session.legal_actions()) if session.result.status.value == "ongoing" else []
+    enemy_anchor_index = _anchor_index(position, enemy, compiled)
+    enemy_zone = _anchor_zone(position, enemy, compiled)
+    covered = sorted(enemy_zone & attacks)
+    coverage = len(covered) / len(enemy_zone) if enemy_zone else 0.0
+    coverage_by_owner = _coverage_by_owner(position, compiled)
+    actions = list(_canonical_actions(session)) if session.result.status.value == "ongoing" else []
     checking_count: int | None = 0
     mate_one_count: int | None = 0
     state_probe_truncated = False
@@ -173,15 +213,27 @@ def _probe_state(
         "side_to_move_currently_in_check": is_in_check(position, side, compiled),
         "legal_checking_move_count": checking_count,
         "legal_mate_in_one_move_count": mate_one_count,
-        "enemy_anchor_zone_size": len(zone),
+        "enemy_anchor_zone_size": len(enemy_zone),
         "ordinary_only_attacked_squares_in_enemy_anchor_zone": [
             _square_payload(index_to_square(index, n), n) for index in covered
         ],
         "ordinary_only_anchor_zone_coverage_fraction": coverage,
-        "enemy_anchor_itself_ordinary_attacked": bool(zone and min(zone) in attacks),
-        "capture_occurred_since_previous": capture_occurred,
-        "coverage_delta_across_capture": (
-            coverage - previous_coverage if capture_occurred and previous_coverage is not None else None
+        "enemy_anchor_itself_ordinary_attacked": enemy_anchor_index in attacks,
+        "ordinary_anchor_zone_coverage_by_owner": coverage_by_owner,
+        "capture_occurred_since_previous": capture_event is not None,
+        "captured_owner": capture_event["captured_owner"] if capture_event else None,
+        "captured_piece_type": capture_event["captured_piece_type"] if capture_event else None,
+        "captured_owner_pre_capture_coverage": (
+            capture_event["pre_capture_coverage"] if capture_event else None
+        ),
+        "captured_owner_post_capture_coverage": (
+            coverage_by_owner[str(capture_event["captured_owner"])] ["coverage_fraction"]
+            if capture_event else None
+        ),
+        "same_owner_capture_coverage_delta": (
+            coverage_by_owner[str(capture_event["captured_owner"])] ["coverage_fraction"]
+            - capture_event["pre_capture_coverage"]
+            if capture_event else None
         ),
         "probe_truncated": state_probe_truncated,
     }
@@ -191,22 +243,29 @@ def _play_trajectory(compiled, tapes: dict[str, PolicyTape], seat_assignment: tu
     session = GameSession(compiled)
     consumed = {"A": 0, "B": 0}
     states: list[dict[str, Any]] = []
-    capture_occurred = False
-    previous_coverage: float | None = None
+    capture_event: dict[str, Any] | None = None
     while True:
-        state_probe = _probe_state(session, compiled, budget, capture_occurred, previous_coverage)
+        state_probe = _probe_state(session, compiled, budget, capture_event)
         state_probe["state_index"] = len(states)
         states.append(state_probe)
         if session.result.status.value != "ongoing" or len(session.history) >= MAX_PLY:
             break
-        actions = session.legal_actions()
+        actions = _canonical_actions(session)
         actor = session.state.position.side_to_move
         policy_id = seat_assignment[actor]
         move_index = consumed[policy_id]
         action = actions[tapes[policy_id].choose_index(move_index, len(actions))]
         consumed[policy_id] += 1
-        capture_occurred = _action_captures(session.state.position, action)
-        previous_coverage = state_probe["ordinary_only_anchor_zone_coverage_fraction"]
+        captured = _action_captured_piece(session.state.position, action)
+        if captured is None:
+            capture_event = None
+        else:
+            pre_capture = state_probe["ordinary_anchor_zone_coverage_by_owner"][str(captured.owner)]
+            capture_event = {
+                "captured_owner": captured.owner,
+                "captured_piece_type": captured.current_type_id,
+                "pre_capture_coverage": pre_capture["coverage_fraction"],
+            }
         session.submit(action)
     return {
         "seat_assignment": {"player0": seat_assignment[0], "player1": seat_assignment[1]},
@@ -235,14 +294,60 @@ def _trajectory_summary(trajectories: list[dict[str, Any]], budget: ChildProbeBu
         ),
         "enemy_anchor_attacked_state_count": sum(state["enemy_anchor_itself_ordinary_attacked"] for state in states),
         "capture_count": len(captures),
-        "capture_coverage_deltas": [state["coverage_delta_across_capture"] for state in captures],
+        "same_owner_capture_coverage_deltas": [
+            state["same_owner_capture_coverage_delta"] for state in captures
+        ],
         "probe_truncated": budget.truncated,
     }
 
 
-def _cooperative_bfs(compiled) -> dict[str, Any]:
+class DedupSafetyError(RuntimeError):
+    """The probe found history representatives that disagree under one key."""
+
+
+def _assert_path_safe_dedup_preconditions(compiled) -> dict[str, Any]:
+    checks = {
+        "repetition_policy_is_draw": getattr(compiled, "repetition_policy", None) == "draw",
+        "no_continuous_check_history_dependency": getattr(compiled, "repetition_policy", None) != "continuous_check_loss",
+        "semantic_actions_empty": not getattr(compiled, "semantic_actions", ()),
+        "automatic_adjudications_empty": not getattr(compiled, "automatic_adjudications", ()),
+    }
+    if not all(checks.values()):
+        raise DedupSafetyError(f"path-safe dedup preconditions failed: {checks}")
+    return checks
+
+
+def _reachability_key(session: GameSession) -> tuple[Any, int, tuple[tuple[str, int], ...]]:
+    state = session.state
+    return (state.position, state.ply_count, state.repetition_counts)
+
+
+def _representative_signature(session: GameSession) -> tuple[str, tuple[str, ...]]:
+    return (
+        session.result.status.value,
+        tuple(_action_sort_key(action) for action in _canonical_actions(session)),
+    )
+
+
+def _assert_equivalent_representatives(left: GameSession, right: GameSession) -> None:
+    left_signature = _representative_signature(left)
+    right_signature = _representative_signature(right)
+    if left_signature != right_signature:
+        raise DedupSafetyError(
+            "same reachability key has inconsistent terminal/legal-action signatures"
+        )
+
+
+def _cooperative_bfs_impl(
+    compiled,
+    *,
+    dedup_enabled: bool,
+    dedup_preconditions: dict[str, bool] | None,
+    dedup_disabled_reason: str | None = None,
+) -> dict[str, Any]:
     root = GameSession(compiled)
     frontier = [root]
+    seen = {_reachability_key(root): root} if dedup_enabled else None
     depth = 0
     expansions = 0
     deepest_completed = -1
@@ -250,15 +355,26 @@ def _cooperative_bfs(compiled) -> dict[str, Any]:
     first_mate_depth: int | None = None
     winner: int | None = None
     node_truncated = False
+    generated_child_states = 0
+    unique_enqueued_states = 0
+    duplicate_pruned_states = 0
+    current_level_states_already_expanded = 0
+    unexpanded_current_frontier = 0
+    generated_next_frontier = 0
+    truncation_reason = None
     while frontier and depth <= BFS_DEPTH_CAP:
         next_frontier: list[GameSession] = []
-        level_complete = True
-        for session in frontier:
+        current_level_expanded = 0
+        for index, session in enumerate(frontier):
             if expansions >= BFS_EXPANSION_CAP:
                 node_truncated = True
-                level_complete = False
+                current_level_states_already_expanded = current_level_expanded
+                unexpanded_current_frontier = len(frontier) - index
+                generated_next_frontier = len(next_frontier)
+                truncation_reason = "state_expansion_cap_with_unexpanded_current_frontier"
                 break
             expansions += 1
+            current_level_expanded += 1
             if is_in_check(session.state.position, session.state.position.side_to_move, compiled) and first_check_depth is None:
                 first_check_depth = depth
             if session.result.status.value == "checkmate":
@@ -269,32 +385,81 @@ def _cooperative_bfs(compiled) -> dict[str, Any]:
                 break
             if depth >= BFS_DEPTH_CAP:
                 continue
-            for action in session.legal_actions():
+            for action in _canonical_actions(session):
                 child = GameSession.replay(compiled, session.to_record())
                 child.submit(action)
+                generated_child_states += 1
+                key = _reachability_key(child)
+                if seen is not None:
+                    existing = seen.get(key)
+                    if existing is not None:
+                        _assert_equivalent_representatives(existing, child)
+                        duplicate_pruned_states += 1
+                        continue
+                    seen[key] = child
+                unique_enqueued_states += 1
                 next_frontier.append(child)
         else:
-            if level_complete:
-                deepest_completed = depth
+            current_level_states_already_expanded = current_level_expanded
+            deepest_completed = depth
+            generated_next_frontier = len(next_frontier)
         if first_mate_depth is not None:
             break
         if node_truncated:
-            frontier = next_frontier
             break
         frontier = next_frontier
         depth += 1
     depth_cap_reached = first_mate_depth is None and deepest_completed >= BFS_DEPTH_CAP
+    if depth_cap_reached and not node_truncated:
+        truncation_reason = "depth_cap_reached_without_mate"
+    if not node_truncated and not depth_cap_reached and first_mate_depth is None:
+        truncation_reason = "frontier_exhausted_without_mate"
     return {
         "first_reachable_check_depth": first_check_depth,
         "first_reachable_checkmate_depth": first_mate_depth,
         "winner": winner,
         "state_expansions": expansions,
         "deepest_fully_completed_bfs_depth": deepest_completed,
-        "frontier_size": len(frontier),
+        "frontier_size": unexpanded_current_frontier,
+        "generated_child_states": generated_child_states,
+        "unique_enqueued_states": unique_enqueued_states,
+        "duplicate_pruned_states": duplicate_pruned_states,
+        "current_level_states_already_expanded": current_level_states_already_expanded,
+        "unexpanded_current_frontier": unexpanded_current_frontier,
+        "generated_next_frontier": generated_next_frontier,
+        "dedup_enabled": dedup_enabled,
+        "dedup_preconditions": dedup_preconditions,
+        "dedup_disabled_reason": dedup_disabled_reason,
+        "exact_truncation_reason": truncation_reason,
         "node_truncated": node_truncated,
         "depth_cap_reached": depth_cap_reached,
         "truncation": node_truncated or depth_cap_reached,
     }
+
+
+def _cooperative_bfs(compiled) -> dict[str, Any]:
+    try:
+        preconditions = _assert_path_safe_dedup_preconditions(compiled)
+    except DedupSafetyError as exc:
+        return _cooperative_bfs_impl(
+            compiled,
+            dedup_enabled=False,
+            dedup_preconditions=None,
+            dedup_disabled_reason=str(exc),
+        )
+    try:
+        return _cooperative_bfs_impl(
+            compiled,
+            dedup_enabled=True,
+            dedup_preconditions=preconditions,
+        )
+    except DedupSafetyError as exc:
+        return _cooperative_bfs_impl(
+            compiled,
+            dedup_enabled=False,
+            dedup_preconditions=preconditions,
+            dedup_disabled_reason=str(exc),
+        )
 
 
 def _routing(trajectory_by_cell: dict[str, dict[str, Any]], bfs_by_cell: dict[str, dict[str, Any]]) -> list[str]:
@@ -353,7 +518,7 @@ def run(output_dir: Path, root: Path) -> dict[str, Any]:
         raise RuntimeError(f"BFS expansion cap exceeded: {total_bfs_expansions} > {TOTAL_BFS_CAP}")
 
     trajectory_payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "sample_ids": list(SAMPLES),
         "cell_names": list(CELLS),
         "ruleset_fingerprints": fingerprints,
@@ -375,7 +540,7 @@ def run(output_dir: Path, root: Path) -> dict[str, Any]:
         "f85_actual_compute": 0,
     }
     cooperative_payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "sample_ids": list(SAMPLES),
         "cell_names": list(CELLS),
         "ruleset_fingerprints": fingerprints,
@@ -383,6 +548,13 @@ def run(output_dir: Path, root: Path) -> dict[str, Any]:
         "state_expansion_cap_per_cell": BFS_EXPANSION_CAP,
         "state_expansion_cap_total": TOTAL_BFS_CAP,
         "results": bfs_results,
+        "path_safe_dedup": {
+            "key_fields": ["position", "ply_count", "repetition_counts"],
+            "scope": "this_probe_only",
+            "preconditions": _assert_path_safe_dedup_preconditions(
+                compile_ruleset(rulesets[(SAMPLES[0], CELLS[0])])
+            ),
+        },
         "total_state_expansions": total_bfs_expansions,
         "any_node_truncation": any(result["node_truncated"] for result in bfs_results.values()),
         "routing": _routing(trajectory_by_cell, bfs_results),
