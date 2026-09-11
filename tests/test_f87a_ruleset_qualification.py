@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from generic_chess.benchmark.qualification import common_tape_games
+from generic_chess.benchmark.qualification import common_tape_games, semantic_runtime_contract, semantic_tape_games
 from generic_chess.benchmark.game_quality import measure_game_quality
 from generic_chess.benchmark.minimal_generator import generate_minimal_game
 from scripts.f87a_ruleset_qualification import (
@@ -9,6 +9,7 @@ from scripts.f87a_ruleset_qualification import (
     EXPECTED_FINGERPRINTS,
     _compiled,
     _controls,
+    _semantic_compiled,
     build_prep,
     run,
 )
@@ -25,6 +26,9 @@ def test_f87a_prep_is_frozen_and_has_six_calibration_controls(tmp_path):
     assert prep["budgets"]["search_nodes"] == 0
     assert prep["budgets"]["heavy_jobs"] == 0
     assert prep["budgets"]["max_ply"] == 32
+    assert prep["budgets"]["positive_max_ply"] == 64
+    assert prep["budgets"]["positive_games"] == 8
+    assert [row["status"] for row in prep["positive_policies"]] == ["MEASURED", "MEASURED", "DEFERRED_SCOPE"]
     assert prep["expectations"]["overall_status"] == "CALIBRATION_MIXED_OUTCOMES"
 
 
@@ -79,7 +83,7 @@ def test_f87a_negative_and_boundary_controls_have_distinct_calibration_evidence(
     reports = json.loads((result_dir / "reports.json").read_text(encoding="utf-8"))
     assert "LATTICE_RANK_DEFICIT" in reports["F86C legacy V4-3"]["reason_codes"]
     assert reports["F86C legacy V4-3"]["layers"]["B"] == "FAIL"
-    assert reports["F86C legacy V4-3"]["measurement_status"] == "PASS"
+    assert reports["F86C legacy V4-3"]["measurement_status"] == "UNMEASURED"
     assert reports["F86C legacy V4-3"]["calibration_expectation_status"] == "PASS"
     assert reports["F86C legacy V4-3"]["raw_diagnostics"]["calibration_authority"]["authority_path"].endswith("f86c_generator_viability/results.json")
     assert "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT" in reports["F86I full-reverse V4-3"]["reason_codes"]
@@ -133,8 +137,23 @@ def test_f87a_builtin_semantic_controls_defer_legacy_common_tape(tmp_path):
         report = reports[name]
         assert report["layers"]["A"] == "PASS"
         assert report["layers"]["B"] == "DEFER"
-        assert report["layers"]["C"] == "DEFER"
-        assert report["integrity_gates"][2]["status"] == "UNMEASURED"
+        assert report["layers"]["C"] == "PASS"
+        assert report["integrity_gates"][2]["status"] == "PASS"
+        assert report["raw_diagnostics"]["layer_c"]["runtime_contract"]["status"] == "PASS"
+        assert report["raw_diagnostics"]["layer_c"]["search_policy"]["status"] == "DEFER"
+
+
+def test_f87a_semantic_runtime_contract_and_positive_policy_shapes():
+    for control in _controls(ROOT)[-2:]:
+        compiled = _semantic_compiled(control)
+        assert semantic_runtime_contract(compiled)["status"] == "PASS"
+        for policy_id in ("canonical_common_tape_random", "deterministic_material_capture_greedy"):
+            dynamic = semantic_tape_games(compiled, policy_id=policy_id, pair_count=1, max_ply=64, seed=8701, tape_length=64)
+            assert dynamic["game_count"] == 2
+            assert dynamic["max_ply"] == 64
+            assert dynamic["opening_sensitivity"]["status"] == "UNMEASURED"
+            assert all(row["first_player_score"] is None for row in dynamic["records"] if row["completion"] == "CENSORED")
+            assert dynamic["capture_check_density"]["captures"] + dynamic["capture_check_density"]["checks"] > 0
 
 
 def test_f87a_censored_scores_do_not_contaminate_side_bias():

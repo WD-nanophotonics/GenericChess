@@ -15,28 +15,38 @@ from typing import Any
 
 from generic_chess.benchmark.qualification import (
     STATUS_DEFER,
+    STATUS_FAIL,
     STATUS_PASS,
     STATUS_UNMEASURED,
     calibration_reason_codes,
     common_tape_games,
     qualification_report,
+    semantic_runtime_contract,
+    semantic_tape_games,
     structural_profile,
 )
-from generic_chess.rules.compiler import compile_ruleset
+from generic_chess.rules.compiler import compile_ruleset, compile_semantic_ruleset
 from generic_chess.rules.schema import ruleset_from_dict
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
-BASELINE_SHA = "a33ff404d33aef1d6717fc62e05337ae92691540"
+BASELINE_SHA = "b424b4795f075e50b8171f0f8f52791fda62f038"
 ARTIFACT_DIR = Path("artifacts/f87a_ruleset_qualification")
 PREP_PATH = ARTIFACT_DIR / "manifest.json"
 SUMMARY_PATH = ARTIFACT_DIR / "summary.json"
 REPORTS_PATH = ARTIFACT_DIR / "reports.json"
 PAIR_COUNT = 2
-MAX_PLY = 32
+MAX_PLY = 32  # inherited R2 compact evidence only; never rerun in R3
 TAPE_LENGTH = 32
+POSITIVE_PAIR_COUNT = 1
+POSITIVE_MAX_PLY = 64
+POSITIVE_TAPE_LENGTH = 64
 SEED = 8701
+POSITIVE_POLICIES = (
+    "canonical_common_tape_random",
+    "deterministic_material_capture_greedy",
+)
 
 EXPECTED_FINGERPRINTS = {
     "F86C legacy V4-3": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400",
@@ -221,11 +231,51 @@ def _compiled(control: dict[str, Any]):
     return compiled
 
 
+def _semantic_compiled(control: dict[str, Any]):
+    if "builder" not in control:
+        raise TypeError("semantic runtime is only used by built-in semantic controls")
+    ruleset = control["builder"]()
+    return compile_semantic_ruleset(ruleset)
+
+
 def _dynamic_supported(control: dict[str, Any]) -> bool:
     """Legacy GameSession cannot execute the built-ins' semantic-action DSL."""
     if "builder" not in control:
         return True
     return not bool(control["builder"]().semantic_actions)
+
+
+R2_CONTROL_STATES = {
+    "F86C legacy V4-3": {"layer_a": STATUS_PASS, "layer_b": "FAIL", "layer_c": STATUS_DEFER, "overall": "FAIL"},
+    "F86I full-reverse V4-3": {"layer_a": STATUS_PASS, "layer_b": "FAIL", "layer_c": STATUS_DEFER, "overall": "FAIL"},
+    "F86N-R1 boundary V4-3": {"layer_a": STATUS_PASS, "layer_b": STATUS_DEFER, "layer_c": STATUS_DEFER, "overall": STATUS_DEFER},
+    "F86N-R1 boundary V5-3": {"layer_a": STATUS_PASS, "layer_b": STATUS_DEFER, "layer_c": STATUS_DEFER, "overall": STATUS_DEFER},
+}
+
+
+def _positive_pathology(dynamics: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """Apply only the frozen qualitative Layer-C pathology predicates."""
+    reasons: list[str] = []
+    all_records = [row for dynamic in dynamics.values() for row in dynamic["records"]]
+    if not all_records:
+        return {"status": STATUS_DEFER, "reasons": ["NO_POSITIVE_GAMES"]}
+    for policy_id, dynamic in dynamics.items():
+        records = dynamic["records"]
+        if all(row["terminal_status"] == "stalemate" and row["plies"] <= 2 for row in records):
+            reasons.append(f"{policy_id}:IMMEDIATE_STALEMATE_COLLAPSE")
+        if dynamic["legal_action_collapse_fraction"] >= 0.95:
+            reasons.append(f"{policy_id}:ALMOST_ALL_FORCED_LINE")
+        if all(row["terminal_status"] == "repetition" and row["plies"] <= 12 for row in records):
+            reasons.append(f"{policy_id}:DETERMINISTIC_SHORT_REPETITION")
+    interaction_by_policy = {
+        policy_id: dynamic["capture_check_density"]["captures"] + dynamic["capture_check_density"]["checks"] + dynamic["material_progress"]["total_material_reduction"]
+        for policy_id, dynamic in dynamics.items()
+    }
+    if all(value == 0 for value in interaction_by_policy.values()):
+        reasons.append("NO_MATERIAL_OR_CHECK_INTERACTION_ACROSS_POLICIES")
+    if all(row["completion"] == "CENSORED" for row in all_records) and all(value == 0 for value in interaction_by_policy.values()):
+        reasons.append("SYSTEMATIC_CENSORING_WITH_ZERO_INTERACTION")
+    return {"status": STATUS_DEFER if reasons else STATUS_PASS, "reasons": reasons, "interaction_by_policy": interaction_by_policy}
 
 
 def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
@@ -242,8 +292,8 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "expected_role": _expected_role(control),
         })
     prep = {
-        "schema_version": 1,
-        "experiment": "GENERICCHESS-F87A-RULESET-QUALIFICATION-TOOLBOX-FOUNDATION",
+        "schema_version": 3,
+        "experiment": "GENERICCHESS-F87A-R3-LAYER-C-DYNAMIC-PLAYABILITY-CALIBRATION",
         "status": "PREP_FROZEN",
         "baseline_sha": BASELINE_SHA,
         "controls": controls,
@@ -279,7 +329,25 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "arena_games": 0,
             "training_steps": 0,
             "heavy_jobs": 0,
+            "positive_games": 8,
+            "positive_max_ply": POSITIVE_MAX_PLY,
         },
+        "runtime_adapters": {
+            "legacy": {"runtime": "GameSession", "scope": "inherited R2 controls only"},
+            "semantic_reference": {"runtime": "semantic_engine_for + initial_state/apply_action", "scope": "Western Chess and Standard Shogi positive calibration"},
+        },
+        "positive_policies": [
+            {"policy_id": policy_id, "status": "MEASURED"} for policy_id in POSITIVE_POLICIES
+        ] + [{"policy_id": "very_shallow_fixed_evaluator_search", "status": "DEFERRED_SCOPE"}],
+        "positive_seeds": {"base": SEED, "tape_length": POSITIVE_TAPE_LENGTH},
+        "layer_c_qualitative_predicates": [
+            "immediate_or_near_immediate_stalemate_collapse",
+            "almost_all_forced_line",
+            "deterministic_short_loop_or_repetition",
+            "no_material_or_check_interaction_across_policies",
+            "complete_inability_to_execute_semantic_game",
+            "systematic_censoring_with_zero_interaction",
+        ],
         "expectations": {
             "overall_status": "CALIBRATION_MIXED_OUTCOMES",
             "negative_control_status": "FAIL",
@@ -302,6 +370,10 @@ def _load_prep(path: Path) -> dict[str, Any]:
         raise RuntimeError("F87A PREP manifest is not frozen at the authorized baseline")
     if len(prep.get("controls", [])) != 6:
         raise RuntimeError("F87A calibration suite must contain six controls")
+    if prep.get("experiment") != "GENERICCHESS-F87A-R3-LAYER-C-DYNAMIC-PLAYABILITY-CALIBRATION":
+        raise RuntimeError("F87A-R3 PREP manifest has the wrong experiment identity")
+    if prep.get("budgets", {}).get("positive_max_ply") != POSITIVE_MAX_PLY:
+        raise RuntimeError("F87A-R3 positive max-ply drift")
     return prep
 
 
@@ -324,32 +396,48 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             control_class=control["class"],
             terminal_transport=terminal_transport,
         )
-        if _dynamic_supported(control):
-            dynamic = common_tape_games(
-                compiled,
-                pair_count=PAIR_COUNT,
-                max_ply=MAX_PLY,
-                seed=SEED,
-                tape_length=TAPE_LENGTH,
-            )
-            replay = common_tape_games(
-                compiled,
-                pair_count=PAIR_COUNT,
-                max_ply=MAX_PLY,
-                seed=SEED,
-                tape_length=TAPE_LENGTH,
-            )
-            replay_equal = dynamic == replay
-            dynamic_status = STATUS_PASS
-        else:
+        if control["class"] in {"negative", "boundary"}:
             dynamic = {
-                "status": "UNMEASURED",
-                "reason": "semantic-action ruleset requires the semantic runtime; legacy Common-Tape is not applicable",
+                "status": "INHERITED_R2",
+                "reason": "R2 compact evidence inherited; R3 does not rerun legacy/boundary Common-Tape games",
                 "records": [],
-                "censored_count": 0,
+                "censored_count": None,
+                "inherited_state": R2_CONTROL_STATES[identity["name"]],
             }
             replay_equal = True
-            dynamic_status = STATUS_UNMEASURED
+            dynamic_status = STATUS_DEFER
+            layer_c_status = STATUS_DEFER
+            layer_c_reason = "inherited R2 Layer-C state; R3 scope is semantic positive calibration"
+        else:
+            semantic_compiled = _semantic_compiled(control)
+            if semantic_compiled.ruleset_fingerprint != compiled.ruleset_fingerprint:
+                raise RuntimeError(f"F87A semantic runtime fingerprint drift for {identity['name']}")
+            contract = semantic_runtime_contract(semantic_compiled)
+            dynamics = {
+                policy_id: semantic_tape_games(
+                    semantic_compiled,
+                    policy_id=policy_id,
+                    pair_count=POSITIVE_PAIR_COUNT,
+                    max_ply=POSITIVE_MAX_PLY,
+                    seed=SEED,
+                    tape_length=POSITIVE_TAPE_LENGTH,
+                )
+                for policy_id in POSITIVE_POLICIES
+            }
+            pathology = _positive_pathology(dynamics)
+            dynamic = {
+                "status": "MEASURED",
+                "runtime_contract": contract,
+                "policies": dynamics,
+                "records": [record for item in dynamics.values() for record in item["records"]],
+                "censored_count": sum(item["censored_count"] for item in dynamics.values()),
+                "positive_pathology": pathology,
+                "search_policy": {"policy_id": "very_shallow_fixed_evaluator_search", "status": STATUS_DEFER, "reason": "semantic shallow-search adapter intentionally deferred"},
+            }
+            replay_equal = contract["status"] == STATUS_PASS
+            dynamic_status = STATUS_PASS if contract["status"] == STATUS_PASS else STATUS_FAIL
+            layer_c_status = STATUS_PASS if contract["status"] == STATUS_PASS and pathology["status"] == STATUS_PASS else STATUS_DEFER
+            layer_c_reason = "two cheap semantic policies passed frozen qualitative pathology predicates" if layer_c_status == STATUS_PASS else "semantic runtime or qualitative dynamic pathology requires defer"
         report = qualification_report(
             compiled=compiled,
             provenance=identity,
@@ -363,6 +451,8 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             layer_b_reason_codes=reason_codes,
             terminal_transport=terminal_transport,
             calibration_authority=calibration_authority,
+            layer_c_status=layer_c_status,
+            layer_c_reason=layer_c_reason,
         ).to_dict()
         expected_overall = "FAIL" if control["class"] == "negative" else STATUS_DEFER
         if report["overall_status"] != expected_overall:
@@ -373,7 +463,7 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
         reports[identity["name"]] = report
 
     summary = {
-        "schema_version": 1,
+        "schema_version": 3,
         "experiment": prep["experiment"],
         "status": "RESULT_COMPLETE",
         "baseline_sha": BASELINE_SHA,
@@ -381,8 +471,9 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
         "controls": list(reports),
         "overall_status": "CALIBRATION_MIXED_OUTCOMES",
         "control_overall_status": {name: report["overall_status"] for name, report in reports.items()},
-        "layer_status": {"A": STATUS_PASS, "B": "MIXED_FAIL_DEFER", "C": STATUS_DEFER, "D": STATUS_DEFER, "E": STATUS_DEFER},
-        "compute_usage": {"search_nodes": 0, "arena_games": 0, "training_steps": 0, "heavy_jobs": 0},
+        "layer_status": {"A": STATUS_PASS, "B": "MIXED_FAIL_DEFER", "C": "INHERITED_DEFER_PLUS_POSITIVE_MEASURED", "D": STATUS_DEFER, "E": STATUS_DEFER},
+        "positive_layer_c_status": {name: report["layers"]["C"] for name, report in reports.items() if name in ("Built-in Western Chess", "Built-in Standard Shogi")},
+        "compute_usage": {"search_nodes": 0, "positive_games": 8, "arena_games": 0, "training_steps": 0, "heavy_jobs": 0},
         "calibration_expectations": prep["expectations"],
     }
     _write_json(result_dir / "summary.json", summary)

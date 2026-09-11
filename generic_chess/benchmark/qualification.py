@@ -15,6 +15,8 @@ from generic_chess.core.attacks import is_in_check
 from generic_chess.core.coordinates import square_to_index
 from generic_chess.core.identity import position_identity_key
 from generic_chess.core.movement import LeapAtom, RayAtom
+from generic_chess.core.semantic_executor import semantic_engine_for, semantic_public_actions
+from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.session.session import GameSession
 
 from .game_quality import QualityObservation, profile_from_observations
@@ -557,7 +559,200 @@ def common_tape_games(compiled, *, pair_count: int, max_ply: int, seed: int, tap
     }
 
 
-def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, scope: str = "F87A") -> QualificationReport:
+def _semantic_action_key(action) -> str:
+    return json.dumps(action_to_dict(action), sort_keys=True, separators=(",", ":"))
+
+
+def _semantic_piece_value(piece, compiled) -> int:
+    """Small deterministic capture value used only by the greedy probe."""
+    if piece is None:
+        return 0
+    if compiled.support.type_metadata.get(piece.current_type_id, None) and compiled.support.type_metadata[piece.current_type_id].is_anchor:
+        return 1000
+    token = piece.current_type_id.lstrip("+").upper()
+    return {"P": 1, "L": 2, "N": 3, "S": 3, "G": 4, "B": 5, "R": 5, "Q": 9, "K": 100}.get(token, 1)
+
+
+def _semantic_greedy_index(actions, position, compiled) -> int:
+    actor = position.side_to_move
+    ranked = []
+    for index, action in enumerate(actions):
+        target = position.board[square_to_index(action.to_square, compiled.board_size)]
+        capture_value = _semantic_piece_value(target, compiled) if target is not None and target.owner != actor else 0
+        promotion = int(getattr(action, "promotion_target_id", None) is not None)
+        progress = 0
+        if action_is_board(action):
+            source = action.from_square
+            target_square = action.to_square
+            source_rank = source.rank if actor == 0 else compiled.board_size - 1 - source.rank
+            target_rank = target_square.rank if actor == 0 else compiled.board_size - 1 - target_square.rank
+            progress = target_rank - source_rank
+        ranked.append((capture_value, promotion, progress, -index, index))
+    return max(ranked)[-1]
+
+
+def semantic_runtime_contract(compiled) -> dict[str, Any]:
+    """Direct contract checks for the production semantic runtime."""
+    engine = semantic_engine_for(compiled)
+    if engine is None:
+        return {"status": STATUS_DEFER, "reason": "compiled ruleset has no semantic runtime", "checks": {}}
+    state = initial_state(compiled)
+    actions_a = tuple(sorted(semantic_public_actions(engine, state.position), key=_semantic_action_key))
+    actions_b = tuple(sorted(semantic_public_actions(engine, state.position), key=_semantic_action_key))
+    initial_terminal = state.terminal_status.status.value
+    child = apply_action(state, actions_a[0], compiled) if actions_a else None
+    checks = {
+        "legal_action_generation": bool(actions_a),
+        "canonical_order_stable": tuple(_semantic_action_key(action) for action in actions_a) == tuple(_semantic_action_key(action) for action in actions_b),
+        "initial_terminal_ongoing": initial_terminal == "ongoing",
+        "action_application": child is not None,
+        "side_to_move_switches": child is not None and child.position.side_to_move == 1 - state.position.side_to_move,
+        "terminal_authority_available": child is not None and child.terminal_status.status.value in {"ongoing", "checkmate", "stalemate", "repetition", "perpetual_check", "max_ply", "no_contest"},
+        "canonical_position_identity": child is not None and bool(position_identity_key(child.position, compiled)),
+    }
+    return {
+        "status": STATUS_PASS if all(checks.values()) else STATUS_FAIL,
+        "checks": checks,
+        "initial_legal_action_count": len(actions_a),
+        "initial_terminal_status": initial_terminal,
+        "ruleset_fingerprint": compiled.ruleset_fingerprint,
+    }
+
+
+def semantic_tape_games(
+    compiled,
+    *,
+    policy_id: str,
+    pair_count: int,
+    max_ply: int,
+    seed: int,
+    tape_length: int = 64,
+) -> dict[str, Any]:
+    """Run bounded role-swapped games through the production semantic Core path."""
+    engine = semantic_engine_for(compiled)
+    if engine is None:
+        raise TypeError("semantic_tape_games requires a compiled semantic ruleset")
+    if policy_id not in {"canonical_common_tape_random", "deterministic_material_capture_greedy"}:
+        raise ValueError(f"unsupported semantic calibration policy: {policy_id}")
+    tapes = {
+        (pair, role): PolicyTape.from_seed(
+            f"{policy_id}-{pair}-{role}", seed * 1009 + pair * 2 + role, tape_length
+        )
+        for pair in range(pair_count)
+        for role in (0, 1)
+    }
+    records: list[dict[str, Any]] = []
+    observations: list[QualityObservation] = []
+    opening_identity = position_identity_key(engine._initial_position(), compiled)
+    for pair in range(pair_count):
+        for swapped in (False, True):
+            state = initial_state(compiled)
+            branchings: list[int] = []
+            move_index = {0: 0, 1: 0}
+            captures = checks = 0
+            action_sequence: list[dict[str, Any]] = []
+            material_start = sum(piece is not None for piece in state.position.board)
+            while state.terminal_status.status.value == "ongoing" and state.ply_count < max_ply:
+                legal = sorted(semantic_public_actions(engine, state.position), key=_semantic_action_key)
+                if not legal:
+                    break
+                branchings.append(len(legal))
+                actor = state.position.side_to_move
+                role = (1 - actor) if swapped else actor
+                if policy_id == "canonical_common_tape_random":
+                    choice = tapes[(pair, role)].choose_index(move_index[role], len(legal))
+                else:
+                    choice = _semantic_greedy_index(legal, state.position, compiled)
+                move_index[role] += 1
+                action = legal[choice]
+                target = state.position.board[square_to_index(action.to_square, compiled.board_size)]
+                if action_is_board(action) and target is not None and target.owner != actor:
+                    captures += 1
+                action_sequence.append({"actor": actor, "action": action_to_dict(action), "legal_action_count": len(legal)})
+                state = apply_action(state, action, compiled)
+                if engine.in_check(state.position, state.position.side_to_move):
+                    checks += 1
+            status = state.terminal_status.status.value
+            censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
+            terminal = "CENSORED" if censored else status
+            winner = None if censored else state.terminal_status.winner
+            first_score = None if censored else (0.5 if winner is None else (1.0 if winner == 0 else 0.0))
+            second_score = None if censored else (0.5 if winner is None else (1.0 if winner == 1 else 0.0))
+            sequence_bytes = json.dumps(action_sequence, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            material_end = sum(piece is not None for piece in state.position.board)
+            records.append({
+                "policy_id": policy_id,
+                "pair_index": pair,
+                "role_swap": swapped,
+                "seat_assignment": {"player0": "B" if swapped else "A", "player1": "A" if swapped else "B"},
+                "opening_identity": opening_identity,
+                "terminal_status": terminal,
+                "completion": "CENSORED" if censored else "TERMINAL",
+                "winner": winner,
+                "first_player_score": first_score,
+                "second_player_score": second_score,
+                "plies": state.ply_count,
+                "branching_sequence": list(branchings),
+                "capture_count": captures,
+                "check_count": checks,
+                "material_start": material_start,
+                "material_end": material_end,
+                "material_reduction": material_start - material_end,
+                "side_to_move_final": state.position.side_to_move,
+                "action_sequence_sha256": hashlib.sha256(sequence_bytes).hexdigest(),
+                "final_position_digest": position_identity_key(state.position, compiled),
+            })
+            observations.append(QualityObservation(tuple(branchings), state.ply_count, terminal, first_score, second_score))
+    profile = profile_from_observations(observations, ruleset_fingerprint=compiled.ruleset_fingerprint, board_size=compiled.board_size)
+    branchings = [count for row in records for count in row["branching_sequence"]]
+    total_moves = sum(row["plies"] for row in records)
+    terminal_counts = Counter(row["terminal_status"] for row in records)
+    completed = sum(row["completion"] != "CENSORED" for row in records)
+    return {
+        "policy_id": policy_id,
+        "tape_schema": "PolicyTape" if policy_id == "canonical_common_tape_random" else "deterministic_policy",
+        "pair_count": pair_count,
+        "game_count": len(records),
+        "max_ply": max_ply,
+        "tape_length": tape_length,
+        "records": records,
+        "profile": profile.to_dict(),
+        "terminal_counts": dict(sorted(terminal_counts.items())),
+        "censored_count": terminal_counts["CENSORED"],
+        "completion_fraction": completed / len(records) if records else 0.0,
+        "terminal_fractions": {
+            "decisive": sum(row["winner"] is not None for row in records) / len(records) if records else 0.0,
+            "checkmate": terminal_counts["checkmate"] / len(records) if records else 0.0,
+            "stalemate": terminal_counts["stalemate"] / len(records) if records else 0.0,
+            "repetition": terminal_counts["repetition"] / len(records) if records else 0.0,
+            "other_draw": sum(terminal_counts[key] for key in ("perpetual_check", "no_contest")) / len(records) if records else 0.0,
+            "censored": terminal_counts["CENSORED"] / len(records) if records else 0.0,
+        },
+        "branching_distribution": dict(sorted(Counter(branchings).items())),
+        "legal_action_collapse_fraction": sum(count <= 1 for count in branchings) / len(branchings) if branchings else 0.0,
+        "capture_check_density": {
+            "captures": sum(row["capture_count"] for row in records),
+            "checks": sum(row["check_count"] for row in records),
+            "moves": total_moves,
+            "capture_rate": sum(row["capture_count"] for row in records) / total_moves if total_moves else 0.0,
+            "check_rate": sum(row["check_count"] for row in records) / total_moves if total_moves else 0.0,
+        },
+        "material_progress": {
+            "games_with_reduction": sum(row["material_reduction"] > 0 for row in records),
+            "total_material_reduction": sum(row["material_reduction"] for row in records),
+        },
+        "side_bias": {
+            "magnitude": profile.side_bias_magnitude,
+            "first_player_score": profile.first_player_score,
+            "second_player_score": profile.second_player_score,
+            "scoreable_games": sum(row["first_player_score"] is not None for row in records),
+        },
+        "opening_identity_count": len({row["opening_identity"] for row in records}),
+        "opening_sensitivity": {"status": "UNMEASURED", "identity_count": 1},
+    }
+
+
+def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, layer_c_status: str = STATUS_DEFER, layer_c_reason: str = "playability authority is not calibrated in F87A-R1", scope: str = "F87A") -> QualificationReport:
     required_layers = ("A", "B", "C")
     layer_c_integrity = dynamic_status if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else (STATUS_PASS if replay_equal else STATUS_FAIL)
     integrity_gates = (
@@ -574,16 +769,15 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
     else:
         layer_b_status = STATUS_DEFER if structural.get("semantic_applicability", {}).values() and any(value != "APPLICABLE" for value in structural["semantic_applicability"].values()) else STATUS_DEFER
         layer_b_reason = "semantic movement metrics are not applicable to the legacy empty-mobility probe"
-    layer_c_status = STATUS_DEFER
     qualification_gates = (
         GateOutcome("layer_b_ruleset_state", layer_b_status, "EMPIRICAL_GATE", layer_b_reason, "layer_b_qualification"),
         GateOutcome("calibration_expectation", STATUS_PASS if layer_b_reason_codes else STATUS_DEFER, "EMPIRICAL_GATE", "frozen qualitative expectation observed" if layer_b_reason_codes else "no qualitative expectation evidence", "calibration_expectation"),
-        GateOutcome("layer_c_playability", layer_c_status, "EMPIRICAL_GATE", "playability authority is not calibrated in F87A-R1", "layer_c_qualification"),
+        GateOutcome("layer_c_playability", layer_c_status, "EMPIRICAL_GATE", layer_c_reason, "layer_c_qualification"),
     )
     layers = {"A": STATUS_PASS, "B": layer_b_status, "C": layer_c_status, "D": STATUS_DEFER, "E": STATUS_DEFER}
-    reason_codes = tuple(dict.fromkeys(layer_b_reason_codes + (("CALIBRATION_NEGATIVE_ENVIRONMENT_AUTHORITY",) if layer_b_status == STATUS_FAIL else ()) + (("SEMANTIC_MOVEMENT_NOT_APPLICABLE",) if layer_b_status == STATUS_DEFER and control_class == "positive_semantic" else ()) + ("PLAYABILITY_AUTHORITY_UNCALIBRATED",)))
+    reason_codes = tuple(dict.fromkeys(layer_b_reason_codes + (("CALIBRATION_NEGATIVE_ENVIRONMENT_AUTHORITY",) if layer_b_status == STATUS_FAIL else ()) + (("SEMANTIC_MOVEMENT_NOT_APPLICABLE",) if layer_b_status == STATUS_DEFER and control_class == "positive_semantic" else ()) + (("PLAYABILITY_AUTHORITY_UNCALIBRATED",) if layer_c_status != STATUS_PASS else ())))
     reasons = (
-        "Layer C replay identity is an integrity gate; playability qualification remains DEFER",
+        "Layer C replay identity is an integrity gate; playability qualification is separately calibrated",
         "Layer D paired strength-response is defined but intentionally not measured in F87A-R1",
         "Layer E learning/transfer adapter is defined but intentionally not measured in F87A-R1",
     )
@@ -609,7 +803,7 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         integrity_gates=integrity_gates,
         qualification_gates=qualification_gates,
         reason_codes=reason_codes,
-        layer_reasons={"B": tuple(layer_b_reason_codes), "C": ("PLAYABILITY_AUTHORITY_UNCALIBRATED",)},
+        layer_reasons={"B": tuple(layer_b_reason_codes), "C": ("PLAYABILITY_AUTHORITY_UNCALIBRATED",) if layer_c_status != STATUS_PASS else ("POSITIVE_DYNAMIC_CALIBRATION_PASS",)},
         fail_defer_reasons=reasons,
         compute_usage={"dynamic_games": len(dynamic.get("records", [])), "dynamic_plies": sum(row.get("plies", 0) for row in dynamic.get("records", [])), "search_nodes": 0, "heavy": 0},
         behavior_descriptors=descriptors,
@@ -621,5 +815,5 @@ __all__ = [
     "GateOutcome", "MetricEvidence", "QualificationReport", "STATUS_DEFER", "STATUS_FAIL",
     "STATUS_PASS", "STATUS_UNMEASURED", "calibration_reason_codes", "common_tape_games", "component_info",
     "lattice_info", "movement_graph", "opening_sources", "qualification_report", "reachable_squares",
-    "reduce_qualification_status", "scc_info", "structural_profile", "transport_type_profile",
+    "reduce_qualification_status", "scc_info", "semantic_runtime_contract", "semantic_tape_games", "structural_profile", "transport_type_profile",
 ]
