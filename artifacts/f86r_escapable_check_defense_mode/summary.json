@@ -1,0 +1,4400 @@
+{
+  "alphabeta_nodes": 0,
+  "baseline_commit": "35d9dfcbf76a5e51dc72f49722389e8dc1b60076",
+  "bfs_expansions": 0,
+  "by_arm_sample": {
+    "F": {
+      "V4-3": {
+        "anchor_neighborhood_coverage_distribution": {
+          "0": 5,
+          "1": 2
+        },
+        "breaking_replies": 19,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 19
+        },
+        "checker_multiplicity_distribution": {
+          "1": 7
+        },
+        "checking_actions": 7,
+        "mean_min_max_breaking_replies": [
+          2.7142857142857144,
+          2,
+          3
+        ],
+        "mean_min_max_legal_replies": [
+          2.7142857142857144,
+          2,
+          3
+        ],
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      },
+      "V5-3": {
+        "anchor_neighborhood_coverage_distribution": {
+          "0": 7,
+          "1": 14,
+          "2": 11,
+          "3": 5,
+          "4": 1
+        },
+        "breaking_replies": 55,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 49,
+          "CHECKER_CAPTURE": 6
+        },
+        "checker_multiplicity_distribution": {
+          "1": 38
+        },
+        "checking_actions": 38,
+        "mean_min_max_breaking_replies": [
+          1.4473684210526316,
+          0,
+          4
+        ],
+        "mean_min_max_legal_replies": [
+          2.1842105263157894,
+          1,
+          4
+        ],
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      }
+    },
+    "L": {
+      "V4-3": {
+        "anchor_neighborhood_coverage_distribution": {},
+        "breaking_replies": 0,
+        "breaking_reply_mechanism_counts": {},
+        "checker_multiplicity_distribution": {},
+        "checking_actions": 0,
+        "mean_min_max_breaking_replies": [
+          0.0,
+          0,
+          0
+        ],
+        "mean_min_max_legal_replies": [
+          0.0,
+          0,
+          0
+        ],
+        "route": "NO_BREAKING_REPLY_OBSERVED"
+      },
+      "V5-3": {
+        "anchor_neighborhood_coverage_distribution": {
+          "1": 4
+        },
+        "breaking_replies": 8,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 8
+        },
+        "checker_multiplicity_distribution": {
+          "1": 4
+        },
+        "checking_actions": 4,
+        "mean_min_max_breaking_replies": [
+          2.0,
+          2,
+          2
+        ],
+        "mean_min_max_legal_replies": [
+          2.0,
+          2,
+          2
+        ],
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      }
+    },
+    "N": {
+      "V4-3": {
+        "anchor_neighborhood_coverage_distribution": {
+          "2": 1
+        },
+        "breaking_replies": 2,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 2
+        },
+        "checker_multiplicity_distribution": {
+          "1": 1
+        },
+        "checking_actions": 1,
+        "mean_min_max_breaking_replies": [
+          2.0,
+          2,
+          2
+        ],
+        "mean_min_max_legal_replies": [
+          2.0,
+          2,
+          2
+        ],
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      },
+      "V5-3": {
+        "anchor_neighborhood_coverage_distribution": {
+          "0": 8,
+          "1": 5
+        },
+        "breaking_replies": 27,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 24,
+          "CHECKER_CAPTURE": 3
+        },
+        "checker_multiplicity_distribution": {
+          "1": 13
+        },
+        "checking_actions": 13,
+        "mean_min_max_breaking_replies": [
+          2.076923076923077,
+          1,
+          4
+        ],
+        "mean_min_max_legal_replies": [
+          2.6923076923076925,
+          1,
+          5
+        ],
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      }
+    }
+  },
+  "checking_actions": [
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "92e962251d8a9f6a84e03cc677d52929b054ee6f4e1810f9d7500ff3a331a64d",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "92e962251d8a9f6a84e03cc677d52929b054ee6f4e1810f9d7500ff3a331a64d",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            1
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "e1088447dbe29aba769148f6c2333ccfbd69a5f569cffd4affbe4d290dcba3e3",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "54dd0121addd577796ae731bf0f685cf0f10ec9c2afae8b4a9cad98c4a018893",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "e99cf8e4ae8f10f5a4dfd5b0e02d42a5896eb067c83ff6c6ed30650c7055f273",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P0",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 3,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 3,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "bb5044f93121a4e47172ce551766f8e124ea39b345e53944d4d0013f4acdb891",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "e1088447dbe29aba769148f6c2333ccfbd69a5f569cffd4affbe4d290dcba3e3",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P1",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P1",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 3,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "54dd0121addd577796ae731bf0f685cf0f10ec9c2afae8b4a9cad98c4a018893",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "55bcf406f45f23532af4f3ccd46f0b7e144875e1c1582f5e1972b6c563d130d7",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          0,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "578981cdde2c15959fd1fd71aafb4b3f952860a7cf1927516e123de78d9eedad",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P1",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "55bcf406f45f23532af4f3ccd46f0b7e144875e1c1582f5e1972b6c563d130d7",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          0,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "578981cdde2c15959fd1fd71aafb4b3f952860a7cf1927516e123de78d9eedad",
+      "f86q_classification": "FORCED_CHECK_CONTINUATION",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 3,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [],
+      "breaking_reply_count": 0,
+      "breaking_reply_mechanism_counts": {},
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "e99cf8e4ae8f10f5a4dfd5b0e02d42a5896eb067c83ff6c6ed30650c7055f273",
+      "f86q_classification": "FORCED_MATE_IN_TWO",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P1",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 3,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 3,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "55bcf406f45f23532af4f3ccd46f0b7e144875e1c1582f5e1972b6c563d130d7",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 3,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 3,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              0,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          0,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "578981cdde2c15959fd1fd71aafb4b3f952860a7cf1927516e123de78d9eedad",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 4,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 4,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "e99cf8e4ae8f10f5a4dfd5b0e02d42a5896eb067c83ff6c6ed30650c7055f273",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P1",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            0
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 4,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 4
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "0765ef9f37fe4fae4b1d8d56d716ccde677e99afb3e10e6177f6e529a04689dd",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 4,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 4
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "54dd0121addd577796ae731bf0f685cf0f10ec9c2afae8b4a9cad98c4a018893",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 4,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 4
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "5711a21aa90136343dfba13d9f8380ecc90748af530a152d2b2102dee5bb0524",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 2,
+      "anchor_neighbor_legal_flight_count": 4,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            4
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 2,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 4
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "9a7a92a7b503008b550a6b8b687c08c65b3e3d34978ac14d5c3e4d936d4e3f6f",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            4
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "f8d1e6e307fd8c1f9ef7b6c1e8c149b2a2c5304b9a9b819ea2586c47ec22bf24",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "832dee2627295f11b54a9ce0ff06389e57e2c4a25276dac47ef837da21dd0f19",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              0
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            0
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              0
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            1
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          0
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "9f61820f961cf450af19b730aa676a7b4e22a808dc2044a6a88bac26baa9244a",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              0
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            0
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              3,
+              0
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            1
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          3,
+          0
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "9f61820f961cf450af19b730aa676a7b4e22a808dc2044a6a88bac26baa9244a",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 4,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "P0",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            2
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "91869f8a03fc9f6977c7b5935f839041528831d98e05d5fb6c2fd10a93f5b368",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 5,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            1
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              2
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "P0",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            2
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 3,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          2
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "91869f8a03fc9f6977c7b5935f839041528831d98e05d5fb6c2fd10a93f5b368",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 4,
+      "tape_chosen_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 3,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              0
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            2
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 3,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              0
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            4,
+            1
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          0
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "e77f6c1ca11d9079f4bc6bf4193b178dfb225e4f3497fd2004747ff0611778df",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 3,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 1,
+      "anchor_neighbor_legal_flight_count": 1,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 1,
+          "anchor_neighbor_legal_flight_count": 1,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              3
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P0"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 1,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          3
+        ]
+      ],
+      "checker_types": [
+        "P0"
+      ],
+      "checking_action_canonical_digest": "832dee2627295f11b54a9ce0ff06389e57e2c4a25276dac47ef837da21dd0f19",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 1,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 2,
+      "breaking_replies": [
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            0,
+            3
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 2,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              1,
+              4
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            1,
+            4
+          ],
+          "reply_is_capture": true
+        }
+      ],
+      "breaking_reply_count": 2,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 2
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          1,
+          4
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 2,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "anchor_neighbor_attacked_count_before_reply": 0,
+      "anchor_neighbor_legal_flight_count": 4,
+      "breaking_replies": [
+        {
+          "anchor_moved": false,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "P0",
+          "primary_mechanism": "CHECKER_CAPTURE",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": true,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            2,
+            1
+          ],
+          "reply_is_capture": true
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            0
+          ],
+          "reply_is_capture": false
+        },
+        {
+          "anchor_moved": true,
+          "anchor_neighbor_attacked_count_before_reply": 0,
+          "anchor_neighbor_legal_flight_count": 4,
+          "captured_checking_piece": false,
+          "checker_count_before_reply": 1,
+          "checker_squares_before_reply": [
+            [
+              2,
+              1
+            ]
+          ],
+          "checker_types_before_reply": [
+            "P1"
+          ],
+          "defender_piece_type": "K",
+          "primary_mechanism": "ANCHOR_FLIGHT",
+          "reply_destination": [
+            3,
+            2
+          ],
+          "reply_is_capture": false
+        }
+      ],
+      "breaking_reply_count": 4,
+      "breaking_reply_mechanism_counts": {
+        "ANCHOR_FLIGHT": 3,
+        "CHECKER_CAPTURE": 1
+      },
+      "checker_multiplicity": 1,
+      "checker_squares": [
+        [
+          2,
+          1
+        ]
+      ],
+      "checker_types": [
+        "P1"
+      ],
+      "checking_action_canonical_digest": "5b1dfae3c55628f192333febe2257f96cbc61a18b71153e996d1dd7e056b60ef",
+      "f86q_classification": "ESCAPABLE_CHECK",
+      "opponent_legal_reply_count": 5,
+      "tape_chosen_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    }
+  ],
+  "default_generator_changed": false,
+  "f85_actual_compute": 0,
+  "f86q_prep_manifest_blob": "76e15ba9320ab490d5d6321852eb5b683b6002fb",
+  "f86q_result_blob": "84fba9e85b918895f451ce478fdabe77d8fb00c4",
+  "generic_search": 0,
+  "new_real_games": 0,
+  "prep_manifest": "artifacts/f86r_escapable_check_defense_mode/manifest.json",
+  "probe_cap": 2048,
+  "probe_successor_count": 1268,
+  "replay_equality": {
+    "action_sequence_matches": 12,
+    "final_position_digest_matches": 12
+  },
+  "replayed_games": [
+    {
+      "action_sequence_sha256": "bf498955a8b5d4ec7ebd7ad31b52ba25f3ca74de8be6e85d836f14d9a6527836",
+      "arm": "L",
+      "final_position_digest": "1f6637cb40662919d4938dda6f2230a0288d8e366ef75160dd78aead47da67cd",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "464e7585eb8c3574248bbcaff08e3540f5eb2152ba8ef432834576882bfb517d",
+      "arm": "L",
+      "final_position_digest": "4afdc68e502ecf18f964a4bce509a1d50572f50c7294eca9f4dec51d13ce25b6",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "1e47448a63739fd9faa4e0927fd5ed0304c51dca455e66ee1c114c107cc8e2e3",
+      "arm": "F",
+      "final_position_digest": "90c40afb84aef3d6c25abec1b3dd6f2ce593a64e8a9752b3e970ac66cd815dcc",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "542e4a2f829eda20ec6be8147c965f2b4bd10dd8e35a6d0af4a65f2392fab470",
+      "arm": "F",
+      "final_position_digest": "4fcc0bbfe577846835fad85892b997f9edf1fcd392e1d0a860d7d82cb078ec06",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "0b91b9ce68e558642feae465689b6b9c04d9673374dc02ebad62e21c2cc63dd3",
+      "arm": "N",
+      "final_position_digest": "7a9cdc5c102a6dba4b7e308db7abe6e560bcd8e7508a42d1febafd26ce1d6783",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "ce640e937e1a763ddbfd6db327519c499c4ddf7db36cfbd046cf9881b728d726",
+      "arm": "N",
+      "final_position_digest": "42b5a78ded07fd0c20d15c8d8b6aa1650cf3b5bdcbb235e18829e96647d80be0",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "135fd8833a52f98fc4c46ab86aa28b6aa866ac5b8203bae1783140e0fad4204b",
+      "arm": "L",
+      "final_position_digest": "456f24f2e2758612728e93715ce185e0cebae555e52b3e4ef526542f180d49fc",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "dee88b4b9510338a96ed389e59b2f8ae10b6e02e89bd2adb6ffe1887207e3db5",
+      "arm": "L",
+      "final_position_digest": "af19d8e0b639afc9104f60f51732877d8f8fd19f4b949e97902013336466bdbe",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "fe0b6df18a7605b1f16c885f9fea89d6b8e91462f808dd3f006edb3a568b76dd",
+      "arm": "F",
+      "final_position_digest": "132dae9ea020639a85603f2ce3234be8ef02ff068ce4e7db5204d3d9eb695909",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "93af93f69aa61619abb2a08b67119e086776082f0dcd3ae65aba0f3cb8d6419a",
+      "arm": "F",
+      "final_position_digest": "4810369275406e9c95e882be6a74139a46c9553c47af40ede9384d470f94e196",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "37a7266392338d07252b3d0f51a79dd8cd0531c36ae3c99110270aabba8927a8",
+      "arm": "N",
+      "final_position_digest": "f30440b6bfa39abeeac62304d691ff87fa249331a9fe8bea0ca5c61976361a86",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "10c1dd51ebb3470dae7fae3e07369fcc52a030e17bf9c6fedb5763af54bf82ee",
+      "arm": "N",
+      "final_position_digest": "fb17eb8e6750d0cca61b2304e08c640d601c17e84f9eb1ef0b99b0afb3ef351f",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    }
+  ],
+  "replayed_trajectories": 12,
+  "routing": {
+    "arm_n_by_sample": {
+      "V4-3": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE",
+      "V5-3": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+    },
+    "overall": [
+      "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+    ]
+  },
+  "schema_version": 1,
+  "specialized_depth_plies": 3,
+  "status": "F86R_ESCAPABLE_CHECK_DEFENSE_MODE_COMPLETE",
+  "teacher_compute": 0,
+  "training_compute": 0,
+  "truncation": false
+}
