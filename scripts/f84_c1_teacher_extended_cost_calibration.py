@@ -275,6 +275,7 @@ def run(envelope_path: Path) -> dict:
             "no_persisted_teacher_targets": True,
             "maximum_selected_actions": MAX_SELECTED_ACTIONS,
             "maximum_root_node_budgets": MAX_ROOT_NODE_BUDGETS,
+            "effective_workload": {"games": 0, "arena_pairs": 0, "plies": 0},
         },
         "resource_envelope": envelope,
         "resource_envelope_sha256": envelope_sha,

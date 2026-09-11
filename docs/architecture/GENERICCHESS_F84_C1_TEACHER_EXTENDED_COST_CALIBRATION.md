@@ -16,5 +16,10 @@ of 25 minutes / 5 hours, one stage, zero games, zero Arena pairs, zero plies,
 and a 1,271,000 maximum declared node budget. Any cap preserves unknown fields
 as `null`; it never writes zero teacher calls or Q labels.
 
+The flow schema requires positive integer ceiling fields, so its minimum
+representations are 1 for games, Arena pairs, and plies, and 5 for hard CPU
+hours. The durable execution contract records the effective F84 workload as
+zero for all three non-search quantities.
+
 Durable output: `artifacts/f84_c1_teacher_extended_calibration/calibration.json`.
 Resource roots remain permanently outside future C2 training corpora.

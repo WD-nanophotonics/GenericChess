@@ -50,6 +50,7 @@ def test_f84_calibration_artifact_contract_after_single_stage():
     assert payload["execution_contract"]["whole_stage_hard_wall_seconds"] == 1500
     assert payload["execution_contract"]["no_retry"] is True
     assert payload["execution_contract"]["no_persisted_teacher_targets"] is True
+    assert payload["execution_contract"]["effective_workload"] == {"games": 0, "arena_pairs": 0, "plies": 0}
     assert len(payload["results"]) == 3
     assert [row["root_id"] for row in payload["results"]] == list(f84.ROOT_IDS)
     assert all(row["role"] == "resource_estimation_only" for row in payload["results"])
