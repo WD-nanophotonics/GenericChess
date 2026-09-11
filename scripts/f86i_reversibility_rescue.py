@@ -20,6 +20,27 @@ from generic_chess.core.position import Hands, Position
 from generic_chess.rules.compiler import compile_ruleset
 from generic_chess.rules.schema import ruleset_from_dict, ruleset_to_dict
 
+try:
+    from scripts.f86f_ordinary_mate_capacity_census import (
+        _anchor_type_id,
+        _attack_masks,
+        _build_position,
+        _iter_placements,
+        _ordinary_multiset,
+        _zone_mask,
+    )
+    from scripts.f86h_static_mate_template_kinematic_reachability import _analyze_cell
+except ModuleNotFoundError:
+    from f86f_ordinary_mate_capacity_census import (
+        _anchor_type_id,
+        _attack_masks,
+        _build_position,
+        _iter_placements,
+        _ordinary_multiset,
+        _zone_mask,
+    )
+    from f86h_static_mate_template_kinematic_reachability import _analyze_cell
+
 SAMPLES = (
     ("V4-2", 4, 861401),
     ("V4-3", 4, 861402),
@@ -287,6 +308,73 @@ def _static_mechanism(compiled) -> dict[str, Any]:
     }
 
 
+def _candidate_static_census(sample_id: str, compiled) -> dict[str, Any]:
+    n = compiled.board_size
+    type_ids = _ordinary_multiset(compiled)
+    templates: dict[tuple[int, tuple[tuple[str, int], ...]], set[int]] = {}
+    candidate_count = 0
+    validated_count = 0
+    truncated = False
+    for defender_anchor in range(n * n):
+        zone = _zone_mask(compiled, defender_anchor)
+        masks = _attack_masks(compiled, type_ids, zone)
+        for placement in _iter_placements(type_ids, n, defender_anchor, masks):
+            coverage = 0
+            for type_id, square_index in placement:
+                coverage |= masks[type_id][square_index]
+            if coverage & zone != zone:
+                continue
+            occupied = {defender_anchor, *(square_index for _type_id, square_index in placement)}
+            for attacker_anchor in range(n * n):
+                if attacker_anchor in occupied:
+                    continue
+                if candidate_count >= STATIC_CAP_PER_CELL:
+                    truncated = True
+                    break
+                candidate_count += 1
+                position = _build_position(compiled, defender_anchor, attacker_anchor, placement)
+                if is_in_check(position, 0, compiled):
+                    continue
+                if not is_in_check(position, 1, compiled):
+                    continue
+                if has_legal_action(position, compiled):
+                    continue
+                validated_count += 1
+                templates.setdefault((defender_anchor, tuple(sorted(placement))), set()).add(attacker_anchor)
+            if truncated:
+                break
+        if truncated:
+            break
+    rows = []
+    for ordinal, (key, targets) in enumerate(sorted(templates.items()), start=1):
+        defender_anchor, placement = key
+        rows.append({
+            "template_id": f"T{ordinal:04d}",
+            "sample_id": sample_id,
+            "cell": "CANDIDATE",
+            "defender_anchor": [defender_anchor % n, defender_anchor // n],
+            "ordinary": [
+                {"type_id": type_id, "square": [square % n, square // n]}
+                for type_id, square in placement
+            ],
+            "allowed_attacker_anchor_squares": [
+                [square % n, square // n] for square in sorted(targets)
+            ],
+        })
+    census = {
+        "sample_id": sample_id,
+        "cell": "CANDIDATE",
+        "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        "candidate_position_count": candidate_count,
+        "validated_position_count": validated_count,
+        "validated_template_count": len(rows),
+        "truncation": truncated,
+        "templates": rows,
+    }
+    kinematic = _analyze_cell(sample_id, "CANDIDATE", compiled, census, rows)
+    return {"census": census, "kinematic": kinematic}
+
+
 def _canonical_actions(session) -> tuple:
     return tuple(sorted(session.legal_actions(), key=lambda action: json.dumps(
         action_to_dict(action), sort_keys=True, separators=(",", ":")
@@ -376,6 +464,7 @@ def run(root: Path, output_dir: Path) -> dict[str, Any]:
     manifest = _load_manifest(root)
     entries = list(_compiled_entries(root, manifest))
     static = []
+    candidate_static = []
     for entry, compiled in entries:
         row = {
             "sample_id": entry["sample_id"],
@@ -386,13 +475,42 @@ def run(root: Path, output_dir: Path) -> dict[str, Any]:
             "mechanism": _static_mechanism(compiled),
         }
         static.append(row)
+        if entry["sample_id"] in {"V4-3", "V5-3"}:
+            candidate_static.append(_candidate_static_census(entry["sample_id"], compiled))
     games = _run_games(manifest, entries)
+    ruleset_fingerprints = {
+        entry["sample_id"]: {"CANDIDATE": entry["candidate_ruleset_fingerprint"]}
+        for entry, _compiled in entries
+    }
+    static_routing = []
+    for row in candidate_static:
+        census = row["census"]
+        kinematic = row["kinematic"]
+        if census["truncation"]:
+            label = "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP"
+        elif kinematic["joint_kinematically_reachable_count"] == 0:
+            label = "REVERSIBILITY_RESCUE_INSUFFICIENT_KINEMATICALLY"
+        else:
+            label = "KINEMATIC_MATE_TEMPLATE_REACHABLE_WITHIN_32PLY_LOWER_BOUND"
+        static_routing.append({"sample_id": census["sample_id"], "routing": label})
+    dynamic_routing = (
+        ["REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"]
+        if any(row["terminal_distribution"].get("checkmate", 0) for row in games["by_sample"].values())
+        else ["KINEMATIC_REPAIR_SUCCEEDS_BUT_DYNAMIC_TERMINATION_STILL_WEAK"]
+    )
     payload = {
         "schema_version": 1,
         "candidate_profile": PROFILE,
         "manifest": "artifacts/f86i_reversibility_rescue/manifest.json",
         "manifest_result_driven_replacement_forbidden": manifest["result_driven_replacement_forbidden"],
+        "ruleset_fingerprints": ruleset_fingerprints,
         "static": static,
+        "candidate_static_mate_capacity": candidate_static,
+        "routing": {
+            "static": static_routing,
+            "dynamic": dynamic_routing,
+            "overall": [row["routing"] for row in static_routing] + dynamic_routing,
+        },
         "static_candidate_checks": {
             "V4_V5_targeted_checks": 0,
             "per_cell_cap": STATIC_CAP_PER_CELL,
@@ -407,7 +525,12 @@ def run(root: Path, output_dir: Path) -> dict[str, Any]:
         "f85_actual_compute": 0,
         "default_generator_changed": False,
     }
-    _write_json(output_dir / "static_results.json", {"schema_version": 1, "results": static})
+    _write_json(output_dir / "static_results.json", {
+        "schema_version": 1,
+        "ruleset_fingerprints": ruleset_fingerprints,
+        "results": static,
+        "candidate_static_mate_capacity": candidate_static,
+    })
     _write_json(output_dir / "game_results.json", games)
     _write_json(output_dir / "results.json", payload)
     return payload
@@ -438,4 +561,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

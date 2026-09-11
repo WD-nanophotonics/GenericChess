@@ -1,0 +1,9326 @@
+{
+  "by_sample": {
+    "V4-2": {
+      "branching_median": 4,
+      "candidate_ruleset_fingerprint": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.15625,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V4-2",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V4-3": {
+      "branching_median": 5,
+      "candidate_ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.15625,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V4-3",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V4-4": {
+      "branching_median": 3,
+      "candidate_ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.28125,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V4-4",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V4-5": {
+      "branching_median": 5,
+      "candidate_ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.078125,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V4-5",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V5-2": {
+      "branching_median": 6,
+      "candidate_ruleset_fingerprint": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.140625,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V5-2",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V5-3": {
+      "branching_median": 7,
+      "candidate_ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.046875,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V5-3",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V5-4": {
+      "branching_median": 13,
+      "candidate_ruleset_fingerprint": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "decisive_fraction": 0.0,
+      "forced_or_low_branch_fraction": 0.1875,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 1.0,
+      "repetition_fraction": 0.0,
+      "sample_id": "V5-4",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing@32": 2
+      }
+    },
+    "V5-5": {
+      "branching_median": 10,
+      "candidate_ruleset_fingerprint": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "decisive_fraction": 0.5,
+      "forced_or_low_branch_fraction": 0.06666666666666667,
+      "game_count": 2,
+      "median_length": 32,
+      "ongoing_at_32_fraction": 0.5,
+      "repetition_fraction": 0.0,
+      "sample_id": "V5-5",
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "checkmate": 1,
+        "ongoing@32": 1
+      }
+    }
+  },
+  "game_count": 16,
+  "games": [
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        4,
+        4,
+        2,
+        3,
+        6,
+        2,
+        5,
+        3,
+        5,
+        2,
+        5,
+        3,
+        6,
+        2,
+        7,
+        3,
+        6,
+        3,
+        7,
+        2,
+        5,
+        4,
+        4,
+        5,
+        5,
+        3,
+        4,
+        4,
+        5,
+        2,
+        4,
+        4
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "sample_id": "V4-2",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        4,
+        4,
+        3,
+        3,
+        5,
+        4,
+        2,
+        3,
+        6,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        4,
+        2,
+        4,
+        4,
+        4,
+        2,
+        6,
+        2,
+        6,
+        3
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "sample_id": "V4-2",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        5,
+        5,
+        5,
+        3,
+        5,
+        2,
+        8,
+        4,
+        5,
+        5,
+        3,
+        3,
+        3,
+        2,
+        5,
+        2,
+        5,
+        2,
+        5,
+        2,
+        5,
+        3,
+        6,
+        1,
+        3,
+        3,
+        5,
+        2,
+        4,
+        1,
+        5,
+        1
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        5,
+        5,
+        5,
+        5,
+        8,
+        4,
+        7,
+        4,
+        6,
+        3,
+        6,
+        4,
+        5,
+        3,
+        6,
+        4,
+        3,
+        5,
+        3,
+        5,
+        6,
+        5,
+        5,
+        7,
+        4,
+        5,
+        4,
+        5,
+        6,
+        6,
+        5,
+        2
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        4,
+        3,
+        5,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        4,
+        2,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3,
+        3,
+        3,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4,
+        3
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "sample_id": "V4-4",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 1,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 1,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        4,
+        3,
+        5,
+        2,
+        4,
+        2,
+        3,
+        4,
+        3,
+        2,
+        3,
+        4,
+        1,
+        3,
+        2,
+        4,
+        2,
+        4,
+        2,
+        4,
+        2,
+        5,
+        2,
+        4,
+        2,
+        3,
+        2,
+        4,
+        2,
+        4,
+        1,
+        4
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "sample_id": "V4-4",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        7,
+        5,
+        6,
+        3,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3,
+        4,
+        4,
+        3,
+        4,
+        2,
+        4,
+        2,
+        4,
+        2,
+        4,
+        2,
+        5,
+        3,
+        4,
+        2,
+        5,
+        3,
+        4,
+        3,
+        3,
+        5,
+        4
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "sample_id": "V4-5",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        7,
+        5,
+        6,
+        4,
+        5,
+        4,
+        6,
+        4,
+        5,
+        4,
+        5,
+        3,
+        6,
+        3,
+        6,
+        3,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        5,
+        5,
+        5,
+        4,
+        5,
+        5,
+        5,
+        4
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "sample_id": "V4-5",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        6,
+        6,
+        4,
+        6,
+        2,
+        5,
+        4,
+        2,
+        5,
+        3,
+        6,
+        1,
+        6,
+        3,
+        6,
+        1,
+        6,
+        3,
+        6,
+        3,
+        7,
+        3,
+        7,
+        3,
+        5,
+        3,
+        6,
+        3,
+        5,
+        2,
+        6,
+        2
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "sample_id": "V5-2",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        6,
+        6,
+        7,
+        7,
+        5,
+        8,
+        8,
+        8,
+        6,
+        7,
+        8,
+        7,
+        9,
+        6,
+        7,
+        5,
+        6,
+        6,
+        5,
+        7,
+        4,
+        5,
+        2,
+        6,
+        3,
+        4,
+        2,
+        6,
+        3,
+        4,
+        2,
+        6
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "sample_id": "V5-2",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 1,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        6,
+        6,
+        5,
+        5,
+        1,
+        7,
+        2,
+        7,
+        10,
+        5,
+        10,
+        5,
+        9,
+        5,
+        10,
+        8,
+        6,
+        8,
+        10,
+        7,
+        9,
+        5,
+        10,
+        5,
+        10,
+        5,
+        6,
+        7,
+        6,
+        3,
+        7,
+        5
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 6,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 13,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 4,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 7,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        6,
+        6,
+        5,
+        5,
+        9,
+        7,
+        9,
+        5,
+        11,
+        5,
+        11,
+        7,
+        13,
+        5,
+        4,
+        9,
+        7,
+        5,
+        8,
+        4,
+        11,
+        7,
+        8,
+        7,
+        8,
+        4,
+        5,
+        7,
+        5,
+        4,
+        8,
+        2
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 13,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 15,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 13,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 11,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 14,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 16,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 12,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 15,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 16,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 5,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 6,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 19,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 18,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 17,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 17,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 18,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 1,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 17,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 18,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 18,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 13,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        13,
+        15,
+        13,
+        11,
+        14,
+        10,
+        16,
+        12,
+        15,
+        2,
+        16,
+        5,
+        3,
+        6,
+        19,
+        1,
+        18,
+        2,
+        17,
+        2,
+        17,
+        2,
+        18,
+        1,
+        17,
+        2,
+        18,
+        2,
+        18,
+        2,
+        13,
+        2
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "sample_id": "V5-4",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 13,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 13,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 15,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 12,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 14,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 16,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 11,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 12,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 5,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 13,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 13,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 13,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 8,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 15,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 14,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 1,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 12,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 7,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 13,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        13,
+        13,
+        15,
+        12,
+        11,
+        14,
+        3,
+        16,
+        9,
+        11,
+        8,
+        12,
+        5,
+        13,
+        8,
+        13,
+        7,
+        13,
+        8,
+        10,
+        8,
+        10,
+        9,
+        2,
+        8,
+        15,
+        7,
+        14,
+        1,
+        12,
+        7,
+        13
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "sample_id": "V5-4",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 12,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 1,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 3,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 12,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 12,
+          "ply": 12
+        }
+      ],
+      "branching_counts": [
+        10,
+        10,
+        12,
+        10,
+        1,
+        10,
+        3,
+        10,
+        10,
+        12,
+        11,
+        9,
+        12
+      ],
+      "outcome_label": "checkmate",
+      "plies": 13,
+      "policy_move_counts": {
+        "A": 7,
+        "B": 6
+      },
+      "ruleset_fingerprint": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "sample_id": "V5-5",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "checkmate",
+      "winner": 0
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 0
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 1
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 2,
+          "ply": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 3
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 4
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 3,
+          "ply": 5
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 6
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 2,
+          "ply": 7
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 13,
+          "ply": 8
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 4,
+          "ply": 9
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 10
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 11
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 9,
+          "ply": 12
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 13
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 11,
+          "ply": 14
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 15
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 16
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 17
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 18
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 8,
+          "ply": 19
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 20
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 21
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 10,
+          "ply": 22
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 23
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 12,
+          "ply": 24
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 25
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              4
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 15,
+          "ply": 26
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 27
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 14,
+          "ply": 28
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 10,
+          "ply": 29
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "actor": 0,
+          "legal_action_count": 15,
+          "ply": 30
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          "actor": 1,
+          "legal_action_count": 9,
+          "ply": 31
+        }
+      ],
+      "branching_counts": [
+        10,
+        10,
+        2,
+        8,
+        11,
+        3,
+        10,
+        2,
+        13,
+        4,
+        10,
+        9,
+        9,
+        8,
+        11,
+        8,
+        10,
+        9,
+        10,
+        8,
+        10,
+        9,
+        10,
+        9,
+        12,
+        9,
+        15,
+        10,
+        14,
+        10,
+        15,
+        9
+      ],
+      "outcome_label": "ongoing@32",
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "ruleset_fingerprint": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "sample_id": "V5-5",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    }
+  ],
+  "max_ply": 32,
+  "real_games": 16,
+  "schema_version": 1,
+  "tactical_probe_nodes": 0
+}
