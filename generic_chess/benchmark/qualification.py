@@ -773,6 +773,10 @@ def _semantic_search_action_score(state, action, compiled, engine, root_actor, n
     if result.winner is not None:
         terminal_value = 1_000_000 if result.winner == root_actor else -1_000_000
         return float(terminal_value), nodes[0]
+    if result.status.value != "ongoing":
+        # A terminal draw/repetition has no winner.  It is neutral utility,
+        # never a material-score shortcut; CENSORED is handled by the caller.
+        return 0.0, nodes[0]
     value = float(_semantic_position_material_score(child.position, compiled, root_actor))
     if depth <= 1 or result.status.value != "ongoing" or nodes[0] >= node_cap:
         return value, nodes[0]
@@ -794,6 +798,7 @@ def semantic_search_games(
     pair_count: int,
     max_ply: int,
     node_cap: int,
+    search_depth: int = 2,
 ) -> dict[str, Any]:
     """Run a deterministic, terminal-aware shallow semantic search control."""
     engine = semantic_engine_for(compiled)
@@ -809,6 +814,9 @@ def semantic_search_games(
             nodes = [0]
             identities = [position_identity_key(state.position, compiled)]
             recurrence_counts = Counter(identities)
+            first_budget_exhausted_ply = None
+            searched_ply_count = 0
+            fallback_ply_count = 0
             while state.terminal_status.status.value == "ongoing" and state.ply_count < max_ply:
                 legal = sorted(semantic_public_actions(engine, state.position), key=_semantic_action_key)
                 if not legal:
@@ -818,16 +826,30 @@ def semantic_search_games(
                 root_actor = actor
                 scored = []
                 for index, action in enumerate(legal):
-                    if nodes[0] >= node_cap and scored:
+                    if nodes[0] >= node_cap:
                         break
-                    value, _ = _semantic_search_action_score(state, action, compiled, engine, root_actor, nodes, node_cap)
+                    value, _ = _semantic_search_action_score(state, action, compiled, engine, root_actor, nodes, node_cap, depth=search_depth)
                     scored.append((value, -index, index))
-                choice = max(scored)[-1] if scored else 0
+                budget_fallback = len(scored) < len(legal)
+                if budget_fallback:
+                    choice = 0
+                    fallback_ply_count += 1
+                    if first_budget_exhausted_ply is None:
+                        first_budget_exhausted_ply = state.ply_count + 1
+                else:
+                    choice = max(scored)[-1] if scored else 0
+                    searched_ply_count += 1
                 action = legal[choice]
                 target = state.position.board[square_to_index(action.to_square, compiled.board_size)]
                 if action_is_board(action) and target is not None and target.owner != actor:
                     captures += 1
-                action_sequence.append({"actor": actor, "action": action_to_dict(action), "legal_action_count": len(legal), "search_nodes": nodes[0]})
+                action_sequence.append({
+                    "actor": actor,
+                    "action": action_to_dict(action),
+                    "legal_action_count": len(legal),
+                    "search_nodes": nodes[0],
+                    "search_mode": "BUDGET_FALLBACK" if budget_fallback else "SEARCH",
+                })
                 state = apply_action(state, action, compiled)
                 if engine.in_check(state.position, state.position.side_to_move):
                     checks += 1
@@ -838,6 +860,7 @@ def semantic_search_games(
             censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
             terminal = "CENSORED" if censored else status
             winner = None if censored else state.terminal_status.winner
+            terminal_utility = None if censored else (1.0 if winner == 0 else (-1.0 if winner == 1 else 0.0))
             sequence_bytes = json.dumps(action_sequence, sort_keys=True, separators=(",", ":")).encode("utf-8")
             repeated_positions = sum(count - 1 for count in recurrence_counts.values() if count > 1)
             records.append({
@@ -851,12 +874,17 @@ def semantic_search_games(
                 "winner": winner,
                 "first_player_score": None if censored else (0.5 if winner is None else (1.0 if winner == 0 else 0.0)),
                 "second_player_score": None if censored else (0.5 if winner is None else (1.0 if winner == 1 else 0.0)),
+                "terminal_utility": terminal_utility,
                 "plies": state.ply_count,
                 "branching_sequence": list(branchings),
                 "capture_count": captures,
                 "check_count": checks,
                 "search_nodes": nodes[0],
                 "search_node_cap": node_cap,
+                "first_budget_exhausted_ply": first_budget_exhausted_ply,
+                "searched_ply_count": searched_ply_count,
+                "fallback_ply_count": fallback_ply_count,
+                "fallback_fraction": fallback_ply_count / state.ply_count if state.ply_count else 0.0,
                 "distinct_position_count": len(recurrence_counts),
                 "position_return_count": repeated_positions,
                 "max_position_multiplicity": max(recurrence_counts.values()),
@@ -868,12 +896,18 @@ def semantic_search_games(
     branchings = [count for row in records for count in row["branching_sequence"]]
     terminal_counts = Counter(row["terminal_status"] for row in records)
     total_moves = sum(row["plies"] for row in records)
+    unique_action_sequence_count = len({row["action_sequence_sha256"] for row in records})
+    role_swap_distinct_count = sum(
+        records[2 * pair]["action_sequence_sha256"] != records[2 * pair + 1]["action_sequence_sha256"]
+        for pair in range(pair_count)
+    )
     return {
         "policy_id": "deterministic_semantic_shallow_search",
         "pair_count": pair_count,
         "game_count": len(records),
         "max_ply": max_ply,
         "search_node_cap": node_cap,
+        "search_depth": search_depth,
         "records": records,
         "terminal_counts": dict(sorted(terminal_counts.items())),
         "censored_count": terminal_counts["CENSORED"],
@@ -898,6 +932,14 @@ def semantic_search_games(
             "max_position_multiplicity": max((row["max_position_multiplicity"] for row in records), default=0),
         },
         "search_nodes": sum(row["search_nodes"] for row in records),
+        "terminal_utility_policy": "winner utility +/-1; terminal without winner 0.0; CENSORED null",
+        "trajectory_independence": {
+            "unique_action_sequence_count": unique_action_sequence_count,
+            "unique_action_sequence_fraction": unique_action_sequence_count / len(records) if records else 0.0,
+            "role_swap_distinct_pair_count": role_swap_distinct_count,
+            "status": "PASS" if unique_action_sequence_count > 1 and role_swap_distinct_count > 0 else "DEFER",
+            "reason": "role-swapped trajectories are not distinct under this deterministic policy" if unique_action_sequence_count <= 1 else "sequence diversity recorded; no admission gate inferred",
+        },
     }
 
 
