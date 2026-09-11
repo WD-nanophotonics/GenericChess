@@ -230,7 +230,7 @@ def _backbone_predicate(compiled) -> dict[str, Any]:
     candidates = []
     for row in profile_rows:
         lattice = row["movement_lattice"]
-        opening_ok = any(row["scc_component_size"] > 1 and source["can_reach_higher_owner_relative_rank"] and source["can_reach_lower_owner_relative_rank"] for source in row["opening_sources"])
+        opening_ok = any(source["scc_component_size"] > 1 and source["can_reach_higher_owner_relative_rank"] and source["can_reach_lower_owner_relative_rank"] for source in row["opening_sources"])
         eligible = lattice["integer_lattice_rank"] == 2 and lattice["lattice_index"] == 1 and opening_ok
         candidates.append({"type_id": row["type_id"], "eligible": eligible, "opening_source_count": len(row["opening_sources"])})
     backbone = next((row["type_id"] for row in candidates if row["eligible"]), None)
@@ -427,7 +427,22 @@ def _generate_entry(entry: dict[str, Any]) -> tuple[dict[str, Any], Any]:
             accepted_attempt = attempt
             break
     if accepted is None:
-        raise RuntimeError(f"F86N bounded sampler exhausted for {entry['sample_id']}")
+        return {
+            "sample_id": entry["sample_id"],
+            "board_size": entry["board_size"],
+            "source_seed": entry["source_seed"],
+            "movement_rng_seed": entry["movement_rng_seed"],
+            "accepted_attempt": None,
+            "attempts_used": MAX_ATTEMPTS,
+            "source_ruleset_fingerprint": entry["source_ruleset_fingerprint"],
+            "candidate_ruleset_fingerprint": None,
+            "candidate_ruleset": None,
+            "sampling_status": "STRUCTURAL_PREDICATE_UNAVAILABLE",
+            "backbone_type": None,
+            "failure_reason": "NO_ATTEMPT_SATISFIED_MATERIAL_LEVEL_TRANSPORT_BACKBONE_PREDICATE",
+            "backbone_predicate": None,
+            "material_profile": None,
+        }, None
     candidate, compiled, predicate = accepted
     return {
         "sample_id": entry["sample_id"],
@@ -436,10 +451,12 @@ def _generate_entry(entry: dict[str, Any]) -> tuple[dict[str, Any], Any]:
         "movement_rng_seed": entry["movement_rng_seed"],
         "accepted_attempt": accepted_attempt,
         "attempts_used": accepted_attempt + 1,
+        "sampling_status": "ACCEPTED_STRUCTURAL_BACKBONE",
         "source_ruleset_fingerprint": entry["source_ruleset_fingerprint"],
         "candidate_ruleset_fingerprint": compiled.ruleset_fingerprint,
         "candidate_ruleset": ruleset_to_dict(candidate),
         "backbone_predicate": predicate,
+        "backbone_type": predicate["backbone_type"],
         "material_profile": _material_profile(compiled, predicate),
     }, compiled
 
@@ -452,6 +469,16 @@ def run(root: Path, output: Path) -> dict[str, Any]:
     for entry in manifest["entries"]:
         result, compiled = _generate_entry(entry)
         candidates.append(result)
+        if compiled is None:
+            static.append({
+                "sample_id": result["sample_id"],
+                "sampling_status": result["sampling_status"],
+                "attempts_used": result["attempts_used"],
+                "candidate_ruleset_fingerprint": None,
+                "backbone_type": None,
+                "material_profile": None,
+            })
+            continue
         compiled_by_sample[result["sample_id"]] = compiled
         mechanism = _static_mechanism(compiled)
         static.append({
@@ -503,6 +530,11 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         "candidate_profile": PROFILE,
         "manifest": "artifacts/f86n_transport_aware_signed_sampler/manifest.json",
         "candidates": candidates,
+        "sampling_summary": {
+            "accepted_count": sum(row["sampling_status"] == "ACCEPTED_STRUCTURAL_BACKBONE" for row in candidates),
+            "structural_predicate_unavailable_count": sum(row["sampling_status"] == "STRUCTURAL_PREDICATE_UNAVAILABLE" for row in candidates),
+            "max_attempts": MAX_ATTEMPTS,
+        },
         "static": static,
         "targeted_static_mate_capacity": targeted,
         "routing": {"static": routes, "dynamic": "NOT_RUN_BY_STATIC_PREFLIGHT"},

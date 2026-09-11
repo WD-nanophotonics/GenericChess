@@ -53,3 +53,44 @@ def test_f86n_result_contract_is_deferred_until_after_prep_publish():
     payload = json.loads(RESULT.read_text(encoding="utf-8"))
     assert payload["status"] == "F86N_STATIC_PREFLIGHT_ZERO_DYNAMIC_COMPUTE"
     assert payload["dynamic"]["real_games"] == 0
+
+
+def test_f86n_result_freezes_bounded_sampling_and_fail_closed_unavailable_material():
+    payload = json.loads(RESULT.read_text(encoding="utf-8"))
+    candidates = {row["sample_id"]: row for row in payload["candidates"]}
+    assert payload["sampling_summary"] == {
+        "accepted_count": 7,
+        "max_attempts": 4096,
+        "structural_predicate_unavailable_count": 1,
+    }
+    assert [candidates[sample_id]["accepted_attempt"] for sample_id in ("V4-2", "V4-3", "V4-4", "V4-5", "V5-2", "V5-3", "V5-4", "V5-5")] == [1, 14, 4, 41, None, 7, 25, 31]
+    assert candidates["V5-2"]["sampling_status"] == "STRUCTURAL_PREDICATE_UNAVAILABLE"
+    assert candidates["V5-3"]["backbone_type"] == "P1"
+
+
+def test_f86n_targeted_static_gate_routes_witness_before_truncation():
+    payload = json.loads(RESULT.read_text(encoding="utf-8"))
+    assert payload["static_candidate_checks"] == {
+        "V4-3": 396,
+        "V5-3": 2048,
+        "per_cell_cap": 2048,
+        "total": 2444,
+        "total_cap": 4096,
+    }
+    targeted = {row["sample_id"]: row for row in payload["targeted_static_mate_capacity"]}
+    assert targeted["V4-3"]["validated_position_count"] == 334
+    assert targeted["V4-3"]["validated_template_count"] == 33
+    assert targeted["V4-3"]["truncation"] is False
+    assert targeted["V4-3"]["joint_kinematically_reachable_count"] == 0
+    assert targeted["V5-3"]["validated_position_count"] == 1870
+    assert targeted["V5-3"]["validated_template_count"] == 98
+    assert targeted["V5-3"]["truncation"] is True
+    assert targeted["V5-3"]["joint_kinematically_reachable_count"] == 16
+    assert targeted["V5-3"]["minimum_optimistic_ply_lower_bound"] == 10
+    assert payload["routing"] == {
+        "dynamic": "NOT_RUN_BY_STATIC_PREFLIGHT",
+        "static": [
+            {"sample_id": "V4-3", "routing": "TRANSPORT_AWARE_SIGNED_SAMPLER_INSUFFICIENT_KINEMATICALLY"},
+            {"sample_id": "V5-3", "routing": "TRANSPORT_AWARE_SIGNED_SAMPLER_STATIC_WITNESS_EXISTS"},
+        ],
+    }
