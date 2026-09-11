@@ -36,17 +36,15 @@ wall time by only 0.35%, which is not a meaningful scaling gain in this probe.
 
 ## Decision and limits
 
-The measured best throughput/safety tradeoff is three lanes: it captures nearly
-all observed wall-time improvement while using less peak RSS than four lanes.
-The diagnostic is intentionally smoke-sized, so it does not establish full
-teacher-acquisition memory scaling or authorize acquisition by itself. The F85
-harness therefore now preserves the frozen manifest's original precompute
-contract bytes while requiring an explicit three-lane runtime plan; two- and
-four-lane plans are rejected before any teacher runner starts, and batch width
-uses the validated plan value.
+The smoke observation favored three lanes on this narrow workload, but it does
+not establish full teacher-acquisition memory scaling or authorize production
+geometry. The F85 harness therefore remains at the previously calibrated
+two-lane authority: the frozen manifest's original precompute contract bytes
+and runtime validator both require two lanes, while three- and four-lane plans
+are rejected before any teacher runner starts.
 
 The resulting classification is
-`C2_TRAIN_TEACHER_ACQUISITION_HARNESS_READY_FOR_LARGE_APPROVAL` with a new
-three-lane tuple required for separate Chat scientific and registered
-Supervisor approval. Until both approvals bind that exact tuple, teacher
-acquisition remains prohibited.
+`C2_TRAIN_TEACHER_ACQUISITION_HARNESS_READY_FOR_LARGE_APPROVAL` remains bound
+to the calibrated two-lane geometry. The smoke result is diagnostic history
+only; teacher acquisition remains prohibited until the exact two-lane tuple
+has separate Chat scientific and registered Supervisor approval.
