@@ -1,120 +1,79 @@
 {
-  "baseline_sha": "ef9a165ddebc8206e61327c196dc0baec2b9bd75",
+  "arena_fix_checkpoint": "f592fb29a36dafb875ceaf50e88161482d518eba",
+  "authoritative_completion": {
+    "clean_game_count": 14,
+    "clean_pair_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "contaminated_pair_excluded": true,
+    "contaminated_pair_indices": [
+      5
+    ]
+  },
+  "baseline_sha": "0a814fb14ac4fa93191f681c2a6c128145450a91",
   "candidate_model_sha256": "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6",
-  "champion_after": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+  "champion_after": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
   "champion_before": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
   "child_checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
-  "classification": "PARENT_ANCHORED_FULL_RESIDUAL_FINAL_CONFIRMED",
-  "code_provenance": {
-    "generic_chess/learning/arena.py": "d1c1ccca293aa83b0d9c5acb08ad183a985fb0b99d93e91b3819a41427f4f86c",
-    "generic_chess/learning/openings.py": "1c088b6108c7586b869f41f0c6b6a73f899a5682e8c15699ece8f41ee9c6e8d1",
-    "generic_chess/native/semantic_engine.py": "73945b336308aa64e3e45a21e1ca49e8fa43690c576b1819bc27d82112e82d4a",
-    "scripts/f81_r1_eight_lane_final_strength_confirmation.py": "dffa5ba08a6b23759a6399c1163fc9b8b0e7281743083cbd341452338e35adcb"
-  },
-  "completed_games": 16,
-  "completed_pairs": 8,
-  "config": {
-    "child_nodes_per_move": 512,
-    "execution_caps": {
-      "logical_cpu_count": 20,
-      "max_concurrent_games": 8,
-      "max_stage_games": 16,
-      "per_game_nodes": 262144,
-      "per_game_plies": 512,
-      "per_game_wall_seconds": 3600,
-      "stage_wall_seconds": 3600
-    },
-    "max_depth": 12,
-    "nodes_per_move": 512,
-    "pairs": 8,
-    "parent_nodes_per_move": 512,
-    "root_window_pruning": true,
-    "total_games": 16,
-    "tt_megabytes": 8,
-    "workers": 8
-  },
+  "classification": "PARENT_ANCHORED_FULL_RESIDUAL_FINAL_CONFIRMATION_UNRESOLVED",
   "contract_failures": [],
   "corpus_content_sha256": "5b3bdc5ea81d1ccb8326957cc85afd6f6e16df902deabd9f9cc75fa37ee79b04",
   "corpus_id": "67b9dafc51a618645c3328228c30a8744cc8f988395a7d54d382b65276dc935c",
-  "corpus_path": "artifacts/f81_final_confirmation/openings.json",
-  "effective_game_lanes": 8,
-  "fresh_bootstrap_high": 0.8125,
-  "fresh_bootstrap_low": 0.40625,
-  "fresh_child_better_pairs": 4,
-  "fresh_child_worse_pairs": 1,
-  "fresh_game_draws": 2,
-  "fresh_game_losses": 5,
-  "fresh_game_wins": 9,
-  "fresh_mean_pair_score": 0.625,
-  "fresh_pair_scores": [
-    1.0,
-    0.5,
-    0.5,
-    0.0,
-    0.5,
-    0.75,
-    1.0,
-    0.75
-  ],
-  "fresh_tied_pairs": 3,
+  "corpus_path": "artifacts\\f81_final_confirmation\\openings.json",
+  "invalidated_diagnostic_scores": {
+    "fresh_bootstrap_high": 0.8125,
+    "fresh_bootstrap_low": 0.40625,
+    "fresh_child_better_pairs": 4,
+    "fresh_child_worse_pairs": 1,
+    "fresh_game_draws": 2,
+    "fresh_game_losses": 5,
+    "fresh_game_wins": 9,
+    "fresh_mean_pair_score": 0.625,
+    "fresh_pair_scores": [
+      1.0,
+      0.5,
+      0.5,
+      0.0,
+      0.5,
+      0.75,
+      1.0,
+      0.75
+    ],
+    "fresh_tied_pairs": 3
+  },
+  "invalidated_prior_result": "INVALIDATED_BY_TIME_BUDGET_CAP_CONTRACT_MISMATCH",
+  "original_r1_artifact": {
+    "content_sha256": "dc769e52c7d5d6357fabfb640c88a51ab3b0600b9c97aec8919c810b7d25e938",
+    "path": "artifacts/f81_final_confirmation/final_strength_evidence.json"
+  },
+  "original_r1_report": {
+    "content_sha256": "9273856d350f9e9a6b94eecba251baaf4fd4275f70d8ddeb82ed39f493ad851a",
+    "path": "docs/architecture/GENERICCHESS_F81_R1_EIGHT_LANE_FINAL_STRENGTH_CONFIRMATION.md"
+  },
   "parent_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
-  "prior_evidence": {
-    "f79": {
-      "content_sha256": "888864459718cbc1d81cd0e4d1f9e3cae5e1eb116b9c3d05ca2f559e35fb9477",
-      "path": "artifacts\\f79_parent_anchored_full_residual\\arena4_strength_evidence.json"
-    },
-    "f80": {
-      "content_sha256": "438ddec64d1225488900f3a823fa0fd8a52a9dd60942b39d1f9f32dcb3b0ead0",
-      "path": "artifacts\\f80_parent_anchored_full_residual\\arena8_strength_evidence.json"
-    },
-    "f80_report": {
-      "content_sha256": "e992fb9f7804d48878b3eb71a309d95f3979f8b55a775ecded9e6bff6ffcfd4b",
-      "path": "docs\\architecture\\GENERICCHESS_F80_R1_EXTENDED_PLY_FROZEN_ARENA8.md"
-    }
+  "pending_rerun_pair_indices": [
+    5
+  ],
+  "retained_clean_game_count": 14,
+  "retained_clean_pair_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+  ],
+  "schema": "generic-chess-f81-final-strength-evidence-v2-pending-corrective",
+  "time_cap_audit": {
+    "content_sha256": "1c418b509654f4f054db738720880bf4435e611bd2cba589b4018d78a2c961a6",
+    "path": "artifacts\\f81_final_confirmation\\f81_r1_time_cap_audit.json"
   },
-  "replay_validation": {
-    "completed_games": 16,
-    "completed_pairs": 8,
-    "status": "COMPLETE",
-    "summary_equal": true
-  },
-  "schema": "generic-chess-f81-final-strength-evidence-v1",
-  "telemetry": {
-    "all_root_window_pruning_true": true,
-    "by_role": {
-      "child": {
-        "completed_depths": {
-          "1": 873,
-          "12": 1,
-          "2": 656
-        },
-        "nodes": 782860,
-        "searches": 1530,
-        "termination_reasons": [
-          "completed",
-          "node_budget"
-        ]
-      },
-      "parent": {
-        "completed_depths": {
-          "0": 1,
-          "1": 958,
-          "12": 1,
-          "2": 568,
-          "8": 1
-        },
-        "nodes": 782016,
-        "searches": 1529,
-        "termination_reasons": [
-          "completed",
-          "node_budget",
-          "time_budget"
-        ]
-      }
-    },
-    "max_nodes_per_search": 512,
-    "missing_root_window_pruning_rows": 0,
-    "total_searches": 3059
-  },
-  "work_order": "GENERICCHESS-F81-R1-EIGHT-LANE-FRESH-CORPUS-FINAL-CONFIRMATION"
+  "work_order": "GENERICCHESS-F81-R2A-FAIL-CLOSED-EVIDENCE-INVALIDATION"
 }
