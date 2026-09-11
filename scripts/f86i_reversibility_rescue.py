@@ -464,12 +464,14 @@ def _dynamic_route(labels: list[str] | tuple[str, ...]) -> str:
     """Apply the preregistered decisive-versus-censored termination route."""
     total = len(labels)
     decisive = sum(label == "checkmate" for label in labels)
-    censored_or_repetition = sum(
-        label.startswith("ongoing@") or label == "repetition" for label in labels
+    bad_terminal = sum(
+        label.startswith("ongoing@")
+        or label in {"repetition", "stalemate"}
+        for label in labels
     )
-    if decisive and censored_or_repetition * 2 < total:
+    if decisive and bad_terminal * 2 <= total:
         return "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
-    if censored_or_repetition:
+    if bad_terminal:
         return "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
     return "KINEMATIC_REPAIR_SUCCEEDS_BUT_DYNAMIC_TERMINATION_STILL_WEAK"
 

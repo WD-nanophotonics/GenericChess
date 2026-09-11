@@ -120,8 +120,17 @@ def test_f86i_r2_routing_predicate_rejects_censored_termination_viability_claims
     assert _dynamic_route(["checkmate"] + ["ongoing@32"] * 15) == (
         "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
     )
+    assert _dynamic_route(["checkmate"] + ["repetition"] * 15) == (
+        "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
+    )
+    assert _dynamic_route(["checkmate"] + ["stalemate"] * 15) == (
+        "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
+    )
     assert _dynamic_route(["ongoing@32"] * 16) != "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
     assert _dynamic_route(["checkmate", "stalemate"]) == "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
+    assert _dynamic_route(["checkmate"] * 8 + ["stalemate"] * 8) == (
+        "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
+    )
 
 
 def test_f86i_r2_paired_outcomes_use_half_for_terminal_draw_and_null_for_ongoing():

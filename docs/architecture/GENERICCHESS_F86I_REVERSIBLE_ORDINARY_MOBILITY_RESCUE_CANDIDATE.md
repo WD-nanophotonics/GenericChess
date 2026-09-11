@@ -139,3 +139,8 @@ The corrected dynamic line is:
 ```text
 dynamic smoke: REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION
 ```
+
+The executable predicate treats `ongoing@32`, `repetition`, and `stalemate`
+as bad-terminal/censored outcomes for dominance accounting. An exact 50/50
+decisive-versus-bad boundary is retained as non-dominated; the observed 1/16
+checkmate versus 15/16 ongoing cohort is therefore unambiguously overbalanced.
