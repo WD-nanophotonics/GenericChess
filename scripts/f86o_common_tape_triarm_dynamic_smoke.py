@@ -347,7 +347,13 @@ def _comparison(games: list[dict[str, Any]]) -> dict[str, Any]:
     rows = []
     for sample_id in SAMPLES:
         by_arm = {arm: [game for game in games if game["arm"] == arm and game["sample_id"] == sample_id] for arm in ARMS}
-        summary = {arm: _arm_summary(by_arm[arm], arm) for arm in ARMS}
+        summary = {
+            arm: {
+                "terminal_distribution": dict(sorted(Counter(game["outcome_label"] for game in by_arm[arm]).items())),
+                "quality": _profile(by_arm[arm]),
+            }
+            for arm in ARMS
+        }
         counts = {arm: summary[arm]["terminal_distribution"] for arm in ARMS}
         rows.append({
             "sample_id": sample_id,
