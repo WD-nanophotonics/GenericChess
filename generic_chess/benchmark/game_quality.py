@@ -292,8 +292,8 @@ def measure_game_quality(
         if source is not None and initial.board[source.rank * game.board_size + source.file] is not None:
             mobility[initial.board[source.rank * game.board_size + source.file].current_type_id] += 1
 
-    first_scores: list[float] = []
-    second_scores: list[float] = []
+    first_scores: list[float | None] = []
+    second_scores: list[float | None] = []
     tactical_results = []
     observations: list[QualityObservation] = []
     for pair_index in range(trajectory_count):
@@ -303,13 +303,13 @@ def measure_game_quality(
         session, trajectory_branchings = _play_policy_game_with_trace(
             compiled, {0: policy_a, 1: policy_b}, max_ply
         )
-        first_scores.append(_game_score(session, 0))
-        second_scores.append(_game_score(session, 1))
         terminal_status = (
             CENSORED_TERMINAL_STATUS
             if session.result.status.value == "ongoing" and len(session.history) >= max_ply
             else session.result.status.value
         )
+        first_scores.append(None if terminal_status == CENSORED_TERMINAL_STATUS else _game_score(session, 0))
+        second_scores.append(None if terminal_status == CENSORED_TERMINAL_STATUS else _game_score(session, 1))
         observations.append(QualityObservation(
             tuple(trajectory_branchings), len(session.history), terminal_status,
             first_scores[-1], second_scores[-1],
@@ -330,13 +330,13 @@ def measure_game_quality(
             {0: random.Random(pair_seed + 1), 1: random.Random(pair_seed)},
             max_ply,
         )
-        first_scores.append(_game_score(paired_session, 0))
-        second_scores.append(_game_score(paired_session, 1))
         paired_terminal_status = (
             CENSORED_TERMINAL_STATUS
             if paired_session.result.status.value == "ongoing" and len(paired_session.history) >= max_ply
             else paired_session.result.status.value
         )
+        first_scores.append(None if paired_terminal_status == CENSORED_TERMINAL_STATUS else _game_score(paired_session, 0))
+        second_scores.append(None if paired_terminal_status == CENSORED_TERMINAL_STATUS else _game_score(paired_session, 1))
         observations.append(QualityObservation(
             tuple(paired_branchings), len(paired_session.history), paired_terminal_status,
             first_scores[-1], second_scores[-1],
@@ -365,9 +365,10 @@ def measure_game_quality(
     tactical_results.append(probe_terminal_only(opening, depth=4, node_budget=256))
 
     paired_count = trajectory_count
-    played_game_count = len(first_scores)
-    first_score = sum(first_scores) / played_game_count if played_game_count else None
-    second_score = sum(second_scores) / played_game_count if played_game_count else None
+    score_pairs = [(first, second) for first, second in zip(first_scores, second_scores) if first is not None and second is not None]
+    played_game_count = len(score_pairs)
+    first_score = sum(first for first, _second in score_pairs) / played_game_count if played_game_count else None
+    second_score = sum(second for _first, second in score_pairs) / played_game_count if played_game_count else None
     solved = sum(result.solved for result in tactical_results)
     forced_wins = sum(result.forced_win for result in tactical_results)
     unique_best_values = [result.unique_best for result in tactical_results if result.unique_best is not None]

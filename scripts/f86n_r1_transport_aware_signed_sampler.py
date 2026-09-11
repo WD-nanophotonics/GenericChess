@@ -31,9 +31,17 @@ try:
         _static_mechanism,
     )
     from scripts.f86m_v4_3_movement_lattice_invariants import _lattice_info
+    from generic_chess.benchmark.qualification import (
+        opening_sources as _shared_opening_sources,
+        movement_graph as _shared_movement_graph,
+        reachable_squares as _shared_reachable_squares,
+        scc_info as _shared_scc_info,
+        transport_type_profile as _shared_transport_type_profile,
+    )
 except ModuleNotFoundError:
     from f86n_transport_aware_signed_sampler import MAX_ATTEMPTS, PROFILE as LEGACY_PROFILE, SIGNED_LEAP_POOL, SIGNED_RAY_POOL, RAY_MAX_STEPS, LEAP_SLOT_COUNT, LEAP_INCLUDE_PROBABILITY, RAY_INCLUDE_PROBABILITY, _sample_atoms, _source_rows, _orthogonal_anchor_atoms, _bounded_census, _static_mechanism
     from f86m_v4_3_movement_lattice_invariants import _lattice_info
+    from generic_chess.benchmark.qualification import opening_sources as _shared_opening_sources, movement_graph as _shared_movement_graph, reachable_squares as _shared_reachable_squares, scc_info as _shared_scc_info, transport_type_profile as _shared_transport_type_profile
 
 
 PROFILE = "TRANSPORT_AWARE_SIGNED_MOVEMENT_SAMPLER_PREFLIGHT_R1"
@@ -79,6 +87,8 @@ def _candidate_ruleset(source, movement_seed: int, attempt: int):
 
 
 def _opening_sources(compiled) -> dict[str, list[dict[str, Any]]]:
+    return _shared_opening_sources(compiled, owner=0, include_anchors=False)
+    """
     anchor = next(piece.type_id for piece in compiled.piece_types if piece.is_anchor)
     ordinals: dict[str, int] = defaultdict(int)
     rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -92,14 +102,16 @@ def _opening_sources(compiled) -> dict[str, list[dict[str, Any]]]:
             "square_index": index,
         })
     return dict(rows)
+    """
 
 
 def _graph(compiled, type_id: str):
-    n = compiled.board_size
-    return tuple(tuple(sorted(target.rank * n + target.file for target in compiled.empty_mobility[type_id][0][source])) for source in range(n * n))
+    return _shared_movement_graph(compiled, type_id, 0)
 
 
 def _scc(adjacency):
+    return _shared_scc_info(adjacency)
+    """
     index = 0
     stack = []
     on_stack = set()
@@ -136,9 +148,12 @@ def _scc(adjacency):
     components.sort(key=lambda component: component[0])
     ids = {node: component_id for component_id, component in enumerate(components) for node in component}
     return components, ids
+    """
 
 
 def _reachable(adjacency, source):
+    return _shared_reachable_squares(adjacency, source)
+    """
     reached = {source}
     queue = [source]
     while queue:
@@ -148,9 +163,12 @@ def _reachable(adjacency, source):
                 reached.add(target)
                 queue.append(target)
     return reached
+    """
 
 
 def _type_profile(compiled, type_id: str, sources: list[dict[str, Any]]) -> dict[str, Any]:
+    return _shared_transport_type_profile(compiled, type_id, sources, 0)
+    """
     n = compiled.board_size
     adjacency = _graph(compiled, type_id)
     components, component_ids = _scc(adjacency)
@@ -190,6 +208,7 @@ def _type_profile(compiled, type_id: str, sources: list[dict[str, Any]]) -> dict
         ],
         "opening_sources": source_rows,
     }
+    """
 
 
 def _backbone_predicate(compiled) -> dict[str, Any]:

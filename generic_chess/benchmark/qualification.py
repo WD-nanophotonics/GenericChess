@@ -3,12 +3,14 @@
 from __future__ import annotations
 
 import itertools
+import hashlib
+import json
 import math
 from collections import Counter, deque
 from dataclasses import dataclass, field
 from typing import Any
 
-from generic_chess.core.actions import action_is_board
+from generic_chess.core.actions import action_is_board, action_to_dict
 from generic_chess.core.attacks import is_in_check
 from generic_chess.core.coordinates import square_to_index
 from generic_chess.core.identity import position_identity_key
@@ -76,9 +78,15 @@ class QualificationReport:
     ruleset_fingerprint: str
     provenance: dict[str, Any]
     experiment_identity: str
+    qualification_target: str
+    required_layers: tuple[str, ...]
     layers: dict[str, str]
     raw_diagnostics: dict[str, Any]
     hard_gates: tuple[GateOutcome, ...]
+    integrity_gates: tuple[GateOutcome, ...]
+    qualification_gates: tuple[GateOutcome, ...]
+    reason_codes: tuple[str, ...]
+    layer_reasons: dict[str, tuple[str, ...]]
     fail_defer_reasons: tuple[str, ...]
     compute_usage: dict[str, Any]
     behavior_descriptors: dict[str, MetricEvidence]
@@ -96,9 +104,15 @@ class QualificationReport:
             "ruleset_fingerprint": self.ruleset_fingerprint,
             "provenance": self.provenance,
             "experiment_identity": self.experiment_identity,
+            "qualification_target": self.qualification_target,
+            "required_layers": list(self.required_layers),
             "layers": dict(self.layers),
             "raw_diagnostics": self.raw_diagnostics,
             "hard_gates": [gate.to_dict() for gate in self.hard_gates],
+            "integrity_gates": [gate.to_dict() for gate in self.integrity_gates],
+            "qualification_gates": [gate.to_dict() for gate in self.qualification_gates],
+            "reason_codes": list(self.reason_codes),
+            "layer_reasons": {key: list(value) for key, value in self.layer_reasons.items()},
             "fail_defer_reasons": list(self.fail_defer_reasons),
             "compute_usage": self.compute_usage,
             "behavior_descriptors": {
@@ -106,6 +120,16 @@ class QualificationReport:
             },
             "overall_status": self.overall_status,
         }
+
+
+def reduce_qualification_status(layers: dict[str, str], *, required_layers: tuple[str, ...], integrity_gates: tuple[GateOutcome, ...], qualification_gates: tuple[GateOutcome, ...]) -> str:
+    """Single status reducer; integrity and qualification gates remain separate."""
+    all_gates = integrity_gates + qualification_gates
+    if any(gate.status == STATUS_FAIL for gate in all_gates):
+        return STATUS_FAIL
+    if any(layers.get(layer) != STATUS_PASS for layer in required_layers):
+        return STATUS_DEFER
+    return STATUS_PASS
 
 
 def _vectors(compiled, type_id: str) -> list[tuple[int, int]]:
@@ -231,28 +255,89 @@ def _reachable(adjacency: tuple[tuple[int, ...], ...], source: int) -> set[int]:
     return reached
 
 
-def _opening_sources(compiled) -> dict[str, list[dict[str, Any]]]:
+def movement_graph(compiled, type_id: str, owner: int = 0) -> tuple[tuple[int, ...], ...]:
+    return _adjacency(compiled, type_id, owner)
+
+
+def scc_info(adjacency: tuple[tuple[int, ...], ...]) -> tuple[list[tuple[int, ...]], dict[int, int]]:
+    return _scc(adjacency)
+
+
+def reachable_squares(adjacency: tuple[tuple[int, ...], ...], source: int) -> set[int]:
+    return _reachable(adjacency, source)
+
+
+def opening_sources(compiled, *, owner: int | None = None, include_anchors: bool = True) -> dict[str, list[dict[str, Any]]]:
+    return _opening_sources(compiled, owner=owner, include_anchors=include_anchors)
+
+
+def transport_type_profile(compiled, type_id: str, sources: list[dict[str, Any]], owner: int = 0) -> dict[str, Any]:
+    n = compiled.board_size
+    adjacency = movement_graph(compiled, type_id, owner)
+    components, component_ids = scc_info(adjacency)
+    edges = sum(len(targets) for targets in adjacency)
+    reverse_edges = sum(int(source in adjacency[target]) for source, targets in enumerate(adjacency) for target in targets)
+    sinks = sum(not targets for targets in adjacency)
+    source_rows = []
+    for source in sources:
+        reached = reachable_squares(adjacency, source["square_index"])
+        component = components[component_ids[source["square_index"]]]
+        files = [index % n for index in component]
+        ranks = [index // n for index in component]
+        source_rows.append({
+            "source_id": source["source_id"],
+            "opening_square": [source["square_index"] % n, source["square_index"] // n],
+            "reachable_set_size": len(reached),
+            "reachable_board_fraction": len(reached) / (n * n),
+            "scc_component_id": component_ids[source["square_index"]],
+            "scc_component_size": len(component),
+            "scc_file_span": [min(files), max(files)],
+            "scc_owner_relative_rank_span": [min(ranks), max(ranks)],
+        })
+    union = set().union(*(reachable_squares(adjacency, source["square_index"]) for source in sources)) if sources else set()
+    return {
+        "type_id": type_id,
+        "used_in_opening": bool(sources),
+        "movement_lattice": lattice_info(compiled, type_id),
+        "directed_sink_fraction": sinks / (n * n),
+        "direct_reverse_edge_fraction": reverse_edges / edges if edges else 0.0,
+        "nontrivial_scc_fraction": sum(len(component) for component in components if len(component) > 1) / (n * n),
+        "transitive_source_union_square_count": len(union),
+        "transitive_source_union_board_fraction": len(union) / (n * n) if union else 0.0,
+        "source_component_diversity": len({row["scc_component_id"] for row in source_rows}),
+        "source_pairwise_reachable_overlap": [
+            len(reachable_squares(adjacency, left["square_index"]).intersection(reachable_squares(adjacency, right["square_index"])))
+            for index, left in enumerate(sources) for right in sources[index + 1:]
+        ],
+        "opening_sources": source_rows,
+    }
+
+
+def _opening_sources(compiled, *, owner: int | None = None, include_anchors: bool = True) -> dict[str, list[dict[str, Any]]]:
     anchor_ids = {piece.type_id for piece in compiled.piece_types if piece.is_anchor}
     ordinals: Counter[str] = Counter()
     rows: dict[str, list[dict[str, Any]]] = {}
     for index, piece in enumerate(compiled.initial_position.board):
-        if piece is None or piece.owner != 0 or piece.current_type_id in anchor_ids:
+        if piece is None or (owner is not None and piece.owner != owner) or (not include_anchors and piece.current_type_id in anchor_ids):
             continue
-        ordinals[piece.current_type_id] += 1
+        key = f"{piece.owner}:{piece.current_type_id}"
+        ordinals[key] += 1
         rows.setdefault(piece.current_type_id, []).append({
-            "source_id": f"{piece.current_type_id}@o0#{ordinals[piece.current_type_id]}",
+            "source_id": f"{piece.current_type_id}@o{piece.owner}#{ordinals[key]}",
+            "owner": piece.owner,
             "type_id": piece.current_type_id,
             "square_index": index,
         })
     return rows
 
 
-def component_info(compiled, type_id: str) -> dict[str, Any]:
-    adjacency = _adjacency(compiled, type_id)
+def component_info(compiled, type_id: str, owner: int = 0, *, opening_sources: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    adjacency = _adjacency(compiled, type_id, owner)
     components, component_ids = _scc(adjacency)
-    opening = _opening_sources(compiled).get(type_id, [])
+    opening = opening_sources if opening_sources is not None else _opening_sources(compiled, owner=owner).get(type_id, [])
     return {
         "type_id": type_id,
+        "owner": owner,
         "component_count": len(components),
         "component_sizes": [len(component) for component in components],
         "opening_piece_components": [
@@ -262,43 +347,58 @@ def component_info(compiled, type_id: str) -> dict[str, Any]:
     }
 
 
-def structural_profile(compiled) -> dict[str, Any]:
+def structural_profile(compiled, *, semantic_type_ids: set[str] | None = None) -> dict[str, Any]:
     """Shared Layer-B diagnostics; all fields are diagnostics, not universal gates."""
     n2 = compiled.board_size * compiled.board_size
-    anchor_ids = {piece.type_id for piece in compiled.piece_types if piece.is_anchor}
-    type_ids = [piece.type_id for piece in compiled.piece_types if piece.type_id not in anchor_ids]
-    source_rows = _opening_sources(compiled)
+    semantic_type_ids = semantic_type_ids or set()
     type_profiles = []
-    for type_id in sorted(type_ids):
-        adjacency = _adjacency(compiled, type_id)
-        components, component_ids = _scc(adjacency)
-        edge_count = sum(len(targets) for targets in adjacency)
-        reverse_edges = sum(int(source in adjacency[target]) for source, targets in enumerate(adjacency) for target in targets)
-        sinks = sum(not targets for targets in adjacency)
-        reached = set().union(*(_reachable(adjacency, row["square_index"]) for row in source_rows.get(type_id, []))) if source_rows.get(type_id) else set()
+    for type_id in sorted(piece.type_id for piece in compiled.piece_types):
+        piece_type = next(piece for piece in compiled.piece_types if piece.type_id == type_id)
+        owner_profiles = []
+        for owner in (0, 1):
+            adjacency = _adjacency(compiled, type_id, owner)
+            components, component_ids = _scc(adjacency)
+            edge_count = sum(len(targets) for targets in adjacency)
+            reverse_edges = sum(int(source in adjacency[target]) for source, targets in enumerate(adjacency) for target in targets)
+            sinks = sum(not targets for targets in adjacency)
+            source_rows = _opening_sources(compiled, owner=owner).get(type_id, [])
+            reached = set().union(*(_reachable(adjacency, row["square_index"]) for row in source_rows)) if source_rows else set()
+            owner_profiles.append({
+                "owner": owner,
+                "semantic_applicability": "DEFER_SEMANTIC_MOVEMENT" if type_id in semantic_type_ids else "APPLICABLE",
+                "movement_lattice": lattice_info(compiled, type_id),
+                "component_profile": component_info(compiled, type_id, owner, opening_sources=source_rows),
+                "directed_sink_fraction": sinks / n2,
+                "direct_reverse_edge_fraction": reverse_edges / edge_count if edge_count else 0.0,
+                "nontrivial_scc_vertex_fraction": sum(len(component) for component in components if len(component) > 1) / n2,
+                "opening_sources": source_rows,
+                "opening_source_reachable_union_square_count": len(reached),
+                "opening_source_reachable_union_fraction": len(reached) / n2 if reached else 0.0,
+                "opening_source_component_diversity": len({component_ids[row["square_index"]] for row in source_rows}),
+            })
         type_profiles.append({
             "type_id": type_id,
-            "movement_lattice": lattice_info(compiled, type_id),
-            "component_profile": component_info(compiled, type_id),
-            "directed_sink_fraction": sinks / n2,
-            "direct_reverse_edge_fraction": reverse_edges / edge_count if edge_count else 0.0,
-            "nontrivial_scc_vertex_fraction": sum(len(component) for component in components if len(component) > 1) / n2,
-            "opening_sources": source_rows.get(type_id, []),
-            "opening_source_reachable_union_square_count": len(reached),
-            "opening_source_reachable_union_fraction": len(reached) / n2 if reached else 0.0,
-            "opening_source_component_diversity": len({component_ids[row["square_index"]] for row in source_rows.get(type_id, [])}),
+            "is_anchor": piece_type.is_anchor,
+            "semantic_type": type_id in semantic_type_ids,
+            "owner_profiles": owner_profiles,
         })
-    material_counts = Counter(
-        piece.current_type_id
+    material_counts = Counter(piece.current_type_id for piece in compiled.initial_position.board if piece is not None)
+    material_by_owner = Counter(
+        f"o{piece.owner}:{piece.current_type_id}"
         for piece in compiled.initial_position.board
-        if piece is not None and piece.owner == 0 and piece.current_type_id not in anchor_ids
+        if piece is not None
     )
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "board_size": compiled.board_size,
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
         "materialized_type_counts": dict(sorted(material_counts.items())),
+        "materialized_type_counts_by_owner": dict(sorted(material_by_owner.items())),
         "type_profiles": type_profiles,
+        "semantic_applicability": {
+            type_id: ("DEFER_SEMANTIC_MOVEMENT" if type_id in semantic_type_ids else "APPLICABLE")
+            for type_id in sorted(piece.type_id for piece in compiled.piece_types)
+        },
         "universal_lattice_gate": MetricEvidence(
             "not_applied",
             "UNVALIDATED_HEURISTIC",
@@ -306,6 +406,34 @@ def structural_profile(compiled) -> dict[str, Any]:
             "rank/index is a diagnostic; no universal rank-2/index-1 gate",
         ).to_dict(),
     }
+
+
+def calibration_reason_codes(structural: dict[str, Any], *, control_class: str, terminal_transport: dict[str, Any] | None = None) -> tuple[str, ...]:
+    """Translate measured Layer-B/authority facts into stable calibration codes."""
+    profiles = [owner for row in structural["type_profiles"] for owner in row["owner_profiles"]]
+    codes: list[str] = []
+    if control_class == "negative":
+        if any(owner["movement_lattice"]["integer_lattice_rank"] < 2 for owner in profiles):
+            codes.append("LATTICE_RANK_DEFICIT")
+        if any((owner["movement_lattice"]["lattice_index"] or 1) > 1 for owner in profiles):
+            codes.append("LATTICE_RESIDUE_CONFINEMENT")
+        if any(owner["directed_sink_fraction"] > 0 for owner in profiles):
+            codes.append("SINK_COMPONENTS")
+        if any(owner["direct_reverse_edge_fraction"] == 0 for owner in profiles):
+            codes.append("ONE_WAY_TRANSPORT")
+        if any(owner["opening_source_reachable_union_fraction"] < 1 for owner in profiles if owner["opening_sources"]):
+            codes.append("FINITE_REACHABILITY_CONFINEMENT")
+        if any(owner["direct_reverse_edge_fraction"] >= 0.5 for owner in profiles):
+            codes.append("HIGH_LOCAL_REVERSIBILITY")
+        if terminal_transport and terminal_transport.get("reason_code"):
+            codes.append(terminal_transport["reason_code"])
+    elif control_class == "boundary":
+        if any(owner["opening_source_reachable_union_square_count"] > 1 for owner in profiles):
+            codes.append("STRUCTURAL_BACKBONE_WITNESS")
+        codes.append("BOUNDARY_NOT_ADMISSION")
+    elif any(value != "APPLICABLE" for value in structural.get("semantic_applicability", {}).values()):
+        codes.append("SEMANTIC_MOVEMENT_NOT_APPLICABLE")
+    return tuple(dict.fromkeys(codes))
 
 
 def _normalized_terminal(session: GameSession, max_ply: int) -> tuple[str, bool]:
@@ -330,8 +458,12 @@ def common_tape_games(compiled, *, pair_count: int, max_ply: int, seed: int, tap
             move_index = {0: 0, 1: 0}
             captures = 0
             checks = 0
+            action_sequence: list[dict[str, Any]] = []
             while session.result.status.value == "ongoing" and len(session.history) < max_ply:
-                legal = session.legal_actions()
+                legal = sorted(
+                    session.legal_actions(),
+                    key=lambda candidate: json.dumps(action_to_dict(candidate), sort_keys=True, separators=(",", ":")),
+                )
                 if not legal:
                     break
                 branchings.append(len(legal))
@@ -343,28 +475,42 @@ def common_tape_games(compiled, *, pair_count: int, max_ply: int, seed: int, tap
                     target = session.state.position.board[square_to_index(action.to_square, compiled.board_size)]
                     if target is not None and target.owner != actor:
                         captures += 1
+                action_sequence.append({"actor": actor, "action": action_to_dict(action), "legal_action_count": len(legal)})
                 session.submit(action)
                 if is_in_check(session.state.position, session.state.position.side_to_move, compiled):
                     checks += 1
             terminal, censored = _normalized_terminal(session, max_ply)
+            first_score = None if censored else (0.5 if session.result.winner is None else (1.0 if session.result.winner == 0 else 0.0))
+            second_score = None if censored else (0.5 if session.result.winner is None else (1.0 if session.result.winner == 1 else 0.0))
+            sequence_bytes = json.dumps(action_sequence, sort_keys=True, separators=(",", ":")).encode("utf-8")
             records.append({
                 "pair_index": pair,
                 "role_swap": swapped,
+                "seat_assignment": {"player0": "B" if swapped else "A", "player1": "A" if swapped else "B"},
                 "opening_identity": position_identity_key(compiled.initial_position, compiled),
                 "terminal_status": terminal,
                 "completion": "CENSORED" if censored else "TERMINAL",
+                "winner": session.result.winner,
+                "first_player_score": first_score,
+                "second_player_score": second_score,
                 "plies": len(session.history),
                 "branching_sequence": list(branchings),
                 "capture_count": captures,
                 "check_count": checks,
                 "side_to_move_final": session.state.position.side_to_move,
+                "action_sequence_sha256": hashlib.sha256(sequence_bytes).hexdigest(),
+                "final_position_digest": position_identity_key(session.state.position, compiled),
             })
-            observations.append(QualityObservation(tuple(branchings), len(session.history), terminal))
+            observations.append(QualityObservation(tuple(branchings), len(session.history), terminal, first_score, second_score))
     profile = profile_from_observations(observations, ruleset_fingerprint=compiled.ruleset_fingerprint, board_size=compiled.board_size)
     branchings = [count for row in records for count in row["branching_sequence"]]
     total_moves = sum(row["plies"] for row in records)
     total_captures = sum(row["capture_count"] for row in records)
     total_checks = sum(row["check_count"] for row in records)
+    opening_identity_count = len({row["opening_identity"] for row in records})
+    terminal_counts = Counter(row["terminal_status"] for row in records)
+    completed = len(records) - sum(row["completion"] == "CENSORED" for row in records)
+    decisive = sum(row["winner"] is not None for row in records if row["completion"] != "CENSORED")
     return {
         "tape_schema": "PolicyTape",
         "pair_count": pair_count,
@@ -372,8 +518,17 @@ def common_tape_games(compiled, *, pair_count: int, max_ply: int, seed: int, tap
         "tape_length": tape_length,
         "records": records,
         "profile": profile.to_dict(),
-        "terminal_counts": dict(sorted(Counter(row["terminal_status"] for row in records).items())),
+        "terminal_counts": dict(sorted(terminal_counts.items())),
         "censored_count": sum(row["completion"] == "CENSORED" for row in records),
+        "completion_fraction": completed / len(records) if records else 0.0,
+        "terminal_fractions": {
+            "decisive": decisive / len(records) if records else 0.0,
+            "checkmate": terminal_counts["checkmate"] / len(records) if records else 0.0,
+            "stalemate": terminal_counts["stalemate"] / len(records) if records else 0.0,
+            "repetition": terminal_counts["repetition"] / len(records) if records else 0.0,
+            "other_draw": sum(terminal_counts[key] for key in ("draw", "perpetual_check")) / len(records) if records else 0.0,
+            "censored": terminal_counts["CENSORED"] / len(records) if records else 0.0,
+        },
         "branching_distribution": dict(sorted(Counter(branchings).items())),
         "legal_action_collapse_fraction": sum(count <= 1 for count in branchings) / len(branchings) if branchings else 0.0,
         "capture_check_density": {
@@ -383,43 +538,76 @@ def common_tape_games(compiled, *, pair_count: int, max_ply: int, seed: int, tap
             "capture_rate": total_captures / total_moves if total_moves else 0.0,
             "check_rate": total_checks / total_moves if total_moves else 0.0,
         },
-        "side_bias": profile.side_bias_magnitude,
-        "opening_identity_sensitivity": len({row["opening_identity"] for row in records}),
+        "side_bias": {
+            "magnitude": profile.side_bias_magnitude,
+            "first_player_score": profile.first_player_score,
+            "second_player_score": profile.second_player_score,
+            "scoreable_games": sum(row["first_player_score"] is not None for row in records),
+        },
+        "opening_identity_count": opening_identity_count,
+        "opening_sensitivity": {"status": "UNMEASURED" if opening_identity_count < 2 else "MEASURED", "identity_count": opening_identity_count},
     }
 
 
-def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, scope: str = "F87A") -> QualificationReport:
-    gates = (
+def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, scope: str = "F87A") -> QualificationReport:
+    required_layers = ("A", "B", "C")
+    layer_c_integrity = dynamic_status if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else (STATUS_PASS if replay_equal else STATUS_FAIL)
+    integrity_gates = (
         GateOutcome("ruleset_executes", STATUS_PASS, "GENERICCHESS_SPECIFIC", "compiler/core accepted the ruleset", "layer_a_execution"),
-        GateOutcome("shared_structural_probe", STATUS_PASS, "GENERICCHESS_SPECIFIC", "shared lattice/SCC/reachability probe completed", "layer_b_probe"),
-        GateOutcome("common_tape_replay", dynamic_status if dynamic_status == STATUS_DEFER else (STATUS_PASS if replay_equal else STATUS_FAIL), "EMPIRICAL_GATE", "semantic runtime required" if dynamic_status == STATUS_DEFER else ("identical bounded replay" if replay_equal else "bounded replay changed"), "layer_c_replay"),
+        GateOutcome("shared_structural_probe_integrity", STATUS_PASS, "GENERICCHESS_SPECIFIC", "shared owner/anchor structural probe completed", "layer_b_probe"),
+        GateOutcome("common_tape_replay_identity", layer_c_integrity, "EMPIRICAL_GATE", "semantic runtime required" if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else ("identical canonical bounded replay" if replay_equal else "canonical replay changed"), "layer_c_replay"),
     )
-    layers = {"A": STATUS_PASS, "B": STATUS_PASS, "C": dynamic_status if dynamic_status == STATUS_DEFER else (STATUS_PASS if replay_equal else STATUS_FAIL), "D": STATUS_DEFER, "E": STATUS_DEFER}
+    if control_class == "negative":
+        layer_b_status = STATUS_PASS if layer_b_reason_codes else STATUS_DEFER
+        layer_b_reason = "calibrated structural pathology reason codes recorded" if layer_b_reason_codes else "negative control produced no calibrated pathology reason"
+    elif control_class == "boundary":
+        layer_b_status = STATUS_DEFER
+        layer_b_reason = "boundary witness is diagnostic; admission authority remains deferred"
+    else:
+        layer_b_status = STATUS_DEFER if structural.get("semantic_applicability", {}).values() and any(value != "APPLICABLE" for value in structural["semantic_applicability"].values()) else STATUS_DEFER
+        layer_b_reason = "semantic movement metrics are not applicable to the legacy empty-mobility probe"
+    layer_c_status = STATUS_DEFER
+    qualification_gates = (
+        GateOutcome("layer_b_calibration", layer_b_status, "EMPIRICAL_GATE", layer_b_reason, "layer_b_qualification"),
+        GateOutcome("layer_c_playability", layer_c_status, "EMPIRICAL_GATE", "playability authority is not calibrated in F87A-R1", "layer_c_qualification"),
+    )
+    layers = {"A": STATUS_PASS, "B": layer_b_status, "C": layer_c_status, "D": STATUS_DEFER, "E": STATUS_DEFER}
+    reason_codes = tuple(dict.fromkeys(layer_b_reason_codes + (("SEMANTIC_MOVEMENT_NOT_APPLICABLE",) if layer_b_status == STATUS_DEFER and control_class == "positive_semantic" else ()) + ("PLAYABILITY_AUTHORITY_UNCALIBRATED",)))
     reasons = (
-        "Layer D paired strength-response is defined but intentionally not measured in F87A",
-        "Layer E learning/transfer adapter is defined but intentionally not measured in F87A",
+        "Layer C replay identity is an integrity gate; playability qualification remains DEFER",
+        "Layer D paired strength-response is defined but intentionally not measured in F87A-R1",
+        "Layer E learning/transfer adapter is defined but intentionally not measured in F87A-R1",
     )
     descriptors = {
         "structural_probe": MetricEvidence(structural, "GENERICCHESS_SPECIFIC", STATUS_PASS),
-        "censored_trajectory_count": MetricEvidence(dynamic["censored_count"], "GENERICCHESS_SPECIFIC", dynamic_status),
-        "skill_discrimination": MetricEvidence(None, "EMPIRICAL_GATE", STATUS_DEFER, "agent ladder/Arena not run in F87A"),
+        "censored_trajectory_count": MetricEvidence(dynamic.get("censored_count", 0), "GENERICCHESS_SPECIFIC", dynamic_status),
+        "terminal_transport": MetricEvidence(terminal_transport, "GENERICCHESS_SPECIFIC", STATUS_DEFER if terminal_transport is None else terminal_transport.get("status", STATUS_DEFER)),
+        "skill_discrimination": MetricEvidence(None, "EMPIRICAL_GATE", STATUS_DEFER, "agent ladder/Arena not run in F87A-R1"),
     }
+    overall_status = reduce_qualification_status(layers, required_layers=required_layers, integrity_gates=integrity_gates, qualification_gates=qualification_gates)
     return QualificationReport(
         ruleset_fingerprint=compiled.ruleset_fingerprint,
-        provenance=provenance,
+        provenance={**provenance, "control_class": control_class, "control_name": control_name},
         experiment_identity=experiment_identity,
+        qualification_target="PLAYABILITY",
+        required_layers=required_layers,
         layers=layers,
         raw_diagnostics={"layer_b": structural, "layer_c": dynamic},
-        hard_gates=gates,
+        hard_gates=integrity_gates + qualification_gates,
+        integrity_gates=integrity_gates,
+        qualification_gates=qualification_gates,
+        reason_codes=reason_codes,
+        layer_reasons={"B": tuple(layer_b_reason_codes), "C": ("PLAYABILITY_AUTHORITY_UNCALIBRATED",)},
         fail_defer_reasons=reasons,
-        compute_usage={"dynamic_games": len(dynamic["records"]), "dynamic_plies": sum(row.get("plies", 0) for row in dynamic["records"]), "search_nodes": 0, "heavy": 0},
+        compute_usage={"dynamic_games": len(dynamic.get("records", [])), "dynamic_plies": sum(row.get("plies", 0) for row in dynamic.get("records", [])), "search_nodes": 0, "heavy": 0},
         behavior_descriptors=descriptors,
-        overall_status=STATUS_DEFER if replay_equal else STATUS_FAIL,
+        overall_status=overall_status,
     )
 
 
 __all__ = [
     "GateOutcome", "MetricEvidence", "QualificationReport", "STATUS_DEFER", "STATUS_FAIL",
-    "STATUS_PASS", "STATUS_UNMEASURED", "common_tape_games", "component_info",
-    "lattice_info", "qualification_report", "structural_profile",
+    "STATUS_PASS", "STATUS_UNMEASURED", "calibration_reason_codes", "common_tape_games", "component_info",
+    "lattice_info", "movement_graph", "opening_sources", "qualification_report", "reachable_squares",
+    "reduce_qualification_status", "scc_info", "structural_profile", "transport_type_profile",
 ]

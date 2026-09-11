@@ -16,6 +16,8 @@ from typing import Any
 from generic_chess.benchmark.qualification import (
     STATUS_DEFER,
     STATUS_PASS,
+    STATUS_UNMEASURED,
+    calibration_reason_codes,
     common_tape_games,
     qualification_report,
     structural_profile,
@@ -32,7 +34,7 @@ PREP_PATH = ARTIFACT_DIR / "manifest.json"
 SUMMARY_PATH = ARTIFACT_DIR / "summary.json"
 REPORTS_PATH = ARTIFACT_DIR / "reports.json"
 PAIR_COUNT = 2
-MAX_PLY = 12
+MAX_PLY = 32
 TAPE_LENGTH = 32
 SEED = 8701
 
@@ -135,6 +137,42 @@ def _controls(root: Path) -> list[dict[str, Any]]:
     return _artifact_controls(root) + _builtin_controls()
 
 
+def _expected_role(control: dict[str, Any]) -> dict[str, Any]:
+    if control["class"] == "negative":
+        if control["name"].startswith("F86I"):
+            return {"layer_b": "PATHOLOGY_EVIDENCE", "reason_codes": ["HIGH_LOCAL_REVERSIBILITY", "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT"]}
+        return {"layer_b": "PATHOLOGY_EVIDENCE", "reason_codes": ["LATTICE_RANK_DEFICIT", "ONE_WAY_TRANSPORT"]}
+    if control["class"] == "boundary":
+        return {"layer_b": "BOUNDARY_WITNESS_DEFER", "reason_codes": ["STRUCTURAL_BACKBONE_WITNESS", "BOUNDARY_NOT_ADMISSION"]}
+    return {"layer_b": "SEMANTIC_MOVEMENT_DEFER", "reason_codes": ["SEMANTIC_MOVEMENT_NOT_APPLICABLE"]}
+
+
+def _semantic_type_ids(control: dict[str, Any]) -> set[str]:
+    if "builder" not in control:
+        return set()
+    return {type_id for action in control["builder"]().semantic_actions for type_id in action.type_ids}
+
+
+def _terminal_transport(root: Path, compiled) -> dict[str, Any]:
+    authority_path = root / "artifacts/f86l_mate_template_transport_support/diagnosis.json"
+    if not authority_path.exists():
+        return {"status": STATUS_DEFER, "reason_code": "TERMINAL_TRANSPORT_AUTHORITY_UNAVAILABLE", "applicability": "DEFER"}
+    authority = _load_json(authority_path)
+    if authority.get("f86i_full_closure_fingerprint") != compiled.ruleset_fingerprint:
+        return {"status": STATUS_DEFER, "reason_code": "TERMINAL_TRANSPORT_NOT_APPLICABLE", "applicability": "DEFER"}
+    census = authority["authorized_census"]
+    return {
+        "status": STATUS_DEFER,
+        "reason_code": "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT",
+        "applicability": "APPLICABLE",
+        "authority_source": "artifacts/f86l_mate_template_transport_support/diagnosis.json",
+        "validated_template_count": census["validated_templates"],
+        "complete_template_count": len(authority["full_closure_reference"]["complete_template_ids"]),
+        "routing": authority["routing"],
+        "census_truncated": census["truncation"],
+    }
+
+
 def _compiled(control: dict[str, Any]):
     if "builder" in control:
         ruleset = control["builder"]()
@@ -168,6 +206,7 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "source_path": control["source_path"],
             "source_sha256": control["source_sha256"],
             "ruleset_fingerprint": compiled.ruleset_fingerprint,
+            "expected_role": _expected_role(control),
         })
     prep = {
         "schema_version": 1,
@@ -194,6 +233,10 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "material": "materialized type profile from opening position",
             "dynamic": "terminal/completion/checkmate/decisive/stalemate/repetition/censored, game length, branching, legal-action collapse, capture/check density, side bias, opening identity sensitivity",
             "universal_gate": "not applied; F86N rank-2/index-1 is diagnostic and empirical only",
+            "canonical_actions": "sorted action_to_dict JSON with sort_keys and compact separators before PolicyTape indexing",
+            "side_bias": "CENSORED games have null scores and do not enter the score denominator",
+            "opening_sensitivity": "UNMEASURED when fewer than two opening identities are present",
+            "qualification_target": "PLAYABILITY requires Layers A-C; replay identity is integrity-only",
         },
         "budgets": {
             "pair_count": PAIR_COUNT,
@@ -233,7 +276,17 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
     for identity in prep["controls"]:
         control = controls[identity["name"]]
         compiled = _compiled(control)
-        structural = structural_profile(compiled)
+        if compiled.ruleset_fingerprint != identity["ruleset_fingerprint"]:
+            raise RuntimeError(f"F87A PREP fingerprint drift for {identity['name']}")
+        if identity["expected_role"] != _expected_role(control):
+            raise RuntimeError(f"F87A PREP qualitative expectation drift for {identity['name']}")
+        structural = structural_profile(compiled, semantic_type_ids=_semantic_type_ids(control))
+        terminal_transport = _terminal_transport(root, compiled)
+        reason_codes = calibration_reason_codes(
+            structural,
+            control_class=control["class"],
+            terminal_transport=terminal_transport,
+        )
         if _dynamic_supported(control):
             dynamic = common_tape_games(
                 compiled,
@@ -259,7 +312,7 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
                 "censored_count": 0,
             }
             replay_equal = True
-            dynamic_status = "DEFER"
+            dynamic_status = STATUS_UNMEASURED
         report = qualification_report(
             compiled=compiled,
             provenance=identity,
@@ -268,9 +321,16 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             dynamic=dynamic,
             replay_equal=replay_equal,
             dynamic_status=dynamic_status,
+            control_class=control["class"],
+            control_name=control["name"],
+            layer_b_reason_codes=reason_codes,
+            terminal_transport=terminal_transport,
         ).to_dict()
         if report["overall_status"] != STATUS_DEFER:
             raise RuntimeError(f"F87A expected DEFER for {identity['name']}")
+        expected_codes = set(identity["expected_role"]["reason_codes"])
+        if not expected_codes.intersection(report["reason_codes"]):
+            raise RuntimeError(f"F87A calibration expectation not observed for {identity['name']}: {report['reason_codes']}")
         reports[identity["name"]] = report
 
     summary = {
