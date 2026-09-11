@@ -2,30 +2,46 @@
   "arena_fix_checkpoint": "f592fb29a36dafb875ceaf50e88161482d518eba",
   "authoritative_completion": {
     "clean_game_count": 14,
-    "clean_pair_indices": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      6,
-      7
-    ],
+    "clean_pair_indices": [0, 1, 2, 3, 4, 6, 7],
     "contaminated_pair_excluded": true,
-    "contaminated_pair_indices": [
-      5
-    ]
+    "contaminated_pair_indices": [5],
+    "decision_bound_covers_excluded_pairs": true,
+    "decision_pair_count": 8,
+    "physical_pair_completion": 7
   },
   "baseline_sha": "0a814fb14ac4fa93191f681c2a6c128145450a91",
   "candidate_model_sha256": "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6",
-  "champion_after": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+  "champion_after": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
   "champion_before": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
   "child_checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
-  "classification": "PARENT_ANCHORED_FULL_RESIDUAL_FINAL_CONFIRMATION_UNRESOLVED",
+  "classification": "PARENT_ANCHORED_FULL_RESIDUAL_FINAL_CONFIRMED",
+  "confirmation_method": "ZERO_COMPUTE_WORST_CASE_DECISION_BOUND",
   "contract_failures": [],
   "corpus_content_sha256": "5b3bdc5ea81d1ccb8326957cc85afd6f6e16df902deabd9f9cc75fa37ee79b04",
   "corpus_id": "67b9dafc51a618645c3328228c30a8744cc8f988395a7d54d382b65276dc935c",
   "corpus_path": "artifacts\\f81_final_confirmation\\openings.json",
+  "decision_bound": {
+    "clean_better_tied_worse": [3, 3, 1],
+    "clean_pair_indices": [0, 1, 2, 3, 4, 6, 7],
+    "clean_pair_scores": [1.0, 0.5, 0.5, 0.0, 0.5, 1.0, 0.75],
+    "clean_score_sum": 4.25,
+    "mean_gate_passes": true,
+    "mean_threshold": 0.5,
+    "replacement_pair_indices": [5],
+    "replacement_score_domain": [0.0, 1.0],
+    "strength_gate_forced_for_all_valid_replacements": true,
+    "worst_case_better_tied_worse": [3, 3, 2],
+    "worst_case_better_minus_worse_margin": 1,
+    "worst_case_completed_mean": 0.53125
+  },
+  "decision_bound_covers_excluded_pairs": true,
+  "decision_pair_count": 8,
+  "excluded_pair_indices": [5],
+  "excluded_pair_reason": "TIME_BUDGET_CAP_CONTRACT_MISMATCH",
+  "final_decision_bound": {
+    "path": "artifacts/f81_final_confirmation/final_decision_bound.json"
+  },
+  "finalization_baseline_sha": "8f36153f3e0e98d770706c893b3f7c7c1c20c9a0",
   "invalidated_diagnostic_scores": {
     "fresh_bootstrap_high": 0.8125,
     "fresh_bootstrap_low": 0.40625,
@@ -35,16 +51,7 @@
     "fresh_game_losses": 5,
     "fresh_game_wins": 9,
     "fresh_mean_pair_score": 0.625,
-    "fresh_pair_scores": [
-      1.0,
-      0.5,
-      0.5,
-      0.0,
-      0.5,
-      0.75,
-      1.0,
-      0.75
-    ],
+    "fresh_pair_scores": [1.0, 0.5, 0.5, 0.0, 0.5, 0.75, 1.0, 0.75],
     "fresh_tied_pairs": 3
   },
   "invalidated_prior_result": "INVALIDATED_BY_TIME_BUDGET_CAP_CONTRACT_MISMATCH",
@@ -56,24 +63,23 @@
     "content_sha256": "9273856d350f9e9a6b94eecba251baaf4fd4275f70d8ddeb82ed39f493ad851a",
     "path": "docs/architecture/GENERICCHESS_F81_R1_EIGHT_LANE_FINAL_STRENGTH_CONFIRMATION.md"
   },
+  "pair5_corrective_compute_status": "CANCELLED_NO_DECISION_VALUE",
   "parent_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
-  "pending_rerun_pair_indices": [
-    5
-  ],
+  "physical_pair_completion": 7,
+  "r2a_canonical_evidence": {
+    "content_sha256": "e6ed1819a51cc6ae8e16167a42788786548e5a955679ae261910a7d9cf591a25",
+    "path": "artifacts/f81_final_confirmation/final_strength_evidence.json"
+  },
+  "r2b_report": {
+    "content_sha256": "6dfecfd562435c229367e7ae5ead7a0f10342b60f99445cc2af8f5d73d3b4ca2",
+    "path": "docs/architecture/GENERICCHESS_F81_R2B_ZERO_COMPUTE_DECISION_BOUND.md"
+  },
   "retained_clean_game_count": 14,
-  "retained_clean_pair_indices": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    6,
-    7
-  ],
-  "schema": "generic-chess-f81-final-strength-evidence-v2-pending-corrective",
+  "retained_clean_pair_indices": [0, 1, 2, 3, 4, 6, 7],
+  "schema": "generic-chess-f81-final-strength-evidence-v3-decision-bound",
   "time_cap_audit": {
     "content_sha256": "1c418b509654f4f054db738720880bf4435e611bd2cba589b4018d78a2c961a6",
-    "path": "artifacts\\f81_final_confirmation\\f81_r1_time_cap_audit.json"
+    "path": "artifacts/f81_final_confirmation/f81_r1_time_cap_audit.json"
   },
-  "work_order": "GENERICCHESS-F81-R2A-FAIL-CLOSED-EVIDENCE-INVALIDATION"
+  "work_order": "GENERICCHESS-F81-R2C-DECISION-BOUND-FINALIZATION"
 }
