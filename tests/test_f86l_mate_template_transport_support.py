@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+from scripts.f86l_mate_template_transport_support import _transport_route
+
 ROOT = Path(__file__).resolve().parents[1]
 DIAGNOSIS = ROOT / "artifacts/f86l_mate_template_transport_support/diagnosis.json"
 
@@ -57,3 +59,13 @@ def test_f86l_is_diagnostic_only_with_no_expanded_compute():
         "f85_actual_compute": 0,
     }
     assert payload["default_generator_changed"] is False
+
+
+def test_f86l_executable_route_matches_zero_full_reference_authority():
+    assert _transport_route(0, None, 3) == "REVERSE_CLOSURE_INSUFFICIENT_FOR_V4_3_KINEMATIC_MATE_TRANSPORT"
+
+
+def test_f86l_executable_route_covers_positive_reference_cases():
+    assert _transport_route(2, 1, 3) == "MINIMAL_TRANSPORT_SUPPORT_BELOW_FULL_CLOSURE_EXISTS"
+    assert _transport_route(2, 3, 3) == "FULL_REVERSE_CLOSURE_REQUIRED_BY_CURRENT_V4_3_TEMPLATE_SET"
+    assert _transport_route(2, None, 3) == "CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT"

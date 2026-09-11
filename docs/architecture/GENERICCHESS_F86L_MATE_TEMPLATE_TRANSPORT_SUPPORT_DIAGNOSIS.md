@@ -59,6 +59,12 @@ evidence inconsistency. The result is target-specific transport/material
 insufficiency, not a missing single reverse atom; the artifact retains the
 exact source/target reachability needed for further review.
 
+The executable routing recipe is now aligned with this authority: zero
+full-closure reference templates routes directly to
+`REVERSE_CLOSURE_INSUFFICIENT_FOR_V4_3_KINEMATIC_MATE_TRANSPORT`; a positive
+full-closure reference distinguishes a smaller successful support,
+full-closure-only support, and a positive-reference/no-success inconsistency.
+
 ## Compute and verification
 
 Dynamic games: 0. Tactical nodes: 0. BFS expansions: 0.
@@ -68,8 +74,12 @@ Exact verification command and result:
 
 ```text
 .venv\Scripts\python.exe -m pytest tests/test_f86l_mate_template_transport_support.py
-4 passed
+6 passed
 ```
+
+R2 adds four direct routing-helper cases, for 6/6 total tests. This correction
+added zero scientific compute: census 0, games 0, tactical 0, BFS 0,
+teacher/search/training 0, F85 0.
 
 F86L is closed with reverse closure ruled insufficient for the V4-3 transport
 batch. No F86M candidate trial is authorized from this diagnosis; the next

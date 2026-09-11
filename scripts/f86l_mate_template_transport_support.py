@@ -409,6 +409,16 @@ def _counterfactual_summary(base, support, templates, base_analysis, full_analys
     }
 
 
+def _transport_route(full_reference_template_count: int, minimum_support_count: int | None, missing_reverse_count: int) -> str:
+    if full_reference_template_count == 0:
+        return "REVERSE_CLOSURE_INSUFFICIENT_FOR_V4_3_KINEMATIC_MATE_TRANSPORT"
+    if minimum_support_count is not None and minimum_support_count < missing_reverse_count:
+        return "MINIMAL_TRANSPORT_SUPPORT_BELOW_FULL_CLOSURE_EXISTS"
+    if minimum_support_count == missing_reverse_count:
+        return "FULL_REVERSE_CLOSURE_REQUIRED_BY_CURRENT_V4_3_TEMPLATE_SET"
+    return "CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT"
+
+
 def _load_context(root: Path):
     f86k_manifest = _load_json(root, F86K_MANIFEST)
     entry = next(row for row in f86k_manifest["entries"] if row["sample_id"] == SAMPLE_ID)
@@ -453,14 +463,7 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         minimum_supports = []
 
     full_reference_templates = sorted(row["template_id"] for row in full_analysis if row["complete_type_preserving_matching"])
-    if not full_reference_templates:
-        routing = "CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT"
-    elif minimum_supports and minimum_count == len(missing):
-        routing = "FULL_REVERSE_CLOSURE_REQUIRED_BY_CURRENT_V4_3_TEMPLATE_SET"
-    elif minimum_supports:
-        routing = "MINIMAL_TRANSPORT_SUPPORT_BELOW_FULL_CLOSURE_EXISTS"
-    else:
-        routing = "CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT"
+    routing = _transport_route(len(full_reference_templates), minimum_count, len(missing))
 
     payload = {
         "schema_version": 1,
