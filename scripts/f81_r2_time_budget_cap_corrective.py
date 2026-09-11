@@ -90,6 +90,7 @@ def audit_r1_progress() -> dict:
             "child_points": game.child_points,
             "plies": game.plies,
             "telemetry_row_count": len(game.search_metrics),
+            "trusted_elapsed_total_seconds": sum(float(row.get("elapsed_seconds", 0.0)) for row in game.search_metrics),
             "termination_reason_counts": dict(sorted(reasons.items())),
             "termination_reason_set": sorted(reasons),
             "max_search_nodes": max((int(row.get("nodes", 0)) for row in game.search_metrics), default=0),
