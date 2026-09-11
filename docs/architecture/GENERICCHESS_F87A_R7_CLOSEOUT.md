@@ -4,11 +4,11 @@
 - Scope: cheap T0/T1 calibration only; no training, weight update, Arena, or external engine.
 - Frozen samples: two small generated rulesets (`R7-A`, `R7-B`).
 - Policies: `random_legal`, `low_node` (64 nodes/depth 4), and `medium_node` (256 nodes/depth 6).
-- Bounds: 8 short paired games, 24-ply horizon, 100,000 total internal search-node cap, 600-second wall cap.
+- Bounds: a 4-root T1 action-spectrum probe (4,096 nodes/10 seconds), followed by 8 short paired games, 24-ply horizon, 100,000 total internal search-node cap, and 600-second wall cap. The game caps are coarse stop points checked before the next ply or game.
 
 ## Result
 
-The calibration completed all 8 games in 0.14 seconds using 930 internal search nodes. All 8 games and all 4 seat-swapped pairs were resolved; no game was horizon-censored. Both paired matchups scored 0.5:
+The bounded T1 probe used 717 internal search nodes across 4 roots. Low- versus medium-node action selection disagreed on 1 of 4 roots, but the bounded regret proxy was 0.0; this selected short seat-swapped validation as the only next step. The subsequent calibration completed all 8 games in 0.14 seconds using 930 internal search nodes. All 8 games and all 4 seat-swapped pairs were resolved; no game was horizon-censored. Both paired matchups scored 0.5:
 
 | Matchup | Paired score | Result |
 | --- | ---: | --- |
@@ -19,7 +19,7 @@ The pre-registered route is `RETURN_T1_ACTION_SPECTRUM_REGRET`. No weight-update
 
 ## Evidence
 
-- Manifest SHA-256: `0ff828845c1da500d9a00c5a789880bedb1af9c73e175da67c9671ac045b881d`
-- Results SHA-256: `34519462119a8627c93006a6164d5896a838ae2f66abaac84d603bf76ef4ece2`
+- Manifest SHA-256: `4dc01978f579dcec844b3f30caabaa35887298e3764dfcddd8947dbb696886f1`
+- Results SHA-256: `122c608d3dcb4d70de75e39dfde24938af00036bb5f15671c52c767ff93322a3`
 
 R7 does not alter the F87A promotion decision. Western termination remains deferred and the calibration does not authorize training or promotion.

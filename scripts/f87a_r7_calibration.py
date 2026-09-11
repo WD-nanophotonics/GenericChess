@@ -12,7 +12,7 @@ from typing import Any
 from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.benchmark.minimal_generator import MinimalGeneratedGame, generate_minimal_game
-from generic_chess.core.actions import Action
+from generic_chess.core.actions import Action, action_to_dict
 from generic_chess.rules.schema import ruleset_to_dict
 from generic_chess.session.session import GameSession
 
@@ -33,6 +33,9 @@ PAIR_COUNT = 1
 MAX_PLY = 24
 NODE_CAP = 100_000
 WALL_CAP_SECONDS = 600
+T1_DIAGNOSTIC_MAX_ROOTS = 4
+T1_DIAGNOSTIC_NODE_CAP = 4_096
+T1_DIAGNOSTIC_WALL_CAP_SECONDS = 10
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -68,7 +71,8 @@ def _freeze_samples(output_dir: Path) -> tuple[tuple[str, MinimalGeneratedGame],
         "node_cap": NODE_CAP,
         "wall_cap_seconds": WALL_CAP_SECONDS,
         "external_engine_used": False,
-        "early_stop": "stop before starting another game when node or wall cap is reached",
+        "cap_semantics": "coarse_stop_before_starting_next_ply_or_game",
+        "early_stop": "stop before starting another ply or game when node or wall cap is reached",
         "route_split": {
             "success": "proceed to a small reproducibility-controlled weight-update calibration",
             "failure": "stop update route and return to T1 action-spectrum/regret diagnostics",
@@ -82,6 +86,118 @@ def _random_action(session: GameSession, tape: list[int], cursor: list[int]) -> 
     index = tape[cursor[0] % len(tape)] % len(actions)
     cursor[0] += 1
     return actions[index]
+
+
+def _action_key(action: Action | None) -> str | None:
+    if action is None:
+        return None
+    return json.dumps(action_to_dict(action), sort_keys=True, separators=(",", ":"))
+
+
+def _session_at_history(game: MinimalGeneratedGame, history: tuple[Action, ...]) -> GameSession:
+    session = GameSession(game.compiled)
+    for action in history:
+        session.submit(action)
+    return session
+
+
+def _t1_action_spectrum_regret(games: tuple[tuple[str, MinimalGeneratedGame], ...]) -> dict[str, Any]:
+    """Run a tiny, pre-bounded root-spectrum probe before paired games."""
+    started = time.monotonic()
+    deadline = started + T1_DIAGNOSTIC_WALL_CAP_SECONDS
+    rows: list[dict[str, Any]] = []
+    nodes = 0
+    stop_reason = None
+    for sample_id, game in games:
+        session = GameSession(game.compiled)
+        for _ in range(2):
+            if len(rows) >= T1_DIAGNOSTIC_MAX_ROOTS:
+                break
+            if time.monotonic() >= deadline:
+                stop_reason = "EARLY_STOP_WALL_CAP"
+                break
+            history = tuple(record.action for record in session.history)
+            remaining_nodes = T1_DIAGNOSTIC_NODE_CAP - nodes
+            if remaining_nodes <= 0:
+                stop_reason = "EARLY_STOP_NODE_CAP"
+                break
+            low = AlphaBetaPlayer(game.compiled, use_disk_cache=False).choose_action(
+                session,
+                SearchLimits(max_nodes=min(64, remaining_nodes), max_depth=4, quiescence_max_depth=0),
+            )
+            nodes += low.nodes + low.qnodes
+            if nodes >= T1_DIAGNOSTIC_NODE_CAP:
+                stop_reason = "EARLY_STOP_NODE_CAP"
+                break
+            remaining_nodes = T1_DIAGNOSTIC_NODE_CAP - nodes
+            medium = AlphaBetaPlayer(game.compiled, use_disk_cache=False).choose_action(
+                session,
+                SearchLimits(max_nodes=min(256, remaining_nodes), max_depth=6, quiescence_max_depth=0),
+            )
+            nodes += medium.nodes + medium.qnodes
+            if nodes >= T1_DIAGNOSTIC_NODE_CAP:
+                stop_reason = "EARLY_STOP_NODE_CAP"
+                break
+            low_key = _action_key(low.action)
+            medium_key = _action_key(medium.action)
+            regret_proxy = 0.0
+            if low.action is not None and medium.action is not None and low_key != medium_key:
+                child = _session_at_history(game, history)
+                child.submit(low.action)
+                if child.result.status.value == "ongoing":
+                    remaining_nodes = T1_DIAGNOSTIC_NODE_CAP - nodes
+                    if remaining_nodes <= 0:
+                        stop_reason = "EARLY_STOP_NODE_CAP"
+                        break
+                    child_decision = AlphaBetaPlayer(game.compiled, use_disk_cache=False).choose_action(
+                        child,
+                        SearchLimits(max_nodes=min(256, remaining_nodes), max_depth=6, quiescence_max_depth=0),
+                    )
+                    nodes += child_decision.nodes + child_decision.qnodes
+                    if nodes > T1_DIAGNOSTIC_NODE_CAP:
+                        stop_reason = "EARLY_STOP_NODE_CAP"
+                        break
+                    low_action_value = -child_decision.score
+                else:
+                    low_action_value = 0
+                regret_proxy = max(0.0, float(medium.score - low_action_value))
+            rows.append({
+                "sample_id": sample_id,
+                "ply": len(history),
+                "legal_action_count": len(session.legal_actions()),
+                "low_action": low_key,
+                "medium_action": medium_key,
+                "action_disagreement": low_key != medium_key,
+                "regret_proxy": regret_proxy,
+                "low_nodes": low.nodes + low.qnodes,
+                "medium_nodes": medium.nodes + medium.qnodes,
+            })
+            actions = session.legal_actions()
+            if not actions:
+                break
+            session.submit(actions[0])
+        if stop_reason or len(rows) >= T1_DIAGNOSTIC_MAX_ROOTS:
+            break
+    if nodes > T1_DIAGNOSTIC_NODE_CAP:
+        stop_reason = "EARLY_STOP_NODE_CAP"
+    complete = stop_reason is None and len(rows) == T1_DIAGNOSTIC_MAX_ROOTS
+    disagreements = sum(row["action_disagreement"] for row in rows)
+    return {
+        "status": "COMPLETE" if complete else "DEFER_CENSORED",
+        "root_count": len(rows),
+        "expected_root_count": T1_DIAGNOSTIC_MAX_ROOTS,
+        "rows": rows,
+        "search_nodes": nodes,
+        "node_cap": T1_DIAGNOSTIC_NODE_CAP,
+        "wall_seconds": time.monotonic() - started,
+        "wall_cap_seconds": T1_DIAGNOSTIC_WALL_CAP_SECONDS,
+        "stop_reason": stop_reason,
+        "action_disagreement_count": disagreements,
+        "mean_regret_proxy": (
+            sum(row["regret_proxy"] for row in rows) / len(rows) if rows else None
+        ),
+        "next_step": "SHORT_SEAT_SWAPPED_VALIDATION" if complete else "NO_INTERVENTION_DATA",
+    }
 
 
 def _play_game(
@@ -179,6 +295,7 @@ def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
     started = time.monotonic()
     deadline = started + WALL_CAP_SECONDS
     games = _freeze_samples(output_dir)
+    t1_diagnostic = _t1_action_spectrum_regret(games)
     rows = []
     pair_summaries = []
     total_nodes = 0
@@ -256,6 +373,8 @@ def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
         "route": "PROCEED_WEIGHT_UPDATE_CALIBRATION" if success else "RETURN_T1_ACTION_SPECTRUM_REGRET",
         "success": success,
         "external_engine_used": False,
+        "cap_semantics": "coarse_stop_before_starting_next_ply_or_game",
+        "t1_diagnostic": t1_diagnostic,
     }
     _write_json(output_dir / "results.json", result)
     return result
