@@ -32,13 +32,19 @@ def test_f86l_keeps_opening_graphs_and_duplicate_matching_evidence():
     assert all(row["complete_type_preserving_matching"] is False for row in payload["template_matching"])
 
 
-def test_f86l_full_closure_reference_is_explicitly_inconsistent():
+def test_f86l_full_closure_reference_is_authority_consistent():
     payload = _load()
     assert payload["full_closure_reference"]["complete_template_count"] == 0
     assert payload["minimum_atom_support"]["minimum_added_reverse_atom_count"] is None
     assert len(payload["all_support_set_counterfactuals"]) == 7
     assert all(row["newly_assignment_reachable_template_count"] == 0 for row in payload["all_support_set_counterfactuals"])
-    assert payload["routing"] == "CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT"
+    assert payload["interpretation"] == {
+        "f86i_authority_v4_3_full_closure_complete_templates": 0,
+        "same_batch_full_closure_complete_templates": 0,
+        "authority_consistent": True,
+        "meaning": "reverse closure does not restore V4-3 kinematic mate transport",
+    }
+    assert payload["routing"] == "REVERSE_CLOSURE_INSUFFICIENT_FOR_V4_3_KINEMATIC_MATE_TRANSPORT"
 
 
 def test_f86l_is_diagnostic_only_with_no_expanded_compute():

@@ -2356,7 +2356,13 @@
       "type_id": "P0"
     }
   ],
-  "routing": "CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT",
+  "interpretation": {
+    "f86i_authority_v4_3_full_closure_complete_templates": 0,
+    "same_batch_full_closure_complete_templates": 0,
+    "authority_consistent": true,
+    "meaning": "reverse closure does not restore V4-3 kinematic mate transport"
+  },
+  "routing": "REVERSE_CLOSURE_INSUFFICIENT_FOR_V4_3_KINEMATIC_MATE_TRANSPORT",
   "sample_id": "V4-3",
   "schema_version": 1,
   "single_missing_reverse_atom_counterfactuals": [

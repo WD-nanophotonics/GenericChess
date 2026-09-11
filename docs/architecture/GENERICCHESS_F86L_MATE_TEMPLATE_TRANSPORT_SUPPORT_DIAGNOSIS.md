@@ -1,6 +1,7 @@
 # F86L mate-template transport-support diagnosis
 
-Status: diagnostic-only blocker. Baseline:
+Status: diagnostic-only closed result after the zero-compute R1 routing
+correction. Baseline:
 `9be467cf954b3f8add59131ce86b933ee6f2cfa7`.
 
 F86L did not create a ruleset candidate. It reran only the authorized V4-3
@@ -50,11 +51,13 @@ matching. Therefore there is no minimum support set that repairs this target
 batch.
 
 The F86I full-closure graph was evaluated on the same fixed F86K target batch
-and also produced zero complete templates. Per the work order, this is
-`CURRENT_TEMPLATE_TRANSPORT_DIAGNOSIS_INCONSISTENT`, not evidence for a new
-candidate. The likely cause is target-specific transport/material mismatch in
-the frozen template batch, not a missing single reverse atom; the artifact
-retains the exact source/target reachability needed for further review.
+and also produced zero complete templates. F86I authority independently
+records V4-3 full closure as 0/40 reachable, so the two results are consistent.
+The corrected routing is
+`REVERSE_CLOSURE_INSUFFICIENT_FOR_V4_3_KINEMATIC_MATE_TRANSPORT`, not an
+evidence inconsistency. The result is target-specific transport/material
+insufficiency, not a missing single reverse atom; the artifact retains the
+exact source/target reachability needed for further review.
 
 ## Compute and verification
 
@@ -68,6 +71,6 @@ Exact verification command and result:
 4 passed
 ```
 
-F86L is blocked by the explicit inconsistency route. The next action requires
-review of the fixed template/material authority; no F86M candidate trial is
-authorized from this diagnosis.
+F86L is closed with reverse closure ruled insufficient for the V4-3 transport
+batch. No F86M candidate trial is authorized from this diagnosis; the next
+diagnostic stage is the movement-lattice/component-invariant analysis.
