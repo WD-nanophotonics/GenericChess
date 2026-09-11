@@ -1,7 +1,10 @@
 {
   "schema": "generic-chess-f81-final-decision-bound-v1",
   "work_order": "GENERICCHESS-F81-R2C-DECISION-BOUND-FINALIZATION",
+  "r2a_canonical_evidence_checkpoint": "9dbd5e3e82bdf471d63eb1c13c54f33427c84761",
+  "r2a_canonical_evidence_path": "artifacts/f81_final_confirmation/final_strength_evidence.json",
   "r2a_canonical_evidence_sha256": "e6ed1819a51cc6ae8e16167a42788786548e5a955679ae261910a7d9cf591a25",
+  "time_cap_audit_path": "artifacts/f81_final_confirmation/f81_r1_time_cap_audit.json",
   "time_cap_audit_sha256": "1c418b509654f4f054db738720880bf4435e611bd2cba589b4018d78a2c961a6",
   "r2b_report_path": "docs/architecture/GENERICCHESS_F81_R2B_ZERO_COMPUTE_DECISION_BOUND.md",
   "r2b_report_sha256": "6dfecfd562435c229367e7ae5ead7a0f10342b60f99445cc2af8f5d73d3b4ca2",
@@ -20,6 +23,7 @@
   "clean_better_tied_worse": [3, 3, 1],
   "worst_case_better_tied_worse": [3, 3, 2],
   "worst_case_better_minus_worse_margin": 1,
+  "mean_gate_margin": 0.03125,
   "confirmation_method": "ZERO_COMPUTE_WORST_CASE_DECISION_BOUND",
   "classification": "FINAL_STRENGTH_GATE_FORCED_FOR_ALL_VALID_PAIR5_OUTCOMES",
   "physical_pair_completion": 7,

@@ -25,6 +25,7 @@
     "clean_pair_indices": [0, 1, 2, 3, 4, 6, 7],
     "clean_pair_scores": [1.0, 0.5, 0.5, 0.0, 0.5, 1.0, 0.75],
     "clean_score_sum": 4.25,
+    "mean_gate_margin": 0.03125,
     "mean_gate_passes": true,
     "mean_threshold": 0.5,
     "replacement_pair_indices": [5],
@@ -39,6 +40,7 @@
   "excluded_pair_indices": [5],
   "excluded_pair_reason": "TIME_BUDGET_CAP_CONTRACT_MISMATCH",
   "final_decision_bound": {
+    "content_sha256": "18a0ed9406460d813c8b5dc6fe08f1a6ecf64b248141c42c63787d757b320e84",
     "path": "artifacts/f81_final_confirmation/final_decision_bound.json"
   },
   "finalization_baseline_sha": "8f36153f3e0e98d770706c893b3f7c7c1c20c9a0",
