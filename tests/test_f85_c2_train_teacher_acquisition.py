@@ -40,9 +40,9 @@ def test_f85_manifest_binds_exact_train_roots_and_teacher_contract():
     assert payload["execution_contract"]["train_root_count"] == 36
     assert payload["execution_contract"]["dev_root_count"] == 0
     assert payload["execution_contract"]["resource_root_count"] == 0
-    assert payload["execution_contract"]["max_concurrent_roots"] == 3
-    assert f85.FROZEN_MANIFEST_MAX_CONCURRENT_ROOTS == 3
-    assert f85.MAX_CONCURRENT_ROOTS == 3
+    assert payload["execution_contract"]["max_concurrent_roots"] == 2
+    assert f85.FROZEN_MANIFEST_MAX_CONCURRENT_ROOTS == 2
+    assert f85.MAX_CONCURRENT_ROOTS == 2
     assert payload["execution_contract"]["per_root_wall_cap_seconds"] == 720
     assert payload["execution_contract"]["no_auto_retry"] is True
     assert payload["teacher_contract"]["root_budgets"] == [2000, 40000, 80000]
@@ -98,7 +98,7 @@ def _runtime_tmp():
     return Path(tempfile.mkdtemp(prefix="generic-chess-f85-"))
 
 
-def _plan_file(runtime, *, lanes=3):
+def _plan_file(runtime, *, lanes=2):
     runtime.mkdir(parents=True, exist_ok=True)
     plan = runtime / "plan.json"
     plan.write_text(json.dumps({
@@ -142,9 +142,9 @@ def test_f85_terminal_first_batch_stops_before_submitting_later_batches(tmp_path
     try:
         result = f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=runner)
         assert result["status"] == "INCOMPLETE"
-        assert len(calls) == 3
-        assert result["completed_count"] == 2
-        assert len(list(runtime.rglob("*.json"))) == 4
+        assert len(calls) == 2
+        assert result["completed_count"] == 1
+        assert len(list(runtime.rglob("*.json"))) == 3
     finally:
         shutil.rmtree(runtime, ignore_errors=True)
 
@@ -191,17 +191,17 @@ def test_f85_stale_complete_progress_is_not_reused(tmp_path):
         shutil.rmtree(runtime, ignore_errors=True)
 
 
-def test_f85_authorized_plan_is_exactly_three_lanes_and_two_or_four_are_rejected():
+def test_f85_authorized_plan_is_exactly_two_lanes_and_three_or_four_are_rejected():
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     runtime = _runtime_tmp()
     try:
-        three_lane_plan = _plan_file(runtime / "three", lanes=3)
-        validated, _plan_sha = f85._validate_execution_plan(three_lane_plan, manifest)
-        assert validated["resource_envelope"]["intended_cpu_lanes"] == 3
+        two_lane_plan = _plan_file(runtime / "two", lanes=2)
+        validated, _plan_sha = f85._validate_execution_plan(two_lane_plan, manifest)
+        assert validated["resource_envelope"]["intended_cpu_lanes"] == 2
 
-        for lanes in (2, 4):
+        for lanes in (3, 4):
             rejected_plan = _plan_file(runtime / str(lanes), lanes=lanes)
-            with pytest.raises(RuntimeError, match="authorized three-lane"):
+            with pytest.raises(RuntimeError, match="authorized two-lane"):
                 f85._validate_execution_plan(rejected_plan, manifest)
     finally:
         shutil.rmtree(runtime, ignore_errors=True)
@@ -254,8 +254,8 @@ def test_f85_harness_mismatch_first_batch_stops_before_later_batches():
     try:
         result = f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=runner)
         assert result["status"] == "INCOMPLETE"
-        assert len(calls) == 3
-        assert result["completed_count"] == 2
-        assert len(list(runtime.rglob("*.json"))) == 4
+        assert len(calls) == 2
+        assert result["completed_count"] == 1
+        assert len(list(runtime.rglob("*.json"))) == 3
     finally:
         shutil.rmtree(runtime, ignore_errors=True)
