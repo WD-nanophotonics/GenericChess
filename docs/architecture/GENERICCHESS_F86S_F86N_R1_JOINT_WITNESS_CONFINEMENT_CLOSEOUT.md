@@ -3,6 +3,7 @@
 - Work order: `GENERICCHESS-F86S-F86N_R1-JOINT-WITNESS-CONFINEMENT-AUTHORITY-RECOVERY`
 - PREP checkpoint: `7d90b3e9cfb327dae291c1bb54b9b2399fe04b39`
 - Original RESULT checkpoint: `3c8a8c95b37bd300e863a45057fbeb70e02b54b5`
+- F86S-R1 correction checkpoint: `30fcafcbe416577ab4638f3c69bb5252a47490e2`
 - PREP manifest: `artifacts/f86s_f86n_r1_joint_witness_confinement/manifest.json`
 - Witness evidence: `artifacts/f86s_f86n_r1_joint_witness_confinement/witnesses.json`
 - RESULT summary: `artifacts/f86s_f86n_r1_joint_witness_confinement/summary.json`
@@ -14,4 +15,4 @@ Exactly 2 V4-3 complete-census witness rows and 21 V5-3 `OBSERVED_UNDER_TRUNCATE
 
 F86S-R1 correction baseline: `c1825764891a96e3b744659ce18c40c326d9d374`. Because F86R did not serialize dynamic occupancy, V4-3 is safely routed to `STATIC_VS_DYNAMIC_CONFINEMENT_DIFFERENCE_IS_MULTI_FACTOR`; V5-3 remains `STATIC_MATE_WITNESSES_HAVE_STRICTLY_STRONGER_NEIGHBOR_ATTACK_COVERAGE`; overall remains `CONFINEMENT_GAP_IS_SAMPLE_DEPENDENT`. F86R dynamic control facts were preserved: V4-3 one single-checker action with coverage 2 and two Anchor-flight breaks; V5-3 thirteen single-checker actions with coverage 0×8 and 1×5, with 24 Anchor-flight and 3 checker-capture breaking replies.
 
-Focused F86S test result: `6 passed`; Courier recovery regression: `2 passed`. This correction used zero census checks, games, movement candidates, dynamic work beyond F86R, AlphaBeta, BFS, training, teacher search, C2, F85, and Heavy. Default generator: unchanged.
+Focused F86S-R1 test result: `6/6 passed`; focused Courier recovery regression: `2/2 passed`; the publish gate passed both target files, `63/63` collected tests. This correction used zero census checks, games, movement candidates, dynamic work beyond F86R, AlphaBeta, BFS, training, teacher search, C2, F85, and Heavy. Default generator: unchanged.
