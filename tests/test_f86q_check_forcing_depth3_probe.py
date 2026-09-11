@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ROOT / "artifacts" / "f86q_check_forcing_depth3_probe"
@@ -35,6 +36,8 @@ def test_f86q_result_is_deferred_until_after_prep_publish():
 
 
 def test_f86q_result_replays_all_frozen_games_without_new_games():
+    if not RESULT.exists():
+        pytest.skip("F86Q RESULT is created after PREP publish")
     result = _load(RESULT)
     assert result["status"] == "F86Q_CHECK_FORCING_DEPTH3_PROBE_COMPLETE"
     assert result["replayed_trajectories"] == 12
@@ -45,6 +48,8 @@ def test_f86q_result_replays_all_frozen_games_without_new_games():
 
 
 def test_f86q_result_stays_within_specialized_depth_and_prohibited_compute_zero():
+    if not RESULT.exists():
+        pytest.skip("F86Q RESULT is created after PREP publish")
     result = _load(RESULT)
     assert result["specialized_forcing_depth_plies"] == 3
     assert result["generic_search_depth"] == 0
@@ -57,6 +62,8 @@ def test_f86q_result_stays_within_specialized_depth_and_prohibited_compute_zero(
 
 
 def test_f86q_records_root_occurrence_multiplicity_and_exact_forcing_fields():
+    if not RESULT.exists():
+        pytest.skip("F86Q RESULT is created after PREP publish")
     result = _load(RESULT)
     assert set(result["by_arm_sample"]) == {"L", "F", "N"}
     assert all(set(result["by_arm_sample"][arm]) == {"V4-3", "V5-3"} for arm in ("L", "F", "N"))
@@ -72,6 +79,8 @@ def test_f86q_records_root_occurrence_multiplicity_and_exact_forcing_fields():
 
 
 def test_f86q_arm_n_routes_are_reported_separately():
+    if not RESULT.exists():
+        pytest.skip("F86Q RESULT is created after PREP publish")
     result = _load(RESULT)
     assert result["routing"]["arm_n_by_sample"] == {
         "V4-3": "CHECK_PRESSURE_IS_NONFORCING",
