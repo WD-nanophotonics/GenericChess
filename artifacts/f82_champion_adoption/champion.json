@@ -1,0 +1,111 @@
+{
+  "schema": "generic-chess-f82-champion-adoption-v1",
+  "work_order": "GENERICCHESS-F82-CHAMPION-ADOPTION-AND-REPEATABILITY-PLAN",
+  "adoption_classification": "F78_CHILD_ADOPTED_AS_MODEL_CHAMPION",
+  "champion_generation": "C1",
+  "previous_champion": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+  "adopted_champion": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+  "model_sha256": "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6",
+  "source_f78_candidate": {
+    "path": "artifacts/f78_parent_anchored_full_residual/candidate.json",
+    "content_sha256": "41603d35849e0c020dcb3b3473ea1d2439ead5163ccd5a318a09777fdfe8ed3e",
+    "schema": "generic-chess-f78-parent-anchored-full-residual-candidate-v1",
+    "child_checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+    "training_config_hash": "2c4c1c6b79a2c6b7522a23c3e69d4d29e9f90985d760fad9f0b58e99da562503"
+  },
+  "source_f81_canonical_evidence": {
+    "path": "artifacts/f81_final_confirmation/final_strength_evidence.json",
+    "content_sha256": "afe1c8b00c1eb5c1e64cd9458e84e014a4629b9ddc98d0815d8ebbb3dc6fa4f8",
+    "classification": "PARENT_ANCHORED_FULL_RESIDUAL_FINAL_CONFIRMED",
+    "confirmation_method": "ZERO_COMPUTE_WORST_CASE_DECISION_BOUND"
+  },
+  "source_f81_final_decision_bound": {
+    "path": "artifacts/f81_final_confirmation/final_decision_bound.json",
+    "content_sha256": "18a0ed9406460d813c8b5dc6fe08f1a6ecf64b248141c42c63787d757b320e84"
+  },
+  "sealed_historical_corpora": [
+    {
+      "label": "F78/F79/F80 selection corpus",
+      "path": "artifacts/f78_parent_anchored_full_residual/openings.json",
+      "content_sha256": "7b3db01feee0ead1c25bd81f50faf2fe6369fe2188612a014c0ddda5eca7f409",
+      "reuse": "regression_or_identity_only; never C2 training or candidate selection"
+    },
+    {
+      "label": "F81 final confirmation corpus",
+      "path": "artifacts/f81_final_confirmation/openings.json",
+      "content_sha256": "5b3bdc5ea81d1ccb8326957cc85afd6f6e16df902deabd9f9cc75fa37ee79b04",
+      "corpus_id": "67b9dafc51a618645c3328228c30a8744cc8f988395a7d54d382b65276dc935c",
+      "reuse": "final-evaluation history only; never C2 training or candidate selection"
+    },
+    {
+      "label": "F75 triage corpus",
+      "path": "artifacts/f75_parent_retained_arena/openings.json",
+      "content_sha256": "c8e710c4a1298eca79d5313929a926f725533ec0c31df4445ec97838f179c93f",
+      "reuse": "historical diagnostic only; never C2 training or candidate selection"
+    },
+    {
+      "label": "F77 triage corpus",
+      "path": "artifacts/f77_trusted_pointwise_q_arena/openings.json",
+      "content_sha256": "c2f31d2cc8ea5c013bf90572b7079b3ff0d577df076493a622c2cb98ee275d7e",
+      "reuse": "historical diagnostic only; never C2 training or candidate selection"
+    },
+    {
+      "label": "F62 historical strength evidence",
+      "f62_stage_identity_sha256": "e7a93423d6058c68fe7ccbc61302584ca1e8869aa828586254f72f4dfdac2c70",
+      "f62_records_sha256": "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61",
+      "reuse": "regression_or_identity_only; never C2 primary fitting data"
+    }
+  ],
+  "c2_protocol": {
+    "parent_checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+    "candidate_generation": "C2",
+    "mechanism_family": "PARENT_ANCHORED_FULL_RESIDUAL",
+    "frozen_fields": [
+      "input_mean",
+      "input_scale",
+      "target_scale",
+      "output_bias",
+      "width",
+      "hand_binding",
+      "perspective",
+      "ruleset_native_scale",
+      "board_weights",
+      "hand_weights",
+      "dynamic_weights",
+      "spatial_weights",
+      "control_weights"
+    ],
+    "allowed_trainable_fields": [
+      "hidden_weights",
+      "hidden_bias",
+      "output_weights"
+    ],
+    "optimizer_family": {
+      "optimizer": "Adam",
+      "batching": "full_batch",
+      "steps": 100,
+      "learning_rate": 0.001,
+      "proximal_coefficient": 0.001,
+      "parent_anchoring": true,
+      "backtracking_safety_sequence": "same_registered_F78_family"
+    },
+    "sealed_data_policy": "all listed historical corpora are excluded from C2 training and candidate selection",
+    "one_candidate_rule": true,
+    "fresh_champion_relative_evidence_required": true,
+    "strength_authority": [
+      "bounded_correctness_safety",
+      "Arena2",
+      "Arena4",
+      "Arena8",
+      "fresh_final_confirmation"
+    ],
+    "final_confirmation_isolation": "training, selection, and final confirmation corpora must be disjoint",
+    "failure_rule": "stop the candidate; do not retune and retry on the same evaluation corpus",
+    "prohibited_families": [
+      "output_only_pointwise",
+      "output_only_pairwise",
+      "parent_replacement_redistillation"
+    ]
+  },
+  "status": "C1_CHAMPION_ADOPTED_REPEATABILITY_PROTOCOL_FROZEN"
+}
