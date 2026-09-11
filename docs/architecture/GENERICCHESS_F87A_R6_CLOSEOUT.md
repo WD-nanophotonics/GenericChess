@@ -24,7 +24,7 @@ The move-sequence digest contains only actor/action pairs. The execution-trace d
 
 The R6 checkpoint does not authorize promotion. The added terminal-aware bounded control also remained CENSORED on Western despite complete root-set coverage and zero budget censorship, so Western termination remains deferred. Standard Shogi passed through repetition with complete root-set coverage.
 
-The global game count is derived from the per-ruleset dynamic reports: 16 games total, 8 for each ruleset. The accounting regression requires `summary.compute_usage.new_games` to equal that report-derived sum.
+The global game count is derived from the per-ruleset dynamic reports: 24 games total, 12 for each ruleset. The accounting regression requires `summary.compute_usage.new_games` to equal that report-derived sum.
 
 ## Framework correction
 
