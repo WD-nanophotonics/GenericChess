@@ -142,7 +142,7 @@ class GameQualityProfile:
     paired_game_count: int = 0
     played_game_count: int = 0
     side_bias_magnitude: float | None = None
-    swapped_opening_consistent: bool | None = None
+    swapped_opening_legal_count_equal: bool | None = None
     shallow_forced_win_rate: float | None = None
     solved_fraction: float | None = None
     unique_best_fraction: float | None = None
@@ -351,7 +351,7 @@ def measure_game_quality(
         paired_game_count=paired_count,
         played_game_count=played_game_count,
         side_bias_magnitude=(abs(first_score - 0.5) * 2 if first_score is not None else None),
-        swapped_opening_consistent=swapped_consistent,
+        swapped_opening_legal_count_equal=swapped_consistent,
         shallow_forced_win_rate=forced_wins / len(tactical_results) if tactical_results else None,
         solved_fraction=solved / len(tactical_results) if tactical_results else None,
         unique_best_fraction=(sum(unique_best_values) / len(unique_best_values) if unique_best_values else None),

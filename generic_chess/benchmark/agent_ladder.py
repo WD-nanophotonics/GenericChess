@@ -71,9 +71,11 @@ class AgentLadder:
         if not all(pair in paired_scores for pair in pairs):
             return None
         labels = [f"{weaker}>{stronger}" for weaker, stronger in zip(self.names, self.names[1:])]
-        advantages = [paired_scores[pair] for pair in pairs]
+        stronger_scores = [paired_scores[pair] for pair in pairs]
+        advantages = [score - 0.5 for score in stronger_scores]
         return {
             "adjacent_advantages": dict(zip(labels, advantages)),
+            "stronger_scores": dict(zip(labels, stronger_scores)),
             "minimum_adjacent_advantage": min(advantages),
             "mean_adjacent_advantage": sum(advantages) / len(advantages),
             "monotonic": all(advantage > 0 for advantage in advantages),

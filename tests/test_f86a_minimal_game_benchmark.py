@@ -53,7 +53,7 @@ def test_quality_profile_is_raw_and_serializable():
     assert payload["played_game_count"] == 6
     assert payload["first_player_score"] is not None
     assert payload["second_player_score"] is not None
-    assert payload["swapped_opening_consistent"] is True
+    assert payload["swapped_opening_legal_count_equal"] is True
     assert payload["tactical_probe_position_count"] == 1
     assert payload["tactical_probe_nodes"] <= 256
     assert set(payload["classification_reasons"]) <= {
@@ -112,12 +112,15 @@ def test_agent_ladder_is_an_interface_not_a_strength_claim():
     assert ladder.require("medium_node").node_budget is None
     assert ladder.evaluate_ordered_scores({"random_legal": 0.1}) is None
     paired = {
-        (weaker, stronger): 0.2
-        for weaker, stronger in zip(ladder.names, ladder.names[1:])
+        (weaker, stronger): score
+        for (weaker, stronger), score in zip(
+            zip(ladder.names, ladder.names[1:]), (0.7, 0.5, 0.2)
+        )
     }
-    assert ladder.skill_discrimination(paired) == pytest.approx(0.2)
+    assert ladder.skill_discrimination(paired) == 0.0
     report = ladder.evaluate_adjacent_matchups(paired)
-    assert report["monotonic"] is True
-    assert report["minimum_adjacent_advantage"] == 0.2
-    reversed_scores = {pair: -0.1 for pair in paired}
-    assert ladder.skill_discrimination(reversed_scores) == 0.0
+    assert report["monotonic"] is False
+    assert report["stronger_scores"]["random_legal>very_shallow"] == 0.7
+    assert report["minimum_adjacent_advantage"] == pytest.approx(-0.3)
+    incomplete = {("random_legal", "very_shallow"): 0.7}
+    assert ladder.skill_discrimination(incomplete) is None
