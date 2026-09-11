@@ -778,6 +778,8 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
     if not isinstance(request_directory, str):
         raise FlowError("Courier prepare did not return a request directory")
     state["active_request_directory"] = request_directory
+    state["active_request_id"] = prepared.get("request_id") or Path(request_directory).name
+    state["active_request_fingerprint"] = prepared.get("fingerprint")
     state["last_request_key"] = key
     save_state(root, state)
     event = courier(root, "courier_dispatch", request_directory, stream=True)
@@ -1299,6 +1301,8 @@ def command_start(root: Path, args: argparse.Namespace) -> None:
         "base_sandbox_sha": sha(trees["sandbox"]),
         "tested_shas": {},
         "active_request_directory": None,
+        "active_request_id": None,
+        "active_request_fingerprint": None,
         "work_order_active": False,
         "last_work_order_id": None,
         "recovery_state": "IDLE",
@@ -1679,6 +1683,29 @@ def create_escalation(root: Path, state: dict[str, Any], *, reason: str,
     return dossier
 
 
+def _healthy_live_owner_wait(state: dict[str, Any], probe: dict[str, Any]) -> bool:
+    """Treat a matching live Courier owner as healthy waiting, not recovery failure."""
+    if probe.get("event") != "courier_capture_latest_busy":
+        return False
+    if probe.get("live_owner_found") is not True:
+        return False
+    request_directory = state.get("active_request_directory")
+    if not isinstance(request_directory, str) or not request_directory:
+        return False
+    expected_request_id = state.get("active_request_id") or Path(request_directory).name
+    if probe.get("project_id") != PROJECT_ID or probe.get("request_id") != expected_request_id:
+        return False
+    expected_fingerprint = state.get("active_request_fingerprint")
+    if not isinstance(expected_fingerprint, str) or not expected_fingerprint:
+        return False
+    if probe.get("fingerprint") != expected_fingerprint:
+        return False
+    owner_pid = probe.get("owner_pid")
+    if owner_pid is not None:
+        return _same_process(owner_pid, probe.get("owner_created_at"))
+    return True
+
+
 def command_recover(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
     require_worker_write_authority(state, root)
@@ -1701,11 +1728,23 @@ def command_recover(root: Path, args: argparse.Namespace) -> None:
             key: probe.get(key) for key in (
                 "event", "ok", "fingerprint", "captured_at", "latest_user_turn_found",
                 "post_submission_reply_found", "request_match", "response_path",
-                "submission_count", "message_sent", "error_code",
+                "submission_count", "message_sent", "error_code", "project_id",
+                "request_id", "live_owner_found", "owner_pid", "owner_created_at",
             ) if key in probe
         }
         recovery_event(state, "latest_response_probed", **state["last_probe"])
         save_state(root, state)
+        if _healthy_live_owner_wait(state, probe):
+            state["recovery_state"] = "IDLE"
+            recovery_event(state, "healthy_live_owner_waiting", request_id=probe["request_id"])
+            save_state(root, state)
+            print(json.dumps({
+                "event": "healthy_live_owner_waiting",
+                "ok": True,
+                "project_id": probe["project_id"],
+                "request_id": probe["request_id"],
+            }, sort_keys=True))
+            return
         if probe.get("ok") and probe.get("request_match") is True and probe.get("response_path"):
             update_response_state(root, state, probe, source="capture_latest")
             return

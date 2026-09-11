@@ -14,6 +14,7 @@
         },
         "checking_actions": 1,
         "occupancy_distributions": "NOT_SERIALIZED_BY_F86R_RESULT",
+        "occupancy_evidence_available": false,
         "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
       },
       "static": {
@@ -102,7 +103,7 @@
   "manifest": "artifacts/f86s_f86n_r1_joint_witness_confinement/manifest.json",
   "routing": {
     "by_sample": {
-      "V4-3": "STATIC_MATE_CONFINEMENT_DEPENDS_ON_OCCUPANCY_STRUCTURE",
+      "V4-3": "STATIC_VS_DYNAMIC_CONFINEMENT_DIFFERENCE_IS_MULTI_FACTOR",
       "V5-3": "STATIC_MATE_WITNESSES_HAVE_STRICTLY_STRONGER_NEIGHBOR_ATTACK_COVERAGE"
     },
     "overall": "CONFINEMENT_GAP_IS_SAMPLE_DEPENDENT"

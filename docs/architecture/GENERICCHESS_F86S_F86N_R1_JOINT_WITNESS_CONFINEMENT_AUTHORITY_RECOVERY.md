@@ -25,10 +25,12 @@ F86R ARM-N is the dynamic control. Its frozen distributions were 1 checker and c
 
 | sample | static witness coverage | static checker multiplicity | dynamic ARM-N coverage | route |
 |---|---:|---:|---:|---|
-| V4-3 | 2×1, 3×1 | 1×2 | 2×1 | `STATIC_MATE_CONFINEMENT_DEPENDS_ON_OCCUPANCY_STRUCTURE` |
+| V4-3 | 2×1, 3×1 | 1×2 | 2×1 | `STATIC_VS_DYNAMIC_CONFINEMENT_DIFFERENCE_IS_MULTI_FACTOR` |
 | V5-3 | 2×13, 3×6, 4×2 | 1×19, 2×2 | 0×8, 1×5 | `STATIC_MATE_WITNESSES_HAVE_STRICTLY_STRONGER_NEIGHBOR_ATTACK_COVERAGE` |
 
-The V4-3 static coverage overlaps the dynamic value, so the distinction is occupancy structure: static witnesses have enemy-occupied Anchor-neighbor squares and no legal flight, while the dynamic control exhibits Anchor-flight breaks. V5-3 has strictly stronger static attacked-neighbor coverage because its minimum is 2 and the dynamic maximum is 1. The overall route is `CONFINEMENT_GAP_IS_SAMPLE_DEPENDENT`.
+The V4-3 static coverage overlaps the dynamic value, but F86R did not serialize dynamic occupancy, so occupancy causality is not directly comparable. Its safe route is `STATIC_VS_DYNAMIC_CONFINEMENT_DIFFERENCE_IS_MULTI_FACTOR`. V5-3 has strictly stronger static attacked-neighbor coverage because its minimum is 2 and the dynamic maximum is 1. The overall route remains `CONFINEMENT_GAP_IS_SAMPLE_DEPENDENT`.
+
+F86S-R1 is a zero-compute interpretation correction at baseline `c1825764891a96e3b744659ce18c40c326d9d374`; it changes no witness, census, authority, or confinement profile.
 
 ## Compute boundary
 

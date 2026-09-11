@@ -258,6 +258,7 @@ def _dynamic_control(f86r: dict[str, Any], sample_id: str) -> dict[str, Any]:
         "anchor_neighborhood_coverage_distribution": row["anchor_neighborhood_coverage_distribution"],
         "breaking_reply_mechanism_counts": row["breaking_reply_mechanism_counts"],
         "route": row["route"],
+        "occupancy_evidence_available": False,
         "occupancy_distributions": "NOT_SERIALIZED_BY_F86R_RESULT",
     }
 
@@ -272,6 +273,7 @@ def _route(static: dict[str, Any], dynamic: dict[str, Any]) -> str:
     overlap = min(static_coverage) <= max(dynamic_coverage) and min(dynamic_coverage) <= max(static_coverage)
     occupancy_blocking = (
         overlap
+        and dynamic.get("occupancy_evidence_available") is True
         and (sum(int(key) * value for key, value in static["friendly_occupied_neighbor_distribution"].items()) > 0
              or sum(int(key) * value for key, value in static["enemy_occupied_neighbor_distribution"].items()) > 0)
         and int(dynamic["breaking_reply_mechanism_counts"].get("ANCHOR_FLIGHT", 0)) > 0

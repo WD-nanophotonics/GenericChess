@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from scripts.f86s_f86n_r1_joint_witness_confinement import build_prep
+from scripts.f86s_f86n_r1_joint_witness_confinement import _route, build_prep
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -67,11 +67,29 @@ def test_f86s_witness_profiles_are_exact_mates_and_routes_are_sample_dependent()
     assert all(row["exact_checkmate_confinement"]["legal_defender_reply_count"] == 0 for row in witnesses)
     assert summary["routing"] == {
         "by_sample": {
-            "V4-3": "STATIC_MATE_CONFINEMENT_DEPENDS_ON_OCCUPANCY_STRUCTURE",
+            "V4-3": "STATIC_VS_DYNAMIC_CONFINEMENT_DIFFERENCE_IS_MULTI_FACTOR",
             "V5-3": "STATIC_MATE_WITNESSES_HAVE_STRICTLY_STRONGER_NEIGHBOR_ATTACK_COVERAGE",
         },
         "overall": "CONFINEMENT_GAP_IS_SAMPLE_DEPENDENT",
     }
+
+
+def test_f86s_route_requires_serialized_dynamic_occupancy_evidence():
+    static = {
+        "anchor_neighborhood_coverage_distribution": {"2": 1, "3": 1},
+        "friendly_occupied_neighbor_distribution": {"0": 2},
+        "enemy_occupied_neighbor_distribution": {"1": 1, "2": 1},
+        "checker_multiplicity_distribution": {"1": 2},
+    }
+    dynamic = {
+        "anchor_neighborhood_coverage_distribution": {"2": 1},
+        "breaking_reply_mechanism_counts": {"ANCHOR_FLIGHT": 2},
+        "checker_multiplicity_distribution": {"1": 1},
+        "occupancy_evidence_available": False,
+    }
+    assert _route(static, dynamic) == "STATIC_VS_DYNAMIC_CONFINEMENT_DIFFERENCE_IS_MULTI_FACTOR"
+    dynamic["occupancy_evidence_available"] = True
+    assert _route(static, dynamic) == "STATIC_MATE_CONFINEMENT_DEPENDS_ON_OCCUPANCY_STRUCTURE"
 
 
 def test_f86s_compute_accounting_is_zero_for_prohibited_work():
