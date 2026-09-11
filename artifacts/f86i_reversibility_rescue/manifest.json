@@ -1,0 +1,4730 @@
+{
+  "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+  "default_generator_changed": false,
+  "dynamic_budget": {
+    "games_per_sample": 2,
+    "max_ply": 32,
+    "pairing": [
+      "A/B",
+      "B/A"
+    ],
+    "real_games": 16
+  },
+  "entries": [
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861401,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 2,
+      "policy_tapes": {
+        "A": {
+          "seed": 8614011,
+          "uniforms": [
+            0.1594088790920477,
+            0.5150688112788897,
+            0.6707969597171258,
+            0.8172988223885557,
+            0.8573225905568147,
+            0.763931046005865,
+            0.030069792570826315,
+            0.6074167910326616,
+            0.543583046966525,
+            0.5764194632349494,
+            0.8300504817798163,
+            0.8719632911146704,
+            0.201797739803931,
+            0.44066560901465635,
+            0.47590941159208666,
+            0.7862791339469015,
+            0.8470447539274609,
+            0.6483716891320715,
+            0.7925500434289734,
+            0.9380484926073784,
+            0.8266424695013181,
+            0.579737896662806,
+            0.6931419838590653,
+            0.059847675092545516,
+            0.5521575835986295,
+            0.8542428328705942,
+            0.31220983798812374,
+            0.9085567517467679,
+            0.9378086727860654,
+            0.22887960087675252,
+            0.4410356109932575,
+            0.2477997856616616
+          ]
+        },
+        "B": {
+          "seed": 8614012,
+          "uniforms": [
+            0.5535360602258613,
+            0.36545181071308275,
+            0.37879506948333763,
+            0.6583912798722138,
+            0.5458329269325135,
+            0.7985341268600037,
+            0.720027837651706,
+            0.0700237191415205,
+            0.541384750192966,
+            0.1292197542037392,
+            0.5295160920168653,
+            0.9118623344143367,
+            0.5125042768816804,
+            0.6646105753290014,
+            0.9917742509988982,
+            0.14405839582192037,
+            0.9731836092017134,
+            0.18234902670737574,
+            0.2253252057052757,
+            0.5066643682119668,
+            0.07728971100386284,
+            0.821290267105013,
+            0.4650236790627623,
+            0.8995119110710269,
+            0.9868871819320568,
+            0.6452416933805758,
+            0.6096905974331503,
+            0.7476129795678175,
+            0.1608376847443842,
+            0.3792726557041399,
+            0.32422913614943494,
+            0.7935849333120455
+          ]
+        }
+      },
+      "sample_id": "V4-2",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861401
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "1b8547501a45ebc1344f7134319ed215de09a51dfb001270dc127e77528698ac",
+      "source_seed": 861401
+    },
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P2": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861402,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": 1
+              },
+              {
+                "direction": [
+                  -1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": 1
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P2",
+            "promotion_target_ids": [],
+            "type_id": "P2"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 3,
+      "policy_tapes": {
+        "A": {
+          "seed": 8624301,
+          "uniforms": [
+            0.785834064133732,
+            0.7417363370284642,
+            0.603897171577035,
+            0.21632911225181917,
+            0.43687886583106195,
+            0.6366778443972622,
+            0.6850149317463985,
+            0.04031348396999568,
+            0.0007941236555406572,
+            0.09657993170266099,
+            0.9039953145433708,
+            0.6523372121310687,
+            0.4167568581262353,
+            0.8992020867328903,
+            0.42166183501100807,
+            0.6914132123896382,
+            0.3620349961946062,
+            0.15715235792607862,
+            0.3604616467743017,
+            0.45256606088105655,
+            0.6341061175451718,
+            0.3696664854264545,
+            0.2788607542349967,
+            0.25550110149225225,
+            0.7334779214100996,
+            0.570242551338834,
+            0.974372759478135,
+            0.8039356188626761,
+            0.9565473229440468,
+            0.9958839154439073,
+            0.7575153215137124,
+            0.39672224426588043
+          ]
+        },
+        "B": {
+          "seed": 8624302,
+          "uniforms": [
+            0.3309965704146647,
+            0.9037691464167339,
+            0.4691929343348744,
+            0.41639499957308,
+            0.048479064703006225,
+            0.04979670233896483,
+            0.6100848755738336,
+            0.5697428472773324,
+            0.44650352626685863,
+            0.15803405171453777,
+            0.09135342778852706,
+            0.4547150546338805,
+            0.8878760887054483,
+            0.8567325707785701,
+            0.09631898016501805,
+            0.358278241754153,
+            0.4514090570497883,
+            0.8855452029529899,
+            0.734587050110294,
+            0.99857889558849,
+            0.07369370003806308,
+            0.22149188693740351,
+            0.33041119225454485,
+            0.48770240013218413,
+            0.6299567833824323,
+            0.34385501044803435,
+            0.5359302805366095,
+            0.33436267685022436,
+            0.06915099867052621,
+            0.4732821118792052,
+            0.8815828642327349,
+            0.37312722234720086
+          ]
+        }
+      },
+      "sample_id": "V4-3",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P2": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861402
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": 1
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P2",
+            "promotion_target_ids": [],
+            "type_id": "P2"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400",
+      "source_seed": 861402
+    },
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861403,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 4,
+      "policy_tapes": {
+        "A": {
+          "seed": 8614031,
+          "uniforms": [
+            0.02401368394697223,
+            0.4221467390085789,
+            0.5471860737820873,
+            0.3825348929964273,
+            0.7139463350891907,
+            0.9704123216057207,
+            0.2329158863182601,
+            0.33327216767776435,
+            0.7179245443504902,
+            0.126149188955343,
+            0.9132610072544874,
+            0.154821412632697,
+            0.5676638835977719,
+            0.3019096269404552,
+            0.6369912420735264,
+            0.7571484799285682,
+            0.3447509890838575,
+            0.1651583811620989,
+            0.981928289615637,
+            0.2360763406180184,
+            0.31140676159489666,
+            0.8817019661318118,
+            0.8264999452486019,
+            0.6599280030530785,
+            0.3090533715177737,
+            0.4863173830103543,
+            0.6443075700126735,
+            0.42273474107515696,
+            0.267965076783759,
+            0.8074197723535991,
+            0.3439760296070872,
+            0.04209222751433017
+          ]
+        },
+        "B": {
+          "seed": 8614032,
+          "uniforms": [
+            0.2143036186392312,
+            0.9146389988030926,
+            0.7404254658464687,
+            0.15622481501691576,
+            0.6626759035827069,
+            0.8581693475392471,
+            0.6393332412954503,
+            0.2980927824292158,
+            0.0162680804923353,
+            0.10427861166416708,
+            0.6129503025848759,
+            0.7512993508794138,
+            0.17817031357755697,
+            0.11801141797963077,
+            0.33629386785344595,
+            0.7534298166433269,
+            0.6596981811252911,
+            0.015878704393266996,
+            0.6767848420719661,
+            0.7033355304831221,
+            0.6413714776779218,
+            0.3427194776175102,
+            0.727826199511924,
+            0.1642045938450999,
+            0.26854984513680336,
+            0.04112031425914431,
+            0.9911108941244351,
+            0.5267386226009131,
+            0.7423698477093981,
+            0.670125936529792,
+            0.21595411670089948,
+            0.15196841151045515
+          ]
+        }
+      },
+      "sample_id": "V4-4",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861403
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "864e9aaf0f36b0a94024454a357e6787b3edd9cfd81898d1bea76dfc591b08d0",
+      "source_seed": 861403
+    },
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861404,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 5,
+      "policy_tapes": {
+        "A": {
+          "seed": 8614041,
+          "uniforms": [
+            0.7136494020733414,
+            0.3357819889093405,
+            0.11233434308736223,
+            0.9978499153059563,
+            0.9544132440469101,
+            0.19944204949865496,
+            0.3501052205137908,
+            0.4835937167166441,
+            0.6852798513010719,
+            0.1663741342161954,
+            0.4942687582022439,
+            0.29738140420698556,
+            0.17640208374038258,
+            0.45617529850310323,
+            0.3620354416204108,
+            0.5465144246624734,
+            0.7090506084299165,
+            0.21999956827202438,
+            0.9626419606983248,
+            0.7371655426247549,
+            0.7309432167513495,
+            0.42171291755139695,
+            0.07233840445168571,
+            0.005751311513559343,
+            0.14320914035772814,
+            0.4740616204882241,
+            0.11351909921292369,
+            0.9873804289780818,
+            0.5391086226672813,
+            0.9737171887903617,
+            0.8998975896774715,
+            0.06339942539045529
+          ]
+        },
+        "B": {
+          "seed": 8614042,
+          "uniforms": [
+            0.9895195975468719,
+            0.03581344336698267,
+            0.01918038630177188,
+            0.3330898725155428,
+            0.07258521951664854,
+            0.2527632748271069,
+            0.09144969560366045,
+            0.6147769293691921,
+            0.1229083932071171,
+            0.5945253635807891,
+            0.832738688177615,
+            0.39412792825483844,
+            0.7737538544583059,
+            0.8472132914096581,
+            0.8768069903228278,
+            0.7527580095448386,
+            0.40545735199602706,
+            0.3876665842718854,
+            0.6626732783686733,
+            0.7206630932539848,
+            0.6734086829114929,
+            0.7094437573325162,
+            0.9767956246721213,
+            0.4716319589848489,
+            0.6822469107146497,
+            0.8700328521948211,
+            0.4244844391669519,
+            0.30132757861745363,
+            0.6810152867043537,
+            0.8695821275731345,
+            0.48472794161004296,
+            0.8201140076658966
+          ]
+        }
+      },
+      "sample_id": "V4-5",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861404
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "9a5f3de7a492fa4fa01ca1b4c2e7a11b24403cde87b79761b26e212d13221f24",
+      "source_seed": 861404
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861501,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 2,
+      "policy_tapes": {
+        "A": {
+          "seed": 8615011,
+          "uniforms": [
+            0.5357830465654413,
+            0.22456825257341584,
+            0.24524281294720374,
+            0.07298645946093574,
+            0.45860166211664277,
+            0.6133736718353173,
+            0.6889800797342098,
+            0.5418044838561737,
+            0.6473166033127138,
+            0.21838742248550813,
+            0.08666977752387384,
+            0.9410488574568221,
+            0.31617881900686484,
+            0.27836254025183316,
+            0.7746255006519314,
+            0.7919129722367687,
+            0.05749909299179401,
+            0.2650001303148517,
+            0.7898404471960937,
+            0.568355881622817,
+            0.7489295116500446,
+            0.5480286827902284,
+            0.9856013398207804,
+            0.7195533009258237,
+            0.1586305266849246,
+            0.7624378217144056,
+            0.8871789171098121,
+            0.30162730694216755,
+            0.019881553432370747,
+            0.9006142861107739,
+            0.9269342291016734,
+            0.40411119663484263
+          ]
+        },
+        "B": {
+          "seed": 8615012,
+          "uniforms": [
+            0.8007334601284042,
+            0.7207434444697065,
+            0.0718482491030541,
+            0.0406776796902345,
+            0.42480226340725846,
+            0.7553701830921501,
+            0.16810994676966762,
+            0.5888488316083023,
+            0.07793982065530347,
+            0.8581511844505019,
+            0.628581771456386,
+            0.06278958147366764,
+            0.940890337477497,
+            0.5426380034490814,
+            0.33653931873430953,
+            0.6677599640022677,
+            0.7337514084707661,
+            0.711903821934463,
+            0.9463002798852502,
+            0.4631204121302588,
+            0.013777894189069828,
+            0.12583281609238006,
+            0.7514446601711041,
+            0.7410159841624653,
+            0.08312886134046849,
+            0.6865713230449825,
+            0.9110641249139926,
+            0.4715832920948859,
+            0.16212159070502852,
+            0.2047703705154622,
+            0.8072480733296725,
+            0.033035945909039466
+          ]
+        }
+      },
+      "sample_id": "V5-2",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861501
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "ddacec0f6b6fbffeb9135fbbbb658093d92ce0e5bce28665a87022b702d815d6",
+      "source_seed": 861501
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861502,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 3,
+      "policy_tapes": {
+        "A": {
+          "seed": 8625301,
+          "uniforms": [
+            0.41432125379466667,
+            0.9253701973569286,
+            0.6306999333427856,
+            0.24397277773615078,
+            0.8854587160503268,
+            0.9971295017251665,
+            0.28831858091278617,
+            0.3658896285740664,
+            0.14061769903401922,
+            0.9971431784179019,
+            0.11560174897487874,
+            0.9984238253513491,
+            0.2594665630412042,
+            0.8445701411215166,
+            0.19473040558141974,
+            0.981587757812765,
+            0.15213678216394722,
+            0.547194817135437,
+            0.20805664881103048,
+            0.9362778134707563,
+            0.6435369338223652,
+            0.41703463064248747,
+            0.2207545131780989,
+            0.3013259028750014,
+            0.7932740371272298,
+            0.3973067027096179,
+            0.7021959639252378,
+            0.38672048774176526,
+            0.41237668146695994,
+            0.7118363563054111,
+            0.13089565863400243,
+            0.5750656958478784
+          ]
+        },
+        "B": {
+          "seed": 8625302,
+          "uniforms": [
+            0.4301233562227005,
+            0.7913182787552652,
+            0.40970548617377645,
+            0.7502153416188043,
+            0.9375829962718426,
+            0.15645702663678096,
+            0.5957453652282192,
+            0.964054181195379,
+            0.30571059925036337,
+            0.5244684123886885,
+            0.6860700847957665,
+            0.22302995391623104,
+            0.2175571023613837,
+            0.7107800911105883,
+            0.027164026378007855,
+            0.7983619882848139,
+            0.8270567365611142,
+            0.347952725939802,
+            0.35258855150634494,
+            0.7472860671262388,
+            0.28067445224893695,
+            0.9163623492797246,
+            0.883633923327895,
+            0.20227745577911105,
+            0.1800262886041567,
+            0.5967574889159261,
+            0.6737164628058983,
+            0.35216764099904707,
+            0.311698737886551,
+            0.6406700519171764,
+            0.28524235187144475,
+            0.7828908680238502
+          ]
+        }
+      },
+      "sample_id": "V5-3",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861502
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "d6e47a6fe19ab20538a1ec9539597b5765d0211cb608b15c262613a86e635297",
+      "source_seed": 861502
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861503,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 4,
+      "policy_tapes": {
+        "A": {
+          "seed": 8615031,
+          "uniforms": [
+            0.4712875274501238,
+            0.7675152842398527,
+            0.7701999319772038,
+            0.9381596949695973,
+            0.1162289711976996,
+            0.13472362254839598,
+            0.05490085199554395,
+            0.6388157434265614,
+            0.09130333334228324,
+            0.6578397274953819,
+            0.7423796298031929,
+            0.2689815279283999,
+            0.5150956667858129,
+            0.5799966295896566,
+            0.6573642394212029,
+            0.9285920122419842,
+            0.5178950563020566,
+            0.4460684173544688,
+            0.5590326032218529,
+            0.9088486096398517,
+            0.9527851307327991,
+            0.4334769196628385,
+            0.9559387445001921,
+            0.7443328665005151,
+            0.2862176053953206,
+            0.9047251470670837,
+            0.8439097875708954,
+            0.1469776369543696,
+            0.2886615404227634,
+            0.7116600269995725,
+            0.05549361431522115,
+            0.5199935990518323
+          ]
+        },
+        "B": {
+          "seed": 8615032,
+          "uniforms": [
+            0.012081703061275983,
+            0.028427608791556702,
+            0.01875535521067595,
+            0.6822812177118597,
+            0.2915422287882383,
+            0.25882675286622536,
+            0.7779508352228314,
+            0.4274370208230043,
+            0.2657363456918892,
+            0.7469421119243089,
+            0.5677580953424853,
+            0.3806668109227933,
+            0.035076495594619006,
+            0.22943151253874106,
+            0.32077871962644566,
+            0.11744927062493304,
+            0.29270392220490604,
+            0.5525797621838333,
+            0.8231292072430291,
+            0.5519987606727979,
+            0.10017672157987767,
+            0.3636002420232618,
+            0.6359395981309012,
+            0.1071194700326128,
+            0.21408542446800105,
+            0.13209634976117557,
+            0.7784225656532408,
+            0.5174223414823593,
+            0.3451126735817768,
+            0.06073407471596759,
+            0.21856699360077958,
+            0.0016192452415438874
+          ]
+        }
+      },
+      "sample_id": "V5-4",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861503
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "580475d4c25b8d5bb9d796902d383ac673bd00c3565e4609d07443bcc338ad04",
+      "source_seed": 861503
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_REVERSE_CLOSED_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861504,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  -1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "game_budget": {
+        "games": 2,
+        "max_ply": 32
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "ordering": "original_atoms_then_first_seen_reverse_atoms",
+        "ordinary": "append_exact_reverse_counterpart_per_legacy_atom"
+      },
+      "ordinary_count": 5,
+      "policy_tapes": {
+        "A": {
+          "seed": 8615041,
+          "uniforms": [
+            0.4131616167085428,
+            0.7038681203360788,
+            0.20446979382371255,
+            0.16397751250965276,
+            0.8784751277705495,
+            0.5073834156997036,
+            0.02898719210638412,
+            0.6192264122779005,
+            0.17230669366065776,
+            0.6241421220744781,
+            0.2760628917163407,
+            0.04790529042346359,
+            0.6642224569805736,
+            0.9539734763081513,
+            0.597077864791716,
+            0.014578532587115833,
+            0.8815745949348509,
+            0.8442188624620105,
+            0.15905549848263512,
+            0.19776822875247546,
+            0.25033018152717923,
+            0.01905386002725551,
+            0.8320992644346105,
+            0.32208414312235867,
+            0.8159227613387636,
+            0.39244713776833207,
+            0.28168276918059243,
+            0.39388912978814605,
+            0.8950462235548414,
+            0.7509161942317252,
+            0.4514197606438153,
+            0.8120300992633976
+          ]
+        },
+        "B": {
+          "seed": 8615042,
+          "uniforms": [
+            0.9986088284734436,
+            0.7635012685927698,
+            0.48475104906658695,
+            0.17033023502023392,
+            0.25603486762793404,
+            0.955925472142164,
+            0.304110405603647,
+            0.5348063508426717,
+            0.555160173230643,
+            0.6540333055301584,
+            0.5731504567481434,
+            0.34480208135878343,
+            0.00405460561889015,
+            0.010034379729889631,
+            0.12980503160912715,
+            0.8124383068213166,
+            0.7473300718234277,
+            0.5247893104556484,
+            0.8972404975944245,
+            0.6539138196244972,
+            0.151562248862684,
+            0.4370592347085628,
+            0.6598306874829437,
+            0.21389951498417215,
+            0.4410025056348902,
+            0.3975340021884006,
+            0.2318331836173868,
+            0.05288423215728966,
+            0.42244681617501,
+            0.003597861780416989,
+            0.40379927011314687,
+            0.7989436835037063
+          ]
+        }
+      },
+      "sample_id": "V5-5",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861504
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "c3fa844c61ea944f9fd11560f00878337389f427a59d84958c312e38d5494d31",
+      "source_seed": 861504
+    }
+  ],
+  "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+  "policy_tape_length": 32,
+  "result_driven_replacement_forbidden": true,
+  "schema_version": 1,
+  "source_artifact": "artifacts/f86c_generator_viability/rulesets.json",
+  "source_sample_ids": [
+    "V4-2",
+    "V4-3",
+    "V4-4",
+    "V4-5",
+    "V5-2",
+    "V5-3",
+    "V5-4",
+    "V5-5"
+  ],
+  "static_budget": {
+    "candidate_checks_per_cell": 2048,
+    "candidate_checks_v4_v5_cells": 4096,
+    "tactical_nodes_total": 2048
+  },
+  "status": "PRE_REGISTERED_EXPERIMENTAL_CANDIDATE"
+}
