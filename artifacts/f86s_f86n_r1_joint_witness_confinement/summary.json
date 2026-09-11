@@ -1,0 +1,146 @@
+{
+  "comparisons": {
+    "V4-3": {
+      "dynamic_f86r_arm_n": {
+        "anchor_neighborhood_coverage_distribution": {
+          "2": 1
+        },
+        "breaking_replies": 2,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 2
+        },
+        "checker_multiplicity_distribution": {
+          "1": 1
+        },
+        "checking_actions": 1,
+        "occupancy_distributions": "NOT_SERIALIZED_BY_F86R_RESULT",
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      },
+      "static": {
+        "all_validated_exact_checkmate": true,
+        "anchor_neighborhood_coverage_distribution": {
+          "2": 1,
+          "3": 1
+        },
+        "checker_multiplicity_distribution": {
+          "1": 2
+        },
+        "enemy_occupied_neighbor_distribution": {
+          "1": 1,
+          "2": 1
+        },
+        "friendly_occupied_neighbor_distribution": {
+          "0": 2
+        },
+        "legal_defender_reply_distribution": {
+          "0": 2
+        },
+        "witness_count": 2
+      }
+    },
+    "V5-3": {
+      "dynamic_f86r_arm_n": {
+        "anchor_neighborhood_coverage_distribution": {
+          "0": 8,
+          "1": 5
+        },
+        "breaking_replies": 27,
+        "breaking_reply_mechanism_counts": {
+          "ANCHOR_FLIGHT": 24,
+          "CHECKER_CAPTURE": 3
+        },
+        "checker_multiplicity_distribution": {
+          "1": 13
+        },
+        "checking_actions": 13,
+        "occupancy_distributions": "NOT_SERIALIZED_BY_F86R_RESULT",
+        "route": "ANCHOR_FLIGHT_IS_PRIMARY_BREAKING_REPLY_MODE"
+      },
+      "static": {
+        "all_validated_exact_checkmate": true,
+        "anchor_neighborhood_coverage_distribution": {
+          "2": 13,
+          "3": 6,
+          "4": 2
+        },
+        "checker_multiplicity_distribution": {
+          "1": 19,
+          "2": 2
+        },
+        "enemy_occupied_neighbor_distribution": {
+          "0": 2,
+          "1": 10,
+          "2": 9
+        },
+        "friendly_occupied_neighbor_distribution": {
+          "0": 21
+        },
+        "legal_defender_reply_distribution": {
+          "0": 21
+        },
+        "witness_count": 21
+      }
+    }
+  },
+  "compute_accounting": {
+    "alphabeta": 0,
+    "bfs": 0,
+    "c2": 0,
+    "dynamic_beyond_f86r": 0,
+    "f85": 0,
+    "heavy": 0,
+    "new_games": 0,
+    "new_movement_candidates": 0,
+    "teacher": 0,
+    "training": 0
+  },
+  "default_generator_changed": false,
+  "joint_witness_counts": {
+    "V4-3": 2,
+    "V5-3": 21
+  },
+  "manifest": "artifacts/f86s_f86n_r1_joint_witness_confinement/manifest.json",
+  "routing": {
+    "by_sample": {
+      "V4-3": "STATIC_MATE_CONFINEMENT_DEPENDS_ON_OCCUPANCY_STRUCTURE",
+      "V5-3": "STATIC_MATE_WITNESSES_HAVE_STRICTLY_STRONGER_NEIGHBOR_ATTACK_COVERAGE"
+    },
+    "overall": "CONFINEMENT_GAP_IS_SAMPLE_DEPENDENT"
+  },
+  "schema_version": 1,
+  "static_candidate_checks": {
+    "V4-3": 1296,
+    "V5-3": 2048,
+    "per_cell_cap": 2048,
+    "total": 3344,
+    "total_cap": 4096
+  },
+  "status": "F86S_F86N_R1_JOINT_WITNESS_CONFINEMENT_COMPLETE",
+  "targeted_static_mate_capacity": [
+    {
+      "candidate_position_count": 1296,
+      "candidate_ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "joint_kinematically_reachable_count": 2,
+      "minimum_optimistic_ply_lower_bound": 8,
+      "ordinary_assignment_reachable_count": 2,
+      "sample_id": "V4-3",
+      "truncation": false,
+      "validated_position_count": 1166,
+      "validated_template_count": 108,
+      "witness_status": "COMPLETE_CENSUS"
+    },
+    {
+      "candidate_position_count": 2048,
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "joint_kinematically_reachable_count": 21,
+      "minimum_optimistic_ply_lower_bound": 21,
+      "ordinary_assignment_reachable_count": 21,
+      "sample_id": "V5-3",
+      "truncation": true,
+      "validated_position_count": 1592,
+      "validated_template_count": 90,
+      "witness_status": "OBSERVED_UNDER_TRUNCATED_CENSUS"
+    }
+  ],
+  "witnesses": "artifacts/f86s_f86n_r1_joint_witness_confinement/witnesses.json"
+}

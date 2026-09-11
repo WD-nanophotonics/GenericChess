@@ -1,0 +1,3830 @@
+{
+  "manifest": "artifacts/f86s_f86n_r1_joint_witness_confinement/manifest.json",
+  "schema_version": 1,
+  "status": "F86S_JOINT_WITNESSES_COMPLETE",
+  "witnesses": [
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "defender_anchor": [
+        0,
+        3
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            3
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 8,
+      "opening_piece_assignment": [
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "source_square": [
+            0,
+            1
+          ],
+          "target_square": [
+            0,
+            2
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              1,
+              3
+            ]
+          ],
+          "source_square": [
+            1,
+            3
+          ],
+          "target_square": [
+            1,
+            3
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            1
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 4,
+        "ordinary_piece_move_count": 2
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            2
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            3
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V4-3",
+      "source_template_id": "T0075"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "defender_anchor": [
+        0,
+        3
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            3
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 8,
+      "opening_piece_assignment": [
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "source_square": [
+            0,
+            1
+          ],
+          "target_square": [
+            2,
+            3
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              1,
+              3
+            ]
+          ],
+          "source_square": [
+            1,
+            3
+          ],
+          "target_square": [
+            1,
+            3
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            1
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 4,
+        "ordinary_piece_move_count": 2
+      },
+      "ordinary": [
+        {
+          "square": [
+            1,
+            3
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            2,
+            3
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V4-3",
+      "source_template_id": "T0091"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        3,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        3,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        0,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            2,
+            1
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 3,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            2,
+            1
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            2,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 8,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 0,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 13
+      },
+      "ordinary": [
+        {
+          "square": [
+            2,
+            1
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            2,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0001"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        3,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        3,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        0,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            2,
+            1
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 3,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            2,
+            1
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 8,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 0,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 13
+      },
+      "ordinary": [
+        {
+          "square": [
+            2,
+            1
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0002"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        3,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        3,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        0,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P1"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 27,
+      "opening_piece_assignment": [
+        {
+          "distance": 3,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 3,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 8,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 0,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 14
+      },
+      "ordinary": [
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0003"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        3,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        3,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        0,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P1"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 1,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            2,
+            2
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 3,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 9,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            2,
+            0
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 0,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 13
+      },
+      "ordinary": [
+        {
+          "square": [
+            2,
+            2
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            2,
+            0
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0004"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        3,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        3,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        0,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 3,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P1"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 1,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            2,
+            2
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 3,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 9,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 0,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 13
+      },
+      "ordinary": [
+        {
+          "square": [
+            2,
+            2
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0005"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 12
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0010"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 0,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 12
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0011"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 2,
+        "checker_squares": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "checker_types": [
+          "P0",
+          "P1"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 23,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 1,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 11
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0012"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 2,
+        "checker_squares": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "checker_types": [
+          "P0",
+          "P1"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 23,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 1,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 11
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0013"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 4,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 21,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              0,
+              2
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 10
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0017"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 4,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 0,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 21,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              0,
+              2
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 10
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0033"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 12
+      },
+      "ordinary": [
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            3,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0047"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        4,
+        0
+      ],
+      "attacker_anchor_frozen_target_square": [
+        4,
+        0
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        2,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 3,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 6,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 1,
+        "defender_anchor_move_count": 5,
+        "ordinary_piece_move_count": 12
+      },
+      "ordinary": [
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            1,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0048"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 11
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0051"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 25,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 2,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 11
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0052"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 23,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 1,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 10
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0053"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 23,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 1,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 10
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            1,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0054"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 21,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              0,
+              2
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 9
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0059"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            0,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 21,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 0,
+          "path": [
+            [
+              0,
+              2
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 9
+      },
+      "ordinary": [
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            2
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0074"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 2,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 29,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 4,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 13
+      },
+      "ordinary": [
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            4,
+            1
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0088"
+    },
+    {
+      "attacker_anchor_admissible_target_square": [
+        2,
+        1
+      ],
+      "attacker_anchor_frozen_target_square": [
+        2,
+        1
+      ],
+      "candidate_ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "defender_anchor": [
+        3,
+        0
+      ],
+      "exact_checkmate_confinement": {
+        "anchor_neighbor_in_board_count": 5,
+        "attacker_pseudo_attacked_neighbor_count": 2,
+        "checker_capture_reply_count": 0,
+        "checker_multiplicity": 1,
+        "checker_squares": [
+          [
+            1,
+            0
+          ]
+        ],
+        "checker_types": [
+          "P0"
+        ],
+        "enemy_occupied_neighbor_count": 1,
+        "friendly_occupied_neighbor_count": 0,
+        "interposition_screen_reply_count": 0,
+        "legal_anchor_flight_reply_count": 0,
+        "legal_defender_reply_count": 0,
+        "validated_exact_checkmate": true
+      },
+      "joint_optimistic_ply_lower_bound": 29,
+      "opening_piece_assignment": [
+        {
+          "distance": 4,
+          "path": [
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "source_square": [
+            4,
+            3
+          ],
+          "target_square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "distance": 4,
+          "path": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "source_square": [
+            0,
+            2
+          ],
+          "target_square": [
+            0,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "distance": 5,
+          "path": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "source_square": [
+            3,
+            4
+          ],
+          "target_square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "optimistic_assignment_path_lengths": {
+        "attacker_anchor_move_count": 2,
+        "defender_anchor_move_count": 6,
+        "ordinary_piece_move_count": 13
+      },
+      "ordinary": [
+        {
+          "square": [
+            1,
+            0
+          ],
+          "type_id": "P0"
+        },
+        {
+          "square": [
+            0,
+            0
+          ],
+          "type_id": "P1"
+        },
+        {
+          "square": [
+            2,
+            2
+          ],
+          "type_id": "P1"
+        }
+      ],
+      "sample_id": "V5-3",
+      "source_template_id": "T0089"
+    }
+  ]
+}
