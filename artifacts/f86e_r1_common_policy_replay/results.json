@@ -1,0 +1,1173 @@
+{
+  "by_cell": {
+    "FULL8_CURRENT": {
+      "branching_collapse_fraction": 0.21649484536082475,
+      "checkmate_count": 0,
+      "decisive_fraction": 0.0,
+      "forced_move_fraction": 0.061855670103092786,
+      "median_branching": 4.0,
+      "median_game_length": 27.5,
+      "ongoing_at_32_count": 2,
+      "ongoing_at_32_fraction": 0.5,
+      "played_game_count": 4,
+      "repetition_count": 0,
+      "repetition_fraction": 0.0,
+      "stalemate_count": 2,
+      "stalemate_fraction": 0.5,
+      "terminal_distribution": {
+        "ongoing": 2,
+        "stalemate": 2
+      }
+    },
+    "FULL8_HOME": {
+      "branching_collapse_fraction": 0.140625,
+      "checkmate_count": 0,
+      "decisive_fraction": 0.0,
+      "forced_move_fraction": 0.015625,
+      "median_branching": 4.0,
+      "median_game_length": 32.0,
+      "ongoing_at_32_count": 4,
+      "ongoing_at_32_fraction": 1.0,
+      "played_game_count": 4,
+      "repetition_count": 0,
+      "repetition_fraction": 0.0,
+      "stalemate_count": 0,
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing": 4
+      }
+    },
+    "ORTHO4_CURRENT": {
+      "branching_collapse_fraction": 0.376,
+      "checkmate_count": 0,
+      "decisive_fraction": 0.0,
+      "forced_move_fraction": 0.072,
+      "median_branching": 3.0,
+      "median_game_length": 32.0,
+      "ongoing_at_32_count": 3,
+      "ongoing_at_32_fraction": 0.75,
+      "played_game_count": 4,
+      "repetition_count": 0,
+      "repetition_fraction": 0.0,
+      "stalemate_count": 1,
+      "stalemate_fraction": 0.25,
+      "terminal_distribution": {
+        "ongoing": 3,
+        "stalemate": 1
+      }
+    },
+    "ORTHO4_HOME": {
+      "branching_collapse_fraction": 0.3203125,
+      "checkmate_count": 0,
+      "decisive_fraction": 0.0,
+      "forced_move_fraction": 0.109375,
+      "median_branching": 3.0,
+      "median_game_length": 32.0,
+      "ongoing_at_32_count": 4,
+      "ongoing_at_32_fraction": 1.0,
+      "played_game_count": 4,
+      "repetition_count": 0,
+      "repetition_fraction": 0.0,
+      "stalemate_count": 0,
+      "stalemate_fraction": 0.0,
+      "terminal_distribution": {
+        "ongoing": 4
+      }
+    }
+  },
+  "cell_names": [
+    "FULL8_CURRENT",
+    "ORTHO4_CURRENT",
+    "ORTHO4_HOME",
+    "FULL8_HOME"
+  ],
+  "default_generator_changed": false,
+  "f85_actual_compute": 0,
+  "new_tactical_probe_compute": 0,
+  "no_ruleset_replacement": true,
+  "no_seed_replacement": true,
+  "pairwise_comparisons": {
+    "FULL8_HOME_vs_FULL8_CURRENT": {
+      "left": "FULL8_HOME",
+      "pairs": [
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V4-3",
+          "seat_assignment": {
+            "player0": "A",
+            "player1": "B"
+          },
+          "terminal_category_changed": false
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": -9,
+          "right_branching_count": 23,
+          "right_plies": 23,
+          "right_terminal_status": "stalemate",
+          "sample_id": "V4-3",
+          "seat_assignment": {
+            "player0": "B",
+            "player1": "A"
+          },
+          "terminal_category_changed": true
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": -22,
+          "right_branching_count": 10,
+          "right_plies": 10,
+          "right_terminal_status": "stalemate",
+          "sample_id": "V5-3",
+          "seat_assignment": {
+            "player0": "A",
+            "player1": "B"
+          },
+          "terminal_category_changed": true
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V5-3",
+          "seat_assignment": {
+            "player0": "B",
+            "player1": "A"
+          },
+          "terminal_category_changed": false
+        }
+      ],
+      "right": "FULL8_CURRENT"
+    },
+    "ORTHO4_CURRENT_vs_FULL8_CURRENT": {
+      "left": "ORTHO4_CURRENT",
+      "pairs": [
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V4-3",
+          "seat_assignment": {
+            "player0": "A",
+            "player1": "B"
+          },
+          "terminal_category_changed": false
+        },
+        {
+          "left_branching_count": 29,
+          "left_plies": 29,
+          "left_terminal_status": "stalemate",
+          "plies_delta_right_minus_left": -6,
+          "right_branching_count": 23,
+          "right_plies": 23,
+          "right_terminal_status": "stalemate",
+          "sample_id": "V4-3",
+          "seat_assignment": {
+            "player0": "B",
+            "player1": "A"
+          },
+          "terminal_category_changed": false
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": -22,
+          "right_branching_count": 10,
+          "right_plies": 10,
+          "right_terminal_status": "stalemate",
+          "sample_id": "V5-3",
+          "seat_assignment": {
+            "player0": "A",
+            "player1": "B"
+          },
+          "terminal_category_changed": true
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V5-3",
+          "seat_assignment": {
+            "player0": "B",
+            "player1": "A"
+          },
+          "terminal_category_changed": false
+        }
+      ],
+      "right": "FULL8_CURRENT"
+    },
+    "ORTHO4_HOME_vs_ORTHO4_CURRENT": {
+      "left": "ORTHO4_HOME",
+      "pairs": [
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V4-3",
+          "seat_assignment": {
+            "player0": "A",
+            "player1": "B"
+          },
+          "terminal_category_changed": false
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": -3,
+          "right_branching_count": 29,
+          "right_plies": 29,
+          "right_terminal_status": "stalemate",
+          "sample_id": "V4-3",
+          "seat_assignment": {
+            "player0": "B",
+            "player1": "A"
+          },
+          "terminal_category_changed": true
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V5-3",
+          "seat_assignment": {
+            "player0": "A",
+            "player1": "B"
+          },
+          "terminal_category_changed": false
+        },
+        {
+          "left_branching_count": 32,
+          "left_plies": 32,
+          "left_terminal_status": "ongoing",
+          "plies_delta_right_minus_left": 0,
+          "right_branching_count": 32,
+          "right_plies": 32,
+          "right_terminal_status": "ongoing",
+          "sample_id": "V5-3",
+          "seat_assignment": {
+            "player0": "B",
+            "player1": "A"
+          },
+          "terminal_category_changed": false
+        }
+      ],
+      "right": "ORTHO4_CURRENT"
+    }
+  },
+  "played_game_count": 16,
+  "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+  "policy_tape_seeds": {
+    "V4-3": {
+      "A": 8624301,
+      "B": 8624302
+    },
+    "V5-3": {
+      "A": 8625301,
+      "B": 8625302
+    }
+  },
+  "quality_games": [
+    {
+      "branching_sequence": [
+        5,
+        3,
+        7,
+        3,
+        7,
+        2,
+        7,
+        2,
+        7,
+        2,
+        5,
+        4,
+        5,
+        6,
+        2,
+        7,
+        5,
+        6,
+        7,
+        5,
+        4,
+        6,
+        5,
+        2,
+        4,
+        1,
+        6,
+        3,
+        5,
+        2,
+        6,
+        3
+      ],
+      "cell": "FULL8_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        5,
+        5,
+        5,
+        3,
+        4,
+        4,
+        3,
+        3,
+        1,
+        4,
+        2,
+        5,
+        4,
+        2,
+        3,
+        4,
+        2,
+        5,
+        2,
+        5,
+        2,
+        2,
+        3
+      ],
+      "cell": "FULL8_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 23,
+      "policy_move_counts": {
+        "A": 11,
+        "B": 12
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "stalemate",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        3,
+        5,
+        5,
+        4,
+        5,
+        5,
+        2,
+        3,
+        4,
+        2,
+        2,
+        3,
+        4,
+        4,
+        3,
+        3,
+        2,
+        5,
+        2,
+        3,
+        4,
+        2,
+        2,
+        2,
+        4,
+        1,
+        4,
+        3,
+        4,
+        2,
+        4
+      ],
+      "cell": "ORTHO4_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        4,
+        4,
+        3,
+        5,
+        2,
+        3,
+        1,
+        4,
+        5,
+        3,
+        4,
+        1,
+        3,
+        1,
+        1,
+        3,
+        2,
+        1,
+        2,
+        3,
+        2,
+        2,
+        3,
+        4,
+        2,
+        3,
+        1,
+        4
+      ],
+      "cell": "ORTHO4_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 29,
+      "policy_move_counts": {
+        "A": 14,
+        "B": 15
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "stalemate",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        3,
+        2,
+        5,
+        3,
+        3,
+        2,
+        5,
+        3,
+        4,
+        3,
+        4,
+        2,
+        3,
+        3,
+        3,
+        4,
+        2,
+        3,
+        3,
+        3,
+        3,
+        1,
+        1,
+        3,
+        3,
+        2,
+        3,
+        2,
+        3,
+        3,
+        1
+      ],
+      "cell": "ORTHO4_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        3,
+        4,
+        4,
+        5,
+        3,
+        2,
+        3,
+        1,
+        4,
+        4,
+        3,
+        2,
+        3,
+        1,
+        2,
+        2,
+        4,
+        1,
+        2,
+        2,
+        4,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "cell": "ORTHO4_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        4,
+        5,
+        6,
+        2,
+        5,
+        3,
+        6,
+        3,
+        5,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        4,
+        5,
+        4,
+        4,
+        2,
+        3,
+        4,
+        4,
+        5,
+        3,
+        2,
+        5,
+        5,
+        3,
+        2
+      ],
+      "cell": "FULL8_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        3,
+        5,
+        4,
+        5,
+        2,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        3,
+        6,
+        4,
+        2,
+        6,
+        1,
+        5,
+        2,
+        6,
+        1,
+        5,
+        2,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        5
+      ],
+      "cell": "FULL8_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8624301,
+        "B": 8624302
+      },
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        5,
+        5,
+        5,
+        4,
+        4,
+        6,
+        2,
+        5,
+        1,
+        5
+      ],
+      "cell": "FULL8_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 10,
+      "policy_move_counts": {
+        "A": 5,
+        "B": 5
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "stalemate",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        5,
+        5,
+        5,
+        4,
+        5,
+        6,
+        4,
+        7,
+        4,
+        5,
+        1,
+        7,
+        2,
+        4,
+        2,
+        7,
+        1,
+        4,
+        5,
+        3,
+        1,
+        4,
+        3,
+        3,
+        6,
+        4,
+        6,
+        7,
+        3,
+        3,
+        4,
+        4
+      ],
+      "cell": "FULL8_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        3,
+        3,
+        2,
+        4,
+        4,
+        2,
+        5,
+        2,
+        5,
+        2,
+        4,
+        2,
+        4,
+        3,
+        2,
+        3,
+        4,
+        1,
+        4,
+        2,
+        4,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        4,
+        2,
+        2
+      ],
+      "cell": "ORTHO4_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        3,
+        3,
+        3,
+        2,
+        4,
+        3,
+        3,
+        5,
+        2,
+        4,
+        3,
+        3,
+        3,
+        3,
+        2,
+        5,
+        2,
+        3,
+        3,
+        4,
+        2,
+        3,
+        3,
+        2,
+        4,
+        3,
+        4,
+        2,
+        4,
+        3,
+        4,
+        2
+      ],
+      "cell": "ORTHO4_CURRENT",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        9,
+        9,
+        8,
+        3,
+        9,
+        5,
+        7,
+        6,
+        7,
+        6,
+        5,
+        3,
+        3,
+        5,
+        2,
+        3,
+        2,
+        3,
+        2,
+        4,
+        2,
+        4,
+        3,
+        4,
+        3,
+        3,
+        2,
+        4,
+        3,
+        3,
+        4,
+        2
+      ],
+      "cell": "ORTHO4_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        9,
+        9,
+        8,
+        3,
+        9,
+        1,
+        6,
+        7,
+        6,
+        7,
+        4,
+        7,
+        4,
+        3,
+        5,
+        2,
+        5,
+        2,
+        4,
+        3,
+        2,
+        4,
+        2,
+        3,
+        4,
+        2,
+        4,
+        3,
+        2,
+        4,
+        4,
+        3
+      ],
+      "cell": "ORTHO4_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        9,
+        9,
+        9,
+        4,
+        8,
+        9,
+        5,
+        8,
+        6,
+        8,
+        5,
+        7,
+        4,
+        6,
+        2,
+        7,
+        3,
+        10,
+        3,
+        9,
+        3,
+        10,
+        2,
+        7,
+        3,
+        9,
+        2,
+        7,
+        3,
+        10,
+        2,
+        9
+      ],
+      "cell": "FULL8_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    },
+    {
+      "branching_sequence": [
+        9,
+        9,
+        9,
+        4,
+        8,
+        7,
+        9,
+        5,
+        6,
+        7,
+        5,
+        8,
+        6,
+        5,
+        8,
+        4,
+        9,
+        2,
+        7,
+        4,
+        7,
+        3,
+        5,
+        3,
+        6,
+        7,
+        8,
+        3,
+        6,
+        2,
+        6,
+        3
+      ],
+      "cell": "FULL8_HOME",
+      "first_player_score": 0.5,
+      "plies": 32,
+      "policy_move_counts": {
+        "A": 16,
+        "B": 16
+      },
+      "policy_tape_algorithm": "python_random_mt19937_random_floor_index_v1",
+      "policy_tape_seeds": {
+        "A": 8625301,
+        "B": 8625302
+      },
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      },
+      "terminal_status": "ongoing",
+      "winner": null
+    }
+  ],
+  "routing": [
+    "FULL8_VS_ORTHO4_TERMINATION_EFFECT_UNRESOLVED",
+    "ANCHOR_PLACEMENT_INTERACTION_OBSERVED",
+    "MATE_CAPACITY_REMAINS_LIMITING"
+  ],
+  "ruleset_fingerprints": {
+    "V4-3": {
+      "FULL8_CURRENT": "7511327e944c195de71de536f818e8a2028136d4b04123937596f4dce46bda62",
+      "FULL8_HOME": "8bbf89abb06de37fd530893986daa2866e957176baace0b2b4c29cfcd2fb5b04",
+      "ORTHO4_CURRENT": "ea993a6147595b1ce740cc91ad426a96395edcb6de479c95c23ecc88800a0e17",
+      "ORTHO4_HOME": "b212a7b7eeb624a8765d046a9aea898f388357bc356657b6b1a225a7ae5a5f37"
+    },
+    "V5-3": {
+      "FULL8_CURRENT": "8d77e9671449b2d6952aa7c80c898d7e390eff0fa534ac8be6d55e7f055ec1d8",
+      "FULL8_HOME": "a97770ea9f685a9cfcbe257d57beb3b5272fd5af4e014d54396d0dc361abc204",
+      "ORTHO4_CURRENT": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "ORTHO4_HOME": "a0ef1a7439137d344c72e56bd308dfaa31643ff60ff505c92efe11ef0db363e8"
+    }
+  },
+  "sample_ids": [
+    "V4-3",
+    "V5-3"
+  ],
+  "schema_version": 1
+}
