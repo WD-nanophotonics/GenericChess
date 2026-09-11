@@ -25,7 +25,7 @@ def test_f87a_prep_is_frozen_and_has_six_calibration_controls(tmp_path):
     assert prep["budgets"]["search_nodes"] == 0
     assert prep["budgets"]["heavy_jobs"] == 0
     assert prep["budgets"]["max_ply"] == 32
-    assert prep["expectations"]["overall_status"] == "DEFER"
+    assert prep["expectations"]["overall_status"] == "CALIBRATION_MIXED_OUTCOMES"
 
 
 def test_f87a_prep_regeneration_is_byte_identical(tmp_path):
@@ -60,8 +60,8 @@ def test_f87a_reports_defer_d_and_e_and_do_not_apply_universal_lattice_gate(tmp_
         "Built-in Western Chess",
         "Built-in Standard Shogi",
     }
-    for report in reports.values():
-        assert report["overall_status"] == "DEFER"
+    for name, report in reports.items():
+        assert report["overall_status"] == ("FAIL" if name.startswith("F86C") or name.startswith("F86I") else "DEFER")
         assert report["qualification_target"] == "PLAYABILITY"
         assert report["required_layers"] == ["A", "B", "C"]
         assert report["layers"]["D"] == "DEFER"
@@ -78,10 +78,32 @@ def test_f87a_negative_and_boundary_controls_have_distinct_calibration_evidence(
     run(ROOT, prep_path, result_dir)
     reports = json.loads((result_dir / "reports.json").read_text(encoding="utf-8"))
     assert "LATTICE_RANK_DEFICIT" in reports["F86C legacy V4-3"]["reason_codes"]
+    assert reports["F86C legacy V4-3"]["layers"]["B"] == "FAIL"
+    assert reports["F86C legacy V4-3"]["measurement_status"] == "PASS"
+    assert reports["F86C legacy V4-3"]["calibration_expectation_status"] == "PASS"
+    assert reports["F86C legacy V4-3"]["raw_diagnostics"]["calibration_authority"]["authority_path"].endswith("f86c_generator_viability/results.json")
     assert "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT" in reports["F86I full-reverse V4-3"]["reason_codes"]
+    assert reports["F86I full-reverse V4-3"]["layers"]["B"] == "FAIL"
+    assert reports["F86I full-reverse V4-3"]["raw_diagnostics"]["calibration_authority"]["authority_path"].endswith("f86l_mate_template_transport_support/diagnosis.json")
     for name in ("F86N-R1 boundary V4-3", "F86N-R1 boundary V5-3"):
         assert "STRUCTURAL_BACKBONE_WITNESS" in reports[name]["reason_codes"]
         assert reports[name]["layers"]["B"] == "DEFER"
+
+
+def test_f87a_layer_b_retains_per_source_transport_for_both_owners(tmp_path):
+    prep_path = tmp_path / "manifest.json"
+    result_dir = tmp_path / "results"
+    build_prep(ROOT, prep_path)
+    run(ROOT, prep_path, result_dir)
+    structural = json.loads((result_dir / "reports.json").read_text(encoding="utf-8"))["F86C legacy V4-3"]["raw_diagnostics"]["layer_b"]
+    owner_profiles = [owner for row in structural["type_profiles"] for owner in row["owner_profiles"]]
+    assert {owner["owner"] for owner in owner_profiles} == {0, 1}
+    assert all("opening_source_transport" in owner for owner in owner_profiles)
+    sources = [source for owner in owner_profiles for source in owner["opening_source_transport"]["opening_sources"]]
+    assert sources
+    assert all("reachable_set_size" in source and "scc_component_size" in source for source in sources)
+    owner_one = next(source for source in sources if source["source_id"].startswith("K@o1"))
+    assert owner_one["scc_owner_relative_rank_span"][0] == 3
 
 
 def test_f87a_bounded_dynamic_replay_is_deterministic_and_censored():

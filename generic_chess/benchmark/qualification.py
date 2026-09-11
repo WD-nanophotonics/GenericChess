@@ -80,6 +80,8 @@ class QualificationReport:
     experiment_identity: str
     qualification_target: str
     required_layers: tuple[str, ...]
+    measurement_status: str
+    calibration_expectation_status: str
     layers: dict[str, str]
     raw_diagnostics: dict[str, Any]
     hard_gates: tuple[GateOutcome, ...]
@@ -106,6 +108,8 @@ class QualificationReport:
             "experiment_identity": self.experiment_identity,
             "qualification_target": self.qualification_target,
             "required_layers": list(self.required_layers),
+            "measurement_status": self.measurement_status,
+            "calibration_expectation_status": self.calibration_expectation_status,
             "layers": dict(self.layers),
             "raw_diagnostics": self.raw_diagnostics,
             "hard_gates": [gate.to_dict() for gate in self.hard_gates],
@@ -128,6 +132,8 @@ def reduce_qualification_status(layers: dict[str, str], *, required_layers: tupl
     if any(gate.status == STATUS_FAIL for gate in all_gates):
         return STATUS_FAIL
     if any(layers.get(layer) != STATUS_PASS for layer in required_layers):
+        return STATUS_DEFER
+    if any(gate.status in {STATUS_DEFER, STATUS_UNMEASURED} for gate in all_gates):
         return STATUS_DEFER
     return STATUS_PASS
 
@@ -283,7 +289,7 @@ def transport_type_profile(compiled, type_id: str, sources: list[dict[str, Any]]
         reached = reachable_squares(adjacency, source["square_index"])
         component = components[component_ids[source["square_index"]]]
         files = [index % n for index in component]
-        ranks = [index // n for index in component]
+        ranks = [index // n if owner == 0 else n - 1 - (index // n) for index in component]
         source_rows.append({
             "source_id": source["source_id"],
             "opening_square": [source["square_index"] % n, source["square_index"] // n],
@@ -363,11 +369,13 @@ def structural_profile(compiled, *, semantic_type_ids: set[str] | None = None) -
             sinks = sum(not targets for targets in adjacency)
             source_rows = _opening_sources(compiled, owner=owner).get(type_id, [])
             reached = set().union(*(_reachable(adjacency, row["square_index"]) for row in source_rows)) if source_rows else set()
+            transport = transport_type_profile(compiled, type_id, source_rows, owner)
             owner_profiles.append({
                 "owner": owner,
                 "semantic_applicability": "DEFER_SEMANTIC_MOVEMENT" if type_id in semantic_type_ids else "APPLICABLE",
                 "movement_lattice": lattice_info(compiled, type_id),
                 "component_profile": component_info(compiled, type_id, owner, opening_sources=source_rows),
+                "opening_source_transport": transport,
                 "directed_sink_fraction": sinks / n2,
                 "direct_reverse_edge_fraction": reverse_edges / edge_count if edge_count else 0.0,
                 "nontrivial_scc_vertex_fraction": sum(len(component) for component in components if len(component) > 1) / n2,
@@ -549,7 +557,7 @@ def common_tape_games(compiled, *, pair_count: int, max_ply: int, seed: int, tap
     }
 
 
-def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, scope: str = "F87A") -> QualificationReport:
+def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, scope: str = "F87A") -> QualificationReport:
     required_layers = ("A", "B", "C")
     layer_c_integrity = dynamic_status if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else (STATUS_PASS if replay_equal else STATUS_FAIL)
     integrity_gates = (
@@ -558,8 +566,8 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         GateOutcome("common_tape_replay_identity", layer_c_integrity, "EMPIRICAL_GATE", "semantic runtime required" if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else ("identical canonical bounded replay" if replay_equal else "canonical replay changed"), "layer_c_replay"),
     )
     if control_class == "negative":
-        layer_b_status = STATUS_PASS if layer_b_reason_codes else STATUS_DEFER
-        layer_b_reason = "calibrated structural pathology reason codes recorded" if layer_b_reason_codes else "negative control produced no calibrated pathology reason"
+        layer_b_status = STATUS_FAIL if calibration_authority and calibration_authority.get("status") == STATUS_FAIL else (STATUS_DEFER if not layer_b_reason_codes else STATUS_PASS)
+        layer_b_reason = "frozen negative environment authority confirms known pathology" if layer_b_status == STATUS_FAIL else ("calibrated structural pathology reason codes recorded" if layer_b_reason_codes else "negative control produced no calibrated pathology reason")
     elif control_class == "boundary":
         layer_b_status = STATUS_DEFER
         layer_b_reason = "boundary witness is diagnostic; admission authority remains deferred"
@@ -568,11 +576,12 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         layer_b_reason = "semantic movement metrics are not applicable to the legacy empty-mobility probe"
     layer_c_status = STATUS_DEFER
     qualification_gates = (
-        GateOutcome("layer_b_calibration", layer_b_status, "EMPIRICAL_GATE", layer_b_reason, "layer_b_qualification"),
+        GateOutcome("layer_b_ruleset_state", layer_b_status, "EMPIRICAL_GATE", layer_b_reason, "layer_b_qualification"),
+        GateOutcome("calibration_expectation", STATUS_PASS if layer_b_reason_codes else STATUS_DEFER, "EMPIRICAL_GATE", "frozen qualitative expectation observed" if layer_b_reason_codes else "no qualitative expectation evidence", "calibration_expectation"),
         GateOutcome("layer_c_playability", layer_c_status, "EMPIRICAL_GATE", "playability authority is not calibrated in F87A-R1", "layer_c_qualification"),
     )
     layers = {"A": STATUS_PASS, "B": layer_b_status, "C": layer_c_status, "D": STATUS_DEFER, "E": STATUS_DEFER}
-    reason_codes = tuple(dict.fromkeys(layer_b_reason_codes + (("SEMANTIC_MOVEMENT_NOT_APPLICABLE",) if layer_b_status == STATUS_DEFER and control_class == "positive_semantic" else ()) + ("PLAYABILITY_AUTHORITY_UNCALIBRATED",)))
+    reason_codes = tuple(dict.fromkeys(layer_b_reason_codes + (("CALIBRATION_NEGATIVE_ENVIRONMENT_AUTHORITY",) if layer_b_status == STATUS_FAIL else ()) + (("SEMANTIC_MOVEMENT_NOT_APPLICABLE",) if layer_b_status == STATUS_DEFER and control_class == "positive_semantic" else ()) + ("PLAYABILITY_AUTHORITY_UNCALIBRATED",)))
     reasons = (
         "Layer C replay identity is an integrity gate; playability qualification remains DEFER",
         "Layer D paired strength-response is defined but intentionally not measured in F87A-R1",
@@ -582,6 +591,7 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         "structural_probe": MetricEvidence(structural, "GENERICCHESS_SPECIFIC", STATUS_PASS),
         "censored_trajectory_count": MetricEvidence(dynamic.get("censored_count", 0), "GENERICCHESS_SPECIFIC", dynamic_status),
         "terminal_transport": MetricEvidence(terminal_transport, "GENERICCHESS_SPECIFIC", STATUS_DEFER if terminal_transport is None else terminal_transport.get("status", STATUS_DEFER)),
+        "calibration_authority": MetricEvidence(calibration_authority, "EMPIRICAL_GATE", calibration_authority.get("status", STATUS_DEFER) if calibration_authority else STATUS_DEFER),
         "skill_discrimination": MetricEvidence(None, "EMPIRICAL_GATE", STATUS_DEFER, "agent ladder/Arena not run in F87A-R1"),
     }
     overall_status = reduce_qualification_status(layers, required_layers=required_layers, integrity_gates=integrity_gates, qualification_gates=qualification_gates)
@@ -591,8 +601,10 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         experiment_identity=experiment_identity,
         qualification_target="PLAYABILITY",
         required_layers=required_layers,
+        measurement_status=STATUS_PASS if all(gate.status == STATUS_PASS for gate in integrity_gates) else STATUS_UNMEASURED,
+        calibration_expectation_status=STATUS_PASS if layer_b_reason_codes else STATUS_DEFER,
         layers=layers,
-        raw_diagnostics={"layer_b": structural, "layer_c": dynamic},
+        raw_diagnostics={"layer_b": structural, "layer_c": dynamic, "calibration_authority": calibration_authority},
         hard_gates=integrity_gates + qualification_gates,
         integrity_gates=integrity_gates,
         qualification_gates=qualification_gates,

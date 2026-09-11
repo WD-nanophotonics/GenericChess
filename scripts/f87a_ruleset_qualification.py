@@ -140,8 +140,8 @@ def _controls(root: Path) -> list[dict[str, Any]]:
 def _expected_role(control: dict[str, Any]) -> dict[str, Any]:
     if control["class"] == "negative":
         if control["name"].startswith("F86I"):
-            return {"layer_b": "PATHOLOGY_EVIDENCE", "reason_codes": ["HIGH_LOCAL_REVERSIBILITY", "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT"]}
-        return {"layer_b": "PATHOLOGY_EVIDENCE", "reason_codes": ["LATTICE_RANK_DEFICIT", "ONE_WAY_TRANSPORT"]}
+            return {"layer_b": "FAIL_KNOWN_NEGATIVE", "reason_codes": ["HIGH_LOCAL_REVERSIBILITY", "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT"]}
+        return {"layer_b": "FAIL_KNOWN_NEGATIVE", "reason_codes": ["LATTICE_RANK_DEFICIT", "ONE_WAY_TRANSPORT", "CALIBRATION_NEGATIVE_ENVIRONMENT_AUTHORITY"]}
     if control["class"] == "boundary":
         return {"layer_b": "BOUNDARY_WITNESS_DEFER", "reason_codes": ["STRUCTURAL_BACKBONE_WITNESS", "BOUNDARY_NOT_ADMISSION"]}
     return {"layer_b": "SEMANTIC_MOVEMENT_DEFER", "reason_codes": ["SEMANTIC_MOVEMENT_NOT_APPLICABLE"]}
@@ -170,6 +170,39 @@ def _terminal_transport(root: Path, compiled) -> dict[str, Any]:
         "complete_template_count": len(authority["full_closure_reference"]["complete_template_ids"]),
         "routing": authority["routing"],
         "census_truncated": census["truncation"],
+    }
+
+
+def _calibration_authority(root: Path, control: dict[str, Any], compiled) -> dict[str, Any] | None:
+    if control["class"] != "negative":
+        return None
+    if control["name"].startswith("F86I"):
+        authority_path = root / "artifacts/f86l_mate_template_transport_support/diagnosis.json"
+        return {
+            "status": "FAIL",
+            "authority_kind": "F86L_FROZEN_TERMINAL_TRANSPORT_COUNTEREXAMPLE",
+            "authority_path": authority_path.relative_to(root).as_posix(),
+            "authority_sha256": _sha256(authority_path),
+            "authority_fingerprint": compiled.ruleset_fingerprint,
+            "reason_code": "TERMINAL_TEMPLATE_TRANSPORT_INSUFFICIENT",
+            "applicability": "APPLICABLE",
+            "evidence_status": "frozen_authority",
+        }
+    authority_path = root / "artifacts/f86c_generator_viability/results.json"
+    authority = _load_json(authority_path)
+    row = next(row for row in authority["quality"] if row["sample_id"] == "V4-3" and row["ruleset_fingerprint"] == compiled.ruleset_fingerprint)
+    return {
+        "status": "FAIL",
+        "authority_kind": "F86C_FROZEN_DYNAMIC_NEGATIVE_CONTROL",
+        "authority_path": authority_path.relative_to(root).as_posix(),
+        "authority_sha256": _sha256(authority_path),
+        "authority_fingerprint": compiled.ruleset_fingerprint,
+        "reason_code": "CALIBRATION_NEGATIVE_ENVIRONMENT_AUTHORITY",
+        "applicability": "APPLICABLE",
+        "evidence_status": "frozen_authority",
+        "historical_terminal_distribution": row["terminal_distribution"],
+        "historical_stalemate_fraction": authority["stalemate_fraction"],
+        "historical_played_game_count": authority["played_game_count"],
     }
 
 
@@ -248,7 +281,10 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "heavy_jobs": 0,
         },
         "expectations": {
-            "overall_status": "DEFER",
+            "overall_status": "CALIBRATION_MIXED_OUTCOMES",
+            "negative_control_status": "FAIL",
+            "boundary_control_status": "DEFER",
+            "semantic_control_status": "DEFER",
             "negative_controls_not_fully_qualified": True,
             "f86n_boundary_status": "DEFER",
             "builtins_not_universally_failed_by_piece_local_heuristic": True,
@@ -282,6 +318,7 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             raise RuntimeError(f"F87A PREP qualitative expectation drift for {identity['name']}")
         structural = structural_profile(compiled, semantic_type_ids=_semantic_type_ids(control))
         terminal_transport = _terminal_transport(root, compiled)
+        calibration_authority = _calibration_authority(root, control, compiled)
         reason_codes = calibration_reason_codes(
             structural,
             control_class=control["class"],
@@ -325,9 +362,11 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             control_name=control["name"],
             layer_b_reason_codes=reason_codes,
             terminal_transport=terminal_transport,
+            calibration_authority=calibration_authority,
         ).to_dict()
-        if report["overall_status"] != STATUS_DEFER:
-            raise RuntimeError(f"F87A expected DEFER for {identity['name']}")
+        expected_overall = "FAIL" if control["class"] == "negative" else STATUS_DEFER
+        if report["overall_status"] != expected_overall:
+            raise RuntimeError(f"F87A expected {expected_overall} for {identity['name']}")
         expected_codes = set(identity["expected_role"]["reason_codes"])
         if not expected_codes.intersection(report["reason_codes"]):
             raise RuntimeError(f"F87A calibration expectation not observed for {identity['name']}: {report['reason_codes']}")
@@ -340,8 +379,9 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
         "baseline_sha": BASELINE_SHA,
         "prep_manifest": str(prep_path),
         "controls": list(reports),
-        "overall_status": STATUS_DEFER,
-        "layer_status": {"A": STATUS_PASS, "B": STATUS_PASS, "C": "MIXED_PASS_DEFER", "D": STATUS_DEFER, "E": STATUS_DEFER},
+        "overall_status": "CALIBRATION_MIXED_OUTCOMES",
+        "control_overall_status": {name: report["overall_status"] for name, report in reports.items()},
+        "layer_status": {"A": STATUS_PASS, "B": "MIXED_FAIL_DEFER", "C": STATUS_DEFER, "D": STATUS_DEFER, "E": STATUS_DEFER},
         "compute_usage": {"search_nodes": 0, "arena_games": 0, "training_steps": 0, "heavy_jobs": 0},
         "calibration_expectations": prep["expectations"],
     }
