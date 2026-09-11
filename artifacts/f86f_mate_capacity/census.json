@@ -1,0 +1,446 @@
+{
+  "any_truncation": false,
+  "candidate_position_cap_per_cell": 2048,
+  "candidate_position_cap_total": 8192,
+  "cell_names": [
+    "ORTHO4_CURRENT",
+    "FULL8_CURRENT"
+  ],
+  "default_generator_changed": false,
+  "f85_actual_compute": 0,
+  "no_ruleset_replacement": true,
+  "profiles": [
+    {
+      "anchor_square_checkable_fraction": 0.9375,
+      "anchor_square_count": 16,
+      "board_size": 4,
+      "candidate_position_count": 132,
+      "canonical_mate_examples": [
+        {
+          "attacker_anchor": [
+            2,
+            2
+          ],
+          "defender_anchor": [
+            3,
+            1
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                0
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                2,
+                1
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                0
+              ],
+              "type_id": "P1"
+            }
+          ]
+        },
+        {
+          "attacker_anchor": [
+            3,
+            3
+          ],
+          "defender_anchor": [
+            3,
+            1
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                0
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                2,
+                1
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                0
+              ],
+              "type_id": "P1"
+            }
+          ]
+        },
+        {
+          "attacker_anchor": [
+            2,
+            3
+          ],
+          "defender_anchor": [
+            3,
+            2
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                1
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                2,
+                2
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                1
+              ],
+              "type_id": "P1"
+            }
+          ]
+        }
+      ],
+      "cell": "ORTHO4_CURRENT",
+      "checked_position_count": 132,
+      "engine_validated_mate_anchor_fraction": 0.3125,
+      "engine_validated_mate_exists": true,
+      "geometric_full_net_anchor_fraction": 0.3125,
+      "max_anchor_zone_coverage_fraction": 1.0,
+      "mean_anchor_zone_coverage_fraction": 0.7052083333333333,
+      "minimum_geometric_attackers_distribution": {
+        "3": 5
+      },
+      "minimum_validated_ordinary_attackers_distribution": {
+        "3": 89
+      },
+      "ordinary_type_multiset": [
+        "P0",
+        "P0",
+        "P1"
+      ],
+      "ruleset_fingerprint": "ea993a6147595b1ce740cc91ad426a96395edcb6de479c95c23ecc88800a0e17",
+      "sample_id": "V4-3",
+      "truncation": false
+    },
+    {
+      "anchor_square_checkable_fraction": 0.9375,
+      "anchor_square_count": 16,
+      "board_size": 4,
+      "candidate_position_count": 12,
+      "canonical_mate_examples": [],
+      "cell": "FULL8_CURRENT",
+      "checked_position_count": 12,
+      "engine_validated_mate_anchor_fraction": 0.0,
+      "engine_validated_mate_exists": false,
+      "geometric_full_net_anchor_fraction": 0.0625,
+      "max_anchor_zone_coverage_fraction": 1.0,
+      "mean_anchor_zone_coverage_fraction": 0.5746527777777778,
+      "minimum_geometric_attackers_distribution": {
+        "3": 1
+      },
+      "minimum_validated_ordinary_attackers_distribution": {},
+      "ordinary_type_multiset": [
+        "P0",
+        "P0",
+        "P1"
+      ],
+      "ruleset_fingerprint": "7511327e944c195de71de536f818e8a2028136d4b04123937596f4dce46bda62",
+      "sample_id": "V4-3",
+      "truncation": false
+    },
+    {
+      "anchor_square_checkable_fraction": 0.8,
+      "anchor_square_count": 25,
+      "board_size": 5,
+      "candidate_position_count": 1407,
+      "canonical_mate_examples": [
+        {
+          "attacker_anchor": [
+            0,
+            0
+          ],
+          "defender_anchor": [
+            0,
+            2
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                1
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                0
+              ],
+              "type_id": "P1"
+            },
+            {
+              "square": [
+                1,
+                1
+              ],
+              "type_id": "P1"
+            }
+          ]
+        },
+        {
+          "attacker_anchor": [
+            2,
+            0
+          ],
+          "defender_anchor": [
+            0,
+            2
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                1
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                0
+              ],
+              "type_id": "P1"
+            },
+            {
+              "square": [
+                1,
+                1
+              ],
+              "type_id": "P1"
+            }
+          ]
+        },
+        {
+          "attacker_anchor": [
+            3,
+            0
+          ],
+          "defender_anchor": [
+            0,
+            2
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                1
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                0
+              ],
+              "type_id": "P1"
+            },
+            {
+              "square": [
+                1,
+                1
+              ],
+              "type_id": "P1"
+            }
+          ]
+        }
+      ],
+      "cell": "ORTHO4_CURRENT",
+      "checked_position_count": 1407,
+      "engine_validated_mate_anchor_fraction": 0.28,
+      "engine_validated_mate_exists": true,
+      "geometric_full_net_anchor_fraction": 0.28,
+      "max_anchor_zone_coverage_fraction": 1.0,
+      "mean_anchor_zone_coverage_fraction": 0.7446666666666667,
+      "minimum_geometric_attackers_distribution": {
+        "3": 7
+      },
+      "minimum_validated_ordinary_attackers_distribution": {
+        "3": 1262
+      },
+      "ordinary_type_multiset": [
+        "P0",
+        "P1",
+        "P1"
+      ],
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "truncation": false
+    },
+    {
+      "anchor_square_checkable_fraction": 0.8,
+      "anchor_square_count": 25,
+      "board_size": 5,
+      "candidate_position_count": 42,
+      "canonical_mate_examples": [
+        {
+          "attacker_anchor": [
+            0,
+            0
+          ],
+          "defender_anchor": [
+            0,
+            4
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                2
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                2
+              ],
+              "type_id": "P1"
+            },
+            {
+              "square": [
+                0,
+                3
+              ],
+              "type_id": "P1"
+            }
+          ]
+        },
+        {
+          "attacker_anchor": [
+            1,
+            0
+          ],
+          "defender_anchor": [
+            0,
+            4
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                2
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                2
+              ],
+              "type_id": "P1"
+            },
+            {
+              "square": [
+                0,
+                3
+              ],
+              "type_id": "P1"
+            }
+          ]
+        },
+        {
+          "attacker_anchor": [
+            2,
+            0
+          ],
+          "defender_anchor": [
+            0,
+            4
+          ],
+          "ordinary": [
+            {
+              "square": [
+                2,
+                2
+              ],
+              "type_id": "P0"
+            },
+            {
+              "square": [
+                1,
+                2
+              ],
+              "type_id": "P1"
+            },
+            {
+              "square": [
+                0,
+                3
+              ],
+              "type_id": "P1"
+            }
+          ]
+        }
+      ],
+      "cell": "FULL8_CURRENT",
+      "checked_position_count": 42,
+      "engine_validated_mate_anchor_fraction": 0.04,
+      "engine_validated_mate_exists": true,
+      "geometric_full_net_anchor_fraction": 0.04,
+      "max_anchor_zone_coverage_fraction": 1.0,
+      "mean_anchor_zone_coverage_fraction": 0.6233333333333334,
+      "minimum_geometric_attackers_distribution": {
+        "3": 1
+      },
+      "minimum_validated_ordinary_attackers_distribution": {
+        "3": 37
+      },
+      "ordinary_type_multiset": [
+        "P0",
+        "P1",
+        "P1"
+      ],
+      "ruleset_fingerprint": "8d77e9671449b2d6952aa7c80c898d7e390eff0fa534ac8be6d55e7f055ec1d8",
+      "sample_id": "V5-3",
+      "truncation": false
+    }
+  ],
+  "real_games": 0,
+  "routing": {
+    "by_cell": {
+      "FULL8_CURRENT": [
+        "STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"
+      ],
+      "ORTHO4_CURRENT": [
+        "STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"
+      ]
+    },
+    "labels": [
+      "STRIPPED_ANCHOR_MATE_CAPACITY_EXISTS"
+    ]
+  },
+  "sample_ids": [
+    "V4-3",
+    "V5-3"
+  ],
+  "schema_version": 1,
+  "teacher_search_compute": 0,
+  "total_candidate_position_count": 1593,
+  "total_checked_position_count": 1593
+}
