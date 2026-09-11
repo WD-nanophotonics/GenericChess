@@ -6,7 +6,10 @@ from scripts.f87a_r7_calibration import (
     MATCHUPS,
     NODE_CAP,
     T1_DIAGNOSTIC_NODE_CAP,
+    T1_REFERENCE_MAX_DEPTH,
+    T1_REFERENCE_NODE_BUDGET,
     _pair_summary,
+    _t1_gate_passes,
     run,
 )
 
@@ -26,6 +29,15 @@ def test_f87a_r7_calibration_is_bounded_and_has_route_split(tmp_path):
     assert result["t1_diagnostic"]["status"] == "COMPLETE"
     assert result["t1_diagnostic"]["search_nodes"] <= T1_DIAGNOSTIC_NODE_CAP
     assert result["t1_diagnostic"]["next_step"] == "SHORT_SEAT_SWAPPED_VALIDATION"
+    assert result["t1_diagnostic"]["decision_rule"] == "complete_T1_probe_then_validate_with_short_seat_swapped_pairs"
+    assert result["t1_gate_passed"] is True
+    for row in result["t1_diagnostic"]["rows"]:
+        assert row["reference_node_budget"] == T1_REFERENCE_NODE_BUDGET
+        assert row["reference_max_depth"] == T1_REFERENCE_MAX_DEPTH
+        assert row["low_completed_depth"] >= 0
+        assert row["medium_completed_depth"] >= 0
+        assert row["low_termination_reason"]
+        assert row["medium_termination_reason"]
     assert result["resolved_game_count"] == 8
     assert result["censored_game_count"] == 0
     assert result["resolved_pair_count"] == 4
@@ -51,3 +63,7 @@ def test_pair_summary_defers_when_one_seat_swapped_game_is_censored():
         "censored_game_count": 1,
         "status": "DEFER_CENSORED",
     }
+
+
+def test_incomplete_t1_probe_cannot_pass_positive_route_gate():
+    assert not _t1_gate_passes({"status": "DEFER_CENSORED", "next_step": "NO_INTERVENTION_DATA"})
