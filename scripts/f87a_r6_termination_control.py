@@ -21,10 +21,12 @@ PREP_PATH = ARTIFACT_DIR / "manifest.json"
 POLICIES = (
     "deterministic_material_capture_greedy",
     "deterministic_complete_root_material_search",
+    "deterministic_complete_root_terminal_search",
 )
 PAIR_COUNT = 2
 MAX_PLY = 128
 ROOT_NODE_CAP_PER_PLY = 64
+REPLY_ACTION_CAP = 4
 
 
 def _write_json(path: Path, value: Any) -> None:
@@ -49,6 +51,7 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
         "pair_count": PAIR_COUNT,
         "max_ply": MAX_PLY,
         "root_node_cap_per_ply": ROOT_NODE_CAP_PER_PLY,
+        "reply_action_cap": REPLY_ACTION_CAP,
         "budget_rule": "complete root set required; exhaustion terminates trajectory as SEARCH_BUDGET_CENSORED",
         "digest_rule": "pure move sequence digest is separate from execution trace digest",
         "prohibited_compute": ["R2 rerun", "R3 rerun", "R5 full-game fallback", "Arena", "training", "Heavy", "C2", "F85"],
@@ -90,6 +93,7 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             pair_count=PAIR_COUNT,
             max_ply=MAX_PLY,
             root_node_cap_per_ply=ROOT_NODE_CAP_PER_PLY,
+            reply_action_cap=REPLY_ACTION_CAP,
         )
         reports[identity["name"]] = {
             "ruleset_fingerprint": semantic.ruleset_fingerprint,

@@ -777,6 +777,34 @@ def _semantic_position_material_score(position, compiled, perspective: int) -> i
     return score
 
 
+def _semantic_terminal_aware_action_score(state, action, compiled, engine, root_actor: int, reply_cap: int) -> tuple[float, int, int, bool]:
+    """Score one root action through a deterministic bounded reply sample."""
+    child = apply_action(state, action, compiled)
+    nodes = 1
+    result = child.terminal_status
+    if result.winner is not None:
+        return (1_000_000.0 if result.winner == root_actor else -1_000_000.0), nodes, 0, True
+    if result.status.value != "ongoing":
+        return 0.0, nodes, 0, True
+    root_check = engine.in_check(child.position, child.position.side_to_move)
+    replies = sorted(semantic_public_actions(engine, child.position), key=_semantic_action_key)
+    considered_replies = replies[:reply_cap]
+    reply_values = []
+    for reply in considered_replies:
+        reply_child = apply_action(child, reply, compiled)
+        nodes += 1
+        reply_result = reply_child.terminal_status
+        if reply_result.winner is not None:
+            value = 1_000_000.0 if reply_result.winner == root_actor else -1_000_000.0
+        elif reply_result.status.value != "ongoing":
+            value = 0.0
+        else:
+            value = float(_semantic_position_material_score(reply_child.position, compiled, root_actor))
+        reply_values.append(value)
+    score = min(reply_values) if reply_values else float(_semantic_position_material_score(child.position, compiled, root_actor))
+    return score + (10000.0 if root_check else 0.0), nodes, len(replies), True
+
+
 def _semantic_search_action_score(state, action, compiled, engine, root_actor, nodes, node_cap, depth: int = 2) -> tuple[float, int]:
     if nodes[0] >= node_cap:
         return float("-inf"), nodes[0]
@@ -965,6 +993,7 @@ def semantic_termination_control_games(
     pair_count: int,
     max_ply: int,
     root_node_cap_per_ply: int,
+    reply_action_cap: int = 4,
 ) -> dict[str, Any]:
     """Run R6 deterministic controls with complete-root or explicit censorship.
 
@@ -975,9 +1004,15 @@ def semantic_termination_control_games(
     engine = semantic_engine_for(compiled)
     if engine is None:
         raise TypeError("semantic_termination_control_games requires a compiled semantic ruleset")
-    supported = {"deterministic_material_capture_greedy", "deterministic_complete_root_material_search"}
+    supported = {
+        "deterministic_material_capture_greedy",
+        "deterministic_complete_root_material_search",
+        "deterministic_complete_root_terminal_search",
+    }
     if not set(policy_ids) <= supported:
         raise ValueError(f"unsupported R6 policy: {policy_ids}")
+    if reply_action_cap < 1:
+        raise ValueError("reply_action_cap must be positive")
     by_policy: dict[str, dict[str, Any]] = {}
     for policy_id in policy_ids:
         records: list[dict[str, Any]] = []
@@ -1003,7 +1038,7 @@ def semantic_termination_control_games(
                     root_complete = None
                     if policy_id == "deterministic_material_capture_greedy":
                         choice = _semantic_greedy_index(legal, state.position, compiled)
-                    else:
+                    elif policy_id == "deterministic_complete_root_material_search":
                         scored = []
                         for index, action in enumerate(legal):
                             if evaluated >= root_node_cap_per_ply:
@@ -1025,9 +1060,41 @@ def semantic_termination_control_games(
                             budget_censored = True
                             coverage_rows.append({"legal_actions": len(legal), "evaluated_actions": evaluated, "complete": False})
                             break
-                    if policy_id == "deterministic_complete_root_material_search":
-                        coverage_rows.append({"legal_actions": len(legal), "evaluated_actions": evaluated, "complete": root_complete})
-                    searched_plies += int(policy_id == "deterministic_complete_root_material_search")
+                    else:
+                        scored = []
+                        ply_search_nodes = 0
+                        ply_reply_actions = 0
+                        for index, action in enumerate(legal):
+                            if evaluated >= root_node_cap_per_ply:
+                                break
+                            value, search_nodes, reply_count, complete = _semantic_terminal_aware_action_score(
+                                state, action, compiled, engine, actor, reply_action_cap
+                            )
+                            evaluated += 1
+                            ply_search_nodes += search_nodes
+                            ply_reply_actions += reply_count
+                            if not complete:
+                                budget_censored = True
+                                break
+                            scored.append((value, -index, index))
+                        root_complete = evaluated == len(legal) and not budget_censored
+                        coverage_rows.append({
+                            "legal_actions": len(legal),
+                            "evaluated_actions": evaluated,
+                            "complete": root_complete,
+                            "search_nodes": ply_search_nodes,
+                            "reply_actions": ply_reply_actions,
+                            "reply_action_cap": reply_action_cap,
+                        })
+                        if root_complete:
+                            choice = max(scored)[-1]
+                        else:
+                            budget_censored = True
+                            break
+                    if policy_id in {"deterministic_complete_root_material_search", "deterministic_complete_root_terminal_search"}:
+                        if policy_id == "deterministic_complete_root_material_search":
+                            coverage_rows.append({"legal_actions": len(legal), "evaluated_actions": evaluated, "complete": root_complete, "search_nodes": evaluated})
+                    searched_plies += int(policy_id in {"deterministic_complete_root_material_search", "deterministic_complete_root_terminal_search"})
                     action = legal[choice]
                     target = state.position.board[square_to_index(action.to_square, compiled.board_size)]
                     if action_is_board(action) and target is not None and target.owner != actor:
@@ -1083,6 +1150,7 @@ def semantic_termination_control_games(
             "game_count": len(records),
             "max_ply": max_ply,
             "root_node_cap_per_ply": root_node_cap_per_ply,
+            "reply_action_cap": reply_action_cap,
             "records": records,
             "terminal_counts": dict(sorted(terminal_counts.items())),
             "search_budget_censored_count": sum(row["budget_censored"] for row in records),
@@ -1093,7 +1161,7 @@ def semantic_termination_control_games(
                 "fraction": (
                     sum(sum(bool(item["complete"]) for item in row["search_coverage"]) for row in records)
                     / sum(len(row["search_coverage"]) for row in records)
-                    if policy_id == "deterministic_complete_root_material_search" and sum(len(row["search_coverage"]) for row in records) else None
+                    if policy_id in {"deterministic_complete_root_material_search", "deterministic_complete_root_terminal_search"} and sum(len(row["search_coverage"]) for row in records) else None
                 ),
             },
             "unique_action_sequence_count": unique_sequences,
@@ -1102,7 +1170,7 @@ def semantic_termination_control_games(
                 "total_position_returns": sum(row["position_return_count"] for row in records),
                 "max_position_multiplicity": max((row["max_position_multiplicity"] for row in records), default=0),
             },
-            "search_nodes": sum(item["evaluated_actions"] for row in records for item in row["search_coverage"]),
+            "search_nodes": sum(item.get("search_nodes", item["evaluated_actions"]) for row in records for item in row["search_coverage"]),
         }
     all_records = [row for dynamic in by_policy.values() for row in dynamic["records"]]
     return {
@@ -1112,8 +1180,8 @@ def semantic_termination_control_games(
         "policies": by_policy,
         "unique_action_sequence_count": len({row["move_sequence_sha256"] for row in all_records}),
         "control_distinct_sequence_count": len({
-            (policy_id, row["move_sequence_sha256"])
-            for policy_id, dynamic in by_policy.items()
+            row["move_sequence_sha256"]
+            for dynamic in by_policy.values()
             for row in dynamic["records"]
         }),
         "terminal_counts": dict(sorted(Counter(row["terminal_status"] for row in all_records).items())),
