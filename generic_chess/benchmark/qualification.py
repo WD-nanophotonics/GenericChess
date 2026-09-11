@@ -563,6 +563,17 @@ def _semantic_action_key(action) -> str:
     return json.dumps(action_to_dict(action), sort_keys=True, separators=(",", ":"))
 
 
+def _semantic_sequence_digests(execution_trace: list[dict[str, Any]]) -> tuple[str, str]:
+    """Separate pure move identity from instrumentation-bearing trace identity."""
+    moves = [
+        {"actor": row["actor"], "action": row["action"]}
+        for row in execution_trace
+    ]
+    pure = json.dumps(moves, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    trace = json.dumps(execution_trace, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(pure).hexdigest(), hashlib.sha256(trace).hexdigest()
+
+
 def _semantic_piece_value(piece, compiled) -> int:
     """Small deterministic capture value used only by the greedy probe."""
     if piece is None:
@@ -678,7 +689,7 @@ def semantic_tape_games(
             winner = None if censored else state.terminal_status.winner
             first_score = None if censored else (0.5 if winner is None else (1.0 if winner == 0 else 0.0))
             second_score = None if censored else (0.5 if winner is None else (1.0 if winner == 1 else 0.0))
-            sequence_bytes = json.dumps(action_sequence, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            move_sequence_sha256, execution_trace_sha256 = _semantic_sequence_digests(action_sequence)
             material_end = sum(piece is not None for piece in state.position.board)
             records.append({
                 "policy_id": policy_id,
@@ -699,7 +710,9 @@ def semantic_tape_games(
                 "material_end": material_end,
                 "material_reduction": material_start - material_end,
                 "side_to_move_final": state.position.side_to_move,
-                "action_sequence_sha256": hashlib.sha256(sequence_bytes).hexdigest(),
+                "action_sequence_sha256": execution_trace_sha256,
+                "move_sequence_sha256": move_sequence_sha256,
+                "execution_trace_sha256": execution_trace_sha256,
                 "final_position_digest": position_identity_key(state.position, compiled),
             })
             observations.append(QualityObservation(tuple(branchings), state.ply_count, terminal, first_score, second_score))
@@ -861,7 +874,7 @@ def semantic_search_games(
             terminal = "CENSORED" if censored else status
             winner = None if censored else state.terminal_status.winner
             terminal_utility = None if censored else (1.0 if winner == 0 else (-1.0 if winner == 1 else 0.0))
-            sequence_bytes = json.dumps(action_sequence, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            move_sequence_sha256, execution_trace_sha256 = _semantic_sequence_digests(action_sequence)
             repeated_positions = sum(count - 1 for count in recurrence_counts.values() if count > 1)
             records.append({
                 "policy_id": "deterministic_semantic_shallow_search",
@@ -890,15 +903,17 @@ def semantic_search_games(
                 "max_position_multiplicity": max(recurrence_counts.values()),
                 "recurrence_fraction": repeated_positions / len(identities) if identities else 0.0,
                 "side_to_move_final": state.position.side_to_move,
-                "action_sequence_sha256": hashlib.sha256(sequence_bytes).hexdigest(),
+                "action_sequence_sha256": execution_trace_sha256,
+                "move_sequence_sha256": move_sequence_sha256,
+                "execution_trace_sha256": execution_trace_sha256,
                 "final_position_digest": identities[-1],
             })
     branchings = [count for row in records for count in row["branching_sequence"]]
     terminal_counts = Counter(row["terminal_status"] for row in records)
     total_moves = sum(row["plies"] for row in records)
-    unique_action_sequence_count = len({row["action_sequence_sha256"] for row in records})
+    unique_action_sequence_count = len({row["move_sequence_sha256"] for row in records})
     role_swap_distinct_count = sum(
-        records[2 * pair]["action_sequence_sha256"] != records[2 * pair + 1]["action_sequence_sha256"]
+        records[2 * pair]["move_sequence_sha256"] != records[2 * pair + 1]["move_sequence_sha256"]
         for pair in range(pair_count)
     )
     return {
@@ -940,6 +955,169 @@ def semantic_search_games(
             "status": "PASS" if unique_action_sequence_count > 1 and role_swap_distinct_count > 0 else "DEFER",
             "reason": "role-swapped trajectories are not distinct under this deterministic policy" if unique_action_sequence_count <= 1 else "sequence diversity recorded; no admission gate inferred",
         },
+    }
+
+
+def semantic_termination_control_games(
+    compiled,
+    *,
+    policy_ids: tuple[str, ...],
+    pair_count: int,
+    max_ply: int,
+    root_node_cap_per_ply: int,
+) -> dict[str, Any]:
+    """Run R6 deterministic controls with complete-root or explicit censorship.
+
+    A search control never continues from a partially evaluated root set. If
+    the per-ply cap cannot cover every canonical legal action, that trajectory
+    stops as SEARCH_BUDGET_CENSORED instead of switching to canonical fallback.
+    """
+    engine = semantic_engine_for(compiled)
+    if engine is None:
+        raise TypeError("semantic_termination_control_games requires a compiled semantic ruleset")
+    supported = {"deterministic_material_capture_greedy", "deterministic_complete_root_material_search"}
+    if not set(policy_ids) <= supported:
+        raise ValueError(f"unsupported R6 policy: {policy_ids}")
+    by_policy: dict[str, dict[str, Any]] = {}
+    for policy_id in policy_ids:
+        records: list[dict[str, Any]] = []
+        for pair in range(pair_count):
+            for swapped in (False, True):
+                state = initial_state(compiled)
+                branchings: list[int] = []
+                execution_trace: list[dict[str, Any]] = []
+                captures = checks = 0
+                identities = [position_identity_key(state.position, compiled)]
+                recurrence_counts = Counter(identities)
+                searched_plies = 0
+                budget_censored = False
+                coverage_rows: list[dict[str, int | bool]] = []
+                while state.terminal_status.status.value == "ongoing" and state.ply_count < max_ply:
+                    legal = sorted(semantic_public_actions(engine, state.position), key=_semantic_action_key)
+                    if not legal:
+                        break
+                    branchings.append(len(legal))
+                    actor = state.position.side_to_move
+                    choice = 0
+                    evaluated = 0
+                    root_complete = None
+                    if policy_id == "deterministic_material_capture_greedy":
+                        choice = _semantic_greedy_index(legal, state.position, compiled)
+                    else:
+                        scored = []
+                        for index, action in enumerate(legal):
+                            if evaluated >= root_node_cap_per_ply:
+                                break
+                            child = apply_action(state, action, compiled)
+                            evaluated += 1
+                            result = child.terminal_status
+                            if result.winner is not None:
+                                value = 1_000_000 if result.winner == actor else -1_000_000
+                            elif result.status.value != "ongoing":
+                                value = 0.0
+                            else:
+                                value = float(_semantic_position_material_score(child.position, compiled, actor))
+                            scored.append((value, -index, index))
+                        root_complete = evaluated == len(legal)
+                        if root_complete:
+                            choice = max(scored)[-1]
+                        else:
+                            budget_censored = True
+                            coverage_rows.append({"legal_actions": len(legal), "evaluated_actions": evaluated, "complete": False})
+                            break
+                    if policy_id == "deterministic_complete_root_material_search":
+                        coverage_rows.append({"legal_actions": len(legal), "evaluated_actions": evaluated, "complete": root_complete})
+                    searched_plies += int(policy_id == "deterministic_complete_root_material_search")
+                    action = legal[choice]
+                    target = state.position.board[square_to_index(action.to_square, compiled.board_size)]
+                    if action_is_board(action) and target is not None and target.owner != actor:
+                        captures += 1
+                    execution_trace.append({
+                        "actor": actor,
+                        "action": action_to_dict(action),
+                        "legal_action_count": len(legal),
+                        "evaluated_action_count": evaluated,
+                        "root_complete": root_complete,
+                        "policy_id": policy_id,
+                    })
+                    state = apply_action(state, action, compiled)
+                    if engine.in_check(state.position, state.position.side_to_move):
+                        checks += 1
+                    identity = position_identity_key(state.position, compiled)
+                    identities.append(identity)
+                    recurrence_counts[identity] += 1
+                status = state.terminal_status.status.value
+                censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
+                terminal = "SEARCH_BUDGET_CENSORED" if budget_censored else ("CENSORED" if censored else status)
+                winner = None if terminal in {"SEARCH_BUDGET_CENSORED", "CENSORED"} else state.terminal_status.winner
+                move_sequence_sha256, execution_trace_sha256 = _semantic_sequence_digests(execution_trace)
+                repeated_positions = sum(count - 1 for count in recurrence_counts.values() if count > 1)
+                records.append({
+                    "policy_id": policy_id,
+                    "pair_index": pair,
+                    "role_swap": swapped,
+                    "terminal_status": terminal,
+                    "completion": "SEARCH_BUDGET_CENSORED" if budget_censored else ("CENSORED" if censored else "TERMINAL"),
+                    "winner": winner,
+                    "terminal_utility": None if terminal in {"SEARCH_BUDGET_CENSORED", "CENSORED"} else (1.0 if winner == 0 else (-1.0 if winner == 1 else 0.0)),
+                    "plies": state.ply_count,
+                    "branching_sequence": list(branchings),
+                    "capture_count": captures,
+                    "check_count": checks,
+                    "searched_ply_count": searched_plies,
+                    "budget_censored": budget_censored,
+                    "search_coverage": coverage_rows,
+                    "distinct_position_count": len(recurrence_counts),
+                    "position_return_count": repeated_positions,
+                    "max_position_multiplicity": max(recurrence_counts.values()),
+                    "move_sequence_sha256": move_sequence_sha256,
+                    "execution_trace_sha256": execution_trace_sha256,
+                    "action_sequence_sha256": execution_trace_sha256,
+                    "final_position_digest": identities[-1],
+                })
+        terminal_counts = Counter(row["terminal_status"] for row in records)
+        unique_sequences = len({row["move_sequence_sha256"] for row in records})
+        by_policy[policy_id] = {
+            "policy_id": policy_id,
+            "pair_count": pair_count,
+            "game_count": len(records),
+            "max_ply": max_ply,
+            "root_node_cap_per_ply": root_node_cap_per_ply,
+            "records": records,
+            "terminal_counts": dict(sorted(terminal_counts.items())),
+            "search_budget_censored_count": sum(row["budget_censored"] for row in records),
+            "searched_ply_count": sum(row["searched_ply_count"] for row in records),
+            "search_coverage": {
+                "root_sets": sum(len(row["search_coverage"]) for row in records),
+                "complete_root_sets": sum(sum(bool(item["complete"]) for item in row["search_coverage"]) for row in records),
+                "fraction": (
+                    sum(sum(bool(item["complete"]) for item in row["search_coverage"]) for row in records)
+                    / sum(len(row["search_coverage"]) for row in records)
+                    if policy_id == "deterministic_complete_root_material_search" and sum(len(row["search_coverage"]) for row in records) else None
+                ),
+            },
+            "unique_action_sequence_count": unique_sequences,
+            "terminal_utility_policy": "winner utility +/-1; terminal without winner 0.0; censored utility null",
+            "recurrence": {
+                "total_position_returns": sum(row["position_return_count"] for row in records),
+                "max_position_multiplicity": max((row["max_position_multiplicity"] for row in records), default=0),
+            },
+            "search_nodes": sum(item["evaluated_actions"] for row in records for item in row["search_coverage"]),
+        }
+    all_records = [row for dynamic in by_policy.values() for row in dynamic["records"]]
+    return {
+        "policy_ids": list(policy_ids),
+        "pair_count": pair_count,
+        "game_count": len(all_records),
+        "policies": by_policy,
+        "unique_action_sequence_count": len({row["move_sequence_sha256"] for row in all_records}),
+        "control_distinct_sequence_count": len({
+            (policy_id, row["move_sequence_sha256"])
+            for policy_id, dynamic in by_policy.items()
+            for row in dynamic["records"]
+        }),
+        "terminal_counts": dict(sorted(Counter(row["terminal_status"] for row in all_records).items())),
+        "search_budget_censored_count": sum(row["budget_censored"] for row in all_records),
     }
 
 
@@ -1006,5 +1184,5 @@ __all__ = [
     "GateOutcome", "MetricEvidence", "QualificationReport", "STATUS_DEFER", "STATUS_FAIL",
     "STATUS_PASS", "STATUS_UNMEASURED", "calibration_reason_codes", "common_tape_games", "component_info",
     "lattice_info", "movement_graph", "opening_sources", "qualification_report", "reachable_squares",
-    "reduce_qualification_status", "scc_info", "semantic_runtime_contract", "semantic_search_games", "semantic_tape_games", "structural_profile", "transport_type_profile",
+    "reduce_qualification_status", "scc_info", "semantic_runtime_contract", "semantic_search_games", "semantic_tape_games", "semantic_termination_control_games", "structural_profile", "transport_type_profile",
 ]

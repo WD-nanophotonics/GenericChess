@@ -1917,7 +1917,7 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
     recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,
                    action=args.action, resolution_sha256=payload["resolution_sha256"])
     save_state(root, state)
-    print(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True))
+    print(_console_safe(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True)))
     print(f"WORKER_THREAD_ID={dossier.get('worker_thread_id')}")
     print(f"WORKER_HOST_ID={dossier.get('worker_host_id', 'local')}")
 

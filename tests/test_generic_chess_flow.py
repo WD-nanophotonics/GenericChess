@@ -572,6 +572,37 @@ def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch
     assert state["recovery_state"] == "RECOVERED"
 
 
+def test_supervisor_resolution_console_output_survives_legacy_windows_encoding(
+        monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("c" * 20)
+    directory.mkdir(parents=True)
+    dossier = {"escalation_id": "c" * 20, "worker_thread_id": "worker-2",
+               "worker_host_id": "local", "status": "PENDING"}
+    (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
+    (directory / "claim.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-2"}), encoding="utf-8")
+    detail_file = tmp_path / "detail.txt"
+    detail_file.write_text("中文恢复说明", encoding="utf-8")
+    state = {"active": True, "mode": "courier", "recovery_timeline": []}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-2")
+    original = flow._console_safe
+    monkeypatch.setattr(flow, "_console_safe", lambda text: original(text, "cp1252"))
+
+    flow.command_supervisor_resolve(
+        tmp_path,
+        SimpleNamespace(escalation_id="c" * 20, action="RESUME_WORKER",
+                         detail_file=str(detail_file)),
+    )
+
+    assert '"detail":' in capsys.readouterr().out
+    resolution = json.loads((directory / "resolution.json").read_text(encoding="utf-8"))
+    assert resolution["detail"] == "中文恢复说明"
+
+
 def test_recovery_response_cannot_approve_promotion(monkeypatch, tmp_path):
     candidate = "c" * 40
     state = {"active": True, "mode": "courier", "last_response_source": "read_only_recover",
