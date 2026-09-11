@@ -9,6 +9,7 @@ from scripts.f87a_r7_calibration import (
     T1_REFERENCE_MAX_DEPTH,
     T1_REFERENCE_NODE_BUDGET,
     _pair_summary,
+    _terminal_reference_value,
     _t1_gate_passes,
     run,
 )
@@ -67,3 +68,9 @@ def test_pair_summary_defers_when_one_seat_swapped_game_is_censored():
 
 def test_incomplete_t1_probe_cannot_pass_positive_route_gate():
     assert not _t1_gate_passes({"status": "DEFER_CENSORED", "next_step": "NO_INTERVENTION_DATA"})
+
+
+def test_terminal_reference_value_is_root_perspective_and_draw_safe():
+    assert _terminal_reference_value(0, 0, 1) > 0
+    assert _terminal_reference_value(0, 1, 1) < 0
+    assert _terminal_reference_value(0, None, 1) == 0

@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.evaluation.config import MATE_SCORE
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.benchmark.minimal_generator import MinimalGeneratedGame, generate_minimal_game
 from generic_chess.core.actions import Action, action_to_dict
@@ -109,19 +110,23 @@ def _reference_action_evaluation(
     action: Action,
     remaining_nodes: int,
 ) -> tuple[dict[str, Any], int]:
+    if remaining_nodes < T1_REFERENCE_NODE_BUDGET:
+        raise ValueError("reference evaluation requires its complete node budget")
+    root = _session_at_history(game, history)
+    root_side = root.state.position.side_to_move
     child = _session_at_history(game, history)
     child.submit(action)
     if child.result.status.value != "ongoing":
         return {
-            "value": None,
+            "value": _terminal_reference_value(root_side, child.result.winner, len(child.history)),
             "nodes": 0,
-            "completed_depth": 0,
+            "completed_depth": 1,
             "termination_reason": "terminal_after_candidate",
         }, 0
     decision = AlphaBetaPlayer(game.compiled, use_disk_cache=False).choose_action(
         child,
         SearchLimits(
-            max_nodes=min(T1_REFERENCE_NODE_BUDGET, remaining_nodes),
+            max_nodes=T1_REFERENCE_NODE_BUDGET,
             max_depth=T1_REFERENCE_MAX_DEPTH,
             quiescence_max_depth=0,
         ),
@@ -133,6 +138,13 @@ def _reference_action_evaluation(
         "completed_depth": decision.completed_depth,
         "termination_reason": decision.termination_reason,
     }, consumed
+
+
+def _terminal_reference_value(root_side: int, winner: int | None, ply: int) -> int:
+    if winner is None:
+        return 0
+    utility = MATE_SCORE - ply
+    return utility if winner == root_side else -utility
 
 
 def _t1_gate_passes(diagnostic: dict[str, Any]) -> bool:
@@ -187,7 +199,7 @@ def _t1_action_spectrum_regret(games: tuple[tuple[str, MinimalGeneratedGame], ..
                 if action is None or key in reference_evaluations:
                     continue
                 remaining_nodes = T1_DIAGNOSTIC_NODE_CAP - nodes
-                if remaining_nodes <= 0:
+                if remaining_nodes < T1_REFERENCE_NODE_BUDGET:
                     stop_reason = "EARLY_STOP_NODE_CAP"
                     break
                 evaluation, consumed = _reference_action_evaluation(

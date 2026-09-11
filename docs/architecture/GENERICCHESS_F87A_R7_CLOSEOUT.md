@@ -8,7 +8,7 @@
 
 ## Result
 
-The bounded T1 probe used 842 internal search nodes across 4 roots. Low- versus medium-node action selection disagreed on 1 of 4 roots, but the candidates were re-evaluated with the same 128-node/depth-5 reference budget and the bounded regret proxy was 0.0; this selected short seat-swapped validation as the only next step. The subsequent calibration completed all 8 games in 0.14 seconds using 930 internal search nodes. All 8 games and all 4 seat-swapped pairs were resolved; no game was horizon-censored. Both paired matchups scored 0.5:
+The bounded T1 probe used 842 internal search nodes across 4 roots. Low- versus medium-node action selection disagreed on 1 of 4 roots, but the candidates were re-evaluated with the same 128-node/depth-5 reference budget and the bounded regret proxy was 0.0; terminal candidates use explicit mate-scale/draw values, and an incomplete reference budget defers the probe. This selected short seat-swapped validation as the only next step. The subsequent calibration completed all 8 games in 0.14 seconds using 930 internal search nodes. All 8 games and all 4 seat-swapped pairs were resolved; no game was horizon-censored. Both paired matchups scored 0.5:
 
 | Matchup | Paired score | Result |
 | --- | ---: | --- |
@@ -20,6 +20,6 @@ The pre-registered route is `RETURN_T1_ACTION_SPECTRUM_REGRET`. The positive rou
 ## Evidence
 
 - Manifest SHA-256: `4dc01978f579dcec844b3f30caabaa35887298e3764dfcddd8947dbb696886f1`
-- Results SHA-256: `e38915f8a6098f3de5b6ae2b8c3d4aa82fa267a524ca1372cfa2add312571408`
+- Results SHA-256: `84b9433842043567bc0c54792e58bc31605819df9279b33e2b29b1228cf72e76`
 
 R7 does not alter the F87A promotion decision. Western termination remains deferred and the calibration does not authorize training or promotion.
