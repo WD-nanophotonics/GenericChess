@@ -8,7 +8,15 @@ import pytest
 
 from generic_chess.core.actions import BoardMove
 from generic_chess.core.coordinates import Square
-from scripts.f86g_mate_reachability_probe import DedupSafetyError, _assert_equivalent_representatives
+from generic_chess.core.pieces import Piece
+from generic_chess.core.position import Hands, Position
+from generic_chess.rules.compiler import compile_ruleset
+from scripts.f86g_mate_reachability_probe import (
+    DedupSafetyError,
+    _assert_equivalent_representatives,
+    _coverage_by_owner,
+    _load_rulesets,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,7 +40,7 @@ def test_f86g_reuses_exact_cells_and_common_tapes_for_eight_trajectories():
     assert payload["legal_child_probe_count"] == 867
     assert payload["legal_child_probe_count"] <= 4096
     assert payload["probe_truncated"] is False
-    assert payload["schema_version"] == 2
+    assert payload["schema_version"] == 3
     required = {
         "side_to_move",
         "ordinary_pieces_remaining_by_owner",
@@ -45,12 +53,13 @@ def test_f86g_reuses_exact_cells_and_common_tapes_for_eight_trajectories():
         "ordinary_only_anchor_zone_coverage_fraction",
         "enemy_anchor_itself_ordinary_attacked",
         "capture_occurred_since_previous",
-        "ordinary_anchor_zone_coverage_by_owner",
+        "ordinary_attack_coverage_by_owner",
         "captured_owner",
         "captured_piece_type",
+        "captured_piece_is_ordinary",
         "captured_owner_pre_capture_coverage",
         "captured_owner_post_capture_coverage",
-        "same_owner_capture_coverage_delta",
+        "captured_owner_attack_coverage_delta",
     }
     assert required <= set(payload["trajectories"][0]["states"][0])
     capture_states = [
@@ -61,10 +70,13 @@ def test_f86g_reuses_exact_cells_and_common_tapes_for_eight_trajectories():
     for state in capture_states:
         assert state["captured_owner"] in (0, 1)
         assert state["captured_piece_type"]
-        assert state["same_owner_capture_coverage_delta"] == pytest.approx(
-            state["captured_owner_post_capture_coverage"]
-            - state["captured_owner_pre_capture_coverage"]
-        )
+        if state["captured_piece_is_ordinary"]:
+            assert state["captured_owner_attack_coverage_delta"] == pytest.approx(
+                state["captured_owner_post_capture_coverage"]
+                - state["captured_owner_pre_capture_coverage"]
+            )
+        else:
+            assert state["captured_owner_attack_coverage_delta"] is None
 
 
 def test_f86g_cooperative_search_is_bounded_and_fail_closed():
@@ -133,3 +145,25 @@ def test_f86g_dedup_safety_compares_different_history_representatives():
     )
     with pytest.raises(DedupSafetyError):
         _assert_equivalent_representatives(left, mismatch)
+
+
+def test_f86g_capture_coverage_is_attacker_centric_not_target_centric():
+    ruleset = _load_rulesets(ROOT)[("V4-3", "FULL8_CURRENT")]
+    compiled = compile_ruleset(ruleset)
+    board = [None] * 16
+    board[1] = Piece(1, "K", "K")
+    board[14] = Piece(0, "K", "K")
+    board[5] = Piece(0, "P0", "P0")
+    position = Position(
+        board=tuple(board),
+        hands=(Hands.empty(), Hands.empty()),
+        side_to_move=0,
+        ruleset_fingerprint=compiled.ruleset_fingerprint,
+    )
+    coverage = _coverage_by_owner(position, compiled)
+    assert coverage["0"]["attacker_owner"] == 0
+    assert coverage["0"]["target_anchor_owner"] == 1
+    assert coverage["0"]["coverage_fraction"] == pytest.approx(1 / 6)
+    assert coverage["0"]["ordinary_attacked_squares"] == [[2, 1]]
+    assert coverage["1"]["coverage_fraction"] == 0
+    assert coverage["0"]["coverage_fraction"] != coverage["1"]["coverage_fraction"]

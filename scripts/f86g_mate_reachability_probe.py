@@ -18,7 +18,7 @@ from generic_chess.core.attacks import is_in_check
 from generic_chess.core.coordinates import index_to_square, square_to_index
 from generic_chess.core.movement import LeapAtom
 from generic_chess.core.pieces import Piece
-from generic_chess.core.position import Position
+from generic_chess.core.position import Hands, Position
 from generic_chess.rules.compiler import compile_ruleset
 from generic_chess.rules.schema import ruleset_from_dict
 from generic_chess.session.session import GameSession
@@ -143,17 +143,21 @@ def _coverage_by_owner(position: Position, compiled) -> dict[str, dict[str, Any]
     n = compiled.board_size
     result: dict[str, dict[str, Any]] = {}
     for owner in (0, 1):
-        anchor_index = _anchor_index(position, owner, compiled)
-        zone = _anchor_zone(position, owner, compiled)
-        attacks = _ordinary_attack_squares(position, 1 - owner, compiled)
+        target_anchor_owner = 1 - owner
+        anchor_index = _anchor_index(position, target_anchor_owner, compiled)
+        zone = _anchor_zone(position, target_anchor_owner, compiled)
+        attacks = _ordinary_attack_squares(position, owner, compiled)
         covered = sorted(zone & attacks)
         result[str(owner)] = {
+            "attacker_owner": owner,
+            "target_anchor_owner": target_anchor_owner,
+            "target_anchor_square": _square_payload(index_to_square(anchor_index, n), n),
             "anchor_zone_size": len(zone),
             "ordinary_attacked_squares": [
                 _square_payload(index_to_square(index, n), n) for index in covered
             ],
             "coverage_fraction": len(covered) / len(zone) if zone else 0.0,
-            "anchor_itself_ordinary_attacked": anchor_index in attacks,
+            "target_anchor_itself_attacked": anchor_index in attacks,
         }
     return result
 
@@ -181,13 +185,12 @@ def _probe_state(
     position = session.state.position
     side = position.side_to_move
     enemy = 1 - side
-    n = compiled.board_size
-    attacks = _ordinary_attack_squares(position, side, compiled)
-    enemy_anchor_index = _anchor_index(position, enemy, compiled)
     enemy_zone = _anchor_zone(position, enemy, compiled)
-    covered = sorted(enemy_zone & attacks)
-    coverage = len(covered) / len(enemy_zone) if enemy_zone else 0.0
     coverage_by_owner = _coverage_by_owner(position, compiled)
+    attacker_metrics = coverage_by_owner[str(side)]
+    covered = attacker_metrics["ordinary_attacked_squares"]
+    coverage = attacker_metrics["coverage_fraction"]
+    ordinary_capture = capture_event is not None and capture_event["captured_piece_is_ordinary"]
     actions = list(_canonical_actions(session)) if session.result.status.value == "ongoing" else []
     checking_count: int | None = 0
     mate_one_count: int | None = 0
@@ -214,26 +217,27 @@ def _probe_state(
         "legal_checking_move_count": checking_count,
         "legal_mate_in_one_move_count": mate_one_count,
         "enemy_anchor_zone_size": len(enemy_zone),
-        "ordinary_only_attacked_squares_in_enemy_anchor_zone": [
-            _square_payload(index_to_square(index, n), n) for index in covered
-        ],
+        "ordinary_only_attacked_squares_in_enemy_anchor_zone": covered,
         "ordinary_only_anchor_zone_coverage_fraction": coverage,
-        "enemy_anchor_itself_ordinary_attacked": enemy_anchor_index in attacks,
-        "ordinary_anchor_zone_coverage_by_owner": coverage_by_owner,
+        "enemy_anchor_itself_ordinary_attacked": attacker_metrics["target_anchor_itself_attacked"],
+        "ordinary_attack_coverage_by_owner": coverage_by_owner,
         "capture_occurred_since_previous": capture_event is not None,
         "captured_owner": capture_event["captured_owner"] if capture_event else None,
         "captured_piece_type": capture_event["captured_piece_type"] if capture_event else None,
+        "captured_piece_is_ordinary": (
+            capture_event["captured_piece_is_ordinary"] if capture_event else None
+        ),
         "captured_owner_pre_capture_coverage": (
-            capture_event["pre_capture_coverage"] if capture_event else None
+            capture_event["pre_capture_coverage"] if ordinary_capture else None
         ),
         "captured_owner_post_capture_coverage": (
             coverage_by_owner[str(capture_event["captured_owner"])] ["coverage_fraction"]
-            if capture_event else None
+            if ordinary_capture else None
         ),
-        "same_owner_capture_coverage_delta": (
+        "captured_owner_attack_coverage_delta": (
             coverage_by_owner[str(capture_event["captured_owner"])] ["coverage_fraction"]
             - capture_event["pre_capture_coverage"]
-            if capture_event else None
+            if ordinary_capture else None
         ),
         "probe_truncated": state_probe_truncated,
     }
@@ -260,11 +264,13 @@ def _play_trajectory(compiled, tapes: dict[str, PolicyTape], seat_assignment: tu
         if captured is None:
             capture_event = None
         else:
-            pre_capture = state_probe["ordinary_anchor_zone_coverage_by_owner"][str(captured.owner)]
+            captured_is_ordinary = not compiled.types_by_id[captured.current_type_id].is_anchor
+            pre_capture = state_probe["ordinary_attack_coverage_by_owner"][str(captured.owner)]
             capture_event = {
                 "captured_owner": captured.owner,
                 "captured_piece_type": captured.current_type_id,
-                "pre_capture_coverage": pre_capture["coverage_fraction"],
+                "captured_piece_is_ordinary": captured_is_ordinary,
+                "pre_capture_coverage": pre_capture["coverage_fraction"] if captured_is_ordinary else None,
             }
         session.submit(action)
     return {
@@ -281,6 +287,7 @@ def _trajectory_summary(trajectories: list[dict[str, Any]], budget: ChildProbeBu
     states = [state for trajectory in trajectories for state in trajectory["states"]]
     known = [state for state in states if state["legal_checking_move_count"] is not None]
     captures = [state for state in states if state["capture_occurred_since_previous"]]
+    ordinary_captures = [state for state in captures if state["captured_piece_is_ordinary"]]
     return {
         "trajectory_count": len(trajectories),
         "inspected_state_count": len(states),
@@ -294,8 +301,12 @@ def _trajectory_summary(trajectories: list[dict[str, Any]], budget: ChildProbeBu
         ),
         "enemy_anchor_attacked_state_count": sum(state["enemy_anchor_itself_ordinary_attacked"] for state in states),
         "capture_count": len(captures),
-        "same_owner_capture_coverage_deltas": [
-            state["same_owner_capture_coverage_delta"] for state in captures
+        "ordinary_capture_count": len(ordinary_captures),
+        "captured_piece_types": dict(sorted(Counter(
+            state["captured_piece_type"] for state in captures
+        ).items())),
+        "captured_owner_attack_coverage_deltas": [
+            state["captured_owner_attack_coverage_delta"] for state in ordinary_captures
         ],
         "probe_truncated": budget.truncated,
     }
@@ -481,7 +492,7 @@ def _routing(trajectory_by_cell: dict[str, dict[str, Any]], bfs_by_cell: dict[st
     return labels or ["MATE_REACHABILITY_NOT_RESOLVED_WITHIN_BOUND"]
 
 
-def run(output_dir: Path, root: Path) -> dict[str, Any]:
+def run(output_dir: Path, root: Path, *, recompute_bfs: bool = False) -> dict[str, Any]:
     rulesets = _load_rulesets(root)
     tapes = _load_tapes(root)
     fingerprints: dict[str, dict[str, str]] = {}
@@ -505,20 +516,29 @@ def run(output_dir: Path, root: Path) -> dict[str, Any]:
                 "cell": cell,
             }
 
-    bfs_results: dict[str, dict[str, Any]] = {}
-    total_bfs_expansions = 0
-    for sample_id in SAMPLES:
-        for cell in CELLS:
-            compiled = compile_ruleset(rulesets[(sample_id, cell)])
-            result = _cooperative_bfs(compiled)
-            result.update({"sample_id": sample_id, "cell": cell})
-            bfs_results[f"{sample_id}:{cell}"] = result
-            total_bfs_expansions += result["state_expansions"]
-    if total_bfs_expansions > TOTAL_BFS_CAP:
-        raise RuntimeError(f"BFS expansion cap exceeded: {total_bfs_expansions} > {TOTAL_BFS_CAP}")
+    cooperative_path = output_dir / "cooperative_reachability.json"
+    if recompute_bfs:
+        bfs_results: dict[str, dict[str, Any]] = {}
+        total_bfs_expansions = 0
+        for sample_id in SAMPLES:
+            for cell in CELLS:
+                compiled = compile_ruleset(rulesets[(sample_id, cell)])
+                result = _cooperative_bfs(compiled)
+                result.update({"sample_id": sample_id, "cell": cell})
+                bfs_results[f"{sample_id}:{cell}"] = result
+                total_bfs_expansions += result["state_expansions"]
+        if total_bfs_expansions > TOTAL_BFS_CAP:
+            raise RuntimeError(f"BFS expansion cap exceeded: {total_bfs_expansions} > {TOTAL_BFS_CAP}")
+    else:
+        existing_cooperative_path = root / "artifacts/f86g_mate_reachability/cooperative_reachability.json"
+        cooperative_payload = _load_json(root, "artifacts/f86g_mate_reachability/cooperative_reachability.json")
+        if cooperative_payload["ruleset_fingerprints"] != fingerprints:
+            raise RuntimeError("existing cooperative artifact fingerprints do not match current cells")
+        bfs_results = cooperative_payload["results"]
+        total_bfs_expansions = cooperative_payload["total_state_expansions"]
 
     trajectory_payload = {
-        "schema_version": 2,
+        "schema_version": 3,
         "sample_ids": list(SAMPLES),
         "cell_names": list(CELLS),
         "ruleset_fingerprints": fingerprints,
@@ -539,32 +559,34 @@ def run(output_dir: Path, root: Path) -> dict[str, Any]:
         "default_generator_changed": False,
         "f85_actual_compute": 0,
     }
-    cooperative_payload = {
-        "schema_version": 2,
-        "sample_ids": list(SAMPLES),
-        "cell_names": list(CELLS),
-        "ruleset_fingerprints": fingerprints,
-        "depth_cap": BFS_DEPTH_CAP,
-        "state_expansion_cap_per_cell": BFS_EXPANSION_CAP,
-        "state_expansion_cap_total": TOTAL_BFS_CAP,
-        "results": bfs_results,
-        "path_safe_dedup": {
-            "key_fields": ["position", "ply_count", "repetition_counts"],
-            "scope": "this_probe_only",
-            "preconditions": _assert_path_safe_dedup_preconditions(
-                compile_ruleset(rulesets[(SAMPLES[0], CELLS[0])])
-            ),
-        },
-        "total_state_expansions": total_bfs_expansions,
-        "any_node_truncation": any(result["node_truncated"] for result in bfs_results.values()),
-        "routing": _routing(trajectory_by_cell, bfs_results),
-        "real_new_random_seeds": 0,
-        "teacher_learned_search_compute": 0,
-        "default_generator_changed": False,
-        "f85_actual_compute": 0,
-    }
+    if recompute_bfs:
+        cooperative_payload = {
+            "schema_version": 2,
+            "sample_ids": list(SAMPLES),
+            "cell_names": list(CELLS),
+            "ruleset_fingerprints": fingerprints,
+            "depth_cap": BFS_DEPTH_CAP,
+            "state_expansion_cap_per_cell": BFS_EXPANSION_CAP,
+            "state_expansion_cap_total": TOTAL_BFS_CAP,
+            "results": bfs_results,
+            "path_safe_dedup": {
+                "key_fields": ["position", "ply_count", "repetition_counts"],
+                "scope": "this_probe_only",
+                "preconditions": _assert_path_safe_dedup_preconditions(
+                    compile_ruleset(rulesets[(SAMPLES[0], CELLS[0])])
+                ),
+            },
+            "total_state_expansions": total_bfs_expansions,
+            "any_node_truncation": any(result["node_truncated"] for result in bfs_results.values()),
+            "routing": _routing(trajectory_by_cell, bfs_results),
+            "real_new_random_seeds": 0,
+            "teacher_learned_search_compute": 0,
+            "default_generator_changed": False,
+            "f85_actual_compute": 0,
+        }
     _write_json(output_dir / "trajectory_probe.json", trajectory_payload)
-    _write_json(output_dir / "cooperative_reachability.json", cooperative_payload)
+    if recompute_bfs or cooperative_path.resolve() != existing_cooperative_path.resolve():
+        _write_json(cooperative_path, cooperative_payload)
     return {"trajectory": trajectory_payload, "cooperative": cooperative_payload}
 
 
@@ -572,8 +594,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, default=Path("artifacts/f86g_mate_reachability"))
     parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument("--recompute-bfs", action="store_true")
     args = parser.parse_args()
-    result = run(args.output_dir, args.root)
+    result = run(args.output_dir, args.root, recompute_bfs=args.recompute_bfs)
     print(json.dumps({
         "trajectory_count": result["trajectory"]["trajectory_count"],
         "inspected_state_count": sum(row["inspected_state_count"] for row in result["trajectory"]["per_cell"].values()),
