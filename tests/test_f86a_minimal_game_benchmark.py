@@ -1,13 +1,17 @@
 """Focused F86A admission-foundation tests; no benchmark or Heavy work."""
 
-from dataclasses import replace
-
 import pytest
 
 from generic_chess.benchmark.agent_ladder import AgentLadder
-from generic_chess.benchmark.game_quality import classify_game_quality, measure_game_quality
+from generic_chess.benchmark.game_quality import (
+    QualityObservation,
+    classify_game_quality,
+    measure_game_quality,
+    profile_from_observations,
+)
 from generic_chess.benchmark.minimal_generator import generate_minimal_game
 from generic_chess.core.actions import DropMove
+from generic_chess.session.session import GameSession
 
 
 def test_minimal_generator_is_deterministic_and_symmetric():
@@ -21,9 +25,7 @@ def test_minimal_generator_is_deterministic_and_symmetric():
         pieces = [piece for piece in first.compiled.initial_position.board if piece and piece.owner == owner]
         assert sum(piece.current_type_id == "K" for piece in pieces) == 1
         assert 2 <= len(pieces) - 1 <= 5
-    for action in __import__("generic_chess.session.session", fromlist=["GameSession"]).GameSession(
-        first.compiled
-    ).legal_actions():
+    for action in GameSession(first.compiled).legal_actions():
         assert not isinstance(action, DropMove)
         assert action.promotion_target_id is None
 
@@ -46,6 +48,12 @@ def test_quality_profile_is_raw_and_serializable():
     assert payload["ruleset_fingerprint"] == game.ruleset_fingerprint
     assert payload["opening_legal_actions"] >= 1
     assert payload["trajectory_count"] == 3
+    assert payload["paired_game_count"] == 6
+    assert payload["first_player_score"] is not None
+    assert payload["second_player_score"] is not None
+    assert payload["swapped_opening_consistent"] is True
+    assert payload["tactical_probe_position_count"] == 1
+    assert payload["tactical_probe_nodes"] <= 256
     assert set(payload["classification_reasons"]) <= {
         "QUALIFIED_GENERAL",
         "SIDE_BIASED",
@@ -60,15 +68,27 @@ def test_quality_profile_is_raw_and_serializable():
 
 
 def test_quality_pathology_controls_are_diagnostic_only():
-    base = measure_game_quality(
-        generate_minimal_game(8, board_size=4, ordinary_count=2),
-        trajectory_count=2,
-        max_ply=6,
+    neutral = profile_from_observations(
+        [QualityObservation((5, 4, 3), 3, "ongoing", 0.5, 0.5)]
     )
-    assert classify_game_quality(replace(base, side_bias_magnitude=0.5))[0] == "SIDE_BIASED"
-    assert classify_game_quality(replace(base, branching_collapse_fraction=0.9))[0] == "FORCED_LINE"
-    assert classify_game_quality(replace(base, p90_game_branching=120))[0] == "SEARCH_EXPLOSIVE"
-    assert classify_game_quality(replace(base, shallow_forced_win_rate=0.9))[0] == "TACTICAL_ONLY"
+    biased = profile_from_observations(
+        [QualityObservation((5, 4), 2, "ongoing", 1.0, 0.0)]
+    )
+    forced = profile_from_observations([QualityObservation((1,) * 20, 20, "ongoing")])
+    explosive = profile_from_observations([QualityObservation((200, 180), 2, "ongoing")])
+    shallow = profile_from_observations(
+        [QualityObservation((3, 2), 2, "checkmate", forced_win=True, solved=True)]
+    )
+    draw_heavy = profile_from_observations(
+        [QualityObservation((2, 2), 2, "repetition") for _ in range(4)]
+    )
+    assert neutral.classification == "UNRESOLVED"
+    assert "SIDE_BIASED" in classify_game_quality(biased, thresholds={})[1]
+    assert "FORCED_LINE" in classify_game_quality(forced, thresholds={})[1]
+    assert "SEARCH_EXPLOSIVE" in classify_game_quality(explosive, thresholds={})[1]
+    assert "TACTICAL_ONLY" in classify_game_quality(shallow, thresholds={})[1]
+    assert "DRAW_DOMINATED" in classify_game_quality(draw_heavy, thresholds={})[1]
+    assert classify_game_quality(biased)[0] == "UNRESOLVED"
 
 
 def test_agent_ladder_is_an_interface_not_a_strength_claim():
@@ -76,4 +96,10 @@ def test_agent_ladder_is_an_interface_not_a_strength_claim():
     assert ladder.names == ("random_legal", "very_shallow", "low_node", "medium_node")
     assert ladder.require("medium_node").node_budget is None
     assert ladder.skill_discrimination({"random_legal": 0.1}) is None
-    assert ladder.skill_discrimination({name: float(i) for i, name in enumerate(ladder.names)}) == 3.0
+    ordered = {name: float(i) for i, name in enumerate(ladder.names)}
+    assert ladder.skill_discrimination(ordered) == 1.0
+    report = ladder.evaluate_adjacent_matchups(ordered)
+    assert report["monotonic"] is True
+    assert report["minimum_adjacent_advantage"] == 1.0
+    reversed_scores = {name: float(len(ladder.names) - i) for i, name in enumerate(ladder.names)}
+    assert ladder.skill_discrimination(reversed_scores) == 0.0

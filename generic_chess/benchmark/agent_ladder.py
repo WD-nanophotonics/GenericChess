@@ -50,8 +50,24 @@ class AgentLadder:
         raise KeyError(f"unknown agent ladder entry {name!r}")
 
     def skill_discrimination(self, scores: dict[str, float]) -> float | None:
-        """Return the observed score span when every ladder name is present."""
+        """Return an order-aware adjacent advantage, or ``None`` if incomplete."""
         if not all(name in scores for name in self.names):
             return None
-        values = [scores[name] for name in self.names]
-        return max(values) - min(values)
+        advantages = [scores[stronger] - scores[weaker] for weaker, stronger in zip(self.names, self.names[1:])]
+        if not all(advantage > 0 for advantage in advantages):
+            return 0.0
+        return sum(advantages) / len(advantages)
+
+    def evaluate_adjacent_matchups(self, scores: dict[str, float]) -> dict[str, object] | None:
+        """Summarize adjacent paired results in configured strength order."""
+        if not all(name in scores for name in self.names):
+            return None
+        labels = [f"{weaker}>{stronger}" for weaker, stronger in zip(self.names, self.names[1:])]
+        advantages = [scores[stronger] - scores[weaker] for weaker, stronger in zip(self.names, self.names[1:])]
+        return {
+            "adjacent_advantages": dict(zip(labels, advantages)),
+            "minimum_adjacent_advantage": min(advantages),
+            "mean_adjacent_advantage": sum(advantages) / len(advantages),
+            "monotonic": all(advantage > 0 for advantage in advantages),
+            "skill_discrimination": self.skill_discrimination(scores),
+        }

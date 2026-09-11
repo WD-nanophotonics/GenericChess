@@ -165,3 +165,50 @@ def generate_minimal_game(
     raise RuntimeError(
         f"could not generate a valid minimal game after {max_attempts} attempts"
     )
+
+
+def swap_owner_opening(game: MinimalGeneratedGame) -> MinimalGeneratedGame | None:
+    """Return a compiled owner-swapped opening when it remains legal.
+
+    This is a diagnostic pairing transform only; it does not alter the
+    generator contract or claim that every random ruleset admits a swap.
+    """
+    n = game.board_size
+    board: list[Piece | None] = [None] * (n * n)
+    for rank, row in enumerate(game.ruleset.initial_position):
+        for file, piece in enumerate(row):
+            if piece is None:
+                continue
+            rotated = _rotate(Square(file, rank), n)
+            board[rotated.rank * n + rotated.file] = Piece(
+                owner=1 - piece.owner,
+                base_type_id=piece.base_type_id,
+                current_type_id=piece.current_type_id,
+                promoted=piece.promoted,
+            )
+    rows = [tuple(board[rank * n : (rank + 1) * n]) for rank in range(n)]
+    ruleset = RuleSet(
+        schema_version=game.ruleset.schema_version,
+        board_size=game.ruleset.board_size,
+        piece_types=game.ruleset.piece_types,
+        initial_position=tuple(rows),
+        drop_allowed=game.ruleset.drop_allowed,
+        promotion_allowed=game.ruleset.promotion_allowed,
+        promotion_forced=game.ruleset.promotion_forced,
+        repetition_limit=game.ruleset.repetition_limit,
+        repetition_policy=game.ruleset.repetition_policy,
+        max_ply=game.ruleset.max_ply,
+        stalemate_result=game.ruleset.stalemate_result,
+        metadata={**game.ruleset.metadata, "opening_transform": "owner_swap"},
+    )
+    try:
+        compiled = compile_ruleset(ruleset)
+    except RuleValidationError:
+        return None
+    return MinimalGeneratedGame(
+        seed=game.seed,
+        board_size=game.board_size,
+        ordinary_count=game.ordinary_count,
+        ruleset=ruleset,
+        compiled=compiled,
+    )
