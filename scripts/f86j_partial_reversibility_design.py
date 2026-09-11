@@ -196,6 +196,17 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         row["sample_id"]: {"CANDIDATE_PARTIAL": row["candidate_ruleset_fingerprint"]}
         for row in static
     }
+    targeted_routes = [
+        {
+            "sample_id": row["sample_id"],
+            "routing": (
+                "PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY"
+                if row["joint_kinematically_reachable_count"] == 0
+                else "PARTIAL_REVERSIBILITY_STATIC_RESCUE_REQUIRES_DYNAMIC_CHECK"
+            ),
+        }
+        for row in targeted
+    ]
     payload = {
         "schema_version": 1,
         "status": "F86J_STATIC_ONLY_ZERO_DYNAMIC_COMPUTE",
@@ -204,6 +215,11 @@ def run(root: Path, output: Path) -> dict[str, Any]:
         "ruleset_fingerprints": fingerprints,
         "static": static,
         "targeted_static_mate_capacity": targeted,
+        "routing": {
+            "mechanism": "PARTIAL_REVERSIBILITY_REMOVES_DAG_WITHOUT_FULL_REVERSE_CLOSURE",
+            "static": targeted_routes,
+            "dynamic": "NOT_RUN_BY_CHEAP_STATIC_FIRST_GATE",
+        },
         "static_candidate_checks": {
             "V4-3": targeted[0]["candidate_position_count"],
             "V5-3": targeted[1]["candidate_position_count"],
