@@ -7,6 +7,7 @@ import pytest
 
 from generic_chess.rules.compiler import compile_ruleset
 from generic_chess.rules.schema import ruleset_from_dict
+from scripts.f86j_partial_reversibility_design import _targeted_route
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "artifacts" / "f86j_partial_reversibility_design" / "manifest.json"
@@ -109,10 +110,22 @@ def test_f86j_static_result_is_bounded_and_fails_closed_on_targeted_mate_reachab
         "mechanism": "PARTIAL_REVERSIBILITY_REMOVES_DAG_WITHOUT_FULL_REVERSE_CLOSURE",
         "static": [
             {"sample_id": "V4-3", "routing": "PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY"},
-            {"sample_id": "V5-3", "routing": "PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY"},
+            {"sample_id": "V5-3", "routing": "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP"},
         ],
         "dynamic": "NOT_RUN_BY_CHEAP_STATIC_FIRST_GATE",
     }
+
+
+def test_f86j_r1_targeted_route_is_fail_closed_before_reachability_interpretation():
+    assert _targeted_route({"truncation": False, "joint_kinematically_reachable_count": 0}) == (
+        "PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY"
+    )
+    assert _targeted_route({"truncation": True, "joint_kinematically_reachable_count": 0}) == (
+        "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP"
+    )
+    assert _targeted_route({"truncation": False, "joint_kinematically_reachable_count": 1}) == (
+        "PARTIAL_REVERSIBILITY_STATIC_RESCUE_REQUIRES_DYNAMIC_CHECK"
+    )
 
 
 def test_f86j_mechanism_is_partial_not_full_reverse_closure():

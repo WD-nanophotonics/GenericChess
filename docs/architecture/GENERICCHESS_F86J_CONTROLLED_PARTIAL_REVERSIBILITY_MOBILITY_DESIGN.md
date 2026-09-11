@@ -1,6 +1,7 @@
 # GenericChess F86J controlled partial-reversibility mobility design
 
-Status: static-only controlled design checkpoint. This is a zero-dynamic-compute
+Status: static-only controlled design checkpoint with an F86J-R1 zero-new-compute
+routing correction. This is a zero-dynamic-compute
 follow-on to the accepted F86I evidence. The F86J prep manifest was published
 at `1c00612b44ee5fee3a050afa0dd6b4d2f79239cf`; the result checkpoint is the
 subsequent commit containing this report and `results.json`.
@@ -69,12 +70,12 @@ was 4,096; no dynamic games or tactical probes were run.
 | V4-3 | 288 | 233 | 23 | no | 0 | 0 |
 | V5-3 | 2,048 | 1,871 | 98 | yes | 0 | 0 |
 
-Both targeted cells route to
-`PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY`. The partial design
+V4-3 routes to `PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY`. V5-3
+routes to `MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP`, with the descriptive
+note `NO_KINEMATIC_RESCUE_OBSERVED_WITHIN_2048_CHECK_CAP`. The partial design
 therefore removes the graph-level directional obstruction without recovering a
-known static mate-template route from the frozen opening. V5-3 remains a
-cap-truncated census and is not interpreted as a complete negative over all
-possible templates.
+known static mate-template route from the frozen opening. V5-3 is not
+interpreted as a complete negative over all possible templates.
 
 ## Scope and evidence boundary
 
@@ -89,13 +90,41 @@ Durable evidence:
 - Manifest: `artifacts/f86j_partial_reversibility_design/manifest.json`
 - Static summary: `artifacts/f86j_partial_reversibility_design/results.json`
 - Runner: `scripts/f86j_partial_reversibility_design.py`
+- Zero-compute routing correction: `scripts/f86j_r1_routing_correction.py`
 - Contracts: `tests/test_f86j_partial_reversibility_design.py`
+
+The prior F86I raw-evidence restore request is not applied because
+`AGENTS.md` §7 prohibits raw benchmark output in the current Git tip. F86I
+raw evidence remains bound by the compact summary to source commit
+`0fbfbf2b5c3cc1e2efd1300cba4da0f5587f4976` and its historical blob IDs; no
+F86I or F86J raw dump is added here.
+
+Verification passed: 71 tests, including the exact bounded target set used by
+the publish gate:
+
+```text
+tests/test_f86a_minimal_game_benchmark.py
+tests/test_f86b_quality_calibration.py
+tests/test_f86c_generator_viability.py
+tests/test_f86d_mobility_ablation.py
+tests/test_f86e_anchor_placement_ablation.py
+tests/test_f86e_r1_common_policy_replay.py
+tests/test_f86f_ordinary_mate_capacity_census.py
+tests/test_f86g_mate_reachability_probe.py
+tests/test_f86h_static_mate_template_kinematic_reachability.py
+tests/test_f86i_reversibility_rescue_manifest.py
+tests/test_f86i_reversibility_rescue.py
+tests/test_f86j_partial_reversibility_design.py
+tests/test_f85_lane_scaling_calibration.py
+tests/test_f85_c2_train_teacher_acquisition.py
+tests/test_benchmark.py
+```
 
 Overall F86J routing:
 
 ```text
 mechanism: PARTIAL_REVERSIBILITY_REMOVES_DAG_WITHOUT_FULL_REVERSE_CLOSURE
 V4-3: PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY
-V5-3: PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY (census truncated)
+V5-3: MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP
 dynamic: NOT_RUN_BY_CHEAP_STATIC_FIRST_GATE
 ```

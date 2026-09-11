@@ -38,6 +38,14 @@ PROFILE = "ORTHO4_PLUS_FIRST_ATOM_REVERSE_ORDINARY"
 SOURCE_ARTIFACT = "artifacts/f86c_generator_viability/rulesets.json"
 
 
+def _targeted_route(row: dict[str, Any]) -> str:
+    if row["truncation"]:
+        return "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP"
+    if row["joint_kinematically_reachable_count"] == 0:
+        return "PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY"
+    return "PARTIAL_REVERSIBILITY_STATIC_RESCUE_REQUIRES_DYNAMIC_CHECK"
+
+
 def _write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as handle:
@@ -199,11 +207,7 @@ def run(root: Path, output: Path) -> dict[str, Any]:
     targeted_routes = [
         {
             "sample_id": row["sample_id"],
-            "routing": (
-                "PARTIAL_REVERSIBILITY_INSUFFICIENT_KINEMATICALLY"
-                if row["joint_kinematically_reachable_count"] == 0
-                else "PARTIAL_REVERSIBILITY_STATIC_RESCUE_REQUIRES_DYNAMIC_CHECK"
-            ),
+            "routing": _targeted_route(row),
         }
         for row in targeted
     ]
