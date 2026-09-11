@@ -1641,7 +1641,11 @@ def create_escalation(root: Path, state: dict[str, Any], *, reason: str,
     escalation_id = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:20]
     directory = escalation_root(root) / escalation_id
     dossier_path = directory / "dossier.json"
-    if dossier_path.exists() and not (directory / "resolution.json").exists():
+    resolution_path = directory / "resolution.json"
+    if dossier_path.exists() and resolution_path.exists():
+        # A resolved escalation is immutable. Do not reopen the same ID.
+        return json.loads(dossier_path.read_text(encoding="utf-8"))
+    if dossier_path.exists():
         dossier = json.loads(dossier_path.read_text(encoding="utf-8"))
     else:
         receipt_path = request_directory / "receipt.json" if request_directory else Path()

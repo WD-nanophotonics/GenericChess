@@ -34,7 +34,10 @@ def test_f87a_r6_separates_budget_censoring_terminals_and_pure_sequences(tmp_pat
     run(ROOT, prep_path, result_dir)
     summary = json.loads((result_dir / "summary.json").read_text(encoding="utf-8"))
     reports = json.loads((result_dir / "reports.json").read_text(encoding="utf-8"))
-    assert summary["compute_usage"]["new_games"] == 8
+    assert summary["compute_usage"]["new_games"] == 16
+    assert summary["compute_usage"]["new_games"] == sum(
+        report["dynamic"]["game_count"] for report in reports.values()
+    )
     for report in reports.values():
         assert report["pure_sequence_diversity"]["unique_action_sequence_count"] == 2
         assert report["pure_sequence_diversity"]["control_distinct_sequence_count"] == 2

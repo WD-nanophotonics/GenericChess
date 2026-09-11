@@ -111,7 +111,7 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
         "controls": list(reports),
         "pure_sequence_diversity": {name: report["pure_sequence_diversity"] for name, report in reports.items()},
         "termination_viability": {name: report["termination_viability"] for name, report in reports.items()},
-        "compute_usage": {"new_games": 8, "root_node_cap_per_ply": ROOT_NODE_CAP_PER_PLY, "search_nodes": sum(policy["search_nodes"] for report in reports.values() for policy in report["dynamic"]["policies"].values()), "arena_games": 0, "training_steps": 0, "heavy_jobs": 0},
+        "compute_usage": {"new_games": sum(report["dynamic"]["game_count"] for report in reports.values()), "root_node_cap_per_ply": ROOT_NODE_CAP_PER_PLY, "search_nodes": sum(policy["search_nodes"] for report in reports.values() for policy in report["dynamic"]["policies"].values()), "arena_games": 0, "training_steps": 0, "heavy_jobs": 0},
         "reports": reports,
     }
     _write_json(result_dir / "summary.json", summary)

@@ -542,6 +542,38 @@ def test_escalation_is_idempotent_and_records_thread_identity(monkeypatch, tmp_p
     assert len(list((tmp_path / "runtime" / "escalations").glob("*/dossier.json"))) == 1
 
 
+def test_resolved_escalation_is_not_reopened(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    master = tmp_path / "master"
+    sandbox.mkdir()
+    master.mkdir()
+    request = tmp_path / "request"
+    request.mkdir()
+    (request / "receipt.json").write_text("{}", encoding="utf-8")
+    (request / "events.jsonl").write_text("{}\n", encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": str(request),
+             "last_published_sha": "a" * 40, "last_probe": {"request_match": False},
+             "recovery_state": "RECOVERED"}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: tmp_path / "runtime")
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "sha", lambda path, ref="HEAD": "b" * 40 if path == master else "a" * 40)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+
+    first = flow.create_escalation(tmp_path, state, reason="transport", worker_thread_id="worker")
+    directory = tmp_path / "runtime" / "escalations" / first["escalation_id"]
+    original_dossier = json.loads((directory / "dossier.json").read_text(encoding="utf-8"))
+    resolution = {"action": "RECOVERED", "resolution_sha256": "r" * 64}
+    (directory / "resolution.json").write_text(json.dumps(resolution), encoding="utf-8")
+    state["recovery_state"] = "RECOVERED"
+
+    second = flow.create_escalation(tmp_path, state, reason="transport again", worker_thread_id="other")
+
+    assert second == original_dossier
+    assert json.loads((directory / "dossier.json").read_text(encoding="utf-8")) == original_dossier
+    assert json.loads((directory / "resolution.json").read_text(encoding="utf-8")) == resolution
+    assert state["recovery_state"] == "RECOVERED"
+
+
 def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"
     directory = runtime / "escalations" / ("a" * 20)
