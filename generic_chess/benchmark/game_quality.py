@@ -84,6 +84,7 @@ def profile_from_observations(
         opening_legal_actions=branchings[0] if branchings else 0,
         opening_mobility_by_type={},
         trajectory_count=len(observations),
+        metric_game_count=len(observations),
         trajectory_lengths=tuple(lengths),
         branching_counts=tuple(branchings),
         median_branching=float(median(branchings)) if branchings else None,
@@ -137,6 +138,7 @@ class GameQualityProfile:
     p90_game_length: float | None
     repetition_draw_fraction: float
     very_short_terminal_fraction: float
+    metric_game_count: int = 0
     first_player_score: float | None = None
     second_player_score: float | None = None
     paired_game_count: int = 0
@@ -267,6 +269,7 @@ def measure_game_quality(
     trajectory_count: int = 8,
     max_ply: int = 32,
     seed: int = 0,
+    raw_games: list[dict[str, Any]] | None = None,
 ) -> GameQualityProfile:
     """Measure deterministic random trajectories without running a benchmark."""
     if trajectory_count < 1 or max_ply < 1:
@@ -300,22 +303,43 @@ def measure_game_quality(
         )
         first_scores.append(_game_score(session, 0))
         second_scores.append(_game_score(session, 1))
-        observations.append(
-            QualityObservation(
-                tuple(trajectory_branchings),
-                len(session.history),
-                session.result.status.value,
-                first_scores[-1],
-                second_scores[-1],
-            )
-        )
-        paired_session = _play_policy_game(
+        observations.append(QualityObservation(
+            tuple(trajectory_branchings), len(session.history), session.result.status.value,
+            first_scores[-1], second_scores[-1],
+        ))
+        if raw_games is not None:
+            raw_games.append({
+                "pair_index": pair_index,
+                "policy_seeds": {"A": pair_seed, "B": pair_seed + 1},
+                "seat_assignment": {"player0": "A", "player1": "B"},
+                "plies": len(session.history),
+                "terminal_status": session.result.status.value,
+                "winner": session.result.winner,
+                "first_player_score": first_scores[-1],
+                "branching_sequence": list(trajectory_branchings),
+            })
+        paired_session, paired_branchings = _play_policy_game_with_trace(
             compiled,
             {0: random.Random(pair_seed + 1), 1: random.Random(pair_seed)},
             max_ply,
         )
         first_scores.append(_game_score(paired_session, 0))
         second_scores.append(_game_score(paired_session, 1))
+        observations.append(QualityObservation(
+            tuple(paired_branchings), len(paired_session.history), paired_session.result.status.value,
+            first_scores[-1], second_scores[-1],
+        ))
+        if raw_games is not None:
+            raw_games.append({
+                "pair_index": pair_index,
+                "policy_seeds": {"A": pair_seed, "B": pair_seed + 1},
+                "seat_assignment": {"player0": "B", "player1": "A"},
+                "plies": len(paired_session.history),
+                "terminal_status": paired_session.result.status.value,
+                "winner": paired_session.result.winner,
+                "first_player_score": first_scores[-1],
+                "branching_sequence": list(paired_branchings),
+            })
 
     swapped = swap_owner_opening(game)
     swapped_consistent = None
@@ -342,6 +366,7 @@ def measure_game_quality(
     )
     profile = replace(
         profile,
+        trajectory_count=trajectory_count,
         piece_counts_by_side=piece_counts,
         type_counts_by_side={side: dict(counts) for side, counts in type_counts.items()},
         opening_legal_actions=len(opening_actions),
@@ -350,6 +375,7 @@ def measure_game_quality(
         second_player_score=second_score,
         paired_game_count=paired_count,
         played_game_count=played_game_count,
+        metric_game_count=played_game_count,
         side_bias_magnitude=(abs(first_score - 0.5) * 2 if first_score is not None else None),
         swapped_opening_legal_count_equal=swapped_consistent,
         shallow_forced_win_rate=forced_wins / len(tactical_results) if tactical_results else None,

@@ -35,7 +35,11 @@ LADDER_BUDGETS = {
 
 def _write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def _freeze_rulesets(output_dir: Path) -> tuple[tuple[str, MinimalGeneratedGame], ...]:
@@ -98,6 +102,7 @@ def _player_action(
 def _play_ladder_game(
     game: MinimalGeneratedGame,
     seats: tuple[str, str],
+    stronger_name: str,
     seed: int,
 ) -> dict[str, object]:
     session = GameSession(game.compiled)
@@ -114,10 +119,9 @@ def _play_ladder_game(
         telemetry.append(event)
         session.submit(action)
     winner = session.result.winner
-    stronger = seats[1]
     stronger_score = None
     if session.result.status.value != "ongoing":
-        stronger_score = 0.5 if winner is None else (1.0 if seats[winner] == stronger else 0.0)
+        stronger_score = 0.5 if winner is None else (1.0 if seats[winner] == stronger_name else 0.0)
     return {
         "seats": list(seats),
         "seed": seed,
@@ -137,8 +141,8 @@ def _ladder_results(game: MinimalGeneratedGame) -> dict[str, object]:
     total_nodes = 0
     for pair_index, pair in enumerate(zip(ladder.names, ladder.names[1:])):
         games = [
-            _play_ladder_game(game, pair, 860600 + pair_index * 2),
-            _play_ladder_game(game, (pair[1], pair[0]), 860601 + pair_index * 2),
+            _play_ladder_game(game, pair, pair[1], 860600 + pair_index * 2),
+            _play_ladder_game(game, (pair[1], pair[0]), pair[1], 860601 + pair_index * 2),
         ]
         total_games += len(games)
         total_nodes += sum(int(row["actual_search_nodes"]) for row in games)
@@ -174,8 +178,18 @@ def run(output_dir: Path) -> dict[str, object]:
     quality = []
     total_quality_games = 0
     total_probe_nodes = 0
+    quality_games: list[dict[str, object]] = []
     for sample_id, game in frozen:
-        profile = measure_game_quality(game, trajectory_count=2, max_ply=32, seed=game.seed + 1000)
+        sample_games: list[dict[str, object]] = []
+        profile = measure_game_quality(
+            game,
+            trajectory_count=2,
+            max_ply=32,
+            seed=game.seed + 1000,
+            raw_games=sample_games,
+        )
+        for row in sample_games:
+            quality_games.append({"sample_id": sample_id, **row})
         row = {"sample_id": sample_id, **profile.to_dict()}
         quality.append(row)
         total_quality_games += profile.played_game_count
@@ -187,6 +201,8 @@ def run(output_dir: Path) -> dict[str, object]:
         "generated_ruleset_count": len(frozen),
         "quality_policy_pair_count": sum(row["paired_game_count"] for row in quality),
         "quality_played_game_count": total_quality_games,
+        "quality_metric_game_count": sum(row["metric_game_count"] for row in quality),
+        "quality_games": quality_games,
         "tactical_probe_position_count": sum(row["tactical_probe_position_count"] for row in quality),
         "tactical_probe_nodes": total_probe_nodes,
         "ladder": ladder,

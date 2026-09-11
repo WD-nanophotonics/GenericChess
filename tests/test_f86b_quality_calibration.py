@@ -29,6 +29,13 @@ def test_f86b_results_account_for_bounded_work_only():
     assert payload["generated_ruleset_count"] == 3
     assert payload["quality_policy_pair_count"] == 6
     assert payload["quality_played_game_count"] == 12
+    assert payload["quality_metric_game_count"] == 12
+    assert len(payload["quality_games"]) == 12
+    assert {sample_id: sum(row["sample_id"] == sample_id for row in payload["quality_games"]) for sample_id in payload["sample_ids"]} == {
+        "G4-A": 4,
+        "G4-B": 4,
+        "G5-A": 4,
+    }
     assert payload["tactical_probe_position_count"] == 3
     assert payload["tactical_probe_nodes"] <= 3 * 256
     assert payload["ladder"]["pair_count"] == 3
