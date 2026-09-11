@@ -32,7 +32,8 @@ ROOT_BUDGETS = (2000, 40000, 80000)
 OBSERVER_ROOT_BUDGET = 2000
 CHILD_BUDGETS = {"all_legal": 1000, "selected_mid": 10000, "selected_high": 20000}
 MAX_SELECTED_ACTIONS = 9
-MAX_CONCURRENT_ROOTS = 2
+FROZEN_MANIFEST_MAX_CONCURRENT_ROOTS = 2
+MAX_CONCURRENT_ROOTS = 3
 PER_ROOT_WALL_SECONDS = 720
 F85_MANIFEST_PATH = ROOT / "artifacts/f85_c2_train_teacher_evidence/train_precompute_manifest.json"
 F85_RUNTIME_DIR = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition"
@@ -158,7 +159,7 @@ def precompute_manifest() -> dict:
             "train_root_count": 36,
             "dev_root_count": 0,
             "resource_root_count": 0,
-            "max_concurrent_roots": MAX_CONCURRENT_ROOTS,
+            "max_concurrent_roots": FROZEN_MANIFEST_MAX_CONCURRENT_ROOTS,
             "per_root_wall_cap_seconds": PER_ROOT_WALL_SECONDS,
             "stage_count": 1,
             "no_auto_retry": True,
@@ -289,7 +290,7 @@ def _run_approved_acquisition(
         pending.append(record)
     results = []
     if max_concurrent_roots != MAX_CONCURRENT_ROOTS:
-        raise RuntimeError("acquisition runner requires the authorized two-lane geometry")
+        raise RuntimeError("acquisition runner requires the authorized three-lane geometry")
     for start in range(0, len(pending), max_concurrent_roots):
         batch = pending[start:start + max_concurrent_roots]
         execution_batch = [_execution_record(record, source_by_id) for record in batch]
@@ -355,7 +356,7 @@ def _validate_execution_plan(plan_path: Path, manifest: dict) -> tuple[dict, str
     envelope = plan.get("resource_envelope", {})
     lanes = envelope.get("intended_cpu_lanes")
     if lanes != MAX_CONCURRENT_ROOTS:
-        raise RuntimeError("approved compute plan root concurrency differs from the authorized two-lane geometry")
+        raise RuntimeError("approved compute plan root concurrency differs from the authorized three-lane geometry")
     return plan, plan_sha
 
 
