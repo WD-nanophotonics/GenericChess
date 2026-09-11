@@ -320,7 +320,7 @@ def _play_one_game(
             raise ArenaCapHit("stage_wall_seconds")
         termination_reason = str(getattr(result, "termination_reason", "")).lower()
         if termination_reason in {
-            "time_limit", "timeout", "deadline", "cancelled", "canceled",
+            "time_budget", "time_limit", "timeout", "deadline", "cancelled", "canceled",
         } or "deadline" in termination_reason:
             raise ArenaCapHit(wall_limit_name or "per_game_wall_seconds")
         searched_nodes += int(getattr(result, "nodes", 0))
