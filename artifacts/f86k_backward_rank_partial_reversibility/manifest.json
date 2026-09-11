@@ -1,0 +1,4307 @@
+{
+  "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+  "default_generator_changed": false,
+  "dynamic_budget": {
+    "max_ply": 0,
+    "real_games": 0
+  },
+  "entries": [
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861401,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "ac2d9b8bdd3faa183d209e3c2cd69062c61e1bd73dbd59e90e02aa33f9359cde",
+      "collapse_to_f86i_full_closure": false,
+      "f86i_full_closure_candidate_fingerprint": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "fingerprint_binding": {
+        "candidate": "ac2d9b8bdd3faa183d209e3c2cd69062c61e1bd73dbd59e90e02aa33f9359cde",
+        "f86i_full_closure_candidate": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+        "source": "1b8547501a45ebc1344f7134319ed215de09a51dfb001270dc127e77528698ac"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 2,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": false,
+          "reverse_atom": null,
+          "reverse_present_before": false,
+          "selected_atom": null,
+          "selected_atom_index": null,
+          "status": "NO_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-2",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861401
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "1b8547501a45ebc1344f7134319ed215de09a51dfb001270dc127e77528698ac",
+      "source_seed": 861401
+    },
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P2": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861402,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": 1
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -2
+                ]
+              }
+            ],
+            "name": "Ordinary P2",
+            "promotion_target_ids": [],
+            "type_id": "P2"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "0374bba8cade19cfffd374139d556586e9dbe9978b4bf5c299d48b1bdf6347ab",
+      "collapse_to_f86i_full_closure": false,
+      "f86i_full_closure_candidate_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "fingerprint_binding": {
+        "candidate": "0374bba8cade19cfffd374139d556586e9dbe9978b4bf5c299d48b1bdf6347ab",
+        "f86i_full_closure_candidate": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+        "source": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 3,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": false,
+          "reverse_atom": null,
+          "reverse_present_before": false,
+          "selected_atom": null,
+          "selected_atom_index": null,
+          "status": "NO_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P1": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P2": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -2
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-3",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P2": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861402
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": 1
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P2",
+            "promotion_target_ids": [],
+            "type_id": "P2"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400",
+      "source_seed": 861402
+    },
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861403,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "collapse_to_f86i_full_closure": true,
+      "f86i_full_closure_candidate_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "fingerprint_binding": {
+        "candidate": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+        "f86i_full_closure_candidate": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+        "source": "864e9aaf0f36b0a94024454a357e6787b3edd9cfd81898d1bea76dfc591b08d0"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 4,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-4",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861403
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "864e9aaf0f36b0a94024454a357e6787b3edd9cfd81898d1bea76dfc591b08d0",
+      "source_seed": 861403
+    },
+    {
+      "board_size": 4,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861404,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "collapse_to_f86i_full_closure": true,
+      "f86i_full_closure_candidate_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "fingerprint_binding": {
+        "candidate": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+        "f86i_full_closure_candidate": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+        "source": "9a5f3de7a492fa4fa01ca1b4c2e7a11b24403cde87b79761b26e212d13221f24"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 5,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-5",
+      "source_ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861404
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "9a5f3de7a492fa4fa01ca1b4c2e7a11b24403cde87b79761b26e212d13221f24",
+      "source_seed": 861404
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861501,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "0c6aa8afa8b571c4cad8bead2962367a73abc4c94c6aef9e227b05fd81a6422e",
+      "collapse_to_f86i_full_closure": false,
+      "f86i_full_closure_candidate_fingerprint": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "fingerprint_binding": {
+        "candidate": "0c6aa8afa8b571c4cad8bead2962367a73abc4c94c6aef9e227b05fd81a6422e",
+        "f86i_full_closure_candidate": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+        "source": "ddacec0f6b6fbffeb9135fbbbb658093d92ce0e5bce28665a87022b702d815d6"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 2,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-2",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 861501
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "ddacec0f6b6fbffeb9135fbbbb658093d92ce0e5bce28665a87022b702d815d6",
+      "source_seed": 861501
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861502,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "74db9dbacc5234524b844062609f5aa4e273a8cef2627bd6d137be07be45ae35",
+      "collapse_to_f86i_full_closure": false,
+      "f86i_full_closure_candidate_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "fingerprint_binding": {
+        "candidate": "74db9dbacc5234524b844062609f5aa4e273a8cef2627bd6d137be07be45ae35",
+        "f86i_full_closure_candidate": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+        "source": "d6e47a6fe19ab20538a1ec9539597b5765d0211cb608b15c262613a86e635297"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 3,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P1": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-3",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 861502
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "d6e47a6fe19ab20538a1ec9539597b5765d0211cb608b15c262613a86e635297",
+      "source_seed": 861502
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861503,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "9e4c3f8a9bc5279ad5d8464d6bdadaac1e6f138f4e90812dcfc2cb71660dfd07",
+      "collapse_to_f86i_full_closure": false,
+      "f86i_full_closure_candidate_fingerprint": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "fingerprint_binding": {
+        "candidate": "9e4c3f8a9bc5279ad5d8464d6bdadaac1e6f138f4e90812dcfc2cb71660dfd07",
+        "f86i_full_closure_candidate": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+        "source": "580475d4c25b8d5bb9d796902d383ac673bd00c3565e4609d07443bcc338ad04"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 4,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-4",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 4,
+          "seed": 861503
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  0
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "580475d4c25b8d5bb9d796902d383ac673bd00c3565e4609d07443bcc338ad04",
+      "source_seed": 861503
+    },
+    {
+      "board_size": 5,
+      "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+      "candidate_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+          "experimental_candidate": true,
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861504,
+          "source_generator": "f86c-minimal"
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "candidate_ruleset_fingerprint": "19e70cb043da1f4b04501a565b3ea5c0330dce92f61bf8b09dd73030290e17e5",
+      "collapse_to_f86i_full_closure": false,
+      "f86i_full_closure_candidate_fingerprint": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "fingerprint_binding": {
+        "candidate": "19e70cb043da1f4b04501a565b3ea5c0330dce92f61bf8b09dd73030290e17e5",
+        "f86i_full_closure_candidate": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+        "source": "c3fa844c61ea944f9fd11560f00878337389f427a59d84958c312e38d5494d31"
+      },
+      "movement_transform": {
+        "anchor": "fixed_ortho4_leaps_(1,0),(-1,0),(0,1),(0,-1)",
+        "dedupe": true,
+        "no_strict_forward": "record_NO_STRICT_FORWARD_SOURCE_ATOM_and_add_no_family",
+        "ordering": "original_atoms_then_selected_reverse_atom",
+        "ordinary": "append_reverse_of_first_strict_forward_source_atom_only",
+        "strict_forward": "LEAP offset[1] > 0; RAY direction[1] > 0"
+      },
+      "ordinary_count": 5,
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P1": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-5",
+      "source_ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 5,
+          "seed": 861504
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "direction": [
+                  -1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "source_ruleset_fingerprint": "c3fa844c61ea944f9fd11560f00878337389f427a59d84958c312e38d5494d31",
+      "source_seed": 861504
+    }
+  ],
+  "f86i_comparison_manifest": "artifacts/f86i_reversibility_rescue/manifest.json",
+  "result_driven_replacement_forbidden": true,
+  "schema_version": 1,
+  "source_artifact": "artifacts/f86c_generator_viability/rulesets.json",
+  "source_sample_ids": [
+    "V4-2",
+    "V4-3",
+    "V4-4",
+    "V4-5",
+    "V5-2",
+    "V5-3",
+    "V5-4",
+    "V5-5"
+  ],
+  "static_budget": {
+    "candidate_checks_per_cell": 2048,
+    "candidate_checks_total_cap": 4096,
+    "targeted_cells": [
+      "V4-3",
+      "V5-3"
+    ]
+  },
+  "status": "PRE_REGISTERED_STATIC_EXPERIMENTAL_CANDIDATE"
+}
