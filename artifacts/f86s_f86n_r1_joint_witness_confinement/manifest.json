@@ -1,0 +1,81 @@
+{
+  "baseline_commit": "453dac15fc5b0568d285615c142f572a0dc6a233",
+  "census_ordering": {
+    "attacker_anchor": "ascending row-major square index, after ordinary placement",
+    "attacker_targets": "ascending row-major square index",
+    "defender_anchor": "ascending row-major square index",
+    "ordinary_placement": "recursive type-sorted placement, ascending square index, duplicate types canonicalized",
+    "template_rows": "sorted by (defender_anchor, sorted ordinary (type_id, square_index))"
+  },
+  "default_generator_changed": false,
+  "f86n_r1_manifest_blob": "adba41fa02a6e44459d3692ba232bf564c4450c7",
+  "f86n_r1_result_blob": "d7f7e7648255e009a1544908a75e7d49ee4a8e72",
+  "f86r_result_blob": "c0de094522a8660750221d9fa948cfd79a5c00cf",
+  "frozen_candidate_fingerprints": {
+    "V4-3": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+    "V5-3": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5"
+  },
+  "frozen_census_expectations": {
+    "V4-3": {
+      "candidate_position_count": 1296,
+      "joint_kinematically_reachable_count": 2,
+      "minimum_optimistic_ply_lower_bound": 8,
+      "ordinary_assignment_reachable_count": 2,
+      "truncation": false,
+      "validated_position_count": 1166,
+      "validated_template_count": 108
+    },
+    "V5-3": {
+      "candidate_position_count": 2048,
+      "joint_kinematically_reachable_count": 21,
+      "minimum_optimistic_ply_lower_bound": 21,
+      "ordinary_assignment_reachable_count": 21,
+      "truncation": true,
+      "validated_position_count": 1592,
+      "validated_template_count": 90
+    }
+  },
+  "prohibited_compute": {
+    "alphabeta": 0,
+    "bfs": 0,
+    "c2": 0,
+    "dynamic_beyond_f86r": 0,
+    "f85": 0,
+    "heavy": 0,
+    "teacher": 0,
+    "training": 0
+  },
+  "result_driven_replacement_forbidden": true,
+  "schema_version": 1,
+  "source_artifacts": {
+    "f86n_r1_manifest": "artifacts/f86n_r1_transport_aware_signed_sampler/manifest.json",
+    "f86n_r1_result": "artifacts/f86n_r1_transport_aware_signed_sampler/results.json",
+    "f86r_result": "artifacts/f86r_escapable_check_defense_mode/summary.json"
+  },
+  "static_budget": {
+    "candidate_checks_per_cell": 2048,
+    "candidate_checks_total_cap": 4096,
+    "new_games": 0,
+    "new_movement_candidates": 0
+  },
+  "status": "PRE_REGISTERED_F86S_F86N_R1_JOINT_WITNESS_CONFINEMENT",
+  "targeted_samples": [
+    "V4-3",
+    "V5-3"
+  ],
+  "witness_serialization_schema": {
+    "assignment_identity": "compiled opening owner-0 piece type and row-major source square to target square",
+    "confinement_checker": "F86R exact piece-level Leap/Ray checker geometry with child occupancy and ray blocking",
+    "required": [
+      "source_template_id",
+      "defender_anchor",
+      "attacker_anchor_admissible_target_square",
+      "ordinary",
+      "opening_piece_assignment",
+      "optimistic_assignment_path_lengths",
+      "joint_optimistic_ply_lower_bound",
+      "candidate_ruleset_fingerprint",
+      "exact_checkmate_confinement"
+    ]
+  }
+}
