@@ -137,6 +137,45 @@ def _run_stage(compiled, native, gen1, candidate, openings):
     return {"config": {"pairs": 8, "total_games": 16, "nodes_per_move": 512, "parent_nodes_per_move": 512, "child_nodes_per_move": 512, "max_depth": 12, "tt_megabytes": 8, "workers": 8, "root_window_pruning": True, "execution_caps": asdict(caps)}, "run": {"status": first.status, "completed_games": first.completed_games, "completed_pairs": first.completed_pairs, "total_games": first.total_games, "reason": first.reason, "effective_game_lanes": first.effective_game_lanes}, "summary": summary, "telemetry": telemetry, "checkpoint_validation": checkpoint_validation, "replay_validation": replay_validation, "contract_failures": failures}
 
 
+def _durable_artifact(result: dict) -> dict:
+    arena = result["arena"]
+    summary = arena["summary"] or {}
+    run_info = arena["run"]
+    return {
+        "schema": "generic-chess-f81-final-strength-evidence-v1",
+        "work_order": result["work_order"],
+        "baseline_sha": result["baseline_sha"],
+        "parent_checkpoint_id": result["parent_checkpoint_id"],
+        "child_checkpoint_id": result["child_checkpoint_id"],
+        "candidate_model_sha256": result["candidate_model_sha256"],
+        "corpus_path": "artifacts/f81_final_confirmation/openings.json",
+        "corpus_id": result["opening_corpus"]["corpus_id"],
+        "corpus_content_sha256": hashlib.sha256(CORPUS_PATH.read_bytes()).hexdigest(),
+        "prior_evidence": result["prior_evidence"],
+        "fresh_pair_scores": summary.get("pair_scores"),
+        "fresh_mean_pair_score": summary.get("mean_pair_score"),
+        "fresh_child_better_pairs": summary.get("child_better_pairs"),
+        "fresh_tied_pairs": summary.get("tied_pairs"),
+        "fresh_child_worse_pairs": summary.get("child_worse_pairs"),
+        "fresh_bootstrap_low": summary.get("bootstrap_low"),
+        "fresh_bootstrap_high": summary.get("bootstrap_high"),
+        "fresh_game_wins": summary.get("game_wins"),
+        "fresh_game_draws": summary.get("game_draws"),
+        "fresh_game_losses": summary.get("game_losses"),
+        "completed_games": run_info["completed_games"],
+        "completed_pairs": run_info["completed_pairs"],
+        "effective_game_lanes": run_info["effective_game_lanes"],
+        "config": arena["config"],
+        "replay_validation": arena["replay_validation"],
+        "telemetry": arena["telemetry"],
+        "code_provenance": {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in ("scripts/f81_r1_eight_lane_final_strength_confirmation.py", "generic_chess/learning/arena.py", "generic_chess/learning/openings.py", "generic_chess/native/semantic_engine.py")},
+        "classification": result["classification"],
+        "contract_failures": result["contract_failures"],
+        "champion_before": result["champion_before"],
+        "champion_after": result["champion_after"],
+    }
+
+
 def run() -> dict:
     if not native_available():
         raise RuntimeError("F81-R1 requires the native extension")
@@ -166,7 +205,7 @@ def run() -> dict:
     result = {"schema": "generic-chess-f81-r1-eight-lane-final-strength-confirmation-v1", "work_order": WORK_ORDER, "baseline_sha": BASELINE_SHA, "classification": classification, "parent_checkpoint_id": gen1.checkpoint_id, "child_checkpoint_id": candidate.checkpoint_id, "candidate_model_sha256": descriptor["candidate_model_sha256"], "opening_corpus": corpus_payload, "prior_evidence": prior_evidence, "arena": arena, "contract_failures": failures, "champion_before": PARENT_SHA, "champion_after": CHILD_SHA if classification == "PARENT_ANCHORED_FULL_RESIDUAL_FINAL_CONFIRMED" else PARENT_SHA, "code_provenance": {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in ("scripts/f81_r1_eight_lane_final_strength_confirmation.py", "generic_chess/learning/arena.py", "generic_chess/learning/openings.py", "generic_chess/native/semantic_engine.py")}}
     _atomic_json(RESULT_PATH, result)
     if run_info["status"] == "COMPLETE" and not failures:
-        _atomic_json(ARTIFACT_PATH, result)
+        _atomic_json(ARTIFACT_PATH, _durable_artifact(result))
     return result
 
 
