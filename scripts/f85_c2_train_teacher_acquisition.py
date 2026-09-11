@@ -3,12 +3,16 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
+import multiprocessing as mp
 import os
 from pathlib import Path
+import queue as queue_module
 import subprocess
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -30,6 +34,7 @@ MAX_SELECTED_ACTIONS = 9
 MAX_CONCURRENT_ROOTS = 2
 PER_ROOT_WALL_SECONDS = 720
 F85_MANIFEST_PATH = ROOT / "artifacts/f85_c2_train_teacher_evidence/train_precompute_manifest.json"
+F85_RUNTIME_DIR = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition"
 
 
 def _sha(path: Path) -> str:
@@ -182,13 +187,92 @@ def _teacher_unit(compiled, native, parent, observer, record: dict) -> dict:
     }
 
 
+def _teacher_worker(record: dict, result_queue) -> None:
+    started = time.perf_counter()
+    try:
+        compiled, native, _profile = f50._ruleset(LABEL)
+        _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
+        result = _teacher_unit(compiled, native, champion, champion, record)
+        result_queue.put({"status": "COMPLETE", "elapsed_wall_seconds": time.perf_counter() - started, **result})
+    except BaseException as exc:  # pragma: no cover - bounded worker failure path
+        result_queue.put({
+            "status": "HARNESS_MISMATCH",
+            "error": f"{type(exc).__name__}: {exc}",
+            "elapsed_wall_seconds": time.perf_counter() - started,
+        })
+
+
+def _run_teacher_one(record: dict) -> dict:
+    context = mp.get_context("spawn")
+    result_queue = context.Queue()
+    process = context.Process(target=_teacher_worker, args=(record, result_queue))
+    process.start()
+    process.join(PER_ROOT_WALL_SECONDS)
+    if process.is_alive():
+        process.terminate()
+        process.join(5)
+        return {"status": "TIME_CAP", "termination_reason": "per_root_wall_cap"}
+    try:
+        return result_queue.get(timeout=1)
+    except queue_module.Empty:
+        return {"status": "HARNESS_MISMATCH", "error": f"worker exited with code {process.exitcode}"}
+
+
+def _run_approved_acquisition(manifest: dict, compute_plan_path: Path) -> dict:
+    """Run each frozen train root once; this path is only for an approved plan."""
+    progress_dir = F85_RUNTIME_DIR / "progress"
+    progress_dir.mkdir(parents=True, exist_ok=True)
+    completed = []
+    pending = []
+    for record in manifest["roots"]:
+        path = progress_dir / f"{record['root_id']}.json"
+        if path.exists():
+            prior = json.loads(path.read_text(encoding="utf-8"))
+            if prior.get("status") == "COMPLETE" and prior.get("position_key") == record["position_key"]:
+                completed.append(prior)
+                continue
+        pending.append(record)
+    results = []
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_ROOTS) as pool:
+        for record, result in zip(pending, pool.map(_run_teacher_one, pending)):
+            row = {"root_id": record["root_id"], "position_key": record["position_key"], **result}
+            if row["status"] == "COMPLETE":
+                row["stratum"] = record["stratum"]
+                row["role"] = record["role"]
+                path = progress_dir / f"{record['root_id']}.json"
+                _atomic_json(path, row)
+                completed.append(row)
+            results.append(row)
+    all_rows = sorted(completed, key=lambda row: row["root_id"])
+    if len(all_rows) != 36 or any(row.get("status") != "COMPLETE" for row in all_rows):
+        return {"status": "INCOMPLETE", "completed_count": len(all_rows), "results": results}
+    evidence = {
+        "schema": "generic-chess-f85-c2-train-teacher-evidence-v1",
+        "work_order": WORK_ORDER,
+        "status": "COMPLETE_TRAIN_TEACHER_EVIDENCE_SEALED",
+        "manifest_sha256": _sha(F85_MANIFEST_PATH),
+        "compute_plan_sha256": _sha(compute_plan_path),
+        "root_count": 36,
+        "roots": all_rows,
+    }
+    _atomic_json(ROOT / "artifacts/f85_c2_train_teacher_evidence/training_evidence.json", evidence)
+    return {"status": evidence["status"], "completed_count": 36}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precompute-only", action="store_true")
+    parser.add_argument("--approved-run", action="store_true")
+    parser.add_argument("--compute-plan", type=Path)
     args = parser.parse_args()
-    if not args.precompute_only:
+    if not args.precompute_only and not args.approved_run:
         raise SystemExit("F85 teacher acquisition is withheld until the separately approved large plan is bound")
     manifest = precompute_manifest()
+    if args.approved_run:
+        if args.compute_plan is None:
+            raise SystemExit("--approved-run requires --compute-plan")
+        print(json.dumps(_run_approved_acquisition(manifest, args.compute_plan), sort_keys=True), flush=True)
+        return
     print(json.dumps({
         "status": manifest["status"],
         "manifest_path": str(F85_MANIFEST_PATH.relative_to(ROOT)).replace("\\", "/"),

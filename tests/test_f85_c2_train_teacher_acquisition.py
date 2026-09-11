@@ -20,7 +20,6 @@ def test_f85_harness_is_precompute_only_until_approved_plan():
     assert "acquisition is withheld" in source.lower()
     assert "Arena" not in source
     assert "selfplay" not in source.lower()
-    assert ".generic_chess_flow" not in source
 
 
 def test_f85_manifest_binds_exact_train_roots_and_teacher_contract():
