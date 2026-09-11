@@ -14,6 +14,10 @@ from generic_chess.core.movegen import has_legal_action
 from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.rules.compiler import compile_ruleset
 from generic_chess.rules.schema import ruleset_from_dict
+from generic_chess.benchmark.qualification import (
+    component_info as _shared_component_info,
+    lattice_info as _shared_lattice_info,
+)
 
 try:
     from scripts.f86i_reversibility_rescue import (
@@ -135,6 +139,10 @@ def _gcd_many(values: list[int]) -> int:
 
 
 def _lattice_info(compiled, type_id: str) -> dict[str, Any]:
+    return _shared_lattice_info(compiled, type_id)
+    # Retained below only as historical source context; the public contract
+    # now lives in generic_chess.benchmark.qualification.
+    """
     vectors = _generator_vectors(compiled, type_id)
     nonzero = [vector for vector in vectors if vector != (0, 0)]
     coordinate_gcd = _gcd_many([value for vector in nonzero for value in vector])
@@ -186,9 +194,12 @@ def _lattice_info(compiled, type_id: str) -> dict[str, Any]:
         "smith_invariant_factors": smith,
         "residue_or_invariant": invariant,
     }
+    """
 
 
 def _component_info(compiled, type_id: str) -> dict[str, Any]:
+    return _shared_component_info(compiled, type_id)
+    """
     adjacency = _adjacency(compiled, type_id, 0)
     components, component_ids = _scc(adjacency)
     opening = [row for row in _opening_rows(compiled, all_owners=False) if row["type_id"] == type_id]
@@ -201,6 +212,7 @@ def _component_info(compiled, type_id: str) -> dict[str, Any]:
             for row in opening
         ],
     }
+    """
 
 
 def _owner0_sources(compiled) -> dict[str, list[dict[str, Any]]]:

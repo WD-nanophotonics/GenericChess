@@ -1,0 +1,315 @@
+"""Freeze and run the F87A ruleset-qualification toolbox foundation.
+
+F87A deliberately stops at compiler/core correctness, shared structural
+diagnostics, and a tiny generator-independent Common-Tape calibration.  No
+native search, Arena, training, or Heavy work belongs in this script.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+from generic_chess.benchmark.qualification import (
+    STATUS_DEFER,
+    STATUS_PASS,
+    common_tape_games,
+    qualification_report,
+    structural_profile,
+)
+from generic_chess.rules.compiler import compile_ruleset
+from generic_chess.rules.schema import ruleset_from_dict
+from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+from generic_chess.rules.western_chess import build_western_chess_ruleset
+
+
+BASELINE_SHA = "a33ff404d33aef1d6717fc62e05337ae92691540"
+ARTIFACT_DIR = Path("artifacts/f87a_ruleset_qualification")
+PREP_PATH = ARTIFACT_DIR / "manifest.json"
+SUMMARY_PATH = ARTIFACT_DIR / "summary.json"
+REPORTS_PATH = ARTIFACT_DIR / "reports.json"
+PAIR_COUNT = 2
+MAX_PLY = 12
+TAPE_LENGTH = 32
+SEED = 8701
+
+EXPECTED_FINGERPRINTS = {
+    "F86C legacy V4-3": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400",
+    "F86I full-reverse V4-3": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+    "F86N-R1 boundary V4-3": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+    "F86N-R1 boundary V5-3": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+}
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _write_json(path: Path, value: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _load_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _artifact_controls(root: Path) -> list[dict[str, Any]]:
+    f86c_path = root / "artifacts/f86c_generator_viability/rulesets.json"
+    f86c = _load_json(f86c_path)
+    f86c_row = next(row for row in f86c["sample"] if row["sample_id"] == "V4-3")
+
+    f86i_path = root / "artifacts/f86i_reversibility_rescue/manifest.json"
+    f86i = _load_json(f86i_path)
+    f86i_row = next(row for row in f86i["entries"] if row["sample_id"] == "V4-3")
+
+    f86n_path = root / "artifacts/f86n_r1_transport_aware_signed_sampler/manifest.json"
+    f86n = _load_json(f86n_path)
+    f86n_rows = {row["sample_id"]: row for row in f86n["entries"]}
+
+    return [
+        {
+            "name": "F86C legacy V4-3",
+            "class": "negative",
+            "source_kind": "F86C_LEGACY_V4_3",
+            "source_path": f86c_path.relative_to(root).as_posix(),
+            "source_sha256": _sha256(f86c_path),
+            "ruleset": f86c_row["ruleset"],
+            "expected_fingerprint": EXPECTED_FINGERPRINTS["F86C legacy V4-3"],
+        },
+        {
+            "name": "F86I full-reverse V4-3",
+            "class": "negative",
+            "source_kind": "F86I_FULL_REVERSE_V4_3",
+            "source_path": f86i_path.relative_to(root).as_posix(),
+            "source_sha256": _sha256(f86i_path),
+            "ruleset": f86i_row["candidate_ruleset"],
+            "expected_fingerprint": EXPECTED_FINGERPRINTS["F86I full-reverse V4-3"],
+        },
+        {
+            "name": "F86N-R1 boundary V4-3",
+            "class": "boundary",
+            "source_kind": "F86N_R1_BOUNDARY_V4_3",
+            "source_path": f86n_path.relative_to(root).as_posix(),
+            "source_sha256": _sha256(f86n_path),
+            "ruleset": f86n_rows["V4-3"]["candidate_ruleset"],
+            "expected_fingerprint": EXPECTED_FINGERPRINTS["F86N-R1 boundary V4-3"],
+        },
+        {
+            "name": "F86N-R1 boundary V5-3",
+            "class": "boundary",
+            "source_kind": "F86N_R1_BOUNDARY_V5_3",
+            "source_path": f86n_path.relative_to(root).as_posix(),
+            "source_sha256": _sha256(f86n_path),
+            "ruleset": f86n_rows["V5-3"]["candidate_ruleset"],
+            "expected_fingerprint": EXPECTED_FINGERPRINTS["F86N-R1 boundary V5-3"],
+        },
+    ]
+
+
+def _builtin_controls() -> list[dict[str, Any]]:
+    return [
+        {
+            "name": "Built-in Western Chess",
+            "class": "positive_semantic",
+            "source_kind": "BUILTIN_WESTERN_CHESS",
+            "source_path": "generic_chess.rules.western_chess.build_western_chess_ruleset",
+            "source_sha256": "builtin",
+            "builder": build_western_chess_ruleset,
+        },
+        {
+            "name": "Built-in Standard Shogi",
+            "class": "positive_semantic",
+            "source_kind": "BUILTIN_STANDARD_SHOGI",
+            "source_path": "generic_chess.rules.standard_shogi.build_standard_shogi_ruleset",
+            "source_sha256": "builtin",
+            "builder": build_standard_shogi_ruleset,
+        },
+    ]
+
+
+def _controls(root: Path) -> list[dict[str, Any]]:
+    return _artifact_controls(root) + _builtin_controls()
+
+
+def _compiled(control: dict[str, Any]):
+    if "builder" in control:
+        ruleset = control["builder"]()
+    else:
+        ruleset = ruleset_from_dict(control["ruleset"])
+    compiled = compile_ruleset(ruleset, allow_semantic_actions=bool(ruleset.semantic_actions))
+    expected = control.get("expected_fingerprint")
+    if expected is not None and compiled.ruleset_fingerprint != expected:
+        raise RuntimeError(
+            f"{control['name']} fingerprint mismatch: "
+            f"expected {expected}, got {compiled.ruleset_fingerprint}"
+        )
+    return compiled
+
+
+def _dynamic_supported(control: dict[str, Any]) -> bool:
+    """Legacy GameSession cannot execute the built-ins' semantic-action DSL."""
+    if "builder" not in control:
+        return True
+    return not bool(control["builder"]().semantic_actions)
+
+
+def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
+    controls = []
+    for control in _controls(root):
+        compiled = _compiled(control)
+        controls.append({
+            "name": control["name"],
+            "class": control["class"],
+            "source_kind": control["source_kind"],
+            "source_path": control["source_path"],
+            "source_sha256": control["source_sha256"],
+            "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        })
+    prep = {
+        "schema_version": 1,
+        "experiment": "GENERICCHESS-F87A-RULESET-QUALIFICATION-TOOLBOX-FOUNDATION",
+        "status": "PREP_FROZEN",
+        "baseline_sha": BASELINE_SHA,
+        "controls": controls,
+        "allowed_statuses": ["PASS", "FAIL", "DEFER", "UNMEASURED"],
+        "provenance_classes": [
+            "LITERATURE_SUPPORTED", "GENERICCHESS_SPECIFIC", "EMPIRICAL_GATE", "UNVALIDATED_HEURISTIC"
+        ],
+        "layers": {
+            "A": {"name": "compiler/core correctness", "hard_gate": "PASS", "qualification_note": "Layer A is necessary, not sufficient"},
+            "B": {"name": "shared structural probe", "hard_gate": "diagnostic; no universal rank/index gate"},
+            "C": {"name": "bounded Common-Tape dynamics", "hard_gate": "replay identity and metric completeness"},
+            "D": {"name": "paired strength response", "hard_gate": "DEFERRED_IN_F87A"},
+            "E": {"name": "learning/evaluator adapter", "hard_gate": "DEFERRED_IN_F87A"},
+        },
+        "metric_definitions": {
+            "ongoing_at_max_ply": "CENSORED/UNRESOLVED; never a draw",
+            "lattice": "displacement generators, integer rank, lattice index/residue",
+            "transport": "finite-board reachability, SCC/component, sink fraction, reverse-edge fraction",
+            "opening_transport": "opening-source reachable coverage, same-type union coverage, component diversity",
+            "material": "materialized type profile from opening position",
+            "dynamic": "terminal/completion/checkmate/decisive/stalemate/repetition/censored, game length, branching, legal-action collapse, capture/check density, side bias, opening identity sensitivity",
+            "universal_gate": "not applied; F86N rank-2/index-1 is diagnostic and empirical only",
+        },
+        "budgets": {
+            "pair_count": PAIR_COUNT,
+            "max_ply": MAX_PLY,
+            "tape_length": TAPE_LENGTH,
+            "search_nodes": 0,
+            "arena_games": 0,
+            "training_steps": 0,
+            "heavy_jobs": 0,
+        },
+        "expectations": {
+            "overall_status": "DEFER",
+            "negative_controls_not_fully_qualified": True,
+            "f86n_boundary_status": "DEFER",
+            "builtins_not_universally_failed_by_piece_local_heuristic": True,
+            "terminal_probe": "DEFER if semantic contract is not applicable or insufficient",
+        },
+        "prohibited_compute": ["native search", "large Arena", "training", "Heavy", "large Gen1-to-GenN", "C2", "F85", "full QD/MAP-Elites"],
+    }
+    _write_json(output, prep)
+    return prep
+
+
+def _load_prep(path: Path) -> dict[str, Any]:
+    prep = _load_json(path)
+    if prep.get("status") != "PREP_FROZEN" or prep.get("baseline_sha") != BASELINE_SHA:
+        raise RuntimeError("F87A PREP manifest is not frozen at the authorized baseline")
+    if len(prep.get("controls", [])) != 6:
+        raise RuntimeError("F87A calibration suite must contain six controls")
+    return prep
+
+
+def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
+    prep = _load_prep(prep_path)
+    controls = {control["name"]: control for control in _controls(root)}
+    reports: dict[str, Any] = {}
+    for identity in prep["controls"]:
+        control = controls[identity["name"]]
+        compiled = _compiled(control)
+        structural = structural_profile(compiled)
+        if _dynamic_supported(control):
+            dynamic = common_tape_games(
+                compiled,
+                pair_count=PAIR_COUNT,
+                max_ply=MAX_PLY,
+                seed=SEED,
+                tape_length=TAPE_LENGTH,
+            )
+            replay = common_tape_games(
+                compiled,
+                pair_count=PAIR_COUNT,
+                max_ply=MAX_PLY,
+                seed=SEED,
+                tape_length=TAPE_LENGTH,
+            )
+            replay_equal = dynamic == replay
+            dynamic_status = STATUS_PASS
+        else:
+            dynamic = {
+                "status": "UNMEASURED",
+                "reason": "semantic-action ruleset requires the semantic runtime; legacy Common-Tape is not applicable",
+                "records": [],
+                "censored_count": 0,
+            }
+            replay_equal = True
+            dynamic_status = "DEFER"
+        report = qualification_report(
+            compiled=compiled,
+            provenance=identity,
+            experiment_identity=f"F87A/{identity['name']}",
+            structural=structural,
+            dynamic=dynamic,
+            replay_equal=replay_equal,
+            dynamic_status=dynamic_status,
+        ).to_dict()
+        if report["overall_status"] != STATUS_DEFER:
+            raise RuntimeError(f"F87A expected DEFER for {identity['name']}")
+        reports[identity["name"]] = report
+
+    summary = {
+        "schema_version": 1,
+        "experiment": prep["experiment"],
+        "status": "RESULT_COMPLETE",
+        "baseline_sha": BASELINE_SHA,
+        "prep_manifest": str(prep_path),
+        "controls": list(reports),
+        "overall_status": STATUS_DEFER,
+        "layer_status": {"A": STATUS_PASS, "B": STATUS_PASS, "C": "MIXED_PASS_DEFER", "D": STATUS_DEFER, "E": STATUS_DEFER},
+        "compute_usage": {"search_nodes": 0, "arena_games": 0, "training_steps": 0, "heavy_jobs": 0},
+        "calibration_expectations": prep["expectations"],
+    }
+    _write_json(result_dir / "summary.json", summary)
+    _write_json(result_dir / "reports.json", reports)
+    return summary
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument("--prep", action="store_true")
+    parser.add_argument("--manifest-output", type=Path, default=None)
+    parser.add_argument("--result", action="store_true")
+    parser.add_argument("--result-dir", type=Path, default=None)
+    args = parser.parse_args()
+    root = args.root.resolve()
+    if args.prep:
+        output = args.manifest_output or (root / PREP_PATH)
+        build_prep(root, output)
+    if args.result:
+        prep = root / PREP_PATH
+        result_dir = args.result_dir or (root / ARTIFACT_DIR)
+        run(root, prep, result_dir)
+    if not args.prep and not args.result:
+        parser.error("choose --prep or --result")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

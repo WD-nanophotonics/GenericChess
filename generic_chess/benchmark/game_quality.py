@@ -25,6 +25,8 @@ QUALITY_REASONS = (
     "INSUFFICIENT_SKILL_DISCRIMINATION",
     "UNRESOLVED",
 )
+CENSORED_TERMINAL_STATUS = "CENSORED"
+UNRESOLVED_TERMINAL_STATUS = "UNRESOLVED"
 
 
 def _percentile(values: list[int], fraction: float) -> float | None:
@@ -173,7 +175,7 @@ def classify_game_quality(
     diagnostic.append(("SEARCH_EXPLOSIVE", "p90_branching", profile.p90_game_branching is not None and profile.p90_game_branching >= 100))
     if profile.terminal_distribution:
         total = sum(profile.terminal_distribution.values())
-        draw_statuses = {"repetition", "stalemate", "max_ply", "perpetual_check"}
+        draw_statuses = {"repetition", "stalemate", "perpetual_check"}
         draws = sum(v for k, v in profile.terminal_distribution.items() if k in draw_statuses)
         diagnostic.append(("DRAW_DOMINATED", "draw_fraction", bool(total and draws / total >= 0.9)))
     diagnostic.append(("TACTICAL_ONLY", "forced_win", profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= 0.75))
@@ -193,7 +195,7 @@ def classify_game_quality(
             if key == "forced_line" else
             (profile.p90_game_branching is not None and profile.p90_game_branching >= thresholds[key])
             if key == "p90_branching" else
-            (bool(profile.terminal_distribution) and sum(v for k, v in profile.terminal_distribution.items() if k in {"repetition", "stalemate", "max_ply", "perpetual_check"}) / sum(profile.terminal_distribution.values()) >= thresholds[key])
+            (bool(profile.terminal_distribution) and sum(v for k, v in profile.terminal_distribution.items() if k in {"repetition", "stalemate", "perpetual_check"}) / sum(profile.terminal_distribution.values()) >= thresholds[key])
             if key == "draw_fraction" else
             (profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= thresholds[key])
             if key == "forced_win" else
@@ -303,8 +305,13 @@ def measure_game_quality(
         )
         first_scores.append(_game_score(session, 0))
         second_scores.append(_game_score(session, 1))
+        terminal_status = (
+            CENSORED_TERMINAL_STATUS
+            if session.result.status.value == "ongoing" and len(session.history) >= max_ply
+            else session.result.status.value
+        )
         observations.append(QualityObservation(
-            tuple(trajectory_branchings), len(session.history), session.result.status.value,
+            tuple(trajectory_branchings), len(session.history), terminal_status,
             first_scores[-1], second_scores[-1],
         ))
         if raw_games is not None:
@@ -313,7 +320,7 @@ def measure_game_quality(
                 "policy_seeds": {"A": pair_seed, "B": pair_seed + 1},
                 "seat_assignment": {"player0": "A", "player1": "B"},
                 "plies": len(session.history),
-                "terminal_status": session.result.status.value,
+                "terminal_status": terminal_status,
                 "winner": session.result.winner,
                 "first_player_score": first_scores[-1],
                 "branching_sequence": list(trajectory_branchings),
@@ -325,8 +332,13 @@ def measure_game_quality(
         )
         first_scores.append(_game_score(paired_session, 0))
         second_scores.append(_game_score(paired_session, 1))
+        paired_terminal_status = (
+            CENSORED_TERMINAL_STATUS
+            if paired_session.result.status.value == "ongoing" and len(paired_session.history) >= max_ply
+            else paired_session.result.status.value
+        )
         observations.append(QualityObservation(
-            tuple(paired_branchings), len(paired_session.history), paired_session.result.status.value,
+            tuple(paired_branchings), len(paired_session.history), paired_terminal_status,
             first_scores[-1], second_scores[-1],
         ))
         if raw_games is not None:
@@ -335,7 +347,7 @@ def measure_game_quality(
                 "policy_seeds": {"A": pair_seed, "B": pair_seed + 1},
                 "seat_assignment": {"player0": "B", "player1": "A"},
                 "plies": len(paired_session.history),
-                "terminal_status": paired_session.result.status.value,
+                "terminal_status": paired_terminal_status,
                 "winner": paired_session.result.winner,
                 "first_player_score": first_scores[-1],
                 "branching_sequence": list(paired_branchings),
