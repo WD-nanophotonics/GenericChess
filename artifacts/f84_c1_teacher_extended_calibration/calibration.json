@@ -1,0 +1,247 @@
+{
+  "actual_search_calls": 141,
+  "actual_teacher_calls": 40,
+  "c1_authority": {
+    "checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+    "model_sha256": "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6"
+  },
+  "capped_count": 0,
+  "classification": "C1_TEACHER_COST_EXTENDED_CALIBRATED",
+  "completed_count": 3,
+  "execution_contract": {
+    "effective_workload": {
+      "arena_pairs": 0,
+      "games": 0,
+      "plies": 0
+    },
+    "max_concurrent_roots": 2,
+    "maximum_root_node_budgets": {
+      "c1_on_policy": 426000,
+      "c1_pv_corridor": 426000,
+      "reachable_random": 419000
+    },
+    "maximum_selected_actions": 9,
+    "no_persisted_teacher_targets": true,
+    "no_retry": true,
+    "per_root_wall_cap_seconds": 720,
+    "root_ids": [
+      "reachable_random-r-00",
+      "c1_on_policy-r-00",
+      "c1_pv_corridor-r-00"
+    ],
+    "whole_stage_hard_wall_seconds": 1500
+  },
+  "f83_authority": {
+    "overlap_counts": {
+      "f62": 0,
+      "f75": 0,
+      "f77": 0,
+      "f78_f80": 0,
+      "f81": 0
+    },
+    "root_corpus_path": "artifacts/f83_c1_relative_evidence/root_corpus.json",
+    "root_corpus_sha256": "a5fdbb12e3ee443448a1e9ec09a8405857bcf72fd3687777afbe69548a021fa4",
+    "root_set_identity_sha256": "c197799729877dc836116740d0827de0b02cfabde42e45c8e53e19f61c3ee108"
+  },
+  "failed_count": 0,
+  "resource_envelope": {
+    "arena_pairs": 1,
+    "envelope_id": "f84-c1-teacher-extended-envelope-v1",
+    "expected_cpu_hours": 4.8,
+    "expected_wall_minutes": 24.5,
+    "hard_cpu_hours": 5,
+    "hard_wall_minutes": 25,
+    "intended_cpu_lanes": 2,
+    "logical_cpu_count": 16,
+    "maximum_concurrent_games": 2,
+    "maximum_games": 1,
+    "maximum_nodes": 1271000,
+    "maximum_plies": 1,
+    "schema": "generic-chess-resource-envelope-v1",
+    "stage_count": 1
+  },
+  "resource_envelope_sha256": "1ba6ec6298c08d05e8ded74117c31bc55527654db11d80f0065c5f6c66f578ee",
+  "results": [
+    {
+      "actual_search_calls": 41,
+      "actual_teacher_calls": 12,
+      "declared_child_search_budgets": {
+        "all_legal": 1000,
+        "selected_high": 20000,
+        "selected_mid": 10000
+      },
+      "declared_total_search_node_budget": 329000,
+      "elapsed_wall_seconds": 330.96815969998715,
+      "legal_action_count": 25,
+      "position_key": "06c0da0de440a0e9180ca7a3150765f8d964edc9158a1618d459c8afc7ba7d06",
+      "process_cpu_seconds": 685.015625,
+      "role": "resource_estimation_only",
+      "root_id": "reachable_random-r-00",
+      "root_search_summaries": {
+        "observer_2k": {
+          "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[6,1]}",
+          "budget": 2000,
+          "completed_depth": 2,
+          "nodes": 2000,
+          "score": -3159840
+        },
+        "root_2k": {
+          "action_key": "{\"actor_type_id\":\"G\",\"from\":[5,1],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_138\",\"promotion_target_id\":null,\"to\":[6,1]}",
+          "budget": 2000,
+          "completed_depth": 2,
+          "nodes": 2000,
+          "score": -3159840
+        },
+        "root_40k": {
+          "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+          "budget": 40000,
+          "completed_depth": 3,
+          "nodes": 40000,
+          "score": 2949951
+        },
+        "root_80k": {
+          "action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+          "budget": 80000,
+          "completed_depth": 3,
+          "nodes": 80000,
+          "score": 2949951
+        }
+      },
+      "selected_action_count": 6,
+      "status": "COMPLETE",
+      "stratum": "reachable_random"
+    },
+    {
+      "actual_search_calls": 50,
+      "actual_teacher_calls": 14,
+      "declared_child_search_budgets": {
+        "all_legal": 1000,
+        "selected_high": 20000,
+        "selected_mid": 10000
+      },
+      "declared_total_search_node_budget": 366000,
+      "elapsed_wall_seconds": 399.48932870000135,
+      "legal_action_count": 32,
+      "position_key": "38c2b92fdb3b685029c34335f5f3bc79bd4f43a5749c139cecc068098bbd320b",
+      "process_cpu_seconds": 947.953125,
+      "role": "resource_estimation_only",
+      "root_id": "c1_on_policy-r-00",
+      "root_search_summaries": {
+        "observer_2k": {
+          "action_key": "{\"actor_type_id\":\"R\",\"from\":[5,7],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,7]}",
+          "budget": 2000,
+          "completed_depth": 2,
+          "nodes": 2000,
+          "score": -5822962
+        },
+        "root_2k": {
+          "action_key": "{\"actor_type_id\":\"R\",\"from\":[5,7],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,7]}",
+          "budget": 2000,
+          "completed_depth": 2,
+          "nodes": 2000,
+          "score": -5822962
+        },
+        "root_40k": {
+          "action_key": "{\"actor_type_id\":\"R\",\"from\":[5,7],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,7]}",
+          "budget": 40000,
+          "completed_depth": 2,
+          "nodes": 40000,
+          "score": -5822962
+        },
+        "root_80k": {
+          "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,8],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[1,7]}",
+          "budget": 80000,
+          "completed_depth": 3,
+          "nodes": 80000,
+          "score": 4399578
+        }
+      },
+      "selected_action_count": 7,
+      "status": "COMPLETE",
+      "stratum": "c1_on_policy"
+    },
+    {
+      "actual_search_calls": 50,
+      "actual_teacher_calls": 14,
+      "declared_child_search_budgets": {
+        "all_legal": 1000,
+        "selected_high": 20000,
+        "selected_mid": 10000
+      },
+      "declared_total_search_node_budget": 366000,
+      "elapsed_wall_seconds": 265.0320109000022,
+      "legal_action_count": 32,
+      "position_key": "d4b4418be5066c613cd23771b34c43a05c42b0878de218de484e4ce1d4095b60",
+      "process_cpu_seconds": 607.203125,
+      "role": "resource_estimation_only",
+      "root_id": "c1_pv_corridor-r-00",
+      "root_search_summaries": {
+        "observer_2k": {
+          "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+          "budget": 2000,
+          "completed_depth": 2,
+          "nodes": 2000,
+          "score": 1055332
+        },
+        "root_2k": {
+          "action_key": "{\"actor_type_id\":\"S\",\"from\":[2,0],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":null,\"to\":[3,1]}",
+          "budget": 2000,
+          "completed_depth": 2,
+          "nodes": 2000,
+          "score": 1055332
+        },
+        "root_40k": {
+          "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+          "budget": 40000,
+          "completed_depth": 3,
+          "nodes": 40000,
+          "score": 728078
+        },
+        "root_80k": {
+          "action_key": "{\"actor_type_id\":\"P\",\"from\":[6,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[6,3]}",
+          "budget": 80000,
+          "completed_depth": 3,
+          "nodes": 80000,
+          "score": 728078
+        }
+      },
+      "selected_action_count": 7,
+      "status": "COMPLETE",
+      "stratum": "c1_pv_corridor"
+    }
+  ],
+  "ruleset": "B_CANONICAL_STANDARD_SHOGI",
+  "sandbox_sha": "87a90ee1f8b776cb75bab3ed5d6470a5ffb042bc",
+  "schema": "generic-chess-f84-c1-teacher-extended-calibration-v1",
+  "stage_elapsed_wall_seconds": 596.501514100004,
+  "stage_hard_wall_exceeded": false,
+  "teacher_contract": {
+    "candidate_action_construction": "all legal actions sorted canonically; cheap child-Q ordering; top six plus root/observer/high-budget actions",
+    "f62_records_sha256": "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61",
+    "f62_stage_sha256": "e7a93423d6058c68fe7ccbc61302584ca1e8869aa828586254f72f4dfdac2c70",
+    "implementation_paths": [
+      "scripts/f59_action_spectrum_diagnosis.py",
+      "scripts/f62_learned_champion_repeatability.py"
+    ],
+    "implementation_sha256": {
+      "scripts/f59_action_spectrum_diagnosis.py": "6336cee4ecb5c76f3b8067ae81d4bdd28cda9dfa8ca31a9ffb29b251e4e00211",
+      "scripts/f62_learned_champion_repeatability.py": "927a449472a029d197c35566687a02b3adb256a861d675ed25b0e5589a585809"
+    },
+    "max_depth": 12,
+    "observer_root_budget": 2000,
+    "root_budgets": [
+      2000,
+      40000,
+      80000
+    ],
+    "root_window_pruning": false,
+    "target_q_convention": "child-side search score negated to root-action owner perspective",
+    "teacher_child_budgets": {
+      "all_legal": 1000,
+      "selected_high": 20000,
+      "selected_mid": 10000
+    },
+    "tt_megabytes": 8
+  },
+  "work_order": "GENERICCHESS-F84-C1-TEACHER-EXTENDED-COST-CALIBRATION"
+}

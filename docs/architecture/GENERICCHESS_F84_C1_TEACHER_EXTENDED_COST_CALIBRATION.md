@@ -23,3 +23,16 @@ zero for all three non-search quantities.
 
 Durable output: `artifacts/f84_c1_teacher_extended_calibration/calibration.json`.
 Resource roots remain permanently outside future C2 training corpora.
+
+## Result
+
+The single bounded stage completed all three roots with no retry:
+
+- `reachable_random-r-00`: 330.968 wall seconds, 25 legal actions, 6 selected actions, 12 teacher calls.
+- `c1_on_policy-r-00`: 399.489 wall seconds, 32 legal actions, 7 selected actions, 14 teacher calls.
+- `c1_pv_corridor-r-00`: 265.032 wall seconds, 32 legal actions, 7 selected actions, 14 teacher calls.
+
+The stage took 596.502 wall seconds, with 40 teacher calls and 141 total
+search calls. All three results were `COMPLETE`; classification is
+`C1_TEACHER_COST_EXTENDED_CALIBRATED`. Calibration artifact SHA-256:
+`9fd8eb417a71fb1c5e7af5225c84fb73facb0549eeaae229a6923e7be8a4677b`.
