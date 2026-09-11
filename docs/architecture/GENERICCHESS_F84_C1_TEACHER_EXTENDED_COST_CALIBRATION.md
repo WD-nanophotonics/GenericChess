@@ -1,0 +1,20 @@
+# GenericChess F84 C1 Teacher Extended Cost Calibration
+
+F84 is a bounded, resource-only calibration stage over exactly three already
+frozen F83 roots. It does not replace roots, label the 36 train / 12 dev
+acquisition roots, fit C2, run Arena, or change production semantics.
+
+The stage uses the exact F62/F59 teacher contract: C1 as parent and observer,
+root budgets 2k/40k/80k plus observer 2k, all-legal child budget 1k, selected
+child budgets 10k/20k, depth 12, 8 MiB TT, and root-window pruning disabled.
+Each selected resource root is attempted once with a 720-second wall cap, at
+most two roots concurrently, and a 1500-second whole-stage hard wall.
+
+The explicit bounded resource envelope declares 16 logical CPUs, two active
+root lanes, expected wall/CPU bounds of 24.5 minutes / 4.8 hours, hard bounds
+of 25 minutes / 5 hours, one stage, zero games, zero Arena pairs, zero plies,
+and a 1,271,000 maximum declared node budget. Any cap preserves unknown fields
+as `null`; it never writes zero teacher calls or Q labels.
+
+Durable output: `artifacts/f84_c1_teacher_extended_calibration/calibration.json`.
+Resource roots remain permanently outside future C2 training corpora.
