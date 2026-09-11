@@ -34,6 +34,7 @@ def test_f85_manifest_binds_exact_train_roots_and_teacher_contract():
     root_payload = json.loads(ROOT_CORPUS.read_text(encoding="utf-8"))
     assert payload["schema"] == "generic-chess-f85-train-root-precompute-manifest-v1"
     assert payload["status"] == "PRECOMPUTE_COMPLETE_ACQUISITION_NOT_AUTHORIZED"
+    assert payload["sandbox_sha"] == f85.F85_PRECOMPUTE_SOURCE_SHA
     assert payload["f83_authority"]["root_set_identity_sha256"] == f85.F83_ROOT_SET_ID
     assert payload["f84_calibration_artifact"]["content_sha256"] == f85.F84_CALIBRATION_SHA
     assert payload["execution_contract"]["train_root_count"] == 36
@@ -95,12 +96,23 @@ def _runtime_tmp():
     return Path(tempfile.mkdtemp(prefix="generic-chess-f85-"))
 
 
+def _plan_file(runtime, *, lanes=2):
+    runtime.mkdir(parents=True, exist_ok=True)
+    plan = runtime / "plan.json"
+    plan.write_text(json.dumps({
+        "sandbox_sha": f85._git_sha(),
+        "precompute_manifest_sha256": f85._sha(f85.F85_MANIFEST_PATH),
+        "resource_envelope": {"intended_cpu_lanes": lanes},
+    }), encoding="utf-8")
+    return plan
+
+
 def test_f85_fake_complete_seals_only_after_all_36_units(tmp_path):
-    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     evidence = tmp_path / "training_evidence.json"
     calls = []
     runtime = _runtime_tmp()
+    plan = _plan_file(runtime)
 
     def runner(record):
         calls.append(record["root_id"])
@@ -116,10 +128,10 @@ def test_f85_fake_complete_seals_only_after_all_36_units(tmp_path):
 
 
 def test_f85_terminal_first_batch_stops_before_submitting_later_batches(tmp_path):
-    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     calls = []
     runtime = _runtime_tmp()
+    plan = _plan_file(runtime)
 
     def runner(record):
         calls.append(record["root_id"])
@@ -130,16 +142,16 @@ def test_f85_terminal_first_batch_stops_before_submitting_later_batches(tmp_path
         assert result["status"] == "INCOMPLETE"
         assert len(calls) == 2
         assert result["completed_count"] == 1
-        assert len(list(runtime.rglob("*.json"))) == 2
+        assert len(list(runtime.rglob("*.json"))) == 3
     finally:
         shutil.rmtree(runtime, ignore_errors=True)
 
 
 def test_f85_same_plan_terminal_progress_never_retries_teacher(tmp_path):
-    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     calls = []
     runtime = _runtime_tmp()
+    plan = _plan_file(runtime)
 
     def failing_runner(record):
         calls.append(record["root_id"])
@@ -161,17 +173,86 @@ def test_f85_same_plan_terminal_progress_never_retries_teacher(tmp_path):
 
 
 def test_f85_stale_complete_progress_is_not_reused(tmp_path):
-    plan = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition-v1.plan.json"
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     runtime = _runtime_tmp()
+    plan = _plan_file(runtime)
     try:
         f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=_fake_complete)
-        progress = next(runtime.rglob("*.json"))
+        progress = next(path for path in runtime.rglob("*.json") if path.name != "plan.json")
         prior = json.loads(progress.read_text(encoding="utf-8"))
         prior["provenance"]["manifest_content_sha256"] = "0" * 64
         progress.write_text(json.dumps(prior), encoding="utf-8")
         result = f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=lambda _record: pytest.fail("stale unit reused"))
         assert result["status"] == "HARNESS_MISMATCH"
         assert result["reason"] == "STALE_PROGRESS_PROVENANCE"
+    finally:
+        shutil.rmtree(runtime, ignore_errors=True)
+
+
+def test_f85_authorized_plan_is_exactly_two_lanes_and_four_lane_plan_is_rejected():
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    runtime = _runtime_tmp()
+    try:
+        two_lane_plan = _plan_file(runtime / "two", lanes=2)
+        validated, _plan_sha = f85._validate_execution_plan(two_lane_plan, manifest)
+        assert validated["resource_envelope"]["intended_cpu_lanes"] == 2
+
+        four_lane_plan = _plan_file(runtime / "four", lanes=4)
+        with pytest.raises(RuntimeError, match="authorized two-lane"):
+            f85._validate_execution_plan(four_lane_plan, manifest)
+    finally:
+        shutil.rmtree(runtime, ignore_errors=True)
+
+
+@pytest.mark.parametrize("field", [
+    "compute_plan_sha256",
+    "manifest_content_sha256",
+    "root_record_sha256",
+    "c1_checkpoint_id",
+    "c1_model_sha256",
+    "f59_script_sha256",
+    "f62_script_sha256",
+])
+def test_f85_every_provenance_binding_rejects_stale_complete_progress(field):
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    runtime = _runtime_tmp()
+    plan = _plan_file(runtime)
+    try:
+        f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=_fake_complete)
+        progress = next(path for path in runtime.rglob("*.json") if path.name != "plan.json")
+        prior = json.loads(progress.read_text(encoding="utf-8"))
+        prior["provenance"][field] = "0" * 64
+        progress.write_text(json.dumps(prior), encoding="utf-8")
+        result = f85._run_approved_acquisition(
+            manifest,
+            plan,
+            runtime_dir=runtime,
+            runner=lambda _record: pytest.fail("stale unit reused"),
+        )
+        assert result == {
+            "status": "HARNESS_MISMATCH",
+            "reason": "STALE_PROGRESS_PROVENANCE",
+            "root_id": prior["root_id"],
+        }
+    finally:
+        shutil.rmtree(runtime, ignore_errors=True)
+
+
+def test_f85_harness_mismatch_first_batch_stops_before_later_batches():
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    calls = []
+    runtime = _runtime_tmp()
+    plan = _plan_file(runtime)
+
+    def runner(record):
+        calls.append(record["root_id"])
+        return {"status": "HARNESS_MISMATCH", "error": "fake"} if len(calls) == 1 else _fake_complete(record)
+
+    try:
+        result = f85._run_approved_acquisition(manifest, plan, runtime_dir=runtime, runner=runner)
+        assert result["status"] == "INCOMPLETE"
+        assert len(calls) == 2
+        assert result["completed_count"] == 1
+        assert len(list(runtime.rglob("*.json"))) == 3
     finally:
         shutil.rmtree(runtime, ignore_errors=True)

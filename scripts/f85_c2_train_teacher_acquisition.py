@@ -27,6 +27,7 @@ LABEL = "B_CANONICAL_STANDARD_SHOGI"
 WORK_ORDER = "GENERICCHESS-F85A-C2-TRAIN-TEACHER-ACQUISITION-HARNESS-AND-LARGE-PLAN"
 F83_ROOT_SET_ID = "c197799729877dc836116740d0827de0b02cfabde42e45c8e53e19f61c3ee108"
 F84_CALIBRATION_SHA = "9fd8eb417a71fb1c5e7af5225c84fb73facb0549eeaae229a6923e7be8a4677b"
+F85_PRECOMPUTE_SOURCE_SHA = "e54ff8f4ca05ee3eb33a9a693d8577a99992b991"
 ROOT_BUDGETS = (2000, 40000, 80000)
 OBSERVER_ROOT_BUDGET = 2000
 CHILD_BUDGETS = {"all_legal": 1000, "selected_mid": 10000, "selected_high": 20000}
@@ -131,7 +132,7 @@ def precompute_manifest() -> dict:
         "schema": "generic-chess-f85-train-root-precompute-manifest-v1",
         "work_order": WORK_ORDER,
         "status": "PRECOMPUTE_COMPLETE_ACQUISITION_NOT_AUTHORIZED",
-        "sandbox_sha": _git_sha(),
+        "sandbox_sha": F85_PRECOMPUTE_SOURCE_SHA,
         "ruleset": LABEL,
         "f83_authority": authority,
         "f84_calibration_artifact": {
@@ -287,8 +288,10 @@ def _run_approved_acquisition(
             return {"status": "HARNESS_MISMATCH", "reason": "UNKNOWN_PROGRESS_STATUS", "root_id": record["root_id"]}
         pending.append(record)
     results = []
-    for start in range(0, len(pending), MAX_CONCURRENT_ROOTS):
-        batch = pending[start:start + MAX_CONCURRENT_ROOTS]
+    if max_concurrent_roots != MAX_CONCURRENT_ROOTS:
+        raise RuntimeError("acquisition runner requires the authorized two-lane geometry")
+    for start in range(0, len(pending), max_concurrent_roots):
+        batch = pending[start:start + max_concurrent_roots]
         execution_batch = [_execution_record(record, source_by_id) for record in batch]
         with ThreadPoolExecutor(max_workers=max_concurrent_roots) as pool:
             batch_results = list(pool.map(run_one, execution_batch))
@@ -344,6 +347,18 @@ def _run_approved_acquisition(
     return {"status": evidence["status"], "completed_count": 36}
 
 
+def _validate_execution_plan(plan_path: Path, manifest: dict) -> tuple[dict, str]:
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    plan_sha = _sha(plan_path)
+    if plan.get("sandbox_sha") != _git_sha() or plan.get("precompute_manifest_sha256") != _sha(F85_MANIFEST_PATH):
+        raise RuntimeError("approved compute plan is stale or not bound to the exact precompute manifest")
+    envelope = plan.get("resource_envelope", {})
+    lanes = envelope.get("intended_cpu_lanes")
+    if lanes != MAX_CONCURRENT_ROOTS:
+        raise RuntimeError("approved compute plan root concurrency differs from the authorized two-lane geometry")
+    return plan, plan_sha
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precompute-only", action="store_true")
@@ -356,14 +371,11 @@ def main() -> None:
     if args.approved_run:
         if args.compute_plan is None:
             raise SystemExit("--approved-run requires --compute-plan")
-        plan = json.loads(args.compute_plan.read_text(encoding="utf-8"))
-        plan_sha = _sha(args.compute_plan)
-        if plan.get("sandbox_sha") != _git_sha() or plan.get("precompute_manifest_sha256") != _sha(F85_MANIFEST_PATH):
-            raise SystemExit("approved compute plan is stale or not bound to the exact precompute manifest")
-        envelope = plan.get("resource_envelope", {})
-        lanes = envelope.get("intended_cpu_lanes")
-        if not isinstance(lanes, int) or lanes < 1 or lanes > 4:
-            raise SystemExit("approved compute plan has an invalid root concurrency")
+        try:
+            plan, plan_sha = _validate_execution_plan(args.compute_plan, manifest)
+        except RuntimeError as exc:
+            raise SystemExit(str(exc))
+        lanes = plan["resource_envelope"]["intended_cpu_lanes"]
         result = _run_approved_acquisition(manifest, args.compute_plan, max_concurrent_roots=lanes)
         result["compute_plan_sha256"] = plan_sha
         print(json.dumps(result, sort_keys=True), flush=True)
