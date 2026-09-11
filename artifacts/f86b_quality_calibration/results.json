@@ -1,0 +1,599 @@
+{
+  "classification_policy": "UNRESOLVED_WITHOUT_EXPLICIT_CALIBRATED_THRESHOLDS",
+  "f85_actual_compute": 0,
+  "generated_ruleset_count": 3,
+  "ladder": {
+    "actual_search_nodes": 183,
+    "ladder_summary": {
+      "adjacent_advantages": {
+        "low_node>medium_node": 0.0,
+        "random_legal>very_shallow": 0.0,
+        "very_shallow>low_node": 0.0
+      },
+      "mean_adjacent_advantage": 0.0,
+      "minimum_adjacent_advantage": 0.0,
+      "monotonic": false,
+      "skill_discrimination": 0.0,
+      "stronger_scores": {
+        "low_node>medium_node": 0.5,
+        "random_legal>very_shallow": 0.5,
+        "very_shallow>low_node": 0.5
+      }
+    },
+    "pair_count": 3,
+    "pair_results": [
+      {
+        "game_count": 2,
+        "games": [
+          {
+            "actual_search_nodes": 33,
+            "plies": 8,
+            "seats": [
+              "random_legal",
+              "very_shallow"
+            ],
+            "seed": 860600,
+            "status": "stalemate",
+            "stronger_score": 0.5,
+            "telemetry": [
+              {
+                "agent": "random_legal",
+                "nodes": 0,
+                "qnodes": 0
+              },
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 12,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 12
+              },
+              {
+                "agent": "random_legal",
+                "nodes": 0,
+                "qnodes": 0
+              },
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 10,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 10
+              },
+              {
+                "agent": "random_legal",
+                "nodes": 0,
+                "qnodes": 0
+              },
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 6,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 6
+              },
+              {
+                "agent": "random_legal",
+                "nodes": 0,
+                "qnodes": 0
+              },
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 5,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 5
+              }
+            ],
+            "winner": null
+          },
+          {
+            "actual_search_nodes": 10,
+            "plies": 2,
+            "seats": [
+              "very_shallow",
+              "random_legal"
+            ],
+            "seed": 860601,
+            "status": "stalemate",
+            "stronger_score": 0.5,
+            "telemetry": [
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 10,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 10
+              },
+              {
+                "agent": "random_legal",
+                "nodes": 0,
+                "qnodes": 0
+              }
+            ],
+            "winner": null
+          }
+        ],
+        "resolved_game_count": 2,
+        "stronger": "very_shallow",
+        "stronger_mean_score": 0.5,
+        "weaker": "random_legal"
+      },
+      {
+        "game_count": 2,
+        "games": [
+          {
+            "actual_search_nodes": 19,
+            "plies": 2,
+            "seats": [
+              "very_shallow",
+              "low_node"
+            ],
+            "seed": 860602,
+            "status": "stalemate",
+            "stronger_score": 0.5,
+            "telemetry": [
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 10,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 10
+              },
+              {
+                "agent": "low_node",
+                "completed_depth": 4,
+                "nodes": 9,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 9
+              }
+            ],
+            "winner": null
+          },
+          {
+            "actual_search_nodes": 30,
+            "plies": 2,
+            "seats": [
+              "low_node",
+              "very_shallow"
+            ],
+            "seed": 860603,
+            "status": "stalemate",
+            "stronger_score": 0.5,
+            "telemetry": [
+              {
+                "agent": "low_node",
+                "completed_depth": 4,
+                "nodes": 25,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 25
+              },
+              {
+                "agent": "very_shallow",
+                "completed_depth": 2,
+                "nodes": 5,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 5
+              }
+            ],
+            "winner": null
+          }
+        ],
+        "resolved_game_count": 2,
+        "stronger": "low_node",
+        "stronger_mean_score": 0.5,
+        "weaker": "very_shallow"
+      },
+      {
+        "game_count": 2,
+        "games": [
+          {
+            "actual_search_nodes": 38,
+            "plies": 2,
+            "seats": [
+              "low_node",
+              "medium_node"
+            ],
+            "seed": 860604,
+            "status": "stalemate",
+            "stronger_score": 0.5,
+            "telemetry": [
+              {
+                "agent": "low_node",
+                "completed_depth": 4,
+                "nodes": 25,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 25
+              },
+              {
+                "agent": "medium_node",
+                "completed_depth": 6,
+                "nodes": 13,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 13
+              }
+            ],
+            "winner": null
+          },
+          {
+            "actual_search_nodes": 53,
+            "plies": 2,
+            "seats": [
+              "medium_node",
+              "low_node"
+            ],
+            "seed": 860605,
+            "status": "stalemate",
+            "stronger_score": 0.5,
+            "telemetry": [
+              {
+                "agent": "medium_node",
+                "completed_depth": 6,
+                "nodes": 44,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 44
+              },
+              {
+                "agent": "low_node",
+                "completed_depth": 4,
+                "nodes": 9,
+                "qnodes": 0,
+                "termination_reason": "completed_depth",
+                "total_nodes": 9
+              }
+            ],
+            "winner": null
+          }
+        ],
+        "resolved_game_count": 2,
+        "stronger": "medium_node",
+        "stronger_mean_score": 0.5,
+        "weaker": "low_node"
+      }
+    ],
+    "played_game_count": 6,
+    "ruleset_sample_id": "G4-A"
+  },
+  "quality": [
+    {
+      "authoritative_reasons": [],
+      "board_size": 4,
+      "branching_by_ply_bin": {
+        "end": [],
+        "mid": [],
+        "opening": [
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      "branching_collapse_fraction": 0.0,
+      "branching_counts": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "classification": "UNRESOLVED",
+      "classification_reasons": [
+        "DRAW_DOMINATED"
+      ],
+      "first_player_score": 0.5,
+      "forced_move_fraction": 0.5,
+      "low_branch_fraction": 1.0,
+      "median_branching": 1.5,
+      "median_game_length": 2.0,
+      "opening_legal_actions": 2,
+      "opening_mobility_by_type": {
+        "K": 1,
+        "P1": 1
+      },
+      "p10_game_branching": 1.0,
+      "p10_game_length": 2.0,
+      "p90_game_branching": 2.0,
+      "p90_game_length": 2.0,
+      "paired_game_count": 2,
+      "piece_counts_by_side": {
+        "0": 3,
+        "1": 3
+      },
+      "played_game_count": 4,
+      "repetition_draw_fraction": 0.0,
+      "ruleset_fingerprint": "a67e1fef5ff9e5d8e3aea778f7dbe40a71dc80844707264247ac9ddd5affe6be",
+      "sample_id": "G4-A",
+      "second_player_score": 0.5,
+      "shallow_forced_win_rate": 0.0,
+      "side_bias_magnitude": 0.0,
+      "skill_discrimination": null,
+      "solved_fraction": 0.0,
+      "swapped_opening_legal_count_equal": true,
+      "tactical_probe_nodes": 14,
+      "tactical_probe_position_count": 1,
+      "terminal_distribution": {
+        "stalemate": 2
+      },
+      "trajectory_count": 2,
+      "trajectory_lengths": [
+        2,
+        2
+      ],
+      "type_counts_by_side": {
+        "0": {
+          "K": 1,
+          "P1": 2
+        },
+        "1": {
+          "K": 1,
+          "P1": 2
+        }
+      },
+      "unique_best_fraction": null,
+      "very_short_terminal_fraction": 1.0
+    },
+    {
+      "authoritative_reasons": [],
+      "board_size": 4,
+      "branching_by_ply_bin": {
+        "end": [],
+        "mid": [
+          3,
+          1,
+          1
+        ],
+        "opening": [
+          5,
+          5,
+          5,
+          2,
+          4,
+          1,
+          3,
+          5,
+          5,
+          5,
+          4,
+          6,
+          3,
+          4,
+          2
+        ]
+      },
+      "branching_collapse_fraction": 0.6666666666666666,
+      "branching_counts": [
+        5,
+        5,
+        5,
+        2,
+        4,
+        1,
+        3,
+        5,
+        5,
+        5,
+        4,
+        6,
+        3,
+        4,
+        2,
+        3,
+        1,
+        1
+      ],
+      "classification": "UNRESOLVED",
+      "classification_reasons": [
+        "DRAW_DOMINATED"
+      ],
+      "first_player_score": 0.5,
+      "forced_move_fraction": 0.16666666666666666,
+      "low_branch_fraction": 0.2777777777777778,
+      "median_branching": 4.0,
+      "median_game_length": 9.0,
+      "opening_legal_actions": 5,
+      "opening_mobility_by_type": {
+        "K": 1,
+        "P0": 4
+      },
+      "p10_game_branching": 1.0,
+      "p10_game_length": 7.0,
+      "p90_game_branching": 5.0,
+      "p90_game_length": 11.0,
+      "paired_game_count": 2,
+      "piece_counts_by_side": {
+        "0": 4,
+        "1": 4
+      },
+      "played_game_count": 4,
+      "repetition_draw_fraction": 0.0,
+      "ruleset_fingerprint": "0a83a730e02343439f3926c6e86564fc48a8ba2b1437cced54d667ea43531750",
+      "sample_id": "G4-B",
+      "second_player_score": 0.5,
+      "shallow_forced_win_rate": 0.0,
+      "side_bias_magnitude": 0.0,
+      "skill_discrimination": null,
+      "solved_fraction": 0.0,
+      "swapped_opening_legal_count_equal": true,
+      "tactical_probe_nodes": 256,
+      "tactical_probe_position_count": 1,
+      "terminal_distribution": {
+        "stalemate": 2
+      },
+      "trajectory_count": 2,
+      "trajectory_lengths": [
+        7,
+        11
+      ],
+      "type_counts_by_side": {
+        "0": {
+          "K": 1,
+          "P0": 3
+        },
+        "1": {
+          "K": 1,
+          "P0": 3
+        }
+      },
+      "unique_best_fraction": null,
+      "very_short_terminal_fraction": 0.0
+    },
+    {
+      "authoritative_reasons": [],
+      "board_size": 5,
+      "branching_by_ply_bin": {
+        "end": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "mid": [
+          4,
+          4,
+          3,
+          2,
+          2,
+          2,
+          3,
+          3,
+          4,
+          1,
+          3,
+          1
+        ],
+        "opening": [
+          5,
+          5,
+          7,
+          8,
+          7,
+          6,
+          6,
+          4,
+          5,
+          4,
+          6,
+          2,
+          5,
+          3,
+          4,
+          3
+        ]
+      },
+      "branching_collapse_fraction": 0.5625,
+      "branching_counts": [
+        5,
+        5,
+        7,
+        8,
+        7,
+        6,
+        6,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        5,
+        4,
+        6,
+        2,
+        5,
+        3,
+        4,
+        3,
+        4,
+        1,
+        3,
+        1
+      ],
+      "classification": "UNRESOLVED",
+      "classification_reasons": [
+        "DRAW_DOMINATED"
+      ],
+      "first_player_score": 0.5,
+      "forced_move_fraction": 0.125,
+      "low_branch_fraction": 0.3125,
+      "median_branching": 3.5,
+      "median_game_length": 16.0,
+      "opening_legal_actions": 5,
+      "opening_mobility_by_type": {
+        "K": 1,
+        "P0": 3,
+        "P1": 1
+      },
+      "p10_game_branching": 1.0,
+      "p10_game_length": 12.0,
+      "p90_game_branching": 6.0,
+      "p90_game_length": 20.0,
+      "paired_game_count": 2,
+      "piece_counts_by_side": {
+        "0": 4,
+        "1": 4
+      },
+      "played_game_count": 4,
+      "repetition_draw_fraction": 0.0,
+      "ruleset_fingerprint": "a3ef34cad53f9908e95827e80af3f83d53c29ca724049a15cc1b48092c24ee6e",
+      "sample_id": "G5-A",
+      "second_player_score": 0.5,
+      "shallow_forced_win_rate": 0.0,
+      "side_bias_magnitude": 0.0,
+      "skill_discrimination": null,
+      "solved_fraction": 0.0,
+      "swapped_opening_legal_count_equal": true,
+      "tactical_probe_nodes": 256,
+      "tactical_probe_position_count": 1,
+      "terminal_distribution": {
+        "stalemate": 2
+      },
+      "trajectory_count": 2,
+      "trajectory_lengths": [
+        20,
+        12
+      ],
+      "type_counts_by_side": {
+        "0": {
+          "K": 1,
+          "P0": 2,
+          "P1": 1
+        },
+        "1": {
+          "K": 1,
+          "P0": 2,
+          "P1": 1
+        }
+      },
+      "unique_best_fraction": null,
+      "very_short_terminal_fraction": 0.0
+    }
+  ],
+  "quality_played_game_count": 12,
+  "quality_policy_pair_count": 6,
+  "sample_ids": [
+    "G4-A",
+    "G4-B",
+    "G5-A"
+  ],
+  "schema_version": 1,
+  "tactical_probe_nodes": 526,
+  "tactical_probe_position_count": 3
+}

@@ -1,0 +1,814 @@
+{
+  "sample": [
+    {
+      "board_size": 4,
+      "ordinary_count": 2,
+      "ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 2,
+          "seed": 860401
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "ruleset_fingerprint": "a67e1fef5ff9e5d8e3aea778f7dbe40a71dc80844707264247ac9ddd5affe6be",
+      "sample_id": "G4-A",
+      "seed": 860401
+    },
+    {
+      "board_size": 4,
+      "ordinary_count": 3,
+      "ruleset": {
+        "board_size": 4,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            }
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            }
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 860402
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  0,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": null
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "ruleset_fingerprint": "0a83a730e02343439f3926c6e86564fc48a8ba2b1437cced54d667ea43531750",
+      "sample_id": "G4-B",
+      "seed": 860402
+    },
+    {
+      "board_size": 5,
+      "ordinary_count": 3,
+      "ruleset": {
+        "board_size": 5,
+        "drop_allowed": {
+          "P0": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P1": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "P2": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "initial_position": [
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            null
+          ],
+          [
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ],
+          [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 0,
+              "promoted": false
+            },
+            {
+              "base_type_id": "P1",
+              "current_type_id": "P1",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          [
+            null,
+            {
+              "base_type_id": "P0",
+              "current_type_id": "P0",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null
+          ]
+        ],
+        "max_ply": 96,
+        "metadata": {
+          "generator": "f86a-minimal",
+          "ordinary_count": 3,
+          "seed": 860501
+        },
+        "piece_types": [
+          {
+            "is_anchor": true,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              }
+            ],
+            "name": "Anchor",
+            "promotion_target_ids": [],
+            "type_id": "K"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "direction": [
+                  0,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 2
+              }
+            ],
+            "name": "Ordinary P0",
+            "promotion_target_ids": [],
+            "type_id": "P0"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "name": "Ordinary P1",
+            "promotion_target_ids": [],
+            "type_id": "P1"
+          },
+          {
+            "is_anchor": false,
+            "is_promotable": false,
+            "movement_atoms": [
+              {
+                "direction": [
+                  1,
+                  1
+                ],
+                "kind": "ray",
+                "max_steps": 1
+              }
+            ],
+            "name": "Ordinary P2",
+            "promotion_target_ids": [],
+            "type_id": "P2"
+          }
+        ],
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "schema_version": 1,
+        "stalemate_result": "draw"
+      },
+      "ruleset_fingerprint": "a3ef34cad53f9908e95827e80af3f83d53c29ca724049a15cc1b48092c24ee6e",
+      "sample_id": "G5-A",
+      "seed": 860501
+    }
+  ],
+  "schema_version": 1
+}
