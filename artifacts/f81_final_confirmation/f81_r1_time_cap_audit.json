@@ -1,0 +1,433 @@
+{
+  "audit_classification": "TIME_BUDGET_CAP_CONTAMINATION_FOUND",
+  "baseline_sha": "55c7bbcccb21d78d0398e0deecbfd5301e059392",
+  "candidate_model_sha256": "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6",
+  "child_checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+  "contaminated_pair_indices": [
+    5
+  ],
+  "contract_failures": [],
+  "corpus_content_sha256": "5b3bdc5ea81d1ccb8326957cc85afd6f6e16df902deabd9f9cc75fa37ee79b04",
+  "corpus_id": "67b9dafc51a618645c3328228c30a8744cc8f988395a7d54d382b65276dc935c",
+  "corpus_path": "artifacts\\f81_final_confirmation\\openings.json",
+  "frozen_corpus_payload_sha256": "bc648f35c2b6271816f647dc3ff33124199d1b9cc3730b753aaae8b76d22e1f1",
+  "game_file_count": 16,
+  "manifest_identity_sha256": "bd9873b4d08c88f40ba16e99555c7caf0abfc875bd09a0cdf1646975c5d258ff",
+  "opening_count": 8,
+  "pair_count": 8,
+  "pairs": [
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "4b70bf298a87560fa085a9f073f39f758b12993c3a2ce527c0fbe93bb6b38de7",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000000-owner-0.json",
+        "plies": 162,
+        "progress_sha256": "ffe9bc0ce53670226ee6f260b640a3b097ad551ae5d11daf3479a2bc87454a78",
+        "result": "checkmate",
+        "telemetry_row_count": 162,
+        "termination_reason_counts": {
+          "node_budget": 162
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 0
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "4b70bf298a87560fa085a9f073f39f758b12993c3a2ce527c0fbe93bb6b38de7",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000000-owner-1.json",
+        "plies": 67,
+        "progress_sha256": "cc508968cc7818fafd1a45c05e7eb602e6953a5f2af587fcfe3fd91f918c646e",
+        "result": "checkmate",
+        "telemetry_row_count": 67,
+        "termination_reason_counts": {
+          "node_budget": 67
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "4b70bf298a87560fa085a9f073f39f758b12993c3a2ce527c0fbe93bb6b38de7",
+      "pair_index": 0,
+      "pair_score": 1.0
+    },
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 0.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "bdd12dc5533c649bca5d62e208a837dd96b925d4dbc98ff91e8acc3a5fa9ce50",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000001-owner-0.json",
+        "plies": 119,
+        "progress_sha256": "f27f97e0c6a735d63348ec0c6b8b290ad24642ed5486bdf87f74261989e67682",
+        "result": "checkmate",
+        "telemetry_row_count": 119,
+        "termination_reason_counts": {
+          "node_budget": 119
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "bdd12dc5533c649bca5d62e208a837dd96b925d4dbc98ff91e8acc3a5fa9ce50",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000001-owner-1.json",
+        "plies": 163,
+        "progress_sha256": "c2348d285661312dea4976de31ae3e80763a829c482739a6258d187c3bdd328e",
+        "result": "checkmate",
+        "telemetry_row_count": 163,
+        "termination_reason_counts": {
+          "node_budget": 163
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "bdd12dc5533c649bca5d62e208a837dd96b925d4dbc98ff91e8acc3a5fa9ce50",
+      "pair_index": 1,
+      "pair_score": 0.5
+    },
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 0.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "6c4b0ae582de927cfd1db9a4420a7608fe69435446d930a47d8abf7b4ca5b701",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000002-owner-0.json",
+        "plies": 100,
+        "progress_sha256": "4d6079a059340677e2e7a21ad838c8a2174fd1cead959808b76b398b034e1644",
+        "result": "checkmate",
+        "telemetry_row_count": 100,
+        "termination_reason_counts": {
+          "node_budget": 100
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "6c4b0ae582de927cfd1db9a4420a7608fe69435446d930a47d8abf7b4ca5b701",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000002-owner-1.json",
+        "plies": 122,
+        "progress_sha256": "59bfbbb1c89ab9aea956dda1826a0a1cb43943da396e5dd4edf8b8c61e5d0a7c",
+        "result": "checkmate",
+        "telemetry_row_count": 122,
+        "termination_reason_counts": {
+          "node_budget": 122
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "6c4b0ae582de927cfd1db9a4420a7608fe69435446d930a47d8abf7b4ca5b701",
+      "pair_index": 2,
+      "pair_score": 0.5
+    },
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 0.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "e2e7c3e63cd6cf3e87a0534697a32c280b4a6bcd4c9971d0552ea4cf8044d36d",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000003-owner-0.json",
+        "plies": 209,
+        "progress_sha256": "b9c9cffeb552cbb89527bf1868cf91620c9a0948eab75e40c83ad4c2d1a82e6a",
+        "result": "checkmate",
+        "telemetry_row_count": 209,
+        "termination_reason_counts": {
+          "node_budget": 209
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 0.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "e2e7c3e63cd6cf3e87a0534697a32c280b4a6bcd4c9971d0552ea4cf8044d36d",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000003-owner-1.json",
+        "plies": 214,
+        "progress_sha256": "57efbf248919f2dc6c9cb7cddc26ce1ba8b3aadca16d70971e2c222f98bb2521",
+        "result": "checkmate",
+        "telemetry_row_count": 214,
+        "termination_reason_counts": {
+          "node_budget": 214
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 0
+      },
+      "opening_id": "e2e7c3e63cd6cf3e87a0534697a32c280b4a6bcd4c9971d0552ea4cf8044d36d",
+      "pair_index": 3,
+      "pair_score": 0.0
+    },
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 0.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "16d4d5d3f0d969ff2391de6d1238b5043e7ab156cb1825b888ee1efc32fa65c0",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000004-owner-0.json",
+        "plies": 115,
+        "progress_sha256": "e2fad2f5a10f73a2394cbff424e3bc6182d163470430267026e6aecac50a4923",
+        "result": "checkmate",
+        "telemetry_row_count": 115,
+        "termination_reason_counts": {
+          "node_budget": 115
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "16d4d5d3f0d969ff2391de6d1238b5043e7ab156cb1825b888ee1efc32fa65c0",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000004-owner-1.json",
+        "plies": 484,
+        "progress_sha256": "a850f1a2ce57c91506be35abed532618d3ea712584c2e75de6dcfeef22721e61",
+        "result": "declaration",
+        "telemetry_row_count": 485,
+        "termination_reason_counts": {
+          "completed": 1,
+          "node_budget": 484
+        },
+        "termination_reason_set": [
+          "completed",
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "16d4d5d3f0d969ff2391de6d1238b5043e7ab156cb1825b888ee1efc32fa65c0",
+      "pair_index": 4,
+      "pair_score": 0.5
+    },
+    {
+      "cap_contaminated": true,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": true,
+        "cap_like_reasons": [
+          "time_budget"
+        ],
+        "child_owner": 0,
+        "child_points": 0.5,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "3080dd586a4422778eda2b52eb482ca7b4a6ae09e812d69bbf95079b754d6548",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000005-owner-0.json",
+        "plies": 497,
+        "progress_sha256": "4cac496d56fd34dda0f24461edbbc30d81960d0abfad0f1b575ef2d12080259f",
+        "result": "no_contest",
+        "telemetry_row_count": 497,
+        "termination_reason_counts": {
+          "completed": 1,
+          "node_budget": 495,
+          "time_budget": 1
+        },
+        "termination_reason_set": [
+          "completed",
+          "node_budget",
+          "time_budget"
+        ],
+        "winner": null
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "3080dd586a4422778eda2b52eb482ca7b4a6ae09e812d69bbf95079b754d6548",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000005-owner-1.json",
+        "plies": 165,
+        "progress_sha256": "53da18edf5d94cecc087a70e0d9f529a6c1af8d855809dd9ed5980b76c271d2a",
+        "result": "checkmate",
+        "telemetry_row_count": 165,
+        "termination_reason_counts": {
+          "node_budget": 165
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "3080dd586a4422778eda2b52eb482ca7b4a6ae09e812d69bbf95079b754d6548",
+      "pair_index": 5,
+      "pair_score": 0.75
+    },
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "c8e583e6acf887269fc21c8df19500c4845aaae3e48d041310f3cf2eedfaf1aa",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000006-owner-0.json",
+        "plies": 70,
+        "progress_sha256": "d2e364945154a97c308a609ba0e5a3cdfce951e37098017804c76a53e216a67c",
+        "result": "checkmate",
+        "telemetry_row_count": 70,
+        "termination_reason_counts": {
+          "node_budget": 70
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 0
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "c8e583e6acf887269fc21c8df19500c4845aaae3e48d041310f3cf2eedfaf1aa",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000006-owner-1.json",
+        "plies": 277,
+        "progress_sha256": "4e28d5bbef458caa202ea96f4c9190dc10be99e5251726c572e52152ea52427e",
+        "result": "checkmate",
+        "telemetry_row_count": 277,
+        "termination_reason_counts": {
+          "node_budget": 277
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "c8e583e6acf887269fc21c8df19500c4845aaae3e48d041310f3cf2eedfaf1aa",
+      "pair_index": 6,
+      "pair_score": 1.0
+    },
+    {
+      "cap_contaminated": false,
+      "game_child_owner0": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 0,
+        "child_points": 0.5,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "0441a4c86b50cdd06bcb8eb5375301e2ab3ee189b6a3aa1053621c7111b54455",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000007-owner-0.json",
+        "plies": 80,
+        "progress_sha256": "58104e164a90787737dae29dec626dd99c3eb52f5bef4dfb90f37dc8ee11673e",
+        "result": "repetition",
+        "telemetry_row_count": 80,
+        "termination_reason_counts": {
+          "node_budget": 80
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": null
+      },
+      "game_child_owner1": {
+        "all_root_window_pruning_true": true,
+        "cap_contaminated": false,
+        "cap_like_reasons": [],
+        "child_owner": 1,
+        "child_points": 1.0,
+        "max_search_nodes": 512,
+        "missing_root_window_pruning_rows": 0,
+        "opening_id": "0441a4c86b50cdd06bcb8eb5375301e2ab3ee189b6a3aa1053621c7111b54455",
+        "path": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress\\game-000007-owner-1.json",
+        "plies": 214,
+        "progress_sha256": "eca1a3f5dc99467b76dbfb2f86a941f7aa97200d43491abd7e0ae4a0f50a0d88",
+        "result": "checkmate",
+        "telemetry_row_count": 214,
+        "termination_reason_counts": {
+          "node_budget": 214
+        },
+        "termination_reason_set": [
+          "node_budget"
+        ],
+        "winner": 1
+      },
+      "opening_id": "0441a4c86b50cdd06bcb8eb5375301e2ab3ee189b6a3aa1053621c7111b54455",
+      "pair_index": 7,
+      "pair_score": 0.75
+    }
+  ],
+  "parent_checkpoint_id": "d0e6a02482bb316e657ec6ef5c4f9379e6e7946d2da1a9a38647175567aecab4",
+  "schema": "generic-chess-f81-r1-time-cap-audit-v1",
+  "source_progress": ".generic_chess_flow\\f81-r1-eight-lane-final-confirmation\\progress",
+  "validated_game_count": 16,
+  "work_order": "GENERICCHESS-F81-R2-TIME-BUDGET-CAP-CORRECTIVE"
+}
