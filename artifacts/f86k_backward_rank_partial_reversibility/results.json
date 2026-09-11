@@ -1,0 +1,1162 @@
+{
+  "bfs_expansions": 0,
+  "candidate_profile": "ORTHO4_PLUS_FIRST_STRICT_FORWARD_REVERSE_ORDINARY",
+  "default_generator_changed": false,
+  "dynamic": {
+    "policy_trajectories": 0,
+    "real_games": 0
+  },
+  "f85_actual_compute": 0,
+  "manifest": "artifacts/f86k_backward_rank_partial_reversibility/manifest.json",
+  "routing": {
+    "dynamic": "NOT_RUN_BY_CHEAP_STATIC_FIRST_GATE",
+    "mechanism": "BACKWARD_RANK_PARTIAL_REVERSIBILITY_WITH_STRICT_FORWARD_SOURCE_SELECTION",
+    "static": [
+      {
+        "routing": "BACKWARD_RANK_RESCUE_INSUFFICIENT_KINEMATICALLY",
+        "sample_id": "V4-3"
+      },
+      {
+        "routing": "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP",
+        "sample_id": "V5-3"
+      }
+    ]
+  },
+  "ruleset_fingerprints": {
+    "V4-2": {
+      "candidate_backward_rank": "ac2d9b8bdd3faa183d209e3c2cd69062c61e1bd73dbd59e90e02aa33f9359cde",
+      "f86i_full_closure": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "source": "1b8547501a45ebc1344f7134319ed215de09a51dfb001270dc127e77528698ac"
+    },
+    "V4-3": {
+      "candidate_backward_rank": "0374bba8cade19cfffd374139d556586e9dbe9978b4bf5c299d48b1bdf6347ab",
+      "f86i_full_closure": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "source": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400"
+    },
+    "V4-4": {
+      "candidate_backward_rank": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "f86i_full_closure": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "source": "864e9aaf0f36b0a94024454a357e6787b3edd9cfd81898d1bea76dfc591b08d0"
+    },
+    "V4-5": {
+      "candidate_backward_rank": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "f86i_full_closure": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "source": "9a5f3de7a492fa4fa01ca1b4c2e7a11b24403cde87b79761b26e212d13221f24"
+    },
+    "V5-2": {
+      "candidate_backward_rank": "0c6aa8afa8b571c4cad8bead2962367a73abc4c94c6aef9e227b05fd81a6422e",
+      "f86i_full_closure": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "source": "ddacec0f6b6fbffeb9135fbbbb658093d92ce0e5bce28665a87022b702d815d6"
+    },
+    "V5-3": {
+      "candidate_backward_rank": "74db9dbacc5234524b844062609f5aa4e273a8cef2627bd6d137be07be45ae35",
+      "f86i_full_closure": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "source": "d6e47a6fe19ab20538a1ec9539597b5765d0211cb608b15c262613a86e635297"
+    },
+    "V5-4": {
+      "candidate_backward_rank": "9e4c3f8a9bc5279ad5d8464d6bdadaac1e6f138f4e90812dcfc2cb71660dfd07",
+      "f86i_full_closure": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "source": "580475d4c25b8d5bb9d796902d383ac673bd00c3565e4609d07443bcc338ad04"
+    },
+    "V5-5": {
+      "candidate_backward_rank": "19e70cb043da1f4b04501a565b3ea5c0330dce92f61bf8b09dd73030290e17e5",
+      "f86i_full_closure": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "source": "c3fa844c61ea944f9fd11560f00878337389f427a59d84958c312e38d5494d31"
+    }
+  },
+  "schema_version": 1,
+  "static": [
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 0,
+        "backward_capable_ordinary_type_fraction": 0.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_count": 4,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              3,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              0,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              3,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              0,
+              3
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.0,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 0,
+        "ordinary_type_count": 1,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "ac2d9b8bdd3faa183d209e3c2cd69062c61e1bd73dbd59e90e02aa33f9359cde",
+      "collapse_to_f86i_full_closure": false,
+      "mechanism": {
+        "ordinary_all_monotone_dag": true,
+        "ordinary_direct_reverse_edge_fraction": 0.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.0,
+        "ordinary_sink_fraction": 0.25
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": false,
+          "reverse_atom": null,
+          "reverse_present_before": false,
+          "selected_atom": null,
+          "selected_atom_index": null,
+          "status": "NO_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-2",
+      "source_ruleset_fingerprint": "1b8547501a45ebc1344f7134319ed215de09a51dfb001270dc127e77528698ac",
+      "source_seed": 861401
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 2,
+        "backward_capable_ordinary_type_fraction": 0.6666666666666666,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P2"
+          }
+        ],
+        "opening_ordinary_piece_count": 6,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              2,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              0,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              3,
+              1
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              0,
+              2
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              3,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              1,
+              3
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.0,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 0,
+        "ordinary_type_count": 3,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "0374bba8cade19cfffd374139d556586e9dbe9978b4bf5c299d48b1bdf6347ab",
+      "collapse_to_f86i_full_closure": false,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 0.4411764705882353,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.5416666666666666,
+        "ordinary_sink_fraction": 0.14583333333333334
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": false,
+          "reverse_atom": null,
+          "reverse_present_before": false,
+          "selected_atom": null,
+          "selected_atom_index": null,
+          "status": "NO_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P1": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P2": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -2
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-3",
+      "source_ruleset_fingerprint": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400",
+      "source_seed": 861402
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 1,
+        "backward_capable_ordinary_type_fraction": 1.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_count": 8,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              1,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              0,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              1,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              3,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              0,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              2,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              3,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              2,
+              3
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.75,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 6,
+        "ordinary_type_count": 1,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "collapse_to_f86i_full_closure": true,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.875,
+        "ordinary_sink_fraction": 0.125
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-4",
+      "source_ruleset_fingerprint": "864e9aaf0f36b0a94024454a357e6787b3edd9cfd81898d1bea76dfc591b08d0",
+      "source_seed": 861403
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 1,
+        "backward_capable_ordinary_type_fraction": 1.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_count": 10,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              2,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              3,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              0,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              1,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              2,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              1,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              2,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              3,
+              2
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              0,
+              3
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              1,
+              3
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.6,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 6,
+        "ordinary_type_count": 1,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "collapse_to_f86i_full_closure": true,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.875,
+        "ordinary_sink_fraction": 0.125
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V4-5",
+      "source_ruleset_fingerprint": "9a5f3de7a492fa4fa01ca1b4c2e7a11b24403cde87b79761b26e212d13221f24",
+      "source_seed": 861404
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 1,
+        "backward_capable_ordinary_type_fraction": 1.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_count": 4,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              0,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              1,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              3,
+              4
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              4,
+              4
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.5,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 2,
+        "ordinary_type_count": 1,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "0c6aa8afa8b571c4cad8bead2962367a73abc4c94c6aef9e227b05fd81a6422e",
+      "collapse_to_f86i_full_closure": false,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 0.7804878048780488,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.92,
+        "ordinary_sink_fraction": 0.08
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-2",
+      "source_ruleset_fingerprint": "ddacec0f6b6fbffeb9135fbbbb658093d92ce0e5bce28665a87022b702d815d6",
+      "source_seed": 861501
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 2,
+        "backward_capable_ordinary_type_fraction": 1.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P1"
+          }
+        ],
+        "opening_ordinary_piece_count": 6,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              1,
+              0
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              0,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              0,
+              2
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 2,
+            "source_square": [
+              4,
+              2
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              4,
+              3
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              3,
+              4
+            ],
+            "type_id": "P1"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 1.0,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 6,
+        "ordinary_type_count": 2,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "74db9dbacc5234524b844062609f5aa4e273a8cef2627bd6d137be07be45ae35",
+      "collapse_to_f86i_full_closure": false,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 0.6095238095238096,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.92,
+        "ordinary_sink_fraction": 0.04
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P1": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-3",
+      "source_ruleset_fingerprint": "d6e47a6fe19ab20538a1ec9539597b5765d0211cb608b15c262613a86e635297",
+      "source_seed": 861502
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 1,
+        "backward_capable_ordinary_type_fraction": 1.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_count": 8,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              1,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              2,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              4,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              2,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              2,
+              3
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              0,
+              4
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              2,
+              4
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              3,
+              4
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.75,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 6,
+        "ordinary_type_count": 1,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "9e4c3f8a9bc5279ad5d8464d6bdadaac1e6f138f4e90812dcfc2cb71660dfd07",
+      "collapse_to_f86i_full_closure": false,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 0.3902439024390244,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.92,
+        "ordinary_sink_fraction": 0.04
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-4",
+      "source_ruleset_fingerprint": "580475d4c25b8d5bb9d796902d383ac673bd00c3565e4609d07443bcc338ad04",
+      "source_seed": 861503
+    },
+    {
+      "backward_rank": {
+        "backward_capable_ordinary_type_count": 2,
+        "backward_capable_ordinary_type_fraction": 1.0,
+        "backward_capable_ordinary_types": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "type_id": "P1"
+          }
+        ],
+        "opening_ordinary_piece_count": 10,
+        "opening_ordinary_piece_diagnostics": [
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              0,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 0,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              2,
+              0
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              4,
+              0
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              0,
+              1
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              3,
+              1
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 3,
+            "source_square": [
+              1,
+              3
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 1,
+            "source_owner_relative_rank": 1,
+            "source_square": [
+              4,
+              3
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              0,
+              4
+            ],
+            "type_id": "P0"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": false,
+            "owner": 1,
+            "source_owner_relative_rank": 0,
+            "source_square": [
+              2,
+              4
+            ],
+            "type_id": "P1"
+          },
+          {
+            "can_reach_lower_owner_relative_rank": true,
+            "owner": 0,
+            "source_owner_relative_rank": 4,
+            "source_square": [
+              4,
+              4
+            ],
+            "type_id": "P0"
+          }
+        ],
+        "opening_ordinary_piece_lower_rank_fraction": 0.8,
+        "opening_ordinary_pieces_reaching_lower_owner_relative_rank": 8,
+        "ordinary_type_count": 2,
+        "owner_relative_rank_definition": "owner 0 rank=board rank; owner 1 rank=board_size-1-board rank"
+      },
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "19e70cb043da1f4b04501a565b3ea5c0330dce92f61bf8b09dd73030290e17e5",
+      "collapse_to_f86i_full_closure": false,
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 0.5871559633027523,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.96,
+        "ordinary_sink_fraction": 0.04
+      },
+      "per_type_selection": {
+        "P0": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        },
+        "P1": {
+          "reverse_added": true,
+          "reverse_atom": {
+            "kind": "LEAP",
+            "offset": [
+              1,
+              -1
+            ]
+          },
+          "reverse_present_before": false,
+          "selected_atom": {
+            "kind": "LEAP",
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          "selected_atom_index": 0,
+          "status": "SELECTED_STRICT_FORWARD_SOURCE_ATOM"
+        }
+      },
+      "sample_id": "V5-5",
+      "source_ruleset_fingerprint": "c3fa844c61ea944f9fd11560f00878337389f427a59d84958c312e38d5494d31",
+      "source_seed": 861504
+    }
+  ],
+  "static_candidate_checks": {
+    "V4-3": 156,
+    "V5-3": 2048,
+    "per_cell_cap": 2048,
+    "total": 2204,
+    "total_cap": 4096
+  },
+  "status": "F86K_STATIC_ONLY_ZERO_DYNAMIC_COMPUTE",
+  "tactical_probe_nodes": 0,
+  "targeted_static_mate_capacity": [
+    {
+      "candidate_position_count": 156,
+      "cell": "CANDIDATE_BACKWARD_RANK",
+      "joint_kinematically_reachable_count": 0,
+      "minimum_optimistic_ply_lower_bound": null,
+      "ordinary_assignment_reachable_count": 0,
+      "ruleset_fingerprint": "0374bba8cade19cfffd374139d556586e9dbe9978b4bf5c299d48b1bdf6347ab",
+      "sample_id": "V4-3",
+      "truncation": false,
+      "validated_position_count": 111,
+      "validated_template_count": 12
+    },
+    {
+      "candidate_position_count": 2048,
+      "cell": "CANDIDATE_BACKWARD_RANK",
+      "joint_kinematically_reachable_count": 0,
+      "minimum_optimistic_ply_lower_bound": null,
+      "ordinary_assignment_reachable_count": 0,
+      "ruleset_fingerprint": "74db9dbacc5234524b844062609f5aa4e273a8cef2627bd6d137be07be45ae35",
+      "sample_id": "V5-3",
+      "truncation": true,
+      "validated_position_count": 1871,
+      "validated_template_count": 98
+    }
+  ],
+  "teacher_search_compute": 0
+}
