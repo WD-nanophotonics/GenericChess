@@ -279,6 +279,7 @@
       "second_player_score": null
     }
   },
+  "raw_evidence_retained_in_checkpoint": false,
   "raw_evidence_retained_local_only": true,
   "real_games": 16,
   "routing": {
@@ -310,6 +311,23 @@
     ]
   },
   "schema_version": 2,
+  "source_evidence": {
+    "commit": "0fbfbf2b5c3cc1e2efd1300cba4da0f5587f4976",
+    "raw_artifacts": {
+      "artifacts/f86i_reversibility_rescue/game_results.json": {
+        "blob": "7723862c4f18f297d239590f49fa1265462efdc9",
+        "retained_local_ignored": true
+      },
+      "artifacts/f86i_reversibility_rescue/results.json": {
+        "blob": "21ecbe3d87fe06e92848c231b290ea2148dcd95b",
+        "retained_local_ignored": true
+      },
+      "artifacts/f86i_reversibility_rescue/static_results.json": {
+        "blob": "e2d8dfa8aced6aed750d0d0bb9dc3d4026eeac4a",
+        "retained_local_ignored": true
+      }
+    }
+  },
   "source_raw_game_artifact": "artifacts/f86i_reversibility_rescue/game_results.json",
   "source_raw_result_artifact": "artifacts/f86i_reversibility_rescue/results.json",
   "static": [

@@ -1,6 +1,6 @@
 # GenericChess F86I reversible ordinary-mobility rescue candidate
 
-Status: bounded experimental candidate evaluation, with F86I-R1 zero-new-compute
+Status: bounded experimental candidate evaluation, with F86I-R2 zero-new-compute
 quality correction. This checkpoint evaluates
 one preregistered candidate profile and does not modify the production/default
 generator. The manifest was published first in prep checkpoint
@@ -79,9 +79,11 @@ are necessary-condition results, not legal game paths.
 The eight manifest-bound candidates were each played twice, A/B and B/A,
 for exactly 16 real games, maximum 32 plies. Actions use canonical JSON action
 ordering and the preregistered 32-value tapes with `floor(u * legal_count)`.
-The raw game records were used only as local ignored runtime evidence for the
-F86I-R1 correction; they are not part of the Git tip. The tracked correction
-retains a compact aggregate summary derived from those frozen records.
+The raw game records and static/result evidence remain available as local
+ignored runtime evidence, byte-for-byte bound to source commit
+`0fbfbf2b5c3cc1e2efd1300cba4da0f5587f4976`. The compact summary records their
+original Git blob IDs; no game or census computation was rerun, and the current
+tip does not track raw benchmark output.
 
 | terminal label | games |
 |---|---:|
@@ -112,15 +114,17 @@ Heavy job, or production generator change was used.
 
 - Manifest: `artifacts/f86i_reversibility_rescue/manifest.json`
 - Compact corrected summary: `artifacts/f86i_reversibility_rescue/quality_summary.json`
-- Raw static/game/result files: local ignored runtime evidence only; not tracked
+- Local ignored raw games, source blob `7723862c4f18f297d239590f49fa1265462efdc9`
+- Local ignored static results, source blob `e2d8dfa8aced6aed750d0d0bb9dc3d4026eeac4a`
+- Local ignored combined results, source blob `21ecbe3d87fe06e92848c231b290ea2148dcd95b`
 - Runner: `scripts/f86i_reversibility_rescue.py`
 - Zero-compute reducer: `scripts/f86i_r1_quality_metrics.py`
 - Contracts: `tests/test_f86i_reversibility_rescue_manifest.py` and
   `tests/test_f86i_reversibility_rescue.py`
 
-Focused verification passed: 7 tests. The prior full bounded regression passed
-64 tests; the F86I-R1 correction adds the zero-compute reducer contracts and
-is validated separately without rerunning the experiment.
+Focused verification passed: 9 tests. The prior full bounded regression passed
+64 tests; the F86I-R2 correction adds direct routing and draw-pair contracts
+and is validated without rerunning the experiment.
 
 Overall routing is therefore conservative and split by evidence:
 

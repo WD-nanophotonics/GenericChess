@@ -460,6 +460,20 @@ def _run_games(manifest: dict[str, Any], compiled_entries: list[tuple[dict[str, 
     }
 
 
+def _dynamic_route(labels: list[str] | tuple[str, ...]) -> str:
+    """Apply the preregistered decisive-versus-censored termination route."""
+    total = len(labels)
+    decisive = sum(label == "checkmate" for label in labels)
+    censored_or_repetition = sum(
+        label.startswith("ongoing@") or label == "repetition" for label in labels
+    )
+    if decisive and censored_or_repetition * 2 < total:
+        return "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
+    if censored_or_repetition:
+        return "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
+    return "KINEMATIC_REPAIR_SUCCEEDS_BUT_DYNAMIC_TERMINATION_STILL_WEAK"
+
+
 def run(root: Path, output_dir: Path) -> dict[str, Any]:
     manifest = _load_manifest(root)
     entries = list(_compiled_entries(root, manifest))
@@ -493,11 +507,13 @@ def run(root: Path, output_dir: Path) -> dict[str, Any]:
         else:
             label = "KINEMATIC_MATE_TEMPLATE_REACHABLE_WITHIN_32PLY_LOWER_BOUND"
         static_routing.append({"sample_id": census["sample_id"], "routing": label})
-    dynamic_routing = (
-        ["REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"]
-        if any(row["terminal_distribution"].get("checkmate", 0) for row in games["by_sample"].values())
-        else ["KINEMATIC_REPAIR_SUCCEEDS_BUT_DYNAMIC_TERMINATION_STILL_WEAK"]
-    )
+    labels = [
+        label
+        for row in games["by_sample"].values()
+        for label, count in row["terminal_distribution"].items()
+        for _ in range(count)
+    ]
+    dynamic_routing = [_dynamic_route(labels)]
     payload = {
         "schema_version": 1,
         "candidate_profile": PROFILE,

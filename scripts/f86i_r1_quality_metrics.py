@@ -12,6 +12,12 @@ from generic_chess.benchmark.game_quality import QualityObservation, profile_fro
 
 
 SAMPLES = ("V4-2", "V4-3", "V4-4", "V4-5", "V5-2", "V5-3", "V5-4", "V5-5")
+SOURCE_COMMIT = "0fbfbf2b5c3cc1e2efd1300cba4da0f5587f4976"
+SOURCE_BLOBS = {
+    "artifacts/f86i_reversibility_rescue/game_results.json": "7723862c4f18f297d239590f49fa1265462efdc9",
+    "artifacts/f86i_reversibility_rescue/results.json": "21ecbe3d87fe06e92848c231b290ea2148dcd95b",
+    "artifacts/f86i_reversibility_rescue/static_results.json": "e2d8dfa8aced6aed750d0d0bb9dc3d4026eeac4a",
+}
 
 
 def _load(path: Path) -> dict[str, Any]:
@@ -62,7 +68,10 @@ def _paired_outcomes(games: list[dict[str, Any]]) -> dict[str, Any]:
             scores = []
             for game in pair:
                 winner = game["winner"]
-                scores.append((1.0 if winner == 0 else 0.0, 1.0 if winner == 1 else 0.0))
+                if winner is None:
+                    scores.append((0.5, 0.5))
+                else:
+                    scores.append((1.0 if winner == 0 else 0.0, 1.0 if winner == 1 else 0.0))
             by_sample[sample_id] = {
                 "scoreable": True,
                 "first_player_score": sum(score[0] for score in scores) / len(scores),
@@ -134,8 +143,19 @@ def build(root: Path, output: Path) -> dict[str, Any]:
     payload = {
         "schema_version": 2,
         "status": "F86I_R1_ZERO_NEW_COMPUTE_CORRECTIVE",
+        "source_evidence": {
+            "commit": SOURCE_COMMIT,
+            "raw_artifacts": {
+                path: {
+                    "blob": blob,
+                    "retained_local_ignored": True,
+                }
+                for path, blob in SOURCE_BLOBS.items()
+            },
+        },
         "source_raw_game_artifact": "artifacts/f86i_reversibility_rescue/game_results.json",
         "source_raw_result_artifact": "artifacts/f86i_reversibility_rescue/results.json",
+        "raw_evidence_retained_in_checkpoint": False,
         "raw_evidence_retained_local_only": True,
         "real_games": len(games),
         "max_ply": raw_games["max_ply"],

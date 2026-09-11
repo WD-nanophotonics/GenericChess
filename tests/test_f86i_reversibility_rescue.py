@@ -5,6 +5,9 @@ from pathlib import Path
 
 import pytest
 
+from scripts.f86i_reversibility_rescue import _dynamic_route
+from scripts.f86i_r1_quality_metrics import _paired_outcomes
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ROOT / "artifacts" / "f86i_reversibility_rescue"
 SAMPLES = ("V4-2", "V4-3", "V4-4", "V4-5", "V5-2", "V5-3", "V5-4", "V5-5")
@@ -18,7 +21,23 @@ def test_f86i_results_bind_to_the_preregistered_manifest_and_stay_experimental()
     summary = _load("quality_summary.json")
     assert summary["status"] == "F86I_R1_ZERO_NEW_COMPUTE_CORRECTIVE"
     assert summary["real_games"] == 16
+    assert summary["raw_evidence_retained_in_checkpoint"] is False
     assert summary["raw_evidence_retained_local_only"] is True
+    assert summary["source_evidence"]["commit"] == "0fbfbf2b5c3cc1e2efd1300cba4da0f5587f4976"
+    assert summary["source_evidence"]["raw_artifacts"] == {
+        "artifacts/f86i_reversibility_rescue/game_results.json": {
+            "blob": "7723862c4f18f297d239590f49fa1265462efdc9",
+            "retained_local_ignored": True,
+        },
+        "artifacts/f86i_reversibility_rescue/results.json": {
+            "blob": "21ecbe3d87fe06e92848c231b290ea2148dcd95b",
+            "retained_local_ignored": True,
+        },
+        "artifacts/f86i_reversibility_rescue/static_results.json": {
+            "blob": "e2d8dfa8aced6aed750d0d0bb9dc3d4026eeac4a",
+            "retained_local_ignored": True,
+        },
+    }
     assert summary["default_generator_changed"] is False
     assert summary["bfs_expansions"] == 0
     assert summary["teacher_search_compute"] == 0
@@ -95,3 +114,28 @@ def test_f86i_quality_reuses_existing_measurement_definition_and_fails_closed_pa
     assert paired["incomplete_pairs_are_unresolved"] is True
     assert "games" not in summary
     assert "actions" not in json.dumps(summary)
+
+
+def test_f86i_r2_routing_predicate_rejects_censored_termination_viability_claims():
+    assert _dynamic_route(["checkmate"] + ["ongoing@32"] * 15) == (
+        "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
+    )
+    assert _dynamic_route(["ongoing@32"] * 16) != "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
+    assert _dynamic_route(["checkmate", "stalemate"]) == "REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY"
+
+
+def test_f86i_r2_paired_outcomes_use_half_for_terminal_draw_and_null_for_ongoing():
+    draw_pair = [
+        {"sample_id": "V4-2", "terminal_status": "stalemate", "winner": None},
+        {"sample_id": "V4-2", "terminal_status": "repetition", "winner": None},
+    ]
+    ongoing_pair = [
+        {"sample_id": "V4-3", "terminal_status": "ongoing", "winner": None},
+        {"sample_id": "V4-3", "terminal_status": "checkmate", "winner": 0},
+    ]
+    result = _paired_outcomes(draw_pair + ongoing_pair)
+    assert result["scoreable_pair_count"] == 1
+    assert result["by_sample"]["V4-2"]["first_player_score"] == 0.5
+    assert result["by_sample"]["V4-2"]["second_player_score"] == 0.5
+    assert result["by_sample"]["V4-3"]["first_player_score"] is None
+    assert result["by_sample"]["V4-3"]["second_player_score"] is None
