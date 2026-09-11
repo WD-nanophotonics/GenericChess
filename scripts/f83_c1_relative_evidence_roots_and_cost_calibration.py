@@ -6,6 +6,7 @@ teacher probes.  It never fits C2, creates a candidate, or runs strength play.
 
 from __future__ import annotations
 
+import argparse
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
@@ -41,16 +42,15 @@ PROBE_ROOT_COUNT = 6
 PROBE_HARD_WALL_SECONDS = 12 * 60
 PV_OFFSET_RULE = "max(1, min(len(pv)-1, len(pv)//2))"
 
-OUT = ROOT / ".generic_chess_flow" / "f83-c1-relative-evidence"
 ROOT_CORPUS_PATH = ROOT / "artifacts" / "f83_c1_relative_evidence" / "root_corpus.json"
 PROBE_PATH = ROOT / "artifacts" / "f83_c1_relative_evidence" / "teacher_cost_probe.json"
+F62_MANIFEST_PATH = ROOT / "artifacts" / "f83_c1_relative_evidence" / "f62_historical_root_identity_manifest.json"
 F78_CANDIDATE = ROOT / "artifacts" / "f78_parent_anchored_full_residual" / "candidate.json"
 F81_EVIDENCE = ROOT / "artifacts" / "f81_final_confirmation" / "final_strength_evidence.json"
 F81_OPENINGS = ROOT / "artifacts" / "f81_final_confirmation" / "openings.json"
 F75_OPENINGS = ROOT / "artifacts" / "f75_parent_retained_arena" / "openings.json"
 F77_OPENINGS = ROOT / "artifacts" / "f77_trusted_pointwise_q_arena" / "openings.json"
 F78_OPENINGS = ROOT / "artifacts" / "f78_parent_anchored_full_residual" / "openings.json"
-F62_PROGRESS = ROOT / ".generic_chess_flow" / "f62-learned-champion-repeatability" / "progress" / "spectrum"
 
 
 def _sha(path: Path) -> str:
@@ -96,18 +96,18 @@ def _preflight() -> dict:
     if _sha(F81_EVIDENCE) != adoption["source_f81_canonical_evidence"]["content_sha256"]:
         raise RuntimeError("F83 F81 evidence identity mismatch")
     return {
-        "adoption_path": str((ROOT / "artifacts/f82_champion_adoption/champion.json").relative_to(ROOT)),
+        "adoption_path": str((ROOT / "artifacts/f82_champion_adoption/champion.json").relative_to(ROOT)).replace("\\", "/"),
         "adoption_sha256": _sha(ROOT / "artifacts/f82_champion_adoption/champion.json"),
         "c1_checkpoint_id": C1_ID,
         "c1_model_sha256": C1_MODEL_SHA,
-        "f78_candidate_path": str(F78_CANDIDATE.relative_to(ROOT)),
+        "f78_candidate_path": str(F78_CANDIDATE.relative_to(ROOT)).replace("\\", "/"),
         "f78_candidate_sha256": _sha(F78_CANDIDATE),
-        "f81_evidence_path": str(F81_EVIDENCE.relative_to(ROOT)),
+        "f81_evidence_path": str(F81_EVIDENCE.relative_to(ROOT)).replace("\\", "/"),
         "f81_evidence_sha256": _sha(F81_EVIDENCE),
     }
 
 
-def _load_sealed_position_keys() -> dict[str, set[str]]:
+def _load_sealed_position_keys(f62_keys: set[str]) -> dict[str, set[str]]:
     sealed: dict[str, set[str]] = {}
     for name, path in {
         "f75": F75_OPENINGS,
@@ -117,14 +117,6 @@ def _load_sealed_position_keys() -> dict[str, set[str]]:
     }.items():
         payload = json.loads(path.read_text(encoding="utf-8"))
         sealed[name] = {item["final_position_key"] for item in payload["corpus"]["openings"]}
-    if not F62_PROGRESS.is_dir():
-        raise RuntimeError("F83 cannot recover tracked F62 spectrum evidence roots")
-    f62_keys = set()
-    for path in sorted(F62_PROGRESS.glob("root-*.json")):
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        record = payload.get("identity", {}).get("record", {})
-        if record.get("position_key"):
-            f62_keys.add(record["position_key"])
     if len(f62_keys) < 96:
         raise RuntimeError("F83 F62 historical root identity set is incomplete")
     sealed["f62"] = f62_keys
@@ -273,8 +265,46 @@ def _historical_overlap(roots: list[dict], sealed: dict[str, set[str]]) -> dict[
     return {name: sum(root["position_key"] in keys for root in roots) for name, keys in sealed.items()}
 
 
+def _tracked_f62_manifest(compiled) -> dict:
+    from scripts import f62_learned_champion_repeatability as f62
+
+    records, provenance = f62._fresh_records(compiled, smoke=False)
+    if provenance["records_sha256"] != F62_RECORDS_SHA or len(records) != 96:
+        raise RuntimeError("F83 tracked F62 record identity mismatch")
+    manifest = {
+        "schema": "generic-chess-f83-f62-historical-root-identity-v1",
+        "work_order": WORK_ORDER,
+        "f62_stage_identity_sha256": F62_STAGE_SHA,
+        "f62_records_sha256": F62_RECORDS_SHA,
+        "generation_contract": {
+            "opening_seed": f62.DATA_OPENING_SEED,
+            "corpus_seed": f62.DATA_CORPUS_SEED,
+            "root_count": f62.ROOT_COUNT,
+            "source_group_count": f62.SOURCE_GROUP_COUNT,
+            "roots_per_source_group": f62.ROOTS_PER_GROUP,
+            "split_root_counts": {"fit": 48, "development": 24, "final_holdout": 24},
+        },
+        "source_paths": {
+            "f62_script": "scripts/f62_learned_champion_repeatability.py",
+            "f62_script_sha256": _sha(ROOT / "scripts/f62_learned_champion_repeatability.py"),
+            "f59_teacher_script": "scripts/f59_action_spectrum_diagnosis.py",
+            "f59_teacher_script_sha256": _sha(ROOT / "scripts/f59_action_spectrum_diagnosis.py"),
+        },
+        "provenance": provenance,
+        "position_keys": [record["position_key"] for record in records],
+    }
+    if F62_MANIFEST_PATH.exists():
+        existing = json.loads(F62_MANIFEST_PATH.read_text(encoding="utf-8"))
+        if existing != manifest:
+            raise RuntimeError("F83 tracked F62 manifest identity mismatch")
+    else:
+        _atomic_json(F62_MANIFEST_PATH, manifest)
+    return manifest
+
+
 def _root_corpus(preflight: dict, compiled, native, champion) -> dict:
-    sealed = _load_sealed_position_keys()
+    f62_manifest = _tracked_f62_manifest(compiled)
+    sealed = _load_sealed_position_keys(set(f62_manifest["position_keys"]))
     seen: set[str] = set()
     acquisition = []
     for stratum in ("reachable_random", "c1_on_policy", "c1_pv_corridor"):
@@ -366,7 +396,7 @@ def _run_one_probe(root: dict) -> dict:
     return {"root_id": root["root_id"], "stratum": root["stratum"], **result, "elapsed_wall_seconds": float(result.get("elapsed_wall_seconds", elapsed))}
 
 
-def _teacher_probe(root_payload: dict) -> dict:
+def _teacher_probe(compiled, root_payload: dict) -> dict:
     roots = [root for root in root_payload["roots"] if root["role"] == "resource_estimation_only"]
     started = time.perf_counter()
     with ThreadPoolExecutor(max_workers=PROBE_MAX_CONCURRENCY) as pool:
@@ -382,17 +412,24 @@ def _teacher_probe(root_payload: dict) -> dict:
     else:
         classification = "C1_RELATIVE_EVIDENCE_ROOTS_FROZEN_TEACHER_COST_CALIBRATED"
     max_wall = max((item.get("elapsed_wall_seconds", 0.0) for item in results), default=0.0)
-    max_calls = max((item.get("actual_teacher_calls", 0) for item in complete), default=0)
-    estimate = {
-        "method": "conservative max observed resource-root cost multiplied by 48 acquisition roots; capped probes are lower bounds",
-        "estimated_teacher_calls": max_calls * 48,
-        "estimated_wall_minutes_by_lanes": {str(lanes): (max_wall * ((48 + lanes - 1) // lanes)) / 60.0 for lanes in (1, 2, 4)},
-        "estimated_cpu_hours_upper_proxy": (max_wall * 48) / 3600.0,
-        "sample_max_wall_seconds": max_wall,
-        "large_work_thresholds": {"expected_wall_gt_30_minutes": max_wall * 48 / 60 > 30, "expected_cpu_gt_5_hours": max_wall * 48 / 3600 > 5},
+    roots_by_id = {root["root_id"]: root for root in roots}
+    for result in capped:
+        session = _session(compiled, roots_by_id[result["root_id"]]["replay_actions"])
+        result["legal_action_count"] = len(session.legal_actions())
+        result["candidate_action_count"] = None
+        result["actual_teacher_calls"] = None
+        result["search_phase_telemetry"] = None
+        result["telemetry_unavailable_reason"] = "probe_process_terminated_at_wall_cap_before_metadata_return"
+    lower_bound = {
+        "cpu_hours_lower_bound_for_48": (PROBE_PER_ROOT_WALL_SECONDS * 48) / 3600.0,
+        "wall_minutes_lower_bound_by_lanes": {str(lanes): (PROBE_PER_ROOT_WALL_SECONDS * 48 / lanes) / 60.0 for lanes in (1, 2, 4, 8)},
+        "calibration_geometry_max_concurrent_roots": PROBE_MAX_CONCURRENCY,
+        "large_work_under_calibration_geometry": (PROBE_PER_ROOT_WALL_SECONDS * 48 / PROBE_MAX_CONCURRENCY) / 60.0 > 30,
+        "higher_concurrency_unmeasured": True,
+        "method": "48 roots multiplied by the 180-second per-root cap; capped samples are lower bounds, not completions",
     }
     payload = {
-        "schema": "generic-chess-f83-teacher-cost-probe-v1",
+        "schema": "generic-chess-f83-teacher-cost-probe-v2-lower-bound",
         "work_order": WORK_ORDER,
         "teacher_contract": {
             "implementation_paths": ["scripts/f59_action_spectrum_diagnosis.py", "scripts/f62_learned_champion_repeatability.py"],
@@ -414,7 +451,9 @@ def _teacher_probe(root_payload: dict) -> dict:
         "completed_count": len(complete),
         "capped_count": len(capped),
         "failed_count": len(failed),
-        "estimate_for_48_acquisition_roots": estimate,
+        "teacher_calls": sum(item["actual_teacher_calls"] for item in complete) if not capped else None,
+        "teacher_calls_status": "UNKNOWN_BECAUSE_ALL_PROBES_WERE_TERMINATED_AT_WALL_CAP" if capped else "OBSERVED_FOR_COMPLETED_PROBES",
+        "lower_bound_for_48_acquisition": lower_bound,
         "elapsed_wall_seconds": elapsed,
         "classification": classification,
     }
@@ -422,15 +461,100 @@ def _teacher_probe(root_payload: dict) -> dict:
     return payload
 
 
+def _correct_existing_root_corpus(compiled, f62_manifest: dict) -> dict:
+    payload = json.loads(ROOT_CORPUS_PATH.read_text(encoding="utf-8"))
+    previous_corpus_id = payload["corpus_id"]
+    replay_keys = []
+    for root in payload["roots"]:
+        session = _session(compiled, root["replay_actions"])
+        if session.result.status.value != "ongoing":
+            raise RuntimeError(f"F83 root is not ongoing during corrective replay: {root['root_id']}")
+        from generic_chess.core.identity import position_identity_key
+        key = position_identity_key(session.state.position, compiled)
+        if key != root["position_key"] or int(session.state.ply_count) != int(root["ply"]):
+            raise RuntimeError(f"F83 root replay identity mismatch: {root['root_id']}")
+        replay_keys.append(key)
+    if len(replay_keys) != len(set(replay_keys)) or len(replay_keys) != 54:
+        raise RuntimeError("F83 corrected root set is not globally unique")
+    sealed = _load_sealed_position_keys(set(f62_manifest["position_keys"]))
+    overlaps = _historical_overlap(payload["roots"], sealed)
+    if any(overlaps.values()):
+        raise RuntimeError(f"F83 corrected root set overlaps sealed history: {overlaps}")
+    for key in ("adoption_path", "f78_candidate_path", "f81_evidence_path"):
+        if key in payload.get("c1_authority", {}):
+            payload["c1_authority"][key] = payload["c1_authority"][key].replace("\\", "/")
+    identities = [
+        {key: root[key] for key in ("root_id", "position_key", "stratum", "role", "replay_actions")}
+        for root in payload["roots"]
+    ]
+    payload["previous_corpus_id"] = previous_corpus_id
+    payload["root_set_identity_sha256"] = _stable_sha(identities)
+    payload["f62_historical_root_identity_manifest"] = {
+        "path": str(F62_MANIFEST_PATH.relative_to(ROOT)).replace("\\", "/"),
+        "content_sha256": _sha(F62_MANIFEST_PATH),
+    }
+    payload["replay_validation"] = {
+        "validated_root_count": len(replay_keys),
+        "all_ongoing": True,
+        "all_canonical_position_keys_match": True,
+        "all_position_keys_unique": True,
+    }
+    payload["overlap_counts"] = overlaps
+    _atomic_json(ROOT_CORPUS_PATH, payload)
+    return payload
+
+
+def _correct_probe_artifact(compiled, root_payload: dict) -> dict:
+    payload = json.loads(PROBE_PATH.read_text(encoding="utf-8"))
+    if payload.get("completed_count") != 0 or payload.get("capped_count") != 6 or payload.get("failed_count") != 0:
+        raise RuntimeError("F83-R1 expected the original six capped probe observations")
+    original_sha = _sha(PROBE_PATH)
+    roots = {root["root_id"]: root for root in root_payload["roots"]}
+    for result in payload["results"]:
+        root = roots[result["root_id"]]
+        session = _session(compiled, root["replay_actions"])
+        result["legal_action_count"] = len(session.legal_actions())
+        result["candidate_action_count"] = None
+        result["actual_teacher_calls"] = None
+        result["search_phase_telemetry"] = None
+        result["telemetry_unavailable_reason"] = "probe_process_terminated_at_wall_cap_before_metadata_return"
+    lower_bound = {
+        "cpu_hours_lower_bound_for_48": 2.4,
+        "wall_minutes_lower_bound_by_lanes": {"1": 144.0, "2": 72.0, "4": 36.0, "8": 18.0},
+        "calibration_geometry_max_concurrent_roots": 2,
+        "large_work_under_calibration_geometry": True,
+        "higher_concurrency_unmeasured": True,
+        "method": "48 roots multiplied by the 180-second per-root cap; capped samples are lower bounds, not completions",
+    }
+    payload["schema"] = "generic-chess-f83-teacher-cost-probe-v2-lower-bound"
+    payload["original_probe_artifact_sha256"] = original_sha
+    payload["teacher_calls"] = None
+    payload["teacher_calls_status"] = "UNKNOWN_BECAUSE_ALL_PROBES_WERE_TERMINATED_AT_WALL_CAP"
+    payload.pop("estimate_for_48_acquisition_roots", None)
+    payload["lower_bound_for_48_acquisition"] = lower_bound
+    payload["classification"] = "C1_RELATIVE_EVIDENCE_ROOTS_FROZEN_TEACHER_COST_LOWER_BOUND_ONLY"
+    _atomic_json(PROBE_PATH, payload)
+    return payload
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--r1-corrective", action="store_true")
+    args = parser.parse_args()
     from scripts import f50_generic_learnable_evaluator as f50
     from scripts import f79_parent_anchored_full_residual_arena4 as f79
 
     preflight = _preflight()
     compiled, native, _profile = f50._ruleset(LABEL)
+    if args.r1_corrective:
+        f62_manifest = _tracked_f62_manifest(compiled)
+        root_payload = _correct_existing_root_corpus(compiled, f62_manifest)
+        probe = _correct_probe_artifact(compiled, root_payload)
+        print(json.dumps({"classification": probe["classification"], "root_set_identity_sha256": root_payload["root_set_identity_sha256"], "f62_manifest_sha256": _sha(F62_MANIFEST_PATH), "probe_schema": probe["schema"]}, sort_keys=True), flush=True)
+        return
     _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
     root_payload = _root_corpus(preflight, compiled, native, champion)
-    probe = _teacher_probe(root_payload)
+    probe = _teacher_probe(compiled, root_payload)
     print(json.dumps({"classification": probe["classification"], "root_corpus_id": root_payload["corpus_id"], "completed_count": probe["completed_count"], "capped_count": probe["capped_count"], "failed_count": probe["failed_count"], "estimated_wall_minutes_by_lanes": probe["estimate_for_48_acquisition_roots"]["estimated_wall_minutes_by_lanes"]}, sort_keys=True), flush=True)
 
 

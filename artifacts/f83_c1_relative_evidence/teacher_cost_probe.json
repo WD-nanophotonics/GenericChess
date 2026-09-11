@@ -3,22 +3,21 @@
   "classification": "C1_RELATIVE_EVIDENCE_ROOTS_FROZEN_TEACHER_COST_LOWER_BOUND_ONLY",
   "completed_count": 0,
   "elapsed_wall_seconds": 540.176839199994,
-  "estimate_for_48_acquisition_roots": {
-    "estimated_cpu_hours_upper_proxy": 2.4008641706667064,
-    "estimated_teacher_calls": 0,
-    "estimated_wall_minutes_by_lanes": {
-      "1": 144.05185024000238,
-      "2": 72.02592512000119,
-      "4": 36.012962560000595
-    },
-    "large_work_thresholds": {
-      "expected_cpu_gt_5_hours": false,
-      "expected_wall_gt_30_minutes": true
-    },
-    "method": "conservative max observed resource-root cost multiplied by 48 acquisition roots; capped probes are lower bounds",
-    "sample_max_wall_seconds": 180.06481280000298
-  },
   "failed_count": 0,
+  "lower_bound_for_48_acquisition": {
+    "calibration_geometry_max_concurrent_roots": 2,
+    "cpu_hours_lower_bound_for_48": 2.4,
+    "higher_concurrency_unmeasured": true,
+    "large_work_under_calibration_geometry": true,
+    "method": "48 roots multiplied by the 180-second per-root cap; capped samples are lower bounds, not completions",
+    "wall_minutes_lower_bound_by_lanes": {
+      "1": 144.0,
+      "2": 72.0,
+      "4": 36.0,
+      "8": 18.0
+    }
+  },
+  "original_probe_artifact_sha256": "09fab3f68e5b6655d1eceaec418eb601d8c5e0958eb353052d75d0006b6d9080",
   "probe_contract": {
     "max_concurrent_roots": 2,
     "per_root_wall_cap_seconds": 180,
@@ -28,49 +27,81 @@
   },
   "results": [
     {
+      "actual_teacher_calls": null,
+      "candidate_action_count": null,
       "elapsed_wall_seconds": 180.05894829999306,
+      "legal_action_count": 25,
       "root_id": "reachable_random-r-00",
+      "search_phase_telemetry": null,
       "status": "TIME_CAP",
       "stratum": "reachable_random",
+      "telemetry_unavailable_reason": "probe_process_terminated_at_wall_cap_before_metadata_return",
       "termination_reason": "per_root_wall_cap"
     },
     {
+      "actual_teacher_calls": null,
+      "candidate_action_count": null,
       "elapsed_wall_seconds": 180.06008490000386,
+      "legal_action_count": 47,
       "root_id": "reachable_random-r-01",
+      "search_phase_telemetry": null,
       "status": "TIME_CAP",
       "stratum": "reachable_random",
+      "telemetry_unavailable_reason": "probe_process_terminated_at_wall_cap_before_metadata_return",
       "termination_reason": "per_root_wall_cap"
     },
     {
+      "actual_teacher_calls": null,
+      "candidate_action_count": null,
       "elapsed_wall_seconds": 180.06481280000298,
+      "legal_action_count": 32,
       "root_id": "c1_on_policy-r-00",
+      "search_phase_telemetry": null,
       "status": "TIME_CAP",
       "stratum": "c1_on_policy",
+      "telemetry_unavailable_reason": "probe_process_terminated_at_wall_cap_before_metadata_return",
       "termination_reason": "per_root_wall_cap"
     },
     {
+      "actual_teacher_calls": null,
+      "candidate_action_count": null,
       "elapsed_wall_seconds": 180.06392499999492,
+      "legal_action_count": 34,
       "root_id": "c1_on_policy-r-01",
+      "search_phase_telemetry": null,
       "status": "TIME_CAP",
       "stratum": "c1_on_policy",
+      "telemetry_unavailable_reason": "probe_process_terminated_at_wall_cap_before_metadata_return",
       "termination_reason": "per_root_wall_cap"
     },
     {
+      "actual_teacher_calls": null,
+      "candidate_action_count": null,
       "elapsed_wall_seconds": 180.02205239998875,
+      "legal_action_count": 32,
       "root_id": "c1_pv_corridor-r-00",
+      "search_phase_telemetry": null,
       "status": "TIME_CAP",
       "stratum": "c1_pv_corridor",
+      "telemetry_unavailable_reason": "probe_process_terminated_at_wall_cap_before_metadata_return",
       "termination_reason": "per_root_wall_cap"
     },
     {
+      "actual_teacher_calls": null,
+      "candidate_action_count": null,
       "elapsed_wall_seconds": 180.02173989999574,
+      "legal_action_count": 27,
       "root_id": "c1_pv_corridor-r-01",
+      "search_phase_telemetry": null,
       "status": "TIME_CAP",
       "stratum": "c1_pv_corridor",
+      "telemetry_unavailable_reason": "probe_process_terminated_at_wall_cap_before_metadata_return",
       "termination_reason": "per_root_wall_cap"
     }
   ],
-  "schema": "generic-chess-f83-teacher-cost-probe-v1",
+  "schema": "generic-chess-f83-teacher-cost-probe-v2-lower-bound",
+  "teacher_calls": null,
+  "teacher_calls_status": "UNKNOWN_BECAUSE_ALL_PROBES_WERE_TERMINATED_AT_WALL_CAP",
   "teacher_contract": {
     "candidate_action_construction": "all legal actions sorted canonically; cheap child-Q ordering; top six plus root/observer/high-budget actions",
     "f62_records_sha256": "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61",
