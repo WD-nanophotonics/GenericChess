@@ -1,0 +1,2237 @@
+{
+  "alphabeta_nodes": 0,
+  "baseline_commit": "e0aa2d7c606b395402ec252c5688a51c8eac2c2a",
+  "bfs_expansions": 0,
+  "by_arm_sample": {
+    "F": {
+      "V4-3": {
+        "actual_tape_chosen_check_classifications": {
+          "ESCAPABLE_CHECK": 1
+        },
+        "classification_counts_by_occurrence": {
+          "ESCAPABLE_CHECK": 7
+        },
+        "classification_counts_unique": {
+          "ESCAPABLE_CHECK": 7
+        },
+        "opponent_reply_count_distribution": {
+          "2": 2,
+          "3": 5
+        },
+        "route": "CHECK_PRESSURE_IS_NONFORCING",
+        "selected_root_state_occurrences": 7,
+        "total_checking_action_occurrences": 7,
+        "total_legal_checking_actions": 7,
+        "unique_selected_states": 7
+      },
+      "V5-3": {
+        "actual_tape_chosen_check_classifications": {
+          "ESCAPABLE_CHECK": 3,
+          "FORCED_CHECK_CONTINUATION": 1
+        },
+        "classification_counts_by_occurrence": {
+          "ESCAPABLE_CHECK": 23,
+          "FORCED_CHECK_CONTINUATION": 18,
+          "FORCED_MATE_IN_TWO": 1
+        },
+        "classification_counts_unique": {
+          "ESCAPABLE_CHECK": 22,
+          "FORCED_CHECK_CONTINUATION": 15,
+          "FORCED_MATE_IN_TWO": 1
+        },
+        "opponent_reply_count_distribution": {
+          "1": 15,
+          "2": 9,
+          "3": 6,
+          "4": 8
+        },
+        "route": "SHALLOW_FORCED_MATE_EXISTS_RANDOM_POLICY_FAILED_TO_CONVERT",
+        "selected_root_state_occurrences": 25,
+        "total_checking_action_occurrences": 42,
+        "total_legal_checking_actions": 38,
+        "unique_selected_states": 22
+      }
+    },
+    "L": {
+      "V4-3": {
+        "actual_tape_chosen_check_classifications": {},
+        "classification_counts_by_occurrence": {},
+        "classification_counts_unique": {},
+        "opponent_reply_count_distribution": {},
+        "route": "NO_CHECK_PRESSURE_IN_FROZEN_TRAJECTORIES",
+        "selected_root_state_occurrences": 0,
+        "total_checking_action_occurrences": 0,
+        "total_legal_checking_actions": 0,
+        "unique_selected_states": 0
+      },
+      "V5-3": {
+        "actual_tape_chosen_check_classifications": {
+          "ESCAPABLE_CHECK": 1
+        },
+        "classification_counts_by_occurrence": {
+          "ESCAPABLE_CHECK": 7
+        },
+        "classification_counts_unique": {
+          "ESCAPABLE_CHECK": 4
+        },
+        "opponent_reply_count_distribution": {
+          "2": 4
+        },
+        "route": "CHECK_PRESSURE_IS_NONFORCING",
+        "selected_root_state_occurrences": 7,
+        "total_checking_action_occurrences": 7,
+        "total_legal_checking_actions": 4,
+        "unique_selected_states": 4
+      }
+    },
+    "N": {
+      "V4-3": {
+        "actual_tape_chosen_check_classifications": {},
+        "classification_counts_by_occurrence": {
+          "ESCAPABLE_CHECK": 1
+        },
+        "classification_counts_unique": {
+          "ESCAPABLE_CHECK": 1
+        },
+        "opponent_reply_count_distribution": {
+          "2": 1
+        },
+        "route": "CHECK_PRESSURE_IS_NONFORCING",
+        "selected_root_state_occurrences": 1,
+        "total_checking_action_occurrences": 1,
+        "total_legal_checking_actions": 1,
+        "unique_selected_states": 1
+      },
+      "V5-3": {
+        "actual_tape_chosen_check_classifications": {
+          "ESCAPABLE_CHECK": 2
+        },
+        "classification_counts_by_occurrence": {
+          "ESCAPABLE_CHECK": 14
+        },
+        "classification_counts_unique": {
+          "ESCAPABLE_CHECK": 13
+        },
+        "opponent_reply_count_distribution": {
+          "1": 1,
+          "2": 7,
+          "3": 2,
+          "4": 1,
+          "5": 2
+        },
+        "route": "CHECK_PRESSURE_IS_NONFORCING",
+        "selected_root_state_occurrences": 12,
+        "total_checking_action_occurrences": 14,
+        "total_legal_checking_actions": 13,
+        "unique_selected_states": 11
+      }
+    }
+  },
+  "default_generator_changed": false,
+  "f85_actual_compute": 0,
+  "generic_search_depth": 0,
+  "new_real_games": 0,
+  "prep_manifest": "artifacts/f86q_check_forcing_depth3_probe/manifest.json",
+  "probe_cap": 8192,
+  "probe_successor_count": 1268,
+  "replay_equality": {
+    "action_sequence_matches": 12,
+    "final_position_digest_matches": 12
+  },
+  "replayed_games": [
+    {
+      "action_sequence_sha256": "bf498955a8b5d4ec7ebd7ad31b52ba25f3ca74de8be6e85d836f14d9a6527836",
+      "arm": "L",
+      "final_position_digest": "1f6637cb40662919d4938dda6f2230a0288d8e366ef75160dd78aead47da67cd",
+      "plies": 32,
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "464e7585eb8c3574248bbcaff08e3540f5eb2152ba8ef432834576882bfb517d",
+      "arm": "L",
+      "final_position_digest": "4afdc68e502ecf18f964a4bce509a1d50572f50c7294eca9f4dec51d13ce25b6",
+      "plies": 6,
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "1e47448a63739fd9faa4e0927fd5ed0304c51dca455e66ee1c114c107cc8e2e3",
+      "arm": "F",
+      "final_position_digest": "90c40afb84aef3d6c25abec1b3dd6f2ce593a64e8a9752b3e970ac66cd815dcc",
+      "plies": 32,
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "542e4a2f829eda20ec6be8147c965f2b4bd10dd8e35a6d0af4a65f2392fab470",
+      "arm": "F",
+      "final_position_digest": "4fcc0bbfe577846835fad85892b997f9edf1fcd392e1d0a860d7d82cb078ec06",
+      "plies": 32,
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "0b91b9ce68e558642feae465689b6b9c04d9673374dc02ebad62e21c2cc63dd3",
+      "arm": "N",
+      "final_position_digest": "7a9cdc5c102a6dba4b7e308db7abe6e560bcd8e7508a42d1febafd26ce1d6783",
+      "plies": 32,
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "ce640e937e1a763ddbfd6db327519c499c4ddf7db36cfbd046cf9881b728d726",
+      "arm": "N",
+      "final_position_digest": "42b5a78ded07fd0c20d15c8d8b6aa1650cf3b5bdcbb235e18829e96647d80be0",
+      "plies": 32,
+      "sample_id": "V4-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "135fd8833a52f98fc4c46ab86aa28b6aa866ac5b8203bae1783140e0fad4204b",
+      "arm": "L",
+      "final_position_digest": "456f24f2e2758612728e93715ce185e0cebae555e52b3e4ef526542f180d49fc",
+      "plies": 32,
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "dee88b4b9510338a96ed389e59b2f8ae10b6e02e89bd2adb6ffe1887207e3db5",
+      "arm": "L",
+      "final_position_digest": "af19d8e0b639afc9104f60f51732877d8f8fd19f4b949e97902013336466bdbe",
+      "plies": 28,
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "fe0b6df18a7605b1f16c885f9fea89d6b8e91462f808dd3f006edb3a568b76dd",
+      "arm": "F",
+      "final_position_digest": "132dae9ea020639a85603f2ce3234be8ef02ff068ce4e7db5204d3d9eb695909",
+      "plies": 32,
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "93af93f69aa61619abb2a08b67119e086776082f0dcd3ae65aba0f3cb8d6419a",
+      "arm": "F",
+      "final_position_digest": "4810369275406e9c95e882be6a74139a46c9553c47af40ede9384d470f94e196",
+      "plies": 32,
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    },
+    {
+      "action_sequence_sha256": "37a7266392338d07252b3d0f51a79dd8cd0531c36ae3c99110270aabba8927a8",
+      "arm": "N",
+      "final_position_digest": "f30440b6bfa39abeeac62304d691ff87fa249331a9fe8bea0ca5c61976361a86",
+      "plies": 32,
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "A",
+        "player1": "B"
+      }
+    },
+    {
+      "action_sequence_sha256": "10c1dd51ebb3470dae7fae3e07369fcc52a030e17bf9c6fedb5763af54bf82ee",
+      "arm": "N",
+      "final_position_digest": "fb17eb8e6750d0cca61b2304e08c640d601c17e84f9eb1ef0b99b0afb3ef351f",
+      "plies": 32,
+      "sample_id": "V5-3",
+      "seat_assignment": {
+        "player0": "B",
+        "player1": "A"
+      }
+    }
+  ],
+  "replayed_trajectories": 12,
+  "routing": {
+    "arm_n_by_sample": {
+      "V4-3": "CHECK_PRESSURE_IS_NONFORCING",
+      "V5-3": "CHECK_PRESSURE_IS_NONFORCING"
+    },
+    "overall": [
+      "CHECK_PRESSURE_IS_NONFORCING"
+    ]
+  },
+  "schema_version": 1,
+  "selected_roots": [
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 5,
+          "minimum_attacker_continuation_count": 3,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "0128fee0ce3334ea90252cfecd211e2249b6cc6e54735c3bbddb05fb96ab41c1",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 5,
+          "minimum_attacker_continuation_count": 3,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "372694f4f985c08aa97d7d94bf2c36c63e1743f6d36e5c75a68ebcdc208a2d74",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 4,
+          "minimum_attacker_continuation_count": 2,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "37884edde4c6c34d341bb685b669024a6bff0677c6612f215e4ece699aba5630",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "92e962251d8a9f6a84e03cc677d52929b054ee6f4e1810f9d7500ff3a331a64d",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "517ebf8ef76000558ca6ce7ebf2ab95bdd1262f9afed89e5c2e52805884b0d31",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "92e962251d8a9f6a84e03cc677d52929b054ee6f4e1810f9d7500ff3a331a64d",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "8643b07695f8562bd2b2accf811811a0d1360d7ba196fe090c8153f14f7aa3f0",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 6,
+          "minimum_attacker_continuation_count": 4,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "87885480030974d685f17d4a4b76f6681bc7c0e03282324545c5c8de0183ead6",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "1a4b2223944d408cbc5d17c2ffc7318e4271165adb2802fe41552c5309c4b26c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 6,
+          "minimum_attacker_continuation_count": 4,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "c9e7f6b4d6fe4b6c0898b98c6de1a662ea9f063c14a3caf3ffaf485abee30dbe",
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 10,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "0d3d1f1d40190e526e2f8d60cafb5817734d8aa558572a9d753f1366a7035472",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 11,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "2904701542900474233a19ca2796b391bceda73235aeaeae20cad4adaa658fe9",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 12,
+          "minimum_attacker_continuation_count": 12,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "30ccde85bfc773068e24b2a4e79dc5a4c3680eab67d99af738959867307a649f",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 12,
+          "minimum_attacker_continuation_count": 12,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "3a412022be57e46dcbd911d0c56d73c829e628eab2ef15b710b983b0bd03dbe7",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "55bcf406f45f23532af4f3ccd46f0b7e144875e1c1582f5e1972b6c563d130d7",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 9,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 1,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "578981cdde2c15959fd1fd71aafb4b3f952860a7cf1927516e123de78d9eedad",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 9,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "e99cf8e4ae8f10f5a4dfd5b0e02d42a5896eb067c83ff6c6ed30650c7055f273",
+          "classification": "FORCED_MATE_IN_TWO",
+          "maximum_attacker_continuation_count": 12,
+          "minimum_attacker_continuation_count": 12,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 2,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "48cdc72b8ca6551f2a5cc0bd3b5c4aec6e05aa49a602c7436a22f49f59728114",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "bb5044f93121a4e47172ce551766f8e124ea39b345e53944d4d0013f4acdb891",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "e1088447dbe29aba769148f6c2333ccfbd69a5f569cffd4affbe4d290dcba3e3",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 9,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "567f93a771822b2043ac734036bbb717f6f3ca513be194c7b649f8a0525170ab",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "55bcf406f45f23532af4f3ccd46f0b7e144875e1c1582f5e1972b6c563d130d7",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "578981cdde2c15959fd1fd71aafb4b3f952860a7cf1927516e123de78d9eedad",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "e99cf8e4ae8f10f5a4dfd5b0e02d42a5896eb067c83ff6c6ed30650c7055f273",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 10,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "5e4898b4befca0c01f48f42c0b473b6d31dea10011dd88fad13b0325ff13f47e",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 10,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "67e5fb4a0a387f579587b5bb2e48367e1744f570c4fea55730a35dafa6ca0d92",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "84138985cb12e1d83b8ced296282331b649f6cee68c0b4612543c99829991bc3",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 12,
+          "minimum_attacker_continuation_count": 12,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "85e224465d2794fcb3909a8df91b4c4dc34470ca72fa58bca25789fa666e70cd",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "54dd0121addd577796ae731bf0f685cf0f10ec9c2afae8b4a9cad98c4a018893",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 11,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        },
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "e99cf8e4ae8f10f5a4dfd5b0e02d42a5896eb067c83ff6c6ed30650c7055f273",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 10,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "87bb32c7c234692c49c17f0e59675aec77f434fd3b240703c9d841f24ac34789",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 6,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 11,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "919f11582b14dbaa80b1e15d2dae3970aa84b71183d130d9a7f658c261b267aa",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 6,
+          "minimum_attacker_continuation_count": 6,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "9678cfd7ecaefb123793785b2af825da055241c0266acf79dc324f511bcd078d",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "96c937d095b888644300f04ab0c3e6f7455ae2a0002bdbdd3f328f68cd511ed3",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "a4ce11847cb0cd77994799e154ea3b75d8d43c54ed7efe713a4d98c2a7177e67",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "0765ef9f37fe4fae4b1d8d56d716ccde677e99afb3e10e6177f6e529a04689dd",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 5,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "54dd0121addd577796ae731bf0f685cf0f10ec9c2afae8b4a9cad98c4a018893",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "5711a21aa90136343dfba13d9f8380ecc90748af530a152d2b2102dee5bb0524",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 5,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "9a7a92a7b503008b550a6b8b687c08c65b3e3d34978ac14d5c3e4d936d4e3f6f",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "a5122dc46db63a9fc25dd8c07b09ff90244d3cef58c60bf24e89383624f98678",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 12,
+          "minimum_attacker_continuation_count": 12,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "a9eb45b237cfc8c45dc27afb1a9fb9a95120c4bf631f4ad34c4e08a98d5c3202",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "54dd0121addd577796ae731bf0f685cf0f10ec9c2afae8b4a9cad98c4a018893",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 14,
+          "minimum_attacker_continuation_count": 14,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "55bcf406f45f23532af4f3ccd46f0b7e144875e1c1582f5e1972b6c563d130d7",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 11,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "578981cdde2c15959fd1fd71aafb4b3f952860a7cf1927516e123de78d9eedad",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 9,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "b38745d66d3ae2e985135cc4e70f0694702931887fb39c3ef72b03adb234349e",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 11,
+          "minimum_attacker_continuation_count": 11,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 0,
+      "root_position_digest": "d1fb62e9da526b9d12a9df999d1d0f2cc88a3eeab85dcacf0a0199308b93d97d",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "000f1ee3e3e1c2814003ac5b35213836ba8fb258481a6e00e7e33be5056b0fbb",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "13595082b50b68100520177591c87217af71df34e366bbbaf90b6bae49101881",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 12,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "dd02698d6c1d93bfc793bfadab6d781c83d3132daedb3a07e4eff7388a4991fd",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "dec9b3376cca55eb779b2dab156d4609267c5c8f420dcf895d5a9fc9ceaaf786",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+          "classification": "FORCED_CHECK_CONTINUATION",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "F",
+      "root_actor": 1,
+      "root_position_digest": "e9c43f99add4a931962fbeb5a109e596f4c0a47ef1490957861f4215d11806b5",
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              4,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "e05ea9380cae970428184afd1d20676c5cdf2160a8313755847a42529f923ece",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 4,
+          "minimum_attacker_continuation_count": 4,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "L",
+      "root_actor": 1,
+      "root_position_digest": "018175eb6887f9669ecb0e18cf111c68c7585e142a9dca0571a5631866c576bf",
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 4,
+          "minimum_attacker_continuation_count": 4,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "L",
+      "root_actor": 0,
+      "root_position_digest": "b486a46a2c7f51156ab4905563dd9e52904aab2293c092c206e2eea03437e0ca",
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 3,
+          "minimum_attacker_continuation_count": 3,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "L",
+      "root_actor": 0,
+      "root_position_digest": "f7f36873b3bc5aa32a334aebc3d56036139a4277bc778f917ed3c74e46d8de3a",
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "f4deec8936af6cf46ba32081a81eb277663ed82887da4152cc5e0ac196bb02de",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 6,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "L",
+      "root_actor": 0,
+      "root_position_digest": "fedda8cc70afd2bf354102f6d2560c26093858364d16e3510e77cdcfc0910a05",
+      "ruleset_fingerprint": "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "e1088447dbe29aba769148f6c2333ccfbd69a5f569cffd4affbe4d290dcba3e3",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 0,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "5c6fb815caad744705c5101a89b1466814cc46c466a0b6b5d19d34922541819d",
+      "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "sample_id": "V4-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "122b6a3ee8e58b58ac1d5ec7b2690e4a99004a1728b5445e806a7a150ded30dc",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "832dee2627295f11b54a9ce0ff06389e57e2c4a25276dac47ef837da21dd0f19",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 10,
+          "opponent_legal_reply_count": 1,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "270877fe030ff1eb4f0da83789af294de0a0b1c7bae68188144a9ac671d941a9",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "91869f8a03fc9f6977c7b5935f839041528831d98e05d5fb6c2fd10a93f5b368",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 9,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 4,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        },
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "checking_action_canonical_digest": "e77f6c1ca11d9079f4bc6bf4193b178dfb225e4f3497fd2004747ff0611778df",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 7,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 1,
+      "root_position_digest": "2d486de0c8ddcdb2575f56977f8e96c11785319194ba436aef438c90239cb91d",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "checking_action_canonical_digest": "91869f8a03fc9f6977c7b5935f839041528831d98e05d5fb6c2fd10a93f5b368",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 10,
+          "minimum_attacker_continuation_count": 6,
+          "opponent_legal_reply_count": 5,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 1,
+      "root_position_digest": "4bff523cbbf0896ebe92bfe32786c376331e3f08cc3fb2d3ce0015ad17d21a5e",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "checking_action_canonical_digest": "9f61820f961cf450af19b730aa676a7b4e22a808dc2044a6a88bac26baa9244a",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 6,
+          "minimum_attacker_continuation_count": 4,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 1,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 1,
+      "root_position_digest": "978ad3173a107ecb86e18643dc455345c70995827c75a6f4504332c4e1c5169e",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 1,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          "checking_action_canonical_digest": "9f61820f961cf450af19b730aa676a7b4e22a808dc2044a6a88bac26baa9244a",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 6,
+          "minimum_attacker_continuation_count": 4,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 1,
+      "root_position_digest": "9b7e3a8606b07f58fe347fe4a9253b426e2af21b12e64ce833212dad8deae19c",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          "checking_action_canonical_digest": "832dee2627295f11b54a9ce0ff06389e57e2c4a25276dac47ef837da21dd0f19",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 8,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "aa611b12e1fa8446232c6d7b75cce11d149438f6a53ca87c06b59bc5c0c4da8c",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              3,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "f8d1e6e307fd8c1f9ef7b6c1e8c149b2a2c5304b9a9b819ea2586c47ec22bf24",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 7,
+          "minimum_attacker_continuation_count": 5,
+          "opponent_legal_reply_count": 3,
+          "replies_with_check_continuation": 2,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 2
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "c8df8e57db58083509c4c95ef066d838634ac170e266066b8a86199d30be9fe1",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 2
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          "checking_action_canonical_digest": "5b1dfae3c55628f192333febe2257f96cbc61a18b71153e996d1dd7e056b60ef",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 5,
+          "minimum_attacker_continuation_count": 3,
+          "opponent_legal_reply_count": 5,
+          "replies_with_check_continuation": 1,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 1,
+      "root_position_digest": "cb6b6984b5617d8fb655096d719448134db2f42cc8cd72af4d54a592b52abdab",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 6,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "e16371fbd22794428ff6d28cbee4cfd6bb5166459c6932d76e2e6451259a4e95",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    },
+    {
+      "actions": [
+        {
+          "action": {
+            "from": [
+              2,
+              4
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              4
+            ]
+          },
+          "checking_action_canonical_digest": "0b58897e1495eb5d94a40866d8939e4d3411510c81b8f1fa468a19f4e9d6a46c",
+          "classification": "ESCAPABLE_CHECK",
+          "maximum_attacker_continuation_count": 8,
+          "minimum_attacker_continuation_count": 6,
+          "opponent_legal_reply_count": 2,
+          "replies_with_check_continuation": 0,
+          "replies_with_mate_continuation": 0,
+          "tape_chosen_occurrence_count": 0,
+          "trajectory_occurrence_count": 1
+        }
+      ],
+      "arm": "N",
+      "root_actor": 0,
+      "root_position_digest": "f459619995e7b74edfc38de05e054d61b4f2596446ab49303ebefdfac982e8f5",
+      "ruleset_fingerprint": "e8528688a64bce3f39231d9e4f38d5d200ade57c6f517ae33ce9b71b9f75ebe5",
+      "sample_id": "V5-3",
+      "tape_chosen_check_occurrence_count": 0,
+      "trajectory_occurrence_count": 1
+    }
+  ],
+  "specialized_forcing_depth_plies": 3,
+  "status": "F86Q_CHECK_FORCING_DEPTH3_PROBE_COMPLETE",
+  "teacher_compute": 0,
+  "training_compute": 0,
+  "truncation": false
+}
