@@ -26,6 +26,7 @@ C1_ID = "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4"
 C1_MODEL_SHA = "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6"
 F62_STAGE_SHA = "e7a93423d6058c68fe7ccbc61302584ca1e8869aa828586254f72f4dfdac2c70"
 F62_RECORDS_SHA = "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61"
+F83_ORIGINAL_PROBE_ARTIFACT_SHA = "3b05ff6d999928f97906b4eedae611b5c15b50ae06786cbb674cfaef3063e2ab"
 SEEDS = {
     "reachable_random": 830501,
     "c1_on_policy": 830502,
@@ -508,7 +509,7 @@ def _correct_probe_artifact(compiled, root_payload: dict) -> dict:
     payload = json.loads(PROBE_PATH.read_text(encoding="utf-8"))
     if payload.get("completed_count") != 0 or payload.get("capped_count") != 6 or payload.get("failed_count") != 0:
         raise RuntimeError("F83-R1 expected the original six capped probe observations")
-    original_sha = _sha(PROBE_PATH)
+    original_sha = F83_ORIGINAL_PROBE_ARTIFACT_SHA
     roots = {root["root_id"]: root for root in root_payload["roots"]}
     for result in payload["results"]:
         root = roots[result["root_id"]]
@@ -555,7 +556,7 @@ def main() -> None:
     _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
     root_payload = _root_corpus(preflight, compiled, native, champion)
     probe = _teacher_probe(compiled, root_payload)
-    print(json.dumps({"classification": probe["classification"], "root_corpus_id": root_payload["corpus_id"], "completed_count": probe["completed_count"], "capped_count": probe["capped_count"], "failed_count": probe["failed_count"], "estimated_wall_minutes_by_lanes": probe["estimate_for_48_acquisition_roots"]["estimated_wall_minutes_by_lanes"]}, sort_keys=True), flush=True)
+    print(json.dumps({"classification": probe["classification"], "root_corpus_id": root_payload["corpus_id"], "completed_count": probe["completed_count"], "capped_count": probe["capped_count"], "failed_count": probe["failed_count"], "lower_bound_for_48_acquisition": probe["lower_bound_for_48_acquisition"]}, sort_keys=True), flush=True)
 
 
 if __name__ == "__main__":

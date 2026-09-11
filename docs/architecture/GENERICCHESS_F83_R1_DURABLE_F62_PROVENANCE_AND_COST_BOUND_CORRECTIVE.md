@@ -49,7 +49,8 @@ Classification remains
 
 ## Verification
 
-The focused F83 contract suite passes (`4 passed`). The implementation and
+The focused F83 contract suite passes, including tracked-record reconstruction
+and fresh root replay/disjointness checks. The implementation and
 durable artifacts contain no `.generic_chess_flow` dependency and use POSIX
 repository paths for durable references.
 

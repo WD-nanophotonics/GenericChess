@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 
 from scripts import f83_c1_relative_evidence_roots_and_cost_calibration as f83
+from scripts import f50_generic_learnable_evaluator as f50
+from scripts import f62_learned_champion_repeatability as f62
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +30,8 @@ def test_f83_source_freezes_authority_and_forbids_training():
     assert ".generic_chess_flow" not in source
     assert "estimated_teacher_calls" not in source
     assert "estimated_cpu_hours_upper_proxy" not in source
+    assert 'probe["estimate_for_48_acquisition_roots"]' not in source
+    assert 'probe["lower_bound_for_48_acquisition"]' in source
     assert f83.PV_OFFSET_RULE == "max(1, min(len(pv)-1, len(pv)//2))"
 
 
@@ -59,6 +63,12 @@ def test_f83_root_corpus_contract_after_generation():
 
 def test_f83_f62_manifest_reconstructs_tracked_historical_contract():
     payload = json.loads(F62_MANIFEST.read_text(encoding="utf-8"))
+    compiled, _native, _profile = f50._ruleset(f83.LABEL)
+    records, provenance = f62._fresh_records(compiled, smoke=False)
+    assert len(records) == 96
+    assert len({record["position_key"] for record in records}) == 96
+    assert provenance["records_sha256"] == f83.F62_RECORDS_SHA
+    assert [record["position_key"] for record in records] == payload["position_keys"]
     assert payload["schema"] == "generic-chess-f83-f62-historical-root-identity-v1"
     assert payload["f62_stage_identity_sha256"] == f83.F62_STAGE_SHA
     assert payload["f62_records_sha256"] == f83.F62_RECORDS_SHA
@@ -76,9 +86,40 @@ def test_f83_f62_manifest_reconstructs_tracked_historical_contract():
     assert ".generic_chess_flow" not in F62_MANIFEST.read_text(encoding="utf-8")
 
 
+def test_f83_root_replay_and_disjointness_are_recomputed_from_tracked_sources():
+    root_payload = json.loads(ROOT_CORPUS.read_text(encoding="utf-8"))
+    compiled, _native, _profile = f50._ruleset(f83.LABEL)
+    replayed = []
+    from generic_chess.core.identity import position_identity_key
+
+    for root in root_payload["roots"]:
+        session = f83._session(compiled, root["replay_actions"])
+        assert session.result.status.value == "ongoing"
+        assert position_identity_key(session.state.position, compiled) == root["position_key"]
+        assert int(session.state.ply_count) == int(root["ply"])
+        replayed.append(root["position_key"])
+    assert len(replayed) == 54
+    assert len(set(replayed)) == 54
+    sealed = {"f62": set(json.loads(F62_MANIFEST.read_text(encoding="utf-8"))["position_keys"])}
+    for name, path in {
+        "f75": ROOT / "artifacts/f75_parent_retained_arena/openings.json",
+        "f77": ROOT / "artifacts/f77_trusted_pointwise_q_arena/openings.json",
+        "f78_f80": ROOT / "artifacts/f78_parent_anchored_full_residual/openings.json",
+        "f81": ROOT / "artifacts/f81_final_confirmation/openings.json",
+    }.items():
+        sealed[name] = {item["final_position_key"] for item in json.loads(path.read_text(encoding="utf-8"))["corpus"]["openings"]}
+    assert f83._historical_overlap(root_payload["roots"], sealed) == {name: 0 for name in sealed}
+    identities = [
+        {key: root[key] for key in ("root_id", "position_key", "stratum", "role", "replay_actions")}
+        for root in root_payload["roots"]
+    ]
+    assert f83._stable_sha(identities) == root_payload["root_set_identity_sha256"]
+
+
 def test_f83_teacher_probe_is_resource_only_and_binds_f62_contract():
     payload = json.loads(PROBE.read_text(encoding="utf-8"))
     assert payload["schema"] == "generic-chess-f83-teacher-cost-probe-v2-lower-bound"
+    assert payload["original_probe_artifact_sha256"] == f83.F83_ORIGINAL_PROBE_ARTIFACT_SHA
     assert payload["probe_contract"] == {"root_count": 6, "max_concurrent_roots": 2, "per_root_wall_cap_seconds": 180, "whole_probe_hard_wall_seconds": 720, "role": "RESOURCE_ESTIMATION_ONLY"}
     assert payload["teacher_contract"]["f62_stage_sha256"] == f83.F62_STAGE_SHA
     assert payload["teacher_contract"]["f62_records_sha256"] == f83.F62_RECORDS_SHA
