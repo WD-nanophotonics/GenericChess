@@ -16,6 +16,28 @@ class TacticalProbeResult:
     unique_best: bool | None
 
 
+def minimax_node_value(
+    values: list[float | None] | tuple[float | None, ...],
+    *,
+    maximizing: bool,
+) -> float | None:
+    """Combine child W/D/L values from the root player's perspective.
+
+    A decisive partial proof is retained: MAX can prove a win from one known
+    winning child, and MIN can prove a loss from one known losing child.
+    Otherwise any unresolved child keeps the node unresolved.
+    """
+    known = [value for value in values if value is not None]
+    if maximizing:
+        if 1.0 in known:
+            return 1.0
+    elif 0.0 in known:
+        return 0.0
+    if len(known) != len(values) or not known:
+        return None
+    return (max if maximizing else min)(known)
+
+
 def _terminal_value(session: GameSession, root_player: int) -> float:
     result = session.result
     if result.winner is None:
@@ -60,15 +82,10 @@ def probe_terminal_only(
                 values.append(value)
         known = [value for value in values if value == value]
         actor_is_root = current.state.position.side_to_move == root_player
-        if not known:
-            return None
-        if actor_is_root:
-            if 1.0 in known:
-                return 1.0
-            return min(known) if len(known) == len(values) else None
-        if 0.0 in known:
-            return 0.0
-        return max(known) if len(known) == len(values) else None
+        return minimax_node_value(
+            [None if value != value else value for value in values],
+            maximizing=actor_is_root,
+        )
 
     root_actions = session.legal_actions()
     if not root_actions:
@@ -84,12 +101,9 @@ def probe_terminal_only(
         child.submit(action)
         child_values.append(search(child, depth - 1))
     solved = all(value is not None for value in child_values)
-    known = [value for value in child_values if value is not None]
     maximizing = session.state.position.side_to_move == root_player
-    if maximizing:
-        value = max(known) if solved and known else (1.0 if 1.0 in known else None)
-    else:
-        value = min(known) if solved and known else (0.0 if 0.0 in known else None)
+    value = minimax_node_value(child_values, maximizing=maximizing)
+    known = [item for item in child_values if item is not None]
     best_value = (max if maximizing else min)(known) if known else None
     unique_best = None
     if solved and best_value is not None:
@@ -97,7 +111,7 @@ def probe_terminal_only(
     return TacticalProbeResult(
         value=value if solved else (1.0 if value == 1.0 else 0.0 if value == 0.0 else None),
         nodes=nodes,
-        solved=value is not None,
+        solved=solved,
         forced_win=value == 1.0,
         unique_best=unique_best,
     )

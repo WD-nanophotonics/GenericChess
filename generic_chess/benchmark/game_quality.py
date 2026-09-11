@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import random
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import asdict, dataclass, field, replace
 from statistics import median
 from typing import Any
@@ -104,13 +104,13 @@ def profile_from_observations(
         first_player_score=first_score,
         second_player_score=second_score,
         paired_game_count=len(first) if first and len(first) == len(second) else 0,
-        side_bias_magnitude=(abs(first_score - second_score) if first_score is not None and second_score is not None else None),
+        side_bias_magnitude=(abs(first_score - 0.5) * 2 if first_score is not None else None),
         shallow_forced_win_rate=(sum(forced_values) / len(forced_values) if forced_values else None),
         solved_fraction=(sum(solved_values) / len(solved_values) if solved_values else None),
         unique_best_fraction=(sum(unique_values) / len(unique_values) if unique_values else None),
     )
     classification, reasons = classify_game_quality(profile)
-    return GameQualityProfile(**{**profile.to_dict(), "classification": classification, "classification_reasons": reasons})
+    return replace(profile, classification=classification, classification_reasons=reasons)
 
 
 @dataclass(frozen=True, slots=True)
@@ -140,6 +140,7 @@ class GameQualityProfile:
     first_player_score: float | None = None
     second_player_score: float | None = None
     paired_game_count: int = 0
+    played_game_count: int = 0
     side_bias_magnitude: float | None = None
     swapped_opening_consistent: bool | None = None
     shallow_forced_win_rate: float | None = None
@@ -150,6 +151,7 @@ class GameQualityProfile:
     skill_discrimination: float | None = None
     classification: str = "UNRESOLVED"
     classification_reasons: tuple[str, ...] = field(default_factory=lambda: ("UNRESOLVED",))
+    authoritative_reasons: tuple[str, ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -162,30 +164,61 @@ def classify_game_quality(
 ) -> tuple[str, tuple[str, ...]]:
     """Return diagnostic flags; without calibrated thresholds, stay unresolved."""
     thresholds = thresholds or {}
-    reasons: list[str] = []
-    if profile.side_bias_magnitude is not None and profile.side_bias_magnitude > thresholds.get("side_bias", 0.15):
-        reasons.append("SIDE_BIASED")
-    if profile.solved_fraction is not None and profile.solved_fraction >= thresholds.get("solved_fraction", 0.75):
-        reasons.append("TRIVIAL_OR_SHALLOW_SOLVED")
-    if profile.branching_collapse_fraction >= thresholds.get("forced_line", 0.75):
-        reasons.append("FORCED_LINE")
-    if profile.p90_game_branching is not None and profile.p90_game_branching >= thresholds.get("p90_branching", 100):
-        reasons.append("SEARCH_EXPLOSIVE")
+    diagnostic: list[tuple[str, str, bool]] = []
+    diagnostic.append(("SIDE_BIASED", "side_bias", profile.side_bias_magnitude is not None and profile.side_bias_magnitude > 0.15))
+    diagnostic.append(("TRIVIAL_OR_SHALLOW_SOLVED", "solved_fraction", profile.solved_fraction is not None and profile.solved_fraction >= 0.75))
+    diagnostic.append(("FORCED_LINE", "forced_line", profile.branching_collapse_fraction >= 0.75))
+    diagnostic.append(("SEARCH_EXPLOSIVE", "p90_branching", profile.p90_game_branching is not None and profile.p90_game_branching >= 100))
     if profile.terminal_distribution:
         total = sum(profile.terminal_distribution.values())
         draw_statuses = {"repetition", "stalemate", "max_ply", "perpetual_check"}
         draws = sum(v for k, v in profile.terminal_distribution.items() if k in draw_statuses)
-        if total and draws / total >= thresholds.get("draw_fraction", 0.9):
-            reasons.append("DRAW_DOMINATED")
-    if profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= thresholds.get("forced_win", 0.75):
-        reasons.append("TACTICAL_ONLY")
-    if profile.skill_discrimination is not None and profile.skill_discrimination <= 0.01:
-        reasons.append("INSUFFICIENT_SKILL_DISCRIMINATION")
+        diagnostic.append(("DRAW_DOMINATED", "draw_fraction", bool(total and draws / total >= 0.9)))
+    diagnostic.append(("TACTICAL_ONLY", "forced_win", profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= 0.75))
+    diagnostic.append(("INSUFFICIENT_SKILL_DISCRIMINATION", "skill_discrimination", profile.skill_discrimination is not None and profile.skill_discrimination <= 0.01))
+    reasons = [reason for reason, _key, matched in diagnostic if matched]
     if not reasons:
-        reasons.append("UNRESOLVED")
+        reasons = ["UNRESOLVED"]
+    authoritative = [
+        reason
+        for reason, key, matched in diagnostic
+        if matched and key in thresholds and (
+            (profile.side_bias_magnitude is not None and profile.side_bias_magnitude > thresholds[key])
+            if key == "side_bias" else
+            (profile.solved_fraction is not None and profile.solved_fraction >= thresholds[key])
+            if key == "solved_fraction" else
+            profile.branching_collapse_fraction >= thresholds[key]
+            if key == "forced_line" else
+            (profile.p90_game_branching is not None and profile.p90_game_branching >= thresholds[key])
+            if key == "p90_branching" else
+            (bool(profile.terminal_distribution) and sum(v for k, v in profile.terminal_distribution.items() if k in {"repetition", "stalemate", "max_ply", "perpetual_check"}) / sum(profile.terminal_distribution.values()) >= thresholds[key])
+            if key == "draw_fraction" else
+            (profile.shallow_forced_win_rate is not None and profile.shallow_forced_win_rate >= thresholds[key])
+            if key == "forced_win" else
+            (profile.skill_discrimination is not None and profile.skill_discrimination <= thresholds[key])
+            if key == "skill_discrimination" else False
+        )
+    ]
     # F86A-R1 has no population-calibrated admission thresholds.  Keep all
     # flags visible, but never turn a provisional diagnostic into authority.
-    return (reasons[0] if thresholds else "UNRESOLVED"), tuple(reasons)
+    return (authoritative[0] if authoritative else "UNRESOLVED"), tuple(reasons)
+
+
+def authoritative_reasons(profile: GameQualityProfile, thresholds: dict[str, float] | None = None) -> tuple[str, ...]:
+    """Return only pathology flags backed by explicitly supplied thresholds."""
+    thresholds = thresholds or {}
+    classification, diagnostics = classify_game_quality(profile, thresholds=thresholds)
+    if classification == "UNRESOLVED":
+        return ()
+    return tuple(reason for reason in diagnostics if reason == classification or reason in {
+        "SIDE_BIASED", "TRIVIAL_OR_SHALLOW_SOLVED", "FORCED_LINE", "SEARCH_EXPLOSIVE",
+        "DRAW_DOMINATED", "TACTICAL_ONLY", "INSUFFICIENT_SKILL_DISCRIMINATION",
+    } and {
+        "SIDE_BIASED": "side_bias", "TRIVIAL_OR_SHALLOW_SOLVED": "solved_fraction",
+        "FORCED_LINE": "forced_line", "SEARCH_EXPLOSIVE": "p90_branching",
+        "DRAW_DOMINATED": "draw_fraction", "TACTICAL_ONLY": "forced_win",
+        "INSUFFICIENT_SKILL_DISCRIMINATION": "skill_discrimination",
+    }[reason] in thresholds)
 
 
 def _game_score(session: GameSession, player: int) -> float:
@@ -195,14 +228,37 @@ def _game_score(session: GameSession, player: int) -> float:
     return 1.0 if winner == player else 0.0
 
 
-def _play_random_game(compiled, rng: random.Random, max_ply: int) -> GameSession:
+def _play_policy_game(
+    compiled,
+    policy_rngs: dict[int, random.Random],
+    max_ply: int,
+) -> GameSession:
+    """Play one game with deterministic policy streams assigned by owner."""
     session = GameSession(compiled)
     while session.result.status.value == "ongoing" and len(session.history) < max_ply:
         actions = session.legal_actions()
         if not actions:
             break
-        session.submit(actions[rng.randrange(len(actions))])
+        actor = session.state.position.side_to_move
+        session.submit(actions[policy_rngs[actor].randrange(len(actions))])
     return session
+
+
+def _play_policy_game_with_trace(
+    compiled,
+    policy_rngs: dict[int, random.Random],
+    max_ply: int,
+) -> tuple[GameSession, tuple[int, ...]]:
+    session = GameSession(compiled)
+    branchings: list[int] = []
+    while session.result.status.value == "ongoing" and len(session.history) < max_ply:
+        actions = session.legal_actions()
+        if not actions:
+            break
+        branchings.append(len(actions))
+        actor = session.state.position.side_to_move
+        session.submit(actions[policy_rngs[actor].randrange(len(actions))])
+    return session, tuple(branchings)
 
 
 def measure_game_quality(
@@ -231,33 +287,17 @@ def measure_game_quality(
         if source is not None and initial.board[source.rank * game.board_size + source.file] is not None:
             mobility[initial.board[source.rank * game.board_size + source.file].current_type_id] += 1
 
-    rng = random.Random(seed)
-    lengths: list[int] = []
-    branchings: list[int] = []
-    bins: dict[str, list[int]] = defaultdict(list)
-    terminals: Counter[str] = Counter()
-    short_terminal_count = 0
     first_scores: list[float] = []
     second_scores: list[float] = []
     tactical_results = []
     observations: list[QualityObservation] = []
-    for _ in range(trajectory_count):
-        session = GameSession(compiled)
-        trajectory_branchings: list[int] = []
-        while session.result.status.value == "ongoing" and len(session.history) < max_ply:
-            actions = session.legal_actions()
-            if not actions:
-                break
-            count = len(actions)
-            ply = len(session.history)
-            branchings.append(count)
-            trajectory_branchings.append(count)
-            bins["opening" if ply < 8 else "mid" if ply < 16 else "end"].append(count)
-            session.submit(actions[rng.randrange(count)])
-        lengths.append(len(session.history))
-        terminals[session.result.status.value] += 1
-        if session.result.status.value != "ongoing" and len(session.history) <= 4:
-            short_terminal_count += 1
+    for pair_index in range(trajectory_count):
+        pair_seed = seed * 1009 + pair_index * 2
+        policy_a = random.Random(pair_seed)
+        policy_b = random.Random(pair_seed + 1)
+        session, trajectory_branchings = _play_policy_game_with_trace(
+            compiled, {0: policy_a, 1: policy_b}, max_ply
+        )
         first_scores.append(_game_score(session, 0))
         second_scores.append(_game_score(session, 1))
         observations.append(
@@ -269,29 +309,29 @@ def measure_game_quality(
                 second_scores[-1],
             )
         )
+        paired_session = _play_policy_game(
+            compiled,
+            {0: random.Random(pair_seed + 1), 1: random.Random(pair_seed)},
+            max_ply,
+        )
+        first_scores.append(_game_score(paired_session, 0))
+        second_scores.append(_game_score(paired_session, 1))
 
     swapped = swap_owner_opening(game)
     swapped_consistent = None
     if swapped is not None:
         swapped_opening = GameSession(swapped.compiled)
         swapped_consistent = len(opening_actions) == len(swapped_opening.legal_actions())
-        for _ in range(trajectory_count):
-            swapped_session = _play_random_game(swapped.compiled, rng, max_ply)
-            first_scores.append(_game_score(swapped_session, 0))
-            second_scores.append(_game_score(swapped_session, 1))
 
     # Probe a bounded, fixed number of real game states.  The opening is
     # always included; this keeps F86A cheap while producing actual solver
     # observations rather than hand-authored metric values.
     tactical_results.append(probe_terminal_only(opening, depth=4, node_budget=256))
 
-    forced = sum(count == 1 for count in branchings)
-    low = sum(count <= 2 for count in branchings)
-    mid_end = bins["mid"] + bins["end"]
-    collapsed = sum(count <= 2 for count in mid_end)
-    paired_count = len(first_scores)
-    first_score = sum(first_scores) / paired_count if paired_count else None
-    second_score = sum(second_scores) / paired_count if paired_count else None
+    paired_count = trajectory_count
+    played_game_count = len(first_scores)
+    first_score = sum(first_scores) / played_game_count if played_game_count else None
+    second_score = sum(second_scores) / played_game_count if played_game_count else None
     solved = sum(result.solved for result in tactical_results)
     forced_wins = sum(result.forced_win for result in tactical_results)
     unique_best_values = [result.unique_best for result in tactical_results if result.unique_best is not None]
@@ -309,7 +349,8 @@ def measure_game_quality(
         first_player_score=first_score,
         second_player_score=second_score,
         paired_game_count=paired_count,
-        side_bias_magnitude=(abs(first_score - second_score) if first_score is not None and second_score is not None else None),
+        played_game_count=played_game_count,
+        side_bias_magnitude=(abs(first_score - 0.5) * 2 if first_score is not None else None),
         swapped_opening_consistent=swapped_consistent,
         shallow_forced_win_rate=forced_wins / len(tactical_results) if tactical_results else None,
         solved_fraction=solved / len(tactical_results) if tactical_results else None,

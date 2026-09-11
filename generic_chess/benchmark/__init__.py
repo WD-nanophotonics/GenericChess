@@ -4,6 +4,7 @@ from .agent_ladder import AgentLadder
 from .game_quality import (
     GameQualityProfile,
     QualityObservation,
+    authoritative_reasons,
     measure_game_quality,
     profile_from_observations,
 )
@@ -13,6 +14,7 @@ from .tactical_probe import TacticalProbeResult, probe_terminal_only
 __all__ = [
     "GameQualityProfile",
     "AgentLadder",
+    "authoritative_reasons",
     "MinimalGeneratedGame",
     "QualityObservation",
     "TacticalProbeResult",

@@ -10,6 +10,7 @@ from generic_chess.benchmark.game_quality import (
     profile_from_observations,
 )
 from generic_chess.benchmark.minimal_generator import generate_minimal_game
+from generic_chess.benchmark.tactical_probe import minimax_node_value, probe_terminal_only
 from generic_chess.core.actions import DropMove
 from generic_chess.session.session import GameSession
 
@@ -48,7 +49,8 @@ def test_quality_profile_is_raw_and_serializable():
     assert payload["ruleset_fingerprint"] == game.ruleset_fingerprint
     assert payload["opening_legal_actions"] >= 1
     assert payload["trajectory_count"] == 3
-    assert payload["paired_game_count"] == 6
+    assert payload["paired_game_count"] == 3
+    assert payload["played_game_count"] == 6
     assert payload["first_player_score"] is not None
     assert payload["second_player_score"] is not None
     assert payload["swapped_opening_consistent"] is True
@@ -65,6 +67,17 @@ def test_quality_profile_is_raw_and_serializable():
         "INSUFFICIENT_SKILL_DISCRIMINATION",
         "UNRESOLVED",
     }
+
+
+def test_terminal_probe_minimax_known_tree_and_cutoff_contract():
+    assert minimax_node_value((1.0, 0.0), maximizing=True) == 1.0
+    assert minimax_node_value((1.0, 0.0), maximizing=False) == 0.0
+    assert minimax_node_value((None, 0.0), maximizing=True) is None
+    assert minimax_node_value((None, 1.0), maximizing=False) is None
+    game = generate_minimal_game(13, board_size=4, ordinary_count=2)
+    result = probe_terminal_only(GameSession(game.compiled), depth=4, node_budget=32)
+    assert result.nodes <= 32
+    assert result.solved is False or result.value is not None
 
 
 def test_quality_pathology_controls_are_diagnostic_only():
@@ -89,17 +102,22 @@ def test_quality_pathology_controls_are_diagnostic_only():
     assert "TACTICAL_ONLY" in classify_game_quality(shallow, thresholds={})[1]
     assert "DRAW_DOMINATED" in classify_game_quality(draw_heavy, thresholds={})[1]
     assert classify_game_quality(biased)[0] == "UNRESOLVED"
+    assert classify_game_quality(biased, thresholds={"side_bias": 0.1})[0] == "SIDE_BIASED"
+    assert classify_game_quality(explosive, thresholds={"side_bias": 0.1})[0] == "UNRESOLVED"
 
 
 def test_agent_ladder_is_an_interface_not_a_strength_claim():
     ladder = AgentLadder()
     assert ladder.names == ("random_legal", "very_shallow", "low_node", "medium_node")
     assert ladder.require("medium_node").node_budget is None
-    assert ladder.skill_discrimination({"random_legal": 0.1}) is None
-    ordered = {name: float(i) for i, name in enumerate(ladder.names)}
-    assert ladder.skill_discrimination(ordered) == 1.0
-    report = ladder.evaluate_adjacent_matchups(ordered)
+    assert ladder.evaluate_ordered_scores({"random_legal": 0.1}) is None
+    paired = {
+        (weaker, stronger): 0.2
+        for weaker, stronger in zip(ladder.names, ladder.names[1:])
+    }
+    assert ladder.skill_discrimination(paired) == pytest.approx(0.2)
+    report = ladder.evaluate_adjacent_matchups(paired)
     assert report["monotonic"] is True
-    assert report["minimum_adjacent_advantage"] == 1.0
-    reversed_scores = {name: float(len(ladder.names) - i) for i, name in enumerate(ladder.names)}
+    assert report["minimum_adjacent_advantage"] == 0.2
+    reversed_scores = {pair: -0.1 for pair in paired}
     assert ladder.skill_discrimination(reversed_scores) == 0.0
