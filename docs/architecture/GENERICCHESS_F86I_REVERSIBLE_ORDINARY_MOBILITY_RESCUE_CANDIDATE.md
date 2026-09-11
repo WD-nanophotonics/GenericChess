@@ -1,6 +1,7 @@
 # GenericChess F86I reversible ordinary-mobility rescue candidate
 
-Status: bounded experimental candidate evaluation. This checkpoint evaluates
+Status: bounded experimental candidate evaluation, with F86I-R1 zero-new-compute
+quality correction. This checkpoint evaluates
 one preregistered candidate profile and does not modify the production/default
 generator. The manifest was published first in prep checkpoint
 `af69b4258d4a45fbab07c8de516a586543bccdf7`; the result artifacts and this
@@ -57,7 +58,8 @@ irreversible ordinary movement.
 
 The F86F static mate predicate was re-enumerated only for V4-3 and V5-3,
 using the ordered caps of 2,048 candidate positions per cell and 4,096 total.
-The candidate census is complete for V4-3 and cap-truncated for V5-3:
+The executed total is 2,552 checks. The candidate census is complete for V4-3
+and cap-truncated for V5-3:
 
 | sample | candidate checks | validated positions | templates | truncated | ordinary assignment | joint kinematic |
 |---|---:|---:|---:|---|---:|---:|
@@ -77,7 +79,9 @@ are necessary-condition results, not legal game paths.
 The eight manifest-bound candidates were each played twice, A/B and B/A,
 for exactly 16 real games, maximum 32 plies. Actions use canonical JSON action
 ordering and the preregistered 32-value tapes with `floor(u * legal_count)`.
-The raw game records are retained in `game_results.json`.
+The raw game records were used only as local ignored runtime evidence for the
+F86I-R1 correction; they are not part of the Git tip. The tracked correction
+retains a compact aggregate summary derived from those frozen records.
 
 | terminal label | games |
 |---|---:|
@@ -86,10 +90,20 @@ The raw game records are retained in `game_results.json`.
 | repetition | 0 |
 | ongoing@32 | 15 |
 
-The one checkmate occurred in V5-5. The dynamic route is
-`REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY`, but this is only a small
-smoke signal: the 15 ongoing games are censored/unresolved and the result is
-not benchmark admission or a claim of strength improvement.
+The one checkmate occurred in V5-5. Because 15/16 games are `ongoing@32`, the
+corrected dynamic route is
+`REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION`. This is the
+pre-registered route label for censored nontermination; no repetition was
+observed, and the label does not claim that repetition was observed.
+
+The shared F86 quality definition reports aggregate median branching `5`, p10
+`2`, p90 `10`, forced-move fraction `0.02434077079107505`, low-branch
+fraction `0.14198782961460446`, and mid/end branching-collapse fraction
+`0.15616438356164383`. Median game length is `32`; the game-length
+distribution is 15 games at 32 plies and one checkmate at 13 plies.
+All eight pairs are incomplete because no pair has two terminal games, so
+`scoreable_pair_count = 0` and first/second-player scores are `null`; ongoing
+games are never converted to 0.5.
 
 No tactical probe nodes, BFS expansions, teacher/search compute, F85 compute,
 Heavy job, or production generator change was used.
@@ -97,20 +111,27 @@ Heavy job, or production generator change was used.
 ## Durable evidence and verification
 
 - Manifest: `artifacts/f86i_reversibility_rescue/manifest.json`
-- Static mechanism and census results: `artifacts/f86i_reversibility_rescue/static_results.json`
-- Raw dynamic games: `artifacts/f86i_reversibility_rescue/game_results.json`
-- Combined result and routing: `artifacts/f86i_reversibility_rescue/results.json`
+- Compact corrected summary: `artifacts/f86i_reversibility_rescue/quality_summary.json`
+- Raw static/game/result files: local ignored runtime evidence only; not tracked
 - Runner: `scripts/f86i_reversibility_rescue.py`
+- Zero-compute reducer: `scripts/f86i_r1_quality_metrics.py`
 - Contracts: `tests/test_f86i_reversibility_rescue_manifest.py` and
   `tests/test_f86i_reversibility_rescue.py`
 
-Focused verification passed: 7 tests. The full bounded regression passed: 64
-tests in 4.1 seconds.
+Focused verification passed: 7 tests. The prior full bounded regression passed
+64 tests; the F86I-R1 correction adds the zero-compute reducer contracts and
+is validated separately without rerunning the experiment.
 
 Overall routing is therefore conservative and split by evidence:
 
 ```text
 V4-3: REVERSIBILITY_RESCUE_INSUFFICIENT_KINEMATICALLY
 V5-3: MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP
-dynamic smoke: REVERSIBILITY_RESCUE_SHOWS_TERMINATION_VIABILITY
+dynamic smoke: REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION
+```
+
+The corrected dynamic line is:
+
+```text
+dynamic smoke: REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION
 ```

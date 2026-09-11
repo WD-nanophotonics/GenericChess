@@ -1,0 +1,431 @@
+{
+  "bfs_expansions": 0,
+  "candidate_static_mate_capacity": [
+    {
+      "candidate_position_count": 504,
+      "cell": "CANDIDATE",
+      "joint_kinematically_reachable_count": 0,
+      "minimum_optimistic_ply_lower_bound": null,
+      "ordinary_assignment_reachable_count": 0,
+      "ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "sample_id": "V4-3",
+      "truncation": false,
+      "validated_position_count": 398,
+      "validated_template_count": 40
+    },
+    {
+      "candidate_position_count": 2048,
+      "cell": "CANDIDATE",
+      "joint_kinematically_reachable_count": 28,
+      "minimum_optimistic_ply_lower_bound": 10,
+      "ordinary_assignment_reachable_count": 28,
+      "ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "sample_id": "V5-3",
+      "truncation": true,
+      "validated_position_count": 1890,
+      "validated_template_count": 98
+    }
+  ],
+  "default_generator_changed": false,
+  "f85_actual_compute": 0,
+  "max_ply": 32,
+  "quality": {
+    "aggregate": {
+      "branching_collapse_fraction": 0.15616438356164383,
+      "forced_move_fraction": 0.02434077079107505,
+      "low_branch_fraction": 0.14198782961460446,
+      "median_branching": 5.0,
+      "median_game_length": 32.0,
+      "p10_game_branching": 2.0,
+      "p10_game_length": 32.0,
+      "p90_game_branching": 10.0,
+      "p90_game_length": 32.0,
+      "terminal_distribution": {
+        "checkmate": 1,
+        "ongoing": 15
+      },
+      "trajectory_count": 16,
+      "trajectory_lengths": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        13,
+        32
+      ]
+    },
+    "by_sample": {
+      "V4-2": {
+        "branching_collapse_fraction": 0.14583333333333334,
+        "forced_move_fraction": 0.0,
+        "low_branch_fraction": 0.15625,
+        "median_branching": 4.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 2.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 6.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V4-3": {
+        "branching_collapse_fraction": 0.1875,
+        "forced_move_fraction": 0.046875,
+        "low_branch_fraction": 0.15625,
+        "median_branching": 5.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 2.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 6.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V4-4": {
+        "branching_collapse_fraction": 0.3333333333333333,
+        "forced_move_fraction": 0.03125,
+        "low_branch_fraction": 0.28125,
+        "median_branching": 3.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 2.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 4.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V4-5": {
+        "branching_collapse_fraction": 0.10416666666666667,
+        "forced_move_fraction": 0.0,
+        "low_branch_fraction": 0.078125,
+        "median_branching": 4.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 3.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 6.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V5-2": {
+        "branching_collapse_fraction": 0.14583333333333334,
+        "forced_move_fraction": 0.03125,
+        "low_branch_fraction": 0.140625,
+        "median_branching": 5.5,
+        "median_game_length": 32.0,
+        "p10_game_branching": 2.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 7.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V5-3": {
+        "branching_collapse_fraction": 0.020833333333333332,
+        "forced_move_fraction": 0.015625,
+        "low_branch_fraction": 0.046875,
+        "median_branching": 6.5,
+        "median_game_length": 32.0,
+        "p10_game_branching": 4.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 10.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V5-4": {
+        "branching_collapse_fraction": 0.25,
+        "forced_move_fraction": 0.046875,
+        "low_branch_fraction": 0.1875,
+        "median_branching": 11.0,
+        "median_game_length": 32.0,
+        "p10_game_branching": 2.0,
+        "p10_game_length": 32.0,
+        "p90_game_branching": 17.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "ongoing": 2
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          32,
+          32
+        ]
+      },
+      "V5-5": {
+        "branching_collapse_fraction": 0.0,
+        "forced_move_fraction": 0.022222222222222223,
+        "low_branch_fraction": 0.06666666666666667,
+        "median_branching": 10.0,
+        "median_game_length": 22.5,
+        "p10_game_branching": 3.0,
+        "p10_game_length": 13.0,
+        "p90_game_branching": 12.0,
+        "p90_game_length": 32.0,
+        "terminal_distribution": {
+          "checkmate": 1,
+          "ongoing": 1
+        },
+        "trajectory_count": 2,
+        "trajectory_lengths": [
+          13,
+          32
+        ]
+      }
+    },
+    "definition": "generic_chess.benchmark.game_quality.profile_from_observations",
+    "outcomes": {
+      "game_length_distribution": {
+        "13": 1,
+        "32": 15
+      },
+      "terminal_distribution": {
+        "checkmate": 1,
+        "ongoing@32": 15
+      }
+    },
+    "paired_outcomes": {
+      "by_sample": {
+        "V4-2": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V4-3": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V4-4": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V4-5": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-2": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-3": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-4": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        },
+        "V5-5": {
+          "first_player_score": null,
+          "scoreable": false,
+          "second_player_score": null
+        }
+      },
+      "first_player_score": null,
+      "incomplete_pairs_are_unresolved": true,
+      "scoreable_pair_count": 0,
+      "second_player_score": null
+    }
+  },
+  "raw_evidence_retained_local_only": true,
+  "real_games": 16,
+  "routing": {
+    "dynamic": [
+      "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
+    ],
+    "overall": [
+      "REVERSIBILITY_RESCUE_INSUFFICIENT_KINEMATICALLY",
+      "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP",
+      "REVERSIBILITY_OVERCOMPENSATES_TO_CYCLIC_NONTERMINATION"
+    ],
+    "reason": {
+      "checkmate_observed": 1,
+      "directional_dag_obstruction_removed": true,
+      "dynamic_outcomes_dominated_by_censored_nontermination": true,
+      "ongoing_at_32": 15,
+      "partial_static_kinematic_rescue_on_V5_3": true,
+      "repetition_observed": false
+    },
+    "static": [
+      {
+        "routing": "REVERSIBILITY_RESCUE_INSUFFICIENT_KINEMATICALLY",
+        "sample_id": "V4-3"
+      },
+      {
+        "routing": "MATE_CAPACITY_UNRESOLVED_DUE_TO_CENSUS_CAP",
+        "sample_id": "V5-3"
+      }
+    ]
+  },
+  "schema_version": 2,
+  "source_raw_game_artifact": "artifacts/f86i_reversibility_rescue/game_results.json",
+  "source_raw_result_artifact": "artifacts/f86i_reversibility_rescue/results.json",
+  "static": [
+    {
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "86581cc73bc9c2146eb5117384be4a717fa3bd8a87c2e123c6470434bbe47b01",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 1.0,
+        "ordinary_sink_fraction": 0.0
+      },
+      "sample_id": "V4-2",
+      "source_ruleset_fingerprint": "1b8547501a45ebc1344f7134319ed215de09a51dfb001270dc127e77528698ac",
+      "source_seed": 861401
+    },
+    {
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 1.0,
+        "ordinary_sink_fraction": 0.0
+      },
+      "sample_id": "V4-3",
+      "source_ruleset_fingerprint": "7e2ff9e15c2a0d1be5faa8c6697f22e488976a2d2ae9f077b85c6e71f95ff400",
+      "source_seed": 861402
+    },
+    {
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "ed6784e034a0bd625be4d69bace6a459c9d16d590abf93066025115603ed0fde",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.875,
+        "ordinary_sink_fraction": 0.125
+      },
+      "sample_id": "V4-4",
+      "source_ruleset_fingerprint": "864e9aaf0f36b0a94024454a357e6787b3edd9cfd81898d1bea76dfc591b08d0",
+      "source_seed": 861403
+    },
+    {
+      "board_size": 4,
+      "candidate_ruleset_fingerprint": "effc9905d3b3afd3d67d4696ec0c259531f05feb380479f590179fb9fac063b1",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.875,
+        "ordinary_sink_fraction": 0.125
+      },
+      "sample_id": "V4-5",
+      "source_ruleset_fingerprint": "9a5f3de7a492fa4fa01ca1b4c2e7a11b24403cde87b79761b26e212d13221f24",
+      "source_seed": 861404
+    },
+    {
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "07db1004324033ce66feee06e92afee03277f34d1d0f84246405591f45fe058b",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.92,
+        "ordinary_sink_fraction": 0.08
+      },
+      "sample_id": "V5-2",
+      "source_ruleset_fingerprint": "ddacec0f6b6fbffeb9135fbbbb658093d92ce0e5bce28665a87022b702d815d6",
+      "source_seed": 861501
+    },
+    {
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 1.0,
+        "ordinary_sink_fraction": 0.0
+      },
+      "sample_id": "V5-3",
+      "source_ruleset_fingerprint": "d6e47a6fe19ab20538a1ec9539597b5765d0211cb608b15c262613a86e635297",
+      "source_seed": 861502
+    },
+    {
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "653eba1d8e6bb4de5d0cee911a9f12351e0a673320c6d9357660d13c7f68fed3",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 1.0,
+        "ordinary_sink_fraction": 0.0
+      },
+      "sample_id": "V5-4",
+      "source_ruleset_fingerprint": "580475d4c25b8d5bb9d796902d383ac673bd00c3565e4609d07443bcc338ad04",
+      "source_seed": 861503
+    },
+    {
+      "board_size": 5,
+      "candidate_ruleset_fingerprint": "7d230178849e05cedbe295e4c623217313402611983e751e31481c92c32397b6",
+      "mechanism": {
+        "ordinary_all_monotone_dag": false,
+        "ordinary_direct_reverse_edge_fraction": 1.0,
+        "ordinary_nontrivial_scc_vertex_fraction": 0.96,
+        "ordinary_sink_fraction": 0.04
+      },
+      "sample_id": "V5-5",
+      "source_ruleset_fingerprint": "c3fa844c61ea944f9fd11560f00878337389f427a59d84958c312e38d5494d31",
+      "source_seed": 861504
+    }
+  ],
+  "static_candidate_checks": {
+    "V4-3": 504,
+    "V5-3": 2048,
+    "per_cell_cap": 2048,
+    "total": 2552,
+    "total_cap": 4096
+  },
+  "status": "F86I_R1_ZERO_NEW_COMPUTE_CORRECTIVE",
+  "tactical_probe_nodes": 0,
+  "teacher_search_compute": 0
+}
