@@ -1,0 +1,104 @@
+{
+  "capped_count": 6,
+  "classification": "C1_RELATIVE_EVIDENCE_ROOTS_FROZEN_TEACHER_COST_LOWER_BOUND_ONLY",
+  "completed_count": 0,
+  "elapsed_wall_seconds": 540.176839199994,
+  "estimate_for_48_acquisition_roots": {
+    "estimated_cpu_hours_upper_proxy": 2.4008641706667064,
+    "estimated_teacher_calls": 0,
+    "estimated_wall_minutes_by_lanes": {
+      "1": 144.05185024000238,
+      "2": 72.02592512000119,
+      "4": 36.012962560000595
+    },
+    "large_work_thresholds": {
+      "expected_cpu_gt_5_hours": false,
+      "expected_wall_gt_30_minutes": true
+    },
+    "method": "conservative max observed resource-root cost multiplied by 48 acquisition roots; capped probes are lower bounds",
+    "sample_max_wall_seconds": 180.06481280000298
+  },
+  "failed_count": 0,
+  "probe_contract": {
+    "max_concurrent_roots": 2,
+    "per_root_wall_cap_seconds": 180,
+    "role": "RESOURCE_ESTIMATION_ONLY",
+    "root_count": 6,
+    "whole_probe_hard_wall_seconds": 720
+  },
+  "results": [
+    {
+      "elapsed_wall_seconds": 180.05894829999306,
+      "root_id": "reachable_random-r-00",
+      "status": "TIME_CAP",
+      "stratum": "reachable_random",
+      "termination_reason": "per_root_wall_cap"
+    },
+    {
+      "elapsed_wall_seconds": 180.06008490000386,
+      "root_id": "reachable_random-r-01",
+      "status": "TIME_CAP",
+      "stratum": "reachable_random",
+      "termination_reason": "per_root_wall_cap"
+    },
+    {
+      "elapsed_wall_seconds": 180.06481280000298,
+      "root_id": "c1_on_policy-r-00",
+      "status": "TIME_CAP",
+      "stratum": "c1_on_policy",
+      "termination_reason": "per_root_wall_cap"
+    },
+    {
+      "elapsed_wall_seconds": 180.06392499999492,
+      "root_id": "c1_on_policy-r-01",
+      "status": "TIME_CAP",
+      "stratum": "c1_on_policy",
+      "termination_reason": "per_root_wall_cap"
+    },
+    {
+      "elapsed_wall_seconds": 180.02205239998875,
+      "root_id": "c1_pv_corridor-r-00",
+      "status": "TIME_CAP",
+      "stratum": "c1_pv_corridor",
+      "termination_reason": "per_root_wall_cap"
+    },
+    {
+      "elapsed_wall_seconds": 180.02173989999574,
+      "root_id": "c1_pv_corridor-r-01",
+      "status": "TIME_CAP",
+      "stratum": "c1_pv_corridor",
+      "termination_reason": "per_root_wall_cap"
+    }
+  ],
+  "schema": "generic-chess-f83-teacher-cost-probe-v1",
+  "teacher_contract": {
+    "candidate_action_construction": "all legal actions sorted canonically; cheap child-Q ordering; top six plus root/observer/high-budget actions",
+    "f62_records_sha256": "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61",
+    "f62_stage_sha256": "e7a93423d6058c68fe7ccbc61302584ca1e8869aa828586254f72f4dfdac2c70",
+    "implementation_paths": [
+      "scripts/f59_action_spectrum_diagnosis.py",
+      "scripts/f62_learned_champion_repeatability.py"
+    ],
+    "implementation_sha256": {
+      "scripts/f59_action_spectrum_diagnosis.py": "6336cee4ecb5c76f3b8067ae81d4bdd28cda9dfa8ca31a9ffb29b251e4e00211",
+      "scripts/f62_learned_champion_repeatability.py": "927a449472a029d197c35566687a02b3adb256a861d675ed25b0e5589a585809"
+    },
+    "max_depth": 12,
+    "record_schema": "F62 spectrum root metadata/action_rows",
+    "root_budgets": [
+      2000,
+      40000,
+      80000
+    ],
+    "root_window_pruning": false,
+    "target_q_convention": "child-side search score negated to root-action owner perspective",
+    "teacher_child_budgets": [
+      1000,
+      10000,
+      20000
+    ],
+    "terminal_handling": "ongoing roots only; mate-band metadata retained; no capped probe is a teacher label",
+    "tt_megabytes": 8
+  },
+  "work_order": "GENERICCHESS-F83-C1-RELATIVE-EVIDENCE-ROOTS-AND-COST-CALIBRATION"
+}
