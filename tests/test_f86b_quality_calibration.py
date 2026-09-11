@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+from scripts.f86b_quality_calibration import score_stronger_result
+
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ROOT / "artifacts" / "f86b_quality_calibration"
@@ -42,3 +44,11 @@ def test_f86b_results_account_for_bounded_work_only():
     assert payload["ladder"]["played_game_count"] == 6
     assert payload["f85_actual_compute"] == 0
     assert all(row["classification"] == "UNRESOLVED" for row in payload["quality"])
+
+
+def test_stronger_score_is_seat_independent():
+    assert score_stronger_result("strong", ("weak", "strong"), 1) == 1.0
+    assert score_stronger_result("strong", ("strong", "weak"), 0) == 1.0
+    assert score_stronger_result("strong", ("weak", "strong"), 0) == 0.0
+    assert score_stronger_result("strong", ("strong", "weak"), 1) == 0.0
+    assert score_stronger_result("strong", ("weak", "strong"), None) == 0.5

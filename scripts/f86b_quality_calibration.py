@@ -33,6 +33,17 @@ LADDER_BUDGETS = {
 }
 
 
+def score_stronger_result(
+    stronger_name: str,
+    seats: tuple[str, str],
+    winner: int | None,
+) -> float:
+    """Score the named stronger agent independent of its seat."""
+    if winner is None:
+        return 0.5
+    return 1.0 if seats[winner] == stronger_name else 0.0
+
+
 def _write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -121,7 +132,7 @@ def _play_ladder_game(
     winner = session.result.winner
     stronger_score = None
     if session.result.status.value != "ongoing":
-        stronger_score = 0.5 if winner is None else (1.0 if seats[winner] == stronger_name else 0.0)
+        stronger_score = score_stronger_result(stronger_name, seats, winner)
     return {
         "seats": list(seats),
         "seed": seed,
