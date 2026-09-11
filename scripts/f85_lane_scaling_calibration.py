@@ -10,8 +10,12 @@ import multiprocessing as mp
 import os
 from pathlib import Path
 import queue
+import sys
 import threading
 import time
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 from scripts import f50_generic_learnable_evaluator as f50
 from scripts import f59_action_spectrum_diagnosis as f59
@@ -20,7 +24,6 @@ from scripts import f83_c1_relative_evidence_roots_and_cost_calibration as f83
 from scripts import f84_c1_teacher_extended_cost_calibration as f84
 
 
-ROOT = Path(__file__).resolve().parents[1]
 LABEL = f84.LABEL
 LANE_COUNTS = (2, 3, 4)
 SMOKE = True
