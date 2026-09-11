@@ -11,6 +11,7 @@ F78_CANDIDATE = ROOT / "artifacts" / "f78_parent_anchored_full_residual" / "cand
 F78_OPENINGS = ROOT / "artifacts" / "f78_parent_anchored_full_residual" / "openings.json"
 F75_OPENINGS = ROOT / "artifacts" / "f75_parent_retained_arena" / "openings.json"
 F77_OPENINGS = ROOT / "artifacts" / "f77_trusted_pointwise_q_arena" / "openings.json"
+F81_OPENINGS = ROOT / "artifacts" / "f81_final_confirmation" / "openings.json"
 F81_EVIDENCE = ROOT / "artifacts" / "f81_final_confirmation" / "final_strength_evidence.json"
 F81_BOUND = ROOT / "artifacts" / "f81_final_confirmation" / "final_decision_bound.json"
 
@@ -43,6 +44,11 @@ def test_f82_seals_history_and_freezes_one_candidate_protocol():
     assert paths[str(F78_OPENINGS.relative_to(ROOT)).replace("\\", "/")]["content_sha256"] == _sha(F78_OPENINGS)
     assert paths[str(F75_OPENINGS.relative_to(ROOT)).replace("\\", "/")]["content_sha256"] == _sha(F75_OPENINGS)
     assert paths[str(F77_OPENINGS.relative_to(ROOT)).replace("\\", "/")]["content_sha256"] == _sha(F77_OPENINGS)
+    f81 = paths["artifacts/f81_final_confirmation/openings.json"]
+    assert f81["content_sha256"] == _sha(F81_OPENINGS)
+    assert f81["corpus_id"] == "67b9dafc51a618645c3328228c30a8744cc8f988395a7d54d382b65276dc935c"
+    assert "final-evaluation history only" in f81["reuse"]
+    assert "never C2 training or candidate selection" in f81["reuse"]
     f62 = next(entry for entry in corpora if entry["label"] == "F62 historical strength evidence")
     assert f62["f62_stage_identity_sha256"] == "e7a93423d6058c68fe7ccbc61302584ca1e8869aa828586254f72f4dfdac2c70"
     assert f62["f62_records_sha256"] == "b7a6dc134bf1232fa90d9734ad070c184ecd09f691bc92958686093181d3ff61"
