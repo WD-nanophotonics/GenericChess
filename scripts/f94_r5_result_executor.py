@@ -66,18 +66,29 @@ def run_result(*, root: Path = ROOT, prep_path: Path = PREP_PATH, arena_runner: 
     """Run only after external compute approval; tests inject a fake runner."""
     frozen = load_frozen_prep(root, prep_path)
     controls = {row["name"]: row for row in _controls(root)}
-    candidates = []; invocations = games = 0
+    candidates = []; invocations = pairs = games = traces = strongest_games = 0
     for row in frozen["candidates"]:
         prep = _prep_object(row)
         if row["layer_d_prerequisite"] == "SHORT_CIRCUIT":
             result = measure_strength_response(prep=prep, base_report=SimpleNamespace(layers={"A": row["layer_a_status"], "C": row["layer_c_status"]}))
         else:
             compiled, profile = _ruleset_for(controls[row["name"]]); checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
+            if (compiled.ruleset_fingerprint != row["ruleset_fingerprint"] or checkpoint.checkpoint_id != row["checkpoint_id"] or checkpoint.evaluator_version != row["evaluator_identity"]):
+                raise RuntimeError("R5 execution identity mismatch before native compilation")
             corpora = tuple(generate_arena_openings(compiled, count=prep.pair_count, seed=seed, min_plies=2, max_plies=6) for seed in prep.tape_seeds)
             if tuple(c.corpus_id for c in corpora) != prep.opening_corpus_ids: raise RuntimeError("R5 corpus identity mismatch")
             if arena_runner is None: raise RuntimeError("R5 Arena execution requires separately approved runner")
-            result = measure_strength_response(compiled, native_compiler(compiled), checkpoint, checkpoint, prep, opening_corpora=corpora, arena_runner=arena_runner, capture_search_metrics=True, base_report=SimpleNamespace(layers={"A": "PASS", "C": "PASS"}))
-            invocations += 9; games += result.compute_usage["arena_games"]
+            def tracked_runner(*args, **kwargs):
+                nonlocal invocations
+                invocations += 1
+                return arena_runner(*args, **kwargs)
+            result = measure_strength_response(compiled, native_compiler(compiled), checkpoint, checkpoint, prep, opening_corpora=corpora, arena_runner=tracked_runner, capture_search_metrics=True, base_report=SimpleNamespace(layers={"A": "PASS", "C": "PASS"}))
+            trace = result.behavior_descriptors["action_trace_contract"]["value"]
+            pairs += sum(len(row["pair_scores"]) for row in result.matchups.values())
+            games += result.compute_usage["arena_games"]
+            traces += len(trace["action_traces"])
+            strongest_games += trace["strongest_vs_weakest_pooled_horizon"]["games"]
         candidates.append({"name": row["name"], "prep_fingerprint": prep.prep_fingerprint, "result": result.to_dict()})
-    if invocations != 18 or games != 216: raise RuntimeError("R5 actual compute counters are incomplete")
-    return {"schema": RESULT_SCHEMA, "status": "RESULT_COMPLETE", "prep_artifact": Path(prep_path).relative_to(root).as_posix(), "prep_artifact_sha256": PREP_SHA256, "protocol_source_sha": frozen["protocol_source_sha"], "source_sandbox_sha": frozen["source_sandbox_sha"], "derived_compute": {"arena_invocations": invocations, "arena_games": games, "boundary_arena_invocations": 0}, "candidates": candidates, "r3_observations_used": False}
+    if (invocations, pairs, games, traces, strongest_games) != (18, 108, 216, 216, 72): raise RuntimeError("R5 actual compute counters are incomplete")
+    executor_path = Path(__file__).relative_to(root).as_posix()
+    return {"schema": RESULT_SCHEMA, "status": "RESULT_COMPLETE", "prep_artifact": Path(prep_path).relative_to(root).as_posix(), "prep_artifact_sha256": PREP_SHA256, "protocol_source_sha": frozen["protocol_source_sha"], "source_sandbox_sha": frozen["source_sandbox_sha"], "result_sandbox_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip(), "result_executor_path": executor_path, "result_executor_sha256": _sha(root / executor_path), "derived_compute": {"arena_invocations": invocations, "arena_pairs": pairs, "arena_games": games, "action_traces": traces, "strongest_vs_weakest_games": strongest_games, "boundary_arena_invocations": 0}, "candidates": candidates, "r3_observations_used": False}
