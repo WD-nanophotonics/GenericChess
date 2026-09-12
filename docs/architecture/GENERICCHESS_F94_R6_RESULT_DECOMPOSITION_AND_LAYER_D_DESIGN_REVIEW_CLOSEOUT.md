@@ -53,3 +53,35 @@ behavior, all four attribution combinations (including the actual Western
 identity / owner / opening-integrity mutations, and progress-evidence
 fail-closed checks. Runtime result/progress files remain ignored and were not
 added to Git.
+
+## R6 fallback forensics and prospective R7 review
+
+The follow-on static audit remains zero-compute. The deterministic extractor
+`scripts/f94_r6_fallback_forensics.py` produced
+`docs/architecture/GENERICCHESS_F94_R6_FALLBACK_FORENSICS.json` (SHA256
+`495faeb406e9d6defef84f80bd4de5817121c61286f3e6e1e1a1c848928fc3c5`). It is
+bound to the same RESULT SHA and progress-evidence digest above and contains
+all 29 fallback rows plus a response matrix aligned by `(tape_seed,
+pair_index)` for all three matchups and both controls.
+
+All 29 fallback rows are Standard Shogi `1024_vs_256`, parent-side at the
+256-node budget, with `completed_depth=0`, `termination_reason=node_budget`,
+and `decision_kind=action`: `LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK`. There are
+no child-side, high-budget, time/cancel, or internal-error fallback rows. The
+source audit traces this to the native semantic search's legal declaration /
+minimum-action fallback after no complete iterative-deepening iteration; it
+keeps operational/search failures as separate categories instead of merging
+them.
+
+The design memo
+`docs/architecture/GENERICCHESS_F94_R7_LAYER_D_DESIGN_REVIEW.md` compares the
+strict all-pairwise gate with a prospective endpoint-primary gate and compares
+any-fallback blocking with a budget/operational-stratified rule. It recommends
+carrying the latter pair (endpoint `4096_vs_256` as primary; explicit strict
+negative reversal and high-budget/operational fallback as blockers) only as a
+pre-registered R7 hypothesis on new disjoint tapes. R6 remains frozen as
+`DEFER_CONTROL_NOT_READY`; no classifier, PREP, or authority interpretation
+was changed.
+
+The new forensics, aggregate, and arena-integrity tests passed together:
+`36 passed`.
