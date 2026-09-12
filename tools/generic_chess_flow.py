@@ -1963,7 +1963,22 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
         state["active_request_directory"] = None
         state["last_response_path"] = None
         state["work_order_active"] = False
-    state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
+    proven_reply = (
+        args.action in {"RESUME_WORKER", "RECOVERED"}
+        and isinstance(state.get("active_request_directory"), str)
+        and state.get("active_request_directory") == dossier.get("request_directory")
+        and isinstance(dossier.get("last_probe"), dict)
+        and dossier["last_probe"].get("request_match") is True
+        and dossier["last_probe"].get("post_submission_reply_found") is True
+        and isinstance(dossier["last_probe"].get("response_path"), str)
+    )
+    if proven_reply:
+        state["active_request_directory"] = None
+        state["recovery_state"] = "IDLE"
+        recovery_event(state, "resolved_reply_request_cleared",
+                       request_directory=dossier["request_directory"])
+    else:
+        state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
     recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,
                    action=args.action, resolution_sha256=payload["resolution_sha256"])
     save_state(root, state)

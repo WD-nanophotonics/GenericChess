@@ -727,6 +727,79 @@ def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch
     assert state["recovery_state"] == "RECOVERED"
 
 
+def test_supervisor_resolution_clears_proven_replied_request(monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("d" * 20)
+    directory.mkdir(parents=True)
+    request = str(tmp_path / "outbox" / "same-request")
+    dossier = {
+        "escalation_id": "d" * 20,
+        "worker_thread_id": "worker-1",
+        "worker_host_id": "local",
+        "status": "PENDING",
+        "request_directory": request,
+        "last_probe": {
+            "request_match": True,
+            "post_submission_reply_found": True,
+            "response_path": request + "\\response.txt",
+        },
+    }
+    (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-1"}), encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": request,
+             "recovery_state": "ESCALATED", "recovery_timeline": []}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
+
+    flow.command_supervisor_claim(tmp_path, SimpleNamespace(escalation_id="d" * 20))
+    capsys.readouterr()
+    flow.command_supervisor_resolve(
+        tmp_path, SimpleNamespace(escalation_id="d" * 20, action="RESUME_WORKER", detail_file=None)
+    )
+    capsys.readouterr()
+
+    assert state["active_request_directory"] is None
+    assert state["recovery_state"] == "IDLE"
+    assert any(item["event"] == "resolved_reply_request_cleared"
+               for item in state["recovery_timeline"])
+
+
+def test_supervisor_resolution_preserves_unproven_request(monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("e" * 20)
+    directory.mkdir(parents=True)
+    request = str(tmp_path / "outbox" / "same-request")
+    dossier = {"escalation_id": "e" * 20, "worker_thread_id": "worker-1",
+               "worker_host_id": "local", "status": "PENDING",
+               "request_directory": request, "last_probe": {
+                   "request_match": False,
+                   "post_submission_reply_found": True,
+                   "response_path": request + "\\response.txt",
+               }}
+    (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-2"}), encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": request,
+             "recovery_state": "ESCALATED", "recovery_timeline": []}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-2")
+
+    flow.command_supervisor_claim(tmp_path, SimpleNamespace(escalation_id="e" * 20))
+    capsys.readouterr()
+    flow.command_supervisor_resolve(
+        tmp_path, SimpleNamespace(escalation_id="e" * 20, action="RESUME_WORKER", detail_file=None)
+    )
+    capsys.readouterr()
+
+    assert state["active_request_directory"] == request
+    assert state["recovery_state"] == "RECOVERED"
+
+
 def test_supervisor_resolution_console_output_survives_legacy_windows_encoding(
         monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"
