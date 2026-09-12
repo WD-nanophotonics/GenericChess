@@ -44,6 +44,7 @@ RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r2-strength-response-result.js
 STAGE0_PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R2_STAGE0_PREP.json"
 STAGE0_RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r2-stage0-result.json"
 R3_PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R3_NONBINDING_DEPTH_CALIBRATION_PREP.json"
+R3_RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r3-nonbinding-depth-calibration-result.json"
 EXPERIMENT = "GENERICCHESS-F94-R2-REAL-STRENGTH-CALIBRATION"
 TAPE_SEEDS = (9401, 9402, 9403)
 PAIR_COUNT = 6
@@ -547,6 +548,84 @@ def _load_stage0_prep(path: Path = STAGE0_PREP_PATH) -> dict[str, Any]:
     return payload
 
 
+def _load_r3_depth_calibration_prep(
+    path: Path = R3_PREP_PATH,
+    root: Path = ROOT,
+) -> dict[str, Any]:
+    """Load only an untampered R3 PREP bound to the observed R2 PREP."""
+
+    path = Path(path)
+    if not path.is_absolute():
+        path = root / path
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if (
+        payload.get("schema") != "generic-chess-f94-r3-nonbinding-depth-calibration-prep-v1"
+        or payload.get("status") != "R3_PREP_FROZEN"
+        or payload.get("result_free") is not True
+        or payload.get("r3_prep_fingerprint") != _r3_prep_fingerprint(payload)
+    ):
+        raise RuntimeError("R3 RESULT requires an untampered result-free R3 PREP")
+    budgets = payload.get("budgets", {})
+    required_budgets = {
+        "strongest_nodes_per_move": 4096,
+        "weakest_nodes_per_move": 256,
+        "max_depth": 64,
+        "tt_megabytes": 8,
+        "pair_count_per_tape": 1,
+        "tape_count_per_candidate": 3,
+        "ready_candidate_count": 2,
+        "arena_invocations": 6,
+        "arena_games": 12,
+        "workers": 1,
+    }
+    if any(budgets.get(key) != value for key, value in required_budgets.items()):
+        raise RuntimeError("R3 PREP measurement budget is not the frozen depth-64 protocol")
+    source_path = root / payload.get("source_r2_stage0_prep_artifact", "")
+    if _sha256_bytes(source_path) != payload.get("source_r2_stage0_prep_artifact_sha256"):
+        raise RuntimeError("R3 source R2 Stage-0 PREP SHA does not match frozen authority")
+    r2 = _load_stage0_prep(source_path)
+    if r2["stage0_prep_fingerprint"] != payload.get("source_r2_stage0_prep_fingerprint"):
+        raise RuntimeError("R3 source R2 Stage-0 PREP fingerprint does not match frozen authority")
+    if payload.get("candidates") != r2["candidates"] or payload.get("boundary_control") != r2["boundary_control"]:
+        raise RuntimeError("R3 candidate, corpus, opening, or boundary identity differs from R2 PREP")
+    if payload.get("r2_protocol_calibration", {}).get("classification") != "OBSERVED_NOT_POOLABLE":
+        raise RuntimeError("R3 PREP must keep R2 observations out of R3 pooling")
+    return payload
+
+
+def _r3_depth_calibration_status(
+    pair_score: float,
+    metrics: list[dict[str, Any]],
+    *,
+    max_depth: int,
+) -> str:
+    """Classify one R3 tape using only its frozen depth ceiling."""
+
+    if any(int(row.get("completed_depth", 0)) >= max_depth for row in metrics):
+        return "DEPTH_CENSORED"
+    if any(bool(row.get("used_fallback")) for row in metrics):
+        return "FALLBACK"
+    if pair_score > 0.5:
+        return "POSITIVE_DIRECTION"
+    if pair_score < 0.5:
+        return "NEGATIVE_DIRECTION"
+    return "MIXED_OR_UNCERTAIN"
+
+
+def _r3_depth_calibration_direction(statuses: list[str], scores: list[float]) -> str:
+    if "DEPTH_CENSORED" in statuses:
+        return "DEPTH_CENSORED"
+    if "FALLBACK" in statuses:
+        return "FALLBACK"
+    if "OPERATIONALLY_UNRESOLVED" in statuses or len(scores) != 3:
+        return "OPERATIONALLY_UNRESOLVED"
+    if all(score > 0.5 for score in scores):
+        return "POSITIVE_DIRECTION"
+    if all(score < 0.5 for score in scores):
+        return "NEGATIVE_DIRECTION"
+    return "MIXED_OR_UNCERTAIN"
+
+
 def run_stage0(
     root: Path = ROOT,
     prep_path: Path = STAGE0_PREP_PATH,
@@ -771,11 +850,176 @@ def run_stage0(
     return payload
 
 
+def run_r3_depth_calibration(
+    root: Path = ROOT,
+    prep_path: Path = R3_PREP_PATH,
+    output: Path = R3_RESULT_PATH,
+) -> dict[str, Any]:
+    """Execute only the independently frozen R3 depth-64 protocol."""
+
+    prep_path = Path(prep_path)
+    if not prep_path.is_absolute():
+        prep_path = root / prep_path
+    output = Path(output)
+    staged = _load_r3_depth_calibration_prep(prep_path, root)
+    budgets = staged["budgets"]
+    r2_path = root / staged["source_r2_stage0_prep_artifact"]
+    r2 = _load_stage0_prep(r2_path)
+    source_path = root / r2["source_prep_artifact"]
+    if _sha256_bytes(source_path) != r2["source_prep_artifact_sha256"]:
+        raise RuntimeError("R3 source F94-R2 PREP SHA does not match frozen authority")
+    source = _load_frozen_prep(source_path)
+    if source["source_sandbox_sha"] != r2["source_prep_source_sandbox_sha"]:
+        raise RuntimeError("R3 source F94-R2 PREP sandbox SHA does not match frozen authority")
+    controls = {control["name"]: control for control in _controls(root)}
+    reports = json.loads((root / "artifacts/f87a_ruleset_qualification/reports.json").read_text(encoding="utf-8"))
+    candidate_results: list[dict[str, Any]] = []
+    actual_invocations = 0
+    actual_games = 0
+    for staged_candidate in staged["candidates"]:
+        name = staged_candidate["name"]
+        source_candidate = next(row for row in source["candidates"] if row["name"] == name)
+        identity = (
+            staged_candidate["ruleset_fingerprint"] == source_candidate["ruleset_fingerprint"]
+            and staged_candidate["checkpoint_id"] == source_candidate["checkpoint_id"]
+            and staged_candidate["evaluator_identity"] == source_candidate["evaluator_identity"]
+            and staged_candidate["source_prep_fingerprint"] == source_candidate["prep"]["prep_fingerprint"]
+        )
+        if not identity:
+            raise RuntimeError(f"{name} R3 identity does not match frozen source PREP")
+        if staged_candidate["layer_d_prerequisite"] != "READY":
+            candidate_results.append({
+                "name": name, "class": staged_candidate["class"],
+                "ruleset_fingerprint": staged_candidate["ruleset_fingerprint"],
+                "checkpoint_id": staged_candidate["checkpoint_id"],
+                "evaluator_identity": staged_candidate["evaluator_identity"],
+                "source_prep_fingerprint": staged_candidate["source_prep_fingerprint"],
+                "r3_prep_fingerprint": staged["r3_prep_fingerprint"],
+                "layer_a_status": staged_candidate["layer_a_status"],
+                "layer_c_status": staged_candidate["layer_c_status"],
+                "layer_d_prerequisite": staged_candidate["layer_d_prerequisite"],
+                "status": "PREREQUISITE_A_C_NOT_PASS", "arena_invocations": 0,
+                "arena_games": 0, "tape_results": [],
+            })
+            continue
+        control = controls[name]
+        _assert_regenerated_matches(source_candidate, _prep_candidate(control, reports[name]))
+        compiled, profile = _ruleset_for(control)
+        checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
+        native_rules = compile_native_semantic_rules(compiled)
+        tape_results: list[dict[str, Any]] = []
+        candidate_invocations = 0
+        candidate_games = 0
+        for staged_tape in staged_candidate["opening_corpora"]:
+            corpus = generate_arena_openings(
+                compiled, count=source_candidate["prep"]["pair_count"],
+                seed=staged_tape["tape_seed"], min_plies=2, max_plies=6,
+            )
+            if corpus.corpus_id != staged_tape["corpus_id"]:
+                raise RuntimeError(f"{name} R3 corpus identity changed")
+            opening = corpus.openings[staged_tape["selected_opening_index"]]
+            if (
+                opening.index != 0
+                or opening.opening_seed != staged_tape["selected_opening_seed"]
+                or opening.final_position_key != staged_tape["selected_final_position_key"]
+                or len(opening.actions) != staged_tape["selected_action_count"]
+            ):
+                raise RuntimeError(f"{name} R3 selected opening identity changed")
+            from time import perf_counter
+
+            started = perf_counter()
+            actual_invocations += 1
+            candidate_invocations += 1
+            try:
+                summary = run_arena(
+                    compiled, native_rules, checkpoint, checkpoint,
+                    ArenaConfig(
+                        pairs=budgets["pair_count_per_tape"],
+                        nodes_per_move=budgets["strongest_nodes_per_move"],
+                        parent_nodes_per_move=budgets["weakest_nodes_per_move"],
+                        child_nodes_per_move=budgets["strongest_nodes_per_move"],
+                        max_depth=budgets["max_depth"],
+                        tt_megabytes=budgets["tt_megabytes"], opening_seed=corpus.seed,
+                        opening_count=budgets["pair_count_per_tape"], workers=budgets["workers"],
+                    ), openings=corpus, capture_search_metrics=True,
+                )
+            except Exception as exc:
+                tape_results.append({
+                    "tape_seed": corpus.seed, "corpus_id": corpus.corpus_id,
+                    "selected_opening": {"index": opening.index, "opening_seed": opening.opening_seed,
+                                         "target_plies": opening.target_plies, "action_count": len(opening.actions),
+                                         "final_position_key": opening.final_position_key},
+                    "status": "OPERATIONALLY_UNRESOLVED", "wall_seconds": perf_counter() - started,
+                    "error_type": type(exc).__name__, "error": str(exc),
+                })
+                break
+            wall_seconds = perf_counter() - started
+            if len(summary.pairs) != budgets["pair_count_per_tape"]:
+                raise RuntimeError("R3 Arena did not return the frozen pair count")
+            pair = summary.pairs[0]
+            games = [pair.game_child_owner0, pair.game_child_owner1]
+            actual_games += len(games)
+            candidate_games += len(games)
+            metrics = [metric for game in games for metric in game.search_metrics]
+            searched_nodes = sum(int(metric.get("nodes", 0)) for metric in metrics)
+            search_seconds = sum(float(metric.get("elapsed_seconds", 0.0)) for metric in metrics)
+            tape_results.append({
+                "tape_seed": corpus.seed, "corpus_id": corpus.corpus_id,
+                "selected_opening": {"index": opening.index, "opening_seed": opening.opening_seed,
+                                     "target_plies": opening.target_plies, "action_count": len(opening.actions),
+                                     "final_position_key": opening.final_position_key},
+                "pair_score": pair.child_pair_score,
+                "role_swap_games": [{"child_owner": game.child_owner, "winner": game.winner,
+                                     "result": game.result, "plies": game.plies,
+                                     "search_metrics": list(game.search_metrics)} for game in games],
+                "actual_searched_nodes": searched_nodes,
+                "nps": searched_nodes / search_seconds if search_seconds > 0 else None,
+                "wall_seconds": wall_seconds,
+                "max_completed_depth": max((int(metric.get("completed_depth", 0)) for metric in metrics), default=0),
+                "fallback": any(bool(metric.get("used_fallback")) for metric in metrics),
+                "status": _r3_depth_calibration_status(pair.child_pair_score, metrics, max_depth=budgets["max_depth"]),
+            })
+        scores = [float(row["pair_score"]) for row in tape_results if "pair_score" in row]
+        differences = [score - 0.5 for score in scores]
+        candidate_results.append({
+            "name": name, "class": staged_candidate["class"],
+            "ruleset_fingerprint": staged_candidate["ruleset_fingerprint"],
+            "checkpoint_id": staged_candidate["checkpoint_id"],
+            "evaluator_identity": staged_candidate["evaluator_identity"],
+            "source_prep_fingerprint": staged_candidate["source_prep_fingerprint"],
+            "r3_prep_fingerprint": staged["r3_prep_fingerprint"], "tape_results": tape_results,
+            "arena_invocations": candidate_invocations, "arena_games": candidate_games,
+            "pooled_pair_count": len(scores),
+            "pooled_mean_pair_score": sum(scores) / len(scores) if scores else None,
+            "pooled_effect": sum(differences) / len(differences) if differences else None,
+            "descriptive_pooled_effect_ci": list(bootstrap_pair_mean_ci(
+                differences, confidence=0.95, resamples=10000, seed=271828) if differences else (None, None)),
+            "direction": _r3_depth_calibration_direction([row["status"] for row in tape_results], scores),
+        })
+    payload = {
+        "schema": "generic-chess-f94-r3-nonbinding-depth-calibration-result-v1",
+        "status": "R3_RESULT_COMPLETE" if (
+            actual_invocations == budgets["arena_invocations"] and actual_games == budgets["arena_games"]
+        ) else "R3_RESULT_INCOMPLETE",
+        "experiment": staged["experiment"], "r3_prep_artifact": _artifact_path(root, prep_path),
+        "r3_prep_artifact_sha256": _sha256_bytes(prep_path),
+        "r3_prep_fingerprint": staged["r3_prep_fingerprint"], "result_sandbox_sha": _git_sha(),
+        "candidates": candidate_results, "boundary_control": staged["boundary_control"],
+        "derived_compute": {"arena_invocations": actual_invocations, "arena_games": actual_games,
+                            "boundary_arena_invocations": 0},
+        "not_layer_d_authority": True, "r2_observations_pooled": False, "no_tuning": True,
+    }
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--result", action="store_true")
     parser.add_argument("--stage0-prep", action="store_true")
     parser.add_argument("--r3-prep", action="store_true")
+    parser.add_argument("--r3-depth-calibration", action="store_true")
     parser.add_argument("--stage0", action="store_true")
     parser.add_argument("--output", type=Path, default=PREP_PATH)
     parser.add_argument("--prep", type=Path, default=PREP_PATH)
@@ -783,6 +1027,7 @@ def main() -> None:
     parser.add_argument("--stage0-prep-output", type=Path, default=STAGE0_PREP_PATH)
     parser.add_argument("--r3-source-prep", type=Path, default=STAGE0_PREP_PATH)
     parser.add_argument("--r3-prep-output", type=Path, default=R3_PREP_PATH)
+    parser.add_argument("--r3-result-output", type=Path, default=R3_RESULT_PATH)
     parser.add_argument("--stage0-result-output", type=Path, default=STAGE0_RESULT_PATH)
     args = parser.parse_args()
     if args.stage0_prep:
@@ -791,6 +1036,9 @@ def main() -> None:
     elif args.r3_prep:
         payload = build_r3_nonbinding_depth_calibration_prep(ROOT, args.r3_source_prep, args.r3_prep_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.r3_prep_output)}, sort_keys=True))
+    elif args.r3_depth_calibration:
+        payload = run_r3_depth_calibration(ROOT, args.r3_source_prep, args.r3_result_output)
+        print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.r3_result_output), "arena_invocations": payload["derived_compute"]["arena_invocations"]}, sort_keys=True))
     elif args.stage0:
         payload = run_stage0(ROOT, args.prep, args.stage0_result_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.stage0_result_output), "arena_invocations": payload["derived_compute"]["arena_invocations"]}, sort_keys=True))

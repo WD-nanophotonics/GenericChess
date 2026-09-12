@@ -44,6 +44,64 @@ def test_r3_prep_is_result_free_and_changes_only_depth_limit(tmp_path):
     assert json.loads(output.read_text(encoding="utf-8")) == payload
 
 
+def test_r3_loader_rejects_tampered_prep_and_r2_binding_before_arena(tmp_path, monkeypatch):
+    staged_path = tmp_path / "r3-prep.json"
+    payload = f94.build_r3_nonbinding_depth_calibration_prep(output=staged_path)
+    payload["budgets"]["max_depth"] = 12
+    payload["r3_prep_fingerprint"] = f94._r3_prep_fingerprint(payload)
+    staged_path.write_text(json.dumps(payload), encoding="utf-8")
+    monkeypatch.setattr(f94, "run_arena", lambda *args, **kwargs: pytest.fail("Arena called after R3 PREP tampering"))
+    with pytest.raises(RuntimeError, match="frozen depth-64 protocol"):
+        f94.run_r3_depth_calibration(prep_path=staged_path, output=tmp_path / "result.json")
+
+    payload = f94.build_r3_nonbinding_depth_calibration_prep(output=staged_path)
+    payload["source_r2_stage0_prep_artifact_sha256"] = "0" * 64
+    payload["r3_prep_fingerprint"] = f94._r3_prep_fingerprint(payload)
+    staged_path.write_text(json.dumps(payload), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="source R2 Stage-0 PREP SHA"):
+        f94.run_r3_depth_calibration(prep_path=staged_path, output=tmp_path / "result.json")
+
+
+def test_r3_executor_uses_depth_64_and_skips_boundary_before_native_or_arena(tmp_path, monkeypatch):
+    staged_path = tmp_path / "r3-prep.json"
+    f94.build_r3_nonbinding_depth_calibration_prep(output=staged_path)
+    native_calls = []
+    arena_configs = []
+
+    def fake_native(compiled):
+        native_calls.append(compiled.ruleset_fingerprint)
+        return SimpleNamespace(fingerprint=compiled.ruleset_fingerprint)
+
+    def fake_arena(*args, **kwargs):
+        arena_configs.append(args[4])
+        metric = {"nodes": 10, "elapsed_seconds": 1.0, "completed_depth": 12, "used_fallback": False}
+        game0 = SimpleNamespace(child_owner=0, winner=0, result="draw", plies=4, search_metrics=(metric,))
+        game1 = SimpleNamespace(child_owner=1, winner=1, result="draw", plies=4, search_metrics=(metric,))
+        pair = SimpleNamespace(child_pair_score=1.0, game_child_owner0=game0, game_child_owner1=game1)
+        return SimpleNamespace(pairs=[pair])
+
+    monkeypatch.setattr(f94, "compile_native_semantic_rules", fake_native)
+    monkeypatch.setattr(f94, "run_arena", fake_arena)
+    result = f94.run_r3_depth_calibration(prep_path=staged_path, output=tmp_path / "result.json")
+
+    assert len(native_calls) == 2
+    assert len(arena_configs) == 6
+    assert all(config.max_depth == 64 for config in arena_configs)
+    assert all(config.parent_nodes_per_move == 256 for config in arena_configs)
+    assert all(config.child_nodes_per_move == 4096 for config in arena_configs)
+    assert all(config.tt_megabytes == 8 and config.workers == 1 and config.pairs == 1 for config in arena_configs)
+    assert f94._r3_depth_calibration_status(1.0, [{"completed_depth": 12}], max_depth=64) == "POSITIVE_DIRECTION"
+    assert f94._r3_depth_calibration_status(1.0, [{"completed_depth": 64}], max_depth=64) == "DEPTH_CENSORED"
+    assert result["schema"] == "generic-chess-f94-r3-nonbinding-depth-calibration-result-v1"
+    assert result["status"] == "R3_RESULT_COMPLETE"
+    assert result["not_layer_d_authority"] is True
+    assert result["r2_observations_pooled"] is False
+    assert result["derived_compute"] == {"arena_invocations": 6, "arena_games": 12, "boundary_arena_invocations": 0}
+    assert all("r2" not in row for row in result["candidates"])
+    boundary = next(row for row in result["candidates"] if row["class"] == "boundary")
+    assert boundary["arena_invocations"] == 0 and boundary["tape_results"] == []
+
+
 def test_stage0_direction_prioritizes_fallback_and_depth_censoring():
     assert f94._stage0_status(1.0, [{"completed_depth": f94.MAX_DEPTH}]) == "DEPTH_CENSORED"
     assert f94._stage0_status(1.0, [{"used_fallback": True}]) == "FALLBACK"
