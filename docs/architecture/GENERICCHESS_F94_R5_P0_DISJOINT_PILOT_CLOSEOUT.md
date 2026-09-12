@@ -182,3 +182,34 @@ publish gate passed 9 tests across the executor, qualification-control
 identity/repetition/perft contracts, and Western termination audit. No real
 qualification control pilot, Arena, Heavy envelope, Stage 1, Layer-E, or
 216-game RESULT was generated or run.
+
+## Qualification-control executor R1
+
+Chat's R1 review found authority gaps in the first executor implementation.
+They are closed in
+`scripts/f94_r5_western_qualification_executor.py` without changing the
+qualification-control design or running its pilot:
+
+* The loader requires the exact frozen PREP path and byte SHA
+  `bf5b0189aec82766d1095be8ee3396e05e0a9ed8a029bbbae3312621c78286b2`
+  before parsing JSON. Protocol/source SHA is fixed to
+  `eee600237685edf67be646e6d7eaa91b48b691ce`; the P0 and R5 source artifact
+  paths and byte SHAs are fixed as well.
+* Production Western fingerprint, exact serialized gameplay delta
+  `["repetition_limit"]`, `100000 -> 5`, and public-catalog exclusion are
+  runtime guards before native compilation.
+* One `compile_ruleset_for_execution()` object is now the authority for
+  evaluator profile/checkpoint, native compilation, opening generation, and
+  any future Arena call. All three frozen opening corpora are validated before
+  the first runner invocation.
+* RESULT provenance now includes protocol/source/result sandbox SHAs,
+  executor path and byte SHA, exact PREP byte SHA, and explicit
+  `p0/r2/r3/r5_observations_pooled=false` fields. Operational failure produces
+  an incomplete, unresolved result rather than `COMPLETE`.
+
+The R1 focused suite passed 18 tests covering byte/protocol tamper, exact
+source paths, production/delta/catalog guards, pre-run corpus validation,
+single executable-object authority, 1/6 versus 3/6 pooled horizon and depth
+censoring, positive/negative/mixed direction, fallback precedence,
+operational failure, six complete traces, evaluator mismatch, and RESULT
+provenance. No Heavy envelope or qualification pilot was created or run.
