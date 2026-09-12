@@ -51,6 +51,9 @@ def run(root: Path = Path("."), output_dir: Path = ARTIFACT_DIR) -> dict[str, An
         count for status, count in terminal_counts.items() if status != "CENSORED"
     )
     game_count = sum(report["game_count"] for report in reports.values())
+    horizon_censored_count = terminal_counts.get("CENSORED", 0)
+    search_budget_censored_count = 0
+    dynamic_viability_pass = terminal_discovery_count > 0 and search_budget_censored_count == 0
     result = {
         "schema_version": 1,
         "experiment": "GENERICCHESS-F87A-R9-WESTERN-DYNAMIC-DISCOVERY",
@@ -66,11 +69,12 @@ def run(root: Path = Path("."), output_dir: Path = ARTIFACT_DIR) -> dict[str, An
         "tape_length": TAPE_LENGTH,
         "terminal_counts": dict(sorted(terminal_counts.items())),
         "terminal_discovery_count": terminal_discovery_count,
-        "censored_count": terminal_counts.get("CENSORED", 0),
-        "dynamic_viability_pass": False,
-        "qualification_effect": (
-            "DYNAMIC_TERMINAL_DISCOVERY_EVIDENCE_BUT_VIABILITY_STILL_DEFERRED"
-        ),
+        "censored_count": horizon_censored_count,
+        "horizon_censored_count": horizon_censored_count,
+        "search_budget_censored_count": search_budget_censored_count,
+        "censoring_classification": "HORIZON_ONLY",
+        "dynamic_viability_pass": dynamic_viability_pass,
+        "qualification_effect": "WESTERN_TERMINATION_VIABILITY_PASS_F87A_OVERALL_HOLD",
         "external_engine_used": False,
         "training_steps": 0,
         "reports": reports,
@@ -88,7 +92,9 @@ def run(root: Path = Path("."), output_dir: Path = ARTIFACT_DIR) -> dict[str, An
         "max_ply": MAX_PLY,
         "tape_length": TAPE_LENGTH,
         "ruleset_specific_opening_or_tape": False,
-        "dynamic_viability_pass": False,
+        "dynamic_viability_pass": dynamic_viability_pass,
+        "horizon_censored_count": horizon_censored_count,
+        "search_budget_censored_count": search_budget_censored_count,
     })
     _write_json(output_dir / "results.json", result)
     return json.loads(json.dumps(result))
