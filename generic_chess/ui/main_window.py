@@ -711,6 +711,10 @@ class MainWindow(QMainWindow):
                 preset=request.preset,
                 hybrid=request.hybrid,
             )
+        elif request.ruleset_mode == "builtin":
+            ok = bool(request.builtin_name) and self._controller.new_game_from_builtin(
+                request.builtin_name
+            )
         elif request.ruleset_mode == "file":
             if not request.ruleset_path:
                 show_error(self, self._tr.text("dialog.new_match"), self._tr.text("dialog.new_match_error"))

@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
 )
 
-from ...core.actions import Action, BoardMove
+from ...core.actions import Action, action_is_board
 from ..board.texture_cache import TextureCache
 from ..i18n.manager import LocalizationManager
 
@@ -63,7 +63,7 @@ def _option(
     tr: LocalizationManager | None = None,
 ):
     tr = tr or LocalizationManager("en")
-    if isinstance(action, BoardMove) and action.promotion_target_id is not None:
+    if action_is_board(action) and action.promotion_target_id is not None:
         tid = action.promotion_target_id
         label = tr.text("promotion.promote_to", target=tid)
     else:

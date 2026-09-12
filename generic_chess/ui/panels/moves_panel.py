@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ...core.actions import BoardMove, DropMove
+from ...core.actions import action_is_drop
 from ...core.coordinates import square_to_index
 from ...core.transition import initial_state
 from ..controller import UIController
@@ -162,7 +162,7 @@ class MovesPanel(QWidget):
         n = compiled.board_size
         for entry in entries:
             action = entry.action
-            if isinstance(action, DropMove):
+            if action_is_drop(action):
                 labels.append(
                     f"{action.base_type_id} {tr.text('move.drop', square=str(action.to_square))}"
                 )

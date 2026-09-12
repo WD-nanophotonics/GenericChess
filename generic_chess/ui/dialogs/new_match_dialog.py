@@ -30,7 +30,7 @@ from ..settings import KEY_LANGUAGE, SettingsStore
 
 @dataclass(frozen=True, slots=True)
 class NewMatchRequest:
-    ruleset_mode: str  # "current" | "generate" | "file"
+    ruleset_mode: str  # "current" | "generate" | "file" | "builtin"
     seed: int = 42
     board_size: int = 8
     preset: str = "classic_like"
@@ -39,6 +39,7 @@ class NewMatchRequest:
     participants: tuple[ParticipantKind, ParticipantKind] = (ParticipantKind.HUMAN, ParticipantKind.AI)
     time_control: TimeControl = TimeControl(mode=TimeControlMode.NONE)
     ai_config: ThinkingConfig = ThinkingConfig(strategy=ThinkingStrategy.AUTO_TIME)
+    builtin_name: str | None = None
 
 
 class NewMatchDialog(QDialog):
@@ -64,8 +65,15 @@ class NewMatchDialog(QDialog):
                 tr.text("new_match.current_ruleset"),
                 tr.text("new_match.generate_ruleset"),
                 tr.text("new_match.load_ruleset_file"),
+                tr.text("new_match.builtin_western_chess"),
+                tr.text("new_match.builtin_standard_shogi"),
             ]
         )
+        self._source.setItemData(0, "current")
+        self._source.setItemData(1, "generate")
+        self._source.setItemData(2, "file")
+        self._source.setItemData(3, "builtin:western_chess")
+        self._source.setItemData(4, "builtin:standard_shogi")
         self._source.setCurrentIndex(int(settings.get("match/ruleset_source", 0)))
         self._source.currentIndexChanged.connect(self._sync_source)
         ruleset_form.addRow(tr.text("new_match.source"), self._source)
@@ -173,9 +181,9 @@ class NewMatchDialog(QDialog):
         self._sync_source()
 
     def _sync_source(self) -> None:
-        index = self._source.currentIndex()
-        generate = index == 1
-        file_mode = index == 2
+        mode = self._source.currentData()
+        generate = mode == "generate"
+        file_mode = mode == "file"
         for widget in (self._preset, self._seed, self._board_size, self._hybrid):
             widget.setEnabled(generate)
         self._browse.setEnabled(file_mode)
@@ -191,7 +199,8 @@ class NewMatchDialog(QDialog):
             self._path_label.setText(path)
 
     def _accept(self) -> None:
-        if self._source.currentIndex() == 2:
+        source_mode = self._source.currentData()
+        if source_mode == "file":
             path = self._path_label.text()
             if not path or path == "—":
                 QMessageBox.warning(
@@ -200,11 +209,11 @@ class NewMatchDialog(QDialog):
                     self._tr.text("new_match.choose_file_first"),
                 )
                 return
-        mode = [TimeControlMode.NONE, TimeControlMode.BYOYOMI, TimeControlMode.FISCHER][
+        clock_mode = [TimeControlMode.NONE, TimeControlMode.BYOYOMI, TimeControlMode.FISCHER][
             self._mode.currentIndex()
         ]
         side = SideTimeConfig(self._main_seconds.value(), self._overtime_seconds.value())
-        time_control = TimeControl(mode=mode, owner0=side, owner1=side, time_forfeit=True)
+        time_control = TimeControl(mode=clock_mode, owner0=side, owner1=side, time_forfeit=True)
         strategy = [
             ThinkingStrategy.AUTO_TIME,
             ThinkingStrategy.FIXED_NODES,
@@ -238,7 +247,14 @@ class NewMatchDialog(QDialog):
                 max_depth=self._max_depth.value() or None,
             )
         self._request = NewMatchRequest(
-            ruleset_mode=["current", "generate", "file"][self._source.currentIndex()],
+            ruleset_mode=(
+                "builtin" if str(source_mode).startswith("builtin:") else source_mode
+            ),
+            builtin_name=(
+                str(source_mode).split(":", 1)[1]
+                if str(source_mode).startswith("builtin:")
+                else None
+            ),
             seed=self._seed.value(),
             board_size=self._board_size.value(),
             preset=self._preset.currentData(),

@@ -5,7 +5,15 @@ from __future__ import annotations
 from typing import Callable
 import time
 
-from ..core.actions import Action, BoardMove, DropMove
+from ..core.actions import (
+    Action,
+    action_drop_base_type_id,
+    action_is_board,
+    action_is_drop,
+    action_promotion_target_id,
+    action_source_square,
+    action_target_square,
+)
 from ..core.attacks import is_in_check
 from ..core.coordinates import Square, square_to_index
 from ..core.identity import position_identity_key
@@ -19,7 +27,8 @@ from ..ai.limits import SearchLimits
 from ..clock import ClockState, MatchClock, TimeControl, TimeControlMode
 from ..generation.config import GenerationError, GeneratorConfig
 from ..generation.generator import generate_game
-from ..rules.compiler import compile_ruleset
+from ..rules.catalog import build_builtin_ruleset
+from ..rules.compiler import compile_ruleset_for_execution
 from ..rules.schema import RuleSet
 from ..rules.serialization import deserialize_ruleset, serialize_ruleset
 from ..session.record import GameRecord
@@ -342,12 +351,21 @@ class UIController:
 
     def new_game_from_ruleset(self, ruleset: RuleSet, path: str | None = None) -> bool:
         try:
-            compiled = compile_ruleset(ruleset)
+            compiled = compile_ruleset_for_execution(ruleset)
         except ValueError as exc:
             self._last_error = f"invalid ruleset: {exc}"
             return False
         self._set_ruleset(ruleset, compiled=compiled, seed=None, path=path)
         return True
+
+    def new_game_from_builtin(self, name: str) -> bool:
+        """Load a production built-in through the normal UI session boundary."""
+        try:
+            ruleset = build_builtin_ruleset(name)
+        except ValueError as exc:
+            self._last_error = f"invalid built-in ruleset: {exc}"
+            return False
+        return self.new_game_from_ruleset(ruleset)
 
     def open_ruleset(self, path: str) -> bool:
         try:
@@ -658,7 +676,7 @@ class UIController:
         self._interaction.legal_actions = tuple(
             a
             for a in self._session.legal_actions()
-            if isinstance(a, BoardMove) and a.from_square == square
+            if action_is_board(a) and action_source_square(a) == square
         )
         self._notify()
 
@@ -676,13 +694,19 @@ class UIController:
         if len(targets) == 1:
             self.submit_action(targets[0])
             return
-        promotions = [a for a in targets if isinstance(a, BoardMove) and a.promotion_target_id]
-        plain = [a for a in targets if isinstance(a, BoardMove) and not a.promotion_target_id]
+        promotions = [
+            a for a in targets
+            if action_is_board(a) and action_promotion_target_id(a)
+        ]
+        plain = [
+            a for a in targets
+            if action_is_board(a) and not action_promotion_target_id(a)
+        ]
         if (
             self._settings
             and self._settings.get(KEY_AUTO_PROMOTE_UNIQUE, True)
             and not plain
-            and len({a.promotion_target_id for a in promotions}) == 1
+            and len({action_promotion_target_id(a) for a in promotions}) == 1
         ):
             self.submit_action(promotions[0])
             return
@@ -717,7 +741,7 @@ class UIController:
         self._interaction.legal_actions = tuple(
             a
             for a in self._session.legal_actions()
-            if isinstance(a, DropMove) and a.base_type_id == type_id
+            if action_is_drop(a) and action_drop_base_type_id(a) == type_id
         )
         self._notify()
 
@@ -789,7 +813,7 @@ class UIController:
             if target is None:
                 continue
             occupant = pos.board[square_to_index(target, n)]
-            if isinstance(a, BoardMove) and occupant is not None and occupant.owner != side:
+            if action_is_board(a) and occupant is not None and occupant.owner != side:
                 capture_targets.add(target)
             else:
                 move_targets.add(target)
@@ -800,10 +824,10 @@ class UIController:
         last_to: Square | None = None
         if history:
             last = history[-1].action
-            if isinstance(last, BoardMove):
-                last_from, last_to = last.from_square, last.to_square
-            elif isinstance(last, DropMove):
-                last_to = last.to_square
+            if action_is_board(last):
+                last_from, last_to = action_source_square(last), action_target_square(last)
+            elif action_is_drop(last):
+                last_to = action_target_square(last)
 
         squares = []
         for idx in range(n * n):
@@ -913,13 +937,13 @@ class UIController:
             capture_count = sum(
                 1
                 for a in interaction.legal_actions
-                if isinstance(a, BoardMove)
-                and pos.board[square_to_index(a.to_square, pos.board_size())] is not None
+                if action_is_board(a)
+                and pos.board[square_to_index(action_target_square(a), pos.board_size())] is not None
             )
             promotion_count = sum(
                 1
                 for a in interaction.legal_actions
-                if isinstance(a, BoardMove) and a.promotion_target_id is not None
+                if action_is_board(a) and action_promotion_target_id(a) is not None
             )
         preview_count = len(interaction.preview_squares) if preview else None
         is_actionable = (
@@ -1017,21 +1041,18 @@ class UIController:
 
 
 def _action_to(action: Action) -> Square | None:
-    if isinstance(action, BoardMove):
-        return action.to_square
-    if isinstance(action, DropMove):
-        return action.to_square
-    return None
+    return action_target_square(action)
 
 
 def _is_drop_to(action: Action, square: Square) -> bool:
-    return isinstance(action, DropMove) and action.to_square == square
+    return action_is_drop(action) and action_target_square(action) == square
 
 
 def _action_label(action: Action) -> str:
-    if isinstance(action, DropMove):
-        return f"drop {action.base_type_id}@{action.to_square}"
-    base = f"{action.from_square}-{action.to_square}"
-    if action.promotion_target_id is not None:
-        return f"{base}={action.promotion_target_id}"
+    if action_is_drop(action):
+        return f"drop {action_drop_base_type_id(action)}@{action_target_square(action)}"
+    base = f"{action_source_square(action)}-{action_target_square(action)}"
+    promotion_target = action_promotion_target_id(action)
+    if promotion_target is not None:
+        return f"{base}={promotion_target}"
     return base
