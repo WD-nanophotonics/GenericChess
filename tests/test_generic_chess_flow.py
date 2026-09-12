@@ -1160,6 +1160,7 @@ def test_closeout_forwards_explicit_evidence_attachments(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "require_clean", lambda _root: None)
     monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
     monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": sandbox, "sandbox": sandbox})
     monkeypatch.setattr(flow, "chat_message_body", lambda *_args, **_kwargs: "reference\n")
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
     monkeypatch.setattr(flow, "update_response_state", lambda *_args, **_kwargs: None)
