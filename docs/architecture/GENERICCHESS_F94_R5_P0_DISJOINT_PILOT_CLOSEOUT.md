@@ -281,3 +281,20 @@ The Stage-1 focused suite covers exact shape and disjointness, deterministic
 bootstrap, single-object authority, unresolved precedence, operational
 failure, and pre-run opening validation. This phase intentionally creates no
 Arena result, Heavy envelope, or Stage-1 evidence.
+
+## Stage-1 R1 real-shape and authority repair
+
+The Stage-1 executor now reads the production `ArenaPairResult.pair_index`
+field exactly; it does not add a compatibility `pair` field or adapt the
+production interface. Focused tests construct real `ArenaSummary`,
+`ArenaPairResult`, and `ArenaGameResult` objects and exercise the complete
+3-invocation / 18-pair / 36-game / 36-trace path. The RESULT authority marker
+is explicit: `stage_2_authorized=false` (alongside the existing control-only
+and non-Layer-D flags).
+
+The test contract also covers strict pooled horizon and child-depth censoring
+at fractions below and equal to `0.5`, all-tape means above `0.5` with a
+bootstrap lower bound at or below `0.5`, any tape mean at or below `0.5`, and
+the stable-positive case. The Stage-1 PREP, scientific parameters, and
+disjoint tape identities are unchanged; Arena and Heavy remain forbidden for
+this repair round.

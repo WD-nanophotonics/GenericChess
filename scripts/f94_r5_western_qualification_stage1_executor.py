@@ -293,7 +293,7 @@ def run_stage1(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path =
             pairs = _summary_pairs(summary)
             pair_rows = []
             for expected_index, pair in enumerate(pairs):
-                pair_index = _value(pair, "pair")
+                pair_index = _value(pair, "pair_index")
                 if pair_index != expected_index:
                     raise RuntimeError("Stage-1 Arena pair order/index changed")
                 owner0 = _value(pair, "game_child_owner0")
@@ -382,7 +382,7 @@ def run_stage1(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path =
         "qualification_pilot_observations_pooled": False,
         "production_changed": False,
         "no_tuning": True,
-        "stage_1_authorized": False,
+        "stage_2_authorized": False,
     }
     output = Path(output)
     if not output.is_absolute():
