@@ -1,11 +1,12 @@
 # F94-R5 P0 disjoint pilot PREP and executor
 
-Status: result-free pilot authority is implemented and tested. No Arena,
+Status: result-free pilot authority is implemented and tested. The v2 PREP is
+provenance-bound to the repaired pilot implementation. No Arena,
 native RESULT, Heavy job, Stage 1, or 216-game schedule was launched.
 
 ## Frozen pilot contract
 
-`GENERICCHESS_F94_R5_P0_DISJOINT_PILOT_PREP.json` defines an independent
+`GENERICCHESS_F94_R5_P0_DISJOINT_PILOT_PREP.json` (schema v2) defines an independent
 descriptive probe for Built-in Western Chess and Built-in Standard Shogi. It
 uses three deterministic pilot tape seeds (`9501`, `9502`, `9503`) and one
 role-swapped strongest-vs-weakest pair per tape: 4096 versus 256 nodes per
@@ -21,12 +22,16 @@ and ties or mixed signs are `MIXED_OR_UNCERTAIN`. Explicit fallback/censor or
 operational failure takes precedence. Depth censoring requires a strongest-
 versus-weakest child-only completed-depth hit fraction of at least 0.5;
 horizon censoring requires a strongest-vs-weakest max-ply hit fraction of at
-least 0.5. Isolated hits are retained as telemetry descriptors and do not
-invalidate the pilot.
+least 0.5. These fractions are retained per tape as descriptors, then pooled
+over all three tapes before applying either censor gate (3/6 is the boundary).
+An isolated per-tape hit therefore does not invalidate the pilot. The PREP
+records matching `source_sandbox_sha` and `protocol_source_sha`; the latter is
+the prior immutable commit containing the repaired executor and generator.
 
 ## Executor boundary
 
-`scripts/f94_r5_pilot_executor.py` validates the frozen PREP bytes, source R5
+`scripts/f94_r5_pilot_executor.py` validates the frozen PREP fingerprint,
+protocol provenance, source R5
 identity, disjoint corpus/opening identities, candidate/checkpoint/evaluator
 identity, seat-swapped pair completeness, and all twelve action traces before
 writing ignored pilot RESULT evidence. It never imports or calls the full R5
@@ -37,7 +42,10 @@ automatically authorized.
 
 ## Verification
 
-The focused suite passed (20 tests):
+The focused pilot suite passed (26 tests), including pooled 1/6 and 3/6 horizon
+and depth boundaries, isolated-hit direction, evaluator mismatch rejection
+before native compilation, exact invocation/game/trace counts, and protocol
+provenance:
 
 ```text
 tests/test_f94_r5_pilot_executor.py
