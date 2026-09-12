@@ -21,6 +21,7 @@ from dataclasses import asdict, dataclass
 from statistics import mean
 from typing import Any, Callable, Mapping, Sequence
 
+from ..core.actions import action_to_dict
 from ..learning.arena import ArenaConfig, ArenaSummary, run_arena
 from ..learning.openings import ArenaOpeningCorpus
 from ..learning.serialization import stable_sha256
@@ -29,6 +30,8 @@ from ..learning.statistics import bootstrap_pair_mean_ci
 
 STRENGTH_RESPONSE_SCHEMA = "generic-chess-strength-response-v1"
 PREP_SCHEMA = "generic-chess-strength-response-prep-v1"
+HORIZON_AWARE_PREP_SCHEMA = "generic-chess-strength-response-horizon-aware-prep-v1"
+ACTION_TRACE_SCHEMA = "generic-chess-strength-response-action-trace-v1"
 DEFAULT_BUDGETS = (256, 1024, 4096)
 DEFAULT_MATCHUPS = ((1024, 256), (4096, 1024), (4096, 256))
 STATUS_PASS = "PASS"
@@ -78,9 +81,15 @@ class StrengthResponsePrep:
     workers: int = 1
     tt_megabytes: int = 8
     opening_corpus_ids: tuple[str, ...] = ()
+    # These fields are required by the R5 schema.  They remain optional for
+    # the already-published R2 schema so its immutable PREP can still be read.
+    max_ply: int | None = None
+    child_ceiling_gate_fraction: float | None = None
+    horizon_hit_gate_fraction: float | None = None
+    action_trace_schema: str | None = None
 
     def __post_init__(self) -> None:
-        if self.schema != PREP_SCHEMA:
+        if self.schema not in {PREP_SCHEMA, HORIZON_AWARE_PREP_SCHEMA}:
             raise ValueError("unsupported strength-response preparation schema")
         if not self.ruleset_fingerprint or not self.candidate_fingerprint:
             raise ValueError("ruleset and candidate identities are required")
@@ -99,6 +108,15 @@ class StrengthResponsePrep:
             raise ValueError("bootstrap_confidence must be between zero and one")
         if self.bootstrap_resamples <= 0:
             raise ValueError("bootstrap_resamples must be positive")
+        if self.schema == HORIZON_AWARE_PREP_SCHEMA:
+            if self.max_ply is None or self.max_ply <= 0:
+                raise ValueError("horizon-aware PREP requires a positive max_ply")
+            for name in ("child_ceiling_gate_fraction", "horizon_hit_gate_fraction"):
+                value = getattr(self, name)
+                if value is None or not 0.0 <= value <= 1.0:
+                    raise ValueError(f"horizon-aware PREP requires {name} in [0, 1]")
+            if self.action_trace_schema != ACTION_TRACE_SCHEMA:
+                raise ValueError("horizon-aware PREP requires the action-trace schema")
 
     @property
     def prep_fingerprint(self) -> str:
@@ -110,6 +128,12 @@ class StrengthResponsePrep:
         payload["opening_seeds"] = list(self.opening_seeds)
         payload["tape_seeds"] = list(self.tape_seeds)
         payload["opening_corpus_ids"] = list(self.opening_corpus_ids)
+        if self.schema == PREP_SCHEMA:
+            for key in (
+                "max_ply", "child_ceiling_gate_fraction",
+                "horizon_hit_gate_fraction", "action_trace_schema",
+            ):
+                payload.pop(key)
         if include_fingerprint:
             payload["prep_fingerprint"] = self.prep_fingerprint
         return payload
@@ -132,6 +156,10 @@ def prepare_strength_response(
     bootstrap_seed: int = 271828,
     workers: int = 1,
     tt_megabytes: int = 8,
+    schema: str = PREP_SCHEMA,
+    max_ply: int | None = None,
+    child_ceiling_gate_fraction: float = 0.5,
+    horizon_hit_gate_fraction: float = 0.5,
 ) -> StrengthResponsePrep:
     """Freeze a PREP manifest before any Arena result is observed."""
 
@@ -158,7 +186,7 @@ def prepare_strength_response(
     if not ruleset_fingerprint:
         raise ValueError("compiled.ruleset_fingerprint is required")
     identity = {
-        "schema": PREP_SCHEMA,
+        "schema": schema,
         "ruleset_fingerprint": ruleset_fingerprint,
         "candidate_fingerprint": str(candidate_fingerprint),
         "evaluator_identity": str(evaluator_identity),
@@ -176,6 +204,19 @@ def prepare_strength_response(
         "workers": int(workers),
         "tt_megabytes": int(tt_megabytes),
     }
+    if schema == HORIZON_AWARE_PREP_SCHEMA:
+        identity.update({
+            "max_ply": None if max_ply is None else int(max_ply),
+            "child_ceiling_gate_fraction": float(child_ceiling_gate_fraction),
+            "horizon_hit_gate_fraction": float(horizon_hit_gate_fraction),
+            "action_trace_schema": ACTION_TRACE_SCHEMA,
+            "classification_rule": (
+                "positive paired strongest-vs-weakest response; monotone adjacent budgets; "
+                "no explicit censoring/fallback; child-only ceiling and strongest-vs-weakest "
+                "horizon fractions below their frozen GenericChess-specific empirical gates; "
+                "otherwise DEFER"
+            ),
+        })
     return StrengthResponsePrep(
         **{**identity, "budget_ladder": budgets, "opening_seeds": seeds, "tape_seeds": tapes, "opening_corpus_ids": corpus_ids},
         experiment_identity=f"strength-response-{stable_sha256(identity)}",
@@ -208,8 +249,8 @@ def _summary_payload(summary: ArenaSummary | Mapping[str, Any]) -> dict[str, Any
                 "child_owner_1": second.child_points,
             },
             "games": [
-                {"child_owner": first.child_owner, "winner": first.winner, "plies": first.plies, "search_metrics": list(first.search_metrics)},
-                {"child_owner": second.child_owner, "winner": second.winner, "plies": second.plies, "search_metrics": list(second.search_metrics)},
+                _game_payload(first),
+                _game_payload(second),
             ],
         })
     return {
@@ -223,6 +264,24 @@ def _summary_payload(summary: ArenaSummary | Mapping[str, Any]) -> dict[str, Any
         "game_draws": summary.game_draws,
         "game_losses": summary.game_losses,
         "game_score_rate": summary.game_score_rate,
+    }
+
+
+def _game_payload(game: Any) -> dict[str, Any]:
+    """Expose a deterministic replay witness without changing Arena behavior."""
+
+    return {
+        "pair_index": getattr(game, "pair", None),
+        "opening_id": getattr(game, "opening_id", None),
+        "opening_position_key": getattr(game, "opening_position_key", None),
+        "child_owner": int(game.child_owner),
+        "winner": game.winner,
+        "termination_status": str(game.result),
+        "actual_plies": int(game.plies),
+        "actions": [action_to_dict(action) for action in getattr(game, "actions", ())],
+        "final_position_key": getattr(game, "final_position_key", None),
+        "declaration_id": getattr(game, "declaration_id", None),
+        "search_metrics": list(game.search_metrics),
     }
 
 
@@ -287,6 +346,85 @@ def _recursive_sum(value: Any, keys: set[str]) -> int:
     return total
 
 
+def _horizon_and_trace_contract(
+    prep: StrengthResponsePrep,
+    tape_results: Mapping[str, Mapping[str, Mapping[str, Any]]],
+) -> dict[str, Any]:
+    """Build R5's replayable game ledger from already-observed Arena data.
+
+    This function is observational: it serializes the actions Arena selected;
+    it never supplies an action, touches a transposition table, or alters a
+    termination condition.
+    """
+
+    rows: list[dict[str, Any]] = []
+    horizon_by_tape: dict[str, dict[str, dict[str, int | float]]] = {}
+    for tape_id, matchups in tape_results.items():
+        horizon_by_tape[tape_id] = {}
+        for matchup, summary in matchups.items():
+            games = summary.get("games", ())
+            hits = 0
+            for game_index, game in enumerate(games):
+                if not isinstance(game, Mapping):
+                    continue
+                termination = str(game.get("termination_status", game.get("result", "")))
+                max_ply_hit = termination == "max_ply"
+                hits += int(max_ply_hit)
+                actions = [dict(action) for action in game.get("actions", ())]
+                budget_roles = {
+                    "4x-vs-1x": (prep.budget_ladder[0], prep.budget_ladder[1]),
+                    "16x-vs-4x": (prep.budget_ladder[1], prep.budget_ladder[2]),
+                    "16x-vs-1x": (prep.budget_ladder[0], prep.budget_ladder[2]),
+                }[matchup]
+                record = {
+                    "schema": ACTION_TRACE_SCHEMA,
+                    "tape_id": tape_id,
+                    "opening_corpus_id": tape_id,
+                    "matchup": matchup,
+                    "game_index": game_index,
+                    "pair_index": game.get("pair_index", game.get("pair")),
+                    "child_owner": game.get("child_owner"),
+                    "budget_roles": {
+                        "parent_nodes_per_move": budget_roles[0],
+                        "child_nodes_per_move": budget_roles[1],
+                    },
+                    "termination_status": termination,
+                    "max_ply": prep.max_ply,
+                    "max_ply_hit": max_ply_hit,
+                    "actual_plies": game.get("actual_plies", game.get("plies")),
+                    "opening_position_key": game.get("opening_position_key"),
+                    "final_position_key": game.get("final_position_key"),
+                    "declaration_id": game.get("declaration_id"),
+                    "actions": actions,
+                }
+                record["action_trace_sha256"] = stable_sha256(record)
+                rows.append(record)
+            total = len(games)
+            horizon_by_tape[tape_id][matchup] = {
+                "max_ply_hits": hits,
+                "games": total,
+                "fraction": hits / total if total else 0.0,
+            }
+    strongest = [
+        values["16x-vs-1x"]
+        for values in horizon_by_tape.values()
+        if "16x-vs-1x" in values
+    ]
+    strongest_hits = sum(int(row["max_ply_hits"]) for row in strongest)
+    strongest_games = sum(int(row["games"]) for row in strongest)
+    return {
+        "schema": ACTION_TRACE_SCHEMA,
+        "required_for_all_games": True,
+        "horizon_by_tape": horizon_by_tape,
+        "strongest_vs_weakest_pooled_horizon": {
+            "max_ply_hits": strongest_hits,
+            "games": strongest_games,
+            "fraction": strongest_hits / strongest_games if strongest_games else 0.0,
+        },
+        "action_traces": rows,
+    }
+
+
 def _classify(
     prep: StrengthResponsePrep,
     matchups: Mapping[str, Mapping[str, Any]],
@@ -303,11 +441,20 @@ def _classify(
     high_rows = [rows["16x-vs-1x"] for rows in tape_results.values()]
     depth_total = sum(_depth_ceiling_stats(row, prep.max_depth, engine_role="child")[0] for row in high_rows)
     depth_hits = sum(_depth_ceiling_stats(row, prep.max_depth, engine_role="child")[1] for row in high_rows)
+    parent_depth_total = sum(_depth_ceiling_stats(row, prep.max_depth, engine_role="parent")[0] for row in high_rows)
+    parent_depth_hits = sum(_depth_ceiling_stats(row, prep.max_depth, engine_role="parent")[1] for row in high_rows)
     high_budget_ceiling_hit_fraction = (
         depth_hits / depth_total if depth_total else 0.0
     )
-    censored = any(_recursive_flags(row)[0] for row in all_payload)
-    censored |= high_budget_ceiling_hit_fraction >= 0.5
+    trace_contract = _horizon_and_trace_contract(prep, tape_results)
+    horizon_fraction = trace_contract["strongest_vs_weakest_pooled_horizon"]["fraction"]
+    explicit_censored = any(_recursive_flags(row)[0] for row in all_payload)
+    censored = explicit_censored
+    if prep.schema == HORIZON_AWARE_PREP_SCHEMA:
+        censored |= high_budget_ceiling_hit_fraction >= prep.child_ceiling_gate_fraction
+        censored |= horizon_fraction >= prep.horizon_hit_gate_fraction
+    else:
+        censored |= high_budget_ceiling_hit_fraction >= 0.5
     fallback = any(_recursive_flags(row)[1] for row in all_payload)
     adjacent = (means[0] - 0.5, means[1] - 0.5)
     strongest_vs_weakest = means[2] - 0.5
@@ -336,8 +483,32 @@ def _classify(
             "value": high_budget_ceiling_hit_fraction,
             "provenance": "EMPIRICAL_GATE",
         },
+        "depth_ceiling_by_role": {
+            "value": {
+                "child": {"hits": depth_hits, "count": depth_total},
+                "parent": {"hits": parent_depth_hits, "count": parent_depth_total},
+            },
+            "provenance": "GENERICCHESS_SPECIFIC",
+        },
+        "explicit_censor_flags_present": {
+            "value": explicit_censored,
+            "provenance": "GENERICCHESS_SPECIFIC",
+        },
     }
+    if prep.schema == HORIZON_AWARE_PREP_SCHEMA:
+        descriptors["strongest_vs_weakest_horizon_hit_fraction"] = {
+            "value": horizon_fraction,
+            "provenance": "GENERICCHESS_SPECIFIC",
+        }
+        descriptors["action_trace_contract"] = {
+            "value": trace_contract,
+            "provenance": "GENERICCHESS_SPECIFIC",
+        }
     if censored:
+        if explicit_censored:
+            return STATUS_DEFER, ("DEPTH_CENSORED",), descriptors
+        if horizon_fraction >= (prep.horizon_hit_gate_fraction or 0.5):
+            return STATUS_DEFER, ("HORIZON_CENSORED",), descriptors
         return STATUS_DEFER, ("DEPTH_CENSORED",), descriptors
     if fallback:
         return STATUS_DEFER, ("SEARCH_FALLBACK_PRESENT",), descriptors
@@ -604,8 +775,10 @@ class StrengthResponseResult:
 
 
 __all__ = [
+    "ACTION_TRACE_SCHEMA",
     "DEFAULT_BUDGETS",
     "DEFAULT_MATCHUPS",
+    "HORIZON_AWARE_PREP_SCHEMA",
     "PREP_SCHEMA",
     "STRENGTH_RESPONSE_SCHEMA",
     "StrengthResponsePrep",

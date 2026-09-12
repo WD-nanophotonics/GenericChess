@@ -10,6 +10,8 @@ from generic_chess.benchmark.qualification import (
     reduce_qualification_status,
 )
 from generic_chess.benchmark.strength_response import (
+    ACTION_TRACE_SCHEMA,
+    HORIZON_AWARE_PREP_SCHEMA,
     PREP_SCHEMA,
     StrengthResponsePrep,
     measure_strength_response,
@@ -48,6 +50,44 @@ def _summaries(value=0.7):
     return {tape: {key: dict(row) for key, row in one.items()} for tape in (
         "tape-11", "tape-22", "tape-33"
     )}
+
+
+def _r5_prep():
+    return prepare_strength_response(
+        SimpleNamespace(ruleset_fingerprint="rules-v1"),
+        evaluator_identity="eval-v1",
+        candidate_fingerprint="candidate-v1",
+        pair_count=2,
+        max_depth=8,
+        max_ply=20,
+        tape_seeds=(11, 22, 33),
+        bootstrap_resamples=100,
+        schema=HORIZON_AWARE_PREP_SCHEMA,
+    )
+
+
+def _r5_summaries(*, horizon_hit=False, child_depths=(3, 3, 3)):
+    rows = {}
+    for tape in ("tape-11", "tape-22", "tape-33"):
+        rows[tape] = {}
+        for matchup in ("4x-vs-1x", "16x-vs-4x", "16x-vs-1x"):
+            games = []
+            for index in range(2):
+                games.append({
+                    "pair_index": index,
+                    "child_owner": index % 2,
+                    "termination_status": "max_ply" if horizon_hit and matchup == "16x-vs-1x" and index == 0 else "draw",
+                    "actual_plies": 20 if horizon_hit and matchup == "16x-vs-1x" and index == 0 else 7,
+                    "opening_position_key": f"{tape}-opening-{index}",
+                    "final_position_key": f"{tape}-{matchup}-{index}",
+                    "actions": [{"kind": "board", "from": [0, 0], "to": [0, 1], "promotion_target_id": None}],
+                })
+            metric_rows = [
+                {"engine_role": "parent", "completed_depth": 8},
+                *[{"engine_role": "child", "completed_depth": depth} for depth in child_depths],
+            ]
+            rows[tape][matchup] = {"pair_scores": [0.7, 0.7], "games": games, "metrics": metric_rows}
+    return rows
 
 
 def test_prep_is_result_free_and_freezes_protocol_identity():
@@ -90,6 +130,46 @@ def test_depth_censoring_and_mixed_tape_are_deferred():
     result = measure_strength_response(prep=_prep(), summaries=mixed)
     assert result.layer_d_status == "DEFER"
     assert result.reason_codes == ("MIXED_TAPE_RESPONSE",)
+
+
+def test_r5_child_only_ceiling_and_horizon_gates_are_frozen_and_role_aware():
+    prep = _r5_prep()
+    assert prep.child_ceiling_gate_fraction == prep.horizon_hit_gate_fraction == 0.5
+    # The parent hit is deliberately ignored; one child hit in three is below
+    # the child-only ceiling gate and remains a diagnostic, not censorship.
+    result = measure_strength_response(
+        prep=prep, summaries=_r5_summaries(child_depths=(8, 3, 3))
+    )
+    assert result.layer_d_status == "PASS"
+    assert result.behavior_descriptors["high_budget_ceiling_hit_fraction"]["value"] == pytest.approx(1 / 3)
+
+    horizon = measure_strength_response(
+        prep=prep, summaries=_r5_summaries(horizon_hit=True)
+    )
+    assert horizon.layer_d_status == "DEFER"
+    assert horizon.reason_codes == ("HORIZON_CENSORED",)
+    assert horizon.behavior_descriptors["strongest_vs_weakest_horizon_hit_fraction"]["value"] == 0.5
+
+    explicit = _r5_summaries(horizon_hit=True)
+    explicit["tape-11"]["16x-vs-1x"]["depth_censored"] = True
+    result = measure_strength_response(prep=prep, summaries=explicit)
+    assert result.reason_codes == ("DEPTH_CENSORED",)
+    assert result.behavior_descriptors["explicit_censor_flags_present"]["value"] is True
+
+
+def test_r5_action_trace_is_stable_and_binds_identity_without_affecting_result():
+    first = measure_strength_response(prep=_r5_prep(), summaries=_r5_summaries())
+    second = measure_strength_response(prep=_r5_prep(), summaries=_r5_summaries())
+    first_trace = first.behavior_descriptors["action_trace_contract"]["value"]
+    second_trace = second.behavior_descriptors["action_trace_contract"]["value"]
+    assert first.layer_d_status == second.layer_d_status == "PASS"
+    assert first_trace["schema"] == ACTION_TRACE_SCHEMA
+    assert len(first_trace["action_traces"]) == 18
+    assert first_trace["action_traces"] == second_trace["action_traces"]
+    record = first_trace["action_traces"][0]
+    assert record["tape_id"] == record["opening_corpus_id"]
+    assert record["budget_roles"] == {"parent_nodes_per_move": 256, "child_nodes_per_move": 1024}
+    assert record["actions"] and record["action_trace_sha256"]
 
 
 def test_result_rejects_incomplete_or_mismatched_prep():
