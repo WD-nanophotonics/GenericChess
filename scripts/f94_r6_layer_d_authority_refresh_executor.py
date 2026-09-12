@@ -19,10 +19,16 @@ from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
 from generic_chess.learning.serialization import stable_sha256
 from generic_chess.native.compiler import compile_native_semantic_rules
+from generic_chess.rules.catalog import builtin_ruleset_names
 from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.schema import compute_fingerprint, ruleset_to_dict
+from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from scripts.f94_r5_western_qualification_control import (
     QUALIFICATION_CONTROL_NAME,
+    PRODUCTION_RULESET_FINGERPRINT,
+    QUALIFICATION_REPETITION_LIMIT,
+    QUALIFICATION_RULESET_FINGERPRINT,
     build_western_chess_qualification_control,
 )
 from scripts.f94_r6_layer_d_authority_refresh_prep import (
@@ -103,6 +109,55 @@ def _summary_pairs(summary: Any) -> list[Any]:
     return list(pairs)
 
 
+def _validate_search_telemetry(game: Any, *, parent_budget: int, child_budget: int) -> list[dict[str, Any]]:
+    """Validate role-aware search telemetry before a game's score is usable."""
+    raw = _value(game, "search_metrics", ())
+    if not raw:
+        raise RuntimeError("R6 evidence-integrity failure: search_metrics is empty")
+    rows: list[dict[str, Any]] = []
+    roles: set[str] = set()
+    for metric in raw:
+        if not isinstance(metric, Mapping):
+            raise RuntimeError("R6 evidence-integrity failure: malformed search telemetry row")
+        role = metric.get("engine_role")
+        if role not in {"child", "parent"}:
+            raise RuntimeError("R6 evidence-integrity failure: invalid engine_role")
+        completed_depth = metric.get("completed_depth")
+        used_fallback = metric.get("used_fallback")
+        nodes_budget = metric.get("nodes_budget")
+        if isinstance(completed_depth, bool) or not isinstance(completed_depth, int) or completed_depth < 0:
+            raise RuntimeError("R6 evidence-integrity failure: invalid completed_depth")
+        if not isinstance(used_fallback, bool):
+            raise RuntimeError("R6 evidence-integrity failure: invalid used_fallback")
+        if isinstance(nodes_budget, bool) or not isinstance(nodes_budget, int) or nodes_budget <= 0:
+            raise RuntimeError("R6 evidence-integrity failure: invalid nodes_budget")
+        expected = child_budget if role == "child" else parent_budget
+        if nodes_budget != expected:
+            raise RuntimeError("R6 evidence-integrity failure: role budget mismatch")
+        roles.add(role)
+        rows.append(dict(metric))
+    if roles != {"child", "parent"}:
+        raise RuntimeError("R6 evidence-integrity failure: incomplete role-aware telemetry")
+    return rows
+
+
+def _validate_western_runtime_guards() -> None:
+    production = build_western_chess_ruleset()
+    control = build_western_chess_qualification_control()
+    if compute_fingerprint(production) != PRODUCTION_RULESET_FINGERPRINT:
+        raise RuntimeError("production Western fingerprint changed")
+    if compute_fingerprint(control) != QUALIFICATION_RULESET_FINGERPRINT:
+        raise RuntimeError("qualification control fingerprint changed")
+    if QUALIFICATION_CONTROL_NAME in builtin_ruleset_names():
+        raise RuntimeError("qualification control must remain non-public")
+    left = ruleset_to_dict(production, include_metadata=True)
+    right = ruleset_to_dict(control, include_metadata=True)
+    if [key for key in left if left[key] != right[key]] != ["repetition_limit"]:
+        raise RuntimeError("qualification control gameplay delta changed")
+    if production.repetition_limit != 100000 or control.repetition_limit != QUALIFICATION_REPETITION_LIMIT:
+        raise RuntimeError("qualification repetition threshold changed")
+
+
 def _validate_frozen_prep(payload: dict[str, Any], root: Path, path: Path) -> None:
     if payload.get("schema") != SCHEMA or payload.get("status") != "PREP_FROZEN" or payload.get("result_free") is not True:
         raise RuntimeError("R6 PREP schema/status/result-free contract is invalid")
@@ -122,8 +177,23 @@ def _validate_frozen_prep(payload: dict[str, Any], root: Path, path: Path) -> No
     boundary = payload.get("boundary", {})
     if payload.get("layer_d_compute_authorized") is not False or boundary.get("layer_d_compute_invocations") != 0:
         raise RuntimeError("R6 boundary must short-circuit Layer-D compute")
-    if len(payload.get("controls", ())) != 2 or len(payload.get("matchups", ())) != 3:
-        raise RuntimeError("R6 control/matchup accounting changed")
+    controls = payload.get("controls", ())
+    if tuple(row.get("name") for row in controls) != (QUALIFICATION_CONTROL_NAME, "standard_shogi"):
+        raise RuntimeError("R6 control names/order changed")
+    matchup_rows = payload.get("matchups", ())
+    expected_matchups = tuple((name, child, parent) for name, child, parent in MATCHUPS)
+    actual_matchups = tuple((row.get("name"), row.get("child_nodes_per_move"), row.get("parent_nodes_per_move")) for row in matchup_rows)
+    if actual_matchups != expected_matchups:
+        raise RuntimeError("R6 matchup budgets/order changed")
+    if any(row.get("pairs_per_tape") != PAIRS_PER_TAPE or row.get("tape_count") != 3 or row.get("pair_count") != PAIRS_PER_MATCHUP or row.get("game_count") != GAMES_PER_MATCHUP or row.get("trace_count") != TRACES_PER_MATCHUP or row.get("bootstrap_seed") != BOOTSTRAP_SEEDS[row["name"]] for row in matchup_rows):
+        raise RuntimeError("R6 matchup accounting/bootstrap identity changed")
+    budgets = payload.get("budgets", {})
+    expected_budget = {"invocations_per_control": 9, "pairs_per_control": 54, "games_per_control": 108, "traces_per_control": 108, "total_invocations": TOTAL_INVOCATIONS, "total_pairs": TOTAL_PAIRS, "total_games": TOTAL_GAMES, "total_traces": TOTAL_TRACES, "max_depth": MAX_DEPTH, "tt_megabytes": TT_MEGABYTES, "workers": 1}
+    if any(budgets.get(key) != value for key, value in expected_budget.items()):
+        raise RuntimeError("R6 total accounting/budget identity changed")
+    bootstrap = payload.get("bootstrap", {})
+    if bootstrap.get("method") != "percentile_bootstrap_mean_pair_score" or bootstrap.get("resamples") != BOOTSTRAP_RESAMPLES or bootstrap.get("confidence_level") != CONFIDENCE_LEVEL or bootstrap.get("historical_pools_enter_bootstrap") is not False:
+        raise RuntimeError("R6 bootstrap configuration changed")
 
 
 def load_frozen_prep(root: Path = ROOT, prep_path: Path = PREP_PATH) -> dict[str, Any]:
@@ -191,6 +261,8 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
     if not prep_path.is_absolute():
         prep_path = root / prep_path
     payload = load_frozen_prep(root, prep_path)
+    # These guards run before any native compiler or Arena selection.
+    _validate_western_runtime_guards()
     # This call validates all opening identities before the runner is selected.
     openings = validated_openings(payload)
     runner = arena_runner or run_arena
@@ -202,6 +274,8 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
         name = control["name"]
         profile = build_ruleset_profile(compiled, EvaluationConfig())
         checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
+        if name == QUALIFICATION_CONTROL_NAME and compiled.ruleset_fingerprint != QUALIFICATION_RULESET_FINGERPRINT:
+            raise RuntimeError("qualification control compiled fingerprint changed")
         if checkpoint.checkpoint_id != control["checkpoint_id"] or checkpoint.evaluator_version != control["evaluator_identity"]:
             raise RuntimeError(f"{name} evaluator/checkpoint identity changed")
         native_rules = native_compiler(compiled)
@@ -216,6 +290,11 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
             for seed in TAPE_SEEDS:
                 tape, corpus = rows_by_tape[seed]
                 started = perf_counter()
+                invocation_scores: list[float] = []
+                invocation_statuses: list[str] = []
+                invocation_pair_rows: list[dict[str, Any]] = []
+                invocation_depth_hits = invocation_depth_count = 0
+                invocation_horizon_hits = invocation_horizon_games = 0
                 try:
                     summary = runner(compiled, native_rules, checkpoint, checkpoint,
                         ArenaConfig(pairs=PAIRS_PER_TAPE, nodes_per_move=child_nodes,
@@ -234,19 +313,26 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
                         for game in (owner0, owner1):
                             if _value(game, "pair") != index or _value(game, "opening_id") != opening.final_position_key or _value(game, "opening_position_key") != opening.final_position_key:
                                 raise RuntimeError("R6 game/opening identity failure")
+                            telemetry = _validate_search_telemetry(game, parent_budget=parent_nodes, child_budget=child_nodes)
                             row = _game_record(game, tape={**tape, "max_ply": control["max_ply"]}, matchup=matchup_name, parent=parent_nodes, child=child_nodes)
                             games.append(row)
-                            horizon_hits += int(row["max_ply_hit"]); horizon_games += 1
+                            invocation_horizon_hits += int(row["max_ply_hit"]); invocation_horizon_games += 1
                         if {row["child_owner"] for row in games} != {0, 1}:
                             raise RuntimeError("R6 role swap identity failure")
                         metrics = [dict(metric) for game in (owner0, owner1) for metric in _value(game, "search_metrics", ())]
                         depth_child = [m for m in metrics if m.get("engine_role") == "child"]
-                        depth_hits += sum(int(int(m.get("completed_depth", 0)) >= MAX_DEPTH) for m in depth_child); depth_count += len(depth_child)
-                        score = float(_value(pair, "child_pair_score")); scores.append(score)
+                        invocation_depth_hits += sum(int(int(m.get("completed_depth", 0)) >= MAX_DEPTH) for m in depth_child); invocation_depth_count += len(depth_child)
+                        score = float(_value(pair, "child_pair_score")); invocation_scores.append(score)
                         pair_status = "EXPLICIT_CENSOR" if any(bool(m.get("censor_flag")) for m in metrics) else ("FALLBACK" if any(bool(m.get("used_fallback")) for m in metrics) else ("POSITIVE_DIRECTION" if score > 0.5 else "NEGATIVE_DIRECTION" if score < 0.5 else "MIXED_OR_UNCERTAIN"))
-                        statuses.append(pair_status)
-                        pair_rows.append({"pair_index": index, "pair_score": score, "status": pair_status, "games": games})
-                    tape_results.append({"tape_seed": seed, "pair_count": len(pair_rows), "mean_pair_score": sum(scores[-PAIRS_PER_TAPE:]) / PAIRS_PER_TAPE, "pairs": pair_rows, "wall_seconds": perf_counter() - started})
+                        invocation_statuses.append(pair_status)
+                        invocation_pair_rows.append({"pair_index": index, "pair_score": score, "status": pair_status, "games": games, "trace_hashes": [game["action_trace_sha256"] for game in games]})
+                    # Commit an invocation atomically: malformed telemetry above
+                    # contributes no score, pair, game, trace, or censor count.
+                    scores.extend(invocation_scores); statuses.extend(invocation_statuses)
+                    pair_rows = invocation_pair_rows
+                    depth_hits += invocation_depth_hits; depth_count += invocation_depth_count
+                    horizon_hits += invocation_horizon_hits; horizon_games += invocation_horizon_games
+                    tape_results.append({"tape_seed": seed, "pair_count": len(pair_rows), "mean_pair_score": sum(invocation_scores) / PAIRS_PER_TAPE, "pairs": pair_rows, "wall_seconds": perf_counter() - started})
                     total["arena_pairs"] += len(pair_rows); total["arena_games"] += len(pair_rows) * 2; total["action_traces"] += len(pair_rows) * 2
                 except Exception as exc:
                     statuses.append("EVIDENCE_INTEGRITY_FAILURE" if isinstance(exc, RuntimeError) else "OPERATIONALLY_UNRESOLVED")

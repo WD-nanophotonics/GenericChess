@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 from scripts import f94_r6_layer_d_authority_refresh_executor as executor
+from generic_chess.learning.arena import ArenaGameResult, ArenaPairResult
 from scripts.f94_r6_layer_d_authority_refresh_prep import (
     BUDGET_LADDER,
     GAMES_PER_MATCHUP,
@@ -85,3 +86,78 @@ def test_historical_samples_cannot_enter_bootstrap_and_boundary_is_zero(tmp_path
     assert payload["boundary"]["layer_d_compute_invocations"] == 0
     assert payload["layer_d_compute_authorized"] is False
 
+
+def _metric(role: str, budget: int, *, depth: object = 8, fallback: object = False) -> dict:
+    return {"engine_role": role, "completed_depth": depth, "used_fallback": fallback, "nodes_budget": budget}
+
+
+def test_search_telemetry_empty_fails_closed():
+    game = {"search_metrics": ()}
+    with pytest.raises(RuntimeError, match="search_metrics"):
+        executor._validate_search_telemetry(game, parent_budget=256, child_budget=1024)
+
+
+@pytest.mark.parametrize("bad", [
+    [{"engine_role": "spectator", "completed_depth": 8, "used_fallback": False, "nodes_budget": 1024}],
+    [{"engine_role": "child", "used_fallback": False, "nodes_budget": 1024}],
+    [{"engine_role": "child", "completed_depth": 8, "nodes_budget": 1024}],
+    [{"engine_role": "child", "completed_depth": 8, "used_fallback": False, "nodes_budget": 999}],
+])
+def test_search_telemetry_malformed_fails_closed(bad):
+    with pytest.raises(RuntimeError, match="evidence-integrity"):
+        executor._validate_search_telemetry({"search_metrics": bad}, parent_budget=256, child_budget=1024)
+
+
+def test_search_telemetry_requires_both_roles_and_validates_budgets():
+    assert len(executor._validate_search_telemetry({"search_metrics": [_metric("child", 1024), _metric("parent", 256)]}, parent_budget=256, child_budget=1024)) == 2
+    with pytest.raises(RuntimeError, match="role-aware"):
+        executor._validate_search_telemetry({"search_metrics": [_metric("child", 1024)]}, parent_budget=256, child_budget=1024)
+
+
+def test_western_runtime_guards_fail_closed(monkeypatch):
+    monkeypatch.setattr(executor, "compute_fingerprint", lambda _: "drift")
+    with pytest.raises(RuntimeError, match="production Western"):
+        executor._validate_western_runtime_guards()
+    monkeypatch.setattr(executor, "compute_fingerprint", lambda obj: executor.PRODUCTION_RULESET_FINGERPRINT if obj.repetition_limit == 100000 else executor.QUALIFICATION_RULESET_FINGERPRINT)
+    monkeypatch.setattr(executor, "builtin_ruleset_names", lambda: (executor.QUALIFICATION_CONTROL_NAME,))
+    with pytest.raises(RuntimeError, match="non-public"):
+        executor._validate_western_runtime_guards()
+
+
+def test_western_runtime_guard_rejects_gameplay_delta_drift(monkeypatch):
+    original = executor.ruleset_to_dict
+    def drifted(ruleset, include_metadata=True):
+        row = original(ruleset, include_metadata=include_metadata)
+        if ruleset.repetition_limit == 5:
+            row = dict(row); row["max_ply"] = 999
+        return row
+    monkeypatch.setattr(executor, "ruleset_to_dict", drifted)
+    with pytest.raises(RuntimeError, match="gameplay delta"):
+        executor._validate_western_runtime_guards()
+
+
+def test_production_shaped_arena_result_shape_and_exact_accounting(monkeypatch, tmp_path: Path):
+    payload = executor.load_frozen_prep()
+    openings = executor.validated_openings(payload)
+    calls = []
+    def fake_native(_compiled):
+        return object()
+    def fake_runner(_compiled, _native, _checkpoint_parent, _checkpoint_child, config, *, openings, capture_search_metrics):
+        calls.append(config)
+        pairs = []
+        for index, opening in enumerate(openings.openings):
+            metrics = (_metric("child", config.child_nodes_per_move or config.nodes_per_move), _metric("parent", config.parent_nodes_per_move or config.nodes_per_move))
+            game0 = ArenaGameResult(index, opening.final_position_key, opening.final_position_key, 0, 0, "checkmate", 0, (), opening.final_position_key, search_metrics=metrics)
+            game1 = ArenaGameResult(index, opening.final_position_key, opening.final_position_key, 1, 1, "checkmate", 0, (), opening.final_position_key, search_metrics=metrics)
+            pairs.append(ArenaPairResult(index, opening.final_position_key, game0, game1))
+        return type("Summary", (), {"pairs": tuple(pairs)})()
+    result = executor.run_r6(output=tmp_path / "result.json", arena_runner=fake_runner, native_compiler=fake_native)
+    assert len(calls) == 18
+    assert result["status"] == "R6_RESULT_COMPLETE"
+    assert result["derived_compute"] == {"arena_invocations": 18, "arena_pairs": 108, "arena_games": 216, "action_traces": 216}
+    for control in result["controls"].values():
+        assert control["classification"] == "STABLE_MONOTONE_POSITIVE"
+        for matchup in control["matchups"]:
+            assert matchup["bootstrap"]["sample_count"] == 18
+            assert all(game["trace_hashes"] for tape in matchup["tape_results"] for pair in tape["pairs"] for game in [pair])
+    assert result["boundary"]["layer_d_compute_invocations"] == 0
