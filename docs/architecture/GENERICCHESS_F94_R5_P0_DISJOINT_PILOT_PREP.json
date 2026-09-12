@@ -1,0 +1,308 @@
+{
+  "action_trace_contract": {
+    "fields": [
+      "tape_id",
+      "opening_corpus_id",
+      "matchup",
+      "game_index",
+      "pair_index",
+      "child_owner",
+      "budget_roles",
+      "termination_status",
+      "max_ply",
+      "max_ply_hit",
+      "actual_plies",
+      "opening_position_key",
+      "final_position_key",
+      "actions",
+      "action_trace_sha256"
+    ],
+    "required_for_all_games": true,
+    "schema": "generic-chess-strength-response-action-trace-v1",
+    "semantics": "pilot telemetry only; never pooled with authoritative R5 evidence"
+  },
+  "authoritative_r5_tape_seeds": [
+    9401,
+    9402,
+    9403
+  ],
+  "boundary_control": {
+    "arena_invocations": 0,
+    "compute": 0,
+    "layer_a_status": "PASS",
+    "layer_c_status": "DEFER",
+    "name": "F86N-R1 boundary V4-3",
+    "native_compile": 0,
+    "prerequisite": "PREREQUISITE_A_C_NOT_PASS"
+  },
+  "budgets": {
+    "action_traces": 12,
+    "arena_games": 12,
+    "arena_invocations": 6,
+    "arena_pairs": 6,
+    "boundary_candidate_count": 1,
+    "max_depth": 12,
+    "pair_count_per_tape": 1,
+    "ready_candidate_count": 2,
+    "strongest_nodes_per_move": 4096,
+    "tape_count_per_candidate": 3,
+    "tt_megabytes": 8,
+    "weakest_nodes_per_move": 256,
+    "workers": 1
+  },
+  "candidates": [
+    {
+      "checkpoint_id": "1e83759348a72e82fd2a7895425e828c18667b81fd0d8f109931f75ca931f901",
+      "class": "positive_semantic",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "PASS",
+      "layer_d_prerequisite": "READY",
+      "name": "Built-in Western Chess",
+      "opening_corpora": [
+        {
+          "corpus_id": "a3f2bab9e2dfe0cd1227228f86b2df58efad7f1e69d888e553e4b716de2c906e",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "bb8f7bf6f7276027e7d5ef0fb58405a24d0839feecc506fb6636fb59830acb60",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9501000,
+          "selected_target_plies": 2,
+          "tape_seed": 9501
+        },
+        {
+          "corpus_id": "6d4997f066309c79d07f78743fbe2d5acd13926825110cae069263f6abc8a65b",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "694bc68acfc9451f0aaad06f0763cca49f2d64031ec81269268ca5aa5bd5458f",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9502000,
+          "selected_target_plies": 2,
+          "tape_seed": 9502
+        },
+        {
+          "corpus_id": "b1bfc3fbc0c19d2d820e03814a477b71c8404e9381c1c5333e014a30f2b57a0e",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "1621b2018998b2770c72b21b8c925eeeaae0469550ee6e06df5d02be64fcd5b1",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9503000,
+          "selected_target_plies": 2,
+          "tape_seed": 9503
+        }
+      ],
+      "prep": {
+        "budget_ladder": [
+          256,
+          4096
+        ],
+        "candidate_fingerprint": "1e83759348a72e82fd2a7895425e828c18667b81fd0d8f109931f75ca931f901",
+        "child_ceiling_gate_fraction": 0.5,
+        "classification_rule": "pilot-only direction: all three pair scores > 0.5 is POSITIVE_DIRECTION, all three < 0.5 is NEGATIVE_DIRECTION, otherwise MIXED_OR_UNCERTAIN; child-only depth-ceiling and strongest-vs-weakest max-ply fractions must each remain below 0.5; isolated hits are descriptors",
+        "evaluator_identity": "learnable-material-v1",
+        "horizon_hit_gate_fraction": 0.5,
+        "max_depth": 12,
+        "max_ply": 1000,
+        "opening_corpus_ids": [
+          "a3f2bab9e2dfe0cd1227228f86b2df58efad7f1e69d888e553e4b716de2c906e",
+          "6d4997f066309c79d07f78743fbe2d5acd13926825110cae069263f6abc8a65b",
+          "b1bfc3fbc0c19d2d820e03814a477b71c8404e9381c1c5333e014a30f2b57a0e"
+        ],
+        "pair_count": 1,
+        "prep_fingerprint": "4c6ae5b235cadeed4eedc75ab7ccc1eab2d03bee5b849360ab487791a3868c66",
+        "result_authority": "OBSERVED_NOT_POOLABLE",
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "schema": "generic-chess-f94-r5-p0-disjoint-pilot-prep-v1",
+        "strongest_nodes_per_move": 4096,
+        "tape_seeds": [
+          9501,
+          9502,
+          9503
+        ],
+        "tt_megabytes": 8,
+        "weakest_nodes_per_move": 256,
+        "workers": 1
+      },
+      "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "source_r5_prep_fingerprint": "c58ac3ed2f2964578abddfca9242a3e3b1ac7768b283e9499eb40f48ae32eb44"
+    },
+    {
+      "checkpoint_id": "f9b4ef2c22e1d3226bbc32f10e36ce25ad99074b23c4df8cd55ca0797971e2e5",
+      "class": "positive_semantic",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "PASS",
+      "layer_d_prerequisite": "READY",
+      "name": "Built-in Standard Shogi",
+      "opening_corpora": [
+        {
+          "corpus_id": "1ef2f900f153420e523a0fc4a82f853c9cbdc60183a191723007d3efd178a13c",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "da370dcf963e560244701f6957f53249967c8073be3532f552dbd6d10242886f",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9501000,
+          "selected_target_plies": 2,
+          "tape_seed": 9501
+        },
+        {
+          "corpus_id": "febce98c2506c38eb9bce100828a1bd8a90ba156a8dab526853c09b754ae1abe",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "cdfb85e716d573bb0bf7342aa60f5cb765538e7cd591b1cf86b4a01991cfe80d",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9502000,
+          "selected_target_plies": 2,
+          "tape_seed": 9502
+        },
+        {
+          "corpus_id": "87c556d692595db3633bb43c114fe9eef904fc2601fd912aad0bcefd0efed26f",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "64dd3e4e8b2a18f14e516c71e951b30507afac3697371af91ff2c7c0f0b8557c",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9503000,
+          "selected_target_plies": 2,
+          "tape_seed": 9503
+        }
+      ],
+      "prep": {
+        "budget_ladder": [
+          256,
+          4096
+        ],
+        "candidate_fingerprint": "f9b4ef2c22e1d3226bbc32f10e36ce25ad99074b23c4df8cd55ca0797971e2e5",
+        "child_ceiling_gate_fraction": 0.5,
+        "classification_rule": "pilot-only direction: all three pair scores > 0.5 is POSITIVE_DIRECTION, all three < 0.5 is NEGATIVE_DIRECTION, otherwise MIXED_OR_UNCERTAIN; child-only depth-ceiling and strongest-vs-weakest max-ply fractions must each remain below 0.5; isolated hits are descriptors",
+        "evaluator_identity": "learnable-material-v1",
+        "horizon_hit_gate_fraction": 0.5,
+        "max_depth": 12,
+        "max_ply": 512,
+        "opening_corpus_ids": [
+          "1ef2f900f153420e523a0fc4a82f853c9cbdc60183a191723007d3efd178a13c",
+          "febce98c2506c38eb9bce100828a1bd8a90ba156a8dab526853c09b754ae1abe",
+          "87c556d692595db3633bb43c114fe9eef904fc2601fd912aad0bcefd0efed26f"
+        ],
+        "pair_count": 1,
+        "prep_fingerprint": "77664da588b6677ec0336bb2941b5170664afee9ab88005f5b860a23dd85b5fa",
+        "result_authority": "OBSERVED_NOT_POOLABLE",
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "schema": "generic-chess-f94-r5-p0-disjoint-pilot-prep-v1",
+        "strongest_nodes_per_move": 4096,
+        "tape_seeds": [
+          9501,
+          9502,
+          9503
+        ],
+        "tt_megabytes": 8,
+        "weakest_nodes_per_move": 256,
+        "workers": 1
+      },
+      "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+      "source_r5_prep_fingerprint": "0bb46415e422511c034f409b76b0c0040773af6227d43673a5a1fb23b4fad314"
+    },
+    {
+      "checkpoint_id": "e20b86aa88bb354b3582fca6c805305c8687c16af6e13c046f99b1931c056b8e",
+      "class": "boundary",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "DEFER",
+      "layer_d_prerequisite": "SHORT_CIRCUIT",
+      "name": "F86N-R1 boundary V4-3",
+      "opening_corpora": [
+        {
+          "corpus_id": "2d436325e7b0d2c297c3b3b62b47234417622e4eacc62026c4baad7fa0b147ee",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "beceaf63a7eafed785738ddf8c2b08b9cc5c9a01725d8d251896efc1152fb360",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9501000,
+          "selected_target_plies": 2,
+          "tape_seed": 9501
+        },
+        {
+          "corpus_id": "de8546b3594ab7c6cb78a5e3b03c4f582457a9c17c2543729a2dd9c515ffe8b6",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "fc2cddafe0f4348118a99506cb9d782570b4ede49739f8c6833d5c1b8d5afefb",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9502000,
+          "selected_target_plies": 2,
+          "tape_seed": 9502
+        },
+        {
+          "corpus_id": "5f96d65eb0b1aec404c6f11ed97e5f7d86f5c149fdea7e683294fabba8c17610",
+          "opening_count": 1,
+          "selected_action_count": 2,
+          "selected_final_position_key": "5bc889651fc93bb3c7ceaeb29a806eb31fcd25cd19b9fdcd73d7e3a123903ce8",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9503000,
+          "selected_target_plies": 2,
+          "tape_seed": 9503
+        }
+      ],
+      "prep": {
+        "budget_ladder": [
+          256,
+          4096
+        ],
+        "candidate_fingerprint": "e20b86aa88bb354b3582fca6c805305c8687c16af6e13c046f99b1931c056b8e",
+        "child_ceiling_gate_fraction": 0.5,
+        "classification_rule": "pilot-only direction: all three pair scores > 0.5 is POSITIVE_DIRECTION, all three < 0.5 is NEGATIVE_DIRECTION, otherwise MIXED_OR_UNCERTAIN; child-only depth-ceiling and strongest-vs-weakest max-ply fractions must each remain below 0.5; isolated hits are descriptors",
+        "evaluator_identity": "learnable-material-v1",
+        "horizon_hit_gate_fraction": 0.5,
+        "max_depth": 12,
+        "max_ply": 96,
+        "opening_corpus_ids": [
+          "2d436325e7b0d2c297c3b3b62b47234417622e4eacc62026c4baad7fa0b147ee",
+          "de8546b3594ab7c6cb78a5e3b03c4f582457a9c17c2543729a2dd9c515ffe8b6",
+          "5f96d65eb0b1aec404c6f11ed97e5f7d86f5c149fdea7e683294fabba8c17610"
+        ],
+        "pair_count": 1,
+        "prep_fingerprint": "e7f327743cf5f9880bbbf49fcc1addac0a9806b0081c9cf418bba789e46d1946",
+        "result_authority": "OBSERVED_NOT_POOLABLE",
+        "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+        "schema": "generic-chess-f94-r5-p0-disjoint-pilot-prep-v1",
+        "strongest_nodes_per_move": 4096,
+        "tape_seeds": [
+          9501,
+          9502,
+          9503
+        ],
+        "tt_megabytes": 8,
+        "weakest_nodes_per_move": 256,
+        "workers": 1
+      },
+      "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "source_r5_prep_fingerprint": "f64ba674910f5472ffa65ba59bfe3c9242124f92c7aea8fdc141d2cf34c72b17"
+    }
+  ],
+  "direction_rule": {
+    "authority": "OBSERVED_NOT_POOLABLE; no Layer-D PASS",
+    "depth_censor": "strongest-vs-weakest child completed-depth hit fraction >= 0.5",
+    "horizon_censor": "strongest-vs-weakest max-ply hit fraction >= 0.5",
+    "isolated_hits": "descriptor only; do not invalidate the pilot",
+    "mixed_or_uncertain": "any tie or inconsistent tape signs",
+    "negative": "all three pilot tape pair scores < 0.5",
+    "positive": "all three pilot tape pair scores > 0.5"
+  },
+  "experiment": "GENERICCHESS-F94-R5-P0-DISJOINT-PILOT",
+  "non_poolable_with_r2_r3_r5": true,
+  "pilot_prep_fingerprint": "d3eab16ae442450a51a528d1a745c19178fa6dc9cf4709e11c04656b5d5636bf",
+  "pilot_tape_seeds": [
+    9501,
+    9502,
+    9503
+  ],
+  "protocol_source_sha": "9e7b917c1d1a224d58650c27f7b3ce30b46babe2",
+  "qualification_authority": {
+    "path": "docs/architecture/GENERICCHESS_F94_R2_STRENGTH_RESPONSE_PREP.json",
+    "sha256": "b146cd9b47d1948cc22735c5a59e00a85a457d4c191ed8b23e144aa9e5ea0f34"
+  },
+  "result_free": true,
+  "schema": "generic-chess-f94-r5-p0-disjoint-pilot-prep-v1",
+  "source_r5_prep_artifact": "docs/architecture/GENERICCHESS_F94_R5_R1_HORIZON_AWARE_PREP.json",
+  "source_r5_prep_artifact_sha256": "7fe8ba521e437d011253b26a8f91bb2560ff3836db2e5b13a1bc9607719ac585",
+  "source_sandbox_sha": "9e7b917c1d1a224d58650c27f7b3ce30b46babe2",
+  "status": "PILOT_PREP_FROZEN"
+}
