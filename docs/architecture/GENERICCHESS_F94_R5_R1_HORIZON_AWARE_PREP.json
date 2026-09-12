@@ -1,0 +1,384 @@
+{
+  "action_trace_contract": {
+    "fields": [
+      "tape_id",
+      "opening_corpus_id",
+      "matchup",
+      "game_index",
+      "pair_index",
+      "child_owner",
+      "budget_roles",
+      "termination_status",
+      "max_ply",
+      "max_ply_hit",
+      "actual_plies",
+      "opening_position_key",
+      "final_position_key",
+      "actions",
+      "action_trace_sha256"
+    ],
+    "required_for_all_games": true,
+    "schema": "generic-chess-strength-response-action-trace-v1",
+    "semantics": "observational telemetry only; it does not alter search, TT, evaluator, or termination"
+  },
+  "budgets": {
+    "arena_runs": 9,
+    "max_depth": 12,
+    "nodes_per_move": [
+      256,
+      1024,
+      4096
+    ],
+    "pair_count_per_tape": 6,
+    "tape_seeds": [
+      9401,
+      9402,
+      9403
+    ],
+    "tt_megabytes": 8
+  },
+  "candidates": [
+    {
+      "checkpoint_id": "1e83759348a72e82fd2a7895425e828c18667b81fd0d8f109931f75ca931f901",
+      "class": "positive_semantic",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "PASS",
+      "layer_d_prerequisite": "READY",
+      "name": "Built-in Western Chess",
+      "opening_corpora": [
+        {
+          "corpus_id": "87063cdca844dc0f63c868d2e03204af792a1467abd0195b657e46129862cfb4",
+          "opening_count": 6,
+          "opening_seeds": [
+            9401000,
+            9401100,
+            9401200,
+            9401300,
+            9401400,
+            9401500
+          ],
+          "tape_seed": 9401
+        },
+        {
+          "corpus_id": "acd516e51ed5b096ee44a6b82ecd678eebeffc6d2740f5dd2aa642e8722012ac",
+          "opening_count": 6,
+          "opening_seeds": [
+            9402000,
+            9402100,
+            9402200,
+            9402300,
+            9402400,
+            9402500
+          ],
+          "tape_seed": 9402
+        },
+        {
+          "corpus_id": "e2e99aa1db0186aa69d93564cb89bd05e558bfe2eae5b84ba3e8a614b4c6dd18",
+          "opening_count": 6,
+          "opening_seeds": [
+            9403000,
+            9403100,
+            9403200,
+            9403300,
+            9403400,
+            9403500
+          ],
+          "tape_seed": 9403
+        }
+      ],
+      "prep": {
+        "action_trace_schema": "generic-chess-strength-response-action-trace-v1",
+        "bootstrap_confidence": 0.95,
+        "bootstrap_resamples": 10000,
+        "bootstrap_seed": 271828,
+        "budget_ladder": [
+          256,
+          1024,
+          4096
+        ],
+        "candidate_fingerprint": "1e83759348a72e82fd2a7895425e828c18667b81fd0d8f109931f75ca931f901",
+        "child_ceiling_gate_fraction": 0.5,
+        "classification_rule": "positive paired strongest-vs-weakest response; monotone adjacent budgets; no explicit censoring/fallback; child-only ceiling and strongest-vs-weakest horizon fractions below their frozen GenericChess-specific empirical gates; otherwise DEFER",
+        "evaluator_identity": "learnable-material-v1",
+        "experiment_identity": "strength-response-35ed1671a98a61c022d6c766adbddc35c0c8b1e174d2c6b5d7caecbce3e91c7c",
+        "horizon_hit_gate_fraction": 0.5,
+        "max_depth": 12,
+        "max_ply": 1000,
+        "opening_corpus_id": "87063cdca844dc0f63c868d2e03204af792a1467abd0195b657e46129862cfb4",
+        "opening_corpus_ids": [
+          "87063cdca844dc0f63c868d2e03204af792a1467abd0195b657e46129862cfb4",
+          "acd516e51ed5b096ee44a6b82ecd678eebeffc6d2740f5dd2aa642e8722012ac",
+          "e2e99aa1db0186aa69d93564cb89bd05e558bfe2eae5b84ba3e8a614b4c6dd18"
+        ],
+        "opening_seeds": [
+          9401000,
+          9401100,
+          9401200,
+          9401300,
+          9401400,
+          9401500,
+          9402000,
+          9402100,
+          9402200,
+          9402300,
+          9402400,
+          9402500,
+          9403000,
+          9403100,
+          9403200,
+          9403300,
+          9403400,
+          9403500
+        ],
+        "pair_count": 6,
+        "prep_fingerprint": "c58ac3ed2f2964578abddfca9242a3e3b1ac7768b283e9499eb40f48ae32eb44",
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "schema": "generic-chess-strength-response-horizon-aware-prep-v2",
+        "tape_seeds": [
+          9401,
+          9402,
+          9403
+        ],
+        "tt_megabytes": 8,
+        "workers": 1
+      },
+      "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35"
+    },
+    {
+      "checkpoint_id": "f9b4ef2c22e1d3226bbc32f10e36ce25ad99074b23c4df8cd55ca0797971e2e5",
+      "class": "positive_semantic",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "PASS",
+      "layer_d_prerequisite": "READY",
+      "name": "Built-in Standard Shogi",
+      "opening_corpora": [
+        {
+          "corpus_id": "fb22695d056a30a6288869504d1954e83e8ef7b3af9a6a42a5558ba8d37c684e",
+          "opening_count": 6,
+          "opening_seeds": [
+            9401000,
+            9401100,
+            9401200,
+            9401300,
+            9401400,
+            9401500
+          ],
+          "tape_seed": 9401
+        },
+        {
+          "corpus_id": "ba14dec1fc5cb09fdd0b395c1f58262d891ee5b2019a50e72820a747e2526e66",
+          "opening_count": 6,
+          "opening_seeds": [
+            9402000,
+            9402100,
+            9402200,
+            9402300,
+            9402400,
+            9402500
+          ],
+          "tape_seed": 9402
+        },
+        {
+          "corpus_id": "8e81f380d18953e7a95dcb6c2bebfd0aff7aa371c3b91286e9ca380e3a89d654",
+          "opening_count": 6,
+          "opening_seeds": [
+            9403000,
+            9403100,
+            9403200,
+            9403300,
+            9403400,
+            9403500
+          ],
+          "tape_seed": 9403
+        }
+      ],
+      "prep": {
+        "action_trace_schema": "generic-chess-strength-response-action-trace-v1",
+        "bootstrap_confidence": 0.95,
+        "bootstrap_resamples": 10000,
+        "bootstrap_seed": 271828,
+        "budget_ladder": [
+          256,
+          1024,
+          4096
+        ],
+        "candidate_fingerprint": "f9b4ef2c22e1d3226bbc32f10e36ce25ad99074b23c4df8cd55ca0797971e2e5",
+        "child_ceiling_gate_fraction": 0.5,
+        "classification_rule": "positive paired strongest-vs-weakest response; monotone adjacent budgets; no explicit censoring/fallback; child-only ceiling and strongest-vs-weakest horizon fractions below their frozen GenericChess-specific empirical gates; otherwise DEFER",
+        "evaluator_identity": "learnable-material-v1",
+        "experiment_identity": "strength-response-ad1dd815a8788bbfdc66ecc356449961773056c4157629f27bab87cb881aba91",
+        "horizon_hit_gate_fraction": 0.5,
+        "max_depth": 12,
+        "max_ply": 512,
+        "opening_corpus_id": "fb22695d056a30a6288869504d1954e83e8ef7b3af9a6a42a5558ba8d37c684e",
+        "opening_corpus_ids": [
+          "fb22695d056a30a6288869504d1954e83e8ef7b3af9a6a42a5558ba8d37c684e",
+          "ba14dec1fc5cb09fdd0b395c1f58262d891ee5b2019a50e72820a747e2526e66",
+          "8e81f380d18953e7a95dcb6c2bebfd0aff7aa371c3b91286e9ca380e3a89d654"
+        ],
+        "opening_seeds": [
+          9401000,
+          9401100,
+          9401200,
+          9401300,
+          9401400,
+          9401500,
+          9402000,
+          9402100,
+          9402200,
+          9402300,
+          9402400,
+          9402500,
+          9403000,
+          9403100,
+          9403200,
+          9403300,
+          9403400,
+          9403500
+        ],
+        "pair_count": 6,
+        "prep_fingerprint": "0bb46415e422511c034f409b76b0c0040773af6227d43673a5a1fb23b4fad314",
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "schema": "generic-chess-strength-response-horizon-aware-prep-v2",
+        "tape_seeds": [
+          9401,
+          9402,
+          9403
+        ],
+        "tt_megabytes": 8,
+        "workers": 1
+      },
+      "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    },
+    {
+      "checkpoint_id": "e20b86aa88bb354b3582fca6c805305c8687c16af6e13c046f99b1931c056b8e",
+      "class": "boundary",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "DEFER",
+      "layer_d_prerequisite": "SHORT_CIRCUIT",
+      "name": "F86N-R1 boundary V4-3",
+      "opening_corpora": [
+        {
+          "corpus_id": "28a8c432fd7cc0e3722f5940ee44da0e997bce84c275effaedda133cdf52c1e3",
+          "opening_count": 6,
+          "opening_seeds": [
+            9401000,
+            9401100,
+            9401200,
+            9401300,
+            9401400,
+            9401500
+          ],
+          "tape_seed": 9401
+        },
+        {
+          "corpus_id": "b8bf4f502b8a7b4f9bd2da211e2ef8276f2950a792fa330efed5b4098da403be",
+          "opening_count": 6,
+          "opening_seeds": [
+            9402000,
+            9402100,
+            9402200,
+            9402300,
+            9402400,
+            9402500
+          ],
+          "tape_seed": 9402
+        },
+        {
+          "corpus_id": "95dea682c3604a292ea06fc265909682a9bd11aa4f8bc0322c5e3073e22c7cfd",
+          "opening_count": 6,
+          "opening_seeds": [
+            9403000,
+            9403100,
+            9403200,
+            9403300,
+            9403400,
+            9403500
+          ],
+          "tape_seed": 9403
+        }
+      ],
+      "prep": {
+        "action_trace_schema": "generic-chess-strength-response-action-trace-v1",
+        "bootstrap_confidence": 0.95,
+        "bootstrap_resamples": 10000,
+        "bootstrap_seed": 271828,
+        "budget_ladder": [
+          256,
+          1024,
+          4096
+        ],
+        "candidate_fingerprint": "e20b86aa88bb354b3582fca6c805305c8687c16af6e13c046f99b1931c056b8e",
+        "child_ceiling_gate_fraction": 0.5,
+        "classification_rule": "positive paired strongest-vs-weakest response; monotone adjacent budgets; no explicit censoring/fallback; child-only ceiling and strongest-vs-weakest horizon fractions below their frozen GenericChess-specific empirical gates; otherwise DEFER",
+        "evaluator_identity": "learnable-material-v1",
+        "experiment_identity": "strength-response-1924680a3198afb70852d6eb658f781549fd05c948f383c8e0e0a33189162a6d",
+        "horizon_hit_gate_fraction": 0.5,
+        "max_depth": 12,
+        "max_ply": 96,
+        "opening_corpus_id": "28a8c432fd7cc0e3722f5940ee44da0e997bce84c275effaedda133cdf52c1e3",
+        "opening_corpus_ids": [
+          "28a8c432fd7cc0e3722f5940ee44da0e997bce84c275effaedda133cdf52c1e3",
+          "b8bf4f502b8a7b4f9bd2da211e2ef8276f2950a792fa330efed5b4098da403be",
+          "95dea682c3604a292ea06fc265909682a9bd11aa4f8bc0322c5e3073e22c7cfd"
+        ],
+        "opening_seeds": [
+          9401000,
+          9401100,
+          9401200,
+          9401300,
+          9401400,
+          9401500,
+          9402000,
+          9402100,
+          9402200,
+          9402300,
+          9402400,
+          9402500,
+          9403000,
+          9403100,
+          9403200,
+          9403300,
+          9403400,
+          9403500
+        ],
+        "pair_count": 6,
+        "prep_fingerprint": "f64ba674910f5472ffa65ba59bfe3c9242124f92c7aea8fdc141d2cf34c72b17",
+        "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+        "schema": "generic-chess-strength-response-horizon-aware-prep-v2",
+        "tape_seeds": [
+          9401,
+          9402,
+          9403
+        ],
+        "tt_megabytes": 8,
+        "workers": 1
+      },
+      "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2"
+    }
+  ],
+  "experiment": "GENERICCHESS-F94-R5-R1-HORIZON-AWARE-STRENGTH-PREP",
+  "gates": {
+    "child_only_ceiling_fraction": {
+      "provenance": "GENERICCHESS_SPECIFIC_EMPIRICAL_GATE",
+      "threshold": 0.5
+    },
+    "strongest_vs_weakest_horizon_fraction": {
+      "provenance": "GENERICCHESS_SPECIFIC_EMPIRICAL_GATE",
+      "threshold": 0.5
+    }
+  },
+  "protocol_source_sha": "2aaf9b3426e2b0d875424f5f88076872e384d140",
+  "qualification_authority": {
+    "path": "docs/architecture/GENERICCHESS_F94_R2_STRENGTH_RESPONSE_PREP.json",
+    "sha256": "b146cd9b47d1948cc22735c5a59e00a85a457d4c191ed8b23e144aa9e5ea0f34"
+  },
+  "r3_result_used": false,
+  "result_free": true,
+  "schema": "generic-chess-f94-r5-horizon-aware-prep-v2",
+  "source_sandbox_sha": "2aaf9b3426e2b0d875424f5f88076872e384d140",
+  "status": "PREP_FROZEN"
+}
