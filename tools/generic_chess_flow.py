@@ -698,8 +698,8 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
             raise FlowError("Courier response event did not include response_path")
         response = Path(response_path)
         text = response.read_text(encoding="utf-8-sig")
-        state["last_response_path"] = str(response)
         control = validate_control_footer(text)
+        state["last_response_path"] = str(response)
         work_order = WORK_ORDER_ID.search(text)
         state["chat_control"] = control
         state["last_work_order_id"] = work_order.group(1) if work_order else None
@@ -1973,10 +1973,22 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
         and isinstance(dossier["last_probe"].get("response_path"), str)
     )
     if proven_reply:
+        response_path = Path(dossier["last_probe"]["response_path"])
+        try:
+            response_text = response_path.read_text(encoding="utf-8-sig")
+        except OSError:
+            proven_reply = False
+        else:
+            response_sha256 = hashlib.sha256(response_text.encode("utf-8")).hexdigest()
+    if proven_reply:
         state["active_request_directory"] = None
+        state["last_response_path"] = str(response_path)
+        state["last_response_sha256"] = response_sha256
         state["recovery_state"] = "IDLE"
         recovery_event(state, "resolved_reply_request_cleared",
-                       request_directory=dossier["request_directory"])
+                       request_directory=dossier["request_directory"],
+                       response_path=str(response_path),
+                       response_sha256=response_sha256)
     else:
         state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
     recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,

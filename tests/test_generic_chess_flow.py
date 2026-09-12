@@ -732,6 +732,9 @@ def test_supervisor_resolution_clears_proven_replied_request(monkeypatch, tmp_pa
     directory = runtime / "escalations" / ("d" * 20)
     directory.mkdir(parents=True)
     request = str(tmp_path / "outbox" / "same-request")
+    response = tmp_path / "outbox" / "same-request" / "response.txt"
+    response.parent.mkdir(parents=True)
+    response.write_text("reply without footer →\n", encoding="utf-8")
     dossier = {
         "escalation_id": "d" * 20,
         "worker_thread_id": "worker-1",
@@ -741,14 +744,15 @@ def test_supervisor_resolution_clears_proven_replied_request(monkeypatch, tmp_pa
         "last_probe": {
             "request_match": True,
             "post_submission_reply_found": True,
-            "response_path": request + "\\response.txt",
+            "response_path": str(response),
         },
     }
     (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
     (runtime / "supervisor.json").write_text(json.dumps({
         "supervisor_thread_id": "supervisor-1"}), encoding="utf-8")
     state = {"active": True, "mode": "courier", "active_request_directory": request,
-             "recovery_state": "ESCALATED", "recovery_timeline": []}
+             "recovery_state": "ESCALATED", "recovery_timeline": [],
+             "last_response_path": "old-response.txt", "last_response_sha256": "o" * 64}
     monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
     monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
@@ -763,6 +767,9 @@ def test_supervisor_resolution_clears_proven_replied_request(monkeypatch, tmp_pa
 
     assert state["active_request_directory"] is None
     assert state["recovery_state"] == "IDLE"
+    assert state["last_response_path"] == str(response)
+    assert state["last_response_sha256"] == flow.hashlib.sha256(
+        "reply without footer →\n".encode("utf-8")).hexdigest()
     assert any(item["event"] == "resolved_reply_request_cleared"
                for item in state["recovery_timeline"])
 
@@ -798,6 +805,21 @@ def test_supervisor_resolution_preserves_unproven_request(monkeypatch, tmp_path,
 
     assert state["active_request_directory"] == request
     assert state["recovery_state"] == "RECOVERED"
+
+
+def test_update_response_state_does_not_bind_path_before_footer_validation(
+        monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text("missing footer\n", encoding="utf-8")
+    state = {"last_response_path": "old-response.txt", "last_response_sha256": "o" * 64}
+    monkeypatch.setattr(flow, "save_state", lambda *_args: pytest.fail("invalid response must not save"))
+
+    with pytest.raises(flow.FlowError, match="missing control fields"):
+        flow.update_response_state(tmp_path, state, {
+            "event": "response_received", "response_path": str(response)})
+
+    assert state["last_response_path"] == "old-response.txt"
+    assert state["last_response_sha256"] == "o" * 64
 
 
 def test_supervisor_resolution_console_output_survives_legacy_windows_encoding(
