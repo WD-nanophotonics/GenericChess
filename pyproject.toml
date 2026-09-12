@@ -27,6 +27,9 @@ include = ["generic_chess*"]
 [tool.setuptools.dynamic]
 version = {attr = "generic_chess.__version__"}
 
+[tool.setuptools.package-data]
+generic_chess = ["ui/i18n/*.json"]
+
 [[tool.setuptools.ext-modules]]
 name = "generic_chess._native_core"
 sources = [
