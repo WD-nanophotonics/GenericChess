@@ -51,11 +51,22 @@ def _board_snapshot(controller: UIController) -> tuple:
     )
 
 
-def _click_production_action(controller: UIController, action_text: str):
+def _click_production_action(controller: UIController, source: Square, target: Square):
+    legal_actions = controller.session.legal_actions()
+    promotion_pairs = {
+        (candidate.from_square, candidate.to_square)
+        for candidate in legal_actions
+        if action_is_board(candidate)
+        and action_promotion_target_id(candidate) is not None
+    }
     action = next(
         candidate
-        for candidate in controller.session.legal_actions()
-        if str(candidate) == action_text
+        for candidate in legal_actions
+        if action_is_board(candidate)
+        and candidate.from_square == source
+        and candidate.to_square == target
+        and action_promotion_target_id(candidate) is None
+        and (candidate.from_square, candidate.to_square) not in promotion_pairs
     )
     controller.square_clicked(action.from_square)
     assert action in controller.interaction.legal_actions
@@ -92,6 +103,8 @@ def test_builtin_desktop_action_projection_invalid_input_and_reset(qapp, name):
 
     dialog = NewMatchDialog(settings)
     dialog._source.setCurrentIndex(3 if name == "western_chess" else 4)
+    dialog._side0.setCurrentIndex(0)
+    dialog._side1.setCurrentIndex(0)
     dialog._accept()
     request = dialog.request()
     assert request is not None
@@ -187,44 +200,45 @@ def test_standard_shogi_desktop_semantic_drop(qapp):
     window.show()
     qapp.processEvents()
 
-    # This short deterministic opening is selected from production legal
-    # actions, then submitted only through the desktop click path.
+    # This deterministic, promotion-free opening is selected from production
+    # legal actions, then submitted only through the desktop click path.
     opening = (
-        "legacy_028:g21:e3-e4",
-        "legacy_028:g21:e7-e6",
-        "legacy_028:g21:e4-e5",
-        "legacy_029:g21:e6-e5",
-        "legacy_028:g21:f3-f4",
-        "legacy_028:g21:e5-e4",
-        "legacy_028:g21:f4-f5",
-        "legacy_028:g21:f7-f6",
-        "legacy_029:g21:f5-f6",
-        "legacy_028:g21:d7-d6",
-        "legacy_028:g21:d3-d4",
-        "legacy_028:g21:d6-d5",
-        "legacy_029:g21:d4-d5",
-        "legacy_028:g21:g7-g6",
-        "legacy_028:g21:d5-d6",
-        "legacy_026:g20:h9-g7",
-        "legacy_028:g21:g3-g4",
-        "legacy_026:g20:g7-f5",
-        "legacy_002:g1:h2-e5",
-        "legacy_028:g21:g6-g5",
-        "legacy_022:g19:h1-g3",
-        "legacy_029:g21:g5-g4",
+        (Square(4, 2), Square(4, 3)),
+        (Square(4, 6), Square(4, 5)),
+        (Square(4, 3), Square(4, 4)),
+        (Square(4, 5), Square(4, 4)),
+        (Square(5, 2), Square(5, 3)),
+        (Square(4, 4), Square(4, 3)),
+        (Square(5, 3), Square(5, 4)),
+        (Square(5, 6), Square(5, 5)),
+        (Square(5, 4), Square(5, 5)),
+        (Square(3, 6), Square(3, 5)),
+        (Square(3, 2), Square(3, 3)),
+        (Square(3, 5), Square(3, 4)),
+        (Square(3, 3), Square(3, 4)),
+        (Square(6, 6), Square(6, 5)),
+        (Square(3, 4), Square(3, 5)),
+        (Square(7, 8), Square(6, 6)),
+        (Square(6, 2), Square(6, 3)),
+        (Square(6, 6), Square(5, 4)),
+        (Square(7, 1), Square(4, 4)),
+        (Square(6, 5), Square(6, 4)),
+        (Square(7, 0), Square(6, 2)),
+        (Square(6, 4), Square(6, 3)),
     )
-    for action_text in opening:
-        _click_production_action(controller, action_text)
-    capture_text = "legacy_023:g19:g3-f5"
+    for source, target in opening:
+        _click_production_action(controller, source, target)
     capture = next(
         action
         for action in controller.session.legal_actions()
-        if str(action) == capture_text
+        if action_is_board(action)
+        and action.from_square == Square(6, 2)
+        and action.to_square == Square(5, 4)
     )
     captured_type = controller.session.state.position.board[
         square_to_index(capture.to_square, controller.compiled.board_size)
     ].base_type_id
-    _click_production_action(controller, capture_text)
+    _click_production_action(controller, capture.from_square, capture.to_square)
     assert controller.session.state.position.hands[0].count(captured_type) > 0
     window._refresh()
 
@@ -233,12 +247,20 @@ def test_standard_shogi_desktop_semantic_drop(qapp):
     assert buttons
     assert any(captured_type in button.text() for button in buttons)
 
+    reply_actions = controller.session.legal_actions()
+    promotion_pairs = {
+        (action.from_square, action.to_square)
+        for action in reply_actions
+        if action_is_board(action) and action_promotion_target_id(action) is not None
+    }
     reply = next(
         action
-        for action in sorted(controller.session.legal_actions(), key=str)
-        if action_is_board(action) and action_promotion_target_id(action) is None
+        for action in sorted(reply_actions, key=str)
+        if action_is_board(action)
+        and action_promotion_target_id(action) is None
+        and (action.from_square, action.to_square) not in promotion_pairs
     )
-    _click_production_action(controller, str(reply))
+    _click_production_action(controller, reply.from_square, reply.to_square)
     window._refresh()
     drop_button = next(
         button for button in window._player_bars[0].hand_buttons()
