@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted.
+Superseded by ADR-111; hourly audit and urgent HOLD remain in force.
 
 ## Decision
 
@@ -11,7 +11,9 @@ Medium Supervisor task. Chat remains the worker's direct project manager through
 ChatCourier. The Supervisor is an hourly peer auditor: it inspects repository,
 handoff, Courier, and worker-task state; wakes the same worker after an
 unjustified stop; queues ordinary corrections; and does no routine product work.
-No durable Goal is required.
+The former “No durable Goal is required” decision is superseded by ADR-111;
+only a registered low-level Worker may enable the Goal for the same
+ChatCourier loop. The Supervisor and other tasks remain prohibited from Goals.
 
 Urgent execution drift uses a Supervisor HOLD distinct from Courier transport
 escalation. Only the registered Supervisor task may create or release it. The

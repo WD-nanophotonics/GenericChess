@@ -33,9 +33,16 @@ GenericChess-sandbox\generic-chess-flow.cmd handoff-claim --host-id standby
 GenericChess-sandbox\generic-chess-flow.cmd work
 ```
 
-Start the target Codex task with Luna High and a durable `/goal`. The restored
-session prints the exact next action; for a `SUBMIT_CLOSEOUT` capsule it points
-to the locally reconstructed closeout file.
+Start the target Codex task as the registered low-level Luna High Worker and
+restore its durable Goal. Only that Worker may enable the Goal; the Supervisor
+and other tasks must not. The Goal is the same existing ChatCourier
+worker/session/request loop, not a new request or state machine. After every
+new round or context compression, reread `AGENTS.md` and `WORKFLOW.md` before
+acting. The restored session prints the exact next action; for a
+`SUBMIT_CLOSEOUT` capsule it points to the locally reconstructed closeout file.
+Do not use a message Watchdog; normal Goal operation is covered by the hourly
+Supervisor audit. Preserve the same Worker task, Chat URL, Courier session,
+and request when recovering Luna High.
 
 ## Release from the active machine
 

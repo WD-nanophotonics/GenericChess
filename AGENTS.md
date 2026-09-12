@@ -72,6 +72,31 @@ Read `WORKFLOW.md` before changing this repository.
     procedure; if algebra, existing evidence, a witness, or a decision bound
     can decide the question, do not authorize expensive new experiments.
 
+19. Only a registered low-level Worker may enable a persistent Goal. The
+    Supervisor and all other tasks must not create or enable Goals. A Worker
+    Goal, when enabled by its registration, is the same ChatCourier loop:
+    obtain, execute, test, publish, close out, and obtain the next order until
+    whole-project terminal status, user stop, or a lawful Supervisor upgrade.
+    At every new round and after context compression, reread `AGENTS.md` and
+    `WORKFLOW.md` before acting.
+
+20. Upgrade immediately on HOLD, ownership conflict or a second writer,
+    framework `HUMAN_REQUIRED`, uncertain irreversible external side effects,
+    permission or large-compute approval boundaries, or a severe harness fault
+    where continuing may damage state. Ordinary technical problems may be
+    upgraded only after two different reasonable attempts with no substantive
+    progress, no safe local alternative remains, and another attempt would
+    merely repeat the same work. The root cause and failing phase define
+    “same problem”; new evidence, state progress, or a new recovery phase
+    resets the no-progress count. Upgrade once with a structured report to the
+    registered Supervisor, then pause; do not retry or spin.
+
+21. Courier busy/rate-limited/temporarily unavailable states with recovery
+    progress, waiting on the same request, diagnosable test or compile errors,
+    incrementally progressing work, Worker-owned lost data, one commit,
+    publish, closeout, phase COMPLETE, context compression, or temporarily no
+    work order are never reasons to stop or upgrade.
+
 ## User-authoritative Courier loop interpretation
 
 User原话（逐字保留）：

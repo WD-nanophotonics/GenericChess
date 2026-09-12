@@ -8,6 +8,32 @@ local and remote full SHAs match.
 The user is always the highest authority. Start one mode and keep it for the
 whole task.
 
+## Goal Worker lifecycle
+
+Only a registered low-level Worker may enable a persistent Goal, and the
+Supervisor or any other task must not create one. The Goal is durable intent
+for the same Courier worker/session/request: obtain a Chat work order, execute
+it, test, commit, publish, close out, and obtain the next order. It continues
+until whole-project terminal `COMPLETE`/`BLOCKED`, an explicit user stop, or a
+lawful Supervisor upgrade. On every new round and after context compression,
+the Worker rereads `AGENTS.md` and `WORKFLOW.md`.
+
+Goal health uses only the existing task messages, Courier escalation, and
+Supervisor HOLD. Normal operation has an hourly Supervisor audit; there is no
+message-based Watchdog and no new daemon or Goal state machine. The hourly
+audit may wake an unjustifiably idle Worker, but it never replaces Courier or
+creates a request.
+
+Upgrade immediately for HOLD, ownership/second-writer conflict,
+`HUMAN_REQUIRED`, uncertain irreversible external side effects, permission or
+large-compute approval boundaries, or severe harness damage risk. Ordinary
+technical failures require two different reasonable attempts with no
+substantive progress and no safe local path before one structured Supervisor
+report and pause. New evidence, state progress, or a new recovery phase
+resets that count. Waiting on the same request, diagnosable errors, busy
+recovery with progress, temporary lack of work, and completed checkpoints are
+not upgrade or stop conditions.
+
 ## Courier mode
 
 Authority is user, then the current Chat work order, then the local Agent.
