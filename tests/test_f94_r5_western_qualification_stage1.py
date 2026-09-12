@@ -7,6 +7,8 @@ from types import SimpleNamespace
 import pytest
 
 import scripts.f94_r5_western_qualification_stage1_executor as executor
+from generic_chess.core.actions import BoardMove
+from generic_chess.core.coordinates import Square
 from generic_chess.learning.arena import ArenaGameResult, ArenaPairResult, ArenaSummary
 
 
@@ -53,7 +55,14 @@ def _runner(*, score: float = 0.75, score_by_pair: dict[tuple[int, int], float] 
             owner1 = _game(1, seed * 10 + index, fallback=fallback, horizon=horizon, depth=depth)
             owner0.pair = index
             owner1.pair = index
-            pairs.append(SimpleNamespace(pair_index=index, child_pair_score=score_by_pair.get((seed, index), score), game_child_owner0=owner0, game_child_owner1=owner1))
+            opening = kwargs["openings"].openings[index]
+            for game in (owner0, owner1):
+                game.opening_id = opening.final_position_key
+                game.opening_position_key = opening.final_position_key
+                game.declaration_id = None
+                game.actions = (BoardMove(Square(0, 0), Square(0, 1)),)
+                game.plies = 1
+            pairs.append(SimpleNamespace(pair_index=index, opening_id=opening.final_position_key, child_pair_score=score_by_pair.get((seed, index), score), game_child_owner0=owner0, game_child_owner1=owner1))
         return SimpleNamespace(pairs=tuple(pairs))
 
     return run
@@ -163,16 +172,17 @@ def test_production_arena_summary_shape_is_accepted(tmp_path):
         seed = args[4].opening_seed
         pairs = []
         for pair_index in range(6):
+            opening = kwargs["openings"].openings[pair_index]
             games = tuple(
                 ArenaGameResult(
                     pair=pair_index,
-                    opening_id=f"opening-{seed}-{pair_index}",
-                    opening_position_key=f"opening-key-{seed}-{pair_index}",
+                    opening_id=opening.final_position_key,
+                    opening_position_key=opening.final_position_key,
                     child_owner=owner,
                     winner=owner,
                     result="checkmate",
-                    plies=17,
-                    actions=(),
+                    plies=1,
+                    actions=(BoardMove(Square(0, 0), Square(0, 1)),),
                     final_position_key=f"final-{seed}-{pair_index}-{owner}",
                     search_metrics=(
                         {"engine_role": "child", "completed_depth": 3, "used_fallback": False},
@@ -181,7 +191,7 @@ def test_production_arena_summary_shape_is_accepted(tmp_path):
                 )
                 for owner in (0, 1)
             )
-            pairs.append(ArenaPairResult(pair_index, f"opening-{seed}-{pair_index}", *games))
+            pairs.append(ArenaPairResult(pair_index, opening.final_position_key, *games))
         return ArenaSummary(
             pair_count=6,
             pair_scores=tuple(1.0 for _ in pairs),
@@ -203,6 +213,32 @@ def test_production_arena_summary_shape_is_accepted(tmp_path):
     assert result["derived_compute"] == {"arena_invocations": 3, "arena_pairs": 18, "arena_games": 36, "action_traces": 36}
     assert result["direction"] == "STABLE_POSITIVE_CONTROL"
     assert all(pair["pair_index"] == pair_index for tape in result["tape_results"] for pair_index, pair in enumerate(tape["pairs"]))
+
+
+@pytest.mark.parametrize("mutation", [
+    lambda pair: setattr(pair, "opening_id", "tampered"),
+    lambda pair: setattr(pair.game_child_owner0, "opening_id", "tampered"),
+    lambda pair: setattr(pair.game_child_owner0, "opening_position_key", "tampered"),
+    lambda pair: setattr(pair.game_child_owner0, "pair", 99),
+    lambda pair: setattr(pair.game_child_owner0, "plies", 2),
+])
+def test_evidence_integrity_failure_never_completes(tmp_path, mutation):
+    base = _runner()
+
+    def tampered_runner(*args, **kwargs):
+        summary = base(*args, **kwargs)
+        mutation(summary.pairs[0])
+        return summary
+
+    result = _run(tmp_path, tampered_runner)
+    assert result["status"] == "STAGE1_RESULT_INCOMPLETE"
+    assert result["direction"] == "OPERATIONALLY_UNRESOLVED"
+    assert result["derived_compute"]["arena_pairs"] == 0
+
+
+def test_explicit_censor_precedes_other_stage1_classification():
+    bootstrap = executor.percentile_bootstrap_mean([1.0] * 18)
+    assert executor._classify_stage1([1.0] * 18, [1.0, 1.0, 1.0], ["EXPLICIT_CENSOR"], 0.0, 0.0, bootstrap) == "OPERATIONALLY_UNRESOLVED"
 
 
 def test_operational_failure_is_incomplete_and_unresolved(tmp_path):

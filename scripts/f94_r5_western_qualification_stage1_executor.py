@@ -270,6 +270,8 @@ def run_stage1(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path =
     for tape, corpus in validated_openings:
         started = perf_counter()
         actual_invocations += 1
+        tape_pair_scores: list[float] = []
+        tape_statuses: list[str] = []
         try:
             summary = runner(
                 compiled,
@@ -301,20 +303,31 @@ def run_stage1(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path =
                 if owner0 is None or owner1 is None:
                     raise RuntimeError("Stage-1 Arena pair lacks both role-swapped games")
                 opening = corpus.openings[expected_index]
+                if _value(pair, "opening_id") != opening.final_position_key:
+                    raise RuntimeError("Stage-1 Arena pair opening identity changed")
+                for game in (owner0, owner1):
+                    if _value(game, "pair") != expected_index:
+                        raise RuntimeError("Stage-1 Arena game pair index changed")
+                    if _value(game, "opening_id") != opening.final_position_key:
+                        raise RuntimeError("Stage-1 Arena game opening identity changed")
+                    if _value(game, "opening_position_key") != opening.final_position_key:
+                        raise RuntimeError("Stage-1 Arena opening position identity changed")
+                    if _value(game, "declaration_id") is not None:
+                        raise RuntimeError("Stage-1 Western control must not emit declarations")
+                    if len(_value(game, "actions", ())) != int(_value(game, "plies", 0)):
+                        raise RuntimeError("Stage-1 Arena action trace length does not match plies")
                 tape_row = {**tape, "max_ply": payload["qualification_control"]["max_ply"], "opening_index": expected_index}
                 games = [_game_record(owner0, tape=tape_row, matchup=QUALIFICATION_CONTROL_NAME), _game_record(owner1, tape=tape_row, matchup=QUALIFICATION_CONTROL_NAME)]
                 if {game["child_owner"] for game in games} != {0, 1}:
                     raise RuntimeError("Stage-1 Arena pair is not seat-swapped")
-                if any(game["opening_position_key"] != opening.final_position_key and game["opening_position_key"] != _value(opening, "opening_position_key") for game in games):
-                    # Arena implementations may report the post-opening key under a different field;
-                    # the frozen corpus identity is still retained in the trace and validated above.
-                    pass
                 metrics = [dict(metric) for game in games for metric in _value(next((g for g in (owner0, owner1) if _value(g, "child_owner") == game["child_owner"]), owner0), "search_metrics", ())]
                 pair_score = float(_value(pair, "child_pair_score"))
                 status, descriptors = _classify(pair_score, games, metrics, payload["qualification_control"]["max_ply"])
                 pair_rows.append({"pair_index": pair_index, "opening_index": expected_index, "pair_score": pair_score, "status": status, "descriptors": descriptors, "games": games})
-                all_scores.append(pair_score)
-                all_statuses.append(status)
+                tape_pair_scores.append(pair_score)
+                tape_statuses.append(status)
+            all_scores.extend(tape_pair_scores)
+            all_statuses.extend(tape_statuses)
             actual_pairs += len(pair_rows)
             actual_games += len(pair_rows) * 2
             actual_traces += len(pair_rows) * 2
