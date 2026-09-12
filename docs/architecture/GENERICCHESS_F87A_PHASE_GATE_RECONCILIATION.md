@@ -2,6 +2,7 @@
 
 - Charter baseline: `a33ff404d33aef1d6717fc62e05337ae92691540`
 - Reconciled R9 checkpoint: `d4fa4c239dbccbc0889d891927adde8117d7a499`
+- Published contract-correction checkpoint: `d2230cf293f080ac106e1b7b60a68447ad15f5da`
 - Authority: `GENERICCHESS_F87A_RULESET_QUALIFICATION_TOOLBOX_FOUNDATION`
 - Reconciliation result SHA-256: `bc9d7a621e2affca9ffdcaa5835791991ee8f660f0413fbcb3c455bbec3ea03a`
 
