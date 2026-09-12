@@ -1,0 +1,223 @@
+{
+  "bootstrap": {
+    "confidence_level": 0.95,
+    "lower_percentile": 0.025000000000000022,
+    "method": "percentile_bootstrap_mean_pair_score",
+    "resamples": 10000,
+    "sample_scope": "Stage-1's 18 pair scores only",
+    "seed": 9701001,
+    "upper_percentile": 0.975
+  },
+  "budgets": {
+    "action_traces": 36,
+    "arena_games": 36,
+    "arena_invocations": 3,
+    "arena_pairs": 18,
+    "max_depth": 12,
+    "pairs_per_tape": 6,
+    "strongest_nodes_per_move": 4096,
+    "tape_count": 3,
+    "tt_megabytes": 8,
+    "weakest_nodes_per_move": 256,
+    "workers": 1
+  },
+  "direction_rule": {
+    "aggregation": "candidate_level_pooled_across_18_stage1_pairs; old pilots excluded",
+    "depth_censor": "pooled strongest-vs-weakest child completed-depth hit fraction >= 0.5",
+    "horizon_censor": "pooled strongest-vs-weakest max-ply hit fraction >= 0.5",
+    "mixed_or_uncertain": "any tape mean <= 0.5 or pooled CI lower <= 0.5",
+    "stable_positive_control": "all three tape means > 0.5 and independent 18-pair 95% bootstrap CI lower > 0.5",
+    "unresolved": "fallback, explicit censor, or operational failure"
+  },
+  "disallowed_tape_seeds": [
+    9401,
+    9402,
+    9403,
+    9501,
+    9502,
+    9503,
+    9601,
+    9602,
+    9603
+  ],
+  "experiment": "GENERICCHESS-F94-R5-WESTERN-QUALIFICATION-CONTROL-STAGE1-V1",
+  "not_public_builtin": true,
+  "opening_corpora": [
+    {
+      "corpus_id": "a7ba24177fe4896866e3180df17f415bc3b425991047703f2881c691a8415008",
+      "opening_count": 6,
+      "openings": [
+        {
+          "action_count": 4,
+          "final_position_key": "26ec35bf6653c73d77de50a689f13e6f1850739bcedec325d9f78b0213a1235b",
+          "index": 0,
+          "opening_seed": 9701000,
+          "target_plies": 4
+        },
+        {
+          "action_count": 3,
+          "final_position_key": "4b2ad2359ca813bdc64e5f3426ba7cef57e3b557a3ef01a2418fe5c05f0cdd4c",
+          "index": 1,
+          "opening_seed": 9701100,
+          "target_plies": 3
+        },
+        {
+          "action_count": 2,
+          "final_position_key": "9c9c62fed87955da874624e0edf9dfcf0be82291178c2648b1da34a6a0be4fd1",
+          "index": 2,
+          "opening_seed": 9701200,
+          "target_plies": 2
+        },
+        {
+          "action_count": 4,
+          "final_position_key": "e0de17d6e4d3676bcef7e8d8a73c6333bb4507ca7d550452753660399f75c24b",
+          "index": 3,
+          "opening_seed": 9701300,
+          "target_plies": 4
+        },
+        {
+          "action_count": 2,
+          "final_position_key": "363a64d180efae3f5fddd382a5c69e6a8737078ca0c33fb387d79738c027efd6",
+          "index": 4,
+          "opening_seed": 9701400,
+          "target_plies": 2
+        },
+        {
+          "action_count": 5,
+          "final_position_key": "7444b2b83136291921f7a833ddad7899697e3c2bf0c0b31e741c3d3b7e9b5357",
+          "index": 5,
+          "opening_seed": 9701500,
+          "target_plies": 5
+        }
+      ],
+      "tape_seed": 9701
+    },
+    {
+      "corpus_id": "fcf365ad5d619230a5a6b5bce66acbea4b96206d10abb58f97e56dc8be4e8937",
+      "opening_count": 6,
+      "openings": [
+        {
+          "action_count": 4,
+          "final_position_key": "4b396f675d78a5399a31a0ff3dee2950cc909e811ca741c0817c866f1e98fa84",
+          "index": 0,
+          "opening_seed": 9702000,
+          "target_plies": 4
+        },
+        {
+          "action_count": 4,
+          "final_position_key": "4afe6746232f94ab2008cdbe5147ad7f15c1e6ea1ebde0908867df3c5c02a982",
+          "index": 1,
+          "opening_seed": 9702100,
+          "target_plies": 4
+        },
+        {
+          "action_count": 3,
+          "final_position_key": "7f3841d43eee34f33d4ac4219a809f7be3f55abe9ff95baa3b7b78ed31120b20",
+          "index": 2,
+          "opening_seed": 9702200,
+          "target_plies": 3
+        },
+        {
+          "action_count": 4,
+          "final_position_key": "209ee0a75456365c917f8acd64a259a40d9e0452e2cefa2fcc958ecaf6e5af88",
+          "index": 3,
+          "opening_seed": 9702300,
+          "target_plies": 4
+        },
+        {
+          "action_count": 5,
+          "final_position_key": "49e3e736d31efd4af1ef3b86f897b513e8297e365cc2cb2c3916d759d941a8d3",
+          "index": 4,
+          "opening_seed": 9702400,
+          "target_plies": 5
+        },
+        {
+          "action_count": 6,
+          "final_position_key": "01a03836be9be38a78bae63b120758c365f87c2ffed95cc07fdc315a3eda4296",
+          "index": 5,
+          "opening_seed": 9702500,
+          "target_plies": 6
+        }
+      ],
+      "tape_seed": 9702
+    },
+    {
+      "corpus_id": "c3d82ef51d80d0151720bd0d9726f936ae051c079d67b563e935f680641f8ac9",
+      "opening_count": 6,
+      "openings": [
+        {
+          "action_count": 5,
+          "final_position_key": "e6ed1b310df0f1cd1641215bdcd163bbc39ac1129c3735417bdad98f9771fb29",
+          "index": 0,
+          "opening_seed": 9703000,
+          "target_plies": 5
+        },
+        {
+          "action_count": 2,
+          "final_position_key": "cf3301fbeaaa55f4e5448c42b88f04ddd9450a8716a8f2fb0d706134e8512c78",
+          "index": 1,
+          "opening_seed": 9703100,
+          "target_plies": 2
+        },
+        {
+          "action_count": 6,
+          "final_position_key": "ffc124e91bb8f571bbca808bcdbf6f7a940aaf68d2dc6e56c5ee9150eb2ff59d",
+          "index": 2,
+          "opening_seed": 9703200,
+          "target_plies": 6
+        },
+        {
+          "action_count": 2,
+          "final_position_key": "5b1ef2b824dd04c0ccbcbfee113864e311083ff00793a4f4a3c425b77647438b",
+          "index": 3,
+          "opening_seed": 9703300,
+          "target_plies": 2
+        },
+        {
+          "action_count": 2,
+          "final_position_key": "ec3d0ba9a31d18f506341ede7f7d3a92e1eeedbfc805fc57cb3f6c6e36ab4757",
+          "index": 4,
+          "opening_seed": 9703400,
+          "target_plies": 2
+        },
+        {
+          "action_count": 5,
+          "final_position_key": "e2c46a04717ad90ff62a1b25c17bd509110d967917f547d66c863af0c28dad22",
+          "index": 5,
+          "opening_seed": 9703500,
+          "target_plies": 5
+        }
+      ],
+      "tape_seed": 9703
+    }
+  ],
+  "prep_fingerprint": "eaa79501376c37fb2493743447929cfae6813d3a17e631456ed93e0c107b8f3d",
+  "protocol_source_sha": "f037acdffc1021efa946db16803b880648568085",
+  "qualification_control": {
+    "evaluator_identity": "learnable-material-v1",
+    "gameplay_delta": [
+      "repetition_limit: 100000 -> 5"
+    ],
+    "max_ply": 1000,
+    "name": "western_chess_qualification_control_v1",
+    "production_ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+    "qualification_checkpoint_id": "9ff9facc235577e3631c499cee549916935153d47ef12dd2a6bfc18409ba9b74",
+    "qualification_ruleset_fingerprint": "314729d06f8a47fc653779fe5b1eab6e6b9f2e923436c1c79a6f06cd12812e14",
+    "repetition_limit": 5,
+    "repetition_policy": "draw"
+  },
+  "qualification_prep_artifact": "docs/architecture/GENERICCHESS_F94_R5_WESTERN_QUALIFICATION_CONTROL_PREP.json",
+  "qualification_prep_artifact_sha256": "bf5b0189aec82766d1095be8ee3396e05e0a9ed8a029bbbae3312621c78286b2",
+  "result_authority": "OBSERVED_NOT_POOLABLE; no Layer-D PASS",
+  "result_free": true,
+  "schema": "generic-chess-f94-r5-western-qualification-control-stage1-prep-v1",
+  "source_production_builder": "generic_chess.rules.western_chess.build_western_chess_ruleset",
+  "source_production_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+  "source_sandbox_sha": "f037acdffc1021efa946db16803b880648568085",
+  "status": "PREP_FROZEN",
+  "tape_seeds": [
+    9701,
+    9702,
+    9703
+  ]
+}

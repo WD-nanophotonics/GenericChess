@@ -240,3 +240,44 @@ five ended in checkmate and one ended in the qualification control's expected
 This is qualification evidence only. It does not authorize a production
 ruleset change, Layer-D PASS, Stage 1, full R5, additional games, or pooling
 with any prior pilot.
+
+## Qualification-control Stage-1 PREP and executor
+
+Chat's next phase is frozen as a result-free Stage-1 calibration, with no
+Arena or Heavy execution in this work package. The PREP is
+`docs/architecture/GENERICCHESS_F94_R5_WESTERN_QUALIFICATION_CONTROL_STAGE1_PREP.json`
+with schema
+`generic-chess-f94-r5-western-qualification-control-stage1-prep-v1`, PREP
+fingerprint
+`eaa79501376c37fb2493743447929cfae6813d3a17e631456ed93e0c107b8f3d`, and
+byte SHA
+`18775f480c7602b535ac4ebbc234a0deeb11ce29cbfb66eaaf31d51a2cc5deee`.
+Its protocol/source commit is `f037acdffc1021efa946db16803b880648568085`.
+
+Stage-1 uses only new tapes `9701/9702/9703` and explicitly rejects the old
+`9401/9402/9501/9502/9601/9602/9603` seeds and corpora. It freezes the same
+qualification-control identity (`repetition_limit=5`, checkpoint
+`9ff9facc235577e3631c499cee549916935153d47ef12dd2a6bfc18409ba9b74`, and
+`learnable-material-v1`) with child `4096` nodes/move, parent `256`, depth
+`12`, TT `8 MiB`, and workers `1`. Each tape has six role-swapped pairs, for
+exactly 3 Arena invocations, 18 pairs, 36 games, and 36 action traces. The
+old pilot is permanently excluded from every effect estimate, confidence
+interval, and pool.
+
+The executor is
+`scripts/f94_r5_western_qualification_stage1_executor.py`. It validates all
+18 frozen opening identities before native compilation, uses one compiled
+ruleset object through profile/checkpoint/native/opening/Arena, and fails
+closed on identity, count, fallback, censor, or operational mismatches. It
+computes a deterministic 10,000-resample, 95% percentile bootstrap over the
+Stage-1 18 pair scores only (`seed=9701001`). Classification is unresolved for
+fallback, explicit censor, or operational failure; depth/horizon censoring
+uses pooled fractions at `0.5`; otherwise `STABLE_POSITIVE_CONTROL` requires
+all three tape means above `0.5` and the independent 18-pair bootstrap lower
+bound above `0.5`, with `MIXED_OR_UNCERTAIN` otherwise. The result remains
+control-only and cannot produce Layer-D PASS.
+
+The Stage-1 focused suite covers exact shape and disjointness, deterministic
+bootstrap, single-object authority, unresolved precedence, operational
+failure, and pre-run opening validation. This phase intentionally creates no
+Arena result, Heavy envelope, or Stage-1 evidence.
