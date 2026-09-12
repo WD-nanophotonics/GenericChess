@@ -1,0 +1,442 @@
+{
+  "arena_executed": false,
+  "bootstrap": {
+    "confidence_level": 0.95,
+    "historical_pools_enter_bootstrap": false,
+    "method": "percentile_bootstrap_mean_pair_score",
+    "resamples": 10000,
+    "sample_scope": "the current R6 matchup's 18 pair scores only"
+  },
+  "boundary": {
+    "a_c_prerequisite": "F86N-R1-V4-3",
+    "layer_d_compute_invocations": 0,
+    "short_circuit": "A/C prerequisite boundary remains zero Layer-D compute"
+  },
+  "budget_ladder": [
+    256,
+    1024,
+    4096
+  ],
+  "budgets": {
+    "games_per_control": 108,
+    "invocations_per_control": 9,
+    "max_depth": 12,
+    "pairs_per_control": 54,
+    "total_games": 216,
+    "total_invocations": 18,
+    "total_pairs": 108,
+    "total_traces": 216,
+    "traces_per_control": 108,
+    "tt_megabytes": 8,
+    "workers": 1
+  },
+  "classification": {
+    "authority_rule": "both positive controls stable and boundary zero compute => CALIBRATION_READY",
+    "depth_fraction_threshold": 0.5,
+    "horizon_fraction_threshold": 0.5,
+    "operational_statuses": [
+      "EXPLICIT_CENSOR",
+      "FALLBACK",
+      "EVIDENCE_INTEGRITY_FAILURE",
+      "OPERATIONALLY_UNRESOLVED"
+    ],
+    "positive_rule": "each matchup has three tape means > 0.5 and independent 18-pair 95% bootstrap CI lower > 0.5",
+    "precedence": [
+      "DEFER",
+      "DEFER_DEPTH_CENSORED",
+      "DEFER_HORIZON_CENSORED",
+      "DEFER_NONMONOTONE_OR_UNCERTAIN",
+      "STABLE_MONOTONE_POSITIVE"
+    ]
+  },
+  "controls": [
+    {
+      "checkpoint_id": "9ff9facc235577e3631c499cee549916935153d47ef12dd2a6bfc18409ba9b74",
+      "evaluator_identity": "learnable-material-v1",
+      "max_ply": 1000,
+      "name": "western_chess_qualification_control_v1",
+      "opening_corpora": [
+        {
+          "corpus_id": "78903149af605e5058147844497db5243065f8d26d6c53c878dff0dc0d3a57fd",
+          "opening_count": 6,
+          "openings": [
+            {
+              "action_count": 2,
+              "final_position_key": "7915dfe0a10b6cafcad168ca7f9cb45a64fbdeec23eaf34d49783e38fb68309b",
+              "index": 0,
+              "opening_seed": 9801000,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "40e4eded79ee59abfed629c4153b181722b6d776ff6e32123ba012e44a289f31",
+              "index": 1,
+              "opening_seed": 9801100,
+              "target_plies": 2
+            },
+            {
+              "action_count": 3,
+              "final_position_key": "2d9d7702332bd3c5a4e1c31ab85d05bf0a99d7f86383cbd327553e3f0c9ae1ea",
+              "index": 2,
+              "opening_seed": 9801200,
+              "target_plies": 3
+            },
+            {
+              "action_count": 4,
+              "final_position_key": "734c01cd5db8fd9a750eff317482d2aaccfb5f735f774901471ff33af3eb5e2d",
+              "index": 3,
+              "opening_seed": 9801300,
+              "target_plies": 4
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "8e64eb105dd2ae51699249637aef68b32a165c2a6a4842dcf7289cba31a7ff6a",
+              "index": 4,
+              "opening_seed": 9801400,
+              "target_plies": 5
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "25da021ee440cbbd6ac452bde01ea727630f72a1f1f0365a63cc714c9c9d56c7",
+              "index": 5,
+              "opening_seed": 9801500,
+              "target_plies": 5
+            }
+          ],
+          "tape_seed": 9801
+        },
+        {
+          "corpus_id": "ecae3cb3e1e1d2e1769d43db5c0658b51f021a9132a723d64452427a290b5b01",
+          "opening_count": 6,
+          "openings": [
+            {
+              "action_count": 2,
+              "final_position_key": "ee3a661bb2284867023e50e951a00b6a74f021560a84c9d13905a344b9af2bd8",
+              "index": 0,
+              "opening_seed": 9802000,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "d04c9e1148c3bebd716b8d4802067c557023ed1cc8a65b0d8fa3f6d369b7e089",
+              "index": 1,
+              "opening_seed": 9802100,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "e3965e3e834d73e855c893cc4cf8ca64bb445202d8ed81b35f67d5f6e87dc610",
+              "index": 2,
+              "opening_seed": 9802200,
+              "target_plies": 2
+            },
+            {
+              "action_count": 4,
+              "final_position_key": "737734a7a1ed85740b92d4fb2b1e9981ca71d422949f454cdf253866dc264eaf",
+              "index": 3,
+              "opening_seed": 9802300,
+              "target_plies": 4
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "2e9924787e09225b288ae7d8cff20b5a0b8a9ad83a83aef57f69565b9516efc6",
+              "index": 4,
+              "opening_seed": 9802400,
+              "target_plies": 5
+            },
+            {
+              "action_count": 3,
+              "final_position_key": "36ce04f41fa065e3c5fb09a15cccea2e70f92acbebaac5971933c1a6b2e027ea",
+              "index": 5,
+              "opening_seed": 9802500,
+              "target_plies": 3
+            }
+          ],
+          "tape_seed": 9802
+        },
+        {
+          "corpus_id": "138a45e8d4f55f149eeb737bf46cc790b08155b4b1a4b3e7cd669adc06a808c7",
+          "opening_count": 6,
+          "openings": [
+            {
+              "action_count": 4,
+              "final_position_key": "5f7fea7b3b5c99b568e38056e70e49eb868b5a1f31d2da5f1f2a1551fc186cb3",
+              "index": 0,
+              "opening_seed": 9803000,
+              "target_plies": 4
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "2486e43bc6aacb3ccbcc5b84215279d0ae21b6a9038aca8489d58528491581a4",
+              "index": 1,
+              "opening_seed": 9803100,
+              "target_plies": 5
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "75e1ef1fbd03c8f46985e16752ac137356be195f5d62e5b584c83982750c4a1c",
+              "index": 2,
+              "opening_seed": 9803200,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "1522cd3dbe87df3f7b2fc370641008e865e65ce25fa6a8601251ea4f5446a18f",
+              "index": 3,
+              "opening_seed": 9803300,
+              "target_plies": 2
+            },
+            {
+              "action_count": 3,
+              "final_position_key": "fe7fe3873eb61f03224edc5be2b4e91c3913f837c0b29bffca706b1972b816d5",
+              "index": 4,
+              "opening_seed": 9803400,
+              "target_plies": 3
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "46a1c7ba3deba2c1daef735fcd9c394b17f6e6ac2c333830613f07bf4194cc84",
+              "index": 5,
+              "opening_seed": 9803500,
+              "target_plies": 2
+            }
+          ],
+          "tape_seed": 9803
+        }
+      ],
+      "ruleset_fingerprint": "314729d06f8a47fc653779fe5b1eab6e6b9f2e923436c1c79a6f06cd12812e14"
+    },
+    {
+      "checkpoint_id": "f9b4ef2c22e1d3226bbc32f10e36ce25ad99074b23c4df8cd55ca0797971e2e5",
+      "evaluator_identity": "learnable-material-v1",
+      "max_ply": 512,
+      "name": "standard_shogi",
+      "opening_corpora": [
+        {
+          "corpus_id": "a039fa149b30060afd9cebac6afcd2c000aa91e735b38ea252bce52d134dc621",
+          "opening_count": 6,
+          "openings": [
+            {
+              "action_count": 2,
+              "final_position_key": "e970194a957c62c1bec682c83ff5285e42ecb9590c67f7d89b2d2749b9e68438",
+              "index": 0,
+              "opening_seed": 9801000,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "99282eb84e8e9220adaaef0f1c33a30a0047c247895e41eef55e35b51cbf9637",
+              "index": 1,
+              "opening_seed": 9801100,
+              "target_plies": 2
+            },
+            {
+              "action_count": 3,
+              "final_position_key": "cf90e53502de40a25db3cef7db94ef3d1f3e671401ff824e4efb62f4948d2a6c",
+              "index": 2,
+              "opening_seed": 9801200,
+              "target_plies": 3
+            },
+            {
+              "action_count": 4,
+              "final_position_key": "48ee98e45e0ee2778aeee7234eea149001fe1a4c71bc53ec24f4b5685e946e23",
+              "index": 3,
+              "opening_seed": 9801300,
+              "target_plies": 4
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "c8abb003057d3cfac5df18e877cf72e9cd1a8d03143d797d94c807f07f81f5cb",
+              "index": 4,
+              "opening_seed": 9801400,
+              "target_plies": 5
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "f96a045b93492a2fd992efbead8ac3530fff68bbf01dc155fc703de7342baa20",
+              "index": 5,
+              "opening_seed": 9801500,
+              "target_plies": 5
+            }
+          ],
+          "tape_seed": 9801
+        },
+        {
+          "corpus_id": "bc75f1d6bbfd9e54ce11abb43520c73e8367de1675bec30efd827c0639bfaa58",
+          "opening_count": 6,
+          "openings": [
+            {
+              "action_count": 2,
+              "final_position_key": "402c38a258c97a75a4dd8671626050b26a8952b361e9cbbf29ec37eb5639db37",
+              "index": 0,
+              "opening_seed": 9802000,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "bca44800defdb036cede99831cd0b102b949f9e76ea58c34981147b766aea7e0",
+              "index": 1,
+              "opening_seed": 9802100,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "031929bb0f946c28436067e90579e47963d9981e40ab3c787653ff6eafe38a59",
+              "index": 2,
+              "opening_seed": 9802200,
+              "target_plies": 2
+            },
+            {
+              "action_count": 4,
+              "final_position_key": "633f0e0eeb9450e8d4838b8ebc8a1b31204f82b570dfc0227baedc0df849247a",
+              "index": 3,
+              "opening_seed": 9802300,
+              "target_plies": 4
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "9c812eb37e22c411c91ad126a64f3f400d394d55916620d7de0e52bac72be4ba",
+              "index": 4,
+              "opening_seed": 9802400,
+              "target_plies": 5
+            },
+            {
+              "action_count": 3,
+              "final_position_key": "d5b6a8e58d696c9fd8edcf039f961174e5b3d189d22c13ce0aa89ea2b0e3fe75",
+              "index": 5,
+              "opening_seed": 9802500,
+              "target_plies": 3
+            }
+          ],
+          "tape_seed": 9802
+        },
+        {
+          "corpus_id": "e7fe4602d7269ca9834c377773c3c1ab75b376f0b0be400b92ab3553699a254b",
+          "opening_count": 6,
+          "openings": [
+            {
+              "action_count": 4,
+              "final_position_key": "94f1c591380fc7bef802424c4040948af9b4ca93400eac39d942250bb2c56286",
+              "index": 0,
+              "opening_seed": 9803000,
+              "target_plies": 4
+            },
+            {
+              "action_count": 5,
+              "final_position_key": "a7e344e42e498aeb8f9ab0deee42eff48fe59521404d64d6c2e9f9449ddc5819",
+              "index": 1,
+              "opening_seed": 9803100,
+              "target_plies": 5
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "9792296c004a58d3b6652762a3de900033a155679f10aac77182c5ce0a6c856d",
+              "index": 2,
+              "opening_seed": 9803200,
+              "target_plies": 2
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "d658bc63914e1173a42783df13f9e17635b38cf6289ceebb24ff68d6b43e2752",
+              "index": 3,
+              "opening_seed": 9803300,
+              "target_plies": 2
+            },
+            {
+              "action_count": 3,
+              "final_position_key": "4f56f1900f9b8e5ca62aa8a805dfc0e9b22894181ffa0c01b571a6032e12ffe4",
+              "index": 4,
+              "opening_seed": 9803400,
+              "target_plies": 3
+            },
+            {
+              "action_count": 2,
+              "final_position_key": "e580513d67627becad0dda143237308fc481f1d76aab5c14c9c8038ebdd1b06d",
+              "index": 5,
+              "opening_seed": 9803500,
+              "target_plies": 2
+            }
+          ],
+          "tape_seed": 9803
+        }
+      ],
+      "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    }
+  ],
+  "disallowed_tape_seeds": [
+    9401,
+    9402,
+    9403,
+    9501,
+    9502,
+    9503,
+    9601,
+    9602,
+    9603,
+    9701,
+    9702,
+    9703
+  ],
+  "experiment": "GENERICCHESS-F94-R6-LAYER-D-AUTHORITY-REFRESH-V1",
+  "fixed_sample_authority": true,
+  "historical_exclusions": {
+    "p0": false,
+    "qualification_pilot_960x": false,
+    "r2": false,
+    "r3": false,
+    "r5": false,
+    "stage1_970x": false,
+    "western_r5_old_940x": false
+  },
+  "layer_d_compute_authorized": false,
+  "matchups": [
+    {
+      "bootstrap_seed": 9801101,
+      "child_nodes_per_move": 1024,
+      "game_count": 36,
+      "name": "1024_vs_256",
+      "pair_count": 18,
+      "pairs_per_tape": 6,
+      "parent_nodes_per_move": 256,
+      "tape_count": 3,
+      "trace_count": 36
+    },
+    {
+      "bootstrap_seed": 9801102,
+      "child_nodes_per_move": 4096,
+      "game_count": 36,
+      "name": "4096_vs_1024",
+      "pair_count": 18,
+      "pairs_per_tape": 6,
+      "parent_nodes_per_move": 1024,
+      "tape_count": 3,
+      "trace_count": 36
+    },
+    {
+      "bootstrap_seed": 9801103,
+      "child_nodes_per_move": 4096,
+      "game_count": 36,
+      "name": "4096_vs_256",
+      "pair_count": 18,
+      "pairs_per_tape": 6,
+      "parent_nodes_per_move": 256,
+      "tape_count": 3,
+      "trace_count": 36
+    }
+  ],
+  "opening_identity_scope": "all control/tape opening identities prevalidated before first Arena invocation",
+  "prep_fingerprint": "a029c1a47542230b34b5f7a38c3a212d0f70c309d4c837c28e6e4cf11c597859",
+  "production_western_unchanged": true,
+  "protocol_source_sha": "621ea925952fb0189e97f59f2e5bba255eed6e9f",
+  "result_free": true,
+  "result_schema": "generic-chess-f94-r6-layer-d-authority-refresh-result-v1",
+  "schema": "generic-chess-f94-r6-layer-d-authority-refresh-prep-v1",
+  "source_sandbox_sha": "621ea925952fb0189e97f59f2e5bba255eed6e9f",
+  "standard_shogi_positive_semantic_control": true,
+  "status": "PREP_FROZEN",
+  "tape_seeds": [
+    9801,
+    9802,
+    9803
+  ]
+}

@@ -36,8 +36,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULT_PATH = ROOT / ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json"
 FROZEN_PREP_ARTIFACT = "docs/architecture/GENERICCHESS_F94_R6_LAYER_D_AUTHORITY_REFRESH_PREP.json"
 # Filled after the two-step protocol/provenance freeze.
-FROZEN_PROTOCOL_SHA = "__PROTOCOL_SHA__"
-FROZEN_PREP_SHA256 = "__PREP_SHA256__"
+FROZEN_PROTOCOL_SHA = "621ea925952fb0189e97f59f2e5bba255eed6e9f"
+FROZEN_PREP_SHA256 = "1cc910c3339a9a3c6407fd2860fe1fe63414ec26f8bd845257b57eaab3028696"
 
 
 def _value(value: Any, key: str, default: Any = None) -> Any:
@@ -197,7 +197,8 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
     native_compiler = native_compiler or compile_native_semantic_rules
     by_control: dict[str, Any] = {}
     total = {"arena_invocations": 0, "arena_pairs": 0, "arena_games": 0, "action_traces": 0}
-    for control, compiled, _ in openings:
+    control_entries = {control["name"]: (control, compiled) for control, compiled, _ in openings}
+    for control, compiled in control_entries.values():
         name = control["name"]
         profile = build_ruleset_profile(compiled, EvaluationConfig())
         checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
@@ -259,7 +260,8 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
             matchup_rows.append({"name": matchup_name, "pair_count": len(scores), "tape_mean_pair_scores": tape_means, "bootstrap": bootstrap, "pooled_censoring": {"child_depth_ceiling_fraction": depth_hits / depth_count if depth_count else 0.0, "strongest_vs_weakest_horizon_fraction": horizon_hits / horizon_games if horizon_games else 0.0}, "classification": classification, "statuses": statuses, "tape_results": tape_results})
         by_control[name] = {"matchups": matchup_rows, "classification": classify_control(matchup_rows, control_statuses), "invocations": len(matchup_rows) * TAPE_COUNT}
     authority = "CALIBRATION_READY" if all(row["classification"] == "STABLE_MONOTONE_POSITIVE" for row in by_control.values()) else "DEFER_CONTROL_NOT_READY"
-    result = {"schema": RESULT_SCHEMA, "status": "R6_RESULT_COMPLETE", "experiment": EXPERIMENT, "prep_artifact": FROZEN_PREP_ARTIFACT, "prep_artifact_sha256": _sha256(prep_path), "prep_fingerprint": payload["prep_fingerprint"], "protocol_source_sha": payload["protocol_source_sha"], "result_sandbox_sha": _git_sha(root), "controls": by_control, "authority": authority, "boundary": {"a_c_prerequisite": "F86N-R1-V4-3", "layer_d_compute_authorized": False, "layer_d_compute_invocations": 0}, "derived_compute": total, "fixed_sample_authority": True, "pooled": False, "p0_observations_pooled": False, "r2_observations_pooled": False, "r3_observations_pooled": False, "r5_observations_pooled": False, "qualification_pilot_observations_pooled": False, "stage1_observations_pooled": False, "production_western_changed": False}
+    complete = (total["arena_invocations"], total["arena_pairs"], total["arena_games"], total["action_traces"]) == (TOTAL_INVOCATIONS, TOTAL_PAIRS, TOTAL_GAMES, TOTAL_TRACES)
+    result = {"schema": RESULT_SCHEMA, "status": "R6_RESULT_COMPLETE" if complete else "R6_RESULT_INCOMPLETE", "experiment": EXPERIMENT, "prep_artifact": FROZEN_PREP_ARTIFACT, "prep_artifact_sha256": _sha256(prep_path), "prep_fingerprint": payload["prep_fingerprint"], "protocol_source_sha": payload["protocol_source_sha"], "result_sandbox_sha": _git_sha(root), "controls": by_control, "authority": authority, "boundary": {"a_c_prerequisite": "F86N-R1-V4-3", "layer_d_compute_authorized": False, "layer_d_compute_invocations": 0}, "derived_compute": total, "fixed_sample_authority": True, "pooled": False, "p0_observations_pooled": False, "r2_observations_pooled": False, "r3_observations_pooled": False, "r5_observations_pooled": False, "qualification_pilot_observations_pooled": False, "stage1_observations_pooled": False, "production_western_changed": False}
     output = Path(output)
     if not output.is_absolute(): output = root / output
     output.parent.mkdir(parents=True, exist_ok=True)
