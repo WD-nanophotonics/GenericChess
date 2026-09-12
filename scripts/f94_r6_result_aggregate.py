@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from generic_chess.learning.serialization import stable_sha256
+from generic_chess.learning.arena import _pair_from_dict
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULT_PATH = ROOT / ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json"
@@ -128,6 +129,52 @@ def _telemetry_censoring(progress_root: Path, control: str, matchup: str,
             index = payload.get("pair_index")
             if index not in expected_pairs or payload.get("opening_id") != expected_pairs[index]["games"][0]["opening_position_key"]:
                 raise RuntimeError(f"R6 aggregate progress pair identity mismatch: {pair_path}")
+            try:
+                pair = _pair_from_dict(payload, identity_sha256=manifest["identity_sha256"])
+            except (KeyError, TypeError, ValueError) as exc:
+                raise RuntimeError(f"R6 aggregate progress pair schema/identity mismatch: {pair_path}") from exc
+            expected_games = {
+                int(game["child_owner"]): game
+                for game in expected_pairs[index]["games"]
+            }
+            if pair.pair_index != index or set(expected_games) != {0, 1}:
+                raise RuntimeError(f"R6 aggregate progress pair index/owners mismatch: {pair_path}")
+            for game in (pair.game_child_owner0, pair.game_child_owner1):
+                expected_game = expected_games.get(game.child_owner)
+                if expected_game is None:
+                    raise RuntimeError(f"R6 aggregate progress child-owner mismatch: {pair_path}")
+                comparable = {
+                    "pair": game.pair,
+                    "opening_id": game.opening_id,
+                    "opening_position_key": game.opening_position_key,
+                    "child_owner": game.child_owner,
+                    "winner": game.winner,
+                    "result": game.result,
+                    "plies": game.plies,
+                    "actions": [dict(action) if isinstance(action, dict) else action for action in payload[
+                        "game_child_owner0" if game.child_owner == 0 else "game_child_owner1"
+                    ]["actions"]],
+                    "final_position_key": game.final_position_key,
+                    "declaration_id": game.declaration_id,
+                }
+                expected_comparable = {
+                    "pair": expected_game["pair_index"],
+                    "opening_id": expected_pairs[index]["games"][0]["opening_position_key"],
+                    "opening_position_key": expected_game["opening_position_key"],
+                    "child_owner": expected_game["child_owner"],
+                    "winner": None,
+                    "result": expected_game["termination_status"],
+                    "plies": expected_game["actual_plies"],
+                    "actions": expected_game["actions"],
+                    "final_position_key": expected_game["final_position_key"],
+                    "declaration_id": expected_game["declaration_id"],
+                }
+                # RESULT action traces intentionally omit winner; derive it from
+                # the paired checkpoint while requiring every serialized field
+                # that RESULT does carry to match exactly.
+                expected_comparable["winner"] = game.winner
+                if comparable != expected_comparable:
+                    raise RuntimeError(f"R6 aggregate progress game/result mismatch: {pair_path}")
             for game_key in ("game_child_owner0", "game_child_owner1"):
                 game = payload.get(game_key, {})
                 if game.get("pair") != index or not game.get("search_metrics"):

@@ -46,9 +46,10 @@ timing/NPS fields are not included.
 ## Verification
 
 The deterministic extractor was run twice and produced identical JSON. The
-focused R6, arena-integrity, and aggregate tests passed (40 tests), including
+focused R6, arena-integrity, and aggregate tests passed (44 tests), including
 exact 108-pair retention, per-tape mean recomputation, source-SHA fail-closed
 behavior, all four attribution combinations (including the actual Western
-`BOTH` case), wrong-suffix and manifest-config drift checks, and
-progress-evidence fail-closed checks. Runtime result/progress files remain
-ignored and were not added to Git.
+`BOTH` case), wrong-suffix and manifest-config drift checks, exact pair schema /
+identity / owner / opening-integrity mutations, and progress-evidence
+fail-closed checks. Runtime result/progress files remain ignored and were not
+added to Git.

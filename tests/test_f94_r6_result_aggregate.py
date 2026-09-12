@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import shutil
 
 import pytest
 
@@ -127,5 +128,32 @@ def test_progress_manifest_config_drift_fails_closed(tmp_path: Path, monkeypatch
     with pytest.raises(RuntimeError, match="budget/telemetry mismatch"):
         _telemetry_censoring(
             tmp_path, "western_chess_qualification_control_v1", "1024_vs_256", [tape],
+            result=source, prep=prep,
+        )
+
+
+@pytest.mark.parametrize("mutation, pattern", [
+    (lambda payload: payload.update(schema="tampered"), "schema/identity mismatch"),
+    (lambda payload: payload.update(identity_sha256="tampered"), "schema/identity mismatch"),
+    (lambda payload: payload["game_child_owner0"].update(child_owner=1), "schema/identity mismatch"),
+    (lambda payload: payload["game_child_owner0"].update(opening_position_key="tampered"), "schema/identity mismatch"),
+])
+def test_pair_checkpoint_integrity_is_fail_closed(tmp_path: Path, monkeypatch, mutation, pattern):
+    import scripts.f94_r6_result_aggregate as aggregate_module
+
+    source_dir = next(PROGRESS.glob("western_chess_qualification_control_v1-1024_vs_256-9801-*"))
+    target = tmp_path / source_dir.name
+    shutil.copytree(source_dir, target)
+    pair_path = target / "pair-000000.json"
+    payload = json.loads(pair_path.read_text(encoding="utf-8"))
+    mutation(payload)
+    pair_path.write_text(json.dumps(payload), encoding="utf-8")
+    monkeypatch.setattr(aggregate_module, "_progress_directory", lambda *args, **kwargs: target)
+    source = json.loads(RESULT.read_text(encoding="utf-8"))
+    prep = json.loads(PREP_PATH.read_text(encoding="utf-8"))
+    tape = source["controls"]["western_chess_qualification_control_v1"]["matchups"][0]["tape_results"][0]
+    with pytest.raises(RuntimeError, match=pattern):
+        _telemetry_censoring(
+            target, "western_chess_qualification_control_v1", "1024_vs_256", [tape],
             result=source, prep=prep,
         )
