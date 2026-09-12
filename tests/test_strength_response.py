@@ -30,7 +30,7 @@ def _prep():
 
 
 def _summaries(value=0.7):
-    return {
+    one = {
         key: {"pair_scores": [value] * 6, "search_nodes": 6 * budget}
         for key, budget in (
             ("4x-vs-1x", 1280),
@@ -38,6 +38,9 @@ def _summaries(value=0.7):
             ("16x-vs-1x", 20480),
         )
     }
+    return {tape: {key: dict(row) for key, row in one.items()} for tape in (
+        "tape-11", "tape-22", "tape-33"
+    )}
 
 
 def test_prep_is_result_free_and_freezes_protocol_identity():
@@ -62,20 +65,21 @@ def test_clean_monotone_curve_passes_and_preserves_pair_level_evidence():
     )
     assert result.layer_d_status == "PASS"
     assert result.reason_codes == ()
-    assert result.matchups["16x-vs-1x"]["pair_scores"] == [0.7] * 6
-    assert result.compute_usage["arena_games"] == 36
+    assert result.matchups["16x-vs-1x"]["pair_scores"] == [0.7] * 18
+    assert result.compute_usage["arena_games"] == 108
+    assert set(result.tape_results) == {"tape-11", "tape-22", "tape-33"}
     assert result.behavior_descriptors["search_response_monotonicity"]["value"] is True
 
 
 def test_depth_censoring_and_mixed_tape_are_deferred():
     summaries = _summaries()
-    summaries["16x-vs-1x"]["depth_censored"] = True
+    summaries["tape-11"]["16x-vs-1x"]["depth_censored"] = True
     result = measure_strength_response(prep=_prep(), summaries=summaries)
     assert result.layer_d_status == "DEFER"
     assert result.reason_codes == ("DEPTH_CENSORED",)
 
     mixed = _summaries()
-    mixed["16x-vs-1x"]["pair_scores"] = [0.9, 0.9, 0.9, 0.4, 0.9, 0.9]
+    mixed["tape-11"]["16x-vs-1x"]["pair_scores"] = [0.4] * 6
     result = measure_strength_response(prep=_prep(), summaries=mixed)
     assert result.layer_d_status == "DEFER"
     assert result.reason_codes == ("MIXED_TAPE_RESPONSE",)
@@ -84,14 +88,15 @@ def test_depth_censoring_and_mixed_tape_are_deferred():
 def test_result_rejects_incomplete_or_mismatched_prep():
     with pytest.raises(ValueError, match="exactly pair_count"):
         bad = _summaries()
-        bad["4x-vs-1x"]["pair_scores"] = [0.7]
+        bad["tape-11"]["4x-vs-1x"]["pair_scores"] = [0.7]
         measure_strength_response(prep=_prep(), summaries=bad)
-    with pytest.raises(ValueError, match="does not match PREP"):
+    with pytest.raises(ValueError, match="do not match PREP"):
         measure_strength_response(
             prep=_prep(),
-            opening_corpus=SimpleNamespace(
-                corpus_id="different", openings=(), to_dict=lambda: {}
-            ),
+            opening_corpora=[
+                SimpleNamespace(corpus_id=identity, openings=(), to_dict=lambda: {})
+                for identity in ("different", "tape-22", "tape-33")
+            ],
             summaries=_summaries(),
         )
 
@@ -141,3 +146,88 @@ def test_layer_d_is_diagnostic_unless_skill_bearing_target_is_selected():
     assert "D" in skill.required_layers
     assert "D" in skill.blocking_layers
     assert skill.raw_diagnostics["strength_response"]["schema"] == "generic-chess-strength-response-v1"
+
+
+def test_deferred_layer_d_keeps_legacy_report_status_but_blocks_skill_target():
+    summaries = _summaries()
+    summaries["tape-11"]["16x-vs-1x"]["pair_scores"] = [0.4] * 6
+    result = measure_strength_response(prep=_prep(), summaries=summaries)
+    report = _base_report().with_strength_response(result)
+    assert result.layer_d_status == "DEFER"
+    assert report.overall_status == STATUS_PASS
+    skill = _base_report().with_strength_response(
+        result, qualification_target="SKILL_BEARING"
+    )
+    assert skill.overall_status == "DEFER"
+
+
+def test_mapping_prep_fingerprint_is_tamper_evident():
+    payload = _prep().to_dict()
+    payload["evaluator_identity"] = "different-evaluator"
+    with pytest.raises(ValueError, match="fingerprint"):
+        measure_strength_response(prep=payload, summaries=_summaries())
+
+
+def test_real_runner_requires_identical_checkpoint_and_evaluator_identity():
+    compiled = SimpleNamespace(ruleset_fingerprint="rules-v1")
+    parent = SimpleNamespace(
+        checkpoint_id="candidate-v1", ruleset_fingerprint="rules-v1",
+        evaluator_version="eval-v1",
+    )
+    child = SimpleNamespace(
+        checkpoint_id="candidate-v2", ruleset_fingerprint="rules-v1",
+        evaluator_version="eval-v1",
+    )
+    with pytest.raises(ValueError, match="checkpoint identity must be identical"):
+        measure_strength_response(
+            compiled, None, parent, child, _prep(), summaries=_summaries()
+        )
+
+
+def test_real_runner_consumes_three_corpora_for_each_of_three_matchups():
+    corpora = [
+        SimpleNamespace(corpus_id=identity, openings=(), to_dict=lambda: {})
+        for identity in ("corpus-a", "corpus-b", "corpus-c")
+    ]
+    prep = prepare_strength_response(
+        SimpleNamespace(ruleset_fingerprint="rules-v1"),
+        evaluator_identity="eval-v1",
+        candidate_fingerprint="candidate-v1",
+        opening_corpora=corpora,
+        pair_count=6,
+        tape_seeds=(11, 22, 33),
+        bootstrap_resamples=100,
+    )
+    calls = []
+
+    def fake_runner(_compiled, _rules, _parent, _child, config, corpus, **_kwargs):
+        calls.append((corpus.corpus_id, config.parent_nodes_per_move, config.child_nodes_per_move))
+        return {"pair_scores": [0.75] * 6}
+
+    checkpoint = SimpleNamespace(
+        checkpoint_id="candidate-v1", ruleset_fingerprint="rules-v1",
+        evaluator_version="eval-v1",
+    )
+    result = measure_strength_response(
+        SimpleNamespace(ruleset_fingerprint="rules-v1"), None,
+        checkpoint, checkpoint, prep, opening_corpora=corpora,
+        arena_runner=fake_runner,
+    )
+    assert len(calls) == 9
+    assert {row[0] for row in calls} == {"corpus-a", "corpus-b", "corpus-c"}
+    assert result.compute_usage["arena_tapes"] == 3
+    assert result.layer_d_status == "PASS"
+
+
+def test_a_or_c_failure_short_circuits_layer_d_runner():
+    report = _base_report()
+    report.layers["A"] = "FAIL"
+    calls = []
+    result = measure_strength_response(
+        prep=_prep(),
+        summaries=_summaries(),
+        base_report=report,
+        arena_runner=lambda *args, **kwargs: calls.append(args),
+    )
+    assert result.reason_codes == ("PREREQUISITE_A_C_NOT_PASS",)
+    assert calls == []

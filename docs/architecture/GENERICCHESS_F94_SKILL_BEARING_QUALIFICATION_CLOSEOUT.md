@@ -24,10 +24,19 @@ corpus across all three paired comparisons: 4x-vs-1x, 16x-vs-4x, and
 PREP records ruleset, candidate, evaluator, budget, depth, pair, corpus,
 opening/tape seeds, bootstrap, classification, and experiment identities.
 
-RESULT retains pair scores, role swaps, per-opening/tape evidence, paired
-bootstrap intervals, search telemetry, and compute usage. Missing pairs,
-fallbacks, depth-censored searches, mixed tape effects, uncertain curves, and
-inverted responses are `DEFER`; no single quality score is substituted.
+RESULT consumes three independently frozen deterministic opening corpora,
+running all three matchups against each corpus while keeping the corpus fixed
+across its role-swapped pairs. It retains pooled pair scores, per-opening
+role swaps, per-tape aggregates and corpus IDs, paired bootstrap intervals,
+search telemetry, and compute usage. Missing pairs, fallback-heavy runs,
+high-budget depth-ceiling hits at the frozen fraction rule, mixed tape
+effects, uncertain curves, and inverted responses are `DEFER`; no single
+quality score is substituted.
+
+The real-run path fails closed unless parent and child checkpoint IDs are the
+same and their evaluator/ruleset identities match the frozen PREP. A mapping
+PREP is re-hashed before use, and a tampered fingerprint is rejected. If
+Layers A or C do not pass, the Layer-D runner is not invoked.
 
 Layer D remains diagnostic for the legacy `PLAYABILITY` target. Selecting
 `SKILL_BEARING` makes D a blocking admission layer, so A/C failures do not
@@ -35,11 +44,11 @@ consume Layer-D compute and an unmeasured D result cannot admit a skill suite.
 
 ## Verification
 
-Focused F94 protocol tests and the existing F87A qualification contract tests
-pass: 16 passed. Tests use deterministic synthetic Arena summaries for the
-classification and fail-closed cases; no real calibration RESULT is claimed
-by this checkpoint. A real Western Chess / Standard Shogi / boundary pilot
-must remain a separately frozen PREP/RESULT bounded experiment.
+Focused F94-R1 protocol tests and the existing F87A qualification contract
+tests pass: 21 passed. Tests use deterministic synthetic Arena summaries and
+runner seams for classification and fail-closed cases; no real calibration
+RESULT is claimed by this checkpoint. A real Western Chess / Standard Shogi /
+boundary pilot must remain a separately frozen PREP/RESULT bounded experiment.
 
 `QualificationReport` continues to expose Layers A-E and retains the existing
 PLAYABILITY behavior when Layer D is not selected.

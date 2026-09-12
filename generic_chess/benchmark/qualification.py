@@ -181,6 +181,10 @@ class QualificationReport:
             gate for gate in self.non_blocking_gate_names
             if gate in {item.name for item in qualification_gates}
         )
+        if qualification_target == "PLAYABILITY":
+            non_blocking_gate_names = tuple(
+                dict.fromkeys(non_blocking_gate_names + ("layer_d_strength_response",))
+            )
         hard_gates = self.hard_gates
         if qualification_target == "SKILL_BEARING":
             hard_gates = hard_gates + (layer_d_gate,)
