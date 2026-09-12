@@ -30,3 +30,14 @@ failure path and state preservation.
 The three F90 cases passed. No GameRecord schema change, Arena, training,
 evaluator/search change, external engine, Heavy job, or F87A/F88/F89
 requalification was run.
+
+## F90-R1 corrective addendum
+
+Matching-current reopen now preserves the loaded ruleset metadata: generated
+records retain their seed, and file-backed records retain their ruleset path.
+Only an actual automatic built-in switch clears those source fields. The
+metadata is selected in local variables and committed only after replay
+succeeds, preserving the fail-closed behavior.
+
+The focused acceptance now covers both cross-built-in directions, unknown
+fingerprint immutability, and matching generated/file metadata preservation.

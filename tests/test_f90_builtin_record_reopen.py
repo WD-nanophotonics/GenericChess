@@ -14,6 +14,7 @@ from PySide6.QtWidgets import QApplication
 from generic_chess.core.actions import action_is_board
 from generic_chess.core.identity import position_identity_key
 from generic_chess.rules.catalog import build_builtin_ruleset
+from generic_chess.rules.serialization import serialize_ruleset
 from generic_chess.session.serialization import serialize_game_record
 from generic_chess.ui.controller import UIController
 from generic_chess.ui.main_window import MainWindow
@@ -111,3 +112,24 @@ def test_unknown_record_fingerprint_fails_closed_without_mutation(qapp, tmp_path
     assert controller.compiled.ruleset_fingerprint == before_fingerprint
     assert position_identity_key(controller.session.state.position, controller.compiled) == before_key
     assert controller.history_entries() == before_history
+
+
+def test_matching_record_reopen_preserves_source_metadata(qapp, tmp_path):
+    controller = UIController(DictSettingsStore())
+    assert controller.new_game(seed=777)
+    generated_path = tmp_path / "generated-record.json"
+    assert controller.save_record(str(generated_path))
+    assert controller.game_info().seed == 777
+    assert controller.open_record(str(generated_path))
+    assert controller.game_info().seed == 777
+
+    ruleset_path = tmp_path / "western-ruleset.json"
+    ruleset_path.write_text(
+        serialize_ruleset(build_builtin_ruleset("western_chess")), encoding="utf-8"
+    )
+    assert controller.open_ruleset(str(ruleset_path))
+    file_record_path = tmp_path / "file-record.json"
+    assert controller.save_record(str(file_record_path))
+    assert controller.game_info().ruleset_path == str(ruleset_path)
+    assert controller.open_record(str(file_record_path))
+    assert controller.game_info().ruleset_path == str(ruleset_path)

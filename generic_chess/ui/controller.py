@@ -420,6 +420,8 @@ class UIController:
             record = deserialize_game_record(text)
             compiled = self._compiled
             ruleset = self._ruleset
+            ruleset_path = self._ruleset_path
+            seed = self._seed
             if compiled is None or compiled.ruleset_fingerprint != record.ruleset_fingerprint:
                 resolved = resolve_builtin_ruleset_by_fingerprint(record.ruleset_fingerprint)
                 if resolved is None:
@@ -433,6 +435,8 @@ class UIController:
                     )
                 _builtin_name, ruleset = resolved
                 compiled = compile_ruleset_for_execution(ruleset)
+                ruleset_path = None
+                seed = None
             session = GameSession.replay(compiled, record)
         except (OSError, SessionRecordError, ValueError) as exc:
             self._last_error = f"cannot open record ({path}): {exc}"
@@ -440,8 +444,8 @@ class UIController:
         self._bump_ai_generation()
         self._ruleset = ruleset
         self._compiled = compiled
-        self._ruleset_path = None
-        self._seed = None
+        self._ruleset_path = ruleset_path
+        self._seed = seed
         self._session = session
         self._display_session = None
         self._actions = list(record.actions)
