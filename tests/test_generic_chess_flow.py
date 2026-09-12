@@ -807,6 +807,83 @@ def test_supervisor_resolution_preserves_unproven_request(monkeypatch, tmp_path,
     assert state["recovery_state"] == "RECOVERED"
 
 
+def test_supervisor_resolution_rebinds_legacy_partially_cleared_request(
+        monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("f" * 20)
+    directory.mkdir(parents=True)
+    request = str(tmp_path / "outbox" / "same-request")
+    response = tmp_path / "outbox" / "same-request" / "response.txt"
+    response.parent.mkdir(parents=True)
+    response.write_text("reply without footer\n", encoding="utf-8")
+    dossier = {"escalation_id": "f" * 20, "worker_thread_id": "worker-1",
+               "worker_host_id": "local", "status": "PENDING",
+               "request_directory": request, "last_probe": {
+                   "request_match": True, "post_submission_reply_found": True,
+                   "request_id": "same-request", "response_path": str(response)}}
+    (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-3"}), encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": None,
+             "active_request_id": "same-request", "escalation_id": "f" * 20,
+             "recovery_state": "RECOVERED", "recovery_timeline": [],
+             "last_response_sha256": "o" * 64}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-3")
+
+    flow.command_supervisor_claim(tmp_path, SimpleNamespace(escalation_id="f" * 20))
+    capsys.readouterr()
+    flow.command_supervisor_resolve(
+        tmp_path, SimpleNamespace(escalation_id="f" * 20, action="RESUME_WORKER", detail_file=None)
+    )
+    capsys.readouterr()
+
+    assert state["recovery_state"] == "IDLE"
+    assert state["last_response_path"] == str(response)
+    assert state["last_response_sha256"] == flow.hashlib.sha256(
+        b"reply without footer\n").hexdigest()
+
+
+def test_supervisor_resolution_rejects_cross_request_rebind(
+        monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("1" * 20)
+    directory.mkdir(parents=True)
+    request = str(tmp_path / "outbox" / "same-request")
+    response = tmp_path / "outbox" / "same-request" / "response.txt"
+    response.parent.mkdir(parents=True)
+    response.write_text("reply without footer\n", encoding="utf-8")
+    dossier = {"escalation_id": "1" * 20, "worker_thread_id": "worker-1",
+               "worker_host_id": "local", "status": "PENDING",
+               "request_directory": request, "last_probe": {
+                   "request_match": True, "post_submission_reply_found": True,
+                   "request_id": "same-request", "response_path": str(response)}}
+    (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
+    (runtime / "supervisor.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-4"}), encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": None,
+             "active_request_id": "different-request", "escalation_id": "1" * 20,
+             "recovery_state": "RECOVERED", "recovery_timeline": [],
+             "last_response_path": "old-response.txt", "last_response_sha256": "o" * 64}
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-4")
+
+    flow.command_supervisor_claim(tmp_path, SimpleNamespace(escalation_id="1" * 20))
+    capsys.readouterr()
+    flow.command_supervisor_resolve(
+        tmp_path, SimpleNamespace(escalation_id="1" * 20, action="RESUME_WORKER", detail_file=None)
+    )
+    capsys.readouterr()
+
+    assert state["recovery_state"] == "RECOVERED"
+    assert state["last_response_path"] == "old-response.txt"
+    assert state["last_response_sha256"] == "o" * 64
+
+
 def test_update_response_state_does_not_bind_path_before_footer_validation(
         monkeypatch, tmp_path):
     response = tmp_path / "response.txt"

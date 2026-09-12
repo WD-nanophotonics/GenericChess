@@ -1963,17 +1963,29 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
         state["active_request_directory"] = None
         state["last_response_path"] = None
         state["work_order_active"] = False
+    probe = dossier.get("last_probe") if isinstance(dossier.get("last_probe"), dict) else {}
+    active_request = state.get("active_request_directory")
+    same_active_request = (
+        isinstance(active_request, str)
+        and active_request == dossier.get("request_directory")
+    )
+    cleared_same_request = (
+        active_request is None
+        and state.get("escalation_id") == args.escalation_id
+        and (
+            state.get("active_request_id") == probe.get("request_id")
+            or state.get("active_request_id") == Path(dossier.get("request_directory", "")).name
+        )
+    )
     proven_reply = (
         args.action in {"RESUME_WORKER", "RECOVERED"}
-        and isinstance(state.get("active_request_directory"), str)
-        and state.get("active_request_directory") == dossier.get("request_directory")
-        and isinstance(dossier.get("last_probe"), dict)
-        and dossier["last_probe"].get("request_match") is True
-        and dossier["last_probe"].get("post_submission_reply_found") is True
-        and isinstance(dossier["last_probe"].get("response_path"), str)
+        and (same_active_request or cleared_same_request)
+        and probe.get("request_match") is True
+        and probe.get("post_submission_reply_found") is True
+        and isinstance(probe.get("response_path"), str)
     )
     if proven_reply:
-        response_path = Path(dossier["last_probe"]["response_path"])
+        response_path = Path(probe["response_path"])
         try:
             response_text = response_path.read_text(encoding="utf-8-sig")
         except OSError:
