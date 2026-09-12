@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from types import SimpleNamespace
 
 import pytest
@@ -100,6 +101,31 @@ def test_r3_executor_uses_depth_64_and_skips_boundary_before_native_or_arena(tmp
     assert all("r2" not in row for row in result["candidates"])
     boundary = next(row for row in result["candidates"] if row["class"] == "boundary")
     assert boundary["arena_invocations"] == 0 and boundary["tape_results"] == []
+
+
+def test_r3_cli_keeps_generation_source_and_executor_prep_separate(monkeypatch, tmp_path):
+    executor_calls = []
+    generated_calls = []
+
+    def fake_executor(root, prep_path, output):
+        executor_calls.append((root, prep_path, output))
+        return {"status": "R3_RESULT_INCOMPLETE", "candidates": [], "derived_compute": {"arena_invocations": 0}}
+
+    def fake_generate(root, source_path, output):
+        generated_calls.append((root, source_path, output))
+        return {"status": "R3_PREP_FROZEN", "candidates": []}
+
+    monkeypatch.setattr(f94, "run_r3_depth_calibration", fake_executor)
+    monkeypatch.setattr(f94, "build_r3_nonbinding_depth_calibration_prep", fake_generate)
+    monkeypatch.setattr(sys, "argv", ["f94", "--r3-depth-calibration"])
+    f94.main()
+    assert executor_calls == [(f94.ROOT, f94.R3_PREP_PATH, f94.R3_RESULT_PATH)]
+    assert generated_calls == []
+
+    output = tmp_path / "generated-r3-prep.json"
+    monkeypatch.setattr(sys, "argv", ["f94", "--r3-prep-generate", "--r3-prep-output", str(output)])
+    f94.main()
+    assert generated_calls == [(f94.ROOT, f94.STAGE0_PREP_PATH, output)]
 
 
 def test_stage0_direction_prioritizes_fallback_and_depth_censoring():

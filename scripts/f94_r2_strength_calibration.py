@@ -1018,7 +1018,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--result", action="store_true")
     parser.add_argument("--stage0-prep", action="store_true")
-    parser.add_argument("--r3-prep", action="store_true")
+    parser.add_argument("--r3-prep-generate", action="store_true")
     parser.add_argument("--r3-depth-calibration", action="store_true")
     parser.add_argument("--stage0", action="store_true")
     parser.add_argument("--output", type=Path, default=PREP_PATH)
@@ -1026,6 +1026,7 @@ def main() -> None:
     parser.add_argument("--result-output", type=Path, default=RESULT_PATH)
     parser.add_argument("--stage0-prep-output", type=Path, default=STAGE0_PREP_PATH)
     parser.add_argument("--r3-source-prep", type=Path, default=STAGE0_PREP_PATH)
+    parser.add_argument("--r3-prep", type=Path, default=R3_PREP_PATH)
     parser.add_argument("--r3-prep-output", type=Path, default=R3_PREP_PATH)
     parser.add_argument("--r3-result-output", type=Path, default=R3_RESULT_PATH)
     parser.add_argument("--stage0-result-output", type=Path, default=STAGE0_RESULT_PATH)
@@ -1033,11 +1034,11 @@ def main() -> None:
     if args.stage0_prep:
         payload = build_stage0_prep(ROOT, args.prep, args.stage0_prep_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.stage0_prep_output)}, sort_keys=True))
-    elif args.r3_prep:
+    elif args.r3_prep_generate:
         payload = build_r3_nonbinding_depth_calibration_prep(ROOT, args.r3_source_prep, args.r3_prep_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.r3_prep_output)}, sort_keys=True))
     elif args.r3_depth_calibration:
-        payload = run_r3_depth_calibration(ROOT, args.r3_source_prep, args.r3_result_output)
+        payload = run_r3_depth_calibration(ROOT, args.r3_prep, args.r3_result_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.r3_result_output), "arena_invocations": payload["derived_compute"]["arena_invocations"]}, sort_keys=True))
     elif args.stage0:
         payload = run_stage0(ROOT, args.prep, args.stage0_result_output)
