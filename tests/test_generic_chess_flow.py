@@ -1149,6 +1149,32 @@ def test_closeout_rejects_untracked_dirty_or_unpublished_before_browser_dispatch
         flow.dispatch_message(tmp_path, {"active": True}, report, "closeout")
 
 
+def test_closeout_forwards_explicit_evidence_attachments(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    sandbox.mkdir()
+    report = sandbox / "report.md"
+    attachment = sandbox / "plan.json"
+    report.write_text("report\n", encoding="utf-8")
+    attachment.write_text("{}\n", encoding="utf-8")
+    _stub_reference_git(monkeypatch, sandbox)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "chat_message_body", lambda *_args, **_kwargs: "reference\n")
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "update_response_state", lambda *_args, **_kwargs: None)
+    calls = []
+    def fake_courier(_root, *args, **_kwargs):
+        calls.append(args)
+        return {"request_directory": str(tmp_path / "request")} if args[0] == "courier_prepare" else {"event": "response_waiting"}
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    state = {"active": True, "mode": "courier"}
+    flow.dispatch_message(tmp_path, state, report, "closeout", [attachment])
+    prepare = calls[0]
+    assert "--attachment" in prepare
+    assert str(attachment.resolve()) in prepare
+
+
 def test_start_message_remains_inline(monkeypatch, tmp_path):
     sandbox = tmp_path / "sandbox"
     sandbox.mkdir()

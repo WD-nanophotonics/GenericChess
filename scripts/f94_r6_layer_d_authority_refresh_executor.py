@@ -35,7 +35,7 @@ from scripts.f94_r6_layer_d_authority_refresh_prep import (
     BOOTSTRAP_RESAMPLES, BOOTSTRAP_SEEDS, CONFIDENCE_LEVEL, DISALLOWED_TAPE_SEEDS,
     EXPERIMENT, GAMES_PER_MATCHUP, MATCHUPS, MAX_DEPTH, PAIRS_PER_MATCHUP,
     PAIRS_PER_TAPE, PREP_PATH, RESULT_SCHEMA, SCHEMA, TAPE_COUNT, TAPE_SEEDS, TOTAL_GAMES,
-    TOTAL_INVOCATIONS, TOTAL_PAIRS, TOTAL_TRACES, TRACES_PER_MATCHUP, TT_MEGABYTES,
+    TOTAL_INVOCATIONS, TOTAL_PAIRS, TOTAL_TRACES, TRACES_PER_MATCHUP, TT_MEGABYTES, WORKERS,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -188,7 +188,7 @@ def _validate_frozen_prep(payload: dict[str, Any], root: Path, path: Path) -> No
     if any(row.get("pairs_per_tape") != PAIRS_PER_TAPE or row.get("tape_count") != 3 or row.get("pair_count") != PAIRS_PER_MATCHUP or row.get("game_count") != GAMES_PER_MATCHUP or row.get("trace_count") != TRACES_PER_MATCHUP or row.get("bootstrap_seed") != BOOTSTRAP_SEEDS[row["name"]] for row in matchup_rows):
         raise RuntimeError("R6 matchup accounting/bootstrap identity changed")
     budgets = payload.get("budgets", {})
-    expected_budget = {"invocations_per_control": 9, "pairs_per_control": 54, "games_per_control": 108, "traces_per_control": 108, "total_invocations": TOTAL_INVOCATIONS, "total_pairs": TOTAL_PAIRS, "total_games": TOTAL_GAMES, "total_traces": TOTAL_TRACES, "max_depth": MAX_DEPTH, "tt_megabytes": TT_MEGABYTES, "workers": 1}
+    expected_budget = {"invocations_per_control": 9, "pairs_per_control": 54, "games_per_control": 108, "traces_per_control": 108, "total_invocations": TOTAL_INVOCATIONS, "total_pairs": TOTAL_PAIRS, "total_games": TOTAL_GAMES, "total_traces": TOTAL_TRACES, "max_depth": MAX_DEPTH, "tt_megabytes": TT_MEGABYTES, "workers": WORKERS}
     if any(budgets.get(key) != value for key, value in expected_budget.items()):
         raise RuntimeError("R6 total accounting/budget identity changed")
     bootstrap = payload.get("bootstrap", {})
@@ -300,7 +300,7 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
                         ArenaConfig(pairs=PAIRS_PER_TAPE, nodes_per_move=child_nodes,
                                     parent_nodes_per_move=parent_nodes, child_nodes_per_move=child_nodes,
                                     max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES,
-                                    opening_seed=seed, opening_count=PAIRS_PER_TAPE, workers=1),
+                                    opening_seed=seed, opening_count=PAIRS_PER_TAPE, workers=WORKERS),
                         openings=corpus, capture_search_metrics=True)
                     pairs = _summary_pairs(summary)
                     pair_rows = []

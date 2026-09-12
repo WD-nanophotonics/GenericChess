@@ -749,7 +749,8 @@ def chat_message_body(root: Path, source: Path, *, reference_only: bool = False)
     )
 
 
-def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: str) -> None:
+def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: str,
+                     attachments: list[Path] | None = None) -> None:
     sandbox = sandbox_root(root)
     require_clean(sandbox)
     require_synced(sandbox, "sandbox")
@@ -770,10 +771,16 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         + "GENERICCHESS_PROMOTION=APPROVE|HOLD\n",
         encoding="utf-8",
     )
-    prepared = courier(
-        root, "courier_prepare", "--project-id", PROJECT_ID,
+    prepare_args = [
+        "courier_prepare", "--project-id", PROJECT_ID,
         "--idempotency-key", key, "--message-file", str(generated),
-    )
+    ]
+    for attachment in attachments or ():
+        resolved_attachment = Path(attachment).resolve()
+        if not resolved_attachment.is_file():
+            raise FlowError(f"Courier attachment does not exist: {resolved_attachment}")
+        prepare_args.extend(("--attachment", str(resolved_attachment)))
+    prepared = courier(root, *prepare_args)
     request_directory = prepared.get("request_directory")
     if not isinstance(request_directory, str):
         raise FlowError("Courier prepare did not return a request directory")
@@ -2049,7 +2056,8 @@ def command_closeout(root: Path, args: argparse.Namespace) -> None:
     require_no_supervisor_hold(root)
     if state.get("mode") != "courier":
         raise FlowError("closeout is only available in courier mode")
-    dispatch_message(root, state, Path(args.report_file).resolve(), "closeout")
+    dispatch_message(root, state, Path(args.report_file).resolve(), "closeout",
+                     [Path(value).resolve() for value in getattr(args, "attachment", [])])
 
 
 def command_promote(root: Path, args: argparse.Namespace) -> None:
@@ -2469,6 +2477,8 @@ def parser() -> argparse.ArgumentParser:
     resend.set_defaults(handler=command_supervisor_resend)
     closeout = sub.add_parser("closeout")
     closeout.add_argument("--report-file", required=True)
+    closeout.add_argument("--attachment", action="append", default=[],
+                          help="explicit evidence file to upload with the closeout")
     closeout.set_defaults(handler=command_closeout)
     promote = sub.add_parser("promote")
     promote.add_argument("--candidate", required=True)

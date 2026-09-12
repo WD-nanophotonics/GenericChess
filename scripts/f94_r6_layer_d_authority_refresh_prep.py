@@ -54,6 +54,7 @@ TOTAL_GAMES = 216
 TOTAL_TRACES = 216
 MAX_DEPTH = 12
 TT_MEGABYTES = 8
+WORKERS = 4
 BOOTSTRAP_RESAMPLES = 10_000
 CONFIDENCE_LEVEL = 0.95
 BOOTSTRAP_SEEDS = {
@@ -158,7 +159,7 @@ def build_prep(root: Path = ROOT, output: Path = PREP_PATH) -> dict[str, Any]:
             "total_traces": TOTAL_TRACES,
             "max_depth": MAX_DEPTH,
             "tt_megabytes": TT_MEGABYTES,
-            "workers": 1,
+            "workers": WORKERS,
         },
         "classification": {
             "precedence": ["DEFER", "DEFER_DEPTH_CENSORED", "DEFER_HORIZON_CENSORED", "DEFER_NONMONOTONE_OR_UNCERTAIN", "STABLE_MONOTONE_POSITIVE"],

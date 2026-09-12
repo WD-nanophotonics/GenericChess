@@ -39,6 +39,7 @@ def test_exact_r6_accounting_and_fixed_ladder(tmp_path: Path):
     assert payload["budgets"]["total_games"] == TOTAL_GAMES == TOTAL_TRACES == 216
     assert tuple(payload["tape_seeds"]) == TAPE_SEEDS
     assert payload["fixed_sample_authority"] is True
+    assert payload["budgets"]["workers"] == 4
 
 
 def test_all_openings_are_prevalidated_before_runner(tmp_path: Path):
