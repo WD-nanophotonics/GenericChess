@@ -42,8 +42,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULT_PATH = ROOT / ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json"
 FROZEN_PREP_ARTIFACT = "docs/architecture/GENERICCHESS_F94_R6_LAYER_D_AUTHORITY_REFRESH_PREP.json"
 # Filled after the two-step protocol/provenance freeze.
-FROZEN_PROTOCOL_SHA = "621ea925952fb0189e97f59f2e5bba255eed6e9f"
-FROZEN_PREP_SHA256 = "1cc910c3339a9a3c6407fd2860fe1fe63414ec26f8bd845257b57eaab3028696"
+FROZEN_PROTOCOL_SHA = "2140cee87194902e53fd35185147fd26bb58373c"
+FROZEN_PREP_SHA256 = "30d4405e1eccdd0f321a8e7c60594bb38defe294f8532063cdac4b2daceb7210"
 
 
 def _value(value: Any, key: str, default: Any = None) -> Any:
