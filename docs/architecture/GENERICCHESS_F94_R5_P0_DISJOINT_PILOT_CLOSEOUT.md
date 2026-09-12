@@ -213,3 +213,30 @@ single executable-object authority, 1/6 versus 3/6 pooled horizon and depth
 censoring, positive/negative/mixed direction, fallback precedence,
 operational failure, six complete traces, evaluator mismatch, and RESULT
 provenance. No Heavy envelope or qualification pilot was created or run.
+
+## Qualification-control pilot execution
+
+The first and only authorized qualification-control run was executed after
+R1 hardening under the exact versioned small-or-medium resource envelope and
+compute plan. The run was bound to sandbox
+`8e92f933dcab91be6d566c9d6e030e1a059562f0`, PREP byte SHA
+`bf5b0189aec82766d1095be8ee3396e05e0a9ed8a029bbbae3312621c78286b2`, compute
+plan SHA `43f55b12b47d5eb29f6ec168a9769b2c3470cf03114f9eb534c5db83f6c8ccaa`,
+and resource-envelope SHA
+`09ad2f979f23d07e8510c5522f74f8c45b66e932b3aa719b0b32a7667488e19a`. Heavy
+run `f94-r5-western-qualification-control-20260912-v1-36701320ec5f`
+completed with exit code 0; the ignored result artifact has SHA256
+`76ba0ae0b0692481262b7f7c2c52b96215fb94b195d09b89931becce683539f4`.
+
+The result is `QUALIFICATION_CONTROL_RESULT_COMPLETE` and remains explicitly
+control-only, not Layer-D authority, not poolable with P0/R2/R3/R5, and leaves
+the production ruleset unchanged. It contains exactly 3 role-swapped pairs,
+6 games, and 6 action traces. Pooled pair score is `0.9166666666666666` with
+`POSITIVE_DIRECTION`; tape scores are `9601: 1.0`, `9602: 1.0`, and
+`9603: 0.75`. All six games avoided the 1000-ply and child-depth ceilings;
+five ended in checkmate and one ended in the qualification control's expected
+`repetition` result. Pooled horizon and child-depth censoring are both zero.
+
+This is qualification evidence only. It does not authorize a production
+ruleset change, Layer-D PASS, Stage 1, full R5, additional games, or pooling
+with any prior pilot.
