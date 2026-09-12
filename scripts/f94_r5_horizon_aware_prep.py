@@ -7,6 +7,7 @@ interprets R3 observations.  Its only output is the next immutable PREP.
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 import subprocess
 import sys
@@ -35,8 +36,9 @@ from scripts.f94_r2_strength_calibration import (
 )
 
 
-PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R5_HORIZON_AWARE_PREP.json"
-EXPERIMENT = "GENERICCHESS-F94-R5-HORIZON-AWARE-STRENGTH-PREP"
+PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R5_R1_HORIZON_AWARE_PREP.json"
+AUTHORITY_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R2_STRENGTH_RESPONSE_PREP.json"
+EXPERIMENT = "GENERICCHESS-F94-R5-R1-HORIZON-AWARE-STRENGTH-PREP"
 MAX_DEPTH = 12
 EMPIRICAL_GATE = 0.5
 
@@ -52,7 +54,7 @@ def _ruleset_max_ply(control: dict[str, Any]) -> int:
     return int(ruleset.max_ply)
 
 
-def _candidate(control: dict[str, Any], report: dict[str, Any]) -> dict[str, Any]:
+def _candidate(control: dict[str, Any], authority: dict[str, Any]) -> dict[str, Any]:
     compiled, profile = _ruleset_for(control)
     checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
     corpora = tuple(
@@ -80,10 +82,10 @@ def _candidate(control: dict[str, Any], report: dict[str, Any]) -> dict[str, Any
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
         "checkpoint_id": checkpoint.checkpoint_id,
         "evaluator_identity": checkpoint.evaluator_version,
-        "layer_a_status": report["layers"]["A"],
-        "layer_c_status": report["layers"]["C"],
+        "layer_a_status": authority["layer_a_status"],
+        "layer_c_status": authority["layer_c_status"],
         "layer_d_prerequisite": (
-            "READY" if report["layers"]["A"] == "PASS" and report["layers"]["C"] == "PASS"
+            "READY" if authority["layer_a_status"] == "PASS" and authority["layer_c_status"] == "PASS"
             else "SHORT_CIRCUIT"
         ),
         "prep": prep.to_dict(),
@@ -101,12 +103,19 @@ def _candidate(control: dict[str, Any], report: dict[str, Any]) -> dict[str, Any
 
 def build_prep(root: Path = ROOT, output: Path = PREP_PATH) -> dict[str, Any]:
     controls = {control["name"]: control for control in _controls(root)}
-    reports = json.loads((root / "artifacts/f87a_ruleset_qualification/reports.json").read_text(encoding="utf-8"))
+    authority_path = root / AUTHORITY_PATH.relative_to(ROOT)
+    authority_payload = json.loads(authority_path.read_text(encoding="utf-8"))
+    authority_rows = {row["name"]: row for row in authority_payload["candidates"]}
     payload = {
-        "schema": "generic-chess-f94-r5-horizon-aware-prep-v1",
+        "schema": "generic-chess-f94-r5-horizon-aware-prep-v2",
         "status": "PREP_FROZEN",
         "experiment": EXPERIMENT,
         "source_sandbox_sha": _git_sha(root),
+        "protocol_source_sha": _git_sha(root),
+        "qualification_authority": {
+            "path": AUTHORITY_PATH.relative_to(ROOT).as_posix(),
+            "sha256": hashlib.sha256(authority_path.read_bytes()).hexdigest(),
+        },
         "result_free": True,
         "r3_result_used": False,
         "budgets": {
@@ -138,7 +147,7 @@ def build_prep(root: Path = ROOT, output: Path = PREP_PATH) -> dict[str, Any]:
             ],
             "semantics": "observational telemetry only; it does not alter search, TT, evaluator, or termination",
         },
-        "candidates": [_candidate(controls[name], reports[name]) for name in TARGET_NAMES],
+        "candidates": [_candidate(controls[name], authority_rows[name]) for name in TARGET_NAMES],
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")

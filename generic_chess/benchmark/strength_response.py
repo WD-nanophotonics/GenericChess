@@ -30,7 +30,7 @@ from ..learning.statistics import bootstrap_pair_mean_ci
 
 STRENGTH_RESPONSE_SCHEMA = "generic-chess-strength-response-v1"
 PREP_SCHEMA = "generic-chess-strength-response-prep-v1"
-HORIZON_AWARE_PREP_SCHEMA = "generic-chess-strength-response-horizon-aware-prep-v1"
+HORIZON_AWARE_PREP_SCHEMA = "generic-chess-strength-response-horizon-aware-prep-v2"
 ACTION_TRACE_SCHEMA = "generic-chess-strength-response-action-trace-v1"
 DEFAULT_BUDGETS = (256, 1024, 4096)
 DEFAULT_MATCHUPS = ((1024, 256), (4096, 1024), (4096, 256))
@@ -253,6 +253,7 @@ def _summary_payload(summary: ArenaSummary | Mapping[str, Any]) -> dict[str, Any
                 _game_payload(second),
             ],
         })
+    flattened_games = [game for tape in tapes for game in tape["games"]]
     return {
         "pair_count": summary.pair_count,
         "pair_scores": list(pair_scores),
@@ -260,6 +261,10 @@ def _summary_payload(summary: ArenaSummary | Mapping[str, Any]) -> dict[str, Any
         "bootstrap_low": summary.bootstrap_low,
         "bootstrap_high": summary.bootstrap_high,
         "tapes": tapes,
+        # R5 consumes game-level terminal and replay telemetry.  Keep this
+        # flattened view alongside the paired representation so a reducer
+        # cannot silently mistake a real ArenaSummary for zero games.
+        "games": flattened_games,
         "game_wins": summary.game_wins,
         "game_draws": summary.game_draws,
         "game_losses": summary.game_losses,
@@ -364,10 +369,34 @@ def _horizon_and_trace_contract(
         for matchup, summary in matchups.items():
             games = summary.get("games", ())
             hits = 0
+            expected_games = 2 * prep.pair_count
+            if len(games) != expected_games:
+                raise ValueError(
+                    f"{tape_id}/{matchup} must contain exactly {expected_games} seat-swapped games"
+                )
+            seen_pair_owners: set[tuple[int, int]] = set()
             for game_index, game in enumerate(games):
                 if not isinstance(game, Mapping):
-                    continue
+                    raise ValueError(f"{tape_id}/{matchup} contains a non-mapping game")
                 termination = str(game.get("termination_status", game.get("result", "")))
+                pair_index = game.get("pair_index", game.get("pair"))
+                child_owner = game.get("child_owner")
+                required = {
+                    "termination_status": termination,
+                    "actual_plies": game.get("actual_plies", game.get("plies")),
+                    "opening_position_key": game.get("opening_position_key"),
+                    "final_position_key": game.get("final_position_key"),
+                    "pair_index": pair_index,
+                    "child_owner": child_owner,
+                }
+                if any(value is None or value == "" for value in required.values()):
+                    raise ValueError(f"{tape_id}/{matchup} game telemetry is incomplete")
+                if child_owner not in (0, 1) or not isinstance(pair_index, int):
+                    raise ValueError(f"{tape_id}/{matchup} game pair/owner identity is invalid")
+                pair_owner = (pair_index, child_owner)
+                if pair_owner in seen_pair_owners:
+                    raise ValueError(f"{tape_id}/{matchup} duplicates a seat-swapped game")
+                seen_pair_owners.add(pair_owner)
                 max_ply_hit = termination == "max_ply"
                 hits += int(max_ply_hit)
                 actions = [dict(action) for action in game.get("actions", ())]
@@ -382,8 +411,8 @@ def _horizon_and_trace_contract(
                     "opening_corpus_id": tape_id,
                     "matchup": matchup,
                     "game_index": game_index,
-                    "pair_index": game.get("pair_index", game.get("pair")),
-                    "child_owner": game.get("child_owner"),
+                    "pair_index": pair_index,
+                    "child_owner": child_owner,
                     "budget_roles": {
                         "parent_nodes_per_move": budget_roles[0],
                         "child_nodes_per_move": budget_roles[1],
@@ -399,6 +428,13 @@ def _horizon_and_trace_contract(
                 }
                 record["action_trace_sha256"] = stable_sha256(record)
                 rows.append(record)
+            expected_pair_owners = {
+                (pair_index, child_owner)
+                for pair_index in range(prep.pair_count)
+                for child_owner in (0, 1)
+            }
+            if seen_pair_owners != expected_pair_owners:
+                raise ValueError(f"{tape_id}/{matchup} lacks a complete seat-swapped pair set")
             total = len(games)
             horizon_by_tape[tape_id][matchup] = {
                 "max_ply_hits": hits,
@@ -446,8 +482,14 @@ def _classify(
     high_budget_ceiling_hit_fraction = (
         depth_hits / depth_total if depth_total else 0.0
     )
-    trace_contract = _horizon_and_trace_contract(prep, tape_results)
-    horizon_fraction = trace_contract["strongest_vs_weakest_pooled_horizon"]["fraction"]
+    trace_contract = (
+        _horizon_and_trace_contract(prep, tape_results)
+        if prep.schema == HORIZON_AWARE_PREP_SCHEMA else None
+    )
+    horizon_fraction = (
+        trace_contract["strongest_vs_weakest_pooled_horizon"]["fraction"]
+        if trace_contract is not None else 0.0
+    )
     explicit_censored = any(_recursive_flags(row)[0] for row in all_payload)
     censored = explicit_censored
     if prep.schema == HORIZON_AWARE_PREP_SCHEMA:

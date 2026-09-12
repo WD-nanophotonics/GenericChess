@@ -18,6 +18,10 @@ from generic_chess.benchmark.strength_response import (
     prepare_strength_response,
 )
 from generic_chess.benchmark.strength_response import _depth_ceiling_stats
+from generic_chess.benchmark.strength_response import _summary_payload
+from generic_chess.core.actions import BoardMove
+from generic_chess.core.coordinates import Square
+from generic_chess.learning.arena import ArenaGameResult, ArenaPairResult, ArenaSummary
 
 
 def test_depth_ceiling_fraction_uses_only_the_strong_budget_role():
@@ -73,15 +77,16 @@ def _r5_summaries(*, horizon_hit=False, child_depths=(3, 3, 3)):
         for matchup in ("4x-vs-1x", "16x-vs-4x", "16x-vs-1x"):
             games = []
             for index in range(2):
-                games.append({
-                    "pair_index": index,
-                    "child_owner": index % 2,
-                    "termination_status": "max_ply" if horizon_hit and matchup == "16x-vs-1x" and index == 0 else "draw",
-                    "actual_plies": 20 if horizon_hit and matchup == "16x-vs-1x" and index == 0 else 7,
-                    "opening_position_key": f"{tape}-opening-{index}",
-                    "final_position_key": f"{tape}-{matchup}-{index}",
-                    "actions": [{"kind": "board", "from": [0, 0], "to": [0, 1], "promotion_target_id": None}],
-                })
+                for child_owner in (0, 1):
+                    games.append({
+                        "pair_index": index,
+                        "child_owner": child_owner,
+                        "termination_status": "max_ply" if horizon_hit and matchup == "16x-vs-1x" and index == 0 else "draw",
+                        "actual_plies": 20 if horizon_hit and matchup == "16x-vs-1x" and index == 0 else 7,
+                        "opening_position_key": f"{tape}-opening-{index}",
+                        "final_position_key": f"{tape}-{matchup}-{index}",
+                        "actions": [{"kind": "board", "from": [0, 0], "to": [0, 1], "promotion_target_id": None}],
+                    })
             metric_rows = [
                 {"engine_role": "parent", "completed_depth": 8},
                 *[{"engine_role": "child", "completed_depth": depth} for depth in child_depths],
@@ -164,12 +169,60 @@ def test_r5_action_trace_is_stable_and_binds_identity_without_affecting_result()
     second_trace = second.behavior_descriptors["action_trace_contract"]["value"]
     assert first.layer_d_status == second.layer_d_status == "PASS"
     assert first_trace["schema"] == ACTION_TRACE_SCHEMA
-    assert len(first_trace["action_traces"]) == 18
+    assert len(first_trace["action_traces"]) == 36
     assert first_trace["action_traces"] == second_trace["action_traces"]
     record = first_trace["action_traces"][0]
     assert record["tape_id"] == record["opening_corpus_id"]
     assert record["budget_roles"] == {"parent_nodes_per_move": 256, "child_nodes_per_move": 1024}
     assert record["actions"] and record["action_trace_sha256"]
+
+
+def _real_arena_summary(*, horizon_hit=False):
+    pairs = []
+    for pair_index in range(2):
+        games = []
+        for child_owner in (0, 1):
+            games.append(ArenaGameResult(
+                pair=pair_index,
+                opening_id=f"opening-{pair_index}",
+                opening_position_key=f"opening-key-{pair_index}",
+                child_owner=child_owner,
+                winner=None,
+                result="max_ply" if horizon_hit and pair_index == 0 else "draw",
+                plies=20 if horizon_hit and pair_index == 0 else 7,
+                actions=(BoardMove(Square(0, 0), Square(0, 1)),),
+                final_position_key=f"final-{pair_index}-{child_owner}",
+            ))
+        pairs.append(ArenaPairResult(pair_index, f"opening-{pair_index}", *games))
+    return ArenaSummary(
+        pair_count=2, pair_scores=(0.5, 0.5), mean_pair_score=0.5,
+        child_better_pairs=0, tied_pairs=2, child_worse_pairs=0,
+        bootstrap_low=0.5, bootstrap_high=0.5, game_wins=0, game_draws=4,
+        game_losses=0, game_score_rate=0.5, pairs=tuple(pairs),
+    )
+
+
+def test_r5_real_arenasummary_shape_produces_complete_trace_and_horizon_denominator():
+    summaries = {
+        tape: {matchup: _summary_payload(_real_arena_summary()) for matchup in ("4x-vs-1x", "16x-vs-4x", "16x-vs-1x")}
+        for tape in ("tape-11", "tape-22", "tape-33")
+    }
+    result = measure_strength_response(prep=_r5_prep(), summaries=summaries)
+    trace = result.behavior_descriptors["action_trace_contract"]["value"]
+    assert len(trace["action_traces"]) == 36
+    assert trace["strongest_vs_weakest_pooled_horizon"]["games"] == 12
+
+    summaries["tape-11"]["16x-vs-1x"] = _summary_payload(_real_arena_summary(horizon_hit=True))
+    result = measure_strength_response(prep=_r5_prep(), summaries=summaries)
+    assert result.behavior_descriptors["action_trace_contract"]["value"]["strongest_vs_weakest_pooled_horizon"]["games"] == 12
+    assert result.behavior_descriptors["action_trace_contract"]["value"]["strongest_vs_weakest_pooled_horizon"]["max_ply_hits"] == 2
+
+
+def test_r5_rejects_missing_game_telemetry_instead_of_treating_it_as_zero():
+    summaries = _r5_summaries()
+    summaries["tape-11"]["16x-vs-1x"]["games"].pop()
+    with pytest.raises(ValueError, match="exactly 4 seat-swapped games"):
+        measure_strength_response(prep=_r5_prep(), summaries=summaries)
 
 
 def test_result_rejects_incomplete_or_mismatched_prep():
