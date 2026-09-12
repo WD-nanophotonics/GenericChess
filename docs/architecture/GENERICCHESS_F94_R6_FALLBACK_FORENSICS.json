@@ -1,0 +1,1425 @@
+{
+  "all_observed_fallbacks_are_low_budget_pre_iteration": true,
+  "authority": "descriptive_only",
+  "blocking_or_review_count": 0,
+  "experiment": "GENERICCHESS-F94-R6-LAYER-D-AUTHORITY-REFRESH-V1",
+  "fallback_category_counts": {
+    "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK": 29
+  },
+  "fallback_count": 29,
+  "fallback_matchup_counts": {
+    "1024_vs_256": 29
+  },
+  "fallback_records": [
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 55,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 55,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 57,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 57,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 59,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 59,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 61,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 61,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 65,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 65,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 67,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 67,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 69,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 69,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 75,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 75,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 77,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 77,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 79,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 79,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 81,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 81,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 83,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 83,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 85,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 85,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 87,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 87,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 93,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 93,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 95,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 95,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 97,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 97,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 99,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 99,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 101,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 101,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 105,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "639a6f6b150283094e96aac63de34209c0575b9b4f54fb1992f2076fb877bcad",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "d93223d967c38541c621a359be2d9a47b6636afd19f37c5c65840dd27b306bff",
+      "pair_index": 5,
+      "ply": 105,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "5f1935272cf030d7e61d3ba32d95c4f26118bf98a4559fe8a20207908b0df908",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9801,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 164,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 164,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 170,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 170,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 176,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 176,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 184,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 184,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 186,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 186,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 188,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 188,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 190,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 190,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 192,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 192,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    },
+    {
+      "child_owner": 1,
+      "classification": "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK",
+      "completed_depth": 0,
+      "control": "standard_shogi",
+      "decision_index": 194,
+      "decision_kind": "action",
+      "engine_role": "parent",
+      "invocation_identity_sha256": "fbd11ca057fa5551f2725a0056b66716f659b72e0cd8622faa9586f23690c9d7",
+      "matchup": "1024_vs_256",
+      "nodes": 256,
+      "nodes_budget": 256,
+      "pair_checkpoint_sha256": "c4f2220e16d2083f082c80e429206fa56493609f148dafef0284caceca94e2bf",
+      "pair_index": 0,
+      "ply": 194,
+      "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+      "progress_manifest_sha256": "74ac36df37dc6830cad6905048f8d68bd95a11fa2d6ffc45a580694badb76aaa",
+      "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+      "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+      "tape_seed": 9802,
+      "termination_reason": "node_budget",
+      "used_fallback": true
+    }
+  ],
+  "fallback_role_counts": {
+    "parent": 29
+  },
+  "invocation_counts": {
+    "standard_shogi-1024_vs_256-9801-b4412a283291e4d1": 20,
+    "standard_shogi-1024_vs_256-9802-ea38e5d456cb931c": 9
+  },
+  "prep_artifact_sha256": "78b935c3cb5391851bd8a8a574d25ac69714f030a49a01e6006c1d7d8133b8ba",
+  "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+  "prospective_r7_rule": "not_selected",
+  "r6_classifier_unchanged": true,
+  "response_matrix": [
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 0,
+      "tape_seed": 9801
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 1,
+      "tape_seed": 9801
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 2,
+      "tape_seed": 9801
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 3,
+      "tape_seed": 9801
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 4,
+      "tape_seed": 9801
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "FALLBACK"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 5,
+      "tape_seed": 9801
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "FALLBACK"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 0,
+      "tape_seed": 9802
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        }
+      },
+      "pair_index": 1,
+      "tape_seed": 9802
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 2,
+      "tape_seed": 9802
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 3,
+      "tape_seed": 9802
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 4,
+      "tape_seed": 9802
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.25,
+          "status": "NEGATIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 5,
+      "tape_seed": 9802
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 0,
+      "tape_seed": 9803
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 1,
+      "tape_seed": 9803
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 2,
+      "tape_seed": 9803
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 3,
+      "tape_seed": 9803
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 4,
+      "tape_seed": 9803
+    },
+    {
+      "control": "standard_shogi",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        }
+      },
+      "pair_index": 5,
+      "tape_seed": 9803
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        }
+      },
+      "pair_index": 0,
+      "tape_seed": 9801
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 1,
+      "tape_seed": 9801
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 2,
+      "tape_seed": 9801
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 3,
+      "tape_seed": 9801
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 4,
+      "tape_seed": 9801
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 5,
+      "tape_seed": 9801
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 0,
+      "tape_seed": 9802
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 1,
+      "tape_seed": 9802
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 2,
+      "tape_seed": 9802
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 3,
+      "tape_seed": 9802
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 4,
+      "tape_seed": 9802
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 5,
+      "tape_seed": 9802
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 0,
+      "tape_seed": 9803
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        }
+      },
+      "pair_index": 1,
+      "tape_seed": 9803
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.0,
+          "status": "NEGATIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 2,
+      "tape_seed": 9803
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 3,
+      "tape_seed": 9803
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.5,
+          "status": "MIXED_OR_UNCERTAIN"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.25,
+          "status": "NEGATIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 4,
+      "tape_seed": 9803
+    },
+    {
+      "control": "western_chess_qualification_control_v1",
+      "matchups": {
+        "1024_vs_256": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_1024": {
+          "pair_score": 0.75,
+          "status": "POSITIVE_DIRECTION"
+        },
+        "4096_vs_256": {
+          "pair_score": 1.0,
+          "status": "POSITIVE_DIRECTION"
+        }
+      },
+      "pair_index": 5,
+      "tape_seed": 9803
+    }
+  ],
+  "schema": "generic-chess-f94-r6-fallback-forensics-v1",
+  "source_audit": {
+    "arena_telemetry": {
+      "fallback_field": "used_fallback is copied from the native semantic search result as a boolean.",
+      "integrity_guard": "_validate_game_telemetry requires one metric per ply plus an optional declaration and validates role budgets.",
+      "metric_alignment": "search_metrics is appended once per search decision; action index equals ply and a terminal declaration, when present, is the final index.",
+      "producer": "generic_chess/learning/arena.py:_play_one_game"
+    },
+    "authority_boundary": "This artifact is descriptive evidence only. It does not alter the frozen R6 classifier or promote any prospective R7 rule.",
+    "semantic_search": {
+      "fallback_order": [
+        "declaration win",
+        "neutral declaration",
+        "deterministic minimum legal action"
+      ],
+      "first_iteration_gate": "completed_iteration is set only after a full iterative negamax iteration returns with no control interruption; fallback is entered only when no full iteration completed.",
+      "interpretation": "node_budget with completed_depth=0 is a legal pre-first-iteration root fallback; time/cancel/internal outcomes remain operational or abort evidence and are not merged with it.",
+      "producer": "generic_chess/_native/native_module.c:semantic_engine_search",
+      "termination_mapping": {
+        "1": "node_budget",
+        "2": "time_budget",
+        "3": "cancelled",
+        "4": "internal_error"
+      }
+    }
+  },
+  "source_result_path": ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json",
+  "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+  "western_response_summary": {
+    "interpretation": "mixed-or-lower outcomes span all six opening indices across the three tapes; strict negative outcomes are limited to two openings on tape 9803.",
+    "matchup": "4096_vs_1024",
+    "rows": 18,
+    "score_le_half_pair_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "scores_le_half": 11,
+    "strict_negative_scores": 2,
+    "strict_negative_tape_seeds": [
+      9803
+    ]
+  }
+}
