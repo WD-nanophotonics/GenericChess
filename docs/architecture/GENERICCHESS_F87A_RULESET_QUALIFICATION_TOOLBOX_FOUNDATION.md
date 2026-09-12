@@ -1,6 +1,6 @@
 # F87A ruleset qualification toolbox foundation
 
-F87A freezes a reusable qualification contract at baseline `a33ff404d33aef1d6717fc62e05337ae92691540`. It is a measurement foundation, not an automatic promotion claim. The negative and boundary controls remain calibration `FAIL`/`DEFER`; positive semantic controls now explicitly declare Layer B diagnostic-only and reduce playability status from blocking Layers A and C.
+F87A freezes a reusable qualification contract at baseline `a33ff404d33aef1d6717fc62e05337ae92691540`. The current scope-reconciliation PREP is schema 4 and explicitly supersedes the historical R3 manifest `11dddf4855f61b7b32a323268acdbd7f4b40ab6f8deec03dfa73c0c6968e7ef5`; the historical manifest remains immutable evidence. F87A is a measurement foundation, not an automatic promotion claim. The negative and boundary controls remain calibration `FAIL`/`DEFER`; positive semantic controls now explicitly declare Layer B diagnostic-only and reduce playability status from blocking Layers A and C.
 
 ## Shared contract
 

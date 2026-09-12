@@ -32,6 +32,10 @@ from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
 BASELINE_SHA = "b424b4795f075e50b8171f0f8f52791fda62f038"
+HISTORICAL_PREP_EXPERIMENT = "GENERICCHESS-F87A-R3-LAYER-C-DYNAMIC-PLAYABILITY-CALIBRATION"
+CURRENT_PREP_EXPERIMENT = "GENERICCHESS-F87A-R3.1-PLAYABILITY-SCOPE-RECONCILIATION"
+HISTORICAL_PREP_MANIFEST_SHA = "11dddf4855f61b7b32a323268acdbd7f4b40ab6f8deec03dfa73c0c6968e7ef5"
+PREP_SCHEMA_VERSION = 4
 ARTIFACT_DIR = Path("artifacts/f87a_ruleset_qualification")
 PREP_PATH = ARTIFACT_DIR / "manifest.json"
 SUMMARY_PATH = ARTIFACT_DIR / "summary.json"
@@ -292,10 +296,11 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "expected_role": _expected_role(control),
         })
     prep = {
-        "schema_version": 3,
-        "experiment": "GENERICCHESS-F87A-R3-LAYER-C-DYNAMIC-PLAYABILITY-CALIBRATION",
+        "schema_version": PREP_SCHEMA_VERSION,
+        "experiment": CURRENT_PREP_EXPERIMENT,
         "status": "PREP_FROZEN",
         "baseline_sha": BASELINE_SHA,
+        "supersedes_prep_manifest_sha": HISTORICAL_PREP_MANIFEST_SHA,
         "controls": controls,
         "allowed_statuses": ["PASS", "FAIL", "DEFER", "UNMEASURED"],
         "provenance_classes": [
@@ -367,13 +372,21 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
 def _load_prep(path: Path) -> dict[str, Any]:
     prep = _load_json(path)
     if prep.get("status") != "PREP_FROZEN" or prep.get("baseline_sha") != BASELINE_SHA:
-        raise RuntimeError("F87A PREP manifest is not frozen at the authorized baseline")
+        raise RuntimeError("F87A current PREP manifest is not frozen at the authorized baseline")
+    if prep.get("schema_version") != PREP_SCHEMA_VERSION:
+        raise RuntimeError("F87A PREP manifest is not the current scope-reconciliation schema")
+    if prep.get("experiment") != CURRENT_PREP_EXPERIMENT:
+        raise RuntimeError("F87A PREP manifest has the historical or wrong experiment identity")
+    if prep.get("supersedes_prep_manifest_sha") != HISTORICAL_PREP_MANIFEST_SHA:
+        raise RuntimeError("F87A current PREP manifest does not supersede the historical R3 manifest")
     if len(prep.get("controls", [])) != 6:
         raise RuntimeError("F87A calibration suite must contain six controls")
-    if prep.get("experiment") != "GENERICCHESS-F87A-R3-LAYER-C-DYNAMIC-PLAYABILITY-CALIBRATION":
-        raise RuntimeError("F87A-R3 PREP manifest has the wrong experiment identity")
+    if prep.get("experiment") != CURRENT_PREP_EXPERIMENT:
+        raise RuntimeError("F87A current PREP manifest has the wrong experiment identity")
     if prep.get("budgets", {}).get("positive_max_ply") != POSITIVE_MAX_PLY:
         raise RuntimeError("F87A-R3 positive max-ply drift")
+    if prep.get("expectations", {}).get("semantic_control_status") != STATUS_PASS:
+        raise RuntimeError("F87A positive semantic expectation is not the reconciled PASS contract")
     return prep
 
 
@@ -468,7 +481,7 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
         reports[identity["name"]] = report
 
     summary = {
-        "schema_version": 3,
+        "schema_version": PREP_SCHEMA_VERSION,
         "experiment": prep["experiment"],
         "status": "RESULT_COMPLETE",
         "baseline_sha": BASELINE_SHA,

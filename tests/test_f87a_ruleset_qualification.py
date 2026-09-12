@@ -6,7 +6,10 @@ from generic_chess.benchmark.game_quality import measure_game_quality
 from generic_chess.benchmark.minimal_generator import generate_minimal_game
 from scripts.f87a_ruleset_qualification import (
     BASELINE_SHA,
+    CURRENT_PREP_EXPERIMENT,
     EXPECTED_FINGERPRINTS,
+    HISTORICAL_PREP_MANIFEST_SHA,
+    PREP_SCHEMA_VERSION,
     _compiled,
     _controls,
     _semantic_compiled,
@@ -21,6 +24,9 @@ def test_f87a_prep_is_frozen_and_has_six_calibration_controls(tmp_path):
     build_prep(ROOT, prep_path)
     prep = json.loads(prep_path.read_text(encoding="utf-8"))
     assert prep["status"] == "PREP_FROZEN"
+    assert prep["schema_version"] == PREP_SCHEMA_VERSION == 4
+    assert prep["experiment"] == CURRENT_PREP_EXPERIMENT
+    assert prep["supersedes_prep_manifest_sha"] == HISTORICAL_PREP_MANIFEST_SHA
     assert prep["baseline_sha"] == BASELINE_SHA
     assert len(prep["controls"]) == 6
     assert prep["budgets"]["search_nodes"] == 0
@@ -39,6 +45,22 @@ def test_f87a_prep_regeneration_is_byte_identical(tmp_path):
     build_prep(ROOT, first)
     build_prep(ROOT, second)
     assert first.read_bytes() == second.read_bytes()
+
+
+def test_f87a_loader_rejects_historical_r3_prep_identity(tmp_path):
+    prep_path = tmp_path / "manifest.json"
+    build_prep(ROOT, prep_path)
+    prep = json.loads(prep_path.read_text(encoding="utf-8"))
+    prep["schema_version"] = 3
+    prep["experiment"] = "GENERICCHESS-F87A-R3-LAYER-C-DYNAMIC-PLAYABILITY-CALIBRATION"
+    prep.pop("supersedes_prep_manifest_sha")
+    prep_path.write_text(json.dumps(prep), encoding="utf-8")
+    try:
+        run(ROOT, prep_path, tmp_path / "results")
+    except RuntimeError as exc:
+        assert "current scope-reconciliation schema" in str(exc)
+    else:
+        raise AssertionError("historical R3 PREP must not load as the current contract")
 
 
 def test_f87a_control_fingerprints_are_authoritative_and_distinct():
