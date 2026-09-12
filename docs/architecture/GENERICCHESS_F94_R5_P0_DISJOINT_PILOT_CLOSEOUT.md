@@ -249,10 +249,10 @@ Arena or Heavy execution in this work package. The PREP is
 with schema
 `generic-chess-f94-r5-western-qualification-control-stage1-prep-v1`, PREP
 fingerprint
-`eaa79501376c37fb2493743447929cfae6813d3a17e631456ed93e0c107b8f3d`, and
+`a67911ccea9330a5596285ea3dc571e885805864247c25bd8b9ba12284280d31`, and
 byte SHA
-`18775f480c7602b535ac4ebbc234a0deeb11ce29cbfb66eaaf31d51a2cc5deee`.
-Its protocol/source commit is `f037acdffc1021efa946db16803b880648568085`.
+`5b517ae9660928ad983cf8cf49280b35945f1a8fffcfbc87af8f946b93e1370f`.
+Its protocol/source commit is `ae70cf306af4bf406491863740506150d872d2a1`.
 
 Stage-1 uses only new tapes `9701/9702/9703` and explicitly rejects the old
 `9401/9402/9501/9502/9601/9602/9603` seeds and corpora. It freezes the same
@@ -298,3 +298,21 @@ bootstrap lower bound at or below `0.5`, any tape mean at or below `0.5`, and
 the stable-positive case. The Stage-1 PREP, scientific parameters, and
 disjoint tape identities are unchanged; Arena and Heavy remain forbidden for
 this repair round.
+
+## Stage-1 R2 evidence integrity and provenance repair
+
+The Stage-1 pair reducer now validates the complete production evidence
+contract before counting a pair: `pair_index`, pair `opening_id`, each game's
+`pair`, each game's `opening_id`, each game's `opening_position_key`, absence
+of Western declarations, and `len(actions) == plies`. A failed identity or
+trace-integrity check is operationally unresolved and cannot contribute to
+pair counts, bootstrap, or a complete result. Tests include explicit
+rejections for each mismatch and construct real Arena result dataclasses with
+the frozen opening identities and serializable action traces.
+
+Because the reducer changed after the first result-free PREP, Stage-1 PREP was
+regenerated in a separate freeze step. The new PREP is semantic/byte-equivalent
+to the prior Stage-1 design for control identity, tapes, 18 openings, budgets,
+bootstrap, and classification rules; only immutable provenance and its derived
+fingerprint/byte SHA changed. The executor is bound to the new protocol SHA
+and PREP byte SHA above, eliminating the earlier authority gap.

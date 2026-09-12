@@ -52,8 +52,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULT_SCHEMA = "generic-chess-f94-r5-western-qualification-control-stage1-result-v1"
 DEFAULT_RESULT_PATH = ROOT / ".generic_chess_flow/f94-r5-western-qualification-control-stage1-result.json"
 FROZEN_PREP_ARTIFACT = "docs/architecture/GENERICCHESS_F94_R5_WESTERN_QUALIFICATION_CONTROL_STAGE1_PREP.json"
-FROZEN_PREP_SHA256 = "18775f480c7602b535ac4ebbc234a0deeb11ce29cbfb66eaa f31d51a2cc5deee".replace(" ", "")
-FROZEN_PROTOCOL_SHA = "f037acdffc1021efa946db16803b880648568085"
+FROZEN_PREP_SHA256 = "5b517ae9660928ad983cf8cf49280b35945f1a8fffcfbc87af8f946b93e1370f"
+FROZEN_PROTOCOL_SHA = "ae70cf306af4bf406491863740506150d872d2a1"
 FROZEN_QUALIFICATION_PREP = (
     "docs/architecture/GENERICCHESS_F94_R5_WESTERN_QUALIFICATION_CONTROL_PREP.json",
     "bf5b0189aec82766d1095be8ee3396e05e0a9ed8a029bbbae3312621c78286b2",
