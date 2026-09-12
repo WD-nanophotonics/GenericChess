@@ -22,6 +22,8 @@ def test_aggregate_is_deterministic_and_preserves_exact_sample():
     second = aggregate(RESULT, PROGRESS)
     assert first == second
     assert first["source_result_sha256"] == EXPECTED_RESULT_SHA256
+    assert first["source_result_path"] == ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json"
+    assert len(first["progress_evidence_sha256"]) == 64
     assert first["derived_compute"] == {
         "arena_invocations": 18,
         "arena_pairs": 108,
@@ -60,9 +62,24 @@ def test_aggregate_censoring_counts_are_descriptive_runtime_evidence():
 
 
 def test_descriptive_attribution_never_changes_classifier():
-    assert _attribution([0.49, 0.7, 0.8], 0.4)["descriptive_attribution"] == "NONMONOTONE"
+    assert _attribution([0.49, 0.7, 0.8], 0.6)["descriptive_attribution"] == "NONMONOTONE"
     assert _attribution([0.6, 0.7, 0.8], 0.4)["descriptive_attribution"] == "UNDERPOWERED_OR_UNCERTAIN"
+    assert _attribution([0.49, 0.7, 0.8], 0.4)["descriptive_attribution"] == "BOTH"
     assert _attribution([0.6, 0.7, 0.8], 0.6)["descriptive_attribution"] == "NONE"
+
+
+def test_actual_western_matchup_is_descriptively_both():
+    payload = aggregate(RESULT, PROGRESS)
+    matchup = payload["controls"]["western_chess_qualification_control_v1"]["matchups"][1]
+    assert matchup["classifier_output"] == "DEFER_NONMONOTONE_OR_UNCERTAIN"
+    assert matchup["descriptive_attribution"] == {
+        "any_tape_mean_le_half": True,
+        "bootstrap_lower_le_half": True,
+        "depth_censored": False,
+        "horizon_censored": False,
+        "descriptive_attribution": "BOTH",
+        "authority": "descriptive_only",
+    }
 
 
 def test_aggregate_rejects_result_sha_mismatch(tmp_path: Path):
@@ -72,3 +89,8 @@ def test_aggregate_rejects_result_sha_mismatch(tmp_path: Path):
     tampered.write_text(json.dumps(payload), encoding="utf-8")
     with pytest.raises(RuntimeError, match="source SHA mismatch"):
         aggregate(tampered, PROGRESS)
+
+
+def test_aggregate_fails_closed_when_progress_evidence_is_missing(tmp_path: Path):
+    with pytest.raises(RuntimeError, match="exactly one progress directory"):
+        aggregate(RESULT, tmp_path)
