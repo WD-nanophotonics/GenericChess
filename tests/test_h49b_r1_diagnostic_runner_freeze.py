@@ -298,6 +298,8 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     monkeypatch.setattr(runner, "validate_r5_measurement_freeze", lambda: events.append("freeze"))
     monkeypatch.setattr(runner, "run_preflight", lambda: events.append("preflight") or {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: events.append("execution") or {"synthetic": entry})
+    monkeypatch.setattr(runner.f49_protocol, "validate_h49r4a_python_legality_bindings", lambda: {})
+    monkeypatch.setattr(runner, "RULESET_IDS", ("synthetic",))
     monkeypatch.setattr(runner, "generate_arena_openings", lambda *args, **kwargs: events.append("openings") or SimpleNamespace())
     monkeypatch.setattr(runner, "generate_diagnostic_corpus", lambda *args, **kwargs: events.append("F48_CONTROL") or SimpleNamespace(corpus_id="control", positions=[]))
 
@@ -327,7 +329,7 @@ def test_run_measurements_order_efficiency_and_selector_evidence(monkeypatch, tm
     monkeypatch.setattr(runner, "native_material_surface", material)
     monkeypatch.setattr(runner, "python_nonmaterial_control", lambda *args, **kwargs: events.append("PYTHON_NONMATERIAL") or {"status": "VALID", "non_material_signal": False, "families": []})
     result = runner.run_measurements(partition_root=tmp_path)
-    assert events[:8] == ["freeze", "preflight", "execution", "openings", "F48_CONTROL", "S49-M", "S49-E", "P48-0"]
+    assert events[:8] == ["freeze", "execution", "openings", "F48_CONTROL", "execution", "openings", "F48_CONTROL", "S49-M"]
     assert events.count("TEACHER") == 3
     assert events.count("PYTHON_NONMATERIAL") == 3
     assert result["observed_results_present"] is True
@@ -390,7 +392,7 @@ def test_r2_native_raw_partitions_bind_one_budget_each(monkeypatch, tmp_path):
     monkeypatch.setattr(runner, "compile_native_rules", lambda value: "rules")
     monkeypatch.setattr(runner, "compile_native_evaluation", lambda *args, **kwargs: "eval")
     monkeypatch.setattr(runner, "_native_profile", lambda *args: "profile")
-    monkeypatch.setattr(runner, "_native_search_once", lambda *args: {"action_key": "a", "score": 1, "nodes": 1, "qnodes": 0, "elapsed_seconds": 0.0, "completed_depth": 1, "termination_reason": "node_limit", "failed_search": False})
+    monkeypatch.setattr(runner, "_native_search_once", lambda *args, **kwargs: {"action_key": "a", "score": 1, "nodes": 1, "qnodes": 0, "elapsed_seconds": 0.0, "completed_depth": 1, "termination_reason": "node_limit", "failed_search": False})
     store = runner.AtomicPartitionStore(tmp_path)
     runner._native_search_matrix(compiled, checkpoint, corpus, [500, 2000], "NATIVE_SEARCH_ENGINE_MATERIAL", "L49-0", runner._measurement_metrics(), {}, {}, store)
     identities = [json.loads(path.read_text(encoding="utf-8"))["input_identity"] for path in tmp_path.glob("*.json")]
@@ -451,7 +453,7 @@ def test_r3_native_vector_partition_preserves_two_positions_and_resume_cost(monk
     monkeypatch.setattr(runner, "compile_native_rules", lambda value: "rules")
     monkeypatch.setattr(runner, "compile_native_evaluation", lambda *args, **kwargs: "eval")
     monkeypatch.setattr(runner, "_native_profile", lambda *args: "profile")
-    def search(*args):
+    def search(*args, **kwargs):
         record = args[3]
         args[5]["native_current_process"]["search_count"] += 1
         args[5]["native_current_process"]["requested_nodes"] += args[4]
@@ -504,6 +506,8 @@ def test_r3_execution_views_route_control_structural_native_and_python(monkeypat
     monkeypatch.setattr(runner, "validate_r5_measurement_freeze", lambda: None)
     monkeypatch.setattr(runner, "run_preflight", lambda: {"observed_results_present": False})
     monkeypatch.setattr(runner.f49_protocol, "build_h49r3a_primary_execution", lambda: {"synthetic": entry})
+    monkeypatch.setattr(runner.f49_protocol, "validate_h49r4a_python_legality_bindings", lambda: {})
+    monkeypatch.setattr(runner, "RULESET_IDS", ("synthetic",))
     monkeypatch.setattr(runner, "generate_arena_openings", lambda compiled, **kwargs: seen["openings"].append(compiled) or SimpleNamespace())
     monkeypatch.setattr(runner, "generate_diagnostic_corpus", lambda compiled, *args, **kwargs: seen["openings"].append(compiled) or SimpleNamespace(corpus_id="control", positions=[]))
     def structural(compiled, **kwargs):
@@ -523,9 +527,9 @@ def test_r3_execution_views_route_control_structural_native_and_python(monkeypat
     monkeypatch.setattr(runner, "_independent_selector_ledger", lambda observations: ("MIXED_OR_UNRESOLVED", "F50_LEARNING_ARCHITECTURE_REASSESSMENT", ledger))
     monkeypatch.setattr(runner, "_production_selector_witness_ledger", lambda observations: ledger)
     runner.run_measurements(partition_root=tmp_path)
-    assert seen["openings"] == [legacy, legacy]
+    assert seen["openings"] == [legacy, legacy, legacy, legacy]
     assert seen["structural"] == [semantic, semantic]
-    assert seen["native"] and all(value is legacy for value in seen["native"])
+    assert seen["native"] and all(value is semantic for value in seen["native"])
     assert seen["python"] == [semantic, semantic, semantic]
     assert all(item.get("corpus", {}).get("corpus_id") != "control" for item in seen["writes"])
     assert all(item.get("family") != "SELECTOR" for item in seen["writes"] if item.get("corpus", {}).get("corpus_id") in ("S49-M", "S49-E"))

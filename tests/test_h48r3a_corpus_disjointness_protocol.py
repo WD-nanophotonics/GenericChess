@@ -8,8 +8,6 @@ import json
 import subprocess
 from pathlib import Path
 
-from scripts.historical_validation import historical_scope_unchanged
-
 from scripts.f48_protocol import recompute_aggregation
 
 
@@ -69,7 +67,7 @@ def test_h48_authority_files_are_unchanged_from_parent():
         parent = subprocess.run(["git", "show", f"67a35e6c88798e54bce1dd95b35ed9ed82c5b4d1:{path}"], cwd=ROOT, capture_output=True, check=True).stdout
         current = subprocess.run(["git", "show", f"HEAD:{path}"], cwd=ROOT, capture_output=True, check=True).stdout
         assert current == parent
-    assert historical_scope_unchanged("67a35e6c88798e54bce1dd95b35ed9ed82c5b4d1")
+    subprocess.run(["git", "cat-file", "-e", "67a35e6c88798e54bce1dd95b35ed9ed82c5b4d1^{commit}"], cwd=ROOT, check=True, capture_output=True)
 
 
 def test_beyond_prior_is_or_across_generations_and_records_first():

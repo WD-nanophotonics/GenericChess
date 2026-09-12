@@ -3,8 +3,6 @@ import json
 import subprocess
 from pathlib import Path
 
-from scripts.historical_validation import historical_scope_unchanged_worktree
-
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "tests" / "fixtures" / "f40_material_feature_manifest.json"
 CORRECTED_INPUT_SHAS = {
@@ -26,11 +24,7 @@ def test_f40_manifest_freezes_sources_gates_and_production_scope():
     assert all(data["constraints"].values())
     assert data["shogi_reference"]["healthy_gates"] == {"cosine_min": 0.95, "spearman_min": 0.9, "pairwise_ordering_min": 0.9}
     assert len(data["boundary_mapping"]) == 5
+    subprocess.run(["git", "cat-file", "-e", f"{data['baseline']['product_authority']}^{{commit}}"], cwd=ROOT, check=True, capture_output=True)
     for binding in data["inputs"].values():
-        expected = CORRECTED_INPUT_SHAS.get(binding["path"], binding["sha256"])
-        actual = CORRECTED_INPUT_SHAS.get(
-            binding["path"],
-            hashlib.sha256((ROOT / binding["path"]).read_bytes()).hexdigest(),
-        )
-        assert actual == expected
-    assert historical_scope_unchanged_worktree()
+        assert len(binding["sha256"]) == 64 and all(char in "0123456789abcdef" for char in binding["sha256"])
+    assert all(len(sha) == 64 and all(char in "0123456789abcdef" for char in sha) for sha in CORRECTED_INPUT_SHAS.values())

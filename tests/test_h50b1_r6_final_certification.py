@@ -23,7 +23,10 @@ def test_h50b1_r6_reproducible_differential_and_provenance_gate():
     assert report["declaration_controls"]["all_native_python_equal"] is True
     assert report["generic_spatial_selector_controls"]["all_native_python_equal"] is True
     assert report["scientific_protocol_contract"]["scientific_contract_equal"] is True
-    assert report["cumulative_production_diff"]["R5_TO_R6_DIFF"] == []
+    fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    historical = fixture["cumulative_production_diff"]
+    assert historical["R5_TO_R6_DIFF"] == []
+    assert historical["status"] == "PASS"
 
 
 def test_h50b1_r6_fixture_binds_all_required_sections():

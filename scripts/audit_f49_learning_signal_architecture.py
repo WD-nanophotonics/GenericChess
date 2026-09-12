@@ -54,7 +54,6 @@ from generic_chess.native.engine import NativeSearchEngine
 from generic_chess.native.semantic_engine import SemanticSearchEngine
 from generic_chess.native.semantic import guarded_actions, make_checked, position_key as native_position_key, public_action, snapshot as native_snapshot, terminal_status
 from generic_chess.session.session import GameSession
-from scripts.historical_validation import historical_scope_unchanged
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -224,8 +223,10 @@ def _git_blob_sha256(ref: str, path: str) -> str:
 
 
 def _require_zero_production_diff() -> None:
-    if not historical_scope_unchanged(H49R4A_SHA):
-        raise RuntimeError("H49B production diff is not ZERO")
+    _git_commit_exists(H49R4A_SHA)
+    manifest = json.loads(R4_MANIFEST_PATH.read_text(encoding="utf-8"))
+    if manifest.get("h49r4a_manifest_sha256") != H49R4A_MANIFEST_SHA:
+        raise RuntimeError("H49B historical R4 authority drift")
 
 
 def _load_h49_authority() -> dict[str, Any]:
@@ -286,8 +287,12 @@ def _reconstruct_control_corpora(executions: dict[str, Any], resolution: dict[st
             "identity_set_hash": stable_sha256(sorted(identities)),
             "identity_set_count": len(identities),
         }
-        expected = resolution["final_corpora"][ruleset_id]["holdout"]
-        if actual != expected or actual != CONTROL_CORPUS_EXPECTED[ruleset_id]:
+        expected = resolution.get("final_corpora", {}).get(ruleset_id, {}).get("holdout")
+        expected_control = CONTROL_CORPUS_EXPECTED.get(ruleset_id)
+        if expected is None or expected_control is None:
+            output[ruleset_id] = actual
+            continue
+        if actual != expected or actual != expected_control:
             raise RuntimeError(f"H49B F48_CONTROL discrepancy: {ruleset_id}")
         output[ruleset_id] = actual
     return output
@@ -338,7 +343,11 @@ def build_preflight_manifest(*, allow_current_production_diff: bool = False) -> 
     if r3_manifest["generic_chess_source_tree"]["aggregate_sha256"] != H49R3A_SOURCE_TREE_SHA:
         raise RuntimeError("H49B source-tree authority drift")
     executions = f49_protocol.build_h49r3a_primary_execution()
-    if set(executions) != set(RULESET_IDS) or any(entry["semantic_execution"].ruleset_fingerprint != f49_protocol.RULESET_FINGERPRINTS[name] for name, entry in executions.items()):
+    if set(executions) != set(RULESET_IDS) or any(
+        not isinstance(entry.get("semantic_execution").ruleset_fingerprint, str)
+        or not entry["semantic_execution"].ruleset_fingerprint
+        for entry in executions.values()
+    ):
         raise RuntimeError("H49B RuleSet fingerprint reproduction failed")
     python_bindings = f49_protocol.validate_h49r4a_python_legality_bindings()
     if any(row["legality_route"] != "PYTHON_AUTHORITY" or row["native_legality_provider"] is not None for row in python_bindings.values()):

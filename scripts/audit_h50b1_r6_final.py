@@ -327,7 +327,9 @@ def _native_payload_provenance():
 def _compile_abi_measurement(header_blobs: dict[str, bytes]) -> dict:
     zig = os.environ.get("ZIG") or str(ROOT / ".venv" / "Lib" / "site-packages" / "ziglang" / "zig.exe")
     python_include = Path(sysconfig.get_paths()["include"])
-    with tempfile.TemporaryDirectory(prefix="gc-r6-abi-") as raw:
+    cache_root = ROOT / ".generic_chess_flow" / "h50b1-r6-zig-cache"
+    cache_root.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="gc-r6-abi-", dir=str(cache_root)) as raw:
         temp = Path(raw)
         for name, content in header_blobs.items():
             path = temp / Path(name).name
@@ -355,7 +357,10 @@ def _compile_abi_measurement(header_blobs: dict[str, bytes]) -> dict:
         )
         exe = temp / "measure.exe"
         cmd = [zig, "cc", "-target", "x86_64-windows-gnu", "-O2", f"-I{python_include}", f"-I{temp}", str(source), "-o", str(exe)]
-        build = subprocess.run(cmd, check=False, capture_output=True, text=True)
+        env = dict(os.environ)
+        env["ZIG_LOCAL_CACHE_DIR"] = str(cache_root / "local")
+        env["ZIG_GLOBAL_CACHE_DIR"] = str(cache_root / "global")
+        build = subprocess.run(cmd, check=False, capture_output=True, text=True, env=env)
         if build.returncode:
             raise RuntimeError(f"ABI helper compile failed: {build.stderr}")
         values = {}
@@ -363,7 +368,7 @@ def _compile_abi_measurement(header_blobs: dict[str, bytes]) -> dict:
             key, value = line.split("=", 1)
             values[key] = int(value)
         values["compiler"] = str(zig)
-        values["zig_version"] = subprocess.run([zig, "version"], check=True, capture_output=True, text=True).stdout.strip()
+        values["zig_version"] = subprocess.run([zig, "version"], check=True, capture_output=True, text=True, env=env).stdout.strip()
         values["target"] = "x86_64-windows-gnu"
         return values
 

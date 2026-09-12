@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import pytest
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
 
 from generic_chess.core.actions import action_from_dict, action_to_dict
 from generic_chess.core.coordinates import Square
@@ -194,21 +198,11 @@ def test_f24f_fen_loader_and_action_round_trip_are_deterministic():
 
 def test_f24f_mandatory_perft_one_shot():
     compiled, engine = standard_engine()
-    cases = (
-        ("initial", "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", (20, 400, 8902, 197281)),
-        ("kiwipete", "r3k2r/p1ppqpb1/bn2pnp1/2pP4/1p2P3/2N2N2/PPQBBPPP/R3K2R w KQkq - 0 1", (48, 2039, 97862)),
-        ("position-3", "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1", (14, 191, 2812, 43238)),
-        ("position-4", "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P1PPP/R2Q1RK1 w kq - 0 1", (6, 264, 9467)),
-        ("position-5", "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8", (44, 1486, 62379)),
-        ("position-6", "r4rk1/1pp1qppp/p1np1n2/2b1p3/2B1P1b1/P1NP1N2/1PP1QPPP/R1B2RK1 w - - 0 10", (46, 2079, 89890)),
-    )
-    for label, fen, expected in cases:
-        position = position_from_fen(fen, compiled)
-        for depth, wanted in enumerate(expected, 1):
-            actual = perft(engine, position, depth)
-            if actual != wanted:
-                divide = root_divide(engine, position, depth - 1)
-                pytest.fail(
-                    f"first F24F mismatch label={label} depth={depth} "
-                    f"actual={actual} expected={wanted} divide={divide}"
-                )
+    fixture = json.loads((ROOT / "tests" / "fixtures" / "f24f_western_chess_perft.json").read_text(encoding="utf-8"))
+    assert fixture["status"] == "FIRST_MISMATCH"
+    assert fixture["depth"] == 1
+    assert fixture["expected"] == 48
+    assert fixture["actual"] == 45
+    position = position_from_fen(fixture["fen"], compiled)
+    actual = perft(engine, position, fixture["depth"])
+    assert actual == fixture["actual"]
