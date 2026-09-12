@@ -1,0 +1,96 @@
+{
+  "budgets": {
+    "action_traces": 6,
+    "arena_games": 6,
+    "arena_invocations": 3,
+    "arena_pairs": 3,
+    "max_depth": 12,
+    "pair_count_per_tape": 1,
+    "strongest_nodes_per_move": 4096,
+    "tape_count": 3,
+    "tt_megabytes": 8,
+    "weakest_nodes_per_move": 256,
+    "workers": 1
+  },
+  "direction_rule": {
+    "aggregation": "candidate_level_pooled_across_three_tapes",
+    "depth_censor": "strongest-vs-weakest child completed-depth hit fraction >= 0.5",
+    "horizon_censor": "strongest-vs-weakest max-ply hit fraction >= 0.5",
+    "mixed_or_uncertain": "any tie or inconsistent tape signs",
+    "negative": "all three role-swapped pair scores < 0.5",
+    "positive": "all three role-swapped pair scores > 0.5"
+  },
+  "disjoint_from_tape_seeds": [
+    9401,
+    9402,
+    9403,
+    9501,
+    9502,
+    9503
+  ],
+  "experiment": "GENERICCHESS-F94-R5-WESTERN-QUALIFICATION-CONTROL-V1",
+  "not_public_builtin": true,
+  "opening_corpora": [
+    {
+      "corpus_id": "43e42f794ffbd3846f6f2f04385d64952e09860f0f7292d868242404821bf07f",
+      "opening_count": 1,
+      "selected_action_count": 5,
+      "selected_final_position_key": "13b23a09ab462999cbaa76b11b4cd5494cf4173cabc4ab31ca493aa705451def",
+      "selected_opening_index": 0,
+      "selected_opening_seed": 9601000,
+      "selected_target_plies": 5,
+      "tape_seed": 9601
+    },
+    {
+      "corpus_id": "68df2fcbc14f61dd4c8c6472665fb6960934973a2db90675b005a3f7654b8ae3",
+      "opening_count": 1,
+      "selected_action_count": 5,
+      "selected_final_position_key": "918374cb645632bf7e3292229cda9102cf1f42adee81937be56a51e426004460",
+      "selected_opening_index": 0,
+      "selected_opening_seed": 9602000,
+      "selected_target_plies": 5,
+      "tape_seed": 9602
+    },
+    {
+      "corpus_id": "08c3e695abc9a5ae12f81a4b8753de1e0a450dd0d5364a288c48a564c257c0cd",
+      "opening_count": 1,
+      "selected_action_count": 4,
+      "selected_final_position_key": "afcffaaae1ae2f2641316496cecdc3ef5e70623ae6a17be8e467a3aa73e6857a",
+      "selected_opening_index": 0,
+      "selected_opening_seed": 9603000,
+      "selected_target_plies": 4,
+      "tape_seed": 9603
+    }
+  ],
+  "prep_fingerprint": "8bdcbe0aa3723394c62b3a190dcb3662b5933c053dd13400ad6fe28e87f14b51",
+  "protocol_source_sha": "eee600237685edf67be646e6d7eaa91b48b691ce",
+  "qualification_control": {
+    "evaluator_identity": "learnable-material-v1",
+    "gameplay_delta": [
+      "repetition_limit: 100000 -> 5"
+    ],
+    "max_ply": 1000,
+    "name": "western_chess_qualification_control_v1",
+    "production_ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+    "qualification_checkpoint_id": "9ff9facc235577e3631c499cee549916935153d47ef12dd2a6bfc18409ba9b74",
+    "qualification_ruleset_fingerprint": "314729d06f8a47fc653779fe5b1eab6e6b9f2e923436c1c79a6f06cd12812e14",
+    "repetition_limit": 5,
+    "repetition_policy": "draw"
+  },
+  "result_authority": "OBSERVED_NOT_POOLABLE; no Layer-D PASS",
+  "result_free": true,
+  "schema": "generic-chess-f94-r5-western-qualification-control-prep-v1",
+  "source_p0_prep_artifact": "docs/architecture/GENERICCHESS_F94_R5_P0_DISJOINT_PILOT_PREP.json",
+  "source_p0_prep_artifact_sha256": "466044894331091d716bcdf709e5b3b780d133b861fa03cdfeb39ac0ca08a395",
+  "source_production_builder": "generic_chess.rules.western_chess.build_western_chess_ruleset",
+  "source_production_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+  "source_r5_prep_artifact": "docs/architecture/GENERICCHESS_F94_R5_R1_HORIZON_AWARE_PREP.json",
+  "source_r5_prep_artifact_sha256": "7fe8ba521e437d011253b26a8f91bb2560ff3836db2e5b13a1bc9607719ac585",
+  "source_sandbox_sha": "eee600237685edf67be646e6d7eaa91b48b691ce",
+  "status": "PREP_FROZEN",
+  "tape_seeds": [
+    9601,
+    9602,
+    9603
+  ]
+}

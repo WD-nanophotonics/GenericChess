@@ -120,3 +120,44 @@ Standard Shogi is unchanged: its product ruleset separately declares
 `repetition_limit=4`, `repetition_policy="continuous_check_loss"`, and the
 500-ply no-contest automatic adjudication. Its pilot observation remains
 `OBSERVED_NOT_POOLABLE`.
+
+## Western qualification-control PREP
+
+The follow-on qualification-only control is now frozen without running it.
+`western_chess_qualification_control_v1` is implemented in
+`scripts/f94_r5_western_qualification_control.py` and is deliberately absent
+from the public built-in catalog. It is mechanically derived from
+`build_western_chess_ruleset()` with exactly one gameplay delta:
+`repetition_limit: 100000 -> 5`. Board, pieces, movement, promotion,
+castling, en-passant, `repetition_policy="draw"`, `max_ply=1000`, and the
+evaluator family remain unchanged.
+
+Frozen identities:
+
+* production Western fingerprint:
+  `7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35`
+* qualification-control fingerprint:
+  `314729d06f8a47fc653779fe5b1eab6e6b9f2e923436c1c79a6f06cd12812e14`
+* qualification checkpoint:
+  `9ff9facc235577e3631c499cee549916935153d47ef12dd2a6bfc18409ba9b74`
+* evaluator identity: `learnable-material-v1`
+
+The result-free PREP is
+`docs/architecture/GENERICCHESS_F94_R5_WESTERN_QUALIFICATION_CONTROL_PREP.json`
+with PREP fingerprint
+`8bdcbe0aa3723394c62b3a190dcb3662b5933c053dd13400ad6fe28e87f14b51`.
+Its source/protocol SHA is `eee600237685edf67be646e6d7eaa91b48b691ce`, and it
+freezes disjoint tape seeds `9601/9602/9603`, one role-swapped pair per tape,
+4096 versus 256 nodes, depth 12, 8 MiB TT, and workers=1. The PREP records
+`3` invocations, `3` pairs, `6` games, and `6` action traces as a future
+budget only; no Arena, Heavy, or result file was run or created. It is marked
+`OBSERVED_NOT_POOLABLE` and must not be merged with the old P0, R2, R3, or
+authoritative R5 samples.
+
+The cheap regression suite proves that the production builder and public
+catalog are unchanged, the only serialized gameplay delta is the repetition
+limit, all existing F24G canonical perft counts remain exact at their
+certified depths, and a reversible knight cycle reaches five occurrences and
+returns `REPETITION` at ply 16 before `max_ply`. The new control and PREP are
+qualification evidence only; they do not authorize Layer-D PASS or a
+production ruleset change.
