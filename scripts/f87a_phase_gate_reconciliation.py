@@ -35,8 +35,13 @@ def reconcile(
         raise ValueError("qualification reports must include both built-in semantic controls")
     if any(report["blocking_layers"] != ["A", "C"] for report in reports):
         raise ValueError("positive semantic reports must declare B diagnostic-only")
-    if any(report["layers"]["A"] != "PASS" or report["layers"]["C"] != "PASS" for report in reports):
-        raise ValueError("positive semantic A/C layers must pass")
+    if any(
+        report["overall_status"] != "PASS"
+        or report["layers"]["A"] != "PASS"
+        or report["layers"]["C"] != "PASS"
+        for report in reports
+    ):
+        raise ValueError("positive semantic QualificationReports must pass overall and on A/C")
     return {
         "schema_version": 1,
         "experiment": "GENERICCHESS-F87A-PHASE-GATE-RECONCILIATION",

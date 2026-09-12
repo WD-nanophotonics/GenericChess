@@ -41,3 +41,27 @@ def test_f87a_reconciliation_rejects_unreconciled_termination_evidence():
         assert "termination-viability" in str(exc)
     else:
         raise AssertionError("unreconciled R9 evidence must fail closed")
+
+
+def test_f87a_reconciliation_rejects_nonpassing_positive_report():
+    r9_result = {
+        "dynamic_viability_pass": True,
+        "search_budget_censored_count": 0,
+        "terminal_discovery_count": 1,
+        "horizon_censored_count": 5,
+    }
+    report = {
+        "blocking_layers": ["A", "C"],
+        "layers": {"A": "PASS", "C": "PASS"},
+        "overall_status": "DEFER",
+    }
+    reports = {
+        "Built-in Western Chess": report,
+        "Built-in Standard Shogi": {**report, "overall_status": "PASS"},
+    }
+    try:
+        reconcile(r9_result, reports)
+    except ValueError as exc:
+        assert "must pass overall" in str(exc)
+    else:
+        raise AssertionError("non-passing positive QualificationReport must fail closed")

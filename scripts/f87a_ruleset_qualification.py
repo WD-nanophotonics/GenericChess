@@ -352,7 +352,7 @@ def build_prep(root: Path, output: Path = PREP_PATH) -> dict[str, Any]:
             "overall_status": "CALIBRATION_MIXED_OUTCOMES",
             "negative_control_status": "FAIL",
             "boundary_control_status": "DEFER",
-            "semantic_control_status": "DEFER",
+            "semantic_control_status": STATUS_PASS,
             "negative_controls_not_fully_qualified": True,
             "f86n_boundary_status": "DEFER",
             "builtins_not_universally_failed_by_piece_local_heuristic": True,

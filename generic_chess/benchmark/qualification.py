@@ -84,6 +84,7 @@ class QualificationReport:
     required_layers: tuple[str, ...]
     blocking_layers: tuple[str, ...]
     non_blocking_layers: tuple[str, ...]
+    non_blocking_gate_names: tuple[str, ...]
     measurement_status: str
     calibration_expectation_status: str
     layers: dict[str, str]
@@ -114,6 +115,7 @@ class QualificationReport:
             "required_layers": list(self.required_layers),
             "blocking_layers": list(self.blocking_layers),
             "non_blocking_layers": list(self.non_blocking_layers),
+            "non_blocking_gate_names": list(self.non_blocking_gate_names),
             "measurement_status": self.measurement_status,
             "calibration_expectation_status": self.calibration_expectation_status,
             "layers": dict(self.layers),
@@ -1260,11 +1262,14 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         required_layers=required_layers,
         blocking_layers=blocking_layers,
         non_blocking_layers=non_blocking_layers,
+        non_blocking_gate_names=non_blocking_gate_names,
         measurement_status=STATUS_PASS if all(gate.status == STATUS_PASS for gate in integrity_gates) else STATUS_UNMEASURED,
         calibration_expectation_status=STATUS_PASS if layer_b_reason_codes else STATUS_DEFER,
         layers=layers,
         raw_diagnostics={"layer_b": structural, "layer_c": dynamic, "calibration_authority": calibration_authority},
-        hard_gates=integrity_gates + qualification_gates,
+        hard_gates=integrity_gates + tuple(
+            gate for gate in qualification_gates if gate.name not in non_blocking_gate_names
+        ),
         integrity_gates=integrity_gates,
         qualification_gates=qualification_gates,
         reason_codes=reason_codes,

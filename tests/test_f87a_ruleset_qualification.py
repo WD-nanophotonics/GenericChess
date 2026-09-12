@@ -30,6 +30,7 @@ def test_f87a_prep_is_frozen_and_has_six_calibration_controls(tmp_path):
     assert prep["budgets"]["positive_games"] == 8
     assert [row["status"] for row in prep["positive_policies"]] == ["MEASURED", "MEASURED", "DEFERRED_SCOPE"]
     assert prep["expectations"]["overall_status"] == "CALIBRATION_MIXED_OUTCOMES"
+    assert prep["expectations"]["semantic_control_status"] == "PASS"
 
 
 def test_f87a_prep_regeneration_is_byte_identical(tmp_path):
@@ -74,6 +75,8 @@ def test_f87a_reports_defer_d_and_e_and_do_not_apply_universal_lattice_gate(tmp_
         if name.startswith("Built-in"):
             assert report["blocking_layers"] == ["A", "C"]
             assert report["non_blocking_layers"] == ["B"]
+            assert report["non_blocking_gate_names"] == ["layer_b_ruleset_state", "calibration_expectation"]
+            assert all(gate["name"] not in report["non_blocking_gate_names"] for gate in report["hard_gates"])
         assert report["raw_diagnostics"]["layer_b"]["universal_lattice_gate"]["status"] == "DEFER"
         assert report["integrity_gates"]
         assert report["qualification_gates"]
