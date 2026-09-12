@@ -453,8 +453,13 @@ def run(root: Path, prep_path: Path = PREP_PATH, result_dir: Path = ARTIFACT_DIR
             calibration_authority=calibration_authority,
             layer_c_status=layer_c_status,
             layer_c_reason=layer_c_reason,
+            blocking_layers=("A", "C") if control["class"] == "positive_semantic" else None,
         ).to_dict()
-        expected_overall = "FAIL" if control["class"] == "negative" else STATUS_DEFER
+        expected_overall = (
+            "FAIL"
+            if control["class"] == "negative"
+            else (STATUS_PASS if control["class"] == "positive_semantic" else STATUS_DEFER)
+        )
         if report["overall_status"] != expected_overall:
             raise RuntimeError(f"F87A expected {expected_overall} for {identity['name']}")
         expected_codes = set(identity["expected_role"]["reason_codes"])

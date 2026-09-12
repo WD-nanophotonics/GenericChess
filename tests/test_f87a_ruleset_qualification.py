@@ -65,11 +65,15 @@ def test_f87a_reports_defer_d_and_e_and_do_not_apply_universal_lattice_gate(tmp_
         "Built-in Standard Shogi",
     }
     for name, report in reports.items():
-        assert report["overall_status"] == ("FAIL" if name.startswith("F86C") or name.startswith("F86I") else "DEFER")
+        expected_status = "FAIL" if name.startswith("F86C") or name.startswith("F86I") else ("PASS" if name.startswith("Built-in") else "DEFER")
+        assert report["overall_status"] == expected_status
         assert report["qualification_target"] == "PLAYABILITY"
         assert report["required_layers"] == ["A", "B", "C"]
         assert report["layers"]["D"] == "DEFER"
         assert report["layers"]["E"] == "DEFER"
+        if name.startswith("Built-in"):
+            assert report["blocking_layers"] == ["A", "C"]
+            assert report["non_blocking_layers"] == ["B"]
         assert report["raw_diagnostics"]["layer_b"]["universal_lattice_gate"]["status"] == "DEFER"
         assert report["integrity_gates"]
         assert report["qualification_gates"]

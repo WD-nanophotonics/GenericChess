@@ -3,7 +3,7 @@
 - Charter baseline: `a33ff404d33aef1d6717fc62e05337ae92691540`
 - Reconciled R9 checkpoint: `d4fa4c239dbccbc0889d891927adde8117d7a499`
 - Authority: `GENERICCHESS_F87A_RULESET_QUALIFICATION_TOOLBOX_FOUNDATION`
-- Reconciliation result SHA-256: `b6c7a633d8910cbb1029187730cc61c00d0d895ef70b2a9c5418b477e86b1fbf`
+- Reconciliation result SHA-256: `bc9d7a621e2affca9ffdcaa5835791991ee8f660f0413fbcb3c455bbec3ea03a`
 
 ## Frozen scope
 

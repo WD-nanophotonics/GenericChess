@@ -1,6 +1,6 @@
 # F87A ruleset qualification toolbox foundation
 
-F87A freezes a reusable qualification contract at baseline `a33ff404d33aef1d6717fc62e05337ae92691540`. It is a measurement foundation, not an admission claim: the calibration result is `DEFER` for every control.
+F87A freezes a reusable qualification contract at baseline `a33ff404d33aef1d6717fc62e05337ae92691540`. It is a measurement foundation, not an automatic promotion claim. The negative and boundary controls remain calibration `FAIL`/`DEFER`; positive semantic controls now explicitly declare Layer B diagnostic-only and reduce playability status from blocking Layers A and C.
 
 ## Shared contract
 
@@ -17,7 +17,7 @@ The F86M movement-lattice and F86N component helpers now delegate to this shared
 
 `PASS` means the bounded measurement or GenericChess-specific contract completed. `FAIL` is reserved for a violated hard gate. `DEFER` means a required admission layer is intentionally not measured or lacks a calibrated authority threshold. `UNMEASURED` identifies an inapplicable runtime probe. An ongoing game at `max_ply` is `CENSORED`, never a draw; unresolved classification remains `UNRESOLVED`.
 
-Layer A is necessary but does not qualify a benchmark. Layer B is diagnostic: no universal rank-2/index-1 gate is applied. The F86N backbone is retained as an empirical diagnostic only. The built-in Western Chess and Standard Shogi controls therefore do not fail because of a piece-local heuristic; their semantic-action runtime is outside the legacy Common-Tape executor and defers Layer C.
+Layer A is necessary but does not qualify a benchmark. Layer B is diagnostic: no universal rank-2/index-1 gate is applied. The F86N backbone is retained as an empirical diagnostic only. For positive semantic controls, the shared reducer records Layer B as diagnostic-only/non-blocking and uses Layers A and C as the blocking playability layers. The built-in Western Chess and Standard Shogi controls therefore do not fail because of a piece-local heuristic; their semantic-action runtime and dynamic terminal evidence provide the positive Layer-C scope evidence.
 
 ## Frozen calibration and budget
 

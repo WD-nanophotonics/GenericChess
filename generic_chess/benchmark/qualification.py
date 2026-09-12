@@ -82,6 +82,8 @@ class QualificationReport:
     experiment_identity: str
     qualification_target: str
     required_layers: tuple[str, ...]
+    blocking_layers: tuple[str, ...]
+    non_blocking_layers: tuple[str, ...]
     measurement_status: str
     calibration_expectation_status: str
     layers: dict[str, str]
@@ -110,6 +112,8 @@ class QualificationReport:
             "experiment_identity": self.experiment_identity,
             "qualification_target": self.qualification_target,
             "required_layers": list(self.required_layers),
+            "blocking_layers": list(self.blocking_layers),
+            "non_blocking_layers": list(self.non_blocking_layers),
             "measurement_status": self.measurement_status,
             "calibration_expectation_status": self.calibration_expectation_status,
             "layers": dict(self.layers),
@@ -128,12 +132,24 @@ class QualificationReport:
         }
 
 
-def reduce_qualification_status(layers: dict[str, str], *, required_layers: tuple[str, ...], integrity_gates: tuple[GateOutcome, ...], qualification_gates: tuple[GateOutcome, ...]) -> str:
-    """Single status reducer; integrity and qualification gates remain separate."""
-    all_gates = integrity_gates + qualification_gates
+def reduce_qualification_status(
+    layers: dict[str, str],
+    *,
+    required_layers: tuple[str, ...],
+    integrity_gates: tuple[GateOutcome, ...],
+    qualification_gates: tuple[GateOutcome, ...],
+    blocking_layers: tuple[str, ...] | None = None,
+    non_blocking_gate_names: tuple[str, ...] = (),
+) -> str:
+    """Reduce status while making diagnostic-only layers explicitly non-blocking."""
+    blocking_layers = required_layers if blocking_layers is None else blocking_layers
+    blocking_qualification_gates = tuple(
+        gate for gate in qualification_gates if gate.name not in non_blocking_gate_names
+    )
+    all_gates = integrity_gates + blocking_qualification_gates
     if any(gate.status == STATUS_FAIL for gate in all_gates):
         return STATUS_FAIL
-    if any(layers.get(layer) != STATUS_PASS for layer in required_layers):
+    if any(layers.get(layer) != STATUS_PASS for layer in blocking_layers):
         return STATUS_DEFER
     if any(gate.status in {STATUS_DEFER, STATUS_UNMEASURED} for gate in all_gates):
         return STATUS_DEFER
@@ -1189,8 +1205,11 @@ def semantic_termination_control_games(
     }
 
 
-def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, layer_c_status: str = STATUS_DEFER, layer_c_reason: str = "playability authority is not calibrated in F87A-R1", scope: str = "F87A") -> QualificationReport:
+def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, layer_c_status: str = STATUS_DEFER, layer_c_reason: str = "playability authority is not calibrated in F87A-R1", scope: str = "F87A", blocking_layers: tuple[str, ...] | None = None) -> QualificationReport:
     required_layers = ("A", "B", "C")
+    blocking_layers = required_layers if blocking_layers is None else blocking_layers
+    non_blocking_layers = tuple(layer for layer in required_layers if layer not in blocking_layers)
+    non_blocking_gate_names = ("layer_b_ruleset_state", "calibration_expectation") if "B" in non_blocking_layers else ()
     layer_c_integrity = dynamic_status if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else (STATUS_PASS if replay_equal else STATUS_FAIL)
     integrity_gates = (
         GateOutcome("ruleset_executes", STATUS_PASS, "GENERICCHESS_SPECIFIC", "compiler/core accepted the ruleset", "layer_a_execution"),
@@ -1225,13 +1244,22 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         "calibration_authority": MetricEvidence(calibration_authority, "EMPIRICAL_GATE", calibration_authority.get("status", STATUS_DEFER) if calibration_authority else STATUS_DEFER),
         "skill_discrimination": MetricEvidence(None, "EMPIRICAL_GATE", STATUS_DEFER, "agent ladder/Arena not run in F87A-R1"),
     }
-    overall_status = reduce_qualification_status(layers, required_layers=required_layers, integrity_gates=integrity_gates, qualification_gates=qualification_gates)
+    overall_status = reduce_qualification_status(
+        layers,
+        required_layers=required_layers,
+        integrity_gates=integrity_gates,
+        qualification_gates=qualification_gates,
+        blocking_layers=blocking_layers,
+        non_blocking_gate_names=non_blocking_gate_names,
+    )
     return QualificationReport(
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         provenance={**provenance, "control_class": control_class, "control_name": control_name},
         experiment_identity=experiment_identity,
         qualification_target="PLAYABILITY",
         required_layers=required_layers,
+        blocking_layers=blocking_layers,
+        non_blocking_layers=non_blocking_layers,
         measurement_status=STATUS_PASS if all(gate.status == STATUS_PASS for gate in integrity_gates) else STATUS_UNMEASURED,
         calibration_expectation_status=STATUS_PASS if layer_b_reason_codes else STATUS_DEFER,
         layers=layers,

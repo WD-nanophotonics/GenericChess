@@ -18,7 +18,10 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def reconcile(r9_result: dict[str, Any]) -> dict[str, Any]:
+def reconcile(
+    r9_result: dict[str, Any],
+    qualification_reports: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
     """Apply the frozen F87A phase contract without opening Layer D/E work."""
     if r9_result.get("dynamic_viability_pass") is not True:
         raise ValueError("R9 must pass the existing termination-viability gate")
@@ -26,6 +29,14 @@ def reconcile(r9_result: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("R9 search-budget censorship must remain zero")
     if r9_result.get("terminal_discovery_count", 0) < 1:
         raise ValueError("R9 must contain a terminal discovery")
+    target_population = ("Built-in Western Chess", "Built-in Standard Shogi")
+    reports = [qualification_reports.get(name) for name in target_population]
+    if any(report is None for report in reports):
+        raise ValueError("qualification reports must include both built-in semantic controls")
+    if any(report["blocking_layers"] != ["A", "C"] for report in reports):
+        raise ValueError("positive semantic reports must declare B diagnostic-only")
+    if any(report["layers"]["A"] != "PASS" or report["layers"]["C"] != "PASS" for report in reports):
+        raise ValueError("positive semantic A/C layers must pass")
     return {
         "schema_version": 1,
         "experiment": "GENERICCHESS-F87A-PHASE-GATE-RECONCILIATION",
@@ -42,22 +53,22 @@ def reconcile(r9_result: dict[str, Any]) -> dict[str, Any]:
             "r9_horizon_censored_count": r9_result["horizon_censored_count"],
             "r9_search_budget_censored_count": r9_result["search_budget_censored_count"],
         },
-        "target_population": ["Built-in Western Chess", "Built-in Standard Shogi"],
+        "target_population": list(target_population),
         "layers": {
             "A": {
                 "status": "PASS",
                 "gate": "REQUIRED_FOR_PLAYABILITY",
-                "basis": "existing semantic runtime contract and regression suite",
+                "basis": "QualificationReport A status for both built-in semantic controls",
             },
             "B": {
                 "status": "DIAGNOSTIC_ONLY",
                 "gate": "NON_BLOCKING",
-                "basis": "frozen charter applies no universal rank/index admission gate",
+                "basis": "QualificationReport declares B non-blocking; frozen charter applies no universal rank/index admission gate",
             },
             "C": {
                 "status": "PASS",
                 "gate": "REQUIRED_FOR_PLAYABILITY",
-                "basis": "positive semantic controls plus R9 Western termination viability",
+                "basis": "QualificationReport C status for both built-in semantic controls plus R9 Western termination viability",
             },
         },
         "scope_decision": "PLAYABILITY_SCOPE_SATISFIED",
@@ -72,10 +83,12 @@ def reconcile(r9_result: dict[str, Any]) -> dict[str, Any]:
 
 def run(
     r9_results_path: Path = R9_RESULTS,
+    qualification_reports_path: Path = Path("artifacts/f87a_ruleset_qualification/reports.json"),
     output_dir: Path = ARTIFACT_DIR,
 ) -> dict[str, Any]:
     r9_result = json.loads(r9_results_path.read_text(encoding="utf-8"))
-    result = reconcile(r9_result)
+    qualification_reports = json.loads(qualification_reports_path.read_text(encoding="utf-8"))
+    result = reconcile(r9_result, qualification_reports)
     _write_json(output_dir / "result.json", result)
     return result
 
