@@ -15,11 +15,11 @@ The expanded T1 probe used 1,663 internal search nodes across 6 new roots from t
 | `low_node_score_vs_random_legal` | 0.5 | no repeatable improvement signal |
 | `medium_node_score_vs_low_node` | 0.5 | no repeatable improvement signal |
 
-The pre-registered route is `RETURN_T1_ACTION_SPECTRUM_REGRET`. The positive route is fail-closed on a complete T1 probe followed by short seat-swapped validation; an incomplete probe cannot pass the gate. No weight-update route is authorized by this calibration. Pair scoring is fail-closed: a matchup can contribute only when both seat-swapped games resolve. The result is diagnostic only: the tiny short-horizon sample did not establish capability growth, and no external engine score was used.
+The pre-registered route is `RETURN_T1_ACTION_SPECTRUM_REGRET`. The T1 signal class is `BUDGET_SENSITIVE_ACTION_SPECTRUM`, but T1 remains diagnostic-only and has no standalone admission threshold. The positive route is fail-closed on a complete T1 stage followed by short seat-swapped validation; an incomplete probe cannot pass the stage. No weight-update route is authorized by this calibration. Pair scoring is fail-closed: a matchup can contribute only when both seat-swapped games resolve. The result is diagnostic only: the tiny short-horizon sample did not establish capability growth, and no external engine score was used.
 
 ## Evidence
 
 - Manifest SHA-256: `4a02236de1c7531a6406c8b2467636f81337ae405e5e1b99fd10d9c023b4382a`
-- Results SHA-256: `a7af3ddf310506e2b64960ebf5472d192dabab1405e2e1e266490b9cb35be32a11`
+- Results SHA-256: `d466b6865d8bcf3d5072c92668ae9de57aa3fd1c3b251044d18360c90686e077`
 
 R7 does not alter the F87A promotion decision. Western termination remains deferred and the calibration does not authorize training or promotion.

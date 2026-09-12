@@ -31,10 +31,11 @@ def test_f87a_r7_calibration_is_bounded_and_has_route_split(tmp_path):
     assert result["t1_diagnostic"]["root_count"] == 6
     assert result["t1_diagnostic"]["action_disagreement_count"] == 2
     assert result["t1_diagnostic"]["mean_regret_proxy"] == 1.4
+    assert result["t1_diagnostic"]["signal_class"] == "BUDGET_SENSITIVE_ACTION_SPECTRUM"
     assert result["t1_diagnostic"]["search_nodes"] <= T1_DIAGNOSTIC_NODE_CAP
     assert result["t1_diagnostic"]["next_step"] == "SHORT_SEAT_SWAPPED_VALIDATION"
     assert result["t1_diagnostic"]["decision_rule"] == "complete_T1_probe_then_validate_with_short_seat_swapped_pairs"
-    assert result["t1_gate_passed"] is True
+    assert result["t1_stage_complete"] is True
     for row in result["t1_diagnostic"]["rows"]:
         assert row["reference_node_budget"] == T1_REFERENCE_NODE_BUDGET
         assert row["reference_max_depth"] == T1_REFERENCE_MAX_DEPTH

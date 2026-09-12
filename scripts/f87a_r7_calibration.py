@@ -164,6 +164,7 @@ def _terminal_reference_value(root_side: int, winner: int | None, ply: int) -> i
 
 
 def _t1_gate_passes(diagnostic: dict[str, Any]) -> bool:
+    """Pass the diagnostic stage gate; paired strength remains admission."""
     return (
         diagnostic.get("status") == "COMPLETE"
         and diagnostic.get("next_step") == "SHORT_SEAT_SWAPPED_VALIDATION"
@@ -266,6 +267,12 @@ def _t1_action_spectrum_regret(games: tuple[tuple[str, MinimalGeneratedGame], ..
     complete = stop_reason is None and len(rows) == T1_DIAGNOSTIC_MAX_ROOTS
     disagreements = sum(row["action_disagreement"] for row in rows)
     regret_values = [row["regret_proxy"] for row in rows if row["regret_proxy"] is not None]
+    mean_regret_proxy = sum(regret_values) / len(regret_values) if regret_values else None
+    signal_class = (
+        "BUDGET_SENSITIVE_ACTION_SPECTRUM"
+        if complete and disagreements > 0 and mean_regret_proxy is not None and mean_regret_proxy > 0
+        else "NO_POSITIVE_REGRET_SIGNAL"
+    )
     next_step = "SHORT_SEAT_SWAPPED_VALIDATION" if complete else "NO_INTERVENTION_DATA"
     return {
         "status": "COMPLETE" if complete else "DEFER_CENSORED",
@@ -278,9 +285,8 @@ def _t1_action_spectrum_regret(games: tuple[tuple[str, MinimalGeneratedGame], ..
         "wall_cap_seconds": T1_DIAGNOSTIC_WALL_CAP_SECONDS,
         "stop_reason": stop_reason,
         "action_disagreement_count": disagreements,
-        "mean_regret_proxy": (
-            sum(regret_values) / len(regret_values) if regret_values else None
-        ),
+        "mean_regret_proxy": mean_regret_proxy,
+        "signal_class": signal_class,
         "decision_rule": "complete_T1_probe_then_validate_with_short_seat_swapped_pairs",
         "next_step": next_step,
     }
@@ -461,7 +467,7 @@ def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
         "external_engine_used": False,
         "cap_semantics": "coarse_stop_before_starting_next_ply_or_game",
         "t1_diagnostic": t1_diagnostic,
-        "t1_gate_passed": _t1_gate_passes(t1_diagnostic),
+        "t1_stage_complete": _t1_gate_passes(t1_diagnostic),
     }
     _write_json(output_dir / "results.json", result)
     return result
