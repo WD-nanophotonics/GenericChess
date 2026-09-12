@@ -37,7 +37,6 @@ from scripts.f94_r5_pilot_prep import (
 ROOT = Path(__file__).resolve().parents[1]
 RESULT_SCHEMA = "generic-chess-f94-r5-p0-disjoint-pilot-result-v1"
 DEFAULT_RESULT_PATH = ROOT / ".generic_chess_flow/f94-r5-p0-disjoint-pilot-result.json"
-PILOT_PREP_SHA256 = "fa2d2347cbc03b69a3d01294ddc1b0c50f003379ef18c971796041a8301c8cd0"
 
 
 def _sha256(path: Path) -> str:
@@ -111,10 +110,6 @@ def _classify(pair_score: float, games: list[dict[str, Any]], metrics: list[dict
         status = "EXPLICIT_CENSOR"
     elif fallback:
         status = "FALLBACK"
-    elif depth_fraction >= 0.5:
-        status = "DEPTH_CENSORED"
-    elif horizon_fraction >= 0.5:
-        status = "HORIZON_CENSORED"
     elif pair_score > 0.5:
         status = "POSITIVE_DIRECTION"
     elif pair_score < 0.5:
@@ -134,13 +129,20 @@ def load_frozen_prep(root: Path = ROOT, prep_path: Path = PREP_PATH) -> dict[str
     path = Path(prep_path)
     if not path.is_absolute():
         path = root / path
-    if _sha256(path) != PILOT_PREP_SHA256:
-        raise RuntimeError("pilot PREP byte SHA256 mismatch")
     payload = json.loads(path.read_text(encoding="utf-8"))
     if payload.get("schema") != SCHEMA or payload.get("status") != "PILOT_PREP_FROZEN" or payload.get("result_free") is not True:
         raise RuntimeError("pilot PREP schema/status is invalid")
     if payload.get("non_poolable_with_r2_r3_r5") is not True:
         raise RuntimeError("pilot PREP must be explicitly non-poolable")
+    protocol_sha = payload.get("protocol_source_sha")
+    if not isinstance(protocol_sha, str) or len(protocol_sha) != 40:
+        raise RuntimeError("pilot PREP protocol source SHA is invalid")
+    if payload.get("source_sandbox_sha") != protocol_sha:
+        raise RuntimeError("pilot PREP source/protocol provenance mismatch")
+    try:
+        subprocess.check_call(["git", "cat-file", "-e", f"{protocol_sha}^{{commit}}"], cwd=root)
+    except subprocess.CalledProcessError as exc:
+        raise RuntimeError("pilot PREP protocol source commit is unavailable") from exc
     if payload.get("pilot_prep_fingerprint") != _prep_fingerprint(payload):
         raise RuntimeError("pilot PREP fingerprint mismatch")
     if tuple(payload.get("pilot_tape_seeds", ())) != PILOT_TAPE_SEEDS:
@@ -199,6 +201,8 @@ def run_pilot(
         checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
         if checkpoint.checkpoint_id != candidate["checkpoint_id"] or compiled.ruleset_fingerprint != candidate["ruleset_fingerprint"]:
             raise RuntimeError(f"{name} compiled identity mismatch before pilot")
+        if checkpoint.evaluator_version != candidate["evaluator_identity"]:
+            raise RuntimeError(f"{name} evaluator identity mismatch before native compile")
         native_rules = compile_native_semantic_rules(compiled)
         tape_results = []
         for tape in candidate["opening_corpora"]:
@@ -258,10 +262,26 @@ def run_pilot(
             })
         scores = [row["pair_score"] for row in tape_results if "pair_score" in row]
         statuses = [row["status"] for row in tape_results]
-        if any(status in {"EXPLICIT_CENSOR", "FALLBACK", "DEPTH_CENSORED", "HORIZON_CENSORED"} for status in statuses):
-            direction = next(status for status in statuses if status in {"EXPLICIT_CENSOR", "FALLBACK", "DEPTH_CENSORED", "HORIZON_CENSORED"})
-        elif len(scores) != 3:
+        pooled_depth_hits = sum(row.get("descriptors", {}).get("child_depth_ceiling", {}).get("hits", 0) for row in tape_results)
+        pooled_depth_count = sum(row.get("descriptors", {}).get("child_depth_ceiling", {}).get("count", 0) for row in tape_results)
+        pooled_horizon_hits = sum(row.get("descriptors", {}).get("strongest_vs_weakest_horizon", {}).get("max_ply_hits", 0) for row in tape_results)
+        pooled_horizon_games = sum(row.get("descriptors", {}).get("strongest_vs_weakest_horizon", {}).get("games", 0) for row in tape_results)
+        pooled_depth_fraction = pooled_depth_hits / pooled_depth_count if pooled_depth_count else 0.0
+        pooled_horizon_fraction = pooled_horizon_hits / pooled_horizon_games if pooled_horizon_games else 0.0
+        pooled_censoring = {
+            "child_depth_ceiling": {"hits": pooled_depth_hits, "count": pooled_depth_count, "fraction": pooled_depth_fraction},
+            "strongest_vs_weakest_horizon": {"max_ply_hits": pooled_horizon_hits, "games": pooled_horizon_games, "fraction": pooled_horizon_fraction},
+        }
+        if "EXPLICIT_CENSOR" in statuses:
+            direction = "EXPLICIT_CENSOR"
+        elif "FALLBACK" in statuses:
+            direction = "FALLBACK"
+        elif len(scores) != 3 or "OPERATIONALLY_UNRESOLVED" in statuses:
             direction = "OPERATIONALLY_UNRESOLVED"
+        elif pooled_depth_fraction >= 0.5:
+            direction = "DEPTH_CENSORED"
+        elif pooled_horizon_fraction >= 0.5:
+            direction = "HORIZON_CENSORED"
         elif all(score > 0.5 for score in scores):
             direction = "POSITIVE_DIRECTION"
         elif all(score < 0.5 for score in scores):
@@ -281,13 +301,18 @@ def run_pilot(
             "action_traces": len(scores) * 2,
             "pooled_pair_count": len(scores),
             "pooled_mean_pair_score": sum(scores) / len(scores) if scores else None,
+            "pooled_censoring": pooled_censoring,
             "direction": direction,
         })
+    try:
+        prep_artifact = prep_path.relative_to(root).as_posix()
+    except ValueError:
+        prep_artifact = str(prep_path)
     result = {
         "schema": RESULT_SCHEMA,
         "status": "PILOT_RESULT_COMPLETE" if (actual_invocations, actual_pairs, actual_games, actual_traces) == (6, 6, 12, 12) else "PILOT_RESULT_INCOMPLETE",
         "experiment": payload["experiment"],
-        "pilot_prep_artifact": prep_path.relative_to(root).as_posix(),
+        "pilot_prep_artifact": prep_artifact,
         "pilot_prep_artifact_sha256": _sha256(prep_path),
         "pilot_prep_fingerprint": payload["pilot_prep_fingerprint"],
         "result_sandbox_sha": _git_sha(root),

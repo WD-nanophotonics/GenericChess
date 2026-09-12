@@ -34,7 +34,7 @@ from scripts.f94_r2_strength_calibration import (
 PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R5_P0_DISJOINT_PILOT_PREP.json"
 SOURCE_PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R5_R1_HORIZON_AWARE_PREP.json"
 EXPERIMENT = "GENERICCHESS-F94-R5-P0-DISJOINT-PILOT"
-SCHEMA = "generic-chess-f94-r5-p0-disjoint-pilot-prep-v1"
+SCHEMA = "generic-chess-f94-r5-p0-disjoint-pilot-prep-v2"
 PILOT_TAPE_SEEDS = (9501, 9502, 9503)
 AUTHORITATIVE_TAPE_SEEDS = (9401, 9402, 9403)
 STRONGEST_NODES = 4096
@@ -126,6 +126,7 @@ def _candidate(
             "must each remain below 0.5; isolated hits are descriptors"
         ),
         "result_authority": "OBSERVED_NOT_POOLABLE",
+        "censor_aggregation": "candidate_level_pooled_across_three_tapes",
     }
     prep["prep_fingerprint"] = stable_sha256(prep)
     return {
