@@ -43,6 +43,7 @@ PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R2_STRENGTH_RESPONSE_PREP
 RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r2-strength-response-result.json"
 STAGE0_PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R2_STAGE0_PREP.json"
 STAGE0_RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r2-stage0-result.json"
+R3_PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R3_NONBINDING_DEPTH_CALIBRATION_PREP.json"
 EXPERIMENT = "GENERICCHESS-F94-R2-REAL-STRENGTH-CALIBRATION"
 TAPE_SEEDS = (9401, 9402, 9403)
 PAIR_COUNT = 6
@@ -323,6 +324,12 @@ def _stage0_fingerprint(payload: dict[str, Any]) -> str:
     return stable_sha256(unsigned)
 
 
+def _r3_prep_fingerprint(payload: dict[str, Any]) -> str:
+    unsigned = dict(payload)
+    unsigned.pop("r3_prep_fingerprint", None)
+    return stable_sha256(unsigned)
+
+
 def build_stage0_prep(
     root: Path = ROOT,
     source_path: Path = PREP_PATH,
@@ -430,6 +437,69 @@ def build_stage0_prep(
         "result_free": True,
     }
     payload["stage0_prep_fingerprint"] = _stage0_fingerprint(payload)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return payload
+
+
+def build_r3_nonbinding_depth_calibration_prep(
+    root: Path = ROOT,
+    source_path: Path = STAGE0_PREP_PATH,
+    output: Path = R3_PREP_PATH,
+) -> dict[str, Any]:
+    """Freeze an independent R3 protocol without running Arena.
+
+    R2 is prior protocol-calibration evidence only.  R3 deliberately retains
+    its own result-free PREP identity so no R2 observation can be pooled into a
+    later R3 result.
+    """
+
+    source_path = Path(source_path)
+    if not source_path.is_absolute():
+        source_path = root / source_path
+    output = Path(output)
+    r2 = _load_stage0_prep(source_path)
+    r2_budgets = r2["budgets"]
+    if r2_budgets.get("max_depth") != 12:
+        raise RuntimeError("R3 calibration requires the observed R2 depth-12 protocol")
+    if (
+        r2_budgets.get("strongest_nodes_per_move") != 4096
+        or r2_budgets.get("weakest_nodes_per_move") != 256
+        or r2_budgets.get("pair_count_per_tape") != 1
+        or r2_budgets.get("tape_count_per_candidate") != 3
+        or r2_budgets.get("workers") != 1
+    ):
+        raise RuntimeError("R3 calibration requires the frozen R2 measurement design")
+
+    budgets = dict(r2_budgets)
+    budgets["max_depth"] = 64
+    payload = {
+        "schema": "generic-chess-f94-r3-nonbinding-depth-calibration-prep-v1",
+        "status": "R3_PREP_FROZEN",
+        "experiment": "GENERICCHESS-F94-R3-NONBINDING-DEPTH-CALIBRATION",
+        "source_r2_stage0_prep_artifact": _artifact_path(root, source_path),
+        "source_r2_stage0_prep_artifact_sha256": _sha256_bytes(source_path),
+        "source_r2_stage0_prep_fingerprint": r2["stage0_prep_fingerprint"],
+        "r2_protocol_calibration": {
+            "classification": "OBSERVED_NOT_POOLABLE",
+            "reason": "R2 was observed before R3; its paired observations are protocol-calibration evidence only and must not be combined with any R3 sample.",
+            "runtime_closeout_artifact": "docs/architecture/GENERICCHESS_F94_R2_STAGE0_RUNTIME_CLOSEOUT.md",
+            "runtime_closeout_sandbox_sha": "fa03e3608fe3a3ed129f6caf40980860ef197ef8",
+        },
+        "budgets": budgets,
+        "direction_rule": r2["direction_rule"],
+        "candidates": r2["candidates"],
+        "boundary_control": r2["boundary_control"],
+        "design_change_from_r2": {
+            "field": "max_depth",
+            "r2_value": 12,
+            "r3_value": 64,
+            "reason": "The node budget, not a fixed shallow depth ceiling, must be the active search constraint for this calibration.",
+        },
+        "execution_authority": "NONE: this PREP does not authorize Arena, Heavy, Stage 1, the 216-game schedule, tuning, or any adjacent compute.",
+        "result_free": True,
+    }
+    payload["r3_prep_fingerprint"] = _r3_prep_fingerprint(payload)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return payload
@@ -705,16 +775,22 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--result", action="store_true")
     parser.add_argument("--stage0-prep", action="store_true")
+    parser.add_argument("--r3-prep", action="store_true")
     parser.add_argument("--stage0", action="store_true")
     parser.add_argument("--output", type=Path, default=PREP_PATH)
     parser.add_argument("--prep", type=Path, default=PREP_PATH)
     parser.add_argument("--result-output", type=Path, default=RESULT_PATH)
     parser.add_argument("--stage0-prep-output", type=Path, default=STAGE0_PREP_PATH)
+    parser.add_argument("--r3-source-prep", type=Path, default=STAGE0_PREP_PATH)
+    parser.add_argument("--r3-prep-output", type=Path, default=R3_PREP_PATH)
     parser.add_argument("--stage0-result-output", type=Path, default=STAGE0_RESULT_PATH)
     args = parser.parse_args()
     if args.stage0_prep:
         payload = build_stage0_prep(ROOT, args.prep, args.stage0_prep_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.stage0_prep_output)}, sort_keys=True))
+    elif args.r3_prep:
+        payload = build_r3_nonbinding_depth_calibration_prep(ROOT, args.r3_source_prep, args.r3_prep_output)
+        print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.r3_prep_output)}, sort_keys=True))
     elif args.stage0:
         payload = run_stage0(ROOT, args.prep, args.stage0_result_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.stage0_result_output), "arena_invocations": payload["derived_compute"]["arena_invocations"]}, sort_keys=True))

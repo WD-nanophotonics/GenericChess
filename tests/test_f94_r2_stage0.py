@@ -27,6 +27,23 @@ def test_stage0_prep_freezes_source_identities_and_opening_zero(tmp_path):
     assert json.loads(output.read_text(encoding="utf-8")) == payload
 
 
+def test_r3_prep_is_result_free_and_changes_only_depth_limit(tmp_path):
+    output = tmp_path / "r3-prep.json"
+    payload = f94.build_r3_nonbinding_depth_calibration_prep(output=output)
+    r2 = f94._load_stage0_prep()
+
+    assert payload["schema"] == "generic-chess-f94-r3-nonbinding-depth-calibration-prep-v1"
+    assert payload["status"] == "R3_PREP_FROZEN"
+    assert payload["result_free"] is True
+    assert payload["r3_prep_fingerprint"] == f94._r3_prep_fingerprint(payload)
+    assert payload["budgets"] == {**r2["budgets"], "max_depth": 64}
+    assert payload["candidates"] == r2["candidates"]
+    assert payload["boundary_control"] == r2["boundary_control"]
+    assert payload["r2_protocol_calibration"]["classification"] == "OBSERVED_NOT_POOLABLE"
+    assert "Arena" in payload["execution_authority"]
+    assert json.loads(output.read_text(encoding="utf-8")) == payload
+
+
 def test_stage0_direction_prioritizes_fallback_and_depth_censoring():
     assert f94._stage0_status(1.0, [{"completed_depth": f94.MAX_DEPTH}]) == "DEPTH_CENSORED"
     assert f94._stage0_status(1.0, [{"used_fallback": True}]) == "FALLBACK"
