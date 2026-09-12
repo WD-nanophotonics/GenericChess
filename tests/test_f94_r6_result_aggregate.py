@@ -7,9 +7,13 @@ import pytest
 
 from scripts.f94_r6_result_aggregate import (
     EXPECTED_RESULT_SHA256,
+    PREP_PATH,
+    _progress_directory,
+    _telemetry_censoring,
     aggregate,
     _attribution,
 )
+from generic_chess.learning.serialization import stable_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -92,5 +96,36 @@ def test_aggregate_rejects_result_sha_mismatch(tmp_path: Path):
 
 
 def test_aggregate_fails_closed_when_progress_evidence_is_missing(tmp_path: Path):
-    with pytest.raises(RuntimeError, match="exactly one progress directory"):
+    with pytest.raises(RuntimeError, match="missing or extra invocation directories"):
         aggregate(RESULT, tmp_path)
+
+
+def test_progress_directory_rejects_wrong_identity_suffix(tmp_path: Path):
+    wrong = tmp_path / "western_chess_qualification_control_v1-1024_vs_256-9801-deadbeefdeadbeef"
+    wrong.mkdir()
+    with pytest.raises(RuntimeError, match="directory identity mismatch"):
+        _progress_directory(
+            tmp_path, "western_chess_qualification_control_v1", "1024_vs_256", 9801,
+            experiment="GENERICCHESS-F94-R6-LAYER-D-AUTHORITY-REFRESH-V1",
+            protocol_source_sha="protocol", prep_fingerprint="prep",
+        )
+
+
+def test_progress_manifest_config_drift_fails_closed(tmp_path: Path, monkeypatch):
+    import scripts.f94_r6_result_aggregate as aggregate_module
+
+    source_dir = next(PROGRESS.glob("western_chess_qualification_control_v1-1024_vs_256-9801-*"))
+    manifest = json.loads((source_dir / "manifest.json").read_text(encoding="utf-8"))
+    manifest["identity"]["config"]["workers"] = 99
+    manifest["identity_sha256"] = stable_sha256(manifest["identity"])
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(aggregate_module, "_progress_directory", lambda *args, **kwargs: tmp_path)
+    source = json.loads(RESULT.read_text(encoding="utf-8"))
+    prep = json.loads(PREP_PATH.read_text(encoding="utf-8"))
+    tape = source["controls"]["western_chess_qualification_control_v1"]["matchups"][0]["tape_results"][0]
+    with pytest.raises(RuntimeError, match="budget/telemetry mismatch"):
+        _telemetry_censoring(
+            tmp_path, "western_chess_qualification_control_v1", "1024_vs_256", [tape],
+            result=source, prep=prep,
+        )

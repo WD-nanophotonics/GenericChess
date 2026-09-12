@@ -15,8 +15,10 @@ from generic_chess.learning.serialization import stable_sha256
 ROOT = Path(__file__).resolve().parents[1]
 RESULT_PATH = ROOT / ".generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json"
 PROGRESS_PATH = ROOT / ".generic_chess_flow/f94-r6-progress"
+PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R6_LAYER_D_AUTHORITY_REFRESH_PREP.json"
 AGGREGATE_SCHEMA = "generic-chess-f94-r6-result-aggregate-v1"
 EXPECTED_RESULT_SHA256 = "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe"
+FROZEN_PREP_SHA256 = "78b935c3cb5391851bd8a8a574d25ac69714f030a49a01e6006c1d7d8133b8ba"
 MAX_DEPTH = 12
 
 
@@ -43,22 +45,41 @@ def _attribution(tape_means: list[float], bootstrap_lower: float | None) -> dict
     }
 
 
-def _progress_directory(progress_root: Path, control: str, matchup: str, seed: int) -> Path | None:
+def _progress_directory(progress_root: Path, control: str, matchup: str, seed: int,
+                        *, experiment: str, protocol_source_sha: str,
+                        prep_fingerprint: str) -> Path:
     prefix = f"{control}-{matchup}-{seed}-"
     candidates = sorted(path for path in progress_root.glob(prefix + "*") if path.is_dir())
-    if len(candidates) != 1:
-        raise RuntimeError(
-            f"R6 aggregate requires exactly one progress directory for {control}/{matchup}/{seed}"
-        )
-    return candidates[0]
+    identity = {
+        "experiment": experiment,
+        "protocol_source_sha": protocol_source_sha,
+        "prep_fingerprint": prep_fingerprint,
+        "control": control,
+        "matchup": matchup,
+        "tape_seed": seed,
+    }
+    expected = progress_root / f"{control}-{matchup}-{seed}-{stable_sha256(identity)[:16]}"
+    if candidates != [expected]:
+        raise RuntimeError(f"R6 aggregate progress directory identity mismatch: {control}/{matchup}/{seed}")
+    return expected
 
 
 def _telemetry_censoring(progress_root: Path, control: str, matchup: str,
-                         tape_results: list[dict[str, Any]]) -> dict[str, Any]:
+                         tape_results: list[dict[str, Any]], *, result: dict[str, Any],
+                         prep: dict[str, Any]) -> dict[str, Any]:
     child_hits = child_count = 0
-    evidence_pairs: list[dict[str, str | int]] = []
+    evidence_invocations: list[dict[str, Any]] = []
+    prep_control = next((row for row in prep["controls"] if row["name"] == control), None)
+    prep_matchup = next((row for row in prep["matchups"] if row["name"] == matchup), None)
+    if prep_control is None or prep_matchup is None:
+        raise RuntimeError(f"R6 aggregate PREP identity is missing {control}/{matchup}")
     for tape in tape_results:
-        directory = _progress_directory(progress_root, control, matchup, int(tape["tape_seed"]))
+        seed = int(tape["tape_seed"])
+        directory = _progress_directory(
+            progress_root, control, matchup, seed,
+            experiment=result["experiment"], protocol_source_sha=result["protocol_source_sha"],
+            prep_fingerprint=result["prep_fingerprint"],
+        )
         manifest_path = directory / "manifest.json"
         if not manifest_path.is_file():
             raise RuntimeError(f"R6 aggregate progress manifest is missing: {manifest_path}")
@@ -67,8 +88,34 @@ def _telemetry_censoring(progress_root: Path, control: str, matchup: str,
         if not isinstance(identity, dict) or manifest.get("identity_sha256") != stable_sha256(identity):
             raise RuntimeError(f"R6 aggregate progress manifest identity is invalid: {manifest_path}")
         config = identity.get("config", {})
-        if config.get("pairs") != 6 or config.get("opening_count") != 6 or identity.get("capture_search_metrics") is not True:
+        expected_checkpoint = prep_control["checkpoint_id"]
+        expected_openings = next((row for row in prep_control["opening_corpora"] if row["tape_seed"] == seed), None)
+        expected_config = {
+            "pairs": 6, "nodes_per_move": prep_matchup["child_nodes_per_move"],
+            "max_depth": 12, "tt_megabytes": 8, "opening_seed": seed,
+            "opening_count": 6, "min_plies": 2, "max_plies": 6, "workers": 4,
+            "parent_nodes_per_move": prep_matchup["parent_nodes_per_move"],
+            "child_nodes_per_move": prep_matchup["child_nodes_per_move"],
+        }
+        if (
+            identity.get("ruleset_fingerprint") != prep_control["ruleset_fingerprint"]
+            or identity.get("parent_checkpoint_id") != expected_checkpoint
+            or identity.get("child_checkpoint_id") != expected_checkpoint
+            or config != expected_config
+            or identity.get("capture_search_metrics") is not True
+            or expected_openings is None
+        ):
             raise RuntimeError(f"R6 aggregate progress manifest budget/telemetry mismatch: {manifest_path}")
+        expected_opening_identity = [
+            {key: opening[key] for key in ("index", "opening_seed", "target_plies", "final_position_key")}
+            for opening in expected_openings["openings"]
+        ]
+        actual_opening_identity = [
+            {key: opening.get(key) for key in ("index", "opening_seed", "target_plies", "final_position_key")}
+            for opening in identity.get("ordered_openings", ())
+        ]
+        if actual_opening_identity != expected_opening_identity:
+            raise RuntimeError(f"R6 aggregate progress opening identity mismatch: {manifest_path}")
         pair_paths = sorted(directory.glob("pair-*.json"))
         expected_names = [directory / f"pair-{index:06d}.json" for index in range(6)]
         if {path.name for path in pair_paths} != {path.name for path in expected_names}:
@@ -85,25 +132,28 @@ def _telemetry_censoring(progress_root: Path, control: str, matchup: str,
                 game = payload.get(game_key, {})
                 if game.get("pair") != index or not game.get("search_metrics"):
                     raise RuntimeError(f"R6 aggregate progress telemetry is incomplete: {pair_path}")
-            evidence_pairs.append({
-                "control": control,
-                "matchup": matchup,
-                "tape_seed": int(tape["tape_seed"]),
-                "pair_index": int(index),
-                "payload_sha256": _sha256(pair_path),
-            })
             for game_key in ("game_child_owner0", "game_child_owner1"):
                 for metric in payload[game_key].get("search_metrics", ()):  # timing is not emitted
                     if metric.get("engine_role") == "child":
                         child_count += 1
                         child_hits += int(int(metric.get("completed_depth", 0)) >= MAX_DEPTH)
+        evidence_invocations.append({
+            "control": control,
+            "matchup": matchup,
+            "tape_seed": seed,
+            "manifest_sha256": _sha256(manifest_path),
+            "pair_payload_sha256": [
+                {"pair_index": index, "sha256": _sha256(directory / f"pair-{index:06d}.json")}
+                for index in range(6)
+            ],
+        })
     fraction = child_hits / child_count if child_count else 0.0
     return {
         "hits": child_hits,
         "count": child_count,
         "fraction": fraction,
         "source": "identity-bound resumable pair checkpoints",
-        "evidence_pairs": evidence_pairs,
+        "evidence_invocations": evidence_invocations,
     }
 
 
@@ -124,6 +174,21 @@ def aggregate(result_path: Path = RESULT_PATH, progress_root: Path = PROGRESS_PA
         "arena_games": 216, "action_traces": 216,
     }:
         raise RuntimeError("R6 aggregate source accounting is not exact")
+
+    if _sha256(PREP_PATH) != FROZEN_PREP_SHA256 or result.get("prep_artifact_sha256") != FROZEN_PREP_SHA256:
+        raise RuntimeError("R6 aggregate PREP SHA mismatch")
+    prep = json.loads(PREP_PATH.read_text(encoding="utf-8"))
+    if prep.get("prep_fingerprint") != result.get("prep_fingerprint"):
+        raise RuntimeError("R6 aggregate PREP fingerprint mismatch")
+    expected_directory_names = {
+        f"{control}-{matchup}-{seed}-{stable_sha256({'experiment': result['experiment'], 'protocol_source_sha': result['protocol_source_sha'], 'prep_fingerprint': result['prep_fingerprint'], 'control': control, 'matchup': matchup, 'tape_seed': seed})[:16]}"
+        for control in result["controls"]
+        for matchup in ("1024_vs_256", "4096_vs_1024", "4096_vs_256")
+        for seed in (9801, 9802, 9803)
+    }
+    actual_directory_names = {path.name for path in progress_root.iterdir() if path.is_dir()}
+    if actual_directory_names != expected_directory_names:
+        raise RuntimeError("R6 aggregate progress root contains missing or extra invocation directories")
 
     controls: dict[str, Any] = {}
     progress_records: list[dict[str, Any]] = []
@@ -158,9 +223,10 @@ def aggregate(result_path: Path = RESULT_PATH, progress_root: Path = PROGRESS_PA
                         horizon_hits += int(bool(game.get("max_ply_hit")))
             bootstrap = dict(matchup["bootstrap"])
             censoring = _telemetry_censoring(
-                progress_root, control_name, matchup["name"], matchup["tape_results"]
+                progress_root, control_name, matchup["name"], matchup["tape_results"],
+                result=result, prep=prep,
             )
-            progress_records.extend(censoring.pop("evidence_pairs"))
+            progress_records.extend(censoring.pop("evidence_invocations"))
             expected_depth_fraction = float(matchup["pooled_censoring"]["child_depth_ceiling_fraction"])
             if not math.isclose(censoring["fraction"], expected_depth_fraction, rel_tol=0.0, abs_tol=1e-15):
                 raise RuntimeError(f"R6 aggregate depth fraction mismatch: {control_name}/{matchup['name']}")

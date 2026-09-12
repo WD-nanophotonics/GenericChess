@@ -9,9 +9,9 @@ rule was changed.
 - Source result: `.generic_chess_flow/f94-r6-layer-d-authority-refresh-result.json`
 - Source result SHA256: `a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe`
 - Aggregate artifact: `docs/architecture/GENERICCHESS_F94_R6_LAYER_D_AUTHORITY_REFRESH_AGGREGATE_V4.json`
-- Aggregate artifact SHA256: `e64f7c617a2b6b10f80c517c3c22a1a9188dbfca98ff78958af44a76515f2905`
+- Aggregate artifact SHA256: `35a77eb779c4503e0d6bcd0d5c5b47f61276f9e3961227818ff1e7ac1118cb2b`
 - Extractor: `scripts/f94_r6_result_aggregate.py`
-- Progress evidence digest: `7d2f0dbb941e49567975f40463341bc4a7adf209781c63756a9e2fe3a8644cdd`
+- Progress evidence digest: `fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de`
 
 The aggregate retains all 108 pair scores with tape seed, pair index, score,
 and status; each tape's six-pair mean and independently recomputed mean; the
@@ -37,16 +37,18 @@ changes the frozen classifier or Layer-D authority state.
 The aggregate records depth-censoring fractions directly from exactly one
 validated manifest plus six complete pair checkpoints for each of the 18
 identity-bound invocations, and horizon diagnostics for the strongest matchup.
-It records a deterministic digest over the ordered checkpoint payload hashes,
-cross-checks both censoring fractions against the frozen RESULT, and fails
-closed on missing, extra, malformed, or identity-mismatched progress. These
-are descriptive evidence only; runtime timing/NPS fields are not included.
+It records a deterministic digest over each invocation identity, manifest hash,
+and six checkpoint payload hashes, cross-checks both censoring fractions
+against the frozen RESULT, and fails closed on missing, extra, malformed, or
+identity-mismatched progress. These are descriptive evidence only; runtime
+timing/NPS fields are not included.
 
 ## Verification
 
 The deterministic extractor was run twice and produced identical JSON. The
-focused R6, arena-integrity, and aggregate tests passed (38 tests), including
+focused R6, arena-integrity, and aggregate tests passed (40 tests), including
 exact 108-pair retention, per-tape mean recomputation, source-SHA fail-closed
 behavior, all four attribution combinations (including the actual Western
-`BOTH` case), and progress-evidence fail-closed checks. Runtime result/progress
-files remain ignored and were not added to Git.
+`BOTH` case), wrong-suffix and manifest-config drift checks, and
+progress-evidence fail-closed checks. Runtime result/progress files remain
+ignored and were not added to Git.
