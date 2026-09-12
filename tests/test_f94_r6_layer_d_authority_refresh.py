@@ -141,10 +141,12 @@ def test_production_shaped_arena_result_shape_and_exact_accounting(monkeypatch, 
     payload = executor.load_frozen_prep()
     openings = executor.validated_openings(payload)
     calls = []
+    progress_paths = []
     def fake_native(_compiled):
         return object()
-    def fake_runner(_compiled, _native, _checkpoint_parent, _checkpoint_child, config, *, openings, capture_search_metrics):
+    def fake_runner(_compiled, _native, _checkpoint_parent, _checkpoint_child, config, *, openings, capture_search_metrics, progress_dir=None, **kwargs):
         calls.append(config)
+        progress_paths.append(Path(progress_dir))
         pairs = []
         for index, opening in enumerate(openings.openings):
             metrics = (_metric("child", config.child_nodes_per_move or config.nodes_per_move), _metric("parent", config.parent_nodes_per_move or config.nodes_per_move))
@@ -154,6 +156,8 @@ def test_production_shaped_arena_result_shape_and_exact_accounting(monkeypatch, 
         return type("Summary", (), {"pairs": tuple(pairs)})()
     result = executor.run_r6(output=tmp_path / "result.json", arena_runner=fake_runner, native_compiler=fake_native)
     assert len(calls) == 18
+    assert len(set(progress_paths)) == 18
+    assert all(".generic_chess_flow" in path.parts and "f94-r6-progress" in path.parts for path in progress_paths)
     assert result["status"] == "R6_RESULT_COMPLETE"
     assert result["derived_compute"] == {"arena_invocations": 18, "arena_pairs": 108, "arena_games": 216, "action_traces": 216}
     for control in result["controls"].values():
@@ -162,3 +166,20 @@ def test_production_shaped_arena_result_shape_and_exact_accounting(monkeypatch, 
             assert matchup["bootstrap"]["sample_count"] == 18
             assert all(game["trace_hashes"] for tape in matchup["tape_results"] for pair in tape["pairs"] for game in [pair])
     assert result["boundary"]["layer_d_compute_invocations"] == 0
+
+
+def test_runtime_failure_stops_control_and_commits_no_partial_pairs(tmp_path: Path):
+    calls = 0
+    def fake_native(_compiled):
+        return object()
+    def failing_runner(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        raise RuntimeError("synthetic evidence failure")
+
+    result = executor.run_r6(output=tmp_path / "result.json", arena_runner=failing_runner, native_compiler=fake_native)
+    assert calls == 1
+    assert result["status"] == "R6_RESULT_INCOMPLETE"
+    assert result["derived_compute"] == {"arena_invocations": 1, "arena_pairs": 0, "arena_games": 0, "action_traces": 0}
+    assert result["controls"]
+    assert result["controls"][next(iter(result["controls"]))]["matchups"][0]["classification"] == "DEFER"

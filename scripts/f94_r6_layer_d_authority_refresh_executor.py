@@ -14,7 +14,7 @@ from typing import Any, Callable, Mapping
 from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.core.actions import action_to_dict
-from generic_chess.learning.arena import ArenaConfig, run_arena
+from generic_chess.learning.arena import ArenaConfig, run_arena_resumable
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
 from generic_chess.learning.serialization import stable_sha256
@@ -56,6 +56,22 @@ def _sha256(path: Path) -> str:
 
 def _git_sha(root: Path) -> str:
     return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+
+
+def _progress_dir(root: Path, payload: Mapping[str, Any], control: str,
+                  matchup: str, tape_seed: int) -> Path:
+    """Return the immutable-identity-bound runtime namespace for one tape."""
+    identity = {
+        "experiment": payload["experiment"],
+        "protocol_source_sha": payload["protocol_source_sha"],
+        "prep_fingerprint": payload["prep_fingerprint"],
+        "control": control,
+        "matchup": matchup,
+        "tape_seed": tape_seed,
+    }
+    key = stable_sha256(identity)
+    return (root / ".generic_chess_flow" / "f94-r6-progress"
+            / f"{control}-{matchup}-{tape_seed}-{key[:16]}")
 
 
 def _prep_fingerprint(payload: dict[str, Any]) -> str:
@@ -265,7 +281,7 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
     _validate_western_runtime_guards()
     # This call validates all opening identities before the runner is selected.
     openings = validated_openings(payload)
-    runner = arena_runner or run_arena
+    runner = arena_runner or run_arena_resumable
     native_compiler = native_compiler or compile_native_semantic_rules
     by_control: dict[str, Any] = {}
     total = {"arena_invocations": 0, "arena_pairs": 0, "arena_games": 0, "action_traces": 0}
@@ -282,11 +298,13 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
         rows_by_tape = {(row["tape_seed"]): (row, corpus) for c, _, (row, corpus) in openings if c["name"] == name}
         matchup_rows = []
         control_statuses = []
+        control_failed = False
         for matchup_name, child_nodes, parent_nodes in MATCHUPS:
             scores: list[float] = []
             statuses: list[str] = []
             tape_results = []
             depth_hits = depth_count = horizon_hits = horizon_games = 0
+            matchup_failed = False
             for seed in TAPE_SEEDS:
                 tape, corpus = rows_by_tape[seed]
                 started = perf_counter()
@@ -295,13 +313,15 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
                 invocation_pair_rows: list[dict[str, Any]] = []
                 invocation_depth_hits = invocation_depth_count = 0
                 invocation_horizon_hits = invocation_horizon_games = 0
+                total["arena_invocations"] += 1
                 try:
                     summary = runner(compiled, native_rules, checkpoint, checkpoint,
                         ArenaConfig(pairs=PAIRS_PER_TAPE, nodes_per_move=child_nodes,
                                     parent_nodes_per_move=parent_nodes, child_nodes_per_move=child_nodes,
                                     max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES,
                                     opening_seed=seed, opening_count=PAIRS_PER_TAPE, workers=WORKERS),
-                        openings=corpus, capture_search_metrics=True)
+                        openings=corpus, capture_search_metrics=True,
+                        progress_dir=_progress_dir(root, payload, name, matchup_name, seed))
                     pairs = _summary_pairs(summary)
                     pair_rows = []
                     for index, pair in enumerate(pairs):
@@ -337,14 +357,25 @@ def run_r6(*, root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path = RES
                 except Exception as exc:
                     statuses.append("EVIDENCE_INTEGRITY_FAILURE" if isinstance(exc, RuntimeError) else "OPERATIONALLY_UNRESOLVED")
                     tape_results.append({"tape_seed": seed, "pair_count": 0, "status": statuses[-1], "error": str(exc), "error_type": type(exc).__name__, "wall_seconds": perf_counter() - started})
+                    matchup_failed = True
                     break
-                total["arena_invocations"] += 1
+            if matchup_failed:
+                # Identity, telemetry, evidence-integrity, and operational
+                # failures stop this control's fixed sample.  Observation
+                # statuses such as fallback/censor remain in the completed
+                # fixed sample and are classified below.
+                control_statuses.append("DEFER")
+                matchup_rows.append({"name": matchup_name, "pair_count": len(scores), "tape_mean_pair_scores": [row["mean_pair_score"] for row in tape_results if row.get("pair_count") == PAIRS_PER_TAPE], "bootstrap": {"mean": None, "lower": None, "upper": None, "seed": BOOTSTRAP_SEEDS[matchup_name], "resamples": BOOTSTRAP_RESAMPLES}, "pooled_censoring": {"child_depth_ceiling_fraction": depth_hits / depth_count if depth_count else 0.0, "strongest_vs_weakest_horizon_fraction": horizon_hits / horizon_games if horizon_games else 0.0}, "classification": "DEFER", "statuses": statuses, "tape_results": tape_results})
+                control_failed = True
+                break
             tape_means = [row["mean_pair_score"] for row in tape_results if row.get("pair_count") == PAIRS_PER_TAPE]
             bootstrap = percentile_bootstrap_mean(scores, seed=BOOTSTRAP_SEEDS[matchup_name]) if len(scores) == PAIRS_PER_MATCHUP else {"mean": None, "lower": None, "upper": None, "seed": BOOTSTRAP_SEEDS[matchup_name], "resamples": BOOTSTRAP_RESAMPLES}
             classification = classify_matchup(scores=scores, tape_means=tape_means, statuses=statuses, depth_fraction=depth_hits / depth_count if depth_count else 0.0, horizon_fraction=horizon_hits / horizon_games if horizon_games else 0.0, bootstrap=bootstrap, strongest_vs_weakest=matchup_name == "4096_vs_256")
             control_statuses.append(classification)
             matchup_rows.append({"name": matchup_name, "pair_count": len(scores), "tape_mean_pair_scores": tape_means, "bootstrap": bootstrap, "pooled_censoring": {"child_depth_ceiling_fraction": depth_hits / depth_count if depth_count else 0.0, "strongest_vs_weakest_horizon_fraction": horizon_hits / horizon_games if horizon_games else 0.0}, "classification": classification, "statuses": statuses, "tape_results": tape_results})
-        by_control[name] = {"matchups": matchup_rows, "classification": classify_control(matchup_rows, control_statuses), "invocations": len(matchup_rows) * TAPE_COUNT}
+        by_control[name] = {"matchups": matchup_rows, "classification": classify_control(matchup_rows, control_statuses), "invocations": sum(row.get("pair_count", 0) == PAIRS_PER_MATCHUP for row in matchup_rows) * TAPE_COUNT}
+        if control_failed:
+            break
     authority = "CALIBRATION_READY" if all(row["classification"] == "STABLE_MONOTONE_POSITIVE" for row in by_control.values()) else "DEFER_CONTROL_NOT_READY"
     complete = (total["arena_invocations"], total["arena_pairs"], total["arena_games"], total["action_traces"]) == (TOTAL_INVOCATIONS, TOTAL_PAIRS, TOTAL_GAMES, TOTAL_TRACES)
     result = {"schema": RESULT_SCHEMA, "status": "R6_RESULT_COMPLETE" if complete else "R6_RESULT_INCOMPLETE", "experiment": EXPERIMENT, "prep_artifact": FROZEN_PREP_ARTIFACT, "prep_artifact_sha256": _sha256(prep_path), "prep_fingerprint": payload["prep_fingerprint"], "protocol_source_sha": payload["protocol_source_sha"], "result_sandbox_sha": _git_sha(root), "controls": by_control, "authority": authority, "boundary": {"a_c_prerequisite": "F86N-R1-V4-3", "layer_d_compute_authorized": False, "layer_d_compute_invocations": 0}, "derived_compute": total, "fixed_sample_authority": True, "pooled": False, "p0_observations_pooled": False, "r2_observations_pooled": False, "r3_observations_pooled": False, "r5_observations_pooled": False, "qualification_pilot_observations_pooled": False, "stage1_observations_pooled": False, "production_western_changed": False}

@@ -12,6 +12,7 @@ import pytest
 
 from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
+from generic_chess.core.actions import action_to_dict
 from generic_chess.learning.arena import (
     ArenaConfig,
     ArenaExecutionError,
@@ -392,6 +393,99 @@ def test_resumable_arena_concurrent_completion_order_is_deterministic(
     )
     assert first == second
     assert [pair.pair_index for pair in first.pairs] == list(range(config.pairs))
+
+
+def test_resumable_arena_workers_four_interrupt_resume_only_missing_pairs(
+    monkeypatch, tmp_path
+):
+    arena_module, compiled, parent, child, config, openings = (
+        _synthetic_resumable_inputs(monkeypatch, pairs=6, workers=4)
+    )
+    calls = []
+
+    def interrupted(*args):
+        index = args[-1]
+        calls.append(index)
+        if index == 3:
+            raise RuntimeError("simulated workers=4 interruption")
+        return _synthetic_pair(index)
+
+    monkeypatch.setattr(arena_module, "_play_pair", interrupted)
+    with pytest.raises(RuntimeError, match="workers=4 interruption"):
+        run_arena_resumable(
+            compiled, None, parent, child, config,
+            progress_dir=tmp_path / "resume", openings=openings,
+        )
+    assert sorted(index for index in calls if index != 3) == [0, 1, 2, 4, 5]
+    persisted = {
+        int(path.stem.split("-")[1])
+        for path in (tmp_path / "resume").glob("pair-*.json")
+    }
+
+    resumed_calls = []
+    monkeypatch.setattr(
+        arena_module, "_play_pair",
+        lambda *args: resumed_calls.append(args[-1]) or _synthetic_pair(args[-1]),
+    )
+    resumed = run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "resume", openings=openings,
+    )
+    assert set(resumed_calls).isdisjoint(persisted)
+    assert persisted | set(resumed_calls) == set(range(config.pairs))
+    uninterrupted = run_arena_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "fresh", openings=openings,
+    )
+    assert resumed == uninterrupted
+
+
+@requires_native
+def test_native_resumable_workers_one_and_four_are_observationally_equivalent(tmp_path):
+    compiled, rules, checkpoint, child = _setup()
+    openings = generate_arena_openings(compiled, count=2, seed=271828, min_plies=2, max_plies=4)
+
+    def normalized(summary):
+        rows = []
+        for pair in summary.pairs:
+            games = []
+            for game in (pair.game_child_owner0, pair.game_child_owner1):
+                metrics = []
+                for metric in game.search_metrics:
+                    metrics.append({key: value for key, value in metric.items()
+                                    if key not in {"elapsed_seconds", "elapsed_source", "nps"}})
+                games.append({
+                    "pair": game.pair,
+                    "opening_id": game.opening_id,
+                    "opening_position_key": game.opening_position_key,
+                    "child_owner": game.child_owner,
+                    "winner": game.winner,
+                    "result": game.result,
+                    "plies": game.plies,
+                    "actions": [action_to_dict(action) for action in game.actions],
+                    "final_position_key": game.final_position_key,
+                    "declaration_id": game.declaration_id,
+                    "search_metrics": metrics,
+                })
+            rows.append({"pair_index": pair.pair_index, "opening_id": pair.opening_id,
+                         "score": pair.child_pair_score, "games": games})
+        return rows
+
+    one = run_arena_resumable(
+        compiled, rules, checkpoint, child,
+        ArenaConfig(pairs=2, nodes_per_move=32, max_depth=2, tt_megabytes=2,
+                    opening_count=2, workers=1),
+        progress_dir=tmp_path / "workers-1", openings=openings,
+        capture_search_metrics=True,
+    )
+    four = run_arena_resumable(
+        compiled, rules, checkpoint, child,
+        ArenaConfig(pairs=2, nodes_per_move=32, max_depth=2, tt_megabytes=2,
+                    opening_count=2, workers=4),
+        progress_dir=tmp_path / "workers-4", openings=openings,
+        capture_search_metrics=True,
+    )
+    assert normalized(one) == normalized(four)
 
 
 @requires_native
