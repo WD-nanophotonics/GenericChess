@@ -48,3 +48,20 @@ Additional verification:
 
 No Arena, training, external engine, Heavy job, or F87A termination
 discovery was run.
+
+## F88-R1 corrective addendum
+
+The corrective acceptance now drives a deterministic, promotion-free Standard
+Shogi sequence through production `square_clicked()` actions, captures a
+non-pawn piece, makes a legal reply, and selects the existing side-0
+`PlayerBar.hand_buttons()` control. It asserts that the resulting interaction
+contains a production `SemanticDropMove`, then verifies the exact drop in
+history, hand decrement, side/position identity change, `BoardViewModel`
+occupancy, and rendered occupancy. The restart path explicitly asserts that
+all `is_last_move_from` and `is_last_move_to` markers are cleared.
+
+F88-R1 focused verification passed:
+
+```text
+.venv\\Scripts\\python.exe -m pytest -q tests/test_f88_desktop_semantic_acceptance.py
+```
