@@ -9,7 +9,11 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 import pytest
 from PySide6.QtWidgets import QApplication
 
-from generic_chess.core.actions import action_is_board
+from generic_chess.core.actions import (
+    action_is_board,
+    action_is_drop,
+    action_promotion_target_id,
+)
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.identity import position_identity_key
 from generic_chess.rules.catalog import build_builtin_ruleset
@@ -45,6 +49,19 @@ def _board_snapshot(controller: UIController) -> tuple:
         else (piece.owner, piece.base_type_id, piece.current_type_id, piece.promoted)
         for piece in position.board
     )
+
+
+def _click_production_action(controller: UIController, action_text: str):
+    action = next(
+        candidate
+        for candidate in controller.session.legal_actions()
+        if str(candidate) == action_text
+    )
+    controller.square_clicked(action.from_square)
+    assert action in controller.interaction.legal_actions
+    controller.square_clicked(action.to_square)
+    assert controller.history_entries()[-1].action == action
+    return action
 
 
 @pytest.mark.parametrize(
@@ -154,6 +171,105 @@ def test_builtin_desktop_action_projection_invalid_input_and_reset(qapp, name):
         for view_square in controller.board_view_model().squares
         if view_square.piece is not None
     }
+    assert not any(
+        view_square.is_last_move_from or view_square.is_last_move_to
+        for view_square in controller.board_view_model().squares
+    )
+
+
+def test_standard_shogi_desktop_semantic_drop(qapp):
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    settings.set(KEY_ENABLE_ANIMATIONS, False)
+    controller = UIController(settings=settings)
+    assert controller.new_game_from_builtin("standard_shogi")
+    window = MainWindow(controller, settings)
+    window.show()
+    qapp.processEvents()
+
+    # This short deterministic opening is selected from production legal
+    # actions, then submitted only through the desktop click path.
+    opening = (
+        "legacy_028:g21:e3-e4",
+        "legacy_028:g21:e7-e6",
+        "legacy_028:g21:e4-e5",
+        "legacy_029:g21:e6-e5",
+        "legacy_028:g21:f3-f4",
+        "legacy_028:g21:e5-e4",
+        "legacy_028:g21:f4-f5",
+        "legacy_028:g21:f7-f6",
+        "legacy_029:g21:f5-f6",
+        "legacy_028:g21:d7-d6",
+        "legacy_028:g21:d3-d4",
+        "legacy_028:g21:d6-d5",
+        "legacy_029:g21:d4-d5",
+        "legacy_028:g21:g7-g6",
+        "legacy_028:g21:d5-d6",
+        "legacy_026:g20:h9-g7",
+        "legacy_028:g21:g3-g4",
+        "legacy_026:g20:g7-f5",
+        "legacy_002:g1:h2-e5",
+        "legacy_028:g21:g6-g5",
+        "legacy_022:g19:h1-g3",
+        "legacy_029:g21:g5-g4",
+    )
+    for action_text in opening:
+        _click_production_action(controller, action_text)
+    capture_text = "legacy_023:g19:g3-f5"
+    capture = next(
+        action
+        for action in controller.session.legal_actions()
+        if str(action) == capture_text
+    )
+    captured_type = controller.session.state.position.board[
+        square_to_index(capture.to_square, controller.compiled.board_size)
+    ].base_type_id
+    _click_production_action(controller, capture_text)
+    assert controller.session.state.position.hands[0].count(captured_type) > 0
+    window._refresh()
+
+    # The existing PlayerBar hand button is the production drop entry point.
+    buttons = window._player_bars[0].hand_buttons()
+    assert buttons
+    assert any(captured_type in button.text() for button in buttons)
+
+    reply = next(
+        action
+        for action in sorted(controller.session.legal_actions(), key=str)
+        if action_is_board(action) and action_promotion_target_id(action) is None
+    )
+    _click_production_action(controller, str(reply))
+    window._refresh()
+    drop_button = next(
+        button for button in window._player_bars[0].hand_buttons()
+        if captured_type in button.text()
+    )
+    drop_button.click()
+    assert controller.interaction.legal_actions
+    drop = next(
+        action for action in controller.interaction.legal_actions if action_is_drop(action)
+    )
+    before_key = position_identity_key(
+        controller.session.state.position, controller.compiled
+    )
+    controller.square_clicked(drop.to_square)
+    window._refresh()
+
+    assert controller.session.state.position.hands[0].count(captured_type) == 0
+    assert controller.history_entries()[-1].action == drop
+    assert position_identity_key(
+        controller.session.state.position, controller.compiled
+    ) != before_key
+    model = controller.board_view_model()
+    assert model is not None
+    placed = next(square for square in model.squares if square.square == drop.to_square)
+    assert placed.piece is not None and placed.piece.owner == 0
+    assert window._scene.rendered_occupancy()[drop.to_square] == (
+        placed.piece.owner,
+        placed.piece.base_type_id,
+        placed.piece.current_type_id,
+        placed.piece.promoted,
+    )
 
 
 @pytest.mark.parametrize("name", ("western_chess", "standard_shogi"))

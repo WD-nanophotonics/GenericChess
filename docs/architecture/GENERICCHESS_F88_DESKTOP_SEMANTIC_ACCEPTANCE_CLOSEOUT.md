@@ -19,13 +19,17 @@ The deterministic offscreen acceptance covers, for each built-in:
 - side-to-move, board occupancy, and canonical position identity agreement
   between the semantic session, `BoardViewModel`, and rendered occupancy;
 - rejection of an empty, unavailable target without changing semantic state;
+- an existing Standard Shogi capture sequence followed by the real
+  `PlayerBar` hand-button interaction and semantic drop target click;
+- drop hand-count, history-action, position-identity, and rendered-occupancy
+  agreement;
 - reset through the existing `MainWindow` restart action, including UI
-  last-move markers, history, board, side-to-move, and position identity.
+  last-move markers (explicitly all cleared), history, board, side-to-move,
+  and position identity.
 
 Semantic board/drop action shapes are projected through the existing action
-helpers; no second legality or transition implementation was added. Promotion
-and Shogi drop product functionality were not expanded because neither is
-required to establish this slice.
+helpers; no second legality or transition implementation was added. The
+existing drop entry point was tested without expanding product functionality.
 
 ## Verification
 
