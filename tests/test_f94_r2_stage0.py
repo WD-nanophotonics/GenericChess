@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 import scripts.f94_r2_strength_calibration as f94
 
 
@@ -25,8 +27,21 @@ def test_stage0_prep_freezes_source_identities_and_opening_zero(tmp_path):
 
 
 def test_stage0_direction_prioritizes_fallback_and_depth_censoring():
-    assert f94._stage0_status(1.0, [{"used_fallback": True}]) == "FALLBACK"
     assert f94._stage0_status(1.0, [{"completed_depth": f94.MAX_DEPTH}]) == "DEPTH_CENSORED"
+    assert f94._stage0_status(1.0, [{"used_fallback": True}]) == "FALLBACK"
     assert f94._stage0_status(1.0, [{"completed_depth": 8}]) == "POSITIVE_DIRECTION"
     assert f94._stage0_status(0.0, [{"completed_depth": 8}]) == "NEGATIVE_DIRECTION"
     assert f94._stage0_status(0.5, [{"completed_depth": 8}]) == "MIXED_OR_UNCERTAIN"
+    assert f94._stage0_overall_direction(["FALLBACK", "DEPTH_CENSORED"], [1.0, 1.0]) == "DEPTH_CENSORED"
+    assert f94._stage0_overall_direction(["OPERATIONALLY_UNRESOLVED", "FALLBACK"], [1.0]) == "FALLBACK"
+
+
+def test_stage0_rejects_tampered_source_before_arena(tmp_path, monkeypatch):
+    staged_path = tmp_path / "stage0-prep.json"
+    payload = f94.build_stage0_prep(output=staged_path)
+    payload["source_prep_artifact_sha256"] = "0" * 64
+    payload["stage0_prep_fingerprint"] = f94._stage0_fingerprint(payload)
+    staged_path.write_text(json.dumps(payload), encoding="utf-8")
+    monkeypatch.setattr(f94, "run_arena", lambda *args, **kwargs: pytest.fail("Arena called after source mismatch"))
+    with pytest.raises(RuntimeError, match="source PREP artifact SHA"):
+        f94.run_stage0(prep_path=staged_path, output=tmp_path / "result.json")

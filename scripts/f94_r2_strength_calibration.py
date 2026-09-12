@@ -429,13 +429,29 @@ def build_stage0_prep(
 
 
 def _stage0_status(pair_score: float, metrics: list[dict[str, Any]]) -> str:
-    if any(bool(row.get("used_fallback")) for row in metrics):
-        return "FALLBACK"
     if any(int(row.get("completed_depth", 0)) >= MAX_DEPTH for row in metrics):
         return "DEPTH_CENSORED"
+    if any(bool(row.get("used_fallback")) for row in metrics):
+        return "FALLBACK"
     if pair_score > 0.5:
         return "POSITIVE_DIRECTION"
     if pair_score < 0.5:
+        return "NEGATIVE_DIRECTION"
+    return "MIXED_OR_UNCERTAIN"
+
+
+def _stage0_overall_direction(statuses: list[str], scores: list[float]) -> str:
+    """Apply the frozen Stage-0 override precedence before direction."""
+
+    if "DEPTH_CENSORED" in statuses:
+        return "DEPTH_CENSORED"
+    if "FALLBACK" in statuses:
+        return "FALLBACK"
+    if "OPERATIONALLY_UNRESOLVED" in statuses or len(scores) != 3:
+        return "OPERATIONALLY_UNRESOLVED"
+    if all(score > 0.5 for score in scores):
+        return "POSITIVE_DIRECTION"
+    if all(score < 0.5 for score in scores):
         return "NEGATIVE_DIRECTION"
     return "MIXED_OR_UNCERTAIN"
 
@@ -466,7 +482,12 @@ def run_stage0(
         prep_path = root / prep_path
     output = Path(output)
     staged = _load_stage0_prep(prep_path)
-    source = _load_frozen_prep(root / staged["source_prep_artifact"])
+    source_path = root / staged["source_prep_artifact"]
+    if _sha256_bytes(source_path) != staged["source_prep_artifact_sha256"]:
+        raise RuntimeError("Stage-0 source PREP artifact SHA does not match frozen authority")
+    source = _load_frozen_prep(source_path)
+    if source["source_sandbox_sha"] != staged["source_prep_source_sandbox_sha"]:
+        raise RuntimeError("Stage-0 source PREP sandbox SHA does not match frozen authority")
     controls = {control["name"]: control for control in _controls(root)}
     reports = json.loads(
         (root / "artifacts/f87a_ruleset_qualification/reports.json").read_text(encoding="utf-8")
@@ -585,18 +606,8 @@ def run_stage0(
             })
         scores = [float(row["pair_score"]) for row in tape_results]
         differences = [score - 0.5 for score in scores]
-        if len(scores) != 3 or any(row["status"] == "OPERATIONALLY_UNRESOLVED" for row in tape_results):
-            direction = "OPERATIONALLY_UNRESOLVED"
-        elif all(score > 0.5 for score in scores):
-            direction = "POSITIVE_DIRECTION"
-        elif all(score < 0.5 for score in scores):
-            direction = "NEGATIVE_DIRECTION"
-        else:
-            direction = "MIXED_OR_UNCERTAIN"
         statuses = [row["status"] for row in tape_results]
-        for override in ("DEPTH_CENSORED", "FALLBACK"):
-            if override in statuses:
-                direction = override
+        direction = _stage0_overall_direction(statuses, scores)
         candidate_results.append({
             "name": name,
             "class": staged_candidate["class"],
