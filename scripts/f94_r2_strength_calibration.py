@@ -158,6 +158,13 @@ def _sha256_bytes(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _artifact_path(root: Path, path: Path) -> str:
+    try:
+        return path.relative_to(root).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def _load_frozen_prep(path: Path = PREP_PATH) -> dict[str, Any]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if (
@@ -382,7 +389,7 @@ def build_stage0_prep(
         "schema": "generic-chess-f94-r2-stage0-prep-v1",
         "status": "STAGE0_PREP_FROZEN",
         "experiment": "GENERICCHESS-F94-R2-STAGE0-RUNTIME-CALIBRATION",
-        "source_prep_artifact": source_path.relative_to(root).as_posix(),
+        "source_prep_artifact": _artifact_path(root, source_path),
         "source_prep_artifact_sha256": _sha256_bytes(source_path),
         "source_prep_source_sandbox_sha": source["source_sandbox_sha"],
         "budgets": {
@@ -493,9 +500,36 @@ def run_stage0(
         (root / "artifacts/f87a_ruleset_qualification/reports.json").read_text(encoding="utf-8")
     )
     candidate_results: list[dict[str, Any]] = []
+    actual_invocations = 0
+    actual_games = 0
     for staged_candidate in staged["candidates"]:
         name = staged_candidate["name"]
         source_candidate = next(row for row in source["candidates"] if row["name"] == name)
+        if staged_candidate["layer_d_prerequisite"] != "READY":
+            if (
+                staged_candidate["ruleset_fingerprint"] != source_candidate["ruleset_fingerprint"]
+                or staged_candidate["checkpoint_id"] != source_candidate["checkpoint_id"]
+                or staged_candidate["evaluator_identity"] != source_candidate["evaluator_identity"]
+                or staged_candidate["source_prep_fingerprint"] != source_candidate["prep"]["prep_fingerprint"]
+            ):
+                raise RuntimeError(f"{name} Stage-0 prerequisite identity does not match source PREP")
+            candidate_results.append({
+                "name": name,
+                "class": staged_candidate["class"],
+                "ruleset_fingerprint": staged_candidate["ruleset_fingerprint"],
+                "checkpoint_id": staged_candidate["checkpoint_id"],
+                "evaluator_identity": staged_candidate["evaluator_identity"],
+                "source_prep_fingerprint": staged_candidate["source_prep_fingerprint"],
+                "stage0_prep_fingerprint": staged["stage0_prep_fingerprint"],
+                "layer_a_status": staged_candidate["layer_a_status"],
+                "layer_c_status": staged_candidate["layer_c_status"],
+                "layer_d_prerequisite": staged_candidate["layer_d_prerequisite"],
+                "status": "PREREQUISITE_A_C_NOT_PASS",
+                "arena_invocations": 0,
+                "arena_games": 0,
+                "tape_results": [],
+            })
+            continue
         control = controls[name]
         regenerated = _prep_candidate(control, reports[name])
         _assert_regenerated_matches(source_candidate, regenerated)
@@ -510,6 +544,8 @@ def run_stage0(
         checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
         native_rules = compile_native_semantic_rules(compiled)
         tape_results: list[dict[str, Any]] = []
+        candidate_invocations = 0
+        candidate_games = 0
         for staged_tape in staged_candidate["opening_corpora"]:
             corpus = generate_arena_openings(
                 compiled,
@@ -530,6 +566,8 @@ def run_stage0(
             from time import perf_counter
 
             started = perf_counter()
+            actual_invocations += 1
+            candidate_invocations += 1
             try:
                 summary = run_arena(
                     compiled,
@@ -570,6 +608,8 @@ def run_stage0(
             wall_seconds = perf_counter() - started
             pair = summary.pairs[0]
             games = [pair.game_child_owner0, pair.game_child_owner1]
+            actual_games += len(games)
+            candidate_games += len(games)
             metrics = [metric for game in games for metric in game.search_metrics]
             searched_nodes = sum(int(metric.get("nodes", 0)) for metric in metrics)
             search_seconds = sum(float(metric.get("elapsed_seconds", 0.0)) for metric in metrics)
@@ -617,6 +657,8 @@ def run_stage0(
             "source_prep_fingerprint": staged_candidate["source_prep_fingerprint"],
             "stage0_prep_fingerprint": staged["stage0_prep_fingerprint"],
             "tape_results": tape_results,
+            "arena_invocations": candidate_invocations,
+            "arena_games": candidate_games,
             "pooled_pair_count": len(scores),
             "pooled_mean_pair_score": sum(scores) / len(scores) if scores else None,
             "pooled_effect": sum(differences) / len(differences) if differences else None,
@@ -632,9 +674,14 @@ def run_stage0(
         })
     payload = {
         "schema": "generic-chess-f94-r2-stage0-result-v1",
-        "status": "STAGE0_RESULT_COMPLETE",
+        "status": (
+            "STAGE0_RESULT_COMPLETE"
+            if actual_invocations == staged["budgets"]["arena_invocations"]
+            and actual_games == staged["budgets"]["arena_games"]
+            else "STAGE0_RESULT_INCOMPLETE"
+        ),
         "experiment": "GENERICCHESS-F94-R2-STAGE0-RUNTIME-CALIBRATION",
-        "stage0_prep_artifact": prep_path.relative_to(root).as_posix(),
+        "stage0_prep_artifact": _artifact_path(root, prep_path),
         "stage0_prep_artifact_sha256": _sha256_bytes(prep_path),
         "stage0_prep_fingerprint": staged["stage0_prep_fingerprint"],
         "source_prep_source_sandbox_sha": staged["source_prep_source_sandbox_sha"],
@@ -642,8 +689,8 @@ def run_stage0(
         "candidates": candidate_results,
         "boundary_control": staged["boundary_control"],
         "derived_compute": {
-            "arena_invocations": 6,
-            "arena_games": 12,
+            "arena_invocations": actual_invocations,
+            "arena_games": actual_games,
             "boundary_arena_invocations": 0,
         },
         "not_layer_d_authority": True,

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -45,3 +46,44 @@ def test_stage0_rejects_tampered_source_before_arena(tmp_path, monkeypatch):
     monkeypatch.setattr(f94, "run_arena", lambda *args, **kwargs: pytest.fail("Arena called after source mismatch"))
     with pytest.raises(RuntimeError, match="source PREP artifact SHA"):
         f94.run_stage0(prep_path=staged_path, output=tmp_path / "result.json")
+
+
+def test_stage0_runs_six_ready_invocations_and_skips_boundary(tmp_path, monkeypatch):
+    staged_path = tmp_path / "stage0-prep.json"
+    f94.build_stage0_prep(output=staged_path)
+    arena_calls = []
+    native_calls = []
+
+    def fake_native(*args, **kwargs):
+        native_calls.append(args[0].ruleset_fingerprint)
+        return SimpleNamespace(fingerprint=args[0].ruleset_fingerprint)
+
+    def fake_arena(*args, **kwargs):
+        arena_calls.append(args[0].ruleset_fingerprint)
+        metric = {
+            "nodes": 10,
+            "elapsed_seconds": 1.0,
+            "completed_depth": 8,
+            "used_fallback": False,
+        }
+        game0 = SimpleNamespace(child_owner=0, winner=0, result="draw", plies=4, search_metrics=(metric,))
+        game1 = SimpleNamespace(child_owner=1, winner=1, result="draw", plies=4, search_metrics=(metric,))
+        pair = SimpleNamespace(child_pair_score=1.0, game_child_owner0=game0, game_child_owner1=game1)
+        return SimpleNamespace(pairs=[pair])
+
+    monkeypatch.setattr(f94, "compile_native_semantic_rules", fake_native)
+    monkeypatch.setattr(f94, "run_arena", fake_arena)
+    result = f94.run_stage0(prep_path=staged_path, output=tmp_path / "result.json")
+
+    assert len(native_calls) == 2
+    assert len(arena_calls) == 6
+    assert result["status"] == "STAGE0_RESULT_COMPLETE"
+    assert result["derived_compute"] == {
+        "arena_invocations": 6,
+        "arena_games": 12,
+        "boundary_arena_invocations": 0,
+    }
+    boundary = next(row for row in result["candidates"] if row["class"] == "boundary")
+    assert boundary["status"] == "PREREQUISITE_A_C_NOT_PASS"
+    assert boundary["arena_invocations"] == 0
+    assert boundary["tape_results"] == []
