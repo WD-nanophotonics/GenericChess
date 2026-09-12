@@ -71,3 +71,18 @@ Read `WORKFLOW.md` before changing this repository.
 18. Before any test, evaluation, or sweep, use the cheapest sufficient decision
     procedure; if algebra, existing evidence, a witness, or a decision bound
     can decide the question, do not authorize expensive new experiments.
+
+## User-authoritative Courier loop interpretation
+
+User原话（逐字保留）：
+
+> “找chat要工单，回来完成工单，然后再发布，并汇报chat，chat给你工单，这是一个循环。”
+
+In Courier mode, repeat this loop continuously across multiple work orders:
+obtain the next order from the same Chat/Courier flow, complete it, test,
+commit, publish to `origin/sandbox`, and report its immutable closeout to Chat.
+After every completed, published, and reported work order, immediately obtain
+the next order from that same flow. Only the explicit lawful stopping
+conditions already listed in this policy permit stopping. A single commit,
+closeout, phase-level `COMPLETE`, subjective judgment that the next step is
+waiting, or context compression is never a reason to stop work.
