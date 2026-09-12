@@ -1376,6 +1376,52 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
     )
 
 
+def _unresolved_escalation_ids(root: Path) -> list[str]:
+    pending = []
+    base = escalation_root(root)
+    if not base.exists():
+        return pending
+    for dossier_path in sorted(base.glob("*/dossier.json")):
+        if not (dossier_path.parent / "resolution.json").is_file():
+            pending.append(dossier_path.parent.name)
+    return pending
+
+
+def command_followup(root: Path, args: argparse.Namespace) -> None:
+    """Dispatch a short inline follow-up within an already active Courier session."""
+    state = active_state(root)
+    if state.get("mode") != "courier":
+        raise FlowError("followup is only available in courier mode")
+    require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
+    if state.get("active_request_directory"):
+        raise FlowError("cannot follow up while a Courier request is unresolved")
+    if state.get("recovery_state") not in (None, "IDLE"):
+        raise FlowError("cannot follow up while Courier recovery is unresolved")
+    pending = _unresolved_escalation_ids(root)
+    if pending:
+        raise FlowError(f"cannot follow up while escalation is unresolved: {pending[0]}")
+    response_value = state.get("last_response_path")
+    response_path = Path(response_value) if isinstance(response_value, str) else None
+    expected_response_sha = state.get("last_response_sha256")
+    if response_path is None or not response_path.is_file() or not isinstance(expected_response_sha, str):
+        raise FlowError("followup requires a captured and accepted prior Courier response")
+    if _file_digest(response_path) != expected_response_sha:
+        raise FlowError("followup prior Courier response hash mismatch")
+    source = Path(args.message_file).resolve()
+    try:
+        body = source.read_text(encoding="utf-8-sig")
+    except OSError as exc:
+        raise FlowError(f"cannot read followup message: {source}") from exc
+    if not body.strip():
+        raise FlowError("followup message must not be empty")
+    if len(body.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
+        raise FlowError("followup message must be a short inline protocol/binding delta")
+    require_clean(root)
+    require_synced(root, "sandbox")
+    dispatch_message(root, state, source, "followup")
+
+
 def command_publish(root: Path, args: argparse.Namespace) -> None:
     if branch(root) != "sandbox":
         raise FlowError("publish must be run from the sandbox worktree")
@@ -2291,6 +2337,9 @@ def parser() -> argparse.ArgumentParser:
     claim_handoff.add_argument("--host-id", required=True)
     claim_handoff.set_defaults(handler=command_handoff_claim)
     sub.add_parser("work").set_defaults(handler=command_work)
+    followup = sub.add_parser("followup")
+    followup.add_argument("--message-file", required=True)
+    followup.set_defaults(handler=command_followup)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)
     start.add_argument("--message-file")

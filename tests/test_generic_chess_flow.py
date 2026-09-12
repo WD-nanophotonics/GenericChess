@@ -240,6 +240,99 @@ def test_work_redisplay_survives_legacy_windows_encoding(monkeypatch, tmp_path, 
     assert "NEXT_ACTION=execute this work order" in output
 
 
+def _followup_state(response: Path):
+    return {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": None,
+        "recovery_state": "IDLE",
+        "last_response_path": str(response),
+        "last_response_sha256": flow._file_digest(response),
+    }
+
+
+def test_followup_dispatches_short_delta_with_existing_session(monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text("accepted\n", encoding="utf-8")
+    message = tmp_path / "message.txt"
+    message.write_text("V2 binding delta\n", encoding="utf-8")
+    state = _followup_state(response)
+    seen = {}
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "_unresolved_escalation_ids", lambda _root: [])
+    monkeypatch.setattr(flow, "dispatch_message", lambda root, current, source, purpose: seen.update(root=root, state=current, body=source.read_text(encoding="utf-8"), purpose=purpose))
+
+    flow.command_followup(tmp_path, SimpleNamespace(message_file=str(message)))
+
+    assert seen == {"root": tmp_path, "state": state, "body": "V2 binding delta\n", "purpose": "followup"}
+
+
+def test_followup_parser_is_available():
+    args = flow.parser().parse_args(["followup", "--message-file", "delta.txt"])
+    assert args.command == "followup"
+    assert args.message_file == "delta.txt"
+
+
+@pytest.mark.parametrize(
+    ("state_update", "error"),
+    [
+        ({"mode": "local"}, "courier mode"),
+        ({"active_request_directory": "request"}, "request is unresolved"),
+        ({"recovery_state": "ESCALATED"}, "recovery is unresolved"),
+    ],
+)
+def test_followup_rejects_invalid_session_state(monkeypatch, tmp_path, state_update, error):
+    response = tmp_path / "response.txt"
+    response.write_text("accepted\n", encoding="utf-8")
+    state = _followup_state(response)
+    state.update(state_update)
+    message = tmp_path / "message.txt"
+    message.write_text("delta\n", encoding="utf-8")
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "_unresolved_escalation_ids", lambda _root: [])
+    with pytest.raises(flow.FlowError, match=error):
+        flow.command_followup(tmp_path, SimpleNamespace(message_file=str(message)))
+
+
+def test_followup_rejects_unresolved_escalation_and_response_tamper(monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text("accepted\n", encoding="utf-8")
+    message = tmp_path / "message.txt"
+    message.write_text("delta\n", encoding="utf-8")
+    state = _followup_state(response)
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "_unresolved_escalation_ids", lambda _root: ["pending-id"])
+    with pytest.raises(flow.FlowError, match="escalation is unresolved"):
+        flow.command_followup(tmp_path, SimpleNamespace(message_file=str(message)))
+
+    monkeypatch.setattr(flow, "_unresolved_escalation_ids", lambda _root: [])
+    response.write_text("tampered\n", encoding="utf-8")
+    with pytest.raises(flow.FlowError, match="response hash mismatch"):
+        flow.command_followup(tmp_path, SimpleNamespace(message_file=str(message)))
+
+
+def test_followup_rejects_long_inline_body(monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text("accepted\n", encoding="utf-8")
+    message = tmp_path / "message.txt"
+    message.write_text("x" * (flow.INLINE_CHAT_REFERENCE_THRESHOLD + 1), encoding="utf-8")
+    state = _followup_state(response)
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "_unresolved_escalation_ids", lambda _root: [])
+    with pytest.raises(flow.FlowError, match="short inline"):
+        flow.command_followup(tmp_path, SimpleNamespace(message_file=str(message)))
+
+
 def test_work_recovers_session_saved_before_request_directory(monkeypatch, tmp_path):
     state = {
         "active": True,

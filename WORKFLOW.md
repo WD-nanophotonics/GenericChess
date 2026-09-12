@@ -130,6 +130,7 @@ start --mode local
 ```powershell
 generic-chess-flow.cmd status
 generic-chess-flow.cmd work
+generic-chess-flow.cmd followup --message-file <runtime-file>
 generic-chess-flow.cmd start --mode courier|local [--message-file <path>]
 generic-chess-flow.cmd heavy -- <long-running command>
 generic-chess-flow.cmd heavy-start --label <safe-label> -- <long-running command>
