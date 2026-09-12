@@ -161,3 +161,24 @@ certified depths, and a reversible knight cycle reaches five occurrences and
 returns `REPETITION` at ply 16 before `max_ply`. The new control and PREP are
 qualification evidence only; they do not authorize Layer-D PASS or a
 production ruleset change.
+
+## Qualification-control executor
+
+The qualification-only executor is now implemented at
+`scripts/f94_r5_western_qualification_executor.py`. It is fail-closed on the
+frozen PREP schema, source/protocol commit, PREP fingerprint, production and
+qualification fingerprints, checkpoint/evaluator identity, exact `5`
+repetition delta, public-catalog exclusion, and disjoint tape seeds. It
+validates all three opening-corpus identities before invoking an injected or
+real Arena runner, requires one seat-swapped pair per tape, retains action
+traces, pools depth/horizon descriptors at candidate level, and emits
+`QUALIFICATION_CONTROL_RESULT_COMPLETE` only for the exact 3-invocation,
+3-pair, 6-game, 6-trace shape. Results are explicitly
+`control_only`, `not_layer_d_authority`, `observed_not_poolable`, and
+`production_changed=false`.
+
+This work package exercised only injected fake Arena summaries. The focused
+publish gate passed 9 tests across the executor, qualification-control
+identity/repetition/perft contracts, and Western termination audit. No real
+qualification control pilot, Arena, Heavy envelope, Stage 1, Layer-E, or
+216-game RESULT was generated or run.
