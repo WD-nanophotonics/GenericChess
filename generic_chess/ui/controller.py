@@ -27,7 +27,7 @@ from ..ai.limits import SearchLimits
 from ..clock import ClockState, MatchClock, TimeControl, TimeControlMode
 from ..generation.config import GenerationError, GeneratorConfig
 from ..generation.generator import generate_game
-from ..rules.catalog import build_builtin_ruleset
+from ..rules.catalog import build_builtin_ruleset, resolve_builtin_ruleset_by_fingerprint
 from ..rules.compiler import compile_ruleset_for_execution
 from ..rules.schema import RuleSet
 from ..rules.serialization import deserialize_ruleset, serialize_ruleset
@@ -414,18 +414,34 @@ class UIController:
         return True
 
     def open_record(self, path: str) -> bool:
-        if self._compiled is None:
-            self._last_error = "load a RuleSet before opening a record"
-            return False
         try:
             with open(path, "r", encoding="utf-8") as fh:
                 text = fh.read()
             record = deserialize_game_record(text)
-            session = GameSession.replay(self._compiled, record)
+            compiled = self._compiled
+            ruleset = self._ruleset
+            if compiled is None or compiled.ruleset_fingerprint != record.ruleset_fingerprint:
+                resolved = resolve_builtin_ruleset_by_fingerprint(record.ruleset_fingerprint)
+                if resolved is None:
+                    if self._compiled is None:
+                        raise SessionRecordError(
+                            "unknown built-in ruleset fingerprint; load the matching RuleSet first"
+                        )
+                    raise SessionRecordError(
+                        f"record ruleset fingerprint {record.ruleset_fingerprint!r} "
+                        "does not match the loaded ruleset and is not a production built-in"
+                    )
+                _builtin_name, ruleset = resolved
+                compiled = compile_ruleset_for_execution(ruleset)
+            session = GameSession.replay(compiled, record)
         except (OSError, SessionRecordError, ValueError) as exc:
             self._last_error = f"cannot open record ({path}): {exc}"
             return False
         self._bump_ai_generation()
+        self._ruleset = ruleset
+        self._compiled = compiled
+        self._ruleset_path = None
+        self._seed = None
         self._session = session
         self._display_session = None
         self._actions = list(record.actions)
