@@ -164,6 +164,18 @@ def test_work_uses_a_new_idempotency_token_for_a_new_finished_session(
     assert started == ["first-session", "second-session"]
 
 
+def test_scoped_complete_requires_follow_on_work_contract():
+    contract = (
+        "A Chat `COMPLETE` closes the whole project only when the response explicitly "
+        "says no further GenericChess work is needed."
+    )
+    normalized = lambda path: " ".join(path.read_text(encoding="utf-8").split())
+    assert contract in normalized(ROOT / "AGENTS.md")
+    assert contract in normalized(ROOT / "WORKFLOW.md")
+    assert "finish that session" in normalized(ROOT / "AGENTS.md")
+    assert "immediately runs" in normalized(ROOT / "WORKFLOW.md")
+
+
 def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
     state = {
         "active": True,

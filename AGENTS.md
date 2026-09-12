@@ -27,8 +27,13 @@ Read `WORKFLOW.md` before changing this repository.
    `generic-chess-flow.cmd start --mode local` instead.
 10. In Courier mode, continue the work-order loop in the same turn: implement
     the current order, test, commit, publish, close out, and follow the next
-    order. Stop only at `COMPLETE`, `BLOCKED`, a hard error requiring the user,
-    or an explicit user stop. Do not stop merely because one work order ended.
+    order. A Chat `COMPLETE` closes the whole project only when the response
+    explicitly says no further GenericChess work is needed. If it closes only
+    a named phase/work package and mentions a follow-on, finish that session
+    and immediately run `generic-chess-flow.cmd work` for the next session.
+    Stop only at an explicit whole-project terminal `COMPLETE`, `BLOCKED`, a
+    hard error requiring the user, or an explicit user stop. Do not stop merely
+    because one work order ended.
 11. Courier transport faults follow the bounded recovery ladder: read-only
     `capture_latest`, existing-request recover/wait, one evidence-gated retry of
     the immutable request, registered Supervisor escalation, then human action.

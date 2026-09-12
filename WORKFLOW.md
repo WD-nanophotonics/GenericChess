@@ -22,8 +22,12 @@ Agent: switch to GenericChess-sandbox and run generic-chess-flow.cmd work
 `work` starts Courier with a built-in request, resumes the same interrupted
 request, or redisplays the current work order. It never creates a replacement
 for an active request. The Agent keeps following the loop below in the same
-turn until Chat returns `COMPLETE` or `BLOCKED`, a hard error needs the user, or
-the user stops it.
+turn. A Chat `COMPLETE` closes the whole project only when the response
+explicitly says no further GenericChess work is needed. If it closes only a
+named phase/work package and mentions a follow-on, the Agent finishes that
+session and immediately runs `generic-chess-flow.cmd work` for the next
+session. The loop stops only at an explicit whole-project terminal `COMPLETE`
+or `BLOCKED`, a hard error needing the user, or the user stopping it.
 
 ```text
 start --mode courier --message-file <request>
@@ -32,7 +36,7 @@ start --mode courier --message-file <request>
 → commit
 → publish --tests <pytest targets>
 → closeout --report-file <report>
-→ continue with the next work order, or finish after COMPLETE/BLOCKED
+→ continue with the next work order, or finish only after a whole-project terminal COMPLETE/BLOCKED
 ```
 
 Courier is only transport. While waiting, its queue events are printed live;
