@@ -1,0 +1,166 @@
+{
+  "boundary_control": {
+    "arena_invocations": 0,
+    "compute": 0,
+    "layer_a_status": "PASS",
+    "layer_c_status": "DEFER",
+    "name": "F86N-R1 boundary V4-3",
+    "prerequisite": "PREREQUISITE_A_C_NOT_PASS"
+  },
+  "budgets": {
+    "arena_games": 12,
+    "arena_invocations": 6,
+    "max_depth": 12,
+    "pair_count_per_tape": 1,
+    "ready_candidate_count": 2,
+    "strongest_nodes_per_move": 4096,
+    "tape_count_per_candidate": 3,
+    "tt_megabytes": 8,
+    "weakest_nodes_per_move": 256,
+    "workers": 1
+  },
+  "candidates": [
+    {
+      "checkpoint_id": "1e83759348a72e82fd2a7895425e828c18667b81fd0d8f109931f75ca931f901",
+      "class": "positive_semantic",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "PASS",
+      "layer_d_prerequisite": "READY",
+      "name": "Built-in Western Chess",
+      "opening_corpora": [
+        {
+          "corpus_id": "87063cdca844dc0f63c868d2e03204af792a1467abd0195b657e46129862cfb4",
+          "selected_action_count": 5,
+          "selected_final_position_key": "f3e714b5017922be2e50ff4e92b555df3d4df85f0e941f1d81d217bc9bbe80d9",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9401000,
+          "selected_target_plies": 5,
+          "tape_seed": 9401
+        },
+        {
+          "corpus_id": "acd516e51ed5b096ee44a6b82ecd678eebeffc6d2740f5dd2aa642e8722012ac",
+          "selected_action_count": 3,
+          "selected_final_position_key": "90b42684cda0f43bef4984918cdab874440fb41c9a604da316cab91dcebf0e95",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9402000,
+          "selected_target_plies": 3,
+          "tape_seed": 9402
+        },
+        {
+          "corpus_id": "e2e99aa1db0186aa69d93564cb89bd05e558bfe2eae5b84ba3e8a614b4c6dd18",
+          "selected_action_count": 5,
+          "selected_final_position_key": "9f1b856a417d36718ab62fec2715d8f424d48d7031a8e4cd21f578e4b7ea68ae",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9403000,
+          "selected_target_plies": 5,
+          "tape_seed": 9403
+        }
+      ],
+      "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "source_prep_fingerprint": "cd8342f0702a66a55ae91574acb712903580dbdafdfbcfbbcf6bd8566654b582"
+    },
+    {
+      "checkpoint_id": "f9b4ef2c22e1d3226bbc32f10e36ce25ad99074b23c4df8cd55ca0797971e2e5",
+      "class": "positive_semantic",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "PASS",
+      "layer_d_prerequisite": "READY",
+      "name": "Built-in Standard Shogi",
+      "opening_corpora": [
+        {
+          "corpus_id": "fb22695d056a30a6288869504d1954e83e8ef7b3af9a6a42a5558ba8d37c684e",
+          "selected_action_count": 5,
+          "selected_final_position_key": "6545d1f988139a95791ef5cb1a7777fae61252f8852cac5e4ec5f79aefa02e54",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9401000,
+          "selected_target_plies": 5,
+          "tape_seed": 9401
+        },
+        {
+          "corpus_id": "ba14dec1fc5cb09fdd0b395c1f58262d891ee5b2019a50e72820a747e2526e66",
+          "selected_action_count": 3,
+          "selected_final_position_key": "77bd3d9d53b816aebadc73aae3bdb1b7d0c3e760c4f1545a93e4237240e9e9e6",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9402000,
+          "selected_target_plies": 3,
+          "tape_seed": 9402
+        },
+        {
+          "corpus_id": "8e81f380d18953e7a95dcb6c2bebfd0aff7aa371c3b91286e9ca380e3a89d654",
+          "selected_action_count": 5,
+          "selected_final_position_key": "6caf8ee6d15dba2ef85f5a7e7091d050147f66e73a653bb0a26635de1a376657",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9403000,
+          "selected_target_plies": 5,
+          "tape_seed": 9403
+        }
+      ],
+      "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+      "source_prep_fingerprint": "c055b6364ef994c3d72568558e96bbd104d3397c9ae2c1f558b47e2bbaf9ea35"
+    },
+    {
+      "checkpoint_id": "e20b86aa88bb354b3582fca6c805305c8687c16af6e13c046f99b1931c056b8e",
+      "class": "boundary",
+      "evaluator_identity": "learnable-material-v1",
+      "layer_a_status": "PASS",
+      "layer_c_status": "DEFER",
+      "layer_d_prerequisite": "SHORT_CIRCUIT",
+      "name": "F86N-R1 boundary V4-3",
+      "opening_corpora": [
+        {
+          "corpus_id": "28a8c432fd7cc0e3722f5940ee44da0e997bce84c275effaedda133cdf52c1e3",
+          "selected_action_count": 5,
+          "selected_final_position_key": "a3fa20db8b502709175cd0c17a77a4ee9f21b057d724cd7a7751a6c6e7971e90",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9401000,
+          "selected_target_plies": 5,
+          "tape_seed": 9401
+        },
+        {
+          "corpus_id": "b8bf4f502b8a7b4f9bd2da211e2ef8276f2950a792fa330efed5b4098da403be",
+          "selected_action_count": 3,
+          "selected_final_position_key": "72a0a1b21a08a49b59bfef3e2bd72d088f1b39271e5f1b6ab7add603df0c7f79",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9402000,
+          "selected_target_plies": 3,
+          "tape_seed": 9402
+        },
+        {
+          "corpus_id": "95dea682c3604a292ea06fc265909682a9bd11aa4f8bc0322c5e3073e22c7cfd",
+          "selected_action_count": 5,
+          "selected_final_position_key": "b760525010f88d88b3b3c43230a674a0d11bcca597065c6e27dcf83cd871de7e",
+          "selected_opening_index": 0,
+          "selected_opening_seed": 9403000,
+          "selected_target_plies": 5,
+          "tape_seed": 9403
+        }
+      ],
+      "ruleset_fingerprint": "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2",
+      "source_prep_fingerprint": "0e657cfb479e46130f417b2f5c2fddf2fac01429ed897a1a34c945939ade77a7"
+    }
+  ],
+  "direction_rule": {
+    "ci": "descriptive pooled effect interval only; three paired observations are not formal significance authority",
+    "mixed_or_uncertain": "any tape pair score == 0.5 or tape score signs are inconsistent",
+    "negative": "all three tape pair scores < 0.5",
+    "override_precedence": [
+      "DEPTH_CENSORED",
+      "FALLBACK",
+      "OPERATIONALLY_UNRESOLVED",
+      "POSITIVE_DIRECTION",
+      "NEGATIVE_DIRECTION",
+      "MIXED_OR_UNCERTAIN"
+    ],
+    "positive": "all three tape pair scores > 0.5"
+  },
+  "experiment": "GENERICCHESS-F94-R2-STAGE0-RUNTIME-CALIBRATION",
+  "result_free": true,
+  "schema": "generic-chess-f94-r2-stage0-prep-v1",
+  "source_prep_artifact": "docs/architecture/GENERICCHESS_F94_R2_STRENGTH_RESPONSE_PREP.json",
+  "source_prep_artifact_sha256": "b146cd9b47d1948cc22735c5a59e00a85a457d4c191ed8b23e144aa9e5ea0f34",
+  "source_prep_source_sandbox_sha": "8782da79ab10d2293f10dd4f785ee38a54fc9bf4",
+  "stage0_prep_fingerprint": "77260df69ec308ed256a6ca18b0168faa5c5b9c22efcbe50ef7b87674558e357",
+  "status": "STAGE0_PREP_FROZEN"
+}

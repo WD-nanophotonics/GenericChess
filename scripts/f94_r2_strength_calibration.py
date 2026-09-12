@@ -29,8 +29,10 @@ from generic_chess.benchmark.strength_response import (
 )
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.openings import generate_arena_openings
-from generic_chess.learning.arena import run_arena
+from generic_chess.learning.arena import ArenaConfig, run_arena
+from generic_chess.learning.statistics import bootstrap_pair_mean_ci
 from generic_chess.native.compiler import compile_native_semantic_rules
+from generic_chess.learning.serialization import stable_sha256
 from generic_chess.rules.compiler import compile_ruleset_for_execution, compile_semantic_ruleset
 from generic_chess.rules.compiler import compile_ruleset
 sys.path.insert(0, str(ROOT))
@@ -39,6 +41,8 @@ from scripts.f87a_ruleset_qualification import _controls, _semantic_compiled
 
 PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R2_STRENGTH_RESPONSE_PREP.json"
 RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r2-strength-response-result.json"
+STAGE0_PREP_PATH = ROOT / "docs/architecture/GENERICCHESS_F94_R2_STAGE0_PREP.json"
+STAGE0_RESULT_PATH = ROOT / ".generic_chess_flow" / "f94-r2-stage0-result.json"
 EXPERIMENT = "GENERICCHESS-F94-R2-REAL-STRENGTH-CALIBRATION"
 TAPE_SEEDS = (9401, 9402, 9403)
 PAIR_COUNT = 6
@@ -193,6 +197,11 @@ def _assert_regenerated_matches(
 def run_result(root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path | None = None) -> dict[str, Any]:
     """Execute only the already frozen RESULT; never regenerate PREP output."""
 
+    prep_path = Path(prep_path)
+    if not prep_path.is_absolute():
+        prep_path = root / prep_path
+    if output is not None:
+        output = Path(output)
     frozen = _load_frozen_prep(prep_path)
     controls = {control["name"]: control for control in _controls(root)}
     reports = json.loads(
@@ -301,14 +310,357 @@ def run_result(root: Path = ROOT, prep_path: Path = PREP_PATH, output: Path | No
     return payload
 
 
+def _stage0_fingerprint(payload: dict[str, Any]) -> str:
+    unsigned = dict(payload)
+    unsigned.pop("stage0_prep_fingerprint", None)
+    return stable_sha256(unsigned)
+
+
+def build_stage0_prep(
+    root: Path = ROOT,
+    source_path: Path = PREP_PATH,
+    output: Path = STAGE0_PREP_PATH,
+) -> dict[str, Any]:
+    """Create the separate, result-free one-pair Stage-0 PREP authority."""
+
+    source_path = Path(source_path)
+    if not source_path.is_absolute():
+        source_path = root / source_path
+    output = Path(output)
+    source = _load_frozen_prep(source_path)
+    controls = {control["name"]: control for control in _controls(root)}
+    reports = json.loads(
+        (root / "artifacts/f87a_ruleset_qualification/reports.json").read_text(encoding="utf-8")
+    )
+    candidates: list[dict[str, Any]] = []
+    for source_candidate in source["candidates"]:
+        name = source_candidate["name"]
+        control = controls[name]
+        regenerated = _prep_candidate(control, reports[name])
+        _assert_regenerated_matches(source_candidate, regenerated)
+        compiled, _profile = _ruleset_for(control)
+        corpora = tuple(
+            generate_arena_openings(
+                compiled,
+                count=source_candidate["prep"]["pair_count"],
+                seed=seed,
+                min_plies=2,
+                max_plies=6,
+            )
+            for seed in source_candidate["prep"]["tape_seeds"]
+        )
+        source_rows = source_candidate["opening_corpora"]
+        if tuple(corpus.corpus_id for corpus in corpora) != tuple(row["corpus_id"] for row in source_rows):
+            raise RuntimeError(f"{name} Stage-0 corpus identity does not match source PREP")
+        selected = []
+        for corpus, source_row in zip(corpora, source_rows):
+            opening = corpus.openings[0]
+            if opening.opening_seed != source_row["opening_seeds"][0]:
+                raise RuntimeError(f"{name} Stage-0 opening seed does not match source PREP")
+            selected.append({
+                "tape_seed": corpus.seed,
+                "corpus_id": corpus.corpus_id,
+                "selected_opening_index": opening.index,
+                "selected_opening_seed": opening.opening_seed,
+                "selected_target_plies": opening.target_plies,
+                "selected_action_count": len(opening.actions),
+                "selected_final_position_key": opening.final_position_key,
+            })
+        candidates.append({
+            "name": name,
+            "class": source_candidate["class"],
+            "ruleset_fingerprint": source_candidate["ruleset_fingerprint"],
+            "checkpoint_id": source_candidate["checkpoint_id"],
+            "evaluator_identity": source_candidate["evaluator_identity"],
+            "layer_a_status": source_candidate["layer_a_status"],
+            "layer_c_status": source_candidate["layer_c_status"],
+            "layer_d_prerequisite": source_candidate["layer_d_prerequisite"],
+            "source_prep_fingerprint": source_candidate["prep"]["prep_fingerprint"],
+            "opening_corpora": selected,
+        })
+    payload = {
+        "schema": "generic-chess-f94-r2-stage0-prep-v1",
+        "status": "STAGE0_PREP_FROZEN",
+        "experiment": "GENERICCHESS-F94-R2-STAGE0-RUNTIME-CALIBRATION",
+        "source_prep_artifact": source_path.relative_to(root).as_posix(),
+        "source_prep_artifact_sha256": _sha256_bytes(source_path),
+        "source_prep_source_sandbox_sha": source["source_sandbox_sha"],
+        "budgets": {
+            "strongest_nodes_per_move": 4096,
+            "weakest_nodes_per_move": 256,
+            "max_depth": 12,
+            "tt_megabytes": 8,
+            "pair_count_per_tape": 1,
+            "tape_count_per_candidate": 3,
+            "ready_candidate_count": 2,
+            "arena_invocations": 6,
+            "arena_games": 12,
+            "workers": 1,
+        },
+        "direction_rule": {
+            "positive": "all three tape pair scores > 0.5",
+            "negative": "all three tape pair scores < 0.5",
+            "mixed_or_uncertain": "any tape pair score == 0.5 or tape score signs are inconsistent",
+            "override_precedence": [
+                "DEPTH_CENSORED",
+                "FALLBACK",
+                "OPERATIONALLY_UNRESOLVED",
+                "POSITIVE_DIRECTION",
+                "NEGATIVE_DIRECTION",
+                "MIXED_OR_UNCERTAIN",
+            ],
+            "ci": "descriptive pooled effect interval only; three paired observations are not formal significance authority",
+        },
+        "candidates": candidates,
+        "boundary_control": {
+            "name": "F86N-R1 boundary V4-3",
+            "layer_a_status": "PASS",
+            "layer_c_status": "DEFER",
+            "prerequisite": "PREREQUISITE_A_C_NOT_PASS",
+            "arena_invocations": 0,
+            "compute": 0,
+        },
+        "result_free": True,
+    }
+    payload["stage0_prep_fingerprint"] = _stage0_fingerprint(payload)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return payload
+
+
+def _stage0_status(pair_score: float, metrics: list[dict[str, Any]]) -> str:
+    if any(bool(row.get("used_fallback")) for row in metrics):
+        return "FALLBACK"
+    if any(int(row.get("completed_depth", 0)) >= MAX_DEPTH for row in metrics):
+        return "DEPTH_CENSORED"
+    if pair_score > 0.5:
+        return "POSITIVE_DIRECTION"
+    if pair_score < 0.5:
+        return "NEGATIVE_DIRECTION"
+    return "MIXED_OR_UNCERTAIN"
+
+
+def _load_stage0_prep(path: Path = STAGE0_PREP_PATH) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if (
+        payload.get("schema") != "generic-chess-f94-r2-stage0-prep-v1"
+        or payload.get("status") != "STAGE0_PREP_FROZEN"
+        or payload.get("result_free") is not True
+        or payload.get("stage0_prep_fingerprint") != _stage0_fingerprint(payload)
+    ):
+        raise RuntimeError("Stage-0 RESULT requires an untampered frozen staged PREP")
+    if payload.get("budgets", {}).get("arena_invocations") != 6:
+        raise RuntimeError("Stage-0 PREP arena invocation budget is not frozen at 6")
+    return payload
+
+
+def run_stage0(
+    root: Path = ROOT,
+    prep_path: Path = STAGE0_PREP_PATH,
+    output: Path = STAGE0_RESULT_PATH,
+) -> dict[str, Any]:
+    """Run the bounded strongest-vs-weakest Stage-0 probe."""
+
+    prep_path = Path(prep_path)
+    if not prep_path.is_absolute():
+        prep_path = root / prep_path
+    output = Path(output)
+    staged = _load_stage0_prep(prep_path)
+    source = _load_frozen_prep(root / staged["source_prep_artifact"])
+    controls = {control["name"]: control for control in _controls(root)}
+    reports = json.loads(
+        (root / "artifacts/f87a_ruleset_qualification/reports.json").read_text(encoding="utf-8")
+    )
+    candidate_results: list[dict[str, Any]] = []
+    for staged_candidate in staged["candidates"]:
+        name = staged_candidate["name"]
+        source_candidate = next(row for row in source["candidates"] if row["name"] == name)
+        control = controls[name]
+        regenerated = _prep_candidate(control, reports[name])
+        _assert_regenerated_matches(source_candidate, regenerated)
+        if (
+            staged_candidate["ruleset_fingerprint"] != source_candidate["ruleset_fingerprint"]
+            or staged_candidate["checkpoint_id"] != source_candidate["checkpoint_id"]
+            or staged_candidate["evaluator_identity"] != source_candidate["evaluator_identity"]
+            or staged_candidate["source_prep_fingerprint"] != source_candidate["prep"]["prep_fingerprint"]
+        ):
+            raise RuntimeError(f"{name} Stage-0 identity does not match source PREP")
+        compiled, profile = _ruleset_for(control)
+        checkpoint = LearnableMaterialCheckpoint.from_profile(compiled, profile)
+        native_rules = compile_native_semantic_rules(compiled)
+        tape_results: list[dict[str, Any]] = []
+        for staged_tape in staged_candidate["opening_corpora"]:
+            corpus = generate_arena_openings(
+                compiled,
+                count=source_candidate["prep"]["pair_count"],
+                seed=staged_tape["tape_seed"],
+                min_plies=2,
+                max_plies=6,
+            )
+            if corpus.corpus_id != staged_tape["corpus_id"]:
+                raise RuntimeError(f"{name} Stage-0 corpus identity changed")
+            opening = corpus.openings[staged_tape["selected_opening_index"]]
+            if (
+                opening.opening_seed != staged_tape["selected_opening_seed"]
+                or opening.final_position_key != staged_tape["selected_final_position_key"]
+                or len(opening.actions) != staged_tape["selected_action_count"]
+            ):
+                raise RuntimeError(f"{name} Stage-0 selected opening identity changed")
+            from time import perf_counter
+
+            started = perf_counter()
+            try:
+                summary = run_arena(
+                    compiled,
+                    native_rules,
+                    checkpoint,
+                    checkpoint,
+                    ArenaConfig(
+                        pairs=1,
+                        nodes_per_move=4096,
+                        parent_nodes_per_move=256,
+                        child_nodes_per_move=4096,
+                        max_depth=12,
+                        tt_megabytes=8,
+                        opening_seed=corpus.seed,
+                        opening_count=1,
+                        workers=1,
+                    ),
+                    openings=corpus,
+                    capture_search_metrics=True,
+                )
+            except Exception as exc:
+                tape_results.append({
+                    "tape_seed": corpus.seed,
+                    "corpus_id": corpus.corpus_id,
+                    "selected_opening": {
+                        "index": opening.index,
+                        "opening_seed": opening.opening_seed,
+                        "target_plies": opening.target_plies,
+                        "action_count": len(opening.actions),
+                        "final_position_key": opening.final_position_key,
+                    },
+                    "status": "OPERATIONALLY_UNRESOLVED",
+                    "wall_seconds": perf_counter() - started,
+                    "error_type": type(exc).__name__,
+                    "error": str(exc),
+                })
+                break
+            wall_seconds = perf_counter() - started
+            pair = summary.pairs[0]
+            games = [pair.game_child_owner0, pair.game_child_owner1]
+            metrics = [metric for game in games for metric in game.search_metrics]
+            searched_nodes = sum(int(metric.get("nodes", 0)) for metric in metrics)
+            search_seconds = sum(float(metric.get("elapsed_seconds", 0.0)) for metric in metrics)
+            tape_results.append({
+                "tape_seed": corpus.seed,
+                "corpus_id": corpus.corpus_id,
+                "selected_opening": {
+                    "index": opening.index,
+                    "opening_seed": opening.opening_seed,
+                    "target_plies": opening.target_plies,
+                    "action_count": len(opening.actions),
+                    "final_position_key": opening.final_position_key,
+                },
+                "pair_score": pair.child_pair_score,
+                "role_swap_games": [
+                    {
+                        "child_owner": game.child_owner,
+                        "winner": game.winner,
+                        "result": game.result,
+                        "plies": game.plies,
+                        "search_metrics": list(game.search_metrics),
+                    }
+                    for game in games
+                ],
+                "actual_searched_nodes": searched_nodes,
+                "nps": searched_nodes / search_seconds if search_seconds > 0 else None,
+                "wall_seconds": wall_seconds,
+                "max_completed_depth": max(
+                    (int(metric.get("completed_depth", 0)) for metric in metrics),
+                    default=0,
+                ),
+                "fallback": any(bool(metric.get("used_fallback")) for metric in metrics),
+                "status": _stage0_status(pair.child_pair_score, metrics),
+            })
+        scores = [float(row["pair_score"]) for row in tape_results]
+        differences = [score - 0.5 for score in scores]
+        if len(scores) != 3 or any(row["status"] == "OPERATIONALLY_UNRESOLVED" for row in tape_results):
+            direction = "OPERATIONALLY_UNRESOLVED"
+        elif all(score > 0.5 for score in scores):
+            direction = "POSITIVE_DIRECTION"
+        elif all(score < 0.5 for score in scores):
+            direction = "NEGATIVE_DIRECTION"
+        else:
+            direction = "MIXED_OR_UNCERTAIN"
+        statuses = [row["status"] for row in tape_results]
+        for override in ("DEPTH_CENSORED", "FALLBACK"):
+            if override in statuses:
+                direction = override
+        candidate_results.append({
+            "name": name,
+            "class": staged_candidate["class"],
+            "ruleset_fingerprint": staged_candidate["ruleset_fingerprint"],
+            "checkpoint_id": staged_candidate["checkpoint_id"],
+            "evaluator_identity": staged_candidate["evaluator_identity"],
+            "source_prep_fingerprint": staged_candidate["source_prep_fingerprint"],
+            "stage0_prep_fingerprint": staged["stage0_prep_fingerprint"],
+            "tape_results": tape_results,
+            "pooled_pair_count": len(scores),
+            "pooled_mean_pair_score": sum(scores) / len(scores) if scores else None,
+            "pooled_effect": sum(differences) / len(differences) if differences else None,
+            "descriptive_pooled_effect_ci": list(
+                bootstrap_pair_mean_ci(
+                    differences,
+                    confidence=0.95,
+                    resamples=10000,
+                    seed=271828,
+                ) if differences else (None, None)
+            ),
+            "direction": direction,
+        })
+    payload = {
+        "schema": "generic-chess-f94-r2-stage0-result-v1",
+        "status": "STAGE0_RESULT_COMPLETE",
+        "experiment": "GENERICCHESS-F94-R2-STAGE0-RUNTIME-CALIBRATION",
+        "stage0_prep_artifact": prep_path.relative_to(root).as_posix(),
+        "stage0_prep_artifact_sha256": _sha256_bytes(prep_path),
+        "stage0_prep_fingerprint": staged["stage0_prep_fingerprint"],
+        "source_prep_source_sandbox_sha": staged["source_prep_source_sandbox_sha"],
+        "result_sandbox_sha": _git_sha(),
+        "candidates": candidate_results,
+        "boundary_control": staged["boundary_control"],
+        "derived_compute": {
+            "arena_invocations": 6,
+            "arena_games": 12,
+            "boundary_arena_invocations": 0,
+        },
+        "not_layer_d_authority": True,
+        "no_tuning": True,
+    }
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--result", action="store_true")
+    parser.add_argument("--stage0-prep", action="store_true")
+    parser.add_argument("--stage0", action="store_true")
     parser.add_argument("--output", type=Path, default=PREP_PATH)
     parser.add_argument("--prep", type=Path, default=PREP_PATH)
     parser.add_argument("--result-output", type=Path, default=RESULT_PATH)
+    parser.add_argument("--stage0-prep-output", type=Path, default=STAGE0_PREP_PATH)
+    parser.add_argument("--stage0-result-output", type=Path, default=STAGE0_RESULT_PATH)
     args = parser.parse_args()
-    if args.result:
+    if args.stage0_prep:
+        payload = build_stage0_prep(ROOT, args.prep, args.stage0_prep_output)
+        print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.stage0_prep_output)}, sort_keys=True))
+    elif args.stage0:
+        payload = run_stage0(ROOT, args.prep, args.stage0_result_output)
+        print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.stage0_result_output), "arena_invocations": payload["derived_compute"]["arena_invocations"]}, sort_keys=True))
+    elif args.result:
         payload = run_result(ROOT, args.prep, args.result_output)
         print(json.dumps({"status": payload["status"], "candidates": len(payload["candidates"]), "output": str(args.result_output), "arena_invocations": payload["derived_compute"]["arena_invocations"]}, sort_keys=True))
     else:
