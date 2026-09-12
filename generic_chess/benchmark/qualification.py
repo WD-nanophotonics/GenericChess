@@ -133,6 +133,92 @@ class QualificationReport:
             "overall_status": self.overall_status,
         }
 
+    def with_strength_response(
+        self,
+        result,
+        *,
+        qualification_target: str = "PLAYABILITY",
+    ) -> "QualificationReport":
+        """Attach a Layer-D result without changing the A-C contract.
+
+        Layer D is diagnostic for the historical PLAYABILITY target.  A
+        caller entering the chess-strength suite must opt into the
+        ``SKILL_BEARING`` target, which makes D a blocking layer alongside
+        the report's existing blocking layers.
+        """
+        from dataclasses import replace
+
+        if result.ruleset_fingerprint != self.ruleset_fingerprint:
+            raise ValueError("strength-response ruleset fingerprint does not match report")
+        if qualification_target not in {"PLAYABILITY", "SKILL_BEARING"}:
+            raise ValueError("unknown qualification target")
+        layer_d_gate = GateOutcome(
+            "layer_d_strength_response",
+            result.layer_d_status,
+            "EMPIRICAL_GATE",
+            "; ".join(result.reason_codes) if result.reason_codes else "paired search response passed",
+            "layer_d_qualification",
+        )
+        layers = dict(self.layers)
+        layers["D"] = result.layer_d_status
+        raw = dict(self.raw_diagnostics)
+        raw["strength_response"] = result.to_dict()
+        descriptors = dict(self.behavior_descriptors)
+        for name, descriptor in result.behavior_descriptors.items():
+            descriptors[name] = MetricEvidence(
+                descriptor.get("value"),
+                descriptor.get("provenance", "EMPIRICAL_GATE"),
+                result.layer_d_status,
+            )
+        qualification_gates = self.qualification_gates + (layer_d_gate,)
+        blocking_layers = tuple(self.blocking_layers)
+        required_layers = tuple(self.required_layers)
+        if qualification_target == "SKILL_BEARING":
+            required_layers = tuple(dict.fromkeys(required_layers + ("D",)))
+            blocking_layers = tuple(dict.fromkeys(blocking_layers + ("D",)))
+        non_blocking_layers = tuple(layer for layer in required_layers if layer not in blocking_layers)
+        non_blocking_gate_names = tuple(
+            gate for gate in self.non_blocking_gate_names
+            if gate in {item.name for item in qualification_gates}
+        )
+        hard_gates = self.hard_gates
+        if qualification_target == "SKILL_BEARING":
+            hard_gates = hard_gates + (layer_d_gate,)
+        overall_status = reduce_qualification_status(
+            layers,
+            required_layers=required_layers,
+            integrity_gates=self.integrity_gates,
+            qualification_gates=qualification_gates,
+            blocking_layers=blocking_layers,
+            non_blocking_gate_names=non_blocking_gate_names,
+        )
+        reason_codes = tuple(dict.fromkeys(self.reason_codes + tuple(result.reason_codes)))
+        layer_reasons = dict(self.layer_reasons)
+        layer_reasons["D"] = tuple(result.reason_codes)
+        fail_defer_reasons = tuple(self.fail_defer_reasons)
+        if qualification_target == "PLAYABILITY":
+            fail_defer_reasons += ("Layer D is diagnostic for PLAYABILITY and does not block legacy qualification",)
+        else:
+            fail_defer_reasons += ("Layer D is blocking for the SKILL_BEARING target",)
+        return replace(
+            self,
+            qualification_target=qualification_target,
+            required_layers=required_layers,
+            blocking_layers=blocking_layers,
+            non_blocking_layers=non_blocking_layers,
+            non_blocking_gate_names=non_blocking_gate_names,
+            layers=layers,
+            raw_diagnostics=raw,
+            hard_gates=hard_gates,
+            qualification_gates=qualification_gates,
+            reason_codes=reason_codes,
+            layer_reasons=layer_reasons,
+            fail_defer_reasons=fail_defer_reasons,
+            behavior_descriptors=descriptors,
+            compute_usage={**self.compute_usage, "strength_response": result.compute_usage},
+            overall_status=overall_status,
+        )
+
 
 def reduce_qualification_status(
     layers: dict[str, str],
@@ -1207,9 +1293,14 @@ def semantic_termination_control_games(
     }
 
 
-def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, layer_c_status: str = STATUS_DEFER, layer_c_reason: str = "playability authority is not calibrated in F87A-R1", scope: str = "F87A", blocking_layers: tuple[str, ...] | None = None) -> QualificationReport:
+def qualification_report(*, compiled, provenance: dict[str, Any], experiment_identity: str, structural: dict[str, Any], dynamic: dict[str, Any], replay_equal: bool, dynamic_status: str = STATUS_PASS, control_class: str = "unknown", control_name: str = "", layer_b_reason_codes: tuple[str, ...] = (), terminal_transport: dict[str, Any] | None = None, calibration_authority: dict[str, Any] | None = None, layer_c_status: str = STATUS_DEFER, layer_c_reason: str = "playability authority is not calibrated in F87A-R1", scope: str = "F87A", blocking_layers: tuple[str, ...] | None = None, qualification_target: str = "PLAYABILITY") -> QualificationReport:
     required_layers = ("A", "B", "C")
     blocking_layers = required_layers if blocking_layers is None else blocking_layers
+    if qualification_target not in {"PLAYABILITY", "SKILL_BEARING"}:
+        raise ValueError("unknown qualification target")
+    if qualification_target == "SKILL_BEARING":
+        required_layers = ("A", "B", "C", "D")
+        blocking_layers = tuple(dict.fromkeys(tuple(blocking_layers) + ("D",)))
     non_blocking_layers = tuple(layer for layer in required_layers if layer not in blocking_layers)
     non_blocking_gate_names = ("layer_b_ruleset_state", "calibration_expectation") if "B" in non_blocking_layers else ()
     layer_c_integrity = dynamic_status if dynamic_status in {STATUS_DEFER, STATUS_UNMEASURED} else (STATUS_PASS if replay_equal else STATUS_FAIL)
@@ -1258,7 +1349,7 @@ def qualification_report(*, compiled, provenance: dict[str, Any], experiment_ide
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         provenance={**provenance, "control_class": control_class, "control_name": control_name},
         experiment_identity=experiment_identity,
-        qualification_target="PLAYABILITY",
+        qualification_target=qualification_target,
         required_layers=required_layers,
         blocking_layers=blocking_layers,
         non_blocking_layers=non_blocking_layers,

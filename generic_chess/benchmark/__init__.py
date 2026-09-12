@@ -10,6 +10,13 @@ from .game_quality import (
 )
 from .minimal_generator import MinimalGeneratedGame, generate_minimal_game, swap_owner_opening
 from .tactical_probe import TacticalProbeResult, probe_terminal_only
+from .strength_response import (
+    DEFAULT_BUDGETS,
+    StrengthResponsePrep,
+    StrengthResponseResult,
+    measure_strength_response,
+    prepare_strength_response,
+)
 
 __all__ = [
     "GameQualityProfile",
@@ -23,4 +30,9 @@ __all__ = [
     "probe_terminal_only",
     "profile_from_observations",
     "swap_owner_opening",
+    "DEFAULT_BUDGETS",
+    "StrengthResponsePrep",
+    "StrengthResponseResult",
+    "measure_strength_response",
+    "prepare_strength_response",
 ]
