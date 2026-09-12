@@ -10,6 +10,7 @@ from PySide6.QtCore import QCoreApplication
 from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QApplication
 
+from .. import __version__
 from .controller import UIController
 from .main_window import MainWindow
 from .settings import QtSettingsStore
@@ -30,12 +31,13 @@ def create_application(argv: list[str] | None = None) -> QApplication:
     QCoreApplication.setOrganizationName("GenericChess")
     QCoreApplication.setApplicationName("GenericChess")
     app = QApplication.instance() or QApplication(argv or sys.argv)
-    app.setApplicationVersion("0.5.0")
+    app.setApplicationVersion(__version__)
     return app
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="generic-chess-ui")
+    parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--board-size", type=int, default=8)
     parser.add_argument("--preset", default="classic_like")

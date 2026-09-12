@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from .. import __version__
 from ..ai.alphabeta.player import AlphaBetaPlayer
 from ..ai.cancellation import CancellationToken
 from .board.scene import BoardRenderConfig, BoardScene
@@ -106,7 +107,7 @@ class MainWindow(QMainWindow):
         self._ai_error: str | None = None
         self._closing_after_ai = False
         self._shutting_down = False
-        self._app_version = "0.7.0a1"
+        self._app_version = __version__
         self.setWindowTitle(self._tr.text("app.title"))
         self.setMinimumSize(760, 540)
         self.resize(1180, 760)

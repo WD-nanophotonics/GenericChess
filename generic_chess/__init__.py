@@ -1,4 +1,4 @@
-"""GenericChess v0: a deterministic generic chess/shogi-like game engine.
+"""A deterministic generic chess/shogi-like game engine.
 
 The package is split into three layers:
 
@@ -9,6 +9,8 @@ The package is split into three layers:
 The public API is intentionally small and stable so that future UIs and AI
 players only depend on these functions.
 """
+
+__version__ = "0.8.0a9"
 
 from .core.actions import BoardMove, DropMove, action_from_dict, action_to_dict
 from .core.attacks import (
@@ -47,6 +49,7 @@ from .core.transition import apply_action, initial_state, legal_successors
 from .core.terminal import terminal_result
 
 __all__ = [
+    "__version__",
     "compile_ruleset",
     "compile_ruleset_for_execution",
     "build_builtin_ruleset",
