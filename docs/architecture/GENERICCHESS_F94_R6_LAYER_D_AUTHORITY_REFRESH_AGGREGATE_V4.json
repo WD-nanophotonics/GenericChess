@@ -1,0 +1,1033 @@
+{
+  "authority": "descriptive_only",
+  "controls": {
+    "standard_shogi": {
+      "classifier_output": "DEFER_NONMONOTONE_OR_UNCERTAIN",
+      "matchups": [
+        {
+          "bootstrap": {
+            "confidence_level": 0.95,
+            "lower": 0.6111111111111112,
+            "mean": 0.6944444444444444,
+            "method": "percentile_bootstrap_mean_pair_score",
+            "resamples": 10000,
+            "sample_count": 18,
+            "seed": 9801101,
+            "upper": 0.7916666666666666
+          },
+          "censoring": {
+            "count": 2684,
+            "fraction": 0.0018628912071535022,
+            "hits": 5,
+            "source": "identity-bound resumable pair checkpoints",
+            "strongest_vs_weakest_horizon": {
+              "fraction": 0.0,
+              "games": 0,
+              "hits": 0
+            }
+          },
+          "classifier_output": "DEFER",
+          "descriptive_attribution": {
+            "any_tape_mean_le_half": false,
+            "authority": "descriptive_only",
+            "bootstrap_lower_le_half": false,
+            "depth_censored": false,
+            "descriptive_attribution": "NONE",
+            "horizon_censored": false
+          },
+          "name": "1024_vs_256",
+          "pair_scores": [
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "FALLBACK",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.75,
+              "status": "FALLBACK",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            }
+          ],
+          "status_counts": {
+            "FALLBACK": 2,
+            "MIXED_OR_UNCERTAIN": 8,
+            "POSITIVE_DIRECTION": 8
+          },
+          "tape_summaries": [
+            {
+              "mean_pair_score": 0.625,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.625,
+              "tape_seed": 9801
+            },
+            {
+              "mean_pair_score": 0.75,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.75,
+              "tape_seed": 9802
+            },
+            {
+              "mean_pair_score": 0.7083333333333334,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.7083333333333334,
+              "tape_seed": 9803
+            }
+          ]
+        },
+        {
+          "bootstrap": {
+            "confidence_level": 0.95,
+            "lower": 0.6666666666666666,
+            "mean": 0.7777777777777778,
+            "method": "percentile_bootstrap_mean_pair_score",
+            "resamples": 10000,
+            "sample_count": 18,
+            "seed": 9801102,
+            "upper": 0.875
+          },
+          "censoring": {
+            "count": 1585,
+            "fraction": 0.0,
+            "hits": 0,
+            "source": "identity-bound resumable pair checkpoints",
+            "strongest_vs_weakest_horizon": {
+              "fraction": 0.0,
+              "games": 0,
+              "hits": 0
+            }
+          },
+          "classifier_output": "PASS",
+          "descriptive_attribution": {
+            "any_tape_mean_le_half": false,
+            "authority": "descriptive_only",
+            "bootstrap_lower_le_half": false,
+            "depth_censored": false,
+            "descriptive_attribution": "NONE",
+            "horizon_censored": false
+          },
+          "name": "4096_vs_1024",
+          "pair_scores": [
+            {
+              "pair_index": 0,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.25,
+              "status": "NEGATIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            }
+          ],
+          "status_counts": {
+            "MIXED_OR_UNCERTAIN": 4,
+            "NEGATIVE_DIRECTION": 1,
+            "POSITIVE_DIRECTION": 13
+          },
+          "tape_summaries": [
+            {
+              "mean_pair_score": 0.7916666666666666,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.7916666666666666,
+              "tape_seed": 9801
+            },
+            {
+              "mean_pair_score": 0.7916666666666666,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.7916666666666666,
+              "tape_seed": 9802
+            },
+            {
+              "mean_pair_score": 0.75,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.75,
+              "tape_seed": 9803
+            }
+          ]
+        },
+        {
+          "bootstrap": {
+            "confidence_level": 0.95,
+            "lower": 0.8055555555555556,
+            "mean": 0.8888888888888888,
+            "method": "percentile_bootstrap_mean_pair_score",
+            "resamples": 10000,
+            "sample_count": 18,
+            "seed": 9801103,
+            "upper": 0.9583333333333334
+          },
+          "censoring": {
+            "count": 2081,
+            "fraction": 0.0,
+            "hits": 0,
+            "source": "identity-bound resumable pair checkpoints",
+            "strongest_vs_weakest_horizon": {
+              "fraction": 0.0,
+              "games": 36,
+              "hits": 0
+            }
+          },
+          "classifier_output": "PASS",
+          "descriptive_attribution": {
+            "any_tape_mean_le_half": false,
+            "authority": "descriptive_only",
+            "bootstrap_lower_le_half": false,
+            "depth_censored": false,
+            "descriptive_attribution": "NONE",
+            "horizon_censored": false
+          },
+          "name": "4096_vs_256",
+          "pair_scores": [
+            {
+              "pair_index": 0,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            }
+          ],
+          "status_counts": {
+            "MIXED_OR_UNCERTAIN": 2,
+            "POSITIVE_DIRECTION": 16
+          },
+          "tape_summaries": [
+            {
+              "mean_pair_score": 0.9166666666666666,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.9166666666666666,
+              "tape_seed": 9801
+            },
+            {
+              "mean_pair_score": 0.875,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.875,
+              "tape_seed": 9802
+            },
+            {
+              "mean_pair_score": 0.875,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.875,
+              "tape_seed": 9803
+            }
+          ]
+        }
+      ]
+    },
+    "western_chess_qualification_control_v1": {
+      "classifier_output": "DEFER_NONMONOTONE_OR_UNCERTAIN",
+      "matchups": [
+        {
+          "bootstrap": {
+            "confidence_level": 0.95,
+            "lower": 0.5694444444444444,
+            "mean": 0.6388888888888888,
+            "method": "percentile_bootstrap_mean_pair_score",
+            "resamples": 10000,
+            "sample_count": 18,
+            "seed": 9801101,
+            "upper": 0.7083333333333334
+          },
+          "censoring": {
+            "count": 9733,
+            "fraction": 0.0009246892016849893,
+            "hits": 9,
+            "source": "identity-bound resumable pair checkpoints",
+            "strongest_vs_weakest_horizon": {
+              "fraction": 0.0,
+              "games": 0,
+              "hits": 0
+            }
+          },
+          "classifier_output": "PASS",
+          "descriptive_attribution": {
+            "any_tape_mean_le_half": false,
+            "authority": "descriptive_only",
+            "bootstrap_lower_le_half": false,
+            "depth_censored": false,
+            "descriptive_attribution": "NONE",
+            "horizon_censored": false
+          },
+          "name": "1024_vs_256",
+          "pair_scores": [
+            {
+              "pair_index": 0,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            }
+          ],
+          "status_counts": {
+            "MIXED_OR_UNCERTAIN": 9,
+            "POSITIVE_DIRECTION": 9
+          },
+          "tape_summaries": [
+            {
+              "mean_pair_score": 0.6666666666666666,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.6666666666666666,
+              "tape_seed": 9801
+            },
+            {
+              "mean_pair_score": 0.625,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.625,
+              "tape_seed": 9802
+            },
+            {
+              "mean_pair_score": 0.625,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.625,
+              "tape_seed": 9803
+            }
+          ]
+        },
+        {
+          "bootstrap": {
+            "confidence_level": 0.95,
+            "lower": 0.4722222222222222,
+            "mean": 0.5694444444444444,
+            "method": "percentile_bootstrap_mean_pair_score",
+            "resamples": 10000,
+            "sample_count": 18,
+            "seed": 9801102,
+            "upper": 0.6666666666666666
+          },
+          "censoring": {
+            "count": 7516,
+            "fraction": 0.0009313464608834486,
+            "hits": 7,
+            "source": "identity-bound resumable pair checkpoints",
+            "strongest_vs_weakest_horizon": {
+              "fraction": 0.0,
+              "games": 0,
+              "hits": 0
+            }
+          },
+          "classifier_output": "DEFER_NONMONOTONE_OR_UNCERTAIN",
+          "descriptive_attribution": {
+            "any_tape_mean_le_half": true,
+            "authority": "descriptive_only",
+            "bootstrap_lower_le_half": true,
+            "depth_censored": false,
+            "descriptive_attribution": "NONMONOTONE",
+            "horizon_censored": false
+          },
+          "name": "4096_vs_1024",
+          "pair_scores": [
+            {
+              "pair_index": 0,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 0.0,
+              "status": "NEGATIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.25,
+              "status": "NEGATIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            }
+          ],
+          "status_counts": {
+            "MIXED_OR_UNCERTAIN": 9,
+            "NEGATIVE_DIRECTION": 2,
+            "POSITIVE_DIRECTION": 7
+          },
+          "tape_summaries": [
+            {
+              "mean_pair_score": 0.7083333333333334,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.7083333333333334,
+              "tape_seed": 9801
+            },
+            {
+              "mean_pair_score": 0.5416666666666666,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.5416666666666666,
+              "tape_seed": 9802
+            },
+            {
+              "mean_pair_score": 0.4583333333333333,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.4583333333333333,
+              "tape_seed": 9803
+            }
+          ]
+        },
+        {
+          "bootstrap": {
+            "confidence_level": 0.95,
+            "lower": 0.7638888888888888,
+            "mean": 0.8472222222222222,
+            "method": "percentile_bootstrap_mean_pair_score",
+            "resamples": 10000,
+            "sample_count": 18,
+            "seed": 9801103,
+            "upper": 0.9166666666666666
+          },
+          "censoring": {
+            "count": 5063,
+            "fraction": 0.0007900454276120877,
+            "hits": 4,
+            "source": "identity-bound resumable pair checkpoints",
+            "strongest_vs_weakest_horizon": {
+              "fraction": 0.1111111111111111,
+              "games": 36,
+              "hits": 4
+            }
+          },
+          "classifier_output": "PASS",
+          "descriptive_attribution": {
+            "any_tape_mean_le_half": false,
+            "authority": "descriptive_only",
+            "bootstrap_lower_le_half": false,
+            "depth_censored": false,
+            "descriptive_attribution": "NONE",
+            "horizon_censored": false
+          },
+          "name": "4096_vs_256",
+          "pair_scores": [
+            {
+              "pair_index": 0,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9801
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9802
+            },
+            {
+              "pair_index": 0,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 1,
+              "pair_score": 0.5,
+              "status": "MIXED_OR_UNCERTAIN",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 2,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 3,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 4,
+              "pair_score": 0.75,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            },
+            {
+              "pair_index": 5,
+              "pair_score": 1.0,
+              "status": "POSITIVE_DIRECTION",
+              "tape_seed": 9803
+            }
+          ],
+          "status_counts": {
+            "MIXED_OR_UNCERTAIN": 2,
+            "POSITIVE_DIRECTION": 16
+          },
+          "tape_summaries": [
+            {
+              "mean_pair_score": 0.8333333333333334,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.8333333333333334,
+              "tape_seed": 9801
+            },
+            {
+              "mean_pair_score": 0.875,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.875,
+              "tape_seed": 9802
+            },
+            {
+              "mean_pair_score": 0.8333333333333334,
+              "pair_count": 6,
+              "recomputed_mean_pair_score": 0.8333333333333334,
+              "tape_seed": 9803
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "derived_compute": {
+    "action_traces": 216,
+    "arena_games": 216,
+    "arena_invocations": 18,
+    "arena_pairs": 108
+  },
+  "experiment": "GENERICCHESS-F94-R6-LAYER-D-AUTHORITY-REFRESH-V1",
+  "prep_artifact_sha256": "78b935c3cb5391851bd8a8a574d25ac69714f030a49a01e6006c1d7d8133b8ba",
+  "promotion_or_classifier_effect": "none",
+  "protocol_source_sha": "5713b0b6041116d1e03400f0c8db0e3f4d02870a",
+  "schema": "generic-chess-f94-r6-result-aggregate-v1",
+  "source_result_path": "C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-sandbox\\.generic_chess_flow\\f94-r6-layer-d-authority-refresh-result.json",
+  "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe"
+}
