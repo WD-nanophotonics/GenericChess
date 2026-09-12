@@ -15,6 +15,13 @@ from generic_chess.benchmark.strength_response import (
     measure_strength_response,
     prepare_strength_response,
 )
+from generic_chess.benchmark.strength_response import _depth_ceiling_stats
+
+
+def test_depth_ceiling_fraction_uses_only_the_strong_budget_role():
+    telemetry = [{"engine_role": "parent", "completed_depth": 8}, {"engine_role": "child", "completed_depth": 8}, {"engine_role": "child", "completed_depth": 3}]
+    assert _depth_ceiling_stats(telemetry, 8) == (3, 2)
+    assert _depth_ceiling_stats(telemetry, 8, engine_role="child") == (2, 1)
 
 
 def _prep():

@@ -255,19 +255,21 @@ def _recursive_flags(value: Any) -> tuple[bool, bool]:
     return censored, fallback
 
 
-def _depth_ceiling_stats(value: Any, max_depth: int) -> tuple[int, int]:
+def _depth_ceiling_stats(value: Any, max_depth: int, *, engine_role: str | None = None) -> tuple[int, int]:
     total = hits = 0
     if isinstance(value, Mapping):
         for key, item in value.items():
-            if str(key).lower() == "completed_depth":
+            if str(key).lower() == "completed_depth" and (
+                engine_role is None or value.get("engine_role") == engine_role
+            ):
                 total += 1
                 hits += int(item) >= max_depth
-            child_total, child_hits = _depth_ceiling_stats(item, max_depth)
+            child_total, child_hits = _depth_ceiling_stats(item, max_depth, engine_role=engine_role)
             total += child_total
             hits += child_hits
     elif isinstance(value, (list, tuple)):
         for item in value:
-            child_total, child_hits = _depth_ceiling_stats(item, max_depth)
+            child_total, child_hits = _depth_ceiling_stats(item, max_depth, engine_role=engine_role)
             total += child_total
             hits += child_hits
     return total, hits
@@ -299,8 +301,8 @@ def _classify(
     means = [float(row["mean_pair_score"]) for row in ordered]
     all_payload = list(matchups.values())
     high_rows = [rows["16x-vs-1x"] for rows in tape_results.values()]
-    depth_total = sum(_depth_ceiling_stats(row, prep.max_depth)[0] for row in high_rows)
-    depth_hits = sum(_depth_ceiling_stats(row, prep.max_depth)[1] for row in high_rows)
+    depth_total = sum(_depth_ceiling_stats(row, prep.max_depth, engine_role="child")[0] for row in high_rows)
+    depth_hits = sum(_depth_ceiling_stats(row, prep.max_depth, engine_role="child")[1] for row in high_rows)
     high_budget_ceiling_hit_fraction = (
         depth_hits / depth_total if depth_total else 0.0
     )
