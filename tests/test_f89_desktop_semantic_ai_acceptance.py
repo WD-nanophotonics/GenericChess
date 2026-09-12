@@ -20,6 +20,11 @@ from generic_chess.core.actions import (
 )
 from generic_chess.core.identity import position_identity_key
 from generic_chess.core.coordinates import Square
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import (
+    deserialize_game_record,
+    serialize_game_record,
+)
 from generic_chess.ui.controller import UIController
 from generic_chess.ui.dialogs.new_match_dialog import NewMatchRequest
 from generic_chess.ui.main_window import MainWindow
@@ -56,6 +61,21 @@ def _occupancy(controller: UIController) -> dict:
         )
         for square in model.squares
         if square.piece is not None
+    }
+
+
+def _semantic_occupancy(session: GameSession) -> dict:
+    position = session.state.position
+    board_size = position.board_size()
+    return {
+        Square(index % board_size, index // board_size): (
+            piece.owner,
+            piece.base_type_id,
+            piece.current_type_id,
+            piece.promoted,
+        )
+        for index, piece in enumerate(position.board)
+        if piece is not None
     }
 
 
@@ -137,4 +157,19 @@ def test_builtin_desktop_real_ai_reply(qapp, name):
     ai_action = controller.history_entries()[-1].action
     assert isinstance(ai_action, (SemanticBoardMove, SemanticDropMove))
     assert ai_action in ai_root_actions
+    live_actions = tuple(entry.action for entry in controller.session.history)
+    replayed = GameSession.replay(
+        controller.compiled,
+        deserialize_game_record(serialize_game_record(controller.session.to_record())),
+    )
+    assert tuple(entry.action for entry in replayed.history) == live_actions
+    assert _semantic_occupancy(replayed) == _semantic_occupancy(controller.session)
+    assert replayed.state.position.side_to_move == controller.session.state.position.side_to_move
+    assert tuple(hand.counts for hand in replayed.state.position.hands) == tuple(
+        hand.counts for hand in controller.session.state.position.hands
+    )
+    assert position_identity_key(
+        replayed.state.position, controller.compiled
+    ) == position_identity_key(controller.session.state.position, controller.compiled)
     assert _occupancy(controller) == window._scene.rendered_occupancy()
+    assert _semantic_occupancy(controller.session) == _occupancy(controller)

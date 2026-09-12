@@ -24,3 +24,19 @@ human side, changed semantic position identity, and exact agreement between
 
 The test passed for both built-ins. No Arena, training, paired-strength gate,
 external engine, Heavy job, or F87A/F88 requalification was run.
+
+## F89-R2 corrective addendum
+
+The acceptance additionally round-trips the resulting two-action desktop game
+through canonical record serialization/deserialization and `GameSession.replay()`.
+It asserts the complete action sequence, including the semantic AI action, the
+replayed semantic board occupancy, side-to-move, hands, and position identity.
+The semantic session occupancy is independently compared with both the
+`BoardViewModel` occupancy and rendered occupancy, closing the possible
+projection-agreement false positive.
+
+F89-R2 focused verification passed for both built-ins:
+
+```text
+.venv\\Scripts\\python.exe -m pytest -q tests/test_f89_desktop_semantic_ai_acceptance.py
+```
