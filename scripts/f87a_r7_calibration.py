@@ -24,6 +24,10 @@ SAMPLES = (
     ("R7-A", 4, 870401, 2),
     ("R7-B", 5, 870501, 3),
 )
+T1_SAMPLES = (
+    ("R7-T1-C", 4, 870601, 3),
+    ("R7-T1-D", 6, 870701, 4),
+)
 POLICIES = {
     "random_legal": None,
     "low_node": (64, 4),
@@ -34,7 +38,7 @@ PAIR_COUNT = 1
 MAX_PLY = 24
 NODE_CAP = 100_000
 WALL_CAP_SECONDS = 600
-T1_DIAGNOSTIC_MAX_ROOTS = 4
+T1_DIAGNOSTIC_MAX_ROOTS = 6
 T1_DIAGNOSTIC_NODE_CAP = 4_096
 T1_DIAGNOSTIC_WALL_CAP_SECONDS = 10
 T1_REFERENCE_NODE_BUDGET = 128
@@ -46,27 +50,39 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def _freeze_samples(output_dir: Path) -> tuple[tuple[str, MinimalGeneratedGame], ...]:
-    games = tuple(
+def _generate_samples(
+    samples: tuple[tuple[str, int, int, int], ...],
+) -> tuple[tuple[str, MinimalGeneratedGame], ...]:
+    return tuple(
         (sample_id, generate_minimal_game(seed, board_size=board_size, ordinary_count=ordinary_count))
-        for sample_id, board_size, seed, ordinary_count in SAMPLES
+        for sample_id, board_size, seed, ordinary_count in samples
     )
+
+
+def _sample_manifest(games: tuple[tuple[str, MinimalGeneratedGame], ...]) -> list[dict[str, Any]]:
+    return [
+        {
+            "sample_id": sample_id,
+            "board_size": game.board_size,
+            "seed": game.seed,
+            "ordinary_count": game.ordinary_count,
+            "ruleset_fingerprint": game.ruleset_fingerprint,
+            "ruleset": ruleset_to_dict(game.ruleset),
+        }
+        for sample_id, game in games
+    ]
+
+
+def _freeze_samples(output_dir: Path) -> tuple[tuple[str, MinimalGeneratedGame], ...]:
+    games = _generate_samples(SAMPLES)
+    t1_games = _generate_samples(T1_SAMPLES)
     _write_json(output_dir / "manifest.json", {
         "schema_version": 1,
         "experiment": "GENERICCHESS-F87A-R7-CALIBRATION",
         "status": "PREP_FROZEN",
         "baseline_sha": BASELINE_SHA,
-        "samples": [
-            {
-                "sample_id": sample_id,
-                "board_size": game.board_size,
-                "seed": game.seed,
-                "ordinary_count": game.ordinary_count,
-                "ruleset_fingerprint": game.ruleset_fingerprint,
-                "ruleset": ruleset_to_dict(game.ruleset),
-            }
-            for sample_id, game in games
-        ],
+        "samples": _sample_manifest(games),
+        "t1_diagnostic_samples": _sample_manifest(t1_games),
         "policies": list(POLICIES),
         "matchups": [list(pair) for pair in MATCHUPS],
         "pair_count": PAIR_COUNT,
@@ -163,7 +179,7 @@ def _t1_action_spectrum_regret(games: tuple[tuple[str, MinimalGeneratedGame], ..
     stop_reason = None
     for sample_id, game in games:
         session = GameSession(game.compiled)
-        for _ in range(2):
+        for _ in range(3):
             if len(rows) >= T1_DIAGNOSTIC_MAX_ROOTS:
                 break
             if time.monotonic() >= deadline:
@@ -365,7 +381,7 @@ def run(output_dir: Path = ARTIFACT_DIR) -> dict[str, Any]:
     started = time.monotonic()
     deadline = started + WALL_CAP_SECONDS
     games = _freeze_samples(output_dir)
-    t1_diagnostic = _t1_action_spectrum_regret(games)
+    t1_diagnostic = _t1_action_spectrum_regret(_generate_samples(T1_SAMPLES))
     rows = []
     pair_summaries = []
     total_nodes = 0
