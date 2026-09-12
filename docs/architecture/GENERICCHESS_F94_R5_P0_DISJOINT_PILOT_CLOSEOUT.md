@@ -75,3 +75,48 @@ tests/test_strength_response.py
 The test runner used injected fake Arena summaries only. The single production
 pilot run used the approved P0 Heavy command; no adjacent compute or tuning was
 started.
+
+## Western termination-semantics audit
+
+This is a static, code-derived audit requested after the pilot. It made no
+Arena/Heavy run, Stage 1 run, Layer-E work, evaluator/search tuning, or change
+to the built-in ruleset. The production identity remains the Western
+fingerprint `7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35`.
+
+The evidence is the canonical builder in
+`generic_chess/rules/western_chess.py`, the generic schema in
+`generic_chess/rules/schema.py`, and the shared/semantic terminal paths in
+`generic_chess/core/terminal.py` and `generic_chess/core/semantic_executor.py`:
+
+* Western sets `repetition_limit=100000`, `repetition_policy="draw"`,
+  `max_ply=1000`, and `stalemate_result="draw"`.
+* Western supplies no `automatic_adjudications`. The schema has no separate
+  threefold/fivefold, 50-move/75-move, or insufficient-material fields, and the
+  Western builder does not declare any such rule.
+* Both terminal implementations first classify a position with no legal move
+  as checkmate or stalemate, then check repetition, automatic adjudication,
+  and finally `max_ply`. The semantic executor follows the same precedence.
+* A path bounded by `max_ply=1000` can contain at most 1001 position
+  occurrences including the initial sentinel, so the configured repetition
+  threshold of 100000 is unreachable before the max-ply boundary. Thus the
+  observed Western `max_ply` tails do not establish repetition; the actual
+  reachable terminal rules are checkmate, stalemate, and max-ply (with the
+  no-legal-move check taking precedence at the boundary).
+
+The repository history shows the `100000/1000` pair was introduced with the
+single productization commit and contains no rationale that would justify
+guessing a different intent. The audit therefore does not alter the ruleset.
+The compatibility choices are explicit: (A) changing production Western
+semantics would require a new fingerprint, compatibility review for old
+artifacts, and recalibration of downstream Layer-C/Layer-D evidence; (B)
+keeping the product identity and adding a separate mature qualification
+control (for example `western_chess_qualification_control_v1`) preserves old
+artifacts and isolates any standards-oriented terminal contract. Under this
+work order, B is the safer follow-on boundary, but no new control or gameplay
+rule is implemented here. The existing F24F perft fixture remains the
+historical certification control.
+
+Standard Shogi is unchanged: its product ruleset separately declares
+`repetition_limit=4`, `repetition_policy="continuous_check_loss"`, and the
+500-ply no-contest automatic adjudication. Its pilot observation remains
+`OBSERVED_NOT_POOLABLE`.
