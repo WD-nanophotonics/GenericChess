@@ -14,6 +14,7 @@ import argparse
 import json
 import sys
 import time
+from dataclasses import replace
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,7 +28,13 @@ from generic_chess.learning.arena import ArenaConfig, run_arena  # noqa: E402
 from generic_chess.learning.material import LearnableMaterialCheckpoint  # noqa: E402
 from generic_chess.learning.openings import generate_arena_openings  # noqa: E402
 from generic_chess.native.compiler import compile_native_semantic_rules  # noqa: E402
-from generic_chess.rules.compiler import compile_ruleset_for_execution, compile_semantic_ruleset  # noqa: E402
+from generic_chess.rules.compiler import (  # noqa: E402
+    _build_semantic_support,
+    compile_ruleset_for_execution,
+    compile_semantic_ruleset,
+    lower_legacy_to_ir,
+)
+from generic_chess.rules.ir import CompiledSemanticRuleset  # noqa: E402
 from scripts import f50_generic_learnable_evaluator as f50  # noqa: E402
 from scripts import f54_direct_capacity_and_gradient_geometry_diagnosis as f54  # noqa: E402
 from scripts import f59_action_spectrum_diagnosis as f59  # noqa: E402
@@ -52,9 +59,21 @@ OUT = ROOT / ".generic_chess_flow" / "f61-gen0-gen1-strength-triage"
 def _generated_context():
     spec = next(item for item in standard_ruleset_specs() if item.fixture_id == "gen_classic_like_4_101")
     legacy = build_compiled(spec)
-    compiled = compile_semantic_ruleset(legacy)
+    # Generator fixtures are legacy CompiledRuleSets.  Lower that exact
+    # generated ruleset into the same semantic IR/native path used by F59/F61;
+    # do not substitute a hand-written semantic fixture.
+    ir = lower_legacy_to_ir(legacy)
+    ir = replace(
+        ir,
+        capabilities=replace(ir.capabilities, new_ir_core_executable=True),
+    )
+    compiled = CompiledSemanticRuleset(
+        ir=ir,
+        _legacy_compiled=legacy,
+        support=_build_semantic_support(legacy),
+    )
     native = compile_native_semantic_rules(compiled)
-    profile = build_ruleset_profile(compile_ruleset_for_execution(legacy), EvaluationConfig())
+    profile = build_ruleset_profile(legacy, EvaluationConfig())
     parent = LearnableMaterialCheckpoint.from_profile(compiled, profile, training_seed=5400000)
     return compiled, native, parent, spec.fixture_id
 

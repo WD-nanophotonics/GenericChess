@@ -19,3 +19,16 @@ def test_strength_triage_freezes_small_ruleset_order_and_real_strength_gate():
         "child_better_pairs": 3,
         "child_worse_pairs": 1,
     })
+
+
+def test_generated_fixture_executes_same_smoke_fit_and_arena_path():
+    compiled, native, parent, ruleset_id = triage._generated_context()
+    records = triage._d0_records(compiled, 620101, count=3, smoke=True)
+    child, training = triage._fit_one(compiled, native, parent, records, smoke=True)
+    arena = triage._arena(compiled, native, parent, child, seed=620701, smoke=True)
+    assert ruleset_id == "gen_classic_like_4_101"
+    assert compiled._legacy_compiled.ruleset_fingerprint == compiled.ruleset_fingerprint
+    assert child.parent_checkpoint_id == parent.checkpoint_id
+    assert training["training_roots"] >= 1
+    assert arena["pair_count"] == 2
+    assert len(arena["pair_scores"]) == 2
