@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RULE = ROOT / "docs/architecture/GENERICCHESS_F94_R7_ENDPOINT_ACCEPTANCE_RULE_V1.json"
+PREREG = ROOT / "docs/architecture/GENERICCHESS_F94_R7_PREREGISTRATION_V1.json"
 
 
 def test_r7_endpoint_rule_is_frozen_and_zero_compute():
@@ -19,6 +21,8 @@ def test_r7_endpoint_rule_is_frozen_and_zero_compute():
     }
     assert payload["endpoint"]["name"] == "4096_vs_256"
     assert payload["endpoint"]["required_complete_pairs"] == 18
+    actual_parent_sha = hashlib.sha256(PREREG.read_bytes()).hexdigest()
+    assert payload["parent_preregistration"]["sha256"] == actual_parent_sha
 
 
 def test_r7_endpoint_rule_requires_strict_positive_direction_and_confidence():

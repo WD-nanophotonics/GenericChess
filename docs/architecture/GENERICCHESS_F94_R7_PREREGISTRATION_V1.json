@@ -63,7 +63,7 @@
     "determinism": "Canonical JSON with sorted keys; all source, PREP, protocol, tape, checkpoint, and progress evidence SHA-256 values are recorded; timing/NPS cannot affect classification."
   },
   "regression_fixtures": {
-    "tests": ["tests/test_f94_r6_fallback_forensics.py", "tests/test_f94_r6_result_aggregate.py", "tests/test_learning_arena_integrity.py", "tests/test_courier_user_authority_policy.py", "tests/test_f94_r7_preregistration.py", "tests/test_f94_r7_endpoint_acceptance_rule.py"],
+    "tests": ["tests/test_f94_r6_fallback_forensics.py", "tests/test_f94_r6_result_aggregate.py", "tests/test_learning_arena_integrity.py", "tests/test_courier_user_authority_policy.py", "tests/test_f94_r7_preregistration.py"],
     "required_negative_cases": ["primary endpoint mutation", "strict negative reversal threshold mutation", "R6 tape seed overlap", "fallback stratum merge or missing blocking field", "response matrix key drift", "source or progress SHA drift"],
     "no_new_games": true
   },
