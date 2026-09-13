@@ -133,7 +133,11 @@ def main() -> None:
     if not np.isfinite(alpha) or alpha <= 0.0 or abs(alpha) <= TOLERANCE:
         raise RuntimeError(f"invalid scalar calibration alpha={alpha!r}")
     calibrated_model = CompactNonlinearResidual(
-        **{**residual.__dict__, "output_weights": tuple(float(alpha) * w for w in residual.output_weights)}
+        **{
+            **residual.__dict__,
+            "output_weights": tuple(float(alpha) * w for w in residual.output_weights),
+            "output_bias": float(alpha * residual.output_bias),
+        }
     )
     spec = {
         "candidate_id": "F61_D0_PAIRWISE_SEED_59012",
@@ -181,6 +185,10 @@ def main() -> None:
         })
         offset += count
     calibrated_prediction = alpha * prediction
+    actual_calibrated_prediction = CompactNonlinearResidual.from_dict(calibrated_payload).predict(features)
+    prediction_error = float(np.max(np.abs(actual_calibrated_prediction - calibrated_prediction)))
+    if not np.allclose(actual_calibrated_prediction, calibrated_prediction, rtol=1e-12, atol=1e-9):
+        raise RuntimeError(f"calibrated prediction is not alpha*original prediction: max_error={prediction_error}")
     payload = {
         "schema": "generic-chess-f61-pairwise-scale-calibration-v1",
         "ruleset": RULESET,
@@ -198,6 +206,7 @@ def main() -> None:
             "alpha": alpha,
             "formula": "sum(prediction * target_residual) / sum(prediction**2)",
             "post_calibration_residual": _stats(calibrated_prediction),
+            "actual_prediction_max_abs_error": prediction_error,
             "prediction_to_target_rms_ratio": _rms(prediction) / _rms(target),
             "prediction_to_target_std_ratio": float(np.std(prediction) / np.std(target)),
             "pearson_correlation": float(np.corrcoef(prediction, target)[0, 1]),
