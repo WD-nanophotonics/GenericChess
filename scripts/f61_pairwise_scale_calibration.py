@@ -1,9 +1,9 @@
-"""F61 R11 scalar calibration of the completed Standard-Shogi child.
+"""F61 fixed-root Standard-Shogi candidate reconstruction and screen.
 
 The script reconstructs the requested optimizer-seed model and 24 persisted roots,
-fits exactly one no-intercept scalar to the existing residual predictions,
-checks the four frozen openings, and (only with ``--run-arena``) runs one
-fresh four-pair Arena for the calibrated child.  No hidden weights, data,
+fits the requested F61 objective, optionally applies the exact R11 no-intercept
+scalar intervention, checks the four frozen openings, and (only with
+``--run-arena``) runs a fresh Arena for the candidate.  No hidden weights, data,
 parent evaluator, or search budget are changed.
 """
 
@@ -104,7 +104,10 @@ def _arena_payload(summary) -> dict:
     }
 
 
-def _fit_one_for_seed(compiled, parent, records: list[dict], training_seed: int):
+def _fit_one_for_seed(
+    compiled, parent, records: list[dict], training_seed: int,
+    objective: str = "PAIRWISE_RANKING",
+):
     """Fit a seed-specific child while keeping the persisted roots seed-bound.
 
     The root checkpoint metadata is intentionally loaded through the generator
@@ -131,12 +134,12 @@ def _fit_one_for_seed(compiled, parent, records: list[dict], training_seed: int)
         groups.append(np.arange(cursor, cursor + len(root)))
         cursor += len(root)
     model = f61._fit_serializable(
-        features, base, target, groups, "PAIRWISE_RANKING", training_seed
+        features, base, target, groups, objective, training_seed
     )
     spec = {
-        "candidate_id": f"F61_D0_PAIRWISE_SEED_{training_seed}",
+        "candidate_id": f"F61_D0_{objective}_SEED_{training_seed}",
         "training_distribution": "D0_RANDOM_REACHABLE",
-        "objective": "PAIRWISE_RANKING",
+        "objective": objective,
         "seed": training_seed,
     }
     child, model_payload = f61._candidate_checkpoint(parent, compiled, model, spec)
@@ -144,7 +147,7 @@ def _fit_one_for_seed(compiled, parent, records: list[dict], training_seed: int)
         "training_seed": training_seed,
         "training_roots": len(roots),
         "training_actions": int(len(features)),
-        "objective": "PAIRWISE_RANKING",
+        "objective": objective,
         "model_width": f61.MODEL_WIDTH,
         "regularization": f61.MODEL_REGULARIZATION,
         "model_sha256": f61.stable_sha256(model_payload),
@@ -154,6 +157,10 @@ def _fit_one_for_seed(compiled, parent, records: list[dict], training_seed: int)
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--training-seed", type=int, default=TRAINING_SEED)
+    parser.add_argument(
+        "--objective", choices=("PAIRWISE_RANKING", "POINTWISE_Q"),
+        default="PAIRWISE_RANKING",
+    )
     parser.add_argument("--run-arena", action="store_true")
     parser.add_argument("--fresh-arena-seed", type=int, default=FRESH_ARENA_SEED)
     parser.add_argument("--arena-pairs", type=int, default=PAIRS)
@@ -164,32 +171,66 @@ def main() -> None:
     compiled, native, parent, _ = gen._context(RULESET)
     records = gen._d0_records(compiled, 620000, count=gen.ROOT_COUNT, smoke=False)
     original_child, training, roots, features, target_q = _fit_one_for_seed(
-        compiled, parent, records, args.training_seed
+        compiled, parent, records, args.training_seed, args.objective
     )
     base = np.asarray([row.base_q for root in roots for row in root], dtype=float)
     target = target_q - base
     residual = CompactNonlinearResidual.from_dict(original_child.compact_nonlinear)
     prediction = residual.predict(features)
-    denominator = float(np.dot(prediction, prediction))
-    alpha = float(np.dot(prediction, target) / denominator) if denominator else float("nan")
-    if not np.isfinite(alpha) or alpha <= 0.0 or abs(alpha) <= TOLERANCE:
-        raise RuntimeError(f"invalid scalar calibration alpha={alpha!r}")
-    calibrated_model = CompactNonlinearResidual(
-        **{
-            **residual.__dict__,
-            "output_weights": tuple(float(alpha) * w for w in residual.output_weights),
-            "output_bias": float(alpha * residual.output_bias),
+    if args.objective == "PAIRWISE_RANKING":
+        denominator = float(np.dot(prediction, prediction))
+        alpha = float(np.dot(prediction, target) / denominator) if denominator else float("nan")
+        if not np.isfinite(alpha) or alpha <= 0.0 or abs(alpha) <= TOLERANCE:
+            raise RuntimeError(f"invalid scalar calibration alpha={alpha!r}")
+        calibrated_model = CompactNonlinearResidual(
+            **{
+                **residual.__dict__,
+                "output_weights": tuple(float(alpha) * w for w in residual.output_weights),
+                "output_bias": float(alpha * residual.output_bias),
+            }
+        )
+        spec = {
+            "candidate_id": f"F61_D0_{args.objective}_SEED_{args.training_seed}",
+            "training_distribution": "D0_RANDOM_REACHABLE",
+            "objective": args.objective,
+            "seed": args.training_seed,
         }
-    )
-    spec = {
-        "candidate_id": f"F61_D0_PAIRWISE_SEED_{args.training_seed}",
-        "training_distribution": "D0_RANDOM_REACHABLE",
-        "objective": "PAIRWISE_RANKING",
-        "seed": args.training_seed,
-    }
-    calibrated_child, calibrated_payload = f61._candidate_checkpoint(
-        parent, compiled, calibrated_model, spec
-    )
+        calibrated_child, calibrated_payload = f61._candidate_checkpoint(
+            parent, compiled, calibrated_model, spec
+        )
+        calibrated_prediction = alpha * prediction
+        actual_calibrated_prediction = CompactNonlinearResidual.from_dict(
+            calibrated_payload
+        ).predict(features)
+        prediction_error = float(
+            np.max(np.abs(actual_calibrated_prediction - calibrated_prediction))
+        )
+        if not np.allclose(
+            actual_calibrated_prediction, calibrated_prediction,
+            rtol=1e-12, atol=1e-9,
+        ):
+            raise RuntimeError(
+                "calibrated prediction is not alpha*original prediction: "
+                f"max_error={prediction_error}"
+            )
+        calibration_payload = {
+            "alpha": alpha,
+            "formula": "sum(prediction * target_residual) / sum(prediction**2)",
+            "post_calibration_residual": _stats(calibrated_prediction),
+            "actual_prediction_max_abs_error": prediction_error,
+        }
+    else:
+        alpha = None
+        calibrated_child = original_child
+        calibrated_payload = original_child.compact_nonlinear
+        calibrated_prediction = prediction
+        prediction_error = None
+        calibration_payload = {
+            "alpha": None,
+            "formula": "none (POINTWISE_Q directly fits absolute residual)",
+            "post_calibration_residual": _stats(prediction),
+            "actual_prediction_max_abs_error": None,
+        }
     frozen_openings = generate_arena_openings(
         compiled, count=PAIRS, seed=OPENING_SEED, min_plies=2, max_plies=6
     )
@@ -226,14 +267,15 @@ def main() -> None:
             "agreement": (root_concordant / root_comparable) if root_comparable else None,
         })
         offset += count
-    calibrated_prediction = alpha * prediction
-    actual_calibrated_prediction = CompactNonlinearResidual.from_dict(calibrated_payload).predict(features)
-    prediction_error = float(np.max(np.abs(actual_calibrated_prediction - calibrated_prediction)))
-    if not np.allclose(actual_calibrated_prediction, calibrated_prediction, rtol=1e-12, atol=1e-9):
-        raise RuntimeError(f"calibrated prediction is not alpha*original prediction: max_error={prediction_error}")
+    calibration_payload.update({
+        "prediction_to_target_rms_ratio": _rms(prediction) / _rms(target),
+        "prediction_to_target_std_ratio": float(np.std(prediction) / np.std(target)),
+        "pearson_correlation": float(np.corrcoef(prediction, target)[0, 1]),
+    })
     payload = {
-        "schema": "generic-chess-f61-pairwise-scale-calibration-v1",
+        "schema": "generic-chess-f61-candidate-screen-v1",
         "ruleset": RULESET,
+        "objective": args.objective,
         "training_seed": args.training_seed,
         "parent_checkpoint_id": parent.checkpoint_id,
         "original_child_checkpoint_id": original_child.checkpoint_id,
@@ -245,13 +287,7 @@ def main() -> None:
         "target_residual": _stats(target),
         "learned_residual": _stats(prediction),
         "calibration": {
-            "alpha": alpha,
-            "formula": "sum(prediction * target_residual) / sum(prediction**2)",
-            "post_calibration_residual": _stats(calibrated_prediction),
-            "actual_prediction_max_abs_error": prediction_error,
-            "prediction_to_target_rms_ratio": _rms(prediction) / _rms(target),
-            "prediction_to_target_std_ratio": float(np.std(prediction) / np.std(target)),
-            "pearson_correlation": float(np.corrcoef(prediction, target)[0, 1]),
+            **calibration_payload,
             "ranking_agreement": {
                 "concordant_pairs": concordant,
                 "comparable_pairs": comparable,
