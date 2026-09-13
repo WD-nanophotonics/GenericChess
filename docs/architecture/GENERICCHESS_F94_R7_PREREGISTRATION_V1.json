@@ -1,0 +1,73 @@
+{
+  "schema": "generic-chess-f94-r7-layer-d-preregistration-v1",
+  "status": "FROZEN_PROSPECTIVE_NO_DATA_COLLECTED",
+  "parent_r6": {
+    "sandbox_sha": "951e49c750f3ac0ad8aa6290786c0529ee1071b9",
+    "source_result_sha256": "a3008d1cc0150b82bc1682e7873a9cbe6c27232f359e57479689b486c956e4fe",
+    "progress_evidence_sha256": "fc84255ad869240e77e4b0a38a863e86a689e48f646d0fac59300fb19b7408de",
+    "authority": "R6_DEFER_CONTROL_NOT_READY_IMMUTABLE"
+  },
+  "compute_boundary": {
+    "new_arena_authorized": false,
+    "new_heavy_authorized": false,
+    "compute_plan_required_before_execution": true,
+    "classifier_mutation_allowed": false
+  },
+  "budget_response_gate": {
+    "primary_endpoint": "4096_vs_256",
+    "diagnostic_matchups": ["1024_vs_256", "4096_vs_1024"],
+    "strict_negative_reversal_guard": {
+      "definition": "A pair_score strictly less than 0.5 in either diagnostic matchup is an explicit negative reversal.",
+      "blocking": true,
+      "mixed_boundary_score_0_5_blocks": false,
+      "uncertainty_without_strict_negative_blocks": false,
+      "endpoint_gate": "The primary endpoint must satisfy separately frozen positive-direction and confidence requirements; diagnostics cannot retroactively redefine endpoint authority.",
+      "pre_registration_rule": "Matchups, guard definition, and thresholds are frozen before any R7 tape is opened."
+    }
+  },
+  "fallback_strata": {
+    "LOW_BUDGET_PRE_ITERATION_NODE_FALLBACK": {
+      "definition": "used_fallback=true, completed_depth=0, termination_reason=node_budget, and nodes_budget is the registered low budget.",
+      "blocking": false,
+      "required_action": "Record by control, matchup, tape, pair, child_owner, decision_index, engine_role, and budget as a weak-search diagnostic."
+    },
+    "HIGH_BUDGET_PRE_ITERATION_NODE_FALLBACK": {
+      "definition": "used_fallback=true, completed_depth=0, termination_reason=node_budget, and nodes_budget exceeds the registered low budget.",
+      "blocking": true,
+      "required_action": "Fail closed as an operational/search integrity blocker."
+    },
+    "OPERATIONAL_OR_ABORT_FALLBACK": {
+      "definition": "used_fallback=true with time_budget, cancellation, deadline, or internal_error termination.",
+      "blocking": true,
+      "required_action": "Fail closed; do not pool with legal low-budget fallback."
+    },
+    "UNCLASSIFIED_OR_POST_ITERATION_FALLBACK": {
+      "definition": "Any fallback not matching a registered stratum.",
+      "blocking": true,
+      "required_action": "Evidence-integrity review before interpretation."
+    }
+  },
+  "fresh_disjoint_tapes": {
+    "namespace": "GENERICCHESS-F94-R7-LAYER-D-PREREG-V1",
+    "tape_seeds": [9811, 9812, 9813],
+    "excluded_r6_tape_seeds": [9801, 9802, 9803],
+    "opening_identity_rule": "opening_seed = tape_seed * 1000 + opening_index * 100; six openings per tape; identity includes namespace, tape_seed, opening_index, ruleset fingerprint, and final_position_key.",
+    "overlap_policy": "Any identity overlap with R6 or between R7 tapes is an evidence-integrity failure and blocks the run."
+  },
+  "result_schema": {
+    "schema": "generic-chess-f94-r7-layer-d-authority-result-v1",
+    "required_identity": ["experiment", "preregistration_sha256", "protocol_source_sha", "prep_artifact_sha256", "ruleset_fingerprint", "tape_namespace", "tape_seed", "matchup", "source_result_sha256"],
+    "required_observation": ["pair_index", "pair_score", "status", "fallback_records", "response_matrix_key"],
+    "response_matrix_key": "(control, tape_seed, pair_index)",
+    "fallback_record_required_fields": ["control", "matchup", "tape_seed", "pair_index", "child_owner", "decision_index", "engine_role", "nodes_budget", "nodes", "completed_depth", "termination_reason", "decision_kind", "classification"],
+    "determinism": "Canonical JSON with sorted keys; all source, PREP, protocol, tape, checkpoint, and progress evidence SHA-256 values are recorded; timing/NPS cannot affect classification."
+  },
+  "regression_fixtures": {
+    "tests": ["tests/test_f94_r6_fallback_forensics.py", "tests/test_f94_r6_result_aggregate.py", "tests/test_learning_arena_integrity.py", "tests/test_courier_user_authority_policy.py", "tests/test_f94_r7_preregistration.py"],
+    "required_negative_cases": ["primary endpoint mutation", "strict negative reversal threshold mutation", "R6 tape seed overlap", "fallback stratum merge or missing blocking field", "response matrix key drift", "source or progress SHA drift"],
+    "no_new_games": true
+  },
+  "authority": "prospective_design_only",
+  "r6_reinterpretation": "forbidden",
+  "promotion_or_classifier_effect": "none"
+}
