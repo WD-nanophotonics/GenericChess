@@ -108,7 +108,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-arena", action="store_true")
     parser.add_argument("--fresh-arena-seed", type=int, default=FRESH_ARENA_SEED)
+    parser.add_argument("--arena-pairs", type=int, default=PAIRS)
     args = parser.parse_args()
+    if args.arena_pairs < 1 or args.arena_pairs > PAIRS:
+        raise ValueError(f"arena-pairs must be in [1, {PAIRS}]")
 
     compiled, native, parent, _ = gen._context(RULESET)
     records = gen._d0_records(compiled, 620000, count=gen.ROOT_COUNT, smoke=False)
@@ -214,15 +217,16 @@ def main() -> None:
         },
     }
     if args.run_arena:
+        arena_pairs = args.arena_pairs
         fresh_openings = generate_arena_openings(
-            compiled, count=PAIRS, seed=args.fresh_arena_seed, min_plies=2, max_plies=6
+            compiled, count=arena_pairs, seed=args.fresh_arena_seed, min_plies=2, max_plies=6
         )
         resumable = run_arena_game_resumable(
             compiled, native, parent, calibrated_child,
             ArenaConfig(
-                pairs=PAIRS, nodes_per_move=NODES, max_depth=DEPTH,
+                pairs=arena_pairs, nodes_per_move=NODES, max_depth=DEPTH,
                 tt_megabytes=TT_MB, opening_seed=args.fresh_arena_seed,
-                opening_count=PAIRS, min_plies=2, max_plies=6, workers=1,
+                opening_count=arena_pairs, min_plies=2, max_plies=6, workers=1,
             ),
             progress_dir=(OUT.parent / "arena-progress-calibrated" / str(compiled.ruleset_fingerprint) / f"seed-{args.fresh_arena_seed}"),
             openings=fresh_openings,
@@ -232,6 +236,7 @@ def main() -> None:
             raise RuntimeError(f"calibrated Arena incomplete: {resumable.status} {resumable.reason}")
         payload["fresh_arena"] = {
             "opening_seed": args.fresh_arena_seed,
+            "arena_pairs": arena_pairs,
             "nodes": NODES,
             "max_depth": DEPTH,
             "tt_megabytes": TT_MB,
