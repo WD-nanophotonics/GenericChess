@@ -51,6 +51,53 @@ GENERICCHESS_CANDIDATE_SHA=0123456789abcdef0123456789abcdef01234567
     }
 
 
+@pytest.mark.parametrize(
+    ("footer", "expected"),
+    [
+        ("", {"GENERICCHESS_STATUS": "CONTINUE", "GENERICCHESS_CANDIDATE_SHA": "NONE", "GENERICCHESS_PROMOTION": "HOLD"}),
+        ("GENERICCHESS_STATUS=COMPLETE\n", {"GENERICCHESS_STATUS": "COMPLETE", "GENERICCHESS_CANDIDATE_SHA": "NONE", "GENERICCHESS_PROMOTION": "HOLD"}),
+        ("GENERICCHESS_STATUS=wat\n", {"GENERICCHESS_STATUS": "CONTINUE", "GENERICCHESS_CANDIDATE_SHA": "NONE", "GENERICCHESS_PROMOTION": "HOLD"}),
+        ("GENERICCHESS_CANDIDATE_SHA=bad\n", {"GENERICCHESS_STATUS": "CONTINUE", "GENERICCHESS_CANDIDATE_SHA": "NONE", "GENERICCHESS_PROMOTION": "HOLD"}),
+        ("GENERICCHESS_PROMOTION=wat\n", {"GENERICCHESS_STATUS": "CONTINUE", "GENERICCHESS_CANDIDATE_SHA": "NONE", "GENERICCHESS_PROMOTION": "HOLD"}),
+    ],
+)
+def test_control_footer_missing_partial_and_invalid_values_normalize(footer, expected):
+    control, warnings = flow.normalize_control_footer(footer)
+    assert control == expected
+    assert warnings
+
+
+def test_control_footer_approve_without_candidate_is_downgraded():
+    control, warnings = flow.normalize_control_footer(
+        "GENERICCHESS_PROMOTION=APPROVE\n"
+        "GENERICCHESS_STATUS=CONTINUE\n"
+    )
+    assert control["GENERICCHESS_PROMOTION"] == "HOLD"
+    assert any("without a valid candidate" in warning for warning in warnings)
+
+
+def test_local_supervisor_required_is_recorded_once_without_transport_recovery(
+        monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text(
+        "LOCAL_SUPERVISOR_REQUIRED=true\nordinary result\n",
+        encoding="utf-8",
+    )
+    state = {"active_request_id": "req-1", "recovery_timeline": []}
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path / "runtime")
+
+    flow.update_response_state(tmp_path, state, {
+        "event": "response_received", "response_path": str(response)})
+    flow.update_response_state(tmp_path, state, {
+        "event": "response_received", "response_path": str(response)})
+
+    assert state["local_supervisor_required"] is True
+    assert len(state["business_supervisor_notifications"]) == 1
+    assert state["recovery_state"] == "IDLE"
+    assert state["chat_control"]["GENERICCHESS_STATUS"] == "CONTINUE"
+
+
 def test_response_console_output_survives_legacy_windows_encoding(
         monkeypatch, tmp_path, capsys):
     response = tmp_path / "response.txt"
@@ -884,19 +931,23 @@ def test_supervisor_resolution_rejects_cross_request_rebind(
     assert state["last_response_sha256"] == "o" * 64
 
 
-def test_update_response_state_does_not_bind_path_before_footer_validation(
+def test_update_response_state_imports_body_and_normalizes_missing_footer(
         monkeypatch, tmp_path):
     response = tmp_path / "response.txt"
     response.write_text("missing footer\n", encoding="utf-8")
     state = {"last_response_path": "old-response.txt", "last_response_sha256": "o" * 64}
-    monkeypatch.setattr(flow, "save_state", lambda *_args: pytest.fail("invalid response must not save"))
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
 
-    with pytest.raises(flow.FlowError, match="missing control fields"):
-        flow.update_response_state(tmp_path, state, {
-            "event": "response_received", "response_path": str(response)})
+    flow.update_response_state(tmp_path, state, {
+        "event": "response_received", "response_path": str(response)})
 
-    assert state["last_response_path"] == "old-response.txt"
-    assert state["last_response_sha256"] == "o" * 64
+    assert state["last_response_path"] == str(response)
+    assert state["chat_control"] == {
+        "GENERICCHESS_STATUS": "CONTINUE",
+        "GENERICCHESS_CANDIDATE_SHA": "NONE",
+        "GENERICCHESS_PROMOTION": "HOLD",
+    }
+    assert len(state["control_warnings"]) == 3
 
 
 def test_supervisor_resolution_console_output_survives_legacy_windows_encoding(
@@ -1587,6 +1638,65 @@ def test_heavy_monitor_marks_lock_failure_for_prompt_handshake(monkeypatch, tmp_
     state = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
     assert state["status"] == "failed"
     assert "already running" in state["error"]
+
+
+def test_heavy_monitor_enforces_hard_wall_and_records_timed_out(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "heavy_lock", lambda _root: _NoopContext())
+    monkeypatch.setattr(flow, "_process_creation_time", lambda _pid: 100.0)
+    run_dir = tmp_path / "heavy-runs" / "timeout-run"
+    run_dir.mkdir(parents=True)
+    command = [sys.executable, "-c", "pass"]
+    flow._atomic_json(run_dir / "command.json", command)
+    flow._atomic_json(run_dir / "state.json", {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "timeout-run",
+        "label": "timeout",
+        "argv_digest": "a" * 64,
+        "status": "starting",
+        "started_at": 1.0,
+        "hard_wall_minutes": 0.001,
+        "stdout_path": str(run_dir / "stdout.log"),
+        "stderr_path": str(run_dir / "stderr.log"),
+        "state_path": str(run_dir / "state.json"),
+    })
+
+    class _HungProcess:
+        pid = 4242
+
+        def wait(self, timeout=None):
+            raise flow.subprocess.TimeoutExpired(command, timeout)
+
+        def terminate(self):
+            return None
+
+        def kill(self):
+            return None
+
+    process = _HungProcess()
+    monkeypatch.setattr(flow.subprocess, "Popen", lambda *_args, **_kwargs: process)
+    monkeypatch.setattr(flow, "_terminate_heavy_process_tree", lambda child: None)
+
+    result = flow.command_heavy_monitor(tmp_path, SimpleNamespace(run_id="timeout-run"))
+    state = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+    assert result == 1
+    assert state["status"] == "timed_out"
+    assert state["timeout_reason"] == "hard_wall_minutes_exceeded"
+
+
+def test_classified_timed_out_state_is_terminal():
+    payload = {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "timeout",
+        "label": "timeout",
+        "argv_digest": "a" * 64,
+        "status": "timed_out",
+        "started_at": 1.0,
+        "stdout_path": "out",
+        "stderr_path": "err",
+        "state_path": "state",
+    }
+    assert flow._classified_heavy_state(payload, now=1000)["status"] == "timed_out"
 
 
 def test_heavy_start_uses_detached_hidden_monitor_and_waits_for_handshake(

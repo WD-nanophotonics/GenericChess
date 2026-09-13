@@ -150,10 +150,19 @@ def test_valid_chat_and_registered_supervisor_approval_is_idempotent(tmp_path, m
         "chat_response_sha256": "r" * 64,
     })
     state = json.loads((runtime / "session.json").read_text(encoding="utf-8"))
-    state["chat_control"].update({
+    state["chat_control"] = {
+        "GENERICCHESS_COMPUTE_PLAN_APPROVAL": "APPROVE",
         "GENERICCHESS_COMPUTE_PLAN_SHA": plan_sha,
         "GENERICCHESS_COMPUTE_ENVELOPE_SHA": envelope_sha,
-    })
+    }
+    state["pending_compute_plan"] = {
+        "plan_id": "plan-f63-r1",
+        "plan_sha256": plan_sha,
+        "envelope_sha256": envelope_sha,
+        "sandbox_sha": "a" * 40,
+        "command_argv": ["python", "-c", "pass"],
+        "response_sha256": "r" * 64,
+    }
     _write(runtime / "session.json", state)
     args = SimpleNamespace(plan_file=str(plan_path), chat_approval_file=str(tmp_path / "chat.json"))
     assert flow.command_compute_plan_approve(tmp_path, args) == 0
@@ -165,6 +174,69 @@ def test_valid_chat_and_registered_supervisor_approval_is_idempotent(tmp_path, m
         tmp_path, SimpleNamespace(resource_envelope=str(envelope_path), compute_plan=str(plan_path))
     )
     assert metadata["compute_size"] == "large"
+
+
+def test_compute_plan_approve_can_bind_current_normal_chat_response_without_file(
+        tmp_path, monkeypatch):
+    runtime, state = _setup_approval(monkeypatch, tmp_path)
+    envelope = _envelope(large=True)
+    plan_path = _write(tmp_path / "plan.json", _plan(envelope))
+    plan_sha = flow._file_digest(plan_path)
+    envelope_sha = flow._json_digest(envelope)
+    state["pending_compute_plan"] = {
+        "plan_id": "plan-f63-r1",
+        "plan_sha256": plan_sha,
+        "envelope_sha256": envelope_sha,
+        "sandbox_sha": "a" * 40,
+        "command_argv": ["python", "-c", "pass"],
+        "response_sha256": "r" * 64,
+    }
+    _write(runtime / "session.json", state)
+    assert flow.command_compute_plan_approve(
+        tmp_path, SimpleNamespace(plan_file=str(plan_path), chat_approval_file=None)
+    ) == 0
+    approval = json.loads((runtime / "compute-approvals" / "plan-f63-r1.json").read_text())
+    assert approval["chat_response_sha256"] == "r" * 64
+
+
+def test_compute_plan_request_inlines_scientific_plan_and_local_hashes(
+        monkeypatch, tmp_path):
+    envelope = _envelope()
+    plan = _plan(envelope)
+    plan_path = _write(tmp_path / "plan.json", plan)
+    seen = {}
+    monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True, "mode": "courier"})
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "sha", lambda *_args: "a" * 40)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path / "runtime")
+    monkeypatch.setattr(flow, "dispatch_message", lambda _root, _state, source, purpose: seen.update({
+        "source": source, "purpose": purpose,
+    }))
+    flow.command_compute_plan_request(tmp_path, SimpleNamespace(plan_file=str(plan_path)))
+    body = seen["source"].read_text(encoding="utf-8")
+    assert seen["purpose"] == "compute_plan_request"
+    assert "PLAN_JSON=" in body and "resource_envelope" in body
+    assert "LOCAL_COMPUTE_SUMMARY=" in body
+    assert flow._file_digest(plan_path) in body
+
+
+def test_compute_plan_approve_rejects_pending_binding_mismatch(tmp_path, monkeypatch):
+    runtime, state = _setup_approval(monkeypatch, tmp_path)
+    envelope = _envelope(large=True)
+    plan_path = _write(tmp_path / "plan.json", _plan(envelope))
+    state["pending_compute_plan"] = {
+        "plan_id": "different-plan",
+        "plan_sha256": "0" * 64,
+        "envelope_sha256": "1" * 64,
+        "sandbox_sha": "a" * 40,
+        "response_sha256": "r" * 64,
+    }
+    _write(runtime / "session.json", state)
+    with pytest.raises(flow.FlowError, match="pending compute-plan request"):
+        flow.command_compute_plan_approve(
+            tmp_path, SimpleNamespace(plan_file=str(plan_path), chat_approval_file=None)
+        )
 
 
 def test_forged_chat_wrong_supervisor_and_stale_or_expanded_plan_fail_closed(tmp_path, monkeypatch):

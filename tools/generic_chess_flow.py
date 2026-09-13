@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import re
+import signal
 import subprocess
 import sys
 import time
@@ -32,6 +33,7 @@ OPTIONAL_COMPUTE_CONTROL_FIELDS = {
     "GENERICCHESS_COMPUTE_PLAN_SHA",
     "GENERICCHESS_COMPUTE_ENVELOPE_SHA",
 }
+BUSINESS_CONTROL_FIELDS = {"LOCAL_SUPERVISOR_REQUIRED"}
 CONTROL_STATUSES = {"CONTINUE", "COMPLETE", "BLOCKED"}
 PROMOTION_VALUES = {"APPROVE", "HOLD"}
 WORK_ORDER_ID = re.compile(r"(?m)^WORK_ORDER_ID=([^\s]+)\s*$")
@@ -213,9 +215,14 @@ def _validate_compute_approval(root: Path, plan: dict[str, Any], plan_sha: str,
     ):
         raise FlowError("compute approval is stale or not bound to the current Chat response")
     control = state.get("chat_control", {})
-    if (
-        control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") != "APPROVE"
-        or control.get("GENERICCHESS_COMPUTE_PLAN_SHA") != plan_sha
+    if control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") != "APPROVE":
+        raise FlowError("Chat has not approved this exact compute plan")
+    if approval.get("binding_mode", "legacy_chat_file") == "local_pending" and (
+        approval.get("command_argv") != plan["command_argv"]
+    ):
+        raise FlowError("compute approval is not bound to the plan command")
+    if approval.get("binding_mode", "legacy_chat_file") != "local_pending" and (
+        control.get("GENERICCHESS_COMPUTE_PLAN_SHA") != plan_sha
         or control.get("GENERICCHESS_COMPUTE_ENVELOPE_SHA") != envelope_sha
     ):
         raise FlowError("Chat has not approved this exact compute plan and envelope")
@@ -250,6 +257,7 @@ def _enforce_compute_gate(root: Path, args: argparse.Namespace,
         "compute_plan_sha256": plan_sha,
         "compute_plan_id": plan["plan_id"] if plan else None,
         "compute_size": "large" if large else "small_or_medium",
+        "hard_wall_minutes": envelope["hard_wall_minutes"],
     }
 
 
@@ -650,23 +658,50 @@ def parse_control_footer(text: str) -> dict[str, str]:
         if "=" not in line:
             continue
         key, value = line.split("=", 1)
-        if key in CONTROL_FIELDS | OPTIONAL_COMPUTE_CONTROL_FIELDS:
+        key = key.strip()
+        if key in CONTROL_FIELDS | OPTIONAL_COMPUTE_CONTROL_FIELDS | BUSINESS_CONTROL_FIELDS:
             found[key] = value.strip()
     return found
 
 
-def validate_control_footer(text: str) -> dict[str, str]:
+def normalize_control_footer(text: str) -> tuple[dict[str, str], list[str]]:
     control = parse_control_footer(text)
-    missing = CONTROL_FIELDS - control.keys()
-    if missing:
-        raise FlowError("Courier response is missing control fields: " + ", ".join(sorted(missing)))
+    warnings: list[str] = []
+    defaults = {
+        "GENERICCHESS_STATUS": "CONTINUE",
+        "GENERICCHESS_CANDIDATE_SHA": "NONE",
+        "GENERICCHESS_PROMOTION": "HOLD",
+    }
+    for key, default in defaults.items():
+        if key not in control:
+            warnings.append(f"missing {key}; defaulted to {default}")
+            control[key] = default
     if control["GENERICCHESS_STATUS"] not in CONTROL_STATUSES:
-        raise FlowError("Courier response has an invalid GENERICCHESS_STATUS")
+        warnings.append(
+            f"invalid GENERICCHESS_STATUS={control['GENERICCHESS_STATUS']!r}; defaulted to CONTINUE"
+        )
+        control["GENERICCHESS_STATUS"] = "CONTINUE"
     candidate = control["GENERICCHESS_CANDIDATE_SHA"]
     if candidate != "NONE" and not FULL_SHA.fullmatch(candidate):
-        raise FlowError("Courier response has an invalid GENERICCHESS_CANDIDATE_SHA")
+        warnings.append(
+            f"invalid GENERICCHESS_CANDIDATE_SHA={candidate!r}; defaulted to NONE"
+        )
+        control["GENERICCHESS_CANDIDATE_SHA"] = "NONE"
+        candidate = "NONE"
     if control["GENERICCHESS_PROMOTION"] not in PROMOTION_VALUES:
-        raise FlowError("Courier response has an invalid GENERICCHESS_PROMOTION")
+        warnings.append(
+            f"invalid GENERICCHESS_PROMOTION={control['GENERICCHESS_PROMOTION']!r}; defaulted to HOLD"
+        )
+        control["GENERICCHESS_PROMOTION"] = "HOLD"
+    if control["GENERICCHESS_PROMOTION"] == "APPROVE" and candidate == "NONE":
+        warnings.append("GENERICCHESS_PROMOTION=APPROVE without a valid candidate; downgraded to HOLD")
+        control["GENERICCHESS_PROMOTION"] = "HOLD"
+    return control, warnings
+
+
+def validate_control_footer(text: str) -> dict[str, str]:
+    """Return normalized controls while retaining the legacy public helper."""
+    control, _warnings = normalize_control_footer(text)
     return control
 
 
@@ -690,6 +725,41 @@ def _console_safe(text: str, encoding: str | None = None) -> str:
     return text.encode(selected, errors="backslashreplace").decode(selected)
 
 
+def _record_business_escalation(root: Path, state: dict[str, Any], control: dict[str, str],
+                                response_sha256: str) -> str | None:
+    """Record one mechanical Supervisor notice without freezing Courier recovery."""
+    if control.get("LOCAL_SUPERVISOR_REQUIRED", "").casefold() != "true":
+        return None
+    notice_key = hashlib.sha256(
+        f"{state.get('active_request_id', '')}\n{response_sha256}".encode("utf-8")
+    ).hexdigest()[:20]
+    notices = state.setdefault("business_supervisor_notifications", {})
+    if notice_key in notices:
+        state["local_supervisor_required"] = True
+        state["business_supervisor_notice_path"] = notices[notice_key].get("notice_path")
+        return state["business_supervisor_notice_path"]
+    directory = runtime_dir(root) / "business-escalations" / notice_key
+    _atomic_json(directory / "notice.json", {
+        "schema": "generic-chess-business-escalation-v1",
+        "notice_key": notice_key,
+        "kind": "LOCAL_SUPERVISOR_REQUIRED",
+        "request_id": state.get("active_request_id"),
+        "worker_thread_id": state.get("worker_thread_id"),
+        "response_sha256": response_sha256,
+        "created_at": time.time(),
+        "detail": "Chat marked this response LOCAL_SUPERVISOR_REQUIRED=true. Import the response normally; do not retry Courier transport.",
+    })
+    notices[notice_key] = {
+        "kind": "LOCAL_SUPERVISOR_REQUIRED",
+        "response_sha256": response_sha256,
+        "notice_path": str(directory / "notice.json"),
+    }
+    state["local_supervisor_required"] = True
+    state["business_supervisor_notice_path"] = str(directory / "notice.json")
+    recovery_event(state, "business_supervisor_notification_recorded", notice_key=notice_key)
+    return state["business_supervisor_notice_path"]
+
+
 def update_response_state(root: Path, state: dict[str, Any], event: dict[str, Any],
                           *, source: str = "normal") -> None:
     if event.get("event") in {"response_received", "response_duplicate", "courier_latest_response_captured"}:
@@ -698,20 +768,37 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
             raise FlowError("Courier response event did not include response_path")
         response = Path(response_path)
         text = response.read_text(encoding="utf-8-sig")
-        control = validate_control_footer(text)
+        control, warnings = normalize_control_footer(text)
         state["last_response_path"] = str(response)
         work_order = WORK_ORDER_ID.search(text)
         state["chat_control"] = control
+        state["control_warnings"] = warnings
         state["last_work_order_id"] = work_order.group(1) if work_order else None
         state["work_order_active"] = control["GENERICCHESS_STATUS"] == "CONTINUE"
         state["last_response_sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
         state["last_response_source"] = source
+        pending_compute = state.get("pending_compute_plan")
+        if (
+            isinstance(pending_compute, dict)
+            and source == "normal"
+            and not pending_compute.get("response_sha256")
+        ):
+            pending_compute["response_sha256"] = state["last_response_sha256"]
+            pending_compute["response_path"] = str(response)
         state["active_request_directory"] = None
         state["recovery_state"] = "RECOVERED" if source != "normal" else "IDLE"
+        notice_path = _record_business_escalation(
+            root, state, control, state["last_response_sha256"]
+        )
+        if notice_path:
+            state["business_supervisor_notice_path"] = notice_path
         recovery_event(state, "response_accepted", source=source,
                        response_sha256=state["last_response_sha256"])
         save_state(root, state)
         print(_console_safe(text))
+        if notice_path:
+            print("NEXT_ACTION=notify registered Supervisor")
+            print(f"SUPERVISOR_NOTICE_PATH={notice_path}")
 
 
 def chat_message_body(root: Path, source: Path, *, reference_only: bool = False) -> str:
@@ -765,7 +852,9 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         + f"MASTER_SHA={sha(worktrees(root)['master'])}\n"
         + f"SANDBOX_SHA={sha(sandbox)}\n"
         + "The referenced sandbox SHA is committed and published to origin/sandbox.\n"
-        + "End the response with exactly these control fields:\n"
+        + "Ordinary explanatory responses are valid even when control fields are omitted; the flow imports the body and defaults missing/invalid controls to CONTINUE/NONE/HOLD.\n"
+        + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, promotion, or compute approval.\n"
+        + "End the response with these control fields when applicable:\n"
         + "GENERICCHESS_STATUS=CONTINUE|COMPLETE|BLOCKED\n"
         + "GENERICCHESS_CANDIDATE_SHA=<40-hex-sha-or-NONE>\n"
         + "GENERICCHESS_PROMOTION=APPROVE|HOLD\n",
@@ -874,16 +963,45 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
         return process.wait()
 
 
-def _chat_compute_approval(root: Path, path_value: str | Path, plan: dict[str, Any],
+def _chat_compute_approval(root: Path, path_value: str | Path | None, plan: dict[str, Any],
                            plan_sha: str, envelope_sha: str) -> dict[str, Any]:
-    approval = _read_json_file(Path(path_value).resolve(), "Chat compute approval")
+    state = active_state(root)
+    local_binding = path_value is None
+    if path_value is None:
+        control = state.get("chat_control", {})
+        pending = state.get("pending_compute_plan")
+        if not isinstance(pending, dict) or any(
+            pending.get(key) != expected
+            for key, expected in {
+                "plan_id": plan["plan_id"],
+                "plan_sha256": plan_sha,
+                "envelope_sha256": envelope_sha,
+                "sandbox_sha": sha(root),
+            }.items()
+        ):
+            raise FlowError("current Chat response is not bound to a pending compute-plan request")
+        if pending.get("command_argv") != plan["command_argv"]:
+            raise FlowError("current Chat response is not bound to the plan command")
+        if pending.get("response_sha256") != state.get("last_response_sha256"):
+            raise FlowError("current Chat response is not the pending compute-plan response")
+        approval = {
+            "schema": "generic-chess-chat-compute-approval-v1",
+            "decision": control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL"),
+            "plan_id": plan["plan_id"],
+            "plan_sha256": plan_sha,
+            "sandbox_sha": sha(root),
+            "envelope_sha256": envelope_sha,
+            "chat_response_sha256": state.get("last_response_sha256"),
+            "command_argv": plan["command_argv"],
+        }
+    else:
+        approval = _read_json_file(Path(path_value).resolve(), "Chat compute approval")
     required = {
         "schema", "decision", "plan_id", "plan_sha256", "sandbox_sha",
         "envelope_sha256", "chat_response_sha256",
     }
     if approval.get("schema") != "generic-chess-chat-compute-approval-v1" or not required.issubset(approval):
         raise FlowError("Chat compute approval is malformed")
-    state = active_state(root)
     if (
         approval["decision"] != "APPROVE"
         or approval["plan_id"] != plan["plan_id"]
@@ -895,13 +1013,57 @@ def _chat_compute_approval(root: Path, path_value: str | Path, plan: dict[str, A
     ):
         raise FlowError("Chat compute approval is stale or does not bind this plan")
     control = state.get("chat_control", {})
-    if (
-        control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") != "APPROVE"
-        or control.get("GENERICCHESS_COMPUTE_PLAN_SHA") != plan_sha
-        or control.get("GENERICCHESS_COMPUTE_ENVELOPE_SHA") != envelope_sha
-    ):
+    if control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") != "APPROVE":
         raise FlowError("current Chat response does not approve this exact compute plan")
+    if not local_binding and (
+        approval.get("plan_sha256") != plan_sha
+        or approval.get("envelope_sha256") != envelope_sha
+    ):
+        raise FlowError("Chat compute approval is stale or does not bind this plan")
     return approval
+
+
+def command_compute_plan_request(root: Path, args: argparse.Namespace) -> None:
+    """Ask Chat to approve the exact scientific plan/envelope for a large run."""
+    state = active_state(root)
+    require_worker_write_authority(state, root)
+    require_no_supervisor_hold(root)
+    if state.get("mode") != "courier":
+        raise FlowError("compute-plan-request is only available in courier mode")
+    plan, plan_sha = _load_compute_plan(root, args.plan_file)
+    envelope = _validate_resource_envelope(plan["resource_envelope"])
+    envelope_sha = _json_digest(envelope)
+    summary = {
+        "plan_sha256": plan_sha,
+        "envelope_sha256": envelope_sha,
+        "sandbox_sha": sha(root),
+        "compute_size": "large" if _compute_is_large(envelope) else "small_or_medium",
+        "command_argv": plan["command_argv"],
+        "resource_envelope": envelope,
+    }
+    body = (
+        "Review and approve only this exact GenericChess scientific compute plan.\n"
+        "The local Supervisor mechanically binds the approved normal response to the local hashes; Chat only decides APPROVE or HOLD and must not invent or change parameters.\n\n"
+        f"PLAN_SHA256={plan_sha}\nENVELOPE_SHA256={envelope_sha}\nSANDBOX_SHA={sha(root)}\n"
+        "PLAN_JSON=\n" + json.dumps(plan, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+        "LOCAL_COMPUTE_SUMMARY=\n" + json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+        "Return only the explicit decision field when applicable:\n"
+        "GENERICCHESS_COMPUTE_PLAN_APPROVAL=APPROVE|HOLD\n"
+    )
+    source = runtime_dir(root) / f"compute-plan-request-{plan['plan_id']}.txt"
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(body, encoding="utf-8")
+    state["pending_compute_plan"] = {
+        "plan_id": plan["plan_id"],
+        "plan_sha256": plan_sha,
+        "envelope_sha256": envelope_sha,
+        "sandbox_sha": sha(root),
+        "command_argv": plan["command_argv"],
+        "request_source": str(source),
+        "requested_at": time.time(),
+    }
+    save_state(root, state)
+    dispatch_message(root, state, source, "compute_plan_request")
 
 
 def command_compute_plan_approve(root: Path, args: argparse.Namespace) -> int:
@@ -911,7 +1073,8 @@ def command_compute_plan_approve(root: Path, args: argparse.Namespace) -> int:
     if not _compute_is_large(envelope):
         raise FlowError("Supervisor approval is only required for a large compute plan")
     envelope_sha = _json_digest(envelope)
-    chat = _chat_compute_approval(root, args.chat_approval_file, plan, plan_sha, envelope_sha)
+    chat_approval_file = getattr(args, "chat_approval_file", None)
+    chat = _chat_compute_approval(root, chat_approval_file, plan, plan_sha, envelope_sha)
     path = _compute_approval_path(root, plan["plan_id"])
     record = {
         "schema": COMPUTE_APPROVAL_SCHEMA,
@@ -923,6 +1086,8 @@ def command_compute_plan_approve(root: Path, args: argparse.Namespace) -> int:
         "supervisor_thread_id": _supervisor_config(root).get("supervisor_thread_id"),
         "approved_at": time.time(),
         "revoked": False,
+        "binding_mode": "local_pending" if chat_approval_file is None else "legacy_chat_file",
+        "command_argv": plan["command_argv"],
     }
     if path.exists():
         previous = _read_json_file(path, "compute approval")
@@ -1062,10 +1227,10 @@ def _classified_heavy_state(payload: Any, *, now: float | None = None) -> dict[s
         ))
     ):
         raise FlowError("invalid heavy run state values")
-    if payload["status"] not in {"starting", "running", "completed", "failed", "stale"}:
+    if payload["status"] not in {"starting", "running", "completed", "failed", "timed_out", "stale"}:
         raise FlowError("invalid heavy run status")
     result = dict(payload)
-    if payload["status"] in {"completed", "failed", "stale"}:
+    if payload["status"] in {"completed", "failed", "timed_out", "stale"}:
         return result
     current_time = time.time() if now is None else now
     heartbeat = payload.get("heartbeat_at", payload["started_at"])
@@ -1081,6 +1246,25 @@ def _classified_heavy_state(payload: Any, *, now: float | None = None) -> dict[s
             result["status"] = "stale"
             result["stale_reason"] = "child_process_identity_mismatch"
     return result
+
+
+def _terminate_heavy_process_tree(process: subprocess.Popen[str]) -> None:
+    """Terminate only the verified Heavy child and its descendants."""
+    if os.name == "nt":
+        subprocess.run(
+            ["taskkill", "/PID", str(process.pid), "/T", "/F"],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False,
+        )
+    else:  # pragma: no cover - the workflow is Windows-only
+        try:
+            os.killpg(os.getpgid(process.pid), signal.SIGTERM)
+        except (OSError, ProcessLookupError):
+            process.terminate()
+    try:
+        process.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait(timeout=10)
 
 
 def command_heavy_monitor(root: Path, args: argparse.Namespace) -> int:
@@ -1133,6 +1317,12 @@ def command_heavy_monitor(root: Path, args: argparse.Namespace) -> int:
                     "heartbeat_at": now,
                 })
                 _atomic_json(state_path, state)
+                hard_wall_minutes = state.get("hard_wall_minutes")
+                hard_wall_seconds = (
+                    float(hard_wall_minutes) * 60
+                    if isinstance(hard_wall_minutes, (int, float)) and hard_wall_minutes > 0
+                    else None
+                )
                 while True:
                     try:
                         code = process.wait(timeout=5)
@@ -1141,6 +1331,21 @@ def command_heavy_monitor(root: Path, args: argparse.Namespace) -> int:
                     now = time.time()
                     state["heartbeat_at"] = now
                     _atomic_json(state_path, state)
+                    if (
+                        code is None
+                        and hard_wall_seconds is not None
+                        and now - float(state["started_at"]) >= hard_wall_seconds
+                    ):
+                        _terminate_heavy_process_tree(process)
+                        state.update({
+                            "status": "timed_out",
+                            "exit_code": None,
+                            "timeout_reason": "hard_wall_minutes_exceeded",
+                            "finished_at": time.time(),
+                            "heartbeat_at": time.time(),
+                        })
+                        _atomic_json(state_path, state)
+                        return 1
                     if code is not None:
                         break
             state.update({
@@ -2407,9 +2612,12 @@ def parser() -> argparse.ArgumentParser:
     heavy_start.add_argument("--compute-plan")
     heavy_start.add_argument("argv", nargs=argparse.REMAINDER)
     heavy_start.set_defaults(handler=command_heavy_start)
+    compute_request = sub.add_parser("compute-plan-request")
+    compute_request.add_argument("--plan-file", required=True)
+    compute_request.set_defaults(handler=command_compute_plan_request)
     compute_approve = sub.add_parser("compute-plan-approve")
     compute_approve.add_argument("--plan-file", required=True)
-    compute_approve.add_argument("--chat-approval-file", required=True)
+    compute_approve.add_argument("--chat-approval-file")
     compute_approve.set_defaults(handler=command_compute_plan_approve)
     compute_status = sub.add_parser("compute-plan-status")
     compute_status.add_argument("--plan-file", required=True)

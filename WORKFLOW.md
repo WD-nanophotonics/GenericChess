@@ -135,8 +135,9 @@ generic-chess-flow.cmd start --mode courier|local [--message-file <path>]
 generic-chess-flow.cmd heavy -- <long-running command>
 generic-chess-flow.cmd heavy-start --label <safe-label> -- <long-running command>
 generic-chess-flow.cmd heavy-status [--run-id <id>]
+generic-chess-flow.cmd compute-plan-request --plan-file <path>
 generic-chess-flow.cmd compute-plan-status --plan-file <path>
-generic-chess-flow.cmd compute-plan-approve --plan-file <path> --chat-approval-file <path>
+generic-chess-flow.cmd compute-plan-approve --plan-file <path> [--chat-approval-file <path>]
 generic-chess-flow.cmd compute-plan-revoke --plan-file <path>
 generic-chess-flow.cmd publish --tests <pytest-target> [...]
 generic-chess-flow.cmd recover [--worker-thread-id <CODEX_THREAD_ID>]
@@ -173,6 +174,26 @@ approval created by the registered Supervisor after Chat approves the exact
 plan and envelope for the current sandbox SHA. Runtime approvals live under
 `.generic_chess_flow/compute-approvals/`, are single-plan and revocable, and
 fail closed on stale SHA, envelope, budget, seed, or stage changes.
+
+`compute-plan-request` mechanically validates the exact plan and sends its
+scientific decision, stages, command, early-stop rules, resource envelope, and
+local hash summary to Chat. Chat only needs to return an explicit
+`GENERICCHESS_COMPUTE_PLAN_APPROVAL=APPROVE|HOLD`; the plan, envelope,
+sandbox, and command hashes are bound locally. The registered Supervisor then runs
+`compute-plan-approve --plan-file` (the older `--chat-approval-file` form is
+still accepted) to bind the normal Chat response locally. Missing or malformed
+compute approval remains fail-closed for Heavy, while ordinary Courier
+responses continue to import with default controls.
+
+Courier response bodies are accepted independently from their control footer.
+Missing or invalid ordinary controls are recorded as warnings and normalized to
+`STATUS=CONTINUE`, `CANDIDATE_SHA=NONE`, and `PROMOTION=HOLD`; only explicit
+valid values can complete, block, promote, or approve compute. A
+`LOCAL_SUPERVISOR_REQUIRED=true` footer is a business escalation recorded once
+for the registered Supervisor, not a transport failure, so the response stays
+available for the same-session follow-up. Heavy monitor state reads the
+validated envelope's `hard_wall_minutes`, terminates only the exact child
+process tree at the bound, and records `timed_out` with retained logs.
 
 On a Courier error, run `recover` for the same request. Login, target, access,
 or uncertain external side effects escalate to the Supervisor before they reach
