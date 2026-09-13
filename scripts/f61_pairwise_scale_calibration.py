@@ -1,6 +1,6 @@
 """F61 R11 scalar calibration of the completed Standard-Shogi child.
 
-The script reconstructs the frozen seed-59012 model and 24 persisted roots,
+The script reconstructs the requested optimizer-seed model and 24 persisted roots,
 fits exactly one no-intercept scalar to the existing residual predictions,
 checks the four frozen openings, and (only with ``--run-arena``) runs one
 fresh four-pair Arena for the calibrated child.  No hidden weights, data,
@@ -104,8 +104,56 @@ def _arena_payload(summary) -> dict:
     }
 
 
+def _fit_one_for_seed(compiled, parent, records: list[dict], training_seed: int):
+    """Fit a seed-specific child while keeping the persisted roots seed-bound.
+
+    The root checkpoint metadata is intentionally loaded through the generator
+    module unchanged (its data was produced under seed 59012).  Only the
+    optimizer initialization seed is varied here, using the exact F61 fit and
+    checkpoint construction paths.
+    """
+    roots = []
+    for record in records:
+        spectrum = gen._load_root_checkpoint(compiled, parent, record, smoke=False)
+        if spectrum is None:
+            raise RuntimeError("missing persisted root checkpoint")
+        usable = [row for row in spectrum if row.q_20k is not None]
+        if len(usable) >= 2:
+            roots.append(usable)
+    if not roots:
+        raise RuntimeError("D0 produced no trainable action spectra")
+    features = np.vstack([row.features for root in roots for row in root])
+    base = np.asarray([row.base_q for root in roots for row in root], dtype=float)
+    target = np.asarray([row.q_20k for root in roots for row in root], dtype=float)
+    groups = []
+    cursor = 0
+    for root in roots:
+        groups.append(np.arange(cursor, cursor + len(root)))
+        cursor += len(root)
+    model = f61._fit_serializable(
+        features, base, target, groups, "PAIRWISE_RANKING", training_seed
+    )
+    spec = {
+        "candidate_id": f"F61_D0_PAIRWISE_SEED_{training_seed}",
+        "training_distribution": "D0_RANDOM_REACHABLE",
+        "objective": "PAIRWISE_RANKING",
+        "seed": training_seed,
+    }
+    child, model_payload = f61._candidate_checkpoint(parent, compiled, model, spec)
+    return child, {
+        "training_seed": training_seed,
+        "training_roots": len(roots),
+        "training_actions": int(len(features)),
+        "objective": "PAIRWISE_RANKING",
+        "model_width": f61.MODEL_WIDTH,
+        "regularization": f61.MODEL_REGULARIZATION,
+        "model_sha256": f61.stable_sha256(model_payload),
+    }, roots, features, target
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--training-seed", type=int, default=TRAINING_SEED)
     parser.add_argument("--run-arena", action="store_true")
     parser.add_argument("--fresh-arena-seed", type=int, default=FRESH_ARENA_SEED)
     parser.add_argument("--arena-pairs", type=int, default=PAIRS)
@@ -115,17 +163,11 @@ def main() -> None:
 
     compiled, native, parent, _ = gen._context(RULESET)
     records = gen._d0_records(compiled, 620000, count=gen.ROOT_COUNT, smoke=False)
-    original_child, training = gen._fit_one(compiled, native, parent, records, smoke=False)
-    roots = []
-    for record in records:
-        spectrum = gen._load_root_checkpoint(compiled, parent, record, smoke=False)
-        if spectrum is None:
-            raise RuntimeError("missing persisted root checkpoint")
-        usable = [row for row in spectrum if row.q_20k is not None]
-        if len(usable) >= 2:
-            roots.append(usable)
-    features = np.vstack([row.features for root in roots for row in root])
-    target = np.asarray([row.q_20k - row.base_q for root in roots for row in root], dtype=float)
+    original_child, training, roots, features, target_q = _fit_one_for_seed(
+        compiled, parent, records, args.training_seed
+    )
+    base = np.asarray([row.base_q for root in roots for row in root], dtype=float)
+    target = target_q - base
     residual = CompactNonlinearResidual.from_dict(original_child.compact_nonlinear)
     prediction = residual.predict(features)
     denominator = float(np.dot(prediction, prediction))
@@ -140,10 +182,10 @@ def main() -> None:
         }
     )
     spec = {
-        "candidate_id": "F61_D0_PAIRWISE_SEED_59012",
+        "candidate_id": f"F61_D0_PAIRWISE_SEED_{args.training_seed}",
         "training_distribution": "D0_RANDOM_REACHABLE",
         "objective": "PAIRWISE_RANKING",
-        "seed": TRAINING_SEED,
+        "seed": args.training_seed,
     }
     calibrated_child, calibrated_payload = f61._candidate_checkpoint(
         parent, compiled, calibrated_model, spec
@@ -192,7 +234,7 @@ def main() -> None:
     payload = {
         "schema": "generic-chess-f61-pairwise-scale-calibration-v1",
         "ruleset": RULESET,
-        "training_seed": TRAINING_SEED,
+        "training_seed": args.training_seed,
         "parent_checkpoint_id": parent.checkpoint_id,
         "original_child_checkpoint_id": original_child.checkpoint_id,
         "calibrated_child_checkpoint_id": calibrated_child.checkpoint_id,
