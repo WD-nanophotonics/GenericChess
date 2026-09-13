@@ -64,3 +64,38 @@ def test_ruleset_selector_limits_run_to_requested_mainline_arm(monkeypatch):
     })
     payload = triage.run(smoke=True, ruleset="B_CANONICAL_STANDARD_SHOGI")
     assert payload["ruleset_order"] == ["B_CANONICAL_STANDARD_SHOGI"]
+
+
+def test_arena_uses_game_resumable_path_and_preserves_summary_shape(monkeypatch, tmp_path):
+    compiled = SimpleNamespace(ruleset_fingerprint="shogi-fingerprint")
+    parent = SimpleNamespace(checkpoint_id="parent")
+    child = SimpleNamespace(checkpoint_id="child")
+    summary = SimpleNamespace(
+        pair_count=2, pair_scores=(0.5, 1.0), mean_pair_score=0.75,
+        child_better_pairs=1, tied_pairs=1, child_worse_pairs=0,
+        game_wins=1, game_draws=1, game_losses=0,
+        bootstrap_low=0.5, bootstrap_high=1.0,
+    )
+    seen = {}
+    monkeypatch.setattr(triage, "OUT", tmp_path)
+    monkeypatch.setattr(triage, "generate_arena_openings", lambda *args, **kwargs: "openings")
+
+    def fake_resumable(*args, **kwargs):
+        seen["config"] = args[4]
+        seen.update(kwargs)
+        return SimpleNamespace(
+            status="COMPLETE", summary=summary, completed_games=4,
+            total_games=4, reason=None,
+        )
+
+    monkeypatch.setattr(triage, "run_arena_game_resumable", fake_resumable)
+    result = triage._arena(compiled, "native", parent, child, seed=620700, smoke=True)
+
+    assert seen["config"].pairs == 2
+    assert seen["config"].nodes_per_move == 100
+    assert seen["config"].workers == 1
+    assert seen["openings"] == "openings"
+    assert seen["stop_on_decision"] is False
+    assert str(seen["progress_dir"]).endswith("arena-progress\\shogi-fingerprint\\seed-59012")
+    assert result["pair_scores"] == [0.5, 1.0]
+    assert result["game_wins"] == 1 and result["game_draws"] == 1

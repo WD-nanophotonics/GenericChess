@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "tests"))
 from generic_chess.ai.benchmark.audit_suite import build_compiled, standard_ruleset_specs  # noqa: E402
 from generic_chess.ai.evaluation.config import EvaluationConfig  # noqa: E402
 from generic_chess.ai.evaluation.profile import build_ruleset_profile  # noqa: E402
-from generic_chess.learning.arena import ArenaConfig, run_arena  # noqa: E402
+from generic_chess.learning.arena import ArenaConfig, run_arena_game_resumable  # noqa: E402
 from generic_chess.learning.material import LearnableMaterialCheckpoint  # noqa: E402
 from generic_chess.learning.openings import generate_arena_openings  # noqa: E402
 from generic_chess.native.compiler import compile_native_semantic_rules  # noqa: E402
@@ -313,7 +313,7 @@ def _fit_one(compiled, native, parent, records: list[dict], *, smoke: bool):
 def _arena(compiled, native, parent, child, *, seed: int, smoke: bool) -> dict:
     pairs = 2 if smoke else ARENA_PAIRS
     openings = generate_arena_openings(compiled, count=pairs, seed=seed, min_plies=2, max_plies=6)
-    summary = run_arena(
+    resumable = run_arena_game_resumable(
         compiled, native, parent, child,
         ArenaConfig(
             pairs=pairs, nodes_per_move=100 if smoke else ARENA_NODES,
@@ -322,8 +322,19 @@ def _arena(compiled, native, parent, child, *, seed: int, smoke: bool) -> dict:
             opening_seed=seed, opening_count=pairs, min_plies=2, max_plies=6,
             workers=1,
         ),
+        progress_dir=(
+            OUT / "arena-progress" / str(compiled.ruleset_fingerprint) / "seed-59012"
+        ),
         openings=openings,
+        stop_on_decision=False,
     )
+    if resumable.status != "COMPLETE" or resumable.summary is None:
+        raise RuntimeError(
+            f"F61 Arena incomplete: status={resumable.status} "
+            f"completed_games={resumable.completed_games}/{resumable.total_games} "
+            f"reason={resumable.reason}"
+        )
+    summary = resumable.summary
     return {
         "pair_count": summary.pair_count,
         "pair_scores": list(summary.pair_scores),
