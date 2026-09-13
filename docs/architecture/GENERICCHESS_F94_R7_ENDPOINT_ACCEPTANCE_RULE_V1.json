@@ -1,0 +1,54 @@
+{
+  "schema": "generic-chess-f94-r7-layer-d-endpoint-acceptance-rule-v1",
+  "status": "FROZEN_PROSPECTIVE_NO_DATA_COLLECTED",
+  "parent_preregistration": {
+    "path": "docs/architecture/GENERICCHESS_F94_R7_PREREGISTRATION_V1.json",
+    "sha256": "0bb5b352ab027e818d6dede058ff9d543b8f8c643b4805fa642783ec68c00237"
+  },
+  "compute_boundary": {
+    "new_arena_authorized": false,
+    "new_heavy_authorized": false,
+    "classifier_mutation_allowed": false
+  },
+  "endpoint": {
+    "name": "4096_vs_256",
+    "sampling_unit": "pair",
+    "expected_tapes": 3,
+    "pairs_per_tape": 6,
+    "required_complete_pairs": 18,
+    "score_domain": "pair_score in [0.0, 1.0]",
+    "root_actor_direction": "child_better_than_parent_is_positive"
+  },
+  "positive_direction": {
+    "reference_value": 0.5,
+    "mean_pair_score": "strictly_greater_than_reference",
+    "child_better_pairs": "strictly_greater_than_child_worse_pairs",
+    "ties": "allowed_but_do_not_count_as_better",
+    "missing_or_incomplete_pair": "fail_closed"
+  },
+  "confidence": {
+    "method": "deterministic_nonparametric_bootstrap_of_pair_means",
+    "confidence": 0.95,
+    "tail": "two_sided_percentile_interval_lower_bound_used_as_one_sided_acceptance_gate",
+    "resamples": 10000,
+    "seed": 271828,
+    "alpha": 0.025,
+    "lower_index": 250,
+    "acceptance": "bootstrap_low_strictly_greater_than_0.5",
+    "sampling_unit_warning": "resample_pairs_never_individual_games"
+  },
+  "integrity_blockers": [
+    "any blocking fallback stratum from the parent preregistration",
+    "missing, extra, duplicate, or identity-mismatched pair",
+    "tape overlap or response-matrix key drift",
+    "source, PREP, protocol, or preregistration SHA drift",
+    "non-deterministic or timing-dependent confidence calculation"
+  ],
+  "decision": {
+    "pass": "all endpoint, positive_direction, confidence, and integrity requirements pass",
+    "otherwise": "DEFER_PRIMARY_ENDPOINT_UNRESOLVED",
+    "authority": "prospective_design_only",
+    "r6_reinterpretation": "forbidden",
+    "promotion_or_classifier_effect": "none"
+  }
+}
