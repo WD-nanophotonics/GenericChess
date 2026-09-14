@@ -12,7 +12,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from generic_chess.learning.arena import ArenaConfig, run_arena_game_resumable  # noqa: E402
+from generic_chess.learning.arena import ArenaConfig, ArenaExecutionCaps, run_arena_game_resumable  # noqa: E402
 from generic_chess.learning.nonlinear import CompactNonlinearResidual  # noqa: E402
 from generic_chess.learning.openings import generate_arena_openings  # noqa: E402
 from scripts import f50_generic_learnable_evaluator as f50  # noqa: E402
@@ -33,6 +33,19 @@ PRIOR_PAIR_SCORES = [0.5]
 OPENING_SEED = 620710
 PAIRS = 3
 OUT = ROOT / ".generic_chess_flow" / "f61-gen0-gen1-strength-triage" / "calibrated_seed3_confirm.json"
+
+
+def _arena_caps() -> ArenaExecutionCaps:
+    """Caps bound one R27 game to the approved resource envelope."""
+    return ArenaExecutionCaps(
+        per_game_wall_seconds=3600.0,
+        per_game_nodes=400_000,
+        per_game_plies=200,
+        max_stage_games=6,
+        max_concurrent_games=1,
+        stage_wall_seconds=18_000.0,
+        logical_cpu_count=2,
+    )
 
 
 def _reconstruct(compiled, parent):
@@ -64,7 +77,7 @@ def main() -> None:
     payload = {"schema": "generic-chess-f61-calibrated-seed3-confirm-v1", "ruleset": RULESET, "parent_checkpoint_id": parent.checkpoint_id, "fixed_candidate": identity, "prior_r15": {"opening_seed": 620705, "pair_scores": PRIOR_PAIR_SCORES, "mean_pair_score": 0.5, "child_better_pairs": 0, "tied_pairs": 1, "child_worse_pairs": 0, "game_wins": 1, "game_draws": 0, "game_losses": 1}}
     if args.run_arena:
         openings = generate_arena_openings(compiled, count=PAIRS, seed=OPENING_SEED, min_plies=2, max_plies=6)
-        result = run_arena_game_resumable(compiled, native, parent, child, ArenaConfig(pairs=PAIRS, nodes_per_move=2_000, max_depth=12, tt_megabytes=8, opening_seed=OPENING_SEED, opening_count=PAIRS, min_plies=2, max_plies=6, workers=1), progress_dir=OUT.parent / "arena-progress-calibrated-seed3-r27" / str(compiled.ruleset_fingerprint) / f"seed-{OPENING_SEED}", openings=openings, stop_on_decision=False)
+        result = run_arena_game_resumable(compiled, native, parent, child, ArenaConfig(pairs=PAIRS, nodes_per_move=2_000, max_depth=12, tt_megabytes=8, opening_seed=OPENING_SEED, opening_count=PAIRS, min_plies=2, max_plies=6, workers=1), progress_dir=OUT.parent / "arena-progress-calibrated-seed3-r27-capped" / str(compiled.ruleset_fingerprint) / f"seed-{OPENING_SEED}", openings=openings, execution_caps=_arena_caps(), stop_on_decision=False)
         if result.status != "COMPLETE" or result.summary is None:
             raise RuntimeError(f"Arena incomplete: {result.status} {result.reason}")
         summary = result.summary
