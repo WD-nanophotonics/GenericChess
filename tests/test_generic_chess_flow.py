@@ -774,6 +774,45 @@ def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch
     assert state["recovery_state"] == "RECOVERED"
 
 
+def test_supervisor_resend_uses_evidence_retry_for_proven_unsent_request(
+        monkeypatch, tmp_path):
+    runtime = tmp_path / "runtime"
+    escalation_id = "b" * 20
+    directory = runtime / "escalations" / escalation_id
+    directory.mkdir(parents=True)
+    (directory / "dossier.json").write_text(json.dumps({
+        "escalation_id": escalation_id}), encoding="utf-8")
+    (directory / "claim.json").write_text(json.dumps({
+        "supervisor_thread_id": "supervisor-1"}), encoding="utf-8")
+    request = str(tmp_path / "outbox" / "same-request")
+    state = {"active_request_directory": request, "recovery_timeline": []}
+    calls = []
+
+    def fake_courier(_root, command, _request, **_kwargs):
+        calls.append(command)
+        if command == "courier_capture_latest":
+            return {
+                "event": "courier_capture_latest_empty",
+                "latest_user_turn_found": False,
+                "safe_next_action": "courier_retry_once",
+                "submission_count": 0,
+            }
+        return {"event": "response_received", "response_path": "response.txt"}
+
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    monkeypatch.setattr(flow, "update_response_state", lambda *_args, **_kwargs: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
+
+    flow.command_supervisor_resend(
+        tmp_path, SimpleNamespace(escalation_id=escalation_id))
+
+    assert calls == ["courier_capture_latest", "courier_retry_once"]
+    assert state["recovery_timeline"][-1]["recovery_command"] == "courier_retry_once"
+
+
 def test_supervisor_resolution_clears_proven_replied_request(monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"
     directory = runtime / "escalations" / ("d" * 20)

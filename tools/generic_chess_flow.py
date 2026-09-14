@@ -2244,15 +2244,23 @@ def command_supervisor_resend(root: Path, args: argparse.Namespace) -> None:
     if (probe.get("event") != "courier_capture_latest_empty"
             or probe.get("latest_user_turn_found") is not False):
         raise FlowError("Supervisor resend requires fresh proof that the request is absent")
-    result = courier(root, "courier_resend_once", request_directory,
+    recovery_command = (
+        "courier_retry_once"
+        if probe.get("safe_next_action") == "courier_retry_once"
+        and probe.get("submission_count") == 0
+        else "courier_resend_once"
+    )
+    result = courier(root, recovery_command, request_directory,
                      stream=True, allow_failure=True)
     recovery_event(state, "supervisor_resend_reviewed", escalation_id=args.escalation_id,
-                   result_event=result.get("event"))
+                   recovery_command=recovery_command, result_event=result.get("event"))
     save_state(root, state)
     if result.get("event") in {"response_received", "response_duplicate"} and result.get("response_path"):
         update_response_state(root, state, result, source="supervisor_resend")
         return
-    raise FlowError(f"Supervisor resend_once did not recover the request: {result.get('event')}")
+    raise FlowError(
+        f"Supervisor {recovery_command} did not recover the request: {result.get('event')}"
+    )
 
 
 def command_closeout(root: Path, args: argparse.Namespace) -> None:
