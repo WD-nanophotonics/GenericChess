@@ -1,0 +1,218 @@
+{
+  "allocation_sha256": "f0de3d7175da6e5551457d0669e7efd87dc8f0dad446f6b956c1482b8b2a364e",
+  "candidate_checkpoint_id": "7e4298b75a5ee6da22f77d33197ddb38f4c759a1d059386cc1f2be7902d310d1",
+  "candidate_descriptor_path": "artifacts/f83_c2_selective_successor/successor_candidate_descriptor.json",
+  "candidate_descriptor_sha256": "20d3428c6f58f2954e11185c7934129527a65467dc42dc13112205430bf383ca",
+  "candidate_model_sha256": "529a2ae3da9b9f09d16a7c27881c525f63cdd63c641a4d26f974d27bc0308a1c",
+  "chosen_alpha": 0.25,
+  "parent_checkpoint_id": "86f026ef85d60e600bc1bd6bc7b7285f11e5ce7e6528911b2ea361a489dc5983",
+  "parent_model_sha256": "b2308bea76ba55a533b95036f9b0ca37265c15d772ce5fbd14f7b6b098677e95",
+  "schema": "generic-chess-f83-c2-selective-successor-v1",
+  "selection": {
+    "candidate_objective_all_roots": 164.85616158827455,
+    "corrected_root_count": 12,
+    "corrected_root_ids": [
+      "c1_on_policy-a-01",
+      "c1_on_policy-a-04",
+      "c1_on_policy-a-05",
+      "c1_on_policy-a-06",
+      "c1_on_policy-a-07",
+      "c1_on_policy-a-08",
+      "c1_on_policy-a-09",
+      "c1_on_policy-a-11",
+      "c1_pv_corridor-a-11",
+      "reachable_random-a-05",
+      "reachable_random-a-07",
+      "reachable_random-a-11"
+    ],
+    "margin_rows": [
+      {
+        "candidate": 3027.1114573099658,
+        "parent": 1425.0254622564662,
+        "root_id": "c1_on_policy-a-00"
+      },
+      {
+        "candidate": 328.95057067546804,
+        "parent": 1088.9924606109453,
+        "root_id": "c1_on_policy-a-01"
+      },
+      {
+        "candidate": 2965.4747247310443,
+        "parent": 3693.0695903191518,
+        "root_id": "c1_on_policy-a-02"
+      },
+      {
+        "candidate": 658.5928261609151,
+        "parent": 272.5755163670983,
+        "root_id": "c1_on_policy-a-03"
+      },
+      {
+        "candidate": 163.27361277610544,
+        "parent": 53.86893395279367,
+        "root_id": "c1_on_policy-a-04"
+      },
+      {
+        "candidate": 286.8441616995842,
+        "parent": 638.3426673079666,
+        "root_id": "c1_on_policy-a-05"
+      },
+      {
+        "candidate": 1196.3365943042518,
+        "parent": 1978.9864331911103,
+        "root_id": "c1_on_policy-a-06"
+      },
+      {
+        "candidate": 1463.0095962894156,
+        "parent": 1566.1940128732676,
+        "root_id": "c1_on_policy-a-07"
+      },
+      {
+        "candidate": 345.714602916687,
+        "parent": 901.6271915634024,
+        "root_id": "c1_on_policy-a-08"
+      },
+      {
+        "candidate": 816.9060374191758,
+        "parent": 822.2626529669687,
+        "root_id": "c1_on_policy-a-09"
+      },
+      {
+        "candidate": 322.85261226435614,
+        "parent": 236.78069923106523,
+        "root_id": "c1_on_policy-a-10"
+      },
+      {
+        "candidate": 2504.8884053865913,
+        "parent": 4473.818800807378,
+        "root_id": "c1_on_policy-a-11"
+      },
+      {
+        "candidate": 1806.4694037788267,
+        "parent": 1404.9407575446912,
+        "root_id": "c1_pv_corridor-a-00"
+      },
+      {
+        "candidate": 1096.9381632824134,
+        "parent": 917.4743011555674,
+        "root_id": "c1_pv_corridor-a-01"
+      },
+      {
+        "candidate": 1551.536853627098,
+        "parent": 1075.5750623336326,
+        "root_id": "c1_pv_corridor-a-02"
+      },
+      {
+        "candidate": 1060.8332575955264,
+        "parent": 1148.5244695602705,
+        "root_id": "c1_pv_corridor-a-03"
+      },
+      {
+        "candidate": 1647.129761613569,
+        "parent": 1265.078997536957,
+        "root_id": "c1_pv_corridor-a-04"
+      },
+      {
+        "candidate": 1221.7301760984192,
+        "parent": 988.9750689410121,
+        "root_id": "c1_pv_corridor-a-05"
+      },
+      {
+        "candidate": 1481.114333390552,
+        "parent": 1264.2362227188305,
+        "root_id": "c1_pv_corridor-a-06"
+      },
+      {
+        "candidate": 966.7296379833765,
+        "parent": 83.55429501370509,
+        "root_id": "c1_pv_corridor-a-07"
+      },
+      {
+        "candidate": 2852.1491994754338,
+        "parent": 2118.2955727222397,
+        "root_id": "c1_pv_corridor-a-08"
+      },
+      {
+        "candidate": 1314.7413726812774,
+        "parent": 1126.0944811558556,
+        "root_id": "c1_pv_corridor-a-09"
+      },
+      {
+        "candidate": 441.79901619389693,
+        "parent": 376.2548856811518,
+        "root_id": "c1_pv_corridor-a-10"
+      },
+      {
+        "candidate": 1138.7304569370717,
+        "parent": 2033.2194588531502,
+        "root_id": "c1_pv_corridor-a-11"
+      },
+      {
+        "candidate": 2094.235816110988,
+        "parent": 1579.4438469242148,
+        "root_id": "reachable_random-a-00"
+      },
+      {
+        "candidate": 1846.9253904026864,
+        "parent": 1551.2840786360703,
+        "root_id": "reachable_random-a-01"
+      },
+      {
+        "candidate": 5810.468556548138,
+        "parent": 5807.862949211722,
+        "root_id": "reachable_random-a-02"
+      },
+      {
+        "candidate": 5167.187081898774,
+        "parent": 5396.039211709716,
+        "root_id": "reachable_random-a-03"
+      },
+      {
+        "candidate": 1627.244229405966,
+        "parent": 1345.0913592422062,
+        "root_id": "reachable_random-a-04"
+      },
+      {
+        "candidate": 1327.6590713734513,
+        "parent": 2140.658597090789,
+        "root_id": "reachable_random-a-05"
+      },
+      {
+        "candidate": 499.5413579928336,
+        "parent": 520.442676523895,
+        "root_id": "reachable_random-a-06"
+      },
+      {
+        "candidate": 441.51367738125373,
+        "parent": 84.09817769075744,
+        "root_id": "reachable_random-a-07"
+      },
+      {
+        "candidate": 2253.7022291602584,
+        "parent": 1827.5414839636474,
+        "root_id": "reachable_random-a-08"
+      },
+      {
+        "candidate": 2385.1445959914336,
+        "parent": 2297.9181666209283,
+        "root_id": "reachable_random-a-09"
+      },
+      {
+        "candidate": 3143.424348365168,
+        "parent": 1662.8484637642377,
+        "root_id": "reachable_random-a-10"
+      },
+      {
+        "candidate": 980.420874498669,
+        "parent": 761.0137702350448,
+        "root_id": "reachable_random-a-11"
+      }
+    ],
+    "parent_objective_all_roots": 369.4686874803598,
+    "preserved_decisions_and_margins": true,
+    "preserved_root_count": 24
+  },
+  "status": "SUCCESSOR_READY_FOR_APPROVED_ARENA",
+  "teacher_evidence_sha256": "c0a5e69f5d3345bbf4ab699d67b14b0fcbad745003ca17ac5beec3a1f4fbb4c2",
+  "training_config_hash": "6e8a6a0e48b56ec0d23160074f8353587c18623dfc0ef88a5e14454ccb0f227a",
+  "work_order": "GENERICCHESS-F83-C2-SELECTIVE-CORRECTION-SUCCESSOR"
+}
