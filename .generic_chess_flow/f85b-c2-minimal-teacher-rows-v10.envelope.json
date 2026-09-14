@@ -1,0 +1,19 @@
+{
+  "schema": "generic-chess-resource-envelope-v1",
+  "envelope_id": "f85b-c2-minimal-teacher-rows-v10",
+  "logical_cpu_count": 16,
+  "intended_cpu_lanes": 2,
+  "expected_wall_minutes": 180,
+  "expected_wall_range_minutes": [120, 300],
+  "hard_wall_minutes": 360,
+  "expected_cpu_hours": 10,
+  "hard_cpu_hours": 15,
+  "arena_pairs": 1,
+  "maximum_games": 1,
+  "maximum_nodes": 9954000,
+  "maximum_plies": 1,
+  "maximum_concurrent_games": 2,
+  "stage_count": 1,
+  "per_root_wall_seconds": 900,
+  "effective_workload": {"games": 0, "arena_pairs": 0, "plies": 0}
+}
