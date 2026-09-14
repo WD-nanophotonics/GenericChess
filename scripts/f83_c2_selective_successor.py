@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from pathlib import Path
 import sys
@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT))
 
 from generic_chess.learning.nonlinear import CompactNonlinearResidual
 from generic_chess.learning.serialization import stable_sha256
+from generic_chess.learning.arena import ArenaConfig, ArenaExecutionCaps, ArenaOpeningCorpus, run_arena_game_resumable
 from scripts import f78_parent_anchored_full_residual_arena2 as f78
 from scripts import f82_c2_parent_anchored_repeatability as c2
 
@@ -172,5 +173,53 @@ def build() -> dict:
     return result
 
 
+def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: Path) -> dict:
+    """Run one registered Arena4 role-swapped pair: C2 parent vs successor."""
+    allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
+    _c2_artifact, _c2_descriptor, compiled, native, _c1, c2_parent = c2._load_verified_arena2_candidate(allocation, C2_ARTIFACT)
+    successor_result = json.loads(ARTIFACT.read_text(encoding="utf-8"))
+    successor_descriptor = json.loads(DESCRIPTOR.read_text(encoding="utf-8"))
+    if stable_sha256({k: v for k, v in successor_descriptor.items() if k != "descriptor_sha256"}) != successor_descriptor["descriptor_sha256"]:
+        raise RuntimeError("successor descriptor hash mismatch")
+    if successor_result["candidate_descriptor_sha256"] != successor_descriptor["descriptor_sha256"]:
+        raise RuntimeError("successor artifact descriptor mismatch")
+    if successor_descriptor["parent_checkpoint_id"] != c2_parent.checkpoint_id:
+        raise RuntimeError("successor parent checkpoint mismatch")
+    from generic_chess.learning.material import LearnableMaterialCheckpoint
+    successor = LearnableMaterialCheckpoint.from_dict(successor_descriptor["candidate_checkpoint"])
+    successor.validate_ruleset(compiled)
+    payload = allocation["selection_and_strength_corpora"]["Arena4"]
+    registered = ArenaOpeningCorpus.from_dict(payload["corpus"])
+    registered.validate(compiled)
+    if registered.corpus_id != payload["corpus_id"] or not 0 <= opening_index < len(registered.openings):
+        raise RuntimeError("Arena4 registered corpus identity/index mismatch")
+    source = registered.openings[opening_index]
+    openings = ArenaOpeningCorpus(
+        corpus_id=registered.corpus_id, seed=registered.seed,
+        min_plies=registered.min_plies, max_plies=registered.max_plies,
+        openings=(replace(source, index=0),),
+    )
+    config = ArenaConfig(pairs=1, nodes_per_move=512, parent_nodes_per_move=512, child_nodes_per_move=512, max_depth=12, tt_megabytes=8, opening_seed=registered.seed, opening_count=1, min_plies=registered.min_plies, max_plies=registered.max_plies, workers=2, tt_reset_each_move=True)
+    caps = ArenaExecutionCaps(per_game_wall_seconds=7200, per_game_nodes=262144, per_game_plies=512, max_stage_games=2, max_concurrent_games=2, stage_wall_seconds=7200, logical_cpu_count=4)
+    run = run_arena_game_resumable(compiled, native, c2_parent, successor, config, progress_dir=progress_dir, openings=openings, capture_search_metrics=True, caps=caps, identity_caps=caps, stage_id="f83-c2-selective-successor-arena4", max_pairs=1)
+    summary = run.summary
+    result = {"schema": "generic-chess-f83-c2-selective-successor-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "registered_corpus_id": registered.corpus_id, "opening_index": source.index, "opening_final_position_key": source.final_position_key, "parent_checkpoint_id": c2_parent.checkpoint_id, "candidate_checkpoint_id": successor.checkpoint_id, "config": asdict(config), "execution_caps": asdict(caps), "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
+    result_path.parent.mkdir(parents=True, exist_ok=True)
+    result_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return result
+
+
 if __name__ == "__main__":
-    print(json.dumps(build(), indent=2, sort_keys=True))
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run-arena4-opening", action="store_true")
+    parser.add_argument("--opening-index", type=int)
+    parser.add_argument("--progress-dir", type=Path)
+    parser.add_argument("--result-path", type=Path)
+    args = parser.parse_args()
+    if args.run_arena4_opening:
+        if args.opening_index is None or args.progress_dir is None or args.result_path is None:
+            parser.error("--run-arena4-opening requires --opening-index, --progress-dir, and --result-path")
+        print(json.dumps(run_arena4_opening(opening_index=args.opening_index, progress_dir=args.progress_dir, result_path=args.result_path), sort_keys=True))
+    else:
+        print(json.dumps(build(), indent=2, sort_keys=True))
