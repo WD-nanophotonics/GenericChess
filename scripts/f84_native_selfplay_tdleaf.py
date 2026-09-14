@@ -52,13 +52,16 @@ def build() -> dict:
         result = json.loads(ARTIFACT.read_text(encoding="utf-8"))
         if descriptor.get("parent_checkpoint_id") == parent.checkpoint_id and result.get("candidate_descriptor_sha256") == descriptor.get("descriptor_sha256"):
             return result
-    config = SelfPlayConfig(games=1, seed=SEED)
+    config = SelfPlayConfig(
+        games=1, nodes_per_move=512, max_depth=12, seed=SEED,
+        epsilon=0.10, tt_megabytes=8, max_plies=64,
+    )
     trajectories = collect_self_play(compiled, native, parent, config)
     if len(trajectories) != 1:
         raise RuntimeError("F84 requires exactly one self-play trajectory")
     trajectory = trajectories[0]
-    if trajectory.truncated or trajectory.terminal == "ongoing" or not trajectory.points:
-        raise RuntimeError("F84 requires one complete trajectory with training points")
+    if not trajectory.points or (trajectory.truncated and trajectory.bootstrap_value is None):
+        raise RuntimeError("F84 requires training points and an explicit cutoff bootstrap")
     update = tdleaf_update(trajectories, parent, TDLeafConfig())
     if update.positions_seen <= 0 or update.weight_l2_delta <= 0.0:
         raise RuntimeError("native self-play TDLeaf update did not change learner weights")

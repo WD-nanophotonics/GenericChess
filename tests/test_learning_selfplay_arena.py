@@ -1,5 +1,6 @@
 """Learning Phase 1: self-play trajectories and fair arena."""
 
+import math
 import sys
 from pathlib import Path
 
@@ -67,7 +68,7 @@ def test_selfplay_has_some_exploration_and_some_search_moves():
 
 
 @requires_native
-def test_selfplay_marks_max_ply_cutoff_and_tdleaf_rejects_it():
+def test_selfplay_marks_max_ply_cutoff_and_bootstraps_it():
     compiled, rules, checkpoint = _setup(size=6)
     trajectories = collect_self_play(
         compiled,
@@ -85,8 +86,9 @@ def test_selfplay_marks_max_ply_cutoff_and_tdleaf_rejects_it():
     assert trajectory.terminal == "ongoing"
     assert trajectory.truncated is True
     assert trajectory.termination_reason == "max_plies"
-    with pytest.raises(ValueError, match="bootstrap_value"):
-        tdleaf_update([trajectory], checkpoint, TDLeafConfig(alpha=0.1))
+    assert trajectory.bootstrap_value is not None
+    assert math.isfinite(trajectory.bootstrap_value)
+    tdleaf_update([trajectory], checkpoint, TDLeafConfig(alpha=0.1))
 
 
 @requires_native

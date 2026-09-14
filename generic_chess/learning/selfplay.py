@@ -154,11 +154,28 @@ def collect_self_play(
             ply += 1
         result = session.result
         truncated = result.status.value == "ongoing"
+        bootstrap_value = None
         if truncated:
             termination_reason = (
                 "max_plies"
                 if config.max_plies is not None and ply >= config.max_plies
                 else "ongoing_after_loop"
+            )
+            # A code-level ply cap is a nonterminal cutoff, never a draw. Use
+            # the frozen parent evaluator for TDLeaf's explicit bootstrap.
+            current_features = material_features(
+                session.state.position, type_ids, perspective=0
+            )
+            current_dynamic = dynamic_features(
+                session.state.position, compiled
+            ).as_tuple()
+            bootstrap_value = _normalized_value(
+                current_features,
+                checkpoint.board_weights,
+                checkpoint.hand_weights,
+                checkpoint.value_scale,
+                current_dynamic,
+                checkpoint.dynamic_weights,
             )
         else:
             termination_reason = result.status.value
@@ -181,6 +198,7 @@ def collect_self_play(
                 type_ids=type_ids,
                 termination_reason=termination_reason,
                 truncated=truncated,
+                bootstrap_value=bootstrap_value,
             )
         )
     return trajectories
