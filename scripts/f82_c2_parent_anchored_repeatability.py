@@ -318,18 +318,20 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
     return result
 
 
-def _registered_arena2_opening(allocation: dict, compiled, opening_index: int):
-    """Select one exact member of the registered Arena2 corpus.
+def _registered_strength_opening(
+    allocation: dict, compiled, corpus_name: str, opening_index: int
+):
+    """Select one exact member of a registered strength corpus.
 
     The game-level runner numbers a local one-pair corpus from zero.  The
     selected opening is therefore reindexed only for this isolated run while
     preserving every registered action, seed, target ply, and final key.
     """
-    corpus_payload = allocation["selection_and_strength_corpora"]["Arena2"]
+    corpus_payload = allocation["selection_and_strength_corpora"][corpus_name]
     registered = ArenaOpeningCorpus.from_dict(corpus_payload["corpus"])
     registered.validate(compiled)
     if registered.corpus_id != corpus_payload["corpus_id"]:
-        raise RuntimeError("Arena2 corpus identity mismatch")
+        raise RuntimeError(f"{corpus_name} corpus identity mismatch")
     if not 0 <= opening_index < len(registered.openings):
         raise ValueError(
             f"opening_index must be in [0, {len(registered.openings) - 1}]"
@@ -337,6 +339,10 @@ def _registered_arena2_opening(allocation: dict, compiled, opening_index: int):
     source = registered.openings[opening_index]
     local = replace(source, index=0)
     return registered, source, replace(registered, openings=(local,))
+
+
+def _registered_arena2_opening(allocation: dict, compiled, opening_index: int):
+    return _registered_strength_opening(allocation, compiled, "Arena2", opening_index)
 
 
 def run_arena2_registered_pair(
@@ -422,6 +428,69 @@ def run_arena2_registered_pair(
     return result
 
 
+def run_arena4_registered_pair(
+    allocation: dict,
+    artifact_path: Path = CANDIDATE_ARTIFACT,
+    *,
+    opening_index: int,
+    progress_dir: Path,
+    result_path: Path,
+) -> dict:
+    """Run one isolated role-swapped pair from the registered Arena4 corpus."""
+    artifact, descriptor, compiled, native, parent, candidate = _load_verified_arena2_candidate(
+        allocation, artifact_path
+    )
+    registered, source, openings = _registered_strength_opening(
+        allocation, compiled, "Arena4", opening_index
+    )
+    config = ArenaConfig(
+        pairs=1, nodes_per_move=NODES, parent_nodes_per_move=NODES,
+        child_nodes_per_move=NODES, max_depth=MAX_DEPTH,
+        tt_megabytes=TT_MEGABYTES, opening_seed=registered.seed,
+        opening_count=1, min_plies=registered.min_plies,
+        max_plies=registered.max_plies, workers=2,
+        tt_reset_each_move=True,
+    )
+    caps = ArenaExecutionCaps(
+        per_game_wall_seconds=ARENA2_PER_GAME_WALL_SECONDS,
+        per_game_nodes=262144, per_game_plies=512, max_stage_games=2,
+        max_concurrent_games=2, stage_wall_seconds=ARENA2_STAGE_WALL_SECONDS,
+        logical_cpu_count=4,
+    )
+    identity_caps = ArenaExecutionCaps(
+        per_game_wall_seconds=3600, per_game_nodes=262144, per_game_plies=512,
+        max_stage_games=2, max_concurrent_games=2, stage_wall_seconds=3600,
+        logical_cpu_count=4,
+    )
+    run = run_arena_game_resumable(
+        compiled, native, parent, candidate, config,
+        progress_dir=progress_dir, openings=openings,
+        capture_search_metrics=True, caps=caps, identity_caps=identity_caps,
+        stage_id="f82-c2-arena4-next-scorable", max_pairs=1,
+    )
+    summary = run.summary
+    result = {
+        "schema": "generic-chess-f82-c2-arena4-registered-pair-v1",
+        "status": run.status, "reason": run.reason,
+        "completed_games": run.completed_games,
+        "completed_pairs": run.completed_pairs, "total_games": run.total_games,
+        "registered_corpus_id": registered.corpus_id,
+        "opening_index": source.index,
+        "opening_final_position_key": source.final_position_key,
+        "config": asdict(config), "execution_caps": asdict(caps),
+        "summary": None if summary is None else {
+            "pair_count": summary.pair_count,
+            "pair_scores": list(summary.pair_scores),
+            "mean_pair_score": summary.mean_pair_score,
+            "game_wins": summary.game_wins,
+            "game_draws": summary.game_draws,
+            "game_losses": summary.game_losses,
+        },
+    }
+    _atomic_json(result_path, result)
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precompute-only", action="store_true")
@@ -429,6 +498,7 @@ def main() -> None:
     parser.add_argument("--materialize-candidate", action="store_true")
     parser.add_argument("--run-arena2", action="store_true")
     parser.add_argument("--run-arena2-opening", action="store_true")
+    parser.add_argument("--run-arena4-opening", action="store_true")
     parser.add_argument("--opening-index", type=int)
     parser.add_argument("--progress-dir", type=Path)
     parser.add_argument("--result-path", type=Path)
@@ -450,6 +520,16 @@ def main() -> None:
         print(json.dumps(run_arena2_registered_pair(
             allocation,
             args.candidate_artifact,
+            opening_index=args.opening_index,
+            progress_dir=args.progress_dir,
+            result_path=args.result_path,
+        ), sort_keys=True), flush=True)
+        return
+    if args.run_arena4_opening:
+        if args.opening_index is None or args.progress_dir is None or args.result_path is None:
+            parser.error("--run-arena4-opening requires --opening-index, --progress-dir, and --result-path")
+        print(json.dumps(run_arena4_registered_pair(
+            allocation, args.candidate_artifact,
             opening_index=args.opening_index,
             progress_dir=args.progress_dir,
             result_path=args.result_path,

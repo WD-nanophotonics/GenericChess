@@ -197,3 +197,35 @@ def test_registered_arena2_pair_rejects_allocation_mismatch_before_runner(
             progress_dir=tmp_path / "progress",
             result_path=tmp_path / "result.json",
         )
+
+
+def test_registered_arena4_pair_uses_one_registered_member_and_same_search_caps(
+    monkeypatch, tmp_path
+):
+    allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
+    captured = {}
+
+    def fake_runner(compiled, native, parent, candidate, config, **kwargs):
+        captured.update(config=config, kwargs=kwargs)
+        return SimpleNamespace(
+            status="COMPLETE", reason=None, completed_games=2,
+            completed_pairs=1, total_games=2, summary=None,
+        )
+
+    monkeypatch.setattr(c2, "run_arena_game_resumable", fake_runner)
+    result = c2.run_arena4_registered_pair(
+        allocation,
+        ROOT / "artifacts/f82_c2_repeatability/c2_candidate_result.json",
+        opening_index=0,
+        progress_dir=tmp_path / "progress",
+        result_path=tmp_path / "result.json",
+    )
+    corpus = allocation["selection_and_strength_corpora"]["Arena4"]
+    assert result["registered_corpus_id"] == corpus["corpus_id"]
+    assert result["opening_index"] == 0
+    assert captured["kwargs"]["openings"].openings[0].index == 0
+    assert captured["config"].pairs == 1
+    assert captured["config"].nodes_per_move == 512
+    assert captured["config"].max_depth == 12
+    assert captured["config"].tt_reset_each_move is True
+    assert captured["kwargs"]["max_pairs"] == 1
