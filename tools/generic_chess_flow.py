@@ -2177,16 +2177,19 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
         state["work_order_active"] = False
     probe = dossier.get("last_probe") if isinstance(dossier.get("last_probe"), dict) else {}
     active_request = state.get("active_request_directory")
+    dossier_request = dossier.get("request_directory")
+    dossier_request_id = Path(dossier_request).name if isinstance(dossier_request, str) else None
     same_active_request = (
         isinstance(active_request, str)
-        and active_request == dossier.get("request_directory")
+        and active_request == dossier_request
     )
     cleared_same_request = (
         active_request is None
         and state.get("escalation_id") == args.escalation_id
         and (
             state.get("active_request_id") == probe.get("request_id")
-            or state.get("active_request_id") == Path(dossier.get("request_directory", "")).name
+            or (dossier_request_id is not None
+                and state.get("active_request_id") == dossier_request_id)
         )
     )
     proven_reply = (
