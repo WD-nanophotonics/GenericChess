@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 import hashlib
+import pytest
 
 from scripts import f50_generic_learnable_evaluator as f50
 from scripts import f59_action_spectrum_diagnosis as f59
@@ -43,6 +44,19 @@ def test_minimal_manifest_uses_reduced_node_formula():
     for root in payload["roots"]:
         expected = 2_000 + 80_000 + 1_000 * root["legal_action_count"] + 20_000 * root["maximum_selected_actions"]
         assert root["declared_node_ceiling"] == expected
+
+
+def test_minimal_manifest_canonical_digest_binding_rejects_tampering():
+    payload = json.loads((ROOT / "artifacts/f85_c2_train_teacher_evidence/minimal_train_manifest.json").read_text(encoding="utf-8"))
+    assert f85._verified_minimal_manifest_sha(payload) == payload["manifest_sha256"]
+    changed = json.loads(json.dumps(payload))
+    changed["roots"][0]["legal_action_count"] += 1
+    with pytest.raises(RuntimeError, match="canonical digest"):
+        f85._verified_minimal_manifest_sha(changed)
+    changed = json.loads(json.dumps(payload))
+    changed["manifest_sha256"] = "0" * 64
+    with pytest.raises(RuntimeError, match="canonical digest"):
+        f85._verified_minimal_manifest_sha(changed)
 
 
 def test_phase_resume_reuses_complete_root2k(tmp_path, monkeypatch):

@@ -259,6 +259,15 @@ def _minimal_manifest(manifest: dict) -> dict:
     return payload
 
 
+def _verified_minimal_manifest_sha(manifest: dict) -> str:
+    """Return the canonical digest after verifying the stored digest."""
+    stored = manifest.get("manifest_sha256")
+    unsigned = {key: value for key, value in manifest.items() if key != "manifest_sha256"}
+    if not isinstance(stored, str) or stored != _stable_sha(unsigned):
+        raise RuntimeError("minimal manifest canonical digest mismatch")
+    return stored
+
+
 def _phase_provenance(record: dict, *, plan_sha: str, manifest_sha: str) -> dict:
     # Execution workers enrich manifest records with replay data used to
     # reconstruct the position.  Those runtime-only fields must not change
@@ -535,7 +544,7 @@ def _run_minimal_root_bounded(record: dict, *, plan_sha: str, manifest_sha: str,
 def _run_approved_minimal(manifest: dict, compute_plan_path: Path, *, runtime_dir: Path | None = None, per_root_wall_seconds: int) -> dict:
     """Run the phase-resumable minimal path; no F59 diagnostic extras."""
     plan_sha = _sha(compute_plan_path)
-    manifest_sha = _sha(MINIMAL_MANIFEST_PATH)
+    manifest_sha = _verified_minimal_manifest_sha(manifest)
     runtime_root = F85_RUNTIME_DIR if runtime_dir is None else Path(runtime_dir)
     progress_root = runtime_root / plan_sha / "minimal-progress"
     progress_root.mkdir(parents=True, exist_ok=True)
@@ -600,7 +609,8 @@ def main() -> None:
             raise SystemExit("--minimal-rows --approved-run requires --compute-plan")
         plan, plan_sha = _validate_execution_plan(args.compute_plan, minimal)
         envelope = plan.get("resource_envelope", {})
-        if plan.get("minimal_manifest_sha256") != _sha(MINIMAL_MANIFEST_PATH) or envelope.get("minimal_manifest_sha256") != _sha(MINIMAL_MANIFEST_PATH):
+        minimal_manifest_sha = _verified_minimal_manifest_sha(minimal)
+        if plan.get("minimal_manifest_sha256") != minimal_manifest_sha or envelope.get("minimal_manifest_sha256") != minimal_manifest_sha:
             raise SystemExit("approved minimal compute plan is not bound to the minimal manifest")
         if envelope.get("intended_cpu_lanes") != MAX_CONCURRENT_ROOTS or envelope.get("maximum_nodes") != minimal["total_declared_node_ceiling"] or envelope.get("effective_workload") != {"games": 0, "arena_pairs": 0, "plies": 0}:
             raise SystemExit("approved minimal compute plan resource envelope mismatch")
