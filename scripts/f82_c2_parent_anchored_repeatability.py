@@ -57,6 +57,8 @@ FINAL_PAIRS = 8
 NODES = 512
 MAX_DEPTH = 12
 TT_MEGABYTES = 8
+ARENA2_PER_GAME_WALL_SECONDS = 7200
+ARENA2_STAGE_WALL_SECONDS = 7200
 MIN_PLIES = 2
 MAX_PLIES = 6
 BACKTRACKING_ALPHAS = f78.BACKTRACKING_ALPHAS
@@ -296,7 +298,7 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
     if openings.corpus_id != corpus_payload["corpus_id"] or len(openings.openings) != 2:
         raise RuntimeError("Arena2 corpus identity or size mismatch")
     config = ArenaConfig(pairs=2, nodes_per_move=NODES, parent_nodes_per_move=NODES, child_nodes_per_move=NODES, max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES, opening_seed=SELECTION_SEED, opening_count=2, min_plies=MIN_PLIES, max_plies=MAX_PLIES, workers=1)
-    caps = ArenaExecutionCaps(per_game_wall_seconds=3600, per_game_nodes=262144, per_game_plies=512, max_stage_games=4, max_concurrent_games=1, stage_wall_seconds=3600, logical_cpu_count=4)
+    caps = ArenaExecutionCaps(per_game_wall_seconds=ARENA2_PER_GAME_WALL_SECONDS, per_game_nodes=262144, per_game_plies=512, max_stage_games=4, max_concurrent_games=1, stage_wall_seconds=ARENA2_STAGE_WALL_SECONDS, logical_cpu_count=4)
     def pause_after_first_pair() -> bool:
         # Preserve the v2 progress identity and stop before scheduling pair 1
         # once the first role-swapped pair is atomically complete.
