@@ -21,6 +21,7 @@ from scripts import f50_generic_learnable_evaluator as f50
 from scripts import f59_action_spectrum_diagnosis as f59
 from scripts import f79_parent_anchored_full_residual_arena4 as f79
 from scripts import f83_c1_relative_evidence_roots_and_cost_calibration as f83
+from generic_chess.core.actions import action_to_dict  # noqa: E402
 
 
 LABEL = "B_CANONICAL_STANDARD_SHOGI"
@@ -37,6 +38,8 @@ MAX_CONCURRENT_ROOTS = 2
 PER_ROOT_WALL_SECONDS = 720
 F85_MANIFEST_PATH = ROOT / "artifacts/f85_c2_train_teacher_evidence/train_precompute_manifest.json"
 F85_RUNTIME_DIR = ROOT / ".generic_chess_flow/f85-c2-train-teacher-acquisition"
+MINIMAL_MANIFEST_PATH = ROOT / "artifacts/f85_c2_train_teacher_evidence/minimal_train_manifest.json"
+MINIMAL_MODE = "f85-minimal-teacher-rows-v1"
 
 
 def _sha(path: Path) -> str:
@@ -191,6 +194,139 @@ def _teacher_unit(compiled, native, parent, observer, record: dict) -> dict:
         "teacher_rows": metadata["action_rows"],
         "root_metadata": {key: metadata[key] for key in ("root_2k", "root_40k", "root_80k", "observer_2k")},
     }
+
+
+def _minimal_teacher_unit(compiled, native, parent, record: dict, *, smoke: bool = False) -> dict:
+    """Training-equivalent F85 rows without diagnostic-only F59 searches."""
+    root_budget = 50 if smoke else 2_000
+    high_root_budget = 200 if smoke else 80_000
+    cheap_budget = 50 if smoke else 1_000
+    teacher_budget = 200 if smoke else 20_000
+    session = f59._session(compiled, record)
+    legal = sorted(session.legal_actions(), key=lambda action: json.dumps(action_to_dict(action), sort_keys=True))
+    root_2k = f59._root_search(compiled, native, parent, record, root_budget)
+    root_80k = f59._root_search(compiled, native, parent, record, high_root_budget)
+    legal_payloads = [action_to_dict(action) for action in legal]
+    cheap = f59._parallel_children(compiled, native, parent, record, legal_payloads, cheap_budget)
+    order = sorted(range(len(legal)), key=lambda index: (-cheap[index], json.dumps(legal_payloads[index], sort_keys=True)))
+    selected = [legal_payloads[index] for index in order[:3 if smoke else 6]]
+    selected_keys = {f59._action_key(action) for action in selected}
+    for payload in (root_2k["action"], root_80k["action"]):
+        if payload is not None and f59._action_key(payload) not in selected_keys:
+            selected.append(payload)
+            selected_keys.add(f59._action_key(payload))
+    prepared = []
+    for payload in selected:
+        features, base_q, _side = f59._child_features(compiled, native, parent, record, payload)
+        prepared.append({"action": payload, "action_key": f59._action_key(payload), "features": features.tolist(), "base_q": base_q})
+    q20 = f59._parallel_children(compiled, native, parent, record, [row["action"] for row in prepared], teacher_budget)
+    cheap_by_key = {f59._action_key(payload): float(value) for payload, value in zip(legal_payloads, cheap)}
+    rows = []
+    for row, value in zip(prepared, q20):
+        rows.append({**row, "q_1k": cheap_by_key[row["action_key"]], "q_20k": float(value)})
+    return {
+        "position_key": record["position_key"],
+        "selected_action_count": len(rows),
+        "actual_search_calls": 2 + 1 + len(legal) + 1,
+        "actual_teacher_calls": len(rows),
+        "teacher_rows": rows,
+        "root_metadata": {"root_2k": root_2k, "root_80k": root_80k, "legal_action_count": len(legal), "cheap_top_actions": [legal_payloads[index] for index in order[:6]]},
+    }
+
+
+def _minimal_manifest(manifest: dict) -> dict:
+    rows = []
+    for record in manifest["roots"]:
+        selected_upper = min(MAX_SELECTED_ACTIONS, 6 + 2)
+        ceiling = 2_000 + 80_000 + 1_000 * record["legal_action_count"] + 20_000 * selected_upper
+        rows.append({**record, "declared_node_ceiling": ceiling, "minimal_formula": "2000 + 80000 + 1000*L + 20000*S", "maximum_selected_actions": selected_upper, "maximum_teacher_calls": selected_upper})
+    payload = {
+        "schema": "generic-chess-f85-minimal-teacher-rows-manifest-v1",
+        "work_order": "GENERICCHESS-F85B-C2-MINIMAL-RESUMABLE-TEACHER-ROWS",
+        "status": "PRECOMPUTE_COMPLETE_ACQUISITION_NOT_AUTHORIZED",
+        "source_manifest_sha256": _sha(F85_MANIFEST_PATH),
+        "c1_checkpoint_id": f83.C1_ID,
+        "c1_model_sha256": f83.C1_MODEL_SHA,
+        "teacher_contract": {"root_budgets": [2_000, 80_000], "child_budget_all_legal": 1_000, "child_budget_selected": 20_000, "max_depth": 12, "tt_megabytes": 8, "root_window_pruning": False, "observer_duplicate_omitted": True, "diagnostic_calls_omitted": ["root_40k", "observer_2k", "selected_q10k"]},
+        "execution_contract": {"train_root_count": 36, "max_concurrent_roots": 2, "per_root_wall_cap_seconds": 1_800, "stage_count": 1, "no_auto_retry": True},
+        "total_declared_node_ceiling": sum(row["declared_node_ceiling"] for row in rows),
+        "roots": rows,
+    }
+    payload["manifest_sha256"] = _stable_sha(payload)
+    if MINIMAL_MANIFEST_PATH.exists() and json.loads(MINIMAL_MANIFEST_PATH.read_text(encoding="utf-8")) != payload:
+        raise RuntimeError("minimal F85 manifest identity mismatch")
+    _atomic_json(MINIMAL_MANIFEST_PATH, payload)
+    return payload
+
+
+def _phase_provenance(record: dict, *, plan_sha: str, manifest_sha: str) -> dict:
+    return {"mode": MINIMAL_MODE, "compute_plan_sha256": plan_sha, "manifest_content_sha256": manifest_sha, "root_record_sha256": _stable_sha(record), "root_id": record["root_id"], "position_key": record["position_key"], "c1_checkpoint_id": f83.C1_ID, "c1_model_sha256": f83.C1_MODEL_SHA}
+
+
+def _run_minimal_root(record: dict, *, plan_sha: str, manifest_sha: str, runtime_dir: Path, compiled, native, parent, stop_after: str | None = None) -> dict:
+    root_dir = runtime_dir / record["root_id"]
+    root_dir.mkdir(parents=True, exist_ok=True)
+    provenance = _phase_provenance(record, plan_sha=plan_sha, manifest_sha=manifest_sha)
+
+    def load(phase: str):
+        path = root_dir / f"{phase}.json"
+        if not path.exists():
+            return None
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if payload.get("status") != "COMPLETE" or payload.get("provenance") != provenance:
+            raise RuntimeError(f"STALE_PHASE_PROVENANCE:{record['root_id']}:{phase}")
+        return payload["value"]
+
+    def save(phase: str, value):
+        _atomic_json(root_dir / f"{phase}.json", {"status": "COMPLETE", "provenance": provenance, "value": value})
+
+    root_2k = load("root2k")
+    if root_2k is None:
+        root_2k = f59._root_search(compiled, native, parent, record, 2_000)
+        save("root2k", root_2k)
+    if stop_after == "root2k":
+        return {"status": "PAUSED", "phase": "root2k"}
+    root_80k = load("root80k")
+    if root_80k is None:
+        root_80k = f59._root_search(compiled, native, parent, record, 80_000)
+        save("root80k", root_80k)
+    if stop_after == "root80k":
+        return {"status": "PAUSED", "phase": "root80k"}
+    all_legal = load("all_legal_q1k")
+    session = f59._session(compiled, record)
+    legal = sorted(session.legal_actions(), key=lambda action: json.dumps(action_to_dict(action), sort_keys=True))
+    legal_payloads = [action_to_dict(action) for action in legal]
+    if all_legal is None:
+        values = f59._parallel_children(compiled, native, parent, record, legal_payloads, 1_000)
+        all_legal = {"actions": legal_payloads, "q1k": [float(value) for value in values]}
+        save("all_legal_q1k", all_legal)
+    if stop_after == "all_legal_q1k":
+        return {"status": "PAUSED", "phase": "all_legal_q1k"}
+    selected = load("selected_q20")
+    if selected is None:
+        order = sorted(range(len(legal_payloads)), key=lambda index: (-all_legal["q1k"][index], json.dumps(legal_payloads[index], sort_keys=True)))
+        selected_payloads = [legal_payloads[index] for index in order[:6]]
+        selected_keys = {f59._action_key(payload) for payload in selected_payloads}
+        for payload in (root_2k["action"], root_80k["action"]):
+            if payload is not None and f59._action_key(payload) not in selected_keys:
+                selected_payloads.append(payload)
+                selected_keys.add(f59._action_key(payload))
+        prepared = []
+        for payload in selected_payloads:
+            features, base_q, _side = f59._child_features(compiled, native, parent, record, payload)
+            prepared.append({"action": payload, "action_key": f59._action_key(payload), "features": features.tolist(), "base_q": base_q})
+        q20 = f59._parallel_children(compiled, native, parent, record, selected_payloads, 20_000)
+        selected = {"rows": [{**row, "q_20k": float(value)} for row, value in zip(prepared, q20)]}
+        save("selected_q20", selected)
+    if stop_after == "selected_q20":
+        return {"status": "PAUSED", "phase": "selected_q20"}
+    final = load("assembled")
+    if final is None:
+        q1k_by_key = {f59._action_key(payload): float(value) for payload, value in zip(all_legal["actions"], all_legal["q1k"])}
+        rows = [{**row, "q_1k": q1k_by_key[row["action_key"]]} for row in selected["rows"]]
+        final = {"position_key": record["position_key"], "selected_action_count": len(rows), "actual_teacher_calls": len(rows), "actual_search_calls": 2 + 1 + len(legal) + 1, "teacher_rows": rows, "root_metadata": {"root_2k": root_2k, "root_80k": root_80k, "legal_action_count": len(legal)}}
+        save("assembled", final)
+    return {"status": "COMPLETE", **final}
 
 
 def _teacher_worker(record: dict, result_queue) -> None:
@@ -361,16 +497,77 @@ def _validate_execution_plan(plan_path: Path, manifest: dict) -> tuple[dict, str
     return plan, plan_sha
 
 
+def _run_approved_minimal(manifest: dict, compute_plan_path: Path, *, runtime_dir: Path | None = None) -> dict:
+    """Run the phase-resumable minimal path; no F59 diagnostic extras."""
+    plan_sha = _sha(compute_plan_path)
+    manifest_sha = _sha(MINIMAL_MANIFEST_PATH)
+    runtime_root = F85_RUNTIME_DIR if runtime_dir is None else Path(runtime_dir)
+    progress_root = runtime_root / plan_sha / "minimal-progress"
+    progress_root.mkdir(parents=True, exist_ok=True)
+    compiled, native, _profile = f50._ruleset(LABEL)
+    _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
+    root_payload = json.loads((ROOT / "artifacts/f83_c1_relative_evidence/root_corpus.json").read_text(encoding="utf-8"))
+    source_by_id = {root["root_id"]: root for root in root_payload["roots"]}
+    completed = []
+    pending = []
+    for record in manifest["roots"]:
+        assembled = progress_root / record["root_id"] / "assembled.json"
+        if assembled.exists():
+            payload = json.loads(assembled.read_text(encoding="utf-8"))
+            expected = _phase_provenance(record, plan_sha=plan_sha, manifest_sha=manifest_sha)
+            if payload.get("provenance") != expected or payload.get("status") != "COMPLETE":
+                return {"status": "HARNESS_MISMATCH", "reason": "STALE_PHASE_PROVENANCE", "root_id": record["root_id"]}
+            completed.append(payload["value"])
+        else:
+            pending.append(record)
+    for start in range(0, len(pending), MAX_CONCURRENT_ROOTS):
+        batch = pending[start:start + MAX_CONCURRENT_ROOTS]
+        results = []
+        with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_ROOTS) as pool:
+            futures = [pool.submit(_run_minimal_root, {**record, **_execution_record(record, source_by_id)}, plan_sha=plan_sha, manifest_sha=manifest_sha, runtime_dir=progress_root, compiled=compiled, native=native, parent=champion) for record in batch]
+            for record, future in zip(batch, futures):
+                try:
+                    result = future.result()
+                except BaseException as exc:  # pragma: no cover - bounded worker failure path
+                    result = {"status": "HARNESS_MISMATCH", "error": f"{type(exc).__name__}: {exc}"}
+                results.append({"root_id": record["root_id"], **result})
+                if result.get("status") == "COMPLETE":
+                    completed.append(result)
+        if any(result.get("status") != "COMPLETE" for result in results):
+            return {"status": "INCOMPLETE", "reason": "TERMINAL_PHASE_REQUIRES_NEW_AUTHORIZATION", "completed_count": len(completed), "results": results}
+    if len(completed) != len(manifest["roots"]):
+        return {"status": "INCOMPLETE", "completed_count": len(completed)}
+    evidence = {"schema": "generic-chess-f85-minimal-teacher-rows-v1", "status": "COMPLETE_TRAIN_TEACHER_EVIDENCE_SEALED", "compute_plan_sha256": plan_sha, "minimal_manifest_sha256": manifest_sha, "c1_checkpoint_id": f83.C1_ID, "c1_model_sha256": f83.C1_MODEL_SHA, "root_count": len(completed), "roots": sorted(completed, key=lambda row: row["root_id"])}
+    path = ROOT / "artifacts/f85_c2_train_teacher_evidence/minimal_training_evidence.json"
+    _atomic_json(path, evidence)
+    return {"status": evidence["status"], "completed_count": len(completed), "evidence_path": str(path.relative_to(ROOT)).replace("\\", "/")}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precompute-only", action="store_true")
     parser.add_argument("--approved-run", action="store_true")
     parser.add_argument("--compute-plan", type=Path)
     parser.add_argument("--per-root-wall-seconds", type=int, default=PER_ROOT_WALL_SECONDS)
+    parser.add_argument("--minimal-rows", action="store_true")
     args = parser.parse_args()
     if not args.precompute_only and not args.approved_run:
         raise SystemExit("F85 teacher acquisition is withheld until the separately approved large plan is bound")
     manifest = precompute_manifest()
+    if args.minimal_rows:
+        minimal = _minimal_manifest(manifest)
+        if not args.approved_run:
+            print(json.dumps({"status": minimal["status"], "manifest_path": str(MINIMAL_MANIFEST_PATH.relative_to(ROOT)).replace("\\", "/"), "manifest_sha256": minimal["manifest_sha256"], "total_declared_node_ceiling": minimal["total_declared_node_ceiling"]}, sort_keys=True), flush=True)
+            return
+        if args.compute_plan is None:
+            raise SystemExit("--minimal-rows --approved-run requires --compute-plan")
+        plan, plan_sha = _validate_execution_plan(args.compute_plan, minimal)
+        if plan.get("minimal_manifest_sha256") != _sha(MINIMAL_MANIFEST_PATH):
+            raise SystemExit("approved minimal compute plan is not bound to the minimal manifest")
+        result = _run_approved_minimal(manifest, args.compute_plan)
+        result["compute_plan_sha256"] = plan_sha
+        print(json.dumps(result, sort_keys=True), flush=True)
+        return
     if args.approved_run:
         if args.compute_plan is None:
             raise SystemExit("--approved-run requires --compute-plan")
