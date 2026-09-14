@@ -50,7 +50,7 @@ def build() -> dict:
     if DESCRIPTOR.is_file() and ARTIFACT.is_file():
         descriptor = json.loads(DESCRIPTOR.read_text(encoding="utf-8"))
         result = json.loads(ARTIFACT.read_text(encoding="utf-8"))
-        if descriptor.get("parent_checkpoint_id") == parent.checkpoint_id and result.get("candidate_descriptor_sha256") == descriptor.get("descriptor_sha256"):
+        if descriptor.get("parent_checkpoint_id") == parent.checkpoint_id and result.get("candidate_descriptor_sha256") == descriptor.get("descriptor_sha256") and "trajectory_bootstrap_value" in descriptor:
             return result
     config = SelfPlayConfig(
         games=1, nodes_per_move=512, max_depth=12, seed=SEED,
@@ -68,7 +68,8 @@ def build() -> dict:
     identity = {"work_order": WORK_ORDER, "parent_checkpoint_id": parent.checkpoint_id,
                 "parent_model_sha256": stable_sha256(parent.compact_nonlinear), "selfplay_config": asdict(config),
                 "tdleaf_config": asdict(TDLeafConfig()), "trajectory_id": trajectory.trajectory_id,
-                "trajectory_terminal": trajectory.terminal, "trajectory_winner": trajectory.winner,
+        "trajectory_terminal": trajectory.terminal, "trajectory_truncated": trajectory.truncated,
+                "trajectory_bootstrap_value": trajectory.bootstrap_value, "trajectory_winner": trajectory.winner,
                 "trajectory_points": len(trajectory.points), "trajectory_plies": len(trajectory.actions),
                 "objective": "one_native_selfplay_trajectory_one_default_tdleaf_update"}
     training_hash = stable_sha256(identity)
@@ -84,6 +85,7 @@ def build() -> dict:
         "candidate_model_sha256": stable_sha256(candidate.compact_nonlinear), "training_config_hash": training_hash,
         "selfplay_config": asdict(config), "tdleaf_config": asdict(TDLeafConfig()),
         "trajectory_id": trajectory.trajectory_id, "trajectory_terminal": trajectory.terminal,
+        "trajectory_truncated": trajectory.truncated, "trajectory_bootstrap_value": trajectory.bootstrap_value,
         "trajectory_winner": trajectory.winner, "trajectory_plies": len(trajectory.actions),
         "trajectory_points": len(trajectory.points), "tdleaf_update": asdict(update),
         "allocation_sha256": allocation["allocation_sha256"]}
@@ -92,7 +94,9 @@ def build() -> dict:
         "work_order": WORK_ORDER, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id,
         "candidate_descriptor_path": str(DESCRIPTOR.relative_to(ROOT)).replace("\\", "/"),
         "candidate_descriptor_sha256": descriptor_payload["descriptor_sha256"], "training_config_hash": training_hash,
-        "trajectory_id": trajectory.trajectory_id, "trajectory_terminal": trajectory.terminal, "trajectory_winner": trajectory.winner,
+        "trajectory_id": trajectory.trajectory_id, "trajectory_terminal": trajectory.terminal,
+        "trajectory_truncated": trajectory.truncated, "trajectory_bootstrap_value": trajectory.bootstrap_value,
+        "trajectory_winner": trajectory.winner,
         "trajectory_plies": len(trajectory.actions), "trajectory_points": len(trajectory.points),
         "positions_seen": update.positions_seen, "weight_l2_delta": update.weight_l2_delta,
         "behavior_changed": candidate.checkpoint_id != parent.checkpoint_id}
