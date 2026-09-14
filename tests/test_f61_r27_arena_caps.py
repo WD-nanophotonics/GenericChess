@@ -42,11 +42,11 @@ def test_r27_caps_are_persisted_in_manifest(monkeypatch, tmp_path):
     assert result.status == "COMPLETE"
     identity = json.loads((progress / "manifest.json").read_text(encoding="utf-8"))["identity"]
     assert identity["execution_caps"] == {
-        "per_game_wall_seconds": 3600.0,
+        "per_game_wall_seconds": 7200.0,
         "per_game_nodes": 400000,
         "per_game_plies": 200,
         "max_stage_games": 6,
         "max_concurrent_games": 1,
-        "stage_wall_seconds": 18000.0,
+        "stage_wall_seconds": 43200.0,
         "logical_cpu_count": 2,
     }
