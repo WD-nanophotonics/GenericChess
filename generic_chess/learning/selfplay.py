@@ -166,9 +166,16 @@ def collect_self_play(
             current_features = material_features(
                 session.state.position, type_ids, perspective=0
             )
-            current_dynamic = dynamic_features(
-                session.state.position, compiled
-            ).as_tuple()
+            if semantic_path:
+                from ..native.semantic import dynamic_features as native_dynamic_features
+
+                current_dynamic = native_dynamic_features(
+                    native_rules, session.state.position
+                )
+            else:
+                current_dynamic = dynamic_features(
+                    session.state.position, compiled
+                ).as_tuple()
             bootstrap_value = _normalized_value(
                 current_features,
                 checkpoint.board_weights,
