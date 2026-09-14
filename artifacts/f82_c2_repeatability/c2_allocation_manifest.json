@@ -1,0 +1,1745 @@
+{
+  "allocation_sha256": "f0de3d7175da6e5551457d0669e7efd87dc8f0dad446f6b956c1482b8b2a364e",
+  "arena": {
+    "funnel": [
+      "bounded_correctness_safety",
+      "Arena2",
+      "Arena4",
+      "Arena8",
+      "fresh_final_confirmation"
+    ],
+    "max_depth": 12,
+    "nodes_per_move": 512,
+    "symmetric_parent_child_settings": true,
+    "tt_megabytes": 8,
+    "workers": 1
+  },
+  "optimizer": {
+    "allowed_trainable_fields": [
+      "hidden_weights",
+      "hidden_bias",
+      "output_weights"
+    ],
+    "backtracking_alphas": [
+      1.0,
+      0.5,
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625,
+      0.0078125
+    ],
+    "batching": "full_batch",
+    "family": "PARENT_ANCHORED_FULL_RESIDUAL",
+    "first_safe_alpha_only": true,
+    "learning_rate": 0.001,
+    "one_candidate": true,
+    "optimizer": "Adam",
+    "parent_anchoring": true,
+    "proximal_coefficient": 0.001,
+    "steps": 100
+  },
+  "parent": {
+    "checkpoint_id": "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4",
+    "descriptor_sha256": "41603d35849e0c020dcb3b3473ea1d2439ead5163ccd5a318a09777fdfe8ed3e",
+    "model_sha256": "b4372d087d0e7760857efefd69413c97c8cf10b5b188dd704f5d1e308a4d32b6"
+  },
+  "resource_envelope": {
+    "expected_wall_minutes": 110,
+    "hard_cpu_hours": 15,
+    "hard_wall_minutes": 240,
+    "logical_cpu_count": 4,
+    "max_concurrent_games": 1,
+    "max_stage_games": 16,
+    "per_game_nodes": 262144,
+    "per_game_plies": 512,
+    "per_game_wall_seconds": 3600,
+    "stage_wall_seconds": 3600,
+    "total_arena_games": 44
+  },
+  "ruleset": "B_CANONICAL_STANDARD_SHOGI",
+  "schema": "generic-chess-f82-c2-allocation-v1",
+  "sealed_corpora_are_diagnostic_only": [
+    "F62",
+    "F75",
+    "F77",
+    "F78",
+    "F79",
+    "F80",
+    "F81"
+  ],
+  "selection_and_strength_corpora": {
+    "Arena2": {
+      "corpus": {
+        "max_plies": 6,
+        "min_plies": 2,
+        "openings": [
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  8,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  8
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "cc9cd5a36fda11f858d126a73d62bec45086019494c941e42baab3f500fd4b34",
+            "index": 0,
+            "opening_seed": 820201000,
+            "target_plies": 2
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  8
+                ],
+                "geometry_id": "g5",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_090",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  3,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "L",
+                "from": [
+                  0,
+                  8
+                ],
+                "geometry_id": "g18",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  0
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  8
+                ],
+                "geometry_id": "g16",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  8
+                ]
+              }
+            ],
+            "final_position_key": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
+            "index": 1,
+            "opening_seed": 820201100,
+            "target_plies": 6
+          }
+        ],
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "schema_version": 1,
+        "seed": 820201
+      },
+      "corpus_id": "6eca12faa0981e1c71f637eae7f66ee4a053193a752fbe592d2b0edafbdffd2a",
+      "final_position_keys": [
+        "cc9cd5a36fda11f858d126a73d62bec45086019494c941e42baab3f500fd4b34",
+        "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba"
+      ],
+      "opening_count": 2,
+      "pairs": 2,
+      "seed": 820201
+    },
+    "Arena4": {
+      "corpus": {
+        "max_plies": 6,
+        "min_plies": 2,
+        "openings": [
+          {
+            "actions": [
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  0
+                ],
+                "geometry_id": "g28",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_042",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  8
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "47755949663b5127dc5d213a06f8ea104e0f8d7fdbbfbf65d5c5fb39fb472911",
+            "index": 0,
+            "opening_seed": 820401000,
+            "target_plies": 2
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  6,
+                  8
+                ],
+                "geometry_id": "g28",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_042",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  6,
+                  0
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  5
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  4
+                ]
+              }
+            ],
+            "final_position_key": "fda1ec98b689cdee43b170bdc23ab911446fb6f871d5527afd83fc709b7c0b55",
+            "index": 1,
+            "opening_seed": 820401100,
+            "target_plies": 6
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  8,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  6,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  8
+                ],
+                "geometry_id": "g17",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g5",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_090",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "final_position_key": "614a1fe27d920b4fb2417211588e44730abf6ef4889662b274e723b043df54bf",
+            "index": 2,
+            "opening_seed": 820401200,
+            "target_plies": 5
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g25",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_036",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  7,
+                  7
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_112",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  1
+                ]
+              }
+            ],
+            "final_position_key": "5892039eb7668e3cf827818f13705a3ce79c8dd1fb6f3fe3ac0537a4561249d1",
+            "index": 3,
+            "opening_seed": 820401300,
+            "target_plies": 3
+          }
+        ],
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "schema_version": 1,
+        "seed": 820401
+      },
+      "corpus_id": "593652dd655ddc67f38d9a194b9b2a44f7eef3e28d22a83c5f01abeb35b971a1",
+      "final_position_keys": [
+        "47755949663b5127dc5d213a06f8ea104e0f8d7fdbbfbf65d5c5fb39fb472911",
+        "fda1ec98b689cdee43b170bdc23ab911446fb6f871d5527afd83fc709b7c0b55",
+        "614a1fe27d920b4fb2417211588e44730abf6ef4889662b274e723b043df54bf",
+        "5892039eb7668e3cf827818f13705a3ce79c8dd1fb6f3fe3ac0537a4561249d1"
+      ],
+      "opening_count": 4,
+      "pairs": 4,
+      "seed": 820401
+    },
+    "Arena8": {
+      "corpus": {
+        "max_plies": 6,
+        "min_plies": 2,
+        "openings": [
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  3,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  6,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  0
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  8
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  3
+                ]
+              }
+            ],
+            "final_position_key": "31eabb0e018ef0877db095bc5bd234de551a28a11be2ff1aeb92eb36001fe826",
+            "index": 0,
+            "opening_seed": 820801000,
+            "target_plies": 5
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  0
+                ],
+                "geometry_id": "g27",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_040",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "final_position_key": "b54b878d5e89e43ad14de7ee7d6c97de9dccd2632218bae93196fb9184c6c1fd",
+            "index": 1,
+            "opening_seed": 820801100,
+            "target_plies": 3
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  0
+                ],
+                "geometry_id": "g12",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_008",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "L",
+                "from": [
+                  8,
+                  8
+                ],
+                "geometry_id": "g18",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  1
+                ],
+                "geometry_id": "g11",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  1,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  5
+                ]
+              }
+            ],
+            "final_position_key": "747dac952d59b8e75504fd1a16692735d76e8b2ed675588e01d32322356dcc08",
+            "index": 2,
+            "opening_seed": 820801200,
+            "target_plies": 4
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  8
+                ],
+                "geometry_id": "g17",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  0
+                ],
+                "geometry_id": "g28",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_042",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  1,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  0
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  3,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  5
+                ]
+              }
+            ],
+            "final_position_key": "fdd5266ddb92c4a0f16767332b365ac44e3b5ca3412b6cf3262b3b2e97405540",
+            "index": 3,
+            "opening_seed": 820801300,
+            "target_plies": 6
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  6,
+                  8
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  0
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  1
+                ]
+              }
+            ],
+            "final_position_key": "5429bebe93a3c53fdaa84c65770aa5ccfbc7133c21e7896e1222e4afe0d05da8",
+            "index": 4,
+            "opening_seed": 820801400,
+            "target_plies": 3
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  6,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  8
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g25",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_036",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  7,
+                  7
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "09a99fc8868b9a9ba3b644b97220dacb99e58cfefda45c576cab64b797215a19",
+            "index": 5,
+            "opening_seed": 820801500,
+            "target_plies": 4
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  8
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              }
+            ],
+            "final_position_key": "bd513943f4d5b1b0c16ab34ba3a9b2c02ed25b030081a51dc096fcefdb51c285",
+            "index": 6,
+            "opening_seed": 820801600,
+            "target_plies": 3
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "R",
+                "from": [
+                  1,
+                  1
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  6,
+                  8
+                ],
+                "geometry_id": "g28",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_042",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  8
+                ],
+                "geometry_id": "g27",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_040",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  7,
+                  7
+                ],
+                "geometry_id": "g25",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_036",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "a2f75ac358b96eb112303382fa1c429488c41eb1026e9b5cf61e0a32d2a69a2f",
+            "index": 7,
+            "opening_seed": 820801700,
+            "target_plies": 6
+          }
+        ],
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "schema_version": 1,
+        "seed": 820801
+      },
+      "corpus_id": "7446aa7fed2e7712941c914785a9db3dc51e9e07350fdbe4cfb7b0c629453755",
+      "final_position_keys": [
+        "31eabb0e018ef0877db095bc5bd234de551a28a11be2ff1aeb92eb36001fe826",
+        "b54b878d5e89e43ad14de7ee7d6c97de9dccd2632218bae93196fb9184c6c1fd",
+        "747dac952d59b8e75504fd1a16692735d76e8b2ed675588e01d32322356dcc08",
+        "fdd5266ddb92c4a0f16767332b365ac44e3b5ca3412b6cf3262b3b2e97405540",
+        "5429bebe93a3c53fdaa84c65770aa5ccfbc7133c21e7896e1222e4afe0d05da8",
+        "09a99fc8868b9a9ba3b644b97220dacb99e58cfefda45c576cab64b797215a19",
+        "bd513943f4d5b1b0c16ab34ba3a9b2c02ed25b030081a51dc096fcefdb51c285",
+        "a2f75ac358b96eb112303382fa1c429488c41eb1026e9b5cf61e0a32d2a69a2f"
+      ],
+      "opening_count": 8,
+      "pairs": 8,
+      "seed": 820801
+    },
+    "fresh_final_confirmation": {
+      "corpus": {
+        "max_plies": 6,
+        "min_plies": 2,
+        "openings": [
+          {
+            "actions": [
+              {
+                "actor_type_id": "S",
+                "from": [
+                  6,
+                  0
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  8
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_112",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  3,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              }
+            ],
+            "final_position_key": "2026e6bbf7f5580fc2843629c4466336f84812dcb45d164850e91fc095a987fc",
+            "index": 0,
+            "opening_seed": 821601000,
+            "target_plies": 3
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  8
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "N",
+                "from": [
+                  1,
+                  0
+                ],
+                "geometry_id": "g20",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_026",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  8
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_112",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "ab1214c6dc8d4778aaaf6c8d9ac4ca8d9eac531a74fb96fd0fcb6e77109b8f0f",
+            "index": 1,
+            "opening_seed": 821601100,
+            "target_plies": 4
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  0
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  8
+                ],
+                "geometry_id": "g5",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_090",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  1,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  2,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  0
+                ],
+                "geometry_id": "g26",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_038",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "final_position_key": "11fc57c5a91eeecc612e272ddb7c7f1e59336e06d07889312c6d0a30c1c0b38d",
+            "index": 2,
+            "opening_seed": 821601200,
+            "target_plies": 5
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  0
+                ],
+                "geometry_id": "g17",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "L",
+                "from": [
+                  8,
+                  8
+                ],
+                "geometry_id": "g18",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "b4cee6b76c298451055fc3af52964dd48f6ba559f01722494c7970d16adc71eb",
+            "index": 3,
+            "opening_seed": 821601300,
+            "target_plies": 2
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  8,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  4,
+                  0
+                ],
+                "geometry_id": "g17",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_018",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  8
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_112",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "ee9c9e1d0f8a0c132ae88319faf50deac4b6295ac4d5ccc11c2c48b246f39cfd",
+            "index": 4,
+            "opening_seed": 821601400,
+            "target_plies": 4
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g4",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_068",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  8
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_112",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  1
+                ],
+                "geometry_id": "g9",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_140",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  0
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  8,
+                  6
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  5
+                ]
+              }
+            ],
+            "final_position_key": "add2346fae6adcc1eba8f2e77577f5e6761d54ea6cce336443a51c38848581a0",
+            "index": 5,
+            "opening_seed": 821601500,
+            "target_plies": 6
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  0
+                ],
+                "geometry_id": "g5",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_090",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  3,
+                  8
+                ],
+                "geometry_id": "g6",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_112",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  4,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "R",
+                "from": [
+                  7,
+                  7
+                ],
+                "geometry_id": "g24",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_034",
+                "promotion_target_id": null,
+                "to": [
+                  4,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "909260316e3b217068006f7c5049678aeb447ee245c7eaa39b008ecd49ff95c6",
+            "index": 6,
+            "opening_seed": 821601600,
+            "target_plies": 4
+          },
+          {
+            "actions": [
+              {
+                "actor_type_id": "L",
+                "from": [
+                  8,
+                  0
+                ],
+                "geometry_id": "g18",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "promotion_target_id": null,
+                "to": [
+                  8,
+                  1
+                ]
+              },
+              {
+                "actor_type_id": "G",
+                "from": [
+                  5,
+                  8
+                ],
+                "geometry_id": "g5",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_090",
+                "promotion_target_id": null,
+                "to": [
+                  6,
+                  7
+                ]
+              },
+              {
+                "actor_type_id": "P",
+                "from": [
+                  5,
+                  2
+                ],
+                "geometry_id": "g21",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_028",
+                "promotion_target_id": null,
+                "to": [
+                  5,
+                  3
+                ]
+              },
+              {
+                "actor_type_id": "S",
+                "from": [
+                  2,
+                  8
+                ],
+                "geometry_id": "g27",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_040",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  7
+                ]
+              }
+            ],
+            "final_position_key": "d78c0c151357a4d23b4f4078ce18a21ad23cb0b2449dde1fac5bd57896bc9b2f",
+            "index": 7,
+            "opening_seed": 821601700,
+            "target_plies": 4
+          }
+        ],
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "schema_version": 1,
+        "seed": 821601
+      },
+      "corpus_id": "9a601e33cf8ce8a397109890ac7aa0c32998c595c7a53871b7a61e2c73802439",
+      "final_position_keys": [
+        "2026e6bbf7f5580fc2843629c4466336f84812dcb45d164850e91fc095a987fc",
+        "ab1214c6dc8d4778aaaf6c8d9ac4ca8d9eac531a74fb96fd0fcb6e77109b8f0f",
+        "11fc57c5a91eeecc612e272ddb7c7f1e59336e06d07889312c6d0a30c1c0b38d",
+        "b4cee6b76c298451055fc3af52964dd48f6ba559f01722494c7970d16adc71eb",
+        "ee9c9e1d0f8a0c132ae88319faf50deac4b6295ac4d5ccc11c2c48b246f39cfd",
+        "add2346fae6adcc1eba8f2e77577f5e6761d54ea6cce336443a51c38848581a0",
+        "909260316e3b217068006f7c5049678aeb447ee245c7eaa39b008ecd49ff95c6",
+        "d78c0c151357a4d23b4f4078ce18a21ad23cb0b2449dde1fac5bd57896bc9b2f"
+      ],
+      "opening_count": 8,
+      "pairs": 8,
+      "seed": 821601
+    }
+  },
+  "status": "PRE_REGISTERED_AWAITING_COMPUTE_APPROVAL",
+  "training": {
+    "root_count": 36,
+    "root_position_keys": [
+      "dbb33869beb7506495de46fd3cb0a5fe10a39c0f3e4e4a6ef8b5ff653ede80f0",
+      "c3ae09c4ff69377473710f634c04a86dd4fabf27f29a75b1e47f89543789fca4",
+      "555cb2f95ce18616c22029aab2254cc61c79db3ec9e9c8624c54d4a103abe65e",
+      "c543f8c69028e23ba56914e7a5d86bc60df7a2f2b6e49b034cfcd3d2df2c2fe2",
+      "bd40ed6bac9d42858c7183894024b12abbcdcd93f0497ab1061f8a4743b18775",
+      "9318c729a60f397d23818d0da36bab5f8215fb1c45cb42669e4616473aefd535",
+      "27514e5eeed3da60ad117623e1dc8b47def1e705e90ab190d482fc5e4d3622e8",
+      "1afcc17ddd8fbb2ebbbf81e55648bb6d9f39f71c031318220c1709c2c249c20e",
+      "092f066a3ee986ac4cc1623b328f6eb47b15ce9eae35f2f45fb1461b03e8c055",
+      "596f3a3ae397a8b23f187079b303c6428eb462c55463c58ff5e124640f0c643b",
+      "b0dc7a44adce1deb10ecf9385e64581e692325282f7bf7e4df81b1eaf34379e8",
+      "ad82a05d33389eb6d1d66a157459451099f5cbc3b456bbd93c540e151e6560ad",
+      "a60fe2d02895fdb971e129e2eaee8d6ebaf76d547eb76f68f595e6ed106043c1",
+      "35d20b8d88bab8f230e81484f6838c73d19a195655da7c851dd19fa71b8a4287",
+      "6bddb3107965ba9942c1987c28d50a04bbf15b083756b0a474f37c5ffbb4e32b",
+      "aeb5af1d8804947ae1466b80e3ec5c9147aae59383420452126ebecebb359274",
+      "94f5b0b6071f14af1fa5dabacc43ed66d543fcd11022ca76474e366cb468195f",
+      "28030769af694f00e967c61c43b8c8c0ec8c42b5feb86086681965ad155cbf78",
+      "9ff5f6b825eeb98edea349c2428ca9dd36c35788797bc406c2d81da47b4ab44b",
+      "e980e7e8970953a5e23dc861e54a206213f89fdaf23f83c8e1ead2ac08c01d9b",
+      "643d84f2df09754592f9d06da9327bca74b1a670942c5490399ee72ac9e5b149",
+      "3523b753caef1d8ebfa7cabe213f73d46d26d83e833f55e2a20db63aaa52b150",
+      "77c97704bc6e9df5d3ed3738f540150c2b77d4e02c0c8b6b492acdba97a65d2a",
+      "a20d9a0ba14ca16993d688b750d7c74bd6dca5037f9b239e2b3a30e3a99e9aae",
+      "a44699502db1e87be6fe8b22a86387443d3e6b9ea8036ab6e8fb8238fd260bfd",
+      "fead6a34f84dede075a7d153d3e4c52bd981d9c4cdf6ad0cc92199175857a19c",
+      "91c7986fbffc24384285838024fb1d485e35efca146814504ace85c262fd146e",
+      "dbe414e8f647d38b6cfff7c0f3f2139e7990a0e34f707814373fef5c74274ffa",
+      "ae7e327aec7a63cc81b658008cdb695c36a8eee89056532b0f9f3f01dbe86e5d",
+      "10557c820b58c79cf4710d968eeb3c760465d8d60aa686cc89019ee6776b2042",
+      "5e7f5865ff3f394938dff8f86f3c9c2a3c46da4268aca6ea18c3e528caa4a011",
+      "5ad05d277bbd1936d67a0ac9e751d24728bb74e794205ca163da1c564b0ced0e",
+      "44133eab7ec01d811a3f28096d5edc0a4ffb94a7a9489470ca082d62be608ede",
+      "01a31d2d85cd4747352e464d2ad5227b66a71dbfa2fd4f26d992153ee464dc16",
+      "ce4b1b9172f86a2d7bc1b2ca0ea35974216e6df8f14506866021d3d2be8ce51b",
+      "7f8220f3f3e7838d9341e6936b96ec6988a5ef004c34b0a7982d2ecc3ef38b26"
+    ],
+    "sealed_history_excluded": true,
+    "source": {
+      "content_sha256": "a5fdbb12e3ee443448a1e9ec09a8405857bcf72fd3687777afbe69548a021fa4",
+      "path": "artifacts/f83_c1_relative_evidence/root_corpus.json",
+      "root_count": 36,
+      "root_set_sha256": "ddb6b95cee3d5f1ba91f1e787e86566e63523004f1fe4e6ceff1ed297fa2a458",
+      "stratum_counts": {
+        "c1_on_policy": 12,
+        "c1_pv_corridor": 12,
+        "reachable_random": 12
+      }
+    }
+  },
+  "work_order": "GENERICCHESS-C2-PARENT-ANCHORED-FULL-RESIDUAL-REPEATABILITY"
+}
