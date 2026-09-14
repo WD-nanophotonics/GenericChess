@@ -178,3 +178,22 @@ def test_registered_arena2_opening_index_is_bounds_checked(monkeypatch):
         c2._registered_arena2_opening(
             allocation, SimpleNamespace(ruleset_fingerprint=fingerprint), 2
         )
+
+
+def test_registered_arena2_pair_rejects_allocation_mismatch_before_runner(
+    monkeypatch, tmp_path
+):
+    allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
+    allocation["allocation_sha256"] = "0" * 64
+    monkeypatch.setattr(
+        c2, "run_arena_game_resumable",
+        lambda *_args, **_kwargs: pytest.fail("runner must not start"),
+    )
+    with pytest.raises(RuntimeError, match="allocation identity"):
+        c2.run_arena2_registered_pair(
+            allocation,
+            ROOT / "artifacts/f82_c2_repeatability/c2_candidate_result.json",
+            opening_index=1,
+            progress_dir=tmp_path / "progress",
+            result_path=tmp_path / "result.json",
+        )

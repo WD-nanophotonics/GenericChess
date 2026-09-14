@@ -269,8 +269,8 @@ def materialize_candidate(allocation: dict, artifact_path: Path = CANDIDATE_ARTI
     return {"status": "CANDIDATE_MATERIALIZED", "descriptor_path": str(CANDIDATE_DESCRIPTOR.relative_to(ROOT)).replace("\\", "/"), "descriptor_sha256": descriptor["descriptor_sha256"], "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_model_sha256": model_sha}
 
 
-def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> dict:
-    """Run only the preregistered two-pair Arena2 stage with exact caps."""
+def _load_verified_arena2_candidate(allocation: dict, artifact_path: Path):
+    """Load the exact published candidate identity before any Arena run."""
     artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
     descriptor_path = ROOT / artifact.get("candidate_descriptor_path", "")
     if not descriptor_path.is_file():
@@ -292,6 +292,14 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
     candidate.validate_ruleset(compiled)
     if candidate.checkpoint_id != descriptor["candidate_checkpoint_id"] or stable_sha256(candidate.compact_nonlinear) != descriptor["candidate_model_sha256"]:
         raise RuntimeError("Arena2 candidate serialization identity mismatch")
+    return artifact, descriptor, compiled, native, parent, candidate
+
+
+def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> dict:
+    """Run only the preregistered two-pair Arena2 stage with exact caps."""
+    artifact, descriptor, compiled, native, parent, candidate = _load_verified_arena2_candidate(
+        allocation, artifact_path
+    )
     corpus_payload = allocation["selection_and_strength_corpora"]["Arena2"]
     openings = ArenaOpeningCorpus.from_dict(corpus_payload["corpus"])
     openings.validate(compiled)
@@ -340,17 +348,9 @@ def run_arena2_registered_pair(
     result_path: Path,
 ) -> dict:
     """Run one isolated role-swapped pair from the registered Arena2 corpus."""
-    artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
-    descriptor_path = ROOT / artifact.get("candidate_descriptor_path", "")
-    if not descriptor_path.is_file():
-        raise RuntimeError("verified candidate descriptor is missing")
-    descriptor = json.loads(descriptor_path.read_text(encoding="utf-8"))
-    if stable_sha256({k: v for k, v in descriptor.items() if k != "descriptor_sha256"}) != descriptor.get("descriptor_sha256"):
-        raise RuntimeError("candidate descriptor hash mismatch")
-    compiled, native, _profile = f50._ruleset(LABEL)
-    parent, _parent_descriptor = _parent(compiled)
-    candidate = LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
-    candidate.validate_ruleset(compiled)
+    artifact, descriptor, compiled, native, parent, candidate = _load_verified_arena2_candidate(
+        allocation, artifact_path
+    )
     registered, source, openings = _registered_arena2_opening(
         allocation, compiled, opening_index
     )
