@@ -227,7 +227,7 @@ def _minimal_teacher_unit(compiled, native, parent, record: dict, *, smoke: bool
     return {
         "position_key": record["position_key"],
         "selected_action_count": len(rows),
-        "actual_search_calls": 2 + 1 + len(legal) + 1,
+        "actual_search_calls": 2 + len(legal) + len(rows),
         "actual_teacher_calls": len(rows),
         "teacher_rows": rows,
         "root_metadata": {"root_2k": root_2k, "root_80k": root_80k, "legal_action_count": len(legal), "cheap_top_actions": [legal_payloads[index] for index in order[:6]]},
@@ -239,7 +239,7 @@ def _minimal_manifest(manifest: dict) -> dict:
     for record in manifest["roots"]:
         selected_upper = min(MAX_SELECTED_ACTIONS, 6 + 2)
         ceiling = 2_000 + 80_000 + 1_000 * record["legal_action_count"] + 20_000 * selected_upper
-        rows.append({**record, "declared_node_ceiling": ceiling, "minimal_formula": "2000 + 80000 + 1000*L + 20000*S", "maximum_selected_actions": selected_upper, "maximum_teacher_calls": selected_upper})
+        rows.append({**record, "declared_node_ceiling": ceiling, "maximum_search_calls": 2 + record["legal_action_count"] + selected_upper, "minimal_formula": "2000 + 80000 + 1000*L + 20000*S", "maximum_selected_actions": selected_upper, "maximum_teacher_calls": selected_upper})
     payload = {
         "schema": "generic-chess-f85-minimal-teacher-rows-manifest-v1",
         "work_order": "GENERICCHESS-F85B-C2-MINIMAL-RESUMABLE-TEACHER-ROWS",
@@ -248,7 +248,7 @@ def _minimal_manifest(manifest: dict) -> dict:
         "c1_checkpoint_id": f83.C1_ID,
         "c1_model_sha256": f83.C1_MODEL_SHA,
         "teacher_contract": {"root_budgets": [2_000, 80_000], "child_budget_all_legal": 1_000, "child_budget_selected": 20_000, "max_depth": 12, "tt_megabytes": 8, "root_window_pruning": False, "observer_duplicate_omitted": True, "diagnostic_calls_omitted": ["root_40k", "observer_2k", "selected_q10k"]},
-        "execution_contract": {"train_root_count": 36, "max_concurrent_roots": 2, "per_root_wall_cap_seconds": 1_800, "stage_count": 1, "no_auto_retry": True},
+        "execution_contract": {"train_root_count": 36, "max_concurrent_roots": 2, "stage_count": 1, "no_auto_retry": True, "wall_cap_authority": "approved_compute_plan.resource_envelope.per_root_wall_seconds"},
         "total_declared_node_ceiling": sum(row["declared_node_ceiling"] for row in rows),
         "roots": rows,
     }
@@ -324,7 +324,7 @@ def _run_minimal_root(record: dict, *, plan_sha: str, manifest_sha: str, runtime
     if final is None:
         q1k_by_key = {f59._action_key(payload): float(value) for payload, value in zip(all_legal["actions"], all_legal["q1k"])}
         rows = [{**row, "q_1k": q1k_by_key[row["action_key"]]} for row in selected["rows"]]
-        final = {"position_key": record["position_key"], "selected_action_count": len(rows), "actual_teacher_calls": len(rows), "actual_search_calls": 2 + 1 + len(legal) + 1, "teacher_rows": rows, "root_metadata": {"root_2k": root_2k, "root_80k": root_80k, "legal_action_count": len(legal)}}
+        final = {"root_id": record["root_id"], "position_key": record["position_key"], "role": record["role"], "stratum": record["stratum"], "selected_action_count": len(rows), "actual_teacher_calls": len(rows), "actual_search_calls": 2 + len(legal) + len(rows), "teacher_rows": rows, "root_metadata": {"root_2k": root_2k, "root_80k": root_80k, "legal_action_count": len(legal)}}
         save("assembled", final)
     return {"status": "COMPLETE", **final}
 
@@ -497,15 +497,39 @@ def _validate_execution_plan(plan_path: Path, manifest: dict) -> tuple[dict, str
     return plan, plan_sha
 
 
-def _run_approved_minimal(manifest: dict, compute_plan_path: Path, *, runtime_dir: Path | None = None) -> dict:
+def _minimal_root_worker(record: dict, *, plan_sha: str, manifest_sha: str, runtime_dir: Path, result_queue) -> None:
+    try:
+        compiled, native, _profile = f50._ruleset(LABEL)
+        _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
+        result = _run_minimal_root(record, plan_sha=plan_sha, manifest_sha=manifest_sha, runtime_dir=runtime_dir, compiled=compiled, native=native, parent=champion)
+        result_queue.put({"status": result.get("status", "HARNESS_MISMATCH"), "root_id": record["root_id"]})
+    except BaseException as exc:  # pragma: no cover - bounded worker failure path
+        result_queue.put({"status": "HARNESS_MISMATCH", "root_id": record["root_id"], "error": f"{type(exc).__name__}: {exc}"})
+
+
+def _run_minimal_root_bounded(record: dict, *, plan_sha: str, manifest_sha: str, runtime_dir: Path, wall_seconds: int) -> dict:
+    context = mp.get_context("spawn")
+    result_queue = context.Queue()
+    process = context.Process(target=_minimal_root_worker, kwargs={"record": record, "plan_sha": plan_sha, "manifest_sha": manifest_sha, "runtime_dir": runtime_dir, "result_queue": result_queue})
+    process.start()
+    process.join(wall_seconds)
+    if process.is_alive():
+        process.terminate()
+        process.join(5)
+        return {"status": "TIME_CAP", "root_id": record["root_id"], "termination_reason": "per_root_wall_cap"}
+    try:
+        return result_queue.get(timeout=2)
+    except queue_module.Empty:
+        return {"status": "HARNESS_MISMATCH", "root_id": record["root_id"], "error": f"worker exited with code {process.exitcode}"}
+
+
+def _run_approved_minimal(manifest: dict, compute_plan_path: Path, *, runtime_dir: Path | None = None, per_root_wall_seconds: int) -> dict:
     """Run the phase-resumable minimal path; no F59 diagnostic extras."""
     plan_sha = _sha(compute_plan_path)
     manifest_sha = _sha(MINIMAL_MANIFEST_PATH)
     runtime_root = F85_RUNTIME_DIR if runtime_dir is None else Path(runtime_dir)
     progress_root = runtime_root / plan_sha / "minimal-progress"
     progress_root.mkdir(parents=True, exist_ok=True)
-    compiled, native, _profile = f50._ruleset(LABEL)
-    _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
     root_payload = json.loads((ROOT / "artifacts/f83_c1_relative_evidence/root_corpus.json").read_text(encoding="utf-8"))
     source_by_id = {root["root_id"]: root for root in root_payload["roots"]}
     completed = []
@@ -524,7 +548,7 @@ def _run_approved_minimal(manifest: dict, compute_plan_path: Path, *, runtime_di
         batch = pending[start:start + MAX_CONCURRENT_ROOTS]
         results = []
         with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_ROOTS) as pool:
-            futures = [pool.submit(_run_minimal_root, {**record, **_execution_record(record, source_by_id)}, plan_sha=plan_sha, manifest_sha=manifest_sha, runtime_dir=progress_root, compiled=compiled, native=native, parent=champion) for record in batch]
+            futures = [pool.submit(_run_minimal_root_bounded, {**record, **_execution_record(record, source_by_id)}, plan_sha=plan_sha, manifest_sha=manifest_sha, runtime_dir=progress_root, wall_seconds=per_root_wall_seconds) for record in batch]
             for record, future in zip(batch, futures):
                 try:
                     result = future.result()
@@ -532,13 +556,17 @@ def _run_approved_minimal(manifest: dict, compute_plan_path: Path, *, runtime_di
                     result = {"status": "HARNESS_MISMATCH", "error": f"{type(exc).__name__}: {exc}"}
                 results.append({"root_id": record["root_id"], **result})
                 if result.get("status") == "COMPLETE":
-                    completed.append(result)
+                    assembled = progress_root / record["root_id"] / "assembled.json"
+                    if not assembled.exists():
+                        results[-1] = {"root_id": record["root_id"], "status": "HARNESS_MISMATCH", "error": "assembled phase missing"}
+                    else:
+                        completed.append(json.loads(assembled.read_text(encoding="utf-8"))["value"])
         if any(result.get("status") != "COMPLETE" for result in results):
             return {"status": "INCOMPLETE", "reason": "TERMINAL_PHASE_REQUIRES_NEW_AUTHORIZATION", "completed_count": len(completed), "results": results}
     if len(completed) != len(manifest["roots"]):
         return {"status": "INCOMPLETE", "completed_count": len(completed)}
     evidence = {"schema": "generic-chess-f85-minimal-teacher-rows-v1", "status": "COMPLETE_TRAIN_TEACHER_EVIDENCE_SEALED", "compute_plan_sha256": plan_sha, "minimal_manifest_sha256": manifest_sha, "c1_checkpoint_id": f83.C1_ID, "c1_model_sha256": f83.C1_MODEL_SHA, "root_count": len(completed), "roots": sorted(completed, key=lambda row: row["root_id"])}
-    path = ROOT / "artifacts/f85_c2_train_teacher_evidence/minimal_training_evidence.json"
+    path = ROOT / "artifacts/f85_c2_train_teacher_evidence/training_evidence.json"
     _atomic_json(path, evidence)
     return {"status": evidence["status"], "completed_count": len(completed), "evidence_path": str(path.relative_to(ROOT)).replace("\\", "/")}
 
@@ -562,9 +590,15 @@ def main() -> None:
         if args.compute_plan is None:
             raise SystemExit("--minimal-rows --approved-run requires --compute-plan")
         plan, plan_sha = _validate_execution_plan(args.compute_plan, minimal)
-        if plan.get("minimal_manifest_sha256") != _sha(MINIMAL_MANIFEST_PATH):
+        envelope = plan.get("resource_envelope", {})
+        if plan.get("minimal_manifest_sha256") != _sha(MINIMAL_MANIFEST_PATH) or envelope.get("minimal_manifest_sha256") != _sha(MINIMAL_MANIFEST_PATH):
             raise SystemExit("approved minimal compute plan is not bound to the minimal manifest")
-        result = _run_approved_minimal(manifest, args.compute_plan)
+        if envelope.get("intended_cpu_lanes") != MAX_CONCURRENT_ROOTS or envelope.get("maximum_nodes") != minimal["total_declared_node_ceiling"] or envelope.get("effective_workload") != {"games": 0, "arena_pairs": 0, "plies": 0}:
+            raise SystemExit("approved minimal compute plan resource envelope mismatch")
+        wall_seconds = envelope.get("per_root_wall_seconds")
+        if not isinstance(wall_seconds, int) or wall_seconds <= 0:
+            raise SystemExit("approved minimal compute plan requires a positive per-root wall cap")
+        result = _run_approved_minimal(minimal, args.compute_plan, per_root_wall_seconds=wall_seconds)
         result["compute_plan_sha256"] = plan_sha
         print(json.dumps(result, sort_keys=True), flush=True)
         return

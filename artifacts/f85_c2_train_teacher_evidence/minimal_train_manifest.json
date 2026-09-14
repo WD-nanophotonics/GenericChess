@@ -4,16 +4,16 @@
   "execution_contract": {
     "max_concurrent_roots": 2,
     "no_auto_retry": true,
-    "per_root_wall_cap_seconds": 1800,
     "stage_count": 1,
-    "train_root_count": 36
+    "train_root_count": 36,
+    "wall_cap_authority": "approved_compute_plan.resource_envelope.per_root_wall_seconds"
   },
-  "manifest_sha256": "de9f6419e48bf4ce5e804cef070d9a9aaf36007996b135d85129e40e7600fa2e",
+  "manifest_sha256": "585550922d28ca7c17dd5431c98409b8750653933722661f2cc9cdf7a7e5d37b",
   "roots": [
     {
       "declared_node_ceiling": 271000,
       "legal_action_count": 29,
-      "maximum_search_calls": 51,
+      "maximum_search_calls": 39,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -26,7 +26,7 @@
     {
       "declared_node_ceiling": 266000,
       "legal_action_count": 24,
-      "maximum_search_calls": 46,
+      "maximum_search_calls": 34,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -39,7 +39,7 @@
     {
       "declared_node_ceiling": 273000,
       "legal_action_count": 31,
-      "maximum_search_calls": 53,
+      "maximum_search_calls": 41,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -52,7 +52,7 @@
     {
       "declared_node_ceiling": 278000,
       "legal_action_count": 36,
-      "maximum_search_calls": 58,
+      "maximum_search_calls": 46,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -65,7 +65,7 @@
     {
       "declared_node_ceiling": 262000,
       "legal_action_count": 20,
-      "maximum_search_calls": 42,
+      "maximum_search_calls": 30,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -78,7 +78,7 @@
     {
       "declared_node_ceiling": 270000,
       "legal_action_count": 28,
-      "maximum_search_calls": 50,
+      "maximum_search_calls": 38,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -91,7 +91,7 @@
     {
       "declared_node_ceiling": 264000,
       "legal_action_count": 22,
-      "maximum_search_calls": 44,
+      "maximum_search_calls": 32,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -104,7 +104,7 @@
     {
       "declared_node_ceiling": 297000,
       "legal_action_count": 55,
-      "maximum_search_calls": 77,
+      "maximum_search_calls": 65,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -117,7 +117,7 @@
     {
       "declared_node_ceiling": 271000,
       "legal_action_count": 29,
-      "maximum_search_calls": 51,
+      "maximum_search_calls": 39,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -130,7 +130,7 @@
     {
       "declared_node_ceiling": 270000,
       "legal_action_count": 28,
-      "maximum_search_calls": 50,
+      "maximum_search_calls": 38,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -143,7 +143,7 @@
     {
       "declared_node_ceiling": 269000,
       "legal_action_count": 27,
-      "maximum_search_calls": 49,
+      "maximum_search_calls": 37,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -156,7 +156,7 @@
     {
       "declared_node_ceiling": 273000,
       "legal_action_count": 31,
-      "maximum_search_calls": 53,
+      "maximum_search_calls": 41,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -169,7 +169,7 @@
     {
       "declared_node_ceiling": 283000,
       "legal_action_count": 41,
-      "maximum_search_calls": 63,
+      "maximum_search_calls": 51,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -182,7 +182,7 @@
     {
       "declared_node_ceiling": 272000,
       "legal_action_count": 30,
-      "maximum_search_calls": 52,
+      "maximum_search_calls": 40,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -195,7 +195,7 @@
     {
       "declared_node_ceiling": 309000,
       "legal_action_count": 67,
-      "maximum_search_calls": 89,
+      "maximum_search_calls": 77,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -208,7 +208,7 @@
     {
       "declared_node_ceiling": 282000,
       "legal_action_count": 40,
-      "maximum_search_calls": 62,
+      "maximum_search_calls": 50,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -221,7 +221,7 @@
     {
       "declared_node_ceiling": 293000,
       "legal_action_count": 51,
-      "maximum_search_calls": 73,
+      "maximum_search_calls": 61,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -234,7 +234,7 @@
     {
       "declared_node_ceiling": 290000,
       "legal_action_count": 48,
-      "maximum_search_calls": 70,
+      "maximum_search_calls": 58,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -247,7 +247,7 @@
     {
       "declared_node_ceiling": 274000,
       "legal_action_count": 32,
-      "maximum_search_calls": 54,
+      "maximum_search_calls": 42,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -260,7 +260,7 @@
     {
       "declared_node_ceiling": 315000,
       "legal_action_count": 73,
-      "maximum_search_calls": 95,
+      "maximum_search_calls": 83,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -273,7 +273,7 @@
     {
       "declared_node_ceiling": 277000,
       "legal_action_count": 35,
-      "maximum_search_calls": 57,
+      "maximum_search_calls": 45,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -286,7 +286,7 @@
     {
       "declared_node_ceiling": 277000,
       "legal_action_count": 35,
-      "maximum_search_calls": 57,
+      "maximum_search_calls": 45,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -299,7 +299,7 @@
     {
       "declared_node_ceiling": 272000,
       "legal_action_count": 30,
-      "maximum_search_calls": 52,
+      "maximum_search_calls": 40,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -312,7 +312,7 @@
     {
       "declared_node_ceiling": 322000,
       "legal_action_count": 80,
-      "maximum_search_calls": 102,
+      "maximum_search_calls": 90,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -325,7 +325,7 @@
     {
       "declared_node_ceiling": 272000,
       "legal_action_count": 30,
-      "maximum_search_calls": 52,
+      "maximum_search_calls": 40,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -338,7 +338,7 @@
     {
       "declared_node_ceiling": 267000,
       "legal_action_count": 25,
-      "maximum_search_calls": 47,
+      "maximum_search_calls": 35,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -351,7 +351,7 @@
     {
       "declared_node_ceiling": 268000,
       "legal_action_count": 26,
-      "maximum_search_calls": 48,
+      "maximum_search_calls": 36,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -364,7 +364,7 @@
     {
       "declared_node_ceiling": 267000,
       "legal_action_count": 25,
-      "maximum_search_calls": 47,
+      "maximum_search_calls": 35,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -377,7 +377,7 @@
     {
       "declared_node_ceiling": 269000,
       "legal_action_count": 27,
-      "maximum_search_calls": 49,
+      "maximum_search_calls": 37,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -390,7 +390,7 @@
     {
       "declared_node_ceiling": 267000,
       "legal_action_count": 25,
-      "maximum_search_calls": 47,
+      "maximum_search_calls": 35,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -403,7 +403,7 @@
     {
       "declared_node_ceiling": 272000,
       "legal_action_count": 30,
-      "maximum_search_calls": 52,
+      "maximum_search_calls": 40,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -416,7 +416,7 @@
     {
       "declared_node_ceiling": 267000,
       "legal_action_count": 25,
-      "maximum_search_calls": 47,
+      "maximum_search_calls": 35,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -429,7 +429,7 @@
     {
       "declared_node_ceiling": 268000,
       "legal_action_count": 26,
-      "maximum_search_calls": 48,
+      "maximum_search_calls": 36,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -442,7 +442,7 @@
     {
       "declared_node_ceiling": 268000,
       "legal_action_count": 26,
-      "maximum_search_calls": 48,
+      "maximum_search_calls": 36,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -455,7 +455,7 @@
     {
       "declared_node_ceiling": 273000,
       "legal_action_count": 31,
-      "maximum_search_calls": 53,
+      "maximum_search_calls": 41,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",
@@ -468,7 +468,7 @@
     {
       "declared_node_ceiling": 266000,
       "legal_action_count": 24,
-      "maximum_search_calls": 46,
+      "maximum_search_calls": 34,
       "maximum_selected_actions": 8,
       "maximum_teacher_calls": 8,
       "minimal_formula": "2000 + 80000 + 1000*L + 20000*S",

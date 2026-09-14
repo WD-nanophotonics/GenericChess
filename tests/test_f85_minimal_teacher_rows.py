@@ -2,11 +2,13 @@
 
 import json
 from pathlib import Path
+import hashlib
 
 from scripts import f50_generic_learnable_evaluator as f50
 from scripts import f59_action_spectrum_diagnosis as f59
 from scripts import f79_parent_anchored_full_residual_arena4 as f79
 from scripts import f85_c2_train_teacher_acquisition as f85
+from scripts import f82_c2_parent_anchored_repeatability as c2
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,3 +43,40 @@ def test_minimal_manifest_uses_reduced_node_formula():
     for root in payload["roots"]:
         expected = 2_000 + 80_000 + 1_000 * root["legal_action_count"] + 20_000 * root["maximum_selected_actions"]
         assert root["declared_node_ceiling"] == expected
+
+
+def test_phase_resume_reuses_complete_root2k(tmp_path, monkeypatch):
+    compiled, native, _profile = f50._ruleset(f85.LABEL)
+    _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
+    record = _record()
+    runtime = tmp_path / "progress"
+    first = f85._run_minimal_root(record, plan_sha="a" * 64, manifest_sha="b" * 64, runtime_dir=runtime, compiled=compiled, native=native, parent=champion, stop_after="root2k")
+    assert first["status"] == "PAUSED"
+    original = f59._root_search
+    monkeypatch.setattr(f59, "_root_search", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("root2k was recomputed")))
+    second = f85._run_minimal_root(record, plan_sha="a" * 64, manifest_sha="b" * 64, runtime_dir=runtime, compiled=compiled, native=native, parent=champion, stop_after="root2k")
+    assert second["status"] == "PAUSED"
+    monkeypatch.setattr(f59, "_root_search", original)
+
+
+def test_bounded_worker_cap_returns_time_cap_without_claiming_complete(tmp_path):
+    record = _record()
+    result = f85._run_minimal_root_bounded(record, plan_sha="c" * 64, manifest_sha="d" * 64, runtime_dir=tmp_path / "progress", wall_seconds=0)
+    assert result["status"] == "TIME_CAP"
+    assert result["termination_reason"] == "per_root_wall_cap"
+
+
+def test_canonical_training_evidence_shape_is_consumable(monkeypatch, tmp_path):
+    evidence_path = tmp_path / "training_evidence.json"
+    evidence_path.write_text(json.dumps({
+        "c1_checkpoint_id": c2.PARENT_CHECKPOINT_ID,
+        "c1_model_sha256": c2.PARENT_MODEL_SHA,
+        "roots": [{"root_id": "synthetic", "teacher_rows": [
+            {"features": [0.0, 1.0], "base_q": 0.0, "q_20k": 1.0, "action_key": "a"},
+            {"features": [1.0, 0.0], "base_q": 0.0, "q_20k": 0.0, "action_key": "b"},
+        ]}],
+    }), encoding="utf-8")
+    monkeypatch.setattr(c2, "TEACHER_EVIDENCE", evidence_path)
+    rows = c2._training_data()
+    assert len(rows) == 1
+    assert rows[0]["target"] == 0
