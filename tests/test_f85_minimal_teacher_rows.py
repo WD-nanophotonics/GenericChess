@@ -59,6 +59,33 @@ def test_phase_resume_reuses_complete_root2k(tmp_path, monkeypatch):
     monkeypatch.setattr(f59, "_root_search", original)
 
 
+def test_phase_provenance_is_runtime_independent_and_sealed_roots_reuse(tmp_path, monkeypatch):
+    record = _record()
+    enriched = {**record, "action_history": [{"synthetic": "history"}], "replay_actions": [{"synthetic": "replay"}]}
+    assert f85._phase_provenance(record, plan_sha="a" * 64, manifest_sha="b" * 64) == f85._phase_provenance(enriched, plan_sha="a" * 64, manifest_sha="b" * 64)
+
+    runtime = tmp_path / "progress"
+    provenance = f85._phase_provenance(enriched, plan_sha="a" * 64, manifest_sha="b" * 64)
+    root_dir = runtime / record["root_id"]
+    root_dir.mkdir(parents=True)
+    sealed = {"root_id": record["root_id"], "position_key": record["position_key"], "role": record["role"], "stratum": record["stratum"], "selected_action_count": 0, "actual_teacher_calls": 0, "actual_search_calls": 2, "teacher_rows": [], "root_metadata": {}}
+    for phase, value in {
+        "root2k": {"action": None},
+        "root80k": {"action": None},
+        "all_legal_q1k": {"actions": [], "q1k": []},
+        "selected_q20": {"rows": []},
+        "assembled": sealed,
+    }.items():
+        (root_dir / f"{phase}.json").write_text(json.dumps({"status": "COMPLETE", "provenance": provenance, "value": value}), encoding="utf-8")
+
+    compiled, native, _profile = f50._ruleset(f85.LABEL)
+    _parent, champion, _descriptor = f79._load_frozen_candidate(compiled)
+    monkeypatch.setattr(f59, "_root_search", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("sealed root was recomputed")))
+    resumed = f85._run_minimal_root(record, plan_sha="a" * 64, manifest_sha="b" * 64, runtime_dir=runtime, compiled=compiled, native=native, parent=champion)
+    assert resumed["status"] == "COMPLETE"
+    assert resumed["teacher_rows"] == []
+
+
 def test_bounded_worker_cap_returns_time_cap_without_claiming_complete(tmp_path):
     record = _record()
     result = f85._run_minimal_root_bounded(record, plan_sha="c" * 64, manifest_sha="d" * 64, runtime_dir=tmp_path / "progress", wall_seconds=0)

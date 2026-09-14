@@ -260,7 +260,16 @@ def _minimal_manifest(manifest: dict) -> dict:
 
 
 def _phase_provenance(record: dict, *, plan_sha: str, manifest_sha: str) -> dict:
-    return {"mode": MINIMAL_MODE, "compute_plan_sha256": plan_sha, "manifest_content_sha256": manifest_sha, "root_record_sha256": _stable_sha(record), "root_id": record["root_id"], "position_key": record["position_key"], "c1_checkpoint_id": f83.C1_ID, "c1_model_sha256": f83.C1_MODEL_SHA}
+    # Execution workers enrich manifest records with replay data used to
+    # reconstruct the position.  Those runtime-only fields must not change
+    # phase identity, otherwise a restart sees a different provenance hash
+    # than the parent scan and rejects its own COMPLETE checkpoints.
+    manifest_record = {
+        key: value
+        for key, value in record.items()
+        if key not in {"action_history", "replay_actions"}
+    }
+    return {"mode": MINIMAL_MODE, "compute_plan_sha256": plan_sha, "manifest_content_sha256": manifest_sha, "root_record_sha256": _stable_sha(manifest_record), "root_id": record["root_id"], "position_key": record["position_key"], "c1_checkpoint_id": f83.C1_ID, "c1_model_sha256": f83.C1_MODEL_SHA}
 
 
 def _run_minimal_root(record: dict, *, plan_sha: str, manifest_sha: str, runtime_dir: Path, compiled, native, parent, stop_after: str | None = None) -> dict:
