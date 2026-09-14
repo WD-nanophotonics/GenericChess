@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT))
 from generic_chess.learning.arena import ArenaConfig, ArenaExecutionCaps, run_arena_game_resumable  # noqa: E402
 from generic_chess.learning.openings import ArenaOpeningCorpus, generate_arena_openings  # noqa: E402
 from generic_chess.learning.nonlinear import CompactNonlinearResidual  # noqa: E402
+from generic_chess.learning.material import LearnableMaterialCheckpoint  # noqa: E402
 from generic_chess.learning.serialization import stable_sha256  # noqa: E402
 from generic_chess.native import native_available  # noqa: E402
 from scripts import f50_generic_learnable_evaluator as f50  # noqa: E402
@@ -37,6 +38,11 @@ TEACHER_EVIDENCE = ROOT / "artifacts/f85_c2_train_teacher_evidence/training_evid
 ARTIFACTS = ROOT / "artifacts/f82_c2_repeatability"
 ALLOCATION_PATH = ARTIFACTS / "c2_allocation_manifest.json"
 RESULT_PATH = ROOT / ".generic_chess_flow/f82-c2-parent-anchored-repeatability/c2_results.json"
+CANDIDATE_ARTIFACT = ARTIFACTS / "c2_candidate_result.json"
+CANDIDATE_DESCRIPTOR = ARTIFACTS / "c2_candidate_descriptor.json"
+TEACHER_EVIDENCE_SHA = "c0a5e69f5d3345bbf4ab699d67b14b0fcbad745003ca17ac5beec3a1f4fbb4c2"
+ARENA2_RESULT_PATH = ROOT / ".generic_chess_flow/f82-c2-arena2-v2/arena2_result.json"
+ARENA2_PROGRESS = ROOT / ".generic_chess_flow/f82-c2-arena2-v2/progress"
 
 # These values are fixed before inspecting any C2 result.
 TRAIN_ROOT_COUNT = 36
@@ -189,12 +195,132 @@ def run_fit_and_write_result(allocation: dict) -> dict:
     return result
 
 
+def _candidate_fit(allocation: dict):
+    """Reconstruct the already published fit without selecting a new result."""
+    import numpy as np
+    compiled, _native, _profile = f50._ruleset(LABEL)
+    parent_checkpoint, _descriptor = _parent(compiled)
+    parent_model = CompactNonlinearResidual.from_dict(parent_checkpoint.compact_nonlinear)
+    data = _training_data()
+    raw_model, fit_summary = f78._adam_fit(parent_model, data)
+    fit_roots = [{"root_index": row["root_index"], "metadata": {"action_rows": [{"action_key": key, "features": feature.tolist(), "base_q": float(base)} for key, feature, base in zip(row["keys"], row["features"], row["base"]) ]}} for row in data]
+    alpha, selected, attempts = f78._select_alpha(fit_roots, data, parent_model, raw_model)
+    if alpha is None or selected is None:
+        raise RuntimeError("deterministic candidate reconstruction found no safe alpha")
+    candidate_model = f78._interpolate(parent_model, raw_model, alpha)
+    identity = {"work_order": WORK_ORDER, "parent_checkpoint_id": PARENT_CHECKPOINT_ID, "parent_model_sha256": PARENT_MODEL_SHA, "allocation_sha256": allocation["allocation_sha256"], "optimizer": allocation["optimizer"], "alpha": alpha, "candidate_model_sha256": stable_sha256(candidate_model.to_dict())}
+    candidate, training_hash = f78._make_candidate(parent_checkpoint, candidate_model, identity)
+    return compiled, parent_checkpoint, parent_model, candidate, candidate_model, training_hash, fit_summary, alpha, selected, attempts
+
+
+def materialize_candidate(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> dict:
+    """Recover the sealed candidate payload, failing closed before any write."""
+    expected = json.loads(artifact_path.read_text(encoding="utf-8"))
+    if expected.get("teacher_evidence_sha256") != TEACHER_EVIDENCE_SHA:
+        raise RuntimeError("candidate artifact teacher evidence identity mismatch")
+    if expected.get("allocation_sha256") != allocation.get("allocation_sha256"):
+        raise RuntimeError("candidate artifact allocation identity mismatch")
+    if expected.get("parent_checkpoint_id") != PARENT_CHECKPOINT_ID or (expected.get("parent_model_sha256") not in (None, PARENT_MODEL_SHA)):
+        raise RuntimeError("candidate artifact parent identity mismatch")
+    values = _candidate_fit(allocation)
+    compiled, parent_checkpoint, parent_model, candidate, candidate_model, training_hash, fit_summary, alpha, selected, attempts = values
+    failures = f78._representation_guard(compiled, parent_checkpoint, candidate, parent_model, candidate_model)
+    if failures:
+        raise RuntimeError("candidate representation guard failed: " + ", ".join(failures))
+    model_sha = stable_sha256(candidate_model.to_dict())
+    checks = {
+        "candidate_checkpoint_id": candidate.checkpoint_id,
+        "candidate_model_sha256": model_sha,
+        "training_config_hash": training_hash,
+        "chosen_alpha": alpha,
+    }
+    for key, actual in checks.items():
+        expected_value = expected.get(key) if key != "chosen_alpha" else expected.get("backtracking", {}).get("chosen_alpha")
+        if actual != expected_value:
+            raise RuntimeError(f"deterministic candidate mismatch for {key}: {actual!r} != {expected_value!r}")
+    descriptor = {
+        "schema": "generic-chess-f82-c2-candidate-descriptor-v1",
+        "work_order": WORK_ORDER,
+        "ruleset": LABEL,
+        "teacher_evidence_sha256": TEACHER_EVIDENCE_SHA,
+        "parent_checkpoint_id": PARENT_CHECKPOINT_ID,
+        "parent_model_sha256": PARENT_MODEL_SHA,
+        "allocation_sha256": allocation["allocation_sha256"],
+        "candidate_checkpoint_id": candidate.checkpoint_id,
+        "candidate_model_sha256": model_sha,
+        "training_config_hash": training_hash,
+        "chosen_alpha": alpha,
+        "candidate_checkpoint": candidate.to_dict(),
+        "compact_model": candidate_model.to_dict(),
+        "frozen_field_identity": expected.get("frozen_field_identity"),
+        "serialization": {"checkpoint_id_from_payload": candidate.checkpoint_id, "model_sha256_from_payload": model_sha},
+    }
+    descriptor["descriptor_sha256"] = stable_sha256(descriptor)
+    updated = dict(expected)
+    updated["parent_model_sha256"] = PARENT_MODEL_SHA
+    updated["candidate_descriptor_path"] = str(CANDIDATE_DESCRIPTOR.relative_to(ROOT)).replace("\\", "/")
+    updated["candidate_descriptor_sha256"] = descriptor["descriptor_sha256"]
+    updated["candidate_checkpoint_serialization_sha256"] = stable_sha256(candidate.to_dict())
+    # All validation above is complete; these are the first writes in this path.
+    _atomic_json(CANDIDATE_DESCRIPTOR, descriptor)
+    _atomic_json(artifact_path, updated)
+    return {"status": "CANDIDATE_MATERIALIZED", "descriptor_path": str(CANDIDATE_DESCRIPTOR.relative_to(ROOT)).replace("\\", "/"), "descriptor_sha256": descriptor["descriptor_sha256"], "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_model_sha256": model_sha}
+
+
+def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> dict:
+    """Run only the preregistered two-pair Arena2 stage with exact caps."""
+    artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+    descriptor_path = ROOT / artifact.get("candidate_descriptor_path", "")
+    if not descriptor_path.is_file():
+        raise RuntimeError("verified candidate descriptor is missing")
+    descriptor = json.loads(descriptor_path.read_text(encoding="utf-8"))
+    if stable_sha256({k: v for k, v in descriptor.items() if k != "descriptor_sha256"}) != descriptor.get("descriptor_sha256"):
+        raise RuntimeError("candidate descriptor hash mismatch")
+    for key in ("candidate_checkpoint_id", "candidate_model_sha256", "training_config_hash", "allocation_sha256", "teacher_evidence_sha256"):
+        expected = artifact.get(key) if key != "teacher_evidence_sha256" else TEACHER_EVIDENCE_SHA
+        if descriptor.get(key) != expected:
+            raise RuntimeError(f"candidate descriptor identity mismatch for {key}")
+    if allocation.get("allocation_sha256") != descriptor["allocation_sha256"]:
+        raise RuntimeError("Arena2 allocation identity mismatch")
+    if not native_available():
+        raise RuntimeError("Arena2 requires the native extension")
+    compiled, native, _profile = f50._ruleset(LABEL)
+    parent, _parent_descriptor = _parent(compiled)
+    candidate = LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
+    candidate.validate_ruleset(compiled)
+    if candidate.checkpoint_id != descriptor["candidate_checkpoint_id"] or stable_sha256(candidate.compact_nonlinear) != descriptor["candidate_model_sha256"]:
+        raise RuntimeError("Arena2 candidate serialization identity mismatch")
+    corpus_payload = allocation["selection_and_strength_corpora"]["Arena2"]
+    openings = ArenaOpeningCorpus.from_dict(corpus_payload["corpus"])
+    openings.validate(compiled)
+    if openings.corpus_id != corpus_payload["corpus_id"] or len(openings.openings) != 2:
+        raise RuntimeError("Arena2 corpus identity or size mismatch")
+    config = ArenaConfig(pairs=2, nodes_per_move=NODES, parent_nodes_per_move=NODES, child_nodes_per_move=NODES, max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES, opening_seed=SELECTION_SEED, opening_count=2, min_plies=MIN_PLIES, max_plies=MAX_PLIES, workers=1)
+    caps = ArenaExecutionCaps(per_game_wall_seconds=3600, per_game_nodes=262144, per_game_plies=512, max_stage_games=4, max_concurrent_games=1, stage_wall_seconds=3600, logical_cpu_count=4)
+    run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=ARENA2_PROGRESS, openings=openings, capture_search_metrics=True, caps=caps, stage_id="f82-c2-arena2")
+    result = {"schema": "generic-chess-f82-c2-arena2-v2", "status": run.status, "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_model_sha256": descriptor["candidate_model_sha256"], "parent_checkpoint_id": PARENT_CHECKPOINT_ID, "allocation_sha256": allocation["allocation_sha256"], "corpus_id": openings.corpus_id, "config": asdict(config), "execution_caps": asdict(caps), "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "reason": run.reason}
+    _atomic_json(ARENA2_RESULT_PATH, result)
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precompute-only", action="store_true")
     parser.add_argument("--run-c2", action="store_true")
+    parser.add_argument("--materialize-candidate", action="store_true")
+    parser.add_argument("--run-arena2", action="store_true")
+    parser.add_argument("--candidate-artifact", type=Path, default=CANDIDATE_ARTIFACT)
+    parser.add_argument("--allocation", type=Path, default=ALLOCATION_PATH)
     args = parser.parse_args()
     allocation = precompute_allocation()
+    if args.allocation != ALLOCATION_PATH:
+        allocation = json.loads(args.allocation.read_text(encoding="utf-8"))
+    if args.materialize_candidate:
+        print(json.dumps(materialize_candidate(allocation, args.candidate_artifact), sort_keys=True), flush=True)
+        return
+    if args.run_arena2:
+        print(json.dumps(run_arena2(allocation, args.candidate_artifact), sort_keys=True), flush=True)
+        return
     if args.run_c2:
         result = run_fit_and_write_result(allocation)
         print(json.dumps({"status": result["status"], "candidate_checkpoint_id": result["candidate_checkpoint_id"], "candidate_model_sha256": result["candidate_model_sha256"], "chosen_alpha": result["backtracking"]["chosen_alpha"]}, sort_keys=True), flush=True)
