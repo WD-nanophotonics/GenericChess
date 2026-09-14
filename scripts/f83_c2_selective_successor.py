@@ -194,11 +194,9 @@ def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: P
     if registered.corpus_id != payload["corpus_id"] or not 0 <= opening_index < len(registered.openings):
         raise RuntimeError("Arena4 registered corpus identity/index mismatch")
     source = registered.openings[opening_index]
-    openings = ArenaOpeningCorpus(
-        corpus_id=registered.corpus_id, seed=registered.seed,
-        min_plies=registered.min_plies, max_plies=registered.max_plies,
-        openings=(replace(source, index=0),),
-    )
+    # Preserve the validated corpus identity and only reindex the selected
+    # source opening for the isolated one-pair runner.
+    openings = replace(registered, openings=(replace(source, index=0),))
     config = ArenaConfig(pairs=1, nodes_per_move=512, parent_nodes_per_move=512, child_nodes_per_move=512, max_depth=12, tt_megabytes=8, opening_seed=registered.seed, opening_count=1, min_plies=registered.min_plies, max_plies=registered.max_plies, workers=2, tt_reset_each_move=True)
     caps = ArenaExecutionCaps(per_game_wall_seconds=7200, per_game_nodes=262144, per_game_plies=512, max_stage_games=2, max_concurrent_games=2, stage_wall_seconds=7200, logical_cpu_count=4)
     run = run_arena_game_resumable(compiled, native, c2_parent, successor, config, progress_dir=progress_dir, openings=openings, capture_search_metrics=True, caps=caps, identity_caps=caps, stage_id="f83-c2-selective-successor-arena4", max_pairs=1)
