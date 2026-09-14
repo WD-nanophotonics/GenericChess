@@ -157,6 +157,48 @@ def test_resume_accepts_new_execution_wall_bound_with_legacy_identity(
     assert calls == [0, 1]
 
 
+def test_cap_persists_and_resumes_partial_game_prefix(monkeypatch, tmp_path):
+    arena_module, compiled, parent, child, config, _openings = _inputs(
+        monkeypatch, pairs=1
+    )
+    calls = []
+
+    def partial_owner_one(*args, **kwargs):
+        owner = kwargs["child_owner"]
+        calls.append((owner, kwargs["resume_partial"] is not None))
+        if owner == 1 and kwargs["resume_partial"] is None:
+            arena_module._atomic_write_json(
+                kwargs["partial_path"],
+                arena_module._partial_game_progress_to_dict(
+                    identity_sha256=kwargs["partial_identity_sha256"],
+                    game_identity=kwargs["partial_game_identity"],
+                    pair=0,
+                    child_owner=1,
+                    opening_id=kwargs["opening"].final_position_key,
+                    actions=[], search_metrics=[], searched_nodes=0,
+                ),
+            )
+            raise arena_module.ArenaCapHit("stage_wall_seconds")
+        return _game(0, owner)
+
+    monkeypatch.setattr(arena_module, "_play_one_game", partial_owner_one)
+    progress = tmp_path / "partial-prefix"
+    first = run_arena_game_resumable(
+        compiled, None, parent, child, config, progress_dir=progress,
+    )
+    assert first.status == "INCOMPLETE"
+    assert first.completed_games == 1
+    assert (progress / "partial-game-000000-owner-1.json").is_file()
+
+    second = run_arena_game_resumable(
+        compiled, None, parent, child, config, progress_dir=progress,
+    )
+    assert second.status == "COMPLETE"
+    assert second.completed_pairs == 1
+    assert not (progress / "partial-game-000000-owner-1.json").exists()
+    assert calls == [(0, False), (1, False), (1, True)]
+
+
 def test_out_of_order_game_completion_is_deterministic_and_lanes_are_bounded(
     monkeypatch, tmp_path
 ):

@@ -46,6 +46,7 @@ class ArenaCapHit(ArenaExecutionError):
 
 ARENA_PROGRESS_SCHEMA = "generic-chess-arena-progress-v1"
 ARENA_GAME_PROGRESS_SCHEMA = "generic-chess-arena-game-progress-v1"
+ARENA_PARTIAL_GAME_PROGRESS_SCHEMA = "generic-chess-arena-partial-game-progress-v1"
 
 
 def _trusted_search_elapsed(native_elapsed: float, wall_elapsed: float):
@@ -232,8 +233,17 @@ def _play_one_game(
     capture_search_metrics: bool = False,
     execution_caps: ArenaExecutionCaps | None = None,
     stage_deadline: float | None = None,
+    partial_path: str | Path | None = None,
+    partial_identity_sha256: str | None = None,
+    partial_game_identity: dict | None = None,
+    resume_partial: dict | None = None,
 ) -> ArenaGameResult:
-    """Replay ``opening``, then play one game with fresh engines."""
+    """Replay ``opening``, then play one game with fresh engines.
+
+    A cap can leave a validated, atomic in-game prefix when ``partial_path``
+    is provided.  The next invocation replays that prefix and continues the
+    same role-swapped game instead of restarting from the opening.
+    """
     session = GameSession(compiled)
     for action in opening.actions:
         session.submit(action)
@@ -247,9 +257,38 @@ def _play_one_game(
     actions: list[Action] = []
     plies = 0
     searched_nodes = 0
+    if resume_partial is not None:
+        if resume_partial.get("opening_id") != opening.final_position_key:
+            raise ArenaExecutionError("arena partial opening identity does not match")
+        for action in resume_partial["actions"]:
+            if action not in session.legal_actions():
+                raise ArenaExecutionError("arena partial game contains an illegal action")
+            session.submit(action)
+            actions.append(action)
+        plies = len(actions)
+        searched_nodes = int(resume_partial["searched_nodes"])
     game_started = time.perf_counter()
     declaration_id = None
-    search_metrics = []
+    search_metrics = list(resume_partial["search_metrics"]) if resume_partial else []
+
+    def cap_hit(cap: str):
+        if partial_path is not None:
+            if partial_identity_sha256 is None or partial_game_identity is None:
+                raise ArenaExecutionError("partial progress identity is not bound")
+            _atomic_write_json(
+                Path(partial_path),
+                _partial_game_progress_to_dict(
+                    identity_sha256=partial_identity_sha256,
+                    game_identity=partial_game_identity,
+                    pair=opening.index,
+                    child_owner=child_owner,
+                    opening_id=opening.final_position_key,
+                    actions=actions,
+                    search_metrics=search_metrics,
+                    searched_nodes=searched_nodes,
+                ),
+            )
+        raise ArenaCapHit(cap)
     while session.result.status.value == "ongoing":
         if execution_caps is not None:
             if (
@@ -257,12 +296,12 @@ def _play_one_game(
                 and time.perf_counter() - game_started
                 >= execution_caps.per_game_wall_seconds
             ):
-                raise ArenaCapHit("per_game_wall_seconds")
+                cap_hit("per_game_wall_seconds")
             if (
                 execution_caps.per_game_plies is not None
                 and plies >= execution_caps.per_game_plies
             ):
-                raise ArenaCapHit("per_game_plies")
+                cap_hit("per_game_plies")
         legal = session.legal_actions()
         if not legal:
             raise ArenaExecutionError(
@@ -278,7 +317,7 @@ def _play_one_game(
         if execution_caps is not None and execution_caps.per_game_nodes is not None:
             remaining_nodes = execution_caps.per_game_nodes - searched_nodes
             if remaining_nodes <= 0:
-                raise ArenaCapHit("per_game_nodes")
+                cap_hit("per_game_nodes")
             nodes_per_move = min(nodes_per_move, remaining_nodes)
         remaining_wall = []
         if execution_caps is not None and execution_caps.per_game_wall_seconds is not None:
@@ -297,7 +336,7 @@ def _play_one_game(
         if remaining_wall:
             wall_limit, wall_limit_name = min(remaining_wall, key=lambda item: item[0])
             if wall_limit <= 0:
-                raise ArenaCapHit(wall_limit_name)
+                cap_hit(wall_limit_name)
         wall_started = time.perf_counter()
         result = engine.search(
             session,
@@ -315,14 +354,14 @@ def _play_one_game(
             and time.perf_counter() - game_started
             >= execution_caps.per_game_wall_seconds
         ):
-            raise ArenaCapHit("per_game_wall_seconds")
+            cap_hit("per_game_wall_seconds")
         if stage_deadline is not None and time.perf_counter() >= stage_deadline:
-            raise ArenaCapHit("stage_wall_seconds")
+            cap_hit("stage_wall_seconds")
         termination_reason = str(getattr(result, "termination_reason", "")).lower()
         if termination_reason in {
             "time_budget", "time_limit", "timeout", "deadline", "cancelled", "canceled",
         } or "deadline" in termination_reason:
-            raise ArenaCapHit(wall_limit_name or "per_game_wall_seconds")
+            cap_hit(wall_limit_name or "per_game_wall_seconds")
         searched_nodes += int(getattr(result, "nodes", 0))
         searched_nodes += int(getattr(result, "qnodes", 0))
         if (
@@ -330,7 +369,7 @@ def _play_one_game(
             and execution_caps.per_game_nodes is not None
             and searched_nodes > execution_caps.per_game_nodes
         ):
-            raise ArenaCapHit("per_game_nodes")
+            cap_hit("per_game_nodes")
         if capture_search_metrics:
             native_elapsed = float(result.elapsed_seconds)
             elapsed, elapsed_source = _trusted_search_elapsed(
@@ -1039,6 +1078,46 @@ def _game_progress_from_dict(data: dict) -> tuple[dict, ArenaGameResult]:
     return data["game_identity"], _game_from_dict(data["game"])
 
 
+def _partial_game_progress_to_dict(
+    *, identity_sha256: str, game_identity: dict, pair: int,
+    child_owner: int, opening_id: str, actions: list[Action],
+    search_metrics: list[dict], searched_nodes: int,
+) -> dict:
+    return {
+        "schema": ARENA_PARTIAL_GAME_PROGRESS_SCHEMA,
+        "identity_sha256": identity_sha256,
+        "game_identity": game_identity,
+        "status": "partial",
+        "pair": pair,
+        "child_owner": child_owner,
+        "opening_id": opening_id,
+        "plies": len(actions),
+        "actions": [action_to_dict(action) for action in actions],
+        "search_metrics": list(search_metrics),
+        "searched_nodes": int(searched_nodes),
+    }
+
+
+def _partial_game_progress_from_dict(data: dict) -> dict:
+    required = {
+        "schema", "identity_sha256", "game_identity", "status", "pair",
+        "child_owner", "opening_id", "plies", "actions", "search_metrics",
+        "searched_nodes",
+    }
+    if set(data) != required or data.get("schema") != ARENA_PARTIAL_GAME_PROGRESS_SCHEMA:
+        raise ValueError("arena partial game fields do not match the progress schema")
+    if data.get("status") != "partial" or not isinstance(data["game_identity"], dict):
+        raise ValueError("arena partial game progress is not a partial game")
+    if data["child_owner"] not in (0, 1) or data["pair"] < 0:
+        raise ValueError("arena partial game owner or pair is invalid")
+    actions = tuple(action_from_dict(action) for action in data["actions"])
+    if int(data["plies"]) != len(actions) or int(data["searched_nodes"]) < 0:
+        raise ValueError("arena partial game progress counts are invalid")
+    if data["search_metrics"] and len(data["search_metrics"]) != len(actions):
+        raise ValueError("arena partial game telemetry does not match its actions")
+    return dict(data, actions=actions)
+
+
 def _validate_game_telemetry(
     game: ArenaGameResult,
     config: ArenaConfig,
@@ -1231,6 +1310,36 @@ def run_arena_game_resumable(
             raise ArenaExecutionError(f"conflicting arena game progress: {key}")
         completed_games[key] = game
 
+    partial_games: dict[tuple[int, int], dict] = {}
+    for partial_path in sorted(directory.glob("partial-game-*.json")):
+        match = re.fullmatch(
+            r"partial-game-(\d{6})-owner-([01])\.json", partial_path.name
+        )
+        if match is None:
+            raise ArenaExecutionError(
+                f"arena partial progress has invalid filename: {partial_path.name}"
+            )
+        key = (int(match.group(1)), int(match.group(2)))
+        if key not in expected_games or key in completed_games:
+            raise ArenaExecutionError(
+                f"arena partial progress has invalid index: {partial_path.name}"
+            )
+        try:
+            partial = _partial_game_progress_from_dict(
+                json.loads(partial_path.read_text(encoding="utf-8"))
+            )
+            if partial["identity_sha256"] != identity_sha256:
+                raise ValueError("arena partial identity does not match the manifest")
+            if partial["game_identity"] != expected_games[key]:
+                raise ValueError("arena partial identity does not match the expected game")
+            if partial["pair"] != key[0] or partial["child_owner"] != key[1]:
+                raise ValueError("arena partial pair or owner does not match its filename")
+        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+            raise ArenaExecutionError(
+                f"arena partial progress is corrupt: {partial_path.name}"
+            ) from exc
+        partial_games[key] = partial
+
     missing = [key for key in expected_games if key not in completed_games]
     stage_started = time.perf_counter()
     stage_deadline = (
@@ -1283,6 +1392,13 @@ def run_arena_game_resumable(
             "config": config,
             "capture_search_metrics": capture_search_metrics,
         }
+        partial_path = directory / f"partial-game-{pair_index:06d}-owner-{owner}.json"
+        kwargs.update(
+            partial_path=partial_path,
+            partial_identity_sha256=identity_sha256,
+            partial_game_identity=expected_games[(pair_index, owner)],
+            resume_partial=partial_games.get((pair_index, owner)),
+        )
         if caps.has_per_game_caps:
             kwargs["execution_caps"] = caps
         if stage_deadline is not None:
@@ -1345,6 +1461,9 @@ def run_arena_game_resumable(
                             identity_sha256=identity_sha256,
                             game_identity=expected_games[key],
                         ),
+                    )
+                    (directory / f"partial-game-{key[0]:06d}-owner-{key[1]}.json").unlink(
+                        missing_ok=True
                     )
                     completed_games[key] = game
                     if stop_on_decision and all(
