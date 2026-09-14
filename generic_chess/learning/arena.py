@@ -73,6 +73,7 @@ class ArenaConfig:
     workers: int = 1
     parent_nodes_per_move: int | None = None
     child_nodes_per_move: int | None = None
+    tt_reset_each_move: bool = False
 
     def __post_init__(self) -> None:
         if self.pairs <= 0 or self.nodes_per_move <= 0 or self.max_depth <= 0:
@@ -248,10 +249,10 @@ def _play_one_game(
     for action in opening.actions:
         session.submit(action)
     opening_key = position_identity_key(session.state.position, compiled)
-    parent_engine = _engine_for(
+    parent_engine = None if config.tt_reset_each_move else _engine_for(
         compiled, native_rules, parent, config.tt_megabytes
     )
-    child_engine = _engine_for(
+    child_engine = None if config.tt_reset_each_move else _engine_for(
         compiled, native_rules, child, config.tt_megabytes
     )
     actions: list[Action] = []
@@ -308,6 +309,13 @@ def _play_one_game(
                 "Core reports no legal moves but the session is ongoing"
             )
         side = session.state.position.side_to_move
+        if config.tt_reset_each_move:
+            parent_engine = _engine_for(
+                compiled, native_rules, parent, config.tt_megabytes
+            )
+            child_engine = _engine_for(
+                compiled, native_rules, child, config.tt_megabytes
+            )
         engine = child_engine if side == child_owner else parent_engine
         role = "child" if side == child_owner else "parent"
         nodes_per_move = (

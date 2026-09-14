@@ -41,8 +41,8 @@ RESULT_PATH = ROOT / ".generic_chess_flow/f82-c2-parent-anchored-repeatability/c
 CANDIDATE_ARTIFACT = ARTIFACTS / "c2_candidate_result.json"
 CANDIDATE_DESCRIPTOR = ARTIFACTS / "c2_candidate_descriptor.json"
 TEACHER_EVIDENCE_SHA = "c0a5e69f5d3345bbf4ab699d67b14b0fcbad745003ca17ac5beec3a1f4fbb4c2"
-ARENA2_RESULT_PATH = ROOT / ".generic_chess_flow/f82-c2-arena2-v2/arena2_result.json"
-ARENA2_PROGRESS = ROOT / ".generic_chess_flow/f82-c2-arena2-v2/progress"
+ARENA2_RESULT_PATH = ROOT / ".generic_chess_flow/f82-c2-arena2-tt-reset/arena2_result.json"
+ARENA2_PROGRESS = ROOT / ".generic_chess_flow/f82-c2-arena2-tt-reset/progress"
 
 # These values are fixed before inspecting any C2 result.
 TRAIN_ROOT_COUNT = 36
@@ -57,8 +57,8 @@ FINAL_PAIRS = 8
 NODES = 512
 MAX_DEPTH = 12
 TT_MEGABYTES = 8
-ARENA2_PER_GAME_WALL_SECONDS = 14400
-ARENA2_STAGE_WALL_SECONDS = 14400
+ARENA2_PER_GAME_WALL_SECONDS = 7200
+ARENA2_STAGE_WALL_SECONDS = 7200
 MIN_PLIES = 2
 MAX_PLIES = 6
 BACKTRACKING_ALPHAS = f78.BACKTRACKING_ALPHAS
@@ -297,7 +297,7 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
     openings.validate(compiled)
     if openings.corpus_id != corpus_payload["corpus_id"] or len(openings.openings) != 2:
         raise RuntimeError("Arena2 corpus identity or size mismatch")
-    config = ArenaConfig(pairs=2, nodes_per_move=NODES, parent_nodes_per_move=NODES, child_nodes_per_move=NODES, max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES, opening_seed=SELECTION_SEED, opening_count=2, min_plies=MIN_PLIES, max_plies=MAX_PLIES, workers=1)
+    config = ArenaConfig(pairs=2, nodes_per_move=NODES, parent_nodes_per_move=NODES, child_nodes_per_move=NODES, max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES, opening_seed=SELECTION_SEED, opening_count=2, min_plies=MIN_PLIES, max_plies=MAX_PLIES, workers=1, tt_reset_each_move=True)
     caps = ArenaExecutionCaps(per_game_wall_seconds=ARENA2_PER_GAME_WALL_SECONDS, per_game_nodes=262144, per_game_plies=512, max_stage_games=4, max_concurrent_games=1, stage_wall_seconds=ARENA2_STAGE_WALL_SECONDS, logical_cpu_count=4)
     identity_caps = ArenaExecutionCaps(per_game_wall_seconds=3600, per_game_nodes=262144, per_game_plies=512, max_stage_games=4, max_concurrent_games=1, stage_wall_seconds=3600, logical_cpu_count=4)
     def pause_after_first_pair() -> bool:

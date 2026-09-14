@@ -393,6 +393,53 @@ def test_finite_wall_budget_reaches_the_actual_search_call(monkeypatch):
     assert 0.0 < search_limits[0].max_time_seconds <= 1.0
 
 
+def test_tt_reset_each_move_recreates_both_role_engines(monkeypatch):
+    from generic_chess.learning import arena as arena_module
+
+    action = object()
+    engine_creations = []
+
+    class FakeSession:
+        def __init__(self, _compiled):
+            self.state = SimpleNamespace(position=SimpleNamespace(side_to_move=0))
+            self.result = SimpleNamespace(
+                status=SimpleNamespace(value="ongoing"), winner=None,
+            )
+            self._plies = 0
+
+        def submit(self, _action):
+            self._plies += 1
+            self.state.position.side_to_move = self._plies % 2
+            if self._plies == 2:
+                self.result.status.value = "checkmate"
+                self.result.winner = 0
+
+        def legal_actions(self):
+            return [action]
+
+    class SpyEngine:
+        def search(self, _session, _limits):
+            return SimpleNamespace(
+                action=action, declaration_id=None, elapsed_seconds=0.0,
+                nodes=1, qnodes=0, score=0, completed_depth=1,
+                selective_depth=1, termination_reason="node_budget",
+                used_fallback=False,
+            )
+
+    monkeypatch.setattr(arena_module, "GameSession", FakeSession)
+    monkeypatch.setattr(arena_module, "_engine_for", lambda *args: engine_creations.append(1) or SpyEngine())
+    monkeypatch.setattr(arena_module, "position_identity_key", lambda *_args: "key")
+    game = _play_one_game(
+        SimpleNamespace(ruleset_fingerprint="rules-v1"), None,
+        SimpleNamespace(), SimpleNamespace(),
+        opening=SimpleNamespace(actions=(), index=0, final_position_key="key"),
+        child_owner=0,
+        config=ArenaConfig(pairs=1, nodes_per_move=17, max_depth=3, tt_reset_each_move=True),
+    )
+    assert game.result == "checkmate"
+    assert len(engine_creations) == 4
+
+
 def test_game_progress_rejects_wrong_owner_or_stale_identity(monkeypatch, tmp_path):
     arena_module, compiled, parent, child, config, _openings = _inputs(
         monkeypatch, pairs=1
