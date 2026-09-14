@@ -156,7 +156,19 @@ class ArenaGameResult:
     search_metrics: tuple[dict, ...] = ()
 
     @property
-    def child_points(self) -> float:
+    def is_scoring_result(self) -> bool:
+        """Whether this terminal result is admissible for strength scoring.
+
+        ``no_contest`` is an explicit restart/no-contest outcome, not a draw.
+        Keeping it out of the score path prevents a restart from silently
+        becoming half a point.
+        """
+        return self.result != "no_contest"
+
+    @property
+    def child_points(self) -> float | None:
+        if not self.is_scoring_result:
+            return None
         if self.winner is None:
             return 0.5
         return 1.0 if self.winner == self.child_owner else 0.0
@@ -170,11 +182,20 @@ class ArenaPairResult:
     game_child_owner1: ArenaGameResult
 
     @property
-    def child_pair_score(self) -> float:
+    def child_pair_score(self) -> float | None:
+        if not (
+            self.game_child_owner0.is_scoring_result
+            and self.game_child_owner1.is_scoring_result
+        ):
+            return None
         return (
             self.game_child_owner0.child_points
             + self.game_child_owner1.child_points
         ) / 2.0
+
+    @property
+    def is_scoring_pair(self) -> bool:
+        return self.child_pair_score is not None
 
 
 @dataclass(frozen=True, slots=True)
@@ -490,8 +511,9 @@ def _play_pair(
 
 def _summarize_pairs(pairs: list[ArenaPairResult]) -> ArenaSummary:
     pairs.sort(key=lambda pair: pair.pair_index)
+    scoring_pairs = [pair for pair in pairs if pair.is_scoring_pair]
     game_wins = game_draws = game_losses = 0
-    for pair in pairs:
+    for pair in scoring_pairs:
         game_child_owner0 = pair.game_child_owner0
         game_child_owner1 = pair.game_child_owner1
         game_wins += sum(
@@ -504,15 +526,18 @@ def _summarize_pairs(pairs: list[ArenaPairResult]) -> ArenaSummary:
             1 for g in (game_child_owner0, game_child_owner1) if g.child_points == 0.0
         )
 
-    pair_scores = tuple(p.child_pair_score for p in pairs)
+    pair_scores = tuple(p.child_pair_score for p in scoring_pairs)
     mean = sum(pair_scores) / len(pair_scores) if pair_scores else 0.0
     better = sum(1 for s in pair_scores if s > 0.5)
     tied = sum(1 for s in pair_scores if s == 0.5)
     worse = sum(1 for s in pair_scores if s < 0.5)
-    low, high = bootstrap_pair_mean_ci(list(pair_scores))
+    low, high = (
+        bootstrap_pair_mean_ci(list(pair_scores))
+        if pair_scores else (0.0, 0.0)
+    )
     total_games = game_wins + game_draws + game_losses
     return ArenaSummary(
-        pair_count=len(pairs),
+        pair_count=len(scoring_pairs),
         pair_scores=pair_scores,
         mean_pair_score=mean,
         child_better_pairs=better,
@@ -526,7 +551,7 @@ def _summarize_pairs(pairs: list[ArenaPairResult]) -> ArenaSummary:
         game_score_rate=(
             (game_wins + 0.5 * game_draws) / total_games if total_games else 0.0
         ),
-        pairs=tuple(pairs),
+        pairs=tuple(scoring_pairs),
     )
 
 
@@ -1372,9 +1397,11 @@ def run_arena_game_resumable(
 
     def current_decision_bound() -> ArenaDecisionBound:
         return arena_decision_bound(
-            [pair.child_pair_score for pair in _pair_results_from_games(
-                completed_games, openings
-            )],
+            [
+                pair.child_pair_score
+                for pair in _pair_results_from_games(completed_games, openings)
+                if pair.is_scoring_pair
+            ],
             active_pairs,
             criterion=decision_criterion,
         )
@@ -1509,7 +1536,8 @@ def run_arena_game_resumable(
         raise fatal_error
     pairs = _pair_results_from_games(completed_games, openings)
     bound = arena_decision_bound(
-        [pair.child_pair_score for pair in pairs], config.pairs,
+        [pair.child_pair_score for pair in pairs if pair.is_scoring_pair],
+        config.pairs,
         criterion=decision_criterion,
     )
     summary = _summarize_pairs(pairs) if len(pairs) == active_pairs else None

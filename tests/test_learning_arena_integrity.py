@@ -20,6 +20,7 @@ from generic_chess.learning.arena import (
     ArenaPairResult,
     run_arena,
     run_arena_resumable,
+    _summarize_pairs,
     _trusted_search_elapsed,
 )
 from generic_chess.learning.material import LearnableMaterialCheckpoint
@@ -159,6 +160,37 @@ def test_search_telemetry_rejects_unsigned_elapsed_underflow_shape():
     elapsed, source = _trusted_search_elapsed(0.24, 0.25)
     assert elapsed == 0.24
     assert source == "native"
+
+
+def test_no_contest_is_excluded_from_strength_statistics():
+    def game(owner):
+        return ArenaGameResult(
+            pair=0,
+            opening_id="opening-0",
+            opening_position_key="position-0",
+            child_owner=owner,
+            winner=None,
+            result="no_contest",
+            plies=500,
+            actions=(),
+            final_position_key=f"final-0-{owner}",
+        )
+
+    pair = ArenaPairResult(
+        pair_index=0,
+        opening_id="opening-0",
+        game_child_owner0=game(0),
+        game_child_owner1=game(1),
+    )
+
+    assert pair.game_child_owner0.child_points is None
+    assert pair.child_pair_score is None
+    assert not pair.is_scoring_pair
+    summary = _summarize_pairs([pair])
+    assert summary.pair_count == 0
+    assert summary.pair_scores == ()
+    assert summary.game_draws == 0
+    assert summary.pairs == ()
 
 
 @requires_native
