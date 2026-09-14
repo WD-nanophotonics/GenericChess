@@ -138,13 +138,26 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--build-only", action="store_true")
+    parser.add_argument("--arena-only", action="store_true")
     parser.add_argument("--opening-index", type=int, default=0)
     parser.add_argument("--progress-dir", type=Path)
     parser.add_argument("--result-path", type=Path)
+    parser.add_argument("--stage-result-path", type=Path)
     args = parser.parse_args()
     if args.execute:
         if args.progress_dir is None or args.result_path is None:
             parser.error("--execute requires --progress-dir and --result-path")
         print(json.dumps(execute(opening_index=args.opening_index, progress_dir=args.progress_dir, result_path=args.result_path), sort_keys=True))
+    elif args.build_only:
+        result = build()
+        if args.stage_result_path is not None:
+            args.stage_result_path.parent.mkdir(parents=True, exist_ok=True)
+            args.stage_result_path.write_text(json.dumps({"stage": "A", "status": "VALID_SUCCESSOR" if result["behavior_changed"] else "NO_CHANGE", "result": result}, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(json.dumps(result, indent=2, sort_keys=True))
+    elif args.arena_only:
+        if args.progress_dir is None or args.result_path is None:
+            parser.error("--arena-only requires --progress-dir and --result-path")
+        print(json.dumps(run_arena4_opening(opening_index=args.opening_index, progress_dir=args.progress_dir, result_path=args.result_path), sort_keys=True))
     else:
         print(json.dumps(build(), indent=2, sort_keys=True))
