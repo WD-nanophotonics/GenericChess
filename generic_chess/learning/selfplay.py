@@ -168,9 +168,13 @@ def collect_self_play(
             )
             if semantic_path:
                 from ..native.semantic import dynamic_features as native_dynamic_features
+                from ..native.adapter import pack_semantic_search_position
 
+                current_position = pack_semantic_search_position(
+                    compiled, native_rules, session
+                )
                 current_dynamic = native_dynamic_features(
-                    native_rules, session.state.position
+                    native_rules, current_position
                 )
             else:
                 current_dynamic = dynamic_features(
