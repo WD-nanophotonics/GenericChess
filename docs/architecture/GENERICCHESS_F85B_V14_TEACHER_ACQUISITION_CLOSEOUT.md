@@ -5,6 +5,14 @@ frozen F83 training roots.  The phase-resumable path sealed the canonical
 `artifacts/f85_c2_train_teacher_evidence/training_evidence.json` artifact with
 status `COMPLETE_TRAIN_TEACHER_EVIDENCE_SEALED` and `root_count=36`.
 
+The published canonical artifact is byte-for-byte assembled from the 36
+COMPLETE phase checkpoints without recomputing or changing any teacher row.
+Its raw file SHA-256 is
+`3160e3935f8b862209d5be802ee9739a0d7d4e590730fa423099603cfe827aad`.
+It contains 36 unique root IDs and position keys, all `train` roles, strata
+`12/12/12` for reachable_random/c1_on_policy/c1_pv_corridor, non-empty teacher
+rows for every root, and no selected-action count above 8.
+
 Execution was bound to the exact published implementation and approvals:
 
 - implementation SHA: `878b35009eb5dedcc88042fc876000d36a2ca433`
