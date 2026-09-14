@@ -100,15 +100,17 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     assert captured["config"].pairs == 2
     assert captured["config"].nodes_per_move == 512
     assert captured["config"].max_depth == 12
+    assert captured["config"].workers == 2
     assert captured["config"].tt_reset_each_move is True
     assert captured["caps"].per_game_nodes == 262144
     assert captured["caps"].per_game_plies == 512
     assert captured["caps"].per_game_wall_seconds == 7200
     assert captured["caps"].max_stage_games == 4
-    assert captured["caps"].max_concurrent_games == 1
+    assert captured["caps"].max_concurrent_games == 2
     assert captured["caps"].stage_wall_seconds == 7200
     assert captured["identity_caps"].per_game_wall_seconds == 3600
     assert captured["identity_caps"].stage_wall_seconds == 3600
+    assert captured["identity_caps"].max_concurrent_games == 2
     assert captured["caps"].logical_cpu_count == 4
     assert len(captured["openings"].openings) == 2
     assert captured["openings"].corpus_id == allocation["selection_and_strength_corpora"]["Arena2"]["corpus_id"]
