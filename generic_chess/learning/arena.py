@@ -1139,6 +1139,7 @@ def run_arena_game_resumable(
     capture_search_metrics: bool = False,
     execution_caps: ArenaExecutionCaps | None = None,
     caps: ArenaExecutionCaps | None = None,
+    identity_caps: ArenaExecutionCaps | None = None,
     stage_id: str = "arena",
     pause_requested=None,
     pause_file: str | Path | None = None,
@@ -1155,6 +1156,7 @@ def run_arena_game_resumable(
     if execution_caps is not None and caps is not None:
         raise ValueError("pass only one of execution_caps or caps")
     caps = execution_caps or caps or ArenaExecutionCaps()
+    identity_caps = identity_caps or caps
     if not isinstance(stage_id, str) or not stage_id:
         raise ValueError("stage_id must be a non-empty string")
     openings = _prepare_arena(compiled, parent, child, config, openings)
@@ -1162,7 +1164,7 @@ def run_arena_game_resumable(
     directory.mkdir(parents=True, exist_ok=True)
     lanes = caps.game_lanes(config.pairs, config.workers)
     identity = _game_progress_identity(
-        compiled, parent, child, config, openings, caps,
+        compiled, parent, child, config, openings, identity_caps,
         stage_id=stage_id, capture_search_metrics=capture_search_metrics,
         decision_criterion=decision_criterion,
     )
@@ -1192,7 +1194,7 @@ def run_arena_game_resumable(
         raise ArenaExecutionError("arena opening identity is incomplete")
     expected_games = {
         (pair_index, owner): _game_progress_identity_for(
-            identity, config, caps, opening_rows[pair_index], pair_index, owner,
+            identity, config, identity_caps, opening_rows[pair_index], pair_index, owner,
             capture_search_metrics=capture_search_metrics,
         )
         for pair_index in range(config.pairs)

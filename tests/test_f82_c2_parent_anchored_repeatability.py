@@ -87,7 +87,7 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     captured = {}
 
     def fake_runner(compiled, native, parent, candidate, config, **kwargs):
-        captured.update(config=config, caps=kwargs["caps"], openings=kwargs["openings"], stage_id=kwargs["stage_id"], pause_requested=kwargs["pause_requested"])
+        captured.update(config=config, caps=kwargs["caps"], identity_caps=kwargs["identity_caps"], openings=kwargs["openings"], stage_id=kwargs["stage_id"], pause_requested=kwargs["pause_requested"])
         return SimpleNamespace(status="COMPLETE", completed_games=4, completed_pairs=2, total_games=4, reason=None)
 
     monkeypatch.setattr(c2, "run_arena_game_resumable", fake_runner)
@@ -106,6 +106,8 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     assert captured["caps"].max_stage_games == 4
     assert captured["caps"].max_concurrent_games == 1
     assert captured["caps"].stage_wall_seconds == 7200
+    assert captured["identity_caps"].per_game_wall_seconds == 3600
+    assert captured["identity_caps"].stage_wall_seconds == 3600
     assert captured["caps"].logical_cpu_count == 4
     assert len(captured["openings"].openings) == 2
     assert captured["openings"].corpus_id == allocation["selection_and_strength_corpora"]["Arena2"]["corpus_id"]

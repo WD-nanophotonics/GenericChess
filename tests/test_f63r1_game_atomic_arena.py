@@ -115,6 +115,48 @@ def test_single_game_is_persisted_and_partial_pair_has_no_statistics(
     assert resumed.summary.pair_scores == (1.0,)
 
 
+def test_resume_accepts_new_execution_wall_bound_with_legacy_identity(
+    monkeypatch, tmp_path
+):
+    arena_module, compiled, parent, child, config, _openings = _inputs(
+        monkeypatch, pairs=1
+    )
+    legacy = ArenaExecutionCaps(
+        per_game_wall_seconds=3600, stage_wall_seconds=3600,
+    )
+    extended = ArenaExecutionCaps(
+        per_game_wall_seconds=7200, stage_wall_seconds=7200,
+    )
+    calls = []
+
+    def stop_after_owner_zero(*args, **kwargs):
+        owner = kwargs["child_owner"]
+        calls.append(owner)
+        if owner == 1:
+            raise RuntimeError("stop after owner zero")
+        return _game(0, owner)
+
+    monkeypatch.setattr(arena_module, "_play_one_game", stop_after_owner_zero)
+    progress = tmp_path / "wall-extension"
+    with pytest.raises(RuntimeError, match="stop after owner zero"):
+        run_arena_game_resumable(
+            compiled, None, parent, child, config, progress_dir=progress,
+            execution_caps=legacy,
+        )
+
+    monkeypatch.setattr(
+        arena_module, "_play_one_game",
+        lambda *args, **kwargs: _game(0, kwargs["child_owner"]),
+    )
+    resumed = run_arena_game_resumable(
+        compiled, None, parent, child, config, progress_dir=progress,
+        execution_caps=extended, identity_caps=legacy,
+    )
+    assert resumed.status == "COMPLETE"
+    assert resumed.completed_games == 2
+    assert calls == [0, 1]
+
+
 def test_out_of_order_game_completion_is_deterministic_and_lanes_are_bounded(
     monkeypatch, tmp_path
 ):
