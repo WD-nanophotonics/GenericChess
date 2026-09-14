@@ -208,12 +208,12 @@ def _teacher_worker(record: dict, result_queue) -> None:
         })
 
 
-def _run_teacher_one(record: dict) -> dict:
+def _run_teacher_one(record: dict, wall_seconds: int = PER_ROOT_WALL_SECONDS) -> dict:
     context = mp.get_context("spawn")
     result_queue = context.Queue()
     process = context.Process(target=_teacher_worker, args=(record, result_queue))
     process.start()
-    process.join(PER_ROOT_WALL_SECONDS)
+    process.join(wall_seconds)
     if process.is_alive():
         process.terminate()
         process.join(5)
@@ -257,6 +257,7 @@ def _run_approved_acquisition(
     evidence_path: Path | None = None,
     runner=None,
     max_concurrent_roots: int = MAX_CONCURRENT_ROOTS,
+    per_root_wall_seconds: int = PER_ROOT_WALL_SECONDS,
 ) -> dict:
     """Run each frozen train root once; this path is only for an approved plan."""
     plan_sha = _sha(compute_plan_path)
@@ -266,7 +267,7 @@ def _run_approved_acquisition(
     progress_dir.mkdir(parents=True, exist_ok=True)
     root_payload = json.loads((ROOT / "artifacts/f83_c1_relative_evidence/root_corpus.json").read_text(encoding="utf-8"))
     source_by_id = {root["root_id"]: root for root in root_payload["roots"]}
-    run_one = _run_teacher_one if runner is None else runner
+    run_one = (lambda record: _run_teacher_one(record, per_root_wall_seconds)) if runner is None else runner
     completed = []
     pending = []
     for record in manifest["roots"]:
@@ -365,6 +366,7 @@ def main() -> None:
     parser.add_argument("--precompute-only", action="store_true")
     parser.add_argument("--approved-run", action="store_true")
     parser.add_argument("--compute-plan", type=Path)
+    parser.add_argument("--per-root-wall-seconds", type=int, default=PER_ROOT_WALL_SECONDS)
     args = parser.parse_args()
     if not args.precompute_only and not args.approved_run:
         raise SystemExit("F85 teacher acquisition is withheld until the separately approved large plan is bound")
@@ -377,7 +379,9 @@ def main() -> None:
         except RuntimeError as exc:
             raise SystemExit(str(exc))
         lanes = plan["resource_envelope"]["intended_cpu_lanes"]
-        result = _run_approved_acquisition(manifest, args.compute_plan, max_concurrent_roots=lanes)
+        if args.per_root_wall_seconds < PER_ROOT_WALL_SECONDS:
+            raise SystemExit("--per-root-wall-seconds cannot reduce the registered cap")
+        result = _run_approved_acquisition(manifest, args.compute_plan, max_concurrent_roots=lanes, per_root_wall_seconds=args.per_root_wall_seconds)
         result["compute_plan_sha256"] = plan_sha
         print(json.dumps(result, sort_keys=True), flush=True)
         return
