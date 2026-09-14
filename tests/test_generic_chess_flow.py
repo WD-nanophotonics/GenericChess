@@ -771,7 +771,7 @@ def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch
     resolution = json.loads((directory / "resolution.json").read_text(encoding="utf-8"))
     assert "WORKER_THREAD_ID=worker-1" in output
     assert len(resolution["resolution_sha256"]) == 64
-    assert state["recovery_state"] == "RECOVERED"
+    assert state["recovery_state"] == "IDLE"
 
 
 def test_supervisor_resend_uses_evidence_retry_for_proven_unsent_request(
@@ -996,7 +996,7 @@ def test_supervisor_resolution_accepts_escalation_without_request_directory(
     )
     capsys.readouterr()
 
-    assert state["recovery_state"] == "RECOVERED"
+    assert state["recovery_state"] == "IDLE"
 
 
 def test_update_response_state_imports_body_and_normalizes_missing_footer(

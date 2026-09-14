@@ -2217,7 +2217,18 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
                        response_path=str(response_path),
                        response_sha256=response_sha256)
     else:
-        state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
+        # A resolved scientific/business escalation may have no Courier
+        # request directory at all.  Once the Supervisor has signed RESUME,
+        # there is no request left to recover, so return the worker to IDLE;
+        # keep RECOVERED for unresolved/unproven request-bound recovery.
+        if (
+            args.action in {"RESUME_WORKER", "RECOVERED"}
+            and active_request is None
+            and dossier_request is None
+        ):
+            state["recovery_state"] = "IDLE"
+        else:
+            state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
     recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,
                    action=args.action, resolution_sha256=payload["resolution_sha256"])
     save_state(root, state)
