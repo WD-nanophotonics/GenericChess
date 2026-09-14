@@ -87,7 +87,7 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     captured = {}
 
     def fake_runner(compiled, native, parent, candidate, config, **kwargs):
-        captured.update(config=config, caps=kwargs["caps"], openings=kwargs["openings"], stage_id=kwargs["stage_id"])
+        captured.update(config=config, caps=kwargs["caps"], openings=kwargs["openings"], stage_id=kwargs["stage_id"], pause_requested=kwargs["pause_requested"])
         return SimpleNamespace(status="COMPLETE", completed_games=4, completed_pairs=2, total_games=4, reason=None)
 
     monkeypatch.setattr(c2, "run_arena_game_resumable", fake_runner)
@@ -96,6 +96,7 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     result = c2.run_arena2(allocation, ROOT / "artifacts/f82_c2_repeatability/c2_candidate_result.json")
     assert result["status"] == "COMPLETE"
     assert captured["stage_id"] == "f82-c2-arena2"
+    assert callable(captured.get("pause_requested"))
     assert captured["config"].pairs == 2
     assert captured["config"].nodes_per_move == 512
     assert captured["config"].max_depth == 12

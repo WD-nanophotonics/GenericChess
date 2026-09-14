@@ -297,7 +297,11 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
         raise RuntimeError("Arena2 corpus identity or size mismatch")
     config = ArenaConfig(pairs=2, nodes_per_move=NODES, parent_nodes_per_move=NODES, child_nodes_per_move=NODES, max_depth=MAX_DEPTH, tt_megabytes=TT_MEGABYTES, opening_seed=SELECTION_SEED, opening_count=2, min_plies=MIN_PLIES, max_plies=MAX_PLIES, workers=1)
     caps = ArenaExecutionCaps(per_game_wall_seconds=3600, per_game_nodes=262144, per_game_plies=512, max_stage_games=4, max_concurrent_games=1, stage_wall_seconds=3600, logical_cpu_count=4)
-    run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=ARENA2_PROGRESS, openings=openings, capture_search_metrics=True, caps=caps, stage_id="f82-c2-arena2")
+    def pause_after_first_pair() -> bool:
+        # Preserve the v2 progress identity and stop before scheduling pair 1
+        # once the first role-swapped pair is atomically complete.
+        return all((ARENA2_PROGRESS / f"game-000000-owner-{owner}.json").is_file() for owner in (0, 1))
+    run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=ARENA2_PROGRESS, openings=openings, capture_search_metrics=True, caps=caps, stage_id="f82-c2-arena2", pause_requested=pause_after_first_pair)
     result = {"schema": "generic-chess-f82-c2-arena2-v2", "status": run.status, "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_model_sha256": descriptor["candidate_model_sha256"], "parent_checkpoint_id": PARENT_CHECKPOINT_ID, "allocation_sha256": allocation["allocation_sha256"], "corpus_id": openings.corpus_id, "config": asdict(config), "execution_caps": asdict(caps), "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "reason": run.reason}
     _atomic_json(ARENA2_RESULT_PATH, result)
     return result
