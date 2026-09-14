@@ -1232,6 +1232,7 @@ def run_arena_game_resumable(
     pause_file: str | Path | None = None,
     decision_criterion: ArenaDecisionCriterion | str | dict | None = None,
     stop_on_decision: bool = False,
+    max_pairs: int | None = None,
 ) -> ArenaRunResult:
     """Run one game per checkpoint and aggregate only complete pairs.
 
@@ -1244,6 +1245,8 @@ def run_arena_game_resumable(
         raise ValueError("pass only one of execution_caps or caps")
     caps = execution_caps or caps or ArenaExecutionCaps()
     identity_caps = identity_caps or caps
+    if max_pairs is not None and (max_pairs <= 0 or max_pairs > config.pairs):
+        raise ValueError("max_pairs must be within the configured pair count")
     if not isinstance(stage_id, str) or not stage_id:
         raise ValueError("stage_id must be a non-empty string")
     openings = _prepare_arena(compiled, parent, child, config, openings)
@@ -1255,6 +1258,8 @@ def run_arena_game_resumable(
         stage_id=stage_id, capture_search_metrics=capture_search_metrics,
         decision_criterion=decision_criterion,
     )
+    if max_pairs is not None:
+        identity["max_pairs"] = max_pairs
     identity_sha256 = stable_sha256(identity)
     expected_manifest = {
         "schema": ARENA_GAME_PROGRESS_SCHEMA,
@@ -1328,7 +1333,11 @@ def run_arena_game_resumable(
                 f"arena partial progress has invalid filename: {partial_path.name}"
             )
         key = (int(match.group(1)), int(match.group(2)))
-        if key not in expected_games or key in completed_games:
+        if (
+            key not in expected_games
+            or key in completed_games
+            or (max_pairs is not None and key[0] >= max_pairs)
+        ):
             raise ArenaExecutionError(
                 f"arena partial progress has invalid index: {partial_path.name}"
             )
@@ -1348,7 +1357,11 @@ def run_arena_game_resumable(
             ) from exc
         partial_games[key] = partial
 
-    missing = [key for key in expected_games if key not in completed_games]
+    active_pairs = max_pairs if max_pairs is not None else config.pairs
+    missing = [
+        key for key in expected_games
+        if key not in completed_games and key[0] < active_pairs
+    ]
     stage_started = time.perf_counter()
     stage_deadline = (
         None if caps.stage_wall_seconds is None
@@ -1362,7 +1375,7 @@ def run_arena_game_resumable(
             [pair.child_pair_score for pair in _pair_results_from_games(
                 completed_games, openings
             )],
-            config.pairs,
+            active_pairs,
             criterion=decision_criterion,
         )
 
@@ -1499,8 +1512,8 @@ def run_arena_game_resumable(
         [pair.child_pair_score for pair in pairs], config.pairs,
         criterion=decision_criterion,
     )
-    summary = _summarize_pairs(pairs) if len(pairs) == config.pairs else None
-    if len(completed_games) == 2 * config.pairs:
+    summary = _summarize_pairs(pairs) if len(pairs) == active_pairs else None
+    if len(completed_games) == 2 * active_pairs:
         status = "COMPLETE"
         reason = None
     elif stop_reason == "stage_paused":
@@ -1514,7 +1527,7 @@ def run_arena_game_resumable(
         summary=summary,
         completed_games=len(completed_games),
         completed_pairs=len(pairs),
-        total_games=2 * config.pairs,
+        total_games=2 * active_pairs,
         reason=reason,
         effective_game_lanes=lanes,
         decision_bound=bound,

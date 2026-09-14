@@ -440,6 +440,30 @@ def test_tt_reset_each_move_recreates_both_role_engines(monkeypatch):
     assert len(engine_creations) == 4
 
 
+def test_max_pairs_blocks_pair_one_when_a_lane_frees(monkeypatch, tmp_path):
+    arena_module, compiled, parent, child, config, _openings = _inputs(
+        monkeypatch, pairs=2, workers=2
+    )
+    calls = []
+    monkeypatch.setattr(
+        arena_module,
+        "_play_one_game",
+        lambda *args, **kwargs: calls.append(
+            (kwargs["opening"].index, kwargs["child_owner"])
+        ) or _game(kwargs["opening"].index, kwargs["child_owner"]),
+    )
+    result = run_arena_game_resumable(
+        compiled, None, parent, child, config,
+        progress_dir=tmp_path / "max-pairs",
+        execution_caps=ArenaExecutionCaps(max_concurrent_games=2),
+        max_pairs=1,
+    )
+    assert result.status == "COMPLETE"
+    assert result.completed_games == 2
+    assert result.total_games == 2
+    assert calls == [(0, 0), (0, 1)]
+
+
 def test_game_progress_rejects_wrong_owner_or_stale_identity(monkeypatch, tmp_path):
     arena_module, compiled, parent, child, config, _openings = _inputs(
         monkeypatch, pairs=1

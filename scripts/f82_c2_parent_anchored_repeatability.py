@@ -304,7 +304,7 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
         # Preserve the v2 progress identity and stop before scheduling pair 1
         # once the first role-swapped pair is atomically complete.
         return all((ARENA2_PROGRESS / f"game-000000-owner-{owner}.json").is_file() for owner in (0, 1))
-    run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=ARENA2_PROGRESS, openings=openings, capture_search_metrics=True, caps=caps, identity_caps=identity_caps, stage_id="f82-c2-arena2", pause_requested=pause_after_first_pair)
+    run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=ARENA2_PROGRESS, openings=openings, capture_search_metrics=True, caps=caps, identity_caps=identity_caps, stage_id="f82-c2-arena2", pause_requested=pause_after_first_pair, max_pairs=1)
     result = {"schema": "generic-chess-f82-c2-arena2-v2", "status": run.status, "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_model_sha256": descriptor["candidate_model_sha256"], "parent_checkpoint_id": PARENT_CHECKPOINT_ID, "allocation_sha256": allocation["allocation_sha256"], "corpus_id": openings.corpus_id, "config": asdict(config), "execution_caps": asdict(caps), "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "reason": run.reason}
     _atomic_json(ARENA2_RESULT_PATH, result)
     return result

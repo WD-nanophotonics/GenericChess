@@ -88,6 +88,7 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
 
     def fake_runner(compiled, native, parent, candidate, config, **kwargs):
         captured.update(config=config, caps=kwargs["caps"], identity_caps=kwargs["identity_caps"], openings=kwargs["openings"], stage_id=kwargs["stage_id"], pause_requested=kwargs["pause_requested"])
+        captured["max_pairs"] = kwargs["max_pairs"]
         return SimpleNamespace(status="COMPLETE", completed_games=4, completed_pairs=2, total_games=4, reason=None)
 
     monkeypatch.setattr(c2, "run_arena_game_resumable", fake_runner)
@@ -102,6 +103,7 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     assert captured["config"].max_depth == 12
     assert captured["config"].workers == 2
     assert captured["config"].tt_reset_each_move is True
+    assert captured["max_pairs"] == 1
     assert captured["caps"].per_game_nodes == 262144
     assert captured["caps"].per_game_plies == 512
     assert captured["caps"].per_game_wall_seconds == 7200
