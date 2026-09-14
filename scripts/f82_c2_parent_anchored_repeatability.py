@@ -7,7 +7,7 @@ workflow can bind a versioned compute plan before Heavy is authorized.
 
 from __future__ import annotations
 
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import argparse
 import hashlib
 import json
@@ -310,12 +310,128 @@ def run_arena2(allocation: dict, artifact_path: Path = CANDIDATE_ARTIFACT) -> di
     return result
 
 
+def _registered_arena2_opening(allocation: dict, compiled, opening_index: int):
+    """Select one exact member of the registered Arena2 corpus.
+
+    The game-level runner numbers a local one-pair corpus from zero.  The
+    selected opening is therefore reindexed only for this isolated run while
+    preserving every registered action, seed, target ply, and final key.
+    """
+    corpus_payload = allocation["selection_and_strength_corpora"]["Arena2"]
+    registered = ArenaOpeningCorpus.from_dict(corpus_payload["corpus"])
+    registered.validate(compiled)
+    if registered.corpus_id != corpus_payload["corpus_id"]:
+        raise RuntimeError("Arena2 corpus identity mismatch")
+    if not 0 <= opening_index < len(registered.openings):
+        raise ValueError(
+            f"opening_index must be in [0, {len(registered.openings) - 1}]"
+        )
+    source = registered.openings[opening_index]
+    local = replace(source, index=0)
+    return registered, source, replace(registered, openings=(local,))
+
+
+def run_arena2_registered_pair(
+    allocation: dict,
+    artifact_path: Path = CANDIDATE_ARTIFACT,
+    *,
+    opening_index: int,
+    progress_dir: Path,
+    result_path: Path,
+) -> dict:
+    """Run one isolated role-swapped pair from the registered Arena2 corpus."""
+    artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+    descriptor_path = ROOT / artifact.get("candidate_descriptor_path", "")
+    if not descriptor_path.is_file():
+        raise RuntimeError("verified candidate descriptor is missing")
+    descriptor = json.loads(descriptor_path.read_text(encoding="utf-8"))
+    if stable_sha256({k: v for k, v in descriptor.items() if k != "descriptor_sha256"}) != descriptor.get("descriptor_sha256"):
+        raise RuntimeError("candidate descriptor hash mismatch")
+    compiled, native, _profile = f50._ruleset(LABEL)
+    parent, _parent_descriptor = _parent(compiled)
+    candidate = LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
+    candidate.validate_ruleset(compiled)
+    registered, source, openings = _registered_arena2_opening(
+        allocation, compiled, opening_index
+    )
+    config = ArenaConfig(
+        pairs=1,
+        nodes_per_move=NODES,
+        parent_nodes_per_move=NODES,
+        child_nodes_per_move=NODES,
+        max_depth=MAX_DEPTH,
+        tt_megabytes=TT_MEGABYTES,
+        opening_seed=registered.seed,
+        opening_count=1,
+        min_plies=registered.min_plies,
+        max_plies=registered.max_plies,
+        workers=2,
+        tt_reset_each_move=True,
+    )
+    caps = ArenaExecutionCaps(
+        per_game_wall_seconds=ARENA2_PER_GAME_WALL_SECONDS,
+        per_game_nodes=262144,
+        per_game_plies=512,
+        max_stage_games=2,
+        max_concurrent_games=2,
+        stage_wall_seconds=ARENA2_STAGE_WALL_SECONDS,
+        logical_cpu_count=4,
+    )
+    identity_caps = ArenaExecutionCaps(
+        per_game_wall_seconds=3600,
+        per_game_nodes=262144,
+        per_game_plies=512,
+        max_stage_games=2,
+        max_concurrent_games=2,
+        stage_wall_seconds=3600,
+        logical_cpu_count=4,
+    )
+    run = run_arena_game_resumable(
+        compiled, native, parent, candidate, config,
+        progress_dir=progress_dir,
+        openings=openings,
+        capture_search_metrics=True,
+        caps=caps,
+        identity_caps=identity_caps,
+        stage_id="f82-c2-arena2-next-scorable",
+        max_pairs=1,
+    )
+    summary = run.summary
+    result = {
+        "schema": "generic-chess-f82-c2-arena2-registered-pair-v1",
+        "status": run.status,
+        "reason": run.reason,
+        "completed_games": run.completed_games,
+        "completed_pairs": run.completed_pairs,
+        "total_games": run.total_games,
+        "registered_corpus_id": registered.corpus_id,
+        "opening_index": source.index,
+        "opening_final_position_key": source.final_position_key,
+        "config": asdict(config),
+        "execution_caps": asdict(caps),
+        "summary": None if summary is None else {
+            "pair_count": summary.pair_count,
+            "pair_scores": list(summary.pair_scores),
+            "mean_pair_score": summary.mean_pair_score,
+            "game_wins": summary.game_wins,
+            "game_draws": summary.game_draws,
+            "game_losses": summary.game_losses,
+        },
+    }
+    _atomic_json(result_path, result)
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--precompute-only", action="store_true")
     parser.add_argument("--run-c2", action="store_true")
     parser.add_argument("--materialize-candidate", action="store_true")
     parser.add_argument("--run-arena2", action="store_true")
+    parser.add_argument("--run-arena2-opening", action="store_true")
+    parser.add_argument("--opening-index", type=int)
+    parser.add_argument("--progress-dir", type=Path)
+    parser.add_argument("--result-path", type=Path)
     parser.add_argument("--candidate-artifact", type=Path, default=CANDIDATE_ARTIFACT)
     parser.add_argument("--allocation", type=Path, default=ALLOCATION_PATH)
     args = parser.parse_args()
@@ -327,6 +443,17 @@ def main() -> None:
         return
     if args.run_arena2:
         print(json.dumps(run_arena2(allocation, args.candidate_artifact), sort_keys=True), flush=True)
+        return
+    if args.run_arena2_opening:
+        if args.opening_index is None or args.progress_dir is None or args.result_path is None:
+            parser.error("--run-arena2-opening requires --opening-index, --progress-dir, and --result-path")
+        print(json.dumps(run_arena2_registered_pair(
+            allocation,
+            args.candidate_artifact,
+            opening_index=args.opening_index,
+            progress_dir=args.progress_dir,
+            result_path=args.result_path,
+        ), sort_keys=True), flush=True)
         return
     if args.run_c2:
         result = run_fit_and_write_result(allocation)

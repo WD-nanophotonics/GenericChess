@@ -117,3 +117,64 @@ def test_arena2_uses_only_registered_corpus_and_exact_caps(monkeypatch, tmp_path
     assert len(captured["openings"].openings) == 2
     assert captured["openings"].corpus_id == allocation["selection_and_strength_corpora"]["Arena2"]["corpus_id"]
     assert artifact["candidate_descriptor_path"]
+
+
+def test_registered_arena2_opening_selection_preserves_member_identity(monkeypatch):
+    allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
+    fingerprint = allocation["selection_and_strength_corpora"]["Arena2"]["corpus"]["ruleset_fingerprint"]
+    monkeypatch.setattr(c2.ArenaOpeningCorpus, "validate", lambda *_args: None)
+    registered, source, local = c2._registered_arena2_opening(
+        allocation, SimpleNamespace(ruleset_fingerprint=fingerprint), 0
+    )
+    assert registered.openings[0] == source
+    assert local.openings[0].index == 0
+    assert local.openings[0].actions == source.actions
+    assert local.openings[0].opening_seed == source.opening_seed
+    assert local.openings[0].target_plies == source.target_plies
+    assert local.openings[0].final_position_key == source.final_position_key
+
+
+def test_registered_arena2_pair_uses_exact_member_and_one_pair_caps(monkeypatch, tmp_path):
+    allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
+    artifact = ROOT / "artifacts/f82_c2_repeatability/c2_candidate_result.json"
+    captured = {}
+
+    def fake_runner(compiled, native, parent, candidate, config, **kwargs):
+        captured.update(config=config, kwargs=kwargs)
+        return SimpleNamespace(
+            status="COMPLETE", reason=None, completed_games=2,
+            completed_pairs=1, total_games=2, summary=None,
+        )
+
+    monkeypatch.setattr(c2, "run_arena_game_resumable", fake_runner)
+    result = c2.run_arena2_registered_pair(
+        allocation, artifact, opening_index=1,
+        progress_dir=tmp_path / "progress", result_path=tmp_path / "result.json",
+    )
+    registered_payload = allocation["selection_and_strength_corpora"]["Arena2"]["corpus"]
+    source = registered_payload["openings"][1]
+    opening = captured["kwargs"]["openings"].openings[0]
+    assert result["opening_index"] == 1
+    assert result["registered_corpus_id"] == allocation["selection_and_strength_corpora"]["Arena2"]["corpus_id"]
+    assert opening.index == 0
+    assert opening.opening_seed == source["opening_seed"]
+    assert len(opening.actions) == len(source["actions"])
+    assert opening.final_position_key == source["final_position_key"]
+    assert captured["config"].pairs == 1
+    assert captured["config"].nodes_per_move == 512
+    assert captured["config"].max_depth == 12
+    assert captured["config"].workers == 2
+    assert captured["config"].tt_reset_each_move is True
+    assert captured["kwargs"]["max_pairs"] == 1
+    assert captured["kwargs"]["caps"].max_stage_games == 2
+    assert captured["kwargs"]["caps"].max_concurrent_games == 2
+
+
+def test_registered_arena2_opening_index_is_bounds_checked(monkeypatch):
+    allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
+    fingerprint = allocation["selection_and_strength_corpora"]["Arena2"]["corpus"]["ruleset_fingerprint"]
+    monkeypatch.setattr(c2.ArenaOpeningCorpus, "validate", lambda *_args: None)
+    with pytest.raises(ValueError, match="opening_index"):
+        c2._registered_arena2_opening(
+            allocation, SimpleNamespace(ruleset_fingerprint=fingerprint), 2
+        )
