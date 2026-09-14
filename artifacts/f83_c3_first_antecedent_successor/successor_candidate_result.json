@@ -1,0 +1,70 @@
+{
+  "antecedent_root_id": "c1_on_policy-a-01",
+  "candidate_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+  "candidate_descriptor_path": "artifacts/f83_c3_first_antecedent_successor/successor_candidate_descriptor.json",
+  "candidate_descriptor_sha256": "57ffbd4ac8c72675f51919e013a7fcb96cc511356ca329fa3f05b297e8cd92fc",
+  "candidate_model_sha256": "86f1a9ded05e8d6b8a08b20cf4e97d5c9914fa4026fb7e170247ac7881ac61f7",
+  "chosen_alpha": 1.0,
+  "parent_checkpoint_id": "86f026ef85d60e600bc1bd6bc7b7285f11e5ce7e6528911b2ea361a489dc5983",
+  "parent_model_sha256": "b2308bea76ba55a533b95036f9b0ca37265c15d772ce5fbd14f7b6b098677e95",
+  "parent_top_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,1]}",
+  "schema": "generic-chess-f83-c3-first-antecedent-successor-v1",
+  "selection": {
+    "attempts": [
+      {
+        "alpha": 1.0,
+        "pairwise_objective": 0.0,
+        "safe": true,
+        "target_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+        "top_index": 0,
+        "top_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}"
+      },
+      {
+        "alpha": 0.5,
+        "pairwise_objective": 0.0,
+        "safe": true,
+        "target_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+        "top_index": 0,
+        "top_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}"
+      },
+      {
+        "alpha": 0.25,
+        "pairwise_objective": 2.3630298272385774e-58,
+        "safe": true,
+        "target_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+        "top_index": 0,
+        "top_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}"
+      },
+      {
+        "alpha": 0.125,
+        "pairwise_objective": 75.88475070289981,
+        "safe": false,
+        "target_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+        "top_index": 6,
+        "top_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,1]}"
+      },
+      {
+        "alpha": 0.0625,
+        "pairwise_objective": 127.68805311055985,
+        "safe": false,
+        "target_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+        "top_index": 6,
+        "top_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,1]}"
+      },
+      {
+        "alpha": 0.03125,
+        "pairwise_objective": 154.3407657095037,
+        "safe": false,
+        "target_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+        "top_index": 6,
+        "top_key": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g24\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_034\",\"promotion_target_id\":null,\"to\":[4,1]}"
+      }
+    ],
+    "behavior_changed": true
+  },
+  "status": "SUCCESSOR_READY_FOR_APPROVED_ARENA",
+  "target_action_key": "{\"actor_type_id\":\"N\",\"from\":[7,0],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_022\",\"promotion_target_id\":null,\"to\":[6,2]}",
+  "teacher_evidence_sha256": "c0a5e69f5d3345bbf4ab699d67b14b0fcbad745003ca17ac5beec3a1f4fbb4c2",
+  "training_config_hash": "a8111e63db1efb5d08bffef33f582c4062854d6dfee5f58eed82df9f20bf005e",
+  "work_order": "GENERICCHESS-F83-C3-FIRST-TEACHER-DISAGREED-ANTECEDENT"
+}
