@@ -1,0 +1,66 @@
+{
+  "allocation_sha256": "f0de3d7175da6e5551457d0669e7efd87dc8f0dad446f6b956c1482b8b2a364e",
+  "candidate_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+  "candidate_checkpoint_ref": {
+    "path": "checkpoints/f86_compact_checkpoint.json",
+    "variant": "candidate"
+  },
+  "candidate_max_abs_residual": 19907.041904312668,
+  "candidate_model_sha256": "5eaf7c672c882fd26a124df48fd77cecbb630d50ea1970bd37eb446cfd6e336f",
+  "descriptor_sha256": "9d4e6a993a391283f657d775d1e39ed55761c328e07ec0d0f196e7ea95039fb5",
+  "objective_after": 11.7279282253657,
+  "objective_before": 395.79037498687774,
+  "optimizer": {
+    "hidden_bias_delta_norm": 0.19108697972526312,
+    "hidden_weights_delta_norm": 3.2930527925744686,
+    "learning_rate": 0.001,
+    "objective_before": 395.79037498687774,
+    "output_weights_delta_norm": 0.16685891668166958,
+    "proximal_coefficient": 0.001,
+    "raw_pairwise_objective": 11.7279282253657,
+    "raw_parameter_delta_sha256": "710a150c77df00fb3bfe8bcbcc6e6736e4763137b6749bdb4c1af0a65c3b319b",
+    "raw_proximal_term": 0.010908552826579192,
+    "raw_total_objective": 11.73883677819228,
+    "steps": 100
+  },
+  "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+  "parent_max_abs_residual": 20484.41703912475,
+  "parent_model_sha256": "86f1a9ded05e8d6b8a08b20cf4e97d5c9914fa4026fb7e170247ac7881ac61f7",
+  "schema": "generic-chess-f87-two-trajectory-descriptor-v2",
+  "selfplay_configs": [
+    {
+      "epsilon": 0.0,
+      "games": 1,
+      "max_depth": 12,
+      "max_plies": 64,
+      "nodes_per_move": 512,
+      "seed": 870401,
+      "tt_megabytes": 8
+    },
+    {
+      "epsilon": 0.0,
+      "games": 1,
+      "max_depth": 12,
+      "max_plies": 64,
+      "nodes_per_move": 512,
+      "seed": 870402,
+      "tt_megabytes": 8
+    }
+  ],
+  "training_config_hash": "843a2b5e516b0d70bb7daf3a4fad61d823cc038dbdf7039272cbc6cfe50a9353",
+  "trajectories": [
+    {
+      "action_row_count": 2964,
+      "root_count": 64,
+      "seed": 870401,
+      "trajectory_id": "6d1d67ceeab7870166b79eb2b1ec77f0a7e5a1fe371ce6cf21f2c9c6bd703a95"
+    },
+    {
+      "action_row_count": 2964,
+      "root_count": 64,
+      "seed": 870402,
+      "trajectory_id": "5e89c4fb4b425a318f4f61147cb7a755f2726b268eefb5fd1079a57bb3d8d0ca"
+    }
+  ],
+  "work_order": "GENERICCHESS_F87_TWO_TRAJECTORY_NATIVE_SEARCH_DISTILLATION"
+}
