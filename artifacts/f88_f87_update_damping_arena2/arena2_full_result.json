@@ -32,7 +32,51 @@
         "per_game_wall_seconds": 7200,
         "stage_wall_seconds": 14400
       },
-      "games": [],
+      "games": [
+        {
+          "child_owner": 0,
+          "completed": true,
+          "opening_id": "cc9cd5a36fda11f858d126a73d62bec45086019494c941e42baab3f500fd4b34",
+          "pair": 0,
+          "plies": 91,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 0
+        },
+        {
+          "child_owner": 1,
+          "completed": true,
+          "opening_id": "cc9cd5a36fda11f858d126a73d62bec45086019494c941e42baab3f500fd4b34",
+          "pair": 0,
+          "plies": 180,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 1
+        },
+        {
+          "child_owner": 1,
+          "completed": true,
+          "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
+          "pair": 1,
+          "plies": 210,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 1
+        },
+        {
+          "child_owner": 0,
+          "completed": false,
+          "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
+          "pair": 1,
+          "plies": 204,
+          "result": null,
+          "searched_nodes": 104448,
+          "status": "partial",
+          "truncated": true,
+          "truncation_reason": "per_game_wall_seconds",
+          "winner": null
+        }
+      ],
       "opening_indices": [
         0,
         1
