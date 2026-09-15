@@ -15,7 +15,13 @@ sys.path.insert(0, str(ROOT))
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.actions import action_to_dict
 from generic_chess.core.identity import position_identity_key
-from generic_chess.learning.arena import ArenaConfig, ArenaExecutionCaps, ArenaOpeningCorpus, run_arena_game_resumable
+from generic_chess.learning.arena import (
+    ArenaConfig,
+    ArenaExecutionCaps,
+    ArenaExecutionError,
+    ArenaOpeningCorpus,
+    run_arena_game_resumable,
+)
 from generic_chess.learning.features import linear_value, material_features
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.learning.nonlinear import CompactNonlinearResidual, semantic_state_features
@@ -104,7 +110,9 @@ def build() -> dict:
     return result
 
 
-def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: Path) -> dict:
+def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: Path, stage_wall_seconds: int = 7200) -> dict:
+    if stage_wall_seconds <= 0:
+        raise ValueError("stage_wall_seconds must be positive")
     allocation, compiled, native, parent = _load_parent()
     descriptor = json.loads(DESCRIPTOR.read_text(encoding="utf-8"))
     candidate = LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
@@ -115,10 +123,50 @@ def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: P
     source = registered.openings[opening_index]
     openings = replace(registered, openings=(replace(source, index=0),))
     config = ArenaConfig(pairs=1, nodes_per_move=512, parent_nodes_per_move=512, child_nodes_per_move=512, max_depth=12, tt_megabytes=8, opening_seed=registered.seed, opening_count=1, min_plies=registered.min_plies, max_plies=registered.max_plies, workers=2, tt_reset_each_move=True)
-    caps = ArenaExecutionCaps(per_game_wall_seconds=7200, per_game_nodes=262144, per_game_plies=512, max_stage_games=2, max_concurrent_games=2, stage_wall_seconds=7200, logical_cpu_count=4)
-    run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=progress_dir, openings=openings, capture_search_metrics=True, caps=caps, identity_caps=caps, stage_id="f86-native-search-distillation-arena4", max_pairs=1)
+    caps = ArenaExecutionCaps(per_game_wall_seconds=7200, per_game_nodes=262144, per_game_plies=512, max_stage_games=2, max_concurrent_games=2, stage_wall_seconds=stage_wall_seconds, logical_cpu_count=4)
+    stage_id = "f86-native-search-distillation-arena4"
+    identity_caps = caps
+    execution_progress_dir = progress_dir
+    legacy_manifest = progress_dir / "manifest.json"
+    if stage_wall_seconds != 7200:
+        # The prior F86 manifest is immutable identity evidence.  Try it with
+        # its original 7200s identity cap while applying the new execution
+        # cap; an identity failure falls back to a fresh, deterministic tree.
+        if legacy_manifest.is_file():
+            identity_caps = replace(caps, stage_wall_seconds=7200)
+            try:
+                run = run_arena_game_resumable(
+                    compiled, native, parent, candidate, config,
+                    progress_dir=execution_progress_dir, openings=openings,
+                    capture_search_metrics=True, execution_caps=caps,
+                    identity_caps=identity_caps, stage_id=stage_id, max_pairs=1,
+                )
+            except ArenaExecutionError:
+                execution_progress_dir = progress_dir.parent / "f86r1-stage-b-arena4" / "progress"
+                identity_caps = caps
+                run = run_arena_game_resumable(
+                    compiled, native, parent, candidate, config,
+                    progress_dir=execution_progress_dir, openings=openings,
+                    capture_search_metrics=True, execution_caps=caps,
+                    identity_caps=identity_caps, stage_id=stage_id, max_pairs=1,
+                )
+        else:
+            execution_progress_dir = progress_dir.parent / "f86r1-stage-b-arena4" / "progress"
+            run = run_arena_game_resumable(
+                compiled, native, parent, candidate, config,
+                progress_dir=execution_progress_dir, openings=openings,
+                capture_search_metrics=True, execution_caps=caps,
+                identity_caps=identity_caps, stage_id=stage_id, max_pairs=1,
+            )
+    else:
+        run = run_arena_game_resumable(
+            compiled, native, parent, candidate, config,
+            progress_dir=execution_progress_dir, openings=openings,
+            capture_search_metrics=True, execution_caps=caps,
+            identity_caps=identity_caps, stage_id=stage_id, max_pairs=1,
+        )
     summary = run.summary
-    output = {"schema": "generic-chess-f86-native-search-distillation-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "registered_corpus_id": registered.corpus_id, "opening_index": source.index, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
+    output = {"schema": "generic-chess-f86-native-search-distillation-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "registered_corpus_id": registered.corpus_id, "opening_index": source.index, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "progress_dir": str(execution_progress_dir.relative_to(ROOT)).replace("\\", "/"), "execution_stage_wall_seconds": stage_wall_seconds, "identity_stage_wall_seconds": identity_caps.stage_wall_seconds, "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
     result_path.parent.mkdir(parents=True, exist_ok=True)
     result_path.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return output
@@ -133,10 +181,11 @@ if __name__ == "__main__":
     parser.add_argument("--progress-dir", type=Path)
     parser.add_argument("--result-path", type=Path)
     parser.add_argument("--stage-result-path", type=Path)
+    parser.add_argument("--stage-wall-seconds", type=int, default=7200)
     args = parser.parse_args()
     if args.arena_only:
         if args.progress_dir is None or args.result_path is None: parser.error("--arena-only requires paths")
-        print(json.dumps(run_arena4_opening(opening_index=args.opening_index, progress_dir=args.progress_dir, result_path=args.result_path), sort_keys=True))
+        print(json.dumps(run_arena4_opening(opening_index=args.opening_index, progress_dir=args.progress_dir, result_path=args.result_path, stage_wall_seconds=args.stage_wall_seconds), sort_keys=True))
     else:
         result = build()
         if args.stage_result_path is not None:
