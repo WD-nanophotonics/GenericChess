@@ -725,6 +725,54 @@ def test_recover_imports_durable_completed_status_without_browser_probe(monkeypa
     assert state["recovery_state"] == "RECOVERED"
 
 
+def test_recover_restores_request_binding_from_pending_escalation(monkeypatch, tmp_path):
+    request_id = "GENERICCHESS-20260915-074503-2ea339bc"
+    request = tmp_path / "outbox" / request_id
+    request.mkdir(parents=True)
+    response = request / "response.txt"
+    response.write_text(
+        "Resume mainline.\nWORK_ORDER_ID=F95\nGENERICCHESS_STATUS=CONTINUE\n"
+        "GENERICCHESS_CANDIDATE_SHA=NONE\nGENERICCHESS_PROMOTION=HOLD\n",
+        encoding="utf-8",
+    )
+    escalation_id = "7" * 20
+    escalation = tmp_path / "runtime" / "escalations" / escalation_id
+    escalation.mkdir(parents=True)
+    (escalation / "dossier.json").write_text(
+        json.dumps({"request_directory": str(request)}), encoding="utf-8"
+    )
+    (escalation / "resolution.json").write_text(
+        json.dumps({"action": "RESUME_WORKER"}), encoding="utf-8"
+    )
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": None,
+        "active_request_id": request_id,
+        "escalation_id": escalation_id,
+    }
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: tmp_path / "runtime")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(
+        flow,
+        "courier",
+        lambda *_args, **_kwargs: {
+            "event": "courier_status",
+            "ok": True,
+            "state": "response_received",
+            "response_path": str(response),
+        },
+    )
+
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="worker"))
+
+    assert state["active_request_directory"] is None
+    assert state["last_work_order_id"] == "F95"
+    assert any(item["event"] == "request_binding_restored"
+               for item in state["recovery_timeline"])
+
+
 def test_escalation_is_idempotent_and_records_thread_identity(monkeypatch, tmp_path):
     sandbox = tmp_path / "sandbox"
     master = tmp_path / "master"

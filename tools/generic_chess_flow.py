@@ -2126,6 +2126,33 @@ def _healthy_chat_contention_wait(state: dict[str, Any], status: dict[str, Any])
     )
 
 
+def _request_directory_from_pending_escalation(root: Path, state: dict[str, Any]) -> str | None:
+    """Recover a request binding cleared by an earlier false-positive import."""
+    escalation_id = state.get("escalation_id")
+    request_id = state.get("active_request_id")
+    if not isinstance(escalation_id, str) or not isinstance(request_id, str):
+        return None
+    directory = escalation_root(root) / escalation_id
+    resolution_path = directory / "resolution.json"
+    if resolution_path.exists():
+        try:
+            resolution = json.loads(resolution_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+        if resolution.get("action") not in {"RESUME_WORKER", "RECOVERED"}:
+            return None
+    try:
+        dossier = json.loads((directory / "dossier.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    candidate = dossier.get("request_directory")
+    if not isinstance(candidate, str) or Path(candidate).name != request_id:
+        return None
+    if not Path(candidate).is_dir():
+        return None
+    return candidate
+
+
 def command_recover(root: Path, args: argparse.Namespace) -> None:
     state = active_state(root)
     require_worker_write_authority(state, root)
@@ -2133,7 +2160,11 @@ def command_recover(root: Path, args: argparse.Namespace) -> None:
         raise FlowError("recover is only available in courier mode")
     directory = state.get("active_request_directory")
     if not isinstance(directory, str) or not directory:
-        raise FlowError("there is no active Courier request to recover")
+        directory = _request_directory_from_pending_escalation(root, state)
+        if directory is None:
+            raise FlowError("there is no active Courier request to recover")
+        state["active_request_directory"] = directory
+        recovery_event(state, "request_binding_restored", request_directory=directory)
     worker_thread_id = getattr(args, "worker_thread_id", None) or os.environ.get("CODEX_THREAD_ID")
     state["worker_thread_id"] = worker_thread_id
     state["recovery_state"] = "RECOVERING"
