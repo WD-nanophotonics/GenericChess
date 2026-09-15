@@ -12,18 +12,17 @@ sys.path.insert(0, str(ROOT))
 
 from generic_chess.learning.arena import ArenaConfig, ArenaExecutionCaps, ArenaOpeningCorpus, run_arena_game_resumable
 from generic_chess.learning.material import LearnableMaterialCheckpoint
+from generic_chess.learning.compact_checkpoint import load_compact_checkpoint
 from generic_chess.learning.selfplay import SelfPlayConfig, collect_self_play
 from generic_chess.learning.serialization import stable_sha256
 from generic_chess.learning.tdleaf import TDLeafConfig, tdleaf_update
-from scripts import f82_c2_parent_anchored_repeatability as c2
+from scripts import f50_generic_learnable_evaluator as f50
 
 
 WORK_ORDER = "F84_NATIVE_SELFPLAY_TDLEAF_SINGLE_UPDATE"
 ALLOCATION = ROOT / "artifacts/f82_c2_repeatability/c2_allocation_manifest.json"
-C2_ARTIFACT = ROOT / "artifacts/f82_c2_repeatability/c2_candidate_result.json"
-F83_RESULT = ROOT / "artifacts/f83_c3_first_antecedent_successor/successor_candidate_result.json"
-F83_DESCRIPTOR = ROOT / "artifacts/f83_c3_first_antecedent_successor/successor_candidate_descriptor.json"
 OUT = ROOT / "artifacts/f84_native_selfplay_tdleaf"
+COMPACT_CHECKPOINT = ROOT / "checkpoints/f86_compact_checkpoint.json"
 DESCRIPTOR = OUT / "successor_candidate_descriptor.json"
 ARTIFACT = OUT / "successor_candidate_result.json"
 SEED = 840401
@@ -31,17 +30,11 @@ SEED = 840401
 
 def _load_parent():
     allocation = json.loads(ALLOCATION.read_text(encoding="utf-8"))
-    _artifact, _descriptor, compiled, native, _c1, _c2_parent = c2._load_verified_arena2_candidate(allocation, C2_ARTIFACT)
-    f83_result = json.loads(F83_RESULT.read_text(encoding="utf-8"))
-    f83_descriptor = json.loads(F83_DESCRIPTOR.read_text(encoding="utf-8"))
-    if stable_sha256({k: v for k, v in f83_descriptor.items() if k != "descriptor_sha256"}) != f83_descriptor["descriptor_sha256"]:
-        raise RuntimeError("F83 parent descriptor hash mismatch")
-    if f83_result["candidate_descriptor_sha256"] != f83_descriptor["descriptor_sha256"]:
-        raise RuntimeError("F83 parent artifact/descriptor mismatch")
-    parent = LearnableMaterialCheckpoint.from_dict(f83_descriptor["candidate_checkpoint"])
+    if not COMPACT_CHECKPOINT.is_file():
+        raise RuntimeError("compact F86 checkpoint is required")
+    compiled, native, _profile = f50._ruleset("B_CANONICAL_STANDARD_SHOGI")
+    parent = load_compact_checkpoint(COMPACT_CHECKPOINT, "parent")
     parent.validate_ruleset(compiled)
-    if parent.checkpoint_id != f83_result["candidate_checkpoint_id"]:
-        raise RuntimeError("F83 parent checkpoint identity mismatch")
     return allocation, compiled, native, parent
 
 
@@ -112,7 +105,12 @@ def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: P
     descriptor = json.loads(DESCRIPTOR.read_text(encoding="utf-8"))
     if stable_sha256({k: v for k, v in descriptor.items() if k != "descriptor_sha256"}) != descriptor["descriptor_sha256"] or result["candidate_descriptor_sha256"] != descriptor["descriptor_sha256"]:
         raise RuntimeError("F84 candidate artifact hash mismatch")
-    candidate = LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
+    candidate_ref = descriptor.get("candidate_checkpoint_ref")
+    candidate = (
+        load_compact_checkpoint(COMPACT_CHECKPOINT, candidate_ref["variant"])
+        if isinstance(candidate_ref, dict) and COMPACT_CHECKPOINT.is_file()
+        else LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
+    )
     candidate.validate_ruleset(compiled)
     if descriptor["parent_checkpoint_id"] != parent.checkpoint_id:
         raise RuntimeError("F84 parent binding mismatch")

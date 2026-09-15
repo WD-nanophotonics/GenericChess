@@ -24,6 +24,7 @@ from generic_chess.learning.arena import (
 )
 from generic_chess.learning.features import linear_value, material_features
 from generic_chess.learning.material import LearnableMaterialCheckpoint
+from generic_chess.learning.compact_checkpoint import load_compact_checkpoint, upsert_compact_checkpoint
 from generic_chess.learning.nonlinear import CompactNonlinearResidual, semantic_state_features
 from generic_chess.learning.selfplay import SelfPlayConfig, collect_self_play
 from generic_chess.learning.serialization import stable_sha256
@@ -41,6 +42,7 @@ WORK_ORDER = "F86_NATIVE_SEARCH_DISTILLATION_NONLINEAR_SINGLE_UPDATE"
 OUT = ROOT / "artifacts/f86_native_search_distillation"
 DESCRIPTOR = OUT / "successor_candidate_descriptor.json"
 ARTIFACT = OUT / "successor_candidate_result.json"
+COMPACT_CHECKPOINT = ROOT / "checkpoints/f86_compact_checkpoint.json"
 SEED = 860401
 
 
@@ -102,7 +104,8 @@ def build() -> dict:
     training_hash = stable_sha256(identity)
     candidate = parent.child_checkpoint(board_weights=parent.board_weights, hand_weights=parent.hand_weights, dynamic_weights=parent.dynamic_weights, spatial_occupancy_weights=parent.spatial_occupancy_weights, localized_control_weights=parent.localized_control_weights, compact_nonlinear=raw_model.to_dict(), games_seen_delta=0, positions_seen_delta=0, training_updates_delta=1, training_config_hash=training_hash, training_seed=None)
     candidate.validate_ruleset(compiled)
-    descriptor = {"schema": "generic-chess-f86-native-search-distillation-descriptor-v1", "work_order": WORK_ORDER, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_checkpoint": candidate.to_dict(), "parent_model_sha256": stable_sha256(parent.compact_nonlinear), "candidate_model_sha256": stable_sha256(candidate.compact_nonlinear), "training_config_hash": training_hash, "selfplay_config": asdict(config), "trajectory_id": trajectory.trajectory_id, "trajectory_terminal": trajectory.terminal, "trajectory_truncated": trajectory.truncated, "trajectory_bootstrap_value": trajectory.bootstrap_value, "training_root_count": len(data), "training_action_row_count": sum(len(row["keys"]) for row in data), "target_action_keys": [row["target_action_key"] for row in data], "optimizer": fit, "objective_before": objective_before, "objective_after": objective_after, "parent_max_abs_residual": float(np.max(np.abs(parent_residual))), "candidate_max_abs_residual": float(np.max(np.abs(candidate_residual))), "allocation_sha256": allocation["allocation_sha256"]}
+    upsert_compact_checkpoint(COMPACT_CHECKPOINT, "candidate", candidate, {"work_order": WORK_ORDER, "parent_checkpoint_id": parent.checkpoint_id})
+    descriptor = {"schema": "generic-chess-f86-native-search-distillation-descriptor-v2", "work_order": WORK_ORDER, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_checkpoint_ref": {"path": "checkpoints/f86_compact_checkpoint.json", "variant": "candidate"}, "parent_model_sha256": stable_sha256(parent.compact_nonlinear), "candidate_model_sha256": stable_sha256(candidate.compact_nonlinear), "training_config_hash": training_hash, "selfplay_config": asdict(config), "trajectory_id": trajectory.trajectory_id, "trajectory_terminal": trajectory.terminal, "trajectory_truncated": trajectory.truncated, "trajectory_bootstrap_value": trajectory.bootstrap_value, "training_root_count": len(data), "training_action_row_count": sum(len(row["keys"]) for row in data), "target_action_keys": [row["target_action_key"] for row in data], "optimizer": fit, "objective_before": objective_before, "objective_after": objective_after, "parent_max_abs_residual": float(np.max(np.abs(parent_residual))), "candidate_max_abs_residual": float(np.max(np.abs(candidate_residual))), "allocation_sha256": allocation["allocation_sha256"]}
     descriptor["descriptor_sha256"] = stable_sha256(descriptor)
     result = {"schema": "generic-chess-f86-native-search-distillation-v1", "status": "SUCCESSOR_READY_FOR_APPROVED_ARENA", "work_order": WORK_ORDER, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "candidate_descriptor_path": str(DESCRIPTOR.relative_to(ROOT)).replace("\\", "/"), "candidate_descriptor_sha256": descriptor["descriptor_sha256"], "training_config_hash": training_hash, "trajectory_id": trajectory.trajectory_id, "trajectory_terminal": trajectory.terminal, "trajectory_truncated": trajectory.truncated, "trajectory_bootstrap_value": trajectory.bootstrap_value, "training_root_count": len(data), "training_action_row_count": sum(len(row["keys"]) for row in data), "objective_before": objective_before, "objective_after": objective_after, "parent_max_abs_residual": descriptor["parent_max_abs_residual"], "candidate_max_abs_residual": descriptor["candidate_max_abs_residual"], "behavior_changed": True}
     OUT.mkdir(parents=True, exist_ok=True)
@@ -116,7 +119,12 @@ def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: P
         raise ValueError("stage_wall_seconds must be positive")
     allocation, compiled, native, parent = _load_parent()
     descriptor = json.loads(DESCRIPTOR.read_text(encoding="utf-8"))
-    candidate = LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
+    candidate_ref = descriptor.get("candidate_checkpoint_ref")
+    candidate = (
+        load_compact_checkpoint(COMPACT_CHECKPOINT, candidate_ref["variant"])
+        if isinstance(candidate_ref, dict) and COMPACT_CHECKPOINT.is_file()
+        else LearnableMaterialCheckpoint.from_dict(descriptor["candidate_checkpoint"])
+    )
     candidate.validate_ruleset(compiled)
     payload = allocation["selection_and_strength_corpora"]["Arena4"]
     registered = ArenaOpeningCorpus.from_dict(payload["corpus"])
