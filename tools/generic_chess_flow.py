@@ -55,6 +55,18 @@ class FlowError(RuntimeError):
     pass
 
 
+def repo_relative_path(root: Path, path: str | Path) -> str:
+    """Return a repository-relative POSIX path, rejecting paths outside root."""
+    repository = Path(root).resolve()
+    candidate = Path(path)
+    if not candidate.is_absolute():
+        candidate = repository / candidate
+    try:
+        return candidate.resolve().relative_to(repository).as_posix()
+    except ValueError as exc:
+        raise FlowError(f"path is outside the repository: {path}") from exc
+
+
 def _read_json_file(path: Path, label: str) -> Any:
     try:
         value = json.loads(path.read_text(encoding="utf-8-sig"))
@@ -176,7 +188,33 @@ def _load_compute_plan(root: Path, path_value: str | Path) -> tuple[dict[str, An
     if not all(isinstance(part, str) and part for part in plan["command_argv"]):
         raise FlowError("compute plan command_argv is invalid")
     _validate_resource_envelope(plan["resource_envelope"])
-    return plan, _file_digest(path)
+    # Versioned plans use a canonical JSON digest so formatting changes cannot
+    # alter the authority binding. Version-1 approvals retain byte-digest use.
+    plan_sha = _json_digest(plan) if plan["version"] >= 2 else _file_digest(path)
+    return plan, plan_sha
+
+
+def _canonical_argv(root: Path, argv: Sequence[str]) -> list[str]:
+    canonical: list[str] = []
+    for part in argv:
+        normalized = part.replace("\\", "/")
+        if "://" in normalized:
+            canonical.append(part)
+            continue
+        candidate = Path(part)
+        explicit_path = (
+            candidate.is_absolute()
+            or part.startswith(("./", "../", ".\\", "..\\"))
+            or (Path(root) / candidate).exists()
+        )
+        if not explicit_path:
+            canonical.append(part)
+            continue
+        try:
+            canonical.append(repo_relative_path(root, part))
+        except FlowError:
+            canonical.append(normalized)
+    return canonical
 
 
 def _compute_approval_path(root: Path, plan_id: str) -> Path:
@@ -198,7 +236,7 @@ def _validate_compute_approval(root: Path, plan: dict[str, Any], plan_sha: str,
         raise FlowError("large compute requires a valid Supervisor approval")
     approval = _read_json_file(path, "compute approval")
     required = {
-        "schema", "plan_id", "plan_sha256", "sandbox_sha", "envelope_sha256",
+        "schema", "plan_id", "plan_sha256", "sandbox_sha",
         "chat_response_sha256", "supervisor_thread_id", "approved_at", "revoked",
     }
     if approval.get("schema") != COMPUTE_APPROVAL_SCHEMA or not required.issubset(approval):
@@ -210,7 +248,6 @@ def _validate_compute_approval(root: Path, plan: dict[str, Any], plan_sha: str,
         approval["plan_id"] != plan["plan_id"]
         or approval["plan_sha256"] != plan_sha
         or approval["sandbox_sha"] != sha(root)
-        or approval["envelope_sha256"] != envelope_sha
         or approval["supervisor_thread_id"] != _supervisor_config(root).get("supervisor_thread_id")
         or approval["chat_response_sha256"] != state.get("last_response_sha256")
         or state.get("last_response_source") != "normal"
@@ -219,8 +256,13 @@ def _validate_compute_approval(root: Path, plan: dict[str, Any], plan_sha: str,
     control = state.get("chat_control", {})
     if control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") != "APPROVE":
         raise FlowError("Chat has not approved this exact compute plan")
+    if approval.get("approval_version", 1) >= 2:
+        return approval
+    if approval.get("envelope_sha256") != envelope_sha:
+        raise FlowError("compute approval is not bound to the plan envelope")
     if approval.get("binding_mode", "legacy_chat_file") == "local_pending" and (
-        approval.get("command_argv") != plan["command_argv"]
+        _canonical_argv(root, approval.get("command_argv", []))
+        != _canonical_argv(root, plan["command_argv"])
     ):
         raise FlowError("compute approval is not bound to the plan command")
     if approval.get("binding_mode", "legacy_chat_file") != "local_pending" and (
@@ -293,21 +335,23 @@ def _enforce_large_compute_quota(root: Path, envelope: dict[str, Any], state: di
 def _enforce_compute_gate(root: Path, args: argparse.Namespace,
                           command: list[str] | None = None) -> dict[str, Any]:
     envelope_path = getattr(args, "resource_envelope", None)
-    if not envelope_path:
-        raise FlowError("heavy requires an explicit --resource-envelope declaration")
-    envelope, envelope_sha = _load_resource_envelope(envelope_path)
     plan_path = getattr(args, "compute_plan", None)
     plan = None
     plan_sha = None
     if plan_path:
         plan, plan_sha = _load_compute_plan(root, plan_path)
-        if plan["resource_envelope"] != envelope:
-            raise FlowError("compute plan envelope differs from the run declaration")
+    if plan is not None:
+        envelope = _validate_resource_envelope(plan["resource_envelope"])
+        envelope_sha = _json_digest(envelope)
+    elif envelope_path:
+        envelope, envelope_sha = _load_resource_envelope(envelope_path)
+    else:
+        raise FlowError("heavy requires an explicit --resource-envelope or --compute-plan declaration")
     large = _compute_is_large(envelope)
     if large:
         if plan is None or plan_sha is None:
             raise FlowError("large compute requires an explicit versioned --compute-plan")
-        if command is not None and plan["command_argv"] != command:
+        if command is not None and _canonical_argv(root, plan["command_argv"]) != _canonical_argv(root, command):
             raise FlowError("compute plan command/stage/budget identity differs from the run")
         _validate_compute_approval(root, plan, plan_sha, envelope_sha)
     elif plan is not None:
@@ -875,7 +919,7 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
 
 def chat_message_body(root: Path, source: Path, *, reference_only: bool = False) -> str:
     body = source.read_text(encoding="utf-8-sig")
-    if not reference_only and len(body.encode("utf-8")) <= INLINE_CHAT_REFERENCE_THRESHOLD:
+    if len(body.encode("utf-8")) <= INLINE_CHAT_REFERENCE_THRESHOLD:
         return body
     sandbox = sandbox_root(root).resolve()
     resolved = source.resolve()
@@ -913,7 +957,13 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
     sandbox = sandbox_root(root)
     require_clean(sandbox)
     require_synced(sandbox, "sandbox")
-    body = chat_message_body(root, source, reference_only=purpose in {"closeout", "blocker"})
+    report_size = source.stat().st_size
+    if purpose in {"closeout", "blocker"} and report_size > INLINE_CHAT_REFERENCE_THRESHOLD and not attachments:
+        raise FlowError("closeout/blocker exceeds 24 KiB; provide a concise summary or an explicit attachment")
+    body = chat_message_body(
+        root, source,
+        reference_only=purpose in {"closeout", "blocker"} and report_size > INLINE_CHAT_REFERENCE_THRESHOLD,
+    )
     digest = hashlib.sha256(body.encode("utf-8")).hexdigest()
     key = f"{purpose}-{sha(sandbox)[:12]}-{digest[:12]}"
     generated = runtime_dir(root) / f"{key}.txt"
@@ -1152,16 +1202,15 @@ def command_compute_plan_approve(root: Path, args: argparse.Namespace) -> int:
     path = _compute_approval_path(root, plan["plan_id"])
     record = {
         "schema": COMPUTE_APPROVAL_SCHEMA,
+        "approval_version": 2,
         "plan_id": plan["plan_id"],
         "plan_sha256": plan_sha,
         "sandbox_sha": sha(root),
-        "envelope_sha256": envelope_sha,
         "chat_response_sha256": chat["chat_response_sha256"],
         "supervisor_thread_id": _supervisor_config(root).get("supervisor_thread_id"),
         "approved_at": time.time(),
         "revoked": False,
-        "binding_mode": "local_pending" if chat_approval_file is None else "legacy_chat_file",
-        "command_argv": plan["command_argv"],
+        "binding_mode": "canonical_plan",
     }
     if path.exists():
         previous = _read_json_file(path, "compute approval")
@@ -1456,14 +1505,20 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
     require_no_supervisor_hold(root)
     if branch(root) != "sandbox":
         raise FlowError("heavy-start must be run from the sandbox worktree")
-    label = args.label
-    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", label):
-        raise FlowError("invalid heavy label")
     command = list(args.argv)
     if command and command[0] == "--":
         command.pop(0)
+    plan_path = getattr(args, "compute_plan", None)
+    plan = None
+    if plan_path:
+        plan, _plan_sha = _load_compute_plan(root, plan_path)
+        if not command:
+            command = list(plan["command_argv"])
     if not command:
-        raise FlowError("heavy-start requires a command after --")
+        raise FlowError("heavy-start requires --compute-plan or a command after --")
+    label = args.label or (plan["plan_id"] if plan is not None else None)
+    if not isinstance(label, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", label):
+        raise FlowError("invalid heavy label")
     compute_metadata = _enforce_compute_gate(root, args, command)
     run_id = f"{label}-{uuid.uuid4().hex[:12]}"
     run_dir = _heavy_run_dir(root, run_id)
@@ -2717,8 +2772,8 @@ def parser() -> argparse.ArgumentParser:
     heavy.add_argument("argv", nargs=argparse.REMAINDER)
     heavy.set_defaults(handler=command_heavy)
     heavy_start = sub.add_parser("heavy-start")
-    heavy_start.add_argument("--label", required=True)
-    heavy_start.add_argument("--resource-envelope", required=True)
+    heavy_start.add_argument("--label")
+    heavy_start.add_argument("--resource-envelope")
     heavy_start.add_argument("--compute-plan")
     heavy_start.add_argument("argv", nargs=argparse.REMAINDER)
     heavy_start.set_defaults(handler=command_heavy_start)

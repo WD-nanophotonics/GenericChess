@@ -51,6 +51,16 @@ GENERICCHESS_CANDIDATE_SHA=0123456789abcdef0123456789abcdef01234567
     }
 
 
+def test_repo_relative_path_accepts_relative_absolute_and_rejects_escape(tmp_path):
+    inside = tmp_path / "nested" / "result.json"
+    inside.parent.mkdir()
+    inside.write_text("{}", encoding="utf-8")
+    assert flow.repo_relative_path(tmp_path, "nested/result.json") == "nested/result.json"
+    assert flow.repo_relative_path(tmp_path, inside) == "nested/result.json"
+    with pytest.raises(flow.FlowError, match="outside"):
+        flow.repo_relative_path(tmp_path, tmp_path.parent / "outside.json")
+
+
 @pytest.mark.parametrize(
     ("footer", "expected"),
     [
@@ -1279,7 +1289,7 @@ def _stub_reference_git(monkeypatch, sandbox, *, tracked=True, dirty=False, publ
     monkeypatch.setattr(flow, "sha", lambda _root, ref="HEAD": "a" * 40 if ref == "HEAD" or published else "b" * 40)
 
 
-def test_small_tracked_closeout_is_reference_only(monkeypatch, tmp_path):
+def test_small_closeout_is_inline_even_when_reference_only_requested(monkeypatch, tmp_path):
     sandbox = tmp_path / "sandbox"
     report = sandbox / "report.md"
     sandbox.mkdir()
@@ -1288,10 +1298,7 @@ def test_small_tracked_closeout_is_reference_only(monkeypatch, tmp_path):
 
     body = flow.chat_message_body(tmp_path, report, reference_only=True)
 
-    assert "private blocker details" not in body
-    assert "COMMIT=" + "a" * 40 in body
-    assert "PATH=report.md" in body
-    assert "REPORT_SHA256=" in body
+    assert body == "private blocker details\n"
 
 
 @pytest.mark.parametrize("case", ["untracked", "dirty", "unpublished"])
@@ -1299,13 +1306,13 @@ def test_closeout_rejects_untracked_dirty_or_unpublished_before_browser_dispatch
     sandbox = tmp_path / "sandbox"
     report = sandbox / "report.md"
     sandbox.mkdir()
-    report.write_text("blocker details\n", encoding="utf-8")
+    report.write_text("x" * (flow.INLINE_CHAT_REFERENCE_THRESHOLD + 1), encoding="utf-8")
     _stub_reference_git(monkeypatch, sandbox, tracked=case != "untracked", dirty=case == "dirty", published=case != "unpublished")
     monkeypatch.setattr(flow, "require_clean", lambda _root: None)
     monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
     monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: pytest.fail("browser dispatch must not start"))
 
-    with pytest.raises(flow.FlowError):
+    with pytest.raises(flow.FlowError, match="exceeds 24 KiB"):
         flow.dispatch_message(tmp_path, {"active": True}, report, "closeout")
 
 
@@ -1848,6 +1855,57 @@ def test_heavy_start_uses_detached_hidden_monitor_and_waits_for_handshake(
     assert payload["status"] == "running"
     assert observed["creationflags"] & flow.subprocess.DETACHED_PROCESS
     assert observed["creationflags"] & flow.subprocess.CREATE_NO_WINDOW
+
+
+def test_heavy_start_can_take_command_and_envelope_from_plan(monkeypatch, tmp_path, capsys):
+    _heavy_start_mocks(monkeypatch, tmp_path)
+    monkeypatch.setattr(flow, "sha", lambda *_args, **_kwargs: "a" * 40)
+    plan = {
+        "schema": flow.COMPUTE_PLAN_SCHEMA,
+        "plan_id": "plan-from-source",
+        "version": 1,
+        "sandbox_sha": "a" * 40,
+        "command_argv": [sys.executable, "-c", "pass"],
+        "scientific_decision": "bounded",
+        "why_smaller_evidence_insufficient": "required",
+        "reusable_evidence": ["evidence"],
+        "stages": ["stage"],
+        "resource_envelope": {
+            "schema": flow.COMPUTE_ENVELOPE_SCHEMA, "envelope_id": "plan-envelope",
+            "logical_cpu_count": 2, "intended_cpu_lanes": 1, "expected_wall_minutes": 5,
+            "hard_wall_minutes": 10, "expected_cpu_hours": 0.1, "hard_cpu_hours": 1,
+            "arena_pairs": 1, "maximum_games": 1, "maximum_nodes": 100,
+            "maximum_plies": 10, "maximum_concurrent_games": 1, "stage_count": 1,
+        },
+        "checkpoint_behavior": "retain", "stage_pause_points": ["end"],
+        "early_stop_rules": ["stop"], "failure_exit_path": "retain", "alternatives": ["none"],
+    }
+    plan_path = tmp_path / "plan.json"
+    plan_path.write_text(json.dumps(plan), encoding="utf-8")
+
+    class FakeMonitor:
+        returncode = None
+        def poll(self):
+            return None
+
+    def fake_popen(argv, **kwargs):
+        run_id = argv[-1]
+        state_path = tmp_path / "heavy-runs" / run_id / "state.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state.update({"status": "running", "monitor_pid": 10, "monitor_created_at": 100.0,
+                      "child_pid": 11, "child_created_at": 101.0, "handshake_at": 102.0,
+                      "heartbeat_at": 102.0})
+        flow._atomic_json(state_path, state)
+        return FakeMonitor()
+
+    monkeypatch.setattr(flow.subprocess, "Popen", fake_popen)
+    assert flow.command_heavy_start(
+        tmp_path, SimpleNamespace(label=None, resource_envelope=None,
+                                  compute_plan=str(plan_path), argv=[])
+    ) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["label"] == "plan-from-source"
+    assert payload["status"] == "running"
 
 
 def test_heavy_start_atomically_records_monitor_launch_failure(monkeypatch, tmp_path):

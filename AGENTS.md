@@ -46,10 +46,10 @@ Read `WORKFLOW.md` before changing this repository.
     remote `workflow-state` capsule may run mutating flow commands. Cross-machine
     transfer must use `handoff-release` and `handoff-claim`; never copy runtime
     directories or force-push ownership.
-14. Courier closeout and blocker reports must be tracked in the sandbox and
-    published at the exact synchronized `origin/sandbox` SHA before dispatch.
-    Chat receives only an immutable repository/commit/path/report-SHA reference,
-    including for small reports; start-request bootstrap messages remain inline.
+14. Courier closeout and blocker reports under 24 KiB may be sent inline after
+    normal clean/sync checks. Larger reports require a concise inline summary;
+    explicit attachments retain the existing immutable repository/commit/path
+    evidence rules. Start-request bootstrap messages remain inline.
 15. For evaluator, learning, self-improvement, or playing-strength work, a
     high-capability local reviewer/supervisor must read
     `docs/architecture/GENERICCHESS_THEORY_ROADMAP.md` before redirecting the

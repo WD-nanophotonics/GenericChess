@@ -165,7 +165,10 @@ survive the launching shell or agent turn, and inspect its durable PID-bound
 state and separate logs with `heavy-status`. `publish` applies the same
 single-Heavy rule to pytest automatically.
 
-Every Heavy command requires `--resource-envelope <path>`. The structured
+Every Heavy command requires either `--resource-envelope <path>` or a
+`--compute-plan <path>` whose resource envelope is the single source of truth.
+`heavy-start --compute-plan <path>` may also take its command and label from the
+plan; older explicit envelope/argv forms remain compatible. The structured
 envelope declares expected and hard wall/CPU bounds, games, nodes, plies,
 stages, logical CPUs, and concurrency. Thresholds are centralized in
 `tools/compute_policy.json`; missing estimates are treated as large work.
@@ -211,19 +214,14 @@ irrecoverable active transport request as `USER_SUPERSEDED_REQUEST`. This keeps
 the retired request and dossier as evidence, clears it from the live session,
 and lets the same worker task request fresh work without changing authority mode.
 
-Courier messages are intentionally small. If a report exceeds 24 KiB, place the
-durable, reviewable report inside the repository, commit it, publish that exact
-sandbox SHA, and send only its repository/commit/path reference. An untracked,
-unpublished, or modified large local report is rejected before any browser is
-opened. Raw transient output still stays out of Git; summarize it into a durable
-audit report first.
+Courier messages are intentionally small. Reports under 24 KiB are sent inline;
+larger reports are rejected unless reduced to a concise summary; explicit
+attachments may still use the immutable repository/commit/path evidence rules.
+Raw transient output stays out of Git.
 
-Closeout and blocker details always follow this immutable-reference rule, even
-when the report is small: the report must be tracked inside the sandbox, the
-working tree must be clean, and the exact sandbox HEAD must match
-`origin/sandbox` before browser dispatch. Chat receives only the repository,
-commit, path, and report SHA; the report body is never sent inline. Start
-requests retain their existing inline bootstrap behavior.
+Closeout and blocker reports still run normal clean/sync checks; only explicit
+large attachments use the immutable repository/commit/path evidence rule.
+Start requests retain their existing inline bootstrap behavior.
 
 ## Cross-machine ownership
 

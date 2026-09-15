@@ -99,6 +99,28 @@ def test_resource_declaration_is_required_and_small_runs_pass_through(tmp_path):
     assert flow._compute_is_large(unknown) is True
 
 
+def test_canonical_argv_ignores_repo_path_spelling_but_not_real_changes(tmp_path):
+    script = tmp_path / "scripts" / "runner.py"
+    script.parent.mkdir()
+    script.write_text("", encoding="utf-8")
+    (script.parent / "other.py").write_text("", encoding="utf-8")
+    assert flow._canonical_argv(tmp_path, ["scripts\\runner.py"]) == ["scripts/runner.py"]
+    assert flow._canonical_argv(tmp_path, [str(script)]) == ["scripts/runner.py"]
+    assert flow._canonical_argv(tmp_path, ["scripts\\other.py"]) == ["scripts/other.py"]
+    assert flow._canonical_argv(tmp_path, ["python", "-c", "pass"]) != ["python", "-c", "expanded"]
+
+
+def test_v2_plan_digest_is_canonical_json_not_file_whitespace(tmp_path, monkeypatch):
+    monkeypatch.setattr(flow, "sha", lambda *_args: "a" * 40)
+    plan = _plan(_envelope(large=True))
+    plan["version"] = 2
+    path = tmp_path / "plan.json"
+    path.write_text(json.dumps(plan, indent=4) + "\n", encoding="utf-8")
+    loaded, digest = flow._load_compute_plan(tmp_path, path)
+    assert digest == flow._json_digest(loaded)
+    assert digest != flow._file_digest(path)
+
+
 def test_large_compute_quota_fails_closed_without_local_receipt(tmp_path, monkeypatch):
     runtime, _ = _setup_approval(monkeypatch, tmp_path)
     envelope = _envelope(large=True)
@@ -198,6 +220,8 @@ def test_valid_chat_and_registered_supervisor_approval_is_idempotent(tmp_path, m
     args = SimpleNamespace(plan_file=str(plan_path), chat_approval_file=str(tmp_path / "chat.json"))
     assert flow.command_compute_plan_approve(tmp_path, args) == 0
     first = json.loads((runtime / "compute-approvals" / "plan-f63-r1.json").read_text())
+    assert first["approval_version"] == 2
+    assert "envelope_sha256" not in first and "command_argv" not in first
     assert flow.command_compute_plan_approve(tmp_path, args) == 0
     second = json.loads((runtime / "compute-approvals" / "plan-f63-r1.json").read_text())
     assert first == second
@@ -205,6 +229,34 @@ def test_valid_chat_and_registered_supervisor_approval_is_idempotent(tmp_path, m
         tmp_path, SimpleNamespace(resource_envelope=str(envelope_path), compute_plan=str(plan_path))
     )
     assert metadata["compute_size"] == "large"
+
+
+def test_v1_compute_approval_remains_readable(tmp_path, monkeypatch):
+    runtime, state = _setup_approval(monkeypatch, tmp_path)
+    envelope = _envelope(large=True)
+    plan = _plan(envelope)
+    plan_path = _write(tmp_path / "plan.json", plan)
+    plan_sha = flow._file_digest(plan_path)
+    envelope_sha = flow._json_digest(envelope)
+    state["chat_control"].update({
+        "GENERICCHESS_COMPUTE_PLAN_SHA": plan_sha,
+        "GENERICCHESS_COMPUTE_ENVELOPE_SHA": envelope_sha,
+    })
+    _write(runtime / "session.json", state)
+    _write(runtime / "compute-approvals" / "plan-f63-r1.json", {
+        "schema": flow.COMPUTE_APPROVAL_SCHEMA,
+        "plan_id": "plan-f63-r1",
+        "plan_sha256": plan_sha,
+        "sandbox_sha": "a" * 40,
+        "envelope_sha256": envelope_sha,
+        "chat_response_sha256": "r" * 64,
+        "supervisor_thread_id": "supervisor-1",
+        "approved_at": 1.0,
+        "revoked": False,
+        "binding_mode": "local_pending",
+        "command_argv": plan["command_argv"],
+    })
+    assert flow._validate_compute_approval(tmp_path, plan, plan_sha, envelope_sha)["plan_id"] == "plan-f63-r1"
 
 
 def test_compute_plan_approve_can_bind_current_normal_chat_response_without_file(
@@ -293,7 +345,7 @@ def test_forged_chat_wrong_supervisor_and_stale_or_expanded_plan_fail_closed(tmp
         flow.command_compute_plan_revoke(tmp_path, SimpleNamespace(plan_file=str(plan_path)))
     monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
     expanded = _write(tmp_path / "expanded.json", _envelope(large=True, expanded=True))
-    with pytest.raises(flow.FlowError, match="differs|stale"):
+    with pytest.raises(flow.FlowError, match="valid Supervisor approval"):
         flow._enforce_compute_gate(
             tmp_path, SimpleNamespace(resource_envelope=str(expanded), compute_plan=str(plan_path))
         )
