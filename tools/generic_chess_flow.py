@@ -2142,6 +2142,14 @@ def command_recover(root: Path, args: argparse.Namespace) -> None:
     try:
         status = courier(root, "courier_status", directory, allow_failure=True)
         recovery_event(state, "status_read", courier_state=status.get("state"))
+        if (status.get("state") == "response_received"
+                and isinstance(status.get("response_path"), str)):
+            update_response_state(
+                root, state,
+                {"event": "response_received", "response_path": status["response_path"]},
+                source="read_only_recover",
+            )
+            return
         if _healthy_chat_contention_wait(state, status):
             state["recovery_state"] = "IDLE"
             state["last_probe"] = {

@@ -698,6 +698,33 @@ def test_recover_imports_matching_reply_without_retry(monkeypatch, tmp_path):
     assert state["recovery_state"] == "RECOVERED"
 
 
+def test_recover_imports_durable_completed_status_without_browser_probe(monkeypatch, tmp_path):
+    response = tmp_path / "response.txt"
+    response.write_text(
+        "Next mainline work.\nWORK_ORDER_ID=F88\nGENERICCHESS_STATUS=CONTINUE\n"
+        "GENERICCHESS_CANDIDATE_SHA=NONE\nGENERICCHESS_PROMOTION=HOLD\n",
+        encoding="utf-8",
+    )
+    state = {"active": True, "mode": "courier", "active_request_directory": "request"}
+    operations = []
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+
+    def fake_courier(_root, operation, *_args, **_kwargs):
+        operations.append(operation)
+        assert operation == "courier_status"
+        return {"event": "courier_status", "ok": True,
+                "state": "response_received", "response_path": str(response)}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="worker"))
+
+    assert operations == ["courier_status"]
+    assert state["active_request_directory"] is None
+    assert state["last_work_order_id"] == "F88"
+    assert state["recovery_state"] == "RECOVERED"
+
+
 def test_escalation_is_idempotent_and_records_thread_identity(monkeypatch, tmp_path):
     sandbox = tmp_path / "sandbox"
     master = tmp_path / "master"
