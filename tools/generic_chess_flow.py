@@ -2266,6 +2266,17 @@ def command_supervisor_resend(root: Path, args: argparse.Namespace) -> None:
     )
     result = courier(root, recovery_command, request_directory,
                      stream=True, allow_failure=True)
+    # The ordinary evidence retry may already have been consumed by a
+    # pre-submit browser failure.  A registered Supervisor reviewing fresh
+    # zero-submission evidence is exactly the bounded recovery handled by
+    # courier_resend_once; do not strand the request merely because the probe
+    # still recommends the ordinary retry command.
+    if (recovery_command == "courier_retry_once"
+            and result.get("event") == "courier_retry_refused"
+            and probe.get("submission_count") == 0):
+        recovery_command = "courier_resend_once"
+        result = courier(root, recovery_command, request_directory,
+                         stream=True, allow_failure=True)
     recovery_event(state, "supervisor_resend_reviewed", escalation_id=args.escalation_id,
                    recovery_command=recovery_command, result_event=result.get("event"))
     save_state(root, state)
