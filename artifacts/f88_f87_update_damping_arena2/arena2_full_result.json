@@ -1,0 +1,166 @@
+{
+  "arena2_corpus_id": "6eca12faa0981e1c71f637eae7f66ee4a053193a752fbe592d2b0edafbdffd2a",
+  "baseline_sha": "e315307525987d0833a7bb7f7e761f433f77e8c7",
+  "candidates": [
+    {
+      "alpha": 0.5,
+      "candidate_checkpoint_id": "0b318ea0a719971634abbc443e3334dfcef4a017d94d4dfd01c8a6ca69954316",
+      "candidate_model_sha256": "f5e739b47e896a8d855869a4295d2b90d20a21228575440ffbd9bfd40444cd0b",
+      "completed_games": 3,
+      "completed_pairs": 1,
+      "config": {
+        "child_nodes_per_move": 512,
+        "max_depth": 12,
+        "max_plies": 6,
+        "min_plies": 2,
+        "nodes_per_move": 512,
+        "opening_count": 2,
+        "opening_seed": 820201,
+        "pairs": 2,
+        "parent_nodes_per_move": 512,
+        "tt_megabytes": 8,
+        "tt_reset_each_move": true,
+        "workers": 2
+      },
+      "corpus_id": "6eca12faa0981e1c71f637eae7f66ee4a053193a752fbe592d2b0edafbdffd2a",
+      "execution_caps": {
+        "logical_cpu_count": 4,
+        "max_concurrent_games": 2,
+        "max_stage_games": 4,
+        "per_game_nodes": 262144,
+        "per_game_plies": 512,
+        "per_game_wall_seconds": 7200,
+        "stage_wall_seconds": 14400
+      },
+      "games": [],
+      "opening_indices": [
+        0,
+        1
+      ],
+      "parameter_delta_norms": {
+        "hidden_bias": 0.09554348986263154,
+        "hidden_weights": 1.6465263962872345,
+        "output_weights": 0.08342945834083479
+      },
+      "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+      "raw_f87_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+      "raw_f87_model_sha256": "5eaf7c672c882fd26a124df48fd77cecbb630d50ea1970bd37eb446cfd6e336f",
+      "reason": "per_game_wall_seconds",
+      "status": "INCOMPLETE",
+      "summary": null,
+      "total_games": 4,
+      "training_config_hash": "42edd3093bdaa4095b9cab36fcb6d43ff88ef2fc9f2734fcbf9fe91f50d6cece"
+    },
+    {
+      "alpha": 0.25,
+      "candidate_checkpoint_id": "a224726ca5bb49daded0159b071128b14ed97732b381ac444fa2d0b6f7eb6ecd",
+      "candidate_model_sha256": "bbb788db28629aaa8bc7a19814d6c00f417feef742a3596a877194bf701535f1",
+      "completed_games": 4,
+      "completed_pairs": 2,
+      "config": {
+        "child_nodes_per_move": 512,
+        "max_depth": 12,
+        "max_plies": 6,
+        "min_plies": 2,
+        "nodes_per_move": 512,
+        "opening_count": 2,
+        "opening_seed": 820201,
+        "pairs": 2,
+        "parent_nodes_per_move": 512,
+        "tt_megabytes": 8,
+        "tt_reset_each_move": true,
+        "workers": 2
+      },
+      "corpus_id": "6eca12faa0981e1c71f637eae7f66ee4a053193a752fbe592d2b0edafbdffd2a",
+      "execution_caps": {
+        "logical_cpu_count": 4,
+        "max_concurrent_games": 2,
+        "max_stage_games": 4,
+        "per_game_nodes": 262144,
+        "per_game_plies": 512,
+        "per_game_wall_seconds": 7200,
+        "stage_wall_seconds": 14400
+      },
+      "games": [
+        {
+          "child_owner": 0,
+          "completed": true,
+          "opening_id": "cc9cd5a36fda11f858d126a73d62bec45086019494c941e42baab3f500fd4b34",
+          "pair": 0,
+          "plies": 500,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 1
+        },
+        {
+          "child_owner": 1,
+          "completed": true,
+          "opening_id": "cc9cd5a36fda11f858d126a73d62bec45086019494c941e42baab3f500fd4b34",
+          "pair": 0,
+          "plies": 273,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 0
+        },
+        {
+          "child_owner": 0,
+          "completed": true,
+          "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
+          "pair": 1,
+          "plies": 107,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 0
+        },
+        {
+          "child_owner": 1,
+          "completed": true,
+          "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
+          "pair": 1,
+          "plies": 86,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 1
+        }
+      ],
+      "opening_indices": [
+        0,
+        1
+      ],
+      "parameter_delta_norms": {
+        "hidden_bias": 0.04777174493131577,
+        "hidden_weights": 0.8232631981436173,
+        "output_weights": 0.041714729170417464
+      },
+      "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+      "raw_f87_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+      "raw_f87_model_sha256": "5eaf7c672c882fd26a124df48fd77cecbb630d50ea1970bd37eb446cfd6e336f",
+      "reason": null,
+      "status": "COMPLETE",
+      "summary": {
+        "game_draws": 0,
+        "game_losses": 2,
+        "game_wins": 2,
+        "mean_pair_score": 0.5,
+        "pair_scores": [
+          0.0,
+          1.0
+        ]
+      },
+      "total_games": 4,
+      "training_config_hash": "c8a945e70b12c2dfcd728285c9d51e6ba9fb1e6b2182153f7b665e29fff67c8b"
+    }
+  ],
+  "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+  "raw_f87_arena4_context": {
+    "artifact": "artifacts/f87_two_trajectory_native_search_distillation/arena4_full_result.json",
+    "game_draws": 1,
+    "game_losses": 5,
+    "game_wins": 2,
+    "mean_pair_score": 0.3125
+  },
+  "raw_f87_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+  "schema": "generic-chess-f88-f87-update-damping-arena2-v1",
+  "status": "INCOMPLETE",
+  "work_order": "GENERICCHESS_F88_F87_UPDATE_DAMPING_ARENA2"
+}
