@@ -1,0 +1,70 @@
+{
+  "schema": "generic-chess-f87-two-trajectory-arena4-full-v1",
+  "status": "COMPLETE",
+  "work_order": "GENERICCHESS_F87R2_COMPLETE_ARENA4",
+  "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+  "candidate_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+  "opening_corpus_id": "593652dd655ddc67f38d9a194b9b2a44f7eef3e28d22a83c5f01abeb35b971a1",
+  "arena_parameters": {
+    "pairs_per_opening": 1,
+    "role_swapped": true,
+    "nodes_per_move": 512,
+    "max_depth": 12,
+    "tt_megabytes": 8,
+    "workers": 2,
+    "max_concurrent_games": 2,
+    "tt_reset_each_move": true,
+    "opening_seed": 820401
+  },
+  "openings": [
+    {
+      "opening_index": 0,
+      "completed_games": 2,
+      "completed_pairs": 1,
+      "pair_score": 0.75,
+      "games": [
+        {"child_owner": 0, "status": "completed", "truncated": false, "result": "repetition", "winner": null, "plies": 41},
+        {"child_owner": 1, "status": "completed", "truncated": false, "result": "checkmate", "winner": 1, "plies": 98}
+      ]
+    },
+    {
+      "opening_index": 1,
+      "completed_games": 2,
+      "completed_pairs": 1,
+      "pair_score": 0.0,
+      "games": [
+        {"child_owner": 0, "status": "completed", "truncated": false, "result": "checkmate", "winner": 1, "plies": 156},
+        {"child_owner": 1, "status": "completed", "truncated": false, "result": "checkmate", "winner": 0, "plies": 447}
+      ]
+    },
+    {
+      "opening_index": 2,
+      "completed_games": 2,
+      "completed_pairs": 1,
+      "pair_score": 0.5,
+      "games": [
+        {"child_owner": 0, "status": "completed", "truncated": false, "result": "checkmate", "winner": 1, "plies": 163},
+        {"child_owner": 1, "status": "completed", "truncated": false, "result": "checkmate", "winner": 1, "plies": 467}
+      ]
+    },
+    {
+      "opening_index": 3,
+      "completed_games": 2,
+      "completed_pairs": 1,
+      "pair_score": 0.0,
+      "games": [
+        {"child_owner": 0, "status": "completed", "truncated": false, "result": "checkmate", "winner": 1, "plies": 139},
+        {"child_owner": 1, "status": "completed", "truncated": false, "result": "checkmate", "winner": 0, "plies": 260}
+      ]
+    }
+  ],
+  "aggregate": {
+    "opening_count": 4,
+    "pair_count": 4,
+    "game_count": 8,
+    "game_wins": 2,
+    "game_draws": 1,
+    "game_losses": 5,
+    "mean_pair_score": 0.3125
+  }
+}
