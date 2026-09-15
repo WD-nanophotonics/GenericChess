@@ -131,7 +131,15 @@ def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: P
     caps = ArenaExecutionCaps(per_game_wall_seconds=7200, per_game_nodes=262144, per_game_plies=512, max_stage_games=2, max_concurrent_games=2, stage_wall_seconds=stage_wall_seconds, logical_cpu_count=4)
     run = run_arena_game_resumable(compiled, native, parent, candidate, config, progress_dir=progress_dir, openings=openings, capture_search_metrics=True, execution_caps=caps, identity_caps=caps, stage_id="f87-two-trajectory-native-search-arena4", max_pairs=1)
     summary = run.summary
-    output = {"schema": "generic-chess-f87-two-trajectory-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "opening_index": source.index, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "progress_dir": str(progress_dir.relative_to(ROOT)).replace("\\", "/"), "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
+    # Flow plans intentionally pass workspace-relative paths. Resolve before
+    # serializing so the closeout path is stable for both relative and
+    # absolute callers, including a resume after both games are complete.
+    progress_path = Path(progress_dir).resolve()
+    try:
+        progress_label = progress_path.relative_to(ROOT.resolve())
+    except ValueError:
+        progress_label = progress_path
+    output = {"schema": "generic-chess-f87-two-trajectory-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "opening_index": source.index, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "progress_dir": str(progress_label).replace("\\", "/"), "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
     result_path.parent.mkdir(parents=True, exist_ok=True)
     result_path.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return output

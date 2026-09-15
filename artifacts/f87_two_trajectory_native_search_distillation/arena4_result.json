@@ -1,0 +1,24 @@
+{
+  "schema": "generic-chess-f87-two-trajectory-arena4-v1",
+  "status": "COMPLETE",
+  "plan_id": "f87-arena4-strength-probe-v1",
+  "plan_sha256": "2998bf79a2fb05203c362fa25e81bbafcebd0920c9576cecaffaae6788f3e2d9",
+  "envelope_sha256": "7359d354946ae297d0a7eb18b9a4585f44ec14d844f81f74a5837a2ab92cda65",
+  "sandbox_sha": "7ee04e920f82aef24c9dca2326edd15ee288edcd",
+  "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+  "candidate_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+  "opening_index": 2,
+  "opening_seed": 820401,
+  "completed_games": 2,
+  "completed_pairs": 1,
+  "pair_scores": [0.5],
+  "mean_pair_score": 0.5,
+  "game_wins": 1,
+  "game_draws": 0,
+  "game_losses": 1,
+  "decision": "NEUTRAL_NO_POSITIVE_MINIMAL_STRENGTH_SIGNAL",
+  "games": [
+    {"child_owner": 0, "result": "checkmate", "winner": 1, "plies": 163},
+    {"child_owner": 1, "result": "checkmate", "winner": 1, "plies": 467}
+  ]
+}
