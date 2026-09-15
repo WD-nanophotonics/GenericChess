@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 
 from generic_chess.learning.selfplay import SelfPlayConfig
-from scripts.f86_native_search_distillation import WORK_ORDER
+from scripts.f86_native_search_distillation import ROOT, WORK_ORDER, _relative_progress_path
 
 
 def test_f86_contract_uses_deterministic_native_search_selfplay():
@@ -23,3 +23,9 @@ def test_f86_artifact_if_present_records_improved_objective_and_change():
     assert result["behavior_changed"] is True
     assert result["objective_after"] < result["objective_before"]
     assert result["candidate_max_abs_residual"] <= 2.0 * result["parent_max_abs_residual"] + 1e-9
+
+
+def test_f86_cli_relative_progress_path_is_normalized_under_repository_root():
+    relative = Path(".generic_chess_flow") / "f86r1-stage-b-arena4" / "progress"
+    assert _relative_progress_path(relative) == ".generic_chess_flow/f86r1-stage-b-arena4/progress"
+    assert ROOT.is_absolute()

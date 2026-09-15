@@ -47,6 +47,8 @@ COMPUTE_ENVELOPE_SCHEMA = "generic-chess-resource-envelope-v1"
 COMPUTE_APPROVAL_SCHEMA = "generic-chess-compute-approval-v1"
 COMPUTE_PLAN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 COMPUTE_POLICY_PATH = Path(__file__).with_name("compute_policy.json")
+LARGE_COMPUTE_QUOTA_WALL_MINUTES = 120
+LARGE_COMPUTE_QUOTA_WINDOW_SECONDS = 24 * 60 * 60
 
 
 class FlowError(RuntimeError):
@@ -229,6 +231,65 @@ def _validate_compute_approval(root: Path, plan: dict[str, Any], plan_sha: str,
     return approval
 
 
+def _work_order_recorded_at(state: dict[str, Any]) -> float | None:
+    """Return the local receipt time for the currently imported work order."""
+    response_sha = state.get("last_response_sha256")
+    timeline = state.get("recovery_timeline", [])
+    if not isinstance(timeline, list):
+        return None
+    for event in reversed(timeline):
+        if not isinstance(event, dict) or event.get("event") != "response_accepted":
+            continue
+        if response_sha is not None and event.get("response_sha256") != response_sha:
+            continue
+        recorded_at = event.get("at")
+        if isinstance(recorded_at, (int, float)) and recorded_at >= 0:
+            return float(recorded_at)
+    return None
+
+
+def _large_compute_quota_records(root: Path) -> list[float]:
+    """Read only successful-child quota markers from durable runtime state."""
+    records: list[float] = []
+    base = runtime_dir(root)
+    state_paths = list((base / "heavy-runs").glob("*/state.json")) if (base / "heavy-runs").exists() else []
+    for path in state_paths:
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(payload, dict) or payload.get("quota_counted") is not True:
+            continue
+        expected = payload.get("expected_wall_minutes")
+        recorded_at = payload.get("work_order_recorded_at")
+        if (
+            isinstance(expected, (int, float))
+            and expected > LARGE_COMPUTE_QUOTA_WALL_MINUTES
+            and isinstance(recorded_at, (int, float))
+            and recorded_at >= 0
+        ):
+            records.append(float(recorded_at))
+    return records
+
+
+def _enforce_large_compute_quota(root: Path, envelope: dict[str, Any], state: dict[str, Any]) -> float | None:
+    expected = envelope.get("expected_wall_minutes")
+    if not isinstance(expected, (int, float)) or expected <= LARGE_COMPUTE_QUOTA_WALL_MINUTES:
+        return None
+    recorded_at = _work_order_recorded_at(state)
+    if recorded_at is None:
+        raise FlowError("large compute quota requires a locally recorded work-order timestamp")
+    prior = [
+        value for value in _large_compute_quota_records(root)
+        if abs(recorded_at - value) <= LARGE_COMPUTE_QUOTA_WINDOW_SECONDS
+    ]
+    if prior:
+        raise FlowError(
+            "large compute quota exceeded: at most one successful Heavy child per rolling 24 hours"
+        )
+    return recorded_at
+
+
 def _enforce_compute_gate(root: Path, args: argparse.Namespace,
                           command: list[str] | None = None) -> dict[str, Any]:
     envelope_path = getattr(args, "resource_envelope", None)
@@ -252,12 +313,23 @@ def _enforce_compute_gate(root: Path, args: argparse.Namespace,
     elif plan is not None:
         if plan["sandbox_sha"] != sha(root):
             raise FlowError("compute plan SHA is stale")
+    recorded_at = None
+    quota_required = (
+        isinstance(envelope.get("expected_wall_minutes"), (int, float))
+        and envelope["expected_wall_minutes"] > LARGE_COMPUTE_QUOTA_WALL_MINUTES
+    )
+    if quota_required:
+        recorded_at = _enforce_large_compute_quota(root, envelope, active_state(root))
     return {
         "resource_envelope_sha256": envelope_sha,
         "compute_plan_sha256": plan_sha,
         "compute_plan_id": plan["plan_id"] if plan else None,
         "compute_size": "large" if large else "small_or_medium",
         "hard_wall_minutes": envelope["hard_wall_minutes"],
+        "expected_wall_minutes": envelope["expected_wall_minutes"],
+        "work_order_recorded_at": recorded_at,
+        "quota_required": quota_required,
+        "quota_counted": False,
     }
 
 
@@ -958,6 +1030,8 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
     if not command:
         raise FlowError("heavy requires a command after --")
     compute_metadata = _enforce_compute_gate(root, args, command)
+    if compute_metadata.get("quota_required"):
+        raise FlowError("large compute quota requires heavy-start for durable child accounting")
     with heavy_lock(root):
         process = subprocess.Popen(command, cwd=root)
         return process.wait()
@@ -1447,6 +1521,9 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
             time.sleep(.1)
             continue
         if current.get("handshake_at") and current.get("child_pid"):
+            if current.get("quota_required"):
+                current["quota_counted"] = True
+                _atomic_json(run_dir / "state.json", current)
             print(json.dumps(current, sort_keys=True))
             return 0
         if current.get("status") == "failed":

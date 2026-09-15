@@ -61,6 +61,11 @@ Read `WORKFLOW.md` before changing this repository.
     approval bound to the exact plan SHA, sandbox SHA, and envelope digest.
     Never infer compute size from command text or bypass the gate with a second
     worker/request.
+    Plans with `expected_wall_minutes > 120` may successfully create at most
+    one Heavy child per rolling 24 hours, anchored to the locally recorded
+    work-order receipt; only a child recorded after process handshake counts.
+    The gate fails closed when that receipt is missing, and uses the existing
+    Heavy run state (no daemon or separate quota ledger).
 
 17. Avoid over-engineering: work expected to exceed 30 minutes on one-off
     engineering, process, or safety scaffolding with little reusable long-term

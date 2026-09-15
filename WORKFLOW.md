@@ -175,6 +175,13 @@ plan and envelope for the current sandbox SHA. Runtime approvals live under
 `.generic_chess_flow/compute-approvals/`, are single-plan and revocable, and
 fail closed on stale SHA, envelope, budget, seed, or stage changes.
 
+For a plan whose declared `expected_wall_minutes` exceeds 120, the existing
+Heavy run state enforces one successfully handshaken child per rolling 24-hour
+window, anchored to the locally recorded work-order receipt. Missing receipt
+timestamps fail closed; plans at or below 120 minutes are unaffected. Such
+runs use `heavy-start` so child creation is durably recorded; no daemon or
+separate quota ledger is used.
+
 `compute-plan-request` mechanically validates the exact plan and sends its
 scientific decision, stages, command, early-stop rules, resource envelope, and
 local hash summary to Chat. Chat only needs to return an explicit

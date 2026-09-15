@@ -99,6 +99,37 @@ def test_resource_declaration_is_required_and_small_runs_pass_through(tmp_path):
     assert flow._compute_is_large(unknown) is True
 
 
+def test_large_compute_quota_fails_closed_without_local_receipt(tmp_path, monkeypatch):
+    runtime, _ = _setup_approval(monkeypatch, tmp_path)
+    envelope = _envelope(large=True)
+    envelope.update({"expected_wall_minutes": 121, "hard_wall_minutes": 180})
+    with pytest.raises(flow.FlowError, match="locally recorded work-order timestamp"):
+        flow._enforce_large_compute_quota(tmp_path, envelope, {"recovery_timeline": []})
+
+
+def test_large_compute_quota_counts_only_successful_children_in_rolling_window(tmp_path, monkeypatch):
+    runtime, _ = _setup_approval(monkeypatch, tmp_path)
+    envelope = _envelope(large=True)
+    envelope.update({"expected_wall_minutes": 121, "hard_wall_minutes": 180})
+    state = {
+        "last_response_sha256": "r" * 64,
+        "recovery_timeline": [{"event": "response_accepted", "at": 2_000.0, "response_sha256": "r" * 64}],
+    }
+    run_state = runtime / "heavy-runs" / "prior-run" / "state.json"
+    run_state.parent.mkdir(parents=True)
+    run_state.write_text(json.dumps({
+        "quota_counted": True,
+        "expected_wall_minutes": 121,
+        "work_order_recorded_at": 2_000.0,
+    }), encoding="utf-8")
+    with pytest.raises(flow.FlowError, match="one successful Heavy child"):
+        flow._enforce_large_compute_quota(tmp_path, envelope, state)
+    old = json.loads(run_state.read_text(encoding="utf-8"))
+    old["work_order_recorded_at"] = 2_000.0 - flow.LARGE_COMPUTE_QUOTA_WINDOW_SECONDS - 1
+    run_state.write_text(json.dumps(old), encoding="utf-8")
+    assert flow._enforce_large_compute_quota(tmp_path, envelope, state) == 2_000.0
+
+
 def test_heavy_entrypoints_fail_closed_without_resource_declaration(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True})
     monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)

@@ -43,6 +43,11 @@ ARTIFACT = OUT / "successor_candidate_result.json"
 SEED = 860401
 
 
+def _relative_progress_path(path: Path) -> str:
+    """Serialize a CLI-supplied relative progress path under the repository root."""
+    return str(path.resolve().relative_to(ROOT.resolve())).replace("\\", "/")
+
+
 def _rows(compiled, native, parent, trajectories):
     type_ids = tuple(sorted(parent.board_weights))
     rows = []
@@ -166,7 +171,7 @@ def run_arena4_opening(*, opening_index: int, progress_dir: Path, result_path: P
             identity_caps=identity_caps, stage_id=stage_id, max_pairs=1,
         )
     summary = run.summary
-    output = {"schema": "generic-chess-f86-native-search-distillation-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "registered_corpus_id": registered.corpus_id, "opening_index": source.index, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "progress_dir": str(execution_progress_dir.relative_to(ROOT)).replace("\\", "/"), "execution_stage_wall_seconds": stage_wall_seconds, "identity_stage_wall_seconds": identity_caps.stage_wall_seconds, "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
+    output = {"schema": "generic-chess-f86-native-search-distillation-arena4-v1", "status": run.status, "reason": run.reason, "completed_games": run.completed_games, "completed_pairs": run.completed_pairs, "total_games": run.total_games, "registered_corpus_id": registered.corpus_id, "opening_index": source.index, "parent_checkpoint_id": parent.checkpoint_id, "candidate_checkpoint_id": candidate.checkpoint_id, "progress_dir": _relative_progress_path(execution_progress_dir), "execution_stage_wall_seconds": stage_wall_seconds, "identity_stage_wall_seconds": identity_caps.stage_wall_seconds, "summary": None if summary is None else {"pair_count": summary.pair_count, "pair_scores": list(summary.pair_scores), "mean_pair_score": summary.mean_pair_score, "game_wins": summary.game_wins, "game_draws": summary.game_draws, "game_losses": summary.game_losses}}
     result_path.parent.mkdir(parents=True, exist_ok=True)
     result_path.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return output
