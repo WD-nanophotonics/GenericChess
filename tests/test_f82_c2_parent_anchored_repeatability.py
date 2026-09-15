@@ -11,6 +11,14 @@ from scripts import f82_c2_parent_anchored_repeatability as c2
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOCATION = ROOT / "artifacts/f82_c2_repeatability/c2_allocation_manifest.json"
+LEGACY_DESCRIPTOR = ROOT / "artifacts/f82_c2_repeatability/c2_candidate_descriptor.json"
+
+# The materialized F82 model array is retired; modern F84+ flows load the
+# fixed-slot compact checkpoint instead. Keep the protocol tests importable,
+# but skip assertions that require the retired payload.
+pytestmark = pytest.mark.skipif(
+    not LEGACY_DESCRIPTOR.is_file(), reason="retired F82 materialized descriptor is absent"
+)
 
 
 def test_c2_allocation_is_frozen_and_disjoint():

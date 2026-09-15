@@ -1,9 +1,14 @@
 import hashlib
 import json
 from pathlib import Path
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+pytestmark = pytest.mark.skipif(
+    not (ROOT / "artifacts/f83_c2_selective_successor/successor_candidate_descriptor.json").is_file(),
+    reason="retired F83 materialized descriptor is absent",
+)
 
 
 def test_selective_successor_descriptor_is_self_consistent():
