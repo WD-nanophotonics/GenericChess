@@ -952,6 +952,44 @@ def chat_message_body(root: Path, source: Path, *, reference_only: bool = False)
     )
 
 
+def _migration_dispatch_key(state: dict[str, Any], purpose: str,
+                            base_key: str) -> str:
+    """Give the next equivalent dispatch after supersession a fresh identity."""
+    retired_directory = state.get("retired_request_directory")
+    migration = state.get("superseded_request_migration")
+    if not isinstance(retired_directory, str) or not retired_directory:
+        return base_key
+    if not isinstance(migration, dict):
+        migration = {
+            "status": "PENDING",
+            "retired_request_directory": retired_directory,
+            "retired_request_id": state.get("retired_request_id")
+                or Path(retired_directory).name,
+            "retired_request_key": state.get("retired_request_key"),
+        }
+    if migration.get("status") not in {"PENDING", "CONSUMED"}:
+        return base_key
+    bound_purpose = migration.get("purpose")
+    bound_base_key = migration.get("base_key")
+    if bound_purpose is not None and bound_purpose != purpose:
+        return base_key
+    if bound_base_key is not None and bound_base_key != base_key:
+        return base_key
+    migration["purpose"] = purpose
+    migration["base_key"] = base_key
+    migration.setdefault(
+        "migration_key",
+        f"{base_key}-migration-{uuid.uuid4().hex[:12]}",
+    )
+    migration["status"] = "CONSUMED"
+    state["superseded_request_migration"] = migration
+    if state.get("active_request_directory") == retired_directory:
+        state["active_request_directory"] = None
+        if state.get("active_request_id") == migration.get("retired_request_id"):
+            state["active_request_id"] = None
+    return migration["migration_key"]
+
+
 def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: str,
                      attachments: list[Path] | None = None) -> None:
     sandbox = sandbox_root(root)
@@ -965,7 +1003,8 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         reference_only=purpose in {"closeout", "blocker"} and report_size > INLINE_CHAT_REFERENCE_THRESHOLD,
     )
     digest = hashlib.sha256(body.encode("utf-8")).hexdigest()
-    key = f"{purpose}-{sha(sandbox)[:12]}-{digest[:12]}"
+    base_key = f"{purpose}-{sha(sandbox)[:12]}-{digest[:12]}"
+    key = _migration_dispatch_key(state, purpose, base_key)
     generated = runtime_dir(root) / f"{key}.txt"
     generated.write_text(
         body.rstrip()
@@ -982,6 +1021,8 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         + "GENERICCHESS_PROMOTION=APPROVE|HOLD\n",
         encoding="utf-8",
     )
+    if key != base_key:
+        save_state(root, state)
     prepare_args = [
         "courier_prepare", "--project-id", PROJECT_ID,
         "--idempotency-key", key, "--message-file", str(generated),
@@ -995,6 +1036,8 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
     request_directory = prepared.get("request_directory")
     if not isinstance(request_directory, str):
         raise FlowError("Courier prepare did not return a request directory")
+    if key != base_key and request_directory == state.get("retired_request_directory"):
+        raise FlowError("superseded Courier request was returned for a migration dispatch")
     state["active_request_directory"] = request_directory
     state["active_request_id"] = prepared.get("request_id") or Path(request_directory).name
     state["active_request_fingerprint"] = prepared.get("fingerprint")
@@ -2342,7 +2385,17 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
     dossier = json.loads((directory / "dossier.json").read_text(encoding="utf-8"))
     state = active_state(root)
     if args.action == "USER_SUPERSEDED_REQUEST":
-        state["retired_request_directory"] = state.get("active_request_directory")
+        retired_directory = state.get("active_request_directory")
+        state["retired_request_directory"] = retired_directory
+        if isinstance(retired_directory, str) and retired_directory:
+            state["retired_request_id"] = state.get("active_request_id") or Path(retired_directory).name
+        state["retired_request_key"] = state.get("last_request_key")
+        state["superseded_request_migration"] = {
+            "status": "PENDING",
+            "retired_request_directory": retired_directory,
+            "retired_request_id": state.get("retired_request_id"),
+            "retired_request_key": state.get("retired_request_key"),
+        }
         state["active_request_directory"] = None
         state["last_response_path"] = None
         state["work_order_active"] = False

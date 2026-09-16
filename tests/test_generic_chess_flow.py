@@ -1324,6 +1324,77 @@ def test_user_superseded_resolution_retires_request_without_deleting_evidence(mo
     assert state["active_request_directory"] is None
     assert state["last_response_path"] is None
     assert request.is_dir()
+    assert state["superseded_request_migration"]["status"] == "PENDING"
+
+
+def test_superseded_closeout_uses_one_fresh_idempotent_migration_identity(
+        monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    runtime = tmp_path / "runtime"
+    old_request = tmp_path / "old-request"
+    report = sandbox / "report.md"
+    sandbox.mkdir()
+    runtime.mkdir()
+    old_request.mkdir()
+    report.write_text("F88R1 closeout\n", encoding="utf-8")
+
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: runtime)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {
+        "master": sandbox, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "sha", lambda *_args: "a" * 40)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: None)
+    monkeypatch.setattr(flow, "chat_message_body",
+                        lambda _root, source, **_kwargs: source.read_text(encoding="utf-8"))
+    monkeypatch.setattr(flow, "update_response_state", lambda *_args, **_kwargs: None)
+
+    prepared_by_key = {}
+    prepare_keys = []
+    prepared_bodies = []
+    dispatch_directories = []
+
+    def fake_courier(_root, *args, **_kwargs):
+        if args[0] == "courier_prepare":
+            key = args[args.index("--idempotency-key") + 1]
+            prepare_keys.append(key)
+            prepared_bodies.append(Path(args[args.index("--message-file") + 1]).read_text(encoding="utf-8"))
+            if key not in prepared_by_key:
+                request = tmp_path / "requests" / key
+                request.mkdir(parents=True)
+                prepared_by_key[key] = str(request)
+            return {"request_directory": prepared_by_key[key], "request_id": key}
+        dispatch_directories.append(args[1])
+        return {"event": "response_waiting"}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    old_key = "closeout-old-request"
+    state = {
+        "active": True,
+        "mode": "courier",
+        "active_request_directory": str(old_request),
+        "active_request_id": "OLD-REQUEST",
+        "retired_request_directory": str(old_request),
+        "retired_request_id": "OLD-REQUEST",
+        "retired_request_key": old_key,
+        "last_request_key": old_key,
+        "recovery_timeline": [],
+    }
+
+    flow.dispatch_message(tmp_path, state, report, "closeout")
+    first_request = state["active_request_directory"]
+    flow.dispatch_message(tmp_path, state, report, "closeout")
+
+    assert old_request.is_dir()
+    assert state["retired_request_directory"] == str(old_request)
+    assert first_request != str(old_request)
+    assert prepare_keys == [prepare_keys[0], prepare_keys[0]]
+    assert prepare_keys[0] != old_key
+    assert "-migration-" in prepare_keys[0]
+    assert prepared_bodies == [prepared_bodies[0], prepared_bodies[0]]
+    assert len(prepared_by_key) == 1
+    assert dispatch_directories == [first_request, first_request]
+    assert state["active_request_directory"] == first_request
 
 
 def test_large_chat_report_requires_published_git_reference(monkeypatch, tmp_path):
