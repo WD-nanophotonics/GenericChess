@@ -10,6 +10,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import pytest
 
+from scripts import f54_direct_capacity_and_gradient_geometry_diagnosis as f54
+from scripts import f59_action_spectrum_diagnosis as f59
+
 from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.core.actions import action_to_dict
@@ -20,6 +23,7 @@ from generic_chess.learning.arena import (
     ArenaPairResult,
     run_arena,
     run_arena_resumable,
+    run_arena_game_resumable,
     _summarize_pairs,
     _trusted_search_elapsed,
 )
@@ -122,6 +126,49 @@ def test_search_telemetry_captures_and_replays_every_decision(tmp_path):
         capture_search_metrics=True,
     )
     assert resumed == summary
+
+
+@requires_native
+def test_root_hint_provider_is_role_scoped_and_bound_to_resumable_identity(tmp_path):
+    compiled, rules, _profile = f59._ruleset("A_CANONICAL_WESTERN_CHESS")
+    checkpoint = f54._parent("A_CANONICAL_WESTERN_CHESS")
+    calls = []
+
+    def provider(session, legal):
+        calls.append(len(legal))
+        action = sorted(legal, key=lambda item: json.dumps(
+            action_to_dict(item), sort_keys=True, separators=(",", ":")
+        ))[0]
+        return action, {
+            "hint_evaluations": 1,
+            "legal_actions_scored": len(legal),
+            "hint_generation_wall_seconds": 0.001,
+        }
+
+    config = ArenaConfig(pairs=1, nodes_per_move=50, max_depth=2)
+    progress = tmp_path / "root-policy"
+    result = run_arena_game_resumable(
+        compiled, rules, checkpoint, checkpoint, config,
+        progress_dir=progress, capture_search_metrics=True,
+        root_order_hint_provider=provider,
+        policy_identity={"mode": "F96_TEST_POLICY_PRIOR", "model_sha256": "frozen"},
+    )
+    assert result.status == "COMPLETE"
+    assert calls
+    manifest = json.loads((progress / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["identity"]["policy_identity"] == {
+        "mode": "F96_TEST_POLICY_PRIOR", "model_sha256": "frozen"
+    }
+    games = [result.summary.pairs[0].game_child_owner0, result.summary.pairs[0].game_child_owner1]
+    policy_metrics = [
+        metric for game in games for metric in game.search_metrics
+        if "root_hint_policy" in metric
+    ]
+    assert policy_metrics
+    assert all(metric["root_hint_policy"]["hint_evaluations"] == 1 for metric in policy_metrics)
+    assert all(metric["root_hint_requested_action_key"] for metric in policy_metrics)
+    assert all(metric["root_hint_legal"] for metric in policy_metrics)
+    assert all(metric["root_hint_apply_count"] == metric["root_iterations_attempted"] for metric in policy_metrics)
 
 
 @requires_native

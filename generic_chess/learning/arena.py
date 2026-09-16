@@ -259,6 +259,7 @@ def _play_one_game(
     partial_identity_sha256: str | None = None,
     partial_game_identity: dict | None = None,
     resume_partial: dict | None = None,
+    root_order_hint_provider=None,
 ) -> ArenaGameResult:
     """Replay ``opening``, then play one game with fresh engines.
 
@@ -367,6 +368,23 @@ def _play_one_game(
             if wall_limit <= 0:
                 cap_hit(wall_limit_name)
         wall_started = time.perf_counter()
+        root_order_hint = None
+        root_hint_policy = None
+        if root_order_hint_provider is not None and side == child_owner:
+            provided = root_order_hint_provider(session, legal)
+            if not isinstance(provided, tuple) or len(provided) != 2:
+                raise ArenaExecutionError(
+                    "root_order_hint_provider must return (action, telemetry)"
+                )
+            root_order_hint, root_hint_policy = provided
+            if root_order_hint not in legal:
+                raise ArenaExecutionError("root_order_hint_provider returned an illegal action")
+        search_kwargs = {}
+        if root_order_hint_provider is not None:
+            search_kwargs = {
+                "root_order_hint": root_order_hint,
+                "root_window_pruning": True,
+            }
         result = engine.search(
             session,
             SearchLimits(
@@ -375,6 +393,7 @@ def _play_one_game(
                 max_time_seconds=wall_limit,
                 quiescence_max_depth=0,
             ),
+            **search_kwargs,
         )
         wall_elapsed = time.perf_counter() - wall_started
         if (
@@ -425,7 +444,22 @@ def _play_one_game(
                     if getattr(result, "declaration_id", None) is not None
                     else "action"
                 ),
+                "root_hint_requested_action_key": (
+                    None if getattr(result, "root_hint_requested", None) is None
+                    else json.dumps(action_to_dict(getattr(result, "root_hint_requested")), sort_keys=True, separators=(",", ":"))
+                ),
+                "root_hint_legal": bool(getattr(result, "root_hint_legal", False)),
+                "root_hint_apply_count": int(getattr(result, "root_hint_apply_count", 0)),
+                "root_iterations_attempted": int(getattr(result, "root_iterations_attempted", 0)),
+                "root_iteration_first_action_keys": [
+                    None if action is None else json.dumps(
+                        action_to_dict(action), sort_keys=True, separators=(",", ":")
+                    )
+                    for action in getattr(result, "root_iteration_first_actions", ())
+                ],
             })
+            if root_hint_policy is not None:
+                search_metrics[-1]["root_hint_policy"] = dict(root_hint_policy)
         if getattr(result, "declaration_id", None) is not None:
             declaration_id = result.declaration_id
             session.declare(declaration_id)
@@ -489,17 +523,20 @@ def _play_pair(
     pair_index: int,
     *,
     capture_search_metrics: bool = False,
+    root_order_hint_provider=None,
 ) -> ArenaPairResult:
     opening = openings.openings[pair_index]
     game_child_owner0 = _play_one_game(
         compiled, native_rules, parent, child,
         opening=opening, child_owner=0, config=config,
         capture_search_metrics=capture_search_metrics,
+        root_order_hint_provider=root_order_hint_provider,
     )
     game_child_owner1 = _play_one_game(
         compiled, native_rules, parent, child,
         opening=opening, child_owner=1, config=config,
         capture_search_metrics=capture_search_metrics,
+        root_order_hint_provider=root_order_hint_provider,
     )
     return ArenaPairResult(
         pair_index=pair_index,
@@ -1036,6 +1073,7 @@ def _game_progress_identity(
     stage_id: str,
     capture_search_metrics: bool,
     decision_criterion: dict | str | None = None,
+    policy_identity: dict | str | None = None,
 ) -> dict:
     identity = _progress_identity(
         compiled, parent, child, config, openings,
@@ -1056,6 +1094,8 @@ def _game_progress_identity(
             if isinstance(decision_criterion, ArenaDecisionCriterion)
             else decision_criterion
         )
+    if policy_identity is not None:
+        identity["policy_identity"] = policy_identity
     return identity
 
 
@@ -1258,6 +1298,8 @@ def run_arena_game_resumable(
     decision_criterion: ArenaDecisionCriterion | str | dict | None = None,
     stop_on_decision: bool = False,
     max_pairs: int | None = None,
+    root_order_hint_provider=None,
+    policy_identity: dict | str | None = None,
 ) -> ArenaRunResult:
     """Run one game per checkpoint and aggregate only complete pairs.
 
@@ -1282,6 +1324,7 @@ def run_arena_game_resumable(
         compiled, parent, child, config, openings, identity_caps,
         stage_id=stage_id, capture_search_metrics=capture_search_metrics,
         decision_criterion=decision_criterion,
+        policy_identity=policy_identity,
     )
     if max_pairs is not None:
         identity["max_pairs"] = max_pairs
@@ -1446,6 +1489,7 @@ def run_arena_game_resumable(
             partial_identity_sha256=identity_sha256,
             partial_game_identity=expected_games[(pair_index, owner)],
             resume_partial=partial_games.get((pair_index, owner)),
+            root_order_hint_provider=root_order_hint_provider,
         )
         if caps.has_per_game_caps:
             kwargs["execution_caps"] = caps
