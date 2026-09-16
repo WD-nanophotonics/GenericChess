@@ -267,7 +267,9 @@ def _training_rows_equivalent(reference, candidate) -> bool:
     return True
 
 
-def _fit_one(compiled, native, parent, records: list[dict], *, smoke: bool):
+def _fit_one(
+        compiled, native, parent, records: list[dict], *, smoke: bool,
+        model_seed: int = TRAINING_SEED):
     rows = []
     for record in records:
         spectrum = _load_root_checkpoint(compiled, parent, record, smoke=smoke)
@@ -290,17 +292,17 @@ def _fit_one(compiled, native, parent, records: list[dict], *, smoke: bool):
         groups.append(__import__("numpy").arange(cursor, cursor + len(root)))
         cursor += len(root)
     model = f61._fit_serializable(
-        features, base, targets, groups, "PAIRWISE_RANKING", TRAINING_SEED
+        features, base, targets, groups, "PAIRWISE_RANKING", model_seed
     )
     spec = {
-        "candidate_id": "F61_D0_PAIRWISE_SEED_59012",
+        "candidate_id": f"F61_D0_PAIRWISE_SEED_{model_seed}",
         "training_distribution": "D0_RANDOM_REACHABLE",
         "objective": "PAIRWISE_RANKING",
-        "seed": TRAINING_SEED,
+        "seed": model_seed,
     }
     child, model_payload = f61._candidate_checkpoint(parent, compiled, model, spec)
     return child, {
-        "training_seed": TRAINING_SEED,
+        "training_seed": model_seed,
         "training_roots": len(rows),
         "training_actions": int(len(features)),
         "objective": "PAIRWISE_RANKING",

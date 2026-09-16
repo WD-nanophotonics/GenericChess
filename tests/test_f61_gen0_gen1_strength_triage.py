@@ -1,5 +1,10 @@
 from scripts import f61_gen0_gen1_strength_triage as triage
+import shutil
+import tempfile
+from pathlib import Path
 from types import SimpleNamespace
+
+import numpy as np
 
 
 def test_strength_triage_freezes_small_ruleset_order_and_real_strength_gate():
@@ -22,7 +27,10 @@ def test_strength_triage_freezes_small_ruleset_order_and_real_strength_gate():
     })
 
 
-def test_generated_fixture_executes_same_smoke_fit_and_arena_path():
+def test_generated_fixture_executes_same_smoke_fit_and_arena_path(monkeypatch, request):
+    output_dir = tempfile.mkdtemp(prefix="gc-f61-")
+    monkeypatch.setattr(triage, "OUT", Path(output_dir))
+    request.addfinalizer(lambda: shutil.rmtree(output_dir, ignore_errors=True))
     compiled, native, parent, ruleset_id = triage._generated_context()
     records = triage._d0_records(compiled, 620101, count=3, smoke=True)
     child, training = triage._fit_one(compiled, native, parent, records, smoke=True)
@@ -64,6 +72,54 @@ def test_ruleset_selector_limits_run_to_requested_mainline_arm(monkeypatch):
     })
     payload = triage.run(smoke=True, ruleset="B_CANONICAL_STANDARD_SHOGI")
     assert payload["ruleset_order"] == ["B_CANONICAL_STANDARD_SHOGI"]
+
+
+def test_fit_one_separates_model_seed_from_frozen_training_records(monkeypatch):
+    compiled = SimpleNamespace(ruleset_fingerprint="fingerprint")
+    parent = SimpleNamespace(checkpoint_id="parent")
+    record = {"position_key": "root"}
+    rows = [
+        [
+            triage.f59.SpectrumRow(
+                {"move": 0}, "a", np.asarray([1.0, 0.0]), 0.1, q_20k=0.2
+            ),
+            triage.f59.SpectrumRow(
+                {"move": 1}, "b", np.asarray([0.0, 1.0]), 0.2, q_20k=0.4
+            ),
+        ]
+    ]
+    seen = {}
+    monkeypatch.setattr(
+        triage, "_load_root_checkpoint",
+        lambda *_args, **_kwargs: rows[0],
+    )
+    def fake_fit(*args):
+        seen["fit_seed"] = args[-1]
+        return "model"
+
+    monkeypatch.setattr(triage.f61, "_fit_serializable", fake_fit)
+    monkeypatch.setattr(
+        triage.f61, "_candidate_checkpoint",
+        lambda _parent, _compiled, _model, spec: (
+            SimpleNamespace(checkpoint_id="child"),
+            {"model": spec},
+        ),
+    )
+
+    _child, training = triage._fit_one(
+        compiled, None, parent, [record], smoke=True, model_seed=59011
+    )
+
+    assert seen["fit_seed"] == 59011
+    assert training["training_seed"] == 59011
+    assert training["model_sha256"] == triage.f61.stable_sha256(
+        {"model": {
+            "candidate_id": "F61_D0_PAIRWISE_SEED_59011",
+            "training_distribution": "D0_RANDOM_REACHABLE",
+            "objective": "PAIRWISE_RANKING",
+            "seed": 59011,
+        }}
+    )
 
 
 def test_arena_uses_game_resumable_path_and_preserves_summary_shape(monkeypatch, tmp_path):
