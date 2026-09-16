@@ -94,6 +94,7 @@ def test_fit_one_separates_model_seed_from_frozen_training_records(monkeypatch):
         lambda *_args, **_kwargs: rows[0],
     )
     def fake_fit(*args):
+        seen["objective"] = args[-2]
         seen["fit_seed"] = args[-1]
         return "model"
 
@@ -107,16 +108,18 @@ def test_fit_one_separates_model_seed_from_frozen_training_records(monkeypatch):
     )
 
     _child, training = triage._fit_one(
-        compiled, None, parent, [record], smoke=True, model_seed=59011
+        compiled, None, parent, [record], smoke=True, model_seed=59011,
+        objective="POINTWISE_Q",
     )
 
+    assert seen["objective"] == "POINTWISE_Q"
     assert seen["fit_seed"] == 59011
     assert training["training_seed"] == 59011
     assert training["model_sha256"] == triage.f61.stable_sha256(
         {"model": {
-            "candidate_id": "F61_D0_PAIRWISE_SEED_59011",
+            "candidate_id": "F61_D0_POINTWISE_Q_SEED_59011",
             "training_distribution": "D0_RANDOM_REACHABLE",
-            "objective": "PAIRWISE_RANKING",
+            "objective": "POINTWISE_Q",
             "seed": 59011,
         }}
     )

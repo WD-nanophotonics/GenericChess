@@ -269,7 +269,8 @@ def _training_rows_equivalent(reference, candidate) -> bool:
 
 def _fit_one(
         compiled, native, parent, records: list[dict], *, smoke: bool,
-        model_seed: int = TRAINING_SEED):
+        model_seed: int = TRAINING_SEED,
+        objective: str = "PAIRWISE_RANKING"):
     rows = []
     for record in records:
         spectrum = _load_root_checkpoint(compiled, parent, record, smoke=smoke)
@@ -292,12 +293,17 @@ def _fit_one(
         groups.append(__import__("numpy").arange(cursor, cursor + len(root)))
         cursor += len(root)
     model = f61._fit_serializable(
-        features, base, targets, groups, "PAIRWISE_RANKING", model_seed
+        features, base, targets, groups, objective, model_seed
+    )
+    candidate_id = (
+        f"F61_D0_PAIRWISE_SEED_{model_seed}"
+        if objective == "PAIRWISE_RANKING"
+        else f"F61_D0_{objective}_SEED_{model_seed}"
     )
     spec = {
-        "candidate_id": f"F61_D0_PAIRWISE_SEED_{model_seed}",
+        "candidate_id": candidate_id,
         "training_distribution": "D0_RANDOM_REACHABLE",
-        "objective": "PAIRWISE_RANKING",
+        "objective": objective,
         "seed": model_seed,
     }
     child, model_payload = f61._candidate_checkpoint(parent, compiled, model, spec)
@@ -305,7 +311,7 @@ def _fit_one(
         "training_seed": model_seed,
         "training_roots": len(rows),
         "training_actions": int(len(features)),
-        "objective": "PAIRWISE_RANKING",
+        "objective": objective,
         "model_width": f61.MODEL_WIDTH,
         "regularization": f61.MODEL_REGULARIZATION,
         "model_sha256": f61.stable_sha256(model_payload),
