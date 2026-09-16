@@ -1,118 +1,118 @@
-# GenericChess Agent policy
+# GenericChess agent policy
 
-Read `WORKFLOW.md` before changing this repository.
+This is the single authority file for the local workflow. `WORKFLOW.md` is a
+command quick reference, not a second policy source. After context compression
+or a new work round, reread this file instead of reconstructing rules from
+memory or historical runtime records.
 
-1. Work only in the `sandbox` worktree. Treat `master` as immutable except when
-   `generic-chess-flow.cmd promote` performs an authorized fast-forward.
-2. Start every task in either `courier` or `local` mode. Never silently switch
-   authority modes during an active task.
-3. Preserve unrelated user changes. A completed checkpoint must be tested,
-   committed, published to `origin/sandbox`, and verified by full SHA.
-4. In Courier mode, follow the receipt-bound Chat work order without expanding
-   its scope. Report only pushed SHAs. Promotion requires Chat approval bound to
-   the exact candidate SHA.
-5. In local mode, do not invoke Courier. The local Agent owns technical
-   decisions below explicit user instructions and may authorize promotion after
-   the documented gates pass.
-6. Never use Gmail, the retired `gc-bridge`, a background courier daemon, WSL,
-   a second browser/profile, or a replacement request to bypass ChatCourier.
-7. Keep generated binaries, Courier state, raw benchmark output, and transient
-   evidence out of Git. Retain durable architecture decisions as ADRs and
-   behavior guarantees as tests.
-8. Run long tests, self-play, benchmarks, and large audits through
-   `generic-chess-flow.cmd heavy`; never start two GenericChess heavy jobs.
-9. Treat the user's bare instruction `开始工作` or `start work` as Courier mode:
-   switch to the `GenericChess-sandbox` worktree and run
-   `generic-chess-flow.cmd work`. If the user explicitly says Local mode, run
-   `generic-chess-flow.cmd start --mode local` instead.
-10. In Courier mode, continue the work-order loop in the same turn: implement
-    the current order, test, commit, publish, close out, and follow the next
-    order. A Chat `COMPLETE` closes the whole project only when the response
-    explicitly says no further GenericChess work is needed. If it closes only
-    a named phase/work package and mentions a follow-on, finish that session
-    and immediately run `generic-chess-flow.cmd work` for the next session.
-    Stop only at an explicit whole-project terminal `COMPLETE`, `BLOCKED`, a
-    hard error requiring the user, or an explicit user stop. Do not stop merely
-    because one work order ended.
-11. Courier transport faults follow the bounded recovery ladder: read-only
-    `capture_latest`, existing-request recover/wait, one evidence-gated retry of
-    the immutable request, registered Supervisor escalation, then human action.
-    Transport faults are never reported as Chat `BLOCKED`.
-12. On escalation, stop repository writes, notify the Supervisor task recorded
-    by `CODEX_THREAD_ID`, and wait for its signed resolution. Do not create a
-    replacement task or request. Only the claiming Supervisor may review the
-    single `resend_once`, and recovery responses never authorize promotion.
-13. When `.workflow-state-enabled` exists, only the machine which owns the
-    remote `workflow-state` capsule may run mutating flow commands. Cross-machine
-    transfer must use `handoff-release` and `handoff-claim`; never copy runtime
-    directories or force-push ownership.
-14. Courier closeout and blocker reports under 24 KiB may be sent inline after
-    normal clean/sync checks. Larger reports require a concise inline summary;
-    explicit attachments retain the existing immutable repository/commit/path
-    evidence rules. Start-request bootstrap messages remain inline.
-15. For evaluator, learning, self-improvement, or playing-strength work, a
-    high-capability local reviewer/supervisor must read
-    `docs/architecture/GENERICCHESS_THEORY_ROADMAP.md` before redirecting the
-    route. Low-capability execution agents follow the concrete work order.
+## Priorities and authority
 
-16. Every `heavy`/`heavy-start` invocation must carry an explicit structured
-    resource envelope. Large work is fail-closed unless a versioned compute
-    plan has matching Chat scientific approval and registered-Supervisor
-    approval bound to the exact plan SHA, sandbox SHA, and envelope digest.
-    Never infer compute size from command text or bypass the gate with a second
-    worker/request.
-    Plans with `expected_wall_minutes > 120` may successfully create at most
-    one Heavy child per rolling 24 hours, anchored to the locally recorded
-    work-order receipt; only a child recorded after process handshake counts.
-    The gate fails closed when that receipt is missing, and uses the existing
-    Heavy run state (no daemon or separate quota ledger).
+Apply these priorities in order. A lower priority must never stop a higher one:
 
-17. Avoid over-engineering: work expected to exceed 30 minutes on one-off
-    engineering, process, or safety scaffolding with little reusable long-term
-    benefit must be stopped or reduced unless a written, evidence-backed
-    justification covers recurrence, avoided loss, maintenance cost, and why a
-    smaller solution is insufficient.
+1. Keep the workflow running.
+2. Advance playing strength, self-improvement, or a decision about the main algorithm.
+3. Work efficiently and scientifically; avoid over-engineering and wasted compute.
 
-18. Before any test, evaluation, or sweep, use the cheapest sufficient decision
-    procedure; if algebra, existing evidence, a witness, or a decision bound
-    can decide the question, do not authorize expensive new experiments.
+Authority is: latest user instruction, this policy, current registered
+Supervisor decision, current Chat work order, then Worker technical judgment.
+History is evidence only and cannot overrule current registration or instruction.
 
-19. Only a registered low-level Worker may enable a persistent Goal. The
-    Supervisor and all other tasks must not create or enable Goals. A Worker
-    Goal, when enabled by its registration, is the same ChatCourier loop:
-    obtain, execute, test, publish, close out, and obtain the next order until
-    whole-project terminal status, user stop, or a lawful Supervisor upgrade.
-    At every new round and after context compression, reread `AGENTS.md` and
-    `WORKFLOW.md` before acting.
+The Supervisor may override Chat when Chat is blocking progress for formatting,
+process, or other low-value reasons. Only genuinely uncertain irreversible
+effects, an unresolved ownership conflict, or a problem outside granted local
+authority requires the user. Any request for user intervention must explain:
+(1) why no human-free solution exists, (2) why existing authorization and local
+capabilities do not cover it, and (3) whether asking conflicts with the purpose
+of an automated workflow.
 
-20. Upgrade immediately on HOLD, ownership conflict or a second writer,
-    framework `HUMAN_REQUIRED`, uncertain irreversible external side effects,
-    permission or large-compute approval boundaries, or a severe harness fault
-    where continuing may damage state. Ordinary technical problems may be
-    upgraded only after two different reasonable attempts with no substantive
-    progress, no safe local alternative remains, and another attempt would
-    merely repeat the same work. The root cause and failing phase define
-    “same problem”; new evidence, state progress, or a new recovery phase
-    resets the no-progress count. Upgrade once with a structured report to the
-    registered Supervisor, then pause; do not retry or spin.
+## Repository and roles
 
-21. Courier busy/rate-limited/temporarily unavailable states with recovery
-    progress, waiting on the same request, diagnosable test or compile errors,
-    incrementally progressing work, Worker-owned lost data, one commit,
-    publish, closeout, phase COMPLETE, context compression, or temporarily no
-    work order are never reasons to stop or upgrade.
+- Work only in `GenericChess-sandbox`. `master` changes only through an
+  authorized fast-forward promotion.
+- There is one registered Worker, one Heavy job, and one Courier browser sender.
+  Never create a second writer, worktree, browser/profile, or replacement request.
+- Preserve unrelated changes. Publish completed code checkpoints to
+  `origin/sandbox`; promotion requires the exact tested, published candidate SHA.
+- Generated binaries, raw benchmark output, Courier runtime state, and temporary
+  evidence stay out of Git. Commit concise reusable results only when they help a
+  mainline decision.
+- Keep project-scoped `approval_policy = "never"` and
+  `sandbox_mode = "danger-full-access"`. Mechanical approval systems do not gain
+  authority over the registered Supervisor.
 
-## User-authoritative Courier loop interpretation
+## Continuous Worker loop
 
-User原话（逐字保留）：
+User's authoritative wording:
 
 > “找chat要工单，回来完成工单，然后再发布，并汇报chat，chat给你工单，这是一个循环。”
 
-In Courier mode, repeat this loop continuously across multiple work orders:
-obtain the next order from the same Chat/Courier flow, complete it, test,
-commit, publish to `origin/sandbox`, and report its immutable closeout to Chat.
-After every completed, published, and reported work order, immediately obtain
-the next order from that same flow. Only the explicit lawful stopping
-conditions already listed in this policy permit stopping. A single commit,
-closeout, phase-level `COMPLETE`, subjective judgment that the next step is
-waiting, or context compression is never a reason to stop work.
+The registered low-level Worker may use Goal mode and repeats that loop across
+work orders. The Supervisor never uses Goal. A commit, closeout, phase result,
+context compression, temporary lack of an order, Courier wait, or recoverable
+error is not a stopping condition.
+
+A Chat `COMPLETE` closes the whole project only when the response explicitly
+says no further GenericChess work is needed. A phase-level result continues to
+the next work order.
+
+Stop only for an explicit whole-project terminal result, explicit user stop,
+active Supervisor HOLD, ownership/second-writer conflict, uncertain irreversible
+external effect, or a severe harness failure that may damage state. Ordinary
+technical problems are escalated only after two different reasonable attempts
+with no progress and no safe local option. New evidence or a new recovery stage
+resets that count.
+
+## Courier boundary
+
+Courier is transport, not project management. It mechanically owns queueing,
+sending, reply attribution, rate-limit/busy waiting, and same-request recovery.
+It must not reject a useful response merely because ordinary control fields are
+missing; defaults are `CONTINUE`, `NONE`, and `HOLD`.
+
+Recovery is deliberately small:
+
+1. If Chat is busy or rate-limited, wait and report that state to the Worker.
+2. If the request is visible, do not send again; collect or wait for its reply.
+3. If it is definitely unsent, send the same immutable request.
+4. If send state is uncertain, one clearly labelled same-ID resend is allowed.
+5. If ambiguity remains, notify the Supervisor and release unrelated queue work.
+
+Never use Gmail, a background Courier daemon, WSL, another browser/profile, or a
+new request to bypass recovery. Missing formatting is not a transport failure.
+Only explicit controls may authorize whole-project `COMPLETE`/`BLOCKED`, compute,
+or promotion.
+
+Every Courier message reminds Chat to prioritize mainline scientific work.
+Process or audit work must have indispensable reusable value; five consecutive
+orders without mainline work is a direction warning, not a new hard gate.
+
+## Compute and promotion
+
+- Use `generic-chess-flow.cmd heavy` or `heavy-start` for long tests, self-play,
+  benchmarks, and large audits. Never run two Heavy jobs.
+- A Heavy run declares resource bounds. Large compute also needs a scientific
+  plan and explicit Chat plus Supervisor approval for that plan.
+- Approval binds the canonical plan, command, resource envelope, and explicit
+  input digests. It does not bind unrelated repository HEAD changes or the
+  storage hash of a Chat response.
+- For expected work over two hours, prefer splitting it or running available
+  smaller mainline work first. If no useful alternative exists and the approved
+  computation is necessary, start it rather than leave the workflow idle. A
+  prior large run inside 24 hours is a scheduling warning, not an absolute ban.
+- Use the cheapest sufficient decision procedure and early stops. Do not run
+  experiments whose result is already decided by existing evidence or algebra.
+- Promotion remains fail-closed: exact candidate SHA, clean synchronized
+  sandbox, successful required tests, explicit approval, and fast-forward only.
+
+## Simplicity rule
+
+Mechanical code checks only objective facts: exclusive ownership, whether a
+request was sent, busy/rate-limit state, declared resource bounds, whether
+inputs changed, and whether a candidate is published. Agents decide scientific
+value, task priority, recovery usefulness, and whether continued work is sensible.
+
+Do not add a daemon, database, audit workflow, duplicated state store, or new
+status category to solve a one-off incident. Process/safety work likely to take
+over 30 minutes needs a concrete recurring loss it prevents and must use the
+smallest solution. Prefer deleting obsolete branches and tests over preserving
+them indefinitely.

@@ -174,10 +174,8 @@ def test_local_status_does_not_inspect_courier(monkeypatch, tmp_path, capsys):
     flow.command_status(tmp_path, SimpleNamespace())
 
     payload = json.loads(capsys.readouterr().out)
-    assert payload["courier"] == {
-        "checked": False,
-        "reason": "skipped_due_to_local_mode",
-    }
+    assert "courier" not in payload
+    assert payload["session"]["mode"] == "local"
 
 
 def test_work_starts_courier_with_builtin_request(monkeypatch, tmp_path):
@@ -228,9 +226,8 @@ def test_scoped_complete_requires_follow_on_work_contract():
     )
     normalized = lambda path: " ".join(path.read_text(encoding="utf-8").split())
     assert contract in normalized(ROOT / "AGENTS.md")
-    assert contract in normalized(ROOT / "WORKFLOW.md")
-    assert "finish that session" in normalized(ROOT / "AGENTS.md")
-    assert "immediately runs" in normalized(ROOT / "WORKFLOW.md")
+    assert "Policy and authority live only in `AGENTS.md`" in normalized(ROOT / "WORKFLOW.md")
+    assert "A phase-level result continues to the next work order" in normalized(ROOT / "AGENTS.md")
 
 
 def test_work_resumes_the_same_active_request(monkeypatch, tmp_path):
@@ -1270,33 +1267,27 @@ def test_hold_status_check_write_returns_nonzero(monkeypatch, tmp_path, capsys):
     assert json.loads(capsys.readouterr().out)["active"] is True
 
 
-def test_supervisor_audit_record_is_authorized_and_deduplicates_messages(
-        monkeypatch, tmp_path, capsys):
+def test_register_worker_updates_current_session(monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"
     runtime.mkdir()
     (runtime / "supervisor.json").write_text(json.dumps({
         "schema": "generic-chess-supervisor-v1",
         "supervisor_thread_id": "supervisor-1",
-        "worker_thread_id": "worker-1",
+        "worker_thread_id": "old-worker",
+    }), encoding="utf-8")
+    (runtime / "session.json").write_text(json.dumps({
+        "active": True, "mode": "courier", "worker_thread_id": "old-worker",
     }), encoding="utf-8")
     monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
     monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
-    args = SimpleNamespace(
-        classification="UNJUSTIFIED_IDLE", worker_status="idle",
-        worker_cursor="cursor-7", message_key="wake:cursor-7", hold_id=None)
 
-    assert flow.command_supervisor_audit_record(tmp_path, args) == 0
-    first = json.loads(capsys.readouterr().out)
-    assert first["audit"]["worker_thread_id"] == "worker-1"
-    assert flow.command_supervisor_audit_record(tmp_path, args) == 4
-    assert json.loads(capsys.readouterr().out)["duplicate"] is True
+    flow.command_register_worker(
+        tmp_path, SimpleNamespace(thread_id="new-worker", host_id="local")
+    )
 
-    flow.command_supervisor_audit_status(tmp_path, SimpleNamespace())
-    assert json.loads(capsys.readouterr().out)["audit"]["message_key"] == "wake:cursor-7"
-
-    monkeypatch.setenv("CODEX_THREAD_ID", "worker-1")
-    with pytest.raises(flow.FlowError, match="registered Supervisor"):
-        flow.command_supervisor_audit_record(tmp_path, args)
+    assert json.loads((runtime / "supervisor.json").read_text())["worker_thread_id"] == "new-worker"
+    assert json.loads((runtime / "session.json").read_text())["worker_thread_id"] == "new-worker"
+    assert json.loads(capsys.readouterr().out)["worker_thread_id"] == "new-worker"
 
 
 def test_user_superseded_resolution_retires_request_without_deleting_evidence(monkeypatch, tmp_path):

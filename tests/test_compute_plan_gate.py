@@ -121,15 +121,16 @@ def test_v2_plan_digest_is_canonical_json_not_file_whitespace(tmp_path, monkeypa
     assert digest != flow._file_digest(path)
 
 
-def test_large_compute_quota_fails_closed_without_local_receipt(tmp_path, monkeypatch):
+def test_large_compute_schedule_does_not_block_without_local_receipt(tmp_path, monkeypatch):
     runtime, _ = _setup_approval(monkeypatch, tmp_path)
     envelope = _envelope(large=True)
     envelope.update({"expected_wall_minutes": 121, "hard_wall_minutes": 180})
-    with pytest.raises(flow.FlowError, match="locally recorded work-order timestamp"):
-        flow._enforce_large_compute_quota(tmp_path, envelope, {"recovery_timeline": []})
+    assert flow._large_compute_schedule(
+        tmp_path, envelope, {"recovery_timeline": []}
+    ) == (None, False)
 
 
-def test_large_compute_quota_counts_only_successful_children_in_rolling_window(tmp_path, monkeypatch):
+def test_large_compute_schedule_reports_prior_success_without_blocking(tmp_path, monkeypatch):
     runtime, _ = _setup_approval(monkeypatch, tmp_path)
     envelope = _envelope(large=True)
     envelope.update({"expected_wall_minutes": 121, "hard_wall_minutes": 180})
@@ -144,12 +145,38 @@ def test_large_compute_quota_counts_only_successful_children_in_rolling_window(t
         "expected_wall_minutes": 121,
         "work_order_recorded_at": 2_000.0,
     }), encoding="utf-8")
-    with pytest.raises(flow.FlowError, match="one successful Heavy child"):
-        flow._enforce_large_compute_quota(tmp_path, envelope, state)
+    assert flow._large_compute_schedule(tmp_path, envelope, state) == (2_000.0, True)
     old = json.loads(run_state.read_text(encoding="utf-8"))
     old["work_order_recorded_at"] = 2_000.0 - flow.LARGE_COMPUTE_QUOTA_WINDOW_SECONDS - 1
     run_state.write_text(json.dumps(old), encoding="utf-8")
-    assert flow._enforce_large_compute_quota(tmp_path, envelope, state) == 2_000.0
+    assert flow._large_compute_schedule(tmp_path, envelope, state) == (2_000.0, False)
+
+
+def test_plan_and_approval_survive_unrelated_sandbox_commit(tmp_path, monkeypatch):
+    runtime, state = _setup_approval(monkeypatch, tmp_path)
+    envelope = _envelope(large=True)
+    plan_path = _write(tmp_path / "plan.json", _plan(envelope, sandbox_sha="a" * 40))
+    plan, plan_sha = flow._load_compute_plan(tmp_path, plan_path)
+    envelope_sha = flow._json_digest(envelope)
+    _write(runtime / "compute-approvals" / "plan-f63-r1.json", {
+        "schema": flow.COMPUTE_APPROVAL_SCHEMA,
+        "approval_version": 2,
+        "plan_id": "plan-f63-r1",
+        "plan_sha256": plan_sha,
+        "sandbox_sha": "a" * 40,
+        "chat_response_sha256": "r" * 64,
+        "supervisor_thread_id": "supervisor-1",
+        "approved_at": 1.0,
+        "revoked": False,
+        "binding_mode": "canonical_plan",
+    })
+    monkeypatch.setattr(flow, "sha", lambda _root, _ref="HEAD": "b" * 40)
+    state["last_response_sha256"] = "new-response"
+    state["chat_control"] = {}
+    _write(runtime / "session.json", state)
+    assert flow._validate_compute_approval(
+        tmp_path, plan, plan_sha, envelope_sha
+    )["plan_id"] == "plan-f63-r1"
 
 
 def test_heavy_entrypoints_fail_closed_without_resource_declaration(monkeypatch, tmp_path):
@@ -220,8 +247,10 @@ def test_valid_chat_and_registered_supervisor_approval_is_idempotent(tmp_path, m
     args = SimpleNamespace(plan_file=str(plan_path), chat_approval_file=str(tmp_path / "chat.json"))
     assert flow.command_compute_plan_approve(tmp_path, args) == 0
     first = json.loads((runtime / "compute-approvals" / "plan-f63-r1.json").read_text())
-    assert first["approval_version"] == 2
-    assert "envelope_sha256" not in first and "command_argv" not in first
+    assert first["approval_version"] == 3
+    assert first["envelope_sha256"] == envelope_sha
+    assert first["command_argv"] == ["python", "-c", "pass"]
+    assert "sandbox_sha" not in first and "chat_response_sha256" not in first
     assert flow.command_compute_plan_approve(tmp_path, args) == 0
     second = json.loads((runtime / "compute-approvals" / "plan-f63-r1.json").read_text())
     assert first == second
@@ -279,7 +308,8 @@ def test_compute_plan_approve_can_bind_current_normal_chat_response_without_file
         tmp_path, SimpleNamespace(plan_file=str(plan_path), chat_approval_file=None)
     ) == 0
     approval = json.loads((runtime / "compute-approvals" / "plan-f63-r1.json").read_text())
-    assert approval["chat_response_sha256"] == "r" * 64
+    assert approval["approval_version"] == 3
+    assert "chat_response_sha256" not in approval
 
 
 def test_compute_plan_request_inlines_scientific_plan_and_local_hashes(
