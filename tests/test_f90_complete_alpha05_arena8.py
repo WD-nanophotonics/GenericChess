@@ -84,6 +84,78 @@ def test_f90_runner_uses_bounded_eight_pair_contract_and_aggregates(
     assert json.loads(result.read_text(encoding="utf-8"))["status"] == "COMPLETE"
 
 
+def test_f90_output_separates_opening_max_plies_from_game_cap(
+        monkeypatch, tmp_path):
+    progress = tmp_path / "progress"
+    result = tmp_path / "result.json"
+    corpus = SimpleNamespace(
+        corpus_id=f90.ARENA8_CORPUS_ID,
+        seed=820801,
+        min_plies=2,
+        max_plies=6,
+        openings=tuple(SimpleNamespace(index=index) for index in range(8)),
+    )
+    parent = SimpleNamespace(checkpoint_id=f90.PARENT_ID)
+    candidate = SimpleNamespace(checkpoint_id=f90.ALPHA05_ID)
+    metadata = {"candidate_model_sha256": f90.ALPHA05_MODEL_SHA256}
+    monkeypatch.setattr(
+        f90, "_load_context",
+        lambda: ({}, "compiled", "native", parent, candidate, corpus, metadata),
+    )
+    monkeypatch.setattr(
+        f90,
+        "run_arena_game_resumable",
+        lambda *_args, **_kwargs: SimpleNamespace(
+            status="INCOMPLETE", reason="per_game_wall_seconds",
+            completed_games=2, completed_pairs=1, total_games=16,
+            summary=None,
+        ),
+    )
+    progress.mkdir()
+    for owner, plies, searched_nodes in ((0, 79, 40448), (1, 84, 43008)):
+        (progress / f"partial-game-000001-owner-{owner}.json").write_text(
+            json.dumps({
+                "status": "partial",
+                "plies": plies,
+                "searched_nodes": searched_nodes,
+            }),
+            encoding="utf-8",
+        )
+
+    output = f90.run(progress, result)
+
+    assert output["config"]["max_plies"] == 6
+    assert output["execution_caps"]["per_game_plies"] == 512
+    assert output["completed_games"] == 2
+    assert output["status"] == "INCOMPLETE"
+    assert output["reason"] == "per_game_wall_seconds"
+    assert output["resumable_partial_games"] == [
+        {
+            "pair_index": 1,
+            "opening_index": 1,
+            "child_owner": 0,
+            "plies": 79,
+            "searched_nodes": 40448,
+            "status": "partial",
+            "resumable": True,
+        },
+        {
+            "pair_index": 1,
+            "opening_index": 1,
+            "child_owner": 1,
+            "plies": 84,
+            "searched_nodes": 43008,
+            "status": "partial",
+            "resumable": True,
+        },
+    ]
+    assert output["continuation"] == {
+        "terminal_games_are_immutable": True,
+        "resume_partial_games": True,
+        "partial_game_count": 2,
+    }
+
+
 def test_f90_progress_games_reads_nested_completed_game_fields(tmp_path):
     progress = tmp_path / "progress"
     progress.mkdir()

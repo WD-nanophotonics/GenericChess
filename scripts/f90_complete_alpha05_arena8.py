@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict
 import json
 from pathlib import Path
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,6 +80,27 @@ def _progress_games(progress_dir: Path) -> list[dict]:
     return games
 
 
+def _partial_progress_games(progress_dir: Path) -> list[dict]:
+    partial_games = []
+    for path in sorted(progress_dir.glob("partial-game-*.json")):
+        match = re.fullmatch(
+            r"partial-game-(\d{6})-owner-([01])\.json", path.name
+        )
+        if match is None:
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        partial_games.append({
+            "pair_index": int(match.group(1)),
+            "opening_index": int(match.group(1)),
+            "child_owner": int(match.group(2)),
+            "plies": int(payload["plies"]),
+            "searched_nodes": int(payload["searched_nodes"]),
+            "status": payload["status"],
+            "resumable": True,
+        })
+    return partial_games
+
+
 def run(progress_dir: Path = DEFAULT_PROGRESS, result_path: Path = DEFAULT_RESULT) -> dict:
     allocation, compiled, native, parent, candidate, corpus, metadata = _load_context()
     config = ArenaConfig(
@@ -119,6 +141,7 @@ def run(progress_dir: Path = DEFAULT_PROGRESS, result_path: Path = DEFAULT_RESUL
         max_pairs=8,
     )
     games = _progress_games(progress_dir)
+    partial_games = _partial_progress_games(progress_dir)
     summary = None if arena.summary is None else {
         "pair_scores": list(arena.summary.pair_scores),
         "mean_pair_score": arena.summary.mean_pair_score,
@@ -145,6 +168,12 @@ def run(progress_dir: Path = DEFAULT_PROGRESS, result_path: Path = DEFAULT_RESUL
         "completed_pairs": arena.completed_pairs,
         "total_games": arena.total_games,
         "games": games,
+        "resumable_partial_games": partial_games,
+        "continuation": {
+            "terminal_games_are_immutable": True,
+            "resume_partial_games": True,
+            "partial_game_count": len(partial_games),
+        },
         "summary": summary,
         "historical_f89_arena4_context": {
             "artifact": "artifacts/f89_complete_alpha05_arena4/arena4_complete_evidence.json",
