@@ -6,8 +6,8 @@
       "alpha": 0.5,
       "candidate_checkpoint_id": "0b318ea0a719971634abbc443e3334dfcef4a017d94d4dfd01c8a6ca69954316",
       "candidate_model_sha256": "f5e739b47e896a8d855869a4295d2b90d20a21228575440ffbd9bfd40444cd0b",
-      "completed_games": 3,
-      "completed_pairs": 1,
+      "completed_games": 4,
+      "completed_pairs": 2,
       "config": {
         "child_nodes_per_move": 512,
         "max_depth": 12,
@@ -54,6 +54,16 @@
           "winner": 1
         },
         {
+          "child_owner": 0,
+          "completed": true,
+          "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
+          "pair": 1,
+          "plies": 266,
+          "result": "checkmate",
+          "truncated": false,
+          "winner": 1
+        },
+        {
           "child_owner": 1,
           "completed": true,
           "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
@@ -62,19 +72,6 @@
           "result": "checkmate",
           "truncated": false,
           "winner": 1
-        },
-        {
-          "child_owner": 0,
-          "completed": false,
-          "opening_id": "bf02348560711e9fe727d670d421202bb5704f0a75015fbc1016e113b0d530ba",
-          "pair": 1,
-          "plies": 204,
-          "result": null,
-          "searched_nodes": 104448,
-          "status": "partial",
-          "truncated": true,
-          "truncation_reason": "per_game_wall_seconds",
-          "winner": null
         }
       ],
       "opening_indices": [
@@ -89,9 +86,18 @@
       "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
       "raw_f87_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
       "raw_f87_model_sha256": "5eaf7c672c882fd26a124df48fd77cecbb630d50ea1970bd37eb446cfd6e336f",
-      "reason": "per_game_wall_seconds",
-      "status": "INCOMPLETE",
-      "summary": null,
+      "reason": null,
+      "status": "COMPLETE",
+      "summary": {
+        "game_draws": 0,
+        "game_losses": 1,
+        "game_wins": 3,
+        "mean_pair_score": 0.75,
+        "pair_scores": [
+          1.0,
+          0.5
+        ]
+      },
       "total_games": 4,
       "training_config_hash": "42edd3093bdaa4095b9cab36fcb6d43ff88ef2fc9f2734fcbf9fe91f50d6cece"
     },
@@ -195,6 +201,7 @@
       "training_config_hash": "c8a945e70b12c2dfcd728285c9d51e6ba9fb1e6b2182153f7b665e29fff67c8b"
     }
   ],
+  "continuation_work_order": "GENERICCHESS_F88R1_COMPLETE_ALPHA05_ARENA2",
   "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
   "raw_f87_arena4_context": {
     "artifact": "artifacts/f87_two_trajectory_native_search_distillation/arena4_full_result.json",
@@ -205,6 +212,6 @@
   },
   "raw_f87_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
   "schema": "generic-chess-f88-f87-update-damping-arena2-v1",
-  "status": "INCOMPLETE",
+  "status": "COMPLETE",
   "work_order": "GENERICCHESS_F88_F87_UPDATE_DAMPING_ARENA2"
 }
