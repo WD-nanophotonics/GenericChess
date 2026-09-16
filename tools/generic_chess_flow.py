@@ -1127,6 +1127,7 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
     compute_metadata = _enforce_compute_gate(root, args, command)
     if compute_metadata.get("quota_required"):
         raise FlowError("large compute quota requires heavy-start for durable child accounting")
+    _require_no_recorded_live_heavy_child(root)
     with heavy_lock(root):
         process = subprocess.Popen(command, cwd=root)
         return process.wait()
@@ -1199,6 +1200,39 @@ def _same_process(pid: Any, created_at: Any) -> bool:
     return actual is not None and abs(actual - float(created_at)) < 0.01
 
 
+def _recorded_live_heavy_children(root: Path) -> list[dict[str, Any]]:
+    """Find recorded Heavy children that are still the exact live processes."""
+    base = runtime_dir(root) / "heavy-runs"
+    if not base.exists():
+        return []
+    live: list[dict[str, Any]] = []
+    for state_path in sorted(base.glob("*/state.json")):
+        try:
+            payload = json.loads(state_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(payload, dict):
+            continue
+        if _same_process(payload.get("child_pid"), payload.get("child_created_at")):
+            live.append({
+                "run_id": payload.get("run_id"),
+                "label": payload.get("label"),
+                "child_pid": payload.get("child_pid"),
+                "state_path": str(state_path),
+            })
+    return live
+
+
+def _require_no_recorded_live_heavy_child(root: Path) -> None:
+    live = _recorded_live_heavy_children(root)
+    if live:
+        run = live[0]
+        raise FlowError(
+            "an existing GenericChess heavy child is still running "
+            f"(run {run.get('run_id')}); reconcile it before starting another"
+        )
+
+
 def _classified_heavy_state(payload: Any, *, now: float | None = None) -> dict[str, Any]:
     if not isinstance(payload, dict) or payload.get("schema") != "generic-chess-heavy-v1":
         raise FlowError("invalid heavy run state schema")
@@ -1224,19 +1258,32 @@ def _classified_heavy_state(payload: Any, *, now: float | None = None) -> dict[s
     if payload["status"] not in {"starting", "running", "completed", "failed", "timed_out", "stale"}:
         raise FlowError("invalid heavy run status")
     result = dict(payload)
-    if payload["status"] in {"completed", "failed", "timed_out", "stale"}:
-        return result
     current_time = time.time() if now is None else now
     heartbeat = payload.get("heartbeat_at", payload["started_at"])
-    if not isinstance(heartbeat, (int, float)) or current_time - heartbeat > 60:
+    heartbeat_stale = not isinstance(heartbeat, (int, float)) or current_time - heartbeat > 60
+    child_live = _same_process(payload.get("child_pid"), payload.get("child_created_at"))
+    monitor_live = _same_process(payload.get("monitor_pid"), payload.get("monitor_created_at"))
+    if child_live:
+        result["status"] = "running"
+        warnings = []
+        if not monitor_live:
+            warnings.append("monitor_process_identity_mismatch")
+        if heartbeat_stale:
+            warnings.append("heartbeat_expired")
+        if warnings:
+            result["warning"] = ";".join(warnings)
+        return result
+    if payload["status"] in {"completed", "failed", "timed_out", "stale"}:
+        return result
+    if heartbeat_stale:
         result["status"] = "stale"
         result["stale_reason"] = "heartbeat_expired"
         return result
     if payload["status"] == "running":
-        if not _same_process(payload.get("monitor_pid"), payload.get("monitor_created_at")):
+        if not monitor_live:
             result["status"] = "stale"
             result["stale_reason"] = "monitor_process_identity_mismatch"
-        elif not _same_process(payload.get("child_pid"), payload.get("child_created_at")):
+        elif not child_live:
             result["status"] = "stale"
             result["stale_reason"] = "child_process_identity_mismatch"
     return result
@@ -1391,6 +1438,7 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
     if not isinstance(label, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", label):
         raise FlowError("invalid heavy label")
     compute_metadata = _enforce_compute_gate(root, args, command)
+    _require_no_recorded_live_heavy_child(root)
     run_id = f"{label}-{uuid.uuid4().hex[:12]}"
     run_dir = _heavy_run_dir(root, run_id)
     run_dir.mkdir(parents=True, exist_ok=False)

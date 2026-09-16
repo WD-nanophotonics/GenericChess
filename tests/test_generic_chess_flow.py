@@ -1588,6 +1588,7 @@ def test_heavy_uses_normal_priority_and_returns_child_code(monkeypatch, tmp_path
     monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True, "mode": "local"})
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "heavy_lock", lambda _root: FakeLock())
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
     monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
     monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
 
@@ -1602,6 +1603,29 @@ def test_heavy_uses_normal_priority_and_returns_child_code(monkeypatch, tmp_path
     assert seen["argv"] == ["python", "work.py"]
     assert seen["cwd"] == tmp_path
     assert "creationflags" not in seen
+
+
+def test_heavy_rejects_recorded_live_child_even_when_lock_is_free(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True, "mode": "local"})
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
+    monkeypatch.setattr(flow, "_process_creation_time", lambda pid: {11: 101.0}.get(pid))
+    run_dir = tmp_path / "heavy-runs" / "orphaned-run"
+    run_dir.mkdir(parents=True)
+    (run_dir / "state.json").write_text(json.dumps({
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "orphaned-run",
+        "label": "orphaned",
+        "child_pid": 11,
+        "child_created_at": 101.0,
+        "status": "running",
+    }), encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+
+    with pytest.raises(flow.FlowError, match="existing GenericChess heavy child"):
+        flow.command_heavy(
+            tmp_path, SimpleNamespace(argv=["--", sys.executable, "-c", "pass"])
+        )
 
 
 def test_publish_tests_use_the_same_exclusive_lock(monkeypatch, tmp_path):
@@ -1903,6 +1927,31 @@ def test_heavy_state_uses_pid_and_creation_time_to_detect_reuse(monkeypatch):
         flow._classified_heavy_state(malformed, now=now)
 
 
+def test_monitorless_live_child_is_running_with_warning(monkeypatch):
+    payload = {
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "monitorless",
+        "label": "monitorless",
+        "argv_digest": "a" * 64,
+        "status": "running",
+        "started_at": 900.0,
+        "heartbeat_at": 900.0,
+        "monitor_pid": 10,
+        "monitor_created_at": 800.0,
+        "child_pid": 11,
+        "child_created_at": 810.0,
+        "stdout_path": "stdout.log",
+        "stderr_path": "stderr.log",
+        "state_path": "state.json",
+    }
+    monkeypatch.setattr(flow, "_process_creation_time", lambda pid: {11: 810.0}.get(pid))
+
+    classified = flow._classified_heavy_state(payload, now=1_000.0)
+
+    assert classified["status"] == "running"
+    assert classified["warning"] == "monitor_process_identity_mismatch;heartbeat_expired"
+
+
 @pytest.mark.parametrize("exit_code, expected_status", [(0, "completed"), (3, "failed")])
 def test_heavy_monitor_records_completion_failure_and_separate_logs(
     monkeypatch, tmp_path, exit_code, expected_status
@@ -2072,6 +2121,27 @@ def test_heavy_start_uses_detached_hidden_monitor_and_waits_for_handshake(
     assert payload["status"] == "running"
     assert observed["creationflags"] & flow.subprocess.DETACHED_PROCESS
     assert observed["creationflags"] & flow.subprocess.CREATE_NO_WINDOW
+
+
+def test_heavy_start_rejects_monitorless_live_child(monkeypatch, tmp_path):
+    _heavy_start_mocks(monkeypatch, tmp_path)
+    monkeypatch.setattr(flow, "_process_creation_time", lambda pid: {11: 101.0}.get(pid))
+    run_dir = tmp_path / "heavy-runs" / "orphaned-run"
+    run_dir.mkdir(parents=True)
+    (run_dir / "state.json").write_text(json.dumps({
+        "schema": "generic-chess-heavy-v1",
+        "run_id": "orphaned-run",
+        "label": "orphaned",
+        "child_pid": 11,
+        "child_created_at": 101.0,
+        "status": "stale",
+    }), encoding="utf-8")
+
+    with pytest.raises(flow.FlowError, match="existing GenericChess heavy child"):
+        flow.command_heavy_start(
+            tmp_path,
+            SimpleNamespace(label="replacement", argv=["--", sys.executable, "-c", "pass"]),
+        )
 
 
 def test_heavy_start_can_take_command_and_envelope_from_plan(monkeypatch, tmp_path, capsys):
