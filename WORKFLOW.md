@@ -15,7 +15,8 @@ generic-chess-flow.cmd supervisor-release --hold-id <id> --detail-file <path>
 generic-chess-flow.cmd promote --candidate <full-sandbox-sha>
 ```
 
-Compatibility commands remain available for existing sessions, but new work
-uses the compact surface above. `work` resumes the current Courier request or
-obtains the next order. `recover` reconciles that same request. Heavy approvals
-and Courier recovery are internal details unless `status` reports a problem.
+`work` resumes the current Courier request or obtains the next order.
+`recover` reconciles that same request. Heavy uses only its declared envelope;
+an optional plan supplies local scientific context. The retired
+`compute-plan-request`, `compute-plan-approve`, `compute-plan-status`, and
+`compute-plan-revoke` commands are removed from the normal workflow.

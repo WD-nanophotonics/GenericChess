@@ -31,11 +31,6 @@ CONTROL_FIELDS = {
     "GENERICCHESS_CANDIDATE_SHA",
     "GENERICCHESS_PROMOTION",
 }
-OPTIONAL_COMPUTE_CONTROL_FIELDS = {
-    "GENERICCHESS_COMPUTE_PLAN_APPROVAL",
-    "GENERICCHESS_COMPUTE_PLAN_SHA",
-    "GENERICCHESS_COMPUTE_ENVELOPE_SHA",
-}
 BUSINESS_CONTROL_FIELDS = {"LOCAL_SUPERVISOR_REQUIRED"}
 CONTROL_STATUSES = {"CONTINUE", "COMPLETE", "BLOCKED"}
 PROMOTION_VALUES = {"APPROVE", "HOLD"}
@@ -47,7 +42,6 @@ HANDOFF_HOST = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 HANDOFF_STAGES = {"SUBMIT_CLOSEOUT", "REQUEST_NEXT_ORDER", "COMPLETE"}
 COMPUTE_PLAN_SCHEMA = "generic-chess-compute-plan-v1"
 COMPUTE_ENVELOPE_SCHEMA = "generic-chess-resource-envelope-v1"
-COMPUTE_APPROVAL_SCHEMA = "generic-chess-compute-approval-v1"
 COMPUTE_PLAN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 COMPUTE_POLICY_PATH = Path(__file__).with_name("compute_policy.json")
 LARGE_COMPUTE_QUOTA_WALL_MINUTES = 120
@@ -78,19 +72,6 @@ def _read_json_file(path: Path, label: str) -> Any:
     if not isinstance(value, dict):
         raise FlowError(f"invalid {label}: {path}")
     return value
-
-
-def _json_digest(value: Any) -> str:
-    return hashlib.sha256(
-        json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    ).hexdigest()
-
-
-def _file_digest(path: Path) -> str:
-    try:
-        return hashlib.sha256(path.read_bytes()).hexdigest()
-    except OSError as exc:
-        raise FlowError(f"cannot read file: {path}") from exc
 
 
 def _compute_policy() -> dict[str, Any]:
@@ -145,10 +126,9 @@ def _validate_resource_envelope(value: dict[str, Any]) -> dict[str, Any]:
     return value
 
 
-def _load_resource_envelope(path_value: str | Path) -> tuple[dict[str, Any], str]:
+def _load_resource_envelope(path_value: str | Path) -> dict[str, Any]:
     path = Path(path_value).resolve()
-    value = _validate_resource_envelope(_read_json_file(path, "resource envelope"))
-    return value, _json_digest(value)
+    return _validate_resource_envelope(_read_json_file(path, "resource envelope"))
 
 
 def _compute_is_large(envelope: dict[str, Any]) -> bool:
@@ -164,7 +144,7 @@ def _compute_is_large(envelope: dict[str, Any]) -> bool:
     )
 
 
-def _load_compute_plan(root: Path, path_value: str | Path) -> tuple[dict[str, Any], str]:
+def _load_compute_plan(root: Path, path_value: str | Path) -> dict[str, Any]:
     path = Path(path_value).resolve()
     plan = _read_json_file(path, "compute plan")
     required = {
@@ -177,8 +157,6 @@ def _load_compute_plan(root: Path, path_value: str | Path) -> tuple[dict[str, An
         raise FlowError("compute plan is missing required fields")
     if not COMPUTE_PLAN_ID.fullmatch(str(plan["plan_id"])) or not isinstance(plan["version"], int) or plan["version"] <= 0:
         raise FlowError("compute plan identity is invalid")
-    if "sandbox_sha" in plan and not FULL_SHA.fullmatch(str(plan["sandbox_sha"])):
-        raise FlowError("compute plan sandbox_sha is invalid")
     for key in (
         "scientific_decision", "why_smaller_evidence_insufficient",
         "checkpoint_behavior", "failure_exit_path",
@@ -191,10 +169,7 @@ def _load_compute_plan(root: Path, path_value: str | Path) -> tuple[dict[str, An
     if not all(isinstance(part, str) and part for part in plan["command_argv"]):
         raise FlowError("compute plan command_argv is invalid")
     _validate_resource_envelope(plan["resource_envelope"])
-    # Versioned plans use a canonical JSON digest so formatting changes cannot
-    # alter the authority binding. Version-1 approvals retain byte-digest use.
-    plan_sha = _json_digest(plan) if plan["version"] >= 2 else _file_digest(path)
-    return plan, plan_sha
+    return plan
 
 
 def _canonical_argv(root: Path, argv: Sequence[str]) -> list[str]:
@@ -218,63 +193,6 @@ def _canonical_argv(root: Path, argv: Sequence[str]) -> list[str]:
         except FlowError:
             canonical.append(normalized)
     return canonical
-
-
-def _compute_approval_path(root: Path, plan_id: str) -> Path:
-    return runtime_dir(root) / "compute-approvals" / f"{plan_id}.json"
-
-
-def _require_registered_supervisor(root: Path) -> str:
-    config = _supervisor_config(root)
-    current = os.environ.get("CODEX_THREAD_ID")
-    if not isinstance(current, str) or current != config.get("supervisor_thread_id"):
-        raise FlowError("only the registered Supervisor task may perform this action")
-    return current
-
-
-def _validate_compute_approval(root: Path, plan: dict[str, Any], plan_sha: str,
-                               envelope_sha: str) -> dict[str, Any]:
-    path = _compute_approval_path(root, plan["plan_id"])
-    if not path.is_file():
-        raise FlowError("large compute requires a valid Supervisor approval")
-    approval = _read_json_file(path, "compute approval")
-    required = {
-        "schema", "plan_id", "plan_sha256", "supervisor_thread_id",
-        "approved_at", "revoked",
-    }
-    if approval.get("schema") != COMPUTE_APPROVAL_SCHEMA or not required.issubset(approval):
-        raise FlowError("compute approval is malformed")
-    if approval["revoked"] is not False:
-        raise FlowError("compute approval has been revoked")
-    if (
-        approval["plan_id"] != plan["plan_id"]
-        or approval["plan_sha256"] != plan_sha
-        or approval["supervisor_thread_id"] != _supervisor_config(root).get("supervisor_thread_id")
-    ):
-        raise FlowError("compute approval is stale or does not match the plan")
-    if approval.get("approval_version", 1) >= 2:
-        if approval.get("approval_version", 1) >= 3 and (
-            approval.get("envelope_sha256") != envelope_sha
-            or _canonical_argv(root, approval.get("command_argv", []))
-            != _canonical_argv(root, plan["command_argv"])
-        ):
-            raise FlowError("compute approval does not match the plan resources or command")
-        return approval
-    state = active_state(root)
-    control = state.get("chat_control", {})
-    if approval.get("envelope_sha256") != envelope_sha:
-        raise FlowError("compute approval is not bound to the plan envelope")
-    if approval.get("binding_mode", "legacy_chat_file") == "local_pending" and (
-        _canonical_argv(root, approval.get("command_argv", []))
-        != _canonical_argv(root, plan["command_argv"])
-    ):
-        raise FlowError("compute approval is not bound to the plan command")
-    if approval.get("binding_mode", "legacy_chat_file") != "local_pending" and (
-        control.get("GENERICCHESS_COMPUTE_PLAN_SHA") != plan_sha
-        or control.get("GENERICCHESS_COMPUTE_ENVELOPE_SHA") != envelope_sha
-    ):
-        raise FlowError("Chat has not approved this exact compute plan and envelope")
-    return approval
 
 
 def _work_order_recorded_at(state: dict[str, Any]) -> float | None:
@@ -344,23 +262,17 @@ def _enforce_compute_gate(root: Path, args: argparse.Namespace,
     envelope_path = getattr(args, "resource_envelope", None)
     plan_path = getattr(args, "compute_plan", None)
     plan = None
-    plan_sha = None
     if plan_path:
-        plan, plan_sha = _load_compute_plan(root, plan_path)
+        plan = _load_compute_plan(root, plan_path)
     if plan is not None:
         envelope = _validate_resource_envelope(plan["resource_envelope"])
-        envelope_sha = _json_digest(envelope)
     elif envelope_path:
-        envelope, envelope_sha = _load_resource_envelope(envelope_path)
+        envelope = _load_resource_envelope(envelope_path)
     else:
         raise FlowError("heavy requires an explicit --resource-envelope or --compute-plan declaration")
     large = _compute_is_large(envelope)
-    if large:
-        if plan is None or plan_sha is None:
-            raise FlowError("large compute requires an explicit versioned --compute-plan")
-        if command is not None and _canonical_argv(root, plan["command_argv"]) != _canonical_argv(root, command):
-            raise FlowError("compute plan command/stage/budget identity differs from the run")
-        _validate_compute_approval(root, plan, plan_sha, envelope_sha)
+    if plan is not None and command is not None and _canonical_argv(root, plan["command_argv"]) != _canonical_argv(root, command):
+        raise FlowError("compute plan command/stage/budget identity differs from the run")
     recorded_at = None
     scheduling_conflict = False
     quota_required = (
@@ -372,8 +284,7 @@ def _enforce_compute_gate(root: Path, args: argparse.Namespace,
             root, envelope, active_state(root)
         )
     return {
-        "resource_envelope_sha256": envelope_sha,
-        "compute_plan_sha256": plan_sha,
+        "resource_envelope": envelope,
         "compute_plan_id": plan["plan_id"] if plan else None,
         "compute_size": "large" if large else "small_or_medium",
         "hard_wall_minutes": envelope["hard_wall_minutes"],
@@ -663,10 +574,79 @@ def load_state(root: Path, *, required: bool = True) -> dict[str, Any]:
     return value
 
 
+def _apply_current_supervisor_resolution(root: Path, state: dict[str, Any]) -> bool:
+    """Apply one newer signed resolution and retire its obsolete pause fields."""
+    escalation_id = state.get("escalation_id")
+    if not isinstance(escalation_id, str):
+        return False
+    path = escalation_root(root) / escalation_id / "resolution.json"
+    if not path.is_file():
+        return False
+    try:
+        resolution = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    if not isinstance(resolution, dict) or resolution.get("action") not in {
+        "RESUME_WORKER", "RECOVERED", "USER_SUPERSEDED_REQUEST",
+    }:
+        return False
+    resolved_at = resolution.get("resolved_at")
+    if not isinstance(resolved_at, (int, float)):
+        return False
+    chat_control = state.get("chat_control") if isinstance(state.get("chat_control"), dict) else {}
+    legacy_compute_hold = (
+        chat_control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") == "HOLD"
+        and isinstance(state.get("pending_compute_plan"), dict)
+    )
+    prior_decision = state.get("supervisor_decision_at")
+    if isinstance(prior_decision, (int, float)) and resolved_at <= prior_decision:
+        return False
+    # A newer accepted response is a newer decision boundary; an old
+    # escalation must not clear that response's business notice.
+    for event in state.get("recovery_timeline", []):
+        if (isinstance(event, dict) and event.get("event") == "response_accepted"
+                and isinstance(event.get("at"), (int, float))
+                and event["at"] > resolved_at and not legacy_compute_hold):
+            return False
+    state["supervisor_decision_at"] = float(resolved_at)
+    state["local_supervisor_required"] = False
+    state.pop("escalation_id", None)
+    state.pop("business_supervisor_notice_path", None)
+    state.pop("pending_compute_plan", None)
+    for key in (
+        "GENERICCHESS_COMPUTE_PLAN_APPROVAL",
+        "GENERICCHESS_COMPUTE_PLAN_SHA",
+        "GENERICCHESS_COMPUTE_ENVELOPE_SHA",
+    ):
+        chat_control.pop(key, None)
+    if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
+        state["recovery_state"] = "IDLE"
+    recovery_event(state, "supervisor_pause_cleared", resolution_sha256=resolution.get("resolution_sha256"))
+    return True
+
+
+def _clear_retired_compute_fields(state: dict[str, Any]) -> bool:
+    """Drop state left by the removed Chat compute-approval protocol."""
+    changed = state.pop("pending_compute_plan", None) is not None
+    control = state.get("chat_control")
+    if isinstance(control, dict):
+        for key in (
+            "GENERICCHESS_COMPUTE_PLAN_APPROVAL",
+            "GENERICCHESS_COMPUTE_PLAN_SHA",
+            "GENERICCHESS_COMPUTE_ENVELOPE_SHA",
+        ):
+            changed = control.pop(key, None) is not None or changed
+    return changed
+
+
 def active_state(root: Path) -> dict[str, Any]:
     state = load_state(root)
     if state.get("active") is not True:
         raise FlowError("no active GenericChess flow session")
+    changed = _apply_current_supervisor_resolution(root, state)
+    changed = _clear_retired_compute_fields(state) or changed
+    if changed:
+        save_state(root, state)
     return state
 
 
@@ -783,7 +763,7 @@ def parse_control_footer(text: str) -> dict[str, str]:
             continue
         key, value = line.split("=", 1)
         key = key.strip()
-        if key in CONTROL_FIELDS | OPTIONAL_COMPUTE_CONTROL_FIELDS | BUSINESS_CONTROL_FIELDS:
+        if key in CONTROL_FIELDS | BUSINESS_CONTROL_FIELDS:
             found[key] = value.strip()
     return found
 
@@ -901,14 +881,6 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         state["work_order_active"] = control["GENERICCHESS_STATUS"] == "CONTINUE"
         state["last_response_sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
         state["last_response_source"] = source
-        pending_compute = state.get("pending_compute_plan")
-        if (
-            isinstance(pending_compute, dict)
-            and source == "normal"
-            and not pending_compute.get("response_sha256")
-        ):
-            pending_compute["response_sha256"] = state["last_response_sha256"]
-            pending_compute["response_path"] = str(response)
         state["active_request_directory"] = None
         state["recovery_state"] = "RECOVERED" if source != "normal" else "IDLE"
         notice_path = _record_business_escalation(
@@ -1023,7 +995,7 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         + "The referenced sandbox SHA is committed and published to origin/sandbox.\n"
         + "Prioritize actual playing-strength, self-improvement, and main-algorithm work. Process or audit work must remove a demonstrated mainline blocker and use the smallest sufficient fix; five consecutive non-mainline work orders is a direction warning.\n"
         + "Ordinary explanatory responses are valid even when control fields are omitted; the flow imports the body and defaults missing/invalid controls to CONTINUE/NONE/HOLD.\n"
-        + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, promotion, or compute approval.\n"
+        + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, or promotion.\n"
         + "End the response with these control fields when applicable:\n"
         + "GENERICCHESS_STATUS=CONTINUE|COMPLETE|BLOCKED\n"
         + "GENERICCHESS_CANDIDATE_SHA=<40-hex-sha-or-NONE>\n"
@@ -1072,6 +1044,10 @@ def command_status(root: Path, _args: argparse.Namespace) -> None:
             root, "merge-base", "--is-ancestor", sha(trees["master"]), sha(trees["sandbox"])
         )
     session = load_state(root, required=False)
+    changed = session.get("active") is True and _apply_current_supervisor_resolution(root, session)
+    changed = _clear_retired_compute_fields(session) or changed
+    if changed:
+        save_state(root, session)
     payload["session"] = {
         key: session.get(key) for key in (
             "active", "mode", "worker_thread_id", "active_request_id",
@@ -1154,170 +1130,6 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
     with heavy_lock(root):
         process = subprocess.Popen(command, cwd=root)
         return process.wait()
-
-
-def _chat_compute_approval(root: Path, path_value: str | Path | None, plan: dict[str, Any],
-                           plan_sha: str, envelope_sha: str) -> dict[str, Any]:
-    state = active_state(root)
-    local_binding = path_value is None
-    if path_value is None:
-        control = state.get("chat_control", {})
-        pending = state.get("pending_compute_plan")
-        if not isinstance(pending, dict) or any(
-            pending.get(key) != expected
-            for key, expected in {
-                "plan_id": plan["plan_id"],
-                "plan_sha256": plan_sha,
-                "envelope_sha256": envelope_sha,
-            }.items()
-        ):
-            raise FlowError("current Chat response is not bound to a pending compute-plan request")
-        if pending.get("command_argv") != plan["command_argv"]:
-            raise FlowError("current Chat response is not bound to the plan command")
-        approval = {
-            "schema": "generic-chess-chat-compute-approval-v1",
-            "decision": control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL"),
-            "plan_id": plan["plan_id"],
-            "plan_sha256": plan_sha,
-            "envelope_sha256": envelope_sha,
-            "chat_response_sha256": state.get("last_response_sha256"),
-            "command_argv": plan["command_argv"],
-        }
-    else:
-        approval = _read_json_file(Path(path_value).resolve(), "Chat compute approval")
-    required = {
-        "schema", "decision", "plan_id", "plan_sha256", "envelope_sha256",
-    }
-    if approval.get("schema") != "generic-chess-chat-compute-approval-v1" or not required.issubset(approval):
-        raise FlowError("Chat compute approval is malformed")
-    if (
-        approval["decision"] != "APPROVE"
-        or approval["plan_id"] != plan["plan_id"]
-        or approval["plan_sha256"] != plan_sha
-        or approval["envelope_sha256"] != envelope_sha
-    ):
-        raise FlowError("Chat compute approval is stale or does not bind this plan")
-    control = state.get("chat_control", {})
-    if local_binding and control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") != "APPROVE":
-        raise FlowError("current Chat response does not approve this exact compute plan")
-    if not local_binding and (
-        approval.get("plan_sha256") != plan_sha
-        or approval.get("envelope_sha256") != envelope_sha
-    ):
-        raise FlowError("Chat compute approval is stale or does not bind this plan")
-    return approval
-
-
-def command_compute_plan_request(root: Path, args: argparse.Namespace) -> None:
-    """Ask Chat to approve the exact scientific plan/envelope for a large run."""
-    state = active_state(root)
-    require_worker_write_authority(state, root)
-    require_no_supervisor_hold(root)
-    if state.get("mode") != "courier":
-        raise FlowError("compute-plan-request is only available in courier mode")
-    plan, plan_sha = _load_compute_plan(root, args.plan_file)
-    envelope = _validate_resource_envelope(plan["resource_envelope"])
-    envelope_sha = _json_digest(envelope)
-    summary = {
-        "plan_sha256": plan_sha,
-        "envelope_sha256": envelope_sha,
-        "sandbox_sha": sha(root),
-        "compute_size": "large" if _compute_is_large(envelope) else "small_or_medium",
-        "command_argv": plan["command_argv"],
-        "resource_envelope": envelope,
-    }
-    body = (
-        "Review and approve only this exact GenericChess scientific compute plan.\n"
-        "The local Supervisor mechanically binds the approved normal response to the local hashes; Chat only decides APPROVE or HOLD and must not invent or change parameters.\n\n"
-        f"PLAN_SHA256={plan_sha}\nENVELOPE_SHA256={envelope_sha}\nSANDBOX_SHA={sha(root)}\n"
-        "PLAN_JSON=\n" + json.dumps(plan, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
-        "LOCAL_COMPUTE_SUMMARY=\n" + json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
-        "Return only the explicit decision field when applicable:\n"
-        "GENERICCHESS_COMPUTE_PLAN_APPROVAL=APPROVE|HOLD\n"
-    )
-    source = runtime_dir(root) / f"compute-plan-request-{plan['plan_id']}.txt"
-    source.parent.mkdir(parents=True, exist_ok=True)
-    source.write_text(body, encoding="utf-8")
-    state["pending_compute_plan"] = {
-        "plan_id": plan["plan_id"],
-        "plan_sha256": plan_sha,
-        "envelope_sha256": envelope_sha,
-        "command_argv": plan["command_argv"],
-        "request_source": str(source),
-        "requested_at": time.time(),
-    }
-    save_state(root, state)
-    dispatch_message(root, state, source, "compute_plan_request")
-
-
-def command_compute_plan_approve(root: Path, args: argparse.Namespace) -> int:
-    _require_registered_supervisor(root)
-    plan, plan_sha = _load_compute_plan(root, args.plan_file)
-    envelope = _validate_resource_envelope(plan["resource_envelope"])
-    if not _compute_is_large(envelope):
-        raise FlowError("Supervisor approval is only required for a large compute plan")
-    envelope_sha = _json_digest(envelope)
-    chat_approval_file = getattr(args, "chat_approval_file", None)
-    chat = _chat_compute_approval(root, chat_approval_file, plan, plan_sha, envelope_sha)
-    path = _compute_approval_path(root, plan["plan_id"])
-    record = {
-        "schema": COMPUTE_APPROVAL_SCHEMA,
-        "approval_version": 3,
-        "plan_id": plan["plan_id"],
-        "plan_sha256": plan_sha,
-        "envelope_sha256": envelope_sha,
-        "command_argv": plan["command_argv"],
-        "supervisor_thread_id": _supervisor_config(root).get("supervisor_thread_id"),
-        "approved_at": time.time(),
-        "revoked": False,
-        "binding_mode": "canonical_plan",
-    }
-    if path.exists():
-        previous = _read_json_file(path, "compute approval")
-        if previous.get("revoked") is False:
-            comparable = {key: previous.get(key) for key in record if key != "approved_at"}
-            expected = {key: record.get(key) for key in record if key != "approved_at"}
-            if comparable == expected:
-                print(json.dumps(previous, indent=2, sort_keys=True))
-                return 0
-            raise FlowError("an active approval already exists for this plan")
-    _atomic_json(path, record)
-    print(json.dumps(record, indent=2, sort_keys=True))
-    return 0
-
-
-def command_compute_plan_status(root: Path, args: argparse.Namespace) -> int:
-    plan, plan_sha = _load_compute_plan(root, args.plan_file)
-    envelope = _validate_resource_envelope(plan["resource_envelope"])
-    path = _compute_approval_path(root, plan["plan_id"])
-    approval = _read_json_file(path, "compute approval") if path.exists() else None
-    payload = {
-        "plan_id": plan["plan_id"],
-        "plan_sha256": plan_sha,
-        "envelope_sha256": _json_digest(envelope),
-        "compute_size": "large" if _compute_is_large(envelope) else "small_or_medium",
-        "approval": approval,
-    }
-    print(json.dumps(payload, indent=2, sort_keys=True))
-    return 0
-
-
-def command_compute_plan_revoke(root: Path, args: argparse.Namespace) -> int:
-    supervisor = _require_registered_supervisor(root)
-    plan, plan_sha = _load_compute_plan(root, args.plan_file)
-    path = _compute_approval_path(root, plan["plan_id"])
-    if not path.exists():
-        raise FlowError("no approval exists for this compute plan")
-    approval = _read_json_file(path, "compute approval")
-    if approval.get("plan_sha256") != plan_sha:
-        raise FlowError("cannot revoke a stale or mismatched compute approval")
-    if approval.get("revoked") is True:
-        print(json.dumps(approval, indent=2, sort_keys=True))
-        return 0
-    approval.update({"revoked": True, "revoked_at": time.time(), "revoked_by": supervisor})
-    _atomic_json(path, approval)
-    print(json.dumps(approval, indent=2, sort_keys=True))
-    return 0
 
 
 def _heavy_run_dir(root: Path, run_id: str) -> Path:
@@ -1570,7 +1382,7 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
     plan_path = getattr(args, "compute_plan", None)
     plan = None
     if plan_path:
-        plan, _plan_sha = _load_compute_plan(root, plan_path)
+        plan = _load_compute_plan(root, plan_path)
         if not command:
             command = list(plan["command_argv"])
     if not command:
@@ -1736,6 +1548,10 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
         raise FlowError("work must be run from the sandbox worktree")
     require_handoff_owner(root)
     state = load_state(root, required=False)
+    changed = state.get("active") is True and _apply_current_supervisor_resolution(root, state)
+    changed = _clear_retired_compute_fields(state) or changed
+    if changed:
+        save_state(root, state)
     if state.get("active") is True:
         if state.get("mode") != "courier":
             raise FlowError(
@@ -2332,6 +2148,7 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
     current = os.environ.get("CODEX_THREAD_ID")
     if current != claim.get("supervisor_thread_id"):
         raise FlowError("only the claiming Supervisor task may resolve an escalation")
+    state = active_state(root)
     detail = Path(args.detail_file).read_text(encoding="utf-8-sig") if args.detail_file else args.action
     payload = {
         "schema": "generic-chess-supervisor-resolution-v1",
@@ -2345,7 +2162,6 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
     payload["resolution_sha256"] = hashlib.sha256(canonical).hexdigest()
     _atomic_json(directory / "resolution.json", payload)
     dossier = json.loads((directory / "dossier.json").read_text(encoding="utf-8"))
-    state = active_state(root)
     if args.action == "USER_SUPERSEDED_REQUEST":
         retired_directory = state.get("active_request_directory")
         state["retired_request_directory"] = retired_directory
@@ -2415,6 +2231,7 @@ def command_supervisor_resolve(root: Path, args: argparse.Namespace) -> None:
             state["recovery_state"] = "IDLE"
         else:
             state["recovery_state"] = "HUMAN_REQUIRED" if args.action == "HUMAN_REQUIRED" else "RECOVERED"
+    _apply_current_supervisor_resolution(root, state)
     recovery_event(state, "supervisor_resolved", escalation_id=args.escalation_id,
                    action=args.action, resolution_sha256=payload["resolution_sha256"])
     save_state(root, state)
@@ -2831,19 +2648,6 @@ def parser() -> argparse.ArgumentParser:
     heavy_start.add_argument("--compute-plan")
     heavy_start.add_argument("argv", nargs=argparse.REMAINDER)
     heavy_start.set_defaults(handler=command_heavy_start)
-    compute_request = sub.add_parser("compute-plan-request")
-    compute_request.add_argument("--plan-file", required=True)
-    compute_request.set_defaults(handler=command_compute_plan_request)
-    compute_approve = sub.add_parser("compute-plan-approve")
-    compute_approve.add_argument("--plan-file", required=True)
-    compute_approve.add_argument("--chat-approval-file")
-    compute_approve.set_defaults(handler=command_compute_plan_approve)
-    compute_status = sub.add_parser("compute-plan-status")
-    compute_status.add_argument("--plan-file", required=True)
-    compute_status.set_defaults(handler=command_compute_plan_status)
-    compute_revoke = sub.add_parser("compute-plan-revoke")
-    compute_revoke.add_argument("--plan-file", required=True)
-    compute_revoke.set_defaults(handler=command_compute_plan_revoke)
     heavy_status = sub.add_parser("heavy-status")
     heavy_status.add_argument("--run-id")
     heavy_status.set_defaults(handler=command_heavy_status)

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -301,7 +302,7 @@ def _followup_state(response: Path):
         "active_request_directory": None,
         "recovery_state": "IDLE",
         "last_response_path": str(response),
-        "last_response_sha256": flow._file_digest(response),
+        "last_response_sha256": hashlib.sha256(response.read_bytes()).hexdigest(),
     }
 
 
@@ -835,7 +836,12 @@ def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch
     (directory / "dossier.json").write_text(json.dumps(dossier), encoding="utf-8")
     (runtime / "supervisor.json").write_text(json.dumps({
         "supervisor_thread_id": "supervisor-1"}), encoding="utf-8")
-    state = {"active": True, "mode": "courier", "recovery_timeline": []}
+    state = {
+        "active": True, "mode": "courier", "recovery_timeline": [],
+        "local_supervisor_required": True, "escalation_id": "a" * 20,
+        "business_supervisor_notice_path": "old-notice.json",
+        "recovery_state": "ESCALATED",
+    }
     monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
     monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
@@ -854,6 +860,80 @@ def test_pending_diagnostic_and_resolution_return_to_original_worker(monkeypatch
     assert "WORKER_THREAD_ID=worker-1" in output
     assert len(resolution["resolution_sha256"]) == 64
     assert state["recovery_state"] == "IDLE"
+    assert state["local_supervisor_required"] is False
+    assert state.get("escalation_id") is None
+    assert "business_supervisor_notice_path" not in state
+
+
+def test_old_resolution_cannot_clear_a_newer_business_notice_after_status_and_work(
+        monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("9" * 20)
+    directory.mkdir(parents=True)
+    (directory / "dossier.json").write_text(json.dumps({
+        "escalation_id": "9" * 20, "request_directory": None,
+    }), encoding="utf-8")
+    (directory / "resolution.json").write_text(json.dumps({
+        "action": "RESUME_WORKER", "resolved_at": 10.0,
+        "resolution_sha256": "r" * 64,
+    }), encoding="utf-8")
+    state = {
+        "active": True, "mode": "courier", "active_request_directory": None,
+        "recovery_state": "ESCALATED", "escalation_id": "9" * 20,
+        "local_supervisor_required": True,
+        "business_supervisor_notice_path": "new-notice.json",
+        "recovery_timeline": [{"event": "response_accepted", "at": 20.0}],
+    }
+    _state_path = runtime / "session.json"
+    runtime.mkdir(exist_ok=True)
+    _state_path.write_text(json.dumps(state), encoding="utf-8")
+    master, sandbox = tmp_path / "master", tmp_path / "sandbox"
+    master.mkdir(); sandbox.mkdir()
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, **_kwargs: runtime)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": master, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "sha", lambda *_args, **_kwargs: "a" * 40)
+    monkeypatch.setattr(flow, "clean", lambda _path: True)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+    monkeypatch.setattr(flow, "require_handoff_owner", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda *_args: None)
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "dispatch_message", lambda *_args, **_kwargs: None)
+
+    flow.command_status(tmp_path, SimpleNamespace())
+    capsys.readouterr()
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    persisted = json.loads(_state_path.read_text(encoding="utf-8"))
+    assert persisted["local_supervisor_required"] is True
+    assert persisted["escalation_id"] == "9" * 20
+    assert persisted["business_supervisor_notice_path"] == "new-notice.json"
+
+
+def test_resolved_legacy_compute_hold_is_cleared_on_status(monkeypatch, tmp_path, capsys):
+    runtime = tmp_path / "runtime"
+    directory = runtime / "escalations" / ("8" * 20)
+    directory.mkdir(parents=True)
+    (directory / "resolution.json").write_text(json.dumps({
+        "action": "RECOVERED", "resolved_at": 10.0,
+        "resolution_sha256": "r" * 64,
+    }), encoding="utf-8")
+    state = {
+        "active": True, "escalation_id": "8" * 20,
+        "local_supervisor_required": True, "recovery_state": "IDLE",
+        "chat_control": {"GENERICCHESS_COMPUTE_PLAN_APPROVAL": "HOLD"},
+        "pending_compute_plan": {"plan_id": "retired"},
+        "recovery_timeline": [{"event": "response_accepted", "at": 20.0}],
+    }
+    runtime.mkdir(exist_ok=True)
+    state_path = runtime / "session.json"
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, **_kwargs: runtime)
+
+    assert flow.active_state(tmp_path)["local_supervisor_required"] is False
+    persisted = json.loads(state_path.read_text(encoding="utf-8"))
+    assert persisted.get("escalation_id") is None
+    assert "pending_compute_plan" not in persisted
+    capsys.readouterr()
 
 
 def test_supervisor_resend_uses_evidence_retry_for_proven_unsent_request(
