@@ -52,13 +52,14 @@ def _load_context():
 
 
 def _game_payload(payload: dict, *, pair_index: int, child_owner: int) -> dict:
+    game = payload["game"]
     return {
         "pair_index": pair_index,
         "opening_index": pair_index,
         "child_owner": child_owner,
-        "winner": payload.get("winner"),
-        "result": payload.get("result"),
-        "plies": payload.get("plies"),
+        "winner": game["winner"],
+        "result": game["result"],
+        "plies": game["plies"],
         "completed": True,
         "truncated": False,
     }

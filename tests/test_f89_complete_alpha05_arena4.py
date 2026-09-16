@@ -47,7 +47,9 @@ def test_f89_runner_uses_bounded_four_pair_contract_and_aggregates(
                 path = Path(progress_dir) / f"game-{pair_index:06d}-owner-{owner}.json"
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(json.dumps({
-                    "winner": owner, "result": "checkmate", "plies": 100 + pair_index,
+                    "game": {
+                        "winner": owner, "result": "checkmate", "plies": 100 + pair_index,
+                    },
                 }), encoding="utf-8")
         summary = SimpleNamespace(
             pair_scores=(1.0, 0.5, 0.0, 0.5), mean_pair_score=0.5,
@@ -77,5 +79,29 @@ def test_f89_runner_uses_bounded_four_pair_contract_and_aggregates(
     assert output["opening_indices"] == [0, 1, 2, 3]
     assert output["completed_games"] == 8
     assert len(output["games"]) == 8
+    assert output["games"][0]["winner"] == 0
+    assert output["games"][0]["result"] == "checkmate"
+    assert output["games"][0]["plies"] == 100
     assert output["historical_raw_f87_arena4_context"]["pooled"] is False
     assert json.loads(result.read_text(encoding="utf-8"))["status"] == "COMPLETE"
+
+
+def test_f89_progress_games_reads_nested_completed_game_fields(tmp_path):
+    progress = tmp_path / "progress"
+    progress.mkdir()
+    (progress / "game-000000-owner-0.json").write_text(json.dumps({
+        "schema": "generic-chess-arena-game-progress-v1",
+        "status": "completed",
+        "game": {"winner": 1, "result": "checkmate", "plies": 277},
+    }), encoding="utf-8")
+
+    assert f89._progress_games(progress) == [{
+        "pair_index": 0,
+        "opening_index": 0,
+        "child_owner": 0,
+        "winner": 1,
+        "result": "checkmate",
+        "plies": 277,
+        "completed": True,
+        "truncated": False,
+    }]
