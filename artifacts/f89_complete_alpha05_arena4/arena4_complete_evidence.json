@@ -1,0 +1,48 @@
+{
+  "schema": "generic-chess-f89-complete-alpha05-arena4-complete-evidence-v1",
+  "work_order": "GENERICCHESS_F89R1_COMPLETE_ALPHA05_ARENA4",
+  "status": "COMPLETE",
+  "reason": null,
+  "run_source_sandbox_sha": "9ca9aa6411d573df23d92903e0d76aacdf7031d0",
+  "plan_sha256": "4b5a381888c68089dde94a762b877664710aef3bf084c1e3725c043f26bd3f81",
+  "envelope_sha256": "453f3b04f1e7c587c447ecaa0da581d2b3927db8b912d4d36c4ff73bfd0fc70c",
+  "heavy_run_id": "f89r1-complete-alpha05-arena4-v1-af25de1a7291",
+  "heavy_exit_code": 0,
+  "candidate": {
+    "parent_checkpoint_id": "c45623c0b905780ed1fd896a8f9364fd369bed1e641519f45fb40a3faf014d71",
+    "raw_f87_checkpoint_id": "0c94b1d6b0a0b66939707d1e4184e23cc1391678c7bda67267d834a7565a5c42",
+    "alpha": 0.5,
+    "checkpoint_id": "0b318ea0a719971634abbc443e3334dfcef4a017d94d4dfd01c8a6ca69954316",
+    "model_sha256": "f5e739b47e896a8d855869a4295d2b90d20a21228575440ffbd9bfd40444cd0b"
+  },
+  "arena4": {
+    "corpus_id": "593652dd655ddc67f38d9a194b9b2a44f7eef3e28d22a83c5f01abeb35b971a1",
+    "opening_indices": [0, 1, 2, 3],
+    "pairs": 4,
+    "total_games": 8,
+    "completed_games": 8,
+    "completed_pairs": 4,
+    "pair_scores": [1.0, 0.5, 0.75, 1.0],
+    "mean_pair_score": 0.8125,
+    "child_wdl": {"wins": 6, "draws": 1, "losses": 1},
+    "truncated_games": 0,
+    "config": {"nodes_per_move": 512, "parent_nodes_per_move": 512, "child_nodes_per_move": 512, "max_depth": 12, "tt_megabytes": 8, "tt_reset_each_move": true, "opening_min_plies": 2, "opening_max_plies": 6, "workers": 2},
+    "execution_caps": {"per_game_nodes": 262144, "per_game_plies": 512, "per_game_wall_seconds": 7200, "max_concurrent_games": 2, "max_stage_games": 8, "stage_wall_seconds": 28800, "logical_cpu_count": 4},
+    "games": [
+      {"pair_index": 0, "opening_index": 0, "child_owner": 0, "status": "completed", "winner": 0, "result": "checkmate", "plies": 277, "truncated": false, "progress_sha256": "9c3b06963945c3fe1b484279feed51b0c71f06b1cc4094457fab17e1bdcb9584"},
+      {"pair_index": 0, "opening_index": 0, "child_owner": 1, "status": "completed", "winner": 1, "result": "checkmate", "plies": 176, "truncated": false, "progress_sha256": "38706db78c2eeb5f1135c03351519b3f5d2fe0a8efda7e86f5a623026ca94511"},
+      {"pair_index": 1, "opening_index": 1, "child_owner": 0, "status": "completed", "winner": 1, "result": "checkmate", "plies": 86, "truncated": false, "progress_sha256": "01381128760e2040f929dde9930088bbf8577bbd1c461d2a225b63215dda94a8"},
+      {"pair_index": 1, "opening_index": 1, "child_owner": 1, "status": "completed", "winner": 1, "result": "checkmate", "plies": 304, "truncated": false, "progress_sha256": "e7a9abf3c9224962b31a531e596543f7dffbe47618ec8be496b404f17209c04b"},
+      {"pair_index": 2, "opening_index": 2, "child_owner": 0, "status": "completed", "winner": null, "result": "repetition", "plies": 72, "truncated": false, "progress_sha256": "f85c7ac8bbfe61bea9716c5154075216cd01d66090e39d15c2ba1830d5671874"},
+      {"pair_index": 2, "opening_index": 2, "child_owner": 1, "status": "completed", "winner": 1, "result": "checkmate", "plies": 275, "truncated": false, "progress_sha256": "d61a3e59965ac184b95fcaa0494c32e4eaf6eebe8b97c253dbea430465dbd061"},
+      {"pair_index": 3, "opening_index": 3, "child_owner": 0, "status": "completed", "winner": 0, "result": "checkmate", "plies": 94, "truncated": false, "progress_sha256": "367fe362802c0ee1d5ca5032f083ced97a19842f405274cf0141b33211f2f37a"},
+      {"pair_index": 3, "opening_index": 3, "child_owner": 1, "status": "completed", "winner": 1, "result": "checkmate", "plies": 49, "truncated": false, "progress_sha256": "6167d48d82fd6eeda86023d0d3f100b0cde7b442228610d8073407bdf4fa09d8"}
+    ]
+  },
+  "historical_context_non_pooled": {"raw_f87_arena4_mean_pair_score": 0.3125, "alpha05_arena2_mean_pair_score": 0.75},
+  "notes": [
+    "Four games were reused from the first F89 Heavy run; two validated partial games were resumed; two untouched pair-3 games were started.",
+    "No completed game was rerun and no partial game was restarted from its opening.",
+    "The runtime progress directory and bulky raw output are intentionally not tracked."
+  ]
+}
