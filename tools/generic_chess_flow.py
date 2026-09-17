@@ -40,12 +40,8 @@ HANDOFF_BRANCH = "workflow-state"
 HANDOFF_SCHEMA = "generic-chess-handoff-v1"
 HANDOFF_HOST = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 HANDOFF_STAGES = {"SUBMIT_CLOSEOUT", "REQUEST_NEXT_ORDER", "COMPLETE"}
-COMPUTE_PLAN_SCHEMA = "generic-chess-compute-plan-v1"
 COMPUTE_ENVELOPE_SCHEMA = "generic-chess-resource-envelope-v1"
-COMPUTE_PLAN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
-COMPUTE_POLICY_PATH = Path(__file__).with_name("compute_policy.json")
-LARGE_COMPUTE_QUOTA_WALL_MINUTES = 120
-LARGE_COMPUTE_QUOTA_WINDOW_SECONDS = 24 * 60 * 60
+RESOURCE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 
 
 class FlowError(RuntimeError):
@@ -74,24 +70,6 @@ def _read_json_file(path: Path, label: str) -> Any:
     return value
 
 
-def _compute_policy() -> dict[str, Any]:
-    policy = _read_json_file(COMPUTE_POLICY_PATH, "compute policy")
-    if policy.get("schema") != "generic-chess-compute-policy-v1":
-        raise FlowError("invalid compute policy schema")
-    thresholds = policy.get("thresholds")
-    if not isinstance(thresholds, dict) or not all(
-        isinstance(thresholds.get(key), (int, float)) and thresholds[key] >= 0
-        for key in (
-            "expected_wall_minutes_gt", "maximum_games_gt",
-            "expected_cpu_hours_gt", "arena_pairs_gte", "stage_count_gt",
-        )
-    ):
-        raise FlowError("compute policy thresholds are invalid")
-    if not isinstance(policy.get("max_declared_logical_cpu"), int) or policy["max_declared_logical_cpu"] <= 0:
-        raise FlowError("compute policy CPU limit is invalid")
-    return policy
-
-
 def _validate_resource_envelope(value: dict[str, Any]) -> dict[str, Any]:
     required = {
         "schema", "envelope_id", "logical_cpu_count", "intended_cpu_lanes",
@@ -101,7 +79,7 @@ def _validate_resource_envelope(value: dict[str, Any]) -> dict[str, Any]:
     }
     if value.get("schema") != COMPUTE_ENVELOPE_SCHEMA or not required.issubset(value):
         raise FlowError("resource envelope is missing required fields")
-    if not COMPUTE_PLAN_ID.fullmatch(str(value["envelope_id"])):
+    if not RESOURCE_ID.fullmatch(str(value["envelope_id"])):
         raise FlowError("resource envelope id is invalid")
     for key in (
         "logical_cpu_count", "intended_cpu_lanes", "hard_wall_minutes",
@@ -131,168 +109,12 @@ def _load_resource_envelope(path_value: str | Path) -> dict[str, Any]:
     return _validate_resource_envelope(_read_json_file(path, "resource envelope"))
 
 
-def _compute_is_large(envelope: dict[str, Any]) -> bool:
-    thresholds = _compute_policy()["thresholds"]
-    return (
-        envelope["expected_wall_minutes"] is None
-        or envelope["expected_cpu_hours"] is None
-        or envelope["expected_wall_minutes"] > thresholds["expected_wall_minutes_gt"]
-        or envelope["maximum_games"] > thresholds["maximum_games_gt"]
-        or envelope["expected_cpu_hours"] > thresholds["expected_cpu_hours_gt"]
-        or envelope["arena_pairs"] >= thresholds["arena_pairs_gte"]
-        or envelope["stage_count"] > thresholds["stage_count_gt"]
-    )
-
-
-def _load_compute_plan(root: Path, path_value: str | Path) -> dict[str, Any]:
-    path = Path(path_value).resolve()
-    plan = _read_json_file(path, "compute plan")
-    required = {
-        "schema", "plan_id", "version", "scientific_decision",
-        "why_smaller_evidence_insufficient", "reusable_evidence", "stages",
-        "resource_envelope", "checkpoint_behavior", "stage_pause_points",
-        "early_stop_rules", "failure_exit_path", "alternatives", "command_argv",
-    }
-    if plan.get("schema") != COMPUTE_PLAN_SCHEMA or not required.issubset(plan):
-        raise FlowError("compute plan is missing required fields")
-    if not COMPUTE_PLAN_ID.fullmatch(str(plan["plan_id"])) or not isinstance(plan["version"], int) or plan["version"] <= 0:
-        raise FlowError("compute plan identity is invalid")
-    for key in (
-        "scientific_decision", "why_smaller_evidence_insufficient",
-        "checkpoint_behavior", "failure_exit_path",
-    ):
-        if not isinstance(plan[key], str) or not plan[key].strip():
-            raise FlowError(f"compute plan field is empty: {key}")
-    for key in ("reusable_evidence", "stages", "stage_pause_points", "early_stop_rules", "alternatives"):
-        if not isinstance(plan[key], list) or not plan[key]:
-            raise FlowError(f"compute plan field is empty: {key}")
-    if not all(isinstance(part, str) and part for part in plan["command_argv"]):
-        raise FlowError("compute plan command_argv is invalid")
-    _validate_resource_envelope(plan["resource_envelope"])
-    return plan
-
-
-def _canonical_argv(root: Path, argv: Sequence[str]) -> list[str]:
-    canonical: list[str] = []
-    for part in argv:
-        normalized = part.replace("\\", "/")
-        if "://" in normalized:
-            canonical.append(part)
-            continue
-        candidate = Path(part)
-        explicit_path = (
-            candidate.is_absolute()
-            or part.startswith(("./", "../", ".\\", "..\\"))
-            or (Path(root) / candidate).exists()
-        )
-        if not explicit_path:
-            canonical.append(part)
-            continue
-        try:
-            canonical.append(repo_relative_path(root, part))
-        except FlowError:
-            canonical.append(normalized)
-    return canonical
-
-
-def _work_order_recorded_at(state: dict[str, Any]) -> float | None:
-    """Return the local receipt time for the currently imported work order."""
-    response_sha = state.get("last_response_sha256")
-    timeline = state.get("recovery_timeline", [])
-    if not isinstance(timeline, list):
-        return None
-    for event in reversed(timeline):
-        if not isinstance(event, dict) or event.get("event") != "response_accepted":
-            continue
-        if response_sha is not None and event.get("response_sha256") != response_sha:
-            continue
-        recorded_at = event.get("at")
-        if isinstance(recorded_at, (int, float)) and recorded_at >= 0:
-            return float(recorded_at)
-    return None
-
-
-def _large_compute_quota_records(root: Path) -> list[float]:
-    """Read only successful-child quota markers from durable runtime state."""
-    records: list[float] = []
-    base = runtime_dir(root)
-    state_paths = list((base / "heavy-runs").glob("*/state.json")) if (base / "heavy-runs").exists() else []
-    for path in state_paths:
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            continue
-        if not isinstance(payload, dict) or payload.get("quota_counted") is not True:
-            continue
-        expected = payload.get("expected_wall_minutes")
-        recorded_at = payload.get("work_order_recorded_at")
-        if (
-            isinstance(expected, (int, float))
-            and expected > LARGE_COMPUTE_QUOTA_WALL_MINUTES
-            and isinstance(recorded_at, (int, float))
-            and recorded_at >= 0
-        ):
-            records.append(float(recorded_at))
-    return records
-
-
-def _large_compute_schedule(root: Path, envelope: dict[str, Any],
-                            state: dict[str, Any]) -> tuple[float | None, bool]:
-    """Return receipt time and whether another >2h run exists in its 24h window.
-
-    This is scheduling information, not an authorization gate.  The Supervisor
-    prefers smaller work or a split plan when possible, but may run necessary
-    mainline compute rather than leave the workflow idle.
-    """
-    expected = envelope.get("expected_wall_minutes")
-    if not isinstance(expected, (int, float)) or expected <= LARGE_COMPUTE_QUOTA_WALL_MINUTES:
-        return None, False
-    recorded_at = _work_order_recorded_at(state)
-    if recorded_at is None:
-        return None, False
-    prior = [
-        value for value in _large_compute_quota_records(root)
-        if abs(recorded_at - value) <= LARGE_COMPUTE_QUOTA_WINDOW_SECONDS
-    ]
-    return recorded_at, bool(prior)
-
-
-def _enforce_compute_gate(root: Path, args: argparse.Namespace,
-                          command: list[str] | None = None) -> dict[str, Any]:
-    envelope_path = getattr(args, "resource_envelope", None)
-    plan_path = getattr(args, "compute_plan", None)
-    plan = None
-    if plan_path:
-        plan = _load_compute_plan(root, plan_path)
-    if plan is not None:
-        envelope = _validate_resource_envelope(plan["resource_envelope"])
-    elif envelope_path:
-        envelope = _load_resource_envelope(envelope_path)
-    else:
-        raise FlowError("heavy requires an explicit --resource-envelope or --compute-plan declaration")
-    large = _compute_is_large(envelope)
-    if plan is not None and command is not None and _canonical_argv(root, plan["command_argv"]) != _canonical_argv(root, command):
-        raise FlowError("compute plan command/stage/budget identity differs from the run")
-    recorded_at = None
-    scheduling_conflict = False
-    quota_required = (
-        isinstance(envelope.get("expected_wall_minutes"), (int, float))
-        and envelope["expected_wall_minutes"] > LARGE_COMPUTE_QUOTA_WALL_MINUTES
-    )
-    if quota_required:
-        recorded_at, scheduling_conflict = _large_compute_schedule(
-            root, envelope, active_state(root)
-        )
+def _resource_metadata(path_value: str | Path) -> dict[str, Any]:
+    envelope = _load_resource_envelope(path_value)
     return {
         "resource_envelope": envelope,
-        "compute_plan_id": plan["plan_id"] if plan else None,
-        "compute_size": "large" if large else "small_or_medium",
         "hard_wall_minutes": envelope["hard_wall_minutes"],
         "expected_wall_minutes": envelope["expected_wall_minutes"],
-        "work_order_recorded_at": recorded_at,
-        "quota_required": quota_required,
-        "quota_counted": False,
-        "large_compute_within_24h": scheduling_conflict,
     }
 
 
@@ -593,11 +415,6 @@ def _apply_current_supervisor_resolution(root: Path, state: dict[str, Any]) -> b
     resolved_at = resolution.get("resolved_at")
     if not isinstance(resolved_at, (int, float)):
         return False
-    chat_control = state.get("chat_control") if isinstance(state.get("chat_control"), dict) else {}
-    legacy_compute_hold = (
-        chat_control.get("GENERICCHESS_COMPUTE_PLAN_APPROVAL") == "HOLD"
-        and isinstance(state.get("pending_compute_plan"), dict)
-    )
     prior_decision = state.get("supervisor_decision_at")
     if isinstance(prior_decision, (int, float)) and resolved_at <= prior_decision:
         return False
@@ -606,45 +423,22 @@ def _apply_current_supervisor_resolution(root: Path, state: dict[str, Any]) -> b
     for event in state.get("recovery_timeline", []):
         if (isinstance(event, dict) and event.get("event") == "response_accepted"
                 and isinstance(event.get("at"), (int, float))
-                and event["at"] > resolved_at and not legacy_compute_hold):
+                and event["at"] > resolved_at):
             return False
     state["supervisor_decision_at"] = float(resolved_at)
     state["local_supervisor_required"] = False
     state.pop("escalation_id", None)
     state.pop("business_supervisor_notice_path", None)
-    state.pop("pending_compute_plan", None)
-    for key in (
-        "GENERICCHESS_COMPUTE_PLAN_APPROVAL",
-        "GENERICCHESS_COMPUTE_PLAN_SHA",
-        "GENERICCHESS_COMPUTE_ENVELOPE_SHA",
-    ):
-        chat_control.pop(key, None)
     if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
         state["recovery_state"] = "IDLE"
     recovery_event(state, "supervisor_pause_cleared", resolution_sha256=resolution.get("resolution_sha256"))
     return True
-
-
-def _clear_retired_compute_fields(state: dict[str, Any]) -> bool:
-    """Drop state left by the removed Chat compute-approval protocol."""
-    changed = state.pop("pending_compute_plan", None) is not None
-    control = state.get("chat_control")
-    if isinstance(control, dict):
-        for key in (
-            "GENERICCHESS_COMPUTE_PLAN_APPROVAL",
-            "GENERICCHESS_COMPUTE_PLAN_SHA",
-            "GENERICCHESS_COMPUTE_ENVELOPE_SHA",
-        ):
-            changed = control.pop(key, None) is not None or changed
-    return changed
-
 
 def active_state(root: Path) -> dict[str, Any]:
     state = load_state(root)
     if state.get("active") is not True:
         raise FlowError("no active GenericChess flow session")
     changed = _apply_current_supervisor_resolution(root, state)
-    changed = _clear_retired_compute_fields(state) or changed
     if changed:
         save_state(root, state)
     return state
@@ -883,6 +677,14 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         state["last_response_source"] = source
         state["active_request_directory"] = None
         state["recovery_state"] = "RECOVERED" if source != "normal" else "IDLE"
+        if control.get("LOCAL_SUPERVISOR_REQUIRED", "").casefold() != "true":
+            if state.get("local_supervisor_required"):
+                state["local_supervisor_required"] = False
+                state.pop("business_supervisor_notice_path", None)
+                state.pop("escalation_id", None)
+                if state.get("recovery_state") in {"ESCALATED", "HUMAN_REQUIRED"}:
+                    state["recovery_state"] = "IDLE"
+                recovery_event(state, "supervisor_state_superseded_by_response")
         notice_path = _record_business_escalation(
             root, state, control, state["last_response_sha256"]
         )
@@ -1045,7 +847,6 @@ def command_status(root: Path, _args: argparse.Namespace) -> None:
         )
     session = load_state(root, required=False)
     changed = session.get("active") is True and _apply_current_supervisor_resolution(root, session)
-    changed = _clear_retired_compute_fields(session) or changed
     if changed:
         save_state(root, session)
     payload["session"] = {
@@ -1124,9 +925,7 @@ def command_heavy(root: Path, args: argparse.Namespace) -> int:
         command.pop(0)
     if not command:
         raise FlowError("heavy requires a command after --")
-    compute_metadata = _enforce_compute_gate(root, args, command)
-    if compute_metadata.get("quota_required"):
-        raise FlowError("large compute quota requires heavy-start for durable child accounting")
+    _resource_metadata(args.resource_envelope)
     _require_no_recorded_live_heavy_child(root)
     with heavy_lock(root):
         process = subprocess.Popen(command, cwd=root)
@@ -1426,18 +1225,12 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
     command = list(args.argv)
     if command and command[0] == "--":
         command.pop(0)
-    plan_path = getattr(args, "compute_plan", None)
-    plan = None
-    if plan_path:
-        plan = _load_compute_plan(root, plan_path)
-        if not command:
-            command = list(plan["command_argv"])
+    _resource_metadata(args.resource_envelope)
     if not command:
-        raise FlowError("heavy-start requires --compute-plan or a command after --")
-    label = args.label or (plan["plan_id"] if plan is not None else None)
+        raise FlowError("heavy-start requires a command after --")
+    label = args.label
     if not isinstance(label, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", label):
         raise FlowError("invalid heavy label")
-    compute_metadata = _enforce_compute_gate(root, args, command)
     _require_no_recorded_live_heavy_child(root)
     run_id = f"{label}-{uuid.uuid4().hex[:12]}"
     run_dir = _heavy_run_dir(root, run_id)
@@ -1458,7 +1251,7 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
         "stdout_path": str(stdout_path),
         "stderr_path": str(stderr_path),
         "state_path": str(run_dir / "state.json"),
-        **compute_metadata,
+        **_resource_metadata(args.resource_envelope),
     })
     flags = (
         subprocess.DETACHED_PROCESS
@@ -1495,9 +1288,6 @@ def command_heavy_start(root: Path, args: argparse.Namespace) -> int:
             time.sleep(.1)
             continue
         if current.get("handshake_at") and current.get("child_pid"):
-            if current.get("quota_required"):
-                current["quota_counted"] = True
-                _atomic_json(run_dir / "state.json", current)
             print(json.dumps(current, sort_keys=True))
             return 0
         if current.get("status") == "failed":
@@ -1597,7 +1387,6 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
     require_handoff_owner(root)
     state = load_state(root, required=False)
     changed = state.get("active") is True and _apply_current_supervisor_resolution(root, state)
-    changed = _clear_retired_compute_fields(state) or changed
     if changed:
         save_state(root, state)
     if state.get("active") is True:
@@ -2687,13 +2476,11 @@ def parser() -> argparse.ArgumentParser:
     publish.set_defaults(handler=command_publish)
     heavy = sub.add_parser("heavy")
     heavy.add_argument("--resource-envelope", required=True)
-    heavy.add_argument("--compute-plan")
     heavy.add_argument("argv", nargs=argparse.REMAINDER)
     heavy.set_defaults(handler=command_heavy)
     heavy_start = sub.add_parser("heavy-start")
     heavy_start.add_argument("--label")
-    heavy_start.add_argument("--resource-envelope")
-    heavy_start.add_argument("--compute-plan")
+    heavy_start.add_argument("--resource-envelope", required=True)
     heavy_start.add_argument("argv", nargs=argparse.REMAINDER)
     heavy_start.set_defaults(handler=command_heavy_start)
     heavy_status = sub.add_parser("heavy-status")

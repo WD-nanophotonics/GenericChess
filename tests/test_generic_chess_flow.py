@@ -34,7 +34,27 @@ def _heavy_start_mocks(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
     monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
-    monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
+
+
+def _resource_path(tmp_path: Path) -> Path:
+    path = tmp_path / "resource-envelope.json"
+    path.write_text(json.dumps({
+        "schema": flow.COMPUTE_ENVELOPE_SCHEMA,
+        "envelope_id": "test-envelope",
+        "logical_cpu_count": 2,
+        "intended_cpu_lanes": 1,
+        "expected_wall_minutes": 1,
+        "hard_wall_minutes": 2,
+        "expected_cpu_hours": 0.1,
+        "hard_cpu_hours": 1,
+        "arena_pairs": 1,
+        "maximum_games": 1,
+        "maximum_nodes": 100,
+        "maximum_plies": 10,
+        "maximum_concurrent_games": 1,
+        "stage_count": 1,
+    }), encoding="utf-8")
+    return path
 
 
 def test_chat_control_footer_is_explicit_and_last_value_wins():
@@ -909,7 +929,7 @@ def test_old_resolution_cannot_clear_a_newer_business_notice_after_status_and_wo
     assert persisted["business_supervisor_notice_path"] == "new-notice.json"
 
 
-def test_resolved_legacy_compute_hold_is_cleared_on_status(monkeypatch, tmp_path, capsys):
+def test_newer_supervisor_resolution_clears_sticky_local_pause(monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"
     directory = runtime / "escalations" / ("8" * 20)
     directory.mkdir(parents=True)
@@ -919,10 +939,9 @@ def test_resolved_legacy_compute_hold_is_cleared_on_status(monkeypatch, tmp_path
     }), encoding="utf-8")
     state = {
         "active": True, "escalation_id": "8" * 20,
-        "local_supervisor_required": True, "recovery_state": "IDLE",
-        "chat_control": {"GENERICCHESS_COMPUTE_PLAN_APPROVAL": "HOLD"},
-        "pending_compute_plan": {"plan_id": "retired"},
-        "recovery_timeline": [{"event": "response_accepted", "at": 20.0}],
+        "recovery_state": "ESCALATED",
+        "local_supervisor_required": True,
+        "recovery_timeline": [],
     }
     runtime.mkdir(exist_ok=True)
     state_path = runtime / "session.json"
@@ -932,8 +951,42 @@ def test_resolved_legacy_compute_hold_is_cleared_on_status(monkeypatch, tmp_path
     assert flow.active_state(tmp_path)["local_supervisor_required"] is False
     persisted = json.loads(state_path.read_text(encoding="utf-8"))
     assert persisted.get("escalation_id") is None
-    assert "pending_compute_plan" not in persisted
+    assert persisted["recovery_state"] == "IDLE"
     capsys.readouterr()
+
+
+def test_newer_response_supersedes_old_local_supervisor_state(monkeypatch, tmp_path):
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    state_path = runtime / "session.json"
+    state = {
+        "active": True,
+        "active_request_id": "request",
+        "escalation_id": "7" * 20,
+        "local_supervisor_required": True,
+        "business_supervisor_notice_path": "old-notice.json",
+        "recovery_state": "ESCALATED",
+        "recovery_timeline": [],
+    }
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, **_kwargs: runtime)
+    response_path = tmp_path / "response.txt"
+    response_path.write_text(
+        "New Supervisor decision.\nGENERICCHESS_STATUS=CONTINUE\n",
+        encoding="utf-8",
+    )
+
+    flow.update_response_state(
+        tmp_path,
+        state,
+        {"event": "response_received", "response_path": str(response_path)},
+    )
+
+    persisted = json.loads(state_path.read_text(encoding="utf-8"))
+    assert persisted["local_supervisor_required"] is False
+    assert persisted["recovery_state"] == "IDLE"
+    assert "escalation_id" not in persisted
+    assert "business_supervisor_notice_path" not in persisted
 
 
 def test_supervisor_resend_uses_evidence_retry_for_proven_unsent_request(
@@ -1590,14 +1643,16 @@ def test_heavy_uses_normal_priority_and_returns_child_code(monkeypatch, tmp_path
     monkeypatch.setattr(flow, "heavy_lock", lambda _root: FakeLock())
     monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
     monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
-    monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
 
     def fake_popen(argv, **kwargs):
         seen.update({"argv": argv, **kwargs})
         return FakeProcess()
 
     monkeypatch.setattr(flow.subprocess, "Popen", fake_popen)
-    code = flow.command_heavy(tmp_path, SimpleNamespace(argv=["--", "python", "work.py"]))
+    code = flow.command_heavy(
+        tmp_path, SimpleNamespace(argv=["--", "python", "work.py"],
+                                  resource_envelope=str(_resource_path(tmp_path)))
+    )
 
     assert code == 7
     assert seen["argv"] == ["python", "work.py"]
@@ -1608,7 +1663,6 @@ def test_heavy_uses_normal_priority_and_returns_child_code(monkeypatch, tmp_path
 def test_heavy_rejects_recorded_live_child_even_when_lock_is_free(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True, "mode": "local"})
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
-    monkeypatch.setattr(flow, "_enforce_compute_gate", lambda *_args: {})
     monkeypatch.setattr(flow, "_process_creation_time", lambda pid: {11: 101.0}.get(pid))
     run_dir = tmp_path / "heavy-runs" / "orphaned-run"
     run_dir.mkdir(parents=True)
@@ -1624,7 +1678,10 @@ def test_heavy_rejects_recorded_live_child_even_when_lock_is_free(monkeypatch, t
 
     with pytest.raises(flow.FlowError, match="existing GenericChess heavy child"):
         flow.command_heavy(
-            tmp_path, SimpleNamespace(argv=["--", sys.executable, "-c", "pass"])
+            tmp_path, SimpleNamespace(
+                argv=["--", sys.executable, "-c", "pass"],
+                resource_envelope=str(_resource_path(tmp_path)),
+            )
         )
 
 
@@ -2114,7 +2171,8 @@ def test_heavy_start_uses_detached_hidden_monitor_and_waits_for_handshake(
     monkeypatch.setattr(flow.subprocess, "Popen", fake_popen)
     result = flow.command_heavy_start(
         tmp_path,
-        SimpleNamespace(label="survival", argv=["--", sys.executable, "-c", "pass"]),
+        SimpleNamespace(label="survival", argv=["--", sys.executable, "-c", "pass"],
+                        resource_envelope=str(_resource_path(tmp_path))),
     )
     payload = json.loads(capsys.readouterr().out)
     assert result == 0
@@ -2140,35 +2198,13 @@ def test_heavy_start_rejects_monitorless_live_child(monkeypatch, tmp_path):
     with pytest.raises(flow.FlowError, match="existing GenericChess heavy child"):
         flow.command_heavy_start(
             tmp_path,
-            SimpleNamespace(label="replacement", argv=["--", sys.executable, "-c", "pass"]),
+            SimpleNamespace(label="replacement", argv=["--", sys.executable, "-c", "pass"],
+                            resource_envelope=str(_resource_path(tmp_path))),
         )
 
 
-def test_heavy_start_can_take_command_and_envelope_from_plan(monkeypatch, tmp_path, capsys):
+def test_heavy_start_records_declared_envelope(monkeypatch, tmp_path, capsys):
     _heavy_start_mocks(monkeypatch, tmp_path)
-    monkeypatch.setattr(flow, "sha", lambda *_args, **_kwargs: "a" * 40)
-    plan = {
-        "schema": flow.COMPUTE_PLAN_SCHEMA,
-        "plan_id": "plan-from-source",
-        "version": 1,
-        "sandbox_sha": "a" * 40,
-        "command_argv": [sys.executable, "-c", "pass"],
-        "scientific_decision": "bounded",
-        "why_smaller_evidence_insufficient": "required",
-        "reusable_evidence": ["evidence"],
-        "stages": ["stage"],
-        "resource_envelope": {
-            "schema": flow.COMPUTE_ENVELOPE_SCHEMA, "envelope_id": "plan-envelope",
-            "logical_cpu_count": 2, "intended_cpu_lanes": 1, "expected_wall_minutes": 5,
-            "hard_wall_minutes": 10, "expected_cpu_hours": 0.1, "hard_cpu_hours": 1,
-            "arena_pairs": 1, "maximum_games": 1, "maximum_nodes": 100,
-            "maximum_plies": 10, "maximum_concurrent_games": 1, "stage_count": 1,
-        },
-        "checkpoint_behavior": "retain", "stage_pause_points": ["end"],
-        "early_stop_rules": ["stop"], "failure_exit_path": "retain", "alternatives": ["none"],
-    }
-    plan_path = tmp_path / "plan.json"
-    plan_path.write_text(json.dumps(plan), encoding="utf-8")
 
     class FakeMonitor:
         returncode = None
@@ -2187,12 +2223,13 @@ def test_heavy_start_can_take_command_and_envelope_from_plan(monkeypatch, tmp_pa
 
     monkeypatch.setattr(flow.subprocess, "Popen", fake_popen)
     assert flow.command_heavy_start(
-        tmp_path, SimpleNamespace(label=None, resource_envelope=None,
-                                  compute_plan=str(plan_path), argv=[])
+        tmp_path, SimpleNamespace(label="declared", resource_envelope=str(_resource_path(tmp_path)),
+                                  argv=["--", sys.executable, "-c", "pass"])
     ) == 0
     payload = json.loads(capsys.readouterr().out)
-    assert payload["label"] == "plan-from-source"
+    assert payload["label"] == "declared"
     assert payload["status"] == "running"
+    assert payload["hard_wall_minutes"] == 2
 
 
 def test_heavy_start_atomically_records_monitor_launch_failure(monkeypatch, tmp_path):
@@ -2204,7 +2241,8 @@ def test_heavy_start_atomically_records_monitor_launch_failure(monkeypatch, tmp_
     with pytest.raises(flow.FlowError, match="could not launch monitor"):
         flow.command_heavy_start(
             tmp_path,
-            SimpleNamespace(label="launch", argv=["--", sys.executable, "-c", "pass"]),
+            SimpleNamespace(label="launch", resource_envelope=str(_resource_path(tmp_path)),
+                            argv=["--", sys.executable, "-c", "pass"]),
         )
     state_paths = list((tmp_path / "heavy-runs").glob("*/state.json"))
     assert len(state_paths) == 1
@@ -2236,5 +2274,6 @@ def test_heavy_start_rejects_authority_hold_and_master(
     with pytest.raises(flow.FlowError, match=match):
         flow.command_heavy_start(
             tmp_path,
-            SimpleNamespace(label="rejected", argv=["--", sys.executable, "-c", "pass"]),
+            SimpleNamespace(label="rejected", resource_envelope=str(_resource_path(tmp_path)),
+                            argv=["--", sys.executable, "-c", "pass"]),
         )

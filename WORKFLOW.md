@@ -16,7 +16,7 @@ generic-chess-flow.cmd promote --candidate <full-sandbox-sha>
 ```
 
 `work` resumes the current Courier request or obtains the next order.
-`recover` reconciles that same request. Heavy uses only its declared envelope;
-an optional plan supplies local scientific context. The retired
+`recover` reconciles that same request. Heavy uses only its declared envelope.
+The retired
 `compute-plan-request`, `compute-plan-approve`, `compute-plan-status`, and
 `compute-plan-revoke` commands are removed from the normal workflow.
