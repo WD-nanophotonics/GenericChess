@@ -13,6 +13,7 @@ from __future__ import annotations
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from dataclasses import asdict, dataclass
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -74,6 +75,7 @@ class ArenaConfig:
     parent_nodes_per_move: int | None = None
     child_nodes_per_move: int | None = None
     tt_reset_each_move: bool = False
+    move_time_seconds: float | None = None
 
     def __post_init__(self) -> None:
         if self.pairs <= 0 or self.nodes_per_move <= 0 or self.max_depth <= 0:
@@ -86,6 +88,10 @@ class ArenaConfig:
         ):
             if budget is not None and budget <= 0:
                 raise ValueError(f"{role} nodes_per_move must be positive")
+        if self.move_time_seconds is not None and not (
+            self.move_time_seconds > 0.0 and math.isfinite(self.move_time_seconds)
+        ):
+            raise ValueError("move_time_seconds must be a finite positive value")
 
 
 @dataclass(frozen=True, slots=True)
@@ -391,12 +397,16 @@ def _play_one_game(
                 "root_order_hint": root_order_hint,
                 "root_window_pruning": True,
             }
+        timed_search = config.move_time_seconds is not None
+        search_time_limit = (
+            config.move_time_seconds if timed_search else wall_limit
+        )
         result = engine.search(
             session,
             SearchLimits(
                 max_depth=config.max_depth,
                 max_nodes=nodes_per_move,
-                max_time_seconds=wall_limit,
+                max_time_seconds=search_time_limit,
                 quiescence_max_depth=0,
             ),
             **search_kwargs,
@@ -412,7 +422,11 @@ def _play_one_game(
         if stage_deadline is not None and time.perf_counter() >= stage_deadline:
             cap_hit("stage_wall_seconds")
         termination_reason = str(getattr(result, "termination_reason", "")).lower()
-        if termination_reason in {
+        if (
+            timed_search and termination_reason == "time_budget"
+        ):
+            pass
+        elif termination_reason in {
             "time_budget", "time_limit", "timeout", "deadline", "cancelled", "canceled",
         } or "deadline" in termination_reason:
             cap_hit(wall_limit_name or "per_game_wall_seconds")
@@ -437,6 +451,20 @@ def _play_one_game(
                 "nodes": int(result.nodes),
                 "elapsed_seconds": elapsed,
                 "elapsed_source": elapsed_source,
+                "search_wall_seconds": wall_elapsed,
+                "timing_mode": (
+                    "per_move_search_time" if timed_search
+                    else "unbounded_or_execution_cap"
+                ),
+                "requested_time_seconds": config.move_time_seconds,
+                "time_budget_termination": bool(
+                    timed_search and termination_reason == "time_budget"
+                ),
+                "wall_budget_overshoot_seconds": (
+                    max(0.0, wall_elapsed - config.move_time_seconds)
+                    if timed_search else 0.0
+                ),
+                "hard_execution_cap": wall_limit_name,
                 "nps": (float(result.nodes) / elapsed if elapsed > 0.0 else None),
                 "completed_depth": int(result.completed_depth),
                 "selective_depth": int(result.selective_depth),
@@ -1147,6 +1175,11 @@ def _game_progress_identity_for(
         "node_budgets": {"parent": parent_budget, "child": child_budget},
         "max_depth": config.max_depth,
         "tt_megabytes": config.tt_megabytes,
+        "timing_mode": (
+            "per_move_search_time" if config.move_time_seconds is not None
+            else "unbounded_or_execution_cap"
+        ),
+        "move_time_seconds": config.move_time_seconds,
         "capture_search_metrics": capture_search_metrics,
         "hard_caps": asdict(caps),
     }
@@ -1248,6 +1281,21 @@ def _validate_game_telemetry(
             raise ValueError("arena game telemetry node budget is invalid")
         if int(metric["nodes"]) < 0 or int(metric["nodes"]) > budget:
             raise ValueError("arena game telemetry node count is invalid")
+        if config.move_time_seconds is not None:
+            timed_fields = {
+                "search_wall_seconds", "timing_mode", "requested_time_seconds",
+                "time_budget_termination", "wall_budget_overshoot_seconds",
+            }
+            if not timed_fields <= metric.keys():
+                raise ValueError("timed arena telemetry row is incomplete")
+            if metric["timing_mode"] != "per_move_search_time":
+                raise ValueError("timed arena telemetry mode is invalid")
+            if metric["requested_time_seconds"] != config.move_time_seconds:
+                raise ValueError("timed arena telemetry budget is invalid")
+            if float(metric["search_wall_seconds"]) < 0.0:
+                raise ValueError("timed arena telemetry wall time is invalid")
+            if float(metric["wall_budget_overshoot_seconds"]) < 0.0:
+                raise ValueError("timed arena telemetry overshoot is invalid")
         if metric["decision_kind"] != (
             "declaration" if index == game.plies and game.declaration_id is not None
             else "action"
