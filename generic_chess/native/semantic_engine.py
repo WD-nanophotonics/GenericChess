@@ -64,6 +64,12 @@ class SemanticIterativeSearchResult:
     ordering_nodes: int = 0
     ordering_actions: int = 0
     ordering_elapsed_seconds: float = 0.0
+    ordering_cache_hits: int = 0
+    ordering_cache_misses: int = 0
+    ordering_cache_collisions: int = 0
+    ordering_cache_hit_rate: float = 0.0
+    ordering_cache_capacity: int = 0
+    ordering_cache_entry_bytes: int = 0
 
 
 def _profile_tuple(native_rules, values):
@@ -145,6 +151,8 @@ class SemanticSearchEngine:
         ordering_checkpoint=None,
         evaluator_scale: int = 1,
         tt_megabytes: int = 64,
+        ordering_cache_enabled: bool = True,
+        ordering_feature_reuse_enabled: bool = True,
     ) -> None:
         if not native_available():
             raise RuntimeError("native extension is not built")
@@ -154,6 +162,10 @@ class SemanticSearchEngine:
             raise ValueError("tt_megabytes must be an integer in [0, 1024]")
         if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
             raise ValueError("evaluator_scale must be an integer in [1, 1024]")
+        if not isinstance(ordering_cache_enabled, bool):
+            raise TypeError("ordering_cache_enabled must be a bool")
+        if not isinstance(ordering_feature_reuse_enabled, bool):
+            raise TypeError("ordering_feature_reuse_enabled must be a bool")
         self._compiled = compiled
         self._native_rules = native_rules
         self._checkpoint_id = None
@@ -175,6 +187,8 @@ class SemanticSearchEngine:
         if (self._board_values is None) != (self._hand_values is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._tt_megabytes = tt_megabytes
+        self._ordering_cache_enabled = ordering_cache_enabled
+        self._ordering_feature_reuse_enabled = ordering_feature_reuse_enabled
         if checkpoint is not None:
             self._set_checkpoint_values(checkpoint)
         if ordering_checkpoint is not None:
@@ -229,6 +243,8 @@ class SemanticSearchEngine:
             self._ordering_localized_control_values,
             self._ordering_compact_values,
             self._ordering_evaluator_scale,
+            self._ordering_cache_enabled,
+            self._ordering_feature_reuse_enabled,
         )
 
     @property
@@ -437,6 +453,12 @@ class SemanticSearchEngine:
             ordering_nodes=int(raw.get("ordering_nodes", 0)),
             ordering_actions=int(raw.get("ordering_actions", 0)),
             ordering_elapsed_seconds=int(raw.get("ordering_elapsed_nanoseconds", 0)) / 1e9,
+            ordering_cache_hits=int(raw.get("ordering_cache_hits", 0)),
+            ordering_cache_misses=int(raw.get("ordering_cache_misses", 0)),
+            ordering_cache_collisions=int(raw.get("ordering_cache_collisions", 0)),
+            ordering_cache_hit_rate=float(raw.get("ordering_cache_hit_rate", 0.0)),
+            ordering_cache_capacity=int(raw.get("ordering_cache_capacity", 0)),
+            ordering_cache_entry_bytes=int(raw.get("ordering_cache_entry_bytes", 0)),
         )
 
 

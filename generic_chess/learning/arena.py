@@ -505,6 +505,24 @@ def _play_one_game(
                 "ordering_elapsed_seconds": float(
                     getattr(result, "ordering_elapsed_seconds", 0.0)
                 ),
+                "ordering_cache_hits": int(
+                    getattr(result, "ordering_cache_hits", 0)
+                ),
+                "ordering_cache_misses": int(
+                    getattr(result, "ordering_cache_misses", 0)
+                ),
+                "ordering_cache_collisions": int(
+                    getattr(result, "ordering_cache_collisions", 0)
+                ),
+                "ordering_cache_hit_rate": float(
+                    getattr(result, "ordering_cache_hit_rate", 0.0)
+                ),
+                "ordering_cache_capacity": int(
+                    getattr(result, "ordering_cache_capacity", 0)
+                ),
+                "ordering_cache_entry_bytes": int(
+                    getattr(result, "ordering_cache_entry_bytes", 0)
+                ),
             })
             if root_hint_policy is not None:
                 search_metrics[-1]["root_hint_policy"] = dict(root_hint_policy)
