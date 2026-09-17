@@ -532,7 +532,11 @@ def test_native_resumable_workers_one_and_four_are_observationally_equivalent(tm
                 metrics = []
                 for metric in game.search_metrics:
                     metrics.append({key: value for key, value in metric.items()
-                                    if key not in {"elapsed_seconds", "elapsed_source", "nps"}})
+                            if key not in {
+                                "elapsed_seconds", "elapsed_source", "nps",
+                                "search_wall_seconds", "ordering_elapsed_seconds",
+                                "ordering_elapsed_nanoseconds_by_ply",
+                            }})
                 games.append({
                     "pair": game.pair,
                     "opening_id": game.opening_id,

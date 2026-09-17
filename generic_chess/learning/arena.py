@@ -23,7 +23,7 @@ from ..ai.evaluation.config import EvaluationConfig
 from ..ai.limits import SearchLimits
 from ..core.actions import Action, action_from_dict, action_to_dict
 from ..core.identity import position_identity_key
-from ..native.compiler import compile_native_evaluation
+from ..native.compiler import GC_SEM_MAX_PLY, compile_native_evaluation
 from ..native.engine import NativeSearchEngine
 from ..native.semantic_engine import SemanticSearchEngine
 from ..session.session import GameSession
@@ -76,6 +76,7 @@ class ArenaConfig:
     child_nodes_per_move: int | None = None
     tt_reset_each_move: bool = False
     move_time_seconds: float | None = None
+    ordering_max_ply: int = -1
 
     def __post_init__(self) -> None:
         if self.pairs <= 0 or self.nodes_per_move <= 0 or self.max_depth <= 0:
@@ -92,6 +93,12 @@ class ArenaConfig:
             self.move_time_seconds > 0.0 and math.isfinite(self.move_time_seconds)
         ):
             raise ValueError("move_time_seconds must be a finite positive value")
+        if (
+            isinstance(self.ordering_max_ply, bool)
+            or not isinstance(self.ordering_max_ply, int)
+            or not -1 <= self.ordering_max_ply <= GC_SEM_MAX_PLY
+        ):
+            raise ValueError("ordering_max_ply must be -1 or within GC_SEM_MAX_PLY")
 
 
 @dataclass(frozen=True, slots=True)
@@ -222,13 +229,17 @@ class ArenaSummary:
     pairs: tuple[ArenaPairResult, ...]
 
 
-def _engine_for(compiled, native_rules, checkpoint, tt_mb, *, ordering_checkpoint=None):
+def _engine_for(
+    compiled, native_rules, checkpoint, tt_mb, *, ordering_checkpoint=None,
+    ordering_max_ply=-1,
+):
     from ..rules.ir import CompiledSemanticRuleset
 
     if isinstance(compiled, CompiledSemanticRuleset):
         return SemanticSearchEngine(
             compiled, native_rules, checkpoint=checkpoint,
             ordering_checkpoint=ordering_checkpoint,
+            ordering_max_ply=ordering_max_ply,
             tt_megabytes=tt_mb,
         )
     if ordering_checkpoint is not None:
@@ -282,11 +293,13 @@ def _play_one_game(
         session.submit(action)
     opening_key = position_identity_key(session.state.position, compiled)
     parent_engine = None if config.tt_reset_each_move else _engine_for(
-        compiled, native_rules, parent, config.tt_megabytes
+        compiled, native_rules, parent, config.tt_megabytes,
+        ordering_max_ply=config.ordering_max_ply,
     )
     child_engine = None if config.tt_reset_each_move else _engine_for(
         compiled, native_rules, child, config.tt_megabytes,
         ordering_checkpoint=ordering_checkpoint,
+        ordering_max_ply=config.ordering_max_ply,
     )
     actions: list[Action] = []
     plies = 0
@@ -344,11 +357,13 @@ def _play_one_game(
         side = session.state.position.side_to_move
         if config.tt_reset_each_move:
             parent_engine = _engine_for(
-                compiled, native_rules, parent, config.tt_megabytes
+                compiled, native_rules, parent, config.tt_megabytes,
+                ordering_max_ply=config.ordering_max_ply,
             )
             child_engine = _engine_for(
                 compiled, native_rules, child, config.tt_megabytes,
                 ordering_checkpoint=ordering_checkpoint,
+                ordering_max_ply=config.ordering_max_ply,
             )
         engine = child_engine if side == child_owner else parent_engine
         role = "child" if side == child_owner else "parent"
@@ -523,6 +538,38 @@ def _play_one_game(
                 "ordering_cache_entry_bytes": int(
                     getattr(result, "ordering_cache_entry_bytes", 0)
                 ),
+                "ordering_max_ply": int(getattr(result, "ordering_max_ply", -1)),
+                "ordering_evaluations_by_ply": [
+                    int(value) for value in getattr(
+                        result, "ordering_evaluations_by_ply", ()
+                    )
+                ],
+                "ordering_nodes_by_ply": [
+                    int(value) for value in getattr(result, "ordering_nodes_by_ply", ())
+                ],
+                "ordering_actions_by_ply": [
+                    int(value) for value in getattr(result, "ordering_actions_by_ply", ())
+                ],
+                "ordering_elapsed_nanoseconds_by_ply": [
+                    int(value) for value in getattr(
+                        result, "ordering_elapsed_nanoseconds_by_ply", ()
+                    )
+                ],
+                "ordering_cache_hits_by_ply": [
+                    int(value) for value in getattr(
+                        result, "ordering_cache_hits_by_ply", ()
+                    )
+                ],
+                "ordering_cache_misses_by_ply": [
+                    int(value) for value in getattr(
+                        result, "ordering_cache_misses_by_ply", ()
+                    )
+                ],
+                "ordering_cache_collisions_by_ply": [
+                    int(value) for value in getattr(
+                        result, "ordering_cache_collisions_by_ply", ()
+                    )
+                ],
             })
             if root_hint_policy is not None:
                 search_metrics[-1]["root_hint_policy"] = dict(root_hint_policy)
