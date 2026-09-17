@@ -77,6 +77,8 @@ class ArenaConfig:
     tt_reset_each_move: bool = False
     move_time_seconds: float | None = None
     ordering_max_ply: int = -1
+    ordering_min_depth: int = 1
+    root_window_pruning: bool = False
 
     def __post_init__(self) -> None:
         if self.pairs <= 0 or self.nodes_per_move <= 0 or self.max_depth <= 0:
@@ -99,6 +101,14 @@ class ArenaConfig:
             or not -1 <= self.ordering_max_ply <= GC_SEM_MAX_PLY
         ):
             raise ValueError("ordering_max_ply must be -1 or within GC_SEM_MAX_PLY")
+        if (
+            isinstance(self.ordering_min_depth, bool)
+            or not isinstance(self.ordering_min_depth, int)
+            or not 1 <= self.ordering_min_depth <= GC_SEM_MAX_PLY
+        ):
+            raise ValueError("ordering_min_depth must be within GC_SEM_MAX_PLY")
+        if not isinstance(self.root_window_pruning, bool):
+            raise TypeError("root_window_pruning must be a bool")
 
 
 @dataclass(frozen=True, slots=True)
@@ -231,7 +241,7 @@ class ArenaSummary:
 
 def _engine_for(
     compiled, native_rules, checkpoint, tt_mb, *, ordering_checkpoint=None,
-    ordering_max_ply=-1,
+    ordering_max_ply=-1, ordering_min_depth=1,
 ):
     from ..rules.ir import CompiledSemanticRuleset
 
@@ -240,6 +250,7 @@ def _engine_for(
             compiled, native_rules, checkpoint=checkpoint,
             ordering_checkpoint=ordering_checkpoint,
             ordering_max_ply=ordering_max_ply,
+            ordering_min_depth=ordering_min_depth,
             tt_megabytes=tt_mb,
         )
     if ordering_checkpoint is not None:
@@ -295,11 +306,13 @@ def _play_one_game(
     parent_engine = None if config.tt_reset_each_move else _engine_for(
         compiled, native_rules, parent, config.tt_megabytes,
         ordering_max_ply=config.ordering_max_ply,
+        ordering_min_depth=config.ordering_min_depth,
     )
     child_engine = None if config.tt_reset_each_move else _engine_for(
         compiled, native_rules, child, config.tt_megabytes,
         ordering_checkpoint=ordering_checkpoint,
         ordering_max_ply=config.ordering_max_ply,
+        ordering_min_depth=config.ordering_min_depth,
     )
     actions: list[Action] = []
     plies = 0
@@ -359,11 +372,13 @@ def _play_one_game(
             parent_engine = _engine_for(
                 compiled, native_rules, parent, config.tt_megabytes,
                 ordering_max_ply=config.ordering_max_ply,
+                ordering_min_depth=config.ordering_min_depth,
             )
             child_engine = _engine_for(
                 compiled, native_rules, child, config.tt_megabytes,
                 ordering_checkpoint=ordering_checkpoint,
                 ordering_max_ply=config.ordering_max_ply,
+                ordering_min_depth=config.ordering_min_depth,
             )
         engine = child_engine if side == child_owner else parent_engine
         role = "child" if side == child_owner else "parent"
@@ -407,10 +422,10 @@ def _play_one_game(
             if root_order_hint not in legal:
                 raise ArenaExecutionError("root_order_hint_provider returned an illegal action")
         search_kwargs = {}
-        if root_order_hint_provider is not None:
+        if root_order_hint_provider is not None or config.root_window_pruning:
             search_kwargs = {
                 "root_order_hint": root_order_hint,
-                "root_window_pruning": True,
+                "root_window_pruning": config.root_window_pruning,
             }
         timed_search = config.move_time_seconds is not None
         search_time_limit = (
@@ -539,6 +554,7 @@ def _play_one_game(
                     getattr(result, "ordering_cache_entry_bytes", 0)
                 ),
                 "ordering_max_ply": int(getattr(result, "ordering_max_ply", -1)),
+                "ordering_min_depth": int(getattr(result, "ordering_min_depth", 1)),
                 "ordering_evaluations_by_ply": [
                     int(value) for value in getattr(
                         result, "ordering_evaluations_by_ply", ()
@@ -568,6 +584,11 @@ def _play_one_game(
                 "ordering_cache_collisions_by_ply": [
                     int(value) for value in getattr(
                         result, "ordering_cache_collisions_by_ply", ()
+                    )
+                ],
+                "ordering_skipped_by_remaining_depth": [
+                    int(value) for value in getattr(
+                        result, "ordering_skipped_by_remaining_depth", ()
                     )
                 ],
             })

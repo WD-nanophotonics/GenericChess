@@ -71,6 +71,7 @@ class SemanticIterativeSearchResult:
     ordering_cache_capacity: int = 0
     ordering_cache_entry_bytes: int = 0
     ordering_max_ply: int = -1
+    ordering_min_depth: int = 1
     ordering_evaluations_by_ply: tuple[int, ...] = ()
     ordering_nodes_by_ply: tuple[int, ...] = ()
     ordering_actions_by_ply: tuple[int, ...] = ()
@@ -78,6 +79,7 @@ class SemanticIterativeSearchResult:
     ordering_cache_hits_by_ply: tuple[int, ...] = ()
     ordering_cache_misses_by_ply: tuple[int, ...] = ()
     ordering_cache_collisions_by_ply: tuple[int, ...] = ()
+    ordering_skipped_by_remaining_depth: tuple[int, ...] = ()
 
 
 def _profile_tuple(native_rules, values):
@@ -162,6 +164,7 @@ class SemanticSearchEngine:
         ordering_cache_enabled: bool = True,
         ordering_feature_reuse_enabled: bool = True,
         ordering_max_ply: int = -1,
+        ordering_min_depth: int = 1,
     ) -> None:
         if not native_available():
             raise RuntimeError("native extension is not built")
@@ -177,6 +180,8 @@ class SemanticSearchEngine:
             raise TypeError("ordering_feature_reuse_enabled must be a bool")
         if isinstance(ordering_max_ply, bool) or not isinstance(ordering_max_ply, int) or not -1 <= ordering_max_ply <= GC_SEM_MAX_PLY:
             raise ValueError("ordering_max_ply must be -1 or within GC_SEM_MAX_PLY")
+        if isinstance(ordering_min_depth, bool) or not isinstance(ordering_min_depth, int) or not 1 <= ordering_min_depth <= GC_SEM_MAX_PLY:
+            raise ValueError("ordering_min_depth must be within GC_SEM_MAX_PLY")
         self._compiled = compiled
         self._native_rules = native_rules
         self._checkpoint_id = None
@@ -201,6 +206,7 @@ class SemanticSearchEngine:
         self._ordering_cache_enabled = ordering_cache_enabled
         self._ordering_feature_reuse_enabled = ordering_feature_reuse_enabled
         self._ordering_max_ply = ordering_max_ply
+        self._ordering_min_depth = ordering_min_depth
         if checkpoint is not None:
             self._set_checkpoint_values(checkpoint)
         if ordering_checkpoint is not None:
@@ -258,6 +264,7 @@ class SemanticSearchEngine:
             self._ordering_cache_enabled,
             self._ordering_feature_reuse_enabled,
             self._ordering_max_ply,
+            self._ordering_min_depth,
         )
 
     @property
@@ -473,6 +480,7 @@ class SemanticSearchEngine:
             ordering_cache_capacity=int(raw.get("ordering_cache_capacity", 0)),
             ordering_cache_entry_bytes=int(raw.get("ordering_cache_entry_bytes", 0)),
             ordering_max_ply=int(raw.get("ordering_max_ply", -1)),
+            ordering_min_depth=int(raw.get("ordering_min_depth", 1)),
             ordering_evaluations_by_ply=tuple(int(value) for value in raw.get("ordering_evaluations_by_ply", ())),
             ordering_nodes_by_ply=tuple(int(value) for value in raw.get("ordering_nodes_by_ply", ())),
             ordering_actions_by_ply=tuple(int(value) for value in raw.get("ordering_actions_by_ply", ())),
@@ -480,6 +488,7 @@ class SemanticSearchEngine:
             ordering_cache_hits_by_ply=tuple(int(value) for value in raw.get("ordering_cache_hits_by_ply", ())),
             ordering_cache_misses_by_ply=tuple(int(value) for value in raw.get("ordering_cache_misses_by_ply", ())),
             ordering_cache_collisions_by_ply=tuple(int(value) for value in raw.get("ordering_cache_collisions_by_ply", ())),
+            ordering_skipped_by_remaining_depth=tuple(int(value) for value in raw.get("ordering_skipped_by_remaining_depth", ())),
         )
 
 
