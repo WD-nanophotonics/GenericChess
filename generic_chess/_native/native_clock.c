@@ -17,7 +17,14 @@ uint64_t gc_monotonic_ns(void) {
     }
     QueryPerformanceCounter(&now);
     if (freq.QuadPart > 0) {
-        return (uint64_t)(now.QuadPart * 1000000000LL / freq.QuadPart);
+        /* Keep the intermediate multiplication below UINT64_MAX.  QPC ticks
+         * are already large on long-lived Windows processes, so multiplying
+         * the full counter by 1e9 first can wrap and produce bogus telemetry.
+         */
+        uint64_t ticks = (uint64_t)now.QuadPart;
+        uint64_t frequency = (uint64_t)freq.QuadPart;
+        return (ticks / frequency) * 1000000000ull +
+               ((ticks % frequency) * 1000000000ull) / frequency;
     }
     return 0;
 #else

@@ -69,6 +69,13 @@ typedef struct {
     PyObject *localized_control_values;
     PyObject *compact_values;
     unsigned int evaluator_scale;
+    PyObject *ordering_board_values;
+    PyObject *ordering_hand_values;
+    PyObject *ordering_dynamic_values;
+    PyObject *ordering_spatial_values;
+    PyObject *ordering_localized_control_values;
+    PyObject *ordering_compact_values;
+    unsigned int ordering_evaluator_scale;
     GCSemanticTable *tt;
     int busy;
 } GCSemanticSearchEngine;
@@ -128,6 +135,12 @@ static void gc_semantic_engine_capsule_free(PyObject *capsule) {
         Py_XDECREF(engine->spatial_values);
         Py_XDECREF(engine->localized_control_values);
         Py_XDECREF(engine->compact_values);
+        Py_XDECREF(engine->ordering_board_values);
+        Py_XDECREF(engine->ordering_hand_values);
+        Py_XDECREF(engine->ordering_dynamic_values);
+        Py_XDECREF(engine->ordering_spatial_values);
+        Py_XDECREF(engine->ordering_localized_control_values);
+        Py_XDECREF(engine->ordering_compact_values);
         free(engine);
     }
 }
@@ -3387,6 +3400,15 @@ static void gc_semantic_profile_free(GCSemanticProbeProfile *profile) {
     profile->compact = NULL;
 }
 
+static int gc_semantic_set_u64(PyObject *mapping, const char *name,
+                               uint64_t value) {
+    PyObject *object = PyLong_FromUnsignedLongLong(value);
+    if (object == NULL) return -1;
+    int status = PyDict_SetItemString(mapping, name, object);
+    Py_DECREF(object);
+    return status;
+}
+
 #define GC_SEMANTIC_PROBE_INF 1000000000
 #define GC_SEMANTIC_STATIC_LIMIT 90000000
 
@@ -3845,6 +3867,12 @@ typedef struct {
     uint64_t tt_current_iteration_hits;
     uint32_t tt_iteration_generation;
     GCSemanticTable *tt;
+    GCSemanticProbeProfile ordering_profile;
+    int learned_move_ordering;
+    uint64_t ordering_evaluations;
+    uint64_t ordering_nodes;
+    uint64_t ordering_actions;
+    uint64_t ordering_elapsed_nanoseconds;
     uint64_t history_context[GC_SEM_MAX_PLY + 2][4];
     uint32_t root_ply_offset;
     uint64_t root_order_hint;
@@ -3997,6 +4025,68 @@ static void gc_semantic_tt_store_node(GCSemanticIterativeContext *ctx,
     }
 }
 
+typedef struct {
+    uint64_t action;
+    int mover_score;
+} GCSemanticOrderedAction;
+
+static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
+                                     GCSemanticPosition *position,
+                                     GCSemanticActionBuffer *actions) {
+    if (!ctx->learned_move_ordering || actions->count < 2) return 1;
+    uint64_t start_ns = gc_monotonic_ns();
+    GCSemanticOrderedAction *ordered = (GCSemanticOrderedAction *)calloc(
+        actions->count, sizeof(*ordered));
+    if (ordered == NULL) {
+        ctx->control = 4;
+        return 0;
+    }
+    size_t legal_count = 0;
+    for (size_t i = 0; i < actions->count; i++) {
+        if (!gc_semantic_iterative_check_budget(ctx, 1)) {
+            free(ordered);
+            return 0;
+        }
+        GCSemanticPosition child;
+        memset(&child, 0, sizeof(child));
+        if (!gc_semantic_runtime_make_checked(
+                &child, ctx->rules, position, actions->data[i])) {
+            continue;
+        }
+        /* Native evaluation is from the child side-to-move perspective;
+         * negate it to obtain the mover's ordering Q.  This profile never
+         * participates in returned minimax or leaf values. */
+        ordered[legal_count].action = actions->data[i];
+        ordered[legal_count].mover_score = -gc_semantic_probe_material(
+            ctx->rules, &child, &ctx->ordering_profile);
+        legal_count++;
+    }
+    ctx->ordering_nodes++;
+    ctx->ordering_evaluations += legal_count;
+    ctx->ordering_actions += legal_count;
+    for (size_t i = 1; i < legal_count; i++) {
+        GCSemanticOrderedAction item = ordered[i];
+        size_t j = i;
+        while (j > 0) {
+            GCSemanticOrderedAction previous = ordered[j - 1];
+            if (previous.mover_score > item.mover_score ||
+                (previous.mover_score == item.mover_score &&
+                 previous.action < item.action)) {
+                break;
+            }
+            ordered[j] = previous;
+            j--;
+        }
+        ordered[j] = item;
+    }
+    for (size_t i = 0; i < legal_count; i++)
+        actions->data[i] = ordered[i].action;
+    actions->count = legal_count;
+    free(ordered);
+    ctx->ordering_elapsed_nanoseconds += gc_monotonic_ns() - start_ns;
+    return 1;
+}
+
 static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                                          uint32_t ply, uint32_t depth,
                                          int alpha, int beta, int pv_node,
@@ -4137,6 +4227,10 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                 break;
             }
         }
+    }
+    if (!gc_semantic_order_actions(ctx, position, &actions)) {
+        gc_semantic_action_buffer_free(&actions);
+        return 0;
     }
     if (ply == 0 && ctx->root_order_hint_present) {
         for (size_t j = 0; j < actions.count; j++) {
@@ -4649,18 +4743,29 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     PyObject *tt_capsule = Py_None;
     PyObject *root_order_hint_obj = Py_None;
     PyObject *root_window_pruning_obj = Py_False;
+    PyObject *ordering_board_values = Py_None;
+    PyObject *ordering_hand_values = Py_None;
+    PyObject *ordering_dynamic_values = Py_None;
+    PyObject *ordering_spatial_values = Py_None;
+    PyObject *ordering_localized_control_values = Py_None;
+    PyObject *ordering_compact_values = Py_None;
     unsigned int max_depth;
     unsigned int root_ply_offset = 0;
     unsigned int tt_megabytes = 0;
     unsigned int evaluator_scale = 1;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOO", &rules_capsule, &position_capsule,
+    unsigned int ordering_evaluator_scale = 1;
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOOOOOOOOI", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
                           &dynamic_values,
                           &spatial_values, &localized_control_values, &compact_values,
                           &root_ply_offset, &tt_megabytes, &tt_capsule,
                           &evaluator_scale, &root_order_hint_obj,
-                          &root_window_pruning_obj)) return NULL;
+                          &root_window_pruning_obj,
+                          &ordering_board_values, &ordering_hand_values,
+                          &ordering_dynamic_values, &ordering_spatial_values,
+                          &ordering_localized_control_values,
+                          &ordering_compact_values, &ordering_evaluator_scale)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
@@ -4694,18 +4799,46 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
                                    spatial_values, localized_control_values, compact_values, rules,
                                    evaluator_scale, &profile)) return NULL;
+    GCSemanticProbeProfile ordering_profile;
+    if (!gc_semantic_parse_profile(ordering_board_values, ordering_hand_values,
+                                   ordering_dynamic_values, ordering_spatial_values,
+                                   ordering_localized_control_values,
+                                   ordering_compact_values, rules,
+                                   ordering_evaluator_scale, &ordering_profile)) {
+        gc_semantic_profile_free(&profile);
+        return NULL;
+    }
+    int learned_move_ordering = ordering_profile.supplied ||
+        ordering_profile.dynamic_supplied || ordering_profile.spatial_supplied ||
+        ordering_profile.localized_control_supplied || ordering_profile.compact_supplied;
+    if (learned_move_ordering && root_order_hint_present) {
+        gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic learned move ordering cannot combine with root_order_hint");
+        return NULL;
+    }
     GCCancelFlag *cancel = NULL;
     if (cancel_capsule != Py_None) {
         cancel = gc_get_cancel(cancel_capsule);
-        if (!cancel) { gc_semantic_profile_free(&profile); return NULL; }
+        if (!cancel) {
+            gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
+            return NULL;
+        }
     }
     uint64_t max_nodes = UINT64_MAX;
     if (max_nodes_obj != Py_None) {
         long long value = PyLong_AsLongLong(max_nodes_obj);
-        if (value == -1 && PyErr_Occurred()) { gc_semantic_profile_free(&profile); return NULL; }
+        if (value == -1 && PyErr_Occurred()) {
+            gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
+            return NULL;
+        }
         if (value < 0) {
             PyErr_SetString(PyExc_ValueError, "semantic max_nodes must be >= 0");
             gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
             return NULL;
         }
         max_nodes = (uint64_t)value;
@@ -4717,6 +4850,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
             PyErr_SetString(PyExc_ValueError,
                             "semantic max_time_seconds must be finite and non-negative");
             gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
             return NULL;
         }
         max_time_ns = (uint64_t)(seconds * 1e9);
@@ -4725,11 +4859,16 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     if (tt_capsule != Py_None) {
         borrowed_tt = (GCSemanticTable *)PyCapsule_GetPointer(
             tt_capsule, GC_SEM_TT_CAPSULE);
-        if (borrowed_tt == NULL) { gc_semantic_profile_free(&profile); return NULL; }
+        if (borrowed_tt == NULL) {
+            gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
+            return NULL;
+        }
         if (tt_megabytes != 0) {
             PyErr_SetString(PyExc_ValueError,
                             "semantic engine search cannot combine a TT capsule and tt_megabytes");
             gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
             return NULL;
         }
     }
@@ -4737,6 +4876,8 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     memset(&ctx, 0, sizeof(ctx));
     ctx.rules = rules;
     ctx.profile = profile;
+    ctx.ordering_profile = ordering_profile;
+    ctx.learned_move_ordering = learned_move_ordering;
     ctx.max_depth = max_depth;
     ctx.root_ply_offset = root_ply_offset;
     ctx.root_order_hint = root_order_hint;
@@ -4755,6 +4896,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         if (ctx.tt == NULL) {
             PyErr_NoMemory();
             gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
             return NULL;
         }
     }
@@ -4768,6 +4910,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         PyErr_SetString(PyExc_OverflowError, "semantic search state size overflow");
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     ctx.stack = (GCSemanticPosition *)calloc(1, position_bytes);
@@ -4778,6 +4921,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         PyErr_NoMemory();
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     memcpy(&ctx.stack[0], position, sizeof(GCSemanticPosition));
@@ -4830,6 +4974,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     for (uint16_t i = 0; i < completed_len; i++) {
@@ -4838,6 +4983,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
             Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
             if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
             gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
             return NULL;
         }
         PyTuple_SET_ITEM(pv, (Py_ssize_t)i, value);
@@ -4850,6 +4996,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         Py_DECREF(pv); free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     PyObject *out = Py_BuildValue(
@@ -4887,6 +5034,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     PyObject *root_hint_requested = ctx.root_order_hint_present
@@ -4904,6 +5052,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     unsigned long attempted_index = 0;
@@ -4921,6 +5070,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
             free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
             if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
             gc_semantic_profile_free(&profile);
+            gc_semantic_profile_free(&ordering_profile);
             return NULL;
         }
         PyTuple_SET_ITEM(root_first_actions, (Py_ssize_t)attempted_index++, first);
@@ -4935,7 +5085,14 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         PyDict_SetItemString(out, "root_iterations_attempted", root_iterations_attempted) != 0 ||
         PyDict_SetItemString(out, "root_window_pruning",
                              ctx.root_window_pruning ? Py_True : Py_False) != 0 ||
-        PyDict_SetItemString(out, "root_iteration_first_actions", root_first_actions) != 0) {
+        PyDict_SetItemString(out, "root_iteration_first_actions", root_first_actions) != 0 ||
+        PyDict_SetItemString(out, "learned_move_ordering",
+                             ctx.learned_move_ordering ? Py_True : Py_False) != 0 ||
+        gc_semantic_set_u64(out, "ordering_evaluations", ctx.ordering_evaluations) != 0 ||
+        gc_semantic_set_u64(out, "ordering_nodes", ctx.ordering_nodes) != 0 ||
+        gc_semantic_set_u64(out, "ordering_actions", ctx.ordering_actions) != 0 ||
+        gc_semantic_set_u64(out, "ordering_elapsed_nanoseconds",
+                            ctx.ordering_elapsed_nanoseconds) != 0) {
         Py_XDECREF(root_hint_apply_count);
         Py_XDECREF(root_iterations_attempted);
         Py_DECREF(root_hint_requested);
@@ -4946,6 +5103,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
         free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
         if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
         gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
     Py_DECREF(root_hint_apply_count);
@@ -4957,6 +5115,7 @@ static PyObject *gc_semantic_iterative_search(PyObject *self, PyObject *args) {
     free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
     if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
     gc_semantic_profile_free(&profile);
+    gc_semantic_profile_free(&ordering_profile);
     if (!out) return NULL;
     if (completed_is_declaration) {
         uint8_t declaration_index = (uint8_t)(completed_action & 0xFFu);
@@ -5004,12 +5163,24 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     (void)self;
     PyObject *rules_capsule, *board_values, *hand_values, *dynamic_values;
     PyObject *spatial_values, *localized_control_values, *compact_values;
+    PyObject *ordering_board_values = Py_None;
+    PyObject *ordering_hand_values = Py_None;
+    PyObject *ordering_dynamic_values = Py_None;
+    PyObject *ordering_spatial_values = Py_None;
+    PyObject *ordering_localized_control_values = Py_None;
+    PyObject *ordering_compact_values = Py_None;
     unsigned int tt_megabytes;
     unsigned int evaluator_scale = 1;
-    if (!PyArg_ParseTuple(args, "OOOOOOOI|I", &rules_capsule, &board_values,
+    unsigned int ordering_evaluator_scale = 1;
+    if (!PyArg_ParseTuple(args, "OOOOOOOI|IOOOOOOI", &rules_capsule, &board_values,
                           &hand_values, &dynamic_values, &spatial_values,
                           &localized_control_values, &compact_values, &tt_megabytes,
-                          &evaluator_scale)) return NULL;
+                          &evaluator_scale, &ordering_board_values,
+                          &ordering_hand_values, &ordering_dynamic_values,
+                          &ordering_spatial_values,
+                          &ordering_localized_control_values,
+                          &ordering_compact_values,
+                          &ordering_evaluator_scale)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     if (rules == NULL) return NULL;
@@ -5023,9 +5194,19 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
                                    spatial_values, localized_control_values, compact_values, rules,
                                    evaluator_scale, &profile))
         return NULL;
+    GCSemanticProbeProfile ordering_profile;
+    if (!gc_semantic_parse_profile(ordering_board_values, ordering_hand_values,
+                                   ordering_dynamic_values, ordering_spatial_values,
+                                   ordering_localized_control_values,
+                                   ordering_compact_values, rules,
+                                   ordering_evaluator_scale, &ordering_profile)) {
+        gc_semantic_profile_free(&profile);
+        return NULL;
+    }
     /* The engine retains the Python compact payload and reparses it per search;
        the validation parse owns only temporary native allocations. */
     gc_semantic_profile_free(&profile);
+    gc_semantic_profile_free(&ordering_profile);
     GCSemanticSearchEngine *engine = (GCSemanticSearchEngine *)calloc(
         1, sizeof(*engine));
     if (engine == NULL) { PyErr_NoMemory(); return NULL; }
@@ -5038,6 +5219,13 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     engine->localized_control_values = Py_NewRef(localized_control_values);
     engine->compact_values = Py_NewRef(compact_values);
     engine->evaluator_scale = evaluator_scale;
+    engine->ordering_board_values = Py_NewRef(ordering_board_values);
+    engine->ordering_hand_values = Py_NewRef(ordering_hand_values);
+    engine->ordering_dynamic_values = Py_NewRef(ordering_dynamic_values);
+    engine->ordering_spatial_values = Py_NewRef(ordering_spatial_values);
+    engine->ordering_localized_control_values = Py_NewRef(ordering_localized_control_values);
+    engine->ordering_compact_values = Py_NewRef(ordering_compact_values);
+    engine->ordering_evaluator_scale = ordering_evaluator_scale;
     if (tt_megabytes != 0) {
         size_t requested = (size_t)tt_megabytes * (size_t)1024 * (size_t)1024;
         engine->tt = gc_semantic_tt_create(requested, NULL);
@@ -5049,6 +5237,12 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
             Py_DECREF(engine->spatial_values);
             Py_DECREF(engine->localized_control_values);
             Py_DECREF(engine->compact_values);
+            Py_DECREF(engine->ordering_board_values);
+            Py_DECREF(engine->ordering_hand_values);
+            Py_DECREF(engine->ordering_dynamic_values);
+            Py_DECREF(engine->ordering_spatial_values);
+            Py_DECREF(engine->ordering_localized_control_values);
+            Py_DECREF(engine->ordering_compact_values);
             free(engine);
             PyErr_NoMemory();
             return NULL;
@@ -5065,6 +5259,12 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
         Py_DECREF(engine->spatial_values);
         Py_DECREF(engine->localized_control_values);
         Py_DECREF(engine->compact_values);
+        Py_DECREF(engine->ordering_board_values);
+        Py_DECREF(engine->ordering_hand_values);
+        Py_DECREF(engine->ordering_dynamic_values);
+        Py_DECREF(engine->ordering_spatial_values);
+        Py_DECREF(engine->ordering_localized_control_values);
+        Py_DECREF(engine->ordering_compact_values);
         free(engine);
         return NULL;
     }
@@ -5091,7 +5291,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
         : Py_NewRef(Py_None);
     if (tt_capsule == NULL) return NULL;
-    PyObject *call_args = PyTuple_New(18);
+    PyObject *call_args = PyTuple_New(25);
     if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
     Py_INCREF(engine->rules_capsule);
     PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
@@ -5113,6 +5313,13 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     PyTuple_SET_ITEM(call_args, 15, PyLong_FromUnsignedLong((unsigned long)engine->evaluator_scale));
     Py_INCREF(root_order_hint); PyTuple_SET_ITEM(call_args, 16, root_order_hint);
     Py_INCREF(root_window_pruning); PyTuple_SET_ITEM(call_args, 17, root_window_pruning);
+    Py_INCREF(engine->ordering_board_values); PyTuple_SET_ITEM(call_args, 18, engine->ordering_board_values);
+    Py_INCREF(engine->ordering_hand_values); PyTuple_SET_ITEM(call_args, 19, engine->ordering_hand_values);
+    Py_INCREF(engine->ordering_dynamic_values); PyTuple_SET_ITEM(call_args, 20, engine->ordering_dynamic_values);
+    Py_INCREF(engine->ordering_spatial_values); PyTuple_SET_ITEM(call_args, 21, engine->ordering_spatial_values);
+    Py_INCREF(engine->ordering_localized_control_values); PyTuple_SET_ITEM(call_args, 22, engine->ordering_localized_control_values);
+    Py_INCREF(engine->ordering_compact_values); PyTuple_SET_ITEM(call_args, 23, engine->ordering_compact_values);
+    PyTuple_SET_ITEM(call_args, 24, PyLong_FromUnsignedLong((unsigned long)engine->ordering_evaluator_scale));
     engine->busy = 1;
     PyObject *result = gc_semantic_iterative_search(self, call_args);
     engine->busy = 0;

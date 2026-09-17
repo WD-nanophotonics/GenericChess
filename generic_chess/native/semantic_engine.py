@@ -58,6 +58,12 @@ class SemanticIterativeSearchResult:
     root_iteration_first_actions: tuple[Action | None, ...] = ()
     root_window_pruning: bool = False
     beta_cutoffs: int = 0
+    learned_move_ordering: bool = False
+    ordering_checkpoint_id: str | None = None
+    ordering_evaluations: int = 0
+    ordering_nodes: int = 0
+    ordering_actions: int = 0
+    ordering_elapsed_seconds: float = 0.0
 
 
 def _profile_tuple(native_rules, values):
@@ -136,6 +142,7 @@ class SemanticSearchEngine:
         localized_control_values=None,
         compact_values=None,
         checkpoint=None,
+        ordering_checkpoint=None,
         evaluator_scale: int = 1,
         tt_megabytes: int = 64,
     ) -> None:
@@ -150,18 +157,28 @@ class SemanticSearchEngine:
         self._compiled = compiled
         self._native_rules = native_rules
         self._checkpoint_id = None
+        self._ordering_checkpoint_id = None
         self._board_values = _profile_tuple(native_rules, board_values)
         self._hand_values = _profile_tuple(native_rules, hand_values)
         self._dynamic_values = _dynamic_tuple(dynamic_values)
         self._spatial_values = _spatial_tuple(native_rules, spatial_occupancy_values)
         self._localized_control_values = _localized_control_tuple(localized_control_values)
         self._compact_values = None if compact_values is None else dict(compact_values)
+        self._ordering_board_values = None
+        self._ordering_hand_values = None
+        self._ordering_dynamic_values = None
+        self._ordering_spatial_values = None
+        self._ordering_localized_control_values = None
+        self._ordering_compact_values = None
+        self._ordering_evaluator_scale = 1
         self._evaluator_scale = evaluator_scale
         if (self._board_values is None) != (self._hand_values is None):
             raise ValueError("board_values and hand_values must be supplied together")
         self._tt_megabytes = tt_megabytes
         if checkpoint is not None:
             self._set_checkpoint_values(checkpoint)
+        if ordering_checkpoint is not None:
+            self._set_ordering_checkpoint_values(ordering_checkpoint)
         self._capsule = self._new_capsule()
 
     def _set_checkpoint_values(self, checkpoint) -> None:
@@ -179,6 +196,21 @@ class SemanticSearchEngine:
         self._evaluator_scale = checkpoint.semantic_native_scale
         self._checkpoint_id = checkpoint.checkpoint_id
 
+    def _set_ordering_checkpoint_values(self, checkpoint) -> None:
+        checkpoint.validate_ruleset(self._compiled)
+        type_ids = tuple(self._native_rules.type_ids)
+        self._ordering_board_values = tuple(checkpoint.semantic_quantized_board(type_ids))
+        self._ordering_hand_values = tuple(checkpoint.semantic_quantized_hand(type_ids))
+        dynamic = checkpoint.semantic_quantized_dynamic()
+        self._ordering_dynamic_values = None if dynamic is None else tuple(dynamic)
+        spatial = checkpoint.semantic_quantized_spatial(type_ids)
+        self._ordering_spatial_values = None if spatial is None else tuple(spatial)
+        control = checkpoint.semantic_quantized_localized_control()
+        self._ordering_localized_control_values = None if control is None else tuple(control)
+        self._ordering_compact_values = dict(checkpoint.compact_nonlinear) if checkpoint.compact_nonlinear else None
+        self._ordering_evaluator_scale = checkpoint.semantic_native_scale
+        self._ordering_checkpoint_id = checkpoint.checkpoint_id
+
     def _new_capsule(self):
         return _module().create_semantic_search_engine(
             self._native_rules.capsule,
@@ -190,6 +222,13 @@ class SemanticSearchEngine:
             self._compact_values,
             self._tt_megabytes,
             self._evaluator_scale,
+            self._ordering_board_values,
+            self._ordering_hand_values,
+            self._ordering_dynamic_values,
+            self._ordering_spatial_values,
+            self._ordering_localized_control_values,
+            self._ordering_compact_values,
+            self._ordering_evaluator_scale,
         )
 
     @property
@@ -199,6 +238,10 @@ class SemanticSearchEngine:
     @property
     def checkpoint_id(self):
         return self._checkpoint_id
+
+    @property
+    def ordering_checkpoint_id(self):
+        return self._ordering_checkpoint_id
 
     def bind_checkpoint(self, checkpoint) -> None:
         """Rebind learned material without recompiling the semantic RuleSet.
@@ -264,6 +307,8 @@ class SemanticSearchEngine:
         root_order_hint: Action | None = None,
         root_window_pruning: bool = True,
     ) -> SemanticIterativeSearchResult:
+        if root_order_hint is not None and self._ordering_checkpoint_id is not None:
+            raise ValueError("root_order_hint cannot be combined with learned move ordering")
         if self._compiled.ruleset_fingerprint != session.compiled.ruleset_fingerprint:
             raise ValueError("session ruleset fingerprint does not match semantic engine")
         if limits.max_depth is None:
@@ -386,6 +431,12 @@ class SemanticSearchEngine:
             root_iteration_first_actions=tuple(root_first_actions),
             root_window_pruning=bool(raw.get("root_window_pruning", False)),
             beta_cutoffs=int(raw.get("beta_cutoffs", 0)),
+            learned_move_ordering=bool(raw.get("learned_move_ordering", False)),
+            ordering_checkpoint_id=self._ordering_checkpoint_id,
+            ordering_evaluations=int(raw.get("ordering_evaluations", 0)),
+            ordering_nodes=int(raw.get("ordering_nodes", 0)),
+            ordering_actions=int(raw.get("ordering_actions", 0)),
+            ordering_elapsed_seconds=int(raw.get("ordering_elapsed_nanoseconds", 0)) / 1e9,
         )
 
 

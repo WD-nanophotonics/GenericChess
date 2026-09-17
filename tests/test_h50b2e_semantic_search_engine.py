@@ -78,6 +78,51 @@ def test_checkpoint_rebind_replaces_evaluator_and_clears_tt_without_rule_recompi
     assert engine.tt_info()["occupied_entries"] == 0
 
 
+def test_learned_ordering_is_native_only_and_keeps_parent_leaf_values():
+    compiled, native = _western()
+    legacy = compile_ruleset_for_execution(build_western_chess_ruleset())
+    profile = build_ruleset_profile(legacy, EvaluationConfig())
+    parent = LearnableMaterialCheckpoint.from_profile(compiled, profile)
+    ordering = parent.child_checkpoint(
+        board_weights={key: -value for key, value in parent.board_weights.items()},
+        hand_weights={key: -value for key, value in parent.hand_weights.items()},
+        games_seen_delta=0,
+        positions_seen_delta=0,
+        training_updates_delta=1,
+        training_config_hash="f97-ordering-test",
+        training_seed=97,
+    )
+    session = GameSession(compiled)
+    limits = _search_limits(max_depth=1)
+    baseline = SemanticSearchEngine(
+        compiled, native, checkpoint=parent, tt_megabytes=0
+    ).search(session, limits, root_window_pruning=False)
+    ordered_engine = SemanticSearchEngine(
+        compiled,
+        native,
+        checkpoint=parent,
+        ordering_checkpoint=ordering,
+        tt_megabytes=0,
+    )
+    ordered = ordered_engine.search(session, limits, root_window_pruning=False)
+
+    assert ordered_engine.checkpoint_id == parent.checkpoint_id
+    assert ordered_engine.ordering_checkpoint_id == ordering.checkpoint_id
+    assert ordered_engine.native_evaluator_values == SemanticSearchEngine(
+        compiled, native, checkpoint=parent, tt_megabytes=0
+    ).native_evaluator_values
+    assert ordered.learned_move_ordering
+    assert ordered.ordering_evaluations > 0
+    assert ordered.ordering_nodes > 0
+    assert ordered.ordering_actions == ordered.ordering_evaluations
+    assert ordered.ordering_elapsed_seconds >= 0.0
+    assert (ordered.action, ordered.score, ordered.nodes) == (
+        baseline.action, baseline.score, baseline.nodes
+    )
+    with pytest.raises(ValueError, match="cannot be combined"):
+        ordered_engine.search(session, limits, root_order_hint=session.legal_actions()[0])
+
+
 def test_history_context_prevents_cross_path_tt_reuse():
     compiled, native = _western()
     session = GameSession(compiled)

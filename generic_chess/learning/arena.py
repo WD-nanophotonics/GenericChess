@@ -216,14 +216,17 @@ class ArenaSummary:
     pairs: tuple[ArenaPairResult, ...]
 
 
-def _engine_for(compiled, native_rules, checkpoint, tt_mb):
+def _engine_for(compiled, native_rules, checkpoint, tt_mb, *, ordering_checkpoint=None):
     from ..rules.ir import CompiledSemanticRuleset
 
     if isinstance(compiled, CompiledSemanticRuleset):
         return SemanticSearchEngine(
             compiled, native_rules, checkpoint=checkpoint,
+            ordering_checkpoint=ordering_checkpoint,
             tt_megabytes=tt_mb,
         )
+    if ordering_checkpoint is not None:
+        raise ValueError("learned move ordering requires a semantic ruleset")
     eval_tables = compile_native_evaluation(
         native_rules,
         _dummy_profile(compiled, checkpoint),
@@ -260,6 +263,7 @@ def _play_one_game(
     partial_game_identity: dict | None = None,
     resume_partial: dict | None = None,
     root_order_hint_provider=None,
+    ordering_checkpoint=None,
 ) -> ArenaGameResult:
     """Replay ``opening``, then play one game with fresh engines.
 
@@ -275,7 +279,8 @@ def _play_one_game(
         compiled, native_rules, parent, config.tt_megabytes
     )
     child_engine = None if config.tt_reset_each_move else _engine_for(
-        compiled, native_rules, child, config.tt_megabytes
+        compiled, native_rules, child, config.tt_megabytes,
+        ordering_checkpoint=ordering_checkpoint,
     )
     actions: list[Action] = []
     plies = 0
@@ -336,7 +341,8 @@ def _play_one_game(
                 compiled, native_rules, parent, config.tt_megabytes
             )
             child_engine = _engine_for(
-                compiled, native_rules, child, config.tt_megabytes
+                compiled, native_rules, child, config.tt_megabytes,
+                ordering_checkpoint=ordering_checkpoint,
             )
         engine = child_engine if side == child_owner else parent_engine
         role = "child" if side == child_owner else "parent"
@@ -457,6 +463,20 @@ def _play_one_game(
                     )
                     for action in getattr(result, "root_iteration_first_actions", ())
                 ],
+                "learned_move_ordering": bool(
+                    getattr(result, "learned_move_ordering", False)
+                ),
+                "ordering_checkpoint_id": getattr(
+                    result, "ordering_checkpoint_id", None
+                ),
+                "ordering_evaluations": int(
+                    getattr(result, "ordering_evaluations", 0)
+                ),
+                "ordering_nodes": int(getattr(result, "ordering_nodes", 0)),
+                "ordering_actions": int(getattr(result, "ordering_actions", 0)),
+                "ordering_elapsed_seconds": float(
+                    getattr(result, "ordering_elapsed_seconds", 0.0)
+                ),
             })
             if root_hint_policy is not None:
                 search_metrics[-1]["root_hint_policy"] = dict(root_hint_policy)
@@ -1074,6 +1094,7 @@ def _game_progress_identity(
     capture_search_metrics: bool,
     decision_criterion: dict | str | None = None,
     policy_identity: dict | str | None = None,
+    ordering_checkpoint=None,
 ) -> dict:
     identity = _progress_identity(
         compiled, parent, child, config, openings,
@@ -1096,6 +1117,9 @@ def _game_progress_identity(
         )
     if policy_identity is not None:
         identity["policy_identity"] = policy_identity
+    identity["ordering_checkpoint_id"] = (
+        None if ordering_checkpoint is None else ordering_checkpoint.checkpoint_id
+    )
     return identity
 
 
@@ -1119,6 +1143,7 @@ def _game_progress_identity_for(
         "child_owner": child_owner,
         "parent_checkpoint_id": base_identity["parent_checkpoint_id"],
         "child_checkpoint_id": base_identity["child_checkpoint_id"],
+        "ordering_checkpoint_id": base_identity.get("ordering_checkpoint_id"),
         "node_budgets": {"parent": parent_budget, "child": child_budget},
         "max_depth": config.max_depth,
         "tt_megabytes": config.tt_megabytes,
@@ -1300,6 +1325,7 @@ def run_arena_game_resumable(
     max_pairs: int | None = None,
     root_order_hint_provider=None,
     policy_identity: dict | str | None = None,
+    ordering_checkpoint=None,
 ) -> ArenaRunResult:
     """Run one game per checkpoint and aggregate only complete pairs.
 
@@ -1325,6 +1351,7 @@ def run_arena_game_resumable(
         stage_id=stage_id, capture_search_metrics=capture_search_metrics,
         decision_criterion=decision_criterion,
         policy_identity=policy_identity,
+        ordering_checkpoint=ordering_checkpoint,
     )
     if max_pairs is not None:
         identity["max_pairs"] = max_pairs
@@ -1490,6 +1517,7 @@ def run_arena_game_resumable(
             partial_game_identity=expected_games[(pair_index, owner)],
             resume_partial=partial_games.get((pair_index, owner)),
             root_order_hint_provider=root_order_hint_provider,
+            ordering_checkpoint=ordering_checkpoint,
         )
         if caps.has_per_game_caps:
             kwargs["execution_caps"] = caps
