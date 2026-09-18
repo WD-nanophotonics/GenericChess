@@ -60,6 +60,7 @@ class GumbelSearchResult:
     root_visits: tuple[int, ...]
     root_q_values: tuple[float, ...]
     target_policy: tuple[float, ...]
+    root_rounds: tuple[dict, ...]
     simulations: int
     expanded_nodes: int
     leaf_evaluations: int
@@ -260,7 +261,7 @@ class SemanticGumbelMCTSV0:
             winning = [item for item in root_declarations if item.outcome == "WIN"]
             if winning:
                 return GumbelSearchResult(
-                    None, winning[0].declaration_id, (), (), (), (), (), (), 0, 0,
+                    None, winning[0].declaration_id, (), (), (), (), (), (), (), 0, 0,
                     0, 0, self._declaration_encounters,
                     time.perf_counter() - started, root_key,
                 )
@@ -291,14 +292,16 @@ class SemanticGumbelMCTSV0:
         )[: min(self.root_candidates, len(ordered_actions))]
         remaining = self.simulations
         candidates = list(ranked)
+        rounds = []
+        round_index = 0
         while len(candidates) > 1 and remaining > 0:
-            rounds = max(1, math.ceil(math.log2(len(candidates))))
-            base = max(1, remaining // (len(candidates) * rounds))
-            allocations = [base] * len(candidates)
+            remaining_rounds, base, allocations = _root_round_allocation(
+                remaining, len(candidates)
+            )
             consumed = sum(allocations)
-            for index in range(max(0, remaining - consumed)):
-                allocations[index % len(candidates)] += 1
-            consumed = sum(allocations)
+            before_actions = tuple(candidates)
+            before_visits = tuple(root.edges[action].visits for action in candidates)
+            before_q = tuple(root.edges[action].q for action in candidates)
             for action, budget in zip(candidates, allocations):
                 for _ in range(budget):
                     root.visits += 1
@@ -307,8 +310,26 @@ class SemanticGumbelMCTSV0:
                     edge.visits += 1
                     edge.total_value += -value
             remaining -= consumed
-            candidates = _rank_candidates(root, candidates)
-            candidates = candidates[: math.ceil(len(candidates) / 2)]
+            ranked_survivors = _rank_candidates(root, candidates)
+            survivors = tuple(ranked_survivors[: math.ceil(len(ranked_survivors) / 2)])
+            candidates = list(survivors)
+            rounds.append({
+                "round_index": round_index,
+                "candidate_actions_before": before_actions,
+                "candidate_count": len(before_visits),
+                "remaining_before": remaining + consumed,
+                "remaining_rounds": remaining_rounds,
+                "base_allocation": base,
+                "allocations": tuple(allocations),
+                "visits_before": before_visits,
+                "q_values_before": before_q,
+                "visits_after": tuple(root.edges[action].visits for action in survivors),
+                "q_values_after": tuple(root.edges[action].q for action in survivors),
+                "survivors": survivors,
+                "simulations_consumed": consumed,
+                "remaining_after": remaining,
+            })
+            round_index += 1
         if candidates and remaining > 0:
             edge = root.edges[candidates[0]]
             for _ in range(remaining):
@@ -316,13 +337,33 @@ class SemanticGumbelMCTSV0:
                 value = self._simulate(self._child(root, edge), 1)
                 edge.visits += 1
                 edge.total_value += -value
+            final_allocations = tuple(
+                remaining // len(candidates) + (index < remaining % len(candidates))
+                for index in range(len(candidates))
+            )
+            rounds.append({
+                "round_index": round_index,
+                "candidate_actions_before": tuple(candidates),
+                "candidate_count": len(candidates),
+                "remaining_before": remaining,
+                "remaining_rounds": 1,
+                "base_allocation": remaining // len(candidates),
+                "allocations": final_allocations,
+                "visits_before": tuple(root.edges[action].visits - final_allocations[index] for index, action in enumerate(candidates)),
+                "q_values_before": (),
+                "visits_after": tuple(root.edges[action].visits for action in candidates),
+                "q_values_after": tuple(root.edges[action].q for action in candidates),
+                "survivors": tuple(candidates),
+                "simulations_consumed": remaining,
+                "remaining_after": 0,
+            })
         visits = tuple(root.edges[action].visits for action in ordered_actions)
         q_values = tuple(root.edges[action].q for action in ordered_actions)
         target = tuple(float(value) / self.simulations for value in visits)
         selected = candidates[0] if candidates else None
         return GumbelSearchResult(
             selected, None, ordered_actions, logits, priors, tuple(gumbels), visits, q_values,
-            target, sum(visits), self._expanded_nodes, self._leaf_evaluations,
+            target, tuple(rounds), sum(visits), self._expanded_nodes, self._leaf_evaluations,
             self._maximum_depth, self._declaration_encounters,
             time.perf_counter() - started, root_key,
         )
@@ -359,3 +400,40 @@ __all__ = [
     "SemanticGumbelMCTSV0",
     "UnsupportedNeutralDeclaration",
 ]
+
+
+def _root_round_allocation(remaining: int, candidate_count: int):
+    """Return one exact halving-round allocation.
+
+    Non-final rounds consume only their equal base allocation; the final
+    round consumes all residual simulations in deterministic candidate order.
+    """
+    if remaining <= 0 or candidate_count <= 0:
+        raise ValueError("remaining and candidate_count must be positive")
+    remaining_rounds = max(1, math.ceil(math.log2(candidate_count)))
+    base = max(1, remaining // (candidate_count * remaining_rounds))
+    allocations = [base] * candidate_count
+    if remaining_rounds == 1:
+        for index in range(remaining - sum(allocations)):
+            allocations[index % candidate_count] += 1
+    return remaining_rounds, base, tuple(allocations)
+
+
+def _allocation_schedule(simulations: int, initial_count: int):
+    """Pure deterministic schedule witness used by the F116 regression tests."""
+    remaining = simulations
+    candidate_count = initial_count
+    schedule = []
+    while candidate_count > 1:
+        rounds, base, allocations = _root_round_allocation(remaining, candidate_count)
+        consumed = sum(allocations)
+        schedule.append((candidate_count, remaining, rounds, base, allocations, consumed))
+        remaining -= consumed
+        candidate_count = math.ceil(candidate_count / 2)
+    if candidate_count and remaining > 0:
+        rounds, base, allocations = _root_round_allocation(remaining, candidate_count)
+        schedule.append((candidate_count, remaining, rounds, base, allocations, sum(allocations)))
+    return tuple(schedule)
+
+
+__all__ += ["_allocation_schedule", "_root_round_allocation"]
