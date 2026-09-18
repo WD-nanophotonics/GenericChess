@@ -228,6 +228,20 @@ def transient_legal_actions_audit(native_rules, position) -> dict:
     return raw
 
 
+def policy_logits(native_rules, position, policy) -> dict:
+    """Return checked semantic actions and frozen Policy-v1 logits."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    payload = policy.native_payload() if hasattr(policy, "native_payload") else dict(policy)
+    raw = dict(_module().semantic_policy_logits(
+        native_rules.capsule, position, payload
+    ))
+    return {
+        "actions": tuple(int(value) for value in raw["actions"]),
+        "logits": tuple(float(value) for value in raw["logits"]),
+    }
+
+
 def history_occurrences(position, lo: int, hi: int) -> int:
     if not native_available():
         raise RuntimeError("native extension is not built")

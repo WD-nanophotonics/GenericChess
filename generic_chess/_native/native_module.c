@@ -5027,6 +5027,102 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
     return 1;
 }
 
+static PyObject *gc_semantic_policy_logits(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule, *policy_values;
+    if (!PyArg_ParseTuple(args, "OOO", &rules_capsule, &position_capsule,
+                          &policy_values)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
+        rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
+        position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position) ||
+        !gc_semantic_require_exact_history(position)) return NULL;
+    GCSemanticProbeProfile profile;
+    memset(&profile, 0, sizeof(profile));
+    if (!gc_semantic_parse_policy(policy_values, rules, &profile)) return NULL;
+    if (!profile.policy || profile.policy->version != 1) {
+        gc_semantic_profile_free(&profile);
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic_policy_logits requires SemanticPolicyV1");
+        return NULL;
+    }
+    const GCSemanticPolicyModel *model = profile.policy;
+    double state_features[4096] = {0.0};
+    double hidden[16] = {0.0};
+    if (!gc_semantic_policy_state_features(rules, position, model,
+                                           state_features)) {
+        gc_semantic_profile_free(&profile);
+        PyErr_SetString(PyExc_ValueError,
+                        "SemanticPolicyV1 state feature schema mismatch");
+        return NULL;
+    }
+    for (int h = 0; h < 16; h++) {
+        double value = model->state_bias[h];
+        for (int i = 0; i < model->state_dimension; i++)
+            value += model->state_weights[(size_t)h * model->state_dimension + i] *
+                     state_features[i];
+        hidden[h] = tanh(value);
+    }
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    if (!gc_semantic_generate_candidate_buffer(rules, position, &candidates)) {
+        gc_semantic_action_buffer_free(&candidates);
+        gc_semantic_profile_free(&profile);
+        return NULL;
+    }
+    PyObject *actions = PyList_New(0);
+    PyObject *logits = PyList_New(0);
+    if (!actions || !logits) {
+        Py_XDECREF(actions); Py_XDECREF(logits);
+        gc_semantic_action_buffer_free(&candidates);
+        gc_semantic_profile_free(&profile);
+        return PyErr_NoMemory();
+    }
+    for (size_t i = 0; i < candidates.count; i++) {
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, rules, position,
+                                             candidates.data[i])) continue;
+        double features[24];
+        if (!gc_semantic_policy_action_features(rules, position,
+                                                candidates.data[i], features)) {
+            Py_DECREF(actions); Py_DECREF(logits);
+            gc_semantic_action_buffer_free(&candidates);
+            gc_semantic_profile_free(&profile);
+            PyErr_SetString(PyExc_ValueError,
+                            "SemanticPolicyV1 action feature schema mismatch");
+            return NULL;
+        }
+        double score = gc_semantic_policy_v1_logit(
+            model, hidden, features, rules, candidates.data[i]);
+        PyObject *action = PyLong_FromUnsignedLongLong(candidates.data[i]);
+        PyObject *logit = PyFloat_FromDouble(score);
+        if (!action || !logit || PyList_Append(actions, action) != 0 ||
+            PyList_Append(logits, logit) != 0) {
+            Py_XDECREF(action); Py_XDECREF(logit);
+            Py_DECREF(actions); Py_DECREF(logits);
+            gc_semantic_action_buffer_free(&candidates);
+            gc_semantic_profile_free(&profile);
+            return NULL;
+        }
+        Py_DECREF(action); Py_DECREF(logit);
+    }
+    gc_semantic_action_buffer_free(&candidates);
+    gc_semantic_profile_free(&profile);
+    PyObject *action_tuple = PySequence_Tuple(actions);
+    PyObject *logit_tuple = PySequence_Tuple(logits);
+    Py_DECREF(actions); Py_DECREF(logits);
+    if (!action_tuple || !logit_tuple) {
+        Py_XDECREF(action_tuple); Py_XDECREF(logit_tuple);
+        return NULL;
+    }
+    PyObject *out = Py_BuildValue("{s:O,s:O}", "actions", action_tuple,
+                                  "logits", logit_tuple);
+    Py_DECREF(action_tuple); Py_DECREF(logit_tuple);
+    return out;
+}
+
 static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                                          uint32_t ply, uint32_t depth,
                                          int alpha, int beta, int pv_node,
@@ -6803,6 +6899,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_transient_legal_actions(rules, position) -> ordered legal action set without history"},
     {"semantic_transient_legal_actions_audit", gc_semantic_transient_legal_actions_audit, METH_VARARGS,
      "test-only transient legality counters and exact action set"},
+    {"semantic_policy_logits", gc_semantic_policy_logits, METH_VARARGS,
+     "semantic_policy_logits(rules, position, SemanticPolicyV1) -> actions and logits"},
     {"semantic_terminal", gc_semantic_terminal, METH_VARARGS,
      "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,
