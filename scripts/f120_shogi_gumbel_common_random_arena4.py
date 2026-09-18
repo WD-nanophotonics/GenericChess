@@ -354,7 +354,7 @@ def _strength_arena(compiled, native_rules, checkpoint, parent, child, corpus):
     better = sum(score > 0.5 for score in pair_scores)
     worse = sum(score < 0.5 for score in pair_scores)
     valid = len(valid_games) == 8 and seed_valid
-    classification = "SHOGI_GUMBEL_COMPLETED_Q_CRN_ARENA4_INVALID" if not valid else ("SHOGI_GUMBEL_COMPLETED_Q_CRN_ARENA4_CONFIRMED" if mean > 0.5 and better > worse else "SHOGI_GUMBEL_COMPLETED_Q_CRN_ARENA4_REJECTED")
+    classification = "F120_GUMBEL_COMMON_RANDOM_ARENA4_INVALID" if not valid else ("SHOGI_GUMBEL_COMPLETED_Q_CRN_ARENA4_CONFIRMED" if mean > 0.5 and better > worse else "SHOGI_GUMBEL_COMPLETED_Q_CRN_ARENA4_REJECTED")
     return {
         "games": games,
         "valid_game_count": len(valid_games),
