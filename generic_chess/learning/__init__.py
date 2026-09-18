@@ -6,6 +6,15 @@ from .material import (
     LearningNumericalError,
 )
 from .tdleaf import TDLeafConfig, TDLeafUpdateResult, tdleaf_update
+from .policy import (
+    SemanticPolicyExample,
+    SemanticPolicyV0,
+    fit_semantic_policy_v0,
+    policy_target_from_q,
+    semantic_action_features,
+    semantic_policy_hand_type_indices,
+    semantic_state_feature_vector,
+)
 
 __all__ = [
     "LearnableMaterialCheckpoint",
@@ -14,4 +23,11 @@ __all__ = [
     "TDLeafConfig",
     "TDLeafUpdateResult",
     "tdleaf_update",
+    "SemanticPolicyExample",
+    "SemanticPolicyV0",
+    "fit_semantic_policy_v0",
+    "policy_target_from_q",
+    "semantic_action_features",
+    "semantic_policy_hand_type_indices",
+    "semantic_state_feature_vector",
 ]

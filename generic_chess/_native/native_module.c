@@ -69,6 +69,7 @@ typedef struct {
     PyObject *spatial_values;
     PyObject *localized_control_values;
     PyObject *compact_values;
+    PyObject *policy_values;
     unsigned int evaluator_scale;
     PyObject *ordering_board_values;
     PyObject *ordering_hand_values;
@@ -143,6 +144,7 @@ static void gc_semantic_engine_capsule_free(PyObject *capsule) {
         Py_XDECREF(engine->spatial_values);
         Py_XDECREF(engine->localized_control_values);
         Py_XDECREF(engine->compact_values);
+        Py_XDECREF(engine->policy_values);
         Py_XDECREF(engine->ordering_board_values);
         Py_XDECREF(engine->ordering_hand_values);
         Py_XDECREF(engine->ordering_dynamic_values);
@@ -3382,6 +3384,18 @@ typedef struct {
     int perspective;
 } GCSemanticCompactModel;
 
+typedef struct {
+    int state_dimension;
+    int action_dimension;
+    int hidden_width;
+    int hand_type_count;
+    int hand_type_indices[GC_MAX_TYPES];
+    double *state_weights;
+    double *state_bias;
+    double *action_embedding;
+    double *action_bias;
+} GCSemanticPolicyModel;
+
 typedef struct GCSemanticProbeProfile {
     int board[GC_MAX_TYPES];
     int hand[GC_MAX_TYPES];
@@ -3390,6 +3404,8 @@ typedef struct GCSemanticProbeProfile {
     int localized_control[GC_SEMANTIC_SPATIAL_CELLS];
     int compact_supplied;
     GCSemanticCompactModel *compact;
+    int policy_supplied;
+    GCSemanticPolicyModel *policy;
     int evaluator_scale;
     int supplied;
     int dynamic_supplied;
@@ -3545,14 +3561,24 @@ static void gc_semantic_order_cache_store(
 }
 
 static void gc_semantic_profile_free(GCSemanticProbeProfile *profile) {
-    if (!profile || !profile->compact) return;
-    free(profile->compact->input_mean);
-    free(profile->compact->input_scale);
-    free(profile->compact->hidden_weights);
-    free(profile->compact->hidden_bias);
-    free(profile->compact->output_weights);
-    free(profile->compact);
-    profile->compact = NULL;
+    if (!profile) return;
+    if (profile->compact) {
+        free(profile->compact->input_mean);
+        free(profile->compact->input_scale);
+        free(profile->compact->hidden_weights);
+        free(profile->compact->hidden_bias);
+        free(profile->compact->output_weights);
+        free(profile->compact);
+        profile->compact = NULL;
+    }
+    if (profile->policy) {
+        free(profile->policy->state_weights);
+        free(profile->policy->state_bias);
+        free(profile->policy->action_embedding);
+        free(profile->policy->action_bias);
+        free(profile->policy);
+        profile->policy = NULL;
+    }
 }
 
 static int gc_semantic_set_u64(PyObject *mapping, const char *name,
@@ -4052,6 +4078,16 @@ typedef struct {
     GCSemanticTable *tt;
     GCSemanticProbeProfile ordering_profile;
     int learned_move_ordering;
+    GCSemanticProbeProfile policy_profile;
+    int policy_move_ordering;
+    uint64_t policy_nodes;
+    uint64_t policy_state_inferences;
+    uint64_t policy_actions_scored;
+    uint64_t policy_elapsed_nanoseconds;
+    uint64_t policy_nodes_by_ply[GC_SEM_MAX_PLY + 1];
+    uint64_t policy_state_inferences_by_ply[GC_SEM_MAX_PLY + 1];
+    uint64_t policy_actions_scored_by_ply[GC_SEM_MAX_PLY + 1];
+    uint64_t policy_elapsed_nanoseconds_by_ply[GC_SEM_MAX_PLY + 1];
     GCSemanticOrderingCache *ordering_cache;
     uint64_t ordering_profile_generation;
     int ordering_feature_reuse_enabled;
@@ -4226,14 +4262,195 @@ static void gc_semantic_tt_store_node(GCSemanticIterativeContext *ctx,
 
 typedef struct {
     uint64_t action;
-    int mover_score;
+    double mover_score;
 } GCSemanticOrderedAction;
+
+static int gc_semantic_policy_state_features(
+    const GCSemanticRules *rules, const GCSemanticPosition *position,
+    const GCSemanticPolicyModel *model, double *features) {
+    int index = 0;
+    uint16_t board_squares = (uint16_t)rules->board_size * rules->board_size;
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        for (uint16_t type = 0; type < rules->type_count; type++) {
+            for (uint16_t square = 0; square < board_squares; square++) {
+                const GCPiece *piece = &position->board[square];
+                features[index++] = piece->occupied && piece->owner == owner &&
+                    piece->current_type == type ? 1.0 : 0.0;
+            }
+        }
+    }
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        for (int slot = 0; slot < model->hand_type_count; slot++) {
+            features[index++] = (double)position->hand_counts[owner][model->hand_type_indices[slot]];
+        }
+    }
+    features[index++] = position->side_to_move == 0 ? 1.0 : 0.0;
+    features[index++] = position->side_to_move == 1 ? 1.0 : 0.0;
+    int dynamic[3] = {0, 0, 0};
+    if (!gc_semantic_dynamic_feature_vector(rules, position, dynamic)) return 0;
+    for (int i = 0; i < 3; i++) features[index++] = (double)dynamic[i];
+    for (uint8_t slot_index = 0; slot_index < rules->aux_slot_count; slot_index++) {
+        const GCSemAuxSlot *slot = &rules->aux_slots[slot_index];
+        uint8_t first_owner = slot->scope == 1 ? 1 : 0;
+        uint8_t owner_count = slot->scope == 1 ? 2 : 1;
+        for (uint8_t owner_index = first_owner;
+             owner_index < (uint8_t)(first_owner + owner_count); owner_index++) {
+            const GCSemAuxValue *value = &position->aux[slot_index][owner_index];
+            if (slot->value_kind == 0) {
+                features[index++] = value->has_value ? (double)value->bool_value : 0.0;
+            } else {
+                features[index++] = value->has_value && value->kind == 1 ? 1.0 : 0.0;
+                features[index++] = value->has_value && value->kind == 1
+                    ? (double)(value->square % rules->board_size) / rules->board_size : 0.0;
+                features[index++] = value->has_value && value->kind == 1
+                    ? (double)(value->square / rules->board_size) / rules->board_size : 0.0;
+            }
+        }
+    }
+    return index == model->state_dimension;
+}
+
+static int gc_semantic_policy_action_features(
+    const GCSemanticRules *rules, const GCSemanticPosition *position,
+    uint64_t action, double *features) {
+    memset(features, 0, sizeof(double) * 24);
+    uint16_t target = (uint16_t)GC_ACTION_TO(action);
+    uint16_t source = (uint16_t)GC_ACTION_FROM(action);
+    uint16_t promo = (uint16_t)GC_ACTION_PROMO(action);
+    uint16_t base = (uint16_t)GC_ACTION_BASE(action);
+    uint8_t kind = (uint8_t)GC_ACTION_KIND(action);
+    uint16_t pattern_index = (uint16_t)((action >> GC_ACTION_PATTERN_SHIFT) & GC_ACTION_PATTERN_MASK);
+    uint16_t geometry_index = (uint16_t)((action >> GC_ACTION_GEOMETRY_SHIFT) & GC_ACTION_GEOMETRY_MASK);
+    uint16_t actor_type = (uint16_t)((action >> GC_ACTION_ACTOR_CURRENT_SHIFT) & GC_ACTION_ACTOR_CURRENT_MASK);
+    if (target >= rules->board_size * rules->board_size ||
+        pattern_index >= rules->pattern_count || geometry_index >= rules->geometry_count ||
+        actor_type >= rules->type_count) return 0;
+    uint8_t owner = position->side_to_move;
+    int source_present = 0;
+    if (kind == GC_ACTION_KIND_SEMANTIC_BOARD && source < rules->board_size * rules->board_size) {
+        const GCPiece *piece = &position->board[source];
+        source_present = piece->occupied ? 1 : 0;
+        if (piece->occupied) owner = piece->owner;
+    }
+    double denom = rules->board_size > 1 ? (double)(rules->board_size - 1) : 1.0;
+    double src_x = 0.0, src_y = 0.0;
+    if (kind == GC_ACTION_KIND_SEMANTIC_BOARD && source < rules->board_size * rules->board_size) {
+        src_x = (double)(source % rules->board_size) / denom;
+        uint16_t srank = source / rules->board_size;
+        src_y = (double)(owner == 0 ? srank : rules->board_size - 1 - srank) / denom;
+    }
+    double dst_x = (double)(target % rules->board_size) / denom;
+    uint16_t trank = target / rules->board_size;
+    double dst_y = (double)(owner == 0 ? trank : rules->board_size - 1 - trank) / denom;
+    double dx = dst_x - src_x, dy = dst_y - src_y;
+    const GCSemPattern *pattern = &rules->patterns[pattern_index];
+    const GCSemGeometry *geometry = &rules->geometries[geometry_index];
+    int path_length = 0;
+    if (kind == GC_ACTION_KIND_SEMANTIC_BOARD && source < rules->board_size * rules->board_size) {
+        for (uint16_t i = 0; i < geometry->paths[owner].count; i++) {
+            if (geometry->paths[owner].entries[i].source == source &&
+                geometry->paths[owner].entries[i].count > path_length)
+                path_length = geometry->paths[owner].entries[i].count;
+        }
+    }
+    int direct_capture = 0;
+    if (kind == GC_ACTION_KIND_SEMANTIC_BOARD && position->board[target].occupied &&
+        position->board[target].owner != owner) direct_capture = 1;
+    features[0] = kind == GC_ACTION_KIND_SEMANTIC_BOARD ? 1.0 : 0.0;
+    features[1] = kind == GC_ACTION_KIND_SEMANTIC_DROP ? 1.0 : 0.0;
+    features[2] = (double)source_present;
+    features[3] = src_x; features[4] = src_y; features[5] = dst_x; features[6] = dst_y;
+    features[7] = dx; features[8] = dy; features[9] = fabs(dx); features[10] = fabs(dy);
+    features[11] = fabs(dx) + fabs(dy); features[12] = fmax(fabs(dx), fabs(dy));
+    features[13] = geometry->kind == 0 ? 1.0 : 0.0;
+    features[14] = geometry->kind == 1 ? 1.0 : 0.0;
+    features[15] = geometry->kind == 2 ? 1.0 : 0.0;
+    features[16] = fmin((double)path_length / denom, 1.0);
+    features[17] = promo != 255 ? 1.0 : 0.0;
+    features[18] = (double)direct_capture;
+    features[19] = (double)pattern->cost / 10.0;
+    features[20] = (double)pattern->stratum / 10.0;
+    features[21] = rules->type_count <= 1 ? 0.0 : (double)actor_type / (double)(rules->type_count - 1);
+    features[22] = promo != 255 && rules->type_count > 1
+        ? (double)promo / (double)(rules->type_count - 1) : 0.0;
+    features[23] = kind == GC_ACTION_KIND_SEMANTIC_DROP && rules->type_count > 1
+        ? (double)base / (double)(rules->type_count - 1) : 0.0;
+    return 1;
+}
+
+static int gc_semantic_policy_order_actions(GCSemanticIterativeContext *ctx,
+                                            GCSemanticPosition *position,
+                                            uint32_t ply, uint32_t depth,
+                                            GCSemanticActionBuffer *actions) {
+    if (!ctx->policy_move_ordering || depth < 2 || actions->count == 0) return 1;
+    uint64_t start_ns = gc_monotonic_ns();
+    const GCSemanticPolicyModel *model = ctx->policy_profile.policy;
+    double state_features[4096] = {0.0};
+    double hidden[16] = {0.0};
+    if (!gc_semantic_policy_state_features(ctx->rules, position, model, state_features)) {
+        ctx->control = 4; return 0;
+    }
+    for (int h = 0; h < 16; h++) {
+        double value = model->state_bias[h];
+        for (int i = 0; i < model->state_dimension; i++)
+            value += model->state_weights[(size_t)h * model->state_dimension + i] * state_features[i];
+        hidden[h] = tanh(value);
+    }
+    ctx->policy_nodes++;
+    ctx->policy_state_inferences++;
+    ctx->policy_nodes_by_ply[ply]++;
+    ctx->policy_state_inferences_by_ply[ply]++;
+    GCSemanticOrderedAction *ordered = (GCSemanticOrderedAction *)calloc(
+        actions->count, sizeof(*ordered));
+    if (!ordered) { ctx->control = 4; return 0; }
+    size_t legal_count = 0;
+    for (size_t i = 0; i < actions->count; i++) {
+        if (!gc_semantic_iterative_check_budget(ctx, 1)) { free(ordered); return 0; }
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, ctx->rules, position, actions->data[i])) continue;
+        double features[24];
+        if (!gc_semantic_policy_action_features(ctx->rules, position, actions->data[i], features)) {
+            free(ordered); ctx->control = 4; return 0;
+        }
+        double score = 0.0;
+        for (int i_feature = 0; i_feature < 24; i_feature++) {
+            double action_value = model->action_bias[i_feature];
+            for (int h = 0; h < 16; h++)
+                action_value += model->action_embedding[(size_t)h * 24u + (size_t)i_feature] * hidden[h];
+            score += features[i_feature] * action_value;
+        }
+        ordered[legal_count].action = actions->data[i];
+        ordered[legal_count].mover_score = score;
+        legal_count++;
+    }
+    ctx->policy_actions_scored += legal_count;
+    ctx->policy_actions_scored_by_ply[ply] += legal_count;
+    for (size_t i = 1; i < legal_count; i++) {
+        GCSemanticOrderedAction item = ordered[i];
+        size_t j = i;
+        while (j > 0 && (ordered[j - 1].mover_score < item.mover_score ||
+               (ordered[j - 1].mover_score == item.mover_score &&
+                ordered[j - 1].action > item.action))) {
+            ordered[j] = ordered[j - 1]; j--;
+        }
+        ordered[j] = item;
+    }
+    for (size_t i = 0; i < legal_count; i++) actions->data[i] = ordered[i].action;
+    actions->count = legal_count;
+    free(ordered);
+    uint64_t elapsed = gc_monotonic_ns() - start_ns;
+    ctx->policy_elapsed_nanoseconds += elapsed;
+    ctx->policy_elapsed_nanoseconds_by_ply[ply] += elapsed;
+    return 1;
+}
 
 static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
                                      GCSemanticPosition *position,
                                      uint32_t ply,
                                      uint32_t depth,
                                      GCSemanticActionBuffer *actions) {
+    if (ctx->policy_move_ordering)
+        return gc_semantic_policy_order_actions(ctx, position, ply, depth, actions);
     if (!ctx->learned_move_ordering || actions->count < 2 ||
         (ctx->ordering_max_ply >= 0 && (int)ply > ctx->ordering_max_ply)) return 1;
     if ((int)depth < ctx->ordering_min_depth) {
@@ -4348,6 +4565,146 @@ static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
     uint64_t elapsed = gc_monotonic_ns() - start_ns;
     ctx->ordering_elapsed_nanoseconds += elapsed;
     ctx->ordering_elapsed_nanoseconds_by_ply[ply] += elapsed;
+    return 1;
+}
+
+static int gc_semantic_parse_policy(PyObject *policy_values,
+                                    const GCSemanticRules *rules,
+                                    GCSemanticProbeProfile *profile) {
+    if (policy_values == NULL || policy_values == Py_None) return 1;
+    if (!PyDict_Check(policy_values)) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic policy profile must be a mapping");
+        return 0;
+    }
+    PyObject *artifact = PyDict_GetItemString(policy_values, "artifact_type");
+    PyObject *version = PyDict_GetItemString(policy_values, "version");
+    PyObject *fingerprint = PyDict_GetItemString(policy_values, "ruleset_fingerprint");
+    PyObject *state_width_obj = PyDict_GetItemString(policy_values, "state_width");
+    PyObject *action_width_obj = PyDict_GetItemString(policy_values, "action_width");
+    PyObject *hidden_width_obj = PyDict_GetItemString(policy_values, "hidden_width");
+    PyObject *state_weights = PyDict_GetItemString(policy_values, "state_weights");
+    PyObject *state_bias = PyDict_GetItemString(policy_values, "state_bias");
+    PyObject *action_embedding = PyDict_GetItemString(policy_values, "action_embedding");
+    PyObject *action_bias = PyDict_GetItemString(policy_values, "action_bias");
+    PyObject *hand_indices = PyDict_GetItemString(policy_values, "hand_type_indices");
+    if (!artifact || !version || !fingerprint || !state_width_obj ||
+        !action_width_obj || !hidden_width_obj || !state_weights ||
+        !state_bias || !action_embedding || !action_bias || !hand_indices) {
+        PyErr_SetString(PyExc_ValueError, "semantic policy profile is incomplete");
+        return 0;
+    }
+    if (!PyUnicode_Check(artifact) || strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV0") != 0 ||
+        PyLong_AsLong(version) != 0 || !PyUnicode_Check(fingerprint) ||
+        strcmp(PyUnicode_AsUTF8(fingerprint), rules->fingerprint) != 0) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic policy artifact or ruleset fingerprint mismatch");
+        return 0;
+    }
+    long state_width = PyLong_AsLong(state_width_obj);
+    long action_width = PyLong_AsLong(action_width_obj);
+    long hidden_width = PyLong_AsLong(hidden_width_obj);
+    if (PyErr_Occurred() || state_width < 1 || state_width > 4096 ||
+        action_width != 24 || hidden_width != 16) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic policy dimensions must be state-width, action-width 24, hidden-width 16");
+        return 0;
+    }
+    Py_ssize_t hand_count = PySequence_Size(hand_indices);
+    if (PyErr_Occurred() || hand_count < 1 || hand_count > GC_MAX_TYPES) {
+        PyErr_SetString(PyExc_ValueError, "semantic policy hand axis is invalid");
+        return 0;
+    }
+    Py_ssize_t expected = (Py_ssize_t)2 * rules->type_count *
+        rules->board_size * rules->board_size + 2 * hand_count + 5;
+    for (uint8_t i = 0; i < rules->aux_slot_count; i++) {
+        expected += rules->aux_slots[i].scope == 1
+            ? (rules->aux_slots[i].value_kind == 0 ? 2 : 6)
+            : (rules->aux_slots[i].value_kind == 0 ? 1 : 3);
+    }
+    if (state_width != expected || PySequence_Size(state_weights) != 16 ||
+        PySequence_Size(state_bias) != 16 || PySequence_Size(action_embedding) != 16 ||
+        PySequence_Size(action_bias) != 24) {
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic policy dimensions do not match the generic state/action schema");
+        return 0;
+    }
+    GCSemanticPolicyModel *model = (GCSemanticPolicyModel *)calloc(1, sizeof(*model));
+    if (!model) { PyErr_NoMemory(); return 0; }
+    model->state_dimension = (int)state_width;
+    model->action_dimension = 24;
+    model->hidden_width = 16;
+    model->hand_type_count = (int)hand_count;
+    model->state_weights = (double *)calloc((size_t)16 * (size_t)state_width, sizeof(double));
+    model->state_bias = (double *)calloc(16, sizeof(double));
+    model->action_embedding = (double *)calloc((size_t)16 * 24, sizeof(double));
+    model->action_bias = (double *)calloc(24, sizeof(double));
+    if (!model->state_weights || !model->state_bias || !model->action_embedding ||
+        !model->action_bias) {
+        free(model->state_weights); free(model->state_bias);
+        free(model->action_embedding); free(model->action_bias); free(model);
+        PyErr_NoMemory(); return 0;
+    }
+    for (Py_ssize_t i = 0; i < hand_count; i++) {
+        PyObject *value = PySequence_GetItem(hand_indices, i);
+        long index = PyLong_AsLong(value); Py_DECREF(value);
+        if (PyErr_Occurred() || index < 0 || index >= rules->type_count) {
+            PyErr_SetString(PyExc_ValueError, "semantic policy hand index is outside native type table");
+            gc_semantic_profile_free(profile); profile->policy = model; gc_semantic_profile_free(profile);
+            return 0;
+        }
+        model->hand_type_indices[i] = (int)index;
+    }
+    for (int h = 0; h < 16; h++) {
+        PyObject *bias = PySequence_GetItem(state_bias, h);
+        double bv = PyFloat_AsDouble(bias); Py_DECREF(bias);
+        if (PyErr_Occurred() || !isfinite(bv)) {
+            PyErr_SetString(PyExc_ValueError, "semantic policy state bias must be finite");
+            profile->policy = model; gc_semantic_profile_free(profile); return 0;
+        }
+        model->state_bias[h] = bv;
+        PyObject *row = PySequence_GetItem(state_weights, h);
+        if (!row || PySequence_Size(row) != state_width) {
+            Py_XDECREF(row); PyErr_SetString(PyExc_ValueError, "semantic policy state row dimension mismatch");
+            profile->policy = model; gc_semantic_profile_free(profile); return 0;
+        }
+        for (Py_ssize_t i = 0; i < state_width; i++) {
+            PyObject *value = PySequence_GetItem(row, i);
+            double v = PyFloat_AsDouble(value); Py_DECREF(value);
+            if (PyErr_Occurred() || !isfinite(v)) {
+                Py_DECREF(row); PyErr_SetString(PyExc_ValueError, "semantic policy state weights must be finite");
+                profile->policy = model; gc_semantic_profile_free(profile); return 0;
+            }
+            model->state_weights[(size_t)h * (size_t)state_width + (size_t)i] = v;
+        }
+        Py_DECREF(row);
+        row = PySequence_GetItem(action_embedding, h);
+        if (!row || PySequence_Size(row) != 24) {
+            Py_XDECREF(row); PyErr_SetString(PyExc_ValueError, "semantic policy action row dimension mismatch");
+            profile->policy = model; gc_semantic_profile_free(profile); return 0;
+        }
+        for (int i = 0; i < 24; i++) {
+            PyObject *value = PySequence_GetItem(row, i);
+            double v = PyFloat_AsDouble(value); Py_DECREF(value);
+            if (PyErr_Occurred() || !isfinite(v)) {
+                Py_DECREF(row); PyErr_SetString(PyExc_ValueError, "semantic policy action embedding must be finite");
+                profile->policy = model; gc_semantic_profile_free(profile); return 0;
+            }
+            model->action_embedding[(size_t)h * 24u + (size_t)i] = v;
+        }
+        Py_DECREF(row);
+    }
+    for (int i = 0; i < 24; i++) {
+        PyObject *value = PySequence_GetItem(action_bias, i);
+        double v = PyFloat_AsDouble(value); Py_DECREF(value);
+        if (PyErr_Occurred() || !isfinite(v)) {
+            PyErr_SetString(PyExc_ValueError, "semantic policy action bias must be finite");
+            profile->policy = model; gc_semantic_profile_free(profile); return 0;
+        }
+        model->action_bias[i] = v;
+    }
+    profile->policy = model;
+    profile->policy_supplied = 1;
     return 1;
 }
 
@@ -5016,6 +5373,7 @@ static PyObject *gc_semantic_iterative_search(
     PyObject *ordering_spatial_values = Py_None;
     PyObject *ordering_localized_control_values = Py_None;
     PyObject *ordering_compact_values = Py_None;
+    PyObject *policy_values = Py_None;
     unsigned int max_depth;
     unsigned int root_ply_offset = 0;
     unsigned int tt_megabytes = 0;
@@ -5023,7 +5381,7 @@ static PyObject *gc_semantic_iterative_search(
     unsigned int ordering_evaluator_scale = 1;
     int ordering_max_ply = -1;
     int ordering_min_depth = 1;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOOOOOOOOIii", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOOOOOOOOIiiO", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
                           &dynamic_values,
@@ -5035,7 +5393,8 @@ static PyObject *gc_semantic_iterative_search(
                           &ordering_dynamic_values, &ordering_spatial_values,
                           &ordering_localized_control_values,
                           &ordering_compact_values, &ordering_evaluator_scale,
-                          &ordering_max_ply, &ordering_min_depth)) return NULL;
+                          &ordering_max_ply, &ordering_min_depth,
+                          &policy_values)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
@@ -5079,6 +5438,10 @@ static PyObject *gc_semantic_iterative_search(
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
                                    spatial_values, localized_control_values, compact_values, rules,
                                    evaluator_scale, &profile)) return NULL;
+    if (!gc_semantic_parse_policy(policy_values, rules, &profile)) {
+        gc_semantic_profile_free(&profile);
+        return NULL;
+    }
     GCSemanticProbeProfile ordering_profile;
     if (!gc_semantic_parse_profile(ordering_board_values, ordering_hand_values,
                                    ordering_dynamic_values, ordering_spatial_values,
@@ -5088,10 +5451,21 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_profile_free(&profile);
         return NULL;
     }
+    int policy_move_ordering = profile.policy_supplied;
+    int any_ordering_profile = ordering_profile.supplied ||
+        ordering_profile.dynamic_supplied || ordering_profile.spatial_supplied ||
+        ordering_profile.localized_control_supplied || ordering_profile.compact_supplied;
+    if (policy_move_ordering && any_ordering_profile) {
+        gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
+        PyErr_SetString(PyExc_ValueError,
+                        "semantic policy cannot combine with legacy ordering profile");
+        return NULL;
+    }
     int learned_move_ordering = ordering_profile.supplied ||
         ordering_profile.dynamic_supplied || ordering_profile.spatial_supplied ||
         ordering_profile.localized_control_supplied || ordering_profile.compact_supplied;
-    if (learned_move_ordering && root_order_hint_present) {
+    if ((learned_move_ordering || policy_move_ordering) && root_order_hint_present) {
         gc_semantic_profile_free(&profile);
         gc_semantic_profile_free(&ordering_profile);
         PyErr_SetString(PyExc_ValueError,
@@ -5156,6 +5530,8 @@ static PyObject *gc_semantic_iterative_search(
     memset(&ctx, 0, sizeof(ctx));
     ctx.rules = rules;
     ctx.profile = profile;
+    ctx.policy_profile = profile;
+    ctx.policy_move_ordering = policy_move_ordering;
     ctx.ordering_profile = ordering_profile;
     ctx.learned_move_ordering = learned_move_ordering;
     ctx.ordering_cache = ordering_cache;
@@ -5351,6 +5727,20 @@ static PyObject *gc_semantic_iterative_search(
         return NULL;
     }
     Py_DECREF(cache_rate);
+    if (gc_semantic_set_u64(out, "policy_nodes", ctx.policy_nodes) != 0 ||
+        gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
+        gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
+        gc_semantic_set_u64(out, "policy_elapsed_nanoseconds", ctx.policy_elapsed_nanoseconds) != 0 ||
+        PyDict_SetItemString(out, "policy_ordering", ctx.policy_move_ordering ? Py_True : Py_False) != 0) {
+        Py_DECREF(out);
+        Py_DECREF(best_action_obj);
+        Py_DECREF(pv);
+        free(ctx.stack); free(ctx.pv_table); free(ctx.pv_length);
+        if (ctx.tt != borrowed_tt) gc_semantic_tt_free(ctx.tt);
+        gc_semantic_profile_free(&profile);
+        gc_semantic_profile_free(&ordering_profile);
+        return NULL;
+    }
     PyObject *ordering_max_ply_obj = PyLong_FromLong(ctx.ordering_max_ply);
     PyObject *ordering_evaluations_by_ply = gc_semantic_u64_tuple(
         ctx.ordering_evaluations_by_ply, GC_SEM_MAX_PLY + 1);
@@ -5368,11 +5758,21 @@ static PyObject *gc_semantic_iterative_search(
         ctx.ordering_cache_collisions_by_ply, GC_SEM_MAX_PLY + 1);
     PyObject *ordering_skipped_by_remaining_depth = gc_semantic_u64_tuple(
         ctx.ordering_skipped_by_remaining_depth, GC_SEM_MAX_PLY + 1);
+    PyObject *policy_nodes_by_ply = gc_semantic_u64_tuple(
+        ctx.policy_nodes_by_ply, GC_SEM_MAX_PLY + 1);
+    PyObject *policy_state_inferences_by_ply = gc_semantic_u64_tuple(
+        ctx.policy_state_inferences_by_ply, GC_SEM_MAX_PLY + 1);
+    PyObject *policy_actions_scored_by_ply = gc_semantic_u64_tuple(
+        ctx.policy_actions_scored_by_ply, GC_SEM_MAX_PLY + 1);
+    PyObject *policy_elapsed_nanoseconds_by_ply = gc_semantic_u64_tuple(
+        ctx.policy_elapsed_nanoseconds_by_ply, GC_SEM_MAX_PLY + 1);
     if (!ordering_max_ply_obj || !ordering_evaluations_by_ply ||
         !ordering_nodes_by_ply || !ordering_actions_by_ply ||
         !ordering_elapsed_by_ply || !ordering_cache_hits_by_ply ||
         !ordering_cache_misses_by_ply || !ordering_cache_collisions_by_ply ||
-        !ordering_skipped_by_remaining_depth ||
+        !ordering_skipped_by_remaining_depth || !policy_nodes_by_ply ||
+        !policy_state_inferences_by_ply || !policy_actions_scored_by_ply ||
+        !policy_elapsed_nanoseconds_by_ply ||
         PyDict_SetItemString(out, "ordering_max_ply", ordering_max_ply_obj) != 0 ||
         PyDict_SetItemString(out, "ordering_evaluations_by_ply", ordering_evaluations_by_ply) != 0 ||
         PyDict_SetItemString(out, "ordering_nodes_by_ply", ordering_nodes_by_ply) != 0 ||
@@ -5380,7 +5780,11 @@ static PyObject *gc_semantic_iterative_search(
         PyDict_SetItemString(out, "ordering_elapsed_nanoseconds_by_ply", ordering_elapsed_by_ply) != 0 ||
         PyDict_SetItemString(out, "ordering_cache_hits_by_ply", ordering_cache_hits_by_ply) != 0 ||
         PyDict_SetItemString(out, "ordering_cache_misses_by_ply", ordering_cache_misses_by_ply) != 0 ||
-        PyDict_SetItemString(out, "ordering_cache_collisions_by_ply", ordering_cache_collisions_by_ply) != 0) {
+         PyDict_SetItemString(out, "ordering_cache_collisions_by_ply", ordering_cache_collisions_by_ply) != 0 ||
+         PyDict_SetItemString(out, "policy_nodes_by_ply", policy_nodes_by_ply) != 0 ||
+         PyDict_SetItemString(out, "policy_state_inferences_by_ply", policy_state_inferences_by_ply) != 0 ||
+         PyDict_SetItemString(out, "policy_actions_scored_by_ply", policy_actions_scored_by_ply) != 0 ||
+         PyDict_SetItemString(out, "policy_elapsed_nanoseconds_by_ply", policy_elapsed_nanoseconds_by_ply) != 0) {
         Py_XDECREF(ordering_max_ply_obj);
         Py_XDECREF(ordering_evaluations_by_ply);
         Py_XDECREF(ordering_nodes_by_ply);
@@ -5390,6 +5794,10 @@ static PyObject *gc_semantic_iterative_search(
         Py_XDECREF(ordering_cache_misses_by_ply);
         Py_XDECREF(ordering_cache_collisions_by_ply);
         Py_XDECREF(ordering_skipped_by_remaining_depth);
+        Py_XDECREF(policy_nodes_by_ply);
+        Py_XDECREF(policy_state_inferences_by_ply);
+        Py_XDECREF(policy_actions_scored_by_ply);
+        Py_XDECREF(policy_elapsed_nanoseconds_by_ply);
         Py_DECREF(out);
         Py_DECREF(best_action_obj);
         Py_DECREF(pv);
@@ -5407,6 +5815,10 @@ static PyObject *gc_semantic_iterative_search(
     Py_DECREF(ordering_cache_hits_by_ply);
     Py_DECREF(ordering_cache_misses_by_ply);
     Py_DECREF(ordering_cache_collisions_by_ply);
+    Py_DECREF(policy_nodes_by_ply);
+    Py_DECREF(policy_state_inferences_by_ply);
+    Py_DECREF(policy_actions_scored_by_ply);
+    Py_DECREF(policy_elapsed_nanoseconds_by_ply);
     PyObject *ordering_min_depth_obj = PyLong_FromLong(ctx.ordering_min_depth);
     if (!ordering_min_depth_obj || PyDict_SetItemString(
             out, "ordering_min_depth", ordering_min_depth_obj) != 0) {
@@ -5566,6 +5978,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     PyObject *ordering_spatial_values = Py_None;
     PyObject *ordering_localized_control_values = Py_None;
     PyObject *ordering_compact_values = Py_None;
+    PyObject *policy_values = Py_None;
     unsigned int tt_megabytes;
     unsigned int evaluator_scale = 1;
     unsigned int ordering_evaluator_scale = 1;
@@ -5573,7 +5986,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     int ordering_feature_reuse_enabled = 1;
     int ordering_max_ply = -1;
     int ordering_min_depth = 1;
-    if (!PyArg_ParseTuple(args, "OOOOOOOI|IOOOOOOIppii", &rules_capsule, &board_values,
+    if (!PyArg_ParseTuple(args, "OOOOOOOI|IOOOOOOIppiiO", &rules_capsule, &board_values,
                           &hand_values, &dynamic_values, &spatial_values,
                           &localized_control_values, &compact_values, &tt_megabytes,
                           &evaluator_scale, &ordering_board_values,
@@ -5585,7 +5998,8 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
                           &ordering_cache_enabled,
                           &ordering_feature_reuse_enabled,
                           &ordering_max_ply,
-                          &ordering_min_depth)) return NULL;
+                          &ordering_min_depth,
+                          &policy_values)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     if (rules == NULL) return NULL;
@@ -5609,6 +6023,10 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
                                    spatial_values, localized_control_values, compact_values, rules,
                                    evaluator_scale, &profile))
         return NULL;
+    if (!gc_semantic_parse_policy(policy_values, rules, &profile)) {
+        gc_semantic_profile_free(&profile);
+        return NULL;
+    }
     GCSemanticProbeProfile ordering_profile;
     if (!gc_semantic_parse_profile(ordering_board_values, ordering_hand_values,
                                    ordering_dynamic_values, ordering_spatial_values,
@@ -5645,6 +6063,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     engine->spatial_values = Py_NewRef(spatial_values);
     engine->localized_control_values = Py_NewRef(localized_control_values);
     engine->compact_values = Py_NewRef(compact_values);
+    engine->policy_values = Py_NewRef(policy_values);
     engine->evaluator_scale = evaluator_scale;
     engine->ordering_board_values = Py_NewRef(ordering_board_values);
     engine->ordering_hand_values = Py_NewRef(ordering_hand_values);
@@ -5664,6 +6083,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
             Py_DECREF(engine->spatial_values);
             Py_DECREF(engine->localized_control_values);
             Py_DECREF(engine->compact_values);
+            Py_DECREF(engine->policy_values);
             Py_DECREF(engine->ordering_board_values);
             Py_DECREF(engine->ordering_hand_values);
             Py_DECREF(engine->ordering_dynamic_values);
@@ -5688,6 +6108,7 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
         Py_DECREF(engine->spatial_values);
         Py_DECREF(engine->localized_control_values);
         Py_DECREF(engine->compact_values);
+        Py_DECREF(engine->policy_values);
         Py_DECREF(engine->ordering_board_values);
         Py_DECREF(engine->ordering_hand_values);
         Py_DECREF(engine->ordering_dynamic_values);
@@ -5720,7 +6141,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
         : Py_NewRef(Py_None);
     if (tt_capsule == NULL) return NULL;
-    PyObject *call_args = PyTuple_New(27);
+    PyObject *call_args = PyTuple_New(28);
     if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
     Py_INCREF(engine->rules_capsule);
     PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
@@ -5751,6 +6172,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     PyTuple_SET_ITEM(call_args, 24, PyLong_FromUnsignedLong((unsigned long)engine->ordering_evaluator_scale));
     PyTuple_SET_ITEM(call_args, 25, PyLong_FromLong(engine->ordering_max_ply));
     PyTuple_SET_ITEM(call_args, 26, PyLong_FromLong(engine->ordering_min_depth));
+    Py_INCREF(engine->policy_values); PyTuple_SET_ITEM(call_args, 27, engine->policy_values);
     engine->busy = 1;
     PyObject *result = gc_semantic_iterative_search(
         self, call_args, engine->ordering_cache_enabled

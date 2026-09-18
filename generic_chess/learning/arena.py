@@ -241,7 +241,7 @@ class ArenaSummary:
 
 def _engine_for(
     compiled, native_rules, checkpoint, tt_mb, *, ordering_checkpoint=None,
-    ordering_max_ply=-1, ordering_min_depth=1,
+    ordering_max_ply=-1, ordering_min_depth=1, policy=None,
 ):
     from ..rules.ir import CompiledSemanticRuleset
 
@@ -251,6 +251,7 @@ def _engine_for(
             ordering_checkpoint=ordering_checkpoint,
             ordering_max_ply=ordering_max_ply,
             ordering_min_depth=ordering_min_depth,
+            policy=policy,
             tt_megabytes=tt_mb,
         )
     if ordering_checkpoint is not None:
@@ -292,6 +293,7 @@ def _play_one_game(
     resume_partial: dict | None = None,
     root_order_hint_provider=None,
     ordering_checkpoint=None,
+    policy=None,
 ) -> ArenaGameResult:
     """Replay ``opening``, then play one game with fresh engines.
 
@@ -313,6 +315,7 @@ def _play_one_game(
         ordering_checkpoint=ordering_checkpoint,
         ordering_max_ply=config.ordering_max_ply,
         ordering_min_depth=config.ordering_min_depth,
+        policy=policy,
     )
     actions: list[Action] = []
     plies = 0
@@ -379,6 +382,7 @@ def _play_one_game(
                 ordering_checkpoint=ordering_checkpoint,
                 ordering_max_ply=config.ordering_max_ply,
                 ordering_min_depth=config.ordering_min_depth,
+                policy=policy,
             )
         engine = child_engine if side == child_owner else parent_engine
         role = "child" if side == child_owner else "parent"
@@ -658,6 +662,7 @@ def _play_pair(
     *,
     capture_search_metrics: bool = False,
     root_order_hint_provider=None,
+    policy=None,
 ) -> ArenaPairResult:
     opening = openings.openings[pair_index]
     game_child_owner0 = _play_one_game(
@@ -665,12 +670,14 @@ def _play_pair(
         opening=opening, child_owner=0, config=config,
         capture_search_metrics=capture_search_metrics,
         root_order_hint_provider=root_order_hint_provider,
+        policy=policy,
     )
     game_child_owner1 = _play_one_game(
         compiled, native_rules, parent, child,
         opening=opening, child_owner=1, config=config,
         capture_search_metrics=capture_search_metrics,
         root_order_hint_provider=root_order_hint_provider,
+        policy=policy,
     )
     return ArenaPairResult(
         pair_index=pair_index,
@@ -889,6 +896,7 @@ def run_arena(
     openings: ArenaOpeningCorpus | None = None,
     *,
     capture_search_metrics: bool = False,
+    policy=None,
 ) -> ArenaSummary:
     """Paired matches over a fixed evaluator-neutral opening corpus."""
     openings = _prepare_arena(compiled, parent, child, config, openings)
@@ -896,8 +904,8 @@ def run_arena(
     def execute(index: int) -> ArenaPairResult:
         args = (compiled, native_rules, parent, child, config, openings, index)
         if capture_search_metrics:
-            return _play_pair(*args, capture_search_metrics=True)
-        return _play_pair(*args)
+            return _play_pair(*args, capture_search_metrics=True, policy=policy)
+        return _play_pair(*args, policy=policy)
 
     if config.workers == 1:
         pairs = [execute(index) for index in indexes]

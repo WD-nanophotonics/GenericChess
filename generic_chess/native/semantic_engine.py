@@ -80,6 +80,15 @@ class SemanticIterativeSearchResult:
     ordering_cache_misses_by_ply: tuple[int, ...] = ()
     ordering_cache_collisions_by_ply: tuple[int, ...] = ()
     ordering_skipped_by_remaining_depth: tuple[int, ...] = ()
+    policy_ordering: bool = False
+    policy_nodes: int = 0
+    policy_state_inferences: int = 0
+    policy_actions_scored: int = 0
+    policy_elapsed_seconds: float = 0.0
+    policy_nodes_by_ply: tuple[int, ...] = ()
+    policy_state_inferences_by_ply: tuple[int, ...] = ()
+    policy_actions_scored_by_ply: tuple[int, ...] = ()
+    policy_elapsed_nanoseconds_by_ply: tuple[int, ...] = ()
 
 
 def _profile_tuple(native_rules, values):
@@ -165,6 +174,7 @@ class SemanticSearchEngine:
         ordering_feature_reuse_enabled: bool = True,
         ordering_max_ply: int = -1,
         ordering_min_depth: int = 1,
+        policy=None,
     ) -> None:
         if not native_available():
             raise RuntimeError("native extension is not built")
@@ -207,6 +217,17 @@ class SemanticSearchEngine:
         self._ordering_feature_reuse_enabled = ordering_feature_reuse_enabled
         self._ordering_max_ply = ordering_max_ply
         self._ordering_min_depth = ordering_min_depth
+        self._policy_model = None
+        if policy is not None:
+            if ordering_checkpoint is not None:
+                raise ValueError("Semantic Policy-v0 cannot combine with legacy ordering checkpoint")
+            if getattr(policy, "ruleset_fingerprint", None) != compiled.ruleset_fingerprint:
+                raise ValueError("semantic policy ruleset fingerprint mismatch")
+            if getattr(policy, "state_schema_id", None) != "semantic-state-v0":
+                raise ValueError("unsupported semantic policy state schema")
+            if getattr(policy, "action_schema_id", None) != "semantic-action-v0":
+                raise ValueError("unsupported semantic policy action schema")
+            self._policy_model = policy
         if checkpoint is not None:
             self._set_checkpoint_values(checkpoint)
         if ordering_checkpoint is not None:
@@ -265,6 +286,7 @@ class SemanticSearchEngine:
             self._ordering_feature_reuse_enabled,
             self._ordering_max_ply,
             self._ordering_min_depth,
+            None if self._policy_model is None else self._policy_model.native_payload(),
         )
 
     @property
@@ -343,7 +365,9 @@ class SemanticSearchEngine:
         root_order_hint: Action | None = None,
         root_window_pruning: bool = True,
     ) -> SemanticIterativeSearchResult:
-        if root_order_hint is not None and self._ordering_checkpoint_id is not None:
+        if root_order_hint is not None and (
+            self._ordering_checkpoint_id is not None or self._policy_model is not None
+        ):
             raise ValueError("root_order_hint cannot be combined with learned move ordering")
         if self._compiled.ruleset_fingerprint != session.compiled.ruleset_fingerprint:
             raise ValueError("session ruleset fingerprint does not match semantic engine")
@@ -489,6 +513,15 @@ class SemanticSearchEngine:
             ordering_cache_misses_by_ply=tuple(int(value) for value in raw.get("ordering_cache_misses_by_ply", ())),
             ordering_cache_collisions_by_ply=tuple(int(value) for value in raw.get("ordering_cache_collisions_by_ply", ())),
             ordering_skipped_by_remaining_depth=tuple(int(value) for value in raw.get("ordering_skipped_by_remaining_depth", ())),
+            policy_ordering=bool(raw.get("policy_ordering", False)),
+            policy_nodes=int(raw.get("policy_nodes", 0)),
+            policy_state_inferences=int(raw.get("policy_state_inferences", 0)),
+            policy_actions_scored=int(raw.get("policy_actions_scored", 0)),
+            policy_elapsed_seconds=int(raw.get("policy_elapsed_nanoseconds", 0)) / 1e9,
+            policy_nodes_by_ply=tuple(int(value) for value in raw.get("policy_nodes_by_ply", ())),
+            policy_state_inferences_by_ply=tuple(int(value) for value in raw.get("policy_state_inferences_by_ply", ())),
+            policy_actions_scored_by_ply=tuple(int(value) for value in raw.get("policy_actions_scored_by_ply", ())),
+            policy_elapsed_nanoseconds_by_ply=tuple(int(value) for value in raw.get("policy_elapsed_nanoseconds_by_ply", ())),
         )
 
 
