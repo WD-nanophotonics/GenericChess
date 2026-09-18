@@ -555,7 +555,7 @@ def test_recover_waits_for_matching_live_owner_without_escalation(monkeypatch, t
     calls = []
     monkeypatch.setattr(flow, "active_state", lambda _root: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
-    monkeypatch.setattr(flow, "_same_process", lambda pid, created: True)
+    monkeypatch.setattr(flow, "_same_process", lambda pid, created: False)
     monkeypatch.setattr(flow, "create_escalation", lambda *_args, **_kwargs: pytest.fail("matching live owner must not escalate"))
 
     def fake_courier(_root, operation, *_args, **_kwargs):
@@ -569,6 +569,7 @@ def test_recover_waits_for_matching_live_owner_without_escalation(monkeypatch, t
             "request_id": request_id,
             "fingerprint": "f" * 64,
             "live_owner_found": True,
+            "submission_count": 1,
             "owner_pid": 123,
             "owner_created_at": 1.0,
         }

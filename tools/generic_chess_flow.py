@@ -1741,6 +1741,8 @@ def _healthy_live_owner_wait(state: dict[str, Any], probe: dict[str, Any]) -> bo
         return False
     if probe.get("live_owner_found") is not True:
         return False
+    if probe.get("submission_count") != 1:
+        return False
     request_directory = state.get("active_request_directory")
     if not isinstance(request_directory, str) or not request_directory:
         return False
@@ -1752,9 +1754,6 @@ def _healthy_live_owner_wait(state: dict[str, Any], probe: dict[str, Any]) -> bo
         return False
     if probe.get("fingerprint") != expected_fingerprint:
         return False
-    owner_pid = probe.get("owner_pid")
-    if owner_pid is not None:
-        return _same_process(owner_pid, probe.get("owner_created_at"))
     return True
 
 
