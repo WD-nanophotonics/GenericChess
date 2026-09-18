@@ -85,6 +85,8 @@ class SemanticIterativeSearchResult:
     policy_state_inferences: int = 0
     policy_actions_scored: int = 0
     policy_elapsed_seconds: float = 0.0
+    policy_model_sha256: str | None = None
+    policy_min_depth: int = 2
     policy_nodes_by_ply: tuple[int, ...] = ()
     policy_state_inferences_by_ply: tuple[int, ...] = ()
     policy_actions_scored_by_ply: tuple[int, ...] = ()
@@ -300,6 +302,10 @@ class SemanticSearchEngine:
     @property
     def ordering_checkpoint_id(self):
         return self._ordering_checkpoint_id
+
+    @property
+    def policy_model_sha256(self):
+        return None if self._policy_model is None else self._policy_model.to_dict()["model_sha256"]
 
     def bind_checkpoint(self, checkpoint) -> None:
         """Rebind learned material without recompiling the semantic RuleSet.
@@ -518,6 +524,8 @@ class SemanticSearchEngine:
             policy_state_inferences=int(raw.get("policy_state_inferences", 0)),
             policy_actions_scored=int(raw.get("policy_actions_scored", 0)),
             policy_elapsed_seconds=int(raw.get("policy_elapsed_nanoseconds", 0)) / 1e9,
+            policy_model_sha256=self.policy_model_sha256,
+            policy_min_depth=int(raw.get("policy_min_depth", 2)),
             policy_nodes_by_ply=tuple(int(value) for value in raw.get("policy_nodes_by_ply", ())),
             policy_state_inferences_by_ply=tuple(int(value) for value in raw.get("policy_state_inferences_by_ply", ())),
             policy_actions_scored_by_ply=tuple(int(value) for value in raw.get("policy_actions_scored_by_ply", ())),

@@ -271,6 +271,7 @@ class SemanticPolicyV0:
             "ruleset_fingerprint": self.ruleset_fingerprint,
             "state_schema_id": self.state_schema_id,
             "action_schema_id": self.action_schema_id,
+            "width": self.hidden_width,
             "state_width": self.state_width,
             "action_width": self.action_width,
             "hidden_width": self.hidden_width,

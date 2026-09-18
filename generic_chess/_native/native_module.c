@@ -5727,11 +5727,15 @@ static PyObject *gc_semantic_iterative_search(
         return NULL;
     }
     Py_DECREF(cache_rate);
+    PyObject *policy_min_depth_obj = PyLong_FromLong(2);
     if (gc_semantic_set_u64(out, "policy_nodes", ctx.policy_nodes) != 0 ||
         gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_elapsed_nanoseconds", ctx.policy_elapsed_nanoseconds) != 0 ||
-        PyDict_SetItemString(out, "policy_ordering", ctx.policy_move_ordering ? Py_True : Py_False) != 0) {
+        !policy_min_depth_obj ||
+        PyDict_SetItemString(out, "policy_ordering", ctx.policy_move_ordering ? Py_True : Py_False) != 0 ||
+        PyDict_SetItemString(out, "policy_min_depth", policy_min_depth_obj) != 0) {
+        Py_XDECREF(policy_min_depth_obj);
         Py_DECREF(out);
         Py_DECREF(best_action_obj);
         Py_DECREF(pv);
@@ -5741,6 +5745,7 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_profile_free(&ordering_profile);
         return NULL;
     }
+    Py_DECREF(policy_min_depth_obj);
     PyObject *ordering_max_ply_obj = PyLong_FromLong(ctx.ordering_max_ply);
     PyObject *ordering_evaluations_by_ply = gc_semantic_u64_tuple(
         ctx.ordering_evaluations_by_ply, GC_SEM_MAX_PLY + 1);
