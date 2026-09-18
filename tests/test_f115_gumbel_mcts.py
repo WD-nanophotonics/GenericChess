@@ -1,5 +1,13 @@
 import json
 from pathlib import Path
+from scripts.f115_shogi_gumbel_mcts_policy_iteration_arena2 import (
+    ARENA_OPENING_SEED,
+    ARENA_SEARCH_SEED_BASE,
+    CONSISTENCY_SEED_BASE,
+    GENERICITY_SEED_BASE,
+    SELFPLAY_SEED_BASE,
+    TRAINING_SEED,
+)
 
 from generic_chess.learning.gumbel_mcts import (
     SemanticGumbelMCTSV0,
@@ -100,6 +108,15 @@ def test_f117_halving_ranks_gumbel_logit_plus_transformed_q():
     # Action 10 has transformed Q=4.0 while action 20 has transformed Q=0;
     # the declared improvement score therefore keeps action 10.
     assert _rank_candidates(root, [20, 10]) == [10, 20]
+
+
+def test_f118_seed_contract_constants_are_exact():
+    assert GENERICITY_SEED_BASE == 1180001
+    assert SELFPLAY_SEED_BASE == 1180101
+    assert TRAINING_SEED == 1180111
+    assert CONSISTENCY_SEED_BASE == 1180201
+    assert ARENA_OPENING_SEED == 1180801
+    assert ARENA_SEARCH_SEED_BASE == 1180901
 
 
 def test_f115_native_policy_logits_order_is_stable():

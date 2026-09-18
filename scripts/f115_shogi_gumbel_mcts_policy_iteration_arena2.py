@@ -1,4 +1,4 @@
-"""F116 corrected generic Gumbel-MCTS policy iteration and Shogi Arena2."""
+"""F118 clean replication of completed-Q Gumbel policy iteration."""
 from __future__ import annotations
 
 import argparse
@@ -42,6 +42,12 @@ from generic_chess.session.session import GameSession
 
 FROZEN_CHECKPOINT_ID = "f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4"
 PARENT_POLICY_SHA = "2357472be320e9df909136a31a5223ec24e79f998467bb0ef3114b7e3433b955"
+GENERICITY_SEED_BASE = 1180001
+SELFPLAY_SEED_BASE = 1180101
+TRAINING_SEED = 1180111
+CONSISTENCY_SEED_BASE = 1180201
+ARENA_OPENING_SEED = 1180801
+ARENA_SEARCH_SEED_BASE = 1180901
 
 
 def _load_inputs(checkpoint_path: Path, policy_report: Path):
@@ -142,20 +148,22 @@ def _genericity_smokes():
     result = []
     for name, ruleset in contexts:
         compiled, native_rules = _context(ruleset)
+        search_seed = GENERICITY_SEED_BASE + len(result)
         smoke = SemanticGumbelMCTSV0(
             compiled, native_rules, simulations=16, policy=None
-        ).search(GameSession(compiled), search_seed=1170000 + len(result))
+        ).search(GameSession(compiled), search_seed=search_seed)
         if smoke.action not in smoke.root_actions or sum(smoke.root_visits) != 16:
             raise RuntimeError("GUMBEL_MCTS_GENERICITY_SMOKE_FAILED")
-        result.append({"ruleset": name, "actions": len(smoke.root_actions), "simulations": smoke.simulations, "expanded_nodes": smoke.expanded_nodes})
+        result.append({"ruleset": name, "search_seed": search_seed, "actions": len(smoke.root_actions), "simulations": smoke.simulations, "expanded_nodes": smoke.expanded_nodes})
     return result
 
 
-def _root_record(compiled, session, result, game, ply, split):
+def _root_record(compiled, session, result, game, ply, split, search_seed):
     return {
         "split": split,
         "game": game,
         "ply": ply,
+        "search_seed": search_seed,
         "position_identity": result.root_position_key,
         "side_to_move": int(session.state.position.side_to_move),
         "history": [action_to_dict(item.action) for item in session.history],
@@ -193,11 +201,12 @@ def _selfplay(compiled, native_rules, checkpoint, parent):
         for ply in range(64):
             if session.result.status.value != "ongoing":
                 break
+            search_seed = SELFPLAY_SEED_BASE + 10000 * game + ply
             result = SemanticGumbelMCTSV0(
                 compiled, native_rules, checkpoint=checkpoint, policy=parent
-            ).search(session, search_seed=1160101 + 10000 * game + ply)
+            ).search(session, search_seed=search_seed)
             split = "train" if game < 3 else ("dev" if game == 3 else "holdout")
-            game_rows.append(_root_record(compiled, session, result, game, ply, split))
+            game_rows.append(_root_record(compiled, session, result, game, ply, split, search_seed))
             if result.declaration_id is not None:
                 session.declare(result.declaration_id)
                 break
@@ -212,54 +221,6 @@ def _selfplay(compiled, native_rules, checkpoint, parent):
     if counts["train"] < 80 or counts["dev"] < 20 or counts["holdout"] < 20:
         raise RuntimeError("GUMBEL_MCTS_POLICY_CORPUS_INSUFFICIENT")
     return rows, games, counts
-
-
-def _f116_diagnostic(compiled, native_rules, checkpoint, parent):
-    path = ROOT / ".generic_chess_flow" / "f116-shogi-gumbel-corrected-arena2" / "report.json"
-    if not path.exists():
-        raise RuntimeError("F116_ROOT_DIAGNOSTIC_ARTIFACT_MISSING")
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    rows = payload["selfplay_roots"][:64]
-    records = []
-    from generic_chess.core.actions import action_from_dict
-    for index, row in enumerate(rows):
-        session = GameSession(compiled)
-        for item in row["history"]:
-            session.submit(action_from_dict(item))
-        result = SemanticGumbelMCTSV0(
-            compiled, native_rules, checkpoint=checkpoint, policy=parent
-        ).search(session, search_seed=1170001 + index)
-        visit = np.asarray(result.visit_policy, dtype=np.float64)
-        improved = np.asarray(result.improved_policy, dtype=np.float64)
-        initial = set(row["rounds"][0]["candidate_actions_before"])
-        outside_mass = float(np.sum(improved[[action not in initial for action in result.root_actions]]))
-        records.append({
-            "position_identity": row["position_identity"],
-            "f116_selected_action": row["selected_action"],
-            "f117_selected_action": result.action,
-            "selected_action_agreement": row["selected_action"] == result.action,
-            "visit_policy_entropy": _entropy(visit),
-            "completed_q_improved_policy_entropy": _entropy(improved),
-            "kl_visit_to_improved": float(np.sum(visit * np.log(np.maximum(visit, 1e-300) / np.maximum(improved, 1e-300)))),
-            "top_visit_action": result.root_actions[int(np.argmax(visit))],
-            "top_improved_action": result.root_actions[int(np.argmax(improved))],
-            "outside_initial_top8_mass": outside_mass,
-            "q_transform_mean": float(np.mean(result.root_q_transform)),
-            "q_transform_max": float(np.max(result.root_q_transform)),
-            "prior_entropy": _entropy(np.asarray(result.root_priors)),
-            "visited_q_spread": float(np.ptp([q for q, n in zip(result.root_q_values, result.root_visits) if n])),
-        })
-    return {
-        "count": len(records),
-        "selected_action_agreement_rate": float(np.mean([item["selected_action_agreement"] for item in records])),
-        "mean_visit_policy_entropy": float(np.mean([item["visit_policy_entropy"] for item in records])),
-        "mean_completed_q_improved_policy_entropy": float(np.mean([item["completed_q_improved_policy_entropy"] for item in records])),
-        "mean_kl_visit_to_improved": float(np.mean([item["kl_visit_to_improved"] for item in records])),
-        "mean_outside_initial_top8_mass": float(np.mean([item["outside_initial_top8_mass"] for item in records])),
-        "mean_q_transform": float(np.mean([item["q_transform_mean"] for item in records])),
-        "max_q_transform": float(np.max([item["q_transform_max"] for item in records])),
-        "rows": records,
-    }
 
 
 def _entropy(values):
@@ -293,6 +254,28 @@ def _improvement_diagnostics(rows):
             "visit_policy_delta": {"mean": float(np.mean(visit_deltas)), "median": float(np.median(visit_deltas)), "minimum": float(np.min(visit_deltas)), "fraction_nonnegative": float(np.mean(np.asarray(visit_deltas) >= 0.0))},
         }
     return result
+
+
+def _validate_seed_contract(rows, consistency=None, arena=None, genericity=None):
+    for row in rows:
+        expected = SELFPLAY_SEED_BASE + 10000 * int(row["game"]) + int(row["ply"])
+        if int(row["search_seed"]) != expected:
+            raise RuntimeError("F118_SEED_CONTRACT_VIOLATION")
+    if consistency is not None:
+        for index, row in enumerate(consistency["rows"]):
+            if int(row["search_seed"]) != CONSISTENCY_SEED_BASE + index:
+                raise RuntimeError("F118_SEED_CONTRACT_VIOLATION")
+    if genericity is not None:
+        for index, row in enumerate(genericity):
+            if int(row["search_seed"]) != GENERICITY_SEED_BASE + index:
+                raise RuntimeError("F118_SEED_CONTRACT_VIOLATION")
+    if arena is not None:
+        for game in arena["games"]:
+            for metric in game["metrics"]:
+                expected = ARENA_SEARCH_SEED_BASE + 10000 * int(game["game"]) + int(metric["ply"])
+                if int(metric["search_seed"]) != expected:
+                    raise RuntimeError("F118_SEED_CONTRACT_VIOLATION")
+    return {"genericity_base": GENERICITY_SEED_BASE, "selfplay_base": SELFPLAY_SEED_BASE, "training": TRAINING_SEED, "consistency_base": CONSISTENCY_SEED_BASE, "arena_opening": ARENA_OPENING_SEED, "arena_search_base": ARENA_SEARCH_SEED_BASE}
 
 
 def _examples(rows, compiled, native_rules):
@@ -338,7 +321,7 @@ def _loss(params, examples):
     return total / max(count, 1)
 
 
-def _train(parent, examples, *, steps=100, learning_rate=0.001, proximal=0.001, seed=1160111):
+def _train(parent, examples, *, steps=100, learning_rate=0.001, proximal=0.001, seed=TRAINING_SEED):
     params = [value.copy() for value in parent._arrays()]
     anchor = [value.copy() for value in params]
     moments = [(np.zeros_like(value), np.zeros_like(value)) for value in params]
@@ -411,20 +394,21 @@ def _consistency(compiled, native_rules, checkpoint, parent, child, rows):
         from generic_chess.core.actions import action_from_dict
         session = GameSession(compiled)
         for payload in row["history"]: session.submit(action_from_dict(payload))
-        a = SemanticGumbelMCTSV0(compiled, native_rules, checkpoint=checkpoint, policy=parent).search(session, search_seed=1160201 + index)
-        b = SemanticGumbelMCTSV0(compiled, native_rules, checkpoint=checkpoint, policy=child).search(session, search_seed=1160201 + index)
+        search_seed = CONSISTENCY_SEED_BASE + index
+        a = SemanticGumbelMCTSV0(compiled, native_rules, checkpoint=checkpoint, policy=parent).search(session, search_seed=search_seed)
+        b = SemanticGumbelMCTSV0(compiled, native_rules, checkpoint=checkpoint, policy=child).search(session, search_seed=search_seed)
         pa = np.asarray(a.target_policy); pb = np.asarray(b.target_policy)
         kl = float(np.sum(pa * np.log(np.maximum(pa, 1e-300) / np.maximum(pb, 1e-300))))
         parent_index = a.root_actions.index(a.action)
         child_index = b.root_actions.index(b.action)
         parent_initial = set(a.root_rounds[0]["candidate_actions_before"]) if a.root_rounds else set()
         child_initial = set(b.root_rounds[0]["candidate_actions_before"]) if b.root_rounds else set()
-        out.append({"position_identity": row["position_identity"], "action_agreement": a.action == b.action, "target_kl": kl, "mean_abs_q_difference": float(np.mean(np.abs(np.asarray(a.root_q_values) - np.asarray(b.root_q_values)))), "parent_selected_q": a.root_q_values[parent_index], "child_selected_q": b.root_q_values[child_index], "parent_max_q": max(a.root_q_values), "child_max_q": max(b.root_q_values), "parent_selected_q_regret": max(a.root_q_values) - a.root_q_values[parent_index], "child_selected_q_regret": max(b.root_q_values) - b.root_q_values[child_index], "candidate_set_overlap": len(parent_initial & child_initial) / max(1, len(parent_initial | child_initial)), "parent_wall_seconds": a.wall_seconds, "child_wall_seconds": b.wall_seconds, "parent_expanded_nodes": a.expanded_nodes, "child_expanded_nodes": b.expanded_nodes, "parent_max_depth": a.maximum_tree_depth, "child_max_depth": b.maximum_tree_depth, "parent_rounds": a.root_rounds, "child_rounds": b.root_rounds})
+        out.append({"position_identity": row["position_identity"], "search_seed": search_seed, "action_agreement": a.action == b.action, "target_kl": kl, "mean_abs_q_difference": float(np.mean(np.abs(np.asarray(a.root_q_values) - np.asarray(b.root_q_values)))), "parent_selected_q": a.root_q_values[parent_index], "child_selected_q": b.root_q_values[child_index], "parent_max_q": max(a.root_q_values), "child_max_q": max(b.root_q_values), "parent_selected_q_regret": max(a.root_q_values) - a.root_q_values[parent_index], "child_selected_q_regret": max(b.root_q_values) - b.root_q_values[child_index], "candidate_set_overlap": len(parent_initial & child_initial) / max(1, len(parent_initial | child_initial)), "parent_wall_seconds": a.wall_seconds, "child_wall_seconds": b.wall_seconds, "parent_expanded_nodes": a.expanded_nodes, "child_expanded_nodes": b.expanded_nodes, "parent_max_depth": a.maximum_tree_depth, "child_max_depth": b.maximum_tree_depth, "parent_rounds": a.root_rounds, "child_rounds": b.root_rounds})
     return {"count": len(out), "action_agreement_rate": float(np.mean([row["action_agreement"] for row in out])), "mean_target_kl": float(np.mean([row["target_kl"] for row in out])), "rows": out}
 
 
 def _arena(compiled, native_rules, checkpoint, parent, child, excluded):
-    requested_opening_seed = 1170801
+    requested_opening_seed = ARENA_OPENING_SEED
     corpus = None
     selection_offset = None
     for offset in range(256):
@@ -451,8 +435,9 @@ def _arena(compiled, native_rules, checkpoint, parent, child, excluded):
             side = int(session.state.position.side_to_move)
             policy = child if side == child_owner else parent
             started = time.perf_counter()
-            result = SemanticGumbelMCTSV0(compiled, native_rules, checkpoint=checkpoint, policy=policy).search(session, search_seed=1160901 + 10000 * game + ply)
-            metrics.append({"simulations": result.simulations, "expanded_nodes": result.expanded_nodes, "leaf_evaluations": result.leaf_evaluations, "maximum_tree_depth": result.maximum_tree_depth, "wall_seconds": time.perf_counter() - started, "declaration_encounters": result.declaration_encounters, "rounds": list(result.root_rounds)})
+            search_seed = ARENA_SEARCH_SEED_BASE + 10000 * game + ply
+            result = SemanticGumbelMCTSV0(compiled, native_rules, checkpoint=checkpoint, policy=policy).search(session, search_seed=search_seed)
+            metrics.append({"ply": ply, "search_seed": search_seed, "simulations": result.simulations, "expanded_nodes": result.expanded_nodes, "leaf_evaluations": result.leaf_evaluations, "maximum_tree_depth": result.maximum_tree_depth, "wall_seconds": time.perf_counter() - started, "declaration_encounters": result.declaration_encounters, "rounds": list(result.root_rounds)})
             if result.declaration_id is not None:
                 session.declare(result.declaration_id); declarations += 1; break
             if result.action is None: raise RuntimeError("GUMBEL_MCTS_ARENA_NO_ACTION")
@@ -470,12 +455,12 @@ def _arena(compiled, native_rules, checkpoint, parent, child, excluded):
         pair_scores.append(float(np.mean(scores)))
     mean = float(np.mean(pair_scores))
     better = sum(score > 0.5 for score in pair_scores); worse = sum(score < 0.5 for score in pair_scores)
-    return {"requested_opening_seed": requested_opening_seed, "selection_offset": selection_offset, "corpus": corpus.to_dict(), "games": games, "valid_game_count": len(valid_games), "pair_scores": pair_scores, "mean_pair_score": mean, "child_better_pairs": better, "child_worse_pairs": worse, "classification": "SHOGI_GUMBEL_COMPLETED_Q_POLICY_ITERATION_ARENA2_SURVIVES" if mean > 0.5 and better > worse else "SHOGI_GUMBEL_COMPLETED_Q_POLICY_ITERATION_ARENA2_REJECTED"}
+    return {"requested_opening_seed": requested_opening_seed, "selection_offset": selection_offset, "corpus": corpus.to_dict(), "games": games, "valid_game_count": len(valid_games), "pair_scores": pair_scores, "mean_pair_score": mean, "child_better_pairs": better, "child_worse_pairs": worse, "classification": "SHOGI_GUMBEL_COMPLETED_Q_CLEAN_REPLICATION_ARENA2_SURVIVES" if mean > 0.5 and better > worse else "SHOGI_GUMBEL_COMPLETED_Q_CLEAN_REPLICATION_ARENA2_REJECTED"}
 
 
 def _known_identities():
     pattern = re.compile(r"(?<![0-9a-f])[0-9a-f]{64}(?![0-9a-f])")
-    names = ("f62", "f75", "f77", "f78", "f79", "f80", "f81", "f107", "f108", "f112", "f113", "f114", "f115", "f116")
+    names = ("f62", "f75", "f77", "f78", "f79", "f80", "f81", "f107", "f108", "f112", "f113", "f114", "f115", "f116", "f117")
     found = set()
     for path in ROOT.rglob("*"):
         if not path.is_file() or not any(part.lower().startswith(name) for part in path.parts for name in names):
@@ -501,17 +486,17 @@ def main():
     if args.arena_only:
         child = SemanticPolicyV1.from_dict(json.loads(args.candidate_policy.read_text(encoding="utf-8")))
         arena = _arena(compiled, native_rules, checkpoint, parent, child, _known_identities())
-        report = {"work_order_id": "GENERICCHESS_F117_SHOGI_GUMBEL_COMPLETED_Q_POLICY_IMPROVEMENT_ARENA2", "classification": arena["classification"], "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "candidate_policy_sha256": child.computed_model_sha256, "arena": arena}
+        report = {"work_order_id": "GENERICCHESS_F118_SHOGI_GUMBEL_COMPLETED_Q_CLEAN_REPLICATION_ARENA2", "classification": arena["classification"], "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "candidate_policy_sha256": child.computed_model_sha256, "seed_contract": _validate_seed_contract([], arena=arena), "arena": arena}
         args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
         print(json.dumps({"classification": report["classification"], "valid_game_count": arena["valid_game_count"]}, sort_keys=True))
         return
     genericity = _genericity_smokes()
     parity = _policy_parity(compiled, native_rules, parent)
-    f116_diagnostic = _f116_diagnostic(compiled, native_rules, checkpoint, parent)
     rows, games, counts = _selfplay(compiled, native_rules, checkpoint, parent)
     examples = _examples(rows, compiled, native_rules)
     parent_metrics = {split: _metrics(parent, examples[split]) for split in examples}
-    trained = _policy_from_params(parent, _train(parent, examples["train"]))
+    training_seed = TRAINING_SEED
+    trained = _policy_from_params(parent, _train(parent, examples["train"], seed=training_seed))
     candidate = None
     backtracking = []
     for alpha in (1.0, 0.5, 0.25, 0.125, 0.0625, 0.03125, 0.015625, 0.0078125):
@@ -523,7 +508,7 @@ def main():
         if safe:
             candidate = trial; candidate_metrics = metrics; chosen_alpha = alpha; break
     if candidate is None:
-        report = {"work_order_id": "GENERICCHESS_F117_SHOGI_GUMBEL_COMPLETED_Q_POLICY_IMPROVEMENT_ARENA2", "classification": "GUMBEL_COMPLETED_Q_POLICY_UPDATE_REJECTED_OFFLINE", "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "genericity": genericity, "policy_order_parity": parity, "f116_diagnostic": f116_diagnostic, "corpus_counts": counts, "parent_metrics": parent_metrics, "backtracking": backtracking}
+        report = {"work_order_id": "GENERICCHESS_F118_SHOGI_GUMBEL_COMPLETED_Q_CLEAN_REPLICATION_ARENA2", "classification": "F118_GUMBEL_POLICY_UPDATE_REJECTED_OFFLINE", "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "seed_contract": _validate_seed_contract(rows, genericity=genericity), "genericity": genericity, "policy_order_parity": parity, "corpus_counts": counts, "parent_metrics": parent_metrics, "backtracking": backtracking}
         args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
         raise SystemExit(0)
     args.candidate_policy.parent.mkdir(parents=True, exist_ok=True); args.candidate_policy.write_text(json.dumps(candidate.to_dict(), indent=2, sort_keys=True), encoding="utf-8")
@@ -531,13 +516,13 @@ def main():
     if reloaded.computed_model_sha256 != candidate.computed_model_sha256: raise RuntimeError("GUMBEL_MCTS_CANDIDATE_RELOAD_FAILED")
     consistency = _consistency(compiled, native_rules, checkpoint, parent, reloaded, rows)
     if args.skip_arena:
-        report = {"work_order_id": "GENERICCHESS_F117_SHOGI_GUMBEL_COMPLETED_Q_POLICY_IMPROVEMENT_ARENA2", "classification": "GUMBEL_COMPLETED_Q_OFFLINE_POLICY_UPDATE_ACCEPTED_ARENA_PENDING", "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "candidate_policy_sha256": reloaded.computed_model_sha256, "policy_training": {"optimizer": "Adam", "steps": 100, "learning_rate": 0.001, "proximal": 0.001, "seed": 1170111, "chosen_alpha": chosen_alpha, "parent_metrics": parent_metrics, "candidate_metrics": candidate_metrics, "backtracking": backtracking}, "genericity": genericity, "policy_order_parity": parity, "f116_diagnostic": f116_diagnostic, "selfplay_games": games, "selfplay_roots": rows, "corpus_counts": counts, "consistency_probe": consistency, "improvement_diagnostics": _improvement_diagnostics(rows)}
+        report = {"work_order_id": "GENERICCHESS_F118_SHOGI_GUMBEL_COMPLETED_Q_CLEAN_REPLICATION_ARENA2", "classification": "F118_GUMBEL_OFFLINE_POLICY_UPDATE_ACCEPTED_ARENA_PENDING", "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "candidate_policy_sha256": reloaded.computed_model_sha256, "seed_contract": _validate_seed_contract(rows, consistency, genericity=genericity), "policy_training": {"optimizer": "Adam", "steps": 100, "learning_rate": 0.001, "proximal": 0.001, "seed": training_seed, "chosen_alpha": chosen_alpha, "parent_metrics": parent_metrics, "candidate_metrics": candidate_metrics, "backtracking": backtracking}, "genericity": genericity, "policy_order_parity": parity, "selfplay_games": games, "selfplay_roots": rows, "corpus_counts": counts, "consistency_probe": consistency, "improvement_diagnostics": _improvement_diagnostics(rows)}
         args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
         print(json.dumps({"classification": report["classification"], "candidate_policy_sha256": reloaded.computed_model_sha256}, sort_keys=True))
         return
     excluded = {row["position_identity"] for row in rows} | _known_identities()
     arena = _arena(compiled, native_rules, checkpoint, parent, reloaded, excluded)
-    report = {"work_order_id": "GENERICCHESS_F117_SHOGI_GUMBEL_COMPLETED_Q_POLICY_IMPROVEMENT_ARENA2", "classification": arena["classification"], "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "candidate_policy_sha256": reloaded.computed_model_sha256, "policy_training": {"optimizer": "Adam", "steps": 100, "learning_rate": 0.001, "proximal": 0.001, "seed": 1170111, "chosen_alpha": chosen_alpha, "parent_metrics": parent_metrics, "candidate_metrics": candidate_metrics, "backtracking": backtracking}, "genericity": genericity, "policy_order_parity": parity, "f116_diagnostic": f116_diagnostic, "selfplay_games": games, "selfplay_roots": rows, "corpus_counts": counts, "consistency_probe": consistency, "arena": arena, "improvement_diagnostics": _improvement_diagnostics(rows)}
+    report = {"work_order_id": "GENERICCHESS_F118_SHOGI_GUMBEL_COMPLETED_Q_CLEAN_REPLICATION_ARENA2", "classification": arena["classification"], "frozen_checkpoint_id": checkpoint.checkpoint_id, "parent_policy_sha256": parent.computed_model_sha256, "candidate_policy_sha256": reloaded.computed_model_sha256, "seed_contract": _validate_seed_contract(rows, consistency, arena, genericity), "policy_training": {"optimizer": "Adam", "steps": 100, "learning_rate": 0.001, "proximal": 0.001, "seed": training_seed, "chosen_alpha": chosen_alpha, "parent_metrics": parent_metrics, "candidate_metrics": candidate_metrics, "backtracking": backtracking}, "genericity": genericity, "policy_order_parity": parity, "selfplay_games": games, "selfplay_roots": rows, "corpus_counts": counts, "consistency_probe": consistency, "arena": arena, "improvement_diagnostics": _improvement_diagnostics(rows)}
     args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     print(json.dumps({"classification": report["classification"], "candidate_policy_sha256": reloaded.computed_model_sha256}, sort_keys=True))
 
