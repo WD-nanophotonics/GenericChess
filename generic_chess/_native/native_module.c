@@ -3386,6 +3386,7 @@ typedef struct {
 
 typedef struct {
     int version;
+    int defer_legality;
     int state_dimension;
     int action_dimension;
     int hidden_width;
@@ -4116,9 +4117,13 @@ typedef struct {
     int learned_move_ordering;
     GCSemanticProbeProfile policy_profile;
     int policy_move_ordering;
+    int policy_deferred_legality;
     uint64_t policy_nodes;
     uint64_t policy_state_inferences;
     uint64_t policy_actions_scored;
+    uint64_t policy_preorder_checked_transitions;
+    uint64_t policy_traversal_checked_attempts;
+    uint64_t policy_traversal_illegal_skips;
     uint64_t policy_elapsed_nanoseconds;
     uint64_t policy_nodes_by_ply[GC_SEM_MAX_PLY + 1];
     uint64_t policy_state_inferences_by_ply[GC_SEM_MAX_PLY + 1];
@@ -4458,6 +4463,7 @@ static int gc_semantic_policy_order_actions(GCSemanticIterativeContext *ctx,
     if (!ctx->policy_move_ordering || depth < 2 || actions->count == 0) return 1;
     uint64_t start_ns = gc_monotonic_ns();
     const GCSemanticPolicyModel *model = ctx->policy_profile.policy;
+    int deferred_legality = model->version == 1 && model->defer_legality;
     double state_features[4096] = {0.0};
     double hidden[16] = {0.0};
     if (!gc_semantic_policy_state_features(ctx->rules, position, model, state_features)) {
@@ -4479,8 +4485,11 @@ static int gc_semantic_policy_order_actions(GCSemanticIterativeContext *ctx,
     size_t legal_count = 0;
     for (size_t i = 0; i < actions->count; i++) {
         if (!gc_semantic_iterative_check_budget(ctx, 1)) { free(ordered); return 0; }
-        GCSemanticPosition child;
-        if (!gc_semantic_runtime_make_checked(&child, ctx->rules, position, actions->data[i])) continue;
+        if (!deferred_legality) {
+            GCSemanticPosition child;
+            ctx->policy_preorder_checked_transitions++;
+            if (!gc_semantic_runtime_make_checked(&child, ctx->rules, position, actions->data[i])) continue;
+        }
         double features[24];
         if (!gc_semantic_policy_action_features(ctx->rules, position, actions->data[i], features)) {
             free(ordered); ctx->control = 4; return 0;
@@ -4660,6 +4669,7 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
     PyObject *state_bias = PyDict_GetItemString(policy_values, "state_bias");
     PyObject *action_embedding = PyDict_GetItemString(policy_values, "action_embedding");
     PyObject *action_bias = PyDict_GetItemString(policy_values, "action_bias");
+    PyObject *defer_legality_obj = PyDict_GetItemString(policy_values, "_defer_legality");
     PyObject *hand_indices = PyDict_GetItemString(policy_values, "hand_type_indices");
     int artifact_is_v1 = artifact && PyUnicode_Check(artifact) &&
         strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") == 0;
@@ -4708,8 +4718,9 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
         Py_ssize_t expected = (Py_ssize_t)2 * rules->type_count * rules->board_size * rules->board_size + 2 * rules->type_count + 5;
         for (uint8_t i = 0; i < rules->aux_slot_count; i++) expected += rules->aux_slots[i].scope == 1 ? (rules->aux_slots[i].value_kind == 0 ? 2 : 6) : (rules->aux_slots[i].value_kind == 0 ? 1 : 3);
         if (type_count != rules->type_count || state_width != expected) { PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 state/type schema mismatch"); return 0; }
+        if (defer_legality_obj != NULL && !PyBool_Check(defer_legality_obj)) { PyErr_SetString(PyExc_TypeError, "SemanticPolicyV1 _defer_legality must be bool"); return 0; }
         GCSemanticPolicyModel *model = (GCSemanticPolicyModel *)calloc(1, sizeof(*model)); if (!model) { PyErr_NoMemory(); return 0; }
-        model->version = 1; model->state_dimension = (int)state_width; model->action_dimension = 21; model->hidden_width = 16; model->type_count = (int)type_count; model->hand_type_count = (int)type_count;
+        model->version = 1; model->defer_legality = defer_legality_obj == Py_True; model->state_dimension = (int)state_width; model->action_dimension = 21; model->hidden_width = 16; model->type_count = (int)type_count; model->hand_type_count = (int)type_count;
         model->state_weights = calloc(16 * (size_t)state_width, sizeof(double)); model->state_bias = calloc(16, sizeof(double)); model->base_weights = calloc(16 * 21u, sizeof(double)); model->v1_action_bias = calloc(16, sizeof(double));
         model->actor_embedding = calloc(type_count * 16u, sizeof(double)); model->promotion_embedding = calloc((type_count + 1) * 16u, sizeof(double)); model->drop_embedding = calloc((type_count + 1) * 16u, sizeof(double)); model->actor_geometry_embedding = calloc(type_count * 3u * 16u, sizeof(double)); model->actor_capture_embedding = calloc(type_count * 16u, sizeof(double)); model->actor_promotion_embedding = calloc(type_count * 16u, sizeof(double)); model->actor_drop_embedding = calloc(type_count * 16u, sizeof(double));
         model->beta_base = calloc(21, sizeof(double)); model->beta_actor = calloc(type_count, sizeof(double)); model->beta_promotion = calloc(type_count + 1, sizeof(double)); model->beta_drop = calloc(type_count + 1, sizeof(double)); model->beta_actor_geometry = calloc(type_count * 3u, sizeof(double)); model->beta_actor_capture = calloc(type_count, sizeof(double)); model->beta_actor_promotion = calloc(type_count, sizeof(double)); model->beta_actor_drop = calloc(type_count, sizeof(double));
@@ -4987,14 +4998,23 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         }
     }
     size_t i;
+    uint64_t legal_child_index = 0;
     int root_child_searched = 0;
     for (i = 0; i < actions.count; i++) {
         if (!gc_semantic_iterative_check_budget(ctx, 1)) break;
         GCSemanticPosition *child = &ctx->stack[ply + 1];
         uint64_t action = actions.data[i];
         if (gc_semantic_is_declaration_action(action)) continue;
-        if (!gc_semantic_runtime_make_checked(child, ctx->rules, position, action)) continue;
-        if (ply == 0 && i == 0) {
+        int deferred_policy = ctx->policy_deferred_legality;
+        if (deferred_policy) ctx->policy_traversal_checked_attempts++;
+        if (!gc_semantic_runtime_make_checked(child, ctx->rules, position, action)) {
+            if (deferred_policy) ctx->policy_traversal_illegal_skips++;
+            continue;
+        }
+        if (deferred_policy) legal_child_index++;
+        int first_legal_child = deferred_policy
+            ? legal_child_index == 1 : i == 0;
+        if (ply == 0 && first_legal_child) {
             ctx->root_first_actions[depth] = action;
             ctx->root_first_action_present[depth] = 1;
             if (ctx->root_order_hint_present && action == ctx->root_order_hint)
@@ -5015,7 +5035,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         }
         int child_pv = ply == 0
             ? (ctx->root_window_pruning ? root_first_child : 1)
-            : (pv_node && i == 0);
+            : (pv_node && first_legal_child);
         int child_alpha = (ply == 0 && ctx->root_window_pruning && !root_first_child)
             ? -beta
             : (pv_node || ply == 0 ? -GC_SEMANTIC_PROBE_INF : -beta);
@@ -5059,8 +5079,12 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         /* Re-search the selected branch with a full PV window so TT ordering
          * cannot change the deterministic principal line. */
         GCSemanticPosition *best_child = &ctx->stack[ply + 1];
+        if (ctx->policy_deferred_legality)
+            ctx->policy_traversal_checked_attempts++;
         if (!gc_semantic_runtime_make_checked(
                 best_child, ctx->rules, position, best_action)) {
+            if (ctx->policy_deferred_legality)
+                ctx->policy_traversal_illegal_skips++;
             ctx->control = 4;
             return 0;
         }
@@ -5654,6 +5678,9 @@ static PyObject *gc_semantic_iterative_search(
     ctx.profile = profile;
     ctx.policy_profile = profile;
     ctx.policy_move_ordering = policy_move_ordering;
+    ctx.policy_deferred_legality = policy_move_ordering &&
+        profile.policy != NULL && profile.policy->version == 1 &&
+        profile.policy->defer_legality;
     ctx.ordering_profile = ordering_profile;
     ctx.learned_move_ordering = learned_move_ordering;
     ctx.ordering_cache = ordering_cache;
@@ -5854,9 +5881,13 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_action_embeddings", ctx.policy_actions_scored) != 0 ||
+        gc_semantic_set_u64(out, "policy_preorder_checked_transitions", ctx.policy_preorder_checked_transitions) != 0 ||
+        gc_semantic_set_u64(out, "policy_traversal_checked_attempts", ctx.policy_traversal_checked_attempts) != 0 ||
+        gc_semantic_set_u64(out, "policy_traversal_illegal_skips", ctx.policy_traversal_illegal_skips) != 0 ||
         gc_semantic_set_u64(out, "policy_elapsed_nanoseconds", ctx.policy_elapsed_nanoseconds) != 0 ||
         !policy_min_depth_obj ||
         PyDict_SetItemString(out, "policy_ordering", ctx.policy_move_ordering ? Py_True : Py_False) != 0 ||
+        PyDict_SetItemString(out, "policy_deferred_legality", ctx.policy_deferred_legality ? Py_True : Py_False) != 0 ||
         PyDict_SetItemString(out, "policy_min_depth", policy_min_depth_obj) != 0) {
         Py_XDECREF(policy_min_depth_obj);
         Py_DECREF(out);

@@ -242,6 +242,7 @@ class ArenaSummary:
 def _engine_for(
     compiled, native_rules, checkpoint, tt_mb, *, ordering_checkpoint=None,
     ordering_max_ply=-1, ordering_min_depth=1, policy=None,
+    policy_deferred_legality=False,
 ):
     from ..rules.ir import CompiledSemanticRuleset
 
@@ -252,6 +253,7 @@ def _engine_for(
             ordering_max_ply=ordering_max_ply,
             ordering_min_depth=ordering_min_depth,
             policy=policy,
+            policy_deferred_legality=policy_deferred_legality,
             tt_megabytes=tt_mb,
         )
     if ordering_checkpoint is not None:
@@ -294,6 +296,7 @@ def _play_one_game(
     root_order_hint_provider=None,
     ordering_checkpoint=None,
     policy=None,
+    policy_deferred_legality=False,
 ) -> ArenaGameResult:
     """Replay ``opening``, then play one game with fresh engines.
 
@@ -316,6 +319,7 @@ def _play_one_game(
         ordering_max_ply=config.ordering_max_ply,
         ordering_min_depth=config.ordering_min_depth,
         policy=policy,
+        policy_deferred_legality=policy_deferred_legality,
     )
     actions: list[Action] = []
     plies = 0
@@ -383,6 +387,7 @@ def _play_one_game(
                 ordering_max_ply=config.ordering_max_ply,
                 ordering_min_depth=config.ordering_min_depth,
                 policy=policy,
+                policy_deferred_legality=policy_deferred_legality,
             )
         engine = child_engine if side == child_owner else parent_engine
         role = "child" if side == child_owner else "parent"
@@ -595,6 +600,31 @@ def _play_one_game(
                         result, "ordering_skipped_by_remaining_depth", ()
                     )
                 ],
+                "policy_deferred_legality": bool(
+                    getattr(result, "policy_deferred_legality", False)
+                ),
+                "policy_nodes": int(getattr(result, "policy_nodes", 0)),
+                "policy_state_inferences": int(
+                    getattr(result, "policy_state_inferences", 0)
+                ),
+                "policy_actions_scored": int(
+                    getattr(result, "policy_actions_scored", 0)
+                ),
+                "policy_action_embeddings": int(
+                    getattr(result, "policy_action_embeddings", 0)
+                ),
+                "policy_elapsed_seconds": float(
+                    getattr(result, "policy_elapsed_seconds", 0.0)
+                ),
+                "policy_preorder_checked_transitions": int(
+                    getattr(result, "policy_preorder_checked_transitions", 0)
+                ),
+                "policy_traversal_checked_attempts": int(
+                    getattr(result, "policy_traversal_checked_attempts", 0)
+                ),
+                "policy_traversal_illegal_skips": int(
+                    getattr(result, "policy_traversal_illegal_skips", 0)
+                ),
             })
             if root_hint_policy is not None:
                 search_metrics[-1]["root_hint_policy"] = dict(root_hint_policy)
@@ -663,6 +693,7 @@ def _play_pair(
     capture_search_metrics: bool = False,
     root_order_hint_provider=None,
     policy=None,
+    policy_deferred_legality=False,
 ) -> ArenaPairResult:
     opening = openings.openings[pair_index]
     game_child_owner0 = _play_one_game(
@@ -671,6 +702,7 @@ def _play_pair(
         capture_search_metrics=capture_search_metrics,
         root_order_hint_provider=root_order_hint_provider,
         policy=policy,
+        policy_deferred_legality=policy_deferred_legality,
     )
     game_child_owner1 = _play_one_game(
         compiled, native_rules, parent, child,
@@ -678,6 +710,7 @@ def _play_pair(
         capture_search_metrics=capture_search_metrics,
         root_order_hint_provider=root_order_hint_provider,
         policy=policy,
+        policy_deferred_legality=policy_deferred_legality,
     )
     return ArenaPairResult(
         pair_index=pair_index,
@@ -897,6 +930,7 @@ def run_arena(
     *,
     capture_search_metrics: bool = False,
     policy=None,
+    policy_deferred_legality=False,
 ) -> ArenaSummary:
     """Paired matches over a fixed evaluator-neutral opening corpus."""
     openings = _prepare_arena(compiled, parent, child, config, openings)
@@ -904,8 +938,14 @@ def run_arena(
     def execute(index: int) -> ArenaPairResult:
         args = (compiled, native_rules, parent, child, config, openings, index)
         if capture_search_metrics:
-            return _play_pair(*args, capture_search_metrics=True, policy=policy)
-        return _play_pair(*args, policy=policy)
+            return _play_pair(
+                *args, capture_search_metrics=True, policy=policy,
+                policy_deferred_legality=policy_deferred_legality,
+            )
+        return _play_pair(
+            *args, policy=policy,
+            policy_deferred_legality=policy_deferred_legality,
+        )
 
     if config.workers == 1:
         pairs = [execute(index) for index in indexes]

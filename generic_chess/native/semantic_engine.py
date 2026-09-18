@@ -87,6 +87,10 @@ class SemanticIterativeSearchResult:
     policy_action_embeddings: int = 0
     policy_elapsed_seconds: float = 0.0
     policy_model_sha256: str | None = None
+    policy_deferred_legality: bool = False
+    policy_preorder_checked_transitions: int = 0
+    policy_traversal_checked_attempts: int = 0
+    policy_traversal_illegal_skips: int = 0
     policy_min_depth: int = 2
     policy_nodes_by_ply: tuple[int, ...] = ()
     policy_state_inferences_by_ply: tuple[int, ...] = ()
@@ -178,6 +182,7 @@ class SemanticSearchEngine:
         ordering_max_ply: int = -1,
         ordering_min_depth: int = 1,
         policy=None,
+        policy_deferred_legality: bool = False,
     ) -> None:
         if not native_available():
             raise RuntimeError("native extension is not built")
@@ -230,7 +235,14 @@ class SemanticSearchEngine:
                 raise ValueError("unsupported semantic policy state schema")
             if getattr(policy, "action_schema_id", None) not in ("semantic-action-v0", "semantic-action-v1"):
                 raise ValueError("unsupported semantic policy action schema")
+            if policy_deferred_legality and getattr(policy, "action_schema_id", None) != "semantic-action-v1":
+                raise ValueError("deferred policy legality requires Semantic Policy-v1")
             self._policy_model = policy
+        elif policy_deferred_legality:
+            raise ValueError("deferred policy legality requires a policy")
+        if not isinstance(policy_deferred_legality, bool):
+            raise TypeError("policy_deferred_legality must be a bool")
+        self._policy_deferred_legality = policy_deferred_legality
         if checkpoint is not None:
             self._set_checkpoint_values(checkpoint)
         if ordering_checkpoint is not None:
@@ -268,6 +280,10 @@ class SemanticSearchEngine:
         self._ordering_checkpoint_id = checkpoint.checkpoint_id
 
     def _new_capsule(self):
+        policy_payload = None if self._policy_model is None else self._policy_model.native_payload()
+        if self._policy_deferred_legality:
+            policy_payload = dict(policy_payload)
+            policy_payload["_defer_legality"] = True
         return _module().create_semantic_search_engine(
             self._native_rules.capsule,
             self._board_values,
@@ -289,7 +305,7 @@ class SemanticSearchEngine:
             self._ordering_feature_reuse_enabled,
             self._ordering_max_ply,
             self._ordering_min_depth,
-            None if self._policy_model is None else self._policy_model.native_payload(),
+            policy_payload,
         )
 
     @property
@@ -527,6 +543,10 @@ class SemanticSearchEngine:
             policy_action_embeddings=int(raw.get("policy_action_embeddings", raw.get("policy_actions_scored", 0))),
             policy_elapsed_seconds=int(raw.get("policy_elapsed_nanoseconds", 0)) / 1e9,
             policy_model_sha256=self.policy_model_sha256,
+            policy_deferred_legality=bool(raw.get("policy_deferred_legality", False)),
+            policy_preorder_checked_transitions=int(raw.get("policy_preorder_checked_transitions", 0)),
+            policy_traversal_checked_attempts=int(raw.get("policy_traversal_checked_attempts", 0)),
+            policy_traversal_illegal_skips=int(raw.get("policy_traversal_illegal_skips", 0)),
             policy_min_depth=int(raw.get("policy_min_depth", 2)),
             policy_nodes_by_ply=tuple(int(value) for value in raw.get("policy_nodes_by_ply", ())),
             policy_state_inferences_by_ply=tuple(int(value) for value in raw.get("policy_state_inferences_by_ply", ())),
