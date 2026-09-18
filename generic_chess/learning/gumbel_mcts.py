@@ -47,12 +47,18 @@ class _Node:
     expanded: bool = False
     visits: int = 0
     terminal: dict | None = None
+    neutral_declaration_id: str | None = None
 
 
 @dataclass(frozen=True, slots=True)
 class GumbelSearchResult:
     action: int | None
     declaration_id: str | None
+    winning_declaration_id: str | None
+    neutral_declaration_id: str | None
+    neutral_declaration_available: bool
+    neutral_declaration_selected: bool
+    root_survivor_q_before_declaration_choice: float | None
     root_actions: tuple[int, ...]
     root_logits: tuple[float, ...]
     root_priors: tuple[float, ...]
@@ -72,6 +78,10 @@ class GumbelSearchResult:
     leaf_evaluations: int
     maximum_tree_depth: int
     declaration_encounters: int
+    winning_declaration_encounters: int
+    neutral_declaration_encounters: int
+    neutral_declarations_selected: int
+    neutral_declarations_declined: int
     wall_seconds: float
     root_position_key: str
 
@@ -113,6 +123,10 @@ class SemanticGumbelMCTSV0:
         self._leaf_evaluations = 0
         self._maximum_depth = 0
         self._declaration_encounters = 0
+        self._winning_declaration_encounters = 0
+        self._neutral_declaration_encounters = 0
+        self._neutral_declarations_selected = 0
+        self._neutral_declarations_declined = 0
 
     def _declaration_value(self, position):
         assessments = available_declarations(self.native_rules, position)
@@ -121,10 +135,12 @@ class SemanticGumbelMCTSV0:
         self._declaration_encounters += len(assessments)
         winning = [item for item in assessments if item.outcome == "WIN"]
         if winning:
+            self._winning_declaration_encounters += len(winning)
             return 1.0, winning[0].declaration_id
-        raise UnsupportedNeutralDeclaration(
-            UnsupportedNeutralDeclaration.code
-        )
+        neutral = [item for item in assessments if item.outcome != "LOSS"]
+        if neutral:
+            self._neutral_declaration_encounters += len(neutral)
+        return None, None
 
     def _terminal_value(self, position):
         declaration_value, declaration_id = self._declaration_value(position)
@@ -201,10 +217,12 @@ class SemanticGumbelMCTSV0:
             self._declaration_encounters += len(assessments)
             winning = [item for item in assessments if item.outcome == "WIN"]
             if winning:
+                self._winning_declaration_encounters += len(winning)
                 return 1.0, winning[0].declaration_id
-            raise UnsupportedNeutralDeclaration(
-                UnsupportedNeutralDeclaration.code
-            )
+            neutral = [item for item in assessments if item.outcome != "LOSS"]
+            if neutral:
+                self._neutral_declaration_encounters += len(neutral)
+                node.neutral_declaration_id = neutral[0].declaration_id
         status = terminal_status(self.native_rules, node.position)
         if status["status"] == "ongoing":
             return None, None
@@ -223,12 +241,18 @@ class SemanticGumbelMCTSV0:
     def _simulate(self, node: _Node, depth: int) -> float:
         self._maximum_depth = max(self._maximum_depth, depth)
         if depth >= self.max_tree_depth:
-            return self._value(node.position, node.side_to_move)
+            if not node.expanded:
+                self._expand(node)
+            if node.terminal is not None:
+                return float(node.terminal["value"])
+            value = self._value(node.position, node.side_to_move)
+            return _neutral_outside_option(value, node.neutral_declaration_id is not None)
         if not node.expanded:
             self._expand(node)
             if node.terminal is not None:
                 return float(node.terminal["value"])
-            return self._value(node.position, node.side_to_move)
+            value = self._value(node.position, node.side_to_move)
+            return _neutral_outside_option(value, node.neutral_declaration_id is not None)
         if node.terminal is not None:
             return float(node.terminal["value"])
         if not node.edges:
@@ -246,7 +270,7 @@ class SemanticGumbelMCTSV0:
         parent_value = -child_value
         edge.visits += 1
         edge.total_value += parent_value
-        return parent_value
+        return _neutral_outside_option(parent_value, node.neutral_declaration_id is not None)
 
     def search(self, session, *, search_seed: int) -> GumbelSearchResult:
         started = time.perf_counter()
@@ -254,6 +278,10 @@ class SemanticGumbelMCTSV0:
         self._leaf_evaluations = 0
         self._maximum_depth = 0
         self._declaration_encounters = 0
+        self._winning_declaration_encounters = 0
+        self._neutral_declaration_encounters = 0
+        self._neutral_declarations_selected = 0
+        self._neutral_declarations_declined = 0
         position = pack_semantic_search_position(
             self.compiled, self.native_rules, session
         )
@@ -266,8 +294,14 @@ class SemanticGumbelMCTSV0:
             self._declaration_encounters += len(root_declarations)
             winning = [item for item in root_declarations if item.outcome == "WIN"]
             if winning:
+                self._winning_declaration_encounters += len(winning)
                 return GumbelSearchResult(
                     action=None, declaration_id=winning[0].declaration_id,
+                    winning_declaration_id=winning[0].declaration_id,
+                    neutral_declaration_id=None,
+                    neutral_declaration_available=False,
+                    neutral_declaration_selected=False,
+                    root_survivor_q_before_declaration_choice=None,
                     root_actions=(), root_logits=(), root_priors=(),
                     root_gumbels=(), root_visits=(), root_q_values=(),
                     root_completed_q=(), root_q_transform=(),
@@ -276,12 +310,16 @@ class SemanticGumbelMCTSV0:
                     root_rounds=(), simulations=0, expanded_nodes=0,
                     leaf_evaluations=0, maximum_tree_depth=0,
                     declaration_encounters=self._declaration_encounters,
+                    winning_declaration_encounters=self._winning_declaration_encounters,
+                    neutral_declaration_encounters=self._neutral_declaration_encounters,
+                    neutral_declarations_selected=self._neutral_declarations_selected,
+                    neutral_declarations_declined=self._neutral_declarations_declined,
                     wall_seconds=time.perf_counter() - started,
                     root_position_key=root_key,
                 )
-            raise UnsupportedNeutralDeclaration(
-                UnsupportedNeutralDeclaration.code
-            )
+            neutral = [item for item in root_declarations if item.outcome != "LOSS"]
+            self._neutral_declaration_encounters += len(neutral)
+            root.neutral_declaration_id = neutral[0].declaration_id if neutral else None
         root_raw_value = self._value(position, root.side_to_move)
         self._expand(root)
         # Preserve the Native policy action order in the artifact, while every
@@ -408,8 +446,22 @@ class SemanticGumbelMCTSV0:
         ):
             raise RuntimeError("GUMBEL_COMPLETED_Q_POLICY_TARGET_INVALID")
         selected = candidates[0] if candidates else None
+        survivor_q = root.edges[selected].q if selected is not None else None
+        selected_action, selected_declaration, neutral_selected, neutral_declined = _select_root_decision(
+            survivor_q, root.neutral_declaration_id, selected
+        )
+        if neutral_selected:
+            self._neutral_declarations_selected += 1
+        elif neutral_declined:
+            self._neutral_declarations_declined += 1
         return GumbelSearchResult(
-            action=selected, declaration_id=None, root_actions=ordered_actions,
+            action=selected_action, declaration_id=selected_declaration,
+            winning_declaration_id=None,
+            neutral_declaration_id=root.neutral_declaration_id,
+            neutral_declaration_available=root.neutral_declaration_id is not None,
+            neutral_declaration_selected=neutral_selected,
+            root_survivor_q_before_declaration_choice=survivor_q,
+            root_actions=ordered_actions,
             root_logits=logits, root_priors=priors, root_gumbels=tuple(gumbels),
             root_visits=visits, root_q_values=q_values,
             root_completed_q=completed_q, root_q_transform=q_transform,
@@ -421,6 +473,10 @@ class SemanticGumbelMCTSV0:
             leaf_evaluations=self._leaf_evaluations,
             maximum_tree_depth=self._maximum_depth,
             declaration_encounters=self._declaration_encounters,
+            winning_declaration_encounters=self._winning_declaration_encounters,
+            neutral_declaration_encounters=self._neutral_declaration_encounters,
+            neutral_declarations_selected=self._neutral_declarations_selected,
+            neutral_declarations_declined=self._neutral_declarations_declined,
             wall_seconds=time.perf_counter() - started,
             root_position_key=root_key,
         )
@@ -448,6 +504,22 @@ def _root_improvement_score(root: _Node, action: int) -> float:
     nmax = max((edge.visits for edge in root.edges.values()), default=0)
     edge = root.edges[action]
     return edge.gumbel_log_prior + _q_transform(edge.q, nmax)
+
+
+def _neutral_outside_option(value: float, available: bool) -> float:
+    """Apply a neutral declaration's value-zero outside option to a node."""
+    return max(0.0, float(value)) if available else float(value)
+
+
+def _select_root_decision(
+    survivor_q: float | None,
+    neutral_declaration_id: str | None,
+    board_action: int | None,
+):
+    """Choose a final board survivor or the deterministic neutral declaration."""
+    if neutral_declaration_id is not None and survivor_q is not None and survivor_q <= 0.0:
+        return None, neutral_declaration_id, True, False
+    return board_action, None, False, neutral_declaration_id is not None
 
 
 def _rank_candidates(root: _Node, candidates):
@@ -501,4 +573,9 @@ def _allocation_schedule(simulations: int, initial_count: int):
     return tuple(schedule)
 
 
-__all__ += ["_allocation_schedule", "_root_round_allocation"]
+__all__ += [
+    "_allocation_schedule",
+    "_root_round_allocation",
+    "_neutral_outside_option",
+    "_select_root_decision",
+]
