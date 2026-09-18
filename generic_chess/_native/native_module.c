@@ -3385,6 +3385,7 @@ typedef struct {
 } GCSemanticCompactModel;
 
 typedef struct {
+    int version;
     int state_dimension;
     int action_dimension;
     int hidden_width;
@@ -3394,6 +3395,24 @@ typedef struct {
     double *state_bias;
     double *action_embedding;
     double *action_bias;
+    int type_count;
+    double *base_weights;
+    double *v1_action_bias;
+    double *actor_embedding;
+    double *promotion_embedding;
+    double *drop_embedding;
+    double *actor_geometry_embedding;
+    double *actor_capture_embedding;
+    double *actor_promotion_embedding;
+    double *actor_drop_embedding;
+    double *beta_base;
+    double *beta_actor;
+    double *beta_promotion;
+    double *beta_drop;
+    double *beta_actor_geometry;
+    double *beta_actor_capture;
+    double *beta_actor_promotion;
+    double *beta_actor_drop;
 } GCSemanticPolicyModel;
 
 typedef struct GCSemanticProbeProfile {
@@ -3576,6 +3595,23 @@ static void gc_semantic_profile_free(GCSemanticProbeProfile *profile) {
         free(profile->policy->state_bias);
         free(profile->policy->action_embedding);
         free(profile->policy->action_bias);
+        free(profile->policy->base_weights);
+        free(profile->policy->v1_action_bias);
+        free(profile->policy->actor_embedding);
+        free(profile->policy->promotion_embedding);
+        free(profile->policy->drop_embedding);
+        free(profile->policy->actor_geometry_embedding);
+        free(profile->policy->actor_capture_embedding);
+        free(profile->policy->actor_promotion_embedding);
+        free(profile->policy->actor_drop_embedding);
+        free(profile->policy->beta_base);
+        free(profile->policy->beta_actor);
+        free(profile->policy->beta_promotion);
+        free(profile->policy->beta_drop);
+        free(profile->policy->beta_actor_geometry);
+        free(profile->policy->beta_actor_capture);
+        free(profile->policy->beta_actor_promotion);
+        free(profile->policy->beta_actor_drop);
         free(profile->policy);
         profile->policy = NULL;
     }
@@ -4378,6 +4414,43 @@ static int gc_semantic_policy_action_features(
     return 1;
 }
 
+static double gc_semantic_policy_v1_logit(
+    const GCSemanticPolicyModel *model, const double *hidden,
+    const double *features, const GCSemanticRules *rules,
+    uint64_t action) {
+    uint16_t promo = (uint16_t)GC_ACTION_PROMO(action);
+    uint16_t base = (uint16_t)GC_ACTION_BASE(action);
+    uint16_t actor = (uint16_t)((action >> GC_ACTION_ACTOR_CURRENT_SHIFT) & GC_ACTION_ACTOR_CURRENT_MASK);
+    uint16_t geometry = (uint16_t)((action >> GC_ACTION_GEOMETRY_SHIFT) & GC_ACTION_GEOMETRY_MASK);
+    int geometry_kind = geometry < rules->geometry_count ? rules->geometries[geometry].kind : 2;
+    if (geometry_kind > 2) geometry_kind = 2;
+    int none = model->type_count;
+    int promo_index = promo == 255 ? none : (int)promo;
+    int drop_index = (GC_ACTION_KIND(action) == GC_ACTION_KIND_SEMANTIC_DROP) ? (int)base : none;
+    double score = 0.0;
+    double embedding[16];
+    for (int h = 0; h < 16; h++) {
+        double z = model->v1_action_bias[h];
+        for (int i = 0; i < 21; i++) z += model->base_weights[(size_t)h * 21u + (size_t)i] * features[i];
+        z += model->actor_embedding[(size_t)actor * 16u + h];
+        z += model->promotion_embedding[(size_t)promo_index * 16u + h];
+        z += model->drop_embedding[(size_t)drop_index * 16u + h];
+        z += model->actor_geometry_embedding[((size_t)actor * 3u + (size_t)geometry_kind) * 16u + h];
+        z += features[18] * model->actor_capture_embedding[(size_t)actor * 16u + h];
+        z += features[17] * model->actor_promotion_embedding[(size_t)actor * 16u + h];
+        z += features[1] * model->actor_drop_embedding[(size_t)actor * 16u + h];
+        embedding[h] = tanh(z);
+        score += hidden[h] * embedding[h];
+    }
+    for (int i = 0; i < 21; i++) score += model->beta_base[i] * features[i];
+    score += model->beta_actor[actor] + model->beta_promotion[promo_index] + model->beta_drop[drop_index];
+    score += model->beta_actor_geometry[(size_t)actor * 3u + geometry_kind];
+    score += features[18] * model->beta_actor_capture[actor];
+    score += features[17] * model->beta_actor_promotion[actor];
+    score += features[1] * model->beta_actor_drop[actor];
+    return score;
+}
+
 static int gc_semantic_policy_order_actions(GCSemanticIterativeContext *ctx,
                                             GCSemanticPosition *position,
                                             uint32_t ply, uint32_t depth,
@@ -4413,10 +4486,10 @@ static int gc_semantic_policy_order_actions(GCSemanticIterativeContext *ctx,
             free(ordered); ctx->control = 4; return 0;
         }
         double score = 0.0;
-        for (int i_feature = 0; i_feature < 24; i_feature++) {
+        if (model->version == 1) score = gc_semantic_policy_v1_logit(model, hidden, features, ctx->rules, actions->data[i]);
+        else for (int i_feature = 0; i_feature < 24; i_feature++) {
             double action_value = model->action_bias[i_feature];
-            for (int h = 0; h < 16; h++)
-                action_value += model->action_embedding[(size_t)h * 24u + (size_t)i_feature] * hidden[h];
+            for (int h = 0; h < 16; h++) action_value += model->action_embedding[(size_t)h * 24u + (size_t)i_feature] * hidden[h];
             score += features[i_feature] * action_value;
         }
         ordered[legal_count].action = actions->data[i];
@@ -4588,14 +4661,19 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
     PyObject *action_embedding = PyDict_GetItemString(policy_values, "action_embedding");
     PyObject *action_bias = PyDict_GetItemString(policy_values, "action_bias");
     PyObject *hand_indices = PyDict_GetItemString(policy_values, "hand_type_indices");
+    int artifact_is_v1 = artifact && PyUnicode_Check(artifact) &&
+        strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") == 0;
     if (!artifact || !version || !fingerprint || !state_width_obj ||
         !action_width_obj || !hidden_width_obj || !state_weights ||
-        !state_bias || !action_embedding || !action_bias || !hand_indices) {
+        !state_bias || (!artifact_is_v1 && (!action_embedding || !action_bias || !hand_indices))) {
         PyErr_SetString(PyExc_ValueError, "semantic policy profile is incomplete");
         return 0;
     }
-    if (!PyUnicode_Check(artifact) || strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV0") != 0 ||
-        PyLong_AsLong(version) != 0 || !PyUnicode_Check(fingerprint) ||
+    if (!PyUnicode_Check(artifact) || !PyUnicode_Check(fingerprint) ||
+        (strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV0") != 0 && strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") != 0) ||
+        (strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV0") == 0 && PyLong_AsLong(version) != 0) ||
+        (strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") == 0 && PyLong_AsLong(version) != 1) ||
+        !PyUnicode_Check(fingerprint) ||
         strcmp(PyUnicode_AsUTF8(fingerprint), rules->fingerprint) != 0) {
         PyErr_SetString(PyExc_ValueError,
                         "semantic policy artifact or ruleset fingerprint mismatch");
@@ -4604,6 +4682,50 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
     long state_width = PyLong_AsLong(state_width_obj);
     long action_width = PyLong_AsLong(action_width_obj);
     long hidden_width = PyLong_AsLong(hidden_width_obj);
+    int is_v1 = strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") == 0;
+    if (is_v1) {
+        PyObject *type_count_obj = PyDict_GetItemString(policy_values, "type_count");
+        PyObject *base_weights = PyDict_GetItemString(policy_values, "base_weights");
+        PyObject *v1_action_bias = PyDict_GetItemString(policy_values, "action_bias");
+        PyObject *actor_embedding = PyDict_GetItemString(policy_values, "actor_embedding");
+        PyObject *promotion_embedding = PyDict_GetItemString(policy_values, "promotion_embedding");
+        PyObject *drop_embedding = PyDict_GetItemString(policy_values, "drop_embedding");
+        PyObject *actor_geometry_embedding = PyDict_GetItemString(policy_values, "actor_geometry_embedding");
+        PyObject *actor_capture_embedding = PyDict_GetItemString(policy_values, "actor_capture_embedding");
+        PyObject *actor_promotion_embedding = PyDict_GetItemString(policy_values, "actor_promotion_embedding");
+        PyObject *actor_drop_embedding = PyDict_GetItemString(policy_values, "actor_drop_embedding");
+        PyObject *beta_base = PyDict_GetItemString(policy_values, "beta_base");
+        PyObject *beta_actor = PyDict_GetItemString(policy_values, "beta_actor");
+        PyObject *beta_promotion = PyDict_GetItemString(policy_values, "beta_promotion");
+        PyObject *beta_drop = PyDict_GetItemString(policy_values, "beta_drop");
+        PyObject *beta_actor_geometry = PyDict_GetItemString(policy_values, "beta_actor_geometry");
+        PyObject *beta_actor_capture = PyDict_GetItemString(policy_values, "beta_actor_capture");
+        PyObject *beta_actor_promotion = PyDict_GetItemString(policy_values, "beta_actor_promotion");
+        PyObject *beta_actor_drop = PyDict_GetItemString(policy_values, "beta_actor_drop");
+        if (!type_count_obj || !base_weights || !v1_action_bias || !actor_embedding || !promotion_embedding || !drop_embedding || !actor_geometry_embedding || !actor_capture_embedding || !actor_promotion_embedding || !actor_drop_embedding || !beta_base || !beta_actor || !beta_promotion || !beta_drop || !beta_actor_geometry || !beta_actor_capture || !beta_actor_promotion || !beta_actor_drop) { PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 profile is incomplete"); return 0; }
+        long type_count = PyLong_AsLong(type_count_obj);
+        if (PyErr_Occurred() || type_count < 1 || type_count > GC_MAX_TYPES || state_width < 1 || state_width > 4096 || hidden_width != 16 || action_width != 21) { PyErr_SetString(PyExc_ValueError, "invalid SemanticPolicyV1 dimensions"); return 0; }
+        Py_ssize_t expected = (Py_ssize_t)2 * rules->type_count * rules->board_size * rules->board_size + 2 * rules->type_count + 5;
+        for (uint8_t i = 0; i < rules->aux_slot_count; i++) expected += rules->aux_slots[i].scope == 1 ? (rules->aux_slots[i].value_kind == 0 ? 2 : 6) : (rules->aux_slots[i].value_kind == 0 ? 1 : 3);
+        if (type_count != rules->type_count || state_width != expected) { PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 state/type schema mismatch"); return 0; }
+        GCSemanticPolicyModel *model = (GCSemanticPolicyModel *)calloc(1, sizeof(*model)); if (!model) { PyErr_NoMemory(); return 0; }
+        model->version = 1; model->state_dimension = (int)state_width; model->action_dimension = 21; model->hidden_width = 16; model->type_count = (int)type_count; model->hand_type_count = (int)type_count;
+        model->state_weights = calloc(16 * (size_t)state_width, sizeof(double)); model->state_bias = calloc(16, sizeof(double)); model->base_weights = calloc(16 * 21u, sizeof(double)); model->v1_action_bias = calloc(16, sizeof(double));
+        model->actor_embedding = calloc(type_count * 16u, sizeof(double)); model->promotion_embedding = calloc((type_count + 1) * 16u, sizeof(double)); model->drop_embedding = calloc((type_count + 1) * 16u, sizeof(double)); model->actor_geometry_embedding = calloc(type_count * 3u * 16u, sizeof(double)); model->actor_capture_embedding = calloc(type_count * 16u, sizeof(double)); model->actor_promotion_embedding = calloc(type_count * 16u, sizeof(double)); model->actor_drop_embedding = calloc(type_count * 16u, sizeof(double));
+        model->beta_base = calloc(21, sizeof(double)); model->beta_actor = calloc(type_count, sizeof(double)); model->beta_promotion = calloc(type_count + 1, sizeof(double)); model->beta_drop = calloc(type_count + 1, sizeof(double)); model->beta_actor_geometry = calloc(type_count * 3u, sizeof(double)); model->beta_actor_capture = calloc(type_count, sizeof(double)); model->beta_actor_promotion = calloc(type_count, sizeof(double)); model->beta_actor_drop = calloc(type_count, sizeof(double));
+        if (!model->state_weights || !model->state_bias || !model->base_weights || !model->v1_action_bias || !model->actor_embedding || !model->promotion_embedding || !model->drop_embedding || !model->actor_geometry_embedding || !model->actor_capture_embedding || !model->actor_promotion_embedding || !model->actor_drop_embedding || !model->beta_base || !model->beta_actor || !model->beta_promotion || !model->beta_drop || !model->beta_actor_geometry || !model->beta_actor_capture || !model->beta_actor_promotion || !model->beta_actor_drop) { profile->policy = model; gc_semantic_profile_free(profile); PyErr_NoMemory(); return 0; }
+        for (int i = 0; i < type_count; i++) model->hand_type_indices[i] = i;
+        PyObject *state_bias_obj = PyDict_GetItemString(policy_values, "state_bias"); PyObject *state_weights_obj = PyDict_GetItemString(policy_values, "state_weights");
+        if (PySequence_Size(state_bias_obj) != 16 || PySequence_Size(state_weights_obj) != 16) { profile->policy = model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 state dimensions invalid"); return 0; }
+#define GC_COPY1(obj, dest, count) do { if (PySequence_Size((obj)) != (count)) { profile->policy=model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 vector dimensions invalid"); return 0; } for (Py_ssize_t _i=0; _i<(count); _i++) { PyObject *_v=PySequence_GetItem((obj),_i); (dest)[_i]=PyFloat_AsDouble(_v); Py_DECREF(_v); if (PyErr_Occurred() || !isfinite((dest)[_i])) { profile->policy=model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 parameter not finite"); return 0; } } } while(0)
+#define GC_COPY2(obj, dest, rows, cols) do { if (PySequence_Size((obj)) != (rows)) { profile->policy=model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 matrix dimensions invalid"); return 0; } for (Py_ssize_t _r=0; _r<(rows); _r++) { PyObject *_row=PySequence_GetItem((obj),_r); if (PySequence_Size(_row)!=(cols)) { Py_DECREF(_row); profile->policy=model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 matrix dimensions invalid"); return 0; } for (Py_ssize_t _c=0; _c<(cols); _c++) { PyObject *_v=PySequence_GetItem(_row,_c); (dest)[_r*(cols)+_c]=PyFloat_AsDouble(_v); Py_DECREF(_v); if (PyErr_Occurred() || !isfinite((dest)[_r*(cols)+_c])) { Py_DECREF(_row); profile->policy=model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 parameter not finite"); return 0; } } Py_DECREF(_row); } } while(0)
+        GC_COPY1(state_bias_obj, model->state_bias, 16); GC_COPY2(state_weights_obj, model->state_weights, 16, state_width); GC_COPY2(base_weights, model->base_weights, 16, 21); GC_COPY1(v1_action_bias, model->v1_action_bias, 16); GC_COPY2(actor_embedding, model->actor_embedding, type_count, 16); GC_COPY2(promotion_embedding, model->promotion_embedding, type_count+1, 16); GC_COPY2(drop_embedding, model->drop_embedding, type_count+1, 16); GC_COPY2(actor_capture_embedding, model->actor_capture_embedding, type_count, 16); GC_COPY2(actor_promotion_embedding, model->actor_promotion_embedding, type_count, 16); GC_COPY2(actor_drop_embedding, model->actor_drop_embedding, type_count, 16); GC_COPY1(beta_base, model->beta_base, 21); GC_COPY1(beta_actor, model->beta_actor, type_count); GC_COPY1(beta_promotion, model->beta_promotion, type_count+1); GC_COPY1(beta_drop, model->beta_drop, type_count+1); GC_COPY1(beta_actor_capture, model->beta_actor_capture, type_count); GC_COPY1(beta_actor_promotion, model->beta_actor_promotion, type_count); GC_COPY1(beta_actor_drop, model->beta_actor_drop, type_count);
+        if (PySequence_Size(actor_geometry_embedding) != type_count || PySequence_Size(beta_actor_geometry) != type_count) { profile->policy=model; gc_semantic_profile_free(profile); PyErr_SetString(PyExc_ValueError, "SemanticPolicyV1 geometry dimensions invalid"); return 0; }
+        for (int t=0;t<type_count;t++) { PyObject *table=PySequence_GetItem(actor_geometry_embedding,t); if(PySequence_Size(table)!=3){Py_DECREF(table);profile->policy=model;gc_semantic_profile_free(profile);PyErr_SetString(PyExc_ValueError,"SemanticPolicyV1 geometry dimensions invalid");return 0;} for(int g=0;g<3;g++){PyObject *row=PySequence_GetItem(table,g); if(PySequence_Size(row)!=16){Py_DECREF(row);Py_DECREF(table);profile->policy=model;gc_semantic_profile_free(profile);PyErr_SetString(PyExc_ValueError,"SemanticPolicyV1 geometry dimensions invalid");return 0;} for(int h=0;h<16;h++){PyObject *v=PySequence_GetItem(row,h);model->actor_geometry_embedding[((size_t)t*3u+g)*16u+h]=PyFloat_AsDouble(v);Py_DECREF(v);}Py_DECREF(row);}Py_DECREF(table); PyObject *b=PySequence_GetItem(beta_actor_geometry,t); if(PySequence_Size(b)!=3){Py_DECREF(b);profile->policy=model;gc_semantic_profile_free(profile);PyErr_SetString(PyExc_ValueError,"SemanticPolicyV1 geometry dimensions invalid");return 0;} for(int g=0;g<3;g++){PyObject*v=PySequence_GetItem(b,g);model->beta_actor_geometry[t*3+g]=PyFloat_AsDouble(v);Py_DECREF(v);}Py_DECREF(b);}
+#undef GC_COPY1
+#undef GC_COPY2
+        profile->policy=model; profile->policy_supplied=1; return 1;
+    }
     if (PyErr_Occurred() || state_width < 1 || state_width > 4096 ||
         action_width != 24 || hidden_width != 16) {
         PyErr_SetString(PyExc_ValueError,
@@ -5731,6 +5853,7 @@ static PyObject *gc_semantic_iterative_search(
     if (gc_semantic_set_u64(out, "policy_nodes", ctx.policy_nodes) != 0 ||
         gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
+        gc_semantic_set_u64(out, "policy_action_embeddings", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_elapsed_nanoseconds", ctx.policy_elapsed_nanoseconds) != 0 ||
         !policy_min_depth_obj ||
         PyDict_SetItemString(out, "policy_ordering", ctx.policy_move_ordering ? Py_True : Py_False) != 0 ||

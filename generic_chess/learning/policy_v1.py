@@ -122,7 +122,7 @@ class SemanticPolicyV1:
         names = ("state_weights", "state_bias", "base_weights", "action_bias", "actor_embedding", "promotion_embedding", "drop_embedding", "actor_geometry_embedding", "actor_capture_embedding", "actor_promotion_embedding", "actor_drop_embedding", "beta_base", "beta_actor", "beta_promotion", "beta_drop", "beta_actor_geometry", "beta_actor_capture", "beta_actor_promotion", "beta_actor_drop")
         payload = {"artifact_type": SEMANTIC_POLICY_V1_ARTIFACT_TYPE, "version": SEMANTIC_POLICY_V1_VERSION,
                    "ruleset_fingerprint": self.ruleset_fingerprint, "state_schema_id": self.state_schema_id,
-                   "action_schema_id": self.action_schema_id, "state_width": self.state_width,
+                   "action_schema_id": self.action_schema_id, "state_width": self.state_width, "action_width": ACTION_V1_BASE_WIDTH,
                    "hidden_width": self.hidden_width, "type_count": self.type_count,
                    "corpus_config": self.corpus_config, "training_config": self.training_config}
         for name, value in zip(names, arrays):
@@ -137,6 +137,9 @@ class SemanticPolicyV1:
         payload = self._payload_without_sha()
         payload["model_sha256"] = stable_sha256(payload)
         return payload
+
+    def native_payload(self):
+        return self.to_dict()
 
     @classmethod
     def from_dict(cls, payload):

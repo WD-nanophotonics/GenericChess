@@ -84,6 +84,7 @@ class SemanticIterativeSearchResult:
     policy_nodes: int = 0
     policy_state_inferences: int = 0
     policy_actions_scored: int = 0
+    policy_action_embeddings: int = 0
     policy_elapsed_seconds: float = 0.0
     policy_model_sha256: str | None = None
     policy_min_depth: int = 2
@@ -227,7 +228,7 @@ class SemanticSearchEngine:
                 raise ValueError("semantic policy ruleset fingerprint mismatch")
             if getattr(policy, "state_schema_id", None) != "semantic-state-v0":
                 raise ValueError("unsupported semantic policy state schema")
-            if getattr(policy, "action_schema_id", None) != "semantic-action-v0":
+            if getattr(policy, "action_schema_id", None) not in ("semantic-action-v0", "semantic-action-v1"):
                 raise ValueError("unsupported semantic policy action schema")
             self._policy_model = policy
         if checkpoint is not None:
@@ -523,6 +524,7 @@ class SemanticSearchEngine:
             policy_nodes=int(raw.get("policy_nodes", 0)),
             policy_state_inferences=int(raw.get("policy_state_inferences", 0)),
             policy_actions_scored=int(raw.get("policy_actions_scored", 0)),
+            policy_action_embeddings=int(raw.get("policy_action_embeddings", raw.get("policy_actions_scored", 0))),
             policy_elapsed_seconds=int(raw.get("policy_elapsed_nanoseconds", 0)) / 1e9,
             policy_model_sha256=self.policy_model_sha256,
             policy_min_depth=int(raw.get("policy_min_depth", 2)),
