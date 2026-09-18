@@ -13,16 +13,30 @@ from pathlib import Path
 
 import numpy as np
 
-from scripts.f122_reverse_benchmark_known_evaluator_system_identification import (
-    COUNTS,
-    FrozenBasis,
-    _action_ranking,
-    _collect_corpus,
-    _collect_fresh_roots,
-    _json_sha,
-    _ranking_summary,
-    _scalar_metrics,
-)
+try:
+    from scripts.f122_reverse_benchmark_known_evaluator_system_identification import (
+        COUNTS,
+        FrozenBasis,
+        _action_ranking,
+        _collect_corpus,
+        _collect_fresh_roots,
+        _json_sha,
+        _ranking_summary,
+        _scalar_metrics,
+    )
+except ModuleNotFoundError as error:
+    if error.name != "scripts":
+        raise
+    from f122_reverse_benchmark_known_evaluator_system_identification import (
+        COUNTS,
+        FrozenBasis,
+        _action_ranking,
+        _collect_corpus,
+        _collect_fresh_roots,
+        _json_sha,
+        _ranking_summary,
+        _scalar_metrics,
+    )
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
