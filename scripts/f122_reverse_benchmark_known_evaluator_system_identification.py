@@ -398,6 +398,7 @@ def _fit(rows: list[dict], basis: FrozenBasis, init_seed: int) -> dict:
     d = int(active.sum()) + 1
     rng = np.random.default_rng(init_seed)
     params = rng.normal(0.0, 0.01, size=d)
+    random_model = np.random.default_rng(init_seed + 1000).normal(0.0, 1.0, size=d)
     adam_m = np.zeros_like(params)
     adam_v = np.zeros_like(params)
     x_aug = np.column_stack([z_train[:, active], np.ones(len(z_train))])
@@ -431,8 +432,11 @@ def _fit(rows: list[dict], basis: FrozenBasis, init_seed: int) -> dict:
         "target_std": target_std,
         "adam_model": params,
         "closed_model": closed,
+        "random_model": random_model,
         "adam_predict": lambda z: predict(z, params),
         "closed_predict": lambda z: predict(z, closed),
+        "random_predict": lambda z: predict(z, random_model),
+        "random_seed": init_seed + 1000,
         "constant_feature_names": [name for name, keep in zip(basis.names, active) if not keep],
         "normalization": {"train_feature_mean": mean.tolist(), "train_feature_scale": scale_safe.tolist(), "target_mean": target_mean, "target_std": target_std},
     }
@@ -451,7 +455,7 @@ def _rankdata(values: np.ndarray) -> np.ndarray:
     return result
 
 
-def _scalar_metrics(y: np.ndarray, pred: np.ndarray, train_std: float) -> dict:
+def _scalar_metrics(y: np.ndarray, pred: np.ndarray, normalization_std: float) -> dict:
     err = pred - y
     rmse = float(np.sqrt(np.mean(err * err)))
     centered_y = y - y.mean()
@@ -459,12 +463,16 @@ def _scalar_metrics(y: np.ndarray, pred: np.ndarray, train_std: float) -> dict:
     denom = float(np.sqrt(np.sum(centered_y ** 2) * np.sum(centered_p ** 2)))
     pearson = float(np.sum(centered_y * centered_p) / denom) if denom else 0.0
     r2 = float(1.0 - np.sum(err * err) / np.sum(centered_y ** 2)) if np.sum(centered_y ** 2) else 0.0
+    rank_y = _rankdata(y)
+    rank_p = _rankdata(pred)
+    rank_denom = float(np.sqrt(np.sum((rank_y - rank_y.mean()) ** 2) * np.sum((rank_p - rank_p.mean()) ** 2)))
+    spearman = float(np.sum((rank_y - rank_y.mean()) * (rank_p - rank_p.mean())) / rank_denom) if rank_denom else 0.0
     return {
         "rmse_oracle_units": rmse,
-        "normalized_rmse": rmse / train_std,
+        "normalized_rmse": rmse / normalization_std,
         "r2": r2,
         "pearson": pearson,
-        "spearman": float(np.corrcoef(_rankdata(y), _rankdata(pred))[0, 1]),
+        "spearman": spearman,
         "sign_agreement_nonzero": float(np.mean(np.sign(y[y != 0]) == np.sign(pred[y != 0]))) if np.any(y != 0) else 1.0,
         "max_abs_error": float(np.max(np.abs(err))),
     }
@@ -593,14 +601,10 @@ def _search_probe(roots: list[GameState], basis: FrozenBasis, fit: dict, which: 
     records = []
     for state in roots:
         oracle_result = BenchmarkNegamax(basis.compiled, basis, lambda s: basis.oracle(basis.vector(s))).search(state)
-        if which == "random":
-            rng = np.random.default_rng(1220991 + len(records))
-            random_weights = rng.normal(0.0, 1.0, len(basis.names))
-            evaluator = lambda s, rw=random_weights: float(basis.vector(s) @ rw)
-        elif which == "oracle":
+        if which == "oracle":
             evaluator = lambda s: basis.oracle(basis.vector(s))
         else:
-            evaluator = lambda s: _evaluate_model(s, basis, fit, "adam")
+            evaluator = lambda s: _evaluate_model(s, basis, fit, which)
         learned_result = BenchmarkNegamax(basis.compiled, basis, evaluator).search(state)
         records.append({"oracle": oracle_result, "candidate": learned_result})
     same_action = sum(r["oracle"]["action"] == r["candidate"]["action"] for r in records)
@@ -618,10 +622,29 @@ def _search_probe(roots: list[GameState], basis: FrozenBasis, fit: dict, which: 
     }
 
 
-def _summarize_model(rows: list[dict], fit: dict, which: str) -> dict:
-    x = fit["holdout_features"]
-    y = fit["holdout_oracle"]
-    return _scalar_metrics(y, fit[f"{which}_predict"]((x - fit["mean"]) / fit["scale"]), fit["target_std"])
+def _summarize_model(fit: dict, which: str) -> dict:
+    normalizer = float(np.std(fit["holdout_oracle"])) or 1.0
+    predict = fit[f"{which}_predict"]
+    return {
+        "normalization_reference": "holdout_oracle_std",
+        "normalization_reference_std": normalizer,
+        "train": _scalar_metrics(fit["train_oracle"], predict((fit["train_features"] - fit["mean"]) / fit["scale"]), normalizer),
+        "dev": _scalar_metrics(fit["dev_oracle"], predict((fit["dev_features"] - fit["mean"]) / fit["scale"]), normalizer),
+        "holdout": _scalar_metrics(fit["holdout_oracle"], predict((fit["holdout_features"] - fit["mean"]) / fit["scale"]), normalizer),
+    }
+
+
+def _ranking_summary(ranking: dict, holdout_std: float) -> dict:
+    return {
+        "top1_agreement": ranking["top1_agreement"],
+        "pairwise_ordering_agreement": ranking["pairwise_ordering_agreement"],
+        "mean_regret_normalized": float(np.mean(ranking["regrets"]) / holdout_std),
+        "median_regret_normalized": float(np.median(ranking["regrets"]) / holdout_std),
+        "p95_regret_normalized": float(np.percentile(ranking["regrets"], 95) / holdout_std),
+        "mean_oracle_top2_gap_normalized": float(np.mean(ranking["oracle_top2_gaps"]) / holdout_std),
+        "regret_raw": ranking["regrets"],
+        "oracle_top2_gaps_raw": ranking["oracle_top2_gaps"],
+    }
 
 
 def run() -> dict:
@@ -636,29 +659,20 @@ def run() -> dict:
         rows = _collect_corpus(family, compiled, basis, corpus_seed, set())
         fit = _fit(rows, basis, init_seed)
         roots = _collect_fresh_roots(family, compiled, basis, root_seed, {row["identity"] for row in rows}, 256)
-        scalar = {model: _summarize_model(rows, fit, model) for model in ("adam", "closed")}
-        random_scalar = _scalar_metrics(fit["holdout_oracle"], np.full(len(fit["holdout_oracle"]), float(np.mean(fit["train_oracle"]))), fit["target_std"])
-        ranking = _action_ranking(roots, basis, fit, "adam")
-        holdout_std = float(np.std(fit["holdout_oracle"]))
-        ranking_summary = {
-            "top1_agreement": ranking["top1_agreement"],
-            "pairwise_ordering_agreement": ranking["pairwise_ordering_agreement"],
-            "mean_regret_normalized": float(np.mean(ranking["regrets"]) / holdout_std),
-            "median_regret_normalized": float(np.median(ranking["regrets"]) / holdout_std),
-            "p95_regret_normalized": float(np.percentile(ranking["regrets"], 95) / holdout_std),
-            "mean_oracle_top2_gap_normalized": float(np.mean(ranking["oracle_top2_gaps"]) / holdout_std),
-            "regret_raw": ranking["regrets"],
-            "oracle_top2_gaps_raw": ranking["oracle_top2_gaps"],
-        }
+        scalar = {model: _summarize_model(fit, model) for model in ("random", "adam", "closed")}
+        ranking = {model: _ranking_summary(_action_ranking(roots, basis, fit, model), float(np.std(fit["holdout_oracle"]))) for model in ("random", "adam")}
+        holdout_std = float(np.std(fit["holdout_oracle"])) or 1.0
         search = {"random": _search_probe(roots[:64], basis, fit, "random"), "oracle": _search_probe(roots[:64], basis, fit, "oracle"), "adam": _search_probe(roots[:64], basis, fit, "adam")}
-        adam_scalar_pass = scalar["adam"]["normalized_rmse"] <= 0.05 and scalar["adam"]["r2"] >= 0.99 and scalar["adam"]["pearson"] >= 0.995
-        closed_scalar_pass = scalar["closed"]["normalized_rmse"] <= 0.05 and scalar["closed"]["r2"] >= 0.99 and scalar["closed"]["pearson"] >= 0.995
-        adam_action_pass = ranking_summary["top1_agreement"] >= 0.90 and ranking_summary["pairwise_ordering_agreement"] >= 0.95 and ranking_summary["mean_regret_normalized"] <= 0.05
+        adam_holdout = scalar["adam"]["holdout"]
+        closed_holdout = scalar["closed"]["holdout"]
+        adam_scalar_pass = adam_holdout["normalized_rmse"] <= 0.05 and adam_holdout["r2"] >= 0.99 and adam_holdout["pearson"] >= 0.995
+        closed_scalar_pass = closed_holdout["normalized_rmse"] <= 0.05 and closed_holdout["r2"] >= 0.99 and closed_holdout["pearson"] >= 0.995
+        adam_action_pass = ranking["adam"]["top1_agreement"] >= 0.90 and ranking["adam"]["pairwise_ordering_agreement"] >= 0.95 and ranking["adam"]["mean_regret_normalized"] <= 0.05
         all_results["rulesets"][family] = {
             "basis": {"feature_count": len(basis.names), "feature_names": basis.names, "oracle_weights": basis.weights, "oracle_weight_sha256": basis.oracle_weight_sha256},
             "corpus": {"counts": COUNTS, "rows": len(rows), "corpus_seed": corpus_seed, "trajectory_lengths": [8, 24, 64, 128, 192, 256], "identity_sha256": _json_sha([row["identity"] for row in rows])},
-            "fit": {"init_seed": init_seed, "optimizer": {"name": "full_batch_adam", "steps": 2000, "lr": 0.01, "l2": 1e-6}, "constant_feature_names": fit["constant_feature_names"], "scalar_metrics": scalar, "random_baseline_scalar": random_scalar, "adam_scalar_gate_pass": adam_scalar_pass, "closed_form_scalar_gate_pass": closed_scalar_pass},
-            "action_ranking": {"root_seed": root_seed, "roots": 256, "model": "adam", "gates_pass": adam_action_pass, **ranking_summary},
+            "fit": {"init_seed": init_seed, "optimizer": {"name": "full_batch_adam", "steps": 2000, "lr": 0.01, "l2": 1e-6}, "random_seed": fit["random_seed"], "optimizer_scope": "random baseline is an untrained normalized linear model; Adam is the only trained model", "constant_feature_names": fit["constant_feature_names"], "scalar_metrics": scalar, "adam_scalar_gate_pass": adam_scalar_pass, "closed_form_scalar_gate_pass": closed_scalar_pass},
+            "action_ranking": {"root_seed": root_seed, "roots": 256, "results": ranking, "adam_gate_pass": adam_action_pass},
             "search_recovery": {"budget_nodes": SEARCH_NODES, "max_depth": SEARCH_DEPTH, "same_engine": True, "results": search},
             "gates": {"adam_scalar": adam_scalar_pass, "adam_action": adam_action_pass, "closed_form_scalar": closed_scalar_pass},
         }

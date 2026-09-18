@@ -48,6 +48,8 @@ def test_f122_fit_drops_constant_train_features_and_keeps_closed_form_diagnostic
     assert basis.names[0] in fit["constant_feature_names"]
     assert fit["adam_model"].shape == fit["closed_model"].shape
     assert fit["adam_model"].shape[0] == len(basis.names)  # only the intercept is added
+    assert fit["random_model"].shape == fit["adam_model"].shape
+    assert fit["random_seed"] == 1221111
     assert np.isfinite(fit["closed_predict"]((raw[-750:] - fit["mean"]) / fit["scale"])).all()
 
 
