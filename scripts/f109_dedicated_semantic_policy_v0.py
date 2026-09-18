@@ -31,6 +31,7 @@ from generic_chess.learning.policy import (
 )
 from generic_chess.native.adapter import pack_semantic_search_position
 from generic_chess.native.compiler import compile_native_semantic_rules
+from generic_chess.native.mirror import pack_semantic_action
 from generic_chess.native.semantic import dynamic_features as native_dynamic_features
 from generic_chess.native.semantic_engine import SemanticSearchEngine
 from generic_chess.rules.compiler import compile_semantic_ruleset
@@ -108,6 +109,10 @@ def _root_example(compiled, native_rules, checkpoint, history) -> tuple[Semantic
     if not legal:
         raise RuntimeError("eligible policy root has no legal actions")
     packed = pack_semantic_search_position(compiled, native_rules, root)
+    legal = tuple(sorted(
+        legal,
+        key=lambda action: int(pack_semantic_action(native_rules, root.state.position, action)),
+    ))
     dynamic = native_dynamic_features(native_rules, packed)
     state = semantic_state_feature_vector(root.state.position, compiled, dynamic)
     action_matrix = [semantic_action_features(compiled, root.state.position, action) for action in legal]
@@ -191,6 +196,51 @@ def _performance_rows(compiled, native_rules, checkpoint, model, rows):
     return result_rows
 
 
+def _diagnostics(model, rows):
+    diagnostics = {}
+    for split in ("train", "dev", "holdout"):
+        selected = [item for item in rows if item[0] == split]
+        cross_entropy = []
+        kl = []
+        top_agreement = []
+        pairwise = []
+        regrets = []
+        target_entropy = []
+        policy_entropy = []
+        for _split, example, row in selected:
+            logits = model.logits(example.state, example.actions)
+            shifted = logits - np.max(logits)
+            probs = np.exp(shifted)
+            probs /= np.sum(probs)
+            target = np.asarray(example.target, dtype=np.float64)
+            q = np.asarray(row["q_values"], dtype=np.float64)
+            cross_entropy.append(float(-np.sum(target * np.log(np.maximum(probs, 1e-300)))))
+            kl.append(float(np.sum(target * np.log(np.maximum(target, 1e-300) / np.maximum(probs, 1e-300)))))
+            top_agreement.append(float(int(np.argmax(probs) == np.argmax(q))))
+            pair_total = pair_correct = 0
+            for left in range(len(q)):
+                for right in range(left + 1, len(q)):
+                    if q[left] == q[right]:
+                        continue
+                    pair_total += 1
+                    pair_correct += int((q[left] - q[right]) * (logits[left] - logits[right]) > 0)
+            pairwise.append(pair_correct / pair_total if pair_total else 1.0)
+            regrets.append(float(np.max(q) - q[int(np.argmax(probs))]))
+            target_entropy.append(float(-np.sum(target * np.log(np.maximum(target, 1e-300)))))
+            policy_entropy.append(float(-np.sum(probs * np.log(np.maximum(probs, 1e-300)))))
+        diagnostics[split] = {
+            "roots": len(selected),
+            "cross_entropy": float(np.mean(cross_entropy)) if cross_entropy else None,
+            "kl_target_policy": float(np.mean(kl)) if kl else None,
+            "top1_q1k_agreement": float(np.mean(top_agreement)) if top_agreement else None,
+            "complete_pairwise_ranking_accuracy": float(np.mean(pairwise)) if pairwise else None,
+            "q1k_regret_policy_top": float(np.mean(regrets)) if regrets else None,
+            "target_entropy": float(np.mean(target_entropy)) if target_entropy else None,
+            "policy_entropy": float(np.mean(policy_entropy)) if policy_entropy else None,
+        }
+    return diagnostics
+
+
 def run_ruleset(name: str, builder, checkpoint_path: Path, output_dir: Path) -> dict[str, Any]:
     compiled = compile_semantic_ruleset(builder())
     native_rules = compile_native_semantic_rules(compiled)
@@ -216,6 +266,7 @@ def run_ruleset(name: str, builder, checkpoint_path: Path, output_dir: Path) -> 
         for _split, example, _row in rows[:24]
     )
     performance = _performance_rows(compiled, native_rules, checkpoint, model, rows)
+    diagnostics = _diagnostics(model, rows)
     arena_config = ArenaConfig(
         pairs=2, nodes_per_move=1_000_000, max_depth=12, tt_megabytes=8,
         opening_seed=ARENA_SEEDS[name], opening_count=2, min_plies=2, max_plies=6,
@@ -235,6 +286,7 @@ def run_ruleset(name: str, builder, checkpoint_path: Path, output_dir: Path) -> 
         "corpus_counts": counts,
         "rows": [row for _split, _example, row in rows],
         "reload_identity": reload_identity,
+        "diagnostics": diagnostics,
         "performance": performance,
         "arena_config": asdict(arena_config),
         "arena": {
@@ -259,12 +311,18 @@ def main() -> None:
     parser.add_argument("--chess-checkpoint", type=Path, required=True)
     parser.add_argument("--shogi-checkpoint", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--ruleset", choices=("western_chess", "standard_shogi"), default=None)
     args = parser.parse_args()
-    results = {
-        "western_chess": run_ruleset("western_chess", build_western_chess_ruleset, args.chess_checkpoint, args.output_dir),
-        "standard_shogi": run_ruleset("standard_shogi", build_standard_shogi_ruleset, args.shogi_checkpoint, args.output_dir),
+    builders = {
+        "western_chess": (build_western_chess_ruleset, args.chess_checkpoint),
+        "standard_shogi": (build_standard_shogi_ruleset, args.shogi_checkpoint),
     }
-    overall = "SEMANTIC_POLICY_V0_SURVIVES" if all(
+    names = (args.ruleset,) if args.ruleset else tuple(builders)
+    results = {
+        name: run_ruleset(name, builders[name][0], builders[name][1], args.output_dir)
+        for name in names
+    }
+    overall = "SEMANTIC_POLICY_V0_SURVIVES" if results and all(
         result["classification"] == "SEMANTIC_POLICY_V0_SURVIVES" for result in results.values()
     ) else "SEMANTIC_POLICY_V0_NOT_UNIFORMLY_SURVIVING"
     (args.output_dir / "summary.json").write_text(
