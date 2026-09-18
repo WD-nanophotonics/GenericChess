@@ -1,7 +1,13 @@
 import json
 from pathlib import Path
 
-from generic_chess.learning.gumbel_mcts import SemanticGumbelMCTSV0, _allocation_schedule
+from generic_chess.learning.gumbel_mcts import (
+    SemanticGumbelMCTSV0,
+    _Edge,
+    _Node,
+    _allocation_schedule,
+    _rank_candidates,
+)
 from generic_chess.learning.policy_v1 import SemanticPolicyV1
 from generic_chess.native.adapter import pack_semantic_search_position
 from generic_chess.native.compiler import compile_native_semantic_rules
@@ -38,6 +44,10 @@ def test_f115_gumbel_smoke_has_exact_sixteen_simulation_budget():
     assert sum(result.root_visits) == 16
     assert len(result.root_actions) == len(result.root_gumbels)
     assert len(result.root_rounds) == 3
+    assert len(result.improved_policy) == len(result.root_actions)
+    assert result.target_policy == result.improved_policy
+    assert all(value > 0.0 for value in result.improved_policy)
+    assert abs(sum(result.improved_policy) - 1.0) < 1e-12
     assert abs(sum(result.target_policy) - 1.0) < 1e-12
 
 
@@ -79,6 +89,17 @@ def test_f116_all_initial_candidate_counts_have_exact_schedule():
         assert schedule[-1][0] == 2 or initial_count == 2
         assert all(all(allocation >= 1 for allocation in row[4]) for row in schedule)
         assert all(row[2] == 1 for row in schedule[-1:])
+
+
+def test_f117_halving_ranks_gumbel_logit_plus_transformed_q():
+    root = _Node(None, 0)
+    root.edges = {
+        10: _Edge(10, 0.5, gumbel_log_prior=0.0, visits=4, total_value=4.0),
+        20: _Edge(20, 0.2, gumbel_log_prior=1.0, visits=4, total_value=0.0),
+    }
+    # Action 10 has transformed Q=4.0 while action 20 has transformed Q=0;
+    # the declared improvement score therefore keeps action 10.
+    assert _rank_candidates(root, [20, 10]) == [10, 20]
 
 
 def test_f115_native_policy_logits_order_is_stable():

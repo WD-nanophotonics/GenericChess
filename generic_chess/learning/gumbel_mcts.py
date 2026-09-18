@@ -59,7 +59,13 @@ class GumbelSearchResult:
     root_gumbels: tuple[float, ...]
     root_visits: tuple[int, ...]
     root_q_values: tuple[float, ...]
+    root_completed_q: tuple[float, ...]
+    root_q_transform: tuple[float, ...]
+    root_improvement_logits: tuple[float, ...]
+    improved_policy: tuple[float, ...]
+    visit_policy: tuple[float, ...]
     target_policy: tuple[float, ...]
+    root_raw_value: float
     root_rounds: tuple[dict, ...]
     simulations: int
     expanded_nodes: int
@@ -261,13 +267,22 @@ class SemanticGumbelMCTSV0:
             winning = [item for item in root_declarations if item.outcome == "WIN"]
             if winning:
                 return GumbelSearchResult(
-                    None, winning[0].declaration_id, (), (), (), (), (), (), (), 0, 0,
-                    0, 0, self._declaration_encounters,
-                    time.perf_counter() - started, root_key,
+                    action=None, declaration_id=winning[0].declaration_id,
+                    root_actions=(), root_logits=(), root_priors=(),
+                    root_gumbels=(), root_visits=(), root_q_values=(),
+                    root_completed_q=(), root_q_transform=(),
+                    root_improvement_logits=(), improved_policy=(),
+                    visit_policy=(), target_policy=(), root_raw_value=1.0,
+                    root_rounds=(), simulations=0, expanded_nodes=0,
+                    leaf_evaluations=0, maximum_tree_depth=0,
+                    declaration_encounters=self._declaration_encounters,
+                    wall_seconds=time.perf_counter() - started,
+                    root_position_key=root_key,
                 )
             raise UnsupportedNeutralDeclaration(
                 UnsupportedNeutralDeclaration.code
             )
+        root_raw_value = self._value(position, root.side_to_move)
         self._expand(root)
         # Preserve the Native policy action order in the artifact, while every
         # tie-break and target index remains tied to the exact packed identity.
@@ -281,11 +296,11 @@ class SemanticGumbelMCTSV0:
         priors = tuple(root.edges[action].prior for action in ordered_actions)
         rng = random.Random(int(search_seed))
         gumbels = []
-        for action in ordered_actions:
+        for action, logit in zip(ordered_actions, logits):
             gumbel = _gumbel(rng)
             gumbels.append(gumbel)
             edge = root.edges[action]
-            edge.gumbel_log_prior = gumbel + math.log(max(edge.prior, 1e-300))
+            edge.gumbel_log_prior = gumbel + float(logit)
         ranked = sorted(
             ordered_actions,
             key=lambda action: (-root.edges[action].gumbel_log_prior, action),
@@ -302,6 +317,12 @@ class SemanticGumbelMCTSV0:
             before_actions = tuple(candidates)
             before_visits = tuple(root.edges[action].visits for action in candidates)
             before_q = tuple(root.edges[action].q for action in candidates)
+            before_nmax = max(before_visits, default=0)
+            before_q_transform = tuple(_q_transform(q, before_nmax) for q in before_q)
+            before_scores = tuple(
+                root.edges[action].gumbel_log_prior + transformed
+                for action, transformed in zip(candidates, before_q_transform)
+            )
             for action, budget in zip(candidates, allocations):
                 for _ in range(budget):
                     root.visits += 1
@@ -323,8 +344,14 @@ class SemanticGumbelMCTSV0:
                 "allocations": tuple(allocations),
                 "visits_before": before_visits,
                 "q_values_before": before_q,
+                "nmax_before": before_nmax,
+                "q_transform_before": before_q_transform,
+                "improvement_scores_before": before_scores,
                 "visits_after": tuple(root.edges[action].visits for action in survivors),
                 "q_values_after": tuple(root.edges[action].q for action in survivors),
+                "nmax_after": max((root.edges[action].visits for action in survivors), default=0),
+                "q_transform_after": tuple(_q_transform(root.edges[action].q, max((root.edges[item].visits for item in survivors), default=0)) for action in survivors),
+                "improvement_scores_after": tuple(_root_improvement_score(root, action) for action in survivors),
                 "survivors": survivors,
                 "simulations_consumed": consumed,
                 "remaining_after": remaining,
@@ -353,19 +380,49 @@ class SemanticGumbelMCTSV0:
                 "q_values_before": (),
                 "visits_after": tuple(root.edges[action].visits for action in candidates),
                 "q_values_after": tuple(root.edges[action].q for action in candidates),
+                "nmax_after": max((root.edges[action].visits for action in candidates), default=0),
+                "q_transform_after": tuple(_q_transform(root.edges[action].q, max((root.edges[item].visits for item in candidates), default=0)) for action in candidates),
+                "improvement_scores_after": tuple(_root_improvement_score(root, action) for action in candidates),
                 "survivors": tuple(candidates),
                 "simulations_consumed": remaining,
                 "remaining_after": 0,
             })
         visits = tuple(root.edges[action].visits for action in ordered_actions)
         q_values = tuple(root.edges[action].q for action in ordered_actions)
-        target = tuple(float(value) / self.simulations for value in visits)
+        visit_policy = tuple(float(value) / self.simulations for value in visits)
+        nmax_final = max(visits, default=0)
+        completed_q = tuple(
+            root.edges[action].q if root.edges[action].visits else root_raw_value
+            for action in ordered_actions
+        )
+        q_transform = tuple(_q_transform(value, nmax_final) for value in completed_q)
+        improvement_logits = tuple(
+            float(logit) + transformed
+            for logit, transformed in zip(logits, q_transform)
+        )
+        improved_policy = _softmax(improvement_logits)
+        if (
+            not all(math.isfinite(value) and -1.0 - 1e-9 <= value <= 1.0 + 1e-9 for value in completed_q)
+            or not all(value > 0.0 for value in improved_policy)
+            or abs(sum(improved_policy) - 1.0) > 1e-12
+        ):
+            raise RuntimeError("GUMBEL_COMPLETED_Q_POLICY_TARGET_INVALID")
         selected = candidates[0] if candidates else None
         return GumbelSearchResult(
-            selected, None, ordered_actions, logits, priors, tuple(gumbels), visits, q_values,
-            target, tuple(rounds), sum(visits), self._expanded_nodes, self._leaf_evaluations,
-            self._maximum_depth, self._declaration_encounters,
-            time.perf_counter() - started, root_key,
+            action=selected, declaration_id=None, root_actions=ordered_actions,
+            root_logits=logits, root_priors=priors, root_gumbels=tuple(gumbels),
+            root_visits=visits, root_q_values=q_values,
+            root_completed_q=completed_q, root_q_transform=q_transform,
+            root_improvement_logits=improvement_logits,
+            improved_policy=improved_policy, visit_policy=visit_policy,
+            target_policy=improved_policy, root_raw_value=root_raw_value,
+            root_rounds=tuple(rounds), simulations=sum(visits),
+            expanded_nodes=self._expanded_nodes,
+            leaf_evaluations=self._leaf_evaluations,
+            maximum_tree_depth=self._maximum_depth,
+            declaration_encounters=self._declaration_encounters,
+            wall_seconds=time.perf_counter() - started,
+            root_position_key=root_key,
         )
 
 
@@ -383,13 +440,21 @@ def _gumbel(rng: random.Random) -> float:
     return -math.log(-math.log(value))
 
 
+def _q_transform(q: float, nmax: int) -> float:
+    return (50.0 + float(nmax)) * 0.1 * float(q)
+
+
+def _root_improvement_score(root: _Node, action: int) -> float:
+    nmax = max((edge.visits for edge in root.edges.values()), default=0)
+    edge = root.edges[action]
+    return edge.gumbel_log_prior + _q_transform(edge.q, nmax)
+
+
 def _rank_candidates(root: _Node, candidates):
     return sorted(
         candidates,
         key=lambda action: (
-            -root.edges[action].q,
-            -root.edges[action].visits,
-            -root.edges[action].gumbel_log_prior,
+            -_root_improvement_score(root, action),
             action,
         ),
     )
