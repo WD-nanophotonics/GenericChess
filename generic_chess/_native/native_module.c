@@ -4664,7 +4664,7 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
     int artifact_is_v1 = artifact && PyUnicode_Check(artifact) &&
         strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") == 0;
     if (!artifact || !version || !fingerprint || !state_width_obj ||
-        !action_width_obj || !hidden_width_obj || !state_weights ||
+        (!artifact_is_v1 && !action_width_obj) || !hidden_width_obj || !state_weights ||
         !state_bias || (!artifact_is_v1 && (!action_embedding || !action_bias || !hand_indices))) {
         PyErr_SetString(PyExc_ValueError, "semantic policy profile is incomplete");
         return 0;
@@ -4680,7 +4680,7 @@ static int gc_semantic_parse_policy(PyObject *policy_values,
         return 0;
     }
     long state_width = PyLong_AsLong(state_width_obj);
-    long action_width = PyLong_AsLong(action_width_obj);
+    long action_width = (artifact_is_v1 && !action_width_obj) ? 21 : PyLong_AsLong(action_width_obj);
     long hidden_width = PyLong_AsLong(hidden_width_obj);
     int is_v1 = strcmp(PyUnicode_AsUTF8(artifact), "SemanticPolicyV1") == 0;
     if (is_v1) {
