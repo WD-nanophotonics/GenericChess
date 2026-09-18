@@ -14,8 +14,8 @@ authorized by this result.
 ## Frozen inputs
 
 - Work order: F119 Arena4 confirmation.
-- Frozen checkpoint: `f0ca40ce93b54d15ca5d72c9870a9d77977b82ec4f7380c294c08c6e1c6a82ec4`.
-- Parent policy SHA-256: `2357472db2d8b131fce2b78b51b1bb7cdacfb84a34b6dcc4ab8ee2c2d7cc3b955`.
+- Frozen checkpoint: `f0ca40ce5aaad97fb6437cb3a8a22d97791f9fe5939f48089becb27dbff82ec4`.
+- Parent policy SHA-256: `2357472be320e9df909136a31a5223ec24e79f998467bb0ef3114b7e3433b955`.
 - F118 child policy SHA-256: `45281f8ccccf557fdbe2edd74fc0822dedbff209c2178125dafab3c883aefdb3`.
 - Arena opening seed: `1190801`, selection offset `0`.
 - Arena search seed contract: `1190901 + 10000 * game + ply`; the contract
