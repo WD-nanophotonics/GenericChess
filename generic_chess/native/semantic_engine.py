@@ -96,6 +96,10 @@ class SemanticIterativeSearchResult:
     policy_state_inferences_by_ply: tuple[int, ...] = ()
     policy_actions_scored_by_ply: tuple[int, ...] = ()
     policy_elapsed_nanoseconds_by_ply: tuple[int, ...] = ()
+    training_trace: tuple[dict, ...] = ()
+    training_trace_enabled: bool = False
+    training_trace_count: int = 0
+    training_trace_raw_count: int = 0
 
 
 def _profile_tuple(native_rules, values):
@@ -387,6 +391,7 @@ class SemanticSearchEngine:
         *,
         root_order_hint: Action | None = None,
         root_window_pruning: bool = True,
+        trace_enabled: bool = False,
     ) -> SemanticIterativeSearchResult:
         if root_order_hint is not None and (
             self._ordering_checkpoint_id is not None or self._policy_model is not None
@@ -410,6 +415,8 @@ class SemanticSearchEngine:
             raise ValueError("SemanticSearchEngine does not implement qsearch")
         if not isinstance(root_window_pruning, bool):
             raise TypeError("root_window_pruning must be a bool")
+        if not isinstance(trace_enabled, bool):
+            raise TypeError("trace_enabled must be a bool")
         if session.result.status.value != "ongoing":
             return SemanticIterativeSearchResult(
                 0, None, None, (), (), 0, 0, 0, 0, 0.0,
@@ -437,6 +444,7 @@ class SemanticSearchEngine:
                 flag,
                 packed_root_hint,
                 root_window_pruning,
+                trace_enabled,
             ))
         finally:
             if unregister is not None:
@@ -552,6 +560,10 @@ class SemanticSearchEngine:
             policy_state_inferences_by_ply=tuple(int(value) for value in raw.get("policy_state_inferences_by_ply", ())),
             policy_actions_scored_by_ply=tuple(int(value) for value in raw.get("policy_actions_scored_by_ply", ())),
             policy_elapsed_nanoseconds_by_ply=tuple(int(value) for value in raw.get("policy_elapsed_nanoseconds_by_ply", ())),
+            training_trace=tuple(dict(row) for row in raw.get("training_trace", ())),
+            training_trace_enabled=bool(raw.get("training_trace_enabled", False)),
+            training_trace_count=int(raw.get("training_trace_count", 0)),
+            training_trace_raw_count=int(raw.get("training_trace_raw_count", 0)),
         )
 
 

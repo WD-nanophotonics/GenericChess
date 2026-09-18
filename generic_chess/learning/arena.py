@@ -694,6 +694,7 @@ def _play_pair(
     root_order_hint_provider=None,
     policy=None,
     policy_deferred_legality=False,
+    execution_caps: ArenaExecutionCaps | None = None,
 ) -> ArenaPairResult:
     opening = openings.openings[pair_index]
     game_child_owner0 = _play_one_game(
@@ -703,6 +704,7 @@ def _play_pair(
         root_order_hint_provider=root_order_hint_provider,
         policy=policy,
         policy_deferred_legality=policy_deferred_legality,
+        execution_caps=execution_caps,
     )
     game_child_owner1 = _play_one_game(
         compiled, native_rules, parent, child,
@@ -711,6 +713,7 @@ def _play_pair(
         root_order_hint_provider=root_order_hint_provider,
         policy=policy,
         policy_deferred_legality=policy_deferred_legality,
+        execution_caps=execution_caps,
     )
     return ArenaPairResult(
         pair_index=pair_index,
@@ -931,6 +934,7 @@ def run_arena(
     capture_search_metrics: bool = False,
     policy=None,
     policy_deferred_legality=False,
+    execution_caps: ArenaExecutionCaps | None = None,
 ) -> ArenaSummary:
     """Paired matches over a fixed evaluator-neutral opening corpus."""
     openings = _prepare_arena(compiled, parent, child, config, openings)
@@ -941,10 +945,12 @@ def run_arena(
             return _play_pair(
                 *args, capture_search_metrics=True, policy=policy,
                 policy_deferred_legality=policy_deferred_legality,
+                execution_caps=execution_caps,
             )
         return _play_pair(
             *args, policy=policy,
             policy_deferred_legality=policy_deferred_legality,
+            execution_caps=execution_caps,
         )
 
     if config.workers == 1:
