@@ -11,7 +11,15 @@ from dataclasses import asdict
 import json
 from pathlib import Path
 import random
+import sys
 from typing import Any
+
+# Direct ``python scripts/<runner>.py`` execution puts ``scripts`` ahead of
+# the repository root on ``sys.path``.  Anchor imports to this checkout so the
+# runner cannot accidentally resolve an older installed ``generic_chess``.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 import numpy as np
 
