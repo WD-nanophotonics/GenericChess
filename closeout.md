@@ -1,29 +1,30 @@
-F133 closeout: Standard Shogi resource-transition action semantics
+F134 closeout: Standard Shogi oracle-family substitution
 
-- Work order: GENERICCHESS_F133_SHOGI_RESOURCE_TRANSITION_ACTION_SEMANTICS
-- Existing Courier request: GENERICCHESS-20260919-151341-0bdf130d
-- Baseline SHA: a561777bb9d1b2b4a071a8449e1928fbe9f24cb5
-- Heavy run: F133 Heavy, completed in 2671.86808300018 seconds
+- Work order: GENERICCHESS_F134_SHOGI_ORACLE_FAMILY_SUBSTITUTION
+- Existing Courier request: GENERICCHESS-20260919-183930-c09959f1
+- Baseline SHA: 8d0fcb06d0ee80476c936920f835a40943400e25
+- Heavy run: F134 Heavy, completed in 2685.455500125885 seconds
 - Frozen retained roots: train 1995, dev 252, holdout 254
 - F131 frozen reproduction: pass; top-1 0.3937007874015748; pairwise 0.6961452971418344; normalized regret 0.14638599860007367; max-pooled T1 RMSE 2152.230646928496
-- F132 exact decomposition: pass for 108502 actions; maximum absolute recomposition error 5.8264504332328215e-12
-- Resource classes: 7 Standard Shogi structural classes; opaque type renaming preserved the signature sequence; Western Chess width was zero; mixed capture/drop/promotion controls passed
-- Resource identification control: holdout RMSE 0.000278652224088315; nRMSE 1.0209750162672752e-06; R² 0.9999999999989576; Pearson 1.0000000000000002; Spearman 1.0; numerical gate pass
-- HAND_EXACT_CONTROL: top-1 0.39763779527559057; pairwise 0.6960334069523595; normalized regret 0.13581891875438187; max-pooled T1 RMSE 2113.9505735718635
-- F133_RESOURCE_ACTION_V1: width 49; top-1 0.37401574803149606; pairwise 0.6988214277024736; normalized regret 0.14203441825577004; max-pooled T1 RMSE 1686.2676669812988; usefulness gate pass; primary action gate fail
-- Post-fit hand dominance: hand_inventory largest-positive fraction 0.9559748427672956 across 159 wrong roots
-- Classification: RESOURCE_TRANSITION_SEMANTICS_DO_NOT_EXPLAIN_F131_FAILURE
+- HAND_EXACT_CONTROL reproduction: pass; top-1 0.39763779527559057; pairwise 0.6960334069523595; normalized regret 0.13581891875438187; max-pooled T1 RMSE 2113.9505735718635
+- Exact family decomposition: pass for 108502 actions; maximum absolute recomposition error 5.8264504332328215e-12; all split/family hashes recorded in the transient result
+- Exact sanity: pass; top-1 1.0; pairwise 1.0; regret 0.0; max-pooled T1 RMSE 2.7427462696043193e-13
+- Strong single-family repair: `other`; top-1 0.8740157480314961; pairwise 0.9725803605140297; normalized regret 0.004780062923998016; max-pooled T1 RMSE 232.65299629024383
+- Global bundle: top-1 0.8818897637795275; pairwise 0.976315049458103; normalized regret 0.004714847174378095; max-pooled T1 RMSE 196.23495283665216
+- Local bundle: top-1 0.39763779527559057; pairwise 0.6974194305361123; normalized regret 0.13544728271378478; max-pooled T1 RMSE 2080.742774390355
+- Classification: SINGLE_FAMILY_CAUSAL_BOTTLENECK_SUPPORTED
 
-The exact compiled-rule transition vector is authoritative and generic: capture-to-
-hand and drop-from-hand deltas passed the mixed-mechanics controls, including promoted
-captures mapping to the base resource. The resource vector identifies the exact
-authoritative hand component, but adding it to F131 improves scalar T1 calibration
-without materially repairing action ranking; no production integration, self-play,
-search expansion, hidden layer, Adam, Arena, or promotion was authorized. Transient
-result, stage, and shard files remain under the local flow runtime and are intentionally
-excluded from Git.
+The exact substitution identifies the residual `other` oracle family as the sole
+strong single-family action repair under the predeclared thresholds. The global
+bundle also repairs action semantics strongly, but classification precedence keeps
+the single-family result because no other family is within 0.05 top-1 delta. The
+hand intervention reproduces F133 exactly. No production integration, self-play,
+search expansion, hidden layer, Adam, Arena, or promotion was authorized.
+Transient result, stage, and shard files remain under the local flow runtime and
+are intentionally excluded from Git.
 
-Validation: tests/test_f133_shogi_resource_transition_action_semantics.py,
+Validation: tests/test_f134_shogi_oracle_family_substitution.py,
+tests/test_f133_shogi_resource_transition_action_semantics.py,
 tests/test_f132_shogi_action_residual_causal_decomposition.py,
 tests/test_f131_shogi_action_conditioned_t1_factorization.py,
 tests/test_f130_shogi_rule_derived_structural_t1_augmentation.py, and
