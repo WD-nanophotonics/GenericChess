@@ -277,7 +277,7 @@ def _decision_summary(records):
     return {"roots": len(records), "informative": len(informative), "static_teacher_agreement": float(np.mean([row["static"]["top1"] for row in records])), "static_mean_regret": float(np.mean(static_regrets)), "compressed": compressed, "teacher_disagreement_recovery": disagreement, "teacher_correct_retention": retention}
 
 
-def _diagnose_family(family, corpus_seed, root_seed):
+def _diagnose_family(family, corpus_seed, root_seed, decision_root_limit=256):
     builder = build_western_chess_ruleset if family == "western_chess" else build_standard_shogi_ruleset
     compiled = compile_semantic_ruleset(builder())
     basis = FrozenBasis(family, compiled)
@@ -303,7 +303,7 @@ def _diagnose_family(family, corpus_seed, root_seed):
     direct_gate = direct_fit["solver"]["relative_linear_system_residual"] <= 1e-10 and direct_fit["objective_excess"] <= 1e-10 and direct_fit["prediction_difference_vs_matched"]["holdout"]["normalized_by_holdout_target_std"] <= 1e-8 and direct_fit["scalar_metrics"]["PCG"]["holdout"]["normalized_rmse"] <= 0.05 and direct_fit["scalar_metrics"]["PCG"]["holdout"]["r2"] >= 0.99 and direct_fit["scalar_metrics"]["PCG"]["holdout"]["pearson"] >= 0.995
     reference_roots = _collect_fresh_roots(family, compiled, basis, 1220121, {row["identity"] for row in rows}, 256)
     forbidden = {row["identity"] for row in rows} | {str(position_identity_key(root.position, compiled)) for root in reference_roots}
-    fresh_roots = _collect_fresh_roots(family, compiled, basis, root_seed, forbidden, 256)
+    fresh_roots = _collect_fresh_roots(family, compiled, basis, root_seed, forbidden, decision_root_limit)
     decision_records = _decision_records(fresh_roots, basis, search_fit)
     decision = _decision_summary(decision_records)
     search_gate = {
@@ -331,15 +331,29 @@ def _diagnose_family(family, corpus_seed, root_seed):
         "corpus": {"rows": len(rows), "identity_sha256": identity_hash, "retained_rows": len(retained), "retained_by_split": {key: len(value) for key, value in split_indices.items()}, "excluded_terminal_tactical": sum(label["terminal_child"] for label in labels), "excluded_shogi_declaration": sum(label["shogi_declaration"] for label in labels)},
         "direct_control": {"solver": direct_fit["solver"], "scalar_metrics": direct_fit["scalar_metrics"], "numerical_gate": direct_gate},
         "search_target": {"solver": search_fit["solver"], "scalar_metrics": search_fit["scalar_metrics"], "numerical_prediction_difference_vs_matched": search_fit["prediction_difference_vs_matched"], "objective_excess": search_fit["objective_excess"], "numerical_gate": search_numerical_gate, "representation_gate": search_gate},
-        "decision_corpus": {"generated": len(fresh_roots), "retained": len(decision_records), "required_informative": 32, "root_seed": root_seed, "summary": decision},
+        "decision_corpus": {"generated": len(fresh_roots), "retained": len(decision_records), "requested": decision_root_limit, "required_informative": 32, "root_seed": root_seed, "summary": decision},
         "classification": classification,
     }
 
 
-def run():
-    result = {"schema": "F125_KNOWN_ORACLE_ONE_PLY_SEARCH_COMPRESSION_V1", "baseline": "23a0b78ad7f67dbe14186ea98f68c1698e3df395", "rulesets": {family: _diagnose_family(family, corpus_seed, root_seed) for family, corpus_seed, _, root_seed in FAMILIES}}
+def _selected_families(family):
+    if family is None:
+        return FAMILIES
+    selected = [item for item in FAMILIES if item[0] == family]
+    if not selected:
+        raise ValueError(f"unknown F125 family: {family}")
+    return selected
+
+
+def run(family=None, decision_root_limit=256):
+    if decision_root_limit < 1:
+        raise ValueError("decision_root_limit must be positive")
+    selected = _selected_families(family)
+    result = {"schema": "F125_KNOWN_ORACLE_ONE_PLY_SEARCH_COMPRESSION_V1", "baseline": "23a0b78ad7f67dbe14186ea98f68c1698e3df395", "decision_root_limit": decision_root_limit, "rulesets": {name: _diagnose_family(name, corpus_seed, root_seed, decision_root_limit) for name, corpus_seed, _, root_seed in selected}}
     values = [item["classification"] for item in result["rulesets"].values()]
-    if all(value == "KNOWN_ORACLE_SEARCH_COMPRESSION_PASSES" for value in values):
+    if len(values) == 1:
+        result["classification"] = values[0]
+    elif all(value == "KNOWN_ORACLE_SEARCH_COMPRESSION_PASSES" for value in values):
         result["classification"] = "KNOWN_HANDCRAFTED_ORACLE_SEARCH_TEACHER_LAYER_PASSES"
     elif any(value == "F125_DIRECT_CONTROL_REGRESSION" for value in values):
         result["classification"] = "F125_DIRECT_CONTROL_REGRESSION"
@@ -355,9 +369,11 @@ def run():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--family", choices=[family for family, _, _, _ in FAMILIES])
+    parser.add_argument("--decision-root-limit", type=int, default=256)
     args = parser.parse_args()
     started = time.time()
-    result = run()
+    result = run(args.family, args.decision_root_limit)
     result["runtime_seconds"] = time.time() - started
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")

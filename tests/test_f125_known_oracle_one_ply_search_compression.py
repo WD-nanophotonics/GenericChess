@@ -6,6 +6,7 @@ from scripts.f125_known_oracle_one_ply_search_compression import (
     _decision_summary,
     _prepare_filtered,
     _rank_summary,
+    _selected_families,
 )
 
 
@@ -46,3 +47,9 @@ def test_filtered_preparation_normalizes_each_retained_split_from_train_only():
     np.testing.assert_allclose(pack["feature_scale"], [1.0])
     assert pack["design"]["train"].shape == (2, 2)
     assert pack["design"]["holdout"].shape == (1, 2)
+
+
+def test_selected_families_supports_independent_family_runs():
+    selected = _selected_families("western_chess")
+
+    assert [family for family, _, _, _ in selected] == ["western_chess"]
