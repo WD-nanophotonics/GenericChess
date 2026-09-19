@@ -140,19 +140,31 @@ def _declaration_present(state, compiled):
     return bool(available_declarations(state, compiled))
 
 
+def _teacher_row_from_children(state, basis, children):
+    value, spectrum, terminal_child = _t1_from_children(state, basis, children)
+    root_declaration = False
+    child_declaration = False
+    if basis.family == "standard_shogi":
+        root_declaration = _declaration_present(state, basis.compiled)
+        child_declaration = any(
+            _declaration_present(child, basis.compiled)
+            for _, child in children
+        )
+    return {
+        "t1": value,
+        "spectrum": spectrum,
+        "terminal_child": terminal_child,
+        "root_shogi_declaration": root_declaration,
+        "child_shogi_declaration": child_declaration,
+        "shogi_declaration": root_declaration or child_declaration,
+    }
+
+
 def _teacher_row(row, basis):
     state = row["state"]
-    value, spectrum, terminal_child = _t1(state, basis)
-    shogi_declaration = False
-    if basis.family == "standard_shogi":
-        shogi_declaration = _declaration_present(state, basis.compiled)
-        if not shogi_declaration:
-            for action, _ in spectrum:
-                child = apply_action(state, action, basis.compiled)
-                if _declaration_present(child, basis.compiled):
-                    shogi_declaration = True
-                    break
-    return {"t1": value, "spectrum": spectrum, "terminal_child": terminal_child, "shogi_declaration": shogi_declaration}
+    actions = _sorted_actions(state, basis.compiled)
+    children = [(action, apply_action(state, action, basis.compiled)) for action in actions]
+    return _teacher_row_from_children(state, basis, children)
 
 
 def _prepare_rows(rows, labels):

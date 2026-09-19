@@ -4,16 +4,20 @@ import numpy as np
 
 from scripts.f125_known_oracle_one_ply_search_compression import (
     DECISION_ROOT_SEEDS,
+    FrozenBasis,
     _decision_summary,
+    _declaration_present,
     _prepare_filtered,
     _rank_summary,
     _selected_families,
+    _teacher_row,
     _t1,
     _t1_from_children,
 )
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
@@ -83,3 +87,42 @@ def test_child_reuse_preserves_one_ply_teacher():
     children = [(action, apply_action(state, action, compiled)) for action in actions]
 
     assert _t1(state, Basis()) == _t1_from_children(state, Basis(), children)
+
+
+def test_shogi_teacher_row_child_reuse_matches_original_formulation_on_32_states():
+    compiled = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    basis = FrozenBasis("standard_shogi", compiled)
+    state = initial_state(compiled)
+
+    for index in range(32):
+        actions = sorted(legal_actions(state, compiled), key=str)
+        children = [(action, apply_action(state, action, compiled)) for action in actions]
+        value, spectrum, terminal_child = _t1_from_children(state, basis, children)
+        root_declaration = _declaration_present(state, compiled)
+        child_declaration = any(_declaration_present(child, compiled) for _, child in children)
+        original = {
+            "t1": value,
+            "spectrum": spectrum,
+            "terminal_child": terminal_child,
+            "root_shogi_declaration": root_declaration,
+            "child_shogi_declaration": child_declaration,
+            "shogi_declaration": root_declaration or child_declaration,
+        }
+        reused = _teacher_row({"state": state}, basis)
+
+        assert reused["t1"] == original["t1"]
+        assert reused["terminal_child"] == original["terminal_child"]
+        assert reused["root_shogi_declaration"] == original["root_shogi_declaration"]
+        assert reused["child_shogi_declaration"] == original["child_shogi_declaration"]
+        assert reused["shogi_declaration"] == original["shogi_declaration"]
+        assert [str(action) for action, _ in reused["spectrum"]] == [str(action) for action, _ in original["spectrum"]]
+        np.testing.assert_allclose(
+            [score for _, score in reused["spectrum"]],
+            [score for _, score in original["spectrum"]],
+            rtol=0.0,
+            atol=0.0,
+        )
+
+        if not actions:
+            break
+        state = children[index % len(children)][1]
