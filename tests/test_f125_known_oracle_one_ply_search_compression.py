@@ -8,7 +8,13 @@ from scripts.f125_known_oracle_one_ply_search_compression import (
     _prepare_filtered,
     _rank_summary,
     _selected_families,
+    _t1,
+    _t1_from_children,
 )
+from generic_chess.core.movegen import legal_actions
+from generic_chess.core.transition import apply_action, initial_state
+from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
 def test_rank_summary_uses_stable_reference_ties_and_regret():
@@ -55,3 +61,25 @@ def test_selected_families_supports_independent_family_runs():
 
     assert [family for family, _, _, _ in selected] == ["western_chess"]
     assert DECISION_ROOT_SEEDS["western_chess"] == 1250121
+
+
+def test_child_reuse_preserves_one_ply_teacher():
+    compiled = compile_semantic_ruleset(build_western_chess_ruleset())
+    state = initial_state(compiled)
+
+    class Basis:
+        family = "western_chess"
+
+        @staticmethod
+        def vector(_state):
+            return np.zeros(1)
+
+        @staticmethod
+        def oracle(_vector):
+            return 0.0
+
+    Basis.compiled = compiled
+    actions = sorted(legal_actions(state, compiled), key=str)
+    children = [(action, apply_action(state, action, compiled)) for action in actions]
+
+    assert _t1(state, Basis()) == _t1_from_children(state, Basis(), children)

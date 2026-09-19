@@ -115,20 +115,25 @@ def _terminal_value(state, basis):
     return value, True
 
 
-def _t1(state, basis):
-    actions = _sorted_actions(state, basis.compiled)
+def _t1_from_children(state, basis, children):
+    actions = [action for action, _ in children]
     if not actions:
         value, terminal = _terminal_value(state, basis)
         return -value, [], terminal
     scores = []
     terminal_child = False
-    for action in actions:
-        child = apply_action(state, action, basis.compiled)
+    for _, child in children:
         child_value, child_terminal = _terminal_value(child, basis)
         terminal_child = terminal_child or child_terminal
         scores.append(-child_value)
     best = max(range(len(actions)), key=lambda index: (scores[index], -index))
     return float(scores[best]), list(zip(actions, scores)), terminal_child
+
+
+def _t1(state, basis):
+    actions = _sorted_actions(state, basis.compiled)
+    children = [(action, apply_action(state, action, basis.compiled)) for action in actions]
+    return _t1_from_children(state, basis, children)
 
 
 def _declaration_present(state, compiled):
@@ -227,18 +232,18 @@ def _decision_records(roots, basis, fit):
         actions = _sorted_actions(state, basis.compiled)
         if len(actions) < 2:
             continue
-        root_t1, static_spectrum, terminal_child = _t1(state, basis)
+        children = [(action, apply_action(state, action, basis.compiled)) for action in actions]
+        root_t1, static_spectrum, terminal_child = _t1_from_children(state, basis, children)
         if terminal_child:
             continue
-        if basis.family == "standard_shogi" and (_declaration_present(state, basis.compiled) or any(_declaration_present(apply_action(state, action, basis.compiled), basis.compiled) for action in actions)):
+        if basis.family == "standard_shogi" and (_declaration_present(state, basis.compiled) or any(_declaration_present(child, basis.compiled) for _, child in children)):
             continue
         static_scores = [score for _, score in static_spectrum]
         depth2_scores = []
-        for action in actions:
-            child = apply_action(state, action, basis.compiled)
+        for _, child in children:
             child_t1, _, _ = _t1(child, basis)
             depth2_scores.append(-child_t1)
-        compressed_scores = [-float(_predict_child(fit, basis, apply_action(state, action, basis.compiled))) for action in actions]
+        compressed_scores = [-float(_predict_child(fit, basis, child)) for _, child in children]
         static = _rank_summary(static_scores, depth2_scores)
         compressed = _rank_summary(compressed_scores, depth2_scores)
         records.append({"static": static, "compressed": compressed, "depth2_scores": depth2_scores})
