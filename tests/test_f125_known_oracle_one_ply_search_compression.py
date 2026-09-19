@@ -14,6 +14,7 @@ from scripts.f125_known_oracle_one_ply_search_compression import (
     _t1,
     _t1_from_children,
 )
+from scripts.f127_shogi_t1_scalar_compression_expanded_control import eligibility_from_children
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_semantic_ruleset
@@ -122,6 +123,27 @@ def test_shogi_teacher_row_child_reuse_matches_original_formulation_on_32_states
             rtol=0.0,
             atol=0.0,
         )
+
+        if not actions:
+            break
+        state = children[index % len(children)][1]
+
+
+def test_f127_eligibility_matches_teacher_exclusion_flags_on_64_shogi_states():
+    compiled = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    basis = FrozenBasis("standard_shogi", compiled)
+    state = initial_state(compiled)
+
+    for index in range(64):
+        actions = sorted(legal_actions(state, compiled), key=str)
+        children = [(action, apply_action(state, action, compiled)) for action in actions]
+        old = _teacher_row({"state": state}, basis)
+        new = eligibility_from_children(state, children, compiled)
+
+        assert new["terminal_child"] == old["terminal_child"]
+        assert new["root_shogi_declaration"] == old["root_shogi_declaration"]
+        assert new["child_shogi_declaration"] == old["child_shogi_declaration"]
+        assert (new["root_shogi_declaration"] or new["child_shogi_declaration"]) == old["shogi_declaration"]
 
         if not actions:
             break
