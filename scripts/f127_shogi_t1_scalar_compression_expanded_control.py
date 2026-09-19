@@ -320,6 +320,17 @@ def _scalar_gate(metrics: dict) -> dict:
     return result
 
 
+def _search_representation_gate(metrics: dict) -> dict:
+    holdout = metrics["holdout"]
+    result = {
+        "holdout_normalized_rmse": holdout["normalized_rmse"] <= 0.15,
+        "holdout_r2": holdout["r2"] >= 0.95,
+        "holdout_pearson": holdout["pearson"] >= 0.975,
+    }
+    result["pass"] = all(result.values())
+    return result
+
+
 def _direct_gate(fit: dict) -> dict:
     numerical = _numerical_gate(fit)
     pcg_scalar = _scalar_gate(fit["scalar_metrics"]["PCG"])
@@ -457,7 +468,7 @@ def _run(output: Path) -> dict:
     label_stage = {"schema": "F127_STAGE_T1_LABELS_V1", "selection": selection, "exclusions_by_split": exclusions, **label_report}
     _write_progress(output, "t1-labels", label_stage)
     search_fit = _fit_metrics_tight(direct_rows, t1_labels, basis)
-    representation = _scalar_gate(search_fit["scalar_metrics"]["matched_ridge"])
+    representation = _search_representation_gate(search_fit["scalar_metrics"]["matched_ridge"])
     search_numerical = _numerical_gate(search_fit)
     search_report = {
         "schema": "F127_STAGE_SEARCH_TARGET_FIT_V1",

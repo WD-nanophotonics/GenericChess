@@ -15,6 +15,7 @@ from scripts.f125_known_oracle_one_ply_search_compression import (
     _t1_from_children,
 )
 from scripts.f127_shogi_t1_scalar_compression_expanded_control import eligibility_from_children
+from scripts.f127_shogi_t1_scalar_compression_expanded_control import _scalar_gate, _search_representation_gate
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_semantic_ruleset
@@ -148,3 +149,10 @@ def test_f127_eligibility_matches_teacher_exclusion_flags_on_64_shogi_states():
         if not actions:
             break
         state = children[index % len(children)][1]
+
+
+def test_f127_search_representation_gate_is_distinct_from_direct_control_gate():
+    metrics = {"holdout": {"normalized_rmse": 0.10, "r2": 0.97, "pearson": 0.98}}
+
+    assert _scalar_gate(metrics)["pass"] is False
+    assert _search_representation_gate(metrics)["pass"] is True
