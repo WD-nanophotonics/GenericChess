@@ -1,30 +1,29 @@
-F130 closeout: Standard Shogi rule-derived structural T1 augmentation
+F131 closeout: Standard Shogi action-conditioned T1 factorization
 
-- Work order: GENERICCHESS_F130_SHOGI_RULE_DERIVED_STRUCTURAL_T1_AUGMENTATION
-- Existing Courier request: GENERICCHESS-20260919-102320-61c52d2c
-- Heavy run: F130 Heavy, completed in 1308.7573347091675 seconds
-- Heavy envelope: f130-shogi-rule-derived-structural-t1-v1
+- Work order: GENERICCHESS_F131_SHOGI_ACTION_CONDITIONED_T1_FACTORIZATION
+- Existing Courier request: GENERICCHESS-20260919-110400-6484a2cc
+- Heavy run: F131 Heavy, completed in 1311.5639152526855 seconds
+- Heavy envelope: f131-shogi-action-conditioned-t1-v1
 - Frozen retained roots: train 1995, dev 252, holdout 254
 - F129 reproduction: pass; base RMSE difference 1.8189894035458565e-12; static RMSE difference 2.7284841053187847e-12
-- Structural block: RULE_DERIVED_STRUCTURAL_V1, exactly 9 scalars
-- Rank diagnostic: base rank 638, augmented rank 646, increment 8; augmented active dimension 666
-- Numerical gate: pass
-- Representation gate: fail
-- Usefulness gate: fail
-- F129 base compressed holdout RMSE: 8476.168320545878
-- F130 augmented holdout RMSE: 8679.479145481126
-- Static direct-oracle holdout RMSE: 6088.174723192457
-- Improvement vs F129: -203.31082493524627 RMSE units
-- Improvement vs static baseline: -2591.3044222886656 RMSE units
-- Classification: RULE_DERIVED_STRUCTURAL_AUGMENTATION_DOES_NOT_CAPTURE_T1
+- Action dataset: 87107 train, 10412 dev, 10983 holdout rows; exact feature width 42
+- Weighted solver: numerical gate pass; weighted PCG/matched-ridge holdout prediction difference 1.4491650070056522e-12 normalized
+- Holdout action top-1: 0.3937007874015748
+- Holdout action pairwise agreement: 0.6961452971418344
+- Holdout mean normalized teacher regret: 0.14638599860007367
+- Max-pooled T1 holdout RMSE: 2152.230646928496
+- Max-pooled T1 holdout nRMSE/R²/Pearson: 0.42072119264828567 / 0.8229936780566042 / 0.9126896963966606
+- Rank diagnostic: raw width 42, active width 42, numerical rank 36, nullity 7, condition number 28.003432202818093
+- Classification: ACTION_CONDITIONED_LOCAL_REPRESENTATION_INSUFFICIENT
 
-The genericity microtests passed for Shogi-like and Western-like compiled rulesets,
-including finite outputs, exact nine-feature shape, type-name invariance, owner/board
-mirror antisymmetry, and anchor-absence zero behavior. The frozen F129 shard contract
-was reused and the exact T1 target was held fixed. The structural block adds independent
-rank but does not capture the one-ply target on this surface; no candidate or promotion
-was authorized. Transient result, stage, and shard files remain under the local flow
-runtime and are intentionally excluded from Git.
+The genericity microtests passed for Shogi-like and Western-Chess-like compiled
+rulesets. The exact F129 action spectra and target definition were reused, with root-
+equal action weighting and no self-play, search expansion, hidden layer, Adam, or
+production integration. Max-pooling gives a much better scalar T1 RMSE than F129, but
+the primary action-policy gate fails on top-1, pairwise ordering, and normalized regret;
+no candidate or promotion was authorized. Transient result, stage, and shard files
+remain under the local flow runtime and are intentionally excluded from Git.
 
-Validation: tests/test_f130_shogi_rule_derived_structural_t1_augmentation.py and
+Validation: tests/test_f130_shogi_rule_derived_structural_t1_augmentation.py,
+tests/test_f131_shogi_action_conditioned_t1_factorization.py, and
 tests/test_f129_shogi_known_oracle_t1_scalar_compression.py passed.
