@@ -3,6 +3,7 @@ from __future__ import annotations
 import numpy as np
 
 from scripts.f125_known_oracle_one_ply_search_compression import (
+    DECISION_ROOT_SEEDS,
     _decision_summary,
     _prepare_filtered,
     _rank_summary,
@@ -53,3 +54,4 @@ def test_selected_families_supports_independent_family_runs():
     selected = _selected_families("western_chess")
 
     assert [family for family, _, _, _ in selected] == ["western_chess"]
+    assert DECISION_ROOT_SEEDS["western_chess"] == 1250121

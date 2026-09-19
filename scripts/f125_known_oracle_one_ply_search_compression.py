@@ -57,6 +57,10 @@ CORPUS_HASHES = {
     "western_chess": "79625a972c980c607eb6a9a1b930ebaba2fd447bbe320c52b3ec62ae510b91ac",
     "standard_shogi": "a1cb1bcf2d461c3bddc4f87928ed4d6260673de268356eec5741b9b534d4aa8b",
 }
+DECISION_ROOT_SEEDS = {
+    "western_chess": 1250121,
+    "standard_shogi": 1250221,
+}
 L2 = 1e-6
 
 
@@ -349,7 +353,7 @@ def run(family=None, decision_root_limit=256):
     if decision_root_limit < 1:
         raise ValueError("decision_root_limit must be positive")
     selected = _selected_families(family)
-    result = {"schema": "F125_KNOWN_ORACLE_ONE_PLY_SEARCH_COMPRESSION_V1", "baseline": "23a0b78ad7f67dbe14186ea98f68c1698e3df395", "decision_root_limit": decision_root_limit, "rulesets": {name: _diagnose_family(name, corpus_seed, root_seed, decision_root_limit) for name, corpus_seed, _, root_seed in selected}}
+    result = {"schema": "F125_KNOWN_ORACLE_ONE_PLY_SEARCH_COMPRESSION_V1", "baseline": "23a0b78ad7f67dbe14186ea98f68c1698e3df395", "decision_root_limit": decision_root_limit, "rulesets": {name: _diagnose_family(name, corpus_seed, DECISION_ROOT_SEEDS[name], decision_root_limit) for name, corpus_seed, _, _ in selected}}
     values = [item["classification"] for item in result["rulesets"].values()]
     if len(values) == 1:
         result["classification"] = values[0]
