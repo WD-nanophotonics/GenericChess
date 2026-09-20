@@ -1,30 +1,33 @@
-F135 closeout: corrected Standard Shogi known-evaluator schema rebaseline
+# F136 closeout
 
-- Work order: GENERICCHESS_F135_CORRECTED_SHOGI_ORACLE_SCHEMA_REBASELINE
-- Existing Courier request: GENERICCHESS-20260919-224046-8034193a
-- Baseline SHA: e13c55d5008e9ee57010e9fd3118a31bac2659d1
-- Heavy run: F135 Heavy, completed in 2655.0480518341064 seconds
-- Frozen corpus: train 3000, dev 750, holdout 750; seed 1220201; identity SHA a1cb1bcf2d461c3bddc4f87928ed4d6260673de268356eec5741b9b534d4aa8b
-- Corrected schema: CorrectedShogiFrozenBasisV2; width 1086; feature-name SHA 6accfab1039a546071a23c885d582a2c10792e5db49f69bfa9556c131d516942; corrected oracle SHA fdd6405ffa3f92de05f401dbd12d00a16191ac10c2ba2383fe5332694c9e7aa6
-- Legacy oracle SHA: dda316e263a8f6e5a12678199e87cbedea7e4d40358d3087e8c78ddb3894a316; schema witnesses passed for mobility, king escape, king-zone pressure, current check, promotion potential, every hand type, and legal-drop count; Western parity regression passed
-- Legacy-vs-corrected scalar audit: RMSE 2864.9107010709968; normalized RMSE 2.1156714620729784; R² 0.4810215529197631; Pearson 0.7869385221038856; Spearman 0.7773195821335707; sign agreement 0.8491111111111111; maximum absolute difference 12336.5
-- Legacy-vs-corrected action audit: 256 roots; top-action agreement 0.86328125; pairwise agreement 0.9726439943543965; 35 roots differed; mean corrected-oracle regret 94.07144047457143 raw / 0.06946962149073126 normalized
-- Corrected PCG numerical gate: pass; relative residual 7.846774358235549e-13; objective excess -1.5881867761018131e-22; holdout prediction delta 4.0869142325251964e-10 normalized
-- Corrected scalar gate: fail; holdout RMSE 211.189237270397; nRMSE 0.15595845351232307; R² 0.9756769607780446; Pearson 0.9878499297805251; Spearman 0.9459971591060606
-- Corrected one-ply action gate: pass; top-1 0.97265625; pairwise 0.9851308467506316; mean normalized regret 0.0024239891704051506
-- Search diagnostic: 64 roots, 2000 nodes, depth 12; top-action/PV agreement 0.8125; node parity 1.0; completed-depth parity 0.96875; diagnostic only
-- Fixed F127 surface: retained train/dev/holdout 1995/252/254; matched-ridge holdout nRMSE 0.16280988963876133; no full-population 0.05 gate imposed
-- Classification: CORRECTED_KNOWN_EVALUATOR_SYSTEM_IDENTIFICATION_FAILS
+- Work order: `GENERICCHESS_F136_CORRECTED_SHOGI_COVERAGE_IDENTIFIABILITY`
+- Baseline: `f63eaaffa4c143342fa3d11c05447e8766974a4a`
+- Scope: corrected Standard Shogi schema only; no new states, A2/T1, self-play, MCTS, Arena, or representation changes.
+- Heavy runtime: `137.3071768283844` seconds.
+- Result artifact: `.generic_chess_flow/f136-shogi-result.json` (ignored transient evidence).
 
-The corrected semantic schema is now independently materialized through a keyed
-feature map with exact name-set, width, finite-value, and witness checks. Western
-Chess semantics were unchanged. The corrected oracle is numerically identifiable
-by the stable PCG learner and passes one-ply action recovery, but it fails the
-predeclared scalar A1 gate; the corrected direct-control chain therefore does not
-pass. F129-F134 remain reproducible historical measurements but their semantic
-interpretations are quarantined as instructed. No A2/F136 experiment, feature
-engineering, self-play, MCTS, Arena, or promotion was performed.
-Transient result, stage, and shard files remain under the local flow runtime and
-are intentionally excluded from Git.
+## Frozen-input reproduction
 
-Validation: tests/test_f135_corrected_shogi_oracle_schema_rebaseline.py passed.
+- Corrected oracle SHA: `fdd6405ffa3f92de05f401dbd12d00a16191ac10c2ba2383fe5332694c9e7aa6`.
+- Feature-name SHA: `6accfab1039a546071a23c885d582a2c10792e5db49f69bfa9556c131d516942`.
+- Corpus: 3000/750/750, seed `1220201`, identity `a1cb1bcf2d461c3bddc4f87928ed4d6260673de268356eec5741b9b534d4aa8b`.
+- F135 PCG holdout: RMSE `211.189237270397`, nRMSE `0.15595845351232307`, R2 `0.9756769607780446`, Pearson `0.9878499297805251`.
+- F135 action recovery: top-1 `0.97265625`, pairwise `0.9851308467506316`, normalized regret `0.0024239891704051506`.
+- Reproduction passed; exact oracle self-consistency error was zero on all splits.
+
+## Identifiability audit
+
+- Raw features `1086`; active `664`; train-constant `422`.
+- Design including intercept: `3000 x 665`; numerical rank `652`; nullity `13`.
+- Retained-spectrum condition number `452.41340355195643`; effective ranks at `1e-6`, `1e-8`, `1e-10`: `652`, `652`, `652`.
+- 44 train-constant features became variable outside training. Aggregate holdout omitted-constant contribution RMS `0.21583254433560448`, normalized RMS `0.00015938743028420948`; only `0.0017260086491973636` of F135 squared error was explained.
+- Matched-ridge plus exact constant correction failed A1: holdout nRMSE `0.1558238023810179`, R2 `0.9757189426115215`.
+- Active minimum-norm plus exact constant correction also failed A1: holdout nRMSE `0.15582286152352964`, R2 `0.9757192358266189`.
+- Exact active-null holdout contribution: nRMSE `0.15582286152353111`; Pearson with F135 residual after exact constant correction `0.999999930875223`.
+- Material/PST dependencies held exactly for every material type and split and were reported separately.
+
+## Classification and routing
+
+`CORRECTED_A1_FAILURE_ACTIVE_SUBSPACE_NONIDENTIFIABILITY_SUPPORTED`
+
+The frozen corpus does not identify active corrected-oracle directions outside its training row space. Constant-feature coverage and ridge bias are not sufficient explanations. The next work should first distinguish globally exact semantic dependencies from corpus-specific active null directions, as directed by F136. F129-F135 semantic conclusions remain quarantined; no promotion or A2/T1 work is authorized.
