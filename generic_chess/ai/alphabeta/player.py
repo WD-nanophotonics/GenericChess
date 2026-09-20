@@ -42,6 +42,7 @@ class AlphaBetaPlayer:
         # authority control for parity, diagnostics, and emergency rollback.
         use_native_semantic_legality: bool = True,
         tuning: SearchTuning = SearchTuning(),
+        evaluator_override=None,
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
@@ -51,7 +52,11 @@ class AlphaBetaPlayer:
         self._profile, self._profile_cache_hit = self._profile_cache.get_or_build(
             compiled, self._config
         )
-        self._evaluator = Evaluator(compiled, self._profile, self._config)
+        self._evaluator = (
+            evaluator_override
+            if evaluator_override is not None
+            else Evaluator(compiled, self._profile, self._config)
+        )
         self._tt = TranspositionTable(max_entries=tt_max_entries)
         self._use_tt = use_tt
         self._use_ordering = use_ordering
