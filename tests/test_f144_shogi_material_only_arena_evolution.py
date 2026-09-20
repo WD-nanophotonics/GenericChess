@@ -9,6 +9,7 @@ from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 
 from scripts.f144_shogi_material_only_arena_evolution import (
     TYPE_IDS,
+    GameOutcome,
     MaterialOnlyEvaluator,
     canonicalize_vector,
     gen0_vector,
@@ -62,3 +63,8 @@ def test_f144_alpha_beta_accepts_override_without_changing_default_contract():
     player = AlphaBetaPlayer(compiled, use_disk_cache=False, evaluator_override=MaterialOnlyEvaluator(tuple([1000] * 13), ordering))
     decision = player.choose_action(GameSession(compiled), SearchLimits(max_nodes=32, max_depth=1))
     assert decision.action is not None
+
+
+def test_f144_no_contest_is_non_scoring_not_a_draw():
+    outcome = GameOutcome(child_owner=0, winner=None, result="no_contest", plies=500, actions=())
+    assert outcome.child_points is None

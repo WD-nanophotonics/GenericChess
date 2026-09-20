@@ -148,9 +148,9 @@ class GameOutcome:
     actions: tuple[dict, ...]
 
     @property
-    def child_points(self) -> float:
+    def child_points(self) -> float | None:
         if self.result == "no_contest":
-            raise RuntimeError("explicit no-contest cannot become a draw")
+            return None
         if self.winner is None:
             return 0.5
         return 1.0 if self.winner == self.child_owner else 0.0
@@ -207,6 +207,7 @@ def _run_pair(compiled, opening: ArenaOpening, champion: tuple[int, ...], child:
         for owner in (0, 1)
     ]
     scores = [outcome.child_points for outcome in outcomes]
+    pair_score = None if any(score is None for score in scores) else sum(scores) / 2.0
     return {
         "pair_index": opening.index,
         "opening_id": opening.final_position_key,
@@ -220,7 +221,7 @@ def _run_pair(compiled, opening: ArenaOpening, champion: tuple[int, ...], child:
             }
             for outcome in outcomes
         ],
-        "pair_score": sum(scores) / 2.0,
+        "pair_score": pair_score,
     }
 
 
@@ -232,15 +233,17 @@ def run_pairs(compiled, champion: tuple[int, ...], child: tuple[int, ...], openi
 
 
 def summary(rows: tuple[dict, ...], *, bootstrap_seed: int) -> dict:
-    scores = tuple(float(row["pair_score"]) for row in rows)
-    if not scores:
-        raise ValueError("no scoring pairs")
-    low, high = bootstrap_pair_mean_ci(scores, seed=bootstrap_seed)
+    all_scores = tuple(row["pair_score"] for row in rows)
+    scores = tuple(float(score) for score in all_scores if score is not None)
+    low, high = (
+        bootstrap_pair_mean_ci(scores, seed=bootstrap_seed)
+        if scores else (0.0, 0.0)
+    )
     wins = draws = losses = 0
     for row in rows:
         for game in row["games"]:
             if game["result"] == "no_contest":
-                raise RuntimeError("no-contest is not a scoring draw")
+                continue
             if game["winner"] is None:
                 draws += 1
             elif game["winner"] == game["child_owner"]:
@@ -249,12 +252,18 @@ def summary(rows: tuple[dict, ...], *, bootstrap_seed: int) -> dict:
                 losses += 1
     return {
         "pair_count": len(scores),
-        "pair_scores": list(scores),
-        "mean_pair_score": sum(scores) / len(scores),
+        "pair_scores": list(all_scores),
+        "scoring_pair_scores": list(scores),
+        "non_scoring_pair_count": len(all_scores) - len(scores),
+        "mean_pair_score": sum(scores) / len(scores) if scores else 0.0,
         "child_better_pairs": sum(score > 0.5 for score in scores),
         "tied_pairs": sum(score == 0.5 for score in scores),
         "child_worse_pairs": sum(score < 0.5 for score in scores),
-        "bootstrap_95_ci": [low, high],
+        "bootstrap_95_ci": [low, high] if scores else [0.0, 0.0],
+        "no_contest_games": sum(
+            game["result"] == "no_contest"
+            for row in rows for game in row["games"]
+        ),
         "game_wins": wins,
         "game_draws": draws,
         "game_losses": losses,
