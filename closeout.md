@@ -1,31 +1,30 @@
-F134 closeout: Standard Shogi oracle-family substitution
+F135 closeout: corrected Standard Shogi known-evaluator schema rebaseline
 
-- Work order: GENERICCHESS_F134_SHOGI_ORACLE_FAMILY_SUBSTITUTION
-- Existing Courier request: GENERICCHESS-20260919-183930-c09959f1
-- Baseline SHA: 8d0fcb06d0ee80476c936920f835a40943400e25
-- Heavy run: F134 Heavy, completed in 2685.455500125885 seconds
-- Frozen retained roots: train 1995, dev 252, holdout 254
-- F131 frozen reproduction: pass; top-1 0.3937007874015748; pairwise 0.6961452971418344; normalized regret 0.14638599860007367; max-pooled T1 RMSE 2152.230646928496
-- HAND_EXACT_CONTROL reproduction: pass; top-1 0.39763779527559057; pairwise 0.6960334069523595; normalized regret 0.13581891875438187; max-pooled T1 RMSE 2113.9505735718635
-- Exact family decomposition: pass for 108502 actions; maximum absolute recomposition error 5.8264504332328215e-12; all split/family hashes recorded in the transient result
-- Exact sanity: pass; top-1 1.0; pairwise 1.0; regret 0.0; max-pooled T1 RMSE 2.7427462696043193e-13
-- Strong single-family repair: `other`; top-1 0.8740157480314961; pairwise 0.9725803605140297; normalized regret 0.004780062923998016; max-pooled T1 RMSE 232.65299629024383
-- Global bundle: top-1 0.8818897637795275; pairwise 0.976315049458103; normalized regret 0.004714847174378095; max-pooled T1 RMSE 196.23495283665216
-- Local bundle: top-1 0.39763779527559057; pairwise 0.6974194305361123; normalized regret 0.13544728271378478; max-pooled T1 RMSE 2080.742774390355
-- Classification: SINGLE_FAMILY_CAUSAL_BOTTLENECK_SUPPORTED
+- Work order: GENERICCHESS_F135_CORRECTED_SHOGI_ORACLE_SCHEMA_REBASELINE
+- Existing Courier request: GENERICCHESS-20260919-224046-8034193a
+- Baseline SHA: e13c55d5008e9ee57010e9fd3118a31bac2659d1
+- Heavy run: F135 Heavy, completed in 2655.0480518341064 seconds
+- Frozen corpus: train 3000, dev 750, holdout 750; seed 1220201; identity SHA a1cb1bcf2d461c3bddc4f87928ed4d6260673de268356eec5741b9b534d4aa8b
+- Corrected schema: CorrectedShogiFrozenBasisV2; width 1086; feature-name SHA 6accfab1039a546071a23c885d582a2c10792e5db49f69bfa9556c131d516942; corrected oracle SHA fdd6405ffa3f92de05f401dbd12d00a16191ac10c2ba2383fe5332694c9e7aa6
+- Legacy oracle SHA: dda316e263a8f6e5a12678199e87cbedea7e4d40358d3087e8c78ddb3894a316; schema witnesses passed for mobility, king escape, king-zone pressure, current check, promotion potential, every hand type, and legal-drop count; Western parity regression passed
+- Legacy-vs-corrected scalar audit: RMSE 2864.9107010709968; normalized RMSE 2.1156714620729784; R² 0.4810215529197631; Pearson 0.7869385221038856; Spearman 0.7773195821335707; sign agreement 0.8491111111111111; maximum absolute difference 12336.5
+- Legacy-vs-corrected action audit: 256 roots; top-action agreement 0.86328125; pairwise agreement 0.9726439943543965; 35 roots differed; mean corrected-oracle regret 94.07144047457143 raw / 0.06946962149073126 normalized
+- Corrected PCG numerical gate: pass; relative residual 7.846774358235549e-13; objective excess -1.5881867761018131e-22; holdout prediction delta 4.0869142325251964e-10 normalized
+- Corrected scalar gate: fail; holdout RMSE 211.189237270397; nRMSE 0.15595845351232307; R² 0.9756769607780446; Pearson 0.9878499297805251; Spearman 0.9459971591060606
+- Corrected one-ply action gate: pass; top-1 0.97265625; pairwise 0.9851308467506316; mean normalized regret 0.0024239891704051506
+- Search diagnostic: 64 roots, 2000 nodes, depth 12; top-action/PV agreement 0.8125; node parity 1.0; completed-depth parity 0.96875; diagnostic only
+- Fixed F127 surface: retained train/dev/holdout 1995/252/254; matched-ridge holdout nRMSE 0.16280988963876133; no full-population 0.05 gate imposed
+- Classification: CORRECTED_KNOWN_EVALUATOR_SYSTEM_IDENTIFICATION_FAILS
 
-The exact substitution identifies the residual `other` oracle family as the sole
-strong single-family action repair under the predeclared thresholds. The global
-bundle also repairs action semantics strongly, but classification precedence keeps
-the single-family result because no other family is within 0.05 top-1 delta. The
-hand intervention reproduces F133 exactly. No production integration, self-play,
-search expansion, hidden layer, Adam, Arena, or promotion was authorized.
+The corrected semantic schema is now independently materialized through a keyed
+feature map with exact name-set, width, finite-value, and witness checks. Western
+Chess semantics were unchanged. The corrected oracle is numerically identifiable
+by the stable PCG learner and passes one-ply action recovery, but it fails the
+predeclared scalar A1 gate; the corrected direct-control chain therefore does not
+pass. F129-F134 remain reproducible historical measurements but their semantic
+interpretations are quarantined as instructed. No A2/F136 experiment, feature
+engineering, self-play, MCTS, Arena, or promotion was performed.
 Transient result, stage, and shard files remain under the local flow runtime and
 are intentionally excluded from Git.
 
-Validation: tests/test_f134_shogi_oracle_family_substitution.py,
-tests/test_f133_shogi_resource_transition_action_semantics.py,
-tests/test_f132_shogi_action_residual_causal_decomposition.py,
-tests/test_f131_shogi_action_conditioned_t1_factorization.py,
-tests/test_f130_shogi_rule_derived_structural_t1_augmentation.py, and
-tests/test_f129_shogi_known_oracle_t1_scalar_compression.py passed.
+Validation: tests/test_f135_corrected_shogi_oracle_schema_rebaseline.py passed.
