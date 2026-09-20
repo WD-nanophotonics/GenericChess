@@ -1,39 +1,34 @@
-# F140 closeout
+# F141 closeout
 
-- Work order: `GENERICCHESS_F140_CORRECTED_SHOGI_RANK_TARGETED_GENERATION_A1`
-- Baseline: `c0a0bf38dbeaa1d0b196b59fe649c91fd39f2132`
-- Scope: targeted corrected-Shogi rank completion from the frozen F138/F139 surface only; no A2/T1, self-play, MCTS, Arena, or representation changes.
-- Heavy runtime: `4126.90951752663` seconds.
-- Result artifact: `.generic_chess_flow/f140-shogi-result.json` (ignored transient evidence).
-
-## Frozen-pool reproduction and targeted generation
-
+- Work order: `GENERICCHESS_F141_CORRECTED_SHOGI_KNOWN_ORACLE_T1_COMPRESSION`
+- Baseline: `b82e088196b01342352b01bbd1c9599d435532cd`
+- Scope: corrected known-oracle one-ply max transform on the frozen F140 root-state representation; no malformed F129 shards, deeper search, self-bootstrap, action-conditioned input, nonlinear layer, or representation changes.
 - Corrected oracle SHA: `fdd6405ffa3f92de05f401dbd12d00a16191ac10c2ba2383fe5332694c9e7aa6`.
 - Feature-name SHA: `6accfab1039a546071a23c885d582a2c10792e5db49f69bfa9556c131d516942`.
-- Corpus: 3000/750/750, seed `1220201`, identity `a1cb1bcf2d461c3bddc4f87928ed4d6260673de268356eec5741b9b534d4aa8b`.
-- Exact F139 reproduction: F138 train `3044`, candidate pool `6125`, F138 rank `696`, nullity `78`, no-new-active candidates `2096`, attainable rank `751`, attainable nullity `23`.
-- Dimension identity: existing pool gain `55`, target gain `65`, targeted gain `10`.
-- Continuation started at trajectory `342`; searched `1128` trajectories and inspected `123263` legal ongoing states.
-- Accepted exactly `10` no-new-active rank-increasing witnesses, reaching rank `761`; no oracle was used before acceptance.
+- Heavy runtime: `7327.315267801285` seconds.
+- Result artifact: `.generic_chess_flow/f141-corrected-shogi-result.json` (ignored transient evidence).
 
-## Rank-complete identifiability
+## F140 reproduction and fresh T1 shards
 
-- Final surface: train `3109`, dev `731`, holdout `750`; all surfaces unique and disjoint.
-- Active features `773`; train-constant features `313`; design width `774`; numerical rank `761`; nullity `13`.
-- Canonical gauge span equals the full numerical null space: principal-angle sine `1.5586792777959428e-14`, projector difference `4.7867056801141723e-14`.
-- All 13 holdout gauge activations are zero; exact oracle-null holdout nRMSE `6.638373174350063e-15`, max absolute oracle-unit difference `3.35904779888642e-11`.
+- Reproduced active features `773`, design width `774`, numerical rank `761`, nullity `13`, train `3109`, dev `731`, holdout `750`.
+- Reproduced direct holdout RMSE `0.371665296350058`, nRMSE `0.0002744663771323697`, R² `0.9999999246682079`, Pearson `0.9999999633278593`, action top-1 `0.97265625`, pairwise `0.988520006832259`, normalized regret `0.0024239891704051506`.
 - Holdout identity and bytes were preserved: `7b28486ff7e778ad999eaa6c9df8c430a925a0ca22e730add4147821e32f943e`.
+- Created `F141_CORRECTED_T1_LABEL_SHARD_V1` with shard size `128`: `37` shards, `4590` roots, and `200747` action rows.
+- Child evaluation cache contained `200678` unique child identities with `69` duplicate-child reuses. Immediate terminal children: `199`; root/child declaration diagnostics: `0`/`0`.
+- Legal-action distribution: mean `43.735729847494554`, median `37`, p90 `76`, p95 `90`, max `185`.
+- Every shard passed schema, root-count, and root-sequence integrity checks. T1 is exactly `max_a(-V_corrected*(child))` with lexicographically smallest action identity as the stable tie-break; terminal/declaration information was diagnostic only.
 
-## Recovery controls
+## T1 compression and controls
 
-- Minimum-norm numerical fit passed: relative residual `9.3339531880011e-13`; holdout prediction-difference normalized RMSE `1.8562793115344716e-10`.
-- Scalar holdout: nRMSE `0.0002744663771323697`, RMSE `0.371665296350058`, R² `0.9999999246682079`, Pearson `0.9999999633278593`; scalar A1 gate passed.
-- Action recovery gate passed: top-1 agreement `0.97265625`, pairwise ordering agreement `0.988520006832259`, mean normalized regret `0.0024239891704051506`.
-- Search diagnostic: top-action agreement `0.8125`, PV-head agreement `0.8125`, depth parity `0.96875`, node parity `1.0`, 64 roots.
-- Provenance gates passed: holdout identity absent from training; selection used only features, masks, constants, normalization, and rank; no oracle before acceptance.
+- PCG/matched-ridge numerical gate passed: finite parameters, relative residual `9.391466242135323e-13`, objective excess `-8.326672684626674e-17`, PCG-vs-ridge holdout nRMSE `2.6913282318770637e-10`.
+- T1 holdout fit failed the corrected representation gate: RMSE `2769.269142472943`, nRMSE `1.8302864928571427`, R² `-2.3499486459352967`, Pearson `0.45311550928419064`, Spearman `0.33033990104871297`.
+- Static root V* baseline holdout RMSE `1544.504502406404`, nRMSE `1.0208057012425626`, R² `-0.04204427968932012`, Pearson `0.8224944589418391`; compressed T1 relative RMSE reduction `-0.7929822400376969`, so usefulness also failed.
+- F140 learned-teacher shadow remained stable on holdout: exact-vs-learned teacher top-1 `0.984`, pairwise action ordering `0.9729629736752038`, mean corrected-oracle regret `0.3439474074000027`, normalized regret below `0.01`.
+- Search diagnostic retained 64 roots, top-action/PV-head agreement `0.8125`, depth parity `0.96875`, node parity `1.0`.
+- Holdout T1 displacement from root V*: RMS `1544.504502406404`, mean absolute `1277.8445138897112`, Pearson `0.8224944589418391`, Spearman `0.6951846385504685`; teacher top-2 gap mean `388.4915296303866`, median `100.89444444500003`.
 
 ## Classification and routing
 
-`CORRECTED_KNOWN_EVALUATOR_SYSTEM_IDENTIFICATION_PASSES_ON_RANK_COMPLETE_SURFACE`
+`CORRECTED_STATIC_BASIS_NOT_CLOSED_UNDER_ONE_PLY_MAX`
 
-The corrected Shogi surface now reaches the requested rank-complete identifiability target while preserving the holdout and passing scalar, action, numerical-control, and provenance gates. F129-F139 semantic conclusions remain quarantined; no A2/T1 or representation work is authorized by this phase.
+The numerical solver is sound, but the unchanged linear corrected root-state basis is not sufficiently closed under the exact one-ply max transform. This is a narrow representation-closure result and does not generalize to nonlinear, action-conditioned, or successor-state models. F129-F134 malformed-oracle conclusions remain quarantined; F135-F140 corrected-oracle evidence remains valid. The next controlled step should use the same fresh corrected action spectra for an action-conditioned factorization before arbitrary feature expansion.
