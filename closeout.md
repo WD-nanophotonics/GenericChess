@@ -1,4 +1,49 @@
-# F142 closeout
+# F144 closeout
+
+## Outcome
+
+F144 completed its required fresh Standard Shogi material-only Arena attempt
+with classification `MATERIAL_ONLY_GEN1_DOES_NOT_BEAT_GEN0`. Gen1 did not
+promote, so the required Gen2 comparison was not run. This is a benchmark
+failure to establish improvement, not a project-level completion.
+
+## Implementation and evidence
+
+- Tested and published checkpoint: `cb1f93d035f0584db6215602b561afd9362be18c`.
+- The result artifact was generated from that exact checkpoint; its
+  `git_sha` is `cb1f93d035f0584db6215602b561afd9362be18c`.
+- Search was fixed at max_nodes=1000, max_depth=12, quiescence depths 4/8,
+  TT 250000, `SearchTuning()`, fresh player per game, and one frozen
+  rule-derived ordering table.
+- Integrity check: 4 paired screening games, 8 draws, mean pair score 0.5,
+  bootstrap 95% CI [0.5, 0.5], no no-contest games.
+- Gen0 vector seed was 1440201 with canonical median 1000. Gen1 evaluated six
+  mutants using the required screening schedule; all six tied the parent at
+  mean pair score 0.5. The selected mutant was index 0.
+- Fresh promotion: 24 paired comparisons (48 games), 47 draws and one
+  explicit no-contest game. The no-contest pair was retained as non-scoring,
+  not converted to a draw; 23 scoring pairs tied at mean 0.5 with bootstrap
+  95% CI [0.5, 0.5]. Promotion was false.
+- The result artifact reports no wins or losses in either screening or
+  promotion. Raw traces remain transient as required.
+
+## Tests
+
+The F144 test suite and existing AlphaBeta search tests passed after the
+no-contest handling fix: 24 F144 tests plus the existing search tests.
+
+## Follow-up
+
+The current evidence does not justify adding a more complex learner. A later
+rerun, if ordered, should first apply the recorded efficiency correction:
+replace CPU-bound thread parallelism with true process-based parallelism and
+add resumable per-generation/per-candidate checkpoints while preserving
+deterministic openings and result semantics. The current completed run was not
+interrupted or restarted.
+
+---
+
+# Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
 - Baseline: `576a14430b512a15f90e1368f59263ab3334e989`
@@ -36,4 +81,11 @@
 
 `F142_ACTION_DELTA_TRAINING_SURFACE_NONIDENTIFIABLE`
 
-The exact transition-delta representation is algebraically correct and learns action ordering and max-pooled T1 accurately, but the present action surface exposes nonzero exact null and train-constant contributions on holdout. Per the work order, this blocks interpreting the fit as an identifiability-complete positive control. F129-F134 malformed-oracle conclusions remain quarantined; F135-F141 corrected-oracle evidence remains valid. The action training surface must be coverage-repaired before treating this as a definitive factorization result.
+The exact transition-delta representation is algebraically correct and learns
+action ordering and max-pooled T1 accurately, but the present action surface
+exposes nonzero exact null and train-constant contributions on holdout. Per the
+work order, this blocks interpreting the fit as an identifiability-complete
+positive control. F129-F134 malformed-oracle conclusions remain quarantined;
+F135-F141 corrected-oracle evidence remains valid. The action training surface
+must be coverage-repaired before treating this as a definitive factorization
+result.
