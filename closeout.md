@@ -7,6 +7,26 @@ F154/F155. The authoritative route is now recorded in
 equivalence, then rule-prior baseline strength, then only conditional Gen0
 evolution. No F154 work was completed or committed.
 
+## F158 rule-prior versus flat-control micro-arena closeout
+
+F158 was the bounded `STRENGTH_BENCHMARK` requested after F157. It reused
+exactly generated seeds 15701 and 15702 and compared the frozen rule-derived
+profile with an otherwise identical flat non-anchor profile. Search was fresh,
+deterministic Python ABP at depth 2 with ordering, TT, and qsearch disabled.
+
+The initial role-swapped pair on each ruleset was neutral, so the specified
+second evaluator-neutral two-ply opening pair was run for each ruleset. All
+eight games ended in ordinary stalemate draws; both rulesets remained neutral
+at pair score 0.5. Classification: `RULE_PRIOR_BASELINE_STRENGTH_SIGNAL_INCONCLUSIVE`.
+No further games, Heavy, or evaluator changes were authorized by F158.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_f158_rule_prior_vs_flat_control_microarena.py
+1 passed
+```
+
 ## F157 rule-prior tactical sanity closeout
 
 F157 was a bounded `CAUSAL_DIAGNOSTIC` with no games and no Heavy. The frozen
