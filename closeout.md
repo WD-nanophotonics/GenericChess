@@ -1,3 +1,32 @@
+## Gate 2 mobility local-strength closeout
+
+This bounded `CAUSAL_DIAGNOSTIC` reproduced the exact
+`generated_F_V4-3 / mobility` `HARD_FAILURE` and its existing
+`GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE` cause. It reviewed
+only the three distinct actions already selected by primary1000,
+weak128/reviewer8000, and the unchanged criterion.
+
+The result is `GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK`. Under the same
+8000-node forced-action continuation review, the primary action and the shared
+weak/reviewer action both scored 14 with zero raw and normalized regret. The
+criterion action scored -905, for raw regret 919 and normalized regret 1.0.
+`primary_matches_reviewer_quality=true`.
+
+Thus this root provides no local evidence that primary1000 is weaker than the
+weak128 control; instead, the unchanged proxy-selected action is materially
+worse than both compared production-search selections under the bounded
+review. This does not waive or repair the criterion. Mobility remains
+`HARD_FAILURE`, the first failure remains `generated_F_V4-3 / mobility`, Gate
+2 remains failed/unresolved, and Gate 3 remains frozen. No later ruleset,
+short game, new root search, game, Arena, Heavy, training, or evolution ran.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 mobility-failure cause closeout
 
 This bounded `CAUSAL_DIAGNOSTIC` reproduced the existing first failure at

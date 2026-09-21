@@ -198,14 +198,9 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     assert mobility["status"] == "HARD_FAILURE"
     assert mobility["primary_expected"] is False
     cause = mobility["cause_check"]
-    assert cause["classification"] in {
-        "GATE2_MOBILITY_CAUSE_SEARCH_IMPLEMENTATION_DIVERGENCE",
-        "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE",
-        "GATE2_MOBILITY_CAUSE_PRODUCTION_EVALUATOR_INTERACTION",
-        "GATE2_MOBILITY_CAUSE_1000_NODE_HORIZON_SHORTFALL",
-        "GATE2_MOBILITY_CAUSE_MULTIPLY_SEARCH_HORIZON_DIVERGENCE",
-        "GATE2_MOBILITY_CAUSE_UNRESOLVED",
-    }
+    assert cause["classification"] == (
+        "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE"
+    )
     assert cause["criterion_argmax_actions"] == mobility["expected_actions"]
     assert cause["existing_expected_actions"] == mobility["expected_actions"]
     assert cause["production_mobility_component_argmax_actions"]
@@ -222,6 +217,41 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     reference = cause["reference_minimax_depth_1"]
     assert reference["selected_action"] is not None
     assert isinstance(reference["score"], int)
+    local = cause["local_strength_review"]
+    assert local["classification"] in {
+        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_LOCALLY_STRONGER_THAN_WEAK",
+        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK",
+        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_LOCALLY_WEAKER_THAN_WEAK",
+    }
+    allowed_actions = [
+        mobility["primary_action"],
+        mobility["weak_action"],
+        mobility["reviewer_action"],
+        *mobility["expected_actions"],
+    ]
+    compared = local["compared_actions"]
+    assert len(compared) <= 4
+    assert len({str(row["action"]) for row in compared}) == len(compared)
+    assert all(row["action"] in allowed_actions for row in compared)
+    for row in compared:
+        assert row["role_labels"]
+        if row["review_limit_mode"] == "node_budget":
+            assert row["review_max_nodes"] == 8000
+            assert row["continuation_review_nodes"] > 0
+        else:
+            assert row["review_limit_mode"] == "terminal_score"
+            assert row["review_max_nodes"] is None
+            assert row["continuation_review_nodes"] == 0
+    summaries = local["role_summaries"]
+    assert set(summaries) == {
+        "primary1000",
+        "weak128",
+        "reviewer8000",
+        "criterion_expected",
+    }
+    for summary in summaries.values():
+        assert summary["regret"] >= 0
+        assert 0.0 <= summary["normalized_regret"] <= 1.0
     assert len(result["rulesets"]) == 4
 
     review = result["review"]

@@ -168,6 +168,7 @@ def _mobility_failure_cause_check(
     state,
     expected,
     primary,
+    weak,
     reviewer,
 ):
     """Decompose the already-reproduced Gate-2 mobility failure in place."""
@@ -252,7 +253,7 @@ def _mobility_failure_cause_check(
     else:
         classification = "GATE2_MOBILITY_CAUSE_UNRESOLVED"
 
-    return {
+    result = {
         "classification": classification,
         "legal_action_count": len(actions),
         "criterion_argmax_actions": _action_dicts(criterion_argmax),
@@ -285,6 +286,103 @@ def _mobility_failure_cause_check(
                 else action_to_dict(reference_action)
             ),
             "score": reference_score,
+        },
+    }
+    if classification == "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE":
+        result["local_strength_review"] = _mobility_local_strength_review(
+            compiled,
+            profile,
+            config,
+            state,
+            expected,
+            primary,
+            weak,
+            reviewer,
+        )
+    return result
+
+
+def _mobility_local_strength_review(
+    compiled,
+    profile,
+    config,
+    state,
+    expected,
+    primary,
+    weak,
+    reviewer,
+):
+    roles_by_action = {}
+
+    def add_role(action, role):
+        if action is not None:
+            roles_by_action.setdefault(action, []).append(role)
+
+    add_role(primary.action, "primary1000")
+    add_role(weak.action, "weak128")
+    add_role(reviewer.action, "reviewer8000")
+    for action in expected:
+        add_role(action, "criterion_expected")
+
+    child_by_action = dict(_successors(state, compiled))
+    scores = {}
+    compared = []
+    history = (state.position,)
+    for action, role_labels in roles_by_action.items():
+        score, review_nodes = _review_action_score(
+            compiled, profile, config, state, history, action
+        )
+        scores[action] = score
+        terminal = child_by_action[action].terminal_status.is_terminal
+        compared.append(
+            {
+                "action": action_to_dict(action),
+                "role_labels": role_labels,
+                "forced_action_review_score": score,
+                "continuation_review_nodes": review_nodes,
+                "review_limit_mode": (
+                    "terminal_score" if terminal else "node_budget"
+                ),
+                "review_max_nodes": None if terminal else REVIEW_NODES,
+            }
+        )
+
+    best_action = max(scores, key=scores.get)
+    best_score = scores[best_action]
+    normalized, _ = _normalized_regrets(best_action, best_score, scores)
+
+    def summary(action):
+        return {
+            "action": action_to_dict(action),
+            "review_score": scores[action],
+            "regret": best_score - scores[action],
+            "normalized_regret": normalized[action],
+        }
+
+    criterion_action = max(expected, key=scores.get)
+    primary_score = scores[primary.action]
+    weak_score = scores[weak.action]
+    if primary_score > weak_score:
+        classification = (
+            "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_LOCALLY_STRONGER_THAN_WEAK"
+        )
+    elif primary_score == weak_score:
+        classification = "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK"
+    else:
+        classification = (
+            "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_LOCALLY_WEAKER_THAN_WEAK"
+        )
+
+    return {
+        "classification": classification,
+        "best_compared_score": best_score,
+        "primary_matches_reviewer_quality": primary_score == best_score,
+        "compared_actions": compared,
+        "role_summaries": {
+            "primary1000": summary(primary.action),
+            "weak128": summary(weak.action),
+            "reviewer8000": summary(reviewer.action),
+            "criterion_expected": summary(criterion_action),
         },
     }
 
@@ -871,6 +969,7 @@ def _capability_suite(label, compiled, profile, config):
                 state,
                 expected,
                 primary,
+                weak,
                 reviewer,
             )
         if status != "PASS":
