@@ -1,3 +1,34 @@
+## Gate 2 mobility-failure cause closeout
+
+This bounded `CAUSAL_DIAGNOSTIC` reproduced the existing first failure at
+`generated_F_V4-3 / mobility` on fingerprint
+`8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d`.
+The primary1000 action still missed the unchanged expected action, so there was
+no reproduction drift.
+
+The inline decomposition classified the failure as
+`GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE`. The unchanged
+criterion selected `(3,1)->(2,2)`, while both the production pseudo-attack
+mobility component and the full production one-ply evaluator selected
+`(3,1)->(2,0)`. Fresh fixed-depth-1 production AlphaBeta and depth-1
+`reference_minimax` agreed on `(3,1)->(2,0)` with root score 1300; the
+production search completed depth 1 in 11 nodes. This rules out a depth-1
+search-implementation discrepancy and attributes this Gate-2 mismatch to the
+generated surface exposing different rankings from the benchmark proxy and
+the production mobility feature. It does not declare the generator defective.
+
+The mobility task remains `HARD_FAILURE`, the first failure remains
+`generated_F_V4-3 / mobility`, Gate 2 remains failed/unresolved, and Gate 3
+remains frozen. No later ruleset, short game, new state, wider scan, game,
+Arena, training, or evolution ran.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 controlled anchor-pressure closeout
 
 This in-place `CAUSAL_DIAGNOSTIC` replaced raw "any checking move" with a

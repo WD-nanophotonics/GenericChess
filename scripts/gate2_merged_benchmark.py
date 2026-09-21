@@ -21,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
-from generic_chess.ai.alphabeta.search import terminal_score
+from generic_chess.ai.alphabeta.search import reference_minimax, terminal_score
 from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.evaluator import Evaluator
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
@@ -35,7 +35,7 @@ from generic_chess.core.actions import (
     action_target_square,
     action_to_dict,
 )
-from generic_chess.core.attacks import is_in_check
+from generic_chess.core.attacks import is_in_check, pseudo_attacks
 from generic_chess.core.identity import repetition_identity_key
 from generic_chess.core.position import HistoryRecord
 from generic_chess.core.semantic_executor import semantic_engine_for
@@ -65,6 +65,10 @@ PASS_RATIO = 0.5
 OBVIOUS_REGRET = 0.5
 CAPABILITY_STATE_LIMIT = 240
 CAPABILITY_BRANCH_LIMIT = 4
+MOBILITY_FAILURE_RULESET = "generated_F_V4-3"
+MOBILITY_FAILURE_FINGERPRINT = (
+    "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d"
+)
 TASK_ORDER = (
     "mate_in_one",
     "mate_in_three",
@@ -144,6 +148,144 @@ def _decision_telemetry(decision, search_limit_mode, *, max_nodes, max_depth):
         "search_limit_mode": search_limit_mode,
         "max_nodes": max_nodes,
         "max_depth": max_depth,
+    }
+
+
+def _action_dicts(actions):
+    return [action_to_dict(action) for action in actions]
+
+
+def _argmax_actions(actions, scores):
+    best = max(scores[action] for action in actions)
+    return tuple(action for action in actions if scores[action] == best)
+
+
+def _mobility_failure_cause_check(
+    label,
+    compiled,
+    profile,
+    config,
+    state,
+    expected,
+    primary,
+    reviewer,
+):
+    """Decompose the already-reproduced Gate-2 mobility failure in place."""
+    if (
+        label != MOBILITY_FAILURE_RULESET
+        or compiled.ruleset_fingerprint != MOBILITY_FAILURE_FINGERPRINT
+        or primary.action in expected
+    ):
+        return {
+            "classification": "GATE2_MOBILITY_FAILURE_REPRODUCTION_DRIFT",
+        }
+
+    successors = _successors(state, compiled)
+    actions = tuple(action for action, _child in successors)
+    children = {action: child for action, child in successors}
+    criterion_scores = {
+        action: -len(_successors(children[action], compiled)) for action in actions
+    }
+    criterion_argmax = _argmax_actions(actions, criterion_scores)
+    if set(criterion_argmax) != set(expected):
+        return {
+            "classification": "GATE2_MOBILITY_FAILURE_REPRODUCTION_DRIFT",
+            "legal_action_count": len(actions),
+            "criterion_argmax_actions": _action_dicts(criterion_argmax),
+            "existing_expected_actions": _action_dicts(expected),
+        }
+
+    actor = state.position.side_to_move
+    mobility_component_scores = {}
+    full_one_ply_scores = {}
+    evaluator = Evaluator(compiled, profile, config)
+    for action in actions:
+        child = children[action]
+        actor_attacks = len(pseudo_attacks(child.position, actor, compiled))
+        opponent_attacks = len(
+            pseudo_attacks(child.position, 1 - actor, compiled)
+        )
+        mobility_component_scores[action] = config.dynamic_mobility_weight * (
+            actor_attacks - opponent_attacks
+        )
+        full_one_ply_scores[action] = (
+            -terminal_score(child.terminal_status, child.position.side_to_move, 1)
+            if child.terminal_status.is_terminal
+            else -evaluator.evaluate(child)
+        )
+
+    mobility_component_argmax = _argmax_actions(
+        actions, mobility_component_scores
+    )
+    full_one_ply_argmax = _argmax_actions(actions, full_one_ply_scores)
+    history = (state.position,)
+    fixed_depth = _fixed_depth_decision(
+        compiled, profile, config, state, history, 1
+    )
+    reference_score, reference_action = reference_minimax(
+        state, 1, evaluator, compiled
+    )
+
+    if (
+        fixed_depth.action != reference_action
+        or fixed_depth.score != reference_score
+    ):
+        classification = (
+            "GATE2_MOBILITY_CAUSE_SEARCH_IMPLEMENTATION_DIVERGENCE"
+        )
+    elif set(criterion_argmax) != set(mobility_component_argmax):
+        classification = (
+            "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE"
+        )
+    elif set(criterion_argmax) != set(full_one_ply_argmax):
+        classification = (
+            "GATE2_MOBILITY_CAUSE_PRODUCTION_EVALUATOR_INTERACTION"
+        )
+    elif fixed_depth.action not in expected:
+        classification = "GATE2_MOBILITY_CAUSE_UNRESOLVED"
+    elif reviewer.action in expected:
+        classification = "GATE2_MOBILITY_CAUSE_1000_NODE_HORIZON_SHORTFALL"
+    elif reviewer.action not in expected:
+        classification = (
+            "GATE2_MOBILITY_CAUSE_MULTIPLY_SEARCH_HORIZON_DIVERGENCE"
+        )
+    else:
+        classification = "GATE2_MOBILITY_CAUSE_UNRESOLVED"
+
+    return {
+        "classification": classification,
+        "legal_action_count": len(actions),
+        "criterion_argmax_actions": _action_dicts(criterion_argmax),
+        "production_mobility_component_argmax_actions": _action_dicts(
+            mobility_component_argmax
+        ),
+        "full_production_one_ply_argmax_actions": _action_dicts(
+            full_one_ply_argmax
+        ),
+        "existing_expected_actions": _action_dicts(expected),
+        "primary1000_action": (
+            None if primary.action is None else action_to_dict(primary.action)
+        ),
+        "reviewer8000_action": (
+            None if reviewer.action is None else action_to_dict(reviewer.action)
+        ),
+        "fixed_depth_1_production": {
+            **_decision_telemetry(
+                fixed_depth,
+                "fixed_depth_1",
+                max_nodes=None,
+                max_depth=1,
+            ),
+            "score": fixed_depth.score,
+        },
+        "reference_minimax_depth_1": {
+            "selected_action": (
+                None
+                if reference_action is None
+                else action_to_dict(reference_action)
+            ),
+            "score": reference_score,
+        },
     }
 
 
@@ -720,6 +862,17 @@ def _capability_suite(label, compiled, profile, config):
             },
             **witness_metadata,
         }
+        if name == "mobility" and status == "HARD_FAILURE":
+            rows[name]["cause_check"] = _mobility_failure_cause_check(
+                label,
+                compiled,
+                profile,
+                config,
+                state,
+                expected,
+                primary,
+                reviewer,
+            )
         if status != "PASS":
             return {"status": status, "first_failure": name, "tasks": rows}
     return {"status": "PASS", "first_failure": None, "tasks": rows}

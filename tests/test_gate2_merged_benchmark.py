@@ -188,10 +188,40 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     }
 
     next_generated = result["rulesets"][3]["capability"]
+    assert result["rulesets"][3]["ruleset_fingerprint"] == (
+        "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d"
+    )
     assert next_generated["status"] == "HARD_FAILURE"
     assert next_generated["first_failure"] == "mobility"
     assert next_generated["tasks"]["extreme_material"]["status"] == "PASS"
-    assert next_generated["tasks"]["mobility"]["status"] == "HARD_FAILURE"
+    mobility = next_generated["tasks"]["mobility"]
+    assert mobility["status"] == "HARD_FAILURE"
+    assert mobility["primary_expected"] is False
+    cause = mobility["cause_check"]
+    assert cause["classification"] in {
+        "GATE2_MOBILITY_CAUSE_SEARCH_IMPLEMENTATION_DIVERGENCE",
+        "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE",
+        "GATE2_MOBILITY_CAUSE_PRODUCTION_EVALUATOR_INTERACTION",
+        "GATE2_MOBILITY_CAUSE_1000_NODE_HORIZON_SHORTFALL",
+        "GATE2_MOBILITY_CAUSE_MULTIPLY_SEARCH_HORIZON_DIVERGENCE",
+        "GATE2_MOBILITY_CAUSE_UNRESOLVED",
+    }
+    assert cause["criterion_argmax_actions"] == mobility["expected_actions"]
+    assert cause["existing_expected_actions"] == mobility["expected_actions"]
+    assert cause["production_mobility_component_argmax_actions"]
+    assert cause["full_production_one_ply_argmax_actions"]
+    assert cause["legal_action_count"] >= len(mobility["expected_actions"])
+    assert cause["primary1000_action"] == mobility["primary_action"]
+    assert cause["reviewer8000_action"] == mobility["reviewer_action"]
+    fixed = cause["fixed_depth_1_production"]
+    assert fixed["search_limit_mode"] == "fixed_depth_1"
+    assert fixed["max_nodes"] is None
+    assert fixed["max_depth"] == 1
+    assert fixed["completed_depth"] == 1
+    assert fixed["termination_reason"] == "completed_depth"
+    reference = cause["reference_minimax_depth_1"]
+    assert reference["selected_action"] is not None
+    assert isinstance(reference["score"], int)
     assert len(result["rulesets"]) == 4
 
     review = result["review"]
