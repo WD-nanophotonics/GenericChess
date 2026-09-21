@@ -648,6 +648,34 @@ solving depth; evaluator tuning remains frozen.
 
 ---
 
+# Gate 2 R4 independent mate-in-two witness closeout
+
+## Outcome
+
+R4 used only the frozen F86N-R1 V4-3 ruleset and first F86S V4-3 witness
+`T0075`, then deterministically checked 119 relocation candidates to find the
+first nontrivial ongoing root with six legal actions, one exact forced-mate
+action, and five non-forced actions. The source fingerprint and exact-checkmate
+validation matched the published authority.
+
+## Observation
+
+- Exactly two depth-2 and two depth-3 production searches ran with the
+  prescribed fresh-player, qsearch 0/0, TT/order/native/disk-off settings.
+- At depth 2, both rule prior and flat control selected a non-forced action.
+- At depth 3, both selected the unique forced-mate action, and both passed the
+  evaluator-free solving control.
+- Classification: `GATE2_R4_NEITHER_GUIDED_TO_WINNING_ROUTE`.
+- This witness provides no shallow guidance conclusion; no games, Heavy,
+  training, scan beyond the 256-candidate bound, or production changes ran.
+
+## Tests and routing
+
+The R4 regression test passed. Per the work order, this is not a rule-prior
+positive or negative signal; Gate 2 remains open pending Chat's next route.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
