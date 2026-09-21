@@ -2,13 +2,25 @@
 
 from scripts.gate2_merged_benchmark import (
     PASS_RATIO,
+    _has_optional_promotion,
     _normalized_regrets,
     _trend_bucket,
     run_merged,
 )
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
-def test_merged_gate2_stops_when_controlled_chess_promotion_witness_is_absent():
+def test_optional_promotion_applicability_uses_compiled_contract():
+    chess = compile_ruleset_for_execution(build_western_chess_ruleset())
+    shogi = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+
+    assert _has_optional_promotion(chess) is False
+    assert _has_optional_promotion(shogi) is True
+
+
+def test_merged_gate2_applies_optional_promotion_and_stops_on_shogi_drop():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
@@ -17,17 +29,16 @@ def test_merged_gate2_stops_when_controlled_chess_promotion_witness_is_absent():
     assert result["classification"] == "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY"
     assert result["first_hard_failure"] == {
         "layer": "capability",
-        "ruleset": "chess",
-        "reason": "promotion",
-        "failure_type": "HARNESS_FAILURE",
+        "ruleset": "shogi",
+        "reason": "drop",
+        "failure_type": "HARD_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
-    assert [row["label"] for row in result["rulesets"]] == ["chess"]
+    assert [row["label"] for row in result["rulesets"]] == ["chess", "shogi"]
     assert result["short_games"] == []
 
     tasks = result["rulesets"][0]["capability"]["tasks"]
-    assert result["rulesets"][0]["capability"]["status"] == "HARNESS_FAILURE"
-    assert result["rulesets"][0]["capability"]["first_failure"] == "promotion"
+    assert result["rulesets"][0]["capability"]["status"] == "PASS"
     assert tasks["mate_in_one"]["status"] == "PASS"
     assert tasks["mate_in_one"]["primary_expected"] is True
     assert tasks["mate_in_three"]["status"] == "PASS"
@@ -58,15 +69,10 @@ def test_merged_gate2_stops_when_controlled_chess_promotion_witness_is_absent():
         for decision in mate_one.values()
     )
 
-    assert list(tasks) == [
-        "mate_in_one",
-        "mate_in_three",
-        "avoid_immediate_mate",
-        "extreme_material",
-        "mobility",
-        "anchor_danger",
-        "promotion",
-    ]
+    assert tasks["promotion"] == {
+        "status": "NOT_APPLICABLE",
+        "reason": "NO_OPTIONAL_PROMOTION_SEMANTICS",
+    }
     extreme = tasks["extreme_material"]
     assert extreme["status"] == "PASS"
     assert extreme["all_children_nonterminal"] is True
@@ -89,12 +95,41 @@ def test_merged_gate2_stops_when_controlled_chess_promotion_witness_is_absent():
     assert material_decisions["weak"]["search_limit_mode"] == "node_budget"
     assert material_decisions["weak"]["max_nodes"] == 128
 
-    promotion = tasks["promotion"]
-    assert promotion == {
-        "status": "HARNESS_FAILURE",
-        "reason": "CONTROLLED_PROMOTION_WITNESS_NOT_FOUND",
-    }
-    assert len(result["rulesets"]) == 1
+    shogi = result["rulesets"][1]["capability"]
+    assert shogi["status"] == "HARD_FAILURE"
+    assert shogi["first_failure"] == "drop"
+    assert shogi["tasks"]["mate_in_three"]["status"] == "PASS"
+    assert shogi["tasks"]["extreme_material"]["status"] == "PASS"
+    promotion = shogi["tasks"]["promotion"]
+    assert promotion["status"] == "PASS"
+    assert promotion["all_children_nonterminal"] is True
+    assert promotion["optional_promotion_group_count"] >= 1
+    assert promotion["promotion_favorable_group_count"] >= 1
+    assert promotion["one_ply_best_actions"] == promotion["expected_actions"]
+    assert all(
+        action["promotion_target_id"] is not None
+        for action in promotion["expected_actions"]
+    )
+    for group in promotion["promotion_favorable_groups"]:
+        assert group["promoted"]
+        assert group["unpromoted"]
+        assert group["score_advantage"] > 0
+        assert max(row["one_ply_score"] for row in group["promoted"]) > max(
+            row["one_ply_score"] for row in group["unpromoted"]
+        )
+    promotion_decisions = promotion["decisions"]
+    for role in ("primary", "reviewer"):
+        assert promotion_decisions[role]["search_limit_mode"] == "fixed_depth_1"
+        assert promotion_decisions[role]["max_nodes"] is None
+        assert promotion_decisions[role]["max_depth"] == 1
+        assert promotion_decisions[role]["completed_depth"] == 1
+        assert promotion_decisions[role]["termination_reason"] == "completed_depth"
+        assert promotion_decisions[role]["selected_action"] in promotion["expected_actions"]
+
+    drop = shogi["tasks"]["drop"]
+    assert drop["status"] == "HARD_FAILURE"
+    assert drop["primary_expected"] is False
+    assert len(result["rulesets"]) == 2
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000

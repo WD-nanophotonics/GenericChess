@@ -1,3 +1,30 @@
+## Gate 2 optional-promotion applicability closeout
+
+This in-place `CAUSAL_DIAGNOSTIC` derives promotion applicability from the
+compiled contract: an allowed promotion pair is optional only when its target
+is outside the corresponding type/owner forced-target set. Promotion is now
+required only for rulesets with at least one such pair; the controlled
+promotion witness and fixed-depth-1 search protocol are otherwise unchanged.
+
+Western Chess reports no optional promotion semantics, so its promotion task
+is `NOT_APPLICABLE` with reason `NO_OPTIONAL_PROMOTION_SEMANTICS`; all other
+Chess capabilities passed. Standard Shogi reports optional promotion and found
+a controlled witness with two favorable optional groups. Its unique global
+one-ply best action was promoted; primary and reviewer both completed fixed
+depth 1 in 95 nodes and selected it. Shogi promotion passed.
+
+The merged benchmark continued and stopped at the next first failure: Shogi
+`drop` under the existing raw any-drop expected set, with
+`failure_type=HARD_FAILURE`. No generated ruleset, short game, Gate 3, or
+evolution ran. Gate 2 remains failed and Gate 3 frozen.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 controlled promotion-witness closeout
 
 This in-place `CAUSAL_DIAGNOSTIC` replaced the raw "any promotion" expected

@@ -470,18 +470,28 @@ def _task_witnesses(label, compiled, profile, config):
 def _required_tasks(label, compiled):
     required = {"extreme_material", "mobility", "anchor_danger"}
     if label in {"chess", "shogi"}:
-        required |= {"mate_in_one", "mate_in_three", "avoid_immediate_mate", "promotion"}
+        required |= {"mate_in_one", "mate_in_three", "avoid_immediate_mate"}
     if label == "shogi":
         required.add("drop")
+    if _has_optional_promotion(compiled):
+        required.add("promotion")
     if label.startswith("generated_"):
-        if any(piece_type.is_promotable for piece_type in compiled.piece_types):
-            required.add("promotion")
         if any(
             any(any(square_allowed for square_allowed in row) for row in grid)
             for grid in compiled.drop_allowed.values()
         ):
             required.add("drop")
     return required
+
+
+def _has_optional_promotion(compiled):
+    for type_id, allowed_by_owner in compiled.promotion_allowed.items():
+        forced_by_owner = compiled.promotion_forced[type_id]
+        for owner, allowed_pairs in enumerate(allowed_by_owner):
+            forced_targets = forced_by_owner[owner]
+            if any(target not in forced_targets for _source, target in allowed_pairs):
+                return True
+    return False
 
 
 def _capability_suite(label, compiled, profile, config):
@@ -492,6 +502,8 @@ def _capability_suite(label, compiled, profile, config):
         witness = witnesses[name]
         if name not in required:
             rows[name] = {"status": "NOT_APPLICABLE"}
+            if name == "promotion" and not _has_optional_promotion(compiled):
+                rows[name]["reason"] = "NO_OPTIONAL_PROMOTION_SEMANTICS"
             continue
         if witness is None:
             reason = {
