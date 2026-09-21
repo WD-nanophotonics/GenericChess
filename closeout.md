@@ -1,3 +1,26 @@
+## Gate 2 mate-in-three exact node-threshold closeout
+
+This bounded `CAUSAL_DIAGNOSTIC` used the same fixed Chess mate-in-three
+position, production rule-derived evaluator, and deterministic Python
+AlphaBeta configuration as the solving-horizon diagnostic. After the cheap
+unique-forced-action reproduction assertion, exactly two fresh depth-3
+searches ran, at node caps 21,248 and 21,249. No other budget, game, Arena,
+Heavy job, learning, evaluator/search change, or Gate 3 work ran.
+
+Result: `GATE2_MATE3_EXACT_MIN_NODE_CAP_21249`. At cap 21,248 the search hit
+`node_limit` at 21,248 nodes, retained completed depth 2, and returned `c5c8`.
+At cap 21,249 it completed depth 3 using 21,248 nodes and returned the unique
+forced move `d4e5` with mate score 999999997. Thus the prior 1,000-node miss is
+not evidence against evaluator capability; this certified tactical horizon
+needs an explicit depth-3 guarantee or a node floor of at least 21,249.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_mate3_exact_node_threshold.py
+1 passed
+```
+
 ## Gate 2 mate-in-three solving-horizon diagnostic closeout
 
 This bounded `CAUSAL_DIAGNOSTIC` tested whether the corrected Gate 2 Chess
