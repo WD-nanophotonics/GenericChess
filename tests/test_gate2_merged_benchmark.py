@@ -218,11 +218,9 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     assert reference["selected_action"] is not None
     assert isinstance(reference["score"], int)
     local = cause["local_strength_review"]
-    assert local["classification"] in {
-        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_LOCALLY_STRONGER_THAN_WEAK",
-        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK",
-        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_LOCALLY_WEAKER_THAN_WEAK",
-    }
+    assert local["classification"] == (
+        "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK"
+    )
     allowed_actions = [
         mobility["primary_action"],
         mobility["weak_action"],
@@ -252,6 +250,40 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     for summary in summaries.values():
         assert summary["regret"] >= 0
         assert 0.0 <= summary["normalized_regret"] <= 1.0
+    shadow = cause["shadow_ruleset_strength"]
+    assert shadow["classification"] in {
+        "GATE2_FV43_SHADOW_STRENGTH_HARNESS_FAILURE",
+        "GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128",
+        "GATE2_FV43_PRIMARY_STRENGTH_NOT_SUPPORTED_VS_WEAK128",
+    }
+    assert shadow["ruleset"] == "generated_F_V4-3"
+    assert shadow["ruleset_fingerprint"] == (
+        "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d"
+    )
+    assert shadow["budgets"] == {
+        "primary_nodes": 1000,
+        "weak_nodes": 128,
+        "reviewer_nodes": 8000,
+    }
+    games = shadow["games"]
+    assert len(games) == 4
+    assert {game["label"] for game in games} == {"generated_F_V4-3"}
+    assert {
+        (game["opening"], game["primary_owner"]) for game in games
+    } == {
+        ("initial", 0),
+        ("initial", 1),
+        ("shallow_random", 0),
+        ("shallow_random", 1),
+    }
+    assert shadow["summary"]["game_count"] == 4
+    assert set(shadow["trends"]["aggregate"]) == {"10", "20", "30"}
+    assert set(shadow["trends"]["by_ruleset"]) == {"generated_F_V4-3"}
+    assert set(shadow["trends"]["by_ruleset"]["generated_F_V4-3"]) == {
+        "10",
+        "20",
+        "30",
+    }
     assert len(result["rulesets"]) == 4
 
     review = result["review"]

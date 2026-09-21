@@ -162,6 +162,7 @@ def _argmax_actions(actions, scores):
 
 def _mobility_failure_cause_check(
     label,
+    ruleset_index,
     compiled,
     profile,
     config,
@@ -289,7 +290,7 @@ def _mobility_failure_cause_check(
         },
     }
     if classification == "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE":
-        result["local_strength_review"] = _mobility_local_strength_review(
+        local_strength = _mobility_local_strength_review(
             compiled,
             profile,
             config,
@@ -299,6 +300,24 @@ def _mobility_failure_cause_check(
             weak,
             reviewer,
         )
+        result["local_strength_review"] = local_strength
+        if local_strength["classification"] == (
+            "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK"
+        ):
+            result["shadow_ruleset_strength"] = _shadow_ruleset_strength(
+                label,
+                ruleset_index,
+                compiled,
+                profile,
+                config,
+            )
+        else:
+            result["shadow_ruleset_strength"] = {
+                "classification": (
+                    "GATE2_FV43_SHADOW_STRENGTH_PREREQUISITE_DRIFT"
+                ),
+                "games": [],
+            }
     return result
 
 
@@ -384,6 +403,99 @@ def _mobility_local_strength_review(
             "reviewer8000": summary(reviewer.action),
             "criterion_expected": summary(criterion_action),
         },
+    }
+
+
+def _shadow_ruleset_strength(
+    label,
+    ruleset_index,
+    compiled,
+    profile,
+    config,
+):
+    if (
+        label != MOBILITY_FAILURE_RULESET
+        or compiled.ruleset_fingerprint != MOBILITY_FAILURE_FINGERPRINT
+    ):
+        return {
+            "classification": "GATE2_FV43_SHADOW_STRENGTH_PREREQUISITE_DRIFT",
+            "games": [],
+        }
+
+    shallow_opening = _fixed_opening(compiled, 31000 + ruleset_index)
+    games = []
+    for opening_kind, opening_actions in (
+        ("initial", ()),
+        ("shallow_random", shallow_opening),
+    ):
+        for primary_owner in (0, 1):
+            trial = _short_game(
+                compiled,
+                profile,
+                config,
+                opening_kind,
+                opening_actions,
+                primary_owner,
+            )
+            games.append(
+                {
+                    "label": label,
+                    "opening": opening_kind,
+                    "primary_owner": primary_owner,
+                    **trial,
+                }
+            )
+
+    trends = _aggregate_trends(games)
+    hard_failures = [
+        game["hard_failure"] for game in games if game["hard_failure"] is not None
+    ]
+    if hard_failures:
+        classification = "GATE2_FV43_SHADOW_STRENGTH_HARNESS_FAILURE"
+    elif _trend_failures(trends):
+        classification = "GATE2_FV43_PRIMARY_STRENGTH_NOT_SUPPORTED_VS_WEAK128"
+    else:
+        classification = "GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128"
+
+    terminal_primary_wins = 0
+    terminal_weak_wins = 0
+    terminal_draws = 0
+    ongoing_at_30 = 0
+    for game in games:
+        if (
+            game.get("terminal_status") == TerminalStatus.ONGOING.value
+            and game.get("plies") == MAX_PLIES
+        ):
+            ongoing_at_30 += 1
+        elif game.get("terminal_status") is not None:
+            if game.get("winner") is None:
+                terminal_draws += 1
+            elif game["winner"] == game["primary_owner"]:
+                terminal_primary_wins += 1
+            else:
+                terminal_weak_wins += 1
+
+    return {
+        "classification": classification,
+        "ruleset": label,
+        "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        "budgets": {
+            "primary_nodes": PRIMARY_NODES,
+            "weak_nodes": WEAK_NODES,
+            "reviewer_nodes": REVIEW_NODES,
+        },
+        "games": games,
+        "summary": {
+            "game_count": len(games),
+            "terminal_primary_wins": terminal_primary_wins,
+            "terminal_weak_wins": terminal_weak_wins,
+            "terminal_draws": terminal_draws,
+            "ongoing_at_30": ongoing_at_30,
+            "total_reviewed_primary_decisions": sum(
+                len(game["records"]) for game in games
+            ),
+        },
+        "trends": trends,
     }
 
 
@@ -841,7 +953,7 @@ def _has_optional_promotion(compiled):
     return False
 
 
-def _capability_suite(label, compiled, profile, config):
+def _capability_suite(label, ruleset_index, compiled, profile, config):
     witnesses = _task_witnesses(label, compiled, profile, config)
     required = _required_tasks(label, compiled)
     rows = {}
@@ -963,6 +1075,7 @@ def _capability_suite(label, compiled, profile, config):
         if name == "mobility" and status == "HARD_FAILURE":
             rows[name]["cause_check"] = _mobility_failure_cause_check(
                 label,
+                ruleset_index,
                 compiled,
                 profile,
                 config,
@@ -1246,10 +1359,12 @@ def run_merged(root: Path = ROOT):
         "first_hard_failure": None,
     }
     prepared = []
-    for label, compiled in _rulesets(root):
+    for ruleset_index, (label, compiled) in enumerate(_rulesets(root)):
         config = EvaluationConfig()
         profile = build_ruleset_profile(compiled, config)
-        capability = _capability_suite(label, compiled, profile, config)
+        capability = _capability_suite(
+            label, ruleset_index, compiled, profile, config
+        )
         result["rulesets"].append(
             {
                 "label": label,

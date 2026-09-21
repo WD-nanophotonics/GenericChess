@@ -1,3 +1,38 @@
+## Gate 2 generated-F shadow-strength closeout
+
+This `STRENGTH_BENCHMARK` reproduced the exact `generated_F_V4-3 / mobility`
+`HARD_FAILURE`, its
+`GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE` cause, and its
+`GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK` local classification. It then
+ran exactly four existing 30-ply `_short_game` cells on that ruleset: initial
+and deterministic shallow openings with both primary-owner assignments.
+
+The result is `GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128`. All four
+games remained ongoing at 30 plies; there were no terminal wins or draws and
+no harness failure. Across 56 reviewed primary decisions, all existing
+half-weak checks passed at 10, 20, and 30 plies. Aggregate primary versus weak
+metrics were:
+
+- 10 plies: normalized regret 0.125 vs 0.5625; obvious-error rate 0.125 vs
+  0.5625; forced-mate miss rate 0 vs 0.
+- 20 plies: normalized regret 0.1424132058 vs 0.5277777778; obvious-error rate
+  0.1388888889 vs 0.5277777778; forced-mate miss rate 0 vs 0.
+- 30 plies: normalized regret 0.1451227751 vs 0.3571428571; obvious-error rate
+  0.1428571429 vs 0.3571428571; forced-mate miss rate 0 vs 0.
+
+These shadow games are diagnostic only and remain under
+`shadow_ruleset_strength`; authoritative `result["short_games"]` remains empty.
+The mobility criterion remains failed, the first failure remains
+`generated_F_V4-3 / mobility`, Gate 2 remains failed/unresolved, and Gate 3
+remains frozen. No other ruleset, learning, or evolution ran.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 mobility local-strength closeout
 
 This bounded `CAUSAL_DIAGNOSTIC` reproduced the exact
