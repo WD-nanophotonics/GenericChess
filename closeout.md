@@ -1,3 +1,35 @@
+## Gate 2 Shogi extreme-material cause check closeout
+
+This in-place `CAUSAL_DIAGNOSTIC` reused the existing deterministic Shogi
+`extreme_material` witness, expected set, and 1000/128/8000-node root
+decisions. Only after the primary missed the immediate-capture expected set,
+the merged benchmark forced and equally reviewed the four expected actions
+plus the one distinct primary/reviewer action. No legal-action sweep,
+replacement witness, standalone script/test, games, generated rulesets,
+Heavy job, learning, Gate 3, or evolution ran.
+The synthetic witness's imported parent history could not be extended safely,
+so every nonterminal forced child was normalized to the same fixed-child-root
+history before continuation search; this mode is recorded in the result.
+
+Result: `SHOGI_EXTREME_MATERIAL_EXPECTATION_NOT_VALIDATED`. The four expected
+captures each had immediate rule value 1000 and used 8,000 review nodes; their
+best continuation score was 3439. Primary1000 and reviewer8000 selected the
+same non-capture, an immediate terminal win with forced-action score 999999999.
+Thus no expected action reached the best compared score, and primary was not
+below the best expected action. The immediate highest-capture rule is invalid
+as search-level ground truth for this witness.
+
+The task is now `HARNESS_FAILURE`, not agent `HARD_FAILURE`. The first stop
+remains Shogi `extreme_material`; Gate 2 remains failed/harness-blocked and
+Gate 3 remains frozen. No later task, ruleset, or short game executed.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+3 passed
+```
+
 ## Horizon-aware merged Gate 2 benchmark closeout
 
 This `STRENGTH_BENCHMARK` corrected only the existing merged Gate 2 protocol.

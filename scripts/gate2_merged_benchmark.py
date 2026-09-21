@@ -421,6 +421,24 @@ def _capability_suite(label, compiled, profile, config):
             if not reviewer_passed
             else "PASS" if primary_passed else "HARD_FAILURE"
         )
+        cause_check = None
+        if label == "shogi" and name == "extreme_material" and not primary_expected:
+            cause_check = _extreme_material_cause_check(
+                compiled,
+                profile,
+                config,
+                state,
+                history,
+                expected,
+                primary.action,
+                reviewer.action,
+            )
+            status = (
+                "HARD_FAILURE"
+                if cause_check["classification"]
+                == "SHOGI_EXTREME_MATERIAL_PRIMARY_MISS_CONFIRMED"
+                else "HARNESS_FAILURE"
+            )
         rows[name] = {
             "status": status,
             "witness_label": state_label,
@@ -452,6 +470,8 @@ def _capability_suite(label, compiled, profile, config):
                 ),
             },
         }
+        if cause_check is not None:
+            rows[name]["cause_check"] = cause_check
         if status != "PASS":
             return {"status": status, "first_failure": name, "tasks": rows}
     return {"status": "PASS", "first_failure": None, "tasks": rows}
@@ -471,14 +491,90 @@ def _fixed_opening(compiled, seed):
     return tuple(actions)
 
 
-def _review_action_score(compiled, profile, config, state, witnesses, action):
+def _review_action_score(
+    compiled, profile, config, state, witnesses, action, *, reset_child_history=False
+):
     child = next(child for candidate, child in _successors(state, compiled) if candidate == action)
     if child.terminal_status.is_terminal:
         return -terminal_score(child.terminal_status, child.position.side_to_move, 1), 0
-    session = _session_with_state(compiled, state, witnesses)
-    session.submit(action)
+    if reset_child_history:
+        child = _fixed_state_from_position(compiled, child.position)
+        session = _session_with_state(compiled, child, (child.position,))
+    else:
+        session = _session_with_state(compiled, state, witnesses)
+        session.submit(action)
     decision = _make_player(compiled, profile, config).choose_action(session, _limits(REVIEW_NODES))
     return -decision.score, decision.nodes + decision.qnodes
+
+
+def _extreme_material_cause_check(
+    compiled,
+    profile,
+    config,
+    state,
+    witnesses,
+    expected,
+    primary_action,
+    reviewer_action,
+):
+    if primary_action is None or reviewer_action is None:
+        raise AssertionError("extreme-material cause check requires root actions")
+    compared = list(expected)
+    for action in (primary_action, reviewer_action):
+        if action not in compared:
+            compared.append(action)
+
+    scores = {}
+    reviews = []
+    for action in compared:
+        score, nodes = _review_action_score(
+            compiled,
+            profile,
+            config,
+            state,
+            witnesses,
+            action,
+            reset_child_history=True,
+        )
+        scores[action] = score
+        reviews.append(
+            {
+                "action": action_to_dict(action),
+                "immediate_captured_piece_rule_value": _capture_value(
+                    state, action, compiled, profile
+                ),
+                "forced_action_review_score": score,
+                "review_nodes": nodes,
+            }
+        )
+
+    best_expected = max(scores[action] for action in expected)
+    primary_score = scores[primary_action]
+    reviewer_score = scores[reviewer_action]
+    best_compared = max(scores.values())
+    expected_reaches_best = best_expected == best_compared
+    primary_strictly_below_expected = primary_score < best_expected
+    classification = (
+        "SHOGI_EXTREME_MATERIAL_PRIMARY_MISS_CONFIRMED"
+        if expected_reaches_best and primary_strictly_below_expected
+        else "SHOGI_EXTREME_MATERIAL_EXPECTATION_NOT_VALIDATED"
+    )
+    return {
+        "classification": classification,
+        "primary_action": action_to_dict(primary_action),
+        "reviewer_root_action": action_to_dict(reviewer_action),
+        "expected_actions": [action_to_dict(action) for action in expected],
+        "reviews": reviews,
+        "best_expected_review_score": best_expected,
+        "primary_review_score": primary_score,
+        "reviewer_action_review_score": reviewer_score,
+        "reviewer_action_in_expected": reviewer_action in expected,
+        "best_compared_score": best_compared,
+        "expected_reaches_best_compared_score": expected_reaches_best,
+        "primary_strictly_below_best_expected": primary_strictly_below_expected,
+        "review_node_budget_per_forced_action": REVIEW_NODES,
+        "continuation_history_mode": "fixed_child_root",
+    }
 
 
 def _normalized_regrets(best_action, best_score, action_scores):
