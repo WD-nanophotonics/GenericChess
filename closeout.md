@@ -1,3 +1,12 @@
+## Mainline route reset closeout
+
+The latest user instruction and Supervisor decision superseded and rejected
+F154/F155. The authoritative route is now recorded in
+`docs/architecture/GENERICCHESS_THEORY_ROADMAP.md` at checkpoint
+`ea08d6cce46470bc901ff60859e5dac74725e0c5`: known-game Chess/Shogi algorithm
+equivalence, then rule-prior baseline strength, then only conditional Gen0
+evolution. No F154 work was completed or committed.
+
 ## F153 mutation root-sensitivity closeout
 
 ### Outcome
