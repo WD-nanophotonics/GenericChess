@@ -676,6 +676,26 @@ positive or negative signal; Gate 2 remains open pending Chat's next route.
 
 ---
 
+# Gate 2 merged benchmark closeout
+
+## Comprehensive conclusion
+
+The Supervisor-directed merged Gate 2 entry reused the published Gate 1
+Chess/Shogi equivalence evidence and the R1-R4 mate/avoid-mate evidence, then
+ran the first five fixed F86O generated rulesets through material, mobility,
+anchor, promotion, and drop microchecks. It completed two role-swapped,
+strictly capped 30-ply opening-swap trials per ruleset: 10 trials, 131
+1000-node rule-prior decisions, and 131 corresponding 8000-node reviewer
+checks. No hard failure occurred and the reviewer coverage gate passed.
+
+Classification: `RULE_PRIOR_ABP_BASIC_COMPETENCE_SUPPORTED`.
+
+The merged regression test passed. This is the single comprehensive Gate 2
+conclusion; no fragmented R5/R6 scripts, fixtures, schemas, or production
+changes were added.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
