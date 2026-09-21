@@ -593,6 +593,34 @@ ruleset and root. The F86O policy tape replay reconstructed root digest
 
 ---
 
+# Gate 2 R2 selected-action forced-win check closeout
+
+## Outcome
+
+The exact R1 decision reproduction passed on the frozen ruleset/root. An
+evaluator-free three-ply terminal tree then checked only the certified action
+and the rule-prior-selected action.
+
+## Observation
+
+- The certified F86Q action `[3,4] -> [2,3]` has two legal opponent replies;
+  each has one owner-0 mating continuation, so
+  `FORCED_MATE_WITHIN_3_PLIES=true`.
+- The rule-prior-selected action has eight legal opponent replies; every reply
+  has zero owner-0 mating continuations, so it is not a forced win within the
+  same horizon.
+- Classification: `RULE_PRIOR_TACTICAL_COUNTEREXAMPLE_CONFIRMED`.
+- No evaluator scores were used by the predicate, and no full games, deeper
+  AlphaBeta, Heavy, Arena, new rulesets, or production changes were made.
+
+## Tests and routing
+
+The R2 regression test passed. This closes the ordered Gate 2 R2 diagnostic;
+the next requested causal diagnostic should inspect only the competing root
+actions and identify which rule-prior term causes the wrong depth-2 ordering.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
