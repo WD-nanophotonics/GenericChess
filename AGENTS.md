@@ -34,15 +34,25 @@ policy-distillation, Gumbel-MCTS, learned ordering, and related expansions are
 secondary and must receive no further work orders unless the new material-only
 benchmark later proves they are required.
 
+## Experimental selection
+
+At the start of every research order, state in ordinary prose the current
+single unknown variable, the minimal direct observation that can test it, and
+why full games are or are not needed. Label the order `CAUSAL_DIAGNOSTIC` or
+`STRENGTH_BENCHMARK`. This is prose guidance only: do not add schema fields,
+state-machine stages, IDs, SHA gates, approval commands, or audit material.
+
 ## Worker loop
 
 Use the existing Courier request in a loop: obtain the next order, implement
 it, test it, commit it, publish it, close it out, and obtain the next order in
 the same turn. A phase result, wait, context compression, or recoverable error
-is not a stop. Stop only for explicit whole-project completion, user stop,
+is not a stop. A phase-level result continues to the next work order. Stop only for explicit whole-project completion, user stop,
 active Supervisor HOLD, ownership conflict, uncertain irreversible effect, or
 severe harness failure. Retry ordinary transport faults with the same
 immutable request once before escalation; never create a replacement request.
+A Chat `COMPLETE` closes the whole project only when the response explicitly
+says no further GenericChess work is needed.
 
 ## Compute and promotion
 

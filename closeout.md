@@ -51,6 +51,40 @@ its unchanged threshold-10 score race, 16–32-ply openings, and own
 12-pair/3-non-0.5 discrimination gate. The historical F149 density result is
 not a blocker for that authorized F150 run.
 
+## F150 completed deep-opening discrimination/evolution closeout
+
+### Outcome
+
+F150 completed its registered Heavy run without intervention. The unchanged
+threshold-10 deep-opening score race did not discriminate Gen0 from a material
+diagnostic vector, so no Gen1 or Gen2 candidate was produced and nothing was
+promoted. Classification:
+`DEEP_OPENING_SCORE_RACE_INSUFFICIENT_MATERIAL_DISCRIMINATION`.
+
+The run was `f150-deep-opening-evolution-v1-101bf96d1a84`, started at
+2026-09-21 15:36:30.103 JST and completed at 20:14:07.003 JST, for
+4 hours 37 minutes 36.900 seconds, with exit code 0. The result artifact was
+`.generic_chess_flow/f150-deep-opening-evolution-result.json` and records the
+tested checkpoint `83f4b062fe5e29f7764c80c7bc498541a4ee2c96`.
+
+### Evidence
+
+- The discrimination phase attempted 36 role-swapped pairs / 72 games; 12
+  valid pairs remained and every pair scored 0.5, with mean 0.5 and bootstrap
+  95% CI [0.5, 0.5].
+- There were 36 invalid games (0.5), including 34 repetition endings and 2
+  no-contest endings; 24 attempted pairs were invalid. Only 3 games reached
+  the threshold, with zero formal Core decisive games.
+- The F149 calibration embedded in the result remained consistent: 8 valid
+  pairs / 16 valid games, 6 invalid games, and 4 threshold wins. Search,
+  ordering, material-only evaluation, and score-race semantics were unchanged.
+
+### Routing
+
+This is a strength-benchmark failure, not project completion. Per Supervisor
+direction, the next experiment is a bounded `CAUSAL_DIAGNOSTIC` root-sensitivity
+probe of mutation-to-search leverage before any further full-game evolution.
+
 ## F150 deep-opening discrimination/evolution stop closeout
 
 ### Outcome

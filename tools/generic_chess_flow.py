@@ -24,6 +24,10 @@ main algorithm. Process, audit, and formatting work is justified only when it
 removes a demonstrated blocker that a smaller fix cannot remove. Return COMPLETE
 if no further work is currently needed, or BLOCKED only when user action is
 genuinely required.
+
+For every research order, begin in ordinary prose by stating the current single
+unknown variable, the minimal direct observation that tests it, and why full
+games are or are not needed. Label it CAUSAL_DIAGNOSTIC or STRENGTH_BENCHMARK.
 """
 FULL_SHA = re.compile(r"^[0-9a-f]{40}$")
 CONTROL_FIELDS = {
@@ -796,6 +800,7 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         + f"SANDBOX_SHA={sha(sandbox)}\n"
         + "The referenced sandbox SHA is committed and published to origin/sandbox.\n"
         + "Prioritize actual playing-strength, self-improvement, and main-algorithm work. Process or audit work must remove a demonstrated mainline blocker and use the smallest sufficient fix; five consecutive non-mainline work orders is a direction warning.\n"
+        + "For every research order, begin in ordinary prose by stating the current single unknown variable, the minimal direct observation that tests it, and why full games are or are not needed. Label it CAUSAL_DIAGNOSTIC or STRENGTH_BENCHMARK.\n"
         + "Ordinary explanatory responses are valid even when control fields are omitted; the flow imports the body and defaults missing/invalid controls to CONTINUE/NONE/HOLD.\n"
         + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, or promotion.\n"
         + "End the response with these control fields when applicable:\n"
