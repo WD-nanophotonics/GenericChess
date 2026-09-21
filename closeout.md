@@ -1,3 +1,52 @@
+## F153 mutation root-sensitivity closeout
+
+### Outcome
+
+F153 completed as a bounded `CAUSAL_DIAGNOSTIC` with no games and no Heavy.
+The question was whether F144's six sigma-0.35 mutation directions were large
+enough to change fixed ABP root decisions. The first 4 positions were the two
+F151-sensitive openings plus fixed evaluator-neutral seeds 1530101 and
+1530102. Sigma 0.35 remained sparse through the 4-, 8-, and 12-position
+limits. Reusing the same 12 positions, sigma 0.70 produced 3 changed
+mutant-position roots, covering 3 mutants and 2 positions. Classification:
+`SUFFICIENT_LEVERAGE`.
+
+The smallest observed leverage scale was therefore sigma 0.70; sigma 1.40 was
+not run. This is local mutation-to-search leverage only and makes no strength
+claim.
+
+### Evidence
+
+- The initial batch was exactly 4 positions × 7 fresh evaluators = 28 root
+  searches. Every search used fresh player/TT state, max_nodes 1000, depth 12,
+  qdepth 4/8, fixed ordering, and the unchanged F144 material evaluator.
+- The sigma-0.35 stages at 4, 8, and 12 positions were `SPARSE_LEVERAGE`,
+  with one changed mutant-position root concentrated on F151 opening
+  `742b4fc33ad8a8e9e57369f74b7544245622932fe16d99326f82a9163c1b801c`.
+- Sigma 0.70 changed roots for mutants 0, 3, and 4 across the two F151
+  sensitive opening IDs. The result also contains the auxiliary one-ply
+  material successor observations for the initial four positions.
+- The artificial extreme-vector positive control changed the known F151
+  opening-0 root action, while repeated Gen0 searches were identical under
+  independent fresh TT instances.
+
+### Verification
+
+- Result artifact: `.generic_chess_flow/f153-shogi-material-mutation-root-sensitivity-result.json`
+  (transient and ignored), generated from checkpoint
+  `91d333b76d512c3b203d860c1d5a8865397dc89b`.
+- F153 tests cover F144 sigma-0.35 parity, the NO/SPARSE/SUFFICIENT leverage
+  classes, 4/8/12 limits, deterministic independent root searches, and the
+  artificial extreme positive control.
+
+### Routing
+
+The next bounded experiment may use sigma 0.70 for the tiny shared-opening Gen1
+screening described by Supervisor. F153 does not authorize a promotion or a
+new evaluator feature.
+
+---
+
 ## F151 paired-score microprobe closeout
 
 ### Outcome
