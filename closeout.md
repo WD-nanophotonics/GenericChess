@@ -723,6 +723,31 @@ recorded in the Courier closeout report.
 
 ---
 
+# Gate 3 R2 mobility leverage closeout
+
+## Classification
+
+`GATE3_MOBILITY_NO_LOCAL_LEVERAGE`
+
+R2 reused the Gate 3 R1 frozen ruleset, three F86Q roots, checkpoint-backed
+Gen0, and deterministic 1000-node search settings. The deterministic Gen0
+checkpoint identity guard matched
+`0d71bf4f9385820bf30fc905a65c6456d70ad7c4c4f90c3809729853eaa38c1d`.
+
+Neither primary mobility mutation (`1`, `3`) changed any root action. Per the
+pre-registered bounded route, wider values (`0`, `4`) were then tested and
+also changed no root action. The run used 15 searches total; no games,
+Arena, self-play, Heavy, or production changes ran. Numeric score changes
+without action changes were not treated as leverage.
+
+## Validation and routing
+
+The Gate 3 R2 regression test passed. The next diagnostic is the remaining
+simple production dynamic family, `anchor_safety`, using the same small
+causal-leverage procedure.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
