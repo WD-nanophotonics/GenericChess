@@ -7,6 +7,21 @@ F154/F155. The authoritative route is now recorded in
 equivalence, then rule-prior baseline strength, then only conditional Gen0
 evolution. No F154 work was completed or committed.
 
+## F159 F158 policy-divergence microprobe closeout
+
+F159 was a bounded `CAUSAL_DIAGNOSTIC` following F158's stalemate-dominated
+neutral result. It reconstructed exactly the four F158 roots (initial and the
+deterministic two-ply openings for seeds 15701 and 15702) and ran one fresh
+depth-2 Python ABP search with the frozen rule prior and one with the exact
+flat control on each root: eight searches total, with qsearch, ordering, TT,
+and disk cache disabled. No games, new seeds, or deeper searches were used.
+
+Result: `F158_POLICY_DIVERGENCE_EXISTS_BUT_STALEMATE_ERASES_OUTCOME_SIGNAL`.
+The seed-15701 initial root diverged while the other three roots agreed; all
+eight searches completed at depth 2. The probe records the two actions, root
+scores, completed depths, legal-action count, and equality flag for every
+root, plus both-evaluator child evaluations for the divergent root.
+
 ## F158 rule-prior versus flat-control micro-arena closeout
 
 F158 was the bounded `STRENGTH_BENCHMARK` requested after F157. It reused
