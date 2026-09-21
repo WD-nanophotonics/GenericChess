@@ -1,3 +1,48 @@
+# F146 threshold-3 score-race diagnostic closeout
+
+## Outcome
+
+F146 was run in pilot-only mode after the Supervisor-directed route restored
+the user-authorized terminal rule: first reach score 3, formal Core decisive
+outcomes take precedence, and for repetition/max-ply/non-contest terminals an
+unequal race score is the winner while equal scores are invalid. The pilot
+failed its acceptance gate, so no Gen1/Gen2 evolution or full-game validation
+was started. Classification:
+`SCORE_RACE_THRESHOLD3_PILOT_FAILED_ACCEPTANCE`.
+
+The strict threshold-3 diagnostic first produced 32 attempted games, all
+invalid repetition terminals, with 26 capture points and no check points. The
+restored tiebreak pilot produced 32 attempted games across 16 pairs: 2 valid
+score-tiebreak games and 30 invalid repetition games, giving an invalid-game
+fraction of 0.9375. The single valid pair tied at 0.5; it had 26 capture
+points, zero check points, zero threshold wins, zero formal decisive games,
+and a median valid length of 129 plies. The self-pair mean was exactly 0.5.
+The score-race signal therefore remains too sparse and repetition-dominated
+to justify evolution.
+
+## Implementation and verification
+
+- Published and tested checkpoint: `ee5426295e651cf0aa19885cb52764159f9935b6`.
+- The tiebreak artifact records that exact `git_sha`; `HEAD` and
+  `origin/sandbox` were verified equal at that SHA.
+- F146 schema is `F146_SHOGI_MATERIAL_SCORE_RACE_V2`, with capture +1,
+  check +1, capture+check +2, threshold 3, and score independent of material
+  values. The fixed F144 material evaluator and search stack were preserved.
+- Required targeted tests passed: 34 tests covering F146, F145, F144, and
+  AlphaBeta search behavior.
+- Both pilots used fresh role-swapped paired openings and four process
+  workers. Result artifacts and envelopes remain transient under
+  `.generic_chess_flow/`.
+
+## Routing
+
+The strict and restored-tiebreak diagnostics both fail to establish useful
+behavioral fitness. Per the active Supervisor route, no threshold reduction,
+complex learner, search expansion, or full evolution was started. The next
+step requires a new explicit work order or route decision.
+
+---
+
 # F145 score-race pilot closeout
 
 ## Outcome
