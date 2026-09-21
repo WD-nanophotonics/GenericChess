@@ -525,6 +525,40 @@ interrupted or restarted.
 
 ---
 
+# Gate 1 known-game backend equivalence closeout
+
+## Outcome
+
+Supervisor route correction completed the requested `CAUSAL_DIAGNOSTIC` Gate 1
+before any Gate 2 work. The benchmark passed and stopped at no hard fork.
+
+## Implementation and evidence
+
+- Added `scripts/gate1_known_game_backend_equivalence.py`, a benchmark-only
+  common negamax/alpha-beta harness using fixed material values and canonical
+  action ordering.
+- Compared GenericChess Western Chess against `python-chess` on 12 fixed
+  positions at depth 2 and 4 fixed low-branch positions at depth 3.
+- Compared GenericChess Standard Shogi against `cshogi` on 12 fixed positions
+  at depth 2 and 4 fixed low-branch positions at depth 3.
+- Each row records legal actions, terminal result, static material, best move,
+  root score, PV, nodes, wall time, and nodes/second for both backends.
+- All compared search tuples matched exactly, including node counts. The
+  production `AlphaBetaPlayer` sanity returned legal actions for both games.
+- Raw benchmark JSON remained transient and was not added to Git.
+
+## Tests
+
+- `tests/test_gate1_known_game_backend_equivalence.py` passed.
+- The targeted production suites passed: 37 tests covering Gate 1, AlphaBeta
+  search, Standard Shogi product behavior, and Western Chess product behavior.
+
+## Routing
+
+Gate 1 is complete. Gate 2 was not started, as required by the Supervisor.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
