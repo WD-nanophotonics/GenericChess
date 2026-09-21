@@ -1,3 +1,44 @@
+## F150 deep-opening discrimination/evolution stop closeout
+
+### Outcome
+
+F150 was stopped by the Supervisor before its first discrimination wave
+completed. The registered Heavy was active in Stage 1, the fresh Gen0-vs-M140
+deep-opening discrimination run; no discrimination result was persisted and no
+Gen1/Gen2 evolution stage started. The F150 result artifact is absent.
+
+The exact registered run was
+`f150-deep-opening-evolution-v1-d070c83a1bf9`. It was started at
+2026-09-21 13:47:03.368 JST and stopped at 14:24:45.284 JST, for an elapsed
+runtime of 38 minutes 41.916 seconds. Heavy status is `failed` with exit code
+1 because the Supervisor intentionally terminated the process tree; this is
+not an experiment failure and was not retried.
+
+### Verification and preserved evidence
+
+- Exact command:
+
+  ```text
+  .\generic-chess-flow.cmd heavy-start --label f150-deep-opening-evolution-v1 --resource-envelope .generic_chess_flow\f150-deep-opening-evolution-envelope.json -- .\.venv\Scripts\python.exe scripts\f150_shogi_material_score_race_deep_opening_evolution.py --output .generic_chess_flow\f150-deep-opening-evolution-result.json --workers 4
+  ```
+
+- Registered state, command, stdout, and stderr remain under
+  `.generic_chess_flow/heavy-runs/f150-deep-opening-evolution-v1-d070c83a1bf9/`.
+- No result artifact was created; no downstream screening, promotion, or
+  evolution was run.
+- The exact process tree was terminated and verified absent. No replacement
+  Heavy or retry was started.
+
+### Routing
+
+F149 remains a failed pilot gate: invalid fraction 0.2727272727272727,
+threshold/formal decisive fraction 0.18181818181818182, and all 8 retained
+self-pairs scored 0.5. The next authorized work is a minimal analysis of why
+paired role-swap scores remain 0.5, whether the score is distinguishable from
+the material vector, and the smallest experiment that can test that question.
+No large compute, threshold/weight/opening variant, or new score variant is
+authorized until the Supervisor explicitly approves it.
+
 # F149 deep-opening score-race Pilot A closeout
 
 ## Outcome
