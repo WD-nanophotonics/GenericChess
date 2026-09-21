@@ -1,3 +1,25 @@
+## Gate 2 mate-in-three solving-horizon diagnostic closeout
+
+This bounded `CAUSAL_DIAGNOSTIC` tested whether the corrected Gate 2 Chess
+mate-in-three failure came from the 1,000-node cap preventing depth 3 or from
+production AlphaBeta failing even after a complete depth-3 search. The unique
+forced move was reproduced as `d4xe5` (`d4e5` in UCI), then exactly two fresh,
+deterministic production searches were run without a node cap, at maximum
+depths 2 and 3. Quiescence, ordering, transposition tables, disk cache, and
+native legality were disabled. No games, tuning, Heavy job, or Gate 3 work ran.
+
+Result: `GATE2_MATE3_FAILURE_IS_NODE_BUDGET_HORIZON_SHORTFALL`. Depth 2
+completed after 831 nodes and chose `c5c8`; depth 3 completed after 21,248
+nodes and chose the unique forced move `d4e5` with a mate score. Because depth
+3 solved the position, the conditional exact-minimax control was not run.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_mate3_solving_horizon_diagnostic.py
+1 passed
+```
+
 ## Mainline route reset closeout
 
 The latest user instruction and Supervisor decision superseded and rejected
