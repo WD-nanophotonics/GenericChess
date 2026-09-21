@@ -1,3 +1,32 @@
+## Horizon-aware merged Gate 2 benchmark closeout
+
+This `STRENGTH_BENCHMARK` corrected only the existing merged Gate 2 protocol.
+Certified `mate_in_three` candidate and reviewer decisions now use fresh,
+uncapped fixed-depth-3 searches; the 128-node weak control remains telemetry.
+Every ordinary capability task retains 1000/128/8000-node budgets, and short
+games retain those budgets plus the existing 10/20/30-ply half-weak criteria.
+Per-decision action, node, depth, termination, and limit-mode telemetry is
+recorded. All capabilities now run before any short game can start.
+
+Chess passed every required capability. Its unique mate-in-three action was
+`d4e5`; both candidate and reviewer completed depth 3 at 21,248 nodes and
+selected it, while the weak 128-node control missed. Shogi mate-in-three also
+passed at completed depth 3 (4,167 nodes candidate and reviewer). The run then
+stopped at the first genuine failure: Shogi `extreme_material`, where the
+unchanged 1,000-node candidate did not select an expected action.
+
+Classification:
+`RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY`. No generated
+ruleset or short game ran after that failure, and no Gate 3 work ran.
+Gate 2 is explicitly `FAILED`; Gate 3 remains `FROZEN`.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+3 passed
+```
+
 ## Gate 2 mate-in-three exact node-threshold closeout
 
 This bounded `CAUSAL_DIAGNOSTIC` used the same fixed Chess mate-in-three

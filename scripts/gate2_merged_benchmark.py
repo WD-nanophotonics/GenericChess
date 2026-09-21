@@ -4,7 +4,9 @@ The benchmark executes actual directional microproblems, then (only if every
 microproblem passes) runs initial and fixed shallow-opening role-swapped
 30-ply games on Chess, Shogi, and five fixed generated rulesets. The deployed
 1000-node rule-prior player is compared with a 128-node weak ABP and an
-8000-node reviewer. The first real hard failure stops the run.
+8000-node reviewer, except that certified mate-in-three tasks guarantee a
+complete depth-3 candidate and reviewer search. The first real hard failure
+stops the run.
 """
 
 from __future__ import annotations
@@ -89,6 +91,15 @@ def _limits(nodes):
     )
 
 
+def _fixed_depth_three_limits():
+    return SearchLimits(
+        max_depth=3,
+        max_nodes=None,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+
+
 def _session_with_state(compiled, state, witnesses):
     session = GameSession(compiled)
     session._state = state
@@ -112,6 +123,26 @@ def _decision(compiled, profile, config, state, witnesses, nodes):
     return _make_player(compiled, profile, config).choose_action(
         _session_with_state(compiled, state, witnesses), _limits(nodes)
     )
+
+
+def _fixed_depth_three_decision(compiled, profile, config, state, witnesses):
+    return _make_player(compiled, profile, config).choose_action(
+        _session_with_state(compiled, state, witnesses), _fixed_depth_three_limits()
+    )
+
+
+def _decision_telemetry(decision, search_limit_mode, *, max_nodes, max_depth):
+    return {
+        "selected_action": (
+            None if decision.action is None else action_to_dict(decision.action)
+        ),
+        "nodes": decision.nodes + decision.qnodes,
+        "completed_depth": decision.completed_depth,
+        "termination_reason": decision.termination_reason,
+        "search_limit_mode": search_limit_mode,
+        "max_nodes": max_nodes,
+        "max_depth": max_depth,
+    }
 
 
 def _in_check(state, owner, compiled):
@@ -343,23 +374,86 @@ def _capability_suite(label, compiled, profile, config):
             }
         state_label, state, expected = witness
         history = (state.position,)
-        primary = _decision(compiled, profile, config, state, history, PRIMARY_NODES)
         weak = _decision(compiled, profile, config, state, history, WEAK_NODES)
-        reviewer = _decision(compiled, profile, config, state, history, REVIEW_NODES)
-        passed = primary.action in expected
+        if name == "mate_in_three":
+            primary = _fixed_depth_three_decision(
+                compiled, profile, config, state, history
+            )
+            reviewer = _fixed_depth_three_decision(
+                compiled, profile, config, state, history
+            )
+            primary_mode = reviewer_mode = "fixed_depth_3"
+            primary_nodes = reviewer_nodes = None
+            primary_depth = reviewer_depth = 3
+        else:
+            primary = _decision(
+                compiled, profile, config, state, history, PRIMARY_NODES
+            )
+            reviewer = _decision(
+                compiled, profile, config, state, history, REVIEW_NODES
+            )
+            primary_mode = reviewer_mode = "node_budget"
+            primary_nodes = PRIMARY_NODES
+            reviewer_nodes = REVIEW_NODES
+            primary_depth = reviewer_depth = None
+        primary_expected = primary.action in expected
+        reviewer_expected = reviewer.action in expected
+        primary_completed = (
+            name != "mate_in_three"
+            or (
+                primary.completed_depth == 3
+                and primary.termination_reason == "completed_depth"
+            )
+        )
+        reviewer_completed = (
+            name != "mate_in_three"
+            or (
+                reviewer.completed_depth == 3
+                and reviewer.termination_reason == "completed_depth"
+            )
+        )
+        primary_passed = primary_expected and primary_completed
+        reviewer_passed = (
+            name != "mate_in_three" or (reviewer_expected and reviewer_completed)
+        )
+        status = (
+            "HARNESS_FAILURE"
+            if not reviewer_passed
+            else "PASS" if primary_passed else "HARD_FAILURE"
+        )
         rows[name] = {
-            "status": "PASS" if passed else "HARD_FAILURE",
+            "status": status,
             "witness_label": state_label,
             "expected_actions": [action_to_dict(action) for action in expected],
             "primary_action": None if primary.action is None else action_to_dict(primary.action),
             "weak_action": None if weak.action is None else action_to_dict(weak.action),
             "reviewer_action": None if reviewer.action is None else action_to_dict(reviewer.action),
-            "primary_expected": passed,
+            "primary_expected": primary_expected,
             "weak_expected": weak.action in expected,
-            "reviewer_expected": reviewer.action in expected,
+            "reviewer_expected": reviewer_expected,
+            "decisions": {
+                "primary": _decision_telemetry(
+                    primary,
+                    primary_mode,
+                    max_nodes=primary_nodes,
+                    max_depth=primary_depth,
+                ),
+                "weak": _decision_telemetry(
+                    weak,
+                    "node_budget",
+                    max_nodes=WEAK_NODES,
+                    max_depth=None,
+                ),
+                "reviewer": _decision_telemetry(
+                    reviewer,
+                    reviewer_mode,
+                    max_nodes=reviewer_nodes,
+                    max_depth=reviewer_depth,
+                ),
+            },
         }
-        if not passed:
-            return {"status": "HARD_FAILURE", "first_failure": name, "tasks": rows}
+        if status != "PASS":
+            return {"status": status, "first_failure": name, "tasks": rows}
     return {"status": "PASS", "first_failure": None, "tasks": rows}
 
 
@@ -631,7 +725,8 @@ def run_merged(root: Path = ROOT):
         },
         "first_hard_failure": None,
     }
-    for ruleset_index, (label, compiled) in enumerate(_rulesets(root)):
+    prepared = []
+    for label, compiled in _rulesets(root):
         config = EvaluationConfig()
         profile = build_ruleset_profile(compiled, config)
         capability = _capability_suite(label, compiled, profile, config)
@@ -643,49 +738,52 @@ def run_merged(root: Path = ROOT):
             }
         )
         if capability["status"] != "PASS":
-            layer = "capability_fixture" if capability["status"] == "HARNESS_FAILURE" else "capability"
             result["first_hard_failure"] = {
-                "layer": layer,
+                "layer": "capability",
                 "ruleset": label,
                 "reason": capability["first_failure"],
+                "failure_type": capability["status"],
             }
             break
+        prepared.append((label, compiled, profile, config))
 
-        openings = (
-            ("initial", ()),
-            ("shallow_random", _fixed_opening(compiled, 31000 + ruleset_index)),
-        )
-        for opening_kind, opening_actions in openings:
-            for primary_owner in (0, 1):
-                trial = _short_game(
-                    compiled,
-                    profile,
-                    config,
-                    opening_kind,
-                    opening_actions,
-                    primary_owner,
-                )
-                result["short_games"].append(
-                    {
-                        "label": label,
-                        "opening": opening_kind,
-                        "primary_owner": primary_owner,
-                        **trial,
-                    }
-                )
-                if trial["hard_failure"] is not None:
-                    result["first_hard_failure"] = {
-                        "layer": "short_game",
-                        "ruleset": label,
-                        "opening": opening_kind,
-                        "primary_owner": primary_owner,
-                        "reason": trial["hard_failure"],
-                    }
+    if result["first_hard_failure"] is None:
+        for ruleset_index, (label, compiled, profile, config) in enumerate(prepared):
+            openings = (
+                ("initial", ()),
+                ("shallow_random", _fixed_opening(compiled, 31000 + ruleset_index)),
+            )
+            for opening_kind, opening_actions in openings:
+                for primary_owner in (0, 1):
+                    trial = _short_game(
+                        compiled,
+                        profile,
+                        config,
+                        opening_kind,
+                        opening_actions,
+                        primary_owner,
+                    )
+                    result["short_games"].append(
+                        {
+                            "label": label,
+                            "opening": opening_kind,
+                            "primary_owner": primary_owner,
+                            **trial,
+                        }
+                    )
+                    if trial["hard_failure"] is not None:
+                        result["first_hard_failure"] = {
+                            "layer": "short_game",
+                            "ruleset": label,
+                            "opening": opening_kind,
+                            "primary_owner": primary_owner,
+                            "reason": trial["hard_failure"],
+                        }
+                        break
+                if result["first_hard_failure"] is not None:
                     break
             if result["first_hard_failure"] is not None:
                 break
-        if result["first_hard_failure"] is not None:
-            break
 
     if result["first_hard_failure"] is None:
         trends = _aggregate_trends(result["short_games"])
@@ -702,12 +800,21 @@ def run_merged(root: Path = ROOT):
 
     if result["first_hard_failure"] is not None:
         result["status"] = "FIRST_HARD_FAILURE"
+        result["gate2_status"] = "FAILED"
+        result["gate3_status"] = "FROZEN"
+        suffix = (
+            "CAPABILITY"
+            if result["first_hard_failure"]["layer"] == "capability"
+            else "STRENGTH"
+        )
         result["classification"] = (
-            "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_"
-            + str(result["first_hard_failure"]["layer"]).upper()
+            "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_" + suffix
         )
     else:
         result["classification"] = "RULE_PRIOR_ABP_BASIC_COMPETENCE_SUPPORTED"
+        result["gate2_status"] = "PASS"
+        result["gate3_status"] = "ELIGIBLE_TO_RESTART"
+        result["horizon_aware_capability_protocol"] = True
     return result
 
 

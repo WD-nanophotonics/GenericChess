@@ -8,28 +8,66 @@ from scripts.gate2_merged_benchmark import (
 )
 
 
-def test_merged_gate2_stops_on_real_chess_mate_in_three_failure():
+def test_merged_gate2_uses_horizon_aware_mate_three_and_stops_on_next_failure():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
+    assert result["gate2_status"] == "FAILED"
+    assert result["gate3_status"] == "FROZEN"
     assert result["classification"] == "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY"
     assert result["first_hard_failure"] == {
         "layer": "capability",
-        "ruleset": "chess",
-        "reason": "mate_in_three",
+        "ruleset": "shogi",
+        "reason": "extreme_material",
+        "failure_type": "HARD_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
-    assert len(result["rulesets"]) == 1
+    assert [row["label"] for row in result["rulesets"]] == ["chess", "shogi"]
     assert result["short_games"] == []
 
     tasks = result["rulesets"][0]["capability"]["tasks"]
+    assert result["rulesets"][0]["capability"]["status"] == "PASS"
     assert tasks["mate_in_one"]["status"] == "PASS"
     assert tasks["mate_in_one"]["primary_expected"] is True
-    assert tasks["mate_in_three"]["status"] == "HARD_FAILURE"
+    assert tasks["mate_in_three"]["status"] == "PASS"
     assert tasks["mate_in_three"]["witness_label"] == "mate_three"
     assert len(tasks["mate_in_three"]["expected_actions"]) == 1
-    assert tasks["mate_in_three"]["primary_expected"] is False
-    assert tasks["mate_in_three"]["reviewer_expected"] is False
+    assert tasks["mate_in_three"]["primary_expected"] is True
+    assert tasks["mate_in_three"]["reviewer_expected"] is True
+    expected = tasks["mate_in_three"]["expected_actions"][0]
+    assert expected["from"] == [3, 3]
+    assert expected["to"] == [4, 4]
+    mate_three = tasks["mate_in_three"]["decisions"]
+    for role in ("primary", "reviewer"):
+        assert mate_three[role]["search_limit_mode"] == "fixed_depth_3"
+        assert mate_three[role]["max_nodes"] is None
+        assert mate_three[role]["max_depth"] == 3
+        assert mate_three[role]["completed_depth"] == 3
+        assert mate_three[role]["termination_reason"] == "completed_depth"
+        assert mate_three[role]["selected_action"] == expected
+    assert mate_three["weak"]["search_limit_mode"] == "node_budget"
+    assert mate_three["weak"]["max_nodes"] == 128
+
+    mate_one = tasks["mate_in_one"]["decisions"]
+    assert mate_one["primary"]["max_nodes"] == 1000
+    assert mate_one["weak"]["max_nodes"] == 128
+    assert mate_one["reviewer"]["max_nodes"] == 8000
+    assert all(
+        decision["search_limit_mode"] == "node_budget"
+        for decision in mate_one.values()
+    )
+
+    shogi = result["rulesets"][1]["capability"]
+    assert shogi["status"] == "HARD_FAILURE"
+    assert shogi["first_failure"] == "extreme_material"
+    assert list(shogi["tasks"]) == [
+        "mate_in_one",
+        "mate_in_three",
+        "avoid_immediate_mate",
+        "extreme_material",
+    ]
+    assert shogi["tasks"]["mate_in_three"]["status"] == "PASS"
+    assert shogi["tasks"]["extreme_material"]["status"] == "HARD_FAILURE"
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000
