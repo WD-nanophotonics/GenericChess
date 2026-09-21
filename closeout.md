@@ -1,3 +1,31 @@
+## Gate 2 controlled promotion-witness closeout
+
+This in-place `CAUSAL_DIAGNOSTIC` replaced the raw "any promotion" expected
+set with a controlled optional-promotion scan. Eligible states require only
+nonterminal children, a same-source/same-target promoted/unpromoted pair with
+strict promoted one-ply advantage, and an all-promoted global production
+one-ply argmax that intersects a favorable pair. Accepted promotion decisions
+would use fresh fixed-depth-1 primary/reviewer searches; no raw-promotion
+fallback or 8,000-node cause check remains.
+
+Within the unchanged deterministic 240-state/4-branch bound, Western Chess had
+no eligible optional-promotion witness. Its existing hand-authored promotion
+state is forced-promotion-only and therefore is not sufficient for this
+capability. The task stops as `HARNESS_FAILURE` with reason
+`CONTROLLED_PROMOTION_WITNESS_NOT_FOUND`; this is not agent weakness evidence.
+
+All earlier Chess tasks still passed, including fixed-depth-3 mate-in-three
+and fixed-depth-1 controlled material. The first stop is Chess `promotion`;
+Shogi, generated rulesets, short games, Gate 3, and evolution did not run.
+Gate 2 remains harness-blocked and Gate 3 frozen.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+3 passed
+```
+
 ## Gate 2 controlled material-witness closeout
 
 This in-place `CAUSAL_DIAGNOSTIC` replaced the invalid first-positive-capture

@@ -30,6 +30,7 @@ from generic_chess.core.actions import (
     action_is_board,
     action_is_drop,
     action_promotion_target_id,
+    action_source_square,
     action_target_square,
     action_to_dict,
 )
@@ -363,9 +364,98 @@ def _task_witnesses(label, compiled, profile, config):
                 witnesses["anchor_danger"] = (state_label, state, expected)
 
         if witnesses["promotion"] is None:
-            promoted = tuple(action for action in actions if action_promotion_target_id(action) is not None)
-            if promoted and len(promoted) < len(actions):
-                witnesses["promotion"] = (state_label, state, promoted)
+            all_children_nonterminal = all(
+                not child.terminal_status.is_terminal for _action, child in successors
+            )
+            if all_children_nonterminal:
+                one_ply_scores = {
+                    action: -evaluator.evaluate(child)
+                    for action, child in successors
+                }
+                groups = {}
+                for action in actions:
+                    if not action_is_board(action):
+                        continue
+                    key = (action_source_square(action), action_target_square(action))
+                    groups.setdefault(key, []).append(action)
+                optional_groups = []
+                favorable_groups = []
+                for (source, target), group_actions in groups.items():
+                    promoted = tuple(
+                        action
+                        for action in group_actions
+                        if action_promotion_target_id(action) is not None
+                    )
+                    unpromoted = tuple(
+                        action
+                        for action in group_actions
+                        if action_promotion_target_id(action) is None
+                    )
+                    if not promoted or not unpromoted:
+                        continue
+                    optional_groups.append((source, target, promoted, unpromoted))
+                    best_promoted = max(one_ply_scores[action] for action in promoted)
+                    best_unpromoted = max(one_ply_scores[action] for action in unpromoted)
+                    if best_promoted > best_unpromoted:
+                        favorable_groups.append(
+                            {
+                                "source": [source.file, source.rank],
+                                "target": [target.file, target.rank],
+                                "promoted": [
+                                    {
+                                        "action": action_to_dict(action),
+                                        "one_ply_score": one_ply_scores[action],
+                                    }
+                                    for action in promoted
+                                ],
+                                "unpromoted": [
+                                    {
+                                        "action": action_to_dict(action),
+                                        "one_ply_score": one_ply_scores[action],
+                                    }
+                                    for action in unpromoted
+                                ],
+                                "score_advantage": best_promoted - best_unpromoted,
+                            }
+                        )
+                global_best_score = max(one_ply_scores.values())
+                one_ply_best = tuple(
+                    action
+                    for action in actions
+                    if one_ply_scores[action] == global_best_score
+                )
+                favorable_promoted_actions = {
+                    action
+                    for _source, _target, promoted, unpromoted in optional_groups
+                    if max(one_ply_scores[action] for action in promoted)
+                    > max(one_ply_scores[action] for action in unpromoted)
+                    for action in promoted
+                }
+                if (
+                    favorable_groups
+                    and all(
+                        action_promotion_target_id(action) is not None
+                        for action in one_ply_best
+                    )
+                    and any(
+                        action in favorable_promoted_actions for action in one_ply_best
+                    )
+                ):
+                    witnesses["promotion"] = (
+                        state_label,
+                        state,
+                        one_ply_best,
+                        {
+                            "legal_action_count": len(actions),
+                            "all_children_nonterminal": True,
+                            "optional_promotion_group_count": len(optional_groups),
+                            "promotion_favorable_group_count": len(favorable_groups),
+                            "one_ply_best_actions": [
+                                action_to_dict(action) for action in one_ply_best
+                            ],
+                            "promotion_favorable_groups": favorable_groups,
+                        },
+                    )
 
         if witnesses["drop"] is None:
             drops = tuple(action for action in actions if action_is_drop(action))
@@ -404,11 +494,10 @@ def _capability_suite(label, compiled, profile, config):
             rows[name] = {"status": "NOT_APPLICABLE"}
             continue
         if witness is None:
-            reason = (
-                "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND"
-                if name == "extreme_material"
-                else "WITNESS_NOT_FOUND"
-            )
+            reason = {
+                "extreme_material": "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND",
+                "promotion": "CONTROLLED_PROMOTION_WITNESS_NOT_FOUND",
+            }.get(name, "WITNESS_NOT_FOUND")
             rows[name] = {"status": "HARNESS_FAILURE", "reason": reason}
             return {
                 "status": "HARNESS_FAILURE",
@@ -419,7 +508,11 @@ def _capability_suite(label, compiled, profile, config):
         witness_metadata = metadata[0] if metadata else {}
         history = (state.position,)
         weak = _decision(compiled, profile, config, state, history, WEAK_NODES)
-        fixed_depth = {"mate_in_three": 3, "extreme_material": 1}.get(name)
+        fixed_depth = {
+            "mate_in_three": 3,
+            "extreme_material": 1,
+            "promotion": 1,
+        }.get(name)
         if fixed_depth is not None:
             primary = _fixed_depth_decision(
                 compiled, profile, config, state, history, fixed_depth

@@ -8,7 +8,7 @@ from scripts.gate2_merged_benchmark import (
 )
 
 
-def test_merged_gate2_uses_controlled_material_witness_and_stops_on_promotion():
+def test_merged_gate2_stops_when_controlled_chess_promotion_witness_is_absent():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
@@ -17,16 +17,17 @@ def test_merged_gate2_uses_controlled_material_witness_and_stops_on_promotion():
     assert result["classification"] == "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY"
     assert result["first_hard_failure"] == {
         "layer": "capability",
-        "ruleset": "shogi",
+        "ruleset": "chess",
         "reason": "promotion",
-        "failure_type": "HARD_FAILURE",
+        "failure_type": "HARNESS_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
-    assert [row["label"] for row in result["rulesets"]] == ["chess", "shogi"]
+    assert [row["label"] for row in result["rulesets"]] == ["chess"]
     assert result["short_games"] == []
 
     tasks = result["rulesets"][0]["capability"]["tasks"]
-    assert result["rulesets"][0]["capability"]["status"] == "PASS"
+    assert result["rulesets"][0]["capability"]["status"] == "HARNESS_FAILURE"
+    assert result["rulesets"][0]["capability"]["first_failure"] == "promotion"
     assert tasks["mate_in_one"]["status"] == "PASS"
     assert tasks["mate_in_one"]["primary_expected"] is True
     assert tasks["mate_in_three"]["status"] == "PASS"
@@ -57,10 +58,7 @@ def test_merged_gate2_uses_controlled_material_witness_and_stops_on_promotion():
         for decision in mate_one.values()
     )
 
-    shogi = result["rulesets"][1]["capability"]
-    assert shogi["status"] == "HARD_FAILURE"
-    assert shogi["first_failure"] == "promotion"
-    assert list(shogi["tasks"]) == [
+    assert list(tasks) == [
         "mate_in_one",
         "mate_in_three",
         "avoid_immediate_mate",
@@ -69,15 +67,11 @@ def test_merged_gate2_uses_controlled_material_witness_and_stops_on_promotion():
         "anchor_danger",
         "promotion",
     ]
-    assert shogi["tasks"]["mate_in_three"]["status"] == "PASS"
-    extreme = shogi["tasks"]["extreme_material"]
+    extreme = tasks["extreme_material"]
     assert extreme["status"] == "PASS"
-    assert extreme["witness_label"] != "mate_one"
     assert extreme["all_children_nonterminal"] is True
-    assert extreme["legal_action_count"] == 41
     assert extreme["positive_capture_action_count"] >= 2
-    assert extreme["positive_capture_value_set"] == [189, 281, 796]
-    assert extreme["max_capture_value"] == 796
+    assert len(extreme["positive_capture_value_set"]) >= 2
     assert extreme["one_ply_best_actions"] == extreme["expected_actions"]
     assert extreme["primary_expected"] is True
     assert extreme["reviewer_expected"] is True
@@ -95,10 +89,12 @@ def test_merged_gate2_uses_controlled_material_witness_and_stops_on_promotion():
     assert material_decisions["weak"]["search_limit_mode"] == "node_budget"
     assert material_decisions["weak"]["max_nodes"] == 128
 
-    promotion = shogi["tasks"]["promotion"]
-    assert promotion["status"] == "HARD_FAILURE"
-    assert promotion["primary_expected"] is False
-    assert "drop" not in shogi["tasks"]
+    promotion = tasks["promotion"]
+    assert promotion == {
+        "status": "HARNESS_FAILURE",
+        "reason": "CONTROLLED_PROMOTION_WITNESS_NOT_FOUND",
+    }
+    assert len(result["rulesets"]) == 1
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000
