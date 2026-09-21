@@ -1,3 +1,40 @@
+# F148 capture-five score-race Pilot A closeout
+
+## Outcome
+
+F148 kept the authorized threshold 10 and check +1, changing only non-anchor
+capture reward to +5. Pilot A obtained exactly 8 valid self-pairs but failed
+the density gate, so Pilot B discrimination and Gen1/Gen2 evolution were not
+run. Classification: `SCORE_RACE_CAPTURE5_PILOT_FAILED_DENSITY`.
+
+Across all attempted replacements, the pilot evaluated 54 pairs / 108 games:
+8 valid pairs / 16 valid games and 46 invalid pairs / 92 invalid games. All
+92 invalid games ended by repetition. The 16 valid games all ended by score
+threshold, with no score-tiebreak or formal Core wins. Capture events totaled
+58, checks remained zero, and total race points were 290. Threshold plies had
+median 19, p90 41, and maximum 94; valid-game plies had median 19, p90 41,
+and maximum 94. The self-pair mean was exactly 0.5. The invalid-game fraction
+was 0.8518518518518519, and threshold/formal decisive fraction was
+0.14814814814814814, both failing the required gates.
+
+## Verification and routing
+
+- Result artifact: `.generic_chess_flow/f148-score-race-capture5-pilot.json`
+  (transient and ignored).
+- The artifact records tested checkpoint
+  `cc7a2627e107f0598815243ecb22dd7667bbe704`; local and `origin/sandbox`
+  SHAs matched.
+- F148 direct plus F146/F145/F144/Search regression tests passed: 39 tests.
+- The fixed F144 material evaluator, ordering, ABP/search budget, TT, and
+  evaluator-independent scoring were preserved.
+
+Because capture-five still leaves the score race repetition-dominated and
+below the decisive-density gate, no further weight change is made inside F148.
+The next route requires a new explicit work order; no ordinary full-game
+validation is justified.
+
+---
+
 # F147 threshold-1 diagnostic route correction
 
 ## Outcome
