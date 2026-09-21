@@ -621,6 +621,33 @@ actions and identify which rule-prior term causes the wrong depth-2 ordering.
 
 ---
 
+# Gate 2 R3 forced-win horizon disambiguation closeout
+
+## Outcome
+
+R3 reconstructed the same frozen root and profiles without rerunning R1/R2
+depth-2 searches, then ran exactly two fresh depth-3 production searches.
+
+## Observation
+
+- Both the rule prior and flat control completed depth 3 and selected the
+  certified F86Q action `[3,4] -> [2,3]`.
+- The existing evaluator-free exact predicate confirmed that action forces
+  owner-0 checkmate within three plies.
+- Classification: `GATE2_DEPTH2_COUNTEREXAMPLE_IS_HORIZON_LOCAL`.
+- The R2 depth-2 divergence is therefore horizon-local for this witness; it
+  does not justify changing P0/P1 or decomposing rule-prior terms from this
+  root.
+- No full games, Arena, Heavy, new ruleset, or production changes were made.
+
+## Tests and routing
+
+The R3 regression test passed. Per the work order, the next diagnostic should
+move to a second already-published generated tactical witness at its minimum
+solving depth; evaluator tuning remains frozen.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
