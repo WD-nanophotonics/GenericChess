@@ -1,3 +1,39 @@
+# F147 threshold-1 diagnostic route correction
+
+## Outcome
+
+F147 threshold-1 code and tests were published as a diagnostic checkpoint,
+but the requested Heavy pilot was stopped by the active Supervisor before it
+could produce a result. The run was explicitly `--pilot-only`; it never
+entered discrimination or evolution, and no threshold-1 acceptance claim is
+made.
+
+Exact command:
+
+```text
+.\generic-chess-flow.cmd heavy --resource-envelope .generic_chess_flow\f147-score-race-threshold1-envelope.json -- .\.venv\Scripts\python.exe scripts\f147_shogi_material_score_race_threshold1_evolution.py --output .generic_chess_flow\f147-score-race-threshold1-pilot.json --workers 4 --pilot-only
+```
+
+The four-worker run started at approximately 11:15:08 JST and was stopped at
+approximately 11:22:17 JST after progressing through replacement waves. No
+result artifact was written, so completed-game and CPU totals are not claimed;
+the observed wall time was about seven minutes. The published diagnostic
+checkpoint is `25ed8fc93e9992ab4e4c61d53102f81b06b885ba`, with 40 targeted tests
+passing and local/remote SHA parity.
+
+## Mainline routing
+
+The threshold-1 work order is superseded and must not continue. Return to the
+user-authorized score-race route: threshold 10, capture +1, check +1,
+capture+check +2, formal Core precedence, unequal nondecisive terminal scores
+resolved by the restored tiebreak, and equal scores invalid. F145/F146 showed
+zero check events, sparse captures, and repetition-dominated termination;
+threshold lowering is not an authorized substitute for diagnosing that
+fitness surface. The next step requires the smallest explicit scientific
+correction on that route, followed by a targeted pilot before any evolution.
+
+---
+
 # F146 threshold-3 score-race diagnostic closeout
 
 ## Outcome
