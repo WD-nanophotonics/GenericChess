@@ -676,23 +676,46 @@ positive or negative signal; Gate 2 remains open pending Chat's next route.
 
 ---
 
-# Gate 2 merged benchmark closeout
+# Gate 2 merged benchmark closeout (superseded)
 
 ## Comprehensive conclusion
 
-The Supervisor-directed merged Gate 2 entry reused the published Gate 1
-Chess/Shogi equivalence evidence and the R1-R4 mate/avoid-mate evidence, then
-ran the first five fixed F86O generated rulesets through material, mobility,
-anchor, promotion, and drop microchecks. It completed two role-swapped,
-strictly capped 30-ply opening-swap trials per ruleset: 10 trials, 131
-1000-node rule-prior decisions, and 131 corresponding 8000-node reviewer
-checks. No hard failure occurred and the reviewer coverage gate passed.
+The earlier merged entry reused insufficient microchecks and was later
+invalidated by the Supervisor. Its PASS and supporting counts must not be used
+as Gate 2 evidence.
 
-Classification: `RULE_PRIOR_ABP_BASIC_COMPETENCE_SUPPORTED`.
+Classification: superseded.
 
-The merged regression test passed. This is the single comprehensive Gate 2
-conclusion; no fragmented R5/R6 scripts, fixtures, schemas, or production
-changes were added.
+The corrected single entry below replaces this conclusion; no fragmented R5/R6
+scripts, fixtures, schemas, or production changes were added.
+
+---
+
+# Gate 2 corrected merged benchmark closeout
+
+## Comprehensive conclusion
+
+The Supervisor correction required one directly corrected merged entry. It
+audited actual Chess/Shogi capability tasks (mate-in-1, mate-in-3,
+avoid-immediate-mate, material capture, mobility, anchor danger, promotion,
+and Shogi drop where applicable), five fixed generated rulesets, initial and
+fixed shallow-random openings with role swaps, a 128-node weak ABP, and
+1000-node versus 8000-node review metrics with 10/20/30-ply trends. The run
+stopped at the first real hard failure instead of producing a strength claim.
+
+The first failure was Chess `avoid_immediate_mate`; the corrected result was:
+`RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY`.
+
+No short-game or Gate 3 conclusion is supported by this run. Gate 3 is frozen,
+and the previously published Gate 3 R1/R2 commits are retained only as
+historical invalid-route diagnostics pending a future authorized order.
+
+## Verification
+
+- The existing merged Gate 2 regression test now checks the corrected
+  capability, node-budget, trend, and first-hard-failure contract.
+- The transient corrected result remains ignored under
+  `.generic_chess_flow/gate2-corrected-result.json`.
 
 ---
 
