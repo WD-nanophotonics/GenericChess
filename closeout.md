@@ -1,3 +1,34 @@
+## Gate 2 controlled material-witness closeout
+
+This in-place `CAUSAL_DIAGNOSTIC` replaced the invalid first-positive-capture
+eligibility rule inside the existing bounded capability scan. A material state
+now qualifies only when every child is nonterminal, at least two captures have
+positive values spanning at least two distinct values, and the max-value
+capture set exactly equals the production evaluator's one-ply argmax. The old
+8,000-node forced-continuation cause path was removed. No scan expansion,
+fixture, standalone script/test, or production-code change was introduced.
+
+The old Shogi `mate_one` material witness was rejected. The scan found a
+controlled witness at `mate_three`: 41 legal nonterminal children and positive
+capture values 189, 281, and 796. The unique value-796 capture was also the
+unique one-ply evaluator best action. Fresh primary and reviewer searches both
+completed fixed depth 1 normally in 83 nodes and selected that action; weak128
+remained telemetry. Shogi `extreme_material` therefore passed.
+
+The merged run continued and stopped at the next first failure: Shogi
+`promotion` under the unchanged ordinary 1000-node primary budget. Its primary
+did not choose the current promotion expected set, so classification remains
+`RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY` with
+`failure_type=HARD_FAILURE`. No `drop`, generated ruleset, short game, Gate 3,
+or evolution ran. Gate 2 remains failed and Gate 3 frozen.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+3 passed
+```
+
 ## Gate 2 Shogi extreme-material cause check closeout
 
 This in-place `CAUSAL_DIAGNOSTIC` reused the existing deterministic Shogi

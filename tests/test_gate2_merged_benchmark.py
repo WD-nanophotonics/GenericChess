@@ -8,7 +8,7 @@ from scripts.gate2_merged_benchmark import (
 )
 
 
-def test_merged_gate2_stops_on_invalid_shogi_extreme_material_expectation():
+def test_merged_gate2_uses_controlled_material_witness_and_stops_on_promotion():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
@@ -18,8 +18,8 @@ def test_merged_gate2_stops_on_invalid_shogi_extreme_material_expectation():
     assert result["first_hard_failure"] == {
         "layer": "capability",
         "ruleset": "shogi",
-        "reason": "extreme_material",
-        "failure_type": "HARNESS_FAILURE",
+        "reason": "promotion",
+        "failure_type": "HARD_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
     assert [row["label"] for row in result["rulesets"]] == ["chess", "shogi"]
@@ -58,41 +58,47 @@ def test_merged_gate2_stops_on_invalid_shogi_extreme_material_expectation():
     )
 
     shogi = result["rulesets"][1]["capability"]
-    assert shogi["status"] == "HARNESS_FAILURE"
-    assert shogi["first_failure"] == "extreme_material"
+    assert shogi["status"] == "HARD_FAILURE"
+    assert shogi["first_failure"] == "promotion"
     assert list(shogi["tasks"]) == [
         "mate_in_one",
         "mate_in_three",
         "avoid_immediate_mate",
         "extreme_material",
+        "mobility",
+        "anchor_danger",
+        "promotion",
     ]
     assert shogi["tasks"]["mate_in_three"]["status"] == "PASS"
     extreme = shogi["tasks"]["extreme_material"]
-    assert extreme["status"] == "HARNESS_FAILURE"
-    cause = extreme["cause_check"]
-    assert cause["classification"] == (
-        "SHOGI_EXTREME_MATERIAL_EXPECTATION_NOT_VALIDATED"
-    )
-    assert cause["primary_action"] == cause["reviewer_root_action"]
-    assert cause["reviewer_action_in_expected"] is False
-    assert cause["best_expected_review_score"] == 3439
-    assert cause["primary_review_score"] == 999999999
-    assert cause["reviewer_action_review_score"] == 999999999
-    assert cause["best_compared_score"] == 999999999
-    assert cause["expected_reaches_best_compared_score"] is False
-    assert cause["primary_strictly_below_best_expected"] is False
-    assert cause["review_node_budget_per_forced_action"] == 8000
-    assert cause["continuation_history_mode"] == "fixed_child_root"
-    assert len(cause["expected_actions"]) == 4
-    assert len(cause["reviews"]) == 5
-    expected_reviews = cause["reviews"][:4]
-    assert all(row["immediate_captured_piece_rule_value"] == 1000 for row in expected_reviews)
-    assert all(row["review_nodes"] == 8000 for row in expected_reviews)
-    primary_review = cause["reviews"][4]
-    assert primary_review["action"] == cause["primary_action"]
-    assert primary_review["immediate_captured_piece_rule_value"] == 0
-    assert primary_review["forced_action_review_score"] == 999999999
-    assert primary_review["review_nodes"] == 0
+    assert extreme["status"] == "PASS"
+    assert extreme["witness_label"] != "mate_one"
+    assert extreme["all_children_nonterminal"] is True
+    assert extreme["legal_action_count"] == 41
+    assert extreme["positive_capture_action_count"] >= 2
+    assert extreme["positive_capture_value_set"] == [189, 281, 796]
+    assert extreme["max_capture_value"] == 796
+    assert extreme["one_ply_best_actions"] == extreme["expected_actions"]
+    assert extreme["primary_expected"] is True
+    assert extreme["reviewer_expected"] is True
+    material_decisions = extreme["decisions"]
+    for role in ("primary", "reviewer"):
+        assert material_decisions[role]["search_limit_mode"] == "fixed_depth_1"
+        assert material_decisions[role]["max_nodes"] is None
+        assert material_decisions[role]["max_depth"] == 1
+        assert material_decisions[role]["completed_depth"] == 1
+        assert material_decisions[role]["termination_reason"] == "completed_depth"
+        assert (
+            material_decisions[role]["selected_action"]
+            in extreme["expected_actions"]
+        )
+    assert material_decisions["weak"]["search_limit_mode"] == "node_budget"
+    assert material_decisions["weak"]["max_nodes"] == 128
+
+    promotion = shogi["tasks"]["promotion"]
+    assert promotion["status"] == "HARD_FAILURE"
+    assert promotion["primary_expected"] is False
+    assert "drop" not in shogi["tasks"]
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000

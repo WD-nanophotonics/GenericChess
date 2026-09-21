@@ -5,8 +5,8 @@ microproblem passes) runs initial and fixed shallow-opening role-swapped
 30-ply games on Chess, Shogi, and five fixed generated rulesets. The deployed
 1000-node rule-prior player is compared with a 128-node weak ABP and an
 8000-node reviewer, except that certified mate-in-three tasks guarantee a
-complete depth-3 candidate and reviewer search. The first real hard failure
-stops the run.
+complete depth-3 search and controlled immediate-material tasks use their
+exact depth-1 horizon. The first real hard failure stops the run.
 """
 
 from __future__ import annotations
@@ -91,9 +91,9 @@ def _limits(nodes):
     )
 
 
-def _fixed_depth_three_limits():
+def _fixed_depth_limits(depth):
     return SearchLimits(
-        max_depth=3,
+        max_depth=depth,
         max_nodes=None,
         quiescence_max_depth=0,
         quiescence_hard_max_depth=0,
@@ -125,9 +125,9 @@ def _decision(compiled, profile, config, state, witnesses, nodes):
     )
 
 
-def _fixed_depth_three_decision(compiled, profile, config, state, witnesses):
+def _fixed_depth_decision(compiled, profile, config, state, witnesses, depth):
     return _make_player(compiled, profile, config).choose_action(
-        _session_with_state(compiled, state, witnesses), _fixed_depth_three_limits()
+        _session_with_state(compiled, state, witnesses), _fixed_depth_limits(depth)
     )
 
 
@@ -258,8 +258,9 @@ def _capture_value(state, action, compiled, profile):
     return int(profile.board_value_by_type[captured.current_type_id])
 
 
-def _task_witnesses(label, compiled, profile):
+def _task_witnesses(label, compiled, profile, config):
     witnesses = {name: None for name in TASK_ORDER}
+    evaluator = Evaluator(compiled, profile, config)
     queue = list(_special_states(label, compiled))
     seen = set()
     cursor = 0
@@ -303,9 +304,46 @@ def _task_witnesses(label, compiled, profile):
             capture_values = tuple(
                 _capture_value(state, action, compiled, profile) for action in actions
             )
-            expected = _expected_set(actions, capture_values)
-            if expected and max(capture_values) > 0:
-                witnesses["extreme_material"] = (state_label, state, expected)
+            positive_values = tuple(value for value in capture_values if value > 0)
+            all_children_nonterminal = all(
+                not child.terminal_status.is_terminal for _action, child in successors
+            )
+            if (
+                all_children_nonterminal
+                and len(positive_values) >= 2
+                and len(set(positive_values)) >= 2
+            ):
+                max_capture_value = max(positive_values)
+                expected = tuple(
+                    action
+                    for action, value in zip(actions, capture_values)
+                    if value == max_capture_value
+                )
+                one_ply_scores = tuple(
+                    -evaluator.evaluate(child) for _action, child in successors
+                )
+                best_score = max(one_ply_scores)
+                one_ply_best = tuple(
+                    action
+                    for action, score in zip(actions, one_ply_scores)
+                    if score == best_score
+                )
+                if set(one_ply_best) == set(expected):
+                    witnesses["extreme_material"] = (
+                        state_label,
+                        state,
+                        expected,
+                        {
+                            "legal_action_count": len(actions),
+                            "all_children_nonterminal": True,
+                            "positive_capture_action_count": len(positive_values),
+                            "positive_capture_value_set": sorted(set(positive_values)),
+                            "max_capture_value": max_capture_value,
+                            "one_ply_best_actions": [
+                                action_to_dict(action) for action in one_ply_best
+                            ],
+                        },
+                    )
 
         if witnesses["mobility"] is None:
             expected = _expected_set(
@@ -357,7 +395,7 @@ def _required_tasks(label, compiled):
 
 
 def _capability_suite(label, compiled, profile, config):
-    witnesses = _task_witnesses(label, compiled, profile)
+    witnesses = _task_witnesses(label, compiled, profile, config)
     required = _required_tasks(label, compiled)
     rows = {}
     for name in TASK_ORDER:
@@ -366,25 +404,32 @@ def _capability_suite(label, compiled, profile, config):
             rows[name] = {"status": "NOT_APPLICABLE"}
             continue
         if witness is None:
-            rows[name] = {"status": "HARNESS_FAILURE", "reason": "WITNESS_NOT_FOUND"}
+            reason = (
+                "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND"
+                if name == "extreme_material"
+                else "WITNESS_NOT_FOUND"
+            )
+            rows[name] = {"status": "HARNESS_FAILURE", "reason": reason}
             return {
                 "status": "HARNESS_FAILURE",
                 "first_failure": name,
                 "tasks": rows,
             }
-        state_label, state, expected = witness
+        state_label, state, expected, *metadata = witness
+        witness_metadata = metadata[0] if metadata else {}
         history = (state.position,)
         weak = _decision(compiled, profile, config, state, history, WEAK_NODES)
-        if name == "mate_in_three":
-            primary = _fixed_depth_three_decision(
-                compiled, profile, config, state, history
+        fixed_depth = {"mate_in_three": 3, "extreme_material": 1}.get(name)
+        if fixed_depth is not None:
+            primary = _fixed_depth_decision(
+                compiled, profile, config, state, history, fixed_depth
             )
-            reviewer = _fixed_depth_three_decision(
-                compiled, profile, config, state, history
+            reviewer = _fixed_depth_decision(
+                compiled, profile, config, state, history, fixed_depth
             )
-            primary_mode = reviewer_mode = "fixed_depth_3"
+            primary_mode = reviewer_mode = f"fixed_depth_{fixed_depth}"
             primary_nodes = reviewer_nodes = None
-            primary_depth = reviewer_depth = 3
+            primary_depth = reviewer_depth = fixed_depth
         else:
             primary = _decision(
                 compiled, profile, config, state, history, PRIMARY_NODES
@@ -399,46 +444,28 @@ def _capability_suite(label, compiled, profile, config):
         primary_expected = primary.action in expected
         reviewer_expected = reviewer.action in expected
         primary_completed = (
-            name != "mate_in_three"
+            fixed_depth is None
             or (
-                primary.completed_depth == 3
+                primary.completed_depth == fixed_depth
                 and primary.termination_reason == "completed_depth"
             )
         )
         reviewer_completed = (
-            name != "mate_in_three"
+            fixed_depth is None
             or (
-                reviewer.completed_depth == 3
+                reviewer.completed_depth == fixed_depth
                 and reviewer.termination_reason == "completed_depth"
             )
         )
         primary_passed = primary_expected and primary_completed
         reviewer_passed = (
-            name != "mate_in_three" or (reviewer_expected and reviewer_completed)
+            fixed_depth is None or (reviewer_expected and reviewer_completed)
         )
         status = (
             "HARNESS_FAILURE"
             if not reviewer_passed
             else "PASS" if primary_passed else "HARD_FAILURE"
         )
-        cause_check = None
-        if label == "shogi" and name == "extreme_material" and not primary_expected:
-            cause_check = _extreme_material_cause_check(
-                compiled,
-                profile,
-                config,
-                state,
-                history,
-                expected,
-                primary.action,
-                reviewer.action,
-            )
-            status = (
-                "HARD_FAILURE"
-                if cause_check["classification"]
-                == "SHOGI_EXTREME_MATERIAL_PRIMARY_MISS_CONFIRMED"
-                else "HARNESS_FAILURE"
-            )
         rows[name] = {
             "status": status,
             "witness_label": state_label,
@@ -469,9 +496,8 @@ def _capability_suite(label, compiled, profile, config):
                     max_depth=reviewer_depth,
                 ),
             },
+            **witness_metadata,
         }
-        if cause_check is not None:
-            rows[name]["cause_check"] = cause_check
         if status != "PASS":
             return {"status": status, "first_failure": name, "tasks": rows}
     return {"status": "PASS", "first_failure": None, "tasks": rows}
@@ -491,90 +517,14 @@ def _fixed_opening(compiled, seed):
     return tuple(actions)
 
 
-def _review_action_score(
-    compiled, profile, config, state, witnesses, action, *, reset_child_history=False
-):
+def _review_action_score(compiled, profile, config, state, witnesses, action):
     child = next(child for candidate, child in _successors(state, compiled) if candidate == action)
     if child.terminal_status.is_terminal:
         return -terminal_score(child.terminal_status, child.position.side_to_move, 1), 0
-    if reset_child_history:
-        child = _fixed_state_from_position(compiled, child.position)
-        session = _session_with_state(compiled, child, (child.position,))
-    else:
-        session = _session_with_state(compiled, state, witnesses)
-        session.submit(action)
+    session = _session_with_state(compiled, state, witnesses)
+    session.submit(action)
     decision = _make_player(compiled, profile, config).choose_action(session, _limits(REVIEW_NODES))
     return -decision.score, decision.nodes + decision.qnodes
-
-
-def _extreme_material_cause_check(
-    compiled,
-    profile,
-    config,
-    state,
-    witnesses,
-    expected,
-    primary_action,
-    reviewer_action,
-):
-    if primary_action is None or reviewer_action is None:
-        raise AssertionError("extreme-material cause check requires root actions")
-    compared = list(expected)
-    for action in (primary_action, reviewer_action):
-        if action not in compared:
-            compared.append(action)
-
-    scores = {}
-    reviews = []
-    for action in compared:
-        score, nodes = _review_action_score(
-            compiled,
-            profile,
-            config,
-            state,
-            witnesses,
-            action,
-            reset_child_history=True,
-        )
-        scores[action] = score
-        reviews.append(
-            {
-                "action": action_to_dict(action),
-                "immediate_captured_piece_rule_value": _capture_value(
-                    state, action, compiled, profile
-                ),
-                "forced_action_review_score": score,
-                "review_nodes": nodes,
-            }
-        )
-
-    best_expected = max(scores[action] for action in expected)
-    primary_score = scores[primary_action]
-    reviewer_score = scores[reviewer_action]
-    best_compared = max(scores.values())
-    expected_reaches_best = best_expected == best_compared
-    primary_strictly_below_expected = primary_score < best_expected
-    classification = (
-        "SHOGI_EXTREME_MATERIAL_PRIMARY_MISS_CONFIRMED"
-        if expected_reaches_best and primary_strictly_below_expected
-        else "SHOGI_EXTREME_MATERIAL_EXPECTATION_NOT_VALIDATED"
-    )
-    return {
-        "classification": classification,
-        "primary_action": action_to_dict(primary_action),
-        "reviewer_root_action": action_to_dict(reviewer_action),
-        "expected_actions": [action_to_dict(action) for action in expected],
-        "reviews": reviews,
-        "best_expected_review_score": best_expected,
-        "primary_review_score": primary_score,
-        "reviewer_action_review_score": reviewer_score,
-        "reviewer_action_in_expected": reviewer_action in expected,
-        "best_compared_score": best_compared,
-        "expected_reaches_best_compared_score": expected_reaches_best,
-        "primary_strictly_below_best_expected": primary_strictly_below_expected,
-        "review_node_budget_per_forced_action": REVIEW_NODES,
-        "continuation_history_mode": "fixed_child_root",
-    }
 
 
 def _normalized_regrets(best_action, best_score, action_scores):
