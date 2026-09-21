@@ -1,3 +1,59 @@
+# F149 deep-opening score-race Pilot A closeout
+
+## Outcome
+
+F149 restored the original threshold-10 score race and changed only the
+evaluator-neutral opening depth to 16–32 plies. Pilot A obtained exactly 8
+valid self-pairs but failed the density gate, so Pilot B and Gen1/Gen2
+evolution were not run. Classification:
+`SCORE_RACE_DEEP_OPENINGS_PILOT_FAILED_DENSITY`.
+
+Across 11 attempted pairs / 22 games, 8 pairs / 16 games were valid and 3
+pairs / 6 games were invalid. All invalid games ended by repetition. There
+were 4 threshold wins, 12 score-tiebreak wins, zero formal Core wins, 152
+capture events, 10 check events, and 162 total score events. The
+threshold/formal decisive fraction was 0.18181818181818182, below the 0.50
+gate; the invalid-game fraction was 0.2727272727272727, above the 0.25 gate.
+Valid-game plies had median 170.5, p90 455, and maximum 500. Threshold plies
+were 94, 94, 455, and 455. The self-pair mean was exactly 0.5, but every
+retained pair score was 0.5, so no material discrimination was established.
+
+The deep openings increased event activity substantially versus shallow
+calibrations and produced 12 unequal-score tiebreak outcomes, but did not
+produce enough threshold/formal decisive outcomes to meet the work-order
+fitness gate.
+
+## Verification and operational note
+
+- Exact command:
+
+  ```text
+  .\generic-chess-flow.cmd heavy --resource-envelope .generic_chess_flow\f149-score-race-deep-openings-envelope.json -- .\.venv\Scripts\python.exe scripts\f149_shogi_material_score_race_deep_openings.py --output .generic_chess_flow\f149-score-race-deep-openings-pilot.json --workers 4 --pilot-only
+  ```
+
+- Result artifact: `.generic_chess_flow/f149-score-race-deep-openings-pilot.json`
+  (transient and ignored), completed at approximately 13:36:53 JST after
+  about 76 minutes. It records tested checkpoint
+  `95f65b533956b4ffe91b50b497912904f5557996`.
+- The fixed material evaluator/search stack and evaluator-independent scoring
+  were preserved; F149 tests plus F148/F146/F145/F144/Search regression tests
+  passed: 43 tests.
+- Post-run `heavy-status` contained no F149 `heavy-runs` record even though
+  the child ran through `generic-chess-flow.cmd heavy`. The minimal correct
+  usage for any future long run is the registered form
+  `generic-chess-flow.cmd heavy-start --label <label> --resource-envelope <path> -- <command>`;
+  no replacement or rerun is authorized for F149.
+
+## Routing
+
+Per Supervisor direction, stop at Pilot A. Do not run discrimination or
+evolution, and do not alter threshold, weights, evaluator, or search to
+rescue this result. The next work order must reconsider the score-race
+fitness definition after the shallow threshold-10, shallow capture-five, and
+deep-opening threshold-10 calibrations.
+
+---
+
 # F148 capture-five score-race Pilot A closeout
 
 ## Outcome
