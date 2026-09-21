@@ -7,6 +7,32 @@ F154/F155. The authoritative route is now recorded in
 equivalence, then rule-prior baseline strength, then only conditional Gen0
 evolution. No F154 work was completed or committed.
 
+## F156 known-game shallow-search equivalence closeout
+
+F156 was a bounded `CAUSAL_DIAGNOSTIC`. The unknown was whether the existing
+Python AlphaBeta and semantic Native paths agree on deterministic shallow
+decisions when they receive the same fixed material-only evaluator. The probe
+used four fixed roots: Western quiet/capture and checkmate positions, plus a
+Standard Shogi drop/promotion/capture/material-choice position and a repeated
+position. Full games were unnecessary because static child values, depths 1/2,
+fresh repeats, and terminal categories directly observe the unknown.
+
+Result: `KNOWN_GAME_SHALLOW_SEARCH_EQUIVALENCE_PASS`. Static material rows
+matched for both rulesets; both search paths were deterministic at depths 1 and
+2 and matched root scores, actions, and completed depths; no ordering tie
+witness remained in the final roots. Western checkmate and Shogi repetition
+both matched terminal outcome category.
+The diagnostic and its contract test are in
+`scripts/f156_known_game_shallow_search_equivalence.py` and
+`tests/test_f156_known_game_shallow_search_equivalence.py`.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_f156_known_game_shallow_search_equivalence.py tests/test_theory_roadmap_route_reset.py
+2 passed
+```
+
 ## F153 mutation root-sensitivity closeout
 
 ### Outcome
