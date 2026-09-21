@@ -7,6 +7,25 @@ is that nonlinear value capacity alone was insufficient: F58 improved the
 intermediate value fit in Shogi but severely damaged transfer to the action
 chosen by search.
 
+## Current mainline: three foundational gates
+
+The active route is deliberately reset to three ordered gates:
+
+1. **Known-game algorithm equivalence:** establish that the generic and
+   specialized Chess/Shogi backends share the same deterministic ABP/negamax
+   semantics, action ordering, terminal handling, and material behavior on
+   fixed shallow positions.
+2. **Rule-prior baseline strength:** only after gate 1 passes, test the frozen
+   rule-derived evaluator on a small set of generated rulesets with tactical
+   sanity positions and bounded color-swapped play.
+3. **Conditional evolution:** only after both gates pass may research begin
+   from a rules-prior Gen0; all historical learner, policy, TreeStrap, Gumbel,
+   search-compression, training-adjudication, and material-evolution routes
+   remain frozen until then.
+
+F154 and F155 are explicitly frozen. This route update changes no production
+evaluator, search, ruleset, learner, schema, or audit state.
+
 ## Authority hierarchy
 
 Use the following order when diagnosing a learning change:
