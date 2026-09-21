@@ -360,9 +360,59 @@ def _task_witnesses(label, compiled, profile, config):
                 _in_check(child, child.position.side_to_move, compiled)
                 for _action, child in successors
             )
-            expected = tuple(action for action, gives_check in zip(actions, check_flags) if gives_check)
-            if expected and len(expected) < len(actions):
-                witnesses["anchor_danger"] = (state_label, state, expected)
+            checking = tuple(
+                action
+                for action, gives_check in zip(actions, check_flags)
+                if gives_check
+            )
+            nonchecking = tuple(
+                action
+                for action, gives_check in zip(actions, check_flags)
+                if not gives_check
+            )
+            all_children_nonterminal = all(
+                not child.terminal_status.is_terminal for _action, child in successors
+            )
+            if all_children_nonterminal and checking and nonchecking:
+                one_ply_scores = {
+                    action: -evaluator.evaluate(child)
+                    for action, child in successors
+                }
+                best_checking_score = max(
+                    one_ply_scores[action] for action in checking
+                )
+                best_nonchecking_score = max(
+                    one_ply_scores[action] for action in nonchecking
+                )
+                global_best_score = max(one_ply_scores.values())
+                one_ply_best = tuple(
+                    action
+                    for action in actions
+                    if one_ply_scores[action] == global_best_score
+                )
+                if best_checking_score > best_nonchecking_score and all(
+                    action in checking for action in one_ply_best
+                ):
+                    witnesses["anchor_danger"] = (
+                        state_label,
+                        state,
+                        one_ply_best,
+                        {
+                            "legal_action_count": len(actions),
+                            "checking_action_count": len(checking),
+                            "nonchecking_action_count": len(nonchecking),
+                            "all_children_nonterminal": True,
+                            "best_checking_score": best_checking_score,
+                            "best_nonchecking_score": best_nonchecking_score,
+                            "anchor_pressure_advantage": (
+                                best_checking_score - best_nonchecking_score
+                            ),
+                            "one_ply_best_actions": [
+                                action_to_dict(action) for action in one_ply_best
+                            ],
+                            "one_ply_best_all_checking": True,
+                        },
+                    )
 
         if witnesses["promotion"] is None:
             all_children_nonterminal = all(
@@ -563,10 +613,17 @@ def _capability_suite(label, compiled, profile, config):
                 rows[name]["reason"] = "NO_OPTIONAL_PROMOTION_SEMANTICS"
             continue
         if witness is None:
+            if name == "anchor_danger" and label.startswith("generated_"):
+                rows[name] = {
+                    "status": "NOT_OBSERVED",
+                    "reason": "NO_CONTROLLED_ANCHOR_WITNESS_IN_BOUNDED_SCAN",
+                }
+                continue
             reason = {
                 "extreme_material": "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND",
                 "promotion": "CONTROLLED_PROMOTION_WITNESS_NOT_FOUND",
                 "drop": "CONTROLLED_DROP_WITNESS_NOT_FOUND",
+                "anchor_danger": "CONTROLLED_ANCHOR_WITNESS_NOT_FOUND",
             }.get(name, "WITNESS_NOT_FOUND")
             rows[name] = {"status": "HARNESS_FAILURE", "reason": reason}
             return {
@@ -583,6 +640,7 @@ def _capability_suite(label, compiled, profile, config):
             "extreme_material": 1,
             "promotion": 1,
             "drop": 1,
+            "anchor_danger": 1,
         }.get(name)
         if fixed_depth is not None:
             primary = _fixed_depth_decision(

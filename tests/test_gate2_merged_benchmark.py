@@ -20,7 +20,7 @@ def test_optional_promotion_applicability_uses_compiled_contract():
     assert _has_optional_promotion(shogi) is True
 
 
-def test_merged_gate2_passes_controlled_drop_and_stops_on_generated_anchor():
+def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
@@ -29,15 +29,16 @@ def test_merged_gate2_passes_controlled_drop_and_stops_on_generated_anchor():
     assert result["classification"] == "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY"
     assert result["first_hard_failure"] == {
         "layer": "capability",
-        "ruleset": "generated_L_V4-3",
-        "reason": "anchor_danger",
-        "failure_type": "HARNESS_FAILURE",
+        "ruleset": "generated_F_V4-3",
+        "reason": "mobility",
+        "failure_type": "HARD_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
     assert [row["label"] for row in result["rulesets"]] == [
         "chess",
         "shogi",
         "generated_L_V4-3",
+        "generated_F_V4-3",
     ]
     assert result["short_games"] == []
 
@@ -153,16 +154,45 @@ def test_merged_gate2_passes_controlled_drop_and_stops_on_generated_anchor():
     assert drop_decisions["weak"]["search_limit_mode"] == "node_budget"
     assert drop_decisions["weak"]["max_nodes"] == 128
 
+    for capability in (
+        result["rulesets"][0]["capability"],
+        result["rulesets"][1]["capability"],
+    ):
+        anchor = capability["tasks"]["anchor_danger"]
+        assert anchor["status"] == "PASS"
+        assert anchor["all_children_nonterminal"] is True
+        assert anchor["checking_action_count"] >= 1
+        assert anchor["nonchecking_action_count"] >= 1
+        assert anchor["best_checking_score"] > anchor["best_nonchecking_score"]
+        assert anchor["anchor_pressure_advantage"] == (
+            anchor["best_checking_score"] - anchor["best_nonchecking_score"]
+        )
+        assert anchor["one_ply_best_actions"] == anchor["expected_actions"]
+        assert anchor["one_ply_best_all_checking"] is True
+        for role in ("primary", "reviewer"):
+            decision = anchor["decisions"][role]
+            assert decision["search_limit_mode"] == "fixed_depth_1"
+            assert decision["max_nodes"] is None
+            assert decision["completed_depth"] == 1
+            assert decision["termination_reason"] == "completed_depth"
+            assert decision["selected_action"] in anchor["expected_actions"]
+        assert anchor["decisions"]["weak"]["max_nodes"] == 128
+
     generated = result["rulesets"][2]["capability"]
-    assert generated["status"] == "HARNESS_FAILURE"
-    assert generated["first_failure"] == "anchor_danger"
+    assert generated["status"] == "PASS"
     assert generated["tasks"]["extreme_material"]["status"] == "PASS"
     assert generated["tasks"]["mobility"]["status"] == "PASS"
     assert generated["tasks"]["anchor_danger"] == {
-        "status": "HARNESS_FAILURE",
-        "reason": "WITNESS_NOT_FOUND",
+        "status": "NOT_OBSERVED",
+        "reason": "NO_CONTROLLED_ANCHOR_WITNESS_IN_BOUNDED_SCAN",
     }
-    assert len(result["rulesets"]) == 3
+
+    next_generated = result["rulesets"][3]["capability"]
+    assert next_generated["status"] == "HARD_FAILURE"
+    assert next_generated["first_failure"] == "mobility"
+    assert next_generated["tasks"]["extreme_material"]["status"] == "PASS"
+    assert next_generated["tasks"]["mobility"]["status"] == "HARD_FAILURE"
+    assert len(result["rulesets"]) == 4
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000

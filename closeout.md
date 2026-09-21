@@ -1,3 +1,31 @@
+## Gate 2 controlled anchor-pressure closeout
+
+This in-place `CAUSAL_DIAGNOSTIC` replaced raw "any checking move" with a
+controlled one-ply anchor-pressure witness. Eligible states require all
+children nonterminal, both checking and nonchecking actions, strict best-check
+advantage over the best noncheck, and an all-checking global production-
+evaluator argmax. Expected actions are exactly that argmax; primary/reviewer
+use fixed depth 1 and weak128 remains telemetry.
+
+Chess and Shogi each found and passed controlled witnesses. Chess's best-check
+advantage was 1516 and both primary/reviewer completed in 19 nodes; Shogi's
+advantage was 731 and both completed in 95 nodes. The first generated ruleset,
+`generated_L_V4-3`, had no controlled anchor witness in the fixed corpus, so it
+records `NOT_OBSERVED / NO_CONTROLLED_ANCHOR_WITNESS_IN_BOUNDED_SCAN` and its
+capability suite continued to PASS.
+
+The run then reached `generated_F_V4-3` and stopped at `mobility` with
+`failure_type=HARD_FAILURE`; controlled material had passed first. No later
+ruleset, short game, Gate 3, or evolution ran. Gate 2 remains failed and Gate 3
+frozen.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 controlled drop-witness closeout
 
 This in-place `CAUSAL_DIAGNOSTIC` replaced the raw any-drop expected set with
