@@ -559,6 +559,40 @@ Gate 1 is complete. Gate 2 was not started, as required by the Supervisor.
 
 ---
 
+# Gate 2 R1 forced-win microbench closeout
+
+## Outcome
+
+`STRENGTH_BENCHMARK` completed on the exact F86O/F86Q frozen generated
+ruleset and root. The F86O policy tape replay reconstructed root digest
+`48cdc72b8ca6551f2a5cc0bd3b5c4aec6e05aa49a602c7436a22f49f59728114` at ply
+10 with seat assignment `B/A`; the ruleset fingerprint matched
+`29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff`.
+
+## Observation
+
+- The normal rule prior had P0/P1 values `1095/905`; the flat control used
+  ordinary value `1000`, hand value `900`, and zero promotion gains.
+- Exactly two production Python AlphaBetaPlayer root searches ran, both at
+  depth 2 with qsearch 0/0, TT off, ordering off, disk cache off, native
+  legality off, and deterministic fresh players.
+- The flat control selected the certified action `[3,4] -> [2,3]` with the
+  certified action digest; the rule prior selected a different action.
+- Because the rule prior did not select the certified action, the conditional
+  conversion trials were not run. Classification:
+  `GATE2_R1_POLICY_DIVERGENCE_WITHOUT_WINNING_ROUTE`.
+- No production search, evaluator, rules, generator, or learning code was
+  modified. No full games, Heavy job, Arena, random scan, or bootstrap ran.
+
+## Tests and routing
+
+- Added the bounded replay/search regression test; it passed together with the
+  Gate 1 test and the existing targeted production suites.
+- This witness is a non-winning policy divergence, so no second witness was
+  started in this turn; the next route remains governed by Chat's follow-up.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
