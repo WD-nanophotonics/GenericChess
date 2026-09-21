@@ -19,8 +19,12 @@ plus champion-selection/evolution strategy.
 
 Do not use teacher loss, Q regression, search compression, PST, learned policy,
 nonlinear evaluators, or a proxy objective as the primary objective. Human
-material values are sanity checks only. Required evidence is fresh equal-budget
-Arena `Gen1 > Gen0`, then `Gen2 > Gen1`, optionally `Gen3 > Gen2`. If this
+material values are sanity checks only. First use the user-authorized Arena
+score race as behavioral fitness: each non-anchor capture is +1, each checking
+move is +1, capture+check is +2, and the first side to 10 wins; formal Core
+decisive outcomes take precedence. Use fresh paired role-swapped openings and
+keep this score independent of material values. Require score-race `Gen1 >
+Gen0`, then `Gen2 > Gen1`, before full-game Standard Shogi validation. If this
 minimal benchmark fails, diagnose that failure instead of adding a more
 complex learner.
 

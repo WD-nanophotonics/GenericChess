@@ -1,3 +1,42 @@
+# F145 score-race pilot closeout
+
+## Outcome
+
+The user-authorized Standard Shogi score-race pilot completed in pilot-only
+mode and did not meet the acceptance gate, so full Gen1/Gen2 evolution was not
+started. Classification: `SCORE_RACE_PILOT_FAILED_ACCEPTANCE`.
+
+The pilot used fresh role-swapped pairs, fixed F144 material evaluation and
+search, capture +1, check +1, capture+check +2, first to 10, and 512 plies as
+the safety bound. The four valid games had 30 capture points, zero check
+points, median 133.5 plies, and repetition terminal causes. No game reached
+the score threshold or a formal decisive Core outcome; accepted signal
+fraction was 0.0. The conservative shortness check `median_plies < 250`
+passed, but the behavioral fitness gate failed. The initial run also exposed
+that replacement accounting eagerly evaluated the full pool; the published
+implementation now evaluates the target opening wave first and consumes
+fresh openings only for invalid equal-score replacements.
+
+## Scope and verification
+
+- F145 Heavy was safely stopped before its superseded full-game diagnosis and
+  left no result artifact; only its transient envelope was removed.
+- The score-race pilot Heavy used four process workers and wrote transient
+  evidence to `.generic_chess_flow/f145-score-race-pilot.json`.
+- The score-race implementation keeps F144 `MaterialOnlyEvaluator`, ABP,
+  ordering, quiescence, TT, and limits unchanged; score points are independent
+  of material values and formal Core decisive outcomes take precedence.
+- Tests passed: 33 targeted F145/F144/Search tests.
+
+## Routing
+
+Because the pilot did not produce threshold or formal-decisive signal, no
+full evolution or promotion was authorized. Any next run must adjust only the
+score-race threshold/event weights through Chat; no learner or search-stack
+expansion is justified by this pilot.
+
+---
+
 # F144 closeout
 
 ## Outcome
