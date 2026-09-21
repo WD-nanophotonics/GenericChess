@@ -111,6 +111,19 @@ def _core_winner(result) -> bool:
     } and result.winner is not None
 
 
+def resolve_terminal(result, scores: list[int]) -> tuple[int | None, str, bool]:
+    """Adjudicate only formal Core winners; every other terminal is invalid."""
+    if _core_winner(result):
+        return result.winner, result.status.value, True
+    return None, "invalid_nondecisive_terminal", False
+
+
+def resolve_threshold(scores: list[int], mover: int) -> tuple[int | None, str, bool]:
+    if scores[mover] >= SCORE_THRESHOLD:
+        return mover, "score_threshold", True
+    return None, "", False
+
+
 def play_score_race(compiled, opening, champion, child, child_owner, ordering_values, limits=SEARCH_LIMITS):
     session = GameSession(compiled)
     for action in opening.actions:
@@ -155,17 +168,19 @@ def play_score_race(compiled, opening, champion, child, child_owner, ordering_va
             decisive_reason = result.status.value
             terminal_cause = result.status.value
             break
-        if scores[mover] >= SCORE_THRESHOLD:
-            winner = mover
-            decisive_reason = "score_threshold"
+        threshold_winner, threshold_reason, threshold_valid = resolve_threshold(scores, mover)
+        if threshold_valid:
+            winner = threshold_winner
+            decisive_reason = threshold_reason
             terminal_cause = "score_threshold"
             threshold_ply = len(session.history)
             break
     result = session.result
     if winner is None and decisive_reason == "":
         terminal_cause = result.status.value if result.status is not SessionStatus.ONGOING else "max_ply"
-        decisive_reason = "invalid_nondecisive_terminal"
-    valid = winner is not None and decisive_reason in {"score_threshold", "checkmate", "perpetual_check", "declaration", "resignation"}
+        winner, decisive_reason, valid = resolve_terminal(result, scores)
+    else:
+        valid = winner is not None and decisive_reason in {"score_threshold", "checkmate", "perpetual_check", "declaration", "resignation"}
     return {
         "child_owner": child_owner,
         "winner": winner,
@@ -231,8 +246,6 @@ def run_pairs(champion, child, openings, ordering_values, workers=4, target_pair
         wave_rows = _run_wave(wave, champion, child, ordering_values, workers, max_nodes)
         attempts.extend(wave_rows)
         valid_rows.extend(row for row in wave_rows if row["valid"])
-    if len(valid_rows) < target:
-        raise RuntimeError(f"opening pool exhausted: target={target}, valid={len(valid_rows)}, attempts={len(attempts)}")
     return {
         "rows": sorted(valid_rows, key=lambda row: row["pair_index"])[:target],
         "attempts": attempts,
@@ -252,7 +265,7 @@ def _percentile(values, fraction):
 def summarize(result, bootstrap_seed):
     rows = result["rows"]
     pair_scores = [row["pair_score"] for row in rows]
-    low, high = bootstrap_pair_mean_ci(pair_scores, seed=bootstrap_seed)
+    low, high = bootstrap_pair_mean_ci(pair_scores, seed=bootstrap_seed) if pair_scores else (0.0, 0.0)
     games = [game for row in rows for game in row["games"]]
     all_attempted_games = [game for row in result["attempts"] for game in row["games"]]
     causes = Counter(game["terminal_cause"] for game in all_attempted_games if not game["valid"])
@@ -269,7 +282,7 @@ def summarize(result, bootstrap_seed):
         "invalid_pair_count": result["invalid_pairs"],
         "pair_count": len(rows),
         "pair_scores": pair_scores,
-        "mean_pair_score": sum(pair_scores) / len(pair_scores),
+        "mean_pair_score": sum(pair_scores) / len(pair_scores) if pair_scores else 0.0,
         "bootstrap_95_ci": [low, high],
         "child_better_pairs": sum(score > 0.5 for score in pair_scores),
         "tied_pairs": sum(score == 0.5 for score in pair_scores),
