@@ -11,11 +11,11 @@ def test_threshold3_and_source_level_score_independence():
     assert "values" not in source
 
 
-def test_nondecisive_terminal_is_always_invalid():
+def test_nondecisive_terminal_uses_score_tiebreak_and_only_ties_are_invalid():
     repetition = SimpleNamespace(status=race.SessionStatus.REPETITION, winner=None)
     assert race._core_winner(repetition) is False
-    assert race.resolve_terminal(repetition, [1, 2]) == (None, "invalid_nondecisive_terminal", False)
-    assert race.resolve_terminal(repetition, [5, 5]) == (None, "invalid_nondecisive_terminal", False)
+    assert race.resolve_terminal(repetition, [1, 2]) == (1, "score_tiebreak", True)
+    assert race.resolve_terminal(repetition, [5, 5]) == (None, "invalid_equal_score_terminal", False)
     checkmate = SimpleNamespace(status=race.SessionStatus.CHECKMATE, winner=0)
     assert race._core_winner(checkmate) is True
     assert race.resolve_terminal(checkmate, [0, 0]) == (0, "checkmate", True)
@@ -24,7 +24,7 @@ def test_nondecisive_terminal_is_always_invalid():
 def test_threshold_winner_and_safety_terminal_contract():
     assert race.resolve_threshold([3, 0], 0) == (0, "score_threshold", True)
     max_ply = SimpleNamespace(status=race.SessionStatus.MAX_PLY, winner=None)
-    assert race.resolve_terminal(max_ply, [2, 1]) == (None, "invalid_nondecisive_terminal", False)
+    assert race.resolve_terminal(max_ply, [2, 1]) == (0, "score_tiebreak", True)
 
 
 def test_threshold3_pilot_acceptance_contract():

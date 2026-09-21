@@ -112,10 +112,12 @@ def _core_winner(result) -> bool:
 
 
 def resolve_terminal(result, scores: list[int]) -> tuple[int | None, str, bool]:
-    """Adjudicate only formal Core winners; every other terminal is invalid."""
+    """Prefer formal Core winners, then use the race score at nondecisive ends."""
     if _core_winner(result):
         return result.winner, result.status.value, True
-    return None, "invalid_nondecisive_terminal", False
+    if scores[0] == scores[1]:
+        return None, "invalid_equal_score_terminal", False
+    return (0 if scores[0] > scores[1] else 1), "score_tiebreak", True
 
 
 def resolve_threshold(scores: list[int], mover: int) -> tuple[int | None, str, bool]:
@@ -180,7 +182,7 @@ def play_score_race(compiled, opening, champion, child, child_owner, ordering_va
         terminal_cause = result.status.value if result.status is not SessionStatus.ONGOING else "max_ply"
         winner, decisive_reason, valid = resolve_terminal(result, scores)
     else:
-        valid = winner is not None and decisive_reason in {"score_threshold", "checkmate", "perpetual_check", "declaration", "resignation"}
+        valid = winner is not None and decisive_reason in {"score_threshold", "score_tiebreak", "checkmate", "perpetual_check", "declaration", "resignation"}
     return {
         "child_owner": child_owner,
         "winner": winner,
@@ -276,6 +278,10 @@ def summarize(result, bootstrap_seed):
         or game["decisive_reason"] in {"checkmate", "perpetual_check", "declaration", "resignation"}
         for game in all_attempted_games
     )
+    scored_outcomes = sum(
+        game["decisive_reason"] in {"score_threshold", "score_tiebreak", "checkmate", "perpetual_check", "declaration", "resignation"}
+        for game in all_attempted_games
+    )
     return {
         "attempted_pair_count": len(result["attempts"]),
         "valid_pair_count": len(rows),
@@ -292,6 +298,9 @@ def summarize(result, bootstrap_seed):
         "threshold_winning_games": sum(game["decisive_reason"] == "score_threshold" for game in all_attempted_games),
         "formal_core_decisive_games": sum(game["decisive_reason"] in {"checkmate", "perpetual_check", "declaration", "resignation"} for game in all_attempted_games),
         "threshold_or_formal_decisive_fraction": threshold_or_formal / max(1, len(all_attempted_games)),
+        "score_tiebreak_games": sum(game["decisive_reason"] == "score_tiebreak" for game in all_attempted_games),
+        "scored_outcome_games": scored_outcomes,
+        "scored_outcome_fraction": scored_outcomes / max(1, len(all_attempted_games)),
         "invalid_games": sum(not game["valid"] for game in all_attempted_games),
         "invalid_game_fraction": sum(not game["valid"] for game in all_attempted_games) / max(1, len(all_attempted_games)),
         "invalid_repetition_games": causes.get("repetition", 0),
