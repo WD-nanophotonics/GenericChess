@@ -20,7 +20,7 @@ def test_optional_promotion_applicability_uses_compiled_contract():
     assert _has_optional_promotion(shogi) is True
 
 
-def test_merged_gate2_applies_optional_promotion_and_stops_on_shogi_drop():
+def test_merged_gate2_passes_controlled_drop_and_stops_on_generated_anchor():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
@@ -29,12 +29,16 @@ def test_merged_gate2_applies_optional_promotion_and_stops_on_shogi_drop():
     assert result["classification"] == "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY"
     assert result["first_hard_failure"] == {
         "layer": "capability",
-        "ruleset": "shogi",
-        "reason": "drop",
-        "failure_type": "HARD_FAILURE",
+        "ruleset": "generated_L_V4-3",
+        "reason": "anchor_danger",
+        "failure_type": "HARNESS_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
-    assert [row["label"] for row in result["rulesets"]] == ["chess", "shogi"]
+    assert [row["label"] for row in result["rulesets"]] == [
+        "chess",
+        "shogi",
+        "generated_L_V4-3",
+    ]
     assert result["short_games"] == []
 
     tasks = result["rulesets"][0]["capability"]["tasks"]
@@ -96,8 +100,7 @@ def test_merged_gate2_applies_optional_promotion_and_stops_on_shogi_drop():
     assert material_decisions["weak"]["max_nodes"] == 128
 
     shogi = result["rulesets"][1]["capability"]
-    assert shogi["status"] == "HARD_FAILURE"
-    assert shogi["first_failure"] == "drop"
+    assert shogi["status"] == "PASS"
     assert shogi["tasks"]["mate_in_three"]["status"] == "PASS"
     assert shogi["tasks"]["extreme_material"]["status"] == "PASS"
     promotion = shogi["tasks"]["promotion"]
@@ -127,9 +130,39 @@ def test_merged_gate2_applies_optional_promotion_and_stops_on_shogi_drop():
         assert promotion_decisions[role]["selected_action"] in promotion["expected_actions"]
 
     drop = shogi["tasks"]["drop"]
-    assert drop["status"] == "HARD_FAILURE"
-    assert drop["primary_expected"] is False
-    assert len(result["rulesets"]) == 2
+    assert drop["status"] == "PASS"
+    assert drop["all_children_nonterminal"] is True
+    assert drop["drop_action_count"] >= 1
+    assert drop["non_drop_action_count"] >= 1
+    assert drop["best_drop_score"] > drop["best_non_drop_score"]
+    assert drop["drop_score_advantage"] == (
+        drop["best_drop_score"] - drop["best_non_drop_score"]
+    )
+    assert drop["one_ply_best_actions"] == drop["expected_actions"]
+    assert all(action["kind"].endswith("drop") for action in drop["expected_actions"])
+    assert drop["expected_drop_base_type_ids"]
+    assert drop["witness_history_mode"] == "fixed_root"
+    drop_decisions = drop["decisions"]
+    for role in ("primary", "reviewer"):
+        assert drop_decisions[role]["search_limit_mode"] == "fixed_depth_1"
+        assert drop_decisions[role]["max_nodes"] is None
+        assert drop_decisions[role]["max_depth"] == 1
+        assert drop_decisions[role]["completed_depth"] == 1
+        assert drop_decisions[role]["termination_reason"] == "completed_depth"
+        assert drop_decisions[role]["selected_action"] in drop["expected_actions"]
+    assert drop_decisions["weak"]["search_limit_mode"] == "node_budget"
+    assert drop_decisions["weak"]["max_nodes"] == 128
+
+    generated = result["rulesets"][2]["capability"]
+    assert generated["status"] == "HARNESS_FAILURE"
+    assert generated["first_failure"] == "anchor_danger"
+    assert generated["tasks"]["extreme_material"]["status"] == "PASS"
+    assert generated["tasks"]["mobility"]["status"] == "PASS"
+    assert generated["tasks"]["anchor_danger"] == {
+        "status": "HARNESS_FAILURE",
+        "reason": "WITNESS_NOT_FOUND",
+    }
+    assert len(result["rulesets"]) == 3
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000

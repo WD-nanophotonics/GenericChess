@@ -1,3 +1,32 @@
+## Gate 2 controlled drop-witness closeout
+
+This in-place `CAUSAL_DIAGNOSTIC` replaced the raw any-drop expected set with
+a controlled one-ply witness. Eligible states require all children
+nonterminal, at least one drop and non-drop, strict best-drop advantage over
+the best non-drop, and an all-drop global production-evaluator argmax.
+Expected actions are exactly that argmax; primary/reviewer use fixed depth 1,
+while weak128 remains telemetry.
+
+The accepted Shogi witness has 79 legal actions (71 drops, 8 non-drops), best
+drop score 267 versus best non-drop 191, and one unique best pawn drop. Primary
+and reviewer both completed depth 1 in 159 nodes and selected it; controlled
+drop passed. Static capability witnesses are normalized to identical fixed
+search roots so bounded-scan descendants have consistent imported history;
+positions, expected sets, evaluator scores, and budgets are unchanged.
+
+The merged run continued into `generated_L_V4-3`. Controlled material and the
+existing mobility task passed, then `anchor_danger` stopped as
+`HARNESS_FAILURE / WITNESS_NOT_FOUND` within the unchanged scan bound. No later
+generated ruleset, short game, Gate 3, or evolution ran. Gate 2 remains
+harness-blocked and Gate 3 frozen.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 optional-promotion applicability closeout
 
 This in-place `CAUSAL_DIAGNOSTIC` derives promotion applicability from the

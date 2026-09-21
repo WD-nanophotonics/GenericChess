@@ -29,6 +29,7 @@ from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.actions import (
     action_is_board,
     action_is_drop,
+    action_drop_base_type_id,
     action_promotion_target_id,
     action_source_square,
     action_target_square,
@@ -459,11 +460,67 @@ def _task_witnesses(label, compiled, profile, config):
 
         if witnesses["drop"] is None:
             drops = tuple(action for action in actions if action_is_drop(action))
-            if drops and len(drops) < len(actions):
-                witnesses["drop"] = (state_label, state, drops)
+            non_drops = tuple(action for action in actions if not action_is_drop(action))
+            all_children_nonterminal = all(
+                not child.terminal_status.is_terminal for _action, child in successors
+            )
+            if all_children_nonterminal and drops and non_drops:
+                one_ply_scores = {
+                    action: -evaluator.evaluate(child)
+                    for action, child in successors
+                }
+                best_drop_score = max(one_ply_scores[action] for action in drops)
+                best_non_drop_score = max(
+                    one_ply_scores[action] for action in non_drops
+                )
+                global_best_score = max(one_ply_scores.values())
+                one_ply_best = tuple(
+                    action
+                    for action in actions
+                    if one_ply_scores[action] == global_best_score
+                )
+                if best_drop_score > best_non_drop_score and all(
+                    action_is_drop(action) for action in one_ply_best
+                ):
+                    witnesses["drop"] = (
+                        state_label,
+                        _fixed_state_from_position(compiled, state.position),
+                        one_ply_best,
+                        {
+                            "legal_action_count": len(actions),
+                            "drop_action_count": len(drops),
+                            "non_drop_action_count": len(non_drops),
+                            "all_children_nonterminal": True,
+                            "best_drop_score": best_drop_score,
+                            "best_non_drop_score": best_non_drop_score,
+                            "drop_score_advantage": (
+                                best_drop_score - best_non_drop_score
+                            ),
+                            "one_ply_best_actions": [
+                                action_to_dict(action) for action in one_ply_best
+                            ],
+                            "expected_drop_base_type_ids": sorted(
+                                {
+                                    action_drop_base_type_id(action)
+                                    for action in one_ply_best
+                                }
+                            ),
+                            "witness_history_mode": "fixed_root",
+                        },
+                    )
 
         for action, child in successors[:CAPABILITY_BRANCH_LIMIT]:
             queue.append((f"{state_label}:{_action_key(action)}", child))
+    for name, witness in tuple(witnesses.items()):
+        if witness is None:
+            continue
+        state_label, state, expected, *metadata = witness
+        witnesses[name] = (
+            state_label,
+            _fixed_state_from_position(compiled, state.position),
+            expected,
+            *metadata,
+        )
     return witnesses
 
 
@@ -509,6 +566,7 @@ def _capability_suite(label, compiled, profile, config):
             reason = {
                 "extreme_material": "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND",
                 "promotion": "CONTROLLED_PROMOTION_WITNESS_NOT_FOUND",
+                "drop": "CONTROLLED_DROP_WITNESS_NOT_FOUND",
             }.get(name, "WITNESS_NOT_FOUND")
             rows[name] = {"status": "HARNESS_FAILURE", "reason": reason}
             return {
@@ -524,6 +582,7 @@ def _capability_suite(label, compiled, profile, config):
             "mate_in_three": 3,
             "extreme_material": 1,
             "promotion": 1,
+            "drop": 1,
         }.get(name)
         if fixed_depth is not None:
             primary = _fixed_depth_decision(
