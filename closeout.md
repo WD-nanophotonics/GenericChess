@@ -1,3 +1,56 @@
+## F151 paired-score microprobe closeout
+
+### Outcome
+
+F151 completed as a bounded, non-Heavy diagnostic using the frozen F149
+score-race and fixed ABP/search contract. Stage A stopped after its initial 16
+of 32 neutral openings because it found 2 Gen0-vs-M140 best-action
+disagreements (2/16, 0.125). Stage B then tested exactly the first two
+divergent openings as role-swapped F149 pairs. Both pairs were valid; their
+pair scores were 0.5 and 0.0, respectively. Both role-swapped trajectories
+were divergent. Classification:
+`MATERIAL_VECTOR_PRODUCES_PAIRED_SCORE_DISCRIMINATION_MICROPROBE`.
+
+The historical vectors matched exactly. Gen0 was
+`(250, 634, 1000, 3195, 433, 1155, 3613, 658, 1351, 1822, 2299, 856,
+240)` with SHA `b428c1e044d48587aa746aaea5aadc8646f0afbaf45be9c59f5d28342a724644`.
+M140 was generated from seed 1440401 at sigma 1.40 with SHA
+`3da16a8fdc92c268dcae7a11bfdfb88edfc073f411a4004336abace83ff1b177`.
+
+Stage A's root-search score differences (M140 minus Gen0) had median 0 and
+mean 4710; completed depths ranged from 1 to 2. The two Stage-B pair details
+were:
+
+- Opening index 0: both games valid score tiebreaks, pair score 0.5; game
+  plies 122/62.
+- Opening index 8: both games valid, pair score 0.0; the child lost both
+  role-swapped outcomes (checkmate at 502 plies in one game and score
+  tiebreak at 134 plies in the other).
+
+### Verification and evidence
+
+- Exact command:
+
+  ```text
+  .\\.venv\\Scripts\\python.exe scripts\\f151_shogi_material_paired_score_microprobe.py --output .generic_chess_flow\\f151-shogi-material-paired-score-microprobe-result.json
+  ```
+
+- Result artifact: `.generic_chess_flow/f151-shogi-material-paired-score-microprobe-result.json`
+  (transient and ignored), created at 15:27:06.263 JST.
+- Stage A used seed 1510101, opening range 16–32, and fresh independent
+  players/TTs for each vector probe. No Heavy or evolution job was started.
+- The implementation and focused tests cover the fixed search, vector parity,
+  classification, trajectory hashing, and F149 score-race contract.
+
+### Routing
+
+This microprobe establishes behavioral paired-score discrimination for the
+existing material vector without making a strength claim. Per the current
+Supervisor/user authorization, the next step is the published F150 route with
+its unchanged threshold-10 score race, 16–32-ply openings, and own
+12-pair/3-non-0.5 discrimination gate. The historical F149 density result is
+not a blocker for that authorized F150 run.
+
 ## F150 deep-opening discrimination/evolution stop closeout
 
 ### Outcome
