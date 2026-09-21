@@ -696,6 +696,33 @@ changes were added.
 
 ---
 
+# Gate 3 R1 rule-prior contrast leverage closeout
+
+## Classification
+
+`GATE3_RULE_PRIOR_CONTRAST_NO_LOCAL_LEVERAGE`
+
+The diagnostic used the frozen F86Q F/V5-3 ruleset
+`29390db6050d1ba482a393f7466608a6f19d0df9e6d4f7c3bd3a556f2d194fff` and
+exactly three published F86Q roots: the Gate 2 R1/R3 root, followed by the
+first two different F/V5-3 roots in published selected-root order. The
+checkpoint-backed Gen0 matched the production evaluator exactly at every root
+and every legal one-ply child.
+
+The requested symmetric material-contrast mutations `c=0.75` and `c=1.25`
+changed none of the three 1000-node actions, so the prescribed wider
+mutations `c=0.50` and `c=1.50` were also tested; they likewise changed none.
+The run used 15 searches total, with no games, Arena, self-play, Heavy, or
+production changes. The next route is one other single generic parameter
+family, preferably mobility, using the same tiny leverage diagnostic.
+
+## Validation
+
+The Gate 3 R1 regression test passed. The published sandbox checkpoint is
+recorded in the Courier closeout report.
+
+---
+
 # Previous F142 closeout
 
 - Work order: `GENERICCHESS_F142_CORRECTED_SHOGI_ACTION_DELTA_FACTORIZATION`
