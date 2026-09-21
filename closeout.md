@@ -695,27 +695,30 @@ scripts, fixtures, schemas, or production changes were added.
 
 ## Comprehensive conclusion
 
-The Supervisor correction required one directly corrected merged entry. It
-audited actual Chess/Shogi capability tasks (mate-in-1, mate-in-3,
-avoid-immediate-mate, material capture, mobility, anchor danger, promotion,
-and Shogi drop where applicable), five fixed generated rulesets, initial and
-fixed shallow-random openings with role swaps, a 128-node weak ABP, and
-1000-node versus 8000-node review metrics with 10/20/30-ply trends. The run
-stopped at the first real hard failure instead of producing a strength claim.
+The directly corrected single entry now uses real directional states and
+expected actions, Chess/Shogi plus five fixed generated rulesets, initial and
+fixed shallow-opening role swaps, a 128-node weak ABP, and 8000-node
+action-score review with normalized regret, forced-mate misses, obvious-error
+rate, exact half-weak thresholds, and 10/20/30-ply observations. The run
+stopped at its first real hard failure.
 
-The first failure was Chess `avoid_immediate_mate`; the corrected result was:
+Chess mate-in-1 passed. On a distinct strict mate-in-3 state, the unique
+forced action was `d4xe5`; the 1000-node candidate selected `Rc8`, the
+128-node weak control selected `Qxf5`, and the 8000-node reviewer also selected
+`Rc8`. The first failure was therefore Chess `mate_in_three`, and the result
+was:
 `RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY`.
 
-No short-game or Gate 3 conclusion is supported by this run. Gate 3 is frozen,
-and the previously published Gate 3 R1/R2 commits are retained only as
-historical invalid-route diagnostics pending a future authorized order.
+The required early stop means no short games or later rulesets were executed;
+no Gate 3 conclusion is supported. Gate 3 remains frozen, and its published
+R1/R2 commits remain historical invalid-route diagnostics only.
 
 ## Verification
 
-- The existing merged Gate 2 regression test now checks the corrected
-  capability, node-budget, trend, and first-hard-failure contract.
+- The existing merged regression file checks the exact tactical failure,
+  reviewer-score regret normalization, and exact half-weak threshold.
 - The transient corrected result remains ignored under
-  `.generic_chess_flow/gate2-corrected-result.json`.
+  `.generic_chess_flow/gate2-corrected-v2-result.json`.
 
 ---
 
