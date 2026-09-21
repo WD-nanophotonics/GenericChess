@@ -7,6 +7,28 @@ F154/F155. The authoritative route is now recorded in
 equivalence, then rule-prior baseline strength, then only conditional Gen0
 evolution. No F154 work was completed or committed.
 
+## F157 rule-prior tactical sanity closeout
+
+F157 was a bounded `CAUSAL_DIAGNOSTIC` with no games and no Heavy. The frozen
+`EvaluationConfig()`/`build_ruleset_profile()`/production `Evaluator` was
+tested on the first two valid minimal generated rulesets from seeds 15701 and
+15702. Each had at least two non-anchor types with distinct rule-derived board
+values. A deterministic witness finder placed one owner-0 attacker against a
+HIGH and LOW target, with both captures legal and both children nonterminal.
+
+Result: `RULE_PRIOR_TACTICAL_SANITY_PASS`. Both witnesses had positive
+HIGH-minus-LOW material and full-evaluator differences; the HIGH capture was
+the unique best one-ply full-evaluator child and the fresh depth-1 Python ABP
+smoke search selected it. The probe stopped after two witnesses, used no
+learned or hand-tuned values, and ran exactly two depth-1 searches.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_f157_rule_prior_tactical_sanity.py
+1 passed
+```
+
 ## F156 known-game shallow-search equivalence closeout
 
 F156 was a bounded `CAUSAL_DIAGNOSTIC`. The unknown was whether the existing
