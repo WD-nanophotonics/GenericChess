@@ -1,3 +1,28 @@
+## Gate 2 L_V5-3 material-witness absence closeout
+
+This bounded `CAUSAL_DIAGNOSTIC` explains why the existing fixed 240-state
+scan cannot construct the controlled `generated_L_V5-3 / extreme_material`
+witness. The exact target fingerprint
+`1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d`
+reproduced, and the result is
+`GATE2_LV53_MATERIAL_CONTRAST_NOT_OBSERVED_IN_BOUNDED_SCAN`.
+
+The two non-anchor piece types have distinct board values: `P0=1095` and
+`P1=905` (two types and two sorted distinct values, `[905, 1095]`). The
+unchanged scan visited 181 roots. Sixty-five roots exposed at least one
+positive-value capture, but zero exposed multiple positive-value captures;
+therefore zero roots exposed distinct positive capture values, zero such roots
+had all children nonterminal, and zero passed the full controlled-material
+condition. The missing witness is thus caused by the bounded corpus not
+presenting the existing rule-derived value contrast simultaneously, before
+terminal or evaluator controls can become relevant.
+
+The task remains
+`HARNESS_FAILURE / CONTROLLED_MATERIAL_WITNESS_NOT_FOUND`. No new scan, state,
+witness, game, Heavy run, production change, or proxy disposition was added.
+`generated_F_V5-3` did not execute, authoritative short games remain empty,
+Gate 2 remains `FAILED`, and Gate 3 remains `FROZEN`.
+
 ## Gate 2 post-proxy continuation closeout
 
 This `STRENGTH_BENCHMARK` applied the Supervisor's one-time, fingerprint- and

@@ -69,6 +69,10 @@ MOBILITY_FAILURE_RULESET = "generated_F_V4-3"
 MOBILITY_FAILURE_FINGERPRINT = (
     "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d"
 )
+MATERIAL_ABSENCE_RULESET = "generated_L_V5-3"
+MATERIAL_ABSENCE_FINGERPRINT = (
+    "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d"
+)
 TASK_ORDER = (
     "mate_in_one",
     "mate_in_three",
@@ -615,6 +619,18 @@ def _capture_value(state, action, compiled, profile):
 def _task_witnesses(label, compiled, profile, config):
     witnesses = {name: None for name in TASK_ORDER}
     evaluator = Evaluator(compiled, profile, config)
+    collect_material_absence = label == MATERIAL_ABSENCE_RULESET
+    material_scan = (
+        {
+            "roots_with_positive_capture": 0,
+            "roots_with_multiple_positive_captures": 0,
+            "roots_with_distinct_positive_capture_values": 0,
+            "roots_with_distinct_values_and_all_children_nonterminal": 0,
+            "roots_passing_full_controlled_material_condition": 0,
+        }
+        if collect_material_absence
+        else None
+    )
     queue = list(_special_states(label, compiled))
     seen = set()
     cursor = 0
@@ -654,7 +670,7 @@ def _task_witnesses(label, compiled, profile, config):
                 if safe and unsafe:
                     witnesses["avoid_immediate_mate"] = (state_label, state, safe)
 
-        if witnesses["extreme_material"] is None:
+        if witnesses["extreme_material"] is None or collect_material_absence:
             capture_values = tuple(
                 _capture_value(state, action, compiled, profile) for action in actions
             )
@@ -662,11 +678,23 @@ def _task_witnesses(label, compiled, profile, config):
             all_children_nonterminal = all(
                 not child.terminal_status.is_terminal for _action, child in successors
             )
-            if (
-                all_children_nonterminal
-                and len(positive_values) >= 2
-                and len(set(positive_values)) >= 2
-            ):
+            multiple_positive = len(positive_values) >= 2
+            distinct_positive = multiple_positive and len(set(positive_values)) >= 2
+            nonterminal_distinct = distinct_positive and all_children_nonterminal
+            if material_scan is not None:
+                material_scan["roots_with_positive_capture"] += int(
+                    bool(positive_values)
+                )
+                material_scan["roots_with_multiple_positive_captures"] += int(
+                    multiple_positive
+                )
+                material_scan[
+                    "roots_with_distinct_positive_capture_values"
+                ] += int(distinct_positive)
+                material_scan[
+                    "roots_with_distinct_values_and_all_children_nonterminal"
+                ] += int(nonterminal_distinct)
+            if nonterminal_distinct:
                 max_capture_value = max(positive_values)
                 expected = tuple(
                     action
@@ -682,7 +710,12 @@ def _task_witnesses(label, compiled, profile, config):
                     for action, score in zip(actions, one_ply_scores)
                     if score == best_score
                 )
-                if set(one_ply_best) == set(expected):
+                full_controlled = set(one_ply_best) == set(expected)
+                if material_scan is not None:
+                    material_scan[
+                        "roots_passing_full_controlled_material_condition"
+                    ] += int(full_controlled)
+                if full_controlled and witnesses["extreme_material"] is None:
                     witnesses["extreme_material"] = (
                         state_label,
                         state,
@@ -923,7 +956,58 @@ def _task_witnesses(label, compiled, profile, config):
             expected,
             *metadata,
         )
-    return witnesses
+    if material_scan is not None:
+        material_scan["visited_roots"] = len(seen)
+    return witnesses, material_scan
+
+
+def _material_absence_cause(label, compiled, profile, material_scan):
+    if (
+        label != MATERIAL_ABSENCE_RULESET
+        or compiled.ruleset_fingerprint != MATERIAL_ABSENCE_FINGERPRINT
+        or material_scan is None
+    ):
+        return {
+            "classification": "GATE2_LV53_MATERIAL_ABSENCE_REPRODUCTION_DRIFT"
+        }
+
+    ordinary_types = [
+        {
+            "type_id": piece_type.type_id,
+            "board_value": int(profile.board_value_by_type[piece_type.type_id]),
+        }
+        for piece_type in sorted(compiled.piece_types, key=lambda item: item.type_id)
+        if not piece_type.is_anchor
+    ]
+    distinct_values = sorted({row["board_value"] for row in ordinary_types})
+    full_controlled = material_scan[
+        "roots_passing_full_controlled_material_condition"
+    ]
+    if len(distinct_values) < 2:
+        classification = "GATE2_LV53_MATERIAL_NO_RULE_VALUE_CONTRAST"
+    elif material_scan["roots_with_distinct_positive_capture_values"] == 0:
+        classification = (
+            "GATE2_LV53_MATERIAL_CONTRAST_NOT_OBSERVED_IN_BOUNDED_SCAN"
+        )
+    elif material_scan[
+        "roots_with_distinct_values_and_all_children_nonterminal"
+    ] == 0:
+        classification = (
+            "GATE2_LV53_MATERIAL_ONLY_TERMINAL_CONFOUNDED_CANDIDATES"
+        )
+    elif full_controlled == 0:
+        classification = "GATE2_LV53_MATERIAL_CONTROL_FILTER_REJECTION"
+    else:
+        classification = "GATE2_LV53_MATERIAL_WITNESS_SELECTION_DRIFT"
+
+    return {
+        "classification": classification,
+        "ordinary_piece_types": ordinary_types,
+        "ordinary_type_count": len(ordinary_types),
+        "distinct_ordinary_board_value_count": len(distinct_values),
+        "distinct_ordinary_board_values": distinct_values,
+        **material_scan,
+    }
 
 
 def _required_tasks(label, compiled):
@@ -954,7 +1038,7 @@ def _has_optional_promotion(compiled):
 
 
 def _capability_suite(label, ruleset_index, compiled, profile, config):
-    witnesses = _task_witnesses(label, compiled, profile, config)
+    witnesses, material_scan = _task_witnesses(label, compiled, profile, config)
     required = _required_tasks(label, compiled)
     rows = {}
     for name in TASK_ORDER:
@@ -978,6 +1062,10 @@ def _capability_suite(label, ruleset_index, compiled, profile, config):
                 "anchor_danger": "CONTROLLED_ANCHOR_WITNESS_NOT_FOUND",
             }.get(name, "WITNESS_NOT_FOUND")
             rows[name] = {"status": "HARNESS_FAILURE", "reason": reason}
+            if name == "extreme_material" and label == MATERIAL_ABSENCE_RULESET:
+                rows[name]["witness_absence_cause"] = _material_absence_cause(
+                    label, compiled, profile, material_scan
+                )
             return {
                 "status": "HARNESS_FAILURE",
                 "first_failure": name,

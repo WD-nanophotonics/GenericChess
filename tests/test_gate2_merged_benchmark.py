@@ -1,6 +1,8 @@
 """Regression coverage for the single corrected merged Gate 2 benchmark."""
 
 from scripts.gate2_merged_benchmark import (
+    CAPABILITY_BRANCH_LIMIT,
+    CAPABILITY_STATE_LIMIT,
     PASS_RATIO,
     _has_optional_promotion,
     _normalized_regrets,
@@ -302,10 +304,46 @@ def test_merged_gate2_resumes_after_exact_proxy_divergence_and_stops_next_failur
     )
     assert lv53["capability"]["status"] == "HARNESS_FAILURE"
     assert lv53["capability"]["first_failure"] == "extreme_material"
-    assert lv53["capability"]["tasks"]["extreme_material"] == {
-        "status": "HARNESS_FAILURE",
-        "reason": "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND",
+    extreme_absence = lv53["capability"]["tasks"]["extreme_material"]
+    assert extreme_absence["status"] == "HARNESS_FAILURE"
+    assert extreme_absence["reason"] == "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND"
+    assert set(extreme_absence) == {
+        "status",
+        "reason",
+        "witness_absence_cause",
     }
+    absence = extreme_absence["witness_absence_cause"]
+    assert absence["classification"] in {
+        "GATE2_LV53_MATERIAL_NO_RULE_VALUE_CONTRAST",
+        "GATE2_LV53_MATERIAL_CONTRAST_NOT_OBSERVED_IN_BOUNDED_SCAN",
+        "GATE2_LV53_MATERIAL_ONLY_TERMINAL_CONFOUNDED_CANDIDATES",
+        "GATE2_LV53_MATERIAL_CONTROL_FILTER_REJECTION",
+        "GATE2_LV53_MATERIAL_WITNESS_SELECTION_DRIFT",
+        "GATE2_LV53_MATERIAL_ABSENCE_REPRODUCTION_DRIFT",
+    }
+    assert absence["ordinary_type_count"] == len(absence["ordinary_piece_types"])
+    assert absence["distinct_ordinary_board_value_count"] == len(
+        absence["distinct_ordinary_board_values"]
+    )
+    counters = [
+        absence["roots_passing_full_controlled_material_condition"],
+        absence["roots_with_distinct_values_and_all_children_nonterminal"],
+        absence["roots_with_distinct_positive_capture_values"],
+        absence["roots_with_multiple_positive_captures"],
+        absence["roots_with_positive_capture"],
+        absence["visited_roots"],
+    ]
+    assert counters == sorted(counters)
+    assert absence["visited_roots"] <= CAPABILITY_STATE_LIMIT
+    assert CAPABILITY_STATE_LIMIT == 240
+    assert CAPABILITY_BRANCH_LIMIT == 4
+    material_absence_rows = [
+        (ruleset["label"], task_name)
+        for ruleset in result["rulesets"]
+        for task_name, task in ruleset["capability"]["tasks"].items()
+        if isinstance(task, dict) and "witness_absence_cause" in task
+    ]
+    assert material_absence_rows == [("generated_L_V5-3", "extreme_material")]
     assert len(result["rulesets"]) == 6
     assert "generated_F_V5-3" not in {
         ruleset["label"] for ruleset in result["rulesets"]
