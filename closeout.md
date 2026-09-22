@@ -1,3 +1,26 @@
+## Gate 2 L_V5-3 controlled-material resume closeout
+
+This `STRENGTH_BENCHMARK` added one exact-label, exact-fingerprint controlled
+material fixture for `generated_L_V5-3` without placing it in the general BFS
+queue. The semantic engine validated the five-piece position as ongoing with
+three legal actions, including exactly two legal `P0` captures with distinct
+rule-derived values `[905, 1095]`; every legal child was nonterminal. The
+depth-1 production evaluator's sole argmax was the higher-valued `c2-d3`
+capture, derived from the maximum capture value rather than hard-coded.
+
+The `extreme_material` row now passes for primary and reviewer at fixed depth
+1. Both completed depth 1 in 7 nodes and selected `c2-d3`; the weak control
+selected the same action. The fixture is scoped only to this material row, and
+the prior absence instrumentation remains available as fallback if its exact
+semantic validation ever drifts.
+
+The merged benchmark then continued naturally and stopped at the next genuine
+failure: `generated_L_V5-3 / mobility` is `HARD_FAILURE`. Its expected action
+was `a3-b4`; primary1000 selected `d1-e1`, while weak128 and reviewer8000 both
+selected `d1-c1`. `generated_F_V5-3` therefore did not execute and
+authoritative short games remain empty. Gate 2 remains `FAILED` and Gate 3
+remains `FROZEN`; no second proxy exception was introduced.
+
 ## Gate 2 L_V5-3 material-witness absence closeout
 
 This bounded `CAUSAL_DIAGNOSTIC` explains why the existing fixed 240-state

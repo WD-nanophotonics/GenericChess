@@ -37,7 +37,8 @@ from generic_chess.core.actions import (
 )
 from generic_chess.core.attacks import is_in_check, pseudo_attacks
 from generic_chess.core.identity import repetition_identity_key
-from generic_chess.core.position import HistoryRecord
+from generic_chess.core.pieces import Piece
+from generic_chess.core.position import Hands, HistoryRecord, Position
 from generic_chess.core.semantic_executor import semantic_engine_for
 from generic_chess.core.terminal import TerminalStatus
 from generic_chess.core.transition import initial_state
@@ -616,9 +617,96 @@ def _capture_value(state, action, compiled, profile):
     return int(profile.board_value_by_type[captured.current_type_id])
 
 
+def _controlled_material_fixture(label, compiled, profile, evaluator):
+    if (
+        label != MATERIAL_ABSENCE_RULESET
+        or compiled.ruleset_fingerprint != MATERIAL_ABSENCE_FINGERPRINT
+    ):
+        return None
+
+    board = [None] * (compiled.board_size * compiled.board_size)
+    placements = (
+        (0, 0, Piece(0, "K", "K")),
+        (2, 1, Piece(0, "P0", "P0")),
+        (1, 2, Piece(1, "P1", "P1")),
+        (3, 2, Piece(1, "P0", "P0")),
+        (4, 4, Piece(1, "K", "K")),
+    )
+    if compiled.board_size != 5:
+        return None
+    for file, rank, piece in placements:
+        board[rank * compiled.board_size + file] = piece
+    state = _fixed_state_from_position(
+        compiled,
+        Position(
+            board=tuple(board),
+            hands=(Hands.empty(), Hands.empty()),
+            side_to_move=0,
+            ruleset_fingerprint=compiled.ruleset_fingerprint,
+        ),
+    )
+    if state.terminal_status.status is not TerminalStatus.ONGOING:
+        return None
+
+    successors = _successors(state, compiled)
+    actions = tuple(action for action, _child in successors)
+    material_actions = tuple(
+        action
+        for action in actions
+        if action_is_board(action)
+        and (action_source_square(action).file, action_source_square(action).rank)
+        == (2, 1)
+        and (action_target_square(action).file, action_target_square(action).rank)
+        in {(1, 2), (3, 2)}
+    )
+    if len(material_actions) != 2:
+        return None
+    material_values = tuple(
+        _capture_value(state, action, compiled, profile) for action in material_actions
+    )
+    if sorted(material_values) != [905, 1095]:
+        return None
+    if any(child.terminal_status.is_terminal for _action, child in successors):
+        return None
+
+    expected = tuple(
+        action
+        for action, value in zip(material_actions, material_values)
+        if value == max(material_values)
+    )
+    one_ply_scores = {
+        action: -evaluator.evaluate(child) for action, child in successors
+    }
+    best_score = max(one_ply_scores.values())
+    one_ply_best = tuple(
+        action for action in actions if one_ply_scores[action] == best_score
+    )
+    if set(one_ply_best) != set(expected):
+        return None
+    return (
+        "controlled_material_fixture",
+        state,
+        expected,
+        {
+            "fixture_kind": "exact_fingerprint_controlled_material",
+            "legal_action_count": len(actions),
+            "all_children_nonterminal": True,
+            "positive_capture_action_count": len(material_actions),
+            "positive_capture_value_set": sorted(set(material_values)),
+            "max_capture_value": max(material_values),
+            "one_ply_best_actions": [
+                action_to_dict(action) for action in one_ply_best
+            ],
+        },
+    )
+
+
 def _task_witnesses(label, compiled, profile, config):
     witnesses = {name: None for name in TASK_ORDER}
     evaluator = Evaluator(compiled, profile, config)
+    witnesses["extreme_material"] = _controlled_material_fixture(
+        label, compiled, profile, evaluator
+    )
     collect_material_absence = label == MATERIAL_ABSENCE_RULESET
     material_scan = (
         {

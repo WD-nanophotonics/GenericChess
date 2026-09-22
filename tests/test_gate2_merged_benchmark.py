@@ -32,8 +32,8 @@ def test_merged_gate2_resumes_after_exact_proxy_divergence_and_stops_next_failur
     assert result["first_hard_failure"] == {
         "layer": "capability",
         "ruleset": "generated_L_V5-3",
-        "reason": "extreme_material",
-        "failure_type": "HARNESS_FAILURE",
+        "reason": "mobility",
+        "failure_type": "HARD_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
     assert [row["label"] for row in result["rulesets"]] == [
@@ -302,39 +302,27 @@ def test_merged_gate2_resumes_after_exact_proxy_divergence_and_stops_next_failur
     assert lv53["ruleset_fingerprint"] == (
         "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d"
     )
-    assert lv53["capability"]["status"] == "HARNESS_FAILURE"
-    assert lv53["capability"]["first_failure"] == "extreme_material"
-    extreme_absence = lv53["capability"]["tasks"]["extreme_material"]
-    assert extreme_absence["status"] == "HARNESS_FAILURE"
-    assert extreme_absence["reason"] == "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND"
-    assert set(extreme_absence) == {
-        "status",
-        "reason",
-        "witness_absence_cause",
-    }
-    absence = extreme_absence["witness_absence_cause"]
-    assert absence["classification"] in {
-        "GATE2_LV53_MATERIAL_NO_RULE_VALUE_CONTRAST",
-        "GATE2_LV53_MATERIAL_CONTRAST_NOT_OBSERVED_IN_BOUNDED_SCAN",
-        "GATE2_LV53_MATERIAL_ONLY_TERMINAL_CONFOUNDED_CANDIDATES",
-        "GATE2_LV53_MATERIAL_CONTROL_FILTER_REJECTION",
-        "GATE2_LV53_MATERIAL_WITNESS_SELECTION_DRIFT",
-        "GATE2_LV53_MATERIAL_ABSENCE_REPRODUCTION_DRIFT",
-    }
-    assert absence["ordinary_type_count"] == len(absence["ordinary_piece_types"])
-    assert absence["distinct_ordinary_board_value_count"] == len(
-        absence["distinct_ordinary_board_values"]
-    )
-    counters = [
-        absence["roots_passing_full_controlled_material_condition"],
-        absence["roots_with_distinct_values_and_all_children_nonterminal"],
-        absence["roots_with_distinct_positive_capture_values"],
-        absence["roots_with_multiple_positive_captures"],
-        absence["roots_with_positive_capture"],
-        absence["visited_roots"],
-    ]
-    assert counters == sorted(counters)
-    assert absence["visited_roots"] <= CAPABILITY_STATE_LIMIT
+    assert lv53["capability"]["status"] == "HARD_FAILURE"
+    assert lv53["capability"]["first_failure"] == "mobility"
+    extreme = lv53["capability"]["tasks"]["extreme_material"]
+    assert extreme["status"] == "PASS"
+    assert extreme["witness_label"] == "controlled_material_fixture"
+    assert extreme["fixture_kind"] == "exact_fingerprint_controlled_material"
+    assert extreme["positive_capture_action_count"] == 2
+    assert extreme["positive_capture_value_set"] == [905, 1095]
+    assert extreme["max_capture_value"] == 1095
+    assert extreme["all_children_nonterminal"] is True
+    assert extreme["expected_actions"] == extreme["one_ply_best_actions"]
+    assert extreme["primary_expected"] is True
+    assert extreme["reviewer_expected"] is True
+    assert extreme["decisions"]["primary"]["completed_depth"] == 1
+    assert extreme["decisions"]["reviewer"]["completed_depth"] == 1
+    assert "witness_absence_cause" not in extreme
+    mobility = lv53["capability"]["tasks"]["mobility"]
+    assert mobility["status"] == "HARD_FAILURE"
+    assert mobility["witness_label"] == "initial"
+    assert mobility["primary_expected"] is False
+    assert mobility["reviewer_expected"] is False
     assert CAPABILITY_STATE_LIMIT == 240
     assert CAPABILITY_BRANCH_LIMIT == 4
     material_absence_rows = [
@@ -343,7 +331,7 @@ def test_merged_gate2_resumes_after_exact_proxy_divergence_and_stops_next_failur
         for task_name, task in ruleset["capability"]["tasks"].items()
         if isinstance(task, dict) and "witness_absence_cause" in task
     ]
-    assert material_absence_rows == [("generated_L_V5-3", "extreme_material")]
+    assert material_absence_rows == []
     assert len(result["rulesets"]) == 6
     assert "generated_F_V5-3" not in {
         ruleset["label"] for ruleset in result["rulesets"]
