@@ -1072,7 +1072,12 @@ def _capability_suite(label, ruleset_index, compiled, profile, config):
             },
             **witness_metadata,
         }
-        if name == "mobility" and status == "HARD_FAILURE":
+        if (
+            name == "mobility"
+            and status == "HARD_FAILURE"
+            and label == MOBILITY_FAILURE_RULESET
+            and compiled.ruleset_fingerprint == MOBILITY_FAILURE_FINGERPRINT
+        ):
             rows[name]["cause_check"] = _mobility_failure_cause_check(
                 label,
                 ruleset_index,
@@ -1085,6 +1090,28 @@ def _capability_suite(label, ruleset_index, compiled, profile, config):
                 weak,
                 reviewer,
             )
+            cause = rows[name]["cause_check"]
+            local = cause.get("local_strength_review", {})
+            shadow = cause.get("shadow_ruleset_strength", {})
+            if (
+                primary_expected is False
+                and cause.get("classification")
+                == "GATE2_MOBILITY_CAUSE_GENERATED_SURFACE_PROXY_DIVERGENCE"
+                and local.get("classification")
+                == "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK"
+                and local.get("primary_matches_reviewer_quality") is True
+                and shadow.get("classification")
+                == "GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128"
+            ):
+                rows[name]["criterion_status"] = "HARD_FAILURE"
+                rows[name]["status"] = "PROXY_DIVERGENCE"
+                rows[name]["disposition"] = "NON_BLOCKING_DIAGNOSTIC"
+                return {
+                    "status": "PROXY_DIVERGENCE",
+                    "disposition": "NON_BLOCKING_DIAGNOSTIC",
+                    "first_failure": None,
+                    "tasks": rows,
+                }
         if status != "PASS":
             return {"status": status, "first_failure": name, "tasks": rows}
     return {"status": "PASS", "first_failure": None, "tasks": rows}
@@ -1372,7 +1399,7 @@ def run_merged(root: Path = ROOT):
                 "capability": capability,
             }
         )
-        if capability["status"] != "PASS":
+        if capability["status"] not in {"PASS", "PROXY_DIVERGENCE"}:
             result["first_hard_failure"] = {
                 "layer": "capability",
                 "ruleset": label,
@@ -1380,44 +1407,91 @@ def run_merged(root: Path = ROOT):
                 "failure_type": capability["status"],
             }
             break
-        prepared.append((label, compiled, profile, config))
+        prepared.append((label, compiled, profile, config, capability))
 
     if result["first_hard_failure"] is None:
-        for ruleset_index, (label, compiled, profile, config) in enumerate(prepared):
-            openings = (
-                ("initial", ()),
-                ("shallow_random", _fixed_opening(compiled, 31000 + ruleset_index)),
-            )
-            for opening_kind, opening_actions in openings:
-                for primary_owner in (0, 1):
-                    trial = _short_game(
-                        compiled,
-                        profile,
-                        config,
-                        opening_kind,
-                        opening_actions,
-                        primary_owner,
-                    )
-                    result["short_games"].append(
-                        {
-                            "label": label,
-                            "opening": opening_kind,
-                            "primary_owner": primary_owner,
-                            **trial,
-                        }
-                    )
-                    if trial["hard_failure"] is not None:
-                        result["first_hard_failure"] = {
-                            "layer": "short_game",
-                            "ruleset": label,
-                            "opening": opening_kind,
-                            "primary_owner": primary_owner,
-                            "reason": trial["hard_failure"],
-                        }
-                        break
-                if result["first_hard_failure"] is not None:
+        for ruleset_index, (
+            label,
+            compiled,
+            profile,
+            config,
+            capability,
+        ) in enumerate(prepared):
+            if label == MOBILITY_FAILURE_RULESET:
+                shadow = capability["tasks"]["mobility"]["cause_check"][
+                    "shadow_ruleset_strength"
+                ]
+                if shadow["classification"] != (
+                    "GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128"
+                ):
+                    result["first_hard_failure"] = {
+                        "layer": "short_game",
+                        "ruleset": label,
+                        "reason": "FV43_SHADOW_STRENGTH_REUSE_DRIFT",
+                    }
+                    break
+                trials = tuple(shadow["games"])
+            else:
+                trials = []
+                openings = (
+                    ("initial", ()),
+                    (
+                        "shallow_random",
+                        _fixed_opening(compiled, 31000 + ruleset_index),
+                    ),
+                )
+                for opening_kind, opening_actions in openings:
+                    for primary_owner in (0, 1):
+                        trial = _short_game(
+                            compiled,
+                            profile,
+                            config,
+                            opening_kind,
+                            opening_actions,
+                            primary_owner,
+                        )
+                        trials.append(
+                            {
+                                "label": label,
+                                "opening": opening_kind,
+                                "primary_owner": primary_owner,
+                                **trial,
+                            }
+                        )
+
+            for trial in trials:
+                result["short_games"].append(dict(trial))
+                if trial["hard_failure"] is not None:
+                    result["first_hard_failure"] = {
+                        "layer": "short_game",
+                        "ruleset": label,
+                        "opening": trial["opening"],
+                        "primary_owner": trial["primary_owner"],
+                        "reason": trial["hard_failure"],
+                    }
                     break
             if result["first_hard_failure"] is not None:
+                break
+            ruleset_trends = _aggregate_trends(
+                [game for game in result["short_games"] if game["label"] == label]
+            )
+            ruleset_failures = [
+                failure
+                for failure in _trend_failures(ruleset_trends)
+                if failure["scope"] == label
+            ]
+            if ruleset_failures:
+                result["review"]["trends"] = _aggregate_trends(
+                    result["short_games"]
+                )
+                result["review"]["decision_count"] = sum(
+                    len(game["records"]) for game in result["short_games"]
+                )
+                result["first_hard_failure"] = {
+                    "layer": "review_metric",
+                    "ruleset": label,
+                    "trend_failures": ruleset_failures,
+                }
                 break
 
     if result["first_hard_failure"] is None:

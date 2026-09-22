@@ -1,3 +1,35 @@
+## Gate 2 post-proxy continuation closeout
+
+This `STRENGTH_BENCHMARK` applied the Supervisor's one-time, fingerprint- and
+task-specific continuation for `generated_F_V4-3 / mobility`. All required
+published prerequisites reproduced, so that row now displays
+`PROXY_DIVERGENCE / NON_BLOCKING_DIAGNOSTIC` while retaining
+`criterion_status=HARD_FAILURE`, `primary_expected=false`, the unchanged
+expected action, and all cause/local/shadow evidence. It is not represented as
+a production capability pass.
+
+The merged sequence then continued in fixed manifest order.
+`generated_N_V4-3` (fingerprint
+`856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2`)
+passed its complete existing capability suite. The next ruleset,
+`generated_L_V5-3` (fingerprint
+`1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d`),
+then stopped immediately at `extreme_material` with
+`HARNESS_FAILURE / CONTROLLED_MATERIAL_WITNESS_NOT_FOUND`.
+
+No second proxy disposition was applied, `generated_F_V5-3` did not execute,
+and authoritative short games remained empty because capability processing did
+not clear. Final state remains
+`RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY`, Gate 2 `FAILED`,
+and Gate 3 `FROZEN`. No Gate 3 or evolution ran.
+
+Focused verification passed:
+
+```text
+pytest -q tests/test_gate2_merged_benchmark.py
+4 passed
+```
+
 ## Gate 2 generated-F shadow-strength closeout
 
 This `STRENGTH_BENCHMARK` reproduced the exact `generated_F_V4-3 / mobility`

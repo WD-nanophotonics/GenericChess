@@ -20,7 +20,7 @@ def test_optional_promotion_applicability_uses_compiled_contract():
     assert _has_optional_promotion(shogi) is True
 
 
-def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
+def test_merged_gate2_resumes_after_exact_proxy_divergence_and_stops_next_failure():
     result = run_merged()
 
     assert result["status"] == "FIRST_HARD_FAILURE"
@@ -29,9 +29,9 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     assert result["classification"] == "RULE_PRIOR_ABP_BASIC_COMPETENCE_UNRESOLVED_AT_CAPABILITY"
     assert result["first_hard_failure"] == {
         "layer": "capability",
-        "ruleset": "generated_F_V4-3",
-        "reason": "mobility",
-        "failure_type": "HARD_FAILURE",
+        "ruleset": "generated_L_V5-3",
+        "reason": "extreme_material",
+        "failure_type": "HARNESS_FAILURE",
     }
     assert result["gate1"]["games"] == ["chess", "shogi"]
     assert [row["label"] for row in result["rulesets"]] == [
@@ -39,6 +39,8 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
         "shogi",
         "generated_L_V4-3",
         "generated_F_V4-3",
+        "generated_N_V4-3",
+        "generated_L_V5-3",
     ]
     assert result["short_games"] == []
 
@@ -187,15 +189,18 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
         "reason": "NO_CONTROLLED_ANCHOR_WITNESS_IN_BOUNDED_SCAN",
     }
 
-    next_generated = result["rulesets"][3]["capability"]
+    fv43 = result["rulesets"][3]["capability"]
     assert result["rulesets"][3]["ruleset_fingerprint"] == (
         "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d"
     )
-    assert next_generated["status"] == "HARD_FAILURE"
-    assert next_generated["first_failure"] == "mobility"
-    assert next_generated["tasks"]["extreme_material"]["status"] == "PASS"
-    mobility = next_generated["tasks"]["mobility"]
-    assert mobility["status"] == "HARD_FAILURE"
+    assert fv43["status"] == "PROXY_DIVERGENCE"
+    assert fv43["disposition"] == "NON_BLOCKING_DIAGNOSTIC"
+    assert fv43["first_failure"] is None
+    assert fv43["tasks"]["extreme_material"]["status"] == "PASS"
+    mobility = fv43["tasks"]["mobility"]
+    assert mobility["criterion_status"] == "HARD_FAILURE"
+    assert mobility["status"] == "PROXY_DIVERGENCE"
+    assert mobility["disposition"] == "NON_BLOCKING_DIAGNOSTIC"
     assert mobility["primary_expected"] is False
     cause = mobility["cause_check"]
     assert cause["classification"] == (
@@ -221,6 +226,7 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
     assert local["classification"] == (
         "GATE2_MOBILITY_PROXY_FAILURE_PRIMARY_TIES_WEAK"
     )
+    assert local["primary_matches_reviewer_quality"] is True
     allowed_actions = [
         mobility["primary_action"],
         mobility["weak_action"],
@@ -251,11 +257,9 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
         assert summary["regret"] >= 0
         assert 0.0 <= summary["normalized_regret"] <= 1.0
     shadow = cause["shadow_ruleset_strength"]
-    assert shadow["classification"] in {
-        "GATE2_FV43_SHADOW_STRENGTH_HARNESS_FAILURE",
-        "GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128",
-        "GATE2_FV43_PRIMARY_STRENGTH_NOT_SUPPORTED_VS_WEAK128",
-    }
+    assert shadow["classification"] == (
+        "GATE2_FV43_PRIMARY_STRENGTH_SUPPORTED_VS_WEAK128"
+    )
     assert shadow["ruleset"] == "generated_F_V4-3"
     assert shadow["ruleset_fingerprint"] == (
         "8ca58376a52e539c7c8519e902b8dd9e6991b002586d36d846a7a864fffea05d"
@@ -284,7 +288,37 @@ def test_merged_gate2_controls_anchor_and_stops_on_generated_mobility():
         "20",
         "30",
     }
-    assert len(result["rulesets"]) == 4
+    nv43 = result["rulesets"][4]
+    assert nv43["label"] == "generated_N_V4-3"
+    assert nv43["ruleset_fingerprint"] == (
+        "856a810d3a21eec779f9ba8300ce602cd24d3e8850ba895e39579603fd4ff3e2"
+    )
+    assert nv43["capability"]["status"] == "PASS"
+
+    lv53 = result["rulesets"][5]
+    assert lv53["label"] == "generated_L_V5-3"
+    assert lv53["ruleset_fingerprint"] == (
+        "1a256a4fcc763cb6f4e5ca1037a77b72885d4e85a4d5e46ccf88c69f552b266d"
+    )
+    assert lv53["capability"]["status"] == "HARNESS_FAILURE"
+    assert lv53["capability"]["first_failure"] == "extreme_material"
+    assert lv53["capability"]["tasks"]["extreme_material"] == {
+        "status": "HARNESS_FAILURE",
+        "reason": "CONTROLLED_MATERIAL_WITNESS_NOT_FOUND",
+    }
+    assert len(result["rulesets"]) == 6
+    assert "generated_F_V5-3" not in {
+        ruleset["label"] for ruleset in result["rulesets"]
+    }
+    dispositions = [
+        (ruleset["label"], task_name, task["disposition"])
+        for ruleset in result["rulesets"]
+        for task_name, task in ruleset["capability"]["tasks"].items()
+        if isinstance(task, dict) and "disposition" in task
+    ]
+    assert dispositions == [
+        ("generated_F_V4-3", "mobility", "NON_BLOCKING_DIAGNOSTIC")
+    ]
 
     review = result["review"]
     assert review["primary_node_budget"] == 1000
