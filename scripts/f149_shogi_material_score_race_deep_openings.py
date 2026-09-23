@@ -141,8 +141,8 @@ def _pair_task(payload):
     compiled = _compile()
     opening = v2._opening_from_payload(payload["opening"])
     games = [play_score_race(compiled, opening, tuple(payload["champion"]), tuple(payload["child"]), owner, dict(payload["ordering_values"]), _limits(payload.get("max_nodes", 1000))) for owner in (0, 1)]
-    scores = [None if not game["valid"] else (1.0 if game["winner"] == game["child_owner"] else 0.0) for game in games]
-    return {"pair_index": opening.index, "opening_id": opening.final_position_key, "opening_target_plies": opening.target_plies, "games": games, "valid": all(game["valid"] for game in games), "pair_score": None if any(score is None for score in scores) else sum(scores) / 2.0}
+    pair_score = v2.pair_score(games)
+    return {"pair_index": opening.index, "opening_id": opening.final_position_key, "opening_target_plies": opening.target_plies, "games": games, "valid": pair_score is not None, "pair_score": pair_score}
 
 
 def _run_wave(openings, champion, child, ordering_values, workers):

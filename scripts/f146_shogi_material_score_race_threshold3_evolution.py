@@ -116,8 +116,27 @@ def resolve_terminal(result, scores: list[int]) -> tuple[int | None, str, bool]:
     if _core_winner(result):
         return result.winner, result.status.value, True
     if scores[0] == scores[1]:
-        return None, "invalid_equal_score_terminal", False
+        return None, "score_draw", True
     return (0 if scores[0] > scores[1] else 1), "score_tiebreak", True
+
+
+def child_game_score(game: dict) -> float | None:
+    """Map a valid score-race game to child win/draw/loss fitness."""
+    if not game["valid"]:
+        return None
+    if game["decisive_reason"] == "score_draw" and game["winner"] is None:
+        return 0.5
+    if game["winner"] is None:
+        return None
+    return 1.0 if game["winner"] == game["child_owner"] else 0.0
+
+
+def pair_score(games: list[dict]) -> float | None:
+    """Return the mean child score for a complete two-role pair."""
+    if len(games) != 2 or {game["child_owner"] for game in games} != {0, 1}:
+        return None
+    scores = [child_game_score(game) for game in games]
+    return None if any(score is None for score in scores) else sum(scores) / 2.0
 
 
 def resolve_threshold(scores: list[int], mover: int) -> tuple[int | None, str, bool]:
@@ -210,13 +229,13 @@ def _play_pair_task(payload: dict) -> dict:
         )
         for owner in (0, 1)
     ]
-    scores = [None if not game["valid"] else (1.0 if game["winner"] == game["child_owner"] else 0.0) for game in games]
+    paired_score = pair_score(games)
     return {
         "pair_index": opening.index,
         "opening_id": opening.final_position_key,
         "games": games,
-        "valid": all(game["valid"] for game in games),
-        "pair_score": None if any(score is None for score in scores) else sum(scores) / 2.0,
+        "valid": paired_score is not None,
+        "pair_score": paired_score,
     }
 
 
