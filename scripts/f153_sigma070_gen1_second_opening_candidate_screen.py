@@ -273,6 +273,40 @@ def _result_classification(pairs: list[dict]) -> tuple[str, dict | None]:
     return "SIGMA070_GEN1_SECOND_OPENING_CANDIDATE_SELECTED", eligible[0]
 
 
+def _resource_bound_violations(game: dict, envelope: dict) -> list[dict]:
+    checks = (
+        ("plies", "maximum_total_plies_per_game_including_opening"),
+        ("scored_plies", "maximum_searched_plies_per_game"),
+        ("nodes", "maximum_nodes_per_game"),
+        ("elapsed_seconds", "maximum_game_wall_seconds"),
+    )
+    violations = []
+    for metric, limit_key in checks:
+        observed = game[metric]
+        limit = envelope[limit_key]
+        if observed > limit:
+            violations.append({
+                "metric": metric,
+                "observed": observed,
+                "approved_limit": limit,
+            })
+    return violations
+
+
+def _game_stop_reason(game: dict, violations: list[dict]) -> str | None:
+    prefix = f"mutant_{game['mutant_index']}_owner_{game['child_owner']}"
+    if violations:
+        if game.get("inconclusive_reason") == "wall_clock_cap":
+            suffix = "_".join(item["metric"] for item in violations)
+            return f"{prefix}_wall_clock_cap_resource_bound_{suffix}"
+        suffix = "_".join(item["metric"] for item in violations)
+        return f"{prefix}_resource_envelope_violation_{suffix}"
+    if not game.get("completed") or not game.get("valid"):
+        cause = game.get("inconclusive_reason") or "incomplete_or_invalid"
+        return f"{prefix}_{cause}"
+    return None
+
+
 def run(*, output_dir: Path) -> dict:
     started = time.monotonic()
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
@@ -341,15 +375,16 @@ def run(*, output_dir: Path) -> dict:
                 "child_game_score": race.v2.child_game_score(raw),
                 "end_category": first_screen._game_end_category(raw),
             }
-            if (game["plies"] > MAX_TOTAL_PLIES_PER_GAME
-                    or game["scored_plies"] > envelope["maximum_searched_plies_per_game"]
-                    or game["nodes"] > envelope["maximum_nodes_per_game"]
-                    or game["elapsed_seconds"] > MAX_GAME_SECONDS):
-                raise AssertionError("observed game exceeded its approved resource envelope")
-            role_games.append(game)
+            violations = _resource_bound_violations(game, envelope)
+            game["resource_envelope_compliant"] = not violations
+            game["resource_bound_violations"] = violations
+            if violations:
+                game["valid"] = False
+                game["child_game_score"] = None
             _atomic_json(output_dir / f"mutant-{mutant_index}-owner-{owner}.json", game)
-            if not game["completed"] or not game["valid"]:
-                stop_reason = f"mutant_{mutant_index}_owner_{owner}_incomplete_or_invalid"
+            role_games.append(game)
+            stop_reason = _game_stop_reason(game, violations)
+            if stop_reason:
                 break
         pair = _pair_record(mutant_index, role_games)
         pairs.append(pair)
@@ -376,8 +411,22 @@ def run(*, output_dir: Path) -> dict:
     classification, candidate = _result_classification(pairs)
     games = [game for pair in pairs for game in pair["games"]]
     total_nodes = sum(game["nodes"] for game in games)
-    if len(games) > MAX_GAMES or total_nodes > envelope["maximum_nodes"]:
-        raise AssertionError("screen exceeded its global resource bound")
+    global_violations = []
+    if len(games) > MAX_GAMES:
+        global_violations.append({
+            "metric": "games_attempted",
+            "observed": len(games),
+            "approved_limit": MAX_GAMES,
+        })
+    if total_nodes > envelope["maximum_nodes"]:
+        global_violations.append({
+            "metric": "total_nodes",
+            "observed": total_nodes,
+            "approved_limit": envelope["maximum_nodes"],
+        })
+    if global_violations:
+        classification, candidate = "SIGMA070_GEN1_SECOND_OPENING_SCREEN_INCONCLUSIVE", None
+        stop_reason = stop_reason or "screen_global_resource_envelope_violation"
     result = {
         "schema": SCHEMA,
         "diagnostic_type": "CAUSAL_DIAGNOSTIC",
@@ -392,6 +441,7 @@ def run(*, output_dir: Path) -> dict:
         ),
         **metadata,
         "resource_envelope": envelope,
+        "resource_bound_violations": global_violations,
         "first_screen_source_sha": source["git_sha"],
         "first_screen_result_sha256": source_sha,
         "first_screen_pair_scores": {str(k): v for k, v in FIRST_PAIR_SCORES.items()},
