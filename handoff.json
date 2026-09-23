@@ -1,21 +1,21 @@
 {
   "courier": {
     "branch": "sandbox",
-    "build_id": "b037a07b81b41259",
+    "build_id": "727bf993c7d6e231",
     "repository": "https://github.com/WD-nanophotonics/agent-relay-read-wake.git",
-    "sha": "b9d4b195b888679a3c3ef0694eb9194dfc190549"
+    "sha": "6e141968f35f62a6526257837c7526ce6e9c912c"
   },
-  "created_at": 1788284044,
-  "generation": 2,
+  "created_at": 1790132028,
+  "generation": 3,
   "generic": {
-    "business_candidate_sha": "d50aff9b1dcbb11c1ef0f2988517bb48e4e8ce1b",
-    "master_sha": "44fce4f9dfeee0ef9480597c7ab34195db984100",
+    "business_candidate_sha": "c4103ca0cbfd88c6b38fb6d415dd2486d3deeb0c",
+    "master_sha": "3d9eaaaad78166177bdb331fa79314b77c225374",
     "repository": "https://github.com/WD-nanophotonics/GenericChess.git",
-    "sandbox_sha": "8029c5a86e1f2d514b9692d3f735a63248a15379"
+    "sandbox_sha": "c4103ca0cbfd88c6b38fb6d415dd2486d3deeb0c"
   },
   "owner": {
-    "host_id": "standby",
-    "machine_id": "18a2a802fb9049548b36d189ab6e10e6"
+    "host_id": "local",
+    "machine_id": "40682701bef2438789459173e58eb87c"
   },
   "schema": "generic-chess-handoff-v1",
   "state": "CLAIMED",
@@ -26,15 +26,14 @@
       "GENERICCHESS_PROMOTION": "HOLD",
       "GENERICCHESS_STATUS": "CONTINUE"
     },
-    "closeout_sha256": "ff8919ee7d996cefba9ef56b10589e66d57bf010a288c3448f1ef74030cc682e",
-    "last_work_order_id": "GENERICCHESS-F41-RULE-DERIVED-MATERIAL-PRIOR-AND-SIGNAL-UTILIZATION-CORRECTIVE",
+    "closeout_sha256": null,
+    "last_work_order_id": null,
     "mode": "courier",
     "resume_stage": "SUBMIT_CLOSEOUT",
     "tested_candidate_targets": [
-      "tests\\test_f41_semantic_material_prior.py",
-      "tests\\test_f41_semantic_prior_manifest.py"
+      "tests/test_gate2_merged_benchmark.py"
     ],
     "work_order_active": true,
-    "work_request_token": "dcb2fdf240674121a8ebdaec364b22fc"
+    "work_request_token": "10dabbab57cb4dabb7451c26b26792ab"
   }
 }
