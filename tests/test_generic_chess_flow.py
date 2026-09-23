@@ -1686,6 +1686,22 @@ def test_heavy_rejects_recorded_live_child_even_when_lock_is_free(monkeypatch, t
         )
 
 
+@pytest.mark.skipif(sys.platform != "win32", reason="Windows process handle semantics")
+def test_process_creation_time_excludes_terminated_queryable_child():
+    process = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(10)"])
+    try:
+        created_at = flow._process_creation_time(process.pid)
+        assert created_at is not None
+        assert flow._same_process(process.pid, created_at)
+    finally:
+        process.terminate()
+        process.wait(timeout=10)
+
+    # Popen still owns a Windows handle, so OpenProcess can query the exited PID.
+    assert flow._process_creation_time(process.pid) is None
+    assert not flow._same_process(process.pid, created_at)
+
+
 def test_publish_tests_use_the_same_exclusive_lock(monkeypatch, tmp_path):
     seen = {"locked": False}
 

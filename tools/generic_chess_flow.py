@@ -952,9 +952,14 @@ def _process_creation_time(pid: int) -> float | None:
         from ctypes import wintypes
 
         process_query_limited_information = 0x1000
+        synchronize = 0x00100000
+        wait_object_0 = 0
+        wait_timeout = 0x102
         kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
         kernel32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
         kernel32.OpenProcess.restype = wintypes.HANDLE
+        kernel32.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+        kernel32.WaitForSingleObject.restype = wintypes.DWORD
         kernel32.GetProcessTimes.argtypes = [
             wintypes.HANDLE,
             ctypes.POINTER(wintypes.FILETIME),
@@ -965,10 +970,19 @@ def _process_creation_time(pid: int) -> float | None:
         kernel32.GetProcessTimes.restype = wintypes.BOOL
         kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
         kernel32.CloseHandle.restype = wintypes.BOOL
-        handle = kernel32.OpenProcess(process_query_limited_information, False, pid)
+        handle = kernel32.OpenProcess(
+            process_query_limited_information | synchronize, False, pid
+        )
         if not handle:
             return None
         try:
+            # A terminated process can remain queryable while another handle exists.
+            # Its creation time still matches, but it no longer occupies a Heavy slot.
+            wait_result = kernel32.WaitForSingleObject(handle, 0)
+            if wait_result == wait_object_0:
+                return None
+            if wait_result != wait_timeout:
+                return None
             created = wintypes.FILETIME()
             exited = wintypes.FILETIME()
             kernel = wintypes.FILETIME()
