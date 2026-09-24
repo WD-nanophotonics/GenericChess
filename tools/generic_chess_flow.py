@@ -1704,7 +1704,15 @@ def create_escalation(root: Path, state: dict[str, Any], *, reason: str,
                       worker_thread_id: str | None = None) -> dict[str, Any]:
     directory_value = state.get("active_request_directory")
     request_directory = Path(directory_value) if isinstance(directory_value, str) else None
-    identity = f"{directory_value}|{state.get('last_published_sha')}"
+    # A business notice arrives after Courier has cleared its request directory.
+    # Two successive notices can share the same published SHA; bind a no-request
+    # escalation to the accepted response so a resolved dossier is not reused.
+    response_identity = state.get("last_response_sha256") if directory_value is None else None
+    identity = (
+        f"{directory_value}|{response_identity}|{state.get('last_published_sha')}"
+        if isinstance(response_identity, str) and response_identity
+        else f"{directory_value}|{state.get('last_published_sha')}"
+    )
     escalation_id = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:20]
     directory = escalation_root(root) / escalation_id
     dossier_path = directory / "dossier.json"

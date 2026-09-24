@@ -129,6 +129,38 @@ def test_local_supervisor_required_is_recorded_once_without_transport_recovery(
     assert state["chat_control"]["GENERICCHESS_STATUS"] == "CONTINUE"
 
 
+def test_separate_business_responses_get_separate_supervisor_dossiers(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": tmp_path})
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "sha", lambda *_args: "a" * 40)
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {
+        "supervisor_thread_id": "supervisor", "supervisor_host_id": "local"})
+    state = {
+        "active_request_directory": None,
+        "last_published_sha": "a" * 40,
+        "last_response_sha256": "1" * 64,
+        "recovery_timeline": [],
+    }
+    first = flow.create_escalation(tmp_path, state, reason="first business notice")
+    first_path = tmp_path / "escalations" / first["escalation_id"]
+    (first_path / "resolution.json").write_text("{}", encoding="utf-8")
+
+    state["last_response_sha256"] = "2" * 64
+    second = flow.create_escalation(tmp_path, state, reason="second business notice")
+
+    assert first["escalation_id"] != second["escalation_id"]
+    assert second["reason"] == "second business notice"
+    assert state["escalation_id"] == second["escalation_id"]
+
+    state["active_request_directory"] = str(tmp_path / "existing-request")
+    request = flow.create_escalation(tmp_path, state, reason="request-bound recovery")
+    expected = hashlib.sha256(
+        f"{state['active_request_directory']}|{state['last_published_sha']}".encode("utf-8")
+    ).hexdigest()[:20]
+    assert request["escalation_id"] == expected
+
+
 def test_response_console_output_survives_legacy_windows_encoding(
         monkeypatch, tmp_path, capsys):
     response = tmp_path / "response.txt"
