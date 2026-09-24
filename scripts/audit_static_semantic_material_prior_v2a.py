@@ -218,10 +218,20 @@ def _with_target(cube: Cube, target: int) -> Cube:
     return tuple(sorted((target if square == -1 else square, labels) for square, labels in cube))
 
 
-def _group_probability(groups: dict[tuple[Any, ...], dict[str, Any]], rho_max: Fraction) -> tuple[dict[tuple[Any, ...], Fraction], Fraction]:
+def _group_probability(
+    groups: dict[tuple[Any, ...], dict[str, Any]],
+    rho_max: Fraction,
+    *,
+    fixed_rho: Fraction | None = None,
+) -> tuple[dict[tuple[Any, ...], Fraction], Fraction]:
     values: dict[tuple[Any, ...], Fraction] = {}
     for key, row in groups.items():
-        values[key] = integrate_density_polynomial(union_probability_polynomial(row["cubes"]), rho_max)
+        polynomial = union_probability_polynomial(row["cubes"])
+        values[key] = (
+            evaluate_density_polynomial(polynomial, fixed_rho)
+            if fixed_rho is not None
+            else integrate_density_polynomial(polynomial, rho_max)
+        )
     return values, sum(values.values(), Fraction(0))
 
 
@@ -230,11 +240,13 @@ def _push(groups: dict[tuple[Any, ...], dict[str, Any]], key: tuple[Any, ...], c
     row["cubes"].append(cube)
 
 
-def audit_ruleset_v2a(compiled: Any) -> dict[str, Any]:
+def audit_ruleset_v2a(compiled: Any, *, fixed_at_rho_max: bool = False) -> dict[str, Any]:
+    """Audit V2A by default; optionally evaluate the identical event model at rho_max (V2B)."""
+    version = "v2b" if fixed_at_rho_max else "v2a"
     inventory = _inventory_bound(compiled)
     if not inventory["complete"]:
         return {
-            "classification": "STATIC_MATERIAL_PRIOR_V2A_BOARD_INCONCLUSIVE",
+            "classification": f"STATIC_MATERIAL_PRIOR_{version.upper()}_BOARD_INCONCLUSIVE",
             "coverage_complete": False,
             "inventory_bound": inventory,
             "ledger": {},
@@ -242,6 +254,7 @@ def audit_ruleset_v2a(compiled: Any) -> dict[str, Any]:
             "human_metrics_computed": False,
         }
     rho_max = Fraction(*map(int, inventory["rho_max"].split("/")))
+    fixed_rho = rho_max if fixed_at_rho_max else None
     area = inventory["board_square_count"]
     denominator = 2 * area
     v2 = audit_v2_ruleset(compiled)  # calculation-only baseline; no human tables imported
@@ -344,16 +357,16 @@ def audit_ruleset_v2a(compiled: Any) -> dict[str, Any]:
                                         promotion_details.add((type_id, final_type, forced))
                                         _push(promotion_mass_groups, key, cube, **metadata)
 
-        outcome_values, total = _group_probability(groups, rho_max)
+        outcome_values, total = _group_probability(groups, rho_max, fixed_rho=fixed_rho)
         fixed_label_total = sum(
             (evaluate_density_polynomial(union_probability_polynomial(row["cubes"]), Fraction(2, 3))
              for row in groups.values()),
             Fraction(0),
         )
-        unrestricted_values, unrestricted_total = _group_probability(unrestricted_groups, rho_max)
-        ray_values, ray_total = _group_probability(ray_actual, rho_max)
-        ray_clear_values, ray_clear_total = _group_probability(ray_clear, rho_max)
-        promotion_values, promotion_total = _group_probability(promotion_mass_groups, rho_max)
+        unrestricted_values, unrestricted_total = _group_probability(unrestricted_groups, rho_max, fixed_rho=fixed_rho)
+        ray_values, ray_total = _group_probability(ray_actual, rho_max, fixed_rho=fixed_rho)
+        ray_clear_values, ray_clear_total = _group_probability(ray_clear, rho_max, fixed_rho=fixed_rho)
+        promotion_values, promotion_total = _group_probability(promotion_mass_groups, rho_max, fixed_rho=fixed_rho)
         quiet = capture = Fraction(0)
         for key, value in outcome_values.items():
             if key[3] == "enemy":
@@ -361,6 +374,16 @@ def audit_ruleset_v2a(compiled: Any) -> dict[str, Any]:
             else:
                 quiet += value
         raw = total / denominator
+        components_exact = {
+            "quiet": quiet / denominator,
+            "capture": capture / denominator,
+            "ray_path_attenuation": max(Fraction(0), (ray_clear_total - ray_total) / denominator),
+            "source_restriction_excluded_raw": max(Fraction(0), (unrestricted_total - total) / denominator),
+            "immediate_promotion_branch_mass": promotion_total / denominator,
+            "held_drop": Fraction(0),
+        }
+        score_field = "v2b_fixed_rho_max_board_intrinsic" if fixed_at_rho_max else "v2a_phase_averaged_board_intrinsic"
+        exact_field = "v2b_raw_exact" if fixed_at_rho_max else "v2a_raw_exact"
         v2_row = v2["ledger"].get(type_id, {})
         masks = compiled.support.drop_allowed.get(type_id, ())
         allowed_drops = sum(sum(bool(x) for x in mask) for mask in masks[:2])
@@ -369,20 +392,17 @@ def audit_ruleset_v2a(compiled: Any) -> dict[str, Any]:
         pawn_special = [row for row in held_rows if row["postconditions"] or row["guards"]]
         by_type[type_id] = {
             "v2_fixed_occupancy_board_intrinsic": v2_row.get("board_intrinsic"),
-            "v2a_phase_averaged_board_intrinsic": float(raw),
-            "v2a_raw_exact": f"{raw.numerator}/{raw.denominator}",
+            score_field: float(raw),
+            exact_field: f"{raw.numerator}/{raw.denominator}",
             "fixed_three_label_reproduction": {
                 "v2a_semantics_at_rho_2_3": float(fixed_label_total / denominator),
                 "v2_original_board_intrinsic": v2_row.get("board_intrinsic"),
                 "absolute_difference": abs(float(fixed_label_total / denominator) - float(v2_row.get("board_intrinsic", 0.0))),
             },
-            "components": {
-                "quiet": float(quiet / denominator),
-                "capture": float(capture / denominator),
-                "ray_path_attenuation": float(max(Fraction(0), (ray_clear_total - ray_total) / denominator)),
-                "source_restriction_excluded_raw": float(max(Fraction(0), (unrestricted_total - total) / denominator)),
-                "immediate_promotion_branch_mass": float(promotion_total / denominator),
-                "held_drop": 0.0,
+            "components": {key: float(value) for key, value in components_exact.items()},
+            "components_exact": {
+                key: f"{value.numerator}/{value.denominator}"
+                for key, value in components_exact.items()
             },
             "dynamic_positional_legality_ledger_count": dynamic_count,
             "dynamic_positional_legality_reason": "global positional legality; excluded from intrinsic piece-type material prior",
@@ -398,23 +418,29 @@ def audit_ruleset_v2a(compiled: Any) -> dict[str, Any]:
                 {"source_type": a, "destination_type": b, "forced": c}
                 for a, b, c in sorted(promotion_details)
             ],
-            "v2a_coverage": "COMPLETE" if not unsupported else "INCOMPLETE",
+            ("v2b_coverage" if fixed_at_rho_max else "v2a_coverage"): "COMPLETE" if not unsupported else "INCOMPLETE",
         }
 
     coverage_complete = inventory["complete"] and not unsupported_all
     return {
         "schema_version": 1,
-        "kind": "STATIC_MATERIAL_PRIOR_V2A_PHASE_AVERAGED_BOARD_AUDIT",
-        "density_model": {
+        "kind": f"STATIC_MATERIAL_PRIOR_{version.upper()}_BOARD_AUDIT",
+        "density_model": ({
+            "rho_reference": "rho_max",
+            "rho_reference_is_inventory_derived": True,
+            "conditional_square_labels": {"empty": "1-rho_max", "own": "rho_max/2", "enemy": "rho_max/2"},
+            "human_metric_search_used": False,
+            "evaluation": "exact rational evaluation of the V2A conditional density polynomial at rho_max",
+        } if fixed_at_rho_max else {
             "rho_distribution": "Uniform[0,rho_max]",
             "conditional_square_labels": {"empty": "1-rho", "own": "rho/2", "enemy": "rho/2"},
             "rho_max_includes_zero_density_reference_endpoint": True,
             "is_empirical_game_phase_distribution": False,
             "integration": "exact rational polynomial; union events conditionally before shared-rho integration",
-        },
+        }),
         "inventory_bound": inventory,
         "coverage_complete": coverage_complete,
-        "classification": "STATIC_MATERIAL_PRIOR_V2A_BOARD_READY_FOR_HUMAN_VALIDATION" if coverage_complete else "STATIC_MATERIAL_PRIOR_V2A_BOARD_INCONCLUSIVE",
+        "classification": f"STATIC_MATERIAL_PRIOR_{version.upper()}_BOARD_READY_FOR_HUMAN_VALIDATION" if coverage_complete else f"STATIC_MATERIAL_PRIOR_{version.upper()}_BOARD_INCONCLUSIVE",
         "human_metrics_computed": False,
         "unsupported_intrinsic_semantics": unsupported_all,
         "state_freeze_ledger": state_freeze_ledger,
