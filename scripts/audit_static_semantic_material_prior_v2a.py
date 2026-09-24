@@ -12,7 +12,7 @@ from fractions import Fraction
 import json
 from pathlib import Path
 import sys
-from typing import Any
+from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -223,15 +223,22 @@ def _group_probability(
     rho_max: Fraction,
     *,
     fixed_rho: Fraction | None = None,
+    event_measure: Callable[[int, str, list[Cube]], Fraction] | None = None,
+    type_id: str | None = None,
 ) -> tuple[dict[tuple[Any, ...], Fraction], Fraction]:
     values: dict[tuple[Any, ...], Fraction] = {}
     for key, row in groups.items():
-        polynomial = union_probability_polynomial(row["cubes"])
-        values[key] = (
-            evaluate_density_polynomial(polynomial, fixed_rho)
-            if fixed_rho is not None
-            else integrate_density_polynomial(polynomial, rho_max)
-        )
+        if event_measure is not None:
+            if type_id is None:
+                raise ValueError("type_id is required for a custom event measure")
+            values[key] = event_measure(key[0], type_id, row["cubes"])
+        else:
+            polynomial = union_probability_polynomial(row["cubes"])
+            values[key] = (
+                evaluate_density_polynomial(polynomial, fixed_rho)
+                if fixed_rho is not None
+                else integrate_density_polynomial(polynomial, rho_max)
+            )
     return values, sum(values.values(), Fraction(0))
 
 
@@ -240,7 +247,12 @@ def _push(groups: dict[tuple[Any, ...], dict[str, Any]], key: tuple[Any, ...], c
     row["cubes"].append(cube)
 
 
-def audit_ruleset_v2a(compiled: Any, *, fixed_at_rho_max: bool = False) -> dict[str, Any]:
+def audit_ruleset_v2a(
+    compiled: Any,
+    *,
+    fixed_at_rho_max: bool = False,
+    event_measure: Callable[[int, str, list[Cube]], Fraction] | None = None,
+) -> dict[str, Any]:
     """Audit V2A by default; optionally evaluate the identical event model at rho_max (V2B)."""
     version = "v2b" if fixed_at_rho_max else "v2a"
     inventory = _inventory_bound(compiled)
@@ -357,16 +369,26 @@ def audit_ruleset_v2a(compiled: Any, *, fixed_at_rho_max: bool = False) -> dict[
                                         promotion_details.add((type_id, final_type, forced))
                                         _push(promotion_mass_groups, key, cube, **metadata)
 
-        outcome_values, total = _group_probability(groups, rho_max, fixed_rho=fixed_rho)
+        outcome_values, total = _group_probability(
+            groups, rho_max, fixed_rho=fixed_rho, event_measure=event_measure, type_id=type_id
+        )
         fixed_label_total = sum(
             (evaluate_density_polynomial(union_probability_polynomial(row["cubes"]), Fraction(2, 3))
              for row in groups.values()),
             Fraction(0),
         )
-        unrestricted_values, unrestricted_total = _group_probability(unrestricted_groups, rho_max, fixed_rho=fixed_rho)
-        ray_values, ray_total = _group_probability(ray_actual, rho_max, fixed_rho=fixed_rho)
-        ray_clear_values, ray_clear_total = _group_probability(ray_clear, rho_max, fixed_rho=fixed_rho)
-        promotion_values, promotion_total = _group_probability(promotion_mass_groups, rho_max, fixed_rho=fixed_rho)
+        unrestricted_values, unrestricted_total = _group_probability(
+            unrestricted_groups, rho_max, fixed_rho=fixed_rho, event_measure=event_measure, type_id=type_id
+        )
+        ray_values, ray_total = _group_probability(
+            ray_actual, rho_max, fixed_rho=fixed_rho, event_measure=event_measure, type_id=type_id
+        )
+        ray_clear_values, ray_clear_total = _group_probability(
+            ray_clear, rho_max, fixed_rho=fixed_rho, event_measure=event_measure, type_id=type_id
+        )
+        promotion_values, promotion_total = _group_probability(
+            promotion_mass_groups, rho_max, fixed_rho=fixed_rho, event_measure=event_measure, type_id=type_id
+        )
         quiet = capture = Fraction(0)
         for key, value in outcome_values.items():
             if key[3] == "enemy":
