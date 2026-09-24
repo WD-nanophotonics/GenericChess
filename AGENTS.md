@@ -10,29 +10,45 @@ Gmail, `gc-bridge`, a background Courier daemon, WSL, or a bypass transport.
 
 ## Current mainline route
 
-Standard Shogi comes first. Use the fixed ABP/search/checkmate/ordering/
-quiescence/TT stack. The evaluator is material score only: Anchor and King
-are fixed at zero, with one learnable value per ordinary/promoted piece type.
-Start from bad or random material values and optimize the small material vector
-directly from self-play/Arena wins using the simplest interpretable mutation
-plus champion-selection/evolution strategy.
+Priority 1 is to derive material scores from complete executable game-rule
+semantics and test whether the resulting relative values agree, within
+reasonable scale-invariant tolerances, with accumulated human material-value
+experience. Develop and diagnose the generic prior with a zero-game static
+Western Chess benchmark, using Standard Shogi as a retention control. If the
+prior passes those tests, evaluate the frozen formula on Xiangqi as a new
+holdout before considering further games. Do not replace the production
+evaluator merely because an isolated prior has been implemented.
 
-Do not use teacher loss, Q regression, search compression, PST, learned policy,
-nonlinear evaluators, or a proxy objective as the primary objective. Human
-material values are sanity checks only. First use the user-authorized Arena
-score race as behavioral fitness: each non-anchor capture is +1, each checking
-move is +1, capture+check is +2, and the first side to 10 wins; formal Core
-decisive outcomes take precedence. Use fresh paired role-swapped openings and
-keep this score independent of material values. Require score-race `Gen1 >
-Gen0`, then `Gen2 > Gen1`, before full-game Standard Shogi validation. If this
-minimal benchmark fails, diagnose that failure instead of adding a more
-complex learner.
+Each term used to calculate a piece's score must have an explicit scientific
+or game-theoretic explanation that applies across games. Derive it from rule
+consequences such as executable quiet and capture movement, occupancy and
+blocking, reachability, restricted regions, directional asymmetry, promotion
+or other state transitions, and drop or re-entry options where applicable.
+Piece labels and game names may identify results but must not change the
+formula or its coefficients. Explain every universal coefficient, weighting,
+normalization, or discount from a general principle before comparing scores
+with human references. Record the separate rule-derived components for each
+piece so that the reason for its score can be audited.
 
-F143 is stopped and is not to be continued, published, or closed out as
-mainline. Search compression, generic evaluator work, TreeStrap,
-policy-distillation, Gumbel-MCTS, learned ordering, and related expansions are
-secondary and must receive no further work orders unless the new material-only
-benchmark later proves they are required.
+Human material values are validation targets only. Never import them into the
+score calculation, fit coefficients to them, or add piece-specific or
+game-specific corrections to reach a target ratio. Engineering convenience,
+project milestones, a benchmark pass condition, or a desire to make numbers
+look right are not scientific reasons to change a piece's score. If a generic
+formula fails a frozen human-agreement gate, report the component-level
+failure and test a new general rule-derived hypothesis; do not patch that
+piece's value to force a pass. Conditional rules must appear in the semantic
+ledger even when a generally justified model gives them negligible weight.
+
+Priority 2 starts only after Priority 1 yields a satisfactory frozen prior:
+test whether the generic RuleSet/ABP path has a meaningful node-efficiency or
+practical move-choice disadvantage against mature fixed Chess and Shogi
+Alpha-Beta implementations under controlled equal-node conditions. The old
+sigma-.70 score-race Gen1/Gen2 route is deferred; it does not authorize new
+Arena, self-play, mutation, or Heavy work. F143 remains stopped and is not to
+be continued, published, or closed out as mainline. Search compression,
+TreeStrap, policy-distillation, Gumbel-MCTS, learned ordering, and related
+expansions remain secondary without a new evidence-based work order.
 
 ## Experimental selection
 
