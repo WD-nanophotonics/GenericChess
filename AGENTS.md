@@ -40,6 +40,16 @@ failure and test a new general rule-derived hypothesis; do not patch that
 piece's value to force a pass. Conditional rules must appear in the semantic
 ledger even when a generally justified model gives them negligible weight.
 
+Reliable human material values are scarce independent evidence. Do not use
+them to optimize even a small set of generic weights, a parameter matrix, a
+threshold, or a discount, directly or through repeated selection of the
+best-matching candidate. A failed comparison may reveal which rule consequence
+the model misses or exaggerates, but the next formula and every numerical
+choice must follow an independently stated scientific or game-theoretic
+argument. Once a game's human values have been inspected, label that game as
+diagnostic evidence rather than an untouched holdout; seek a new, previously
+unseen ruleset for independent confirmation of a revised frozen formula.
+
 Priority 2 starts only after Priority 1 yields a satisfactory frozen prior:
 test whether the generic RuleSet/ABP path has a meaningful node-efficiency or
 practical move-choice disadvantage against mature fixed Chess and Shogi
