@@ -29,7 +29,7 @@ ruleset before claiming a complete Janggi implementation.
 | Rectangular board and initial pieces | `RuleSet.board_width/board_height`; Xiangqi 9×10 diagnostic executes | Retain 8×8 Chess and 9×9 Shogi behavior while exercising 9×10 Janggi templates. |
 | Horse/Elephant blockers | Xiangqi diagnostic uses path constraints for Horse leg and Elephant eye | Test Janggi's longer Elephant route with both intermediate points occupied separately. |
 | Palace-only edges | Explicit square-zone guards and owner-relative zones exist | Check whether a compact, game-independent edge/zone declaration can express only the drawn palace diagonals, including a two-step corner-to-corner Chariot ray, without admitting off-line diagonals. |
-| Cannon screen count and type | `RulePathConstraint` counts blockers and can filter first/last blocker by owner; it has no blocker-type predicate | Add a generic type predicate on the selected blocker, then distinguish an ordinary screen from a Cannon screen for both quiet and capture actions. Target-type restrictions can use a target-square state guard; test Cannon as target separately. |
+| Cannon screen count and type | `RulePathConstraint` can require exactly one blocker; a `RuleStateGuard` can count an explicit type on `path_between(source,target)` | First test whether composing `path_count_eq=1` with `count(Cannon, path_between)=0` excludes a Cannon screen. A target-square state guard may exclude Cannon captures. Add a new primitive only if this composition fails. |
 | No-board-change action | Public action types are board move or drop; no pass action or turn-only semantic effect is declared | Add an opt-in generic pass action with explicit legality guard, history/position identity and terminal/repetition behavior. Disabled rulesets should retain the existing direct path. |
 | Selectable setup | `RuleSet.initial_position` is one fixed position | If players can choose Horse/Elephant layouts, define a generic pre-game setup choice rather than hard-coding the game name. A set of separate frozen RuleSets is only a diagnostic substitute. |
 | Conditional outcomes | Generic repetition/draw and no-move policies are narrow; WXF history adjudication is open | Specify facts and declarable precedence for facing-anchor, consecutive-pass and scoring outcomes before implementing a particular federation's policy. Do not equate Xiangqi's facing-General check with Janggi's outcome rule. |
@@ -37,9 +37,9 @@ ruleset before claiming a complete Janggi implementation.
 ## Implementation order
 
 1. Prove each missing rule with one pair of tiny positions where only the
-   relevant condition changes. Extend the typed generic DSL and Python
-   executor only for the demonstrated gap. Compiler rejection of unsupported
-   native behavior must remain explicit.
+   relevant condition changes. Prefer composition of existing typed guards;
+   extend the DSL and Python executor only for a demonstrated gap. Compiler
+   rejection of unsupported native behavior must remain explicit.
 2. Bring native execution to parity for an added primitive before registering
    a product ruleset that may select the native path. Test active and inactive
    cases, then re-run Chess and Standard Shogi retention tests.
