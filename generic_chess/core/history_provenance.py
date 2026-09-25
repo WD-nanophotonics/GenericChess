@@ -9,6 +9,8 @@ The supported action slice is one ordinary on-board mover with at most a
 capture on its destination, or one drop onto an empty square. Any transition
 with additional board effects (for example, a multi-piece semantic action) is
 reported as unknown rather than guessed from the primary source/target.
+Capture ends the captured on-board token; a later drop always creates a fresh
+on-board token. Identity is not tracked while a piece is in hand.
 """
 
 from __future__ import annotations
@@ -39,9 +41,10 @@ class PieceInstanceId:
 
 @dataclass(frozen=True, slots=True)
 class ProvenanceFrame:
-    """Instance identities aligned with ``Position.board`` for one ply."""
+    """Verified replay snapshot and identities aligned to its board for one ply."""
 
     ply: int
+    position: Position
     identities: tuple[PieceInstanceId | None, ...]
 
 
@@ -152,7 +155,7 @@ def reconstruct_history_provenance(state: GameState, compiled) -> HistoryProvena
             for i, piece in enumerate(replayed.position.board)
         )
         serial = len(identities)
-        frames = [ProvenanceFrame(0, identities)]
+        frames = [ProvenanceFrame(0, replayed.position, identities)]
         for ply, record in enumerate(state.history[1:], start=1):
             if not isinstance(record, HistoryRecord) or not record.action_signature:
                 return _unknown(f"missing canonical action at ply {ply}")
@@ -169,7 +172,7 @@ def reconstruct_history_provenance(state: GameState, compiled) -> HistoryProvena
                 ply,
                 serial,
             )
-            frames.append(ProvenanceFrame(ply, identities))
+            frames.append(ProvenanceFrame(ply, replayed.position, identities))
 
         if (
             replayed.position != state.position

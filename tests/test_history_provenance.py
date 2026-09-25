@@ -95,6 +95,7 @@ def test_reconstruction_tracks_same_type_instances_and_capture_drop_boundary():
 
     initial = reconstruct_history_provenance(state, compiled)
     assert initial.status == "verified"
+    assert initial.frames[0].position == state.position
     id_a = initial.frames[0].identities[original_a]
     id_b = initial.frames[0].identities[original_b]
     assert id_a is not None and id_b is not None and id_a != id_b

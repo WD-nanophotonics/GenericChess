@@ -2,20 +2,25 @@ from dataclasses import replace
 
 import pytest
 
+from ai_fixtures import build_4x4_rooks, rook as rook_type
+from conftest import king_type
+from rule_semantics_ir_fixtures import cannon_ruleset
+
+from generic_chess.core.actions import BoardMove
 from generic_chess.core.capture_sources import query_capture_sources
 from generic_chess.core.coordinates import Square, square_to_index
+from generic_chess.core.history_provenance import reconstruct_history_provenance
+from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
 from generic_chess.core.semantic_executor import SemanticEngine
-from generic_chess.core.transition import initial_state
+from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import (
     compile_ruleset_for_execution,
     compile_semantic_ruleset,
 )
-from generic_chess.rules.schema import RuleActionEffect, RuleSquareRef
+from generic_chess.rules.schema import RuleActionEffect, RuleSet, RuleSquareRef
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
-from ai_fixtures import build_4x4_rooks
-from rule_semantics_ir_fixtures import cannon_ruleset
 
 
 def _position(compiled, pieces, side=0):
@@ -202,3 +207,84 @@ def test_enemy_target_action_without_target_removal_is_not_reported_as_capture()
     assert after.board[square_to_index(Square(0, 1), position.board_shape)] == Piece(
         0, "C", "C"
     )
+
+
+def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
+    rows = [[None] * 5 for _ in range(5)]
+    rows[0][4] = Piece(0, "K", "K")
+    rows[4][0] = Piece(1, "K", "K")
+    rows[2][0] = Piece(1, "R", "R")  # persistent attacker
+    rows[2][3] = Piece(0, "R", "R")  # A initially occupies target
+    rows[2][4] = Piece(0, "R", "R")  # B later reoccupies target
+    mask = (True,) * 25
+    compiled = compile_ruleset_for_execution(
+        RuleSet(
+            board_size=5,
+            piece_types=(king_type(), rook_type()),
+            initial_position=tuple(tuple(row) for row in rows),
+            drop_allowed={"R": (mask, mask)},
+            promotion_allowed={},
+            promotion_forced={},
+        )
+    )
+    state = initial_state(compiled)
+    target = Square(3, 2)
+    source = Square(0, 2)
+    target_index = square_to_index(target, state.position.board_shape)
+    source_index = square_to_index(source, state.position.board_shape)
+
+    def move(state, start, end):
+        action = next(
+            action
+            for action in legal_actions(state, compiled)
+            if isinstance(action, BoardMove)
+            and action.from_square == start
+            and action.to_square == end
+        )
+        return apply_action(state, action, compiled)
+
+    state = move(state, Square(3, 2), Square(3, 1))
+    state = move(state, Square(0, 4), Square(1, 4))
+    state = move(state, Square(4, 2), target)
+    provenance = reconstruct_history_provenance(state, compiled)
+    assert provenance.status == "verified"
+    assert len(provenance.frames) == 4
+
+    def joined_edges(history):
+        if history.status != "verified":
+            return ()
+        joined = []
+        for ply in (0, 3):
+            frame = history.frames[ply]
+            evidence = query_capture_sources(frame.position, target, 1, compiled)
+            if source not in evidence.pseudo_capture_sources:
+                continue
+            if ply == 0:
+                assert evidence.legal_capture_sources is None
+            else:
+                assert source in evidence.legal_capture_sources
+            attacker_id = frame.identities[source_index]
+            target_id = frame.identities[target_index]
+            assert attacker_id is not None and target_id is not None
+            joined.append((attacker_id, target_id))
+        return tuple(joined)
+
+    edges = joined_edges(provenance)
+    assert len(edges) == 2
+
+    assert edges[0][0] == edges[1][0]  # attacker continuity
+    assert edges[0][1] != edges[1][1]  # same square/type, different target instance
+    assert provenance.frames[0].position.board[target_index].base_type_id == "R"
+    assert provenance.frames[3].position.board[target_index].base_type_id == "R"
+
+    incomplete = replace(state, history=state.history[1:])
+    unknown = reconstruct_history_provenance(incomplete, compiled)
+    assert unknown.status == "unknown"
+    assert unknown.frames == ()
+    assert joined_edges(unknown) == ()
+
+    imported = replace(state, history=())
+    imported_provenance = reconstruct_history_provenance(imported, compiled)
+    assert imported_provenance.status == "unknown"
+    assert imported_provenance.frames == ()
+    assert joined_edges(imported_provenance) == ()
