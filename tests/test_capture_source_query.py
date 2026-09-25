@@ -12,7 +12,10 @@ from generic_chess.core.capture_sources import (
     query_capture_sources,
     query_counterfactual_legal_capture_sources,
 )
-from generic_chess.core.capture_pressure_trace import trace_capture_pressure
+from generic_chess.core.capture_pressure_trace import (
+    trace_capture_pressure,
+    trace_next_turn_legal_captures,
+)
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
 from generic_chess.core.movegen import legal_actions, legal_actions_from_position
@@ -567,15 +570,16 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
     state = move(state, Square(3, 2), Square(3, 1))
     state = move(state, Square(1, 4), Square(2, 4))
     state = move(state, Square(4, 2), target)
+    state = move(state, Square(2, 4), Square(2, 3))
     provenance = reconstruct_history_provenance(state, compiled)
     assert provenance.status == "verified"
-    assert len(provenance.frames) == 6
+    assert len(provenance.frames) == 7
 
     def joined_edges(history):
         if history.status != "verified":
             return ()
         joined = []
-        for ply in (0, 5):
+        for ply in (0, 6):
             frame = history.frames[ply]
             evidence = query_capture_sources(frame.position, target, 1, compiled)
             if source not in evidence.pseudo_capture_sources:
@@ -583,7 +587,10 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
             if ply == 0:
                 assert evidence.legal_capture_sources is None
             else:
-                assert source in evidence.legal_capture_sources
+                legal_next = query_counterfactual_legal_capture_sources(
+                    frame.position, target, 1, compiled
+                )
+                assert legal_next is not None and source in legal_next
             attacker_id = frame.identities[source_index]
             target_id = frame.identities[target_index]
             assert attacker_id is not None and target_id is not None
@@ -596,7 +603,7 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
     assert edges[0][0] == edges[1][0]  # attacker continuity
     assert edges[0][1] != edges[1][1]  # same square/type, different target instance
     assert provenance.frames[0].position.board[target_index].base_type_id == "R"
-    assert provenance.frames[5].position.board[target_index].base_type_id == "R"
+    assert provenance.frames[6].position.board[target_index].base_type_id == "R"
 
     trace = trace_capture_pressure(state, compiled)
     assert trace.status == "verified"
@@ -611,7 +618,7 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
     assert by_ply[3].target_transition == "moved"
     assert by_ply[3].action_source_token == edges[0][1]
 
-    target_b = provenance.frames[5].identities[target_index]
+    target_b = provenance.frames[6].identities[target_index]
     assert target_b is not None and target_b != edges[0][1]
     threat_to_b = next(
         fact for fact in trace.facts
@@ -620,6 +627,24 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
     )
     assert threat_to_b.pseudo_capture_before and threat_to_b.pseudo_capture_after
     assert threat_to_b.target_transition == "moved"
+
+    next_turn = trace_next_turn_legal_captures(state, compiled)
+    assert next_turn.status == "verified"
+    legal_a = next(
+        fact for fact in next_turn.facts
+        if fact.frame_ply == 2 and fact.source_token == edges[0][0]
+        and fact.target_token == edges[0][1]
+    )
+    legal_b = next(
+        fact for fact in next_turn.facts
+        if fact.frame_ply == 6 and fact.source_token == edges[0][0]
+        and fact.target_token == target_b
+    )
+    assert legal_a.target == legal_b.target == target
+    assert legal_a.source == legal_b.source == source
+    assert legal_a.actor == legal_b.actor == 1
+    assert legal_a.side_to_move == legal_b.side_to_move == 0
+    assert legal_a.target_token != legal_b.target_token
 
     incomplete = replace(state, history=state.history[1:])
     unknown = reconstruct_history_provenance(incomplete, compiled)
@@ -638,6 +663,98 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
     imported_trace = trace_capture_pressure(imported, compiled)
     assert imported_trace.status == "unknown"
     assert imported_trace.facts == ()
+
+
+def test_next_turn_legal_capture_trace_omits_pinned_pseudo_pressure():
+    mask = (True,) * 25
+    source = Square(1, 1)
+    target = Square(3, 1)
+    current_side_target = Square(0, 1)
+    def run(pinned):
+        rows = [[None] * 5 for _ in range(5)]
+        rows[0][1] = Piece(0, "K", "K")
+        rows[0][0] = Piece(0, "R", "R")  # unrelated mover
+        rows[1][1] = Piece(0, "R", "R")  # candidate recapturer
+        rows[1][3] = Piece(1, "R", "R")  # target
+        rows[4][4] = Piece(1, "K", "K")
+        if pinned:
+            rows[4][1] = Piece(1, "R", "R")  # pins the candidate
+        compiled = compile_ruleset_for_execution(
+            RuleSet(
+                board_size=5,
+                piece_types=(king_type(), rook_type()),
+                initial_position=tuple(tuple(row) for row in rows),
+                drop_allowed={"R": (mask, mask)},
+                promotion_allowed={},
+                promotion_forced={},
+            )
+        )
+        state = initial_state(compiled)
+        move = next(
+            action for action in legal_actions(state, compiled)
+            if isinstance(action, BoardMove)
+            and action.from_square == Square(0, 0)
+            and action.to_square == current_side_target
+        )
+        state = apply_action(state, move, compiled)
+        provenance = reconstruct_history_provenance(state, compiled)
+        assert provenance.status == "verified"
+        raw = query_capture_sources(state.position, target, 0, compiled)
+        assert raw.pseudo_capture_sources == (source,)
+        assert raw.legal_capture_sources is None  # the opponent is to move
+        next_actor_sources = query_counterfactual_legal_capture_sources(
+            state.position, target, 0, compiled
+        )
+        trace = trace_next_turn_legal_captures(state, compiled)
+        assert trace.status == "verified"
+        frame = provenance.frames[1]
+        source_token = frame.identities[
+            square_to_index(source, frame.position.board_shape)
+        ]
+        target_token = frame.identities[
+            square_to_index(target, frame.position.board_shape)
+        ]
+        contains_candidate = any(
+            fact.frame_ply == 1
+            and fact.actor == 0
+            and fact.side_to_move == 1
+            and fact.source_token == source_token
+            and fact.target_token == target_token
+            for fact in trace.facts
+        )
+        assert query_counterfactual_legal_capture_sources(
+            state.position, current_side_target, 1, compiled
+        ) == ()
+        truncated = replace(state, history=state.history[1:])
+        unknown = trace_next_turn_legal_captures(truncated, compiled)
+        assert unknown.status == "unknown"
+        assert unknown.facts == ()
+        imported = replace(state, history=())
+        unknown_import = trace_next_turn_legal_captures(imported, compiled)
+        assert unknown_import.status == "unknown"
+        assert unknown_import.facts == ()
+        return next_actor_sources, contains_candidate
+
+    pinned_sources, pinned_fact = run(pinned=True)
+    unpinned_sources, unpinned_fact = run(pinned=False)
+    assert pinned_sources == ()
+    assert not pinned_fact
+    assert unpinned_sources == (source,)
+    assert unpinned_fact
+
+
+def test_next_turn_legal_capture_trace_fails_closed_for_expiring_aux_state():
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    state = initial_state(compiled)
+    move = next(
+        action for action in legal_actions(state, compiled)
+        if getattr(action, "from_square", None) == Square(4, 1)
+        and getattr(action, "to_square", None) == Square(4, 3)
+    )
+    state = apply_action(state, move, compiled)
+    trace = trace_next_turn_legal_captures(state, compiled)
+    assert trace.status == "unknown"
+    assert trace.facts == ()
 
 
 def test_capture_pressure_trace_records_capture_of_target_token():

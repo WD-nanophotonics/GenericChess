@@ -17,7 +17,10 @@ from .actions import (
     action_source_square,
     action_target_square,
 )
-from .capture_sources import query_pseudo_capture_sources
+from .capture_sources import (
+    query_counterfactual_legal_capture_sources,
+    query_pseudo_capture_sources,
+)
 from .coordinates import Square, index_to_square, square_to_index
 from .history_provenance import (
     PieceInstanceId,
@@ -52,6 +55,26 @@ class CapturePressureFact:
 class CapturePressureTrace:
     status: Literal["verified", "unknown"]
     facts: tuple[CapturePressureFact, ...] = ()
+    reason: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class NextTurnLegalCaptureFact:
+    """One next-turn legal capture edge after an intervening opponent turn."""
+
+    frame_ply: int
+    actor: int
+    side_to_move: int
+    source_token: PieceInstanceId
+    target_token: PieceInstanceId
+    source: Square
+    target: Square
+
+
+@dataclass(frozen=True, slots=True)
+class NextTurnLegalCaptureTrace:
+    status: Literal["verified", "unknown"]
+    facts: tuple[NextTurnLegalCaptureFact, ...] = ()
     reason: str | None = None
 
 
@@ -158,4 +181,94 @@ def trace_capture_pressure(state: GameState, compiled) -> CapturePressureTrace:
     except Exception as exc:
         return CapturePressureTrace(
             "unknown", reason=f"capture trace failed: {type(exc).__name__}: {exc}"
+        )
+
+
+def trace_next_turn_legal_captures(
+    state: GameState, compiled
+) -> NextTurnLegalCaptureTrace:
+    """Join verified after-move frames to counterfactual legal capture edges.
+
+    For each completed frame, ``actor`` is its just-finished mover and
+    ``side_to_move`` is the intervening opponent. The side switch holds the
+    board fixed; no opponent action or actual future turn is predicted. Facts
+    are limited to non-anchor opposing targets. Any unverified history,
+    unsupported side switch, or missing identity invalidates the whole trace;
+    no partial facts are returned. This records capture availability only,
+    not a WXF chase/root decision.
+    """
+    from .semantic_executor import semantic_engine_for
+
+    provenance = reconstruct_history_provenance(state, compiled)
+    if provenance.status != "verified":
+        return NextTurnLegalCaptureTrace("unknown", reason=provenance.reason)
+
+    try:
+        engine = semantic_engine_for(compiled)
+        if engine is not None:
+            metadata = engine.support.type_metadata
+            is_anchor = lambda piece: metadata[piece.current_type_id].is_anchor
+        else:
+            type_metadata = compiled.types_by_id
+            is_anchor = lambda piece: type_metadata[piece.current_type_id].is_anchor
+
+        facts = []
+        for frame in provenance.frames[1:]:
+            actor = state.history[frame.ply].actor
+            side_to_move = frame.position.side_to_move
+            if actor not in (0, 1) or side_to_move != 1 - actor:
+                return NextTurnLegalCaptureTrace(
+                    "unknown", reason="history actor does not match replayed turn order"
+                )
+            for target_index, target_piece in enumerate(frame.position.board):
+                if target_piece is None or target_piece.owner == actor:
+                    continue
+                if is_anchor(target_piece):
+                    continue
+                target = index_to_square(target_index, frame.position.board_shape)
+                sources = query_counterfactual_legal_capture_sources(
+                    frame.position, target, actor, compiled
+                )
+                if sources is None:
+                    return NextTurnLegalCaptureTrace(
+                        "unknown",
+                        reason=(
+                            "counterfactual turn is unsupported at frame "
+                            f"{frame.ply}, target {target}"
+                        ),
+                    )
+                target_token = frame.identities[target_index]
+                if target_token is None:
+                    return NextTurnLegalCaptureTrace(
+                        "unknown", reason="opposing target lacks verified identity"
+                    )
+                for source in sources:
+                    source_index = square_to_index(source, frame.position.board_shape)
+                    source_token = frame.identities[source_index]
+                    if source_token is None:
+                        return NextTurnLegalCaptureTrace(
+                            "unknown", reason="legal capture source lacks verified identity"
+                        )
+                    facts.append(
+                        NextTurnLegalCaptureFact(
+                            frame_ply=frame.ply,
+                            actor=actor,
+                            side_to_move=side_to_move,
+                            source_token=source_token,
+                            target_token=target_token,
+                            source=source,
+                            target=target,
+                        )
+                    )
+        facts.sort(
+            key=lambda fact: (
+                fact.frame_ply,
+                fact.source_token.serial,
+                fact.target_token.serial,
+            )
+        )
+        return NextTurnLegalCaptureTrace("verified", tuple(facts))
+    except Exception as exc:
+        return NextTurnLegalCaptureTrace(
+            "unknown", reason=f"legal-capture trace failed: {type(exc).__name__}: {exc}"
         )
