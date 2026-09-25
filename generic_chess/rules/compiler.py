@@ -1262,19 +1262,31 @@ def _lower_semantic_invariants(action, slot_ids_by_name):
     )
 
 
+def _lower_semantic_path_constraints(action):
+    """Lower path predicates from the RuleSet DSL through the shared IR seam."""
+    from .ir import CompiledPathPredicate
+
+    return tuple(
+        CompiledPathPredicate(
+            kind=constraint.kind,
+            count=constraint.count,
+            lo=constraint.lo,
+            hi=constraint.hi,
+            owner_filter=constraint.owner_filter,
+        )
+        for constraint in action.path_constraints
+    )
+
+
 def _lower_compile_only_single_path_capture(carrier, ruleset):
     """Lower the bounded ray-screen capture diagnostic without execution support.
 
-    This deliberately accepts only the one-action shape needed by B4b. The
-    baseline effects/invariant come from ``lower_legacy_to_ir``; only the
-    shared action-geometry and replacement selectors plus the typed path
-    predicate are added here. It is not a second semantic DSL compiler.
+    This deliberately accepts one board-ray capture action with a narrow set
+    of path predicates. Effects, invariants, and path constraints use the same
+    lowering helpers as the square semantic compiler; it is not a second
+    semantic DSL compiler.
     """
-    from .ir import (
-        CompiledPathPredicate,
-        validate_executable_completeness,
-        validate_ir,
-    )
+    from .ir import validate_executable_completeness, validate_ir
 
     if not isinstance(carrier, CompiledGeometryCarrier):
         raise TypeError("compile-only geometry carrier required")
@@ -1288,14 +1300,19 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
     action = ruleset.semantic_actions[0]
     selector = action.replace_selector
     effects = action.effects
+    path_constraints = action.path_constraints
+    supported_path = len(path_constraints) == 1 and (
+        path_constraints[0].kind == "path_clear"
+        and path_constraints[0].count is None
+        or path_constraints[0].kind == "path_count_eq"
+        and path_constraints[0].count == 1
+    )
     if not (
         action.geometry.kind == "legacy_atoms"
         and action.geometry.atom_kind == "ray"
         and action.target_relation == "enemy"
         and action.composition == "replace_legacy"
-        and len(action.path_constraints) == 1
-        and action.path_constraints[0].kind == "path_count_eq"
-        and action.path_constraints[0].count == 1
+        and supported_path
         and action.path_constraints[0].lo is None
         and action.path_constraints[0].hi is None
         and action.path_constraints[0].owner_filter == "any"
@@ -1340,7 +1357,7 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
         and selector.replace_all_matching
         and tuple(selector.type_ids) == tuple(action.type_ids)
     ):
-        raise ValueError("semantic action is outside the single path-count-one capture diagnostic")
+        raise ValueError("semantic action is outside the bounded path-capture diagnostic")
 
     ir = lower_legacy_to_ir(carrier, ruleset=ruleset)
     _, legacy_ids = build_legacy_geometry_catalog(carrier)
@@ -1365,7 +1382,7 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
         name=action.name,
         type_ids=tuple(action.type_ids),
         geometry_ids=gids,
-        path=(CompiledPathPredicate("path_count_eq", count=1),),
+        path=_lower_semantic_path_constraints(action),
         effects=effects,
         invariants=invariants,
         promotion_mode=action.promotion_mode,
@@ -1414,7 +1431,6 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         CompiledAuxSlot,
         CompiledGeometry,
         CompiledMovePattern,
-        CompiledPathPredicate,
         CompiledPostcondition,
         CompiledSemanticIR,
         CompiledSemanticRuleset,
@@ -1594,16 +1610,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
                     ),
                 )
             )
-        path = tuple(
-            CompiledPathPredicate(
-                kind=c.kind,
-                count=c.count,
-                lo=c.lo,
-                hi=c.hi,
-                owner_filter=c.owner_filter,
-            )
-            for c in action.path_constraints
-        )
+        path = _lower_semantic_path_constraints(action)
         invariants = _lower_semantic_invariants(action, slot_ids_by_name)
         postconditions = tuple(
             CompiledPostcondition(p.kind, p.max_stratum) for p in action.postconditions

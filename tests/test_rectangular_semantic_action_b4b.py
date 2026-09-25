@@ -18,17 +18,21 @@ from generic_chess.rules.ir import (
     validate_executable_completeness,
     validate_ir,
 )
+from generic_chess.rules.schema import RulePathConstraint
 from generic_chess.rules.validation import RuleValidationError
 from rule_semantics_ir_fixtures import cannon_ruleset
 
 
-def _rectangular_single_capture_ruleset():
+def _rectangular_single_capture_ruleset(path_constraint=None):
     base = cannon_ruleset()
     shape = BoardShape(9, 10)
     rows = [[None for _ in range(shape.width)] for _ in range(shape.height)]
     rows[0][0] = Piece(0, "K", "K")
     rows[9][8] = Piece(1, "K", "K")
     mask = (False,) * shape.area
+    capture = base.semantic_actions[-1]
+    if path_constraint is not None:
+        capture = replace(capture, path_constraints=(path_constraint,))
     return replace(
         base,
         board_size=None,
@@ -36,7 +40,7 @@ def _rectangular_single_capture_ruleset():
         board_height=shape.height,
         initial_position=tuple(tuple(row) for row in rows),
         drop_allowed={"C": (mask, mask)},
-        semantic_actions=base.semantic_actions[-1:],
+        semantic_actions=(capture,),
     )
 
 
@@ -89,6 +93,20 @@ def test_single_path_capture_diagnostic_rejects_other_action_shapes():
     carrier = _compile_geometry_carrier(unsupported)
     with pytest.raises(ValueError, match="exactly one"):
         _lower_compile_only_single_path_capture(carrier, unsupported)
+
+
+def test_rectangular_path_clear_is_lowered_from_the_rule_dsl():
+    rules = _rectangular_single_capture_ruleset(
+        RulePathConstraint("path_clear")
+    )
+    carrier = _compile_geometry_carrier(rules)
+    ir, _ = _lower_compile_only_single_path_capture(carrier, rules)
+    semantic = next(pattern for pattern in ir.patterns if pattern.pattern_id.startswith("sem_"))
+
+    assert len(semantic.path) == 1
+    assert semantic.path[0].kind == "path_clear"
+    assert semantic.path[0].count is None
+    assert semantic.path[0].owner_filter == "any"
 
 
 def test_public_semantic_compiler_still_rejects_rectangular_execution():
