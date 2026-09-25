@@ -347,6 +347,11 @@ def _public_9x10_cannon_ruleset(*, shift_screen_safe=True):
         type_ids=("C",),
         geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="ray"),
         target_relation="empty",
+        composition="replace_legacy",
+        replace_selector=RuleReplaceSelector(
+            type_ids=("C",), action_family="board", target_relation="empty",
+            geometry_kind="ray", replace_all_matching=True,
+        ),
         path_constraints=(RulePathConstraint("path_clear"),),
         effects=(
             RuleActionEffect(
@@ -425,6 +430,15 @@ def _public_cannon_state(compiled, owner, source, blockers=(), kings=None, extra
     return replace(state, position=position)
 
 
+def _public_cannon_targets(state, compiled, source):
+    return {
+        action.to_square
+        for action in legal_actions(state, compiled)
+        if isinstance(action, SemanticBoardMove)
+        and action.from_square == source
+    }
+
+
 def test_public_9x10_cannon_ray_path_count_and_attack_semantics():
     compiled = compile_ruleset_for_execution(_public_9x10_cannon_ruleset())
     engine = SemanticEngine(compiled)
@@ -435,26 +449,14 @@ def test_public_9x10_cannon_ray_path_count_and_attack_semantics():
         target = lambda distance: Square(source_file + direction * distance, rank)
 
         no_screen = _public_cannon_state(compiled, owner, source)
-        quiet_targets = {
-            action.to_square
-            for action in legal_actions(no_screen, compiled)
-            if isinstance(action, SemanticBoardMove)
-            and action.pattern_id.endswith("cannon_quiet")
-            and action.from_square == source
-        }
+        quiet_targets = _public_cannon_targets(no_screen, compiled, source)
         assert target(8) in quiet_targets
 
         first_screen = _public_cannon_state(
             compiled, owner, source,
             blockers=((target(2), 1 - owner),),
         )
-        quiet_targets = {
-            action.to_square
-            for action in legal_actions(first_screen, compiled)
-            if isinstance(action, SemanticBoardMove)
-            and action.pattern_id.endswith("cannon_quiet")
-            and action.from_square == source
-        }
+        quiet_targets = _public_cannon_targets(first_screen, compiled, source)
         assert target(1) in quiet_targets
         assert target(3) not in quiet_targets
 
@@ -462,22 +464,16 @@ def test_public_9x10_cannon_ray_path_count_and_attack_semantics():
             compiled, owner, source,
             blockers=((target(1), 1 - owner),),
         )
-        assert not any(
-            isinstance(action, SemanticBoardMove)
-            and action.pattern_id.endswith("cannon_capture")
-            and action.from_square == source
-            for action in legal_actions(no_screen_capture, compiled)
+        assert target(1) not in _public_cannon_targets(
+            no_screen_capture, compiled, source
         )
 
         screen_before_target = _public_cannon_state(
             compiled, owner, source,
             blockers=((target(2), owner), (target(1), 1 - owner)),
         )
-        assert not any(
-            isinstance(action, SemanticBoardMove)
-            and action.pattern_id.endswith("cannon_capture")
-            and action.to_square == target(1)
-            for action in legal_actions(screen_before_target, compiled)
+        assert target(1) not in _public_cannon_targets(
+            screen_before_target, compiled, source
         )
 
         one_screen_capture = _public_cannon_state(
@@ -492,6 +488,13 @@ def test_public_9x10_cannon_ray_path_count_and_attack_semantics():
             and action.from_square == source
         }
         assert target(4) in captures
+        public_targets = _public_cannon_targets(
+            one_screen_capture, compiled, source
+        )
+        assert target(1) in public_targets
+        assert target(3) not in public_targets
+        assert target(4) in public_targets
+        assert target(5) not in public_targets
         capture_action = next(
             action
             for action in legal_actions(one_screen_capture, compiled)
@@ -522,17 +525,13 @@ def test_public_9x10_cannon_ray_path_count_and_attack_semantics():
         }
         assert target(4) in captures
         assert target(7) not in captures
+        assert target(7) not in _public_cannon_targets(farther_target, compiled, source)
 
         two_screens = _public_cannon_state(
             compiled, owner, source,
             blockers=((target(2), owner), (target(4), 1 - owner), (target(7), 1 - owner)),
         )
-        assert not any(
-            isinstance(action, SemanticBoardMove)
-            and action.pattern_id.endswith("cannon_capture")
-            and action.to_square == target(7)
-            for action in legal_actions(two_screens, compiled)
-        )
+        assert target(7) not in _public_cannon_targets(two_screens, compiled, source)
 
         attack_target = target(8)
         attack_kings = (
