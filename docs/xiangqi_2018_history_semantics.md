@@ -53,7 +53,7 @@ WXF move classes that would determine its rule-specific outcome.
 |---|---|---|---|
 | 19.1–19.2: check; kill/mating threat | Before/after positions, actor/action, whether the resulting position attacks the opposing King, and whether a legal continuation threatens mate. | A mating threat may precede check or arise from a sequence; it is not equivalent to `gave_check`. | Only `gave_check` is recorded. Hold the position/action fixed and remove the threat's supporting line or escape restriction: check may remain while the mating-threat fact changes. |
 | 19.3–19.7: chase, exchange, block, offer, idle | Move-level attack/capture reachability and target identity; traded pieces; whether a route is denied; whether the moved piece is capturable; idle is the residual class after the other classes are tested. | A blocker cannot itself threaten to capture the blocked piece. These labels may overlap until adjudication priority is applied. | No move-nature facts. Add/remove one interposed piece to turn a chase into no chase; give the blocking piece a legal capture of the blocked target to falsify “block.” |
-| 19.8–19.10: perpetual check, kill, chase | Repetition-cycle boundaries and actor sequence; per-move classes; for chase, continuity of the *same* target across replies and whether replies flee or counter. | Perpetual check also applies to block/exchange/offer under 19.8; perpetual chase requires repeated attacks on the same piece, not merely the same type or square. | Repetition counts and `gave_check` support a narrow continuous-check rule. Kill/chase and target identity are absent. Compare an identical repeated board cycle with one check changed to a quiet move; for chase, change only target identity on one turn. |
+| 19.8–19.10: perpetual check, kill, chase | Repetition-cycle boundaries and actor sequence; per-move classes; for chase, continuity of the *same* target across replies and whether replies flee or counter. | Perpetual check also applies to block/exchange/offer under 19.8; perpetual chase requires repeated attacks on the same piece, not merely the same type or square. | Public 9×10 transition test now verifies a legal unilateral repeated-check cycle loses under the generic policy. Kill/chase and target identity remain absent. Compare an identical repeated board cycle with one check changed to a quiet move; for chase, change only target identity on one turn. |
 | 19.11–19.12: resolve and cross actions | The preceding threat, current legal reply, whether it removes that threat, and whether it simultaneously creates a corresponding threat against the opponent. | Resolution and cross-check/counter-kill/counter-chase are distinct from merely giving check or making an unrelated threat. | No threat-resolution relation is stored. Compare a checking move that escapes the prior check with a checking move that leaves the prior threat intact. |
 | 19.13–19.15: protected piece; real/fake root | Attacker/protector/target identity, legal capture relation, and whether the protector can immediately capture the piece that took the protected piece. | “Protected” depends on a legal recapture; real versus fake root is determined by the immediate recapture test, not geometric defense alone. | Positions can be replayed, but no stable piece IDs or root facts/classifier exist. Keep the protected piece fixed and add a legal protector recapture; the root classification must flip. |
 | 19.16–19.19: alternating and two-to-one patterns | Ordered per-ply nature classes, actor, target-piece identity and any counter-threat on each reply. | Alternating check/chase/idle/mating patterns and one-to-one/two-to-two chase are not interchangeable with one-sided perpetual sequences. | No generic pattern language. Keep repeated positions fixed and change only one reply from idle to cross-check (or change one target identity); adjudication classification must change. |
@@ -62,7 +62,7 @@ WXF move classes that would determine its rule-specific outcome.
 
 | WXF clauses | Rule-set policy that would need declaration | Current gap / minimum counterexample |
 |---|---|---|
-| 20.1–20.2 | Outcome and precedence for unilateral versus simultaneous perpetual check, plus the enumerated draw patterns (perpetual mating threat; alternating check with mating threat, chase, idle or capture-after-check; alternating chase with capture-after-check). | Current `continuous_check_loss` is a narrow candidate for 20.1 only; no pattern declarations exist. Compare the same repeated cycle with one checking actor versus both checking every turn, then vary one turn to each 20.2 pattern. |
+| 20.1–20.2 | Outcome and precedence for unilateral versus simultaneous perpetual check, plus the enumerated draw patterns (perpetual mating threat; alternating check with mating threat, chase, idle or capture-after-check; alternating chase with capture-after-check). | The unilateral 20.1 branch is exercised through the public 9×10 Xiangqi diagnostic path. A separate generic rectangular fixture exercises mutual-check fallback to repetition draw, but deliberately omits own-anchor safety and is not a legal Xiangqi/WXF position. No 20.2 pattern declarations exist. A legal Diagram 4 reproduction remains open. |
 | 20.3–20.5 | Target/chaser multiplicity, exceptions involving a friendly King/Pawn, the un-crossed enemy Pawn exception, and two-to-one chase policy. | No typed group counts or exception precedence. Hold the cycle fixed while changing one target Pawn's river status or adding/removing the second chaser; distinguish loss, permitted chase and draw cases. |
 | 20.6–20.7 | Real/fake-root outcomes; Horse/Cannon versus protected Chariot; same-type chase; exact pinned-line/file/rank cases; unimpeded Horse versus blocked Horse. | No root, same-type, pin-line or blocked-Horse predicates. Paired boards differing only in immediate recapture, type equality, pin geometry or Horse-leg blockage must expose each branch. Do not collapse the pin cases into one generic boolean without the WXF distinction. |
 | 20.8–20.10 | Chase-over-exchange classification precedence; special King/Pawn chaser draw exceptions; enumerated perpetual block/offer/exchange/capture-after-check draws. | No move-class overlap resolver or role-set policy. Make one repeated move both chase and exchange, then remove only the chase relation; separately change only the chaser's declared role to test the draw exception. |
@@ -118,18 +118,16 @@ surface should assume those labels are universal.
 
 ## Smallest executable slice to try first
 
-Do not build a full Article 19/20 adjudicator yet. First add a focused behavioral
-test of the existing generic 19.1/19.8/20.1 slice on a tiny, legal repeating
-cycle with `repetition_limit=3` and
-`repetition_policy="continuous_check_loss"`: one-sided repeated check must
-lose, while mutual repeated check must draw. WXF Chapter 5 Diagrams 3–4 are the
-official outcome pair for this test. Use the generic public
-transition/history path and a 9×10 semantic ruleset; no named Xiangqi branches,
-full games, or changes to move scoring. This will establish whether current
-`gave_check` plus cycle history is sufficient before any new policy mechanism is
-designed. If it passes, the next smallest missing fact is target-aware chase
-evidence with stable piece identity across one repeated cycle; do not infer it
-from Shogi's continuous-check policy.
+Do not build a full Article 19/20 adjudicator yet. The first slice is now
+tested: with `repetition_limit=3` and
+`repetition_policy="continuous_check_loss"`, a legal public 9×10 unilateral
+check cycle returns `PERPETUAL_CHECK` with the checker losing. The mutual-check
+policy branch returns generic repetition draw only in a separate synthetic
+rectangular fixture that omits own-anchor safety; that fixture is explicitly
+not legal Xiangqi and does not reproduce official Diagram 4. A legal public
+reproduction of Diagram 4 remains unverified. The next smallest missing generic
+fact is target-aware chase evidence with stable piece identity across one
+repeated cycle; do not infer it from Shogi's continuous-check policy.
 
 ## Limits of this observation
 

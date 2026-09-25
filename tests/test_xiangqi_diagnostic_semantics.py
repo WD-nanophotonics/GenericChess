@@ -47,6 +47,36 @@ def _targets(state, compiled, source):
     }
 
 
+def _ruleset_with_pieces(pieces, *, repetition_policy="draw", mutual_fixture=False):
+    ruleset = build_xiangqi_diagnostic_ruleset()
+    rows = [[None] * 9 for _ in range(10)]
+    for owner, type_id, square in pieces:
+        rows[square.rank][square.file] = Piece(owner, type_id, type_id)
+    actions = ruleset.semantic_actions
+    if mutual_fixture:
+        # This generic synthetic fixture has no General moves and omits the
+        # own-anchor-safety invariant. It is not a legal Xiangqi position or
+        # a WXF behavior fixture.
+        actions = tuple(
+            replace(action, invariants=())
+            for action in actions
+            if action.type_ids == ("R",)
+        )
+    return replace(
+        ruleset,
+        initial_position=tuple(tuple(row) for row in rows),
+        repetition_limit=3,
+        repetition_policy=repetition_policy,
+        semantic_actions=actions,
+        metadata={
+            "diagnostic_scope": (
+                "synthetic mutual-check policy test"
+                if mutual_fixture else "single-sided check cycle test"
+            )
+        },
+    )
+
+
 @pytest.fixture(scope="module")
 def product():
     ruleset = build_xiangqi_diagnostic_ruleset()
@@ -449,3 +479,82 @@ def test_rectangular_transition_identity_and_repetition_cycle(product):
         assert dict(state.repetition_counts)[initial_key] == expected_count
         assert state.position.board_shape == BoardShape(9, 10)
     assert state.terminal_status.status is TerminalStatus.ONGOING
+
+
+def test_public_rectangular_unilateral_repeated_check_loses():
+    ruleset = _ruleset_with_pieces(
+        [
+            (0, "G", Square(4, 0)), (1, "G", Square(4, 9)),
+            (0, "S", Square(4, 3)), (0, "R", Square(5, 5)),
+        ],
+        repetition_policy="continuous_check_loss",
+    )
+    compiled = compile_ruleset_for_execution(ruleset)
+    state = initial_state(compiled)
+    initial_key = repetition_identity_key(state.position, compiled)
+    cycle = (
+        (Square(5, 5), Square(4, 5)),
+        (Square(4, 9), Square(5, 9)),
+        (Square(4, 5), Square(5, 5)),
+        (Square(5, 9), Square(4, 9)),
+    )
+    for expected_count in (2, 3):
+        for source, target in cycle:
+            action = next(
+                action for action in legal_actions(state, compiled)
+                if isinstance(action, SemanticBoardMove)
+                and action.from_square == source
+                and action.to_square == target
+            )
+            state = apply_action(state, action, compiled)
+            assert state.history[-1].gave_check is (state.history[-1].actor == 0)
+        assert repetition_identity_key(state.position, compiled) == initial_key
+        assert dict(state.repetition_counts)[initial_key] == expected_count
+    assert state.terminal_status.status is TerminalStatus.PERPETUAL_CHECK
+    assert state.terminal_status.winner == 1
+
+
+def test_synthetic_rectangular_mutual_repeated_check_draw_only():
+    ruleset = _ruleset_with_pieces(
+        [
+            (0, "G", Square(0, 0)), (1, "G", Square(4, 1)),
+            (0, "R", Square(2, 0)), (1, "R", Square(4, 0)),
+        ],
+        repetition_policy="continuous_check_loss",
+        mutual_fixture=True,
+    )
+    compiled = compile_ruleset_for_execution(ruleset)
+    state = initial_state(compiled)
+    engine = SemanticEngine(compiled)
+    assert not engine.in_check(state.position, 0)
+    assert not engine.in_check(state.position, 1)
+    prefix = next(
+        action for action in legal_actions(state, compiled)
+        if isinstance(action, SemanticBoardMove)
+        and action.from_square == Square(2, 0)
+        and action.to_square == Square(2, 1)
+    )
+    state = apply_action(state, prefix, compiled)
+    assert state.history[-1].gave_check
+    assert engine.in_check(state.position, 0)
+    assert engine.in_check(state.position, 1)
+    cycle_key = repetition_identity_key(state.position, compiled)
+    cycle = (
+        (Square(4, 0), Square(3, 0)),
+        (Square(2, 1), Square(3, 1)),
+        (Square(3, 0), Square(4, 0)),
+        (Square(3, 1), Square(2, 1)),
+    )
+    for expected_count in (2, 3):
+        for source, target in cycle:
+            action = next(
+                action for action in legal_actions(state, compiled)
+                if isinstance(action, SemanticBoardMove)
+                and action.from_square == source
+                and action.to_square == target
+            )
+            state = apply_action(state, action, compiled)
+            assert state.history[-1].gave_check
+        assert repetition_identity_key(state.position, compiled) == cycle_key
+        assert dict(state.repetition_counts)[cycle_key] == expected_count
+    assert state.terminal_status.status is TerminalStatus.REPETITION
