@@ -7,7 +7,7 @@ attacking source square with an externally reconstructed piece identity.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 from ..rules.ir import geometry_candidates
 from .coordinates import Square, in_bounds, index_to_square, square_to_index
@@ -251,3 +251,35 @@ def query_pseudo_capture_sources(
         position, target, by_owner, compiled
     )
     return captures
+
+
+def query_counterfactual_legal_capture_sources(
+    position: Position, target: Square, by_owner: int, compiled
+) -> tuple[Square, ...] | None:
+    """Probe legal capture sources after a hypothetical side-to-move switch.
+
+    ``None`` means a pass cannot be represented soundly by changing only the
+    side: semantic aux slots that expire, transition triggers, or aux-state
+    effects can change during an intervening move. A tuple (including an
+    empty tuple) is the exact legal-action result for the switched position.
+    This is an opt-in position-level diagnostic; it does not model terminal
+    timing, a concrete intervening move, or any game-specific chase policy.
+    """
+    _attacks, _captures, engine = _query_pseudo_sets(
+        position, target, by_owner, compiled
+    )
+    if engine is not None:
+        if any(slot.lifetime != "persistent" for slot in engine.ir.aux_slots):
+            return None
+        if engine.ir.triggers:
+            return None
+        aux_effect_kinds = {"set_bool", "clear_right", "set_token", "clear_token"}
+        if any(
+            effect.kind in aux_effect_kinds
+            for pattern in engine.ir.patterns
+            for effect in pattern.effects
+        ):
+            return None
+
+    counterfactual = replace(position, side_to_move=by_owner)
+    return _legal_sources(counterfactual, target, by_owner, compiled, engine)

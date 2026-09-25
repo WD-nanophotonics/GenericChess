@@ -4,10 +4,13 @@ import pytest
 
 from ai_fixtures import build_4x4_rooks, rook as rook_type
 from conftest import king_type
-from rule_semantics_ir_fixtures import cannon_ruleset
+from rule_semantics_ir_fixtures import cannon_ruleset, castling_ruleset
 
 from generic_chess.core.actions import BoardMove
-from generic_chess.core.capture_sources import query_capture_sources
+from generic_chess.core.capture_sources import (
+    query_capture_sources,
+    query_counterfactual_legal_capture_sources,
+)
 from generic_chess.core.capture_pressure_trace import trace_capture_pressure
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
@@ -169,6 +172,85 @@ def test_legacy_capture_source_uses_existing_geometry_and_legal_move_authority()
     assert hypothetical.pseudo_attack_sources == (source,)
     assert hypothetical.pseudo_capture_sources == (source,)
     assert hypothetical.legal_capture_sources is None
+
+
+def test_counterfactual_capture_probe_handles_pinned_and_free_rooks_for_both_owners():
+    compiled = build_4x4_rooks()
+    cases = (
+        (
+            0,
+            Square(1, 1),
+            Square(3, 1),
+            [
+                (Square(1, 0), Piece(0, "K", "K")),
+                (Square(1, 1), Piece(0, "R", "R")),
+                (Square(1, 3), Piece(1, "R", "R")),  # pinner
+                (Square(3, 1), Piece(1, "R", "R")),  # target
+                (Square(3, 3), Piece(1, "K", "K")),
+            ],
+            Square(1, 3),
+        ),
+        (
+            1,
+            Square(1, 2),
+            Square(3, 2),
+            [
+                (Square(1, 0), Piece(0, "R", "R")),  # pinner
+                (Square(3, 0), Piece(0, "K", "K")),
+                (Square(3, 2), Piece(0, "R", "R")),  # target
+                (Square(1, 2), Piece(1, "R", "R")),
+                (Square(1, 3), Piece(1, "K", "K")),
+            ],
+            Square(1, 0),
+        ),
+    )
+
+    for owner, source, target, pieces, pinner_square in cases:
+        position = _position(compiled, pieces, side=1 - owner)
+        assert query_counterfactual_legal_capture_sources(
+            position, target, owner, compiled
+        ) == ()
+
+        unpinned = replace(
+            position,
+            board=tuple(
+                None if square_to_index(pinner_square, position.board_shape) == i else piece
+                for i, piece in enumerate(position.board)
+            ),
+        )
+        assert query_counterfactual_legal_capture_sources(
+            unpinned, target, owner, compiled
+        ) == (source,)
+
+    semantic = compile_ruleset_for_execution(cannon_ruleset())
+    semantic_position = _position(
+        semantic,
+        [
+            (Square(7, 7), Piece(0, "K", "K")),
+            (Square(1, 0), Piece(1, "K", "K")),  # one cannon screen
+            (Square(0, 0), Piece(0, "C", "C")),
+            (Square(2, 0), Piece(1, "C", "C")),
+        ],
+        side=1,
+    )
+    assert query_counterfactual_legal_capture_sources(
+        semantic_position, Square(2, 0), 0, semantic
+    ) == (Square(0, 0),)
+
+
+def test_counterfactual_capture_probe_fails_closed_for_turn_bound_semantics():
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    state = initial_state(compiled)
+    target = Square(0, 6)  # Black pawn in the initial position.
+    assert query_counterfactual_legal_capture_sources(
+        state.position, target, 0, compiled
+    ) is None
+
+    triggered = compile_ruleset_for_execution(castling_ruleset())
+    triggered_state = initial_state(triggered)
+    assert query_counterfactual_legal_capture_sources(
+        triggered_state.position, Square(0, 7), 0, triggered
+    ) is None
 
 
 def test_capture_query_requires_an_occupied_enemy_target(xiangqi):
