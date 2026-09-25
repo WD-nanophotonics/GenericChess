@@ -115,6 +115,8 @@ def test_rule_schema_field_set_is_frozen():
     assert fields == {
         "schema_version",
         "board_size",
+        "board_width",
+        "board_height",
         "piece_types",
         "initial_position",
         "drop_allowed",

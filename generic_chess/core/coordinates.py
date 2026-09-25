@@ -32,6 +32,33 @@ class Square:
         return square_str(self)
 
 
+@dataclass(frozen=True, slots=True)
+class BoardShape:
+    """Finite rectangular board extent; indexes are row-major by width."""
+
+    width: int
+    height: int
+
+    def __post_init__(self) -> None:
+        if (
+            isinstance(self.width, bool)
+            or not isinstance(self.width, int)
+            or isinstance(self.height, bool)
+            or not isinstance(self.height, int)
+            or self.width < 1
+            or self.height < 1
+        ):
+            raise ValueError("board width and height must be positive integers")
+
+    @property
+    def area(self) -> int:
+        return self.width * self.height
+
+
+def _shape(extent: int | BoardShape) -> BoardShape:
+    return extent if isinstance(extent, BoardShape) else BoardShape(extent, extent)
+
+
 def square_str(sq: Square) -> str:
     """Human-readable square name, e.g. ``e4`` (files a-z, ranks 1-based)."""
     if 0 <= sq.file < 26:
@@ -39,26 +66,31 @@ def square_str(sq: Square) -> str:
     return f"f{sq.file}r{sq.rank}"
 
 
-def in_bounds(sq: Square, n: int) -> bool:
-    return 0 <= sq.file < n and 0 <= sq.rank < n
+def in_bounds(sq: Square, n: int | BoardShape) -> bool:
+    shape = _shape(n)
+    return 0 <= sq.file < shape.width and 0 <= sq.rank < shape.height
 
 
-def add_offset(sq: Square, offset: Offset, n: int) -> Square | None:
+def add_offset(sq: Square, offset: Offset, n: int | BoardShape) -> Square | None:
     """Return ``sq + offset`` or ``None`` when the result leaves the board."""
     nf = sq.file + offset[0]
     nr = sq.rank + offset[1]
-    if 0 <= nf < n and 0 <= nr < n:
+    shape = _shape(n)
+    if 0 <= nf < shape.width and 0 <= nr < shape.height:
         return Square(nf, nr)
     return None
 
 
-def square_to_index(sq: Square, n: int) -> int:
-    """Row-major index: ``rank * n + file`` (rank 0 is the first row)."""
-    return sq.rank * n + sq.file
+def square_to_index(sq: Square, n: int | BoardShape) -> int:
+    """Row-major index: ``rank * width + file`` (rank 0 is the first row)."""
+    return sq.rank * _shape(n).width + sq.file
 
 
-def index_to_square(idx: int, n: int) -> Square:
-    return Square(idx % n, idx // n)
+def index_to_square(idx: int, n: int | BoardShape) -> Square:
+    shape = _shape(n)
+    if isinstance(n, BoardShape) and (idx < 0 or idx >= shape.area):
+        raise ValueError(f"index {idx} is outside a {shape.width}x{shape.height} board")
+    return Square(idx % shape.width, idx // shape.width)
 
 
 def offset_between(a: Square, b: Square) -> Offset:
@@ -83,9 +115,10 @@ def rotate_offset(offset: Offset) -> Offset:
     return (-offset[0], -offset[1])
 
 
-def rotate_square(sq: Square, n: int) -> Square:
-    """180-degree rotation of an absolute square on an n x n board."""
-    return Square(n - 1 - sq.file, n - 1 - sq.rank)
+def rotate_square(sq: Square, n: int | BoardShape) -> Square:
+    """180-degree rotation of a square on a square or rectangular board."""
+    shape = _shape(n)
+    return Square(shape.width - 1 - sq.file, shape.height - 1 - sq.rank)
 
 
 def is_forward(sq: Square, target: Square, player: Player) -> bool:

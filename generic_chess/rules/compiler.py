@@ -13,6 +13,7 @@ from typing import Any, Mapping
 
 from ..core.attacks import is_in_check
 from ..core.coordinates import (
+    BoardShape,
     Square,
     index_to_square,
     is_forward,
@@ -40,7 +41,7 @@ def _is_forward_target(sq: Square, target: Square, player: int) -> bool:
 
 def _build_tables(ruleset: RuleSet) -> dict[str, Any]:
     """Precompute all geometry tables on an empty board."""
-    n = ruleset.board_size
+    shape = ruleset.board_shape
     leap_targets: dict[str, Any] = {}
     ray_paths: dict[str, Any] = {}
     empty_mobility: dict[str, Any] = {}
@@ -56,14 +57,14 @@ def _build_tables(ruleset: RuleSet) -> dict[str, Any]:
             per_square_ray: list[Any] = []
             per_square_mob: list[Any] = []
             per_square_fwd: list[Any] = []
-            for idx in range(n * n):
-                sq = index_to_square(idx, n)
+            for idx in range(shape.area):
+                sq = index_to_square(idx, shape)
                 atom_leap: list[tuple[Square, ...]] = []
                 atom_ray: list[tuple[Square, ...]] = []
                 seen: set[Square] = set()
                 mob: list[Square] = []
                 for atom in pt.movement_atoms:
-                    targets = _atom_targets(n, player, sq, atom)
+                    targets = _atom_targets(shape, player, sq, atom)
                     if isinstance(atom, LeapAtom):
                         atom_leap.append(targets)
                         atom_ray.append(())
@@ -98,14 +99,15 @@ def _build_tables(ruleset: RuleSet) -> dict[str, Any]:
 
 
 def _atom_targets(
-    n: int, player: int, square: Square, atom: MovementAtom
+    n: int | BoardShape, player: int, square: Square, atom: MovementAtom
 ) -> tuple[Square, ...]:
+    shape = n if isinstance(n, BoardShape) else BoardShape(n, n)
     if isinstance(atom, LeapAtom):
         df, dr = atom.offset
         if player == 1:
             df, dr = -df, -dr
         nf, nr = square.file + df, square.rank + dr
-        if 0 <= nf < n and 0 <= nr < n:
+        if 0 <= nf < shape.width and 0 <= nr < shape.height:
             return (Square(nf, nr),)
         return ()
     df, dr = atom.direction
@@ -116,7 +118,7 @@ def _atom_targets(
     steps = 0
     while atom.max_steps is None or steps < atom.max_steps:
         nf, nr = cur.file + df, cur.rank + dr
-        if not (0 <= nf < n and 0 <= nr < n):
+        if not (0 <= nf < shape.width and 0 <= nr < shape.height):
             break
         nxt = Square(nf, nr)
         path.append(nxt)
@@ -128,9 +130,9 @@ def _atom_targets(
 def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
     """Structural validation that does not need compiled tables."""
     issues: list[ValidationIssue] = []
-    n = ruleset.board_size
+    shape = ruleset.board_shape
 
-    if not isinstance(n, int) or n < 3:
+    if shape.width < 3 or shape.height < 3:
         issues.append(
             ValidationIssue("BOARD_SIZE_TOO_SMALL", "board_size", "board_size must be an integer >= 3")
         )
@@ -199,8 +201,8 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
 
     # Initial position shape and cell consistency.
     rows = ruleset.initial_position
-    if len(rows) != n or any(len(row) != n for row in rows):
-        issues.append(ValidationIssue("INITIAL_POSITION_BAD_DIMENSIONS", "initial_position", f"initial_position must be {n} rows of {n} cells"))
+    if len(rows) != shape.height or any(len(row) != shape.width for row in rows):
+        issues.append(ValidationIssue("INITIAL_POSITION_BAD_DIMENSIONS", "initial_position", f"initial_position must be {shape.height} rows of {shape.width} cells"))
 
     anchor_count = {0: 0, 1: 0}
     entity_count = 0
@@ -244,8 +246,8 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
             issues.append(ValidationIssue("DROP_MASK_BAD_SHAPE", f"drop_allowed[{tid}]", "drop masks need one entry per player"))
             continue
         for player, mask in enumerate(masks):
-            if len(mask) != n * n or not all(isinstance(b, bool) for b in mask):
-                issues.append(ValidationIssue("DROP_MASK_BAD_SHAPE", f"drop_allowed[{tid}][{player}]", f"drop mask must be {n*n} booleans"))
+            if len(mask) != shape.area or not all(isinstance(b, bool) for b in mask):
+                issues.append(ValidationIssue("DROP_MASK_BAD_SHAPE", f"drop_allowed[{tid}][{player}]", f"drop mask must be {shape.area} booleans"))
 
     # Promotion masks: exactly one per promotable type, bounds-valid squares.
     if set(ruleset.promotion_allowed) != promotable_ids or set(ruleset.promotion_forced) != promotable_ids:
@@ -259,11 +261,11 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
             for player, entries in enumerate(masks):
                 if name == "promotion_allowed":
                     for (fsq, tsq) in entries:
-                        if not (0 <= fsq.file < n and 0 <= fsq.rank < n and 0 <= tsq.file < n and 0 <= tsq.rank < n):
+                        if not (0 <= fsq.file < shape.width and 0 <= fsq.rank < shape.height and 0 <= tsq.file < shape.width and 0 <= tsq.rank < shape.height):
                             issues.append(ValidationIssue("PROMOTION_MASK_OUT_OF_BOUNDS", f"{path}[{player}]", f"promotion pair ({fsq}, {tsq}) is out of bounds"))
                 else:
                     for sq in entries:
-                        if not (0 <= sq.file < n and 0 <= sq.rank < n):
+                        if not (0 <= sq.file < shape.width and 0 <= sq.rank < shape.height):
                             issues.append(ValidationIssue("PROMOTION_MASK_OUT_OF_BOUNDS", f"{path}[{player}]", f"forced square {sq} is out of bounds"))
 
     if not isinstance(ruleset.repetition_limit, int) or ruleset.repetition_limit < 1:
@@ -324,6 +326,20 @@ def compile_ruleset(
     semantic-IR compiler for table/geometry inspection.
     """
     ruleset = rule_definition if isinstance(rule_definition, RuleSet) else ruleset_from_dict(rule_definition)
+    if (
+        ruleset.board_width is not None
+        and ruleset.board_height is not None
+        and ruleset.board_width != ruleset.board_height
+    ):
+        raise RuleValidationError(
+            [
+                ValidationIssue(
+                    "RECTANGULAR_EXECUTION_NOT_IN_A_STAGE",
+                    "board_width",
+                    "this stage supports rectangular schema and geometry only; position execution is not enabled",
+                )
+            ]
+        )
     if ruleset.semantic_actions and not allow_semantic_actions:
         raise RuleValidationError(
             [

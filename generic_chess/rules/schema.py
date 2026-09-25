@@ -7,7 +7,7 @@ import json
 from dataclasses import dataclass, field
 from typing import Any, Mapping
 
-from ..core.coordinates import Square
+from ..core.coordinates import BoardShape, Square
 from ..core.movement import LeapAtom, RayAtom, MovementAtom
 from ..core.pieces import Piece, PieceType
 from .validation import RuleValidationError, ValidationIssue
@@ -157,7 +157,7 @@ class RuleSet:
     """
 
     schema_version: int = 1
-    board_size: int = 8
+    board_size: int | None = 8
     piece_types: tuple[PieceType, ...] = ()
     initial_position: tuple[tuple[Piece | None, ...], ...] = ()
     drop_allowed: Mapping[str, tuple[tuple[bool, ...], ...]] = field(default_factory=dict)
@@ -182,6 +182,26 @@ class RuleSet:
     # so historical serialized rulesets and fingerprints remain unchanged.
     automatic_adjudications: tuple[RuleAutomaticAdjudication, ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
+    # Appended to retain every existing positional constructor argument.
+    board_width: int | None = None
+    board_height: int | None = None
+
+    @property
+    def board_shape(self) -> BoardShape:
+        if self.board_width is not None and self.board_height is not None:
+            return BoardShape(self.board_width, self.board_height)
+        if self.board_size is None:
+            raise ValueError("board_size or both rectangular dimensions are required")
+        return BoardShape(self.board_size, self.board_size)
+
+    def __post_init__(self) -> None:
+        if (self.board_width is None) != (self.board_height is None):
+            raise ValueError("board_width and board_height must be specified together")
+        if self.board_width is not None and self.board_height is not None:
+            if self.board_size is not None and not (
+                self.board_width == self.board_height == self.board_size
+            ):
+                raise ValueError("board_size conflicts with rectangular dimensions")
 
 
 # ---------------------------------------------------------------- semantic DSL
@@ -1391,7 +1411,6 @@ def ruleset_to_dict(
     }
     data: dict[str, Any] = {
         "schema_version": ruleset.schema_version,
-        "board_size": ruleset.board_size,
         "piece_types": piece_types,
         "initial_position": initial_position,
         "drop_allowed": drop_allowed,
@@ -1401,6 +1420,16 @@ def ruleset_to_dict(
         "max_ply": ruleset.max_ply,
         "stalemate_result": ruleset.stalemate_result,
     }
+    if ruleset.board_width is not None and ruleset.board_height is not None:
+        data["board_width"] = ruleset.board_width
+        data["board_height"] = ruleset.board_height
+        if (
+            ruleset.board_size is not None
+            and ruleset.board_width == ruleset.board_height == ruleset.board_size
+        ):
+            data["board_size"] = ruleset.board_size
+    elif ruleset.board_size is not None:
+        data["board_size"] = ruleset.board_size
     if ruleset.repetition_policy != "draw":
         data["repetition_policy"] = ruleset.repetition_policy
     # Additive semantic actions: emitted only when non-empty so legacy
@@ -1430,11 +1459,29 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
     path = "ruleset"
     data = _require_mapping(data, path)
     schema_version = _require_int(data.get("schema_version", 1), f"{path}.schema_version")
-    board_size = _require_int(_require_field(data, "board_size", path), f"{path}.board_size")
-    if board_size < 3:
+    has_width, has_height = "board_width" in data, "board_height" in data
+    if has_width != has_height:
         raise _err(
-            "BOARD_SIZE_TOO_SMALL", f"{path}.board_size", "board_size must be an integer >= 3"
+            "BOARD_SHAPE_INCOMPLETE",
+            path,
+            "board_width and board_height must be specified together",
         )
+    board_width = _require_int(data["board_width"], f"{path}.board_width") if has_width else None
+    board_height = _require_int(data["board_height"], f"{path}.board_height") if has_height else None
+    board_size = _require_int(data["board_size"], f"{path}.board_size") if "board_size" in data else None
+    if board_width is not None:
+        if board_width < 3 or board_height < 3:
+            raise _err("BOARD_SIZE_TOO_SMALL", path, "board dimensions must each be at least 3")
+        if board_size is not None and not (board_width == board_height == board_size):
+            raise _err(
+                "BOARD_SHAPE_CONFLICT",
+                path,
+                "board_size is consistent only when both dimensions equal it",
+            )
+        if board_size is None and board_width == board_height:
+            board_size = board_width
+    elif board_size is None or board_size < 3:
+        raise _err("BOARD_SIZE_TOO_SMALL", f"{path}.board_size", "board_size must be an integer >= 3")
 
     piece_types_raw = _require_field(data, "piece_types", path)
     if not isinstance(piece_types_raw, list):
@@ -1601,6 +1648,8 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
     return RuleSet(
         schema_version=schema_version,
         board_size=board_size,
+        board_width=board_width,
+        board_height=board_height,
         piece_types=piece_types,
         initial_position=initial_position,
         drop_allowed=drop_allowed,

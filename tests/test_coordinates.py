@@ -1,6 +1,9 @@
 """Coordinate conversion tests."""
 
+import pytest
+
 from generic_chess.core.coordinates import (
+    BoardShape,
     Square,
     absolute_to_relative,
     add_offset,
@@ -67,6 +70,24 @@ def test_in_bounds():
     assert in_bounds(Square(0, 0), 8)
     assert not in_bounds(Square(8, 0), 8)
     assert not in_bounds(Square(0, -1), 8)
+
+
+def test_rectangular_coordinates_and_rotation():
+    shape = BoardShape(9, 10)
+    assert shape.area == 90
+    assert square_to_index(Square(0, 0), shape) == 0
+    assert square_to_index(Square(8, 9), shape) == 89
+    assert index_to_square(89, shape) == Square(8, 9)
+    assert add_offset(Square(0, 0), (8, 9), shape) == Square(8, 9)
+    assert add_offset(Square(8, 9), (1, 0), shape) is None
+    assert add_offset(Square(8, 9), (0, 1), shape) is None
+    assert not in_bounds(Square(9, 9), shape)
+    assert not in_bounds(Square(8, 10), shape)
+    assert rotate_square(Square(0, 0), shape) == Square(8, 9)
+    assert rotate_square(Square(3, 2), shape) == Square(5, 7)
+    assert rotate_square(rotate_square(Square(3, 2), shape), shape) == Square(3, 2)
+    with pytest.raises(ValueError):
+        index_to_square(90, shape)
 
 
 def test_is_forward_directions():
