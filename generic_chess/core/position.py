@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+from .coordinates import BoardShape
 from .pieces import Piece
 
 if TYPE_CHECKING:
@@ -66,10 +67,9 @@ def count_entities(position: "Position") -> int:
 class Position:
     """A full chess-like position.
 
-    ``board`` is a flat row-major tuple of length ``n*n`` (index
-    ``rank * n + file``), with ``None`` for empty squares.  ``hands`` is a
-    tuple of two :class:`Hands` (indexed by owner).  The fingerprint links the
-    position to the rule set it belongs to.
+    ``board`` is a flat row-major tuple (index ``rank * width + file``), with
+    ``None`` for empty squares. ``hands`` is a tuple of two :class:`Hands`
+    (indexed by owner). The fingerprint links the position to its rule set.
     """
 
     board: tuple[Piece | None, ...]
@@ -82,8 +82,34 @@ class Position:
     # for right slots or a square (file, rank) / None for square_or_none
     # slots.  Legacy positions keep the canonical empty value.
     aux_state: tuple[tuple[tuple[int, int], "int | tuple[int, int] | None"], ...] = ()
+    # Optional canonical shape for compile-only rectangular carriers. Kept at
+    # the end to preserve the legacy positional constructor contract.
+    board_width: int | None = None
+    board_height: int | None = None
+
+    def __post_init__(self) -> None:
+        if (self.board_width is None) != (self.board_height is None):
+            raise ValueError("board_width and board_height must be specified together")
+        if self.board_width is not None and self.board_height is not None:
+            shape = BoardShape(self.board_width, self.board_height)
+            if shape.area != len(self.board):
+                raise ValueError(
+                    f"board shape {shape.width}x{shape.height} does not match "
+                    f"board length {len(self.board)}"
+                )
+
+    @property
+    def board_shape(self) -> BoardShape:
+        if self.board_width is not None and self.board_height is not None:
+            return BoardShape(self.board_width, self.board_height)
+        n = self.board_size()
+        return BoardShape(n, n)
 
     def board_size(self) -> int:
+        if self.board_width is not None and self.board_height is not None:
+            if self.board_width != self.board_height:
+                raise ValueError("board_size is undefined for a rectangular position")
+            return self.board_width
         return int(len(self.board) ** 0.5)
 
 

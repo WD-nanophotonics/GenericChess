@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 from math import gcd
+from types import MappingProxyType
 from typing import Any, Mapping
 
 from ..core.attacks import is_in_check
@@ -23,7 +24,7 @@ from ..core.movement import LeapAtom, RayAtom, MovementAtom
 from ..core.movegen import legal_actions_from_position
 from ..core.pieces import Piece, PieceType
 from ..core.position import Hands, Position
-from .compiled import CompiledAutomaticAdjudication, CompiledRuleSet
+from .compiled import CompiledAutomaticAdjudication, CompiledGeometryCarrier, CompiledRuleSet
 from .schema import (
     AUTOMATIC_ADJUDICATION_OUTCOMES,
     AUTOMATIC_ADJUDICATION_POLICIES,
@@ -287,6 +288,43 @@ def _build_initial_position(ruleset: RuleSet, fingerprint: str) -> Position:
         hands=(Hands.empty(), Hands.empty()),
         side_to_move=0,
         ruleset_fingerprint=fingerprint,
+    )
+
+
+def _compile_geometry_carrier(
+    rule_definition: RuleSet | Mapping[str, Any],
+) -> CompiledGeometryCarrier:
+    """Build immutable shape/geometry data without enabling position execution.
+
+    This private boundary intentionally runs structural validation and table
+    lowering only. It never calls attack, move-generation, or legal-position
+    validation code.
+    """
+    ruleset = (
+        rule_definition
+        if isinstance(rule_definition, RuleSet)
+        else ruleset_from_dict(rule_definition)
+    )
+    issues = _basic_validation(ruleset)
+    if issues:
+        raise RuleValidationError(issues)
+    shape = ruleset.board_shape
+    fingerprint = compute_fingerprint(ruleset)
+    position = Position(
+        board=tuple(cell for row in ruleset.initial_position for cell in row),
+        ruleset_fingerprint=fingerprint,
+        board_width=shape.width,
+        board_height=shape.height,
+    )
+    tables = _build_tables(ruleset)
+    return CompiledGeometryCarrier(
+        ruleset_fingerprint=fingerprint,
+        board_shape=shape,
+        initial_position=position,
+        leap_targets=MappingProxyType(tables["leap_targets"]),
+        ray_paths=MappingProxyType(tables["ray_paths"]),
+        empty_mobility=MappingProxyType(tables["empty_mobility"]),
+        empty_forward_mobility=MappingProxyType(tables["empty_forward_mobility"]),
     )
 
 

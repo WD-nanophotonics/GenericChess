@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Mapping
 
-from ..core.coordinates import Square
+from ..core.coordinates import BoardShape, Square
 from ..core.pieces import PieceType
 from ..core.position import Position
 
@@ -59,3 +59,16 @@ class CompiledRuleSet:
     repetition_policy: str = "draw"
     automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     declarations: tuple[object, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
+class CompiledGeometryCarrier:
+    """Immutable schema/geometry product; deliberately not executable."""
+
+    ruleset_fingerprint: str
+    board_shape: BoardShape
+    initial_position: Position
+    leap_targets: Mapping[str, tuple]
+    ray_paths: Mapping[str, tuple]
+    empty_mobility: Mapping[str, tuple]
+    empty_forward_mobility: Mapping[str, tuple]
