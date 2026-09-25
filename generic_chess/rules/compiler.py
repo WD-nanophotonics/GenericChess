@@ -1107,6 +1107,222 @@ def _assign_stratum_cost(pattern):
     return SEMANTIC_STRATA[stratum], ir_module.COST_CLASSES[cost]
 
 
+def _semantic_action_geometry_ids(action, action_index, types_by_id, legacy_ids):
+    """Select legacy atom geometry for an action through the shared IR seam."""
+    if action.geometry.kind != "legacy_atoms":
+        raise ValueError("shared legacy geometry selection requires legacy_atoms")
+    gids = []
+    for tid in action.type_ids:
+        if tid not in types_by_id:
+            raise RuleValidationError(
+                [ValidationIssue("SEMANTIC_TYPE_UNKNOWN", "type_ids", tid)]
+            )
+        pt = types_by_id[tid]
+        for atom_index, atom in enumerate(pt.movement_atoms):
+            is_ray = isinstance(atom, RayAtom)
+            if action.geometry.atom_kind is None or (
+                (action.geometry.atom_kind == "ray") == is_ray
+            ):
+                gids.append(legacy_ids[(tid, atom_index)])
+    if not gids:
+        raise RuleValidationError(
+            [
+                ValidationIssue(
+                    "SEMANTIC_GEOMETRY_NO_ATOMS",
+                    f"semantic_actions[{action_index}].geometry",
+                    "legacy_atoms matched no atoms",
+                )
+            ]
+        )
+    return tuple(sorted(gids))
+
+
+def _matching_replaced_legacy_patterns(
+    action_index, action, geometry, legacy_patterns
+):
+    """Resolve a replace_legacy selector identically for each IR lowering path."""
+    selector = action.replace_selector
+    if selector is None:
+        raise RuleValidationError(
+            [ValidationIssue("REPLACE_NO_SELECTOR", "replace_selector", action.name)]
+        )
+
+    def family_ok(gid: str) -> bool:
+        kind = geometry[gid].kind
+        if selector.action_family == "drop":
+            return kind == "drop"
+        return kind in ("leap", "ray")
+
+    matched = [
+        p.pattern_id
+        for p in legacy_patterns
+        if set(p.type_ids) & set(selector.type_ids)
+        and any(family_ok(g) for g in p.geometry_ids)
+        and p.target.kind == f"target_{selector.target_relation}"
+        and (
+            selector.geometry_kind is None
+            or any(geometry[g].kind == selector.geometry_kind for g in p.geometry_ids)
+        )
+    ]
+    matched = tuple(dict.fromkeys(matched))
+    if not matched and not selector.replace_all_matching:
+        raise RuleValidationError(
+            [
+                ValidationIssue(
+                    "REPLACE_ZERO_MATCH",
+                    f"semantic_actions[{action_index}]",
+                    "replace selector matched no legacy pattern",
+                )
+            ]
+        )
+    if len(matched) > 1 and not selector.replace_all_matching:
+        raise RuleValidationError(
+            [
+                ValidationIssue(
+                    "REPLACE_AMBIGUOUS",
+                    f"semantic_actions[{action_index}]",
+                    f"replace selector matched {len(matched)} patterns; "
+                    "set replace_all_matching=True",
+                )
+            ]
+        )
+    return matched
+
+
+def _lower_compile_only_single_path_capture(carrier, ruleset):
+    """Lower the bounded ray-screen capture diagnostic without execution support.
+
+    This deliberately accepts only the one-action shape needed by B4b. The
+    baseline effects/invariant come from ``lower_legacy_to_ir``; only the
+    shared action-geometry and replacement selectors plus the typed path
+    predicate are added here. It is not a second semantic DSL compiler.
+    """
+    from .ir import (
+        CompiledPathPredicate,
+        validate_executable_completeness,
+        validate_ir,
+    )
+
+    if not isinstance(carrier, CompiledGeometryCarrier):
+        raise TypeError("compile-only geometry carrier required")
+    if (
+        ruleset.board_shape != carrier.board_shape
+        or compute_fingerprint(ruleset) != carrier.ruleset_fingerprint
+    ):
+        raise ValueError("RuleSet does not match the compile-only geometry carrier")
+    if len(ruleset.semantic_actions) != 1:
+        raise ValueError("compile-only diagnostic requires exactly one semantic action")
+    action = ruleset.semantic_actions[0]
+    selector = action.replace_selector
+    effects = action.effects
+    if not (
+        action.geometry.kind == "legacy_atoms"
+        and action.geometry.atom_kind == "ray"
+        and action.target_relation == "enemy"
+        and action.composition == "replace_legacy"
+        and len(action.path_constraints) == 1
+        and action.path_constraints[0].kind == "path_count_eq"
+        and action.path_constraints[0].count == 1
+        and action.path_constraints[0].lo is None
+        and action.path_constraints[0].hi is None
+        and action.path_constraints[0].owner_filter == "any"
+        and not action.state_guards
+        and not action.slot_guards
+        and not action.aux_state
+        and not action.triggers
+        and not action.postconditions
+        and len(effects) == 2
+        and effects[0].kind == "remove"
+        and effects[0].square_ref is not None
+        and effects[0].square_ref.kind == "target"
+        and effects[0].from_ref is None
+        and effects[0].to_ref is None
+        and effects[0].piece_owner == "opponent"
+        and effects[0].piece_type_ref is None
+        and effects[0].disposition == "capture_to_hand"
+        and effects[0].slot_name is None
+        and effects[0].type_ref is None
+        and effects[0].count == 1
+        and effects[0].value is None
+        and effects[1].kind == "move"
+        and effects[1].from_ref is not None
+        and effects[1].from_ref.kind == "source"
+        and effects[1].to_ref is not None
+        and effects[1].to_ref.kind == "target"
+        and effects[1].square_ref is None
+        and effects[1].piece_owner == "self"
+        and effects[1].piece_type_ref is None
+        and effects[1].disposition is None
+        and effects[1].slot_name is None
+        and effects[1].type_ref is None
+        and effects[1].count == 1
+        and effects[1].value is None
+        and len(action.invariants) == 1
+        and action.invariants[0].kind == "own_anchor_safe"
+        and not action.invariants[0].square_refs
+        and selector is not None
+        and selector.action_family == "board"
+        and selector.target_relation == "enemy"
+        and selector.geometry_kind == "ray"
+        and selector.replace_all_matching
+        and tuple(selector.type_ids) == tuple(action.type_ids)
+    ):
+        raise ValueError("semantic action is outside the single path-count-one capture diagnostic")
+
+    ir = lower_legacy_to_ir(carrier, ruleset=ruleset)
+    _, legacy_ids = build_legacy_geometry_catalog(carrier)
+    gids = _semantic_action_geometry_ids(
+        action, 0, carrier.types_by_id, legacy_ids
+    )
+    replaced_ids = _matching_replaced_legacy_patterns(
+        0, action, ir.geometry, ir.patterns
+    )
+    templates = [pattern for pattern in ir.patterns if pattern.pattern_id in replaced_ids]
+    if not templates or any(
+        pattern.geometry_ids[0] not in gids for pattern in templates
+    ):
+        raise ValueError("legacy replacement selection does not match action geometry")
+    template = templates[0]
+    semantic = replace(
+        template,
+        pattern_id=f"sem_00_{action.name}",
+        name=action.name,
+        type_ids=tuple(action.type_ids),
+        geometry_ids=gids,
+        path=(CompiledPathPredicate("path_count_eq", count=1),),
+        promotion_mode=action.promotion_mode,
+        explicit_promotion_type=action.explicit_promotion_type,
+        composition="replace_legacy",
+        replaced_pattern_ids=replaced_ids,
+    )
+    stratum, cost = _assign_stratum_cost(semantic)
+    semantic = replace(semantic, stratum=stratum, cost_class=cost)
+    lowered = replace(
+        ir,
+        patterns=tuple(
+            pattern for pattern in ir.patterns
+            if pattern.pattern_id not in set(replaced_ids)
+        ) + (semantic,),
+        capabilities=replace(
+            ir.capabilities,
+            legacy_core_executable=False,
+            new_ir_core_executable=False,
+            native_executable=False,
+            contains_path_predicate=True,
+        ),
+    )
+    errors = validate_ir(lowered)
+    errors.extend(
+        validate_executable_completeness(lowered, tuple(sorted(carrier.types_by_id)))
+    )
+    if errors:
+        raise RuleValidationError(
+            [ValidationIssue("SEMANTIC_IR_INVALID", "semantic_actions[0]", "; ".join(errors))]
+        )
+    support = _build_semantic_support(carrier, ruleset=ruleset)
+    return lowered, support
+
+
 def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     """Compile a semantic-DSL RuleSet into the v2 production IR.
 
@@ -1171,30 +1387,9 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     for action_index, action in enumerate(ruleset.semantic_actions):
         spec = action.geometry
         if spec.kind == "legacy_atoms":
-            gids = []
-            for tid in action.type_ids:
-                if tid not in legacy.types_by_id:
-                    raise RuleValidationError(
-                        [ValidationIssue("SEMANTIC_TYPE_UNKNOWN", "type_ids", tid)]
-                    )
-                pt = legacy.types_by_id[tid]
-                for atom_index, atom in enumerate(pt.movement_atoms):
-                    is_ray = isinstance(atom, RayAtom)
-                    if spec.atom_kind is None or (
-                        (spec.atom_kind == "ray") == is_ray
-                    ):
-                        gids.append(legacy_ids[(tid, atom_index)])
-            if not gids:
-                raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "SEMANTIC_GEOMETRY_NO_ATOMS",
-                            f"semantic_actions[{action_index}].geometry",
-                            "legacy_atoms matched no atoms",
-                        )
-                    ]
-                )
-            action_geometry_ids[action_index] = tuple(sorted(gids))
+            action_geometry_ids[action_index] = _semantic_action_geometry_ids(
+                action, action_index, legacy.types_by_id, legacy_ids
+            )
         else:
             gid = f"g{next_gid}"
             next_gid += 1
@@ -1278,52 +1473,10 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         composition = action.composition
         replaced_ids: tuple[str, ...] = ()
         if composition == "replace_legacy":
-            selector = action.replace_selector
-            if selector is None:
-                raise RuleValidationError(
-                    [ValidationIssue("REPLACE_NO_SELECTOR", "replace_selector", action.name)]
-                )
-            def _family_ok(gid: str) -> bool:
-                kind = geometry[gid].kind
-                if selector.action_family == "drop":
-                    return kind == "drop"
-                return kind in ("leap", "ray")
-
-            matched = [
-                p.pattern_id
-                for p in legacy_patterns
-                if set(p.type_ids) & set(selector.type_ids)
-                and any(_family_ok(g) for g in p.geometry_ids)
-                and p.target.kind == f"target_{selector.target_relation}"
-                and (
-                    selector.geometry_kind is None
-                    or any(geometry[g].kind == selector.geometry_kind for g in p.geometry_ids)
-                )
-            ]
-            matched = list(dict.fromkeys(matched))
-            if not matched and not selector.replace_all_matching:
-                raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "REPLACE_ZERO_MATCH",
-                            f"semantic_actions[{action_index}]",
-                            "replace selector matched no legacy pattern",
-                        )
-                    ]
-                )
-            if len(matched) > 1 and not selector.replace_all_matching:
-                raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "REPLACE_AMBIGUOUS",
-                            f"semantic_actions[{action_index}]",
-                            f"replace selector matched {len(matched)} patterns; "
-                            "set replace_all_matching=True",
-                        )
-                    ]
-                )
-            replaced.update(matched)
-            replaced_ids = tuple(matched)
+            replaced_ids = _matching_replaced_legacy_patterns(
+                action_index, action, geometry, legacy_patterns
+            )
+            replaced.update(replaced_ids)
 
         # --- effects.
         effects = []
