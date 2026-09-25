@@ -313,6 +313,22 @@ def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref()
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_semantic_ruleset(rules)
 
+    multiple_leaps = replace(
+        rules,
+        piece_types=tuple(
+            replace(
+                piece_type,
+                movement_atoms=piece_type.movement_atoms + (LeapAtom((1, 2)),),
+            )
+            if piece_type.type_id == "H"
+            else piece_type
+            for piece_type in rules.piece_types
+        ),
+    )
+    multi_carrier = _compile_geometry_carrier(multiple_leaps)
+    with pytest.raises(ValueError, match="exactly one legacy leap geometry"):
+        _lower_compile_only_single_source_offset_guard(multi_carrier, multiple_leaps)
+
 
 def test_public_semantic_compiler_still_rejects_rectangular_execution():
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):

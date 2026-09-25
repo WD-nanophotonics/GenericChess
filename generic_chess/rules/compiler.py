@@ -1560,6 +1560,10 @@ def _lower_compile_only_single_source_offset_guard(carrier, ruleset):
         0, action, ir.geometry, ir.patterns
     )
     templates = [pattern for pattern in ir.patterns if pattern.pattern_id in replaced_ids]
+    if len(gids) != 1 or len(templates) != 1:
+        raise ValueError(
+            "source-offset diagnostic requires exactly one legacy leap geometry"
+        )
     if not templates or any(
         pattern.geometry_ids[0] not in gids for pattern in templates
     ):
