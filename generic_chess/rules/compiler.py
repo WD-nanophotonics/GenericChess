@@ -811,12 +811,46 @@ def compile_semantic_ir(compiled: CompiledRuleSet):
     return lower_legacy_to_ir(compiled)
 
 
-def _build_semantic_support(compiled: CompiledRuleSet):
+def _build_semantic_support(
+    compiled: CompiledRuleSet | CompiledGeometryCarrier,
+    ruleset: RuleSet | None = None,
+):
     from .ir import CompiledSemanticSupport, SemanticTypeMetadata
 
-    n = compiled.board_size
+    if isinstance(compiled, CompiledGeometryCarrier):
+        if ruleset is None:
+            raise ValueError("a RuleSet is required with the compile-only geometry carrier")
+        shape = compiled.board_shape
+        if ruleset.board_shape != shape or compute_fingerprint(ruleset) != compiled.ruleset_fingerprint:
+            raise ValueError("RuleSet does not match the compile-only geometry carrier")
+        types_by_id = compiled.types_by_id
+        drop_allowed = ruleset.drop_allowed
+        promotion_allowed = ruleset.promotion_allowed
+        promotion_forced = ruleset.promotion_forced
+        repetition_limit = ruleset.repetition_limit
+        repetition_policy = ruleset.repetition_policy
+        max_ply = ruleset.max_ply
+        stalemate_result = ruleset.stalemate_result
+        automatic_adjudications = _compile_automatic_adjudications(ruleset)
+    else:
+        if ruleset is not None:
+            raise ValueError("RuleSet must not be supplied with an executable compiled ruleset")
+        shape = BoardShape(compiled.board_size, compiled.board_size)
+        types_by_id = compiled.types_by_id
+        drop_allowed = compiled.drop_allowed
+        promotion_allowed = compiled.promotion_allowed
+        promotion_forced = compiled.promotion_forced
+        repetition_limit = compiled.repetition_limit
+        repetition_policy = compiled.repetition_policy
+        max_ply = compiled.max_ply
+        stalemate_result = compiled.stalemate_result
+        automatic_adjudications = compiled.automatic_adjudications
+
     board = compiled.initial_position.board
-    rows = tuple(tuple(board[r * n : (r + 1) * n]) for r in range(n))
+    rows = tuple(
+        tuple(board[rank * shape.width : (rank + 1) * shape.width])
+        for rank in range(shape.height)
+    )
     type_metadata = {
         tid: SemanticTypeMetadata(
             type_id=tid,
@@ -824,22 +858,24 @@ def _build_semantic_support(compiled: CompiledRuleSet):
             is_promotable=pt.is_promotable,
             promotion_target_ids=tuple(pt.promotion_target_ids),
         )
-        for tid, pt in compiled.types_by_id.items()
+        for tid, pt in types_by_id.items()
     }
     return CompiledSemanticSupport(
-        board_size=n,
+        board_size=shape.width if shape.width == shape.height else None,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         initial_position=rows,
         type_metadata=type_metadata,
-        drop_allowed=compiled.drop_allowed,
-        promotion_allowed=compiled.promotion_allowed,
-        promotion_forced=compiled.promotion_forced,
+        drop_allowed=drop_allowed,
+        promotion_allowed=promotion_allowed,
+        promotion_forced=promotion_forced,
         empty_mobility=compiled.empty_mobility,
-        repetition_limit=compiled.repetition_limit,
-        repetition_policy=compiled.repetition_policy,
-        max_ply=compiled.max_ply,
-        stalemate_result=compiled.stalemate_result,
-        automatic_adjudications=compiled.automatic_adjudications,
+        repetition_limit=repetition_limit,
+        repetition_policy=repetition_policy,
+        max_ply=max_ply,
+        stalemate_result=stalemate_result,
+        automatic_adjudications=automatic_adjudications,
+        board_width=None if shape.width == shape.height else shape.width,
+        board_height=None if shape.width == shape.height else shape.height,
     )
 
 

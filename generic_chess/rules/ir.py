@@ -18,6 +18,7 @@ import json
 from dataclasses import asdict, dataclass, field
 from typing import Any, Mapping
 
+from ..core.coordinates import BoardShape
 from .compiled import CompiledAutomaticAdjudication
 from .schema import (
     AUX_LIFETIMES,
@@ -526,7 +527,7 @@ class CompiledSemanticRuleset:
         return self.ir.automatic_adjudications
 
     @property
-    def board_size(self) -> int:
+    def board_size(self) -> int | None:
         if self.support is not None:
             return self.support.board_size
         raise RuntimeError("semantic ruleset has no support payload; board_size unavailable")
@@ -554,7 +555,7 @@ class CompiledSemanticSupport:
     (ADR-013).  Compiler-produced and immutable; never reinterprets
     movement atoms; ``_legacy_compiled`` is not part of execution."""
 
-    board_size: int
+    board_size: int | None
     ruleset_fingerprint: str = ""
     initial_position: tuple[tuple[Any, ...], ...] = ()
     type_metadata: Mapping[str, SemanticTypeMetadata] = field(default_factory=dict)
@@ -573,6 +574,22 @@ class CompiledSemanticSupport:
     max_ply: int = 512
     stalemate_result: str = "draw"
     automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
+    board_width: int | None = None
+    board_height: int | None = None
+
+    @property
+    def board_shape(self) -> BoardShape:
+        if self.board_width is None and self.board_height is None:
+            if self.board_size is None:
+                raise ValueError("board shape is unavailable")
+            return BoardShape(self.board_size, self.board_size)
+        if self.board_width is None or self.board_height is None:
+            raise ValueError("both board_width and board_height are required")
+        return BoardShape(self.board_width, self.board_height)
+
+    @property
+    def board_area(self) -> int:
+        return self.board_shape.area
 
 
 # ================================================================ validation
