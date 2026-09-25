@@ -695,7 +695,10 @@ def _build_explicit_geometry(
     )
 
 
-def lower_legacy_to_ir(compiled: CompiledRuleSet):
+def lower_legacy_to_ir(
+    compiled: CompiledRuleSet | CompiledGeometryCarrier,
+    ruleset: RuleSet | None = None,
+):
     """Lower an existing legacy compiled ruleset into the v2 production IR."""
     from .ir import (
         CompiledEffect,
@@ -709,6 +712,26 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
         CompiledTypeRef,
         SemanticCapabilities,
     )
+
+    compile_only = isinstance(compiled, CompiledGeometryCarrier)
+    if compile_only:
+        if ruleset is None:
+            raise ValueError("a RuleSet is required with the compile-only geometry carrier")
+        if (
+            ruleset.board_shape != compiled.board_shape
+            or compute_fingerprint(ruleset) != compiled.ruleset_fingerprint
+        ):
+            raise ValueError("RuleSet does not match the compile-only geometry carrier")
+        drop_allowed = ruleset.drop_allowed
+        type_ids = tuple(sorted(compiled.types_by_id))
+        automatic_adjudications = _compile_automatic_adjudications(ruleset)
+        declarations = _compile_declarations(ruleset, type_ids)
+    else:
+        if ruleset is not None:
+            raise ValueError("RuleSet must not be supplied with an executable compiled ruleset")
+        drop_allowed = compiled.drop_allowed
+        automatic_adjudications = compiled.automatic_adjudications
+        declarations = compiled.declarations
 
     geometry, legacy_ids = build_legacy_geometry_catalog(compiled)
     patterns: list[CompiledMovePattern] = []
@@ -765,7 +788,7 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
 
     drop_gid = f"g{len(geometry)}"
     geometry[drop_gid] = CompiledGeometry(geometry_id=drop_gid, kind="drop")
-    for tid in sorted(compiled.drop_allowed):
+    for tid in sorted(drop_allowed):
         patterns.append(
             CompiledMovePattern(
                 pattern_id=f"legacy_{pattern_counter:03d}",
@@ -796,12 +819,12 @@ def lower_legacy_to_ir(compiled: CompiledRuleSet):
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         geometry=geometry,
         patterns=tuple(patterns),
-        automatic_adjudications=compiled.automatic_adjudications,
-        declarations=compiled.declarations,
+        automatic_adjudications=automatic_adjudications,
+        declarations=declarations,
         capabilities=SemanticCapabilities(
-            legacy_core_executable=True,
+            legacy_core_executable=not compile_only,
             new_ir_core_executable=False,
-            native_executable=True,
+            native_executable=not compile_only,
         ),
     )
 
