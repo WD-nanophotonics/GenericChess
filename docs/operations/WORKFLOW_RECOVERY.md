@@ -58,6 +58,16 @@ and any one necessary user action.
 
 ## Choose a recovery action
 
+An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
+because the Chat cannot independently inspect the unpublished commit. The
+Supervisor reviews the local SHA, tests, original request, and matching reply.
+If that reply contains no new work order, use `followup --reviewed-local-only`
+at most once for that reply; the command verifies ancestry and records request
+lineage. If the Chat again returns only the same remote-evidence notice, do not
+repeat the request. Continue the latest user-approved bounded work directly
+with the registered Worker, retaining the Courier evidence for later closeout.
+This notice alone is neither a blocked Goal nor a HOLD.
+
 Use the smallest action supported by fresh evidence; escalate the remedy if
 the same fault persists. Fix a broken selector, launcher, status read, or
 registration at its actual source. Resume the same Worker with gpt-6-luna /
