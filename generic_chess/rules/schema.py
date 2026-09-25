@@ -185,6 +185,8 @@ class RuleSet:
     # Appended to retain every existing positional constructor argument.
     board_width: int | None = None
     board_height: int | None = None
+    # Omitted from serialized defaults so historical RuleSet identities stay stable.
+    capture_disposition: str = "capture_to_hand"
 
     @property
     def board_shape(self) -> BoardShape:
@@ -1451,6 +1453,8 @@ def ruleset_to_dict(
         ]
     if include_metadata:
         data["metadata"] = dict(ruleset.metadata)
+    if ruleset.capture_disposition != "capture_to_hand":
+        data["capture_disposition"] = ruleset.capture_disposition
     return data
 
 
@@ -1602,6 +1606,16 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
     stalemate_result = _require_str(
         data.get("stalemate_result", "draw"), f"{path}.stalemate_result"
     )
+    capture_disposition = _require_str(
+        data.get("capture_disposition", "capture_to_hand"),
+        f"{path}.capture_disposition",
+    )
+    if capture_disposition not in DISPOSITIONS:
+        raise _err(
+            "CAPTURE_DISPOSITION_INVALID",
+            f"{path}.capture_disposition",
+            f"expected one of {DISPOSITIONS}, got {capture_disposition!r}",
+        )
     semantic_actions_raw = data.get("semantic_actions", ())
     if not isinstance(semantic_actions_raw, (list, tuple)):
         raise _err(
@@ -1664,6 +1678,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         declarations=declarations,
         automatic_adjudications=automatic_adjudications,
         metadata=dict(metadata),
+        capture_disposition=capture_disposition,
     )
 
 

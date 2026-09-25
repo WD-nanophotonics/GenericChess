@@ -59,6 +59,7 @@ class CompiledRuleSet:
     repetition_policy: str = "draw"
     automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     declarations: tuple[object, ...] = ()
+    capture_disposition: str = "capture_to_hand"
 
 
 @dataclass(frozen=True, slots=True)

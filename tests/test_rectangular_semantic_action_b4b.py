@@ -151,6 +151,20 @@ def test_xiangqi_quiet_and_one_screen_capture_lower_to_distinct_static_ir():
     assert rules.metadata["fixture_status"] == "incomplete_static_fixture"
     assert set(carrier.types_by_id) == set(MOVEMENT_ATOMS)
     assert set(carrier.types_by_id) == {"G", "A", "E", "R", "H", "C", "P"}
+    baseline_ir = lower_legacy_to_ir(carrier, ruleset=rules)
+    non_anchor_types = {"A", "E", "R", "H", "C", "P"}
+    baseline_captures = [
+        pattern
+        for pattern in baseline_ir.patterns
+        if pattern.target.kind == "target_enemy"
+        and pattern.type_ids[0] in non_anchor_types
+    ]
+    assert baseline_captures
+    assert all(
+        next(effect for effect in pattern.effects if effect.kind == "remove").disposition
+        == "remove_from_game"
+        for pattern in baseline_captures
+    )
     assert not ir.capabilities.legacy_core_executable
     assert not ir.capabilities.new_ir_core_executable
     assert not ir.capabilities.native_executable

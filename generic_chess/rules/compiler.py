@@ -278,6 +278,14 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
         issues.append(ValidationIssue("MAX_PLY_INVALID", "max_ply", "max_ply must be a positive integer"))
     if ruleset.stalemate_result != "draw":
         issues.append(ValidationIssue("STALEMATE_RESULT_UNSUPPORTED", "stalemate_result", "v0 only supports stalemate_result == 'draw'"))
+    if ruleset.capture_disposition not in DISPOSITIONS:
+        issues.append(
+            ValidationIssue(
+                "CAPTURE_DISPOSITION_INVALID",
+                "capture_disposition",
+                f"expected one of {DISPOSITIONS}, got {ruleset.capture_disposition!r}",
+            )
+        )
 
     return issues
 
@@ -422,6 +430,7 @@ def compile_ruleset(
         stalemate_result=ruleset.stalemate_result,
         automatic_adjudications=_compile_automatic_adjudications(ruleset),
         declarations=_compile_declarations(ruleset, tuple(sorted(types_by_id))),
+        capture_disposition=ruleset.capture_disposition,
     )
 
     issues = _position_validation(compiled)
@@ -727,12 +736,14 @@ def lower_legacy_to_ir(
         type_ids = tuple(sorted(compiled.types_by_id))
         automatic_adjudications = _compile_automatic_adjudications(ruleset)
         declarations = _compile_declarations(ruleset, type_ids)
+        capture_disposition = ruleset.capture_disposition
     else:
         if ruleset is not None:
             raise ValueError("RuleSet must not be supplied with an executable compiled ruleset")
         drop_allowed = compiled.drop_allowed
         automatic_adjudications = compiled.automatic_adjudications
         declarations = compiled.declarations
+        capture_disposition = compiled.capture_disposition
 
     geometry, legacy_ids = build_legacy_geometry_catalog(compiled)
     patterns: list[CompiledMovePattern] = []
@@ -751,7 +762,7 @@ def lower_legacy_to_ir(
                     CompiledEffect(
                         "remove",
                         square_ref=CompiledSquareRef("target"),
-                        disposition="capture_to_hand",
+                        disposition=capture_disposition,
                         piece_owner="opponent",
                     ),
                     CompiledEffect(

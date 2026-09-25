@@ -97,6 +97,7 @@ def _build_incomplete_static_xiangqi_setup_fixture() -> RuleSet:
             "fixture_status": "incomplete_static_fixture",
             "fixture_omissions": list(OMITTED_RULE_SEMANTICS),
         },
+        capture_disposition="remove_from_game",
     )
 
 
