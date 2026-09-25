@@ -974,7 +974,7 @@ def _compile_declarations(ruleset: RuleSet, type_ids: tuple[str, ...]):
         issues.append(ValidationIssue("DECLARATION_ID_DUPLICATE", "declarations", "declaration IDs must be unique"))
     type_set = set(type_ids)
     zone_sets: dict[tuple[tuple[int, int], ...], str] = {}
-    n = ruleset.board_size
+    shape = ruleset.board_shape
 
     def register_zone(spatial):
         if spatial is None or spatial.kind != "zone":
@@ -983,7 +983,7 @@ def _compile_declarations(ruleset: RuleSet, type_ids: tuple[str, ...]):
         if key not in zone_sets:
             zone_sets[key] = f"dzone{len(zone_sets)}"
         for file, rank in key:
-            if not (0 <= file < n and 0 <= rank < n):
+            if not (0 <= file < shape.width and 0 <= rank < shape.height):
                 issues.append(ValidationIssue("DECLARATION_ZONE_BOUNDS", "declarations", str((file, rank))))
 
     for index, declaration in enumerate(declarations):
@@ -1047,7 +1047,7 @@ def _compile_declarations(ruleset: RuleSet, type_ids: tuple[str, ...]):
     zones = {
         zone_id: CompiledZone(
             zone_id,
-            tuple(rank * n + file for file, rank in squares),
+            tuple(rank * shape.width + file for file, rank in squares),
         )
         for squares, zone_id in zone_sets.items()
     }
@@ -1626,8 +1626,43 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
 
     The normalized pattern set is the final action template set
     (legacy - replaced + augment + replacements); an executor consumes only
-    this IR and never the high-level RuleSet.  Capabilities remain
-    fail-closed (nothing executes yet).
+    this IR and never the high-level RuleSet.  Public rectangular compilation
+    remains fail-closed at ``compile_ruleset``; shape-carrier lowering is an
+    internal diagnostic path only.
+    """
+    if not isinstance(ruleset, RuleSet):
+        ruleset = ruleset_from_dict(ruleset)
+    if not ruleset.semantic_actions:
+        raise RuleValidationError(
+            [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
+        )
+    for action in ruleset.semantic_actions:
+        for guard in action.state_guards:
+            if guard.location == "hand":
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "HAND_PREDICATE_UNSUPPORTED",
+                            f"ruleset.semantic_actions {action.name} state_guards",
+                            "location=hand state predicates are fail-closed "
+                            "in the B-2 reference executor (no hand-query "
+                            "contract yet)",
+                        )
+                    ]
+                )
+    # This public boundary deliberately keeps the rectangular execution gate.
+    baseline = compile_ruleset(ruleset, allow_semantic_actions=True)
+    return _compile_semantic_ruleset_from_baseline(baseline, ruleset)
+
+
+def _compile_semantic_ruleset_from_baseline(
+    baseline: CompiledRuleSet | CompiledGeometryCarrier,
+    ruleset: RuleSet,
+):
+    """Shared semantic action-to-IR lowering for executable and shape carriers.
+
+    A carrier plus its matching RuleSet supplies definition-layer metadata
+    without claiming that the resulting rectangular IR is publicly executable.
     """
     from . import ir as ir_module
     from .ir import (
@@ -1650,31 +1685,21 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     )
     from .schema import MAX_SEMANTIC_AUX_SLOTS, SEMANTIC_STRATA
 
-    if not isinstance(ruleset, RuleSet):
-        ruleset = ruleset_from_dict(ruleset)
-    if not ruleset.semantic_actions:
-        raise RuleValidationError(
-            [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
-        )
-    for action in ruleset.semantic_actions:
-        for guard in action.state_guards:
-            if guard.location == "hand":
-                raise RuleValidationError(
-                    [
-                        ValidationIssue(
-                            "HAND_PREDICATE_UNSUPPORTED",
-                            f"ruleset.semantic_actions {action.name} state_guards",
-                            "location=hand state predicates are fail-closed "
-                            "in the B-2 reference executor (no hand-query "
-                            "contract yet)",
-                        )
-                    ]
-                )
-    legacy = compile_ruleset(ruleset, allow_semantic_actions=True)
-    type_ids = tuple(sorted(legacy.types_by_id))
+    compile_only = isinstance(baseline, CompiledGeometryCarrier)
+    if compile_only:
+        if (
+            ruleset.board_shape != baseline.board_shape
+            or compute_fingerprint(ruleset) != baseline.ruleset_fingerprint
+        ):
+            raise ValueError("RuleSet does not match the compile-only geometry carrier")
+    elif not isinstance(baseline, CompiledRuleSet):
+        raise TypeError("semantic lowering requires a compiled ruleset or geometry carrier")
+    elif compute_fingerprint(ruleset) != baseline.ruleset_fingerprint:
+        raise ValueError("RuleSet does not match the compiled ruleset")
+    type_ids = tuple(sorted(baseline.types_by_id))
 
     # --- geometry catalog: legacy atoms first, then explicit shapes.
-    geometry, legacy_ids = build_legacy_geometry_catalog(legacy)
+    geometry, legacy_ids = build_legacy_geometry_catalog(baseline)
     drop_gid = f"g{len(geometry)}"
     geometry[drop_gid] = CompiledGeometry(geometry_id=drop_gid, kind="drop")
     next_gid = len(geometry)
@@ -1683,15 +1708,16 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         spec = action.geometry
         if spec.kind == "legacy_atoms":
             action_geometry_ids[action_index] = _semantic_action_geometry_ids(
-                action, action_index, legacy.types_by_id, legacy_ids
+                action, action_index, baseline.types_by_id, legacy_ids
             )
         else:
             gid = f"g{next_gid}"
             next_gid += 1
-            geometry[gid] = _build_explicit_geometry(legacy, spec, gid)
+            geometry[gid] = _build_explicit_geometry(baseline, spec, gid)
             action_geometry_ids[action_index] = (gid,)
 
     # --- zones (deterministic: sorted square sets).
+    board_shape = _geometry_board_shape(baseline)
     zone_sets: list[tuple[tuple[int, int], ...]] = []
     zone_ids_by_set: dict[tuple[tuple[int, int], ...], str] = {}
     for action in ruleset.semantic_actions:
@@ -1703,7 +1729,13 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
                 zone_ids_by_set[key] = f"z{len(zone_sets)}"
                 zone_sets.append(key)
     zones = {
-        zid: CompiledZone(zid, tuple(sq[1] * legacy.board_size + sq[0] for sq in squares))
+        zid: CompiledZone(
+            zid,
+            tuple(
+                sq[1] * board_shape.width + sq[0]
+                for sq in squares
+            ),
+        )
         for squares, zid in sorted(zone_ids_by_set.items(), key=lambda kv: kv[1])
     }
 
@@ -1740,7 +1772,10 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     compiled_slots = tuple(compiled_slots)
 
     # --- legacy baseline patterns (for composition).
-    legacy_ir = lower_legacy_to_ir(legacy)
+    legacy_ir = lower_legacy_to_ir(
+        baseline,
+        ruleset=ruleset if compile_only else None,
+    )
     legacy_patterns = list(legacy_ir.patterns)
     replaced: set[str] = set()
     semantic_patterns: list[CompiledMovePattern] = []
@@ -1748,7 +1783,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
 
     for action_index, action in enumerate(ruleset.semantic_actions):
         for tid in action.type_ids:
-            if tid not in legacy.types_by_id:
+            if tid not in baseline.types_by_id:
                 raise RuleValidationError(
                     [ValidationIssue("SEMANTIC_TYPE_UNKNOWN", "type_ids", tid)]
                 )
@@ -1887,7 +1922,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         # time.  A successful compile therefore implies every emitted
         # postcondition is B-3 supported, so the S4 fail-closed gate is
         # retired (ADR-016 section 13; spec R2 supersession).
-        new_ir_core_executable=True,
+        new_ir_core_executable=not compile_only,
         native_executable=False,
         contains_path_predicate=contains_path,
         contains_state_guard=contains_guard,
@@ -1898,14 +1933,14 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     )
     ir = CompiledSemanticIR(
         ir_version=2,
-        ruleset_fingerprint=legacy.ruleset_fingerprint,
+        ruleset_fingerprint=baseline.ruleset_fingerprint,
         geometry=geometry,
         zones=zones,
         patterns=tuple(normalized),
         aux_slots=compiled_slots,
         triggers=triggers,
-        automatic_adjudications=legacy.automatic_adjudications,
-        declarations=legacy.declarations,
+        automatic_adjudications=legacy_ir.automatic_adjudications,
+        declarations=legacy_ir.declarations,
         capabilities=capabilities,
     )
     errors = validate_ir(ir)
@@ -1914,28 +1949,34 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         raise RuleValidationError(
             [ValidationIssue("IR_INVALID", "ir", "; ".join(errors))]
         )
-    support = _build_semantic_support(legacy)
+    support = _build_semantic_support(
+        baseline,
+        ruleset=ruleset if compile_only else None,
+    )
     # Native execution is a per-ruleset capability, derived from the exact
     # lowered payload rather than a global promise.  Any lowering/shape
     # failure remains fail-closed while Python IR compilation stays usable.
-    try:
-        from ..native.compiler import build_semantic_compile_payload
+    if not compile_only:
+        try:
+            from ..native.compiler import build_semantic_compile_payload
 
-        _, native_report = build_semantic_compile_payload(
-            CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)
-        )
-        # The current Native semantic payload has neither declaration nor
-        # automatic-adjudication sections.  Never advertise a ruleset as
-        # fully Native executable while silently dropping either semantic.
-        if (
-            native_report.native_executable
-            and not ir.declarations
-            and not ir.automatic_adjudications
-        ):
-            ir = replace(
-                ir,
-                capabilities=replace(ir.capabilities, native_executable=True),
+            _, native_report = build_semantic_compile_payload(
+                CompiledSemanticRuleset(
+                    ir=ir, _legacy_compiled=baseline, support=support
+                )
             )
-    except Exception:
-        pass
-    return CompiledSemanticRuleset(ir=ir, _legacy_compiled=legacy, support=support)
+            # The current Native semantic payload has neither declaration nor
+            # automatic-adjudication sections.  Never advertise a ruleset as
+            # fully Native executable while silently dropping either semantic.
+            if (
+                native_report.native_executable
+                and not ir.declarations
+                and not ir.automatic_adjudications
+            ):
+                ir = replace(
+                    ir,
+                    capabilities=replace(ir.capabilities, native_executable=True),
+                )
+        except Exception:
+            pass
+    return CompiledSemanticRuleset(ir=ir, _legacy_compiled=baseline, support=support)

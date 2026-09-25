@@ -19,6 +19,7 @@ from generic_chess.rules.compiler import (
     _compile_geometry_carrier,
     _lower_compile_only_ray_path_actions,
     _lower_compile_only_single_source_offset_guard,
+    _compile_semantic_ruleset_from_baseline,
     compile_ruleset,
     compile_semantic_ruleset,
     lower_legacy_to_ir,
@@ -30,7 +31,15 @@ from generic_chess.rules.ir import (
     validate_executable_completeness,
     validate_ir,
 )
-from generic_chess.rules.schema import RulePathConstraint, RuleReplaceSelector, RuleSet
+from generic_chess.rules.schema import (
+    RuleDeclaration,
+    RulePathConstraint,
+    RuleReplaceSelector,
+    RuleSet,
+    RuleSpatialSelector,
+    RuleStateGuard,
+    RuleTypeRef,
+)
 from generic_chess.rules.validation import RuleValidationError
 from rule_semantics_ir_fixtures import cannon_ruleset
 from test_action_bound_state_guard import _horse_leg_guard_ruleset
@@ -341,6 +350,83 @@ def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref()
 def test_public_semantic_compiler_still_rejects_rectangular_execution():
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_semantic_ruleset(_rectangular_single_capture_ruleset())
+
+
+def test_shared_semantic_lowering_accepts_shape_carrier_without_enabling_execution():
+    base = _horse_leg_guard_ruleset()
+    shape = BoardShape(9, 10)
+    rows = [[None] * shape.width for _ in range(shape.height)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[9][8] = Piece(1, "K", "K")
+    zone_squares = ((1, 0), (4, 5), (8, 9))
+    zone_guard = RuleStateGuard(
+        aggregation="count",
+        owner="any",
+        type_ref=RuleTypeRef(kind="any"),
+        compare_field="base",
+        promoted="any",
+        location="board",
+        spatial=RuleSpatialSelector(kind="zone", zone_squares=zone_squares),
+        comparison="eq",
+        value=0,
+    )
+    base_action = base.semantic_actions[0]
+    action = replace(
+        base_action,
+        state_guards=base_action.state_guards + (zone_guard,),
+    )
+    rules = replace(
+        base,
+        board_size=None,
+        board_width=shape.width,
+        board_height=shape.height,
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"H": ((False,) * shape.area, (False,) * shape.area)},
+        semantic_actions=(action,),
+        declarations=(
+            RuleDeclaration("rectangular_zone", owner=0, state_guards=(zone_guard,)),
+        ),
+    )
+    carrier = _compile_geometry_carrier(rules)
+    compiled = _compile_semantic_ruleset_from_baseline(carrier, rules)
+
+    assert compiled.ruleset_fingerprint == carrier.ruleset_fingerprint
+    assert compiled._legacy_compiled is carrier
+    assert compiled.support.board_shape == shape
+    assert len(compiled.support.initial_position) == shape.height
+    assert len(compiled.support.initial_position[-1]) == shape.width
+    assert compiled.ir.zones["z0"].squares == (1, 49, 89)
+    assert compiled.ir.declarations[0].zones["dzone0"].squares == (1, 49, 89)
+    pattern = next(p for p in compiled.ir.patterns if p.name == "horse_leg_step")
+    assert len(pattern.guards) == 2
+    assert pattern.guards[0].spatial.refs[0].kind == "offset_from_source"
+    assert pattern.guards[1].spatial.zone_id == "z0"
+    geometry = compiled.ir.geometry[pattern.geometry_ids[0]]
+    assert geometry.atom_source == ("H", 0)
+    assert geometry.paths["0"][4 * 9 + 3] == (5 * 9 + 5,)
+    assert geometry.paths["1"][4 * 9 + 3] == (3 * 9 + 1,)
+    assert all(
+        not getattr(compiled.ir.capabilities, capability)
+        for capability in (
+            "legacy_core_executable",
+            "new_ir_core_executable",
+            "native_executable",
+        )
+    )
+    assert all(
+        len(paths) == shape.area
+        for geometry in compiled.ir.geometry.values()
+        for paths in geometry.paths.values()
+    )
+
+    with pytest.raises(
+        RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"
+    ):
+        compile_semantic_ruleset(rules)
+    with pytest.raises(ValueError, match="does not match"):
+        _compile_semantic_ruleset_from_baseline(
+            carrier, replace(rules, max_ply=rules.max_ply + 1)
+        )
 
 
 def _rectangular_horse_executor_witness():
