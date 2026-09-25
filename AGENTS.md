@@ -13,6 +13,10 @@ Goal-blocked or three-refusal rule below. Generated binaries, raw benchmarks,
 Courier runtime, and transient evidence stay out of Git. Publish only tested
 checkpoints to `origin/sandbox` and verify the full remote SHA. Never use
 Gmail, `gc-bridge`, a background Courier daemon, WSL, or a bypass transport.
+If a work order explicitly forbids publication, freeze and test the candidate
+locally, then use `closeout --local-only` to report its committed local SHA and
+the actual remote SHA through the same Courier session. Never claim that local
+work was published or make it eligible for promotion.
 
 ## Current mainline route
 

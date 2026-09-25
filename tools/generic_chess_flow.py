@@ -777,11 +777,22 @@ def _migration_dispatch_key(state: dict[str, Any], purpose: str,
 
 
 def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: str,
-                     attachments: list[Path] | None = None) -> None:
+                     attachments: list[Path] | None = None, *,
+                     local_only: bool = False) -> None:
     sandbox = sandbox_root(root)
     require_clean(sandbox)
-    require_synced(sandbox, "sandbox")
+    if local_only:
+        if purpose != "closeout":
+            raise FlowError("local-only dispatch is available only for closeout")
+        fetch(sandbox, "sandbox")
+        if not git_ok(sandbox, "merge-base", "--is-ancestor",
+                      sha(sandbox, "origin/sandbox"), sha(sandbox)):
+            raise FlowError("local-only closeout requires origin/sandbox to be an ancestor")
+    else:
+        require_synced(sandbox, "sandbox")
     report_size = source.stat().st_size
+    if local_only and report_size > INLINE_CHAT_REFERENCE_THRESHOLD:
+        raise FlowError("local-only closeout requires an inline summary of at most 24 KiB")
     if purpose in {"closeout", "blocker"} and report_size > INLINE_CHAT_REFERENCE_THRESHOLD and not attachments:
         raise FlowError("closeout/blocker exceeds 24 KiB; provide a concise summary or an explicit attachment")
     body = chat_message_body(
@@ -789,17 +800,25 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         reference_only=purpose in {"closeout", "blocker"} and report_size > INLINE_CHAT_REFERENCE_THRESHOLD,
     )
     digest = hashlib.sha256(body.encode("utf-8")).hexdigest()
-    base_key = f"{purpose}-{sha(sandbox)[:12]}-{digest[:12]}"
+    base_key = f"{purpose}{'-local' if local_only else ''}-{sha(sandbox)[:12]}-{digest[:12]}"
     key = _migration_dispatch_key(state, purpose, base_key)
     generated = runtime_dir(root) / f"{key}.txt"
+    publication_context = (
+        f"ORIGIN_SANDBOX_SHA={sha(sandbox, 'origin/sandbox')}\n"
+        "The local sandbox SHA is committed but intentionally not published. "
+        "Do not treat it as remotely available or authorize promotion.\n"
+        if local_only else
+        "The referenced sandbox SHA is committed and published to origin/sandbox.\n"
+    )
     generated.write_text(
         body.rstrip()
         + "\n\nRepository authority context:\n"
         + f"PROJECT_ID={PROJECT_ID}\n"
         + f"MASTER_SHA={sha(worktrees(root)['master'])}\n"
         + f"SANDBOX_SHA={sha(sandbox)}\n"
-        + "The referenced sandbox SHA is committed and published to origin/sandbox.\n"
-        + "Prioritize actual playing-strength, self-improvement, and main-algorithm work. Process or audit work must remove a demonstrated mainline blocker and use the smallest sufficient fix; five consecutive non-mainline work orders is a direction warning.\n"
+        + f"PUBLICATION_STATUS={'LOCAL_ONLY' if local_only else 'PUBLISHED'}\n"
+        + publication_context
+        + "Use the project's AGENTS.md and the current work order for research priorities; transport metadata does not define the mainline.\n"
         + "For every research order, begin in ordinary prose by stating the current single unknown variable, the minimal direct observation that tests it, and why full games are or are not needed. Label it CAUSAL_DIAGNOSTIC or STRENGTH_BENCHMARK.\n"
         + "Ordinary explanatory responses are valid even when control fields are omitted; the flow imports the body and defaults missing/invalid controls to CONTINUE/NONE/HOLD.\n"
         + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, or promotion.\n"
@@ -2221,7 +2240,8 @@ def command_closeout(root: Path, args: argparse.Namespace) -> None:
     if state.get("mode") != "courier":
         raise FlowError("closeout is only available in courier mode")
     dispatch_message(root, state, Path(args.report_file).resolve(), "closeout",
-                     [Path(value).resolve() for value in getattr(args, "attachment", [])])
+                     [Path(value).resolve() for value in getattr(args, "attachment", [])],
+                     local_only=getattr(args, "local_only", False))
 
 
 def command_promote(root: Path, args: argparse.Namespace) -> None:
@@ -2627,6 +2647,8 @@ def parser() -> argparse.ArgumentParser:
     closeout.add_argument("--report-file", required=True)
     closeout.add_argument("--attachment", action="append", default=[],
                           help="explicit evidence file to upload with the closeout")
+    closeout.add_argument("--local-only", action="store_true",
+                          help="close out a clean committed candidate without publishing it")
     closeout.set_defaults(handler=command_closeout)
     promote = sub.add_parser("promote")
     promote.add_argument("--candidate", required=True)

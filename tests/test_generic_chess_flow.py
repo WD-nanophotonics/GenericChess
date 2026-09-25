@@ -1679,6 +1679,56 @@ def test_closeout_forwards_explicit_evidence_attachments(monkeypatch, tmp_path):
     assert str(attachment.resolve()) in prepare
 
 
+def test_local_only_closeout_reports_unpublished_sha_without_push(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    sandbox.mkdir()
+    report = sandbox / "report.md"
+    report.write_text("Frozen zero-game candidate; no publication authorized.\n", encoding="utf-8")
+    local_sha, remote_sha = "b" * 40, "a" * 40
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+    monkeypatch.setattr(flow, "worktrees", lambda _root: {"master": sandbox, "sandbox": sandbox})
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: pytest.fail("must not require publication"))
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref="HEAD": remote_sha if ref == "origin/sandbox" else local_sha)
+    monkeypatch.setattr(flow, "chat_message_body", lambda _root, source, **_kwargs: source.read_text(encoding="utf-8"))
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "update_response_state", lambda *_args, **_kwargs: None)
+    sent = []
+    def fake_courier(_root, *args, **_kwargs):
+        sent.append(args)
+        return {"request_directory": str(tmp_path / "request")} if args[0] == "courier_prepare" else {"event": "response_waiting"}
+    monkeypatch.setattr(flow, "courier", fake_courier)
+
+    flow.dispatch_message(tmp_path, {"active": True}, report, "closeout", local_only=True)
+
+    assert [call[0] for call in sent] == ["courier_prepare", "courier_dispatch"]
+    generated = (tmp_path / next(tmp_path.glob("closeout-local-*.txt")).name).read_text(encoding="utf-8")
+    assert f"SANDBOX_SHA={local_sha}" in generated
+    assert f"ORIGIN_SANDBOX_SHA={remote_sha}" in generated
+    assert "PUBLICATION_STATUS=LOCAL_ONLY" in generated
+    assert "intentionally not published" in generated
+    assert "committed and published to origin/sandbox" not in generated
+
+
+def test_local_only_closeout_refuses_diverged_remote(monkeypatch, tmp_path):
+    sandbox = tmp_path / "sandbox"
+    sandbox.mkdir()
+    report = sandbox / "report.md"
+    report.write_text("report\n", encoding="utf-8")
+    monkeypatch.setattr(flow, "sandbox_root", lambda _root: sandbox)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref="HEAD": "a" * 40)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: False)
+    monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: pytest.fail("must not dispatch"))
+
+    with pytest.raises(flow.FlowError, match="ancestor"):
+        flow.dispatch_message(tmp_path, {"active": True}, report, "closeout", local_only=True)
+
+
 def test_start_message_remains_inline(monkeypatch, tmp_path):
     sandbox = tmp_path / "sandbox"
     sandbox.mkdir()
