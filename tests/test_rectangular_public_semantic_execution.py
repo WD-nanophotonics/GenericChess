@@ -21,9 +21,13 @@ from generic_chess.rules.schema import (
     RuleSet,
     RuleSpatialSelector,
     RuleSquareRef,
+    RuleSquareZoneGuard,
     RuleStateGuard,
     RuleTypeRef,
     RuleWeightedMaterialMetric,
+    compute_fingerprint,
+    ruleset_from_dict,
+    ruleset_to_dict,
 )
 from generic_chess.rules.validation import RuleValidationError
 from generic_chess.core.declarations import assess_declaration
@@ -168,6 +172,152 @@ def test_rectangular_declaration_uses_width_based_row_major_indexing():
     assessment = assess_declaration(state, compiled, "edge_piece")
     assert assessment.outcome == "WIN"
     assert assessment.weighted_score == 1
+
+
+def test_state_guard_zone_does_not_filter_empty_target_coordinates():
+    base = _toy_rectangular_ruleset()
+    guard = RuleStateGuard(
+        aggregation="count",
+        owner="any",
+        type_ref=RuleTypeRef(kind="any"),
+        compare_field="base",
+        promoted="any",
+        location="board",
+        spatial=RuleSpatialSelector(kind="zone", zone_squares=((4, 0),)),
+        comparison="eq",
+        value=0,
+        subject_ref=RuleSquareRef(kind="target"),
+    )
+    template = base.semantic_actions[0]
+    actions = tuple(
+        replace(
+            template,
+            name=name,
+            geometry=RuleGeometrySpec(kind="leap", offset=offset),
+            state_guards=(guard,),
+        )
+        for name, offset in (("zone_target", (2, 0)), ("outside_target", (1, 0)))
+    )
+    compiled = compile_ruleset_for_execution(
+        replace(base, semantic_actions=actions)
+    )
+    state = initial_state(compiled)
+    legal = legal_actions(state, compiled)
+
+    for target, pattern_suffix in (
+        (Square(4, 0), "zone_target"),
+        (Square(3, 0), "outside_target"),
+    ):
+        assert state.position.board[target.rank * 9 + target.file] is None
+        assert any(
+            isinstance(action, SemanticBoardMove)
+            and action.from_square == Square(2, 0)
+            and action.to_square == target
+            and action.pattern_id.endswith(pattern_suffix)
+            for action in legal
+        )
+
+
+def _palace_zone_ruleset():
+    region = tuple((file, rank) for file in range(3, 6) for rank in range(3))
+
+    def zone_guard(square, relation):
+        return RuleSquareZoneGuard(
+            square_ref=RuleSquareRef(kind=square),
+            spatial=RuleSpatialSelector(kind="zone", zone_squares=region),
+            relation=relation,
+            owner_relative=True,
+        )
+
+    def move(name, offset, square_zone_guards):
+        return RuleSemanticAction(
+            name=name,
+            type_ids=("M",),
+            geometry=RuleGeometrySpec(kind="leap", offset=offset),
+            target_relation="empty",
+            effects=(
+                RuleActionEffect(
+                    "move",
+                    from_ref=RuleSquareRef(kind="source"),
+                    to_ref=RuleSquareRef(kind="target"),
+                ),
+            ),
+            invariants=(RuleInvariant("own_anchor_safe"),),
+            square_zone_guards=square_zone_guards,
+        )
+
+    base = _toy_rectangular_ruleset()
+    return replace(
+        base,
+        semantic_actions=(
+            move("enter_zone", (0, -1), (zone_guard("target", "inside"),)),
+            move(
+                "leave_zone",
+                (0, 1),
+                (zone_guard("source", "inside"), zone_guard("target", "outside")),
+            ),
+        ),
+    )
+
+
+def test_public_9x10_owner_relative_square_zone_guards_use_empty_squares():
+    ruleset = _palace_zone_ruleset()
+    serialized = ruleset_to_dict(ruleset)
+    restored = ruleset_from_dict(serialized)
+    assert ruleset_to_dict(restored) == serialized
+    assert compute_fingerprint(restored) == compute_fingerprint(ruleset)
+    compiled = compile_ruleset_for_execution(restored)
+    assert compiled.ir.capabilities.new_ir_core_executable
+    assert not compiled.ir.capabilities.native_executable
+    assert compiled.ir.fingerprint() == compile_ruleset_for_execution(ruleset).ir.fingerprint()
+    from generic_chess.native.compiler import (
+        NativeUnsupportedRuleError,
+        build_semantic_compile_payload,
+    )
+
+    with pytest.raises(NativeUnsupportedRuleError, match="square zone guards"):
+        build_semantic_compile_payload(compiled)
+
+    def actions_for(owner, source):
+        state = initial_state(compiled)
+        board = list(state.position.board)
+        for index, piece in enumerate(board):
+            if piece is not None and piece.current_type_id == "M":
+                board[index] = None
+        source_index = source.rank * 9 + source.file
+        board[source_index] = Piece(owner, "M", "M")
+        position = replace(
+            state.position, board=tuple(board), side_to_move=owner
+        )
+        state = replace(state, position=position)
+        return state, legal_actions(state, compiled)
+
+    cases = (
+        # Entry into and exit from the mover's own palace (rank-flipped for side 1).
+        (0, Square(4, 3), Square(4, 2), "enter_zone", True),
+        (1, Square(4, 6), Square(4, 7), "enter_zone", True),
+        (0, Square(4, 2), Square(4, 3), "leave_zone", True),
+        (1, Square(4, 7), Square(4, 6), "leave_zone", True),
+        # A mover placed in the opponent's palace must not inherit its source zone.
+        (0, Square(4, 7), Square(4, 8), "leave_zone", False),
+        (1, Square(4, 2), Square(4, 1), "leave_zone", False),
+        # Target-region checks reject an empty target outside either palace.
+        (0, Square(4, 4), Square(4, 3), "enter_zone", False),
+        (1, Square(4, 5), Square(4, 6), "enter_zone", False),
+    )
+    for owner, source, target, pattern_name, expected in cases:
+        state, actions = actions_for(owner, source)
+        target_index = target.rank * 9 + target.file
+        assert state.position.board[target_index] is None
+        matching = [
+            action
+            for action in actions
+            if isinstance(action, SemanticBoardMove)
+            and action.from_square == source
+            and action.to_square == target
+            and action.pattern_id.endswith(pattern_name)
+        ]
+        assert len(matching) == int(expected)
 
 
 def _toy_horse_leg_ruleset(*, blocked_owner=None):

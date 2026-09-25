@@ -143,6 +143,14 @@ class CompiledStatePredicate:
 
 
 @dataclass(frozen=True, slots=True)
+class CompiledSquareZoneGuard:
+    square_ref: CompiledSquareRef
+    spatial: CompiledSpatialSelector
+    relation: str = "inside"
+    owner_relative: bool = True
+
+
+@dataclass(frozen=True, slots=True)
 class CompiledWeightedMaterialMetric:
     owner: str = "self"
     compare_field: str = "base"
@@ -255,6 +263,7 @@ class CompiledMovePattern:
     replaced_pattern_ids: tuple[str, ...] = ()
     cost_class: str = "C1"
     stratum: str = "S0"
+    square_zone_guards: tuple[CompiledSquareZoneGuard, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -346,7 +355,7 @@ class CompiledSemanticIR:
 
     @staticmethod
     def _pattern_dict(p: CompiledMovePattern) -> dict:
-        return {
+        data = {
             "pattern_id": p.pattern_id,
             "name": p.name,
             "type_ids": list(p.type_ids),
@@ -409,6 +418,17 @@ class CompiledSemanticIR:
             "cost_class": p.cost_class,
             "stratum": p.stratum,
         }
+        if p.square_zone_guards:
+            data["square_zone_guards"] = [
+                {
+                    "square_ref": _square_ref_dict(g.square_ref),
+                    "spatial": _spatial_dict(g.spatial),
+                    "relation": g.relation,
+                    "owner_relative": g.owner_relative,
+                }
+                for g in p.square_zone_guards
+            ]
+        return data
 
     def fingerprint(self) -> str:
         return hashlib.sha256(self.serialized().encode("utf-8")).hexdigest()
@@ -623,6 +643,8 @@ def _component_stratum(component: str) -> str:
         return "S0"
     if component == "state_guard" or component == "slot_guard":
         return "S1"
+    if component == "square_zone_guard":
+        return "S1"
     if component in INVARIANT_KINDS:
         return "S2"
     if component in POSTCONDITION_KINDS:
@@ -641,7 +663,7 @@ def cost_class_of(primitive_kind: str) -> str:
         return "C1"
     if primitive_kind in ("path_count_eq", "path_count_range"):
         return "C2"
-    if primitive_kind in ("state_guard", "slot_guard"):
+    if primitive_kind in ("state_guard", "slot_guard", "square_zone_guard"):
         return "C2"
     if primitive_kind in INVARIANT_KINDS:
         return "C3"
@@ -815,6 +837,13 @@ def validate_compiled_pattern(
             else:
                 if sg.square_ref is None and sg.comparison not in ("eq", "ne"):
                     errors.append("square slot guard with None needs eq/ne")
+    for guard in pattern.square_zone_guards:
+        if guard.relation not in ("inside", "outside"):
+            errors.append(f"invalid square zone relation {guard.relation}")
+        if guard.spatial.kind != "zone" or not guard.spatial.zone_id:
+            errors.append("square zone guard requires a zone selector")
+        if not isinstance(guard.owner_relative, bool):
+            errors.append("square zone owner_relative must be boolean")
     if len(pattern.effects) > MAX_SEMANTIC_EFFECTS:
         errors.append(f"effect cardinality exceeds {MAX_SEMANTIC_EFFECTS}")
     for effect in pattern.effects:
@@ -857,6 +886,7 @@ def validate_compiled_pattern(
         + [pp.kind for pp in pattern.path]
         + ["state_guard"] * len(pattern.guards)
         + ["slot_guard"] * len(pattern.slot_guards)
+        + ["square_zone_guard"] * len(pattern.square_zone_guards)
         + [i.kind for i in pattern.invariants]
         + [pc.kind for pc in pattern.postconditions]
     )
@@ -937,6 +967,15 @@ def validate_executable_completeness(
                     sg.square_ref, slot_ids, slot_kinds, pattern.pattern_id, errors,
                     exact_ray_steps=exact_ray_steps,
                 )
+        for guard in pattern.square_zone_guards:
+            if guard.spatial.zone_id not in zone_ids:
+                errors.append(
+                    f"pattern {pattern.pattern_id} refs unknown zone {guard.spatial.zone_id}"
+                )
+            _complete_square_ref(
+                guard.square_ref, slot_ids, slot_kinds, pattern.pattern_id, errors,
+                exact_ray_steps=exact_ray_steps,
+            )
         for effect in pattern.effects:
             for ref in (effect.from_ref, effect.to_ref, effect.square_ref):
                 if ref is not None:

@@ -1110,6 +1110,7 @@ def _pattern_components(pattern) -> list[str]:
         + [pp.kind for pp in pattern.path]
         + ["state_guard"] * len(pattern.guards)
         + ["slot_guard"] * len(pattern.slot_guards)
+        + ["square_zone_guard"] * len(pattern.square_zone_guards)
         + [i.kind for i in pattern.invariants]
         + [pc.kind for pc in pattern.postconditions]
         + [e.kind for e in pattern.effects]
@@ -1636,6 +1637,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
         raise RuleValidationError(
             [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
         )
+    shape = ruleset.board_shape
     for action in ruleset.semantic_actions:
         for guard in action.state_guards:
             if guard.location == "hand":
@@ -1650,7 +1652,40 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
                         )
                     ]
                 )
-    shape = ruleset.board_shape
+        for guard in action.square_zone_guards:
+            if guard.spatial.kind != "zone" or not guard.spatial.zone_squares:
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "SQUARE_ZONE_SELECTOR_INVALID",
+                            f"ruleset.semantic_actions {action.name} square_zone_guards",
+                            "square zone guard requires a non-empty zone selector",
+                        )
+                    ]
+                )
+            if guard.relation not in ("inside", "outside"):
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "SQUARE_ZONE_RELATION_INVALID",
+                            f"ruleset.semantic_actions {action.name} square_zone_guards",
+                            "relation must be 'inside' or 'outside'",
+                        )
+                    ]
+                )
+            if any(
+                not (0 <= file < shape.width and 0 <= rank < shape.height)
+                for file, rank in guard.spatial.zone_squares
+            ):
+                raise RuleValidationError(
+                    [
+                        ValidationIssue(
+                            "SQUARE_ZONE_OUT_OF_BOUNDS",
+                            f"ruleset.semantic_actions {action.name} square_zone_guards",
+                            "zone square is outside the board",
+                        )
+                    ]
+                )
     if shape.width != shape.height:
         carrier = _compile_geometry_carrier(ruleset)
         compiled = _compile_semantic_ruleset_from_baseline(
@@ -1733,6 +1768,7 @@ def _compile_semantic_ruleset_from_baseline(
         CompiledSemanticRuleset,
         CompiledSlotGuard,
         CompiledSquareRef,
+        CompiledSquareZoneGuard,
         CompiledStatePredicate,
         CompiledTargetPredicate,
         CompiledTransitionTrigger,
@@ -1787,6 +1823,11 @@ def _compile_semantic_ruleset_from_baseline(
         for guard in action.state_guards:
             if guard.spatial.kind != "zone":
                 continue
+            key = tuple(sorted(guard.spatial.zone_squares))
+            if key not in zone_ids_by_set:
+                zone_ids_by_set[key] = f"z{len(zone_sets)}"
+                zone_sets.append(key)
+        for guard in action.square_zone_guards:
             key = tuple(sorted(guard.spatial.zone_squares))
             if key not in zone_ids_by_set:
                 zone_ids_by_set[key] = f"z{len(zone_sets)}"
@@ -1852,7 +1893,7 @@ def _compile_semantic_ruleset_from_baseline(
                 )
         if action.path_constraints:
             contains_path = True
-        if action.state_guards or action.slot_guards:
+        if action.state_guards or action.slot_guards or action.square_zone_guards:
             contains_guard = True
         if len(action.effects) > 1:
             contains_compound = True
@@ -1911,6 +1952,17 @@ def _compile_semantic_ruleset_from_baseline(
                     ),
                 )
             )
+        square_zone_guards = tuple(
+            CompiledSquareZoneGuard(
+                square_ref=_resolve_square_ref(guard.square_ref, slot_ids_by_name),
+                spatial=_resolve_spatial(
+                    guard.spatial, slot_ids_by_name, zone_ids_by_set
+                ),
+                relation=guard.relation,
+                owner_relative=guard.owner_relative,
+            )
+            for guard in action.square_zone_guards
+        )
         path = _lower_semantic_path_constraints(action)
         invariants = _lower_semantic_invariants(action, slot_ids_by_name)
         postconditions = tuple(
@@ -1926,6 +1978,7 @@ def _compile_semantic_ruleset_from_baseline(
             path=path,
             guards=guards,
             slot_guards=tuple(slot_guards),
+            square_zone_guards=square_zone_guards,
             effects=tuple(effects),
             invariants=invariants,
             postconditions=postconditions,
@@ -1946,6 +1999,7 @@ def _compile_semantic_ruleset_from_baseline(
             path=pattern.path,
             guards=pattern.guards,
             slot_guards=pattern.slot_guards,
+            square_zone_guards=pattern.square_zone_guards,
             effects=pattern.effects,
             invariants=pattern.invariants,
             postconditions=pattern.postconditions,

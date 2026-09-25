@@ -342,6 +342,16 @@ class RuleStateGuard:
     subject_ref: RuleSquareRef | None = None
 
 
+@dataclass(frozen=True, slots=True)
+class RuleSquareZoneGuard:
+    """Test a bound action square against an explicit zone, independent of occupancy."""
+
+    square_ref: RuleSquareRef
+    spatial: RuleSpatialSelector
+    relation: str = "inside"  # inside | outside
+    owner_relative: bool = True
+
+
 DECLARATION_OUTCOMES = ("WIN", "RESTART", "NO_CONTEST", "LOSS")
 
 
@@ -465,6 +475,7 @@ class RuleSemanticAction:
     promotion_mode: str = "none"          # none | inherit_compiled_masks | explicit
     explicit_promotion_type: str | None = None
     triggers: tuple[RuleTransitionTrigger, ...] = ()
+    square_zone_guards: tuple[RuleSquareZoneGuard, ...] = ()
 
 
 def _require_member(value: str, allowed: tuple[str, ...], path: str, code: str) -> str:
@@ -769,6 +780,48 @@ def state_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleStateGuard:
         comparison=comparison,
         value=value,
         subject_ref=subject_ref,
+    )
+
+
+def square_zone_guard_to_dict(value: RuleSquareZoneGuard) -> dict:
+    return {
+        "square_ref": square_ref_to_dict(value.square_ref),
+        "spatial": spatial_selector_to_dict(value.spatial),
+        "relation": value.relation,
+        "owner_relative": value.owner_relative,
+    }
+
+
+def square_zone_guard_from_dict(data: Mapping[str, Any], path: str) -> RuleSquareZoneGuard:
+    data = _require_mapping(data, path)
+    relation = _require_member(
+        _require_str(data.get("relation", "inside"), f"{path}.relation"),
+        ("inside", "outside"),
+        f"{path}.relation",
+        "SQUARE_ZONE_RELATION_INVALID",
+    )
+    owner_relative = data.get("owner_relative", True)
+    if not isinstance(owner_relative, bool):
+        raise _err("FIELD_NOT_BOOL", f"{path}.owner_relative", "expected boolean")
+    square_ref = square_ref_from_dict(
+        _require_mapping(_require_field(data, "square_ref", path), f"{path}.square_ref"),
+        f"{path}.square_ref",
+    )
+    spatial = spatial_selector_from_dict(
+        _require_mapping(_require_field(data, "spatial", path), f"{path}.spatial"),
+        f"{path}.spatial",
+    )
+    if spatial.kind != "zone":
+        raise _err(
+            "SQUARE_ZONE_SELECTOR_INVALID",
+            f"{path}.spatial.kind",
+            "square zone guard requires a zone selector",
+        )
+    return RuleSquareZoneGuard(
+        square_ref=square_ref,
+        spatial=spatial,
+        relation=relation,
+        owner_relative=owner_relative,
     )
 
 
@@ -1259,7 +1312,7 @@ def postcondition_from_dict(data: Mapping[str, Any], path: str) -> RulePostcondi
 def semantic_action_to_dict(
     value: RuleSemanticAction, *, include_none_subject_ref: bool = True
 ) -> dict:
-    return {
+    data = {
         "name": value.name,
         "type_ids": list(value.type_ids),
         "geometry": geometry_spec_to_dict(value.geometry),
@@ -1284,6 +1337,11 @@ def semantic_action_to_dict(
         "explicit_promotion_type": value.explicit_promotion_type,
         "triggers": [transition_trigger_to_dict(t) for t in value.triggers],
     }
+    if value.square_zone_guards:
+        data["square_zone_guards"] = [
+            square_zone_guard_to_dict(g) for g in value.square_zone_guards
+        ]
+    return data
 
 
 def semantic_action_from_dict(data: Mapping[str, Any], path: str) -> RuleSemanticAction:
@@ -1370,6 +1428,10 @@ def semantic_action_from_dict(data: Mapping[str, Any], path: str) -> RuleSemanti
         triggers=tuple(
             transition_trigger_from_dict(item, f"{path}.triggers[{i}]")
             for i, item in enumerate(data.get("triggers", ()))
+        ),
+        square_zone_guards=tuple(
+            square_zone_guard_from_dict(item, f"{path}.square_zone_guards[{i}]")
+            for i, item in enumerate(data.get("square_zone_guards", ()))
         ),
     )
 

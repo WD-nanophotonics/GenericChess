@@ -1172,6 +1172,30 @@ class SemanticEngine:
                 guard, position, binding, perspective, checkpoint=checkpoint
             ):
                 return False
+        for guard in pattern.square_zone_guards:
+            _checkpoint(checkpoint)
+            square_idx = _resolve_square_ref(
+                guard.square_ref,
+                self.support,
+                self.ir.aux_slots,
+                position,
+                perspective,
+                binding,
+            )
+            zone = self.ir.zones.get(guard.spatial.zone_id)
+            if square_idx is None or zone is None:
+                return False
+            zone_squares = zone.squares
+            if guard.owner_relative and binding.actor_owner == 1:
+                shape = self.support.board_shape
+                zone_squares = tuple(
+                    (shape.height - 1 - index // shape.width) * shape.width
+                    + (shape.width - 1 - index % shape.width)
+                    for index in zone.squares
+                )
+            is_inside = square_idx in zone_squares
+            if (guard.relation == "inside") != is_inside:
+                return False
         for slot_guard in pattern.slot_guards:
             _checkpoint(checkpoint)
             if not self._slot_guard_holds(slot_guard, position, binding, perspective):

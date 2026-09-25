@@ -828,6 +828,12 @@ def build_semantic_compile_payload(semantic):
     n = support.board_size
 
     _validate(
+        not any(pattern.square_zone_guards for pattern in ir.patterns),
+        "square zone guards are unsupported by native semantic execution",
+        fingerprint,
+    )
+
+    _validate(
         1 <= n <= 16 and n * n <= 256,
         "semantic board size out of native range",
         fingerprint,
