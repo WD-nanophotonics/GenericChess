@@ -56,8 +56,15 @@ def test_xiangqi_cannon_capture_query_respects_zero_one_two_screens(xiangqi):
         result = query_capture_sources(position, target, 0, compiled)
         target_index = square_to_index(target, position.board_shape)
         assert (source in result.pseudo_attack_sources) is expected
+        assert (source in result.pseudo_capture_sources) is expected
         assert engine.is_square_attacked(position, target_index, 0) is expected
         assert (source in result.legal_capture_sources) is expected
+
+        off_turn = query_capture_sources(
+            replace(position, side_to_move=1), target, 0, compiled
+        )
+        assert off_turn.pseudo_capture_sources == result.pseudo_capture_sources
+        assert off_turn.legal_capture_sources is None
 
 
 def test_xiangqi_horse_source_query_respects_blocked_leg(xiangqi):
@@ -79,8 +86,14 @@ def test_xiangqi_horse_source_query_respects_blocked_leg(xiangqi):
         result = query_capture_sources(position, target, 0, compiled)
         target_index = square_to_index(target, position.board_shape)
         assert (source in result.pseudo_attack_sources) is expected
+        assert (source in result.pseudo_capture_sources) is expected
         assert engine.is_square_attacked(position, target_index, 0) is expected
         assert (source in result.legal_capture_sources) is expected
+        off_turn = query_capture_sources(
+            replace(position, side_to_move=1), target, 0, compiled
+        )
+        assert off_turn.pseudo_capture_sources == result.pseudo_capture_sources
+        assert off_turn.legal_capture_sources is None
 
 
 def test_western_chess_distinguishes_pinned_pseudoattacker_from_legal_capture():
@@ -102,6 +115,7 @@ def test_western_chess_distinguishes_pinned_pseudoattacker_from_legal_capture():
     result = query_capture_sources(position, target, 0, compiled)
     target_index = square_to_index(target, position.board_shape)
     assert result.pseudo_attack_sources == (source,)
+    assert result.pseudo_capture_sources == (source,)
     assert result.legal_capture_sources == ()
     assert engine.is_square_attacked(position, target_index, 0) is True
 
@@ -121,11 +135,13 @@ def test_legacy_capture_source_uses_existing_geometry_and_legal_move_authority()
     )
     result = query_capture_sources(position, target, 0, compiled)
     assert result.pseudo_attack_sources == (source,)
+    assert result.pseudo_capture_sources == (source,)
     assert result.legal_capture_sources == (source,)
 
     not_moving = replace(position, side_to_move=1)
     hypothetical = query_capture_sources(not_moving, target, 0, compiled)
     assert hypothetical.pseudo_attack_sources == (source,)
+    assert hypothetical.pseudo_capture_sources == (source,)
     assert hypothetical.legal_capture_sources is None
 
 
@@ -171,6 +187,7 @@ def test_enemy_target_action_without_target_removal_is_not_reported_as_capture()
 
     result = query_capture_sources(position, target, 0, compiled)
     assert result.pseudo_attack_sources == (source,)
+    assert result.pseudo_capture_sources == ()
     assert result.legal_capture_sources == ()
 
     source_index = square_to_index(source, position.board_shape)
