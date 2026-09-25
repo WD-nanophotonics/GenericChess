@@ -118,6 +118,15 @@ class MovesPanel(QWidget):
             )
             return f"{tr.text('result.checkmate')} · {tr.text('result.wins', player=winner_name)}"
         if status == "stalemate":
+            if result.winner is not None:
+                winner_name = tr.text(
+                    "player.white" if result.winner == 0 else "player.black"
+                )
+                return (
+                    tr.text("result.stalemate")
+                    + " · "
+                    + tr.text("result.wins", player=winner_name)
+                )
             return tr.text("result.stalemate") + " · " + tr.text("result.draw")
         if status == "repetition":
             return tr.text("result.repetition") + " · " + tr.text("result.draw")

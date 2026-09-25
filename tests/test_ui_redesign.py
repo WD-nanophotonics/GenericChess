@@ -6,6 +6,7 @@ import os
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 import json
+from dataclasses import replace
 
 import pytest
 from PySide6.QtCore import QCoreApplication, QEvent, Qt
@@ -706,6 +707,24 @@ def test_game_over_overlay_stalemate(qapp):
     assert overlay.isVisible()
     assert "Draw" in overlay._winner.text()
     assert "Stalemate" in overlay._reason.text()
+    assert "Draw" in win._moves_panel._result_line(ctrl.session.result)
+
+
+def test_game_over_stalemate_loss_names_winner_in_both_panels(qapp):
+    ruleset = replace(_stalemate_ruleset(), stalemate_result="loss")
+    ctrl, win = _window_with_ruleset(qapp, ruleset)
+    ctrl.submit_action(BoardMove(Square(2, 5), Square(3, 5)))
+    win._refresh()
+
+    assert ctrl.session.result.status.value == "stalemate"
+    assert ctrl.session.result.winner == 0
+    assert "White" in win._overlay._winner.text()
+    assert "wins" in win._overlay._winner.text()
+    assert "Stalemate" in win._overlay._reason.text()
+    result_line = win._moves_panel._result_line(ctrl.session.result)
+    assert "White" in result_line
+    assert "wins" in result_line
+    assert "Draw" not in result_line
 
 
 def test_game_over_overlay_max_ply(qapp):

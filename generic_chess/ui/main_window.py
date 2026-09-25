@@ -426,6 +426,11 @@ class MainWindow(QMainWindow):
             winner = tr.text("player.white" if result.winner == 0 else "player.black")
             return tr.text("result.wins", player=winner), tr.text("result.checkmate")
         if status == "stalemate":
+            if result.winner is not None:
+                winner = tr.text(
+                    "player.white" if result.winner == 0 else "player.black"
+                )
+                return tr.text("result.wins", player=winner), tr.text("result.stalemate")
             return tr.text("result.draw"), tr.text("result.stalemate")
         if status == "repetition":
             return tr.text("result.draw"), tr.text("result.repetition")
