@@ -125,6 +125,26 @@ def test_western_chess_distinguishes_pinned_pseudoattacker_from_legal_capture():
     assert result.legal_capture_sources == ()
     assert engine.is_square_attacked(position, target_index, 0) is True
 
+    black_source = Square(4, 6)
+    black_target = Square(6, 6)
+    black_pinned = _position(
+        compiled,
+        [
+            (Square(0, 0), Piece(0, "K", "K")),
+            (Square(4, 7), Piece(1, "K", "K")),
+            (Square(4, 0), Piece(0, "R", "R")),
+            (black_source, Piece(1, "R", "R")),
+            (black_target, Piece(0, "P", "P")),
+        ],
+        side=1,
+    )
+    black_result = query_capture_sources(black_pinned, black_target, 1, compiled)
+    assert black_result.pseudo_capture_sources == (black_source,)
+    assert black_result.legal_capture_sources == ()
+    assert engine.is_square_attacked(
+        black_pinned, square_to_index(black_target, black_pinned.board_shape), 1
+    ) is True
+
 
 def test_legacy_capture_source_uses_existing_geometry_and_legal_move_authority():
     compiled = build_4x4_rooks()
