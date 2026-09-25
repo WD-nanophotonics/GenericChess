@@ -8,6 +8,7 @@ attacking source square with an externally reconstructed piece identity.
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
+from typing import Literal
 
 from ..rules.ir import geometry_candidates
 from .coordinates import Square, in_bounds, index_to_square, square_to_index
@@ -34,6 +35,18 @@ class CaptureSourceEvidence:
     pseudo_attack_sources: tuple[Square, ...]
     pseudo_capture_sources: tuple[Square, ...]
     legal_capture_sources: tuple[Square, ...] | None
+
+
+@dataclass(frozen=True, slots=True)
+class ImmediateRecaptureEvidence:
+    """Observed result of one legal capture followed by legal recapture query."""
+
+    status: Literal["verified", "unknown"]
+    capture_source: Square | None = None
+    capture_target: Square | None = None
+    pseudo_recapture_sources: tuple[Square, ...] = ()
+    recapture_sources: tuple[Square, ...] = ()
+    reason: str | None = None
 
 
 def _legacy_pseudo_sources(
@@ -283,3 +296,112 @@ def query_counterfactual_legal_capture_sources(
 
     counterfactual = replace(position, side_to_move=by_owner)
     return _legal_sources(counterfactual, target, by_owner, compiled, engine)
+
+
+def probe_immediate_recaptures(
+    position: Position, capture_action, compiled
+) -> ImmediateRecaptureEvidence:
+    """Apply one actual legal capture, then observe legal recaptures of its mover.
+
+    The probe uses the supplied position's real side-to-move and exact action
+    transition, including supported auxiliary-state effects and triggers. It
+    reports facts only; it does not infer protection policy, chase, real/fake
+    roots, or a WXF verdict. A move with extra board effects fails closed
+    because the minimal two-square target/mover interpretation would no longer
+    be complete. Position-level history-dependent terminal adjudication is
+    outside this probe.
+    """
+    from .actions import action_is_board, action_source_square, action_target_square
+
+    if not action_is_board(capture_action):
+        return ImmediateRecaptureEvidence(
+            "unknown", reason="capture is not a board action"
+        )
+    source = action_source_square(capture_action)
+    target = action_target_square(capture_action)
+    if source is None:
+        return ImmediateRecaptureEvidence(
+            "unknown", reason="capture has no board source"
+        )
+
+    try:
+        actor = position.side_to_move
+        _attacks, _captures, engine = _query_pseudo_sets(
+            position, target, actor, compiled
+        )
+        legal_sources = _legal_sources(position, target, actor, compiled, engine)
+        if source not in legal_sources:
+            return ImmediateRecaptureEvidence(
+                "unknown", source, target, reason="source has no legal capture to target"
+            )
+
+        source_index = square_to_index(source, position.board_shape)
+        target_index = square_to_index(target, position.board_shape)
+        mover = position.board[source_index]
+        if mover is None or mover.owner != actor:
+            return ImmediateRecaptureEvidence(
+                "unknown",
+                source,
+                target,
+                reason="capture source is not owned by actor",
+            )
+        if engine is None:
+            from .actions import BoardMove
+            from .movegen import _apply_action_unchecked, legal_actions_from_position
+
+            legal = legal_actions_from_position(position, compiled)
+            if not isinstance(capture_action, BoardMove) or capture_action not in legal:
+                return ImmediateRecaptureEvidence(
+                    "unknown",
+                    source,
+                    target,
+                    reason="action is not an exact legal legacy move",
+                )
+            after = _apply_action_unchecked(position, capture_action, compiled)
+        else:
+            from .semantic_executor import semantic_action_for
+
+            binding = semantic_action_for(engine, position, capture_action)
+            after = engine.apply(position, binding)
+
+        changed = {
+            index
+            for index, (before_piece, after_piece) in enumerate(
+                zip(position.board, after.board)
+            )
+            if before_piece != after_piece
+        }
+        if (
+            changed != {source_index, target_index}
+            or after.board[source_index] is not None
+            or after.board[target_index] is None
+            or after.board[target_index].owner != actor
+            or after.board[target_index].base_type_id != mover.base_type_id
+        ):
+            return ImmediateRecaptureEvidence(
+                "unknown",
+                source,
+                target,
+                reason="capture transition has unsupported or extra board effects",
+            )
+
+        _attacks, pseudo_recaptures, _after_engine = _query_pseudo_sets(
+            after, target, 1 - actor, compiled
+        )
+        recaptures = _legal_sources(
+            after, target, 1 - actor, compiled, _after_engine
+        )
+        return ImmediateRecaptureEvidence(
+            "verified",
+            source,
+            target,
+            pseudo_recapture_sources=pseudo_recaptures,
+            recapture_sources=recaptures,
+        )
+    except Exception as exc:
+        return ImmediateRecaptureEvidence(
+            "unknown",
+            source,
+            target,
+            reason=f"two-action probe failed: {type(exc).__name__}: {exc}",
+        )

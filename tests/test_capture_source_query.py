@@ -8,15 +8,16 @@ from rule_semantics_ir_fixtures import cannon_ruleset, castling_ruleset
 
 from generic_chess.core.actions import BoardMove
 from generic_chess.core.capture_sources import (
+    probe_immediate_recaptures,
     query_capture_sources,
     query_counterfactual_legal_capture_sources,
 )
 from generic_chess.core.capture_pressure_trace import trace_capture_pressure
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
-from generic_chess.core.movegen import legal_actions
+from generic_chess.core.movegen import legal_actions, legal_actions_from_position
 from generic_chess.core.pieces import Piece
-from generic_chess.core.semantic_executor import SemanticEngine
+from generic_chess.core.semantic_executor import SemanticEngine, semantic_public_actions
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import (
     compile_ruleset_for_execution,
@@ -251,6 +252,221 @@ def test_counterfactual_capture_probe_fails_closed_for_turn_bound_semantics():
     assert query_counterfactual_legal_capture_sources(
         triggered_state.position, Square(0, 7), 0, triggered
     ) is None
+
+
+def test_two_action_probe_distinguishes_legal_recapture_for_both_owners():
+    compiled = build_4x4_rooks()
+    cases = (
+        (
+            1,
+            Square(0, 2),
+            Square(3, 2),
+            Square(3, 0),
+            [
+                (Square(0, 0), Piece(0, "K", "K")),
+                (Square(3, 3), Piece(1, "K", "K")),
+                (Square(0, 2), Piece(1, "R", "R")),
+                (Square(3, 2), Piece(0, "R", "R")),
+                (Square(3, 0), Piece(0, "R", "R")),
+            ],
+        ),
+        (
+            0,
+            Square(0, 1),
+            Square(3, 1),
+            Square(3, 3),
+            [
+                (Square(0, 3), Piece(1, "K", "K")),
+                (Square(3, 0), Piece(0, "K", "K")),
+                (Square(0, 1), Piece(0, "R", "R")),
+                (Square(3, 1), Piece(1, "R", "R")),
+                (Square(3, 3), Piece(1, "R", "R")),
+            ],
+        ),
+    )
+
+    for actor, source, target, protector, pieces in cases:
+        protected = _position(compiled, pieces, side=actor)
+        unprotected = replace(
+            protected,
+            board=tuple(
+                None if square_to_index(protector, protected.board_shape) == i else piece
+                for i, piece in enumerate(protected.board)
+            ),
+        )
+        action = next(
+            candidate
+            for candidate in legal_actions_from_position(protected, compiled)
+            if isinstance(candidate, BoardMove)
+            and candidate.from_square == source
+            and candidate.to_square == target
+        )
+        assert action in legal_actions_from_position(unprotected, compiled)
+
+        protected_result = probe_immediate_recaptures(protected, action, compiled)
+        unprotected_result = probe_immediate_recaptures(unprotected, action, compiled)
+        assert protected_result.status == "verified", protected_result.reason
+        assert unprotected_result.status == "verified", unprotected_result.reason
+        assert protected_result.capture_source == source
+        assert protected_result.capture_target == target
+        assert protected_result.recapture_sources == (protector,)
+        assert unprotected_result.recapture_sources == ()
+
+
+def test_two_action_probe_keeps_pinned_pseudo_recapturer_out_of_legal_sources():
+    rows = [[None] * 5 for _ in range(5)]
+    rows[0][1] = Piece(0, "K", "K")
+    rows[4][4] = Piece(1, "K", "K")
+    mask = (True,) * 25
+    compiled = compile_ruleset_for_execution(
+        RuleSet(
+            board_size=5,
+            piece_types=(king_type(), rook_type()),
+            initial_position=tuple(tuple(row) for row in rows),
+            drop_allowed={"R": (mask, mask)},
+            promotion_allowed={},
+            promotion_forced={},
+        )
+    )
+    source = Square(3, 3)
+    target = Square(3, 1)
+    protector = Square(1, 1)
+    pinner = Square(1, 4)
+    protected = _position(
+        compiled,
+        [
+            (Square(1, 0), Piece(0, "K", "K")),
+            (Square(4, 4), Piece(1, "K", "K")),
+            (protector, Piece(0, "R", "R")),
+            (pinner, Piece(1, "R", "R")),
+            (source, Piece(1, "R", "R")),
+            (target, Piece(0, "R", "R")),
+        ],
+        side=1,
+    )
+    action = next(
+        candidate
+        for candidate in legal_actions_from_position(protected, compiled)
+        if isinstance(candidate, BoardMove)
+        and candidate.from_square == source
+        and candidate.to_square == target
+    )
+    fake_root = probe_immediate_recaptures(protected, action, compiled)
+    assert fake_root.status == "verified", fake_root.reason
+    assert fake_root.pseudo_recapture_sources == (protector,)
+    assert fake_root.recapture_sources == ()
+
+    unpinned = replace(
+        protected,
+        board=tuple(
+            None if square_to_index(pinner, protected.board_shape) == i else piece
+            for i, piece in enumerate(protected.board)
+        ),
+    )
+    real_root = probe_immediate_recaptures(unpinned, action, compiled)
+    assert real_root.status == "verified", real_root.reason
+    assert real_root.pseudo_recapture_sources == (protector,)
+    assert real_root.recapture_sources == (protector,)
+
+
+def test_two_action_probe_uses_semantic_capture_and_transition_authorities():
+    compiled = compile_ruleset_for_execution(cannon_ruleset())
+    engine = SemanticEngine(compiled)
+    position = _position(
+        compiled,
+        [
+            (Square(7, 7), Piece(0, "K", "K")),
+            (Square(1, 0), Piece(1, "K", "K")),  # one capture screen
+            (Square(0, 0), Piece(0, "C", "C")),
+            (Square(2, 0), Piece(1, "C", "C")),
+        ],
+        side=0,
+    )
+    action = next(
+        candidate
+        for candidate in semantic_public_actions(engine, position)
+        if getattr(candidate, "from_square", None) == Square(0, 0)
+        and getattr(candidate, "to_square", None) == Square(2, 0)
+    )
+    result = probe_immediate_recaptures(position, action, compiled)
+    assert result.status == "verified", result.reason
+    assert result.recapture_sources == (Square(1, 0),)
+
+
+def test_two_action_probe_applies_supported_aux_transition_triggers():
+    compiled = compile_ruleset_for_execution(castling_ruleset())
+    engine = SemanticEngine(compiled)
+    position = _position(
+        compiled,
+        [
+            (Square(4, 0), Piece(0, "K", "K")),
+            (Square(7, 0), Piece(0, "R", "R")),
+            (Square(3, 7), Piece(1, "K", "K")),
+            (Square(0, 7), Piece(1, "R", "R")),
+            (Square(6, 0), Piece(1, "R", "R")),
+        ],
+        side=0,
+    )
+    action = next(
+        candidate
+        for candidate in semantic_public_actions(engine, position)
+        if getattr(candidate, "from_square", None) == Square(7, 0)
+        and getattr(candidate, "to_square", None) == Square(6, 0)
+    )
+    result = probe_immediate_recaptures(position, action, compiled)
+    assert result.status == "verified", result.reason
+    assert result.pseudo_recapture_sources == ()
+    assert result.recapture_sources == ()
+
+
+def test_two_action_probe_returns_unknown_for_extra_board_effects():
+    ruleset = cannon_ruleset()
+    actions = tuple(
+        replace(
+            action,
+            effects=action.effects
+            + (
+                RuleActionEffect(
+                    "move",
+                    from_ref=RuleSquareRef(
+                        kind="fixed", square=(7, 0), owner_relative=False
+                    ),
+                    to_ref=RuleSquareRef(
+                        kind="fixed", square=(6, 0), owner_relative=False
+                    ),
+                    piece_owner="self",
+                ),
+            ),
+        )
+        if action.name == "cannon_capture"
+        else action
+        for action in ruleset.semantic_actions
+    )
+    compiled = compile_semantic_ruleset(
+        replace(ruleset, semantic_actions=actions)
+    )
+    engine = SemanticEngine(compiled)
+    position = _position(
+        compiled,
+        [
+            (Square(7, 7), Piece(0, "K", "K")),
+            (Square(1, 0), Piece(1, "K", "K")),
+            (Square(0, 0), Piece(0, "C", "C")),
+            (Square(2, 0), Piece(1, "C", "C")),
+            (Square(7, 0), Piece(0, "C", "C")),
+        ],
+        side=0,
+    )
+    action = next(
+        candidate
+        for candidate in semantic_public_actions(engine, position)
+        if getattr(candidate, "from_square", None) == Square(0, 0)
+        and getattr(candidate, "to_square", None) == Square(2, 0)
+    )
+    result = probe_immediate_recaptures(position, action, compiled)
+    assert result.status == "unknown"
+    assert result.recapture_sources == ()
+    assert "extra board effects" in result.reason
 
 
 def test_capture_query_requires_an_occupied_enemy_target(xiangqi):
