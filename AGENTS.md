@@ -3,7 +3,9 @@
 This file is the sole policy authority. Work only in
 `GenericChess-sandbox`; preserve unrelated changes. Keep one registered
 Worker, Courier session, worktree, and Heavy job. Never create a replacement
-request, Worker, browser, or worktree. Generated binaries, raw benchmarks,
+Courier request, browser, or worktree except for an explicitly authorized
+supersession of a proven unsubmitted request. Replace a Worker only under the
+Goal-blocked or three-refusal rule below. Generated binaries, raw benchmarks,
 Courier runtime, and transient evidence stay out of Git. Publish only tested
 checkpoints to `origin/sandbox` and verify the full remote SHA. Never use
 Gmail, `gc-bridge`, a background Courier daemon, WSL, or a bypass transport.
@@ -70,13 +72,39 @@ state-machine stages, IDs, SHA gates, approval commands, or audit material.
 
 ## Worker loop
 
+The Supervisor remains responsible for continuity. A refusal counts only
+when the Worker declines or stops work without one of the legal stop
+conditions below, after receiving a clear continuation instruction. Count
+three distinct consecutive refusals, not three hourly observations of the
+same stopped turn. A resumed work turn resets the count. On the first such
+stop, continue the same Worker using gpt-6-luna / high and require it to
+enable or resume a persistent Goal in its own task. After the third
+consecutive refusal, retire the old Worker, delete its task if the app
+supports deletion, and register exactly one new Worker using gpt-6-luna /
+high with an active persistent Goal. If the app offers only archive, archive
+the old task and tell the user explicitly that it was not deleted. Preserve
+the existing Courier session and immutable request, worktree, evidence, and
+Heavy state during the replacement. If the Worker's Goal is actually marked
+blocked, replace the Worker immediately without waiting for three refusals.
+Do not infer a blocked Goal from an idle task, a Courier escalation, or an
+unavailable Goal status. Ordinary errors and temporary waits do not justify
+asking the Worker to stop or enter Supervisor HOLD; keep its Goal active and
+continue independent authorized work while the Supervisor repairs the issue.
+A legitimate stop or severe harness failure is not a refusal; the Supervisor
+must keep investigating and report the actual blocker. The Supervisor does
+not enable Goal for itself.
+
 Use the existing Courier request in a loop: obtain the next order, implement
 it, test it, commit it, publish it, close it out, and obtain the next order in
 the same turn. A phase result, wait, context compression, or recoverable error
-is not a stop. A phase-level result continues to the next work order. Stop only for explicit whole-project completion, user stop,
-active Supervisor HOLD, ownership conflict, uncertain irreversible effect, or
-severe harness failure. Retry ordinary transport faults with the same
-immutable request once before escalation; never create a replacement request.
+is not a stop. A phase-level result continues to the next work order. Stop
+only for explicit whole-project completion, user stop, active Supervisor HOLD,
+ownership conflict, or uncertain irreversible effect. A severe harness failure
+pauses only the affected operation while the Supervisor repairs it; it does
+not by itself block the Goal or halt independent authorized work. Retry
+ordinary transport faults with the same immutable request once before
+escalation; supersede a proven unsubmitted request only on explicit user
+authority and preserve its evidence.
 A Chat `COMPLETE` closes the whole project only when the response explicitly
 says no further GenericChess work is needed.
 
