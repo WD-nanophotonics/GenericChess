@@ -158,7 +158,7 @@ def test_square_geometry_catalog_and_metadata_match_frozen_hashes(
     assert _metadata_hash(compiled) == metadata_sha
 
 
-def test_public_compilers_still_reject_rectangular_semantic_execution():
+def test_public_legacy_compiler_rejects_rectangle_but_semantic_compiler_executes():
     rules = cannon_ruleset()
     shape = BoardShape(9, 10)
     rows = [[None] * shape.width for _ in range(shape.height)]
@@ -174,5 +174,8 @@ def test_public_compilers_still_reject_rectangular_semantic_execution():
     )
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_ruleset(rectangular, allow_semantic_actions=True)
-    with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
-        compile_semantic_ruleset(rectangular)
+    semantic = compile_semantic_ruleset(rectangular)
+    assert semantic.board_shape == shape
+    assert semantic.ir.capabilities.new_ir_core_executable
+    assert not semantic.ir.capabilities.legacy_core_executable
+    assert not semantic.ir.capabilities.native_executable

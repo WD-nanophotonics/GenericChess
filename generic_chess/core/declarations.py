@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .attacks import is_in_check
+from .coordinates import BoardShape
 from .errors import ensure_ruleset_match
 from .position import GameState, Position
 
@@ -50,30 +51,30 @@ def _compare(op: str, left: int, right: int) -> bool:
     }.get(op, False)
 
 
-def _fixed_index(ref, board_size: int) -> int | None:
+def _fixed_index(ref, shape: BoardShape) -> int | None:
     if ref is None or ref.kind != "fixed" or ref.square is None:
         return None
     file, rank = ref.square
-    if not (0 <= file < board_size and 0 <= rank < board_size):
+    if not (0 <= file < shape.width and 0 <= rank < shape.height):
         return None
-    return rank * board_size + file
+    return rank * shape.width + file
 
 
-def _spatial_holds(spatial, index: int, declaration, board_size: int) -> bool:
+def _spatial_holds(spatial, index: int, declaration, shape: BoardShape) -> bool:
     if spatial.kind == "zone":
         zone = declaration.zones.get(spatial.zone_id)
         return zone is not None and index in zone.squares
     if spatial.kind == "exact" and spatial.refs:
-        return index == _fixed_index(spatial.refs[0], board_size)
+        return index == _fixed_index(spatial.refs[0], shape)
     return False
 
 
 def _guard_holds(guard, position: Position, declaration, actor: int) -> bool:
-    board_size = int(len(position.board) ** 0.5)
+    shape = position.board_shape
     if guard.location != "board":
         return False
     if guard.subject_ref is not None:
-        indices = (_fixed_index(guard.subject_ref, board_size),)
+        indices = (_fixed_index(guard.subject_ref, shape),)
     else:
         indices = range(len(position.board))
     count = 0
@@ -95,7 +96,7 @@ def _guard_holds(guard, position: Position, declaration, actor: int) -> bool:
             return False
         if guard.promoted != "any" and ((guard.promoted == "yes") != piece.promoted):
             continue
-        if not _spatial_holds(guard.spatial, index, declaration, board_size):
+        if not _spatial_holds(guard.spatial, index, declaration, shape):
             continue
         count += 1
     value = (1 if count else 0) if guard.aggregation == "exists" else count
@@ -113,14 +114,14 @@ def _score(position: Position, declaration, actor: int) -> int:
     metric = declaration.weighted_metric
     if metric is None:
         return 0
-    board_size = int(len(position.board) ** 0.5)
+    shape = position.board_shape
     weights = dict(metric.weights)
     score = 0
     for index, piece in enumerate(position.board):
         if piece is None or not _owner_matches(metric.owner, piece.owner, actor):
             continue
         if metric.spatial is not None and not _spatial_holds(
-            metric.spatial, index, declaration, board_size
+            metric.spatial, index, declaration, shape
         ):
             continue
         type_id = piece.base_type_id if metric.compare_field == "base" else piece.current_type_id

@@ -534,6 +534,12 @@ class CompiledSemanticRuleset:
         raise RuntimeError("semantic ruleset has no support payload; board_size unavailable")
 
     @property
+    def board_shape(self) -> BoardShape:
+        if self.support is not None:
+            return self.support.board_shape
+        raise RuntimeError("semantic ruleset has no support payload; board_shape unavailable")
+
+    @property
     def repetition_policy(self) -> str:
         if self.support is not None:
             return self.support.repetition_policy

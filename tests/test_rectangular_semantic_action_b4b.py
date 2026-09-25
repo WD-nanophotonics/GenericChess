@@ -255,8 +255,9 @@ def test_xiangqi_quiet_and_one_screen_capture_lower_to_distinct_static_ir():
     assert errors == []
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_ruleset(rules, allow_semantic_actions=True)
-    with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
-        compile_semantic_ruleset(rules)
+    compiled = compile_semantic_ruleset(rules)
+    assert compiled.ir.capabilities.new_ir_core_executable
+    assert not compiled.ir.capabilities.native_executable
 
 
 def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref():
@@ -327,7 +328,7 @@ def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref()
     assert ir.capabilities.contains_state_guard
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_ruleset(rules, allow_semantic_actions=True)
-    with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
+    with pytest.raises(RuleValidationError, match="INITIAL_NO_LEGAL_MOVE"):
         compile_semantic_ruleset(rules)
 
     multiple_leaps = replace(
@@ -347,9 +348,14 @@ def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref()
         _lower_compile_only_single_source_offset_guard(multi_carrier, multiple_leaps)
 
 
-def test_public_semantic_compiler_still_rejects_rectangular_execution():
+def test_public_semantic_compiler_uses_shape_carrier_but_legacy_compile_stays_closed():
+    compiled = compile_semantic_ruleset(_rectangular_single_capture_ruleset())
+    assert compiled.board_shape == BoardShape(9, 10)
+    assert compiled.ir.capabilities.new_ir_core_executable
+    assert not compiled.ir.capabilities.legacy_core_executable
+    assert not compiled.ir.capabilities.native_executable
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
-        compile_semantic_ruleset(_rectangular_single_capture_ruleset())
+        compile_ruleset(_rectangular_single_capture_ruleset(), allow_semantic_actions=True)
 
 
 def test_shared_semantic_lowering_accepts_shape_carrier_without_enabling_execution():
@@ -419,10 +425,9 @@ def test_shared_semantic_lowering_accepts_shape_carrier_without_enabling_executi
         for paths in geometry.paths.values()
     )
 
-    with pytest.raises(
-        RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"
-    ):
-        compile_semantic_ruleset(rules)
+    public_compiled = compile_semantic_ruleset(rules)
+    assert public_compiled.ir.capabilities.new_ir_core_executable
+    assert not public_compiled.ir.capabilities.native_executable
     with pytest.raises(ValueError, match="does not match"):
         _compile_semantic_ruleset_from_baseline(
             carrier, replace(rules, max_ply=rules.max_ply + 1)

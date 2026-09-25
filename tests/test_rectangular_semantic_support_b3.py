@@ -129,7 +129,7 @@ def test_square_semantic_support_identity_matches_prechange_hash(builder, expect
     assert _support_hash(support) == expected_hash
 
 
-def test_carrier_must_match_ruleset_and_public_rectangular_execution_stays_closed():
+def test_carrier_must_match_ruleset_and_semantic_public_compile_uses_carrier():
     rules = _rectangular_rules(9, 10)
     carrier = _compile_geometry_carrier(rules)
     mismatched_rules = _rectangular_rules(10, 9)
@@ -150,5 +150,9 @@ def test_carrier_must_match_ruleset_and_public_rectangular_execution_stays_close
     )
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_ruleset(rectangular_semantic_rules, allow_semantic_actions=True)
-    with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
-        compile_semantic_ruleset(rectangular_semantic_rules)
+    compiled = compile_semantic_ruleset(rectangular_semantic_rules)
+    assert compiled.board_shape.width == 9
+    assert compiled.board_shape.height == 10
+    assert compiled.ir.capabilities.new_ir_core_executable
+    assert not compiled.ir.capabilities.legacy_core_executable
+    assert not compiled.ir.capabilities.native_executable

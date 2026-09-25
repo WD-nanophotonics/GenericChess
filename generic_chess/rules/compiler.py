@@ -1626,9 +1626,9 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
 
     The normalized pattern set is the final action template set
     (legacy - replaced + augment + replacements); an executor consumes only
-    this IR and never the high-level RuleSet.  Public rectangular compilation
-    remains fail-closed at ``compile_ruleset``; shape-carrier lowering is an
-    internal diagnostic path only.
+    this IR and never the high-level RuleSet. Rectangular semantic rules use
+    the shape carrier and are executable only by the Python reference engine;
+    the legacy compiler remains square-only and native capability stays off.
     """
     if not isinstance(ruleset, RuleSet):
         ruleset = ruleset_from_dict(ruleset)
@@ -1650,19 +1650,78 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
                         )
                     ]
                 )
-    # This public boundary deliberately keeps the rectangular execution gate.
+    shape = ruleset.board_shape
+    if shape.width != shape.height:
+        carrier = _compile_geometry_carrier(ruleset)
+        compiled = _compile_semantic_ruleset_from_baseline(
+            carrier, ruleset, enable_rectangular_reference_executor=True
+        )
+        if not compiled.ir.capabilities.new_ir_core_executable:
+            raise RuleValidationError(
+                [
+                    ValidationIssue(
+                        "RECTANGULAR_SEMANTIC_EXECUTION_UNSUPPORTED",
+                        "ruleset.semantic_actions",
+                        "the rectangular reference executor does not support this semantic IR combination",
+                    )
+                ]
+            )
+        _validate_semantic_initial_position(compiled)
+        fingerprint = compute_fingerprint(ruleset)
+        if compute_fingerprint(deserialize_ruleset(serialize_ruleset(ruleset))) != fingerprint:
+            raise RuleValidationError(
+                [
+                    ValidationIssue(
+                        "ROUNDTRIP_FINGERPRINT_MISMATCH",
+                        "ruleset",
+                        "serialization round-trip changed the semantic fingerprint",
+                    )
+                ]
+            )
+        return compiled
     baseline = compile_ruleset(ruleset, allow_semantic_actions=True)
     return _compile_semantic_ruleset_from_baseline(baseline, ruleset)
+
+
+def _validate_semantic_initial_position(compiled) -> None:
+    """Validate a carrier-backed semantic start position with its executor."""
+    from ..core.semantic_executor import SemanticEngine
+
+    engine = SemanticEngine(compiled)
+    position = engine._initial_position()
+    issues = []
+    for player in (0, 1):
+        if engine.in_check(position, player):
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_ANCHOR_ATTACKED",
+                    "initial_position",
+                    f"player {player}'s anchor is attacked at the initial position",
+                )
+            )
+    if not engine.has_legal_action(position):
+        issues.append(
+            ValidationIssue(
+                "INITIAL_NO_LEGAL_MOVE",
+                "initial_position",
+                "the side to move has no legal action at the initial position",
+            )
+        )
+    if issues:
+        raise RuleValidationError(issues)
 
 
 def _compile_semantic_ruleset_from_baseline(
     baseline: CompiledRuleSet | CompiledGeometryCarrier,
     ruleset: RuleSet,
+    *,
+    enable_rectangular_reference_executor: bool = False,
 ):
     """Shared semantic action-to-IR lowering for executable and shape carriers.
 
-    A carrier plus its matching RuleSet supplies definition-layer metadata
-    without claiming that the resulting rectangular IR is publicly executable.
+    A carrier supplies definition-layer metadata only by default. The public
+    rectangular semantic compiler opts into the Python reference executor
+    after IR validation; diagnostic carrier callers remain non-executable.
     """
     from . import ir as ir_module
     from .ir import (
@@ -1686,6 +1745,10 @@ def _compile_semantic_ruleset_from_baseline(
     from .schema import MAX_SEMANTIC_AUX_SLOTS, SEMANTIC_STRATA
 
     compile_only = isinstance(baseline, CompiledGeometryCarrier)
+    if enable_rectangular_reference_executor and (
+        not compile_only or baseline.board_shape.width == baseline.board_shape.height
+    ):
+        raise ValueError("rectangular reference execution requires a rectangular shape carrier")
     if compile_only:
         if (
             ruleset.board_shape != baseline.board_shape
@@ -1922,7 +1985,7 @@ def _compile_semantic_ruleset_from_baseline(
         # time.  A successful compile therefore implies every emitted
         # postcondition is B-3 supported, so the S4 fail-closed gate is
         # retired (ADR-016 section 13; spec R2 supersession).
-        new_ir_core_executable=not compile_only,
+        new_ir_core_executable=(not compile_only or enable_rectangular_reference_executor),
         native_executable=False,
         contains_path_predicate=contains_path,
         contains_state_guard=contains_guard,
