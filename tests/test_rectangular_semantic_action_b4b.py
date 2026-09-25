@@ -6,9 +6,15 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from generic_chess.core.coordinates import BoardShape
+from generic_chess.core.coordinates import BoardShape, Square
 from generic_chess.core.movement import LeapAtom
 from generic_chess.core.pieces import Piece, PieceType
+from generic_chess.core.semantic_executor import (
+    SemanticEngine,
+    _resolve_square_ref,
+    _semantic_public_action,
+    semantic_action_for,
+)
 from generic_chess.rules.compiler import (
     _compile_geometry_carrier,
     _lower_compile_only_ray_path_actions,
@@ -18,6 +24,8 @@ from generic_chess.rules.compiler import (
     lower_legacy_to_ir,
 )
 from generic_chess.rules.ir import (
+    CompiledSquareRef,
+    CompiledSemanticRuleset,
     geometry_candidates,
     validate_executable_completeness,
     validate_ir,
@@ -333,3 +341,137 @@ def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref()
 def test_public_semantic_compiler_still_rejects_rectangular_execution():
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_semantic_ruleset(_rectangular_single_capture_ruleset())
+
+
+def _rectangular_horse_executor_witness():
+    base = _horse_leg_guard_ruleset()
+    shape = BoardShape(9, 10)
+    rows = [[None] * shape.width for _ in range(shape.height)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[9][8] = Piece(1, "K", "K")
+    rules = replace(
+        base,
+        board_size=None,
+        board_width=shape.width,
+        board_height=shape.height,
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={
+            "H": ((False,) * shape.area, (False,) * shape.area)
+        },
+    )
+    carrier = _compile_geometry_carrier(rules)
+    ir, support = _lower_compile_only_single_source_offset_guard(carrier, rules)
+    # Exercise only the already-precompiled Python executor seam. Keep the
+    # compiler's rectangular execution capability flags fail-closed.
+    semantic = CompiledSemanticRuleset(ir=ir, support=support)
+    engine = SemanticEngine.__new__(SemanticEngine)
+    engine.semantic = semantic
+    engine.ir = ir
+    engine.support = support
+    engine._patterns = ir.patterns
+    return engine
+
+
+@pytest.mark.parametrize(
+    "owner,source,target,leg,target_square",
+    [
+        (0, 4 * 9 + 3, 5 * 9 + 5, 4 * 9 + 4, Square(5, 5)),
+        (1, 5 * 9 + 5, 4 * 9 + 3, 5 * 9 + 4, Square(3, 4)),
+    ],
+)
+def test_python_executor_resolves_rectangular_horse_leg_and_trial_shape(
+    owner, source, target, leg, target_square
+):
+    from generic_chess.core.coordinates import index_to_square
+
+    engine = _rectangular_horse_executor_witness()
+    assert not engine.ir.capabilities.new_ir_core_executable
+    assert not engine.ir.capabilities.legacy_core_executable
+    assert not engine.ir.capabilities.native_executable
+    position = engine._initial_position()
+    board = list(position.board)
+    board[source] = Piece(owner, "H", "H")
+    position = replace(
+        position,
+        board=tuple(board),
+        side_to_move=owner,
+    )
+
+    assert position.board_shape == BoardShape(9, 10)
+    actions = tuple(engine.iter_legal_action_bindings(position))
+    action, binding = next(
+        (action, binding)
+        for action, binding in actions
+        if action.pattern_id.endswith("horse_leg_step") and action.target == target
+    )
+    assert index_to_square(action.target, engine.support.board_shape) == target_square
+    public_action = _semantic_public_action(engine, action)
+    assert public_action.from_square == index_to_square(
+        source, engine.support.board_shape
+    )
+    assert public_action.to_square == target_square
+    assert semantic_action_for(engine, position, public_action) == action
+    guard_ref = next(
+        pattern for pattern in engine._patterns
+        if pattern.name == "horse_leg_step"
+    ).guards[0].spatial.refs[0]
+    assert _resolve_square_ref(
+        guard_ref, engine.support, engine.ir.aux_slots,
+        position, owner, binding,
+    ) == leg
+
+    child = engine._trial_child_if_s3_legal(
+        binding.pattern, position, action, binding
+    )
+    assert child is not None
+    assert child.board_shape == BoardShape(9, 10)
+    assert len(child.board) == 90
+    assert child.side_to_move == 1 - owner
+    assert child.board[target] == Piece(owner, "H", "H")
+    assert child.board[source] is None
+
+    blocked_board = list(position.board)
+    blocked_board[leg] = Piece(1 - owner, "H", "H")
+    blocked = replace(position, board=tuple(blocked_board))
+    assert not any(
+        action.pattern_id.endswith("horse_leg_step") and action.target == target
+        for action in engine.legal_actions(blocked)
+    )
+
+
+def test_python_executor_rectangular_offset_ref_is_none_out_of_bounds():
+    from types import SimpleNamespace
+
+    engine = _rectangular_horse_executor_witness()
+    guard_ref = next(
+        pattern for pattern in engine._patterns
+        if pattern.name == "horse_leg_step"
+    ).guards[0].spatial.refs[0]
+    binding = SimpleNamespace(
+        source=4 * 9 + 8,
+        target=5 * 9 + 8,
+        path=(),
+    )
+    assert _resolve_square_ref(
+        guard_ref, engine.support, engine.ir.aux_slots,
+        engine._initial_position(), 0, binding,
+    ) is None
+
+
+def test_python_executor_resolves_fixed_refs_with_rectangular_rotation():
+    from types import SimpleNamespace
+
+    engine = _rectangular_horse_executor_witness()
+    position = engine._initial_position()
+    binding = SimpleNamespace(source=0, target=1, path=())
+    fixed = CompiledSquareRef(
+        kind="fixed", square=(7, 2), owner_relative=True
+    )
+    assert _resolve_square_ref(
+        fixed, engine.support, engine.ir.aux_slots,
+        position, 0, binding,
+    ) == 2 * 9 + 7
+    assert _resolve_square_ref(
+        fixed, engine.support, engine.ir.aux_slots,
+        position, 1, binding,
+    ) == 7 * 9 + 1

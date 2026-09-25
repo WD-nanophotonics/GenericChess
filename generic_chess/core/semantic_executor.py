@@ -84,7 +84,6 @@ class _ActionBinding:
 
 
 def _own_anchor(position: Position, support, side: int) -> int | None:
-    n = support.board_size
     for idx, piece in enumerate(position.board):
         if piece is not None and piece.owner == side:
             meta = support.type_metadata.get(piece.current_type_id)
@@ -135,7 +134,7 @@ def _semantic_public_action(engine, action: SemanticAction):
             pattern_id=action.pattern_id,
             geometry_id=action.geometry_id,
             base_type_id=action.actor_type,
-            to_square=index_to_square(action.target, engine.support.board_size),
+            to_square=index_to_square(action.target, engine.support.board_shape),
         )
     if action.geometry_id is None or action.actor_type is None:
         raise RuntimeError(
@@ -145,8 +144,8 @@ def _semantic_public_action(engine, action: SemanticAction):
         pattern_id=action.pattern_id,
         geometry_id=action.geometry_id,
         actor_type_id=action.actor_type,
-        from_square=index_to_square(action.source, engine.support.board_size),
-        to_square=index_to_square(action.target, engine.support.board_size),
+        from_square=index_to_square(action.source, engine.support.board_shape),
+        to_square=index_to_square(action.target, engine.support.board_shape),
         promotion_target_id=action.promotion_target_id,
     )
 
@@ -189,11 +188,11 @@ def semantic_action_for(engine, position: Position, action):
     for candidate in engine.iter_legal_actions(position):
         if isinstance(action, SemanticBoardMove):
             from_sq = (
-                index_to_square(candidate.source, engine.support.board_size)
+                index_to_square(candidate.source, engine.support.board_shape)
                 if candidate.source is not None
                 else None
             )
-            to_sq = index_to_square(candidate.target, engine.support.board_size)
+            to_sq = index_to_square(candidate.target, engine.support.board_shape)
             if (
                 candidate.source is not None
                 and candidate.pattern_id == action.pattern_id
@@ -205,7 +204,7 @@ def semantic_action_for(engine, position: Position, action):
             ):
                 candidates.append(candidate)
         elif isinstance(action, SemanticDropMove):
-            to_sq = index_to_square(candidate.target, engine.support.board_size)
+            to_sq = index_to_square(candidate.target, engine.support.board_shape)
             if (
                 candidate.source is None
                 and candidate.pattern_id == action.pattern_id
@@ -216,11 +215,11 @@ def semantic_action_for(engine, position: Position, action):
                 candidates.append(candidate)
         elif isinstance(action, BoardMove):
             from_sq = (
-                index_to_square(candidate.source, engine.support.board_size)
+                index_to_square(candidate.source, engine.support.board_shape)
                 if candidate.source is not None
                 else None
             )
-            to_sq = index_to_square(candidate.target, engine.support.board_size)
+            to_sq = index_to_square(candidate.target, engine.support.board_shape)
             if (
                 candidate.source is not None
                 and from_sq == action.from_square
@@ -229,7 +228,7 @@ def semantic_action_for(engine, position: Position, action):
             ):
                 candidates.append(candidate)
         elif isinstance(action, DropMove):
-            to_sq = index_to_square(candidate.target, engine.support.board_size)
+            to_sq = index_to_square(candidate.target, engine.support.board_shape)
             if (
                 candidate.source is None
                 and candidate.actor_type == action.base_type_id
@@ -277,7 +276,7 @@ def _resolve_square_ref(ref, support, aux_slots, position, side, binding):
     ``position`` must be the pre-action position whenever an
     ``aux_slot_square`` ref may be resolved.
     """
-    n = support.board_size
+    shape = support.board_shape
     kind = ref.kind
     source = binding.source
     target = binding.target
@@ -289,18 +288,20 @@ def _resolve_square_ref(ref, support, aux_slots, position, side, binding):
     if kind == "fixed":
         f, r = ref.square
         if ref.owner_relative and side == 1:
-            f, r = n - 1 - f, n - 1 - r
-        return r * n + f
+            f, r = shape.width - 1 - f, shape.height - 1 - r
+        if not (0 <= f < shape.width and 0 <= r < shape.height):
+            return None
+        return r * shape.width + f
     if kind in ("offset_from_source", "offset_from_target"):
         base = source if kind == "offset_from_source" else target
         df, dr = ref.offset
         if ref.owner_relative and side == 1:
             df, dr = -df, -dr
-        base_sq = index_to_square(base, n)
+        base_sq = index_to_square(base, shape)
         f, r = base_sq.file + df, base_sq.rank + dr
-        if not (0 <= f < n and 0 <= r < n):
+        if not (0 <= f < shape.width and 0 <= r < shape.height):
             return None
-        return r * n + f
+        return r * shape.width + f
     if kind == "path_step":
         if ref.step is None or ref.step >= len(path):
             return None
@@ -315,7 +316,10 @@ def _resolve_square_ref(ref, support, aux_slots, position, side, binding):
         value = _aux_value(position.aux_state, slot, owner)
         if value is None or not isinstance(value, tuple):
             return None
-        return value[1] * n + value[0]
+        f, r = value
+        if not (0 <= f < shape.width and 0 <= r < shape.height):
+            return None
+        return r * shape.width + f
     return None
 
 
@@ -335,7 +339,7 @@ class _WorkingPosition:
     """Mutable working copy for trial transitions."""
 
     def __init__(self, position: Position, support) -> None:
-        self.n = support.board_size
+        self.shape = support.board_shape
         self.board = list(position.board)
         self.hands = [
             dict(position.hands[0].counts),
@@ -360,6 +364,12 @@ class _WorkingPosition:
             side_to_move=self.side,
             ruleset_fingerprint=fingerprint,
             aux_state=aux_state,
+            board_width=(
+                self.shape.width if self.shape.width != self.shape.height else None
+            ),
+            board_height=(
+                self.shape.height if self.shape.width != self.shape.height else None
+            ),
         )
 
 
@@ -503,7 +513,7 @@ def _apply_aux_effect(effect, aux, support, aux_slots, pre_position, binding) ->
         )
         if idx is None:
             raise RuntimeError("set_token ref unresolved")
-        sq = index_to_square(idx, support.board_size)
+        sq = index_to_square(idx, support.board_shape)
         aux[key] = (sq.file, sq.rank)
         return
     if kind == "clear_token":
@@ -565,14 +575,20 @@ class SemanticEngine:
 
     def _initial_position(self) -> Position:
         rows = self.support.initial_position
-        n = self.support.board_size
-        board = tuple(rows[r][f] for r in range(n) for f in range(n))
+        shape = self.support.board_shape
+        board = tuple(
+            rows[r][f]
+            for r in range(shape.height)
+            for f in range(shape.width)
+        )
         return Position(
             board=board,
             hands=(Hands.empty(), Hands.empty()),
             side_to_move=0,
             ruleset_fingerprint=self.support.ruleset_fingerprint,
             aux_state=(),
+            board_width=(shape.width if shape.width != shape.height else None),
+            board_height=(shape.height if shape.width != shape.height else None),
         )
 
     # ------------------------------------------------------- pseudo attack
@@ -917,8 +933,7 @@ class SemanticEngine:
         self, sel, idx, position, binding, perspective,
         checkpoint: Checkpoint | None = None,
     ) -> bool:
-        n = self.support.board_size
-        sq = index_to_square(idx, n)
+        sq = index_to_square(idx, self.support.board_shape)
         if sel.kind == "same_file":
             ref_sq = self._ref_square(sel.refs[0], position, binding, perspective)
             return ref_sq is not None and ref_sq.file == sq.file
@@ -959,7 +974,7 @@ class SemanticEngine:
         idx = _resolve_square_ref(
             ref, self.support, self.ir.aux_slots, position, perspective, binding
         )
-        return index_to_square(idx, self.support.board_size) if idx is not None else None
+        return index_to_square(idx, self.support.board_shape) if idx is not None else None
 
     def _compare(self, op: str, a, b) -> bool:
         if op == "eq":
@@ -984,7 +999,7 @@ class SemanticEngine:
                 position, perspective, binding,
             )
             square = (
-                index_to_square(idx, self.support.board_size)
+                index_to_square(idx, self.support.board_shape)
                 if idx is not None
                 else None
             )
@@ -1093,14 +1108,13 @@ class SemanticEngine:
         allowed = self.support.promotion_allowed.get(base, ((), ()))
         forced = self.support.promotion_forced.get(base, (frozenset(), frozenset()))
         side = piece.owner
-        from_sq = index_to_square(source, self.support.board_size)
-        to_sq = index_to_square(target, self.support.board_size)
+        from_sq = index_to_square(source, self.support.board_shape)
+        to_sq = index_to_square(target, self.support.board_shape)
         meta = self.support.type_metadata.get(base)
         if meta is None or not meta.is_promotable:
             return (None,)
         if (from_sq, to_sq) not in allowed[side]:
             return (None,)
-        n = self.support.board_size
         alive = [
             t
             for t in meta.promotion_target_ids
@@ -1128,7 +1142,7 @@ class SemanticEngine:
             hand = dict(position.hands[side].counts)
             if hand.get(tid, 0) <= 0:
                 continue
-            for target in range(self.support.board_size * self.support.board_size):
+            for target in range(self.support.board_area):
                 _checkpoint(checkpoint)
                 if not mask[target] or position.board[target] is not None:
                     continue

@@ -26,7 +26,7 @@ WXF Xiangqi support. A test-only/static carrier is not product support.
 | Soldier forward-only before river, lateral moves after river, no promotion (§2.7) | Typed zones/state guards and ordinary owner-relative leaps are available declaratively. | Yes / Partial / No full Xiangqi path / No Xiangqi behavior oracle | Requires executable phase-dependent move filtering over the two sides' river masks. Current compile-only support is not an executable Xiangqi rule. |
 | Cannon quiet ray vs capture over exactly one screen (§2.6) | Rays, occupancy relations and counted path constraints are generic primitives. | Yes / Partial / No / No Xiangqi behavior oracle | Must distinguish unobstructed quiet movement from a capture with exactly one intervening occupied point and stop at the first eligible target beyond it. The current rectangular path is not product-executable. |
 | Facing generals, check, self-check legality, checkmate (§§2.1, 2.8–2.10) | Generic anchors, attack generation and self-check filtering exist (`core/attacks.py`, `core/terminal.py`). | Yes / Partial / No full Xiangqi path / Chess behavior tests only | The primitives are plausible for the facing-file constraint if encoded as ordinary attacks, but the whole 9×10 Xiangqi product is not executable and no Xiangqi regression verifies that encoding. |
-| No legal move is a loss, including stalemate (§2.11, Article 3.1.A.II) | Generic terminal logic distinguishes no legal action while checked (mate) from not checked (stalemate); `RuleSet.stalemate_result` is restricted to `draw` by `rules/compiler.py`. | Yes (declared default) / No for loss / No for WXF outcome / No Xiangqi test | WXF treats stalemate as a loss, unlike the current v0 supported `draw` result. The compiler rejects other outcomes (`STALEMATE_RESULT_UNSUPPORTED`). |
+| No legal move is a loss, including stalemate (§2.11, Article 3.1.A.II) | Generic terminal logic distinguishes no legal action while checked (mate) from not checked (stalemate); `RuleSet.stalemate_result` can syntactically store a value, but the compiler accepts only `draw`. | Storable / No for loss / No for WXF outcome / No Xiangqi test | WXF treats stalemate as a loss, unlike the current v0 supported `draw` result. The compiler rejects other outcomes (`STALEMATE_RESULT_UNSUPPORTED`). |
 | Repetition and perpetual check (§§19.8–19.9) | Position history/repetition and `continuous_check_loss` exist; Shogi product exercises the latter. See `tests/test_repetition.py` and `tests/test_standard_shogi_product.py`. | Partial / Partial / Partial / Chess+Shogi only | Current policy choices are `draw` or `continuous_check_loss`; a recurring WXF cycle must be classified from the repeated move history, not just assigned Shogi's continuous-check rule. |
 | Perpetual chase and other prohibited repeated actions (§§19.6–19.12) | History is available to adjudication, but no generic chase classification / chased-piece-set primitive was found in `RuleSet`, IR, or terminal logic. | No complete declaration / No / No / No | WXF distinguishes check, chase, and other move classes, with outcomes depending on which side repeatedly violates the rule. This is the clearest missing history semantic; do not approximate it as generic repetition draw or continuous-check loss. |
 | Chess and Standard Shogi retention | Existing executable builders and product tests: `tests/test_western_chess_product.py`, `tests/test_standard_shogi_product.py`, `tests/test_repetition.py`; Shogi also has drop/promotion and its 500-ply adjudication product tests. | Yes / Yes / Yes / Yes, within those tests | These demonstrate current product retention for the tested built-ins; they do not verify Xiangqi or certify all FIDE/WXF competition procedures. |
@@ -35,14 +35,13 @@ WXF Xiangqi support. A test-only/static carrier is not product support.
 
 The immediate gap is not piece labels or a missing Xiangqi preset. Some useful
 geometry/history primitives are declarable and some compile into static or
-square-board paths, but the public rectangular executor and WXF-specific
+square-board paths, but public rectangular compilation/execution and WXF-specific
 stalemate/history outcomes are absent. Consequently there is no complete,
 executable, verified 9×10 WXF Xiangqi ruleset today.
 
-Smallest next generic compiler task: determine whether the already-lowered
-single source-relative occupancy guard can cross the public rectangular
-compile/execute boundary using a synthetic, game-name-independent 9×10 ruleset.
-Keep it to one blocker guard and a paired positive/negative move-generation
-test, plus existing Chess/Shogi retention tests. This isolates the next
-compiler/executor seam; it does not claim to solve cannon movement, Xiangqi
-history adjudication, or authorize scoring/benchmarking Xiangqi.
+A subsequent bounded executor probe uses the already-lowered, precompiled
+single source-relative occupancy-guard witness to check rectangular row-major
+targets, both owners' leg references, out-of-bounds behavior, and trial-position
+shape. It demonstrates only that narrow internal Python executor seam; compile
+capability flags remain false, so it does not enable public rectangular
+execution or establish complete Xiangqi support.
