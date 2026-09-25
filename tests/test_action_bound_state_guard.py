@@ -13,6 +13,7 @@ from generic_chess.rules.schema import (
     RuleActionEffect,
     RuleGeometrySpec,
     RuleInvariant,
+    RuleReplaceSelector,
     RuleSemanticAction,
     RuleSet,
     RuleSpatialSelector,
@@ -145,3 +146,96 @@ def test_action_bound_compiled_ir_and_native_support():
     payload, report = build_semantic_compile_payload(semantic)
     assert report.native_executable is True
     assert payload["patterns"]
+
+
+def _horse_leg_guard_ruleset():
+    king = PieceType(
+        "K", "King",
+        tuple(
+            LeapAtom((df, dr))
+            for df in (-1, 0, 1)
+            for dr in (-1, 0, 1)
+            if (df, dr) != (0, 0)
+        ),
+        is_anchor=True,
+    )
+    horse = PieceType("H", "Horse", (LeapAtom((2, 1)),))
+    rows = [[None] * 8 for _ in range(8)]
+    rows[0][0] = Piece(0, "H", "H")
+    rows[0][7] = Piece(0, "K", "K")
+    rows[7][7] = Piece(1, "K", "K")
+    leg_empty = RuleStateGuard(
+        aggregation="count",
+        owner="any",
+        type_ref=RuleTypeRef(kind="any"),
+        compare_field="base",
+        promoted="any",
+        location="board",
+        spatial=RuleSpatialSelector(
+            kind="exact",
+            refs=(RuleSquareRef("offset_from_source", offset=(1, 0)),),
+        ),
+        comparison="eq",
+        value=0,
+    )
+    action = RuleSemanticAction(
+        name="horse_leg_step",
+        type_ids=("H",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        composition="replace_legacy",
+        replace_selector=RuleReplaceSelector(
+            type_ids=("H",),
+            action_family="board",
+            target_relation="empty",
+            geometry_kind="leap",
+            replace_all_matching=True,
+        ),
+        state_guards=(leg_empty,),
+        effects=(
+            RuleActionEffect(
+                "move",
+                from_ref=RuleSquareRef("source"),
+                to_ref=RuleSquareRef("target"),
+            ),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    return RuleSet(
+        board_size=8,
+        piece_types=(king, horse),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"H": ((False,) * 64, (False,) * 64)},
+        semantic_actions=(action,),
+    )
+
+
+def test_offset_exact_zero_count_guard_blocks_either_owner_on_horse_leg():
+    semantic = compile_semantic_ruleset(_horse_leg_guard_ruleset())
+    pattern = next(p for p in semantic.ir.patterns if p.name == "horse_leg_step")
+    assert len(pattern.guards) == 1
+    assert pattern.guards[0].owner == "any"
+    assert pattern.guards[0].spatial.kind == "exact"
+    assert pattern.guards[0].spatial.refs[0].kind == "offset_from_source"
+    assert pattern.guards[0].spatial.refs[0].offset == (1, 0)
+    assert pattern.guards[0].comparison == "eq"
+    assert pattern.guards[0].value == 0
+
+    engine = semantic_engine_for(semantic)
+    initial = engine._initial_position()
+
+    def has_horse_step(blocker_owner=None):
+        board = list(initial.board)
+        if blocker_owner is not None:
+            board[1] = Piece(blocker_owner, "H", "H")
+        position = replace(initial, board=tuple(board))
+        return any(
+            action.pattern_id == "sem_00_horse_leg_step"
+            and action.source == 0
+            and action.target == 10
+            for action in engine.legal_actions(position)
+        )
+
+    assert has_horse_step()
+    assert not has_horse_step(0)
+    assert not has_horse_step(1)
