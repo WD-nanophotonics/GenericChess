@@ -417,6 +417,77 @@ def test_followup_parser_is_available():
     assert args.message_file == "delta.txt"
 
 
+def test_reviewed_local_followup_preserves_unpublished_lineage(monkeypatch, tmp_path):
+    prior_id = "GENERICCHESS-20260925-072631-99080089"
+    request = tmp_path / prior_id
+    request.mkdir()
+    response = request / "response.txt"
+    response.write_text("LOCAL_SUPERVISOR_REQUIRED=true\n", encoding="utf-8")
+    local_sha, remote_sha, reviewed_sha = "b" * 40, "a" * 40, "c" * 40
+    (request / "message.txt").write_text(
+        f"SANDBOX_SHA={local_sha}\nPUBLICATION_STATUS=LOCAL_ONLY\n"
+        f"ORIGIN_SANDBOX_SHA={remote_sha}\n", encoding="utf-8"
+    )
+    (request / "receipt.json").write_text(json.dumps({
+        "request_id": prior_id,
+        "state": "response_received",
+        "response_path": str(response),
+    }), encoding="utf-8")
+    state = _followup_state(response)
+    state.update(active_request_id=prior_id, last_request_key="closeout-local-bbbbbbbbbbbb-test",
+                 local_supervisor_required=True, last_work_order_id=None)
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor-1"))
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref="HEAD": remote_sha if ref == "origin/sandbox" else reviewed_sha)
+    ancestors = []
+    def fake_git_ok(_root, *args):
+        ancestors.append(args)
+        return True
+    monkeypatch.setattr(flow, "git_ok", fake_git_ok)
+    sent = {}
+    def fake_dispatch(_root, current, source, purpose, *, local_only):
+        sent.update(body=source.read_text(encoding="utf-8"), purpose=purpose,
+                    local_only=local_only)
+        current["active_request_id"] = "successor-id"
+    monkeypatch.setattr(flow, "dispatch_message", fake_dispatch)
+
+    flow._reviewed_local_followup(tmp_path, state, "Next bounded order\n", response)
+
+    assert sent["purpose"] == "followup"
+    assert sent["local_only"] is True
+    assert f"PRIOR_REQUEST_ID={prior_id}" in sent["body"]
+    assert f"PRIOR_LOCAL_SHA={local_sha}" in sent["body"]
+    assert f"REVIEWED_LOCAL_SHA={reviewed_sha}" in sent["body"]
+    assert ("merge-base", "--is-ancestor", local_sha, reviewed_sha) in ancestors
+    review = json.loads((tmp_path / f"reviewed-local-lineage-{prior_id}.json").read_text(encoding="utf-8"))
+    assert review["successor_request_id"] == "successor-id"
+    assert review["remote_sha"] == remote_sha
+
+
+def test_reviewed_local_followup_rejects_unconsumed_order(monkeypatch, tmp_path):
+    response = tmp_path / "prior" / "response.txt"
+    response.parent.mkdir()
+    response.write_text("LOCAL_SUPERVISOR_REQUIRED=true\nWORK_ORDER_ID=F200\n", encoding="utf-8")
+    state = _followup_state(response)
+    state.update(active_request_id="prior", last_request_key="closeout-local-test",
+                 local_supervisor_required=True, last_work_order_id="F200")
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor-1"))
+    with pytest.raises(flow.FlowError, match="no unconsumed work order"):
+        flow._reviewed_local_followup(tmp_path, state, "Next\n", response)
+
+
+def test_reviewed_local_followup_requires_registered_supervisor(monkeypatch, tmp_path):
+    response = tmp_path / "prior" / "response.txt"
+    response.parent.mkdir()
+    response.write_text("LOCAL_SUPERVISOR_REQUIRED=true\n", encoding="utf-8")
+    state = _followup_state(response)
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: (_ for _ in ()).throw(
+        flow.FlowError("only the registered Supervisor task may perform this action")))
+    with pytest.raises(flow.FlowError, match="registered Supervisor"):
+        flow._reviewed_local_followup(tmp_path, state, "Next\n", response)
+
+
 @pytest.mark.parametrize(
     ("state_update", "error"),
     [

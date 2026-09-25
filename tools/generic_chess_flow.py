@@ -782,8 +782,8 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
     sandbox = sandbox_root(root)
     require_clean(sandbox)
     if local_only:
-        if purpose != "closeout":
-            raise FlowError("local-only dispatch is available only for closeout")
+        if purpose not in {"closeout", "followup"}:
+            raise FlowError("local-only dispatch is available only for closeout or reviewed followup")
         fetch(sandbox, "sandbox")
         if not git_ok(sandbox, "merge-base", "--is-ancestor",
                       sha(sandbox, "origin/sandbox"), sha(sandbox)):
@@ -1572,8 +1572,91 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     if len(body.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
         raise FlowError("followup message must be a short inline protocol/binding delta")
     require_clean(root)
-    require_synced(root, "sandbox")
-    dispatch_message(root, state, source, "followup")
+    if getattr(args, "reviewed_local_only", False):
+        _reviewed_local_followup(root, state, body, response_path)
+    else:
+        require_synced(root, "sandbox")
+        dispatch_message(root, state, source, "followup")
+
+
+def _reviewed_local_followup(root: Path, state: dict[str, Any],
+                             body: str, response_path: Path) -> None:
+    """Supervisor-reviewed successor to a replied, unpublished closeout.
+
+    The previous request must have produced only a local-review notice, not
+    an unconsumed work order.  The exact local and remote commits remain
+    unchanged; this path never publishes or promotes the local candidate.
+    """
+    _, supervisor_id = _current_supervisor(root)
+    prior_id = state.get("active_request_id")
+    prior_key = state.get("last_request_key")
+    if (not isinstance(prior_id, str) or response_path.parent.name != prior_id
+            or not isinstance(prior_key, str)
+            or not prior_key.startswith("closeout-local-")
+            or state.get("local_supervisor_required") is not True):
+        raise FlowError("reviewed local followup requires the replied local-only closeout")
+    response = response_path.read_text(encoding="utf-8-sig")
+    if ("LOCAL_SUPERVISOR_REQUIRED=true" not in response.splitlines()
+            or WORK_ORDER_ID.search(response)
+            or state.get("last_work_order_id") is not None):
+        raise FlowError("reviewed local followup requires a notice with no unconsumed work order")
+    receipt_path = response_path.parent / "receipt.json"
+    message_path = response_path.parent / "message.txt"
+    if not receipt_path.is_file() or not message_path.is_file():
+        raise FlowError("reviewed local followup is missing prior Courier evidence")
+    receipt = _read_json_file(receipt_path, "Courier receipt")
+    receipt_response = receipt.get("response_path")
+    if (receipt.get("request_id") != prior_id
+            or receipt.get("state") != "response_received"
+            or not isinstance(receipt_response, str)
+            or Path(receipt_response).resolve() != response_path.resolve()):
+        raise FlowError("reviewed local followup prior reply is not reconciled")
+    prior_message = message_path.read_text(encoding="utf-8-sig")
+    def one_field(name: str) -> str:
+        values = re.findall(rf"(?m)^{name}=([^\r\n]+)$", prior_message)
+        if len(values) != 1:
+            raise FlowError(f"reviewed local followup missing unique {name}")
+        return values[0]
+    if one_field("PUBLICATION_STATUS") != "LOCAL_ONLY":
+        raise FlowError("prior Courier request was not local-only")
+    local_sha = one_field("SANDBOX_SHA")
+    remote_sha = one_field("ORIGIN_SANDBOX_SHA")
+    if not FULL_SHA.fullmatch(local_sha) or not FULL_SHA.fullmatch(remote_sha):
+        raise FlowError("prior Courier request contains invalid SHA evidence")
+    fetch(root, "sandbox")
+    reviewed_sha = sha(root)
+    if (sha(root, "origin/sandbox") != remote_sha
+            or not git_ok(root, "merge-base", "--is-ancestor", remote_sha, local_sha)
+            or not git_ok(root, "merge-base", "--is-ancestor", local_sha, reviewed_sha)):
+        raise FlowError("reviewed local followup requires intact local/remote ancestry")
+    lineage = (
+        body.rstrip() + "\n\nSupervisor-reviewed local-only lineage:\n"
+        + f"PRIOR_REQUEST_ID={prior_id}\n"
+        + f"PRIOR_RESPONSE_SHA256={state['last_response_sha256']}\n"
+        + f"PRIOR_LOCAL_SHA={local_sha}\n"
+        + f"REVIEWED_LOCAL_SHA={reviewed_sha}\n"
+        + f"REVIEWED_REMOTE_SHA={remote_sha}\n"
+        + "The prior reply contained no work order; continue this same project "
+          "without treating the local SHA as published or promotable.\n"
+    )
+    if len(lineage.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
+        raise FlowError("reviewed local followup exceeds the inline limit")
+    lineage_path = runtime_dir(root) / f"reviewed-local-followup-{prior_id}.txt"
+    lineage_path.write_text(lineage, encoding="utf-8")
+    review_path = runtime_dir(root) / f"reviewed-local-lineage-{prior_id}.json"
+    review = {
+        "prior_request_id": prior_id,
+        "prior_response_sha256": state["last_response_sha256"],
+        "prior_local_sha": local_sha,
+        "reviewed_local_sha": reviewed_sha,
+        "remote_sha": remote_sha,
+        "supervisor_thread_id": supervisor_id,
+        "reviewed_at": time.time(),
+    }
+    _atomic_json(review_path, review)
+    dispatch_message(root, state, lineage_path, "followup", local_only=True)
+    review["successor_request_id"] = state.get("active_request_id")
+    _atomic_json(review_path, review)
 
 
 def command_publish(root: Path, args: argparse.Namespace) -> None:
@@ -2577,6 +2660,8 @@ def parser() -> argparse.ArgumentParser:
     sub.add_parser("work").set_defaults(handler=command_work)
     followup = sub.add_parser("followup")
     followup.add_argument("--message-file", required=True)
+    followup.add_argument("--reviewed-local-only", action="store_true",
+                          help="registered Supervisor continues a reconciled local-only closeout")
     followup.set_defaults(handler=command_followup)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)
