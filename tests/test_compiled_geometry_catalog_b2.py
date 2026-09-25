@@ -7,17 +7,21 @@ import pytest
 from generic_chess.core.coordinates import BoardShape
 from generic_chess.core.pieces import Piece
 from generic_chess.rules.compiler import (
+    _build_explicit_geometry,
     _compile_geometry_carrier,
     build_geometry_metadata,
     build_legacy_geometry_catalog,
     compile_ruleset,
     compile_semantic_ruleset,
+    lower_legacy_to_ir,
 )
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+from generic_chess.rules.schema import RuleGeometrySpec
 from generic_chess.rules.validation import RuleValidationError
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from rule_semantics_ir_fixtures import cannon_ruleset
 from test_rectangular_board_geometry_a import _fixture
+from test_xiangqi_static_setup_fixture import _build_incomplete_static_xiangqi_setup_fixture
 
 
 def _catalog_hash(compiled):
@@ -92,6 +96,43 @@ def test_rectangular_carrier_reuses_canonical_legacy_geometry_catalog():
     assert len(metadata["types"]["K"]["ray_paths"]["0"]) == 90
     assert metadata["types"]["K"]["ray_paths"]["0"][45][0] == list(range(46, 54))
     assert metadata["types"]["K"]["leap_targets"]["1"][30][4] == [19]
+
+
+def test_rectangular_explicit_leap_geometry_uses_board_shape_for_all_sources():
+    rules = _build_incomplete_static_xiangqi_setup_fixture()
+    carrier = _compile_geometry_carrier(rules)
+    compile_only_ir = lower_legacy_to_ir(carrier, ruleset=rules)
+    geometry = _build_explicit_geometry(
+        carrier,
+        RuleGeometrySpec(kind="leap", offset=(2, 1), owner_relative=True),
+        "g_explicit_probe",
+    )
+
+    assert geometry.kind == "leap"
+    assert geometry.offset == (2, 1)
+    assert set(geometry.paths) == {"0", "1"}
+    for owner in (0, 1):
+        paths = geometry.paths[str(owner)]
+        assert set(paths) == set(range(90))
+        df, dr = (2, 1) if owner == 0 else (-2, -1)
+        for rank in range(10):
+            for file in range(9):
+                source = rank * 9 + file
+                target_file, target_rank = file + df, rank + dr
+                expected = (
+                    (target_rank * 9 + target_file,)
+                    if 0 <= target_file < 9 and 0 <= target_rank < 10
+                    else ()
+                )
+                assert paths[source] == expected
+
+    assert geometry.paths["0"][4 * 9 + 3] == (5 * 9 + 5,)
+    assert geometry.paths["1"][4 * 9 + 3] == (3 * 9 + 1,)
+    assert geometry.paths["0"][8 * 9 + 7] == ()
+    assert geometry.paths["1"][8 * 9 + 7] == (7 * 9 + 5,)
+    assert not compile_only_ir.capabilities.legacy_core_executable
+    assert not compile_only_ir.capabilities.new_ir_core_executable
+    assert not compile_only_ir.capabilities.native_executable
 
 
 @pytest.mark.parametrize(

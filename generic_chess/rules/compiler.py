@@ -651,47 +651,55 @@ def build_legacy_geometry_catalog(
 
 
 def _explicit_geometry_path(
-    n: int, spec, owner: int, source: int
+    board_shape: int | BoardShape, spec, owner: int, source: int
 ) -> tuple[int, ...]:
     """Ordered path for an explicit leap/ray spec (owner-relative canonical)."""
     from ..core.coordinates import Square, index_to_square, square_to_index
 
-    src = index_to_square(source, n)
+    shape = (
+        BoardShape(board_shape, board_shape)
+        if isinstance(board_shape, int)
+        else board_shape
+    )
+    src = index_to_square(source, shape)
     if spec.kind == "leap":
         df, dr = spec.offset
         if owner == 1 and spec.owner_relative:
             df, dr = -df, -dr
         target = Square(src.file + df, src.rank + dr)
-        if not (0 <= target.file < n and 0 <= target.rank < n):
+        if not (0 <= target.file < shape.width and 0 <= target.rank < shape.height):
             return ()
-        return (square_to_index(target, n),)
+        return (square_to_index(target, shape),)
     # ray
     df, dr = spec.direction
     if owner == 1 and spec.owner_relative:
         df, dr = -df, -dr
     cur = src
     path: list[int] = []
-    max_steps = spec.max_steps if spec.max_steps is not None else n * n
+    max_steps = spec.max_steps if spec.max_steps is not None else shape.area
     for step in range(1, max_steps + 1):
         nxt = Square(cur.file + df, cur.rank + dr)
-        if not (0 <= nxt.file < n and 0 <= nxt.rank < n):
+        if not (0 <= nxt.file < shape.width and 0 <= nxt.rank < shape.height):
             break
-        path.append(square_to_index(nxt, n))
+        path.append(square_to_index(nxt, shape))
         cur = nxt
     return tuple(path)
 
 
 def _build_explicit_geometry(
-    compiled: CompiledRuleSet, spec, gid: str
+    compiled: CompiledRuleSet | CompiledGeometryCarrier, spec, gid: str
 ):
     from .ir import CompiledGeometry
 
     if spec.kind == "drop":
         return CompiledGeometry(geometry_id=gid, kind="drop")
-    n = compiled.board_size
+    shape = _geometry_board_shape(compiled)
     paths: dict[str, dict[int, tuple[int, ...]]] = {}
     for owner in (0, 1):
-        per_source = {idx: _explicit_geometry_path(n, spec, owner, idx) for idx in range(n * n)}
+        per_source = {
+            idx: _explicit_geometry_path(shape, spec, owner, idx)
+            for idx in range(shape.area)
+        }
         paths[str(owner)] = per_source
     return CompiledGeometry(
         geometry_id=gid,
