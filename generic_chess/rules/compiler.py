@@ -1189,6 +1189,79 @@ def _matching_replaced_legacy_patterns(
     return matched
 
 
+def _lower_semantic_effects(action, slot_ids_by_name, type_ids):
+    """Lower action effects through the shared semantic-IR constructor."""
+    from .ir import CompiledEffect
+
+    effects = []
+    for effect in action.effects:
+        slot_id = slot_ids_by_name.get(effect.slot_name) if effect.slot_name else None
+        if effect.slot_name and slot_id is None:
+            raise RuleValidationError(
+                [ValidationIssue("EFFECT_SLOT_UNKNOWN", "effects", effect.slot_name)]
+            )
+        from_ref = (
+            _resolve_square_ref(effect.from_ref, slot_ids_by_name)
+            if effect.from_ref
+            else None
+        )
+        to_ref = (
+            _resolve_square_ref(effect.to_ref, slot_ids_by_name)
+            if effect.to_ref
+            else None
+        )
+        square_ref = (
+            _resolve_square_ref(effect.square_ref, slot_ids_by_name)
+            if effect.square_ref
+            else None
+        )
+        piece_type_ref = (
+            _resolve_type_ref(effect.piece_type_ref, type_ids)
+            if effect.piece_type_ref
+            else None
+        )
+        type_ref = (
+            _resolve_type_ref(effect.type_ref, type_ids)
+            if effect.type_ref
+            else None
+        )
+        disposition = effect.disposition
+        if effect.kind == "remove" and disposition is None:
+            disposition = "capture_to_hand"
+        effects.append(
+            CompiledEffect(
+                kind=effect.kind,
+                from_ref=from_ref,
+                to_ref=to_ref,
+                square_ref=square_ref,
+                piece_owner=effect.piece_owner,
+                piece_type_ref=piece_type_ref,
+                disposition=disposition,
+                slot_id=slot_id,
+                type_ref=type_ref,
+                count=effect.count,
+                value=effect.value,
+            )
+        )
+    return tuple(effects)
+
+
+def _lower_semantic_invariants(action, slot_ids_by_name):
+    """Lower action invariants through the shared semantic-IR constructor."""
+    from .ir import CompiledInvariant
+
+    return tuple(
+        CompiledInvariant(
+            invariant.kind,
+            tuple(
+                _resolve_square_ref(ref, slot_ids_by_name)
+                for ref in invariant.square_refs
+            ),
+        )
+        for invariant in action.invariants
+    )
+
+
 def _lower_compile_only_single_path_capture(carrier, ruleset):
     """Lower the bounded ray-screen capture diagnostic without execution support.
 
@@ -1283,6 +1356,9 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
     ):
         raise ValueError("legacy replacement selection does not match action geometry")
     template = templates[0]
+    type_ids = tuple(sorted(carrier.types_by_id))
+    effects = _lower_semantic_effects(action, {}, type_ids)
+    invariants = _lower_semantic_invariants(action, {})
     semantic = replace(
         template,
         pattern_id=f"sem_00_{action.name}",
@@ -1290,6 +1366,8 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
         type_ids=tuple(action.type_ids),
         geometry_ids=gids,
         path=(CompiledPathPredicate("path_count_eq", count=1),),
+        effects=effects,
+        invariants=invariants,
         promotion_mode=action.promotion_mode,
         explicit_promotion_type=action.explicit_promotion_type,
         composition="replace_legacy",
@@ -1313,7 +1391,7 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
     )
     errors = validate_ir(lowered)
     errors.extend(
-        validate_executable_completeness(lowered, tuple(sorted(carrier.types_by_id)))
+        validate_executable_completeness(lowered, type_ids)
     )
     if errors:
         raise RuleValidationError(
@@ -1334,9 +1412,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     from . import ir as ir_module
     from .ir import (
         CompiledAuxSlot,
-        CompiledEffect,
         CompiledGeometry,
-        CompiledInvariant,
         CompiledMovePattern,
         CompiledPathPredicate,
         CompiledPostcondition,
@@ -1478,57 +1554,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
             )
             replaced.update(replaced_ids)
 
-        # --- effects.
-        effects = []
-        for effect in action.effects:
-            slot_id = slot_ids_by_name.get(effect.slot_name) if effect.slot_name else None
-            if effect.slot_name and slot_id is None:
-                raise RuleValidationError(
-                    [ValidationIssue("EFFECT_SLOT_UNKNOWN", "effects", effect.slot_name)]
-                )
-            from_ref = (
-                _resolve_square_ref(effect.from_ref, slot_ids_by_name)
-                if effect.from_ref
-                else None
-            )
-            to_ref = (
-                _resolve_square_ref(effect.to_ref, slot_ids_by_name)
-                if effect.to_ref
-                else None
-            )
-            square_ref = (
-                _resolve_square_ref(effect.square_ref, slot_ids_by_name)
-                if effect.square_ref
-                else None
-            )
-            piece_type_ref = (
-                _resolve_type_ref(effect.piece_type_ref, type_ids)
-                if effect.piece_type_ref
-                else None
-            )
-            type_ref = (
-                _resolve_type_ref(effect.type_ref, type_ids)
-                if effect.type_ref
-                else None
-            )
-            disposition = effect.disposition
-            if effect.kind == "remove" and disposition is None:
-                disposition = "capture_to_hand"
-            effects.append(
-                CompiledEffect(
-                    kind=effect.kind,
-                    from_ref=from_ref,
-                    to_ref=to_ref,
-                    square_ref=square_ref,
-                    piece_owner=effect.piece_owner,
-                    piece_type_ref=piece_type_ref,
-                    disposition=disposition,
-                    slot_id=slot_id,
-                    type_ref=type_ref,
-                    count=effect.count,
-                    value=effect.value,
-                )
-            )
+        effects = _lower_semantic_effects(action, slot_ids_by_name, type_ids)
 
         # --- guards / slot guards / path / invariants / postconditions.
         guards = tuple(
@@ -1578,13 +1604,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
             )
             for c in action.path_constraints
         )
-        invariants = tuple(
-            CompiledInvariant(
-                i.kind,
-                tuple(_resolve_square_ref(r, slot_ids_by_name) for r in i.square_refs),
-            )
-            for i in action.invariants
-        )
+        invariants = _lower_semantic_invariants(action, slot_ids_by_name)
         postconditions = tuple(
             CompiledPostcondition(p.kind, p.max_stratum) for p in action.postconditions
         )

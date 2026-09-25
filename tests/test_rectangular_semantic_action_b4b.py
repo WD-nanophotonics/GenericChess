@@ -58,6 +58,15 @@ def test_single_9x10_path_capture_lowers_to_typed_static_ir():
     assert len(semantic.replaced_pattern_ids) == 4
     assert len(semantic.geometry_ids) == 4
 
+    square_ir = compile_semantic_ruleset(cannon_ruleset()).ir
+    square_capture = next(
+        pattern for pattern in square_ir.patterns if pattern.name == "cannon_capture"
+    )
+    assert semantic.effects == square_capture.effects
+    assert semantic.invariants == square_capture.invariants
+    assert semantic.promotion_mode == square_capture.promotion_mode
+    assert semantic.explicit_promotion_type == square_capture.explicit_promotion_type
+
     assert all(len(ir.geometry[gid].paths["0"]) == 90 for gid in semantic.geometry_ids)
     horizontal = next(
         ir.geometry[gid]
