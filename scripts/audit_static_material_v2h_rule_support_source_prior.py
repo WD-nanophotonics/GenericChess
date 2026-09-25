@@ -70,14 +70,17 @@ def _conditional_mean(values: list[Fraction], support: list[int]) -> Fraction:
 def _support_by_type(compiled: Any, current_types: list[str], topology_pieces: dict[str, Any],
                      owner: int) -> tuple[dict[str, list[int]], dict[str, Any]]:
     support_rules = compiled.support
-    area = support_rules.board_size ** 2
+    shape = support_rules.board_shape
+    area = support_rules.board_area
+    if area != shape.area:
+        raise RuntimeError("Compiled support board area disagrees with its shape")
     graph, transitions = build_augmented_graph(area, current_types, topology_pieces, owner)
     seeds: set[tuple[str, int]] = set()
     initial_nodes = []
     for rank, row in enumerate(support_rules.initial_position):
         for file, piece in enumerate(row):
             if piece is not None and piece.owner == owner and piece.current_type_id in current_types:
-                node = (piece.current_type_id, rank * support_rules.board_size + file)
+                node = (piece.current_type_id, rank * shape.width + file)
                 seeds.add(node)
                 initial_nodes.append(node)
     drop_seed_squares: dict[str, list[int]] = {}

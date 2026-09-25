@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 from fractions import Fraction
+from types import SimpleNamespace
 
 import pytest
 
+from generic_chess.core.coordinates import BoardShape
+from generic_chess.core.pieces import Piece
+from generic_chess.rules.ir import CompiledSemanticSupport, SemanticTypeMetadata
 from scripts.audit_static_material_v2h_rule_support_source_prior import (
     _conditional_mean,
     _reachable_nodes,
+    _support_by_type,
     audit,
 )
 
@@ -32,6 +37,48 @@ def test_conditional_mean_is_exact_and_rejects_invalid_support() -> None:
         _conditional_mean(values, [])
     with pytest.raises(RuntimeError):
         _conditional_mean(values, [0, 0])
+
+
+def test_rectangular_support_seed_indices_use_shape_width_and_keep_owner() -> None:
+    shape = BoardShape(9, 10)
+    rows = [[None for _ in range(shape.width)] for _ in range(shape.height)]
+    rows[0][0] = Piece(0, "P", "P")
+    rows[0][8] = Piece(1, "P", "P")
+    rows[9][0] = Piece(0, "P", "P")
+    rows[9][8] = Piece(1, "P", "P")
+    mask = (False,) * shape.area
+    support = CompiledSemanticSupport(
+        board_size=None,
+        initial_position=tuple(tuple(row) for row in rows),
+        type_metadata={"P": SemanticTypeMetadata("P", False, False)},
+        drop_allowed={"P": (mask, mask)},
+        board_width=shape.width,
+        board_height=shape.height,
+    )
+    compiled = SimpleNamespace(support=support)
+    topology = {
+        "P": {
+            "coverage_complete": True,
+            "unsupported_semantics": False,
+            "owner_graphs": {
+                str(owner): {"directed_edges": [], "directed_edge_rows": []}
+                for owner in (0, 1)
+            },
+            "type_transition_event_ledger": [],
+        }
+    }
+
+    owner0, evidence0 = _support_by_type(compiled, ["P"], topology, 0)
+    owner1, evidence1 = _support_by_type(compiled, ["P"], topology, 1)
+
+    assert support.board_shape == shape
+    assert support.board_area == 90
+    assert support.board_size is None
+    assert owner0["P"] == [0, 81]  # (0, 0), (0, 9)
+    assert owner1["P"] == [8, 89]  # (8, 0), (8, 9)
+    assert evidence0["initial_seed_nodes"] == [["P", 0], ["P", 81]]
+    assert evidence1["initial_seed_nodes"] == [["P", 8], ["P", 89]]
+    assert set(owner0["P"]).isdisjoint(owner1["P"])
 
 
 def test_complete_pre_reference_candidate_reconstructs_full_and_restricted_types() -> None:
