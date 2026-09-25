@@ -276,8 +276,8 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
         issues.append(ValidationIssue("REPETITION_POLICY_UNSUPPORTED", "repetition_policy", "unsupported repetition policy"))
     if not isinstance(ruleset.max_ply, int) or ruleset.max_ply < 1:
         issues.append(ValidationIssue("MAX_PLY_INVALID", "max_ply", "max_ply must be a positive integer"))
-    if ruleset.stalemate_result != "draw":
-        issues.append(ValidationIssue("STALEMATE_RESULT_UNSUPPORTED", "stalemate_result", "v0 only supports stalemate_result == 'draw'"))
+    if ruleset.stalemate_result not in ("draw", "loss"):
+        issues.append(ValidationIssue("STALEMATE_RESULT_INVALID", "stalemate_result", "expected 'draw' or 'loss'"))
     if ruleset.capture_disposition not in DISPOSITIONS:
         issues.append(
             ValidationIssue(
@@ -2033,6 +2033,7 @@ def _compile_semantic_ruleset_from_baseline(
             # fully Native executable while silently dropping either semantic.
             if (
                 native_report.native_executable
+                and support.stalemate_result == "draw"
                 and not ir.declarations
                 and not ir.automatic_adjudications
             ):

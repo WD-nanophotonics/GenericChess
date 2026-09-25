@@ -415,6 +415,11 @@ def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
         "history-dependent repetition policy is unsupported by native schema",
         fingerprint,
     )
+    _validate(
+        getattr(compiled, "stalemate_result", "draw") == "draw",
+        "stalemate loss policy is unsupported by native schema",
+        fingerprint,
+    )
     types = tuple(compiled.piece_types)
     _validate(len(types) <= 64, "too many piece types for native kernel", fingerprint)
     type_ids = sorted(t.type_id for t in types)

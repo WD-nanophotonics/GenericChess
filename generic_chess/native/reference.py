@@ -70,15 +70,17 @@ def python_terminal(state) -> str:
 
 def reference_terminal_score(terminal, side_to_move: int, ply: int) -> int:
     """Score of a terminal node from ``side_to_move``'s perspective."""
+    if terminal.winner is not None:
+        if terminal.winner == side_to_move:
+            return MATE_SCORE - ply
+        return -MATE_SCORE + ply
     if terminal.status in (
         TerminalStatus.STALEMATE,
         TerminalStatus.REPETITION,
         TerminalStatus.MAX_PLY,
     ):
         return 0
-    if terminal.winner == side_to_move:
-        return MATE_SCORE - ply
-    return -MATE_SCORE + ply
+    return 0
 
 
 def canonical_pack(compiled, state, action) -> int:

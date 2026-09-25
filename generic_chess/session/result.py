@@ -47,6 +47,8 @@ class SessionResult:
             )
         if self.status is SessionStatus.CHECKMATE:
             return f"checkmate, player {self.winner} wins"
+        if self.status is SessionStatus.STALEMATE and self.winner is not None:
+            return f"stalemate, player {self.winner} wins"
         if self.status is SessionStatus.PERPETUAL_CHECK:
             loser = 1 - self.winner if self.winner is not None else None
             return f"perpetual check, player {self.winner} wins (player {loser} loses)"

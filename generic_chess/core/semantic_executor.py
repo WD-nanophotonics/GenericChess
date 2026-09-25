@@ -1544,7 +1544,12 @@ class SemanticEngine:
                 position, position.side_to_move, checkpoint=checkpoint
             ):
                 return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
-            return TerminalResult(TerminalStatus.STALEMATE)
+            winner = (
+                1 - position.side_to_move
+                if self.support.stalemate_result == "loss"
+                else None
+            )
+            return TerminalResult(TerminalStatus.STALEMATE, winner)
         if self.support.repetition_policy == "continuous_check_loss":
             perpetual = _perpetual_check_result(
                 repetition_counts, history, self.support.repetition_limit

@@ -9,9 +9,32 @@ from pathlib import Path
 import pytest
 
 from generic_chess.ai.benchmark.profiles import all_profiles, profile_by_name
-from generic_chess.ai.benchmark.runner import GameOutcome, RunConfig, run_benchmark, summarize
+from generic_chess.ai.benchmark.runner import (
+    GameOutcome,
+    RunConfig,
+    _adjudicate,
+    run_benchmark,
+    summarize,
+)
 from generic_chess.ai.benchmark.suite import SuitePosition, build_position
 from generic_chess.generation.config import GeneratorConfig
+from generic_chess.session.result import SessionResult, SessionStatus
+
+
+def test_benchmark_adjudicates_stalemate_winner_not_draw():
+    session = type(
+        "SessionStub",
+        (),
+        {"result": SessionResult(SessionStatus.STALEMATE, winner=1)},
+    )()
+    assert _adjudicate(session, candidate_color=1) == "candidate_win"
+    assert _adjudicate(session, candidate_color=0) == "candidate_loss"
+    drawn = type(
+        "SessionStub",
+        (),
+        {"result": SessionResult(SessionStatus.STALEMATE, winner=None)},
+    )()
+    assert _adjudicate(drawn, candidate_color=0) == "rule_draw"
 
 
 @pytest.fixture()

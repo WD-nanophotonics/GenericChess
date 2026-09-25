@@ -180,6 +180,10 @@ class _Context:
 
 
 def terminal_score(result, side_to_move: int, ply: int) -> int:
+    if result.winner is not None:
+        if result.winner == side_to_move:
+            return MATE_SCORE - ply
+        return -MATE_SCORE + ply
     if result.status in (
         TerminalStatus.STALEMATE,
         TerminalStatus.REPETITION,
@@ -187,9 +191,7 @@ def terminal_score(result, side_to_move: int, ply: int) -> int:
         TerminalStatus.NO_CONTEST,
     ):
         return 0
-    if result.winner == side_to_move:
-        return MATE_SCORE - ply
-    return -MATE_SCORE + ply
+    return 0
 
 
 def _declaration_options(state, compiled, stats):

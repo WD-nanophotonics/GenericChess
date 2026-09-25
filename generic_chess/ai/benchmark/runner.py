@@ -78,7 +78,7 @@ def _timing_invalid(elapsed: float, seconds: float | None) -> bool:
 
 def _adjudicate(session: GameSession, candidate_color: int) -> str:
     status = session.result.status
-    if status is SessionStatus.CHECKMATE:
+    if status in (SessionStatus.CHECKMATE, SessionStatus.STALEMATE) and session.result.winner is not None:
         return "candidate_win" if session.result.winner == candidate_color else "candidate_loss"
     if status in (SessionStatus.STALEMATE, SessionStatus.REPETITION, SessionStatus.MAX_PLY):
         return "rule_draw"

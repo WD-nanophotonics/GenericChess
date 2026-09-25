@@ -2,6 +2,7 @@
 
 import sys
 from pathlib import Path
+from dataclasses import replace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -84,6 +85,46 @@ def test_exact_geometry_identity_four_rays_distinct():
     assert directions == {(1, 0), (-1, 0), (0, 1), (0, -1)}
     for g in ray_geoms:
         assert g.atom_source is not None  # legacy atom identity preserved
+
+
+def test_stalemate_loss_policy_disables_incomplete_native_capability():
+    ruleset = replace(cannon_ruleset(), stalemate_result="loss")
+    compiled = compile_semantic_ruleset(ruleset)
+    assert compiled.support.stalemate_result == "loss"
+    assert not compiled.ir.capabilities.native_executable
+
+
+def test_stalemate_loss_policy_sets_semantic_terminal_winner(monkeypatch):
+    from generic_chess.core.position import GameState, Hands, Position
+    from generic_chess.core.semantic_executor import SemanticEngine
+    from generic_chess.core.terminal import TerminalResult, TerminalStatus, terminal_result
+
+    compiled = compile_semantic_ruleset(
+        replace(cannon_ruleset(), stalemate_result="loss")
+    )
+    support = compiled.support
+    position = Position(
+        board=(None,) * support.board_area,
+        hands=(Hands.empty(), Hands.empty()),
+        side_to_move=0,
+        ruleset_fingerprint=support.ruleset_fingerprint,
+    )
+    state = GameState(
+        position=position,
+        ply_count=0,
+        repetition_counts=(),
+        terminal_status=TerminalResult(TerminalStatus.ONGOING),
+    )
+    monkeypatch.setattr(
+        SemanticEngine, "has_legal_action", lambda self, position, checkpoint=None: False
+    )
+    monkeypatch.setattr(
+        SemanticEngine, "in_check", lambda self, position, side, checkpoint=None: False
+    )
+
+    result = terminal_result(state, compiled)
+    assert result.status is TerminalStatus.STALEMATE
+    assert result.winner == 1
 
 
 def test_castling_exact_two_step_geometry():

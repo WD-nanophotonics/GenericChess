@@ -40,6 +40,8 @@ class TerminalResult:
     def __str__(self) -> str:
         if self.status is TerminalStatus.CHECKMATE:
             return f"checkmate, player {self.winner} wins"
+        if self.status is TerminalStatus.STALEMATE and self.winner is not None:
+            return f"stalemate, player {self.winner} wins"
         if self.status is TerminalStatus.ONGOING:
             return "ongoing"
         if self.status is TerminalStatus.PERPETUAL_CHECK:
@@ -95,7 +97,8 @@ def _terminal_from_parts(
     if not has_legal_action(position, compiled):
         if is_in_check(position, side, compiled):
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
-        return TerminalResult(TerminalStatus.STALEMATE)
+        winner = 1 - side if getattr(compiled, "stalemate_result", "draw") == "loss" else None
+        return TerminalResult(TerminalStatus.STALEMATE, winner)
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _perpetual_check_result(
             repetition_counts, history, compiled.repetition_limit
@@ -165,7 +168,12 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     if not has_legal:
         if checked:
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
-        return TerminalResult(TerminalStatus.STALEMATE)
+        winner = (
+            1 - position.side_to_move
+            if getattr(compiled, "stalemate_result", "draw") == "loss"
+            else None
+        )
+        return TerminalResult(TerminalStatus.STALEMATE, winner)
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _runtime_perpetual_check_result(runtime)
         if perpetual is not None:
