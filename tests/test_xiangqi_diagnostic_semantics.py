@@ -6,11 +6,13 @@ import pytest
 from generic_chess.core.actions import SemanticBoardMove
 from generic_chess.core.coordinates import BoardShape, Square
 from generic_chess.core.errors import IllegalActionError
+from generic_chess.core.identity import repetition_identity_key
 from generic_chess.core.keys import position_key
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
 from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.core.terminal import TerminalStatus, terminal_result
+from generic_chess.core.position import HistoryRecord
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.schema import compute_fingerprint, ruleset_from_dict, ruleset_to_dict
@@ -401,3 +403,49 @@ def test_no_legal_move_is_a_loss_without_needing_a_game(product):
     result = terminal_result(state, compiled)
     assert result.status is TerminalStatus.STALEMATE
     assert result.winner == 1
+
+
+def test_rectangular_transition_identity_and_repetition_cycle(product):
+    _ruleset, compiled, engine = product
+    state = _state(
+        compiled,
+        [
+            (0, "G", Square(4, 0)), (1, "G", Square(5, 9)),
+            (0, "R", Square(0, 4)), (1, "R", Square(8, 5)),
+        ],
+    )
+    initial_key = repetition_identity_key(state.position, compiled)
+    initial_counts = ((initial_key, 1),)
+    state = replace(
+        state,
+        repetition_counts=initial_counts,
+        history=(HistoryRecord(initial_key, -1, "", False),),
+        terminal_status=engine.terminal_result(
+            state.position, 0, initial_counts
+        ),
+    )
+    alternate_side = replace(
+        state.position,
+        side_to_move=1,
+    )
+    assert repetition_identity_key(alternate_side, compiled) != initial_key
+
+    cycle = (
+        (Square(0, 4), Square(0, 5)),
+        (Square(8, 5), Square(8, 4)),
+        (Square(0, 5), Square(0, 4)),
+        (Square(8, 4), Square(8, 5)),
+    )
+    for expected_count in (2, 3):
+        for source, target in cycle:
+            action = next(
+                action for action in legal_actions(state, compiled)
+                if isinstance(action, SemanticBoardMove)
+                and action.from_square == source
+                and action.to_square == target
+            )
+            state = apply_action(state, action, compiled)
+        assert repetition_identity_key(state.position, compiled) == initial_key
+        assert dict(state.repetition_counts)[initial_key] == expected_count
+        assert state.position.board_shape == BoardShape(9, 10)
+    assert state.terminal_status.status is TerminalStatus.ONGOING
