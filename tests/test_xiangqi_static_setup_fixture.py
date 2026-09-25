@@ -1,28 +1,52 @@
-"""Incomplete, test-only Xiangqi setup fixture; not a playable RuleSet.
+"""Incomplete, test-only Xiangqi geometry fixture; not a playable RuleSet.
 
 Initial placement follows the World Xiangqi Federation's introductory board
-diagram. All movement atoms are intentionally empty. See fixture metadata for
-the rule consequences deliberately omitted at this setup-only stage.
+diagram. Movement atoms provide only a candidate-geometry upper bound. See
+fixture metadata for legality and game-rule consequences deliberately omitted.
 """
 
 from collections import Counter
 
 from generic_chess.core.coordinates import BoardShape
+from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.core.pieces import Piece, PieceType
-from generic_chess.rules.compiler import _compile_geometry_carrier
+from generic_chess.rules.compiler import (
+    _compile_geometry_carrier,
+    build_legacy_geometry_catalog,
+    compile_ruleset,
+)
 from generic_chess.rules.schema import RuleSet, compute_fingerprint
 from generic_chess.rules.serialization import deserialize_ruleset, serialize_ruleset
+from generic_chess.rules.validation import RuleValidationError
 
 
 OMITTED_RULE_SEMANTICS = (
-    "all piece movement and capture patterns",
+    "capture-target semantics and legal-action conditions",
     "palace confinement for general and advisors",
-    "elephant river restriction and horse-leg/elephant-eye blocking",
+    "elephant river restriction",
+    "horse-leg blockers",
+    "elephant-eye blockers",
     "cannon screen captures",
-    "soldier forward/lateral movement by river side",
+    "soldier lateral movement after crossing the river",
     "facing-generals prohibition and check legality",
     "stalemate, repetition, and perpetual-check/chase adjudication",
 )
+
+ORTHOGONAL = ((1, 0), (-1, 0), (0, 1), (0, -1))
+DIAGONAL = ((1, 1), (1, -1), (-1, 1), (-1, -1))
+HORSE_OFFSETS = (
+    (2, 1), (2, -1), (-2, 1), (-2, -1),
+    (1, 2), (1, -2), (-1, 2), (-1, -2),
+)
+MOVEMENT_ATOMS = {
+    "G": tuple(LeapAtom(offset) for offset in ORTHOGONAL),
+    "A": tuple(LeapAtom(offset) for offset in DIAGONAL),
+    "E": tuple(LeapAtom((2 * df, 2 * dr)) for df, dr in DIAGONAL),
+    "R": tuple(RayAtom(direction) for direction in ORTHOGONAL),
+    "H": tuple(LeapAtom(offset) for offset in HORSE_OFFSETS),
+    "C": tuple(RayAtom(direction) for direction in ORTHOGONAL),
+    "P": (LeapAtom((0, 1)),),
+}
 
 
 def _build_incomplete_static_xiangqi_setup_fixture() -> RuleSet:
@@ -38,7 +62,12 @@ def _build_incomplete_static_xiangqi_setup_fixture() -> RuleSet:
         "P": "Pawn",
     }
     piece_types = tuple(
-        PieceType(type_id, name, (), is_anchor=(type_id == "G"))
+        PieceType(
+            type_id,
+            name,
+            MOVEMENT_ATOMS[type_id],
+            is_anchor=(type_id == "G"),
+        )
         for type_id, name in names.items()
     )
     rows = [[None for _ in range(shape.width)] for _ in range(shape.height)]
@@ -127,7 +156,10 @@ def test_incomplete_xiangqi_setup_roundtrips_and_builds_compile_only_carrier():
     assert anchor_type_ids == {"G"}
     assert set(anchors) == {0, 1}
     assert anchors[0].base_type_id == anchors[1].base_type_id == "G"
-    assert all(not piece_type.movement_atoms for piece_type in rules.piece_types)
+    assert {
+        piece_type.type_id: len(piece_type.movement_atoms)
+        for piece_type in rules.piece_types
+    } == {"G": 4, "A": 4, "E": 4, "R": 4, "H": 8, "C": 4, "P": 1}
     assert not rules.semantic_actions
     assert not rules.promotion_allowed
     assert not rules.promotion_forced
@@ -149,6 +181,139 @@ def test_incomplete_xiangqi_setup_roundtrips_and_builds_compile_only_carrier():
     assert carrier.initial_position.board_width == shape.width
     assert carrier.initial_position.board_height == shape.height
     assert len(carrier.initial_position.board) == shape.area == 90
-    assert all(
-        not piece_type.movement_atoms for piece_type in carrier.types_by_id.values()
-    )
+    assert {
+        type_id: len(piece_type.movement_atoms)
+        for type_id, piece_type in carrier.types_by_id.items()
+    } == {"G": 4, "A": 4, "E": 4, "R": 4, "H": 8, "C": 4, "P": 1}
+
+    # Candidate geometry is inspectable, but public executable compilation
+    # must continue to reject rectangular boards before execution.
+    try:
+        compile_ruleset(rules)
+    except RuleValidationError as exc:
+        assert "RECTANGULAR_EXECUTION_NOT_IN_A_STAGE" in {
+            issue.code for issue in exc.issues
+        }
+    else:
+        raise AssertionError("public compiler unexpectedly accepted a 9x10 board")
+
+
+def test_xiangqi_candidate_geometry_catalog_is_lossless_on_9x10():
+    rules = _build_incomplete_static_xiangqi_setup_fixture()
+    carrier = _compile_geometry_carrier(rules)
+    geometry, legacy_ids = build_legacy_geometry_catalog(carrier)
+    shape = BoardShape(9, 10)
+
+    assert len(geometry) == sum(map(len, MOVEMENT_ATOMS.values())) == 29
+    assert set(legacy_ids) == {
+        (type_id, atom_index)
+        for type_id, atoms in MOVEMENT_ATOMS.items()
+        for atom_index in range(len(atoms))
+    }
+    by_type = {
+        type_id: tuple(
+            geometry[legacy_ids[(type_id, atom_index)]]
+            for atom_index in range(len(atoms))
+        )
+        for type_id, atoms in MOVEMENT_ATOMS.items()
+    }
+    for type_id, atoms in MOVEMENT_ATOMS.items():
+        assert tuple(item.atom_source for item in by_type[type_id]) == tuple(
+            (type_id, atom_index) for atom_index in range(len(atoms))
+        )
+        for item, atom in zip(by_type[type_id], atoms):
+            assert item.kind == ("ray" if isinstance(atom, RayAtom) else "leap")
+            assert item.owner_relative is True
+            assert set(item.paths) == {"0", "1"}
+            for owner in ("0", "1"):
+                assert set(item.paths[owner]) == set(range(shape.area))
+                assert all(
+                    0 <= target < shape.area
+                    for path in item.paths[owner].values()
+                    for target in path
+                )
+
+    def targets(type_id: str, owner: int, source: int) -> set[int]:
+        return {
+            target
+            for item in by_type[type_id]
+            for target in item.paths[str(owner)][source]
+        }
+
+    def index(file: int, rank: int) -> int:
+        return rank * shape.width + file
+
+    # Compare every owner/source/atom entry against the primitive's exact
+    # coordinate rule, not just representative unions.
+    for type_id, atoms in MOVEMENT_ATOMS.items():
+        for atom_index, atom in enumerate(atoms):
+            item = by_type[type_id][atom_index]
+            raw_df, raw_dr = (
+                atom.direction if isinstance(atom, RayAtom) else atom.offset
+            )
+            for owner in (0, 1):
+                df, dr = (raw_df, raw_dr) if owner == 0 else (-raw_df, -raw_dr)
+                for rank in range(shape.height):
+                    for file in range(shape.width):
+                        path = []
+                        next_file, next_rank = file + df, rank + dr
+                        while (
+                            0 <= next_file < shape.width
+                            and 0 <= next_rank < shape.height
+                            and (
+                                not isinstance(atom, RayAtom)
+                                or atom.max_steps is None
+                                or len(path) < atom.max_steps
+                            )
+                        ):
+                            path.append(index(next_file, next_rank))
+                            if not isinstance(atom, RayAtom):
+                                break
+                            next_file += df
+                            next_rank += dr
+                        assert item.paths[str(owner)][index(file, rank)] == tuple(path)
+
+    center = index(4, 4)
+    symmetric_center_targets = {
+        "G": {index(4, 3), index(4, 5), index(3, 4), index(5, 4)},
+        "A": {index(3, 3), index(3, 5), index(5, 3), index(5, 5)},
+        "E": {index(2, 2), index(2, 6), index(6, 2), index(6, 6)},
+        "R": {
+            *(index(file, 4) for file in range(9) if file != 4),
+            *(index(4, rank) for rank in range(10) if rank != 4),
+        },
+        "C": {
+            *(index(file, 4) for file in range(9) if file != 4),
+            *(index(4, rank) for rank in range(10) if rank != 4),
+        },
+        "H": {
+            index(6, 5), index(6, 3), index(2, 5), index(2, 3),
+            index(5, 6), index(5, 2), index(3, 6), index(3, 2),
+        },
+    }
+    for type_id, expected in symmetric_center_targets.items():
+        assert targets(type_id, 0, center) == expected
+        assert targets(type_id, 1, center) == expected
+
+    assert targets("P", 0, center) == {index(4, 5)}
+    assert targets("P", 1, center) == {index(4, 3)}
+
+    corner = index(0, 0)
+    assert targets("G", 0, corner) == targets("G", 1, corner) == {
+        index(1, 0), index(0, 1)
+    }
+    assert targets("A", 0, corner) == targets("A", 1, corner) == {index(1, 1)}
+    assert targets("E", 0, corner) == targets("E", 1, corner) == {index(2, 2)}
+    assert targets("H", 0, corner) == targets("H", 1, corner) == {
+        index(2, 1), index(1, 2)
+    }
+    edge_ray_targets = {
+        *(index(file, 0) for file in range(1, 9)),
+        *(index(0, rank) for rank in range(1, 10)),
+    }
+    for type_id in ("R", "C"):
+        assert targets(type_id, 0, corner) == edge_ray_targets
+        assert targets(type_id, 1, corner) == edge_ray_targets
+
+    assert targets("P", 0, index(4, 0)) == {index(4, 1)}
+    assert targets("P", 1, index(4, 9)) == {index(4, 8)}
