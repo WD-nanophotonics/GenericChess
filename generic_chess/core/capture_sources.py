@@ -195,6 +195,22 @@ def query_capture_sources(
     still ignores own-anchor safety; ``legal_capture_sources`` additionally
     uses the ordinary legal-action authority for the side to move.
     """
+    pseudo_sources, pseudo_capture_sources, engine = _query_pseudo_sets(
+        position, target, by_owner, compiled
+    )
+
+    return CaptureSourceEvidence(
+        target=target,
+        by_owner=by_owner,
+        pseudo_attack_sources=pseudo_sources,
+        pseudo_capture_sources=pseudo_capture_sources,
+        legal_capture_sources=_legal_sources(
+            position, target, by_owner, compiled, engine
+        ),
+    )
+
+
+def _query_pseudo_sets(position: Position, target: Square, by_owner: int, compiled):
     if by_owner not in (0, 1):
         raise ValueError("by_owner must be 0 or 1")
     if not in_bounds(target, position.board_shape):
@@ -213,25 +229,25 @@ def query_capture_sources(
     if victim is None or victim.owner == by_owner:
         raise ValueError("target must contain a piece owned by the opponent")
 
-    if engine is not None:
-        pseudo_sources = _semantic_pseudo_sources(
-            position, target_index, by_owner, engine
-        )
-        pseudo_capture_sources = _semantic_pseudo_sources(
-            position, target_index, by_owner, engine, captures_only=True
-        )
-    else:
-        pseudo_sources = _legacy_pseudo_sources(
-            position, target, by_owner, compiled
-        )
-        pseudo_capture_sources = pseudo_sources
-
-    return CaptureSourceEvidence(
-        target=target,
-        by_owner=by_owner,
-        pseudo_attack_sources=pseudo_sources,
-        pseudo_capture_sources=pseudo_capture_sources,
-        legal_capture_sources=_legal_sources(
-            position, target, by_owner, compiled, engine
-        ),
+    if engine is None:
+        pseudo = _legacy_pseudo_sources(position, target, by_owner, compiled)
+        return pseudo, pseudo, None
+    attacks = _semantic_pseudo_sources(position, target_index, by_owner, engine)
+    captures = _semantic_pseudo_sources(
+        position, target_index, by_owner, engine, captures_only=True
     )
+    return attacks, captures, engine
+
+
+def query_pseudo_capture_sources(
+    position: Position, target: Square, by_owner: int, compiled
+) -> tuple[Square, ...]:
+    """Return capture-capable pseudo-threat sources without legal movegen.
+
+    This explicit read-only query applies only compiled capture geometry and
+    guards. It is valid off-turn and intentionally ignores own-anchor safety.
+    """
+    _attacks, captures, _engine = _query_pseudo_sets(
+        position, target, by_owner, compiled
+    )
+    return captures

@@ -8,6 +8,7 @@ from rule_semantics_ir_fixtures import cannon_ruleset
 
 from generic_chess.core.actions import BoardMove
 from generic_chess.core.capture_sources import query_capture_sources
+from generic_chess.core.capture_pressure_trace import trace_capture_pressure
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
 from generic_chess.core.movegen import legal_actions
@@ -243,18 +244,20 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
         )
         return apply_action(state, action, compiled)
 
-    state = move(state, Square(3, 2), Square(3, 1))
+    state = move(state, Square(4, 0), Square(4, 1))
     state = move(state, Square(0, 4), Square(1, 4))
+    state = move(state, Square(3, 2), Square(3, 1))
+    state = move(state, Square(1, 4), Square(2, 4))
     state = move(state, Square(4, 2), target)
     provenance = reconstruct_history_provenance(state, compiled)
     assert provenance.status == "verified"
-    assert len(provenance.frames) == 4
+    assert len(provenance.frames) == 6
 
     def joined_edges(history):
         if history.status != "verified":
             return ()
         joined = []
-        for ply in (0, 3):
+        for ply in (0, 5):
             frame = history.frames[ply]
             evidence = query_capture_sources(frame.position, target, 1, compiled)
             if source not in evidence.pseudo_capture_sources:
@@ -275,16 +278,87 @@ def test_capture_sources_join_verified_history_tokens_across_reoccupancy():
     assert edges[0][0] == edges[1][0]  # attacker continuity
     assert edges[0][1] != edges[1][1]  # same square/type, different target instance
     assert provenance.frames[0].position.board[target_index].base_type_id == "R"
-    assert provenance.frames[3].position.board[target_index].base_type_id == "R"
+    assert provenance.frames[5].position.board[target_index].base_type_id == "R"
+
+    trace = trace_capture_pressure(state, compiled)
+    assert trace.status == "verified"
+    threat_to_a = [
+        fact for fact in trace.facts
+        if fact.source_token == edges[0][0] and fact.target_token == edges[0][1]
+    ]
+    by_ply = {fact.ply: fact for fact in threat_to_a}
+    assert by_ply[1].pseudo_capture_before and by_ply[1].pseudo_capture_after
+    assert by_ply[2].pseudo_capture_before and by_ply[2].pseudo_capture_after
+    assert by_ply[3].pseudo_capture_before and not by_ply[3].pseudo_capture_after
+    assert by_ply[3].target_transition == "moved"
+    assert by_ply[3].action_source_token == edges[0][1]
+
+    target_b = provenance.frames[5].identities[target_index]
+    assert target_b is not None and target_b != edges[0][1]
+    threat_to_b = next(
+        fact for fact in trace.facts
+        if fact.ply == 5 and fact.source_token == edges[0][0]
+        and fact.target_token == target_b
+    )
+    assert threat_to_b.pseudo_capture_before and threat_to_b.pseudo_capture_after
+    assert threat_to_b.target_transition == "moved"
 
     incomplete = replace(state, history=state.history[1:])
     unknown = reconstruct_history_provenance(incomplete, compiled)
     assert unknown.status == "unknown"
     assert unknown.frames == ()
     assert joined_edges(unknown) == ()
+    unknown_trace = trace_capture_pressure(incomplete, compiled)
+    assert unknown_trace.status == "unknown"
+    assert unknown_trace.facts == ()
 
     imported = replace(state, history=())
     imported_provenance = reconstruct_history_provenance(imported, compiled)
     assert imported_provenance.status == "unknown"
     assert imported_provenance.frames == ()
     assert joined_edges(imported_provenance) == ()
+    imported_trace = trace_capture_pressure(imported, compiled)
+    assert imported_trace.status == "unknown"
+    assert imported_trace.facts == ()
+
+
+def test_capture_pressure_trace_records_capture_of_target_token():
+    rows = [[None] * 5 for _ in range(5)]
+    rows[0][4] = Piece(0, "K", "K")
+    rows[4][0] = Piece(1, "K", "K")
+    rows[2][0] = Piece(1, "R", "R")
+    rows[2][3] = Piece(0, "R", "R")
+    rows[2][4] = Piece(0, "R", "R")
+    mask = (True,) * 25
+    compiled = compile_ruleset_for_execution(
+        RuleSet(
+            board_size=5,
+            piece_types=(king_type(), rook_type()),
+            initial_position=tuple(tuple(row) for row in rows),
+            drop_allowed={"R": (mask, mask)},
+            promotion_allowed={},
+            promotion_forced={},
+        )
+    )
+    state = initial_state(compiled)
+
+    def move(state, start, end):
+        action = next(
+            action for action in legal_actions(state, compiled)
+            if isinstance(action, BoardMove)
+            and action.from_square == start and action.to_square == end
+        )
+        return apply_action(state, action, compiled)
+
+    state = move(state, Square(4, 0), Square(4, 1))
+    state = move(state, Square(0, 2), Square(3, 2))
+    trace = trace_capture_pressure(state, compiled)
+    assert trace.status == "verified"
+    captured = next(
+        fact for fact in trace.facts
+        if fact.ply == 2 and fact.before_target == Square(3, 2)
+        and fact.target_transition == "captured"
+    )
+    assert captured.pseudo_capture_before
+    assert not captured.pseudo_capture_after
+    assert captured.action_target_token == captured.target_token
