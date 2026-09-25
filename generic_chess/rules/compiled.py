@@ -67,6 +67,7 @@ class CompiledGeometryCarrier:
 
     ruleset_fingerprint: str
     board_shape: BoardShape
+    types_by_id: Mapping[str, PieceType]
     initial_position: Position
     leap_targets: Mapping[str, tuple]
     ray_paths: Mapping[str, tuple]

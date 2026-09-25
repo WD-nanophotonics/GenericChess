@@ -320,6 +320,7 @@ def _compile_geometry_carrier(
     return CompiledGeometryCarrier(
         ruleset_fingerprint=fingerprint,
         board_shape=shape,
+        types_by_id=MappingProxyType({pt.type_id: pt for pt in ruleset.piece_types}),
         initial_position=position,
         leap_targets=MappingProxyType(tables["leap_targets"]),
         ray_paths=MappingProxyType(tables["ray_paths"]),
@@ -540,25 +541,38 @@ def compile_ruleset_for_execution(
 # ================================================================ semantic IR
 
 
-def build_geometry_metadata(compiled: CompiledRuleSet) -> dict:
+def _geometry_board_shape(
+    compiled: CompiledRuleSet | CompiledGeometryCarrier,
+) -> BoardShape:
+    if isinstance(compiled, CompiledGeometryCarrier):
+        return compiled.board_shape
+    return BoardShape(compiled.board_size, compiled.board_size)
+
+
+def build_geometry_metadata(
+    compiled: CompiledRuleSet | CompiledGeometryCarrier,
+) -> dict:
     """Canonical geometry lowering (Design A): per (type, owner, source)
     ordered leap targets and ray path segments, projected from the single
     compiler lowering that also feeds the legacy execution tables."""
-    n = compiled.board_size
-    out: dict[str, Any] = {"schema": "geometry_v1", "squares": n * n, "types": {}}
+    shape = _geometry_board_shape(compiled)
+    width = shape.width
+    out: dict[str, Any] = {
+        "schema": "geometry_v1", "squares": shape.area, "types": {},
+    }
     for tid, _pt in compiled.types_by_id.items():
         leaps: dict[str, Any] = {}
         rays: dict[str, Any] = {}
         for owner in (0, 1):
             owner_leaps: dict[int, list[list[int]]] = {}
             owner_rays: dict[int, list[list[int]]] = {}
-            for idx in range(n * n):
+            for idx in range(shape.area):
                 owner_leaps[idx] = [
-                    [sq.rank * n + sq.file for sq in atom_targets]
+                    [sq.rank * width + sq.file for sq in atom_targets]
                     for atom_targets in compiled.leap_targets[tid][owner][idx]
                 ]
                 owner_rays[idx] = [
-                    [sq.rank * n + sq.file for sq in path]
+                    [sq.rank * width + sq.file for sq in path]
                     for path in compiled.ray_paths[tid][owner][idx]
                 ]
             leaps[str(owner)] = owner_leaps
@@ -568,22 +582,23 @@ def build_geometry_metadata(compiled: CompiledRuleSet) -> dict:
 
 
 def _geometry_paths_from_atom(
-    compiled: CompiledRuleSet, tid: str, atom_index: int
+    compiled: CompiledRuleSet | CompiledGeometryCarrier, tid: str, atom_index: int
 ) -> dict[str, dict[int, tuple[int, ...]]]:
     """Canonical per-(owner, source) ordered paths for a legacy atom,
     projected from the single compiler lowering (the same tables the legacy
     Core uses)."""
-    n = compiled.board_size
+    shape = _geometry_board_shape(compiled)
+    width = shape.width
     out: dict[str, dict[int, tuple[int, ...]]] = {}
     for owner in (0, 1):
         per_source: dict[int, tuple[int, ...]] = {}
-        for idx in range(n * n):
+        for idx in range(shape.area):
             leap = compiled.leap_targets[tid][owner][idx][atom_index]
             ray = compiled.ray_paths[tid][owner][idx][atom_index]
             if leap:
-                per_source[idx] = (leap[0].rank * n + leap[0].file,)
+                per_source[idx] = (leap[0].rank * width + leap[0].file,)
             elif ray:
-                per_source[idx] = tuple(s.rank * n + s.file for s in ray)
+                per_source[idx] = tuple(s.rank * width + s.file for s in ray)
             else:
                 per_source[idx] = ()
         out[str(owner)] = per_source
@@ -591,7 +606,7 @@ def _geometry_paths_from_atom(
 
 
 def build_legacy_geometry_catalog(
-    compiled: CompiledRuleSet,
+    compiled: CompiledRuleSet | CompiledGeometryCarrier,
 ) -> tuple[dict[str, Any], dict[tuple[str, int], str]]:
     """Deterministic geometry catalog for legacy movement atoms.
 
