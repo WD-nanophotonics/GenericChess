@@ -1471,6 +1471,152 @@ def _lower_compile_only_ray_path_actions(carrier, ruleset):
     return lowered, support
 
 
+def _lower_compile_only_single_source_offset_guard(carrier, ruleset):
+    """Lower one narrow source-offset empty-square guard into static typed IR."""
+    from .ir import (
+        CompiledStatePredicate,
+        validate_executable_completeness,
+        validate_ir,
+    )
+
+    if not isinstance(carrier, CompiledGeometryCarrier):
+        raise TypeError("compile-only geometry carrier required")
+    if (
+        ruleset.board_shape != carrier.board_shape
+        or compute_fingerprint(ruleset) != carrier.ruleset_fingerprint
+    ):
+        raise ValueError("RuleSet does not match the compile-only geometry carrier")
+    if len(ruleset.semantic_actions) != 1:
+        raise ValueError("source-offset diagnostic requires exactly one action")
+    action = ruleset.semantic_actions[0]
+    selector = action.replace_selector
+    if len(action.state_guards) != 1:
+        raise ValueError("source-offset diagnostic requires exactly one state guard")
+    guard = action.state_guards[0]
+    refs = guard.spatial.refs
+    if not (
+        action.geometry.kind == "legacy_atoms"
+        and action.geometry.atom_kind == "leap"
+        and action.target_relation == "empty"
+        and action.composition == "replace_legacy"
+        and not action.path_constraints
+        and not action.slot_guards
+        and not action.aux_state
+        and not action.triggers
+        and not action.postconditions
+        and action.promotion_mode == "none"
+        and action.explicit_promotion_type is None
+        and len(action.effects) == 1
+        and action.effects[0].kind == "move"
+        and action.effects[0].from_ref is not None
+        and action.effects[0].from_ref.kind == "source"
+        and action.effects[0].to_ref is not None
+        and action.effects[0].to_ref.kind == "target"
+        and action.effects[0].square_ref is None
+        and action.effects[0].piece_owner == "self"
+        and action.effects[0].piece_type_ref is None
+        and action.effects[0].disposition is None
+        and action.effects[0].slot_name is None
+        and action.effects[0].type_ref is None
+        and action.effects[0].count == 1
+        and action.effects[0].value is None
+        and len(action.invariants) == 1
+        and action.invariants[0].kind == "own_anchor_safe"
+        and not action.invariants[0].square_refs
+        and guard.aggregation == "count"
+        and guard.owner == "any"
+        and guard.type_ref.kind == "any"
+        and guard.type_ref.type_id is None
+        and guard.compare_field == "base"
+        and guard.promoted == "any"
+        and guard.location == "board"
+        and guard.spatial.kind == "exact"
+        and not guard.spatial.zone_squares
+        and len(refs) == 1
+        and refs[0].kind == "offset_from_source"
+        and refs[0].offset is not None
+        and refs[0].owner_relative
+        and refs[0].square is None
+        and refs[0].step is None
+        and refs[0].slot_name is None
+        and guard.comparison == "eq"
+        and guard.value == 0
+        and guard.subject_ref is None
+        and selector is not None
+        and selector.action_family == "board"
+        and selector.target_relation == "empty"
+        and selector.geometry_kind == "leap"
+        and selector.replace_all_matching
+        and tuple(selector.type_ids) == tuple(action.type_ids)
+    ):
+        raise ValueError("action is outside the bounded source-offset guard diagnostic")
+
+    ir = lower_legacy_to_ir(carrier, ruleset=ruleset)
+    _, legacy_ids = build_legacy_geometry_catalog(carrier)
+    gids = _semantic_action_geometry_ids(
+        action, 0, carrier.types_by_id, legacy_ids
+    )
+    replaced_ids = _matching_replaced_legacy_patterns(
+        0, action, ir.geometry, ir.patterns
+    )
+    templates = [pattern for pattern in ir.patterns if pattern.pattern_id in replaced_ids]
+    if not templates or any(
+        pattern.geometry_ids[0] not in gids for pattern in templates
+    ):
+        raise ValueError("legacy replacement selection does not match action geometry")
+
+    type_ids = tuple(sorted(carrier.types_by_id))
+    compiled_guard = CompiledStatePredicate(
+        aggregation=guard.aggregation,
+        owner=guard.owner,
+        type_ref=_resolve_type_ref(guard.type_ref, type_ids),
+        compare_field=guard.compare_field,
+        promoted=guard.promoted,
+        location=guard.location,
+        spatial=_resolve_spatial(guard.spatial, {}, {}),
+        comparison=guard.comparison,
+        value=guard.value,
+    )
+    semantic = replace(
+        templates[0],
+        pattern_id=f"sem_00_{action.name}",
+        name=action.name,
+        type_ids=tuple(action.type_ids),
+        geometry_ids=gids,
+        guards=(compiled_guard,),
+        effects=_lower_semantic_effects(action, {}, type_ids),
+        invariants=_lower_semantic_invariants(action, {}),
+        promotion_mode=action.promotion_mode,
+        explicit_promotion_type=action.explicit_promotion_type,
+        composition="replace_legacy",
+        replaced_pattern_ids=replaced_ids,
+    )
+    stratum, cost = _assign_stratum_cost(semantic)
+    semantic = replace(semantic, stratum=stratum, cost_class=cost)
+    lowered = replace(
+        ir,
+        patterns=tuple(
+            pattern for pattern in ir.patterns
+            if pattern.pattern_id not in set(replaced_ids)
+        ) + (semantic,),
+        capabilities=replace(
+            ir.capabilities,
+            legacy_core_executable=False,
+            new_ir_core_executable=False,
+            native_executable=False,
+            contains_state_guard=True,
+        ),
+    )
+    errors = validate_ir(lowered)
+    errors.extend(validate_executable_completeness(lowered, type_ids))
+    if errors:
+        raise RuleValidationError(
+            [ValidationIssue("SEMANTIC_IR_INVALID", "semantic_actions[0]", "; ".join(errors))]
+        )
+    support = _build_semantic_support(carrier, ruleset=ruleset)
+    return lowered, support
+
+
 def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     """Compile a semantic-DSL RuleSet into the v2 production IR.
 

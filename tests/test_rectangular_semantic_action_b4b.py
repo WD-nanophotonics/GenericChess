@@ -7,10 +7,12 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from generic_chess.core.coordinates import BoardShape
-from generic_chess.core.pieces import Piece
+from generic_chess.core.movement import LeapAtom
+from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.rules.compiler import (
     _compile_geometry_carrier,
     _lower_compile_only_ray_path_actions,
+    _lower_compile_only_single_source_offset_guard,
     compile_ruleset,
     compile_semantic_ruleset,
     lower_legacy_to_ir,
@@ -20,9 +22,10 @@ from generic_chess.rules.ir import (
     validate_executable_completeness,
     validate_ir,
 )
-from generic_chess.rules.schema import RulePathConstraint, RuleReplaceSelector
+from generic_chess.rules.schema import RulePathConstraint, RuleReplaceSelector, RuleSet
 from generic_chess.rules.validation import RuleValidationError
 from rule_semantics_ir_fixtures import cannon_ruleset
+from test_action_bound_state_guard import _horse_leg_guard_ruleset
 from test_xiangqi_static_setup_fixture import (
     MOVEMENT_ATOMS,
     _build_incomplete_static_xiangqi_setup_fixture,
@@ -233,6 +236,78 @@ def test_xiangqi_quiet_and_one_screen_capture_lower_to_distinct_static_ir():
     errors = validate_ir(ir)
     errors.extend(validate_executable_completeness(ir, tuple(sorted(carrier.types_by_id))))
     assert errors == []
+    with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
+        compile_ruleset(rules, allow_semantic_actions=True)
+    with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
+        compile_semantic_ruleset(rules)
+
+
+def test_rectangular_compile_only_horse_leg_guard_preserves_owner_relative_ref():
+    horse_action = _horse_leg_guard_ruleset().semantic_actions[0]
+    shape = BoardShape(9, 10)
+    rows = [[None] * shape.width for _ in range(shape.height)]
+    rows[0][0] = Piece(0, "G", "G")
+    rows[9][8] = Piece(1, "G", "G")
+    empty_drop_mask = (False,) * shape.area
+    rules = RuleSet(
+        board_size=None,
+        board_width=shape.width,
+        board_height=shape.height,
+        piece_types=(
+            PieceType("G", "General", (), is_anchor=True),
+            PieceType("H", "Horse", (LeapAtom((2, 1)),)),
+        ),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"H": (empty_drop_mask, empty_drop_mask)},
+        semantic_actions=(horse_action,),
+        capture_disposition="remove_from_game",
+        metadata={"fixture_status": "incomplete_compile_only_guard_witness"},
+    )
+    carrier = _compile_geometry_carrier(rules)
+    ir, support = _lower_compile_only_single_source_offset_guard(carrier, rules)
+
+    assert support.board_shape == BoardShape(9, 10)
+    pattern = next(pattern for pattern in ir.patterns if pattern.name == "horse_leg_step")
+    assert len(pattern.geometry_ids) == 1
+    geometry = ir.geometry[pattern.geometry_ids[0]]
+    assert geometry.atom_source == ("H", 0)
+    assert geometry.offset == (2, 1)
+    assert len(pattern.guards) == 1
+    guard = pattern.guards[0]
+    assert guard.aggregation == "count"
+    assert guard.owner == "any"
+    assert guard.type_ref.kind == "any"
+    assert guard.compare_field == "base"
+    assert guard.promoted == "any"
+    assert guard.location == "board"
+    assert guard.comparison == "eq"
+    assert guard.value == 0
+    assert guard.spatial.kind == "exact"
+    reference = guard.spatial.refs[0]
+    assert reference.kind == "offset_from_source"
+    assert reference.offset == (1, 0)
+    assert reference.owner_relative is True
+
+    center_source = 4 * 9 + 3
+    assert geometry.paths["0"][center_source] == (5 * 9 + 5,)
+    assert geometry.paths["1"][center_source] == (3 * 9 + 1,)
+    edge_source = 8 * 9 + 7
+    assert geometry.paths["0"][edge_source] == ()
+    assert geometry.paths["1"][edge_source] == (7 * 9 + 5,)
+
+    def relative_leg(owner, file, rank):
+        df = 1 if owner == 0 else -1
+        return rank * 9 + file + df
+
+    assert relative_leg(0, 3, 4) == 4 * 9 + 4
+    assert relative_leg(1, 3, 4) == 4 * 9 + 2
+    assert relative_leg(0, 7, 8) == 8 * 9 + 8
+    assert relative_leg(1, 7, 8) == 8 * 9 + 6
+
+    assert not ir.capabilities.legacy_core_executable
+    assert not ir.capabilities.new_ir_core_executable
+    assert not ir.capabilities.native_executable
+    assert ir.capabilities.contains_state_guard
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
         compile_ruleset(rules, allow_semantic_actions=True)
     with pytest.raises(RuleValidationError, match="RECTANGULAR_EXECUTION_NOT_IN_A_STAGE"):
