@@ -1,0 +1,54 @@
+# Cross-game RuleSet capability audit
+
+**Scope.** This is a rule-semantics audit, not a material-score experiment or a
+claim of full game support. The single unknown is which general primitives are
+still needed to express and execute the chess-family cases the user named.
+The minimum direct observation is a source-to-schema/compiler/executor check and
+paired legal-action tests. Full games and self-play cannot answer that question
+more directly.
+
+The 2018 WXF Xiangqi coverage is tracked separately in
+`xiangqi_2018_rule_coverage_matrix.md`. Its 9×10 diagnostic RuleSet executes
+ordinary actions in Python Core but is not a registered product ruleset;
+history-based WXF adjudication and native parity remain open.
+
+## Janggi as a distinct semantics probe
+
+The [Japan Shogi Association's world-games rules summary](https://isf.shogi.or.jp/en/special/world.html)
+describes Janggi on a 9×10 board with palace diagonals, blocked Horse and
+Elephant paths, Chariot diagonals within a palace, a Cannon that must jump one
+piece for both quiet movement and capture, a prohibition on jumping over or
+capturing a Cannon, Soldier forward/sideways movement plus forward palace
+diagonals, optional pass, and different draw conditions. This secondary rules
+summary is a starting source for paired tests, not a tournament adjudication
+oracle. Rule variations and outcome details require a chosen authoritative
+ruleset before claiming a complete Janggi implementation.
+
+| Generic capability | Present evidence | Smallest missing observation or change |
+|---|---|---|
+| Rectangular board and initial pieces | `RuleSet.board_width/board_height`; Xiangqi 9×10 diagnostic executes | Retain 8×8 Chess and 9×9 Shogi behavior while exercising 9×10 Janggi templates. |
+| Horse/Elephant blockers | Xiangqi diagnostic uses path constraints for Horse leg and Elephant eye | Test Janggi's longer Elephant route with both intermediate points occupied separately. |
+| Palace-only edges | Explicit square-zone guards and owner-relative zones exist | Check whether a compact, game-independent edge/zone declaration can express only the drawn palace diagonals, including a two-step corner-to-corner Chariot ray, without admitting off-line diagonals. |
+| Cannon screen count and type | `RulePathConstraint` counts blockers and can filter first/last blocker by owner; it has no blocker-type predicate | Add a generic type predicate on the selected blocker, then distinguish an ordinary screen from a Cannon screen for both quiet and capture actions. Target-type restrictions can use a target-square state guard; test Cannon as target separately. |
+| No-board-change action | Public action types are board move or drop; no pass action or turn-only semantic effect is declared | Add an opt-in generic pass action with explicit legality guard, history/position identity and terminal/repetition behavior. Disabled rulesets should retain the existing direct path. |
+| Selectable setup | `RuleSet.initial_position` is one fixed position | If players can choose Horse/Elephant layouts, define a generic pre-game setup choice rather than hard-coding the game name. A set of separate frozen RuleSets is only a diagnostic substitute. |
+| Conditional outcomes | Generic repetition/draw and no-move policies are narrow; WXF history adjudication is open | Specify facts and declarable precedence for facing-anchor, consecutive-pass and scoring outcomes before implementing a particular federation's policy. Do not equate Xiangqi's facing-General check with Janggi's outcome rule. |
+
+## Implementation order
+
+1. Prove each missing rule with one pair of tiny positions where only the
+   relevant condition changes. Extend the typed generic DSL and Python
+   executor only for the demonstrated gap. Compiler rejection of unsupported
+   native behavior must remain explicit.
+2. Bring native execution to parity for an added primitive before registering
+   a product ruleset that may select the native path. Test active and inactive
+   cases, then re-run Chess and Standard Shogi retention tests.
+3. Build an unregistered Janggi diagnostic only after these primitives exist.
+   Compare sampled legal move sets against an independent identified engine or
+   rule oracle. Keep history adjudication and competition conventions explicit
+   rather than silently treating them as ordinary move legality.
+
+Optional rules must be selected at compile time; absent pass, zones, blocker
+type filters or history policies should not add work to the ordinary Chess and
+Shogi move path. This is a design requirement pending a measured hot-path
+check, not a proven performance result.
