@@ -606,6 +606,265 @@ def test_public_9x10_cannon_path_guard_preserves_own_king_safety():
     assert unsafe_engine.in_check(child.position, 0)
 
 
+def _public_9x10_facing_generals_ruleset():
+    shape = BoardShape(9, 10)
+    palace = tuple(
+        (file, rank) for file in range(3, 6) for rank in range(3)
+    )
+    zone = RuleSpatialSelector(kind="zone", zone_squares=palace)
+
+    def palace_guards(*refs):
+        return tuple(
+            RuleSquareZoneGuard(
+                square_ref=RuleSquareRef(kind=ref),
+                spatial=zone,
+                relation="inside",
+                owner_relative=True,
+            )
+            for ref in refs
+        )
+
+    anchor = PieceType(
+        "K",
+        "Anchor",
+        tuple(
+            LeapAtom((df, dr))
+            for df, dr in ((1, 0), (-1, 0), (0, 1), (0, -1))
+        ),
+        is_anchor=True,
+    )
+    blocker = PieceType("B", "Screen", (LeapAtom((1, 0)), LeapAtom((-1, 0))))
+    decoy = PieceType("X", "Non-anchor target", ())
+    step_quiet = RuleSemanticAction(
+        name="general_step_quiet",
+        type_ids=("K",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        composition="replace_legacy",
+        replace_selector=RuleReplaceSelector(
+            type_ids=("K",), action_family="board", target_relation="empty",
+            geometry_kind="leap", replace_all_matching=True,
+        ),
+        effects=(RuleActionEffect(
+            "move", from_ref=RuleSquareRef(kind="source"),
+            to_ref=RuleSquareRef(kind="target"),
+        ),),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+        square_zone_guards=palace_guards("source", "target"),
+    )
+    step_capture = RuleSemanticAction(
+        name="general_step_capture",
+        type_ids=("K",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="enemy",
+        composition="replace_legacy",
+        replace_selector=RuleReplaceSelector(
+            type_ids=("K",), action_family="board", target_relation="enemy",
+            geometry_kind="leap", replace_all_matching=True,
+        ),
+        effects=(
+            RuleActionEffect(
+                "remove", square_ref=RuleSquareRef(kind="target"),
+                disposition="remove_from_game", piece_owner="opponent",
+            ),
+            RuleActionEffect(
+                "move", from_ref=RuleSquareRef(kind="source"),
+                to_ref=RuleSquareRef(kind="target"),
+            ),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+        square_zone_guards=palace_guards("source", "target"),
+    )
+    target_is_anchor = RuleStateGuard(
+        aggregation="count",
+        owner="opponent",
+        type_ref=RuleTypeRef(kind="explicit", type_id="K"),
+        compare_field="current",
+        promoted="any",
+        location="board",
+        spatial=RuleSpatialSelector(
+            kind="exact", refs=(RuleSquareRef(kind="target"),)
+        ),
+        comparison="eq",
+        value=1,
+        subject_ref=RuleSquareRef(kind="target"),
+    )
+    facing_capture = RuleSemanticAction(
+        name="facing_anchor_capture",
+        type_ids=("K",),
+        geometry=RuleGeometrySpec(
+            kind="ray", direction=(0, 1), owner_relative=True
+        ),
+        target_relation="enemy",
+        path_constraints=(RulePathConstraint("path_clear"),),
+        state_guards=(target_is_anchor,),
+        effects=(
+            RuleActionEffect(
+                "remove", square_ref=RuleSquareRef(kind="target"),
+                disposition="remove_from_game", piece_owner="opponent",
+            ),
+            RuleActionEffect(
+                "move", from_ref=RuleSquareRef(kind="source"),
+                to_ref=RuleSquareRef(kind="target"),
+            ),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+        square_zone_guards=palace_guards("source"),
+    )
+    blocker_step = RuleSemanticAction(
+        name="move_screen",
+        type_ids=("B",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="leap"),
+        target_relation="empty",
+        composition="replace_legacy",
+        replace_selector=RuleReplaceSelector(
+            type_ids=("B",), action_family="board", target_relation="empty",
+            geometry_kind="leap", replace_all_matching=True,
+        ),
+        effects=(RuleActionEffect(
+            "move", from_ref=RuleSquareRef(kind="source"),
+            to_ref=RuleSquareRef(kind="target"),
+        ),),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    rows = [[None] * shape.width for _ in range(shape.height)]
+    rows[0][4] = Piece(0, "K", "K")
+    rows[9][4] = Piece(1, "K", "K")
+    rows[4][4] = Piece(0, "B", "B")
+    mask = (False,) * shape.area
+    return RuleSet(
+        board_size=None,
+        board_width=shape.width,
+        board_height=shape.height,
+        piece_types=(anchor, blocker, decoy),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"B": (mask, mask), "X": (mask, mask)},
+        semantic_actions=(step_quiet, step_capture, facing_capture, blocker_step),
+    )
+
+
+def _public_facing_state(
+    compiled, *, kings=(Square(4, 0), Square(4, 9)), blockers=(), extras=(), side=0
+):
+    state = initial_state(compiled)
+    board = [None] * (9 * 10)
+    for owner, square in enumerate(kings):
+        board[square.rank * 9 + square.file] = Piece(owner, "K", "K")
+    for square, owner in blockers:
+        board[square.rank * 9 + square.file] = Piece(owner, "B", "B")
+    for square, owner, type_id in extras:
+        board[square.rank * 9 + square.file] = Piece(owner, type_id, type_id)
+    return replace(
+        state,
+        position=replace(
+            state.position, board=tuple(board), side_to_move=side
+        ),
+    )
+
+
+def test_public_9x10_facing_generals_palace_blockers_and_legal_safety():
+    ruleset = _public_9x10_facing_generals_ruleset()
+    serialized = ruleset_to_dict(ruleset)
+    restored = ruleset_from_dict(serialized)
+    assert ruleset_to_dict(restored) == serialized
+    assert compute_fingerprint(restored) == compute_fingerprint(ruleset)
+    compiled = compile_ruleset_for_execution(restored)
+    assert compiled.ir.capabilities.new_ir_core_executable
+    assert not compiled.ir.capabilities.native_executable
+    from generic_chess.native.compiler import (
+        NativeUnsupportedRuleError,
+        build_semantic_compile_payload,
+    )
+
+    with pytest.raises(NativeUnsupportedRuleError, match="square zone guards"):
+        build_semantic_compile_payload(compiled)
+    engine = SemanticEngine(compiled)
+
+    facing = _public_facing_state(compiled)
+    assert engine.in_check(facing.position, 0)
+    assert engine.in_check(facing.position, 1)
+    for owner in (0, 1):
+        screened = _public_facing_state(
+            compiled, blockers=((Square(4, 4), 1 - owner),), side=owner
+        )
+        assert not engine.in_check(screened.position, owner)
+
+    one_screen = _public_facing_state(
+        compiled, blockers=((Square(4, 4), 0),), side=0
+    )
+    exposed_moves = [
+        action for action in legal_actions(one_screen, compiled)
+        if isinstance(action, SemanticBoardMove)
+        and action.from_square == Square(4, 4)
+        and action.to_square.file != 4
+    ]
+    assert not exposed_moves
+
+    two_screens = _public_facing_state(
+        compiled,
+        blockers=((Square(4, 3), 0), (Square(4, 6), 1)),
+        side=0,
+    )
+    safe_shift = next(
+        action for action in legal_actions(two_screens, compiled)
+        if isinstance(action, SemanticBoardMove)
+        and action.from_square == Square(4, 3)
+        and action.to_square == Square(5, 3)
+    )
+    shifted = apply_action(two_screens, safe_shift, compiled)
+    assert shifted.position.board[3 * 9 + 5] == Piece(0, "B", "B")
+    assert shifted.position.board[6 * 9 + 4] == Piece(1, "B", "B")
+    assert not engine.in_check(shifted.position, 0)
+    illegal_last_screen_shift = replace(
+        safe_shift, from_square=Square(4, 4), to_square=Square(5, 4)
+    )
+    with pytest.raises(IllegalActionError, match="not a legal semantic action"):
+        apply_action(one_screen, illegal_last_screen_shift, compiled)
+
+    for side, kings, source, inside, invalid_targets in (
+        (
+            0, (Square(3, 1), Square(8, 9)), Square(3, 1),
+            Square(4, 1), (Square(2, 1), Square(4, 2)),
+        ),
+        (
+            1, (Square(0, 0), Square(5, 8)), Square(5, 8),
+            Square(4, 8), (Square(6, 8), Square(4, 7)),
+        ),
+    ):
+        palace_state = _public_facing_state(compiled, kings=kings, side=side)
+        inside_move = next(
+            action for action in legal_actions(palace_state, compiled)
+            if isinstance(action, SemanticBoardMove)
+            and action.from_square == source and action.to_square == inside
+        )
+        moved = apply_action(palace_state, inside_move, compiled)
+        assert moved.position.board[inside.rank * 9 + inside.file] == Piece(
+            side, "K", "K"
+        )
+        for target in invalid_targets:
+            assert not any(
+                isinstance(action, SemanticBoardMove)
+                and action.from_square == source and action.to_square == target
+                for action in legal_actions(palace_state, compiled)
+            )
+            with pytest.raises(IllegalActionError, match="not a legal semantic action"):
+                apply_action(palace_state, replace(inside_move, to_square=target), compiled)
+
+    non_anchor_target = _public_facing_state(
+        compiled,
+        kings=(Square(4, 0), Square(8, 9)),
+        extras=((Square(4, 9), 1, "X"),),
+    )
+    target_index = 9 * 9 + 4
+    assert not engine.is_square_attacked(non_anchor_target.position, target_index, 0)
+    assert not any(
+        isinstance(action, SemanticBoardMove)
+        and action.from_square == Square(4, 0)
+        and action.to_square == Square(4, 9)
+        for action in legal_actions(non_anchor_target, compiled)
+    )
+
+
 def _toy_horse_leg_ruleset(*, blocked_owner=None):
     shape = BoardShape(9, 10)
     king = PieceType(
