@@ -239,3 +239,95 @@ def test_offset_exact_zero_count_guard_blocks_either_owner_on_horse_leg():
     assert has_horse_step()
     assert not has_horse_step(0)
     assert not has_horse_step(1)
+
+
+def _region_partition_ruleset():
+    king = PieceType(
+        "K", "King",
+        tuple(
+            LeapAtom((df, dr))
+            for df in (-1, 0, 1)
+            for dr in (-1, 0, 1)
+            if (df, dr) != (0, 0)
+        ),
+        is_anchor=True,
+    )
+    token = PieceType("X", "Token", ())
+    rows = [[None] * 8 for _ in range(8)]
+    rows[3][2] = Piece(0, "X", "X")
+    rows[0][7] = Piece(0, "K", "K")
+    rows[7][7] = Piece(1, "K", "K")
+    # The eastward action partition admits origins only where its destination
+    # remains inside the 3x3 square region (files/ranks 2 through 4).
+    east_origins = tuple(
+        (file, rank)
+        for rank in range(2, 5)
+        for file in range(2, 4)
+    )
+    source_in_region = RuleStateGuard(
+        aggregation="exists",
+        owner="self",
+        type_ref=RuleTypeRef(kind="explicit", type_id="X"),
+        compare_field="base",
+        promoted="any",
+        location="board",
+        spatial=RuleSpatialSelector(kind="zone", zone_squares=east_origins),
+        comparison="eq",
+        value=1,
+        subject_ref=RuleSquareRef("source"),
+    )
+    east_action = RuleSemanticAction(
+        name="region_east_step",
+        type_ids=("X",),
+        geometry=RuleGeometrySpec(kind="leap", offset=(1, 0)),
+        target_relation="empty",
+        state_guards=(source_in_region,),
+        effects=(
+            RuleActionEffect(
+                "move",
+                from_ref=RuleSquareRef("source"),
+                to_ref=RuleSquareRef("target"),
+            ),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    return RuleSet(
+        board_size=8,
+        piece_types=(king, token),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"X": ((False,) * 64, (False,) * 64)},
+        semantic_actions=(east_action,),
+    )
+
+
+def test_source_zone_guard_partitions_moves_with_empty_targets():
+    semantic = compile_semantic_ruleset(_region_partition_ruleset())
+    pattern = next(p for p in semantic.ir.patterns if p.name == "region_east_step")
+    assert len(pattern.guards) == 1
+    assert pattern.guards[0].subject_ref.kind == "source"
+    assert pattern.guards[0].spatial.kind == "zone"
+    assert pattern.guards[0].spatial.zone_id in semantic.ir.zones
+    assert semantic.ir.zones[pattern.guards[0].spatial.zone_id].squares == (
+        18, 26, 34, 19, 27, 35
+    )
+
+    engine = semantic_engine_for(semantic)
+    initial = engine._initial_position()
+
+    def has_region_step(source_file, source_rank):
+        board = list(initial.board)
+        board[3 * 8 + 2] = None
+        source = source_rank * 8 + source_file
+        board[source] = Piece(0, "X", "X")
+        position = replace(initial, board=tuple(board))
+        return any(
+            action.pattern_id == "sem_00_region_east_step"
+            and action.source == source
+            and action.target == source + 1
+            for action in engine.legal_actions(position)
+        )
+
+    assert has_region_step(2, 3)  # allowed source, empty target in region
+    assert has_region_step(3, 3)  # source 3 -> boundary target 4 remains inside
+    assert not has_region_step(4, 3)  # target 5 would leave the region
+    assert not has_region_step(1, 3)  # source outside, target 2 would enter it
