@@ -64,6 +64,7 @@ def test_single_9x10_path_capture_lowers_to_typed_static_ir():
     assert [predicate.kind for predicate in semantic.path] == ["path_count_eq"]
     assert semantic.path[0].count == 1
     assert semantic.path[0].owner_filter == "any"
+    assert semantic.effects[0].disposition == "capture_to_hand"
     assert semantic.composition == "replace_legacy"
     assert len(semantic.replaced_pattern_ids) == 4
     assert len(semantic.geometry_ids) == 4
@@ -129,6 +130,13 @@ def _incomplete_xiangqi_cannon_path_pair():
             replace_all_matching=True,
         ),
     )
+    capture = replace(
+        capture,
+        effects=(
+            replace(capture.effects[0], disposition="remove_from_game"),
+            capture.effects[1],
+        ),
+    )
     return replace(base, semantic_actions=(quiet, capture))
 
 
@@ -167,7 +175,7 @@ def test_xiangqi_quiet_and_one_screen_capture_lower_to_distinct_static_ir():
     assert [effect.kind for effect in capture.effects] == ["remove", "move"]
     assert capture.effects[0].square_ref.kind == "target"
     assert capture.effects[0].piece_owner == "opponent"
-    assert capture.effects[0].disposition == "capture_to_hand"
+    assert capture.effects[0].disposition == "remove_from_game"
     assert capture.effects[1].from_ref.kind == "source"
     assert capture.effects[1].to_ref.kind == "target"
     assert capture.composition == "replace_legacy"

@@ -28,6 +28,7 @@ from .compiled import CompiledAutomaticAdjudication, CompiledGeometryCarrier, Co
 from .schema import (
     AUTOMATIC_ADJUDICATION_OUTCOMES,
     AUTOMATIC_ADJUDICATION_POLICIES,
+    DISPOSITIONS,
     RuleSet,
     compute_fingerprint,
     ruleset_from_dict,
@@ -1347,7 +1348,7 @@ def _lower_compile_only_ray_path_actions(carrier, ruleset):
             and action.effects[0].to_ref is None
             and action.effects[0].piece_owner == "opponent"
             and action.effects[0].piece_type_ref is None
-            and action.effects[0].disposition == "capture_to_hand"
+            and action.effects[0].disposition in DISPOSITIONS
             and action.effects[0].slot_name is None
             and action.effects[0].type_ref is None
             and action.effects[0].count == 1
