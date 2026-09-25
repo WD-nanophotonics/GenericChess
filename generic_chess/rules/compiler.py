@@ -1278,13 +1278,12 @@ def _lower_semantic_path_constraints(action):
     )
 
 
-def _lower_compile_only_single_path_capture(carrier, ruleset):
-    """Lower the bounded ray-screen capture diagnostic without execution support.
+def _lower_compile_only_ray_path_actions(carrier, ruleset):
+    """Lower a bounded ray-path diagnostic (capture alone or quiet/capture pair).
 
-    This deliberately accepts one board-ray capture action with a narrow set
-    of path predicates. Effects, invariants, and path constraints use the same
-    lowering helpers as the square semantic compiler; it is not a second
-    semantic DSL compiler.
+    This compile-only seam accepts only the exact quiet and one-screen capture
+    shapes used by the diagnostic. It reuses the shared typed-IR lowerers and
+    never grants execution capability or opens rectangular execution.
     """
     from .ir import validate_executable_completeness, validate_ir
 
@@ -1295,109 +1294,145 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
         or compute_fingerprint(ruleset) != carrier.ruleset_fingerprint
     ):
         raise ValueError("RuleSet does not match the compile-only geometry carrier")
-    if len(ruleset.semantic_actions) != 1:
-        raise ValueError("compile-only diagnostic requires exactly one semantic action")
-    action = ruleset.semantic_actions[0]
-    selector = action.replace_selector
-    effects = action.effects
-    path_constraints = action.path_constraints
-    supported_path = len(path_constraints) == 1 and (
-        path_constraints[0].kind == "path_clear"
-        and path_constraints[0].count is None
-        or path_constraints[0].kind == "path_count_eq"
-        and path_constraints[0].count == 1
-    )
-    if not (
-        action.geometry.kind == "legacy_atoms"
-        and action.geometry.atom_kind == "ray"
-        and action.target_relation == "enemy"
-        and action.composition == "replace_legacy"
-        and supported_path
-        and action.path_constraints[0].lo is None
-        and action.path_constraints[0].hi is None
-        and action.path_constraints[0].owner_filter == "any"
-        and not action.state_guards
-        and not action.slot_guards
-        and not action.aux_state
-        and not action.triggers
-        and not action.postconditions
-        and len(effects) == 2
-        and effects[0].kind == "remove"
-        and effects[0].square_ref is not None
-        and effects[0].square_ref.kind == "target"
-        and effects[0].from_ref is None
-        and effects[0].to_ref is None
-        and effects[0].piece_owner == "opponent"
-        and effects[0].piece_type_ref is None
-        and effects[0].disposition == "capture_to_hand"
-        and effects[0].slot_name is None
-        and effects[0].type_ref is None
-        and effects[0].count == 1
-        and effects[0].value is None
-        and effects[1].kind == "move"
-        and effects[1].from_ref is not None
-        and effects[1].from_ref.kind == "source"
-        and effects[1].to_ref is not None
-        and effects[1].to_ref.kind == "target"
-        and effects[1].square_ref is None
-        and effects[1].piece_owner == "self"
-        and effects[1].piece_type_ref is None
-        and effects[1].disposition is None
-        and effects[1].slot_name is None
-        and effects[1].type_ref is None
-        and effects[1].count == 1
-        and effects[1].value is None
-        and len(action.invariants) == 1
-        and action.invariants[0].kind == "own_anchor_safe"
-        and not action.invariants[0].square_refs
-        and selector is not None
-        and selector.action_family == "board"
-        and selector.target_relation == "enemy"
-        and selector.geometry_kind == "ray"
-        and selector.replace_all_matching
-        and tuple(selector.type_ids) == tuple(action.type_ids)
-    ):
-        raise ValueError("semantic action is outside the bounded path-capture diagnostic")
+    actions = ruleset.semantic_actions
+    if len(actions) not in (1, 2):
+        raise ValueError("compile-only diagnostic requires one capture or a quiet/capture pair")
+
+    def is_source_to_target_move(effect):
+        return (
+            effect.kind == "move"
+            and effect.from_ref is not None
+            and effect.from_ref.kind == "source"
+            and effect.to_ref is not None
+            and effect.to_ref.kind == "target"
+            and effect.square_ref is None
+            and effect.piece_owner == "self"
+            and effect.piece_type_ref is None
+            and effect.disposition is None
+            and effect.slot_name is None
+            and effect.type_ref is None
+            and effect.count == 1
+            and effect.value is None
+        )
+
+    type_ids = tuple(actions[0].type_ids)
+    relations = {action.target_relation for action in actions}
+    if len(actions) == 1 and relations != {"enemy"}:
+        raise ValueError("single-action diagnostic requires the capture rule")
+    if len(actions) == 2 and relations != {"empty", "enemy"}:
+        raise ValueError("compile-only pair requires one quiet and one capture action")
+    for action_index, action in enumerate(actions):
+        selector = action.replace_selector
+        path = action.path_constraints
+        expected_path = (
+            "path_clear" if action.target_relation == "empty" else "path_count_eq"
+        )
+        expected_count = None if expected_path == "path_clear" else 1
+        supported_path = len(path) == 1 and (
+            path[0].kind == expected_path and path[0].count == expected_count
+            or len(actions) == 1
+            and action.target_relation == "enemy"
+            and path[0].kind == "path_clear"
+            and path[0].count is None
+        )
+        move_shape = (
+            len(action.effects) == 1 and is_source_to_target_move(action.effects[0])
+        )
+        capture_shape = (
+            len(action.effects) == 2
+            and action.effects[0].kind == "remove"
+            and action.effects[0].square_ref is not None
+            and action.effects[0].square_ref.kind == "target"
+            and action.effects[0].from_ref is None
+            and action.effects[0].to_ref is None
+            and action.effects[0].piece_owner == "opponent"
+            and action.effects[0].piece_type_ref is None
+            and action.effects[0].disposition == "capture_to_hand"
+            and action.effects[0].slot_name is None
+            and action.effects[0].type_ref is None
+            and action.effects[0].count == 1
+            and action.effects[0].value is None
+            and is_source_to_target_move(action.effects[1])
+        )
+        expected_effects = (
+            move_shape if action.target_relation == "empty" else capture_shape
+        )
+        if not (
+            action.type_ids == type_ids
+            and action.geometry.kind == "legacy_atoms"
+            and action.geometry.atom_kind == "ray"
+            and action.target_relation in ("empty", "enemy")
+            and action.composition == "replace_legacy"
+            and supported_path
+            and path[0].lo is None
+            and path[0].hi is None
+            and path[0].owner_filter == "any"
+            and not action.state_guards
+            and not action.slot_guards
+            and not action.aux_state
+            and not action.triggers
+            and not action.postconditions
+            and expected_effects
+            and len(action.invariants) == 1
+            and action.invariants[0].kind == "own_anchor_safe"
+            and not action.invariants[0].square_refs
+            and selector is not None
+            and selector.action_family == "board"
+            and selector.target_relation == action.target_relation
+            and selector.geometry_kind == "ray"
+            and selector.replace_all_matching
+            and tuple(selector.type_ids) == type_ids
+        ):
+            raise ValueError(
+                f"semantic action {action_index} is outside the bounded ray-path diagnostic"
+            )
 
     ir = lower_legacy_to_ir(carrier, ruleset=ruleset)
     _, legacy_ids = build_legacy_geometry_catalog(carrier)
-    gids = _semantic_action_geometry_ids(
-        action, 0, carrier.types_by_id, legacy_ids
-    )
-    replaced_ids = _matching_replaced_legacy_patterns(
-        0, action, ir.geometry, ir.patterns
-    )
-    templates = [pattern for pattern in ir.patterns if pattern.pattern_id in replaced_ids]
-    if not templates or any(
-        pattern.geometry_ids[0] not in gids for pattern in templates
-    ):
-        raise ValueError("legacy replacement selection does not match action geometry")
-    template = templates[0]
-    type_ids = tuple(sorted(carrier.types_by_id))
-    effects = _lower_semantic_effects(action, {}, type_ids)
-    invariants = _lower_semantic_invariants(action, {})
-    semantic = replace(
-        template,
-        pattern_id=f"sem_00_{action.name}",
-        name=action.name,
-        type_ids=tuple(action.type_ids),
-        geometry_ids=gids,
-        path=_lower_semantic_path_constraints(action),
-        effects=effects,
-        invariants=invariants,
-        promotion_mode=action.promotion_mode,
-        explicit_promotion_type=action.explicit_promotion_type,
-        composition="replace_legacy",
-        replaced_pattern_ids=replaced_ids,
-    )
-    stratum, cost = _assign_stratum_cost(semantic)
-    semantic = replace(semantic, stratum=stratum, cost_class=cost)
+    replaced_ids: set[str] = set()
+    semantic_patterns = []
+    all_type_ids = tuple(sorted(carrier.types_by_id))
+    for action_index, action in enumerate(actions):
+        gids = _semantic_action_geometry_ids(
+            action, action_index, carrier.types_by_id, legacy_ids
+        )
+        action_replaced_ids = _matching_replaced_legacy_patterns(
+            action_index, action, ir.geometry, ir.patterns
+        )
+        templates = [
+            pattern for pattern in ir.patterns
+            if pattern.pattern_id in action_replaced_ids
+        ]
+        if not templates or any(
+            pattern.geometry_ids[0] not in gids for pattern in templates
+        ):
+            raise ValueError("legacy replacement selection does not match action geometry")
+        if replaced_ids.intersection(action_replaced_ids):
+            raise ValueError("diagnostic actions replace overlapping legacy patterns")
+        replaced_ids.update(action_replaced_ids)
+        semantic = replace(
+            templates[0],
+            pattern_id=f"sem_{action_index:02d}_{action.name}",
+            name=action.name,
+            type_ids=type_ids,
+            geometry_ids=gids,
+            path=_lower_semantic_path_constraints(action),
+            effects=_lower_semantic_effects(action, {}, all_type_ids),
+            invariants=_lower_semantic_invariants(action, {}),
+            promotion_mode=action.promotion_mode,
+            explicit_promotion_type=action.explicit_promotion_type,
+            composition="replace_legacy",
+            replaced_pattern_ids=action_replaced_ids,
+        )
+        stratum, cost = _assign_stratum_cost(semantic)
+        semantic_patterns.append(replace(semantic, stratum=stratum, cost_class=cost))
+
     lowered = replace(
         ir,
         patterns=tuple(
             pattern for pattern in ir.patterns
-            if pattern.pattern_id not in set(replaced_ids)
-        ) + (semantic,),
+            if pattern.pattern_id not in replaced_ids
+        ) + tuple(semantic_patterns),
         capabilities=replace(
             ir.capabilities,
             legacy_core_executable=False,
@@ -1407,12 +1442,10 @@ def _lower_compile_only_single_path_capture(carrier, ruleset):
         ),
     )
     errors = validate_ir(lowered)
-    errors.extend(
-        validate_executable_completeness(lowered, type_ids)
-    )
+    errors.extend(validate_executable_completeness(lowered, all_type_ids))
     if errors:
         raise RuleValidationError(
-            [ValidationIssue("SEMANTIC_IR_INVALID", "semantic_actions[0]", "; ".join(errors))]
+            [ValidationIssue("SEMANTIC_IR_INVALID", "semantic_actions", "; ".join(errors))]
         )
     support = _build_semantic_support(carrier, ruleset=ruleset)
     return lowered, support

@@ -26,7 +26,7 @@ OMITTED_RULE_SEMANTICS = (
     "elephant river restriction",
     "horse-leg blockers",
     "elephant-eye blockers",
-    "cannon screen captures",
+    "cannon legality/execution beyond compile-only path diagnostics",
     "soldier lateral movement after crossing the river",
     "facing-generals prohibition and check legality",
     "stalemate, repetition, and perpetual-check/chase adjudication",
