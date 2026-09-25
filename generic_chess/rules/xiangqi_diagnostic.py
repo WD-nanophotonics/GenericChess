@@ -1,8 +1,9 @@
 """Internal single-ply Xiangqi RuleSet for generic semantic diagnostics.
 
 This builder is deliberately not registered as a playable built-in product.
-It covers ordinary movement and capture only; WXF history adjudication and an
-independent Xiangqi behavior oracle remain outside this diagnostic.
+It covers ordinary movement and capture only. A bounded sample of ordinary
+legal-move sets has been cross-checked against Fairy-Stockfish; that is not an
+independent oracle for full Xiangqi legality or WXF history adjudication.
 """
 
 from __future__ import annotations
