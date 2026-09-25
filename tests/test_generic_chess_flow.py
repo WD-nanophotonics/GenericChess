@@ -28,6 +28,39 @@ class _NoopContext:
         return False
 
 
+def test_supervisor_patrol_requires_action_for_repeated_stall(monkeypatch, tmp_path, capsys):
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor"))
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path / "runtime")
+    observed = iter((10000.0, 13600.0, 13601.0))
+    monkeypatch.setattr(flow.time, "time", lambda: next(observed))
+    args = SimpleNamespace(issue_key="courier:response_timeout:P-1",
+                           progress_key="worker-turn-7/receipt-4", worker_state="idle",
+                           goal_state="active", action=None)
+    assert flow.command_supervisor_patrol(tmp_path, args) == 0
+    path = tmp_path / "runtime" / "supervisor-patrol.json"
+    assert json.loads(path.read_text(encoding="utf-8"))["observed_at"] == 10000.0
+    assert flow.command_supervisor_patrol(tmp_path, args) == 3
+    assert json.loads(capsys.readouterr().out.splitlines()[-1])["action_required"] is True
+    assert json.loads(path.read_text(encoding="utf-8"))["observed_at"] == 10000.0
+    args.action = "Reviewed exact request and repaired Courier selector"
+    assert flow.command_supervisor_patrol(tmp_path, args) == 0
+    assert json.loads(path.read_text(encoding="utf-8"))["action"] == args.action
+
+
+def test_supervisor_patrol_accepts_measured_progress_and_blocks_on_goal(monkeypatch, tmp_path):
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor"))
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path / "runtime")
+    observed = iter((10000.0, 13600.0, 17200.0))
+    monkeypatch.setattr(flow.time, "time", lambda: next(observed))
+    args = SimpleNamespace(issue_key="heavy:run-1", progress_key="100-games",
+                           worker_state="active", goal_state="active", action=None)
+    assert flow.command_supervisor_patrol(tmp_path, args) == 0
+    args.progress_key = "130-games"
+    assert flow.command_supervisor_patrol(tmp_path, args) == 0
+    args.goal_state = "blocked"
+    assert flow.command_supervisor_patrol(tmp_path, args) == 3
+
+
 def _heavy_start_mocks(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
     monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True})

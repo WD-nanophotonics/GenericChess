@@ -3,8 +3,12 @@
 This file is the sole policy authority. Work only in
 `GenericChess-sandbox`; preserve unrelated changes. Keep one registered
 Worker, Courier session, worktree, and Heavy job. Never create a replacement
-Courier request, browser, or worktree except for an explicitly authorized
-supersession of a proven unsubmitted request. Replace a Worker only under the
+browser or worktree. Preserve the current immutable Courier request by default;
+the Supervisor may supersede it only after reconciling its submission and reply
+evidence, proving that a successor will not duplicate an unconsumed order, and
+recording the old/new request lineage. A repeatedly broken Chat target may be
+retired and rebound within the same project/profile after the same evidence
+check. Replace a Worker only under the
 Goal-blocked or three-refusal rule below. Generated binaries, raw benchmarks,
 Courier runtime, and transient evidence stay out of Git. Publish only tested
 checkpoints to `origin/sandbox` and verify the full remote SHA. Never use
@@ -94,6 +98,17 @@ A legitimate stop or severe harness failure is not a refusal; the Supervisor
 must keep investigating and report the actual blocker. The Supervisor does
 not enable Goal for itself.
 
+Read `docs/operations/WORKFLOW_RECOVERY.md` for operational recovery steps.
+Courier abnormal receipts point to this manual. The Worker first repairs a
+fault within its authority, then reports unresolved evidence to Chat or the
+Supervisor. If the same fault recurs twice after its first occurrence, the
+Supervisor investigates the framework instead of repeating the same remedy.
+An hourly patrol finding the same actionable blocker with no substantive
+progress since the prior patrol must attempt a concrete repair in that patrol;
+it must not repeat a waiting report. A bounded, approved operation with
+measured progress is not an idle patrol. Ordinary faults do not by themselves
+block the Goal or authorize a HOLD.
+
 Use the existing Courier request in a loop: obtain the next order, implement
 it, test it, commit it, publish it, close it out, and obtain the next order in
 the same turn. A phase result, wait, context compression, or recoverable error
@@ -103,8 +118,8 @@ ownership conflict, or uncertain irreversible effect. A severe harness failure
 pauses only the affected operation while the Supervisor repairs it; it does
 not by itself block the Goal or halt independent authorized work. Retry
 ordinary transport faults with the same immutable request once before
-escalation; supersede a proven unsubmitted request only on explicit user
-authority and preserve its evidence.
+escalation; any Supervisor supersession must follow the reconciliation and
+lineage requirements above and preserve its evidence.
 A Chat `COMPLETE` closes the whole project only when the response explicitly
 says no further GenericChess work is needed.
 

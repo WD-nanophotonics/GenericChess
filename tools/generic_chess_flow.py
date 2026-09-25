@@ -534,7 +534,7 @@ def courier(root: Path, *args: str, stream: bool = False,
         return events[-1]
     if returncode or not events:
         detail = "\n".join(output).strip()
-        next_action = "stop and report the Courier terminal event to the user"
+        next_action = "read the recovery manual; repair locally or notify Supervisor with evidence"
         if events and events[-1].get("event") in {
             "queue_timeout", "queue_recovery_required", "courier_interrupted",
             "response_timeout", "response_protocol_error",
@@ -881,6 +881,66 @@ def command_status(root: Path, _args: argparse.Namespace) -> None:
         key: hold.get(key) for key in ("hold_id", "status", "severity", "created_at")
     }
     print(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True))
+
+
+def supervisor_patrol_path(root: Path) -> Path:
+    return runtime_dir(root) / "supervisor-patrol.json"
+
+
+def assess_supervisor_patrol(previous: dict[str, Any], observation: dict[str, Any]) -> dict[str, Any]:
+    """Compare verifiable progress without treating a repeated status as work."""
+    same_issue = (
+        observation["issue_key"] != "none"
+        and previous.get("issue_key") == observation["issue_key"]
+    )
+    same_progress = previous.get("progress_key") == observation["progress_key"]
+    previous_at = previous.get("observed_at")
+    elapsed = observation["observed_at"] - previous_at if isinstance(previous_at, (int, float)) else 0
+    stalled = same_issue and same_progress and elapsed >= 45 * 60
+    goal_blocked = observation["goal_state"] == "blocked"
+    return {
+        "same_issue": same_issue,
+        "same_progress": same_progress,
+        "elapsed_seconds": max(0, elapsed),
+        "stalled_since_prior_patrol": stalled,
+        "goal_blocked": goal_blocked,
+        "action_required": stalled or goal_blocked,
+    }
+
+
+def command_supervisor_patrol(root: Path, args: argparse.Namespace) -> int:
+    _current_supervisor(root)
+    issue_key = args.issue_key.strip()
+    progress_key = args.progress_key.strip()
+    if not issue_key or not progress_key:
+        raise FlowError("patrol issue and progress keys must be nonempty evidence fingerprints")
+    path = supervisor_patrol_path(root)
+    try:
+        previous = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {}
+    except (OSError, json.JSONDecodeError) as exc:
+        raise FlowError(f"invalid prior Supervisor patrol: {path}") from exc
+    if not isinstance(previous, dict):
+        raise FlowError(f"invalid prior Supervisor patrol: {path}")
+    observation = {
+        "issue_key": issue_key,
+        "progress_key": progress_key,
+        "worker_state": args.worker_state,
+        "goal_state": args.goal_state,
+        "observed_at": time.time(),
+    }
+    assessment = assess_supervisor_patrol(previous, observation)
+    action = (args.action or "").strip()
+    if assessment["action_required"] and not action:
+        print(json.dumps({**observation, **assessment,
+                          "next_action": "perform a concrete recovery action, then rerun with --action"},
+                         ensure_ascii=False, sort_keys=True))
+        return 3
+    if action.lower() in {"wait", "waiting", "none", "no action", "等待", "无"}:
+        raise FlowError("patrol action must describe a concrete attempted repair")
+    observation["action"] = action or None
+    _atomic_json(path, observation)
+    print(json.dumps({**observation, **assessment}, ensure_ascii=False, sort_keys=True))
+    return 0
 
 
 @contextmanager
@@ -2476,6 +2536,13 @@ def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(prog="generic-chess-flow")
     sub = value.add_subparsers(dest="command", required=True)
     sub.add_parser("status").set_defaults(handler=command_status)
+    patrol = sub.add_parser("supervisor-patrol")
+    patrol.add_argument("--issue-key", required=True)
+    patrol.add_argument("--progress-key", required=True)
+    patrol.add_argument("--worker-state", required=True)
+    patrol.add_argument("--goal-state", choices=("active", "blocked", "unknown"), required=True)
+    patrol.add_argument("--action")
+    patrol.set_defaults(handler=command_supervisor_patrol)
     machine = sub.add_parser("machine-setup")
     machine.add_argument("--host-id", required=True)
     machine.set_defaults(handler=command_machine_setup)
@@ -2576,6 +2643,7 @@ def main(argv: list[str] | None = None) -> int:
         return int(result or 0)
     except FlowError as exc:
         print(f"GENERIC_CHESS_FLOW_ERROR: {exc}", file=sys.stderr)
+        print(f"RECOVERY_MANUAL={Path(__file__).resolve().parents[1] / 'docs' / 'operations' / 'WORKFLOW_RECOVERY.md'}", file=sys.stderr)
         return 2
 
 
