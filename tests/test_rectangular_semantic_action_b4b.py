@@ -561,3 +561,40 @@ def test_python_executor_resolves_fixed_refs_with_rectangular_rotation():
         fixed, engine.support, engine.ir.aux_slots,
         position, 1, binding,
     ) == 7 * 9 + 1
+
+
+def test_semantic_support_reuses_shape_and_source_offset_results():
+    from types import SimpleNamespace
+
+    square_semantic = compile_semantic_ruleset(_horse_leg_guard_ruleset())
+    square_support = square_semantic.support
+    square_pattern = next(
+        pattern for pattern in square_semantic.ir.patterns
+        if pattern.name == "horse_leg_step"
+    )
+    square_ref = square_pattern.guards[0].spatial.refs[0]
+    square_binding = SimpleNamespace(source=3 * 8 + 3, target=4 * 8 + 5, path=())
+
+    rectangular_engine = _rectangular_horse_executor_witness()
+    rectangular_support = rectangular_engine.support
+    rectangular_pattern = next(
+        pattern for pattern in rectangular_engine.ir.patterns
+        if pattern.name == "horse_leg_step"
+    )
+    rectangular_ref = rectangular_pattern.guards[0].spatial.refs[0]
+    rectangular_binding = SimpleNamespace(
+        source=4 * 9 + 3, target=5 * 9 + 5, path=()
+    )
+
+    assert square_support.board_shape == BoardShape(8, 8)
+    assert square_support.board_shape is square_support.board_shape
+    assert rectangular_support.board_shape == BoardShape(9, 10)
+    assert rectangular_support.board_shape is rectangular_support.board_shape
+    assert _resolve_square_ref(
+        square_ref, square_support, square_semantic.ir.aux_slots,
+        None, 0, square_binding,
+    ) == 3 * 8 + 4
+    assert _resolve_square_ref(
+        rectangular_ref, rectangular_support, rectangular_engine.ir.aux_slots,
+        None, 0, rectangular_binding,
+    ) == 4 * 9 + 4

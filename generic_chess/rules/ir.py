@@ -16,6 +16,7 @@ from __future__ import annotations
 import hashlib
 import json
 from dataclasses import asdict, dataclass, field
+from functools import lru_cache
 from typing import Any, Mapping
 
 from ..core.coordinates import BoardShape
@@ -549,6 +550,12 @@ class SemanticTypeMetadata:
     promotion_target_ids: tuple[str, ...] = ()
 
 
+@lru_cache(maxsize=128)
+def _cached_board_shape(width: int, height: int) -> BoardShape:
+    """Reuse immutable extents without adding runtime fields to support data."""
+    return BoardShape(width, height)
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledSemanticSupport:
     """Typed generic Core support payload owned by the semantic ruleset
@@ -582,10 +589,10 @@ class CompiledSemanticSupport:
         if self.board_width is None and self.board_height is None:
             if self.board_size is None:
                 raise ValueError("board shape is unavailable")
-            return BoardShape(self.board_size, self.board_size)
+            return _cached_board_shape(self.board_size, self.board_size)
         if self.board_width is None or self.board_height is None:
             raise ValueError("both board_width and board_height are required")
-        return BoardShape(self.board_width, self.board_height)
+        return _cached_board_shape(self.board_width, self.board_height)
 
     @property
     def board_area(self) -> int:
