@@ -38,10 +38,16 @@ piece identities when complete history replays exactly;
 identities to pseudo-capture and counterfactual legal-capture facts.
 `tests/test_xiangqi_actual_path_target_identity.py` verifies those legal edges
 on the Xiangqi path for two same-type targets that occupy the same square at
-different plies. This supplies target-aware raw facts; it does not classify
-chase, prove continuity across a repeated WXF cycle, or adjudicate an outcome.
-Imported or incomplete histories still fail closed rather than receiving
-guessed identities.
+different plies. `tests/test_xiangqi_repeated_target_cycle_identity.py` adds a
+paired legal repetition observation: a four-ply control cycle retains the
+same chaser and target token across both capture edges, while an eight-ply
+cycle returns to the same position and repetition key but substitutes a
+same-type target onto the same square for one edge. The trace distinguishes
+the target tokens in the two cases. This establishes that existing replay and
+identity-aware legal-capture facts can expose target continuity in these
+fixtures; it does not classify WXF move nature, determine whether replies
+flee or counter, or adjudicate an outcome. Imported or incomplete histories
+still fail closed rather than receiving guessed identities.
 
 The declarative policy surface is presently small: `repetition_limit`,
 `repetition_policy` (`draw` or `continuous_check_loss`), and automatic
@@ -60,7 +66,7 @@ WXF move classes that would determine its rule-specific outcome.
 |---|---|---|---|
 | 19.1–19.2: check; kill/mating threat | Before/after positions, actor/action, whether the resulting position attacks the opposing King, and whether a legal continuation threatens mate. | A mating threat may precede check or arise from a sequence; it is not equivalent to `gave_check`. | Only `gave_check` is recorded. Hold the position/action fixed and remove the threat's supporting line or escape restriction: check may remain while the mating-threat fact changes. |
 | 19.3–19.7: chase, exchange, block, offer, idle | Move-level attack/capture reachability and target identity; traded pieces; whether a route is denied; whether the moved piece is capturable; idle is the residual class after the other classes are tested. | A blocker cannot itself threaten to capture the blocked piece. These labels may overlap until adjudication priority is applied. | Generic replay traces expose identity-aware pressure and counterfactual legal-capture edges, including Xiangqi same-type targets at one square. WXF move-nature classification is still absent. A future paired probe can add/remove one interposed piece or test whether a blocker can legally take its target. |
-| 19.8–19.10: perpetual check, kill, chase | Repetition-cycle boundaries and actor sequence; per-move classes; for chase, continuity of the *same* target across replies and whether replies flee or counter. | Perpetual check also applies to block/exchange/offer under 19.8; perpetual chase requires repeated attacks on the same piece, not merely the same type or square. | Public 9×10 transition test verifies a legal unilateral repeated-check cycle loses under the generic policy. An Xiangqi identity-path test now joins legal next-turn capture edges to the same attacker and distinct target-token IDs. WXF cycle-chase classification and outcome remain absent; compare a repeated legal target chase with a cycle differing only by target identity. |
+| 19.8–19.10: perpetual check, kill, chase | Repetition-cycle boundaries and actor sequence; per-move classes; for chase, continuity of the *same* target across replies and whether replies flee or counter. | Perpetual check also applies to block/exchange/offer under 19.8; perpetual chase requires repeated attacks on the same piece, not merely the same type or square. | Public 9×10 transition test verifies a legal unilateral repeated-check cycle loses under the generic policy. A paired legal Xiangqi diagnostic repetition test confirms identity-aware capture edges retain the same target in a control and distinguish a same-type target substitution onto the same square in a second cycle. This resolves only the raw identity-observation question for these fixtures; WXF move-nature, reply-response classification and outcome remain absent. |
 | 19.11–19.12: resolve and cross actions | The preceding threat, current legal reply, whether it removes that threat, and whether it simultaneously creates a corresponding threat against the opponent. | Resolution and cross-check/counter-kill/counter-chase are distinct from merely giving check or making an unrelated threat. | No threat-resolution relation is stored. Compare a checking move that escapes the prior check with a checking move that leaves the prior threat intact. |
 | 19.13–19.15: protected piece; real/fake root | Attacker/protector/target identity, legal capture relation, and whether the protector can immediately capture the piece that took the protected piece. | “Protected” depends on a legal recapture; real versus fake root is determined by the immediate recapture test, not geometric defense alone. | Complete replay provides ephemeral identities, but imported roots have no persistent piece IDs and no root fact/classifier exists. Keep the protected piece fixed and add a legal protector recapture; the root classification must flip. |
 | 19.16–19.19: alternating and two-to-one patterns | Ordered per-ply nature classes, actor, target-piece identity and any counter-threat on each reply. | Alternating check/chase/idle/mating patterns and one-to-one/two-to-two chase are not interchangeable with one-sided perpetual sequences. | No generic pattern language. Keep repeated positions fixed and change only one reply from idle to cross-check (or change one target identity); adjudication classification must change. |
