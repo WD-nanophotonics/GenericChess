@@ -369,7 +369,7 @@ class CompiledSemanticIR:
             ]
         if self.repeated_cycle_target_conditions:
             data["repeated_cycle_target_conditions"] = [
-                {"actor": item.actor}
+                {"actor": item.actor, "outcome": item.outcome}
                 for item in self.repeated_cycle_target_conditions
             ]
         return data

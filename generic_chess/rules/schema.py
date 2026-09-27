@@ -158,13 +158,10 @@ class RuleConsecutiveActionAdjudication:
 
 @dataclass(frozen=True, slots=True)
 class RuleRepeatedCycleTargetCondition:
-    """Require an actor to share a legal-capture target across cycle turns.
-
-    This declares a descriptive history condition only; it does not select an
-    outcome or enable adjudication.
-    """
+    """Opt in to an outcome when an actor shares a legal target across a cycle."""
 
     actor: int
+    outcome: str = "actor_loss"
 
 
 @dataclass(frozen=True, slots=True)
@@ -225,7 +222,7 @@ class RuleSet:
     # Alternate boards are opt-in and appended for positional compatibility.
     # Empty preserves the legacy single-start serialization and fingerprint.
     initial_setup_options: tuple[RuleInitialSetupOption, ...] = ()
-    # Optional descriptive history condition; empty preserves default behavior.
+    # Optional repeated-cycle outcome policy; empty preserves default behavior.
     repeated_cycle_target_conditions: tuple[RuleRepeatedCycleTargetCondition, ...] = ()
 
     @property
@@ -1101,20 +1098,27 @@ def consecutive_action_adjudication_from_dict(
 def repeated_cycle_target_condition_to_dict(
     value: RuleRepeatedCycleTargetCondition,
 ) -> dict:
-    return {"actor": value.actor}
+    return {"actor": value.actor, "outcome": value.outcome}
 
 
 def repeated_cycle_target_condition_from_dict(
     data: Mapping[str, Any], path: str
 ) -> RuleRepeatedCycleTargetCondition:
     data = _require_mapping(data, path)
-    unknown = set(data) - {"actor"}
+    unknown = set(data) - {"actor", "outcome"}
     if unknown:
         raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
     actor = _require_int(_require_field(data, "actor", path), f"{path}.actor")
     if actor not in (0, 1):
         raise _err("ILLEGAL_OWNER", f"{path}.actor", "actor must be 0 or 1")
-    return RuleRepeatedCycleTargetCondition(actor)
+    outcome = data.get("outcome", "actor_loss")
+    if outcome != "actor_loss":
+        raise _err(
+            "INVALID_OUTCOME",
+            f"{path}.outcome",
+            "outcome must be 'actor_loss'",
+        )
+    return RuleRepeatedCycleTargetCondition(actor, outcome)
 
 
 def aux_state_to_dict(value: RuleAuxState) -> dict:

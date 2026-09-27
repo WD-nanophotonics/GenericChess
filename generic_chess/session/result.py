@@ -17,6 +17,7 @@ class SessionStatus(Enum):
     MAX_PLY = "max_ply"
     NO_CONTEST = "no_contest"
     ACTION_CLASS_DRAW = "action_class_draw"
+    RULE_LOSS = "rule_loss"
     RESIGNATION = "resignation"
     DECLARATION = "declaration"
 
@@ -53,6 +54,9 @@ class SessionResult:
         if self.status is SessionStatus.PERPETUAL_CHECK:
             loser = 1 - self.winner if self.winner is not None else None
             return f"perpetual check, player {self.winner} wins (player {loser} loses)"
+        if self.status is SessionStatus.RULE_LOSS:
+            loser = 1 - self.winner if self.winner is not None else None
+            return f"rule loss, player {loser} loses, player {self.winner} wins"
         if self.status is SessionStatus.NO_CONTEST:
             return "no-contest/restart"
         return f"{self.status.value}, draw"
@@ -68,6 +72,7 @@ def _session_status_from_terminal(terminal: TerminalResult) -> SessionStatus:
         TerminalStatus.MAX_PLY: SessionStatus.MAX_PLY,
         TerminalStatus.NO_CONTEST: SessionStatus.NO_CONTEST,
         TerminalStatus.ACTION_CLASS_DRAW: SessionStatus.ACTION_CLASS_DRAW,
+        TerminalStatus.RULE_LOSS: SessionStatus.RULE_LOSS,
     }
     return mapping[terminal.status]
 

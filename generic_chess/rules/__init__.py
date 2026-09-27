@@ -14,6 +14,7 @@ from .schema import (
     RuleDeclaration,
     RuleDeclarationOutcomeBand,
     RuleInitialSetupOption,
+    RuleRepeatedCycleTargetCondition,
     RuleWeightedMaterialMetric,
 )
 
@@ -30,5 +31,6 @@ __all__ = [
     "RuleConsecutiveActionAdjudication",
     "RuleDeclarationOutcomeBand",
     "RuleInitialSetupOption",
+    "RuleRepeatedCycleTargetCondition",
     "RuleWeightedMaterialMetric",
 ]

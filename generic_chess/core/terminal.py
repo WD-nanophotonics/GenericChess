@@ -30,6 +30,7 @@ class TerminalStatus(Enum):
     MAX_PLY = "max_ply"
     NO_CONTEST = "no_contest"
     ACTION_CLASS_DRAW = "action_class_draw"
+    RULE_LOSS = "rule_loss"
 
 
 @dataclass(frozen=True, slots=True)
@@ -52,6 +53,9 @@ class TerminalResult:
             return f"perpetual check, player {1 - self.winner} loses"
         if self.status is TerminalStatus.NO_CONTEST:
             return "no-contest/restart"
+        if self.status is TerminalStatus.RULE_LOSS:
+            loser = None if self.winner is None else 1 - self.winner
+            return f"rule loss, player {loser} loses, player {self.winner} wins"
         return f"{self.status.value}, draw"
 
 
@@ -90,6 +94,102 @@ def _perpetual_check_result(repetition_counts, history, limit):
     return TerminalResult(TerminalStatus.PERPETUAL_CHECK, 1 - checker)
 
 
+def _repeated_cycle_target_result(
+    position: Position,
+    ply_count: int,
+    repetition_counts,
+    compiled: "CompiledRuleSet",
+    history=(),
+) -> TerminalResult | None:
+    """Apply an opt-in RuleSet result to a verified repeated-cycle fact."""
+    conditions = getattr(compiled, "repeated_cycle_target_conditions", ())
+    if not conditions:
+        return None
+    if ply_count == 0 and not history:
+        # The initial position cannot contain a completed repeated cycle.
+        return None
+    from .adjudication import IncompleteAdjudicationHistoryError
+
+    if len(history) != ply_count + 1:
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target adjudication requires complete verifiable history"
+        )
+    from .identity import position_identity_key
+
+    current_key = position_identity_key(position, compiled)
+    if dict(repetition_counts).get(current_key, 0) < 2:
+        return None
+
+    from .history_cycle_trace import (
+        evaluate_repeated_cycle_target_condition,
+        summarize_repeated_cycle_targets,
+        trace_latest_repeated_cycle_capture_facts,
+    )
+    from dataclasses import replace
+    from .position import GameState
+
+    if hasattr(compiled, "ir"):
+        trace_compiled = replace(
+            compiled,
+            ir=replace(
+                compiled.ir, repeated_cycle_target_conditions=()
+            ),
+        )
+    else:
+        trace_compiled = replace(
+            compiled, repeated_cycle_target_conditions=()
+        )
+    engine = None
+    try:
+        from .semantic_executor import semantic_engine_for
+
+        engine = semantic_engine_for(trace_compiled)
+    except (ImportError, AttributeError):
+        engine = None
+    baseline_terminal = (
+        engine.terminal_result(
+            position, ply_count, repetition_counts, history
+        )
+        if engine is not None
+        else _terminal_from_parts(
+            position,
+            ply_count,
+            tuple(repetition_counts),
+            trace_compiled,
+            history,
+        )
+    )
+
+    state = GameState(
+        position=position,
+        ply_count=ply_count,
+        repetition_counts=tuple(repetition_counts),
+        terminal_status=baseline_terminal,
+        history=tuple(history),
+    )
+    trace = trace_latest_repeated_cycle_capture_facts(state, trace_compiled)
+    if trace.status != "verified":
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target adjudication requires complete verifiable "
+            f"history: {trace.reason or 'history could not be verified'}"
+        )
+    summary = summarize_repeated_cycle_targets(trace)
+    if summary.status != "verified":
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target adjudication requires complete verifiable "
+            f"history: {summary.reason or 'cycle facts could not be verified'}"
+        )
+    for condition in conditions:
+        status = evaluate_repeated_cycle_target_condition(summary, condition.actor)
+        if status == "unknown":
+            raise IncompleteAdjudicationHistoryError(
+                "repeated-cycle target adjudication condition is unknown"
+            )
+        if status == "satisfied" and condition.outcome == "actor_loss":
+            return TerminalResult(TerminalStatus.RULE_LOSS, 1 - condition.actor)
+    return None
+
+
 def _terminal_from_parts(
     position: Position,
     ply_count: int,
@@ -110,13 +210,25 @@ def _terminal_from_parts(
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
         winner = 1 - side if getattr(compiled, "stalemate_result", "draw") == "loss" else None
         return TerminalResult(TerminalStatus.STALEMATE, winner)
+    repetition_limit = getattr(
+        compiled,
+        "repetition_limit",
+        compiled.support.repetition_limit
+        if getattr(compiled, "support", None) is not None
+        else 4,
+    )
+    repeated_target_result = _repeated_cycle_target_result(
+        position, ply_count, repetition_counts, compiled, history
+    )
+    if repeated_target_result is not None:
+        return repeated_target_result
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _perpetual_check_result(
-            repetition_counts, history, compiled.repetition_limit
+            repetition_counts, history, repetition_limit
         )
         if perpetual is not None:
             return perpetual
-    if is_repetition_draw(repetition_counts, compiled.repetition_limit):
+    if is_repetition_draw(repetition_counts, repetition_limit):
         return TerminalResult(TerminalStatus.REPETITION)
     automatic = automatic_adjudication_status(
         getattr(compiled, "automatic_adjudications", ()),
@@ -127,7 +239,14 @@ def _terminal_from_parts(
         return TerminalResult(TerminalStatus.NO_CONTEST)
     if automatic == "PENDING":
         return TerminalResult(TerminalStatus.ONGOING)
-    if ply_count >= compiled.max_ply:
+    max_ply = getattr(
+        compiled,
+        "max_ply",
+        compiled.support.max_ply
+        if getattr(compiled, "support", None) is not None
+        else 512,
+    )
+    if ply_count >= max_ply:
         return TerminalResult(TerminalStatus.MAX_PLY)
     return TerminalResult(TerminalStatus.ONGOING)
 
@@ -151,6 +270,91 @@ def terminal_result(state: "GameState", compiled: "CompiledRuleSet") -> Terminal
     )
 
 
+def _repeated_cycle_target_history_projection(runtime):
+    """Project complete exact search history or reject the opt-in rule."""
+    compiled = runtime.compiled
+    from collections import Counter
+
+    from .adjudication import IncompleteAdjudicationHistoryError
+    from .identity import position_identity_key
+    from .position import HistoryRecord
+    from .search_runtime import RuntimePositionIdentity
+
+    if (
+        not getattr(runtime, "_history_complete", False)
+        or getattr(runtime, "history_witness_misses", 0)
+        or getattr(runtime, "_opaque_imported_keys", ())
+        or len(runtime.history) != runtime.ply_count + 1
+    ):
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target rule requires complete trusted search history"
+        )
+
+    projected = []
+    counts: Counter[str] = Counter()
+    for record in runtime.history:
+        if not isinstance(record.identity, RuntimePositionIdentity):
+            raise IncompleteAdjudicationHistoryError(
+                "repeated-cycle target rule cannot use opaque search history"
+            )
+        key = position_identity_key(record.identity.position, compiled)
+        counts[key] += 1
+        projected.append(
+            HistoryRecord(
+                key,
+                record.actor,
+                record.action_signature,
+                record.gave_check,
+            )
+        )
+    if (
+        not projected
+        or projected[0].actor != -1
+        or projected[0].action_signature != ""
+        or projected[-1].position_key
+        != position_identity_key(runtime.position, compiled)
+        or runtime.history[-1].identity.position != runtime.position
+    ):
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target rule requires an exact search-history boundary"
+        )
+
+    # Runtime counts must be derivable from the same complete identity stream.
+    runtime_counts: Counter[str] = Counter()
+    for identity, count in runtime.repetition_counts.items():
+        if isinstance(identity, RuntimePositionIdentity):
+            key = position_identity_key(identity.position, compiled)
+        elif isinstance(identity, str):
+            # At the imported root the runtime intentionally keeps the
+            # authoritative external stable keys until the first local push.
+            key = identity
+        else:
+            raise IncompleteAdjudicationHistoryError(
+                "repeated-cycle target rule cannot use opaque repetition counts"
+            )
+        runtime_counts[key] += count
+    if runtime_counts != counts:
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target rule history does not match search repetition counts"
+        )
+
+    return tuple(sorted(counts.items())), tuple(projected)
+
+
+def _require_complete_runtime_rule_history(runtime) -> None:
+    if (
+        not getattr(runtime, "_history_complete", False)
+        or getattr(runtime, "history_witness_misses", 0)
+        or getattr(runtime, "_opaque_imported_keys", ())
+        or len(runtime.history) != runtime.ply_count + 1
+    ):
+        from .adjudication import IncompleteAdjudicationHistoryError
+
+        raise IncompleteAdjudicationHistoryError(
+            "repeated-cycle target rule requires complete trusted search history"
+        )
+
+
 def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     """Compute terminal status from a Core-owned mutable search path.
 
@@ -164,6 +368,11 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     position = runtime.position
     compiled = runtime.compiled
     engine = semantic_engine_for(compiled)
+    repeated_target_history = None
+    if getattr(compiled, "repeated_cycle_target_conditions", ()):
+        _require_complete_runtime_rule_history(runtime)
+        if runtime.occurrence_count() >= 2:
+            repeated_target_history = _repeated_cycle_target_history_projection(runtime)
     consecutive = consecutive_action_adjudication_status(
         getattr(compiled, "consecutive_action_adjudications", ()),
         runtime.ply_count,
@@ -193,6 +402,16 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
             else None
         )
         return TerminalResult(TerminalStatus.STALEMATE, winner)
+    if repeated_target_history is not None:
+        repeated_target_result = _repeated_cycle_target_result(
+            position,
+            runtime.ply_count,
+            repeated_target_history[0],
+            compiled,
+            repeated_target_history[1],
+        )
+        if repeated_target_result is not None:
+            return repeated_target_result
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _runtime_perpetual_check_result(runtime)
         if perpetual is not None:

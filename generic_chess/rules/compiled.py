@@ -31,9 +31,10 @@ class CompiledConsecutiveActionAdjudication:
 
 @dataclass(frozen=True, slots=True)
 class CompiledRepeatedCycleTargetCondition:
-    """Compiled, outcome-free actor selector for a repeated-cycle fact."""
+    """Compiled actor selector and result for a repeated-cycle condition."""
 
     actor: int
+    outcome: str = "actor_loss"
 
 
 @dataclass(frozen=True, slots=True)

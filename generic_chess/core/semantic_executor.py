@@ -1622,6 +1622,17 @@ class SemanticEngine:
                 else None
             )
             return TerminalResult(TerminalStatus.STALEMATE, winner)
+        from .terminal import _repeated_cycle_target_result
+
+        repeated_target_result = _repeated_cycle_target_result(
+            position,
+            ply_count,
+            repetition_counts,
+            self.semantic,
+            history,
+        )
+        if repeated_target_result is not None:
+            return repeated_target_result
         if self.support.repetition_policy == "continuous_check_loss":
             perpetual = _perpetual_check_result(
                 repetition_counts, history, self.support.repetition_limit

@@ -813,6 +813,15 @@ def _compile_repeated_cycle_target_conditions(ruleset: RuleSet):
                 )
             )
             continue
+        if item.outcome != "actor_loss":
+            issues.append(
+                ValidationIssue(
+                    "REPEATED_CYCLE_TARGET_OUTCOME_INVALID",
+                    f"{path}.outcome",
+                    "outcome must be 'actor_loss'",
+                )
+            )
+            continue
         if item.actor in seen_actors:
             issues.append(
                 ValidationIssue(
@@ -823,7 +832,11 @@ def _compile_repeated_cycle_target_conditions(ruleset: RuleSet):
             )
             continue
         seen_actors.add(item.actor)
-        output.append(CompiledRepeatedCycleTargetCondition(actor=item.actor))
+        output.append(
+            CompiledRepeatedCycleTargetCondition(
+                actor=item.actor, outcome=item.outcome
+            )
+        )
     if issues:
         raise RuleValidationError(issues)
     return tuple(output)
@@ -2443,6 +2456,7 @@ def _compile_semantic_ruleset_from_baseline(
                 and not ir.declarations
                 and not ir.automatic_adjudications
                 and not support.consecutive_action_adjudications
+                and not ir.repeated_cycle_target_conditions
             ):
                 ir = replace(
                     ir,
