@@ -17,11 +17,21 @@ from generic_chess.core.transition import apply_action, initial_state, legal_suc
 from generic_chess.rules.compiler import compile_ruleset, compile_ruleset_for_execution
 from generic_chess.rules.schema import (
     RuleConsecutiveActionAdjudication,
+    RuleActionEffect,
+    RuleAuxState,
+    RuleGeometrySpec,
+    RuleInvariant,
+    RuleReplaceSelector,
+    RuleSemanticAction,
+    RuleSlotGuard,
+    RuleSquareRef,
+    RuleTypeRef,
     RuleSet,
     compute_fingerprint,
     ruleset_from_dict,
     ruleset_to_dict,
 )
+from rule_semantics_ir_fixtures import _king_type, _semantic_ruleset
 from generic_chess.rules.validation import RuleValidationError
 from generic_chess.session.result import SessionStatus
 from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
@@ -82,6 +92,96 @@ def _compiled(semantic=False, *, pass_enabled=True, policy=True):
         return ruleset, compile_ruleset_for_execution(ruleset)
     ruleset = _legacy_ruleset(pass_enabled=pass_enabled, policy=policy)
     return ruleset, compile_ruleset(ruleset)
+
+
+def _pass_mate_ruleset(threshold):
+    active = RuleAuxState("active", "bool", "global", "expire_next_turn", 0)
+    spent = RuleAuxState("spent", "bool", "global", "persistent", 0)
+    rook = PieceType(
+        "R",
+        "Rook",
+        tuple(RayAtom(direction) for direction in ((1, 0), (-1, 0), (0, 1), (0, -1))),
+    )
+    bishop = PieceType(
+        "B",
+        "Bishop",
+        tuple(RayAtom(direction) for direction in ((1, 1), (1, -1), (-1, 1), (-1, -1))),
+    )
+    screen_mover = PieceType("M", "ScreenMover", ())
+    immobile = PieceType("I", "Immobile", ())
+    rook_capture = RuleSemanticAction(
+        name="conditional_rook_capture",
+        type_ids=("R",),
+        geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="ray"),
+        target_relation="enemy",
+        composition="replace_legacy",
+        replace_selector=RuleReplaceSelector(
+            type_ids=("R",),
+            action_family="board",
+            target_relation="enemy",
+            geometry_kind="ray",
+            replace_all_matching=True,
+        ),
+        aux_state=(active,),
+        slot_guards=(RuleSlotGuard("active", comparison="eq", value=0),),
+        effects=(
+            RuleActionEffect(
+                "remove",
+                square_ref=RuleSquareRef("target"),
+                piece_owner="opponent",
+                piece_type_ref=RuleTypeRef("any"),
+                disposition="remove_from_game",
+            ),
+            RuleActionEffect(
+                "move",
+                from_ref=RuleSquareRef("source"),
+                to_ref=RuleSquareRef("target"),
+            ),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    clear_screen = RuleSemanticAction(
+        name="clear_screen",
+        type_ids=("M",),
+        geometry=RuleGeometrySpec(
+            kind="leap", offset=(-1, -1), owner_relative=False
+        ),
+        target_relation="empty",
+        aux_state=(active, spent),
+        slot_guards=(RuleSlotGuard("spent", comparison="eq", value=0),),
+        effects=(
+            RuleActionEffect(
+                "move",
+                from_ref=RuleSquareRef("source"),
+                to_ref=RuleSquareRef("target"),
+            ),
+            RuleActionEffect("set_bool", slot_name="active", value=1),
+            RuleActionEffect("set_bool", slot_name="spent", value=1),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    rows = [[None] * 5 for _ in range(5)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[0][1] = Piece(0, "B", "B")
+    rows[0][4] = Piece(0, "R", "R")
+    rows[4][4] = Piece(1, "K", "K")
+    rows[2][4] = Piece(1, "M", "M")
+    for file, rank in ((3, 4), (3, 3)):
+        rows[rank][file] = Piece(1, "I", "I")
+    ruleset = _semantic_ruleset(
+        (_king_type(), rook, bishop, screen_mover, immobile),
+        (rook_capture, clear_screen),
+        n=5,
+        rows=tuple(tuple(row) for row in rows),
+    )
+    return replace(
+        ruleset,
+        pass_enabled=True,
+        repetition_limit=20,
+        consecutive_action_adjudications=(
+            RuleConsecutiveActionAdjudication("pass", threshold, "DRAW"),
+        ),
+    )
 
 
 def _start_with_side(state, compiled, side):
@@ -154,6 +254,104 @@ def test_mutable_trial_path_uses_the_same_terminal_policy(semantic):
     assert runtime.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
     runtime.pop()
     assert runtime.terminal_status.status is TerminalStatus.ONGOING
+    runtime.pop()
+    runtime.assert_balanced()
+
+
+def _pass_mate_prefix(compiled):
+    state = initial_state(compiled)
+    king_move = next(
+        action
+        for action in legal_actions(state, compiled)
+        if getattr(action, "from_square", None) == Square(0, 0)
+        and getattr(action, "to_square", None) == Square(1, 1)
+    )
+    state = apply_action(state, king_move, compiled)
+    screen_move = next(
+        action
+        for action in legal_actions(state, compiled)
+        if getattr(action, "from_square", None) == Square(4, 2)
+        and getattr(action, "to_square", None) == Square(3, 1)
+    )
+    return apply_action(state, screen_move, compiled)
+
+
+def _action_between(state, compiled, source, target):
+    return next(
+        action
+        for action in legal_actions(state, compiled)
+        if getattr(action, "from_square", None) == source
+        and getattr(action, "to_square", None) == target
+    )
+
+
+def test_action_class_draw_at_threshold_precedes_no_legal_reply():
+    compiled = compile_ruleset_for_execution(_pass_mate_ruleset(threshold=1))
+    state = _pass_mate_prefix(compiled)
+    assert PassAction() in legal_actions(state, compiled)
+
+    successors = dict(legal_successors(state, compiled))
+    after_pass = successors[PassAction()]
+    assert not legal_actions(after_pass, compiled)
+    assert after_pass.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+    assert apply_action(state, PassAction(), compiled) == after_pass
+    assert terminal_result(after_pass, compiled).status is TerminalStatus.ACTION_CLASS_DRAW
+
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    runtime.push(PassAction())
+    assert runtime.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+    runtime.pop()
+    runtime.assert_balanced()
+
+    session = GameSession(compiled)
+    session.submit(_action_between(session.state, compiled, Square(0, 0), Square(1, 1)))
+    session.submit(_action_between(session.state, compiled, Square(4, 2), Square(3, 1)))
+    session.submit(PassAction())
+    assert session.state == after_pass
+    assert session.result.status is SessionStatus.ACTION_CLASS_DRAW
+    record = deserialize_game_record(serialize_game_record(session.to_record()))
+    replayed = GameSession.replay(compiled, record)
+    assert replayed.result.status is SessionStatus.ACTION_CLASS_DRAW
+    assert replayed.state == session.state
+
+
+def test_below_action_class_threshold_no_legal_reply_keeps_checkmate():
+    compiled = compile_ruleset_for_execution(_pass_mate_ruleset(threshold=2))
+    state = _pass_mate_prefix(compiled)
+    after_pass = apply_action(state, PassAction(), compiled)
+
+    assert not legal_actions(after_pass, compiled)
+    assert after_pass.terminal_status.status is TerminalStatus.CHECKMATE
+    assert after_pass.terminal_status.winner == 0
+    assert terminal_result(after_pass, compiled).status is TerminalStatus.CHECKMATE
+
+
+def test_legacy_terminal_paths_keep_action_class_precedence(monkeypatch):
+    import generic_chess.core.terminal as terminal_module
+
+    ruleset = replace(
+        _legacy_ruleset(),
+        repetition_limit=20,
+        consecutive_action_adjudications=(
+        RuleConsecutiveActionAdjudication("pass", 1, "DRAW"),
+        ),
+    )
+    compiled = compile_ruleset(ruleset)
+    start = initial_state(compiled)
+    assert PassAction() in legal_actions(start, compiled)
+    after = apply_action(start, PassAction(), compiled)
+    assert after.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+
+    # Legacy pass preserves the board, so a no-reply child cannot be produced
+    # by this action. Force that terminal probe branch to verify policy order;
+    # the semantic end-to-end fixture above covers the reachable no-reply case.
+    monkeypatch.setattr(terminal_module, "has_legal_action", lambda *_args: False)
+    monkeypatch.setattr(terminal_module, "is_in_check", lambda *_args: True)
+    assert terminal_result(after, compiled).status is TerminalStatus.ACTION_CLASS_DRAW
+
+    runtime = SearchPathRuntime.from_state(start, compiled)
+    runtime.push(PassAction())
+    assert runtime.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
     runtime.pop()
     runtime.assert_balanced()
 

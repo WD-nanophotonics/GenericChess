@@ -98,11 +98,6 @@ def _terminal_from_parts(
     history=(),
 ) -> TerminalResult:
     side = position.side_to_move
-    if not has_legal_action(position, compiled):
-        if is_in_check(position, side, compiled):
-            return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
-        winner = 1 - side if getattr(compiled, "stalemate_result", "draw") == "loss" else None
-        return TerminalResult(TerminalStatus.STALEMATE, winner)
     consecutive = consecutive_action_adjudication_status(
         getattr(compiled, "consecutive_action_adjudications", ()),
         ply_count,
@@ -110,6 +105,11 @@ def _terminal_from_parts(
     )
     if consecutive == "DRAW":
         return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
+    if not has_legal_action(position, compiled):
+        if is_in_check(position, side, compiled):
+            return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
+        winner = 1 - side if getattr(compiled, "stalemate_result", "draw") == "loss" else None
+        return TerminalResult(TerminalStatus.STALEMATE, winner)
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _perpetual_check_result(
             repetition_counts, history, compiled.repetition_limit
@@ -164,6 +164,14 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     position = runtime.position
     compiled = runtime.compiled
     engine = semantic_engine_for(compiled)
+    consecutive = consecutive_action_adjudication_status(
+        getattr(compiled, "consecutive_action_adjudications", ()),
+        runtime.ply_count,
+        runtime.history,
+        history_complete=getattr(runtime, "_history_complete", False),
+    )
+    if consecutive == "DRAW":
+        return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
     # Terminal probing only needs one legal action.  Full legal-set
     # materialization is intentionally deferred to the next search node;
     # root tactical scans may inspect many children without recursing into
@@ -185,14 +193,6 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
             else None
         )
         return TerminalResult(TerminalStatus.STALEMATE, winner)
-    consecutive = consecutive_action_adjudication_status(
-        getattr(compiled, "consecutive_action_adjudications", ()),
-        runtime.ply_count,
-        runtime.history,
-        history_complete=getattr(runtime, "_history_complete", False),
-    )
-    if consecutive == "DRAW":
-        return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _runtime_perpetual_check_result(runtime)
         if perpetual is not None:

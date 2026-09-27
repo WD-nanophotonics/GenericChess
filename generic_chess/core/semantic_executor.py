@@ -1598,6 +1598,13 @@ class SemanticEngine:
         )
 
         self._ensure_match(position)
+        consecutive = consecutive_action_adjudication_status(
+            self.support.consecutive_action_adjudications,
+            ply_count,
+            history,
+        )
+        if consecutive == "DRAW":
+            return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
         if not self.has_legal_action(position, checkpoint=checkpoint):
             if self.in_check(
                 position, position.side_to_move, checkpoint=checkpoint
@@ -1609,13 +1616,6 @@ class SemanticEngine:
                 else None
             )
             return TerminalResult(TerminalStatus.STALEMATE, winner)
-        consecutive = consecutive_action_adjudication_status(
-            self.support.consecutive_action_adjudications,
-            ply_count,
-            history,
-        )
-        if consecutive == "DRAW":
-            return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
         if self.support.repetition_policy == "continuous_check_loss":
             perpetual = _perpetual_check_result(
                 repetition_counts, history, self.support.repetition_limit
