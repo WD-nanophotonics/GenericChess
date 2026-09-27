@@ -63,6 +63,100 @@ class RepeatedPositionCycleTrace:
     reason: str | None = None
 
 
+@dataclass(frozen=True, slots=True)
+class ActorCycleTargetSummary:
+    """Observed non-anchor legal-capture target identities on cycle turns.
+
+    Each turn is included, even when it has no legal-capture targets. The
+    intersection therefore means a non-anchor target token was legally
+    capturable after every one of that actor's moves in the observed cycle
+    window. It is a descriptive fact, not a chase or outcome classification.
+    """
+
+    actor: int
+    targets_by_ply: tuple[tuple[int, tuple[PieceInstanceId, ...]], ...]
+    shared_target_tokens: tuple[PieceInstanceId, ...]
+    all_target_tokens: tuple[PieceInstanceId, ...]
+
+    @property
+    def shared_target_count(self) -> int:
+        return len(self.shared_target_tokens)
+
+    @property
+    def distinct_target_count(self) -> int:
+        return len(self.all_target_tokens)
+
+
+@dataclass(frozen=True, slots=True)
+class RepeatedCycleTargetSummary:
+    """Immutable, game-name-independent target-set projection of a cycle."""
+
+    status: Literal["verified", "unknown"]
+    actors: tuple[ActorCycleTargetSummary, ...] = ()
+    reason: str | None = None
+
+
+def summarize_repeated_cycle_targets(
+    trace: RepeatedPositionCycleTrace,
+) -> RepeatedCycleTargetSummary:
+    """Summarize legal-capture target tokens over each actor's repeated-cycle turns.
+
+    This projection consumes only a verified repeated-cycle trace. It preserves
+    empty target sets for turns with no observed legal captures and reports the
+    per-actor cross-turn intersection and union. It does not infer chase,
+    response intent, role exceptions, or any adjudication result.
+    """
+    if trace.status != "verified":
+        return RepeatedCycleTargetSummary("unknown", reason=trace.reason)
+    cycle = trace.cycle
+    if cycle is None:
+        return RepeatedCycleTargetSummary("verified")
+
+    actors_by_ply = dict(cycle.action_actors)
+    if len(actors_by_ply) != len(cycle.action_actors):
+        return RepeatedCycleTargetSummary(
+            "unknown", reason="repeated-cycle actor list contains duplicate plies"
+        )
+    targets_by_ply: dict[int, set[PieceInstanceId]] = {
+        ply: set() for ply, _actor in cycle.action_actors
+    }
+    for fact in cycle.capture_facts:
+        if actors_by_ply.get(fact.frame_ply) != fact.actor:
+            return RepeatedCycleTargetSummary(
+                "unknown", reason="capture fact does not match a repeated-cycle actor ply"
+            )
+        targets_by_ply[fact.frame_ply].add(fact.target_token)
+
+    result = []
+    for actor in sorted({actor for _ply, actor in cycle.action_actors}):
+        actor_turns = tuple(
+            (ply, targets_by_ply[ply])
+            for ply, mover in cycle.action_actors
+            if mover == actor
+        )
+        if not actor_turns:
+            continue
+        shared = set.intersection(*(targets for _ply, targets in actor_turns))
+        union = set.union(*(targets for _ply, targets in actor_turns))
+        token_order = lambda token: (
+            token.serial,
+            token.created_ply,
+            token.origin_index,
+        )
+        result.append(
+            ActorCycleTargetSummary(
+                actor=actor,
+                targets_by_ply=tuple(
+                    (ply, tuple(sorted(targets, key=token_order)))
+                    for ply, targets in actor_turns
+                ),
+                shared_target_tokens=tuple(sorted(shared, key=token_order)),
+                all_target_tokens=tuple(sorted(union, key=token_order)),
+            )
+        )
+    return RepeatedCycleTargetSummary("verified", tuple(result))
+
+
 def trace_latest_repeated_cycle_capture_facts(
     state: GameState, compiled
 ) -> RepeatedPositionCycleTrace:
