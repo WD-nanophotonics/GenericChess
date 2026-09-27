@@ -426,7 +426,8 @@ def test_reviewed_local_followup_preserves_unpublished_lineage(monkeypatch, tmp_
     local_sha, remote_sha, reviewed_sha = "b" * 40, "a" * 40, "c" * 40
     (request / "message.txt").write_text(
         f"SANDBOX_SHA={local_sha}\nPUBLICATION_STATUS=LOCAL_ONLY\n"
-        f"ORIGIN_SANDBOX_SHA={remote_sha}\n", encoding="utf-8"
+        f"ORIGIN_SANDBOX_SHA={remote_sha}\nPUBLICATION_STATUS=LOCAL_ONLY\n",
+        encoding="utf-8"
     )
     (request / "receipt.json").write_text(json.dumps({
         "request_id": prior_id,

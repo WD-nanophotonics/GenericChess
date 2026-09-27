@@ -1622,8 +1622,8 @@ def _reviewed_local_followup(root: Path, state: dict[str, Any],
     prior_message = message_path.read_text(encoding="utf-8-sig")
     def one_field(name: str) -> str:
         values = re.findall(rf"(?m)^{name}=([^\r\n]+)$", prior_message)
-        if len(values) != 1:
-            raise FlowError(f"reviewed local followup missing unique {name}")
+        if not values or len(set(values)) != 1:
+            raise FlowError(f"reviewed local followup missing or conflicting {name}")
         return values[0]
     if one_field("PUBLICATION_STATUS") != "LOCAL_ONLY":
         raise FlowError("prior Courier request was not local-only")
