@@ -87,7 +87,11 @@ def _paired_trace(advisor_response):
     assert ruleset.repetition_limit == 4
     assert position_identity_key(state.position, compiled) == initial_key
     assert dict(state.repetition_counts)[str(initial_key)] == 4
-    provenance = reconstruct_history_provenance(state, compiled)
+    replay_compiled = replace(
+        compiled,
+        ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+    )
+    provenance = reconstruct_history_provenance(state, replay_compiled)
     assert provenance.status == "verified", provenance.reason
     capture_trace = trace_next_turn_legal_captures(state, compiled)
     assert capture_trace.status == "verified", capture_trace.reason
@@ -149,6 +153,8 @@ def _target_summary_trace(
     *,
     support_rook=False,
     move_general=False,
+    repetition_limit=8,
+    cycle_repetitions=None,
 ):
     rows = [[None] * 9 for _ in range(10)]
     for square, piece in (
@@ -167,7 +173,7 @@ def _target_summary_trace(
         initial_position=tuple(tuple(row) for row in rows),
         # The synthetic switch route has a shorter incidental repeat before
         # returning to its declared setup; keep the trace window non-terminal.
-        repetition_limit=8,
+        repetition_limit=repetition_limit,
         repeated_cycle_target_conditions=repeated_cycle_target_conditions,
     )
     ruleset = ruleset_from_dict(ruleset_to_dict(ruleset))
@@ -203,7 +209,12 @@ def _target_summary_trace(
         )
 
     state = initial_state(replay_compiled)
-    for _ in range(1 if repeated_cycle_target_conditions else 3):
+    repeat_count = (
+        cycle_repetitions
+        if cycle_repetitions is not None
+        else 1 if repeated_cycle_target_conditions else 3
+    )
+    for _ in range(repeat_count):
         for source, target in moves:
             action = next(
                 (
@@ -472,7 +483,7 @@ def test_opt_in_cycle_target_outcome_disables_native_capability():
 def test_actor_loss_is_identical_on_core_semantic_and_search_terminal_paths():
     positive_final_position = None
     for switch_targets, move_general, expected in (
-        (False, False, TerminalResult(TerminalStatus.RULE_LOSS, winner=1)),
+        (False, False, TerminalResult(TerminalStatus.ONGOING)),
         (True, False, TerminalResult(TerminalStatus.ONGOING)),
         (False, True, TerminalResult(TerminalStatus.ONGOING)),
     ):
@@ -531,6 +542,63 @@ def test_actor_loss_is_identical_on_core_semantic_and_search_terminal_paths():
             )
             live_runtime.push(final_action)
             assert live_runtime.terminal_status == expected
+
+
+@pytest.mark.parametrize(
+    ("cycle_repetitions", "expected"),
+    (
+        (1, TerminalResult(TerminalStatus.ONGOING)),
+        (2, TerminalResult(TerminalStatus.RULE_LOSS, winner=1)),
+    ),
+)
+def test_repeated_cycle_actor_loss_waits_for_ruleset_repetition_limit(
+    cycle_repetitions, expected
+):
+    condition = RuleRepeatedCycleTargetCondition(actor=0)
+    trace, state, compiled, _ruleset = _target_summary_trace(
+        switch_targets=False,
+        repeated_cycle_target_conditions=(condition,),
+        support_rook=True,
+        repetition_limit=3,
+        cycle_repetitions=cycle_repetitions,
+    )
+    current_key = state.history[-1].position_key
+    assert dict(state.repetition_counts)[current_key] == cycle_repetitions + 1
+    red = next(
+        actor
+        for actor in summarize_repeated_cycle_targets(trace).actors
+        if actor.actor == 0
+    )
+    assert red.shared_mover_target_count > 0
+    replay_compiled = replace(
+        compiled,
+        ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+    )
+    provenance = reconstruct_history_provenance(state, replay_compiled)
+    assert provenance.status == "verified", provenance.reason
+    runtime = SearchPathRuntime.from_state(
+        state,
+        compiled,
+        history_witnesses=tuple(frame.position for frame in provenance.frames),
+    )
+    results = (
+        terminal_result(state, compiled),
+        _terminal_from_parts(
+            state.position,
+            state.ply_count,
+            state.repetition_counts,
+            compiled,
+            state.history,
+        ),
+        semantic_engine_for(compiled).terminal_result(
+            state.position,
+            state.ply_count,
+            state.repetition_counts,
+            state.history,
+        ),
+        terminal_from_search_runtime(runtime),
+    )
+    assert results == (expected,) * 4
 
 
 def test_unsatisfied_and_unknown_cycle_conditions_never_award_actor_loss():

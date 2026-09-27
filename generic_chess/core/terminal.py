@@ -135,7 +135,19 @@ def _repeated_cycle_target_result(
     from .identity import position_identity_key
 
     current_key = position_identity_key(position, compiled)
-    if dict(repetition_counts).get(current_key, 0) < 2:
+    occurrences = dict(repetition_counts).get(current_key, 0)
+    if occurrences < 2:
+        return None
+    support = getattr(compiled, "support", None)
+    configured_limit = getattr(
+        support,
+        "repetition_limit",
+        getattr(compiled, "repetition_limit", 2),
+    )
+    repeat_limit = max(2, int(configured_limit))
+    if occurrences < repeat_limit:
+        # Unlike ordinary per-cycle facts, an actor-loss result is terminal:
+        # do not adjudicate it before this RuleSet's declared repeat threshold.
         return None
 
     from .history_cycle_trace import (
