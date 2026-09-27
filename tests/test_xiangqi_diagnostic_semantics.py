@@ -456,30 +456,69 @@ def test_no_legal_move_is_a_loss_without_needing_a_game(product):
 
 def test_checkmate_and_adjacent_stalemate_use_check_state(product):
     _ruleset, compiled, engine = product
-    for center_type, in_check, status in (
-        ("R", True, TerminalStatus.CHECKMATE),
-        ("H", False, TerminalStatus.STALEMATE),
-    ):
-        state = _state(
-            compiled,
-            [
-                (0, "G", Square(4, 0)),
-                (1, "G", Square(4, 9)),
-                (1, center_type, Square(4, 4)),
-                (1, "R", Square(3, 1)),
-                (1, "R", Square(5, 1)),
-                (1, "H", Square(3, 3)),
-            ],
-            side=0,
-        )
+    parent = _state(
+        compiled,
+        [
+            (0, "G", Square(4, 0)), (0, "S", Square(4, 1)),
+            (1, "G", Square(4, 9)),
+            (1, "R", Square(3, 1)), (1, "R", Square(3, 2)),
+            (1, "S", Square(5, 1)), (1, "H", Square(3, 3)),
+        ],
+        side=1,
+    )
+    assert not engine.in_check(parent.position, 0)
+    assert not engine.in_check(parent.position, 1)
+    checking_capture = next(
+        action for action in legal_actions(parent, compiled)
+        if isinstance(action, SemanticBoardMove)
+        and action.from_square == Square(3, 1)
+        and action.to_square == Square(4, 1)
+    )
+    checkmate = apply_action(parent, checking_capture, compiled)
+    assert engine.in_check(checkmate.position, 0)
+    assert not engine.in_check(checkmate.position, 1)
+    assert legal_actions(checkmate, compiled) == []
+    result = terminal_result(checkmate, compiled)
+    assert result.status is TerminalStatus.CHECKMATE
+    assert result.winner == 1
 
-        assert state.position.side_to_move == 0
-        assert engine.in_check(state.position, 0) is in_check
-        assert legal_actions(state, compiled) == []
+    stalemate = _state(
+        compiled,
+        [
+            (0, "G", Square(4, 0)), (1, "G", Square(4, 9)),
+            (1, "H", Square(4, 4)), (1, "R", Square(3, 1)),
+            (1, "S", Square(5, 1)), (1, "H", Square(3, 3)),
+        ],
+        side=0,
+    )
+    assert not engine.in_check(stalemate.position, 0)
+    assert not engine.in_check(stalemate.position, 1)
+    assert legal_actions(stalemate, compiled) == []
+    result = terminal_result(stalemate, compiled)
+    assert result.status is TerminalStatus.STALEMATE
+    assert result.winner == 1
 
-        result = terminal_result(state, compiled)
-        assert result.status is status
-        assert result.winner == 1
+    piece_limits = {
+        "G": 1, "A": 2, "E": 2, "H": 2, "R": 2, "C": 2, "S": 5,
+    }
+    for state in (parent, checkmate, stalemate):
+        for owner, palace_ranks in ((0, range(3)), (1, range(7, 10))):
+            owned = [
+                (index, piece)
+                for index, piece in enumerate(state.position.board)
+                if piece is not None and piece.owner == owner
+            ]
+            inventory = Counter(piece.base_type_id for _index, piece in owned)
+            assert inventory["G"] == 1
+            assert all(
+                inventory[tid] <= limit
+                for tid, limit in piece_limits.items()
+            )
+            general_index = next(
+                index for index, piece in owned if piece.base_type_id == "G"
+            )
+            assert general_index // 9 in palace_ranks
+            assert 3 <= general_index % 9 <= 5
 
 
 def test_rectangular_transition_identity_and_repetition_cycle(product):
