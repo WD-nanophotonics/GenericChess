@@ -6,6 +6,19 @@ from a procedure here. `WORKFLOW.md` lists ordinary commands. Keep one Worker,
 Courier session, worktree, and Heavy job. Do not turn an ordinary error into a
 Supervisor HOLD or a blocked Goal.
 
+## Supervisor attention budget
+
+Use Supervisor turns to set direction and bounds, review decisive evidence,
+correct Worker drift, and repair shared workflow failures. Delegate routine
+RuleSet, research, code, test, and closeout work to the registered Worker.
+Before doing order-sized work directly, identify the concrete reason the
+Worker cannot do it or why an independent Supervisor check is essential;
+keep that intervention bounded and hand execution back. For an ordinary
+healthy Worker turn, inspect only the evidence needed for the next decision
+and avoid reproducing its entire analysis or test run. A short independent
+check remains appropriate when it resolves a material uncertainty about a
+checkpoint or prevents an incorrect project-wide decision.
+
 ## On every abnormal Courier receipt
 
 1. Read the receipt, its `recovery_manual_path`, the current immutable request

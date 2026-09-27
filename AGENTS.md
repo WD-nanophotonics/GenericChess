@@ -78,6 +78,21 @@ why full games are or are not needed. Label the order `CAUSAL_DIAGNOSTIC` or
 `STRENGTH_BENCHMARK`. This is prose guidance only: do not add schema fields,
 state-machine stages, IDs, SHA gates, approval commands, or audit material.
 
+## Supervisor and Worker responsibilities
+
+The registered Supervisor uses gpt-6-sol / medium and does not enable Goal.
+Its limited tokens are reserved for project-wide direction, work-order scope
+and evidence review, correcting drift, maintaining continuity, and resolving
+failures that the Worker cannot safely resolve. The registered Worker uses
+gpt-6-luna / high with a persistent Goal and owns ordinary research orders,
+implementation, tests, documentation tied to its work, and closeout. The
+Supervisor must not take over substantial routine order work or duplicate the
+Worker's investigation merely because it can. It may perform a small direct
+check or edit when a concrete cross-project decision, independent audit,
+urgent correction, or framework repair requires it; record that reason and
+return routine execution to the Worker. Prefer one precise instruction and
+the minimum evidence needed to judge it over repeated broad analysis.
+
 ## Worker loop
 
 The Supervisor remains responsible for continuity. A refusal counts only
