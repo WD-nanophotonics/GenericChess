@@ -1569,7 +1569,8 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     if state.get("active_request_directory"):
         raise FlowError("cannot follow up while a Courier request is unresolved")
     local_reply = (getattr(args, "scope_reply_local_only", False)
-                   or getattr(args, "phase_complete_local_only", False))
+                   or getattr(args, "phase_complete_local_only", False)
+                   or getattr(args, "decision_reply_local_only", False))
     if state.get("recovery_state") not in ((None, "IDLE", "RECOVERED") if local_reply else (None, "IDLE")):
         raise FlowError("cannot follow up while Courier recovery is unresolved")
     pending = _unresolved_escalation_ids(root)
@@ -1594,7 +1595,8 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     require_clean(root)
     if local_reply:
         _local_only_reply(root, state, body, response_path,
-                          phase_complete=getattr(args, "phase_complete_local_only", False))
+                          phase_complete=getattr(args, "phase_complete_local_only", False),
+                          decision_reply=getattr(args, "decision_reply_local_only", False))
     elif getattr(args, "reviewed_local_only", False):
         _reviewed_local_followup(root, state, body, response_path)
     else:
@@ -1603,7 +1605,8 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
 
 
 def _local_only_reply(root: Path, state: dict[str, Any], body: str,
-                      response_path: Path, *, phase_complete: bool) -> None:
+                      response_path: Path, *, phase_complete: bool,
+                      decision_reply: bool = False) -> None:
     """Continue after a reconciled local-only reply without publishing its SHA."""
     prior_id = state.get("active_request_id")
     if (not isinstance(prior_id, str) or response_path.parent.name != prior_id
@@ -1613,6 +1616,13 @@ def _local_only_reply(root: Path, state: dict[str, Any], body: str,
         if (state.get("work_order_active")
                 or state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "COMPLETE"):
             raise FlowError("phase continuation requires a replied COMPLETE phase")
+    elif decision_reply:
+        response_text = response_path.read_text(encoding="utf-8-sig")
+        if (not state.get("work_order_active")
+                or state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "CONTINUE"
+                or state.get("last_work_order_id") is not None
+                or WORK_ORDER_ID.search(response_text)):
+            raise FlowError("decision reply requires CONTINUE with no unconsumed work order")
     elif not state.get("work_order_active"):
         raise FlowError("local-only scope reply requires a continuing work order")
     if "LOCAL_SUPERVISOR_REQUIRED=true" in response_path.read_text(encoding="utf-8-sig").splitlines():
@@ -1629,6 +1639,8 @@ def _local_only_reply(root: Path, state: dict[str, Any], body: str,
     disposition = (
         "The prior reply closed one bounded order, not the whole GenericChess project. "
         if phase_complete else
+        "The prior reply requested project direction and contained no executable work order. "
+        if decision_reply else
         "The registered Supervisor declined the prior order's scope. "
     )
     lineage = (
@@ -3241,6 +3253,8 @@ def parser() -> argparse.ArgumentParser:
                                help="reply to a Supervisor-declined order after a reconciled local-only closeout")
     followup_mode.add_argument("--phase-complete-local-only", action="store_true",
                                help="request the next order after a local-only phase was marked COMPLETE")
+    followup_mode.add_argument("--decision-reply-local-only", action="store_true",
+                               help="reply to a CONTINUE local-only response with no executable order")
     followup.set_defaults(handler=command_followup)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)

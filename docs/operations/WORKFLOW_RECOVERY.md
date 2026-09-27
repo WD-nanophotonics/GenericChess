@@ -151,6 +151,13 @@ phase and request the next bounded mainline order. This path checks the
 matching completed receipt and retains unpublished lineage. Do not use it
 when Chat explicitly states that no further GenericChess work is needed.
 
+If a reconciled local-only closeout reply says `CONTINUE` but contains no
+executable work order because it requests a Supervisor research-direction
+decision, use one `followup --decision-reply-local-only --message-file <path>`
+to relay that decision through the same Courier session. It checks the matching
+completed receipt, absent work-order ID, and prior response hash, and retains
+the unpublished candidate. Do not use this path to revisit an existing order.
+
 An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
 because the Chat cannot independently inspect the unpublished commit. The
 Supervisor reviews the local SHA, tests, original request, and matching reply.

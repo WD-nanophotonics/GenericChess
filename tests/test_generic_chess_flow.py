@@ -509,6 +509,50 @@ def test_local_only_phase_complete_requests_next_order(monkeypatch, tmp_path):
     assert "closed one bounded order" in sent["body"]
 
 
+def test_local_only_decision_reply_requires_no_order_and_keeps_lineage(monkeypatch, tmp_path):
+    prior_id = "GENERICCHESS-20260927-232604-9e335352"
+    request = tmp_path / prior_id
+    request.mkdir()
+    response = request / "response.txt"
+    response.write_text("Research lead decision required.\nGENERICCHESS_STATUS=CONTINUE\n", encoding="utf-8")
+    (request / "message.txt").write_text("PUBLICATION_STATUS=LOCAL_ONLY\n", encoding="utf-8")
+    (request / "receipt.json").write_text(json.dumps({
+        "project_id": "GENERICCHESS", "request_id": prior_id,
+        "state": "response_received", "response_path": str(response),
+    }), encoding="utf-8")
+    message = tmp_path / "decision.txt"
+    message.write_text("Supervisor allows one pre-reference axiom proposal.\n", encoding="utf-8")
+    state = _followup_state(response)
+    state.update(active_request_id=prior_id, last_request_key="closeout-local-abc-def",
+                 work_order_active=True, last_work_order_id=None,
+                 chat_control={"GENERICCHESS_STATUS": "CONTINUE"})
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "_unresolved_escalation_ids", lambda _root: [])
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
+    monkeypatch.setattr(flow, "require_synced", lambda *_args: pytest.fail("must not demand publication"))
+    sent = {}
+    def fake_dispatch(_root, _state, source, purpose, *, local_only):
+        sent.update(body=source.read_text(encoding="utf-8"), purpose=purpose,
+                    local_only=local_only)
+    monkeypatch.setattr(flow, "dispatch_message", fake_dispatch)
+
+    flow.command_followup(tmp_path, SimpleNamespace(
+        message_file=str(message), decision_reply_local_only=True))
+
+    assert sent["purpose"] == "followup" and sent["local_only"] is True
+    assert f"PRIOR_REQUEST_ID={prior_id}" in sent["body"]
+    assert "contained no executable work order" in sent["body"]
+    assert state["last_response_sha256"] in sent["body"]
+
+    state["last_work_order_id"] = "F999"
+    with pytest.raises(flow.FlowError, match="no unconsumed work order"):
+        flow.command_followup(tmp_path, SimpleNamespace(
+            message_file=str(message), decision_reply_local_only=True))
+
+
 def test_reviewed_local_followup_preserves_unpublished_lineage(monkeypatch, tmp_path):
     prior_id = "GENERICCHESS-20260925-072631-99080089"
     request = tmp_path / prior_id
