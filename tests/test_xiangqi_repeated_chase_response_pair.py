@@ -10,6 +10,10 @@ from history_candidate_test_support import (
     extract_repeated_cycle_capture_candidate,
 )
 from generic_chess.core.capture_pressure_trace import trace_next_turn_legal_captures
+from generic_chess.core.capture_sources import (
+    query_counterfactual_legal_capture_sources,
+    query_pseudo_capture_sources,
+)
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_cycle_trace import (
     evaluate_repeated_cycle_target_condition,
@@ -32,10 +36,17 @@ from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.session.result import SessionStatus, session_result_from_terminal
-from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.compiler import (
+    compile_ruleset_for_execution,
+    compile_semantic_ruleset,
+)
 from generic_chess.rules.compiled import CompiledRepeatedCycleTargetCondition
 from generic_chess.rules.schema import (
     RuleRepeatedCycleTargetCondition,
+    RuleSpatialSelector,
+    RuleSquareRef,
+    RuleStateGuard,
+    RuleTypeRef,
     ruleset_from_dict,
     ruleset_to_dict,
 )
@@ -776,3 +787,140 @@ def test_truncated_at_limit_cycle_fails_closed_on_core_and_semantic_paths():
             incomplete.repetition_counts,
             incomplete.history,
         )
+
+
+def test_repeated_cycle_target_requires_legal_capture_not_pinned_pseudoattack():
+    condition = RuleRepeatedCycleTargetCondition(actor=0)
+    target = Square(1, 2)
+    source_locations = (Square(0, 3), Square(0, 1))
+    moves = (
+        (Square(0, 1), Square(0, 3)),  # White Queen stays on the pin file.
+        (Square(7, 7), Square(7, 6)),  # Black King shuttle.
+        (Square(0, 3), Square(0, 1)),
+        (Square(7, 6), Square(7, 7)),
+    )
+
+    observations = []
+    for pinned, expected_shared, expected_result in (
+        (
+            False,
+            True,
+            TerminalResult(TerminalStatus.RULE_LOSS, winner=1),
+        ),
+        (
+            True,
+            False,
+            TerminalResult(TerminalStatus.REPETITION),
+        ),
+    ):
+        rows = [[None] * 8 for _ in range(8)]
+        for square, piece in (
+            (Square(0, 0), Piece(0, "K", "K")),
+            (Square(7, 7), Piece(1, "K", "K")),
+            (Square(0, 1), Piece(0, "Q", "Q")),
+            (target, Piece(1, "P", "P")),
+        ):
+            rows[square.rank][square.file] = piece
+        if pinned:
+            rows[4][0] = Piece(1, "R", "R")
+        target_ref = RuleSquareRef("target")
+        def target_type_guard(type_id):
+            return RuleStateGuard(
+                aggregation="count",
+                owner="opponent",
+                type_ref=RuleTypeRef(kind="explicit", type_id=type_id),
+                compare_field="base",
+                promoted="any",
+                location="board",
+                spatial=RuleSpatialSelector(kind="exact", refs=(target_ref,)),
+                comparison="eq",
+                value=1,
+                subject_ref=target_ref,
+            )
+
+        base_ruleset = build_western_chess_ruleset()
+        active_actions = tuple(
+            replace(
+                action,
+                state_guards=action.state_guards
+                + (
+                    (target_type_guard("P"),)
+                    if action.name == "q_capture"
+                    else (target_type_guard("K"),)
+                    if action.name == "r_capture"
+                    else ()
+                ),
+            )
+            for action in base_ruleset.semantic_actions
+            if action.name in {
+                "k_quiet", "k_capture", "q_quiet", "q_capture",
+                "r_quiet", "r_capture",
+            }
+        )
+        ruleset = replace(
+            base_ruleset,
+            initial_position=tuple(tuple(row) for row in rows),
+            repetition_limit=2,
+            repeated_cycle_target_conditions=(condition,),
+            semantic_actions=active_actions,
+        )
+        compiled = compile_semantic_ruleset(ruleset)
+        replay_compiled = replace(
+            compiled,
+            ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+        )
+        state = initial_state(replay_compiled)
+        for source, destination in moves:
+            action = next(
+                action
+                for action in legal_actions(state, replay_compiled)
+                if isinstance(action, SemanticBoardMove)
+                and action.from_square == source
+                and action.to_square == destination
+            )
+            state = apply_action(state, action, replay_compiled)
+
+        trace = trace_latest_repeated_cycle_capture_facts(state, replay_compiled)
+        assert trace.status == "verified" and trace.cycle is not None, trace.reason
+        assert (trace.cycle.start_ply, trace.cycle.end_ply) == (0, 4)
+        actor = next(
+            item
+            for item in summarize_repeated_cycle_targets(trace).actors
+            if item.actor == 0
+        )
+
+        provenance = reconstruct_history_provenance(state, replay_compiled)
+        assert provenance.status == "verified", provenance.reason
+        for ply, source_square in zip((1, 3), source_locations):
+            frame = provenance.frames[ply]
+            assert source_square in query_pseudo_capture_sources(
+                frame.position, target, 0, replay_compiled
+            )
+            legal_sources = query_counterfactual_legal_capture_sources(
+                frame.position, target, 0, replay_compiled
+            )
+            assert legal_sources is not None
+            assert (source_square in legal_sources) is not pinned, (
+                pinned, ply, source_square, legal_sources
+            )
+        assert (actor.shared_mover_target_count > 0) is expected_shared
+
+        engine = semantic_engine_for(compiled)
+        assert engine is not None
+        assert terminal_result(state, compiled) == expected_result
+        assert engine.terminal_result(
+            state.position,
+            state.ply_count,
+            state.repetition_counts,
+            state.history,
+        ) == expected_result
+        observations.append(state.position)
+
+    changed = [
+        index
+        for index, (legal_position, pinned_position) in enumerate(
+            zip(observations[0].board, observations[1].board)
+        )
+        if legal_position != pinned_position
+    ]
+    assert changed == [4 * 8]
