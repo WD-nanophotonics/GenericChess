@@ -20,6 +20,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 from .actions import (
+    PassAction,
     action_from_dict,
     action_is_board,
     action_is_drop,
@@ -114,6 +115,13 @@ def _advance_identities(
             raise ValueError("dropped piece type does not match its action")
         moved[dst] = PieceInstanceId(next_serial, ply, dst)
         next_serial += 1
+    elif isinstance(action, PassAction):
+        if (
+            changed
+            or before.hands != after.hands
+            or after.side_to_move != 1 - before.side_to_move
+        ):
+            raise ValueError("pass action changed board/hands or failed to switch turns")
     else:  # Defensive if the public Action union ever grows.
         raise ValueError("unsupported action shape")
 

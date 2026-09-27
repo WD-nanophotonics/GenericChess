@@ -60,6 +60,7 @@ class CompiledRuleSet:
     automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     declarations: tuple[object, ...] = ()
     capture_disposition: str = "capture_to_hand"
+    pass_enabled: bool = False
 
 
 @dataclass(frozen=True, slots=True)

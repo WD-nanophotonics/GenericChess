@@ -15,11 +15,15 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 from typing import Any, Callable, Iterable, Mapping
 
-from .actions import Action, BoardMove, DropMove, action_from_dict, action_to_dict
+from .actions import Action, BoardMove, DropMove, PassAction, action_from_dict, action_to_dict
 from .attacks import is_in_check
 from .errors import IllegalActionError, ensure_ruleset_match
 from .identity import ExternalStableKey, RuntimeHash, position_identity_key
-from .movegen import _apply_action_unchecked, iter_legal_actions_from_position
+from .movegen import (
+    _apply_action_unchecked,
+    _pass_action_is_legal,
+    iter_legal_actions_from_position,
+)
 from .position import GameState, HistoryRecord, Position
 from .semantic_executor import _semantic_public_action, semantic_engine_for
 from .terminal import TerminalResult, TerminalStatus, terminal_from_search_runtime
@@ -414,6 +418,8 @@ def _legacy_incremental_hash(parent: Position, child: Position, action: Action, 
         size = compiled.board_size
         changed_cells.add(action.to_square.rank * size + action.to_square.file)
         changed_hands.add(parent.side_to_move)
+    elif isinstance(action, PassAction):
+        pass
     else:
         raise TypeError("semantic action requires component-diff fallback")
     value = _xor(value, _component_token(("side",), parent.side_to_move))
@@ -898,6 +904,8 @@ class SearchPathRuntime:
                 provided = self._legal_actions_from_provider(checkpoint)
                 if provided is not None:
                     actions, bindings = provided
+                    if _pass_action_is_legal(self.position, self.compiled, checkpoint):
+                        actions = (*actions, PassAction())
                     self._bindings = bindings
                     self._legal_cache = actions
                     return self._legal_cache
@@ -907,6 +915,8 @@ class SearchPathRuntime:
                 public = _semantic_public_action(engine, semantic_action)
                 actions.append(public)
                 bindings[public] = (semantic_action, binding)
+            if _pass_action_is_legal(self.position, self.compiled, checkpoint):
+                actions.append(PassAction())
             self._bindings = bindings
         else:
             actions = list(iter_legal_actions_from_position(self.position, self.compiled, checkpoint=checkpoint))
@@ -1116,11 +1126,16 @@ class SearchPathRuntime:
         parent = self.position
         engine = semantic_engine_for(self.compiled)
         if engine is not None:
-            semantic_action, binding = self._bindings[action]
-            child = engine._transition(parent, semantic_action, binding, checkpoint=checkpoint)
+            if isinstance(action, PassAction):
+                child = _apply_action_unchecked(parent, action, self.compiled)
+            else:
+                semantic_action, binding = self._bindings[action]
+                child = engine._transition(parent, semantic_action, binding, checkpoint=checkpoint)
         else:
             child = _apply_action_unchecked(parent, action, self.compiled)
-        gave_check = self._gave_check(child, checkpoint)
+        gave_check = (
+            False if isinstance(action, PassAction) else self._gave_check(child, checkpoint)
+        )
         child_external_key = self._opaque_history_key_for_child(child)
         child_identity = RuntimePositionIdentity(child)
         if self._forced_hash is not None:

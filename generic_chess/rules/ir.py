@@ -565,6 +565,10 @@ class CompiledSemanticRuleset:
             return self.support.repetition_policy
         return "draw"
 
+    @property
+    def pass_enabled(self) -> bool:
+        return bool(self.support is not None and self.support.pass_enabled)
+
 
 @dataclass(frozen=True, slots=True)
 class SemanticTypeMetadata:
@@ -609,6 +613,7 @@ class CompiledSemanticSupport:
     automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     board_width: int | None = None
     board_height: int | None = None
+    pass_enabled: bool = False
 
     @property
     def board_shape(self) -> BoardShape:

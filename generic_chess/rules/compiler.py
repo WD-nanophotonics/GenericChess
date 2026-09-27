@@ -134,6 +134,11 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
     issues: list[ValidationIssue] = []
     shape = ruleset.board_shape
 
+    if not isinstance(ruleset.pass_enabled, bool):
+        issues.append(
+            ValidationIssue("PASS_POLICY_INVALID", "pass_enabled", "expected a boolean")
+        )
+
     if shape.width < 3 or shape.height < 3:
         issues.append(
             ValidationIssue("BOARD_SIZE_TOO_SMALL", "board_size", "board_size must be an integer >= 3")
@@ -431,6 +436,7 @@ def compile_ruleset(
         automatic_adjudications=_compile_automatic_adjudications(ruleset),
         declarations=_compile_declarations(ruleset, tuple(sorted(types_by_id))),
         capture_disposition=ruleset.capture_disposition,
+        pass_enabled=ruleset.pass_enabled,
     )
 
     issues = _position_validation(compiled)
@@ -872,6 +878,7 @@ def _build_semantic_support(
         promotion_forced = ruleset.promotion_forced
         repetition_limit = ruleset.repetition_limit
         repetition_policy = ruleset.repetition_policy
+        pass_enabled = ruleset.pass_enabled
         max_ply = ruleset.max_ply
         stalemate_result = ruleset.stalemate_result
         automatic_adjudications = _compile_automatic_adjudications(ruleset)
@@ -885,6 +892,7 @@ def _build_semantic_support(
         promotion_forced = compiled.promotion_forced
         repetition_limit = compiled.repetition_limit
         repetition_policy = compiled.repetition_policy
+        pass_enabled = compiled.pass_enabled
         max_ply = compiled.max_ply
         stalemate_result = compiled.stalemate_result
         automatic_adjudications = compiled.automatic_adjudications
@@ -919,6 +927,7 @@ def _build_semantic_support(
         automatic_adjudications=automatic_adjudications,
         board_width=None if shape.width == shape.height else shape.width,
         board_height=None if shape.width == shape.height else shape.height,
+        pass_enabled=pass_enabled,
     )
 
 

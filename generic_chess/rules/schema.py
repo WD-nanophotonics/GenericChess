@@ -187,6 +187,8 @@ class RuleSet:
     board_height: int | None = None
     # Omitted from serialized defaults so historical RuleSet identities stay stable.
     capture_disposition: str = "capture_to_hand"
+    # Coordinate-free turn action, disabled by default and omitted from legacy JSON.
+    pass_enabled: bool = False
 
     @property
     def board_shape(self) -> BoardShape:
@@ -1517,6 +1519,8 @@ def ruleset_to_dict(
         data["metadata"] = dict(ruleset.metadata)
     if ruleset.capture_disposition != "capture_to_hand":
         data["capture_disposition"] = ruleset.capture_disposition
+    if ruleset.pass_enabled:
+        data["pass_enabled"] = True
     return data
 
 
@@ -1678,6 +1682,9 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
             f"{path}.capture_disposition",
             f"expected one of {DISPOSITIONS}, got {capture_disposition!r}",
         )
+    pass_enabled = _require_bool(
+        data.get("pass_enabled", False), f"{path}.pass_enabled"
+    )
     semantic_actions_raw = data.get("semantic_actions", ())
     if not isinstance(semantic_actions_raw, (list, tuple)):
         raise _err(
@@ -1741,6 +1748,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         automatic_adjudications=automatic_adjudications,
         metadata=dict(metadata),
         capture_disposition=capture_disposition,
+        pass_enabled=pass_enabled,
     )
 
 

@@ -22,7 +22,7 @@ fail-closed (never generated).  Native/Search/Learner are untouched.
 from __future__ import annotations
 
 from collections.abc import Callable, Iterator
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from math import gcd
 
 from ..rules.ir import (
@@ -657,6 +657,36 @@ class SemanticEngine:
         return self.is_square_attacked(
             position, anchor, 1 - side, checkpoint=checkpoint
         )
+
+    def transition_pass(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> Position:
+        """Complete a semantic turn without board events, expiring turn-local state."""
+        self._ensure_match(position)
+        aux = dict(position.aux_state)
+        for slot in self.ir.aux_slots:
+            _checkpoint(checkpoint)
+            if slot.lifetime == "expire_next_turn":
+                for owner in _logical_owners(slot):
+                    _checkpoint(checkpoint)
+                    aux[(slot.slot_id, owner)] = slot.initial
+        return replace(
+            position,
+            side_to_move=1 - position.side_to_move,
+            aux_state=tuple(sorted(aux.items())),
+        )
+
+    def pass_is_legal(
+        self, position: Position, checkpoint: Checkpoint | None = None
+    ) -> bool:
+        """A checked side cannot pass, and the actual successor must stay safe."""
+        if not self.semantic.pass_enabled:
+            return False
+        side = position.side_to_move
+        if self.in_check(position, side, checkpoint=checkpoint):
+            return False
+        child = self.transition_pass(position, checkpoint=checkpoint)
+        return not self.in_check(child, side, checkpoint=checkpoint)
 
     # ------------------------------------------------------- binding
 
@@ -1545,7 +1575,9 @@ class SemanticEngine:
     ) -> bool:
         for _action in self.iter_legal_actions(position, checkpoint=checkpoint):
             return True
-        return False
+        return bool(
+            self.pass_is_legal(position, checkpoint=checkpoint)
+        )
 
     def terminal_result(
         self,

@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .actions import Action
+from .actions import Action, PassAction
 from .errors import IllegalActionError, ensure_ruleset_match
 from .identity import repetition_identity_key
-from .movegen import _apply_action_unchecked, legal_actions_from_position
+from .movegen import _apply_action_unchecked, legal_actions, legal_actions_from_position
 from .position import GameState, HistoryRecord
 from .repetition import update_repetition_counts
 from .terminal import _terminal_from_parts, TerminalStatus
@@ -54,7 +54,7 @@ def _history_record(state, new_pos, action, compiled, key, checkpoint=None):
     from .semantic_executor import semantic_engine_for
 
     engine = semantic_engine_for(compiled)
-    gave_check = (
+    gave_check = False if isinstance(action, PassAction) else (
         engine.in_check(new_pos, new_pos.side_to_move, checkpoint=checkpoint)
         if engine is not None
         else is_in_check(new_pos, new_pos.side_to_move, compiled)
@@ -153,6 +153,10 @@ def apply_action(state: GameState, action: Action, compiled: "CompiledRuleSet") 
             raise IllegalActionError(
                 f"cannot apply an action to a terminal state ({state.terminal_status})"
             )
+        if isinstance(action, PassAction):
+            if action not in legal_actions(state, compiled):
+                raise IllegalActionError(f"action is not legal in the current state: {action}")
+            return _transition(state, action, compiled)
         binding = semantic_action_for(engine, state.position, action)
         new_pos = engine.apply(state.position, binding)
         ply = state.ply_count + 1
@@ -190,6 +194,7 @@ def legal_successors(
     loops that need both the move and the resulting state without re-running
     move generation for every child.
     """
+    from .movegen import _pass_action_is_legal
     from .semantic_executor import (
         _semantic_public_action,
         semantic_engine_for,
@@ -222,6 +227,9 @@ def legal_successors(
                     ),
                 )
             )
+        if _pass_action_is_legal(state.position, compiled):
+            action = PassAction()
+            out.append((action, _transition(state, action, compiled)))
         return tuple(out)
     ensure_ruleset_match(state.position, compiled)
     if state.terminal_status.status is not TerminalStatus.ONGOING:

@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 from collections.abc import Callable, Iterator
+from dataclasses import replace
 from typing import TYPE_CHECKING
 
-from .actions import Action, BoardMove, DropMove
+from .actions import Action, BoardMove, DropMove, PassAction
 from .attacks import anchor_square, is_square_attacked
 from .coordinates import Square, index_to_square, square_to_index
 from .errors import IllegalActionError, ensure_ruleset_match
@@ -106,6 +107,36 @@ def _expanded_pseudo_actions(
         else:
             yield action
     yield from _drop_actions(position, compiled)
+    if getattr(compiled, "pass_enabled", False):
+        yield PassAction()
+
+
+def _pass_action_child(position, compiled, checkpoint=None):
+    from .semantic_executor import semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    if engine is not None:
+        return engine.transition_pass(position, checkpoint=checkpoint)
+    return replace(position, side_to_move=1 - position.side_to_move)
+
+
+def _pass_action_is_legal(position, compiled, checkpoint=None) -> bool:
+    if not getattr(compiled, "pass_enabled", False):
+        return False
+    from .semantic_executor import semantic_engine_for
+
+    engine = semantic_engine_for(compiled)
+    side = position.side_to_move
+    if engine is not None:
+        return engine.pass_is_legal(position, checkpoint=checkpoint)
+    anchor = anchor_square(position, side, compiled)
+    if anchor is None or is_square_attacked(position, anchor, 1 - side, compiled):
+        return False
+    child = _pass_action_child(position, compiled, checkpoint)
+    child_anchor = anchor_square(child, side, compiled)
+    return child_anchor is not None and not is_square_attacked(
+        child, child_anchor, 1 - side, compiled
+    )
 
 
 def _apply_action_unchecked(
@@ -119,6 +150,10 @@ def _apply_action_unchecked(
     target membership) so that even an internal misuse cannot corrupt a state.
     """
     ensure_ruleset_match(position, compiled)
+    if isinstance(action, PassAction):
+        if not _pass_action_is_legal(position, compiled):
+            raise IllegalActionError(f"pass is not legal in the current state: {action}")
+        return _pass_action_child(position, compiled)
     n = compiled.board_size
     side = position.side_to_move
     board = list(position.board)
@@ -192,6 +227,8 @@ def _apply_action_unchecked(
 
 
 def _is_legal(position: Position, action: Action, compiled: "CompiledRuleSet") -> bool:
+    if isinstance(action, PassAction):
+        return _pass_action_is_legal(position, compiled)
     after = _apply_action_unchecked(position, action, compiled)
     side = position.side_to_move
     own_anchor = anchor_square(after, side, compiled)
@@ -239,7 +276,9 @@ def has_legal_action(
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
-        return engine.has_legal_action(position, checkpoint=checkpoint)
+        return engine.has_legal_action(position, checkpoint=checkpoint) or _pass_action_is_legal(
+            position, compiled, checkpoint
+        )
     for _action in iter_legal_actions_from_position(
         position, compiled, checkpoint=checkpoint
     ):
@@ -267,6 +306,8 @@ def iter_legal_actions(
         yield from iter_semantic_public_actions(
             engine, state.position, checkpoint=checkpoint
         )
+        if _pass_action_is_legal(state.position, compiled, checkpoint):
+            yield PassAction()
         return
     yield from iter_legal_actions_from_position(
         state.position, compiled, checkpoint=checkpoint

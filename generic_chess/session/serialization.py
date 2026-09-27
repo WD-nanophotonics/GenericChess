@@ -9,6 +9,7 @@ from ..core.actions import (
     Action,
     BoardMove,
     DropMove,
+    PassAction,
     SemanticBoardMove,
     SemanticDropMove,
 )
@@ -56,6 +57,8 @@ def _require_int_pair(value: Any, path: str) -> tuple[int, int]:
 
 
 def _action_to_dict(action: Action) -> dict[str, Any]:
+    if isinstance(action, PassAction):
+        return {"kind": "pass"}
     if isinstance(action, SemanticBoardMove):
         return {
             "kind": "semantic_board",
@@ -91,6 +94,10 @@ def _action_to_dict(action: Action) -> dict[str, Any]:
 def _action_from_dict(data: dict, path: str) -> Action:
     """Strict action parser (does not trust :func:`action_from_dict`)."""
     kind = _require_str(_require_field(data, "kind", path), f"{path}.kind")
+    if kind == "pass":
+        if set(data) != {"kind"}:
+            raise _err("UNKNOWN_FIELD", path, "pass actions cannot carry fields")
+        return PassAction()
     if kind == "board":
         allowed = {"kind", "from", "to", "promotion_target_id"}
         unknown = set(data) - allowed

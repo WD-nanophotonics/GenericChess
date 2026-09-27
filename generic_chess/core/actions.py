@@ -73,7 +73,15 @@ class SemanticDropMove:
         )
 
 
-Action = BoardMove | DropMove | SemanticBoardMove | SemanticDropMove
+@dataclass(frozen=True, slots=True)
+class PassAction:
+    """A coordinate-free turn action that leaves board and hands unchanged."""
+
+    def __str__(self) -> str:
+        return "pass"
+
+
+Action = BoardMove | DropMove | SemanticBoardMove | SemanticDropMove | PassAction
 
 
 def action_is_board(action: Action) -> bool:
@@ -95,9 +103,9 @@ def action_source_square(action: Action) -> Square | None:
     return action.from_square if action_is_board(action) else None
 
 
-def action_target_square(action: Action) -> Square:
+def action_target_square(action: Action) -> Square | None:
     """Return the destination square for any public action shape."""
-    return action.to_square
+    return action.to_square if not isinstance(action, PassAction) else None
 
 
 def action_promotion_target_id(action: Action) -> str | None:
@@ -112,6 +120,8 @@ def action_drop_base_type_id(action: Action) -> str | None:
 
 def action_to_dict(action: Action) -> dict[str, Any]:
     """Stable dict representation of an action (JSON-serializable)."""
+    if isinstance(action, PassAction):
+        return {"kind": "pass"}
     if isinstance(action, BoardMove):
         return {
             "kind": "board",
@@ -167,6 +177,10 @@ def action_from_dict(data: dict[str, Any]) -> Action:
             to_square=Square(to_file, to_rank),
             promotion_target_id=data.get("promotion_target_id"),
         )
+    if data["kind"] == "pass":
+        if set(data) != {"kind"}:
+            raise ValueError("pass action must not carry coordinates or extra fields")
+        return PassAction()
     to_file, to_rank = data["to"]
     return SemanticDropMove(
         pattern_id=data["pattern_id"],

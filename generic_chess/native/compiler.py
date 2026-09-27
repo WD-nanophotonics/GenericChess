@@ -402,6 +402,10 @@ def _validate(condition: bool, message: str, fingerprint: str) -> None:
 
 def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
     """Convert a CompiledRuleSet into the plain native payload dict."""
+    if getattr(compiled, "pass_enabled", False):
+        raise NativeUnsupportedRuleError(
+            "coordinate-free pass actions are unsupported by native execution"
+        )
     n = compiled.board_size
     fingerprint = compiled.ruleset_fingerprint
     _validate(1 <= n <= 16 and n * n <= 256, "board size out of native range", fingerprint)
@@ -540,6 +544,10 @@ def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
 
 def compile_native_rules(compiled: CompiledRuleSet) -> NativeCompiledRules:
     """Compile a CompiledRuleSet into the native kernel (one-time cost)."""
+    if getattr(compiled, "pass_enabled", False):
+        raise NativeUnsupportedRuleError(
+            "coordinate-free pass actions are unsupported by native execution"
+        )
     if not native_available():
         raise NativeUnsupportedRuleError(
             "native extension is not built; run scripts/build_native_zig.py"
@@ -826,6 +834,12 @@ def build_semantic_compile_payload(semantic):
     support = semantic.support
     fingerprint = support.ruleset_fingerprint
     n = support.board_size
+
+    _validate(
+        not getattr(semantic, "pass_enabled", False),
+        "coordinate-free pass actions are unsupported by native semantic execution",
+        fingerprint,
+    )
 
     _validate(
         not any(pattern.square_zone_guards for pattern in ir.patterns),
