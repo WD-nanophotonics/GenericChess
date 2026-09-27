@@ -10,10 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 
 from generic_chess.core.actions import action_from_dict, action_to_dict
 from generic_chess.core.coordinates import Square
-from generic_chess.core.position import GameState
+from generic_chess.core.movegen import legal_actions
+from generic_chess.core.position import GameState, HistoryRecord
 from generic_chess.core.search_runtime import SearchPathRuntime
 from generic_chess.core.semantic_executor import semantic_engine_for, semantic_public_actions
 from generic_chess.core.terminal import TerminalResult, TerminalStatus
+from generic_chess.core.transition import apply_action
 from generic_chess.rules.serialization import deserialize_ruleset, serialize_ruleset
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
@@ -135,6 +137,73 @@ def test_f24f_en_passant_lifecycle_and_push_pop():
     runtime.pop()
     runtime.assert_balanced()
     assert runtime.position == before
+
+    root_state = _position_state(root, compiled)
+    root_key = root_state.repetition_counts[0][0]
+    root_state = GameState(
+        position=root_state.position,
+        ply_count=root_state.ply_count,
+        repetition_counts=root_state.repetition_counts,
+        terminal_status=root_state.terminal_status,
+        history=(HistoryRecord(root_key, -1, "", False),),
+    )
+    public_double = next(
+        action for action in legal_actions(root_state, compiled)
+        if action.from_square == Square(3, 1)
+        and action.to_square == Square(3, 3)
+        and "pawn_double_step" in action.pattern_id
+    )
+    after_double_state = apply_action(root_state, public_double, compiled)
+    assert after_double_state.position == after_double
+
+    public_actions = frozenset(legal_actions(after_double_state, compiled))
+    ep_capture = next(
+        action for action in public_actions
+        if action.from_square == Square(4, 3)
+        and action.to_square == Square(3, 2)
+        and "en_passant" in action.pattern_id
+    )
+    runtime = SearchPathRuntime.from_state(after_double_state, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == public_actions
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        before_actions,
+    )
+    expected_child = apply_action(after_double_state, ep_capture, compiled)
+
+    runtime.push(ep_capture)
+    assert runtime.position == expected_child.position
+    assert runtime.position.board[28] is None
+    assert runtime.position.board[27] is None
+    assert runtime.position.board[19] is not None
+    assert runtime.position.board[19].owner == 1
+    assert runtime.position.side_to_move == 0
+    assert runtime.ply_count == after_double_state.ply_count + 1
+    assert runtime.position.hands == after_double_state.position.hands
+    assert all(value is None or value == 0 for _slot, value in runtime.position.aux_state)
+    runtime.pop()
+    runtime.assert_balanced()
+
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
 
 
 def test_f24f_castling_rights_rook_presence_path_and_attack_safety():
