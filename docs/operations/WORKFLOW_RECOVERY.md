@@ -136,6 +136,19 @@ The Supervisor must repair or reconcile the missing-order path rather than
 repeatedly expanding that work into a substitute Chat/Worker research loop.
 This notice alone is neither a blocked Goal nor a HOLD.
 
+If a work order forbids publication while Chat requires remote Git visibility
+of that same local-only candidate before issuing another order, record the
+conflicting evidence requirements as a shared order-path fault. Recheck the
+matching request, reply, local/remote SHAs, and the one reviewed followup.
+Do not resend equivalent requests, publish the prohibited candidate, or
+rebind Chat merely to repeat the same remote-only gate. A patch or test log
+helps only if Chat explicitly accepts it as local evidence; do not silently
+treat it as remote verification. Give the Worker a single bounded, independent
+mainline bridge with a stop condition while the Supervisor seeks a concrete
+compatible order path or a new authorized publication boundary. Record the
+decision in local runtime state so the next patrol does not reopen the same
+review loop.
+
 Use the smallest action supported by fresh evidence; escalate the remedy if
 the same fault persists. Fix a broken selector, launcher, status read, or
 registration at its actual source. Resume the same Worker with gpt-6-luna /
