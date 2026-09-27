@@ -1468,6 +1468,31 @@ def test_escalation_freezes_worker_repository_commands(monkeypatch, tmp_path):
         flow.command_publish(tmp_path, SimpleNamespace(tests=[]))
 
 
+def test_infrastructure_publish_rejects_outgoing_rule_changes_before_testing_or_push(
+        monkeypatch, tmp_path):
+    remote_sha = "a" * 40
+    local_sha = "b" * 40
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True})
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref="HEAD":
+                        remote_sha if ref == "origin/sandbox" else local_sha)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+
+    def fake_git(_root, *args, **_kwargs):
+        assert args == ("diff", "--name-only", f"{remote_sha}..HEAD")
+        return "tools/generic_chess_flow.py\ngeneric_chess/rules/schema.py"
+
+    monkeypatch.setattr(flow, "git", fake_git)
+    monkeypatch.setattr(flow, "run_tests", lambda *_args: pytest.fail("ran tests"))
+
+    with pytest.raises(flow.FlowError, match="non-workflow changes: generic_chess/rules/schema.py"):
+        flow.command_publish(tmp_path, SimpleNamespace(tests=[], infrastructure=True))
+
+
 def test_supervisor_hold_is_authorized_idempotent_and_hashed_on_release(
         monkeypatch, tmp_path, capsys):
     runtime = tmp_path / "runtime"

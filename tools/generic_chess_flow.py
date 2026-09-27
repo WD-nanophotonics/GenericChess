@@ -44,6 +44,14 @@ HANDOFF_BRANCH = "workflow-state"
 HANDOFF_SCHEMA = "generic-chess-handoff-v1"
 HANDOFF_HOST = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 HANDOFF_STAGES = {"SUBMIT_CLOSEOUT", "REQUEST_NEXT_ORDER", "COMPLETE"}
+FLOW_INFRASTRUCTURE_PATHS = {
+    "AGENTS.md",
+    "WORKFLOW.md",
+    "docs/operations/WORKFLOW_RECOVERY.md",
+    "generic-chess-flow.cmd",
+    "tools/generic_chess_flow.py",
+    "tests/test_generic_chess_flow.py",
+}
 COMPUTE_ENVELOPE_SCHEMA = "generic-chess-resource-envelope-v1"
 RESOURCE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 
@@ -1670,6 +1678,14 @@ def command_publish(root: Path, args: argparse.Namespace) -> None:
     remote_sha = sha(root, "origin/sandbox")
     if not git_ok(root, "merge-base", "--is-ancestor", remote_sha, sha(root)):
         raise FlowError("origin/sandbox is not an ancestor of local sandbox; reconcile before publishing")
+    if getattr(args, "infrastructure", False):
+        outgoing_paths = git(root, "diff", "--name-only", f"{remote_sha}..HEAD").splitlines()
+        non_framework = sorted(set(outgoing_paths) - FLOW_INFRASTRUCTURE_PATHS)
+        if non_framework:
+            raise FlowError(
+                "--infrastructure cannot publish non-workflow changes: "
+                + ", ".join(non_framework)
+            )
     targets = args.tests or []
     run_tests(root, targets)
     env = os.environ.copy()
