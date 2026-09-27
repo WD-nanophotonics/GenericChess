@@ -47,6 +47,31 @@ Supervisor work orders. Return order ownership to Chat as soon as the existing
 Courier path can supply a usable order. Do not forward a routine scope choice
 to the user or keep requesting new tests while no project question is settled.
 
+## Mainline stop-loss
+
+The Supervisor may cut short an order or recovery route that is visibly
+consuming work without advancing the current AGENTS.md mainline. One strong
+trigger is that the last ten distinct exchanges with the Worker contain no
+direct mainline result or test of a mainline uncertainty. Count exchanges,
+not hourly patrols or repeated status messages. Ten is an evidence threshold,
+not a mandatory waiting period: a clear earlier diversion may also warrant
+action. Conversely, recent substantive RuleSet work means this particular
+ten-exchange trigger has not fired even if Courier itself is troublesome.
+
+Before acting, identify the current mainline, the concrete detour, the cost
+of continuing it, and the smallest reversible stop-loss action. The Supervisor
+may deny a proposed route, end a low-value order, or retire and rebind a
+repeatedly unusable Chat target within the same project/profile when doing so
+helps the mainline and has limited workflow cost. Tell the Worker exactly
+which work stops, what authorized work continues, and the next decision point;
+do not describe an ordinary course correction as a blocked Goal or impose a
+HOLD by default. Preserve committed work, tests, request/response evidence,
+and old/new lineage. Before replacing a Chat target or request, reconcile
+submission and reply evidence and prove that no unconsumed order can be
+duplicated. Keep the registered Worker, Courier session, worktree, and Heavy
+constraints from AGENTS.md. Record the reason and result so a later patrol
+does not resume the discarded detour.
+
 ## On every abnormal Courier receipt
 
 1. Read the receipt, its `recovery_manual_path`, the current immutable request
