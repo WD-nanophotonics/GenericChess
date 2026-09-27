@@ -125,6 +125,51 @@ def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():
     )
 
 
+def test_product_shogi_optional_and_forced_promotion_actions():
+    from generic_chess.core.actions import action_is_board
+    from generic_chess.core.coordinates import Square
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.transition import apply_action
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    optional_state = sfen_to_gc_state(
+        compiled, "8k/9/9/4P4/9/9/9/9/K8 b - 1"
+    )
+    optional_moves = [
+        action
+        for action in legal_actions(optional_state, compiled)
+        if action_is_board(action)
+        and action.from_square == Square(4, 5)
+        and action.to_square == Square(4, 6)
+    ]
+    assert {action.promotion_target_id for action in optional_moves} == {None, "TP"}
+    promoted_state = apply_action(
+        optional_state,
+        next(action for action in optional_moves if action.promotion_target_id == "TP"),
+        compiled,
+    )
+    promoted_piece = promoted_state.position.board[6 * 9 + 4]
+    assert promoted_piece is not None
+    assert (
+        promoted_piece.base_type_id,
+        promoted_piece.current_type_id,
+        promoted_piece.promoted,
+    ) == ("P", "TP", True)
+
+    forced_state = sfen_to_gc_state(
+        compiled, "8k/4P4/9/9/9/9/9/9/K8 b - 1"
+    )
+    forced_moves = [
+        action
+        for action in legal_actions(forced_state, compiled)
+        if action_is_board(action)
+        and action.from_square == Square(4, 7)
+        and action.to_square == Square(4, 8)
+    ]
+    assert {action.promotion_target_id for action in forced_moves} == {"TP"}
+
+
 def test_product_shogi_record_replay_and_alphabeta_smoke():
     compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
     session = GameSession(compiled)
