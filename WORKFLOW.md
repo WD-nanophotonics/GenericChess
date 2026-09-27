@@ -5,7 +5,7 @@ Policy and authority live only in `AGENTS.md`. This file lists normal commands.
 ```powershell
 generic-chess-flow.cmd status
 generic-chess-flow.cmd work
-generic-chess-flow.cmd followup --message-file <path> [--reviewed-local-only | --scope-reply-local-only]
+generic-chess-flow.cmd followup --message-file <path> [--reviewed-local-only | --scope-reply-local-only | --phase-complete-local-only]
 generic-chess-flow.cmd publish --tests <pytest-target> [...]
 generic-chess-flow.cmd closeout --report-file <path> [--local-only] [--attachment <path>]
 generic-chess-flow.cmd recover
@@ -26,6 +26,8 @@ then records the old/new Courier request lineage without publishing the commit.
 `followup --scope-reply-local-only` lets the Worker report a Supervisor-declined
 scope after a reconciled local-only closeout reply. It requires the matching
 completed receipt and keeps the local candidate unpublished.
+`followup --phase-complete-local-only` requests the next order after Chat marks
+one local-only phase COMPLETE without explicitly completing the whole project.
 `recover` reconciles that same request. Heavy uses only its declared envelope.
 Use `closeout --local-only` only when the work order explicitly prohibits
 publishing the locally committed candidate; its report must be inline and

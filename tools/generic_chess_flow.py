@@ -830,7 +830,9 @@ def dispatch_message(root: Path, state: dict[str, Any], source: Path, purpose: s
         + "Use the project's AGENTS.md and the current work order for research priorities; transport metadata does not define the mainline.\n"
         + "For every research order, begin in ordinary prose by stating the current single unknown variable, the minimal direct observation that tests it, and why full games are or are not needed. Label it CAUSAL_DIAGNOSTIC or STRENGTH_BENCHMARK.\n"
         + "Ordinary explanatory responses are valid even when control fields are omitted; the flow imports the body and defaults missing/invalid controls to CONTINUE/NONE/HOLD.\n"
-        + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, or promotion.\n"
+        + "Only explicit valid control fields may authorize COMPLETE, BLOCKED, or promotion. "
+          "COMPLETE means the entire GenericChess project needs no further work; "
+          "use CONTINUE when only this bounded order is complete.\n"
         + "End the response with these control fields when applicable:\n"
         + "GENERICCHESS_STATUS=CONTINUE|COMPLETE|BLOCKED\n"
         + "GENERICCHESS_CANDIDATE_SHA=<40-hex-sha-or-NONE>\n"
@@ -1515,7 +1517,14 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
         response_path = state.get("last_response_path")
         if isinstance(response_path, str) and Path(response_path).is_file():
             print(_console_safe(Path(response_path).read_text(encoding="utf-8-sig")))
-            print("NEXT_ACTION=execute this work order, then publish and closeout")
+            if state.get("chat_control", {}).get("GENERICCHESS_STATUS") == "COMPLETE":
+                print("NEXT_ACTION=check whether the reply explicitly completes the whole project; "
+                      "otherwise continue the Courier order loop")
+                if str(state.get("last_request_key", "")).startswith("closeout-local-"):
+                    print("LOCAL_ONLY_CONTINUATION=followup --phase-complete-local-only "
+                          "--message-file <path>")
+            else:
+                print("NEXT_ACTION=execute this work order, then publish and closeout")
             return
         token = state.get("work_request_token")
         if not isinstance(token, str) or not token:
@@ -1559,8 +1568,9 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     require_no_supervisor_hold(root)
     if state.get("active_request_directory"):
         raise FlowError("cannot follow up while a Courier request is unresolved")
-    scope_reply = getattr(args, "scope_reply_local_only", False)
-    if state.get("recovery_state") not in ((None, "IDLE", "RECOVERED") if scope_reply else (None, "IDLE")):
+    local_reply = (getattr(args, "scope_reply_local_only", False)
+                   or getattr(args, "phase_complete_local_only", False))
+    if state.get("recovery_state") not in ((None, "IDLE", "RECOVERED") if local_reply else (None, "IDLE")):
         raise FlowError("cannot follow up while Courier recovery is unresolved")
     pending = _unresolved_escalation_ids(root)
     if pending:
@@ -1582,8 +1592,9 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     if len(body.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
         raise FlowError("followup message must be a short inline protocol/binding delta")
     require_clean(root)
-    if scope_reply:
-        _scope_reply_local_only(root, state, body, response_path)
+    if local_reply:
+        _local_only_reply(root, state, body, response_path,
+                          phase_complete=getattr(args, "phase_complete_local_only", False))
     elif getattr(args, "reviewed_local_only", False):
         _reviewed_local_followup(root, state, body, response_path)
     else:
@@ -1591,14 +1602,19 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
         dispatch_message(root, state, source, "followup")
 
 
-def _scope_reply_local_only(root: Path, state: dict[str, Any],
-                            body: str, response_path: Path) -> None:
-    """Answer a Supervisor-declined order after a reconciled local-only closeout."""
+def _local_only_reply(root: Path, state: dict[str, Any], body: str,
+                      response_path: Path, *, phase_complete: bool) -> None:
+    """Continue after a reconciled local-only reply without publishing its SHA."""
     prior_id = state.get("active_request_id")
     if (not isinstance(prior_id, str) or response_path.parent.name != prior_id
-            or not str(state.get("last_request_key", "")).startswith("closeout-local-")
-            or not state.get("work_order_active")):
-        raise FlowError("local-only scope reply requires a replied local-only work order")
+            or not str(state.get("last_request_key", "")).startswith("closeout-local-")):
+        raise FlowError("local-only reply requires a replied local-only closeout")
+    if phase_complete:
+        if (state.get("work_order_active")
+                or state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "COMPLETE"):
+            raise FlowError("phase continuation requires a replied COMPLETE phase")
+    elif not state.get("work_order_active"):
+        raise FlowError("local-only scope reply requires a continuing work order")
     if "LOCAL_SUPERVISOR_REQUIRED=true" in response_path.read_text(encoding="utf-8-sig").splitlines():
         raise FlowError("local-only review notices use --reviewed-local-only")
     receipt = _read_json_file(response_path.parent / "receipt.json", "Courier receipt")
@@ -1610,12 +1626,16 @@ def _scope_reply_local_only(root: Path, state: dict[str, Any],
     message = response_path.parent / "message.txt"
     if not message.is_file() or "PUBLICATION_STATUS=LOCAL_ONLY" not in message.read_text(encoding="utf-8-sig").splitlines():
         raise FlowError("prior Courier request was not a local-only closeout")
+    disposition = (
+        "The prior reply closed one bounded order, not the whole GenericChess project. "
+        if phase_complete else
+        "The registered Supervisor declined the prior order's scope. "
+    )
     lineage = (
-        body.rstrip() + "\n\nReconciled scope reply:\n"
+        body.rstrip() + "\n\nReconciled local-only reply:\n"
         + f"PRIOR_REQUEST_ID={prior_id}\n"
         + f"PRIOR_RESPONSE_SHA256={state['last_response_sha256']}\n"
-        + "The registered Supervisor declined the prior order's scope. "
-          "The local candidate remains unpublished and cannot be promoted.\n"
+        + disposition + "The local candidate remains unpublished and cannot be promoted.\n"
     )
     if len(lineage.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
         raise FlowError("local-only scope reply exceeds the inline limit")
@@ -3219,6 +3239,8 @@ def parser() -> argparse.ArgumentParser:
                                help="registered Supervisor continues a reconciled local-only notice")
     followup_mode.add_argument("--scope-reply-local-only", action="store_true",
                                help="reply to a Supervisor-declined order after a reconciled local-only closeout")
+    followup_mode.add_argument("--phase-complete-local-only", action="store_true",
+                               help="request the next order after a local-only phase was marked COMPLETE")
     followup.set_defaults(handler=command_followup)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)

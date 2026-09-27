@@ -143,6 +143,14 @@ request. The command requires the matching completed Courier receipt and prior
 local-only request, and retains unpublished ancestry. It is for a scope reply,
 not for repeated requests when Chat has already answered the same question.
 
+If a local-only closeout reply marks `GENERICCHESS_STATUS=COMPLETE` but says
+only the current diagnostic/order is complete, the Worker continues the
+project loop with one `followup --phase-complete-local-only --message-file
+<path>` through the same Courier session. The note must identify the closed
+phase and request the next bounded mainline order. This path checks the
+matching completed receipt and retains unpublished lineage. Do not use it
+when Chat explicitly states that no further GenericChess work is needed.
+
 An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
 because the Chat cannot independently inspect the unpublished commit. The
 Supervisor reviews the local SHA, tests, original request, and matching reply.
