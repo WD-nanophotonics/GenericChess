@@ -20,6 +20,20 @@ work was published or make it eligible for promotion.
 
 ## Current mainline route
 
+The current user-directed prerequisite is to complete and validate the
+generic executable RuleSet semantics needed for Chess, Standard Shogi, and
+Xiangqi, with bounded reusable primitives for other chess-like variants
+where evidence identifies a concrete gap. Finish this rule-infrastructure
+phase before changing or benchmarking material scores. Keep each new rule
+primitive game-name-independent and test its smallest direct consequence;
+do not turn this prerequisite into open-ended product or strength work.
+Reading Xiangqi rules and testing legal moves is necessary for RuleSet
+coverage and does not consume the later *material-value* holdout. Do not
+inspect Xiangqi human material values, tune a score formula against them, or
+select score coefficients from Xiangqi outcomes before a formula is frozen.
+If later value-based diagnostics influence a formula, mark that ruleset as
+diagnostic and use a different untouched ruleset for independent confirmation.
+
 Priority 1 is to derive material scores from complete executable game-rule
 semantics and test whether the resulting relative values agree, within
 reasonable scale-invariant tolerances, with accumulated human material-value
