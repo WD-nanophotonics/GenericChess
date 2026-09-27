@@ -223,6 +223,145 @@ def _target_summary_trace(
     return trace, state, compiled, ruleset
 
 
+def _continuous_check_target_state(*, mutual_check):
+    """Build one threshold-reaching cycle with a mover-shared capture target."""
+    rows = [[None] * 9 for _ in range(10)]
+    if mutual_check:
+        pieces = (
+            (Square(0, 0), Piece(0, "G", "G")),
+            (Square(4, 1), Piece(1, "G", "G")),
+            (Square(2, 0), Piece(0, "R", "R")),
+            (Square(4, 0), Piece(1, "R", "R")),
+            (Square(0, 1), Piece(1, "A", "A")),
+        )
+        for square, piece in pieces:
+            rows[square.rank][square.file] = piece
+        ruleset = build_xiangqi_diagnostic_ruleset()
+        ruleset = replace(
+            ruleset,
+            semantic_actions=tuple(
+                replace(action, invariants=())
+                for action in ruleset.semantic_actions
+                if action.type_ids == ("R",)
+            ),
+        )
+        prefix = ((Square(2, 0), Square(2, 1)),)
+        cycle = (
+            (Square(4, 0), Square(3, 0)),
+            (Square(2, 1), Square(3, 1)),
+            (Square(3, 0), Square(4, 0)),
+            (Square(3, 1), Square(2, 1)),
+        )
+    else:
+        pieces = (
+            (Square(4, 0), Piece(0, "G", "G")),
+            (Square(4, 9), Piece(1, "G", "G")),
+            (Square(4, 3), Piece(0, "S", "S")),
+            (Square(5, 5), Piece(0, "R", "R")),
+            (Square(6, 5), Piece(1, "A", "A")),
+        )
+        for square, piece in pieces:
+            rows[square.rank][square.file] = piece
+        ruleset = build_xiangqi_diagnostic_ruleset()
+        prefix = ()
+        cycle = (
+            (Square(5, 5), Square(4, 5)),
+            (Square(4, 9), Square(5, 9)),
+            (Square(4, 5), Square(5, 5)),
+            (Square(5, 9), Square(4, 9)),
+        )
+    ruleset = replace(
+        ruleset,
+        initial_position=tuple(tuple(row) for row in rows),
+        repetition_limit=3,
+        repetition_policy="continuous_check_loss",
+    )
+    adjudication_compiled = compile_ruleset_for_execution(
+        replace(
+            ruleset,
+            repeated_cycle_target_conditions=(
+                RuleRepeatedCycleTargetCondition(actor=0),
+            ),
+        )
+    )
+    replay_compiled = replace(
+        adjudication_compiled,
+        ir=replace(
+            adjudication_compiled.ir,
+            repeated_cycle_target_conditions=(),
+        ),
+    )
+    state = initial_state(replay_compiled)
+    for source, target in prefix:
+        action = next(
+            action for action in legal_actions(state, replay_compiled)
+            if isinstance(action, SemanticBoardMove)
+            and action.from_square == source and action.to_square == target
+        )
+        state = apply_action(state, action, replay_compiled)
+    cycle_key = position_identity_key(state.position, replay_compiled)
+    repeated_states = []
+    for _ in range(2):
+        for source, target in cycle:
+            action = next(
+                action for action in legal_actions(state, replay_compiled)
+                if isinstance(action, SemanticBoardMove)
+                and action.from_square == source and action.to_square == target
+            )
+            state = apply_action(state, action, replay_compiled)
+            assert state.history[-1].gave_check is (
+                mutual_check or state.history[-1].actor == 0
+            )
+        assert position_identity_key(state.position, replay_compiled) == cycle_key
+        repeated_states.append(state)
+    assert dict(state.repetition_counts)[str(cycle_key)] == 3
+    trace = trace_latest_repeated_cycle_capture_facts(state, replay_compiled)
+    summary = summarize_repeated_cycle_targets(trace)
+    red = next(item for item in summary.actors if item.actor == 0)
+    assert red.shared_mover_target_count > 0
+    return tuple(repeated_states), adjudication_compiled
+
+
+@pytest.mark.parametrize(
+    ("mutual_check", "expected"),
+    (
+        (False, TerminalResult(TerminalStatus.PERPETUAL_CHECK, winner=1)),
+        (True, TerminalResult(TerminalStatus.REPETITION)),
+    ),
+)
+def test_continuous_check_precedes_repeated_cycle_actor_loss(
+    mutual_check, expected
+):
+    repeated_states, compiled = _continuous_check_target_state(
+        mutual_check=mutual_check
+    )
+    expected_by_cycle = (TerminalResult(TerminalStatus.ONGOING), expected)
+    for state, expected_result in zip(
+        repeated_states, expected_by_cycle
+    ):
+        runtime = SearchPathRuntime.from_state(state, compiled)
+        assert runtime._history_complete
+        assert runtime.history_witness_misses == 0
+        results = (
+            terminal_result(state, compiled),
+            _terminal_from_parts(
+                state.position,
+                state.ply_count,
+                state.repetition_counts,
+                compiled,
+                state.history,
+            ),
+            semantic_engine_for(compiled).terminal_result(
+                state.position,
+                state.ply_count,
+                state.repetition_counts,
+                state.history,
+            ),
+            terminal_from_search_runtime(runtime),
+        )
+        assert results == (expected_result,) * 4
+
+
 def test_repeated_cycle_target_projection_distinguishes_target_switch_on_same_setup():
     # The two histories share one declared starting board and piece inventory.
     # The control repeatedly exposes only the Advisor token; the variant also

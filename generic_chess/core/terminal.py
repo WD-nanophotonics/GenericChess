@@ -59,6 +59,39 @@ class TerminalResult:
         return f"{self.status.value}, draw"
 
 
+def _repeated_cycle_checking_sides(history, limit):
+    """Return actors checking on every turn in the current repeated interval."""
+    if not history:
+        return ()
+    current_key = history[-1].position_key
+    configured = max(2, int(limit))
+    occurrences = [
+        i for i, record in enumerate(history) if record.position_key == current_key
+    ]
+    if len(occurrences) < 2:
+        return ()
+    window = (
+        occurrences[-configured:]
+        if len(occurrences) >= configured
+        else occurrences[-2:]
+    )
+    start, end = window[0], window[-1]
+    cycle = history[start + 1 : end + 1]
+    if not cycle:
+        return ()
+    checks_by_actor = {0: [], 1: []}
+    for record in cycle:
+        if record.actor in checks_by_actor:
+            checks_by_actor[record.actor].append(bool(record.gave_check))
+    if any(not checks for checks in checks_by_actor.values()):
+        return ()
+    return tuple(
+        actor
+        for actor, checks in checks_by_actor.items()
+        if checks and all(checks)
+    )
+
+
 def _perpetual_check_result(repetition_counts, history, limit):
     """Classify a repeated position using generic action-history evidence."""
     if not history:
@@ -66,29 +99,14 @@ def _perpetual_check_result(repetition_counts, history, limit):
     current_key = history[-1].position_key
     if dict(repetition_counts).get(current_key, 0) < limit:
         return None
-    occurrences = [
-        i for i, record in enumerate(history) if record.position_key == current_key
-    ]
-    if len(occurrences) < limit:
-        return None
-    start, end = occurrences[-limit], occurrences[-1]
-    cycle = history[start + 1 : end + 1]
-    if not cycle:
-        return None
-    checks_by_actor = {0: [], 1: []}
-    for record in cycle:
-        if record.actor in checks_by_actor:
-            checks_by_actor[record.actor].append(bool(record.gave_check))
-    checking_sides = [
-        actor
-        for actor, checks in checks_by_actor.items()
-        if checks and all(checks)
-    ]
+    checking_sides = _repeated_cycle_checking_sides(
+        history, limit
+    )
     # A legal repeated cycle alternates the checking side with replies.  The
     # checking side loses only when exactly one side gave check on every move
     # it made; requiring both sides to have participated avoids classifying a
     # malformed/synthetic one-sided history as perpetual check.
-    if len(checking_sides) != 1 or any(not checks for checks in checks_by_actor.values()):
+    if len(checking_sides) != 1:
         return None
     checker = checking_sides[0]
     return TerminalResult(TerminalStatus.PERPETUAL_CHECK, 1 - checker)
@@ -179,6 +197,7 @@ def _repeated_cycle_target_result(
             "repeated-cycle target adjudication requires complete verifiable "
             f"history: {summary.reason or 'cycle facts could not be verified'}"
         )
+    satisfied_conditions = []
     for condition in conditions:
         status = evaluate_repeated_cycle_target_condition(summary, condition.actor)
         if status == "unknown":
@@ -186,7 +205,25 @@ def _repeated_cycle_target_result(
                 "repeated-cycle target adjudication condition is unknown"
             )
         if status == "satisfied" and condition.outcome == "actor_loss":
-            return TerminalResult(TerminalStatus.RULE_LOSS, 1 - condition.actor)
+            satisfied_conditions.append(condition)
+    if (
+        satisfied_conditions
+        and getattr(compiled, "repetition_policy", "draw")
+        == "continuous_check_loss"
+        and _repeated_cycle_checking_sides(
+            history,
+            getattr(compiled, "repetition_limit", 2),
+        )
+    ):
+        # Defer this lower-priority outcome while the same verified cycle is a
+        # continuous-check candidate. At the configured threshold the caller
+        # applies check adjudication first; mutual checks then fall through to
+        # the ordinary repetition result instead of an actor-specific loss.
+        return None
+    if satisfied_conditions:
+        return TerminalResult(
+            TerminalStatus.RULE_LOSS, 1 - satisfied_conditions[0].actor
+        )
     return None
 
 
