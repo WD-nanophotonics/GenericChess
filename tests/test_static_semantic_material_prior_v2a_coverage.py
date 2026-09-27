@@ -25,7 +25,9 @@ def test_current_builder_coverage_is_fingerprint_bound_and_value_free():
     assert result["scope_contract"] == "INTRINSIC_BOARD_SEMANTICS"
     assert result["generator"]["version"] == coverage.GENERATOR_VERSION
     assert re.fullmatch(r"[0-9a-f]{64}", result["generator"]["source_sha256"])
-    assert set(result["rulesets"]) == {"western_chess", "standard_shogi"}
+    assert set(result["rulesets"]) == {
+        "western_chess", "standard_shogi", "xiangqi_diagnostic"
+    }
 
     exclusion_families = set()
     for name, row in result["rulesets"].items():
@@ -41,9 +43,53 @@ def test_current_builder_coverage_is_fingerprint_bound_and_value_free():
             assert "semantic_inputs" in exclusion
             exclusion_families.add(exclusion["family"])
         assert all("semantic_inputs" in item for item in row["IN_SCOPE_MODELED"])
-        assert row["IN_SCOPE_UNSUPPORTED"] == []
-        assert row["scoped_coverage_complete"]
-        assert row["classification"] == "CURRENT_BUILDERS_SCOPED_COVERAGE_VERIFIED"
+        if name == "xiangqi_diagnostic":
+            assert not row["scoped_coverage_complete"]
+            assert row["classification"] == (
+                "CURRENT_BUILDERS_SCOPED_COVERAGE_NOT_READY"
+            )
+            reasons_by_pattern = {
+                item["pattern"]: set(item["reasons"])
+                for item in row["IN_SCOPE_UNSUPPORTED"]
+            }
+            assert "path_predicate_not_exactly_modeled" in reasons_by_pattern[
+                "cannon_capture_one_screen"
+            ]
+            assert {
+                "square_zone_source_guard_not_exactly_modeled",
+                "square_zone_target_guard_not_exactly_modeled",
+            } <= reasons_by_pattern[
+                "g_empty"
+            ]
+            assert "intrinsic_source_or_state_guard_not_exactly_modeled" in (
+                reasons_by_pattern["horse_2_1_empty"]
+            )
+            elephant_rows = [
+                item for item in row["IN_SCOPE_UNSUPPORTED"]
+                if item["pattern"] == "elephant_1_1_empty"
+            ]
+            assert elephant_rows
+            assert all(
+                {
+                    "intrinsic_source_or_state_guard_not_exactly_modeled",
+                    "square_zone_source_guard_not_exactly_modeled",
+                    "square_zone_target_guard_not_exactly_modeled",
+                } <= set(item["reasons"])
+                for item in elephant_rows
+            )
+            assert any(
+                item["family"] == "dynamic_positional_legality"
+                and item["invariant"] == "own_anchor_safe"
+                for item in row["OUT_OF_SCOPE_EXPLICIT"]
+            )
+            assert all(
+                "square_zone_guards" in item["semantic_inputs"]
+                for item in row["IN_SCOPE_UNSUPPORTED"]
+            )
+        else:
+            assert row["IN_SCOPE_UNSUPPORTED"] == []
+            assert row["scoped_coverage_complete"]
+            assert row["classification"] == "CURRENT_BUILDERS_SCOPED_COVERAGE_VERIFIED"
 
     assert exclusion_families == {
         "dynamic_positional_legality",

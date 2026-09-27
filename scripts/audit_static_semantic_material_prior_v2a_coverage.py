@@ -1,4 +1,4 @@
-"""Coverage-only V2A audit bound to the currently compiled Chess/Shogi rulesets.
+"""Coverage-only V2A audit bound to the currently compiled rulesets.
 
 This module intentionally does not call the V2A option-value calculation. It
 emits semantic inventory, exclusions, unsupported reasons, and RuleSet
@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
+from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
 from scripts.audit_static_semantic_material_prior_v2a import (
     ALLOWED_EFFECTS,
     _intrinsic_unsupported,
@@ -27,7 +28,7 @@ from scripts.audit_static_semantic_material_prior_v2a import (
 )
 
 
-GENERATOR_VERSION = "v2a-coverage-only-1"
+GENERATOR_VERSION = "v2a-coverage-only-2"
 SCOPE_CONTRACT = "INTRINSIC_BOARD_SEMANTICS"
 _DYNAMIC_INVARIANTS = {"own_anchor_safe", "squares_not_attacked"}
 
@@ -38,6 +39,7 @@ def _semantic_inputs(pattern: Any) -> dict[str, Any]:
         "target": repr(pattern.target),
         "path_predicates": [repr(predicate) for predicate in pattern.path],
         "guards": [repr(guard) for guard in pattern.guards],
+        "square_zone_guards": [repr(guard) for guard in pattern.square_zone_guards],
         "slot_guards": [repr(guard) for guard in pattern.slot_guards],
         "effects": [{
             "kind": effect.kind,
@@ -130,6 +132,12 @@ def audit_coverage_ruleset(compiled: Any, ruleset_name: str) -> dict[str, Any]:
                 continue
 
             reasons = _intrinsic_unsupported(pattern, geometry)
+            for guard in pattern.square_zone_guards:
+                ref_kind = guard.square_ref.kind
+                position = ref_kind if ref_kind in ("source", "target") else "other"
+                reasons.append(
+                    f"square_zone_{position}_guard_not_exactly_modeled"
+                )
             if reasons:
                 unsupported.append({
                     "types": sorted(pattern.type_ids),
@@ -195,10 +203,11 @@ def audit_coverage_ruleset(compiled: Any, ruleset_name: str) -> dict[str, Any]:
 
 
 def audit_current_builders() -> dict[str, Any]:
-    """Compile only Western Chess and Standard Shogi, then audit scope."""
+    """Compile the current Chess, Shogi, and Xiangqi diagnostic builders."""
     rulesets = (
         ("western_chess", build_western_chess_ruleset()),
         ("standard_shogi", build_standard_shogi_ruleset()),
+        ("xiangqi_diagnostic", build_xiangqi_diagnostic_ruleset()),
     )
     return {
         "schema_version": 1,
