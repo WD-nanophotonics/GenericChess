@@ -10,6 +10,7 @@ from .western_chess import build_western_chess_ruleset
 from .standard_shogi import build_standard_shogi_ruleset
 from .schema import (
     RuleAutomaticAdjudication,
+    RuleConsecutiveActionAdjudication,
     RuleDeclaration,
     RuleDeclarationOutcomeBand,
     RuleWeightedMaterialMetric,
@@ -25,6 +26,7 @@ __all__ = [
     "compile_ruleset_for_execution",
     "RuleDeclaration",
     "RuleAutomaticAdjudication",
+    "RuleConsecutiveActionAdjudication",
     "RuleDeclarationOutcomeBand",
     "RuleWeightedMaterialMetric",
 ]

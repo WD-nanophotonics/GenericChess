@@ -24,12 +24,20 @@ from ..core.movement import LeapAtom, RayAtom, MovementAtom
 from ..core.movegen import legal_actions_from_position
 from ..core.pieces import Piece, PieceType
 from ..core.position import Hands, Position
-from .compiled import CompiledAutomaticAdjudication, CompiledGeometryCarrier, CompiledRuleSet
+from .compiled import (
+    CompiledAutomaticAdjudication,
+    CompiledConsecutiveActionAdjudication,
+    CompiledGeometryCarrier,
+    CompiledRuleSet,
+)
 from .schema import (
     AUTOMATIC_ADJUDICATION_OUTCOMES,
     AUTOMATIC_ADJUDICATION_POLICIES,
+    CONSECUTIVE_ACTION_CLASSES,
+    CONSECUTIVE_ACTION_OUTCOMES,
     DISPOSITIONS,
     RuleSet,
+    RuleConsecutiveActionAdjudication,
     compute_fingerprint,
     ruleset_from_dict,
 )
@@ -409,6 +417,10 @@ def compile_ruleset(
     if issues:
         raise RuleValidationError(issues)
 
+    consecutive_action_adjudications = (
+        _compile_consecutive_action_adjudications(ruleset)
+    )
+
     tables = _build_tables(ruleset)
     fingerprint = compute_fingerprint(ruleset)
     types_by_id = {pt.type_id: pt for pt in ruleset.piece_types}
@@ -434,6 +446,7 @@ def compile_ruleset(
         max_ply=ruleset.max_ply,
         stalemate_result=ruleset.stalemate_result,
         automatic_adjudications=_compile_automatic_adjudications(ruleset),
+        consecutive_action_adjudications=consecutive_action_adjudications,
         declarations=_compile_declarations(ruleset, tuple(sorted(types_by_id))),
         capture_disposition=ruleset.capture_disposition,
         pass_enabled=ruleset.pass_enabled,
@@ -521,6 +534,87 @@ def _compile_automatic_adjudications(ruleset: RuleSet):
                 trigger_ply=item.trigger_ply,
                 outcome=item.outcome,
                 continuation_policy=item.continuation_policy,
+            )
+        )
+    if issues:
+        raise RuleValidationError(issues)
+    return tuple(output)
+
+
+def _compile_consecutive_action_adjudications(ruleset: RuleSet):
+    definitions = ruleset.consecutive_action_adjudications
+    issues: list[ValidationIssue] = []
+    if not isinstance(definitions, tuple):
+        raise RuleValidationError(
+            [
+                ValidationIssue(
+                    "CONSECUTIVE_ACTION_ADJUDICATIONS_INVALID",
+                    "consecutive_action_adjudications",
+                    "must be a tuple of policy definitions",
+                )
+            ]
+        )
+    if len(definitions) > 1:
+        issues.append(
+            ValidationIssue(
+                "CONSECUTIVE_ACTION_ADJUDICATION_MULTIPLE_UNSUPPORTED",
+                "consecutive_action_adjudications",
+                "the current executor supports one consecutive action-class policy",
+            )
+        )
+    output = []
+    for index, item in enumerate(definitions):
+        path = f"consecutive_action_adjudications[{index}]"
+        if not isinstance(item, RuleConsecutiveActionAdjudication):
+            issues.append(
+                ValidationIssue(
+                    "CONSECUTIVE_ACTION_ADJUDICATION_INVALID",
+                    path,
+                    "expected a RuleConsecutiveActionAdjudication",
+                )
+            )
+            continue
+        if item.action_class not in CONSECUTIVE_ACTION_CLASSES:
+            issues.append(
+                ValidationIssue(
+                    "CONSECUTIVE_ACTION_CLASS_UNSUPPORTED",
+                    f"{path}.action_class",
+                    repr(item.action_class),
+                )
+            )
+        elif item.action_class == "pass" and not ruleset.pass_enabled:
+            issues.append(
+                ValidationIssue(
+                    "CONSECUTIVE_ACTION_CLASS_DISABLED",
+                    f"{path}.action_class",
+                    "pass must be enabled before it can be adjudicated",
+                )
+            )
+        if (
+            isinstance(item.threshold, bool)
+            or not isinstance(item.threshold, int)
+            or item.threshold < 1
+        ):
+            issues.append(
+                ValidationIssue(
+                    "CONSECUTIVE_ACTION_THRESHOLD_INVALID",
+                    f"{path}.threshold",
+                    "threshold must be a positive integer",
+                )
+            )
+        if item.outcome not in CONSECUTIVE_ACTION_OUTCOMES:
+            issues.append(
+                ValidationIssue(
+                    "CONSECUTIVE_ACTION_OUTCOME_INVALID",
+                    f"{path}.outcome",
+                    repr(item.outcome),
+                )
+            )
+        output.append(
+            CompiledConsecutiveActionAdjudication(
+                action_class=item.action_class,
+                threshold=item.threshold,
+                outcome=item.outcome,
             )
         )
     if issues:
@@ -749,6 +843,9 @@ def lower_legacy_to_ir(
         drop_allowed = ruleset.drop_allowed
         type_ids = tuple(sorted(compiled.types_by_id))
         automatic_adjudications = _compile_automatic_adjudications(ruleset)
+        consecutive_action_adjudications = (
+            _compile_consecutive_action_adjudications(ruleset)
+        )
         declarations = _compile_declarations(ruleset, type_ids)
         capture_disposition = ruleset.capture_disposition
     else:
@@ -756,6 +853,7 @@ def lower_legacy_to_ir(
             raise ValueError("RuleSet must not be supplied with an executable compiled ruleset")
         drop_allowed = compiled.drop_allowed
         automatic_adjudications = compiled.automatic_adjudications
+        consecutive_action_adjudications = compiled.consecutive_action_adjudications
         declarations = compiled.declarations
         capture_disposition = compiled.capture_disposition
 
@@ -846,6 +944,7 @@ def lower_legacy_to_ir(
         geometry=geometry,
         patterns=tuple(patterns),
         automatic_adjudications=automatic_adjudications,
+        consecutive_action_adjudications=consecutive_action_adjudications,
         declarations=declarations,
         capabilities=SemanticCapabilities(
             legacy_core_executable=not compile_only,
@@ -882,6 +981,9 @@ def _build_semantic_support(
         max_ply = ruleset.max_ply
         stalemate_result = ruleset.stalemate_result
         automatic_adjudications = _compile_automatic_adjudications(ruleset)
+        consecutive_action_adjudications = (
+            _compile_consecutive_action_adjudications(ruleset)
+        )
     else:
         if ruleset is not None:
             raise ValueError("RuleSet must not be supplied with an executable compiled ruleset")
@@ -896,6 +998,7 @@ def _build_semantic_support(
         max_ply = compiled.max_ply
         stalemate_result = compiled.stalemate_result
         automatic_adjudications = compiled.automatic_adjudications
+        consecutive_action_adjudications = compiled.consecutive_action_adjudications
 
     board = compiled.initial_position.board
     rows = tuple(
@@ -928,6 +1031,7 @@ def _build_semantic_support(
         board_width=None if shape.width == shape.height else shape.width,
         board_height=None if shape.width == shape.height else shape.height,
         pass_enabled=pass_enabled,
+        consecutive_action_adjudications=consecutive_action_adjudications,
     )
 
 
@@ -1642,6 +1746,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     """
     if not isinstance(ruleset, RuleSet):
         ruleset = ruleset_from_dict(ruleset)
+    _compile_consecutive_action_adjudications(ruleset)
     if not ruleset.semantic_actions:
         raise RuleValidationError(
             [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
@@ -2066,6 +2171,9 @@ def _compile_semantic_ruleset_from_baseline(
         aux_slots=compiled_slots,
         triggers=triggers,
         automatic_adjudications=legacy_ir.automatic_adjudications,
+        consecutive_action_adjudications=(
+            legacy_ir.consecutive_action_adjudications
+        ),
         declarations=legacy_ir.declarations,
         capabilities=capabilities,
     )
@@ -2099,6 +2207,7 @@ def _compile_semantic_ruleset_from_baseline(
                 and support.stalemate_result == "draw"
                 and not ir.declarations
                 and not ir.automatic_adjudications
+                and not support.consecutive_action_adjudications
             ):
                 ir = replace(
                     ir,

@@ -1,0 +1,265 @@
+from dataclasses import replace
+import json
+
+import pytest
+
+from generic_chess import build_standard_shogi_ruleset, build_western_chess_ruleset
+from generic_chess.core.actions import BoardMove, PassAction, SemanticBoardMove
+from generic_chess.core.coordinates import Square
+from generic_chess.core.errors import IllegalActionError
+from generic_chess.core.identity import repetition_identity_key
+from generic_chess.core.movegen import legal_actions
+from generic_chess.core.movement import LeapAtom, RayAtom
+from generic_chess.core.pieces import Piece, PieceType
+from generic_chess.core.search_runtime import SearchPathRuntime
+from generic_chess.core.terminal import TerminalStatus, terminal_result
+from generic_chess.core.transition import apply_action, initial_state, legal_successors
+from generic_chess.rules.compiler import compile_ruleset, compile_ruleset_for_execution
+from generic_chess.rules.schema import (
+    RuleConsecutiveActionAdjudication,
+    RuleSet,
+    compute_fingerprint,
+    ruleset_from_dict,
+    ruleset_to_dict,
+)
+from generic_chess.rules.validation import RuleValidationError
+from generic_chess.session.result import SessionStatus
+from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
+from generic_chess.session.session import GameSession
+
+
+def _legacy_ruleset(*, pass_enabled=True, policy=True):
+    n = 4
+    king = PieceType(
+        "K",
+        "Anchor",
+        tuple(
+            LeapAtom((df, dr))
+            for df in (-1, 0, 1)
+            for dr in (-1, 0, 1)
+            if df or dr
+        ),
+        is_anchor=True,
+    )
+    rook = PieceType(
+        "R",
+        "Rook",
+        tuple(RayAtom(d) for d in ((1, 0), (-1, 0), (0, 1), (0, -1))),
+    )
+    rows = [[None] * n for _ in range(n)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[3][3] = Piece(1, "K", "K")
+    rows[0][1] = Piece(0, "R", "R")
+    mask = (False,) * (n * n)
+    policies = (
+        (RuleConsecutiveActionAdjudication("pass", 2, "DRAW"),)
+        if policy
+        else ()
+    )
+    return RuleSet(
+        board_size=n,
+        piece_types=(king, rook),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"R": (mask, mask)},
+        pass_enabled=pass_enabled,
+        repetition_limit=2 if policy else 20,
+        consecutive_action_adjudications=policies,
+    )
+
+
+def _compiled(semantic=False, *, pass_enabled=True, policy=True):
+    if semantic:
+        ruleset = replace(
+            build_western_chess_ruleset(),
+            pass_enabled=pass_enabled,
+            repetition_limit=2 if policy else 20,
+            consecutive_action_adjudications=(
+                (RuleConsecutiveActionAdjudication("pass", 2, "DRAW"),)
+                if policy
+                else ()
+            ),
+        )
+        return ruleset, compile_ruleset_for_execution(ruleset)
+    ruleset = _legacy_ruleset(pass_enabled=pass_enabled, policy=policy)
+    return ruleset, compile_ruleset(ruleset)
+
+
+def _start_with_side(state, compiled, side):
+    position = replace(state.position, side_to_move=side)
+    key = repetition_identity_key(position, compiled)
+    history = (replace(state.history[0], position_key=key),)
+    return replace(
+        state,
+        position=position,
+        repetition_counts=((key, 1),),
+        history=history,
+    )
+
+
+@pytest.mark.parametrize("semantic", [False, True], ids=["legacy", "semantic"])
+@pytest.mark.parametrize("side", [0, 1], ids=["owner-0-first", "owner-1-first"])
+def test_two_consecutive_passes_draw_and_trial_matches_commit(semantic, side):
+    _, compiled = _compiled(semantic)
+    state = _start_with_side(initial_state(compiled), compiled, side)
+    initial_key = repetition_identity_key(state.position, compiled)
+    first = dict(legal_successors(state, compiled))[PassAction()]
+    assert apply_action(state, PassAction(), compiled) == first
+    assert first.terminal_status.status is TerminalStatus.ONGOING
+
+    second = dict(legal_successors(first, compiled))[PassAction()]
+    committed = apply_action(first, PassAction(), compiled)
+    assert committed == second
+    assert committed.position.board == state.position.board
+    assert repetition_identity_key(committed.position, compiled) == initial_key
+    assert dict(committed.repetition_counts)[initial_key] == 2
+    assert committed.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+    assert committed.terminal_status.winner is None
+    assert terminal_result(committed, compiled).status is TerminalStatus.ACTION_CLASS_DRAW
+    assert not legal_actions(committed, compiled)
+
+
+def test_nonpass_action_resets_consecutive_pass_count():
+    _, compiled = _compiled()
+    state = initial_state(compiled)
+    after_pass = apply_action(state, PassAction(), compiled)
+    ordinary = next(
+        action
+        for action in legal_actions(after_pass, compiled)
+        if isinstance(action, (BoardMove, SemanticBoardMove))
+    )
+    after_ordinary = apply_action(after_pass, ordinary, compiled)
+    after_one_new_pass = apply_action(after_ordinary, PassAction(), compiled)
+    assert after_one_new_pass.terminal_status.status is TerminalStatus.ONGOING
+    after_two_new_passes = apply_action(after_one_new_pass, PassAction(), compiled)
+    assert after_two_new_passes.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+
+    ordinary_first = next(
+        action
+        for action in legal_actions(initial_state(compiled), compiled)
+        if isinstance(action, BoardMove)
+    )
+    reset = apply_action(initial_state(compiled), ordinary_first, compiled)
+    reset = apply_action(reset, PassAction(), compiled)
+    reset = apply_action(reset, PassAction(), compiled)
+    assert reset.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+
+
+@pytest.mark.parametrize("semantic", [False, True], ids=["legacy", "semantic"])
+def test_mutable_trial_path_uses_the_same_terminal_policy(semantic):
+    _, compiled = _compiled(semantic)
+    runtime = SearchPathRuntime.from_state(initial_state(compiled), compiled)
+    runtime.push(PassAction())
+    assert runtime.terminal_status.status is TerminalStatus.ONGOING
+    runtime.push(PassAction())
+    assert runtime.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+    runtime.pop()
+    assert runtime.terminal_status.status is TerminalStatus.ONGOING
+    runtime.pop()
+    runtime.assert_balanced()
+
+
+def test_rejected_checked_pass_does_not_advance_action_history():
+    _, compiled = _compiled()
+    state = apply_action(initial_state(compiled), PassAction(), compiled)
+    board = [None] * 16
+    board[0] = Piece(0, "K", "K")
+    board[15] = Piece(1, "K", "K")
+    board[3] = Piece(0, "R", "R")
+    checked = replace(state, position=replace(state.position, board=tuple(board)))
+    with pytest.raises(IllegalActionError):
+        apply_action(checked, PassAction(), compiled)
+    assert len(checked.history) == 2
+
+    board[3] = None
+    legal_after_repair = replace(
+        checked,
+        position=replace(checked.position, board=tuple(board)),
+    )
+    finished = apply_action(legal_after_repair, PassAction(), compiled)
+    assert finished.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+
+
+def test_disabled_policy_and_disabled_pass_are_inert():
+    _, pass_only = _compiled(policy=False)
+    state = initial_state(pass_only)
+    state = apply_action(state, PassAction(), pass_only)
+    state = apply_action(state, PassAction(), pass_only)
+    assert state.terminal_status.status is TerminalStatus.ONGOING
+
+    _, pass_disabled = _compiled(pass_enabled=False, policy=False)
+    state = initial_state(pass_disabled)
+    assert PassAction() not in legal_actions(state, pass_disabled)
+    with pytest.raises(IllegalActionError):
+        apply_action(state, PassAction(), pass_disabled)
+
+    with pytest.raises(RuleValidationError, match="CONSECUTIVE_ACTION_CLASS_DISABLED"):
+        compile_ruleset(_legacy_ruleset(pass_enabled=False, policy=True))
+
+
+def test_policy_roundtrip_fingerprint_session_replay_and_legacy_identity():
+    base = build_western_chess_ruleset()
+    assert "consecutive_action_adjudications" not in ruleset_to_dict(base)
+    assert compute_fingerprint(ruleset_from_dict(ruleset_to_dict(base))) == compute_fingerprint(base)
+    assert compute_fingerprint(
+        replace(base, consecutive_action_adjudications=())
+    ) == compute_fingerprint(base)
+
+    ruleset, compiled = _compiled()
+    data = ruleset_to_dict(ruleset)
+    assert data["consecutive_action_adjudications"] == [
+        {"action_class": "pass", "threshold": 2, "outcome": "DRAW"}
+    ]
+    restored = ruleset_from_dict(data)
+    assert compute_fingerprint(restored) == compute_fingerprint(ruleset)
+    assert ruleset_to_dict(restored) == data
+
+    session = GameSession(compiled)
+    session.submit(PassAction())
+    assert session.result.status is SessionStatus.ONGOING
+    session.submit(PassAction())
+    assert session.result.status is SessionStatus.ACTION_CLASS_DRAW
+    assert session.result.winner is None
+    record = deserialize_game_record(serialize_game_record(session.to_record()))
+    replayed = GameSession.replay(compiled, record)
+    assert replayed.state == session.state
+    assert replayed.result.status is SessionStatus.ACTION_CLASS_DRAW
+    assert json.loads(session.state.history[-1].action_signature) == {"kind": "pass"}
+
+
+@pytest.mark.parametrize(
+    "data, message",
+    [
+        ({"action_class": "castle", "threshold": 2, "outcome": "DRAW"}, "CONSECUTIVE_ACTION_CLASS_UNSUPPORTED"),
+        ({"action_class": "pass", "threshold": 0, "outcome": "DRAW"}, "CONSECUTIVE_ACTION_THRESHOLD_INVALID"),
+        ({"action_class": "pass", "threshold": 2, "outcome": "LOSS"}, "CONSECUTIVE_ACTION_OUTCOME_INVALID"),
+        ({"action_class": "pass", "threshold": 2, "outcome": "DRAW", "trigger_ply": 4}, "UNKNOWN_FIELD"),
+    ],
+)
+def test_malformed_and_unsupported_policy_definitions_fail_closed(data, message):
+    payload = ruleset_to_dict(_legacy_ruleset())
+    payload["consecutive_action_adjudications"] = [data]
+    with pytest.raises(RuleValidationError, match=message):
+        ruleset_from_dict(payload)
+
+
+@pytest.mark.parametrize(
+    "definitions",
+    [None, "pass", (object(),)],
+    ids=["not-a-sequence", "string-sequence", "wrong-entry-type"],
+)
+def test_programmatic_malformed_policy_definitions_fail_closed(definitions):
+    ruleset = replace(
+        _legacy_ruleset(), consecutive_action_adjudications=definitions
+    )
+    with pytest.raises(RuleValidationError, match="CONSECUTIVE_ACTION_ADJUDICATION"):
+        compile_ruleset(ruleset)
+
+
+def test_standard_products_keep_their_default_policy_disabled():
+    for ruleset in (build_western_chess_ruleset(), build_standard_shogi_ruleset()):
+        assert not ruleset.pass_enabled
+        assert ruleset.consecutive_action_adjudications == ()
+        compiled = compile_ruleset_for_execution(ruleset)
+        state = initial_state(compiled)
+        assert PassAction() not in legal_actions(state, compiled)
+        assert state.terminal_status.status is TerminalStatus.ONGOING

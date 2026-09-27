@@ -21,6 +21,15 @@ class CompiledAutomaticAdjudication:
 
 
 @dataclass(frozen=True, slots=True)
+class CompiledConsecutiveActionAdjudication:
+    """Execution form of a consecutive action-class terminal policy."""
+
+    action_class: str
+    threshold: int
+    outcome: str
+
+
+@dataclass(frozen=True, slots=True)
 class CompiledRuleSet:
     """Everything the core kernel needs to reason about one game.
 
@@ -61,6 +70,7 @@ class CompiledRuleSet:
     declarations: tuple[object, ...] = ()
     capture_disposition: str = "capture_to_hand"
     pass_enabled: bool = False
+    consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)

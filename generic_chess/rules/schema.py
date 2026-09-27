@@ -133,6 +133,8 @@ SEMANTIC_DSL_VERSION = 2
 REPETITION_POLICIES = ("draw", "continuous_check_loss")
 AUTOMATIC_ADJUDICATION_OUTCOMES = ("NO_CONTEST",)
 AUTOMATIC_ADJUDICATION_POLICIES = ("threshold_actor_continuous_check",)
+CONSECUTIVE_ACTION_CLASSES = ("pass",)
+CONSECUTIVE_ACTION_OUTCOMES = ("DRAW",)
 
 
 @dataclass(frozen=True, slots=True)
@@ -143,6 +145,15 @@ class RuleAutomaticAdjudication:
     trigger_ply: int
     outcome: str = "NO_CONTEST"
     continuation_policy: str = "threshold_actor_continuous_check"
+
+
+@dataclass(frozen=True, slots=True)
+class RuleConsecutiveActionAdjudication:
+    """Draw when a declared action class occurs consecutively to a threshold."""
+
+    action_class: str
+    threshold: int
+    outcome: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -189,6 +200,8 @@ class RuleSet:
     capture_disposition: str = "capture_to_hand"
     # Coordinate-free turn action, disabled by default and omitted from legacy JSON.
     pass_enabled: bool = False
+    # Optional action-sequence terminal policies; omitted from legacy identity.
+    consecutive_action_adjudications: tuple[RuleConsecutiveActionAdjudication, ...] = ()
 
     @property
     def board_shape(self) -> BoardShape:
@@ -1019,6 +1032,47 @@ def automatic_adjudication_from_dict(
     )
 
 
+def consecutive_action_adjudication_to_dict(
+    value: RuleConsecutiveActionAdjudication,
+) -> dict:
+    return {
+        "action_class": value.action_class,
+        "threshold": value.threshold,
+        "outcome": value.outcome,
+    }
+
+
+def consecutive_action_adjudication_from_dict(
+    data: Mapping[str, Any], path: str
+) -> RuleConsecutiveActionAdjudication:
+    data = _require_mapping(data, path)
+    unknown = set(data) - {"action_class", "threshold", "outcome"}
+    if unknown:
+        raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
+    action_class = _require_member(
+        _require_str(_require_field(data, "action_class", path), f"{path}.action_class"),
+        CONSECUTIVE_ACTION_CLASSES,
+        f"{path}.action_class",
+        "CONSECUTIVE_ACTION_CLASS_UNSUPPORTED",
+    )
+    threshold = _require_int(
+        _require_field(data, "threshold", path), f"{path}.threshold"
+    )
+    if threshold < 1:
+        raise _err(
+            "CONSECUTIVE_ACTION_THRESHOLD_INVALID",
+            f"{path}.threshold",
+            "threshold must be positive",
+        )
+    outcome = _require_member(
+        _require_str(_require_field(data, "outcome", path), f"{path}.outcome"),
+        CONSECUTIVE_ACTION_OUTCOMES,
+        f"{path}.outcome",
+        "CONSECUTIVE_ACTION_OUTCOME_INVALID",
+    )
+    return RuleConsecutiveActionAdjudication(action_class, threshold, outcome)
+
+
 def aux_state_to_dict(value: RuleAuxState) -> dict:
     initial = value.initial
     if isinstance(initial, tuple):
@@ -1521,6 +1575,11 @@ def ruleset_to_dict(
         data["capture_disposition"] = ruleset.capture_disposition
     if ruleset.pass_enabled:
         data["pass_enabled"] = True
+    if ruleset.consecutive_action_adjudications:
+        data["consecutive_action_adjudications"] = [
+            consecutive_action_adjudication_to_dict(item)
+            for item in ruleset.consecutive_action_adjudications
+        ]
     return data
 
 
@@ -1726,6 +1785,19 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         )
         for i, item in enumerate(automatic_raw)
     )
+    consecutive_action_raw = data.get("consecutive_action_adjudications", ())
+    if not isinstance(consecutive_action_raw, (list, tuple)):
+        raise _err(
+            "FIELD_NOT_LIST",
+            f"{path}.consecutive_action_adjudications",
+            "consecutive_action_adjudications must be a list",
+        )
+    consecutive_action_adjudications = tuple(
+        consecutive_action_adjudication_from_dict(
+            item, f"{path}.consecutive_action_adjudications[{i}]"
+        )
+        for i, item in enumerate(consecutive_action_raw)
+    )
     metadata = _require_mapping(data.get("metadata", {}), f"{path}.metadata")
 
     return RuleSet(
@@ -1749,6 +1821,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         metadata=dict(metadata),
         capture_disposition=capture_disposition,
         pass_enabled=pass_enabled,
+        consecutive_action_adjudications=consecutive_action_adjudications,
     )
 
 

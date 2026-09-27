@@ -16,6 +16,7 @@ class SessionStatus(Enum):
     PERPETUAL_CHECK = "perpetual_check"
     MAX_PLY = "max_ply"
     NO_CONTEST = "no_contest"
+    ACTION_CLASS_DRAW = "action_class_draw"
     RESIGNATION = "resignation"
     DECLARATION = "declaration"
 
@@ -66,6 +67,7 @@ def _session_status_from_terminal(terminal: TerminalResult) -> SessionStatus:
         TerminalStatus.PERPETUAL_CHECK: SessionStatus.PERPETUAL_CHECK,
         TerminalStatus.MAX_PLY: SessionStatus.MAX_PLY,
         TerminalStatus.NO_CONTEST: SessionStatus.NO_CONTEST,
+        TerminalStatus.ACTION_CLASS_DRAW: SessionStatus.ACTION_CLASS_DRAW,
     }
     return mapping[terminal.status]
 

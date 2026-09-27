@@ -20,7 +20,10 @@ from functools import lru_cache
 from typing import Any, Mapping
 
 from ..core.coordinates import BoardShape
-from .compiled import CompiledAutomaticAdjudication
+from .compiled import (
+    CompiledAutomaticAdjudication,
+    CompiledConsecutiveActionAdjudication,
+)
 from .schema import (
     AUX_LIFETIMES,
     AUX_SCOPES,
@@ -294,12 +297,13 @@ class CompiledSemanticIR:
     automatic_adjudications: tuple[CompiledAutomaticAdjudication, ...] = ()
     declarations: tuple[CompiledDeclaration, ...] = ()
     capabilities: SemanticCapabilities = SemanticCapabilities()
+    consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
 
     def serialized(self) -> str:
         return canonical_json(self.to_dict())
 
     def to_dict(self) -> dict:
-        return {
+        data = {
             "ir_version": self.ir_version,
             "ruleset_fingerprint": self.ruleset_fingerprint,
             "geometry": {
@@ -352,6 +356,16 @@ class CompiledSemanticIR:
             "declarations": [_declaration_dict(d) for d in self.declarations],
             "capabilities": self.capabilities.to_dict(),
         }
+        if self.consecutive_action_adjudications:
+            data["consecutive_action_adjudications"] = [
+                {
+                    "action_class": item.action_class,
+                    "threshold": item.threshold,
+                    "outcome": item.outcome,
+                }
+                for item in self.consecutive_action_adjudications
+            ]
+        return data
 
     @staticmethod
     def _pattern_dict(p: CompiledMovePattern) -> dict:
@@ -569,6 +583,12 @@ class CompiledSemanticRuleset:
     def pass_enabled(self) -> bool:
         return bool(self.support is not None and self.support.pass_enabled)
 
+    @property
+    def consecutive_action_adjudications(
+        self,
+    ) -> tuple[CompiledConsecutiveActionAdjudication, ...]:
+        return self.ir.consecutive_action_adjudications
+
 
 @dataclass(frozen=True, slots=True)
 class SemanticTypeMetadata:
@@ -614,6 +634,7 @@ class CompiledSemanticSupport:
     board_width: int | None = None
     board_height: int | None = None
     pass_enabled: bool = False
+    consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
 
     @property
     def board_shape(self) -> BoardShape:

@@ -34,6 +34,7 @@ from .rules.standard_shogi import build_standard_shogi_ruleset
 from .rules.schema import RuleSet
 from .rules.schema import (
     RuleAutomaticAdjudication,
+    RuleConsecutiveActionAdjudication,
     RuleDeclaration,
     RuleDeclarationOutcomeBand,
     RuleWeightedMaterialMetric,
@@ -81,6 +82,7 @@ __all__ = [
     "TerminalStatus",
     "RuleSet",
     "RuleAutomaticAdjudication",
+    "RuleConsecutiveActionAdjudication",
     "GeneratorConfig",
     "IllegalActionError",
     "RuleSetMismatchError",

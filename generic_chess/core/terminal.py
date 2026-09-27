@@ -7,7 +7,10 @@ from enum import Enum
 from typing import TYPE_CHECKING
 
 from .attacks import is_in_check
-from .adjudication import automatic_adjudication_status
+from .adjudication import (
+    automatic_adjudication_status,
+    consecutive_action_adjudication_status,
+)
 from .errors import ensure_ruleset_match
 from .movegen import has_legal_action
 from .position import Position
@@ -26,6 +29,7 @@ class TerminalStatus(Enum):
     PERPETUAL_CHECK = "perpetual_check"
     MAX_PLY = "max_ply"
     NO_CONTEST = "no_contest"
+    ACTION_CLASS_DRAW = "action_class_draw"
 
 
 @dataclass(frozen=True, slots=True)
@@ -99,6 +103,13 @@ def _terminal_from_parts(
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - side)
         winner = 1 - side if getattr(compiled, "stalemate_result", "draw") == "loss" else None
         return TerminalResult(TerminalStatus.STALEMATE, winner)
+    consecutive = consecutive_action_adjudication_status(
+        getattr(compiled, "consecutive_action_adjudications", ()),
+        ply_count,
+        history,
+    )
+    if consecutive == "DRAW":
+        return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _perpetual_check_result(
             repetition_counts, history, compiled.repetition_limit
@@ -174,6 +185,14 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
             else None
         )
         return TerminalResult(TerminalStatus.STALEMATE, winner)
+    consecutive = consecutive_action_adjudication_status(
+        getattr(compiled, "consecutive_action_adjudications", ()),
+        runtime.ply_count,
+        runtime.history,
+        history_complete=getattr(runtime, "_history_complete", False),
+    )
+    if consecutive == "DRAW":
+        return TerminalResult(TerminalStatus.ACTION_CLASS_DRAW)
     if getattr(compiled, "repetition_policy", "draw") == "continuous_check_loss":
         perpetual = _runtime_perpetual_check_result(runtime)
         if perpetual is not None:
