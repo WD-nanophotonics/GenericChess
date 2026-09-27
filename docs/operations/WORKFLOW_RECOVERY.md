@@ -15,6 +15,15 @@ the Worker's routine research partner. Do not turn a healthy Worker checkpoint
 or a missing next Chat order into a recurring Supervisor-assigned investigation.
 Supervisor contact is for a concrete policy decision, independent audit,
 material scope drift, or a fault the Worker cannot safely repair.
+Do not make Supervisor final review a blanket field on ordinary work orders.
+Chat and the Worker should complete routine, reversible, bounded changes using
+their normal tests and Courier closeout. Request Supervisor review when a
+specific risk warrants an independent decision: an irreversible or promotion
+step, uncertain publication/lineage, substantial scope or resource expansion,
+conflicting policy or evidence, or a shared workflow failure. Name that risk
+in the order or escalation. Honor an already issued order's explicit review
+requirement; ask Chat through Courier to narrow the requirement for future
+routine orders rather than silently disregarding it.
 
 Use Supervisor turns to set direction and bounds, review decisive evidence,
 correct Worker drift, and repair shared workflow failures. Delegate routine
