@@ -106,6 +106,13 @@ check or edit when a concrete cross-project decision, independent audit,
 urgent correction, or framework repair requires it; record that reason and
 return routine execution to the Worker. Prefer one precise instruction and
 the minimum evidence needed to judge it over repeated broad analysis.
+When an order is missing or a proposed scope is uncertain, the Worker reports
+the evidence and a bounded next step to the Supervisor first. The Supervisor
+must give an explicit allow, deny, or narrower replacement order with the next
+action and stopping condition. A missing Chat order alone does not make the
+user the default decision maker or justify indefinite waiting. Ask the user
+only for a decision genuinely outside Supervisor authority after resolving
+the available project-policy and evidence questions.
 
 ## Worker loop
 

@@ -18,6 +18,11 @@ healthy Worker turn, inspect only the evidence needed for the next decision
 and avoid reproducing its entire analysis or test run. A short independent
 check remains appropriate when it resolves a material uncertainty about a
 checkpoint or prevents an incorrect project-wide decision.
+When Chat has no usable next order, the Worker sends the Supervisor the current
+request evidence, one proposed bounded action, and its stop condition. The
+Supervisor decides allow, deny, or replace with a narrower action and sends
+that decision back to the Worker. Do not forward a routine scope choice to the
+user or keep requesting new tests while no project question has been settled.
 
 ## On every abnormal Courier receipt
 
