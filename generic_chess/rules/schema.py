@@ -157,14 +157,23 @@ class RuleConsecutiveActionAdjudication:
 
 
 @dataclass(frozen=True, slots=True)
+class RuleInitialSetupOption:
+    """One opt-in alternate initial board, selected by a stable key."""
+
+    setup_key: str
+    position: tuple[tuple[Piece | None, ...], ...]
+
+
+@dataclass(frozen=True, slots=True)
 class RuleSet:
     """A declarative, JSON-serializable game definition.
 
     ``initial_position`` is stored as rows of ``Piece | None`` ordered from
-    rank 0 (bottom) to rank n-1 (top).  Drop and promotion policies are
+    rank 0 (bottom) to rank n-1 (top); ``initial_setup_options`` optionally
+    adds stable-keyed alternate boards. Drop and promotion policies are
     stored as explicit per-square masks so the compiler never has to guess
-    them.  ``metadata`` must never influence game results; it is excluded
-    from the fingerprint.
+    them. ``metadata`` must never influence game results; it is excluded from
+    the fingerprint.
     """
 
     schema_version: int = 1
@@ -202,6 +211,9 @@ class RuleSet:
     pass_enabled: bool = False
     # Optional action-sequence terminal policies; omitted from legacy identity.
     consecutive_action_adjudications: tuple[RuleConsecutiveActionAdjudication, ...] = ()
+    # Alternate boards are opt-in and appended for positional compatibility.
+    # Empty preserves the legacy single-start serialization and fingerprint.
+    initial_setup_options: tuple[RuleInitialSetupOption, ...] = ()
 
     @property
     def board_shape(self) -> BoardShape:
@@ -1515,6 +1527,16 @@ def ruleset_to_dict(
         [None if cell is None else piece_to_dict(cell) for cell in row]
         for row in ruleset.initial_position
     ]
+    initial_setup_options = [
+        {
+            "setup_key": option.setup_key,
+            "position": [
+                [None if cell is None else piece_to_dict(cell) for cell in row]
+                for row in option.position
+            ],
+        }
+        for option in sorted(ruleset.initial_setup_options, key=lambda item: item.setup_key)
+    ]
     drop_allowed = {
         tid: [[bool(b) for b in mask] for mask in masks] for tid, masks in ruleset.drop_allowed.items()
     }
@@ -1540,6 +1562,8 @@ def ruleset_to_dict(
         "max_ply": ruleset.max_ply,
         "stalemate_result": ruleset.stalemate_result,
     }
+    if initial_setup_options:
+        data["initial_setup_options"] = initial_setup_options
     if ruleset.board_width is not None and ruleset.board_height is not None:
         data["board_width"] = ruleset.board_width
         data["board_height"] = ruleset.board_height
@@ -1659,6 +1683,51 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         )
         for r, row in enumerate(initial_raw)
     )
+
+    initial_setup_options_raw = data.get("initial_setup_options", ())
+    if not isinstance(initial_setup_options_raw, (list, tuple)):
+        raise _err(
+            "FIELD_NOT_LIST",
+            f"{path}.initial_setup_options",
+            "initial_setup_options must be a list",
+        )
+    initial_setup_options_list: list[RuleInitialSetupOption] = []
+    for i, raw_option in enumerate(initial_setup_options_raw):
+        option_path = f"{path}.initial_setup_options[{i}]"
+        raw_option = _require_mapping(raw_option, option_path)
+        unknown = set(raw_option) - {"setup_key", "position"}
+        if unknown:
+            raise _err(
+                "UNKNOWN_FIELD",
+                option_path,
+                f"unknown field(s): {sorted(unknown)}",
+            )
+        setup_key = _require_str(
+            _require_field(raw_option, "setup_key", option_path),
+            f"{option_path}.setup_key",
+        )
+        position_raw = _require_field(raw_option, "position", option_path)
+        if not isinstance(position_raw, list) or any(
+            not isinstance(row, list) for row in position_raw
+        ):
+            raise _err(
+                "FIELD_NOT_LIST",
+                f"{option_path}.position",
+                "position must be a list of rows",
+            )
+        position = tuple(
+            tuple(
+                None
+                if cell is None
+                else piece_from_dict(cell, f"{option_path}.position[{r}][{f}]")
+                for f, cell in enumerate(row)
+            )
+            for r, row in enumerate(position_raw)
+        )
+        initial_setup_options_list.append(
+            RuleInitialSetupOption(setup_key=setup_key, position=position)
+        )
+    initial_setup_options = tuple(initial_setup_options_list)
 
     drop_raw = _require_mapping(data.get("drop_allowed", {}), f"{path}.drop_allowed")
     drop_allowed: dict[str, tuple[tuple[bool, ...], ...]] = {}
@@ -1807,6 +1876,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         board_height=board_height,
         piece_types=piece_types,
         initial_position=initial_position,
+        initial_setup_options=initial_setup_options,
         drop_allowed=drop_allowed,
         promotion_allowed=promotion_allowed,
         promotion_forced=promotion_forced,

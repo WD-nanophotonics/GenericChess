@@ -149,10 +149,28 @@ def reconstruct_history_provenance(state: GameState, compiled) -> HistoryProvena
     from .transition import apply_action, initial_state
 
     try:
-        replayed = initial_state(compiled)
         if not state.history:
             return _unknown("empty history")
         first = state.history[0]
+        support = getattr(compiled, "support", None)
+        setup_options = (
+            support.initial_setup_options
+            if support is not None
+            else getattr(compiled, "initial_setup_positions", {})
+        )
+        replayed = initial_state(compiled)
+        if first != replayed.history[0]:
+            # Setup choices preserve inventory but have distinct initial boards;
+            # the first position key therefore identifies the selected option.
+            matched = False
+            for setup_key in setup_options:
+                candidate = initial_state(compiled, setup_key)
+                if first == candidate.history[0]:
+                    replayed = candidate
+                    matched = True
+                    break
+            if not matched:
+                return _unknown("history does not begin at a declared initial setup")
         if first != replayed.history[0]:
             return _unknown("history does not begin at the declared initial state")
         if len(state.history) != state.ply_count + 1:

@@ -36,6 +36,7 @@ class GameSession:
 
     __slots__ = (
         "_compiled",
+        "_initial_setup_key",
         "_state",
         "_history",
         "_resigned_by",
@@ -43,9 +44,12 @@ class GameSession:
         "_search_history_witnesses",
     )
 
-    def __init__(self, compiled: "CompiledRuleSet") -> None:
+    def __init__(
+        self, compiled: "CompiledRuleSet", initial_setup_key: str | None = None
+    ) -> None:
         self._compiled = compiled
-        self._state: GameState = initial_state(compiled)
+        self._initial_setup_key = initial_setup_key
+        self._state: GameState = initial_state(compiled, initial_setup_key)
         self._search_history_witnesses = (self._state.position,)
         self._history: tuple[ActionRecord, ...] = ()
         self._resigned_by: int | None = None
@@ -149,17 +153,22 @@ class GameSession:
 
     def to_record(self) -> GameRecord:
         return GameRecord(
-            schema_version=2 if self._declaration is not None else 1,
+            schema_version=(
+                3 if self._initial_setup_key is not None
+                else 2 if self._declaration is not None
+                else 1
+            ),
             ruleset_fingerprint=self._compiled.ruleset_fingerprint,
             actions=tuple(rec.action for rec in self._history),
             resigned_by=self._resigned_by,
             declaration=self._declaration,
+            initial_setup_key=self._initial_setup_key,
         )
 
     @classmethod
     def replay(cls, compiled: "CompiledRuleSet", record: GameRecord) -> "GameSession":
         """Rebuild a session by replaying a record through ``submit``."""
-        if record.schema_version not in (1, 2):
+        if record.schema_version not in (1, 2, 3):
             raise SessionRecordError(
                 f"unsupported game record schema_version {record.schema_version!r}"
             )
@@ -167,12 +176,22 @@ class GameSession:
             raise SessionRecordError("schema v2 requires a declaration")
         if record.schema_version == 1 and record.declaration is not None:
             raise SessionRecordError("schema v1 cannot contain a declaration")
+        if record.schema_version == 3 and (
+            not isinstance(record.initial_setup_key, str)
+            or not record.initial_setup_key
+        ):
+            raise SessionRecordError("schema v3 requires an initial setup key")
+        if record.schema_version in (1, 2) and record.initial_setup_key is not None:
+            raise SessionRecordError("initial setup key requires game record schema_version 3")
         if record.ruleset_fingerprint != compiled.ruleset_fingerprint:
             raise SessionRecordError(
                 f"record fingerprint {record.ruleset_fingerprint!r} does not match "
                 f"ruleset fingerprint {compiled.ruleset_fingerprint!r}"
             )
-        session = cls(compiled)
+        try:
+            session = cls(compiled, record.initial_setup_key)
+        except ValueError as exc:
+            raise SessionRecordError(f"record selects an unknown initial setup: {exc}") from exc
         try:
             for action in record.actions:
                 session.submit(action)
@@ -195,8 +214,8 @@ class GameSession:
                 )
             session.resign()
         if record.declaration is not None:
-            if record.schema_version != 2:
-                raise SessionRecordError("declaration requires game record schema_version 2")
+            if record.schema_version not in (2, 3):
+                raise SessionRecordError("declaration requires game record schema_version 2 or 3")
             if record.resigned_by is not None:
                 raise SessionRecordError("record cannot contain resignation and declaration")
             if session.result.status is not SessionStatus.ONGOING:

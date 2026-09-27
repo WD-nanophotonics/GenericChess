@@ -38,6 +38,7 @@ from .schema import (
     DISPOSITIONS,
     RuleSet,
     RuleConsecutiveActionAdjudication,
+    RuleInitialSetupOption,
     compute_fingerprint,
     ruleset_from_dict,
 )
@@ -250,6 +251,118 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
         if anchor_count[player] != 1:
             issues.append(ValidationIssue("ANCHOR_COUNT", "initial_position", f"each side needs exactly one anchor on the board; player {player} has {anchor_count[player]}"))
 
+    if not isinstance(ruleset.initial_setup_options, tuple):
+        issues.append(
+            ValidationIssue(
+                "INITIAL_SETUP_OPTIONS_INVALID",
+                "initial_setup_options",
+                "must be an immutable tuple",
+            )
+        )
+        setup_options = ()
+    else:
+        setup_options = ruleset.initial_setup_options
+    setup_keys: set[str] = set()
+    seen_setup_positions = [ruleset.initial_position]
+    default_inventory = tuple(sorted(
+        (
+            (p.owner, p.base_type_id, p.current_type_id, p.promoted)
+            for row in ruleset.initial_position
+            for p in row
+            if isinstance(p, Piece)
+        ),
+        key=repr,
+    ))
+    for index, option in enumerate(setup_options):
+        option_path = f"initial_setup_options[{index}]"
+        if not isinstance(option, RuleInitialSetupOption):
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_OPTION_INVALID", option_path,
+                    "expected a RuleInitialSetupOption",
+                )
+            )
+            continue
+        key = option.setup_key
+        if not isinstance(key, str) or not key or key.strip() != key:
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_KEY_INVALID", f"{option_path}.setup_key",
+                    "setup key must be a non-empty, trimmed string",
+                )
+            )
+        elif key in setup_keys:
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_KEY_DUPLICATE", f"{option_path}.setup_key",
+                    f"duplicate setup key {key!r}",
+                )
+            )
+        else:
+            setup_keys.add(key)
+        if not isinstance(option.position, tuple) or any(
+            not isinstance(row, tuple) for row in option.position
+        ):
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_POSITION_INVALID", f"{option_path}.position",
+                    "position must be an immutable tuple of rows",
+                )
+            )
+            continue
+        if any(
+            cell is not None and not isinstance(cell, Piece)
+            for row in option.position
+            for cell in row
+        ):
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_POSITION_INVALID", f"{option_path}.position",
+                    "each cell must be a Piece or None",
+                )
+            )
+            continue
+        option_inventory = tuple(sorted(
+            (
+                (p.owner, p.base_type_id, p.current_type_id, p.promoted)
+                for row in option.position
+                for p in row
+                if p is not None
+            ),
+            key=repr,
+        ))
+        if option_inventory != default_inventory:
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_INVENTORY_MISMATCH", f"{option_path}.position",
+                    "setup options must preserve the default piece inventory",
+                )
+            )
+        if any(option.position == existing for existing in seen_setup_positions):
+            issues.append(
+                ValidationIssue(
+                    "INITIAL_SETUP_POSITION_DUPLICATE", f"{option_path}.position",
+                    "setup position duplicates another declared position",
+                )
+            )
+        else:
+            seen_setup_positions.append(option.position)
+        candidate = replace(
+            ruleset, initial_position=option.position, initial_setup_options=()
+        )
+        for candidate_issue in _basic_validation(candidate):
+            if candidate_issue.path == "initial_position" or candidate_issue.path.startswith(
+                "initial_position["
+            ):
+                path_suffix = candidate_issue.path[len("initial_position"):]
+                issues.append(
+                    ValidationIssue(
+                        candidate_issue.code,
+                        f"{option_path}{path_suffix}",
+                        candidate_issue.message,
+                    )
+                )
+
     # Drop masks: exactly one mask per non-anchor type, per player, n*n bools.
     non_anchor_ids = type_ids - anchor_ids
     if set(ruleset.drop_allowed) != non_anchor_ids:
@@ -303,13 +416,29 @@ def _basic_validation(ruleset: RuleSet) -> list[ValidationIssue]:
     return issues
 
 
-def _build_initial_position(ruleset: RuleSet, fingerprint: str) -> Position:
-    flat = tuple(cell for row in ruleset.initial_position for cell in row)
+def _build_initial_position(
+    ruleset: RuleSet,
+    fingerprint: str,
+    rows: tuple[tuple[Piece | None, ...], ...] | None = None,
+) -> Position:
+    rows = ruleset.initial_position if rows is None else rows
+    flat = tuple(cell for row in rows for cell in row)
     return Position(
         board=flat,
         hands=(Hands.empty(), Hands.empty()),
         side_to_move=0,
         ruleset_fingerprint=fingerprint,
+    )
+
+
+def _build_initial_setup_positions(ruleset: RuleSet, fingerprint: str):
+    return MappingProxyType(
+        {
+            option.setup_key: _build_initial_position(
+                ruleset, fingerprint, option.position
+            )
+            for option in ruleset.initial_setup_options
+        }
     )
 
 
@@ -338,12 +467,19 @@ def _compile_geometry_carrier(
         board_width=shape.width,
         board_height=shape.height,
     )
+    setup_positions = MappingProxyType(
+        {
+            option.setup_key: option.position
+            for option in ruleset.initial_setup_options
+        }
+    )
     tables = _build_tables(ruleset)
     return CompiledGeometryCarrier(
         ruleset_fingerprint=fingerprint,
         board_shape=shape,
         types_by_id=MappingProxyType({pt.type_id: pt for pt in ruleset.piece_types}),
         initial_position=position,
+        initial_setup_positions=setup_positions,
         leap_targets=MappingProxyType(tables["leap_targets"]),
         ray_paths=MappingProxyType(tables["ray_paths"]),
         empty_mobility=MappingProxyType(tables["empty_mobility"]),
@@ -351,15 +487,26 @@ def _compile_geometry_carrier(
     )
 
 
-def _position_validation(compiled: CompiledRuleSet) -> list[ValidationIssue]:
+def _position_validation(
+    compiled: CompiledRuleSet, setup_key: str | None = None
+) -> list[ValidationIssue]:
     issues: list[ValidationIssue] = []
-    pos = compiled.initial_position
+    pos = (
+        compiled.initial_position
+        if setup_key is None
+        else compiled.initial_setup_positions[setup_key]
+    )
+    path = (
+        "initial_position"
+        if setup_key is None
+        else f"initial_setup_options[{setup_key}]"
+    )
     for player in (0, 1):
         if is_in_check(pos, player, compiled):
             issues.append(
                 ValidationIssue(
                     "INITIAL_ANCHOR_ATTACKED",
-                    "initial_position",
+                    path,
                     f"player {player}'s anchor is attacked at the initial position",
                 )
             )
@@ -367,7 +514,7 @@ def _position_validation(compiled: CompiledRuleSet) -> list[ValidationIssue]:
         issues.append(
             ValidationIssue(
                 "INITIAL_NO_LEGAL_MOVE",
-                "initial_position",
+                path,
                 "the side to move has no legal action at the initial position",
             )
         )
@@ -433,6 +580,7 @@ def compile_ruleset(
         piece_types=ruleset.piece_types,
         types_by_id=types_by_id,
         initial_position=initial_position,
+        initial_setup_positions=_build_initial_setup_positions(ruleset, fingerprint),
         initial_entity_count=entity_count,
         leap_targets=tables["leap_targets"],
         ray_paths=tables["ray_paths"],
@@ -453,6 +601,8 @@ def compile_ruleset(
     )
 
     issues = _position_validation(compiled)
+    for setup_key in compiled.initial_setup_positions:
+        issues.extend(_position_validation(compiled, setup_key))
     if issues:
         raise RuleValidationError(issues)
 
@@ -984,6 +1134,7 @@ def _build_semantic_support(
         consecutive_action_adjudications = (
             _compile_consecutive_action_adjudications(ruleset)
         )
+        initial_setup_options = compiled.initial_setup_positions
     else:
         if ruleset is not None:
             raise ValueError("RuleSet must not be supplied with an executable compiled ruleset")
@@ -999,6 +1150,13 @@ def _build_semantic_support(
         stalemate_result = compiled.stalemate_result
         automatic_adjudications = compiled.automatic_adjudications
         consecutive_action_adjudications = compiled.consecutive_action_adjudications
+        initial_setup_options = {
+            key: tuple(
+                tuple(position.board[rank * shape.width:(rank + 1) * shape.width])
+                for rank in range(shape.height)
+            )
+            for key, position in compiled.initial_setup_positions.items()
+        }
 
     board = compiled.initial_position.board
     rows = tuple(
@@ -1018,6 +1176,7 @@ def _build_semantic_support(
         board_size=shape.width if shape.width == shape.height else None,
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         initial_position=rows,
+        initial_setup_options=initial_setup_options,
         type_metadata=type_metadata,
         drop_allowed=drop_allowed,
         promotion_allowed=promotion_allowed,
@@ -1829,7 +1988,9 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
             )
         return compiled
     baseline = compile_ruleset(ruleset, allow_semantic_actions=True)
-    return _compile_semantic_ruleset_from_baseline(baseline, ruleset)
+    compiled = _compile_semantic_ruleset_from_baseline(baseline, ruleset)
+    _validate_semantic_initial_position(compiled)
+    return compiled
 
 
 def _validate_semantic_initial_position(compiled) -> None:
@@ -1837,27 +1998,34 @@ def _validate_semantic_initial_position(compiled) -> None:
     from ..core.semantic_executor import SemanticEngine
 
     engine = SemanticEngine(compiled)
-    position = engine._initial_position()
-    issues = []
-    for player in (0, 1):
-        if engine.in_check(position, player):
+    setup_keys = (None, *compiled.support.initial_setup_options.keys())
+    for setup_key in setup_keys:
+        position = engine._initial_position(setup_key)
+        path = (
+            "initial_position"
+            if setup_key is None
+            else f"initial_setup_options[{setup_key}]"
+        )
+        issues = []
+        for player in (0, 1):
+            if engine.in_check(position, player):
+                issues.append(
+                    ValidationIssue(
+                        "INITIAL_ANCHOR_ATTACKED",
+                        path,
+                        f"player {player}'s anchor is attacked at the initial position",
+                    )
+                )
+        if not engine.has_legal_action(position):
             issues.append(
                 ValidationIssue(
-                    "INITIAL_ANCHOR_ATTACKED",
-                    "initial_position",
-                    f"player {player}'s anchor is attacked at the initial position",
+                    "INITIAL_NO_LEGAL_MOVE",
+                    path,
+                    "the side to move has no legal action at the initial position",
                 )
             )
-    if not engine.has_legal_action(position):
-        issues.append(
-            ValidationIssue(
-                "INITIAL_NO_LEGAL_MOVE",
-                "initial_position",
-                "the side to move has no legal action at the initial position",
-            )
-        )
-    if issues:
-        raise RuleValidationError(issues)
+        if issues:
+            raise RuleValidationError(issues)
 
 
 def _compile_semantic_ruleset_from_baseline(

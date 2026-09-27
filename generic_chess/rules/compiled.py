@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Mapping
 
 from ..core.coordinates import BoardShape, Square
@@ -71,6 +71,7 @@ class CompiledRuleSet:
     capture_disposition: str = "capture_to_hand"
     pass_enabled: bool = False
     consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
+    initial_setup_positions: Mapping[str, Position] = field(default_factory=dict)
 
 
 @dataclass(frozen=True, slots=True)
@@ -85,3 +86,6 @@ class CompiledGeometryCarrier:
     ray_paths: Mapping[str, tuple]
     empty_mobility: Mapping[str, tuple]
     empty_forward_mobility: Mapping[str, tuple]
+    initial_setup_positions: Mapping[str, tuple[tuple[object | None, ...], ...]] = field(
+        default_factory=dict
+    )

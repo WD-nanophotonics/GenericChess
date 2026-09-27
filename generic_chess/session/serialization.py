@@ -166,6 +166,21 @@ def serialize_game_record(record: GameRecord) -> str:
         "actions": actions,
         "resigned_by": record.resigned_by,
     }
+    if record.schema_version == 3:
+        if not isinstance(record.initial_setup_key, str) or not record.initial_setup_key:
+            raise SessionRecordError("schema v3 requires a non-empty initial_setup_key")
+        data["initial_setup_key"] = record.initial_setup_key
+        if record.declaration is not None:
+            if record.resigned_by is not None:
+                raise SessionRecordError("declaration and resignation are mutually exclusive")
+            data["declaration"] = {
+                "declaration_id": record.declaration.declaration_id,
+                "declared_by": record.declaration.declared_by,
+                "outcome": record.declaration.outcome,
+                "weighted_score": record.declaration.weighted_score,
+            }
+    elif record.initial_setup_key is not None:
+        raise SessionRecordError("initial_setup_key requires schema_version 3")
     if record.schema_version == 2:
         if record.declaration is None or record.resigned_by is not None:
             raise SessionRecordError("schema v2 requires a declaration and forbids resignation")
@@ -175,8 +190,10 @@ def serialize_game_record(record: GameRecord) -> str:
             "outcome": record.declaration.outcome,
             "weighted_score": record.declaration.weighted_score,
         }
-    elif record.schema_version != 1 or record.declaration is not None:
+    elif record.schema_version == 1 and record.declaration is not None:
         raise SessionRecordError("schema v1 cannot contain a declaration")
+    elif record.schema_version not in (1, 3):
+        raise SessionRecordError("unsupported game record schema_version")
     return json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
 
 
@@ -189,14 +206,17 @@ def deserialize_game_record(text: str) -> GameRecord:
 
     path = "game_record"
     payload = _require_mapping(payload, path)
-    allowed_top = {"schema_version", "ruleset_fingerprint", "actions", "resigned_by", "declaration"}
+    allowed_top = {
+        "schema_version", "ruleset_fingerprint", "actions", "resigned_by",
+        "declaration", "initial_setup_key",
+    }
     unknown = set(payload) - allowed_top
     if unknown:
         raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
 
     schema_version = _require_int(_require_field(payload, "schema_version", path), f"{path}.schema_version")
-    if schema_version not in (1, 2):
-        raise _err("UNSUPPORTED_SCHEMA", f"{path}.schema_version", "schema_version must be 1 or 2")
+    if schema_version not in (1, 2, 3):
+        raise _err("UNSUPPORTED_SCHEMA", f"{path}.schema_version", "schema_version must be 1, 2 or 3")
 
     fingerprint = _require_str(
         _require_field(payload, "ruleset_fingerprint", path), f"{path}.ruleset_fingerprint"
@@ -219,7 +239,7 @@ def deserialize_game_record(text: str) -> GameRecord:
     declaration = None
     if schema_version == 1 and "declaration" in payload:
         raise _err("INVALID_SCHEMA", f"{path}.declaration", "declaration requires schema_version 2")
-    if schema_version == 2:
+    if schema_version == 2 or (schema_version == 3 and "declaration" in payload):
         if "declaration" not in payload:
             raise _err("MISSING_FIELD", f"{path}.declaration", "schema v2 requires declaration")
         raw_declaration = _require_mapping(payload["declaration"], f"{path}.declaration")
@@ -243,10 +263,26 @@ def deserialize_game_record(text: str) -> GameRecord:
         if resigned is not None:
             raise _err("INVALID_SCHEMA", f"{path}.resigned_by", "resignation and declaration are mutually exclusive")
 
+    initial_setup_key = None
+    if schema_version == 3:
+        initial_setup_key = _require_str(
+            _require_field(payload, "initial_setup_key", path),
+            f"{path}.initial_setup_key",
+        )
+        if not initial_setup_key:
+            raise _err("INVALID_SETUP_KEY", f"{path}.initial_setup_key", "must not be empty")
+    elif "initial_setup_key" in payload:
+        raise _err(
+            "INVALID_SCHEMA",
+            f"{path}.initial_setup_key",
+            "initial_setup_key requires schema_version 3",
+        )
+
     return GameRecord(
         schema_version=schema_version,
         ruleset_fingerprint=fingerprint,
         actions=actions,
         resigned_by=resigned,
         declaration=declaration,
+        initial_setup_key=initial_setup_key,
     )

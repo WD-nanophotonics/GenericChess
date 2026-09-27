@@ -16,13 +16,19 @@ if TYPE_CHECKING:
     from ..rules.compiled import CompiledRuleSet
 
 
-def initial_state(compiled: "CompiledRuleSet") -> GameState:
-    """The initial game state of a compiled ruleset."""
+def initial_state(
+    compiled: "CompiledRuleSet", setup_key: str | None = None
+) -> GameState:
+    """The initial game state, optionally selecting an opt-in setup key."""
+    if setup_key is not None and (
+        not isinstance(setup_key, str) or not setup_key
+    ):
+        raise ValueError("initial setup key must be a non-empty string")
     from .semantic_executor import semantic_engine_for
 
     engine = semantic_engine_for(compiled)
     if engine is not None:
-        pos = engine._initial_position()
+        pos = engine._initial_position(setup_key)
         key = repetition_identity_key(pos, compiled)
         counts = ((key, 1),)
         status = engine.terminal_result(pos, 0, counts)
@@ -33,7 +39,13 @@ def initial_state(compiled: "CompiledRuleSet") -> GameState:
             terminal_status=status,
             history=(HistoryRecord(key, -1, "", False),),
         )
-    pos = compiled.initial_position
+    if setup_key is None:
+        pos = compiled.initial_position
+    else:
+        try:
+            pos = compiled.initial_setup_positions[setup_key]
+        except KeyError as exc:
+            raise ValueError(f"unknown initial setup key {setup_key!r}") from exc
     key = repetition_identity_key(pos, compiled)
     counts = ((key, 1),)
     status = _terminal_from_parts(pos, 0, counts, compiled)

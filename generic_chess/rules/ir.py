@@ -615,6 +615,9 @@ class CompiledSemanticSupport:
     board_size: int | None
     ruleset_fingerprint: str = ""
     initial_position: tuple[tuple[Any, ...], ...] = ()
+    initial_setup_options: Mapping[str, tuple[tuple[Any, ...], ...]] = field(
+        default_factory=dict
+    )
     type_metadata: Mapping[str, SemanticTypeMetadata] = field(default_factory=dict)
     drop_allowed: Mapping[str, tuple[tuple[bool, ...], ...]] = field(default_factory=dict)
     promotion_allowed: Mapping[str, tuple[frozenset[tuple[Any, Any]], ...]] = field(

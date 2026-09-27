@@ -573,8 +573,14 @@ class SemanticEngine:
 
     # ------------------------------------------------------- resolution
 
-    def _initial_position(self) -> Position:
-        rows = self.support.initial_position
+    def _initial_position(self, setup_key: str | None = None) -> Position:
+        if setup_key is None:
+            rows = self.support.initial_position
+        else:
+            try:
+                rows = self.support.initial_setup_options[setup_key]
+            except KeyError as exc:
+                raise ValueError(f"unknown initial setup key {setup_key!r}") from exc
         shape = self.support.board_shape
         board = tuple(
             rows[r][f]

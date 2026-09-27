@@ -46,3 +46,4 @@ class GameRecord:
     actions: tuple[Action, ...]
     resigned_by: int | None
     declaration: DeclarationRecord | None = None
+    initial_setup_key: str | None = None
