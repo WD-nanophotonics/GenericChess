@@ -95,6 +95,12 @@ refusal, or immediately when its Goal is actually marked blocked. Retire the
 old task before registering one successor with an active persistent Goal;
 delete only if the app supports deletion, otherwise archive and report that
 fact. Preserve the existing Courier session, request, worktree, and evidence.
+If the Worker should have an active Goal but its Goal is inactive and cannot
+be resumed in that task, replace the Worker immediately by the same procedure
+and establish a fresh active Goal in the successor. Do not wait through hourly
+patrols or count this as three refusals. First verify the actual Goal status
+and the failed resume path; idle task status or unavailable Goal data alone
+does not prove that restoration failed.
 
 For Courier, first search for the exact submitted request and matching reply,
 including durable receipts and the live target. A submitted or uncertain
