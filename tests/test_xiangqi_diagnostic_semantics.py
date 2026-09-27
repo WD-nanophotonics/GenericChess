@@ -248,14 +248,35 @@ def test_horse_leg_blocks_the_matching_l_move_for_both_sides(product):
 
 
 def test_chariot_requires_clear_path_and_captures_without_hand_transfer(product):
-    _ruleset, compiled, _engine = product
-    for side, own_g, enemy_g, source, target, blocker in (
-        (0, Square(4, 0), Square(8, 9), Square(0, 4), Square(0, 7), Square(0, 6)),
-        (1, Square(4, 9), Square(0, 0), Square(8, 5), Square(8, 2), Square(8, 3)),
-    ):
+    ruleset, compiled, engine = product
+    assert ruleset.capture_disposition == "remove_from_game"
+    compiled_capture_dispositions = {
+        effect.disposition
+        for pattern in compiled.ir.patterns
+        for effect in pattern.effects
+        if effect.kind == "remove"
+    }
+    assert compiled_capture_dispositions == {ruleset.capture_disposition}
+    cases = (
+        (
+            0, Square(4, 0), Square(4, 9), Square(0, 4), Square(0, 7),
+            Square(0, 6), Square(0, 8), 0, Square(4, 4),
+        ),
+        (
+            1, Square(4, 9), Square(4, 0), Square(8, 5), Square(8, 2),
+            Square(8, 3), Square(8, 1), 1, Square(4, 5),
+        ),
+    )
+    for (
+        side, own_g, enemy_g, source, target, blocker, successor_rook,
+        screen_owner, screen_square,
+    ) in cases:
         clear = _state(
             compiled,
-            [(side, "G", own_g), (1 - side, "G", enemy_g), (side, "R", source)],
+            [
+                (side, "G", own_g), (1 - side, "G", enemy_g),
+                (side, "R", source), (screen_owner, "S", screen_square),
+            ],
             side=side,
         )
         assert target in _targets(clear, compiled, source)
@@ -264,6 +285,7 @@ def test_chariot_requires_clear_path_and_captures_without_hand_transfer(product)
             [
                 (side, "G", own_g), (1 - side, "G", enemy_g),
                 (side, "R", source), (side, "S", blocker),
+                (screen_owner, "S", screen_square),
             ],
             side=side,
         )
@@ -273,22 +295,69 @@ def test_chariot_requires_clear_path_and_captures_without_hand_transfer(product)
             [
                 (side, "G", own_g), (1 - side, "G", enemy_g),
                 (side, "R", source), (1 - side, "S", target),
+                (1 - side, "R", successor_rook),
+                (screen_owner, "S", screen_square),
             ],
             side=side,
         )
+        assert not engine.in_check(capturable.position, 0)
+        assert not engine.in_check(capturable.position, 1)
+        for owner, palace_general in (
+            (0, Square(4, 0)), (1, Square(4, 9)),
+        ):
+            owned = [
+                piece for piece in capturable.position.board
+                if piece is not None and piece.owner == owner
+            ]
+            inventory = Counter(piece.base_type_id for piece in owned)
+            assert inventory["G"] == 1
+            assert inventory["R"] <= 2
+            assert inventory["S"] <= 5
+            assert capturable.position.board[
+                palace_general.rank * 9 + palace_general.file
+            ] == Piece(owner, "G", "G")
         capture = next(
             action for action in legal_actions(capturable, compiled)
             if isinstance(action, SemanticBoardMove)
             and action.from_square == source and action.to_square == target
         )
+        assert capture.actor_type_id == "R"
         after = apply_action(capturable, capture, compiled)
         assert after.position.board[target.rank * 9 + target.file] == Piece(side, "R", "R")
+        assert after.position.board[source.rank * 9 + source.file] is None
+        assert after.ply_count == capturable.ply_count + 1
+        assert sum(
+            piece == Piece(side, "R", "R") for piece in after.position.board
+        ) == 1
         assert after.position.side_to_move == 1 - side
         assert not any(
             piece == Piece(1 - side, "S", "S")
             for piece in after.position.board
         )
         assert after.position.hands == capturable.position.hands
+
+        opponent_turn_parent = replace(
+            capturable,
+            position=replace(capturable.position, side_to_move=1 - side),
+        )
+        assert not any(
+            isinstance(action, SemanticBoardMove)
+            and action.from_square == successor_rook
+            and action.to_square == target
+            for action in legal_actions(opponent_turn_parent, compiled)
+        )
+        successor_capture = next(
+            action for action in legal_actions(after, compiled)
+            if isinstance(action, SemanticBoardMove)
+            and action.actor_type_id == "R"
+            and action.from_square == successor_rook
+            and action.to_square == target
+        )
+        assert (
+            successor_capture.actor_type_id,
+            successor_capture.from_square,
+            successor_capture.to_square,
+        ) == ("R", successor_rook, target)
 
 
 def test_cannon_all_public_actions_require_exactly_one_screen_to_capture(product):
