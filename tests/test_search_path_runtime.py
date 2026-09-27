@@ -10,6 +10,7 @@ from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.evaluator import Evaluator
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.ai.limits import SearchLimits
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.alphabeta.search import run_root_search
 from generic_chess.ai.alphabeta.statistics import SearchStatistics
 from generic_chess.ai.alphabeta.transposition import TranspositionTable
@@ -27,6 +28,9 @@ from generic_chess.core.transition import legal_successors
 from generic_chess.session.session import GameSession
 from generic_chess.core.actions import BoardMove, DropMove
 from generic_chess.core.movement import LeapAtom, RayAtom
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.schema import RuleRepeatedCycleTargetCondition
+from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 from ai_fixtures import build_4x4_rooks
 from conftest import king_type, make_compiled, make_state, sq, T
@@ -205,6 +209,50 @@ def test_continuous_check_tt_is_eligible_only_for_exact_history():
     assert exact_stats.tt_hits > 0
     assert opaque_stats.tt_skipped_ineligible_nodes > 0
     assert opaque_stats.tt_probes == 0
+
+
+def test_repeated_cycle_target_disables_abp_tt_without_changing_defaults():
+    ruleset = build_western_chess_ruleset()
+    default_compiled = compile_ruleset_for_execution(ruleset)
+    opted_compiled = compile_ruleset_for_execution(
+        replace(
+            ruleset,
+            repeated_cycle_target_conditions=(
+                RuleRepeatedCycleTargetCondition(actor=0),
+            ),
+        )
+    )
+    default_session = GameSession(default_compiled)
+    opted_session = GameSession(opted_compiled)
+    assert SearchPathRuntime.from_state(
+        default_session.state, default_compiled
+    ).tt_eligible
+    assert not SearchPathRuntime.from_state(
+        opted_session.state, opted_compiled
+    ).tt_eligible
+
+    for compiled, session, expect_tt in (
+        (default_compiled, default_session, True),
+        (opted_compiled, opted_session, False),
+    ):
+        player = AlphaBetaPlayer(
+            compiled,
+            use_disk_cache=False,
+            use_tt=True,
+            use_ordering=False,
+            use_native_semantic_legality=False,
+            tuning=SearchTuning(use_root_tactical=False),
+        )
+        decision = player.choose_action(
+            session,
+            SearchLimits(max_depth=2, quiescence_max_depth=0),
+        )
+        if expect_tt:
+            assert decision.tt_probes > 0
+            assert len(player._tt) > 0
+        else:
+            assert decision.tt_probes == 0
+            assert len(player._tt) == 0
 
 
 def test_continuous_check_tt_matches_no_tt_on_legal_history_pair():

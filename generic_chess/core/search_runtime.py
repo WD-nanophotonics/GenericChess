@@ -772,12 +772,15 @@ class SearchPathRuntime:
 
     @property
     def tt_eligible(self) -> bool:
-        """Whether exact history evidence permits continuous-check TT use."""
+        """Whether the current history-sensitive terminal rules permit TT use."""
         return bool(
             self._history_complete
             and self.history_witness_misses == 0
             and not self._opaque_imported_keys
             and self._history_context is not None
+            and not getattr(
+                self.compiled, "repeated_cycle_target_conditions", ()
+            )
         )
 
     def attach_stats(self, stats):

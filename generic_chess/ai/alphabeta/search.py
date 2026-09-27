@@ -270,8 +270,13 @@ def negamax(
         getattr(ctx.compiled, "repetition_policy", "draw")
         == "continuous_check_loss"
     )
+    repeated_cycle_target_policy = bool(
+        getattr(ctx.compiled, "repeated_cycle_target_conditions", ())
+    )
     tt_compatible = bool(ctx.use_tt)
-    if continuous_check_policy:
+    # These terminal rules depend on verified move history beyond the
+    # identity/actor/check facts represented by RuntimeHistoryContext.
+    if continuous_check_policy or repeated_cycle_target_policy:
         tt_compatible = bool(ctx.use_tt and ctx.runtime is not None and ctx.runtime.tt_eligible)
         if ctx.use_tt:
             if tt_compatible:
