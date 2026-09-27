@@ -8,6 +8,7 @@ from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import (
     RuleActionEffect,
     RuleGeometrySpec,
+    RulePathConstraint,
     RuleSemanticAction,
     RuleSet,
     RuleSquareRef,
@@ -71,6 +72,51 @@ def test_unsupported_path_predicate_fails_closed():
         kind = "path_count_eq"
 
     assert expected_action_probability((1,), "target_empty", (Predicate(),)) is None
+
+
+def test_audit_ledger_marks_unsupported_path_not_computed_and_incomplete():
+    ruleset, _compiled = _compiled_synthetic()
+    action = ruleset.semantic_actions[0]
+
+    def audit_for_path(predicate):
+        ray_action = replace(
+            action,
+            geometry=RuleGeometrySpec(
+                kind="ray", direction=(1, 0), min_steps=1, max_steps=3,
+            ),
+            path_constraints=(predicate,),
+        )
+        compiled = compile_semantic_ruleset(replace(
+            ruleset, semantic_actions=(ray_action,),
+        ))
+        # The audit concerns just this synthetic action. Filter unrelated
+        # compiler-generated legacy/drop patterns so they cannot affect the
+        # positive-control completeness result.
+        pattern = next(row for row in compiled.ir.patterns if row.name == action.name)
+        return audit_ruleset(replace(
+            compiled, ir=replace(compiled.ir, patterns=(pattern,)),
+        ))
+
+    supported = audit_for_path(RulePathConstraint("path_clear"))
+    unsupported = audit_for_path(RulePathConstraint("path_count_eq", count=1))
+
+    assert supported["coverage_complete"] is True
+    assert supported["classification"] == "COVERAGE_READY_FOR_STATIC_VALIDATION"
+    assert supported["ledger"]["X"]["unsupported_semantics"] == []
+
+    unsupported_row = unsupported["ledger"]["X"]
+    assert unsupported["coverage_complete"] is False
+    assert unsupported["classification"] == "STATIC_SEMANTIC_MATERIAL_PRIOR_V2_INCONCLUSIVE"
+    assert unsupported_row["score_coverage"] == "PARTIAL_UNVALIDATED"
+    assert any(
+        row["pattern"] == action.name
+        and row["reason"] == "path_predicate_not_exactly_modeled"
+        for row in unsupported["unsupported_semantics"]
+    )
+    assert any(
+        "path_predicate_not_exactly_modeled" in row["reasons"]
+        for row in unsupported_row["unsupported_semantics"]
+    )
 
 
 def test_piece_id_rename_changes_only_ledger_keys():
