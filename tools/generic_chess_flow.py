@@ -1559,7 +1559,8 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     require_no_supervisor_hold(root)
     if state.get("active_request_directory"):
         raise FlowError("cannot follow up while a Courier request is unresolved")
-    if state.get("recovery_state") not in (None, "IDLE"):
+    scope_reply = getattr(args, "scope_reply_local_only", False)
+    if state.get("recovery_state") not in ((None, "IDLE", "RECOVERED") if scope_reply else (None, "IDLE")):
         raise FlowError("cannot follow up while Courier recovery is unresolved")
     pending = _unresolved_escalation_ids(root)
     if pending:
@@ -1581,11 +1582,46 @@ def command_followup(root: Path, args: argparse.Namespace) -> None:
     if len(body.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
         raise FlowError("followup message must be a short inline protocol/binding delta")
     require_clean(root)
-    if getattr(args, "reviewed_local_only", False):
+    if scope_reply:
+        _scope_reply_local_only(root, state, body, response_path)
+    elif getattr(args, "reviewed_local_only", False):
         _reviewed_local_followup(root, state, body, response_path)
     else:
         require_synced(root, "sandbox")
         dispatch_message(root, state, source, "followup")
+
+
+def _scope_reply_local_only(root: Path, state: dict[str, Any],
+                            body: str, response_path: Path) -> None:
+    """Answer a Supervisor-declined order after a reconciled local-only closeout."""
+    prior_id = state.get("active_request_id")
+    if (not isinstance(prior_id, str) or response_path.parent.name != prior_id
+            or not str(state.get("last_request_key", "")).startswith("closeout-local-")
+            or not state.get("work_order_active")):
+        raise FlowError("local-only scope reply requires a replied local-only work order")
+    if "LOCAL_SUPERVISOR_REQUIRED=true" in response_path.read_text(encoding="utf-8-sig").splitlines():
+        raise FlowError("local-only review notices use --reviewed-local-only")
+    receipt = _read_json_file(response_path.parent / "receipt.json", "Courier receipt")
+    if (receipt.get("project_id") != PROJECT_ID
+            or receipt.get("request_id") != prior_id
+            or receipt.get("state") != "response_received"
+            or Path(str(receipt.get("response_path", ""))).resolve() != response_path.resolve()):
+        raise FlowError("local-only scope reply has no matching completed Courier receipt")
+    message = response_path.parent / "message.txt"
+    if not message.is_file() or "PUBLICATION_STATUS=LOCAL_ONLY" not in message.read_text(encoding="utf-8-sig").splitlines():
+        raise FlowError("prior Courier request was not a local-only closeout")
+    lineage = (
+        body.rstrip() + "\n\nReconciled scope reply:\n"
+        + f"PRIOR_REQUEST_ID={prior_id}\n"
+        + f"PRIOR_RESPONSE_SHA256={state['last_response_sha256']}\n"
+        + "The registered Supervisor declined the prior order's scope. "
+          "The local candidate remains unpublished and cannot be promoted.\n"
+    )
+    if len(lineage.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
+        raise FlowError("local-only scope reply exceeds the inline limit")
+    source = runtime_dir(root) / f"local-scope-reply-{prior_id}.txt"
+    source.write_text(lineage, encoding="utf-8")
+    dispatch_message(root, state, source, "followup", local_only=True)
 
 
 def _reviewed_local_followup(root: Path, state: dict[str, Any],
@@ -3178,8 +3214,11 @@ def parser() -> argparse.ArgumentParser:
     sub.add_parser("work").set_defaults(handler=command_work)
     followup = sub.add_parser("followup")
     followup.add_argument("--message-file", required=True)
-    followup.add_argument("--reviewed-local-only", action="store_true",
-                          help="registered Supervisor continues a reconciled local-only closeout")
+    followup_mode = followup.add_mutually_exclusive_group()
+    followup_mode.add_argument("--reviewed-local-only", action="store_true",
+                               help="registered Supervisor continues a reconciled local-only notice")
+    followup_mode.add_argument("--scope-reply-local-only", action="store_true",
+                               help="reply to a Supervisor-declined order after a reconciled local-only closeout")
     followup.set_defaults(handler=command_followup)
     start = sub.add_parser("start")
     start.add_argument("--mode", choices=("courier", "local"), required=True)

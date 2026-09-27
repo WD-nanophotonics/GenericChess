@@ -134,6 +134,15 @@ unpublished commit. Do not turn missing remote visibility alone into a
 Supervisor review requirement. Published state and promotion still require
 exact remote verification.
 
+When the matching local-only closeout reply contains a proposed order that the
+Supervisor explicitly declines on project scope, the Worker may send one
+`followup --scope-reply-local-only --message-file <path>` with that decision and
+a request for a bounded replacement. This path also accepts a fully captured
+reply imported by `recover`: its `RECOVERED` label alone is not an unresolved
+request. The command requires the matching completed Courier receipt and prior
+local-only request, and retains unpublished ancestry. It is for a scope reply,
+not for repeated requests when Chat has already answered the same question.
+
 An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
 because the Chat cannot independently inspect the unpublished commit. The
 Supervisor reviews the local SHA, tests, original request, and matching reply.
