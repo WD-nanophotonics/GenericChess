@@ -322,6 +322,101 @@ def test_public_9x10_owner_relative_square_zone_guards_use_empty_squares():
         assert len(matching) == int(expected)
 
 
+def test_compiled_type_set_and_target_zone_compose_on_static_capture_positions():
+    base = _toy_rectangular_ruleset()
+    declared_types = ("A", "B")
+    shape = BoardShape(9, 10)
+    king = base.piece_types[0]
+    attackers = tuple(
+        PieceType(type_id, type_id, ()) for type_id in ("A", "B", "C")
+    )
+    target_type = PieceType("T", "Target", ())
+    zone = tuple((file, rank) for file in range(4) for rank in range(10))
+    action = RuleSemanticAction(
+        name="declared_attacker_captures_in_zone",
+        type_ids=declared_types,
+        geometry=RuleGeometrySpec(kind="leap", offset=(1, 0)),
+        target_relation="enemy",
+        effects=(
+            RuleActionEffect(
+                "remove",
+                square_ref=RuleSquareRef(kind="target"),
+                disposition="capture_to_hand",
+                piece_owner="opponent",
+            ),
+            RuleActionEffect(
+                "move",
+                from_ref=RuleSquareRef(kind="source"),
+                to_ref=RuleSquareRef(kind="target"),
+            ),
+        ),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+        square_zone_guards=(
+            RuleSquareZoneGuard(
+                square_ref=RuleSquareRef(kind="target"),
+                spatial=RuleSpatialSelector(kind="zone", zone_squares=zone),
+                relation="inside",
+                owner_relative=True,
+            ),
+        ),
+    )
+    rows = [[None] * shape.width for _ in range(shape.height)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[9][8] = Piece(1, "K", "K")
+    piece_types = (king, *attackers, target_type)
+    ruleset = replace(
+        base,
+        piece_types=piece_types,
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={
+            piece.type_id: ((False,) * shape.area, (False,) * shape.area)
+            for piece in piece_types
+            if not piece.is_anchor
+        },
+        semantic_actions=(action,),
+    )
+    compiled = compile_ruleset_for_execution(ruleset)
+    assert compiled.ir.capabilities.new_ir_core_executable
+
+    def has_declared_capture(owner, attacker_type, target_inside):
+        # The raw zone is the left four files; owner-relative compilation
+        # mirrors it for owner 1. Both positions are otherwise static.
+        inside_target = Square(2, 4) if owner == 0 else Square(6, 5)
+        outside_target = Square(6, 4) if owner == 0 else Square(2, 5)
+        target = inside_target if target_inside else outside_target
+        source = (
+            Square(target.file - 1, target.rank)
+            if owner == 0
+            else Square(target.file + 1, target.rank)
+        )
+        state = initial_state(compiled)
+        board = list(state.position.board)
+        source_index = source.rank * shape.width + source.file
+        target_index = target.rank * shape.width + target.file
+        board[source_index] = Piece(owner, attacker_type, attacker_type)
+        board[target_index] = Piece(1 - owner, "T", "T")
+        position = replace(
+            state.position,
+            board=tuple(board),
+            side_to_move=owner,
+        )
+        state = replace(state, position=position)
+        return any(
+            isinstance(candidate, SemanticBoardMove)
+            and candidate.from_square == source
+            and candidate.to_square == target
+            for candidate in legal_actions(state, compiled)
+        )
+
+    for owner in (0, 1):
+        for attacker_type in ("A", "B", "C"):
+            for target_inside in (False, True):
+                expected = attacker_type in declared_types and target_inside
+                assert has_declared_capture(
+                    owner, attacker_type, target_inside
+                ) is expected, (owner, attacker_type, target_inside)
+
+
 def _public_9x10_cannon_ruleset(*, shift_screen_safe=True):
     shape = BoardShape(9, 10)
     king = PieceType(
