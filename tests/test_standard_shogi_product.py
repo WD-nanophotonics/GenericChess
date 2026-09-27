@@ -86,6 +86,45 @@ def test_product_curated_contracts_match_historical_semantic_authority():
         }, case["id"]
 
 
+def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():
+    from generic_chess.core.actions import action_is_board, action_is_drop
+    from generic_chess.core.coordinates import Square
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.transition import apply_action
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    state = sfen_to_gc_state(compiled, "8k/9/9/4+p4/4P4/9/9/9/K8 b - 1")
+    capture = next(
+        action
+        for action in legal_actions(state, compiled)
+        if action_is_board(action)
+        and action.from_square == Square(4, 4)
+        and action.to_square == Square(4, 5)
+    )
+    state = apply_action(state, capture, compiled)
+    assert state.position.hands[0].count("P") == 1
+    assert state.position.hands[0].count("TP") == 0
+
+    reply = next(
+        action for action in legal_actions(state, compiled) if action_is_board(action)
+    )
+    state = apply_action(state, reply, compiled)
+    drop = next(
+        action
+        for action in legal_actions(state, compiled)
+        if action_is_drop(action) and action.base_type_id == "P"
+    )
+    state = apply_action(state, drop, compiled)
+
+    assert state.position.hands[0].count("P") == 0
+    placed = state.position.board[drop.to_square.rank * 9 + drop.to_square.file]
+    assert placed is not None
+    assert (placed.base_type_id, placed.current_type_id, placed.promoted) == (
+        "P", "P", False
+    )
+
+
 def test_product_shogi_record_replay_and_alphabeta_smoke():
     compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
     session = GameSession(compiled)
