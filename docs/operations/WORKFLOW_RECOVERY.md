@@ -8,6 +8,14 @@ Supervisor HOLD or a blocked Goal.
 
 ## Supervisor attention budget
 
+The ordinary work path is Chat -> existing Courier request/session -> Worker:
+Chat supplies research orders, and the Worker implements, tests, closes out,
+and obtains the next order. The Supervisor is not a standing order source or
+the Worker's routine research partner. Do not turn a healthy Worker checkpoint
+or a missing next Chat order into a recurring Supervisor-assigned investigation.
+Supervisor contact is for a concrete policy decision, independent audit,
+material scope drift, or a fault the Worker cannot safely repair.
+
 Use Supervisor turns to set direction and bounds, review decisive evidence,
 correct Worker drift, and repair shared workflow failures. Delegate routine
 RuleSet, research, code, test, and closeout work to the registered Worker.
@@ -18,11 +26,17 @@ healthy Worker turn, inspect only the evidence needed for the next decision
 and avoid reproducing its entire analysis or test run. A short independent
 check remains appropriate when it resolves a material uncertainty about a
 checkpoint or prevents an incorrect project-wide decision.
-When Chat has no usable next order, the Worker sends the Supervisor the current
-request evidence, one proposed bounded action, and its stop condition. The
-Supervisor decides allow, deny, or replace with a narrower action and sends
-that decision back to the Worker. Do not forward a routine scope choice to the
-user or keep requesting new tests while no project question has been settled.
+When Chat has no usable next order, first reconcile the same Courier request
+and use its documented safe recovery path; do not bypass Courier by directly
+messaging Chat. The Worker may continue only already authorized independent
+work. If the order path remains unusable, the Worker sends the Supervisor the
+request/reply evidence, the recovery tried, and one bounded action with its
+stop condition. The Supervisor repairs the order path where possible and
+otherwise explicitly allows, denies, or narrows that temporary action. The
+decision is a bridge across the specific gap, not a standing stream of new
+Supervisor work orders. Return order ownership to Chat as soon as the existing
+Courier path can supply a usable order. Do not forward a routine scope choice
+to the user or keep requesting new tests while no project question is settled.
 
 ## On every abnormal Courier receipt
 
@@ -82,8 +96,10 @@ Supervisor reviews the local SHA, tests, original request, and matching reply.
 If that reply contains no new work order, use `followup --reviewed-local-only`
 at most once for that reply; the command verifies ancestry and records request
 lineage. If the Chat again returns only the same remote-evidence notice, do not
-repeat the request. Continue the latest user-approved bounded work directly
-with the registered Worker, retaining the Courier evidence for later closeout.
+repeat the request. Continue only the latest user-approved bounded work with
+the registered Worker, retaining the Courier evidence for later closeout.
+The Supervisor must repair or reconcile the missing-order path rather than
+repeatedly expanding that work into a substitute Chat/Worker research loop.
 This notice alone is neither a blocked Goal nor a HOLD.
 
 Use the smallest action supported by fresh evidence; escalate the remedy if
