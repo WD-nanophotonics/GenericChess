@@ -13,6 +13,7 @@ from generic_chess.core.pieces import Piece
 from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.core.terminal import TerminalStatus, terminal_result
 from generic_chess.core.position import HistoryRecord
+from generic_chess.core.search_runtime import SearchPathRuntime
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.schema import compute_fingerprint, ruleset_from_dict, ruleset_to_dict
@@ -676,6 +677,75 @@ def test_ranged_attacks_never_expose_general_capture_and_preserve_anchors(produc
                 ) == 1
                 for owner in (0, 1)
             )
+
+
+def test_xiangqi_ordinary_capture_push_pop_restores_full_semantic_state(product):
+    _ruleset, compiled, engine = product
+    state = _state(
+        compiled,
+        [
+            (0, "G", Square(4, 0)), (1, "G", Square(4, 9)),
+            (0, "R", Square(4, 5)),
+            (1, "S", Square(4, 7)), (1, "S", Square(8, 5)),
+        ],
+    )
+    key = repetition_identity_key(state.position, compiled)
+    counts = ((key, 1),)
+    history = (HistoryRecord(key, -1, "", False),)
+    state = replace(
+        state,
+        repetition_counts=counts,
+        history=history,
+        terminal_status=engine.terminal_result(
+            state.position, 0, counts, history
+        ),
+    )
+
+    public_actions = frozenset(legal_actions(state, compiled))
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == public_actions
+    capture = next(
+        action for action in public_actions
+        if isinstance(action, SemanticBoardMove)
+        and action.from_square == Square(4, 5)
+        and action.to_square == Square(8, 5)
+    )
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        before_actions,
+    )
+
+    runtime.push(capture)
+    assert runtime.position.board[4 * 9 + 5] is None
+    assert runtime.position.board[5 * 9 + 8] == Piece(0, "R", "R")
+    assert runtime.position.hands == state.position.hands
+    assert runtime.ply_count == state.ply_count + 1
+    runtime.pop()
+    runtime.assert_balanced()
+
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+    assert runtime.position == state.position
+    assert runtime.ply_count == state.ply_count
+    assert runtime.terminal_status == state.terminal_status
+    assert len(runtime.history) == len(state.history)
+    assert runtime.repetition_counts == dict(state.repetition_counts)
 
 
 def test_rectangular_transition_identity_and_repetition_cycle(product):
