@@ -16,7 +16,14 @@ Gmail, `gc-bridge`, a background Courier daemon, WSL, or a bypass transport.
 If a work order explicitly forbids publication, freeze and test the candidate
 locally, then use `closeout --local-only` to report its committed local SHA and
 the actual remote SHA through the same Courier session. Never claim that local
-work was published or make it eligible for promotion.
+work was published or make it eligible for promotion. A local-only closeout
+should carry enough self-contained evidence for a bounded next decision:
+the base/candidate/actual remote SHAs, the relevant patch or changed behavior,
+exact test commands and results, and known limits. Label this as reported
+local evidence. Chat may use it to issue the next bounded order without
+claiming independent remote verification; remote verification is still
+required for publication or promotion. An unpublished candidate SHA alone
+does not require routine Supervisor review.
 
 ## Current mainline route
 

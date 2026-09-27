@@ -124,6 +124,16 @@ and any one necessary user action.
 
 ## Choose a recovery action
 
+For a routine local-only closeout, the Worker provides a concise inline report
+with the order ID, base/candidate/actual remote SHAs, changed behavior and
+limits, plus exact test commands and results. Include the bounded per-order
+patch and test output inline when practical, or attach them through the same
+Courier request. This is reported local evidence; Chat can assess whether it
+supports the next bounded order without claiming remote verification of the
+unpublished commit. Do not turn missing remote visibility alone into a
+Supervisor review requirement. Published state and promotion still require
+exact remote verification.
+
 An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
 because the Chat cannot independently inspect the unpublished commit. The
 Supervisor reviews the local SHA, tests, original request, and matching reply.
@@ -141,9 +151,11 @@ of that same local-only candidate before issuing another order, record the
 conflicting evidence requirements as a shared order-path fault. Recheck the
 matching request, reply, local/remote SHAs, and the one reviewed followup.
 Do not resend equivalent requests, publish the prohibited candidate, or
-rebind Chat merely to repeat the same remote-only gate. A patch or test log
-helps only if Chat explicitly accepts it as local evidence; do not silently
-treat it as remote verification. Give the Worker a single bounded, independent
+rebind Chat merely to repeat the same remote-only gate. Check whether the
+Courier prompt that wrapped the immutable request imposed a stale remote-only
+condition; updating Courier affects future requests and never rewrites a
+submitted request. Do not silently treat a patch or test log as remote
+verification. Give the Worker a single bounded, independent
 mainline bridge with a stop condition while the Supervisor seeks a concrete
 compatible order path or a new authorized publication boundary. Record the
 decision in local runtime state so the next patrol does not reopen the same
