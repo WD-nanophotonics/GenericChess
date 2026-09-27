@@ -6,7 +6,12 @@ from ai_fixtures import build_4x4_rooks, rook as rook_type
 from conftest import king_type
 from rule_semantics_ir_fixtures import cannon_ruleset, castling_ruleset
 
-from generic_chess.core.actions import BoardMove
+from generic_chess.core.actions import (
+    BoardMove,
+    action_is_board,
+    action_source_square,
+    action_target_square,
+)
 from generic_chess.core.capture_sources import (
     probe_immediate_recaptures,
     query_capture_sources,
@@ -26,6 +31,7 @@ from generic_chess.rules.compiler import (
     compile_ruleset_for_execution,
     compile_semantic_ruleset,
 )
+from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.schema import RuleActionEffect, RuleSet, RuleSquareRef
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
@@ -40,6 +46,23 @@ def _position(compiled, pieces, side=0):
         assert board[index] is None
         board[index] = piece
     return replace(position, board=tuple(board), side_to_move=side)
+
+
+def _public_semantic_capture_pairs(compiled, position):
+    engine = SemanticEngine(compiled)
+    state = replace(initial_state(compiled), position=position)
+    public_actions = set(legal_actions(state, compiled))
+    assert public_actions == set(semantic_public_actions(engine, position))
+    return {
+        (source, target)
+        for action in public_actions
+        if action_is_board(action)
+        and (source := action_source_square(action)) is not None
+        and (target := action_target_square(action)) is not None
+        and (victim := position.board[square_to_index(target, position.board_shape)])
+        is not None
+        and victim.owner != position.side_to_move
+    }
 
 
 @pytest.fixture(scope="module")
@@ -72,6 +95,9 @@ def test_xiangqi_cannon_capture_query_respects_zero_one_two_screens(xiangqi):
         assert (source in result.pseudo_capture_sources) is expected
         assert engine.is_square_attacked(position, target_index, 0) is expected
         assert (source in result.legal_capture_sources) is expected
+        assert ((source, target) in _public_semantic_capture_pairs(
+            compiled, position
+        )) is expected
 
         off_turn = query_capture_sources(
             replace(position, side_to_move=1), target, 0, compiled
@@ -102,11 +128,41 @@ def test_xiangqi_horse_source_query_respects_blocked_leg(xiangqi):
         assert (source in result.pseudo_capture_sources) is expected
         assert engine.is_square_attacked(position, target_index, 0) is expected
         assert (source in result.legal_capture_sources) is expected
+        assert ((source, target) in _public_semantic_capture_pairs(
+            compiled, position
+        )) is expected
         off_turn = query_capture_sources(
             replace(position, side_to_move=1), target, 0, compiled
         )
         assert off_turn.pseudo_capture_sources == result.pseudo_capture_sources
         assert off_turn.legal_capture_sources is None
+
+
+def test_standard_shogi_legal_capture_exposes_concrete_source_target_pair():
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    source = Square(4, 4)
+    target = Square(4, 5)
+    victim = Piece(1, "P", "TP", promoted=True)
+    position = _position(
+        compiled,
+        [
+            (Square(0, 0), Piece(0, "K", "K")),
+            (Square(8, 8), Piece(1, "K", "K")),
+            (source, Piece(0, "R", "R")),
+            (target, victim),
+        ],
+    )
+
+    evidence = query_capture_sources(position, target, 0, compiled)
+    assert evidence.target == target and evidence.by_owner == 0
+    assert evidence.pseudo_capture_sources == (source,)
+    assert evidence.legal_capture_sources == (source,)
+
+    assert (source, target) in _public_semantic_capture_pairs(compiled, position)
+    assert position.board[square_to_index(source, position.board_shape)] == Piece(
+        0, "R", "R"
+    )
+    assert position.board[square_to_index(target, position.board_shape)] == victim
 
 
 def test_western_chess_distinguishes_pinned_pseudoattacker_from_legal_capture():
@@ -131,6 +187,25 @@ def test_western_chess_distinguishes_pinned_pseudoattacker_from_legal_capture():
     assert result.pseudo_capture_sources == (source,)
     assert result.legal_capture_sources == ()
     assert engine.is_square_attacked(position, target_index, 0) is True
+    assert (source, target) not in _public_semantic_capture_pairs(
+        compiled, position
+    )
+
+    unpinned = replace(
+        position,
+        board=tuple(
+            None
+            if index == square_to_index(Square(4, 7), position.board_shape)
+            else piece
+            for index, piece in enumerate(position.board)
+        ),
+    )
+    unpinned_result = query_capture_sources(unpinned, target, 0, compiled)
+    assert unpinned_result.pseudo_capture_sources == (source,)
+    assert unpinned_result.legal_capture_sources == (source,)
+    assert (source, target) in _public_semantic_capture_pairs(
+        compiled, unpinned
+    )
 
     black_source = Square(4, 6)
     black_target = Square(6, 6)
