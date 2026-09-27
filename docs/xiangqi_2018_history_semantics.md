@@ -135,6 +135,17 @@ These are generic observable-pattern labels only: they do not infer intent,
 classify a move as WXF chase, apply Article 20 exceptions, or affect normal
 terminal/evaluator paths.
 
+A separate 12-ply legal pair exercises the response fact at the configured
+`repetition_limit=4`. One Chariot repeatedly threatens the same Advisor token;
+the Advisor's response either leaves the legal capture line (all exact
+source-to-target captures disappear after each response) or moves while
+remaining legally capturable (the first response preserves that edge). The
+existing generic candidate extractor reports `candidate` for the former and
+`not_candidate` for the latter. The pair uses one Chariot and one Advisor, so
+neither Article 20.3 exception is invoked. This validates only the generic
+identity/capture/response facts and their candidate composition. It does not
+classify WXF chase or adjudicate other Article 20 conditions or outcomes.
+
 Still missing is the semantic relation needed to establish that a reply by a
 different piece actually resolves the specific prior chase; movement and
 continued-legal-capture are facts, not a resolution classifier. Rule-set-
