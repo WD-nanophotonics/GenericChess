@@ -238,6 +238,73 @@ def test_f24f_castling_rights_rook_presence_path_and_attack_safety():
     assert any("castle_w_ks" in a.pattern_id for a in engine.legal_actions(base))
 
 
+def test_f24f_castling_push_pop_restores_full_semantic_state():
+    compiled, _engine = standard_engine()
+    position = position_from_fen(
+        "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1", compiled
+    )
+    root = _position_state(position, compiled)
+    root_key = root.repetition_counts[0][0]
+    root = GameState(
+        position=root.position,
+        ply_count=root.ply_count,
+        repetition_counts=root.repetition_counts,
+        terminal_status=root.terminal_status,
+        history=(HistoryRecord(root_key, -1, "", False),),
+    )
+    public_actions = frozenset(legal_actions(root, compiled))
+    castle = next(
+        action for action in public_actions
+        if "castle_w_ks" in action.pattern_id
+    )
+    runtime = SearchPathRuntime.from_state(root, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == public_actions
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        before_actions,
+    )
+    expected_child = apply_action(root, castle, compiled)
+
+    runtime.push(castle)
+    assert runtime.position == expected_child.position
+    assert runtime.position.board[4] is None
+    assert runtime.position.board[7] is None
+    assert runtime.position.board[6] is not None
+    assert runtime.position.board[6].base_type_id == "K"
+    assert runtime.position.board[5] is not None
+    assert runtime.position.board[5].base_type_id == "R"
+    assert runtime.position.side_to_move == 1
+    assert runtime.ply_count == root.ply_count + 1
+    assert runtime.position.hands == root.position.hands
+    assert runtime.position.aux_state == expected_child.position.aux_state
+    rights = dict(runtime.position.aux_state)
+    assert rights[(3, -1)] == 0 and rights[(4, -1)] == 0
+    assert rights[(0, -1)] == 1 and rights[(1, -1)] == 1
+
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+
 def test_f24f_ruleset_round_trip_fingerprint_and_subject_refs():
     ruleset = western_chess_ruleset()
     compiled = compile_semantic_ruleset(ruleset)
