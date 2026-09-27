@@ -38,16 +38,21 @@ piece identities when complete history replays exactly;
 identities to pseudo-capture and counterfactual legal-capture facts.
 `tests/test_xiangqi_actual_path_target_identity.py` verifies those legal edges
 on the Xiangqi path for two same-type targets that occupy the same square at
-different plies. `tests/test_xiangqi_repeated_target_cycle_identity.py` adds a
-paired legal repetition observation: a four-ply control cycle retains the
-same chaser and target token across both capture edges, while an eight-ply
-cycle returns to the same position and repetition key but substitutes a
-same-type target onto the same square for one edge. The trace distinguishes
-the target tokens in the two cases. This establishes that existing replay and
-identity-aware legal-capture facts can expose target continuity in these
-fixtures; it does not classify WXF move nature, determine whether replies
-flee or counter, or adjudicate an outcome. Imported or incomplete histories
-still fail closed rather than receiving guessed identities.
+different plies. `tests/test_xiangqi_repeated_target_cycle_identity.py` adds
+two legal diagnostic cycles. A four-ply control retains the same chaser and
+target token across its capture edges. An eight-ply cycle returns to the same
+position and repetition key but has a same-type target on the same square for
+one edge; the trace distinguishes the tokens. This establishes only that
+existing replay and identity-aware legal-capture facts expose token changes.
+The second cycle is not a WXF-valid negative chase example: after the rook
+threatens target A on ply 2, the reply moves target B onto another square
+while A stays attacked; the rook's ply-4 edge then points to B. The later A
+edges form a same-target sub-run, so the whole cycle does not isolate
+same-target continuity from a compliant response sequence. Both fixtures
+have only two occurrences of their repeated position. Neither classifies
+WXF move nature, establishes a final WXF repetition result, or adjudicates an
+outcome. Imported or incomplete histories still fail closed rather than
+receiving guessed identities.
 
 The declarative policy surface is presently small: `repetition_limit`,
 `repetition_policy` (`draw` or `continuous_check_loss`), and automatic
@@ -70,6 +75,44 @@ WXF move classes that would determine its rule-specific outcome.
 | 19.11–19.12: resolve and cross actions | The preceding threat, current legal reply, whether it removes that threat, and whether it simultaneously creates a corresponding threat against the opponent. | Resolution and cross-check/counter-kill/counter-chase are distinct from merely giving check or making an unrelated threat. | No threat-resolution relation is stored. Compare a checking move that escapes the prior check with a checking move that leaves the prior threat intact. |
 | 19.13–19.15: protected piece; real/fake root | Attacker/protector/target identity, legal capture relation, and whether the protector can immediately capture the piece that took the protected piece. | “Protected” depends on a legal recapture; real versus fake root is determined by the immediate recapture test, not geometric defense alone. | Complete replay provides ephemeral identities, but imported roots have no persistent piece IDs and no root fact/classifier exists. Keep the protected piece fixed and add a legal protector recapture; the root classification must flip. |
 | 19.16–19.19: alternating and two-to-one patterns | Ordered per-ply nature classes, actor, target-piece identity and any counter-threat on each reply. | Alternating check/chase/idle/mating patterns and one-to-one/two-to-two chase are not interchangeable with one-sided perpetual sequences. | No generic pattern language. Keep repeated positions fixed and change only one reply from idle to cross-check (or change one target identity); adjudication classification must change. |
+
+### Bounded fixture audit for Articles 19.10 and 20.3
+
+Article 19.10 requires a response relation, not just repeated geometric or
+legal-capture pressure: after each chase, the opponent must move the attacked
+piece away or resolve that chase with another piece. The chaser must then
+continue attacking the *same piece* move after move. The four-ply control's
+rook/target-A sequence has the required per-edge target response in this
+fixture, including the first move's response to the rook already attacking
+in the repeated starting position. It remains a short pattern probe, not an
+adjudicated WXF result. In the eight-ply substitution fixture, ply 3 moves B
+to (3,5) while A, threatened on ply 2 at (3,4), remains there. B neither
+moves the attacked piece away nor blocks/resolves that attack. The token
+change at ply 4 is therefore an identity-aware capture-edge observation,
+not evidence for a compliant alternative perpetual-chase sequence; later
+edges again target A. Do not use this fixture as the contrasting WXF case.
+
+Article 20.3 makes perpetual chase of one opposing piece a loss for the
+chasing side, but permits chasing a Pawn that has not crossed the river. It
+also prohibits two or more friendly pieces perpetually chasing one opposing
+piece, with an exception when one of those chasers is a King or Pawn. These
+role/region conditions are part of the rule, not optional score-like
+corrections. The existing fixtures do not exercise these exceptions. They
+also return to the starting position only once (repetition count 2), so they
+are not evidence that a terminal repetition threshold or an Article 20
+outcome has been reached.
+
+The current declarative surface has a repetition limit and only `draw` or
+`continuous_check_loss`; it has no cycle-local target-token predicate,
+per-chase reply/resolution relation, or role/region exception expression.
+The smallest game-agnostic prerequisite is a verified, cycle-bounded history
+fact layer that can represent ordered chase-candidate edges by piece identity,
+whether each reply moved that target or otherwise resolved the threat, and
+rule-set-declared target/chaser roles and region predicates. Incomplete
+history must remain unknown. A future outcome policy can then declare its
+cycle and exception conditions; these facts alone must not label a move as
+WXF chase or assign a result. The present substitution fixture is insufficient
+for a WXF outcome test, so this order adds no adjudication failure test.
 
 ## Article 20: outcome policy and exceptions
 
