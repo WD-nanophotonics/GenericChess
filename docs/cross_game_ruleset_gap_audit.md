@@ -24,10 +24,15 @@ summary is a starting source for paired tests, not a tournament adjudication
 oracle. Rule variations and outcome details require a chosen authoritative
 ruleset before claiming a complete Janggi implementation.
 
+The [Korea Janggi Association's piece-movement page](https://koreajanggi.cafe24.com/business/business3.php)
+describes the Elephant as one straight step followed by two diagonal steps,
+with an occupied route square preventing the move. The bounded fixture below
+tests one orientation of that route, not every orientation or tournament rule.
+
 | Generic capability | Present evidence | Smallest missing observation or change |
 |---|---|---|
 | Rectangular board and initial pieces | `RuleSet.board_width/board_height`; Xiangqi 9×10 diagnostic executes | Retain 8×8 Chess and 9×9 Shogi behavior while exercising 9×10 Janggi templates. |
-| Horse/Elephant blockers | Xiangqi diagnostic uses path constraints for Horse leg and Elephant eye | Test Janggi's longer Elephant route with both intermediate points occupied separately. |
+| Horse/Elephant blockers | Xiangqi diagnostic uses path constraints for Horse leg and Elephant eye. `tests/test_janggi_palace_chariot_diagonals.py` verifies a Janggi Elephant (2,3) template with separate guards at both intermediate squares; open route succeeds and blocking either square independently rejects it for both owners. | No new primitive is needed for this tested orientation. Other Elephant orientations and integration into a complete authoritative ruleset remain unverified. |
 | Palace-only edges | `tests/test_janggi_palace_chariot_diagonals.py` verifies a 9×10 unregistered fixture: both owners in both palaces can move Chariot corner↔center and across a clear corner-to-corner diagonal; a center blocker stops the long ray; off-palace sources/targets and side-edge off-line diagonals are rejected. A one-step royal diagonal uses the same cross-zone guard. `apply_action` is checked; native compilation fails closed on square-zone guards. | No new generic primitive is needed for this tested diagonal subset. Native parity and integration with a complete authoritative Janggi ruleset remain unverified. |
 | Cannon screen count and type | Verified in `tests/test_janggi_cannon_guard_composition.py`: `path_count_eq=1` plus `count(Cannon, path_between)=0` rejects a Cannon screen for quiet and capture actions; a target-square guard rejects Cannon capture. Both owners execute on 9×10 Python Core. A 10×10 square diagnostic matches native guarded actions. | No new primitive needed for this rule. Rectangular 9×10 native execution remains unavailable, so the square native check is not a Janggi product parity claim. |
 | No-board-change action | Public action types are board move or drop; no pass action or turn-only semantic effect is declared | Add an opt-in generic pass action with explicit legality guard, history/position identity and terminal/repetition behavior. Disabled rulesets should retain the existing direct path. |

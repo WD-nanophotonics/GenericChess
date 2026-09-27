@@ -5,6 +5,7 @@ import pytest
 from generic_chess.core.actions import SemanticBoardMove
 from generic_chess.core.coordinates import Square
 from generic_chess.core.movegen import legal_actions
+from generic_chess.core.movement import LeapAtom
 from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_ruleset_for_execution
@@ -18,6 +19,8 @@ from generic_chess.rules.schema import (
     RuleSpatialSelector,
     RuleSquareRef,
     RuleSquareZoneGuard,
+    RuleStateGuard,
+    RuleTypeRef,
 )
 
 
@@ -214,3 +217,94 @@ def test_one_step_royal_diagonal_template_stays_on_marked_palace_edges():
             off_line_target = Square(4, base + 2)
             side_state = _position(compiled, owner, side_edge, mover="K")
             assert not _has_move(side_state, compiled, side_edge, off_line_target)
+
+
+def _janggi_elephant_ruleset():
+    king = PieceType(
+        "K", "Anchor",
+        tuple(
+            LeapAtom((df, dr))
+            for df in (-1, 0, 1)
+            for dr in (-1, 0, 1)
+            if df or dr
+        ),
+        is_anchor=True,
+    )
+
+    def empty_intermediate(offset):
+        return RuleStateGuard(
+            aggregation="count",
+            owner="any",
+            type_ref=RuleTypeRef("explicit", "B"),
+            compare_field="base",
+            promoted="any",
+            location="board",
+            spatial=RuleSpatialSelector(
+                "exact",
+                refs=(RuleSquareRef(
+                    "offset_from_source", offset=offset, owner_relative=True
+                ),),
+            ),
+            comparison="eq",
+            value=0,
+        )
+
+    elephant = RuleSemanticAction(
+        name="elephant_three_by_two",
+        type_ids=("E",),
+        geometry=RuleGeometrySpec(
+            kind="leap", offset=(2, 3), owner_relative=True
+        ),
+        target_relation="empty",
+        state_guards=(empty_intermediate((0, 1)), empty_intermediate((1, 2))),
+        effects=(RuleActionEffect(
+            "move", from_ref=RuleSquareRef("source"),
+            to_ref=RuleSquareRef("target"),
+        ),),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    )
+    rows = [[None] * 9 for _ in range(10)]
+    rows[0][0] = Piece(0, "K", "K")
+    rows[9][8] = Piece(1, "K", "K")
+    rows[2][2] = Piece(0, "E", "E")
+    mask = (False,) * 90
+    return RuleSet(
+        board_size=None,
+        board_width=9,
+        board_height=10,
+        piece_types=(king, PieceType("E", "Elephant", ()), PieceType("B", "Blocker", ())),
+        initial_position=tuple(tuple(row) for row in rows),
+        drop_allowed={"E": (mask, mask), "B": (mask, mask)},
+        semantic_actions=(elephant,),
+    )
+
+
+def test_janggi_elephant_each_intermediate_blocker_is_independently_enforced():
+    compiled = compile_ruleset_for_execution(_janggi_elephant_ruleset())
+    for owner, source, target, blockers in (
+        (0, Square(2, 2), Square(4, 5), (Square(2, 3), Square(3, 4))),
+        (1, Square(6, 7), Square(4, 4), (Square(6, 6), Square(5, 5))),
+    ):
+        for blocked_index in (None, 0, 1):
+            state = initial_state(compiled)
+            board = list(state.position.board)
+            for index, piece in enumerate(board):
+                if piece is not None and piece.base_type_id in ("E", "B"):
+                    board[index] = None
+            board[source.rank * 9 + source.file] = Piece(owner, "E", "E")
+            if blocked_index is not None:
+                blocker = blockers[blocked_index]
+                board[blocker.rank * 9 + blocker.file] = Piece(1 - owner, "B", "B")
+            state = replace(
+                state,
+                position=replace(state.position, board=tuple(board), side_to_move=owner),
+            )
+            matches = [
+                action for action in legal_actions(state, compiled)
+                if isinstance(action, SemanticBoardMove)
+                and action.from_square == source and action.to_square == target
+            ]
+            assert bool(matches) is (blocked_index is None)
+            if blocked_index is None:
+                child = apply_action(state, matches[0], compiled)
+                assert child.position.board[target.rank * 9 + target.file] == Piece(owner, "E", "E")
