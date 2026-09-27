@@ -5,7 +5,7 @@ import json
 
 import pytest
 
-from generic_chess.core.actions import SemanticBoardMove, action_from_dict
+from generic_chess.core.actions import PassAction, SemanticBoardMove, action_from_dict
 from history_candidate_test_support import (
     extract_repeated_cycle_capture_candidate,
 )
@@ -924,3 +924,139 @@ def test_repeated_cycle_target_requires_legal_capture_not_pinned_pseudoattack():
         if legal_position != pinned_position
     ]
     assert changed == [4 * 8]
+
+
+def test_repeated_cycle_requires_target_identity_continuity_at_same_square():
+    condition = RuleRepeatedCycleTargetCondition(actor=1)
+    positive_cycle = (
+        (Square(3, 3), Square(4, 3)),
+        (Square(0, 3), Square(1, 3)),
+        (Square(4, 3), Square(5, 3)),
+        (Square(1, 3), Square(2, 3)),
+        (Square(5, 3), Square(3, 3)),
+        (Square(2, 3), Square(1, 3)),
+        PassAction(),
+        (Square(1, 3), Square(0, 3)),
+    )
+    replacement_cycle = (
+        (Square(3, 3), Square(4, 3)),
+        (Square(0, 3), Square(1, 3)),
+        (Square(3, 4), Square(3, 3)),
+        (Square(1, 3), Square(2, 3)),
+        (Square(4, 3), Square(3, 4)),
+        (Square(2, 3), Square(1, 3)),
+        PassAction(),
+        (Square(1, 3), Square(0, 3)),
+    )
+    observations = []
+    for moves, expected, continuous in (
+        (
+            positive_cycle,
+            TerminalResult(TerminalStatus.RULE_LOSS, winner=0),
+            True,
+        ),
+        (
+            replacement_cycle,
+            TerminalResult(TerminalStatus.REPETITION),
+            False,
+        ),
+    ):
+        rows = [[None] * 8 for _ in range(8)]
+        for square, piece in (
+            (Square(7, 0), Piece(0, "K", "K")),
+            (Square(0, 2), Piece(1, "K", "K")),
+            (Square(3, 3), Piece(0, "Q", "Q")),
+            (Square(3, 4), Piece(0, "Q", "Q")),
+            (Square(0, 3), Piece(1, "R", "R")),
+        ):
+            rows[square.rank][square.file] = piece
+        base_ruleset = build_western_chess_ruleset()
+        ruleset = replace(
+            base_ruleset,
+            initial_position=tuple(tuple(row) for row in rows),
+            repetition_limit=3,
+            pass_enabled=True,
+            repeated_cycle_target_conditions=(condition,),
+            semantic_actions=tuple(
+                action
+                for action in base_ruleset.semantic_actions
+                if action.name in {
+                    "k_quiet", "k_capture", "q_quiet", "q_capture",
+                    "r_quiet", "r_capture",
+                }
+            ),
+        )
+        compiled = compile_semantic_ruleset(ruleset)
+        replay_compiled = replace(
+            compiled,
+            ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+        )
+        state = initial_state(replay_compiled)
+        for step in moves * 2:
+            if isinstance(step, PassAction):
+                action = step
+                assert action in legal_actions(state, replay_compiled)
+            else:
+                source, target = step
+                action = next(
+                    action
+                    for action in legal_actions(state, replay_compiled)
+                    if isinstance(action, SemanticBoardMove)
+                    and action.from_square == source
+                    and action.to_square == target
+                )
+            state = apply_action(state, action, replay_compiled)
+
+        assert dict(state.repetition_counts)[state.history[-1].position_key] == 3
+        trace = trace_latest_repeated_cycle_capture_facts(state, replay_compiled)
+        assert trace.status == "verified" and trace.cycle is not None
+        assert (trace.cycle.start_ply, trace.cycle.end_ply) == (0, 16)
+        actor = next(
+            item
+            for item in summarize_repeated_cycle_targets(trace).actors
+            if item.actor == condition.actor
+        )
+        assert (actor.shared_mover_target_count > 0) is continuous
+
+        chaser = reconstruct_history_provenance(state, replay_compiled)
+        assert chaser.status == "verified", chaser.reason
+        target_square = Square(3, 3)
+        if continuous:
+            facts = tuple(
+                fact
+                for fact in trace.cycle.capture_facts
+                if fact.frame_ply in (4, 12)
+                and fact.source == Square(2, 3)
+                and fact.target == Square(5, 3)
+            )
+        else:
+            facts = tuple(
+                fact
+                for fact in trace.cycle.capture_facts
+                if fact.frame_ply in (4, 12)
+                and fact.source == Square(2, 3)
+                and fact.target == target_square
+            )
+        assert tuple(fact.frame_ply for fact in facts) == (4, 12)
+        if continuous:
+            assert facts[0].target_token == facts[1].target_token
+        else:
+            assert facts[0].target_token != facts[1].target_token
+            for ply in (4, 12):
+                index = square_to_index(
+                    target_square, chaser.frames[0].position.board_shape
+                )
+                assert chaser.frames[ply].position.board[index] == Piece(0, "Q", "Q")
+
+        engine = semantic_engine_for(compiled)
+        assert engine is not None
+        assert terminal_result(state, compiled) == expected
+        assert engine.terminal_result(
+            state.position,
+            state.ply_count,
+            state.repetition_counts,
+            state.history,
+        ) == expected
+        observations.append(state.position)
+
+    assert observations[0] == observations[1]
