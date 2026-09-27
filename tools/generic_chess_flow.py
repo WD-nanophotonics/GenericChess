@@ -2027,8 +2027,16 @@ def command_recover(root: Path, args: argparse.Namespace) -> None:
             raise FlowError("there is no active Courier request to recover")
         state["active_request_directory"] = directory
         recovery_event(state, "request_binding_restored", request_directory=directory)
-    worker_thread_id = getattr(args, "worker_thread_id", None) or os.environ.get("CODEX_THREAD_ID")
-    state["worker_thread_id"] = worker_thread_id
+    registered_worker = _supervisor_config(root).get("worker_thread_id")
+    requested_worker = getattr(args, "worker_thread_id", None)
+    if registered_worker and requested_worker and requested_worker != registered_worker:
+        raise FlowError("recover worker thread differs from the registered Worker")
+    worker_thread_id = (
+        registered_worker or requested_worker or state.get("worker_thread_id")
+        or os.environ.get("CODEX_THREAD_ID")
+    )
+    if worker_thread_id:
+        state["worker_thread_id"] = worker_thread_id
     state["recovery_state"] = "RECOVERING"
     recovery_event(state, "recovery_started", request_directory=directory)
     save_state(root, state)

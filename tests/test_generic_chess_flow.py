@@ -678,6 +678,28 @@ def test_recover_uses_single_evidence_retry_when_probe_finds_no_request(monkeypa
     assert state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "BLOCKED"
 
 
+def test_supervisor_recover_preserves_registered_worker_identity(monkeypatch, tmp_path):
+    state = {
+        "active": True, "mode": "courier", "active_request_directory": "request",
+        "worker_thread_id": "worker-1",
+    }
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {"worker_thread_id": "worker-1"})
+    monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: {
+        "state": "response_received", "response_path": "response.txt",
+    })
+    monkeypatch.setattr(flow, "update_response_state", lambda *_args, **_kwargs: None)
+    monkeypatch.setenv("CODEX_THREAD_ID", "supervisor-1")
+
+    flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id=None))
+
+    assert state["worker_thread_id"] == "worker-1"
+    with pytest.raises(flow.FlowError, match="differs from the registered Worker"):
+        flow.command_recover(tmp_path, SimpleNamespace(worker_thread_id="supervisor-1"))
+
+
 def test_recover_waits_for_matching_live_owner_without_escalation(monkeypatch, tmp_path, capsys):
     request_id = "GENERICCHESS-20260911-144204-d1f0a876"
     state = {
