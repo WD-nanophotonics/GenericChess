@@ -28,7 +28,7 @@ from scripts.audit_static_semantic_material_prior_v2a import (
 )
 
 
-GENERATOR_VERSION = "v2a-coverage-only-2"
+GENERATOR_VERSION = "v2a-coverage-only-3"
 SCOPE_CONTRACT = "INTRINSIC_BOARD_SEMANTICS"
 _DYNAMIC_INVARIANTS = {"own_anchor_safe", "squares_not_attacked"}
 
@@ -88,6 +88,114 @@ def _inventory_coverage(compiled: Any) -> dict[str, Any]:
     }
 
 
+def _finite_local_path_supported(pattern: Any) -> bool:
+    """Recognize only already-verified finite path occupancy predicates."""
+    for predicate in pattern.path:
+        if predicate.owner_filter != "any":
+            return False
+        if predicate.kind == "path_clear":
+            if any(value is not None for value in (predicate.count, predicate.lo, predicate.hi)):
+                return False
+        elif predicate.kind == "path_count_eq":
+            if predicate.count != 1 or predicate.lo is not None or predicate.hi is not None:
+                return False
+        else:
+            return False
+    return True
+
+
+def _single_square_empty_guard(guard: Any) -> bool:
+    """Exact one-cell occupancy-zero guard over the local three-label space."""
+    refs = guard.spatial.refs
+    return bool(
+        guard.aggregation == "count"
+        and guard.owner == "any"
+        and guard.type_ref.kind == "any"
+        and guard.compare_field == "base"
+        and guard.promoted == "any"
+        and guard.location == "board"
+        and guard.spatial.kind == "exact"
+        and len(refs) == 1
+        and refs[0].kind == "offset_from_source"
+        and refs[0].offset is not None
+        and refs[0].owner_relative
+        and guard.comparison == "eq"
+        and guard.value == 0
+        and guard.subject_ref == refs[0]
+    )
+
+
+def _typed_target_guard(guard: Any) -> bool:
+    refs = guard.spatial.refs
+    return bool(
+        guard.aggregation == "count"
+        and guard.owner in ("own", "opponent")
+        and guard.compare_field == "current"
+        and guard.promoted == "any"
+        and guard.location == "board"
+        and guard.spatial.kind == "exact"
+        and len(refs) == 1
+        and refs[0].kind == "target"
+        and guard.type_ref.kind == "explicit"
+        and guard.comparison == "eq"
+        and guard.value == 1
+        and guard.subject_ref == refs[0]
+    )
+
+
+def _deterministic_domain_guard_supported(compiled: Any, guard: Any) -> bool:
+    return bool(
+        guard.square_ref.kind in ("source", "target")
+        and guard.spatial.kind == "zone"
+        and guard.spatial.zone_id in compiled.ir.zones
+        and guard.relation in ("inside", "outside")
+        and isinstance(guard.owner_relative, bool)
+    )
+
+
+def _domain_guard_holds(
+    compiled: Any, guard: Any, owner: int, source: int, target: int
+) -> bool | None:
+    """Evaluate a compiled source/target zone mask without occupancy weights."""
+    if not _deterministic_domain_guard_supported(compiled, guard):
+        return None
+    width = compiled.board_shape.width
+    height = compiled.board_shape.height
+    zone = set(compiled.ir.zones[guard.spatial.zone_id].squares)
+    if guard.owner_relative and owner == 1:
+        zone = {
+            (height - 1 - square // width) * width
+            + (width - 1 - square % width)
+            for square in zone
+        }
+    selected = source if guard.square_ref.kind == "source" else target
+    inside = selected in zone
+    return inside if guard.relation == "inside" else not inside
+
+
+def _coverage_intrinsic_reasons(pattern: Any, geometry: Any, compiled: Any) -> list[str]:
+    reasons = _intrinsic_unsupported(pattern, geometry)
+    if _finite_local_path_supported(pattern):
+        reasons = [reason for reason in reasons if reason != "path_predicate_not_exactly_modeled"]
+    if pattern.guards and all(_single_square_empty_guard(g) for g in pattern.guards):
+        reasons = [
+            reason for reason in reasons
+            if reason != "intrinsic_source_or_state_guard_not_exactly_modeled"
+        ]
+    elif pattern.guards and all(_typed_target_guard(g) for g in pattern.guards):
+        reasons = [
+            reason for reason in reasons
+            if reason != "intrinsic_source_or_state_guard_not_exactly_modeled"
+        ]
+        reasons.append("typed_target_occupancy_not_in_frozen_alphabet")
+    for guard in pattern.square_zone_guards:
+        if not _deterministic_domain_guard_supported(compiled, guard):
+            ref_kind = guard.square_ref.kind
+            position = ref_kind if ref_kind in ("source", "target") else "other"
+            reasons.append(f"square_zone_{position}_guard_not_exactly_modeled")
+    return sorted(set(reasons))
+
+
 def audit_coverage_ruleset(compiled: Any, ruleset_name: str) -> dict[str, Any]:
     """Classify current compiled semantics without calculating prior scores."""
     inventory = _inventory_coverage(compiled)
@@ -131,13 +239,7 @@ def audit_coverage_ruleset(compiled: Any, ruleset_name: str) -> dict[str, Any]:
                 })
                 continue
 
-            reasons = _intrinsic_unsupported(pattern, geometry)
-            for guard in pattern.square_zone_guards:
-                ref_kind = guard.square_ref.kind
-                position = ref_kind if ref_kind in ("source", "target") else "other"
-                reasons.append(
-                    f"square_zone_{position}_guard_not_exactly_modeled"
-                )
+            reasons = _coverage_intrinsic_reasons(pattern, geometry, compiled)
             if reasons:
                 unsupported.append({
                     "types": sorted(pattern.type_ids),
@@ -148,17 +250,21 @@ def audit_coverage_ruleset(compiled: Any, ruleset_name: str) -> dict[str, Any]:
                 })
                 continue
 
-            guard_complete = True
-            for type_id in sorted(pattern.type_ids):
-                for owner in (0, 1):
-                    for source in range(board_area):
-                        if _source_guards_hold(compiled, pattern, type_id, owner, source) is None:
-                            guard_complete = False
+            guard_complete = not pattern.guards or all(
+                _single_square_empty_guard(g) for g in pattern.guards
+            )
+            if not guard_complete:
+                guard_complete = True
+                for type_id in sorted(pattern.type_ids):
+                    for owner in (0, 1):
+                        for source in range(board_area):
+                            if _source_guards_hold(compiled, pattern, type_id, owner, source) is None:
+                                guard_complete = False
+                                break
+                        if not guard_complete:
                             break
                     if not guard_complete:
                         break
-                if not guard_complete:
-                    break
             if not guard_complete:
                 unsupported.append({
                     "types": sorted(pattern.type_ids),
@@ -169,17 +275,23 @@ def audit_coverage_ruleset(compiled: Any, ruleset_name: str) -> dict[str, Any]:
                 })
                 continue
 
+            families = [
+                "movement_geometry",
+                "quiet_capture_endpoint_relations",
+                "path_and_screen_occupancy",
+            ]
+            if (any(predicate.kind == "path_count_eq" for predicate in pattern.path)
+                    or pattern.guards):
+                families.append("finite_local_occupancy_predicates")
+            if pattern.square_zone_guards:
+                families.append("deterministic_geometry_domain_masks")
             modeled.append({
                 "types": sorted(pattern.type_ids),
                 "pattern": pattern.name,
                 "geometry": geometry.kind,
                 "semantic_inputs": _semantic_inputs(pattern),
-                "families": [
-                    "movement_geometry",
-                    "quiet_capture_endpoint_relations",
-                    "path_and_screen_occupancy",
-                ] + (["immediate_type_transition_outcomes"]
-                     if pattern.promotion_mode != "none" else []),
+                "families": families + (["immediate_type_transition_outcomes"]
+                                         if pattern.promotion_mode != "none" else []),
                 "source_guards": "exactly_supported_and_evaluable",
             })
 
