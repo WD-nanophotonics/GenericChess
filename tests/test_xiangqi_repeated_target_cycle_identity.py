@@ -8,17 +8,30 @@ from generic_chess.core.capture_pressure_trace import trace_next_turn_legal_capt
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
 from generic_chess.core.history_cycle_trace import (
+    summarize_repeated_cycle_targets,
     trace_latest_repeated_cycle_capture_facts,
 )
 from generic_chess.core.identity import position_identity_key
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
 from generic_chess.core.transition import apply_action, initial_state
+from generic_chess.core.search_runtime import SearchPathRuntime
+from generic_chess.core.semantic_executor import semantic_engine_for
+from generic_chess.core.terminal import (
+    TerminalResult,
+    TerminalStatus,
+    _terminal_from_parts,
+    terminal_from_search_runtime,
+    terminal_result,
+)
 from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.schema import RuleRepeatedCycleTargetCondition
 from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
 
 
-def _compiled_cycle_ruleset():
+def _compiled_cycle_ruleset(
+    *, repeated_cycle_target_conditions=(), repetition_limit=None
+):
     rows = [[None] * 9 for _ in range(10)]
     for square, piece in (
         (Square(4, 0), Piece(0, "G", "G")),
@@ -31,6 +44,12 @@ def _compiled_cycle_ruleset():
     ruleset = replace(
         build_xiangqi_diagnostic_ruleset(),
         initial_position=tuple(tuple(row) for row in rows),
+        repeated_cycle_target_conditions=repeated_cycle_target_conditions,
+        **(
+            {}
+            if repetition_limit is None
+            else {"repetition_limit": repetition_limit}
+        ),
     )
     return compile_ruleset_for_execution(ruleset)
 
@@ -221,3 +240,108 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
         unknown_cycle, swap_chaser, initial_target_id
     )
     assert unknown_candidate.status == "unknown"
+
+
+def test_repeated_cycle_adjudication_tracks_moving_target_identity_at_threshold():
+    condition = RuleRepeatedCycleTargetCondition(actor=1)
+    same_target_moves = (
+        (Square(3, 5), Square(3, 4)),
+        (Square(0, 5), Square(0, 4)),
+        (Square(3, 4), Square(3, 5)),
+        (Square(0, 4), Square(0, 5)),
+    )
+    substituted_moves = (
+        (Square(3, 5), Square(3, 4)),
+        (Square(0, 5), Square(0, 4)),
+        (Square(4, 5), Square(3, 5)),
+        (Square(0, 4), Square(1, 4)),
+        (Square(3, 5), Square(4, 5)),
+        (Square(1, 4), Square(1, 5)),
+        (Square(3, 4), Square(3, 5)),
+        (Square(1, 5), Square(0, 5)),
+    )
+
+    observations = []
+    for moves, expected in (
+        (same_target_moves, TerminalResult(TerminalStatus.RULE_LOSS, winner=0)),
+        (substituted_moves, TerminalResult(TerminalStatus.REPETITION)),
+    ):
+        compiled = _compiled_cycle_ruleset(
+            repeated_cycle_target_conditions=(condition,), repetition_limit=2
+        )
+        replay_compiled = replace(
+            compiled,
+            ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+        )
+        state, _key, _provenance, _capture_trace = _replay(
+            replay_compiled, moves, expected_occurrences=2
+        )
+        cycle_trace = trace_latest_repeated_cycle_capture_facts(
+            state, replay_compiled
+        )
+        assert cycle_trace.status == "verified", cycle_trace.reason
+        assert cycle_trace.cycle is not None
+        assert (cycle_trace.cycle.start_ply, cycle_trace.cycle.end_ply) == (
+            0, len(moves)
+        )
+        actor_summary = next(
+            actor
+            for actor in summarize_repeated_cycle_targets(cycle_trace).actors
+            if actor.actor == condition.actor
+        )
+        if expected.status is TerminalStatus.RULE_LOSS:
+            assert actor_summary.shared_mover_target_count == 1
+            target_token = actor_summary.shared_mover_target_tokens[0]
+            actor_plies = {
+                ply
+                for ply, actor in cycle_trace.cycle.action_actors
+                if actor == condition.actor
+            }
+            moving_facts = tuple(
+                fact
+                for fact in cycle_trace.cycle.capture_facts
+                if fact.frame_ply in actor_plies
+                and fact.source_token
+                == dict(cycle_trace.cycle.action_source_tokens)[fact.frame_ply]
+            )
+            assert len({fact.target for fact in moving_facts}) == 2
+            assert {fact.target_token for fact in moving_facts} == {target_token}
+        else:
+            assert actor_summary.shared_mover_target_count == 0
+            assert actor_summary.distinct_target_count == 2
+            assert all(
+                actor_targets
+                for _, actor_targets in actor_summary.mover_targets_by_ply
+            )
+
+        assert dict(state.repetition_counts)[cycle_trace.cycle.position_key] == 2
+        provenance = reconstruct_history_provenance(state, replay_compiled)
+        assert provenance.status == "verified", provenance.reason
+        runtime = SearchPathRuntime.from_state(
+            state,
+            compiled,
+            history_witnesses=tuple(frame.position for frame in provenance.frames),
+        )
+        engine = semantic_engine_for(compiled)
+        assert engine is not None
+        results = (
+            terminal_result(state, compiled),
+            _terminal_from_parts(
+                state.position,
+                state.ply_count,
+                state.repetition_counts,
+                compiled,
+                state.history,
+            ),
+            engine.terminal_result(
+                state.position,
+                state.ply_count,
+                state.repetition_counts,
+                state.history,
+            ),
+            terminal_from_search_runtime(runtime),
+        )
+        assert results == (expected,) * 4
+        observations.append(state.position)
+
+    assert observations[0] == observations[1]
