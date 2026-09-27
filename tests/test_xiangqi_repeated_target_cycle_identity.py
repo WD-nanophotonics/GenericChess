@@ -345,3 +345,80 @@ def test_repeated_cycle_adjudication_tracks_moving_target_identity_at_threshold(
         observations.append(state.position)
 
     assert observations[0] == observations[1]
+
+
+def test_terminal_condition_does_not_merge_replacement_target_on_same_square():
+    condition = RuleRepeatedCycleTargetCondition(actor=1)
+    same_target_moves = (
+        (Square(3, 5), Square(3, 4)),
+        (Square(0, 5), Square(0, 4)),
+        (Square(3, 4), Square(3, 5)),
+        (Square(0, 4), Square(0, 5)),
+    )
+    substituted_target_moves = (
+        (Square(3, 5), Square(3, 4)),
+        (Square(0, 5), Square(0, 4)),
+        (Square(4, 5), Square(3, 5)),
+        (Square(0, 4), Square(1, 4)),
+        (Square(3, 5), Square(4, 5)),
+        (Square(1, 4), Square(1, 5)),
+        (Square(3, 4), Square(3, 5)),
+        (Square(1, 5), Square(0, 5)),
+    )
+    observations = []
+    for moves, expected, expect_shared_target in (
+        (
+            same_target_moves,
+            TerminalResult(TerminalStatus.RULE_LOSS, winner=0),
+            True,
+        ),
+        (
+            substituted_target_moves,
+            TerminalResult(TerminalStatus.REPETITION),
+            False,
+        ),
+    ):
+        compiled = _compiled_cycle_ruleset(
+            repeated_cycle_target_conditions=(condition,), repetition_limit=2
+        )
+        replay_compiled = replace(
+            compiled,
+            ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+        )
+        state, _key, provenance, _capture_trace = _replay(
+            replay_compiled, moves, expected_occurrences=2
+        )
+        trace = trace_latest_repeated_cycle_capture_facts(state, replay_compiled)
+        assert trace.status == "verified" and trace.cycle is not None
+        actor = next(
+            item
+            for item in summarize_repeated_cycle_targets(trace).actors
+            if item.actor == condition.actor
+        )
+        assert (actor.shared_mover_target_count > 0) is expect_shared_target
+
+        if not expect_shared_target:
+            target_square = Square(3, 5)
+            target_index = square_to_index(
+                target_square, provenance.frames[0].position.board_shape
+            )
+            first_piece = provenance.frames[0].position.board[target_index]
+            replacement_piece = provenance.frames[4].position.board[target_index]
+            first_id = provenance.frames[0].identities[target_index]
+            replacement_id = provenance.frames[4].identities[target_index]
+            assert first_piece == replacement_piece == Piece(0, "R", "R")
+            assert first_id is not None and replacement_id is not None
+            assert first_id != replacement_id
+
+        engine = semantic_engine_for(compiled)
+        assert engine is not None
+        assert terminal_result(state, compiled) == expected
+        assert engine.terminal_result(
+            state.position,
+            state.ply_count,
+            state.repetition_counts,
+            state.history,
+        ) == expected
+        observations.append(state.position)
+
+    assert observations[0] == observations[1]
