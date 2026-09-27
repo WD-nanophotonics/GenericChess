@@ -21,6 +21,7 @@ from generic_chess.rules.schema import (
     RuleAuxState,
     RuleGeometrySpec,
     RuleInvariant,
+    RulePathConstraint,
     RuleReplaceSelector,
     RuleSemanticAction,
     RuleSlotGuard,
@@ -116,6 +117,7 @@ def _pass_mate_ruleset(threshold):
         geometry=RuleGeometrySpec(kind="legacy_atoms", atom_kind="ray"),
         target_relation="enemy",
         composition="replace_legacy",
+        path_constraints=(RulePathConstraint("path_clear"),),
         replace_selector=RuleReplaceSelector(
             type_ids=("R",),
             action_family="board",
