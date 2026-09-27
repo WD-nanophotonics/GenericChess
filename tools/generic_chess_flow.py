@@ -30,6 +30,7 @@ unknown variable, the minimal direct observation that tests it, and why full
 games are or are not needed. Label it CAUSAL_DIAGNOSTIC or STRENGTH_BENCHMARK.
 """
 FULL_SHA = re.compile(r"^[0-9a-f]{40}$")
+SHA256_HEX = re.compile(r"^[0-9a-f]{64}$")
 CONTROL_FIELDS = {
     "GENERICCHESS_STATUS",
     "GENERICCHESS_CANDIDATE_SHA",
@@ -1862,9 +1863,12 @@ def command_supervisor_prepare_target_rollover(root: Path, args: argparse.Namesp
     )
     successor_directory = prepared.get("request_directory")
     successor_id = prepared.get("request_id")
+    successor_fingerprint = prepared.get("fingerprint")
     if (not isinstance(successor_directory, str) or not isinstance(successor_id, str)
             or successor_id == args.prior_request_id
-            or prepared.get("project_id") != PROJECT_ID):
+            or prepared.get("project_id") != PROJECT_ID
+            or not isinstance(successor_fingerprint, str)
+            or not SHA256_HEX.fullmatch(successor_fingerprint)):
         raise FlowError("ChatCourier did not prepare a distinct request in the same project")
     lineage = {
         "schema": "generic-chess-target-rollover-preparation-v1",
@@ -1872,23 +1876,286 @@ def command_supervisor_prepare_target_rollover(root: Path, args: argparse.Namesp
         "basis": "user_direct",
         "project_id": PROJECT_ID,
         "prior_request_id": args.prior_request_id,
+        "prior_request_directory": request_directory,
+        "prior_response_path": str(response_path.resolve()),
         "prior_target_url": prior_target_url,
+        "prior_chat_project_id": prior_binding["chat_project_id"],
         "prior_response_sha256": expected_response_sha,
         "prior_local_sha": prior_local_sha,
         "current_local_sha": current_local_sha,
         "remote_sha": current_remote_sha,
         "successor_request_id": successor_id,
         "successor_request_directory": successor_directory,
+        "successor_request_fingerprint": successor_fingerprint,
         "successor_source_target_url": None,
         "successor_target_url": None,
         "profile_fingerprint": profile_fingerprint,
         "supervisor_thread_id": supervisor_id,
+        "execution_attempts": 0,
         "prepared_at": time.time(),
     }
     _atomic_json(lineage_path, lineage)
     print(json.dumps(lineage, ensure_ascii=False, indent=2, sort_keys=True))
     print("NEXT_ACTION=Supervisor review and execute courier_rollover_target --basis user_direct only if approved")
     return 0
+
+
+def command_supervisor_execute_target_rollover(root: Path, args: argparse.Namespace) -> int:
+    """Execute or recover the one prepared same-project request, never prepare another."""
+    _config, supervisor_id = _current_supervisor(root)
+    state = active_state(root)
+    require_no_supervisor_hold(root)
+    if branch(root) != "sandbox":
+        raise FlowError("target rollover execution must run from the sandbox worktree")
+    require_clean(root)
+    lineage_path = runtime_dir(root, create=False) / f"target-rollover-{args.prior_request_id}.json"
+    lineage = _read_json_file(lineage_path, "target-rollover lineage")
+    if (lineage.get("schema") != "generic-chess-target-rollover-preparation-v1"
+            or lineage.get("project_id") != PROJECT_ID
+            or lineage.get("prior_request_id") != args.prior_request_id
+            or lineage.get("supervisor_thread_id") != supervisor_id):
+        raise FlowError("target-rollover lineage does not belong to this project and Supervisor")
+    if lineage.get("status") == "COMPLETED":
+        print(json.dumps(lineage, ensure_ascii=False, indent=2, sort_keys=True))
+        return 0
+    if lineage.get("status") not in {
+        "PREPARED_NOT_SUBMITTED", "EXECUTING", "INTERRUPTED",
+    }:
+        raise FlowError("target-rollover lineage is not executable")
+
+    prior_request_id = lineage.get("prior_request_id")
+    prior_directory_value = lineage.get("prior_request_directory")
+    prior_response_value = lineage.get("prior_response_path")
+    prior_response_sha = lineage.get("prior_response_sha256")
+    request_id = lineage.get("successor_request_id")
+    request_directory_value = lineage.get("successor_request_directory")
+    request_fingerprint = lineage.get("successor_request_fingerprint")
+    if (not isinstance(prior_request_id, str)
+            or not isinstance(prior_directory_value, str)
+            or not isinstance(prior_response_value, str)
+            or not isinstance(prior_response_sha, str)
+            or not isinstance(request_id, str)
+            or not isinstance(request_directory_value, str)
+            or not isinstance(request_fingerprint, str)
+            or not SHA256_HEX.fullmatch(request_fingerprint)
+            or Path(request_directory_value).name != request_id
+            or not isinstance(lineage.get("execution_attempts"), int)):
+        raise FlowError("target-rollover lineage is incomplete or malformed")
+
+    prior_directory = Path(prior_directory_value).resolve()
+    prior_response = Path(prior_response_value).resolve()
+    request_directory = Path(request_directory_value).resolve()
+    if (prior_directory.name != prior_request_id
+            or prior_response.parent != prior_directory
+            or not prior_response.is_file()
+            or _optional_file_digest(prior_response) != prior_response_sha):
+        raise FlowError("prior request/reply lineage no longer matches its captured evidence")
+    prior_text = prior_response.read_text(encoding="utf-8-sig")
+    if ("LOCAL_SUPERVISOR_REQUIRED=true" not in prior_text.splitlines()
+            or WORK_ORDER_ID.search(prior_text)):
+        raise FlowError("prior matching reply does not prove there is no unconsumed work order")
+    prior_receipt = _read_json_file(prior_directory / "receipt.json", "prior Courier receipt")
+    if (prior_receipt.get("request_id") != prior_request_id
+            or prior_receipt.get("project_id") != PROJECT_ID
+            or prior_receipt.get("state") != "response_received"
+            or Path(str(prior_receipt.get("response_path", ""))).resolve() != prior_response):
+        raise FlowError("prior Courier receipt no longer reconciles to its matching reply")
+    if _validate_courier_profile_continuity(prior_directory) != lineage.get("profile_fingerprint"):
+        raise FlowError("ChatCourier profile differs from the prepared lineage")
+
+    attempts = lineage["execution_attempts"]
+    recovering = lineage.get("status") in {"EXECUTING", "INTERRUPTED"}
+    if recovering != bool(getattr(args, "resume", False)):
+        action = "--resume is required for the preserved request" if recovering else "--resume is only for an interrupted attempt"
+        raise FlowError(action)
+    if (not recovering and attempts != 0) or (recovering and attempts != 1):
+        raise FlowError("the single recovery allowance is exhausted or inconsistent")
+    if attempts >= 2:
+        raise FlowError("stop-loss recovery allowance exhausted; preserve evidence for Supervisor review")
+
+    current_local_sha = sha(root)
+    fetch(root, "sandbox")
+    current_remote_sha = sha(root, "origin/sandbox")
+    if (current_remote_sha != lineage.get("remote_sha")
+            or not git_ok(root, "merge-base", "--is-ancestor", lineage.get("current_local_sha", ""), current_local_sha)
+            or not git_ok(root, "merge-base", "--is-ancestor", current_remote_sha, current_local_sha)):
+        raise FlowError("sandbox/remote ancestry changed since target-rollover preparation")
+
+    # Status is read-only; require both requests to remain tied to the exact
+    # old reply and prepared successor before the only authorized send path.
+    courier_quiescence(root)
+    prior_status = courier(root, "courier_status", str(prior_directory))
+    if (prior_status.get("event") != "courier_status"
+            or prior_status.get("project_id") != PROJECT_ID
+            or prior_status.get("request_id") != prior_request_id
+            or prior_status.get("state") != "response_received"
+            or Path(str(prior_status.get("response_path", ""))).resolve() != prior_response):
+        raise FlowError("old Courier request is not reconciled to its completed reply")
+    successor_status = courier(root, "courier_status", str(request_directory))
+    if (successor_status.get("event") != "courier_status"
+            or successor_status.get("project_id") != PROJECT_ID
+            or successor_status.get("request_id") != request_id
+            or successor_status.get("fingerprint") != request_fingerprint):
+        raise FlowError("prepared successor status does not match the recorded request lineage")
+    request_manifest = _read_json_file(request_directory / "request.json", "prepared successor request")
+    if (request_manifest.get("project_id") != PROJECT_ID
+            or request_manifest.get("request_id") != request_id
+            or request_directory.parent != prior_directory.parent):
+        raise FlowError("prepared successor manifest is not the recorded same-project request")
+
+    rollover_intent_path = request_directory / "target-rollover.json"
+    if rollover_intent_path.exists():
+        rollover_intent = _read_json_file(rollover_intent_path, "Courier target-rollover intent")
+        if (rollover_intent.get("version") != 1
+                or rollover_intent.get("project_id") != PROJECT_ID
+                or rollover_intent.get("request_id") != request_id
+                or rollover_intent.get("basis") != "user_direct"
+                or rollover_intent.get("source_url") != lineage.get("prior_target_url")
+                or rollover_intent.get("source_fingerprint") != request_fingerprint):
+            raise FlowError("Courier target-rollover intent does not match the preserved lineage")
+
+    def validate_successor_target(successor_url: object) -> None:
+        if not isinstance(successor_url, str) or not successor_url:
+            raise FlowError("completed rollover is missing the successor Chat URL")
+        binding = _read_json_file(request_directory / "target-binding.json",
+                                  "completed successor target binding")
+        intent = _read_json_file(rollover_intent_path, "completed rollover intent")
+        if (binding.get("project_id") != PROJECT_ID
+                or binding.get("request_id") != request_id
+                or binding.get("chat_project_id") != lineage.get("prior_chat_project_id")
+                or binding.get("chat_url") != successor_url
+                or intent.get("phase") != "submitted"
+                or intent.get("source_url") != lineage.get("prior_target_url")
+                or intent.get("successor_url") != successor_url):
+            raise FlowError("successor URL is not bound to the recorded same-project target rollover")
+
+    if successor_status.get("state") == "response_received":
+        if not rollover_intent_path.is_file():
+            raise FlowError("completed request lacks the durable same-project rollover intent")
+        successor_receipt = _read_json_file(request_directory / "receipt.json",
+                                             "completed successor receipt")
+        if (successor_receipt.get("request_id") != request_id
+                or successor_receipt.get("project_id") != PROJECT_ID
+                or successor_receipt.get("state") != "response_received"):
+            raise FlowError("completed successor receipt does not match the prepared request")
+        validate_successor_target(successor_receipt.get("successor_url"))
+        received = {
+            "event": "response_received", "ok": True, "phase": "complete",
+            "project_id": PROJECT_ID, "request_id": request_id,
+            "response_path": successor_status.get("response_path"),
+            "successor_url": successor_receipt.get("successor_url"),
+        }
+        response_value = received.get("response_path")
+        if not isinstance(response_value, str) or Path(response_value).parent.resolve() != request_directory:
+            raise FlowError("completed successor receipt has an invalid response path")
+        state["active_request_directory"] = str(request_directory)
+        state["active_request_id"] = request_id
+        state["active_request_fingerprint"] = request_fingerprint
+        update_response_state(root, state, received, source="supervisor_target_rollover_recovery")
+        lineage.update({
+            "status": "COMPLETED", "successor_target_url": received.get("successor_url"),
+            "successor_response_path": response_value,
+            "successor_response_sha256": state.get("last_response_sha256"),
+            "completed_at": time.time(),
+        })
+        _atomic_json(lineage_path, lineage)
+        print(json.dumps(lineage, ensure_ascii=False, indent=2, sort_keys=True))
+        return 0
+
+    if not recovering:
+        if successor_status.get("state") != "prepared":
+            raise FlowError("first target rollover attempt requires a fresh unsubmitted request")
+        if ((request_directory / "receipt.json").exists()
+                or (request_directory / "response.txt").exists()
+                or (request_directory / "target-rollover.json").exists()):
+            raise FlowError("prepared request already has execution artifacts; do not submit it")
+        events_path = request_directory / "events.jsonl"
+        if events_path.exists() and events_path.read_text(encoding="utf-8-sig").strip():
+            raise FlowError("prepared request is not fresh; execution artifacts already exist")
+        if (state.get("active_request_directory")
+                or state.get("active_request_id") != prior_request_id
+                or state.get("last_work_order_id") is not None
+                or state.get("last_response_sha256") != prior_response_sha
+                or Path(str(state.get("last_response_path", ""))).resolve() != prior_response):
+            raise FlowError("session no longer matches the reviewed no-work-order prior reply")
+    else:
+        if not rollover_intent_path.exists():
+            events_path = request_directory / "events.jsonl"
+            if events_path.exists():
+                try:
+                    request_events = [json.loads(line) for line in
+                                      events_path.read_text(encoding="utf-8-sig").splitlines()]
+                except json.JSONDecodeError as exc:
+                    raise FlowError("prepared successor event log is malformed") from exc
+                if any(isinstance(item, dict) and item.get("event") in {
+                    "request_submitted", "chat_submission_unconfirmed", "response_received",
+                } for item in request_events):
+                    raise FlowError("successor shows submission evidence without a rollover intent")
+            if successor_status.get("state") != "prepared":
+                raise FlowError("same-request recovery is missing its durable rollover intent")
+        if state.get("active_request_directory") not in {None, str(request_directory)}:
+            raise FlowError("another Courier request occupies the workflow session")
+        if state.get("active_request_id") not in {prior_request_id, request_id}:
+            raise FlowError("workflow session no longer matches the preserved rollover request")
+        if state.get("last_work_order_id") is not None:
+            raise FlowError("workflow already accepted a different work order during rollover recovery")
+
+    courier_quiescence(root)
+    state["active_request_directory"] = str(request_directory)
+    state["active_request_id"] = request_id
+    state["active_request_fingerprint"] = request_fingerprint
+    state["last_request_key"] = f"target-rollover-{prior_request_id}"
+    state["recovery_state"] = "IDLE"
+    lineage["status"] = "EXECUTING"
+    lineage["execution_attempts"] = attempts + 1
+    lineage["last_execution_started_at"] = time.time()
+    _atomic_json(lineage_path, lineage)
+    save_state(root, state)
+
+    try:
+        event = courier(root, "courier_rollover_target", str(request_directory),
+                        "--basis", "user_direct", stream=True, allow_failure=True)
+    except FlowError as exc:
+        event = {"event": "rollover_execution_unobserved", "ok": False,
+                 "project_id": PROJECT_ID, "request_id": request_id,
+                 "detail": str(exc)}
+    if (event.get("project_id") != PROJECT_ID
+            or event.get("request_id") != request_id):
+        event = {"event": "rollover_execution_unmatched", "ok": False,
+                 "project_id": PROJECT_ID, "request_id": request_id,
+                 "detail": json.dumps(event, ensure_ascii=False)}
+    if event.get("event") in {"response_received", "response_duplicate"}:
+        response_value = event.get("response_path")
+        if not isinstance(response_value, str) or Path(response_value).parent.resolve() != request_directory:
+            event = {"event": "rollover_response_path_invalid", "ok": False,
+                     "project_id": PROJECT_ID, "request_id": request_id,
+                     "detail": "response path is not inside the prepared successor request"}
+        else:
+            validate_successor_target(event.get("successor_url"))
+            update_response_state(root, state, event, source="supervisor_target_rollover")
+            event_receipt = _read_json_file(request_directory / "receipt.json",
+                                            "completed successor receipt")
+            lineage.update({
+                "status": "COMPLETED",
+                "successor_target_url": event.get("successor_url") or event_receipt.get("successor_url"),
+                "successor_response_path": response_value,
+                "successor_response_sha256": state.get("last_response_sha256"),
+                "completed_at": time.time(), "last_event": event,
+            })
+            _atomic_json(lineage_path, lineage)
+            print(json.dumps(lineage, ensure_ascii=False, indent=2, sort_keys=True))
+            return 0
+
+    lineage.update({
+        "status": "INTERRUPTED", "last_event": event,
+        "interrupted_at": time.time(),
+        "resume_budget": "one_same_request_recovery",
+    })
+    save_state(root, state)
+    _atomic_json(lineage_path, lineage)
+    print(json.dumps(lineage, ensure_ascii=False, indent=2, sort_keys=True))
+    print("TARGET_ROLLOVER_INTERRUPTED; preserve and resume only this request with --resume")
+    return 1
 
 
 def command_publish(root: Path, args: argparse.Namespace) -> None:
@@ -2972,6 +3239,11 @@ def parser() -> argparse.ArgumentParser:
     rollover_prepare.add_argument("--prior-request-id", required=True)
     rollover_prepare.add_argument("--message-file", required=True)
     rollover_prepare.set_defaults(handler=command_supervisor_prepare_target_rollover)
+    rollover_execute = sub.add_parser("supervisor-execute-target-rollover")
+    rollover_execute.add_argument("--prior-request-id", required=True)
+    rollover_execute.add_argument("--resume", action="store_true",
+                                  help="recover the same request once after an interrupted execution")
+    rollover_execute.set_defaults(handler=command_supervisor_execute_target_rollover)
     resolve = sub.add_parser("supervisor-resolve")
     resolve.add_argument("--escalation-id", required=True)
     resolve.add_argument("--action", choices=("RESUME_WORKER", "RECOVERED", "USER_SUPERSEDED_REQUEST", "HUMAN_REQUIRED"), required=True)

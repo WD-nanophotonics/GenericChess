@@ -1495,7 +1495,8 @@ def test_supervisor_target_rollover_prepares_only_and_records_lineage(
                     "request_id": prior_id, "state": "response_received"}
         assert args[0] == "courier_prepare"
         return {"project_id": "GENERICCHESS", "request_id": "successor-1",
-                "request_directory": str(tmp_path / "outbox" / "successor-1")}
+                "request_directory": str(tmp_path / "outbox" / "successor-1"),
+                "fingerprint": "f" * 64}
 
     monkeypatch.setattr(flow, "courier", fake_courier)
     args = SimpleNamespace(prior_request_id=prior_id, message_file=str(message_path))
@@ -1567,6 +1568,262 @@ def test_supervisor_target_rollover_refuses_unconsumed_order_before_courier(
             tmp_path, SimpleNamespace(prior_request_id=prior_id,
                                       message_file=str(message_path)))
     assert calls == []
+
+
+def _target_rollover_execution_fixture(monkeypatch, tmp_path):
+    prior_id, state, message_path, local_sha, remote_sha = \
+        _rollover_preparation_fixture(tmp_path)
+    prior_dir = Path(state["last_response_path"]).parent
+    successor_id = "GENERICCHESS-20260927-successor-1"
+    successor_dir = prior_dir.parent / successor_id
+    successor_dir.mkdir()
+    (successor_dir / "request.json").write_text(json.dumps({
+        "project_id": "GENERICCHESS", "request_id": successor_id,
+    }), encoding="utf-8")
+    (successor_dir / "message.txt").write_text(message_path.read_text(encoding="utf-8"),
+                                                 encoding="utf-8")
+    profile_path = tmp_path / "ChatCourier" / "profile"
+    monkeypatch.setenv("CHAT_COURIER_PROFILE", str(profile_path))
+    monkeypatch.delenv("CHAT_COURIER_PROFILE_DIRECTORY", raising=False)
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    lineage = {
+        "schema": "generic-chess-target-rollover-preparation-v1",
+        "status": "PREPARED_NOT_SUBMITTED", "basis": "user_direct",
+        "project_id": "GENERICCHESS", "prior_request_id": prior_id,
+        "prior_request_directory": str(prior_dir.resolve()),
+        "prior_response_path": str(Path(state["last_response_path"]).resolve()),
+        "prior_target_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/source-chat",
+        "prior_chat_project_id": "g-p-test-generic-chess",
+        "prior_response_sha256": state["last_response_sha256"],
+        "prior_local_sha": local_sha, "current_local_sha": "a" * 40,
+        "remote_sha": remote_sha, "successor_request_id": successor_id,
+        "successor_request_directory": str(successor_dir.resolve()),
+        "successor_request_fingerprint": "f" * 64,
+        "profile_fingerprint": flow._courier_profile_binding()[1],
+        "supervisor_thread_id": "supervisor-1", "execution_attempts": 0,
+    }
+    (runtime / f"target-rollover-{prior_id}.json").write_text(
+        json.dumps(lineage), encoding="utf-8")
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor-1"))
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root, create=True: runtime)
+    monkeypatch.setattr(flow, "save_state", lambda *_args: None)
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref=None: {
+        None: "a" * 40, "origin/sandbox": remote_sha,
+    }[ref])
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+    monkeypatch.setattr(flow, "courier_quiescence", lambda _root: {"quiescent": True})
+    return prior_id, prior_dir, state, successor_id, successor_dir, runtime
+
+
+def test_supervisor_target_rollover_execute_imports_reply_without_new_request(
+        monkeypatch, tmp_path, capsys):
+    prior_id, prior_dir, state, successor_id, successor_dir, runtime = \
+        _target_rollover_execution_fixture(monkeypatch, tmp_path)
+    calls = []
+    response = successor_dir / "response.txt"
+
+    def fake_courier(_root, operation, request_directory, *args, **_kwargs):
+        calls.append((operation, request_directory, args))
+        if operation == "courier_status":
+            path = Path(request_directory)
+            if path == prior_dir:
+                return {"event": "courier_status", "project_id": "GENERICCHESS",
+                        "request_id": prior_id, "state": "response_received",
+                        "response_path": str(prior_dir / "response.txt")}
+            return {"event": "courier_status", "project_id": "GENERICCHESS",
+                    "request_id": successor_id, "fingerprint": "f" * 64,
+                        "state": "prepared"}
+        assert operation == "courier_rollover_target"
+        (successor_dir / "target-rollover.json").write_text(json.dumps({
+            "version": 1, "project_id": "GENERICCHESS", "request_id": successor_id,
+            "basis": "user_direct",
+            "source_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/source-chat",
+            "source_fingerprint": "f" * 64, "phase": "submitted",
+            "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+        }), encoding="utf-8")
+        (successor_dir / "target-binding.json").write_text(json.dumps({
+            "project_id": "GENERICCHESS", "request_id": successor_id,
+            "chat_project_id": "g-p-test-generic-chess",
+            "chat_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+        }), encoding="utf-8")
+        response.write_text(
+            "One bounded next order.\nWORK_ORDER_ID=ORDER-1\n"
+            "GENERICCHESS_STATUS=CONTINUE\nGENERICCHESS_CANDIDATE_SHA=NONE\n"
+            "GENERICCHESS_PROMOTION=HOLD\n", encoding="utf-8")
+        (successor_dir / "receipt.json").write_text(json.dumps({
+            "project_id": "GENERICCHESS", "request_id": successor_id,
+            "state": "response_received", "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+        }), encoding="utf-8")
+        return {"event": "response_received", "ok": True,
+                "project_id": "GENERICCHESS", "request_id": successor_id,
+                "response_path": str(response),
+                "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat"}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    assert flow.command_supervisor_execute_target_rollover(
+        tmp_path, SimpleNamespace(prior_request_id=prior_id, resume=False)) == 0
+    lineage = json.loads((runtime / f"target-rollover-{prior_id}.json").read_text())
+    assert lineage["status"] == "COMPLETED"
+    assert lineage["successor_target_url"].endswith("/successor-chat")
+    assert state["active_request_directory"] is None
+    assert state["last_work_order_id"] == "ORDER-1"
+    assert [call[0] for call in calls] == [
+        "courier_status", "courier_status", "courier_rollover_target"
+    ]
+    assert calls[-1][1] == str(successor_dir.resolve())
+    assert calls[-1][2] == ("--basis", "user_direct")
+
+
+def test_supervisor_target_rollover_interruption_resumes_same_request_once(
+        monkeypatch, tmp_path, capsys):
+    prior_id, prior_dir, state, successor_id, successor_dir, runtime = \
+        _target_rollover_execution_fixture(monkeypatch, tmp_path)
+    calls = []
+    response = successor_dir / "response.txt"
+
+    def fake_courier(_root, operation, request_directory, *args, **_kwargs):
+        calls.append((operation, request_directory, args))
+        if operation == "courier_status":
+            path = Path(request_directory)
+            if path == prior_dir:
+                return {"event": "courier_status", "project_id": "GENERICCHESS",
+                        "request_id": prior_id, "state": "response_received",
+                        "response_path": str(prior_dir / "response.txt")}
+            receipt = json.loads((successor_dir / "receipt.json").read_text(encoding="utf-8")) \
+                if (successor_dir / "receipt.json").exists() else {}
+            status = ("prepared" if not receipt else
+                      "response_received" if receipt.get("state") == "response_received"
+                      else receipt.get("state", "prepared"))
+            return {"event": "courier_status", "project_id": "GENERICCHESS",
+                    "request_id": successor_id, "fingerprint": "f" * 64,
+                    "state": status, "response_path": str(response) if status == "response_received" else None}
+        assert operation == "courier_rollover_target"
+        if len([call for call in calls if call[0] == operation]) == 1:
+            intent = {"version": 1, "project_id": "GENERICCHESS",
+                      "request_id": successor_id, "basis": "user_direct",
+                      "source_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/source-chat",
+                      "source_fingerprint": "f" * 64, "phase": "submitted",
+                      "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat"}
+            (successor_dir / "target-rollover.json").write_text(json.dumps(intent), encoding="utf-8")
+            (successor_dir / "events.jsonl").write_text(json.dumps({
+                "event": "request_submitted", "project_id": "GENERICCHESS",
+                "request_id": successor_id,
+            }) + "\n", encoding="utf-8")
+            (successor_dir / "receipt.json").write_text(json.dumps({
+                "project_id": "GENERICCHESS", "request_id": successor_id,
+                "state": "response_timeout",
+            }), encoding="utf-8")
+            return {"event": "response_timeout", "ok": False,
+                    "project_id": "GENERICCHESS", "request_id": successor_id}
+        response.write_text(
+            "Resumed order.\nWORK_ORDER_ID=ORDER-2\n"
+            "GENERICCHESS_STATUS=CONTINUE\nGENERICCHESS_CANDIDATE_SHA=NONE\n"
+            "GENERICCHESS_PROMOTION=HOLD\n", encoding="utf-8")
+        intent = json.loads((successor_dir / "target-rollover.json").read_text(encoding="utf-8"))
+        intent["successor_url"] = "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat"
+        (successor_dir / "target-rollover.json").write_text(json.dumps(intent), encoding="utf-8")
+        (successor_dir / "target-binding.json").write_text(json.dumps({
+            "project_id": "GENERICCHESS", "request_id": successor_id,
+            "chat_project_id": "g-p-test-generic-chess",
+            "chat_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+        }), encoding="utf-8")
+        (successor_dir / "receipt.json").write_text(json.dumps({
+            "project_id": "GENERICCHESS", "request_id": successor_id,
+            "state": "response_received", "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+        }), encoding="utf-8")
+        return {"event": "response_received", "ok": True,
+                "project_id": "GENERICCHESS", "request_id": successor_id,
+                "response_path": str(response),
+                "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat"}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    first = flow.command_supervisor_execute_target_rollover(
+        tmp_path, SimpleNamespace(prior_request_id=prior_id, resume=False))
+    assert first == 1
+    lineage = json.loads((runtime / f"target-rollover-{prior_id}.json").read_text())
+    assert lineage["status"] == "INTERRUPTED"
+    assert lineage["execution_attempts"] == 1
+    assert state["active_request_directory"] == str(successor_dir.resolve())
+
+    assert flow.command_supervisor_execute_target_rollover(
+        tmp_path, SimpleNamespace(prior_request_id=prior_id, resume=True)) == 0
+    lineage = json.loads((runtime / f"target-rollover-{prior_id}.json").read_text())
+    assert lineage["status"] == "COMPLETED"
+    assert lineage["execution_attempts"] == 2
+    assert state["active_request_directory"] is None
+    assert state["last_work_order_id"] == "ORDER-2"
+    rollover_calls = [call for call in calls if call[0] == "courier_rollover_target"]
+    assert len(rollover_calls) == 2
+    assert {call[1] for call in rollover_calls} == {str(successor_dir.resolve())}
+    assert all(call[2] == ("--basis", "user_direct") for call in rollover_calls)
+    assert not any(call[0] == "courier_prepare" for call in calls)
+
+
+def test_supervisor_target_rollover_stops_after_one_same_request_recovery(
+        monkeypatch, tmp_path):
+    prior_id, prior_dir, state, successor_id, successor_dir, runtime = \
+        _target_rollover_execution_fixture(monkeypatch, tmp_path)
+    calls = []
+
+    def fake_courier(_root, operation, request_directory, *_args, **_kwargs):
+        calls.append((operation, request_directory))
+        if operation == "courier_status":
+            path = Path(request_directory)
+            if path == prior_dir:
+                return {"event": "courier_status", "project_id": "GENERICCHESS",
+                        "request_id": prior_id, "state": "response_received",
+                        "response_path": str(prior_dir / "response.txt")}
+            receipt_path = successor_dir / "receipt.json"
+            receipt = json.loads(receipt_path.read_text(encoding="utf-8")) if receipt_path.exists() else {}
+            return {"event": "courier_status", "project_id": "GENERICCHESS",
+                    "request_id": successor_id, "fingerprint": "f" * 64,
+                    "state": receipt.get("state", "prepared")}
+        assert operation == "courier_rollover_target"
+        if not (successor_dir / "target-rollover.json").exists():
+            (successor_dir / "target-rollover.json").write_text(json.dumps({
+                "version": 1, "project_id": "GENERICCHESS", "request_id": successor_id,
+                "basis": "user_direct",
+                "source_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/source-chat",
+                "source_fingerprint": "f" * 64, "phase": "submitted",
+                "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+            }), encoding="utf-8")
+            (successor_dir / "target-binding.json").write_text(json.dumps({
+                "project_id": "GENERICCHESS", "request_id": successor_id,
+                "chat_project_id": "g-p-test-generic-chess",
+                "chat_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+            }), encoding="utf-8")
+            (successor_dir / "events.jsonl").write_text(json.dumps({
+                "event": "request_submitted", "project_id": "GENERICCHESS",
+                "request_id": successor_id,
+            }) + "\n", encoding="utf-8")
+        (successor_dir / "receipt.json").write_text(json.dumps({
+            "project_id": "GENERICCHESS", "request_id": successor_id,
+            "state": "response_timeout",
+        }), encoding="utf-8")
+        return {"event": "response_timeout", "ok": False,
+                "project_id": "GENERICCHESS", "request_id": successor_id}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    assert flow.command_supervisor_execute_target_rollover(
+        tmp_path, SimpleNamespace(prior_request_id=prior_id, resume=False)) == 1
+    assert flow.command_supervisor_execute_target_rollover(
+        tmp_path, SimpleNamespace(prior_request_id=prior_id, resume=True)) == 1
+    with pytest.raises(flow.FlowError, match="single recovery allowance"):
+        flow.command_supervisor_execute_target_rollover(
+            tmp_path, SimpleNamespace(prior_request_id=prior_id, resume=True))
+    assert len([call for call in calls if call[0] == "courier_rollover_target"]) == 2
+    assert {call[1] for call in calls if call[0] == "courier_rollover_target"} == {
+        str(successor_dir.resolve())
+    }
+    lineage = json.loads((runtime / f"target-rollover-{prior_id}.json").read_text())
+    assert lineage["status"] == "INTERRUPTED"
+    assert lineage["execution_attempts"] == 2
 
 
 def test_update_response_state_imports_body_and_normalizes_missing_footer(
