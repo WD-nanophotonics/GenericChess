@@ -143,7 +143,13 @@ def test_same_target_pair_distinguishes_evading_from_still_legal_capture():
     ]
 
 
-def _target_summary_trace(switch_targets, repeated_cycle_target_conditions=()):
+def _target_summary_trace(
+    switch_targets,
+    repeated_cycle_target_conditions=(),
+    *,
+    support_rook=False,
+    move_general=False,
+):
     rows = [[None] * 9 for _ in range(10)]
     for square, piece in (
         (Square(4, 0), Piece(0, "G", "G")),
@@ -153,6 +159,8 @@ def _target_summary_trace(switch_targets, repeated_cycle_target_conditions=()):
         (Square(6, 8), Piece(1, "R", "R")),
     ):
         rows[square.rank][square.file] = piece
+    if support_rook:
+        rows[5][4] = Piece(0, "R", "R")
 
     ruleset = replace(
         build_xiangqi_diagnostic_ruleset(),
@@ -168,7 +176,14 @@ def _target_summary_trace(switch_targets, repeated_cycle_target_conditions=()):
         compiled,
         ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
     )
-    if switch_targets:
+    if move_general:
+        moves = (
+            (Square(4, 0), Square(4, 1)),
+            (Square(4, 8), Square(3, 7)),
+            (Square(4, 1), Square(4, 0)),
+            (Square(3, 7), Square(4, 8)),
+        )
+    elif switch_targets:
         moves = (
             (Square(3, 9), Square(4, 9)),
             (Square(4, 8), Square(3, 7)),
@@ -250,6 +265,7 @@ def test_rule_cycle_target_condition_roundtrips_and_distinguishes_keep_from_swit
         trace, state, compiled, ruleset = _target_summary_trace(
             switch_targets,
             repeated_cycle_target_conditions=(condition,),
+            support_rook=True,
         )
         serialized = ruleset_to_dict(ruleset)
         assert serialized["repeated_cycle_target_conditions"] == [
@@ -315,16 +331,28 @@ def test_opt_in_cycle_target_outcome_disables_native_capability():
 
 
 def test_actor_loss_is_identical_on_core_semantic_and_search_terminal_paths():
-    for switch_targets, expected in (
-        (False, TerminalResult(TerminalStatus.RULE_LOSS, winner=1)),
-        (True, TerminalResult(TerminalStatus.ONGOING)),
+    positive_final_position = None
+    for switch_targets, move_general, expected in (
+        (False, False, TerminalResult(TerminalStatus.RULE_LOSS, winner=1)),
+        (True, False, TerminalResult(TerminalStatus.ONGOING)),
+        (False, True, TerminalResult(TerminalStatus.ONGOING)),
     ):
         _trace, state, compiled, _ruleset = _target_summary_trace(
             switch_targets=switch_targets,
+            move_general=move_general,
+            support_rook=True,
             repeated_cycle_target_conditions=(
                 RuleRepeatedCycleTargetCondition(actor=0),
             ),
         )
+        summary = summarize_repeated_cycle_targets(_trace)
+        actor_summary = next(item for item in summary.actors if item.actor == 0)
+        if not switch_targets and not move_general:
+            positive_final_position = state.position
+        if move_general:
+            assert state.position == positive_final_position
+            assert actor_summary.shared_target_count == 1
+            assert actor_summary.shared_mover_target_count == 0
         assert terminal_result(state, compiled) == expected
         assert _terminal_from_parts(
             state.position,
@@ -353,7 +381,7 @@ def test_actor_loss_is_identical_on_core_semantic_and_search_terminal_paths():
         assert runtime.history_witness_misses == 0
         assert not runtime._opaque_imported_keys
         assert terminal_from_search_runtime(runtime) == expected
-        if not switch_targets:
+        if not switch_targets and not move_general:
             prior = initial_state(compiled)
             for record in state.history[1:-1]:
                 action = action_from_dict(json.loads(record.action_signature))

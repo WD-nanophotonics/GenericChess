@@ -158,7 +158,7 @@ class RuleConsecutiveActionAdjudication:
 
 @dataclass(frozen=True, slots=True)
 class RuleRepeatedCycleTargetCondition:
-    """Opt in to an outcome when an actor shares a legal target across a cycle."""
+    """Opt in when the piece moved on each actor turn shares a legal target."""
 
     actor: int
     outcome: str = "actor_loss"

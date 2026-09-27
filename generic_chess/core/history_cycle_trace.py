@@ -7,16 +7,18 @@ infer reply intent, or apply a ruleset-specific adjudication policy.
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Literal
 
+from .actions import action_from_dict, action_source_square
 from .capture_pressure_trace import (
     NextTurnLegalCaptureFact,
     trace_capture_pressure,
     trace_next_turn_legal_captures,
 )
 from .capture_sources import query_counterfactual_legal_capture_sources
-from .coordinates import index_to_square
+from .coordinates import index_to_square, square_to_index
 from .history_provenance import PieceInstanceId, reconstruct_history_provenance
 from .position import GameState
 
@@ -52,6 +54,7 @@ class RepeatedPositionCycleCaptureFacts:
     capture_facts: tuple[NextTurnLegalCaptureFact, ...]
     response_facts: tuple[CaptureEdgeResponseFact, ...] = ()
     action_actors: tuple[tuple[int, int], ...] = ()
+    action_source_tokens: tuple[tuple[int, PieceInstanceId | None], ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -68,15 +71,16 @@ class ActorCycleTargetSummary:
     """Observed non-anchor legal-capture target identities on cycle turns.
 
     Each turn is included, even when it has no legal-capture targets. The
-    intersection therefore means a non-anchor target token was legally
-    capturable after every one of that actor's moves in the observed cycle
-    window. It is a descriptive fact, not a chase or outcome classification.
+    all-source intersection is descriptive. The mover-source intersection is
+    narrower: its source token must be the piece moved on that exact turn.
     """
 
     actor: int
     targets_by_ply: tuple[tuple[int, tuple[PieceInstanceId, ...]], ...]
     shared_target_tokens: tuple[PieceInstanceId, ...]
     all_target_tokens: tuple[PieceInstanceId, ...]
+    mover_targets_by_ply: tuple[tuple[int, tuple[PieceInstanceId, ...]], ...] = ()
+    shared_mover_target_tokens: tuple[PieceInstanceId, ...] = ()
 
     @property
     def shared_target_count(self) -> int:
@@ -85,6 +89,10 @@ class ActorCycleTargetSummary:
     @property
     def distinct_target_count(self) -> int:
         return len(self.all_target_tokens)
+
+    @property
+    def shared_mover_target_count(self) -> int:
+        return len(self.shared_mover_target_tokens)
 
 
 @dataclass(frozen=True, slots=True)
@@ -99,7 +107,7 @@ class RepeatedCycleTargetSummary:
 def evaluate_repeated_cycle_target_condition(
     summary: RepeatedCycleTargetSummary, actor: int
 ) -> Literal["satisfied", "unsatisfied", "unknown"]:
-    """Evaluate the declared shared-target fact, without assigning an outcome."""
+    """Evaluate whether the moved source token shared a target across its turns."""
     if summary.status != "verified":
         return "unknown"
     if isinstance(actor, bool) or actor not in (0, 1):
@@ -111,7 +119,7 @@ def evaluate_repeated_cycle_target_condition(
         return "unsatisfied"
     return (
         "satisfied"
-        if actor_summary.shared_target_count >= 1
+        if actor_summary.shared_mover_target_count >= 1
         else "unsatisfied"
     )
 
@@ -137,7 +145,18 @@ def summarize_repeated_cycle_targets(
         return RepeatedCycleTargetSummary(
             "unknown", reason="repeated-cycle actor list contains duplicate plies"
         )
+    mover_by_ply = dict(cycle.action_source_tokens)
+    if (
+        len(mover_by_ply) != len(cycle.action_source_tokens)
+        or set(mover_by_ply) != set(actors_by_ply)
+    ):
+        return RepeatedCycleTargetSummary(
+            "unknown", reason="repeated-cycle mover identities do not align with actor plies"
+        )
     targets_by_ply: dict[int, set[PieceInstanceId]] = {
+        ply: set() for ply, _actor in cycle.action_actors
+    }
+    mover_targets_by_ply: dict[int, set[PieceInstanceId]] = {
         ply: set() for ply, _actor in cycle.action_actors
     }
     for fact in cycle.capture_facts:
@@ -146,6 +165,8 @@ def summarize_repeated_cycle_targets(
                 "unknown", reason="capture fact does not match a repeated-cycle actor ply"
             )
         targets_by_ply[fact.frame_ply].add(fact.target_token)
+        if fact.source_token == mover_by_ply[fact.frame_ply]:
+            mover_targets_by_ply[fact.frame_ply].add(fact.target_token)
 
     result = []
     for actor in sorted({actor for _ply, actor in cycle.action_actors}):
@@ -154,10 +175,18 @@ def summarize_repeated_cycle_targets(
             for ply, mover in cycle.action_actors
             if mover == actor
         )
+        source_turns = tuple(
+            (ply, mover_targets_by_ply[ply])
+            for ply, mover in cycle.action_actors
+            if mover == actor
+        )
         if not actor_turns:
             continue
         shared = set.intersection(*(targets for _ply, targets in actor_turns))
         union = set.union(*(targets for _ply, targets in actor_turns))
+        shared_mover = set.intersection(
+            *(targets for _ply, targets in source_turns)
+        )
         token_order = lambda token: (
             token.serial,
             token.created_ply,
@@ -172,6 +201,13 @@ def summarize_repeated_cycle_targets(
                 ),
                 shared_target_tokens=tuple(sorted(shared, key=token_order)),
                 all_target_tokens=tuple(sorted(union, key=token_order)),
+                mover_targets_by_ply=tuple(
+                    (ply, tuple(sorted(targets, key=token_order)))
+                    for ply, targets in source_turns
+                ),
+                shared_mover_target_tokens=tuple(
+                    sorted(shared_mover, key=token_order)
+                ),
             )
         )
     return RepeatedCycleTargetSummary("verified", tuple(result))
@@ -363,6 +399,20 @@ def trace_latest_repeated_cycle_capture_facts(
                 specific_capture_still_legal=capture_still_legal,
             )
         )
+    try:
+        action_source_tokens = tuple(
+            _action_source_token(state, provenance.frames, ply)
+            for ply in range(start_ply + 1, end_ply + 1)
+        )
+    except Exception as exc:
+        return RepeatedPositionCycleTrace(
+            "unknown",
+            reason=(
+                "cycle action-source identity failed: "
+                f"{type(exc).__name__}: {exc}"
+            ),
+        )
+
     return RepeatedPositionCycleTrace(
         "verified",
         RepeatedPositionCycleCaptureFacts(
@@ -375,5 +425,19 @@ def trace_latest_repeated_cycle_capture_facts(
                 (ply, state.history[ply].actor)
                 for ply in range(start_ply + 1, end_ply + 1)
             ),
+            action_source_tokens=action_source_tokens,
         ),
     )
+
+
+def _action_source_token(state: GameState, frames, ply: int):
+    action = action_from_dict(json.loads(state.history[ply].action_signature))
+    source = action_source_square(action)
+    if source is None:
+        return ply, None
+    before = frames[ply - 1]
+    index = square_to_index(source, before.position.board_shape)
+    token = before.identities[index]
+    if token is None:
+        raise ValueError(f"action source lacks a verified token at ply {ply}")
+    return ply, token
