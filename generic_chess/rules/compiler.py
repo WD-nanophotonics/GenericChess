@@ -28,6 +28,7 @@ from .compiled import (
     CompiledAutomaticAdjudication,
     CompiledConsecutiveActionAdjudication,
     CompiledGeometryCarrier,
+    CompiledRepeatedCycleTargetCondition,
     CompiledRuleSet,
 )
 from .schema import (
@@ -39,6 +40,7 @@ from .schema import (
     RuleSet,
     RuleConsecutiveActionAdjudication,
     RuleInitialSetupOption,
+    RuleRepeatedCycleTargetCondition,
     compute_fingerprint,
     ruleset_from_dict,
 )
@@ -567,6 +569,9 @@ def compile_ruleset(
     consecutive_action_adjudications = (
         _compile_consecutive_action_adjudications(ruleset)
     )
+    repeated_cycle_target_conditions = (
+        _compile_repeated_cycle_target_conditions(ruleset)
+    )
 
     tables = _build_tables(ruleset)
     fingerprint = compute_fingerprint(ruleset)
@@ -598,6 +603,7 @@ def compile_ruleset(
         declarations=_compile_declarations(ruleset, tuple(sorted(types_by_id))),
         capture_disposition=ruleset.capture_disposition,
         pass_enabled=ruleset.pass_enabled,
+        repeated_cycle_target_conditions=repeated_cycle_target_conditions,
     )
 
     issues = _position_validation(compiled)
@@ -767,6 +773,57 @@ def _compile_consecutive_action_adjudications(ruleset: RuleSet):
                 outcome=item.outcome,
             )
         )
+    if issues:
+        raise RuleValidationError(issues)
+    return tuple(output)
+
+
+def _compile_repeated_cycle_target_conditions(ruleset: RuleSet):
+    definitions = ruleset.repeated_cycle_target_conditions
+    if not isinstance(definitions, tuple):
+        raise RuleValidationError(
+            [
+                ValidationIssue(
+                    "REPEATED_CYCLE_TARGET_CONDITIONS_INVALID",
+                    "repeated_cycle_target_conditions",
+                    "must be a tuple of condition definitions",
+                )
+            ]
+        )
+    output = []
+    seen_actors = set()
+    issues = []
+    for index, item in enumerate(definitions):
+        path = f"repeated_cycle_target_conditions[{index}]"
+        if not isinstance(item, RuleRepeatedCycleTargetCondition):
+            issues.append(
+                ValidationIssue(
+                    "REPEATED_CYCLE_TARGET_CONDITION_INVALID",
+                    path,
+                    "expected a RuleRepeatedCycleTargetCondition",
+                )
+            )
+            continue
+        if isinstance(item.actor, bool) or not isinstance(item.actor, int) or item.actor not in (0, 1):
+            issues.append(
+                ValidationIssue(
+                    "REPEATED_CYCLE_TARGET_ACTOR_INVALID",
+                    f"{path}.actor",
+                    "actor must be 0 or 1",
+                )
+            )
+            continue
+        if item.actor in seen_actors:
+            issues.append(
+                ValidationIssue(
+                    "REPEATED_CYCLE_TARGET_ACTOR_DUPLICATE",
+                    f"{path}.actor",
+                    f"actor {item.actor} already has a condition",
+                )
+            )
+            continue
+        seen_actors.add(item.actor)
+        output.append(CompiledRepeatedCycleTargetCondition(actor=item.actor))
     if issues:
         raise RuleValidationError(issues)
     return tuple(output)
@@ -996,6 +1053,9 @@ def lower_legacy_to_ir(
         consecutive_action_adjudications = (
             _compile_consecutive_action_adjudications(ruleset)
         )
+        repeated_cycle_target_conditions = (
+            _compile_repeated_cycle_target_conditions(ruleset)
+        )
         declarations = _compile_declarations(ruleset, type_ids)
         capture_disposition = ruleset.capture_disposition
     else:
@@ -1004,6 +1064,7 @@ def lower_legacy_to_ir(
         drop_allowed = compiled.drop_allowed
         automatic_adjudications = compiled.automatic_adjudications
         consecutive_action_adjudications = compiled.consecutive_action_adjudications
+        repeated_cycle_target_conditions = compiled.repeated_cycle_target_conditions
         declarations = compiled.declarations
         capture_disposition = compiled.capture_disposition
 
@@ -1095,6 +1156,7 @@ def lower_legacy_to_ir(
         patterns=tuple(patterns),
         automatic_adjudications=automatic_adjudications,
         consecutive_action_adjudications=consecutive_action_adjudications,
+        repeated_cycle_target_conditions=repeated_cycle_target_conditions,
         declarations=declarations,
         capabilities=SemanticCapabilities(
             legacy_core_executable=not compile_only,
@@ -1906,6 +1968,7 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     if not isinstance(ruleset, RuleSet):
         ruleset = ruleset_from_dict(ruleset)
     _compile_consecutive_action_adjudications(ruleset)
+    _compile_repeated_cycle_target_conditions(ruleset)
     if not ruleset.semantic_actions:
         raise RuleValidationError(
             [ValidationIssue("NO_SEMANTIC_ACTIONS", "ruleset.semantic_actions", "empty")]
@@ -2078,6 +2141,9 @@ def _compile_semantic_ruleset_from_baseline(
     elif compute_fingerprint(ruleset) != baseline.ruleset_fingerprint:
         raise ValueError("RuleSet does not match the compiled ruleset")
     type_ids = tuple(sorted(baseline.types_by_id))
+    repeated_cycle_target_conditions = (
+        _compile_repeated_cycle_target_conditions(ruleset)
+    )
 
     # --- geometry catalog: legacy atoms first, then explicit shapes.
     geometry, legacy_ids = build_legacy_geometry_catalog(baseline)
@@ -2342,6 +2408,7 @@ def _compile_semantic_ruleset_from_baseline(
         consecutive_action_adjudications=(
             legacy_ir.consecutive_action_adjudications
         ),
+        repeated_cycle_target_conditions=repeated_cycle_target_conditions,
         declarations=legacy_ir.declarations,
         capabilities=capabilities,
     )

@@ -23,6 +23,7 @@ from ..core.coordinates import BoardShape
 from .compiled import (
     CompiledAutomaticAdjudication,
     CompiledConsecutiveActionAdjudication,
+    CompiledRepeatedCycleTargetCondition,
 )
 from .schema import (
     AUX_LIFETIMES,
@@ -298,6 +299,7 @@ class CompiledSemanticIR:
     declarations: tuple[CompiledDeclaration, ...] = ()
     capabilities: SemanticCapabilities = SemanticCapabilities()
     consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
+    repeated_cycle_target_conditions: tuple[CompiledRepeatedCycleTargetCondition, ...] = ()
 
     def serialized(self) -> str:
         return canonical_json(self.to_dict())
@@ -364,6 +366,11 @@ class CompiledSemanticIR:
                     "outcome": item.outcome,
                 }
                 for item in self.consecutive_action_adjudications
+            ]
+        if self.repeated_cycle_target_conditions:
+            data["repeated_cycle_target_conditions"] = [
+                {"actor": item.actor}
+                for item in self.repeated_cycle_target_conditions
             ]
         return data
 
@@ -588,6 +595,12 @@ class CompiledSemanticRuleset:
         self,
     ) -> tuple[CompiledConsecutiveActionAdjudication, ...]:
         return self.ir.consecutive_action_adjudications
+
+    @property
+    def repeated_cycle_target_conditions(
+        self,
+    ) -> tuple[CompiledRepeatedCycleTargetCondition, ...]:
+        return self.ir.repeated_cycle_target_conditions
 
 
 @dataclass(frozen=True, slots=True)

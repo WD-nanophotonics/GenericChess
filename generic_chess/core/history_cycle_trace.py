@@ -96,6 +96,26 @@ class RepeatedCycleTargetSummary:
     reason: str | None = None
 
 
+def evaluate_repeated_cycle_target_condition(
+    summary: RepeatedCycleTargetSummary, actor: int
+) -> Literal["satisfied", "unsatisfied", "unknown"]:
+    """Evaluate the declared shared-target fact, without assigning an outcome."""
+    if summary.status != "verified":
+        return "unknown"
+    if isinstance(actor, bool) or actor not in (0, 1):
+        return "unknown"
+    actor_summary = next(
+        (item for item in summary.actors if item.actor == actor), None
+    )
+    if actor_summary is None:
+        return "unsatisfied"
+    return (
+        "satisfied"
+        if actor_summary.shared_target_count >= 1
+        else "unsatisfied"
+    )
+
+
 def summarize_repeated_cycle_targets(
     trace: RepeatedPositionCycleTrace,
 ) -> RepeatedCycleTargetSummary:

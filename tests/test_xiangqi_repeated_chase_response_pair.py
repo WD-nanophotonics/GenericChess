@@ -12,6 +12,7 @@ from history_candidate_test_support import (
 from generic_chess.core.capture_pressure_trace import trace_next_turn_legal_captures
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_cycle_trace import (
+    evaluate_repeated_cycle_target_condition,
     summarize_repeated_cycle_targets,
     trace_latest_repeated_cycle_capture_facts,
 )
@@ -21,6 +22,14 @@ from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
 from generic_chess.core.transition import apply_action, initial_state
 from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.compiled import CompiledRepeatedCycleTargetCondition
+from generic_chess.rules.schema import (
+    RuleRepeatedCycleTargetCondition,
+    ruleset_from_dict,
+    ruleset_to_dict,
+)
+from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
 
 
@@ -123,7 +132,7 @@ def test_same_target_pair_distinguishes_evading_from_still_legal_capture():
     ]
 
 
-def _target_summary_trace(switch_targets):
+def _target_summary_trace(switch_targets, repeated_cycle_target_conditions=()):
     rows = [[None] * 9 for _ in range(10)]
     for square, piece in (
         (Square(4, 0), Piece(0, "G", "G")),
@@ -140,7 +149,9 @@ def _target_summary_trace(switch_targets):
         # The synthetic switch route has a shorter incidental repeat before
         # returning to its declared setup; keep the trace window non-terminal.
         repetition_limit=8,
+        repeated_cycle_target_conditions=repeated_cycle_target_conditions,
     )
+    ruleset = ruleset_from_dict(ruleset_to_dict(ruleset))
     compiled = compile_ruleset_for_execution(ruleset)
     if switch_targets:
         moves = (
@@ -179,7 +190,7 @@ def _target_summary_trace(switch_targets):
     trace = trace_latest_repeated_cycle_capture_facts(state, compiled)
     assert trace.status == "verified", trace.reason
     assert trace.cycle is not None
-    return trace, state
+    return trace, state, compiled, ruleset
 
 
 def test_repeated_cycle_target_projection_distinguishes_target_switch_on_same_setup():
@@ -187,8 +198,8 @@ def test_repeated_cycle_target_projection_distinguishes_target_switch_on_same_se
     # The control repeatedly exposes only the Advisor token; the variant also
     # exposes the second Chariot token during the cycle. This tests target-set
     # extraction, not whether either move sequence satisfies WXF chase rules.
-    kept, kept_state = _target_summary_trace(switch_targets=False)
-    switched, switched_state = _target_summary_trace(switch_targets=True)
+    kept, kept_state, _, _ = _target_summary_trace(switch_targets=False)
+    switched, switched_state, _, _ = _target_summary_trace(switch_targets=True)
     assert kept_state.position == switched_state.position
     kept_summary = summarize_repeated_cycle_targets(kept)
     switched_summary = summarize_repeated_cycle_targets(switched)
@@ -213,4 +224,56 @@ def test_repeated_cycle_target_projection_distinguishes_target_switch_on_same_se
     assert any(
         switched_token in targets
         for _ply, targets in switched_red.targets_by_ply
+    )
+
+
+def test_rule_cycle_target_condition_roundtrips_and_distinguishes_keep_from_switch():
+    condition = RuleRepeatedCycleTargetCondition(actor=0)
+    outcomes = []
+    final_positions = []
+    for switch_targets in (False, True):
+        trace, state, compiled, ruleset = _target_summary_trace(
+            switch_targets,
+            repeated_cycle_target_conditions=(condition,),
+        )
+        serialized = ruleset_to_dict(ruleset)
+        assert serialized["repeated_cycle_target_conditions"] == [{"actor": 0}]
+        assert ruleset_from_dict(serialized) == ruleset
+        assert compiled.repeated_cycle_target_conditions == (
+            CompiledRepeatedCycleTargetCondition(actor=0),
+        )
+        assert compiled.ir.to_dict()["repeated_cycle_target_conditions"] == [
+            {"actor": 0}
+        ]
+        summary = summarize_repeated_cycle_targets(trace)
+        actor = compiled.repeated_cycle_target_conditions[0].actor
+        outcomes.append(evaluate_repeated_cycle_target_condition(summary, actor))
+        final_positions.append(state.position)
+
+    assert final_positions[0] == final_positions[1]
+    assert outcomes == ["satisfied", "unsatisfied"]
+
+
+def test_cycle_target_condition_is_absent_from_chess_shogi_xiangqi_defaults():
+    for builder in (
+        build_western_chess_ruleset,
+        build_standard_shogi_ruleset,
+        build_xiangqi_diagnostic_ruleset,
+    ):
+        ruleset = builder()
+        assert ruleset.repeated_cycle_target_conditions == ()
+        assert "repeated_cycle_target_conditions" not in ruleset_to_dict(ruleset)
+        compiled = compile_ruleset_for_execution(ruleset)
+        assert compiled.repeated_cycle_target_conditions == ()
+
+
+def test_legacy_compiler_retains_opt_in_cycle_target_condition():
+    ruleset = replace(
+        build_western_chess_ruleset(),
+        repeated_cycle_target_conditions=(RuleRepeatedCycleTargetCondition(actor=1),),
+    )
+    parsed = ruleset_from_dict(ruleset_to_dict(ruleset))
+    compiled = compile_ruleset_for_execution(parsed)
+    assert compiled.repeated_cycle_target_conditions == (
+        CompiledRepeatedCycleTargetCondition(actor=1),
     )

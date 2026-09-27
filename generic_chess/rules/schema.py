@@ -157,6 +157,17 @@ class RuleConsecutiveActionAdjudication:
 
 
 @dataclass(frozen=True, slots=True)
+class RuleRepeatedCycleTargetCondition:
+    """Require an actor to share a legal-capture target across cycle turns.
+
+    This declares a descriptive history condition only; it does not select an
+    outcome or enable adjudication.
+    """
+
+    actor: int
+
+
+@dataclass(frozen=True, slots=True)
 class RuleInitialSetupOption:
     """One opt-in alternate initial board, selected by a stable key."""
 
@@ -214,6 +225,8 @@ class RuleSet:
     # Alternate boards are opt-in and appended for positional compatibility.
     # Empty preserves the legacy single-start serialization and fingerprint.
     initial_setup_options: tuple[RuleInitialSetupOption, ...] = ()
+    # Optional descriptive history condition; empty preserves default behavior.
+    repeated_cycle_target_conditions: tuple[RuleRepeatedCycleTargetCondition, ...] = ()
 
     @property
     def board_shape(self) -> BoardShape:
@@ -1085,6 +1098,25 @@ def consecutive_action_adjudication_from_dict(
     return RuleConsecutiveActionAdjudication(action_class, threshold, outcome)
 
 
+def repeated_cycle_target_condition_to_dict(
+    value: RuleRepeatedCycleTargetCondition,
+) -> dict:
+    return {"actor": value.actor}
+
+
+def repeated_cycle_target_condition_from_dict(
+    data: Mapping[str, Any], path: str
+) -> RuleRepeatedCycleTargetCondition:
+    data = _require_mapping(data, path)
+    unknown = set(data) - {"actor"}
+    if unknown:
+        raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
+    actor = _require_int(_require_field(data, "actor", path), f"{path}.actor")
+    if actor not in (0, 1):
+        raise _err("ILLEGAL_OWNER", f"{path}.actor", "actor must be 0 or 1")
+    return RuleRepeatedCycleTargetCondition(actor)
+
+
 def aux_state_to_dict(value: RuleAuxState) -> dict:
     initial = value.initial
     if isinstance(initial, tuple):
@@ -1604,6 +1636,11 @@ def ruleset_to_dict(
             consecutive_action_adjudication_to_dict(item)
             for item in ruleset.consecutive_action_adjudications
         ]
+    if ruleset.repeated_cycle_target_conditions:
+        data["repeated_cycle_target_conditions"] = [
+            repeated_cycle_target_condition_to_dict(item)
+            for item in ruleset.repeated_cycle_target_conditions
+        ]
     return data
 
 
@@ -1867,6 +1904,19 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         )
         for i, item in enumerate(consecutive_action_raw)
     )
+    cycle_target_raw = data.get("repeated_cycle_target_conditions", ())
+    if not isinstance(cycle_target_raw, (list, tuple)):
+        raise _err(
+            "FIELD_NOT_LIST",
+            f"{path}.repeated_cycle_target_conditions",
+            "repeated_cycle_target_conditions must be a list",
+        )
+    repeated_cycle_target_conditions = tuple(
+        repeated_cycle_target_condition_from_dict(
+            item, f"{path}.repeated_cycle_target_conditions[{i}]"
+        )
+        for i, item in enumerate(cycle_target_raw)
+    )
     metadata = _require_mapping(data.get("metadata", {}), f"{path}.metadata")
 
     return RuleSet(
@@ -1892,6 +1942,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         capture_disposition=capture_disposition,
         pass_enabled=pass_enabled,
         consecutive_action_adjudications=consecutive_action_adjudications,
+        repeated_cycle_target_conditions=repeated_cycle_target_conditions,
     )
 
 

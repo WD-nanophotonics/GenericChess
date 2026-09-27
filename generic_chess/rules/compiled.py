@@ -30,6 +30,13 @@ class CompiledConsecutiveActionAdjudication:
 
 
 @dataclass(frozen=True, slots=True)
+class CompiledRepeatedCycleTargetCondition:
+    """Compiled, outcome-free actor selector for a repeated-cycle fact."""
+
+    actor: int
+
+
+@dataclass(frozen=True, slots=True)
 class CompiledRuleSet:
     """Everything the core kernel needs to reason about one game.
 
@@ -72,6 +79,7 @@ class CompiledRuleSet:
     pass_enabled: bool = False
     consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
     initial_setup_positions: Mapping[str, Position] = field(default_factory=dict)
+    repeated_cycle_target_conditions: tuple[CompiledRepeatedCycleTargetCondition, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
