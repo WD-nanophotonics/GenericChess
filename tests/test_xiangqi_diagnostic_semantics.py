@@ -443,6 +443,34 @@ def test_no_legal_move_is_a_loss_without_needing_a_game(product):
     assert result.winner == 1
 
 
+def test_checkmate_and_adjacent_stalemate_use_check_state(product):
+    _ruleset, compiled, engine = product
+    for center_type, in_check, status in (
+        ("R", True, TerminalStatus.CHECKMATE),
+        ("H", False, TerminalStatus.STALEMATE),
+    ):
+        state = _state(
+            compiled,
+            [
+                (0, "G", Square(4, 0)),
+                (1, "G", Square(4, 9)),
+                (1, center_type, Square(4, 4)),
+                (1, "R", Square(3, 1)),
+                (1, "R", Square(5, 1)),
+                (1, "H", Square(3, 3)),
+            ],
+            side=0,
+        )
+
+        assert state.position.side_to_move == 0
+        assert engine.in_check(state.position, 0) is in_check
+        assert legal_actions(state, compiled) == []
+
+        result = terminal_result(state, compiled)
+        assert result.status is status
+        assert result.winner == 1
+
+
 def test_rectangular_transition_identity_and_repetition_cycle(product):
     _ruleset, compiled, engine = product
     state = _state(
