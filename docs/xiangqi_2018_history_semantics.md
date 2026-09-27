@@ -113,15 +113,25 @@ replay and an entirely verified capture trace; incomplete or unsupported
 histories return `unknown` with no partial cycle. The paired Xiangqi fixture
 tests boundaries `(0, 4]` and `(0, 8]`, source/target tokens and ply order, plus
 an incomplete-history negative case. It is not called by normal transitions,
-terminal handling, or evaluation.
+terminal handling, or evaluation. For a candidate edge followed by an actual
+reply within the observed cycle, the same trace records the response action's
+piece tokens, whether that target token moved, and whether the exact source
+token can still legally capture that target token afterward. An unanswered
+cycle-boundary edge or unsupported exact query is represented as unknown, not
+inferred from geometry. In the control's ply-2→3 response, A moved and the
+same R→A capture was no longer legal. In the substitution fixture's ply-2→3
+response, A stayed while B moved and R→A remained legal; after the later B
+edge, B moved on its ply-5 reply while R→B remained legal.
 
-Still missing is the semantic relation needed to tell whether each intervening
-reply moved the attacked target or otherwise resolved that specific chase,
-plus rule-set-declared target/chaser role and region predicates for exceptions.
-A future policy can declare cycle and exception conditions only after those
-facts are made sound; these capture edges alone must not label a move as WXF
-chase or assign a result. The present substitution fixture remains insufficient
-for a WXF outcome test, so this order adds no adjudication failure test.
+Still missing is the semantic relation needed to establish that a reply by a
+different piece actually resolves the specific prior chase; movement and
+continued-legal-capture are facts, not a resolution classifier. Rule-set-
+declared target/chaser role and region predicates for exceptions are also
+absent. A future policy can declare cycle and exception conditions only after
+those facts are made sound; these capture edges alone must not label a move as
+WXF chase or assign a result. The present substitution fixture remains
+insufficient for a WXF outcome test, so this order adds no adjudication failure
+test.
 
 ## Article 20: outcome policy and exceptions
 

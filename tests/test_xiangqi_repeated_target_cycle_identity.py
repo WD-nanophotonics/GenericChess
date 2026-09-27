@@ -97,6 +97,23 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
     assert tuple(fact.target_token for fact in same_cycle_edges) == tuple(
         edge.target_token for edge in same_edges
     )
+    same_response = next(
+        fact for fact in same_cycle.cycle.response_facts
+        if fact.threat_frame_ply == 2
+        and fact.source_token == same_chaser
+    )
+    assert same_response.response_ply == 3
+    assert same_response.target_moved is True
+    assert same_response.specific_capture_still_legal is False
+    assert same_response.response_action_source_token == same_edges[0].target_token
+    unanswered_same = next(
+        fact for fact in same_cycle.cycle.response_facts
+        if fact.threat_frame_ply == 4
+        and fact.source_token == same_chaser
+    )
+    assert unanswered_same.response_ply is None
+    assert unanswered_same.target_moved is None
+    assert unanswered_same.specific_capture_still_legal is None
     same_initial_id = same_provenance.frames[0].identities[
         square_to_index(target, same_provenance.frames[0].position.board_shape)
     ]
@@ -156,6 +173,26 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
     )
     assert swap_edges[1].target == target
     assert position_identity_key(swap_state.position, compiled) == swap_key == same_key
+
+    substitution_response = next(
+        fact for fact in swap_cycle.cycle.response_facts
+        if fact.threat_frame_ply == 2
+        and fact.source_token == swap_chaser
+        and fact.target_token == initial_target_id
+    )
+    assert substitution_response.response_ply == 3
+    assert substitution_response.target_moved is False
+    assert substitution_response.specific_capture_still_legal is True
+    assert substitution_response.response_action_source_token == substituted_target_id
+    moved_target_response = next(
+        fact for fact in swap_cycle.cycle.response_facts
+        if fact.threat_frame_ply == 4
+        and fact.source_token == swap_chaser
+        and fact.target_token == substituted_target_id
+    )
+    assert moved_target_response.response_ply == 5
+    assert moved_target_response.target_moved is True
+    assert moved_target_response.specific_capture_still_legal is True
 
     incomplete = replace(swap_state, history=swap_state.history[1:])
     unknown_cycle = trace_latest_repeated_cycle_capture_facts(incomplete, compiled)
