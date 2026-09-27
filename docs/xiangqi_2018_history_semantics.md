@@ -8,7 +8,7 @@ cross-ply evidence, exceptions and current Core support. No complete game is
 needed; no adjudicator is implemented here.
 
 **Source:** World Xiangqi Federation, *World Xiangqi Rules* (2018), Chapter 4,
-Articles 19–20, printed pp. 43–47. [Official WXF English rules
+Articles 19–20, printed pp. 35–39 (PDF pp. 43–47). [Official WXF English rules
 (PDF)](https://www.wxf-xiangqi.org/images/wxf-rules/2018_World_XiangQi_Rules_English2018.pdf).
 The local reference copy used for visual inspection is
 `.generic_chess_flow/wxf_2018_reference.pdf` (SHA-256
