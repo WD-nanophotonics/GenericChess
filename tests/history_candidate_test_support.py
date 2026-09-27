@@ -1,9 +1,7 @@
-"""Opt-in candidate detection over verified repeated-cycle capture facts.
+"""Test-only pure evaluation of verified repeated-cycle capture facts.
 
-This conservative pattern extractor reports only whether the same source and
-target identities maintain a legal-capture edge on each source owner's move,
-with the exact edge absent after every observed or safely wrapped reply. It
-does not classify chase, response intent, or any game-specific rule.
+The result labels are factual fixture classifications only. This helper is
+not a production API and does not classify chase, response intent, or rules.
 """
 
 from __future__ import annotations
@@ -11,12 +9,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
-from .capture_pressure_trace import NextTurnLegalCaptureFact
-from .history_cycle_trace import (
+from generic_chess.core.capture_pressure_trace import NextTurnLegalCaptureFact
+from generic_chess.core.history_cycle_trace import (
     CaptureEdgeResponseFact,
     RepeatedPositionCycleTrace,
 )
-from .history_provenance import PieceInstanceId
+from generic_chess.core.history_provenance import PieceInstanceId
 
 
 @dataclass(frozen=True, slots=True)

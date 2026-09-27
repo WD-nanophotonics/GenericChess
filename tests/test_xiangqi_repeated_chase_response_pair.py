@@ -6,7 +6,7 @@ These generic facts are not a WXF move-nature or outcome adjudicator.
 from dataclasses import replace
 
 from generic_chess.core.actions import SemanticBoardMove
-from generic_chess.core.capture_cycle_candidates import (
+from history_candidate_test_support import (
     extract_repeated_cycle_capture_candidate,
 )
 from generic_chess.core.capture_pressure_trace import trace_next_turn_legal_captures

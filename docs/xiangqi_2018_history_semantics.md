@@ -125,23 +125,23 @@ same facts. In the substitution fixture's ply-2→3 response, A stayed while B
 moved and R→A remained legal; after the B edge, B moved on ply 5 while R→B
 remained legal.
 
-The separate opt-in `extract_repeated_cycle_capture_candidate` returns only
-`candidate`, `not_candidate`, or `unknown` for a requested source/target token
-pair. It requires the same edge after every source-owner move in the cycle
-window and that the exact edge is no longer legal after each reply; it retains
-per-ply edge/response evidence. The 3-occurrence control is `candidate`; the
-substitution fixture is `not_candidate`; truncated history remains `unknown`.
-These are generic observable-pattern labels only: they do not infer intent,
-classify a move as WXF chase, apply Article 20 exceptions, or affect normal
-terminal/evaluator paths.
+`tests/history_candidate_test_support.py` contains a test-only pure evaluator
+that returns `candidate`, `not_candidate`, or `unknown` for a requested
+source/target token pair. It requires the same edge after every source-owner
+move in the cycle window and that the exact edge is no longer legal after each
+reply; it retains per-ply edge/response evidence. The 3-occurrence control is
+`candidate`; the substitution fixture is `not_candidate`; truncated history
+remains `unknown`. These test labels do not infer intent, classify a move as
+WXF chase, apply Article 20 exceptions, or affect production terminal,
+evaluator, or search paths.
 
 A separate 12-ply legal pair exercises the response fact at the configured
 `repetition_limit=4`. One Chariot repeatedly threatens the same Advisor token;
 the Advisor's response either leaves the legal capture line (all exact
 source-to-target captures disappear after each response) or moves while
 remaining legally capturable (the first response preserves that edge). The
-existing generic candidate extractor reports `candidate` for the former and
-`not_candidate` for the latter. The pair uses one Chariot and one Advisor, so
+test-only evaluator reports `candidate` for the former and `not_candidate`
+for the latter. The pair uses one Chariot and one Advisor, so
 neither Article 20.3 exception is invoked. This validates only the generic
 identity/capture/response facts and their candidate composition. It does not
 classify WXF chase or adjudicate other Article 20 conditions or outcomes.
