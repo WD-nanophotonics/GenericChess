@@ -1,7 +1,10 @@
 from dataclasses import replace
 
 from generic_chess.core.actions import SemanticBoardMove
-from generic_chess.core.capture_pressure_trace import trace_capture_pressure
+from generic_chess.core.capture_pressure_trace import (
+    trace_capture_pressure,
+    trace_next_turn_legal_captures,
+)
 from generic_chess.core.capture_sources import query_capture_sources
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
@@ -49,23 +52,28 @@ def _index(square, shape):
 def test_xiangqi_legal_replay_distinguishes_same_square_same_type_target_instances():
     compiled = compile_ruleset_for_execution(_minimal_xiangqi_identity_ruleset())
     initial = initial_state(compiled)
+    target_square = Square(0, 4)
     state = initial
     moves = (
         (Square(4, 0), Square(4, 1)),
         (Square(0, 4), Square(0, 3)),
         (Square(4, 1), Square(4, 0)),
         (Square(1, 4), Square(0, 4)),
+        (Square(4, 0), Square(4, 1)),
     )
+    state_after_target_reoccupation = None
     for source, target in moves:
         state = _apply_public_legal_move(state, compiled, source, target)
+        if target == target_square:
+            state_after_target_reoccupation = state
+    assert state_after_target_reoccupation is not None
 
     provenance = reconstruct_history_provenance(state, compiled)
     assert provenance.status == "verified", provenance.reason
-    assert len(provenance.frames) == 5
+    assert len(provenance.frames) == 6
     frames = provenance.frames
 
     attacker_square = Square(0, 8)
-    target_square = Square(0, 4)
     vacated_square = Square(0, 3)
     other_target_start = Square(1, 4)
     shape = compiled.board_shape
@@ -98,7 +106,7 @@ def test_xiangqi_legal_replay_distinguishes_same_square_same_type_target_instanc
     # authority at both endpoints of the replay.
     for frame_number, live_state, target_token in (
         (0, initial, target_a_id),
-        (4, state, target_b_id),
+        (4, state_after_target_reoccupation, target_b_id),
     ):
         frame = frames[frame_number]
         assert frame.identities[target_index] == target_token
@@ -153,3 +161,26 @@ def test_xiangqi_legal_replay_distinguishes_same_square_same_type_target_instanc
     assert target_b_reoccupation.target_transition == "moved"
     assert target_b_reoccupation.before_target == other_target_start
     assert target_b_reoccupation.after_target == target_square
+
+    # Xiangqi's public history path also yields legal next-turn capture edges
+    # joined to the same attacker identity and the correct target instance.
+    legal_trace = trace_next_turn_legal_captures(state, compiled)
+    assert legal_trace.status == "verified", legal_trace.reason
+    legal_a = next(
+        fact for fact in legal_trace.facts
+        if fact.frame_ply == 3
+        and fact.source_token == attacker_ids[0]
+        and fact.target_token == target_a_id
+    )
+    legal_b = next(
+        fact for fact in legal_trace.facts
+        if fact.frame_ply == 5
+        and fact.source_token == attacker_ids[0]
+        and fact.target_token == target_b_id
+    )
+    assert legal_a.actor == legal_b.actor == 0
+    assert legal_a.side_to_move == legal_b.side_to_move == 1
+    assert legal_a.source == legal_b.source == attacker_square
+    assert legal_a.target == vacated_square
+    assert legal_b.target == target_square
+    assert legal_a.target_token != legal_b.target_token
