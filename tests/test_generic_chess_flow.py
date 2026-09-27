@@ -658,6 +658,7 @@ def test_resume_reuses_the_saved_request_directory(monkeypatch, tmp_path):
 def test_recover_uses_single_evidence_retry_when_probe_finds_no_request(monkeypatch, tmp_path):
     state = {"active": True, "mode": "courier", "active_request_directory": "request", "recovery_attempts": 0}
     calls = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
     monkeypatch.setattr(flow, "create_escalation", lambda *_args, **_kwargs: calls.append("escalate"))
@@ -712,6 +713,7 @@ def test_recover_waits_for_matching_live_owner_without_escalation(monkeypatch, t
         "recovery_attempts": 5,
     }
     calls = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "active_state", lambda _root: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
     monkeypatch.setattr(flow, "_same_process", lambda pid, created: False)
@@ -753,6 +755,7 @@ def test_recover_escalates_unverifiable_busy_owner(monkeypatch, tmp_path):
         "recovery_attempts": 5,
     }
     escalated = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "active_state", lambda _root: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
     monkeypatch.setattr(flow, "create_escalation", lambda *_args, **kwargs: escalated.append(kwargs["reason"]))
@@ -786,6 +789,7 @@ def test_recover_treats_verified_chat_contention_as_healthy(monkeypatch, tmp_pat
         "recovery_attempts": 5,
     }
     calls = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "active_state", lambda _root: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
     monkeypatch.setattr(
@@ -828,6 +832,7 @@ def test_recover_rejects_stale_chat_contention(monkeypatch, tmp_path):
         "active_request_fingerprint": "f" * 64,
     }
     escalated = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "active_state", lambda _root: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
     monkeypatch.setattr(flow, "create_escalation", lambda *_args, **kwargs: escalated.append(kwargs["reason"]))
@@ -858,6 +863,7 @@ def test_recover_imports_matching_reply_without_retry(monkeypatch, tmp_path):
     state = {"active": True, "mode": "courier", "active_request_directory": "request"}
     saved = []
     operations = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
     monkeypatch.setattr(flow, "save_state", lambda _root, value: saved.append(dict(value)))
 
@@ -885,6 +891,7 @@ def test_recover_imports_durable_completed_status_without_browser_probe(monkeypa
     )
     state = {"active": True, "mode": "courier", "active_request_directory": "request"}
     operations = []
+    monkeypatch.setattr(flow, "_supervisor_config", lambda _root: {})
     monkeypatch.setattr(flow, "load_state", lambda _root, required=True: state)
     monkeypatch.setattr(flow, "save_state", lambda *_args: None)
 
@@ -1413,6 +1420,153 @@ def test_supervisor_resolution_accepts_escalation_without_request_directory(
     capsys.readouterr()
 
     assert state["recovery_state"] == "IDLE"
+
+
+def _rollover_preparation_fixture(tmp_path: Path):
+    prior_id = "GENERICCHESS-20260927-132450-d4337848"
+    request_dir = tmp_path / "outbox" / prior_id
+    request_dir.mkdir(parents=True)
+    response_path = request_dir / "response.txt"
+    response_path.write_text(
+        "LOCAL_SUPERVISOR_REQUIRED=true\n"
+        "LOCAL_SUPERVISOR_REASON=review required\n", encoding="utf-8")
+    local_sha = "b" * 40
+    remote_sha = "7" * 40
+    target_url = "https://chatgpt.com/g/g-p-test-generic-chess/c/source-chat"
+    (request_dir / "message.txt").write_text(
+        "Closeout.\nPROJECT_ID=GENERICCHESS\nPUBLICATION_STATUS=LOCAL_ONLY\n"
+        f"SANDBOX_SHA={local_sha}\nORIGIN_SANDBOX_SHA={remote_sha}\n",
+        encoding="utf-8")
+    (request_dir / "receipt.json").write_text(json.dumps({
+        "request_id": prior_id, "project_id": "GENERICCHESS",
+        "state": "response_received", "response_path": str(response_path),
+        "target_url": target_url,
+    }), encoding="utf-8")
+    (request_dir / "target-binding.json").write_text(json.dumps({
+        "project_id": "GENERICCHESS", "request_id": prior_id,
+        "chat_url": target_url, "chat_project_id": "g-p-test-generic-chess",
+    }), encoding="utf-8")
+    profile_path = tmp_path / "ChatCourier" / "profile"
+    profile_path.mkdir(parents=True)
+    (request_dir / "events.jsonl").write_text(json.dumps({
+        "event": "browser_started", "project_id": "GENERICCHESS",
+        "request_id": prior_id, "profile": str(profile_path),
+    }) + "\n", encoding="utf-8")
+    digest = hashlib.sha256(response_path.read_bytes()).hexdigest()
+    state = {
+        "active": True, "mode": "courier", "active_request_id": prior_id,
+        "active_request_directory": None, "recovery_state": "IDLE",
+        "local_supervisor_required": True, "last_work_order_id": None,
+        "last_response_path": str(response_path), "last_response_sha256": digest,
+        # CONTINUE leaves the workflow open; it is not a WORK_ORDER_ID.
+        "work_order_active": True,
+    }
+    message_path = tmp_path / "continuation.txt"
+    message_path.write_text("Please issue one bounded next-step order.", encoding="utf-8")
+    return prior_id, state, message_path, local_sha, remote_sha
+
+
+def test_supervisor_target_rollover_prepares_only_and_records_lineage(
+        monkeypatch, tmp_path, capsys):
+    prior_id, state, message_path, local_sha, remote_sha = \
+        _rollover_preparation_fixture(tmp_path)
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    calls = []
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor-1"))
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: runtime)
+    monkeypatch.setenv("CHAT_COURIER_PROFILE", str(tmp_path / "ChatCourier" / "profile"))
+    monkeypatch.delenv("CHAT_COURIER_PROFILE_DIRECTORY", raising=False)
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref=None: {
+        None: "a" * 40, "origin/sandbox": remote_sha,
+    }[ref])
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+    monkeypatch.setattr(flow, "courier_quiescence", lambda _root: {"quiescent": True})
+
+    def fake_courier(_root, *args, **_kwargs):
+        calls.append(args)
+        if args[0] == "courier_status":
+            return {"event": "courier_status", "project_id": "GENERICCHESS",
+                    "request_id": prior_id, "state": "response_received"}
+        assert args[0] == "courier_prepare"
+        return {"project_id": "GENERICCHESS", "request_id": "successor-1",
+                "request_directory": str(tmp_path / "outbox" / "successor-1")}
+
+    monkeypatch.setattr(flow, "courier", fake_courier)
+    args = SimpleNamespace(prior_request_id=prior_id, message_file=str(message_path))
+
+    assert flow.command_supervisor_prepare_target_rollover(tmp_path, args) == 0
+    output = capsys.readouterr().out
+    lineage = json.loads((runtime / f"target-rollover-{prior_id}.json").read_text())
+    assert lineage["status"] == "PREPARED_NOT_SUBMITTED"
+    assert lineage["basis"] == "user_direct"
+    assert lineage["prior_response_sha256"] == state["last_response_sha256"]
+    assert lineage["prior_local_sha"] == local_sha
+    assert lineage["current_local_sha"] == "a" * 40
+    assert lineage["remote_sha"] == remote_sha
+    assert lineage["successor_request_id"] == "successor-1"
+    assert lineage["prior_target_url"].endswith("/source-chat")
+    assert lineage["successor_source_target_url"] is None
+    assert lineage["successor_target_url"] is None
+    assert [call[0] for call in calls] == ["courier_status", "courier_prepare"]
+    assert "PREPARED_NOT_SUBMITTED" in output
+    assert "only if approved" in output
+
+
+def test_supervisor_target_rollover_refuses_profile_change_before_preparing(
+        monkeypatch, tmp_path):
+    prior_id, state, message_path, *_ = _rollover_preparation_fixture(tmp_path)
+    runtime = tmp_path / "runtime"
+    runtime.mkdir()
+    other_profile = tmp_path / "other-profile"
+    other_profile.mkdir()
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor-1"))
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    monkeypatch.setattr(flow, "runtime_dir", lambda _root: runtime)
+    monkeypatch.setenv("CHAT_COURIER_PROFILE", str(other_profile))
+    monkeypatch.setenv("CHAT_COURIER_PROFILE_DIRECTORY", "Default")
+    monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: {
+        "event": "courier_status", "project_id": "GENERICCHESS",
+        "request_id": prior_id, "state": "response_received",
+    })
+    monkeypatch.setattr(flow, "courier_quiescence", lambda _root: {"quiescent": True})
+    calls = []
+    monkeypatch.setattr(flow, "fetch", lambda *_args: None)
+    monkeypatch.setattr(flow, "sha", lambda _root, ref=None: "7" * 40)
+    monkeypatch.setattr(flow, "git_ok", lambda *_args: True)
+
+    with pytest.raises(flow.FlowError, match="profile does not match"):
+        flow.command_supervisor_prepare_target_rollover(
+            tmp_path, SimpleNamespace(prior_request_id=prior_id,
+                                      message_file=str(message_path)))
+    assert not list(runtime.glob("target-rollover-*.json"))
+
+
+def test_supervisor_target_rollover_refuses_unconsumed_order_before_courier(
+        monkeypatch, tmp_path):
+    prior_id, state, message_path, *_ = _rollover_preparation_fixture(tmp_path)
+    state["last_work_order_id"] = "WO-1"
+    monkeypatch.setattr(flow, "_current_supervisor", lambda _root: ({}, "supervisor-1"))
+    monkeypatch.setattr(flow, "active_state", lambda _root: state)
+    monkeypatch.setattr(flow, "require_no_supervisor_hold", lambda _root: None)
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "require_clean", lambda _root: None)
+    calls = []
+    monkeypatch.setattr(flow, "courier", lambda *_args, **_kwargs: calls.append(_args))
+
+    with pytest.raises(flow.FlowError, match="unconsumed work order"):
+        flow.command_supervisor_prepare_target_rollover(
+            tmp_path, SimpleNamespace(prior_request_id=prior_id,
+                                      message_file=str(message_path)))
+    assert calls == []
 
 
 def test_update_response_state_imports_body_and_normalizes_missing_footer(

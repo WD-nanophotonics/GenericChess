@@ -1667,6 +1667,230 @@ def _reviewed_local_followup(root: Path, state: dict[str, Any],
     _atomic_json(review_path, review)
 
 
+def _courier_profile_binding() -> tuple[Path, str]:
+    configured = (os.environ.get("CHAT_COURIER_PROFILE")
+                  or os.environ.get("AGENT_RELAY_CHATGPT_PROFILE"))
+    local_app_data = Path(os.environ.get(
+        "LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+    legacy = local_app_data / "CodexOrchestrator" / "profiles" / "chatgpt"
+    if configured:
+        profile = Path(configured)
+    elif legacy.exists():
+        profile = legacy
+    else:
+        profile = local_app_data / "ChatCourier" / "profile"
+    profile_directory = os.environ.get("CHAT_COURIER_PROFILE_DIRECTORY", "Default")
+    if not profile_directory or any(char in profile_directory for char in "\\/"):
+        raise FlowError("ChatCourier profile directory is not a single profile name")
+    try:
+        profile = profile.resolve(strict=True)
+        stat = profile.stat()
+    except OSError as exc:
+        raise FlowError("effective ChatCourier profile cannot be inspected") from exc
+    profile_binding = {
+        "device": stat.st_dev,
+        "file_id": stat.st_ino,
+        "profile_directory": profile_directory,
+    }
+    encoded = json.dumps(profile_binding, sort_keys=True).encode("utf-8")
+    return profile, hashlib.sha256(encoded).hexdigest()
+
+
+def _validate_courier_profile_continuity(request_directory: Path) -> str:
+    profile, fingerprint = _courier_profile_binding()
+    events_path = request_directory / "events.jsonl"
+    try:
+        lines = events_path.read_text(encoding="utf-8-sig").splitlines()
+    except OSError as exc:
+        raise FlowError("prior Courier request is missing its browser profile evidence") from exc
+    observed_profiles: list[Path] = []
+    for line in lines:
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise FlowError("prior Courier event log is malformed") from exc
+        if (isinstance(event, dict) and event.get("event") == "browser_started"
+                and event.get("request_id") == request_directory.name
+                and event.get("project_id") == PROJECT_ID):
+            value = event.get("profile")
+            if not isinstance(value, str) or not value:
+                raise FlowError("prior browser-start event lacks its profile path")
+            observed_profiles.append(Path(value))
+    if not observed_profiles:
+        raise FlowError("prior request has no durable browser profile observation")
+    try:
+        effective_identity = (profile.stat().st_dev, profile.stat().st_ino)
+        prior_identities = {
+            (candidate.stat().st_dev, candidate.stat().st_ino)
+            for candidate in observed_profiles
+        }
+    except OSError as exc:
+        raise FlowError("prior or effective ChatCourier profile path cannot be resolved") from exc
+    if len(prior_identities) != 1 or prior_identities != {effective_identity}:
+        raise FlowError("effective ChatCourier profile does not match the prior request's profile")
+    return fingerprint
+
+
+def command_supervisor_prepare_target_rollover(root: Path, args: argparse.Namespace) -> int:
+    """Prepare, but never dispatch, a same-project successor request."""
+    _config, supervisor_id = _current_supervisor(root)
+    state = active_state(root)
+    require_no_supervisor_hold(root)
+    if branch(root) != "sandbox":
+        raise FlowError("target rollover preparation must run from the sandbox worktree")
+    require_clean(root)
+    if state.get("mode") != "courier" or state.get("active") is not True:
+        raise FlowError("target rollover preparation requires the active Courier session")
+    if state.get("active_request_directory"):
+        raise FlowError("cannot prepare a rollover while a Courier request is unresolved")
+    if state.get("recovery_state") != "IDLE":
+        raise FlowError("cannot prepare a rollover while Courier recovery is unresolved")
+    pending_escalations = _unresolved_escalation_ids(root)
+    if pending_escalations:
+        raise FlowError(f"cannot prepare a rollover with unresolved escalation {pending_escalations[0]}")
+    if state.get("active_request_id") != args.prior_request_id:
+        raise FlowError("prior request ID does not match the registered session")
+    if state.get("local_supervisor_required") is not True:
+        raise FlowError("target rollover requires the current local-supervisor notice")
+    if state.get("last_work_order_id") is not None:
+        raise FlowError("an unconsumed work order prevents target rollover")
+
+    response_value = state.get("last_response_path")
+    expected_response_sha = state.get("last_response_sha256")
+    if not isinstance(response_value, str) or not isinstance(expected_response_sha, str):
+        raise FlowError("target rollover requires a captured prior response")
+    response_path = Path(response_value)
+    if (not response_path.is_file()
+            or response_path.parent.name != args.prior_request_id
+            or _optional_file_digest(response_path) != expected_response_sha):
+        raise FlowError("prior response path, request ID, or response hash does not match")
+    response = response_path.read_text(encoding="utf-8-sig")
+    if ("LOCAL_SUPERVISOR_REQUIRED=true" not in response.splitlines()
+            or WORK_ORDER_ID.search(response)):
+        raise FlowError("prior reply is not the reconciled no-work-order local-supervisor notice")
+
+    message_path = response_path.parent / "message.txt"
+    receipt_path = response_path.parent / "receipt.json"
+    if not message_path.is_file() or not receipt_path.is_file():
+        raise FlowError("prior request is missing its immutable message or receipt")
+    receipt = _read_json_file(receipt_path, "Courier receipt")
+    if (receipt.get("request_id") != args.prior_request_id
+            or receipt.get("project_id") != PROJECT_ID
+            or receipt.get("state") != "response_received"
+            or Path(str(receipt.get("response_path", ""))).resolve() != response_path.resolve()):
+        raise FlowError("prior receipt does not reconcile to the captured reply")
+    prior_binding = _read_json_file(response_path.parent / "target-binding.json",
+                                    "prior target binding")
+    prior_target_url = receipt.get("target_url")
+    if (prior_binding.get("project_id") != PROJECT_ID
+            or prior_binding.get("request_id") != args.prior_request_id
+            or prior_binding.get("chat_url") != prior_target_url
+            or not isinstance(prior_binding.get("chat_project_id"), str)
+            or not isinstance(prior_target_url, str)):
+        raise FlowError("prior target binding does not prove its project and Chat URL")
+    prior_message = message_path.read_text(encoding="utf-8-sig")
+
+    def one_field(name: str) -> str:
+        values = re.findall(rf"(?m)^{name}=([^\r\n]+)$", prior_message)
+        if not values or len(set(values)) != 1:
+            raise FlowError(f"prior request is missing or has conflicting {name}")
+        return values[0]
+
+    if (one_field("PROJECT_ID") != PROJECT_ID
+            or one_field("PUBLICATION_STATUS") != "LOCAL_ONLY"):
+        raise FlowError("prior request is not the expected local-only project closeout")
+    prior_local_sha = one_field("SANDBOX_SHA")
+    prior_remote_sha = one_field("ORIGIN_SANDBOX_SHA")
+    if not FULL_SHA.fullmatch(prior_local_sha) or not FULL_SHA.fullmatch(prior_remote_sha):
+        raise FlowError("prior request contains invalid local or remote SHA evidence")
+
+    request_directory = str(response_path.parent.resolve())
+    courier_status = courier(root, "courier_status", request_directory)
+    if (courier_status.get("event") != "courier_status"
+            or courier_status.get("project_id") != PROJECT_ID
+            or courier_status.get("request_id") != args.prior_request_id
+            or courier_status.get("state") != "response_received"):
+        raise FlowError("ChatCourier status does not prove the prior request is completed")
+    courier_quiescence(root)
+    profile_fingerprint = _validate_courier_profile_continuity(response_path.parent)
+
+    fetch(root, "sandbox")
+    current_local_sha = sha(root)
+    current_remote_sha = sha(root, "origin/sandbox")
+    if (current_remote_sha != prior_remote_sha
+            or not git_ok(root, "merge-base", "--is-ancestor", prior_local_sha, current_local_sha)
+            or not git_ok(root, "merge-base", "--is-ancestor", current_remote_sha, current_local_sha)):
+        raise FlowError("current local/remote history no longer matches the reconciled request lineage")
+
+    body_path = Path(args.message_file).resolve()
+    try:
+        body = body_path.read_text(encoding="utf-8-sig").strip()
+    except OSError as exc:
+        raise FlowError(f"cannot read target-rollover continuation: {body_path}") from exc
+    if not body or len(body.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
+        raise FlowError("target-rollover continuation must be non-empty and fit the inline limit")
+    lineage_body = (
+        body + "\n\nSupervisor-reviewed same-project target rollover context:\n"
+        + f"PROJECT_ID={PROJECT_ID}\n"
+        + f"PRIOR_REQUEST_ID={args.prior_request_id}\n"
+        + f"PRIOR_RESPONSE_SHA256={expected_response_sha}\n"
+        + f"PRIOR_LOCAL_SHA={prior_local_sha}\n"
+        + f"CURRENT_LOCAL_SHA={current_local_sha}\n"
+        + f"REMOTE_SHA={current_remote_sha}\n"
+        + "The prior matching reply contained no WORK_ORDER_ID. Preserve the local-only status; "
+          "the local SHA is not published or eligible for promotion.\n"
+    )
+    if len(lineage_body.encode("utf-8")) > INLINE_CHAT_REFERENCE_THRESHOLD:
+        raise FlowError("lineage-expanded rollover request exceeds the inline limit")
+
+    lineage_path = runtime_dir(root) / f"target-rollover-{args.prior_request_id}.json"
+    if lineage_path.exists():
+        existing = _read_json_file(lineage_path, "target-rollover lineage")
+        if (existing.get("prior_request_id") != args.prior_request_id
+                or existing.get("prior_response_sha256") != expected_response_sha
+                or existing.get("supervisor_thread_id") != supervisor_id):
+            raise FlowError("a conflicting target-rollover lineage already exists")
+        print(json.dumps(existing, ensure_ascii=False, indent=2, sort_keys=True))
+        return 0
+
+    generated_path = runtime_dir(root) / f"target-rollover-{args.prior_request_id}.txt"
+    generated_path.write_text(lineage_body + "\n", encoding="utf-8")
+    prepared = courier(
+        root, "courier_prepare", "--project-id", PROJECT_ID,
+        "--idempotency-key", f"target-rollover-{args.prior_request_id}",
+        "--message-file", str(generated_path),
+    )
+    successor_directory = prepared.get("request_directory")
+    successor_id = prepared.get("request_id")
+    if (not isinstance(successor_directory, str) or not isinstance(successor_id, str)
+            or successor_id == args.prior_request_id
+            or prepared.get("project_id") != PROJECT_ID):
+        raise FlowError("ChatCourier did not prepare a distinct request in the same project")
+    lineage = {
+        "schema": "generic-chess-target-rollover-preparation-v1",
+        "status": "PREPARED_NOT_SUBMITTED",
+        "basis": "user_direct",
+        "project_id": PROJECT_ID,
+        "prior_request_id": args.prior_request_id,
+        "prior_target_url": prior_target_url,
+        "prior_response_sha256": expected_response_sha,
+        "prior_local_sha": prior_local_sha,
+        "current_local_sha": current_local_sha,
+        "remote_sha": current_remote_sha,
+        "successor_request_id": successor_id,
+        "successor_request_directory": successor_directory,
+        "successor_source_target_url": None,
+        "successor_target_url": None,
+        "profile_fingerprint": profile_fingerprint,
+        "supervisor_thread_id": supervisor_id,
+        "prepared_at": time.time(),
+    }
+    _atomic_json(lineage_path, lineage)
+    print(json.dumps(lineage, ensure_ascii=False, indent=2, sort_keys=True))
+    print("NEXT_ACTION=Supervisor review and execute courier_rollover_target --basis user_direct only if approved")
+    return 0
+
+
 def command_publish(root: Path, args: argparse.Namespace) -> None:
     if branch(root) != "sandbox":
         raise FlowError("publish must be run from the sandbox worktree")
@@ -2744,6 +2968,10 @@ def parser() -> argparse.ArgumentParser:
     claim = sub.add_parser("supervisor-claim")
     claim.add_argument("--escalation-id", required=True)
     claim.set_defaults(handler=command_supervisor_claim)
+    rollover_prepare = sub.add_parser("supervisor-prepare-target-rollover")
+    rollover_prepare.add_argument("--prior-request-id", required=True)
+    rollover_prepare.add_argument("--message-file", required=True)
+    rollover_prepare.set_defaults(handler=command_supervisor_prepare_target_rollover)
     resolve = sub.add_parser("supervisor-resolve")
     resolve.add_argument("--escalation-id", required=True)
     resolve.add_argument("--action", choices=("RESUME_WORKER", "RECOVERED", "USER_SUPERSEDED_REQUEST", "HUMAN_REQUIRED"), required=True)
