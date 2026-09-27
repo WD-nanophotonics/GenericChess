@@ -521,6 +521,94 @@ def test_checkmate_and_adjacent_stalemate_use_check_state(product):
             assert 3 <= general_index % 9 <= 5
 
 
+def test_ranged_attacks_never_expose_general_capture_and_preserve_anchors(product):
+    _ruleset, compiled, engine = product
+    cases = (
+        (
+            "R", Square(4, 5), Square(8, 5),
+            [
+                (0, "G", Square(4, 0)), (1, "G", Square(4, 9)),
+                (0, "R", Square(4, 5)),
+                (1, "S", Square(4, 7)), (1, "S", Square(8, 5)),
+            ],
+        ),
+        (
+            "C", Square(4, 2), Square(0, 2),
+            [
+                (0, "G", Square(4, 0)), (1, "G", Square(4, 9)),
+                (0, "C", Square(4, 2)),
+                (1, "S", Square(4, 4)), (1, "S", Square(4, 6)),
+                (1, "S", Square(2, 2)), (1, "S", Square(0, 2)),
+            ],
+        ),
+    )
+    piece_limits = {
+        "G": 1, "A": 2, "E": 2, "H": 2, "R": 2, "C": 2, "S": 5,
+    }
+    facing_pattern = next(
+        pattern for pattern in compiled.ir.patterns
+        if pattern.name == "general_facing_capture"
+    )
+
+    for mover_type, source, ordinary_target, pieces in cases:
+        state = _state(compiled, pieces, side=0)
+        assert not engine.in_check(state.position, 0)
+        assert not engine.in_check(state.position, 1)
+        for owner, palace_ranks in ((0, range(3)), (1, range(7, 10))):
+            owned = [
+                (index, piece)
+                for index, piece in enumerate(state.position.board)
+                if piece is not None and piece.owner == owner
+            ]
+            inventory = Counter(piece.base_type_id for _index, piece in owned)
+            assert inventory["G"] == 1
+            assert all(
+                inventory[tid] <= limit
+                for tid, limit in piece_limits.items()
+            )
+            general_index = next(
+                index for index, piece in owned if piece.base_type_id == "G"
+            )
+            assert general_index // 9 in palace_ranks
+            assert 3 <= general_index % 9 <= 5
+
+        actions = legal_actions(state, compiled)
+        enemy_general_square = Square(4, 9)
+        assert not any(
+            isinstance(action, SemanticBoardMove)
+            and action.to_square == enemy_general_square
+            for action in actions
+        )
+        assert not any(
+            action.pattern_id == facing_pattern.pattern_id
+            for action in actions
+        )
+
+        ordinary_capture = next(
+            action for action in actions
+            if isinstance(action, SemanticBoardMove)
+            and action.actor_type_id == mover_type
+            and action.from_square == source
+            and action.to_square == ordinary_target
+        )
+        captured = apply_action(state, ordinary_capture, compiled)
+        assert captured.position.board[
+            ordinary_target.rank * 9 + ordinary_target.file
+        ] == Piece(0, mover_type, mover_type)
+
+        for action in actions:
+            successor = apply_action(state, action, compiled)
+            assert all(
+                sum(
+                    piece is not None
+                    and piece.owner == owner
+                    and piece.base_type_id == "G"
+                    for piece in successor.position.board
+                ) == 1
+                for owner in (0, 1)
+            )
+
+
 def test_rectangular_transition_identity_and_repetition_cycle(product):
     _ruleset, compiled, engine = product
     state = _state(
