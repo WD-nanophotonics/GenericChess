@@ -33,6 +33,7 @@ from generic_chess.rules.schema import (
 )
 from rule_semantics_ir_fixtures import _king_type, _semantic_ruleset
 from generic_chess.rules.validation import RuleValidationError
+from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
 from generic_chess.session.result import SessionStatus
 from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
 from generic_chess.session.session import GameSession
@@ -410,6 +411,11 @@ def test_policy_roundtrip_fingerprint_session_replay_and_legacy_identity():
     restored = ruleset_from_dict(data)
     assert compute_fingerprint(restored) == compute_fingerprint(ruleset)
     assert ruleset_to_dict(restored) == data
+    compiled = compile_ruleset(restored)
+    assert tuple(
+        (item.action_class, item.threshold, item.outcome)
+        for item in compiled.consecutive_action_adjudications
+    ) == (("pass", 2, "DRAW"),)
 
     session = GameSession(compiled)
     session.submit(PassAction())
@@ -454,10 +460,15 @@ def test_programmatic_malformed_policy_definitions_fail_closed(definitions):
 
 
 def test_standard_products_keep_their_default_policy_disabled():
-    for ruleset in (build_western_chess_ruleset(), build_standard_shogi_ruleset()):
+    for ruleset in (
+        build_western_chess_ruleset(),
+        build_standard_shogi_ruleset(),
+        build_xiangqi_diagnostic_ruleset(),
+    ):
         assert not ruleset.pass_enabled
         assert ruleset.consecutive_action_adjudications == ()
         compiled = compile_ruleset_for_execution(ruleset)
+        assert compiled.consecutive_action_adjudications == ()
         state = initial_state(compiled)
         assert PassAction() not in legal_actions(state, compiled)
         assert state.terminal_status.status is TerminalStatus.ONGOING
