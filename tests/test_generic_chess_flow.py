@@ -1701,7 +1701,9 @@ def test_supervisor_target_rollover_interruption_resumes_same_request_once(
                       "response_received" if receipt.get("state") == "response_received"
                       else receipt.get("state", "prepared"))
             return {"event": "courier_status", "project_id": "GENERICCHESS",
-                    "request_id": successor_id, "fingerprint": "f" * 64,
+                    "request_id": successor_id,
+                    "fingerprint": "a" * 64 if status == "response_received" else "f" * 64,
+                    "payload_fingerprint": "b" * 64 if status == "response_received" else None,
                     "state": status, "response_path": str(response) if status == "response_received" else None}
         assert operation == "courier_rollover_target"
         if len([call for call in calls if call[0] == operation]) == 1:
@@ -1736,6 +1738,7 @@ def test_supervisor_target_rollover_interruption_resumes_same_request_once(
         (successor_dir / "receipt.json").write_text(json.dumps({
             "project_id": "GENERICCHESS", "request_id": successor_id,
             "state": "response_received", "successor_url": "https://chatgpt.com/g/g-p-test-generic-chess/c/successor-chat",
+            "fingerprint": "a" * 64, "payload_fingerprint": "b" * 64,
         }), encoding="utf-8")
         return {"event": "response_received", "ok": True,
                 "project_id": "GENERICCHESS", "request_id": successor_id,

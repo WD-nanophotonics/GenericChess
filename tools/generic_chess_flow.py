@@ -1994,8 +1994,7 @@ def command_supervisor_execute_target_rollover(root: Path, args: argparse.Namesp
     successor_status = courier(root, "courier_status", str(request_directory))
     if (successor_status.get("event") != "courier_status"
             or successor_status.get("project_id") != PROJECT_ID
-            or successor_status.get("request_id") != request_id
-            or successor_status.get("fingerprint") != request_fingerprint):
+            or successor_status.get("request_id") != request_id):
         raise FlowError("prepared successor status does not match the recorded request lineage")
     request_manifest = _read_json_file(request_directory / "request.json", "prepared successor request")
     if (request_manifest.get("project_id") != PROJECT_ID
@@ -2036,7 +2035,9 @@ def command_supervisor_execute_target_rollover(root: Path, args: argparse.Namesp
                                              "completed successor receipt")
         if (successor_receipt.get("request_id") != request_id
                 or successor_receipt.get("project_id") != PROJECT_ID
-                or successor_receipt.get("state") != "response_received"):
+                or successor_receipt.get("state") != "response_received"
+                or successor_receipt.get("fingerprint") != successor_status.get("fingerprint")
+                or successor_receipt.get("payload_fingerprint") != successor_status.get("payload_fingerprint")):
             raise FlowError("completed successor receipt does not match the prepared request")
         validate_successor_target(successor_receipt.get("successor_url"))
         received = {
@@ -2063,7 +2064,8 @@ def command_supervisor_execute_target_rollover(root: Path, args: argparse.Namesp
         return 0
 
     if not recovering:
-        if successor_status.get("state") != "prepared":
+        if (successor_status.get("state") != "prepared"
+                or successor_status.get("fingerprint") != request_fingerprint):
             raise FlowError("first target rollover attempt requires a fresh unsubmitted request")
         if ((request_directory / "receipt.json").exists()
                 or (request_directory / "response.txt").exists()
@@ -2091,7 +2093,8 @@ def command_supervisor_execute_target_rollover(root: Path, args: argparse.Namesp
                     "request_submitted", "chat_submission_unconfirmed", "response_received",
                 } for item in request_events):
                     raise FlowError("successor shows submission evidence without a rollover intent")
-            if successor_status.get("state") != "prepared":
+            if (successor_status.get("state") != "prepared"
+                    or successor_status.get("fingerprint") != request_fingerprint):
                 raise FlowError("same-request recovery is missing its durable rollover intent")
         if state.get("active_request_directory") not in {None, str(request_directory)}:
             raise FlowError("another Courier request occupies the workflow session")
