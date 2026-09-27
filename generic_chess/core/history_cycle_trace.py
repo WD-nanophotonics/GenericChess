@@ -31,6 +31,7 @@ class CaptureEdgeResponseFact:
 
     threat_frame_ply: int
     response_ply: int | None
+    response_wrapped: bool
     actor: int
     response_actor: int | None
     source_token: PieceInstanceId
@@ -43,13 +44,14 @@ class CaptureEdgeResponseFact:
 
 @dataclass(frozen=True, slots=True)
 class RepeatedPositionCycleCaptureFacts:
-    """One interval between the last two visits to the current position."""
+    """One verified repeat window ending at the current position."""
 
     position_key: str
     start_ply: int
     end_ply: int
     capture_facts: tuple[NextTurnLegalCaptureFact, ...]
     response_facts: tuple[CaptureEdgeResponseFact, ...] = ()
+    action_actors: tuple[tuple[int, int], ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -66,11 +68,14 @@ def trace_latest_repeated_cycle_capture_facts(
 ) -> RepeatedPositionCycleTrace:
     """Return ordered, identity-bearing capture facts for the latest cycle.
 
-    The interval is the moves after the previous occurrence of the current
-    position through the current occurrence: ``start_ply < frame_ply <=
-    end_ply``. A complete exact replay and a fully verified legal-capture
-    trace are both required. Incomplete or unsupported histories return
-    ``unknown`` with no partial cycle or facts.
+    The interval ends at the current position. When the configured repetition
+    limit has been reached, it spans the last ``repetition_limit`` occurrences;
+    otherwise it spans the last two occurrences. Moves are bounded by
+    ``start_ply < frame_ply <= end_ply``. A complete exact replay and fully
+    verified capture traces are required. At a closed boundary, the first
+    observed response can wrap to the last threat only when the positions and
+    the source/target token locations match exactly. Unsupported or
+    incomplete evidence stays unknown.
     """
     provenance = reconstruct_history_provenance(state, compiled)
     if provenance.status != "verified":
@@ -96,7 +101,19 @@ def trace_latest_repeated_cycle_capture_facts(
     if len(occurrences) < 2:
         return RepeatedPositionCycleTrace("verified")
 
-    start_ply, end_ply = occurrences[-2], occurrences[-1]
+    support = getattr(compiled, "support", None)
+    configured_limit = getattr(
+        support,
+        "repetition_limit",
+        getattr(compiled, "repetition_limit", 2),
+    )
+    repeat_limit = max(2, int(configured_limit))
+    window = (
+        occurrences[-repeat_limit:]
+        if len(occurrences) >= repeat_limit
+        else occurrences[-2:]
+    )
+    start_ply, end_ply = window[0], window[-1]
     if start_ply >= end_ply or end_ply != state.ply_count:
         return RepeatedPositionCycleTrace(
             "unknown", reason="current repeated-position interval is inconsistent"
@@ -123,22 +140,39 @@ def trace_latest_repeated_cycle_capture_facts(
     responses = []
     for fact in facts:
         response_ply = fact.frame_ply + 1
+        response_wrapped = response_ply > end_ply
         if response_ply > end_ply:
-            responses.append(
-                CaptureEdgeResponseFact(
-                    threat_frame_ply=fact.frame_ply,
-                    response_ply=None,
-                    actor=fact.actor,
-                    response_actor=None,
-                    source_token=fact.source_token,
-                    target_token=fact.target_token,
-                    response_action_source_token=None,
-                    response_action_target_token=None,
-                    target_moved=None,
-                    specific_capture_still_legal=None,
-                )
+            response_ply = start_ply + 1
+            start_frame = frame_by_ply[start_ply]
+            end_frame = frame_by_ply[end_ply]
+            boundary_identity_matches = (
+                start_frame.position == end_frame.position
+                and fact.source_token in start_frame.identities
+                and fact.source_token in end_frame.identities
+                and fact.target_token in start_frame.identities
+                and fact.target_token in end_frame.identities
+                and start_frame.identities.index(fact.source_token)
+                == end_frame.identities.index(fact.source_token)
+                and start_frame.identities.index(fact.target_token)
+                == end_frame.identities.index(fact.target_token)
             )
-            continue
+            if not boundary_identity_matches:
+                responses.append(
+                    CaptureEdgeResponseFact(
+                        threat_frame_ply=fact.frame_ply,
+                        response_ply=response_ply,
+                        response_wrapped=True,
+                        actor=fact.actor,
+                        response_actor=None,
+                        source_token=fact.source_token,
+                        target_token=fact.target_token,
+                        response_action_source_token=None,
+                        response_action_target_token=None,
+                        target_moved=None,
+                        specific_capture_still_legal=None,
+                    )
+                )
+                continue
 
         response_record = state.history[response_ply]
         if response_record.actor != 1 - fact.actor:
@@ -204,6 +238,7 @@ def trace_latest_repeated_cycle_capture_facts(
             CaptureEdgeResponseFact(
                 threat_frame_ply=fact.frame_ply,
                 response_ply=response_ply,
+                response_wrapped=response_wrapped,
                 actor=fact.actor,
                 response_actor=response_record.actor,
                 source_token=fact.source_token,
@@ -222,5 +257,9 @@ def trace_latest_repeated_cycle_capture_facts(
             end_ply=end_ply,
             capture_facts=facts,
             response_facts=tuple(responses),
+            action_actors=tuple(
+                (ply, state.history[ply].actor)
+                for ply in range(start_ply + 1, end_ply + 1)
+            ),
         ),
     )

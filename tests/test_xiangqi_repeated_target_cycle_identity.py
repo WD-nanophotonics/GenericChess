@@ -1,6 +1,9 @@
 from dataclasses import replace
 
 from generic_chess.core.actions import SemanticBoardMove
+from generic_chess.core.capture_cycle_candidates import (
+    extract_repeated_cycle_capture_candidate,
+)
 from generic_chess.core.capture_pressure_trace import trace_next_turn_legal_captures
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
@@ -32,7 +35,7 @@ def _compiled_cycle_ruleset():
     return compile_ruleset_for_execution(ruleset)
 
 
-def _replay(compiled, moves):
+def _replay(compiled, moves, expected_occurrences=2):
     state = initial_state(compiled)
     initial_key = position_identity_key(state.position, compiled)
     for source, target in moves:
@@ -44,7 +47,7 @@ def _replay(compiled, moves):
         )
         state = apply_action(state, action, compiled)
     assert position_identity_key(state.position, compiled) == initial_key
-    assert dict(state.repetition_counts)[str(initial_key)] == 2
+    assert dict(state.repetition_counts)[str(initial_key)] == expected_occurrences
     provenance = reconstruct_history_provenance(state, compiled)
     assert provenance.status == "verified", provenance.reason
     trace = trace_next_turn_legal_captures(state, compiled)
@@ -80,51 +83,58 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
         (Square(0, 4), Square(0, 5)),  # chaser threatens the same A again
     )
     same_state, same_key, same_provenance, same_trace = _replay(
-        compiled, same_target_moves
+        compiled, same_target_moves * 2, expected_occurrences=3
     )
     same_chaser, same_edges = _chaser_edges(
-        same_trace, same_provenance, (2, 4)
+        same_trace, same_provenance, (6, 8)
     )
     same_cycle = trace_latest_repeated_cycle_capture_facts(same_state, compiled)
     assert same_cycle.status == "verified", same_cycle.reason
     assert same_cycle.cycle is not None
-    assert (same_cycle.cycle.start_ply, same_cycle.cycle.end_ply) == (0, 4)
+    assert (same_cycle.cycle.start_ply, same_cycle.cycle.end_ply) == (4, 8)
     same_cycle_edges = tuple(
         fact for fact in same_cycle.cycle.capture_facts
         if fact.source_token == same_chaser
     )
-    assert tuple(fact.frame_ply for fact in same_cycle_edges) == (2, 4)
+    assert tuple(fact.frame_ply for fact in same_cycle_edges) == (6, 8)
     assert tuple(fact.target_token for fact in same_cycle_edges) == tuple(
         edge.target_token for edge in same_edges
     )
     same_response = next(
         fact for fact in same_cycle.cycle.response_facts
-        if fact.threat_frame_ply == 2
+        if fact.threat_frame_ply == 6
         and fact.source_token == same_chaser
     )
-    assert same_response.response_ply == 3
+    assert same_response.response_ply == 7
+    assert same_response.response_wrapped is False
     assert same_response.target_moved is True
     assert same_response.specific_capture_still_legal is False
     assert same_response.response_action_source_token == same_edges[0].target_token
-    unanswered_same = next(
+    wrapped_same = next(
         fact for fact in same_cycle.cycle.response_facts
-        if fact.threat_frame_ply == 4
+        if fact.threat_frame_ply == 8
         and fact.source_token == same_chaser
     )
-    assert unanswered_same.response_ply is None
-    assert unanswered_same.target_moved is None
-    assert unanswered_same.specific_capture_still_legal is None
+    assert wrapped_same.response_ply == 5
+    assert wrapped_same.response_wrapped is True
+    assert wrapped_same.target_moved is True
+    assert wrapped_same.specific_capture_still_legal is False
     same_initial_id = same_provenance.frames[0].identities[
         square_to_index(target, same_provenance.frames[0].position.board_shape)
     ]
     assert same_initial_id is not None
-    assert tuple(edge.target_token for edge in same_edges) == (
-        same_initial_id, same_initial_id
-    )
+    assert tuple(edge.target_token for edge in same_edges) == (same_initial_id,) * 2
     assert tuple(edge.target for edge in same_edges) == (
         Square(3, 4), target
     )
     assert position_identity_key(same_state.position, compiled) == same_key
+    candidate = extract_repeated_cycle_capture_candidate(
+        same_cycle, same_chaser, same_initial_id
+    )
+    assert candidate.status == "candidate", candidate.reason
+    assert (candidate.start_ply, candidate.end_ply) == (4, 8)
+    assert tuple(step.frame_ply for step in candidate.evidence) == (6, 8)
+    assert candidate.evidence[-1].response_facts[0].response_wrapped is True
 
     substituted_moves = (
         (Square(3, 5), Square(3, 4)),
@@ -193,9 +203,21 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
     assert moved_target_response.response_ply == 5
     assert moved_target_response.target_moved is True
     assert moved_target_response.specific_capture_still_legal is True
+    replacement_candidate = extract_repeated_cycle_capture_candidate(
+        swap_cycle, swap_chaser, initial_target_id
+    )
+    assert replacement_candidate.status == "not_candidate"
+    assert (replacement_candidate.start_ply, replacement_candidate.end_ply) == (0, 8)
+    assert tuple(step.frame_ply for step in replacement_candidate.evidence) == (
+        2, 4, 6, 8
+    )
 
     incomplete = replace(swap_state, history=swap_state.history[1:])
     unknown_cycle = trace_latest_repeated_cycle_capture_facts(incomplete, compiled)
     assert unknown_cycle.status == "unknown"
     assert unknown_cycle.cycle is None
     assert unknown_cycle.reason
+    unknown_candidate = extract_repeated_cycle_capture_candidate(
+        unknown_cycle, swap_chaser, initial_target_id
+    )
+    assert unknown_candidate.status == "unknown"

@@ -97,31 +97,43 @@ chasing side, but permits chasing a Pawn that has not crossed the river. It
 also prohibits two or more friendly pieces perpetually chasing one opposing
 piece, with an exception when one of those chasers is a King or Pawn. These
 role/region conditions are part of the rule, not optional score-like
-corrections. The existing fixtures do not exercise these exceptions. They
-also return to the starting position only once (repetition count 2), so they
-are not evidence that a terminal repetition threshold or an Article 20
-outcome has been reached.
+corrections. The existing fixtures do not exercise these exceptions. The
+four-ply control is now repeated until its start position has three
+occurrences; the diagnostic Xiangqi ruleset's configured repetition limit is
+four, so even that remains a pattern probe, not terminal or Article 20
+evidence. The eight-ply substitution fixture has two occurrences.
 
 The current declarative surface has a repetition limit and only `draw` or
 `continuous_check_loss`; it has no cycle-local target-token predicate,
 per-chase reply/resolution relation, or role/region exception expression.
 The opt-in, game-name-independent
-`trace_latest_repeated_cycle_capture_facts` now selects the interval between
-the previous and current occurrence of the final position, then returns its
-ply-ordered identity-aware legal-capture facts. It requires exact full-history
-replay and an entirely verified capture trace; incomplete or unsupported
-histories return `unknown` with no partial cycle. The paired Xiangqi fixture
-tests boundaries `(0, 4]` and `(0, 8]`, source/target tokens and ply order, plus
-an incomplete-history negative case. It is not called by normal transitions,
-terminal handling, or evaluation. For a candidate edge followed by an actual
-reply within the observed cycle, the same trace records the response action's
-piece tokens, whether that target token moved, and whether the exact source
-token can still legally capture that target token afterward. An unanswered
-cycle-boundary edge or unsupported exact query is represented as unknown, not
-inferred from geometry. In the control's ply-2→3 response, A moved and the
-same R→A capture was no longer legal. In the substitution fixture's ply-2→3
-response, A stayed while B moved and R→A remained legal; after the later B
-edge, B moved on its ply-5 reply while R→B remained legal.
+`trace_latest_repeated_cycle_capture_facts` returns ply-ordered identity-aware
+legal-capture facts bounded by the current position's repeat window: it uses
+the configured repetition-limit span when reached, otherwise the latest two
+occurrences. Exact full-history replay and verified capture traces are
+required; incomplete or unsupported histories return `unknown` with no
+partial cycle. The Xiangqi control test reaches three occurrences and checks
+the final loop `(4, 8]`; the substitution fixture checks `(0, 8]`. For each
+capture edge it also records the next action's actor/token facts, whether the
+target token moved, and whether the exact source token can still legally
+capture it. A closing edge is paired to the first observed move only when the
+boundary positions and the source/target token locations are identical; that
+fact is explicitly `response_wrapped`, otherwise the response remains
+unknown. In the control's ply-6→7 response, A moved and the same R→A capture
+was no longer legal; the closing ply-8 edge safely wraps to ply 5 with the
+same facts. In the substitution fixture's ply-2→3 response, A stayed while B
+moved and R→A remained legal; after the B edge, B moved on ply 5 while R→B
+remained legal.
+
+The separate opt-in `extract_repeated_cycle_capture_candidate` returns only
+`candidate`, `not_candidate`, or `unknown` for a requested source/target token
+pair. It requires the same edge after every source-owner move in the cycle
+window and that the exact edge is no longer legal after each reply; it retains
+per-ply edge/response evidence. The 3-occurrence control is `candidate`; the
+substitution fixture is `not_candidate`; truncated history remains `unknown`.
+These are generic observable-pattern labels only: they do not infer intent,
+classify a move as WXF chase, apply Article 20 exceptions, or affect normal
+terminal/evaluator paths.
 
 Still missing is the semantic relation needed to establish that a reply by a
 different piece actually resolves the specific prior chase; movement and
