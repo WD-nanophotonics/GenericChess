@@ -105,13 +105,22 @@ outcome has been reached.
 The current declarative surface has a repetition limit and only `draw` or
 `continuous_check_loss`; it has no cycle-local target-token predicate,
 per-chase reply/resolution relation, or role/region exception expression.
-The smallest game-agnostic prerequisite is a verified, cycle-bounded history
-fact layer that can represent ordered chase-candidate edges by piece identity,
-whether each reply moved that target or otherwise resolved the threat, and
-rule-set-declared target/chaser roles and region predicates. Incomplete
-history must remain unknown. A future outcome policy can then declare its
-cycle and exception conditions; these facts alone must not label a move as
-WXF chase or assign a result. The present substitution fixture is insufficient
+The opt-in, game-name-independent
+`trace_latest_repeated_cycle_capture_facts` now selects the interval between
+the previous and current occurrence of the final position, then returns its
+ply-ordered identity-aware legal-capture facts. It requires exact full-history
+replay and an entirely verified capture trace; incomplete or unsupported
+histories return `unknown` with no partial cycle. The paired Xiangqi fixture
+tests boundaries `(0, 4]` and `(0, 8]`, source/target tokens and ply order, plus
+an incomplete-history negative case. It is not called by normal transitions,
+terminal handling, or evaluation.
+
+Still missing is the semantic relation needed to tell whether each intervening
+reply moved the attacked target or otherwise resolved that specific chase,
+plus rule-set-declared target/chaser role and region predicates for exceptions.
+A future policy can declare cycle and exception conditions only after those
+facts are made sound; these capture edges alone must not label a move as WXF
+chase or assign a result. The present substitution fixture remains insufficient
 for a WXF outcome test, so this order adds no adjudication failure test.
 
 ## Article 20: outcome policy and exceptions

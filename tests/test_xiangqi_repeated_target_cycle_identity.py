@@ -4,6 +4,9 @@ from generic_chess.core.actions import SemanticBoardMove
 from generic_chess.core.capture_pressure_trace import trace_next_turn_legal_captures
 from generic_chess.core.coordinates import Square, square_to_index
 from generic_chess.core.history_provenance import reconstruct_history_provenance
+from generic_chess.core.history_cycle_trace import (
+    trace_latest_repeated_cycle_capture_facts,
+)
 from generic_chess.core.identity import position_identity_key
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
@@ -79,8 +82,20 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
     same_state, same_key, same_provenance, same_trace = _replay(
         compiled, same_target_moves
     )
-    _same_chaser, same_edges = _chaser_edges(
+    same_chaser, same_edges = _chaser_edges(
         same_trace, same_provenance, (2, 4)
+    )
+    same_cycle = trace_latest_repeated_cycle_capture_facts(same_state, compiled)
+    assert same_cycle.status == "verified", same_cycle.reason
+    assert same_cycle.cycle is not None
+    assert (same_cycle.cycle.start_ply, same_cycle.cycle.end_ply) == (0, 4)
+    same_cycle_edges = tuple(
+        fact for fact in same_cycle.cycle.capture_facts
+        if fact.source_token == same_chaser
+    )
+    assert tuple(fact.frame_ply for fact in same_cycle_edges) == (2, 4)
+    assert tuple(fact.target_token for fact in same_cycle_edges) == tuple(
+        edge.target_token for edge in same_edges
     )
     same_initial_id = same_provenance.frames[0].identities[
         square_to_index(target, same_provenance.frames[0].position.board_shape)
@@ -107,8 +122,20 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
     swap_state, swap_key, swap_provenance, swap_trace = _replay(
         compiled, substituted_moves
     )
-    _swap_chaser, swap_edges = _chaser_edges(
+    swap_chaser, swap_edges = _chaser_edges(
         swap_trace, swap_provenance, (2, 4, 6, 8)
+    )
+    swap_cycle = trace_latest_repeated_cycle_capture_facts(swap_state, compiled)
+    assert swap_cycle.status == "verified", swap_cycle.reason
+    assert swap_cycle.cycle is not None
+    assert (swap_cycle.cycle.start_ply, swap_cycle.cycle.end_ply) == (0, 8)
+    swap_cycle_edges = tuple(
+        fact for fact in swap_cycle.cycle.capture_facts
+        if fact.source_token == swap_chaser
+    )
+    assert tuple(fact.frame_ply for fact in swap_cycle_edges) == (2, 4, 6, 8)
+    assert tuple(fact.target_token for fact in swap_cycle_edges) == tuple(
+        edge.target_token for edge in swap_edges
     )
     initial_target_id = swap_provenance.frames[0].identities[
         square_to_index(target, swap_provenance.frames[0].position.board_shape)
@@ -129,3 +156,9 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
     )
     assert swap_edges[1].target == target
     assert position_identity_key(swap_state.position, compiled) == swap_key == same_key
+
+    incomplete = replace(swap_state, history=swap_state.history[1:])
+    unknown_cycle = trace_latest_repeated_cycle_capture_facts(incomplete, compiled)
+    assert unknown_cycle.status == "unknown"
+    assert unknown_cycle.cycle is None
+    assert unknown_cycle.reason
