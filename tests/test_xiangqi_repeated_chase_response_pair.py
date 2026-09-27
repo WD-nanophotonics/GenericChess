@@ -684,6 +684,46 @@ def test_repeated_cycle_actor_loss_requires_one_shared_mover_target_at_limit():
     assert observations[1].board[changed[0]] == Piece(1, "S", "S")
 
 
+@pytest.mark.parametrize(
+    ("block_target_path", "expected"),
+    (
+        (False, TerminalResult(TerminalStatus.RULE_LOSS, winner=1)),
+        (True, TerminalResult(TerminalStatus.REPETITION)),
+    ),
+)
+def test_public_core_and_semantic_executor_agree_on_verified_target_cycle(
+    block_target_path, expected
+):
+    trace, state, compiled, _ruleset = _target_summary_trace(
+        switch_targets=False,
+        repeated_cycle_target_conditions=(RuleRepeatedCycleTargetCondition(actor=0),),
+        support_rook=True,
+        block_target_path=block_target_path,
+        repetition_limit=3,
+        cycle_repetitions=2,
+    )
+    assert trace.status == "verified" and trace.cycle is not None
+    actor = next(
+        item
+        for item in summarize_repeated_cycle_targets(trace).actors
+        if item.actor == 0
+    )
+    assert (actor.shared_mover_target_count > 0) is not block_target_path
+
+    engine = semantic_engine_for(compiled)
+    assert engine is not None
+    results = (
+        terminal_result(state, compiled),
+        engine.terminal_result(
+            state.position,
+            state.ply_count,
+            state.repetition_counts,
+            state.history,
+        ),
+    )
+    assert results == (expected, expected)
+
+
 def test_unsatisfied_and_unknown_cycle_conditions_never_award_actor_loss():
     _trace, state, compiled, _ruleset = _target_summary_trace(
         switch_targets=True,
@@ -709,3 +749,30 @@ def test_unsatisfied_and_unknown_cycle_conditions_never_award_actor_loss():
     runtime = SearchPathRuntime.from_state(incomplete, compiled)
     with pytest.raises(IncompleteAdjudicationHistoryError, match="trusted search history"):
         terminal_from_search_runtime(runtime)
+
+
+def test_truncated_at_limit_cycle_fails_closed_on_core_and_semantic_paths():
+    _trace, state, compiled, _ruleset = _target_summary_trace(
+        switch_targets=False,
+        repeated_cycle_target_conditions=(RuleRepeatedCycleTargetCondition(actor=0),),
+        support_rook=True,
+        repetition_limit=3,
+        cycle_repetitions=2,
+    )
+    assert dict(state.repetition_counts)[state.history[-1].position_key] == 3
+    incomplete = replace(
+        state,
+        history=(),
+        terminal_status=TerminalResult(TerminalStatus.ONGOING),
+    )
+    with pytest.raises(IncompleteAdjudicationHistoryError, match="complete verifiable history"):
+        terminal_result(incomplete, compiled)
+    engine = semantic_engine_for(compiled)
+    assert engine is not None
+    with pytest.raises(IncompleteAdjudicationHistoryError, match="complete verifiable history"):
+        engine.terminal_result(
+            incomplete.position,
+            incomplete.ply_count,
+            incomplete.repetition_counts,
+            incomplete.history,
+        )
