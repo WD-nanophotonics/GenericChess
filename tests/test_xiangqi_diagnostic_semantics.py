@@ -292,6 +292,13 @@ def test_cannon_all_public_actions_require_exactly_one_screen_to_capture(product
         (0, Square(4, 0), Square(8, 9), Square(0, 4), Square(0, 5), (Square(0, 5), Square(0, 6)), Square(0, 7), Square(0, 7)),
         (1, Square(4, 9), Square(0, 0), Square(8, 5), Square(8, 4), (Square(8, 4), Square(8, 3)), Square(8, 2), Square(8, 2)),
     ):
+        quiet_clear = _state(
+            compiled,
+            [(side, "G", own_g), (1 - side, "G", enemy_g), (side, "C", source)],
+            side=side,
+        )
+        assert quiet_target in _targets(quiet_clear, compiled, source)
+
         no_screen = _state(
             compiled,
             [
@@ -345,9 +352,9 @@ def test_cannon_all_public_actions_require_exactly_one_screen_to_capture(product
 
 def test_soldier_forward_and_post_river_lateral_moves_for_both_sides(product):
     _ruleset, compiled, _engine = product
-    for side, own_g, enemy_g, before, before_forward, before_sideways, after, after_sideways, backward in (
-        (0, Square(4, 0), Square(8, 9), Square(4, 3), Square(4, 4), Square(5, 3), Square(4, 5), Square(5, 5), Square(4, 4)),
-        (1, Square(4, 9), Square(0, 0), Square(4, 6), Square(4, 5), Square(5, 6), Square(4, 4), Square(5, 4), Square(4, 5)),
+    for side, own_g, enemy_g, before, before_forward, before_sideways, after, after_forward, after_sideways, backward in (
+        (0, Square(4, 0), Square(8, 9), Square(4, 3), Square(4, 4), Square(5, 3), Square(4, 5), Square(4, 6), Square(5, 5), Square(4, 4)),
+        (1, Square(4, 9), Square(0, 0), Square(4, 6), Square(4, 5), Square(5, 6), Square(4, 4), Square(4, 3), Square(5, 4), Square(4, 5)),
     ):
         early = _state(
             compiled,
@@ -364,6 +371,7 @@ def test_soldier_forward_and_post_river_lateral_moves_for_both_sides(product):
             side=side,
         )
         targets = _targets(crossed, compiled, after)
+        assert after_forward in targets
         assert after_sideways in targets
         assert backward not in targets
 
