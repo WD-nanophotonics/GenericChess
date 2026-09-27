@@ -1601,6 +1601,7 @@ class SemanticEngine:
         from .adjudication import (
             automatic_adjudication_status,
             consecutive_action_adjudication_status,
+            no_progress_draw_status,
         )
 
         self._ensure_match(position)
@@ -1641,6 +1642,16 @@ class SemanticEngine:
                 return perpetual
         if any(count >= self.support.repetition_limit for _, count in repetition_counts):
             return TerminalResult(TerminalStatus.REPETITION)
+        no_progress = no_progress_draw_status(
+            self.support.no_progress_draw,
+            position,
+            ply_count,
+            repetition_counts,
+            history,
+            self.semantic,
+        )
+        if no_progress == "DRAW":
+            return TerminalResult(TerminalStatus.NO_PROGRESS_DRAW)
         automatic = automatic_adjudication_status(
             self.support.automatic_adjudications,
             ply_count,

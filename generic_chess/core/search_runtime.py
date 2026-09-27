@@ -471,6 +471,10 @@ class SearchPathRuntime:
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
     ):
+        if getattr(compiled, "no_progress_draw", None) is not None:
+            raise NotImplementedError(
+                "search for no-progress draw rules requires path-state identity support"
+            )
         ensure_ruleset_match(state.position, compiled)
         self.compiled = compiled
         # Opaque Core-neutral callback: Core never imports Native and never

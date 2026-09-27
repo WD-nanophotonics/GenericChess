@@ -30,6 +30,16 @@ class CompiledConsecutiveActionAdjudication:
 
 
 @dataclass(frozen=True, slots=True)
+class CompiledNoProgressDraw:
+    """Execution form of a generic automatic no-progress draw rule."""
+
+    threshold_plies: int
+    reset_on_capture: bool
+    reset_mover_type_ids: tuple[str, ...] = ()
+    outcome: str = "DRAW"
+
+
+@dataclass(frozen=True, slots=True)
 class CompiledRepeatedCycleTargetCondition:
     """Compiled actor selector and result for a repeated-cycle condition."""
 
@@ -81,6 +91,7 @@ class CompiledRuleSet:
     consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
     initial_setup_positions: Mapping[str, Position] = field(default_factory=dict)
     repeated_cycle_target_conditions: tuple[CompiledRepeatedCycleTargetCondition, ...] = ()
+    no_progress_draw: CompiledNoProgressDraw | None = None
 
 
 @dataclass(frozen=True, slots=True)

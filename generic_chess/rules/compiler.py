@@ -28,6 +28,7 @@ from .compiled import (
     CompiledAutomaticAdjudication,
     CompiledConsecutiveActionAdjudication,
     CompiledGeometryCarrier,
+    CompiledNoProgressDraw,
     CompiledRepeatedCycleTargetCondition,
     CompiledRuleSet,
 )
@@ -40,6 +41,7 @@ from .schema import (
     RuleSet,
     RuleConsecutiveActionAdjudication,
     RuleInitialSetupOption,
+    RuleNoProgressDraw,
     RuleRepeatedCycleTargetCondition,
     compute_fingerprint,
     ruleset_from_dict,
@@ -604,6 +606,9 @@ def compile_ruleset(
         capture_disposition=ruleset.capture_disposition,
         pass_enabled=ruleset.pass_enabled,
         repeated_cycle_target_conditions=repeated_cycle_target_conditions,
+        no_progress_draw=_compile_no_progress_draw(
+            ruleset, tuple(sorted(types_by_id))
+        ),
     )
 
     issues = _position_validation(compiled)
@@ -776,6 +781,42 @@ def _compile_consecutive_action_adjudications(ruleset: RuleSet):
     if issues:
         raise RuleValidationError(issues)
     return tuple(output)
+
+
+def _compile_no_progress_draw(ruleset: RuleSet, type_ids):
+    item = ruleset.no_progress_draw
+    if item is None:
+        return None
+    issues = []
+    if not isinstance(item, RuleNoProgressDraw):
+        raise RuleValidationError([
+            ValidationIssue("NO_PROGRESS_RULE_INVALID", "no_progress_draw", "expected RuleNoProgressDraw")
+        ])
+    if isinstance(item.threshold_plies, bool) or not isinstance(item.threshold_plies, int) or item.threshold_plies < 1:
+        issues.append(ValidationIssue("NO_PROGRESS_THRESHOLD_INVALID", "no_progress_draw.threshold_plies", "must be a positive integer"))
+    if not isinstance(item.reset_on_capture, bool):
+        issues.append(ValidationIssue("NO_PROGRESS_CAPTURE_RESET_INVALID", "no_progress_draw.reset_on_capture", "must be boolean"))
+    if not isinstance(item.reset_mover_type_ids, tuple) or any(
+        not isinstance(type_id, str) or not type_id
+        for type_id in item.reset_mover_type_ids
+    ):
+        issues.append(ValidationIssue("NO_PROGRESS_RESET_TYPES_INVALID", "no_progress_draw.reset_mover_type_ids", "must be a tuple of unique piece type IDs"))
+    else:
+        if len(set(item.reset_mover_type_ids)) != len(item.reset_mover_type_ids):
+            issues.append(ValidationIssue("NO_PROGRESS_RESET_TYPES_INVALID", "no_progress_draw.reset_mover_type_ids", "must not contain duplicate piece type IDs"))
+        for type_id in item.reset_mover_type_ids:
+            if type_id not in type_ids:
+                issues.append(ValidationIssue("NO_PROGRESS_RESET_TYPE_UNKNOWN", "no_progress_draw.reset_mover_type_ids", repr(type_id)))
+    if item.outcome != "DRAW":
+        issues.append(ValidationIssue("NO_PROGRESS_OUTCOME_UNSUPPORTED", "no_progress_draw.outcome", repr(item.outcome)))
+    if issues:
+        raise RuleValidationError(issues)
+    return CompiledNoProgressDraw(
+        item.threshold_plies,
+        item.reset_on_capture,
+        tuple(sorted(item.reset_mover_type_ids)),
+        item.outcome,
+    )
 
 
 def _compile_repeated_cycle_target_conditions(ruleset: RuleSet):
@@ -1209,6 +1250,9 @@ def _build_semantic_support(
         consecutive_action_adjudications = (
             _compile_consecutive_action_adjudications(ruleset)
         )
+        no_progress_draw = _compile_no_progress_draw(
+            ruleset, tuple(sorted(types_by_id))
+        )
         initial_setup_options = compiled.initial_setup_positions
     else:
         if ruleset is not None:
@@ -1225,6 +1269,7 @@ def _build_semantic_support(
         stalemate_result = compiled.stalemate_result
         automatic_adjudications = compiled.automatic_adjudications
         consecutive_action_adjudications = compiled.consecutive_action_adjudications
+        no_progress_draw = compiled.no_progress_draw
         initial_setup_options = {
             key: tuple(
                 tuple(position.board[rank * shape.width:(rank + 1) * shape.width])
@@ -1266,6 +1311,7 @@ def _build_semantic_support(
         board_height=None if shape.width == shape.height else shape.height,
         pass_enabled=pass_enabled,
         consecutive_action_adjudications=consecutive_action_adjudications,
+        no_progress_draw=no_progress_draw,
     )
 
 
@@ -2456,6 +2502,7 @@ def _compile_semantic_ruleset_from_baseline(
                 and not ir.declarations
                 and not ir.automatic_adjudications
                 and not support.consecutive_action_adjudications
+                and support.no_progress_draw is None
                 and not ir.repeated_cycle_target_conditions
             ):
                 ir = replace(

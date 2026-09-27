@@ -17,6 +17,7 @@ class SessionStatus(Enum):
     MAX_PLY = "max_ply"
     NO_CONTEST = "no_contest"
     ACTION_CLASS_DRAW = "action_class_draw"
+    NO_PROGRESS_DRAW = "no_progress_draw"
     RULE_LOSS = "rule_loss"
     RESIGNATION = "resignation"
     DECLARATION = "declaration"
@@ -72,6 +73,7 @@ def _session_status_from_terminal(terminal: TerminalResult) -> SessionStatus:
         TerminalStatus.MAX_PLY: SessionStatus.MAX_PLY,
         TerminalStatus.NO_CONTEST: SessionStatus.NO_CONTEST,
         TerminalStatus.ACTION_CLASS_DRAW: SessionStatus.ACTION_CLASS_DRAW,
+        TerminalStatus.NO_PROGRESS_DRAW: SessionStatus.NO_PROGRESS_DRAW,
         TerminalStatus.RULE_LOSS: SessionStatus.RULE_LOSS,
     }
     return mapping[terminal.status]

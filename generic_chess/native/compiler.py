@@ -830,6 +830,10 @@ def build_semantic_compile_payload(semantic):
     consulted.  The payload is the static closure of the frozen semantic IR
     v2 and must be exactly reconstructable from the C-owned capsule.
     """
+    if getattr(semantic, "no_progress_draw", None) is not None:
+        raise NativeUnsupportedRuleError(
+            "native execution does not support no-progress draw rules"
+        )
     ir = semantic.ir
     support = semantic.support
     fingerprint = support.ruleset_fingerprint
@@ -1182,6 +1186,10 @@ def build_semantic_compile_payload(semantic):
 def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
     """Compile a CompiledSemanticRuleset into the C-owned semantic rules
     capsule (compile-only contract; no semantic execution)."""
+    if getattr(semantic, "no_progress_draw", None) is not None:
+        raise NativeUnsupportedRuleError(
+            "native execution does not support no-progress draw rules"
+        )
     if not native_available():
         raise NativeUnsupportedRuleError(
             "native extension is not built; run scripts/build_native_zig.py"

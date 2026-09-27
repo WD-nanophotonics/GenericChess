@@ -102,8 +102,14 @@ def test_compiled_ruleset_is_frozen_derived_no_runtime_state():
             "repetition_policy",
                 "max_ply",
                 "stalemate_result",
-                "automatic_adjudications",
-                "declarations",
+        "automatic_adjudications",
+        "declarations",
+        "capture_disposition",
+        "pass_enabled",
+        "consecutive_action_adjudications",
+        "initial_setup_positions",
+        "repeated_cycle_target_conditions",
+        "no_progress_draw",
     }
     assert fields == expected
 
@@ -131,6 +137,12 @@ def test_rule_schema_field_set_is_frozen():
             "declarations",  # F26 action-independent declaration semantics
             "automatic_adjudications",  # F28 generic ply-threshold adjudication
             "metadata",
+        "capture_disposition",
+        "pass_enabled",
+        "consecutive_action_adjudications",
+        "initial_setup_options",
+        "repeated_cycle_target_conditions",
+        "no_progress_draw",
     }
 
 

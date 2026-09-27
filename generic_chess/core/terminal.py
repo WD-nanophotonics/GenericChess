@@ -10,6 +10,7 @@ from .attacks import is_in_check
 from .adjudication import (
     automatic_adjudication_status,
     consecutive_action_adjudication_status,
+    no_progress_draw_status,
 )
 from .errors import ensure_ruleset_match
 from .movegen import has_legal_action
@@ -30,6 +31,7 @@ class TerminalStatus(Enum):
     MAX_PLY = "max_ply"
     NO_CONTEST = "no_contest"
     ACTION_CLASS_DRAW = "action_class_draw"
+    NO_PROGRESS_DRAW = "no_progress_draw"
     RULE_LOSS = "rule_loss"
 
 
@@ -279,6 +281,16 @@ def _terminal_from_parts(
             return perpetual
     if is_repetition_draw(repetition_counts, repetition_limit):
         return TerminalResult(TerminalStatus.REPETITION)
+    no_progress = no_progress_draw_status(
+        getattr(compiled, "no_progress_draw", None),
+        position,
+        ply_count,
+        repetition_counts,
+        history,
+        compiled,
+    )
+    if no_progress == "DRAW":
+        return TerminalResult(TerminalStatus.NO_PROGRESS_DRAW)
     automatic = automatic_adjudication_status(
         getattr(compiled, "automatic_adjudications", ()),
         ply_count,

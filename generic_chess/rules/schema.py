@@ -135,6 +135,7 @@ AUTOMATIC_ADJUDICATION_OUTCOMES = ("NO_CONTEST",)
 AUTOMATIC_ADJUDICATION_POLICIES = ("threshold_actor_continuous_check",)
 CONSECUTIVE_ACTION_CLASSES = ("pass",)
 CONSECUTIVE_ACTION_OUTCOMES = ("DRAW",)
+NO_PROGRESS_OUTCOMES = ("DRAW",)
 
 
 @dataclass(frozen=True, slots=True)
@@ -154,6 +155,16 @@ class RuleConsecutiveActionAdjudication:
     action_class: str
     threshold: int
     outcome: str
+
+
+@dataclass(frozen=True, slots=True)
+class RuleNoProgressDraw:
+    """Optional automatic draw after a configured run of no-progress plies."""
+
+    threshold_plies: int
+    reset_on_capture: bool
+    reset_mover_type_ids: tuple[str, ...] = ()
+    outcome: str = "DRAW"
 
 
 @dataclass(frozen=True, slots=True)
@@ -224,6 +235,8 @@ class RuleSet:
     initial_setup_options: tuple[RuleInitialSetupOption, ...] = ()
     # Optional repeated-cycle outcome policy; empty preserves default behavior.
     repeated_cycle_target_conditions: tuple[RuleRepeatedCycleTargetCondition, ...] = ()
+    # Optional no-progress draw; None preserves legacy serialization/identity.
+    no_progress_draw: RuleNoProgressDraw | None = None
 
     @property
     def board_shape(self) -> BoardShape:
@@ -1095,6 +1108,60 @@ def consecutive_action_adjudication_from_dict(
     return RuleConsecutiveActionAdjudication(action_class, threshold, outcome)
 
 
+def no_progress_draw_to_dict(value: RuleNoProgressDraw) -> dict:
+    return {
+        "threshold_plies": value.threshold_plies,
+        "reset_on_capture": value.reset_on_capture,
+        "reset_mover_type_ids": sorted(value.reset_mover_type_ids),
+        "outcome": value.outcome,
+    }
+
+
+def no_progress_draw_from_dict(data: Mapping[str, Any], path: str) -> RuleNoProgressDraw:
+    data = _require_mapping(data, path)
+    unknown = set(data) - {
+        "threshold_plies", "reset_on_capture", "reset_mover_type_ids", "outcome"
+    }
+    if unknown:
+        raise _err("UNKNOWN_FIELD", path, f"unknown field(s): {sorted(unknown)}")
+    threshold = _require_int(
+        _require_field(data, "threshold_plies", path), f"{path}.threshold_plies"
+    )
+    if threshold < 1:
+        raise _err(
+            "NO_PROGRESS_THRESHOLD_INVALID",
+            f"{path}.threshold_plies",
+            "threshold_plies must be positive",
+        )
+    reset_on_capture = _require_bool(
+        _require_field(data, "reset_on_capture", path), f"{path}.reset_on_capture"
+    )
+    raw_types = data.get("reset_mover_type_ids", ())
+    if not isinstance(raw_types, (list, tuple)):
+        raise _err(
+            "FIELD_NOT_LIST",
+            f"{path}.reset_mover_type_ids",
+            "reset_mover_type_ids must be a list",
+        )
+    reset_types = tuple(
+        _require_str(value, f"{path}.reset_mover_type_ids[{index}]")
+        for index, value in enumerate(raw_types)
+    )
+    if any(not value for value in reset_types) or len(set(reset_types)) != len(reset_types):
+        raise _err(
+            "NO_PROGRESS_RESET_TYPES_INVALID",
+            f"{path}.reset_mover_type_ids",
+            "reset mover type IDs must be non-empty and unique",
+        )
+    outcome = _require_member(
+        _require_str(data.get("outcome", "DRAW"), f"{path}.outcome"),
+        NO_PROGRESS_OUTCOMES,
+        f"{path}.outcome",
+        "NO_PROGRESS_OUTCOME_UNSUPPORTED",
+    )
+    return RuleNoProgressDraw(threshold, reset_on_capture, reset_types, outcome)
+
+
 def repeated_cycle_target_condition_to_dict(
     value: RuleRepeatedCycleTargetCondition,
 ) -> dict:
@@ -1645,6 +1712,8 @@ def ruleset_to_dict(
             repeated_cycle_target_condition_to_dict(item)
             for item in ruleset.repeated_cycle_target_conditions
         ]
+    if ruleset.no_progress_draw is not None:
+        data["no_progress_draw"] = no_progress_draw_to_dict(ruleset.no_progress_draw)
     return data
 
 
@@ -1921,6 +1990,11 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         )
         for i, item in enumerate(cycle_target_raw)
     )
+    no_progress_draw = (
+        no_progress_draw_from_dict(data["no_progress_draw"], f"{path}.no_progress_draw")
+        if "no_progress_draw" in data
+        else None
+    )
     metadata = _require_mapping(data.get("metadata", {}), f"{path}.metadata")
 
     return RuleSet(
@@ -1947,6 +2021,7 @@ def ruleset_from_dict(data: Mapping[str, Any]) -> RuleSet:
         pass_enabled=pass_enabled,
         consecutive_action_adjudications=consecutive_action_adjudications,
         repeated_cycle_target_conditions=repeated_cycle_target_conditions,
+        no_progress_draw=no_progress_draw,
     )
 
 

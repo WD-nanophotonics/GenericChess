@@ -17,7 +17,7 @@ from ..core.actions import Action
 from ..core.transition import apply_action
 from . import _module, native_available
 from .adapter import pack_semantic_search_position
-from .compiler import GC_SEM_MAX_PLY
+from .compiler import GC_SEM_MAX_PLY, NativeUnsupportedRuleError
 from .mirror import pack_semantic_action
 from .semantic import public_action
 
@@ -188,6 +188,10 @@ class SemanticSearchEngine:
         policy=None,
         policy_deferred_legality: bool = False,
     ) -> None:
+        if getattr(compiled, "no_progress_draw", None) is not None:
+            raise NativeUnsupportedRuleError(
+                "native search does not support no-progress draw rules"
+            )
         if not native_available():
             raise RuntimeError("native extension is not built")
         if compiled.ruleset_fingerprint != native_rules.fingerprint:

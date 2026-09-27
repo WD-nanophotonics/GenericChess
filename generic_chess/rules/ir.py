@@ -23,6 +23,7 @@ from ..core.coordinates import BoardShape
 from .compiled import (
     CompiledAutomaticAdjudication,
     CompiledConsecutiveActionAdjudication,
+    CompiledNoProgressDraw,
     CompiledRepeatedCycleTargetCondition,
 )
 from .schema import (
@@ -597,6 +598,10 @@ class CompiledSemanticRuleset:
         return self.ir.consecutive_action_adjudications
 
     @property
+    def no_progress_draw(self) -> CompiledNoProgressDraw | None:
+        return None if self.support is None else self.support.no_progress_draw
+
+    @property
     def repeated_cycle_target_conditions(
         self,
     ) -> tuple[CompiledRepeatedCycleTargetCondition, ...]:
@@ -651,6 +656,7 @@ class CompiledSemanticSupport:
     board_height: int | None = None
     pass_enabled: bool = False
     consecutive_action_adjudications: tuple[CompiledConsecutiveActionAdjudication, ...] = ()
+    no_progress_draw: CompiledNoProgressDraw | None = None
 
     @property
     def board_shape(self) -> BoardShape:
