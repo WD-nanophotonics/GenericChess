@@ -152,6 +152,7 @@ def _target_summary_trace(
     repeated_cycle_target_conditions=(),
     *,
     support_rook=False,
+    block_target_path=False,
     move_general=False,
     repetition_limit=8,
     cycle_repetitions=None,
@@ -167,6 +168,8 @@ def _target_summary_trace(
         rows[square.rank][square.file] = piece
     if support_rook:
         rows[5][4] = Piece(0, "R", "R")
+    if block_target_path:
+        rows[8][3] = Piece(1, "S", "S")
 
     ruleset = replace(
         build_xiangqi_diagnostic_ruleset(),
@@ -599,6 +602,86 @@ def test_repeated_cycle_actor_loss_waits_for_ruleset_repetition_limit(
         terminal_from_search_runtime(runtime),
     )
     assert results == (expected,) * 4
+
+
+def test_repeated_cycle_actor_loss_requires_one_shared_mover_target_at_limit():
+    condition = RuleRepeatedCycleTargetCondition(actor=0)
+    observations = []
+    for block_target_path, expected in (
+        (False, TerminalResult(TerminalStatus.RULE_LOSS, winner=1)),
+        (True, TerminalResult(TerminalStatus.REPETITION)),
+    ):
+        trace, state, compiled, _ruleset = _target_summary_trace(
+            switch_targets=False,
+            repeated_cycle_target_conditions=(condition,),
+            block_target_path=block_target_path,
+            repetition_limit=3,
+            cycle_repetitions=2,
+        )
+        assert trace.cycle is not None
+        assert (trace.cycle.start_ply, trace.cycle.end_ply) == (0, 8)
+        assert dict(state.repetition_counts)[trace.cycle.position_key] == 3
+        actor = next(
+            item for item in summarize_repeated_cycle_targets(trace).actors
+            if item.actor == 0
+        )
+        mover_targets = dict(actor.mover_targets_by_ply)
+        assert len(mover_targets) == 4
+        if block_target_path:
+            assert actor.shared_target_tokens == ()
+            assert actor.shared_mover_target_tokens == ()
+            assert actor.distinct_target_count == 2
+            target_sets = {frozenset(targets) for targets in mover_targets.values()}
+            assert len(target_sets) == 2
+            assert all(len(targets) == 1 for targets in target_sets)
+        else:
+            assert actor.shared_target_count == 1
+            assert actor.shared_mover_target_count == 1
+            target_token = actor.shared_mover_target_tokens[0]
+            assert all(target_token in targets for targets in mover_targets.values())
+
+        replay_compiled = replace(
+            compiled,
+            ir=replace(compiled.ir, repeated_cycle_target_conditions=()),
+        )
+        provenance = reconstruct_history_provenance(state, replay_compiled)
+        assert provenance.status == "verified", provenance.reason
+        runtime = SearchPathRuntime.from_state(
+            state,
+            compiled,
+            history_witnesses=tuple(frame.position for frame in provenance.frames),
+        )
+        engine = semantic_engine_for(compiled)
+        assert engine is not None
+        results = (
+            terminal_result(state, compiled),
+            _terminal_from_parts(
+                state.position,
+                state.ply_count,
+                state.repetition_counts,
+                compiled,
+                state.history,
+            ),
+            engine.terminal_result(
+                state.position,
+                state.ply_count,
+                state.repetition_counts,
+                state.history,
+            ),
+            terminal_from_search_runtime(runtime),
+        )
+        assert results == (expected,) * 4
+        observations.append(state.position)
+
+    # The paired fixtures differ only by one interposed piece; both complete
+    # the same four-ply cycle to the same declared repetition threshold.
+    changed = [
+        index for index, (plain, screened) in enumerate(
+            zip(observations[0].board, observations[1].board)
+        ) if plain != screened
+    ]
+    assert changed == [8 * 9 + 3]
+    assert observations[1].board[changed[0]] == Piece(1, "S", "S")
 
 
 def test_unsatisfied_and_unknown_cycle_conditions_never_award_actor_loss():
