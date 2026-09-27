@@ -283,6 +283,11 @@ def test_chariot_requires_clear_path_and_captures_without_hand_transfer(product)
         )
         after = apply_action(capturable, capture, compiled)
         assert after.position.board[target.rank * 9 + target.file] == Piece(side, "R", "R")
+        assert after.position.side_to_move == 1 - side
+        assert not any(
+            piece == Piece(1 - side, "S", "S")
+            for piece in after.position.board
+        )
         assert after.position.hands == capturable.position.hands
 
 
@@ -326,6 +331,11 @@ def test_cannon_all_public_actions_require_exactly_one_screen_to_capture(product
         )
         after = apply_action(one, capture, compiled)
         assert after.position.board[target.rank * 9 + target.file] == Piece(side, "C", "C")
+        assert after.position.side_to_move == 1 - side
+        assert not any(
+            piece == Piece(1 - side, "S", "S")
+            for piece in after.position.board
+        )
         assert after.position.hands == one.position.hands
 
         two = _state(
@@ -384,6 +394,7 @@ def test_facing_generals_screens_and_self_check_use_full_legal_actions(product):
     )
     assert engine.in_check(facing.position, 0)
     assert engine.in_check(facing.position, 1)
+    assert Square(4, 9) not in _targets(facing, compiled, Square(4, 0))
     screen = _state(
         compiled,
         [
