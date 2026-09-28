@@ -134,6 +134,17 @@ does not resume the discarded detour.
    must inspect the framework path that emits the fault. Repeating an unchanged
    command or asking the user to choose without new evidence is not recovery.
 
+Courier's normal launcher may start a fresh, short-lived Chrome process for
+each sequential request using the registered profile, then close it when the
+request finishes. An event with `browser_started` and
+`attached_existing: false` records that normal launch; it does not by itself
+mean a replacement Chat target, profile, or parallel browser was created. The
+no-replacement-browser rule forbids a separate browser or profile used to work
+around a fault. Check the profile, owner lease, target URL, and any live
+overlap before treating a normal launch as a topology violation. Do not pause
+the Courier order loop solely because a completed request launched its
+managed browser.
+
 ## Hourly Supervisor patrol
 
 Read `AGENTS.md` and `WORKFLOW.md`, then this manual. Inspect the registered
