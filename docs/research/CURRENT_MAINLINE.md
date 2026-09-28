@@ -89,23 +89,35 @@ that statistical object. No human material references, numerical fitting,
 Arena, or Heavy are authorized by the closed proposal. Absence of an order is
 not a reason to repeat the same Courier message or generate status-only turns.
 
-## Next bounded scientific direction
+## Latest structural result and next direction
 
-The Supervisor authorizes one theoretical `CAUSAL_DIAGNOSTIC` on
-*rule-semantic simulation dominance* as a possible boundary on material
-values, not a scalar formula. The game-theoretic principle is that a player
-cannot be worse off when one of its choices gains capabilities while every
-old legal choice and its consequent game transition remain available, under
-the same victory condition and turn structure. The unknown is whether that
-principle can be stated as a game-name-independent relation on executable
-piece states that yields any nontrivial piece ordering without choosing a
-state distribution or consulting human values.
+The bounded simulation-dominance diagnostic was closed through Courier request
+`GENERICCHESS-20260928-065828-1158d5b3`. Chat accepted
+`SIMULATION_DOMINANCE_CONTEXT_DEPENDENT`: executable RuleSet semantics yield a
+sound, nontrivial *context-indexed* alternating-simulation partial order, but
+the same piece-type pair can reverse order in different legal contexts. It
+does not yield a context-independent material scalar. A scalar would need an
+additional justified context comparison or aggregation principle. Preserve
+this positive structural fact and its limit; do not turn dominance counts,
+uniform contexts, a neutral transition kernel, or another unmotivated choice
+into a score.
 
-Ask Chat through the current reconciled Courier path for one bounded order:
-define the required simulation relation, test it on the smallest abstract
-chess-like toy RuleSets with and without compulsory-move or transition-side
-effects, and stop at one valid nontrivial ordering or one counterexample that
-shows why the relation is too strong or unsound. Report what additional rule
-consequence would be needed for a scalar; do not invent a score, run full
-games, alter code, or consume Chess/Shogi/Xiangqi material references. This
-is a direction proposal only; Chat must narrow the executable order.
+The project does not require proof that a scalar formula is uniquely forced
+by the rules. It requires a general, scientifically explained, cheap prior
+whose terms and numerical choices are stated before human-value comparison
+and tested without fitting those scarce references. Stop the sequence of
+abstract uniqueness probes about kernels, measures, or aggregation unless a
+new independent game-theoretic principle supplies the missing choice.
+
+The next bounded mainline step is a `CAUSAL_DIAGNOSTIC` of the existing
+rule-derived scalar failures, not a new formula or full-game experiment. Ask
+Chat through the current reconciled Courier path for one narrow order that
+uses the recorded component-level Chess/Shogi diagnostic evidence and relevant
+rule-derived literature to identify **one** concrete rule consequence the
+current model omits or exaggerates. The order must state the causal mechanism,
+the smallest direct rule-semantic observation that could distinguish it from
+the existing explanation, and a stop condition if no defensible mechanism is
+found. Prefer a short read-only review before any implementation. Human values
+remain validation evidence only; do not fit coefficients, inspect Xiangqi
+material values, run Arena/Heavy, or reopen the closed simulation and kernel
+routes. Chat owns the executable work order; the Worker owns its execution.
