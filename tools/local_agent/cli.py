@@ -12,6 +12,7 @@ from .git_ops import publish, promote
 
 
 ACTIVITY = STATE / "activity.json"
+PATROLS = STATE / "patrol.json"
 
 
 def status() -> dict:
@@ -36,7 +37,7 @@ def note(summary: str) -> dict:
     return value
 
 
-def patrol() -> dict:
+def patrol(record: bool = False) -> dict:
     value = read_json(ACTIVITY)
     head = git("rev-parse", "HEAD")
     last_commit_at = datetime.fromisoformat(git("show", "-s", "--format=%cI", "HEAD"))
@@ -49,22 +50,35 @@ def patrol() -> dict:
     else:
         progress_at = last_commit_at
     age_hours = round((datetime.now(timezone.utc) - progress_at).total_seconds() / 3600, 2)
-    return {
+    previous = read_json(PATROLS)
+    snapshot = {"head": head, "activity_at": at}
+    same = bool(previous) and previous.get("snapshot") == snapshot
+    repeated = previous.get("consecutive_same_snapshot", 0) + 1 if same else 0
+    result = {
         "mode": "local-agent", "head": head,
         "last_observable_progress_at": progress_at.isoformat(),
         "hours_since_observable_progress": age_hours,
         "health": "observable_progress" if age_hours < 2 else "progress_unverified",
         "last_activity": value.get("summary"),
+        "previous_patrol_at": previous.get("at"),
+        "same_snapshot_as_previous_patrol": same,
+        "consecutive_same_snapshot": repeated,
         "interpretation": "No recent artifact is visible; this does not prove the agent is idle."
         if age_hours >= 2 else "Recent artifact or progress note is visible.",
     }
+    if record:
+        write_json(PATROLS, {"at": datetime.now(timezone.utc).isoformat(),
+                             "snapshot": snapshot,
+                             "consecutive_same_snapshot": repeated})
+    return result
 
 
 def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="generic-chess-local")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("status")
-    sub.add_parser("patrol")
+    patrol_parser = sub.add_parser("patrol")
+    patrol_parser.add_argument("--record", action="store_true")
     n = sub.add_parser("note")
     n.add_argument("--summary", required=True)
     c = sub.add_parser("consult")
@@ -85,7 +99,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "status":
             result = status()
         elif args.command == "patrol":
-            result = patrol()
+            result = patrol(args.record)
         elif args.command == "note":
             result = note(args.summary)
         elif args.command == "consult":

@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 
 from tools.local_agent import advice
+from tools.local_agent import cli
 from tools.local_agent import git_ops
 from tools.local_agent.common import LocalFlowError
 
@@ -45,6 +46,32 @@ def test_pending_consultation_blocks_next_day_until_reconciled(tmp_path, monkeyp
     question.write_text("Please find the original paper.", encoding="utf-8")
     with pytest.raises(LocalFlowError, match="needs reconciliation"):
         advice.consult(question)
+
+
+def test_recorded_patrol_detects_repeated_snapshot_without_treating_it_as_proof_of_idle(
+        tmp_path, monkeypatch):
+    monkeypatch.setattr(cli, "ACTIVITY", tmp_path / "activity.json")
+    monkeypatch.setattr(cli, "PATROLS", tmp_path / "patrol.json")
+
+    def fake_git(*args):
+        if args == ("rev-parse", "HEAD"):
+            return "a" * 40
+        if args == ("show", "-s", "--format=%cI", "HEAD"):
+            return "2026-09-01T00:00:00+00:00"
+        raise AssertionError(args)
+
+    monkeypatch.setattr(cli, "git", fake_git)
+    first = cli.patrol(record=True)
+    second = cli.patrol(record=True)
+    assert first["consecutive_same_snapshot"] == 0
+    assert second["consecutive_same_snapshot"] == 1
+    assert second["health"] == "progress_unverified"
+    assert "does not prove" in second["interpretation"]
+    cli.write_json(cli.ACTIVITY, {"at": "2026-09-28T00:00:00+00:00",
+                                  "summary": "A different bounded check was recorded."})
+    third = cli.patrol(record=True)
+    assert third["same_snapshot_as_previous_patrol"] is False
+    assert third["consecutive_same_snapshot"] == 0
 
 
 def test_publish_refuses_diverged_remote_before_tests_or_push(monkeypatch):

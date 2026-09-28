@@ -40,7 +40,9 @@ generic-chess-local.cmd publish --tests tests/test_session.py tests/test_ai_sear
 generic-chess-local.cmd promote --candidate <full-sha> --tests <pytest-target>
 ```
 
-The local Agent makes research and Git decisions. ChatCourier is reused only
-for one daily scientific consultation; Chat replies are advisory. See
+The local Agent works in ordinary task mode and makes research and Git decisions.
+A two-hour scheduled turn checks progress and advances one bounded step in the
+same task; no persistent Goal is used. ChatCourier is reused only for one
+scientific consultation per active Tokyo weekday; Chat replies are advisory. See
 `AGENTS.md` and `docs/operations/LOCAL_AGENT.md`. The former work-order flow
 is archived in `docs/archive/courier_worker_20260928/`.
