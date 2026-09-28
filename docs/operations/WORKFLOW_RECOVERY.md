@@ -275,6 +275,15 @@ refusal, or immediately when its Goal is actually marked blocked. Retire the
 old task before registering one successor with an active persistent Goal;
 delete only if the app supports deletion, otherwise archive and report that
 fact. Preserve the existing Courier session, request, worktree, and evidence.
+Before handing a successor any research order, create it with
+`GenericChess-sandbox` as its actual working root and confirm its
+gpt-6-luna / high setting and active Goal. Have that Worker read `AGENTS.md`,
+then create, read back, and remove a harmless untracked probe in the sandbox
+repository root. Verify the probe is gone and Git status is unchanged. A
+project label, registered root, or Supervisor-side write does not prove the
+Worker can edit the repository. If the probe fails, repair the Worker's own
+workspace binding or permissions before assigning ordinary work; do not make
+the Supervisor execute its research order as a workaround.
 If the Worker should have an active Goal but its Goal is inactive and cannot
 be resumed in that task, replace the Worker immediately by the same procedure
 and establish a fresh active Goal in the successor. Do not wait through hourly
