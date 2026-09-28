@@ -13,7 +13,8 @@ LEDGER = STATE / "consultations.json"
 LAUNCHER = ROOT.parent / "GmailCourier" / "scripts" / "chat-courier.cmd"
 ADVISORY = """GenericChess scientific consultation. You are an adviser, not a work-order issuer.
 Search current authoritative sources, original papers, official game rules, and relevant
-open-source implementations where useful. Give direct links, distinguish evidence from
+open-source implementations where useful. Write source links as literal full URLs so they
+survive plain-text capture. Distinguish evidence from
 inference, challenge the hypothesis, and suggest the smallest falsifiable next check.
 Do not assign tasks, set publication or promotion gates, demand Supervisor review,
 or emit GenericChess work-order/status control fields. The local Agent decides.

@@ -32,6 +32,7 @@ def test_daily_consultation_is_reserved_before_transport_and_cannot_duplicate(
     payload = Path(first["message_file"]).read_text(encoding="utf-8")
     assert "primary" in payload.lower()
     assert "not a work-order issuer" in payload
+    assert "literal full URLs" in payload
 
 
 def test_pending_consultation_blocks_next_day_until_reconciled(tmp_path, monkeypatch):
