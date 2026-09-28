@@ -103,11 +103,12 @@ def _producer_payload_complete(compiled: Any, payload: dict[str, Any]) -> bool:
 
 def _source_bundle_sha256() -> str:
     from scripts import audit_static_material_domain_conditional_capability as capability
+    from scripts import audit_static_material_v2h_rule_support_source_prior as v2h
     from scripts import audit_static_semantic_material_prior_v2a as v2a
     from scripts import audit_static_semantic_material_prior_v2c as v2c
     from scripts import audit_static_semantic_material_prior_v2d as v2d
 
-    paths = (Path(__file__), Path(capability.__file__), Path(v2a.__file__),
+    paths = (Path(__file__), Path(capability.__file__), Path(v2h.__file__), Path(v2a.__file__),
              Path(v2c.__file__), Path(v2d.__file__))
     return digest([(str(path.relative_to(ROOT)), file_digest(path)) for path in paths])
 
