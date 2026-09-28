@@ -109,15 +109,31 @@ and tested without fitting those scarce references. Stop the sequence of
 abstract uniqueness probes about kernels, measures, or aggregation unless a
 new independent game-theoretic principle supplies the missing choice.
 
-The next bounded mainline step is a `CAUSAL_DIAGNOSTIC` of the existing
-rule-derived scalar failures, not a new formula or full-game experiment. Ask
-Chat through the current reconciled Courier path for one narrow order that
-uses the recorded component-level Chess/Shogi diagnostic evidence and relevant
-rule-derived literature to identify **one** concrete rule consequence the
-current model omits or exaggerates. The order must state the causal mechanism,
-the smallest direct rule-semantic observation that could distinguish it from
-the existing explanation, and a stop condition if no defensible mechanism is
-found. Prefer a short read-only review before any implementation. Human values
-remain validation evidence only; do not fit coefficients, inspect Xiangqi
-material values, run Arena/Heavy, or reopen the closed simulation and kernel
-routes. Chat owns the executable work order; the Worker owns its execution.
+Subsequent bounded diagnostics established that immediate legal recapture and
+capture-to-hand resource persistence are genuine semantic consequences that
+the frozen board-only U/C components do not directly express. Neither alone
+established the direction of a material-value error without an extra context
+or strategy assumption. Chat then accepted `SHOGI_REAL_SUPPORT_FILTER_NOOP` in
+the reply to `GENERICCHESS-20260928-081653-26081f4d`: every relevant Standard
+Shogi drop seed has a real rule source, so filtering fictitious drop support
+does not change this ruleset's support sets or explain its scalar failure.
+Close the exchange-survivability attribution, hand-resource eligibility, and
+drop-seed filtering routes on this evidence. Do not issue another small
+"find one omitted feature" order merely because the previous one was negative.
+
+The next bounded mainline step is one *model-design synthesis*, owned by Chat
+and executed by the Worker through the existing Courier session. Compare the
+recorded failure modes of the existing scalar families with rule-derived
+material-prior literature, especially the scope and limitations of Pell's
+METAGAMER. Propose at most one complete, inexpensive, game-name-independent
+scalar-prior hypothesis. State its general game-theoretic assumptions, the
+meaning of every term and numerical choice, and one smallest synthetic RuleSet
+counterexample that could falsify it before consulting human values. A
+scientifically justified prior need not be mathematically unique. If no such
+hypothesis survives this review, report the exact missing modeling assumption
+and stop this design round rather than searching another feature. This is a
+read-only design gate, not permission to implement or benchmark a new formula.
+Chat should narrow it to a finite order and time bound. Human material values
+remain validation evidence only: no fitting, no new Chess/Shogi reference
+values, no Xiangqi material values, no Arena/Heavy, publication, or promotion.
+The frozen Xiangqi holdout is preserved.
