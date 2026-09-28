@@ -121,19 +121,27 @@ Close the exchange-survivability attribution, hand-resource eligibility, and
 drop-seed filtering routes on this evidence. Do not issue another small
 "find one omitted feature" order merely because the previous one was negative.
 
-The next bounded mainline step is one *model-design synthesis*, owned by Chat
-and executed by the Worker through the existing Courier session. Compare the
-recorded failure modes of the existing scalar families with rule-derived
-material-prior literature, especially the scope and limitations of Pell's
-METAGAMER. Propose at most one complete, inexpensive, game-name-independent
-scalar-prior hypothesis. State its general game-theoretic assumptions, the
-meaning of every term and numerical choice, and one smallest synthetic RuleSet
-counterexample that could falsify it before consulting human values. A
-scientifically justified prior need not be mathematically unique. If no such
-hypothesis survives this review, report the exact missing modeling assumption
-and stop this design round rather than searching another feature. This is a
-read-only design gate, not permission to implement or benchmark a new formula.
-Chat should narrow it to a finite order and time bound. Human material values
-remain validation evidence only: no fitting, no new Chess/Shogi reference
-values, no Xiangqi material values, no Arena/Heavy, publication, or promotion.
-The frozen Xiangqi holdout is preserved.
+The bounded model-design synthesis closed through Courier request
+`GENERICCHESS-20260928-083420-4be1e4fb` with
+`NO_DEFENSIBLE_COMPLETE_SCALAR_HYPOTHESIS`. RuleSet consequences and terminal
+W/D/L alone do not supply a cardinal map from heterogeneous, context-dependent
+capabilities to one type-local material unit. Pell's METAGAMER gives a sound
+precedent for rule-derived advisors but leaves their exchange weights as a
+modeling choice; expected-outcome methods need a play/context distribution.
+The finite all-Draw two-versus-one-action toy shows that an extra legal option
+does not *logically force* a strictly positive material increment. This is a
+boundary on deductive uniqueness, not a proof that scientifically stated,
+falsifiable approximations are impossible.
+
+Close the automatic scalar-formula, feature-enumeration, equal-weighting,
+kernel and simulation-to-scalar routes under their current assumptions. Do
+not send another equivalent Courier request or fit scarce human values. The
+remaining research decision is which additional, game-independent modeling
+assumption is acceptable: a declared rule-derived context ensemble, bounded
+gameplay calibration, or retaining only structural/ordinal results for now.
+Supervisor has asked the user to choose this boundary. Preserve the captured
+Courier request/reply, the active Worker and Goal, and the Xiangqi material
+holdout. Until that direction is settled, the Worker may consolidate existing
+results and their limits in project notes but must not launch a new scalar
+candidate, Arena/Heavy, publication, or promotion. This is a phase boundary,
+not whole-project completion.
