@@ -146,7 +146,8 @@ def audit() -> dict[str, Any]:
     }
 
     for name, compiled in compiled_sets.items():
-        area = compiled.support.board_size ** 2
+        board_shape = compiled.support.board_shape
+        area = board_shape.area
         v2c_types = v2c["rulesets"][name]["ledger"]
         v2d_types = v2d["rulesets"][name]["ledger"]
         topology_pieces_all = topology["rulesets"][name]["pieces"]
@@ -159,7 +160,8 @@ def audit() -> dict[str, Any]:
         token_ledger = v2c["rulesets"][name]["token_state_ledger"]
         if not token_ledger.get("complete"):
             raise RuntimeError(f"Incomplete V2C token-state ledger in {name}")
-        ruleset_out: dict[str, Any] = {"board_area": area, "types": {}}
+        ruleset_out: dict[str, Any] = {"board_width": board_shape.width,
+            "board_height": board_shape.height, "board_area": area, "types": {}}
         support_by_owner: dict[str, dict[str, list[int]]] = {}
         support_evidence_by_owner: dict[str, dict[str, Any]] = {}
         for owner in (0, 1):

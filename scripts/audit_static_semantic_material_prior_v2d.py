@@ -13,6 +13,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from generic_chess.core.coordinates import BoardShape, Square, rotate_square
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
@@ -54,8 +55,15 @@ def _preflight_v2c() -> tuple[dict[str, Any], dict[str, Any]]:
 
 
 def resolve_removed_square(ref: Any, *, owner: int, source: int, target: int,
-                           path: tuple[int, ...], area_width: int) -> int | None:
+                           path: tuple[int, ...], board_shape: BoardShape | None = None,
+                           area_width: int | None = None) -> int | None:
     """Resolve compiled, position-independent effect-square references or fail closed."""
+    if board_shape is None:
+        if area_width is None:
+            raise ValueError("board_shape is required")
+        # Compatibility for square-only legacy diagnostics outside the V2H chain.
+        board_shape = BoardShape(area_width, area_width)
+    width, height = board_shape.width, board_shape.height
     kind = ref.kind
     if kind == "source":
         return source
@@ -68,8 +76,9 @@ def resolve_removed_square(ref: Any, *, owner: int, source: int, target: int,
             return None
         file, rank = ref.square
         if ref.owner_relative and owner == 1:
-            file, rank = area_width - 1 - file, area_width - 1 - rank
-        return rank * area_width + file if 0 <= file < area_width and 0 <= rank < area_width else None
+            transformed = rotate_square(Square(file, rank), board_shape)
+            file, rank = transformed.file, transformed.rank
+        return rank * width + file if 0 <= file < width and 0 <= rank < height else None
     if kind in ("offset_from_source", "offset_from_target"):
         base = source if kind == "offset_from_source" else target
         if ref.offset is None:
@@ -77,8 +86,8 @@ def resolve_removed_square(ref: Any, *, owner: int, source: int, target: int,
         df, dr = ref.offset
         if ref.owner_relative and owner == 1:
             df, dr = -df, -dr
-        file, rank = base % area_width + df, base // area_width + dr
-        return rank * area_width + file if 0 <= file < area_width and 0 <= rank < area_width else None
+        file, rank = base % width + df, base // width + dr
+        return rank * width + file if 0 <= file < width and 0 <= rank < height else None
     # An auxiliary-state square has no stationary state-free prior.
     return None
 
@@ -121,8 +130,8 @@ def combine_u_c(u: Fraction, c: Fraction) -> Fraction:
 
 def _capture_rows(compiled: Any, type_id: str, event_measure, *,
                   provenance_sink: Any | None = None) -> dict[str, Any]:
-    area = compiled.support.board_size ** 2
-    width = compiled.support.board_size
+    shape = compiled.support.board_shape
+    area = shape.area
     groups: dict[tuple[int, int, int], dict[str, Any]] = {}
     history_ledger: list[dict[str, Any]] = []
     excluded_nonopponent_removals: list[dict[str, Any]] = []
@@ -166,7 +175,7 @@ def _capture_rows(compiled: Any, type_id: str, event_measure, *,
                         for source in range(area):
                             for target, path in geometry_candidates(geometry, str(owner), source):
                                 square = resolve_removed_square(effect.square_ref, owner=owner, source=source,
-                                                               target=target, path=path, area_width=width)
+                                                               target=target, path=path, board_shape=shape)
                                 if square is not None:
                                     resolved.add(square)
                     history_ledger.append({"pattern": pattern.name, "geometry": geometry.kind,
@@ -192,7 +201,7 @@ def _capture_rows(compiled: Any, type_id: str, event_measure, *,
                             continue
                         for target, path in geometry_candidates(geometry, str(owner), source):
                             removed_square = resolve_removed_square(effect.square_ref, owner=owner, source=source,
-                                                                    target=target, path=path, area_width=width)
+                                                                    target=target, path=path, board_shape=shape)
                             if removed_square is None:
                                 unsupported.append({"pattern": pattern.name, "geometry": geometry.kind,
                                     "reason": "capture_effect_square_ref_unresolvable", "effect_square_ref": repr(effect.square_ref)})
@@ -271,6 +280,8 @@ def audit_benchmarks_v2d() -> dict[str, Any]:
         "rulesets": {}}
     for name, compiled in rulesets.items():
         base = baseline["rulesets"][name]
+        board_shape = compiled.support.board_shape
+        board_area = board_shape.area
         type_rows = {}
         capture_coverage = True
         for type_id, urow in base["ledger"].items():
@@ -292,7 +303,9 @@ def audit_benchmarks_v2d() -> dict[str, Any]:
                 "held_drop_semantics_ledger_count": urow["held_drop_semantics_ledger_count"],
                 "dynamic_positional_legality_ledger_count": urow["dynamic_positional_legality_ledger_count"]}
         coverage = base["coverage_complete"] and capture_coverage
-        output["rulesets"][name] = {"coverage_complete": coverage,
+        output["rulesets"][name] = {"board_width": board_shape.width,
+            "board_height": board_shape.height, "board_area": board_area,
+            "coverage_complete": coverage,
             "classification": "STATIC_MATERIAL_PRIOR_V2D_CAPTURE_AFFORDANCE_READY_FOR_HUMAN_VALIDATION" if coverage else "STATIC_MATERIAL_PRIOR_V2D_CAPTURE_AFFORDANCE_INCONCLUSIVE",
             "board_capture_affordance_only": name == "standard_shogi",
             "capture_to_hand_future_hand_value_included": False,

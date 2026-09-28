@@ -52,9 +52,13 @@ def test_edge_completeness_and_duplicate_cube_witness_union():
                    for row in rows)
         assert all(row["event_id"] == digest(row["identity"]) for row in rows)
         assert all(set(row["identity"]) == {
-            "schema_version", "ruleset_fingerprint", "compiled_pattern_ordinal",
+            "schema_version", "ruleset_fingerprint", "board_width", "board_height",
+            "board_area", "index_convention", "compiled_pattern_ordinal",
             "compiled_geometry_ordinal", "actor_type_ordinal", "local_event",
         } for row in rows)
+        assert all(row["identity"]["board_width"] == run.compiled.support.board_shape.width
+                   and row["identity"]["board_height"] == run.compiled.support.board_shape.height
+                   for row in rows)
         assert all("X" not in canonical_bytes(row["identity"]).decode("utf-8") for row in rows)
 
     for component in ("u", "c"):
@@ -76,9 +80,10 @@ def test_omitted_real_contributor_edge_fails_closed():
 
 def test_stale_source_formula_ruleset_and_numeric_bindings_fail_closed():
     run = _run()
-    for field in ("source_bundle_sha256", "formula_identity", "ruleset_fingerprint"):
+    for field in ("source_bundle_sha256", "formula_identity", "ruleset_fingerprint",
+                  "board_width", "board_height", "board_area", "index_convention"):
         stale = dict(run.sidecar["binding"])
-        stale[field] = "stale-" + stale[field]
+        stale[field] = {"stale": field}
         assert not verify_sidecar(run.sidecar, stale, run.compiled), field
     changed_artifact = deepcopy(run.numeric_artifact)
     changed_artifact["u_by_owner_source"]["0"][0] = "999/1"

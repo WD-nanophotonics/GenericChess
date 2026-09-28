@@ -151,7 +151,8 @@ def test_all_bound_identities_invalidate_the_old_certificate(fixture_data):
     excluded, _retained = _contexts(fixture_data)
     certificate = issue_integration_certificate(excluded, compiled)
     binding_fields = (
-        "provenance_schema_version", "ruleset_fingerprint", "unsupported_ledger_sha256",
+        "provenance_schema_version", "ruleset_fingerprint", "board_domain",
+        "unsupported_ledger_sha256",
         "producer_formula_source_sha256", "formula_identity", "numeric_artifact_sha256",
         "requested_output_identity", "retained_domain_sha256",
         "normalization_aggregation_identity", "graph_sha256",

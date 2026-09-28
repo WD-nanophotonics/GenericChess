@@ -78,7 +78,7 @@ def _resolve_effects(compiled: Any, pattern: Any, owner: int, source: int, targe
         if effect.piece_owner not in ("opponent", "self") or effect.square_ref is None:
             return None
         square = resolve_removed_square(effect.square_ref, owner=owner, source=source,
-            target=target, path=path, area_width=compiled.support.board_size)
+            target=target, path=path, board_shape=compiled.support.board_shape)
         if square is None or square == source:
             return None
         label = "enemy" if effect.piece_owner == "opponent" else "own"
@@ -152,7 +152,7 @@ def _positive_cube_witness(cube: tuple, source_distribution: dict) -> tuple[int,
 
 
 def _type_topology(compiled: Any, type_id: str, v2c_ledger: dict[str, Any]) -> dict[str, Any]:
-    area = compiled.support.board_size ** 2
+    area = compiled.support.board_area
     source_is_anchor = bool(compiled.support.type_metadata[type_id].is_anchor)
     source_distributions = {
         owner: _source_joint_counts(v2c_ledger, owner, source_is_anchor=source_is_anchor)
@@ -337,8 +337,9 @@ def audit_topology() -> dict[str, Any]:
         "v2c_candidate_sha256": v2c_freeze["sha256"][".generic_chess_flow/static-semantic-material-prior-v2c-board.json"],
         "rulesets": {}}
     for name, compiled in compiled_sets.items():
-        result = {"board_area": compiled.support.board_size ** 2,
-            "board_size": compiled.support.board_size, "coverage_complete": True, "pieces": {}}
+        board_shape = compiled.support.board_shape
+        result = {"board_width": board_shape.width, "board_height": board_shape.height,
+            "board_area": board_shape.area, "coverage_complete": True, "pieces": {}}
         for type_id in sorted(v2c["rulesets"][name]["ledger"]):
             topology = _type_topology(compiled, type_id, v2c["rulesets"][name]["token_state_ledger"])
             result["coverage_complete"] &= topology["coverage_complete"]

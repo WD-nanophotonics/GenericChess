@@ -10,7 +10,17 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
+
+
+def _board_domain(compiled: Any) -> dict[str, Any]:
+    shape = compiled.support.board_shape
+    return {
+        "board_width": shape.width,
+        "board_height": shape.height,
+        "board_area": shape.area,
+        "index_convention": "rank-major: rank * width + file",
+    }
 
 
 def canonical_bytes(value: Any) -> bytes:
@@ -45,6 +55,7 @@ def _event_id(compiled: Any, pattern: Any, geometry_id: str, type_id: str,
     identity = {
         "schema_version": SCHEMA_VERSION,
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        **_board_domain(compiled),
         "compiled_pattern_ordinal": pattern_ordinal,
         "compiled_geometry_ordinal": geometry_ordinal,
         "actor_type_ordinal": type_ordinal,
@@ -163,7 +174,7 @@ def _numeric_canonical(u_result: dict, c_result: dict, area: int) -> dict[str, A
     }
 
 
-def build_binding(compiled: Any, numeric_artifact: dict[str, Any]) -> dict[str, str]:
+def build_binding(compiled: Any, numeric_artifact: dict[str, Any]) -> dict[str, Any]:
     from scripts import audit_static_material_domain_conditional_capability as capability
     from scripts import audit_static_semantic_material_prior_v2a as v2a
     from scripts import audit_static_semantic_material_prior_v2c as v2c
@@ -177,6 +188,7 @@ def build_binding(compiled: Any, numeric_artifact: dict[str, Any]) -> dict[str, 
         "source_bundle_sha256": digest(source_bundle),
         "formula_identity": digest("synthetic-u-plus-c-retained-mean-v1"),
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        **_board_domain(compiled),
         "numeric_artifact_sha256": digest(numeric_artifact),
     }
 
@@ -240,6 +252,7 @@ def build_sidecar(compiled: Any, sink: ProvenanceSink,
         ))
     return {
         "schema_version": SCHEMA_VERSION,
+        "board_domain": _board_domain(compiled),
         "binding": build_binding(compiled, numeric_artifact),
         "events": {"u": u_events, "c": c_events},
         "aggregate_claims": {"u": _claims(u_groups), "c": _claims(c_groups)},
@@ -269,6 +282,8 @@ def verify_component(sidecar: dict, component: str, compiled: Any) -> bool:
             identity = row["identity"]
             expected_id = digest(identity)
             if row["event_id"] != expected_id or identity["ruleset_fingerprint"] != compiled.ruleset_fingerprint:
+                return False
+            if any(identity.get(key) != value for key, value in _board_domain(compiled).items()):
                 return False
             if identity["schema_version"] != SCHEMA_VERSION:
                 return False
@@ -300,11 +315,13 @@ def verify_component(sidecar: dict, component: str, compiled: Any) -> bool:
         return False
 
 
-def verify_sidecar(sidecar: dict, expected_binding: dict[str, str],
+def verify_sidecar(sidecar: dict, expected_binding: dict[str, Any],
                    compiled: Any) -> bool:
     if not isinstance(sidecar, dict):
         return False
     if sidecar.get("schema_version") != SCHEMA_VERSION or sidecar.get("reference_accessed") is not False:
+        return False
+    if sidecar.get("board_domain") != _board_domain(compiled):
         return False
     if sidecar.get("binding") != expected_binding:
         return False
@@ -334,7 +351,7 @@ def run_synthetic_fixture(rules: Any, compiled: Any, type_id: str) -> PrototypeR
 
     token_ledger = v2c._token_state_ledger(compiled)
     measure_u = v2c._event_measure_factory(token_ledger, compiled, type_id)
-    area = compiled.support.board_size ** 2
+    area = compiled.support.board_area
     u_off = capability._source_u_by_square(compiled, type_id, token_ledger)
     c_off = v2d._capture_rows(compiled, type_id, measure_u)
     numeric_off = _numeric_canonical(u_off, c_off, area)

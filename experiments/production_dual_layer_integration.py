@@ -17,6 +17,7 @@ from experiments.provenance_only_slice import (
     ROOT,
     SCHEMA_VERSION,
     ProvenanceSink,
+    _board_domain,
     _claims,
     _numeric_canonical,
     canonical_bytes,
@@ -49,7 +50,7 @@ def collect_real_producer_evidence(compiled: Any, type_ids: tuple[str, ...]) -> 
         u_on = capability._source_u_by_square(compiled, type_id, token_ledger,
                                               provenance_sink=sink)
         c_on = v2d._capture_rows(compiled, type_id, measure, provenance_sink=sink)
-        area = compiled.support.board_size ** 2
+        area = compiled.support.board_area
         numeric_off = _numeric_canonical(u_off, c_off, area)
         numeric_on = _numeric_canonical(u_on, c_on, area)
         off_bytes, on_bytes = canonical_bytes(numeric_off), canonical_bytes(numeric_on)
@@ -84,6 +85,7 @@ def collect_real_producer_evidence(compiled: Any, type_ids: tuple[str, ...]) -> 
     return {
         "schema_version": SCHEMA_VERSION,
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        "board_domain": _board_domain(compiled),
         "events": event_rows,
         "numeric_enumeration": enumeration,
         "aggregate_claims": claims,
@@ -96,6 +98,7 @@ def collect_real_producer_evidence(compiled: Any, type_ids: tuple[str, ...]) -> 
 def _producer_payload_complete(compiled: Any, payload: dict[str, Any]) -> bool:
     if (payload.get("schema_version") != SCHEMA_VERSION
             or payload.get("ruleset_fingerprint") != compiled.ruleset_fingerprint
+            or payload.get("board_domain") != _board_domain(compiled)
             or payload.get("reference_accessed") is not False):
         return False
     return all(verify_component(payload, component, compiled) for component in ("u", "c"))
@@ -238,6 +241,7 @@ def build_integration_context(compiled: Any, payload: dict[str, Any], *,
     integration_binding = {
         "provenance_schema_version": SCHEMA_VERSION,
         "ruleset_fingerprint": compiled.ruleset_fingerprint,
+        "board_domain": _board_domain(compiled),
         "unsupported_ledger_sha256": ledger_digest,
         "producer_formula_source_sha256": source_bundle,
         "formula_identity": digest(FORMULA_ID),

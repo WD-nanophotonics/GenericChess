@@ -451,7 +451,8 @@ def audit() -> dict[str, Any]:
         topology_ruleset = topology["rulesets"][ruleset]
         capability_ruleset = capability["rulesets"][ruleset]
         v2d_ruleset = v2d["rulesets"][ruleset]
-        area = compiled.support.board_size ** 2
+        board_shape = compiled.support.board_shape
+        area = board_shape.area
         _validate_capability_reconstruction(capability_ruleset, v2d_ruleset, area, ruleset)
         compiled_types = sorted(compiled.support.type_metadata)
         current_types = sorted(type_id for type_id, metadata in compiled.support.type_metadata.items()
@@ -460,6 +461,8 @@ def audit() -> dict[str, Any]:
                 or set(compiled_types) != set(capability_ruleset["types"])):
             raise RuntimeError(f"Compiled, ADR-128 and ADR-129 type sets differ: {ruleset}")
         ruleset_result: dict[str, Any] = {
+            "board_width": board_shape.width,
+            "board_height": board_shape.height,
             "board_area": area,
             "non_anchor_current_types": current_types,
             "anchor_types_excluded_from_augmented_graph": sorted(

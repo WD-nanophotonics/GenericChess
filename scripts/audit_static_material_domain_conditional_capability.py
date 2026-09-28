@@ -73,7 +73,7 @@ def _read_frozen(path: Path, *, human_free: bool = True) -> dict[str, Any]:
 def _source_u_by_square(compiled: Any, type_id: str, token_ledger: dict[str, Any], *,
                         provenance_sink: Any | None = None) -> dict[str, Any]:
     """Reproduce V2A/V2C successor-option grouping, retaining the source key."""
-    area = compiled.support.board_size ** 2
+    area = compiled.support.board_area
     measure = _event_measure_factory(token_ledger, compiled, type_id)
     groups: dict[tuple, list[tuple]] = defaultdict(list)
     geometries: dict[str, list[int]] = {"0": [0] * area, "1": [0] * area}
@@ -308,7 +308,8 @@ def audit_conditional_capability() -> dict[str, Any]:
               "rulesets": {}}
 
     for name, compiled in compiled_sets.items():
-        area = compiled.support.board_size ** 2
+        board_shape = compiled.support.board_shape
+        area = board_shape.area
         c_types = v2c["rulesets"][name]["ledger"]
         d_types = v2d["rulesets"][name]["ledger"]
         topo_types = topology["rulesets"][name]["pieces"]
@@ -480,6 +481,8 @@ def audit_conditional_capability() -> dict[str, Any]:
             all(value is True for value in row["semantic_coverage"].values())
             for row in type_rows.values())
         output["rulesets"][name] = {
+            "board_width": board_shape.width,
+            "board_height": board_shape.height,
             "board_area": area,
             "coverage_complete": all(all(value is True for value in row["semantic_coverage"].values())
                                       for row in type_rows.values()),
