@@ -413,6 +413,64 @@ def test_pre_root_non_root_repetition_merges_with_runtime_identity():
     runtime.assert_balanced()
 
 
+def test_generic_repetition_threshold_transition_push_pop_roundtrip():
+    from test_native_history import _cycle_ruleset, _session_at_ply
+    from generic_chess.core.transition import apply_action
+
+    compiled = _cycle_ruleset()
+    session = _session_at_ply(compiled, 11)
+    parent = session.state
+    assert parent.terminal_status.status.name == "ONGOING"
+    action = session.legal_actions()[0]
+    public_child = apply_action(parent, action, compiled)
+    target_key = position_identity_key(public_child.position, compiled)
+    assert dict(parent.repetition_counts).get(target_key, 0) == compiled.repetition_limit - 1
+    assert dict(public_child.repetition_counts)[target_key] == compiled.repetition_limit
+    assert public_child.terminal_status.status.name == "REPETITION"
+
+    runtime = SearchPathRuntime.from_state(parent, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert runtime.occurrence_count() == compiled.repetition_limit - 1
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        before_actions,
+    )
+
+    runtime.push(action)
+    assert runtime.position == public_child.position
+    assert runtime.ply_count == public_child.ply_count
+    assert runtime.occurrence_count() == compiled.repetition_limit
+    assert len(runtime.history) == len(parent.history) + 1
+    assert runtime.terminal_status == public_child.terminal_status
+    assert runtime.terminal_status.status.name == "REPETITION"
+    assert runtime.legal_actions() == ()
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+
 def test_pre_root_bridge_preserves_exactness_under_forced_runtime_hash_collision():
     from test_native_history import _cycle_ruleset, _session_at_ply
 
