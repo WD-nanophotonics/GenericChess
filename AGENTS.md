@@ -98,6 +98,11 @@ single unknown variable, the minimal direct observation that can test it, and
 why full games are or are not needed. Label the order `CAUSAL_DIAGNOSTIC` or
 `STRENGTH_BENCHMARK`. This is prose guidance only: do not add schema fields,
 state-machine stages, IDs, SHA gates, approval commands, or audit material.
+Transport IDs, hashes, SHAs, and checkpoint manifests are evidence bookkeeping,
+not research outcomes. Another identity-only order requires a concrete decision
+that an unverified identity could change, an observed gap in existing evidence,
+and a reason a smaller direct behavior test cannot resolve it. Otherwise use
+the existing transport checks and continue the mainline.
 
 ## Supervisor and Worker responsibilities
 
@@ -144,6 +149,10 @@ continue independent authorized work while the Supervisor repairs the issue.
 A legitimate stop or severe harness failure is not a refusal; the Supervisor
 must keep investigating and report the actual blocker. The Supervisor does
 not enable Goal for itself.
+The Supervisor may correct the registered Worker's persistent Goal objective in
+place when it repeats stale or conflicting directions; read back the stored
+objective and active status after the change. A normal follow-up message alone
+does not replace that persistent objective.
 
 Read `docs/operations/WORKFLOW_RECOVERY.md` for operational recovery steps.
 Courier abnormal receipts point to this manual. The Worker first repairs a

@@ -18,12 +18,14 @@ from typing import Any, Sequence
 PROJECT_ID = "GENERICCHESS"
 WORK_BOOTSTRAP = """Issue the next concrete GenericChess work order.
 
-Inspect the current published sandbox SHA and choose one bounded, useful next
-step that directly tests or improves playing strength, self-improvement, or the
-main algorithm. Process, audit, and formatting work is justified only when it
-removes a demonstrated blocker that a smaller fix cannot remove. Return COMPLETE
-if no further work is currently needed, or BLOCKED only when user action is
-genuinely required.
+Use the current AGENTS.md and latest user direction to choose one bounded
+mainline step. Reported local-only evidence can support the next bounded
+decision without pretending the candidate is published. Transport IDs, hashes,
+SHAs, and checkpoint manifests are bookkeeping, not research outcomes; propose
+an identity-only order only for a demonstrated decision blocker that the
+smallest direct behavior check cannot resolve. Chat and Worker handle routine
+review without Supervisor approval. Return COMPLETE only if the whole project
+needs no further work, or BLOCKED only when user action is genuinely required.
 
 For every research order, begin in ordinary prose by stating the current single
 unknown variable, the minimal direct observation that tests it, and why full

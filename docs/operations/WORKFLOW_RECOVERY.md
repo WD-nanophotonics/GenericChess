@@ -15,6 +15,13 @@ the Worker's routine research partner. Do not turn a healthy Worker checkpoint
 or a missing next Chat order into a recurring Supervisor-assigned investigation.
 Supervisor contact is for a concrete policy decision, independent audit,
 material scope drift, or a fault the Worker cannot safely repair.
+The Worker's Goal objective is persisted and reintroduced across turns. When
+its text is stale, inspect the registered task's actual Goal, update that same
+thread's objective through Codex `thread/goal/set` while retaining `active`,
+then use `thread/goal/get` to verify the stored text and status. Do not treat a
+follow-up prompt or an edit to this manual as proof that the old Goal vanished;
+do not edit the Goal SQLite database directly or replace a healthy Worker for
+this purpose.
 Do not make Supervisor final review a blanket field on ordinary work orders.
 Chat and the Worker should complete routine, reversible, bounded changes using
 their normal tests and Courier closeout. Request Supervisor review when a
@@ -57,6 +64,13 @@ not hourly patrols or repeated status messages. Ten is an evidence threshold,
 not a mandatory waiting period: a clear earlier diversion may also warrant
 action. Conversely, recent substantive RuleSet work means this particular
 ten-exchange trigger has not fired even if Courier itself is troublesome.
+Repeated ID, source-hash, SHA, provenance, or refreeze orders count as a detour
+when they do not settle a concrete mainline decision. Keep Courier's immutable
+request, reply matching, and publication/promotion SHA checks; those are
+mechanical safeguards. Before allowing further identity research, identify
+the exact wrong decision it prevents and compare its cost with the smallest
+direct behavioral test. If that case is absent, decline the next identity-only
+scope through the existing Courier reply path and request a mainline order.
 
 Before acting, identify the current mainline, the concrete detour, the cost
 of continuing it, and the smallest reversible stop-loss action. The Supervisor
