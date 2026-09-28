@@ -334,6 +334,28 @@ def test_standard_shogi_exact_official_thresholds_and_controls():
     assert assess_declaration(_shogi_boundary_state(compiled, 31, condition="opponent_hand"), compiled, "claim_owner_0").weighted_score == 31
 
 
+def test_standard_shogi_builder_declarations_assess_both_owners_at_real_boundary():
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    assert tuple(item.declaration_id for item in compiled.declarations) == (
+        "claim_owner_0", "claim_owner_1"
+    )
+
+    for owner in (0, 1):
+        state = _shogi_boundary_state(compiled, 31, owner=owner, ply=499)
+        result = assess_declaration(state, compiled, f"claim_owner_{owner}")
+        assert result.actor == owner
+        assert result.weighted_score == 31
+        assert result.outcome == "WIN"
+
+        # Isolate the compiled ply limit: the board, zone witnesses, piece
+        # count, and weighted score are unchanged in this paired negative.
+        expired = replace(state, ply_count=500)
+        failed = assess_declaration(expired, compiled, f"claim_owner_{owner}")
+        assert failed.actor == owner
+        assert failed.weighted_score == result.weighted_score
+        assert failed.outcome == "LOSS"
+
+
 def test_standard_shogi_declaration_assessment_is_state_immutable_and_available_filtering():
     compiled = compile_ruleset_for_execution(
         replace(build_standard_shogi_ruleset(), declarations=_shogi_certification_declarations())
