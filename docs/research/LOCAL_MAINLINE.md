@@ -1,0 +1,15 @@
+# Current local research mainline
+
+This file contains the changing scientific route for the one local Agent. `AGENTS.md` and the latest user instruction take precedence. The former Chat work-order status and request-specific directions are archived in `docs/archive/courier_worker_20260928/CURRENT_MAINLINE.md`; they are not active policy.
+
+## Objective
+
+Build a cheap, scientifically justified, game-independent rule-derived material prior for chess-like games. Generic executable RuleSet semantics must cover the material-relevant legal moves, captures, occupancy and blocking, regions, promotion, capture-to-hand, and drops needed by Chess, Standard Shogi, and Xiangqi. Do not extend full historical adjudication merely to postpone material research. Validate any missing semantic primitive with its smallest direct test.
+
+Study static Chess values first, retain Standard Shogi as a control, then evaluate a frozen formula on Xiangqi as a holdout. Human material values are scarce validation evidence, not training targets. Do not fit coefficients, piece exceptions, or choose among formulas for human-value agreement. If a formula fails, diagnose which general rule consequence it misrepresents and state a new independent scientific argument before changing it. Distinguish statistical mean value from context-dependent value; a static scalar is a zeroth-order approximation.
+
+The old rule-only scalar and AMTU candidates failed their declared checks. A context-indexed simulation partial order is a valid structural result, but it does not itself yield a context-independent cardinal value. Rule semantics alone have not established a unique transition measure or aggregation across contexts. Avoid rerunning kernel, entropy, identity, or feature-enumeration probes without a new principle that can change a concrete decision. This negative result does not prove that all scientifically grounded approximate priors are impossible.
+
+The next local-agent step is to examine one explicit, game-independent context-selection or valuation principle grounded in game theory or rules. State its object, why it applies across games, a minimal counterexample or direct diagnostic, and what observation would reject it. If no defensible scalar follows, preserve the ordinal/context-dependent result and seek a different bounded hypothesis. Do not start large self-play, Arena, or teacher fitting by default.
+
+Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.

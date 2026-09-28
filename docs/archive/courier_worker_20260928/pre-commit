@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+
+hook_dir=${0%/*}
+product_root=$(CDPATH= cd -- "$hook_dir/.." && pwd)
+hold_file="$product_root/.generic_chess_flow/active-supervisor-hold.json"
+if [ -f "$hold_file" ]; then
+  while IFS= read -r line
+  do
+    case "$line" in
+      *'"status": "ACTIVE"'*)
+        echo "GENERIC_CHESS_SUPERVISOR_HOLD_BLOCKS_COMMIT" >&2
+        exit 1
+        ;;
+    esac
+  done < "$hold_file"
+fi

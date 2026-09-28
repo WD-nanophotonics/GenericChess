@@ -1,0 +1,351 @@
+# GenericChess workflow recovery manual
+
+This is an operational runbook under `AGENTS.md`, not a second policy source.
+Use the current project policy and the latest user instruction if they differ
+from a procedure here. `WORKFLOW.md` lists ordinary commands. Keep one Worker,
+Courier session, worktree, and Heavy job. Do not turn an ordinary error into a
+Supervisor HOLD or a blocked Goal.
+
+## Publication and Chat synchronization
+
+The user authorizes public Git and Chat transfer of Worker-generated project
+data without personal or sensitive content. For ordinary work, inspect the
+outgoing tracked changes, run the necessary tests, publish a checkpoint to
+`origin/sandbox`, verify its full remote SHA, and close out through the same
+Courier session with that SHA. A local commit is not visible to remote Chat.
+Do not accumulate local-only orders merely because an earlier Chat order used
+`PUBLICATION_ALLOWED=false`; the user's later publication instruction takes
+precedence. Explain the changed publication basis in the closeout and keep
+the original request/reply evidence. Do not promote to master through this
+path. If a specific user instruction forbids publication or a concrete
+personal/sensitive-content concern is unresolved, retain local-only and give
+Chat self-contained evidence through the existing Courier request.
+
+For a backlog, first reconcile the active Courier request, inventory the
+unpushed commit range, inspect tracked content for personal data or secrets,
+run tests covering the accumulated changes, then publish one coherent tested
+checkpoint. Report the actual published SHA and any previously local-only
+lineage to Chat; never rewrite old receipts or claim an earlier order was
+published when it was not. If Codex auto-review rejects the exact push or
+Courier send even after the user's authorization, record its stated reason,
+stop retries of that operation, and report the product-layer blocker. Do not
+switch to an alternate transport or change the payload merely to evade review.
+
+## Supervisor attention budget
+
+The ordinary work path is Chat -> existing Courier request/session -> Worker:
+Chat supplies research orders, and the Worker implements, tests, closes out,
+and obtains the next order. The Supervisor is not a standing order source or
+the Worker's routine research partner. Do not turn a healthy Worker checkpoint
+or a missing next Chat order into a recurring Supervisor-assigned investigation.
+Supervisor contact is for a concrete policy decision, independent audit,
+material scope drift, or a fault the Worker cannot safely repair.
+The Worker's Goal objective is persisted and reintroduced across turns. When
+its text is stale, inspect the registered task's actual Goal, update that same
+thread's objective through Codex `thread/goal/set` while retaining `active`,
+then use `thread/goal/get` to verify the stored text and status. Do not treat a
+follow-up prompt or an edit to this manual as proof that the old Goal vanished;
+do not edit the Goal SQLite database directly or replace a healthy Worker for
+this purpose.
+Keep the Goal objective short and stable: read `AGENTS.md` and its referenced
+workflow, recovery, and current-mainline documents; continue the existing
+Courier order loop; recover errors under those documents; involve Supervisor
+only for a concrete unresolved decision; stop only under `AGENTS.md`. Never
+put current research content, request IDs, temporary bans, or individual
+recovery commands in the persistent Goal. Change the current route in
+`docs/research/CURRENT_MAINLINE.md`, not in the Goal objective.
+Do not make Supervisor final review a blanket field on ordinary work orders.
+Chat and the Worker should complete routine, reversible, bounded changes using
+their normal tests and Courier closeout. Request Supervisor review when a
+specific risk warrants an independent decision: an irreversible or promotion
+step, uncertain publication/lineage, substantial scope or resource expansion,
+conflicting policy or evidence, or a shared workflow failure. Name that risk
+in the order or escalation. Honor an already issued order's explicit review
+requirement; ask Chat through Courier to narrow the requirement for future
+routine orders rather than silently disregarding it.
+
+Use Supervisor turns to set direction and bounds, review decisive evidence,
+correct Worker drift, and repair shared workflow failures. Delegate routine
+RuleSet, research, code, test, and closeout work to the registered Worker.
+Before doing order-sized work directly, identify the concrete reason the
+Worker cannot do it or why an independent Supervisor check is essential;
+keep that intervention bounded and hand execution back. For an ordinary
+healthy Worker turn, inspect only the evidence needed for the next decision
+and avoid reproducing its entire analysis or test run. A short independent
+check remains appropriate when it resolves a material uncertainty about a
+checkpoint or prevents an incorrect project-wide decision.
+When Chat has no usable next order, first reconcile the same Courier request
+and use its documented safe recovery path; do not bypass Courier by directly
+messaging Chat. The Worker may continue only already authorized independent
+work. If the order path remains unusable, the Worker sends the Supervisor the
+request/reply evidence, the recovery tried, and one bounded action with its
+stop condition. The Supervisor repairs the order path where possible and
+otherwise explicitly allows, denies, or narrows that temporary action. The
+decision is a bridge across the specific gap, not a standing stream of new
+Supervisor work orders. Return order ownership to Chat as soon as the existing
+Courier path can supply a usable order. Do not forward a routine scope choice
+to the user or keep requesting new tests while no project question is settled.
+Treat "user-retained" in a Chat reply or earlier closeout as a claim to check,
+not a permission rule. Consult `AGENTS.md`, the latest user instruction, and
+the concrete evidence. The Supervisor owns research-route and bounded-scope
+choices within that authority. Correct a false user-decision claim in the
+mainline note and the next same-session Courier message; give the Worker one
+allowed next action and its stopping condition. Do not carry a false claim
+forward merely because Chat repeated it.
+Do not turn a captured `CONTINUE` reply without `WORK_ORDER_ID` into repeated
+"waiting" turns. Run `work` and read the captured reply itself. An order ID is
+optional bookkeeping, not an authorization gate. If Chat gives a concrete
+mainline task with a single unknown, bounded action, resource/time limit, and
+stopping condition, the Worker executes it within `AGENTS.md` without routine
+Supervisor approval. Preserve its Courier request/reply as the order evidence;
+do not invent an ID. The mechanical `work_order_active=false` flag only means
+the parser found no `WORK_ORDER_ID`, not that the bounded prose is unusable.
+Escalate only a specific risk, conflicting policy, or material scope question.
+If a reconciled local-only closeout instead asks only for Supervisor research
+direction and gives no executable task, obtain one explicit decision and send
+it through `followup --decision-reply-local-only`.
+This creates a *successor* request with recorded old/reply/new lineage in the
+same Courier session; it does not resubmit the resolved request. A generic
+"do not create requests" instruction must not suppress this normal path.
+If Chat again returns no order, report the new specific decision gap once;
+Supervisor changes the remedy rather than repeating an equivalent followup.
+If the reply is merely advisory or lacks a usable scope or stopping condition,
+do not silently convert it into an order. Send one concrete gap and proposed
+bounded next action to Supervisor, or use the documented direction-decision
+successor path where applicable. A no-ID task never authorizes publication or
+promotion; those retain their independent gates.
+
+## Mainline stop-loss
+
+The Supervisor may cut short an order or recovery route that is visibly
+consuming work without advancing the current AGENTS.md mainline. One strong
+trigger is that the last ten distinct exchanges with the Worker contain no
+direct mainline result or test of a mainline uncertainty. Count exchanges,
+not hourly patrols or repeated status messages. Ten is an evidence threshold,
+not a mandatory waiting period: a clear earlier diversion may also warrant
+action. Conversely, recent substantive RuleSet work means this particular
+ten-exchange trigger has not fired even if Courier itself is troublesome.
+Repeated ID, source-hash, SHA, provenance, or refreeze orders count as a detour
+when they do not settle a concrete mainline decision. Keep Courier's immutable
+request, reply matching, and publication/promotion SHA checks; those are
+mechanical safeguards. Before allowing further identity research, identify
+the exact wrong decision it prevents and compare its cost with the smallest
+direct behavioral test. If that case is absent, decline the next identity-only
+scope through the existing Courier reply path and request a mainline order.
+
+Before acting, identify the current mainline, the concrete detour, the cost
+of continuing it, and the smallest reversible stop-loss action. The Supervisor
+may deny a proposed route, end a low-value order, or retire and rebind a
+repeatedly unusable Chat target within the same project/profile when doing so
+helps the mainline and has limited workflow cost. Tell the Worker exactly
+which work stops, what authorized work continues, and the next decision point;
+do not describe an ordinary course correction as a blocked Goal or impose a
+HOLD by default. Preserve committed work, tests, request/response evidence,
+and old/new lineage. Before replacing a Chat target or request, reconcile
+submission and reply evidence and prove that no unconsumed order can be
+duplicated. Keep the registered Worker, Courier session, worktree, and Heavy
+constraints from AGENTS.md. Record the reason and result so a later patrol
+does not resume the discarded detour.
+
+## On every abnormal Courier receipt
+
+1. Read the receipt, its `recovery_manual_path`, the current immutable request
+   ID, the last event, and the safe next action. `ok: true` waiting events can
+   still need follow-up. A busy Chat is temporary contention, not a project
+   stop. Do independent authorized work while waiting.
+2. The Worker tries the documented same-request recovery within its authority.
+   For a transport fault, retry once with the same request, then inspect the
+   exact request and reply evidence. Do not create another request, Chat,
+   browser, transport, worktree, or Heavy job to get around uncertainty.
+3. If the Worker cannot repair it, send Chat or the registered Supervisor the
+   request ID, event/error fingerprint, receipt and diagnostic paths, actions
+   already attempted, and what independent work remains possible. The Worker
+   keeps its Goal active and continues that work unless the genuine
+   user-decision handoff below applies.
+4. Count occurrences of the same underlying error fingerprint, not every
+   retry log line. At the first occurrence plus two recurrences, the Supervisor
+   must inspect the framework path that emits the fault. Repeating an unchanged
+   command or asking the user to choose without new evidence is not recovery.
+
+Courier's normal launcher may start a fresh, short-lived Chrome process for
+each sequential request using the registered profile, then close it when the
+request finishes. An event with `browser_started` and
+`attached_existing: false` records that normal launch; it does not by itself
+mean a replacement Chat target, profile, or parallel browser was created. The
+no-replacement-browser rule forbids a separate browser or profile used to work
+around a fault. Check the profile, owner lease, target URL, and any live
+overlap before treating a normal launch as a topology violation. Do not pause
+the Courier order loop solely because a completed request launched its
+managed browser.
+
+## Genuine user-decision handoff
+
+Do not use this path for a missing order, scientific uncertainty, a transient
+fault, or Chat/Courier wording alone. The Worker first checks the current
+policy and latest user instruction, attempts authorized reversible work and
+documented recovery, then sends the Supervisor one concise report: the exact
+decision believed to be user-reserved, the evidence for that boundary,
+repairs attempted, and any independent work still available. It must not
+ask the user directly or emit repeated waiting turns. If no independent
+authorized work remains and the user dependency is genuine, the Worker uses
+its own Goal control to set the Goal to `paused`, reads back the status, and
+reports the result to the Supervisor before ending its turn. Do not use
+`blocked` for this pause. If the Goal control is unavailable, end the turn,
+report that fact, and let the Supervisor repair the control path; do not
+pretend the Goal was paused.
+
+The Supervisor verifies the claimed authority boundary immediately. If it
+can decide, it gives an explicit allow, deny, or narrower next order with a
+stopping condition, corrects any false authority record, and resumes the same
+Worker/Goal if paused. If user input really is indispensable, it records the
+reason and paused-Goal readback, stops its own work, and ends with a prominent
+final user-facing message containing the blocker and exactly one specific
+action or choice. No generic "please advise" and no hidden hourly-only
+notice. When the user answers, resume the same Worker/Goal after checking
+the answer; a legitimate pause is neither a refusal nor a `blocked` Goal.
+
+## Hourly Supervisor patrol
+
+Read `AGENTS.md` and `WORKFLOW.md`, then this manual. Inspect the registered
+Worker task and actual Goal status, the same Courier session and request,
+recent receipt and response evidence, Heavy status and measured progress,
+active HOLD, both worktree SHAs and remote sync, and the latest substantive
+research output. Do not infer `blocked` from idle, escalation, or missing Goal
+data. Query the Worker or available state tools when evidence is missing.
+
+Run `generic-chess-flow.cmd supervisor-patrol --issue-key <stable-fingerprint>
+--progress-key <evidence-fingerprint> --worker-state <state> --goal-state
+<active|paused|blocked|unknown>`. Use `none` for no issue. The progress key must
+represent verifiable changed work such as a new Worker turn containing work,
+new result/commit, a newly captured response, or increased measured steps of
+an approved Heavy. A new clock timestamp, repeated status sentence, or Heavy
+heartbeat alone is not progress. The command compares this observation with
+the prior patrol in ignored local runtime state. If it reports
+`action_required`, perform a concrete recovery action, then call the command
+again with identical observation fields and `--action <what-was-done>` to
+record it. The command does not advance a stalled observation without an
+action. Goal `blocked` requires immediate Worker replacement; the repeated
+stalled issue rule requires immediate investigation and repair, not automatic
+Worker replacement. A verified user-decision pause is recorded as `paused`,
+with `worker-state paused` and an issue key beginning `user-decision:`; the
+Supervisor must send the explicit final user request in that turn. This is a
+legitimate pause, not a stalled repair to repeat every hour. Recheck only
+for a user answer or changed evidence. An unexplained `paused` Goal remains
+an actionable fault.
+
+An approved Heavy within its hard envelope and with measured work increasing
+is legitimate progress. If the envelope is exceeded or progress has ceased,
+inspect and repair or stop that job under its existing controls. A Chat wait
+does not halt independent Worker work. Send the user one short mobile-visible
+patrol result with time, Worker/Goal, Heavy/HOLD, concrete progress, action,
+and any one necessary user action.
+
+## Choose a recovery action
+
+For a routine local-only closeout, the Worker provides a concise inline report
+with the order ID, base/candidate/actual remote SHAs, changed behavior and
+limits, plus exact test commands and results. Include the bounded per-order
+patch and test output inline when practical, or attach them through the same
+Courier request. This is reported local evidence; Chat can assess whether it
+supports the next bounded order without claiming remote verification of the
+unpublished commit. Do not turn missing remote visibility alone into a
+Supervisor review requirement. Published state and promotion still require
+exact remote verification.
+
+When the matching local-only closeout reply contains a proposed order that the
+Supervisor explicitly declines on project scope, the Worker may send one
+`followup --scope-reply-local-only --message-file <path>` with that decision and
+a request for a bounded replacement. This path also accepts a fully captured
+reply imported by `recover`: its `RECOVERED` label alone is not an unresolved
+request. The command requires the matching completed Courier receipt and prior
+local-only request, and retains unpublished ancestry. It is for a scope reply,
+not for repeated requests when Chat has already answered the same question.
+
+If a local-only closeout reply marks `GENERICCHESS_STATUS=COMPLETE` but says
+only the current diagnostic/order is complete, the Worker continues the
+project loop with one `followup --phase-complete-local-only --message-file
+<path>` through the same Courier session. The note must identify the closed
+phase and request the next bounded mainline order. This path checks the
+matching completed receipt and retains unpublished lineage. Do not use it
+when Chat explicitly states that no further GenericChess work is needed.
+
+If a reconciled local-only closeout reply says `CONTINUE` but contains no
+executable work order because it requests a Supervisor research-direction
+decision, use one `followup --decision-reply-local-only --message-file <path>`
+to relay that decision through the same Courier session. It checks the matching
+completed receipt, absent work-order ID, and prior response hash, and retains
+the unpublished candidate. First meet its clean-tree requirement: retain
+tracked changes as tested commits and review disposable untracked output
+before using `tools/safe_cleanup.py list` and, for already approved unchanged
+entries, `tools/safe_cleanup.py execute --confirm DELETE_REGISTERED`; never
+hide or delete unknown files merely to pass the guard. Do not use this path
+to revisit an existing order.
+
+An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
+because the Chat cannot independently inspect the unpublished commit. The
+Supervisor reviews the local SHA, tests, original request, and matching reply.
+If that reply contains no new work order, use `followup --reviewed-local-only`
+at most once for that reply; the command verifies ancestry and records request
+lineage. If the Chat again returns only the same remote-evidence notice, do not
+repeat the request. Continue only the latest user-approved bounded work with
+the registered Worker, retaining the Courier evidence for later closeout.
+The Supervisor must repair or reconcile the missing-order path rather than
+repeatedly expanding that work into a substitute Chat/Worker research loop.
+This notice alone is neither a blocked Goal nor a HOLD.
+
+If Chat asks for remote visibility of an unpublished candidate, first check
+whether the user's later project-data publication authorization applies.
+When it does, inspect the outgoing content, test and publish a checkpoint,
+then close out with its verified remote SHA and the original local-only
+lineage. When a specific user prohibition or concrete sensitive-content
+concern prevents publication, record the conflict as a shared order-path
+fault. Recheck the matching request, reply, and local/remote SHAs; do not
+resend equivalent requests or treat a patch as remote verification. Give the
+Worker one bounded independent mainline bridge while the Supervisor repairs
+the order path. Record the decision so the next patrol does not reopen the
+same review loop.
+
+Use the smallest action supported by fresh evidence; escalate the remedy if
+the same fault persists. Fix a broken selector, launcher, status read, or
+registration at its actual source. Resume the same Worker with gpt-6-luna /
+high when it stops without a legal condition. Count only distinct work turns
+after a clear continuation instruction; replace on the third consecutive
+refusal, or immediately when its Goal is actually marked blocked. Retire the
+old task before registering one successor with an active persistent Goal;
+delete only if the app supports deletion, otherwise archive and report that
+fact. Preserve the existing Courier session, request, worktree, and evidence.
+Before handing a successor any research order, create it with
+`GenericChess-sandbox` as its actual working root and confirm its
+gpt-6-luna / high setting and active Goal. Have that Worker read `AGENTS.md`,
+then create, read back, and remove a harmless untracked probe in the sandbox
+repository root. Verify the probe is gone and Git status is unchanged. A
+project label, registered root, or Supervisor-side write does not prove the
+Worker can edit the repository. If the probe fails, repair the Worker's own
+workspace binding or permissions before assigning ordinary work; do not make
+the Supervisor execute its research order as a workaround.
+If the Worker should have an active Goal but its Goal is inactive and cannot
+be resumed in that task, replace the Worker immediately by the same procedure
+and establish a fresh active Goal in the successor. Do not wait through hourly
+patrols or count this as three refusals. First verify the actual Goal status
+and the failed resume path; idle task status or unavailable Goal data alone
+does not prove that restoration failed. This replacement rule does not apply
+to a recorded, verified user-decision pause; resume that same Worker after the
+user answers.
+
+For Courier, first search for the exact submitted request and matching reply,
+including durable receipts and the live target. A submitted or uncertain
+request must never be silently resent or superseded. If matching output
+exists, consume it. If proven unsubmitted, retry or supersede while preserving
+the old request. If the old request is irrecoverable after bounded same-ID
+reconciliation, the Supervisor may retire it and prepare one successor only
+after recording why the old request cannot produce an unconsumed order,
+linking both IDs, and retaining its evidence. If that cannot be established,
+pause only that irreversible Courier operation and continue independent work.
+When the target Chat itself is proven unusable, rebind within the same ChatGPT
+project/profile and retain the old target for deduplication. Remove the old
+Chat only if removal is supported without losing required evidence.
+
+Do not ask the user to resolve a routine local error. When all available
+repairs would have an uncertain irreversible effect, use the genuine
+user-decision handoff above. State the exact operation, evidence, independent
+work performed, and single decision needed in the Supervisor's final message.

@@ -8,10 +8,10 @@ learning experiments, and an optional native C search/runtime backend.
 The repository has exactly two product branches:
 
 - `master` is the accepted production baseline. It is never edited directly.
-- `sandbox` is the only development branch. Completed work is committed,
-  tested, and pushed before it is reviewed or reported.
+- `sandbox` is the development branch. The local Agent decides when a tested
+  checkpoint is ready to publish.
 
-See [WORKFLOW.md](WORKFLOW.md) for the authority and promotion rules. Historical
+See [AGENTS.md](AGENTS.md) for the current authority rules. Historical
 audit material removed from the live tree remains available through Git history
 and the index in [docs/archive/HISTORY.md](docs/archive/HISTORY.md).
 
@@ -30,16 +30,17 @@ Run the desktop application with `run_ui.bat`, or use:
 .venv\Scripts\python.exe -m generic_chess.demo.headless_demo
 ```
 
-## Workflow control
+## Local agent workflow
 
 ```powershell
-generic-chess-flow.cmd status
-generic-chess-flow.cmd start --mode local
-generic-chess-flow.cmd heavy -- .venv\Scripts\python.exe -m generic_chess.learning.experiment --help
-generic-chess-flow.cmd publish --tests tests/test_session.py tests/test_ai_search.py
-generic-chess-flow.cmd finish
+generic-chess-local.cmd status
+generic-chess-local.cmd patrol
+generic-chess-local.cmd consult --question-file <path>
+generic-chess-local.cmd publish --tests tests/test_session.py tests/test_ai_search.py
+generic-chess-local.cmd promote --candidate <full-sha> --tests <pytest-target>
 ```
 
-Courier-driven work uses `start --mode courier`, `resume`, and `closeout`. The
-project control layer delegates transport to the sibling ChatCourier checkout;
-it does not use Gmail or directly automate a browser.
+The local Agent makes research and Git decisions. ChatCourier is reused only
+for one daily scientific consultation; Chat replies are advisory. See
+`AGENTS.md` and `docs/operations/LOCAL_AGENT.md`. The former work-order flow
+is archived in `docs/archive/courier_worker_20260928/`.

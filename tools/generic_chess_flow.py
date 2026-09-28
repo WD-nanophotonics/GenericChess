@@ -3413,4 +3413,6 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    print("The Courier work-order workflow is retired; use generic-chess-local.cmd.",
+          file=sys.stderr)
+    raise SystemExit(2)
