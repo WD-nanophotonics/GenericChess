@@ -300,6 +300,83 @@ def test_product_shogi_optional_and_forced_promotion_actions():
     assert {action.promotion_target_id for action in forced_moves} == {"TP"}
 
 
+def test_standard_shogi_optional_promotion_runtime_push_pop_roundtrip():
+    from generic_chess.core.actions import action_is_board
+    from generic_chess.core.coordinates import Square
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.position import GameState, HistoryRecord
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.core.transition import apply_action
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    state = sfen_to_gc_state(compiled, "8k/9/9/4P4/9/9/9/9/K8 b - 1")
+    root_key = state.repetition_counts[0][0]
+    state = GameState(
+        position=state.position,
+        ply_count=state.ply_count,
+        repetition_counts=state.repetition_counts,
+        terminal_status=state.terminal_status,
+        history=(HistoryRecord(root_key, -1, "", False),),
+    )
+    actions = [
+        action
+        for action in legal_actions(state, compiled)
+        if action_is_board(action)
+        and action.from_square == Square(4, 5)
+        and action.to_square == Square(4, 6)
+    ]
+    assert {action.promotion_target_id for action in actions} == {None, "TP"}
+    promote = next(action for action in actions if action.promotion_target_id == "TP")
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == frozenset(legal_actions(state, compiled))
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        before_actions,
+    )
+
+    child = apply_action(state, promote, compiled)
+    runtime.push(promote)
+    assert runtime.position == child.position
+    assert runtime.position.board[5 * 9 + 4] is None
+    promoted_piece = runtime.position.board[6 * 9 + 4]
+    assert promoted_piece is not None
+    assert (
+        promoted_piece.owner,
+        promoted_piece.base_type_id,
+        promoted_piece.current_type_id,
+        promoted_piece.promoted,
+    ) == (0, "P", "TP", True)
+    assert runtime.position.side_to_move == 1
+    assert runtime.ply_count == state.ply_count + 1
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+
 def test_product_shogi_record_replay_and_alphabeta_smoke():
     compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
     session = GameSession(compiled)
