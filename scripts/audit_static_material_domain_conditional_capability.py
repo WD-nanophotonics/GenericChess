@@ -70,7 +70,8 @@ def _read_frozen(path: Path, *, human_free: bool = True) -> dict[str, Any]:
     return value
 
 
-def _source_u_by_square(compiled: Any, type_id: str, token_ledger: dict[str, Any]) -> dict[str, Any]:
+def _source_u_by_square(compiled: Any, type_id: str, token_ledger: dict[str, Any], *,
+                        provenance_sink: Any | None = None) -> dict[str, Any]:
     """Reproduce V2A/V2C successor-option grouping, retaining the source key."""
     area = compiled.support.board_size ** 2
     measure = _event_measure_factory(token_ledger, compiled, type_id)
@@ -126,6 +127,14 @@ def _source_u_by_square(compiled: Any, type_id: str, token_ledger: dict[str, Any
                             for final_type in final_types:
                                 key = (owner, source, target, state, _effect_key(pattern), final_type)
                                 groups[key].append(cube)
+                                if provenance_sink is not None:
+                                    provenance_sink.note_numeric_contribution("u", compiled, key, cube)
+                                    provenance_sink.record_contribution(
+                                        component="u", compiled=compiled, pattern=pattern,
+                                        geometry_id=gid, type_id=type_id, group_key=key, cube=cube,
+                                        local_event=(owner, source, target, state,
+                                            tuple(compiled.support.type_metadata).index(final_type)),
+                                    )
 
     source_values = {str(owner): [Fraction(0) for _ in range(area)] for owner in (0, 1)}
     for key, cubes in sorted(groups.items()):

@@ -1,22 +1,13 @@
-"""Dynamic, synthetic-only provenance instrumentation prototype.
-
-The producer function AST is copied in memory and receives sidecar appends at
-the existing numerical group-append statements. No repository producer is
-edited. This is intentionally not a production artifact builder.
-"""
+"""Provenance identity, binding, and verification for a synthetic producer slice."""
 
 from __future__ import annotations
 
-import ast
-from collections import Counter, defaultdict
-from copy import deepcopy
+from collections import defaultdict
 from dataclasses import dataclass
 import hashlib
-import inspect
 import json
 from pathlib import Path
-import textwrap
-from typing import Any, Callable
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_VERSION = 1
@@ -78,75 +69,36 @@ def _record_provenance_witness(witnesses: dict, compiled: Any, pattern: Any,
     })
 
 
-class _InjectSameLoopWitness(ast.NodeTransformer):
-    def __init__(self, component: str):
-        self.component = component
-        self.insertions = 0
+class ProvenanceSink:
+    """Opt-in recorder; producer arithmetic never reads from this sink."""
 
-    @staticmethod
-    def _expr(source: str) -> ast.stmt:
-        return ast.parse(source).body[0]
+    def __init__(self) -> None:
+        self.events: dict[str, list[dict[str, Any]]] = {"u": [], "c": []}
+        self.numeric_enumeration: dict[str, dict[str, dict[str, Any]]] = {
+            "u": {}, "c": {},
+        }
+        self._witnesses: dict[str, dict[tuple[Any, ...], list[dict[str, Any]]]] = {
+            "u": defaultdict(list), "c": defaultdict(list),
+        }
 
-    def visit_Expr(self, node: ast.Expr):
-        node = self.generic_visit(node)
-        call = node.value
-        if not isinstance(call, ast.Call):
-            return node
-        source = ast.unparse(node)
-        if self.component == "u" and source == "groups[key].append(cube)":
-            record = self._expr(
-                "_record_provenance_witness(provenance_witnesses, compiled, pattern, gid, "
-                "type_id, 'u', key, cube, (owner, source, target, state, "
-                "tuple(compiled.support.type_metadata).index(final_type)))"
-            )
-        elif self.component == "c" and source.startswith("_add_capture_group("):
-            record = self._expr(
-                "_record_provenance_witness(provenance_witnesses, compiled, pattern, gid, "
-                "type_id, 'c', key, capture_cube, (owner, source, target, removed_square, "
-                "state, pattern.effects.index(effect), "
-                "tuple(tuple(compiled.support.type_metadata).index(t) for t in choices)))"
-            )
-        else:
-            return node
-        self.insertions += 1
-        return [node, record]
+    def note_numeric_contribution(self, component: str, compiled: Any,
+                                  group_key: tuple[Any, ...], cube: tuple) -> None:
+        group_id = digest([component, compiled.ruleset_fingerprint, _jsonable(group_key)])
+        row = self.numeric_enumeration[component].setdefault(group_id, {
+            "group_key": _jsonable(group_key), "cube_ids": [],
+        })
+        row["cube_ids"].append(digest(_jsonable(cube)))
 
-    def visit_Return(self, node: ast.Return):
-        node = self.generic_visit(node)
-        if not isinstance(node.value, ast.Dict):
-            return node
-        if self.component == "u":
-            groups_expr = "{group_key: tuple(group_cubes) for group_key, group_cubes in groups.items()}"
-        else:
-            groups_expr = "{group_key: tuple(row['cubes']) for group_key, row in groups.items()}"
-        node.value.keys.extend((ast.Constant("_provenance_witnesses"), ast.Constant("_numeric_groups")))
-        node.value.values.extend((ast.Call(ast.Name("dict", ast.Load()), [ast.Name("provenance_witnesses", ast.Load())], []),
-                                  ast.parse(groups_expr, mode="eval").body))
-        return node
+    def record_contribution(self, *, component: str, compiled: Any, pattern: Any,
+                            geometry_id: str, type_id: str, group_key: tuple[Any, ...],
+                            cube: tuple, local_event: tuple[Any, ...]) -> None:
+        _record_provenance_witness(self._witnesses[component], compiled, pattern,
+                                   geometry_id, type_id, component, group_key, cube,
+                                   local_event)
+        self.events[component].append(self._witnesses[component][group_key][-1])
 
-
-def instrument_function(function: Callable, component: str) -> Callable:
-    """Compile an in-memory clone with an append adjacent to each cube append."""
-    source = textwrap.dedent(inspect.getsource(function))
-    module_ast = ast.parse(source)
-    fn = next(node for node in module_ast.body if isinstance(node, ast.FunctionDef))
-    fn.name = f"_provenance_clone_{component}_{function.__name__}"
-    fn.decorator_list = []
-    injector = _InjectSameLoopWitness(component)
-    fn = injector.visit(fn)
-    if injector.insertions == 0:
-        raise AssertionError(f"no {component} contribution append found in {function.__name__}")
-    fn.body.insert(0, ast.Assign(
-        targets=[ast.Name("provenance_witnesses", ast.Store())],
-        value=ast.Call(ast.Name("defaultdict", ast.Load()), [ast.Name("list", ast.Load())], []),
-    ))
-    ast.fix_missing_locations(fn)
-    namespace = dict(function.__globals__)
-    namespace["_record_provenance_witness"] = _record_provenance_witness
-    exec(compile(ast.Module(body=[fn], type_ignores=[]), inspect.getsourcefile(function) or "<producer>", "exec"), namespace)
-    clone = namespace[fn.name]
-    clone._instrumented_append_count = injector.insertions
-    return clone
+    def event_groups(self, component: str) -> dict[tuple[Any, ...], list[dict[str, Any]]]:
+        return self._witnesses[component]
 
 
 def _claims(witnesses: dict) -> dict[str, dict[str, Any]]:
@@ -187,12 +139,6 @@ def _numeric_canonical(u_result: dict, c_result: dict, area: int) -> dict[str, A
     }
 
 
-def _normalize_groups(groups: dict, component: str) -> dict[tuple, tuple]:
-    if component == "u":
-        return groups
-    return {key: tuple(cubes) for key, cubes in groups.items()}
-
-
 def build_binding(compiled: Any, numeric_artifact: dict[str, Any]) -> dict[str, str]:
     from scripts import audit_static_material_domain_conditional_capability as capability
     from scripts import audit_static_semantic_material_prior_v2a as v2a
@@ -211,14 +157,14 @@ def build_binding(compiled: Any, numeric_artifact: dict[str, Any]) -> dict[str, 
     }
 
 
-def build_sidecar(compiled: Any, u_result: dict, c_result: dict,
+def build_sidecar(compiled: Any, sink: ProvenanceSink,
                   numeric_artifact: dict[str, Any]) -> dict[str, Any]:
-    u_events = [row for rows in u_result["_provenance_witnesses"].values() for row in rows]
-    c_events = [row for rows in c_result["_provenance_witnesses"].values() for row in rows]
+    u_events = sink.events["u"]
+    c_events = sink.events["c"]
     dependency_edges = []
     # These downstream edges mirror the unchanged synthetic aggregation nodes.
-    u_groups = u_result["_provenance_witnesses"]
-    c_groups = c_result["_provenance_witnesses"]
+    u_groups = sink.event_groups("u")
+    c_groups = sink.event_groups("c")
     for component, grouped in (("u", u_groups), ("c", c_groups)):
         for key, rows in grouped.items():
             owner, source = key[0], key[1]
@@ -260,16 +206,27 @@ def build_sidecar(compiled: Any, u_result: dict, c_result: dict,
         "binding": build_binding(compiled, numeric_artifact),
         "events": {"u": u_events, "c": c_events},
         "aggregate_claims": {"u": _claims(u_groups), "c": _claims(c_groups)},
+        "numeric_enumeration": {
+            component: {
+                group_id: {
+                    "group_key": row["group_key"],
+                    "contributor_count": len(row["cube_ids"]),
+                    "cube_witness_digest": digest(sorted(row["cube_ids"])),
+                    "unique_cube_count": len(set(row["cube_ids"])),
+                }
+                for group_id, row in sink.numeric_enumeration[component].items()
+            }
+            for component in ("u", "c")
+        },
         "dependency_edges": dependency_edges,
         "reference_accessed": False,
     }
 
 
-def verify_component(sidecar: dict, component: str, numeric_groups: dict[tuple, tuple],
-                     compiled: Any) -> bool:
+def verify_component(sidecar: dict, component: str, compiled: Any) -> bool:
     try:
         witnesses = sidecar["events"][component]
-        by_group: dict[tuple, list[dict]] = defaultdict(list)
+        by_group: dict[str, list[dict]] = defaultdict(list)
         for row in witnesses:
             identity = row["identity"]
             expected_id = digest(identity)
@@ -281,22 +238,21 @@ def verify_component(sidecar: dict, component: str, numeric_groups: dict[tuple, 
                 return False
             if row["group_id"] != digest([component, compiled.ruleset_fingerprint, row["group_key"]]):
                 return False
-            key = _freeze(row["group_key"])
-            by_group[key].append(row)
+            by_group[row["group_id"]].append(row)
 
-        normalized_numeric_groups = {_freeze(_jsonable(key)): cubes for key, cubes in numeric_groups.items()}
-        if set(by_group) != set(normalized_numeric_groups):
+        numeric_enumeration = sidecar["numeric_enumeration"][component]
+        if set(by_group) != set(numeric_enumeration):
             return False
         claims = sidecar["aggregate_claims"][component]
-        for key, cubes in normalized_numeric_groups.items():
-            rows = by_group.get(key, [])
-            expected_cube_ids = Counter(digest(_jsonable(cube)) for cube in cubes)
-            actual_cube_ids = Counter(row["cube_id"] for row in rows)
-            if expected_cube_ids != actual_cube_ids or len(rows) != len(cubes):
+        for group_id, expected in numeric_enumeration.items():
+            rows = by_group.get(group_id, [])
+            actual_cube_ids = [row["cube_id"] for row in rows]
+            if (len(rows) != expected["contributor_count"]
+                    or digest(sorted(actual_cube_ids)) != expected["cube_witness_digest"]
+                    or len(set(actual_cube_ids)) != expected["unique_cube_count"]):
                 return False
-            group_id = rows[0]["group_id"]
             claim = claims.get(group_id)
-            if claim != _claims({key: rows})[group_id]:
+            if claim != _claims({group_id: rows})[group_id]:
                 return False
         return True
     except (KeyError, TypeError, ValueError, IndexError):
@@ -304,26 +260,17 @@ def verify_component(sidecar: dict, component: str, numeric_groups: dict[tuple, 
 
 
 def verify_sidecar(sidecar: dict, expected_binding: dict[str, str],
-                   compiled: Any, u_groups: dict, c_groups: dict) -> bool:
+                   compiled: Any) -> bool:
     if not isinstance(sidecar, dict):
         return False
     if sidecar.get("schema_version") != SCHEMA_VERSION or sidecar.get("reference_accessed") is not False:
         return False
     if sidecar.get("binding") != expected_binding:
         return False
-    sidecar = deepcopy(sidecar)
-    for component, result in (("u", u_groups), ("c", c_groups)):
-        if not verify_component(sidecar, component, result, compiled):
+    for component in ("u", "c"):
+        if not verify_component(sidecar, component, compiled):
             return False
     return True
-
-
-def _freeze(value: Any) -> Any:
-    if isinstance(value, list):
-        return tuple(_freeze(item) for item in value)
-    if isinstance(value, dict):
-        return tuple(sorted((key, _freeze(item)) for key, item in value.items()))
-    return value
 
 
 @dataclass(frozen=True)
@@ -332,8 +279,10 @@ class PrototypeRun:
     numeric_bytes_on: bytes
     numeric_artifact: dict[str, Any]
     sidecar: dict[str, Any]
-    u_groups: dict[tuple, tuple]
-    c_groups: dict[tuple, tuple]
+    u_schema_off: tuple[str, ...]
+    u_schema_on: tuple[str, ...]
+    c_schema_off: tuple[str, ...]
+    c_schema_on: tuple[str, ...]
     compiled: Any
 
 
@@ -349,20 +298,20 @@ def run_synthetic_fixture(rules: Any, compiled: Any, type_id: str) -> PrototypeR
     c_off = v2d._capture_rows(compiled, type_id, measure_u)
     numeric_off = _numeric_canonical(u_off, c_off, area)
 
-    u_instrumented = instrument_function(capability._source_u_by_square, "u")
-    c_instrumented = instrument_function(v2d._capture_rows, "c")
-    u_on = u_instrumented(compiled, type_id, token_ledger)
-    c_on = c_instrumented(compiled, type_id, measure_u)
+    sink = ProvenanceSink()
+    u_on = capability._source_u_by_square(compiled, type_id, token_ledger,
+                                          provenance_sink=sink)
+    c_on = v2d._capture_rows(compiled, type_id, measure_u, provenance_sink=sink)
     numeric_on = _numeric_canonical(u_on, c_on, area)
-    binding = build_binding(compiled, numeric_on)
-    sidecar = build_sidecar(compiled, u_on, c_on, numeric_on)
-    sidecar["binding"] = binding
+    sidecar = build_sidecar(compiled, sink, numeric_on)
     return PrototypeRun(
         numeric_bytes_off=canonical_bytes(numeric_off),
         numeric_bytes_on=canonical_bytes(numeric_on),
         numeric_artifact=numeric_on,
         sidecar=sidecar,
-        u_groups=u_on["_numeric_groups"],
-        c_groups=c_on["_numeric_groups"],
+        u_schema_off=tuple(sorted(u_off)),
+        u_schema_on=tuple(sorted(u_on)),
+        c_schema_off=tuple(sorted(c_off)),
+        c_schema_on=tuple(sorted(c_on)),
         compiled=compiled,
     )

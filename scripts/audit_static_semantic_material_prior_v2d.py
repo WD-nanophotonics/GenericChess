@@ -119,7 +119,8 @@ def combine_u_c(u: Fraction, c: Fraction) -> Fraction:
     return u + c
 
 
-def _capture_rows(compiled: Any, type_id: str, event_measure) -> dict[str, Any]:
+def _capture_rows(compiled: Any, type_id: str, event_measure, *,
+                  provenance_sink: Any | None = None) -> dict[str, Any]:
     area = compiled.support.board_size ** 2
     width = compiled.support.board_size
     groups: dict[tuple[int, int, int], dict[str, Any]] = {}
@@ -220,6 +221,17 @@ def _capture_rows(compiled: Any, type_id: str, event_measure) -> dict[str, Any]:
                                 key = (owner, source, removed_square)
                                 _add_capture_group(groups, key, capture_cube, pattern_name=pattern.name,
                                                    disposition=disposition, promotion_choices=tuple(choices))
+                                if provenance_sink is not None:
+                                    provenance_sink.note_numeric_contribution("c", compiled, key, capture_cube)
+                                    effect_ordinal = pattern.effects.index(effect)
+                                    provenance_sink.record_contribution(
+                                        component="c", compiled=compiled, pattern=pattern,
+                                        geometry_id=gid, type_id=type_id, group_key=key, cube=capture_cube,
+                                        local_event=(owner, source, target, removed_square, state,
+                                            effect_ordinal,
+                                            tuple(tuple(compiled.support.type_metadata).index(t)
+                                                  for t in choices)),
+                                    )
 
     value_by_key = capture_group_probabilities(groups, type_id=type_id, event_measure=event_measure)
     public_rows = []
