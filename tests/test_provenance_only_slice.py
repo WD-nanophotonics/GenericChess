@@ -91,19 +91,23 @@ def test_dependency_graph_reaches_synthetic_retained_output():
     run = _run()
     edges = run.sidecar["dependency_edges"]
     assert edges
-    b_inputs = [edge for edge in edges if edge["to"] == "synthetic:retained-output:b"]
+    actor = run.sidecar["events"]["u"][0]["identity"]["actor_type_ordinal"]
+    b_inputs = [edge for edge in edges
+                if edge["to"] == f"synthetic:retained-output:actor={actor}:b"]
     assert {edge["from"] for edge in b_inputs} == {
-        "synthetic:retained-output:u", "synthetic:retained-output:c"}
+        f"synthetic:retained-output:actor={actor}:u",
+        f"synthetic:retained-output:actor={actor}:c"}
     area = len(run.numeric_artifact["b_by_owner_source"]["0"])
     for owner in (0, 1):
         for source in range(area):
-            b_node = f"b:owner={owner}:source={source}"
+            b_node = f"b:actor={actor}:owner={owner}:source={source}"
             assert {edge["from"] for edge in edges if edge["to"] == b_node} == {
-                f"u:owner={owner}:source={source}", f"c:owner={owner}:source={source}"
+                f"u:actor={actor}:owner={owner}:source={source}",
+                f"c:actor={actor}:owner={owner}:source={source}"
             }
-    assert any(edge["from"] == "u:retained-normalized-mean"
-               and edge["to"] == "synthetic:retained-output:u" for edge in edges)
-    assert any(edge["from"] == "c:retained-normalized-mean"
-               and edge["to"] == "synthetic:retained-output:c" for edge in edges)
+    assert any(edge["from"] == f"u:actor={actor}:retained-normalized-mean"
+               and edge["to"] == f"synthetic:retained-output:actor={actor}:u" for edge in edges)
+    assert any(edge["from"] == f"c:actor={actor}:retained-normalized-mean"
+               and edge["to"] == f"synthetic:retained-output:actor={actor}:c" for edge in edges)
     for component in ("u", "c"):
         assert any(edge["to"].startswith(component + ":") for edge in edges)

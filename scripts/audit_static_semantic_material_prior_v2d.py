@@ -222,7 +222,7 @@ def _capture_rows(compiled: Any, type_id: str, event_measure, *,
                                 _add_capture_group(groups, key, capture_cube, pattern_name=pattern.name,
                                                    disposition=disposition, promotion_choices=tuple(choices))
                                 if provenance_sink is not None:
-                                    provenance_sink.note_numeric_contribution("c", compiled, key, capture_cube)
+                                    provenance_sink.note_numeric_contribution("c", compiled, type_id, key, capture_cube)
                                     effect_ordinal = pattern.effects.index(effect)
                                     provenance_sink.record_contribution(
                                         component="c", compiled=compiled, pattern=pattern,

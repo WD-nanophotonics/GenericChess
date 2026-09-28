@@ -63,7 +63,8 @@ def _record_provenance_witness(witnesses: dict, compiled: Any, pattern: Any,
         "event_id": event_id,
         "identity": identity,
         "component": component,
-        "group_id": digest([component, compiled.ruleset_fingerprint, _jsonable(group_key)]),
+        "group_id": digest([component, compiled.ruleset_fingerprint,
+                            identity["actor_type_ordinal"], _jsonable(group_key)]),
         "group_key": _jsonable(group_key),
         "cube_id": cube_id,
     })
@@ -77,27 +78,50 @@ class ProvenanceSink:
         self.numeric_enumeration: dict[str, dict[str, dict[str, Any]]] = {
             "u": {}, "c": {},
         }
-        self._witnesses: dict[str, dict[tuple[Any, ...], list[dict[str, Any]]]] = {
+        self._witnesses: dict[str, dict[str, list[dict[str, Any]]]] = {
             "u": defaultdict(list), "c": defaultdict(list),
         }
+        self._group_ids: dict[tuple[str, int, tuple[Any, ...]], tuple[str, int]] = {}
+        self._next_group_ordinal: dict[tuple[str, int], int] = defaultdict(int)
 
-    def note_numeric_contribution(self, component: str, compiled: Any,
+    def _group_identity(self, component: str, compiled: Any, type_id: str,
+                        group_key: tuple[Any, ...]) -> tuple[str, int, int]:
+        actor_ordinal = tuple(compiled.support.type_metadata).index(type_id)
+        local_key = (component, actor_ordinal, group_key)
+        if local_key not in self._group_ids:
+            ordinal_key = (component, actor_ordinal)
+            group_ordinal = self._next_group_ordinal[ordinal_key]
+            self._next_group_ordinal[ordinal_key] += 1
+            group_id = digest([SCHEMA_VERSION, compiled.ruleset_fingerprint,
+                               component, actor_ordinal, group_ordinal])
+            self._group_ids[local_key] = (group_id, group_ordinal)
+        group_id, group_ordinal = self._group_ids[local_key]
+        return group_id, group_ordinal, actor_ordinal
+
+    def note_numeric_contribution(self, component: str, compiled: Any, type_id: str,
                                   group_key: tuple[Any, ...], cube: tuple) -> None:
-        group_id = digest([component, compiled.ruleset_fingerprint, _jsonable(group_key)])
+        group_id, group_ordinal, _actor_ordinal = self._group_identity(
+            component, compiled, type_id, group_key)
         row = self.numeric_enumeration[component].setdefault(group_id, {
-            "group_key": _jsonable(group_key), "cube_ids": [],
+            "group_ordinal": group_ordinal, "group_key": _jsonable(group_key), "cube_ids": [],
         })
         row["cube_ids"].append(digest(_jsonable(cube)))
 
     def record_contribution(self, *, component: str, compiled: Any, pattern: Any,
                             geometry_id: str, type_id: str, group_key: tuple[Any, ...],
                             cube: tuple, local_event: tuple[Any, ...]) -> None:
-        _record_provenance_witness(self._witnesses[component], compiled, pattern,
-                                   geometry_id, type_id, component, group_key, cube,
-                                   local_event)
-        self.events[component].append(self._witnesses[component][group_key][-1])
+        group_id, group_ordinal, _actor_ordinal = self._group_identity(
+            component, compiled, type_id, group_key)
+        event_bucket: dict[tuple, list[dict[str, Any]]] = defaultdict(list)
+        _record_provenance_witness(event_bucket, compiled, pattern, geometry_id,
+                                   type_id, component, group_key, cube, local_event)
+        row = event_bucket[group_key][-1]
+        row["group_id"] = group_id
+        row["group_ordinal"] = group_ordinal
+        self._witnesses[component].setdefault(group_id, []).append(row)
+        self.events[component].append(row)
 
-    def event_groups(self, component: str) -> dict[tuple[Any, ...], list[dict[str, Any]]]:
+    def event_groups(self, component: str) -> dict[str, list[dict[str, Any]]]:
         return self._witnesses[component]
 
 
@@ -166,41 +190,54 @@ def build_sidecar(compiled: Any, sink: ProvenanceSink,
     u_groups = sink.event_groups("u")
     c_groups = sink.event_groups("c")
     for component, grouped in (("u", u_groups), ("c", c_groups)):
-        for key, rows in grouped.items():
-            owner, source = key[0], key[1]
+        for _group_id, rows in grouped.items():
+            owner, source = rows[0]["group_key"][:2]
+            actor = rows[0]["identity"]["actor_type_ordinal"]
             dependency_edges.append({
                 "from": rows[0]["group_id"],
-                "to": f"{component}:owner={owner}:source={source}",
+                "to": f"{component}:actor={actor}:owner={owner}:source={source}",
             })
-    for owner in (0, 1):
-        for source in range(len(numeric_artifact["b_by_owner_source"][str(owner)])):
-            u_node = f"u:owner={owner}:source={source}"
-            c_node = f"c:owner={owner}:source={source}"
-            b_node = f"b:owner={owner}:source={source}"
+    actor_ordinals = sorted({row["identity"]["actor_type_ordinal"]
+                             for component in ("u", "c") for row in sink.events[component]})
+    for actor in actor_ordinals:
+        for owner in (0, 1):
+            for source in range(len(numeric_artifact["b_by_owner_source"][str(owner)])):
+                u_node = f"u:actor={actor}:owner={owner}:source={source}"
+                c_node = f"c:actor={actor}:owner={owner}:source={source}"
+                b_node = f"b:actor={actor}:owner={owner}:source={source}"
+                dependency_edges.extend((
+                    {"from": u_node, "to": b_node},
+                    {"from": c_node, "to": b_node},
+                    {"from": u_node, "to": f"u:actor={actor}:owner-normalized={owner}",
+                     "operation": "source_sum_then_divide_by_board_area"},
+                    {"from": c_node, "to": f"c:actor={actor}:owner-normalized={owner}",
+                     "operation": "source_sum_then_divide_by_board_area"},
+                ))
             dependency_edges.extend((
-                {"from": u_node, "to": b_node},
-                {"from": c_node, "to": b_node},
-                {"from": u_node, "to": f"u:owner-normalized={owner}",
-                 "operation": "source_sum_then_divide_by_board_area"},
-                {"from": c_node, "to": f"c:owner-normalized={owner}",
-                 "operation": "source_sum_then_divide_by_board_area"},
+                {"from": f"u:actor={actor}:owner-normalized={owner}",
+                 "to": f"u:actor={actor}:retained-normalized-mean",
+                 "operation": "mean_over_two_owners"},
+                {"from": f"c:actor={actor}:owner-normalized={owner}",
+                 "to": f"c:actor={actor}:retained-normalized-mean",
+                 "operation": "mean_over_two_owners"},
             ))
         dependency_edges.extend((
-            {"from": f"u:owner-normalized={owner}", "to": "u:retained-normalized-mean",
-             "operation": "mean_over_two_owners"},
-            {"from": f"c:owner-normalized={owner}", "to": "c:retained-normalized-mean",
-             "operation": "mean_over_two_owners"},
+            {"from": f"u:actor={actor}:retained-normalized-mean",
+             "to": f"synthetic:retained-output:actor={actor}:u",
+             "operation": "copy_exact_fraction"},
+            {"from": f"c:actor={actor}:retained-normalized-mean",
+             "to": f"synthetic:retained-output:actor={actor}:c",
+             "operation": "copy_exact_fraction"},
+            {"from": f"synthetic:retained-output:actor={actor}:u",
+             "to": f"synthetic:retained-output:actor={actor}:b",
+             "operation": "exact_add"},
+            {"from": f"synthetic:retained-output:actor={actor}:c",
+             "to": f"synthetic:retained-output:actor={actor}:b",
+             "operation": "exact_add"},
+            {"from": f"synthetic:retained-output:actor={actor}:b",
+             "to": "synthetic:retained-output",
+             "operation": "retained-domain-aggregation"},
         ))
-    dependency_edges.extend((
-        {"from": "u:retained-normalized-mean", "to": "synthetic:retained-output:u",
-         "operation": "copy_exact_fraction"},
-        {"from": "c:retained-normalized-mean", "to": "synthetic:retained-output:c",
-         "operation": "copy_exact_fraction"},
-        {"from": "synthetic:retained-output:u", "to": "synthetic:retained-output:b",
-         "operation": "exact_add"},
-        {"from": "synthetic:retained-output:c", "to": "synthetic:retained-output:b",
-         "operation": "exact_add"},
-    ))
     return {
         "schema_version": SCHEMA_VERSION,
         "binding": build_binding(compiled, numeric_artifact),
@@ -209,6 +246,7 @@ def build_sidecar(compiled: Any, sink: ProvenanceSink,
         "numeric_enumeration": {
             component: {
                 group_id: {
+                    "group_ordinal": row["group_ordinal"],
                     "group_key": row["group_key"],
                     "contributor_count": len(row["cube_ids"]),
                     "cube_witness_digest": digest(sorted(row["cube_ids"])),
@@ -236,7 +274,9 @@ def verify_component(sidecar: dict, component: str, compiled: Any) -> bool:
                 return False
             if "group_key" not in row:
                 return False
-            if row["group_id"] != digest([component, compiled.ruleset_fingerprint, row["group_key"]]):
+            if row["group_id"] != digest([SCHEMA_VERSION, compiled.ruleset_fingerprint,
+                                           component, identity["actor_type_ordinal"],
+                                           row["group_ordinal"]]):
                 return False
             by_group[row["group_id"]].append(row)
 
@@ -249,7 +289,8 @@ def verify_component(sidecar: dict, component: str, compiled: Any) -> bool:
             actual_cube_ids = [row["cube_id"] for row in rows]
             if (len(rows) != expected["contributor_count"]
                     or digest(sorted(actual_cube_ids)) != expected["cube_witness_digest"]
-                    or len(set(actual_cube_ids)) != expected["unique_cube_count"]):
+                    or len(set(actual_cube_ids)) != expected["unique_cube_count"]
+                    or any(row["group_ordinal"] != expected["group_ordinal"] for row in rows)):
                 return False
             claim = claims.get(group_id)
             if claim != _claims({group_id: rows})[group_id]:

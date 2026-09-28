@@ -128,7 +128,7 @@ def _source_u_by_square(compiled: Any, type_id: str, token_ledger: dict[str, Any
                                 key = (owner, source, target, state, _effect_key(pattern), final_type)
                                 groups[key].append(cube)
                                 if provenance_sink is not None:
-                                    provenance_sink.note_numeric_contribution("u", compiled, key, cube)
+                                    provenance_sink.note_numeric_contribution("u", compiled, type_id, key, cube)
                                     provenance_sink.record_contribution(
                                         component="u", compiled=compiled, pattern=pattern,
                                         geometry_id=gid, type_id=type_id, group_key=key, cube=cube,
