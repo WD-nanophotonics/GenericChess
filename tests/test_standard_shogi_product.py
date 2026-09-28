@@ -90,6 +90,8 @@ def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():
     from generic_chess.core.actions import action_is_board, action_is_drop
     from generic_chess.core.coordinates import Square
     from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.pieces import Piece
+    from generic_chess.core.search_runtime import SearchPathRuntime
     from generic_chess.core.transition import apply_action
     from generic_chess.learning.shogi_rules import sfen_to_gc_state
 
@@ -102,7 +104,69 @@ def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():
         and action.from_square == Square(4, 4)
         and action.to_square == Square(4, 5)
     )
-    state = apply_action(state, capture, compiled)
+    victim_square = 5 * 9 + 4
+    source_square = 4 * 9 + 4
+    victim = state.position.board[victim_square]
+    assert victim is not None
+    assert (victim.base_type_id, victim.current_type_id, victim.promoted) == (
+        "P", "TP", True
+    )
+
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    public_actions = frozenset(legal_actions(state, compiled))
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == public_actions
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        before_actions,
+    )
+    capture_child = apply_action(state, capture, compiled)
+    runtime.push(capture)
+    assert runtime.position == capture_child.position
+    assert runtime.position.board[source_square] is None
+    assert runtime.position.board[victim_square] == Piece(0, "P", "P")
+    assert runtime.position.hands[0] == state.position.hands[0].add("P")
+    assert runtime.position.hands[0].count("TP") == state.position.hands[0].count("TP")
+    assert runtime.position.hands[1] == state.position.hands[1]
+    assert runtime.position.side_to_move == 1
+    assert runtime.ply_count == state.ply_count + 1
+    assert runtime.position.aux_state == state.position.aux_state
+    assert all(
+        runtime.position.board[index] == state.position.board[index]
+        for index in range(len(state.position.board))
+        if index not in (source_square, victim_square)
+    )
+    assert not any(
+        action_is_drop(action)
+        for action in legal_actions(capture_child, compiled)
+    )
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+    state = capture_child
     assert state.position.hands[0].count("P") == 1
     assert state.position.hands[0].count("TP") == 0
 
