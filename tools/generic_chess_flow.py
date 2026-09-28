@@ -13,9 +13,33 @@ import sys
 import time
 import uuid
 from typing import Any, Sequence
+from urllib.parse import unquote, urlsplit
 
 
 PROJECT_ID = "GENERICCHESS"
+
+
+def durable_project_chat_url(value: object, expected_project: object) -> bool:
+    """Reject client-side placeholders before accepting a Courier target rollover."""
+    if not isinstance(value, str) or not isinstance(expected_project, str):
+        return False
+    try:
+        parsed = urlsplit(value)
+    except ValueError:
+        return False
+    parts = [part for part in parsed.path.split("/") if part]
+    if (parsed.scheme != "https" or parsed.hostname not in {"chatgpt.com", "www.chatgpt.com"}
+            or parsed.username or parsed.password or parsed.port or parsed.query or parsed.fragment
+            or len(parts) != 4 or parts[0] != "g" or parts[2] != "c"):
+        return False
+    conversation = unquote(parts[3]).lower()
+    if not conversation or conversation.startswith("local-chatgpt:"):
+        return False
+    stable_project = lambda project: re.match(r"^(g-p-[0-9a-fA-F]{32})(?:-|$)", project)
+    actual_stable = stable_project(parts[1])
+    expected_stable = stable_project(expected_project)
+    return ((actual_stable.group(1).lower() if actual_stable else parts[1])
+            == (expected_stable.group(1).lower() if expected_stable else expected_project))
 WORK_BOOTSTRAP = """Issue the next concrete GenericChess work order.
 
 Use the current AGENTS.md and latest user direction to choose one bounded
@@ -2084,8 +2108,8 @@ def command_supervisor_execute_target_rollover(root: Path, args: argparse.Namesp
             raise FlowError("Courier target-rollover intent does not match the preserved lineage")
 
     def validate_successor_target(successor_url: object) -> None:
-        if not isinstance(successor_url, str) or not successor_url:
-            raise FlowError("completed rollover is missing the successor Chat URL")
+        if not durable_project_chat_url(successor_url, lineage.get("prior_chat_project_id")):
+            raise FlowError("completed rollover lacks a durable same-project successor Chat URL")
         binding = _read_json_file(request_directory / "target-binding.json",
                                   "completed successor target binding")
         intent = _read_json_file(rollover_intent_path, "completed rollover intent")

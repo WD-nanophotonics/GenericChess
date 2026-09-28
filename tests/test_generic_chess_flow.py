@@ -1816,6 +1816,18 @@ def test_supervisor_target_rollover_execute_imports_reply_without_new_request(
     assert calls[-1][2] == ("--basis", "user_direct")
 
 
+def test_target_rollover_rejects_temporary_and_wrong_project_urls():
+    project = "g-p-6a7b04f7e3d08191b57f29305e5c673b-generic-chess"
+    prefix = f"https://chatgpt.com/g/{project}/c/"
+    assert flow.durable_project_chat_url(prefix + "6ab9713c-5afc-83e8-96f3-b87e4c05ccc6",
+                                         "g-p-6a7b04f7e3d08191b57f29305e5c673b")
+    assert not flow.durable_project_chat_url(prefix + "local-chatgpt%3Atemporary", project)
+    assert not flow.durable_project_chat_url("https://chatgpt.com/", project)
+    assert not flow.durable_project_chat_url(
+        "https://chatgpt.com/g/g-p-other/c/6ab9713c-5afc-83e8-96f3-b87e4c05ccc6",
+        project)
+
+
 def test_supervisor_target_rollover_interruption_resumes_same_request_once(
         monkeypatch, tmp_path, capsys):
     prior_id, prior_dir, state, successor_id, successor_dir, runtime = \
