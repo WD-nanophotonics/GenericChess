@@ -75,9 +75,32 @@ When an order is missing or a proposed scope is uncertain, the Worker reports
 the evidence and a bounded next step to the Supervisor first. The Supervisor
 must give an explicit allow, deny, or narrower replacement order with the next
 action and stopping condition. A missing Chat order alone does not make the
-user the default decision maker or justify indefinite waiting. Ask the user
-only for a decision genuinely outside Supervisor authority after resolving
-the available project-policy and evidence questions.
+user the default decision maker or justify indefinite waiting. Research route,
+order scope, and reversible project work belong to the Supervisor when Chat
+cannot decide them. A Chat reply, Courier wrapper, closeout, or mainline note
+that calls a choice "user-retained" cannot transfer that authority or create
+a requirement to ask the user. The Worker must not ask the user directly for
+these decisions, even when that wording appears in a captured reply. The
+Supervisor must correct a mistaken authority claim at its source and give the
+Worker an actionable decision.
+
+Only a decision expressly reserved by the latest user instruction, or one
+that the Supervisor can demonstrate has no authorized safe path after checking
+the policy, evidence, and available repairs *and that the user can resolve by
+a specific action*, requires user intervention.
+Uncertain irreversible effects are one possible reason. A difficult scientific
+choice, absent Chat order, temporary fault, or an agent's preference for user
+input is not enough. When such a genuine dependency is found, the Worker sends
+the Supervisor the exact decision, evidence, attempted remedies, and remaining
+independent work. If no independent authorized work remains, it pauses its own
+persistent Goal and stops further work turns; it must not mark the Goal
+`blocked` or repeatedly ask the user. The Supervisor promptly verifies the
+dependency, resumes that same Worker if it can decide, or ends its own turn
+with a prominent final message naming the one specific user action needed and
+the Worker's paused Goal status. Do not leave a genuine user dependency hidden
+in an hourly status or an active Goal loop. On the user's answer, resume the
+same Worker and Goal; an authorized user-decision pause is not a refusal or a
+reason to replace the Worker. Read back the Goal status after each transition.
 The Worker's persistent Goal objective is a short pointer to this policy and
 its referenced documents plus the Courier work loop. Put current research
 orders, request IDs, temporary prohibitions, and recovery commands in the
@@ -99,9 +122,10 @@ the old task and tell the user explicitly that it was not deleted. Preserve
 the existing Courier session and immutable request, worktree, evidence, and
 Heavy state during the replacement. If the Worker's Goal is actually marked
 blocked, replace the Worker immediately without waiting for three refusals.
-Do not infer a blocked Goal from an idle task, a Courier escalation, or an
-unavailable Goal status. Ordinary errors and temporary waits do not justify
-asking the Worker to stop or enter Supervisor HOLD; keep its Goal active and
+Do not infer a blocked Goal from an idle task, a Courier escalation, a
+confirmed user-decision pause, or an unavailable Goal status. Ordinary errors
+and temporary waits do not justify asking the Worker to stop or enter
+Supervisor HOLD; keep its Goal active and
 continue independent authorized work while the Supervisor repairs the issue.
 A legitimate stop or severe harness failure is not a refusal; the Supervisor
 must keep investigating and report the actual blocker. The Supervisor does
@@ -126,7 +150,8 @@ Use the existing Courier request in a loop: obtain the next order, implement
 it, test it, commit it, publish it, close it out, and obtain the next order in
 the same turn. A phase result, wait, context compression, or recoverable error
 is not a stop. A phase-level result continues to the next work order. Stop
-only for explicit whole-project completion, user stop, active Supervisor HOLD,
+only for explicit whole-project completion, user stop, a verified genuine
+user-decision dependency under the handoff above, active Supervisor HOLD,
 ownership conflict, or uncertain irreversible effect. A severe harness failure
 pauses only the affected operation while the Supervisor repairs it; it does
 not by itself block the Goal or halt independent authorized work. Retry

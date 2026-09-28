@@ -85,6 +85,13 @@ decision is a bridge across the specific gap, not a standing stream of new
 Supervisor work orders. Return order ownership to Chat as soon as the existing
 Courier path can supply a usable order. Do not forward a routine scope choice
 to the user or keep requesting new tests while no project question is settled.
+Treat "user-retained" in a Chat reply or earlier closeout as a claim to check,
+not a permission rule. Consult `AGENTS.md`, the latest user instruction, and
+the concrete evidence. The Supervisor owns research-route and bounded-scope
+choices within that authority. Correct a false user-decision claim in the
+mainline note and the next same-session Courier message; give the Worker one
+allowed next action and its stopping condition. Do not carry a false claim
+forward merely because Chat repeated it.
 Do not turn a captured `CONTINUE` reply without `WORK_ORDER_ID` into repeated
 "waiting" turns. Run `work` and read the captured reply itself. An order ID is
 optional bookkeeping, not an authorization gate. If Chat gives a concrete
@@ -153,7 +160,8 @@ does not resume the discarded detour.
 3. If the Worker cannot repair it, send Chat or the registered Supervisor the
    request ID, event/error fingerprint, receipt and diagnostic paths, actions
    already attempted, and what independent work remains possible. The Worker
-   keeps its Goal active and continues that work.
+   keeps its Goal active and continues that work unless the genuine
+   user-decision handoff below applies.
 4. Count occurrences of the same underlying error fingerprint, not every
    retry log line. At the first occurrence plus two recurrences, the Supervisor
    must inspect the framework path that emits the fault. Repeating an unchanged
@@ -170,6 +178,32 @@ overlap before treating a normal launch as a topology violation. Do not pause
 the Courier order loop solely because a completed request launched its
 managed browser.
 
+## Genuine user-decision handoff
+
+Do not use this path for a missing order, scientific uncertainty, a transient
+fault, or Chat/Courier wording alone. The Worker first checks the current
+policy and latest user instruction, attempts authorized reversible work and
+documented recovery, then sends the Supervisor one concise report: the exact
+decision believed to be user-reserved, the evidence for that boundary,
+repairs attempted, and any independent work still available. It must not
+ask the user directly or emit repeated waiting turns. If no independent
+authorized work remains and the user dependency is genuine, the Worker uses
+its own Goal control to set the Goal to `paused`, reads back the status, and
+reports the result to the Supervisor before ending its turn. Do not use
+`blocked` for this pause. If the Goal control is unavailable, end the turn,
+report that fact, and let the Supervisor repair the control path; do not
+pretend the Goal was paused.
+
+The Supervisor verifies the claimed authority boundary immediately. If it
+can decide, it gives an explicit allow, deny, or narrower next order with a
+stopping condition, corrects any false authority record, and resumes the same
+Worker/Goal if paused. If user input really is indispensable, it records the
+reason and paused-Goal readback, stops its own work, and ends with a prominent
+final user-facing message containing the blocker and exactly one specific
+action or choice. No generic "please advise" and no hidden hourly-only
+notice. When the user answers, resume the same Worker/Goal after checking
+the answer; a legitimate pause is neither a refusal nor a `blocked` Goal.
+
 ## Hourly Supervisor patrol
 
 Read `AGENTS.md` and `WORKFLOW.md`, then this manual. Inspect the registered
@@ -181,7 +215,7 @@ data. Query the Worker or available state tools when evidence is missing.
 
 Run `generic-chess-flow.cmd supervisor-patrol --issue-key <stable-fingerprint>
 --progress-key <evidence-fingerprint> --worker-state <state> --goal-state
-<active|blocked|unknown>`. Use `none` for no issue. The progress key must
+<active|paused|blocked|unknown>`. Use `none` for no issue. The progress key must
 represent verifiable changed work such as a new Worker turn containing work,
 new result/commit, a newly captured response, or increased measured steps of
 an approved Heavy. A new clock timestamp, repeated status sentence, or Heavy
@@ -192,7 +226,12 @@ again with identical observation fields and `--action <what-was-done>` to
 record it. The command does not advance a stalled observation without an
 action. Goal `blocked` requires immediate Worker replacement; the repeated
 stalled issue rule requires immediate investigation and repair, not automatic
-Worker replacement.
+Worker replacement. A verified user-decision pause is recorded as `paused`,
+with `worker-state paused` and an issue key beginning `user-decision:`; the
+Supervisor must send the explicit final user request in that turn. This is a
+legitimate pause, not a stalled repair to repeat every hour. Recheck only
+for a user answer or changed evidence. An unexplained `paused` Goal remains
+an actionable fault.
 
 An approved Heavy within its hard envelope and with measured work increasing
 is legitimate progress. If the envelope is exceeded or progress has ceased,
@@ -289,7 +328,9 @@ be resumed in that task, replace the Worker immediately by the same procedure
 and establish a fresh active Goal in the successor. Do not wait through hourly
 patrols or count this as three refusals. First verify the actual Goal status
 and the failed resume path; idle task status or unavailable Goal data alone
-does not prove that restoration failed.
+does not prove that restoration failed. This replacement rule does not apply
+to a recorded, verified user-decision pause; resume that same Worker after the
+user answers.
 
 For Courier, first search for the exact submitted request and matching reply,
 including durable receipts and the live target. A submitted or uncertain
@@ -305,6 +346,6 @@ project/profile and retain the old target for deduplication. Remove the old
 Chat only if removal is supported without losing required evidence.
 
 Do not ask the user to resolve a routine local error. When all available
-repairs would have an uncertain irreversible effect, state the exact blocked
-operation, evidence, independent work performed, and the single decision
-needed. A Supervisor patrol remains responsible for revisiting the blocker.
+repairs would have an uncertain irreversible effect, use the genuine
+user-decision handoff above. State the exact operation, evidence, independent
+work performed, and single decision needed in the Supervisor's final message.

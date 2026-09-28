@@ -12,7 +12,7 @@ generic-chess-flow.cmd recover
 generic-chess-flow.cmd heavy --resource-envelope <path> -- <command>
 generic-chess-flow.cmd heavy-start --label <label> --resource-envelope <path> -- <command>
 generic-chess-flow.cmd heavy-status [--run-id <id>]
-generic-chess-flow.cmd supervisor-patrol --issue-key <fingerprint> --progress-key <evidence> --worker-state <state> --goal-state <active|blocked|unknown> [--action <repair>]
+generic-chess-flow.cmd supervisor-patrol --issue-key <fingerprint> --progress-key <evidence> --worker-state <state> --goal-state <active|paused|blocked|unknown> [--action <repair>]
 generic-chess-flow.cmd supervisor-hold --reason-file <path>
 generic-chess-flow.cmd supervisor-release --hold-id <id> --detail-file <path>
 generic-chess-flow.cmd promote --candidate <full-sandbox-sha>

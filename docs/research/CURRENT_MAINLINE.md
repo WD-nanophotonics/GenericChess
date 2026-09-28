@@ -135,15 +135,26 @@ falsifiable approximations are impossible.
 
 Close the automatic scalar-formula, feature-enumeration, equal-weighting,
 kernel and simulation-to-scalar routes under their current assumptions. Do
-not send another equivalent Courier request or fit scarce human values. The
-remaining research decision is which additional, game-independent modeling
-assumption is acceptable: a declared rule-derived context ensemble, bounded
-gameplay calibration, or retaining only structural/ordinal results for now.
-Supervisor has asked the user to choose this boundary. Preserve the captured
-Courier request/reply, the active Worker and Goal, and the Xiangqi material
-holdout. Until that direction is settled, the Worker may consolidate existing
-results and their limits in project notes but must not launch a new scalar
-candidate, Arena/Heavy, or promotion. The user's later authorization allows
-tested, non-sensitive existing project work to be published to
-`origin/sandbox` so Chat can inspect it; this does not authorize a new
-research direction. This is a phase boundary, not whole-project completion.
+not send another equivalent Courier request or fit scarce human values.
+
+The Supervisor, not the user, owns the remaining research-direction choice
+under `AGENTS.md`. The earlier assertion that the Supervisor had asked the
+user to choose was an erroneous authority assignment; a subsequent Chat
+reply repeated it but did not make it binding. The Supervisor's present
+decision is to retain the context-indexed structural/ordinal result and ask
+Chat, through the existing reconciled Courier session, for one bounded,
+computation-free order examining whether a *single* game-independent,
+rule-derived context-selection principle can be stated and falsified without
+human-value fitting. Require its scientific rationale, the contexts it
+selects, a smallest counterexample or direct diagnostic, and an explicit
+`SUPPORTED` or `UNDERDETERMINED` stopping result. This is a model-design
+question, not permission to implement a scalar, enumerate arbitrary features,
+use a uniform context measure without justification, or start Arena/Heavy.
+If Chat offers no executable order, the Worker reports the concrete gap and a
+bounded suggestion to the Supervisor, who must decide the next action rather
+than sending the Worker to the user or leaving its Goal active in a waiting
+loop. Preserve the captured Courier request/reply, the active Worker and Goal,
+and the Xiangqi material holdout. Tested, non-sensitive project checkpoints
+may be published to `origin/sandbox` under the user's later authorization;
+this does not authorize an unrelated research direction. This remains a phase
+boundary, not whole-project completion or a user-decision dependency.

@@ -960,13 +960,21 @@ def assess_supervisor_patrol(previous: dict[str, Any], observation: dict[str, An
     elapsed = observation["observed_at"] - previous_at if isinstance(previous_at, (int, float)) else 0
     stalled = same_issue and same_progress and elapsed >= 45 * 60
     goal_blocked = observation["goal_state"] == "blocked"
+    user_decision_paused = (
+        observation["goal_state"] == "paused"
+        and observation["worker_state"] == "paused"
+        and observation["issue_key"].startswith("user-decision:")
+    )
+    goal_unexpected_paused = observation["goal_state"] == "paused" and not user_decision_paused
     return {
         "same_issue": same_issue,
         "same_progress": same_progress,
         "elapsed_seconds": max(0, elapsed),
         "stalled_since_prior_patrol": stalled,
         "goal_blocked": goal_blocked,
-        "action_required": stalled or goal_blocked,
+        "user_decision_paused": user_decision_paused,
+        "goal_unexpected_paused": goal_unexpected_paused,
+        "action_required": (stalled and not user_decision_paused) or goal_blocked or goal_unexpected_paused,
     }
 
 
@@ -3277,7 +3285,7 @@ def parser() -> argparse.ArgumentParser:
     patrol.add_argument("--issue-key", required=True)
     patrol.add_argument("--progress-key", required=True)
     patrol.add_argument("--worker-state", required=True)
-    patrol.add_argument("--goal-state", choices=("active", "blocked", "unknown"), required=True)
+    patrol.add_argument("--goal-state", choices=("active", "paused", "blocked", "unknown"), required=True)
     patrol.add_argument("--action")
     patrol.set_defaults(handler=command_supervisor_patrol)
     machine = sub.add_parser("machine-setup")

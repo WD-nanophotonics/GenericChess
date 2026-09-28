@@ -61,6 +61,21 @@ def test_supervisor_patrol_accepts_measured_progress_and_blocks_on_goal(monkeypa
     assert flow.command_supervisor_patrol(tmp_path, args) == 3
 
 
+def test_supervisor_patrol_recognizes_verified_user_pause_without_hiding_other_pauses():
+    previous = {"issue_key": "user-decision:irreversible-export",
+                "progress_key": "goal-paused-and-user-notified", "observed_at": 10000.0}
+    observation = {**previous, "worker_state": "paused", "goal_state": "paused",
+                   "observed_at": 13600.0}
+    accepted = flow.assess_supervisor_patrol(previous, observation)
+    assert accepted["user_decision_paused"] is True
+    assert accepted["action_required"] is False
+
+    observation["issue_key"] = "courier:unexpected-pause"
+    rejected = flow.assess_supervisor_patrol(previous, observation)
+    assert rejected["goal_unexpected_paused"] is True
+    assert rejected["action_required"] is True
+
+
 def _heavy_start_mocks(monkeypatch, tmp_path):
     monkeypatch.setattr(flow, "runtime_dir", lambda _root: tmp_path)
     monkeypatch.setattr(flow, "active_state", lambda _root: {"active": True})
