@@ -1564,13 +1564,16 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
                 print("NEXT_ACTION=execute this work order, then publish and closeout")
             elif (state.get("chat_control", {}).get("GENERICCHESS_STATUS") == "CONTINUE"
                   and str(state.get("last_request_key", "")).startswith("closeout-local-")):
-                print("NEXT_ACTION=no executable work order; obtain one explicit Supervisor "
-                      "direction decision, then use followup --decision-reply-local-only "
-                      "--message-file <path> in the same Courier session")
+                print("NEXT_ACTION=inspect the captured reply: execute a clearly bounded "
+                      "mainline task without requiring WORK_ORDER_ID; if it only asks for "
+                      "a direction decision, obtain that decision and use the same-session "
+                      "successor path")
+                print("DIRECTION_ONLY_PATH=followup --decision-reply-local-only "
+                      "--message-file <path>")
             else:
-                print("NEXT_ACTION=no executable work order; reconcile the reply and "
-                      "follow the documented next-order recovery path; report a specific "
-                      "unresolved decision to Supervisor, not repeated waiting")
+                print("NEXT_ACTION=inspect the captured reply: execute a clearly bounded "
+                      "mainline task without requiring WORK_ORDER_ID; otherwise reconcile "
+                      "the reply and follow the documented next-order recovery path")
             return
         token = state.get("work_request_token")
         if not isinstance(token, str) or not token:

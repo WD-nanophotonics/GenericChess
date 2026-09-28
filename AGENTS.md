@@ -130,6 +130,11 @@ session with recorded lineage. A blanket "do not create requests" instruction
 must not prevent that normal next-order path. An orderless `CONTINUE` reply
 requires the documented next-order or direction-decision path, not repeated
 status-only turns or indefinite waiting.
+`WORK_ORDER_ID` is optional transport bookkeeping: when the captured reply
+plainly contains a bounded mainline task with a stopping condition, the Worker
+executes it without routine Supervisor approval and cites the Courier request
+as evidence. Missing ID alone does not make a reply orderless. Publication and
+promotion retain their separate gates.
 
 ## Compute and promotion
 

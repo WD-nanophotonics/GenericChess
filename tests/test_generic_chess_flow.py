@@ -394,7 +394,30 @@ def test_work_does_not_label_a_direction_request_as_an_executable_order(
     monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
     monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
     flow.command_work(tmp_path, SimpleNamespace())
-    assert "NEXT_ACTION=no executable work order" in capsys.readouterr().out
+    assert "inspect the captured reply" in capsys.readouterr().out
+
+
+def test_work_no_id_bounded_reply_does_not_require_supervisor_gate(
+        monkeypatch, tmp_path, capsys):
+    response = tmp_path / "response.txt"
+    response.write_text(
+        "CAUSAL_DIAGNOSTIC\nOne unknown; inspect one transition.\n"
+        "Stop after the finite control.\nGENERICCHESS_STATUS=CONTINUE\n",
+        encoding="utf-8",
+    )
+    state = {"active": True, "mode": "courier", "active_request_directory": None,
+             "last_response_path": str(response), "last_work_order_id": None,
+             "last_request_key": "closeout-local-candidate-hash",
+             "chat_control": {"GENERICCHESS_STATUS": "CONTINUE"}}
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
+
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    output = capsys.readouterr().out
+    assert "execute a clearly bounded mainline task without requiring WORK_ORDER_ID" in output
+    assert "obtain one explicit Supervisor" not in output
 
 
 def test_work_local_only_direction_reply_shows_successor_path_and_repairs_stale_flag(
@@ -416,7 +439,8 @@ def test_work_local_only_direction_reply_shows_successor_path_and_repairs_stale_
     flow.command_work(tmp_path, SimpleNamespace())
 
     output = capsys.readouterr().out
-    assert "followup --decision-reply-local-only --message-file <path>" in output
+    assert "DIRECTION_ONLY_PATH=followup --decision-reply-local-only --message-file <path>" in output
+    assert "execute a clearly bounded mainline task without requiring WORK_ORDER_ID" in output
     assert state["work_order_active"] is False
     assert saved[-1]["work_order_active"] is False
 

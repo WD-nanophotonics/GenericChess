@@ -18,9 +18,10 @@ generic-chess-flow.cmd supervisor-release --hold-id <id> --detail-file <path>
 generic-chess-flow.cmd promote --candidate <full-sandbox-sha>
 ```
 
-`work` resumes the current Courier request or obtains the next order. For a
-captured local-only `CONTINUE` reply without a work order, it names the
-direction-decision followup instead of treating the missing order as a stop.
+`work` resumes the current Courier request or obtains the next order. Read
+captured `CONTINUE` prose even without `WORK_ORDER_ID`: a clearly bounded
+mainline task may proceed under `AGENTS.md`; a direction-only reply uses the
+documented decision followup. The missing ID alone is not a stop.
 `followup --reviewed-local-only` is for the registered Supervisor after a
 reconciled, unpublished local closeout received only a local-review notice.
 It verifies the prior response, unchanged remote SHA, and local commit ancestry,

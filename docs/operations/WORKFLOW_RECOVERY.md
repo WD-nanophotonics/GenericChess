@@ -61,22 +61,27 @@ Supervisor work orders. Return order ownership to Chat as soon as the existing
 Courier path can supply a usable order. Do not forward a routine scope choice
 to the user or keep requesting new tests while no project question is settled.
 Do not turn a captured `CONTINUE` reply without `WORK_ORDER_ID` into repeated
-"waiting" turns. Run `work` to obtain the documented next action. If a
-reconciled local-only closeout asks for Supervisor direction, obtain one
-explicit decision and send it through `followup --decision-reply-local-only`.
+"waiting" turns. Run `work` and read the captured reply itself. An order ID is
+optional bookkeeping, not an authorization gate. If Chat gives a concrete
+mainline task with a single unknown, bounded action, resource/time limit, and
+stopping condition, the Worker executes it within `AGENTS.md` without routine
+Supervisor approval. Preserve its Courier request/reply as the order evidence;
+do not invent an ID. The mechanical `work_order_active=false` flag only means
+the parser found no `WORK_ORDER_ID`, not that the bounded prose is unusable.
+Escalate only a specific risk, conflicting policy, or material scope question.
+If a reconciled local-only closeout instead asks only for Supervisor research
+direction and gives no executable task, obtain one explicit decision and send
+it through `followup --decision-reply-local-only`.
 This creates a *successor* request with recorded old/reply/new lineage in the
 same Courier session; it does not resubmit the resolved request. A generic
 "do not create requests" instruction must not suppress this normal path.
 If Chat again returns no order, report the new specific decision gap once;
 Supervisor changes the remedy rather than repeating an equivalent followup.
-If Chat instead gives a clearly bounded research task but omits
-`WORK_ORDER_ID`, do not spend a Courier request merely to obtain that
-bookkeeping field. The Worker submits the exact reply and proposed stopping
-condition to Supervisor. An explicit one-time allow lets the Worker perform
-only that bounded task and report it with the same Courier session using an
-appropriate closeout; a deny ends it. Preserve the original reply unchanged
-and do not manufacture an ID or silently convert advisory prose into an
-order. This exception never authorizes publication or promotion.
+If the reply is merely advisory or lacks a usable scope or stopping condition,
+do not silently convert it into an order. Send one concrete gap and proposed
+bounded next action to Supervisor, or use the documented direction-decision
+successor path where applicable. A no-ID task never authorizes publication or
+promotion; those retain their independent gates.
 
 ## Mainline stop-loss
 
