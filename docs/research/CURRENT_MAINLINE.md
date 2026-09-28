@@ -83,13 +83,29 @@ result in the reply to `GENERICCHESS-20260928-063632-e9f42e86` and issued no
 further Worker order. The current research phase is closed, not the project.
 
 Do not repeat kernel, horizon, entropy, conductance, class-weighting, or
-identity-only probes for the same uncertainty. Further Priority 1 work needs
-an independently justified, game-generic principle that explains both why a
-particular transition-selection rule represents a neutral material-value
-context and how multiple reachable recurrent classes are treated, or a new
-principle that avoids this statistical object entirely. No human material
-references, new games, numerical fitting, code, Arena, or Heavy are authorized
-by this closed proposal. Supervisor must make a new explicit direction
-decision from fresh evidence or the latest user instruction before requesting
-another bounded Chat order; absence of an order is not a reason to repeat the
-same Courier message or generate status-only Worker turns.
+identity-only probes for the same uncertainty. A new rule-derived principle
+must either justify the missing statistical choices independently or avoid
+that statistical object. No human material references, numerical fitting,
+Arena, or Heavy are authorized by the closed proposal. Absence of an order is
+not a reason to repeat the same Courier message or generate status-only turns.
+
+## Next bounded scientific direction
+
+The Supervisor authorizes one theoretical `CAUSAL_DIAGNOSTIC` on
+*rule-semantic simulation dominance* as a possible boundary on material
+values, not a scalar formula. The game-theoretic principle is that a player
+cannot be worse off when one of its choices gains capabilities while every
+old legal choice and its consequent game transition remain available, under
+the same victory condition and turn structure. The unknown is whether that
+principle can be stated as a game-name-independent relation on executable
+piece states that yields any nontrivial piece ordering without choosing a
+state distribution or consulting human values.
+
+Ask Chat through the current reconciled Courier path for one bounded order:
+define the required simulation relation, test it on the smallest abstract
+chess-like toy RuleSets with and without compulsory-move or transition-side
+effects, and stop at one valid nontrivial ordering or one counterexample that
+shows why the relation is too strong or unsound. Report what additional rule
+consequence would be needed for a scalar; do not invent a score, run full
+games, alter code, or consume Chess/Shogi/Xiangqi material references. This
+is a direction proposal only; Chat must narrow the executable order.
