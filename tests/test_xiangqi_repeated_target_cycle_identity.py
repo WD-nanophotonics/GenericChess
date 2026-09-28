@@ -163,7 +163,7 @@ def test_repeated_xiangqi_cycle_distinguishes_same_target_from_same_square_subst
         (Square(3, 5), Square(4, 5)),  # B returns
         (Square(0, 5), Square(0, 4)),
         (Square(3, 4), Square(3, 5)),  # A restores the initial occupancy
-        (Square(0, 4), Square(1, 4)),
+        (Square(0, 4), Square(0, 5)),
     )
     swap_state, swap_key, swap_provenance, swap_trace = _replay(
         compiled, substituted_moves

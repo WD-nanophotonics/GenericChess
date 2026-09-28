@@ -33,5 +33,8 @@ values were consulted to prepare this comparison.
 
 Choose one direction above, or provide another independently justified,
 game-independent assumption. Until that decision is made, no scalar candidate,
-human-value selection, Arena/Heavy run, publication, or promotion is
-authorized. The Xiangqi material-value holdout remains unconsumed.
+human-value selection, Arena/Heavy run, or promotion is authorized. The user's
+later instruction allows tested, non-sensitive existing project work to be
+published to `origin/sandbox` for Chat visibility; this is not permission to
+start a new research branch. The Xiangqi material-value holdout remains
+unconsumed.
