@@ -457,9 +457,14 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     if not has_legal:
         if checked:
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
+        support = getattr(compiled, "support", None)
+        if support is not None:
+            stalemate_result = support.stalemate_result
+        else:
+            stalemate_result = getattr(compiled, "stalemate_result", "draw")
         winner = (
             1 - position.side_to_move
-            if getattr(compiled, "stalemate_result", "draw") == "loss"
+            if stalemate_result == "loss"
             else None
         )
         return TerminalResult(TerminalStatus.STALEMATE, winner)

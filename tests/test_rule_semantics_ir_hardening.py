@@ -94,13 +94,24 @@ def test_stalemate_loss_policy_disables_incomplete_native_capability():
     assert not compiled.ir.capabilities.native_executable
 
 
-def test_stalemate_loss_policy_sets_semantic_terminal_winner(monkeypatch):
+@pytest.mark.parametrize(
+    ("stalemate_result", "winner"), (("draw", None), ("loss", 1))
+)
+def test_stalemate_policy_matches_semantic_search_runtime(
+    monkeypatch, stalemate_result, winner
+):
     from generic_chess.core.position import GameState, Hands, Position
     from generic_chess.core.semantic_executor import SemanticEngine
-    from generic_chess.core.terminal import TerminalResult, TerminalStatus, terminal_result
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.core.terminal import (
+        TerminalResult,
+        TerminalStatus,
+        terminal_from_search_runtime,
+        terminal_result,
+    )
 
     compiled = compile_semantic_ruleset(
-        replace(cannon_ruleset(), stalemate_result="loss")
+        replace(cannon_ruleset(), stalemate_result=stalemate_result)
     )
     support = compiled.support
     position = Position(
@@ -124,7 +135,11 @@ def test_stalemate_loss_policy_sets_semantic_terminal_winner(monkeypatch):
 
     result = terminal_result(state, compiled)
     assert result.status is TerminalStatus.STALEMATE
-    assert result.winner == 1
+    runtime_result = terminal_from_search_runtime(
+        SearchPathRuntime.from_state(state, compiled)
+    )
+    assert runtime_result == result
+    assert result.winner == winner
 
 
 def test_castling_exact_two_step_geometry():

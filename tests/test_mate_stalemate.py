@@ -84,6 +84,8 @@ def test_stalemate():
     result = terminal_result(state, compiled)
     assert result.status is TerminalStatus.STALEMATE
     assert result.winner is None
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    assert terminal_from_search_runtime(runtime) == result
 
 
 def test_stalemate_loss_policy_wins_for_opponent_in_all_terminal_paths():

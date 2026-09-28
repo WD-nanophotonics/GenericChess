@@ -670,6 +670,91 @@ def test_xiangqi_checkmate_transition_runtime_push_pop_roundtrip(product):
     assert after == before
 
 
+def test_xiangqi_stalemate_loss_transition_runtime_push_pop_roundtrip(product):
+    _ruleset, compiled, engine = product
+    parent = _state(
+        compiled,
+        [
+            (0, "G", Square(4, 0)), (1, "G", Square(4, 9)),
+            (1, "H", Square(4, 4)), (1, "R", Square(2, 1)),
+            (1, "S", Square(5, 1)), (1, "H", Square(3, 3)),
+        ],
+        side=1,
+    )
+    key = repetition_identity_key(parent.position, compiled)
+    counts = ((key, 1),)
+    history = (HistoryRecord(key, -1, "", False),)
+    parent = replace(
+        parent,
+        repetition_counts=counts,
+        history=history,
+        terminal_status=engine.terminal_result(
+            parent.position, parent.ply_count, counts, history
+        ),
+    )
+    assert parent.terminal_status.status is TerminalStatus.ONGOING
+    assert not engine.in_check(parent.position, 0)
+    assert not engine.in_check(parent.position, 1)
+
+    public_actions = frozenset(legal_actions(parent, compiled))
+    action = next(
+        candidate
+        for candidate in public_actions
+        if isinstance(candidate, SemanticBoardMove)
+        and candidate.from_square == Square(2, 1)
+        and candidate.to_square == Square(3, 1)
+    )
+    runtime = SearchPathRuntime.from_state(parent, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == public_actions
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        before_actions,
+    )
+
+    public_child = apply_action(parent, action, compiled)
+    assert public_child.position.side_to_move == 0
+    assert not engine.in_check(public_child.position, 0)
+    assert not engine.in_check(public_child.position, 1)
+    assert legal_actions(public_child, compiled) == []
+    assert public_child.terminal_status.status is TerminalStatus.STALEMATE
+    assert public_child.terminal_status.winner == 1
+
+    runtime.push(action)
+    assert runtime.position == public_child.position
+    assert runtime.terminal_status == public_child.terminal_status
+    assert runtime.terminal_status.status is TerminalStatus.STALEMATE
+    assert runtime.terminal_status.winner == 1
+    assert frozenset(runtime.legal_actions()) == frozenset(
+        legal_actions(public_child, compiled)
+    ) == frozenset()
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+
 def test_ranged_attacks_never_expose_general_capture_and_preserve_anchors(product):
     _ruleset, compiled, engine = product
     cases = (
