@@ -69,6 +69,14 @@ same Courier session; it does not resubmit the resolved request. A generic
 "do not create requests" instruction must not suppress this normal path.
 If Chat again returns no order, report the new specific decision gap once;
 Supervisor changes the remedy rather than repeating an equivalent followup.
+If Chat instead gives a clearly bounded research task but omits
+`WORK_ORDER_ID`, do not spend a Courier request merely to obtain that
+bookkeeping field. The Worker submits the exact reply and proposed stopping
+condition to Supervisor. An explicit one-time allow lets the Worker perform
+only that bounded task and report it with the same Courier session using an
+appropriate closeout; a deny ends it. Preserve the original reply unchanged
+and do not manufacture an ID or silently convert advisory prose into an
+order. This exception never authorizes publication or promotion.
 
 ## Mainline stop-loss
 

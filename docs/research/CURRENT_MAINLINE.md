@@ -71,25 +71,25 @@ be continued, published, or closed out as mainline. Search compression,
 TreeStrap, policy-distillation, Gumbel-MCTS, learned ordering, and related
 expansions remain secondary without a new evidence-based work order.
 
-## Current direction decision
+## Current direction boundary
 
-The captured Chat reply to request `GENERICCHESS-20260928-042453-357b78f5`
-contains no work order. It reports the scoped RuleSet prerequisite frozen,
-the existing rule-only scalar family and AMTU candidate negative within their
-declared tests, and a missing canonical stationary typed measure. This is a
-phase boundary, not whole-project completion. Do not repeat those tests or
-infer that an arbitrary new formula is authorized.
+The scoped RuleSet prerequisite is frozen. The existing rule-only scalar
+family and AMTU candidate were negative within their declared tests; neither
+authorizes an arbitrary replacement formula. The later computation-free
+neutral-kernel proposal also stopped at `UNDERDETERMINED`: rule-preserving
+symmetry and transition support do not uniquely choose a transition kernel
+or the mass among multiple reachable recurrent classes. Chat accepted this
+result in the reply to `GENERICCHESS-20260928-063632-e9f42e86` and issued no
+further Worker order. The current research phase is closed, not the project.
 
-The Supervisor authorizes one bounded, computation-free *theory proposal* as
-the direction to return through the same Courier session: examine whether
-rule-preserving symmetries and a game-independent neutral transition process
-can define a canonical distribution over executable piece states. The object
-to define is the distribution, before any material score or coefficient is
-chosen. The single unknown is whether those principles determine it without
-game-specific assumptions; the minimal observation is a written argument or
-small counterexample from existing RuleSet semantics. No human material
-references, new games, numerical fitting, code, Arena, or Heavy are needed.
-Stop this proposal after one explicit construction or one counterexample;
-ask Chat to turn the result into a bounded order or to identify the exact
-remaining scientific decision. This direction does not pre-approve a score
-formula or change a frozen holdout.
+Do not repeat kernel, horizon, entropy, conductance, class-weighting, or
+identity-only probes for the same uncertainty. Further Priority 1 work needs
+an independently justified, game-generic principle that explains both why a
+particular transition-selection rule represents a neutral material-value
+context and how multiple reachable recurrent classes are treated, or a new
+principle that avoids this statistical object entirely. No human material
+references, new games, numerical fitting, code, Arena, or Heavy are authorized
+by this closed proposal. Supervisor must make a new explicit direction
+decision from fresh evidence or the latest user instruction before requesting
+another bounded Chat order; absence of an order is not a reason to repeat the
+same Courier message or generate status-only Worker turns.
