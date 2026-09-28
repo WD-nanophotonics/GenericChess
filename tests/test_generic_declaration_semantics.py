@@ -387,3 +387,104 @@ def test_real_continuous_check_witness_reaches_game_session_result():
     assert session.result.status is SessionStatus.PERPETUAL_CHECK
     assert session.result.winner == 1
     assert "player 0 loses" in str(session.result)
+
+
+def test_product_shogi_continuous_check_repetition_and_ordinary_control():
+    from generic_chess.core.identity import repetition_identity_key
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.core.transition import apply_action
+    from generic_chess.learning.shogi_certification import (
+        ORDINARY_REPETITION_MOVES,
+        ORDINARY_REPETITION_SFEN,
+        PERPETUAL_CHECK_MOVES,
+        PERPETUAL_CHECK_SFEN,
+        _seed_history,
+    )
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state, usi_to_gc_action
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+
+    def public_action_for(state, usi):
+        requested = usi_to_gc_action(compiled, state, usi)
+        return next(
+            action
+            for action in legal_actions(state, compiled)
+            if action.from_square == requested.from_square
+            and action.to_square == requested.to_square
+            and action.promotion_target_id == requested.promotion_target_id
+        )
+
+    perpetual = _seed_history(
+        compiled, sfen_to_gc_state(compiled, PERPETUAL_CHECK_SFEN)
+    )
+    for usi in PERPETUAL_CHECK_MOVES[:-1]:
+        action = public_action_for(perpetual, usi)
+        perpetual = apply_action(perpetual, action, compiled)
+    assert perpetual.terminal_status.status is TerminalStatus.ONGOING
+    final_action = public_action_for(perpetual, PERPETUAL_CHECK_MOVES[-1])
+    public_child = apply_action(perpetual, final_action, compiled)
+    target_key = repetition_identity_key(public_child.position, compiled)
+    assert dict(perpetual.repetition_counts)[target_key] == 3
+    assert dict(public_child.repetition_counts)[target_key] == 4
+    assert public_child.terminal_status.status is TerminalStatus.PERPETUAL_CHECK
+    assert public_child.terminal_status.winner == 1
+    repeated_interval = public_child.history[-12:]
+    assert all(record.gave_check for record in repeated_interval if record.actor == 0)
+    assert not all(record.gave_check for record in repeated_interval if record.actor == 1)
+
+    runtime = SearchPathRuntime.from_state(perpetual, compiled)
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == frozenset(legal_actions(perpetual, compiled))
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        before_actions,
+    )
+    runtime.push(final_action)
+    assert runtime.position == public_child.position
+    assert runtime.terminal_status == public_child.terminal_status
+    assert runtime.terminal_status.status is TerminalStatus.PERPETUAL_CHECK
+    assert runtime.terminal_status.winner == 1
+    assert runtime.occurrence_count() == 4
+    assert runtime.legal_actions() == ()
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+    ordinary = _seed_history(
+        compiled, sfen_to_gc_state(compiled, ORDINARY_REPETITION_SFEN)
+    )
+    for usi in ORDINARY_REPETITION_MOVES[:-1]:
+        action = public_action_for(ordinary, usi)
+        ordinary = apply_action(ordinary, action, compiled)
+    assert ordinary.terminal_status.status is TerminalStatus.ONGOING
+    ordinary_action = public_action_for(ordinary, ORDINARY_REPETITION_MOVES[-1])
+    ordinary_child = apply_action(ordinary, ordinary_action, compiled)
+    ordinary_key = repetition_identity_key(ordinary_child.position, compiled)
+    assert dict(ordinary.repetition_counts)[ordinary_key] == 3
+    assert dict(ordinary_child.repetition_counts)[ordinary_key] == 4
+    assert ordinary_child.terminal_status.status is TerminalStatus.REPETITION
+    assert ordinary_child.terminal_status.winner is None
+    assert not any(record.gave_check for record in ordinary_child.history[-12:])
