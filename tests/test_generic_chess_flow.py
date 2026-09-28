@@ -209,7 +209,7 @@ def test_response_console_output_survives_legacy_windows_encoding(
         "event": "response_received", "response_path": str(response)})
 
     assert r"\u2192" in capsys.readouterr().out
-    assert state["work_order_active"] is True
+    assert state["work_order_active"] is False
 
 
 def test_local_start_never_requires_courier(monkeypatch, tmp_path):
@@ -338,13 +338,14 @@ def test_work_redisplays_the_current_order_without_new_courier_request(
         monkeypatch, tmp_path, capsys
 ):
     response = tmp_path / "response.txt"
-    response.write_text("Do the bounded task.\n", encoding="utf-8")
+    response.write_text("Do the bounded task.\nWORK_ORDER_ID=ORDER-1\n", encoding="utf-8")
     state = {
         "active": True,
         "mode": "courier",
         "active_request_directory": None,
         "work_request_token": "same-session-token",
         "last_response_path": str(response),
+        "last_work_order_id": "ORDER-1",
     }
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
@@ -364,9 +365,10 @@ def test_work_redisplays_the_current_order_without_new_courier_request(
 
 def test_work_redisplay_survives_legacy_windows_encoding(monkeypatch, tmp_path, capsys):
     response = tmp_path / "response.txt"
-    response.write_text("下一工单：保持 DEFER\n", encoding="utf-8")
+    response.write_text("下一工单：保持 DEFER\nWORK_ORDER_ID=ORDER-2\n", encoding="utf-8")
     state = {"active": True, "mode": "courier", "active_request_directory": None,
-             "last_response_path": str(response), "work_order_active": True}
+             "last_response_path": str(response), "last_work_order_id": "ORDER-2",
+             "work_order_active": True}
     monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
     monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
     monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
@@ -378,6 +380,21 @@ def test_work_redisplay_survives_legacy_windows_encoding(monkeypatch, tmp_path, 
     output = capsys.readouterr().out
     assert r"\u4e0b" in output
     assert "NEXT_ACTION=execute this work order" in output
+
+
+def test_work_does_not_label_a_direction_request_as_an_executable_order(
+        monkeypatch, tmp_path, capsys):
+    response = tmp_path / "response.txt"
+    response.write_text("Research direction required.\nGENERICCHESS_STATUS=CONTINUE\n",
+                        encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": None,
+             "last_response_path": str(response), "last_work_order_id": None,
+             "chat_control": {"GENERICCHESS_STATUS": "CONTINUE"}}
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
+    flow.command_work(tmp_path, SimpleNamespace())
+    assert "NEXT_ACTION=no executable work order" in capsys.readouterr().out
 
 
 def _followup_state(response: Path):
@@ -524,7 +541,7 @@ def test_local_only_decision_reply_requires_no_order_and_keeps_lineage(monkeypat
     message.write_text("Supervisor allows one pre-reference axiom proposal.\n", encoding="utf-8")
     state = _followup_state(response)
     state.update(active_request_id=prior_id, last_request_key="closeout-local-abc-def",
-                 work_order_active=True, last_work_order_id=None,
+                 work_order_active=False, last_work_order_id=None,
                  chat_control={"GENERICCHESS_STATUS": "CONTINUE"})
     monkeypatch.setattr(flow, "active_state", lambda _root: state)
     monkeypatch.setattr(flow, "require_worker_write_authority", lambda *_args: None)

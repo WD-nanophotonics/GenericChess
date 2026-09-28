@@ -711,7 +711,9 @@ def update_response_state(root: Path, state: dict[str, Any], event: dict[str, An
         state["chat_control"] = control
         state["control_warnings"] = warnings
         state["last_work_order_id"] = work_order.group(1) if work_order else None
-        state["work_order_active"] = control["GENERICCHESS_STATUS"] == "CONTINUE"
+        state["work_order_active"] = (
+            control["GENERICCHESS_STATUS"] == "CONTINUE" and work_order is not None
+        )
         state["last_response_sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
         state["last_response_source"] = source
         state["active_request_directory"] = None
@@ -916,6 +918,10 @@ def command_status(root: Path, _args: argparse.Namespace) -> None:
             "recovery_state", "work_order_active",
         )
     }
+    payload["session"]["work_order_active"] = bool(
+        session.get("last_work_order_id")
+        and session.get("chat_control", {}).get("GENERICCHESS_STATUS") == "CONTINUE"
+    )
     heavy = None
     heavy_root = runtime_dir(root) / "heavy-runs"
     heavy_states = sorted(
@@ -1549,8 +1555,10 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
                 if str(state.get("last_request_key", "")).startswith("closeout-local-"):
                     print("LOCAL_ONLY_CONTINUATION=followup --phase-complete-local-only "
                           "--message-file <path>")
-            else:
+            elif state.get("last_work_order_id"):
                 print("NEXT_ACTION=execute this work order, then publish and closeout")
+            else:
+                print("NEXT_ACTION=no executable work order in this reply; follow its explicit direction without inventing research work")
             return
         token = state.get("work_request_token")
         if not isinstance(token, str) or not token:
@@ -1644,8 +1652,7 @@ def _local_only_reply(root: Path, state: dict[str, Any], body: str,
             raise FlowError("phase continuation requires a replied COMPLETE phase")
     elif decision_reply:
         response_text = response_path.read_text(encoding="utf-8-sig")
-        if (not state.get("work_order_active")
-                or state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "CONTINUE"
+        if (state.get("chat_control", {}).get("GENERICCHESS_STATUS") != "CONTINUE"
                 or state.get("last_work_order_id") is not None
                 or WORK_ORDER_ID.search(response_text)):
             raise FlowError("decision reply requires CONTINUE with no unconsumed work order")
