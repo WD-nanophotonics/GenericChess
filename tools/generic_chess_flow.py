@@ -1548,6 +1548,11 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
                 return
         response_path = state.get("last_response_path")
         if isinstance(response_path, str) and Path(response_path).is_file():
+            if not state.get("last_work_order_id") and state.get("work_order_active"):
+                # Older/imported sessions can retain a stale active-order flag.
+                # A captured reply without an order must use a continuation path.
+                state["work_order_active"] = False
+                save_state(root, state)
             print(_console_safe(Path(response_path).read_text(encoding="utf-8-sig")))
             if state.get("chat_control", {}).get("GENERICCHESS_STATUS") == "COMPLETE":
                 print("NEXT_ACTION=check whether the reply explicitly completes the whole project; "
@@ -1557,8 +1562,15 @@ def command_work(root: Path, _args: argparse.Namespace) -> None:
                           "--message-file <path>")
             elif state.get("last_work_order_id"):
                 print("NEXT_ACTION=execute this work order, then publish and closeout")
+            elif (state.get("chat_control", {}).get("GENERICCHESS_STATUS") == "CONTINUE"
+                  and str(state.get("last_request_key", "")).startswith("closeout-local-")):
+                print("NEXT_ACTION=no executable work order; obtain one explicit Supervisor "
+                      "direction decision, then use followup --decision-reply-local-only "
+                      "--message-file <path> in the same Courier session")
             else:
-                print("NEXT_ACTION=no executable work order in this reply; follow its explicit direction without inventing research work")
+                print("NEXT_ACTION=no executable work order; reconcile the reply and "
+                      "follow the documented next-order recovery path; report a specific "
+                      "unresolved decision to Supervisor, not repeated waiting")
             return
         token = state.get("work_request_token")
         if not isinstance(token, str) or not token:

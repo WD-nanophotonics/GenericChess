@@ -22,6 +22,13 @@ then use `thread/goal/get` to verify the stored text and status. Do not treat a
 follow-up prompt or an edit to this manual as proof that the old Goal vanished;
 do not edit the Goal SQLite database directly or replace a healthy Worker for
 this purpose.
+Keep the Goal objective short and stable: read `AGENTS.md` and its referenced
+workflow, recovery, and current-mainline documents; continue the existing
+Courier order loop; recover errors under those documents; involve Supervisor
+only for a concrete unresolved decision; stop only under `AGENTS.md`. Never
+put current research content, request IDs, temporary bans, or individual
+recovery commands in the persistent Goal. Change the current route in
+`docs/research/CURRENT_MAINLINE.md`, not in the Goal objective.
 Do not make Supervisor final review a blanket field on ordinary work orders.
 Chat and the Worker should complete routine, reversible, bounded changes using
 their normal tests and Courier closeout. Request Supervisor review when a
@@ -53,6 +60,15 @@ decision is a bridge across the specific gap, not a standing stream of new
 Supervisor work orders. Return order ownership to Chat as soon as the existing
 Courier path can supply a usable order. Do not forward a routine scope choice
 to the user or keep requesting new tests while no project question is settled.
+Do not turn a captured `CONTINUE` reply without `WORK_ORDER_ID` into repeated
+"waiting" turns. Run `work` to obtain the documented next action. If a
+reconciled local-only closeout asks for Supervisor direction, obtain one
+explicit decision and send it through `followup --decision-reply-local-only`.
+This creates a *successor* request with recorded old/reply/new lineage in the
+same Courier session; it does not resubmit the resolved request. A generic
+"do not create requests" instruction must not suppress this normal path.
+If Chat again returns no order, report the new specific decision gap once;
+Supervisor changes the remedy rather than repeating an equivalent followup.
 
 ## Mainline stop-loss
 
@@ -170,7 +186,12 @@ executable work order because it requests a Supervisor research-direction
 decision, use one `followup --decision-reply-local-only --message-file <path>`
 to relay that decision through the same Courier session. It checks the matching
 completed receipt, absent work-order ID, and prior response hash, and retains
-the unpublished candidate. Do not use this path to revisit an existing order.
+the unpublished candidate. First meet its clean-tree requirement: retain
+tracked changes as tested commits and review disposable untracked output
+before using `tools/safe_cleanup.py list` and, for already approved unchanged
+entries, `tools/safe_cleanup.py execute --confirm DELETE_REGISTERED`; never
+hide or delete unknown files merely to pass the guard. Do not use this path
+to revisit an existing order.
 
 An explicitly local-only closeout may receive `LOCAL_SUPERVISOR_REQUIRED`
 because the Chat cannot independently inspect the unpublished commit. The

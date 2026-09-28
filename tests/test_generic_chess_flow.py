@@ -397,6 +397,30 @@ def test_work_does_not_label_a_direction_request_as_an_executable_order(
     assert "NEXT_ACTION=no executable work order" in capsys.readouterr().out
 
 
+def test_work_local_only_direction_reply_shows_successor_path_and_repairs_stale_flag(
+        monkeypatch, tmp_path, capsys):
+    response = tmp_path / "response.txt"
+    response.write_text("Research lead decision required.\nGENERICCHESS_STATUS=CONTINUE\n",
+                        encoding="utf-8")
+    state = {"active": True, "mode": "courier", "active_request_directory": None,
+             "last_response_path": str(response), "last_work_order_id": None,
+             "last_request_key": "closeout-local-candidate-hash",
+             "work_order_active": True,
+             "chat_control": {"GENERICCHESS_STATUS": "CONTINUE"}}
+    saved = []
+    monkeypatch.setattr(flow, "branch", lambda _root: "sandbox")
+    monkeypatch.setattr(flow, "load_state", lambda _root, required=False: state)
+    monkeypatch.setattr(flow, "save_state", lambda _root, value: saved.append(dict(value)))
+    monkeypatch.setattr(flow, "active_supervisor_hold", lambda _root: None)
+
+    flow.command_work(tmp_path, SimpleNamespace())
+
+    output = capsys.readouterr().out
+    assert "followup --decision-reply-local-only --message-file <path>" in output
+    assert state["work_order_active"] is False
+    assert saved[-1]["work_order_active"] is False
+
+
 def _followup_state(response: Path):
     return {
         "active": True,

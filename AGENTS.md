@@ -27,69 +27,11 @@ does not require routine Supervisor review.
 
 ## Current mainline route
 
-The current user-directed prerequisite is to complete and validate the
-generic executable RuleSet semantics needed for Chess, Standard Shogi, and
-Xiangqi, with bounded reusable primitives for other chess-like variants
-where evidence identifies a concrete gap. Finish this rule-infrastructure
-phase before changing or benchmarking material scores. Keep each new rule
-primitive game-name-independent and test its smallest direct consequence;
-do not turn this prerequisite into open-ended product or strength work.
-Reading Xiangqi rules and testing legal moves is necessary for RuleSet
-coverage and does not consume the later *material-value* holdout. Do not
-inspect Xiangqi human material values, tune a score formula against them, or
-select score coefficients from Xiangqi outcomes before a formula is frozen.
-If later value-based diagnostics influence a formula, mark that ruleset as
-diagnostic and use a different untouched ruleset for independent confirmation.
-
-Priority 1 is to derive material scores from complete executable game-rule
-semantics and test whether the resulting relative values agree, within
-reasonable scale-invariant tolerances, with accumulated human material-value
-experience. Develop and diagnose the generic prior with a zero-game static
-Western Chess benchmark, using Standard Shogi as a retention control. If the
-prior passes those tests, evaluate the frozen formula on Xiangqi as a new
-holdout before considering further games. Do not replace the production
-evaluator merely because an isolated prior has been implemented.
-
-Each term used to calculate a piece's score must have an explicit scientific
-or game-theoretic explanation that applies across games. Derive it from rule
-consequences such as executable quiet and capture movement, occupancy and
-blocking, reachability, restricted regions, directional asymmetry, promotion
-or other state transitions, and drop or re-entry options where applicable.
-Piece labels and game names may identify results but must not change the
-formula or its coefficients. Explain every universal coefficient, weighting,
-normalization, or discount from a general principle before comparing scores
-with human references. Record the separate rule-derived components for each
-piece so that the reason for its score can be audited.
-
-Human material values are validation targets only. Never import them into the
-score calculation, fit coefficients to them, or add piece-specific or
-game-specific corrections to reach a target ratio. Engineering convenience,
-project milestones, a benchmark pass condition, or a desire to make numbers
-look right are not scientific reasons to change a piece's score. If a generic
-formula fails a frozen human-agreement gate, report the component-level
-failure and test a new general rule-derived hypothesis; do not patch that
-piece's value to force a pass. Conditional rules must appear in the semantic
-ledger even when a generally justified model gives them negligible weight.
-
-Reliable human material values are scarce independent evidence. Do not use
-them to optimize even a small set of generic weights, a parameter matrix, a
-threshold, or a discount, directly or through repeated selection of the
-best-matching candidate. A failed comparison may reveal which rule consequence
-the model misses or exaggerates, but the next formula and every numerical
-choice must follow an independently stated scientific or game-theoretic
-argument. Once a game's human values have been inspected, label that game as
-diagnostic evidence rather than an untouched holdout; seek a new, previously
-unseen ruleset for independent confirmation of a revised frozen formula.
-
-Priority 2 starts only after Priority 1 yields a satisfactory frozen prior:
-test whether the generic RuleSet/ABP path has a meaningful node-efficiency or
-practical move-choice disadvantage against mature fixed Chess and Shogi
-Alpha-Beta implementations under controlled equal-node conditions. The old
-sigma-.70 score-race Gen1/Gen2 route is deferred; it does not authorize new
-Arena, self-play, mutation, or Heavy work. F143 remains stopped and is not to
-be continued, published, or closed out as mainline. Search compression,
-TreeStrap, policy-distillation, Gumbel-MCTS, learned ordering, and related
-expansions remain secondary without a new evidence-based work order.
+Read `docs/research/CURRENT_MAINLINE.md` for the current research route,
+boundaries, and next direction decision. This file delegates the changing
+research content to that document; this policy and the latest user instruction
+take precedence if they conflict. Do not copy the changing mainline into the
+Worker's persistent Goal objective.
 
 ## Experimental selection
 
@@ -125,6 +67,10 @@ action and stopping condition. A missing Chat order alone does not make the
 user the default decision maker or justify indefinite waiting. Ask the user
 only for a decision genuinely outside Supervisor authority after resolving
 the available project-policy and evidence questions.
+The Worker's persistent Goal objective is a short pointer to this policy and
+its referenced documents plus the Courier work loop. Put current research
+orders, request IDs, temporary prohibitions, and recovery commands in the
+appropriate local documents or one-time work messages, not in that Goal.
 
 ## Worker loop
 
@@ -178,6 +124,12 @@ escalation; any Supervisor supersession must follow the reconciliation and
 lineage requirements above and preserve its evidence.
 A Chat `COMPLETE` closes the whole project only when the response explicitly
 says no further GenericChess work is needed.
+Do not resubmit an unresolved Courier request. Once its reply is captured and
+reconciled, a documented `followup` may create the next request in the same
+session with recorded lineage. A blanket "do not create requests" instruction
+must not prevent that normal next-order path. An orderless `CONTINUE` reply
+requires the documented next-order or direction-decision path, not repeated
+status-only turns or indefinite waiting.
 
 ## Compute and promotion
 
