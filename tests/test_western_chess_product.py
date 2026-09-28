@@ -159,3 +159,52 @@ def test_public_alphabeta_reaches_builtin_session():
     session.submit(decision.action)
     assert session.state != before
     assert session.history[-1].action == decision.action
+
+
+def test_western_chess_max_ply_999_1000_boundary_runtime_parity():
+    from dataclasses import replace
+
+    from generic_chess import GameState, TerminalResult, TerminalStatus, initial_state, terminal_result
+    from generic_chess.core.identity import repetition_identity_key
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.core.terminal import terminal_from_search_runtime
+    from scripts.audit_f24f_western_chess_perft import position_from_fen
+
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    initial = initial_state(compiled)
+
+    def imported_at_ply(position, ply):
+        key = repetition_identity_key(position, compiled)
+        return GameState(
+            position=position,
+            ply_count=ply,
+            repetition_counts=((key, 1),),
+            terminal_status=TerminalResult(TerminalStatus.ONGOING),
+            history=(),  # Explicitly incomplete; max-ply needs no move history.
+        )
+
+    below = imported_at_ply(initial.position, 999)
+    assert terminal_result(below, compiled).status is TerminalStatus.ONGOING
+    below_runtime = SearchPathRuntime.from_state(below, compiled)
+    assert terminal_from_search_runtime(below_runtime).status is TerminalStatus.ONGOING
+    assert below_runtime.legal_actions()
+
+    at_limit = imported_at_ply(initial.position, 1000)
+    at_limit = replace(at_limit, terminal_status=terminal_result(at_limit, compiled))
+    assert at_limit.terminal_status.status is TerminalStatus.MAX_PLY
+    limit_runtime = SearchPathRuntime.from_state(at_limit, compiled)
+    assert terminal_from_search_runtime(limit_runtime) == at_limit.terminal_status
+    assert limit_runtime.legal_actions() == ()
+
+    checkmate_position = position_from_fen(
+        "7k/6Q1/5K2/8/8/8/8/8 b - - 0 1", compiled
+    )
+    checkmate_at_limit = imported_at_ply(checkmate_position, 1000)
+    checkmate_at_limit = replace(
+        checkmate_at_limit,
+        terminal_status=terminal_result(checkmate_at_limit, compiled),
+    )
+    assert checkmate_at_limit.terminal_status.status is TerminalStatus.CHECKMATE
+    checkmate_runtime = SearchPathRuntime.from_state(checkmate_at_limit, compiled)
+    assert terminal_from_search_runtime(checkmate_runtime) == checkmate_at_limit.terminal_status
+    assert checkmate_runtime.legal_actions() == ()
