@@ -91,12 +91,21 @@ def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():
     from generic_chess.core.coordinates import Square
     from generic_chess.core.movegen import legal_actions
     from generic_chess.core.pieces import Piece
+    from generic_chess.core.position import GameState, HistoryRecord
     from generic_chess.core.search_runtime import SearchPathRuntime
     from generic_chess.core.transition import apply_action
     from generic_chess.learning.shogi_rules import sfen_to_gc_state
 
     compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
     state = sfen_to_gc_state(compiled, "8k/9/9/4+p4/4P4/9/9/9/K8 b - 1")
+    root_key = state.repetition_counts[0][0]
+    state = GameState(
+        position=state.position,
+        ply_count=state.ply_count,
+        repetition_counts=state.repetition_counts,
+        terminal_status=state.terminal_status,
+        history=(HistoryRecord(root_key, -1, "", False),),
+    )
     capture = next(
         action
         for action in legal_actions(state, compiled)
@@ -179,7 +188,64 @@ def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():
         for action in legal_actions(state, compiled)
         if action_is_drop(action) and action.base_type_id == "P"
     )
-    state = apply_action(state, drop, compiled)
+    drop_target = drop.to_square.rank * 9 + drop.to_square.file
+    assert state.position.board[drop_target] is None
+    runtime = SearchPathRuntime.from_state(state, compiled)
+    public_actions = frozenset(legal_actions(state, compiled))
+    before_actions = frozenset(runtime.legal_actions())
+    assert before_actions == public_actions
+    before = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        before_actions,
+    )
+    drop_child = apply_action(state, drop, compiled)
+    runtime.push(drop)
+    assert runtime.position == drop_child.position
+    assert runtime.position.hands[0] == state.position.hands[0].remove("P")
+    assert runtime.position.hands[1] == state.position.hands[1]
+    placed_by_runtime = runtime.position.board[drop_target]
+    assert placed_by_runtime is not None
+    assert (
+        placed_by_runtime.owner,
+        placed_by_runtime.base_type_id,
+        placed_by_runtime.current_type_id,
+        placed_by_runtime.promoted,
+    ) == (0, "P", "P", False)
+    assert all(
+        runtime.position.board[index] == state.position.board[index]
+        for index in range(len(state.position.board))
+        if index != drop_target
+    )
+    assert runtime.position.side_to_move == 1
+    assert runtime.ply_count == state.ply_count + 1
+    assert runtime.position.aux_state == state.position.aux_state
+    runtime.pop()
+    runtime.assert_balanced()
+    after = (
+        runtime.position,
+        runtime.ply_count,
+        runtime.terminal_status,
+        tuple(runtime.history),
+        runtime.repetition_counts,
+        runtime.runtime_hash,
+        runtime._history_context,
+        runtime.search_key(),
+        runtime._history_complete,
+        runtime.history_witness_misses,
+        frozenset(runtime.legal_actions()),
+    )
+    assert after == before
+
+    state = drop_child
 
     assert state.position.hands[0].count("P") == 0
     placed = state.position.board[drop.to_square.rank * 9 + drop.to_square.file]
