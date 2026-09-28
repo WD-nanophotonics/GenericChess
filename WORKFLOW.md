@@ -35,9 +35,12 @@ one local-only phase COMPLETE without explicitly completing the whole project.
 after a reconciled local-only CONTINUE reply that contains no executable order.
 It keeps the candidate unpublished and records the prior request and reply hash.
 `recover` reconciles that same request. Heavy uses only its declared envelope.
-Use `closeout --local-only` only when the work order explicitly prohibits
-publishing the locally committed candidate; its report must be inline and
-must identify the unpublished local SHA.
+Publish tested project checkpoints by default and give Chat the verified
+`origin/sandbox` SHA. The user's project-data authorization supersedes a
+routine Chat `LOCAL_ONLY` label; document the change in the closeout. Use
+`closeout --local-only` only for a specific user prohibition or unresolved
+personal/sensitive-content concern; its report must identify the unpublished
+local SHA. See `AGENTS.md` for policy.
 `supervisor-patrol` compares the current observation with the prior hourly
 observation; see `docs/operations/WORKFLOW_RECOVERY.md` for evidence rules.
 The retired

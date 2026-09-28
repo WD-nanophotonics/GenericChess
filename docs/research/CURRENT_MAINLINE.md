@@ -143,5 +143,7 @@ Supervisor has asked the user to choose this boundary. Preserve the captured
 Courier request/reply, the active Worker and Goal, and the Xiangqi material
 holdout. Until that direction is settled, the Worker may consolidate existing
 results and their limits in project notes but must not launch a new scalar
-candidate, Arena/Heavy, publication, or promotion. This is a phase boundary,
-not whole-project completion.
+candidate, Arena/Heavy, or promotion. The user's later authorization allows
+tested, non-sensitive existing project work to be published to
+`origin/sandbox` so Chat can inspect it; this does not authorize a new
+research direction. This is a phase boundary, not whole-project completion.

@@ -10,13 +10,24 @@ recording the old/new request lineage. A repeatedly broken Chat target may be
 retired and rebound within the same project/profile after the same evidence
 check. Replace a Worker only under the
 Goal-blocked or three-refusal rule below. Generated binaries, raw benchmarks,
-Courier runtime, and transient evidence stay out of Git. Publish only tested
-checkpoints to `origin/sandbox` and verify the full remote SHA. Never use
-Gmail, `gc-bridge`, a background Courier daemon, WSL, or a bypass transport.
-If a work order explicitly forbids publication, freeze and test the candidate
-locally, then use `closeout --local-only` to report its committed local SHA and
-the actual remote SHA through the same Courier session. Never claim that local
-work was published or make it eligible for promotion. A local-only closeout
+Courier runtime, and transient evidence stay out of Git. The user authorizes
+public Git and Chat transfer of Worker-generated GenericChess project data
+that contains no personal or sensitive information. Check outgoing content,
+run the required tests, publish project checkpoints to `origin/sandbox`, and
+give Chat the verified full remote SHA through the existing Courier session.
+A local commit alone does not synchronize Chat and Worker. Publication is the
+ordinary closeout path: a Chat work order's routine `LOCAL_ONLY` or
+`PUBLICATION_ALLOWED=false` label does not override this later user
+authorization. Preserve local-only only when the user specifically requires
+it or a concrete personal/sensitive-content concern remains unresolved. State
+any change from an earlier order's publication label in the closeout; never
+claim publication before remote verification. Promotion retains its separate
+gate. Never use Gmail, `gc-bridge`, a background Courier daemon, WSL, or a
+bypass transport. When local-only is genuinely required, freeze and test the
+candidate locally, then use `closeout --local-only` to report its committed
+local SHA and the actual remote SHA through the same Courier session. Never
+claim that local work was published or make it eligible for promotion. A
+local-only closeout
 should carry enough self-contained evidence for a bounded next decision:
 the base/candidate/actual remote SHAs, the relevant patch or changed behavior,
 exact test commands and results, and known limits. Label this as reported

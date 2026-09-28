@@ -6,6 +6,31 @@ from a procedure here. `WORKFLOW.md` lists ordinary commands. Keep one Worker,
 Courier session, worktree, and Heavy job. Do not turn an ordinary error into a
 Supervisor HOLD or a blocked Goal.
 
+## Publication and Chat synchronization
+
+The user authorizes public Git and Chat transfer of Worker-generated project
+data without personal or sensitive content. For ordinary work, inspect the
+outgoing tracked changes, run the necessary tests, publish a checkpoint to
+`origin/sandbox`, verify its full remote SHA, and close out through the same
+Courier session with that SHA. A local commit is not visible to remote Chat.
+Do not accumulate local-only orders merely because an earlier Chat order used
+`PUBLICATION_ALLOWED=false`; the user's later publication instruction takes
+precedence. Explain the changed publication basis in the closeout and keep
+the original request/reply evidence. Do not promote to master through this
+path. If a specific user instruction forbids publication or a concrete
+personal/sensitive-content concern is unresolved, retain local-only and give
+Chat self-contained evidence through the existing Courier request.
+
+For a backlog, first reconcile the active Courier request, inventory the
+unpushed commit range, inspect tracked content for personal data or secrets,
+run tests covering the accumulated changes, then publish one coherent tested
+checkpoint. Report the actual published SHA and any previously local-only
+lineage to Chat; never rewrite old receipts or claim an earlier order was
+published when it was not. If Codex auto-review rejects the exact push or
+Courier send even after the user's authorization, record its stated reason,
+stop retries of that operation, and report the product-layer blocker. Do not
+switch to an alternate transport or change the payload merely to evade review.
+
 ## Supervisor attention budget
 
 The ordinary work path is Chat -> existing Courier request/session -> Worker:
@@ -229,20 +254,17 @@ The Supervisor must repair or reconcile the missing-order path rather than
 repeatedly expanding that work into a substitute Chat/Worker research loop.
 This notice alone is neither a blocked Goal nor a HOLD.
 
-If a work order forbids publication while Chat requires remote Git visibility
-of that same local-only candidate before issuing another order, record the
-conflicting evidence requirements as a shared order-path fault. Recheck the
-matching request, reply, local/remote SHAs, and the one reviewed followup.
-Do not resend equivalent requests, publish the prohibited candidate, or
-rebind Chat merely to repeat the same remote-only gate. Check whether the
-Courier prompt that wrapped the immutable request imposed a stale remote-only
-condition; updating Courier affects future requests and never rewrites a
-submitted request. Do not silently treat a patch or test log as remote
-verification. Give the Worker a single bounded, independent
-mainline bridge with a stop condition while the Supervisor seeks a concrete
-compatible order path or a new authorized publication boundary. Record the
-decision in local runtime state so the next patrol does not reopen the same
-review loop.
+If Chat asks for remote visibility of an unpublished candidate, first check
+whether the user's later project-data publication authorization applies.
+When it does, inspect the outgoing content, test and publish a checkpoint,
+then close out with its verified remote SHA and the original local-only
+lineage. When a specific user prohibition or concrete sensitive-content
+concern prevents publication, record the conflict as a shared order-path
+fault. Recheck the matching request, reply, and local/remote SHAs; do not
+resend equivalent requests or treat a patch as remote verification. Give the
+Worker one bounded independent mainline bridge while the Supervisor repairs
+the order path. Record the decision so the next patrol does not reopen the
+same review loop.
 
 Use the smallest action supported by fresh evidence; escalate the remedy if
 the same fault persists. Fix a broken selector, launcher, status read, or
