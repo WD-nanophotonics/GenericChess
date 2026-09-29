@@ -90,6 +90,8 @@ A direct memoized exact-random-policy follow-up on that same R5 root aborted at 
 
 The R5 random-continuation pilot's 482/500 `max_ply` draws are valid under its synthetic six-ply terminal contract but are censored relative to Chess/Shogi play without that cap (96.4% of sampled lines). The exact-LOSS capture has 96 capped draws among its 100 continuations. Do not transfer its sampled mean or minimax labels to a longer-horizon random-play material objective; the pilot only diagnoses how the finite contract dilutes rare terminal events.
 
+`CHESS_SHALLOW_INVENTORY_IDENTIFIABILITY.md` tests the next obstacle to projecting any state-level target onto cheap static Chess coefficients. Exhaustive initial-state legal histories through three plies number 1/20/400/8,902. All balances through ply two are zero; at ply three, 8,868 remain zero, 30 have Pawn balance +1, and four have Knight balance +1. Bishop, Rook, and Queen balance columns are identically zero on this support, so no weighting or outcome regression there can identify their separate material coefficients. A deeper ensemble needs both a cost gate and a context-selection principle; do not silently treat the canonical initial state as adequate training support.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
