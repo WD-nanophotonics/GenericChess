@@ -47,14 +47,33 @@ It reports a two-hour Chess analysis, beyond our cheap construction
 budget. Its useful lesson here is to name payoff, control, and
 termination separately; mobility alone is not declared winning value.
 
+## Kuhlmann, Dresner, and Stone's general game player
+
+The [2006 AAAI primary paper](https://www.cs.utexas.edu/~pstone/Papers/bib2html-links/AAAI06-ggp.pdf)
+identifies board pieces, locations, and quantities from a formal game
+description, with short random simulations used to check the detected
+structures. It generates separate maximizing and minimizing heuristics
+for each feature, maps their outputs inside the terminal reward range,
+and selects among search suggestions online. It explicitly avoids
+combining features with fixed manually chosen weights because games
+are unknown; principled selection between different heuristic
+suggestions is left open. Its controlled experiments choose one
+pre-existing feature heuristic using game knowledge to isolate the
+construction method. This is evidence for rule-derived *candidate
+features*, not a rule-only static relative material vector. The online
+distributed-search setting also does not meet this mainline's cheap
+prior requirement.
+
 ## Decision
 
-Neither primary method supplies a coefficient-free replacement for
+None of these primary methods supplies a coefficient-free replacement for
 the rejected first-action service scalar. Pell is the closer baseline
 for rule-only Chess-like games, but adopting its equal weights or a
 particular eventual-mobility discount merely because its Chess ordering
 looks familiar would repeat the same ungrounded choice. Clune's
 sampling and regression could be a later deployment-specific route if
 the mainline adopts that additional modeling assumption, with its policy
-and cost declared first. Do not treat either paper as a frozen candidate or
+and cost declared first. Kuhlmann et al. further illustrate that
+discovering candidate features does not itself select their combination
+or static material meaning. Do not treat these papers as frozen candidates or
 open Xiangqi human material values on their basis.
