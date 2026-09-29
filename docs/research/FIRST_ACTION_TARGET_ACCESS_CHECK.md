@@ -74,8 +74,21 @@ coverage; the interior witness is locally valid. This confirms that
 removal identity is insufficient for postaction reach weighting in the
 supported interior event model.
 
-Next gate: decide whether capture is a separate service channel or only
-a consequence of the successor action, then define a destination-aware
-event identity and test its representation invariance. If no invariant
-event definition and independent comparison objective survives, reject
-this candidate route rather than tuning against human values.
+The local event construction below provisionally treats capture as an
+action effect and eligibility condition, with no separate removal
+service. That convention must be justified or revised when defining a
+material objective; it is not yet a valuation argument.
+
+The new bounded composer in `scripts/intrinsic_action_events.py` now
+constructs a physical-event key with owner, current type, source,
+destination, target state, canonical resolved removal effects, and
+resulting type. It treats capture as a condition/effect of the board
+action, with no extra removal score. The synthetic shared-victim actions
+retain distinct destination keys; two syntactic references to the same
+removed square produce identical keys and cubes. The compiled cannon
+event reproduces the independently checked Xiangqi local probability.
+This is local event identity for type-preserving board actions, not yet
+a global deduplicated ledger, material formula, transition/held-mode
+model, or argument that random-target service predicts game utility.
+If no invariant global event definition and independent comparison
+objective survives, reject this route rather than tuning human values.

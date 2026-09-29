@@ -49,8 +49,8 @@ The deterministic square-zone guard is also now evaluated from its
 compiled zone and board shape. Tests cover the owner-mirrored General
 palace and the Elephant's river boundary. Thus the local occupancy and
 zone conditions needed by non-anchor Xiangqi movement are individually
-representable. They still need to be composed into one physical action
-event with complete coverage accounting. Dynamic own-anchor safety
+representable. The following local event test composes one cannon
+action; complete event coverage remains open. Dynamic own-anchor safety
 remains excluded from this state-free prior, as in the frozen V2C model.
 
 For one compiled cannon capture geometry from a central source, the
@@ -63,3 +63,10 @@ the declared maximum-entropy occupancy model's probability of an
 intrinsic event, not a sampled position frequency or a legal-move rate
 after own-anchor safety. It neither consults nor predicts Xiangqi piece
 values.
+
+The new local physical-event composer joins the compiled cannon path,
+enemy target, and remove-from-game effect. It preserves source,
+destination, target relation, and canonical removed square in its key,
+and returns the same two disjoint occupancy cubes and exact probability.
+It currently covers type-preserving board actions only; global event
+deduplication and the other games' transitions/drops remain to be done.
