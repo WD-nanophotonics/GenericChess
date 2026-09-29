@@ -32,6 +32,30 @@ def _key(action) -> str:
     return json.dumps(action_to_dict(action), sort_keys=True)
 
 
+def native_position_from_fen(semantic_rules, native, fen):
+    position = position_from_fen(fen, semantic_rules)
+    ids = {type_id: index for index, type_id in enumerate(native.type_ids)}
+    board = [
+        None if piece is None else [
+            ids[piece.base_type_id],
+            ids[piece.current_type_id],
+            piece.owner,
+            int(piece.promoted),
+        ]
+        for piece in position.board
+    ]
+    return pack_position(
+        native,
+        {
+            "side": position.side_to_move,
+            "ply": 0,
+            "board": board,
+            "hands": [[0] * len(ids), [0] * len(ids)],
+            "aux_state": position.aux_state,
+        },
+    )
+
+
 def run_probe() -> dict:
     if not native_available():
         return {"classification": "NATIVE_UNAVAILABLE", "root_fen": FEN}
@@ -44,27 +68,7 @@ def run_probe() -> dict:
         python_rows[_key(action)] = (result.status.value, result.winner)
 
     native = compile_native_semantic_rules(semantic_rules)
-    position = position_from_fen(FEN, semantic_rules)
-    ids = {type_id: index for index, type_id in enumerate(native.type_ids)}
-    board = [
-        None if piece is None else [
-            ids[piece.base_type_id],
-            ids[piece.current_type_id],
-            piece.owner,
-            int(piece.promoted),
-        ]
-        for piece in position.board
-    ]
-    packed = pack_position(
-        native,
-        {
-            "side": position.side_to_move,
-            "ply": 0,
-            "board": board,
-            "hands": [[0] * len(ids), [0] * len(ids)],
-            "aux_state": position.aux_state,
-        },
-    )
+    packed = native_position_from_fen(semantic_rules, native, FEN)
     native_rows = {}
     for action in guarded_actions(native, packed):
         result = terminal_status(native, make_checked(native, packed, action))
