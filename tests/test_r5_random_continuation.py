@@ -22,3 +22,6 @@ def test_seeded_random_continuation_is_draw_dominated_under_six_ply_cap():
     assert sum(row.get("max_ply", 0) for row in statuses) == 482
     assert sum(row.get("repetition", 0) for row in statuses) == 15
     assert loss_rows[0]["terminal_status_counts"]["checkmate"] == 2
+    assert loss_rows[0]["terminal_status_counts"] == {
+        "checkmate": 2, "max_ply": 96, "repetition": 1, "stalemate": 1,
+    }

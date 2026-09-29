@@ -25,6 +25,16 @@ Across all 500 seeded continuations, terminal statuses are 482
 checkmates. Thus the six-ply cap accounts directly for most observed
 draws; this is measured rather than assumed.
 
+For transfer to Chess/Shogi play without this six-ply cap, those 482
+`max_ply` outcomes are **censored by this synthetic RuleSet's cap**,
+not observed natural draws. That is 96.4% of all sampled lines; the
+exact-LOSS capture alone has 96 capped draws, one repetition draw, one
+stalemate draw, and two checkmates. The finite R5 contract correctly
+calls the capped lines draws, but these data cannot estimate the
+uncapped random-continuation outcome or validate a cross-game material
+prior. Conditioning only on the 18 uncapped observations would change
+the question and leave a very small, selected sample.
+
 The LOSS action's observed mean under payoff coding
 `Win=+1, Draw=0, Loss=-1` is `-0.02`; the four DRAW actions' observed
 means are zero. The deterministic seeded test reproduces these counts.

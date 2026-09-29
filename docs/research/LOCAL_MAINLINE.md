@@ -88,6 +88,8 @@ A direct memoized exact-random-policy follow-up on that same R5 root aborted at 
 
 `R5_RANDOM_SAFE_KEY_COST_CHECK.md` tests one genuine compression argument before repeating that computation: R5's draw repetition policy permits Core's authoritative position/ply/repetition-count search identity to omit raw history. On the frozen exact-LOSS action, the same 10,000-state/five-second cap still aborts at 10,000 identities with **zero cache hits**. The first traversal prefix offers no reusable state even under the safe key, so this particular compression does not justify a larger exact run. Continue toward a cheaper, independently motivated type projection or a different bounded falsifier, not a budget increase on R5.
 
+The R5 random-continuation pilot's 482/500 `max_ply` draws are valid under its synthetic six-ply terminal contract but are censored relative to Chess/Shogi play without that cap (96.4% of sampled lines). The exact-LOSS capture has 96 capped draws among its 100 continuations. Do not transfer its sampled mean or minimax labels to a longer-horizon random-play material objective; the pilot only diagnoses how the finite contract dilutes rare terminal events.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
