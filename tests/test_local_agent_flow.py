@@ -1,3 +1,7 @@
+import json
+import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -6,6 +10,35 @@ from tools.local_agent import advice
 from tools.local_agent import cli
 from tools.local_agent import git_ops
 from tools.local_agent.common import LocalFlowError
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Windows schedule runner")
+@pytest.mark.parametrize("missing_patrol", [False, True])
+def test_scheduled_turn_dry_run_recovers_missing_patrol(tmp_path, missing_patrol):
+    shell = shutil.which("powershell.exe")
+    if shell is None:
+        pytest.skip("Windows PowerShell unavailable")
+    local = tmp_path / ".local_agent"
+    local.mkdir()
+    runner = tmp_path / "tools" / "local_agent" / "run_scheduled_turn.ps1"
+    runner.parent.mkdir(parents=True)
+    source = Path(__file__).resolve().parents[1] / "tools" / "local_agent" / "run_scheduled_turn.ps1"
+    runner.write_bytes(source.read_bytes())
+    (local / "windows_schedule.json").write_text(json.dumps({
+        "codex_path": sys.executable,
+        "thread_id": "11111111-1111-1111-1111-111111111111",
+    }), encoding="utf-8")
+    (local / "scheduled-last-enqueue.json").write_text(json.dumps({
+        "slot": "19990101-00",
+        "patrol_at_before": "same-patrol" if missing_patrol else "prior-patrol",
+    }), encoding="utf-8")
+    (local / "patrol.json").write_text(json.dumps({"at": "same-patrol"}), encoding="utf-8")
+    result = subprocess.run(
+        [shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(runner), "-DryRun"],
+        capture_output=True, text=True, timeout=10, check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert f"recovery={str(missing_patrol)}" in result.stdout
 
 
 def test_daily_consultation_is_reserved_before_transport_and_cannot_duplicate(
