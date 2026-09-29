@@ -34,10 +34,10 @@ terms also import those terms' units, so the scaling statement applies to the
 declared pure-material experiment rather than silently to every engine.
 
 **Decision.** Keep root regret as a validation objective for a *frozen* prior,
-not a derivation of its cardinal values. The prior still needs an independent
-game-independent comparison and unit principle. The next bounded route is to
-inspect whether a rule-derived resource conversion supplies such a unit across
-Chess and Shogi. State the conversion operation and its invariance conditions
-before measuring values; reject it if capture, promotion, or hand transfer
-changes what is being exchanged. Do not tune against the labelled Chess mate
-fixtures or inspect Xiangqi material values.
+not a derivation of its relative values. The absolute unit may be a declared
+reporting convention, as analyzed in `MATERIAL_SCALE_CONVENTION.md`; the
+relative vector still needs an independent game-independent comparison
+principle. The next historical check was whether rule-derived resource
+conversion supplies a rate across Chess and Shogi; its outcome is recorded in
+`RESOURCE_CONVERSION_UNIT_CHECK.md`. Do not tune against the labelled Chess
+mate fixtures or inspect Xiangqi material values.
