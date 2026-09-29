@@ -13,7 +13,9 @@ conventional Chess values as a recipe for a new candidate.
 Pell's [1994 METAGAMER paper](https://cdn.aaai.org/AAAI/1994/AAAI94-212.pdf)
 is a direct predecessor: it takes rules for symmetric chess-like games,
 including Chess, Chinese Chess, and Shogi, and derives fixed material
-advisors before playing. Its per-type terms include maximum/average
+advisors before playing. The paper's numerical material examples are
+Chess and Checkers; it does not report a comparable Shogi/Xiangqi
+validation table. Its per-type terms include maximum/average
 static mobility, maximum/average eventual mobility, capturable victim
 types, and goal-related eradication/stalemate features. Eventual-square
 access is discounted by the number of moves; Pell explicitly notes

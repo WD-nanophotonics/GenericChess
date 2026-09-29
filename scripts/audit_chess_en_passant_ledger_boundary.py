@@ -1,6 +1,13 @@
 """Find a history-legal Chess capture absent from the intrinsic board ledger."""
 
 from dataclasses import replace
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action, initial_state

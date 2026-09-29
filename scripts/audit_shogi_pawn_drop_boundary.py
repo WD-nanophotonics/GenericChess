@@ -1,6 +1,13 @@
 """Contrast coarse pawn-drop events with executable same-file legality."""
 
 from dataclasses import replace
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from generic_chess.core.actions import SemanticDropMove
 from generic_chess.core.movegen import legal_actions

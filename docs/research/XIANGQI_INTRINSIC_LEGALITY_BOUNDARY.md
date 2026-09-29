@@ -10,6 +10,7 @@ evaluates the existing occupancy cubes against two exact board states,
 then compares `(type, source, destination)` with public `legal_actions`
 from the executable diagnostic RuleSet. It computes no material value
 and reads no Xiangqi human-value reference.
+Reproduce with `.venv/Scripts/python.exe scripts/audit_xiangqi_intrinsic_legality_boundary.py`.
 
 | State, owner 0 | Intrinsic non-anchor actions | Legal non-anchor actions | Intrinsic only | Legal only |
 | --- | ---: | ---: | ---: | ---: |

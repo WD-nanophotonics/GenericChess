@@ -7,6 +7,7 @@ compares its owner-0 pawn-drop targets with executable `legal_actions`
 in two synthetic Standard Shogi states. Both have two Kings, one held
 Pawn, and a same-file board Pawn at index 40 (file 4, rank 4). The only
 change is whether that board Pawn is unpromoted `P` or promoted `TP`.
+Reproduce with `.venv/Scripts/python.exe scripts/audit_shogi_pawn_drop_boundary.py`.
 
 | Board Pawn type | Coarse empty targets | Executable legal drops | Coarse only |
 | --- | ---: | ---: | ---: |

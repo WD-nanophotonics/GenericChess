@@ -12,6 +12,7 @@ index 11 to 27 by a double step, and compares the resulting Black
 Pawn's executable actions with the existing intrinsic occupancy ledger.
 The history/auxiliary en-passant patterns are explicitly excluded by
 that ledger. No material values or search outcomes are used.
+Reproduce with `.venv/Scripts/python.exe scripts/audit_chess_en_passant_ledger_boundary.py`.
 
 | After White's double step | Source → destination |
 | --- | --- |

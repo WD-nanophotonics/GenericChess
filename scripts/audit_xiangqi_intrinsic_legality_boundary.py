@@ -5,6 +5,13 @@ This checks a semantic boundary, not material values or a sampled game model.
 
 from collections import Counter
 from dataclasses import replace
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.pieces import Piece
