@@ -51,6 +51,16 @@ Western Chess history-conditioned en-passant is already excluded from
 the stationary V2C/V2D board model; that exclusion does not justify
 silently identifying removal square with destination in generic rules.
 
+The V2A/V2C successor occupancy cube also constrains the landing square
+and path, but does not add an enemy constraint at an off-target removed
+square. The exact synthetic regression
+`test_v2a_successor_cube_omits_off_target_victim_condition` compares a
+quiet leap with the same leap requiring an off-target enemy removal; V2A
+reports equal raw successor capability. This is a second reason the
+existing successor ledger cannot simply be postweighted. A new event
+builder would need the physical-effect constraint and an explicit
+coverage failure for unresolved effects.
+
 The exact synthetic check in
 `test_shared_off_target_removal_group_loses_distinct_action_destinations`
 uses two nonhistory leap captures from the same 8x8-board source. They

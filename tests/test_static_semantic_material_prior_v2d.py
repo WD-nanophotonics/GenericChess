@@ -9,6 +9,7 @@ from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import RuleActionEffect, RuleSquareRef
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
+from scripts.audit_static_semantic_material_prior_v2a import audit_ruleset_v2a
 from scripts.audit_static_semantic_material_prior_v2c import _event_measure_factory, _token_state_ledger, audit_ruleset_v2c
 from scripts.audit_static_semantic_material_prior_v2d import (
     _add_capture_group,
@@ -155,6 +156,20 @@ def test_shared_off_target_removal_group_loses_distinct_action_destinations():
     assert len(rows[0]["semantic_patterns"]) == 2
     assert {action.name for action in actions} == set(rows[0]["semantic_patterns"])
     assert "target_square" not in rows[0]
+
+
+def test_v2a_successor_cube_omits_off_target_victim_condition():
+    quiet_rules, _ = _synthetic(relations=("empty",), shapes=((1, 0),))
+    victim = RuleSquareRef(kind="offset_from_source", offset=(0, 1))
+    action = quiet_rules.semantic_actions[0]
+    capture_action = replace(action, effects=(
+        RuleActionEffect("remove", square_ref=victim, disposition="remove_from_game",
+                         piece_owner="opponent"), *action.effects,
+    ))
+    capture_rules = replace(quiet_rules, semantic_actions=(capture_action,))
+    quiet = audit_ruleset_v2a(compile_semantic_ruleset(quiet_rules))["ledger"]["X"]
+    capture = audit_ruleset_v2a(compile_semantic_ruleset(capture_rules))["ledger"]["X"]
+    assert quiet["v2a_raw_exact"] == capture["v2a_raw_exact"]
 
 
 def test_self_removal_and_state_effects_are_never_counted_as_opponent_capture():
