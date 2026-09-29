@@ -58,6 +58,8 @@ Existing exact preference labels have limited coverage for that objective. `ADR-
 
 `SHOGI_PAWN_DROP_LEGALITY_BOUNDARY.md` isolates a parallel held-mode gap. A synthetic state with one held Pawn and one same-file unpromoted Pawn has 70 coarse empty drop targets but only 64 executable legal drops; all six missing drops are on that file. Promoting the board Pawn to `TP` restores all 70 legal drops without changing the coarse mask. The result verifies the state-dependent nifu exclusion, not a hand-value premium or drop-mate model. Cross-mode valuation still needs a justified state/context measure.
 
+`CHESS_EN_PASSANT_LEDGER_BOUNDARY.md` establishes the opposite direction of local-event error. After a certified legal White Pawn double step, Black's Pawn has one intrinsic ledger action (ordinary advance) and two executable legal actions, the additional one being an en-passant capture gated by history/auxiliary state. Thus, across the three direct witnesses, static intrinsic events are neither a global upper nor a lower bound on legal actions: dynamic safety and state guards can remove events, while excluded history can add legal actions. A future prior must state both scope errors and their context dependence. These checks establish RuleSet semantics, not a relative material score.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
