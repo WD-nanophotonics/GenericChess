@@ -68,6 +68,8 @@ A same-board Chess control clears only the en-passant auxiliary slot and removes
 
 `UNIFORM_ANCHOR_TARGET_EQUIVALENCE.md` proves that replacing the pilot's uniform requested square with an independent uniformly placed enemy anchor leaves the board quantity exactly unchanged: each event's hit probability is its reach-set size divided by board area. This closes a nominally goal-linked relabelling of the failed candidate before another score run. A genuine goal consequence needs a specified legal anchor context and adversarial response/terminal-progress loss, not mere contact with a uniformly sampled square.
 
+`SHOGI_STALEMATE_SCOPE_CHECK.md` records a separate goal-linked terminal limit: the local Standard Shogi product sets noncheck no-move `stalemate_result="draw"`, while the primary Japan Shogi Association match rules do not specify that edge as a draw. This is an unverified local terminal convention, not grounds to change gameplay on ambiguous evidence. Do not use local Shogi no-move W/D/L as official ground truth if a future material objective depends on it. Current board-mode static comparisons do not depend on that adjudication.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion

@@ -35,8 +35,8 @@ promotion and forward restrictions leave a smaller correction.
 This exact reduction explains the observed gate pattern. The new
 metric did not add a general estimate of strategic material usefulness:
 it mostly inherited V2C's action-count behavior and applied one blunt
-topological penalty. The Chess B/P ratio moved from the historical V2D
-high side to 2.2076, below its frozen lower band; N/P 3.7421 and R/P
+topological penalty. The Chess B/P ratio moved from frozen V2C's
+4.2061 to 2.2076, below its frozen lower band; N/P 3.7421 and R/P
 6.1245 remain above their upper bands. The Shogi gate pass is not an
 independent confirmation of the new reach objective, because its
 vector exactly equals V2C's board vector.
