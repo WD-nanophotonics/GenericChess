@@ -31,7 +31,35 @@ fractions through the V2C exact finite-population union evaluator. It
 also checks cube intersection with an enemy target: with two empty, one
 own and two enemy tokens among five remaining squares, the joint
 one-screen-and-enemy-target probability is exactly `4/15`. It does not
-yet combine source/target zones, horse-leg or elephant-eye guards,
-own-anchor safety, or a full Xiangqi action event measure. This is one
-semantic primitive toward the cross-game prior, not a Xiangqi material
-score.
+yet combine source/target zones, blocker guards, own-anchor safety, or
+a full Xiangqi action event measure. This is one semantic primitive
+toward the cross-game prior, not a Xiangqi material score.
+
+The next bounded guard check found that 24 of the 25 compiled exact
+occupancy guards are owner-agnostic count-zero tests on a single
+owner-relative horse-leg or elephant-eye square. The helper now maps
+those to one `empty` cube and the test checks owner mirroring. The
+remaining guard requires an opponent of explicit type `G` at the
+target for `general_facing_capture`, an anchor-only action. A
+three-label empty/own/enemy measure cannot express the opponent's type,
+so the helper rejects it. This is a scoped unsupported semantic, not
+permission to treat a generic typed guard as an ordinary enemy event.
+
+The deterministic square-zone guard is also now evaluated from its
+compiled zone and board shape. Tests cover the owner-mirrored General
+palace and the Elephant's river boundary. Thus the local occupancy and
+zone conditions needed by non-anchor Xiangqi movement are individually
+representable. They still need to be composed into one physical action
+event with complete coverage accounting. Dynamic own-anchor safety
+remains excluded from this state-free prior, as in the frozen V2C model.
+
+For one compiled cannon capture geometry from a central source, the
+two-screen-square cube union conjoined with an enemy target has exact
+V2C event probability `2426/85173`. The test independently reproduces
+that fraction by averaging the hypergeometric expression
+`P(enemy target) × P(exactly one occupied of two screen squares | enemy
+target)` over the source-conditioned token-count distribution. This is
+the declared maximum-entropy occupancy model's probability of an
+intrinsic event, not a sampled position frequency or a legal-move rate
+after own-anchor safety. It neither consults nor predicts Xiangqi piece
+values.
