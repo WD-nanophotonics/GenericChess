@@ -46,6 +46,8 @@ Existing exact preference labels have limited coverage for that objective. `ADR-
 
 `FIRST_ACTION_SERVICE_PILOT_PROTOCOL.md` now predeclares a new structural proxy before numerical values: expected count of deduplicated physical first actions that can eventually serve a uniform requested square, with V2C source-conditioned board occupancy, directed positive-probability transition reachability, and a separate hand-conditioned Shogi mode. The protocol explicitly treats source/target uniformity and coarse occupancy as assumptions, counts promotion branches, gives capture no extra bonus, and freezes failure gates and cost limits before Chess/Shogi comparison and Xiangqi human holdout. This is a testable candidate, not yet a validated material prior or completion evidence.
 
+`FIRST_ACTION_SERVICE_PREREFERENCE_RESULTS.md` records the published numerical implementation and frozen exact Chess/Shogi raw vectors before consulting human-value references. The SHA manifest and reproduction test lock the formula, inputs, and outputs. Both audits ran under two seconds locally. Shogi held-mode route count is much larger than board-mode, and unpromoted R exceeds promoted TR because optional promotion counts as extra first-action branches; retain those predictions for validation rather than adjusting the formula. Xiangqi human values remain sealed.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
