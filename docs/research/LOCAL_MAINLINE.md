@@ -86,6 +86,8 @@ A tighter Shogi action-form control reaches the exact same checkmate `Position` 
 
 A direct memoized exact-random-policy follow-up on that same R5 root aborted at the predeclared 10,000-state cap before its five-second time cap; it yielded no complete expectation. Do not raise the budget and repeat without new state-compression evidence and a specific decision that exact probabilities would resolve. The sampled observation and this cost boundary keep the random-policy route conditional rather than turning it into a cheap static prior.
 
+`R5_RANDOM_SAFE_KEY_COST_CHECK.md` tests one genuine compression argument before repeating that computation: R5's draw repetition policy permits Core's authoritative position/ply/repetition-count search identity to omit raw history. On the frozen exact-LOSS action, the same 10,000-state/five-second cap still aborts at 10,000 identities with **zero cache hits**. The first traversal prefix offers no reusable state even under the safe key, so this particular compression does not justify a larger exact run. Continue toward a cheaper, independently motivated type projection or a different bounded falsifier, not a budget increase on R5.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
