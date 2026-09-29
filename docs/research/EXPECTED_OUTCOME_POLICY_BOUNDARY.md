@@ -40,3 +40,25 @@ a cheap way to project that state-level objective onto static *type*
 coefficients, an explicit context selection/weighting, and a frozen
 Chess/Shogi validation before opening the Xiangqi human-value holdout.
 Do not equate exact random completion with cheap rule-only calculation.
+
+## Optional-action monotonicity check
+
+The earlier [pure-rule optional-action theorem](PURE_RULE_METAMORPHIC_MONOTONICITY.md)
+gives a direct resource-value stress test. At one maximizing state,
+suppose the only legal action ends in Draw. Add one *optional* action
+ending in Loss while preserving the old action and all its
+continuations. Exact minimax remains Draw: the chooser can ignore the
+new action. Under uniform-random action choice, expected payoff changes
+from `0` to `(0 + -1)/2 = -1/2`.
+
+Thus random-play expected outcome violates this weak monotonicity under
+pure option addition. If a material token's proposed value is meant to
+represent the strategic benefit of having optional actions, the random
+policy's average cannot be used directly as that benefit: it can assign
+a negative increment to an option that can always be ignored. This
+does not invalidate the paper's empirical heuristic claim, and real
+Chess/Shogi piece additions usually change more than one isolated
+option, so the tiny graph is a contract check, not a piece-value
+estimate. It closes only the claim that uniform random continuation
+is automatically a game-independent *resource utility* consistent
+with pure-option monotonicity.
