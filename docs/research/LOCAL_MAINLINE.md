@@ -30,6 +30,8 @@ Semantic scope check: `build_xiangqi_diagnostic_ruleset()` covers ordinary singl
 
 `MATERIAL_SCALE_CONVENTION.md` resolves a narrower issue: for a pure material evaluator, positive common rescaling leaves decisions unchanged. Reporting a nonnegative raw vector divided by its positive maximum ordinary-type value is a cheap, label-invariant per-RuleSet gauge, not a valuation formula or fit. This removes the demand that rules uniquely provide an absolute score unit; it does not identify relative values, context weights, or the embedding scale against nonmaterial engine terms. The live scientific problem is therefore an independently justified *relative* prior and comparison context. Do not use gauge choice to rescue a failed ratio gate.
 
+The bounded Shogi extension in `INITIAL_CONTEXT_COVERAGE_CHECK.md` enumerated 900 two-ply histories under a 1,200-history/15-second gate. Bishop and knight actions appear by then, but no promoted type or hand mode appears. Full type coverage through uniform reachable histories therefore needs a deeper and potentially much larger ensemble; this does not justify treating histories as strategic visitation. The next useful question is a predeclared, representation-invariant context weighting and relative-value objective with a tiny falsifier, rather than another unconstrained reachability expansion.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion

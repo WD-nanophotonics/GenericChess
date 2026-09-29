@@ -35,9 +35,35 @@ rule-derived approximation is impossible. Do not turn the 20 moves into a
 new entropy/feature-count formula; those older routes already failed their
 declared tests.
 
+**Bounded Shogi coverage cost check (2026-09-29).** To test whether the
+smallest reachable-history horizon covering all ordinary types might be
+cheap, breadth-first enumerate *histories* from the Standard Shogi initial
+state through depth 2, using `legal_actions` and `apply_action`. The resource
+limit was 1,200 generated histories and 15 seconds; the abort criterion was
+either limit before finishing a depth. All 900 depth-2 histories completed
+within the limits. Group legal board actions at each frontier by the actor's
+current type and inspect whether either hand has a token:
+
+| History depth | Histories | Board actor types seen | States with hand tokens |
+| ---: | ---: | --- | ---: |
+| 0 | 1 | G, K, L, P, R, S | 0 |
+| 1 | 30 | G, K, L, P, R, S | 0 |
+| 2 | 900 | B, G, K, L, N, P, R, S | 0 |
+
+Here `K` is the anchor; the six promoted ordinary types have no action in
+this bounded frontier, nor does any hand mode occur. Thus an exhaustive
+history ensemble with full board/hand type coverage needs depth greater than
+2; the tested 900-history frontier is still incomplete. Histories are not
+claimed to be distinct full semantic states or a visitation distribution.
+This check does not prove that no symbolic or sampled later-context scheme
+could be cheap. It does show that "expand until every type appears" is not a
+cost-free rule-derived substitute for an independently justified context
+measure, especially in a capture-to-hand game. No Shogi material reference
+or Xiangqi value was used.
+
 **Next lead.** A context ensemble needs an independently justified support
 and weighting that both represent dormant types and respect rule-preserving
-renaming. Before running a broad enumeration, seek a tiny representation
+renaming. Before running a broader enumeration, seek a tiny representation
 invariance falsifier for one proposed weighting. The default of uniform
 legal histories is not yet justified as strategic visitation or material
 utility. Keep Xiangqi material values sealed.
