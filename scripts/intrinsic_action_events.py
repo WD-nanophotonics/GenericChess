@@ -197,3 +197,90 @@ def collect_intrinsic_board_events(compiled, type_id: str, *,
         "excluded_auxiliary_effects": tuple(sorted(excluded_auxiliary_effects)),
         "coverage_complete": not unsupported,
     }
+
+
+def collect_intrinsic_held_drop_events(compiled, type_id: str, *,
+                                       max_targets: int = 1_000) -> dict:
+    """Record hand-to-board drop options under compiled square masks.
+
+    State guards, postconditions and dynamic safety are explicit
+    exclusions; the returned occupancy cubes are coarse intrinsic events.
+    No hand-conditioned occupancy probability is assigned here.
+    """
+    if max_targets < 1:
+        raise ValueError("drop target budget must be positive")
+    masks = compiled.support.drop_allowed.get(type_id, ())[:2]
+    area = compiled.support.board_shape.area
+    if len(masks) != 2 or any(len(mask) != area for mask in masks):
+        raise ValueError("incomplete compiled drop masks")
+    promoted_types = {target for metadata in compiled.support.type_metadata.values()
+                      for target in metadata.promotion_target_ids}
+    events = {}
+    unsupported: set[tuple[str, str]] = set()
+    excluded_constraints: set[tuple[str, str]] = set()
+    excluded_dynamic: set[tuple[str, str]] = set()
+    disabled_patterns: set[str] = set()
+    target_count = 0
+    for pattern in compiled.ir.patterns:
+        if type_id not in pattern.type_ids:
+            continue
+        for geometry_id in pattern.geometry_ids:
+            geometry = compiled.ir.geometry[geometry_id]
+            if geometry.kind != "drop":
+                continue
+            if not any(any(mask) for mask in masks):
+                disabled_patterns.add(pattern.name)
+                continue
+            if pattern.target.kind != "target_empty" or pattern.promotion_mode != "none":
+                unsupported.add((pattern.name, "drop_target_or_transition_unsupported"))
+                continue
+            if pattern.path or pattern.slot_guards or pattern.square_zone_guards:
+                unsupported.add((pattern.name, "drop_path_history_or_zone_unsupported"))
+                continue
+            effects = tuple(effect.kind for effect in pattern.effects)
+            if sorted(effects) != ["place", "remove_from_hand"]:
+                unsupported.add((pattern.name, "drop_effect_pair_unsupported"))
+                continue
+            valid_refs = all(
+                effect.piece_type_ref is not None and (
+                    (effect.piece_type_ref.kind == "explicit"
+                     and effect.piece_type_ref.type_id == type_id)
+                    or (effect.piece_type_ref.kind == "action_base"
+                        and type_id not in promoted_types))
+                for effect in pattern.effects)
+            place = next(effect for effect in pattern.effects if effect.kind == "place")
+            if not valid_refs or place.to_ref is None or place.to_ref.kind != "target":
+                unsupported.add((pattern.name, "drop_type_or_destination_unsupported"))
+                continue
+            for guard in pattern.guards:
+                excluded_constraints.add((pattern.name, f"state_guard:{guard.spatial.kind}"))
+            for postcondition in pattern.postconditions:
+                excluded_constraints.add((pattern.name, f"postcondition:{postcondition.kind}"))
+            bad_invariant = False
+            for invariant in pattern.invariants:
+                if invariant.kind == "own_anchor_safe":
+                    excluded_dynamic.add((pattern.name, invariant.kind))
+                else:
+                    unsupported.add((pattern.name, f"invariant:{invariant.kind}"))
+                    bad_invariant = True
+            if bad_invariant:
+                continue
+            for owner, mask in enumerate(masks):
+                for target, allowed in enumerate(mask):
+                    if not allowed:
+                        continue
+                    target_count += 1
+                    if target_count > max_targets:
+                        raise RuntimeError("held drop target budget exceeded")
+                    key = (owner, type_id, "hand", target, "empty", (), type_id)
+                    events[key] = (((target, ("empty",)),),)
+    return {
+        "events": dict(sorted(events.items())),
+        "target_count": target_count,
+        "unsupported_intrinsic": tuple(sorted(unsupported)),
+        "excluded_state_constraints": tuple(sorted(excluded_constraints)),
+        "excluded_dynamic": tuple(sorted(excluded_dynamic)),
+        "disabled_patterns": tuple(sorted(disabled_patterns)),
+        "coarse_coverage_complete": not unsupported,
+        "full_legality_modeled": not unsupported and not excluded_constraints and not excluded_dynamic,
+    }

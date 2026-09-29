@@ -14,7 +14,8 @@ from scripts.audit_static_semantic_material_prior_v2c import (
     _event_measure_factory, _token_state_ledger,
 )
 from scripts.intrinsic_action_events import (
-    collect_intrinsic_board_events, event_cubes_for_candidate,
+    collect_intrinsic_board_events, collect_intrinsic_held_drop_events,
+    event_cubes_for_candidate,
 )
 from tests.test_static_semantic_material_prior_v2a import _synthetic
 
@@ -125,3 +126,31 @@ def test_chess_and_shogi_pawn_promotion_events_keep_resulting_types():
     assert Counter(tuple(sorted(types)) for types in branches.values()) == {
         ("P",): 180, ("P", "TP"): 72, ("TP",): 36,
     }
+
+
+def test_shogi_held_drop_masks_and_pawn_exclusions_are_explicit():
+    compiled = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    expected = {"P": 144, "L": 144, "N": 126, "S": 162,
+                "G": 162, "B": 162, "R": 162}
+    for type_id, count in expected.items():
+        audit = collect_intrinsic_held_drop_events(compiled, type_id)
+        assert audit["coarse_coverage_complete"], audit["unsupported_intrinsic"]
+        assert audit["target_count"] == len(audit["events"]) == count
+        assert all(key[2] == "hand" and key[4] == "empty" for key in audit["events"])
+        assert not audit["full_legality_modeled"]  # own-anchor safety remains dynamic
+        if type_id == "P":
+            assert any(kind.startswith("state_guard:")
+                       for _name, kind in audit["excluded_state_constraints"])
+            assert any(kind.startswith("postcondition:")
+                       for _name, kind in audit["excluded_state_constraints"])
+        else:
+            assert not audit["excluded_state_constraints"]
+    promoted = collect_intrinsic_held_drop_events(compiled, "TP")
+    assert not promoted["events"] and promoted["disabled_patterns"]
+    with pytest.raises(RuntimeError, match="drop target budget"):
+        collect_intrinsic_held_drop_events(compiled, "G", max_targets=1)
+
+    for builder, type_id in ((build_western_chess_ruleset, "B"),
+                             (build_xiangqi_diagnostic_ruleset, "C")):
+        audit = collect_intrinsic_held_drop_events(compile_semantic_ruleset(builder()), type_id)
+        assert not audit["events"] and audit["disabled_patterns"]
