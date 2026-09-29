@@ -6,7 +6,7 @@ import sys
 
 from generic_chess.core.pieces import Piece
 from generic_chess.rules.compiler import compile_semantic_ruleset
-from generic_chess.rules.schema import RuleSquareRef
+from generic_chess.rules.schema import RuleActionEffect, RuleSquareRef
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from scripts.audit_static_semantic_material_prior_v2c import _event_measure_factory, _token_state_ledger, audit_ruleset_v2c
@@ -132,6 +132,29 @@ def test_off_target_effect_uses_actual_removed_square_not_move_target():
     resolved = resolve_removed_square(RuleSquareRef(kind="path_step", step=0), owner=0,
         source=10, target=14, path=(11, 12, 13), area_width=8)
     assert resolved == 11
+
+
+def test_shared_off_target_removal_group_loses_distinct_action_destinations():
+    rules, _ = _synthetic(relations=("empty", "empty"), shapes=((1, 0), (0, 1)))
+    victim = RuleSquareRef(kind="offset_from_source", offset=(1, 1))
+    actions = tuple(replace(action, effects=(
+        RuleActionEffect("remove", square_ref=victim, disposition="remove_from_game",
+                         piece_owner="opponent"), *action.effects,
+    )) for action in rules.semantic_actions)
+    _compiled, result = _capture_audit(_with_initial_x_tokens(replace(rules, semantic_actions=actions)))
+    source, removed = 2 * 8 + 2, 3 * 8 + 3
+    distinct_targets = {source + 1, source + 8}
+    assert len(distinct_targets) == 2
+    assert {resolve_removed_square(victim, owner=0, source=source, target=target,
+                                   path=(), area_width=8) for target in distinct_targets} == {removed}
+    rows = [row for row in result["capture_affordance_event_ledger"]
+            if row["owner"] == 0 and row["source_square"] == source
+            and row["removed_square"] == removed]
+    assert result["unsupported_capture_semantics"]  # boundary sources make the offset invalid globally
+    assert len(rows) == 1
+    assert len(rows[0]["semantic_patterns"]) == 2
+    assert {action.name for action in actions} == set(rows[0]["semantic_patterns"])
+    assert "target_square" not in rows[0]
 
 
 def test_self_removal_and_state_effects_are_never_counted_as_opponent_capture():
