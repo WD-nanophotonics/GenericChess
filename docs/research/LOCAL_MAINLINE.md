@@ -48,6 +48,8 @@ Existing exact preference labels have limited coverage for that objective. `ADR-
 
 `FIRST_ACTION_SERVICE_PREREFERENCE_RESULTS.md` records the published numerical implementation and frozen exact Chess/Shogi raw vectors before consulting human-value references. The SHA manifest and reproduction test lock the formula, inputs, and outputs. Both audits ran under two seconds locally. Shogi held-mode route count is much larger than board-mode, and unpromoted R exceeds promoted TR because optional promotion counts as extra first-action branches; retain those predictions for validation rather than adjusting the formula. Xiangqi human values remain sealed.
 
+`FIRST_ACTION_SERVICE_VALIDATION.md` reports the locked post-freeze result: Chess N/P 3.7421, B/P 2.2076, and R/P 6.1245 each miss unchanged bands; Q/P passes. Standard Shogi board-mode cosine 0.9919, Spearman 0.9012, and pairwise 0.9103 pass all three retention thresholds, while the R/TR ordering is inverted locally. The combined candidate is rejected by the Chess gate. The likely general defect is treating unlimited eventual access and route multiplicity as material utility without action cost or adversarial survival; this remains a diagnosis to test, not permission to tune. Run the unchanged-formula Xiangqi holdout before choosing a new independent route.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
