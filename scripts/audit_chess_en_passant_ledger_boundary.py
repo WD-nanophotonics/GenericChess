@@ -38,6 +38,13 @@ def audit():
                  and any(cube_holds(cube) for cube in cubes)}
     legal_actions_after = [action for action in legal_actions(after, compiled)
                            if action.actor_type_id == "P"]
+    cleared = replace(after, position=replace(after.position, aux_state=position.aux_state))
+    assert cleared.position.board == after.position.board
+    assert cleared.position.hands == after.position.hands
+    assert cleared.position.side_to_move == after.position.side_to_move
+    cleared_legal = {(index(action.from_square), index(action.to_square))
+                     for action in legal_actions(cleared, compiled)
+                     if action.actor_type_id == "P"}
     legal = {(index(action.from_square), index(action.to_square))
              for action in legal_actions_after}
     en_passant = [action for action in legal_actions_after
@@ -47,6 +54,7 @@ def audit():
         "legal": sorted(legal),
         "intrinsic_only": sorted(intrinsic - legal),
         "legal_only": sorted(legal - intrinsic),
+        "same_board_aux_cleared_legal": sorted(cleared_legal),
         "en_passant": [(index(action.from_square), index(action.to_square))
                        for action in en_passant],
         "excluded_history_patterns": list(ledger["excluded_history"]),

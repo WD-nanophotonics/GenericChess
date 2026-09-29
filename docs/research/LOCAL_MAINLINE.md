@@ -62,6 +62,8 @@ The two Shogi states also have identical empty/own/enemy occupancy projections a
 
 `CHESS_EN_PASSANT_LEDGER_BOUNDARY.md` establishes the opposite direction of local-event error. After a certified legal White Pawn double step, Black's Pawn has one intrinsic ledger action (ordinary advance) and two executable legal actions, the additional one being an en-passant capture gated by history/auxiliary state. Thus, across the three direct witnesses, static intrinsic events are neither a global upper nor a lower bound on legal actions: dynamic safety and state guards can remove events, while excluded history can add legal actions. A future prior must state both scope errors and their context dependence. These checks establish RuleSet semantics, not a relative material score.
 
+A same-board Chess control clears only the en-passant auxiliary slot and removes that legal capture. Together with Shogi's same-three-label `P`/`TP` pair, this proves that occupancy-label models lose information required for exact action eligibility in two distinct ways: current type/promotion state and history/auxiliary state. The full RuleSets execute those conditions, but an averaged event probability requires a specified joint distribution over them.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion

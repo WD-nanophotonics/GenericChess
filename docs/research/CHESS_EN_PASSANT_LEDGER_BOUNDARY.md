@@ -24,6 +24,13 @@ double step. The static ledger's empty-target and local occupancy
 conditions cannot infer that history, and it reports both en-passant
 patterns as excluded.
 
+A paired diagnostic clears only the en-passant auxiliary slot while
+keeping the board, hands, and side to move identical. Black's legal
+Pawn actions then contain only `28 → 20`; `28 → 19` disappears. This
+isolates history/auxiliary state as the missing information. The
+cleared-slot state is a semantic control, not a separately certified
+reachable game history.
+
 Together with the Xiangqi and Shogi witnesses, this establishes that
 the intrinsic ledger is **neither a global upper nor a global lower
 bound** on executable legal actions. It can overcount when dynamic
