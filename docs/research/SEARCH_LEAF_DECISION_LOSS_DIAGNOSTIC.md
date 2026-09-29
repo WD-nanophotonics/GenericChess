@@ -23,4 +23,33 @@ The table was checked by evaluating the two leaf scores for all three order clas
 
 **Scientific boundary.** Decision regret is a defensible use objective for an evaluator, but the search horizon and cutoff state semantics are additional model choices. They may be fixed by a deployment budget rather than by RuleSet semantics. Changing the horizon may change what the same scalar must rank. No type coefficients should be tuned to make this finite witness agree with a human table.
 
-**Next bounded observation.** Inspect the actual evaluator call sites and search budgets for Western Chess and Standard Shogi. Determine whether one fixed horizon and leaf-state ensemble really describes deployment. If not, predeclare a small bounded-search validation contract and report any depth dependence instead of calling its selected coefficients rule-implied static values. Leave Xiangqi material values sealed until a formula is frozen.
+## Quiescence extension on the same exact graph
+
+The 2026-09-29 sourced Chat consultation
+(`GENERICCHESS-20260928-232122-5dee9cfc`) suggested separating nominal cutoff depth
+from the actual evaluation frontier. Reuse the frozen graph and exact terminal
+labels above; add a declared quiescence rule that extends **only** the forced
+second-ply transition after each depth-1 leaf, then evaluates at its depth-2
+successor. No terminal label, inventory, or material coefficient changes.
+The opponent has one legal continuation on each branch, so minimax backup
+adds no separate choice at this ply.
+
+| Operator | Left evaluated inventory | Right evaluated inventory | Zero-regret ranking |
+| --- | --- | --- | --- |
+| Depth 1, no extension | `(1,0)` | `(0,1)` | `w_B>w_A` |
+| Depth 1, forced-transition extension | `(0,1)` | `(1,0)` | `w_A>w_B` |
+| Depth 2, no extension | `(0,1)` | `(1,0)` | `w_A>w_B` |
+
+This follows by direct substitution in `E=w_A n_A+w_B n_B` and the existing
+exact choice `right`; equal weights choose the losing `left` under the frozen
+tie rule. The extension makes the *actual frontier* identical to depth 2 and
+therefore reverses the depth-1 ranking requirement. This is an analytic
+control, not evidence that any Chess or Shogi quiescence policy finds a
+universally correct frontier. It strengthens the deployment boundary:
+nominal depth alone does not specify a material-prior decision objective.
+It supplies no context weighting, type utility, or scalar unit.
+Direct arithmetic with three order classes (`w_A>w_B`, `w_B>w_A`, tie)
+reproduced the choices: `left/right/left` at depth 1 without extension and
+`right/left/left` at either deeper frontier.
+
+**Subsequent observations.** `SEARCH_DEPLOYMENT_CONTRACT_AUDIT.md` inspected the actual search call sites and budgets. `CHESS_QSEARCH_BOUNDARY_PROBE.md` and the later labelled mate controls tested concrete Chess roots; none derived a relative material unit. A future search-use validation must predeclare its operator, resource budget, contexts, and regret aggregation rather than call a selected coefficient rule-implied. Leave Xiangqi material values sealed until a formula is frozen.
