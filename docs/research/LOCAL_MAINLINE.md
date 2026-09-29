@@ -56,6 +56,8 @@ Existing exact preference labels have limited coverage for that objective. `ADR-
 
 `XIANGQI_INTRINSIC_LEGALITY_BOUNDARY.md` checks the static-event ledger against executable Xiangqi legal actions in two exact states. At the standard initial position all 43 non-anchor intrinsic actions match public legal actions. With a single Soldier screen between facing Generals, the intrinsic ledger has three Soldier moves but only one is legal: two lateral moves expose the own General. This concretely bounds what the ledger's excluded `own_anchor_safe` condition means. Local occupancy event mass is an optimistic capability, not a fully legal move probability; a subsequent score needs a declared state measure to include this safety consequence or must report the bias. No Xiangqi human reference was read.
 
+`SHOGI_PAWN_DROP_LEGALITY_BOUNDARY.md` isolates a parallel held-mode gap. A synthetic state with one held Pawn and one same-file unpromoted Pawn has 70 coarse empty drop targets but only 64 executable legal drops; all six missing drops are on that file. Promoting the board Pawn to `TP` restores all 70 legal drops without changing the coarse mask. The result verifies the state-dependent nifu exclusion, not a hand-value premium or drop-mate model. Cross-mode valuation still needs a justified state/context measure.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
