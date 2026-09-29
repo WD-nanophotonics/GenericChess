@@ -5,6 +5,7 @@ from scripts.audit_shogi_pawn_drop_boundary import audit
 
 def test_same_file_unpromoted_pawn_removes_exactly_six_coarse_drops():
     result = audit()
+    assert result["same_three_label_projection"]
     assert result["P"] == {
         "intrinsic_count": 70,
         "legal_count": 64,

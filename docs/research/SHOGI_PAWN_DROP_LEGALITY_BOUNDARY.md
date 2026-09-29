@@ -26,3 +26,17 @@ legal drops or converted into a hand-value premium without a declared
 state measure. The exact difference depends on the board's current
 unpromoted-pawn files and other legality conditions. Do not assign a
 constant pawn correction from this witness.
+
+## Projection-identifiability consequence
+
+The `P` and `TP` states have exactly the same empty/own/enemy label at
+every square and the same held Pawn. Yet their legal-drop sets differ by
+six. V2C's occupancy event measure sees precisely that three-label
+projection; its token ledger lists possible promotion targets but has
+no distribution over their current states on a file. Therefore no
+postweighting that depends only on the old three-label V2C occupancy
+input can recover the nifu-conditioned drop probability. A future
+model would need typed, promotion-aware state information and an
+explicit measure over those states. This is a loss-of-information
+statement, not a claim that exact nifu probability is intrinsically
+uncomputable.

@@ -18,11 +18,15 @@ def audit():
     coarse = collect_intrinsic_held_drop_events(compiled, "P")
     assert coarse["coarse_coverage_complete"]
     outcomes = {}
+    label_projections = []
     for current in ("P", "TP"):
         board = [None] * 81
         board[4] = Piece(0, "K", "K")
         board[76] = Piece(1, "K", "K")
         board[40] = Piece(0, "P", current, current == "TP")
+        label_projections.append(tuple("empty" if piece is None else
+                                       "own" if piece.owner == 0 else "enemy"
+                                       for piece in board))
         state = replace(initial, position=replace(
             initial.position, board=tuple(board),
             hands=(Hands((("P", 1),)), Hands.empty()), side_to_move=0,
@@ -38,6 +42,7 @@ def audit():
             "intrinsic_only": sorted(intrinsic - legal),
             "legal_only": sorted(legal - intrinsic),
         }
+    outcomes["same_three_label_projection"] = label_projections[0] == label_projections[1]
     return outcomes
 
 
