@@ -68,5 +68,6 @@ The new local physical-event composer joins the compiled cannon path,
 enemy target, and remove-from-game effect. It preserves source,
 destination, target relation, and canonical removed square in its key,
 and returns the same two disjoint occupancy cubes and exact probability.
-It currently covers type-preserving board actions only; global event
-deduplication and the other games' transitions/drops remain to be done.
+The subsequent `INTRINSIC_BOARD_EVENT_COVERAGE.md` globally deduplicates
+selected type-preserving board actions in all three RuleSets. Promotion,
+held mode, and dynamic legal context remain outside this event ledger.

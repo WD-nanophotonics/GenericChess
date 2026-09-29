@@ -6,6 +6,10 @@ Unmodeled transition or guard semantics raise rather than become zero mass.
 
 from __future__ import annotations
 
+from collections import defaultdict
+
+from generic_chess.rules.ir import geometry_candidates
+from scripts.audit_static_semantic_material_prior_v2 import _is_history_conditional
 from scripts.audit_static_semantic_material_prior_v2a import SUPPORTED_TARGETS
 from scripts.audit_static_semantic_material_prior_v2d import resolve_removed_square
 from scripts.intrinsic_occupancy_cubes import (
@@ -27,8 +31,10 @@ def event_cubes_for_candidate(compiled, pattern, *, type_id: str, owner: int,
     removal, path counts, exact-empty guards, and deterministic zones.
     Dynamic own-anchor safety is recorded by the caller as an exclusion.
     """
-    if type_id not in pattern.type_ids or pattern.promotion_mode != "none":
-        raise ValueError("type transition or wrong source type is unsupported")
+    if type_id not in pattern.type_ids:
+        raise ValueError("wrong source type")
+    if pattern.promotion_mode != "none" and compiled.support.type_metadata[type_id].is_promotable:
+        raise ValueError("type transition is unsupported")
     if pattern.slot_guards or pattern.postconditions:
         raise ValueError("history or postcondition is unsupported")
     if any(inv.kind != "own_anchor_safe" for inv in pattern.invariants):
@@ -92,3 +98,67 @@ def event_cubes_for_candidate(compiled, pattern, *, type_id: str, owner: int,
             key = (owner, type_id, source, target, state, physical_removals, type_id)
             events[key] = tuple(sorted(set(event_cubes)))
     return events
+
+
+def collect_intrinsic_board_events(compiled, type_id: str, *,
+                                   max_candidates: int = 100_000) -> dict:
+    """Union duplicate physical descriptions for one board-mode current type.
+
+    Excluded held/history/dynamic semantics and unsupported intrinsic
+    patterns remain visible. No event probabilities or values are computed.
+    """
+    if max_candidates < 1:
+        raise ValueError("candidate budget must be positive")
+    area = compiled.support.board_shape.area
+    groups: dict[tuple, set[tuple]] = defaultdict(set)
+    unsupported: set[tuple[str, str]] = set()
+    excluded_held: set[str] = set()
+    excluded_disabled_drop: set[str] = set()
+    excluded_history: set[str] = set()
+    excluded_dynamic: set[tuple[str, str]] = set()
+    candidate_count = 0
+    allowed_drop_squares = sum(sum(mask) for mask in
+                               compiled.support.drop_allowed.get(type_id, ())[:2])
+    for pattern in compiled.ir.patterns:
+        if type_id not in pattern.type_ids:
+            continue
+        for invariant in pattern.invariants:
+            if invariant.kind == "own_anchor_safe":
+                excluded_dynamic.add((pattern.name, invariant.kind))
+        if _is_history_conditional(pattern):
+            excluded_history.add(pattern.name)
+            continue
+        for geometry_id in pattern.geometry_ids:
+            geometry = compiled.ir.geometry[geometry_id]
+            if geometry.kind == "drop":
+                (excluded_held if allowed_drop_squares else excluded_disabled_drop).add(pattern.name)
+                continue
+            if geometry.kind not in ("leap", "ray"):
+                unsupported.add((pattern.name, f"unsupported_geometry:{geometry.kind}"))
+                continue
+            for owner in (0, 1):
+                for source in range(area):
+                    for target, path in geometry_candidates(geometry, str(owner), source):
+                        candidate_count += 1
+                        if candidate_count > max_candidates:
+                            raise RuntimeError("intrinsic candidate budget exceeded")
+                        try:
+                            events = event_cubes_for_candidate(
+                                compiled, pattern, type_id=type_id, owner=owner,
+                                source=source, target=target, path=path)
+                        except ValueError as error:
+                            unsupported.add((pattern.name, str(error)))
+                            continue
+                        for key, cubes in events.items():
+                            groups[key].update(cubes)
+    return {
+        "events": {key: tuple(sorted(cubes)) for key, cubes in sorted(groups.items())},
+        "candidate_count": candidate_count,
+        "unsupported_intrinsic": tuple(sorted(unsupported)),
+        "excluded_held": tuple(sorted(excluded_held)),
+        "excluded_disabled_drop": tuple(sorted(excluded_disabled_drop)),
+        "allowed_drop_squares": allowed_drop_squares,
+        "excluded_history": tuple(sorted(excluded_history)),
+        "excluded_dynamic": tuple(sorted(excluded_dynamic)),
+        "coverage_complete": not unsupported,
+    }

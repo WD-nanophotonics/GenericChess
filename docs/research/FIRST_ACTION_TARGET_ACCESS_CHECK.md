@@ -87,8 +87,9 @@ action, with no extra removal score. The synthetic shared-victim actions
 retain distinct destination keys; two syntactic references to the same
 removed square produce identical keys and cubes. The compiled cannon
 event reproduces the independently checked Xiangqi local probability.
-This is local event identity for type-preserving board actions, not yet
-a global deduplicated ledger, material formula, transition/held-mode
-model, or argument that random-target service predicts game utility.
+`INTRINSIC_BOARD_EVENT_COVERAGE.md` subsequently unions these keys
+globally for selected type-preserving board modes. This is still not a
+material formula, transition/held-mode model, or argument that
+random-target service predicts game utility.
 If no invariant global event definition and independent comparison
 objective survives, reject this route rather than tuning human values.
