@@ -70,6 +70,8 @@ A same-board Chess control clears only the en-passant auxiliary slot and removes
 
 `SHOGI_STALEMATE_SCOPE_CHECK.md` records a separate goal-linked terminal limit: the local Standard Shogi product sets noncheck no-move `stalemate_result="draw"`, while the primary Japan Shogi Association match rules do not specify that edge as a draw. This is an unverified local terminal convention, not grounds to change gameplay on ambiguous evidence. Do not use local Shogi no-move W/D/L as official ground truth if a future material objective depends on it. Current board-mode static comparisons do not depend on that adjudication.
 
+`SHOGI_PAWN_DROP_MATE_BOUNDARY.md` verifies a more direct goal exception against the official JSA prohibition on pawn-drop mate. In two executable synthetic states, the same empty pawn-drop target is coarse-eligible and would check the enemy King. Without Gold protection the opponent has one reply and the drop is legal; with protection a hypothetical drop leaves zero replies and checkmate, so the public action is forbidden. Immediate goal proximity is therefore not generically positive even within one RuleSet: legality depends on action kind and postconditions. Do not infer a material premium from terminal threat counts alone.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion
