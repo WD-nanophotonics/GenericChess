@@ -28,3 +28,22 @@ generic positive bonus for immediate goal proximity is sufficient:
 the *kind of action* and rule-specific terminal exception matter.
 This is a semantic boundary, not a material value or a frequency
 estimate over real games.
+
+## Same resulting position, different legal action form
+
+`scripts/audit_shogi_pawn_mate_action_form.py` tightens the control.
+With an owner-0 Gold at (3,6) protecting (4,7), the owner-0 Pawn can
+either start in hand or start on the board at (4,6). In both cases its
+prospective unpromoted placement on (4,7) gives exactly the same
+`Position`: same board, hands, side to move, and auxiliary state. The
+opponent has zero legal replies and the resulting position is
+checkmate. The board Pawn's unpromoted advance is a public legal action;
+the hand Pawn's drop is absent from public legal actions under the
+official pawn-drop-mate exception. The hypothetical illegal drop is
+evaluated only as a constructed position, never applied through the
+public transition API.
+
+This controls the postmove position itself, so the legality difference
+comes from the **action form** and its rule postcondition rather than
+from a weaker or stronger mating position. Full `GameState` histories
+are different, and no relative material value follows from the pair.
