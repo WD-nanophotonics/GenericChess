@@ -23,18 +23,23 @@ still depends on context, strategy, or frequency assumptions. The real-Shogi
 drop-seed filter was a no-op. Pell's METAGAMER supplies rule-derived advisor
 precedent, not a universal exchange-weight axiom.
 
-These boundaries are recorded in `CURRENT_MAINLINE.md`,
+These historical boundaries are recorded in
+`docs/archive/courier_worker_20260928/CURRENT_MAINLINE.md`,
 `rule_option_entropy_prior_v0.md`, and the existing simulation-dominance,
 capture-resource-persistence, exchange-survivability, and hand-resource
 closeouts. No human-value tables, new validation metrics, or Xiangqi material
 values were consulted to prepare this comparison.
 
-## Decision needed
+## Current local Agent route
 
-Choose one direction above, or provide another independently justified,
-game-independent assumption. Until that decision is made, no scalar candidate,
-human-value selection, Arena/Heavy run, or promotion is authorized. The user's
-later instruction allows tested, non-sensitive existing project work to be
-published to `origin/sandbox` for Chat visibility; this is not permission to
-start a new research branch. The Xiangqi material-value holdout remains
-unconsumed.
+This comparison is historical research evidence, not a gate awaiting a
+Supervisor or user choice. Under `AGENTS.md` and `LOCAL_MAINLINE.md`, the sole
+local Agent selects bounded scientific tests and revises the route as evidence
+changes. `ROOT_DECISION_IDENTIFIABILITY.md` shows that even a fixed, labelled
+root can leave material ratios and the cardinal unit unidentified;
+`RESOURCE_CONVERSION_UNIT_CHECK.md` rules out treating legal conversions as
+cost-free exchanges. `INITIAL_CONTEXT_COVERAGE_CHECK.md` shows that the Chess
+initial position alone leaves three ordinary types without an immediate
+action. The live route is in `LOCAL_MAINLINE.md`. Xiangqi material values
+remain an untouched holdout. Publication and promotion follow the current
+policy's test, diff inspection, and remote verification conditions.
