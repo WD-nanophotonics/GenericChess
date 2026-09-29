@@ -1,4 +1,5 @@
 from dataclasses import replace
+from collections import Counter, defaultdict
 from fractions import Fraction
 
 import pytest
@@ -79,24 +80,48 @@ def test_compiled_cannon_capture_event_preserves_screen_and_target():
     assert _event_measure_factory(ledger, compiled, "C")(0, "C", list(cubes)) == Fraction(2426, 85173)
 
 
-def test_terminal_board_mode_event_coverage_across_three_rulesets():
-    for builder, type_ids in (
-        (build_western_chess_ruleset, ("B", "N", "Q", "R")),
-        (build_standard_shogi_ruleset, ("G",)),
-        (build_xiangqi_diagnostic_ruleset, ("A", "C", "E", "H", "R", "S")),
+def test_all_nonanchor_board_mode_event_coverage_across_three_rulesets():
+    for builder in (
+        build_western_chess_ruleset,
+        build_standard_shogi_ruleset,
+        build_xiangqi_diagnostic_ruleset,
     ):
         compiled = compile_semantic_ruleset(builder())
+        type_ids = [type_id for type_id, metadata in compiled.support.type_metadata.items()
+                    if not metadata.is_anchor]
         for type_id in type_ids:
             audit = collect_intrinsic_board_events(compiled, type_id)
             assert audit["coverage_complete"], (type_id, audit["unsupported_intrinsic"])
             assert audit["events"], type_id
             assert audit["candidate_count"] <= 100_000
-        if "G" in type_ids:
+        if builder is build_standard_shogi_ruleset:
             gold = collect_intrinsic_board_events(compiled, "G")
             assert gold["excluded_held"] and gold["allowed_drop_squares"] > 0
-        elif "C" in type_ids:
+        elif builder is build_xiangqi_diagnostic_ruleset:
             cannon = collect_intrinsic_board_events(compiled, "C")
             assert not cannon["excluded_held"] and cannon["excluded_disabled_drop"]
 
     with pytest.raises(RuntimeError, match="candidate budget"):
         collect_intrinsic_board_events(compiled, "R", max_candidates=1)
+
+
+def test_chess_and_shogi_pawn_promotion_events_keep_resulting_types():
+    chess = collect_intrinsic_board_events(
+        compile_semantic_ruleset(build_western_chess_ruleset()), "P")
+    assert chess["coverage_complete"] and chess["excluded_history"] == (
+        "en_passant_left", "en_passant_right")
+    assert ("pawn_double_step", "set_token") in chess["excluded_auxiliary_effects"]
+    chess_results = Counter(key[6] for key in chess["events"])
+    assert chess_results == {"P": 280, "B": 44, "N": 44, "Q": 44, "R": 44}
+    assert any(key[0] == 0 and key[2] == 12 and key[3] == 28 for key in chess["events"])
+    assert not any(key[0] == 0 and key[2] == 28 and key[3] == 44 for key in chess["events"])
+
+    shogi = collect_intrinsic_board_events(
+        compile_semantic_ruleset(build_standard_shogi_ruleset()), "P")
+    assert shogi["coverage_complete"] and not shogi["excluded_history"]
+    branches = defaultdict(set)
+    for key in shogi["events"]:
+        branches[key[:6]].add(key[6])
+    assert Counter(tuple(sorted(types)) for types in branches.values()) == {
+        ("P",): 180, ("P", "TP"): 72, ("TP",): 36,
+    }

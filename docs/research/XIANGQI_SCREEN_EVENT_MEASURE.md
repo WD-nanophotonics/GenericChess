@@ -69,5 +69,6 @@ enemy target, and remove-from-game effect. It preserves source,
 destination, target relation, and canonical removed square in its key,
 and returns the same two disjoint occupancy cubes and exact probability.
 The subsequent `INTRINSIC_BOARD_EVENT_COVERAGE.md` globally deduplicates
-selected type-preserving board actions in all three RuleSets. Promotion,
-held mode, and dynamic legal context remain outside this event ledger.
+all non-anchor board-mode action events in the three RuleSets, including
+promotion options where present. Held mode and dynamic legal context
+remain outside this event ledger.

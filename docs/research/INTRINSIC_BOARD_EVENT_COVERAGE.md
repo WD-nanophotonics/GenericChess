@@ -1,4 +1,4 @@
-# Type-preserving intrinsic board-event coverage
+# Intrinsic board-event coverage
 
 ## Bounded question and method
 
@@ -29,9 +29,36 @@ human-value metric, or Xiangqi reference.
 All listed types had zero unsupported *intrinsic* candidates and stayed
 below the candidate budget. Event-key counts are after rule/occupancy
 filtering and canonical union; they are neither legal move counts in
-actual positions nor material values. The type list is deliberate: it
-tests type-preserving board modes, not promotion-bearing base types or
-promoted/held modes.
+actual positions nor material values. This was the initial
+type-preserving subset.
+
+## Promotion-bearing expansion
+
+The same physical-event key now retains resulting types for compiled
+promotion choices. Chess pawn results are 280 unchanged `P` events and
+44 each resulting in `B`, `N`, `Q`, and `R`; its two en-passant patterns
+remain history-conditioned exclusions. The double-step pattern's
+auxiliary `set_token` effect is ledgered separately, while its intrinsic
+source-rank guard is enforced. Standard Shogi pawn physical events split
+into 180 stay-only, 72 optional stay-or-promote, and 36 forced `TP`
+families. These are action-option counts from rules, not a standing
+promotion premium or a material-value inference.
+
+All non-anchor current types were then audited, including Chess P and
+the promoted Shogi types:
+
+| RuleSet | Non-anchor types | Geometry candidates | Physical event keys | Intrinsic failures | Active held-mode types |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Chess | 5 | 13,396 | 13,448 | 0 | 0 |
+| Standard Shogi | 13 | 30,736 | 35,872 | 0 | 7 |
+| Xiangqi diagnostic | 6 | 17,284 | 14,672 | 0 | 0 |
+
+Every type stayed below the 100,000-candidate per-type budget. Xiangqi
+figures use only compiled movement rules and occupancy conditions; no
+human Xiangqi material reference was read. The ledger does not claim
+global legal-action completeness: dynamic own-anchor safety, history,
+held mode, and full terminal adjudication are outside its static local
+event measure.
 
 The audit records dynamic `own_anchor_safe` invariants separately and
 does not model their positional truth. It excludes Shogi G's allowed
@@ -42,8 +69,8 @@ options. Duplicate physical descriptions are unioned; a focused test
 checks that equivalent removal references yield one event key, while
 two distinct destinations sharing one removed square remain distinct.
 
-Next gates are to cover transition-bearing and held modes with the same
-event identity and explicit cost/coverage limits, then decide whether a
+Next gates are to cover held mode with the same event identity and
+explicit cost/coverage limits, then decide whether a
 declared random-target first-action service quantity is a defensible
 relative material prior. This coverage result alone does not establish
 that service quantity as a proxy for winning utility.

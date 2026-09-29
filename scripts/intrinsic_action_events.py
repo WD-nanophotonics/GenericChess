@@ -7,10 +7,15 @@ Unmodeled transition or guard semantics raise rather than become zero mass.
 from __future__ import annotations
 
 from collections import defaultdict
+from dataclasses import replace
 
 from generic_chess.rules.ir import geometry_candidates
-from scripts.audit_static_semantic_material_prior_v2 import _is_history_conditional
-from scripts.audit_static_semantic_material_prior_v2a import SUPPORTED_TARGETS
+from scripts.audit_static_semantic_material_prior_v2 import (
+    _is_history_conditional, _promotion_forced, _promotion_targets,
+)
+from scripts.audit_static_semantic_material_prior_v2a import (
+    SUPPORTED_TARGETS, _simple_source_guard_supported, _source_guards_hold,
+)
 from scripts.audit_static_semantic_material_prior_v2d import resolve_removed_square
 from scripts.intrinsic_occupancy_cubes import (
     empty_exact_guard_cube, intersect_cubes, path_count_eq_cubes,
@@ -27,14 +32,14 @@ def event_cubes_for_candidate(compiled, pattern, *, type_id: str, owner: int,
                               source: int, target: int, path: tuple[int, ...]) -> dict[tuple, tuple]:
     """Map physical event identity to exact occupancy cubes for one candidate.
 
-    Covers type-preserving board moves, including off-target opponent
-    removal, path counts, exact-empty guards, and deterministic zones.
+    Covers board moves, including off-target opponent removal, path
+    counts, exact-empty guards, deterministic zones and promotion choices.
     Dynamic own-anchor safety is recorded by the caller as an exclusion.
     """
     if type_id not in pattern.type_ids:
         raise ValueError("wrong source type")
-    if pattern.promotion_mode != "none" and compiled.support.type_metadata[type_id].is_promotable:
-        raise ValueError("type transition is unsupported")
+    if pattern.promotion_mode not in ("none", "inherit_compiled_masks", "explicit"):
+        raise ValueError("unknown promotion mode")
     if pattern.slot_guards or pattern.postconditions:
         raise ValueError("history or postcondition is unsupported")
     if any(inv.kind != "own_anchor_safe" for inv in pattern.invariants):
@@ -43,7 +48,8 @@ def event_cubes_for_candidate(compiled, pattern, *, type_id: str, owner: int,
     if (len(moves) != 1 or moves[0].from_ref is None or moves[0].to_ref is None
             or moves[0].from_ref.kind != "source" or moves[0].to_ref.kind != "target"):
         raise ValueError("action is not one source-to-target board move")
-    if any(effect.kind not in ("move", "remove") for effect in pattern.effects):
+    if any(effect.kind not in ("move", "remove", "set_token", "clear_token")
+           for effect in pattern.effects):
         raise ValueError("unsupported physical effect")
     if pattern.target.kind not in SUPPORTED_TARGETS:
         raise ValueError("unsupported target predicate")
@@ -64,6 +70,14 @@ def event_cubes_for_candidate(compiled, pattern, *, type_id: str, owner: int,
         else:
             raise ValueError("unsupported path predicate")
     for guard in pattern.guards:
+        if _simple_source_guard_supported(guard):
+            source_guard = _source_guards_hold(
+                compiled, replace(pattern, guards=(guard,)), type_id, owner, source)
+            if source_guard is None:
+                raise ValueError("source guard could not be resolved")
+            if not source_guard:
+                return {}
+            continue
         condition = empty_exact_guard_cube(guard, owner=owner, source=source,
                                            target=target, path=path,
                                            board_shape=compiled.support.board_shape)
@@ -89,14 +103,30 @@ def event_cubes_for_candidate(compiled, pattern, *, type_id: str, owner: int,
     if not cubes:
         return {}
 
+    if pattern.promotion_mode == "none":
+        resulting_types = (type_id,)
+    elif pattern.promotion_mode == "explicit":
+        if pattern.explicit_promotion_type is None:
+            raise ValueError("explicit promotion lacks resulting type")
+        resulting_types = (pattern.explicit_promotion_type,)
+    else:
+        promoted = _promotion_targets(compiled, type_id, owner, source, target)
+        forced = bool(promoted) and _promotion_forced(compiled, type_id, owner, target)
+        resulting_types = tuple(sorted(set((() if forced else (type_id,)) + promoted)))
+    if not resulting_types or any(result not in compiled.support.type_metadata
+                                  for result in resulting_types):
+        raise ValueError("invalid resulting type")
+
     events = {}
     for state in sorted(SUPPORTED_TARGETS[pattern.target.kind]):
         if state == "enemy" and not any(square == target for square, _ in physical_removals):
             raise ValueError("enemy target without opponent removal")
         event_cubes = _conjoin(cubes, ((target, (state,)),))
-        if event_cubes:
-            key = (owner, type_id, source, target, state, physical_removals, type_id)
-            events[key] = tuple(sorted(set(event_cubes)))
+        for result_type in resulting_types:
+            if event_cubes:
+                key = (owner, type_id, source, target, state,
+                       physical_removals, result_type)
+                events[key] = tuple(sorted(set(event_cubes)))
     return events
 
 
@@ -116,6 +146,7 @@ def collect_intrinsic_board_events(compiled, type_id: str, *,
     excluded_disabled_drop: set[str] = set()
     excluded_history: set[str] = set()
     excluded_dynamic: set[tuple[str, str]] = set()
+    excluded_auxiliary_effects: set[tuple[str, str]] = set()
     candidate_count = 0
     allowed_drop_squares = sum(sum(mask) for mask in
                                compiled.support.drop_allowed.get(type_id, ())[:2])
@@ -125,6 +156,9 @@ def collect_intrinsic_board_events(compiled, type_id: str, *,
         for invariant in pattern.invariants:
             if invariant.kind == "own_anchor_safe":
                 excluded_dynamic.add((pattern.name, invariant.kind))
+        for effect in pattern.effects:
+            if effect.kind in ("set_token", "clear_token"):
+                excluded_auxiliary_effects.add((pattern.name, effect.kind))
         if _is_history_conditional(pattern):
             excluded_history.add(pattern.name)
             continue
@@ -160,5 +194,6 @@ def collect_intrinsic_board_events(compiled, type_id: str, *,
         "allowed_drop_squares": allowed_drop_squares,
         "excluded_history": tuple(sorted(excluded_history)),
         "excluded_dynamic": tuple(sorted(excluded_dynamic)),
+        "excluded_auxiliary_effects": tuple(sorted(excluded_auxiliary_effects)),
         "coverage_complete": not unsupported,
     }
