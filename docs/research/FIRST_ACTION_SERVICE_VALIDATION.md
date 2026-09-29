@@ -35,6 +35,12 @@ board because of color binding. Optional promotion also counts
 multiple first results and can invert Shogi R/TR. These effects come
 from the declared service objective, not from coefficient fitting.
 No reach discount, target distribution, promotion weight, or held-mode
-scale is being changed on this evidence. The next bounded check is the
-unchanged-formula Xiangqi holdout, followed by a new independent
-comparison principle if the mainline remains open.
+scale is being changed on this evidence. Because the Chess gate failed,
+the existing [ADR-131](../architecture/ADR-131-static-material-redeployment-throughput.md)
+holdout sequence keeps Xiangqi *human values* sealed for a later viable
+candidate. A rule-only Xiangqi transfer/cost audit may test semantic
+coverage without spending that holdout. The mainline remains open and
+needs a new independent comparison principle. The exact
+`FIRST_ACTION_SERVICE_COMPONENT_DIAGNOSIS.md` comparison further shows
+that the pilot equals V2C for all Shogi board types, while Chess B is
+halved and N/R/Q are unchanged.
