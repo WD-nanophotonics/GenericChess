@@ -12,3 +12,7 @@ def test_pawn_value_ablation_changes_no_qsearch_choice_only():
     assert rows["p0_q0"]["action"]["from"] == [3, 0]
     assert rows["p0_q0"]["action"]["to"] == [4, 0]
     assert rows["p4_q4"]["action"] == rows["p0_q4"]["action"]
+    later = result["p0_q0_later_mate_certificate"]
+    assert later["forced_mate_within_three_plies_from_root"] is False
+    assert later["forced_mate_within_five_plies_from_root"] is True
+    assert later["generated_successors"] <= 8192
