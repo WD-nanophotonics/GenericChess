@@ -6,6 +6,7 @@ probe measures search-policy sensitivity, not exact root-action quality.
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -16,18 +17,22 @@ from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.alphabeta.tuning import SearchTuning
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.actions import action_to_dict
+from generic_chess.core.transition import apply_action
 from scripts.f156_known_game_shallow_search_equivalence import (
     CommonMaterialEvaluator,
-    _root_specs,
     _session,
     _values,
     _western_pair,
+    _western_state,
 )
 
 
-def run_probe() -> dict:
+DEFAULT_FEN = "4k3/8/8/p7/8/8/8/R3K3 w - - 0 1"
+
+
+def run_probe(fen: str = DEFAULT_FEN) -> dict:
     compiled, _ = _western_pair()
-    state = _root_specs()["western"]["w1"](compiled)
+    state = _western_state(compiled, fen)
     values = _values(compiled)
     rows = []
     for depth in (1, 2):
@@ -53,6 +58,7 @@ def run_probe() -> dict:
                     deterministic=True,
                 ),
             )
+            child = apply_action(state, decision.action, compiled) if decision.action else None
             rows.append(
                 {
                     "depth": depth,
@@ -63,10 +69,12 @@ def run_probe() -> dict:
                     "nodes": decision.nodes,
                     "qnodes": decision.qnodes,
                     "termination_reason": decision.termination_reason,
+                    "child_status": child.terminal_status.status.value if child else None,
+                    "child_winner": child.terminal_status.winner if child else None,
                 }
             )
     return {
-        "root_fen": "4k3/8/8/p7/8/8/8/R3K3 w - - 0 1",
+        "root_fen": fen,
         "material_values": values,
         "max_nodes": 2000,
         "max_time_seconds": 5,
@@ -75,4 +83,7 @@ def run_probe() -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(run_probe(), indent=2, sort_keys=True))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--fen", default=DEFAULT_FEN)
+    args = parser.parse_args()
+    print(json.dumps(run_probe(args.fen), indent=2, sort_keys=True))
