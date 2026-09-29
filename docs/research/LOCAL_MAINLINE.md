@@ -84,6 +84,8 @@ A tighter Shogi action-form control reaches the exact same checkmate `Position` 
 
 `R5_RANDOM_CONTINUATION_PILOT.md` is a cost-capped, seeded check of that distinct policy on the already-frozen R5 DEVELOPMENT material-control root. At 100 random legal continuations per action, four exact-DRAW actions yielded 100/100 sampled draws each, and the exact-LOSS capture yielded 98 draws and 2 losses. The result is descriptive, dominated by the RuleSet's authoritative six-ply cap, and cannot estimate a Chess/Shogi material coefficient or prove random-policy decision quality. It warns that rare adversarial losses can be diluted in a small random sample. Do not enlarge the sample or fit to this root without a specific decision-changing question and resource gate.
 
+A direct memoized exact-random-policy follow-up on that same R5 root aborted at the predeclared 10,000-state cap before its five-second time cap; it yielded no complete expectation. Do not raise the budget and repeat without new state-compression evidence and a specific decision that exact probabilities would resolve. The sampled observation and this cost boundary keep the random-policy route conditional rather than turning it into a cheap static prior.
+
 Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV_i(s)` with few generic state variables. Evaluate explanatory ability and complexity together on frozen cross-game holdouts. Strong engines or expert moves may serve as validation, not flexible training targets. This is a later stage, not permission to bypass the static benchmark.
 
 ## Evidence required for mainline completion

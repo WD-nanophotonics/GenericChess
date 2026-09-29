@@ -39,3 +39,14 @@ bad. It does not identify a static type coefficient, a Chess/Shogi
 context distribution, or a cheap full-game calculation. Do not scale
 up sampling or tune on this root by default. Xiangqi human values stay
 sealed.
+
+**Exact-cost abort.** A subsequent read-only depth-first calculation
+attempted exact uniform-action terminal probabilities on this same
+frozen root, memoizing full `GameState` values. Its predeclared bounds
+were 10,000 expanded states and five seconds. It hit the state-count
+bound before the time bound and produced no complete action
+expectation. This is a computation abort, not a result about the
+probability of loss. The temporary failing calculation was removed
+from the checkout; do not simply raise the cap and rerun without a
+new compression argument or a decision that the exact number would
+change.
