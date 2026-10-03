@@ -278,6 +278,18 @@ dead placement. Full state evidence and deterministic tests pass. Next freeze
 the new complete corpus experiment before values; construction/cost success
 is not capture coverage, predictive validation or a change to the failed corpus.
 
+`JOINT_CAPABILITY_CORPUS_RESULTS.md` records a new separately frozen run with
+the verified algorithm: eight reference roots/all twelve victim strata complete
+in 29 capture materializations/0.297 s. Complete reference labelling then uses
+14,998 materializations/4.5 s; every reference actor count and raw coefficient
+is zero in both games. The predeclared nonzero-signal gate therefore fails;
+deployment labels remain unread, with no risk/improvement claim. Keep complete
+unlabelled deployment evidence and all reference refutations. This demonstrates
+construction improvement without usable finite-pilot signal, not zero true
+support (earlier positive witnesses exist). No bigger batch, new seeds or
+validation-label fishing. Next needs a new scientific premise for task/reference
+population usefulness; do not repeat background exposure or R-support probes.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
