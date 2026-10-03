@@ -63,3 +63,9 @@ a separately justified strategic population or a specific structural support
 argument before another score batch. The daily advisor window can review that
 scientific choice; independent theory and semantic checks do not wait for it.
 No engine evaluation or Xiangqi human holdout was changed.
+
+A subsequent structural existence argument, separately frozen before execution,
+is in CONSTRUCTED_PHYSICAL_SUPPORT_RESULTS.md. One full-inventory terminal-win
+witness per game passes this unchanged law. Thus mathematical all-zero support
+is ruled out for focal R in both games, while this random run remains negative
+and partly incomplete. Constructed frames are not added to its random records.

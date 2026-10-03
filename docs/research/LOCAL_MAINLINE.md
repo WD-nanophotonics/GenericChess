@@ -124,6 +124,19 @@ specific structural support argument or independently motivated strategic
 population before another type-score batch; inexpensive execution alone does
 not justify one. The task's cheap static additive interpretation remains open.
 
+`CONSTRUCTED_PHYSICAL_SUPPORT_RESULTS.md` resolves the narrower support question
+without enlarging random batches: one predeclared full-inventory frame per game
+passes the original Pawn conditions and all-current-type common quiet screens;
+focal R's legal board capture immediately checkmates. Raw resulting-position
+enumeration independently confirms check plus zero replies. Chess used 130
+materializations/0.094 s; Shogi used 314/0.218 s and transfers one Pawn to hand,
+custody+2. These finite admitted placements prove each original conditional
+R-task expectation is strictly positive, despite the earlier negative samples.
+They are terminal-win witnesses, not representative frequencies, nonterminal
+exchange support or piece ratios. Never mix them into a random mean or adjust
+population weights toward them. Useful signal and additive material validity
+remain the next scientific questions, rather than mathematical all-zero support.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
