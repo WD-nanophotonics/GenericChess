@@ -212,6 +212,19 @@ physical reference could provide an explicit uncertainty baseline, but its
 structural/quiet conditioning and proposal costs require a separate contract.
 No representative sampling, inventory-transfer or strategic-use claim follows.
 
+`ACTUAL_INVENTORY_SAMPLING_RESULTS.md` specifies a replacement-free joint
+reference as uniform unchanged-inventory physical placements conditioned on
+Pawn structure, Shogi non-Pawn dead-placement exclusion and quiet ongoing
+actual roots. Direct Pawn layouts use C(48,8)C(40,8) Chess factors and 57^9
+Shogi file-pair factors; remaining-token uniform injections and whole-board
+rejection preserve the declared conditional law. The frozen seed admitted
+one Chess root after 3 proposals and one Shogi root after 14, in 0.125 s;
+no task/value scores were computed. This supplies a computable synthetic
+uncertainty baseline, not strategic visitation or reliable acceptance rates.
+Adopt the construction/observed feasibility only. Next specify a distinct
+variable-inventory deployment law, count-loss baseline and independent margin
+before type estimates; fast admission is not full-reply cost or material validity.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
