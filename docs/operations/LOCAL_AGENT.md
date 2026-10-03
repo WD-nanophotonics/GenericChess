@@ -11,6 +11,12 @@ limits that computation; it never means the research session should end.
 
 ## Active continuation
 
+The first native same-chat heartbeat was received with event timestamp
+2026-10-03T13:52:48.439Z. It resumed this checkout without another chat or Agent.
+This observes receipt and local continuation; repeated two-hour cadence and
+overlap/explicit-stop fault scenarios are not thereby proven. The receipt and
+remaining limits are recorded in .local_agent/rollout.json.
+
 The latest user instruction accepts active Slack plugin reading/waiting and
 one native two-hour heartbeat on this same Agent chat. During active work,
 check pending threads at relevant checkpoints; when awaiting a useful answer,

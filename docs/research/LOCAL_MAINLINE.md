@@ -137,6 +137,28 @@ exchange support or piece ratios. Never mix them into a random mean or adjust
 population weights toward them. Useful signal and additive material validity
 remain the next scientific questions, rather than mathematical all-zero support.
 
+`NONTERMINAL_PHYSICAL_SUPPORT_RESULTS.md` adds an exact controlled distinction:
+one non-Pawn Bishop/Rook swap per complete mate frame preserves inventory and
+all original screens but permits one legal King escape after the same capture.
+Both capture and reply remain ongoing, with net gain+1 Chess/+2 Shogi. All
+focal actions/replies plus four public replays took 465 transitions/0.312 s.
+Thus positive conditional support need not exploit terminal-win scoring.
+These checking-capture witnesses are not sample frequencies, quiet-capture
+support or relative prices. Do not keep constructing R examples or enlarging
+random support batches in place of justified strategic signal/static use.
+
+`MOVEMENT_INCLUSION_TASK_BOUNDARY_RESULTS.md` checks a distinct semantic premise
+before claiming action-set dominance for types. On one common quiet sparse
+Chess frame, R coordinate actions are strictly included in Q's, but the complete
+unchanged task gives R=1,Q=0: the same capture gives R an ongoing positive-gain
+King reply, while Q additionally controls the escape and causes a stalemate
+draw. 94 transitions/0.063 s include both public capture replays. This does not
+contradict pure optional-action monotonicity: replacing a type changes mandatory
+attacks, replies and terminal payoffs, so the old actions' semantics are not
+preserved. Do not infer full transition/payoff dominance from coordinate-event
+inclusion. The sparse frame is outside the frozen full-inventory law and is
+never averaged into it. Useful approximate population validity remains open.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
