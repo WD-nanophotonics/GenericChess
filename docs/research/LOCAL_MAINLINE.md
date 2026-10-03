@@ -240,6 +240,21 @@ Next freeze finite reference and independent all-stratum deployment generation,
 seeds/counts/resource gates before values. Missing strata, zero signal/baseline
 risk or incomplete coverage cannot qualify; do not tune or reuse scope fixtures.
 
+`CAPABILITY_CORPUS_PROTOCOL.md` freezes four reference roots per game and one
+independent real post-capture child per ordinary victim type, including seeds,
+complete coverage, weights and generation/label cost gates before values.
+`CAPABILITY_CORPUS_GENERATION_RESULTS.md` records an incomplete run: eight
+unlabelled references and all five Chess strata were generated, but Shogi R
+failed at 128 proposals after B/G/L/N/P succeeded; S was not attempted. Its
+rejections were 109 dead non-Pawn, 17 check and 2 lacking ongoing R captures.
+Only 35 capture transitions/0.265 s were used; no coefficients or validation
+labels were computed, missing strata were not renormalized. This does not prove
+empty R support. Preserve the failed combined gate and do not extend its budget.
+Next consider an exact globally dead-free joint sampler: Pawn layouts need
+W(P)-weighted mass for their constrained L/N completion counts, not parent-fixed
+redraw. Derive/bound that algorithm and preserve whole-state quiet/capture
+conditioning before another corpus experiment; preprocessing counts as cost.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
