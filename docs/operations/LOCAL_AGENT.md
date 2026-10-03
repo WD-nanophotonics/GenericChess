@@ -65,9 +65,11 @@ needs a sibling directory or Chat approval. Never force-push.
 
 ## Archive and rollback
 
-Old originals, tar packages, per-file manifests and extraction verification live
-under `E:\CodexArchive\20261003-rebuild`. Existing CodexRecovery backups are
-untouched. Restore old worktrees only to their documented original layout, or
-repair their Git pointers after restoring copies. Never import old App databases,
+Tar packages, per-file manifests and extraction verification live under
+`E:\CodexArchive\20261003-rebuild`. ACL-preserving GenericChess and retired App
+originals live under `C:\Users\wdai\CodexRetired\20261003-rebuild`; their 23 Git
+worktree paths were repaired after relocation. Existing CodexRecovery backups
+are untouched. Restore old worktrees to their documented layout, or repair
+their Git pointers after restoring copies. Never import old App databases,
 auth files, Goals or queues into the running fresh installation. Sensitive App
 archives must stay user-restricted and must not be attached to Chat or Git.

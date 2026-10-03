@@ -6,7 +6,7 @@ $principal = New-Object Security.Principal.WindowsPrincipal($identity)
 if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     throw 'Run this read-only recovery capture from an Administrator PowerShell.'
 }
-$sourceParent = 'C:\Users\wdai\Documents\ChatGPT'
+$sourceParent = 'C:\Users\wdai\CodexRetired\20261003-rebuild'
 $archiveParent = [IO.Path]::GetFullPath('E:\CodexArchive\20261003-rebuild')
 $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $capture = [IO.Path]::GetFullPath((Join-Path $archiveParent ('admin-capture-' + $stamp)))
@@ -27,4 +27,4 @@ foreach ($name in @('GenericChess', 'GenericChess-sandbox')) {
     if ($code -ge 8) { throw 'Capture is incomplete; retain it and the source for diagnosis.' }
 }
 Write-Output ('Read-only administrator capture completed: ' + $capture)
-Write-Output 'Originals remain in place. Rehash the captured files and repair/archive worktree metadata before authorizing a move.'
+Write-Output 'Isolated originals remain intact. Rehash this capture before extending portable archive coverage.'
