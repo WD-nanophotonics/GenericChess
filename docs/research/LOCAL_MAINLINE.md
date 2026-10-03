@@ -186,6 +186,32 @@ but do not claim small distribution shift from shared rules/background alone.
 A task-sufficient projection or frozen predictive transfer validation needs a
 separate argument before treating single-focal marginals as additive material.
 
+`ACTUAL_ACTOR_POPULATION_RESULTS.md` constructs a replacement-free conditional
+bridge: under one fixed-inventory law, mark a uniformly selected actual actor
+of each type; its mean times the type count exactly reconstructs expected
+successful-actor count. Source weights must come from that joint law. Five
+frozen abstract contexts show uniform supported-source weighting differs, and
+with variable inventory context-then-all-actor sampling differs from pooled
+actor weighting. Even exact overall-mean reconstruction leaves nonzero count
+prediction loss. These are measure identities, not game scores or material
+validation. Adopt the construction only; the old replacement sampler is
+unchanged. The actual-board feasibility check below addresses complete marking,
+not the reference law. Next declare a joint reference and its source/conditioning
+cost contract, then a distinct variable-inventory deployment law and frozen
+count-prediction criterion. Do not fit to validation labels or
+confuse capability-count loss with strategic outcome/custody/material validity.
+
+`ACTUAL_ACTOR_ENUMERATION_RESULTS.md` completes all actual ordinary actors on
+the two existing frozen physical boards without substituting or moving tokens:
+15 Chess and 19 Shogi actors, 2,107 transitions/0.703 s. Both have actual initial
+inventory, quiet roots and empty hands. Exact count reconstruction and public
+action/transition checks pass. This establishes low-cost marking on these two
+point-mass fixtures only; their R-only successes are not population type values.
+Do not repeat them as new support evidence. A uniform unchanged-inventory
+physical reference could provide an explicit uncertainty baseline, but its
+structural/quiet conditioning and proposal costs require a separate contract.
+No representative sampling, inventory-transfer or strategic-use claim follows.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
