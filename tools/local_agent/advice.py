@@ -56,6 +56,10 @@ def locked():
 
 def configuration():
     config = read_json(CONFIG)
+    if config.get('transport') == 'slack':
+        from .slack_transport import config as slack_config
+        slack_config()
+        return config
     if config.get('transport') not in {'native', 'courier'} or not config.get('thread_id') or not config.get('project_id'):
         raise LocalFlowError('configure one verified advisor target and transport first')
     return config
@@ -71,6 +75,9 @@ def select(ledger, request_id=None):
 
 def consult(question_file: Path, daily=False, code_files=()):
     config = configuration()
+    if config['transport'] == 'slack':
+        from .slack_transport import consult as slack_consult
+        return slack_consult(question_file, daily, code_files)
     question = question_file.read_text(encoding='utf-8-sig').strip()
     if not question or len(question.encode()) > 12000:
         raise LocalFlowError('provide one bounded nonempty question (up to 12000 bytes)')
@@ -113,11 +120,17 @@ def consult(question_file: Path, daily=False, code_files=()):
         return record
 
 def consult_status(reconcile=False, request_id=None):
+    if read_json(CONFIG).get('transport') == 'slack':
+        from .slack_transport import status
+        return status(request_id)
     with locked():
         return select(read_json(LEDGER), request_id) or {'state': 'NEVER_SENT'}
 
 def begin_send(request_id):
     config = configuration()
+    if config['transport'] == 'slack':
+        from .slack_transport import begin_send as slack_send
+        return slack_send(request_id)
     with locked():
         ledger = read_json(LEDGER); request = select(ledger, request_id)
         if request is None: raise LocalFlowError('unknown advisory request')
@@ -138,6 +151,8 @@ def begin_send(request_id):
         return {**request, 'action': 'send_message_to_thread', 'prompt': message}
 
 def reconcile_snapshot(request_id, snapshot_file):
+    if read_json(CONFIG).get('transport') == 'slack':
+        raise LocalFlowError('Slack reconciliation uses its persisted inbox, not a Chat snapshot')
     snapshot = json.loads(snapshot_file.read_text(encoding='utf-8-sig'))
     with locked():
         ledger = read_json(LEDGER); request = select(ledger, request_id)
@@ -169,6 +184,9 @@ def reconcile_snapshot(request_id, snapshot_file):
         return {**request, 'resend_permitted': False}
 
 def record_decision(request_id, decision, reason):
+    if read_json(CONFIG).get('transport') == 'slack':
+        from .slack_transport import decision as slack_decision
+        return slack_decision(request_id, decision, reason)
     if decision not in {'adopt', 'defer', 'reject'} or not reason.strip(): raise LocalFlowError('record adopt/defer/reject and a reason')
     with locked():
         ledger = read_json(LEDGER); request = select(ledger, request_id)

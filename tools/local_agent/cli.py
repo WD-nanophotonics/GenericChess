@@ -77,6 +77,18 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="generic-chess-local")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("status")
+    sub.add_parser("slack-credentials")
+    sub.add_parser("slack-receive")
+    sub.add_parser("slack-stop")
+    receipt = sub.add_parser("slack-bind-sent")
+    receipt.add_argument("--request-id", required=True)
+    receipt.add_argument("--channel-id", required=True)
+    receipt.add_argument("--message-ts", required=True)
+    event = sub.add_parser("slack-ingest")
+    event.add_argument("--event-file", type=Path, required=True)
+    waiter = sub.add_parser("slack-wait")
+    waiter.add_argument("--request-id", required=True)
+    waiter.add_argument("--seconds", type=int, default=300)
     sub.add_parser("courier-open")
     courier_parser = sub.add_parser("courier-read")
     courier_parser.add_argument("--request-id", required=True)
@@ -114,6 +126,20 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "status":
             result = status()
+        elif args.command.startswith('slack-'):
+            from . import slack_transport as slack
+            if args.command == 'slack-credentials':
+                result = slack.credentials(set_values=True)
+            elif args.command == 'slack-receive':
+                result = slack.receive()
+            elif args.command == 'slack-stop':
+                result = slack.stop()
+            elif args.command == 'slack-bind-sent':
+                result = slack.bind_sent(args.request_id, args.channel_id, args.message_ts)
+            elif args.command == 'slack-ingest':
+                result = slack.ingest(json.loads(args.event_file.read_text(encoding='utf-8-sig')))
+            else:
+                result = slack.wait(args.request_id, args.seconds)
         elif args.command == "courier-open":
             from .courier import open_browser
             result = open_browser()
@@ -141,7 +167,11 @@ def main(argv: list[str] | None = None) -> int:
             elif args.decision and args.reason:
                 result = record_decision(args.request_id, args.decision, args.reason)
             else:
-                result = consult_status(request_id=args.request_id)
+                if read_json(STATE / 'advisor.json').get('transport') == 'slack':
+                    from .slack_transport import reconcile
+                    result = reconcile(args.request_id)
+                else:
+                    result = consult_status(request_id=args.request_id)
         elif args.command == "publish":
             result = publish(args.tests)
         else:

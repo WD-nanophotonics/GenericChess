@@ -18,6 +18,7 @@ dev = [
 ]
 gui = ["PySide6>=6.6,<7"]
 courier = ["playwright>=1.48,<2"]
+slack = ["slack-sdk>=3.33,<4", "keyring>=25,<26"]
 
 [project.scripts]
 generic-chess-ui = "generic_chess.ui.app:main"

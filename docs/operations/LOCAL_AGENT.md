@@ -1,5 +1,13 @@
 # Local Agent operations
 
+The user selected Slack/dot as the replacement consultation workflow.
+See [Slack setup and acceptance](SLACK_WORKFLOW.md). Channel read/write and
+manual dot round trip passed; the receive-only app and dot event subscription
+are pending. Both older transports remain disabled. The single native
+heartbeat has been updated for Slack and remains PAUSED until live acceptance.
+The native/Courier procedures below are historical recovery capability notes,
+not authorization to switch back or send while the Slack cutover is pending.
+
 The primary checkout is `GenericChess 2`, on `sandbox`. The current App's fresh
 configuration is the baseline. Read `AGENTS.md`, the research mainline, and
 `.local_agent/NEXT_WORK.md`; old exported tasks and queues are evidence only.
