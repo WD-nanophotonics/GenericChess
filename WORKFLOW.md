@@ -1,8 +1,23 @@
-# Local GenericChess workflow
+# GenericChess workflow
 
-Policy: `AGENTS.md`. Research route: `docs/research/LOCAL_MAINLINE.md`. Agent's short external memory: `.local_agent/NEXT_WORK.md`. Operations: `docs/operations/LOCAL_AGENT.md`.
+One local Agent researches, implements, tests, records evidence and continues.
+The ordinary Chat advisor supplies evidence and directions; the Agent records
+its evaluation and keeps working. User instructions take precedence.
 
-The local agent works in ordinary task mode. It checks its earlier next-work notes against current evidence, then chooses a bounded research step, implements or analyzes it, tests what changed, records the result, and continues useful work. The notes are revisable memory, not externally assigned orders or a stage limit. It may commit and publish a tested checkpoint to `origin/sandbox`; it may fast-forward a ready checkpoint to `master`. Chat receives one sourced scientific consultation on each active Tokyo weekday, never more than one new request per date. The two-hour scheduled turn checks progress and continues through useful bounded stages while resources allow. Only sufficient evidence that the mainline objective is complete ends the task; a stage or turn boundary leaves it open with updated memory.
+`generic-chess-local.cmd consult --question-file <file> [--daily] [--code-file <file>]`
+prepares an immutable advisory request. `consult --begin-send <request-id>`
+records uncertainty before the Agent sends via the native app tool. Then use
+`consult-status [--request-id <id>]` or `reconcile --request-id <id>
+--snapshot-file <native-read-thread.json>` to collect a complete anchored reply.
+`reconcile --request-id <id> --decision adopt|defer|reject --reason <text>`
+records how the advice affected research. No command launches a second model.
 
-Commands: `generic-chess-local.cmd status`, `patrol`, `consult --question-file <path>`, `consult-status`, `publish --tests <target>`, and `promote --candidate <full-sha> --tests <target>`. The old `generic-chess-flow.cmd` entry point is retired.
-The two-hour trigger is the Windows scheduled task `GenericChess-Local-Agent-Two-Hour`; its runner queues work to this same Codex thread. See the operations manual for dispatch verification.
+Daily consultation is at 10:00 Asia/Tokyo, with additional distinct on-demand
+questions. One native two-hour heartbeat continues this same chat only after
+acceptance. Pending capability checks leave the relevant automation paused.
+
+Git is the delivery endpoint. `publish --tests <targets>` validates and pushes
+sandbox; `promote --candidate <full-sha> --tests <targets>` fast-forwards remote
+master without a sibling checkout. Chat approval and a prior Git publication
+are not requirements for consultation. The retired flow launcher returns an
+error and never invokes its historical implementation.

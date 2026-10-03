@@ -64,25 +64,17 @@ def publish(targets: list[str]) -> dict:
 def promote(candidate: str, targets: list[str]) -> dict:
     if not FULL_SHA.fullmatch(candidate):
         raise LocalFlowError("candidate must be a full SHA")
-    master = ROOT.parent / "GenericChess"
-    if not master.is_dir():
-        raise LocalFlowError("master checkout is missing")
     _check_branch(ROOT, "sandbox")
-    _check_branch(master, "master")
     git("fetch", "origin", "sandbox", "master")
     if candidate != git("rev-parse", "HEAD") or candidate != git("rev-parse", "origin/sandbox"):
         raise LocalFlowError("candidate must equal local and published sandbox HEAD")
-    git("fetch", "origin", "master", cwd=master)
-    if git("rev-parse", "HEAD", cwd=master) != git("rev-parse", "origin/master", cwd=master):
-        raise LocalFlowError("master checkout is not synchronized")
-    if git("merge-base", "master", candidate) != git("rev-parse", "master", cwd=master):
+    if git("merge-base", "origin/master", candidate) != git("rev-parse", "origin/master"):
         raise LocalFlowError("candidate is not a fast-forward of master")
     _tests(targets)
     _check_branch(ROOT, "sandbox")
-    _check_branch(master, "master")
-    git("merge", "--ff-only", candidate, cwd=master)
-    _push(master, "master", "promote")
-    git("fetch", "origin", "master", cwd=master)
-    if git("rev-parse", "origin/master", cwd=master) != candidate:
+    _push(ROOT, f"{candidate}:refs/heads/master", "promote")
+    git("fetch", "origin", "master")
+    if git("rev-parse", "origin/master") != candidate:
         raise LocalFlowError("remote master SHA differs after push")
+    git("branch", "-f", "master", candidate)
     return {"promoted_sha": candidate, "branch": "master"}

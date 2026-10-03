@@ -1,141 +1,145 @@
 import json
-import shutil
-import subprocess
-import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-
+import subprocess
 import pytest
-
-from tools.local_agent import advice
-from tools.local_agent import cli
-from tools.local_agent import git_ops
+from tools.local_agent import advice, cli, git_ops
 from tools.local_agent.common import LocalFlowError
 
+@pytest.fixture
+def env(tmp_path, monkeypatch):
+    state = tmp_path / '.local_agent'
+    monkeypatch.setattr(advice, 'ROOT', tmp_path)
+    monkeypatch.setattr(advice, 'STATE', state)
+    monkeypatch.setattr(advice, 'LEDGER', state / 'ledger.json')
+    monkeypatch.setattr(advice, 'CONFIG', state / 'advisor.json')
+    monkeypatch.setattr(advice, 'now', lambda: datetime(2026, 10, 3, 10, 0, tzinfo=timezone(timedelta(hours=9))))
+    advice.write_json(advice.CONFIG, {'transport': 'native', 'thread_id': 'target', 'project_id': 'project',
+                                    'enabled': True, 'quota_status': 'verified_no_extra_worker'})
+    question = tmp_path / 'question.txt'; question.write_text('What is the smallest independent theoretical question?')
+    return tmp_path, question
 
-@pytest.mark.skipif(sys.platform != "win32", reason="Windows schedule runner")
-@pytest.mark.parametrize("missing_patrol", [False, True])
-def test_scheduled_turn_dry_run_recovers_missing_patrol(tmp_path, missing_patrol):
-    shell = shutil.which("powershell.exe")
-    if shell is None:
-        pytest.skip("Windows PowerShell unavailable")
-    local = tmp_path / ".local_agent"
-    local.mkdir()
-    runner = tmp_path / "tools" / "local_agent" / "run_scheduled_turn.ps1"
-    runner.parent.mkdir(parents=True)
-    source = Path(__file__).resolve().parents[1] / "tools" / "local_agent" / "run_scheduled_turn.ps1"
-    runner.write_bytes(source.read_bytes())
-    (local / "windows_schedule.json").write_text(json.dumps({
-        "codex_path": sys.executable,
-        "thread_id": "11111111-1111-1111-1111-111111111111",
-    }), encoding="utf-8")
-    (local / "scheduled-last-enqueue.json").write_text(json.dumps({
-        "slot": "19990101-00",
-        "patrol_at_before": "same-patrol" if missing_patrol else "prior-patrol",
-    }), encoding="utf-8")
-    (local / "patrol.json").write_text(json.dumps({"at": "same-patrol"}), encoding="utf-8")
-    result = subprocess.run(
-        [shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(runner), "-DryRun"],
-        capture_output=True, text=True, timeout=10, check=False,
-    )
-    assert result.returncode == 0, result.stderr
-    assert f"recovery={str(missing_patrol)}" in result.stdout
+def snapshot(env, request, *, status='completed', reply='Useful advice', truncated=False, target='target', error=None):
+    root, _ = env
+    text = Path(request['message_file']).read_text(encoding='utf-8')
+    data = {'thread': {'id': target, 'kind': 'chatgpt'}, 'turns': [{'id': 'turn', 'status': status, 'error': error,
+            'items': [{'type': 'userMessage', 'content': [{'type': 'text', 'text': text}]},
+                      {'type': 'agentMessage', 'id': 'response', 'text': reply, 'truncated': truncated}]}]}
+    path = root / 'snapshot.json'; path.write_text(json.dumps(data), encoding='utf-8')
+    return path
 
+def complete(env, record):
+    return advice.reconcile_snapshot(record['request_id'], snapshot(env, record))
 
-def test_daily_consultation_is_reserved_before_transport_and_cannot_duplicate(
-        tmp_path, monkeypatch):
-    monkeypatch.setattr(advice, "STATE", tmp_path)
-    monkeypatch.setattr(advice, "LEDGER", tmp_path / "consultations.json")
-    calls = []
+def test_daily_weekend_dedup_and_distinct_on_demand(env):
+    root, question = env
+    first = advice.consult(question, daily=True)
+    assert first['daily'] and first['date'] == '2026-10-03'
+    assert advice.consult(question)['request_id'] == first['request_id']
+    complete(env, first)
+    question.write_text('A different independently bounded question.')
+    assert advice.consult(question, daily=True)['state'] == 'DAILY_ALREADY_RESERVED'
+    assert advice.consult(question)['request_id'] != first['request_id']
 
-    def courier(*args):
-        calls.append(args)
-        if args[0] == "courier_prepare":
-            return {"request_directory": str(tmp_path / "one-request")}
-        return {"event": "response_received", "ok": True}
+def test_daily_before_ten_is_not_due(env, monkeypatch):
+    monkeypatch.setattr(advice, 'now', lambda: datetime(2026, 10, 3, 9, 59, tzinfo=timezone(timedelta(hours=9))))
+    assert advice.consult(env[1], daily=True)['state'] == 'NOT_DUE'
+    assert advice.consult_status()['state'] == 'NEVER_SENT'
 
-    monkeypatch.setattr(advice, "_courier", courier)
-    question = tmp_path / "question.txt"
-    question.write_text("What primary literature supports a generic context-selection principle?",
-                        encoding="utf-8")
-    first = advice.consult(question)
-    assert first["state"] == "COMPLETED"
-    assert len(calls) == 2
-    with pytest.raises(LocalFlowError, match="already reserved"):
-        advice.consult(question)
-    assert len(calls) == 2
-    payload = Path(first["message_file"]).read_text(encoding="utf-8")
-    assert "primary" in payload.lower()
-    assert "not a work-order issuer" in payload
-    assert "literal full URLs" in payload
+def test_pending_requires_reconcile_without_blocking_local_note(env, monkeypatch):
+    first = advice.consult(env[1]); advice.begin_send(first['request_id'])
+    env[1].write_text('A new question cannot bypass uncertain delivery.')
+    with pytest.raises(LocalFlowError, match='pending'):
+        advice.consult(env[1])
+    monkeypatch.setattr(cli, 'ACTIVITY', env[0] / 'activity.json')
+    monkeypatch.setattr(cli, 'git', lambda *_: 'a' * 40)
+    assert cli.note('An independent bounded research observation')['summary']
 
+def test_send_is_durable_and_never_repeats(env):
+    request = advice.consult(env[1])
+    action = advice.begin_send(request['request_id'])
+    assert action['action'] == 'send_message_to_thread'
+    assert advice.consult_status()['state'] == 'SEND_UNCERTAIN'
+    assert advice.begin_send(request['request_id'])['action'] == 'read_thread'
 
-def test_pending_consultation_blocks_next_day_until_reconciled(tmp_path, monkeypatch):
-    monkeypatch.setattr(advice, "STATE", tmp_path)
-    monkeypatch.setattr(advice, "LEDGER", tmp_path / "consultations.json")
-    advice.write_json(advice.LEDGER, {
-        "days": {"2026-09-27": {"state": "PENDING", "request_directory": "old"}}
-    })
-    question = tmp_path / "question.txt"
-    question.write_text("Please find the original paper.", encoding="utf-8")
-    with pytest.raises(LocalFlowError, match="needs reconciliation"):
-        advice.consult(question)
+def test_quota_unknown_prevents_send(env):
+    config = advice.read_json(advice.CONFIG); config['quota_status'] = 'unverified'; advice.write_json(advice.CONFIG, config)
+    request = advice.consult(env[1])
+    assert advice.begin_send(request['request_id'])['action'] == 'CAPABILITY_PENDING'
+    assert advice.consult_status()['state'] == 'PREPARED'
 
+def test_changed_payload_and_target_are_rejected(env):
+    request = advice.consult(env[1]); message = Path(request['message_file']); original = message.read_text()
+    message.write_text(original + 'changed')
+    with pytest.raises(LocalFlowError, match='payload'):
+        advice.begin_send(request['request_id'])
+    message.write_text(original)
+    config = advice.read_json(advice.CONFIG); config['thread_id'] = 'different'; advice.write_json(advice.CONFIG, config)
+    with pytest.raises(LocalFlowError, match='target'):
+        advice.begin_send(request['request_id'])
 
-def test_recorded_patrol_detects_repeated_snapshot_without_treating_it_as_proof_of_idle(
-        tmp_path, monkeypatch):
-    monkeypatch.setattr(cli, "ACTIVITY", tmp_path / "activity.json")
-    monkeypatch.setattr(cli, "PATROLS", tmp_path / "patrol.json")
+@pytest.mark.parametrize('status,truncated,error', [('running', False, None), ('completed', True, None),
+                                                  ('completed', False, 'login required')])
+def test_partial_generating_or_failed_reply_is_not_accepted(env, status, truncated, error):
+    request = advice.consult(env[1]); advice.begin_send(request['request_id'])
+    result = advice.reconcile_snapshot(request['request_id'], snapshot(env, request, status=status, truncated=truncated, error=error))
+    assert result['state'] != 'COMPLETED' and result['resend_permitted'] is False
 
-    def fake_git(*args):
-        if args == ("rev-parse", "HEAD"):
-            return "a" * 40
-        if args == ("show", "-s", "--format=%cI", "HEAD"):
-            return "2026-09-01T00:00:00+00:00"
-        raise AssertionError(args)
+def test_exact_anchor_accepts_useful_reply_without_footer(env):
+    request = advice.consult(env[1]); advice.begin_send(request['request_id'])
+    result = complete(env, request)
+    assert result['state'] == 'COMPLETED'
+    assert Path(result['response_file']).read_text() == 'Useful advice'
+    assert advice.record_decision(request['request_id'], 'defer', 'Already tested this frontier witness')['evaluation']['decision'] == 'defer'
 
-    monkeypatch.setattr(cli, "git", fake_git)
-    first = cli.patrol(record=True)
-    second = cli.patrol(record=True)
-    assert first["consecutive_same_snapshot"] == 0
-    assert second["consecutive_same_snapshot"] == 1
-    assert second["health"] == "progress_unverified"
-    assert "does not prove" in second["interpretation"]
-    cli.write_json(cli.ACTIVITY, {"at": "2026-09-28T00:00:00+00:00",
-                                  "summary": "A different bounded check was recorded."})
-    third = cli.patrol(record=True)
-    assert third["same_snapshot_as_previous_patrol"] is False
-    assert third["consecutive_same_snapshot"] == 0
+def test_wrong_target_and_conflicting_id_do_not_complete(env):
+    request = advice.consult(env[1]); advice.begin_send(request['request_id'])
+    with pytest.raises(LocalFlowError, match='different target'):
+        advice.reconcile_snapshot(request['request_id'], snapshot(env, request, target='other'))
+    with pytest.raises(LocalFlowError, match='conflicts'):
+        advice.reconcile_snapshot(request['request_id'], snapshot(env, request, reply='REQUEST_ID=another\nAdvice'))
 
+def test_missing_history_never_permits_resend(env):
+    request = advice.consult(env[1]); advice.begin_send(request['request_id'])
+    path = env[0] / 'snapshot.json'; path.write_text(json.dumps({'thread': {'id': 'target', 'kind': 'chatgpt'}, 'turns': []}))
+    result = advice.reconcile_snapshot(request['request_id'], path)
+    assert result['state'] == 'SEND_UNCERTAIN' and result['resend_permitted'] is False
 
-def test_publish_refuses_diverged_remote_before_tests_or_push(monkeypatch):
-    monkeypatch.setattr(git_ops, "_check_branch", lambda *_: None)
-    monkeypatch.setattr(git_ops, "_tests", lambda *_: pytest.fail("tests should not run"))
-    monkeypatch.setattr(git_ops, "_push", lambda *_: pytest.fail("push should not run"))
+def test_non_chat_target_and_worker_activity_rejected(env):
+    request = advice.consult(env[1])
+    path = snapshot(env, request); data = json.loads(path.read_text()); data['thread']['kind'] = 'codex'; path.write_text(json.dumps(data))
+    with pytest.raises(LocalFlowError, match='ChatGPT'):
+        advice.reconcile_snapshot(request['request_id'], path)
+    data['thread']['kind'] = 'chatgpt'; data['turns'][0]['items'].append({'type': 'workerTask'}); path.write_text(json.dumps(data))
+    with pytest.raises(LocalFlowError, match='tool/task'):
+        advice.reconcile_snapshot(request['request_id'], path)
 
-    def fake_git(*args, **_kwargs):
-        if args == ("rev-parse", "origin/sandbox"):
-            return "a" * 40
-        if args == ("rev-parse", "HEAD"):
-            return "b" * 40
-        return ""
+def test_code_package_is_hashed_and_cannot_read_outside_root(env):
+    root, question = env; code = root / 'engine.py'; code.write_text('value = 1\n')
+    request = advice.consult(question, code_files=[code])
+    assert request['code'][0]['sha256'] == advice.sha(code.read_bytes())
+    assert 'value = 1' in Path(request['message_file']).read_text()
+    outside = root.parent / 'outside-code.py'; outside.write_text('secret')
+    with pytest.raises(LocalFlowError, match='inside'):
+        advice.consult(question, code_files=[outside])
 
-    monkeypatch.setattr(git_ops, "git", fake_git)
-    monkeypatch.setattr(git_ops, "run", lambda *_args, **_kwargs: "c" * 40)
-    with pytest.raises(LocalFlowError, match="diverged"):
-        git_ops.publish(["tests/test_session.py"])
+def test_publish_refuses_divergence_before_tests(monkeypatch):
+    monkeypatch.setattr(git_ops, '_check_branch', lambda *_: None)
+    monkeypatch.setattr(git_ops, '_tests', lambda *_: pytest.fail('must not run tests'))
+    monkeypatch.setattr(git_ops, 'git', lambda *args, **_: ('a' * 40 if args == ('rev-parse', 'origin/sandbox') else 'b' * 40))
+    monkeypatch.setattr(git_ops, 'run', lambda *_, **__: 'c' * 40)
+    with pytest.raises(LocalFlowError, match='diverged'):
+        git_ops.publish(['tests/test_session.py'])
 
-
-def test_promote_refuses_candidate_that_is_not_published(monkeypatch):
-    monkeypatch.setattr(git_ops, "_check_branch", lambda *_: None)
-    monkeypatch.setattr(git_ops, "_tests", lambda *_: pytest.fail("tests should not run"))
-
-    def fake_git(*args, **_kwargs):
-        if args == ("rev-parse", "HEAD"):
-            return "a" * 40
-        if args == ("rev-parse", "origin/sandbox"):
-            return "b" * 40
-        return ""
-
-    monkeypatch.setattr(git_ops, "git", fake_git)
-    with pytest.raises(LocalFlowError, match="published sandbox HEAD"):
-        git_ops.promote("a" * 40, ["tests/test_session.py"])
+def test_single_checkout_promotion_fast_forwards_local_origin(tmp_path, monkeypatch):
+    origin = tmp_path / 'origin.git'; repo = tmp_path / 'new-checkout'; repo.mkdir()
+    def run(*args, cwd=repo):
+        return subprocess.check_output(['git', '-c', 'core.autocrlf=false', *args], cwd=cwd, stderr=subprocess.STDOUT).decode().strip()
+    run('init', '--bare', str(origin)); run('init'); run('config', 'user.name', 'Transport test'); run('config', 'user.email', 'test@example.invalid')
+    run('checkout', '-b', 'master'); (repo / 'a.txt').write_text('base'); run('add', '.'); run('commit', '-m', 'base'); run('remote', 'add', 'origin', str(origin)); run('push', 'origin', 'master')
+    run('checkout', '-b', 'sandbox'); (repo / 'a.txt').write_text('candidate'); run('add', '.'); run('commit', '-m', 'candidate'); run('push', 'origin', 'sandbox'); candidate = run('rev-parse', 'HEAD')
+    monkeypatch.setattr(git_ops, 'ROOT', repo)
+    monkeypatch.setattr(git_ops, 'git', lambda *args, cwd=repo: run(*args, cwd=cwd))
+    monkeypatch.setattr(git_ops, '_tests', lambda *_: None)
+    assert git_ops.promote(candidate, ['bounded-test'])['promoted_sha'] == candidate
+    assert run('rev-parse', 'master') == candidate and run('branch', '--show-current') == 'sandbox'

@@ -1,115 +1,172 @@
-from __future__ import annotations
-
+"""Native advisory transport coordinated by the calling Agent, without another model."""
+from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
+import hashlib
 import json
+import os
 from pathlib import Path
-import subprocess
-
+import secrets
 from .common import ROOT, STATE, LocalFlowError, read_json, write_json
 
+LEDGER = STATE / 'advisory-ledger.json'
+CONFIG = STATE / 'advisor.json'
+ADVISORY = '''You and the local GenericChess Agent are research partners of nearly equal
+authority; user instructions take precedence. Give evidence, primary-source
+literal full URLs, objections, useful directions or the smallest falsifiable check.
+Distinguish facts from inference and uncertainty. Remain in ordinary Chat: do not
+switch to Work, launch workers, issue work orders, or add publication approval
+gates. Git is final delivery, not a required communication path. Do not claim
+local file access or independent test execution you do not actually possess.
+'''
 
-PROJECT = "GENERICCHESS"
-LEDGER = STATE / "consultations.json"
-LAUNCHER = ROOT.parent / "GmailCourier" / "scripts" / "chat-courier.cmd"
-ADVISORY = """GenericChess scientific consultation. You are an adviser, not a work-order issuer.
-Search current authoritative sources, original papers, official game rules, and relevant
-open-source implementations where useful. Write source links as literal full URLs so they
-survive plain-text capture. Distinguish evidence from
-inference, challenge the hypothesis, and suggest the smallest falsifiable next check.
-Do not assign tasks, set publication or promotion gates, demand Supervisor review,
-or emit GenericChess work-order/status control fields. The local Agent decides.
+def now():
+    return datetime.now(timezone(timedelta(hours=9)))
 
-Local question and evidence:
-"""
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
 
-
-def _courier(*args: str) -> dict:
-    if not LAUNCHER.is_file():
-        raise LocalFlowError(f"ChatCourier launcher is missing: {LAUNCHER}")
-    command = ["cmd.exe", "/d", "/c", str(LAUNCHER), *args]
-    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True,
-                            encoding="utf-8", errors="replace")
-    events = []
-    for line in result.stdout.splitlines():
+@contextmanager
+def locked():
+    STATE.mkdir(parents=True, exist_ok=True)
+    with (STATE / 'advisory.lock').open('a+b') as f:
+        f.seek(0)
+        if not f.read(1):
+            f.write(b'0'); f.flush()
+        f.seek(0)
+        if os.name == 'nt':
+            import msvcrt
+            try:
+                msvcrt.locking(f.fileno(), msvcrt.LK_NBLCK, 1)
+            except OSError as exc:
+                raise LocalFlowError('another advisory operation is active') from exc
+        else:
+            import fcntl
+            try:
+                fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError as exc:
+                raise LocalFlowError('another advisory operation is active') from exc
         try:
-            value = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        if isinstance(value, dict):
-            events.append(value)
-    if result.returncode or not events:
-        raise LocalFlowError(f"ChatCourier {args[0]} failed: "
-                             f"{result.stdout[-1500:]} {result.stderr[-500:]}")
-    final = events[-1]
-    if final.get("ok") is False:
-        raise LocalFlowError(f"ChatCourier {args[0]} rejected: {final}")
-    return final
+            yield
+        finally:
+            f.seek(0)
+            if os.name == 'nt':
+                msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(f, fcntl.LOCK_UN)
 
+def configuration():
+    config = read_json(CONFIG)
+    if config.get('transport') not in {'native', 'courier'} or not config.get('thread_id') or not config.get('project_id'):
+        raise LocalFlowError('configure one verified advisor target and transport first')
+    return config
 
-def consult(question_file: Path) -> dict:
-    question = question_file.read_text(encoding="utf-8-sig").strip()
-    if not question:
-        raise LocalFlowError("consultation question is empty")
-    if len(question.encode("utf-8")) > 12_000:
-        raise LocalFlowError("consultation is too long; send one bounded question")
-    # Japan does not observe daylight saving time; a fixed offset also works
-    # on Windows Python installations without an IANA tzdata package.
-    local_day = datetime.now(timezone(timedelta(hours=9))).date()
-    if local_day.weekday() >= 5:
-        raise LocalFlowError("daily consultation runs on active Tokyo weekdays only")
-    today = local_day.isoformat()
-    ledger = read_json(LEDGER)
-    records = ledger.setdefault("days", {})
-    if today in records:
-        raise LocalFlowError(f"one consultation already reserved for {today}; use consult-status")
-    pending = [day for day, value in records.items()
-               if value.get("state") not in {"COMPLETED", "FROZEN"}]
-    if pending:
-        raise LocalFlowError(f"prior consultation needs reconciliation: {pending[-1]}")
-    payload = STATE / f"consult-{today}.txt"
-    payload.parent.mkdir(parents=True, exist_ok=True)
-    payload.write_text(ADVISORY + question + "\n", encoding="utf-8")
-    record = {"state": "RESERVED", "question_file": str(question_file.resolve()),
-              "message_file": str(payload), "idempotency_key": f"LOCAL-ADVICE-{today.replace('-', '')}"}
-    records[today] = record
-    write_json(LEDGER, ledger)
-    prepared = _courier("courier_prepare", "--project-id", PROJECT,
-                        "--idempotency-key", record["idempotency_key"],
-                        "--message-file", str(payload))
-    request_directory = prepared.get("request_directory")
-    if not isinstance(request_directory, str):
-        raise LocalFlowError(f"prepare lacked request_directory: {prepared}")
-    record.update({"state": "PREPARED", "request_directory": request_directory})
-    write_json(LEDGER, ledger)
-    result = _courier("run", request_directory)
-    record["last_event"] = result
-    record["state"] = "COMPLETED" if result.get("event") == "response_received" else "PENDING"
-    write_json(LEDGER, ledger)
-    return record
+def select(ledger, request_id=None):
+    requests = ledger.get('requests', {})
+    if not requests:
+        return None
+    request_id = request_id or next(reversed(requests))
+    if request_id not in requests:
+        raise LocalFlowError('unknown advisory request')
+    return requests[request_id]
 
-
-def consult_status(reconcile: bool = False) -> dict:
-    ledger = read_json(LEDGER)
-    records = ledger.get("days", {})
-    if not records:
-        return {"state": "NEVER_SENT"}
-    day = max(records)
-    record = records[day]
-    directory = record.get("request_directory")
-    if not directory and reconcile and record.get("state") == "RESERVED":
-        # Preparation is idempotent under this day's immutable key and payload.
-        prepared = _courier("courier_prepare", "--project-id", PROJECT,
-                            "--idempotency-key", record["idempotency_key"],
-                            "--message-file", record["message_file"])
-        directory = prepared.get("request_directory")
-        if not isinstance(directory, str):
-            raise LocalFlowError(f"prepare lacked request_directory: {prepared}")
-        record.update({"state": "PREPARED", "request_directory": directory})
+def consult(question_file: Path, daily=False, code_files=()):
+    config = configuration()
+    question = question_file.read_text(encoding='utf-8-sig').strip()
+    if not question or len(question.encode()) > 12000:
+        raise LocalFlowError('provide one bounded nonempty question (up to 12000 bytes)')
+    code = []; total = 0
+    for file in code_files:
+        file = file.resolve()
+        if not file.is_relative_to(ROOT.resolve()) or any(p.startswith('.') for p in file.relative_to(ROOT.resolve()).parts):
+            raise LocalFlowError('code must be an ordinary file inside this project')
+        data = file.read_bytes(); total += len(data)
+        if total > 64000:
+            raise LocalFlowError('code package exceeds 64000 bytes')
+        code.append({'path': file.relative_to(ROOT.resolve()).as_posix(), 'sha256': sha(data), 'text': data.decode('utf-8-sig')})
+    key = sha(json.dumps({'question': question, 'code': code}, sort_keys=True).encode())
+    with locked():
+        ledger = read_json(LEDGER); requests = ledger.setdefault('requests', {}); date = now().date().isoformat()
+        if daily and now().hour < 10:
+            return {'state': 'NOT_DUE', 'date': date}
+        for request in requests.values():
+            if request['content_sha256'] == key:
+                return {**request, 'duplicate': True}
+        for request in requests.values():
+            if request['state'] not in {'COMPLETED', 'FROZEN'}:
+                raise LocalFlowError('pending request needs reconciliation: ' + request['request_id'])
+        if daily and date in ledger.setdefault('daily', {}):
+            return {'state': 'DAILY_ALREADY_RESERVED', 'request_id': ledger['daily'][date]}
+        request_id = 'GC-ADVICE-' + now().strftime('%Y%m%d-%H%M%S-') + secrets.token_hex(4)
+        directory = STATE / 'advisory' / request_id; directory.mkdir(parents=True)
+        message = f'REQUEST_ID={request_id}\n' + ADVISORY + '\nQuestion and evidence:\n' + question
+        for entry in code:
+            message += f'\n\nFILE={entry["path"]}\nSHA256={entry["sha256"]}\n' + entry['text']
+        message += '\n\nPlease retain REQUEST_ID in the reply.\n'
+        path = directory / 'message.txt'; path.write_text(message, encoding='utf-8')
+        record = {'request_id': request_id, 'state': 'PREPARED', 'date': date, 'daily': daily,
+                  'transport': config['transport'], 'thread_id': config['thread_id'], 'project_id': config['project_id'],
+                  'content_sha256': key, 'payload_sha256': sha(message.encode()), 'message_file': str(path),
+                  'code': [{'path': e['path'], 'sha256': e['sha256']} for e in code]}
+        requests[request_id] = record
+        if daily: ledger['daily'][date] = request_id
         write_json(LEDGER, ledger)
-    if not directory:
-        return {"day": day, **record}
-    event = _courier("reconcile" if reconcile else "status", directory)
-    if event.get("state_class") == "COMPLETED" or event.get("event") == "response_received":
-        record["state"] = "COMPLETED"
+        return record
+
+def consult_status(reconcile=False, request_id=None):
+    with locked():
+        return select(read_json(LEDGER), request_id) or {'state': 'NEVER_SENT'}
+
+def begin_send(request_id):
+    config = configuration()
+    with locked():
+        ledger = read_json(LEDGER); request = select(ledger, request_id)
+        if request is None: raise LocalFlowError('unknown advisory request')
+        if request['thread_id'] != config['thread_id'] or request['transport'] != config['transport']:
+            raise LocalFlowError('target or transport changed; reconcile original binding')
+        message = Path(request['message_file']).read_text(encoding='utf-8')
+        if sha(message.encode()) != request['payload_sha256']: raise LocalFlowError('immutable payload changed')
+        if request['state'] != 'PREPARED': return {**request, 'action': 'read_thread', 'resend_permitted': False}
+        if not config.get('enabled') or config.get('quota_status') != 'verified_no_extra_worker':
+            return {**request, 'action': 'CAPABILITY_PENDING', 'quota_status': config.get('quota_status', 'unverified')}
+        if request['transport'] != 'native': raise LocalFlowError('Courier is archived; requalify it before selecting')
+        request['state'] = 'SEND_UNCERTAIN'; request['send_started_at'] = now().isoformat(); write_json(LEDGER, ledger)
+        return {**request, 'action': 'send_message_to_thread', 'prompt': message}
+
+def reconcile_snapshot(request_id, snapshot_file):
+    snapshot = json.loads(snapshot_file.read_text(encoding='utf-8-sig'))
+    with locked():
+        ledger = read_json(LEDGER); request = select(ledger, request_id)
+        if not request: raise LocalFlowError('unknown advisory request')
+        if snapshot.get('thread', {}).get('id') != request['thread_id']: raise LocalFlowError('snapshot belongs to a different target')
+        if snapshot['thread'].get('kind') != 'chatgpt': raise LocalFlowError('advisor must be a ChatGPT chat')
+        message = Path(request['message_file']).read_text(encoding='utf-8')
+        if sha(message.encode()) != request['payload_sha256']: raise LocalFlowError('immutable payload changed')
+        for turn in snapshot.get('turns', []):
+            items = turn.get('items', [])
+            anchors = [i for i, item in enumerate(items) if item.get('type') == 'userMessage' and not item.get('truncated')
+                       and any(c.get('text', '').strip() == message.strip() for c in item.get('content', []))]
+            if not anchors: continue
+            if any(item.get('type') not in {'userMessage', 'agentMessage'} for item in items):
+                raise LocalFlowError('unexpected advisor tool/task activity; inspect quota')
+            if turn.get('status') != 'completed' or turn.get('error'):
+                request['state'] = 'PENDING'; break
+            for item in items[anchors[-1] + 1:]:
+                if item.get('type') == 'userMessage': break
+                text = item.get('text', '')
+                if item.get('type') == 'agentMessage' and text and not item.get('truncated'):
+                    if 'REQUEST_ID=' in text and 'REQUEST_ID=' + request_id not in text:
+                        raise LocalFlowError('reply request ID conflicts with its anchor')
+                    path = Path(request['message_file']).with_name('response.txt'); path.write_text(text, encoding='utf-8')
+                    request.update(state='COMPLETED', response_file=str(path), response_sha256=sha(text.encode()),
+                                   turn_id=turn.get('id'), response_item_id=item.get('id')); break
+            break
         write_json(LEDGER, ledger)
-    return {"day": day, "local_state": record["state"], "courier": event}
+        return {**request, 'resend_permitted': False}
+
+def record_decision(request_id, decision, reason):
+    if decision not in {'adopt', 'defer', 'reject'} or not reason.strip(): raise LocalFlowError('record adopt/defer/reject and a reason')
+    with locked():
+        ledger = read_json(LEDGER); request = select(ledger, request_id)
+        if not request or request['state'] != 'COMPLETED': raise LocalFlowError('complete reply required before evaluation')
+        request['evaluation'] = {'decision': decision, 'reason': reason.strip(), 'at': now().isoformat()}
+        write_json(LEDGER, ledger); return request

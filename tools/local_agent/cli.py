@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import sys
 
-from .advice import consult, consult_status
+from .advice import consult, consult_status, begin_send, reconcile_snapshot, record_decision
 from .common import ROOT, STATE, LocalFlowError, git, read_json, write_json
 from .git_ops import publish, promote
 
@@ -82,9 +82,17 @@ def parser() -> argparse.ArgumentParser:
     n = sub.add_parser("note")
     n.add_argument("--summary", required=True)
     c = sub.add_parser("consult")
-    c.add_argument("--question-file", type=Path, required=True)
+    c.add_argument("--question-file", type=Path)
+    c.add_argument("--daily", action="store_true")
+    c.add_argument("--code-file", type=Path, action="append", default=[])
+    c.add_argument("--begin-send", metavar="REQUEST_ID")
     cs = sub.add_parser("consult-status")
-    cs.add_argument("--reconcile", action="store_true")
+    cs.add_argument("--request-id")
+    rec = sub.add_parser("reconcile")
+    rec.add_argument("--request-id", required=True)
+    rec.add_argument("--snapshot-file", type=Path)
+    rec.add_argument("--decision", choices=["adopt", "defer", "reject"])
+    rec.add_argument("--reason")
     pub = sub.add_parser("publish")
     pub.add_argument("--tests", nargs="+", required=True)
     pro = sub.add_parser("promote")
@@ -94,6 +102,9 @@ def parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
     args = parser().parse_args(argv)
     try:
         if args.command == "status":
@@ -103,9 +114,23 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "note":
             result = note(args.summary)
         elif args.command == "consult":
-            result = consult(args.question_file)
+            if args.begin_send:
+                if args.question_file or args.code_file or args.daily:
+                    raise LocalFlowError("begin-send cannot change an existing request")
+                result = begin_send(args.begin_send)
+            elif args.question_file:
+                result = consult(args.question_file, args.daily, args.code_file)
+            else:
+                raise LocalFlowError("provide --question-file or --begin-send")
         elif args.command == "consult-status":
-            result = consult_status(args.reconcile)
+            result = consult_status(request_id=args.request_id)
+        elif args.command == "reconcile":
+            if args.snapshot_file:
+                result = reconcile_snapshot(args.request_id, args.snapshot_file)
+            elif args.decision and args.reason:
+                result = record_decision(args.request_id, args.decision, args.reason)
+            else:
+                result = consult_status(request_id=args.request_id)
         elif args.command == "publish":
             result = publish(args.tests)
         else:

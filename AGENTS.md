@@ -1,25 +1,47 @@
-# GenericChess local agent policy
+# GenericChess local research policy
 
-This is the sole active policy for `GenericChess-sandbox`. The former Supervisor–Worker work-order workflow is archived under `docs/archive/courier_worker_20260928/` and has no authority. The latest user instruction takes precedence. Preserve unrelated work and historical evidence.
+This is the sole active policy. User instructions take precedence. The old
+Supervisor–Worker, work-order, Goal, ownership-capsule and Chat approval
+strategies have been removed from active use. Historical records are evidence.
 
-## One local agent
+One local Agent works in this checkout on `sandbox`, in ordinary task mode.
+Read `.local_agent/NEXT_WORK.md` and `docs/research/LOCAL_MAINLINE.md` at the
+start of every turn. Preserve research results, unrelated changes, and the
+Chess/Shogi/Xiangqi scientific boundaries. Select the smallest observation
+that resolves a concrete uncertainty; give long computations resource and
+abort limits. Do not start concurrent heavy jobs or additional Agents.
 
-One local Codex agent owns research direction, implementation, tests, documentation, Git publication, and promotion. It works in ordinary task mode without a persistent Goal. Do not wait for a Chat work order, Supervisor decision, transport ID, or SHA review before ordinary reversible work. Read `docs/research/LOCAL_MAINLINE.md` for the scientific route and `docs/operations/LOCAL_AGENT.md` for commands. Update the mainline document when evidence or a new user instruction changes the route.
+The Agent and ordinary Chat advisor are research partners of nearly equal
+authority. Chat may supply sources, criticism, concrete directions or advice;
+neither party wins a disagreement by role alone. Record evidence and why a
+suggestion is adopted, deferred or rejected. Chat is not a work-order issuer
+or a publication gate. Continue independent research when Chat is unavailable.
 
-At the start of every work turn, read `.local_agent/NEXT_WORK.md` after this policy. This is the Agent's own external memory: a note from its earlier work to its future work, preserving the current mainline and most concrete next leads if a turn ends unexpectedly. Compare each lead with actual results and current evidence. Delete completed or disproven leads and write new ones as direction develops. A short list (often three leads, under 1,200 characters) is a readability choice, never a limit on how many stages may be completed or a prerequisite for continuing. It is neither a work-order source nor an authority above this policy, the current mainline, or the latest user instruction. If absent, reconstruct it from the mainline and recent evidence.
+Consult daily at 10:00 Asia/Tokyo when there is a substantive new question,
+and additionally when needed. Consolidate identical questions, reconcile an
+uncertain request before sending another, and do not catch up missed days.
+Use `consult`, `consult-status` and `reconcile` through the calling Agent's
+native app tools. Read-only local code access is unavailable in the qualified
+Chat; provide bounded code content with its hash. Git is version control and
+final delivery, never a prerequisite to asking a question.
 
-At the start of a research step, identify one unknown and the smallest direct observation that could resolve it. Prefer reasoning and bounded tests over large computation. Negative results that narrow the theory are useful; do not turn uncertainty into repeated bookkeeping or status-only turns. Give each long computation a resource limit and an experiment abort criterion; reaching either ends that computation, not the mainline task. Avoid concurrent Heavy jobs.
+Ordinary Chat and mechanical transport must not launch extra Work/worker
+execution. Consult dispatch stays disabled until quota qualification is
+recorded in `.local_agent/advisor.json`; do not silently relax this gate,
+switch channels, resend an uncertain request or revive the archived Courier.
 
-The agent decides whether and when to commit, push to `origin/sandbox`, and promote to `master`. Before publication, inspect the outgoing diff for personal or sensitive information and run relevant tests. Publish only cleared project work. Verify the remote SHA after a push. Promote only a tested, published sandbox commit by fast-forward when ready; never force-push or hide failing tests. A local commit does not imply publication. Report the actual state plainly.
+One native heartbeat may continue this same chat every two hours after
+acceptance. It must not overlap an active turn. No Windows scheduler, old Goal,
+parallel writer or restored automation runs alongside it. An explicit user
+stop suspends continuation and consultation; a phase, commit or turn boundary
+does not prove the scientific objective complete. Notify only meaningful
+results, failures or required user decisions.
 
-## Chat is an adviser
+Before publication, inspect the exact outgoing diff for sensitive or unrelated
+content and run relevant tests. Publish to `origin/sandbox` and verify the full
+remote SHA. Promotion is a tested fast-forward of published sandbox to master
+in this single repository. Never force-push. State local and published status
+accurately. Never touch alphasho, its audits or other projects under this task.
 
-On each active Asia/Tokyo weekday, send one sourced scientific consultation to the existing GenericChess ChatGPT Project through the reusable ChatCourier transport. Never send more than one new message on the same Tokyo date. Ask Chat to search world knowledge, papers, official rules, and relevant open-source projects, cite primary sources, challenge the local hypothesis, and offer bounded scientific suggestions. Chat does not issue work orders, approve publication or promotion, or decide the route. Its response is advisory evidence that the local agent evaluates. Do not send routine closeouts or status updates to Chat. If an earlier consultation is uncertain or pending, reconcile that same request before any new one; report a transport failure and continue independent research. Do not modify the separate ChatCourier repository as part of ordinary GenericChess work.
-
-## Continuity and completion
-
-The sole successful stopping condition for this Agent task is sufficient evidence that the mainline objective defined in `docs/research/LOCAL_MAINLINE.md` is complete. Record that evidence in the mainline and report the actual published and tested state before claiming completion. A completed stage, commit, publication, negative result, missing Chat advice, exhausted experiment budget, or end of a scheduled turn is not task completion.
-
-The two-hour scheduled turn is the continuity mechanism. It checks concrete progress and failures in the same local Agent task. Work through useful stages while the turn's resources allow; keep the external-memory note accurate for future continuation without treating its listed leads as a work quota. Do not launch a parallel Agent or turn on Goal. Compare the previous patrol and recent work before acting. If an attempted path repeats without new evidence, choose a different small test, narrow the question, or record the actual blocker; do not repeat the same action or spend turns reporting that work is waiting. Do not revive the old Worker, create worktrees, or use Chat for work orders.
-
-An explicit user stop cancels or suspends work as instructed; it is not evidence of scientific completion. An unavoidable user decision or uncertain irreversible effect pauses only the dependent action: state the exact decision needed and continue independent authorized work when possible. If no independent work is possible, preserve the unresolved question and next action in the handoff so the same task resumes when the condition changes. A turn may yield at its resource boundary to prevent overlap, but must not mark the mainline complete on that basis.
+Operations and capability evidence: `docs/operations/LOCAL_AGENT.md` and
+`docs/operations/REBUILD_20261003.md`.

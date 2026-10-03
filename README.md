@@ -35,14 +35,17 @@ Run the desktop application with `run_ui.bat`, or use:
 ```powershell
 generic-chess-local.cmd status
 generic-chess-local.cmd patrol
-generic-chess-local.cmd consult --question-file <path>
+generic-chess-local.cmd consult --question-file <path> --code-file <project-code>
+generic-chess-local.cmd consult-status
+generic-chess-local.cmd reconcile --request-id <id> --snapshot-file <native-read.json>
 generic-chess-local.cmd publish --tests tests/test_session.py tests/test_ai_search.py
 generic-chess-local.cmd promote --candidate <full-sha> --tests <pytest-target>
 ```
 
 The local Agent works in ordinary task mode and makes research and Git decisions.
-A two-hour scheduled turn checks progress and advances one bounded step in the
-same task; no persistent Goal is used. ChatCourier is reused only for one
-scientific consultation per active Tokyo weekday; Chat replies are advisory. See
+A native two-hour heartbeat continues the same chat after rollout acceptance;
+no persistent Goal or Windows schedule is used. Ordinary Chat is a research
+partner, consulted daily at 10:00 Tokyo and when needed, through native app tools.
+Code content can travel directly; Git is final delivery. See
 `AGENTS.md` and `docs/operations/LOCAL_AGENT.md`. The former work-order flow
 is archived in `docs/archive/courier_worker_20260928/`.

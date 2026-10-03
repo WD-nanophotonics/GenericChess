@@ -1,61 +1,28 @@
-# Windows two-machine handoff
+# Fresh App recovery and relocation
 
-GenericChess and ChatCourier use GitHub as the only durable progress and
-ownership authority. Only one machine may own the workflow at a time. There is
-no timer, daemon, shared browser profile, or copied runtime directory.
+Use a single independent GenericChess checkout on `sandbox`, backed by verified
+Git history and project evidence. Do not restore the old App configuration,
+databases, credentials, Goals, work queues or workflow ownership capsule.
 
-## First setup on a target machine
+The 2026-10-03 restoration uses `GenericChess 2`. Archived originals and
+per-file verified tar packages are under `E:\CodexArchive\20261003-rebuild`;
+the earlier `E:\CodexRecovery` backups remain unchanged. To recover elsewhere,
+clone the verified Git bundle into an empty destination and supplement it with
+the recorded research artifacts, external memory and consultation evidence.
+Build a fresh virtual environment rather than copying a relocated `.venv`.
 
-Clone the product repository as `GenericChess`, create its sibling sandbox
-worktree from `origin/sandbox`, and clone ChatCourier as sibling
-`GmailCourier` from its `origin/sandbox` branch:
+Bind the existing ordinary Chat advisor by its project and conversation IDs,
+verified against a historical receipt and native chat contents. Requalify
+communication and quota behavior for that App/account before enabling daily
+consultation. Never treat a local path string as proof of advisor file access.
+Use bounded code content when direct local access is unavailable.
 
-```powershell
-git clone https://github.com/WD-nanophotonics/GenericChess.git GenericChess
-git -C GenericChess fetch origin master sandbox workflow-state
-git -C GenericChess worktree add -b sandbox ..\GenericChess-sandbox origin/sandbox
-git clone --branch sandbox https://github.com/WD-nanophotonics/agent-relay-read-wake.git GmailCourier
-py -3.12 -m venv GmailCourier\.venv
-GmailCourier\.venv\Scripts\python.exe -m pip install -e GmailCourier
-py -3.12 -m venv GenericChess-sandbox\.venv
-GenericChess-sandbox\.venv\Scripts\python.exe -m pip install -e "GenericChess-sandbox[dev]"
-```
+Register one native heartbeat on the same Agent chat only after acceptance;
+do not install old Windows dispatch scripts or revive old Worker/Goal policy.
+Git is final delivery; there is no Git-backed communication/ownership capsule.
 
-Sign in once to ChatGPT in the Courier-owned profile. Obtain the existing Chat
-URL from the user and register it with the documented two-step ChatCourier
-registration. The URL and profile are local-only.
-
-Then configure and claim the released workflow:
-
-```powershell
-GenericChess-sandbox\generic-chess-flow.cmd machine-setup --host-id standby
-GenericChess-sandbox\generic-chess-flow.cmd handoff-claim --host-id standby
-GenericChess-sandbox\generic-chess-flow.cmd work
-```
-
-Start the target Codex task as the registered low-level Luna High Worker and
-restore its durable Goal. Only that Worker may enable the Goal; the Supervisor
-and other tasks must not. The Goal is the same existing ChatCourier
-worker/session/request loop, not a new request or state machine. After every
-new round or context compression, reread `AGENTS.md` and `WORKFLOW.md` before
-acting. The restored session prints the exact next action; for a
-`SUBMIT_CLOSEOUT` capsule it points to the locally reconstructed closeout file.
-Do not use a message Watchdog; normal Goal operation is covered by the hourly
-Supervisor audit. Preserve the same Worker task, Chat URL, Courier session,
-and request when recovering Luna High.
-
-## Release from the active machine
-
-Wait for the worker task to be idle and release only after both worktrees and
-Courier are synchronized. For an implemented work order, preserve its closeout:
-
-```powershell
-generic-chess-flow.cmd handoff-release --to standby --closeout-file <report.md>
-generic-chess-flow.cmd handoff-status
-```
-
-After the release push, all mutating flow commands on the source machine fail
-until a later released generation is claimed back. Never force-push
-`workflow-state`. Old `.generic_chess_flow`, `.courier_outbox`, `.venv`, cache,
-binary, benchmark, process-lock, browser-profile, and thread-ID state is not
-portable and must not be copied.
+For rollback, retain the new checkout and its changes. Extract a verified
+archive to a separate location. Historical Git worktree pointers preserve their
+original paths: restore the recorded original layout or repair pointers in the
+restored copies. Do not overwrite a running checkout or the fresh `.codex`.
+Private App-state archives stay user-restricted and are never uploaded.
