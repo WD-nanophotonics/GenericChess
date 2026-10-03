@@ -159,6 +159,33 @@ preserved. Do not infer full transition/payoff dominance from coordinate-event
 inclusion. The sparse frame is outside the frozen full-inventory law and is
 never averaged into it. Useful approximate population validity remains open.
 
+`EXCHANGE_ADDITIVITY_TARGET_RESULTS.md` separates the candidate's static target
+before coefficient projection. On the unchanged frozen full-inventory Chess
+frame, two existing Rooks each secure the SAME Pawn; joint first-turn success1,
+individually successful actor count2, actual branch custody+1. Exact overlap/
+disjoint finite measures have identical individual probabilities but different
+union probability and marginal eligibility contribution. 219 materializations/
+0.125 s preserve all original focal evidence. Expected actor count is additive
+under a common joint law by linearity, without independence; joint success is
+not. Adopt that identity only, not capability count as validated utility or
+physical deletion value. The single-focal replacement law has not established
+compatible per-piece marginals, type/source averaging or inventory transfer.
+Keep this constructive target distinction when choosing a justified static
+approximation and frozen predictive loss; do not generate more redundancy
+fixtures or change the binary task to obtain an additive answer by definition.
+
+`FOCAL_INVENTORY_TRANSFER_RESULTS.md` audits that transfer premise without more
+scores: every non-Pawn focal query replaces an initial own Pawn and hence has
+one fewer P/one more t than unchanged actual initial inventory. All ten such
+Chess/Shogi base-type vectors have L1 difference2. Against any nonempty actual-
+inventory reference law their full-Position supports are disjoint (TV1), so the
+generic bounded-task transfer bound is trivial. This proves no actual mean
+difference and no reference nonemptiness; equal Pawn counts likewise do not
+prove equal measures. Preserve the explicit prototype-background assumption,
+but do not claim small distribution shift from shared rules/background alone.
+A task-sufficient projection or frozen predictive transfer validation needs a
+separate argument before treating single-focal marginals as additive material.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
