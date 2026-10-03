@@ -1,0 +1,654 @@
+{
+  "program_sha256": "cd5c24793ed15e7116615fa77d2971f1f8ef4f313676ab72638f3bf3dc3ce60d",
+  "input_content_sha256": "6adbdfbe8c21288ec1790aae6df291011f1cb559140c3009e616198417e93f5b",
+  "counts": {
+    "no_immediate_custody_gain": 30,
+    "other_token_countercapture": 13,
+    "focal_recapture": 3
+  },
+  "gain_action_witnesses": [
+    {
+      "game": "chess",
+      "focal_type": "N",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_03_n_capture",
+        "geometry_id": "g16",
+        "actor_type_id": "N",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          4,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "N",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_03_n_capture",
+        "geometry_id": "g17",
+        "actor_type_id": "N",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          5,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "N",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_03_n_capture",
+        "geometry_id": "g19",
+        "actor_type_id": "N",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          1,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g16",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "focal_recapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "B",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_05_b_capture",
+        "geometry_id": "g2",
+        "actor_type_id": "B",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          4,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "R",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g28",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          4,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "R",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g29",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "R",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g30",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          3,
+          6
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "Q",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_09_q_capture",
+        "geometry_id": "g20",
+        "actor_type_id": "Q",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          4,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "Q",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_09_q_capture",
+        "geometry_id": "g21",
+        "actor_type_id": "Q",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "Q",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_09_q_capture",
+        "geometry_id": "g22",
+        "actor_type_id": "Q",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          3,
+          6
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "chess",
+      "focal_type": "Q",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_09_q_capture",
+        "geometry_id": "g26",
+        "actor_type_id": "Q",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          4,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 1,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_03_n_capture",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "shogi",
+      "focal_type": "L",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_021",
+        "geometry_id": "g18",
+        "actor_type_id": "L",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          3,
+          5
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 2,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "geometry_id": "g18",
+          "actor_type_id": "L",
+          "from": [
+            3,
+            6
+          ],
+          "to": [
+            3,
+            5
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "focal_recapture"
+    },
+    {
+      "game": "shogi",
+      "focal_type": "N",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_027",
+        "geometry_id": "g20",
+        "actor_type_id": "N",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          4,
+          5
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 2,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "geometry_id": "g18",
+          "actor_type_id": "L",
+          "from": [
+            3,
+            5
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "shogi",
+      "focal_type": "G",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_135",
+        "geometry_id": "g7",
+        "actor_type_id": "G",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 2,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "geometry_id": "g18",
+          "actor_type_id": "L",
+          "from": [
+            3,
+            5
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    },
+    {
+      "game": "shogi",
+      "focal_type": "R",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_031",
+        "geometry_id": "g22",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          3,
+          5
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 2,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "geometry_id": "g18",
+          "actor_type_id": "L",
+          "from": [
+            3,
+            6
+          ],
+          "to": [
+            3,
+            5
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "focal_recapture"
+    },
+    {
+      "game": "shogi",
+      "focal_type": "R",
+      "first_action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_037",
+        "geometry_id": "g25",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "immediate_gain": 2,
+      "first_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "geometry_id": "g18",
+          "actor_type_id": "L",
+          "from": [
+            3,
+            5
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "cause": "other_token_countercapture"
+    }
+  ],
+  "replayed_transitions": 62,
+  "elapsed_seconds": 0.31299999984912574,
+  "scope": "first recorded refutation of each immediate-gain action only; not all refutation causes"
+}

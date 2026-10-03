@@ -6,6 +6,9 @@ Agent works on sandbox in this checkout, in ordinary task mode. Read
 Do not start extra Agents, concurrent heavy jobs or Work/Codex delegates.
 Preserve research evidence, unrelated changes and Chess/Shogi/Xiangqi boundaries.
 Choose the smallest decision-changing observation; bound compute and abort costs.
+Local memo is revisable planning memory, not a work-order queue or a limit on
+the amount of work. After a useful result, update it and select the next research
+question independently. Experiment resource caps do not end the working session.
 
 The Agent and dot are research partners of nearly equal authority. Resolve
 questions by evidence; record why advice is adopted, deferred or rejected. Dot

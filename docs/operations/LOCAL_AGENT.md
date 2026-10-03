@@ -4,6 +4,11 @@ AGENTS.md is the sole active policy. Read the scientific mainline and
 .local_agent/NEXT_WORK.md at turn start. Slack/dot is the only consultation
 transport; docs/operations/SLACK_WORKFLOW.md is the communication manual.
 
+NEXT_WORK.md is revisable local memo, not a queue of single orders or a session
+scope limit. Record results and choose the next useful research step without
+waiting for new instructions. A single experiment's resource/abort ceiling only
+limits that computation; it never means the research session should end.
+
 ## Active continuation
 
 The latest user instruction accepts active Slack plugin reading/waiting and

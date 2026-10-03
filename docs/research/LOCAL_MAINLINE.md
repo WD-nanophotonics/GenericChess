@@ -102,6 +102,28 @@ Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV
 
 ## Evidence required for mainline completion
 
+`PHYSICAL_PLACEMENT_SAMPLING_RESULTS.md` supplies exact structural masses and
+an unbiased direct Pawn-conditioned sampler; naive Shogi structural rejection
+alone would need roughly 3.16 million draws. The first full-inventory common
+frame in each game yielded twelve zero type-task scores in 1,642 transitions.
+These two frames are not a population mean. All sixteen positive-gain actions
+have a legal focal-loss reply. `EXCHANGE_TASK_BACKGROUND_DIAGNOSIS.md` also
+separates global net gain from focal survival on inventory-preserving controls:
+background exposure flips only the global task. A local-survival replacement
+does not rescue the twelve original zeros and is not adopted.
+
+`PHYSICAL_EXCHANGE_SUPPORT_RESULTS.md` records a separately frozen existence
+test of the unchanged global task: eight Chess and five Shogi focal-R roots
+all zero, 3,098 transitions in 1.422 s. Shogi exhausted 128 proposals before
+its eight-frame cap, so support evidence is explicitly incomplete. No larger
+rerun, fitted density or coefficient followed. An exact cell-polynomial count
+on the six recorded Shogi Pawn frames finds differing dead-free L/N completion
+counts; parent-fixed redraw would bias the joint conditioned law. This closes
+that proposed optimisation without new score samples. The next step needs a
+specific structural support argument or independently motivated strategic
+population before another type-score batch; inexpensive execution alone does
+not justify one. The task's cheap static additive interpretation remains open.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.

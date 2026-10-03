@@ -1,0 +1,1817 @@
+{
+  "protocol_sha256": "744aaf3e57e269dffbaf6fbb43d0161563c50d07cc88d0ab25a8e1f5dd101506",
+  "program_sha256": "912a15705a826096c5a7d515859f8823fe0d2061c95e8e31c6e90a87439cfb3d",
+  "complete": true,
+  "comparisons": {
+    "chess": {
+      "same_focal_actions": true,
+      "shifted_score": 1,
+      "exposed_score": 0
+    },
+    "shogi": {
+      "same_focal_actions": true,
+      "shifted_score": 1,
+      "exposed_score": 0
+    }
+  },
+  "roots": [
+    {
+      "game": "chess",
+      "background": "shifted",
+      "success": 1,
+      "actions": [
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              4,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 20,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              5,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 19,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              6,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g7",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                7,
+                7
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              7,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 2,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g29",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              2,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 20,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g29",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 19,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g29",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 19,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g31",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 19,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g31",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 19,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g31",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 19,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "geometry_id": "g30",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 18,
+          "success": true,
+          "first_refutation": null
+        }
+      ],
+      "position_key": "e8816c238e20c7570a37a23061e442fb38bec33b970c72d13d0c46046fe85012",
+      "selected_capture_success": true,
+      "immediate_gain": 1
+    },
+    {
+      "game": "chess",
+      "background": "exposed",
+      "success": 0,
+      "actions": [
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              4,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 13,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              5,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              6,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 10,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g8",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                7,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g28",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              7,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 2,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g29",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              2,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 13,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g29",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g29",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g31",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g31",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_06_r_quiet",
+            "geometry_id": "g31",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_k_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                5
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "sem_07_r_capture",
+            "geometry_id": "g30",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 11,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_k_capture",
+              "geometry_id": "g10",
+              "actor_type_id": "K",
+              "from": [
+                7,
+                6
+              ],
+              "to": [
+                6,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        }
+      ],
+      "position_key": "8485464fafa42ff4f9a5e04ab628b94e3f16f11bfce789a464791751e74a7e6a",
+      "selected_capture_success": false,
+      "immediate_gain": 1,
+      "selected_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "sem_01_k_capture",
+          "geometry_id": "g10",
+          "actor_type_id": "K",
+          "from": [
+            7,
+            6
+          ],
+          "to": [
+            6,
+            6
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "focal_survives_refutation": true,
+      "net_gain_after_refutation": 0
+    },
+    {
+      "game": "shogi",
+      "background": "shifted",
+      "success": 1,
+      "actions": [
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 23,
+          "success": true,
+          "first_refutation": null
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "geometry_id": "g23",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "geometry_id": "g23",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "geometry_id": "g23",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              4,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              5,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              6,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              7,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 16,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              8,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 2,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "geometry_id": "g16",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                7,
+                7
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "geometry_id": "g25",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              2,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "geometry_id": "g25",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "geometry_id": "g25",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 24,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        }
+      ],
+      "position_key": "d7900f5ba4bc25cb7a4277bd1f56efbec0112836b5b2bd1f794a551bdeb4cd98",
+      "selected_capture_success": true,
+      "immediate_gain": 2
+    },
+    {
+      "game": "shogi",
+      "background": "exposed",
+      "success": 0,
+      "actions": [
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              4
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 13,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_017",
+              "geometry_id": "g16",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                7,
+                7
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "geometry_id": "g23",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "geometry_id": "g23",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "geometry_id": "g23",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              4,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              5,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              6,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              7,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 12,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "geometry_id": "g24",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              8,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 2,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_017",
+              "geometry_id": "g16",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                7,
+                7
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": -2,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "geometry_id": "g25",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              2,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "geometry_id": "g25",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        },
+        {
+          "action": {
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "geometry_id": "g25",
+            "actor_type_id": "R",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "reply_count": 14,
+          "success": false,
+          "first_refutation": {
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from": [
+                8,
+                7
+              ],
+              "to": [
+                8,
+                8
+              ],
+              "promotion_target_id": null
+            },
+            "custody_delta": 0,
+            "terminal": "ongoing"
+          }
+        }
+      ],
+      "position_key": "094b0d9795e28c4b9d39b1f512c74fe75b094be1073c0085c0e78036e48a3fbc",
+      "selected_capture_success": false,
+      "immediate_gain": 2,
+      "selected_refutation": {
+        "action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_017",
+          "geometry_id": "g16",
+          "actor_type_id": "K",
+          "from": [
+            8,
+            7
+          ],
+          "to": [
+            7,
+            7
+          ],
+          "promotion_target_id": null
+        },
+        "custody_delta": 0,
+        "terminal": "ongoing"
+      },
+      "focal_survives_refutation": true,
+      "net_gain_after_refutation": 0
+    }
+  ],
+  "materialized_transitions": 771,
+  "enumeration_transitions": 765,
+  "replayed_transitions": 6,
+  "elapsed_seconds": 0.26599999982863665
+}
