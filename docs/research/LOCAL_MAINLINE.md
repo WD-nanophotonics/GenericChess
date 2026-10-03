@@ -102,6 +102,17 @@ Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV
 
 ## Evidence required for mainline completion
 
+`SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
+Chess/Shogi pilot of the new task under one equal-mass physical-context law.
+All focal actions/replies completed in 1,973 materializations and 0.469 s.
+Chess B/R=1/3,Q=2/3; Shogi B/R=1/3. Open diagonal/orthogonal opportunities give
+conditional differentiation while the defended diagonal motif scores zero.
+This validates cheap enumeration and the declared task contract, not its
+population weights or material-use validity. Invalid roots fail explicitly;
+broader physical-placement and type-dependent support accounting remain open.
+Do not install these motif scores, tune context weights or repeat captures to
+claim the static material-prior objective complete.
+
 `SECURED_EXCHANGE_TASK_CONTRACT.md` records the first accepted Slack/dot research
 consultation and a new, explicitly conditional candidate: a context average of
 optimal focal-action/adversarial-reply binary token-gain success. Its exact
