@@ -269,6 +269,15 @@ Pawn/L/N law (old intrinsic acceptance approximately 20.43%). Full remaining
 integration and freeze a new cost/corpus protocol before new batches or labels;
 the previous corpus remains incomplete, not retroactively repaired.
 
+`JOINT_ACTUAL_FRAME_RESULTS.md` subsequently validates full Shogi Q integration:
+remaining 14 actual tokens are uniformly injected on 55 free cells, full
+inventory/mobility drift fails closed, and unchanged check/terminal filtering
+is retained. A frozen one-root construction needed two joint proposals (one
+check rejection), 0.172 s including compilation/preprocessing, with no intrinsic
+dead placement. Full state evidence and deterministic tests pass. Next freeze
+the new complete corpus experiment before values; construction/cost success
+is not capture coverage, predictive validation or a change to the failed corpus.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
