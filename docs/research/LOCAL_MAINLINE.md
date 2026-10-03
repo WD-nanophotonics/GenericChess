@@ -255,6 +255,20 @@ W(P)-weighted mass for their constrained L/N completion counts, not parent-fixed
 redraw. Derive/bound that algorithm and preserve whole-state quiet/capture
 conditioning before another corpus experiment; preprocessing counts as cost.
 
+`REVERSE_PLACEMENT_EFFICIENCY_RESULTS.md` rejects a law-correct reverse-order
+proposal: exact W81/U63 counts imply only 0.5346x the original raw acceptance,
+for any shared quiet/capture predicate. No failed-corpus retry was made.
+`FILE_JOINT_SAMPLING_RESULTS.md` instead verifies direct joint file-polynomial
+counting and integer unranking: Z=12666047573426791865632639560 restricted
+physical layouts, at most 81 states/table, approximately 0.156 s with compilation.
+A complete tiny-space independent oracle proves rank coverage/no duplicates;
+the full 26-token draw passes inventory, nifu, non-dead and distinct-cell checks.
+This removes intrinsic rejection while preserving the globally conditioned
+Pawn/L/N law (old intrinsic acceptance approximately 20.43%). Full remaining
+14-token assembly and quiet/capture filters are still required. Validate that
+integration and freeze a new cost/corpus protocol before new batches or labels;
+the previous corpus remains incomplete, not retroactively repaired.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
