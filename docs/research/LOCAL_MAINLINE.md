@@ -225,6 +225,21 @@ Adopt the construction/observed feasibility only. Next specify a distinct
 variable-inventory deployment law, count-loss baseline and independent margin
 before type estimates; fast admission is not full-reply cost or material validity.
 
+`POST_CAPTURE_VALIDATION_CONTRACT.md` freezes a narrow independent use: predict
+own board-actor capability count after one real opponent capture, stratified
+equally by victim type, preserving all state changes. Compare squared count
+error to zero and a reference-only constant, with a predeclared 10% improvement
+margin; this is an engineering diagnostic, not material/WDL validation.
+`POST_CAPTURE_SCOPE_RESULTS.md` verifies its first implementation on the two
+existing admitted boards. Complete capture coverage includes all 5 Chess victim
+types but only B/P/R/S in Shogi. Two selected actual children retain Chess check
+and Shogi promoted attacker/held Pawn, with 50 opponent drop replies across
+branches. Full GameState/public-transition checks pass; 1,988 materializations
+take 0.766 s. Both scope counts are zero, not validation risk or coefficients.
+Next freeze finite reference and independent all-stratum deployment generation,
+seeds/counts/resource gates before values. Missing strata, zero signal/baseline
+risk or incomplete coverage cannot qualify; do not tune or reuse scope fixtures.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
