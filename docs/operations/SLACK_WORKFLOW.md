@@ -1,9 +1,9 @@
 # GenericChess Slack workflow
 
 Status on 2026-10-03: implementation staged, automatic dispatch disabled.
-The existing Slack plugin read/write and one manually triggered dot round trip
-passed. Socket Mode live receipt, latency, reconnection and dot subscription
-have not passed. The paused heartbeat stays paused. Courier and native Chat
+The existing Slack plugin read/write, manual dot round trip and event-triggered
+dot round trip passed. Socket Mode live receipt, latency and reconnection have
+not passed. The paused heartbeat stays paused. Courier and native Chat
 sending stay disabled; historical records remain evidence.
 
 ## Verified destination and roles
@@ -21,6 +21,21 @@ the user asked it to inspect the channel. That measures approximately 298
 seconds of manual-trigger/reply delay, not receiver latency. No mechanical
 receiver was running. Full plugin evidence is in Git-ignored
 `.local_agent/rebuild/slack-probe-01-thread.json`.
+
+At 20:06:42 JST, dot reported its channel new-message subscription was enabled,
+including thread replies. A fresh root `GC-SLACK-20261003-WAKE-02` was posted
+at 20:10:03 JST; dot replied at 20:10:50 JST and explicitly confirmed Slack
+event activation, approximately 20:10:11 event arrival, no manual check and no
+extra Work/Codex worker. These activation/no-worker facts are dot's report;
+the Slack timestamps and same-thread response were independently read by the
+local Agent. They are one observation, not a latency guarantee.
+[Event test thread](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791025803999159).
+Raw evidence is `.local_agent/rebuild/slack-wake-02-thread.json` (ignored).
+
+Dot explicitly limits the verified native event capability to Slack→dot and
+dot→Slack. It has not verified pushing a reply into or waking this local Codex
+chat. The local Agent read the test reply using the plugin; it was not a Socket
+Mode receive test. Do not replace the local receiver on that evidence.
 
 Shared user identity proves the Slack account only. TYPE and REQUEST_ID route
 messages, not authenticate the producing process. Unknown actors, mismatched
@@ -92,8 +107,11 @@ once, then persist its successful receipt:
 .venv\Scripts\python.exe -m tools.local_agent.cli slack-wait --request-id REQUEST_ID --seconds 300
 ```
 
-Wait is mechanical only; shell calls must yield in under 60 seconds while it
-runs. No file change is claimed to wake an idle Agent. Read inbox on activity
+Wait is mechanical only; on Windows it blocks on a local event notification
+issued after the inbox commit, rather than polling Slack or the SQLite inbox.
+Shell calls must yield in under 60 seconds while it runs. This notifies an
+already-running mechanical wait process; it does not wake an idle model chat.
+Read inbox on activity
 checkpoints and before continuing a restored chat. A message after uncertain
 send is reconciled against its exact original payload/account/channel; never
 send again because the receipt was lost. If event history missed that root,
@@ -127,7 +145,9 @@ Agent execution is free or that account counters isolate consultation usage.
   Agent-read are each within 300 seconds. Dot generation time is separate.
 - Validate real disconnect/reconnect, auth expiry and rate limit behavior;
   synthetic tests alone do not qualify these live paths.
-- Confirm dot's actual event subscription and a fresh request triggers it.
+- Dot's channel event subscription and fresh request activation passed the
+  WAKE-02 observation; ongoing latency/reliability and loop behavior remain
+  separate checks.
 - Verify same-chat heartbeat continuation and no overlap before activation.
 - Keep only this Slack consultation channel active after acceptance, and
   update the existing paused heartbeat rather than creating another one.

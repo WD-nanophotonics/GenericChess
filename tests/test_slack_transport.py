@@ -159,3 +159,15 @@ def test_explicit_receiver_disabled_and_dispatch_acceptance(env):
     assert s.status(r['request_id'])['state'] == 'PREPARED'
     with pytest.raises(LocalFlowError, match='disabled'):
         s.receive()
+
+
+def test_windows_local_notification_is_event_driven(env):
+    import os
+    if os.name != 'nt':
+        pytest.skip('Windows notification contract')
+    with s.notification() as signal:
+        api, handle = signal
+        assert api.WaitForSingleObject(handle, 0) == 258
+        s.notify()
+        assert api.WaitForSingleObject(handle, 0) == 0
+        assert api.WaitForSingleObject(handle, 0) == 258

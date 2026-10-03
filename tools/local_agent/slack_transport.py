@@ -30,6 +30,37 @@ def digest(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
 
+@contextmanager
+def notification():
+    """Local Windows notification, separate from Slack network transport."""
+    if os.name != 'nt':
+        yield None
+        return
+    import ctypes
+    from ctypes import wintypes
+    api = ctypes.WinDLL('kernel32', use_last_error=True)
+    api.CreateEventW.argtypes = [ctypes.c_void_p, wintypes.BOOL, wintypes.BOOL, wintypes.LPCWSTR]
+    api.CreateEventW.restype = wintypes.HANDLE
+    api.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+    api.WaitForSingleObject.restype = wintypes.DWORD
+    api.SetEvent.argtypes = [wintypes.HANDLE]; api.SetEvent.restype = wintypes.BOOL
+    api.CloseHandle.argtypes = [wintypes.HANDLE]; api.CloseHandle.restype = wintypes.BOOL
+    name = 'Local\\GenericChessInbox-' + digest(str(DB.resolve()).casefold())
+    handle = api.CreateEventW(None, False, False, name)
+    if not handle:
+        raise LocalFlowError('cannot create local inbox notification')
+    try:
+        yield api, handle
+    finally:
+        api.CloseHandle(handle)
+
+
+def notify():
+    with notification() as signal:
+        if signal and not signal[0].SetEvent(signal[1]):
+            raise LocalFlowError('cannot notify local inbox reader')
+
+
 def config():
     c = read_json(CONFIG)
     if not all(c.get(k) for k in ('team_id', 'channel_id', 'sender_id')):
@@ -179,7 +210,9 @@ def ingest(payload):
                             (eid, msg.get('ts', event.get('deleted_ts')),
                              msg.get('thread_ts', msg.get('ts')), stamp(),
                              json.dumps(payload, ensure_ascii=False)))
-        return 'STORED' if cursor.rowcount else 'DUPLICATE'
+        result = 'STORED' if cursor.rowcount else 'DUPLICATE'
+    notify()  # durable commit first; a waiting local process is notified immediately
+    return result
 
 
 def reconcile(rid):
@@ -249,11 +282,19 @@ def wait(rid, seconds=300):
     if not 0 <= seconds <= 300:
         raise LocalFlowError('mechanical wait must be between 0 and 300 seconds')
     end = time.monotonic() + seconds
-    while True:
-        r = reconcile(rid)
-        if r['state'] == 'COMPLETED' or config().get('stopped') or time.monotonic() >= end:
-            return r
-        time.sleep(min(1, max(0, end - time.monotonic())))
+    # Create the event before the first read: a racing commit cannot be missed.
+    with notification() as signal:
+        while True:
+            r = reconcile(rid)
+            if r['state'] == 'COMPLETED' or config().get('stopped') or time.monotonic() >= end:
+                return r
+            remaining = max(0, end - time.monotonic())
+            if signal:
+                result = signal[0].WaitForSingleObject(signal[1], max(1, int(remaining * 1000)))
+                if result not in {0, 258}:  # notification or timeout
+                    raise LocalFlowError('local inbox wait failed')
+            else:
+                time.sleep(min(1, remaining))
 
 
 def vault():
@@ -327,6 +368,7 @@ def stop():
     c = config()
     c.update(stopped=True, dispatch_enabled=False, receiver_enabled=False, stopped_at=stamp())
     write_json(CONFIG, c)
+    notify()
     return {'stopped': True, 'required_agent_actions': ['pause native heartbeat', 'cancel dot channel monitoring']}
 
 

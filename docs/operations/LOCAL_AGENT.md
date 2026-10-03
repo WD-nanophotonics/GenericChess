@@ -2,8 +2,8 @@
 
 The user selected Slack/dot as the replacement consultation workflow.
 See [Slack setup and acceptance](SLACK_WORKFLOW.md). Channel read/write and
-manual dot round trip passed; the receive-only app and dot event subscription
-are pending. Both older transports remain disabled. The single native
+manual and event-triggered dot round trips passed; the receive-only app is
+pending. Both older transports remain disabled. The single native
 heartbeat has been updated for Slack and remains PAUSED until live acceptance.
 The native/Courier procedures below are historical recovery capability notes,
 not authorization to switch back or send while the Slack cutover is pending.
