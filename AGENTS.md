@@ -1,14 +1,21 @@
 # GenericChess local research policy
 
 This is the sole active policy. User instructions take precedence. One local
-Agent works on sandbox in this checkout, in ordinary task mode. Read
-.local_agent/NEXT_WORK.md and docs/research/LOCAL_MAINLINE.md at every turn.
+Agent works on sandbox in this checkout, in ordinary task mode. At every work
+start, restart, heartbeat continuation and after context compaction, first read
+.local_agent/NEXT_WORK.md in full. Understand the last unfinished work, current
+state and next direction before acting. Then read this policy and
+docs/research/LOCAL_MAINLINE.md and check persisted stop flags/current state.
 Do not start extra Agents, concurrent heavy jobs or Work/Codex delegates.
 Preserve research evidence, unrelated changes and Chess/Shogi/Xiangqi boundaries.
 Choose the smallest decision-changing observation; bound compute and abort costs.
-Local memo is revisable planning memory, not a work-order queue or a limit on
-the amount of work. After a useful result, update it and select the next research
-question independently. Experiment resource caps do not end the working session.
+Local memo is compact resume memory: at most 20 lines and 2 KiB UTF-8. Keep only
+recent state, unfinished work, next direction and necessary evidence references.
+After a small milestone, optionally overwrite it; remove superseded/completed
+items instead of appending history or retaining each memo version. Detailed
+evidence belongs in research documents/Git. Memo is revisable planning memory,
+not an approval queue or a limit on work. Select the next research question
+independently. Experiment resource caps do not end the working session.
 
 The Agent and dot are research partners of nearly equal authority. Resolve
 questions by evidence; record why advice is adopted, deferred or rejected. Dot

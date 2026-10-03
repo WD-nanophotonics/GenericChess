@@ -1,13 +1,26 @@
 # Local Agent operations
 
-AGENTS.md is the sole active policy. Read the scientific mainline and
-.local_agent/NEXT_WORK.md at turn start. Slack/dot is the only consultation
+AGENTS.md is the sole active policy. At every work start, restart, heartbeat
+continuation and after context compaction, read .local_agent/NEXT_WORK.md first
+and in full, before research, edits or consultation. Identify the previous
+unfinished work, latest state and next direction; then read AGENTS.md and the
+scientific mainline, check stop flags and verify the memo against the checkout.
+Slack/dot is the only consultation
 transport; docs/operations/SLACK_WORKFLOW.md is the communication manual.
 
-NEXT_WORK.md is revisable local memo, not a queue of single orders or a session
-scope limit. Record results and choose the next useful research step without
-waiting for new instructions. A single experiment's resource/abort ceiling only
-limits that computation; it never means the research session should end.
+NEXT_WORK.md is resume memory, limited to 20 lines and 2 KiB UTF-8. Retain only
+recent status, unfinished work, the next direction and essential evidence links.
+After a small milestone, rewrite it when that will help the next restart or
+compaction; no rewrite is required for every probe. Overwrite/delete obsolete
+and completed entries, never accumulate a diary or archive each memo revision.
+Keep detailed results and historical evidence in research documents/Git, not
+in the memo. If the memo is absent or stale, reconstruct a small current memo
+from those sources before proceeding; never infer permission to clear a stop.
+
+Carryover work is a starting point, not a single-order queue or a session scope
+limit. Choose the next useful step independently without waiting for new orders.
+A single experiment's resource/abort ceiling only limits that computation;
+it never means the research session should end.
 
 ## Active continuation
 
