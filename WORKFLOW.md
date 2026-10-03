@@ -1,30 +1,32 @@
 # GenericChess workflow
 
-The selected fallback is a fresh fixed-URL Courier. Native extra quota remains
-unverified. `courier-open` opens its dedicated Chrome profile; login and ordinary
-Chat mode must be verified before any send. `courier-send --request-id <id>`
-submits at most once; `courier-read --request-id <id>` only reconciles a reply.
-Neither command launches another model, Work task, queue or worker. Ordinary
-Chat's own model limits still apply; mechanical transport does not waive them.
+One local Agent researches, implements, tests and delivers on sandbox. Dot
+analyses and challenges evidence through #generic-chess. User instructions
+prevail; neither partner is a publication gate.
 
-One local Agent researches, implements, tests, records evidence and continues.
-The ordinary Chat advisor supplies evidence and directions; the Agent records
-its evaluation and keeps working. User instructions take precedence.
+Use generic-chess-local.cmd consult --question-file QUESTION.txt to prepare,
+consult --begin-send REQUEST_ID before one Slack plugin send, then
+slack-bind-sent --request-id REQUEST_ID --channel-id CHANNEL --message-ts 'ROOT_TS'.
+Save the complete Slack read_thread tool result and run reconcile --request-id
+REQUEST_ID --snapshot-file SNAPSHOT.json. Record adopt/defer/reject with reasons.
+Read every reply/page, including later posts. Status summaries flag unreviewed
+additions; --full returns the preserved full request/reply when needed.
+See docs/operations/SLACK_WORKFLOW.md for the snapshot schema and uncertain-send
+rules. consult-status reports persisted progress without spawning a model.
 
-`generic-chess-local.cmd consult --question-file <file> [--daily] [--code-file <file>]`
-prepares an immutable advisory request. `consult --begin-send <request-id>`
-records uncertainty before the Agent sends via the native app tool. Then use
-`consult-status [--request-id <id>]` or `reconcile --request-id <id>
---snapshot-file <native-read-thread.json>` to collect a complete anchored reply.
-`reconcile --request-id <id> --decision adopt|defer|reject --reason <text>`
-records how the advice affected research. No command launches a second model.
+While active, read/wait/reconcile pending advice and continue useful independent
+work. A pending reply or checkpoint is not a reason to end research. One native
+two-hour heartbeat resumes this same chat if a turn unexpectedly ends. Consult
+at the daily 10:00 Tokyo inspection for major problems or new theory; skip empty
+or duplicate questions and do not catch up days. Two-hour inspections resume
+local work without requiring dot. Midday work is independent by default; ask
+only when a concrete issue merits discussion. Advice may be received without
+replying; follow-ups can wait for the next consultation.
+An explicit user stop suspends consultation and continuation persistently.
+No extra receiving app or immediate model wake is required by this workflow.
 
-Daily consultation is at 10:00 Asia/Tokyo, with additional distinct on-demand
-questions. One native two-hour heartbeat continues this same chat only after
-acceptance. Pending capability checks leave the relevant automation paused.
-
-Git is the delivery endpoint. `publish --tests <targets>` validates and pushes
-sandbox; `promote --candidate <full-sha> --tests <targets>` fast-forwards remote
-master without a sibling checkout. Chat approval and a prior Git publication
-are not requirements for consultation. The retired flow launcher returns an
-error and never invokes its historical implementation.
+Git is final delivery: publish --tests TARGETS pushes sandbox with tests and
+full remote SHA verification. promote --candidate SHA --tests TARGETS performs
+an ordinary tested master fast-forward. Never force-push. Retired control
+code is preserved as text in docs/archive/workflow_retirement_20261003; it is
+outside executable imports and command routes. Other projects are excluded.

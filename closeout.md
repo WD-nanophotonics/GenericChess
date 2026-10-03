@@ -1,3 +1,7 @@
+# Historical research log — evidence only
+
+Past Supervisor/approval/work-order statements below are dated records, not active instructions. Follow root AGENTS.md and docs/research/LOCAL_MAINLINE.md.
+
 ## Gate 2 L_V5-3 controlled-material resume closeout
 
 This `STRENGTH_BENCHMARK` added one exact-label, exact-fingerprint controlled

@@ -1,100 +1,57 @@
 # Local Agent operations
 
-The user selected Slack/dot as the replacement consultation workflow.
-See [Slack setup and acceptance](SLACK_WORKFLOW.md). Channel read/write and
-manual and event-triggered dot round trips passed; the receive-only app is
-pending. Both older transports remain disabled. The single native
-heartbeat has been updated for Slack and remains PAUSED until live acceptance.
-The native/Courier procedures below are historical recovery capability notes,
-not authorization to switch back or send while the Slack cutover is pending.
+AGENTS.md is the sole active policy. Read the scientific mainline and
+.local_agent/NEXT_WORK.md at turn start. Slack/dot is the only consultation
+transport; docs/operations/SLACK_WORKFLOW.md is the communication manual.
 
-The primary checkout is `GenericChess 2`, on `sandbox`. The current App's fresh
-configuration is the baseline. Read `AGENTS.md`, the research mainline, and
-`.local_agent/NEXT_WORK.md`; old exported tasks and queues are evidence only.
+## Active continuation
 
-## Native advisory exchange
+The latest user instruction accepts active Slack plugin reading/waiting and
+one native two-hour heartbeat on this same Agent chat. During active work,
+check pending threads at relevant checkpoints; when awaiting a useful answer,
+briefly wait and read again. Preserve useful partial evidence; do not stop at
+an empty read, finished consultation, test or commit. Continue independent
+bounded research during delays. No receive-only app or native reply wake is
+required. Dot's Slack event subscription is already observed working.
 
-The calling Agent uses its existing app tools; no script creates a model worker
-or connects to an undocumented app endpoint. Advisor identity lives in the
-Git-ignored `.local_agent/advisor.json` and was verified against old receipts.
+The daily 10:00 Asia/Tokyo inspection is the main advisor window: ask about
+major problems or substantive new theory, without duplicate/empty requests or
+missed-day catchup. Two-hour inspections are local recovery, not mandatory
+consultation. Ordinary project work proceeds independently; external discussion
+is reserved for concrete issues. Receiving an opinion requires no reply or
+acknowledgement. Record its assessment locally and ask follow-ups next time
+unless the issue is time-sensitive. No response is a gate to independent work.
 
-1. Prepare: `generic-chess-local.cmd consult --question-file <file>`.
-   Add `--daily` for the 10:00 Tokyo consultation and `--code-file <file>` for
-   bounded UTF-8 project code. No prior Git publication is required.
-2. `consult --begin-send <request-id>` returns `CAPABILITY_PENDING` until
-   quota qualification is recorded. Otherwise it persists `SEND_UNCERTAIN`
-   and returns the native action, thread ID and exact prompt.
-3. Call `send_message_to_thread` using that exact target and prompt once.
-   An accepted send may remain queued until the chat is opened. Read the same
-   chat before retrying; never assume acknowledgement proves a completed reply.
-4. Use `read_thread` with enough output capacity. Save its returned JSON,
-   including message IDs and truncation flags, then run `reconcile --request-id
-   <id> --snapshot-file <file>`. Continue pagination if the anchor is absent.
-5. Record `reconcile --request-id <id> --decision adopt|defer|reject --reason
-   <reason>`. A complete anchored reply remains useful without a perfect footer.
+The native heartbeat checks user_paused/stopped before continuing, reconciles
+pending consultation and resumes the scientific route. It targets the same
+chat and never creates another task/Agent. A current active turn must not be
+joined by a second writer. First scheduled wake timing is operational evidence
+collected later, not a fabricated completed test. The old Windows task stays
+absent/disabled; old Goals, queues and ownership rules are not restored.
 
-Different targets, changed payloads, wrong reply IDs, advisor tool/task activity
-and partial output do not authorize retransmission. Rate limits, login failure
-or generation in progress leave the original request pending; retry reads after
-the cooldown, not sends. Continue independent research. Plain Chat currently
-cannot directly read Windows files; code is included with content hashes.
+For explicit stop: generic-chess-local.cmd stop persists user_paused/stopped
+and disables consultation. The calling Agent also pauses native automation
+and asks dot to cancel channel monitoring. Restart never clears stopped state.
+Native continuation/local execution use the local Agent's allowance; dot must
+not delegate additional Work/Codex execution. Aggregate account percentages
+are not proof of a request's quota attribution.
 
-Daily requests are reserved once per Tokyo date after 10:00, including weekends.
-Distinct on-demand questions are allowed. Identical content is deduplicated.
-Do not send catch-up consultations for missed days. No substantive question
-means no request. A pending request is reconciled before another is prepared.
+## Version delivery
 
-The user subsequently selected a fresh fixed-URL Courier fallback because
-native extra quota remains unverified. `courier-open` uses the existing Chrome
-binary and a fresh project-owned profile under `.local_agent/courier/profile`.
-It never imports archived credentials, queues, owner leases or automatic resend.
-Install `.[courier]` for Playwright; no additional model/API dependency exists.
-`consult --begin-send` returns `courier-send` only after qualification. The driver
-persists `SEND_UNCERTAIN` before submission; `courier-read` and an uncertain
-`courier-send` are read-only and never resubmit. Target URL, immutable body,
-rendered turn and ordinary Chat mode must match. Native and Courier are never
-active senders simultaneously; completed native probe evidence stays intact.
-Current preflight is `LOGIN_REQUIRED`: no Courier message has been sent.
+Inspect outgoing diffs, then publish --tests TARGETS. Verify full origin/sandbox
+SHA. A tested published candidate can promote --candidate SHA --tests TARGETS
+by fast-forward in this checkout. No Chat approval or sibling checkout.
 
-Official Quick chat documentation establishes an ordinary Chat surface, but
-does not specify billing for the native send-message tool. The account's usage
-tool reports the aggregate Codex bucket, not request-level attribution. Native
-zero extra usage is therefore unverified. Courier's code has no model/Work
-launches; live ordinary Chat mode and a real reply still require acceptance.
-Ordinary Chat's own limits or eligible account usage remain applicable whichever
-transport sends the question. A fixed URL does not change the destination's
-billing rules. See https://learn.chatgpt.com/docs/projects and
-https://learn.chatgpt.com/docs/pricing.
+## Recovery and historical evidence
 
-## Continuation and user stop
+REBUILD_20261003.md records earlier recovery stages; dated capability statuses
+there are not current gates. Retired native/Courier/Socket prototypes and prior
+policy bytes are indexed in docs/archive/workflow_retirement_20261003/INDEX.json.
+Only resource-budget/path helpers were extracted from the old control program;
+no scheduling, ownership or Supervisor code remains callable.
 
-Use one native heartbeat on this same chat, every two hours, with a 10:00 Tokyo
-daily consultation handled in the same loop. Do not create a new Agent or Goal,
-install a Windows task or overlap an active turn. Enable only after the rollout
-gates in `.local_agent/rollout.json` pass. The current request authorizes building
-the workflow, not restarting a paused scientific job before those gates pass.
-
-For an explicit user stop, set rollout `user_paused` true, set the advisor
-`enabled` false and pause the associated native heartbeat. Do not auto-clear
-that state at a later trigger. A user resume restores only qualified behavior.
-Keep notifications quiet unless there is a meaningful result, fault or required
-decision. The heartbeat itself is local Agent execution and uses its allowance.
-
-## Git delivery
-
-Review outgoing changes, commit a tested checkpoint, then run
-`publish --tests <targets>`. The command verifies the exact remote sandbox SHA.
-`promote --candidate <full-sha> --tests <targets>` checks the published candidate
-and fast-forwards remote master from this same checkout. Neither operation
-needs a sibling directory or Chat approval. Never force-push.
-
-## Archive and rollback
-
-Tar packages, per-file manifests and extraction verification live under
-`E:\CodexArchive\20261003-rebuild`. ACL-preserving GenericChess and retired App
-originals live under `C:\Users\wdai\CodexRetired\20261003-rebuild`; their 23 Git
-worktree paths were repaired after relocation. Existing CodexRecovery backups
-are untouched. Restore old worktrees to their documented layout, or repair
-their Git pointers after restoring copies. Never import old App databases,
-auth files, Goals or queues into the running fresh installation. Sensitive App
-archives must stay user-restricted and must not be attached to Chat or Git.
+Verified archives are at E:\CodexArchive\20261003-rebuild and original retired
+checkouts at C:\Users\wdai\CodexRetired\20261003-rebuild. CodexRecovery is unchanged.
+Restore verified copies separately and repair Git pointers as documented. Never
+import old App databases, credentials, Goals or queued work into the fresh App.
+Sensitive App-state archives stay user-restricted and out of Git/attachments.

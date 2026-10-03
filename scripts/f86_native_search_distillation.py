@@ -35,7 +35,7 @@ from generic_chess.session.session import GameSession
 from scripts import f59_action_spectrum_diagnosis as f59
 from scripts.f84_native_selfplay_tdleaf import _load_parent
 from scripts.f78_parent_anchored_full_residual_arena2 import _adam_fit, _model_prediction, _pairwise_loss
-from tools.generic_chess_flow import repo_relative_path
+from tools.resource_limits import repo_relative_path
 
 
 WORK_ORDER = "F86_NATIVE_SEARCH_DISTILLATION_NONLINEAR_SINGLE_UPDATE"

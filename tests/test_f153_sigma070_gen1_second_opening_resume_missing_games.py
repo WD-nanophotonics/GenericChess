@@ -6,7 +6,7 @@ import pytest
 
 from scripts import f153_sigma070_gen1_second_opening_candidate_screen as screen
 from scripts import f153_sigma070_gen1_second_opening_resume_missing_games as resume
-from tools.generic_chess_flow import _validate_resource_envelope
+from tools.resource_limits import _validate_resource_envelope
 
 
 def _game(owner, *, completed=True, valid=True, elapsed=1.0, nodes=1_000,

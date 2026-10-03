@@ -8,7 +8,7 @@ from scripts import f153_sigma070_gen1_second_opening_candidate_screen as screen
 from scripts import f153_shogi_material_mutation_root_sensitivity as f153
 from scripts import f153_sigma070_gen1_single_opening_population_screen as first
 from scripts.f144_shogi_material_only_arena_evolution import GEN0_SEED, gen0_vector
-from tools.generic_chess_flow import _validate_resource_envelope
+from tools.resource_limits import _validate_resource_envelope
 
 
 ROOT = Path(screen.__file__).resolve().parents[1]

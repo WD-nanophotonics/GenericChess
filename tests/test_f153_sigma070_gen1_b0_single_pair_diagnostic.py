@@ -11,7 +11,7 @@ from scripts import f153_sigma070_mutant4_fresh_single_pair as prior_single_pair
 from scripts import f158_shogi_sigma070_single_pair_diagnostic as prior_bounded_diagnostic
 from scripts import f153_shogi_material_mutation_root_sensitivity as mutations
 from scripts.f144_shogi_material_only_arena_evolution import GEN0_SEED, gen0_vector
-from tools.generic_chess_flow import _validate_resource_envelope
+from tools.resource_limits import _validate_resource_envelope
 
 
 def _raw_game(owner, *, winner, elapsed=90.0, nodes=101_000, plies=128,

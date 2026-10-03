@@ -15,6 +15,14 @@ ACTIVITY = STATE / "activity.json"
 PATROLS = STATE / "patrol.json"
 
 
+def consultation_summary(result: dict) -> dict:
+    return {key: result[key] for key in ('request_id', 'state', 'channel_id',
+            'thread_ts', 'response_sha256', 'unreviewed_response_sha256',
+            'evaluation', 'held_events', 'resend_permitted') if key in result} | {
+            'matched_reply_posts': len({v['message_ts'] for v in result.get('revisions', [])}),
+            'reply_revision_count': len(result.get('revisions', []))}
+
+
 def status() -> dict:
     return {
         "mode": "local-agent",
@@ -23,7 +31,7 @@ def status() -> dict:
         "dirty": bool(git("status", "--porcelain")),
         "origin_sandbox": git("rev-parse", "origin/sandbox"),
         "last_activity": read_json(ACTIVITY),
-        "last_consultation": consult_status(),
+        "last_consultation": consultation_summary(consult_status()),
     }
 
 
@@ -77,23 +85,11 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="generic-chess-local")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("status")
-    sub.add_parser("slack-credentials")
-    sub.add_parser("slack-receive")
-    sub.add_parser("slack-stop")
+    sub.add_parser("stop")
     receipt = sub.add_parser("slack-bind-sent")
     receipt.add_argument("--request-id", required=True)
     receipt.add_argument("--channel-id", required=True)
     receipt.add_argument("--message-ts", required=True)
-    event = sub.add_parser("slack-ingest")
-    event.add_argument("--event-file", type=Path, required=True)
-    waiter = sub.add_parser("slack-wait")
-    waiter.add_argument("--request-id", required=True)
-    waiter.add_argument("--seconds", type=int, default=300)
-    sub.add_parser("courier-open")
-    courier_parser = sub.add_parser("courier-read")
-    courier_parser.add_argument("--request-id", required=True)
-    courier_send = sub.add_parser("courier-send")
-    courier_send.add_argument("--request-id", required=True)
     patrol_parser = sub.add_parser("patrol")
     patrol_parser.add_argument("--record", action="store_true")
     n = sub.add_parser("note")
@@ -105,11 +101,13 @@ def parser() -> argparse.ArgumentParser:
     c.add_argument("--begin-send", metavar="REQUEST_ID")
     cs = sub.add_parser("consult-status")
     cs.add_argument("--request-id")
+    cs.add_argument("--full", action="store_true", help="include full request/reply evidence")
     rec = sub.add_parser("reconcile")
     rec.add_argument("--request-id", required=True)
     rec.add_argument("--snapshot-file", type=Path)
     rec.add_argument("--decision", choices=["adopt", "defer", "reject"])
     rec.add_argument("--reason")
+    rec.add_argument("--full", action="store_true", help="include full request/reply evidence")
     pub = sub.add_parser("publish")
     pub.add_argument("--tests", nargs="+", required=True)
     pro = sub.add_parser("promote")
@@ -126,26 +124,12 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "status":
             result = status()
-        elif args.command.startswith('slack-'):
-            from . import slack_transport as slack
-            if args.command == 'slack-credentials':
-                result = slack.credentials(set_values=True)
-            elif args.command == 'slack-receive':
-                result = slack.receive()
-            elif args.command == 'slack-stop':
-                result = slack.stop()
-            elif args.command == 'slack-bind-sent':
-                result = slack.bind_sent(args.request_id, args.channel_id, args.message_ts)
-            elif args.command == 'slack-ingest':
-                result = slack.ingest(json.loads(args.event_file.read_text(encoding='utf-8-sig')))
-            else:
-                result = slack.wait(args.request_id, args.seconds)
-        elif args.command == "courier-open":
-            from .courier import open_browser
-            result = open_browser()
-        elif args.command in {"courier-read", "courier-send"}:
-            from .courier import exchange
-            result = exchange(args.request_id, send=args.command == "courier-send")
+        elif args.command == 'stop':
+            from .slack_transport import stop
+            result = stop()
+        elif args.command == 'slack-bind-sent':
+            from .slack_transport import bind_sent
+            result = bind_sent(args.request_id, args.channel_id, args.message_ts)
         elif args.command == "patrol":
             result = patrol(args.record)
         elif args.command == "note":
@@ -176,6 +160,8 @@ def main(argv: list[str] | None = None) -> int:
             result = publish(args.tests)
         else:
             result = promote(args.candidate, args.tests)
+        if args.command in {'consult-status', 'reconcile'} and not args.full:
+            result = consultation_summary(result)
         print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
         return 0
     except (LocalFlowError, OSError, ValueError, json.JSONDecodeError) as exc:

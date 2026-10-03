@@ -11,15 +11,11 @@ clone the verified Git bundle into an empty destination and supplement it with
 the recorded research artifacts, external memory and consultation evidence.
 Build a fresh virtual environment rather than copying a relocated `.venv`.
 
-Bind the existing ordinary Chat advisor by its project and conversation IDs,
-verified against a historical receipt and native chat contents. Requalify
-communication and quota behavior for that App/account before enabling daily
-consultation. Never treat a local path string as proof of advisor file access.
-Use bounded code content when direct local access is unavailable.
-
-Register one native heartbeat on the same Agent chat only after acceptance;
-do not install old Windows dispatch scripts or revive old Worker/Goal policy.
-Git is final delivery; there is no Git-backed communication/ownership capsule.
+Bind Slack/dot using the verified workspace, channel and account IDs recorded
+in docs/operations/SLACK_WORKFLOW.md. Use active Agent reads/waits and one native
+two-hour continuation of this same chat. No extra receiver app or instant model
+wake is required by the current user instruction. Never infer local file access
+from path strings; send bounded code and evidence with content hashes.
 
 For rollback, retain the new checkout and its changes. Extract a verified
 archive to a separate location. Historical Git worktree pointers preserve their

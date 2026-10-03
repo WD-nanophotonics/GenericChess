@@ -4,7 +4,7 @@ from pathlib import Path
 
 from scripts import f153_sigma070_mutant4_complete_owner1 as owner1
 from scripts import f149_shogi_material_score_race_deep_openings as race
-from tools.generic_chess_flow import _validate_resource_envelope
+from tools.resource_limits import _validate_resource_envelope
 
 
 ROOT = Path(owner1.__file__).resolve().parents[1]

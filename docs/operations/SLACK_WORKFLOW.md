@@ -1,163 +1,96 @@
-# GenericChess Slack workflow
+# Slack/dot communication manual
 
-Status on 2026-10-03: implementation staged, automatic dispatch disabled.
-The existing Slack plugin read/write, manual dot round trip and event-triggered
-dot round trip passed. Socket Mode live receipt, latency and reconnection have
-not passed. The paused heartbeat stays paused. Courier and native Chat
-sending stay disabled; historical records remain evidence.
+The current user accepted active Agent plugin reads/waits, with one native
+same-chat heartbeat every two hours for recovery. A separate Socket Mode app
+and immediate model wake are no longer required. Their prototype is historical
+text only; no token, daemon, Windows task or extra model is needed here.
 
-## Verified destination and roles
+## Destination and evidence
 
-- Workspace: NanoMelon, `T0C6A46B55H`.
-- Public channel: `#generic-chess`, `C0C6L21UU20`.
-- Plugin-authenticated sender: W D, `U0C6G6AU6MQ`.
-- Actual dot reply on the test thread also used `U0C6G6AU6MQ`.
-- Channel ChatGPT bot `U0C6L1MJS0L` is not a verified automatic route to dot.
-- Test: `GC-SLACK-20261003-01`, root `1791024782.466849`.
-  [Test thread](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791024782466849).
+Workspace NanoMelon T0C6A46B55H; public channel #generic-chess C0C6L21UU20.
+Sender and current dot reply identity: verified user U0C6G6AU6MQ. TYPE/ID are
+role/correlation markers, not independent process authentication. The installed
+ChatGPT bot is not used as a verified reply or wake identity.
 
-The root was posted at 19:53:02 JST; dot replied at 19:58:00 JST after
-the user asked it to inspect the channel. That measures approximately 298
-seconds of manual-trigger/reply delay, not receiver latency. No mechanical
-receiver was running. Full plugin evidence is in Git-ignored
-`.local_agent/rebuild/slack-probe-01-thread.json`.
+[Manual round trip](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791024782466849)
+and [event round trip](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791025803999159)
+passed on 2026-10-03. The event test was sent at 20:10:03 JST and replied at
+20:10:50 JST. Dot reported event arrival about 20:10:11, no manual check and
+no additional worker. The Agent independently read Slack timestamps/body.
+Dot subscription covers channel requests and thread replies; it ignores its
+own replies, result records and receipts. No fixed latency guarantee is inferred.
+Dot's native ability to push into this local Codex chat is unverified and not
+needed. The Agent intentionally uses active reads, backed by continuation.
 
-At 20:06:42 JST, dot reported its channel new-message subscription was enabled,
-including thread replies. A fresh root `GC-SLACK-20261003-WAKE-02` was posted
-at 20:10:03 JST; dot replied at 20:10:50 JST and explicitly confirmed Slack
-event activation, approximately 20:10:11 event arrival, no manual check and no
-extra Work/Codex worker. These activation/no-worker facts are dot's report;
-the Slack timestamps and same-thread response were independently read by the
-local Agent. They are one observation, not a latency guarantee.
-[Event test thread](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791025803999159).
-Raw evidence is `.local_agent/rebuild/slack-wake-02-thread.json` (ignored).
+[Official dot documentation](https://learn.chatgpt.com/docs/dots) states dot
+conversations do not count toward ChatGPT usage; Work/Codex delegation consumes
+those products' allowances. Local Agent/heartbeat still use their allowance.
+We qualify the no-extra-worker Slack consultation protocol, not native Chat
+sending, account-wide zero usage or arbitrary delegation by dot.
 
-Dot explicitly limits the verified native event capability to Slack→dot and
-dot→Slack. It has not verified pushing a reply into or waking this local Codex
-chat. The local Agent read the test reply using the plugin; it was not a Socket
-Mode receive test. Do not replace the local receiver on that evidence.
+## Durable request and reply procedure
 
-Shared user identity proves the Slack account only. TYPE and REQUEST_ID route
-messages, not authenticate the producing process. Unknown actors, mismatched
-IDs and threads are held. If independent dot bot identity is later verified,
-configure user/bot/app metadata explicitly; do not silently change bindings.
-Missing formatting does not destroy useful text: every target-channel event
-is persisted, but incomplete replies need explicit review before adoption.
+1. consult --question-file QUESTION.txt [--daily] [--code-file PROJECT_FILE]
+   prepares an immutable REQUEST_ID/content hash/payload hash. Message carries
+   TYPE=AGENT_REQUEST, project, committed base SHA and local code snapshot hashes.
+   Limit is 4800 characters; prepare a reviewed attachment for larger evidence.
+2. consult --begin-send REQUEST_ID commits SEND_UNCERTAIN before returning
+   one Slack plugin send action. Send that exact payload to that channel once.
+3. Persist the receipt with slack-bind-sent --request-id REQUEST_ID
+   --channel-id C0C6L21UU20 --message-ts 'ROOT_TS'. Always quote the timestamp;
+   PowerShell numeric conversion can round away its microseconds. The adapter
+   requires all six fractional digits. If send acknowledgement is lost,
+   search/read the original channel root and reconcile exact original payload.
+   An absent history match never authorizes resending or switching transports.
+4. Use the calling Agent's Slack read_thread for the bound root, enough capacity
+   and all pages. Preserve the raw result under ignored .local_agent/slack/reads.
+   Wrap it in this JSON and pass to reconcile --snapshot-file FILE:
 
-## Create the separate receive-only app
-
-This app receives local evidence; it does not wake dot, send messages or call
-models. Dot's new-message monitor is configured independently on the dot side.
-
-1. Open [Slack app management](https://api.slack.com/apps), choose Create New
-   App / From a manifest, and select **NanoMelon**. Import
-   `docs/operations/slack-receiver-manifest.json`. Verify the sole bot OAuth
-   scope is `channels:history`, with `message.channels` event subscription.
-   Do not grant `chat:write`, DM/private-channel history or unrelated scopes.
-2. Install the app in NanoMelon. In Slack, add **GenericChess Inbox** only to
-   `#generic-chess`. Channel-history access follows app membership; the scope
-   itself is not a channel allowlist. The receiver also enforces team/channel
-   IDs and rejects all other targets. Keep membership limited to this channel.
-3. Enable Socket Mode (the manifest enables it). Under Basic Information,
-   generate an app-level token with `connections:write`. This scope opens a
-   websocket; it does not authorize posting messages. Obtain the bot OAuth
-   token from OAuth & Permissions.
-4. In a local terminal in this checkout, run:
-
-   ```powershell
-   .venv\Scripts\python.exe -m tools.local_agent.cli slack-credentials
+   ```json
+   {"source":"Slack plugin read_thread","team_id":"T0C6A46B55H",
+    "channel_id":"C0C6L21UU20","thread_ts":"ROOT_TS",
+    "tool_result":{"content":["exact tool content blocks"]}}
    ```
 
-   Enter app and bot tokens at hidden prompts. Do not paste tokens in this
-   chat, files, command arguments, Git or logs. They are stored directly using
-   keyring's Windows Credential Manager backend under
-   `GenericChess-Slack-T0C6A46B55H`.
-5. After installation/membership is confirmed, set only
-   `.local_agent/slack.json` `receiver_enabled=true`; preserve `stopped`.
-   If explicitly stopped, user authorization to resume is required before
-   clearing that flag. Run `slack-receive` in a dedicated local terminal.
-   Single-instance lock prevents a second receiver. No Windows scheduler or
-   separate model execution is created. Credential/auth errors remain fatal;
-   the SDK manages websocket reconnects without resending consultations.
+   The actual content blocks are objects copied from the tool, not fabricated
+   strings. Current importer requires complete server pagination and exact
+   root account/ts/payload, allowing the plugin's prose paragraph-separator
+   rendering but preserving code whitespace. If paginated or an ambiguous rendered delimiter is
+   encountered, retain the full tool evidence for review; do not resend.
+5. Reconcile matches verified identity, thread and exact ID. All matched posts
+   are retained, including revisions. Unknown/conflicting messages are held.
+   Useful unformatted body remains in raw evidence, not silently discarded.
+   Record --decision adopt|defer|reject --reason EVIDENCE. Later revisions never
+   automatically replace an evaluated answer or execute a decision twice.
+   Read all pages and posts again at the next useful checkpoint: completion is
+   not proof dot has finished every supplement. unreviewed_response_sha256 flags
+   later evidence against the pinned decision; a renewed explicit decision reviews
+   all current posts. --full expands default concise status/reconcile output.
+   REPLY_COMPLETE=true is a convenient advisor hint, never a prerequisite or proof
+   of no future replies. Early workflow changes should address observed friction,
+   with dot consulted in the existing thread; avoid new framework work by default.
+6. While active, briefly wait then read again when an answer matters, and read
+   at research checkpoints. Empty/generating/limited/error reads keep the same
+   request pending. Continue independent work and respect retry cooldowns.
+   Two-hour continuation reconciles pending IDs after an interrupted turn.
+   This explicit active reading cadence replaces the earlier five-minute
+   automatic-inbox acceptance gate at the user's request.
 
-The preflight verifies the bot's workspace and exact `channels:history` scope.
-If Slack does not expose the scopes in the auth response, it fails closed;
-inspect the app configuration rather than weakening the scope gate silently.
-Socket Mode requires no public HTTP endpoint.
-[Slack documentation](https://docs.slack.dev/apis/events-api/using-socket-mode/).
+New questions use roots. Evidence and decisions stay in their original thread,
+TYPE=AGENT_EVIDENCE/AGENT_RESULT. Only explicit new AGENT_REQUEST requests a
+review. No self-reply loop, automatic resend or extra delegation. Daily 10:00
+Tokyo inspection is the main consultation window for major problems or new
+theory. Skip empty/duplicate questions and missed-day catchup. Two-hour local
+inspections never require dot discussion/reply. Default to independent project
+work between daily inspections; consult only concrete issues worth discussing.
+Advice can be read and assessed locally without sending a result/acknowledgement;
+follow-ups may wait for the next consultation. Do not spend tokens on routine
+back-and-forth or treat silence as a blocker to independent research.
 
-## Calling Agent interface after acceptance
+## Stop, rollback and isolation
 
-Set `.local_agent/advisor.json` transport to `slack` only after acceptance;
-retain the earlier configuration as recovery evidence. The `consult`,
-`consult-status` and `reconcile` entry points then select this adapter.
-
-```powershell
-.venv\Scripts\python.exe -m tools.local_agent.cli consult --question-file QUESTION.txt
-.venv\Scripts\python.exe -m tools.local_agent.cli consult --begin-send REQUEST_ID
-```
-
-`begin-send` commits SEND_UNCERTAIN before returning the immutable message
-and destination for the calling Agent's `Slack` plugin. Invoke that plugin
-once, then persist its successful receipt:
-
-```powershell
-.venv\Scripts\python.exe -m tools.local_agent.cli slack-bind-sent --request-id REQUEST_ID --channel-id C0C6L21UU20 --message-ts ROOT_TS
-.venv\Scripts\python.exe -m tools.local_agent.cli reconcile --request-id REQUEST_ID
-.venv\Scripts\python.exe -m tools.local_agent.cli slack-wait --request-id REQUEST_ID --seconds 300
-```
-
-Wait is mechanical only; on Windows it blocks on a local event notification
-issued after the inbox commit, rather than polling Slack or the SQLite inbox.
-Shell calls must yield in under 60 seconds while it runs. This notifies an
-already-running mechanical wait process; it does not wake an idle model chat.
-Read inbox on activity
-checkpoints and before continuing a restored chat. A message after uncertain
-send is reconciled against its exact original payload/account/channel; never
-send again because the receipt was lost. If event history missed that root,
-use plugin thread reads and retain the evidence for explicit binding review.
-No automatic history search or resend is performed by the read-only app.
-
-The inbox is SQLite WAL under Git-ignored `.local_agent/slack`. Event IDs
-deduplicate retries. Text, sender metadata, original payload, thread, edits
-and receive timestamps are durable. Reconciliation timestamps Agent reads;
-reply revisions are retained without replacing an adopted conclusion.
-TYPE=AGENT_RESULT and ordinary receipts do not create consultations.
-
-Messages include a unique ID, project and committed base SHA. Local code
-snapshots have content hashes and are not claimed to equal the base commit.
-The single message is bounded to 4800 characters; larger evidence requires a
-reviewed attachment. Sending errors (login, rate limit or disconnection) leave
-the original request uncertain and never permit an automatic retry.
-
-Dot must confirm a channel-scoped monitor of explicit AGENT_REQUEST, including
-thread replies, ignoring its own replies/results/receipts. Only explicit new
-review requests trigger it. No automatic Work/Codex delegation is permitted.
-[Official dot documentation](https://learn.chatgpt.com/docs/dots) says dot
-conversations do not count toward ChatGPT usage, while delegated Work/Codex
-tasks consume their respective allowances. This is not a claim that local
-Agent execution is free or that account counters isolate consultation usage.
-
-## Remaining acceptance and stop
-
-- Receive a real dot reply through the live Socket Mode app and match exact
-  account, thread and request ID. Verify reply-post→persist and post→active
-  Agent-read are each within 300 seconds. Dot generation time is separate.
-- Validate real disconnect/reconnect, auth expiry and rate limit behavior;
-  synthetic tests alone do not qualify these live paths.
-- Dot's channel event subscription and fresh request activation passed the
-  WAKE-02 observation; ongoing latency/reliability and loop behavior remain
-  separate checks.
-- Verify same-chat heartbeat continuation and no overlap before activation.
-- Keep only this Slack consultation channel active after acceptance, and
-  update the existing paused heartbeat rather than creating another one.
-
-`slack-stop` persists stopped=true, disables dispatch/receiver and makes the
-running receiver exit. The calling Agent must also pause the existing native
-heartbeat and tell dot to cancel this channel's monitoring. It must not
-claim those remote actions were done merely because the local stop succeeded.
-Restart never clears stop state.
-
-Rollback: stop receiver, keep dispatch disabled and preserve inbox/config/probe
-evidence. Do not automatically revive Courier, native Chat, old schedules or
-queues. Git and scientific work artifacts are unaffected.
+stop persists flags; the calling Agent pauses the native heartbeat and cancels
+dot monitoring. Restart never resumes a stop. Rollback preserves ledger, raw
+reads, code and Git history; it does not restore older transport/Goal queues.
+SQLite ledger is ignored .local_agent/slack/inbox.sqlite3; credentials are
+managed by the installed Slack plugin, never extracted into this project.

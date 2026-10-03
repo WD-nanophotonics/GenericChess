@@ -102,4 +102,19 @@ Future work may consider a lightweight state-dependent value `V_i(s)=V_{0,i}+ΔV
 
 ## Evidence required for mainline completion
 
+`SECURED_EXCHANGE_TASK_CONTRACT.md` records the first accepted Slack/dot research
+consultation and a new, explicitly conditional candidate: a context average of
+optimal focal-action/adversarial-reply binary token-gain success. Its exact
+two-context algebra distinguishes strategic choice from route/action averages;
+optional bad actions and duplicate descriptions do not lower its score. Three
+fixed public legal-action witnesses confirm Chess removal +1, Shogi custody
+transfer +2, and hand deployment 0, with complete opponent replies at low cost.
+These establish a task contract, not type values or predictive success. A common
+physical-context law, invalid-configuration accounting, the horizon and additive
+material interpretation remain assumptions requiring separate evidence. The
+research objective permits motivated approximation assumptions; it does not
+require rules to select a unique context distribution. Do not repeat recapture
+witnesses or the old failed proxies as a substitute for that remaining question.
+
+
 The Agent task ends successfully only when project evidence supports the objective above: a specified, inexpensive, game-independent material-prior construction derived from executable RuleSet consequences; the material-relevant semantics it uses verified on Chess, Standard Shogi, and Xiangqi; a formula and evaluation protocol frozen before Xiangqi holdout inspection; Chess validation, Shogi control, and Xiangqi holdout results reported with failures and limitations; and relevant correctness and cost tests passing on the published result. Document the derivation, observations, and remaining limits so a reader can distinguish the rule-derived claim from deployment choices or fitted references. If the evidence instead rejects a candidate or leaves a required premise unsupported, update the scientific route and continue the same task. A completed probe, batch, scheduled turn, checkpoint, or negative result is not evidence that the mainline objective is complete.

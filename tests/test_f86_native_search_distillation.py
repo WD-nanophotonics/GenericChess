@@ -4,7 +4,7 @@ import json
 
 from generic_chess.learning.selfplay import SelfPlayConfig
 from scripts.f86_native_search_distillation import ROOT, WORK_ORDER
-from tools.generic_chess_flow import repo_relative_path
+from tools.resource_limits import repo_relative_path
 
 
 def test_f86_contract_uses_deterministic_native_search_selfplay():

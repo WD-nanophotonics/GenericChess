@@ -18,8 +18,8 @@ from pathlib import Path
 
 
 WORKSPACE = Path(__file__).resolve().parents[1]
-REGISTRY_NAME = ".generic_chess_flow/safe_cleanup_registry.json"
-PROTECTED_PARTS = {".git", ".generic_chess_flow", ".courier_outbox", ".venv"}
+REGISTRY_NAME = ".local_agent/cleanup-registry.json"
+PROTECTED_PARTS = {".git", ".local_agent", ".generic_chess_flow", ".courier_outbox", ".venv"}
 
 
 def _reparse(path: Path) -> bool:
