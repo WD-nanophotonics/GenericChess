@@ -20,15 +20,19 @@ or a publication gate. Continue independent research when Chat is unavailable.
 Consult daily at 10:00 Asia/Tokyo when there is a substantive new question,
 and additionally when needed. Consolidate identical questions, reconcile an
 uncertain request before sending another, and do not catch up missed days.
-Use `consult`, `consult-status` and `reconcile` through the calling Agent's
-native app tools. Read-only local code access is unavailable in the qualified
+Use `consult`, `consult-status` and `reconcile` through the selected transport.
+Native sending remains unqualified for extra quota; the user selected a fresh
+fixed-URL Courier fallback, pending browser login, ordinary Chat mode and round
+trip acceptance. Read-only local code access is unavailable in the qualified
 Chat; provide bounded code content with its hash. Git is version control and
 final delivery, never a prerequisite to asking a question.
 
 Ordinary Chat and mechanical transport must not launch extra Work/worker
 execution. Consult dispatch stays disabled until quota qualification is
 recorded in `.local_agent/advisor.json`; do not silently relax this gate,
-switch channels, resend an uncertain request or revive the archived Courier.
+switch channels or resend an uncertain request. The new Courier is mechanical
+browser code in this checkout; never revive archived queues, automatic resend,
+Supervisor policies or other projects' browser profiles.
 
 One native heartbeat may continue this same chat every two hours after
 acceptance. It must not overlap an active turn. No Windows scheduler, old Goal,

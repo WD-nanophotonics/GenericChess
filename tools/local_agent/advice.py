@@ -125,10 +125,15 @@ def begin_send(request_id):
             raise LocalFlowError('target or transport changed; reconcile original binding')
         message = Path(request['message_file']).read_text(encoding='utf-8')
         if sha(message.encode()) != request['payload_sha256']: raise LocalFlowError('immutable payload changed')
-        if request['state'] != 'PREPARED': return {**request, 'action': 'read_thread', 'resend_permitted': False}
+        if request['state'] != 'PREPARED': return {**request, 'action': 'read_thread' if request['transport'] == 'native' else 'courier-read', 'resend_permitted': False}
         if not config.get('enabled') or config.get('quota_status') != 'verified_no_extra_worker':
             return {**request, 'action': 'CAPABILITY_PENDING', 'quota_status': config.get('quota_status', 'unverified')}
-        if request['transport'] != 'native': raise LocalFlowError('Courier is archived; requalify it before selecting')
+        if request['transport'] == 'courier':
+            if config.get('courier_mode') != 'ordinary_chat_verified':
+                return {**request, 'action': 'CAPABILITY_PENDING'}
+            # The mechanical driver persists SEND_UNCERTAIN immediately before
+            # browser submission under this same project lock.
+            return {**request, 'action': 'courier-send', 'resend_permitted': False}
         request['state'] = 'SEND_UNCERTAIN'; request['send_started_at'] = now().isoformat(); write_json(LEDGER, ledger)
         return {**request, 'action': 'send_message_to_thread', 'prompt': message}
 

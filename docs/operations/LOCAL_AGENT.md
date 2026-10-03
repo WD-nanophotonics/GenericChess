@@ -36,10 +36,27 @@ Distinct on-demand questions are allowed. Identical content is deduplicated.
 Do not send catch-up consultations for missed days. No substantive question
 means no request. A pending request is reconciled before another is prepared.
 
-The Courier implementation is preserved in the external archive and existing
-verified backups. It is not selected alongside native transport. Requalification
-must establish a working launcher and ordinary Chat accounting before choosing
-it; no uncertain native request may be silently transferred to Courier.
+The user subsequently selected a fresh fixed-URL Courier fallback because
+native extra quota remains unverified. `courier-open` uses the existing Chrome
+binary and a fresh project-owned profile under `.local_agent/courier/profile`.
+It never imports archived credentials, queues, owner leases or automatic resend.
+Install `.[courier]` for Playwright; no additional model/API dependency exists.
+`consult --begin-send` returns `courier-send` only after qualification. The driver
+persists `SEND_UNCERTAIN` before submission; `courier-read` and an uncertain
+`courier-send` are read-only and never resubmit. Target URL, immutable body,
+rendered turn and ordinary Chat mode must match. Native and Courier are never
+active senders simultaneously; completed native probe evidence stays intact.
+Current preflight is `LOGIN_REQUIRED`: no Courier message has been sent.
+
+Official Quick chat documentation establishes an ordinary Chat surface, but
+does not specify billing for the native send-message tool. The account's usage
+tool reports the aggregate Codex bucket, not request-level attribution. Native
+zero extra usage is therefore unverified. Courier's code has no model/Work
+launches; live ordinary Chat mode and a real reply still require acceptance.
+Ordinary Chat's own limits or eligible account usage remain applicable whichever
+transport sends the question. A fixed URL does not change the destination's
+billing rules. See https://learn.chatgpt.com/docs/projects and
+https://learn.chatgpt.com/docs/pricing.
 
 ## Continuation and user stop
 

@@ -77,6 +77,11 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="generic-chess-local")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("status")
+    sub.add_parser("courier-open")
+    courier_parser = sub.add_parser("courier-read")
+    courier_parser.add_argument("--request-id", required=True)
+    courier_send = sub.add_parser("courier-send")
+    courier_send.add_argument("--request-id", required=True)
     patrol_parser = sub.add_parser("patrol")
     patrol_parser.add_argument("--record", action="store_true")
     n = sub.add_parser("note")
@@ -109,6 +114,12 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "status":
             result = status()
+        elif args.command == "courier-open":
+            from .courier import open_browser
+            result = open_browser()
+        elif args.command in {"courier-read", "courier-send"}:
+            from .courier import exchange
+            result = exchange(args.request_id, send=args.command == "courier-send")
         elif args.command == "patrol":
             result = patrol(args.record)
         elif args.command == "note":

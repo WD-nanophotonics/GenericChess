@@ -1,5 +1,12 @@
 # GenericChess workflow
 
+The selected fallback is a fresh fixed-URL Courier. Native extra quota remains
+unverified. `courier-open` opens its dedicated Chrome profile; login and ordinary
+Chat mode must be verified before any send. `courier-send --request-id <id>`
+submits at most once; `courier-read --request-id <id>` only reconciles a reply.
+Neither command launches another model, Work task, queue or worker. Ordinary
+Chat's own model limits still apply; mechanical transport does not waive them.
+
 One local Agent researches, implements, tests, records evidence and continues.
 The ordinary Chat advisor supplies evidence and directions; the Agent records
 its evaluation and keeps working. User instructions take precedence.
