@@ -314,6 +314,19 @@ all physical successor identities, was retained. No new labels or independent
 validation claim follows. Do not repeat old controls or rescue the candidate
 with selective relabelling; specify new use/evidence prerequisites first.
 
+`LOCAL_CAPTURE_ATTRIBUTION_RESULTS.md` then freezes and resolves the missing
+complete-reply evidence on only the eight exposed replacement-free references:
+63 Chess/55 Shogi capture actions reproduce saved global zeros/reply counts,
+but 20/31 are fully locally secured. All replies' physical custody/terminal
+labels and state hashes are retained; 4,971 transitions/1.968 s and independent
+public replay tests pass. This is target separation on diagnostic data, distinct
+from the twelve older substituted-focal zeros, not a rescue of old coefficients
+or independent validation. Retain local tactical service only as a possible
+structural diagnostic; declare its intended use/new independent predictive
+contract before any coefficient batch. A global material/WDL-use bridge is
+still unsupported; unrelated losses, sacrifices, delayed gain and overlap
+remain limitations. Deployment labels and Xiangqi holdout stay unread.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
