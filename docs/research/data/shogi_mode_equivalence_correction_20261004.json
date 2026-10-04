@@ -1,0 +1,67 @@
+{
+  "complete": true,
+  "scope": "targeted previously-unexecuted Shogi custody controls only",
+  "controls": [
+    {
+      "owner": 0,
+      "victim_base": "G",
+      "victim_current": "G",
+      "choices": 16,
+      "capture": "{\"actor_type_id\":\"R\",\"from\":[4,4],\"geometry_id\":\"g22\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_031\",\"promotion_target_id\":null,\"to\":[4,5]}",
+      "held_after": {
+        "G": 1
+      },
+      "victim_tag_lost": "1",
+      "history_length": 2
+    },
+    {
+      "owner": 0,
+      "victim_base": "P",
+      "victim_current": "TP",
+      "choices": 16,
+      "capture": "{\"actor_type_id\":\"R\",\"from\":[4,4],\"geometry_id\":\"g22\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_031\",\"promotion_target_id\":null,\"to\":[4,5]}",
+      "held_after": {
+        "P": 1
+      },
+      "victim_tag_lost": "1",
+      "history_length": 2
+    },
+    {
+      "owner": 1,
+      "victim_base": "G",
+      "victim_current": "G",
+      "choices": 16,
+      "capture": "{\"actor_type_id\":\"R\",\"from\":[4,4],\"geometry_id\":\"g22\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_031\",\"promotion_target_id\":null,\"to\":[4,3]}",
+      "held_after": {
+        "G": 1
+      },
+      "victim_tag_lost": "1",
+      "history_length": 2
+    },
+    {
+      "owner": 1,
+      "victim_base": "P",
+      "victim_current": "TP",
+      "choices": 16,
+      "capture": "{\"actor_type_id\":\"R\",\"from\":[4,4],\"geometry_id\":\"g22\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_031\",\"promotion_target_id\":null,\"to\":[4,3]}",
+      "held_after": {
+        "P": 1
+      },
+      "victim_tag_lost": "1",
+      "history_length": 2
+    }
+  ],
+  "public_transitions": 4,
+  "enumerated_choices": 128,
+  "prior_chess_transitions": 112,
+  "combined_public_transitions": 116,
+  "elapsed_seconds": 0.10999999986961484,
+  "sha256": {
+    "docs/research/MODE_EQUIVALENCE_PROTOCOL.md": "d43c9875fbedbe0572d463ed1eb1482f33628f99964f027f1e3319d4760727f7",
+    "docs/research/MODE_EQUIVALENCE_CORRECTION.md": "86787e26fd65533896f1e19daa8649d83be597b217facae6b69475a560190e3f",
+    "scripts/audit_mode_equivalence.py": "51495b04e3367a29d3a3db8f3e2663b20caf3b854bf33df78108f1da217b392f",
+    "scripts/audit_shogi_mode_equivalence_correction.py": "583dc797bb1d4cc59dff0ccb139e3a961a3675bc325a25747bbe0d7ddf418e40",
+    "scripts/owned_tag_trace.py": "b1d0025878ce5fbd232df2a1b9bd2d0ada1bebe69cd56e0f65174788703b493d",
+    "generic_chess/rules/standard_shogi.py": "a2a0f0e1b1076b8cc365a2bdcea3fa105730935b77fce3970790125f4d502923"
+  }
+}

@@ -1,0 +1,537 @@
+{
+  "complete": true,
+  "scope": "finite-reference sampled H2 closure/path diagnostic; no population prior or goal label",
+  "reference": [
+    {
+      "game": "chess",
+      "mode": [
+        "board",
+        "P",
+        "P"
+      ],
+      "g": "0",
+      "choices": 44,
+      "reward_sum": "0",
+      "nonzero_choices": {}
+    },
+    {
+      "game": "chess",
+      "mode": [
+        "board",
+        "P",
+        "Q"
+      ],
+      "g": "3/68",
+      "choices": 68,
+      "reward_sum": "3",
+      "nonzero_choices": {
+        "{\"actor_type_id\":\"Q\",\"from\":[3,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[0,4]}": "1",
+        "{\"actor_type_id\":\"Q\",\"from\":[3,4],\"geometry_id\":\"g22\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[3,5]}": "1",
+        "{\"actor_type_id\":\"Q\",\"from\":[3,4],\"geometry_id\":\"g23\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[3,2]}": "1"
+      }
+    },
+    {
+      "game": "chess",
+      "mode": [
+        "board",
+        "Q",
+        "Q"
+      ],
+      "g": "1/12",
+      "choices": 48,
+      "reward_sum": "4",
+      "nonzero_choices": {
+        "{\"actor_type_id\":\"Q\",\"from\":[6,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[3,4]}": "1",
+        "{\"actor_type_id\":\"Q\",\"from\":[6,4],\"geometry_id\":\"g23\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[6,2]}": "1",
+        "{\"actor_type_id\":\"Q\",\"from\":[6,4],\"geometry_id\":\"g25\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[5,5]}": "1",
+        "{\"actor_type_id\":\"Q\",\"from\":[6,4],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[4,2]}": "1"
+      }
+    },
+    {
+      "game": "shogi",
+      "mode": [
+        "board",
+        "P",
+        "P"
+      ],
+      "g": "0",
+      "choices": 51,
+      "reward_sum": "0",
+      "nonzero_choices": {}
+    },
+    {
+      "game": "shogi",
+      "mode": [
+        "board",
+        "P",
+        "TP"
+      ],
+      "g": "1/54",
+      "choices": 54,
+      "reward_sum": "1",
+      "nonzero_choices": {
+        "{\"actor_type_id\":\"TP\",\"from\":[6,6],\"geometry_id\":\"g56\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_105\",\"promotion_target_id\":null,\"to\":[6,5]}": "1"
+      }
+    },
+    {
+      "game": "shogi",
+      "mode": [
+        "hand",
+        "P"
+      ],
+      "g": "0",
+      "choices": 54,
+      "reward_sum": "0",
+      "nonzero_choices": {}
+    }
+  ],
+  "paths": [
+    {
+      "game": "chess",
+      "mode": [
+        "board",
+        "P",
+        "P"
+      ],
+      "seed": 20261004201,
+      "steps": [
+        {
+          "ply": 0,
+          "choice": "{\"actor_type_id\":\"R\",\"from\":[5,4],\"geometry_id\":\"g29\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_07_r_capture\",\"promotion_target_id\":null,\"to\":[2,4]}",
+          "complete_choices": 44,
+          "reward": "0",
+          "parent_history_length": 1,
+          "child_history_length": 2,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 1,
+          "choice": "{\"actor_type_id\":\"Q\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[5,2]}",
+          "complete_choices": 35,
+          "reward": "0",
+          "parent_history_length": 2,
+          "child_history_length": 3,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 2,
+          "choice": "{\"actor_type_id\":\"P\",\"from\":[5,6],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":\"B\",\"to\":[5,7]}",
+          "complete_choices": 43,
+          "reward": "0",
+          "parent_history_length": 3,
+          "child_history_length": 4,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 3,
+          "choice": "{\"actor_type_id\":\"N\",\"from\":[7,2],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,3]}",
+          "complete_choices": 41,
+          "reward": "0",
+          "parent_history_length": 4,
+          "child_history_length": 5,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        }
+      ],
+      "complete": true,
+      "current_reward": "0",
+      "sampled_second_reward": "0",
+      "second_expected_reward": "0",
+      "prediction_interval": [
+        "0",
+        "0"
+      ],
+      "residual_interval": [
+        "0",
+        "0"
+      ],
+      "surviving_mode_mass": {
+        "('board', 'P', 'P')": "1"
+      },
+      "endpoint": null,
+      "final_history_length": 5
+    },
+    {
+      "game": "chess",
+      "mode": [
+        "board",
+        "P",
+        "Q"
+      ],
+      "seed": 20261004202,
+      "steps": [
+        {
+          "ply": 0,
+          "choice": "{\"actor_type_id\":\"B\",\"from\":[5,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[7,3]}",
+          "complete_choices": 68,
+          "reward": "0",
+          "parent_history_length": 1,
+          "child_history_length": 2,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 1,
+          "choice": "{\"actor_type_id\":\"N\",\"from\":[0,4],\"geometry_id\":\"g15\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[2,3]}",
+          "complete_choices": 34,
+          "reward": "0",
+          "parent_history_length": 2,
+          "child_history_length": 3,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 2,
+          "choice": "{\"actor_type_id\":\"B\",\"from\":[1,3],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[0,4]}",
+          "complete_choices": 60,
+          "reward": "0",
+          "parent_history_length": 3,
+          "child_history_length": 4,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 3,
+          "choice": "{\"actor_type_id\":\"B\",\"from\":[4,0],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[3,1]}",
+          "complete_choices": 38,
+          "reward": "0",
+          "parent_history_length": 4,
+          "child_history_length": 5,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        }
+      ],
+      "complete": true,
+      "current_reward": "0",
+      "sampled_second_reward": "0",
+      "second_expected_reward": "1/20",
+      "prediction_interval": [
+        "3/68",
+        "3/68"
+      ],
+      "residual_interval": [
+        "1/170",
+        "1/170"
+      ],
+      "surviving_mode_mass": {
+        "('board', 'P', 'Q')": "1"
+      },
+      "endpoint": null,
+      "final_history_length": 5
+    },
+    {
+      "game": "chess",
+      "mode": [
+        "board",
+        "Q",
+        "Q"
+      ],
+      "seed": 20261004203,
+      "steps": [
+        {
+          "ply": 0,
+          "choice": "{\"actor_type_id\":\"R\",\"from\":[7,4],\"geometry_id\":\"g31\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_07_r_capture\",\"promotion_target_id\":null,\"to\":[7,2]}",
+          "complete_choices": 48,
+          "reward": "0",
+          "parent_history_length": 1,
+          "child_history_length": 2,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 1,
+          "choice": "{\"actor_type_id\":\"Q\",\"from\":[0,4],\"geometry_id\":\"g22\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_08_q_quiet\",\"promotion_target_id\":null,\"to\":[0,3]}",
+          "complete_choices": 49,
+          "reward": "0",
+          "parent_history_length": 2,
+          "child_history_length": 3,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 2,
+          "choice": "{\"actor_type_id\":\"K\",\"from\":[3,5],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,5]}",
+          "complete_choices": 52,
+          "reward": "0",
+          "parent_history_length": 3,
+          "child_history_length": 4,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 3,
+          "choice": "{\"actor_type_id\":\"N\",\"from\":[6,2],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[7,0]}",
+          "complete_choices": 48,
+          "reward": "0",
+          "parent_history_length": 4,
+          "child_history_length": 5,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        }
+      ],
+      "complete": true,
+      "current_reward": "0",
+      "sampled_second_reward": "0",
+      "second_expected_reward": "1/13",
+      "prediction_interval": [
+        "1/12",
+        "1/12"
+      ],
+      "residual_interval": [
+        "-1/156",
+        "-1/156"
+      ],
+      "surviving_mode_mass": {
+        "('board', 'Q', 'Q')": "1"
+      },
+      "endpoint": null,
+      "final_history_length": 5
+    },
+    {
+      "game": "shogi",
+      "mode": [
+        "board",
+        "P",
+        "P"
+      ],
+      "seed": 20261004204,
+      "steps": [
+        {
+          "ply": 0,
+          "choice": "{\"actor_type_id\":\"P\",\"from\":[8,1],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,2]}",
+          "complete_choices": 51,
+          "reward": "0",
+          "parent_history_length": 1,
+          "child_history_length": 2,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 1,
+          "choice": "{\"actor_type_id\":\"G\",\"from\":[7,4],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_139\",\"promotion_target_id\":null,\"to\":[6,4]}",
+          "complete_choices": 40,
+          "reward": "0",
+          "parent_history_length": 2,
+          "child_history_length": 3,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 2,
+          "choice": "{\"actor_type_id\":\"P\",\"from\":[8,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[8,3]}",
+          "complete_choices": 49,
+          "reward": "1",
+          "parent_history_length": 3,
+          "child_history_length": 4,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 3,
+          "choice": "{\"actor_type_id\":\"N\",\"from\":[4,2],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_023\",\"promotion_target_id\":\"TN\",\"to\":[5,0]}",
+          "complete_choices": 40,
+          "reward": "0",
+          "parent_history_length": 4,
+          "child_history_length": 5,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        }
+      ],
+      "complete": true,
+      "current_reward": "0",
+      "sampled_second_reward": "1",
+      "second_expected_reward": "1/49",
+      "prediction_interval": [
+        "0",
+        "0"
+      ],
+      "residual_interval": [
+        "1/49",
+        "1/49"
+      ],
+      "surviving_mode_mass": {
+        "('board', 'P', 'P')": "1"
+      },
+      "endpoint": null,
+      "final_history_length": 5
+    },
+    {
+      "game": "shogi",
+      "mode": [
+        "board",
+        "P",
+        "TP"
+      ],
+      "seed": 20261004205,
+      "steps": [
+        {
+          "ply": 0,
+          "choice": "{\"actor_type_id\":\"TP\",\"from\":[6,6],\"geometry_id\":\"g52\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_096\",\"promotion_target_id\":null,\"to\":[5,7]}",
+          "complete_choices": 54,
+          "reward": "0",
+          "parent_history_length": 1,
+          "child_history_length": 2,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 1,
+          "choice": "{\"actor_type_id\":\"S\",\"from\":[3,8],\"geometry_id\":\"g26\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_038\",\"promotion_target_id\":null,\"to\":[3,7]}",
+          "complete_choices": 51,
+          "reward": "0",
+          "parent_history_length": 2,
+          "child_history_length": 3,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 2,
+          "choice": "{\"actor_type_id\":\"G\",\"from\":[4,4],\"geometry_id\":\"g7\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_134\",\"promotion_target_id\":null,\"to\":[3,4]}",
+          "complete_choices": 54,
+          "reward": "0",
+          "parent_history_length": 3,
+          "child_history_length": 4,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 3,
+          "choice": "{\"actor_type_id\":\"S\",\"from\":[2,1],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_042\",\"promotion_target_id\":\"TS\",\"to\":[1,0]}",
+          "complete_choices": 47,
+          "reward": "0",
+          "parent_history_length": 4,
+          "child_history_length": 5,
+          "tag_lost": "0",
+          "held_mass": "0",
+          "terminal": "ongoing"
+        }
+      ],
+      "complete": true,
+      "current_reward": "0",
+      "sampled_second_reward": "0",
+      "second_expected_reward": "1/54",
+      "prediction_interval": [
+        "1/54",
+        "1/54"
+      ],
+      "residual_interval": [
+        "0",
+        "0"
+      ],
+      "surviving_mode_mass": {
+        "('board', 'P', 'TP')": "1"
+      },
+      "endpoint": null,
+      "final_history_length": 5
+    },
+    {
+      "game": "shogi",
+      "mode": [
+        "hand",
+        "P"
+      ],
+      "seed": 20261004206,
+      "steps": [
+        {
+          "ply": 0,
+          "choice": "{\"actor_type_id\":\"K\",\"from\":[2,8],\"geometry_id\":\"g16\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_016\",\"promotion_target_id\":null,\"to\":[3,8]}",
+          "complete_choices": 54,
+          "reward": "0",
+          "parent_history_length": 1,
+          "child_history_length": 2,
+          "tag_lost": "0",
+          "held_mass": "1",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 1,
+          "choice": "{\"actor_type_id\":\"P\",\"from\":[4,1],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":\"TP\",\"to\":[4,0]}",
+          "complete_choices": 42,
+          "reward": "0",
+          "parent_history_length": 2,
+          "child_history_length": 3,
+          "tag_lost": "0",
+          "held_mass": "1",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 2,
+          "choice": "{\"actor_type_id\":\"P\",\"from\":[2,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":\"TP\",\"to\":[2,7]}",
+          "complete_choices": 59,
+          "reward": "0",
+          "parent_history_length": 3,
+          "child_history_length": 4,
+          "tag_lost": "0",
+          "held_mass": "1",
+          "terminal": "ongoing"
+        },
+        {
+          "ply": 3,
+          "choice": "{\"base_type_id\":\"P\",\"geometry_id\":\"g72\",\"kind\":\"semantic_drop\",\"pattern_id\":\"sem_00_standard_drop_contract\",\"to\":[4,7]}",
+          "complete_choices": 57,
+          "reward": "0",
+          "parent_history_length": 4,
+          "child_history_length": 5,
+          "tag_lost": "0",
+          "held_mass": "1",
+          "terminal": "ongoing"
+        }
+      ],
+      "complete": true,
+      "current_reward": "0",
+      "sampled_second_reward": "0",
+      "second_expected_reward": "0",
+      "prediction_interval": [
+        "0",
+        "0"
+      ],
+      "residual_interval": [
+        "0",
+        "0"
+      ],
+      "surviving_mode_mass": {
+        "('hand', 'P')": "1"
+      },
+      "endpoint": null,
+      "final_history_length": 5
+    }
+  ],
+  "enumerated_choices": 2316,
+  "public_transitions": 24,
+  "stop_reason": null,
+  "elapsed_seconds": 0.4850000001024455,
+  "sha256": {
+    "docs/research/OWNED_H2_PATH_PROTOCOL.md": "4855c2ad2808c4ba946218b6caaee697606662e132a053334be2c5efe421f8d6",
+    "docs/research/data/resource_mode_correction_20261004.json": "d8c207f33e2951cee2645fbbbad59db5c9eed7040c8ab2f4842729250e6ebaa9",
+    "scripts/audit_owned_h2_paths.py": "262602ca2cd8eb255a22e21fdec3cee1dbb37f3410337db3f907cdb47fb4ae95",
+    "scripts/owned_service_reward.py": "3de0a6c5af04b57acbb580f48eac8274c839461ab9157e4664271e436e5f4911",
+    "scripts/resource_mode_context.py": "9795f3692c454d61aac02f23b57715a8df1d38a6283e5c334024ece5bdf5d8b0",
+    "scripts/owned_tag_trace.py": "b1d0025878ce5fbd232df2a1b9bd2d0ada1bebe69cd56e0f65174788703b493d",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/core/transition.py": "0437cba33051366584591e5330904087e4bd12427e1e8d2ad510744fc8e02177",
+    "generic_chess/core/declarations.py": "5b7b957ce2e382ed1d8ee6c4b7fcd238857a21deac59fdab4680a97b17b7965f"
+  }
+}

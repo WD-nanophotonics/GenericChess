@@ -67,6 +67,26 @@ anonymous-hand probability; OWNED_TAG_TRACE_RESULTS.md records ten frozen public
 controls, including compound/off-target effects and both owners. Research trace
 uses pinned private resolvers; full mode/context estimation remains unqualified.
 
+RESOURCE_MODE_FEASIBILITY_RESULTS.md adds six full-resource origin/held roots
+under unchanged caps, with preserved invalid Pawn-atom guard and frozen replay.
+OWNED_H2_PATH_RESULTS.md qualifies24 actual transitions and exact actual-child
+one-own-action expectations. Finite point-reference Shogi P/P has mean closure
+error>=1/99960; this rejects exact closure for that law, not all approximate
+lifetime constructions. No coefficient batch or goal labels were admitted.
+MODE_EQUIVALENCE_RESULTS.md preserves partial Chess evidence and targeted Shogi
+custody correction; CHESS_QUEEN_ORIGIN_EQUIVALENCE.md derives the F24F-specific
+same-current Queen relation under complete consistent history. Different stock
+reference means cannot be interpreted as intrinsic origin prices. Policy
+encoding/action-competition limits are in OWNED_POLICY_ENCODING_BOUNDARY.md.
+CONDITIONAL_DTM_BRIDGE_RESULTS.md qualifies only pure horizon arithmetic and
+terminal-first guards; operational independent certificate sources remain open.
+DIRECT_FINITE_SERVICE_CONSTRUCTION.md replaces mode refresh with actual finite
+conditional expectation; tower/variance controls pass without new game samples.
+DIRECT_SERVICE_PRECISION_BOUNDARY.md derives honest finite-cost statistical
+limits; its sufficient counts are not impossibility claims or new budgets.
+Next: derive a changed decision-changing precision/use premise before further
+sampling, or inspect independent construction/certificate evidence without labels.
+
 ## Boundaries and evidence lookup
 
 Movement/capture coordinates do not alone establish complete strategic options.
