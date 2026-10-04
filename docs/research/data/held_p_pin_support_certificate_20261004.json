@@ -1,0 +1,1438 @@
+{
+  "source_sha256": {
+    "docs/research/HELD_P_PIN_SUPPORT_CERTIFICATE_PROTOCOL.md": "81eb8e68e909598b28b63c8e05ebcda04cd961dd5320f4b36f612d8baeadf596",
+    "scripts/audit_held_p_pin_support_certificate.py": "12b05fa417edfacb494bf80fb55e7f54de70c4dd53120727caddc35df7a48775",
+    "scripts/audit_shogi_target_role_controls.py": "e6f7b6462a2ff4a0f890024d8110326f6f8909b85c091a3eae2b67421b674271",
+    "scripts/owned_service_reward.py": "3de0a6c5af04b57acbb580f48eac8274c839461ab9157e4664271e436e5f4911",
+    "scripts/owned_tag_trace.py": "b1d0025878ce5fbd232df2a1b9bd2d0ada1bebe69cd56e0f65174788703b493d",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "scripts/audit_exchange_custody.py": "78253c1ac85d4fbda3e897224ad9bf07d868f58df4ae06a0bd19dfabaa3f3aa4",
+    "scripts/resource_mode_context.py": "9795f3692c454d61aac02f23b57715a8df1d38a6283e5c334024ece5bdf5d8b0",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/rules/standard_shogi.py": "a2a0f0e1b1076b8cc365a2bdcea3fa105730935b77fce3970790125f4d502923"
+  },
+  "public_transitions": 58,
+  "enumerated": 486,
+  "branches": [
+    {
+      "enemy_first": "legacy_010:g13:i6-i7",
+      "leaves": [
+        {
+          "enemy_final": "legacy_010:g13:i7-i8",
+          "state_sha256": "b1fe662d961905d2e889406a66fc32bd95bd6b12ed268a7de1447ae639a83789",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_012:g14:i7-i6",
+          "state_sha256": "edae10c0b40fd4f6a5682f4715f43370f5b660b491495d8805b4b2369946b8e7",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_014:g15:i7-h8",
+          "state_sha256": "23d3e85b5624188f2570bb4f24a35e7aa98551369c553fd03fc4493cdba96bc6",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_016:g16:i7-h7",
+          "state_sha256": "1cf3806e7ef55c8614633052724f703b441a828ac65afdae78a0ae4958694ebe",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_018:g17:i7-h6",
+          "state_sha256": "6a0d99af4b24fb99f6debdcb9d677a3ba103670bdd68d9e258b4a84bcb1bb71b",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_028:g21:f7-f6",
+          "state_sha256": "ef281a9e3d248776bab6f6ef2d0e9b206079275339ca7e293f37453046c619a1",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        }
+      ],
+      "complete": true,
+      "own_actions": [
+        "legacy_012:g14:a1-a2",
+        "legacy_016:g16:a1-b1",
+        "legacy_018:g17:a1-b2",
+        "legacy_029:g21:e5-e6",
+        "legacy_030:g22:a6-a7",
+        "legacy_030:g22:a6-a7=TR",
+        "legacy_030:g22:a6-a8",
+        "legacy_030:g22:a6-a8=TR",
+        "legacy_030:g22:a6-a9",
+        "legacy_030:g22:a6-a9=TR",
+        "legacy_032:g23:a6-a5",
+        "legacy_032:g23:a6-a4",
+        "legacy_032:g23:a6-a3",
+        "legacy_032:g23:a6-a2",
+        "legacy_034:g24:a6-b6",
+        "legacy_034:g24:a6-c6",
+        "legacy_034:g24:a6-d6",
+        "legacy_035:g24:a6-e6"
+      ],
+      "own_capture": "legacy_029:g21:e5-e6",
+      "enemy_final_actions": [
+        "legacy_010:g13:i7-i8",
+        "legacy_012:g14:i7-i6",
+        "legacy_014:g15:i7-h8",
+        "legacy_016:g16:i7-h7",
+        "legacy_018:g17:i7-h6",
+        "legacy_028:g21:f7-f6"
+      ]
+    },
+    {
+      "enemy_first": "legacy_012:g14:i6-i5",
+      "leaves": [
+        {
+          "enemy_final": "legacy_010:g13:i5-i6",
+          "state_sha256": "ed88eeba6c6ef7fe5925d7a36ccfe98f4b05bf5477a7045d98f0ebdccbf1b177",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_012:g14:i5-i4",
+          "state_sha256": "a65aed187a8c5cde48e68c1b12bf8a1979f9df166a00fb863f3b6ee14a6736d1",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_014:g15:i5-h6",
+          "state_sha256": "9d13d68a680352a7604a6300404c67c2ef22f7312d96c4187feb2036da6969ba",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_016:g16:i5-h5",
+          "state_sha256": "c9d779d23c9230e986e735f5485b8f74b5da3835c344742972417d82e4641201",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_018:g17:i5-h4",
+          "state_sha256": "654a1ab9fdd7b174cdec9b77e2b8a0451dfb04e9c51b3d3e0616bde29cbfd94f",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_028:g21:f7-f6",
+          "state_sha256": "d4a61373e14135074d6bc8588ef1c5fef83c05d80fc7d02ed2aae5d4079a3a33",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        }
+      ],
+      "complete": true,
+      "own_actions": [
+        "legacy_012:g14:a1-a2",
+        "legacy_016:g16:a1-b1",
+        "legacy_018:g17:a1-b2",
+        "legacy_029:g21:e5-e6",
+        "legacy_030:g22:a6-a7",
+        "legacy_030:g22:a6-a7=TR",
+        "legacy_030:g22:a6-a8",
+        "legacy_030:g22:a6-a8=TR",
+        "legacy_030:g22:a6-a9",
+        "legacy_030:g22:a6-a9=TR",
+        "legacy_032:g23:a6-a5",
+        "legacy_032:g23:a6-a4",
+        "legacy_032:g23:a6-a3",
+        "legacy_032:g23:a6-a2",
+        "legacy_034:g24:a6-b6",
+        "legacy_034:g24:a6-c6",
+        "legacy_034:g24:a6-d6",
+        "legacy_035:g24:a6-e6"
+      ],
+      "own_capture": "legacy_029:g21:e5-e6",
+      "enemy_final_actions": [
+        "legacy_010:g13:i5-i6",
+        "legacy_012:g14:i5-i4",
+        "legacy_014:g15:i5-h6",
+        "legacy_016:g16:i5-h5",
+        "legacy_018:g17:i5-h4",
+        "legacy_028:g21:f7-f6"
+      ]
+    },
+    {
+      "enemy_first": "legacy_014:g15:i6-h7",
+      "leaves": [
+        {
+          "enemy_final": "legacy_004:g10:h7-i8",
+          "state_sha256": "ff9f17db974ed230e21b68b3255322fe0280a1505388beed40b7043ef726a53c",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_006:g11:h7-i7",
+          "state_sha256": "986973b9978907f5f39dca883e6780e5db924c8f09fadab2347dd368c4026575",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_008:g12:h7-i6",
+          "state_sha256": "8ea835864926d1db3a1f32d4bd7a595b3f818a8a5ae2a53013faf91d87f79ac3",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_010:g13:h7-h8",
+          "state_sha256": "6b437357087b5b8c04020e336d6d81376d366241e3b4470b598102e9218adf12",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_012:g14:h7-h6",
+          "state_sha256": "d978af2c356eaa68af8c70ba9fea7276b1bffef0f580953d6120e5611b962a9c",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_014:g15:h7-g8",
+          "state_sha256": "625f9b2d2665c852a32f3861e0723543b9438adab08edc9d069ed40cc13478e8",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_016:g16:h7-g7",
+          "state_sha256": "a13e26c3e15b3868b0dc283515b04bbf8dd0d465c09cdb6d2195a00eff0f9a55",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_018:g17:h7-g6",
+          "state_sha256": "e0d324996d33dbeefc07e62e367d3999fbcf537a19865e171243d985459bcf31",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_028:g21:f7-f6",
+          "state_sha256": "b713b043f487e7c57c5ee865e628b241ee2c8c1ceb1b0d566f7ecbbcc248fa23",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        }
+      ],
+      "complete": true,
+      "own_actions": [
+        "legacy_012:g14:a1-a2",
+        "legacy_016:g16:a1-b1",
+        "legacy_018:g17:a1-b2",
+        "legacy_029:g21:e5-e6",
+        "legacy_030:g22:a6-a7",
+        "legacy_030:g22:a6-a7=TR",
+        "legacy_030:g22:a6-a8",
+        "legacy_030:g22:a6-a8=TR",
+        "legacy_030:g22:a6-a9",
+        "legacy_030:g22:a6-a9=TR",
+        "legacy_032:g23:a6-a5",
+        "legacy_032:g23:a6-a4",
+        "legacy_032:g23:a6-a3",
+        "legacy_032:g23:a6-a2",
+        "legacy_034:g24:a6-b6",
+        "legacy_034:g24:a6-c6",
+        "legacy_034:g24:a6-d6",
+        "legacy_035:g24:a6-e6"
+      ],
+      "own_capture": "legacy_029:g21:e5-e6",
+      "enemy_final_actions": [
+        "legacy_004:g10:h7-i8",
+        "legacy_006:g11:h7-i7",
+        "legacy_008:g12:h7-i6",
+        "legacy_010:g13:h7-h8",
+        "legacy_012:g14:h7-h6",
+        "legacy_014:g15:h7-g8",
+        "legacy_016:g16:h7-g7",
+        "legacy_018:g17:h7-g6",
+        "legacy_028:g21:f7-f6"
+      ]
+    },
+    {
+      "enemy_first": "legacy_016:g16:i6-h6",
+      "leaves": [
+        {
+          "enemy_final": "legacy_004:g10:h6-i7",
+          "state_sha256": "ac10df00729ed8e318413569f71a1d7ada7a2a251f13b4cbad7396ed480e72dd",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_006:g11:h6-i6",
+          "state_sha256": "7d9ee87ea324e69ae4d5903590800e8db3f792b0a9553ed568349c85ae88ed96",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_008:g12:h6-i5",
+          "state_sha256": "32bf0ca76dd7c6beaef37c4cc287b9e8b19c9f9fa6c448119732e2ec0d46dec1",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_010:g13:h6-h7",
+          "state_sha256": "c6c5f2b31c12c41f0a7bf5486325dfba30007a33f834dd90088eaa06c187b219",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_012:g14:h6-h5",
+          "state_sha256": "f4036f094c1c6d65c8916f6f5a1c995c03d796372099677276b04cae5681eeb8",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_014:g15:h6-g7",
+          "state_sha256": "11911f7135b70191356ed69e580e1d08307ea62477107ddf478f6525c0d161e6",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_016:g16:h6-g6",
+          "state_sha256": "acba82a5a57b7fdbb7ec6f3977bb814d13c05ea9d368c7334aa938c73bad8ab6",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_018:g17:h6-g5",
+          "state_sha256": "9bec95161e88857831974c9bb191428ec5bbefe76f7ef35daf1b95178a0bc49c",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_028:g21:f7-f6",
+          "state_sha256": "3927761da1638d57f5a922080fa2c82350ebbce3d388613e7920f069b2a5d380",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        }
+      ],
+      "complete": true,
+      "own_actions": [
+        "legacy_012:g14:a1-a2",
+        "legacy_016:g16:a1-b1",
+        "legacy_018:g17:a1-b2",
+        "legacy_029:g21:e5-e6",
+        "legacy_030:g22:a6-a7",
+        "legacy_030:g22:a6-a7=TR",
+        "legacy_030:g22:a6-a8",
+        "legacy_030:g22:a6-a8=TR",
+        "legacy_030:g22:a6-a9",
+        "legacy_030:g22:a6-a9=TR",
+        "legacy_032:g23:a6-a5",
+        "legacy_032:g23:a6-a4",
+        "legacy_032:g23:a6-a3",
+        "legacy_032:g23:a6-a2",
+        "legacy_034:g24:a6-b6",
+        "legacy_034:g24:a6-c6",
+        "legacy_034:g24:a6-d6",
+        "legacy_035:g24:a6-e6"
+      ],
+      "own_capture": "legacy_029:g21:e5-e6",
+      "enemy_final_actions": [
+        "legacy_004:g10:h6-i7",
+        "legacy_006:g11:h6-i6",
+        "legacy_008:g12:h6-i5",
+        "legacy_010:g13:h6-h7",
+        "legacy_012:g14:h6-h5",
+        "legacy_014:g15:h6-g7",
+        "legacy_016:g16:h6-g6",
+        "legacy_018:g17:h6-g5",
+        "legacy_028:g21:f7-f6"
+      ]
+    },
+    {
+      "enemy_first": "legacy_018:g17:i6-h5",
+      "leaves": [
+        {
+          "enemy_final": "legacy_004:g10:h5-i6",
+          "state_sha256": "a63b7a09775b55a7e8e11b2ec5884ed6c91387f9f044529895f0e08834cd148d",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_006:g11:h5-i5",
+          "state_sha256": "8b1067245ee22440a69ae3b82d8bcb5676606a309f61430168f6ea68424d00fa",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_008:g12:h5-i4",
+          "state_sha256": "83041b7da00852f56062f1b7b375797103da16f757a18b5bac18697194f143c0",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_010:g13:h5-h6",
+          "state_sha256": "6dd5c78048a46d848fd291cf0e0bf846a17c4011d1bfbbb4ae0ea7c4926e9de4",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_012:g14:h5-h4",
+          "state_sha256": "2f9bc2bb27c4af40fc2515cb76a80e97defe0ed0383561db72350508499d1b93",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_014:g15:h5-g6",
+          "state_sha256": "59b95410ae358e6b3b4be47b25e68ee03be290389a8578fae6ccf0fac85325e1",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_016:g16:h5-g5",
+          "state_sha256": "380c0c5a7dfaaffd5e2733e8dbf54e0e3dad1a7cae74b8dc943255e11c968859",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_018:g17:h5-g4",
+          "state_sha256": "1d753274972fcc69afff12ab7a023f870265902dcb4eeca71b0dac8497baced5",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_028:g21:f7-f6",
+          "state_sha256": "8db7ddf2aab13530e70703291f0f4aa99391d002d0923f353a74e19682d58cb7",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        }
+      ],
+      "complete": true,
+      "own_actions": [
+        "legacy_012:g14:a1-a2",
+        "legacy_016:g16:a1-b1",
+        "legacy_018:g17:a1-b2",
+        "legacy_029:g21:e5-e6",
+        "legacy_030:g22:a6-a7",
+        "legacy_030:g22:a6-a7=TR",
+        "legacy_030:g22:a6-a8",
+        "legacy_030:g22:a6-a8=TR",
+        "legacy_030:g22:a6-a9",
+        "legacy_030:g22:a6-a9=TR",
+        "legacy_032:g23:a6-a5",
+        "legacy_032:g23:a6-a4",
+        "legacy_032:g23:a6-a3",
+        "legacy_032:g23:a6-a2",
+        "legacy_034:g24:a6-b6",
+        "legacy_034:g24:a6-c6",
+        "legacy_034:g24:a6-d6",
+        "legacy_035:g24:a6-e6"
+      ],
+      "own_capture": "legacy_029:g21:e5-e6",
+      "enemy_final_actions": [
+        "legacy_004:g10:h5-i6",
+        "legacy_006:g11:h5-i5",
+        "legacy_008:g12:h5-i4",
+        "legacy_010:g13:h5-h6",
+        "legacy_012:g14:h5-h4",
+        "legacy_014:g15:h5-g6",
+        "legacy_016:g16:h5-g5",
+        "legacy_018:g17:h5-g4",
+        "legacy_028:g21:f7-f6"
+      ]
+    },
+    {
+      "enemy_first": "legacy_028:g21:f7-f6",
+      "leaves": [
+        {
+          "enemy_final": "legacy_010:g13:i6-i7",
+          "state_sha256": "e5db52e5120c4ffdfb7d5f7341c2b41f69d6f30982c48046c91b7fe056de7ce8",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_012:g14:i6-i5",
+          "state_sha256": "86c0113b9272d7224a14bd3dbb2f15f25726a4a3570a20d8979288410b707f82",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_014:g15:i6-h7",
+          "state_sha256": "894e898b7c6b39a12b46789a6b15eed07a6b196949ce1f74715a6df71e102168",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_016:g16:i6-h6",
+          "state_sha256": "5e72033aee44d4e318a84d6f9e019a99fbae42df4e4de84c1105adaf5a7168dd",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_018:g17:i6-h5",
+          "state_sha256": "acac6c34a0b8c7142d45478f41abcd15a3835e438b7f3417b1c4f96d4662c409",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        },
+        {
+          "enemy_final": "legacy_028:g21:f6-f5",
+          "state_sha256": "b78ebba710240034bfd0a24e8575f6515699aa22d994f800b5060f357fc83b12",
+          "source": {
+            "owner": 0,
+            "base": "P",
+            "board": {
+              "49": "1"
+            },
+            "held": "0",
+            "lost": "0"
+          },
+          "target": {
+            "owner": 1,
+            "base": "P",
+            "board": {},
+            "held": "0",
+            "lost": "1"
+          },
+          "success": true
+        }
+      ],
+      "complete": true,
+      "own_actions": [
+        "legacy_012:g14:a1-a2",
+        "legacy_016:g16:a1-b1",
+        "legacy_018:g17:a1-b2",
+        "legacy_029:g21:e5-e6",
+        "legacy_030:g22:a6-a7",
+        "legacy_030:g22:a6-a7=TR",
+        "legacy_030:g22:a6-a8",
+        "legacy_030:g22:a6-a8=TR",
+        "legacy_030:g22:a6-a9",
+        "legacy_030:g22:a6-a9=TR",
+        "legacy_032:g23:a6-a5",
+        "legacy_032:g23:a6-a4",
+        "legacy_032:g23:a6-a3",
+        "legacy_032:g23:a6-a2",
+        "legacy_034:g24:a6-b6",
+        "legacy_034:g24:a6-c6",
+        "legacy_034:g24:a6-d6",
+        "legacy_035:g24:a6-e6"
+      ],
+      "own_capture": "legacy_029:g21:e5-e6",
+      "enemy_final_actions": [
+        "legacy_010:g13:i6-i7",
+        "legacy_012:g14:i6-i5",
+        "legacy_014:g15:i6-h7",
+        "legacy_016:g16:i6-h6",
+        "legacy_018:g17:i6-h5",
+        "legacy_028:g21:f6-f5"
+      ]
+    }
+  ],
+  "strategy_interval": [
+    1,
+    1
+  ],
+  "task_value_interval": [
+    1,
+    1
+  ],
+  "all_adversary_branches_complete": true,
+  "missing_tokens": 34,
+  "root_state": {
+    "position": {
+      "board": [
+        {
+          "owner": 0,
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "hands": [
+        {
+          "counts": [
+            [
+              "P",
+              1
+            ]
+          ]
+        },
+        {
+          "counts": []
+        }
+      ],
+      "side_to_move": 0,
+      "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+      "aux_state": [],
+      "board_width": null,
+      "board_height": null
+    },
+    "ply_count": 0,
+    "repetition_counts": [
+      [
+        "95ba9f00e76df33637f315f772b3202c938dcb82f4a88a2c0af7fd89d727308d",
+        1
+      ]
+    ],
+    "terminal_status": {
+      "status": "TerminalStatus.ONGOING",
+      "winner": null
+    },
+    "history": [
+      {
+        "position_key": "95ba9f00e76df33637f315f772b3202c938dcb82f4a88a2c0af7fd89d727308d",
+        "actor": -1,
+        "action_signature": "",
+        "gave_check": false
+      }
+    ]
+  },
+  "root_actions": [
+    "legacy_012:g14:a1-a2",
+    "legacy_016:g16:a1-b1",
+    "legacy_018:g17:a1-b2",
+    "legacy_030:g22:a6-a7",
+    "legacy_030:g22:a6-a7=TR",
+    "legacy_030:g22:a6-a8",
+    "legacy_030:g22:a6-a8=TR",
+    "legacy_030:g22:a6-a9",
+    "legacy_030:g22:a6-a9=TR",
+    "legacy_032:g23:a6-a5",
+    "legacy_032:g23:a6-a4",
+    "legacy_032:g23:a6-a3",
+    "legacy_032:g23:a6-a2",
+    "legacy_034:g24:a6-b6",
+    "legacy_034:g24:a6-c6",
+    "legacy_034:g24:a6-d6",
+    "legacy_035:g24:a6-e6",
+    "sem_00_standard_drop_contract:g72:P@b1",
+    "sem_00_standard_drop_contract:g72:P@c1",
+    "sem_00_standard_drop_contract:g72:P@d1",
+    "sem_00_standard_drop_contract:g72:P@e1",
+    "sem_00_standard_drop_contract:g72:P@f1",
+    "sem_00_standard_drop_contract:g72:P@g1",
+    "sem_00_standard_drop_contract:g72:P@h1",
+    "sem_00_standard_drop_contract:g72:P@i1",
+    "sem_00_standard_drop_contract:g72:P@a2",
+    "sem_00_standard_drop_contract:g72:P@b2",
+    "sem_00_standard_drop_contract:g72:P@c2",
+    "sem_00_standard_drop_contract:g72:P@d2",
+    "sem_00_standard_drop_contract:g72:P@e2",
+    "sem_00_standard_drop_contract:g72:P@f2",
+    "sem_00_standard_drop_contract:g72:P@g2",
+    "sem_00_standard_drop_contract:g72:P@h2",
+    "sem_00_standard_drop_contract:g72:P@i2",
+    "sem_00_standard_drop_contract:g72:P@a3",
+    "sem_00_standard_drop_contract:g72:P@b3",
+    "sem_00_standard_drop_contract:g72:P@c3",
+    "sem_00_standard_drop_contract:g72:P@d3",
+    "sem_00_standard_drop_contract:g72:P@e3",
+    "sem_00_standard_drop_contract:g72:P@f3",
+    "sem_00_standard_drop_contract:g72:P@g3",
+    "sem_00_standard_drop_contract:g72:P@h3",
+    "sem_00_standard_drop_contract:g72:P@i3",
+    "sem_00_standard_drop_contract:g72:P@a4",
+    "sem_00_standard_drop_contract:g72:P@b4",
+    "sem_00_standard_drop_contract:g72:P@c4",
+    "sem_00_standard_drop_contract:g72:P@d4",
+    "sem_00_standard_drop_contract:g72:P@e4",
+    "sem_00_standard_drop_contract:g72:P@f4",
+    "sem_00_standard_drop_contract:g72:P@g4",
+    "sem_00_standard_drop_contract:g72:P@h4",
+    "sem_00_standard_drop_contract:g72:P@i4",
+    "sem_00_standard_drop_contract:g72:P@a5",
+    "sem_00_standard_drop_contract:g72:P@b5",
+    "sem_00_standard_drop_contract:g72:P@c5",
+    "sem_00_standard_drop_contract:g72:P@d5",
+    "sem_00_standard_drop_contract:g72:P@e5",
+    "sem_00_standard_drop_contract:g72:P@f5",
+    "sem_00_standard_drop_contract:g72:P@g5",
+    "sem_00_standard_drop_contract:g72:P@h5",
+    "sem_00_standard_drop_contract:g72:P@i5",
+    "sem_00_standard_drop_contract:g72:P@b6",
+    "sem_00_standard_drop_contract:g72:P@c6",
+    "sem_00_standard_drop_contract:g72:P@d6",
+    "sem_00_standard_drop_contract:g72:P@f6",
+    "sem_00_standard_drop_contract:g72:P@g6",
+    "sem_00_standard_drop_contract:g72:P@h6",
+    "sem_00_standard_drop_contract:g72:P@a7",
+    "sem_00_standard_drop_contract:g72:P@b7",
+    "sem_00_standard_drop_contract:g72:P@c7",
+    "sem_00_standard_drop_contract:g72:P@d7",
+    "sem_00_standard_drop_contract:g72:P@e7",
+    "sem_00_standard_drop_contract:g72:P@g7",
+    "sem_00_standard_drop_contract:g72:P@h7",
+    "sem_00_standard_drop_contract:g72:P@i7",
+    "sem_00_standard_drop_contract:g72:P@a8",
+    "sem_00_standard_drop_contract:g72:P@b8",
+    "sem_00_standard_drop_contract:g72:P@c8",
+    "sem_00_standard_drop_contract:g72:P@d8",
+    "sem_00_standard_drop_contract:g72:P@e8",
+    "sem_00_standard_drop_contract:g72:P@f8",
+    "sem_00_standard_drop_contract:g72:P@g8",
+    "sem_00_standard_drop_contract:g72:P@h8",
+    "sem_00_standard_drop_contract:g72:P@i8"
+  ],
+  "strategy_first_action": "sem_00_standard_drop_contract:g72:P@e5",
+  "first_enemy_actions": [
+    "legacy_010:g13:i6-i7",
+    "legacy_012:g14:i6-i5",
+    "legacy_014:g15:i6-h7",
+    "legacy_016:g16:i6-h6",
+    "legacy_018:g17:i6-h5",
+    "legacy_028:g21:f7-f6"
+  ],
+  "seconds": 0.1880000000819564,
+  "source_hashes_unchanged": true
+}

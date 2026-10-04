@@ -1,7 +1,9 @@
 # Slack/dot communication manual
 
 The current user accepted active Agent plugin reads/waits, with one native
-same-chat heartbeat every two hours for recovery. A separate Socket Mode app
+same-chat heartbeat every four hours for recovery, at Asia/Tokyo02:00,06:00,
+10:00,14:00,18:00,22:00; this preserves daily10:00 in the existing automation.
+A separate Socket Mode app
 and immediate model wake are no longer required. Their prototype is historical
 text only; no token, daemon, Windows task or extra model is needed here.
 

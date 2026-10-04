@@ -107,8 +107,56 @@ common eligibility. Root-only preflight records1574 choices and0 transitions;
 TWO_VICTIM_PREFLIGHT_RESULTS.md shows exact first-child expansion alone exceeds
 the128-transition cap. H2_CUSTODY_DEPLETION_BOUND.md qualifies a narrower actual
 Shogi H2 pool bound without assuming long-horizon irreversible custody.
-Next freeze one global-budget direct interval pilot; no repeated batches or
-inferred hand premium. Construction/use separation and objective OPEN remain.
+TWO_VICTIM_DIRECT_INTERVAL_RESULTS.md records that frozen pilot:128 actual
+transitions preserve all120 root masses, exact first-service means and honest
+H2 intervals; all type boxes overlap. No H2 ordering or point prior is admitted.
+EXPOSED_INVENTORY_PREFERENCE_RESULTS.md audits the spent independent selector
+evidence without fitting: four symmetric cases are one repeated R-B constraint,
+not a proof against all static vectors. Exact H1 ablation fails that exposed
+preference, while H2 remains unresolved. SMALL_SOURCE_USE_GENERATOR.md declares
+a future candidate-independent development generator, not untouched validation.
+
+SHOGI_SPARSE_LAW_SUPPORT.md distinguishes explicit missing inventory from hidden
+hands; restoring missing stock to hands necessarily exceeds the current128
+choice cap in that sparse shape. Strict resource guards stay unchanged.
+SHOGI_SYMMETRIC_TARGET_FALSIFIER.md derives native Pawn H2 zero for the nifu-safe
+off-file target law. LANCE_QUIET_PROMOTION_WITNESS_RESULTS.md instead records an
+actual new quiet-promotion path with3 transitions and common-law positive service
+lower1/12960: native L H1 zero cannot be extended to H2 zero.
+SHOGI_TARGET_ROLE_CONTROL_RESULTS.md records20 fixed paths/40 transitions,
+promotion continuation and held n=1/n=2 exchangeable identity/drop competition;
+these are conditional mechanism means, not a complete control population.
+
+CONTROLLED_TARGET_SURVIVAL_PROPOSAL.md changes the old immediate-safe-capture
+premise: two own actions, designated physical removal and source custody through
+two enemy replies. PUBLIC_TASK_INFORMATION_RESULTS.md qualifies public-choice
+joint-world arithmetic, not clairvoyant worldwise choices or marginal products.
+HELD_L_CONTROL_CERTIFICATE_RESULTS.md then certifies one held-L strategy value1
+with61 actual transitions, all7 first enemy replies and46 final leaves.
+HELD_COMMON_TARGET_COUNTERSTRATEGIES.md derives same-target held P/N value0
+and the conditional n=2 Lance value1/2, without extra samples. This task alone
+does not supply a complete positive held prior; context and horizon still need
+independent motivation. CONTROL_TASK_ADDITIVITY_BOUNDARY.md identifies fixed
+target/window saturation: pooled success stays1 at one/two held Lances, so
+tagged1/n is not a constant additive price. This limits exact calibration to
+that task, not useful approximate priors. Construction/use separation and
+objective OPEN remain.
+HELD_PAWN_TARGET_ENSEMBLE_BOUNDARY.md rules out a specific proposed repair by
+source analysis: mixing all central native target types still gives held-P
+zero in this two-turn sparse adversarial task. Do not spend a batch on that
+unchanged premise. Changed interaction/task assumptions and interval-aware
+independent leaf use remain executable alternatives, not scientific completion.
+HELD_P_PIN_SUPPORT_CERTIFICATE_RESULTS.md supplies a changed interacting
+premise: background Rook support and different King geometry permit held P
+completion under the same two-turn reward, with58 actual transitions/all45
+leaves. This is positive joint-context mechanism evidence, not a matched
+Rook causal comparison or admitted mode price. Qualify deprivation/transfer
+before new candidate-independent use observations.
+PIN_SUPPORT_DEPRIVATION_BOUNDARY.md keeps the changed King geometry fixed
+and derives no-Rook task0, plus source-absent0. Together with actual joint1,
+this is a scoped complementarity witness; only joint1 is empirical. Context
+marginals may be explored as approximations with a declared independent law,
+not assigned intrinsic prices or mandatory exact WDL/additivity calibration.
 
 ## Boundaries and evidence lookup
 
