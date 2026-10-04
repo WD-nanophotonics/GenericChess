@@ -214,6 +214,11 @@ HELD_CONTACT_OPTIMISM_BOUNDARY.md analytically identifies almost-collapsed
 optimized B/R single-token drop preparation under the same law. Compiled held
 qualification, broader counterparts and independent deployment use remain open.
 No complete material candidate, new independent use labels or holdout release.
+After publication, SINGLE_BLOCKER_BISHOP_PARTIAL_BOUND.md derives exact direct
+contact mass and a native-B trapped-corner population under the SAME triple law.
+These partial bounds certify nativeR>nativeB for every0<gamma<1 without a
+complete B graph or point discount; task ordering is not independent leaf-use
+evidence. Tighten censored B coverage rather than interpreting it as a price.
 
 ## Boundaries and evidence lookup
 

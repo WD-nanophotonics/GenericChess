@@ -25,6 +25,9 @@ Actual continuation chain:
    small-grid count/path controls; no511920-context engine batch.
 10. Inspected prospective preprocessing work and derived single-held B/R
     optimized-contact near-collapse; retained semantic/use gaps explicitly.
+11. AFTER publication, derived a same-law partial native-B bound with exact
+    direct mass/trapped-source mass, certifying R>B for all discounts in(0,1).
+    Two new algebra/count controls pass; no new context or goal samples.
 
 Four one-shot virtual semantic audits used83 total ContactStep materializations
 and1096 geometry candidates across DISTINCT predeclared questions, never one
@@ -34,7 +37,7 @@ inspection expanded0 candidates. Every individual frozen audit stayed within
 128 virtual/5000 candidate/15sec caps. Full-mode candidate construction was not
 silently performed. Source law/gamma remain modeling assumptions, not fitted.
 
-Validation:157 relevant tests passed, including29 new independent controls.
+Validation:159 relevant tests passed, including31 new independent controls.
 Across23 current raw reports, all216 declared file-hash entries match. Frozen
 raw/protocol/source artifacts were not modified or rerun after observations.
 L witness omitted a dedicated excluded_held field; its report explicitly records
