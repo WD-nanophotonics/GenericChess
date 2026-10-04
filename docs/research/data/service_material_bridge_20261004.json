@@ -1,0 +1,35 @@
+{
+  "protocol_sha256": "0677157bb4e9f9a797e6697c48aa27520bcaa20a7b425a4f3a06c6dd0b66ff8b",
+  "program_sha256": "792ff0a5576b62248755134481979f76555ff2602ec74b06a5cd6211b43677db",
+  "complete": true,
+  "toy_states": 10,
+  "goal_labels": [
+    "1",
+    "-1"
+  ],
+  "local_service_labels": [
+    1,
+    1
+  ],
+  "equal_feature_vector": [
+    "1",
+    "-1"
+  ],
+  "optimal_constant": "0",
+  "unavoidable_goal_risk": "1",
+  "constant_prediction_risks": {
+    "-1": "2",
+    "-1/2": "5/4",
+    "0": "1",
+    "1/2": "5/4",
+    "1": "2"
+  },
+  "same_inventory_covariance_rank": 0,
+  "full_rank_control_covariance_rank": 2,
+  "control_slopes": [
+    "1/2",
+    "1/4"
+  ],
+  "control_risk": "0",
+  "elapsed_seconds": 0.0
+}

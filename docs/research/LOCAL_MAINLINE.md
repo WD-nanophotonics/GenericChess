@@ -339,6 +339,20 @@ vector tuning, larger batch, material installation or holdout read. OLD global
 deployment labels remain unread. Future work needs a justified state-dependent
 service-to-static-material bridge, not more service batches or fitted rescues.
 
+`SERVICE_MATERIAL_BRIDGE_RESULTS.md` closes that memo question with an explicit
+conditional theorem and a goal-prediction objective: invariant conditional
+type/owner service means plus independently justified positive goal/service
+calibration imply an optimal static conditional-mean predictor. Neither premise
+is established by count additivity or the failed finite transfer. A ten-state
+exact two-context game has identical inventory/service but opposite solved goal
+values, unavoidable statistic-only squared risk1; no universal bridge follows.
+Affine static goal-risk compression requires declared U/D and full-rank inventory
+covariance for identifiable slopes (fixed-inventory support has rank0). Reject
+material promotion of current service vectors; no real-game fit or holdout read.
+The outstanding theory task is closed with evidence, not a successful material
+model. A future route needs its own complete-goal/measure/support/cost premises
+before experimental admission; no new batch is queued by this conclusion.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
