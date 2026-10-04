@@ -158,6 +158,44 @@ this is a scoped complementarity witness; only joint1 is empirical. Context
 marginals may be explored as approximations with a declared independent law,
 not assigned intrinsic prices or mandatory exact WDL/additivity calibration.
 
+RESOURCE_MARGINAL_CONSTRUCTION_HYPOTHESIS.md now declares a signed coalition
+allocation operator and separates game additivity from static inventory prices.
+RESOURCE_ALLOCATION_ARITHMETIC_RESULTS.md qualifies exact finite arithmetic;
+ROLE_BALANCED_PIN_LAW_DESIGN.md specifies112 frames/mode but its8960 coalition
+cells remain uncomputed under unchanged small budgets. Do not manufacture a
+point estimate or drop unsuccessful/unknown context mass.
+KNIGHT_MODE_SUPPORT_PAIR_RESULTS.md supplies two NEW matched board/held-N
+roots with103 actual transitions/all79 final leaves, both joint task1. Analytic
+same-geometry source-only board1/held0 reveals differing Rook support allocation.
+ALLOCATION_TO_STATIC_TRANSFER.md and ALLOCATION_STATIC_PROJECTION_RESULTS.md
+qualify token-weighted mean projection, variable-count coverage and risk limits;
+efficiency alone does not validate a static predictor or independent leaf use.
+
+HELD_KNIGHT_PUBLIC_NOISE_RESULTS.md changes ONLY opponent policy on a new
+no-Rook root:127 transitions/all85 final leaves give own-max/uniform-enemy5/6,
+versus analytic adversarial0. Complete reply denominators and exact source
+traces are preserved. INTERACTION_POLICY_MIXTURE_TRANSFER.md derives scoped
+policy/context sensitivities and correlated choice margins without fitting
+noise or claiming an intrinsic hand premium. Dot's complete new reply was read,
+reconciled/adopted with its reported-versus-independent evidence distinguished.
+
+SATURATING_SUPPORT_APPROXIMATION.md proposed a cheap redundant-aid polynomial
+shortcut before testing it. KNIGHT_SUPPORT_OBSTRUCTION_RESULTS.md falsifies
+its physical monotonicity: added ownPe7 blocks Ra7 support, full task0 instead
+of reused NR1, with8 new transitions and complete counterstrategy coverage.
+The specified three-resource table allocates N1/6,R1/6,P-1/3; only its named
+measured entries are empirical. Keep signs, no post-hoc aid-weight repair.
+COALITION_INTERVENTION_USE_INTERFACE.md distinguishes capability permission
+from physical absence and specifies a prospective signed leaf interface.
+Current raw-H2 positive-box helper stays frozen. Next pursue a common-law,
+obstruction-aware approximation with a decision-changing falsifier; no full
+material candidate, new use labels or Xiangqi holdout is admitted yet.
+DISCOUNTED_CONTACT_NEXT_HYPOTHESIS.md records a fresh source audit of the
+alternative time/preparation lead: V2H's U+C and V2F graph distances are spent
+definitions, not real compatible action paths. Any new discount/contact model
+must declare compatible path guards, demand law and approximation scope before
+measurements; do not simply rename graph hops or reopen old reference tests.
+
 ## Boundaries and evidence lookup
 
 Movement/capture coordinates do not alone establish complete strategic options.
