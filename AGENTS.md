@@ -1,108 +1,79 @@
 # GenericChess local research policy
 
-This is the sole active policy. User instructions take precedence. One local
-Agent works on sandbox in this checkout, in ordinary task mode. At every work
-start, restart, heartbeat continuation and after context compaction, first read
-.local_agent/NEXT_WORK.md in full. Understand the last unfinished work, current
-state and next direction before acting. Then read this policy and
-docs/research/LOCAL_MAINLINE.md and check persisted stop flags/current state.
-Do not start extra Agents, concurrent heavy jobs or Work/Codex delegates.
-Preserve research evidence, unrelated changes and Chess/Shogi/Xiangqi boundaries.
-Choose the smallest decision-changing observation; bound compute and abort costs.
-Local memo is compact resume memory: at most 20 lines and 2 KiB UTF-8. Keep only
-recent state, research-segment start time, unfinished work, next direction and
-necessary evidence references.
-After a small milestone, optionally overwrite it; remove superseded/completed
-items instead of appending history or retaining each memo version. Detailed
-evidence belongs in research documents/Git. Memo is revisable planning memory,
-not an approval queue or a limit on work. Select the next research question
-independently. Experiment resource caps do not end the working session.
+This is the sole active policy; user instructions take precedence. One local
+Agent works on sandbox in this checkout. Never touch alphasho, its audits,
+tasks or other projects. No extra Agents, Work/Codex delegates or heavy jobs.
 
-For each normal research start or heartbeat continuation, aim for 60-90 minutes
-of useful research without Goal. Record the segment's UTC start time in memo;
-choose the current question and two possible follow-up directions, revisable
-by evidence. After each milestone: validate the result, assess its mainline
-effect, then select AND BEGIN the next useful step. Documentation, memo updates,
-tests, commits and publication are checkpoints, not reasons for a final reply.
-Completing the carried-over memo items does not complete the research segment.
-Before 60 minutes, continue whenever a useful executable next step exists.
-After 60 minutes, continue an effective line toward roughly 90 minutes, then
-finish at a safe checkpoint. This is a work target, not guaranteed App uptime.
-Do not pad time with waiting, failed-probe repetitions, irrelevant small proofs
-or enlarged compute budgets; each experiment retains its own abort/resource cap.
-After compaction or recovery of an interrupted segment, read memo first and
-preserve its start time. A normally ended segment's next wake starts a new one.
-Early ending is allowed only for user stop, a decision requiring the user,
-actual quota/tool/runtime limits, evidence-supported scientific completion,
-or no worthwhile executable next step. Before the last conclusion, inspect
-the mainline/recent evidence and at least two alternative directions; record
-why they cannot currently advance it without running unnecessary experiments.
-Dot silence, a negative result or publication alone never qualifies. At ending,
-record concrete progress, elapsed time and reason; if abruptly interrupted,
-mark the ending/time as unobserved rather than inventing a completed session.
-Retain the compact memo limits; detailed evidence belongs in research documents.
-This duration policy applies to normal research, not a separately requested
-bounded configuration, explanation or review task.
+At every start, restart, heartbeat and after compaction, FIRST read
+.local_agent/NEXT_WORK.md in full, then this file, LOCAL_MAINLINE.md and
+rollout/advisor/slack stop flags. Never clear a user stop. A missing/stale memo
+is rebuilt from evidence before research; checking flags never permits clearing them.
+Memo has at most20 lines/2KiB UTF-8, with State, Segment, Main, Backup1, Backup2,
+Evidence fields. Each task is question | immediate first action | expected
+evidence | done condition. Overwrite completed/stale tasks; no memo diary/archive.
+It is revisable resume memory, not an approval queue or work-volume limit.
 
-The Agent and dot are research partners of nearly equal authority. Resolve
-questions by evidence; record why advice is adopted, deferred or rejected. Dot
-is not a work-order issuer or a publication gate. User instructions win.
+Normal manual starts AND heartbeat continuations are research segments aiming
+for60-90 minutes of effective work, without Goal. Do not relabel a heartbeat
+as inspection-only to avoid research. Explicit bounded user configuration,
+explanation/review requests are not duration samples. Before research call
+session start; session.json owns the ID/start time. Resume active segments
+after interruption/compaction without resetting the clock or creating writers.
+Execute the Main task immediately. At each milestone validate, assess mainline
+impact, record a session checkpoint, then SELECT AND BEGIN the next useful step.
+Tests, docs, memo, consultation, commits and publication are checkpoints.
 
-Slack #generic-chess is the sole consultation channel. Use consult,
-consult-status and reconcile with the calling Agent's installed Slack tools.
-The user grants standing authorization for this GenericChess workflow to send
-through the connected user account to NanoMelon #generic-chess C0C6L21UU20 and
-its consultation threads. This is not per-turn permission: do not ask again
-for in-scope sends. It lasts until user revocation; an explicit project stop
-suspends sending. The user identifies this as their own dedicated workspace.
-Authorization does not require routine sends or waive identity, deduplication,
-uncertain-send reconciliation, no-loop or no-extra-worker rules.
-Requests have immutable IDs, content hashes, project, channel and root ts.
-Sender identity is the verified Slack account; role markers are not identity
-proof. Dot currently replies using the same user account. Provide bounded code
-or evidence with hashes; a local path does not grant dot filesystem access.
-Git is version control and final delivery, not required communication.
+Missing formulas, negative results, a restricted old route or dot silence are
+SOFT blockages: switch to a backup, or actively search new primary literature,
+design a falsifiable hypothesis, derive a relevant result or run a bounded
+feasibility check. Hypothesis construction need not first prove exact WDL
+calibration or rules uniquely choosing a context law. State assumptions and
+distinguish semantics, approximation and independent deployment evidence.
+Old failures restrict tested claims, not entire fields. Revisit a failed route
+only with a changed premise and a specific decision-changing check; no unchanged
+reruns, exposed-label fitting, human-price tuning or Xiangqi human-holdout reads.
+Preserve Chess/Shogi/Xiangqi semantic boundaries and existing experiment caps.
 
-During an active turn, read pending threads and, when useful, wait briefly then
-read again without ending merely because a reply is pending. A bounded wait
-expiry is a checkpoint: continue independent work or read again. Persist the
-full tool response and reconcile before adopting advice or sending a new query.
-Read all replies/pages; a completed request can still receive further posts.
-Review flagged new evidence explicitly, without silently repeating old decisions.
-Uncertain sends are never retried or switched to another channel. Edits and
-additional replies are evidence, never automatic re-execution of decisions.
-Daily inspection at 10:00 Asia/Tokyo is the main dot consultation window: check
-for major problems or ask substantive new theoretical questions. Skip empty or
-duplicate questions and never catch up missed days. Between daily inspections,
-work independently by default; consult only a concrete issue needing discussion.
-Receiving useful advice needs no acknowledgement or immediate reply. Reconcile
-evidence when needed, record decisions locally, and raise follow-ups next time.
+Before60 minutes, a normal/no-next-action finish is forbidden. Early finish
+requires explicit user stop, actual tool/quota/runtime limit, a genuinely
+necessary user decision, or evidence-supported scientific completion. A missing
+research hypothesis is not a user-decision blocker. After60 minutes continue
+an effective line toward90, then end at a safe checkpoint. Do not pad time
+with idle waiting, old conclusions, irrelevant proofs or infrastructure.
+Before final research reply call session finish with evidence; rejection means
+continue, not bypass. No-next-action after60 requires fresh examination of at
+least two alternatives, not reuse of an old no-work note. Refill memo with
+executable tasks before normal finish. Record actual time and ending cause.
+The validator checks structure/time only; bypass or rejected-finish exit is a
+workflow failure, not a compliant inspection. App uptime is not guaranteed.
 
-One native two-hour heartbeat continues this same chat as recovery from an
-unexpected turn end. It must not create a second writer or overlap an active
-turn. The latest user instruction accepts active plugin reads with this fallback;
-two-hour inspections never require external discussion or an advisor response
-before local work can continue. Read useful advice without adding reply loops.
-Socket Mode, immediate model wake and a separate receiver app are not gates.
-No Windows scheduler, old Goal, ownership capsule, Supervisor/Worker policy,
-Chat approval or browser Courier is in the active call chain. Historical text
-snapshots are evidence only and must never be executed or imported.
-Ordinary dot consultation and transport must not launch extra workers. Local
-Agent work and native continuation use the Agent's normal allowance. Quota
-qualification is recorded in .local_agent/advisor.json; do not infer it from
-unchanged account percentages or extend it to native Chat/Courier sends.
+Agent and dot are near-peer research partners; user instructions win. Record
+adopt/defer/reject reasoning. Dot is not a work issuer or publication gate.
+Slack NanoMelon #generic-chess C0C6L21UU20 is the sole consultation channel.
+Standing user authorization permits connected-account sends to that channel
+and its threads across turns/restarts until revoked; explicit stop suspends
+sending. Send only concrete useful questions/evidence, not routine acknowledgements.
+Use consult/consult-status/reconcile; immutable IDs/hashes/root ts bind requests.
+Verified account identity, not TYPE/ID, authenticates the sender. Dot shares
+the current account. Paths do not give dot local access; attach bounded evidence.
+Read all posts/pages and preserve raw output before reconcile/adoption; completed
+requests can get supplements. Never resend uncertain sends or switch channels.
+No self-reply loops, automatic re-execution or additional workers.
 
-An explicit user stop suspends consultation and the heartbeat, and cancels dot
-monitoring for this project. Persist stopped state; no scheduled turn may clear
-it. A phase, consultation, test, commit or turn boundary does not establish the
-scientific objective complete. Notify only meaningful results, failures or
-required decisions. Continue independent research when dot is unavailable.
+Daily10:00 Asia/Tokyo is the main substantive dot window; skip empty/duplicate
+questions and missed-day catchup. Work independently otherwise; consult as needed.
+Read/wait briefly at useful checkpoints and continue independent work. The sole
+native two-hour heartbeat resumes this chat without overlap or a second writer.
+No Windows scheduler, Goal, ownership/Supervisor policy, Chat approval, Courier,
+native Chat send or Socket Mode prerequisite. Historical snapshots are evidence.
+Explicit user stop suspends consultation/heartbeat and cancels dot monitoring;
+restart never clears stopped state. Local Agent/heartbeat use normal allowance;
+dot/transport must not delegate workers. Quota evidence is in advisor.json.
 
-Before publication inspect the exact outgoing diff for sensitive/unrelated
-content and run relevant tests. Publish to origin/sandbox and verify the full
-remote SHA. Master promotion is a tested fast-forward of published sandbox in
-this repository. Never force-push. Report local/published status accurately.
-Never touch alphasho, its audits, tasks or other projects.
-
-Operations: docs/operations/LOCAL_AGENT.md and docs/operations/SLACK_WORKFLOW.md.
-Recovery evidence: docs/operations/REBUILD_20261003.md.
+Git is version control/final delivery, not mandatory communication. Inspect
+outgoing diffs and relevant tests before publish; verify full origin/sandbox SHA.
+Master promotion is tested fast-forward only; never force-push. Report truthfully.
+Notify only meaningful results, failures or required decisions. Scientific
+completion requires the evidence in LOCAL_MAINLINE.md, not a phase/turn boundary.
+Operations: docs/operations/LOCAL_AGENT.md and SLACK_WORKFLOW.md.
+Recovery: docs/operations/REBUILD_20261003.md.

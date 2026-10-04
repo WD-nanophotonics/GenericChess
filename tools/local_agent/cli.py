@@ -86,6 +86,18 @@ def parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("status")
     sub.add_parser("stop")
+    session_parser = sub.add_parser('session', help='work-segment receipts, not a runner')
+    actions = session_parser.add_subparsers(dest='session_action', required=True)
+    actions.add_parser('start')
+    actions.add_parser('status')
+    cp = actions.add_parser('checkpoint')
+    for field in ('question', 'observation', 'evidence', 'next-action'):
+        cp.add_argument('--'+field, required=True)
+    cp.add_argument('--kind', choices=('research', 'documentation', 'transport'), default='research')
+    end = actions.add_parser('finish')
+    end.add_argument('--reason', required=True)
+    end.add_argument('--evidence', required=True)
+    end.add_argument('--alternative', action='append', default=[], help='fresh checkpoint question; repeat for no_viable_action')
     receipt = sub.add_parser("slack-bind-sent")
     receipt.add_argument("--request-id", required=True)
     receipt.add_argument("--channel-id", required=True)
@@ -124,6 +136,17 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command == "status":
             result = status()
+        elif args.command == 'session':
+            from . import session
+            if args.session_action == 'start':
+                result = session.start()
+            elif args.session_action == 'status':
+                result = session.status()
+            elif args.session_action == 'checkpoint':
+                result = session.checkpoint(args.question, args.observation,
+                    args.evidence, args.next_action, args.kind)
+            else:
+                result = session.finish(args.reason, args.evidence, args.alternative)
         elif args.command == 'stop':
             from .slack_transport import stop
             result = stop()
