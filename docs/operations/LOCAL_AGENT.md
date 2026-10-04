@@ -62,8 +62,8 @@ samples; complete their requested scope without inventing research to fill time.
 
 ### Duration-policy acceptance
 
-Configuration rollout on 2026-10-04: runtime acceptance PENDING (0/3 normal
-research segments observed under the new policy). During the next three normal
+Configuration rollout on 2026-10-04: runtime acceptance PENDING (1/3 normal
+research segments observed under the new policy; duration target not yet met). During the next three normal
 segments record start/end, elapsed minutes, linked phase evidence and any early
 ending reason in this section. A phase-to-next-phase transition must show actual
 work, not just a memo promise. Do not count waiting as effective research or
@@ -72,7 +72,7 @@ near ten minutes without a qualifying reason, inspect that turn and revise the
 specific instruction; do not call persistence fixed from static checks alone.
 No extra scheduler, worker, model setting, Goal or CLI interface is introduced.
 
-Observation 1 is ACTIVE, started 2026-10-04T06:45:35Z (normal user continuation).
+Observation 1 started 2026-10-04T06:45:35Z (normal user continuation).
 Actual phase continuation: public board-action goal intervals were implemented
 and tested, then source inspection exposed missing Session declarations and
 the adapter was extended/tested without ending the turn. Evidence:
@@ -81,8 +81,15 @@ dot's concrete theory reply, corrected the overstrong calibration prerequisite,
 then implemented/tested partial decision regret and paired optimum cancellation
 (docs/research/PARTIAL_DECISION_LOSS_RESULTS.md). User's subsequent standing
 Slack authorization was persisted without changing schedule or adding workers.
-End/time/reason not yet observed;
-this active segment is not a completed acceptance sample.
+Early ending decision at 2026-10-04T07:19:50Z: elapsed34m15s, including the
+user-requested authorization configuration; not60 minutes of effective research.
+Three stages actually continued, but the duration target is NOT met. Mainline,
+recent evidence and three alternatives were reviewed before ending:
+docs/research/CONSTRUCTION_NEXT_STEP_REVIEW_20261004.md. Temporarily no useful
+experiment/code extension is ready under the present independent construction
+premise; no larger batch, repeated failed vector or framework padding is used.
+This is one observed early-ended segment, not proof the persistence problem is
+solved. The scientific objective remains open; heartbeat and stop flags unchanged.
 
 The first native same-chat heartbeat was received with event timestamp
 2026-10-03T13:52:48.439Z. It resumed this checkout without another chat or Agent.
