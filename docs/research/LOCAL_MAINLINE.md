@@ -365,6 +365,19 @@ theorem also corrects individual service invariance to sufficient, not necessary
 aggregate signed residuals may cancel. Earlier finite failures and unread
 holdouts remain intact; no new goal-labelled game population was generated.
 
+`PUBLIC_GOAL_INTERVAL_RESULTS.md` advances interval acquisition on public
+GameStates without material/search scores: depth1 initial Chess stays [-1,1],
+an existing certified winning root becomes [1,1], and interrupted branches
+retain unknown bounds. Complete tiny-game oracle checks cover depth/node/time
+limits. A subsequent source audit found legal_actions omits Session declarations;
+an explicit addendum includes reassessed claim choices as virtual outcome leaves.
+Both-owner Shogi WIN controls are exact, RESTART stays unknown, and board
+materializations are counted separately. Eight observer plus existing declaration
+tests pass (41). This is label-acquisition correctness on diagnostic roots, not
+a material prior/population validation. Official Shogi stalemate, restart target
+and uncapped-goal semantics remain qualified limits. Next needs an independently
+motivated candidate and deployment, not deeper mate or service repetitions.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.

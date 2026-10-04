@@ -72,6 +72,13 @@ near ten minutes without a qualifying reason, inspect that turn and revise the
 specific instruction; do not call persistence fixed from static checks alone.
 No extra scheduler, worker, model setting, Goal or CLI interface is introduced.
 
+Observation 1 is ACTIVE, started 2026-10-04T06:45:35Z (normal user continuation).
+Actual phase continuation: public board-action goal intervals were implemented
+and tested, then source inspection exposed missing Session declarations and
+the adapter was extended/tested without ending the turn. Evidence:
+docs/research/PUBLIC_GOAL_INTERVAL_RESULTS.md. End/time/reason not yet observed;
+this active segment is not a completed acceptance sample.
+
 The first native same-chat heartbeat was received with event timestamp
 2026-10-03T13:52:48.439Z. It resumed this checkout without another chat or Agent.
 This observes receipt and local continuation; repeated two-hour cadence and
