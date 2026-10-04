@@ -1,0 +1,1388 @@
+{
+  "source_sha256": {
+    "docs/research/LANCE_CONTACT_WITNESS_PROTOCOL.md": "3258ddb705124143b4632383c253bd61860b26d99a92ab494b75b75dd893a178",
+    "scripts/audit_lance_contact_witness.py": "3ee5e31a325a041cbabd3b24a1b3e054048192c829965053a26a9ea7ca0cd858",
+    "scripts/compatible_contact.py": "5e2f55f80d0c21ffbdcf46625d9c9b2c4fbcec36a5a13ca99ed00ff88ee8b807",
+    "scripts/intrinsic_action_events.py": "b9a47fe39046a223a9f2c550daabdf973e96d04c2f0ca6d4f480d453d9f9d155",
+    "scripts/intrinsic_occupancy_cubes.py": "06ce57a843d4d1b996786fc5db3ec4c16ff8d321f06b71fdfde8cb1e3b32c48b",
+    "scripts/audit_static_semantic_material_prior_v2.py": "bec3d08a4dc716efbd93ce3add119dcc79c4923e75d9201f0824847b46acd07d",
+    "scripts/audit_static_semantic_material_prior_v2a.py": "934f7a4b04e9d2138274a85cebd580c1c3d71d169106055cc4b0292898ee37fe",
+    "scripts/audit_static_semantic_material_prior_v2d.py": "cf83fdda2864796094223281e5c460d750d3bcb1d68c86126acf9f2eb33946f8",
+    "scripts/public_task_intervals.py": "b7a2a2968e6f21c56b4a6943ceb0245708d655ee0dcde96b4116e62b1415a5a2",
+    "generic_chess/rules/ir.py": "89923d0f6f0866ce9f62570890f0b47d403291f9125c1d43ac3a31ddb9eaee31",
+    "generic_chess/rules/compiler.py": "ad04e3da677ad31ecfa66b27e73b42e96f125c2cbb357a85756a2dcfa826b09a",
+    "generic_chess/rules/standard_shogi.py": "a2a0f0e1b1076b8cc365a2bdcea3fa105730935b77fce3970790125f4d502923"
+  },
+  "steps": [
+    {
+      "before": {
+        "base": "L",
+        "current": "L",
+        "square": 54
+      },
+      "event": [
+        0,
+        "L",
+        54,
+        63,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            63,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 63
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_L_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_L_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_L_quiet_0",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 63
+      },
+      "event": [
+        0,
+        "TL",
+        63,
+        64,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            64,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 64
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 64
+      },
+      "event": [
+        0,
+        "TL",
+        64,
+        65,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            65,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 65
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 65
+      },
+      "event": [
+        0,
+        "TL",
+        65,
+        66,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            66,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 66
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 66
+      },
+      "event": [
+        0,
+        "TL",
+        66,
+        67,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            67,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 67
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 67
+      },
+      "event": [
+        0,
+        "TL",
+        67,
+        68,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            68,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 68
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 68
+      },
+      "event": [
+        0,
+        "TL",
+        68,
+        69,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            69,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 69
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 69
+      },
+      "event": [
+        0,
+        "TL",
+        69,
+        70,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            70,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 70
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 70
+      },
+      "event": [
+        0,
+        "TL",
+        70,
+        71,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            71,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 71
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 71
+      },
+      "event": [
+        0,
+        "TL",
+        71,
+        62,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            62,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 62
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 62
+      },
+      "event": [
+        0,
+        "TL",
+        62,
+        53,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            53,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 53
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 53
+      },
+      "event": [
+        0,
+        "TL",
+        53,
+        44,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            44,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 44
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 44
+      },
+      "event": [
+        0,
+        "TL",
+        44,
+        35,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            35,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 35
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 35
+      },
+      "event": [
+        0,
+        "TL",
+        35,
+        26,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            26,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 26
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 26
+      },
+      "event": [
+        0,
+        "TL",
+        26,
+        17,
+        "empty",
+        [],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            17,
+            [
+              "empty"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 17
+      },
+      "completed": false,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    },
+    {
+      "before": {
+        "base": "L",
+        "current": "TL",
+        "square": 17
+      },
+      "event": [
+        0,
+        "TL",
+        17,
+        8,
+        "enemy",
+        [
+          [
+            8,
+            "capture_to_hand"
+          ]
+        ],
+        "TL"
+      ],
+      "cubes": [
+        [
+          [
+            8,
+            [
+              "enemy"
+            ]
+          ]
+        ]
+      ],
+      "after": {
+        "base": "L",
+        "current": "TL",
+        "square": 8
+      },
+      "completed": true,
+      "excluded_dynamic": [
+        [
+          "legacy_TL_capture_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_capture_5",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_drop",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_0",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_1",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_2",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_3",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_4",
+          "own_anchor_safe"
+        ],
+        [
+          "legacy_TL_quiet_5",
+          "own_anchor_safe"
+        ]
+      ],
+      "full_choice_set": false
+    }
+  ],
+  "complete": true,
+  "materializations": 16,
+  "geometry_candidates": 152,
+  "scope": {
+    "task": "virtual source-only preparation",
+    "public_transitions": 0,
+    "goal_calls": 0,
+    "royal_safety": false,
+    "opponent_turns": false,
+    "minimum_proof": "separate analytic argument"
+  },
+  "seconds": 0.09300000010989606,
+  "source_hashes_unchanged": true
+}

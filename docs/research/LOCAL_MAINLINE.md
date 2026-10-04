@@ -196,6 +196,25 @@ definitions, not real compatible action paths. Any new discount/contact model
 must declare compatible path guards, demand law and approximation scope before
 measurements; do not simply rename graph hops or reopen old reference tests.
 
+COMPATIBLE_CONTACT_TASK_DESIGN.md now specifies a definite evolving source,
+passive target/background and explicit safety/history relaxation. The frozen
+Rook discriminator proves clear distance1 versus Pe7-blocked3. Conditional
+target-free reuse has an independent graph theorem and25 saved-node checks,
+not universal applicability. CONTACT_PARAMETER_TRANSFER.md retains shared
+discount dependence, signed obstruction and unknown distance mass.
+CONTACT_COMMON_DEMAND_ANALYSIS.md gives one fixed-frame analytic population;
+actual L16, advanced P1/N3 and ordinary N1/P<=11 witnesses qualify distinct
+mechanisms. The P11 lower bound is separately analytic, not deep goal search.
+The source/target change reverses P/N task ordering; do not call a promotion-
+adjacent frame an intrinsic mode price. No more sparse pairs on this premise.
+SINGLE_BLOCKER_ROOK_COMMON_LAW.md instead derives a complete source-balanced
+triple-law Rook statistic algebraically. CONTACT_CONSTRUCTION_COST_RESULTS.md
+forecasts15368 pattern tests for one owner's complete Shogi scan, above caps.
+HELD_CONTACT_OPTIMISM_BOUNDARY.md analytically identifies almost-collapsed
+optimized B/R single-token drop preparation under the same law. Compiled held
+qualification, broader counterparts and independent deployment use remain open.
+No complete material candidate, new independent use labels or holdout release.
+
 ## Boundaries and evidence lookup
 
 Movement/capture coordinates do not alone establish complete strategic options.
