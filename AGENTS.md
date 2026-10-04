@@ -50,6 +50,13 @@ is not a work-order issuer or a publication gate. User instructions win.
 
 Slack #generic-chess is the sole consultation channel. Use consult,
 consult-status and reconcile with the calling Agent's installed Slack tools.
+The user grants standing authorization for this GenericChess workflow to send
+through the connected user account to NanoMelon #generic-chess C0C6L21UU20 and
+its consultation threads. This is not per-turn permission: do not ask again
+for in-scope sends. It lasts until user revocation; an explicit project stop
+suspends sending. The user identifies this as their own dedicated workspace.
+Authorization does not require routine sends or waive identity, deduplication,
+uncertain-send reconciliation, no-loop or no-extra-worker rules.
 Requests have immutable IDs, content hashes, project, channel and root ts.
 Sender identity is the verified Slack account; role markers are not identity
 proof. Dot currently replies using the same user account. Provide bounded code

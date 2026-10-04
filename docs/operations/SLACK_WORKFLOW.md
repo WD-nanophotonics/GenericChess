@@ -7,6 +7,16 @@ text only; no token, daemon, Windows task or extra model is needed here.
 
 ## Destination and evidence
 
+Standing user authorization, reaffirmed 2026-10-04: the GenericChess Agent may
+send through the connected user account to the dedicated NanoMelon channel
+#generic-chess C0C6L21UU20 and its consultation threads without asking for each
+send, across turns, restarts, compaction and heartbeat continuation. The user
+states this Slack belongs to their account and is not an external public forum.
+Authorization lasts until revoked; project stop suspends sending. It applies
+to this workflow, not unrelated destinations/projects. Send only useful
+questions/evidence as needed; preserve identity, deduplication, uncertain-send
+reconciliation, no-loop and no-extra-worker requirements.
+
 Workspace NanoMelon T0C6A46B55H; public channel #generic-chess C0C6L21UU20.
 Sender and current dot reply identity: verified user U0C6G6AU6MQ. TYPE/ID are
 role/correlation markers, not independent process authentication. The installed

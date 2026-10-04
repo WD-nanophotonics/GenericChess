@@ -403,5 +403,19 @@ research objective permits motivated approximation assumptions; it does not
 require rules to select a unique context distribution. Do not repeat recapture
 witnesses or the old failed proxies as a substitute for that remaining question.
 
+`PARTIAL_DECISION_LOSS_RESULTS.md` records a new on-demand dot consultation
+and independently checked correction: approximate search-leaf ordering need
+not first equal a calibrated WDL conditional mean. Construction assumptions,
+semantic correctness and independent decision-use validation are separate.
+Exact interval regret and same-root paired improvement pass seven controls,
+including complete216 interval-box oracles. Shared optimum cancels, so paired
+comparison can use only the two selected values without resolving all other
+choices, while individual root regret needs all alternatives safely covered.
+This supplies a cheaper validation option, not a coefficient formula or real
+material validation. Failed service-count uses remain rejected; no rescue batch,
+human holdout read or candidate is admitted. Next independently motivate a
+cheap construction and material-sensitive deployment, without insisting rules
+uniquely choose the context law or scores have WDL calibration.
+
 
 The Agent task ends successfully only when project evidence supports the objective above: a specified, inexpensive, game-independent material-prior construction derived from executable RuleSet consequences; the material-relevant semantics it uses verified on Chess, Standard Shogi, and Xiangqi; a formula and evaluation protocol frozen before Xiangqi holdout inspection; Chess validation, Shogi control, and Xiangqi holdout results reported with failures and limitations; and relevant correctness and cost tests passing on the published result. Document the derivation, observations, and remaining limits so a reader can distinguish the rule-derived claim from deployment choices or fitted references. If the evidence instead rejects a candidate or leaves a required premise unsupported, update the scientific route and continue the same task. A completed probe, batch, scheduled turn, checkpoint, or negative result is not evidence that the mainline objective is complete.

@@ -76,7 +76,12 @@ Observation 1 is ACTIVE, started 2026-10-04T06:45:35Z (normal user continuation)
 Actual phase continuation: public board-action goal intervals were implemented
 and tested, then source inspection exposed missing Session declarations and
 the adapter was extended/tested without ending the turn. Evidence:
-docs/research/PUBLIC_GOAL_INTERVAL_RESULTS.md. End/time/reason not yet observed;
+docs/research/PUBLIC_GOAL_INTERVAL_RESULTS.md. A third phase read/reconciled
+dot's concrete theory reply, corrected the overstrong calibration prerequisite,
+then implemented/tested partial decision regret and paired optimum cancellation
+(docs/research/PARTIAL_DECISION_LOSS_RESULTS.md). User's subsequent standing
+Slack authorization was persisted without changing schedule or adding workers.
+End/time/reason not yet observed;
 this active segment is not a completed acceptance sample.
 
 The first native same-chat heartbeat was received with event timestamp
@@ -86,9 +91,14 @@ overlap/explicit-stop fault scenarios are not thereby proven. The receipt and
 remaining limits are recorded in .local_agent/rollout.json.
 
 The latest user instruction accepts active Slack plugin reading/waiting and
-one native two-hour heartbeat on this same Agent chat. During active work,
-check pending threads at relevant checkpoints; when awaiting a useful answer,
-briefly wait and read again. Preserve useful partial evidence; do not stop at
+one native two-hour heartbeat on this same Agent chat. In this workflow,
+the user's standing authorization permits in-scope sends to NanoMelon
+#generic-chess C0C6L21UU20 and its threads through the connected account without
+per-send confirmation, until revoked; explicit project stop suspends sending.
+This persists across turns/restarts/compaction. See SLACK_WORKFLOW.md for scope
+and the unchanged identity, deduplication and no-loop procedure.
+During active work, check pending threads at relevant checkpoints; when awaiting
+a useful answer, briefly wait and read again. Preserve useful partial evidence; do not stop at
 an empty read, finished consultation, test or commit. Continue independent
 bounded research during delays. No receive-only app or native reply wake is
 required. Dot's Slack event subscription is already observed working.

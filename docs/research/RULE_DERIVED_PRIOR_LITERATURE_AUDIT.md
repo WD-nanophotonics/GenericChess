@@ -77,3 +77,25 @@ and cost declared first. Kuhlmann et al. further illustrate that
 discovering candidate features does not itself select their combination
 or static material meaning. Do not treat these papers as frozen candidates or
 open Xiangqi human material values on their basis.
+
+## Additional bounded source checks, 2026-10-04
+
+Kowalski and Kisielewicz's [Testing General Game Players Against a Simplified
+Boardgames Player Using Temporal-difference Learning](https://jakubkowalski.tech/Publications/Kowalski2015TestingGeneral.pdf),
+sectionV.D, initializes weights using movement-validity probabilities under
+a predicted occupancy law. Capture scores receive a factor2; goal-related
+bonuses are added. Material weights sum position weights; subsequent TDLeaf
+learning modifies them. Its regular Chess lacks check constraints, promotion,
+castling/en-passant and historical draws. The source supports explicit
+heuristic initialization, not independently verified Standard Chess/Shogi
+material semantics or our cheap unfitted prior. No new mobility candidate or
+TD training is adopted; its factor2/goal bonuses are not imported as rule laws.
+
+Barthelemy's [Fragility of Chess positions](https://arxiv.org/html/2410.02333v1)
+defines directed attack/defense interaction graphs and sums betweenness of
+attacked pieces. This is a state tension statistic, not a fixed type-value
+construction. Graph shortest paths are not verified sequences of legal game
+transitions; this last distinction is our inference. Its formula does not
+use human material weights. No graph-feature batch or material prior is
+admitted. These sources leave construction missing without implying that
+every heuristic must first prove exact WDL calibration.
