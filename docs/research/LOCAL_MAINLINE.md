@@ -327,6 +327,18 @@ contract before any coefficient batch. A global material/WDL-use bridge is
 still unsupported; unrelated losses, sacrifices, delayed gain and overlap
 remain limitations. Deployment labels and Xiangqi holdout stay unread.
 
+`LOCAL_SERVICE_VALIDATION_RESULTS.md` freezes a distinct narrow use and NEW
+independent corpus before coefficients: predict locally successful board-actor
+count after a real capture with sum N_t v_t. Eight fresh reference roots and all
+twelve fresh strata complete; nonzero reference vectors are frozen before new
+deployment labels. All20 labels/replies take 15,465 transitions/5.078 s, including
+3,462 Shogi opponent drops. Both games fail the unchanged double-baseline 10%
+gate: Chess risk17.93 exceeds zero10; Shogi risk6.52 exceeds constant5.39.
+Reject this finite inventory-transfer use despite positive local service; no
+vector tuning, larger batch, material installation or holdout read. OLD global
+deployment labels remain unread. Future work needs a justified state-dependent
+service-to-static-material bridge, not more service batches or fitted rescues.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
