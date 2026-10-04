@@ -10,12 +10,39 @@ Do not start extra Agents, concurrent heavy jobs or Work/Codex delegates.
 Preserve research evidence, unrelated changes and Chess/Shogi/Xiangqi boundaries.
 Choose the smallest decision-changing observation; bound compute and abort costs.
 Local memo is compact resume memory: at most 20 lines and 2 KiB UTF-8. Keep only
-recent state, unfinished work, next direction and necessary evidence references.
+recent state, research-segment start time, unfinished work, next direction and
+necessary evidence references.
 After a small milestone, optionally overwrite it; remove superseded/completed
 items instead of appending history or retaining each memo version. Detailed
 evidence belongs in research documents/Git. Memo is revisable planning memory,
 not an approval queue or a limit on work. Select the next research question
 independently. Experiment resource caps do not end the working session.
+
+For each normal research start or heartbeat continuation, aim for 60-90 minutes
+of useful research without Goal. Record the segment's UTC start time in memo;
+choose the current question and two possible follow-up directions, revisable
+by evidence. After each milestone: validate the result, assess its mainline
+effect, then select AND BEGIN the next useful step. Documentation, memo updates,
+tests, commits and publication are checkpoints, not reasons for a final reply.
+Completing the carried-over memo items does not complete the research segment.
+Before 60 minutes, continue whenever a useful executable next step exists.
+After 60 minutes, continue an effective line toward roughly 90 minutes, then
+finish at a safe checkpoint. This is a work target, not guaranteed App uptime.
+Do not pad time with waiting, failed-probe repetitions, irrelevant small proofs
+or enlarged compute budgets; each experiment retains its own abort/resource cap.
+After compaction or recovery of an interrupted segment, read memo first and
+preserve its start time. A normally ended segment's next wake starts a new one.
+Early ending is allowed only for user stop, a decision requiring the user,
+actual quota/tool/runtime limits, evidence-supported scientific completion,
+or no worthwhile executable next step. Before the last conclusion, inspect
+the mainline/recent evidence and at least two alternative directions; record
+why they cannot currently advance it without running unnecessary experiments.
+Dot silence, a negative result or publication alone never qualifies. At ending,
+record concrete progress, elapsed time and reason; if abruptly interrupted,
+mark the ending/time as unobserved rather than inventing a completed session.
+Retain the compact memo limits; detailed evidence belongs in research documents.
+This duration policy applies to normal research, not a separately requested
+bounded configuration, explanation or review task.
 
 The Agent and dot are research partners of nearly equal authority. Resolve
 questions by evidence; record why advice is adopted, deferred or rejected. Dot

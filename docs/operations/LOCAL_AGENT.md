@@ -9,7 +9,8 @@ Slack/dot is the only consultation
 transport; docs/operations/SLACK_WORKFLOW.md is the communication manual.
 
 NEXT_WORK.md is resume memory, limited to 20 lines and 2 KiB UTF-8. Retain only
-recent status, unfinished work, the next direction and essential evidence links.
+recent status, research-segment start time, unfinished work, the next direction
+and essential evidence links.
 After a small milestone, rewrite it when that will help the next restart or
 compaction; no rewrite is required for every probe. Overwrite/delete obsolete
 and completed entries, never accumulate a diary or archive each memo revision.
@@ -23,6 +24,53 @@ A single experiment's resource/abort ceiling only limits that computation;
 it never means the research session should end.
 
 ## Active continuation
+
+### Research segment loop without Goal
+
+At a normal manual research start or heartbeat wake, read memo/mainline and
+stop flags first. Record an ISO UTC start time and mark the segment active in
+memo. Select the current question and two evidence-sensitive follow-up routes;
+these are provisional directions, not a compulsory queue. Reuse the active
+segment's start time after compaction or an interrupted-turn recovery. After a
+recorded normal ending, the next research wake starts a new segment. If start
+time is unavailable, record recovery time and unknown earlier duration.
+
+At each milestone, validate, assess the mainline consequence, then select and
+begin the next useful step. Carryover completion, tests, documentation, memo,
+commit and publication are checkpoints rather than final-response triggers.
+Aim for 60-90 minutes of useful research: before 60 minutes continue if a useful
+executable next step exists; after 60 minutes an effective line may continue
+toward about 90 minutes, finishing at a safe checkpoint. Do not start a large
+new computation solely to fill the remaining window. The target cannot ensure
+App uptime and does not override stop instructions or any experiment cost cap.
+
+Early ending requires user stop, a necessary user decision, actual quota/tool/
+runtime limits, evidence-supported scientific completion, or no worthwhile
+executable direction. For the last reason inspect mainline/recent evidence and
+at least two alternatives; write why neither currently advances the research.
+No extra probe is required just to document that decision. Negative results,
+dot silence and successful publication alone never justify ending. No padding
+with idle waits, repeated failed probes, irrelevant proofs or larger budgets.
+
+At a normal ending overwrite memo with recent concrete progress, start time,
+elapsed minutes, ended status/reason and next direction. Keep <=20 lines and
+<=2 KiB UTF-8; remove superseded entries. Detailed phase evidence belongs in
+the relevant research document. Abrupt endings remain unobserved; recover from
+the persisted active memo rather than claim the time/stop reason was measured.
+Bounded user requests to configure, explain or review are not research-duration
+samples; complete their requested scope without inventing research to fill time.
+
+### Duration-policy acceptance
+
+Configuration rollout on 2026-10-04: runtime acceptance PENDING (0/3 normal
+research segments observed under the new policy). During the next three normal
+segments record start/end, elapsed minutes, linked phase evidence and any early
+ending reason in this section. A phase-to-next-phase transition must show actual
+work, not just a memo promise. Do not count waiting as effective research or
+fabricate three sessions in this configuration turn. If the Agent again ends
+near ten minutes without a qualifying reason, inspect that turn and revise the
+specific instruction; do not call persistence fixed from static checks alone.
+No extra scheduler, worker, model setting, Goal or CLI interface is introduced.
 
 The first native same-chat heartbeat was received with event timestamp
 2026-10-03T13:52:48.439Z. It resumed this checkout without another chat or Agent.
