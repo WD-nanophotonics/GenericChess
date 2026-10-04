@@ -131,3 +131,47 @@ to settle a resource-preserving, mode-complete law and a bounded falsifier whose
 result can change the construction decision. A statistical service vector must
 later face independently frozen leaf-choice use evidence, not only its own
 closure statistic, and remain separate from Xiangqi human holdout.
+
+## Targeted H=2 closure residual
+
+Under a fixed declared complete-choice policy, let r(s) be expected tracked
+unit reward for one cycle from full state/tag s, and K(s,dz) its substochastic
+full-state continuation law. It stops on ownership loss or a declared endpoint.
+For each mode m take reference context law mu_m, g_m=E_mu_m r(s), and
+P_mn=E_mu_m K(s,mode n). Let nu_mn be the actual next-context law conditional
+on start mode m and surviving next mode n; terms with P_mn=0 are omitted.
+The true two-cycle mean from mu_m is
+g_m + sum_n P_mn E_nu_mn r(z), whereas the refreshed surrogate is
+g_m + sum_n P_mn g_n. Their signed difference is therefore
+e_m=sum_n P_mn(E_nu_mn r(z)-E_mu_n r(z)).
+
+This derivation is our finite fixed-policy inference, not a claim that board
+types form an exact Markov decision process. It isolates the new decision-
+changing check: induced child reward mean versus reference mode reward mean,
+under the same freeze and WITHOUT resetting the actual child. Full transition
+equivalence is stronger than needed for this H=2 population mean. A zero mean
+residual can hide individual errors and cannot validate H>2 or another policy.
+If each conditional mean difference is bounded by epsilon_mn, then
+|e_m|<=sum_n P_mn epsilon_mn. Present Chess/Shogi single-victim unit rewards
+lie in[0,1], so an unqualified conditional difference can be as large as1.
+That worst-case bound is honest but not evidence of a useful approximation.
+
+Independent exact synthetic controls in test_finite_owned_service.py verify
+this decomposition: two modes with different context mixtures give X error3/4
+and Y error9/32, matching full two-cycle branch enumeration. They exercise the
+closure statistic itself, not a new game population, coefficient fit or label.
+
+Physical tag survival and continuation eligibility differ. If an own action
+ends the game, its surviving physical tag may still have mass1, while future
+service has continuation mass0. A terminal own capture can have current reward1
+and no future cycle. Feeding raw tag survival alone into P would incorrectly
+predict another reward. RESTART must obey a predeclared service endpoint or
+censoring policy; its unresolved goal is never converted into a draw label.
+
+[Li, Walsh and Littman2006](https://thomasjwalsh.net/pub/aima06Towards.pdf),
+section3 definitions1/3, explicitly separates weighted abstract rewards/
+transitions from the stronger model-irrelevance condition preserving one-step
+reward and transition mass into each abstract class. Our inference: merely
+writing a well-formed averaged P does not establish fidelity. Their discounted
+MDP planning/learning guarantees are not automatically our finite fixed-policy
+service or Chess WDL guarantees. No learned model, discount or worker is added.

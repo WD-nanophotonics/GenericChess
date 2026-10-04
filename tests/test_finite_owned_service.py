@@ -77,3 +77,28 @@ def test_unsupported_modes_invalid_mass_or_infinite_horizon_fail_closed():
     for mass, count in ((-1, 2), (F(3, 2), 2), (.5, 2), (1, 0), (1, True)):
         with pytest.raises(ValueError):
             exchangeable_hand_drop(mass, count)
+
+
+def test_h2_context_residual_and_terminal_survival_are_separate():
+    # Independent full-state branch calculation; no actual-game data.
+    context = {'X': {'a': F(1, 2), 'b': F(1, 2)},
+               'Y': {'c': F(1, 4), 'd': F(3, 4)}}
+    mode = {'a': 'X', 'b': 'X', 'c': 'Y', 'd': 'Y'}
+    reward = {'a': 0, 'b': 1, 'c': 1, 'd': 0}
+    next_states = {'a': {'c': F(1)}, 'b': {'c': F(1)},
+                   'c': {}, 'd': {'c': F(1, 2)}}
+    g = {m: sum(prob*reward[s] for s, prob in mu.items()) for m, mu in context.items()}
+    p = {m: {n: sum(prob*q for s, prob in mu.items()
+                    for z, q in next_states[s].items() if mode[z] == n)
+              for n in context} for m, mu in context.items()}
+    full = {m: sum(prob*(reward[s]+sum(q*reward[z] for z, q in next_states[s].items()))
+                   for s, prob in mu.items()) for m, mu in context.items()}
+    approximate = finite_service(g, p)
+    residual = {m: sum(prob*q*(reward[z]-g[mode[z]]) for s, prob in mu.items()
+                        for z, q in next_states[s].items()) for m, mu in context.items()}
+    assert residual == {'X': F(3, 4), 'Y': F(9, 32)}
+    assert all(full[m]-approximate[m] == residual[m] for m in context)
+    assert all(abs(residual[m]) <= sum(p[m].values())*F(3, 4) for m in context)
+    # Physical tag survived a terminal action, but no next cycle is eligible.
+    assert finite_service({'alive': 1}, {'alive': {'alive': 0}})['alive'] == 1
+    assert finite_service({'alive': 1}, {'alive': {'alive': 1}})['alive'] == 2
