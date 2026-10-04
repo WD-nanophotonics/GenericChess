@@ -80,7 +80,7 @@ docs/archive/continuation_before_20261004; they are not new-policy successes.
 
 ### Duration-policy acceptance
 
-Observed1/3 normal segments after the rebuild; two remain pending. This is
+Observed2/3 normal segments after the rebuild; one remains pending. This is
 an execution observation, not an App uptime guarantee or proof from a validator.
 First segment2c26a558-2026-48ae-bfe2-473ec51eac31 ran from
 2026-10-04T08:24:25.387003+00:00 to2026-10-04T09:45:44.571061+00:00:
@@ -103,6 +103,25 @@ its mechanical gate; this separate review evaluates the chain's content.
 No early-ending claim was needed. Remaining future observations should check
 actual continuation, especially after soft blocks, without repeating this sample
 as additional acceptance or claiming that short exits can no longer happen.
+
+Second segment5c0ad4a7-360d-4306-81b0-28ce02d6fc0b ran
+2026-10-04T09:48:28.084939+00:00 to2026-10-04T10:52:37.541112+00:00:
+64.158 minutes elapsed, nine research stages, normal safe_checkpoint ending.
+Compaction resumed its original ID/start. Original memo's resource-context,
+closure and pure-certificate tasks completed before replacement with new tasks.
+Quality review: resource guards/proposals -> frozen root feasibility and specific
+Pawn-table correction -> actual H2 paths/conditional rewards -> scoped origin/
+custody controls and preserved partial-report failure -> DTM guard arithmetic ->
+Queen rule equivalence -> direct-service tower/precision -> post-publication
+held structural bound.81 relevant checks pass; four raw reports42 pinned inputs
+match. Failed metadata lookup and missing original Chess numerical rows remain
+explicit limitations; no completed Chess rerun was used to hide that failure.
+No idle wait, Goal, worker or enlarged failed experiment supplied this duration.
+End reason is elapsed safe checkpoint, not memo completion, dot reply or Git.
+Evidence: LOCAL_MAINLINE.md, OWNED_H2_PATH_RESULTS.md,
+DIRECT_FINITE_SERVICE_CONSTRUCTION.md and HELD_H2_STRUCTURAL_BOUND.md; ignored
+session receipt records the actual time. Scientific objective remains OPEN;
+one more normal segment must be observed before the three-segment acceptance.
 
 One native two-hour heartbeat, same chat, unchanged schedule/notification intent.
 Daily10:00 Tokyo substantive dot window, no mandatory external response or
