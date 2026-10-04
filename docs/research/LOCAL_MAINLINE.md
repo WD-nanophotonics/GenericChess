@@ -40,15 +40,32 @@ no unchanged reruns, exposed-label fitting or enlarged experiment budgets.
 The previous 'no new principle, so stop' notes are superseded as exit policies.
 
 Current executable Main/Backup tasks live in memo; execute and revise them.
-Priority: determine whether a coupled capture-opportunity model can provide
-a new independently defined structural prior, rather than merely recounting
-raw mobility. First inspect intrinsic event semantics and earlier valuation
-algebras for duplication; formulate or reject its new premise before any numbers.
-Alternative: prepare a candidate-independent, material-sensitive decision-use
-deployment design using paired outcome differences; do not sample/label yet.
-Alternative: investigate primary literature on coupled resource/exchange value
-for an explicit game-generic approximation, distinguishing fitted economics
-or learned coefficients from executable-rule inputs. No compulsory dot approval.
+Coupled-capture investigation now has concrete evidence: independent victim
+weighting collapses to rank1; typed active supports give Chess rank2/Shogi rank3
+but only limited support information. Exact triple motifs retain dependencies
+in125 Chess/343 Shogi strata. Removed threat edges need not protect a token;
+public replacement and same-root quiet controls verify that signed exposure
+can shift between entities while the aggregate stays constant. See
+COUPLED_CAPTURE_CONSTRUCTION.md, TYPED_CAPTURE_KERNEL_RESULTS.md,
+SPARSE_THREAT_MOTIF_RESULTS.md and SIGNED_EXPOSURE_CHOICE_RESULTS.md.
+
+MATERIAL_LEAF_DECISION_DESIGN.md and MATERIAL_LEAF_CHOICE_RESULTS.md qualify
+an exact complete-child-table operator; no formula or new corpus is admitted.
+CHESS_TABLEBASE_APPLICABILITY.md rejects direct Syzygy50 labels for current
+F24F adjudication, and identifies a conditional DTM/horizon alternative without
+downloads or position probes. Shogi independent labels remain a separate gap.
+
+Priority: qualify FINITE_RESOURCE_LIFETIME_PROPOSAL.md's explicit H=2 owned-mode
+reward/survival surrogate: physical identity through promotion/drop/capture,
+declared context/action law and its closure falsifier. No guessed hand premium,
+damping or coefficient batch. SIGNED_EXPOSURE_AVERAGING.md supplies a distinct
+positional-statistic alternative with signed/encoding-sensitive limits. Keep
+construction, semantic qualification and independent use evidence separate;
+neither full WDL calibration nor compulsory dot approval gates exploration.
+OWNED_TOKEN_MODE_QUALIFICATION.md now qualifies exact finite arithmetic and
+anonymous-hand probability; OWNED_TAG_TRACE_RESULTS.md records ten frozen public
+controls, including compound/off-target effects and both owners. Research trace
+uses pinned private resolvers; full mode/context estimation remains unqualified.
 
 ## Boundaries and evidence lookup
 

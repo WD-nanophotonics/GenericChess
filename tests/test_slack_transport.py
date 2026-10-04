@@ -209,3 +209,22 @@ def test_prose_rendering_normalizes_only_blank_separators_and_keeps_code(env):
     assert s._canonical('Question\n\nEvidence') == s._canonical('Question\nEvidence')
     code = 'LOCAL_CODE_SNAPSHOT=a.py\nSHA256=hash\nvalue = """first\n\nsecond"""\n'
     assert s._canonical(code) != s._canonical(code.replace('first\n\nsecond', 'first\nsecond'))
+
+
+def test_observed_single_prose_space_rendering_preserves_code_and_identity(env):
+    env.write_text('Question\n changed premise: concrete evidence')
+    r = sent(env)
+    path = plugin_snapshot(env, r, [])
+    raw = json.loads(path.read_text())
+    block = raw['tool_result']['content'][0]
+    block['text'] = block['text'].replace(' changed premise:', 'changed premise:')
+    write_json(path, raw)
+    assert s.import_snapshot(r['request_id'], path)['state'] == 'PENDING'
+    assert s.begin_send(r['request_id'])['resend_permitted'] is False
+    block['text'] = block['text'].replace('concrete evidence', 'different evidence')
+    write_json(path, raw)
+    with pytest.raises(LocalFlowError, match='exact payload'):
+        s.import_snapshot(r['request_id'], path)
+    for text in ('```python\n value=1\n```', '    value=1',
+                 'LOCAL_CODE_SNAPSHOT=a.py\n value=1', ' - nested list', ' > quote'):
+        assert s._canonical(text) != s._canonical(text.replace('\n ', '\n').lstrip())

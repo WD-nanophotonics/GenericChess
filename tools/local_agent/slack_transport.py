@@ -157,6 +157,12 @@ def _canonical(text):
             fenced = not fenced
         if line.startswith('Reply in this thread with TYPE=DOT_REPLY'):
             local_code = False
+        # Observed plugin rendering drops one prose-leading space. Preserve
+        # code indentation and Markdown list/quote structure; no text is dropped.
+        if (not local_code and not fenced and line.startswith(' ')
+                and not line.startswith('  ')
+                and not re.match(r' [*+>#-]| \d+[.)]\s', line)):
+            line = line[1:]
         if line.strip() or local_code or fenced:
             lines.append(line)
     return '\n'.join(lines)
