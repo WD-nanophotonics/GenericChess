@@ -1,0 +1,50 @@
+{
+  "protocol_sha256": "7911f4aa70acc118d66d159c213dd045489c36569bafe7953de0c44408fc2644",
+  "program_sha256": "5025ae829999206276f1040b2ab1608c7b39866ea5f1607df7061d2dc5d5c2e9",
+  "partial_label_mass": "1/4",
+  "partial_control": {
+    "candidate_risk": [
+      "3/16",
+      "7/16"
+    ],
+    "baseline_risk": [
+      "3/4",
+      "1"
+    ],
+    "margin": [
+      "37/80",
+      "39/80"
+    ],
+    "verdict": "certified_improvement"
+  },
+  "all_unknown_control": {
+    "candidate_risk": [
+      "0",
+      "1"
+    ],
+    "baseline_risk": [
+      "0",
+      "1"
+    ],
+    "margin": [
+      "-1/10",
+      "0"
+    ],
+    "verdict": "inconclusive"
+  },
+  "wrong_sign_control": {
+    "candidate_risk": [
+      "4",
+      "4"
+    ],
+    "baseline_risk": [
+      "1",
+      "1"
+    ],
+    "margin": [
+      "-31/10",
+      "-31/10"
+    ],
+    "verdict": "certified_failure"
+  }
+}

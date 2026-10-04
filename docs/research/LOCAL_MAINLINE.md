@@ -353,6 +353,18 @@ The outstanding theory task is closed with evidence, not a successful material
 model. A future route needs its own complete-goal/measure/support/cost premises
 before experimental admission; no new batch is queued by this conclusion.
 
+`PARTIAL_GOAL_RISK_RESULTS.md` relaxes that probe's unnecessarily strong
+complete-label admission gate: sound intervals for unresolved exact goal values
+can certify a frozen predictor's risk margin for every completion. Exact paired
+quadratic bounds pass a four-state arithmetic control with 1/4 label mass fully
+unknown; all-unknown and wrong-sign controls remain inconclusive/failing.
+Five tests pass. This supplies a cheaper comparison contract, not real-game
+validation or a material formula; candidate, deployment and sound interval
+semantics still need independent justification before any new batch. The prior
+theorem also corrects individual service invariance to sufficient, not necessary:
+aggregate signed residuals may cancel. Earlier finite failures and unread
+holdouts remain intact; no new goal-labelled game population was generated.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.

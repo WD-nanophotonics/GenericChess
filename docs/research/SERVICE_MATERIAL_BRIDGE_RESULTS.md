@@ -3,7 +3,7 @@
 The outstanding memo task was to seek an independently specified connection
 from state-dependent service to static material use/objective, rather than
 repeat count batches. That investigation is now complete within this scope:
-we specify the necessary modelling premises, prove a conditional bridge,
+we specify sufficient modelling premises, prove a conditional bridge,
 give an exact counterexample to an unconditional bridge, and select a precise
 goal-prediction objective. No usable real-game material model is established.
 
@@ -16,7 +16,8 @@ actor-service count, with each side's acting-state convention specified.
 Assume each type's actor success mean conditional on X is the same v_t for
 both owners and every supported inventory. Linearity then gives
 E[B|X]=sum_t X_t v_t. Independence of actors is unnecessary; invariance across
-inventories and the opposing side is necessary. The actual data currently
+inventories and the opposing side is sufficient, not necessary (individual
+residual means can cancel in the signed aggregate). The actual data currently
 tests only a narrow owner-zero projection, not that complete signed premise.
 
 Separately choose a bounded game-goal target U and state probability law D,
@@ -92,5 +93,7 @@ without a new supplement; no acknowledgement/reply loop or new delegate arose.
 
 The overall scientific objective remains open. Any future route must supply
 its own goal target, defensible deployment measure, identifiable inventory
-support and cheap complete-label cost premise BEFORE an experiment; this is
+support and cheap sound-label cost premise BEFORE an experiment; this is
 a research admissibility boundary, not an already queued or approved batch.
+`PARTIAL_GOAL_RISK_RESULTS.md` subsequently shows that sound partial goal
+intervals can certify some frozen comparisons without solving every label.
