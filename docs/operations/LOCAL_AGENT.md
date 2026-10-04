@@ -78,6 +78,32 @@ break instead of relabelling it or writing retroactive justifications.
 Pre-rebuild34-minute and80-second failures remain historical evidence in
 docs/archive/continuation_before_20261004; they are not new-policy successes.
 
+### Duration-policy acceptance
+
+Observed1/3 normal segments after the rebuild; two remain pending. This is
+an execution observation, not an App uptime guarantee or proof from a validator.
+First segment2c26a558-2026-48ae-bfe2-473ec51eac31 ran from
+2026-10-04T08:24:25.387003+00:00 to2026-10-04T09:45:44.571061+00:00:
+81.320 minutes elapsed, eight research stages, normal safe_checkpoint ending.
+Compaction resumed the same ID/start and later produced fresh research.
+
+Quality review: the actual chain progressed from coupled-capture assumptions,
+typed incidence and joint motifs to public replacement/signed-exposure controls,
+exact leaf-choice/independent-label audit, finite owned-mode construction,
+anonymous-hand arithmetic, ten ordered-effect controls and an H=2 closure
+residual. Original memo tasks were completed and replaced with executable new
+context/residual/certificate tasks. Publication was followed by a new research
+stage, not final reply. No idle wait, extra worker, Goal or enlarged failed
+experiment supplied the duration.81 relevant checks pass; five raw diagnostic
+reports retain matching43 pinned input hashes. Scientific objective remains OPEN.
+
+Evidence: docs/research/LOCAL_MAINLINE.md, FINITE_RESOURCE_LIFETIME_PROPOSAL.md,
+OWNED_TAG_TRACE_RESULTS.md and the ignored local session receipt. Finish passed
+its mechanical gate; this separate review evaluates the chain's content.
+No early-ending claim was needed. Remaining future observations should check
+actual continuation, especially after soft blocks, without repeating this sample
+as additional acceptance or claiming that short exits can no longer happen.
+
 One native two-hour heartbeat, same chat, unchanged schedule/notification intent.
 Daily10:00 Tokyo substantive dot window, no mandatory external response or
 routine acknowledgement. Standing Slack authorization and complete-reply/
