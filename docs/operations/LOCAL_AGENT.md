@@ -69,8 +69,8 @@ acceptance test. No waiting or fabrication to achieve60 minutes.
 
 ## Acceptance and delivery
 
-Next3 NORMAL segments after this rebuild are pending observation, not declared
-passed. session_receipts.json retains at most3 summaries; session.json retains
+The first3 NORMAL segments after this rebuild have now been observed and
+reviewed below. session_receipts.json retains at most3 summaries; session.json retains
 the current/last segment. Inspect actual phase chains, elapsed time and evidence
 for effective research. A short hard-blocked turn is recorded separately, not
 a duration pass. A two-minute voluntary exit fails; diagnose the execution
@@ -80,7 +80,7 @@ docs/archive/continuation_before_20261004; they are not new-policy successes.
 
 ### Duration-policy acceptance
 
-Observed2/3 normal segments after the rebuild; one remains pending. This is
+Observed3/3 normal segments after the rebuild with actual chain review. This is
 an execution observation, not an App uptime guarantee or proof from a validator.
 First segment2c26a558-2026-48ae-bfe2-473ec51eac31 ran from
 2026-10-04T08:24:25.387003+00:00 to2026-10-04T09:45:44.571061+00:00:
@@ -121,7 +121,35 @@ End reason is elapsed safe checkpoint, not memo completion, dot reply or Git.
 Evidence: LOCAL_MAINLINE.md, OWNED_H2_PATH_RESULTS.md,
 DIRECT_FINITE_SERVICE_CONSTRUCTION.md and HELD_H2_STRUCTURAL_BOUND.md; ignored
 session receipt records the actual time. Scientific objective remains OPEN;
-one more normal segment must be observed before the three-segment acceptance.
+the third observation below completes this limited three-segment acceptance.
+
+Third segment f39424da-8a20-4061-a687-7fd2a5b63960 ran
+2026-10-04T11:05:42.313726+00:00 to2026-10-04T12:06:07.428573+00:00:
+60.419 minutes elapsed,12 research stages, safe_checkpoint. Actual chain:
+held stratification/board covariance caveat -> decision-sensitive exact boxes ->
+origin/castling scope and preserved final-write failure -> source metadata and
+full-state request -> bounded actual independent table/parser acquisition ->
+complete legal/terminal probes -> full-selector selected-child comparisons ->
+H2 custody depletion -> independently specified two-victim root preflight ->
+positive native-board bounds -> fixed-budget prospective direct pilot ->
+post-publication tie sensitivity.100 relevant checks pass; eight reports74 local
+pinned input hashes match. External source files remain ignored and verified.
+Dot's full reply was reread/reconciled without routine acknowledgement; actual
+Slack emphasis rendering friction was repaired with regression coverage.
+Original memo tasks completed, then were replaced with executable pilot,
+reserved-use and held/control tasks. No Goal, worker, expanded budget, idle wait
+or unchanged empirical rerun supplied the duration. A finish attempted about
+seven seconds before60 was rejected; work continued with stored-table tie
+analysis before the accepted finish, rather than bypassing the gate. One
+PowerShell inline verification failed quoting and was corrected with a literal
+multiline Python input; the exact counterfactual margins[0,1,0,1] were verified.
+No future App uptime or permanent prevention of short exits is claimed.
+Scientific objective remains OPEN; prospective direct pilot has not executed.
+Evidence: SMALL_CERTIFICATE_FIRST_PROBE_RESULTS.md,
+SMALL_SELECTOR_DIAGNOSTIC_RESULTS.md, TWO_VICTIM_PREFLIGHT_RESULTS.md,
+TWO_VICTIM_FIRST_REWARD_BOUND.md, TWO_VICTIM_DIRECT_INTERVAL_PILOT.md and the
+ignored local segment receipt. The separate review, not elapsed time alone,
+qualifies these three observations; keep observing future normal continuations.
 
 One native two-hour heartbeat, same chat, unchanged schedule/notification intent.
 Daily10:00 Tokyo substantive dot window, no mandatory external response or
