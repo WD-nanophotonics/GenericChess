@@ -84,6 +84,9 @@ DIRECT_FINITE_SERVICE_CONSTRUCTION.md replaces mode refresh with actual finite
 conditional expectation; tower/variance controls pass without new game samples.
 DIRECT_SERVICE_PRECISION_BOUNDARY.md derives honest finite-cost statistical
 limits; its sufficient counts are not impossibility claims or new budgets.
+HELD_H2_STRUCTURAL_BOUND.md sharpens held-mode raw range to1/n and fixed-root
+mean upper bound D/(A*n), without changing the common service gauge or claiming
+positive hand value. It was derived after publication as actual continuation.
 Next: derive a changed decision-changing precision/use premise before further
 sampling, or inspect independent construction/certificate evidence without labels.
 

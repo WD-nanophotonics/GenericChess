@@ -19,3 +19,16 @@ def test_direct_h2_tower_and_variance_on_independent_full_state_branches():
     endpoint_branch = (F(1), 1, (F(1), F(0)))
     p, r1, second = endpoint_branch
     assert p*(r1+second[1]) == 1
+
+
+def test_held_two_cycle_bound_matches_hidden_label_first_action_enumeration():
+    for hand_count in range(1, 7):
+        for actions in range(1, 8):
+            for drops in range(actions+1):
+                # Independent physical-label enumeration: tag is label0,
+                # uniformly drawn for each legal first drop; all such board
+                # tags get maximal next service1. Other first choices get0.
+                total = sum(F(int(action < drops and label == 0), actions*hand_count)
+                            for action in range(actions) for label in range(hand_count))
+                assert total == F(drops, actions*hand_count)
+                assert total <= F(1, hand_count)
