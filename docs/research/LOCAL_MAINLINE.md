@@ -303,6 +303,17 @@ no safety filter, formula or rescue batch is adopted. Daily dot request
 GC-SLACK-20261004-100247-cbfff6a6 asks for a minimal justified alternative;
 consultation is not a gate for independent research.
 
+`DAILY_ADVISOR_REVIEW_20261004.md` records the full daily dot reply and local
+decision: retain failure and same-state support qualification; defer proposed
+local secured-capture service pending a distinct justified use. Existing
+background/focal-survival controls already address much of that proposal.
+Read-only inspection of the new reference's 63 Chess/55 Shogi capture actions
+finds only 1/2 saved ongoing first-refutation focal-loss candidates; remaining
+62/53 cannot prove local success because only the first global refutation, not
+all physical successor identities, was retained. No new labels or independent
+validation claim follows. Do not repeat old controls or rescue the candidate
+with selective relabelling; specify new use/evidence prerequisites first.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.
