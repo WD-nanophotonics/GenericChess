@@ -65,7 +65,11 @@ sending, account-wide zero usage or arbitrary delegation by dot.
    The actual content blocks are objects copied from the tool, not fabricated
    strings. Current importer requires complete server pagination and exact
    root account/ts/payload, allowing the plugin's prose paragraph-separator
-   rendering but preserving code whitespace. If paginated or an ambiguous rendered delimiter is
+   rendering and the observed balanced single-asterisk italic to underscore
+   projection in expected prose, while preserving inline/fenced/snapshot code
+   and every body character. Put arithmetic multiplication inside inline code
+   in future requests to prevent Slack interpreting it as emphasis. Wrong text,
+   unpaired markers and changed code still fail exact association. If paginated or an ambiguous rendered delimiter is
    encountered, retain the full tool evidence for review; do not resend.
 5. Reconcile matches verified identity, thread and exact ID. All matched posts
    are retained, including revisions. Unknown/conflicting messages are held.

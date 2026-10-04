@@ -32,3 +32,44 @@ def test_held_two_cycle_bound_matches_hidden_label_first_action_enumeration():
                             for action in range(actions) for label in range(hand_count))
                 assert total == F(drops, actions*hand_count)
                 assert total <= F(1, hand_count)
+
+
+def test_drop_conditioning_preserves_hidden_label_service_and_reduces_variance():
+    # Explicit labelled worlds, rather than an importance-sampler implementation.
+    # Different drops have different successor service and enemy capture risks.
+    drop_services = ((0, 1, 1), (0, 0, 1), (1, 1, 1))
+    for hand_count in range(1, 6):
+        for quiet_choices in range(5):
+            actions = len(drop_services)+quiet_choices
+            worlds = [F(int(label == 0)*service)
+                      for outcomes in drop_services for service in outcomes
+                      for label in range(hand_count)]
+            # Integrating anonymous labels first yields fractional public trace.
+            integrated = [F(service, hand_count)
+                          for outcomes in drop_services for service in outcomes]
+            assert sum(worlds, F(0))/len(worlds) == sum(integrated, F(0))/len(integrated)
+            p = F(len(drop_services), actions)
+            original = integrated+[F(0)]*(quiet_choices*3)
+            conditioned = [p*value for value in integrated]
+            mean = sum(original, F(0))/len(original)
+            assert mean == sum(conditioned, F(0))/len(conditioned)
+            variance = lambda xs: sum((x-mean)**2 for x in xs)/len(xs)
+            second_moment = sum(x*x for x in integrated)/len(integrated)
+            assert variance(original)-variance(conditioned) == p*(1-p)*second_moment
+            assert all(0 <= x <= p/hand_count for x in conditioned)
+            if quiet_choices:
+                assert sum(integrated)/len(integrated) > mean  # omitting p biases it
+
+
+def test_exact_first_reward_is_not_a_universal_total_variance_improvement():
+    # Negative covariance: two equally likely first choices give total service1
+    # deterministically. Separately integrating R1 destroys that cancellation.
+    first_reward = (F(1), F(0))
+    next_service = (F(0), F(1))
+    original = [a+b for a, b in zip(first_reward, next_service)]
+    integrated_first = sum(first_reward)/2
+    separated = [integrated_first+b for b in next_service]
+    assert original == [F(1), F(1)]
+    assert sum(separated)/2 == 1
+    assert sum((x-1)**2 for x in original)/2 == 0
+    assert sum((x-1)**2 for x in separated)/2 == F(1, 4)

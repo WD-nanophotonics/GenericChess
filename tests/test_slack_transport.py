@@ -228,3 +228,33 @@ def test_observed_single_prose_space_rendering_preserves_code_and_identity(env):
     for text in ('```python\n value=1\n```', '    value=1',
                  'LOCAL_CODE_SNAPSHOT=a.py\n value=1', ' - nested list', ' > quote'):
         assert s._canonical(text) != s._canonical(text.replace('\n ', '\n').lstrip())
+
+
+def test_observed_inline_emphasis_projection_accepts_original_and_rejects_body_change(env):
+    env.write_text('Margin is d*l+d*u. Keep `a*b*c` literal.\n```\nx*y*z\n```')
+    r = sent(env); path = plugin_snapshot(env, r, [])
+    raw = json.loads(path.read_text()); block = raw['tool_result']['content'][0]
+    block['text'] = block['text'].replace('d*l+d*u', 'd_l+d_u')
+    write_json(path, raw)
+    assert s.import_snapshot(r['request_id'], path)['state'] == 'PENDING'
+    assert s.begin_send(r['request_id'])['resend_permitted'] is False
+    block['text'] = block['text'].replace('d_l+d_u', 'd_l+d_v')
+    write_json(path, raw)
+    with pytest.raises(LocalFlowError, match='exact payload'):
+        s.import_snapshot(r['request_id'], path)
+    for protected in ('`a*b*c`', '```python\na*b*c\n```',
+                      'LOCAL_CODE_SNAPSHOT=x.py\na*b*c'):
+        assert not s._payload_matches(protected.replace('*', '_'), protected)
+    assert not s._payload_matches('a_b', 'a*b')  # unpaired arithmetic marker
+    assert not s._payload_matches('_changed_', '*original*')
+
+
+def test_uncertain_emphasis_rendered_send_recovers_without_resending(env):
+    env.write_text('Exact report: d*l+d*u')
+    r = s.consult(env); s.begin_send(r['request_id'])
+    e = event(r, user='U1', ts='100.100000', thread_ts=None,
+              text=r['message'].replace('d*l+d*u', 'd_l+d_u')+'\n*Sent using* app')
+    e['event'].pop('thread_ts'); s.ingest(e)
+    result = s.reconcile(r['request_id'])
+    assert result['thread_ts'] == '100.100000' and result['state'] == 'PENDING'
+    assert s.begin_send(r['request_id'])['resend_permitted'] is False

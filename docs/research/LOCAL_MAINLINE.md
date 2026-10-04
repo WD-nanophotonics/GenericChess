@@ -87,8 +87,28 @@ limits; its sufficient counts are not impossibility claims or new budgets.
 HELD_H2_STRUCTURAL_BOUND.md sharpens held-mode raw range to1/n and fixed-root
 mean upper bound D/(A*n), without changing the common service gauge or claiming
 positive hand value. It was derived after publication as actual continuation.
-Next: derive a changed decision-changing precision/use premise before further
-sampling, or inspect independent construction/certificate evidence without labels.
+DIRECT_SERVICE_STRATIFIED_PRECISION.md now removes rare-zero held-path noise
+without changing the law, with a board negative-covariance caveat. Exact finite
+branch bounds and coefficient-sensitive choice margins are qualified in
+DIRECT_SERVICE_DECISION_INTERVALS.md. CHESS_MINOR_ROOK_ORIGIN_RESULTS.md extends
+the scoped B/N relation and identifies R's stable zero-rights condition;
+its14-transition audit lost numerical rows at final write, preserved as failure
+without rerunning completed transitions.
+SMALL_CERTIFICATE_FIRST_PROBE_RESULTS.md now records actual bounded independent
+B/R tables and pinned isolated parser:8 complete legal-set controls,2 terminal
+controls. SMALL_SELECTOR_DIAGNOSTIC_RESULTS.md then compares real full selectors
+on4 frozen symmetric roots: illustrative R>B versus unit margin[1,1], versus
+zero[-1,1]. This is exposed source/use pipeline evidence, not construction or
+reserved formula validation. No prior is admitted. Next independently freeze
+a finite context/action-law hypothesis, retaining denominator and cost limits.
+TWO_VICTIM_CONTEXT_PROPOSAL.md freezes such a synthetic Chess pilot before
+coefficients: all12 paired displacements x5 native types x2 owners survive
+common eligibility. Root-only preflight records1574 choices and0 transitions;
+TWO_VICTIM_PREFLIGHT_RESULTS.md shows exact first-child expansion alone exceeds
+the128-transition cap. H2_CUSTODY_DEPLETION_BOUND.md qualifies a narrower actual
+Shogi H2 pool bound without assuming long-horizon irreversible custody.
+Next freeze one global-budget direct interval pilot; no repeated batches or
+inferred hand premium. Construction/use separation and objective OPEN remain.
 
 ## Boundaries and evidence lookup
 

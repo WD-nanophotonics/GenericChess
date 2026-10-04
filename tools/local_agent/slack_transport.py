@@ -206,6 +206,36 @@ def parse_plugin_thread(result):
     return messages
 
 
+def _rendered_emphasis(text):
+    """Observed plugin *italic* -> _italic_ projection of EXPECTED prose only.
+
+    Preserve all body characters, inline/fenced code and LOCAL_CODE_SNAPSHOT.
+    This is formatting evidence, not permission to change mathematical tokens.
+    Future requests should put multiplication expressions inside inline code.
+    """
+    result = []; fenced = False; local_code = False
+    single_star = re.compile(r'(?<![\\*])\*([^\s*](?:[^*\n]*[^\s*])?)\*(?!\*)')
+    for line in text.splitlines():
+        if line.startswith('LOCAL_CODE_SNAPSHOT='):
+            local_code = True
+        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'):
+            local_code = False
+        if line.startswith('```'):
+            fenced = not fenced
+            result.append(line); continue
+        if local_code or fenced:
+            result.append(line); continue
+        parts = re.split(r'(`+[^`]*`+)', line)
+        result.append(''.join(part if part.startswith('`') else single_star.sub(r'_\1_', part)
+                              for part in parts))
+    return '\n'.join(result)
+
+
+def _payload_matches(observed, expected):
+    actual = _canonical(observed); original = _canonical(expected)
+    return actual == original or actual == _rendered_emphasis(original)
+
+
 def import_snapshot(rid, path):
     snapshot = json.loads(path.read_text(encoding='utf-8-sig'))
     r = status(rid)
@@ -219,7 +249,7 @@ def import_snapshot(rid, path):
     root = messages[0]
     if (root['user'] != r['sender_id'] or snapshot.get('thread_ts') != root['ts']
             or (r.get('thread_ts') and r['thread_ts'] != root['ts'])
-            or _canonical(root['text']) != _canonical(r['message'])):
+            or not _payload_matches(root['text'], r['message'])):
         raise LocalFlowError('Slack root account, thread or exact payload does not match')
     if not r.get('thread_ts'):
         bind_sent(rid, r['channel_id'], root['ts'])
@@ -278,10 +308,10 @@ def reconcile(rid):
             ids = re.findall(r'(?m)^REQUEST_ID=([^\s]+)\s*$', text)
             typ = re.findall(r'(?m)^TYPE=([^\s]+)\s*$', text)
             if not r.get('thread_ts') and r['state'] == 'SEND_UNCERTAIN':
-                # Slack adds a transport footer / mention label, so compare a known
-                # exact payload prefix after normalizing mention display only.
+                # Recover only the original target/payload, including observed
+                # prose rendering; never repeat an uncertain send.
                 clean = re.sub(r'<@([^>|]+)\|[^>]+>', r'<@\1>', text)
-                if msg.get('user') == r['sender_id'] and clean.split('\n*Sent using*')[0].rstrip() == r['message'].rstrip():
+                if msg.get('user') == r['sender_id'] and _payload_matches(clean.split('\n*Sent using*')[0], r['message']):
                     r['thread_ts'] = msg['ts']; r['state'] = 'PENDING'
             if row['thread'] != r.get('thread_ts'):
                 continue
