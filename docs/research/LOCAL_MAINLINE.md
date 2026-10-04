@@ -290,6 +290,19 @@ support (earlier positive witnesses exist). No bigger batch, new seeds or
 validation-label fishing. Next needs a new scientific premise for task/reference
 population usefulness; do not repeat background exposure or R-support probes.
 
+`SAFE_REFERENCE_SUPPORT_RESULTS.md` excludes a specific proposed repair before
+new sampling: condition reference Q on no legal opponent ordinary capture S,
+while retaining deployment Q conditioned on an ongoing type-t capture C_t.
+C_t is contained in complement S, so all deployment strata become undefined
+under the same safe reference. Twelve saved public capture replays verify the
+operator/event interpretation in 0.188 s; no deployment task labels are read.
+Mutual-no-capture filtering also eliminates ongoing positive two-ply token
+gain (terminal wins are exceptions). A separately declared cross-population
+reference/deployment is possible, but needs its own scientific transfer premise;
+no safety filter, formula or rescue batch is adopted. Daily dot request
+GC-SLACK-20261004-100247-cbfff6a6 asks for a minimal justified alternative;
+consultation is not a gate for independent research.
+
 `SECURED_EXCHANGE_COMMON_CONTEXT_RESULTS.md` records a frozen 15-root sparse
 Chess/Shogi pilot of the new task under one equal-mass physical-context law.
 All focal actions/replies completed in 1,973 materializations and 0.469 s.

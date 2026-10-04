@@ -1,0 +1,298 @@
+{
+  "protocol_sha256": "9960963a4d921bab11116c0253018a27a121a2d5437854d42a68720e78598c41",
+  "input_sha256": "f7b027f681cb033b3f93cecc7ad4d49c153f11b6308c9cc5d5723c5c4cf41332",
+  "program_sha256": "a0da43a404294bdac5f59c510608c494e1b728104bceb329f28034abde33f669",
+  "complete": true,
+  "rows": [
+    {
+      "game": "chess",
+      "victim_type": "B",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g28",
+        "actor_type_id": "R",
+        "from": [
+          2,
+          7
+        ],
+        "to": [
+          1,
+          7
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "B": -1
+      }
+    },
+    {
+      "game": "chess",
+      "victim_type": "N",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g31",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          3,
+          4
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "N": -1
+      }
+    },
+    {
+      "game": "chess",
+      "victim_type": "P",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g30",
+        "actor_type_id": "R",
+        "from": [
+          4,
+          7
+        ],
+        "to": [
+          4,
+          6
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "P": -1
+      }
+    },
+    {
+      "game": "chess",
+      "victim_type": "Q",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_09_q_capture",
+        "geometry_id": "g20",
+        "actor_type_id": "Q",
+        "from": [
+          5,
+          4
+        ],
+        "to": [
+          4,
+          4
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "Q": -1
+      }
+    },
+    {
+      "game": "chess",
+      "victim_type": "R",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "sem_07_r_capture",
+        "geometry_id": "g31",
+        "actor_type_id": "R",
+        "from": [
+          7,
+          5
+        ],
+        "to": [
+          7,
+          6
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "R": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "B",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_035",
+        "geometry_id": "g24",
+        "actor_type_id": "R",
+        "from": [
+          3,
+          8
+        ],
+        "to": [
+          1,
+          8
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "B": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "G",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_043",
+        "geometry_id": "g28",
+        "actor_type_id": "S",
+        "from": [
+          7,
+          1
+        ],
+        "to": [
+          6,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "G": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "L",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_091",
+        "geometry_id": "g5",
+        "actor_type_id": "G",
+        "from": [
+          2,
+          7
+        ],
+        "to": [
+          3,
+          6
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "L": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "N",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_139",
+        "geometry_id": "g8",
+        "actor_type_id": "G",
+        "from": [
+          3,
+          2
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "N": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "P",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_043",
+        "geometry_id": "g28",
+        "actor_type_id": "S",
+        "from": [
+          8,
+          4
+        ],
+        "to": [
+          7,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "P": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "R",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_069",
+        "geometry_id": "g4",
+        "actor_type_id": "G",
+        "from": [
+          5,
+          3
+        ],
+        "to": [
+          5,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "R": -1
+      }
+    },
+    {
+      "game": "shogi",
+      "victim_type": "S",
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_047",
+        "geometry_id": "g3",
+        "actor_type_id": "B",
+        "from": [
+          3,
+          8
+        ],
+        "to": [
+          2,
+          7
+        ],
+        "promotion_target_id": null
+      },
+      "safe_parent_excluded": true,
+      "ongoing_capture_support": true,
+      "own_board_count_delta": {
+        "S": -1
+      }
+    }
+  ],
+  "materialized_transitions": 12,
+  "elapsed_seconds": 0.1880000000819564
+}
