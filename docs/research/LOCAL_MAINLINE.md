@@ -297,6 +297,49 @@ mechanisms or prospectively assess independently available use/source scope.
 
 ## Boundaries and evidence lookup
 
+SHOGI_PAWN_PROMOTION_SUPPORT_RESULTS.md classifies full native P support:
+72918 zeros/439002 reachable, exact2=11154 and promotion-stratum finite bounds.
+SHOGI_LANCE_SUPPORT_COUPLING.md proves the SAME full zero support and L>P
+under each shared duration. Native S/N/B constructive promotion routes close
+their full support with zeros158/114866/316 and bounds22/19/24; see
+SHOGI_NATIVE_PROMOTION_REACHABILITY_RESULTS.md. Unknown distances remain.
+
+SHARED_GEOMETRY_CONTACT_PREFIX_RESULTS.md breaks the old preprocessing cost
+blockage:126 Shogi patterns share18 geometries,2768 versus15368 candidates;
+all13 current-board populations cost0.359sec, with42 independent virtual event
+edges qualifying optional promotion and source vacating. A preserved Chess
+none-contract failure and separately frozen nonpromotable extension qualify
+four native Chess prefix counts in0.094sec; no Core/rule/frozen-source repair.
+SHOGI_COMPLETE_BOARD_INTERVAL_RESULTS.md supplies positive full-board boxes,
+exact R/TR and named physical couplings. A0.235sec S/N/G third prefix further
+tightens boxes but does NOT resolve S/G. COUPLED_CONTACT_DECISION_CERTIFICATES.md
+retains same-law linear witnesses: L+TP-2P is certified positive despite a
+negative independent-box lower. These are task certificates, not game prices.
+
+NONCUTOFF_SOURCE_COVERAGE_RESULTS.md audits only saved prelabel selected IDs;
+neither K/K/N/P nor K/K/R/N/P is covered by installed KBK/KRK sources. Do not
+manufacture another inevitably unsourced use batch or reset cutoff histories.
+SHOGI_RANDOM_DEPLOYMENT_RESULTS.md declares a typed-blocker random masked hand
+prototype: all7 native held types positive in1.969sec, real masks/nifu retained,
+all denominators/worlds preserved and shared deadline moments shifted properly.
+Royal safety/Pawn-drop mate are explicit omissions, not legal-drop claims.
+
+Dot's complete new reply is assessed in
+CONTACT_ADVISOR_RANDOM_DEPLOYMENT_20261005_REVIEW.md. Adopt its resampling
+two-sided error and board/held coupling boundaries, not independent numerical
+verification. A new prospectively conserved checked Shogi root confirms63
+coarse versus7 legal P drops plus4 King actions in0.093sec, no successors or
+goal probes. SHOGI_CHECKED_DROP_GUARD_RESULTS.md is a mechanism witness, not
+population8/9 error or usefulness validation. CONTACT_GUARD_TRANSFER_ERROR_LAW.md
+requires full-route evidence for guard losses and separates fixed-attempt
+restriction from uniform legal-set resampling. Next qualify a specific lifted
+royal route/context law or independently covered decision use. The scientific
+objective stays OPEN; no full generic scalar prior or Xiangqi holdout admission.
+HELD_LANCE_PAWN_REWEIGHTING_CERTIFICATE.md then qualifies a NEW held L>P
+certificate despite unequal nifu deployment laws: common-mask direct advantage
+minus exact TV correction575/5751 on1/7 blocker mass stays positive for both
+durations. No automatic board-to-held coupling or official guard transfer.
+
 Movement/capture coordinates do not alone establish complete strategic options.
 Dynamic safety, promotion, history, hand transfer/drop and forbidden pawn-drop
 mate must be respected or explicitly qualified. Shogi noncheck stalemate is
