@@ -1,0 +1,22 @@
+{
+  "complete": false,
+  "rows": [],
+  "qualification": [],
+  "public_transitions": 0,
+  "source_queries": 0,
+  "enumerated": 0,
+  "candidates": 0,
+  "source_sha256": {
+    "scripts/audit_contact_target_type_falsifier.py": "2e5867bb2acc6ec9ea8cb3611c516ad0beeb761360197772c1f1e2524b940acb",
+    "docs/research/CONTACT_TARGET_TYPE_FALSIFIER_PROTOCOL.md": "fdaaea2d3075f3fd385cc9586b1609481d4cdc5c2d58b1a30ae86689a5e324db",
+    "scripts/nonpromotable_contact_prefix.py": "31b93fd86912e793d47e6754dddeeb441c01486ec0cc6db81e00d6406e143849",
+    "scripts/shared_contact_prefix.py": "435a1ef768327d9c6b41e3fa91db612648c4e13b5f42b562e8c1fca95c62d90b",
+    "scripts/full_contact_distances.py": "96ffe10b980eb9d78f71d2d9e35b37ad1744c999d0142d62c73247dce5cbdc5c",
+    "generic_chess/rules/schema.py": "ef6c25f1c4bebd355711131e815bbc5531251b6d7972e859d0f05a3887fa94e8",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "docs/research/data/contact_typed_geometry_valid_20261005.json": "c313f613770d422dbc2b557a1492cab79b711c5b4a25cd984ebb9cdb18a5851a"
+  },
+  "error": "RuleValidationError: [INITIAL_NO_LEGAL_MOVE] initial_position: the side to move has no legal action at the initial position",
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

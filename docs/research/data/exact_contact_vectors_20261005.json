@@ -1,0 +1,92 @@
+{
+  "complete": true,
+  "admitted_official_prior": false,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "vectors": {
+    "geometric_half": {
+      "chess": {
+        "common_maximum": "Q",
+        "weights": {
+          "board:P": "470347/2700480",
+          "board:N": "342191/675120",
+          "board:B": "5171/11252",
+          "board:R": "37856/42195",
+          "board:Q": "1"
+        }
+      },
+      "shogi": {
+        "common_maximum": "TR",
+        "weights": {
+          "board:P": "6368226199/82590826496",
+          "board:L": "931019041/5161926656",
+          "board:N": "343757253/2580963328",
+          "board:S": "203252403/645240832",
+          "board:G": "1551495471/5161926656",
+          "board:B": "1857163/2520472",
+          "board:R": "304884/315059",
+          "board:TP": "1551495471/5161926656",
+          "board:TL": "1551495471/5161926656",
+          "board:TN": "1551495471/5161926656",
+          "board:TS": "1551495471/5161926656",
+          "board:TB": "264821/315059",
+          "board:TR": "1",
+          "hand:P": "8987436052572379/206880109473300480",
+          "hand:L": "2922570579779/28861622415360",
+          "hand:N": "19982837677151/234268879355904",
+          "hand:S": "203252403/1290481664",
+          "hand:G": "1551495471/10323853312",
+          "hand:B": "1857163/5040944",
+          "hand:R": "152442/315059"
+        }
+      }
+    },
+    "linear_mixture": {
+      "chess": {
+        "common_maximum": "Q",
+        "weights": {
+          "board:P": "4311907/17723160",
+          "board:N": "1670119/2953860",
+          "board:B": "22669/49231",
+          "board:R": "94696/105495",
+          "board:Q": "1"
+        }
+      },
+      "shogi": {
+        "common_maximum": "TR",
+        "weights": {
+          "board:P": "904657132363/6114638017488",
+          "board:L": "776928045445/3057319008744",
+          "board:N": "1243870649435/6114638017488",
+          "board:S": "160227999/394390997",
+          "board:G": "31269070561/80455763388",
+          "board:B": "17022767/22063832",
+          "board:R": "381294/393997",
+          "board:TP": "31269070561/80455763388",
+          "board:TL": "31269070561/80455763388",
+          "board:TN": "31269070561/80455763388",
+          "board:TS": "31269070561/80455763388",
+          "board:TB": "339545/393997",
+          "board:TR": "1",
+          "hand:P": "12033916077072815903/100650855136183672320",
+          "hand:L": "7786378621845179/42078116695728960",
+          "hand:N": "12338347763146501/69376682946418848",
+          "hand:S": "381138383/1456212912",
+          "hand:G": "31558464895/127388292031",
+          "hand:B": "15086203/33095748",
+          "hand:R": "216432/393997"
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "scripts/freeze_exact_contact_vectors.py": "5a2658adce7f9ddcb51409e1e1820fc601b81bc0d3902088eac387afede381a5",
+    "docs/research/EXACT_CONTACT_VECTOR_FREEZE_PROTOCOL.md": "76a7dec3647808b4d91344d5766124bcdf60e8ce73b92ae7e12ffbda6010c4d9",
+    "scripts/chess_exact_contact_family.py": "016e306da30462624f5ce32026b3cc32b3ab7ae1d851cd246c615eba970e2e1d",
+    "scripts/shogi_exact_twenty_family.py": "cf289e430b6b5e7e931d2c344753fe4851b500399fe541aa27c92956a767a7a1",
+    "scripts/shogi_exact_contact_family.py": "0915d0dfef2e4571307d80f193420eaeef5f8c9e41786a66561631252936c48d",
+    "docs/research/data/chess_zero_target_correction_20261005.json": "684d876dafba07efed2271e51d0216ff2c0b3f8d267aa7f3b23af542d55077c1",
+    "docs/research/data/shogi_coordinate_comparison_20261005.json": "3585f415d64fb44c7d3f1c2140a4e299d6e9901db9a1325a8d5fdff3732177b1",
+    "docs/research/data/shogi_exact_held_reweight_20261005.json": "f9802665b18d2b0e4f9fc23c79861af6c0aacd4909845d6d99ac95d00f8d2712"
+  }
+}

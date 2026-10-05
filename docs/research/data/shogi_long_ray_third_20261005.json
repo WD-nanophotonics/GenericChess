@@ -1,0 +1,63 @@
+{
+  "complete": true,
+  "public_transitions": 0,
+  "event_materializations": 0,
+  "source_queries": 0,
+  "rows": [
+    {
+      "profile": {
+        "base": "L",
+        "current": "L",
+        "promoted": false
+      },
+      "direct": 24840,
+      "second": 25392,
+      "third": 34190,
+      "remaining": 427498,
+      "total": 511920
+    },
+    {
+      "profile": {
+        "base": "B",
+        "current": "B",
+        "promoted": false
+      },
+      "direct": 63120,
+      "second": 251006,
+      "third": 151139,
+      "remaining": 46655,
+      "total": 511920
+    },
+    {
+      "profile": {
+        "base": "B",
+        "current": "TB",
+        "promoted": true
+      },
+      "direct": 85872,
+      "second": 289944,
+      "third": 135712,
+      "remaining": 392,
+      "total": 511920
+    }
+  ],
+  "source_sha256": {
+    "scripts/audit_shogi_long_ray_third.py": "1aae57c5beba42d126d5b0325060dacdc2b64b7dc8fc9688ab7cf01daa4944c3",
+    "docs/research/SHOGI_LONG_RAY_THIRD_PROTOCOL.md": "a57e90253dac217ee9b4f69598ccde5e67b1a3a658749705794cefa2868c697b",
+    "scripts/shared_contact_prefix.py": "435a1ef768327d9c6b41e3fa91db612648c4e13b5f42b562e8c1fca95c62d90b",
+    "scripts/three_contact_prefix.py": "5ee15314bedd0afb0b090095ba5aa7ed13ea5323dad971e4625fcf19010fd52d",
+    "docs/research/data/shared_contact_prefix_shogi_20261005.json": "d36e1c870cca6f4ab4a6d26a3e005f9fbf08bbf0346f35c8fb38ef23ead20a8c",
+    "generic_chess/rules/compiler.py": "ad04e3da677ad31ecfa66b27e73b42e96f125c2cbb357a85756a2dcfa826b09a",
+    "generic_chess/rules/standard_shogi.py": "a2a0f0e1b1076b8cc365a2bdcea3fa105730935b77fce3970790125f4d502923"
+  },
+  "preprocessing": {
+    "checked_patterns": 38,
+    "geometry_candidates": 1556,
+    "source_geometry_tables": 891,
+    "raw_pattern_candidates": 5320,
+    "max_quiet_variants": 24,
+    "canonical_geometries": 11
+  },
+  "seconds": 0.75,
+  "source_hashes_unchanged": true
+}

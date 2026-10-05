@@ -1,0 +1,206 @@
+{
+  "complete": false,
+  "public_transitions": 0,
+  "enumerated": 4,
+  "source_queries": 0,
+  "rows": [
+    {
+      "victim_owner": 0,
+      "victim_current": "P",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "L",
+              "current_type_id": "L",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": [
+                [
+                  "B",
+                  2
+                ],
+                [
+                  "G",
+                  4
+                ],
+                [
+                  "L",
+                  3
+                ],
+                [
+                  "N",
+                  4
+                ],
+                [
+                  "P",
+                  17
+                ],
+                [
+                  "R",
+                  2
+                ],
+                [
+                  "S",
+                  4
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 1,
+          "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+          "aux_state": [],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 0,
+        "repetition_counts": [
+          [
+            "1fd819eb5ac46182c31a7b32ba6600b4a124dbf09b97444b915b19a26714c01d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "1fd819eb5ac46182c31a7b32ba6600b4a124dbf09b97444b915b19a26714c01d",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          }
+        ]
+      },
+      "steps": [
+        {
+          "all_actions": [
+            "legacy_012:g14:i9-i8",
+            "legacy_016:g16:i9-h9",
+            "legacy_018:g17:i9-h8",
+            "legacy_021:g18:d6-d5"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "scripts/audit_shogi_capture_drop_coupling.py": "27c984a9204a02a55a0e1e3ec8588892c5b052a60bc05debbc8144ade7de4c8b",
+    "docs/research/SHOGI_CAPTURE_DROP_COUPLING_PROTOCOL.md": "17470ea18c81bec38b75ff7c00f65f018ed255e2e581bf70a2c12bcc37c59a13",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "scripts/audit_exchange_custody.py": "78253c1ac85d4fbda3e897224ad9bf07d868f58df4ae06a0bd19dfabaa3f3aa4",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "scripts/shogi_board_hand_gap.py": "9a9fd96bb86c9572b12df1c3fe20c1c1c42facc00d777897e42128d5e5c5cda7",
+    "scripts/material_leaf_choice.py": "63dd5e206d7673cbe54a37a9fe25e0bbc222d0c940024ac326dc2ea50f3a9795",
+    "scripts/resource_mode_context.py": "9795f3692c454d61aac02f23b57715a8df1d38a6283e5c334024ece5bdf5d8b0",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/core/transition.py": "0437cba33051366584591e5330904087e4bd12427e1e8d2ad510744fc8e02177",
+    "generic_chess/rules/standard_shogi.py": "a2a0f0e1b1076b8cc365a2bdcea3fa105730935b77fce3970790125f4d502923"
+  },
+  "seconds": 0.09399999980814755,
+  "error": "ModuleNotFoundError: No module named 'generic_chess.core.action'",
+  "source_hashes_unchanged": true
+}

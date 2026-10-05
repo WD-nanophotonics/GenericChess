@@ -295,6 +295,40 @@ and broader independent deployment benefit remain OPEN. Keep game boundaries,
 no human/holdout tuning or additional source/budget. Next tighten these distinct
 mechanisms or prospectively assess independently available use/source scope.
 
+## Complete contact law continuation
+
+FULL_CONTACT_DISTANCE_RESULTS.md closes all five Chess and thirteen Shogi board
+distance distributions under the declared virtual law, without changed Core,
+human labels or budgets. Independent coordinate histograms agree; per-world
+distance agreement is not retained or claimed. Both predeclared laws now resolve
+Shogi S>G. SHOGI_EXACT_HELD_REWEIGHT_RESULTS.md closes all seven held conditional
+means with actual mask/nifu denominators and preparation charge. The separate
+exact-family adapters and EXACT_CONTACT_VECTOR_FREEZE_PROTOCOL.md freeze two
+whole vectors/common game scales; no outcome-based law selection or official
+generic scalar prior admission. Xiangqi human holdout remains unread.
+
+SHOGI_CAPTURE_DROP_COUPLING_RESULTS.md verifies twelve actual full-history
+capture/demotion/drop events. SHOGI_EXACT_FAMILY_EXECUTION_RESULTS.md records a
+NEW complete69-child root: exact coefficients still cannot remove strict
+checked-child whole-table censoring. Explicit checked-ongoing ablations are
+approximate static choices, not game utility. CONTACT_DEPTH2_SOURCE_ADMISSION_RESULTS.md
+rejects four fresh6/7-token choices before source calls; no substitute labels.
+SAVED_GOAL_ORDER_ABLATION_RESULTS.md distinguishes prior ordering from cutoff
+evaluation on the same incomplete saved graph, not an efficiency benchmark.
+
+FULL_CONTACT_ADVISOR_20261005_REVIEW.md adopts two-sided first-hit obligations
+and histogram/worldwise limits. CONTACT_TARGET_TYPE_FALSIFIER_RESULTS.md verifies
+eight unnamed owner/target0 controls: equal quiet geometry with a target-type
+guard can change capture membership; the existing strict grammar correctly
+rejects that shortcut before BFS. No qualifier repair or old census rerun.
+TYPED_SHARED_CONTACT_RESULTS.md then shows mask qualification can still pass
+after wrong grouped actor binding: a separate typed shared adapter fixes all
+eight saved semantic controls, without new action/event observations. Future
+constructor and fixed-tree use requirements are in CONTACT_CONSTRUCTOR_ADMISSION.md.
+Next build a rule-neutral admitted constructor/scope contract and a prospective
+fixed-tree comparison with declared independent goal evidence; not old mate
+fixture expansion, human-price tuning or compulsory exact WDL calibration.
+
 ## Boundaries and evidence lookup
 
 SHOGI_PAWN_PROMOTION_SUPPORT_RESULTS.md classifies full native P support:

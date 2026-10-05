@@ -1,0 +1,112 @@
+{
+  "complete": true,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "target": 0,
+  "rows": {
+    "P": {
+      "histogram": {
+        "1": 6076,
+        "2": 16112,
+        "3": 32926,
+        "4": 29468,
+        "5": 27690,
+        "6": 29960,
+        "7": 36600,
+        "8": 14200
+      },
+      "unreachable": 56952,
+      "target0_histogram": {
+        "8": 336,
+        "7": 740,
+        "6": 569,
+        "5": 471,
+        "4": 479,
+        "3": 487,
+        "2": 111
+      },
+      "target0_unreachable": 713,
+      "match": true
+    },
+    "N": {
+      "histogram": {
+        "1": 20832,
+        "2": 66472,
+        "3": 94944,
+        "4": 56288,
+        "5": 11200,
+        "6": 248
+      },
+      "unreachable": 0,
+      "target0_histogram": {
+        "2": 550,
+        "3": 1228,
+        "4": 1310,
+        "5": 632,
+        "1": 124,
+        "6": 62
+      },
+      "target0_unreachable": 0,
+      "match": true
+    },
+    "B": {
+      "histogram": {
+        "1": 33936,
+        "2": 85824,
+        "3": 2736,
+        "4": 256,
+        "5": 16
+      },
+      "unreachable": 127216,
+      "target0_histogram": {
+        "2": 1388,
+        "1": 413,
+        "3": 60,
+        "4": 26,
+        "5": 4
+      },
+      "target0_unreachable": 2015,
+      "match": true
+    },
+    "R": {
+      "histogram": {
+        "1": 53760,
+        "2": 194432,
+        "3": 1792
+      },
+      "unreachable": 0,
+      "target0_histogram": {
+        "3": 42,
+        "1": 826,
+        "2": 3038
+      },
+      "target0_unreachable": 0,
+      "match": true
+    },
+    "Q": {
+      "histogram": {
+        "1": 87696,
+        "2": 162048,
+        "3": 240
+      },
+      "unreachable": 0,
+      "target0_histogram": {
+        "2": 2667,
+        "1": 1239
+      },
+      "target0_unreachable": 0,
+      "match": true
+    }
+  },
+  "source_sha256": {
+    "scripts/audit_chess_zero_target_correction.py": "b1f228d4437164dbd4896198b1a1e1c72a37b6620fb547b0530b0126349e1df6",
+    "docs/research/CHESS_ZERO_TARGET_ORACLE_CORRECTION.md": "29e362eddccc984585b65aa8f445e02aa645ad7903c1c6e2b44525b97461d499",
+    "scripts/chess_coordinate_distance_oracle.py": "6ed081d7e9c0ed4bacdf030a818a1a12e7fd12097af50908d61f03df58f3ad47",
+    "docs/research/data/chess_coordinate_closure_20261005.json": "714e2297f5edfdb88d494f14cd47cdfc26509139d9a672271fdfd78229ff666a",
+    "docs/research/data/chess_full_nonpawn_distance_20261005.json": "e111d38852bb31a2fa6ea711305e9eb69df5153e3566be5df5c7556dc3be7bd7",
+    "docs/research/data/chess_full_pawn_distance_20261005.json": "271b57d840f080e4aaf3e03b9af9b99121f727a59082aef9d190cc485019e541"
+  },
+  "seconds": 0.0779999999795109,
+  "cumulative_seconds": 5.125,
+  "source_hashes_unchanged": true
+}

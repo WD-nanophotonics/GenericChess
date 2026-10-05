@@ -1,0 +1,87 @@
+{
+  "complete": true,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_contact_depth2_source_admission.py": "10b5f5f7d25c6f2e748df788ebe80accef2ba211ea4a65df3d1e9a8600afd3ff",
+    "docs/research/CONTACT_DEPTH2_SOURCE_ADMISSION_PROTOCOL.md": "fc382834d016bad25a12f831c5efe1fc05549dd52c66bb3a6464bb9f589f5fe5",
+    "scripts/chess_certificate_request.py": "11ce2054db589f0e4c69a7c03fba2eaac4276448bbc4f08b21535d4892ba7e67",
+    "scripts/research_state_replay.py": "8cdab874dc2bf2a5f1fd884a9c5049e00d6f3abd55cf0b78a09167e15177e400",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "docs/research/data/contact_depth2_dominance_20261005.json": "b0542bfaf82e37689df93e31ed63997c9b262bc58a90432012c358866955cf39",
+    "docs/research/data/chess_pinned_queen_mate_20261005.json": "cbc8325ee7a2924c3e1d73c2d08ca557d31d91191359c4ee4857491f0b3266d1"
+  },
+  "rows": [
+    {
+      "method": "contact",
+      "action": "sem_12_pawn_capture_right:g35:f7-g8=Q",
+      "inventory": {
+        "N": 2,
+        "K": 2,
+        "Q": 1,
+        "R": 1
+      },
+      "board_tokens": 6,
+      "ply": 1,
+      "history_records": 2,
+      "terminal": "ongoing",
+      "installed_material_domain": false,
+      "encoding_admitted": false,
+      "reason": "pawn-free at most five-piece scope required"
+    },
+    {
+      "method": "unit",
+      "action": "sem_07_r_capture:g29:h8-g8",
+      "inventory": {
+        "N": 2,
+        "K": 2,
+        "P": 1,
+        "R": 1
+      },
+      "board_tokens": 6,
+      "ply": 1,
+      "history_records": 2,
+      "terminal": "ongoing",
+      "installed_material_domain": false,
+      "encoding_admitted": false,
+      "reason": "pawn-free at most five-piece scope required"
+    },
+    {
+      "method": "zero",
+      "action": "sem_00_k_quiet:g10:e6-f6",
+      "inventory": {
+        "N": 2,
+        "K": 2,
+        "P": 1,
+        "Q": 1,
+        "R": 1
+      },
+      "board_tokens": 7,
+      "ply": 1,
+      "history_records": 2,
+      "terminal": "ongoing",
+      "installed_material_domain": false,
+      "encoding_admitted": false,
+      "reason": "pawn-free at most five-piece scope required"
+    },
+    {
+      "method": "unit_enemy_successor",
+      "action": "sem_00_k_quiet:g11:d8-c7",
+      "inventory": {
+        "N": 2,
+        "K": 2,
+        "P": 1,
+        "R": 1
+      },
+      "board_tokens": 6,
+      "ply": 2,
+      "history_records": 3,
+      "terminal": "ongoing",
+      "installed_material_domain": false,
+      "encoding_admitted": false,
+      "reason": "pawn-free at most five-piece scope required"
+    }
+  ],
+  "seconds": 0.06200000015087426,
+  "source_hashes_unchanged": true
+}
