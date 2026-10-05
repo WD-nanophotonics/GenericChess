@@ -172,6 +172,16 @@ automatic resend, new worker or second channel. Later posts still require
 explicit review; association does not upgrade old code claims. Receipts and
 snapshots are preserved local tool evidence, not cryptographic sender proof.
 
+The receipt-only path also exposes sent_payload_binding_verified=false: a
+saved payload hash plus a matching receipt does NOT prove the actual historical
+tool-call argument. Keep then-visible parent text/time and reply ts/version;
+never reinterpret old advice as review of later edits/code/baselines. Future
+sends preserve exact actual arguments/hash together with the returned receipt
+as one local call record. Missing historical binding stays missing; never
+manufacture it from current text. Receipt-only imports locate a thread, not
+payload ownership or independent code review. Shared account still needs
+TYPE/project/ID/thread classification, and revisions never auto-reexecute.
+
 ## Stop, rollback and isolation
 
 stop persists flags; the calling Agent pauses the native heartbeat and cancels

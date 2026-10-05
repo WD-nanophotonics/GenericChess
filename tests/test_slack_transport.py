@@ -148,6 +148,8 @@ def test_known_successful_receipt_associates_advice_without_certifying_code(env)
     result=s.import_snapshot(rid,path,receipt)
     assert result['state']=='COMPLETED' and len(result['revisions'])==1
     assert result['request_readback']['payload_verified'] is False
+    assert result['request_readback']['thread_associated'] is True
+    assert result['request_readback']['sent_payload_binding_verified'] is False
     assert 'not byte-verified' in result['request_readback']['limitation']
     assert result['message']==r['message'] and result['payload_sha256']==r['payload_sha256']
     assert len(s.import_snapshot(rid,path,receipt)['revisions'])==1

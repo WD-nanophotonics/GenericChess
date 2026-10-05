@@ -282,10 +282,11 @@ def _known_receipt_readback(r, root, receipt_path):
     expected_link = f'https://nanomelon.slack.com/archives/{r["channel_id"]}/p{r["thread_ts"].replace(".", "")}'
     if len(receipts) != 1 or receipts[0]['message_context'] != expected_context or receipts[0].get('message_link') != expected_link:
         raise LocalFlowError('successful send receipt target does not match the bound root')
-    return dict(payload_verified=False, association_basis='successful_send_receipt+verified_account_thread_markers',
+    return dict(payload_verified=False, thread_associated=True, sent_payload_binding_verified=False,
+                association_basis='successful_send_receipt+verified_account_thread_markers',
                 receipt_sha256=hashlib.sha256(raw).hexdigest(),
                 observed_payload_sha256=digest(root['text']), expected_payload_sha256=r['payload_sha256'],
-                limitation='Rendered parent payload/code not byte-verified; no code-readback or independently checked code claim',at=stamp())
+                limitation='Rendered parent payload/code not byte-verified; historical send-argument binding not established by this importer. Advice concerns the then-visible Slack text, not verified local code bytes or execution.',at=stamp())
 
 
 def import_snapshot(rid, path, sent_receipt_path=None):

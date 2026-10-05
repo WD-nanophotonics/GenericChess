@@ -36,3 +36,13 @@ same-thread follow-up asks dot to challenge the evidence-tier boundary, not
 repeat its old advice. No original root resend or routine acknowledgement.
 Its actual successful receipt is saved; future replies/supplements must all be
 read and explicitly reviewed, not assumed absent because this reply completed.
+
+At06:58JST all3 thread posts were retrieved: original DOT_REPLY, one Agent
+follow-up, and new DOT_REPLY ts1791237275.973039. The new advice correctly
+separates a thread receipt from actual send-argument/payload binding, warns
+against applying old opinions to edited/new versions, and preserves dedup.
+Importer now explicitly records sent_payload_binding_verified=false; it does
+not authenticate historical message arguments. Then-visible text/time and
+all raw posts remain preserved. This is thread association only. Future calls
+must preserve actual arguments with receipts; missing old binding is not
+reconstructed. No new send/acknowledgement is required to adopt these limits.

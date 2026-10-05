@@ -56,3 +56,10 @@ finite actor-success estimand, royal-free deployment and exposed partial R/B
 development use cannot stand in for fresh complete-prior strength evidence.
 NEXT_VALIDATION_ADMISSION_20261006.md records precise next source/population
 eligibility work, not another rerun or claim of no useful research direction.
+
+After first tested publication,06:58JST full reread captured a second DOT_REPLY
+(three total posts including our follow-up). Explicit renewed review adopts
+its limits: receipt-only thread association does not establish historical
+send-argument binding, code/version review or process identity. Visible status
+now says sent_payload_binding_verified=false; future argument/receipt journaling
+cannot manufacture missing old evidence. Tests repeated for this actual change.
