@@ -547,6 +547,28 @@ mate strategy can transfer positively, never restricted nonmate in reverse.
 PHYSICAL_PROFILE_BOOLEAN_SCOPE.md adds a strict flag boundary without changing
 frozen bool-profile results or the original dispatcher.
 
+SHOGI_STRUCTURAL_SUPPORT_RESULTS.md preserves the failed two-compilation
+serialization preflight; its conditional source theorem does not admit the
+other11 physical profiles. MATE_CERTIFICATE_HISTORY_REUSE.md distinguishes
+full history replay from board-only foreign labels. SHOGI_FULL_BOARD_SEARCH_RESULTS.md
+qualifies an initial full-stock depth1 runtime control; all quiet choices tie.
+SHOGI_FULL_CAPTURE_AFFINE_RESULTS.md then qualifies a real four-ply capture
+and all32 one-ply affine rows with shared seven-dimensional hand uncertainty,
+without choosing prices or admitting interval alpha-beta. The next drop audit
+FAILS at cumulative5010/5000 enumerations before drop, closes that family and
+retains partial evidence (SHOGI_FULL_CAPTURE_DROP_RESULTS.md); no reset.
+
+SHARED_COEFFICIENT_MINIMAX_RESULTS.md and SHARED_LAW_HAND_RESULTS.md prove
+finite min-envelope choice bounds, including shared duration-mixture/held
+cross terms. Corner-only backed-up sampling is unsafe; convex-combination
+certificate polynomials are checked instead. Promoted capture remains static
+stable in the saved tree, with unchanged zero old mate-window/unknown WDL.
+CANNON_DISTANCE_CLOSED_FORM_RESULTS.md, SOLDIER_DISTANCE_CLOSED_FORM_RESULTS.md
+and DIAGNOSTIC_SPARSE_GRAPH_RESULTS.md independently qualify full A/C/E/S
+aggregate masses, alongside old R. H complete qualification is still open,
+but its direct-count upper bound independently proves both-law R normalization
+(DIAGNOSTIC_MOMENT_BOUNDS_RESULTS.md). S/C law reversal is retained, not fitted.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

@@ -126,6 +126,64 @@ def plugin_snapshot(env, r, replies, *, channel='C1', complete=True):
     return path
 
 
+def receipt_rendering_case(env, *, known=True):
+    c=s.config();c.update(advisor_user_id='U1',advisor_bot_id=None,advisor_app_id=None);write_json(s.CONFIG,c)
+    env.write_text('Legacy code review\nLOCAL_CODE_SNAPSHOT=sample.py\nSHA256=example\ndef f():\n    return 1')
+    r=sent(env) if known else s.consult(env)
+    if not known:s.begin_send(r['request_id']);r=s.status(r['request_id'])
+    body=f'TYPE=DOT_REPLY\nREQUEST_ID={r["request_id"]}\nUseful idea; code readback unverified.'
+    path=plugin_snapshot(env,r,[('U1','101.100000',body)])
+    data=json.loads(path.read_text());text=data['tool_result']['content'][0]['text']
+    data['tool_result']['content'][0]['text']=text.replace('    return 1','return 1');write_json(path,data)
+    receipt=env.parent/'sent-receipt.json'
+    write_json(receipt,{'isError':False,'content':[{'type':'text','text':json.dumps({
+        'message_context':{'channel_id':'C1','message_ts':'100.100000'},
+        'message_link':'https://nanomelon.slack.com/archives/C1/p100100000'})}]})
+    return r,path,receipt
+
+
+def test_known_successful_receipt_associates_advice_without_certifying_code(env):
+    r,path,receipt=receipt_rendering_case(env);rid=r['request_id']
+    with pytest.raises(LocalFlowError,match='exact payload'):s.import_snapshot(rid,path)
+    result=s.import_snapshot(rid,path,receipt)
+    assert result['state']=='COMPLETED' and len(result['revisions'])==1
+    assert result['request_readback']['payload_verified'] is False
+    assert 'not byte-verified' in result['request_readback']['limitation']
+    assert result['message']==r['message'] and result['payload_sha256']==r['payload_sha256']
+    assert len(s.import_snapshot(rid,path,receipt)['revisions'])==1
+    assert s.begin_send(rid)['action']=='slack-reconcile'
+
+
+def test_success_receipt_does_not_relax_uncertain_send_recovery(env):
+    r,path,receipt=receipt_rendering_case(env,known=False)
+    with pytest.raises(LocalFlowError,match='already bound'):s.import_snapshot(r['request_id'],path,receipt)
+    result=s.status(r['request_id'])
+    assert result['state']=='SEND_UNCERTAIN' and not result.get('thread_ts') and not result['revisions']
+
+
+@pytest.mark.parametrize('fault',['channel','ts','link','error','duplicate','root_user','root_id','root_type','payload_hash'])
+def test_receipt_fallback_still_rejects_conflicting_evidence(env,fault):
+    r,path,receipt=receipt_rendering_case(env)
+    raw=json.loads(receipt.read_text());block=json.loads(raw['content'][0]['text'])
+    if fault=='channel':block['message_context']['channel_id']='Cwrong'
+    elif fault=='ts':block['message_context']['message_ts']='100.200000'
+    elif fault=='link':block['message_link']='https://other.slack.com/archives/C1/p100100000'
+    elif fault=='error':raw['isError']=True
+    raw['content'][0]['text']=json.dumps(block)
+    if fault=='duplicate':raw['content']*=2
+    write_json(receipt,raw)
+    data=json.loads(path.read_text());text=data['tool_result']['content'][0]['text']
+    if fault=='root_user':text=text.replace('Owner (U1)','Owner (Uwrong)')
+    elif fault=='root_id':text=text.replace(r['request_id'],'wrong',1)
+    elif fault=='root_type':text=text.replace('TYPE=AGENT_REQUEST','TYPE=DOT_REPLY',1)
+    data['tool_result']['content'][0]['text']=text;write_json(path,data)
+    if fault=='payload_hash':
+        with s.database() as db:
+            changed=s.get(db,r['request_id']);changed['message']+='tamper';s.put(db,changed)
+    with pytest.raises(LocalFlowError):s.import_snapshot(r['request_id'],path,receipt)
+    assert not s.status(r['request_id'])['revisions']
+
+
 def test_plugin_complete_read_shared_identity_and_multi_post_reply(env):
     c = s.config(); c.update(advisor_user_id='U1', advisor_bot_id=None, advisor_app_id=None); write_json(s.CONFIG, c)
     r = sent(env); rid = r['request_id']

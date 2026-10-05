@@ -1,0 +1,121 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "scripts/audit_diagnostic_moment_bounds.py": "0e94b2345824bf0020ef52ea045b6d8fb27d814ee385d6ed09785f0a76ae1182",
+    "docs/research/DIAGNOSTIC_MOMENT_BOUNDS_PROTOCOL.md": "668745a0adeaf17045ec7b63fb9a15d9b5507318733ce1a46c8b8f9b1384fd71",
+    "docs/research/data/diagnostic_contact_independent_20261005.json": "af5631ffb79c06f2ab12ec64e515a5248cd4a78d611c976f74047535e24347a8",
+    "docs/research/data/cannon_distance_closed_form_20261006.json": "51ad4c58bad086ffce690a8586d9fbaed030a954f06e91adf4d8b37c53a9d53a",
+    "docs/research/data/soldier_distance_closed_form_20261006.json": "f299c068f9003a9b105bd892a4fcdda773cd2bc88ea92af0af2ada3f50acc74b",
+    "docs/research/data/diagnostic_sparse_graphs_20261006.json": "61ce63a3f41c05e0a6638aac0312876e88be623747a85c7c8a7f8958324d14c0"
+  },
+  "distance_terms": 62,
+  "comparisons": 30,
+  "rows": [
+    {
+      "law": "geometric_half",
+      "exact_means": {
+        "R": "579/1958",
+        "C": "18449/704880",
+        "S": "402648043/15398338560",
+        "E": "48023/5639040",
+        "A": "117/78320"
+      },
+      "horse_interval": [
+        "3683/117480",
+        "62423/234960"
+      ],
+      "rook_strict_max_checks": {
+        "C": true,
+        "S": true,
+        "E": true,
+        "A": true,
+        "H_upper": true
+      },
+      "rook_normalization_qualified": true,
+      "normalized_exact": {
+        "R": "1",
+        "C": "18449/208440",
+        "S": "402648043/4553441280",
+        "E": "48023/1667520",
+        "A": "39/7720"
+      },
+      "normalized_horse_interval": [
+        "3683/34740",
+        "62423/69480"
+      ],
+      "horse_above_exact": {
+        "R": false,
+        "C": true,
+        "S": true,
+        "E": true,
+        "A": true
+      },
+      "horse_below_exact": {
+        "R": true,
+        "C": false,
+        "S": false,
+        "E": false,
+        "A": false
+      },
+      "soldier_cannon_sign": -1
+    },
+    {
+      "law": "linear_mixture",
+      "exact_means": {
+        "R": "8689/44055",
+        "C": "2303/120150",
+        "S": "83606625941/3418558743600",
+        "E": "19493/3364200",
+        "A": "39/39160"
+      },
+      "horse_interval": [
+        "3683/176220",
+        "62423/352440"
+      ],
+      "rook_strict_max_checks": {
+        "C": true,
+        "S": true,
+        "E": true,
+        "A": true,
+        "H_upper": true
+      },
+      "rook_normalization_qualified": true,
+      "normalized_exact": {
+        "R": "1",
+        "C": "25333/260670",
+        "S": "83606625941/674244851280",
+        "E": "214423/7298760",
+        "A": "351/69512"
+      },
+      "normalized_horse_interval": [
+        "3683/34756",
+        "62423/69512"
+      ],
+      "horse_above_exact": {
+        "R": false,
+        "C": true,
+        "S": false,
+        "E": true,
+        "A": true
+      },
+      "horse_below_exact": {
+        "R": true,
+        "C": false,
+        "S": false,
+        "E": false,
+        "A": false
+      },
+      "soldier_cannon_sign": 1
+    }
+  ],
+  "source_queries": 0,
+  "public_transitions": 0,
+  "runtime_pushes": 0,
+  "geometry_queries": 0,
+  "horse_direct_edges": 508,
+  "horse_direct_worlds": 44196,
+  "total": 704880,
+  "law_reversal": true,
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

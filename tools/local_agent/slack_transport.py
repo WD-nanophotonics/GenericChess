@@ -261,7 +261,34 @@ def _rendered_bullets(text):
     return '\n'.join(lines)
 
 
-def import_snapshot(rid, path):
+def _known_receipt_readback(r, root, receipt_path):
+    """Associate a known successful root; NEVER certify rendered payload bytes."""
+    if r.get('state') not in {'PENDING', 'COMPLETED'} or not r.get('thread_ts'):
+        raise LocalFlowError('receipt association requires an already bound successful root')
+    if digest(r['message']) != r['payload_sha256']:
+        raise LocalFlowError('immutable payload changed')
+    for field in ('TYPE', 'REQUEST_ID', 'PROJECT', 'COMMITTED_BASE_SHA'):
+        expected = re.findall(r'(?m)^'+field+r'=([^\s]+)\s*$', r['message'])
+        actual = re.findall(r'(?m)^'+field+r'=([^\s]+)\s*$', root['text'])
+        if len(expected) != 1 or actual != expected:
+            raise LocalFlowError('receipt-associated root markers do not match')
+    raw = receipt_path.read_bytes(); receipt = json.loads(raw.decode('utf-8-sig'))
+    if receipt.get('isError'):
+        raise LocalFlowError('failed send receipt cannot associate a root')
+    blocks = [json.loads(b['text']) for b in receipt.get('content', [])
+              if b.get('type') == 'text' and b.get('text', '').startswith('{')]
+    receipts = [b for b in blocks if 'message_context' in b]
+    expected_context = {'channel_id': r['channel_id'], 'message_ts': r['thread_ts']}
+    expected_link = f'https://nanomelon.slack.com/archives/{r["channel_id"]}/p{r["thread_ts"].replace(".", "")}'
+    if len(receipts) != 1 or receipts[0]['message_context'] != expected_context or receipts[0].get('message_link') != expected_link:
+        raise LocalFlowError('successful send receipt target does not match the bound root')
+    return dict(payload_verified=False, association_basis='successful_send_receipt+verified_account_thread_markers',
+                receipt_sha256=hashlib.sha256(raw).hexdigest(),
+                observed_payload_sha256=digest(root['text']), expected_payload_sha256=r['payload_sha256'],
+                limitation='Rendered parent payload/code not byte-verified; no code-readback or independently checked code claim',at=stamp())
+
+
+def import_snapshot(rid, path, sent_receipt_path=None):
     snapshot = json.loads(path.read_text(encoding='utf-8-sig'))
     r = status(rid)
     if r.get('state') not in {'SEND_UNCERTAIN', 'PENDING', 'COMPLETED'}:
@@ -273,11 +300,20 @@ def import_snapshot(rid, path):
     messages = parse_plugin_thread(snapshot['tool_result'])
     root = messages[0]
     if (root['user'] != r['sender_id'] or snapshot.get('thread_ts') != root['ts']
-            or (r.get('thread_ts') and r['thread_ts'] != root['ts'])
-            or not _payload_matches(root['text'], r['message'])):
-        raise LocalFlowError('Slack root account, thread or exact payload does not match')
+            or (r.get('thread_ts') and r['thread_ts'] != root['ts'])):
+        raise LocalFlowError('Slack root account or thread does not match')
+    if not _payload_matches(root['text'], r['message']):
+        if sent_receipt_path is None:
+            raise LocalFlowError('Slack root account, thread or exact payload does not match')
+        readback = _known_receipt_readback(r, root, sent_receipt_path)
+    else:
+        readback = dict(payload_verified=True, association_basis='exact_payload_readback',at=stamp())
     if not r.get('thread_ts'):
         bind_sent(rid, r['channel_id'], root['ts'])
+    with database() as db:
+        current = get(db, rid)
+        current['request_readback'] = readback
+        put(db, current)
     for msg in messages:
         ingest({'team_id': r['team_id'], 'event_id': 'plugin-observation-' + digest(
                 json.dumps([r['channel_id'], msg['ts'], msg['text']], ensure_ascii=False)),

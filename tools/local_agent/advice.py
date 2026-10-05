@@ -38,10 +38,10 @@ def begin_send(request_id):
     from .slack_transport import begin_send as impl
     return impl(request_id)
 
-def reconcile_snapshot(request_id, snapshot_file):
+def reconcile_snapshot(request_id, snapshot_file, sent_receipt_file=None):
     configuration()
     from .slack_transport import import_snapshot
-    return import_snapshot(request_id, snapshot_file)
+    return import_snapshot(request_id, snapshot_file, sent_receipt_file)
 
 def record_decision(request_id, decision, reason):
     configuration()

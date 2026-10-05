@@ -86,7 +86,7 @@ sending, account-wide zero usage or arbitrary delegation by dot.
    projection in expected prose, while preserving inline/fenced/snapshot code
    and every body character. Put arithmetic multiplication inside inline code
    in future requests to prevent Slack interpreting it as emphasis. Wrong text,
-   unpaired markers and changed code still fail exact association. If paginated or an ambiguous rendered delimiter is
+   unpaired markers and changed code still fail exact payload verification. If paginated or an ambiguous rendered delimiter is
    encountered, retain the full tool evidence, reconcile, then assess retry
    need under the standing authorization; do not mechanically repeat a send.
 5. Reconcile matches verified identity, thread and exact ID. All matched posts
@@ -153,6 +153,24 @@ the user's current authorization for a reviewed native-tool call using the
 saved message. No new CLI, daemon, transport or extra worker is introduced.
 Automatic approval review can still reject an action; preserve its actual reason
 and the direct user authorization rather than claiming the tool has sent it.
+
+## Known send receipt versus payload readback
+
+Observed legacy unfenced-code rendering lost Python indentation. Do not relax
+code comparison or resend that known root. `reconcile --snapshot-file RAW
+--sent-receipt-file RECEIPT` is an explicit evidence-tier alternative ONLY for
+already bound PENDING/COMPLETED roots. Preserve actual successful plugin send
+receipt, full paginated read and immutable payload. Match channel/root/link,
+original account/thread and unique TYPE/ID/project/committed-base markers.
+SEND_UNCERTAIN without a confirmed root still requires exact payload recovery.
+
+The summary exposes request_readback.payload_verified=false and the receipt,
+expected/observed hashes. This associates advice, not code bytes or independent
+execution. Assess advice against local/public evidence and record that limit
+in adopt/defer/reject reasons. No indentation normalization, ledger reset,
+automatic resend, new worker or second channel. Later posts still require
+explicit review; association does not upgrade old code claims. Receipts and
+snapshots are preserved local tool evidence, not cryptographic sender proof.
 
 ## Stop, rollback and isolation
 

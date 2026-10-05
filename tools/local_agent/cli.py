@@ -18,7 +18,7 @@ PATROLS = STATE / "patrol.json"
 def consultation_summary(result: dict) -> dict:
     return {key: result[key] for key in ('request_id', 'state', 'channel_id',
             'thread_ts', 'response_sha256', 'unreviewed_response_sha256',
-            'evaluation', 'held_events', 'resend_permitted') if key in result} | {
+            'evaluation', 'held_events', 'resend_permitted', 'request_readback') if key in result} | {
             'matched_reply_posts': len({v['message_ts'] for v in result.get('revisions', [])}),
             'reply_revision_count': len(result.get('revisions', []))}
 
@@ -117,6 +117,7 @@ def parser() -> argparse.ArgumentParser:
     rec = sub.add_parser("reconcile")
     rec.add_argument("--request-id", required=True)
     rec.add_argument("--snapshot-file", type=Path)
+    rec.add_argument("--sent-receipt-file", type=Path, help="known successful root only; rendered payload remains unverified")
     rec.add_argument("--decision", choices=["adopt", "defer", "reject"])
     rec.add_argument("--reason")
     rec.add_argument("--full", action="store_true", help="include full request/reply evidence")
@@ -169,8 +170,10 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "consult-status":
             result = consult_status(request_id=args.request_id)
         elif args.command == "reconcile":
+            if args.sent_receipt_file and not args.snapshot_file:
+                raise LocalFlowError('send receipt requires a complete thread snapshot')
             if args.snapshot_file:
-                result = reconcile_snapshot(args.request_id, args.snapshot_file)
+                result = reconcile_snapshot(args.request_id, args.snapshot_file, args.sent_receipt_file)
             elif args.decision and args.reason:
                 result = record_decision(args.request_id, args.decision, args.reason)
             else:
