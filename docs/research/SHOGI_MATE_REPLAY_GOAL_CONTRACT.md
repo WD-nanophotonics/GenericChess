@@ -1,5 +1,13 @@
 # Local replay needs complete choices and a literal mate goal
 
+The named choice scope is existing PublicGame: ordinary legal actions and
+non-LOSS declarations. It deliberately excludes resignation and failed
+declarations. Their omission is WDL-dominated, but literal mate is a different
+goal: a defender permitted to resign could avoid being checkmated by losing
+early. Never call this every possible Session-ending operation. All-defense
+below means the declared public choice scope, not administrative/resignation
+options. The positive-only wrapper is not an exact binary mate-value solver.
+
 New integration question after the export-layout audit: can the existing public
 observer consume source strategy hints without silently changing its goal or
 claiming a partial reply list is complete? Source pn/dn, PV, hash and compressed
