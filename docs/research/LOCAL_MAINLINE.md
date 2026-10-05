@@ -373,6 +373,48 @@ use it for new grouped grammar. Preserve both zero-observation compiler-envelope
 errors and the valid qualifier, without rewriting earlier frozen evidence.
 
 Movement/capture coordinates do not alone establish complete strategic options.
+
+CHESS_PAWN_AUX_REDUCTION_RESULTS.md now qualifies ten full-grammar source
+events: the single-source/restored-own-turn invariant makes EP unavailable,
+while initial doubles remain real actions. The refined old P2 already included
+840 double worlds; no old coefficient or producer was corrected. A separate
+compiled projection with a vacuous one-step-ray contract reproduces P1/P2 and
+adds P3=32926, independently verified with exact rank-support overlap. See
+CHESS_PAWN_THIRD_PREFIX_RESULTS.md. The separate third-aware interval consumer
+tightens only P, preserving old frozen files; label-free two-law certificates
+rise424->430 in452 typed feature comparisons, not a deployment-strength claim.
+
+SHOGI_COMPLETE_DROP_DUAL_RESULTS.md certifies the analytic64-drop/4-quiet
+partition under the same-parent P board/hand gap; independent boxes stay
+uncertain. Its observed68-action list was lost in a harness metadata failure,
+so no observed child-table claim is made. Captured-current/history boundaries
+remain, and supplied dual constraints are not WDL facts.
+
+New noncutoff active Western use evidence goes beyond exposed R/B tables.
+CHESS_KNIGHT_INTERPOSITION_RESULTS.md shows all four promotion branches admit
+mate, while Kxd7 is weakly optimal with unknown value[-1,1]; contact one-reply
+mate exposure fails, full regret[0,2] stays inconclusive. Conversely,
+CHESS_PINNED_QUEEN_MATE_RESULTS.md certifies contact's value1/two-own-action
+mate strategy under a changed pinned-Queen premise. Actual unit/zero choices
+fail that window, but eventual values remain unknown and their ties include
+the winning choice. Neither strict tie-invariant/full-WDL improvement nor
+natural-frequency strength is established. The unchanged family needs tactical
+search scope, not a standalone shallow policy claim. Source-domain information
+limits are explicit in CHESS_SOURCE_INFORMATION_SCOPE.md; no new source/holdout
+labels or budgets. Keep failed premises and recorded partial continuations.
+Next fix a candidate-independent search/use comparison with independent goal
+certificates; don't turn these synthetic mechanisms into outcome-selected roots.
+
+CONTACT_DEPTH2_DOMINANCE_RESULTS.md fixes terminal-first static depth2 minimax
+with one coefficient vector for the whole tree. Saved terminal-floor proofs
+make all three methods avoid the negative promotion trap. Positive contact
+still selects the certified winning branch; unit changes to R capture, whose
+eventual goal is unknown, while zero remains King quiet. Only14 new events;
+global dominance avoids188-edge full width without increasing caps. No WDL
+calibration, independent validation or strict full-goal/tie-invariant gain.
+CONTACT_ADVISOR_ACTIVE_USE_20261005_REVIEW.md records adopted search semantics
+and independently checked geometry, not advisor reproduction of local runs.
+
 Dynamic safety, promotion, history, hand transfer/drop and forbidden pawn-drop
 mate must be respected or explicitly qualified. Shogi noncheck stalemate is
 unqualified; official-goal observations must censor/qualify it. Xiangqi diagnostic

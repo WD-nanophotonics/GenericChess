@@ -1,0 +1,778 @@
+{
+  "complete": false,
+  "rows": [],
+  "enumerated": 0,
+  "virtual_materializations": 0,
+  "goal_queries": 0,
+  "source_sha256": {
+    "scripts/audit_chess_pawn_aux_route.py": "ddacfbc71203167a05c83e7177a9f437355fb67524331c11ec43934335a49418",
+    "docs/research/CHESS_PAWN_AUX_REDUCTION_PROTOCOL.md": "477903475f7a9c593d4c126f3077753109ea9641fd929c60d090b99ae47eb0bd",
+    "generic_chess/rules/western_chess.py": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/rules/compiler.py": "ad04e3da677ad31ecfa66b27e73b42e96f125c2cbb357a85756a2dcfa826b09a"
+  },
+  "pawn_patterns": [
+    {
+      "pattern_id": "legacy_066",
+      "name": "legacy_P_drop",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g32"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove_from_hand",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "P"
+          },
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "place",
+          "from_ref": null,
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "P"
+          },
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C1",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_10_pawn_one_step",
+      "name": "pawn_one_step",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g33"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "inherit_compiled_masks",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_11_pawn_double_step",
+      "name": "pawn_double_step",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g34"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [
+        {
+          "kind": "path_clear",
+          "count": null,
+          "lo": null,
+          "hi": null,
+          "owner_filter": "any"
+        }
+      ],
+      "guards": [
+        {
+          "aggregation": "count",
+          "owner": "self",
+          "type_ref": {
+            "kind": "action_base",
+            "type_id": null
+          },
+          "compare_field": "base",
+          "promoted": "no",
+          "location": "board",
+          "spatial": {
+            "kind": "same_rank",
+            "refs": [
+              {
+                "kind": "fixed",
+                "square": [
+                  0,
+                  1
+                ],
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_id": null
+              }
+            ],
+            "zone_id": null
+          },
+          "comparison": "eq",
+          "value": 1,
+          "subject_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          }
+        }
+      ],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "set_token",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "path_step",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": 0,
+            "slot_id": null
+          },
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": 2,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_12_pawn_capture_right",
+      "name": "pawn_capture_right",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g35"
+      ],
+      "target": {
+        "kind": "target_enemy"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "piece_owner": "opponent",
+          "piece_type_ref": null,
+          "disposition": "remove_from_game",
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "inherit_compiled_masks",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_13_pawn_capture_left",
+      "name": "pawn_capture_left",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g36"
+      ],
+      "target": {
+        "kind": "target_enemy"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "piece_owner": "opponent",
+          "piece_type_ref": null,
+          "disposition": "remove_from_game",
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "inherit_compiled_masks",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_14_en_passant_right",
+      "name": "en_passant_right",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g37"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [
+        {
+          "aggregation": "count",
+          "owner": "opponent",
+          "type_ref": {
+            "kind": "explicit",
+            "type_id": "P"
+          },
+          "compare_field": "base",
+          "promoted": "no",
+          "location": "board",
+          "spatial": {
+            "kind": "exact",
+            "refs": [
+              {
+                "kind": "offset_from_target",
+                "square": null,
+                "offset": [
+                  0,
+                  -1
+                ],
+                "owner_relative": true,
+                "step": null,
+                "slot_id": null
+              }
+            ],
+            "zone_id": null
+          },
+          "comparison": "eq",
+          "value": 1,
+          "subject_ref": {
+            "kind": "offset_from_target",
+            "square": null,
+            "offset": [
+              0,
+              -1
+            ],
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          }
+        }
+      ],
+      "slot_guards": [
+        {
+          "slot_id": 2,
+          "comparison": "eq",
+          "value": null,
+          "square_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "remove",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "offset_from_target",
+            "square": null,
+            "offset": [
+              0,
+              -1
+            ],
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "piece_owner": "opponent",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "P"
+          },
+          "disposition": "remove_from_game",
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "clear_token",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": 2,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_15_en_passant_left",
+      "name": "en_passant_left",
+      "type_ids": [
+        "P"
+      ],
+      "geometry_ids": [
+        "g38"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [
+        {
+          "aggregation": "count",
+          "owner": "opponent",
+          "type_ref": {
+            "kind": "explicit",
+            "type_id": "P"
+          },
+          "compare_field": "base",
+          "promoted": "no",
+          "location": "board",
+          "spatial": {
+            "kind": "exact",
+            "refs": [
+              {
+                "kind": "offset_from_target",
+                "square": null,
+                "offset": [
+                  0,
+                  -1
+                ],
+                "owner_relative": true,
+                "step": null,
+                "slot_id": null
+              }
+            ],
+            "zone_id": null
+          },
+          "comparison": "eq",
+          "value": 1,
+          "subject_ref": {
+            "kind": "offset_from_target",
+            "square": null,
+            "offset": [
+              0,
+              -1
+            ],
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          }
+        }
+      ],
+      "slot_guards": [
+        {
+          "slot_id": 2,
+          "comparison": "eq",
+          "value": null,
+          "square_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          }
+        }
+      ],
+      "effects": [
+        {
+          "kind": "remove",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "offset_from_target",
+            "square": null,
+            "offset": [
+              0,
+              -1
+            ],
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "piece_owner": "opponent",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "P"
+          },
+          "disposition": "remove_from_game",
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "clear_token",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": 2,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    }
+  ],
+  "aux_slots": [
+    {
+      "slot_id": 0,
+      "value_kind": "bool",
+      "scope": "global",
+      "lifetime": "persistent",
+      "initial": 1
+    },
+    {
+      "slot_id": 1,
+      "value_kind": "bool",
+      "scope": "global",
+      "lifetime": "persistent",
+      "initial": 1
+    },
+    {
+      "slot_id": 2,
+      "value_kind": "square_or_none",
+      "scope": "global",
+      "lifetime": "expire_next_turn",
+      "initial": null
+    },
+    {
+      "slot_id": 3,
+      "value_kind": "bool",
+      "scope": "global",
+      "lifetime": "persistent",
+      "initial": 1
+    },
+    {
+      "slot_id": 4,
+      "value_kind": "bool",
+      "scope": "global",
+      "lifetime": "persistent",
+      "initial": 1
+    }
+  ],
+  "error": "AttributeError: 'CompiledAuxSlot' object has no attribute 'name'",
+  "seconds": 0.04699999978765845,
+  "source_hashes_unchanged": true
+}

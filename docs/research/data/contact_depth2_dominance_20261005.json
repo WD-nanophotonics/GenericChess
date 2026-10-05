@@ -1,0 +1,3168 @@
+{
+  "complete": true,
+  "public_transitions": 14,
+  "enumerated": 184,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_contact_depth2_dominance.py": "c601020085e295ed888898f629c6bcd22a315800b9e47f311071f17e2fef62eb",
+    "scripts/saved_action_binding.py": "7c046fbc307a46a2c47ce04be010b09313a944558afe4082fc2ae35350749c03",
+    "docs/research/CONTACT_DEPTH2_DOMINANCE_PROTOCOL.md": "545e336694f00cfd40dd303b6f9e415c0822a3f80bbf13bec107f8d1aa440425",
+    "docs/research/data/chess_knight_interposition_20261005.json": "eeb18f6dfefff2f5f438e4ffdcda2a481e04b89e2d1a5acabb9aba56e0e2cba1",
+    "docs/research/data/chess_promotion_erasure_20261005.json": "7f0acffce00ed8605606d44d3adc8bfe46949636ee68e99734e81449e20c4132",
+    "docs/research/data/chess_pinned_queen_mate_20261005.json": "cbc8325ee7a2924c3e1d73c2d08ca557d31d91191359c4ee4857491f0b3266d1",
+    "docs/research/data/chess_pinned_queen_continuation_20261005.json": "2fb4d1c4ab8d2a21f5162f777e415d2ea8af1bfa4dacd0d61f59ac0f37051414",
+    "scripts/native_chess_contact_intervals.py": "741035271b773ae18f9f90865815632c36f5a7f79f8190ff3116191e84b2dbd7",
+    "scripts/research_state_replay.py": "8cdab874dc2bf2a5f1fd884a9c5049e00d6f3abd55cf0b78a09167e15177e400",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5"
+  },
+  "seconds": 0.10899999993853271,
+  "rook_capture": {
+    "parent": "sem_07_r_capture:g29:h8-g8",
+    "all_enemy_replies": [
+      "sem_00_k_quiet:g11:d8-c7"
+    ],
+    "state": {
+      "position": {
+        "board": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 0,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              -1
+            ],
+            0
+          ],
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ],
+          [
+            [
+              3,
+              -1
+            ],
+            0
+          ],
+          [
+            [
+              4,
+              -1
+            ],
+            0
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 2,
+      "repetition_counts": [
+        [
+          "c6b6b17bdc7fd906f2df450e402318eb8fa43d119fca5c6243fa78ef1e5840ee",
+          1
+        ],
+        [
+          "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+          1
+        ],
+        [
+          "fd88036c51b59dcde77626ec78af47b7c0376690162530c95d7d4c6985379db3",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "fd88036c51b59dcde77626ec78af47b7c0376690162530c95d7d4c6985379db3",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"R\",\"from\":[7,7],\"geometry_id\":\"g29\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_07_r_capture\",\"promotion_target_id\":null,\"to\":[6,7]}",
+          "gave_check": true
+        },
+        {
+          "position_key": "c6b6b17bdc7fd906f2df450e402318eb8fa43d119fca5c6243fa78ef1e5840ee",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,7],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,6]}",
+          "gave_check": false
+        }
+      ]
+    }
+  },
+  "zero_all_replies": [
+    "sem_00_k_quiet:g10:d8-c8",
+    "sem_00_k_quiet:g11:d8-c7",
+    "sem_00_k_quiet:g8:d8-d7",
+    "sem_02_n_quiet:g12:e5-d3",
+    "sem_02_n_quiet:g13:e5-c4",
+    "sem_02_n_quiet:g14:e5-f3",
+    "sem_02_n_quiet:g15:e5-g4",
+    "sem_02_n_quiet:g16:e5-d7",
+    "sem_02_n_quiet:g17:e5-c6",
+    "sem_02_n_quiet:g19:e5-g6",
+    "sem_03_n_capture:g18:e5-f7",
+    "sem_08_q_quiet:g20:g8-f8",
+    "sem_08_q_quiet:g20:g8-e8",
+    "sem_09_q_capture:g21:g8-h8"
+  ],
+  "zero_rows": [
+    {
+      "action": "sem_00_k_quiet:g10:d8-c8",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "86e0ebc35080fd521c4366eda10dcd855bfa7e352f3f1a7b7b1e17d2dd1015c9",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "86e0ebc35080fd521c4366eda10dcd855bfa7e352f3f1a7b7b1e17d2dd1015c9",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_00_k_quiet:g11:d8-c7",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "455486cfe2245f60cf6ac0a7406d8ab278fb546a53636292d78fe34253794aea",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "455486cfe2245f60cf6ac0a7406d8ab278fb546a53636292d78fe34253794aea",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,7],\"geometry_id\":\"g11\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,6]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_00_k_quiet:g8:d8-d7",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "001683148b8be7a60a156346999716261ea2386b2d88c359eb0c2a883300dfc0",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "001683148b8be7a60a156346999716261ea2386b2d88c359eb0c2a883300dfc0",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,7],\"geometry_id\":\"g8\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[3,6]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g12:e5-d3",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "523190b301b7ab48f22b0bde3735e682b5216bc4c26b0a747238535478ff61d2",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "523190b301b7ab48f22b0bde3735e682b5216bc4c26b0a747238535478ff61d2",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g13:e5-c4",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "16f1e67d5a35ccd03e099baf959f2d18c878a685d222684dedc34fc82bca06be",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "16f1e67d5a35ccd03e099baf959f2d18c878a685d222684dedc34fc82bca06be",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g13\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[2,3]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g14:e5-f3",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "75df32d8408cc766951c6f6ed3f96eb8f0fea8d26a525b6140582f704e039f9f",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "75df32d8408cc766951c6f6ed3f96eb8f0fea8d26a525b6140582f704e039f9f",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,2]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g15:e5-g4",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "b70eebf21743ae5bf79df36484ac62985ee91b04f9083588a336d46e3868b8e5",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "b70eebf21743ae5bf79df36484ac62985ee91b04f9083588a336d46e3868b8e5",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g15\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[6,3]}",
+            "gave_check": true
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g16:e5-d7",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "eabb8942114b26235bb8c2b6b27fe1fe0c1c565f7d9f3fa3c253be93d25db5fb",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "eabb8942114b26235bb8c2b6b27fe1fe0c1c565f7d9f3fa3c253be93d25db5fb",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g16\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[3,6]}",
+            "gave_check": true
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g17:e5-c6",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "0f79c9d672b43d1dd377498fd86531fe0ae6df79f31cfe6cc4b4b95697784d23",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "0f79c9d672b43d1dd377498fd86531fe0ae6df79f31cfe6cc4b4b95697784d23",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[2,5]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_02_n_quiet:g19:e5-g6",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "8ce54908a17dc7c8f3e64673c77c3add82371976323166409237c70283474fa8",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "8ce54908a17dc7c8f3e64673c77c3add82371976323166409237c70283474fa8",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g19\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[6,5]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_03_n_capture:g18:e5-f7",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "17b66e6cffb4b5d65f8bd7db91ec45cd8e6858c5d4cd3f727ff21179c4e43d49",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "17b66e6cffb4b5d65f8bd7db91ec45cd8e6858c5d4cd3f727ff21179c4e43d49",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"N\",\"from\":[4,4],\"geometry_id\":\"g18\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[5,6]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_08_q_quiet:g20:g8-f8",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "8c4166d7b4684badf4912d55a84626730826716922238dcc75d7fac66d450184",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "8c4166d7b4684badf4912d55a84626730826716922238dcc75d7fac66d450184",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"Q\",\"from\":[6,7],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_08_q_quiet\",\"promotion_target_id\":null,\"to\":[5,7]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_08_q_quiet:g20:g8-e8",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "011af8e0e2d1c2fc5c53bd75820f50ac4723a10a7081df861a097b564330821a",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "011af8e0e2d1c2fc5c53bd75820f50ac4723a10a7081df861a097b564330821a",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"Q\",\"from\":[6,7],\"geometry_id\":\"g20\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_08_q_quiet\",\"promotion_target_id\":null,\"to\":[4,7]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "reused": false
+    },
+    {
+      "action": "sem_09_q_capture:g21:g8-h8",
+      "state": {
+        "position": {
+          "board": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "P",
+              "current_type_id": "P",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "Q",
+              "current_type_id": "Q",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                1,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                2,
+                -1
+              ],
+              null
+            ],
+            [
+              [
+                3,
+                -1
+              ],
+              0
+            ],
+            [
+              [
+                4,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": null,
+          "board_height": null
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "4b82322f2baf1fa565bfea9125c85eba9e3d6579008b06066e57a684b376e371",
+            1
+          ],
+          [
+            "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            1
+          ],
+          [
+            "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "ed709f296190899fa5d1e7e71915b8a0ccd2f78eb5257fde36d5cb17178fbe41",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "ffbd97f1c521635c9bd094b1c79e2d500544496c28209a3b7708bf1dca82946d",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,5],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "4b82322f2baf1fa565bfea9125c85eba9e3d6579008b06066e57a684b376e371",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"Q\",\"from\":[6,7],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_09_q_capture\",\"promotion_target_id\":null,\"to\":[7,7]}",
+            "gave_check": true
+          }
+        ]
+      },
+      "reused": true
+    }
+  ],
+  "negative_leaf_features": [
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'Q')": -1,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'Q')": -1,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'P')": 1,
+      "('board', 'Q')": -1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'Q')": -1,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'N')": -2,
+      "('board', 'Q')": -1,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    },
+    {
+      "('board', 'Q')": -1,
+      "('board', 'N')": -2,
+      "('board', 'P')": 1
+    }
+  ],
+  "negative_depth2": {
+    "contact": "sem_01_k_capture:g9:c8-d7",
+    "unit": "sem_01_k_capture:g9:c8-d7",
+    "zero": "sem_01_k_capture:g9:c8-d7"
+  },
+  "positive_depth2": {
+    "contact": "sem_12_pawn_capture_right:g35:f7-g8=Q",
+    "unit": "sem_07_r_capture:g29:h8-g8",
+    "zero": "sem_00_k_quiet:g10:e6-f6"
+  },
+  "operator_scope": "fixed two-ply terminal-first STATIC minimax; global coefficient dominance, not WDL score calibration or new validation",
+  "source_hashes_unchanged": true
+}

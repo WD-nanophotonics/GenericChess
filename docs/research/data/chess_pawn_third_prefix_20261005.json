@@ -1,0 +1,64 @@
+{
+  "complete": true,
+  "direct": 6076,
+  "second": 16112,
+  "third": 32926,
+  "overlap2": {
+    "1": 6596,
+    "2": 770,
+    "3": 770,
+    "4": 770,
+    "5": 770,
+    "6": 1540,
+    "7": 770
+  },
+  "overlap3": {
+    "1": 17274,
+    "2": 5826,
+    "3": 770,
+    "4": 770,
+    "5": 770,
+    "6": 770,
+    "7": 1540
+  },
+  "physical_events": 0,
+  "goal_queries": 0,
+  "source_sha256": {
+    "scripts/audit_chess_pawn_third_prefix.py": "edccc7bc1f71793ba8837b848177797233de416b01577e0f47c5a5b767355fb7",
+    "scripts/qualified_western_pawn_prefix.py": "1a683e95616c37f03173bda7c2f1cf9153ca0846529f7fd79c145e50ba2825c4",
+    "scripts/western_pawn_contact_prefix.py": "6c697507936ebb917c6cd9a3b12a2a4f96a37d85e6e68bfd5ad8b78eae561376",
+    "scripts/shared_contact_prefix.py": "435a1ef768327d9c6b41e3fa91db612648c4e13b5f42b562e8c1fca95c62d90b",
+    "docs/research/CHESS_PAWN_THIRD_PREFIX_PROTOCOL.md": "61f9716fc7441e293970effdf70b8b66336f63c87a27fb1d734ea60fcd74435e",
+    "docs/research/data/western_pawn_qualified_prefix_20261005.json": "0c02dd0a30b3eb8b50590e495b2b292091ae3155663dc1f660c14c37a9e0d66b"
+  },
+  "stats": {
+    "checked_patterns": 12,
+    "geometry_candidates": 1954,
+    "source_geometry_tables": 1280,
+    "raw_pattern_candidates": 6658,
+    "max_quiet_variants": 27,
+    "canonical_geometries": 20
+  },
+  "residual_rank_support": {
+    "1": 0,
+    "2": 17274,
+    "3": 22330,
+    "4": 22330,
+    "5": 22330,
+    "6": 21560,
+    "7": 21560
+  },
+  "unknown_nonzero": 137918,
+  "raw_bounds": {
+    "geometric_half": [
+      "198325/3999744",
+      "158413/1999872"
+    ],
+    "linear_mixture": [
+      "1203143/26248320",
+      "28663/416640"
+    ]
+  },
+  "seconds": 0.0779999999795109,
+  "source_hashes_unchanged": true
+}

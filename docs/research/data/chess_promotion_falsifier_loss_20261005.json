@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "failure": "TerminalStatus JSON serialization; no original output/prelabel persisted",
+  "root_materializations_interval": [
+    0,
+    5
+  ],
+  "root_materializations_actual": null,
+  "reply_materializations": 0,
+  "source_queries": 0,
+  "preserved_without_rerun": true,
+  "inference_basis": "Mandatory prelabel write occurs before second-ply observation; that file never existed. Final encoding failure shadows original phase error. Do not invent lost rows.",
+  "source_sha256": {
+    "scripts/audit_chess_promotion_mate_falsifier.py": "0324fd1589b722d847a3b87a4ea9ab5294df0c4180e8389052f9fc34240a29c8",
+    "docs/research/CHESS_PROMOTION_MATE_FALSIFIER_PROTOCOL.md": "d68043f091f5fb926ceb81819b65c102bd21b42d2e5d774500c877deb7c72736"
+  }
+}
