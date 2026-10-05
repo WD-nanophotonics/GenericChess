@@ -259,6 +259,42 @@ retaining56536 even-parity worlds at distance>=4 and106144 odd worlds>=3.
 Its improved mixture envelope still overlaps B; a prospective cheap N3
 certificate or Pawn support refinement is decision-changing next research.
 
+CHESS_KNIGHT_THREE_ACTION_RESULTS.md resolves the declared duration-family N/B
+comparison with exact N3=94944. CHESS_PAWN_FRONTIER_RESULTS.md adds exact
+P2=16112 and11816 new zero worlds, resolving B/P. Both PREDECLARED laws now
+certify Q>R>N>B>P under the full249984-world virtual law; this is not a fitted
+human order or proof of game utility. PAWN_PREFIX_SUPPORT_OVERLAP_RESULTS.md
+merges prefix/rank support without double counting, sharpening positive lower.
+NATIVE_CONTACT_INTERVAL_INTERFACE_DESIGN.md qualifies the research-only full
+five-mode rational leaf interface, terminal priority and explicit whole-table
+incompleteness, without Core changes or point estimates.
+
+The advisor's full-body scope/source/normalization review is adopted/deferred
+in CONTACT_ADVISOR_FIVE_MODE_20261005_REVIEW.md. One fresh predeclared cutoff
+structure qualifies imported-history/source/cost and yields exact paired margin0
+against BOTH baselines (40 transitions, no tablebase), so strict independent
+improvement is not established. See CUTOFF_SAFETY_USE_RESULTS.md; no root
+replacement or outcome fishing. CONTACT_DURATION_UNION_RESULTS.md separates
+within-law uncertainty from artificial outer-hull uncertainty:26 of3124 typed
+comparisons retain the same choice across both boxes but lose it in the hull.
+The separate union adapter preserves those certificates without changing old
+frozen experiments. CONTACT_NORMALIZATION_LAW.md fixes aggregate-versus-pointwise
+law semantics; the different objectives must not be silently interchanged.
+
+SHOGI_DIRECT_MODE_BOUND_RESULTS.md qualifies11 missing ordinary current-board
+modes using110 metadata patterns, preserving one failed predicate-adapter audit.
+All worlds and higher-distance unknowns remain, with no per-square event batch
+or utility labels. SHOGI_GOLD_TWO_ACTION_RESULTS.md counts Gold2=55171 and
+qualifies G/promoted-minor BOARD-task equality; native unpromoted types remain
+distinct. A same-context simulation gives TP-nativeP lower gap
+27176*gamma*(1-gamma)/511920 despite overlapping marginal boxes.
+SHOGI_GOLD_REACHABILITY_BOUND.md proves all current Gold worlds reachable in<=16
+by explicit orthogonal routes, adding positive residual mass to its lower.
+Native S/N/L long horizons, held constraints, a rule-neutral complete constructor
+and broader independent deployment benefit remain OPEN. Keep game boundaries,
+no human/holdout tuning or additional source/budget. Next tighten these distinct
+mechanisms or prospectively assess independently available use/source scope.
+
 ## Boundaries and evidence lookup
 
 Movement/capture coordinates do not alone establish complete strategic options.

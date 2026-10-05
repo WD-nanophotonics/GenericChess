@@ -158,7 +158,11 @@ daily10:00 consultation stays in that same schedule. Historical two-hour
 receipts remain evidence of the earlier configuration, not current policy.
 Daily10:00 Tokyo substantive dot window, no mandatory external response or
 routine acknowledgement. Standing Slack authorization and complete-reply/
-uncertain-send handling: SLACK_WORKFLOW.md. Explicit stop persists flags;
+uncertain-send handling: SLACK_WORKFLOW.md. Standing authorization includes
+Agent judgment on deliberate resend/recontact, reaffirmed2026-10-05. Reconcile
+delivery first, record evidence and duplicate risk, keep known-root followups
+in that thread; no per-attempt user approval, automatic loop or ledger reset.
+Explicit stop persists flags;
 Agent pauses heartbeat/cancels dot monitoring, no scheduled automatic resume.
 Transport/local Agent allowance boundaries remain in advisor.json.
 Inspect outgoing diffs, run relevant tests, publish and verify origin/sandbox.

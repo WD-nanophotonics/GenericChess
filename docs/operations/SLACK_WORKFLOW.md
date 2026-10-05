@@ -17,7 +17,9 @@ states this Slack belongs to their account and is not an external public forum.
 Authorization lasts until revoked; project stop suspends sending. It applies
 to this workflow, not unrelated destinations/projects. Send only useful
 questions/evidence as needed; preserve identity, deduplication, uncertain-send
-reconciliation, no-loop and no-extra-worker requirements.
+reconciliation, no-loop and no-extra-worker requirements. On2026-10-05 the user
+also expressly authorized independent Agent judgment about resend/recontact.
+This persists with the same destination scope and stop/revocation conditions.
 
 Workspace NanoMelon T0C6A46B55H; public channel #generic-chess C0C6L21UU20.
 Sender and current dot reply identity: verified user U0C6G6AU6MQ. TYPE/ID are
@@ -53,7 +55,9 @@ sending, account-wide zero usage or arbitrary delegation by dot.
    PowerShell numeric conversion can round away its microseconds. The adapter
    requires all six fractional digits. If send acknowledgement is lost,
    search/read the original channel root and reconcile exact original payload.
-   An absent history match never authorizes resending or switching transports.
+   An absent history match alone does not prove nondelivery. Standing authority
+   permits a deliberate, evidence-reviewed retry without another user question;
+   follow the decision procedure below. Never switch destination/transport.
 4. Use the calling Agent's Slack read_thread for the bound root, enough capacity
    and all pages. Preserve the raw result under ignored .local_agent/slack/reads.
    Wrap it in this JSON and pass to reconcile --snapshot-file FILE:
@@ -72,7 +76,8 @@ sending, account-wide zero usage or arbitrary delegation by dot.
    and every body character. Put arithmetic multiplication inside inline code
    in future requests to prevent Slack interpreting it as emphasis. Wrong text,
    unpaired markers and changed code still fail exact association. If paginated or an ambiguous rendered delimiter is
-   encountered, retain the full tool evidence for review; do not resend.
+   encountered, retain the full tool evidence, reconcile, then assess retry
+   need under the standing authorization; do not mechanically repeat a send.
 5. Reconcile matches verified identity, thread and exact ID. All matched posts
    are retained, including revisions. Unknown/conflicting messages are held.
    Useful unformatted body remains in raw evidence, not silently discarded.
@@ -102,6 +107,41 @@ work between daily inspections; consult only concrete issues worth discussing.
 Advice can be read and assessed locally without sending a result/acknowledgement;
 follow-ups may wait for the next consultation. Do not spend tokens on routine
 back-and-forth or treat silence as a blocker to independent research.
+
+## Deliberate retry/recontact under standing user authorization
+
+Classify the observed situation before acting:
+
+- A connector schema error or automatic review refusal BEFORE execution is
+  not an external send. Correct a demonstrated parameter problem and use the
+  saved original message; preserve the failed tool result. The pre-send
+  SEND_UNCERTAIN marker is a transaction precaution, not evidence of delivery.
+- An unknown external result requires exact REQUEST_ID/payload/account/channel
+  search and available history reads first. If no root is confirmed, record
+  coverage, why delivery remains uncertain, the concrete value of retry and
+  duplicate risk. The Agent may decide to retry under the user's authorization;
+  absence of a match is not misreported as proof. Persist that decision BEFORE
+  the call, use the same ID/message/hash/channel and bind the successful root.
+- A known delivered root remains authoritative. A useful reminder or explicit
+  request to reconsider belongs in that SAME thread, retaining REQUEST_ID and
+  identifying the renewed question. Do not repost a channel root merely because
+  dot is silent. If no new useful question/evidence exists, continue research.
+
+Record deliberations and exact receipts in ignored local Slack evidence, with
+request ID, original root if known, relevant prior tool/read evidence, reason,
+attempt time and outcome. Never clear SEND_UNCERTAIN by assertion, manufacture
+a receipt, change immutable request content, lose earlier attempts or create
+an automatic retry timer. A failed deliberate attempt requires a fresh review,
+not an unbounded loop. Multiple actual roots or conflicting receipts are held
+for explicit association; do not adopt responses as though delivery were unique.
+
+The existing begin-send action is deliberately conservative: on dispatched
+requests it requests reconciliation and does not mechanically resend. Its
+resend_permitted=false denotes NO automatic adapter action; it does not revoke
+the user's current authorization for a reviewed native-tool call using the
+saved message. No new CLI, daemon, transport or extra worker is introduced.
+Automatic approval review can still reject an action; preserve its actual reason
+and the direct user authorization rather than claiming the tool has sent it.
 
 ## Stop, rollback and isolation
 

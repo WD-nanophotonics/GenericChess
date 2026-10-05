@@ -1,0 +1,34 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "scripts/audit_gold_two_frontier.py": "e5eb8146f3b265ba7b5330f3af8647435840f9fda2e56e523706e081c4fd8c03",
+    "scripts/gold_two_frontier.py": "79f5e44d3e1bfd77af9c671b3b559879865a799705dd50e357d29953023cd2dc",
+    "scripts/shogi_direct_mode_bounds.py": "9ba2fd4a1437cf14851c210d156b1aa3431c72539202f6feecbaba4059e91f17",
+    "docs/research/SHOGI_GOLD_TWO_ACTION_DESIGN.md": "673f642d657d170147d5acfd35b4f6da813ddcc7256ba603f8a4ead0bc80824d",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8"
+  },
+  "public_transitions": 0,
+  "goal_queries": 0,
+  "direct": 32864,
+  "second": 55171,
+  "remaining": 423885,
+  "direct_pairs": 416,
+  "nondirect_pair_multiplicity": {
+    "0": 5362,
+    "1": 287,
+    "2": 366,
+    "3": 49
+  },
+  "raw_intervals": {
+    "geometric_half": [
+      "120899/2047680",
+      "665683/4095360"
+    ],
+    "linear_mixture": [
+      "120899/3071520",
+      "37523/307152"
+    ]
+  },
+  "seconds": 0.015999999828636646,
+  "source_hashes_unchanged": true
+}

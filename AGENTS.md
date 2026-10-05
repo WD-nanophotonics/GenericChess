@@ -57,7 +57,13 @@ Use consult/consult-status/reconcile; immutable IDs/hashes/root ts bind requests
 Verified account identity, not TYPE/ID, authenticates the sender. Dot shares
 the current account. Paths do not give dot local access; attach bounded evidence.
 Read all posts/pages and preserve raw output before reconcile/adoption; completed
-requests can get supplements. Never resend uncertain sends or switch channels.
+requests can get supplements. Standing authorization also covers Agent judgment
+about resend/recontact, reaffirmed2026-10-05; no per-attempt user approval is
+needed. Reconcile first and record the delivery evidence, purpose and duplicate
+risk before any deliberate retry. Missing search matches alone are not proof
+of nondelivery. For a known root use its thread, never another channel; a mere
+silent dot is not a reason for routine repeats. Preserve IDs/hashes/receipts,
+never reset the ledger or run automatic retry loops. See SLACK_WORKFLOW.md.
 No self-reply loops, automatic re-execution or additional workers.
 
 Daily10:00 Asia/Tokyo is the main substantive dot window; skip empty/duplicate
