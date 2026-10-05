@@ -329,6 +329,38 @@ Next build a rule-neutral admitted constructor/scope contract and a prospective
 fixed-tree comparison with declared independent goal evidence; not old mate
 fixture expansion, human-price tuning or compulsory exact WDL calibration.
 
+## Rule-neutral native closure and new use opportunity
+
+RULE_NEUTRAL_CONTACT_CONSTRUCTOR_RESULTS.md qualifies type-name-free simple
+admission with3024 independent ordered micro-world distances and a minimum-ray
+counterexample requiring target-aware paths. NATIVE_CUBE_CONTACT_CLOSURE_RESULTS.md
+then closes screened/leg/eye native grammar on20160 ordered worlds and12 full
+virtual action lists. Unsupported promotion/aux/type guards reject whole inputs;
+separate Shogi promotion and Western Pawn qualifications are still required.
+
+DIAGNOSTIC_NATIVE_CONTACT_RESULTS.md closes all six9x10 diagnostic ordinary
+704880-world distributions under the same passive law. Independent target0
+coordinate hashes cover46992 worlds; full R distribution and C support/direct
+mass have geometric certificates. Charged3972 canonical geometry candidates,
+6.469sec include the preserved pre-distance cache-write failure. Expanded5294
+rows/8642 pattern checks remain explicit. Both fixed laws normalize by full R,
+but C/S order reverses. No human reference/holdout or official strategic result.
+NATIVE_CONTACT_ADVISOR_20261005_REVIEW.md adopts independent geometry review
+and approximation/use separation, not advisor implementation/cost certification.
+
+SHOGI_CHECKED_ONGOING_APPROXIMATION_RESULTS.md supplies a separate opt-in
+complete69-child static interface with63 tied drops; strict interface unchanged,
+fresh terminal/history/full stock mandatory. This is no actual game-value claim.
+CONTACT_NARROW_WIDTH_RESULTS.md records two fresh candidate-independent4-choice
+checked Knight/Rook roots,8 actual successors/all122 reply IDs. Full depth2
+requires130>128, so physical width alone yields no selection/goal sample.
+CONTACT_NARROW_EFFECT_RESULTS.md then closes a separately frozen full-list
+effect/King-escape reduction: all122 replies qualified,0 additional events,
+contact/unit tie on THREE King evasions, zero on all FOUR. No independent
+WDL/window benefit, budget reset or empirical122-state claim. Next fix an
+independent use/source question or further constructor scope before new events;
+retain both-root agreements/ties and the original130-width evidence.
+
 ## Boundaries and evidence lookup
 
 SHOGI_PAWN_PROMOTION_SUPPORT_RESULTS.md classifies full native P support:

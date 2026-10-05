@@ -1,0 +1,494 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "family": "C",
+      "owner": 0,
+      "census": {
+        "histogram": {
+          "1": 64,
+          "2": 192,
+          "3": 384,
+          "4": 32
+        },
+        "unreachable": 2688,
+        "total": 3360,
+        "means": {
+          "geometric_half": "13/336",
+          "linear_mixture": "44/1575"
+        }
+      },
+      "worlds": 3360,
+      "ordered_cube_sha256": "644d56bb0df3c14d48f8a13d17f81e0e58fea41bf8c230601ab843d01d5c6caa",
+      "ordered_coordinate_sha256": "644d56bb0df3c14d48f8a13d17f81e0e58fea41bf8c230601ab843d01d5c6caa",
+      "first_mismatch": null
+    },
+    {
+      "family": "C",
+      "owner": 1,
+      "census": {
+        "histogram": {
+          "1": 64,
+          "2": 192,
+          "3": 384,
+          "4": 32
+        },
+        "unreachable": 2688,
+        "total": 3360,
+        "means": {
+          "geometric_half": "13/336",
+          "linear_mixture": "44/1575"
+        }
+      },
+      "worlds": 3360,
+      "ordered_cube_sha256": "644d56bb0df3c14d48f8a13d17f81e0e58fea41bf8c230601ab843d01d5c6caa",
+      "ordered_coordinate_sha256": "644d56bb0df3c14d48f8a13d17f81e0e58fea41bf8c230601ab843d01d5c6caa",
+      "first_mismatch": null
+    },
+    {
+      "family": "H",
+      "owner": 0,
+      "census": {
+        "histogram": {
+          "1": 624,
+          "2": 1012,
+          "3": 800,
+          "4": 388,
+          "5": 176,
+          "6": 16
+        },
+        "unreachable": 344,
+        "total": 3360,
+        "means": {
+          "geometric_half": "139/672",
+          "linear_mixture": "2867/19600"
+        }
+      },
+      "worlds": 3360,
+      "ordered_cube_sha256": "6fabe1b03c88ac913aa45d2d6cae3b89da538f8da65b6ec1e95b368a0c93333c",
+      "ordered_coordinate_sha256": "6fabe1b03c88ac913aa45d2d6cae3b89da538f8da65b6ec1e95b368a0c93333c",
+      "first_mismatch": null
+    },
+    {
+      "family": "H",
+      "owner": 1,
+      "census": {
+        "histogram": {
+          "1": 624,
+          "2": 1012,
+          "3": 800,
+          "4": 388,
+          "5": 176,
+          "6": 16
+        },
+        "unreachable": 344,
+        "total": 3360,
+        "means": {
+          "geometric_half": "139/672",
+          "linear_mixture": "2867/19600"
+        }
+      },
+      "worlds": 3360,
+      "ordered_cube_sha256": "6fabe1b03c88ac913aa45d2d6cae3b89da538f8da65b6ec1e95b368a0c93333c",
+      "ordered_coordinate_sha256": "6fabe1b03c88ac913aa45d2d6cae3b89da538f8da65b6ec1e95b368a0c93333c",
+      "first_mismatch": null
+    },
+    {
+      "family": "E",
+      "owner": 0,
+      "census": {
+        "histogram": {
+          "1": 208
+        },
+        "unreachable": 3152,
+        "total": 3360,
+        "means": {
+          "geometric_half": "13/420",
+          "linear_mixture": "13/630"
+        }
+      },
+      "worlds": 3360,
+      "ordered_cube_sha256": "b870e27eace306566ad6bccf92f3442d51703f21de86ecba796c42b0491e8974",
+      "ordered_coordinate_sha256": "b870e27eace306566ad6bccf92f3442d51703f21de86ecba796c42b0491e8974",
+      "first_mismatch": null
+    },
+    {
+      "family": "E",
+      "owner": 1,
+      "census": {
+        "histogram": {
+          "1": 208
+        },
+        "unreachable": 3152,
+        "total": 3360,
+        "means": {
+          "geometric_half": "13/420",
+          "linear_mixture": "13/630"
+        }
+      },
+      "worlds": 3360,
+      "ordered_cube_sha256": "b870e27eace306566ad6bccf92f3442d51703f21de86ecba796c42b0491e8974",
+      "ordered_coordinate_sha256": "b870e27eace306566ad6bccf92f3442d51703f21de86ecba796c42b0491e8974",
+      "first_mismatch": null
+    }
+  ],
+  "controls": [
+    {
+      "family": "C",
+      "owner": 0,
+      "source": 0,
+      "target": 2,
+      "blocker": 1,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 0,
+          "target": 4,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 0,
+          "target": 8,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 0,
+          "target": 12,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_04_opaque_enemy0",
+          "source": 0,
+          "target": 2,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "family": "C",
+      "owner": 0,
+      "source": 0,
+      "target": 3,
+      "blocker": 1,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 0,
+          "target": 4,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 0,
+          "target": 8,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 0,
+          "target": 12,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_04_opaque_enemy0",
+          "source": 0,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "family": "C",
+      "owner": 1,
+      "source": 15,
+      "target": 13,
+      "blocker": 14,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 15,
+          "target": 11,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 15,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 15,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_04_opaque_enemy0",
+          "source": 15,
+          "target": 13,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "family": "C",
+      "owner": 1,
+      "source": 15,
+      "target": 12,
+      "blocker": 14,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 15,
+          "target": 11,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 15,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_02_opaque_empty2",
+          "source": 15,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g4"
+        },
+        {
+          "pattern_id": "sem_04_opaque_enemy0",
+          "source": 15,
+          "target": 12,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "family": "H",
+      "owner": 0,
+      "source": 0,
+      "target": 6,
+      "blocker": 1,
+      "actual": false,
+      "coordinate": false,
+      "all_actions": [
+        {
+          "pattern_id": "sem_05_opaque_empty5",
+          "source": 0,
+          "target": 9,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g7"
+        }
+      ]
+    },
+    {
+      "family": "H",
+      "owner": 0,
+      "source": 0,
+      "target": 6,
+      "blocker": 5,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_05_opaque_empty5",
+          "source": 0,
+          "target": 9,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g7"
+        },
+        {
+          "pattern_id": "sem_15_opaque_enemy7",
+          "source": 0,
+          "target": 6,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g17"
+        }
+      ]
+    },
+    {
+      "family": "H",
+      "owner": 1,
+      "source": 15,
+      "target": 9,
+      "blocker": 14,
+      "actual": false,
+      "coordinate": false,
+      "all_actions": [
+        {
+          "pattern_id": "sem_05_opaque_empty5",
+          "source": 15,
+          "target": 6,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g7"
+        }
+      ]
+    },
+    {
+      "family": "H",
+      "owner": 1,
+      "source": 15,
+      "target": 9,
+      "blocker": 10,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_05_opaque_empty5",
+          "source": 15,
+          "target": 6,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g7"
+        },
+        {
+          "pattern_id": "sem_15_opaque_enemy7",
+          "source": 15,
+          "target": 9,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g17"
+        }
+      ]
+    },
+    {
+      "family": "E",
+      "owner": 0,
+      "source": 0,
+      "target": 10,
+      "blocker": 5,
+      "actual": false,
+      "coordinate": false,
+      "all_actions": []
+    },
+    {
+      "family": "E",
+      "owner": 0,
+      "source": 0,
+      "target": 10,
+      "blocker": 1,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_07_opaque_enemy3",
+          "source": 0,
+          "target": 10,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g9"
+        }
+      ]
+    },
+    {
+      "family": "E",
+      "owner": 1,
+      "source": 15,
+      "target": 5,
+      "blocker": 10,
+      "actual": false,
+      "coordinate": false,
+      "all_actions": []
+    },
+    {
+      "family": "E",
+      "owner": 1,
+      "source": 15,
+      "target": 5,
+      "blocker": 14,
+      "actual": true,
+      "coordinate": true,
+      "all_actions": [
+        {
+          "pattern_id": "sem_07_opaque_enemy3",
+          "source": 15,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "unnamed_actor",
+          "geometry_id": "g9"
+        }
+      ]
+    }
+  ],
+  "canonical_candidates": 512,
+  "enumerated": 24,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_native_cube_contact_qualified.py": "a7ed462a6c7e708143868820f0988a483d7739e739bd95eb402e051b13ed116d",
+    "scripts/native_cube_contact_qualified.py": "570ac1da051f4c86795bdd61b485520ebc3f993f1934bccaeda4522a73689262",
+    "docs/research/NATIVE_CUBE_CONTACT_QUALIFIED_SCOPE.md": "42df65e4d98b91b897c0369e0591558e048aece7f8a9727705df30818de895e4",
+    "docs/research/data/native_cube_contact_closure_20261005.json": "96f0f6e72d4af5cad408e2697df6004247f7d34469c05ab591045c5ddffb975c",
+    "scripts/audit_native_cube_contact_closure.py": "01973f9f67a958984dad2034e2a03299894337c5df184e892c84173cf87acbc7",
+    "scripts/native_cube_contact_closure.py": "6d02c766b660c17575788b211c9725b637e198340360f4e872039bc31921cac3",
+    "docs/research/NATIVE_CUBE_CONTACT_CLOSURE_PROTOCOL.md": "eabdc110ad3a1af120d7242af8ed90345b3803f773e1f2e3528597be1759d370",
+    "scripts/typed_sparse_contact_cubes.py": "af01d84329a1755522195a338bf2a1663859506346169a0b4a37f1babc923f29",
+    "scripts/sparse_contact_cubes.py": "6c9e19551246ea633f0a9c7b305d44d5834d79ae0aae00bf0a61640b60f5fae9",
+    "scripts/intrinsic_action_events.py": "b9a47fe39046a223a9f2c550daabdf973e96d04c2f0ca6d4f480d453d9f9d155",
+    "scripts/intrinsic_occupancy_cubes.py": "06ce57a843d4d1b996786fc5db3ec4c16ff8d321f06b71fdfde8cb1e3b32c48b",
+    "scripts/rule_neutral_contact_constructor.py": "d15a022fa5d6cca0b02aa1e5417cbdcacec9823d1dd1117b464c0e43337a9089"
+  },
+  "renamed_census": {
+    "histogram": {
+      "1": 64,
+      "2": 192,
+      "3": 384,
+      "4": 32
+    },
+    "unreachable": 2688,
+    "total": 3360,
+    "means": {
+      "geometric_half": "13/336",
+      "linear_mixture": "44/1575"
+    }
+  },
+  "seconds": 0.3589999999385327,
+  "cumulative_seconds": 0.39099999993853274,
+  "source_hashes_unchanged": true
+}
