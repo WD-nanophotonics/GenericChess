@@ -1,7 +1,7 @@
 # Continuous research segment review
 
 Segment eb726a7a-6c1a-4244-ac1c-7bb3f1c2206f began
-2026-10-05T14:06:13.720009UTC. Seven recorded research stages, followed by
+2026-10-05T14:06:13.720009UTC. Eight recorded research stages, with
 verification/publication checkpoints; actual finish/time belongs to local
 session.json. Normal finish requires >=60min and executable memo reserve.
 No Goal, extra worker, parallel writer, holdout reads or idle padding.
@@ -45,3 +45,10 @@ Publication status/full SHA recorded in local rollout after remote verification.
 The scientific goal is OPEN. Memo's initial three questions were completed;
 the next reserve covers actual search equivalence, complete source-proof
 obligations and promoted-current profile qualification, not more zero windows.
+
+8. Final source metadata continuation finds recursive dump_tree debug output,
+   beyond exposed single-path PV. It prints missing-storage paths and filters
+   pn0 children without an independently verified defender list. Preserve this
+   opportunity, but do not admit its output as a complete proof; next inspect
+   reachability/layout/reclamation and terminal/AND closure. See
+   SHOGI_PROOF_EXPORT_PREFLIGHT.md. No new acquisition or engine run.
