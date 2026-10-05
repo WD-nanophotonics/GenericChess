@@ -1,0 +1,209 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "owner": 0,
+      "weight": "1/2",
+      "children": {
+        "sem_01_k_capture:g8:a2-a3": {
+          "request_sha256": "0be6d340cfa1889a9fcf7b33d9c604139e2fc933af68925308d3852f1f5f96f6",
+          "fen": "8/8/8/8/8/K1k5/8/1b6 b - - 0 1",
+          "signed_dtm": 0,
+          "wdl_stm": 0,
+          "interval": [
+            0,
+            0
+          ],
+          "bridge": {
+            "interval": [
+              0,
+              0
+            ],
+            "reason": "conditional exact finite horizon",
+            "horizon": 999
+          },
+          "projected_legal_count": 12,
+          "source_verified": false,
+          "external_insufficient_material": true,
+          "scope": "conditional semantic/horizon bridge; no rule-independent external certificate"
+        },
+        "sem_01_k_capture:g9:a2-b1": {
+          "request_sha256": "fed1c136253cc19356baf6cc0ba34e996586bc6df92880ad82b4154280dc5ad0",
+          "fen": "8/8/8/8/8/r1k5/8/1K6 b - - 0 1",
+          "signed_dtm": 3,
+          "wdl_stm": 1,
+          "interval": [
+            -1,
+            -1
+          ],
+          "bridge": {
+            "interval": [
+              -1,
+              -1
+            ],
+            "reason": "conditional exact finite horizon",
+            "horizon": 999
+          },
+          "projected_legal_count": 14,
+          "source_verified": false,
+          "external_insufficient_material": false,
+          "scope": "conditional semantic/horizon bridge; no rule-independent external certificate"
+        }
+      },
+      "canonical_margins": {
+        "unit": 0,
+        "zero": 0
+      },
+      "tie_margins": {
+        "unit": [
+          0,
+          1
+        ],
+        "zero": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "owner": 1,
+      "weight": "1/2",
+      "children": {
+        "sem_01_k_capture:g4:a7-b8": {
+          "request_sha256": "343faf4bab8f026d31f720f5ff82201e83f81002be9be002b1d935038b8d5b85",
+          "fen": "1k6/8/R1K5/8/8/8/8/8 w - - 0 1",
+          "signed_dtm": 3,
+          "wdl_stm": 1,
+          "interval": [
+            1,
+            1
+          ],
+          "bridge": {
+            "interval": [
+              1,
+              1
+            ],
+            "reason": "conditional exact finite horizon",
+            "horizon": 999
+          },
+          "projected_legal_count": 14,
+          "source_verified": false,
+          "external_insufficient_material": false,
+          "scope": "conditional semantic/horizon bridge; no rule-independent external certificate"
+        },
+        "sem_01_k_capture:g8:a7-a6": {
+          "request_sha256": "09456f9c31539cf26f33cb7e5b23e093abd243db27901f3a9f1b35f7deaf03a2",
+          "fen": "1B6/8/k1K5/8/8/8/8/8 w - - 0 1",
+          "signed_dtm": 0,
+          "wdl_stm": 0,
+          "interval": [
+            0,
+            0
+          ],
+          "bridge": {
+            "interval": [
+              0,
+              0
+            ],
+            "reason": "conditional exact finite horizon",
+            "horizon": 999
+          },
+          "projected_legal_count": 12,
+          "source_verified": false,
+          "external_insufficient_material": true,
+          "scope": "conditional semantic/horizon bridge; no rule-independent external certificate"
+        }
+      },
+      "canonical_margins": {
+        "unit": 1,
+        "zero": 1
+      },
+      "tie_margins": {
+        "unit": [
+          0,
+          1
+        ],
+        "zero": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "outer_probe_calls": 8,
+  "public_transitions": 4,
+  "enumerated": 56,
+  "source_sha256": {
+    "scripts/audit_chess_double_check_source_scope.py": "96d9f99022b1271415e6b70f1acf6560497025d6e7e7fb63370f8db6634027fc",
+    "docs/research/CHESS_DOUBLE_CHECK_ADJUDICATION_SCOPE.md": "a17d7e2933c29cf9f93336d2781815f7cb266818ea33fbb27090d68003a6828f",
+    "docs/research/data/chess_double_check_source_20261005.json": "f18480b9d875a3c3514981902dce76432f15e31b27aa226ae0b471c3a993d0b5",
+    "docs/research/data/chess_double_check_20261005.selections.json": "1cc6f66641be33eafdb9c5784b4a729a4ca59ac10bdce3d27ed0d4396999d837",
+    "docs/research/CHESS_DOUBLE_CHECK_SOURCE_PROTOCOL.md": "557e44953ee2f7e9eb39a8bd231d2f6252d0830709925c34f7757aa6bcc7f68f",
+    "scripts/conditional_dtm_bridge.py": "6b92caa072165dc4e9adbbb5c77fb536b340af392aa3adaf98ca47868b202e00"
+  },
+  "installed_source_manifest": {
+    "complete": true,
+    "public_transitions": 0,
+    "tablebase_probes": 0,
+    "original_manifest_sha256": "e7679ce68c20e231caa4cd41dd33de2c955f14b33aa9eaab8e31648f00893be1",
+    "tables": [
+      {
+        "name": "kbk.gtb.cp4",
+        "url": "https://raw.githubusercontent.com/michiguel/Gaviota-Tablebases/981472cc83e3a8b6e996191e564295609ea4ce30/gtb/gtb4/kbk.gtb.cp4",
+        "bytes": 2021,
+        "git_blob_sha1": "ec38bb6b001dd540ae46090346e56dc9333387c0",
+        "sha256": "094cd4b02a225c0ef3f5f2f2c527e569333c445a76f13a90d19c9592046ca750"
+      },
+      {
+        "name": "krk.gtb.cp4",
+        "url": "https://raw.githubusercontent.com/michiguel/Gaviota-Tablebases/981472cc83e3a8b6e996191e564295609ea4ce30/gtb/gtb4/krk.gtb.cp4",
+        "bytes": 10824,
+        "git_blob_sha1": "9032041a443ce8b66ecc7a8ddcc4e44463453c7b",
+        "sha256": "d349a541b27c7c7dda5cee0e7990195f56432acbcc2ca5023bf6dbc1254d1ce5"
+      }
+    ],
+    "source_files": [
+      {
+        "name": "chess/__init__.py",
+        "url": "https://raw.githubusercontent.com/niklasf/python-chess/3516d7c6c0879af724c2855fac5a304a4ef40949/chess/__init__.py",
+        "bytes": 150843,
+        "git_blob_sha1": "128609e2b8895ceb19877d856866dc80b830dfb2",
+        "sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b"
+      },
+      {
+        "name": "chess/gaviota.py",
+        "url": "https://raw.githubusercontent.com/niklasf/python-chess/3516d7c6c0879af724c2855fac5a304a4ef40949/chess/gaviota.py",
+        "bytes": 59324,
+        "git_blob_sha1": "281df836b551b1e21b5a94a5ef2783ae2359379f",
+        "sha256": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d"
+      },
+      {
+        "name": "LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/niklasf/python-chess/3516d7c6c0879af724c2855fac5a304a4ef40949/LICENSE.txt",
+        "bytes": 35147,
+        "git_blob_sha1": "94a9ed024d3859793618152ea559a168bbcbb5e2",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      }
+    ],
+    "network_seconds_cap": 12,
+    "python_chess_commit": "3516d7c6c0879af724c2855fac5a304a4ef40949",
+    "elapsed_seconds": 2.0
+  },
+  "canonical_mean": {
+    "unit": 0.5,
+    "zero": 0.5
+  },
+  "tie_mean_interval": {
+    "unit": [
+      0.0,
+      1.0
+    ],
+    "zero": [
+      0.0,
+      1.0
+    ]
+  },
+  "seconds": 0.030999999959021807,
+  "cumulative_seconds": 0.1720000000204891,
+  "source_hashes_unchanged": true
+}

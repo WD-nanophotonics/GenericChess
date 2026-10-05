@@ -340,6 +340,38 @@ certificate despite unequal nifu deployment laws: common-mask direct advantage
 minus exact TV correction575/5751 on1/7 blocker mass stays positive for both
 durations. No automatic board-to-held coupling or official guard transfer.
 
+SHOGI_ROYAL_SOURCE_ROUTE_RESULTS.md certifies all eight named virtual source
+events with royals/stock preserved, while explicitly restoring own turns rather
+than inventing alternating history. SHOGI_ROYAL_CONTEXT_LAW_RESULTS.md qualifies
+all72 declared checked frames/613 full semantic actions; legal resampling keeps
+1/8 zero-drop mass and differs from fixed attempts. SHOGI_ACTIVE_ROOK_RESULTS.md
+then executes two actual public plies with full139 actions: the active R takes
+the source. A complete-family analytic reply makes this absorbing source task0,
+not game WDL. King safety alone cannot transfer passive contact to survival.
+
+CHESS_DOUBLE_CHECK_SOURCE_RESULTS.md changes the uncovered-quiet premise with
+a fixed capture-only pair. Four full-history children are source-covered;
+eight conditional source calls give canonical mean advantage1/2 against both
+baselines, but full tie intervals[0,1], so no strict tie-invariant gain. Preserve
+the0-query generic terminal-guard failure and narrowly changed qualification;
+R/B outcome classes are exposed development evidence, not a reserved pass.
+
+SPARSE_CONTACT_CUBE_RESULTS.md adds shared one-blocker cube semantics for
+screens/legs/eyes/zones:24 diagnostic owner controls plus2 virtual Cannon
+events,2791 canonical candidates/0.110sec, no Xiangqi prices/holdout. Whole
+Western Pawn auxiliary grammar stays unsupported. Broader binding composition
+and historical legality require qualification. SHOGI_CONTACT_LEAF_INTERFACE_RESULTS.md
+now gives a strict full-stock noncheck20-mode control interval interface with
+one proved exact TR scale, separate duration laws and no midpoint fallback.
+SHOGI_BOARD_HAND_REWEIGHTING_CERTIFICATE.md proves all seven native board-minus-
+charged-hand task gaps positive using typed-mask reweighting and signed moments;
+static drop preference is not real-game utility or anonymous-tag additivity.
+CONTACT_TYPED_GEOMETRY_RESULTS.md then falsifies unrestricted grouped-atom
+binding in the old sparse helper (4/8 virtual controls). A separate actor-bound
+IR projection agrees on all controls and retains saved single-type mechanics;
+use it for new grouped grammar. Preserve both zero-observation compiler-envelope
+errors and the valid qualifier, without rewriting earlier frozen evidence.
+
 Movement/capture coordinates do not alone establish complete strategic options.
 Dynamic safety, promotion, history, hand transfer/drop and forbidden pawn-drop
 mate must be respected or explicitly qualified. Shogi noncheck stalemate is

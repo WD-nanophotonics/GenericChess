@@ -1,0 +1,671 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "owner": 0,
+      "type": "X",
+      "source": 4,
+      "target": 5,
+      "blocker": 0,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 0,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_01_mixed_enemy",
+          "source": 4,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        }
+      ],
+      "actual": true,
+      "old_direct": true,
+      "typed_direct": true
+    },
+    {
+      "owner": 0,
+      "type": "X",
+      "source": 4,
+      "target": 7,
+      "blocker": 0,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 0,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 4,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        }
+      ],
+      "actual": false,
+      "old_direct": true,
+      "typed_direct": false
+    },
+    {
+      "owner": 0,
+      "type": "Y",
+      "source": 4,
+      "target": 5,
+      "blocker": 0,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 0,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 4,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "Y",
+          "geometry_id": "g2"
+        }
+      ],
+      "actual": false,
+      "old_direct": true,
+      "typed_direct": false
+    },
+    {
+      "owner": 0,
+      "type": "Y",
+      "source": 4,
+      "target": 7,
+      "blocker": 0,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 0,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_01_mixed_enemy",
+          "source": 4,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "Y",
+          "geometry_id": "g2"
+        }
+      ],
+      "actual": true,
+      "old_direct": true,
+      "typed_direct": true
+    },
+    {
+      "owner": 1,
+      "type": "X",
+      "source": 4,
+      "target": 3,
+      "blocker": 8,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 8,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_01_mixed_enemy",
+          "source": 4,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        }
+      ],
+      "actual": true,
+      "old_direct": true,
+      "typed_direct": true
+    },
+    {
+      "owner": 1,
+      "type": "X",
+      "source": 4,
+      "target": 1,
+      "blocker": 8,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 4,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 8,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        }
+      ],
+      "actual": false,
+      "old_direct": true,
+      "typed_direct": false
+    },
+    {
+      "owner": 1,
+      "type": "Y",
+      "source": 4,
+      "target": 3,
+      "blocker": 8,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 8,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 4,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "Y",
+          "geometry_id": "g2"
+        }
+      ],
+      "actual": false,
+      "old_direct": true,
+      "typed_direct": false
+    },
+    {
+      "owner": 1,
+      "type": "Y",
+      "source": 4,
+      "target": 1,
+      "blocker": 8,
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_mixed_empty",
+          "source": 8,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "X",
+          "geometry_id": "g1"
+        },
+        {
+          "pattern_id": "sem_01_mixed_enemy",
+          "source": 4,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "Y",
+          "geometry_id": "g2"
+        }
+      ],
+      "actual": true,
+      "old_direct": true,
+      "typed_direct": true
+    }
+  ],
+  "canonical_candidates": 48,
+  "enumerated": 16,
+  "public_transitions": 0,
+  "goal_queries": 0,
+  "virtual_materializations": 0,
+  "source_sha256": {
+    "scripts/audit_contact_typed_geometry_valid.py": "114c20d8ad389cb424c17baa3e7b0dc21190d341dcfa93de2ffb753b384e2e2e",
+    "scripts/audit_contact_typed_geometry_anchored.py": "3aa0c6de9b6b31ea63d22e2cde252bf955313aa365142c594708c04259afa656",
+    "docs/research/data/contact_typed_geometry_anchored_20261005.json": "6568dac151bd9e2247ae4aec4ea449c9820a89df0e89665e67b2458446f2708c",
+    "docs/research/CONTACT_TYPED_GEOMETRY_VALID_COMPILE_SCOPE.md": "4bee7ec406a0267302613c93258a31bdfc0ceaaa9f4065e02506f21f083eea66",
+    "scripts/audit_contact_typed_geometry.py": "e108ecfa66de5fbe689f2e5aef3fea4062335808754a0d40256b29e568382703",
+    "docs/research/data/contact_typed_geometry_20261005.json": "8a6a7c95fff7d1ce99e68ead3f01fec6555cec895c93cef20ae9303d4df3a06a",
+    "docs/research/CONTACT_TYPED_GEOMETRY_ANCHOR_SCOPE.md": "59df1c14855395d1a8217c37f54fbef94ee26c2e03fd53813c03725da222a4af",
+    "scripts/typed_sparse_contact_cubes.py": "af01d84329a1755522195a338bf2a1663859506346169a0b4a37f1babc923f29",
+    "scripts/sparse_contact_cubes.py": "6c9e19551246ea633f0a9c7b305d44d5834d79ae0aae00bf0a61640b60f5fae9",
+    "docs/research/CONTACT_TYPED_GEOMETRY_PROTOCOL.md": "a9555bc9917a7bb98f511d7238e7f7e1be8335bb5338e12eff25f1fd6a5b0f5d",
+    "generic_chess/rules/compiler.py": "ad04e3da677ad31ecfa66b27e73b42e96f125c2cbb357a85756a2dcfa826b09a",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8"
+  },
+  "compiled_patterns": [
+    {
+      "pattern_id": "legacy_000",
+      "name": "legacy_K_quiet_0",
+      "type_ids": [
+        "K"
+      ],
+      "geometry_ids": [
+        "g0"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "inherit_compiled_masks",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C1",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "legacy_001",
+      "name": "legacy_K_capture_0",
+      "type_ids": [
+        "K"
+      ],
+      "geometry_ids": [
+        "g0"
+      ],
+      "target": {
+        "kind": "target_enemy"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "piece_owner": "opponent",
+          "piece_type_ref": null,
+          "disposition": "remove_from_game",
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "inherit_compiled_masks",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C1",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "legacy_006",
+      "name": "legacy_X_drop",
+      "type_ids": [
+        "X"
+      ],
+      "geometry_ids": [
+        "g3"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove_from_hand",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "X"
+          },
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "place",
+          "from_ref": null,
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "X"
+          },
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C1",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "legacy_007",
+      "name": "legacy_Y_drop",
+      "type_ids": [
+        "Y"
+      ],
+      "geometry_ids": [
+        "g3"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove_from_hand",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "Y"
+          },
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "place",
+          "from_ref": null,
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": {
+            "kind": "explicit",
+            "type_id": "Y"
+          },
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [
+        {
+          "kind": "own_anchor_safe",
+          "square_refs": []
+        }
+      ],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "augment",
+      "replaced_pattern_ids": [],
+      "cost_class": "C1",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_00_mixed_empty",
+      "name": "mixed_empty",
+      "type_ids": [
+        "X",
+        "Y"
+      ],
+      "geometry_ids": [
+        "g1",
+        "g2"
+      ],
+      "target": {
+        "kind": "target_empty"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "replace_legacy",
+      "replaced_pattern_ids": [
+        "legacy_002",
+        "legacy_004"
+      ],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    },
+    {
+      "pattern_id": "sem_01_mixed_enemy",
+      "name": "mixed_enemy",
+      "type_ids": [
+        "X",
+        "Y"
+      ],
+      "geometry_ids": [
+        "g1",
+        "g2"
+      ],
+      "target": {
+        "kind": "target_enemy"
+      },
+      "path": [],
+      "guards": [],
+      "slot_guards": [],
+      "effects": [
+        {
+          "kind": "remove",
+          "from_ref": null,
+          "to_ref": null,
+          "square_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "piece_owner": "opponent",
+          "piece_type_ref": null,
+          "disposition": "remove_from_game",
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        },
+        {
+          "kind": "move",
+          "from_ref": {
+            "kind": "source",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "to_ref": {
+            "kind": "target",
+            "square": null,
+            "offset": null,
+            "owner_relative": true,
+            "step": null,
+            "slot_id": null
+          },
+          "square_ref": null,
+          "piece_owner": "self",
+          "piece_type_ref": null,
+          "disposition": null,
+          "slot_id": null,
+          "type_ref": null,
+          "count": 1,
+          "value": null
+        }
+      ],
+      "invariants": [],
+      "postconditions": [],
+      "promotion_mode": "none",
+      "explicit_promotion_type": null,
+      "composition": "replace_legacy",
+      "replaced_pattern_ids": [
+        "legacy_003",
+        "legacy_005"
+      ],
+      "cost_class": "C3",
+      "stratum": "S3",
+      "square_zone_guards": []
+    }
+  ],
+  "old_mismatches": 4,
+  "seconds": 0.01500000013038516,
+  "source_hashes_unchanged": true
+}
