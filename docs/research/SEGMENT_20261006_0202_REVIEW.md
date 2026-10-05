@@ -3,7 +3,7 @@
 Segment7fdb2856-fabd-4b9e-9dd1-749e60e59f05 started
 2026-10-05T17:02:40.394246UTC. Preserve this start after compaction. Actual
 finish/time is recorded by session.json, after >=60min and executable reserve.
-Ten actual research stages; publication is a checkpoint, not scientific finish.
+Eleven actual research stages; publication is a checkpoint, not scientific finish.
 No Goal, extra worker, other project, idle padding or human/holdout labels.
 
 1. Real production depth2/qdepth0 integration against all43 saved leaves:
@@ -41,11 +41,17 @@ No Goal, extra worker, other project, idle padding or human/holdout labels.
     both checked-owner fixtures have no claim. Local all-defense checking
     mate can transfer positively to win/horizon upper bound, not shortest DTM
     or foreign nonmate. Repetition/countercheck/underpromotion still replayed.
+11. Continued after commit: both attacker signs/action orders, a favorable
+    source-style PV/pn0 with one ongoing missing defense remains unknown;
+    adverse full defense refutes it. Four toy interface controls, no game roots
+    or admitted source importer. MATE_REPLAY_MISSING_DEFENSE_RESULTS.md.
 
 Old advisor thread fully reread: one unchanged adopted reply, no further pages.
 One concrete new request GC-SLACK-20261006-025221-a687298e sent/bound exactly
 once at root1791222760.509169, with uncommitted mate-gate code/hash. Reply state
 and any adoption are in local ledger; no wait-for-approval or automatic resend.
+Strict import subsequently rejected unfenced-code indentation loss; raw body
+retained, request pending. Future snapshots fenced, old exact check unchanged.
 
 Tests and hash audit are saved locally; final tested-publish entry records
 counts/full remote sandbox SHA in rollout. Frozen reports and producer bytes
