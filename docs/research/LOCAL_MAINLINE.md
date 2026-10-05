@@ -515,6 +515,38 @@ labels or engine runs admitted. Next investigate complete proof export or
 bounded reconstruction; SHOGI_SEARCH_INTEGRATION_PREFLIGHT.md supplies a
 practical static-depth2 integration question, keeping strength separate.
 
+SHOGI_STATIC_SEARCH_RESULTS.md now qualifies real production depth2/qdepth0
+against the complete saved partial-stock tree: contact130057 uniquely promoted,
+unit200000 ties native/promoted. All94 runtime pushes preserve physical states.
+SHOGI_ORDERING_COST_RESULTS.md changes only ordering:51->27 nodes,49->25 pushes,
+44->20 evaluations, same score/choice. This is integration/cost, not strength.
+SHOGI_SHARED_HAND_SEARCH_RESULTS.md extends exact choice stability to the whole
+shared continuous hand box and one new h=0 production point; no hand prior is
+selected. SHOGI_FULL_STOCK_QUANTIZATION_RESULTS.md preserves both laws'156
+pair signs and certifies38-token numeric separation with held intervals kept.
+The evaluator's actual two-resource guard remains; full-stock deployment is
+not admitted by numeric safety alone.
+
+PHYSICAL_PROFILE_DISPATCH_RESULTS.md separately qualifies8064 acyclic metadata
+worlds/80 complete lists for inherited/NONE, already-promoted current metadata
+and renaming. Same current need not imply same graph when native promotion
+differs. SHOGI_RAY_PROFILE_REUSE_RESULTS.md reuses old R/TR exact distances by
+162 independently matched support/path tables and2 complete lists,4899 charged
+enumerations. Other11 profiles/owner1 remain unadmitted in the new constructor;
+zero-row full-table failure and narrowed cumulative correction are preserved.
+
+SHOGI_PROOF_EXPORT_LAYOUT_SCOPE.md finds debug-accessor/storage and compressed
+proof gaps. SHOGI_MATE_REPLAY_GOAL_CONTRACT.md adds the missing literal-goal
+gate: PublicGame declaration WIN is not checkmate. Separate MateOnlyPublicGame
+keeps all choices/fresh status and marks nonmate terminals/claims unknown.
+Positive replay needs local ALL-defense coverage, not source PV exhaustion;
+source export/build/labels remain unadmitted. No old failed tree is deepened.
+SHOGI_CHECKING_STRATEGY_TRANSFER.md closes a concrete declaration concern:
+local checked defenders cannot claim nyugyoku; a locally checking all-defense
+mate strategy can transfer positively, never restricted nonmate in reverse.
+PHYSICAL_PROFILE_BOOLEAN_SCOPE.md adds a strict flag boundary without changing
+frozen bool-profile results or the original dispatcher.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

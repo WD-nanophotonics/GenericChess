@@ -102,7 +102,9 @@ def consult(question_file, daily=False, code_files=()):
         mention = f'<@{c["mention_user_id"]}>\n' if c.get('mention_user_id') else ''
         message = mention + f'TYPE=AGENT_REQUEST\nREQUEST_ID={rid}\nPROJECT=GenericChess\nCOMMITTED_BASE_SHA={git("rev-parse", "HEAD")}\n' + ADVISORY + question
         for entry in code:
-            message += f'\nLOCAL_CODE_SNAPSHOT={entry["path"]}\nSHA256={entry["sha256"]}\n' + entry['text']
+            if '```' in entry['text']:
+                raise LocalFlowError('code snapshot contains a Slack fence; use a reviewed attachment instead')
+            message += f'\nLOCAL_CODE_SNAPSHOT={entry["path"]}\nSHA256={entry["sha256"]}\n```\n' + entry['text'] + ('' if entry['text'].endswith('\n') else '\n') + '```\n'
         message += '\nReply in this thread with TYPE=DOT_REPLY and this REQUEST_ID. State conclusion, sources, objections, uncertainty and independently checked evidence. Do not delegate extra workers.'
         # One tool call / one root. Larger content must be prepared as a reviewed attachment.
         if len(message) > 4800:

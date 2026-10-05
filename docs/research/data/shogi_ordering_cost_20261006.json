@@ -1,0 +1,32 @@
+{
+  "complete": false,
+  "searches": [],
+  "runtime_pushes": 0,
+  "runtime_pops": 0,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "candidates": 0,
+  "returned_actions": 0,
+  "source_sha256": {
+    "scripts/audit_shogi_ordering_cost.py": "91a238dd08aef4909ca567a1fb03ab2bb4d2ce269789979b0446b305f9f3ba9e",
+    "scripts/shogi_ordering_inventory.py": "4c122ab2f338dc9b0ff51b067e28223fbf4dc07f6f442fbb80eb3ae588f43ec9",
+    "docs/research/SHOGI_ORDERING_COST_PROTOCOL.md": "a4aecd296126feb4fec1fd3f702b6523b937874080faee147274bad2d14b6ca2",
+    "docs/research/data/shogi_static_search_20261006.json": "59c3c2cfa5e9916cd254ee41f19c2f423d271523b0fb60ccfa36a49298d822bf",
+    "scripts/audit_shogi_static_search.py": "7220d9883296f3a19fc08967af43844334a6eae2974e497eed3df3e6ff012946",
+    "scripts/shogi_static_inventory.py": "79b36fd16f9b04abb0410434a5007ce0d73205d2161fda27d3c81876ab270ebd",
+    "docs/research/SHOGI_STATIC_SEARCH_PROTOCOL.md": "e128c43efdbcf6926b5176fc66d423b59f51b64917bcdc61df089aa7a9775768",
+    "docs/research/data/shogi_promotion_use_20261005.json": "fbfb63e24e0aa10846b3d637a6d7d20b978108f1d591c9ea935ac3cc6dc1de10",
+    "scripts/shogi_exact_contact_family.py": "0915d0dfef2e4571307d80f193420eaeef5f8c9e41786a66561631252936c48d",
+    "generic_chess/core/search_runtime.py": "3240401a6042b054882fe7b1d8e9a9db58ba153693756946874fab0add0e43d4",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/ai/alphabeta/search.py": "18130acd610eb6f41d9cc299cbc2b5a265875f85633f1c8127e1efd5469a75f5",
+    "generic_chess/ai/alphabeta/tuning.py": "7010d5a75801837b499135233e159cd3e699fd33f464d1de79b2bd9451c8c276"
+  },
+  "error": "AssertionError: ",
+  "baseline_pushes": 49,
+  "paired_pushes": 49,
+  "conservative_enumeration_charge": 1130,
+  "cumulative_seconds": 0.125,
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

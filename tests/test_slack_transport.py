@@ -87,6 +87,18 @@ def test_payload_identity_and_quota_gate(env):
     with pytest.raises(LocalFlowError, match='identity'):
         s.begin_send(r['request_id'])
 
+def test_future_code_snapshots_preserve_indentation_with_fences(env):
+    code=s.ROOT/'sample.py';body='def f():\n    return 1\n'
+    code.write_bytes(b'text = "```"\n')
+    with pytest.raises(LocalFlowError,match='contains a Slack fence'):s.consult(env,code_files=(code,))
+    code.write_bytes(body.encode())
+    r=s.consult(env,code_files=(code,))
+    assert '\n```\n'+body+'```\n' in r['message']
+    assert s._payload_matches(r['message'],r['message'])
+    assert not s._payload_matches(r['message'].replace('    return 1','return 1'),r['message'])
+    # Prepared requests are immutable; no retroactive rewriting of old roots.
+    assert s.consult(env,code_files=(code,))['message']==r['message']
+
 def test_shared_account_reply_and_role_filter(env):
     c = s.config(); c.update(advisor_user_id='U1', advisor_bot_id=None, advisor_app_id=None)
     write_json(s.CONFIG, c)

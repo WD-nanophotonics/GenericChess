@@ -53,6 +53,12 @@ sending, account-wide zero usage or arbitrary delegation by dot.
    prepares an immutable REQUEST_ID/content hash/payload hash. Message carries
    TYPE=AGENT_REQUEST, project, committed base SHA and local code snapshot hashes.
    Limit is 4800 characters; prepare a reviewed attachment for larger evidence.
+   New inline code snapshots use fenced blocks to retain indentation. A source
+   containing triple backticks requires a reviewed attachment. Old request
+   messages/hashes are immutable: never regenerate a malformed delivered root.
+   If a read strips snapshot indentation, retain the complete raw reply and
+   receipt, hold strict import/adoption and continue local research; do not
+   normalize code indentation or repost merely to satisfy association.
 2. consult --begin-send REQUEST_ID commits SEND_UNCERTAIN before returning
    one Slack plugin send action. Send that exact payload to that channel once.
 3. Persist the receipt with slack-bind-sent --request-id REQUEST_ID

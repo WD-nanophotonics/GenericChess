@@ -1,0 +1,637 @@
+{
+  "complete": true,
+  "searches": [
+    {
+      "law": "geometric_half",
+      "reference_score": 130057,
+      "ties": [
+        "legacy_029:g21:a7-a8=TP"
+      ],
+      "branch_minima": {
+        "legacy_010:g13:a6-a5": -196770,
+        "legacy_014:g15:a6-b5": -196770,
+        "legacy_016:g16:a6-b6": -196770,
+        "legacy_029:g21:a7-a8": 107711,
+        "legacy_029:g21:a7-a8=TP": 130057
+      },
+      "integer_weights": {
+        "P": 7711,
+        "TP": 30057,
+        "R": 96770
+      },
+      "visited": [
+        [
+          "legacy_010:g13:a6-a5"
+        ],
+        [
+          "legacy_014:g15:a6-b5"
+        ],
+        [
+          "legacy_016:g16:a6-b6"
+        ],
+        [
+          "legacy_029:g21:a7-a8"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP"
+        ],
+        [
+          "legacy_010:g13:a6-a5"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_012:g14:c8-c7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_018:g17:c8-b7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_031:g22:a8-a7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_032:g23:a8-a9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_036:g25:a8-b8"
+        ],
+        [
+          "legacy_014:g15:a6-b5"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_012:g14:c8-c7"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_018:g17:c8-b7"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_031:g22:a8-a7"
+        ],
+        [
+          "legacy_016:g16:a6-b6"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_031:g22:a8-a7"
+        ],
+        [
+          "legacy_029:g21:a7-a8"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_012:g14:c8-c7"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP",
+          "legacy_012:g14:c8-c7"
+        ]
+      ],
+      "complete": true,
+      "selected": "legacy_029:g21:a7-a8=TP",
+      "score": 130057,
+      "pv": [
+        "legacy_029:g21:a7-a8=TP",
+        "legacy_004:g10:c8-d9"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 104,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 51,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 2,
+        "completed_depth": 2,
+        "selective_depth": 2,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.03100000019185245,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 7,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 53,
+        "successor_handles_created": 53,
+        "successors_materialized": 49,
+        "successors_searched": 49,
+        "terminal_results_computed": 49,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 49,
+        "position_key_cache_hits": 49,
+        "runtime_pushes": 49,
+        "runtime_pops": 49,
+        "runtime_hash_updates": 49,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 49,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 49,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 98,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 0,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 49,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 49,
+        "runtime_snapshot_entry_digest_calls": 49,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 2,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 44
+    },
+    {
+      "law": "unit",
+      "reference_score": 200000,
+      "ties": [
+        "legacy_029:g21:a7-a8",
+        "legacy_029:g21:a7-a8=TP"
+      ],
+      "branch_minima": {
+        "legacy_010:g13:a6-a5": -200000,
+        "legacy_014:g15:a6-b5": -200000,
+        "legacy_016:g16:a6-b6": -200000,
+        "legacy_029:g21:a7-a8": 200000,
+        "legacy_029:g21:a7-a8=TP": 200000
+      },
+      "integer_weights": {
+        "P": 100000,
+        "TP": 100000,
+        "R": 100000
+      },
+      "visited": [
+        [
+          "legacy_010:g13:a6-a5"
+        ],
+        [
+          "legacy_014:g15:a6-b5"
+        ],
+        [
+          "legacy_016:g16:a6-b6"
+        ],
+        [
+          "legacy_029:g21:a7-a8"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP"
+        ],
+        [
+          "legacy_010:g13:a6-a5"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_012:g14:c8-c7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_018:g17:c8-b7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_031:g22:a8-a7"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_032:g23:a8-a9"
+        ],
+        [
+          "legacy_010:g13:a6-a5",
+          "legacy_036:g25:a8-b8"
+        ],
+        [
+          "legacy_014:g15:a6-b5"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_012:g14:c8-c7"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_018:g17:c8-b7"
+        ],
+        [
+          "legacy_014:g15:a6-b5",
+          "legacy_031:g22:a8-a7"
+        ],
+        [
+          "legacy_016:g16:a6-b6"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_016:g16:a6-b6",
+          "legacy_031:g22:a8-a7"
+        ],
+        [
+          "legacy_029:g21:a7-a8"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_004:g10:c8-d9"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_006:g11:c8-d8"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_008:g12:c8-d7"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_010:g13:c8-c9"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_012:g14:c8-c7"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_014:g15:c8-b9"
+        ],
+        [
+          "legacy_029:g21:a7-a8",
+          "legacy_016:g16:c8-b8"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP"
+        ],
+        [
+          "legacy_029:g21:a7-a8=TP",
+          "legacy_004:g10:c8-d9"
+        ]
+      ],
+      "complete": true,
+      "selected": "legacy_029:g21:a7-a8",
+      "score": 200000,
+      "pv": [
+        "legacy_029:g21:a7-a8",
+        "legacy_004:g10:c8-d9"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 96,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 47,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 3,
+        "completed_depth": 2,
+        "selective_depth": 2,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.015999999828636646,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 7,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 53,
+        "successor_handles_created": 53,
+        "successors_materialized": 45,
+        "successors_searched": 45,
+        "terminal_results_computed": 45,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 45,
+        "position_key_cache_hits": 45,
+        "runtime_pushes": 45,
+        "runtime_pops": 45,
+        "runtime_hash_updates": 45,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 45,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 45,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 90,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 0,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 45,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 45,
+        "runtime_snapshot_entry_digest_calls": 45,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 2,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 40
+    }
+  ],
+  "runtime_pushes": 94,
+  "runtime_pops": 94,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "candidates": 220,
+  "returned_actions": 910,
+  "source_sha256": {
+    "scripts/audit_shogi_static_search.py": "7220d9883296f3a19fc08967af43844334a6eae2974e497eed3df3e6ff012946",
+    "scripts/shogi_static_inventory.py": "79b36fd16f9b04abb0410434a5007ce0d73205d2161fda27d3c81876ab270ebd",
+    "docs/research/SHOGI_STATIC_SEARCH_PROTOCOL.md": "e128c43efdbcf6926b5176fc66d423b59f51b64917bcdc61df089aa7a9775768",
+    "docs/research/data/shogi_promotion_use_20261005.json": "fbfb63e24e0aa10846b3d637a6d7d20b978108f1d591c9ea935ac3cc6dc1de10",
+    "scripts/shogi_exact_contact_family.py": "0915d0dfef2e4571307d80f193420eaeef5f8c9e41786a66561631252936c48d",
+    "generic_chess/core/search_runtime.py": "3240401a6042b054882fe7b1d8e9a9db58ba153693756946874fab0add0e43d4",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/ai/alphabeta/search.py": "18130acd610eb6f41d9cc299cbc2b5a265875f85633f1c8127e1efd5469a75f5",
+    "generic_chess/ai/alphabeta/tuning.py": "7010d5a75801837b499135233e159cd3e699fd33f464d1de79b2bd9451c8c276"
+  },
+  "scale": 100000,
+  "contact_weights": {
+    "P": "6368226199/82590826496",
+    "TP": "1551495471/5161926656",
+    "R": "304884/315059"
+  },
+  "leaf_error_bound": "1/100000",
+  "pairwise_error_bound": "1/50000",
+  "seconds": 0.125,
+  "source_hashes_unchanged": true
+}
