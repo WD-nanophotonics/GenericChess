@@ -233,7 +233,30 @@ def _rendered_emphasis(text):
 
 def _payload_matches(observed, expected):
     actual = _canonical(observed); original = _canonical(expected)
-    return actual == original or actual == _rendered_emphasis(original)
+    return actual in {original, _rendered_emphasis(original),
+                      _rendered_bullets(original),
+                      _rendered_bullets(_rendered_emphasis(original))}
+
+
+def _rendered_bullets(text):
+    """Observed plugin '- ' -> '• ' projection of expected prose only.
+
+    Preserve indentation, body, code snapshots and fenced code exactly.
+    Root identity, request ID, target and immutable ledger hashes still match.
+    """
+    lines = []; fenced = False; local_code = False
+    for line in text.splitlines():
+        if line.startswith('LOCAL_CODE_SNAPSHOT='):
+            local_code = True
+        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'):
+            local_code = False
+        if line.startswith('```'):
+            fenced = not fenced
+            lines.append(line); continue
+        if not local_code and not fenced and line.startswith('- '):
+            line = '• ' + line[2:]
+        lines.append(line)
+    return '\n'.join(lines)
 
 
 def import_snapshot(rid, path):

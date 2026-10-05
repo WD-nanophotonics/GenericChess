@@ -249,6 +249,17 @@ def test_observed_inline_emphasis_projection_accepts_original_and_rejects_body_c
     assert not s._payload_matches('_changed_', '*original*')
 
 
+def test_observed_bullet_projection_preserves_body_code_and_ids(env):
+    original = 'REQUEST_ID=immutable\n- *claim*\n- evidence\n```\n- code\n```'
+    rendered = 'REQUEST_ID=immutable\n• _claim_\n• evidence\n```\n- code\n```'
+    assert s._payload_matches(rendered, original)
+    assert not s._payload_matches(rendered.replace('evidence', 'changed'), original)
+    assert not s._payload_matches(rendered.replace('immutable', 'other'), original)
+    assert not s._payload_matches(rendered.replace('- code', '• code'), original)
+    assert not s._payload_matches('LOCAL_CODE_SNAPSHOT=x\n• code',
+                                  'LOCAL_CODE_SNAPSHOT=x\n- code')
+
+
 def test_uncertain_emphasis_rendered_send_recovers_without_resending(env):
     env.write_text('Exact report: d*l+d*u')
     r = s.consult(env); s.begin_send(r['request_id'])

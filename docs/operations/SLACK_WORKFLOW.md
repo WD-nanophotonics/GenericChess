@@ -1,5 +1,10 @@
 # Slack/dot communication manual
 
+Observed plugin prose rendering may replace leading '- ' with '• '. Root
+matching projects the expected prose only; code snapshots/fences, indentation,
+body, immutable IDs/hashes and account/channel/thread checks remain exact.
+Preserve raw output and the ledger; formatting alone never warrants resend.
+
 The current user accepted active Agent plugin reads/waits, with one native
 same-chat heartbeat every four hours for recovery, at Asia/Tokyo02:00,06:00,
 10:00,14:00,18:00,22:00; this preserves daily10:00 in the existing automation.

@@ -1,0 +1,60 @@
+{
+  "complete": true,
+  "scope": "source-opportunity metadata only; no exported proof/source label admitted",
+  "commit": "c1b80eaa09fe13d5f12b1599d1ae4d53c224de30",
+  "acquisition_complete": false,
+  "acquisition_error": "ValueError: source acquisition bytes/time cap",
+  "acquisition_read_bytes": 120001,
+  "complete_source_bytes": 77532,
+  "external_files": [
+    {
+      "path": "source/mate/mate_move_picker.h",
+      "url": "https://raw.githubusercontent.com/yaneurao/YaneuraOu/c1b80eaa09fe13d5f12b1599d1ae4d53c224de30/source/mate/mate_move_picker.h",
+      "local": "source__mate__mate_move_picker.h",
+      "bytes": 9191,
+      "sha256": "ff09d39839cd9b30f193cc382cec929d20eb59cf050e8ee1c7a81d3d65d0a859"
+    },
+    {
+      "path": "source/mate/mate_solver.cpp",
+      "url": "https://raw.githubusercontent.com/yaneurao/YaneuraOu/c1b80eaa09fe13d5f12b1599d1ae4d53c224de30/source/mate/mate_solver.cpp",
+      "local": "source__mate__mate_solver.cpp",
+      "bytes": 9745,
+      "sha256": "0bb1e511216128bf9bc13d0f91198d2c4923bfc224dc20edecfd30ae8ba4669a"
+    },
+    {
+      "path": "source/mate/mate_dfpn.hpp",
+      "url": "https://raw.githubusercontent.com/yaneurao/YaneuraOu/c1b80eaa09fe13d5f12b1599d1ae4d53c224de30/source/mate/mate_dfpn.hpp",
+      "local": "source__mate__mate_dfpn.hpp",
+      "bytes": 48604,
+      "sha256": "52ddc75fde42b1879f758f001203c6e3ce8919d74a269978838b378605b23b75"
+    },
+    {
+      "path": "source/engine/yaneuraou-mate-engine/yaneuraou-mate-search.cpp",
+      "url": "https://raw.githubusercontent.com/yaneurao/YaneuraOu/c1b80eaa09fe13d5f12b1599d1ae4d53c224de30/source/engine/yaneuraou-mate-engine/yaneuraou-mate-search.cpp",
+      "local": "source__engine__yaneuraou-mate-engine__yaneuraou-mate-search.cpp",
+      "bytes": 9992,
+      "sha256": "d0c6afb59243e3e632c58443eb88e9c7b68c8bf605ab50ff4f28a096b4cab6a9"
+    }
+  ],
+  "observed_checks": {
+    "attacker_checks": true,
+    "defender_evasions": true,
+    "legality_filtered": true,
+    "underpromotion_flag": true,
+    "odd_solver_countercheck_restriction": true,
+    "checked_attacker_oneply_incomplete": true,
+    "pv_single_child": true,
+    "unresolved_distinct": true,
+    "restricted_nonmate_distinct": true,
+    "timeout_distinct": true
+  },
+  "engine_queries": 0,
+  "source_goal_queries": 0,
+  "public_transitions": 0,
+  "source_ready_for_independent_goal_adapter": false,
+  "source_sha256": {
+    "scripts/audit_shogi_mate_source_contract.py": "99d21d2984a19edbb63d491a36d004456ae37674bccf902429adaf477764beb1",
+    "docs/research/SHOGI_MATE_SOURCE_PREFLIGHT.md": "ddac503384356b3bd14599c93e998c4f5476ace41db07a12d2d5202fcda9f6a0",
+    "docs/research/SHOGI_MATE_SOURCE_CONTRACT.md": "2a2ab3c8ffa54b0f57b151ddd4c42076c15b9fcb52cbcaaf322818d349be8e35"
+  }
+}

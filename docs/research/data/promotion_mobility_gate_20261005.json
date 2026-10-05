@@ -1,0 +1,1030 @@
+{
+  "complete": false,
+  "rows": [
+    {
+      "live": false,
+      "owner": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 21
+        },
+        "unreachable": 483,
+        "total": 504,
+        "means": {
+          "geometric_half": "1/48",
+          "linear_mixture": "1/72"
+        }
+      },
+      "ordered_cube_sha256": "31e1526892ec835cdb2a1788d506114d1c6c5e72be2653f1d7e64c017c13056d",
+      "ordered_coordinate_sha256": "31e1526892ec835cdb2a1788d506114d1c6c5e72be2653f1d7e64c017c13056d",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 6,
+        "filtered_forced_capture_targets": 3
+      }
+    },
+    {
+      "owner": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 168,
+          "2": 184,
+          "3": 112,
+          "4": 40
+        },
+        "unreachable": 0,
+        "total": 504,
+        "means": {
+          "geometric_half": "293/1008",
+          "linear_mixture": "377/1890"
+        }
+      },
+      "ordered_cube_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "ordered_coordinate_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "first_mismatch": null,
+      "live": false,
+      "reused": true,
+      "reuse_reason": "promoted profile maps untouched by alive filter"
+    },
+    {
+      "live": false,
+      "owner": 1,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 21
+        },
+        "unreachable": 483,
+        "total": 504,
+        "means": {
+          "geometric_half": "1/48",
+          "linear_mixture": "1/72"
+        }
+      },
+      "ordered_cube_sha256": "001667ab2369c603e1587b241ec679bbe4a155964717399f1686ded8dca7232d",
+      "ordered_coordinate_sha256": "001667ab2369c603e1587b241ec679bbe4a155964717399f1686ded8dca7232d",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 6,
+        "filtered_forced_capture_targets": 3
+      }
+    },
+    {
+      "live": false,
+      "owner": 1,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 168,
+          "2": 184,
+          "3": 112,
+          "4": 40
+        },
+        "unreachable": 0,
+        "total": 504,
+        "means": {
+          "geometric_half": "293/1008",
+          "linear_mixture": "377/1890"
+        }
+      },
+      "ordered_cube_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "ordered_coordinate_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 6,
+        "filtered_forced_capture_targets": 3
+      }
+    },
+    {
+      "live": true,
+      "owner": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 42,
+          "2": 66,
+          "3": 110,
+          "4": 60,
+          "5": 16
+        },
+        "unreachable": 210,
+        "total": 504,
+        "means": {
+          "geometric_half": "37/336",
+          "linear_mixture": "107/1323"
+        }
+      },
+      "ordered_cube_sha256": "0fbebd1c55073be68a35d32f5ec2dba963d0141d884df12e30fb2571d16b34a5",
+      "ordered_coordinate_sha256": "0fbebd1c55073be68a35d32f5ec2dba963d0141d884df12e30fb2571d16b34a5",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 0,
+        "filtered_forced_capture_targets": 0
+      }
+    },
+    {
+      "live": true,
+      "owner": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 168,
+          "2": 184,
+          "3": 112,
+          "4": 40
+        },
+        "unreachable": 0,
+        "total": 504,
+        "means": {
+          "geometric_half": "293/1008",
+          "linear_mixture": "377/1890"
+        }
+      },
+      "ordered_cube_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "ordered_coordinate_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 0,
+        "filtered_forced_capture_targets": 0
+      }
+    },
+    {
+      "live": true,
+      "owner": 1,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 42,
+          "2": 66,
+          "3": 110,
+          "4": 60,
+          "5": 16
+        },
+        "unreachable": 210,
+        "total": 504,
+        "means": {
+          "geometric_half": "37/336",
+          "linear_mixture": "107/1323"
+        }
+      },
+      "ordered_cube_sha256": "49bc1a964e598b4672a57e3ccc43c0f0ec9fbed88dfa6dea9d2d707416dca127",
+      "ordered_coordinate_sha256": "49bc1a964e598b4672a57e3ccc43c0f0ec9fbed88dfa6dea9d2d707416dca127",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 0,
+        "filtered_forced_capture_targets": 0
+      }
+    },
+    {
+      "live": true,
+      "owner": 1,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "worlds": 504,
+      "census": {
+        "histogram": {
+          "1": 168,
+          "2": 184,
+          "3": 112,
+          "4": 40
+        },
+        "unreachable": 0,
+        "total": 504,
+        "means": {
+          "geometric_half": "293/1008",
+          "linear_mixture": "377/1890"
+        }
+      },
+      "ordered_cube_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "ordered_coordinate_sha256": "f67efd04f8fd8c3c7754225d0377a24154df8f07f7361e38bff798e93ea5cdfb",
+      "first_mismatch": null,
+      "reused": false,
+      "preprocessing": {
+        "checked_patterns": 10,
+        "canonical_candidates": 24,
+        "raw_pattern_candidates": 60,
+        "canonical_geometries": 4,
+        "filtered_quiet_promotion_variants": 0,
+        "filtered_forced_capture_targets": 0
+      }
+    }
+  ],
+  "controls": [
+    {
+      "live": false,
+      "owner": 0,
+      "source": 0,
+      "target": 1,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          3,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          3,
+          0
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 0,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "opaque_initial",
+          "geometry_id": "g2"
+        }
+      ]
+    },
+    {
+      "live": false,
+      "owner": 0,
+      "source": 3,
+      "target": 6,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [],
+      "expected": [],
+      "all_actions": []
+    },
+    {
+      "live": false,
+      "owner": 0,
+      "source": 3,
+      "target": 0,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [],
+      "expected": [],
+      "all_actions": []
+    },
+    {
+      "live": false,
+      "owner": 0,
+      "source": 4,
+      "target": 5,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "actual": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_03_opaque_changedempty1",
+          "source": 4,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g5"
+        },
+        {
+          "pattern_id": "sem_04_opaque_changedempty2",
+          "source": 4,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g6"
+        },
+        {
+          "pattern_id": "sem_05_opaque_changedempty3",
+          "source": 4,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g7"
+        },
+        {
+          "pattern_id": "sem_06_opaque_changedenemy0",
+          "source": 4,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g8"
+        }
+      ]
+    },
+    {
+      "live": false,
+      "owner": 1,
+      "source": 8,
+      "target": 7,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          5,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          5,
+          0
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 8,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "opaque_initial",
+          "geometry_id": "g2"
+        }
+      ]
+    },
+    {
+      "live": false,
+      "owner": 1,
+      "source": 5,
+      "target": 2,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [],
+      "expected": [],
+      "all_actions": []
+    },
+    {
+      "live": false,
+      "owner": 1,
+      "source": 5,
+      "target": 8,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [],
+      "expected": [],
+      "all_actions": []
+    },
+    {
+      "live": false,
+      "owner": 1,
+      "source": 4,
+      "target": 3,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "actual": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_03_opaque_changedempty1",
+          "source": 4,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g5"
+        },
+        {
+          "pattern_id": "sem_04_opaque_changedempty2",
+          "source": 4,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g6"
+        },
+        {
+          "pattern_id": "sem_05_opaque_changedempty3",
+          "source": 4,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g7"
+        },
+        {
+          "pattern_id": "sem_06_opaque_changedenemy0",
+          "source": 4,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g8"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 0,
+      "source": 0,
+      "target": 1,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 0,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "opaque_initial",
+          "geometry_id": "g6"
+        },
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 0,
+          "target": 3,
+          "promotion_target_id": "opaque_changed",
+          "actor_type": "opaque_initial",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 0,
+      "source": 3,
+      "target": 6,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          6,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          6,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_01_opaque_initialenemy0",
+          "source": 3,
+          "target": 6,
+          "promotion_target_id": "opaque_changed",
+          "actor_type": "opaque_initial",
+          "geometry_id": "g7"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 0,
+      "source": 3,
+      "target": 0,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          6,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          6,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 3,
+          "target": 6,
+          "promotion_target_id": "opaque_changed",
+          "actor_type": "opaque_initial",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 0,
+      "source": 4,
+      "target": 5,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "actual": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_03_opaque_changedempty1",
+          "source": 4,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g9"
+        },
+        {
+          "pattern_id": "sem_04_opaque_changedempty2",
+          "source": 4,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g10"
+        },
+        {
+          "pattern_id": "sem_05_opaque_changedempty3",
+          "source": 4,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g11"
+        },
+        {
+          "pattern_id": "sem_06_opaque_changedenemy0",
+          "source": 4,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g12"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 1,
+      "source": 8,
+      "target": 7,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 8,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "opaque_initial",
+          "geometry_id": "g6"
+        },
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 8,
+          "target": 5,
+          "promotion_target_id": "opaque_changed",
+          "actor_type": "opaque_initial",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 1,
+      "source": 5,
+      "target": 2,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          2,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_01_opaque_initialenemy0",
+          "source": 5,
+          "target": 2,
+          "promotion_target_id": "opaque_changed",
+          "actor_type": "opaque_initial",
+          "geometry_id": "g7"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 1,
+      "source": 5,
+      "target": 8,
+      "blocker": 0,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_initial",
+        "promoted": false
+      },
+      "actual": [
+        [
+          2,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_00_opaque_initialempty0",
+          "source": 5,
+          "target": 2,
+          "promotion_target_id": "opaque_changed",
+          "actor_type": "opaque_initial",
+          "geometry_id": "g6"
+        }
+      ]
+    },
+    {
+      "live": true,
+      "owner": 1,
+      "source": 4,
+      "target": 3,
+      "blocker": 8,
+      "profile": {
+        "base": "opaque_initial",
+        "current": "opaque_changed",
+        "promoted": true
+      },
+      "actual": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "all_actions": [
+        {
+          "pattern_id": "sem_03_opaque_changedempty1",
+          "source": 4,
+          "target": 5,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g9"
+        },
+        {
+          "pattern_id": "sem_04_opaque_changedempty2",
+          "source": 4,
+          "target": 1,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g10"
+        },
+        {
+          "pattern_id": "sem_05_opaque_changedempty3",
+          "source": 4,
+          "target": 7,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g11"
+        },
+        {
+          "pattern_id": "sem_06_opaque_changedenemy0",
+          "source": 4,
+          "target": 3,
+          "promotion_target_id": null,
+          "actor_type": "opaque_changed",
+          "geometry_id": "g12"
+        }
+      ]
+    }
+  ],
+  "rejections": {
+    "none": "NONE promotion on promotable current requires separate qualification",
+    "guard": "unsupported occupancy guard"
+  },
+  "canonical_candidates": 144,
+  "enumerated": 27,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "new_worlds": 3528,
+  "source_sha256": {
+    "scripts/audit_promotion_mobility_gate.py": "4a1aa56381031b12673f8553ebe55ec9eedd2646f6610b48167e288d21a38e40",
+    "scripts/physical_promotion_contact_cubes.py": "16384cc08852c9d091e4d9bb0174c1ec82f745f40e80202934b65bf3d9c77f27",
+    "scripts/promotion_mobility_micro.py": "6af1f76886e8c2a45d509df40c361dc632ed815f4500a4f12c5843c6a193bc0a",
+    "docs/research/PROMOTION_MOBILITY_GATE_PROTOCOL.md": "7b6eac0a834e732e55ae6cd5efcf4d0a618bdac225b2b08a06310bb494573834",
+    "docs/research/data/promotable_cube_qualified_20261005.json": "17146af66dd43a4e55893101c50fa378f800ad281622c4c76cdade5b5e0c1132",
+    "scripts/promotable_contact_cubes.py": "9531a86fe0c02804881fc4dd1396f908b06067b785d12fe7578ae8e877be74b8",
+    "scripts/promotable_micro_qualified.py": "1e5017a866a763baad0b8029d6ea48348c0392923153496f5c1403cc9e7503da",
+    "scripts/native_cube_contact_closure.py": "6d02c766b660c17575788b211c9725b637e198340360f4e872039bc31921cac3"
+  },
+  "renamed_census": {
+    "False": {
+      "histogram": {
+        "1": 42,
+        "2": 66,
+        "3": 110,
+        "4": 60,
+        "5": 16
+      },
+      "unreachable": 210,
+      "total": 504,
+      "means": {
+        "geometric_half": "37/336",
+        "linear_mixture": "107/1323"
+      }
+    },
+    "True": {
+      "histogram": {
+        "1": 168,
+        "2": 184,
+        "3": 112,
+        "4": 40
+      },
+      "unreachable": 0,
+      "total": 504,
+      "means": {
+        "geometric_half": "293/1008",
+        "linear_mixture": "377/1890"
+      }
+    }
+  },
+  "error": "RuleValidationError: [PROMOTION_MASK_INVALID_SET] promotion_allowed: promotion masks must exist exactly for the promotable types; [PROMOTION_MASK_BAD_SHAPE] promotion_allowed[opaque_changed]: promotion masks need one entry per player; [PROMOTION_MASK_BAD_SHAPE] promotion_forced[opaque_changed]: promotion masks need one entry per player",
+  "seconds": 0.07800000021234155,
+  "cumulative_seconds": 0.14100000021234155,
+  "source_hashes_unchanged": true
+}

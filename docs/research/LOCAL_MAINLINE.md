@@ -491,6 +491,30 @@ Do not deepen old mate fixtures, rerun service batches, tune deadlines or add
 more small impossibility proofs merely to fill time. Any repeat must solve a
 new question under a changed premise. Semantic repairs must have direct evidence.
 
+Physical promotion has an observed admission counterexample: an IR result can
+move while compiled empty_mobility rejects its NEW promotion. A separate
+alive-result qualifier passes4032 qualified micro-worlds (504 reused),6048
+multi-result worlds and151680 real Shogi P/N-origin worlds. Quiet profile and
+absorbing capture-union semantics stay distinct; failures retained. See
+PROMOTION_MOBILITY_GATE_RESULTS.md, MULTI_RESULT_PROMOTION_RESULTS.md and
+SHOGI_PROMOTION_CUBE_RESULTS.md. Diagnostic targets13,40,60 independently match
+140976 ordered worlds; qualified target set0,13,40,60 is not all90 squares
+(DIAGNOSTIC_NONCORNER_RESULTS.md).
+
+SHOGI_PROMOTION_USE_RESULTS.md adds a complete48-event tree with common unknown
+held coefficients. Contact uniquely prefers promoted capture; unit ties both.
+Independent1023-action escapes and three bare-King counterreplies certify all5
+choices have zero ply3 mate-window value. No advantage in that window; eventual
+values remain[-1,1]. Do not deepen this fixture. See
+PROMOTION_CUSTODY_ADVISOR_20261006_REVIEW.md for independent advisor scope.
+
+SHOGI_MATE_SOURCE_CONTRACT.md identifies a source opportunity but its PV is a
+single path, not all-defender proof. Four source files are qualified metadata;
+overall acquisition hit its byte cap on LICENSE. No executable goal adapter,
+labels or engine runs admitted. Next investigate complete proof export or
+bounded reconstruction; SHOGI_SEARCH_INTEGRATION_PREFLIGHT.md supplies a
+practical static-depth2 integration question, keeping strength separate.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.
