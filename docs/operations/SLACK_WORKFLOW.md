@@ -88,7 +88,7 @@ sending, account-wide zero usage or arbitrary delegation by dot.
 6. While active, briefly wait then read again when an answer matters, and read
    at research checkpoints. Empty/generating/limited/error reads keep the same
    request pending. Continue independent work and respect retry cooldowns.
-   Two-hour continuation reconciles pending IDs after an interrupted turn.
+   Four-hour continuation reconciles pending IDs after an interrupted turn.
    This explicit active reading cadence replaces the earlier five-minute
    automatic-inbox acceptance gate at the user's request.
 
@@ -96,7 +96,7 @@ New questions use roots. Evidence and decisions stay in their original thread,
 TYPE=AGENT_EVIDENCE/AGENT_RESULT. Only explicit new AGENT_REQUEST requests a
 review. No self-reply loop, automatic resend or extra delegation. Daily 10:00
 Tokyo inspection is the main consultation window for major problems or new
-theory. Skip empty/duplicate questions and missed-day catchup. Two-hour local
+theory. Skip empty/duplicate questions and missed-day catchup. Four-hour local
 inspections never require dot discussion/reply. Default to independent project
 work between daily inspections; consult only concrete issues worth discussing.
 Advice can be read and assessed locally without sending a result/acknowledgement;

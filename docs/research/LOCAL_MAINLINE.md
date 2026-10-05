@@ -220,6 +220,45 @@ These partial bounds certify nativeR>nativeB for every0<gamma<1 without a
 complete B graph or point discount; task ordering is not independent leaf-use
 evidence. Tighten censored B coverage rather than interpreting it as a price.
 
+BISHOP_DISTANCE_FRONTIER_RESULTS.md now tightens185035 Shogi B triples to a
+proved distance>2 frontier under the same complete law, with independent owner/
+trap-count controls. HELD_CONTACT_COMPILED_RESULTS.md qualifies ten selected
+n=1 virtual B/R drop/promotion/capture paths with28 edges/384 candidates, keeping
+royal-safety/stock omissions and optional promotion explicit; no official drop
+claim. CONTACT_DEPLOYMENT_INFORMATION_LAW.md separates optimized public-target
+placement from declared random empty-square deployment and proves its exact
+hand=gamma*board mean for unrestricted masks, with restricted-law bias bounds.
+
+Chess-first counterpart CHESS_CONTACT_COMMON_LAW_RESULTS.md derives exact Q/R
+histograms and B censored intervals on all249984 triples, proving Q>R>B>0 for
+every shared0<gamma<1. CHESS_CONTACT_SCOPED_USE_RESULTS.md freezes real family-
+stable selections on four fresh complete R/B root tables BEFORE independent
+selected-child source queries. Fixed-unit mean margin is[1/4,1/4], zero remains
+[-1,1]; the BOTH-baselines criterion is inconclusive. It is development evidence
+with exposed outcome classes and canonical-tie sensitivity, not a reserved pass.
+
+CHESS_CONTACT_KNIGHT_PAWN_BOUNDS.md adds complete native N/P mass envelopes,
+published Knight-tour reachability, Pawn quiet-promotion support and explicit
+auxiliary limitations. Q>R>B/N/P survives, but B versus N/P reverses with gamma:
+timescale is a substantive modeling choice. CONTACT_DEADLINE_MIXTURE_HYPOTHESIS.md
+provides geometric-deadline and finite-mean mixture alternatives, shared moments
+and no-midpoint native Chess intervals. This is a prospective approximate family,
+not a complete generic scalar prior, rule-unique law or new mixture use outcome.
+Next freeze an independently motivated duration/complete-mode/use question,
+retain unknown quiet labels and all context mass; no fitting gamma or lifting
+Xiangqi holdout. Missing Shogi modes and broader useful transfer remain open.
+
+CHESS_BISHOP_TWO_ACTION_FRONTIER_RESULTS.md now counts exact B2 mass85824
+using225 displacement cells, leaving only3008 worlds at distance>=3/unknown.
+Independent small-board two-ray and full pair/trap controls verify the partition.
+The finite-mean duration mixture still leaves B/N/P intervals overlapping;
+retain parameter uncertainty and separate independent use, without more labels.
+
+CHESS_KNIGHT_TWO_ACTION_FRONTIER_RESULTS.md then counts exact N2 mass66472,
+retaining56536 even-parity worlds at distance>=4 and106144 odd worlds>=3.
+Its improved mixture envelope still overlaps B; a prospective cheap N3
+certificate or Pawn support refinement is decision-changing next research.
+
 ## Boundaries and evidence lookup
 
 Movement/capture coordinates do not alone establish complete strategic options.
