@@ -1,0 +1,619 @@
+{
+  "scope": "Declared stronger-comparator resource curve, actual-root finite diagnostics, operational identical-payload recording and checked Shogi tie inspection. Exposed adaptive development, not Elo/holdout/prior validation.",
+  "game_groups": [
+    {
+      "seconds": 1,
+      "methods": {
+        "geometric_half": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 2
+        },
+        "unit": {
+          "wins": 1,
+          "losses": 3,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "wall_seconds": 711.3732931001578,
+      "recording_cost": {
+        "writes": 1357,
+        "bytes": 813804326,
+        "seconds": 21.151955001056194
+      }
+    },
+    {
+      "seconds": 4,
+      "methods": {
+        "geometric_half": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 1
+        },
+        "linear_mixture": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "unit": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "wall_seconds": 2369.1157519000117,
+      "recording_cost": {
+        "writes": 1223,
+        "bytes": 677827406,
+        "seconds": 17.88813829724677
+      }
+    }
+  ],
+  "replay": {
+    "complete": true,
+    "scope": "All new full-history game streams, independent author legal sets and exact Core final histories; no Elo.",
+    "inputs": {
+      "games-1.json": "2aa8acb46ffc85e81423075775fec021bf44d4d357268a5579f37bea7f6e13e5",
+      "games-4.json": "70a93a20c8119d5aab674a3c17059af3635de7fb242da55409d22fa5386a84dc",
+      "recording-live.json": "7c891b202980a687faf1f765621cbe63f820cef36c6ce4f30d4d15d2f47dd7ad"
+    },
+    "games": [
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 0,
+        "id": "open-file-e",
+        "plies": 59,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "geometric_half",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 1,
+        "id": "open-file-e",
+        "plies": 118,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "geometric_half"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 2,
+        "id": "open-file-e",
+        "plies": 107,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "linear_mixture",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 3,
+        "id": "open-file-e",
+        "plies": 36,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "linear_mixture"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 4,
+        "id": "open-file-e",
+        "plies": 148,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "unit",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 5,
+        "id": "open-file-e",
+        "plies": 66,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "unit"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 6,
+        "id": "central-d",
+        "plies": 103,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "geometric_half",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 7,
+        "id": "central-d",
+        "plies": 118,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "geometric_half"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 8,
+        "id": "central-d",
+        "plies": 160,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "linear_mixture",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 9,
+        "id": "central-d",
+        "plies": 160,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "linear_mixture"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 10,
+        "id": "central-d",
+        "plies": 136,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "unit",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-1.json",
+        "index": 11,
+        "id": "central-d",
+        "plies": 133,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "uci_reference",
+        "black": "unit"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 0,
+        "id": "open-file-e",
+        "plies": 93,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "geometric_half",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 1,
+        "id": "open-file-e",
+        "plies": 160,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "geometric_half"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 2,
+        "id": "open-file-e",
+        "plies": 117,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "linear_mixture",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 3,
+        "id": "open-file-e",
+        "plies": 94,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "linear_mixture"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 4,
+        "id": "open-file-e",
+        "plies": 57,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "unit",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 5,
+        "id": "open-file-e",
+        "plies": 102,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "unit"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 6,
+        "id": "central-d",
+        "plies": 87,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "geometric_half",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 7,
+        "id": "central-d",
+        "plies": 80,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "geometric_half"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 8,
+        "id": "central-d",
+        "plies": 55,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "linear_mixture",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 9,
+        "id": "central-d",
+        "plies": 84,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "linear_mixture"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 10,
+        "id": "central-d",
+        "plies": 129,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 0,
+        "white": "unit",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": false,
+        "source": "games-4.json",
+        "index": 11,
+        "id": "central-d",
+        "plies": 152,
+        "prefix_plies": 4,
+        "end": "checkmate",
+        "winner": 1,
+        "white": "uci_reference",
+        "black": "unit"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 0,
+        "id": "open-file-e",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "geometric_half",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 1,
+        "id": "open-file-e",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "geometric_half"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 2,
+        "id": "open-file-e",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "linear_mixture",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 3,
+        "id": "open-file-e",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "linear_mixture"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 4,
+        "id": "open-file-e",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "unit",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 5,
+        "id": "open-file-e",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "unit"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 6,
+        "id": "central-d",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "geometric_half",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 7,
+        "id": "central-d",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "geometric_half"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 8,
+        "id": "central-d",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "linear_mixture",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 9,
+        "id": "central-d",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "linear_mixture"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 10,
+        "id": "central-d",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "unit",
+        "black": "uci_reference"
+      },
+      {
+        "instrumentation": true,
+        "source": "recording-live.json",
+        "index": 11,
+        "id": "central-d",
+        "plies": 40,
+        "prefix_plies": 4,
+        "end": "ply_limit",
+        "winner": null,
+        "white": "uci_reference",
+        "black": "unit"
+      }
+    ],
+    "errors": [],
+    "research_games": 24,
+    "instrumentation_games": 12,
+    "played_plies": 3034,
+    "prefix_plies": 144
+  },
+  "live_recording": {
+    "wall_seconds": 95.58444849983789,
+    "cost": {
+      "2": {
+        "seconds": 5.526927899802104,
+        "writes": 493,
+        "bytes": 182244905
+      },
+      "None": {
+        "seconds": 3.870686799986288,
+        "writes": 493,
+        "bytes": 114246011
+      }
+    },
+    "verification": {
+      "seconds": 1.0735739979427308,
+      "same_payloads": 493,
+      "support_frontier_seconds": 3.489701295737177
+    },
+    "scope": "Actual12short game streams, same payload written in both formats with alternating order; this measures recording cost in operational context, not playing strength or total game speedup. Additional verification and dual-write overhead retained separately."
+  },
+  "raw_archive": "../archive/development_budget_20261007/raw.zip",
+  "raw_zip_sha256": "369b57db2b7e1d80bd8e9ce9a66d8a731976435b6b8603071b1ff532067e29e9",
+  "raw_entries": {
+    "mature-budget-20261007/declaration.json": {
+      "bytes": 1159,
+      "sha256": "f27fce30aca8c55590038f5c581cbc5fcb1c55bad6c81e71b4f70b295da0160f"
+    },
+    "mature-budget-20261007/suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    },
+    "mature-budget-20261007/DECLARATION_NOTES.md": {
+      "bytes": 323,
+      "sha256": "2a88a642e1e5bba0fcb306475b3cb8d8402e477daceacc263fa924b2a2801d30"
+    },
+    "mature-budget-20261007/FAILURE_HYPOTHESIS.md": {
+      "bytes": 1097,
+      "sha256": "b51e345d65626d332ee8223aab3f79b8f7016ee8eda0d70e7f6163638ecce55e"
+    },
+    "mature-budget-20261007/leaf-inspection.json": {
+      "bytes": 262,
+      "sha256": "b271861b1c7aafdf26a9cb315d197559f4d1e05cbba38b925558f9032a7afbaf"
+    },
+    "mature-budget-20261007/games-1.json": {
+      "bytes": 1960338,
+      "sha256": "2aa8acb46ffc85e81423075775fec021bf44d4d357268a5579f37bea7f6e13e5"
+    },
+    "mature-budget-20261007/games-4.json": {
+      "bytes": 1855462,
+      "sha256": "70a93a20c8119d5aab674a3c17059af3635de7fb242da55409d22fa5386a84dc"
+    },
+    "mature-budget-20261007/replay.json": {
+      "bytes": 10447,
+      "sha256": "eccc6e87e91b347709d86cf1f65a46c2e998aa043efb2ddf13f8a08a70c56325"
+    },
+    "mature-budget-20261007/recording-live.json": {
+      "bytes": 766447,
+      "sha256": "7c891b202980a687faf1f765621cbe63f820cef36c6ce4f30d4d15d2f47dd7ad"
+    },
+    "mature-openings/early-reference-20261007.json": {
+      "bytes": 20527,
+      "sha256": "f1867f4e5762dc86d98b8047aa2a346dca923497914ccd302e729fa92ac91b2e"
+    },
+    "mature-openings/early-budget-reference-20261007.json": {
+      "bytes": 50337,
+      "sha256": "05b4d446483e0a60ba0846a0f92420ab1c1683053ddc08569de3b2316f7563b3"
+    },
+    "shogi_checked_drop_ties_20261007.json": {
+      "bytes": 85735,
+      "sha256": "7ecdde443d710520ceacf05883b09504c8c65660cef05c3fd5d0884f4d5b9097"
+    }
+  },
+  "sources": {
+    "mature_budget_continuation_20261007.py": {
+      "bytes": 3870,
+      "sha256": "438b9a0b199765e768df2b6f67a6fd27546fd6c2f4cbce806acfa1d56f8cd0ee"
+    },
+    "diagnose_mature_early_20261007.py": {
+      "bytes": 3575,
+      "sha256": "e9afb7d5b4636ebd50bb1b62282e691d79dce667670d0993915c3192f5fb8c7f"
+    },
+    "diagnose_mature_early_budget_20261007.py": {
+      "bytes": 3658,
+      "sha256": "6ab1fed3e057f2a4d95dc8b84a68bdb249c5faa29ce1e596ff1c477c779f177f"
+    },
+    "live_recording_compare_20261007.py": {
+      "bytes": 4532,
+      "sha256": "1bb58a3a16d4761d3d050e83d3e8abb260a87f3218c1dd9de19c298b7b77a568"
+    },
+    "shogi_checked_drop_ties_20261007.py": {
+      "bytes": 5661,
+      "sha256": "6d19e5e3400fb3cdd7de88e48def9e2a1f812796a47ad803e6349c511b166863"
+    },
+    "replay_budget_continuation_20261007.py": {
+      "bytes": 2138,
+      "sha256": "84d10c991374ccd668d0ddad751e2996feaad9ae2ef601c6901abfa410ece0e7"
+    },
+    "collect_budget_continuation_20261007.py": {
+      "bytes": 4204,
+      "sha256": "6643a392107ed0de0919bd982a1ee1be0a74e423ff419bba9dabf707ec5ac874"
+    }
+  },
+  "source_zip_sha256": "4fe17ff4fc9f012ed57cc3b9d4d7b7991ecd1fb81dcf240567a5a9e2468a1b78",
+  "production_code_changed": false,
+  "previous_qualification": "chess_runtime_cost_results_20261006.json",
+  "previous_resource_batch": "chess_mature_entry_results_20261006.json",
+  "public_push": "held"
+}

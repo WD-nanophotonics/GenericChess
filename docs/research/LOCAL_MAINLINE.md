@@ -847,6 +847,22 @@ data/chess_mature_entry_results_20261006.json; final format control separately i
 data/chess_recording_format_20261006.json. No Elo/default/price promotion or holdout
 claim; current public-push hold remains. Continue practical failure diagnosis.
 
+Stronger-comparator resource continuation retains24declared cells:1sec geom4wins,
+linear2wins2unfinished, unit1win3losses;4sec geom3wins1unfinished, linear/unit4wins
+each,711/2369sec walls. Longer time gives useful feedback but not uniform gains,
+Elo or price validation.36actual-root time choices retain early negative unit
+and all-table King moves: extra time does not alone resolve positional blindness.
+493identical operational writer pairs retain values, reduce bytes37.3percent/
+write time30percent, not proven game-speed gain.24research+12instrumentation
+streams replay3034played+144prefixplies zero differences;28tests pass.
+Shogi masking prediction fails underq0; captureq2 yields two protected unit ties
+and a different unique King choice on the relocated root. Fresh1ply q2 probes
+reserve ordinary extension: corrected phase-matched full-window scores/choices
+agree, without changing production policy. Keep failed prediction and scopes.
+Next one common positional pilot at explicit Pawn208 scale or targeted resource
+allocation; continue playable feedback, no price fitting/default promotion.
+CHESS_DEVELOPMENT.md and the two20261007 data indexes preserve exact ZIP evidence.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

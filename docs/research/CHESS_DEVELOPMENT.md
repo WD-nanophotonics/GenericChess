@@ -1102,3 +1102,83 @@ Example with an already qualified local build (output must be new):
 These runs are development measurements, not independent held-out validation.
 No human-label fitting, Xiangqi holdout read or general amateur-strength claim.
 The objective remains OPEN. Public publication remains on its existing hold.
+
+
+### Stronger-comparator time, operational recording and Shogi horizon (2026-10-07)
+
+The prior1800-configured comparator was kept fixed:50000nodes/1sec fuse,
+Threads1/Hash16, two unchanged four-move opening prefixes, all three frozen
+tables/both colors and160 subsequent plies. Twenty-four new games were declared
+before outcomes,1sec and4sec local time. No source, compilation, tests or second
+search ran alongside operational search; light Agent file inspection/preparation
+continued. The optional additional direct batch was prepared but not launched;
+actual-root feedback was the more useful next decision. No price/default change.
+
+| Local seconds | Geometric W/L/U | Linear W/L/U | Unit W/L/U | Batch wall |
+| --- | --- | --- | --- | --- |
+| 0.25, prior descriptive batch | 3/0/1 | 4/0/0 | 0/2/2 | 258.106sec |
+| 1, new batch | 4/0/0 | 2/0/2 | 1/3/0 | 711.373sec |
+| 4, new batch | 3/0/1 | 4/0/0 | 4/0/0 | 2369.116sec |
+
+U means unfinished, never an inferred draw. The4sec batch costs3.33times the
+1sec batch, with useful unit/linear terminal feedback and a geometric regression.
+This supports further targeted resource work, not a universal cutoff or minimum,
+calibrated Elo, causal effect or intrinsic prior ranking. Opponent randomness,
+different trajectories and exposed adaptive development scope remain. Frozen
+failures and success criteria are unchanged. A requested-cost arithmetic typo
+3840sec was retained and corrected separately to4800sec, without changing cases.
+The raw report records pre-final-save costs:1sec1357writes/813804326bytes/21.152sec;
+4sec1223writes/677827406bytes/17.888sec. Console counters after the final pretty
+save include that last write and are slightly larger; batch wall excludes it.
+
+The actual unfinished linear game has full-history finite references at8/16/24/32:
+actual-child-22/-171/-197/-255cp. The36-choice0.25/1/4sec matrix shows root8 all e3;
+root16 geom/linear Ra2(-109) and unit f3(-171) at all times; root24 linear g4(-192)
+at0.25 but Kf2(-197) at1/4, unit f4(-334) at all times; root32 all Ke1(-321),
+against actual Kg2(-255). Longer game wins do not eliminate fixed early errors.
+The qualified leaf counts material only; static positional blindness is a narrow
+source-backed hypothesis, not proof of sole cause. A single common positional
+residual is a possible next pilot. Old Python2/5 terms used Queen1000 units;
+this native comparison fixes Pawn208/report100cp. Direct transfer is not the same
+old ablation; name a common scale and approximation before any pilot outcomes.
+
+Twelve40ply actual instrumentation streams paired identical atomic records in
+alternating pretty/compact order. All493pairs parsed identically. Pretty costs
+182244905bytes/5.527sec; compact114246011bytes/3.871sec:37.3percent fewer bytes,
+29.97percent less measured write time. Equality checks1.074sec and third support
+frontier writes3.490sec are separate; total operational wall95.584sec includes
+dual-writing/verification. This is not a measured production game-speed gain.
+The compact per-action writer stays, with schema/atomicity/default final reports
+unchanged. Original budget24games replay2554played+96prefixplies; instrumentation
+12streams replay480+48. Combined36streams3034+144 have zero legal/state/history
+differences. Instrumentation outcomes are excluded from strength comparisons.
+
+Checked full-stock synthetic Shogi still uses held=half board as an approximation.
+Originalq0 root has geometric unique finite R@e2 and unit four tied drops. A
+declared relocation e5->e7/f3->f5 removes two captured Pawn targets while preserving
+stock/file uniqueness/check/eight root actions. Its simple unit-tie prediction
+fails underq0; it also uncovers Bishop routes, so no single-cause claim. A
+nonchecking Bishop capture ends at static depth2 without the defended recapture.
+Existing capture-onlyq2, with the same2ply/2048nodes/10sec per-case conditions,
+keeps original geometric R@e2 and shrinks unit best ties to B@e2/R@e2. On the
+relocated root it selects geometric B@e2(-58840), unit Kingd2(-100000), each
+unique under the matching finite full-window diagnostic. Root choices/scores
+match all four explicit depth1 child contexts at ply1, with ordinaryq2 active.
+This is useful horizon feedback, not WDL/strength/default promotion.
+
+An inspection error is preserved: fresh maxdepth1 iterative child calls reserve
+ordinary qsearch during their first phase. Their configuredq2 labels cannot be
+used as root2phase q2 rankings. The supplementary direct contexts explicitly
+match phase/ply and retain the original caps; no production reserve policy/API
+was changed. Detailed raw counters include node/qnode costs and balanced paths.
+
+`data/chess_budget_continuation_20261007.json` is a small index/summary; ordinary
+`../archive/development_budget_20261007/raw.zip` preserves exact raw reports,
+with `sources.zip` and manifests verified by unpacked hashes. Do not duplicate
+large record bodies into another summary. Its SHA256 is
+3b46be945b95b6f3981d7f59de4f503543f9c40de82d291cec6108c357016896.
+`data/shogi_capture_horizon_20261007.json` and `shogi_horizon.zip` separately keep
+failed masking prediction, naive phase probes and corrected direct observations.
+28 adapter/development/record tests pass again; no production code changes.
+Native CPU/cache/leaf and exact model-token costs remain unavailable, not zero.
+No human-label fitting, Xiangqi holdout read, extra worker, Goal or public push.
