@@ -1,0 +1,46 @@
+{
+  "scope": "Inert exact development drivers, no live policy or extra worker; game batch uses archived pre-atomic research_record writer",
+  "archive": "docs/archive/development_before_20261006_qfix/shared_dynamic_experiment_drivers.zip",
+  "sources": {
+    ".local_agent/run_shared_dynamic_compare.py": {
+      "sha256": "f8d432cec235d8745c6d43f628714ef62196dd3e2417e467b74d83512552d9b4",
+      "bytes": 3651
+    },
+    ".local_agent/run_shared_dynamic_bulk_compare.py": {
+      "sha256": "216690daf8861172539dfea7416245f06d385168f13b33cab7d826620b816287",
+      "bytes": 3656
+    },
+    ".local_agent/run_shared_dynamic_curve4.py": {
+      "sha256": "c4d2299e04b05d8cec251a554b75655b6b58d80a0efa35e7ca0fcc844af0b560",
+      "bytes": 3662
+    },
+    ".local_agent/run_shared_dynamic_games.py": {
+      "sha256": "bd8f216458ab5d6a75bce4e0b44ce0e86480df94f5e356ca537cf5ba3dbb6c3f",
+      "bytes": 3730
+    },
+    ".local_agent/run_actual_timeout_compare.py": {
+      "sha256": "116b51742f1180efc63010cc306b77df1a1745f9e559eb87c9b55c4e93d56fbe",
+      "bytes": 2370
+    },
+    ".local_agent/probe_semantic_map.py": {
+      "sha256": "f67eb95a6f8e1e9e680d3390c05d35a86fa5890c3dc84d1907cc1872e70c6d8a",
+      "bytes": 3190
+    },
+    ".local_agent/qualify_played_dynamic.py": {
+      "sha256": "16f704088d5c8ef2507edd6f340f840d2b69d1c9d3f02f637f8a142ae7351380",
+      "bytes": 3183
+    },
+    ".local_agent/reference_actual_roots.py": {
+      "sha256": "8fba0840847aaa95f2ee211c0ac026278f9c5a13ce4f719b3756eac164d5c4b0",
+      "bytes": 3246
+    },
+    ".local_agent/replay_shared_dynamic_games.py": {
+      "sha256": "2a286fdc585ffbbf026829e56d3d426990593ca1bcff7c149797428678cbd0a5",
+      "bytes": 1851
+    },
+    ".local_agent/save_shared_dynamic_results.py": {
+      "sha256": "10bbb0be8bf3e6456c5cb0ad986e8711b360e71e59ef7ed3fc36121b609162f5",
+      "bytes": 2787
+    }
+  }
+}

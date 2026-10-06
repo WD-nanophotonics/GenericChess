@@ -527,6 +527,158 @@ the older producer snapshots; positional SearchTuning compatibility is retained
 by appending the new option.115 current regressions and39 historical pin checks
 pass. No default, Core rule, human holdout, extra worker or public push changes.
 
+## Cached versus semantic shared dynamics (2026-10-06 continuation)
+
+Decision before measurement: repair the observed shared-residual Pawn omission
+without fitting prices or changing search. Three optional backends isolate two
+questions: original legacy, cached legacy (exact same definition), semantic
+pseudo-attacks cached within one leaf. No cross-state cache or history/side flip.
+The existing native dynamic vector is NOT reused: source inspection shows legal
+candidate counts, side views and legal anchor moves, a different feature law.
+The chosen existing native square queries instead preserve the attacked-square
+definition, including semantic Pawn captures and guards. Pins, S3 own-anchor
+safety, S4 postconditions and anchor-source-vacancy effects remain outside the
+residual. Empty-target pseudo-escapes are not legal King mobility; a new checking
+rook control explicitly preserves and labels that approximation.
+
+Before search comparison, two Pawn controls match the author semantic attack
+counts/checks and yield unscaled residuals -45/26 versus legacy9/35. On those
+two states and the actual nine-ply prefix, cached legacy preserves material and
+total scores exactly.200 evaluations per method/state find legacy/cached/semantic
+costs approximately51/18/231,69/20/216 and342/101/272 microseconds, respectively.
+These are selected microcosts, not a population or whole-search speedup claim.
+Semantic correction is slower in simple controls, so correct coverage alone
+does not establish practical usefulness.
+
+Declared comparison: all original24 cases/answers and three inventory policies;
+3ply,32768 shared nodes, five seconds, qdepth0/qhard8, native legality, common
+ordering, fresh TT65536, PVS and mandatory check-only ON, capture-risk OFF.
+Interleave three backends within each case; include the same actual nine-ply
+prefix with Core-produced history witnesses. Keep all completions, finite
+reference gains/losses/magnitudes and costs. Require cached legacy score/move
+parity before recommending it; assess semantic repair separately without
+requiring BK12/14 or any other named failure to improve. Existing frozen results
+remain legacy and their exact producer bytes are archived inertly before edits.
+No Core/default/price/human-holdout/worker/publication change.
+
+New cost hypothesis after the first microprobe: traverse each semantic capture
+pattern/source/geometry once and reuse the author's exact binding/path/guard
+predicates, rather than query all128 owner/squares. A26-state probe matches all
+3328 native/author square booleans and measures17-204 microseconds per map pair.
+It is a separate optional `semantic_bulk` backend; no native build/API or Core
+rewrite. Independently qualify all22 previously recorded actual game histories
+before recommending it. Its current-occupancy escape limitation remains unchanged.
+
+After complete3ply/cache parity, a NEW4ply resource curve is declared: legacy,
+cached legacy and semantic bulk; all24 original cases and the actual prefix,
+same32768 nodes/five seconds/q0/check-only/PVS/order/TT, risk OFF. This is a new
+development curve, not an extension or revision of the old frozen4ply failures.
+Question: does equivalent faster legacy evaluation improve completion within
+the same wall budget, and does semantic coverage have a cost/completion tradeoff?
+Compare all shared completed scores/moves, count partial searches separately;
+do not interpret different incomplete retained iterations as score-parity errors.
+Worst-case single-core aggregate216 suite calls times five seconds is18 minutes;
+each search is interruptible and bounded, no extra worker. This cost can change
+which existing playing option is useful, unlike another non-discriminating proof.
+
+Declare the practical playing followup before results: the original initial
+position only, each of three unchanged inventory policies in both colors,
+cached legacy versus semantic bulk interleaved within policy/color,12 games
+maximum80plies. Same fixed4ply iterative player/node32768/five-second fuse,
+check-only/PVS/common-order/TT, risk OFF; the same pinned Stockfish17.1 weak
+1320 setting/50000nodes/one-second fuse/Threads1/Hash16, fresh game per cell.
+Retain played partial-depth fallback moves, losses and unfinished games; replay
+all moves with the author legal sets/board/rights/rawEP. One stochastic game per
+cell is a development feasibility sample, not a causal/rating comparison.
+Worst-case local search cost40 minutes on one core, normally lower; no external
+model/worker or fee. Outcome/completion/move traces can decide whether semantic
+coverage belongs in the next practical player, rather than tune to old answers.
+
+The first216 suite searches all complete3ply. Legacy/cache72 pairs preserve
+both main/q node counts, scores and moves exactly; total observed97.314 versus
+77.053seconds (-20.8%). Semantic correction changes11 selections but original
+answer hits stay2/2/3. Query/bulk144 separate searches preserve all72 scores,
+moves and main/q nodes, with observed97.668 versus88.551seconds (-9.3%). Timing
+is interleaved observation, not isolated hardware or future speed guarantee.
+All22 old game streams are reconstructed through Core, preserving full histories
+and final recorded states;1583 pre-move states preserve legacy/cache scores and
+semantic query/bulk terms, with202624 exact native/bulk square booleans agreeing.
+This is played-sample consistency, not every-position/variant proof.
+
+Five additional fixed50000-node Stockfish child references plus67 matching cached
+references cover every selected/accepted root action. All24 finite paired values
+per policy: geometric2improve/1regress/21equal (+114cp sum), linear1/1/22 (+75),
+unit2/4/18 (-466). Unit changes BK22 (-281cp) and BK23 (-183) are retained, with
+actual selected PV traces. Correct attack coverage alone does not imply a useful
+residual law, strength gain or permission to fit coefficients to these labels.
+Keep semantics and practical evaluation as distinct questions.
+
+Important interpretation correction for the earlier capture-risk5/144 diagnostic:
+these are SAVED PV ENDPOINTS, not necessarily actual scored leaves. TT exact/bound
+returns omit continuation; mandatory checking quiescence returns only a scalar.
+The current72 legacy outputs contain12 PVs shorter than completed main depth
+and8 checked endpoints; semantic has8 short/8 checked (these sets may overlap).
+Even a full main-depth PV can omit a checking extension. This does not itself
+show a wrong root score, but removes any claimed leaf-incidence or check-extension
+coverage inference. Original output stays intact. Dot explicitly agrees with
+the narrowed interpretation and identifies just one decision-changing check:
+finite reference must start at the real root child. The reference source copies
+the root board and pushes the selected root move; a new intercepted transport
+test verifies exact one-move child state, root-player score perspective and fresh
+game identity, using a deliberately longer saved PV. No path recorder is built.
+Dot's report-based advice was not independent code/result reproduction.
+
+The NEW4ply curve completes15/72 legacy,25/72 cached legacy,18/72 semantic bulk;
+all15 shared legacy/cache completions preserve actions/scores/main+q nodes, with
+10 additional cache completions. Observed totals329.660/315.850/324.920seconds.
+Brief source/PV analysis and regression calls overlapped a few earlier searches,
+so this is an observed interleaved resource curve, not isolated hardware or a
+guaranteed future completion count. Every incomplete is retained as time_limit.
+On the two original actual played roots,43/53 (not initially in check), new3ply
+five-second calls give: legacy both retain2ply; cache completes root43 in4.363sec
+but not53; semantic bulk completes53 in4.074sec but not43. Different finite-depth
+choices are not price changes. Original old timeouts stay unchanged.
+
+Observed recording friction during live games: at10:04:43UTC a reader hit the
+empty interval of truncate/rewrite and JSON decoding failed; a later read was
+complete. Repair `write_record` with same-directory temporary file, flush and
+closed-handle atomic replacement. JSON encoding/bytes stay unchanged; failures
+leave the previous complete frontier and clean the temporary. Four serializer
+tests pass, including reader-at-replacement and injected replacement failure.
+The already-running frozen game batch retains its initially imported old writer;
+do not restart/reload it or relabel its producer. The fix applies to subsequent
+processes; read this batch at completed checkpoints/after exit. Exact old writer
+bytes are inertly archived with their original hash; no new protocol or daemon.
+
+The declared12 games complete in1745.950seconds wall: cached legacy has
+0wins/3losses/3unfinished across413plies; semantic bulk1win/2losses/3unfinished
+across394plies. Unfinished is not draw. All807 played moves replay through the
+author legal sets, board, rights/rawEP and final state with zero discrepancies.
+Of403 local turns,168 complete4ply and235 retain3ply after time_limit; none
+retain1/2ply. Cached/semantic local wall877.121/820.064seconds, main+qnodes
+1308529/1119947, evaluation calls983361/836098, native legality246609/220736,
+zero native fallbacks. One stochastic game per cell cannot establish causal
+strength or Elo; mixed evidence does not promote semantic residual or defaults.
+
+Actual full-history finite root-child references separate depth from quality:
+at old timeout43, cached Nc6 scores-1cp versus old retained d6+81cp (root best
+b6+336); at53, semantic b6+241 versus retained Ne5-434. More completed depth
+does not guarantee a better choice. In the first new loss, White's42nd-ply Qg4
+allows actual Queen removal, but its fixed50000-node child proxy is-966cp
+versus the root reference's f2-900cp. Already severely losing; the66cp difference
+does not identify the initiating blunder or justify another risk framework.
+Next locate earlier deterioration in the actual trace. Stockfish17.1/Threads1/
+Hash16 finite proxies are standard-Chess references, not exact Core WDL/regret;
+actual child history/board transport is checked.
+
+One portable record `data/chess_shared_dynamic_results_20261006.json` preserves
+22 raw reports/summaries with hashes,576 suite searches,24 actual-prefix calls,
+six timeout-root calls,12 full game streams and replay. Exact producers and10
+drivers are inertly archived.43 relevant current and39 historical pin checks
+pass. Final thread reread includes two additional user/dot status posts; they
+add no technical objection and are not independent reproduction or newly
+authenticated request replies. No routine acknowledgement sent.
+
 ## Reuse
 
 The supported deeper material comparison (choose a new output path):
@@ -541,3 +693,5 @@ The supported deeper material comparison (choose a new output path):
 `--uci-python` accepts the pinned local author import root. Neither mode accesses
 an account/model/worker. A native build is optional: omit `--native-legality`
 to use the slower legal reference. Output refuses overwrite and preserves errors.
+
+Optional `--dynamic-backend cached_legacy` preserves the old residual with per-leaf reuse; `semantic_bulk` selects semantic pseudo-attacks and requires `--native-legality`. Legacy remains default. Use `--pvs --check-only --qdepth 0` for the fixed practical condition above.

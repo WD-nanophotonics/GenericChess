@@ -1,6 +1,6 @@
 """Verify historical producer bytes without freezing active development.
 
-Only explicitly archived search/quiescence/tuning versions are alternatives;
+Only explicitly archived search/quiescence/tuning/record-writer versions are alternatives;
 unrelated changed sources still fail their original digest assertion.
 """
 import hashlib

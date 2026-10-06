@@ -759,6 +759,25 @@ term. All22 new games/1583plies replay consistently; two internal turns retain
 tests pass. Useful practical behavior, not a universally
 calibrated residual or completion of the generic prior objective, is the target.
 
+Shared dynamics continuation separates equivalent caching from semantic repair.
+Cached legacy72 full3ply choices/scores/main+qnodes are identical, observed time
+97.314to77.053sec; semantic query/bulk72 pairs also identical,97.668to88.551sec.
+All1583 actual old played states preserve cache scores and202624 native/bulk
+attack booleans. Semantic Pawn coverage is correct on these controls but finite
+child proxies are mixed (+114/+75/-466cp across geometric/linear/unit), not a
+strength/default promotion. Saved PV endpoints may omit TT continuation or
+checking quiescence, so the old5/144 diagnostic is not scored-leaf incidence.
+Root-child reference transport is independently fixture-checked against a longer
+PV. The new same-budget4ply curve completes15/25/18of72 across legacy/cache/
+semantic; all15 shared cache comparisons match. Twelve actual games yield
+cache0wins/3losses/3unfinished, semantic1/2/3; all807plies replay legally.
+235local turns retain3ply after time limits,168complete4ply. No Elo/default
+promotion. Actual timeout-root finite proxies improve one selection and worsen
+another; the first loss is already severely losing before its Queen trade.
+Next inspect earlier actual deterioration, keeping single-variable comparisons
+and avoiding weight fitting or universal proofs. CHESS_DEVELOPMENT.md and
+data/chess_shared_dynamic_results_20261006.json preserve full traces and scope.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

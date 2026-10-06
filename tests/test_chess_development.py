@@ -173,3 +173,50 @@ def test_uci_alignment_preserves_raw_ep_and_detects_wrong_rights(compiled, monke
     bad = replace(state, position=replace(state.position, aux_state=tuple(sorted(aux.items()))))
     with pytest.raises(ValueError, match='w_ks mismatch'):
         external.push(move, bad)
+
+
+def test_reference_uses_real_root_child_not_saved_pv_endpoint(tmp_path, monkeypatch):
+    import json
+    import scripts.chess_development as development
+    author = Path('.local_agent/certificate_source/python-chess')
+    if author.exists():
+        monkeypatch.syspath_prepend(str(author.resolve()))
+    engine_module = pytest.importorskip('chess.engine')
+    import chess
+    fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
+    calls = []
+    class FakeEngine:
+        id = {'name': 'mechanical reference transport fixture'}
+        def __enter__(self):
+            return self
+        def __exit__(self, *args):
+            return False
+        def configure(self, options):
+            assert options == {'Threads': 1, 'Hash': 16}
+        def analyse(self, child, limit, game):
+            assert len(child.move_stack) == 1
+            calls.append((child.peek().uci(), child.fen(), game))
+            return dict(score=engine_module.PovScore(engine_module.Cp(23), child.turn),
+                        nodes=limit.nodes, depth=1, time=0, pv=[])
+    monkeypatch.setattr(engine_module.SimpleEngine, 'popen_uci', lambda *a, **kw: FakeEngine())
+    case = dict(id='initial', fen=fen, accepted_uci=['e2e4'])
+    suite = tmp_path/'suite.json'
+    suite.write_text(json.dumps(dict(scope='transport fixture', cases=[case])))
+    comparison = tmp_path/'comparison.json'
+    saved_row = dict(move='d2d4', completed=True, pv=['d2d4', 'e7e5', 'd1d3'])
+    comparison_data = {'cases': [dict(case, rows=[saved_row])]}
+    comparison.write_text(json.dumps(comparison_data))
+    executable = tmp_path/'inert-engine-fixture'
+    executable.write_bytes(b'fixture is intercepted, never executed')
+    output = tmp_path/'reference.json'
+    development.main(['reference', '--suite', str(suite), '--comparison', str(comparison),
+                      '--output', str(output), '--engine', str(executable)])
+    assert [move for move, _, _ in calls] == ['d2d4', 'e2e4']
+    for move, observed, _ in calls:
+        root = chess.Board(fen)
+        root.push_uci(move)
+        assert root.fen() == observed
+    assert calls[0][2] is not calls[1][2]
+    report = json.loads(output.read_bytes())
+    assert report['complete'] and report['new_analyses'] == 2
+    assert {r['cp'] for r in report['cases'][0]['references'].values()} == {-23}

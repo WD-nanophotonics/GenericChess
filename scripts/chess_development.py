@@ -76,7 +76,7 @@ class SharedDynamicInventory(DevelopmentInventory):
         return value
 
 
-def evaluator(policy, *, compiled=None, dynamic=False):
+def evaluator(policy, *, compiled=None, dynamic=False, provider=None):
     if policy not in POLICIES:
         raise ValueError(f'unsupported candidate: {policy}')
     weights = ({m: Fraction(1) for m in 'PNBRQ'} if policy == 'unit' else
@@ -84,7 +84,13 @@ def evaluator(policy, *, compiled=None, dynamic=False):
     if dynamic:
         if compiled is None:
             raise ValueError('compiled rules required for dynamic terms')
-        return SharedDynamicInventory(weights, compiled)
+        if dynamic is True or dynamic == "legacy":
+            return SharedDynamicInventory(weights, compiled)
+        if dynamic not in ("cached_legacy", "semantic", "semantic_bulk"):
+            raise ValueError("unsupported dynamic backend")
+        from scripts.chess_shared_dynamic import CachedSharedDynamic
+        return CachedSharedDynamic(DevelopmentInventory(weights), compiled,
+            provider=provider, semantic=dynamic in ("semantic", "semantic_bulk"), bulk=dynamic == "semantic_bulk")
     return DevelopmentInventory(weights)
 
 
@@ -108,7 +114,7 @@ def root_from_fen(fen, compiled):
 
 
 def search_move(state, compiled, policy, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, _history_witnesses=None, capture_risk=False):
-    evaluation = evaluator(policy, compiled=compiled, dynamic=dynamic)
+    evaluation = evaluator(policy, compiled=compiled, dynamic=dynamic, provider=provider)
     if capture_risk:
         from scripts.chess_capture_risk import SemanticHangingRisk
         evaluation = SemanticHangingRisk(evaluation, provider)
@@ -309,6 +315,8 @@ def main(argv=None):
     p.add_argument('--ordering', action='store_true', help='existing orderer with shared frozen capture prices')
     p.add_argument('--tt', action='store_true', help='fresh per-search production TT, same capacity65536 for all methods')
     p.add_argument('--dynamic', action='store_true', help='shared existing mobility/anchor terms; no coefficient fitting')
+    p.add_argument('--dynamic-backend', choices=('legacy', 'cached_legacy', 'semantic', 'semantic_bulk'), default='legacy',
+                   help='opt-in shared dynamic attack backend; semantic requires native, legacy remains default')
     p.add_argument('--pvs', action='store_true', help='existing principal variation search; explicit common search ablation')
     p.add_argument('--capture-risk', action='store_true', help='opt-in half-discount of semantically pseudo-attacked unprotected inventory; approximate, requires native')
     p.add_argument('--check-only', action='store_true', help='opt-in mandatory check evasions at otherwise static qdepth0 leaves')
@@ -323,6 +331,11 @@ def main(argv=None):
         p.error('finite positive search conditions required; <=60 sec/move, <=200 plies')
     if args.output.exists():
         p.error('output exists; preserve prior results and select another path')
+    if args.dynamic_backend != "legacy" and not args.dynamic:
+        p.error("dynamic-backend requires --dynamic")
+    if args.dynamic_backend in ("semantic", "semantic_bulk") and not args.native_legality:
+        p.error("semantic dynamics require --native-legality")
+    dynamic = args.dynamic_backend if args.dynamic else False
     if args.capture_risk and not args.native_legality:
         p.error('capture-risk requires --native-legality')
     if args.check_only and args.qdepth != 0:
@@ -352,7 +365,7 @@ def main(argv=None):
                       for path in ('scripts/chess_development.py', 'scripts/chess_approx_static_inventory.py',
                                    'scripts/chess_exact_contact_family.py', 'scripts/research_record.py',
                                    'generic_chess/ai/alphabeta/search.py', 'generic_chess/ai/alphabeta/quiescence.py',
-                                   'scripts/chess_capture_risk.py')},
+                                   'scripts/chess_capture_risk.py', 'scripts/chess_shared_dynamic.py')},
                   suite_source=suite.get('source'), scope=suite['scope'], limits=asdict(limits),
                   tuning=asdict(tuning), use_tt=args.tt, use_ordering=args.ordering,
                   ruleset_fingerprint=compiled.ruleset_fingerprint, cases=[], games=[])
@@ -362,6 +375,9 @@ def main(argv=None):
     report['ordering_weights'] = evaluator('unit').order_values if args.ordering else None
     report['evaluation_terms'] = ('material + shared existing mobility2/anchor5; residual x100; no promotion bonus'
                                   if args.dynamic else 'material only')
+    report['dynamic_backend'] = args.dynamic_backend if args.dynamic else None
+    if args.dynamic and args.dynamic_backend != 'legacy':
+        report['evaluation_terms'] = ('material + shared mobility2/anchor5; residual x100; no promotion bonus; '+args.dynamic_backend+' pseudo-attacks; empty escape approximation')
     report['capture_risk'] = dict(enabled=args.capture_risk, discount='1/2 fixed development hypothesis',
         scope='Semantic pseudo-attacks; pins/check/recapture/postconditions/off-target capture omissions; no legal-exchange or calibrated-risk claim')
     if args.capture_risk:
@@ -377,7 +393,7 @@ def main(argv=None):
         if args.mode == 'compare':
             for case in suite['cases']:
                 report['cases'].append(compare_case(case, compiled, limits, provider=provider,
-                                                   ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning, capture_risk=args.capture_risk))
+                                                   ordering=args.ordering, use_tt=args.tt, dynamic=dynamic, tuning=tuning, capture_risk=args.capture_risk))
                 report['summary'] = comparison_summary(report['cases'])
                 write_record(args.output, report)
                 print(case['id'], report['summary']['paired'], flush=True)
@@ -389,7 +405,7 @@ def main(argv=None):
                             report['active_game'] = dict(id=case['id'], **game)
                             write_record(args.output, report)
                         game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
-                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning, capture_risk=args.capture_risk)
+                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=dynamic, tuning=tuning, capture_risk=args.capture_risk)
                         report.pop('active_game', None)
                         report['games'].append(dict(id=case['id'], **game))
                         write_record(args.output, report)
@@ -413,7 +429,7 @@ def main(argv=None):
                             external = UciOpponent(engine, case['fen'], args.opponent_nodes)
                             game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
                                 provider=provider, ordering=args.ordering, use_tt=args.tt,
-                                dynamic=args.dynamic, external=external, tuning=tuning, capture_risk=args.capture_risk)
+                                dynamic=dynamic, external=external, tuning=tuning, capture_risk=args.capture_risk)
                             report.pop('active_game', None)
                             report['games'].append(dict(id=case['id'], **game))
                             write_record(args.output, report)
