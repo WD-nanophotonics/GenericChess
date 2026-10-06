@@ -1,0 +1,110 @@
+{
+  "scope": "Exact deferred-terminal producers and diagnostic drivers; inert evidence, not active policy",
+  "sources": {
+    "generic_chess/core/terminal.py": {
+      "sha256": "329f7a4c1944426eb16365ce58b2fb213721d1248c8f4bc2042dff8d546af279",
+      "bytes": 20436
+    },
+    "generic_chess/core/search_runtime.py": {
+      "sha256": "3240401a6042b054882fe7b1d8e9a9db58ba153693756946874fab0add0e43d4",
+      "bytes": 50455
+    },
+    "generic_chess/ai/alphabeta/search.py": {
+      "sha256": "bf9f262aa18fa108e556ec5215cbd81d776edbcce940d69b8a5ce3d67b234ec8",
+      "bytes": 47136
+    },
+    "generic_chess/ai/alphabeta/quiescence.py": {
+      "sha256": "311b6fcdb0e54a845393ae8a6ec56b57ff2e8fa67f2825a61912fc6ecdeb131f",
+      "bytes": 3075
+    },
+    "scripts/chess_development.py": {
+      "sha256": "3eb48caf5cf2255a8400e5f7b5fa47d98780059bf020adb42c568c1653028f7e",
+      "bytes": 31115
+    },
+    "scripts/chess_shared_dynamic.py": {
+      "sha256": "cddfdfd53ab995da3db4e3409c2682eee71978b389f00661e8306851025fb439",
+      "bytes": 6167
+    },
+    "scripts/research_record.py": {
+      "sha256": "2c7b55fb984e4b0119047da1873291fec3ce88e70eafc105ad7c95f2c1ab169c",
+      "bytes": 1853
+    },
+    "tests/test_runtime_terminal_check_cost.py": {
+      "sha256": "107afd54ccaf77c8dd9ea14fc9df70ded93fef562ae3b1ea17abff42c34ed721",
+      "bytes": 1986
+    },
+    ".local_agent/profile_qcapture_runtime.py": {
+      "sha256": "97ac62e61056f80688e105fe77964ece7d41eeb9b0e4d67b9f04b01679b70476",
+      "bytes": 2637
+    },
+    ".local_agent/runtime_cost_baseline.py": {
+      "sha256": "7e3301a163cb850a0ed3bc757283ac6abdbfe5c5287fcb1a2ff2bea94eabdc50",
+      "bytes": 1323
+    },
+    ".local_agent/replay_runtime_terminal_cost.py": {
+      "sha256": "bc98a7f6fd7d2f1c924e060e07bf2de15a3db2b4314631864658c1783a0b0bc6",
+      "bytes": 2194
+    },
+    ".local_agent/run_runtime_cost_development.py": {
+      "sha256": "ca6941f12969a9e271609ff56da9d130e2ef638a9aa195a814eb44d7e21e52a5",
+      "bytes": 5525
+    },
+    ".local_agent/analyze_runtime_cost.py": {
+      "sha256": "a355e69fe8368294581d4459c9abb73c49107629e808858f6c6a1dd1a8e20a31",
+      "bytes": 2099
+    },
+    ".local_agent/replay_runtime_cost_games.py": {
+      "sha256": "767f32a2786fa7b64c91e3c77710c38b4007f97f74bd135cc89d08e66c1f0e58",
+      "bytes": 1846
+    },
+    ".local_agent/diagnose_unit_q2_loss.py": {
+      "sha256": "999e502b5fcc0071841011ed654226511783548a63d17b6a33c7c6f95597429c",
+      "bytes": 2779
+    },
+    ".local_agent/unit_early_bishop_control.py": {
+      "sha256": "f5662175c3ea3dfac82c9f29c09f7921001c15368613bcfc52d7a92bf194b421",
+      "bytes": 3276
+    },
+    ".local_agent/shogi_practical_capture_drop.py": {
+      "sha256": "6909685a0e84faad6735905f3e760a2e9a86119f1cba603768e2748358e53d5c",
+      "bytes": 5171
+    },
+    ".local_agent/run_runtime_post_checks.py": {
+      "sha256": "56722bcf9c24e52d17c52b9cf179b97880d5a4089df5b1fa7828620bfc448a0a",
+      "bytes": 1102
+    },
+    ".local_agent/build_fairy_material.py": {
+      "sha256": "b05fb8c8942e284adee179173df82429c56dfb271762df607fff9657b6ee413b",
+      "bytes": 3830
+    },
+    ".local_agent/resume_fairy_material_build.py": {
+      "sha256": "34a0054e36260b4d4de129a3a93e9b4a7f2be815efc657e3e316b9668f4564e2",
+      "bytes": 2670
+    },
+    ".local_agent/probe_fairy_material.py": {
+      "sha256": "f19b79c781068d3e89d9b3d762f799d5fa60527ac825de68d97829921a3ababe",
+      "bytes": 4774
+    },
+    ".local_agent/probe_fairy_actual_bishop.py": {
+      "sha256": "8efedd2445e04ae0941198fe0e671b0217016806ac4dab8e676d8f9c4f71c495",
+      "bytes": 2947
+    },
+    ".local_agent/play_fairy_material.py": {
+      "sha256": "4a43e7753cde831448c641dbf02d1aff866746436a6171014140993fb5ae4a92",
+      "bytes": 3826
+    },
+    ".local_agent/replay_fairy_material_games.py": {
+      "sha256": "3a9962cfa863005dd4cecf2ca0a4c04c8bcc8f1d4f0c58355003827c2b7cb2c6",
+      "bytes": 1783
+    },
+    ".local_agent/acquire_fairy_source.py": {
+      "sha256": "33792e065ed4b1a985c456ebd05b59e2e0a75b0b9133b691216bbc6e6fd6a202",
+      "bytes": 729
+    },
+    ".local_agent/collect_runtime_cost.py": {
+      "sha256": "6ed3fd2725ea407f58bfa373429771affb1f758aab501ae880eb3ed81a5798fe",
+      "bytes": 4953
+    }
+  },
+  "archive_sha256": "4624646692d895c0cd53a9b8976251857cdd65fd1945021463844f4ea5175ea3"
+}

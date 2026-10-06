@@ -799,6 +799,35 @@ profile actual classification/state-update cost next, preserving semantic guards
 The unit Black61ply loss is an executable separate error diagnostic. Do not
 infer original examined leaves merely from saved PV endpoints.
 
+Runtime cost continuation defers only an unused terminal check query, retaining
+history gave_check and adjudication.1115 prior transitions retain exact terminal/
+state/history parity. The288-cell curve completes q0four-ply33→39 and q2three-ply
+32→42; all36shared four-ply outputs/nodes/pushes match, sharedq0 observed wall-9.2%.
+q2answer agreement12→11 retains its negative. Twelve new games give q0two wins/
+three losses/one unfinished, q2one/four/one; all983moves replay consistently.
+The old unit loss is already badly negative at ply9. New actual ply7 controls
+expose an ordinary Queen recapture beyond q0's returned horizon, affecting both
+unit and geometric, not just q2 machinery or a price table. Shogi's full-stock
+approximate held point runs: capture choices discriminate, drop placements retain
+large ties and one node-limited one-ply result. Do not expand its proof framework.
+
+Adopt the advisor/user's mature-search testbed direction. A pinned official
+Fairy-Stockfish standard-Chess pure-material Eval hook builds with existing Zig,
+without full GenericChess transplantation or installation. Normal SEE/ordering/
+pruning retain original values; fix internalPawn208/report100cp before outcomes,
+verified by six static one-Pawn controls.72equal0.25sec development choices have
+7/9/4 answer agreements across geometric/linear/unit, not price validation.
+At actual ply7 all three selectQb6 (finite-115cp versusBxa3-610). Six declared
+mature games give geometric/linear two wins each, unit one win/one unfinished;
+all515moves replay. One start/weak stochastic opponent and changed residuals/
+heuristics/budgets prevent Elo, independent-price or pure-search causation claims.
+Recording overhead5.335/90.293sec is measured, not a reason to build a protocol.
+101 current and38 historical-binding tests pass. Full raw scopes, failures,
+hashes and inert producers are in CHESS_DEVELOPMENT.md and
+data/chess_runtime_cost_results_20261006.json. Next consolidate the working
+mature material entry and broaden declared useful feedback; retain generic Core
+and optional q2, no price/default promotion, human fitting or holdout reads.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

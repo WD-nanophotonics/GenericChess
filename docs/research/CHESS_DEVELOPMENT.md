@@ -807,6 +807,187 @@ the interruption objection was adopted without turning remaining risks into
 a backlog or waiting for approval. The next practical question is classification/
 state-update cost; the actual unit Black q2 loss supplies a separate error check.
 
+## Runtime terminal cost continuation (2026-10-06)
+
+The next memo Main profiles the fixed actual root20 at equal2ply/32768nodes/
+30seconds. Both complete: q0 observed profiled wall0.306sec/157 runtime pushes;
+capture-q2 2.552sec/1865pushes. q2 classification cumulative1.499sec, terminal
+1.156sec and attack queries1.424sec overlap; do not sum them or treat profiled
+times as operational performance. Source inspection locates a redundant query:
+`terminal_from_search_runtime` asks in_check after discovering a legal action,
+but only uses that answer when no action exists. Move this query inside the
+no-action branch. Keep terminal precedence, legal-action existence, repetition,
+history gave_check, automatic adjudication and all history/identity guards.
+No evaluation, q law, native API, budget, prices or search defaults change.
+
+69 relevant tests pass, including all four legal-existence/check combinations,
+actual checking-child history, runtime path contracts, q value parity and aborts.
+Two test-only mistakes (import location and per-instance mock of a freshly made
+engine) were corrected; no experiment record was overwritten to hide a failure.
+All1115 prior played transitions match exact baseline terminal status, immutable
+position/ply, preserved check-history and final state with zero discrepancies.
+
+Predeclare the resource curve before results: all24 cases/three prices/q0 and
+capture-q2/baseline and deferred terminal,288 cells at4ply/32768nodes/five seconds;
+cached legacy/PVS/common root and q ordering/TT fixed. Alternate version order by
+case/model/q. Exact archived baseline function body is loaded inertly and its
+result/enum aliases share canonical identities, necessary for runtime `is` tests;
+the old decision code is unchanged. One sequential local job, at most24minutes
+search, interruptible, all partials retained. Timing comparisons require matching
+complete work; same-budget completion counts are a separate practical measure.
+
+Then run twelve newly declared deferred-terminal playing cells: three prices,
+both colors and q0/q2, initial position,120ply ceiling, same weak1320-setting
+Stockfish17.1/50000nodes/one-second fuse/Threads1/Hash16. Per local move fixed
+4ply/32768nodes/five seconds, at most60minutes local compute. Old stochastic games
+are contextual observations, not paired causal measurements. No adverse-result
+extension, human-price/holdout read, extra worker or default promotion.
+
+The prior unit Black capture-q2 loss is separately diagnosed at prospectively
+chosen actual plies9/17/25/33/41/49/53/55/57/59, fresh50000-node roots and selected/
+best children under full actual history. This is finite standard-Chess evidence,
+not certified regret. It can identify an error worth testing without a new proof
+framework. A distinct Shogi control uses existing full13-board-mode affine
+inventory and an explicit held point h(base)=one-half normalized board(base),
+shared across leaves. Two new synthetic full-stock roots permit unequal capture
+and R/B drop choices; neither is claimed reachable/heldout. Four equal2ply/2048node/
+10second calls plus one-ply tie diagnostics are practical feasibility, not a
+certified held law, exact WDL or generic strength. No data-driven price selection.
+
+The full resource curve retains all288 searches. q0 completes4ply33→39/72;
+capture-q2 completes4ply3→3,3ply32→42 and retains2ply37→27. On all36 shared
+complete4ply pairs, move/score/main nodes/qnodes/runtime pushes are identical.
+q0 shared work takes111.558→101.284seconds (about9.2% lower observed wall);
+q2's three small complete pairs2.947→2.734seconds. These are a single sequential
+development observation, not a repeated statistical speed guarantee. Fixed
+q2 wall remains essentially347seconds because69/72 calls hit the time limit;
+extra exploration raises main+qnodes384277→448635. Answer agreement12→11/72
+retains an adverse outcome: faster equivalent mechanics need not make every
+budget-dependent choice better. q0 remains8/72 answer agreement. No price or
+qsearch default promotion. Operational timings exclude later compilation.
+
+All twelve playing records finish in2239.940seconds,983 moves; q0 has two local
+wins/three losses/one unfinished, q2 one/four/one. Neither unfinished120ply cell
+is called a draw. q0 local turns complete4ply105 and retain3ply114; q2 completes
+4ply29, retains3ply155/2ply88. All357 interrupted searches are time limits.
+All983 moves pass author/Core full legal sets, board/rights/rawEP and exact final
+state/history. Old stochastic results are contextual, not paired counterfactuals.
+The single source cost repair is useful without treating these mixed results as
+causal strength evidence.69 earlier plus32 additional relevant tests pass.
+
+All ten preselected earlier-loss references finish with full actual history.
+At ply9 the selected child already has finite Black-664cp versus alternative
+-601; at17 -958 versus-945,25 -841 versus-798,33 -860 versus-873,41 identical
+-845,49 -1184 versus-1100. The last four points retain mate-valued references,
+not arbitrary converted cp. Do not blame a late Rook/Queen loss for an already
+bad position or assume the root's finite best stays best after independent
+child analysis. These references are descriptive50000node proxies.
+
+A newly observed earlier premise is tested separately without changing those
+ten points: actual7Bxa3/8bxa3 trades Bishop for Pawn. Four same-resource full-history
+controls yield unitq0 Bxa3 at3ply, unitq2 Bd6 at3ply, geometricq0 Bxa3 at3ply and
+geometricq2 Ke7 retaining2ply. Finite children Bxa3/Bd6/Ke7/Qb6 are-610/-209/-228/
+-115cp for Black. Thus this failure is not simply unit prices or q2 machinery.
+The q0 returned PVs end in Qxc3 before a legal ordinary Queen recapture; absence
+from PV still does not prove search never examined it. This concrete horizon
+problem motivates the mature actual-history control rather than price fitting.
+
+Both synthetic full-stock Shogi capture calls complete2ply in0.387/0.343sec:
+geometric selects Re5xh5 (Rook capture), unit Re5xe6 (Pawn capture with check).
+One-ply maxima have one/two ties respectively. For the drop root, geometric
+retains1ply at node limit in1.485sec, choosingR@a2; unit completes2ply in1.525sec,
+choosingR@e7. One-ply43/86-way ties expose weak placement discrimination, not a
+proof of hand prices or generic ability. All chosen children retain public/runtime
+position/terminal parity and conserved base inventory. The declared half-board
+held coefficient remains an approximation, not a certified deployment law.
+
+### Mature search testbed decision
+
+A new advisor supplement and user question prioritize a mature material testbed.
+Adopt this useful direction, not every theory branch. Official pinned
+[Fairy-Stockfish source](https://github.com/fairy-stockfish/Fairy-Stockfish/tree/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src)
+supports a small standard-Chess pure-material `Eval::evaluate` hook and inherited
+variant piece-value configuration. This does not establish arbitrary GenericChess
+rule transplantation. YaneuraOu's official MATERIAL_LEVEL1 is a real alternate
+pure-material mode; Chess first reuses this existing suite and UCI/replay entry.
+
+Direct source inspection corrects an initial local inference: normal Chess SEE
+in position.cpp2502/2506/2607 and capture ordering movepick.cpp136/152 retain
+`PieceValue`; variant overrides create `EvalPieceValue`/`CapturePieceValue`, the
+latter used by atomic/blast exchange paths. Fixed pruning/nonPawnMaterial and
+old ordinary SEE remain common across the first three leaf candidates. Results
+will concern material leaves inside this fixed mature search, not an entirely
+price-neutral search or evidence that these mismatches are optimal.
+
+The complete19-post thread includes a new verified shared-account response with
+the matching request/FOLLOWUP_ID. Explicitly review/adopt its one concrete issue:
+internal Pawn=100 is not UCI100cp. Pinned types.h has PawnMg126/PawnEg208, and
+uci.cpp divides internal score by208 for centipawns. Adopt internal208 per Pawn
+before any mature outcome; static one-Pawn difference in both side orientations
+must show1.00Pawn=100cp. This is a gauge convention, not data fitting or proof
+of ideal pruning thresholds. Earlier100/126 drafts are superseded pre-execution.
+No advisor reproduced local tests/games; the separate bot's broader direction
+is independently source-checked, without changing identity configuration.
+
+The optional sequential build uses existing Zig0.16, pinned official source with
+local GPL/AUTHORS and patch, no installation/new worker. Build/static controls
+precede a tiny same0.25sec/Threads1/Hash16 exposed24case×3model feasibility probe.
+Keep raw failures and all candidates; no compile during the operational batch.
+
+The build is now runnable. First compilation fails on upstream __DATE__ under
+Zig's reproducibility warning; fix the banner to the source-commit date before
+resuming. One local resume accidentally omitted the cache environment and failed
+against an unwritable default cache; restore project-local cache arguments, with
+both failures retained. Successful remaining compile/link takes36.116sec, no
+system settings/install or source/search change beyond the experimental leaf.
+Run upstream shallow Chess bench and official/custom configuration checks; all
+return0. Official broad config diagnostics retain unsupported8x8-build entries,
+so this is not all-variant qualification. All six static controls show1.00Pawn
+from White's perspective for either actor. The three internal tables are:
+
+| Candidate | Pawn | Knight | Bishop | Rook | Queen |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| geometric_half | 208 | 605 | 549 | 1071 | 1194 |
+| linear_mixture | 208 | 483 | 394 | 767 | 855 |
+| unit | 208 | 208 | 208 | 208 | 208 |
+
+All72 equal0.25sec exposed-suite calls produce legal choices. Answer agreements
+are7/24 geometric,9/24 linear,4/24 unit; not proven-error rates, training or price
+promotion. Reported nodes total17.728/17.378/18.950million; reported depths include
+one245 maximum-depth mate case per model, not245 fully examined plies. Engine
+depth/node definitions and selective pruning are not cross-engine equivalents.
+
+At the exact actual ply7 history, all three mature models chooseQb6 at reported
+28/29depth in0.258–0.261sec. Its exactly matched finite root-child proxy is-115cp,
+versus the earlierBxa3-610. This supports runnable feedback and this one improved
+selection, not a theorem of price advantage or isolated search cause; old SEE
+still contains original values and the own-engine residual is different. Six
+prospectively declared standard-start playing cells now use the existing UCI/
+Core transport,120ply ceiling,0.25sec local, same weak opponent condition. Count
+recording time/written bytes separately; no adversarial-result extension.
+
+All six cells finish records in90.293sec: geometric/linear each two local wins,
+unit one win/one120ply unfinished, zero local losses. All515 moves replay through
+author/Core full legal sets, board/rights/rawEP and exact final state/history
+without discrepancies. These are one weak stochastic opponent and one start,
+not amateur Elo, independent price ranking or an isolated search effect. Own
+and mature players differ in residuals/heuristics/budgets; their node/depth counts
+cannot be equated. The practical next priority is to reuse this working material
+testbed and obtain broader declared feedback, while keeping GenericChess Core
+as its separate rule/legality foundation.
+
+Per-action persistence is measured rather than assumed free:527 writes serialize
+163714268bytes and take5.335sec (final summary write excluded), about5.9% of
+the observed game-chain wall. Current recording overhead does not justify a new
+protocol. Preserve complete records and revisit only if a concrete larger use
+makes it dominant.101 current-relevant and38 historical-binding tests pass;
+six independent C++ static controls and upstream smoke are separate observations.
+`data/chess_runtime_cost_results_20261006.json` contains nine own-runtime reports
+plus nine mature acquisition/build/probe/play/replay records. Raw local profile/
+compiler path labels are normalized explicitly in portable bodies; original raw
+hashes remain bound. Exact producers/drivers and material patch/config are inertly
+archived; original baseline records and failed builds remain unchanged.
+
 ## Reuse
 
 The supported deeper material comparison (choose a new output path):

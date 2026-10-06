@@ -450,11 +450,13 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
         has_legal = engine.has_legal_action(position, checkpoint=checkpoint)
     else:
         has_legal = has_legal_action(position, compiled)
-    if engine is not None:
-        checked = engine.in_check(position, position.side_to_move, checkpoint=checkpoint)
-    else:
-        checked = is_in_check(position, position.side_to_move, compiled)
     if not has_legal:
+        # Check only distinguishes mate from stalemate when no action exists.
+        # Runtime history independently retains each transition's gave_check.
+        if engine is not None:
+            checked = engine.in_check(position, position.side_to_move, checkpoint=checkpoint)
+        else:
+            checked = is_in_check(position, position.side_to_move, compiled)
         if checked:
             return TerminalResult(TerminalStatus.CHECKMATE, 1 - position.side_to_move)
         support = getattr(compiled, "support", None)
