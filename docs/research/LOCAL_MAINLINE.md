@@ -608,6 +608,51 @@ trial admission needs that goal contract and actual information increment,
 not a larger old budget. GOAL_PROXY_PRIMARY_REVIEW_20261006.md records five
 primary-source assumptions; no imported/trained prices or human holdout reads.
 
+Fresh source-adjudicated first-quiet admission now succeeds:29 transitions,
+27 leaves including two actual automatic material draws absent from SESSION.
+Class-preserving comparisons retain mixed utility incomparability. A naive
+816/512 pair audit fails and stays closed; lossless feature compression uses
+80 pairs, whose all-tie weak relations are only subset tautologies, not
+pricing gain (CHESS_ADJUDICATED_EXCHANGE_RESULTS.md,
+TYPED_EXCHANGE_COMPRESSION_RESULTS.md).
+
+PARTIAL_CONTACT_PRIOR_RESULTS.md qualifies a cheap exact constructor without
+full H distances. Shared-duration H>C+E is universal under the stated uniform
+population; H/S remains open. Fresh-process startup is46.83-62.63ms, separate
+from hot arithmetic (PARTIAL_CONTACT_COLD_RESULTS.md). Chess B/N reverses
+between duration2 and3; exact common-duration coefficient hull has rank4,
+not the line spanned by two laws (CHESS_DURATION_DECISION_RESULTS.md,
+DURATION_COEFFICIENT_HULL_RESULTS.md). H target-entry analysis closes the
+352 corner-target obstruction class only; cumulative analytic budget4960/5000,
+full complement connectivity still unproved (HORSE_TARGET_ENTRY_RESULTS.md).
+
+Actual depth1 approximate material search preserves full initial rights/EP;
+its all-quiet initial ties are integration controls, not performance. One
+prospectively selected external Lichess daily reference preserves52-ply
+history and all32 children within84 events by public complete-child reuse.
+All frozen contact/unit choices miss its quiet advertised move. Every
+positive-Pawn linear material-only depth1 operator must also miss:30 quiet
+actions share unchanged features, two captures add one Pawn. This is a
+feature/horizon obstruction, not relative coefficient inferiority or WDL
+proof. No exposed-item tuning/deepening; source EP serialization failure is
+preserved (LICHESS_DAILY_REFERENCE_RESULTS.md,SHALLOW_REFERENCE_FEATURE_RESULTS.md).
+
+Fresh richer-controller admission finds both current noisy classifiers omit
+nonchecking en-passant e5xd6 on complete native initial history. All31 source
+children and65 combined public/runtime events qualify. Research-only removal
+adapter includes it; production is NOT fixed or qsearch-admitted. Native
+board-count criterion is not a generic semantic theorem. Versioned capture
+events and actual qsearch path require qualification before a fresh trial
+(CHESS_QSEARCH_EP_RESULTS.md). Actual direct qsearch on a different synthetic
+control confirms score0 versus17417 with complete-child capture classification.
+Two cheap global hints fail before states; structural50-term review identifies
+inactive drop catalog patterns. Versioned empty-hand board-only hint then
+qualifies actual mirror qsearch without changing production. Direct qsearch
+has no root reserve; depth1 production root still suppresses ordinary qsearch
+in its first iteration. Richer ROOT controller admission remains OPEN
+(CHESS_QSEARCH_EP_SCORE_RESULTS.md,CHESS_CAPTURE_EFFECT_V3_RESULTS.md).
+No closed trial budget was enlarged.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

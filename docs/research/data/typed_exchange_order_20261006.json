@@ -1,0 +1,121 @@
+{
+  "complete": false,
+  "comparisons": {
+    "geometric_half/unit/canonical": {
+      "forward": {
+        "weak_order_proved": false,
+        "strict_improvement_proved": false,
+        "witnesses": {
+          "sem_01_k_capture:g7:e4-e3/sem_05_b_capture:g3:d3-f5": "sem_01_k_capture:g4:e4-d3/sem_03_n_capture:g18:e3-f5"
+        },
+        "unmatched": [
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g6:a8-b7",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g8:a8-a7",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g0:d3-b1",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g0:d3-c2",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g1:d3-e2",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g1:d3-f1",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-a6",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-b5",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-c4",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g3:d3-e4"
+        ],
+        "endpoint_pair_checks": 132,
+        "candidate_paths_subset_of_baseline": false
+      },
+      "reverse": {
+        "weak_order_proved": false,
+        "strict_improvement_proved": false,
+        "witnesses": {
+          "sem_01_k_capture:g4:e4-d3/sem_03_n_capture:g18:e3-f5": "sem_01_k_capture:g7:e4-e3/sem_05_b_capture:g3:d3-f5"
+        },
+        "unmatched": [
+          "sem_01_k_capture:g4:e4-d3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g4:e4-d3/sem_00_k_quiet:g6:a8-b7",
+          "sem_01_k_capture:g4:e4-d3/sem_00_k_quiet:g8:a8-a7",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g12:e3-d1",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g13:e3-c2",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g14:e3-f1",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g15:e3-g2",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g16:e3-d5",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g17:e3-c4",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g19:e3-g4"
+        ],
+        "endpoint_pair_checks": 132,
+        "candidate_paths_subset_of_baseline": false
+      },
+      "weak_result_explained_by_tie_policy_subset": false
+    },
+    "geometric_half/unit/all_ties": {
+      "forward": {
+        "weak_order_proved": true,
+        "strict_improvement_proved": false,
+        "witnesses": {
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g6:a8-b7": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g8:a8-a7": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g0:d3-c2": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g0:d3-b1": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g1:d3-e2": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g1:d3-f1": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-c4": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-b5": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-a6": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g3:d3-e4": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_05_b_capture:g3:d3-f5": "sem_01_k_capture:g4:e4-d3/sem_03_n_capture:g18:e3-f5"
+        },
+        "unmatched": [],
+        "endpoint_pair_checks": 276,
+        "candidate_paths_subset_of_baseline": true
+      },
+      "reverse": {
+        "weak_order_proved": false,
+        "strict_improvement_proved": false,
+        "witnesses": {
+          "sem_01_k_capture:g4:e4-d3/sem_03_n_capture:g18:e3-f5": "sem_01_k_capture:g7:e4-e3/sem_05_b_capture:g3:d3-f5",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g6:a8-b7": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g8:a8-a7": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g0:d3-c2": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g0:d3-b1": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g1:d3-e2": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g1:d3-f1": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-c4": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-b5": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g2:d3-a6": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_04_b_quiet:g3:d3-e4": "sem_01_k_capture:g7:e4-e3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g7:e4-e3/sem_05_b_capture:g3:d3-f5": "sem_01_k_capture:g7:e4-e3/sem_05_b_capture:g3:d3-f5"
+        },
+        "unmatched": [
+          "sem_01_k_capture:g4:e4-d3/sem_00_k_quiet:g5:a8-b8",
+          "sem_01_k_capture:g4:e4-d3/sem_00_k_quiet:g6:a8-b7",
+          "sem_01_k_capture:g4:e4-d3/sem_00_k_quiet:g8:a8-a7",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g12:e3-d1",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g13:e3-c2",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g14:e3-f1",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g15:e3-g2",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g16:e3-d5",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g17:e3-c4",
+          "sem_01_k_capture:g4:e4-d3/sem_02_n_quiet:g19:e3-g4"
+        ],
+        "endpoint_pair_checks": 276,
+        "candidate_paths_subset_of_baseline": false
+      },
+      "weak_result_explained_by_tie_policy_subset": true
+    }
+  },
+  "endpoint_pair_checks": 816,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_typed_exchange_order.py": "69a4e4bcec84a044b0854e17166af6ed91c4c7785435c81de02a0aec6a48aa33",
+    "scripts/typed_exchange_order.py": "1085270aff5e09f2c2f6872ee3518c830f5532ac3198d391536ca0ccdc288ff0",
+    "docs/research/TYPED_EXCHANGE_ORDER_PROTOCOL.md": "21a6f541d81426f19f906007ae53a9951f775f244255570016cee8f2c4438bc8",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "docs/research/data/chess_adjudicated_exchange_20261006.json": "840622f87f4dda8e06ce1348f5635d4102b15ef5d3b9ebecfbcbc06d9fa7f7c6"
+  },
+  "error": "ValueError: comparison budget exceeded",
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

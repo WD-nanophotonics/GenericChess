@@ -1,0 +1,6946 @@
+{
+  "complete": true,
+  "compilations": 1,
+  "public_transitions": 20,
+  "runtime_pushes": 58,
+  "runtime_pops": 58,
+  "returned_actions": 1444,
+  "author_pushes": 20,
+  "author_legal_entries": 20,
+  "source_queries": 0,
+  "searches": [
+    {
+      "scope": "small_exposed",
+      "law": "geometric_half",
+      "complete": true,
+      "reference_score": 43761,
+      "reference_ties": [
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "child_scores": {
+        "sem_00_k_quiet:g10:e4-f4": -6925,
+        "sem_00_k_quiet:g5:e4-d4": -6925,
+        "sem_00_k_quiet:g8:e4-e5": -6925,
+        "sem_00_k_quiet:g9:e4-f3": -6925,
+        "sem_01_k_capture:g4:e4-d3": 39031,
+        "sem_01_k_capture:g7:e4-e3": 43761
+      },
+      "integer_weights": {
+        "P": 17417,
+        "N": 50686,
+        "B": 45956,
+        "R": 89717,
+        "Q": 100000
+      },
+      "visited": [
+        "sem_00_k_quiet:g10:e4-f4",
+        "sem_00_k_quiet:g5:e4-d4",
+        "sem_00_k_quiet:g8:e4-e5",
+        "sem_00_k_quiet:g9:e4-f3",
+        "sem_01_k_capture:g4:e4-d3",
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "selected": "sem_01_k_capture:g7:e4-e3",
+      "score": 43761,
+      "pv": [
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 7,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 0,
+        "completed_depth": 1,
+        "selective_depth": 1,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.0,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 1,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 6,
+        "successor_handles_created": 6,
+        "successors_materialized": 6,
+        "successors_searched": 6,
+        "terminal_results_computed": 6,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 6,
+        "position_key_cache_hits": 6,
+        "runtime_pushes": 6,
+        "runtime_pops": 6,
+        "runtime_hash_updates": 6,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 6,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 6,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 12,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 0,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 6,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 6,
+        "runtime_snapshot_entry_digest_calls": 6,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 1,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 6
+    },
+    {
+      "scope": "small_exposed",
+      "law": "linear_mixture",
+      "complete": true,
+      "reference_score": 43717,
+      "reference_ties": [
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "child_scores": {
+        "sem_00_k_quiet:g10:e4-f4": -12823,
+        "sem_00_k_quiet:g5:e4-d4": -12823,
+        "sem_00_k_quiet:g8:e4-e5": -12823,
+        "sem_00_k_quiet:g9:e4-f3": -12823,
+        "sem_01_k_capture:g4:e4-d3": 33223,
+        "sem_01_k_capture:g7:e4-e3": 43717
+      },
+      "integer_weights": {
+        "P": 24329,
+        "N": 56540,
+        "B": 46046,
+        "R": 89763,
+        "Q": 100000
+      },
+      "visited": [
+        "sem_00_k_quiet:g10:e4-f4",
+        "sem_00_k_quiet:g5:e4-d4",
+        "sem_00_k_quiet:g8:e4-e5",
+        "sem_00_k_quiet:g9:e4-f3",
+        "sem_01_k_capture:g4:e4-d3",
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "selected": "sem_01_k_capture:g7:e4-e3",
+      "score": 43717,
+      "pv": [
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 7,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 0,
+        "completed_depth": 1,
+        "selective_depth": 1,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.0,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 1,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 6,
+        "successor_handles_created": 6,
+        "successors_materialized": 6,
+        "successors_searched": 6,
+        "terminal_results_computed": 6,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 6,
+        "position_key_cache_hits": 6,
+        "runtime_pushes": 6,
+        "runtime_pops": 6,
+        "runtime_hash_updates": 6,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 6,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 6,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 12,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 0,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 6,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 6,
+        "runtime_snapshot_entry_digest_calls": 6,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 1,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 6
+    },
+    {
+      "scope": "small_exposed",
+      "law": "unit",
+      "complete": true,
+      "reference_score": 0,
+      "reference_ties": [
+        "sem_01_k_capture:g4:e4-d3",
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "child_scores": {
+        "sem_00_k_quiet:g10:e4-f4": -100000,
+        "sem_00_k_quiet:g5:e4-d4": -100000,
+        "sem_00_k_quiet:g8:e4-e5": -100000,
+        "sem_00_k_quiet:g9:e4-f3": -100000,
+        "sem_01_k_capture:g4:e4-d3": 0,
+        "sem_01_k_capture:g7:e4-e3": 0
+      },
+      "integer_weights": {
+        "P": 100000,
+        "N": 100000,
+        "B": 100000,
+        "R": 100000,
+        "Q": 100000
+      },
+      "visited": [
+        "sem_00_k_quiet:g10:e4-f4",
+        "sem_00_k_quiet:g5:e4-d4",
+        "sem_00_k_quiet:g8:e4-e5",
+        "sem_00_k_quiet:g9:e4-f3",
+        "sem_01_k_capture:g4:e4-d3",
+        "sem_01_k_capture:g7:e4-e3"
+      ],
+      "selected": "sem_01_k_capture:g4:e4-d3",
+      "score": 0,
+      "pv": [
+        "sem_01_k_capture:g4:e4-d3"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 7,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 0,
+        "completed_depth": 1,
+        "selective_depth": 1,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.01600000006146729,
+        "time_to_first_completed_iteration": 0.01600000006146729,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 1,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 6,
+        "successor_handles_created": 6,
+        "successors_materialized": 6,
+        "successors_searched": 6,
+        "terminal_results_computed": 6,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 6,
+        "position_key_cache_hits": 6,
+        "runtime_pushes": 6,
+        "runtime_pops": 6,
+        "runtime_hash_updates": 6,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 6,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 6,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 12,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 0,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 6,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 6,
+        "runtime_snapshot_entry_digest_calls": 6,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 1,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 6
+    },
+    {
+      "scope": "initial_full_rights",
+      "law": "geometric_half",
+      "complete": true,
+      "reference_score": 0,
+      "reference_ties": [
+        "sem_02_n_quiet:g12:b1-c3",
+        "sem_02_n_quiet:g12:g1-h3",
+        "sem_02_n_quiet:g14:b1-a3",
+        "sem_02_n_quiet:g14:g1-f3",
+        "sem_10_pawn_one_step:g33:a2-a3",
+        "sem_10_pawn_one_step:g33:b2-b3",
+        "sem_10_pawn_one_step:g33:c2-c3",
+        "sem_10_pawn_one_step:g33:d2-d3",
+        "sem_10_pawn_one_step:g33:e2-e3",
+        "sem_10_pawn_one_step:g33:f2-f3",
+        "sem_10_pawn_one_step:g33:g2-g3",
+        "sem_10_pawn_one_step:g33:h2-h3",
+        "sem_11_pawn_double_step:g34:a2-a4",
+        "sem_11_pawn_double_step:g34:b2-b4",
+        "sem_11_pawn_double_step:g34:c2-c4",
+        "sem_11_pawn_double_step:g34:d2-d4",
+        "sem_11_pawn_double_step:g34:e2-e4",
+        "sem_11_pawn_double_step:g34:f2-f4",
+        "sem_11_pawn_double_step:g34:g2-g4",
+        "sem_11_pawn_double_step:g34:h2-h4"
+      ],
+      "child_scores": {
+        "sem_02_n_quiet:g12:b1-c3": 0,
+        "sem_02_n_quiet:g14:b1-a3": 0,
+        "sem_02_n_quiet:g12:g1-h3": 0,
+        "sem_02_n_quiet:g14:g1-f3": 0,
+        "sem_10_pawn_one_step:g33:a2-a3": 0,
+        "sem_10_pawn_one_step:g33:b2-b3": 0,
+        "sem_10_pawn_one_step:g33:c2-c3": 0,
+        "sem_10_pawn_one_step:g33:d2-d3": 0,
+        "sem_10_pawn_one_step:g33:e2-e3": 0,
+        "sem_10_pawn_one_step:g33:f2-f3": 0,
+        "sem_10_pawn_one_step:g33:g2-g3": 0,
+        "sem_10_pawn_one_step:g33:h2-h3": 0,
+        "sem_11_pawn_double_step:g34:a2-a4": 0,
+        "sem_11_pawn_double_step:g34:b2-b4": 0,
+        "sem_11_pawn_double_step:g34:c2-c4": 0,
+        "sem_11_pawn_double_step:g34:d2-d4": 0,
+        "sem_11_pawn_double_step:g34:e2-e4": 0,
+        "sem_11_pawn_double_step:g34:f2-f4": 0,
+        "sem_11_pawn_double_step:g34:g2-g4": 0,
+        "sem_11_pawn_double_step:g34:h2-h4": 0
+      },
+      "integer_weights": {
+        "P": 17417,
+        "N": 50686,
+        "B": 45956,
+        "R": 89717,
+        "Q": 100000
+      },
+      "visited": [
+        "sem_02_n_quiet:g12:b1-c3",
+        "sem_02_n_quiet:g12:g1-h3",
+        "sem_02_n_quiet:g14:b1-a3",
+        "sem_02_n_quiet:g14:g1-f3",
+        "sem_10_pawn_one_step:g33:a2-a3",
+        "sem_10_pawn_one_step:g33:b2-b3",
+        "sem_10_pawn_one_step:g33:c2-c3",
+        "sem_10_pawn_one_step:g33:d2-d3",
+        "sem_10_pawn_one_step:g33:e2-e3",
+        "sem_10_pawn_one_step:g33:f2-f3",
+        "sem_10_pawn_one_step:g33:g2-g3",
+        "sem_10_pawn_one_step:g33:h2-h3",
+        "sem_11_pawn_double_step:g34:a2-a4",
+        "sem_11_pawn_double_step:g34:b2-b4",
+        "sem_11_pawn_double_step:g34:c2-c4",
+        "sem_11_pawn_double_step:g34:d2-d4",
+        "sem_11_pawn_double_step:g34:e2-e4",
+        "sem_11_pawn_double_step:g34:f2-f4",
+        "sem_11_pawn_double_step:g34:g2-g4",
+        "sem_11_pawn_double_step:g34:h2-h4"
+      ],
+      "selected": "sem_02_n_quiet:g12:b1-c3",
+      "score": 0,
+      "pv": [
+        "sem_02_n_quiet:g12:b1-c3"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 21,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 0,
+        "completed_depth": 1,
+        "selective_depth": 1,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.01500000013038516,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 1,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 20,
+        "successor_handles_created": 20,
+        "successors_materialized": 20,
+        "successors_searched": 20,
+        "terminal_results_computed": 20,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 20,
+        "position_key_cache_hits": 20,
+        "runtime_pushes": 20,
+        "runtime_pops": 20,
+        "runtime_hash_updates": 20,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 20,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 20,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 40,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 1,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 20,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 20,
+        "runtime_snapshot_entry_digest_calls": 20,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 1,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 20
+    },
+    {
+      "scope": "initial_full_rights",
+      "law": "unit",
+      "complete": true,
+      "reference_score": 0,
+      "reference_ties": [
+        "sem_02_n_quiet:g12:b1-c3",
+        "sem_02_n_quiet:g12:g1-h3",
+        "sem_02_n_quiet:g14:b1-a3",
+        "sem_02_n_quiet:g14:g1-f3",
+        "sem_10_pawn_one_step:g33:a2-a3",
+        "sem_10_pawn_one_step:g33:b2-b3",
+        "sem_10_pawn_one_step:g33:c2-c3",
+        "sem_10_pawn_one_step:g33:d2-d3",
+        "sem_10_pawn_one_step:g33:e2-e3",
+        "sem_10_pawn_one_step:g33:f2-f3",
+        "sem_10_pawn_one_step:g33:g2-g3",
+        "sem_10_pawn_one_step:g33:h2-h3",
+        "sem_11_pawn_double_step:g34:a2-a4",
+        "sem_11_pawn_double_step:g34:b2-b4",
+        "sem_11_pawn_double_step:g34:c2-c4",
+        "sem_11_pawn_double_step:g34:d2-d4",
+        "sem_11_pawn_double_step:g34:e2-e4",
+        "sem_11_pawn_double_step:g34:f2-f4",
+        "sem_11_pawn_double_step:g34:g2-g4",
+        "sem_11_pawn_double_step:g34:h2-h4"
+      ],
+      "child_scores": {
+        "sem_02_n_quiet:g12:b1-c3": 0,
+        "sem_02_n_quiet:g14:b1-a3": 0,
+        "sem_02_n_quiet:g12:g1-h3": 0,
+        "sem_02_n_quiet:g14:g1-f3": 0,
+        "sem_10_pawn_one_step:g33:a2-a3": 0,
+        "sem_10_pawn_one_step:g33:b2-b3": 0,
+        "sem_10_pawn_one_step:g33:c2-c3": 0,
+        "sem_10_pawn_one_step:g33:d2-d3": 0,
+        "sem_10_pawn_one_step:g33:e2-e3": 0,
+        "sem_10_pawn_one_step:g33:f2-f3": 0,
+        "sem_10_pawn_one_step:g33:g2-g3": 0,
+        "sem_10_pawn_one_step:g33:h2-h3": 0,
+        "sem_11_pawn_double_step:g34:a2-a4": 0,
+        "sem_11_pawn_double_step:g34:b2-b4": 0,
+        "sem_11_pawn_double_step:g34:c2-c4": 0,
+        "sem_11_pawn_double_step:g34:d2-d4": 0,
+        "sem_11_pawn_double_step:g34:e2-e4": 0,
+        "sem_11_pawn_double_step:g34:f2-f4": 0,
+        "sem_11_pawn_double_step:g34:g2-g4": 0,
+        "sem_11_pawn_double_step:g34:h2-h4": 0
+      },
+      "integer_weights": {
+        "P": 100000,
+        "N": 100000,
+        "B": 100000,
+        "R": 100000,
+        "Q": 100000
+      },
+      "visited": [
+        "sem_02_n_quiet:g12:b1-c3",
+        "sem_02_n_quiet:g12:g1-h3",
+        "sem_02_n_quiet:g14:b1-a3",
+        "sem_02_n_quiet:g14:g1-f3",
+        "sem_10_pawn_one_step:g33:a2-a3",
+        "sem_10_pawn_one_step:g33:b2-b3",
+        "sem_10_pawn_one_step:g33:c2-c3",
+        "sem_10_pawn_one_step:g33:d2-d3",
+        "sem_10_pawn_one_step:g33:e2-e3",
+        "sem_10_pawn_one_step:g33:f2-f3",
+        "sem_10_pawn_one_step:g33:g2-g3",
+        "sem_10_pawn_one_step:g33:h2-h3",
+        "sem_11_pawn_double_step:g34:a2-a4",
+        "sem_11_pawn_double_step:g34:b2-b4",
+        "sem_11_pawn_double_step:g34:c2-c4",
+        "sem_11_pawn_double_step:g34:d2-d4",
+        "sem_11_pawn_double_step:g34:e2-e4",
+        "sem_11_pawn_double_step:g34:f2-f4",
+        "sem_11_pawn_double_step:g34:g2-g4",
+        "sem_11_pawn_double_step:g34:h2-h4"
+      ],
+      "selected": "sem_02_n_quiet:g12:b1-c3",
+      "score": 0,
+      "pv": [
+        "sem_02_n_quiet:g12:b1-c3"
+      ],
+      "reason": "completed_depth",
+      "statistics": {
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "root_declaration": null,
+        "nodes": 21,
+        "qnodes": 0,
+        "tt_probes": 0,
+        "tt_hits": 0,
+        "tt_cutoffs": 0,
+        "tt_stores": 0,
+        "tt_eligible_nodes": 0,
+        "tt_skipped_ineligible_nodes": 0,
+        "beta_cutoffs": 0,
+        "completed_depth": 1,
+        "selective_depth": 1,
+        "termination_reason": "completed_depth",
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.01600000006146729,
+        "qdepth_cutoffs": 0,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 0,
+        "stand_pat_cutoffs": 0,
+        "capture_qactions": 0,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 0,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 0,
+        "root_scan_seconds": 0.0,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 0,
+        "ordered_moves": 0,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 1,
+        "legal_generation_seconds": 0.0,
+        "evaluation_calls": 0,
+        "evaluation_seconds": 0.0,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 20,
+        "successor_handles_created": 20,
+        "successors_materialized": 20,
+        "successors_searched": 20,
+        "terminal_results_computed": 20,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 20,
+        "position_key_cache_hits": 20,
+        "runtime_pushes": 20,
+        "runtime_pops": 20,
+        "runtime_hash_updates": 20,
+        "runtime_exact_key_computations": 1,
+        "runtime_child_external_key_computations": 0,
+        "runtime_exact_position_comparisons": 20,
+        "runtime_legacy_incremental_updates": 0,
+        "runtime_semantic_full_diff_fallbacks": 20,
+        "runtime_snapshot_exact_comparisons": 0,
+        "runtime_collision_checks": 40,
+        "runtime_collision_fallbacks": 0,
+        "runtime_history_reconstruction_attempts": 1,
+        "runtime_history_reconstruction_key_computations": 1,
+        "runtime_history_witness_hits": 1,
+        "runtime_history_witness_misses": 0,
+        "runtime_opaque_history_child_external_key_computations": 0,
+        "runtime_history_context_updates": 20,
+        "runtime_history_context_exact_comparisons": 0,
+        "runtime_tt_eligible": 1,
+        "runtime_snapshot_updates": 20,
+        "runtime_snapshot_entry_digest_calls": 20,
+        "runtime_search_key_calls": 0,
+        "runtime_history_tuple_copies": 0,
+        "runtime_repetition_tuple_copies": 0,
+        "runtime_root_imports": 1,
+        "runtime_peak_depth": 1,
+        "runtime_depth_balanced": true,
+        "native_legality_enabled": 0,
+        "native_legality_calls": 0,
+        "native_legality_actions": 0,
+        "native_legality_seconds": 0.0,
+        "native_legality_payload_seconds": 0.0,
+        "native_legality_decode_binding_seconds": 0.0,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0
+      },
+      "evaluation_calls": 20
+    }
+  ],
+  "opening_children": {
+    "sem_02_n_quiet:g12:b1-c3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "64df398c7b32bd591849f13572cf04e6dd21820ba3721fdf477dded230277f88",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "64df398c7b32bd591849f13572cf04e6dd21820ba3721fdf477dded230277f88",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[1,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[2,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_02_n_quiet:g14:b1-a3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "05c92f0612b5b3fabff3cefec0626336f29280d6ff16cd4e21021a46fac11f37",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "05c92f0612b5b3fabff3cefec0626336f29280d6ff16cd4e21021a46fac11f37",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[1,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[0,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_02_n_quiet:g12:g1-h3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "f91dcd2d05062385fb60c4326ccdd0e9ff6d43c1791bfb353e8f0f4d7c163126",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "f91dcd2d05062385fb60c4326ccdd0e9ff6d43c1791bfb353e8f0f4d7c163126",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,0],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[7,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_02_n_quiet:g14:g1-f3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "109c63a84fc35844cd884a1010654bc533162bbcf2710d5a4bae2e6016cbd2d0",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "109c63a84fc35844cd884a1010654bc533162bbcf2710d5a4bae2e6016cbd2d0",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:a2-a3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "5c709fc83a859c6b4063ac79f7b7b41e96a8b00b3ed6ae3d6b91203028b9a53b",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "5c709fc83a859c6b4063ac79f7b7b41e96a8b00b3ed6ae3d6b91203028b9a53b",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[0,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:b2-b3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "f8ebf79091d510a144aedc2684406a34ed3f544f0d8096fa6a151e261b788429",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "f8ebf79091d510a144aedc2684406a34ed3f544f0d8096fa6a151e261b788429",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[1,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:c2-c3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "d6bf2c252ca29a479a2ea95f45e5e6e299f5a76237278263ac01ad1630e44ee1",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "d6bf2c252ca29a479a2ea95f45e5e6e299f5a76237278263ac01ad1630e44ee1",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[2,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[2,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:d2-d3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "7121d0f4042ab763f9ce9d7686af821275b74f48ab5028b5d03a5716aa15fd89",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "7121d0f4042ab763f9ce9d7686af821275b74f48ab5028b5d03a5716aa15fd89",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[3,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:e2-e3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "7e10222207d572e1be97e8221ff68705d024cc8390dcc0b8835d3c436bf12ef1",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "7e10222207d572e1be97e8221ff68705d024cc8390dcc0b8835d3c436bf12ef1",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[4,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[4,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:f2-f3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "86d77a0907b6f39b53a7f2658adf2906830192efbba40e3896ff03a505170bf9",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "86d77a0907b6f39b53a7f2658adf2906830192efbba40e3896ff03a505170bf9",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[5,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[5,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:g2-g3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "c7d22baa27269817b7fd58c993ab59414132d5bbc77aed6b65f8be1bc4a073c6",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "c7d22baa27269817b7fd58c993ab59414132d5bbc77aed6b65f8be1bc4a073c6",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[6,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[6,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_10_pawn_one_step:g33:h2-h3": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "c40eeab864c2866297fc18b682b1b322274b1e99ec1b433d8a07871fd3c94417",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "c40eeab864c2866297fc18b682b1b322274b1e99ec1b433d8a07871fd3c94417",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[7,1],\"geometry_id\":\"g33\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_10_pawn_one_step\",\"promotion_target_id\":null,\"to\":[7,2]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:a2-a4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "ced92dfb07f3627cabe8fabe254cf3463a99418c7c3d75b7eb97d89c4bf3df50",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "ced92dfb07f3627cabe8fabe254cf3463a99418c7c3d75b7eb97d89c4bf3df50",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[0,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:b2-b4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "f1efd1e5b581a8de8f2baaf462d929c4d1249e56d321fb5330916948b3428089",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "f1efd1e5b581a8de8f2baaf462d929c4d1249e56d321fb5330916948b3428089",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[1,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:c2-c4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "30d37bbaaae95aaf94207d89f0d661e203e1d3fe09de646707dec72a503f337b",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "30d37bbaaae95aaf94207d89f0d661e203e1d3fe09de646707dec72a503f337b",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[2,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[2,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:d2-d4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "e1ea00c1aead6d7e99801a94c6bbfb689546be7ef0190a28b98a4101adafe6cc",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "e1ea00c1aead6d7e99801a94c6bbfb689546be7ef0190a28b98a4101adafe6cc",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[3,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:e2-e4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "10d026691f4ec65dd38a11095bfbde8ce2667e8251ff58bbdc30b765dec204b2",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "10d026691f4ec65dd38a11095bfbde8ce2667e8251ff58bbdc30b765dec204b2",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[4,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[4,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:f2-f4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              5,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "957b676b004ac456ae9b23df67a6a01e67306934ee87f91372c91d9135311f90",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "957b676b004ac456ae9b23df67a6a01e67306934ee87f91372c91d9135311f90",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[5,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[5,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:g2-g4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              6,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "76a597de2c9dbdf690d1b6dfe8112a42cb5402d569dd2161643fb97dca796e96",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "76a597de2c9dbdf690d1b6dfe8112a42cb5402d569dd2161643fb97dca796e96",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[6,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[6,3]}",
+          "gave_check": false
+        }
+      ]
+    },
+    "sem_11_pawn_double_step:g34:h2-h4": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              2,
+              -1
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 1,
+      "repetition_counts": [
+        [
+          "309c6bff86ae105e703b5ab265019e10fbc0bbc3eaccd993266abbb57a83ba69",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "309c6bff86ae105e703b5ab265019e10fbc0bbc3eaccd993266abbb57a83ba69",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[7,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[7,3]}",
+          "gave_check": false
+        }
+      ]
+    }
+  },
+  "opening_source": [
+    {
+      "action": "sem_02_n_quiet:g12:b1-c3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_02_n_quiet:g14:b1-a3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_02_n_quiet:g12:g1-h3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_02_n_quiet:g14:g1-f3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:a2-a3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:b2-b3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:c2-c3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:d2-d3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:e2-e3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:f2-f3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:g2-g3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_10_pawn_one_step:g33:h2-h3",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": null
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:a2-a4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        0,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:b2-b4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        1,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:c2-c4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        2,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:d2-d4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        3,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:e2-e4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        4,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:f2-f4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        5,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:g2-g4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        6,
+        2
+      ]
+    },
+    {
+      "action": "sem_11_pawn_double_step:g34:h2-h4",
+      "effective_rights": {
+        "castle_w_ks": 1,
+        "castle_w_qs": 1,
+        "castle_b_ks": 1,
+        "castle_b_qs": 1
+      },
+      "ep_target": [
+        7,
+        2
+      ]
+    }
+  ],
+  "unmetered_prefix": {
+    "compilations": 1,
+    "public_transitions": 1,
+    "returned_list_and_membership_entries": 40,
+    "elapsed_seconds": null,
+    "semantic_candidates": null
+  },
+  "source_sha256": {
+    "scripts/audit_chess_approx_static_search.py": "1906d005ad7b87e1fbffcde0c4980d9a98b74c4b708ff5f80305996fad08cf65",
+    "scripts/chess_approx_static_inventory.py": "8d99c913d4f1e14c26ab0be2e926c3dfda4dba1c78fe840afbeaed0d779faa29",
+    "docs/research/CHESS_APPROX_STATIC_SEARCH_PROTOCOL.md": "6a0510723c25d70857aa6e6e959b0597c05fd288f63873746c2d7a47b76e3181",
+    "scripts/chess_exact_contact_family.py": "016e306da30462624f5ce32026b3cc32b3ab7ae1d851cd246c615eba970e2e1d",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "scripts/research_state_replay.py": "8cdab874dc2bf2a5f1fd884a9c5049e00d6f3abd55cf0b78a09167e15177e400",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "scripts/audit_chess_multimode_source_replay.py": "1f7e7a1701eaae3147660c6cd4eea409029e5cf45d7a9ab6ea86b4b6a558f837",
+    "docs/research/data/chess_adjudicated_exchange_20261006.json": "840622f87f4dda8e06ce1348f5635d4102b15ef5d3b9ebecfbcbc06d9fa7f7c6",
+    "generic_chess/core/search_runtime.py": "3240401a6042b054882fe7b1d8e9a9db58ba153693756946874fab0add0e43d4",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/core/transition.py": "0437cba33051366584591e5330904087e4bd12427e1e8d2ad510744fc8e02177",
+    "generic_chess/rules/western_chess.py": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+    "generic_chess/ai/alphabeta/search.py": "18130acd610eb6f41d9cc299cbc2b5a265875f85633f1c8127e1efd5469a75f5",
+    "generic_chess/ai/alphabeta/tuning.py": "7010d5a75801837b499135233e159cd3e699fd33f464d1de79b2bd9451c8c276",
+    "docs/research/data/chess_zero_target_correction_20261005.json": "684d876dafba07efed2271e51d0216ff2c0b3f8d267aa7f3b23af542d55077c1"
+  },
+  "metered_main_seconds": 0.1880000000819564,
+  "opening_root": {
+    "position": {
+      "board": [
+        {
+          "owner": 0,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "N",
+          "current_type_id": "N",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "B",
+          "current_type_id": "B",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "Q",
+          "current_type_id": "Q",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "B",
+          "current_type_id": "B",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "N",
+          "current_type_id": "N",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "N",
+          "current_type_id": "N",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "B",
+          "current_type_id": "B",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "Q",
+          "current_type_id": "Q",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "B",
+          "current_type_id": "B",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "N",
+          "current_type_id": "N",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        }
+      ],
+      "hands": [
+        {
+          "counts": []
+        },
+        {
+          "counts": []
+        }
+      ],
+      "side_to_move": 0,
+      "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "aux_state": [],
+      "board_width": null,
+      "board_height": null
+    },
+    "ply_count": 0,
+    "repetition_counts": [
+      [
+        "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+        1
+      ]
+    ],
+    "terminal_status": {
+      "status": "ongoing",
+      "winner": null
+    },
+    "history": [
+      {
+        "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+        "actor": -1,
+        "action_signature": "",
+        "gave_check": false
+      }
+    ]
+  },
+  "opening_actions": [
+    "sem_02_n_quiet:g12:b1-c3",
+    "sem_02_n_quiet:g14:b1-a3",
+    "sem_02_n_quiet:g12:g1-h3",
+    "sem_02_n_quiet:g14:g1-f3",
+    "sem_10_pawn_one_step:g33:a2-a3",
+    "sem_10_pawn_one_step:g33:b2-b3",
+    "sem_10_pawn_one_step:g33:c2-c3",
+    "sem_10_pawn_one_step:g33:d2-d3",
+    "sem_10_pawn_one_step:g33:e2-e3",
+    "sem_10_pawn_one_step:g33:f2-f3",
+    "sem_10_pawn_one_step:g33:g2-g3",
+    "sem_10_pawn_one_step:g33:h2-h3",
+    "sem_11_pawn_double_step:g34:a2-a4",
+    "sem_11_pawn_double_step:g34:b2-b4",
+    "sem_11_pawn_double_step:g34:c2-c4",
+    "sem_11_pawn_double_step:g34:d2-d4",
+    "sem_11_pawn_double_step:g34:e2-e4",
+    "sem_11_pawn_double_step:g34:f2-f4",
+    "sem_11_pawn_double_step:g34:g2-g4",
+    "sem_11_pawn_double_step:g34:h2-h4"
+  ],
+  "author_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "manifest_sha256": "1a2e45d5eb54ff451a0b7cfb8dad5e31f208d63c0654b6f8eac9581d39886a72",
+  "castle_slot_bindings": {
+    "castle_w_ks": 3,
+    "castle_w_qs": 4,
+    "castle_b_ks": 0,
+    "castle_b_qs": 1
+  },
+  "ep_slot": 2,
+  "not_proved": "strength, source automatic-draw runtime adapter, full auxiliary virtual equivalence or new performance",
+  "source_hashes_unchanged": true
+}

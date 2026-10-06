@@ -1,0 +1,81 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "index": 0,
+      "external_seconds": 0.06262649991549551,
+      "exit_code": 0,
+      "stdout": "{\"import_seconds\": 0.012880299938842654, \"load_direct_hash_seconds\": 0.0007966998964548111, \"constructor_seconds\": 6.680004298686981e-05, \"arithmetic_seconds\": 0.00015440001152455807, \"whole_child_seconds\": 0.013900100020691752, \"normalized_h\": [\"48011/175260\", \"48011/175260\"]}\n",
+      "stderr": "",
+      "measured": {
+        "import_seconds": 0.012880299938842654,
+        "load_direct_hash_seconds": 0.0007966998964548111,
+        "constructor_seconds": 6.680004298686981e-05,
+        "arithmetic_seconds": 0.00015440001152455807,
+        "whole_child_seconds": 0.013900100020691752,
+        "normalized_h": [
+          "48011/175260",
+          "48011/175260"
+        ]
+      },
+      "startup_and_parent_overhead_seconds": 0.04872639989480376
+    },
+    {
+      "index": 1,
+      "external_seconds": 0.05088280001655221,
+      "exit_code": 0,
+      "stdout": "{\"import_seconds\": 0.008894499856978655, \"load_direct_hash_seconds\": 0.0007166001014411449, \"constructor_seconds\": 6.340001709759235e-05, \"arithmetic_seconds\": 0.00015239999629557133, \"whole_child_seconds\": 0.009828499983996153, \"normalized_h\": [\"48011/175260\", \"48011/175260\"]}\n",
+      "stderr": "",
+      "measured": {
+        "import_seconds": 0.008894499856978655,
+        "load_direct_hash_seconds": 0.0007166001014411449,
+        "constructor_seconds": 6.340001709759235e-05,
+        "arithmetic_seconds": 0.00015239999629557133,
+        "whole_child_seconds": 0.009828499983996153,
+        "normalized_h": [
+          "48011/175260",
+          "48011/175260"
+        ]
+      },
+      "startup_and_parent_overhead_seconds": 0.04105430003255606
+    },
+    {
+      "index": 2,
+      "external_seconds": 0.04683390003629029,
+      "exit_code": 0,
+      "stdout": "{\"import_seconds\": 0.01026899996213615, \"load_direct_hash_seconds\": 0.0007594998460263014, \"constructor_seconds\": 6.720004603266716e-05, \"arithmetic_seconds\": 0.00015939981676638126, \"whole_child_seconds\": 0.011256899917498231, \"normalized_h\": [\"48011/175260\", \"48011/175260\"]}\n",
+      "stderr": "",
+      "measured": {
+        "import_seconds": 0.01026899996213615,
+        "load_direct_hash_seconds": 0.0007594998460263014,
+        "constructor_seconds": 6.720004603266716e-05,
+        "arithmetic_seconds": 0.00015939981676638126,
+        "whole_child_seconds": 0.011256899917498231,
+        "normalized_h": [
+          "48011/175260",
+          "48011/175260"
+        ]
+      },
+      "startup_and_parent_overhead_seconds": 0.03557700011879206
+    }
+  ],
+  "public_transitions": 0,
+  "source_queries": 0,
+  "geometry_queries": 0,
+  "interpreter": "C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess 2\\.venv\\Scripts\\python.exe",
+  "command": [
+    "-X",
+    "utf8",
+    "-c",
+    "from time import perf_counter\nstart=perf_counter()\nimport hashlib,json\nfrom pathlib import Path\nfrom scripts.partial_contact_prior import PartialContactPrior\nimports=perf_counter()-start\nt=perf_counter()\nr=json.loads(Path(\"docs/research/data/diagnostic_duration_order_20261006.json\").read_text())\nassert r[\"complete\"] and r[\"source_hashes_unchanged\"]\nfor p,digest in r[\"source_sha256\"].items():\n    assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==digest\nload_hash=perf_counter()-t\nt=perf_counter(); prior=PartialContactPrior(r[\"cumulative\"],r[\"total\"])\nvalidate=perf_counter()-t\nt=perf_counter(); value=prior.duration({\"2\":1}); difference=prior.difference({\"H\":1,\"C\":-1,\"E\":-1})\nassert difference[\"strict_order_proved\"] and value[\"normalized\"][\"R\"]==(1,1)\narithmetic=perf_counter()-t\nprint(json.dumps(dict(import_seconds=imports,load_direct_hash_seconds=load_hash,constructor_seconds=validate,\n                     arithmetic_seconds=arithmetic,whole_child_seconds=perf_counter()-start,\n                     normalized_h=[str(v) for v in value[\"normalized\"][\"H\"]])))\n"
+  ],
+  "source_sha256": {
+    "scripts/audit_partial_contact_cold.py": "c96916912e01a7d0ad2aed79211c558abce62c336899ac1133738101a8c1c11a",
+    "scripts/partial_contact_prior.py": "5123dc5937b46706d90f5c15ef54ff27b972b61fc9fb6f312912953ed967871f",
+    "docs/research/PARTIAL_CONTACT_COLD_PROTOCOL.md": "45744a67515885b209c6a85b1e6eb46cec94fb3c6ce3f05e4f3fda830380f042",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "docs/research/data/diagnostic_duration_order_20261006.json": "393ef5f418308a9d1ffbf8d3fee10d586f06b14b5476c7e4e4198ca8e10642bd"
+  },
+  "seconds": 0.1559999999590218,
+  "source_hashes_unchanged": true
+}
